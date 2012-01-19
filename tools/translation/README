@@ -1,0 +1,17 @@
+Tools and configuration files to kick off the translation.
+
+The .xml file defines which files are to be translated.
+It needs to be registered in http://tc
+
+You can also use the localize_by_config_file script described in
+
+https://sites.google.com/a/google.com/golf-team/documentation/writing-an-xml-configuration-file
+
+to test the xml file and ensure that the correct xmb files are
+generated.
+
+Once the translated xtb files have been dumped, execute
+
+READONLY/google3/transconsole/auto/localize_by_config_file.py --action localize_files --config_file=READONLY/googlemobile/android/Skymap/tools/translation/skymap-tc-config.xml --disable_perforce --nomake_changelist --xtb_dir=READONLY/google3/googledata/transconsole/xtb/Stardroid/
+
+Note the use of xtb_dir: when you do a translations dump the translations get dumped to P4.  These translations take a long time to show up in /h/b/s so using srcfs is preferable.  The script is a bit ropey and will dump the translated files under a folder None, rather than correctly in googlemobile, so you'll need to copy them.  Furthermore, if the original source files have changed since the last translation then it's likely that some of the generated translations will take their English values.  Finally, the script does not use Android's naming convention for localizations that include a region code.  Fortunately, we only have two such cases: Mainland China and Taiwan.  These folders need to be renamed from values-zh_TW to values-zh-rTW.

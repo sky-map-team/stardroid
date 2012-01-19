@@ -1,0 +1,41 @@
+<product id="Google Sky Map for Android">
+  <description>Google Sky Map aka Stardroid</description>
+  <config>
+    <repository>
+      <type>Perforce</type>
+    </repository>
+  </config>
+  <project id="Stardroid">
+    <sourceset>
+      <sources>
+        <config>
+          <originalBasePath>/googlemobile/android/Skymap/app/res</originalBasePath>
+          <targetBasePath>/googlemobile/android/Skymap/app/res</targetBasePath>
+          <handler>google3.transconsole.api.handlers.android_xml</handler>
+        </config>
+        <source>
+          <original>values/*.xml</original>
+          <exclude>values/attrs.xml</exclude>
+          <exclude>values/styles.xml</exclude>
+          <exclude>values/dimens.xml</exclude>
+          <exclude>values/notranslate-arrays.xml</exclude>
+          <target>values-<locale/></target>
+        </source>
+      </sources>
+      <sources>
+        <config>
+          <originalBasePath>/googlemobile/android/Skymap/tools/translation</originalBasePath>
+          <targetBasePath>/googlemobile/android/Skymap/tools/translation</targetBasePath>
+          <handler>google3.transconsole.api.handlers.text</handler>
+          <options>
+            <useLocalizeFileNames value="true"/>
+          </options>
+        </config>
+        <source>
+          <original>*.txt</original>
+          <target>apptxt-<locale/></target>
+        </source>
+      </sources>
+    </sourceset>
+  </project>
+</product>

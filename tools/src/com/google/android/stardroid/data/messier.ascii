@@ -1,0 +1,2754 @@
+source {
+  search_location {
+    right_ascension: 83.625
+    declination: 22.01667
+  }
+  point {
+    location {
+      right_ascension: 83.625
+      declination: 22.01667
+    }
+    color: 4761665
+    size: 3
+    shape: NEBULA
+  }
+  label {
+    location {
+      right_ascension: 83.625
+      declination: 22.01667
+    }
+    color: 4761665
+    string_index: 2131362049
+  }
+  name_ids: 2131362049
+  name_ids: 2131361910
+}
+source {
+  search_location {
+    right_ascension: 323.37497
+    declination: -0.81667
+  }
+  point {
+    location {
+      right_ascension: 323.37497
+      declination: -0.81667
+    }
+    color: 4761665
+    size: 3
+    shape: GLOBULAR_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 323.37497
+      declination: -0.81667
+    }
+    color: 4761665
+    string_index: 2131362050
+  }
+  name_ids: 2131362050
+}
+source {
+  search_location {
+    right_ascension: 205.54996
+    declination: 28.38333
+  }
+  point {
+    location {
+      right_ascension: 205.54996
+      declination: 28.38333
+    }
+    color: 4761665
+    size: 3
+    shape: GLOBULAR_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 205.54996
+      declination: 28.38333
+    }
+    color: 4761665
+    string_index: 2131362051
+  }
+  name_ids: 2131362051
+}
+source {
+  search_location {
+    right_ascension: 245.89995
+    declination: -26.53333
+  }
+  point {
+    location {
+      right_ascension: 245.89995
+      declination: -26.53333
+    }
+    color: 4761665
+    size: 3
+    shape: GLOBULAR_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 245.89995
+      declination: -26.53333
+    }
+    color: 4761665
+    string_index: 2131362052
+  }
+  name_ids: 2131362052
+}
+source {
+  search_location {
+    right_ascension: 229.65001
+    declination: 2.08333
+  }
+  point {
+    location {
+      right_ascension: 229.65001
+      declination: 2.08333
+    }
+    color: 4761665
+    size: 3
+    shape: GLOBULAR_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 229.65001
+      declination: 2.08333
+    }
+    color: 4761665
+    string_index: 2131362053
+  }
+  name_ids: 2131362053
+}
+source {
+  search_location {
+    right_ascension: 265.02493
+    declination: -32.21667
+  }
+  point {
+    location {
+      right_ascension: 265.02493
+      declination: -32.21667
+    }
+    color: 4761665
+    size: 3
+    shape: OPEN_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 265.02493
+      declination: -32.21667
+    }
+    color: 4761665
+    string_index: 2131362054
+  }
+  name_ids: 2131362054
+  name_ids: 2131362161
+}
+source {
+  search_location {
+    right_ascension: 268.47498
+    declination: -34.81667
+  }
+  point {
+    location {
+      right_ascension: 268.47498
+      declination: -34.81667
+    }
+    color: 4761665
+    size: 3
+    shape: OPEN_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 268.47498
+      declination: -34.81667
+    }
+    color: 4761665
+    string_index: 2131362055
+  }
+  name_ids: 2131362055
+  name_ids: 2131362162
+}
+source {
+  search_location {
+    right_ascension: 270.94995
+    declination: -24.38333
+  }
+  point {
+    location {
+      right_ascension: 270.94995
+      declination: -24.38333
+    }
+    color: 4761665
+    size: 3
+    shape: NEBULA
+  }
+  label {
+    location {
+      right_ascension: 270.94995
+      declination: -24.38333
+    }
+    color: 4761665
+    string_index: 2131362056
+  }
+  name_ids: 2131362056
+}
+source {
+  search_location {
+    right_ascension: 259.8
+    declination: -18.51667
+  }
+  point {
+    location {
+      right_ascension: 259.8
+      declination: -18.51667
+    }
+    color: 4761665
+    size: 3
+    shape: GLOBULAR_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 259.8
+      declination: -18.51667
+    }
+    color: 4761665
+    string_index: 2131362057
+  }
+  name_ids: 2131362057
+}
+source {
+  search_location {
+    right_ascension: 254.27504
+    declination: -4.1
+  }
+  point {
+    location {
+      right_ascension: 254.27504
+      declination: -4.1
+    }
+    color: 4761665
+    size: 3
+    shape: GLOBULAR_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 254.27504
+      declination: -4.1
+    }
+    color: 4761665
+    string_index: 2131362058
+  }
+  name_ids: 2131362058
+}
+source {
+  search_location {
+    right_ascension: 282.77502
+    declination: -6.26667
+  }
+  point {
+    location {
+      right_ascension: 282.77502
+      declination: -6.26667
+    }
+    color: 4761665
+    size: 3
+    shape: OPEN_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 282.77502
+      declination: -6.26667
+    }
+    color: 4761665
+    string_index: 2131362059
+  }
+  name_ids: 2131362059
+}
+source {
+  search_location {
+    right_ascension: 251.80006
+    declination: -1.95
+  }
+  point {
+    location {
+      right_ascension: 251.80006
+      declination: -1.95
+    }
+    color: 4761665
+    size: 3
+    shape: GLOBULAR_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 251.80006
+      declination: -1.95
+    }
+    color: 4761665
+    string_index: 2131362060
+  }
+  name_ids: 2131362060
+}
+source {
+  search_location {
+    right_ascension: 250.42499
+    declination: 36.46667
+  }
+  point {
+    location {
+      right_ascension: 250.42499
+      declination: 36.46667
+    }
+    color: 4761665
+    size: 3
+    shape: GLOBULAR_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 250.42499
+      declination: 36.46667
+    }
+    color: 4761665
+    string_index: 2131362061
+  }
+  name_ids: 2131362061
+  name_ids: 2131361918
+}
+source {
+  search_location {
+    right_ascension: 264.40005
+    declination: -3.25
+  }
+  point {
+    location {
+      right_ascension: 264.40005
+      declination: -3.25
+    }
+    color: 4761665
+    size: 3
+    shape: GLOBULAR_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 264.40005
+      declination: -3.25
+    }
+    color: 4761665
+    string_index: 2131362062
+  }
+  name_ids: 2131362062
+}
+source {
+  search_location {
+    right_ascension: 322.5
+    declination: 12.16667
+  }
+  point {
+    location {
+      right_ascension: 322.5
+      declination: 12.16667
+    }
+    color: 4761665
+    size: 3
+    shape: GLOBULAR_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 322.5
+      declination: 12.16667
+    }
+    color: 4761665
+    string_index: 2131362063
+  }
+  name_ids: 2131362063
+}
+source {
+  search_location {
+    right_ascension: 274.69995
+    declination: -13.78333
+  }
+  point {
+    location {
+      right_ascension: 274.69995
+      declination: -13.78333
+    }
+    color: 4761665
+    size: 3
+    shape: OPEN_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 274.69995
+      declination: -13.78333
+    }
+    color: 4761665
+    string_index: 2131362064
+  }
+  name_ids: 2131362064
+  name_ids: 2131361911
+}
+source {
+  search_location {
+    right_ascension: 275.20004
+    declination: -16.18333
+  }
+  point {
+    location {
+      right_ascension: 275.20004
+      declination: -16.18333
+    }
+    color: 4761665
+    size: 3
+    shape: OPEN_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 275.20004
+      declination: -16.18333
+    }
+    color: 4761665
+    string_index: 2131362065
+  }
+  name_ids: 2131362065
+}
+source {
+  search_location {
+    right_ascension: 274.97507
+    declination: -17.13333
+  }
+  point {
+    location {
+      right_ascension: 274.97507
+      declination: -17.13333
+    }
+    color: 4761665
+    size: 3
+    shape: OPEN_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 274.97507
+      declination: -17.13333
+    }
+    color: 4761665
+    string_index: 2131362066
+  }
+  name_ids: 2131362066
+}
+source {
+  search_location {
+    right_ascension: 255.64993
+    declination: -26.26667
+  }
+  point {
+    location {
+      right_ascension: 255.64993
+      declination: -26.26667
+    }
+    color: 4761665
+    size: 3
+    shape: GLOBULAR_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 255.64993
+      declination: -26.26667
+    }
+    color: 4761665
+    string_index: 2131362067
+  }
+  name_ids: 2131362067
+}
+source {
+  search_location {
+    right_ascension: 270.57495
+    declination: -23.03333
+  }
+  point {
+    location {
+      right_ascension: 270.57495
+      declination: -23.03333
+    }
+    color: 4761665
+    size: 3
+    shape: OPEN_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 270.57495
+      declination: -23.03333
+    }
+    color: 4761665
+    string_index: 2131362068
+  }
+  name_ids: 2131362068
+}
+source {
+  search_location {
+    right_ascension: 271.15005
+    declination: -22.5
+  }
+  point {
+    location {
+      right_ascension: 271.15005
+      declination: -22.5
+    }
+    color: 4761665
+    size: 3
+    shape: OPEN_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 271.15005
+      declination: -22.5
+    }
+    color: 4761665
+    string_index: 2131362069
+  }
+  name_ids: 2131362069
+}
+source {
+  search_location {
+    right_ascension: 279.10007
+    declination: -23.9
+  }
+  point {
+    location {
+      right_ascension: 279.10007
+      declination: -23.9
+    }
+    color: 4761665
+    size: 3
+    shape: GLOBULAR_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 279.10007
+      declination: -23.9
+    }
+    color: 4761665
+    string_index: 2131362070
+  }
+  name_ids: 2131362070
+}
+source {
+  search_location {
+    right_ascension: 269.20007
+    declination: -19.01667
+  }
+  point {
+    location {
+      right_ascension: 269.20007
+      declination: -19.01667
+    }
+    color: 4761665
+    size: 3
+    shape: OPEN_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 269.20007
+      declination: -19.01667
+    }
+    color: 4761665
+    string_index: 2131362071
+  }
+  name_ids: 2131362071
+}
+source {
+  search_location {
+    right_ascension: 274.60004
+    declination: -18.41667
+  }
+  point {
+    location {
+      right_ascension: 274.60004
+      declination: -18.41667
+    }
+    color: 4761665
+    size: 3
+    shape: OPEN_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 274.60004
+      declination: -18.41667
+    }
+    color: 4761665
+    string_index: 2131362072
+  }
+  name_ids: 2131362072
+}
+source {
+  search_location {
+    right_ascension: 277.90005
+    declination: -19.25
+  }
+  point {
+    location {
+      right_ascension: 277.90005
+      declination: -19.25
+    }
+    color: 4761665
+    size: 3
+    shape: OPEN_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 277.90005
+      declination: -19.25
+    }
+    color: 4761665
+    string_index: 2131362073
+  }
+  name_ids: 2131362073
+}
+source {
+  search_location {
+    right_ascension: 281.29996
+    declination: -9.4
+  }
+  point {
+    location {
+      right_ascension: 281.29996
+      declination: -9.4
+    }
+    color: 4761665
+    size: 3
+    shape: OPEN_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 281.29996
+      declination: -9.4
+    }
+    color: 4761665
+    string_index: 2131362074
+  }
+  name_ids: 2131362074
+}
+source {
+  search_location {
+    right_ascension: 299.89996
+    declination: 22.71667
+  }
+  point {
+    location {
+      right_ascension: 299.89996
+      declination: 22.71667
+    }
+    color: 4761665
+    size: 3
+    shape: NEBULA
+  }
+  label {
+    location {
+      right_ascension: 299.89996
+      declination: 22.71667
+    }
+    color: 4761665
+    string_index: 2131362075
+  }
+  name_ids: 2131362075
+}
+source {
+  search_location {
+    right_ascension: 276.12497
+    declination: -24.86667
+  }
+  point {
+    location {
+      right_ascension: 276.12497
+      declination: -24.86667
+    }
+    color: 4761665
+    size: 3
+    shape: GLOBULAR_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 276.12497
+      declination: -24.86667
+    }
+    color: 4761665
+    string_index: 2131362076
+  }
+  name_ids: 2131362076
+}
+source {
+  search_location {
+    right_ascension: 305.97498
+    declination: 38.53333
+  }
+  point {
+    location {
+      right_ascension: 305.97498
+      declination: 38.53333
+    }
+    color: 4761665
+    size: 3
+    shape: OPEN_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 305.97498
+      declination: 38.53333
+    }
+    color: 4761665
+    string_index: 2131362077
+  }
+  name_ids: 2131362077
+}
+source {
+  search_location {
+    right_ascension: 325.09995
+    declination: -23.18333
+  }
+  point {
+    location {
+      right_ascension: 325.09995
+      declination: -23.18333
+    }
+    color: 4761665
+    size: 3
+    shape: GLOBULAR_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 325.09995
+      declination: -23.18333
+    }
+    color: 4761665
+    string_index: 2131362078
+  }
+  name_ids: 2131362078
+}
+source {
+  search_location {
+    right_ascension: 10.67505
+    declination: 41.26667
+  }
+  point {
+    location {
+      right_ascension: 10.67505
+      declination: 41.26667
+    }
+    color: 4761665
+    size: 3
+    shape: SPIRAL_GALAXY
+  }
+  label {
+    location {
+      right_ascension: 10.67505
+      declination: 41.26667
+    }
+    color: 4761665
+    string_index: 2131362079
+  }
+  name_ids: 2131362079
+  name_ids: 2131361912
+}
+source {
+  search_location {
+    right_ascension: 10.67505
+    declination: 40.86667
+  }
+  point {
+    location {
+      right_ascension: 10.67505
+      declination: 40.86667
+    }
+    color: 4761665
+    size: 3
+    shape: ELLIPTICAL_GALAXY
+  }
+  label {
+    location {
+      right_ascension: 10.67505
+      declination: 40.86667
+    }
+    color: 4761665
+    string_index: 2131362080
+  }
+  name_ids: 2131362080
+}
+source {
+  search_location {
+    right_ascension: 23.475
+    declination: 30.65
+  }
+  point {
+    location {
+      right_ascension: 23.475
+      declination: 30.65
+    }
+    color: 4761665
+    size: 3
+    shape: SPIRAL_GALAXY
+  }
+  label {
+    location {
+      right_ascension: 23.475
+      declination: 30.65
+    }
+    color: 4761665
+    string_index: 2131362081
+  }
+  name_ids: 2131362081
+}
+source {
+  search_location {
+    right_ascension: 40.5
+    declination: 42.78333
+  }
+  point {
+    location {
+      right_ascension: 40.5
+      declination: 42.78333
+    }
+    color: 4761665
+    size: 3
+    shape: OPEN_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 40.5
+      declination: 42.78333
+    }
+    color: 4761665
+    string_index: 2131362082
+  }
+  name_ids: 2131362082
+}
+source {
+  search_location {
+    right_ascension: 92.22495
+    declination: 24.33333
+  }
+  point {
+    location {
+      right_ascension: 92.22495
+      declination: 24.33333
+    }
+    color: 4761665
+    size: 3
+    shape: OPEN_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 92.22495
+      declination: 24.33333
+    }
+    color: 4761665
+    string_index: 2131362083
+  }
+  name_ids: 2131362083
+}
+source {
+  search_location {
+    right_ascension: 84.02505
+    declination: 34.13333
+  }
+  point {
+    location {
+      right_ascension: 84.02505
+      declination: 34.13333
+    }
+    color: 4761665
+    size: 3
+    shape: OPEN_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 84.02505
+      declination: 34.13333
+    }
+    color: 4761665
+    string_index: 2131362084
+  }
+  name_ids: 2131362084
+}
+source {
+  search_location {
+    right_ascension: 88.09995
+    declination: 32.55
+  }
+  point {
+    location {
+      right_ascension: 88.09995
+      declination: 32.55
+    }
+    color: 4761665
+    size: 3
+    shape: OPEN_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 88.09995
+      declination: 32.55
+    }
+    color: 4761665
+    string_index: 2131362085
+  }
+  name_ids: 2131362085
+}
+source {
+  search_location {
+    right_ascension: 82.17495
+    declination: 35.83333
+  }
+  point {
+    location {
+      right_ascension: 82.17495
+      declination: 35.83333
+    }
+    color: 4761665
+    size: 3
+    shape: OPEN_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 82.17495
+      declination: 35.83333
+    }
+    color: 4761665
+    string_index: 2131362086
+  }
+  name_ids: 2131362086
+}
+source {
+  search_location {
+    right_ascension: 323.05005
+    declination: 48.43333
+  }
+  point {
+    location {
+      right_ascension: 323.05005
+      declination: 48.43333
+    }
+    color: 4761665
+    size: 3
+    shape: OPEN_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 323.05005
+      declination: 48.43333
+    }
+    color: 4761665
+    string_index: 2131362087
+  }
+  name_ids: 2131362087
+}
+source {
+  search_location {
+    right_ascension: 185.59995
+    declination: 58.08333
+  }
+  point {
+    location {
+      right_ascension: 185.59995
+      declination: 58.08333
+    }
+    color: 4761665
+    size: 3
+    shape: OPEN_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 185.59995
+      declination: 58.08333
+    }
+    color: 4761665
+    string_index: 2131362088
+  }
+  name_ids: 2131362088
+  name_ids: 2131362163
+}
+source {
+  search_location {
+    right_ascension: 101.50005
+    declination: -20.73333
+  }
+  point {
+    location {
+      right_ascension: 101.50005
+      declination: -20.73333
+    }
+    color: 4761665
+    size: 3
+    shape: OPEN_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 101.50005
+      declination: -20.73333
+    }
+    color: 4761665
+    string_index: 2131362089
+  }
+  name_ids: 2131362089
+}
+source {
+  search_location {
+    right_ascension: 83.850006
+    declination: -5.45
+  }
+  point {
+    location {
+      right_ascension: 83.850006
+      declination: -5.45
+    }
+    color: 4761665
+    size: 3
+    shape: NEBULA
+  }
+  label {
+    location {
+      right_ascension: 83.850006
+      declination: -5.45
+    }
+    color: 4761665
+    string_index: 2131362090
+  }
+  name_ids: 2131362090
+  name_ids: 2131361913
+}
+source {
+  search_location {
+    right_ascension: 83.89995
+    declination: -5.26667
+  }
+  point {
+    location {
+      right_ascension: 83.89995
+      declination: -5.26667
+    }
+    color: 4761665
+    size: 3
+    shape: NEBULA
+  }
+  label {
+    location {
+      right_ascension: 83.89995
+      declination: -5.26667
+    }
+    color: 4761665
+    string_index: 2131362091
+  }
+  name_ids: 2131362091
+}
+source {
+  search_location {
+    right_ascension: 130.02495
+    declination: 19.98333
+  }
+  point {
+    location {
+      right_ascension: 130.02495
+      declination: 19.98333
+    }
+    color: 4761665
+    size: 3
+    shape: OPEN_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 130.02495
+      declination: 19.98333
+    }
+    color: 4761665
+    string_index: 2131362092
+  }
+  name_ids: 2131362092
+  name_ids: 2131362164
+  name_ids: 2131362165
+}
+source {
+  search_location {
+    right_ascension: 56.749996
+    declination: 24.11667
+  }
+  point {
+    location {
+      right_ascension: 56.749996
+      declination: 24.11667
+    }
+    color: 4761665
+    size: 3
+    shape: OPEN_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 56.749996
+      declination: 24.11667
+    }
+    color: 4761665
+    string_index: 2131362093
+  }
+  name_ids: 2131362093
+  name_ids: 2131361919
+  name_ids: 2131362166
+}
+source {
+  search_location {
+    right_ascension: 115.45005
+    declination: -14.81667
+  }
+  point {
+    location {
+      right_ascension: 115.45005
+      declination: -14.81667
+    }
+    color: 4761665
+    size: 3
+    shape: OPEN_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 115.45005
+      declination: -14.81667
+    }
+    color: 4761665
+    string_index: 2131362094
+  }
+  name_ids: 2131362094
+}
+source {
+  search_location {
+    right_ascension: 114.15
+    declination: -14.5
+  }
+  point {
+    location {
+      right_ascension: 114.15
+      declination: -14.5
+    }
+    color: 4761665
+    size: 3
+    shape: OPEN_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 114.15
+      declination: -14.5
+    }
+    color: 4761665
+    string_index: 2131362095
+  }
+  name_ids: 2131362095
+}
+source {
+  search_location {
+    right_ascension: 123.45
+    declination: -5.8
+  }
+  point {
+    location {
+      right_ascension: 123.45
+      declination: -5.8
+    }
+    color: 4761665
+    size: 3
+    shape: OPEN_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 123.45
+      declination: -5.8
+    }
+    color: 4761665
+    string_index: 2131362096
+  }
+  name_ids: 2131362096
+}
+source {
+  search_location {
+    right_ascension: 187.45004
+    declination: 8.0
+  }
+  point {
+    location {
+      right_ascension: 187.45004
+      declination: 8.0
+    }
+    color: 4761665
+    size: 3
+    shape: ELLIPTICAL_GALAXY
+  }
+  label {
+    location {
+      right_ascension: 187.45004
+      declination: 8.0
+    }
+    color: 4761665
+    string_index: 2131362097
+  }
+  name_ids: 2131362097
+}
+source {
+  search_location {
+    right_ascension: 105.79995
+    declination: -8.33333
+  }
+  point {
+    location {
+      right_ascension: 105.79995
+      declination: -8.33333
+    }
+    color: 4761665
+    size: 3
+    shape: OPEN_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 105.79995
+      declination: -8.33333
+    }
+    color: 4761665
+    string_index: 2131362098
+  }
+  name_ids: 2131362098
+}
+source {
+  search_location {
+    right_ascension: 202.47495
+    declination: 47.2
+  }
+  point {
+    location {
+      right_ascension: 202.47495
+      declination: 47.2
+    }
+    color: 4761665
+    size: 3
+    shape: SPIRAL_GALAXY
+  }
+  label {
+    location {
+      right_ascension: 202.47495
+      declination: 47.2
+    }
+    color: 4761665
+    string_index: 2131362099
+  }
+  name_ids: 2131362099
+  name_ids: 2131361914
+}
+source {
+  search_location {
+    right_ascension: 351.04996
+    declination: 61.58333
+  }
+  point {
+    location {
+      right_ascension: 351.04996
+      declination: 61.58333
+    }
+    color: 4761665
+    size: 3
+    shape: OPEN_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 351.04996
+      declination: 61.58333
+    }
+    color: 4761665
+    string_index: 2131362100
+  }
+  name_ids: 2131362100
+}
+source {
+  search_location {
+    right_ascension: 198.225
+    declination: 18.16667
+  }
+  point {
+    location {
+      right_ascension: 198.225
+      declination: 18.16667
+    }
+    color: 4761665
+    size: 3
+    shape: GLOBULAR_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 198.225
+      declination: 18.16667
+    }
+    color: 4761665
+    string_index: 2131362101
+  }
+  name_ids: 2131362101
+}
+source {
+  search_location {
+    right_ascension: 283.77493
+    declination: -30.48333
+  }
+  point {
+    location {
+      right_ascension: 283.77493
+      declination: -30.48333
+    }
+    color: 4761665
+    size: 3
+    shape: GLOBULAR_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 283.77493
+      declination: -30.48333
+    }
+    color: 4761665
+    string_index: 2131362102
+  }
+  name_ids: 2131362102
+}
+source {
+  search_location {
+    right_ascension: 295.00006
+    declination: -30.96667
+  }
+  point {
+    location {
+      right_ascension: 295.00006
+      declination: -30.96667
+    }
+    color: 4761665
+    size: 3
+    shape: GLOBULAR_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 295.00006
+      declination: -30.96667
+    }
+    color: 4761665
+    string_index: 2131362103
+  }
+  name_ids: 2131362103
+}
+source {
+  search_location {
+    right_ascension: 289.15005
+    declination: 30.18333
+  }
+  point {
+    location {
+      right_ascension: 289.15005
+      declination: 30.18333
+    }
+    color: 4761665
+    size: 3
+    shape: GLOBULAR_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 289.15005
+      declination: 30.18333
+    }
+    color: 4761665
+    string_index: 2131362104
+  }
+  name_ids: 2131362104
+}
+source {
+  search_location {
+    right_ascension: 283.39993
+    declination: 33.03333
+  }
+  point {
+    location {
+      right_ascension: 283.39993
+      declination: 33.03333
+    }
+    color: 4761665
+    size: 3
+    shape: NEBULA
+  }
+  label {
+    location {
+      right_ascension: 283.39993
+      declination: 33.03333
+    }
+    color: 4761665
+    string_index: 2131362105
+  }
+  name_ids: 2131362105
+  name_ids: 2131361915
+}
+source {
+  search_location {
+    right_ascension: 189.42496
+    declination: 11.81667
+  }
+  point {
+    location {
+      right_ascension: 189.42496
+      declination: 11.81667
+    }
+    color: 4761665
+    size: 3
+    shape: SPIRAL_GALAXY
+  }
+  label {
+    location {
+      right_ascension: 189.42496
+      declination: 11.81667
+    }
+    color: 4761665
+    string_index: 2131362106
+  }
+  name_ids: 2131362106
+}
+source {
+  search_location {
+    right_ascension: 190.5
+    declination: 11.65
+  }
+  point {
+    location {
+      right_ascension: 190.5
+      declination: 11.65
+    }
+    color: 4761665
+    size: 3
+    shape: ELLIPTICAL_GALAXY
+  }
+  label {
+    location {
+      right_ascension: 190.5
+      declination: 11.65
+    }
+    color: 4761665
+    string_index: 2131362107
+  }
+  name_ids: 2131362107
+}
+source {
+  search_location {
+    right_ascension: 190.92494
+    declination: 11.55
+  }
+  point {
+    location {
+      right_ascension: 190.92494
+      declination: 11.55
+    }
+    color: 4761665
+    size: 3
+    shape: ELLIPTICAL_GALAXY
+  }
+  label {
+    location {
+      right_ascension: 190.92494
+      declination: 11.55
+    }
+    color: 4761665
+    string_index: 2131362108
+  }
+  name_ids: 2131362108
+}
+source {
+  search_location {
+    right_ascension: 185.47499
+    declination: 4.46667
+  }
+  point {
+    location {
+      right_ascension: 185.47499
+      declination: 4.46667
+    }
+    color: 4761665
+    size: 3
+    shape: SPIRAL_GALAXY
+  }
+  label {
+    location {
+      right_ascension: 185.47499
+      declination: 4.46667
+    }
+    color: 4761665
+    string_index: 2131362109
+  }
+  name_ids: 2131362109
+}
+source {
+  search_location {
+    right_ascension: 255.3
+    declination: -30.11667
+  }
+  point {
+    location {
+      right_ascension: 255.3
+      declination: -30.11667
+    }
+    color: 4761665
+    size: 3
+    shape: GLOBULAR_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 255.3
+      declination: -30.11667
+    }
+    color: 4761665
+    string_index: 2131362110
+  }
+  name_ids: 2131362110
+}
+source {
+  search_location {
+    right_ascension: 198.94995
+    declination: 42.03333
+  }
+  point {
+    location {
+      right_ascension: 198.94995
+      declination: 42.03333
+    }
+    color: 4761665
+    size: 3
+    shape: SPIRAL_GALAXY
+  }
+  label {
+    location {
+      right_ascension: 198.94995
+      declination: 42.03333
+    }
+    color: 4761665
+    string_index: 2131362111
+  }
+  name_ids: 2131362111
+}
+source {
+  search_location {
+    right_ascension: 194.17499
+    declination: 21.68333
+  }
+  point {
+    location {
+      right_ascension: 194.17499
+      declination: 21.68333
+    }
+    color: 4761665
+    size: 3
+    shape: SPIRAL_GALAXY
+  }
+  label {
+    location {
+      right_ascension: 194.17499
+      declination: 21.68333
+    }
+    color: 4761665
+    string_index: 2131362112
+  }
+  name_ids: 2131362112
+}
+source {
+  search_location {
+    right_ascension: 169.72499
+    declination: 13.08333
+  }
+  point {
+    location {
+      right_ascension: 169.72499
+      declination: 13.08333
+    }
+    color: 4761665
+    size: 3
+    shape: SPIRAL_GALAXY
+  }
+  label {
+    location {
+      right_ascension: 169.72499
+      declination: 13.08333
+    }
+    color: 4761665
+    string_index: 2131362113
+  }
+  name_ids: 2131362113
+}
+source {
+  search_location {
+    right_ascension: 170.05005
+    declination: 12.98333
+  }
+  point {
+    location {
+      right_ascension: 170.05005
+      declination: 12.98333
+    }
+    color: 4761665
+    size: 3
+    shape: SPIRAL_GALAXY
+  }
+  label {
+    location {
+      right_ascension: 170.05005
+      declination: 12.98333
+    }
+    color: 4761665
+    string_index: 2131362114
+  }
+  name_ids: 2131362114
+}
+source {
+  search_location {
+    right_ascension: 132.6
+    declination: 11.81667
+  }
+  point {
+    location {
+      right_ascension: 132.6
+      declination: 11.81667
+    }
+    color: 4761665
+    size: 3
+    shape: OPEN_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 132.6
+      declination: 11.81667
+    }
+    color: 4761665
+    string_index: 2131362115
+  }
+  name_ids: 2131362115
+}
+source {
+  search_location {
+    right_ascension: 189.87495
+    declination: -26.75
+  }
+  point {
+    location {
+      right_ascension: 189.87495
+      declination: -26.75
+    }
+    color: 4761665
+    size: 3
+    shape: GLOBULAR_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 189.87495
+      declination: -26.75
+    }
+    color: 4761665
+    string_index: 2131362116
+  }
+  name_ids: 2131362116
+}
+source {
+  search_location {
+    right_ascension: 277.84998
+    declination: -32.35
+  }
+  point {
+    location {
+      right_ascension: 277.84998
+      declination: -32.35
+    }
+    color: 4761665
+    size: 3
+    shape: GLOBULAR_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 277.84998
+      declination: -32.35
+    }
+    color: 4761665
+    string_index: 2131362117
+  }
+  name_ids: 2131362117
+}
+source {
+  search_location {
+    right_ascension: 280.8
+    declination: -32.3
+  }
+  point {
+    location {
+      right_ascension: 280.8
+      declination: -32.3
+    }
+    color: 4761665
+    size: 3
+    shape: GLOBULAR_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 280.8
+      declination: -32.3
+    }
+    color: 4761665
+    string_index: 2131362118
+  }
+  name_ids: 2131362118
+}
+source {
+  search_location {
+    right_ascension: 298.45004
+    declination: 18.78333
+  }
+  point {
+    location {
+      right_ascension: 298.45004
+      declination: 18.78333
+    }
+    color: 4761665
+    size: 3
+    shape: GLOBULAR_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 298.45004
+      declination: 18.78333
+    }
+    color: 4761665
+    string_index: 2131362119
+  }
+  name_ids: 2131362119
+}
+source {
+  search_location {
+    right_ascension: 313.37506
+    declination: -12.53333
+  }
+  point {
+    location {
+      right_ascension: 313.37506
+      declination: -12.53333
+    }
+    color: 4761665
+    size: 3
+    shape: GLOBULAR_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 313.37506
+      declination: -12.53333
+    }
+    color: 4761665
+    string_index: 2131362120
+  }
+  name_ids: 2131362120
+}
+source {
+  search_location {
+    right_ascension: 314.74994
+    declination: -12.63333
+  }
+  point {
+    location {
+      right_ascension: 314.74994
+      declination: -12.63333
+    }
+    color: 4761665
+    size: 3
+    shape: OPEN_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 314.74994
+      declination: -12.63333
+    }
+    color: 4761665
+    string_index: 2131362121
+  }
+  name_ids: 2131362121
+}
+source {
+  search_location {
+    right_ascension: 24.17505
+    declination: 15.78333
+  }
+  point {
+    location {
+      right_ascension: 24.17505
+      declination: 15.78333
+    }
+    color: 4761665
+    size: 3
+    shape: SPIRAL_GALAXY
+  }
+  label {
+    location {
+      right_ascension: 24.17505
+      declination: 15.78333
+    }
+    color: 4761665
+    string_index: 2131362122
+  }
+  name_ids: 2131362122
+}
+source {
+  search_location {
+    right_ascension: 301.52502
+    declination: -21.91667
+  }
+  point {
+    location {
+      right_ascension: 301.52502
+      declination: -21.91667
+    }
+    color: 4761665
+    size: 3
+    shape: GLOBULAR_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 301.52502
+      declination: -21.91667
+    }
+    color: 4761665
+    string_index: 2131362123
+  }
+  name_ids: 2131362123
+}
+source {
+  search_location {
+    right_ascension: 25.575
+    declination: 51.56667
+  }
+  point {
+    location {
+      right_ascension: 25.575
+      declination: 51.56667
+    }
+    color: 4761665
+    size: 3
+    shape: NEBULA
+  }
+  label {
+    location {
+      right_ascension: 25.575
+      declination: 51.56667
+    }
+    color: 4761665
+    string_index: 2131362124
+  }
+  name_ids: 2131362124
+}
+source {
+  search_location {
+    right_ascension: 40.67505
+    declination: -0.01667
+  }
+  point {
+    location {
+      right_ascension: 40.67505
+      declination: -0.01667
+    }
+    color: 4761665
+    size: 3
+    shape: SPIRAL_GALAXY
+  }
+  label {
+    location {
+      right_ascension: 40.67505
+      declination: -0.01667
+    }
+    color: 4761665
+    string_index: 2131362125
+  }
+  name_ids: 2131362125
+}
+source {
+  search_location {
+    right_ascension: 86.67495
+    declination: 0.05
+  }
+  point {
+    location {
+      right_ascension: 86.67495
+      declination: 0.05
+    }
+    color: 4761665
+    size: 3
+    shape: NEBULA
+  }
+  label {
+    location {
+      right_ascension: 86.67495
+      declination: 0.05
+    }
+    color: 4761665
+    string_index: 2131362126
+  }
+  name_ids: 2131362126
+}
+source {
+  search_location {
+    right_ascension: 81.12495
+    declination: -24.55
+  }
+  point {
+    location {
+      right_ascension: 81.12495
+      declination: -24.55
+    }
+    color: 4761665
+    size: 3
+    shape: GLOBULAR_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 81.12495
+      declination: -24.55
+    }
+    color: 4761665
+    string_index: 2131362127
+  }
+  name_ids: 2131362127
+}
+source {
+  search_location {
+    right_ascension: 244.24997
+    declination: -22.98333
+  }
+  point {
+    location {
+      right_ascension: 244.24997
+      declination: -22.98333
+    }
+    color: 4761665
+    size: 3
+    shape: GLOBULAR_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 244.24997
+      declination: -22.98333
+    }
+    color: 4761665
+    string_index: 2131362128
+  }
+  name_ids: 2131362128
+}
+source {
+  search_location {
+    right_ascension: 148.90005
+    declination: 69.06667
+  }
+  point {
+    location {
+      right_ascension: 148.90005
+      declination: 69.06667
+    }
+    color: 4761665
+    size: 3
+    shape: SPIRAL_GALAXY
+  }
+  label {
+    location {
+      right_ascension: 148.90005
+      declination: 69.06667
+    }
+    color: 4761665
+    string_index: 2131362129
+  }
+  name_ids: 2131362129
+}
+source {
+  search_location {
+    right_ascension: 148.95001
+    declination: 69.68333
+  }
+  point {
+    location {
+      right_ascension: 148.95001
+      declination: 69.68333
+    }
+    color: 4761665
+    size: 3
+    shape: IRREGULAR_GALAXY
+  }
+  label {
+    location {
+      right_ascension: 148.95001
+      declination: 69.68333
+    }
+    color: 4761665
+    string_index: 2131362130
+  }
+  name_ids: 2131362130
+}
+source {
+  search_location {
+    right_ascension: 204.25005
+    declination: -29.86667
+  }
+  point {
+    location {
+      right_ascension: 204.25005
+      declination: -29.86667
+    }
+    color: 4761665
+    size: 3
+    shape: SPIRAL_GALAXY
+  }
+  label {
+    location {
+      right_ascension: 204.25005
+      declination: -29.86667
+    }
+    color: 4761665
+    string_index: 2131362131
+  }
+  name_ids: 2131362131
+}
+source {
+  search_location {
+    right_ascension: 186.27495
+    declination: 12.88333
+  }
+  point {
+    location {
+      right_ascension: 186.27495
+      declination: 12.88333
+    }
+    color: 4761665
+    size: 3
+    shape: LENTICULAR_GALAXY
+  }
+  label {
+    location {
+      right_ascension: 186.27495
+      declination: 12.88333
+    }
+    color: 4761665
+    string_index: 2131362132
+  }
+  name_ids: 2131362132
+}
+source {
+  search_location {
+    right_ascension: 186.34996
+    declination: 18.18333
+  }
+  point {
+    location {
+      right_ascension: 186.34996
+      declination: 18.18333
+    }
+    color: 4761665
+    size: 3
+    shape: LENTICULAR_GALAXY
+  }
+  label {
+    location {
+      right_ascension: 186.34996
+      declination: 18.18333
+    }
+    color: 4761665
+    string_index: 2131362133
+  }
+  name_ids: 2131362133
+}
+source {
+  search_location {
+    right_ascension: 186.55005
+    declination: 12.95
+  }
+  point {
+    location {
+      right_ascension: 186.55005
+      declination: 12.95
+    }
+    color: 4761665
+    size: 3
+    shape: LENTICULAR_GALAXY
+  }
+  label {
+    location {
+      right_ascension: 186.55005
+      declination: 12.95
+    }
+    color: 4761665
+    string_index: 2131362134
+  }
+  name_ids: 2131362134
+}
+source {
+  search_location {
+    right_ascension: 187.69995
+    declination: 12.4
+  }
+  point {
+    location {
+      right_ascension: 187.69995
+      declination: 12.4
+    }
+    color: 4761665
+    size: 3
+    shape: ELLIPTICAL_GALAXY
+  }
+  label {
+    location {
+      right_ascension: 187.69995
+      declination: 12.4
+    }
+    color: 4761665
+    string_index: 2131362135
+  }
+  name_ids: 2131362135
+}
+source {
+  search_location {
+    right_ascension: 187.99995
+    declination: 14.41667
+  }
+  point {
+    location {
+      right_ascension: 187.99995
+      declination: 14.41667
+    }
+    color: 4761665
+    size: 3
+    shape: SPIRAL_GALAXY
+  }
+  label {
+    location {
+      right_ascension: 187.99995
+      declination: 14.41667
+    }
+    color: 4761665
+    string_index: 2131362136
+  }
+  name_ids: 2131362136
+}
+source {
+  search_location {
+    right_ascension: 188.925
+    declination: 12.55
+  }
+  point {
+    location {
+      right_ascension: 188.925
+      declination: 12.55
+    }
+    color: 4761665
+    size: 3
+    shape: ELLIPTICAL_GALAXY
+  }
+  label {
+    location {
+      right_ascension: 188.925
+      declination: 12.55
+    }
+    color: 4761665
+    string_index: 2131362137
+  }
+  name_ids: 2131362137
+}
+source {
+  search_location {
+    right_ascension: 189.19995
+    declination: 13.16667
+  }
+  point {
+    location {
+      right_ascension: 189.19995
+      declination: 13.16667
+    }
+    color: 4761665
+    size: 3
+    shape: SPIRAL_GALAXY
+  }
+  label {
+    location {
+      right_ascension: 189.19995
+      declination: 13.16667
+    }
+    color: 4761665
+    string_index: 2131362138
+  }
+  name_ids: 2131362138
+}
+source {
+  search_location {
+    right_ascension: 188.85
+    declination: 14.5
+  }
+  point {
+    location {
+      right_ascension: 188.85
+      declination: 14.5
+    }
+    color: 4761665
+    size: 3
+    shape: SPIRAL_GALAXY
+  }
+  label {
+    location {
+      right_ascension: 188.85
+      declination: 14.5
+    }
+    color: 4761665
+    string_index: 2131362139
+  }
+  name_ids: 2131362139
+}
+source {
+  search_location {
+    right_ascension: 259.275
+    declination: 43.13333
+  }
+  point {
+    location {
+      right_ascension: 259.275
+      declination: 43.13333
+    }
+    color: 4761665
+    size: 3
+    shape: GLOBULAR_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 259.275
+      declination: 43.13333
+    }
+    color: 4761665
+    string_index: 2131362140
+  }
+  name_ids: 2131362140
+}
+source {
+  search_location {
+    right_ascension: 116.14995
+    declination: -23.86667
+  }
+  point {
+    location {
+      right_ascension: 116.14995
+      declination: -23.86667
+    }
+    color: 4761665
+    size: 3
+    shape: OPEN_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 116.14995
+      declination: -23.86667
+    }
+    color: 4761665
+    string_index: 2131362141
+  }
+  name_ids: 2131362141
+}
+source {
+  search_location {
+    right_ascension: 192.72495
+    declination: 41.11667
+  }
+  point {
+    location {
+      right_ascension: 192.72495
+      declination: 41.11667
+    }
+    color: 4761665
+    size: 3
+    shape: SPIRAL_GALAXY
+  }
+  label {
+    location {
+      right_ascension: 192.72495
+      declination: 41.11667
+    }
+    color: 4761665
+    string_index: 2131362142
+  }
+  name_ids: 2131362142
+}
+source {
+  search_location {
+    right_ascension: 160.99994
+    declination: 11.7
+  }
+  point {
+    location {
+      right_ascension: 160.99994
+      declination: 11.7
+    }
+    color: 4761665
+    size: 3
+    shape: SPIRAL_GALAXY
+  }
+  label {
+    location {
+      right_ascension: 160.99994
+      declination: 11.7
+    }
+    color: 4761665
+    string_index: 2131362143
+  }
+  name_ids: 2131362143
+}
+source {
+  search_location {
+    right_ascension: 161.7
+    declination: 11.81667
+  }
+  point {
+    location {
+      right_ascension: 161.7
+      declination: 11.81667
+    }
+    color: 4761665
+    size: 3
+    shape: SPIRAL_GALAXY
+  }
+  label {
+    location {
+      right_ascension: 161.7
+      declination: 11.81667
+    }
+    color: 4761665
+    string_index: 2131362144
+  }
+  name_ids: 2131362144
+}
+source {
+  search_location {
+    right_ascension: 168.70004
+    declination: 55.01667
+  }
+  point {
+    location {
+      right_ascension: 168.70004
+      declination: 55.01667
+    }
+    color: 4761665
+    size: 3
+    shape: NEBULA
+  }
+  label {
+    location {
+      right_ascension: 168.70004
+      declination: 55.01667
+    }
+    color: 4761665
+    string_index: 2131362145
+  }
+  name_ids: 2131362145
+}
+source {
+  search_location {
+    right_ascension: 183.45
+    declination: 14.9
+  }
+  point {
+    location {
+      right_ascension: 183.45
+      declination: 14.9
+    }
+    color: 4761665
+    size: 3
+    shape: SPIRAL_GALAXY
+  }
+  label {
+    location {
+      right_ascension: 183.45
+      declination: 14.9
+    }
+    color: 4761665
+    string_index: 2131362146
+  }
+  name_ids: 2131362146
+}
+source {
+  search_location {
+    right_ascension: 184.69995
+    declination: 14.41667
+  }
+  point {
+    location {
+      right_ascension: 184.69995
+      declination: 14.41667
+    }
+    color: 4761665
+    size: 3
+    shape: SPIRAL_GALAXY
+  }
+  label {
+    location {
+      right_ascension: 184.69995
+      declination: 14.41667
+    }
+    color: 4761665
+    string_index: 2131362147
+  }
+  name_ids: 2131362147
+}
+source {
+  search_location {
+    right_ascension: 185.72505
+    declination: 15.81667
+  }
+  point {
+    location {
+      right_ascension: 185.72505
+      declination: 15.81667
+    }
+    color: 4761665
+    size: 3
+    shape: SPIRAL_GALAXY
+  }
+  label {
+    location {
+      right_ascension: 185.72505
+      declination: 15.81667
+    }
+    color: 4761665
+    string_index: 2131362148
+  }
+  name_ids: 2131362148
+}
+source {
+  search_location {
+    right_ascension: 210.79996
+    declination: 54.35
+  }
+  point {
+    location {
+      right_ascension: 210.79996
+      declination: 54.35
+    }
+    color: 4761665
+    size: 3
+    shape: SPIRAL_GALAXY
+  }
+  label {
+    location {
+      right_ascension: 210.79996
+      declination: 54.35
+    }
+    color: 4761665
+    string_index: 2131362149
+  }
+  name_ids: 2131362149
+  name_ids: 2131361916
+}
+source {
+  search_location {
+    right_ascension: 210.79996
+    declination: 54.35
+  }
+  point {
+    location {
+      right_ascension: 210.79996
+      declination: 54.35
+    }
+    color: 4761665
+    size: 3
+    shape: SPIRAL_GALAXY
+  }
+  label {
+    location {
+      right_ascension: 210.79996
+      declination: 54.35
+    }
+    color: 4761665
+    string_index: 2131362150
+  }
+  name_ids: 2131362150
+}
+source {
+  search_location {
+    right_ascension: 23.29995
+    declination: 60.7
+  }
+  point {
+    location {
+      right_ascension: 23.29995
+      declination: 60.7
+    }
+    color: 4761665
+    size: 3
+    shape: OPEN_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 23.29995
+      declination: 60.7
+    }
+    color: 4761665
+    string_index: 2131362151
+  }
+  name_ids: 2131362151
+}
+source {
+  search_location {
+    right_ascension: 190.00005
+    declination: -11.61667
+  }
+  point {
+    location {
+      right_ascension: 190.00005
+      declination: -11.61667
+    }
+    color: 4761665
+    size: 3
+    shape: SPIRAL_GALAXY
+  }
+  label {
+    location {
+      right_ascension: 190.00005
+      declination: -11.61667
+    }
+    color: 4761665
+    string_index: 2131362152
+  }
+  name_ids: 2131362152
+  name_ids: 2131361917
+}
+source {
+  search_location {
+    right_ascension: 161.95004
+    declination: 12.58333
+  }
+  point {
+    location {
+      right_ascension: 161.95004
+      declination: 12.58333
+    }
+    color: 4761665
+    size: 3
+    shape: ELLIPTICAL_GALAXY
+  }
+  label {
+    location {
+      right_ascension: 161.95004
+      declination: 12.58333
+    }
+    color: 4761665
+    string_index: 2131362153
+  }
+  name_ids: 2131362153
+}
+source {
+  search_location {
+    right_ascension: 184.75006
+    declination: 47.3
+  }
+  point {
+    location {
+      right_ascension: 184.75006
+      declination: 47.3
+    }
+    color: 4761665
+    size: 3
+    shape: SPIRAL_GALAXY
+  }
+  label {
+    location {
+      right_ascension: 184.75006
+      declination: 47.3
+    }
+    color: 4761665
+    string_index: 2131362154
+  }
+  name_ids: 2131362154
+}
+source {
+  search_location {
+    right_ascension: 248.12505
+    declination: -13.05
+  }
+  point {
+    location {
+      right_ascension: 248.12505
+      declination: -13.05
+    }
+    color: 4761665
+    size: 3
+    shape: GLOBULAR_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 248.12505
+      declination: -13.05
+    }
+    color: 4761665
+    string_index: 2131362155
+  }
+  name_ids: 2131362155
+}
+source {
+  search_location {
+    right_ascension: 167.87506
+    declination: 55.66667
+  }
+  point {
+    location {
+      right_ascension: 167.87506
+      declination: 55.66667
+    }
+    color: 4761665
+    size: 3
+    shape: SPIRAL_GALAXY
+  }
+  label {
+    location {
+      right_ascension: 167.87506
+      declination: 55.66667
+    }
+    color: 4761665
+    string_index: 2131362156
+  }
+  name_ids: 2131362156
+}
+source {
+  search_location {
+    right_ascension: 179.4
+    declination: 53.38333
+  }
+  point {
+    location {
+      right_ascension: 179.4
+      declination: 53.38333
+    }
+    color: 4761665
+    size: 3
+    shape: SPIRAL_GALAXY
+  }
+  label {
+    location {
+      right_ascension: 179.4
+      declination: 53.38333
+    }
+    color: 4761665
+    string_index: 2131362157
+  }
+  name_ids: 2131362157
+}
+source {
+  search_location {
+    right_ascension: 10.09995
+    declination: 41.68333
+  }
+  point {
+    location {
+      right_ascension: 10.09995
+      declination: 41.68333
+    }
+    color: 4761665
+    size: 3
+    shape: ELLIPTICAL_GALAXY
+  }
+  label {
+    location {
+      right_ascension: 10.09995
+      declination: 41.68333
+    }
+    color: 4761665
+    string_index: 2131362158
+  }
+  name_ids: 2131362158
+}
+source {
+  search_location {
+    right_ascension: 269.63925
+    declination: 66.6332
+  }
+  point {
+    location {
+      right_ascension: 269.63925
+      declination: 66.6332
+    }
+    color: 4761665
+    size: 3
+    shape: NEBULA
+  }
+  label {
+    location {
+      right_ascension: 269.63925
+      declination: 66.6332
+    }
+    color: 4761665
+    string_index: 2131362159
+  }
+  name_ids: 2131362159
+  name_ids: 2131361920
+}
+source {
+  search_location {
+    right_ascension: 201.69121
+    declination: -47.47686
+  }
+  point {
+    location {
+      right_ascension: 201.69121
+      declination: -47.47686
+    }
+    color: 4761665
+    size: 3
+    shape: GLOBULAR_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 201.69121
+      declination: -47.47686
+    }
+    color: 4761665
+    string_index: 2131362160
+  }
+  name_ids: 2131362160
+  name_ids: 2131361921
+}
+source {
+  search_location {
+    right_ascension: 106.02015
+    declination: -3.84725
+  }
+  point {
+    location {
+      right_ascension: 106.02015
+      declination: -3.84725
+    }
+    color: 4761665
+    size: 3
+    shape: CIRCLE
+  }
+  label {
+    location {
+      right_ascension: 106.02015
+      declination: -3.84725
+    }
+    color: 4761665
+    string_index: 2131361922
+  }
+  name_ids: 2131361922
+}
+source {
+  search_location {
+    right_ascension: 189.20583
+    declination: 62.21611
+  }
+  point {
+    location {
+      right_ascension: 189.20583
+      declination: 62.21611
+    }
+    color: 4761665
+    size: 3
+    shape: HUBBLE_DEEP_FIELD
+  }
+  label {
+    location {
+      right_ascension: 189.20583
+      declination: 62.21611
+    }
+    color: 4761665
+    string_index: 2131361924
+  }
+  name_ids: 2131361924
+}
