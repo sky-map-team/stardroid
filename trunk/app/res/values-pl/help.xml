@@ -1,0 +1,152 @@
+<resources><string name="help_text" translation_description="Please do not change the &lt; and &gt; markup">&lt;big&gt;&lt;b&gt;Google Sky Map dla systemu Android&lt;/b&gt;&lt;/big&gt;&lt;br/&gt;
+&lt;i&gt;Wersja %s&lt;/i&gt;&lt;br/&gt;
+
+&lt;i&gt;http://www.google.com/sky/skymap&lt;/i&gt;&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;Wprowadzenie&lt;/b&gt;&lt;br/&gt;
+Program Google Sky Map zmienia Twój telefon komórkowy z systemem Android w okno
+na nocne niebo. Gdy skierujesz telefon w górę, zobaczysz mapę najjaśniejszych
+gwiazd, gwiazdozbiorów i planet w tej części nieba.&lt;br/&gt;Kiedy następnym razem zobaczysz
+gwiazdę i zechcesz dowiedzieć się, jak się ona nazywa, skorzystaj z programu Sky Map!&lt;br/&gt;
+
+&lt;b&gt;Widoczne warstwy&lt;/b&gt;&lt;br/&gt;
+
+Obiekty widoczne w programie Google Sky Map zorganizowane są w warstwy. Każdą
+warstwę można włączać i wyłączać przy użyciu ekranowych elementów sterujących. Dostępne warstwy to:&lt;br/&gt;
+      Gwiazdy&lt;br/&gt;
+      Gwiazdozbiory&lt;br/&gt;
+      Katalog Messiera&lt;br/&gt;
+      Planety&lt;br/&gt;
+      Siatka rektascensji i deklinacji&lt;br/&gt;
+      Horyzont i punkty kardynalne&lt;br/&gt;&lt;br/&gt;
+Najjaśniejsze gwiazdy i najbardziej znane gwiazdozbiory, a także planety są
+podpisane. Planety są wyświetlane w postaci obrazów większych niż rozmiary
+rzeczywiste. Horyzont jest reprezentowany jako prosta linia. O ile nie mieszkasz
+na zupełnie płaskim i pozbawionym zabudowań terenie, program Sky Map pozwoli
+Ci zobaczyć obiekty ponad linią horyzontu, których normalnie nie możesz
+widzieć.&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;Ekranowe elementy sterujące&lt;/b&gt;&lt;br/&gt;
+Dotknij ekranu, aby wyświetlić ekranowe elementy sterujące. Po jednej stronie ekranu
+znajdują się przełączniki opisanych powyżej warstw. Mają one kolor pomarańczowy, gdy
+warstwy są włączone, oraz kolor biały, gdy warstwy są wyłączone.&lt;br/&gt;
+
+U dołu ekranu dostępne są elementy sterujące powiększeniem oraz przełącznik do zmiany
+trybu automatycznego na ręczny i odwrotnie.&lt;br/&gt;&lt;br/&gt;
+&lt;b&gt;Tryby nawigacyjne&lt;/b&gt;&lt;br/&gt;
+Po zainstalowaniu program Sky Map znajduje się w trybie automatycznym i korzysta z czujników
+telefonu do wyświetlania mapy nieba dla kierunku, w którym trzymasz telefon. Po przełączeniu
+na tryb ręczny możesz przeciągać mapę palcem, aby oglądać niebo. Przesuwaj kulkę
+lub naciskaj przełącznik kierunkowy w lewo i w prawo, aby obracać mapę. W telefonach z wielopunktowym
+dotykiem możesz też obracać mapę dwoma palcami oraz zsuwać je i rozsuwać w celu przybliżania i oddalania widoku.
+&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;Wyszukiwanie&lt;/b&gt;&lt;br/&gt;
+Program Sky Map pomoże Ci znaleźć odpowiedź na pytania „Co to za gwiazda?”. Może
+też pomóc odpowiedzieć na pytanie „Gdzie jest ...?”. Do funkcji wyszukiwania możesz przejść
+przy użyciu przycisku menu telefonu lub poprzez pole szybkiego wyszukiwania bezpośrednio na
+pulpicie. Zacznij wprowadzać nazwę planety, gwiazdy lub gwiazdozbioru, które chcesz znaleźć,
+a program Sky Map wyświetli listę pasujących pozycji wyszukiwania. Wybierz jedną z nich,
+a program Sky Map wyświetli okrąg wraz ze strzałką wskazującą, jak skierować telefon
+(i siebie), aby odszukać dany obiekt. W miarę poruszania telefonem i zbliżania się do celu
+okrąg zmienia kolor z niebieskiego na czerwony oraz ostatecznie na pomarańczowy, gdy obiekt
+znajdzie się w Twoim polu widzenia.&lt;br/&gt;
+Zauważ, że w trybie ręcznym
+program Sky Map po prostu ustawi mapę na żądanym obiekcie.&lt;br/&gt;
+Aby zamknąć tryb wyszukiwania, dotknij małego krzyżyka w rogu ekranu.&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;Podróż w czasie (nowość!)&lt;/b&gt;&lt;br/&gt;
+
+Tryb podróży w czasie pozwala używać programu Sky Map do wyświetlania nieba
+z czasów innych niż obecne. Wybierz opcję „Podróż w czasie” z głównego menu, a następnie
+wybierz jedną z popularnych dat lub własną datę i godzinę, korzystając z okien
+dialogowych „Zmień datę” i „Zmień godzinę”. Wybór jest ograniczony
+do lat 1900–2100 ze względu na trudności związane z dokładnością,
+powodowane głównie przez grawitacyjny wpływ Jowisza. Po zakończeniu
+naciśnij przycisk „Przejdź”, aby przejść w czasie do wybranego celu. Program Sky
+Map znajduje się wówczas w trybie podróży w czasie, wyświetlając odwiedzaną datę oraz
+elementy sterujące do zmiany czasu w przód i wstecz od niej.
+Kliknięcie tych przycisków jeden raz powoduje wolną podróż w czasie, a kilkukrotne
+– podróż coraz szybszą i szybszą.&lt;br/&gt;
+
+Funkcja podróży w czasie może dać odpowiedź na wiele różnych pytań, takich jak
+„Co będzie można zobaczyć na niebie po dzisiejszym zachodzie Słońca?”, „Kiedy
+będzie znów okazja zobaczyć Merkurego?” albo „Kiedy zacząć zbiory
+winorośli zgodnie z wytycznymi Hezjoda?”.&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;Galeria teleskopu Hubble’a&lt;/b&gt;&lt;br/&gt;
+Program Sky Map zawiera podzbiór Galerii teleskopu Hubble’a z programu Google Sky. Dostęp do Galerii
+zapewnia element Galeria w menu. Po przejściu do Galerii można przeglądać
+dostępne zdjęcia, przewijając je palcem. Dotknięcie jednej z miniatur
+powoduje wyświetlenie w programie Sky Map obrazu w pełnym rozmiarze. Dotknięcie
+przycisku Szukaj powoduje przełączenie programu Sky Map w tryb wyszukiwania w celu
+odszukania obiektu pasującego do zdjęcia.&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;Tryb nocny&lt;/b&gt;&lt;br/&gt;
+Tryb nocny zaprojektowano z myślą o ochronie Twoich oczu w ciemnościach. Po
+wybraniu opcji menu trybu nocnego program Sky Map wyświetla mapę w kolorze
+czerwonym, przyciemnia ekran i wyłącza podświetlenia przycisków. 
+Ponowny wybór tej opcji przywraca normalne kolory.&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;Ustawianie swojej lokalizacji&lt;/b&gt;&lt;br/&gt;
+Do wyświetlania poprawnej mapy gwiazd program Sky Map wymaga informacji o Twojej przybliżonej
+lokalizacji. Domyślnie określa ją na podstawie Twojej sieci komórkowej. Jeśli znajdziesz
+się poza zasięgiem sieci lub masz wyłączoną funkcję lokalizacji sieciowej, skorzysta z odbiornika GPS telefonu.
+Swoja lokalizację możesz też ustawić ręcznie w menu ustawień, podając nazwę
+miejsca lub szerokość i długość geograficzną (w stopniach). Zauważ, że program
+Sky Map wymaga połączenia transmisji danych, aby ustalić Twoją szerokość i długość
+geograficzną na podstawie podanej nazwy miejsca.&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;Rozwiązywanie problemów i ograniczenia&lt;/b&gt;&lt;br/&gt;
+&lt;i&gt;Mapa nie jest dokładna.&lt;/i&gt;&lt;br/&gt;
+Jeśli zauważysz, że mapa nie pokrywa się dokładnie z rzeczywistym widokiem nieba,
+może być kilka przyczyn takiego stanu rzeczy:&lt;br/&gt;
+1) Czy skalibrowany został kompas? Chwyć telefon i obracaj nadgarstkiem
+w kształt ósemki, aby skalibrować urządzenie. Może być konieczne okresowe powtarzanie tej
+procedury – jest to funkcja telefonu, a nie programu Sky Map.&lt;br/&gt;
+2) Czy aplikacja ma dokładny namiar Twojej lokalizacji? Czy włączony jest odbiornik GPS
+lub funkcja lokalizacji sieciowej?&lt;br/&gt;
+3) Czy masz ustawioną poprawną godzinę i strefę czasową?
+Program Sky Map musi obliczyć czas uniwersalny, a w tym celu potrzebuje informacji o Twoim
+lokalnym czasie ORAZ strefie czasowej. Jeśli w telefonie znajduje się karta SIM, wartości te są
+zwykle ustawione poprawnie.&lt;br/&gt;
+4) Czy masz włączoną poprawkę magnetyczną? W niektórych częściach świata
+różnica między północą magnetyczną a rzeczywistą może wynosić nawet 20 stopni.&lt;br/&gt;
+&lt;i&gt;Mapa się nie przesuwa.&lt;/i&gt;&lt;br/&gt;
+Czy włączony jest tryb ręczny? Jeśli nie, taka sytuacja może mieć miejsce ze względu na nieskalibrowany kompas.
+Wykonaj czynności opisane powyżej, aby go odblokować.&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;Udział w produkcji&lt;/b&gt;&lt;br/&gt;
+&lt;i&gt;Inżynieria i projekt&lt;/i&gt;&lt;br/&gt;
+Brent Bryan, Dominic Widdows, Hector Ouilhet, James Powell, John Taylor,
+Kevin Serafini&lt;br/&gt;
+
+&lt;i&gt;Zarządzanie produktem&lt;/i&gt;&lt;br/&gt;
+Lior Ron&lt;br/&gt;
+
+&lt;i&gt;Tworzenie wizerunku&lt;/i&gt;&lt;br/&gt;
+Aaron Stein, Erin Gleason&lt;br/&gt;
+
+&lt;i&gt;Marketing produktu&lt;/i&gt;&lt;br/&gt;
+Effie Seiberg, Linda Tong&lt;br/&gt;
+
+&lt;i&gt;Tłumaczenia&lt;/i&gt;&lt;br/&gt;
+Jelena Oertel&lt;br/&gt;&lt;br/&gt;
+
+
+&lt;b&gt;Podziękowania&lt;/b&gt;&lt;br/&gt;
+Program Sky Map korzysta z danych pochodzących z:&lt;br/&gt;
+Centre de Donnees astronomiques de Strasbourg (http://cdsweb.u-strasbg.fr/)&lt;br/&gt;
+The Bright Star Catalogue, 5th Revised Ed. (Hoffleit D., Warren Jr W.H.)&lt;br/&gt;
+The HYG Database, HYG v1.0. (http://www.astronexus.com/)&lt;br/&gt;
+History and Accurate Positions for the NGC/IC Objects (Harold G. Corwin Jr)&lt;br/&gt;
+Revised New General Catalogue of Nonstellar Astronomical Objects
+(Sulentic J.W., Tifft W.G.)&lt;br/&gt;
+SFA Star Charts
+(http://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html)&lt;br/&gt;
+Położenia obiektów Układu Słonecznego są wyliczane na podstawie danych dostarczanych przez USNO
+(http://www.usno.navy.mil/USNO/astronomical-applications)&lt;br/&gt;
+Dane położenia sferycznego uzyskano z
+(http://www2.research.att.com/~njas/coverings)&lt;br/&gt;
+Zdjęcia z teleskopu Hubble\'a dostarczone przez Instytut Naukowy Teleskopu Kosmicznego NASA
+(http://hubblesite.org/)&lt;br/&gt;</string></resources>

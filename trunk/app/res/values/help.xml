@@ -1,0 +1,160 @@
+<resources>
+<string name="help_text" translation_description="Please do not change the &lt; and &gt; markup">
+lt;big&gt;&lt;b&gt;Sky Map for Android&lt;/b&gt;&lt;/big&gt;&lt;br/&gt;
+&lt;i&gt;Version %s&lt;/i&gt;&lt;br/&gt;
+<!-- TODO(johntaylor): change URL-->
+&lt;i&gt;http://www.google.com/sky/skymap&lt;/i&gt;&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;Introduction and Quick Start&lt;/b&gt;&lt;br/&gt;
+Sky Map turns your Android-powered mobile phone into a window on the
+night sky.  When you point your phone up you will see a map of the brightest
+stars, constellations, and planets in that part of the sky.&lt;br/&gt;Next time you see a
+bright  star and want to know what it\'s called, use Sky Map!&lt;br/&gt;
+
+&lt;b&gt;Visible Layers&lt;/b&gt;&lt;br/&gt;
+
+Sky Map organizes the objects it shows you into layers.  Each layer can
+be toggled using the on-screen controls.  The layers are:&lt;br/&gt;
+      Stars&lt;br/&gt;
+      Constellations&lt;br/&gt;
+      Messier Objects&lt;br/&gt;
+      Planets&lt;br/&gt;
+      Meteor Showers&lt;br/&gt;
+      Right Ascension and Declination Grid&lt;br/&gt;
+      Horizon and cardinal points&lt;br/&gt;&lt;br/&gt;
+The brightest stars and most prominent constellations are labeled, as are the
+planets.  The planets are displayed as images that are larger than
+actual size.  The horizon is represented as a straight line.  Unless you live
+somewhere that is completely flat and free of buildings, it is likely that
+Sky Map will show you objects above the horizon line that you are actually
+unable to see.&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;On-screen controls&lt;/b&gt;&lt;br/&gt;
+Tap on the screen to show the on-screen controls.  On one side of the screen are
+the toggles for the layers described above.  They are orange when the layers are
+enabled and white when disabled.&lt;br/&gt;
+
+Along the bottom of the screen are zoom controls, and a toggle to switch between
+automatic and manual mode.&lt;br/&gt;&lt;br/&gt;
+&lt;b&gt;Navigation Modes&lt;/b&gt;&lt;br/&gt;
+When first installed Sky Map is in Automatic Mode and uses the phone\'s sensors
+to show you a map of the sky in the direction you are holding the phone.  By
+switching into Manual Mode, you can drag the map with your finger to explore the
+sky.  Move the trackball or D-pad left and right to rotate the map.  On multitouch phones
+you can also rotate the map with two fingers and use a pinch gesture to zoom in and out.
+&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;Search&lt;/b&gt;&lt;br/&gt;
+Sky Map helps you answer the question \'What is that star over there?\'  It can
+also answer the question \'Where is ...?\'  Access the search function through
+the phone\'s menu button or through the Quick Search Box directly on the
+Desktop.  Start typing in the name of the planet, star or constellation you wish
+to find and Sky Map will provide a list of matching search items.  Select one
+and Sky Map will display a targeting circle and an arrow showing you how to move
+the phone (and yourself) to find the object.  As you move the phone and close in
+on the target, the circle will change from blue to red, finally turning orange
+when the object is within your field of view.&lt;br/&gt;
+Note that if you are in Manual Mode,
+Sky Map will simply move the map to show you the object.&lt;br/&gt;
+To exit Search Mode, tap the small cross in the corner of the screen.&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;Time Travel (New!)&lt;/b&gt;&lt;br/&gt;
+
+Time Travel mode enables you to use Sky Map to see the sky at times
+other than the present. Select \'Time Travel\' from the main menu, and
+then select one of the Popular Dates or choose your own date and time
+using the \'Change the Date\' and \'Change the Time\' dialogs. Selections
+are limited to the years 1900-2100 due to limitations on accuracy,
+caused mainly by the gravitational influence of Jupiter. When you\'re
+done, press \'Go!\' to fly through time to your destination. Your Sky
+Map is now in time travel mode, displaying the date you\'re visiting,
+with controls for \'playing\' time forwards and backwards from here.
+Click these buttons once to start moving slowly through time, and
+several times to travel faster and faster.&lt;br/&gt;
+
+Time Travel can be used to answer a variety of questions, including
+\'What will I be able to see just after sunset this evening?\', \'When
+will I next have a good chance of seeing Mercury?\', and \'According to
+Hesiod, when should I harvest my grapes?\'&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;Hubble Gallery&lt;/b&gt;&lt;br/&gt;
+Sky Map contains a gallery of images from the Hubble telescope.  Access the Gallery
+by selecting the Gallery item in the menu.  Once inside the Gallery, you
+can browse the available images by scrolling with your finger. If you tap
+one of the thumbnail images, Sky Map shows you the full size image. If you
+tap the Search button, Sky Map will switch to Search mode to find the object
+matching the image.&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;Night Vision Mode&lt;/b&gt;&lt;br/&gt;
+Night Vision Mode is designed to protect your dark-adapted eyes.  When you
+select the Night Vision menu option, Sky Map will display the map in a red
+color, dim the screen and switch off the button backlights.
+Select the option again to revert to normal colors.&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;Setting Your Location&lt;/b&gt;&lt;br/&gt;
+Sky Map needs your approximate location in order to show you the correct star
+map.  By default, it will determine this from your cellular network.  If you are
+out of range, or have network location disabled it will use your phone\'s GPS.
+You can also set your location manually via the settings menu, either by
+supplying a place name or as a latitude and longitude (in degrees.)  Note that
+Sky Map requires a data connection to determine your latitude and longitude from
+a place name.&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;Troubleshooting and Limitations&lt;/b&gt;&lt;br/&gt;
+&lt;i&gt;The map is inaccurate.&lt;/i&gt;&lt;br/&gt;
+If you find that the map does not accurately line up with the real sky there
+could be a number of reasons:&lt;br/&gt;
+1) Is your compass calibrated?  Try holding the phone and rotating your wrist in
+figures of eight to calibrate it.  You may need to repeat this at intervals
+- this is a feature of the phone, rather than Sky Map.&lt;br/&gt;
+2) Does the application have an accurate fix on your location?  Is your GPS or
+network location turned on?&lt;br/&gt;
+3) Do you have the correct time and timezone set?
+Sky Map needs to calculate Universal Time, and it needs your local time AND
+timezone to do this.  If your device has a SIM card then these will usually be
+set correctly.&lt;br/&gt;
+4) Do you have magnetic correction switched on?  In some parts of the world the
+difference between magnetic North and True North can be as much as 20 degrees.&lt;br/&gt;
+&lt;i&gt;The map does not move&lt;/i&gt;&lt;br/&gt;
+Are you in manual mode?  If not, this could be due to an uncalibrated compass.
+Follow the steps above to \'unstick\' it.&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;Credits&lt;/b&gt;&lt;br/&gt;
+&lt;i&gt;Engineering and Design&lt;/i&gt;&lt;br/&gt;
+Brent Bryan, Dominic Widdows, Hector Ouilhet, James Powell, John Taylor,
+Kevin Serafini&lt;br/&gt;
+
+&lt;i&gt;Product Management&lt;/i&gt;&lt;br/&gt;
+Lior Ron&lt;br/&gt;
+
+&lt;i&gt;Public Relations&lt;/i&gt;&lt;br/&gt;
+Aaron Stein, Erin Gleason&lt;br/&gt;
+
+&lt;i&gt;Product Marketing&lt;/i&gt;&lt;br/&gt;
+Effie Seiberg, Linda Tong&lt;br/&gt;
+
+&lt;i&gt;Translations&lt;/i&gt;&lt;br/&gt;
+Jelena Oertel&lt;br/&gt;&lt;br/&gt;
+
+
+&lt;b&gt;Acknowledgments&lt;/b&gt;&lt;br/&gt;
+Sky Map is based on data from:&lt;br/&gt;
+Centre de Donnees astronomiques de Strasbourg (http://cdsweb.u-strasbg.fr/)&lt;br/&gt;
+The Bright Star Catalogue, 5th Revised Ed. (Hoffleit D., Warren Jr W.H.)&lt;br/&gt;
+The HYG Database, HYG v1.0. (http://www.astronexus.com/)&lt;br/&gt;
+History and Accurate Positions for the NGC/IC Objects (Harold G. Corwin Jr)&lt;br/&gt;
+Revised New General Catalogue of Nonstellar Astronomical Objects
+(Sulentic J.W., Tifft W.G.)&lt;br/&gt;
+SFA Star Charts
+(http://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html)&lt;br/&gt;
+Positions of Solar System Objects are calculated from data provided by the USNO
+(http://www.usno.navy.mil/USNO/astronomical-applications)&lt;br/&gt;
+Spherical coverage data obtained from
+(http://www2.research.att.com/~njas/coverings)&lt;br/&gt;
+Hubble Images provided by NASA\'s Space Telescope Science Institute
+(http://hubblesite.org/)&lt;br/&gt;
+Meteor shower data from the International Meteor Organization
+(http://www.imo.net/data)&lt;br/&gt;
+</string>
+</resources>
+

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- The main time player layout. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:stardroid="http://schemas.android.com/apk/res/com.google.android.stardroid"
+    android:id="@+id/time_player_view"
+    android:orientation="vertical"
+    android:padding="1dip"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#20990099">
+
+ <!-- Top bar with icon, status message, time, and cancel button. -->
+ <RelativeLayout
+    android:orientation="vertical"
+    android:padding="1dip"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#20990099">
+
+  <ImageView
+    android:id="@+id/time_travel_icon"
+    android:layout_width="34dip"
+    android:layout_height="wrap_content"
+    android:src="@drawable/time_travel_small_icon"
+    android:paddingTop="10dip"/>
+
+  <TextView
+    android:id="@+id/time_travel_status_label"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="Time travel: Fill in label ..."
+    android:layout_toRightOf="@id/time_travel_icon"
+    android.paddingLeft="10dip"
+    android:textAppearance="?android:attr/textAppearanceMedium"
+    android:layout_marginLeft="2dip"
+    />
+
+  <TextView
+    android:id="@+id/time_travel_time_readout"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="Fill in today's date ..."
+    android:layout_below="@id/time_travel_status_label"
+    android:layout_marginLeft="34dip"
+    android:textAppearance="?android:attr/textAppearanceSmall"
+    />
+
+  <ImageButton
+    android:id="@+id/time_player_close"
+    android:background="@android:color/transparent"
+    android:clickable="true"
+    android:layout_width="32dip"
+    android:layout_height="wrap_content"
+    android:src="@drawable/time_travel_close"
+    android:layout_alignParentRight="true"
+    />
+  </RelativeLayout>
+
+ <!-- Bottom bar with play controls and play status message. -->
+ <LinearLayout
+    android:id="@+id/time_player_controls_bar"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:background="@drawable/time_travel_bar"
+    android:layout_alignParentBottom="true"
+    android:gravity="bottom"
+    android:layout_height="34dip"
+    android:layout_gravity="bottom">
+
+  <ImageButton
+    android:id="@+id/time_player_play_backwards"
+    android:background="@android:color/transparent"
+    android:clickable="true"
+    android:layout_width="32dip"
+    android:layout_height="32dip"
+    android:src="@drawable/timetravel_back_btn"
+    android:layout_marginLeft="5dip"
+    android:layout_marginRight="18dip"
+    android:layout_marginBottom="3dip"
+    />
+
+  <ImageButton
+    android:id="@+id/time_player_play_stop"
+    android:background="@android:color/transparent"
+    android:clickable="true"
+    android:layout_width="32dip"
+    android:layout_height="32dip"
+    android:src="@drawable/timetravel_stop_btn"
+    android:layout_marginRight="18dip"
+    android:layout_marginBottom="1dip"
+    />
+
+  <ImageButton
+    android:id="@+id/time_player_play_forwards"
+    android:background="@android:color/transparent"
+    android:clickable="true"
+    android:layout_width="32dip"
+    android:layout_height="32dip"
+    android:src="@drawable/timetravel_fwd_btn"
+    android:layout_marginRight="1dip"
+    android:layout_marginBottom="3dip"
+    />
+
+  <TextView
+    android:id="@+id/time_travel_speed_label"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Traveling @ 1 day/sec"
+    android:textAppearance="?android:attr/textAppearanceSmall"
+    android:paddingLeft="8dip"
+    android:paddingBottom="10dip"
+    />
+
+ </LinearLayout>
+
+</LinearLayout>

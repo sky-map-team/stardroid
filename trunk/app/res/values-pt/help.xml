@@ -1,0 +1,93 @@
+<resources><string name="help_text" translation_description="Please do not change the &lt; and &gt; markup">&lt;big&gt;&lt;b&gt;Google Sky Map para Android&lt;/b&gt;&lt;/big&gt;&lt;br/&gt;
+&lt;i&gt;Versão %s&lt;/i&gt;&lt;br/&gt;
+
+&lt;i&gt;http://www.google.com/sky/skymap&lt;/i&gt;&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;Apresentação e início rápido&lt;/b&gt;&lt;br/&gt;
+O Google Sky Map transforma seu celular Android em uma janela para o céu noturno. Ao apontar o telefone para cima, você verá um mapa das estrelas, constelações e planetas mais brilhantes daquela parte do céu.&lt;br/&gt;Da próxima vez que você vir uma estrela brilhante e quiser saber seu nome, use o Google Sky Map!&lt;br/&gt;
+
+&lt;b&gt;Camadas visíveis&lt;/b&gt;&lt;br/&gt;
+
+O Google Sky Map organiza os objetos mostrados em camadas. Cada camada pode ser ativada ou desativada usando os controles na tela. As camadas são:&lt;br/&gt;
+      Estrelas&lt;br/&gt;
+      Constelações&lt;br/&gt;
+      Objetos Messier&lt;br/&gt;
+      Planetas&lt;br/&gt;
+      Grade de ascensão reta e declinação&lt;br/&gt;
+      Horizonte e pontos cardeais&lt;br/&gt;&lt;br/&gt;
+As estrelas mais brilhantes e as constelações mais proeminentes são nomeadas, assim como os planetas. Os planetas são exibidos como imagens, maiores do que o tamanho real. O horizonte é representado por uma linha reta. A não ser que você viva em algum lugar completamente plano e sem construções, é provável que o Google Sky Map mostre objetos acima da linha do horizonte que na realidade você não consegue enxergar.&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;Controles na tela&lt;/b&gt;&lt;br/&gt;
+Toque na tela para mostrar os controles na tela. Em um lado da tela ficam os botões para alternar as camadas descritas acima. Eles apresentam cor laranja quando as camadas estão ativadas e branca quando estão desativadas.&lt;br/&gt;
+
+Na parte inferior da tela ficam os controles do zoom, e um botão para alternar entre os modos automático e manual.&lt;br/&gt;&lt;br/&gt;
+&lt;b&gt;Modos de navegação&lt;/b&gt;&lt;br/&gt;
+Assim que é instalado o Google Sky Map fica em Modo automático e usa os sensores do telefone para mostrar a você um mapa do céu na direção em que você está segurando o telefone. Ao trocar para o Modo manual, você pode arrastar o mapa com o dedo para explorar o céu. Mova o trackball ou o teclado para a esquerda e para a direita para girar o mapa. Em telefones multitoque, você também pode girar o mapa com dois dedos e fazer um movimento de pinça para aumentar ou diminuir o zoom.
+&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;Pesquisa&lt;/b&gt;&lt;br/&gt;
+O Google Sky Map ajuda você a responder à pergunta \"Qual o nome daquela estrela ali?\". Ele também pode responder à pergunta \"Onde está ...?\". Acesse a função de pesquisa por meio do botão menu do telefone ou por meio da Caixa de pesquisa rápida diretamente na Área de trabalho. Comece digitando o nome do planeta, estrela ou constelação que você deseja encontrar e o Google Sky Map fornecerá uma lista dos itens correspondentes à pesquisa. Selecione um e o Google Sky Map exibirá um círculo de segmentação e uma seta mostrando a você como se movimentar e como mover o telefone para encontrar o objeto. Conforme você move o telefone e se aproxima da área em destaque, o círculo terá sua cor alterada de azul para vermelho, ficando laranja por fim, quando o objeto estiver no seu campo de visão.&lt;br/&gt;
+Se você estiver no Modo manual, o Google Sky Map simplesmente moverá o mapa para mostrar o objeto para você.&lt;br/&gt;
+Para sair do Modo de pesquisa, toque na pequena cruz no canto da tela.&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;Viagem no tempo (Novo!)&lt;/b&gt;&lt;br/&gt;
+
+O modo Viagem no tempo permite que você utilize o Google Sky Map para ver o céu em outras datas além do presente. Selecione \"Viagem no tempo\" no menu principal e selecione uma das \"Datas populares\" ou escolha sua própria data e hora utilizando as caixas de diálogo \"Alterar a data\" ou \"Alterar a hora\". As seleções estão limitadas aos anos entre 1900 e 2100 devido a limitações de precisão, causadas principalmente pela influência gravitacional de Júpiter. Quando estiver pronto, pressione \"Ir\" para voar no tempo até seu destino. Seu Google Sky Map agora está no modo de viagem no tempo, exibindo a data que você está visitando e os controles para avançar ou voltar no tempo a partir desse ponto. Clique uma vez nesses botões para começar a se mover devagar pelo tempo, e várias vezes para aumentar a velocidade da viagem.&lt;br/&gt;
+
+A Viagem no tempo pode ser usada para responder perguntas como \"O que poderei ver logo após o pôr do sol esta noite?, \"Quando terei uma boa chance de ver Mercúrio?\" e \"De acordo com Hesiod, quando devo colher minhas uvas?\"&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;Galeria Hubble&lt;/b&gt;&lt;br/&gt;
+O Google Sky Map contém uma subcoleção da Galeria Hubble do Google Sky. Para acessar a Galeria, selecione o item \"Galeria\" no menu. Dentro da Galeria é possível navegar pelas imagens disponíveis ao rolar a tela com o dedo. Ao tocar na miniatura de uma imagem, o Google Sky Map mostra a imagem inteira. Se você tocar no botão \"Pesquisar\", o Google Sky Map irá alternar para o modo de Pesquisa para localizar o objeto que corresponde à imagem.&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;Modo de visão noturna&lt;/b&gt;&lt;br/&gt;
+O Modo de visão noturna foi projetado para proteger seus olhos já adaptados à escuridão. Quando você selecionar a opção \"Visão noturna\" do menu, o Google Sky Map exibirá o mapa em uma cor vermelha, diminuirá a iluminação da tela e desligará a luz de fundo dos botões. Selecione a opção novamente para voltar para as cores normais.&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;Como definir seu local&lt;/b&gt;&lt;br/&gt;
+O Google Sky Map precisa saber seu local aproximado para conseguir mostrar a você o mapa correto das estrelas. Por padrão, essa informação é determinada a partir da rede do seu celular. Se você estiver fora do alcance, ou estiver com a localização pela rede desativada, ele usará o GPS do seu telefone. Você também pode definir seu local manualmente por meio do menu de configurações, seja fornecendo o nome de um lugar ou sua latitude e longitude (em graus). O Google Sky Map exige uma conexão de dados para determinar sua latitude e longitude a partir do nome do lugar.&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;Solução de problemas e limitações&lt;/b&gt;&lt;br/&gt;
+&lt;i&gt;O mapa não está preciso.&lt;/i&gt;&lt;br/&gt;
+Se você descobrir que o mapa não está alinhado com precisão ao céu de verdade, pode haver uma série de razões para isso:&lt;br/&gt;
+1) Sua bússola está calibrada? Tente segurar o telefone e girar o pulso na forma de um número oito para calibrá-la. Pode ser necessário repetir o processo de vez em quando – esse é um recurso do telefone, e não do Google Sky Map.&lt;br/&gt;
+2) O aplicativo está com a informação exata sobre seu local? A definição de local com base na sua rede ou GPS está ativada?&lt;br/&gt;
+3) Você está com a hora e o fuso horário definidos corretamente?
+O Google Sky Map precisa calcular a Hora universal, e precisa do seu horário local E do fuso horário para fazê-lo. Se seu aparelho tiver um cartão SIM essas informações geralmente estão definidas corretamente.&lt;br/&gt;
+4) Você está com a correção magnética ativada? Em algumas partes do mundo a diferença entre o norte magnético e o norte real pode chegar até a 20 graus.&lt;br/&gt;
+&lt;i&gt;O mapa não se move&lt;/i&gt;&lt;br/&gt;
+Você está no modo manual? Se não estiver, isso pode ocorrer devido a uma bússola não calibrada.
+Siga as etapas acima para que ele comece a se movimentar.&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;Créditos&lt;/b&gt;&lt;br/&gt;
+&lt;i&gt;Engenharia e Design&lt;/i&gt;&lt;br/&gt;
+Brent Bryan, Dominic Widdows, Hector Ouilhet, James Powell, John Taylor,
+Kevin Serafini&lt;br/&gt;
+
+&lt;i&gt;Gerenciamento do produto&lt;/i&gt;&lt;br/&gt;
+Lior Ron&lt;br/&gt;
+
+&lt;i&gt;Relações públicas&lt;/i&gt;&lt;br/&gt;
+Aaron Stein, Erin Gleason&lt;br/&gt;
+
+&lt;i&gt;Marketing do produto&lt;/i&gt;&lt;br/&gt;
+Effie Seiberg, Linda Tong&lt;br/&gt;
+
+&lt;i&gt;Traduções&lt;/i&gt;&lt;br/&gt;
+Jelena Oertel&lt;br/&gt;&lt;br/&gt;
+
+
+&lt;b&gt;Agradecimentos&lt;/b&gt;&lt;br/&gt;
+O Google Sky Map se baseia em dados do:&lt;br/&gt;
+Centre de Donnees astronomiques de Strasbourg (http://cdsweb.u-strasbg.fr/)&lt;br/&gt;
+The Bright Star Catalogue, 5th Revised Ed. (Hoffleit D., Warren Jr W.H.)&lt;br/&gt;
+The HYG Database, HYG v1.0. (http://www.astronexus.com/)&lt;br/&gt;
+History and Accurate Positions for the NGC/IC Objects (Harold G. Corwin Jr)&lt;br/&gt;
+Revised New General Catalogue of Nonstellar Astronomical Objects
+(Sulentic J.W., Tifft W.G.)&lt;br/&gt;
+SFA Star Charts
+(http://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html)&lt;br/&gt;
+As posições dos objetos do Sistema solar são calculadas a partir de dados fornecidos pelo USNO
+(http://www.usno.navy.mil/USNO/astronomical-applications)&lt;br/&gt;
+Os dados de cobertura esférica são obtidos em
+(http://www2.research.att.com/~njas/coverings)&lt;br/&gt;
+As imagens do Hubble são fornecidas pelo Space Telescope Science Institute da NASA 
+http://hubblesite.org/)&lt;br/&gt;</string></resources>

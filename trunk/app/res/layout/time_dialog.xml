@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:stardroid="http://schemas.android.com/apk/res/com.google.android.stardroid"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:id="@+id/time_dialog_view"
+  android:background="#00000000"
+  android:theme="@android:style/Theme.Black"
+  android:orientation="vertical"
+  >
+
+  <!-- Display the date where the user is right now. -->
+  <LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:theme="@android:style/Theme.Black"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:paddingLeft="5dip"
+    android:paddingBottom="10dip">
+    <TextView
+      android:id="@+id/dateDisplay"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/now_visiting"/>
+  </LinearLayout>
+
+  <!-- Popular dates prompt and drop down -->
+  <TextView
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/popular_dates_prompt"
+    android:paddingLeft="5dip"
+    android:paddingBottom="5dip"
+    />
+
+  <LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <LinearLayout
+      android:layout_height="fill_parent"
+      android:layout_width="10px"/>
+    <Spinner
+      android:id="@+id/popular_dates_spinner"
+      android:layout_weight="1"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:prompt="@string/popular_dates_prompt"
+      />
+    <LinearLayout
+      android:layout_height="fill_parent"
+      android:layout_width="40px"/>
+  </LinearLayout>
+
+  <!-- Custom date prompt -->
+  <TextView
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:text="@string/custom_date_prompt"
+     android:paddingLeft="5dip"
+     android:paddingTop="15dip"
+     android:paddingBottom="5dip"
+     />
+
+  <!-- Custom date buttons -->
+  <LinearLayout
+     android:layout_width="fill_parent"
+     android:layout_height="wrap_content"
+     android:orientation="horizontal"
+     android:paddingLeft="5dip"
+     android:paddingRight="5dip"
+     >
+
+    <!-- Setting width to 0px and weight to 1 ensures that width is the same for both buttons. -->
+    <Button android:id="@+id/pickDate"
+            android:layout_height="wrap_content"
+            android:layout_width="0px"
+            android:layout_weight="1"
+            android:text="@string/change_date_prompt"
+            />
+
+    <Button android:id="@+id/pickTime"
+            android:layout_height="wrap_content"
+            android:layout_width="0px"
+            android:layout_weight="1"
+            android:text="@string/change_time_prompt"
+            />
+  </LinearLayout>
+
+  <!-- Bottom bar with "Go" and "Cancel" buttons. -->
+  <LinearLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:background="@android:drawable/bottom_bar"
+      android:orientation="horizontal"
+      android:paddingTop="5dip"
+      android:paddingLeft="5dip"
+      android:paddingRight="5dip"
+      >
+
+    <Button android:id="@+id/timeTravelGo"
+            android:layout_height="wrap_content"
+            android:layout_width="100px"
+            android:layout_weight="1"
+            android:text="@string/go"
+            />
+
+    <Button android:id="@+id/timeTravelCancel"
+            android:layout_height="wrap_content"
+            android:layout_width="100px"
+            android:layout_weight="1"
+            android:text="@string/cancel"
+            />
+
+  </LinearLayout>
+
+</LinearLayout>

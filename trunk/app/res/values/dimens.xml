@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <!--
+    Introduced to support TimeTravel changes. The policy of having these
+    values in a dimens.xml file is not implemented consistently throughout
+    stardroid package.
+  -->
+<resources>
+  <dimen name="menu_text_size">10pt</dimen>
+  <color name="menu_gray">#ff888888</color>
+</resources>

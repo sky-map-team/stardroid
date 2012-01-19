@@ -1,0 +1,147 @@
+<resources><string name="help_text" translation_description="Please do not change the &lt; and &gt; markup">&lt;big&gt;&lt;b&gt;Android용 Google 별지도&lt;/b&gt;&lt;/big&gt;&lt;br/&gt;
+&lt;i&gt;버전 %s&lt;/i&gt;&lt;br/&gt;
+
+&lt;i&gt;http://www.google.com/sky/skymap&lt;/i&gt;&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;소개 및 빠른 시작&lt;/b&gt;&lt;br/&gt;
+Google 별지도는 Android 휴대전화를 밤하늘의 창으로 
+바꿔줍니다. 휴대전화로 위를 가리키면 그 위치의 하늘에 있는 
+가장 밝은 별, 별자리 및 행성이 표시됩니다.&lt;br/&gt;다음 번에 
+밝은 별을 보았을 때 이름을 알고 싶으면 별지도를 사용하세요&lt;br/&gt;
+
+&lt;b&gt;표시 레이어&lt;/b&gt;&lt;br/&gt;
+
+Google 별지도에 표시되는 천체는 레이어로 구성됩니다. 화면에 표시되는 
+컨트롤을 사용하면 레이어를 전환할 수 있으며 다음과 같은 레이어가 있습니다.&lt;br/&gt;
+      별&lt;br/&gt;
+      별자리&lt;br/&gt;
+      메시에 천체&lt;br/&gt;
+      행성&lt;br/&gt;
+      적경 및 적위 그리드&lt;br/&gt;
+      수평선 및 기본 방위&lt;br/&gt;&lt;br/&gt;
+가장 밝은 별과 주요 별자리에는 라벨이 표시됩니다. 행성도 
+마찬가지입니다. 행성은 실제 크기보다 큰 이미지로 표시됩니다. 
+수평선은 직선으로 표시됩니다. 완전히 평평하고 건물이 없는 곳에 
+사는 경우가 아니라면 별지도는 실제로는 보이지 않는 수평선 위에 
+천체를 표시하게 됩니다.
+&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;화면 컨트롤&lt;/b&gt;&lt;br/&gt;
+화면을 탭하면 화면 컨트롤이 표시됩니다. 화면 한 쪽에는 위에 설명된 레이어에 대한 
+사용/사용 중지 버튼이 있습니다.  버튼은 레이어를 사용하는 경우에는 주황색, 
+사용 중지한 경우에는 흰색으로 표시됩니다.&lt;br/&gt;
+
+화면 아래쪽에는 확대/축소 컨트롤과 자동 및 수동 모드 사이를 전환하는 
+사용/사용 중지 버튼이 있습니다.&lt;br/&gt;&lt;br/&gt;
+&lt;b&gt;탐색 모드&lt;/b&gt;&lt;br/&gt;
+별지도를 처음 설치하면 자동 모드 상태이며 휴대전화의 센서를 사용하여 
+휴대전화를 잡고 있는 방향으로 별지도가 표시됩니다. 수동 모드로 전환하면 
+손가락으로 지도를 드래그하여 하늘을 살펴볼 수 있습니다. 지도를 회전하려면 
+트랙볼이나 D 패드를 왼쪽 및 오른쪽으로 움직입니다. 멀티터치폰에서는 
+두 손가락으로 지도를 회전시킬 수도 있고 손가락을 오므리고 벌려 확대하거나 축소할 수 있습니다.&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;검색&lt;/b&gt;&lt;br/&gt;
+별지도를 사용하면 \'저 별은 무슨 별인가요?\'라는 질문에 대한 답을 
+찾을 수 있습니다. 또한 별자리나 행성의 위치에 대한 답을 얻을 수 있습니다. 
+휴대전화의 메뉴 버튼으로 검색 기능을 사용하거나 바탕화면에서 바로 
+빠른 검색창을 사용하세요. 찾을 행성, 별 또는 별자리의 이름을 입력하기 
+시작하면 별지도가 일치하는 검색 항목의 목록을 제공합니다. 항목을 선택하면 
+휴대전화 및 사용자 자신을 어떻게 움직여서 대상 원과 천체를 찾을 수 있는지를 
+보여주는 화살표가 표시됩니다. 휴대전화를 움직여서 대상에 가까워지면 
+원이 파란색에서 빨간색으로 변하며 천체가 시야 내에 들어오게 되면 
+주황색으로 변합니다.&lt;br/&gt;
+수동 모드 상태인 경우에는 
+지도를 움직여서 천체를 표시합니다.&lt;br/&gt;
+검색 모드를 종료하려면 화면 모서리의 작은 십자가를 탭합니다.&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;시간 여행(New!)&lt;/b&gt;&lt;br/&gt;
+
+시간 여행 모드를 이용하면 별지도에서 과거나 미래의 하늘 모습을 
+살펴볼 수 있습니다. 기본 메뉴에서 ‘시간 여행’을 선택하고 \'날짜 변경\' 및 
+\'시간 변경\' 대화상자를 이용하여 주목할 만한 사건이 있었던 날짜나 원하는 
+날짜를 선택하세요. 주로 목성 중력의 영향으로 야기되는 
+정확도의 한계로 인해 선택 가능한 연도는 1900년에서 2100년으로 
+제한됩니다. 이제 \'이동!\'을 눌러 가고자 하는 시점으로 이동해 보세요. 
+시간 여행 모드에서 별지도는 시간을 앞으로 및 뒤로 \'이동\'하기 위한 
+컨트롤과 함께 방문 날짜를 표시합니다. 이러한 버튼을 누르면 
+시간을 느리게 이동할 수도 있고 몇 배 더 빠르게 이동할 수도 있습니다.&lt;br/&gt;
+
+시간 여행은 \'오늘 저녁 일몰 직후에 어떤 것을 볼 수 있을까? \', \'다음 번에 
+수성을 관측할 가능성이 높은 때는 언제일까? \', \'포도 수확의 적기는 언제일까?\'와 
+같은 다양한 질문에 대한 답을 제공할 수 있습니다. &lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;허블 갤러리&lt;/b&gt;&lt;br/&gt;
+별지도에는 Google 스카이의 허블 갤러리가 일부 포함되어 있습니다. 메뉴에서 
+갤러리 항목을 선택하면 갤러리에 액세스할 수 있습니다. 갤러리에서는 손가락으로 
+스크롤하여 제공되는 이미지를 찾아볼 수 있습니다. 
+미리보기 이미지 중 하나를 탭하면 전체 크기의 이미지가 
+표시됩니다.&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;야간 투시경 모드&lt;/b&gt;&lt;br/&gt;
+야간투시경 모드는 암순응 상태인 눈을 보호하도록 설계되었습니다. 
+야간투시경 메뉴 옵션을 선택하면 별지도의 모든 개체가 빨간색으로 
+표시됩니다. 옵션을 다시 선택하면 일반 색상으로 되돌아갑니다 
+&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;위치 설정&lt;/b&gt;&lt;br/&gt;
+별지도에서 올바른 별자리 지도를 표시하려면 대략적인 현재 위치가 필요합니다. 
+기본적으로 현재 위치는 이동통신망에서 결정됩니다. 범위를 벗어나 있거나 네트워크 
+위치를 사용하지 않도록 설정되어 있으면 휴대전화의 GPS를 통해 위치가 결정됩니다. 
+또한 설정 메뉴에서 위치 이름이나 위도 및 경도(도 단위)를 제공하여 위치를 수동으로 
+설정할 수도 있습니다. 별지도에서 장소 이름으로 위도와 경도를 결정하려면 
+데이터 연결이 필요합니다. &lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;문제해결 및 제한사항&lt;/b&gt;&lt;br/&gt;
+&lt;i&gt;지도가 정확하지 않습니다.&lt;/i&gt;&lt;br/&gt;
+지도가 실제 하늘과 정확히 일치하지 않는 경우 다음과 같은 이유가 
+있을 수 있습니다.&lt;br/&gt;
+1) 나침반이 보정되어 있습니까? 휴대전화기를 잡고 손목을 8자 모양으로 돌려서 
+나침반을 보정합니다. 가끔씩 이 작업을 반복해야 할 수도 있습니다. 이것은 
+별지도가 아닌 휴대전화기에서 제공하는 기능입니다.&lt;br/&gt;
+2) 응용프로그램에서 현재 위치가 올바르게 수정되어 있습니까? GPS 또는 
+네트워크 위치가 사용하도록 설정되어 있습니까?&lt;br/&gt;
+3) 시간 및 시간대가 올바르게 설정되어 있습니까?
+별지도는 만국 표준시를 계산해야 하므로 현지 시간과 시간대가 
+필요합니다. 기기에 SIM 카드가 있는 경우에는 일반적으로 
+올바르게 설정되어 있습니다 &lt;br/&gt;
+4) 자기 수정이 설정되어 있습니까? 세계의 일부 지역에서는 
+자북과 진북 간에 20도에 이르는 차이가 있을 수 있습니다.&lt;br/&gt;
+&lt;i&gt;지도가 움직이지 않습니다.&lt;/i&gt;&lt;br/&gt;
+수동 모드 상태입니까? 그렇지 않다면 나침반이 
+보정되지 않았기 때문일 수도 있습니다.
+위의 단계에 따라 나침반이 \'움직이도록 하세요\'.&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;참여한 사람&lt;/b&gt;&lt;br/&gt;
+&lt;i&gt;엔지니어링 및 디자인&lt;/i&gt;&lt;br/&gt;
+Brent Bryan, Dominic Widdows, Hector Ouilhet, James Powell, John Taylor,
+Kevin Serafini&lt;br/&gt;
+
+&lt;i&gt;제품 관리&lt;/i&gt;&lt;br/&gt;
+Lior Ron&lt;br/&gt;
+
+&lt;i&gt;홍보&lt;/i&gt;&lt;br/&gt;
+Aaron Stein, Erin Gleason&lt;br/&gt;
+
+&lt;i&gt;제품 마케팅&lt;/i&gt;&lt;br/&gt;
+Effie Seiberg, Linda Tong&lt;br/&gt;
+
+&lt;i&gt;번역&lt;/i&gt;&lt;br/&gt;
+Jelena Oertel&lt;br/&gt;&lt;br/&gt;
+
+
+&lt;b&gt;데이터 제공&lt;/b&gt;&lt;br/&gt;
+별지도는 다음에서 제공하는 데이터를 기반으로 합니다.&lt;br/&gt;
+스트라스부르 천문 데이터 센터(Centre de Donnees astronomiques de Strasbourg)(http://cdsweb.u-strasbg.fr/)&lt;br/&gt;
+The Bright Star Catalogue, 5번째 개정판(Hoffleit D., Warren Jr W.H.)&lt;br/&gt;
+The HYG Database, HYG v1.0. (http://www.astronexus.com/)&lt;br/&gt;
+History and Accurate Positions for the NGC/IC Objects (Harold G. Corwin Jr)&lt;br/&gt;
+Revised New General Catalogue of Nonstellar Astronomical Objects
+(Sulentic J.W., Tifft W.G.)&lt;br/&gt;
+SFA Star Charts
+(http://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html)&lt;br/&gt;
+태양계 천체의 위치는 USNO(http://www.usno.navy.mil/USNO/astronomical-applications)
+에서 제공한 데이터를 사용하여 계산됩니다.&lt;br/&gt;
+천구 데이터는 (http://www2.research.att.com/~njas/coverings)에서 
+제공됩니다.&lt;br/&gt;
+허블 이미지는 NASA의 STSI(우주망원경과학연구소)
+(http://hubblesite.org/)에서 제공됩니다.&lt;br/&gt;</string></resources>

@@ -1,0 +1,151 @@
+<resources><string name="help_text" translation_description="Please do not change the &lt; and &gt; markup">&lt;big&gt;&lt;b&gt;Android版Google Skyマップ&lt;/b&gt;&lt;/big&gt;&lt;br/&gt;
+バージョン%s&lt;i&gt;&lt;/i&gt;&lt;br/&gt;
+
+&lt;i&gt;http://www.google.co.jp/sky/skymap&lt;/i&gt;&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;クイックスタートガイド&lt;/b&gt;&lt;br/&gt;
+Google Skyマップを使うと、Android搭載携帯で天体観測ができます。
+端末を空にかざすと、その方向にあるひときわ明るい
+星や星座を示す地図が表示されます。&lt;br/&gt;輝く星を見てその名前を知りたくなったら、Skyマップで調べることができます。&lt;br/&gt;
+
+&lt;b&gt;表示可能なレイヤ&lt;/b&gt;&lt;br/&gt;
+
+Google Skyマップでは表示項目別のレイヤが用意されています。各レイヤは、
+画面上のコントロールを使用してON/OFFを切り替えることができます。レイヤには以下のものがあります:&lt;br/&gt;
+      恒星&lt;br/&gt;
+      星座&lt;br/&gt;
+      メシエ天体&lt;br/&gt;
+      惑星&lt;br/&gt;
+      赤経と赤緯のグリッド&lt;br/&gt;
+      地平線と基本方位&lt;br/&gt;&lt;br/&gt;
+ひときわ明るい恒星と有名な星座のほか、惑星についても名前が表示されます。
+惑星は実際に見えるより大きい画像で表示され、
+地平線は直線で表示されます。
+起伏や建物がある場所では見られないような
+地平線のすぐ近くの天体も、
+Skyマップでは表示できます。&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;画面上のコントロール&lt;/b&gt;&lt;br/&gt;
+画面上のコントロールを表示するには画面をタップします。画面の片側に表示されるアイコンで、
+上記のレイヤを切り替えることができます。有効になっているレイヤはオレンジで、
+無効になっているレイヤは白で表示されます。&lt;br/&gt;
+
+画面の下部にはズームコントロールと、自動と手動のモードを切り替えるコントロールが
+表示されます。&lt;br/&gt;&lt;br/&gt;
+&lt;b&gt;ナビゲーションモード&lt;/b&gt;&lt;br/&gt;
+Skyマップを初めてインストールした時点では自動モードになっており、端末をかざした方向の
+天体地図が内蔵センサーに基づいて表示されます。手動モードに切り替えると、
+指で地図をドラッグして天空を移動できます。地図を回転するには、トラックボールや
+D-padを左右に動かします。マルチタッチ対応の携帯の場合は、
+2本の指でマップを回転させたり、ピンチ操作で拡大/縮小したりできます。
+&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;検索&lt;/b&gt;&lt;br/&gt;
+Skyマップでは、見えている星の名前を知るだけでなく、
+目的の星の位置を探すこともできます。
+端末のMENUキー、またはデスクトップのクイック検索ボックスから
+直接検索機能を使用して、探したい惑星、恒星、星座の名前
+を入力していくと、入力中でも一致する天体の一覧が表示されます。
+天体を1つ選択すると、それを見つけるためのガイドとなる円と矢印がSkyマップに表示され、
+端末をどの方向に向けると天体が見つかるかがわかります。
+端末がその天体の方向に近づくと青で表示されていた円が赤になり、
+最終的にその天体が表示範囲に入ると円がオレンジになります。&lt;br/&gt;
+手動モードで検索すると、
+天体地図が動いて直接その天体が表示されます。&lt;br/&gt;
+検索モードを終了するには、画面の隅の小さい十字をタップします。&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;タイムトラベル（New!）&lt;/b&gt;&lt;br/&gt;
+
+Skyマップのタイムトラベルモードを使うと過去や未来の夜空を見ることができます。
+メインメニューから[タイムトラベル]を選択し、
+[人気の日付]から日付を選ぶか
+[日付の変更]および[時刻の変更]ダイアログで日付を変更します。
+指定できる範囲は1900～2100年に限定されています。
+これは主に、木星の重力の影響によって誤差が生じるためです。
+設定が完了したら、[Go!]をタップして時間旅行に飛び立ちましょう。
+Skyマップがタイムトラベルモードに切り替わり、指定した日付の空が表示されます。
+コントロールを使って時間を巻き戻したり先に進めたりできます。
+ボタンを1回タップすると時間がゆっくり移り変わり始め、
+続けてタップすると時間の移り変わりがだんだん速くなります。&lt;br/&gt;
+
+「今夜の日没後には何が見えるだろう」、
+「次に水星がきれいに見えるのはいつだろう」、
+このような疑問はタイムトラベルで解消できます。&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;ハッブルギャラリー&lt;/b&gt;&lt;br/&gt;
+Skyマップには、Google Skyのハッブルギャラリーから厳選された画像が含まれています。
+ギャラリーにアクセスするにはメニューから[ギャラリー]を選択します。
+ギャラリーに入ったら画面をスクロールしながら画像を閲覧できます。
+サムネイル画像をタップするとフルサイズの画像が表示されます。
+[検索]ボタンをタップすると検索モードに切り替わり、
+その画像に写っている天体を検索できます。&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;夜間モード&lt;/b&gt;&lt;br/&gt;
+夜間モードは、暗い所に慣れた目を保護するためのモードです。メニューから[夜間]
+オプションを選択すると、Skyマップがすべて赤で表示されて画面が少し暗くなり、
+ボタンのバックライトがOFFになります。
+元の色に戻すには、[夜間]をもう一度選択します。&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;現在地の設定&lt;/b&gt;&lt;br/&gt;
+天体地図を正しく表示するためには、おおよその現在地情報が必要になります。
+初期設定では、端末のネットワーク位置情報から現在地が判断されます。
+圏外にいる場合や、ネットワーク位置情報を無効にしている場合、
+端末のGPSが使用されます。手動で現在地を設定することも可能で、
+[設定]メニューから地名または緯度と経度を指定します。
+Skyマップで地名から現在地の緯度と経度を調べるには
+データ接続が必要です。&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;トラブルシューティングと制約&lt;/b&gt;&lt;br/&gt;
+地図が不正確である&lt;i&gt;&lt;/i&gt;&lt;br/&gt;
+地図と実際の空が正確に一致しない場合、
+次のような原因が考えられます:&lt;br/&gt;
+1)コンパスがずれている。コンパスを調整するには、端末を持って手首を8の字に
+回します。これを、間隔をおいて繰り返すことが必要な場合があります。
+これはSkyマップの機能ではなく、端末の機能です。&lt;br/&gt;
+2)Skyマップで現在地を正確に把握できていない。GPSまたはネットワーク位置
+情報が有効になっていない。&lt;br/&gt;
+3)正しい時刻とタイムゾーンを設定していない。
+Skyマップでは世界時を計算する必要があり、そのために現地時間と
+タイムゾーンの両方が必要になります。端末にSIMカードが装着されている場合、
+通常これは正しく設定されています。&lt;br/&gt;
+4)磁気補正をONにしていない。地域によっては、
+磁北と真北の差は20度にもなります。&lt;br/&gt;
+地図が動かない&lt;i&gt;&lt;/i&gt;&lt;br/&gt;
+手動モードになっていませんか。手動モードではない場合、コンパスがずれていることが
+原因の可能性があります。上記の方法で調整してください。&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;クレジット&lt;/b&gt;&lt;br/&gt;
+技術およびデザイン&lt;i&gt;&lt;/i&gt;&lt;br/&gt;
+Brent Bryan、Dominic Widdows、Hector Ouilhet、James Powell、John Taylor、
+Kevin Serafini&lt;br/&gt;
+
+製品管理&lt;i&gt;&lt;/i&gt;&lt;br/&gt;
+Lior Ron&lt;br/&gt;
+
+広報&lt;i&gt;&lt;/i&gt;&lt;br/&gt;
+Aaron Stein、Erin Gleason&lt;br/&gt;
+
+製品マーケティング&lt;i&gt;&lt;/i&gt;&lt;br/&gt;
+Effie Seiberg、Linda Tong&lt;br/&gt;
+
+翻訳&lt;i&gt;&lt;/i&gt;&lt;br/&gt;
+Jelena Oertel&lt;br/&gt;&lt;br/&gt;
+
+
+&lt;b&gt;謝辞&lt;/b&gt;&lt;br/&gt;
+Skyマップは下記のデータに基づいて作成しています:&lt;br/&gt;
+Centre de Donnees astronomiques de Strasbourg（http://cdsweb.u-strasbg.fr/）&lt;br/&gt;
+The Bright Star Catalogue, 5th Revised Ed.（Hoffleit D., Warren Jr W.H.）&lt;br/&gt;
+The HYG Database, HYG v1.0.（http://www.astronexus.com/）&lt;br/&gt;
+History and Accurate Positions for the NGC/IC Objects（Harold G. Corwin Jr）&lt;br/&gt;
+Revised New General Catalogue of Nonstellar Astronomical Objects（Sulentic J.W.、Tifft W.G.）&lt;br/&gt;
+SFA Star Charts（http://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html）&lt;br/&gt;
+太陽系の天体の位置は、USNO
+（http://www.usno.navy.mil/USNO/astronomical-applications）
+が提供するデータに基づいて計算しています。&lt;br/&gt;
+球面カバレッジのデータは
+（http://www2.research.att.com/~njas/coverings）
+に掲載されているものです。&lt;br/&gt;
+ハッブルの画像は、NASAの宇宙望遠鏡科学研究所
+（http://hubblesite.org/）
+から提供されたものです。&lt;br/&gt;</string></resources>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="popular_date_examples">
+        <item translation_description="The user's current time">Now</item>
+        <item>Next evening sunset</item>
+        <item>Next morning sunrise</item>
+        <item>Next full moon</item>
+        <item>Apollo 11 moon landing</item>
+        <item>Solar eclipse of May 29, 1919</item>
+    </string-array>
+    <string-array name="sensor_speed">
+        <item translation_description="Slow sensor speed">Slow</item>
+        <item translation_description="Normal sensor speed">Medium</item>
+        <item translation_description="Fast sensor speed">Fast</item>
+    </string-array>
+    <string-array name="sensor_damping">
+        <item translation_description="Standard sensor damping factor">Standard</item>
+        <item translation_description="High sensor damping factor">High</item>
+    </string-array>
+</resources>

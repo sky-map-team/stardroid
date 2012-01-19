@@ -1,0 +1,92 @@
+<resources><string name="help_text" translation_description="Please do not change the &lt; and &gt; markup">&lt;big&gt;&lt;b&gt;Google Sky Map pour Android&lt;/b&gt;&lt;/big&gt;&lt;br/&gt;
+&lt;i&gt;Version %s&lt;/i&gt;&lt;br/&gt;
+
+&lt;i&gt;http://www.google.com/sky/skymap&lt;/i&gt;&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;Introduction et démarrage rapide&lt;/b&gt;&lt;br/&gt;
+Google Sky Map transforme votre mobile Android en fenêtre ouverte sur l\'univers. Si vous dirigez votre téléphone vers le haut, vous verrez une carte des étoiles les plus brillantes, des constellations et des planètes dans la partie du ciel vers laquelle vous dirigez votre téléphone.&lt;br/&gt;Lorsque vous apercevez une étoile brillante et que vous voulez savoir quel est son nom, Sky Map vous aide à l\'identifier !&lt;br/&gt;
+
+&lt;b&gt;Données géographiques visibles&lt;/b&gt;&lt;br/&gt;
+
+Dans Google Sky Map, les objets sont organisés en différentes catégories, chacune pouvant être activée à l\'aide de commandes affichées à l\'écran. Vous pouvez ainsi accéder aux données géographiques suivantes :&lt;br/&gt;
+      Étoiles&lt;br/&gt;
+      Constellations&lt;br/&gt;
+      Objets de Messier&lt;br/&gt;
+      Planètes&lt;br/&gt;
+      Grille ascension droite et déclinaison&lt;br/&gt;
+      Horizon et points cardinaux&lt;br/&gt;&lt;br/&gt;
+Les noms des planètes, des étoiles les plus brillantes et des principales constellations apparaissent sur la carte. Les planètes s\'affichent sous forme d\'images dont la taille dépasse la taille réelle. L\'horizon est représenté par une ligne droite. À moins que vous ne viviez dans une région totalement plane et exempte d\'habitations, grâce à Sky Map, vous pourrez sans doute explorer des objets situés au-delà de la ligne d\'horizon et qu\'il vous est impossible d\'apercevoir.&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;Commandes affichées à l\'écran&lt;/b&gt;&lt;br/&gt;
+Pour afficher les commandes à l\'écran, vous devez appuyer sur ce dernier. Vous pouvez activer/désactiver les données géographiques décrites ci-dessus, à partir d\'un côté de l\'écran. Les données géographiques activées sont signalées en orange. Lorsqu\'elles sont désactivées, elles apparaissent en blanc.&lt;br/&gt;
+
+Des commandes permettant de zoomer et de basculer en mode automatique ou manuel sont disponibles en bas de l\'écran.&lt;br/&gt;&lt;br/&gt;
+&lt;b&gt;Modes de navigation&lt;/b&gt;&lt;br/&gt;
+Par défaut, Sky Map se lance en mode automatique et utilise les capteurs du téléphone pour afficher une carte de la partie du ciel vers laquelle ce dernier est dirigé. Lorsque vous basculez en mode manuel, vous pouvez explorer le ciel en faisant glisser la carte à l\'aide de votre doigt. Il est possible de faire pivoter la carte vers la gauche ou vers la droite au moyen du trackball ou du pavé de navigation. Sur les téléphones dotés de la fonctionnalité multitouch, utilisez deux doigts pour faire pivoter la carte et pincez l\'écran pour effectuer un zoom avant ou arrière.
+&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;Recherche&lt;/b&gt;&lt;br/&gt;
+Certaines étoiles vous sont inconnues ? Grâce à Sky Map, vous pouvez les identifier facilement. Vous avez également la possibilité de rechercher un objet. Il vous suffit d\'accéder à la fonction de recherche à l\'aide du bouton de menu de votre mobile ou via le champ de recherche rapide, directement sur le bureau. Commencez à saisir le nom de la planète, de l\'étoile ou de la constellation de votre choix. Sélectionnez l\'objet souhaité dans la liste de correspondances renvoyée par Sky Map. Une cible et une flèche s\'affichent et vous indiquent dans quelle direction vous déplacer, vous et votre téléphone, pour localiser l\'objet. Lorsque vous vous rapprochez de la cible, le cercle bleu devient rouge. Il s\'affiche en orange dès lors que l\'objet pénètre votre champ de vision.&lt;br/&gt;
+En mode manuel, Sky Map déplace simplement la carte pour vous présenter l\'objet.&lt;br/&gt;
+Pour quitter le mode Recherche, appuyez sur la petite croix dans l\'angle de l\'écran.&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;Voyage dans le temps (Nouveau !)&lt;/b&gt;&lt;br/&gt;
+
+Grâce au mode Voyage dans le temps de Sky Map, découvrez à quoi ressemblait le ciel dans le passé et ce qu\'il deviendra dans le futur. Sélectionnez \"Voyage dans le temps\" dans le menu principal, puis choisissez l\'une des dates populaires ou saisissez une autre date à l\'aide des boîtes de dialogue \"Changer la date\" et \"Changer l\'heure\". La sélection est limitée aux années 1900 à 2100 pour des raisons de précision, dues principalement à l\'influence gravitationnelle de Jupiter. Lorsque vous avez terminé, appuyez sur \"Atteindre\" pour voyager dans le temps vers votre destination. Sky Map passe alors en mode \"Voyage dans le temps\" et affiche la date que vous avez choisi d\'explorer. Vous avez également à votre disposition des commandes pour avancer ou reculer dans le temps à partir de cette date.
+Cliquez sur ces boutons une fois pour voyager lentement ou plusieurs fois pour aller de plus en plus vite.&lt;br/&gt;
+
+Vous pouvez utiliser le mode Voyage dans le temps pour répondre à diverses questions : \"Quelle sera la carte du ciel ce soir, une fois que le soleil se sera couché ?\", \"Quand Mercure sera-t-elle à nouveau visible ?\", \"D\'après les étoiles, quand dois-je commencer les vendanges ?\", etc.&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;Galerie Hubble&lt;/b&gt;&lt;br/&gt;
+Sky Map contient une partie de la galerie Hubble Google Sky. Pour accéder à cette galerie, sélectionnez-la dans le menu. Une fois dans la galerie, vous pouvez accéder aux images disponibles en les faisant défiler avec votre doigt. Pour afficher une image en taille normale, appuyez sur sa vignette. Pour passer en mode Recherche et rechercher l\'objet correspondant à l\'image, appuyez sur le bouton Rechercher.&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;Mode Vision nocturne&lt;/b&gt;&lt;br/&gt;
+Le mode Vision nocturne vise à protéger vos yeux dans le noir. Lorsque vous sélectionnez cette option de menu, Sky Map affiche la carte en rouge, réduit la luminosité de l\'écran et désactive le rétroéclairage des touches. Pour revenir aux couleurs normales, sélectionnez de nouveau cette option.&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;Définition de votre position&lt;/b&gt;&lt;br/&gt;
+Sky Map se base sur votre position approximative pour afficher la carte du ciel appropriée. Par défaut, cette position est déterminée à partir du réseau de votre mobile. Si vous vous situez en dehors de la zone de couverture ou si la géolocalisation est désactivée, le système GPS de votre téléphone indique votre position. Vous pouvez aussi définir manuellement votre position via le menu \"Paramètres\", en indiquant un nom de lieu ou en précisant la latitude et la longitude (en degrés). Pour déterminer la latitude et la longitude d\'un lieu spécifique, Sky Map exige une connexion de données.&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;Dépannage et limites&lt;/b&gt;&lt;br/&gt;
+&lt;i&gt;La carte est inexacte.&lt;/i&gt;&lt;br/&gt;
+Pour un certain nombre de raisons, la carte peut ne pas correspondre au ciel que vous observez :&lt;br/&gt;
+1) Votre boussole est-elle étalonnée ? Pour l\'étalonner, formez des huit avec votre téléphone. Vous devrez peut-être répéter l\'opération à différents intervalles. Cette fonctionnalité est propre à votre téléphone, et non à Sky Map.&lt;br/&gt;
+2) L\'application est-elle en mesure de déterminer précisément votre position ? Votre GPS ou la géolocalisation sont-ils activés ?&lt;br/&gt;
+3) L\'heure et le fuseau horaire définis sur votre téléphone sont-ils corrects ? L\'application Sky Map a besoin de calculer l\'heure universelle. Pour ce faire, elle doit connaître votre heure locale ET votre fuseau horaire. Si votre appareil est équipé d\'une carte SIM, en général, ces informations sont correctes.&lt;br/&gt;
+4) La correction magnétique est-elle activée ? Dans certaines régions du monde, l\'écart entre le Nord magnétique et le Nord géographique peut atteindre 20 degrés.&lt;br/&gt;
+&lt;i&gt;La carte ne bouge pas.&lt;/i&gt;&lt;br/&gt;
+Êtes-vous en mode manuel ? Si vous ne l\'êtes pas, il s\'agit peut-être d\'un problème d\'étalonnage de la boussole. Pour résoudre le problème, suivez les étapes ci-dessus.&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;Crédits&lt;/b&gt;&lt;br/&gt;
+&lt;i&gt;Ingénierie et conception&lt;/i&gt;&lt;br/&gt;
+Brent Bryan, Dominic Widdows, Hector Ouilhet, James Powell, John Taylor,
+Kevin Serafini&lt;br/&gt;
+
+&lt;i&gt;Gestion des produits&lt;/i&gt;&lt;br/&gt;
+Lior Ron&lt;br/&gt;
+
+&lt;i&gt;Relations publiques&lt;/i&gt;&lt;br/&gt;
+Aaron Stein, Erin Gleason&lt;br/&gt;
+
+&lt;i&gt;Marketing produits&lt;/i&gt;&lt;br/&gt;
+Effie Seiberg, Linda Tong&lt;br/&gt;
+
+&lt;i&gt;Traductions&lt;/i&gt;&lt;br/&gt;
+Jelena Oertel&lt;br/&gt;&lt;br/&gt;
+
+
+&lt;b&gt;Remerciements&lt;/b&gt;&lt;br/&gt;
+Sky Map fait appel aux sources de données suivantes :&lt;br/&gt;
+Centre de Données astronomiques de Strasbourg (http://cdsweb.u-strasbg.fr/)&lt;br/&gt;
+The Bright Star Catalogue, 5th Revised Ed. (Hoffleit D., Warren Jr W.H.)&lt;br/&gt;
+Base de données HYG, HYG v1.0. (http://www.astronexus.com/)&lt;br/&gt;
+History and Accurate Positions for the NGC/IC Objects (Harold G. Corwin Jr)&lt;br/&gt;
+Revised New General Catalogue of Nonstellar Astronomical Objects
+(Sulentic J.W., Tifft W.G.)&lt;br/&gt;
+Cartes du ciel SFA
+(http://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html)&lt;br/&gt;
+Les positions des objets appartenant au système solaire sont calculées à partir des données de l\'Observatoire naval des États-Unis
+(http://www.usno.navy.mil/USNO/astronomical-applications).&lt;br/&gt;
+Les calques sphériques ont été obtenus à l\'adresse :
+(http://www2.research.att.com/~njas/coverings).&lt;br/&gt;
+Les images Hubble sont fournies par le Space Telescope Science Institute de la NASA
+(http://hubblesite.org/).&lt;br/&gt;</string></resources>
