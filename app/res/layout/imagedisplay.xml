@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+  <ImageView
+      android:id="@+id/gallery_image"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:adjustViewBounds="true"/>
+  <LinearLayout
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:orientation="vertical">
+    <TextView
+        android:id="@+id/gallery_image_title"
+        android:text="placeholder"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_weight="0"/>
+     <!-- spacer -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"/>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:orientation="horizontal"
+        android:gravity="center">
+      <!-- Setting width to 0px and weight to 1 ensures that width is the same for both buttons. -->
+      <Button
+          android:text="@string/gallery_image_back_btn"
+          android:layout_width="0px"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:id="@+id/gallery_image_back_btn"/>
+      <Button
+          android:text="@string/gallery_image_search_btn"
+          android:layout_width="0px"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:id="@+id/gallery_image_search_btn"/>
+    </LinearLayout>
+  </LinearLayout>
+</FrameLayout>

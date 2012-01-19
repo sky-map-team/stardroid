@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2008 Google Inc.
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/menu_item_search"
+          android:orderInCategory="0"
+          android:title="@string/menu_search"
+          android:icon="@android:drawable/ic_search_category_default"/>
+
+    <item android:id="@+id/menu_item_dim"
+          android:orderInCategory="2"
+          android:title="@string/menu_toggle_dim"
+          android:icon="@android:drawable/ic_menu_view"/>
+
+    <item android:id="@+id/menu_item_settings"
+          android:orderInCategory="3"
+          android:title="@string/menu_settings"
+          android:icon="@android:drawable/ic_menu_preferences"/>
+
+    <item android:id="@+id/menu_item_gallery"
+          android:orderInCategory="4"
+          android:title="@string/menu_gallery"
+          android:icon="@android:drawable/ic_menu_gallery"/>
+
+    <item android:id="@+id/menu_item_time"
+          android:orderInCategory="5"
+          android:title="@string/menu_time"
+          android:icon="@drawable/time_travel_icon"/>
+
+    <item android:id="@+id/menu_item_help"
+          android:orderInCategory="6"
+          android:title="@string/menu_help"
+          android:icon="@android:drawable/ic_menu_info_details"/>
+
+    <!-- TODO(serafini): We need an icon for this? -->
+    <item android:id="@+id/menu_item_tos"
+          android:orderInCategory="7"
+          android:title="@string/menu_tos"/>
+
+    <!-- Disable the following for the next release. -->
+    <!-- TODO(johntaylor): temporary placement until there's an on-screen button -->
+    <!--  item android:id="@+id/menu_item_control_panel"
+          android:orderInCategory="8"
+          android:title="@string/control_panel_btn"/-->
+
+    <!-- TODO(johntaylor): temporary menu item till the new UI is further along -->
+    <!--  item android:id="@+id/menu_item_load_kml"
+          android:orderInCategory="9"
+          android:title="Load KML file"/ -->
+</menu>

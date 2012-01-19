@@ -1,0 +1,5 @@
+<resources><style name="title" parent="text"><item name="android:textStyle">bold</item>
+</style>
+<style name="text"><item name="android:paddingLeft">5px</item>
+</style>
+</resources>

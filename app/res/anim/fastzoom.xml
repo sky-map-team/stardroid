@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Paired with fadein.xml to form the gallery to image transition -->
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:zAdjustment="top">
+  <scale
+      android:duration="200"
+      android:fromXScale="1.0" android:toXScale="4.0"
+      android:fromYScale="1.0" android:toYScale="4.0"
+      android:pivotX="50%"
+      android:pivotY="0%"
+      android:fillAfter="true"
+  />
+  <alpha
+      android:duration="200"
+      android:fromAlpha="1.0"
+      android:toAlpha="0.25"/>
+</set>

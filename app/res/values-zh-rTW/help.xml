@@ -1,0 +1,87 @@
+<resources><string name="help_text" translation_description="Please do not change the &lt; and &gt; markup">&lt;big&gt;&lt;b&gt;Google 星空圖 Android 版&lt;/b&gt;&lt;/big&gt;&lt;br/&gt;
+&lt;i&gt;版本 %s&lt;/i&gt;&lt;br/&gt;
+
+&lt;i&gt;http://www.google.com/sky/skymap&lt;/i&gt;&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;簡介與快速入門&lt;/b&gt;&lt;br/&gt;
+「Google 星空圖」能將您的 Android 手機轉換為觀賞夜空的窗口！只要將您的手機指向天際，即可查看該處的星空圖，讓您輕鬆觀察最明亮的星球、星座和行星，並得知它們的名字。&lt;br/&gt;下次看到不知名的耀眼星星時，就使用「Google 星空圖」吧！&lt;br/&gt;
+
+&lt;b&gt;可見圖層&lt;/b&gt;&lt;br/&gt;
+
+「Google 星空圖」會以圖層歸類各種物體，而您可以透過螢幕控制介面切換至各個圖層。系統提供的圖層包括：&lt;br/&gt;
+      星球&lt;br/&gt;
+      星座&lt;br/&gt;
+      梅西耶天體&lt;br/&gt;
+      行星&lt;br/&gt;
+      赤經與赤緯網格&lt;br/&gt;
+      地平線與基本方位&lt;br/&gt;
+星空圖清楚標示了最明亮的星體、最耀眼的星座以及行星。行星的圖示略大於實際觀看時的大小，地平線則以直線表示。除非您居住在一望無際、沒有任何建築物的平原上，否則「Google 星空圖」通常會顯示地平線上原本肉眼看不到的星體。&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;螢幕控制介面&lt;/b&gt;&lt;br/&gt;
+輕觸螢幕，螢幕控制介面即會顯示。上述各個圖層的切換選項列於螢幕一側；已啟用的圖層選項會以橘色顯示，未啟用的圖層選項則呈現白色。&lt;br/&gt;
+
+螢幕底端有縮放控制介面，以及手動與自動模式的切換控制介面。&lt;br/&gt;&lt;br/&gt;
+&lt;b&gt;導覽模式&lt;/b&gt;&lt;br/&gt;
+初次安裝「Google 星空圖」後，程式會以「自動模式」啟動，並運用手機感應器偵測手機指向位置，進而顯示該處的星空圖。如果您切換至「手動模式」，即可利用手指拖曳星空圖，探索整個星空。您也可以轉動軌跡球或是輕壓方向鍵的左右兩側，旋轉星空圖。使用支援多點觸控功能的手機時，您還可以運用兩指旋轉星空圖或縮小和放大檢視範圍。
+&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;搜尋&lt;/b&gt;&lt;br/&gt;
+「Google 星空圖」能告訴您某顆星星的名字，還能提供您特定星體的位置。如要使用搜尋功能，只要按下手機的 &lt;Menu&gt; 鍵或直接開啟桌面的「快速搜尋框」，然後輸入您要查詢的行星、星球或星座的名字，「Google 星空圖」即會顯示所有相符的搜尋結果。選定您要觀看的項目之後，「Google 星空圖」就會顯示一個定位圈以及箭頭，指示您將手機指向特定方向 (您也應該轉向這個方向)，以便找出您所尋找的天體。移動手機時，如果離搜尋目標越來越近，定位圈將由藍色轉為紅色；隨著您最終進入目標天體的觀賞範圍，定位圈將轉為橘色。&lt;br/&gt;
+請注意，如果您使用的是「手動模式」，「Google 星空圖」會直接將星空圖移至適當位置以顯示目標天體。&lt;br/&gt;
+如要退出「搜尋模式」，只要輕觸畫面右上角的小叉叉即可。&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;時光旅行 (新功能！)&lt;/b&gt;&lt;br/&gt;
+
+「Google 星空圖」的「時光旅行」模式能讓您穿梭在各個時空，探索無垠的星空。您只需從主選單選取 [時光旅行]，再從 [熱門日期] 選取日期，或是透過「變更日期」及「變更時間」對話方塊自行選取其他日期時間，即可使用進行時光旅行。由於木星引力會影響星空圖的準確度，我們只能提供 1900 至 2100 年之間的星空資料。選定日期後只要按一下 [前往！]，系統即會帶您飛越時空，前往您指定的時間點。「Google 星空圖」的「時光旅行模式」會顯示您造訪的日期，並提供「倒轉」及「快轉」控制介面，任您觀看星空的變化。按一下按鈕，就能慢慢觀看星空隨著時間的變化，如果多按幾次按鈕，變化的速度也會隨之加快。&lt;br/&gt;
+
+「時光旅行」是您的解答好幫手，方便您瞭解今晚日落後的星空圖、下次觀賞水星的日期以及古希臘人建議的最佳葡萄收成日等資訊。&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;哈伯望遠鏡圖庫&lt;/b&gt;&lt;br/&gt;
+「Google 星空圖」包含「Google 星空」的「哈伯望遠鏡圖庫」部分影像；您只需要從選單中選取「圖庫」項目，即可開啟「圖庫」。在「圖庫」中，您可以運用手指捲動畫面來瀏覽影像。如果您輕觸任何一個縮圖，「Google 星空圖」將顯示完整大小的影像。如果您輕觸 [搜尋] 按鈕，「Google 星空圖」將切換至「搜尋」模式，尋找與影像相符的天體。&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;夜視模式&lt;/b&gt;&lt;br/&gt;
+「夜視模式」是用來保護您的夜間視力。長時間直視夜空時，選用此模式可讓眼睛較為舒適。當您選取「夜視模式」選項時，「Google 星空圖」將以紅色顯示所有內容；再次選取同一選項即可改回以正常色彩顯示。&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;設定您的位置&lt;/b&gt;&lt;br/&gt;
+「Google 星空圖」必須取得您的約略位置資訊，才能顯示正確的星空圖。根據預設，系統會由您的手機網路取得這項資訊。如果您位於無訊號的地點，或已停用網路定位功能，系統將使用手機的 GPS 取得定位資訊。您也可以透過設定選單手動設定位置，方法是輸入地名或經緯度資訊 (以度為單位)。請注意，「Google 星空圖」只有在具備資料傳輸連線的情況下，才能將地名轉換為您所在的經緯度。&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;疑難排解與功能限制&lt;/b&gt;&lt;br/&gt;
+&lt;i&gt;星空圖不準確。&lt;/i&gt;&lt;br/&gt;
+如果您發現星空圖顯示的資訊與實際星空不符，可能的原因如下：&lt;br/&gt;
+1) 您的指南針是否經過校準？建議您拿起手機，然後轉動手腕將手機循著 8 字形移動，即可進行校準；您可能必須不定時重複此動作進行校準 (這是手機內建的功能，並非「Google 星空圖」提供的功能)。&lt;br/&gt;
+2) 應用程式設定的位置是否正確？您的 GPS 或手機定位功能是否已啟用？&lt;br/&gt;
+3) 您所設定的時間與時區是否正確？「Google 星空圖」需要計算國際標準時間，因此必須使用您的當地時間與時區資訊。如果您的裝置已插入 SIM 卡，通常不會有這類問題。&lt;br/&gt;
+4) 您是否啟用了地磁校正功能？某些地點的地磁北極與地理北極最高有 20 度的差距。&lt;br/&gt;
+&lt;i&gt;星空圖不會移動。&lt;/i&gt;&lt;br/&gt;
+您是否處於手動模式？如果您未啟用手動模式，這可能是因為您的指南針尚未經過校準。請按照上述步驟進行校準，星空圖即可隨您移動。&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;工作人員&lt;/b&gt;&lt;br/&gt;
+&lt;i&gt;工程及設計&lt;/i&gt;&lt;br/&gt;
+Brent Bryan、Dominic Widdows、Hector Ouilhet、James Powell、John Taylor 及 Kevin Serafini&lt;br/&gt;
+
+&lt;i&gt;產品企劃&lt;/i&gt;&lt;br/&gt;
+Lior Ron&lt;br/&gt;
+
+&lt;i&gt;公關事務&lt;/i&gt;&lt;br/&gt;
+Aaron Stein 及 Erin Gleason&lt;br/&gt;
+
+&lt;i&gt;產品行銷&lt;/i&gt;&lt;br/&gt;
+Effie Seiberg 及 Linda Tong&lt;br/&gt;
+
+&lt;i&gt;翻譯&lt;/i&gt;&lt;br/&gt;
+Jelena Oertel&lt;br/&gt;&lt;br/&gt;
+
+
+&lt;b&gt;銘謝&lt;/b&gt;&lt;br/&gt;
+「Google 星空圖」之技術資料來源如下：&lt;br/&gt;
+Centre de Donnees astronomiques de Strasbourg (http://cdsweb.u-strasbg.fr/)&lt;br/&gt;
+The Bright Star Catalogue, 5th Revised Ed. (Hoffleit D. 及 Warren Jr W.H.)&lt;br/&gt;
+HYG 資料庫，HYG v1.0 (http://www.astronexus.com/)&lt;br/&gt;
+History and Accurate Positions for the NGC/IC Objects (Harold G. Corwin Jr)&lt;br/&gt;
+Revised New General Catalogue of Nonstellar Astronomical Objects (Sulentic J.W. 及 Tifft W.G.)&lt;br/&gt;
+SFA 星圖 (http://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html)&lt;br/&gt;
+太陽系天體定位係根據 USNO 提供之資料估算(http://www.usno.navy.mil/USNO/astronomical-applications)&lt;br/&gt;
+天球覆蓋範圍資料取自以下網頁：
+(http://www2.research.att.com/~njas/coverings)&lt;br/&gt;
+「哈伯望遠鏡影像」係由 NASA 的「太空望遠鏡科學研究所」提供
+(http://hubblesite.org/)&lt;br/&gt;</string></resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--  The following are keys into the preferences and should not be translated. -->
+    <string-array name="sensor_speed_values">
+        <item translation_description="DO NOT TRANSLATE">SLOW</item>
+        <item translation_description="DO NOT TRANSLATE">STANDARD</item>
+        <item translation_description="DO NOT TRANSLATE">FAST</item>
+    </string-array>
+    <string-array name="sensor_damping_values">
+        <item translation_description="DO NOT TRANSLATE">STANDARD</item>
+        <item translation_description="DO NOT TRANSLATE">HIGH</item>
+    </string-array>
+</resources>

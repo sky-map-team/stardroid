@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Please add  translation_description="" attributes to Strings to assist the translators. -->
+<resources>
+    <string name="location_placename_hint" translation_description="An example address.  Translators: please pick an address suitable for your country.  If it has an astronomical connection (e.g. the address of an observatory or famous astronomer) then that would be even better.">e.g. The Royal Observatory of Edinburgh</string>
+    <string name="eula_dialog_title">End User Licence Agreement</string>
+</resources>
