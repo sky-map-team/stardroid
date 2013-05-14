@@ -672,6 +672,7 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
     searchTarget = target;
     searchTargetName = searchTerm;
     Log.d(TAG, "Searching for target=" + target);
+    rendererController.queueViewerUpDirection(model.getZenith().copy());
     rendererController.queueEnableSearchOverlay(target.copy(), searchTerm);
     boolean autoMode = sharedPreferences.getBoolean(AUTO_MODE_PREF_KEY, true);
     if (!autoMode) {
