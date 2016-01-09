@@ -15,7 +15,7 @@ protoc --java_out="../../../../../" source_full.proto
 
 CLASSPATH="\
 ../../../../../../bin:\
-../../../../../../../app/bin:\
+../../../../../../../app/bin/classes:\
 ../../../../../../libs/protobuf-java-2.3.0.jar\
 "
 
