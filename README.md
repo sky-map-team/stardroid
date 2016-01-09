@@ -10,6 +10,10 @@ local.properties file containing the location of your Android SDK. It
 should have a single line that looks like this:
 sdk.dir=<Path to your SDK>
 
+A quick way to generate it is using the Android tool.  From the `app` directory:
+
+    android update project --target 1 --path .
+
 Executing 'ant clean debug' will build the binary. It will be located in
 the bin directory and will be named Stardroid-debug.apk. Make sure that
 your device can handle binaries that don't come from the market, and you
