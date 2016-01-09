@@ -3,8 +3,8 @@
     package="com.google.android.stardroid"
     android:installLocation="auto"
     android:vmSafeMode="false"
-    android:versionName="1.6.6"
-    android:versionCode="1114">
+    android:versionName="1.6.5"
+    android:versionCode="1113">
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
     <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
