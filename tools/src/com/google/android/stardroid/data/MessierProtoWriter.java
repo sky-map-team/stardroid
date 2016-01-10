@@ -57,7 +57,7 @@ public class MessierProtoWriter extends AbstractProtoWriter {
     LabelElementProto.Builder labelBuilder = LabelElementProto.newBuilder();
     labelBuilder.setColor(LABEL_COLOR);
     labelBuilder.setLocation(coords);
-    labelBuilder.setStringIndex(0);
+    labelBuilder.setREMOVEStringIndex(rKeyFromName(tokens[0]));
     builder.addLabel(labelBuilder);
 
     PointElementProto.Builder pointBuilder = PointElementProto.newBuilder();

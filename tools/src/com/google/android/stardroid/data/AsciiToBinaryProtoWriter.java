@@ -45,7 +45,10 @@ public class AsciiToBinaryProtoWriter {
       TextFormat.merge(in, builder);
 
       out = new FileOutputStream(args[0].substring(0, args[0].length() - 6) + ".binary");
-      builder.build().writeTo(out);
+
+      AstronomicalSourcesProto sources = builder.build();
+      System.out.println("Source count " + sources.getSourceCount());
+      sources.writeTo(out);
     } finally {
       Closeables.closeSilently(in);
       Closeables.closeSilently(out);
