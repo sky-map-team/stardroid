@@ -1,3 +1,6 @@
+# Regenerating the binary star data
+
+
 The following procedure will regenerate the binary star data:
 1. Use the proto.sh script to create the "lite" version of the protocol
    buffers and then convert the CSV, KML, etc data files into _R.ascii
