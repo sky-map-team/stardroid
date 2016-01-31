@@ -2,7 +2,7 @@
 
 <!-- The main time player layout. -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:stardroid="http://schemas.android.com/apk/res/com.google.android.stardroid"
+    xmlns:stardroid="http://schemas.android.com/apk/res-auto"
     android:id="@+id/time_player_view"
     android:orientation="vertical"
     android:padding="1dip"

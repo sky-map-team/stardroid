@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:stardroid="http://schemas.android.com/apk/res/com.google.android.stardroid"
+  xmlns:stardroid="http://schemas.android.com/apk/res-auto"
   android:theme="@android:style/Theme.Black"
   android:layout_width="fill_parent"
   android:layout_height="fill_parent"
@@ -59,7 +59,7 @@
           android:layout_width="fill_parent"
           android:layout_height="wrap_content"
           android:layout_toRightOf="@id/search_icon"
-          android.paddingLeft="10dip"
+          android:paddingLeft="10dip"
           android:textAppearance="?android:attr/textAppearanceMedium"
           android:layout_marginLeft="2dip" />
         <TextView

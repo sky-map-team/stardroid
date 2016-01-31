@@ -4,18 +4,39 @@ three directories:
  * test: Testing source (woefully out of date)
  * tools: Source for generating binary data used by the app.
 
-To build SkyMap, you need to have install 'ant' and have downloaded a
-version of the Android SDK. Then, change to the app directory and create a
-local.properties file containing the location of your Android SDK. It
-should have a single line that looks like this:
-sdk.dir=<Path to your SDK>
+To build SkyMap, you can use Android Developer Studio or Gradle.  Begin by
+by creating a `local.properties` file containing the location of your
+Android installation:
 
-A quick way to generate it is using the Android tool.  From the `app` directory:
+    sdk.dir=<path to your SDK>
 
-    android update project --target 1 --path .
+Android Developer Studio can create this for you.
 
-Executing 'ant clean debug' will build the binary. It will be located in
-the bin directory and will be named Stardroid-debug.apk. Make sure that
-your device can handle binaries that don't come from the market, and you
-should be good to go.
+## Building a debug apk
+
+From the root directory execute
+
+    ./gradlew assembleDebug
+
+The apk can be found in `app/build/outputs/apk/`.
+
+## Building a release apk
+(Sky Map team only)
+
+Set the following environment variables:
+
+    export KEYPWD=<the key password>
+    export KSTOREPWD=<the key store password>
+
+From the root directory execute
+
+    ./gradlew assemble
+
+or
+
+    ./gradlew assembleRelease
+
+The apk can be found in `app/build/outputs/apk/`.
+
+*Note - at present the app built with these instructions will crash due to a mismatch between the R file and the strings constants in the data files.  Fix coming soon.*
 
