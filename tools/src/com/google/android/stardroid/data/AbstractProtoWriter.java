@@ -29,8 +29,8 @@ import java.io.PrintWriter;
 
 /**
  * Base class for converting (ASCII) text data files into protocol buffers.
- * This class writes out both the binary and human readable version of the
- * messages.
+ * This class writes out a human readable version of the
+ * messages with place holders for the text strings.
  *
  * @author Brent Bryan
  */
@@ -40,6 +40,10 @@ public abstract class AbstractProtoWriter {
    * the line does not correspond to a valid {@link AstronomicalSource}.
    */
   protected abstract AstronomicalSourceProto getSourceFromLine(String line, int index);
+
+  protected String rKeyFromName(String name) {
+    return "R.string." + name.replaceAll(" ", "_").toLowerCase();
+  }
 
   protected GeocentricCoordinatesProto getCoords(float ra, float dec) {
     return GeocentricCoordinatesProto.newBuilder()
@@ -70,20 +74,20 @@ public abstract class AbstractProtoWriter {
 
   public void writeFiles(String prefix, AstronomicalSourcesProto sources) throws IOException {
 
-    FileOutputStream out = null;
+    /*FileOutputStream out = null;
     try {
       out = new FileOutputStream(prefix + ".binary");
       sources.writeTo(out);
     } finally {
       Closeables.closeSilently(out);
-    }
+    }*/
 
     PrintWriter writer = null;
     try {
-      writer = new PrintWriter(new FileWriter(prefix + ".ascii"));
+      writer = new PrintWriter(new FileWriter(prefix + "_R.ascii"));
       writer.append(sources.toString());
     } finally {
-      Closeables.closeSilently(out);
+      Closeables.closeSilently(writer);
     }
 
     System.out.println("Successfully wrote " + sources.getSourceCount() + " sources.");

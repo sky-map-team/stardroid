@@ -45,7 +45,8 @@ public class AsciiProtoRewriter {
 
   private static int getString(String s) {
     try {
-      String name = s.substring(9);
+      // Hackily extract the name from "R.string.thename"
+      String name = s.substring(10, s.length()-1);
       Field f = R.string.class.getDeclaredField(name);
       // System.out.println("replacing: " + s);
       return f.getInt(null);
@@ -82,14 +83,13 @@ public class AsciiProtoRewriter {
       String s;
       while ((s = in.readLine()) != null) {
         if (s.contains("REMOVE")) {
-          continue;
-        }
-
-        String[] tokens = s.split("\\s+");
-        for (String token : tokens) {
-          if (token.startsWith("R.string")) {
-            int value = getString(token);
-            s = s.replaceAll(token, "" + value);
+          s = s.replaceAll("REMOVE_","");
+          String[] tokens = s.split("\\s+");
+          for (String token : tokens) {
+            if (token.contains("R.string")) {
+              int value = getString(token);
+              s = s.replaceAll(token, "" + value);
+            }
           }
         }
         out.println(s);

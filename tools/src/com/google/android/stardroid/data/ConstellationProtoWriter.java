@@ -82,7 +82,7 @@ public class ConstellationProtoWriter {
         if (CONSTELLATIONS.remove(name)) {
           LabelElementProto.Builder builder = LabelElementProto.newBuilder();
           builder.setColor(LABEL_COLOR);
-          builder.setStringIndex(0);
+          builder.setREMOVEStringIndex("R.string." + name.replaceAll(" ", "_").toLowerCase());
           builder.setLocation(getCoords(ra, dec));
           result.add(builder.build());
         }
@@ -243,20 +243,20 @@ public class ConstellationProtoWriter {
     AstronomicalSourcesProto.Builder constellations = readLines(args[0]);
     AstronomicalSourcesProto sources = combineLabelsConstellations(labels, constellations);
 
-    FileOutputStream out = null;
+    /*FileOutputStream out = null;
     try {
       out = new FileOutputStream(args[1] + ".binary");
       sources.writeTo(out);
     } finally {
       Closeables.closeSilently(out);
     }
-
+    */
     PrintWriter writer = null;
     try {
-      writer = new PrintWriter(new FileWriter(args[1] + ".ascii"));
+      writer = new PrintWriter(new FileWriter(args[1] + "_R.ascii"));
       writer.append(sources.toString());
     } finally {
-      Closeables.closeSilently(out);
+      Closeables.closeSilently(writer);
     }
 
     System.out.println("Successfully wrote " + sources.getSourceCount() + " sources.");

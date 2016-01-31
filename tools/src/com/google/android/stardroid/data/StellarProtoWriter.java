@@ -61,11 +61,11 @@ public class StellarProtoWriter extends AbstractProtoWriter {
     pointBuilder.setSize(size);
     builder.addPoint(pointBuilder);
 
-    if (name != null && name.trim().equals("")) {
+    if (name != null && !name.trim().equals("")) {
       LabelElementProto.Builder labelBuilder = LabelElementProto.newBuilder();
       labelBuilder.setColor(STAR_COLOR);
       labelBuilder.setLocation(getCoords(ra, dec));
-      labelBuilder.setStringIndex(0);
+      labelBuilder.setREMOVEStringIndex(rKeyFromName(name));
       builder.addLabel(labelBuilder);
     }
     builder.setSearchLocation(coords);
