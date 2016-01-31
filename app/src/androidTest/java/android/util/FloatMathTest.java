@@ -23,7 +23,7 @@ import junit.framework.TestCase;
  */
 public class FloatMathTest extends TestCase {
   private static final double tolerance = 1.0e-7;
-  
+
   public void testSqrt() {
     assertEquals(2.0, FloatMath.sqrt(4.0f), tolerance);
     assertEquals(Math.sqrt(17), FloatMath.sqrt(17.0f), tolerance);
@@ -38,7 +38,7 @@ public class FloatMathTest extends TestCase {
     assertEquals(2.0, FloatMath.ceil(1.1f), tolerance);
     assertEquals(2.0, FloatMath.ceil(2.0f), tolerance);
   }
-  
+
   public void testSin() {
     assertEquals(Math.sin(1.0), FloatMath.sin(1.0f), tolerance);
     assertEquals(Math.sin(0.3), FloatMath.sin(0.3f), tolerance);

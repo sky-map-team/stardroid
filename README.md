@@ -38,5 +38,8 @@ or
 
 The apk can be found in `app/build/outputs/apk/`.
 
-*Note - at present the app built with these instructions will crash due to a mismatch between the R file and the strings constants in the data files.  Fix coming soon.*
+*Note - at present the star, constellation and messier layers are disabled due to crashing issues related to the string resource ids being out of sync.  Fix soon.*
 
+## Running tests
+
+    ./gradlew app:connectedAndroidTest

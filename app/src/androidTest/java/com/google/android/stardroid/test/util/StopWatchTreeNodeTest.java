@@ -70,7 +70,7 @@ public class StopWatchTreeNodeTest extends TestCase {
     StopWatchTreeNode child2 = node.getChild("child2");
 
     assertEquals(2, node.getNumChildren());
-    assertEquals(Lists.asList(node.getChildren()), Lists.asList(child1, child2));
+    assertEquals(Lists.asList(node.getChildren()), Lists.asList(child2, child1));
   }
 
   public void testGetChild_childPresent() {

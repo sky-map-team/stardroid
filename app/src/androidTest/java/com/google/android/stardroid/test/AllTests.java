@@ -22,12 +22,12 @@ public class AllTests extends TestCase {
 
   public static Test suite() {
     TestSuite suite = new TestSuite("com.google.android.stardroid.test");
-
+    suite.addTest(android.util.AllTests.suite());
     suite.addTest(com.google.android.stardroid.test.base.AllTests.suite());
     suite.addTest(com.google.android.stardroid.test.control.AllTests.suite());
-    //suite.addTest(com.google.android.stardroid.test.search.AllTests.suite());
-    //suite.addTest(com.google.android.stardroid.test.units.AllTests.suite());
-    //suite.addTest(com.google.android.stardroid.test.util.AllTests.suite());
+    suite.addTest(com.google.android.stardroid.test.search.AllTests.suite());
+    suite.addTest(com.google.android.stardroid.test.units.AllTests.suite());
+    suite.addTest(com.google.android.stardroid.test.util.AllTests.suite());
 
     return suite;
   }
