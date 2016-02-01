@@ -178,10 +178,9 @@ public class StardroidApplication extends Application {
       Log.i(TAG, "Initializing LayerManager");
       layerManager = new LayerManager(preferences, getModel());
 
-      // TODO(jontayler): restore these layers once the data is regenerated.
-      //layerManager.addLayer(new NewStarsLayer(assetManager, resources));
-      //layerManager.addLayer(new NewMessierLayer(assetManager, resources));
-      //layerManager.addLayer(new NewConstellationsLayer(assetManager, resources));
+      layerManager.addLayer(new NewStarsLayer(assetManager, resources));
+      layerManager.addLayer(new NewMessierLayer(assetManager, resources));
+      layerManager.addLayer(new NewConstellationsLayer(assetManager, resources));
       layerManager.addLayer(new PlanetsLayer(getModel(), resources, preferences));
       layerManager.addLayer(new MeteorShowerLayer(getModel(), resources));
       layerManager.addLayer(new GridLayer(resources, 24, 19));
