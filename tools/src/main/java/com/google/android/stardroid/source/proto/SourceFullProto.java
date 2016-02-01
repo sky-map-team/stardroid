@@ -8,23 +8,101 @@ public final class SourceFullProto {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
   }
+  /**
+   * Protobuf enum {@code stardroid_source.Shape}
+   *
+   * <pre>
+   * Enumeration over shapes which can be drawn in the renderer.
+   * </pre>
+   */
   public enum Shape
       implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>CIRCLE = 0;</code>
+     */
     CIRCLE(0, 0),
+    /**
+     * <code>STAR = 1;</code>
+     */
     STAR(1, 1),
+    /**
+     * <code>ELLIPTICAL_GALAXY = 2;</code>
+     */
     ELLIPTICAL_GALAXY(2, 2),
+    /**
+     * <code>SPIRAL_GALAXY = 3;</code>
+     */
     SPIRAL_GALAXY(3, 3),
+    /**
+     * <code>IRREGULAR_GALAXY = 4;</code>
+     */
     IRREGULAR_GALAXY(4, 4),
+    /**
+     * <code>LENTICULAR_GALAXY = 5;</code>
+     */
     LENTICULAR_GALAXY(5, 5),
+    /**
+     * <code>GLOBULAR_CLUSTER = 6;</code>
+     */
     GLOBULAR_CLUSTER(6, 6),
+    /**
+     * <code>OPEN_CLUSTER = 7;</code>
+     */
     OPEN_CLUSTER(7, 7),
+    /**
+     * <code>NEBULA = 8;</code>
+     */
     NEBULA(8, 8),
+    /**
+     * <code>HUBBLE_DEEP_FIELD = 9;</code>
+     */
     HUBBLE_DEEP_FIELD(9, 9),
     ;
-    
-    
+
+    /**
+     * <code>CIRCLE = 0;</code>
+     */
+    public static final int CIRCLE_VALUE = 0;
+    /**
+     * <code>STAR = 1;</code>
+     */
+    public static final int STAR_VALUE = 1;
+    /**
+     * <code>ELLIPTICAL_GALAXY = 2;</code>
+     */
+    public static final int ELLIPTICAL_GALAXY_VALUE = 2;
+    /**
+     * <code>SPIRAL_GALAXY = 3;</code>
+     */
+    public static final int SPIRAL_GALAXY_VALUE = 3;
+    /**
+     * <code>IRREGULAR_GALAXY = 4;</code>
+     */
+    public static final int IRREGULAR_GALAXY_VALUE = 4;
+    /**
+     * <code>LENTICULAR_GALAXY = 5;</code>
+     */
+    public static final int LENTICULAR_GALAXY_VALUE = 5;
+    /**
+     * <code>GLOBULAR_CLUSTER = 6;</code>
+     */
+    public static final int GLOBULAR_CLUSTER_VALUE = 6;
+    /**
+     * <code>OPEN_CLUSTER = 7;</code>
+     */
+    public static final int OPEN_CLUSTER_VALUE = 7;
+    /**
+     * <code>NEBULA = 8;</code>
+     */
+    public static final int NEBULA_VALUE = 8;
+    /**
+     * <code>HUBBLE_DEEP_FIELD = 9;</code>
+     */
+    public static final int HUBBLE_DEEP_FIELD_VALUE = 9;
+
+
     public final int getNumber() { return value; }
-    
+
     public static Shape valueOf(int value) {
       switch (value) {
         case 0: return CIRCLE;
@@ -40,7 +118,7 @@ public final class SourceFullProto {
         default: return null;
       }
     }
-    
+
     public static com.google.protobuf.Internal.EnumLiteMap<Shape>
         internalGetValueMap() {
       return internalValueMap;
@@ -49,10 +127,10 @@ public final class SourceFullProto {
         internalValueMap =
           new com.google.protobuf.Internal.EnumLiteMap<Shape>() {
             public Shape findValueByNumber(int number) {
-              return Shape.valueOf(number)
-    ;        }
+              return Shape.valueOf(number);
+            }
           };
-    
+
     public final com.google.protobuf.Descriptors.EnumValueDescriptor
         getValueDescriptor() {
       return getDescriptor().getValues().get(index);
@@ -65,10 +143,9 @@ public final class SourceFullProto {
         getDescriptor() {
       return com.google.android.stardroid.source.proto.SourceFullProto.getDescriptor().getEnumTypes().get(0);
     }
-    
-    private static final Shape[] VALUES = {
-      CIRCLE, STAR, ELLIPTICAL_GALAXY, SPIRAL_GALAXY, IRREGULAR_GALAXY, LENTICULAR_GALAXY, GLOBULAR_CLUSTER, OPEN_CLUSTER, NEBULA, HUBBLE_DEEP_FIELD, 
-    };
+
+    private static final Shape[] VALUES = values();
+
     public static Shape valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
@@ -77,240 +154,414 @@ public final class SourceFullProto {
       }
       return VALUES[desc.getIndex()];
     }
+
     private final int index;
     private final int value;
+
     private Shape(int index, int value) {
       this.index = index;
       this.value = value;
     }
-    
-    static {
-      com.google.android.stardroid.source.proto.SourceFullProto.getDescriptor();
-    }
-    
+
     // @@protoc_insertion_point(enum_scope:stardroid_source.Shape)
   }
-  
+
+  public interface GeocentricCoordinatesProtoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:stardroid_source.GeocentricCoordinatesProto)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional float right_ascension = 1;</code>
+     *
+     * <pre>
+     * the right ascension of the object in degrees
+     * </pre>
+     */
+    boolean hasRightAscension();
+    /**
+     * <code>optional float right_ascension = 1;</code>
+     *
+     * <pre>
+     * the right ascension of the object in degrees
+     * </pre>
+     */
+    float getRightAscension();
+
+    /**
+     * <code>optional float declination = 2;</code>
+     *
+     * <pre>
+     * the declination of the object in degrees
+     * </pre>
+     */
+    boolean hasDeclination();
+    /**
+     * <code>optional float declination = 2;</code>
+     *
+     * <pre>
+     * the declination of the object in degrees
+     * </pre>
+     */
+    float getDeclination();
+  }
+  /**
+   * Protobuf type {@code stardroid_source.GeocentricCoordinatesProto}
+   *
+   * <pre>
+   * Protocol buffer representation of the GeocentricCoordinates domain object.
+   * </pre>
+   */
   public static final class GeocentricCoordinatesProto extends
-      com.google.protobuf.GeneratedMessage {
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:stardroid_source.GeocentricCoordinatesProto)
+      GeocentricCoordinatesProtoOrBuilder {
     // Use GeocentricCoordinatesProto.newBuilder() to construct.
-    private GeocentricCoordinatesProto() {
-      initFields();
+    private GeocentricCoordinatesProto(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
     }
-    private GeocentricCoordinatesProto(boolean noInit) {}
-    
+    private GeocentricCoordinatesProto(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
     private static final GeocentricCoordinatesProto defaultInstance;
     public static GeocentricCoordinatesProto getDefaultInstance() {
       return defaultInstance;
     }
-    
+
     public GeocentricCoordinatesProto getDefaultInstanceForType() {
       return defaultInstance;
     }
-    
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GeocentricCoordinatesProto(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 13: {
+              bitField0_ |= 0x00000001;
+              rightAscension_ = input.readFloat();
+              break;
+            }
+            case 21: {
+              bitField0_ |= 0x00000002;
+              declination_ = input.readFloat();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return com.google.android.stardroid.source.proto.SourceFullProto.internal_static_stardroid_source_GeocentricCoordinatesProto_descriptor;
     }
-    
+
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.android.stardroid.source.proto.SourceFullProto.internal_static_stardroid_source_GeocentricCoordinatesProto_fieldAccessorTable;
+      return com.google.android.stardroid.source.proto.SourceFullProto.internal_static_stardroid_source_GeocentricCoordinatesProto_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.class, com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.Builder.class);
     }
-    
-    // optional float right_ascension = 1;
+
+    public static com.google.protobuf.Parser<GeocentricCoordinatesProto> PARSER =
+        new com.google.protobuf.AbstractParser<GeocentricCoordinatesProto>() {
+      public GeocentricCoordinatesProto parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GeocentricCoordinatesProto(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GeocentricCoordinatesProto> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
     public static final int RIGHT_ASCENSION_FIELD_NUMBER = 1;
-    private boolean hasRightAscension;
-    private float rightAscension_ = 0F;
-    public boolean hasRightAscension() { return hasRightAscension; }
-    public float getRightAscension() { return rightAscension_; }
-    
-    // optional float declination = 2;
-    public static final int DECLINATION_FIELD_NUMBER = 2;
-    private boolean hasDeclination;
-    private float declination_ = 0F;
-    public boolean hasDeclination() { return hasDeclination; }
-    public float getDeclination() { return declination_; }
-    
-    private void initFields() {
+    private float rightAscension_;
+    /**
+     * <code>optional float right_ascension = 1;</code>
+     *
+     * <pre>
+     * the right ascension of the object in degrees
+     * </pre>
+     */
+    public boolean hasRightAscension() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
+    /**
+     * <code>optional float right_ascension = 1;</code>
+     *
+     * <pre>
+     * the right ascension of the object in degrees
+     * </pre>
+     */
+    public float getRightAscension() {
+      return rightAscension_;
+    }
+
+    public static final int DECLINATION_FIELD_NUMBER = 2;
+    private float declination_;
+    /**
+     * <code>optional float declination = 2;</code>
+     *
+     * <pre>
+     * the declination of the object in degrees
+     * </pre>
+     */
+    public boolean hasDeclination() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional float declination = 2;</code>
+     *
+     * <pre>
+     * the declination of the object in degrees
+     * </pre>
+     */
+    public float getDeclination() {
+      return declination_;
+    }
+
+    private void initFields() {
+      rightAscension_ = 0F;
+      declination_ = 0F;
+    }
+    private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
       return true;
     }
-    
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (hasRightAscension()) {
-        output.writeFloat(1, getRightAscension());
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeFloat(1, rightAscension_);
       }
-      if (hasDeclination()) {
-        output.writeFloat(2, getDeclination());
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeFloat(2, declination_);
       }
       getUnknownFields().writeTo(output);
     }
-    
+
     private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
       int size = memoizedSerializedSize;
       if (size != -1) return size;
-    
+
       size = 0;
-      if (hasRightAscension()) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(1, getRightAscension());
+          .computeFloatSize(1, rightAscension_);
       }
-      if (hasDeclination()) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(2, getDeclination());
+          .computeFloatSize(2, declination_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
       return size;
     }
-    
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
     public static com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return PARSER.parseFrom(input);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(input, extensionRegistry);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return PARSER.parseDelimitedFrom(input);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return PARSER.parseFrom(input);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(input, extensionRegistry);
     }
-    
+
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder(com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
-    
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code stardroid_source.GeocentricCoordinatesProto}
+     *
+     * <pre>
+     * Protocol buffer representation of the GeocentricCoordinates domain object.
+     * </pre>
+     */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder> {
-      private com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto result;
-      
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:stardroid_source.GeocentricCoordinatesProto)
+        com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProtoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.google.android.stardroid.source.proto.SourceFullProto.internal_static_stardroid_source_GeocentricCoordinatesProto_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.android.stardroid.source.proto.SourceFullProto.internal_static_stardroid_source_GeocentricCoordinatesProto_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.class, com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.Builder.class);
+      }
+
       // Construct using com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.newBuilder()
-      private Builder() {}
-      
-      private static Builder create() {
-        Builder builder = new Builder();
-        builder.result = new com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto();
-        return builder;
+      private Builder() {
+        maybeForceBuilderInitialization();
       }
-      
-      protected com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto internalGetResult() {
-        return result;
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
       }
-      
-      public Builder clear() {
-        if (result == null) {
-          throw new IllegalStateException(
-            "Cannot call clear() after build().");
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         }
-        result = new com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto();
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        rightAscension_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        declination_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
-      
+
       public Builder clone() {
-        return create().mergeFrom(result);
+        return create().mergeFrom(buildPartial());
       }
-      
+
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.getDescriptor();
+        return com.google.android.stardroid.source.proto.SourceFullProto.internal_static_stardroid_source_GeocentricCoordinatesProto_descriptor;
       }
-      
+
       public com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto getDefaultInstanceForType() {
         return com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.getDefaultInstance();
       }
-      
-      public boolean isInitialized() {
-        return result.isInitialized();
-      }
+
       public com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto build() {
-        if (result != null && !isInitialized()) {
+        com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto result = buildPartial();
+        if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
-        return buildPartial();
+        return result;
       }
-      
-      private com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto buildParsed()
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        if (!isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
-        }
-        return buildPartial();
-      }
-      
+
       public com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto buildPartial() {
-        if (result == null) {
-          throw new IllegalStateException(
-            "build() has already been called on this Builder.");
+        com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto result = new com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
         }
-        com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto returnMe = result;
-        result = null;
-        return returnMe;
+        result.rightAscension_ = rightAscension_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.declination_ = declination_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
       }
-      
+
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto) {
           return mergeFrom((com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto)other);
@@ -319,7 +570,7 @@ public final class SourceFullProto {
           return this;
         }
       }
-      
+
       public Builder mergeFrom(com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto other) {
         if (other == com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.getDefaultInstance()) return this;
         if (other.hasRightAscension()) {
@@ -331,339 +582,692 @@ public final class SourceFullProto {
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
-      
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                return this;
-              }
-              break;
-            }
-            case 13: {
-              setRightAscension(input.readFloat());
-              break;
-            }
-            case 21: {
-              setDeclination(input.readFloat());
-              break;
-            }
+        com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
           }
         }
+        return this;
       }
-      
-      
-      // optional float right_ascension = 1;
+      private int bitField0_;
+
+      private float rightAscension_ ;
+      /**
+       * <code>optional float right_ascension = 1;</code>
+       *
+       * <pre>
+       * the right ascension of the object in degrees
+       * </pre>
+       */
       public boolean hasRightAscension() {
-        return result.hasRightAscension();
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
+      /**
+       * <code>optional float right_ascension = 1;</code>
+       *
+       * <pre>
+       * the right ascension of the object in degrees
+       * </pre>
+       */
       public float getRightAscension() {
-        return result.getRightAscension();
+        return rightAscension_;
       }
+      /**
+       * <code>optional float right_ascension = 1;</code>
+       *
+       * <pre>
+       * the right ascension of the object in degrees
+       * </pre>
+       */
       public Builder setRightAscension(float value) {
-        result.hasRightAscension = true;
-        result.rightAscension_ = value;
+        bitField0_ |= 0x00000001;
+        rightAscension_ = value;
+        onChanged();
         return this;
       }
+      /**
+       * <code>optional float right_ascension = 1;</code>
+       *
+       * <pre>
+       * the right ascension of the object in degrees
+       * </pre>
+       */
       public Builder clearRightAscension() {
-        result.hasRightAscension = false;
-        result.rightAscension_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        rightAscension_ = 0F;
+        onChanged();
         return this;
       }
-      
-      // optional float declination = 2;
+
+      private float declination_ ;
+      /**
+       * <code>optional float declination = 2;</code>
+       *
+       * <pre>
+       * the declination of the object in degrees
+       * </pre>
+       */
       public boolean hasDeclination() {
-        return result.hasDeclination();
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
+      /**
+       * <code>optional float declination = 2;</code>
+       *
+       * <pre>
+       * the declination of the object in degrees
+       * </pre>
+       */
       public float getDeclination() {
-        return result.getDeclination();
+        return declination_;
       }
+      /**
+       * <code>optional float declination = 2;</code>
+       *
+       * <pre>
+       * the declination of the object in degrees
+       * </pre>
+       */
       public Builder setDeclination(float value) {
-        result.hasDeclination = true;
-        result.declination_ = value;
+        bitField0_ |= 0x00000002;
+        declination_ = value;
+        onChanged();
         return this;
       }
+      /**
+       * <code>optional float declination = 2;</code>
+       *
+       * <pre>
+       * the declination of the object in degrees
+       * </pre>
+       */
       public Builder clearDeclination() {
-        result.hasDeclination = false;
-        result.declination_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        declination_ = 0F;
+        onChanged();
         return this;
       }
-      
+
       // @@protoc_insertion_point(builder_scope:stardroid_source.GeocentricCoordinatesProto)
     }
-    
+
     static {
       defaultInstance = new GeocentricCoordinatesProto(true);
-      com.google.android.stardroid.source.proto.SourceFullProto.internalForceInit();
       defaultInstance.initFields();
     }
-    
+
     // @@protoc_insertion_point(class_scope:stardroid_source.GeocentricCoordinatesProto)
   }
-  
+
+  public interface PointElementProtoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:stardroid_source.PointElementProto)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional .stardroid_source.GeocentricCoordinatesProto location = 1;</code>
+     *
+     * <pre>
+     * Location of the point source.
+     * </pre>
+     */
+    boolean hasLocation();
+    /**
+     * <code>optional .stardroid_source.GeocentricCoordinatesProto location = 1;</code>
+     *
+     * <pre>
+     * Location of the point source.
+     * </pre>
+     */
+    com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto getLocation();
+    /**
+     * <code>optional .stardroid_source.GeocentricCoordinatesProto location = 1;</code>
+     *
+     * <pre>
+     * Location of the point source.
+     * </pre>
+     */
+    com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProtoOrBuilder getLocationOrBuilder();
+
+    /**
+     * <code>optional uint32 color = 2 [default = 4294967295];</code>
+     *
+     * <pre>
+     * Color that the point should be in SkyMap.
+     * </pre>
+     */
+    boolean hasColor();
+    /**
+     * <code>optional uint32 color = 2 [default = 4294967295];</code>
+     *
+     * <pre>
+     * Color that the point should be in SkyMap.
+     * </pre>
+     */
+    int getColor();
+
+    /**
+     * <code>optional int32 size = 3 [default = 3];</code>
+     *
+     * <pre>
+     * Width (in pixels) that the point should be in SkyMap.
+     * </pre>
+     */
+    boolean hasSize();
+    /**
+     * <code>optional int32 size = 3 [default = 3];</code>
+     *
+     * <pre>
+     * Width (in pixels) that the point should be in SkyMap.
+     * </pre>
+     */
+    int getSize();
+
+    /**
+     * <code>optional .stardroid_source.Shape shape = 4 [default = CIRCLE];</code>
+     *
+     * <pre>
+     * Shape to use to draw this object in SkyMap.
+     * </pre>
+     */
+    boolean hasShape();
+    /**
+     * <code>optional .stardroid_source.Shape shape = 4 [default = CIRCLE];</code>
+     *
+     * <pre>
+     * Shape to use to draw this object in SkyMap.
+     * </pre>
+     */
+    com.google.android.stardroid.source.proto.SourceFullProto.Shape getShape();
+  }
+  /**
+   * Protobuf type {@code stardroid_source.PointElementProto}
+   *
+   * <pre>
+   * Message for a point object displayed in SkyMap
+   * </pre>
+   */
   public static final class PointElementProto extends
-      com.google.protobuf.GeneratedMessage {
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:stardroid_source.PointElementProto)
+      PointElementProtoOrBuilder {
     // Use PointElementProto.newBuilder() to construct.
-    private PointElementProto() {
-      initFields();
+    private PointElementProto(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
     }
-    private PointElementProto(boolean noInit) {}
-    
+    private PointElementProto(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
     private static final PointElementProto defaultInstance;
     public static PointElementProto getDefaultInstance() {
       return defaultInstance;
     }
-    
+
     public PointElementProto getDefaultInstanceForType() {
       return defaultInstance;
     }
-    
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private PointElementProto(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000001) == 0x00000001)) {
+                subBuilder = location_.toBuilder();
+              }
+              location_ = input.readMessage(com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(location_);
+                location_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000001;
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              color_ = input.readUInt32();
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              size_ = input.readInt32();
+              break;
+            }
+            case 32: {
+              int rawValue = input.readEnum();
+              com.google.android.stardroid.source.proto.SourceFullProto.Shape value = com.google.android.stardroid.source.proto.SourceFullProto.Shape.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(4, rawValue);
+              } else {
+                bitField0_ |= 0x00000008;
+                shape_ = value;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return com.google.android.stardroid.source.proto.SourceFullProto.internal_static_stardroid_source_PointElementProto_descriptor;
     }
-    
+
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.android.stardroid.source.proto.SourceFullProto.internal_static_stardroid_source_PointElementProto_fieldAccessorTable;
+      return com.google.android.stardroid.source.proto.SourceFullProto.internal_static_stardroid_source_PointElementProto_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto.class, com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto.Builder.class);
     }
-    
-    // optional .stardroid_source.GeocentricCoordinatesProto location = 1;
+
+    public static com.google.protobuf.Parser<PointElementProto> PARSER =
+        new com.google.protobuf.AbstractParser<PointElementProto>() {
+      public PointElementProto parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new PointElementProto(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PointElementProto> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
     public static final int LOCATION_FIELD_NUMBER = 1;
-    private boolean hasLocation;
     private com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto location_;
-    public boolean hasLocation() { return hasLocation; }
-    public com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto getLocation() { return location_; }
-    
-    // optional uint32 color = 2 [default = 4294967295];
+    /**
+     * <code>optional .stardroid_source.GeocentricCoordinatesProto location = 1;</code>
+     *
+     * <pre>
+     * Location of the point source.
+     * </pre>
+     */
+    public boolean hasLocation() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional .stardroid_source.GeocentricCoordinatesProto location = 1;</code>
+     *
+     * <pre>
+     * Location of the point source.
+     * </pre>
+     */
+    public com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto getLocation() {
+      return location_;
+    }
+    /**
+     * <code>optional .stardroid_source.GeocentricCoordinatesProto location = 1;</code>
+     *
+     * <pre>
+     * Location of the point source.
+     * </pre>
+     */
+    public com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProtoOrBuilder getLocationOrBuilder() {
+      return location_;
+    }
+
     public static final int COLOR_FIELD_NUMBER = 2;
-    private boolean hasColor;
-    private int color_ = -1;
-    public boolean hasColor() { return hasColor; }
-    public int getColor() { return color_; }
-    
-    // optional int32 size = 3 [default = 3];
+    private int color_;
+    /**
+     * <code>optional uint32 color = 2 [default = 4294967295];</code>
+     *
+     * <pre>
+     * Color that the point should be in SkyMap.
+     * </pre>
+     */
+    public boolean hasColor() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional uint32 color = 2 [default = 4294967295];</code>
+     *
+     * <pre>
+     * Color that the point should be in SkyMap.
+     * </pre>
+     */
+    public int getColor() {
+      return color_;
+    }
+
     public static final int SIZE_FIELD_NUMBER = 3;
-    private boolean hasSize;
-    private int size_ = 3;
-    public boolean hasSize() { return hasSize; }
-    public int getSize() { return size_; }
-    
-    // optional .stardroid_source.Shape shape = 4 [default = CIRCLE];
+    private int size_;
+    /**
+     * <code>optional int32 size = 3 [default = 3];</code>
+     *
+     * <pre>
+     * Width (in pixels) that the point should be in SkyMap.
+     * </pre>
+     */
+    public boolean hasSize() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional int32 size = 3 [default = 3];</code>
+     *
+     * <pre>
+     * Width (in pixels) that the point should be in SkyMap.
+     * </pre>
+     */
+    public int getSize() {
+      return size_;
+    }
+
     public static final int SHAPE_FIELD_NUMBER = 4;
-    private boolean hasShape;
     private com.google.android.stardroid.source.proto.SourceFullProto.Shape shape_;
-    public boolean hasShape() { return hasShape; }
-    public com.google.android.stardroid.source.proto.SourceFullProto.Shape getShape() { return shape_; }
-    
+    /**
+     * <code>optional .stardroid_source.Shape shape = 4 [default = CIRCLE];</code>
+     *
+     * <pre>
+     * Shape to use to draw this object in SkyMap.
+     * </pre>
+     */
+    public boolean hasShape() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional .stardroid_source.Shape shape = 4 [default = CIRCLE];</code>
+     *
+     * <pre>
+     * Shape to use to draw this object in SkyMap.
+     * </pre>
+     */
+    public com.google.android.stardroid.source.proto.SourceFullProto.Shape getShape() {
+      return shape_;
+    }
+
     private void initFields() {
       location_ = com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.getDefaultInstance();
+      color_ = -1;
+      size_ = 3;
       shape_ = com.google.android.stardroid.source.proto.SourceFullProto.Shape.CIRCLE;
     }
+    private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
       return true;
     }
-    
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (hasLocation()) {
-        output.writeMessage(1, getLocation());
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeMessage(1, location_);
       }
-      if (hasColor()) {
-        output.writeUInt32(2, getColor());
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeUInt32(2, color_);
       }
-      if (hasSize()) {
-        output.writeInt32(3, getSize());
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeInt32(3, size_);
       }
-      if (hasShape()) {
-        output.writeEnum(4, getShape().getNumber());
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeEnum(4, shape_.getNumber());
       }
       getUnknownFields().writeTo(output);
     }
-    
+
     private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
       int size = memoizedSerializedSize;
       if (size != -1) return size;
-    
+
       size = 0;
-      if (hasLocation()) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getLocation());
+          .computeMessageSize(1, location_);
       }
-      if (hasColor()) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, getColor());
+          .computeUInt32Size(2, color_);
       }
-      if (hasSize()) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, getSize());
+          .computeInt32Size(3, size_);
       }
-      if (hasShape()) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(4, getShape().getNumber());
+          .computeEnumSize(4, shape_.getNumber());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
       return size;
     }
-    
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
     public static com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return PARSER.parseFrom(input);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(input, extensionRegistry);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return PARSER.parseDelimitedFrom(input);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return PARSER.parseFrom(input);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(input, extensionRegistry);
     }
-    
+
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder(com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
-    
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code stardroid_source.PointElementProto}
+     *
+     * <pre>
+     * Message for a point object displayed in SkyMap
+     * </pre>
+     */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder> {
-      private com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto result;
-      
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:stardroid_source.PointElementProto)
+        com.google.android.stardroid.source.proto.SourceFullProto.PointElementProtoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.google.android.stardroid.source.proto.SourceFullProto.internal_static_stardroid_source_PointElementProto_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.android.stardroid.source.proto.SourceFullProto.internal_static_stardroid_source_PointElementProto_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto.class, com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto.Builder.class);
+      }
+
       // Construct using com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto.newBuilder()
-      private Builder() {}
-      
-      private static Builder create() {
-        Builder builder = new Builder();
-        builder.result = new com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto();
-        return builder;
+      private Builder() {
+        maybeForceBuilderInitialization();
       }
-      
-      protected com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto internalGetResult() {
-        return result;
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
       }
-      
-      public Builder clear() {
-        if (result == null) {
-          throw new IllegalStateException(
-            "Cannot call clear() after build().");
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getLocationFieldBuilder();
         }
-        result = new com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto();
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        if (locationBuilder_ == null) {
+          location_ = com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.getDefaultInstance();
+        } else {
+          locationBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        color_ = -1;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        size_ = 3;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        shape_ = com.google.android.stardroid.source.proto.SourceFullProto.Shape.CIRCLE;
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
-      
+
       public Builder clone() {
-        return create().mergeFrom(result);
+        return create().mergeFrom(buildPartial());
       }
-      
+
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto.getDescriptor();
+        return com.google.android.stardroid.source.proto.SourceFullProto.internal_static_stardroid_source_PointElementProto_descriptor;
       }
-      
+
       public com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto getDefaultInstanceForType() {
         return com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto.getDefaultInstance();
       }
-      
-      public boolean isInitialized() {
-        return result.isInitialized();
-      }
+
       public com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto build() {
-        if (result != null && !isInitialized()) {
+        com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto result = buildPartial();
+        if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
-        return buildPartial();
+        return result;
       }
-      
-      private com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto buildParsed()
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        if (!isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
-        }
-        return buildPartial();
-      }
-      
+
       public com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto buildPartial() {
-        if (result == null) {
-          throw new IllegalStateException(
-            "build() has already been called on this Builder.");
+        com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto result = new com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
         }
-        com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto returnMe = result;
-        result = null;
-        return returnMe;
+        if (locationBuilder_ == null) {
+          result.location_ = location_;
+        } else {
+          result.location_ = locationBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.color_ = color_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.size_ = size_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.shape_ = shape_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
       }
-      
+
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto) {
           return mergeFrom((com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto)other);
@@ -672,7 +1276,7 @@ public final class SourceFullProto {
           return this;
         }
       }
-      
+
       public Builder mergeFrom(com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto other) {
         if (other == com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto.getDefaultInstance()) return this;
         if (other.hasLocation()) {
@@ -690,443 +1294,1060 @@ public final class SourceFullProto {
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
-      
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                return this;
-              }
-              break;
-            }
-            case 10: {
-              com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.Builder subBuilder = com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.newBuilder();
-              if (hasLocation()) {
-                subBuilder.mergeFrom(getLocation());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setLocation(subBuilder.buildPartial());
-              break;
-            }
-            case 16: {
-              setColor(input.readUInt32());
-              break;
-            }
-            case 24: {
-              setSize(input.readInt32());
-              break;
-            }
-            case 32: {
-              int rawValue = input.readEnum();
-              com.google.android.stardroid.source.proto.SourceFullProto.Shape value = com.google.android.stardroid.source.proto.SourceFullProto.Shape.valueOf(rawValue);
-              if (value == null) {
-                unknownFields.mergeVarintField(4, rawValue);
-              } else {
-                setShape(value);
-              }
-              break;
-            }
+        com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
           }
         }
+        return this;
       }
-      
-      
-      // optional .stardroid_source.GeocentricCoordinatesProto location = 1;
+      private int bitField0_;
+
+      private com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto location_ = com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto, com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.Builder, com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProtoOrBuilder> locationBuilder_;
+      /**
+       * <code>optional .stardroid_source.GeocentricCoordinatesProto location = 1;</code>
+       *
+       * <pre>
+       * Location of the point source.
+       * </pre>
+       */
       public boolean hasLocation() {
-        return result.hasLocation();
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
+      /**
+       * <code>optional .stardroid_source.GeocentricCoordinatesProto location = 1;</code>
+       *
+       * <pre>
+       * Location of the point source.
+       * </pre>
+       */
       public com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto getLocation() {
-        return result.getLocation();
-      }
-      public Builder setLocation(com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        result.hasLocation = true;
-        result.location_ = value;
-        return this;
-      }
-      public Builder setLocation(com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.Builder builderForValue) {
-        result.hasLocation = true;
-        result.location_ = builderForValue.build();
-        return this;
-      }
-      public Builder mergeLocation(com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto value) {
-        if (result.hasLocation() &&
-            result.location_ != com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.getDefaultInstance()) {
-          result.location_ =
-            com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.newBuilder(result.location_).mergeFrom(value).buildPartial();
+        if (locationBuilder_ == null) {
+          return location_;
         } else {
-          result.location_ = value;
+          return locationBuilder_.getMessage();
         }
-        result.hasLocation = true;
+      }
+      /**
+       * <code>optional .stardroid_source.GeocentricCoordinatesProto location = 1;</code>
+       *
+       * <pre>
+       * Location of the point source.
+       * </pre>
+       */
+      public Builder setLocation(com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto value) {
+        if (locationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          location_ = value;
+          onChanged();
+        } else {
+          locationBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
         return this;
       }
+      /**
+       * <code>optional .stardroid_source.GeocentricCoordinatesProto location = 1;</code>
+       *
+       * <pre>
+       * Location of the point source.
+       * </pre>
+       */
+      public Builder setLocation(
+          com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.Builder builderForValue) {
+        if (locationBuilder_ == null) {
+          location_ = builderForValue.build();
+          onChanged();
+        } else {
+          locationBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      /**
+       * <code>optional .stardroid_source.GeocentricCoordinatesProto location = 1;</code>
+       *
+       * <pre>
+       * Location of the point source.
+       * </pre>
+       */
+      public Builder mergeLocation(com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto value) {
+        if (locationBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001) &&
+              location_ != com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.getDefaultInstance()) {
+            location_ =
+              com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.newBuilder(location_).mergeFrom(value).buildPartial();
+          } else {
+            location_ = value;
+          }
+          onChanged();
+        } else {
+          locationBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      /**
+       * <code>optional .stardroid_source.GeocentricCoordinatesProto location = 1;</code>
+       *
+       * <pre>
+       * Location of the point source.
+       * </pre>
+       */
       public Builder clearLocation() {
-        result.hasLocation = false;
-        result.location_ = com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.getDefaultInstance();
+        if (locationBuilder_ == null) {
+          location_ = com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.getDefaultInstance();
+          onChanged();
+        } else {
+          locationBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
-      
-      // optional uint32 color = 2 [default = 4294967295];
+      /**
+       * <code>optional .stardroid_source.GeocentricCoordinatesProto location = 1;</code>
+       *
+       * <pre>
+       * Location of the point source.
+       * </pre>
+       */
+      public com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.Builder getLocationBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getLocationFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .stardroid_source.GeocentricCoordinatesProto location = 1;</code>
+       *
+       * <pre>
+       * Location of the point source.
+       * </pre>
+       */
+      public com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProtoOrBuilder getLocationOrBuilder() {
+        if (locationBuilder_ != null) {
+          return locationBuilder_.getMessageOrBuilder();
+        } else {
+          return location_;
+        }
+      }
+      /**
+       * <code>optional .stardroid_source.GeocentricCoordinatesProto location = 1;</code>
+       *
+       * <pre>
+       * Location of the point source.
+       * </pre>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto, com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.Builder, com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProtoOrBuilder> 
+          getLocationFieldBuilder() {
+        if (locationBuilder_ == null) {
+          locationBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto, com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.Builder, com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProtoOrBuilder>(
+                  getLocation(),
+                  getParentForChildren(),
+                  isClean());
+          location_ = null;
+        }
+        return locationBuilder_;
+      }
+
+      private int color_ = -1;
+      /**
+       * <code>optional uint32 color = 2 [default = 4294967295];</code>
+       *
+       * <pre>
+       * Color that the point should be in SkyMap.
+       * </pre>
+       */
       public boolean hasColor() {
-        return result.hasColor();
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
+      /**
+       * <code>optional uint32 color = 2 [default = 4294967295];</code>
+       *
+       * <pre>
+       * Color that the point should be in SkyMap.
+       * </pre>
+       */
       public int getColor() {
-        return result.getColor();
+        return color_;
       }
+      /**
+       * <code>optional uint32 color = 2 [default = 4294967295];</code>
+       *
+       * <pre>
+       * Color that the point should be in SkyMap.
+       * </pre>
+       */
       public Builder setColor(int value) {
-        result.hasColor = true;
-        result.color_ = value;
+        bitField0_ |= 0x00000002;
+        color_ = value;
+        onChanged();
         return this;
       }
+      /**
+       * <code>optional uint32 color = 2 [default = 4294967295];</code>
+       *
+       * <pre>
+       * Color that the point should be in SkyMap.
+       * </pre>
+       */
       public Builder clearColor() {
-        result.hasColor = false;
-        result.color_ = -1;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        color_ = -1;
+        onChanged();
         return this;
       }
-      
-      // optional int32 size = 3 [default = 3];
+
+      private int size_ = 3;
+      /**
+       * <code>optional int32 size = 3 [default = 3];</code>
+       *
+       * <pre>
+       * Width (in pixels) that the point should be in SkyMap.
+       * </pre>
+       */
       public boolean hasSize() {
-        return result.hasSize();
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
+      /**
+       * <code>optional int32 size = 3 [default = 3];</code>
+       *
+       * <pre>
+       * Width (in pixels) that the point should be in SkyMap.
+       * </pre>
+       */
       public int getSize() {
-        return result.getSize();
+        return size_;
       }
+      /**
+       * <code>optional int32 size = 3 [default = 3];</code>
+       *
+       * <pre>
+       * Width (in pixels) that the point should be in SkyMap.
+       * </pre>
+       */
       public Builder setSize(int value) {
-        result.hasSize = true;
-        result.size_ = value;
+        bitField0_ |= 0x00000004;
+        size_ = value;
+        onChanged();
         return this;
       }
+      /**
+       * <code>optional int32 size = 3 [default = 3];</code>
+       *
+       * <pre>
+       * Width (in pixels) that the point should be in SkyMap.
+       * </pre>
+       */
       public Builder clearSize() {
-        result.hasSize = false;
-        result.size_ = 3;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        size_ = 3;
+        onChanged();
         return this;
       }
-      
-      // optional .stardroid_source.Shape shape = 4 [default = CIRCLE];
+
+      private com.google.android.stardroid.source.proto.SourceFullProto.Shape shape_ = com.google.android.stardroid.source.proto.SourceFullProto.Shape.CIRCLE;
+      /**
+       * <code>optional .stardroid_source.Shape shape = 4 [default = CIRCLE];</code>
+       *
+       * <pre>
+       * Shape to use to draw this object in SkyMap.
+       * </pre>
+       */
       public boolean hasShape() {
-        return result.hasShape();
+        return ((bitField0_ & 0x00000008) == 0x00000008);
       }
+      /**
+       * <code>optional .stardroid_source.Shape shape = 4 [default = CIRCLE];</code>
+       *
+       * <pre>
+       * Shape to use to draw this object in SkyMap.
+       * </pre>
+       */
       public com.google.android.stardroid.source.proto.SourceFullProto.Shape getShape() {
-        return result.getShape();
+        return shape_;
       }
+      /**
+       * <code>optional .stardroid_source.Shape shape = 4 [default = CIRCLE];</code>
+       *
+       * <pre>
+       * Shape to use to draw this object in SkyMap.
+       * </pre>
+       */
       public Builder setShape(com.google.android.stardroid.source.proto.SourceFullProto.Shape value) {
         if (value == null) {
           throw new NullPointerException();
         }
-        result.hasShape = true;
-        result.shape_ = value;
+        bitField0_ |= 0x00000008;
+        shape_ = value;
+        onChanged();
         return this;
       }
+      /**
+       * <code>optional .stardroid_source.Shape shape = 4 [default = CIRCLE];</code>
+       *
+       * <pre>
+       * Shape to use to draw this object in SkyMap.
+       * </pre>
+       */
       public Builder clearShape() {
-        result.hasShape = false;
-        result.shape_ = com.google.android.stardroid.source.proto.SourceFullProto.Shape.CIRCLE;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        shape_ = com.google.android.stardroid.source.proto.SourceFullProto.Shape.CIRCLE;
+        onChanged();
         return this;
       }
-      
+
       // @@protoc_insertion_point(builder_scope:stardroid_source.PointElementProto)
     }
-    
+
     static {
       defaultInstance = new PointElementProto(true);
-      com.google.android.stardroid.source.proto.SourceFullProto.internalForceInit();
       defaultInstance.initFields();
     }
-    
+
     // @@protoc_insertion_point(class_scope:stardroid_source.PointElementProto)
   }
-  
+
+  public interface LabelElementProtoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:stardroid_source.LabelElementProto)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional .stardroid_source.GeocentricCoordinatesProto location = 1;</code>
+     *
+     * <pre>
+     * Location on which this label should be drawn.
+     * </pre>
+     */
+    boolean hasLocation();
+    /**
+     * <code>optional .stardroid_source.GeocentricCoordinatesProto location = 1;</code>
+     *
+     * <pre>
+     * Location on which this label should be drawn.
+     * </pre>
+     */
+    com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto getLocation();
+    /**
+     * <code>optional .stardroid_source.GeocentricCoordinatesProto location = 1;</code>
+     *
+     * <pre>
+     * Location on which this label should be drawn.
+     * </pre>
+     */
+    com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProtoOrBuilder getLocationOrBuilder();
+
+    /**
+     * <code>optional uint32 color = 2 [default = 4294967295];</code>
+     *
+     * <pre>
+     * Color that the text should be displayed in.
+     * </pre>
+     */
+    boolean hasColor();
+    /**
+     * <code>optional uint32 color = 2 [default = 4294967295];</code>
+     *
+     * <pre>
+     * Color that the text should be displayed in.
+     * </pre>
+     */
+    int getColor();
+
+    /**
+     * <code>optional int32 string_index = 3;</code>
+     *
+     * <pre>
+     * Index in the strings.xml file of the string that should be displayed for
+     * this label.
+     * </pre>
+     */
+    boolean hasStringIndex();
+    /**
+     * <code>optional int32 string_index = 3;</code>
+     *
+     * <pre>
+     * Index in the strings.xml file of the string that should be displayed for
+     * this label.
+     * </pre>
+     */
+    int getStringIndex();
+
+    /**
+     * <code>optional string REMOVE_string_index = 999;</code>
+     *
+     * <pre>
+     * The string to display to the user.
+     * </pre>
+     */
+    boolean hasREMOVEStringIndex();
+    /**
+     * <code>optional string REMOVE_string_index = 999;</code>
+     *
+     * <pre>
+     * The string to display to the user.
+     * </pre>
+     */
+    java.lang.String getREMOVEStringIndex();
+    /**
+     * <code>optional string REMOVE_string_index = 999;</code>
+     *
+     * <pre>
+     * The string to display to the user.
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getREMOVEStringIndexBytes();
+
+    /**
+     * <code>optional int32 font_size = 4 [default = 15];</code>
+     *
+     * <pre>
+     * Size of the font (in pixels) that should be used to draw this label.
+     * </pre>
+     */
+    boolean hasFontSize();
+    /**
+     * <code>optional int32 font_size = 4 [default = 15];</code>
+     *
+     * <pre>
+     * Size of the font (in pixels) that should be used to draw this label.
+     * </pre>
+     */
+    int getFontSize();
+
+    /**
+     * <code>optional float offset = 5 [default = 0.02];</code>
+     *
+     * <pre>
+     * Angle in degrees by which the text should be shifted from the location
+     * Offsets are typically non-zero to ensure that the text of an object does
+     * not obscure the object itself.
+     * </pre>
+     */
+    boolean hasOffset();
+    /**
+     * <code>optional float offset = 5 [default = 0.02];</code>
+     *
+     * <pre>
+     * Angle in degrees by which the text should be shifted from the location
+     * Offsets are typically non-zero to ensure that the text of an object does
+     * not obscure the object itself.
+     * </pre>
+     */
+    float getOffset();
+  }
+  /**
+   * Protobuf type {@code stardroid_source.LabelElementProto}
+   *
+   * <pre>
+   * Message for label (text string) displayed in SkyMap
+   * </pre>
+   */
   public static final class LabelElementProto extends
-      com.google.protobuf.GeneratedMessage {
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:stardroid_source.LabelElementProto)
+      LabelElementProtoOrBuilder {
     // Use LabelElementProto.newBuilder() to construct.
-    private LabelElementProto() {
-      initFields();
+    private LabelElementProto(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
     }
-    private LabelElementProto(boolean noInit) {}
-    
+    private LabelElementProto(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
     private static final LabelElementProto defaultInstance;
     public static LabelElementProto getDefaultInstance() {
       return defaultInstance;
     }
-    
+
     public LabelElementProto getDefaultInstanceForType() {
       return defaultInstance;
     }
-    
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private LabelElementProto(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000001) == 0x00000001)) {
+                subBuilder = location_.toBuilder();
+              }
+              location_ = input.readMessage(com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(location_);
+                location_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000001;
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              color_ = input.readUInt32();
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              stringIndex_ = input.readInt32();
+              break;
+            }
+            case 32: {
+              bitField0_ |= 0x00000010;
+              fontSize_ = input.readInt32();
+              break;
+            }
+            case 45: {
+              bitField0_ |= 0x00000020;
+              offset_ = input.readFloat();
+              break;
+            }
+            case 7994: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000008;
+              rEMOVEStringIndex_ = bs;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return com.google.android.stardroid.source.proto.SourceFullProto.internal_static_stardroid_source_LabelElementProto_descriptor;
     }
-    
+
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.android.stardroid.source.proto.SourceFullProto.internal_static_stardroid_source_LabelElementProto_fieldAccessorTable;
+      return com.google.android.stardroid.source.proto.SourceFullProto.internal_static_stardroid_source_LabelElementProto_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto.class, com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto.Builder.class);
     }
-    
-    // optional .stardroid_source.GeocentricCoordinatesProto location = 1;
+
+    public static com.google.protobuf.Parser<LabelElementProto> PARSER =
+        new com.google.protobuf.AbstractParser<LabelElementProto>() {
+      public LabelElementProto parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new LabelElementProto(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<LabelElementProto> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
     public static final int LOCATION_FIELD_NUMBER = 1;
-    private boolean hasLocation;
     private com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto location_;
-    public boolean hasLocation() { return hasLocation; }
-    public com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto getLocation() { return location_; }
-    
-    // optional uint32 color = 2 [default = 4294967295];
+    /**
+     * <code>optional .stardroid_source.GeocentricCoordinatesProto location = 1;</code>
+     *
+     * <pre>
+     * Location on which this label should be drawn.
+     * </pre>
+     */
+    public boolean hasLocation() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional .stardroid_source.GeocentricCoordinatesProto location = 1;</code>
+     *
+     * <pre>
+     * Location on which this label should be drawn.
+     * </pre>
+     */
+    public com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto getLocation() {
+      return location_;
+    }
+    /**
+     * <code>optional .stardroid_source.GeocentricCoordinatesProto location = 1;</code>
+     *
+     * <pre>
+     * Location on which this label should be drawn.
+     * </pre>
+     */
+    public com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProtoOrBuilder getLocationOrBuilder() {
+      return location_;
+    }
+
     public static final int COLOR_FIELD_NUMBER = 2;
-    private boolean hasColor;
-    private int color_ = -1;
-    public boolean hasColor() { return hasColor; }
-    public int getColor() { return color_; }
-    
-    // optional int32 string_index = 3;
+    private int color_;
+    /**
+     * <code>optional uint32 color = 2 [default = 4294967295];</code>
+     *
+     * <pre>
+     * Color that the text should be displayed in.
+     * </pre>
+     */
+    public boolean hasColor() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional uint32 color = 2 [default = 4294967295];</code>
+     *
+     * <pre>
+     * Color that the text should be displayed in.
+     * </pre>
+     */
+    public int getColor() {
+      return color_;
+    }
+
     public static final int STRING_INDEX_FIELD_NUMBER = 3;
-    private boolean hasStringIndex;
-    private int stringIndex_ = 0;
-    public boolean hasStringIndex() { return hasStringIndex; }
-    public int getStringIndex() { return stringIndex_; }
-    
-    // optional string REMOVE_string_index = 999;
+    private int stringIndex_;
+    /**
+     * <code>optional int32 string_index = 3;</code>
+     *
+     * <pre>
+     * Index in the strings.xml file of the string that should be displayed for
+     * this label.
+     * </pre>
+     */
+    public boolean hasStringIndex() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional int32 string_index = 3;</code>
+     *
+     * <pre>
+     * Index in the strings.xml file of the string that should be displayed for
+     * this label.
+     * </pre>
+     */
+    public int getStringIndex() {
+      return stringIndex_;
+    }
+
     public static final int REMOVE_STRING_INDEX_FIELD_NUMBER = 999;
-    private boolean hasREMOVEStringIndex;
-    private java.lang.String rEMOVEStringIndex_ = "";
-    public boolean hasREMOVEStringIndex() { return hasREMOVEStringIndex; }
-    public java.lang.String getREMOVEStringIndex() { return rEMOVEStringIndex_; }
-    
-    // optional int32 font_size = 4 [default = 15];
+    private java.lang.Object rEMOVEStringIndex_;
+    /**
+     * <code>optional string REMOVE_string_index = 999;</code>
+     *
+     * <pre>
+     * The string to display to the user.
+     * </pre>
+     */
+    public boolean hasREMOVEStringIndex() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional string REMOVE_string_index = 999;</code>
+     *
+     * <pre>
+     * The string to display to the user.
+     * </pre>
+     */
+    public java.lang.String getREMOVEStringIndex() {
+      java.lang.Object ref = rEMOVEStringIndex_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          rEMOVEStringIndex_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string REMOVE_string_index = 999;</code>
+     *
+     * <pre>
+     * The string to display to the user.
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getREMOVEStringIndexBytes() {
+      java.lang.Object ref = rEMOVEStringIndex_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        rEMOVEStringIndex_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     public static final int FONT_SIZE_FIELD_NUMBER = 4;
-    private boolean hasFontSize;
-    private int fontSize_ = 15;
-    public boolean hasFontSize() { return hasFontSize; }
-    public int getFontSize() { return fontSize_; }
-    
-    // optional float offset = 5 [default = 0.02];
+    private int fontSize_;
+    /**
+     * <code>optional int32 font_size = 4 [default = 15];</code>
+     *
+     * <pre>
+     * Size of the font (in pixels) that should be used to draw this label.
+     * </pre>
+     */
+    public boolean hasFontSize() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>optional int32 font_size = 4 [default = 15];</code>
+     *
+     * <pre>
+     * Size of the font (in pixels) that should be used to draw this label.
+     * </pre>
+     */
+    public int getFontSize() {
+      return fontSize_;
+    }
+
     public static final int OFFSET_FIELD_NUMBER = 5;
-    private boolean hasOffset;
-    private float offset_ = 0.02F;
-    public boolean hasOffset() { return hasOffset; }
-    public float getOffset() { return offset_; }
-    
+    private float offset_;
+    /**
+     * <code>optional float offset = 5 [default = 0.02];</code>
+     *
+     * <pre>
+     * Angle in degrees by which the text should be shifted from the location
+     * Offsets are typically non-zero to ensure that the text of an object does
+     * not obscure the object itself.
+     * </pre>
+     */
+    public boolean hasOffset() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    /**
+     * <code>optional float offset = 5 [default = 0.02];</code>
+     *
+     * <pre>
+     * Angle in degrees by which the text should be shifted from the location
+     * Offsets are typically non-zero to ensure that the text of an object does
+     * not obscure the object itself.
+     * </pre>
+     */
+    public float getOffset() {
+      return offset_;
+    }
+
     private void initFields() {
       location_ = com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.getDefaultInstance();
+      color_ = -1;
+      stringIndex_ = 0;
+      rEMOVEStringIndex_ = "";
+      fontSize_ = 15;
+      offset_ = 0.02F;
     }
+    private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
       return true;
     }
-    
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (hasLocation()) {
-        output.writeMessage(1, getLocation());
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeMessage(1, location_);
       }
-      if (hasColor()) {
-        output.writeUInt32(2, getColor());
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeUInt32(2, color_);
       }
-      if (hasStringIndex()) {
-        output.writeInt32(3, getStringIndex());
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeInt32(3, stringIndex_);
       }
-      if (hasFontSize()) {
-        output.writeInt32(4, getFontSize());
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeInt32(4, fontSize_);
       }
-      if (hasOffset()) {
-        output.writeFloat(5, getOffset());
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeFloat(5, offset_);
       }
-      if (hasREMOVEStringIndex()) {
-        output.writeString(999, getREMOVEStringIndex());
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeBytes(999, getREMOVEStringIndexBytes());
       }
       getUnknownFields().writeTo(output);
     }
-    
+
     private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
       int size = memoizedSerializedSize;
       if (size != -1) return size;
-    
+
       size = 0;
-      if (hasLocation()) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getLocation());
+          .computeMessageSize(1, location_);
       }
-      if (hasColor()) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, getColor());
+          .computeUInt32Size(2, color_);
       }
-      if (hasStringIndex()) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, getStringIndex());
+          .computeInt32Size(3, stringIndex_);
       }
-      if (hasFontSize()) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, getFontSize());
+          .computeInt32Size(4, fontSize_);
       }
-      if (hasOffset()) {
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(5, getOffset());
+          .computeFloatSize(5, offset_);
       }
-      if (hasREMOVEStringIndex()) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeStringSize(999, getREMOVEStringIndex());
+          .computeBytesSize(999, getREMOVEStringIndexBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
       return size;
     }
-    
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
     public static com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return PARSER.parseFrom(input);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(input, extensionRegistry);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return PARSER.parseDelimitedFrom(input);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return PARSER.parseFrom(input);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(input, extensionRegistry);
     }
-    
+
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder(com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
-    
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code stardroid_source.LabelElementProto}
+     *
+     * <pre>
+     * Message for label (text string) displayed in SkyMap
+     * </pre>
+     */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder> {
-      private com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto result;
-      
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:stardroid_source.LabelElementProto)
+        com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProtoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.google.android.stardroid.source.proto.SourceFullProto.internal_static_stardroid_source_LabelElementProto_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.android.stardroid.source.proto.SourceFullProto.internal_static_stardroid_source_LabelElementProto_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto.class, com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto.Builder.class);
+      }
+
       // Construct using com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto.newBuilder()
-      private Builder() {}
-      
-      private static Builder create() {
-        Builder builder = new Builder();
-        builder.result = new com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto();
-        return builder;
+      private Builder() {
+        maybeForceBuilderInitialization();
       }
-      
-      protected com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto internalGetResult() {
-        return result;
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
       }
-      
-      public Builder clear() {
-        if (result == null) {
-          throw new IllegalStateException(
-            "Cannot call clear() after build().");
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getLocationFieldBuilder();
         }
-        result = new com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto();
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        if (locationBuilder_ == null) {
+          location_ = com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.getDefaultInstance();
+        } else {
+          locationBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        color_ = -1;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        stringIndex_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        rEMOVEStringIndex_ = "";
+        bitField0_ = (bitField0_ & ~0x00000008);
+        fontSize_ = 15;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        offset_ = 0.02F;
+        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
-      
+
       public Builder clone() {
-        return create().mergeFrom(result);
+        return create().mergeFrom(buildPartial());
       }
-      
+
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto.getDescriptor();
+        return com.google.android.stardroid.source.proto.SourceFullProto.internal_static_stardroid_source_LabelElementProto_descriptor;
       }
-      
+
       public com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto getDefaultInstanceForType() {
         return com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto.getDefaultInstance();
       }
-      
-      public boolean isInitialized() {
-        return result.isInitialized();
-      }
+
       public com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto build() {
-        if (result != null && !isInitialized()) {
+        com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto result = buildPartial();
+        if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
-        return buildPartial();
+        return result;
       }
-      
-      private com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto buildParsed()
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        if (!isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
-        }
-        return buildPartial();
-      }
-      
+
       public com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto buildPartial() {
-        if (result == null) {
-          throw new IllegalStateException(
-            "build() has already been called on this Builder.");
+        com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto result = new com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
         }
-        com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto returnMe = result;
-        result = null;
-        return returnMe;
+        if (locationBuilder_ == null) {
+          result.location_ = location_;
+        } else {
+          result.location_ = locationBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.color_ = color_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.stringIndex_ = stringIndex_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.rEMOVEStringIndex_ = rEMOVEStringIndex_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.fontSize_ = fontSize_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.offset_ = offset_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
       }
-      
+
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto) {
           return mergeFrom((com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto)other);
@@ -1135,7 +2356,7 @@ public final class SourceFullProto {
           return this;
         }
       }
-      
+
       public Builder mergeFrom(com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto other) {
         if (other == com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto.getDefaultInstance()) return this;
         if (other.hasLocation()) {
@@ -1148,7 +2369,9 @@ public final class SourceFullProto {
           setStringIndex(other.getStringIndex());
         }
         if (other.hasREMOVEStringIndex()) {
-          setREMOVEStringIndex(other.getREMOVEStringIndex());
+          bitField0_ |= 0x00000008;
+          rEMOVEStringIndex_ = other.rEMOVEStringIndex_;
+          onChanged();
         }
         if (other.hasFontSize()) {
           setFontSize(other.getFontSize());
@@ -1159,447 +2382,1027 @@ public final class SourceFullProto {
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
-      
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                return this;
-              }
-              break;
-            }
-            case 10: {
-              com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.Builder subBuilder = com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.newBuilder();
-              if (hasLocation()) {
-                subBuilder.mergeFrom(getLocation());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setLocation(subBuilder.buildPartial());
-              break;
-            }
-            case 16: {
-              setColor(input.readUInt32());
-              break;
-            }
-            case 24: {
-              setStringIndex(input.readInt32());
-              break;
-            }
-            case 32: {
-              setFontSize(input.readInt32());
-              break;
-            }
-            case 45: {
-              setOffset(input.readFloat());
-              break;
-            }
-            case 7994: {
-              setREMOVEStringIndex(input.readString());
-              break;
-            }
+        com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
           }
         }
+        return this;
       }
-      
-      
-      // optional .stardroid_source.GeocentricCoordinatesProto location = 1;
+      private int bitField0_;
+
+      private com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto location_ = com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto, com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.Builder, com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProtoOrBuilder> locationBuilder_;
+      /**
+       * <code>optional .stardroid_source.GeocentricCoordinatesProto location = 1;</code>
+       *
+       * <pre>
+       * Location on which this label should be drawn.
+       * </pre>
+       */
       public boolean hasLocation() {
-        return result.hasLocation();
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
+      /**
+       * <code>optional .stardroid_source.GeocentricCoordinatesProto location = 1;</code>
+       *
+       * <pre>
+       * Location on which this label should be drawn.
+       * </pre>
+       */
       public com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto getLocation() {
-        return result.getLocation();
-      }
-      public Builder setLocation(com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        result.hasLocation = true;
-        result.location_ = value;
-        return this;
-      }
-      public Builder setLocation(com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.Builder builderForValue) {
-        result.hasLocation = true;
-        result.location_ = builderForValue.build();
-        return this;
-      }
-      public Builder mergeLocation(com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto value) {
-        if (result.hasLocation() &&
-            result.location_ != com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.getDefaultInstance()) {
-          result.location_ =
-            com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.newBuilder(result.location_).mergeFrom(value).buildPartial();
+        if (locationBuilder_ == null) {
+          return location_;
         } else {
-          result.location_ = value;
+          return locationBuilder_.getMessage();
         }
-        result.hasLocation = true;
+      }
+      /**
+       * <code>optional .stardroid_source.GeocentricCoordinatesProto location = 1;</code>
+       *
+       * <pre>
+       * Location on which this label should be drawn.
+       * </pre>
+       */
+      public Builder setLocation(com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto value) {
+        if (locationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          location_ = value;
+          onChanged();
+        } else {
+          locationBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
         return this;
       }
+      /**
+       * <code>optional .stardroid_source.GeocentricCoordinatesProto location = 1;</code>
+       *
+       * <pre>
+       * Location on which this label should be drawn.
+       * </pre>
+       */
+      public Builder setLocation(
+          com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.Builder builderForValue) {
+        if (locationBuilder_ == null) {
+          location_ = builderForValue.build();
+          onChanged();
+        } else {
+          locationBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      /**
+       * <code>optional .stardroid_source.GeocentricCoordinatesProto location = 1;</code>
+       *
+       * <pre>
+       * Location on which this label should be drawn.
+       * </pre>
+       */
+      public Builder mergeLocation(com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto value) {
+        if (locationBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001) &&
+              location_ != com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.getDefaultInstance()) {
+            location_ =
+              com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.newBuilder(location_).mergeFrom(value).buildPartial();
+          } else {
+            location_ = value;
+          }
+          onChanged();
+        } else {
+          locationBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      /**
+       * <code>optional .stardroid_source.GeocentricCoordinatesProto location = 1;</code>
+       *
+       * <pre>
+       * Location on which this label should be drawn.
+       * </pre>
+       */
       public Builder clearLocation() {
-        result.hasLocation = false;
-        result.location_ = com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.getDefaultInstance();
+        if (locationBuilder_ == null) {
+          location_ = com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.getDefaultInstance();
+          onChanged();
+        } else {
+          locationBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
-      
-      // optional uint32 color = 2 [default = 4294967295];
+      /**
+       * <code>optional .stardroid_source.GeocentricCoordinatesProto location = 1;</code>
+       *
+       * <pre>
+       * Location on which this label should be drawn.
+       * </pre>
+       */
+      public com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.Builder getLocationBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getLocationFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .stardroid_source.GeocentricCoordinatesProto location = 1;</code>
+       *
+       * <pre>
+       * Location on which this label should be drawn.
+       * </pre>
+       */
+      public com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProtoOrBuilder getLocationOrBuilder() {
+        if (locationBuilder_ != null) {
+          return locationBuilder_.getMessageOrBuilder();
+        } else {
+          return location_;
+        }
+      }
+      /**
+       * <code>optional .stardroid_source.GeocentricCoordinatesProto location = 1;</code>
+       *
+       * <pre>
+       * Location on which this label should be drawn.
+       * </pre>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto, com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.Builder, com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProtoOrBuilder> 
+          getLocationFieldBuilder() {
+        if (locationBuilder_ == null) {
+          locationBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto, com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.Builder, com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProtoOrBuilder>(
+                  getLocation(),
+                  getParentForChildren(),
+                  isClean());
+          location_ = null;
+        }
+        return locationBuilder_;
+      }
+
+      private int color_ = -1;
+      /**
+       * <code>optional uint32 color = 2 [default = 4294967295];</code>
+       *
+       * <pre>
+       * Color that the text should be displayed in.
+       * </pre>
+       */
       public boolean hasColor() {
-        return result.hasColor();
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
+      /**
+       * <code>optional uint32 color = 2 [default = 4294967295];</code>
+       *
+       * <pre>
+       * Color that the text should be displayed in.
+       * </pre>
+       */
       public int getColor() {
-        return result.getColor();
+        return color_;
       }
+      /**
+       * <code>optional uint32 color = 2 [default = 4294967295];</code>
+       *
+       * <pre>
+       * Color that the text should be displayed in.
+       * </pre>
+       */
       public Builder setColor(int value) {
-        result.hasColor = true;
-        result.color_ = value;
+        bitField0_ |= 0x00000002;
+        color_ = value;
+        onChanged();
         return this;
       }
+      /**
+       * <code>optional uint32 color = 2 [default = 4294967295];</code>
+       *
+       * <pre>
+       * Color that the text should be displayed in.
+       * </pre>
+       */
       public Builder clearColor() {
-        result.hasColor = false;
-        result.color_ = -1;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        color_ = -1;
+        onChanged();
         return this;
       }
-      
-      // optional int32 string_index = 3;
+
+      private int stringIndex_ ;
+      /**
+       * <code>optional int32 string_index = 3;</code>
+       *
+       * <pre>
+       * Index in the strings.xml file of the string that should be displayed for
+       * this label.
+       * </pre>
+       */
       public boolean hasStringIndex() {
-        return result.hasStringIndex();
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
+      /**
+       * <code>optional int32 string_index = 3;</code>
+       *
+       * <pre>
+       * Index in the strings.xml file of the string that should be displayed for
+       * this label.
+       * </pre>
+       */
       public int getStringIndex() {
-        return result.getStringIndex();
+        return stringIndex_;
       }
+      /**
+       * <code>optional int32 string_index = 3;</code>
+       *
+       * <pre>
+       * Index in the strings.xml file of the string that should be displayed for
+       * this label.
+       * </pre>
+       */
       public Builder setStringIndex(int value) {
-        result.hasStringIndex = true;
-        result.stringIndex_ = value;
+        bitField0_ |= 0x00000004;
+        stringIndex_ = value;
+        onChanged();
         return this;
       }
+      /**
+       * <code>optional int32 string_index = 3;</code>
+       *
+       * <pre>
+       * Index in the strings.xml file of the string that should be displayed for
+       * this label.
+       * </pre>
+       */
       public Builder clearStringIndex() {
-        result.hasStringIndex = false;
-        result.stringIndex_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        stringIndex_ = 0;
+        onChanged();
         return this;
       }
-      
-      // optional string REMOVE_string_index = 999;
+
+      private java.lang.Object rEMOVEStringIndex_ = "";
+      /**
+       * <code>optional string REMOVE_string_index = 999;</code>
+       *
+       * <pre>
+       * The string to display to the user.
+       * </pre>
+       */
       public boolean hasREMOVEStringIndex() {
-        return result.hasREMOVEStringIndex();
+        return ((bitField0_ & 0x00000008) == 0x00000008);
       }
+      /**
+       * <code>optional string REMOVE_string_index = 999;</code>
+       *
+       * <pre>
+       * The string to display to the user.
+       * </pre>
+       */
       public java.lang.String getREMOVEStringIndex() {
-        return result.getREMOVEStringIndex();
+        java.lang.Object ref = rEMOVEStringIndex_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            rEMOVEStringIndex_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
-      public Builder setREMOVEStringIndex(java.lang.String value) {
+      /**
+       * <code>optional string REMOVE_string_index = 999;</code>
+       *
+       * <pre>
+       * The string to display to the user.
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getREMOVEStringIndexBytes() {
+        java.lang.Object ref = rEMOVEStringIndex_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          rEMOVEStringIndex_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string REMOVE_string_index = 999;</code>
+       *
+       * <pre>
+       * The string to display to the user.
+       * </pre>
+       */
+      public Builder setREMOVEStringIndex(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  result.hasREMOVEStringIndex = true;
-        result.rEMOVEStringIndex_ = value;
+  bitField0_ |= 0x00000008;
+        rEMOVEStringIndex_ = value;
+        onChanged();
         return this;
       }
+      /**
+       * <code>optional string REMOVE_string_index = 999;</code>
+       *
+       * <pre>
+       * The string to display to the user.
+       * </pre>
+       */
       public Builder clearREMOVEStringIndex() {
-        result.hasREMOVEStringIndex = false;
-        result.rEMOVEStringIndex_ = getDefaultInstance().getREMOVEStringIndex();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        rEMOVEStringIndex_ = getDefaultInstance().getREMOVEStringIndex();
+        onChanged();
         return this;
       }
-      
-      // optional int32 font_size = 4 [default = 15];
+      /**
+       * <code>optional string REMOVE_string_index = 999;</code>
+       *
+       * <pre>
+       * The string to display to the user.
+       * </pre>
+       */
+      public Builder setREMOVEStringIndexBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        rEMOVEStringIndex_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int fontSize_ = 15;
+      /**
+       * <code>optional int32 font_size = 4 [default = 15];</code>
+       *
+       * <pre>
+       * Size of the font (in pixels) that should be used to draw this label.
+       * </pre>
+       */
       public boolean hasFontSize() {
-        return result.hasFontSize();
+        return ((bitField0_ & 0x00000010) == 0x00000010);
       }
+      /**
+       * <code>optional int32 font_size = 4 [default = 15];</code>
+       *
+       * <pre>
+       * Size of the font (in pixels) that should be used to draw this label.
+       * </pre>
+       */
       public int getFontSize() {
-        return result.getFontSize();
+        return fontSize_;
       }
+      /**
+       * <code>optional int32 font_size = 4 [default = 15];</code>
+       *
+       * <pre>
+       * Size of the font (in pixels) that should be used to draw this label.
+       * </pre>
+       */
       public Builder setFontSize(int value) {
-        result.hasFontSize = true;
-        result.fontSize_ = value;
+        bitField0_ |= 0x00000010;
+        fontSize_ = value;
+        onChanged();
         return this;
       }
+      /**
+       * <code>optional int32 font_size = 4 [default = 15];</code>
+       *
+       * <pre>
+       * Size of the font (in pixels) that should be used to draw this label.
+       * </pre>
+       */
       public Builder clearFontSize() {
-        result.hasFontSize = false;
-        result.fontSize_ = 15;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        fontSize_ = 15;
+        onChanged();
         return this;
       }
-      
-      // optional float offset = 5 [default = 0.02];
+
+      private float offset_ = 0.02F;
+      /**
+       * <code>optional float offset = 5 [default = 0.02];</code>
+       *
+       * <pre>
+       * Angle in degrees by which the text should be shifted from the location
+       * Offsets are typically non-zero to ensure that the text of an object does
+       * not obscure the object itself.
+       * </pre>
+       */
       public boolean hasOffset() {
-        return result.hasOffset();
+        return ((bitField0_ & 0x00000020) == 0x00000020);
       }
+      /**
+       * <code>optional float offset = 5 [default = 0.02];</code>
+       *
+       * <pre>
+       * Angle in degrees by which the text should be shifted from the location
+       * Offsets are typically non-zero to ensure that the text of an object does
+       * not obscure the object itself.
+       * </pre>
+       */
       public float getOffset() {
-        return result.getOffset();
+        return offset_;
       }
+      /**
+       * <code>optional float offset = 5 [default = 0.02];</code>
+       *
+       * <pre>
+       * Angle in degrees by which the text should be shifted from the location
+       * Offsets are typically non-zero to ensure that the text of an object does
+       * not obscure the object itself.
+       * </pre>
+       */
       public Builder setOffset(float value) {
-        result.hasOffset = true;
-        result.offset_ = value;
+        bitField0_ |= 0x00000020;
+        offset_ = value;
+        onChanged();
         return this;
       }
+      /**
+       * <code>optional float offset = 5 [default = 0.02];</code>
+       *
+       * <pre>
+       * Angle in degrees by which the text should be shifted from the location
+       * Offsets are typically non-zero to ensure that the text of an object does
+       * not obscure the object itself.
+       * </pre>
+       */
       public Builder clearOffset() {
-        result.hasOffset = false;
-        result.offset_ = 0.02F;
+        bitField0_ = (bitField0_ & ~0x00000020);
+        offset_ = 0.02F;
+        onChanged();
         return this;
       }
-      
+
       // @@protoc_insertion_point(builder_scope:stardroid_source.LabelElementProto)
     }
-    
+
     static {
       defaultInstance = new LabelElementProto(true);
-      com.google.android.stardroid.source.proto.SourceFullProto.internalForceInit();
       defaultInstance.initFields();
     }
-    
+
     // @@protoc_insertion_point(class_scope:stardroid_source.LabelElementProto)
   }
-  
+
+  public interface LineElementProtoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:stardroid_source.LineElementProto)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional uint32 color = 1 [default = 4294967295];</code>
+     *
+     * <pre>
+     * Color that should be used to draw the line.
+     * </pre>
+     */
+    boolean hasColor();
+    /**
+     * <code>optional uint32 color = 1 [default = 4294967295];</code>
+     *
+     * <pre>
+     * Color that should be used to draw the line.
+     * </pre>
+     */
+    int getColor();
+
+    /**
+     * <code>optional float line_width = 2 [default = 1.5];</code>
+     *
+     * <pre>
+     * the width of the line in pixels.
+     * </pre>
+     */
+    boolean hasLineWidth();
+    /**
+     * <code>optional float line_width = 2 [default = 1.5];</code>
+     *
+     * <pre>
+     * the width of the line in pixels.
+     * </pre>
+     */
+    float getLineWidth();
+
+    /**
+     * <code>repeated .stardroid_source.GeocentricCoordinatesProto vertex = 3;</code>
+     *
+     * <pre>
+     * Vertices of the line.  This array should never have less than two objects.
+     * </pre>
+     */
+    java.util.List<com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto> 
+        getVertexList();
+    /**
+     * <code>repeated .stardroid_source.GeocentricCoordinatesProto vertex = 3;</code>
+     *
+     * <pre>
+     * Vertices of the line.  This array should never have less than two objects.
+     * </pre>
+     */
+    com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto getVertex(int index);
+    /**
+     * <code>repeated .stardroid_source.GeocentricCoordinatesProto vertex = 3;</code>
+     *
+     * <pre>
+     * Vertices of the line.  This array should never have less than two objects.
+     * </pre>
+     */
+    int getVertexCount();
+    /**
+     * <code>repeated .stardroid_source.GeocentricCoordinatesProto vertex = 3;</code>
+     *
+     * <pre>
+     * Vertices of the line.  This array should never have less than two objects.
+     * </pre>
+     */
+    java.util.List<? extends com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProtoOrBuilder> 
+        getVertexOrBuilderList();
+    /**
+     * <code>repeated .stardroid_source.GeocentricCoordinatesProto vertex = 3;</code>
+     *
+     * <pre>
+     * Vertices of the line.  This array should never have less than two objects.
+     * </pre>
+     */
+    com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProtoOrBuilder getVertexOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code stardroid_source.LineElementProto}
+   *
+   * <pre>
+   * Message for a line displayed in SkyMap
+   * </pre>
+   */
   public static final class LineElementProto extends
-      com.google.protobuf.GeneratedMessage {
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:stardroid_source.LineElementProto)
+      LineElementProtoOrBuilder {
     // Use LineElementProto.newBuilder() to construct.
-    private LineElementProto() {
-      initFields();
+    private LineElementProto(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
     }
-    private LineElementProto(boolean noInit) {}
-    
+    private LineElementProto(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
     private static final LineElementProto defaultInstance;
     public static LineElementProto getDefaultInstance() {
       return defaultInstance;
     }
-    
+
     public LineElementProto getDefaultInstanceForType() {
       return defaultInstance;
     }
-    
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private LineElementProto(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              color_ = input.readUInt32();
+              break;
+            }
+            case 21: {
+              bitField0_ |= 0x00000002;
+              lineWidth_ = input.readFloat();
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                vertex_ = new java.util.ArrayList<com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              vertex_.add(input.readMessage(com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.PARSER, extensionRegistry));
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+          vertex_ = java.util.Collections.unmodifiableList(vertex_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return com.google.android.stardroid.source.proto.SourceFullProto.internal_static_stardroid_source_LineElementProto_descriptor;
     }
-    
+
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.android.stardroid.source.proto.SourceFullProto.internal_static_stardroid_source_LineElementProto_fieldAccessorTable;
+      return com.google.android.stardroid.source.proto.SourceFullProto.internal_static_stardroid_source_LineElementProto_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto.class, com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto.Builder.class);
     }
-    
-    // optional uint32 color = 1 [default = 4294967295];
+
+    public static com.google.protobuf.Parser<LineElementProto> PARSER =
+        new com.google.protobuf.AbstractParser<LineElementProto>() {
+      public LineElementProto parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new LineElementProto(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<LineElementProto> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
     public static final int COLOR_FIELD_NUMBER = 1;
-    private boolean hasColor;
-    private int color_ = -1;
-    public boolean hasColor() { return hasColor; }
-    public int getColor() { return color_; }
-    
-    // optional float line_width = 2 [default = 1.5];
+    private int color_;
+    /**
+     * <code>optional uint32 color = 1 [default = 4294967295];</code>
+     *
+     * <pre>
+     * Color that should be used to draw the line.
+     * </pre>
+     */
+    public boolean hasColor() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional uint32 color = 1 [default = 4294967295];</code>
+     *
+     * <pre>
+     * Color that should be used to draw the line.
+     * </pre>
+     */
+    public int getColor() {
+      return color_;
+    }
+
     public static final int LINE_WIDTH_FIELD_NUMBER = 2;
-    private boolean hasLineWidth;
-    private float lineWidth_ = 1.5F;
-    public boolean hasLineWidth() { return hasLineWidth; }
-    public float getLineWidth() { return lineWidth_; }
-    
-    // repeated .stardroid_source.GeocentricCoordinatesProto vertex = 3;
+    private float lineWidth_;
+    /**
+     * <code>optional float line_width = 2 [default = 1.5];</code>
+     *
+     * <pre>
+     * the width of the line in pixels.
+     * </pre>
+     */
+    public boolean hasLineWidth() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional float line_width = 2 [default = 1.5];</code>
+     *
+     * <pre>
+     * the width of the line in pixels.
+     * </pre>
+     */
+    public float getLineWidth() {
+      return lineWidth_;
+    }
+
     public static final int VERTEX_FIELD_NUMBER = 3;
-    private java.util.List<com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto> vertex_ =
-      java.util.Collections.emptyList();
+    private java.util.List<com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto> vertex_;
+    /**
+     * <code>repeated .stardroid_source.GeocentricCoordinatesProto vertex = 3;</code>
+     *
+     * <pre>
+     * Vertices of the line.  This array should never have less than two objects.
+     * </pre>
+     */
     public java.util.List<com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto> getVertexList() {
       return vertex_;
     }
-    public int getVertexCount() { return vertex_.size(); }
+    /**
+     * <code>repeated .stardroid_source.GeocentricCoordinatesProto vertex = 3;</code>
+     *
+     * <pre>
+     * Vertices of the line.  This array should never have less than two objects.
+     * </pre>
+     */
+    public java.util.List<? extends com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProtoOrBuilder> 
+        getVertexOrBuilderList() {
+      return vertex_;
+    }
+    /**
+     * <code>repeated .stardroid_source.GeocentricCoordinatesProto vertex = 3;</code>
+     *
+     * <pre>
+     * Vertices of the line.  This array should never have less than two objects.
+     * </pre>
+     */
+    public int getVertexCount() {
+      return vertex_.size();
+    }
+    /**
+     * <code>repeated .stardroid_source.GeocentricCoordinatesProto vertex = 3;</code>
+     *
+     * <pre>
+     * Vertices of the line.  This array should never have less than two objects.
+     * </pre>
+     */
     public com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto getVertex(int index) {
       return vertex_.get(index);
     }
-    
-    private void initFields() {
+    /**
+     * <code>repeated .stardroid_source.GeocentricCoordinatesProto vertex = 3;</code>
+     *
+     * <pre>
+     * Vertices of the line.  This array should never have less than two objects.
+     * </pre>
+     */
+    public com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProtoOrBuilder getVertexOrBuilder(
+        int index) {
+      return vertex_.get(index);
     }
+
+    private void initFields() {
+      color_ = -1;
+      lineWidth_ = 1.5F;
+      vertex_ = java.util.Collections.emptyList();
+    }
+    private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
       return true;
     }
-    
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (hasColor()) {
-        output.writeUInt32(1, getColor());
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeUInt32(1, color_);
       }
-      if (hasLineWidth()) {
-        output.writeFloat(2, getLineWidth());
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeFloat(2, lineWidth_);
       }
-      for (com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto element : getVertexList()) {
-        output.writeMessage(3, element);
+      for (int i = 0; i < vertex_.size(); i++) {
+        output.writeMessage(3, vertex_.get(i));
       }
       getUnknownFields().writeTo(output);
     }
-    
+
     private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
       int size = memoizedSerializedSize;
       if (size != -1) return size;
-    
+
       size = 0;
-      if (hasColor()) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, getColor());
+          .computeUInt32Size(1, color_);
       }
-      if (hasLineWidth()) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(2, getLineWidth());
+          .computeFloatSize(2, lineWidth_);
       }
-      for (com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto element : getVertexList()) {
+      for (int i = 0; i < vertex_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, element);
+          .computeMessageSize(3, vertex_.get(i));
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
       return size;
     }
-    
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
     public static com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return PARSER.parseFrom(input);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(input, extensionRegistry);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return PARSER.parseDelimitedFrom(input);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return PARSER.parseFrom(input);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(input, extensionRegistry);
     }
-    
+
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder(com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
-    
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code stardroid_source.LineElementProto}
+     *
+     * <pre>
+     * Message for a line displayed in SkyMap
+     * </pre>
+     */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder> {
-      private com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto result;
-      
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:stardroid_source.LineElementProto)
+        com.google.android.stardroid.source.proto.SourceFullProto.LineElementProtoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.google.android.stardroid.source.proto.SourceFullProto.internal_static_stardroid_source_LineElementProto_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.android.stardroid.source.proto.SourceFullProto.internal_static_stardroid_source_LineElementProto_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto.class, com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto.Builder.class);
+      }
+
       // Construct using com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto.newBuilder()
-      private Builder() {}
-      
-      private static Builder create() {
-        Builder builder = new Builder();
-        builder.result = new com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto();
-        return builder;
+      private Builder() {
+        maybeForceBuilderInitialization();
       }
-      
-      protected com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto internalGetResult() {
-        return result;
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
       }
-      
-      public Builder clear() {
-        if (result == null) {
-          throw new IllegalStateException(
-            "Cannot call clear() after build().");
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getVertexFieldBuilder();
         }
-        result = new com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto();
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        color_ = -1;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        lineWidth_ = 1.5F;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        if (vertexBuilder_ == null) {
+          vertex_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        } else {
+          vertexBuilder_.clear();
+        }
         return this;
       }
-      
+
       public Builder clone() {
-        return create().mergeFrom(result);
+        return create().mergeFrom(buildPartial());
       }
-      
+
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto.getDescriptor();
+        return com.google.android.stardroid.source.proto.SourceFullProto.internal_static_stardroid_source_LineElementProto_descriptor;
       }
-      
+
       public com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto getDefaultInstanceForType() {
         return com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto.getDefaultInstance();
       }
-      
-      public boolean isInitialized() {
-        return result.isInitialized();
-      }
+
       public com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto build() {
-        if (result != null && !isInitialized()) {
+        com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto result = buildPartial();
+        if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
-        return buildPartial();
+        return result;
       }
-      
-      private com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto buildParsed()
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        if (!isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
-        }
-        return buildPartial();
-      }
-      
+
       public com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto buildPartial() {
-        if (result == null) {
-          throw new IllegalStateException(
-            "build() has already been called on this Builder.");
+        com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto result = new com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
         }
-        if (result.vertex_ != java.util.Collections.EMPTY_LIST) {
-          result.vertex_ =
-            java.util.Collections.unmodifiableList(result.vertex_);
+        result.color_ = color_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
         }
-        com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto returnMe = result;
-        result = null;
-        return returnMe;
+        result.lineWidth_ = lineWidth_;
+        if (vertexBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) == 0x00000004)) {
+            vertex_ = java.util.Collections.unmodifiableList(vertex_);
+            bitField0_ = (bitField0_ & ~0x00000004);
+          }
+          result.vertex_ = vertex_;
+        } else {
+          result.vertex_ = vertexBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
       }
-      
+
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto) {
           return mergeFrom((com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto)other);
@@ -1608,7 +3411,7 @@ public final class SourceFullProto {
           return this;
         }
       }
-      
+
       public Builder mergeFrom(com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto other) {
         if (other == com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto.getDefaultInstance()) return this;
         if (other.hasColor()) {
@@ -1617,501 +3420,1591 @@ public final class SourceFullProto {
         if (other.hasLineWidth()) {
           setLineWidth(other.getLineWidth());
         }
-        if (!other.vertex_.isEmpty()) {
-          if (result.vertex_.isEmpty()) {
-            result.vertex_ = new java.util.ArrayList<com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto>();
+        if (vertexBuilder_ == null) {
+          if (!other.vertex_.isEmpty()) {
+            if (vertex_.isEmpty()) {
+              vertex_ = other.vertex_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+            } else {
+              ensureVertexIsMutable();
+              vertex_.addAll(other.vertex_);
+            }
+            onChanged();
           }
-          result.vertex_.addAll(other.vertex_);
+        } else {
+          if (!other.vertex_.isEmpty()) {
+            if (vertexBuilder_.isEmpty()) {
+              vertexBuilder_.dispose();
+              vertexBuilder_ = null;
+              vertex_ = other.vertex_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+              vertexBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getVertexFieldBuilder() : null;
+            } else {
+              vertexBuilder_.addAllMessages(other.vertex_);
+            }
+          }
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
-      
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                return this;
-              }
-              break;
-            }
-            case 8: {
-              setColor(input.readUInt32());
-              break;
-            }
-            case 21: {
-              setLineWidth(input.readFloat());
-              break;
-            }
-            case 26: {
-              com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.Builder subBuilder = com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.newBuilder();
-              input.readMessage(subBuilder, extensionRegistry);
-              addVertex(subBuilder.buildPartial());
-              break;
-            }
+        com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
           }
         }
+        return this;
       }
-      
-      
-      // optional uint32 color = 1 [default = 4294967295];
+      private int bitField0_;
+
+      private int color_ = -1;
+      /**
+       * <code>optional uint32 color = 1 [default = 4294967295];</code>
+       *
+       * <pre>
+       * Color that should be used to draw the line.
+       * </pre>
+       */
       public boolean hasColor() {
-        return result.hasColor();
+        return ((bitField0_ & 0x00000001) == 0x00000001);
       }
+      /**
+       * <code>optional uint32 color = 1 [default = 4294967295];</code>
+       *
+       * <pre>
+       * Color that should be used to draw the line.
+       * </pre>
+       */
       public int getColor() {
-        return result.getColor();
+        return color_;
       }
+      /**
+       * <code>optional uint32 color = 1 [default = 4294967295];</code>
+       *
+       * <pre>
+       * Color that should be used to draw the line.
+       * </pre>
+       */
       public Builder setColor(int value) {
-        result.hasColor = true;
-        result.color_ = value;
+        bitField0_ |= 0x00000001;
+        color_ = value;
+        onChanged();
         return this;
       }
+      /**
+       * <code>optional uint32 color = 1 [default = 4294967295];</code>
+       *
+       * <pre>
+       * Color that should be used to draw the line.
+       * </pre>
+       */
       public Builder clearColor() {
-        result.hasColor = false;
-        result.color_ = -1;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        color_ = -1;
+        onChanged();
         return this;
       }
-      
-      // optional float line_width = 2 [default = 1.5];
+
+      private float lineWidth_ = 1.5F;
+      /**
+       * <code>optional float line_width = 2 [default = 1.5];</code>
+       *
+       * <pre>
+       * the width of the line in pixels.
+       * </pre>
+       */
       public boolean hasLineWidth() {
-        return result.hasLineWidth();
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
+      /**
+       * <code>optional float line_width = 2 [default = 1.5];</code>
+       *
+       * <pre>
+       * the width of the line in pixels.
+       * </pre>
+       */
       public float getLineWidth() {
-        return result.getLineWidth();
+        return lineWidth_;
       }
+      /**
+       * <code>optional float line_width = 2 [default = 1.5];</code>
+       *
+       * <pre>
+       * the width of the line in pixels.
+       * </pre>
+       */
       public Builder setLineWidth(float value) {
-        result.hasLineWidth = true;
-        result.lineWidth_ = value;
+        bitField0_ |= 0x00000002;
+        lineWidth_ = value;
+        onChanged();
         return this;
       }
+      /**
+       * <code>optional float line_width = 2 [default = 1.5];</code>
+       *
+       * <pre>
+       * the width of the line in pixels.
+       * </pre>
+       */
       public Builder clearLineWidth() {
-        result.hasLineWidth = false;
-        result.lineWidth_ = 1.5F;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        lineWidth_ = 1.5F;
+        onChanged();
         return this;
       }
-      
-      // repeated .stardroid_source.GeocentricCoordinatesProto vertex = 3;
+
+      private java.util.List<com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto> vertex_ =
+        java.util.Collections.emptyList();
+      private void ensureVertexIsMutable() {
+        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+          vertex_ = new java.util.ArrayList<com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto>(vertex_);
+          bitField0_ |= 0x00000004;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto, com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.Builder, com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProtoOrBuilder> vertexBuilder_;
+
+      /**
+       * <code>repeated .stardroid_source.GeocentricCoordinatesProto vertex = 3;</code>
+       *
+       * <pre>
+       * Vertices of the line.  This array should never have less than two objects.
+       * </pre>
+       */
       public java.util.List<com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto> getVertexList() {
-        return java.util.Collections.unmodifiableList(result.vertex_);
+        if (vertexBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(vertex_);
+        } else {
+          return vertexBuilder_.getMessageList();
+        }
       }
+      /**
+       * <code>repeated .stardroid_source.GeocentricCoordinatesProto vertex = 3;</code>
+       *
+       * <pre>
+       * Vertices of the line.  This array should never have less than two objects.
+       * </pre>
+       */
       public int getVertexCount() {
-        return result.getVertexCount();
+        if (vertexBuilder_ == null) {
+          return vertex_.size();
+        } else {
+          return vertexBuilder_.getCount();
+        }
       }
+      /**
+       * <code>repeated .stardroid_source.GeocentricCoordinatesProto vertex = 3;</code>
+       *
+       * <pre>
+       * Vertices of the line.  This array should never have less than two objects.
+       * </pre>
+       */
       public com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto getVertex(int index) {
-        return result.getVertex(index);
-      }
-      public Builder setVertex(int index, com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto value) {
-        if (value == null) {
-          throw new NullPointerException();
+        if (vertexBuilder_ == null) {
+          return vertex_.get(index);
+        } else {
+          return vertexBuilder_.getMessage(index);
         }
-        result.vertex_.set(index, value);
+      }
+      /**
+       * <code>repeated .stardroid_source.GeocentricCoordinatesProto vertex = 3;</code>
+       *
+       * <pre>
+       * Vertices of the line.  This array should never have less than two objects.
+       * </pre>
+       */
+      public Builder setVertex(
+          int index, com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto value) {
+        if (vertexBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureVertexIsMutable();
+          vertex_.set(index, value);
+          onChanged();
+        } else {
+          vertexBuilder_.setMessage(index, value);
+        }
         return this;
       }
-      public Builder setVertex(int index, com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.Builder builderForValue) {
-        result.vertex_.set(index, builderForValue.build());
+      /**
+       * <code>repeated .stardroid_source.GeocentricCoordinatesProto vertex = 3;</code>
+       *
+       * <pre>
+       * Vertices of the line.  This array should never have less than two objects.
+       * </pre>
+       */
+      public Builder setVertex(
+          int index, com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.Builder builderForValue) {
+        if (vertexBuilder_ == null) {
+          ensureVertexIsMutable();
+          vertex_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          vertexBuilder_.setMessage(index, builderForValue.build());
+        }
         return this;
       }
+      /**
+       * <code>repeated .stardroid_source.GeocentricCoordinatesProto vertex = 3;</code>
+       *
+       * <pre>
+       * Vertices of the line.  This array should never have less than two objects.
+       * </pre>
+       */
       public Builder addVertex(com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto value) {
-        if (value == null) {
-          throw new NullPointerException();
+        if (vertexBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureVertexIsMutable();
+          vertex_.add(value);
+          onChanged();
+        } else {
+          vertexBuilder_.addMessage(value);
         }
-        if (result.vertex_.isEmpty()) {
-          result.vertex_ = new java.util.ArrayList<com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto>();
-        }
-        result.vertex_.add(value);
         return this;
       }
-      public Builder addVertex(com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.Builder builderForValue) {
-        if (result.vertex_.isEmpty()) {
-          result.vertex_ = new java.util.ArrayList<com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto>();
+      /**
+       * <code>repeated .stardroid_source.GeocentricCoordinatesProto vertex = 3;</code>
+       *
+       * <pre>
+       * Vertices of the line.  This array should never have less than two objects.
+       * </pre>
+       */
+      public Builder addVertex(
+          int index, com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto value) {
+        if (vertexBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureVertexIsMutable();
+          vertex_.add(index, value);
+          onChanged();
+        } else {
+          vertexBuilder_.addMessage(index, value);
         }
-        result.vertex_.add(builderForValue.build());
         return this;
       }
+      /**
+       * <code>repeated .stardroid_source.GeocentricCoordinatesProto vertex = 3;</code>
+       *
+       * <pre>
+       * Vertices of the line.  This array should never have less than two objects.
+       * </pre>
+       */
+      public Builder addVertex(
+          com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.Builder builderForValue) {
+        if (vertexBuilder_ == null) {
+          ensureVertexIsMutable();
+          vertex_.add(builderForValue.build());
+          onChanged();
+        } else {
+          vertexBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .stardroid_source.GeocentricCoordinatesProto vertex = 3;</code>
+       *
+       * <pre>
+       * Vertices of the line.  This array should never have less than two objects.
+       * </pre>
+       */
+      public Builder addVertex(
+          int index, com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.Builder builderForValue) {
+        if (vertexBuilder_ == null) {
+          ensureVertexIsMutable();
+          vertex_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          vertexBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .stardroid_source.GeocentricCoordinatesProto vertex = 3;</code>
+       *
+       * <pre>
+       * Vertices of the line.  This array should never have less than two objects.
+       * </pre>
+       */
       public Builder addAllVertex(
           java.lang.Iterable<? extends com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto> values) {
-        if (result.vertex_.isEmpty()) {
-          result.vertex_ = new java.util.ArrayList<com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto>();
+        if (vertexBuilder_ == null) {
+          ensureVertexIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, vertex_);
+          onChanged();
+        } else {
+          vertexBuilder_.addAllMessages(values);
         }
-        super.addAll(values, result.vertex_);
         return this;
       }
+      /**
+       * <code>repeated .stardroid_source.GeocentricCoordinatesProto vertex = 3;</code>
+       *
+       * <pre>
+       * Vertices of the line.  This array should never have less than two objects.
+       * </pre>
+       */
       public Builder clearVertex() {
-        result.vertex_ = java.util.Collections.emptyList();
+        if (vertexBuilder_ == null) {
+          vertex_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+        } else {
+          vertexBuilder_.clear();
+        }
         return this;
       }
-      
+      /**
+       * <code>repeated .stardroid_source.GeocentricCoordinatesProto vertex = 3;</code>
+       *
+       * <pre>
+       * Vertices of the line.  This array should never have less than two objects.
+       * </pre>
+       */
+      public Builder removeVertex(int index) {
+        if (vertexBuilder_ == null) {
+          ensureVertexIsMutable();
+          vertex_.remove(index);
+          onChanged();
+        } else {
+          vertexBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .stardroid_source.GeocentricCoordinatesProto vertex = 3;</code>
+       *
+       * <pre>
+       * Vertices of the line.  This array should never have less than two objects.
+       * </pre>
+       */
+      public com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.Builder getVertexBuilder(
+          int index) {
+        return getVertexFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .stardroid_source.GeocentricCoordinatesProto vertex = 3;</code>
+       *
+       * <pre>
+       * Vertices of the line.  This array should never have less than two objects.
+       * </pre>
+       */
+      public com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProtoOrBuilder getVertexOrBuilder(
+          int index) {
+        if (vertexBuilder_ == null) {
+          return vertex_.get(index);  } else {
+          return vertexBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .stardroid_source.GeocentricCoordinatesProto vertex = 3;</code>
+       *
+       * <pre>
+       * Vertices of the line.  This array should never have less than two objects.
+       * </pre>
+       */
+      public java.util.List<? extends com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProtoOrBuilder> 
+           getVertexOrBuilderList() {
+        if (vertexBuilder_ != null) {
+          return vertexBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(vertex_);
+        }
+      }
+      /**
+       * <code>repeated .stardroid_source.GeocentricCoordinatesProto vertex = 3;</code>
+       *
+       * <pre>
+       * Vertices of the line.  This array should never have less than two objects.
+       * </pre>
+       */
+      public com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.Builder addVertexBuilder() {
+        return getVertexFieldBuilder().addBuilder(
+            com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .stardroid_source.GeocentricCoordinatesProto vertex = 3;</code>
+       *
+       * <pre>
+       * Vertices of the line.  This array should never have less than two objects.
+       * </pre>
+       */
+      public com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.Builder addVertexBuilder(
+          int index) {
+        return getVertexFieldBuilder().addBuilder(
+            index, com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .stardroid_source.GeocentricCoordinatesProto vertex = 3;</code>
+       *
+       * <pre>
+       * Vertices of the line.  This array should never have less than two objects.
+       * </pre>
+       */
+      public java.util.List<com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.Builder> 
+           getVertexBuilderList() {
+        return getVertexFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto, com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.Builder, com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProtoOrBuilder> 
+          getVertexFieldBuilder() {
+        if (vertexBuilder_ == null) {
+          vertexBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto, com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.Builder, com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProtoOrBuilder>(
+                  vertex_,
+                  ((bitField0_ & 0x00000004) == 0x00000004),
+                  getParentForChildren(),
+                  isClean());
+          vertex_ = null;
+        }
+        return vertexBuilder_;
+      }
+
       // @@protoc_insertion_point(builder_scope:stardroid_source.LineElementProto)
     }
-    
+
     static {
       defaultInstance = new LineElementProto(true);
-      com.google.android.stardroid.source.proto.SourceFullProto.internalForceInit();
       defaultInstance.initFields();
     }
-    
+
     // @@protoc_insertion_point(class_scope:stardroid_source.LineElementProto)
   }
-  
+
+  public interface AstronomicalSourceProtoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:stardroid_source.AstronomicalSourceProto)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated uint32 name_ids = 1;</code>
+     *
+     * <pre>
+     * Ids of the strings in the strings.xml file which correspond to names for
+     * this object.
+     * </pre>
+     */
+    java.util.List<java.lang.Integer> getNameIdsList();
+    /**
+     * <code>repeated uint32 name_ids = 1;</code>
+     *
+     * <pre>
+     * Ids of the strings in the strings.xml file which correspond to names for
+     * this object.
+     * </pre>
+     */
+    int getNameIdsCount();
+    /**
+     * <code>repeated uint32 name_ids = 1;</code>
+     *
+     * <pre>
+     * Ids of the strings in the strings.xml file which correspond to names for
+     * this object.
+     * </pre>
+     */
+    int getNameIds(int index);
+
+    /**
+     * <code>optional string REMOVE_name_ids = 999;</code>
+     *
+     * <pre>
+     * The name of this object.
+     * </pre>
+     */
+    boolean hasREMOVENameIds();
+    /**
+     * <code>optional string REMOVE_name_ids = 999;</code>
+     *
+     * <pre>
+     * The name of this object.
+     * </pre>
+     */
+    java.lang.String getREMOVENameIds();
+    /**
+     * <code>optional string REMOVE_name_ids = 999;</code>
+     *
+     * <pre>
+     * The name of this object.
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getREMOVENameIdsBytes();
+
+    /**
+     * <code>optional .stardroid_source.GeocentricCoordinatesProto search_location = 2;</code>
+     *
+     * <pre>
+     * The location to which SkyMap should direct the user.
+     * </pre>
+     */
+    boolean hasSearchLocation();
+    /**
+     * <code>optional .stardroid_source.GeocentricCoordinatesProto search_location = 2;</code>
+     *
+     * <pre>
+     * The location to which SkyMap should direct the user.
+     * </pre>
+     */
+    com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto getSearchLocation();
+    /**
+     * <code>optional .stardroid_source.GeocentricCoordinatesProto search_location = 2;</code>
+     *
+     * <pre>
+     * The location to which SkyMap should direct the user.
+     * </pre>
+     */
+    com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProtoOrBuilder getSearchLocationOrBuilder();
+
+    /**
+     * <code>optional float search_level = 3 [default = 0];</code>
+     *
+     * <pre>
+     * The level to which SkyMap should zoom to automatically when searching for
+     * the object in manual mode.
+     * </pre>
+     */
+    boolean hasSearchLevel();
+    /**
+     * <code>optional float search_level = 3 [default = 0];</code>
+     *
+     * <pre>
+     * The level to which SkyMap should zoom to automatically when searching for
+     * the object in manual mode.
+     * </pre>
+     */
+    float getSearchLevel();
+
+    /**
+     * <code>optional float level = 4 [default = 0];</code>
+     *
+     * <pre>
+     * The level at which this object becomes visible.
+     * </pre>
+     */
+    boolean hasLevel();
+    /**
+     * <code>optional float level = 4 [default = 0];</code>
+     *
+     * <pre>
+     * The level at which this object becomes visible.
+     * </pre>
+     */
+    float getLevel();
+
+    /**
+     * <code>repeated .stardroid_source.PointElementProto point = 5;</code>
+     *
+     * <pre>
+     * Points which comprise this objects (e.g. the stars).
+     * </pre>
+     */
+    java.util.List<com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto> 
+        getPointList();
+    /**
+     * <code>repeated .stardroid_source.PointElementProto point = 5;</code>
+     *
+     * <pre>
+     * Points which comprise this objects (e.g. the stars).
+     * </pre>
+     */
+    com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto getPoint(int index);
+    /**
+     * <code>repeated .stardroid_source.PointElementProto point = 5;</code>
+     *
+     * <pre>
+     * Points which comprise this objects (e.g. the stars).
+     * </pre>
+     */
+    int getPointCount();
+    /**
+     * <code>repeated .stardroid_source.PointElementProto point = 5;</code>
+     *
+     * <pre>
+     * Points which comprise this objects (e.g. the stars).
+     * </pre>
+     */
+    java.util.List<? extends com.google.android.stardroid.source.proto.SourceFullProto.PointElementProtoOrBuilder> 
+        getPointOrBuilderList();
+    /**
+     * <code>repeated .stardroid_source.PointElementProto point = 5;</code>
+     *
+     * <pre>
+     * Points which comprise this objects (e.g. the stars).
+     * </pre>
+     */
+    com.google.android.stardroid.source.proto.SourceFullProto.PointElementProtoOrBuilder getPointOrBuilder(
+        int index);
+
+    /**
+     * <code>repeated .stardroid_source.LabelElementProto label = 6;</code>
+     *
+     * <pre>
+     * Labels which comprise this objects (e.g. the name).
+     * </pre>
+     */
+    java.util.List<com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto> 
+        getLabelList();
+    /**
+     * <code>repeated .stardroid_source.LabelElementProto label = 6;</code>
+     *
+     * <pre>
+     * Labels which comprise this objects (e.g. the name).
+     * </pre>
+     */
+    com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto getLabel(int index);
+    /**
+     * <code>repeated .stardroid_source.LabelElementProto label = 6;</code>
+     *
+     * <pre>
+     * Labels which comprise this objects (e.g. the name).
+     * </pre>
+     */
+    int getLabelCount();
+    /**
+     * <code>repeated .stardroid_source.LabelElementProto label = 6;</code>
+     *
+     * <pre>
+     * Labels which comprise this objects (e.g. the name).
+     * </pre>
+     */
+    java.util.List<? extends com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProtoOrBuilder> 
+        getLabelOrBuilderList();
+    /**
+     * <code>repeated .stardroid_source.LabelElementProto label = 6;</code>
+     *
+     * <pre>
+     * Labels which comprise this objects (e.g. the name).
+     * </pre>
+     */
+    com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProtoOrBuilder getLabelOrBuilder(
+        int index);
+
+    /**
+     * <code>repeated .stardroid_source.LineElementProto line = 7;</code>
+     *
+     * <pre>
+     * Lines which comprise this objects (e.g. lines of the constellation).
+     * </pre>
+     */
+    java.util.List<com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto> 
+        getLineList();
+    /**
+     * <code>repeated .stardroid_source.LineElementProto line = 7;</code>
+     *
+     * <pre>
+     * Lines which comprise this objects (e.g. lines of the constellation).
+     * </pre>
+     */
+    com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto getLine(int index);
+    /**
+     * <code>repeated .stardroid_source.LineElementProto line = 7;</code>
+     *
+     * <pre>
+     * Lines which comprise this objects (e.g. lines of the constellation).
+     * </pre>
+     */
+    int getLineCount();
+    /**
+     * <code>repeated .stardroid_source.LineElementProto line = 7;</code>
+     *
+     * <pre>
+     * Lines which comprise this objects (e.g. lines of the constellation).
+     * </pre>
+     */
+    java.util.List<? extends com.google.android.stardroid.source.proto.SourceFullProto.LineElementProtoOrBuilder> 
+        getLineOrBuilderList();
+    /**
+     * <code>repeated .stardroid_source.LineElementProto line = 7;</code>
+     *
+     * <pre>
+     * Lines which comprise this objects (e.g. lines of the constellation).
+     * </pre>
+     */
+    com.google.android.stardroid.source.proto.SourceFullProto.LineElementProtoOrBuilder getLineOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code stardroid_source.AstronomicalSourceProto}
+   *
+   * <pre>
+   * This message corresponds to a single astronomical object.  For instance,
+   * this message could represent a constellation.  This constellation is
+   * composed of its stars (points), the lines which draw it's shape, as well as
+   * its label.
+   * TODO(brent): add support for images.
+   * </pre>
+   */
   public static final class AstronomicalSourceProto extends
-      com.google.protobuf.GeneratedMessage {
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:stardroid_source.AstronomicalSourceProto)
+      AstronomicalSourceProtoOrBuilder {
     // Use AstronomicalSourceProto.newBuilder() to construct.
-    private AstronomicalSourceProto() {
-      initFields();
+    private AstronomicalSourceProto(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
     }
-    private AstronomicalSourceProto(boolean noInit) {}
-    
+    private AstronomicalSourceProto(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
     private static final AstronomicalSourceProto defaultInstance;
     public static AstronomicalSourceProto getDefaultInstance() {
       return defaultInstance;
     }
-    
+
     public AstronomicalSourceProto getDefaultInstanceForType() {
       return defaultInstance;
     }
-    
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private AstronomicalSourceProto(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                nameIds_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              nameIds_.add(input.readUInt32());
+              break;
+            }
+            case 10: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001) && input.getBytesUntilLimit() > 0) {
+                nameIds_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                nameIds_.add(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 18: {
+              com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000002) == 0x00000002)) {
+                subBuilder = searchLocation_.toBuilder();
+              }
+              searchLocation_ = input.readMessage(com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(searchLocation_);
+                searchLocation_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000002;
+              break;
+            }
+            case 29: {
+              bitField0_ |= 0x00000004;
+              searchLevel_ = input.readFloat();
+              break;
+            }
+            case 37: {
+              bitField0_ |= 0x00000008;
+              level_ = input.readFloat();
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+                point_ = new java.util.ArrayList<com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto>();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              point_.add(input.readMessage(com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto.PARSER, extensionRegistry));
+              break;
+            }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+                label_ = new java.util.ArrayList<com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto>();
+                mutable_bitField0_ |= 0x00000040;
+              }
+              label_.add(input.readMessage(com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto.PARSER, extensionRegistry));
+              break;
+            }
+            case 58: {
+              if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+                line_ = new java.util.ArrayList<com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto>();
+                mutable_bitField0_ |= 0x00000080;
+              }
+              line_.add(input.readMessage(com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto.PARSER, extensionRegistry));
+              break;
+            }
+            case 7994: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              rEMOVENameIds_ = bs;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          nameIds_ = java.util.Collections.unmodifiableList(nameIds_);
+        }
+        if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+          point_ = java.util.Collections.unmodifiableList(point_);
+        }
+        if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+          label_ = java.util.Collections.unmodifiableList(label_);
+        }
+        if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+          line_ = java.util.Collections.unmodifiableList(line_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return com.google.android.stardroid.source.proto.SourceFullProto.internal_static_stardroid_source_AstronomicalSourceProto_descriptor;
     }
-    
+
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.android.stardroid.source.proto.SourceFullProto.internal_static_stardroid_source_AstronomicalSourceProto_fieldAccessorTable;
+      return com.google.android.stardroid.source.proto.SourceFullProto.internal_static_stardroid_source_AstronomicalSourceProto_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto.class, com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto.Builder.class);
     }
-    
-    // repeated uint32 name_ids = 1;
+
+    public static com.google.protobuf.Parser<AstronomicalSourceProto> PARSER =
+        new com.google.protobuf.AbstractParser<AstronomicalSourceProto>() {
+      public AstronomicalSourceProto parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new AstronomicalSourceProto(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AstronomicalSourceProto> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
     public static final int NAME_IDS_FIELD_NUMBER = 1;
-    private java.util.List<java.lang.Integer> nameIds_ =
-      java.util.Collections.emptyList();
-    public java.util.List<java.lang.Integer> getNameIdsList() {
+    private java.util.List<java.lang.Integer> nameIds_;
+    /**
+     * <code>repeated uint32 name_ids = 1;</code>
+     *
+     * <pre>
+     * Ids of the strings in the strings.xml file which correspond to names for
+     * this object.
+     * </pre>
+     */
+    public java.util.List<java.lang.Integer>
+        getNameIdsList() {
       return nameIds_;
     }
-    public int getNameIdsCount() { return nameIds_.size(); }
+    /**
+     * <code>repeated uint32 name_ids = 1;</code>
+     *
+     * <pre>
+     * Ids of the strings in the strings.xml file which correspond to names for
+     * this object.
+     * </pre>
+     */
+    public int getNameIdsCount() {
+      return nameIds_.size();
+    }
+    /**
+     * <code>repeated uint32 name_ids = 1;</code>
+     *
+     * <pre>
+     * Ids of the strings in the strings.xml file which correspond to names for
+     * this object.
+     * </pre>
+     */
     public int getNameIds(int index) {
       return nameIds_.get(index);
     }
-    
-    // optional string REMOVE_name_ids = 999;
+
     public static final int REMOVE_NAME_IDS_FIELD_NUMBER = 999;
-    private boolean hasREMOVENameIds;
-    private java.lang.String rEMOVENameIds_ = "";
-    public boolean hasREMOVENameIds() { return hasREMOVENameIds; }
-    public java.lang.String getREMOVENameIds() { return rEMOVENameIds_; }
-    
-    // optional .stardroid_source.GeocentricCoordinatesProto search_location = 2;
+    private java.lang.Object rEMOVENameIds_;
+    /**
+     * <code>optional string REMOVE_name_ids = 999;</code>
+     *
+     * <pre>
+     * The name of this object.
+     * </pre>
+     */
+    public boolean hasREMOVENameIds() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional string REMOVE_name_ids = 999;</code>
+     *
+     * <pre>
+     * The name of this object.
+     * </pre>
+     */
+    public java.lang.String getREMOVENameIds() {
+      java.lang.Object ref = rEMOVENameIds_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          rEMOVENameIds_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string REMOVE_name_ids = 999;</code>
+     *
+     * <pre>
+     * The name of this object.
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getREMOVENameIdsBytes() {
+      java.lang.Object ref = rEMOVENameIds_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        rEMOVENameIds_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     public static final int SEARCH_LOCATION_FIELD_NUMBER = 2;
-    private boolean hasSearchLocation;
     private com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto searchLocation_;
-    public boolean hasSearchLocation() { return hasSearchLocation; }
-    public com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto getSearchLocation() { return searchLocation_; }
-    
-    // optional float search_level = 3 [default = 0];
+    /**
+     * <code>optional .stardroid_source.GeocentricCoordinatesProto search_location = 2;</code>
+     *
+     * <pre>
+     * The location to which SkyMap should direct the user.
+     * </pre>
+     */
+    public boolean hasSearchLocation() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional .stardroid_source.GeocentricCoordinatesProto search_location = 2;</code>
+     *
+     * <pre>
+     * The location to which SkyMap should direct the user.
+     * </pre>
+     */
+    public com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto getSearchLocation() {
+      return searchLocation_;
+    }
+    /**
+     * <code>optional .stardroid_source.GeocentricCoordinatesProto search_location = 2;</code>
+     *
+     * <pre>
+     * The location to which SkyMap should direct the user.
+     * </pre>
+     */
+    public com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProtoOrBuilder getSearchLocationOrBuilder() {
+      return searchLocation_;
+    }
+
     public static final int SEARCH_LEVEL_FIELD_NUMBER = 3;
-    private boolean hasSearchLevel;
-    private float searchLevel_ = 0F;
-    public boolean hasSearchLevel() { return hasSearchLevel; }
-    public float getSearchLevel() { return searchLevel_; }
-    
-    // optional float level = 4 [default = 0];
+    private float searchLevel_;
+    /**
+     * <code>optional float search_level = 3 [default = 0];</code>
+     *
+     * <pre>
+     * The level to which SkyMap should zoom to automatically when searching for
+     * the object in manual mode.
+     * </pre>
+     */
+    public boolean hasSearchLevel() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional float search_level = 3 [default = 0];</code>
+     *
+     * <pre>
+     * The level to which SkyMap should zoom to automatically when searching for
+     * the object in manual mode.
+     * </pre>
+     */
+    public float getSearchLevel() {
+      return searchLevel_;
+    }
+
     public static final int LEVEL_FIELD_NUMBER = 4;
-    private boolean hasLevel;
-    private float level_ = 0F;
-    public boolean hasLevel() { return hasLevel; }
-    public float getLevel() { return level_; }
-    
-    // repeated .stardroid_source.PointElementProto point = 5;
+    private float level_;
+    /**
+     * <code>optional float level = 4 [default = 0];</code>
+     *
+     * <pre>
+     * The level at which this object becomes visible.
+     * </pre>
+     */
+    public boolean hasLevel() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional float level = 4 [default = 0];</code>
+     *
+     * <pre>
+     * The level at which this object becomes visible.
+     * </pre>
+     */
+    public float getLevel() {
+      return level_;
+    }
+
     public static final int POINT_FIELD_NUMBER = 5;
-    private java.util.List<com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto> point_ =
-      java.util.Collections.emptyList();
+    private java.util.List<com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto> point_;
+    /**
+     * <code>repeated .stardroid_source.PointElementProto point = 5;</code>
+     *
+     * <pre>
+     * Points which comprise this objects (e.g. the stars).
+     * </pre>
+     */
     public java.util.List<com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto> getPointList() {
       return point_;
     }
-    public int getPointCount() { return point_.size(); }
+    /**
+     * <code>repeated .stardroid_source.PointElementProto point = 5;</code>
+     *
+     * <pre>
+     * Points which comprise this objects (e.g. the stars).
+     * </pre>
+     */
+    public java.util.List<? extends com.google.android.stardroid.source.proto.SourceFullProto.PointElementProtoOrBuilder> 
+        getPointOrBuilderList() {
+      return point_;
+    }
+    /**
+     * <code>repeated .stardroid_source.PointElementProto point = 5;</code>
+     *
+     * <pre>
+     * Points which comprise this objects (e.g. the stars).
+     * </pre>
+     */
+    public int getPointCount() {
+      return point_.size();
+    }
+    /**
+     * <code>repeated .stardroid_source.PointElementProto point = 5;</code>
+     *
+     * <pre>
+     * Points which comprise this objects (e.g. the stars).
+     * </pre>
+     */
     public com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto getPoint(int index) {
       return point_.get(index);
     }
-    
-    // repeated .stardroid_source.LabelElementProto label = 6;
+    /**
+     * <code>repeated .stardroid_source.PointElementProto point = 5;</code>
+     *
+     * <pre>
+     * Points which comprise this objects (e.g. the stars).
+     * </pre>
+     */
+    public com.google.android.stardroid.source.proto.SourceFullProto.PointElementProtoOrBuilder getPointOrBuilder(
+        int index) {
+      return point_.get(index);
+    }
+
     public static final int LABEL_FIELD_NUMBER = 6;
-    private java.util.List<com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto> label_ =
-      java.util.Collections.emptyList();
+    private java.util.List<com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto> label_;
+    /**
+     * <code>repeated .stardroid_source.LabelElementProto label = 6;</code>
+     *
+     * <pre>
+     * Labels which comprise this objects (e.g. the name).
+     * </pre>
+     */
     public java.util.List<com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto> getLabelList() {
       return label_;
     }
-    public int getLabelCount() { return label_.size(); }
+    /**
+     * <code>repeated .stardroid_source.LabelElementProto label = 6;</code>
+     *
+     * <pre>
+     * Labels which comprise this objects (e.g. the name).
+     * </pre>
+     */
+    public java.util.List<? extends com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProtoOrBuilder> 
+        getLabelOrBuilderList() {
+      return label_;
+    }
+    /**
+     * <code>repeated .stardroid_source.LabelElementProto label = 6;</code>
+     *
+     * <pre>
+     * Labels which comprise this objects (e.g. the name).
+     * </pre>
+     */
+    public int getLabelCount() {
+      return label_.size();
+    }
+    /**
+     * <code>repeated .stardroid_source.LabelElementProto label = 6;</code>
+     *
+     * <pre>
+     * Labels which comprise this objects (e.g. the name).
+     * </pre>
+     */
     public com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto getLabel(int index) {
       return label_.get(index);
     }
-    
-    // repeated .stardroid_source.LineElementProto line = 7;
+    /**
+     * <code>repeated .stardroid_source.LabelElementProto label = 6;</code>
+     *
+     * <pre>
+     * Labels which comprise this objects (e.g. the name).
+     * </pre>
+     */
+    public com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProtoOrBuilder getLabelOrBuilder(
+        int index) {
+      return label_.get(index);
+    }
+
     public static final int LINE_FIELD_NUMBER = 7;
-    private java.util.List<com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto> line_ =
-      java.util.Collections.emptyList();
+    private java.util.List<com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto> line_;
+    /**
+     * <code>repeated .stardroid_source.LineElementProto line = 7;</code>
+     *
+     * <pre>
+     * Lines which comprise this objects (e.g. lines of the constellation).
+     * </pre>
+     */
     public java.util.List<com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto> getLineList() {
       return line_;
     }
-    public int getLineCount() { return line_.size(); }
+    /**
+     * <code>repeated .stardroid_source.LineElementProto line = 7;</code>
+     *
+     * <pre>
+     * Lines which comprise this objects (e.g. lines of the constellation).
+     * </pre>
+     */
+    public java.util.List<? extends com.google.android.stardroid.source.proto.SourceFullProto.LineElementProtoOrBuilder> 
+        getLineOrBuilderList() {
+      return line_;
+    }
+    /**
+     * <code>repeated .stardroid_source.LineElementProto line = 7;</code>
+     *
+     * <pre>
+     * Lines which comprise this objects (e.g. lines of the constellation).
+     * </pre>
+     */
+    public int getLineCount() {
+      return line_.size();
+    }
+    /**
+     * <code>repeated .stardroid_source.LineElementProto line = 7;</code>
+     *
+     * <pre>
+     * Lines which comprise this objects (e.g. lines of the constellation).
+     * </pre>
+     */
     public com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto getLine(int index) {
       return line_.get(index);
     }
-    
-    private void initFields() {
-      searchLocation_ = com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.getDefaultInstance();
+    /**
+     * <code>repeated .stardroid_source.LineElementProto line = 7;</code>
+     *
+     * <pre>
+     * Lines which comprise this objects (e.g. lines of the constellation).
+     * </pre>
+     */
+    public com.google.android.stardroid.source.proto.SourceFullProto.LineElementProtoOrBuilder getLineOrBuilder(
+        int index) {
+      return line_.get(index);
     }
+
+    private void initFields() {
+      nameIds_ = java.util.Collections.emptyList();
+      rEMOVENameIds_ = "";
+      searchLocation_ = com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.getDefaultInstance();
+      searchLevel_ = 0F;
+      level_ = 0F;
+      point_ = java.util.Collections.emptyList();
+      label_ = java.util.Collections.emptyList();
+      line_ = java.util.Collections.emptyList();
+    }
+    private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
       return true;
     }
-    
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      for (int element : getNameIdsList()) {
-        output.writeUInt32(1, element);
+      for (int i = 0; i < nameIds_.size(); i++) {
+        output.writeUInt32(1, nameIds_.get(i));
       }
-      if (hasSearchLocation()) {
-        output.writeMessage(2, getSearchLocation());
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeMessage(2, searchLocation_);
       }
-      if (hasSearchLevel()) {
-        output.writeFloat(3, getSearchLevel());
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeFloat(3, searchLevel_);
       }
-      if (hasLevel()) {
-        output.writeFloat(4, getLevel());
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeFloat(4, level_);
       }
-      for (com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto element : getPointList()) {
-        output.writeMessage(5, element);
+      for (int i = 0; i < point_.size(); i++) {
+        output.writeMessage(5, point_.get(i));
       }
-      for (com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto element : getLabelList()) {
-        output.writeMessage(6, element);
+      for (int i = 0; i < label_.size(); i++) {
+        output.writeMessage(6, label_.get(i));
       }
-      for (com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto element : getLineList()) {
-        output.writeMessage(7, element);
+      for (int i = 0; i < line_.size(); i++) {
+        output.writeMessage(7, line_.get(i));
       }
-      if (hasREMOVENameIds()) {
-        output.writeString(999, getREMOVENameIds());
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(999, getREMOVENameIdsBytes());
       }
       getUnknownFields().writeTo(output);
     }
-    
+
     private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
       int size = memoizedSerializedSize;
       if (size != -1) return size;
-    
+
       size = 0;
       {
         int dataSize = 0;
-        for (int element : getNameIdsList()) {
+        for (int i = 0; i < nameIds_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(element);
+            .computeUInt32SizeNoTag(nameIds_.get(i));
         }
         size += dataSize;
         size += 1 * getNameIdsList().size();
       }
-      if (hasSearchLocation()) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getSearchLocation());
+          .computeMessageSize(2, searchLocation_);
       }
-      if (hasSearchLevel()) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(3, getSearchLevel());
+          .computeFloatSize(3, searchLevel_);
       }
-      if (hasLevel()) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(4, getLevel());
+          .computeFloatSize(4, level_);
       }
-      for (com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto element : getPointList()) {
+      for (int i = 0; i < point_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, element);
+          .computeMessageSize(5, point_.get(i));
       }
-      for (com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto element : getLabelList()) {
+      for (int i = 0; i < label_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, element);
+          .computeMessageSize(6, label_.get(i));
       }
-      for (com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto element : getLineList()) {
+      for (int i = 0; i < line_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, element);
+          .computeMessageSize(7, line_.get(i));
       }
-      if (hasREMOVENameIds()) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeStringSize(999, getREMOVENameIds());
+          .computeBytesSize(999, getREMOVENameIdsBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
       return size;
     }
-    
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
     public static com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return PARSER.parseFrom(input);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(input, extensionRegistry);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return PARSER.parseDelimitedFrom(input);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return PARSER.parseFrom(input);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(input, extensionRegistry);
     }
-    
+
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder(com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
-    
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code stardroid_source.AstronomicalSourceProto}
+     *
+     * <pre>
+     * This message corresponds to a single astronomical object.  For instance,
+     * this message could represent a constellation.  This constellation is
+     * composed of its stars (points), the lines which draw it's shape, as well as
+     * its label.
+     * TODO(brent): add support for images.
+     * </pre>
+     */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder> {
-      private com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto result;
-      
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:stardroid_source.AstronomicalSourceProto)
+        com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProtoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.google.android.stardroid.source.proto.SourceFullProto.internal_static_stardroid_source_AstronomicalSourceProto_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.android.stardroid.source.proto.SourceFullProto.internal_static_stardroid_source_AstronomicalSourceProto_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto.class, com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto.Builder.class);
+      }
+
       // Construct using com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto.newBuilder()
-      private Builder() {}
-      
-      private static Builder create() {
-        Builder builder = new Builder();
-        builder.result = new com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto();
-        return builder;
+      private Builder() {
+        maybeForceBuilderInitialization();
       }
-      
-      protected com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto internalGetResult() {
-        return result;
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
       }
-      
-      public Builder clear() {
-        if (result == null) {
-          throw new IllegalStateException(
-            "Cannot call clear() after build().");
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getSearchLocationFieldBuilder();
+          getPointFieldBuilder();
+          getLabelFieldBuilder();
+          getLineFieldBuilder();
         }
-        result = new com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto();
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        nameIds_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        rEMOVENameIds_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        if (searchLocationBuilder_ == null) {
+          searchLocation_ = com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.getDefaultInstance();
+        } else {
+          searchLocationBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000004);
+        searchLevel_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        level_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        if (pointBuilder_ == null) {
+          point_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000020);
+        } else {
+          pointBuilder_.clear();
+        }
+        if (labelBuilder_ == null) {
+          label_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000040);
+        } else {
+          labelBuilder_.clear();
+        }
+        if (lineBuilder_ == null) {
+          line_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000080);
+        } else {
+          lineBuilder_.clear();
+        }
         return this;
       }
-      
+
       public Builder clone() {
-        return create().mergeFrom(result);
+        return create().mergeFrom(buildPartial());
       }
-      
+
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto.getDescriptor();
+        return com.google.android.stardroid.source.proto.SourceFullProto.internal_static_stardroid_source_AstronomicalSourceProto_descriptor;
       }
-      
+
       public com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto getDefaultInstanceForType() {
         return com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto.getDefaultInstance();
       }
-      
-      public boolean isInitialized() {
-        return result.isInitialized();
-      }
+
       public com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto build() {
-        if (result != null && !isInitialized()) {
+        com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto result = buildPartial();
+        if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
-        return buildPartial();
+        return result;
       }
-      
-      private com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto buildParsed()
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        if (!isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
-        }
-        return buildPartial();
-      }
-      
+
       public com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto buildPartial() {
-        if (result == null) {
-          throw new IllegalStateException(
-            "build() has already been called on this Builder.");
+        com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto result = new com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          nameIds_ = java.util.Collections.unmodifiableList(nameIds_);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
-        if (result.nameIds_ != java.util.Collections.EMPTY_LIST) {
-          result.nameIds_ =
-            java.util.Collections.unmodifiableList(result.nameIds_);
+        result.nameIds_ = nameIds_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000001;
         }
-        if (result.point_ != java.util.Collections.EMPTY_LIST) {
-          result.point_ =
-            java.util.Collections.unmodifiableList(result.point_);
+        result.rEMOVENameIds_ = rEMOVENameIds_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000002;
         }
-        if (result.label_ != java.util.Collections.EMPTY_LIST) {
-          result.label_ =
-            java.util.Collections.unmodifiableList(result.label_);
+        if (searchLocationBuilder_ == null) {
+          result.searchLocation_ = searchLocation_;
+        } else {
+          result.searchLocation_ = searchLocationBuilder_.build();
         }
-        if (result.line_ != java.util.Collections.EMPTY_LIST) {
-          result.line_ =
-            java.util.Collections.unmodifiableList(result.line_);
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000004;
         }
-        com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto returnMe = result;
-        result = null;
-        return returnMe;
+        result.searchLevel_ = searchLevel_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.level_ = level_;
+        if (pointBuilder_ == null) {
+          if (((bitField0_ & 0x00000020) == 0x00000020)) {
+            point_ = java.util.Collections.unmodifiableList(point_);
+            bitField0_ = (bitField0_ & ~0x00000020);
+          }
+          result.point_ = point_;
+        } else {
+          result.point_ = pointBuilder_.build();
+        }
+        if (labelBuilder_ == null) {
+          if (((bitField0_ & 0x00000040) == 0x00000040)) {
+            label_ = java.util.Collections.unmodifiableList(label_);
+            bitField0_ = (bitField0_ & ~0x00000040);
+          }
+          result.label_ = label_;
+        } else {
+          result.label_ = labelBuilder_.build();
+        }
+        if (lineBuilder_ == null) {
+          if (((bitField0_ & 0x00000080) == 0x00000080)) {
+            line_ = java.util.Collections.unmodifiableList(line_);
+            bitField0_ = (bitField0_ & ~0x00000080);
+          }
+          result.line_ = line_;
+        } else {
+          result.line_ = lineBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
       }
-      
+
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto) {
           return mergeFrom((com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto)other);
@@ -2120,17 +5013,23 @@ public final class SourceFullProto {
           return this;
         }
       }
-      
+
       public Builder mergeFrom(com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto other) {
         if (other == com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto.getDefaultInstance()) return this;
         if (!other.nameIds_.isEmpty()) {
-          if (result.nameIds_.isEmpty()) {
-            result.nameIds_ = new java.util.ArrayList<java.lang.Integer>();
+          if (nameIds_.isEmpty()) {
+            nameIds_ = other.nameIds_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureNameIdsIsMutable();
+            nameIds_.addAll(other.nameIds_);
           }
-          result.nameIds_.addAll(other.nameIds_);
+          onChanged();
         }
         if (other.hasREMOVENameIds()) {
-          setREMOVENameIds(other.getREMOVENameIds());
+          bitField0_ |= 0x00000002;
+          rEMOVENameIds_ = other.rEMOVENameIds_;
+          onChanged();
         }
         if (other.hasSearchLocation()) {
           mergeSearchLocation(other.getSearchLocation());
@@ -2141,614 +5040,1880 @@ public final class SourceFullProto {
         if (other.hasLevel()) {
           setLevel(other.getLevel());
         }
-        if (!other.point_.isEmpty()) {
-          if (result.point_.isEmpty()) {
-            result.point_ = new java.util.ArrayList<com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto>();
+        if (pointBuilder_ == null) {
+          if (!other.point_.isEmpty()) {
+            if (point_.isEmpty()) {
+              point_ = other.point_;
+              bitField0_ = (bitField0_ & ~0x00000020);
+            } else {
+              ensurePointIsMutable();
+              point_.addAll(other.point_);
+            }
+            onChanged();
           }
-          result.point_.addAll(other.point_);
+        } else {
+          if (!other.point_.isEmpty()) {
+            if (pointBuilder_.isEmpty()) {
+              pointBuilder_.dispose();
+              pointBuilder_ = null;
+              point_ = other.point_;
+              bitField0_ = (bitField0_ & ~0x00000020);
+              pointBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getPointFieldBuilder() : null;
+            } else {
+              pointBuilder_.addAllMessages(other.point_);
+            }
+          }
         }
-        if (!other.label_.isEmpty()) {
-          if (result.label_.isEmpty()) {
-            result.label_ = new java.util.ArrayList<com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto>();
+        if (labelBuilder_ == null) {
+          if (!other.label_.isEmpty()) {
+            if (label_.isEmpty()) {
+              label_ = other.label_;
+              bitField0_ = (bitField0_ & ~0x00000040);
+            } else {
+              ensureLabelIsMutable();
+              label_.addAll(other.label_);
+            }
+            onChanged();
           }
-          result.label_.addAll(other.label_);
+        } else {
+          if (!other.label_.isEmpty()) {
+            if (labelBuilder_.isEmpty()) {
+              labelBuilder_.dispose();
+              labelBuilder_ = null;
+              label_ = other.label_;
+              bitField0_ = (bitField0_ & ~0x00000040);
+              labelBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getLabelFieldBuilder() : null;
+            } else {
+              labelBuilder_.addAllMessages(other.label_);
+            }
+          }
         }
-        if (!other.line_.isEmpty()) {
-          if (result.line_.isEmpty()) {
-            result.line_ = new java.util.ArrayList<com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto>();
+        if (lineBuilder_ == null) {
+          if (!other.line_.isEmpty()) {
+            if (line_.isEmpty()) {
+              line_ = other.line_;
+              bitField0_ = (bitField0_ & ~0x00000080);
+            } else {
+              ensureLineIsMutable();
+              line_.addAll(other.line_);
+            }
+            onChanged();
           }
-          result.line_.addAll(other.line_);
+        } else {
+          if (!other.line_.isEmpty()) {
+            if (lineBuilder_.isEmpty()) {
+              lineBuilder_.dispose();
+              lineBuilder_ = null;
+              line_ = other.line_;
+              bitField0_ = (bitField0_ & ~0x00000080);
+              lineBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getLineFieldBuilder() : null;
+            } else {
+              lineBuilder_.addAllMessages(other.line_);
+            }
+          }
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
-      
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                return this;
-              }
-              break;
-            }
-            case 8: {
-              addNameIds(input.readUInt32());
-              break;
-            }
-            case 10: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              while (input.getBytesUntilLimit() > 0) {
-                addNameIds(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 18: {
-              com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.Builder subBuilder = com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.newBuilder();
-              if (hasSearchLocation()) {
-                subBuilder.mergeFrom(getSearchLocation());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setSearchLocation(subBuilder.buildPartial());
-              break;
-            }
-            case 29: {
-              setSearchLevel(input.readFloat());
-              break;
-            }
-            case 37: {
-              setLevel(input.readFloat());
-              break;
-            }
-            case 42: {
-              com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto.Builder subBuilder = com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto.newBuilder();
-              input.readMessage(subBuilder, extensionRegistry);
-              addPoint(subBuilder.buildPartial());
-              break;
-            }
-            case 50: {
-              com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto.Builder subBuilder = com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto.newBuilder();
-              input.readMessage(subBuilder, extensionRegistry);
-              addLabel(subBuilder.buildPartial());
-              break;
-            }
-            case 58: {
-              com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto.Builder subBuilder = com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto.newBuilder();
-              input.readMessage(subBuilder, extensionRegistry);
-              addLine(subBuilder.buildPartial());
-              break;
-            }
-            case 7994: {
-              setREMOVENameIds(input.readString());
-              break;
-            }
+        com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
           }
         }
+        return this;
       }
-      
-      
-      // repeated uint32 name_ids = 1;
-      public java.util.List<java.lang.Integer> getNameIdsList() {
-        return java.util.Collections.unmodifiableList(result.nameIds_);
+      private int bitField0_;
+
+      private java.util.List<java.lang.Integer> nameIds_ = java.util.Collections.emptyList();
+      private void ensureNameIdsIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          nameIds_ = new java.util.ArrayList<java.lang.Integer>(nameIds_);
+          bitField0_ |= 0x00000001;
+         }
       }
+      /**
+       * <code>repeated uint32 name_ids = 1;</code>
+       *
+       * <pre>
+       * Ids of the strings in the strings.xml file which correspond to names for
+       * this object.
+       * </pre>
+       */
+      public java.util.List<java.lang.Integer>
+          getNameIdsList() {
+        return java.util.Collections.unmodifiableList(nameIds_);
+      }
+      /**
+       * <code>repeated uint32 name_ids = 1;</code>
+       *
+       * <pre>
+       * Ids of the strings in the strings.xml file which correspond to names for
+       * this object.
+       * </pre>
+       */
       public int getNameIdsCount() {
-        return result.getNameIdsCount();
+        return nameIds_.size();
       }
+      /**
+       * <code>repeated uint32 name_ids = 1;</code>
+       *
+       * <pre>
+       * Ids of the strings in the strings.xml file which correspond to names for
+       * this object.
+       * </pre>
+       */
       public int getNameIds(int index) {
-        return result.getNameIds(index);
+        return nameIds_.get(index);
       }
-      public Builder setNameIds(int index, int value) {
-        result.nameIds_.set(index, value);
+      /**
+       * <code>repeated uint32 name_ids = 1;</code>
+       *
+       * <pre>
+       * Ids of the strings in the strings.xml file which correspond to names for
+       * this object.
+       * </pre>
+       */
+      public Builder setNameIds(
+          int index, int value) {
+        ensureNameIdsIsMutable();
+        nameIds_.set(index, value);
+        onChanged();
         return this;
       }
+      /**
+       * <code>repeated uint32 name_ids = 1;</code>
+       *
+       * <pre>
+       * Ids of the strings in the strings.xml file which correspond to names for
+       * this object.
+       * </pre>
+       */
       public Builder addNameIds(int value) {
-        if (result.nameIds_.isEmpty()) {
-          result.nameIds_ = new java.util.ArrayList<java.lang.Integer>();
-        }
-        result.nameIds_.add(value);
+        ensureNameIdsIsMutable();
+        nameIds_.add(value);
+        onChanged();
         return this;
       }
+      /**
+       * <code>repeated uint32 name_ids = 1;</code>
+       *
+       * <pre>
+       * Ids of the strings in the strings.xml file which correspond to names for
+       * this object.
+       * </pre>
+       */
       public Builder addAllNameIds(
           java.lang.Iterable<? extends java.lang.Integer> values) {
-        if (result.nameIds_.isEmpty()) {
-          result.nameIds_ = new java.util.ArrayList<java.lang.Integer>();
-        }
-        super.addAll(values, result.nameIds_);
+        ensureNameIdsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, nameIds_);
+        onChanged();
         return this;
       }
+      /**
+       * <code>repeated uint32 name_ids = 1;</code>
+       *
+       * <pre>
+       * Ids of the strings in the strings.xml file which correspond to names for
+       * this object.
+       * </pre>
+       */
       public Builder clearNameIds() {
-        result.nameIds_ = java.util.Collections.emptyList();
+        nameIds_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
         return this;
       }
-      
-      // optional string REMOVE_name_ids = 999;
+
+      private java.lang.Object rEMOVENameIds_ = "";
+      /**
+       * <code>optional string REMOVE_name_ids = 999;</code>
+       *
+       * <pre>
+       * The name of this object.
+       * </pre>
+       */
       public boolean hasREMOVENameIds() {
-        return result.hasREMOVENameIds();
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
+      /**
+       * <code>optional string REMOVE_name_ids = 999;</code>
+       *
+       * <pre>
+       * The name of this object.
+       * </pre>
+       */
       public java.lang.String getREMOVENameIds() {
-        return result.getREMOVENameIds();
+        java.lang.Object ref = rEMOVENameIds_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            rEMOVENameIds_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
-      public Builder setREMOVENameIds(java.lang.String value) {
+      /**
+       * <code>optional string REMOVE_name_ids = 999;</code>
+       *
+       * <pre>
+       * The name of this object.
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getREMOVENameIdsBytes() {
+        java.lang.Object ref = rEMOVENameIds_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          rEMOVENameIds_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string REMOVE_name_ids = 999;</code>
+       *
+       * <pre>
+       * The name of this object.
+       * </pre>
+       */
+      public Builder setREMOVENameIds(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  result.hasREMOVENameIds = true;
-        result.rEMOVENameIds_ = value;
+  bitField0_ |= 0x00000002;
+        rEMOVENameIds_ = value;
+        onChanged();
         return this;
       }
+      /**
+       * <code>optional string REMOVE_name_ids = 999;</code>
+       *
+       * <pre>
+       * The name of this object.
+       * </pre>
+       */
       public Builder clearREMOVENameIds() {
-        result.hasREMOVENameIds = false;
-        result.rEMOVENameIds_ = getDefaultInstance().getREMOVENameIds();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        rEMOVENameIds_ = getDefaultInstance().getREMOVENameIds();
+        onChanged();
         return this;
       }
-      
-      // optional .stardroid_source.GeocentricCoordinatesProto search_location = 2;
+      /**
+       * <code>optional string REMOVE_name_ids = 999;</code>
+       *
+       * <pre>
+       * The name of this object.
+       * </pre>
+       */
+      public Builder setREMOVENameIdsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        rEMOVENameIds_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto searchLocation_ = com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto, com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.Builder, com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProtoOrBuilder> searchLocationBuilder_;
+      /**
+       * <code>optional .stardroid_source.GeocentricCoordinatesProto search_location = 2;</code>
+       *
+       * <pre>
+       * The location to which SkyMap should direct the user.
+       * </pre>
+       */
       public boolean hasSearchLocation() {
-        return result.hasSearchLocation();
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
+      /**
+       * <code>optional .stardroid_source.GeocentricCoordinatesProto search_location = 2;</code>
+       *
+       * <pre>
+       * The location to which SkyMap should direct the user.
+       * </pre>
+       */
       public com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto getSearchLocation() {
-        return result.getSearchLocation();
-      }
-      public Builder setSearchLocation(com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        result.hasSearchLocation = true;
-        result.searchLocation_ = value;
-        return this;
-      }
-      public Builder setSearchLocation(com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.Builder builderForValue) {
-        result.hasSearchLocation = true;
-        result.searchLocation_ = builderForValue.build();
-        return this;
-      }
-      public Builder mergeSearchLocation(com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto value) {
-        if (result.hasSearchLocation() &&
-            result.searchLocation_ != com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.getDefaultInstance()) {
-          result.searchLocation_ =
-            com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.newBuilder(result.searchLocation_).mergeFrom(value).buildPartial();
+        if (searchLocationBuilder_ == null) {
+          return searchLocation_;
         } else {
-          result.searchLocation_ = value;
+          return searchLocationBuilder_.getMessage();
         }
-        result.hasSearchLocation = true;
+      }
+      /**
+       * <code>optional .stardroid_source.GeocentricCoordinatesProto search_location = 2;</code>
+       *
+       * <pre>
+       * The location to which SkyMap should direct the user.
+       * </pre>
+       */
+      public Builder setSearchLocation(com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto value) {
+        if (searchLocationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          searchLocation_ = value;
+          onChanged();
+        } else {
+          searchLocationBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
         return this;
       }
+      /**
+       * <code>optional .stardroid_source.GeocentricCoordinatesProto search_location = 2;</code>
+       *
+       * <pre>
+       * The location to which SkyMap should direct the user.
+       * </pre>
+       */
+      public Builder setSearchLocation(
+          com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.Builder builderForValue) {
+        if (searchLocationBuilder_ == null) {
+          searchLocation_ = builderForValue.build();
+          onChanged();
+        } else {
+          searchLocationBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        return this;
+      }
+      /**
+       * <code>optional .stardroid_source.GeocentricCoordinatesProto search_location = 2;</code>
+       *
+       * <pre>
+       * The location to which SkyMap should direct the user.
+       * </pre>
+       */
+      public Builder mergeSearchLocation(com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto value) {
+        if (searchLocationBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) == 0x00000004) &&
+              searchLocation_ != com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.getDefaultInstance()) {
+            searchLocation_ =
+              com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.newBuilder(searchLocation_).mergeFrom(value).buildPartial();
+          } else {
+            searchLocation_ = value;
+          }
+          onChanged();
+        } else {
+          searchLocationBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000004;
+        return this;
+      }
+      /**
+       * <code>optional .stardroid_source.GeocentricCoordinatesProto search_location = 2;</code>
+       *
+       * <pre>
+       * The location to which SkyMap should direct the user.
+       * </pre>
+       */
       public Builder clearSearchLocation() {
-        result.hasSearchLocation = false;
-        result.searchLocation_ = com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.getDefaultInstance();
+        if (searchLocationBuilder_ == null) {
+          searchLocation_ = com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.getDefaultInstance();
+          onChanged();
+        } else {
+          searchLocationBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
-      
-      // optional float search_level = 3 [default = 0];
+      /**
+       * <code>optional .stardroid_source.GeocentricCoordinatesProto search_location = 2;</code>
+       *
+       * <pre>
+       * The location to which SkyMap should direct the user.
+       * </pre>
+       */
+      public com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.Builder getSearchLocationBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getSearchLocationFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .stardroid_source.GeocentricCoordinatesProto search_location = 2;</code>
+       *
+       * <pre>
+       * The location to which SkyMap should direct the user.
+       * </pre>
+       */
+      public com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProtoOrBuilder getSearchLocationOrBuilder() {
+        if (searchLocationBuilder_ != null) {
+          return searchLocationBuilder_.getMessageOrBuilder();
+        } else {
+          return searchLocation_;
+        }
+      }
+      /**
+       * <code>optional .stardroid_source.GeocentricCoordinatesProto search_location = 2;</code>
+       *
+       * <pre>
+       * The location to which SkyMap should direct the user.
+       * </pre>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto, com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.Builder, com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProtoOrBuilder> 
+          getSearchLocationFieldBuilder() {
+        if (searchLocationBuilder_ == null) {
+          searchLocationBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto, com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.Builder, com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProtoOrBuilder>(
+                  getSearchLocation(),
+                  getParentForChildren(),
+                  isClean());
+          searchLocation_ = null;
+        }
+        return searchLocationBuilder_;
+      }
+
+      private float searchLevel_ ;
+      /**
+       * <code>optional float search_level = 3 [default = 0];</code>
+       *
+       * <pre>
+       * The level to which SkyMap should zoom to automatically when searching for
+       * the object in manual mode.
+       * </pre>
+       */
       public boolean hasSearchLevel() {
-        return result.hasSearchLevel();
+        return ((bitField0_ & 0x00000008) == 0x00000008);
       }
+      /**
+       * <code>optional float search_level = 3 [default = 0];</code>
+       *
+       * <pre>
+       * The level to which SkyMap should zoom to automatically when searching for
+       * the object in manual mode.
+       * </pre>
+       */
       public float getSearchLevel() {
-        return result.getSearchLevel();
+        return searchLevel_;
       }
+      /**
+       * <code>optional float search_level = 3 [default = 0];</code>
+       *
+       * <pre>
+       * The level to which SkyMap should zoom to automatically when searching for
+       * the object in manual mode.
+       * </pre>
+       */
       public Builder setSearchLevel(float value) {
-        result.hasSearchLevel = true;
-        result.searchLevel_ = value;
+        bitField0_ |= 0x00000008;
+        searchLevel_ = value;
+        onChanged();
         return this;
       }
+      /**
+       * <code>optional float search_level = 3 [default = 0];</code>
+       *
+       * <pre>
+       * The level to which SkyMap should zoom to automatically when searching for
+       * the object in manual mode.
+       * </pre>
+       */
       public Builder clearSearchLevel() {
-        result.hasSearchLevel = false;
-        result.searchLevel_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        searchLevel_ = 0F;
+        onChanged();
         return this;
       }
-      
-      // optional float level = 4 [default = 0];
+
+      private float level_ ;
+      /**
+       * <code>optional float level = 4 [default = 0];</code>
+       *
+       * <pre>
+       * The level at which this object becomes visible.
+       * </pre>
+       */
       public boolean hasLevel() {
-        return result.hasLevel();
+        return ((bitField0_ & 0x00000010) == 0x00000010);
       }
+      /**
+       * <code>optional float level = 4 [default = 0];</code>
+       *
+       * <pre>
+       * The level at which this object becomes visible.
+       * </pre>
+       */
       public float getLevel() {
-        return result.getLevel();
+        return level_;
       }
+      /**
+       * <code>optional float level = 4 [default = 0];</code>
+       *
+       * <pre>
+       * The level at which this object becomes visible.
+       * </pre>
+       */
       public Builder setLevel(float value) {
-        result.hasLevel = true;
-        result.level_ = value;
+        bitField0_ |= 0x00000010;
+        level_ = value;
+        onChanged();
         return this;
       }
+      /**
+       * <code>optional float level = 4 [default = 0];</code>
+       *
+       * <pre>
+       * The level at which this object becomes visible.
+       * </pre>
+       */
       public Builder clearLevel() {
-        result.hasLevel = false;
-        result.level_ = 0F;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        level_ = 0F;
+        onChanged();
         return this;
       }
-      
-      // repeated .stardroid_source.PointElementProto point = 5;
+
+      private java.util.List<com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto> point_ =
+        java.util.Collections.emptyList();
+      private void ensurePointIsMutable() {
+        if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+          point_ = new java.util.ArrayList<com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto>(point_);
+          bitField0_ |= 0x00000020;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto, com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto.Builder, com.google.android.stardroid.source.proto.SourceFullProto.PointElementProtoOrBuilder> pointBuilder_;
+
+      /**
+       * <code>repeated .stardroid_source.PointElementProto point = 5;</code>
+       *
+       * <pre>
+       * Points which comprise this objects (e.g. the stars).
+       * </pre>
+       */
       public java.util.List<com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto> getPointList() {
-        return java.util.Collections.unmodifiableList(result.point_);
+        if (pointBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(point_);
+        } else {
+          return pointBuilder_.getMessageList();
+        }
       }
+      /**
+       * <code>repeated .stardroid_source.PointElementProto point = 5;</code>
+       *
+       * <pre>
+       * Points which comprise this objects (e.g. the stars).
+       * </pre>
+       */
       public int getPointCount() {
-        return result.getPointCount();
+        if (pointBuilder_ == null) {
+          return point_.size();
+        } else {
+          return pointBuilder_.getCount();
+        }
       }
+      /**
+       * <code>repeated .stardroid_source.PointElementProto point = 5;</code>
+       *
+       * <pre>
+       * Points which comprise this objects (e.g. the stars).
+       * </pre>
+       */
       public com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto getPoint(int index) {
-        return result.getPoint(index);
-      }
-      public Builder setPoint(int index, com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto value) {
-        if (value == null) {
-          throw new NullPointerException();
+        if (pointBuilder_ == null) {
+          return point_.get(index);
+        } else {
+          return pointBuilder_.getMessage(index);
         }
-        result.point_.set(index, value);
+      }
+      /**
+       * <code>repeated .stardroid_source.PointElementProto point = 5;</code>
+       *
+       * <pre>
+       * Points which comprise this objects (e.g. the stars).
+       * </pre>
+       */
+      public Builder setPoint(
+          int index, com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto value) {
+        if (pointBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePointIsMutable();
+          point_.set(index, value);
+          onChanged();
+        } else {
+          pointBuilder_.setMessage(index, value);
+        }
         return this;
       }
-      public Builder setPoint(int index, com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto.Builder builderForValue) {
-        result.point_.set(index, builderForValue.build());
+      /**
+       * <code>repeated .stardroid_source.PointElementProto point = 5;</code>
+       *
+       * <pre>
+       * Points which comprise this objects (e.g. the stars).
+       * </pre>
+       */
+      public Builder setPoint(
+          int index, com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto.Builder builderForValue) {
+        if (pointBuilder_ == null) {
+          ensurePointIsMutable();
+          point_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          pointBuilder_.setMessage(index, builderForValue.build());
+        }
         return this;
       }
+      /**
+       * <code>repeated .stardroid_source.PointElementProto point = 5;</code>
+       *
+       * <pre>
+       * Points which comprise this objects (e.g. the stars).
+       * </pre>
+       */
       public Builder addPoint(com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto value) {
-        if (value == null) {
-          throw new NullPointerException();
+        if (pointBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePointIsMutable();
+          point_.add(value);
+          onChanged();
+        } else {
+          pointBuilder_.addMessage(value);
         }
-        if (result.point_.isEmpty()) {
-          result.point_ = new java.util.ArrayList<com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto>();
-        }
-        result.point_.add(value);
         return this;
       }
-      public Builder addPoint(com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto.Builder builderForValue) {
-        if (result.point_.isEmpty()) {
-          result.point_ = new java.util.ArrayList<com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto>();
+      /**
+       * <code>repeated .stardroid_source.PointElementProto point = 5;</code>
+       *
+       * <pre>
+       * Points which comprise this objects (e.g. the stars).
+       * </pre>
+       */
+      public Builder addPoint(
+          int index, com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto value) {
+        if (pointBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePointIsMutable();
+          point_.add(index, value);
+          onChanged();
+        } else {
+          pointBuilder_.addMessage(index, value);
         }
-        result.point_.add(builderForValue.build());
         return this;
       }
+      /**
+       * <code>repeated .stardroid_source.PointElementProto point = 5;</code>
+       *
+       * <pre>
+       * Points which comprise this objects (e.g. the stars).
+       * </pre>
+       */
+      public Builder addPoint(
+          com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto.Builder builderForValue) {
+        if (pointBuilder_ == null) {
+          ensurePointIsMutable();
+          point_.add(builderForValue.build());
+          onChanged();
+        } else {
+          pointBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .stardroid_source.PointElementProto point = 5;</code>
+       *
+       * <pre>
+       * Points which comprise this objects (e.g. the stars).
+       * </pre>
+       */
+      public Builder addPoint(
+          int index, com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto.Builder builderForValue) {
+        if (pointBuilder_ == null) {
+          ensurePointIsMutable();
+          point_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          pointBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .stardroid_source.PointElementProto point = 5;</code>
+       *
+       * <pre>
+       * Points which comprise this objects (e.g. the stars).
+       * </pre>
+       */
       public Builder addAllPoint(
           java.lang.Iterable<? extends com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto> values) {
-        if (result.point_.isEmpty()) {
-          result.point_ = new java.util.ArrayList<com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto>();
+        if (pointBuilder_ == null) {
+          ensurePointIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, point_);
+          onChanged();
+        } else {
+          pointBuilder_.addAllMessages(values);
         }
-        super.addAll(values, result.point_);
         return this;
       }
+      /**
+       * <code>repeated .stardroid_source.PointElementProto point = 5;</code>
+       *
+       * <pre>
+       * Points which comprise this objects (e.g. the stars).
+       * </pre>
+       */
       public Builder clearPoint() {
-        result.point_ = java.util.Collections.emptyList();
+        if (pointBuilder_ == null) {
+          point_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000020);
+          onChanged();
+        } else {
+          pointBuilder_.clear();
+        }
         return this;
       }
-      
-      // repeated .stardroid_source.LabelElementProto label = 6;
+      /**
+       * <code>repeated .stardroid_source.PointElementProto point = 5;</code>
+       *
+       * <pre>
+       * Points which comprise this objects (e.g. the stars).
+       * </pre>
+       */
+      public Builder removePoint(int index) {
+        if (pointBuilder_ == null) {
+          ensurePointIsMutable();
+          point_.remove(index);
+          onChanged();
+        } else {
+          pointBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .stardroid_source.PointElementProto point = 5;</code>
+       *
+       * <pre>
+       * Points which comprise this objects (e.g. the stars).
+       * </pre>
+       */
+      public com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto.Builder getPointBuilder(
+          int index) {
+        return getPointFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .stardroid_source.PointElementProto point = 5;</code>
+       *
+       * <pre>
+       * Points which comprise this objects (e.g. the stars).
+       * </pre>
+       */
+      public com.google.android.stardroid.source.proto.SourceFullProto.PointElementProtoOrBuilder getPointOrBuilder(
+          int index) {
+        if (pointBuilder_ == null) {
+          return point_.get(index);  } else {
+          return pointBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .stardroid_source.PointElementProto point = 5;</code>
+       *
+       * <pre>
+       * Points which comprise this objects (e.g. the stars).
+       * </pre>
+       */
+      public java.util.List<? extends com.google.android.stardroid.source.proto.SourceFullProto.PointElementProtoOrBuilder> 
+           getPointOrBuilderList() {
+        if (pointBuilder_ != null) {
+          return pointBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(point_);
+        }
+      }
+      /**
+       * <code>repeated .stardroid_source.PointElementProto point = 5;</code>
+       *
+       * <pre>
+       * Points which comprise this objects (e.g. the stars).
+       * </pre>
+       */
+      public com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto.Builder addPointBuilder() {
+        return getPointFieldBuilder().addBuilder(
+            com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .stardroid_source.PointElementProto point = 5;</code>
+       *
+       * <pre>
+       * Points which comprise this objects (e.g. the stars).
+       * </pre>
+       */
+      public com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto.Builder addPointBuilder(
+          int index) {
+        return getPointFieldBuilder().addBuilder(
+            index, com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .stardroid_source.PointElementProto point = 5;</code>
+       *
+       * <pre>
+       * Points which comprise this objects (e.g. the stars).
+       * </pre>
+       */
+      public java.util.List<com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto.Builder> 
+           getPointBuilderList() {
+        return getPointFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto, com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto.Builder, com.google.android.stardroid.source.proto.SourceFullProto.PointElementProtoOrBuilder> 
+          getPointFieldBuilder() {
+        if (pointBuilder_ == null) {
+          pointBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto, com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto.Builder, com.google.android.stardroid.source.proto.SourceFullProto.PointElementProtoOrBuilder>(
+                  point_,
+                  ((bitField0_ & 0x00000020) == 0x00000020),
+                  getParentForChildren(),
+                  isClean());
+          point_ = null;
+        }
+        return pointBuilder_;
+      }
+
+      private java.util.List<com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto> label_ =
+        java.util.Collections.emptyList();
+      private void ensureLabelIsMutable() {
+        if (!((bitField0_ & 0x00000040) == 0x00000040)) {
+          label_ = new java.util.ArrayList<com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto>(label_);
+          bitField0_ |= 0x00000040;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto, com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto.Builder, com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProtoOrBuilder> labelBuilder_;
+
+      /**
+       * <code>repeated .stardroid_source.LabelElementProto label = 6;</code>
+       *
+       * <pre>
+       * Labels which comprise this objects (e.g. the name).
+       * </pre>
+       */
       public java.util.List<com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto> getLabelList() {
-        return java.util.Collections.unmodifiableList(result.label_);
+        if (labelBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(label_);
+        } else {
+          return labelBuilder_.getMessageList();
+        }
       }
+      /**
+       * <code>repeated .stardroid_source.LabelElementProto label = 6;</code>
+       *
+       * <pre>
+       * Labels which comprise this objects (e.g. the name).
+       * </pre>
+       */
       public int getLabelCount() {
-        return result.getLabelCount();
+        if (labelBuilder_ == null) {
+          return label_.size();
+        } else {
+          return labelBuilder_.getCount();
+        }
       }
+      /**
+       * <code>repeated .stardroid_source.LabelElementProto label = 6;</code>
+       *
+       * <pre>
+       * Labels which comprise this objects (e.g. the name).
+       * </pre>
+       */
       public com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto getLabel(int index) {
-        return result.getLabel(index);
-      }
-      public Builder setLabel(int index, com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto value) {
-        if (value == null) {
-          throw new NullPointerException();
+        if (labelBuilder_ == null) {
+          return label_.get(index);
+        } else {
+          return labelBuilder_.getMessage(index);
         }
-        result.label_.set(index, value);
+      }
+      /**
+       * <code>repeated .stardroid_source.LabelElementProto label = 6;</code>
+       *
+       * <pre>
+       * Labels which comprise this objects (e.g. the name).
+       * </pre>
+       */
+      public Builder setLabel(
+          int index, com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto value) {
+        if (labelBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureLabelIsMutable();
+          label_.set(index, value);
+          onChanged();
+        } else {
+          labelBuilder_.setMessage(index, value);
+        }
         return this;
       }
-      public Builder setLabel(int index, com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto.Builder builderForValue) {
-        result.label_.set(index, builderForValue.build());
+      /**
+       * <code>repeated .stardroid_source.LabelElementProto label = 6;</code>
+       *
+       * <pre>
+       * Labels which comprise this objects (e.g. the name).
+       * </pre>
+       */
+      public Builder setLabel(
+          int index, com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto.Builder builderForValue) {
+        if (labelBuilder_ == null) {
+          ensureLabelIsMutable();
+          label_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          labelBuilder_.setMessage(index, builderForValue.build());
+        }
         return this;
       }
+      /**
+       * <code>repeated .stardroid_source.LabelElementProto label = 6;</code>
+       *
+       * <pre>
+       * Labels which comprise this objects (e.g. the name).
+       * </pre>
+       */
       public Builder addLabel(com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto value) {
-        if (value == null) {
-          throw new NullPointerException();
+        if (labelBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureLabelIsMutable();
+          label_.add(value);
+          onChanged();
+        } else {
+          labelBuilder_.addMessage(value);
         }
-        if (result.label_.isEmpty()) {
-          result.label_ = new java.util.ArrayList<com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto>();
-        }
-        result.label_.add(value);
         return this;
       }
-      public Builder addLabel(com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto.Builder builderForValue) {
-        if (result.label_.isEmpty()) {
-          result.label_ = new java.util.ArrayList<com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto>();
+      /**
+       * <code>repeated .stardroid_source.LabelElementProto label = 6;</code>
+       *
+       * <pre>
+       * Labels which comprise this objects (e.g. the name).
+       * </pre>
+       */
+      public Builder addLabel(
+          int index, com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto value) {
+        if (labelBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureLabelIsMutable();
+          label_.add(index, value);
+          onChanged();
+        } else {
+          labelBuilder_.addMessage(index, value);
         }
-        result.label_.add(builderForValue.build());
         return this;
       }
+      /**
+       * <code>repeated .stardroid_source.LabelElementProto label = 6;</code>
+       *
+       * <pre>
+       * Labels which comprise this objects (e.g. the name).
+       * </pre>
+       */
+      public Builder addLabel(
+          com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto.Builder builderForValue) {
+        if (labelBuilder_ == null) {
+          ensureLabelIsMutable();
+          label_.add(builderForValue.build());
+          onChanged();
+        } else {
+          labelBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .stardroid_source.LabelElementProto label = 6;</code>
+       *
+       * <pre>
+       * Labels which comprise this objects (e.g. the name).
+       * </pre>
+       */
+      public Builder addLabel(
+          int index, com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto.Builder builderForValue) {
+        if (labelBuilder_ == null) {
+          ensureLabelIsMutable();
+          label_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          labelBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .stardroid_source.LabelElementProto label = 6;</code>
+       *
+       * <pre>
+       * Labels which comprise this objects (e.g. the name).
+       * </pre>
+       */
       public Builder addAllLabel(
           java.lang.Iterable<? extends com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto> values) {
-        if (result.label_.isEmpty()) {
-          result.label_ = new java.util.ArrayList<com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto>();
+        if (labelBuilder_ == null) {
+          ensureLabelIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, label_);
+          onChanged();
+        } else {
+          labelBuilder_.addAllMessages(values);
         }
-        super.addAll(values, result.label_);
         return this;
       }
+      /**
+       * <code>repeated .stardroid_source.LabelElementProto label = 6;</code>
+       *
+       * <pre>
+       * Labels which comprise this objects (e.g. the name).
+       * </pre>
+       */
       public Builder clearLabel() {
-        result.label_ = java.util.Collections.emptyList();
+        if (labelBuilder_ == null) {
+          label_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000040);
+          onChanged();
+        } else {
+          labelBuilder_.clear();
+        }
         return this;
       }
-      
-      // repeated .stardroid_source.LineElementProto line = 7;
+      /**
+       * <code>repeated .stardroid_source.LabelElementProto label = 6;</code>
+       *
+       * <pre>
+       * Labels which comprise this objects (e.g. the name).
+       * </pre>
+       */
+      public Builder removeLabel(int index) {
+        if (labelBuilder_ == null) {
+          ensureLabelIsMutable();
+          label_.remove(index);
+          onChanged();
+        } else {
+          labelBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .stardroid_source.LabelElementProto label = 6;</code>
+       *
+       * <pre>
+       * Labels which comprise this objects (e.g. the name).
+       * </pre>
+       */
+      public com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto.Builder getLabelBuilder(
+          int index) {
+        return getLabelFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .stardroid_source.LabelElementProto label = 6;</code>
+       *
+       * <pre>
+       * Labels which comprise this objects (e.g. the name).
+       * </pre>
+       */
+      public com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProtoOrBuilder getLabelOrBuilder(
+          int index) {
+        if (labelBuilder_ == null) {
+          return label_.get(index);  } else {
+          return labelBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .stardroid_source.LabelElementProto label = 6;</code>
+       *
+       * <pre>
+       * Labels which comprise this objects (e.g. the name).
+       * </pre>
+       */
+      public java.util.List<? extends com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProtoOrBuilder> 
+           getLabelOrBuilderList() {
+        if (labelBuilder_ != null) {
+          return labelBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(label_);
+        }
+      }
+      /**
+       * <code>repeated .stardroid_source.LabelElementProto label = 6;</code>
+       *
+       * <pre>
+       * Labels which comprise this objects (e.g. the name).
+       * </pre>
+       */
+      public com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto.Builder addLabelBuilder() {
+        return getLabelFieldBuilder().addBuilder(
+            com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .stardroid_source.LabelElementProto label = 6;</code>
+       *
+       * <pre>
+       * Labels which comprise this objects (e.g. the name).
+       * </pre>
+       */
+      public com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto.Builder addLabelBuilder(
+          int index) {
+        return getLabelFieldBuilder().addBuilder(
+            index, com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .stardroid_source.LabelElementProto label = 6;</code>
+       *
+       * <pre>
+       * Labels which comprise this objects (e.g. the name).
+       * </pre>
+       */
+      public java.util.List<com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto.Builder> 
+           getLabelBuilderList() {
+        return getLabelFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto, com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto.Builder, com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProtoOrBuilder> 
+          getLabelFieldBuilder() {
+        if (labelBuilder_ == null) {
+          labelBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto, com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto.Builder, com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProtoOrBuilder>(
+                  label_,
+                  ((bitField0_ & 0x00000040) == 0x00000040),
+                  getParentForChildren(),
+                  isClean());
+          label_ = null;
+        }
+        return labelBuilder_;
+      }
+
+      private java.util.List<com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto> line_ =
+        java.util.Collections.emptyList();
+      private void ensureLineIsMutable() {
+        if (!((bitField0_ & 0x00000080) == 0x00000080)) {
+          line_ = new java.util.ArrayList<com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto>(line_);
+          bitField0_ |= 0x00000080;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto, com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto.Builder, com.google.android.stardroid.source.proto.SourceFullProto.LineElementProtoOrBuilder> lineBuilder_;
+
+      /**
+       * <code>repeated .stardroid_source.LineElementProto line = 7;</code>
+       *
+       * <pre>
+       * Lines which comprise this objects (e.g. lines of the constellation).
+       * </pre>
+       */
       public java.util.List<com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto> getLineList() {
-        return java.util.Collections.unmodifiableList(result.line_);
+        if (lineBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(line_);
+        } else {
+          return lineBuilder_.getMessageList();
+        }
       }
+      /**
+       * <code>repeated .stardroid_source.LineElementProto line = 7;</code>
+       *
+       * <pre>
+       * Lines which comprise this objects (e.g. lines of the constellation).
+       * </pre>
+       */
       public int getLineCount() {
-        return result.getLineCount();
+        if (lineBuilder_ == null) {
+          return line_.size();
+        } else {
+          return lineBuilder_.getCount();
+        }
       }
+      /**
+       * <code>repeated .stardroid_source.LineElementProto line = 7;</code>
+       *
+       * <pre>
+       * Lines which comprise this objects (e.g. lines of the constellation).
+       * </pre>
+       */
       public com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto getLine(int index) {
-        return result.getLine(index);
-      }
-      public Builder setLine(int index, com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto value) {
-        if (value == null) {
-          throw new NullPointerException();
+        if (lineBuilder_ == null) {
+          return line_.get(index);
+        } else {
+          return lineBuilder_.getMessage(index);
         }
-        result.line_.set(index, value);
+      }
+      /**
+       * <code>repeated .stardroid_source.LineElementProto line = 7;</code>
+       *
+       * <pre>
+       * Lines which comprise this objects (e.g. lines of the constellation).
+       * </pre>
+       */
+      public Builder setLine(
+          int index, com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto value) {
+        if (lineBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureLineIsMutable();
+          line_.set(index, value);
+          onChanged();
+        } else {
+          lineBuilder_.setMessage(index, value);
+        }
         return this;
       }
-      public Builder setLine(int index, com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto.Builder builderForValue) {
-        result.line_.set(index, builderForValue.build());
+      /**
+       * <code>repeated .stardroid_source.LineElementProto line = 7;</code>
+       *
+       * <pre>
+       * Lines which comprise this objects (e.g. lines of the constellation).
+       * </pre>
+       */
+      public Builder setLine(
+          int index, com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto.Builder builderForValue) {
+        if (lineBuilder_ == null) {
+          ensureLineIsMutable();
+          line_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          lineBuilder_.setMessage(index, builderForValue.build());
+        }
         return this;
       }
+      /**
+       * <code>repeated .stardroid_source.LineElementProto line = 7;</code>
+       *
+       * <pre>
+       * Lines which comprise this objects (e.g. lines of the constellation).
+       * </pre>
+       */
       public Builder addLine(com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto value) {
-        if (value == null) {
-          throw new NullPointerException();
+        if (lineBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureLineIsMutable();
+          line_.add(value);
+          onChanged();
+        } else {
+          lineBuilder_.addMessage(value);
         }
-        if (result.line_.isEmpty()) {
-          result.line_ = new java.util.ArrayList<com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto>();
-        }
-        result.line_.add(value);
         return this;
       }
-      public Builder addLine(com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto.Builder builderForValue) {
-        if (result.line_.isEmpty()) {
-          result.line_ = new java.util.ArrayList<com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto>();
+      /**
+       * <code>repeated .stardroid_source.LineElementProto line = 7;</code>
+       *
+       * <pre>
+       * Lines which comprise this objects (e.g. lines of the constellation).
+       * </pre>
+       */
+      public Builder addLine(
+          int index, com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto value) {
+        if (lineBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureLineIsMutable();
+          line_.add(index, value);
+          onChanged();
+        } else {
+          lineBuilder_.addMessage(index, value);
         }
-        result.line_.add(builderForValue.build());
         return this;
       }
+      /**
+       * <code>repeated .stardroid_source.LineElementProto line = 7;</code>
+       *
+       * <pre>
+       * Lines which comprise this objects (e.g. lines of the constellation).
+       * </pre>
+       */
+      public Builder addLine(
+          com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto.Builder builderForValue) {
+        if (lineBuilder_ == null) {
+          ensureLineIsMutable();
+          line_.add(builderForValue.build());
+          onChanged();
+        } else {
+          lineBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .stardroid_source.LineElementProto line = 7;</code>
+       *
+       * <pre>
+       * Lines which comprise this objects (e.g. lines of the constellation).
+       * </pre>
+       */
+      public Builder addLine(
+          int index, com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto.Builder builderForValue) {
+        if (lineBuilder_ == null) {
+          ensureLineIsMutable();
+          line_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          lineBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .stardroid_source.LineElementProto line = 7;</code>
+       *
+       * <pre>
+       * Lines which comprise this objects (e.g. lines of the constellation).
+       * </pre>
+       */
       public Builder addAllLine(
           java.lang.Iterable<? extends com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto> values) {
-        if (result.line_.isEmpty()) {
-          result.line_ = new java.util.ArrayList<com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto>();
+        if (lineBuilder_ == null) {
+          ensureLineIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, line_);
+          onChanged();
+        } else {
+          lineBuilder_.addAllMessages(values);
         }
-        super.addAll(values, result.line_);
         return this;
       }
+      /**
+       * <code>repeated .stardroid_source.LineElementProto line = 7;</code>
+       *
+       * <pre>
+       * Lines which comprise this objects (e.g. lines of the constellation).
+       * </pre>
+       */
       public Builder clearLine() {
-        result.line_ = java.util.Collections.emptyList();
+        if (lineBuilder_ == null) {
+          line_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000080);
+          onChanged();
+        } else {
+          lineBuilder_.clear();
+        }
         return this;
       }
-      
+      /**
+       * <code>repeated .stardroid_source.LineElementProto line = 7;</code>
+       *
+       * <pre>
+       * Lines which comprise this objects (e.g. lines of the constellation).
+       * </pre>
+       */
+      public Builder removeLine(int index) {
+        if (lineBuilder_ == null) {
+          ensureLineIsMutable();
+          line_.remove(index);
+          onChanged();
+        } else {
+          lineBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .stardroid_source.LineElementProto line = 7;</code>
+       *
+       * <pre>
+       * Lines which comprise this objects (e.g. lines of the constellation).
+       * </pre>
+       */
+      public com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto.Builder getLineBuilder(
+          int index) {
+        return getLineFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .stardroid_source.LineElementProto line = 7;</code>
+       *
+       * <pre>
+       * Lines which comprise this objects (e.g. lines of the constellation).
+       * </pre>
+       */
+      public com.google.android.stardroid.source.proto.SourceFullProto.LineElementProtoOrBuilder getLineOrBuilder(
+          int index) {
+        if (lineBuilder_ == null) {
+          return line_.get(index);  } else {
+          return lineBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .stardroid_source.LineElementProto line = 7;</code>
+       *
+       * <pre>
+       * Lines which comprise this objects (e.g. lines of the constellation).
+       * </pre>
+       */
+      public java.util.List<? extends com.google.android.stardroid.source.proto.SourceFullProto.LineElementProtoOrBuilder> 
+           getLineOrBuilderList() {
+        if (lineBuilder_ != null) {
+          return lineBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(line_);
+        }
+      }
+      /**
+       * <code>repeated .stardroid_source.LineElementProto line = 7;</code>
+       *
+       * <pre>
+       * Lines which comprise this objects (e.g. lines of the constellation).
+       * </pre>
+       */
+      public com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto.Builder addLineBuilder() {
+        return getLineFieldBuilder().addBuilder(
+            com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .stardroid_source.LineElementProto line = 7;</code>
+       *
+       * <pre>
+       * Lines which comprise this objects (e.g. lines of the constellation).
+       * </pre>
+       */
+      public com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto.Builder addLineBuilder(
+          int index) {
+        return getLineFieldBuilder().addBuilder(
+            index, com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .stardroid_source.LineElementProto line = 7;</code>
+       *
+       * <pre>
+       * Lines which comprise this objects (e.g. lines of the constellation).
+       * </pre>
+       */
+      public java.util.List<com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto.Builder> 
+           getLineBuilderList() {
+        return getLineFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto, com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto.Builder, com.google.android.stardroid.source.proto.SourceFullProto.LineElementProtoOrBuilder> 
+          getLineFieldBuilder() {
+        if (lineBuilder_ == null) {
+          lineBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto, com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto.Builder, com.google.android.stardroid.source.proto.SourceFullProto.LineElementProtoOrBuilder>(
+                  line_,
+                  ((bitField0_ & 0x00000080) == 0x00000080),
+                  getParentForChildren(),
+                  isClean());
+          line_ = null;
+        }
+        return lineBuilder_;
+      }
+
       // @@protoc_insertion_point(builder_scope:stardroid_source.AstronomicalSourceProto)
     }
-    
+
     static {
       defaultInstance = new AstronomicalSourceProto(true);
-      com.google.android.stardroid.source.proto.SourceFullProto.internalForceInit();
       defaultInstance.initFields();
     }
-    
+
     // @@protoc_insertion_point(class_scope:stardroid_source.AstronomicalSourceProto)
   }
-  
+
+  public interface AstronomicalSourcesProtoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:stardroid_source.AstronomicalSourcesProto)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .stardroid_source.AstronomicalSourceProto source = 1;</code>
+     */
+    java.util.List<com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto> 
+        getSourceList();
+    /**
+     * <code>repeated .stardroid_source.AstronomicalSourceProto source = 1;</code>
+     */
+    com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto getSource(int index);
+    /**
+     * <code>repeated .stardroid_source.AstronomicalSourceProto source = 1;</code>
+     */
+    int getSourceCount();
+    /**
+     * <code>repeated .stardroid_source.AstronomicalSourceProto source = 1;</code>
+     */
+    java.util.List<? extends com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProtoOrBuilder> 
+        getSourceOrBuilderList();
+    /**
+     * <code>repeated .stardroid_source.AstronomicalSourceProto source = 1;</code>
+     */
+    com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProtoOrBuilder getSourceOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code stardroid_source.AstronomicalSourcesProto}
+   *
+   * <pre>
+   * A collection of AstronomicalSources
+   * </pre>
+   */
   public static final class AstronomicalSourcesProto extends
-      com.google.protobuf.GeneratedMessage {
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:stardroid_source.AstronomicalSourcesProto)
+      AstronomicalSourcesProtoOrBuilder {
     // Use AstronomicalSourcesProto.newBuilder() to construct.
-    private AstronomicalSourcesProto() {
-      initFields();
+    private AstronomicalSourcesProto(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
     }
-    private AstronomicalSourcesProto(boolean noInit) {}
-    
+    private AstronomicalSourcesProto(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
     private static final AstronomicalSourcesProto defaultInstance;
     public static AstronomicalSourcesProto getDefaultInstance() {
       return defaultInstance;
     }
-    
+
     public AstronomicalSourcesProto getDefaultInstanceForType() {
       return defaultInstance;
     }
-    
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private AstronomicalSourcesProto(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                source_ = new java.util.ArrayList<com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              source_.add(input.readMessage(com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto.PARSER, extensionRegistry));
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          source_ = java.util.Collections.unmodifiableList(source_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return com.google.android.stardroid.source.proto.SourceFullProto.internal_static_stardroid_source_AstronomicalSourcesProto_descriptor;
     }
-    
+
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.android.stardroid.source.proto.SourceFullProto.internal_static_stardroid_source_AstronomicalSourcesProto_fieldAccessorTable;
+      return com.google.android.stardroid.source.proto.SourceFullProto.internal_static_stardroid_source_AstronomicalSourcesProto_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourcesProto.class, com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourcesProto.Builder.class);
     }
-    
-    // repeated .stardroid_source.AstronomicalSourceProto source = 1;
+
+    public static com.google.protobuf.Parser<AstronomicalSourcesProto> PARSER =
+        new com.google.protobuf.AbstractParser<AstronomicalSourcesProto>() {
+      public AstronomicalSourcesProto parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new AstronomicalSourcesProto(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AstronomicalSourcesProto> getParserForType() {
+      return PARSER;
+    }
+
     public static final int SOURCE_FIELD_NUMBER = 1;
-    private java.util.List<com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto> source_ =
-      java.util.Collections.emptyList();
+    private java.util.List<com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto> source_;
+    /**
+     * <code>repeated .stardroid_source.AstronomicalSourceProto source = 1;</code>
+     */
     public java.util.List<com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto> getSourceList() {
       return source_;
     }
-    public int getSourceCount() { return source_.size(); }
+    /**
+     * <code>repeated .stardroid_source.AstronomicalSourceProto source = 1;</code>
+     */
+    public java.util.List<? extends com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProtoOrBuilder> 
+        getSourceOrBuilderList() {
+      return source_;
+    }
+    /**
+     * <code>repeated .stardroid_source.AstronomicalSourceProto source = 1;</code>
+     */
+    public int getSourceCount() {
+      return source_.size();
+    }
+    /**
+     * <code>repeated .stardroid_source.AstronomicalSourceProto source = 1;</code>
+     */
     public com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto getSource(int index) {
       return source_.get(index);
     }
-    
-    private void initFields() {
+    /**
+     * <code>repeated .stardroid_source.AstronomicalSourceProto source = 1;</code>
+     */
+    public com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProtoOrBuilder getSourceOrBuilder(
+        int index) {
+      return source_.get(index);
     }
+
+    private void initFields() {
+      source_ = java.util.Collections.emptyList();
+    }
+    private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
       return true;
     }
-    
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      for (com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto element : getSourceList()) {
-        output.writeMessage(1, element);
+      for (int i = 0; i < source_.size(); i++) {
+        output.writeMessage(1, source_.get(i));
       }
       getUnknownFields().writeTo(output);
     }
-    
+
     private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
       int size = memoizedSerializedSize;
       if (size != -1) return size;
-    
+
       size = 0;
-      for (com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto element : getSourceList()) {
+      for (int i = 0; i < source_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, element);
+          .computeMessageSize(1, source_.get(i));
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
       return size;
     }
-    
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
     public static com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourcesProto parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourcesProto parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourcesProto parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourcesProto parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourcesProto parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return PARSER.parseFrom(input);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourcesProto parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(input, extensionRegistry);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourcesProto parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return PARSER.parseDelimitedFrom(input);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourcesProto parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourcesProto parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return PARSER.parseFrom(input);
     }
     public static com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourcesProto parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(input, extensionRegistry);
     }
-    
+
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder(com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourcesProto prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
-    
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code stardroid_source.AstronomicalSourcesProto}
+     *
+     * <pre>
+     * A collection of AstronomicalSources
+     * </pre>
+     */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder> {
-      private com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourcesProto result;
-      
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:stardroid_source.AstronomicalSourcesProto)
+        com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourcesProtoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.google.android.stardroid.source.proto.SourceFullProto.internal_static_stardroid_source_AstronomicalSourcesProto_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.android.stardroid.source.proto.SourceFullProto.internal_static_stardroid_source_AstronomicalSourcesProto_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourcesProto.class, com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourcesProto.Builder.class);
+      }
+
       // Construct using com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourcesProto.newBuilder()
-      private Builder() {}
-      
-      private static Builder create() {
-        Builder builder = new Builder();
-        builder.result = new com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourcesProto();
-        return builder;
+      private Builder() {
+        maybeForceBuilderInitialization();
       }
-      
-      protected com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourcesProto internalGetResult() {
-        return result;
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
       }
-      
-      public Builder clear() {
-        if (result == null) {
-          throw new IllegalStateException(
-            "Cannot call clear() after build().");
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getSourceFieldBuilder();
         }
-        result = new com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourcesProto();
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        if (sourceBuilder_ == null) {
+          source_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          sourceBuilder_.clear();
+        }
         return this;
       }
-      
+
       public Builder clone() {
-        return create().mergeFrom(result);
+        return create().mergeFrom(buildPartial());
       }
-      
+
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourcesProto.getDescriptor();
+        return com.google.android.stardroid.source.proto.SourceFullProto.internal_static_stardroid_source_AstronomicalSourcesProto_descriptor;
       }
-      
+
       public com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourcesProto getDefaultInstanceForType() {
         return com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourcesProto.getDefaultInstance();
       }
-      
-      public boolean isInitialized() {
-        return result.isInitialized();
-      }
+
       public com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourcesProto build() {
-        if (result != null && !isInitialized()) {
+        com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourcesProto result = buildPartial();
+        if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
-        return buildPartial();
+        return result;
       }
-      
-      private com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourcesProto buildParsed()
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        if (!isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
-        }
-        return buildPartial();
-      }
-      
+
       public com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourcesProto buildPartial() {
-        if (result == null) {
-          throw new IllegalStateException(
-            "build() has already been called on this Builder.");
+        com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourcesProto result = new com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourcesProto(this);
+        int from_bitField0_ = bitField0_;
+        if (sourceBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            source_ = java.util.Collections.unmodifiableList(source_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.source_ = source_;
+        } else {
+          result.source_ = sourceBuilder_.build();
         }
-        if (result.source_ != java.util.Collections.EMPTY_LIST) {
-          result.source_ =
-            java.util.Collections.unmodifiableList(result.source_);
-        }
-        com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourcesProto returnMe = result;
-        result = null;
-        return returnMe;
+        onBuilt();
+        return result;
       }
-      
+
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourcesProto) {
           return mergeFrom((com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourcesProto)other);
@@ -2757,145 +6922,344 @@ public final class SourceFullProto {
           return this;
         }
       }
-      
+
       public Builder mergeFrom(com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourcesProto other) {
         if (other == com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourcesProto.getDefaultInstance()) return this;
-        if (!other.source_.isEmpty()) {
-          if (result.source_.isEmpty()) {
-            result.source_ = new java.util.ArrayList<com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto>();
+        if (sourceBuilder_ == null) {
+          if (!other.source_.isEmpty()) {
+            if (source_.isEmpty()) {
+              source_ = other.source_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureSourceIsMutable();
+              source_.addAll(other.source_);
+            }
+            onChanged();
           }
-          result.source_.addAll(other.source_);
+        } else {
+          if (!other.source_.isEmpty()) {
+            if (sourceBuilder_.isEmpty()) {
+              sourceBuilder_.dispose();
+              sourceBuilder_ = null;
+              source_ = other.source_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              sourceBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getSourceFieldBuilder() : null;
+            } else {
+              sourceBuilder_.addAllMessages(other.source_);
+            }
+          }
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
-      
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                return this;
-              }
-              break;
-            }
-            case 10: {
-              com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto.Builder subBuilder = com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto.newBuilder();
-              input.readMessage(subBuilder, extensionRegistry);
-              addSource(subBuilder.buildPartial());
-              break;
-            }
+        com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourcesProto parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourcesProto) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
           }
         }
+        return this;
       }
-      
-      
-      // repeated .stardroid_source.AstronomicalSourceProto source = 1;
+      private int bitField0_;
+
+      private java.util.List<com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto> source_ =
+        java.util.Collections.emptyList();
+      private void ensureSourceIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          source_ = new java.util.ArrayList<com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto>(source_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto, com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto.Builder, com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProtoOrBuilder> sourceBuilder_;
+
+      /**
+       * <code>repeated .stardroid_source.AstronomicalSourceProto source = 1;</code>
+       */
       public java.util.List<com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto> getSourceList() {
-        return java.util.Collections.unmodifiableList(result.source_);
+        if (sourceBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(source_);
+        } else {
+          return sourceBuilder_.getMessageList();
+        }
       }
+      /**
+       * <code>repeated .stardroid_source.AstronomicalSourceProto source = 1;</code>
+       */
       public int getSourceCount() {
-        return result.getSourceCount();
+        if (sourceBuilder_ == null) {
+          return source_.size();
+        } else {
+          return sourceBuilder_.getCount();
+        }
       }
+      /**
+       * <code>repeated .stardroid_source.AstronomicalSourceProto source = 1;</code>
+       */
       public com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto getSource(int index) {
-        return result.getSource(index);
-      }
-      public Builder setSource(int index, com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto value) {
-        if (value == null) {
-          throw new NullPointerException();
+        if (sourceBuilder_ == null) {
+          return source_.get(index);
+        } else {
+          return sourceBuilder_.getMessage(index);
         }
-        result.source_.set(index, value);
+      }
+      /**
+       * <code>repeated .stardroid_source.AstronomicalSourceProto source = 1;</code>
+       */
+      public Builder setSource(
+          int index, com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto value) {
+        if (sourceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSourceIsMutable();
+          source_.set(index, value);
+          onChanged();
+        } else {
+          sourceBuilder_.setMessage(index, value);
+        }
         return this;
       }
-      public Builder setSource(int index, com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto.Builder builderForValue) {
-        result.source_.set(index, builderForValue.build());
+      /**
+       * <code>repeated .stardroid_source.AstronomicalSourceProto source = 1;</code>
+       */
+      public Builder setSource(
+          int index, com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto.Builder builderForValue) {
+        if (sourceBuilder_ == null) {
+          ensureSourceIsMutable();
+          source_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          sourceBuilder_.setMessage(index, builderForValue.build());
+        }
         return this;
       }
+      /**
+       * <code>repeated .stardroid_source.AstronomicalSourceProto source = 1;</code>
+       */
       public Builder addSource(com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto value) {
-        if (value == null) {
-          throw new NullPointerException();
+        if (sourceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSourceIsMutable();
+          source_.add(value);
+          onChanged();
+        } else {
+          sourceBuilder_.addMessage(value);
         }
-        if (result.source_.isEmpty()) {
-          result.source_ = new java.util.ArrayList<com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto>();
-        }
-        result.source_.add(value);
         return this;
       }
-      public Builder addSource(com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto.Builder builderForValue) {
-        if (result.source_.isEmpty()) {
-          result.source_ = new java.util.ArrayList<com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto>();
+      /**
+       * <code>repeated .stardroid_source.AstronomicalSourceProto source = 1;</code>
+       */
+      public Builder addSource(
+          int index, com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto value) {
+        if (sourceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSourceIsMutable();
+          source_.add(index, value);
+          onChanged();
+        } else {
+          sourceBuilder_.addMessage(index, value);
         }
-        result.source_.add(builderForValue.build());
         return this;
       }
+      /**
+       * <code>repeated .stardroid_source.AstronomicalSourceProto source = 1;</code>
+       */
+      public Builder addSource(
+          com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto.Builder builderForValue) {
+        if (sourceBuilder_ == null) {
+          ensureSourceIsMutable();
+          source_.add(builderForValue.build());
+          onChanged();
+        } else {
+          sourceBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .stardroid_source.AstronomicalSourceProto source = 1;</code>
+       */
+      public Builder addSource(
+          int index, com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto.Builder builderForValue) {
+        if (sourceBuilder_ == null) {
+          ensureSourceIsMutable();
+          source_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          sourceBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .stardroid_source.AstronomicalSourceProto source = 1;</code>
+       */
       public Builder addAllSource(
           java.lang.Iterable<? extends com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto> values) {
-        if (result.source_.isEmpty()) {
-          result.source_ = new java.util.ArrayList<com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto>();
+        if (sourceBuilder_ == null) {
+          ensureSourceIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, source_);
+          onChanged();
+        } else {
+          sourceBuilder_.addAllMessages(values);
         }
-        super.addAll(values, result.source_);
         return this;
       }
+      /**
+       * <code>repeated .stardroid_source.AstronomicalSourceProto source = 1;</code>
+       */
       public Builder clearSource() {
-        result.source_ = java.util.Collections.emptyList();
+        if (sourceBuilder_ == null) {
+          source_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          sourceBuilder_.clear();
+        }
         return this;
       }
-      
+      /**
+       * <code>repeated .stardroid_source.AstronomicalSourceProto source = 1;</code>
+       */
+      public Builder removeSource(int index) {
+        if (sourceBuilder_ == null) {
+          ensureSourceIsMutable();
+          source_.remove(index);
+          onChanged();
+        } else {
+          sourceBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .stardroid_source.AstronomicalSourceProto source = 1;</code>
+       */
+      public com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto.Builder getSourceBuilder(
+          int index) {
+        return getSourceFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .stardroid_source.AstronomicalSourceProto source = 1;</code>
+       */
+      public com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProtoOrBuilder getSourceOrBuilder(
+          int index) {
+        if (sourceBuilder_ == null) {
+          return source_.get(index);  } else {
+          return sourceBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .stardroid_source.AstronomicalSourceProto source = 1;</code>
+       */
+      public java.util.List<? extends com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProtoOrBuilder> 
+           getSourceOrBuilderList() {
+        if (sourceBuilder_ != null) {
+          return sourceBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(source_);
+        }
+      }
+      /**
+       * <code>repeated .stardroid_source.AstronomicalSourceProto source = 1;</code>
+       */
+      public com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto.Builder addSourceBuilder() {
+        return getSourceFieldBuilder().addBuilder(
+            com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .stardroid_source.AstronomicalSourceProto source = 1;</code>
+       */
+      public com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto.Builder addSourceBuilder(
+          int index) {
+        return getSourceFieldBuilder().addBuilder(
+            index, com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .stardroid_source.AstronomicalSourceProto source = 1;</code>
+       */
+      public java.util.List<com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto.Builder> 
+           getSourceBuilderList() {
+        return getSourceFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto, com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto.Builder, com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProtoOrBuilder> 
+          getSourceFieldBuilder() {
+        if (sourceBuilder_ == null) {
+          sourceBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto, com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto.Builder, com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProtoOrBuilder>(
+                  source_,
+                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  getParentForChildren(),
+                  isClean());
+          source_ = null;
+        }
+        return sourceBuilder_;
+      }
+
       // @@protoc_insertion_point(builder_scope:stardroid_source.AstronomicalSourcesProto)
     }
-    
+
     static {
       defaultInstance = new AstronomicalSourcesProto(true);
-      com.google.android.stardroid.source.proto.SourceFullProto.internalForceInit();
       defaultInstance.initFields();
     }
-    
+
     // @@protoc_insertion_point(class_scope:stardroid_source.AstronomicalSourcesProto)
   }
-  
-  private static com.google.protobuf.Descriptors.Descriptor
+
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_stardroid_source_GeocentricCoordinatesProto_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_stardroid_source_GeocentricCoordinatesProto_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_stardroid_source_PointElementProto_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_stardroid_source_PointElementProto_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_stardroid_source_LabelElementProto_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_stardroid_source_LabelElementProto_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_stardroid_source_LineElementProto_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_stardroid_source_LineElementProto_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_stardroid_source_AstronomicalSourceProto_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_stardroid_source_AstronomicalSourceProto_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_stardroid_source_AstronomicalSourcesProto_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_stardroid_source_AstronomicalSourcesProto_fieldAccessorTable;
-  
+
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
     return descriptor;
@@ -2939,68 +7303,54 @@ public final class SourceFullProto {
       "stardroid.source.protoB\017SourceFullProto"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-      new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-        public com.google.protobuf.ExtensionRegistry assignDescriptors(
-            com.google.protobuf.Descriptors.FileDescriptor root) {
-          descriptor = root;
-          internal_static_stardroid_source_GeocentricCoordinatesProto_descriptor =
-            getDescriptor().getMessageTypes().get(0);
-          internal_static_stardroid_source_GeocentricCoordinatesProto_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_stardroid_source_GeocentricCoordinatesProto_descriptor,
-              new java.lang.String[] { "RightAscension", "Declination", },
-              com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.class,
-              com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.Builder.class);
-          internal_static_stardroid_source_PointElementProto_descriptor =
-            getDescriptor().getMessageTypes().get(1);
-          internal_static_stardroid_source_PointElementProto_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_stardroid_source_PointElementProto_descriptor,
-              new java.lang.String[] { "Location", "Color", "Size", "Shape", },
-              com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto.class,
-              com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto.Builder.class);
-          internal_static_stardroid_source_LabelElementProto_descriptor =
-            getDescriptor().getMessageTypes().get(2);
-          internal_static_stardroid_source_LabelElementProto_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_stardroid_source_LabelElementProto_descriptor,
-              new java.lang.String[] { "Location", "Color", "StringIndex", "REMOVEStringIndex", "FontSize", "Offset", },
-              com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto.class,
-              com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto.Builder.class);
-          internal_static_stardroid_source_LineElementProto_descriptor =
-            getDescriptor().getMessageTypes().get(3);
-          internal_static_stardroid_source_LineElementProto_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_stardroid_source_LineElementProto_descriptor,
-              new java.lang.String[] { "Color", "LineWidth", "Vertex", },
-              com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto.class,
-              com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto.Builder.class);
-          internal_static_stardroid_source_AstronomicalSourceProto_descriptor =
-            getDescriptor().getMessageTypes().get(4);
-          internal_static_stardroid_source_AstronomicalSourceProto_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_stardroid_source_AstronomicalSourceProto_descriptor,
-              new java.lang.String[] { "NameIds", "REMOVENameIds", "SearchLocation", "SearchLevel", "Level", "Point", "Label", "Line", },
-              com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto.class,
-              com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto.Builder.class);
-          internal_static_stardroid_source_AstronomicalSourcesProto_descriptor =
-            getDescriptor().getMessageTypes().get(5);
-          internal_static_stardroid_source_AstronomicalSourcesProto_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_stardroid_source_AstronomicalSourcesProto_descriptor,
-              new java.lang.String[] { "Source", },
-              com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourcesProto.class,
-              com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourcesProto.Builder.class);
-          return null;
-        }
-      };
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
+    internal_static_stardroid_source_GeocentricCoordinatesProto_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_stardroid_source_GeocentricCoordinatesProto_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_stardroid_source_GeocentricCoordinatesProto_descriptor,
+        new java.lang.String[] { "RightAscension", "Declination", });
+    internal_static_stardroid_source_PointElementProto_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_stardroid_source_PointElementProto_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_stardroid_source_PointElementProto_descriptor,
+        new java.lang.String[] { "Location", "Color", "Size", "Shape", });
+    internal_static_stardroid_source_LabelElementProto_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_stardroid_source_LabelElementProto_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_stardroid_source_LabelElementProto_descriptor,
+        new java.lang.String[] { "Location", "Color", "StringIndex", "REMOVEStringIndex", "FontSize", "Offset", });
+    internal_static_stardroid_source_LineElementProto_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_stardroid_source_LineElementProto_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_stardroid_source_LineElementProto_descriptor,
+        new java.lang.String[] { "Color", "LineWidth", "Vertex", });
+    internal_static_stardroid_source_AstronomicalSourceProto_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_stardroid_source_AstronomicalSourceProto_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_stardroid_source_AstronomicalSourceProto_descriptor,
+        new java.lang.String[] { "NameIds", "REMOVENameIds", "SearchLocation", "SearchLevel", "Level", "Point", "Label", "Line", });
+    internal_static_stardroid_source_AstronomicalSourcesProto_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_stardroid_source_AstronomicalSourcesProto_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_stardroid_source_AstronomicalSourcesProto_descriptor,
+        new java.lang.String[] { "Source", });
   }
-  
-  public static void internalForceInit() {}
-  
+
   // @@protoc_insertion_point(outer_class_scope)
 }

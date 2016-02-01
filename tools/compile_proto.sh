@@ -7,13 +7,13 @@
 # out messages.  Also reinstate the field we'll use to temporarily
 # hold the string name.
 
-FILE="../app/src/com/google/android/stardroid/source/proto/source.proto"
+FILE="../app/src/main/java/com/google/android/stardroid/source/proto/source.proto"
 
 sed -e "s/option optimize_for/\/\/option optimize_for/" $FILE \
  | sed -e "s/\"SourceProto\"/\"SourceFullProto\"/" \
  | sed -e "s/\/\/ optional string REMOVE/optional string REMOVE/" \
-> source_full.proto
+> /tmp/source_full.proto
 
-protoc --java_out="src" source_full.proto
+protoc --java_out="src/main/java" --proto_path=/tmp /tmp/source_full.proto
 
 
