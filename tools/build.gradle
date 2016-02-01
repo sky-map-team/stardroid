@@ -1,0 +1,14 @@
+apply plugin: 'java'
+
+dependencies {
+    compile project(':app')
+    // TODO(jontayler): Terrible hack that should go when we revamp the tools.
+    compile files('../app/build/intermediates/classes/release/')//.filter{!it.toString().contains("SourceFullProto")}
+    //compile fileTree(include: ['**/*.*'], dir: '../app/build/intermediates/classes/release')
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+}
+
+task printit << {
+    System.out.println(project(':app').sourceSets['main'])
+    System.out.println(project(':app').getBuildDir())
+}
