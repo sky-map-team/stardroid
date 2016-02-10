@@ -110,8 +110,8 @@ message AstronomicalSourceProto {
   // this object.
   repeated uint32 name_ids = 1;
 
-  // The name of this object.
-  // optional string REMOVE_name_ids = 999;
+  // The names of this object.
+  // repeated string REMOVE_name_ids = 999;
 
   // The location to which SkyMap should direct the user.
   optional GeocentricCoordinatesProto search_location = 2;

@@ -12,6 +12,7 @@ FILE="../app/src/main/java/com/google/android/stardroid/source/proto/source.prot
 sed -e "s/option optimize_for/\/\/option optimize_for/" $FILE \
  | sed -e "s/\"SourceProto\"/\"SourceFullProto\"/" \
  | sed -e "s/\/\/ optional string REMOVE/optional string REMOVE/" \
+ | sed -e "s/\/\/ repeated string REMOVE/repeated string REMOVE/" \
 > /tmp/source_full.proto
 
 protoc --java_out="src/main/java" --proto_path=/tmp /tmp/source_full.proto

@@ -23,6 +23,7 @@ import com.google.android.stardroid.source.proto.SourceFullProto.PointElementPro
 import com.google.android.stardroid.util.StarAttributeCalculator;
 
 import java.io.IOException;
+import java.util.List;
 
 /**
  * Class for reading the stellar csv file and writing the contents to a protocol
@@ -65,8 +66,14 @@ public class StellarProtoWriter extends AbstractProtoWriter {
       LabelElementProto.Builder labelBuilder = LabelElementProto.newBuilder();
       labelBuilder.setColor(STAR_COLOR);
       labelBuilder.setLocation(getCoords(ra, dec));
-      labelBuilder.setREMOVEStringIndex(rKeyFromName(name));
+      List<String> rKeysForName = rKeysFromName(name);
+      if (!rKeysForName.isEmpty()) {
+        labelBuilder.setREMOVEStringIndex(rKeysForName.get(0));
+      }
       builder.addLabel(labelBuilder);
+      for (String rKey : rKeysForName) {
+        builder.addREMOVENameIds(rKey);
+      }
     }
     builder.setSearchLocation(coords);
     return builder.build();

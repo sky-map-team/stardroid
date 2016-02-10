@@ -21,11 +21,12 @@ import com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSou
 import com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto;
 
 import java.io.BufferedReader;
-import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Base class for converting (ASCII) text data files into protocol buffers.
@@ -35,14 +36,24 @@ import java.io.PrintWriter;
  * @author Brent Bryan
  */
 public abstract class AbstractProtoWriter {
+  private static final String NAME_DELIMITER = "[|]+";
   /**
    * Returns the AstronomicalSource associated with the given line, or null if
    * the line does not correspond to a valid {@link AstronomicalSource}.
    */
   protected abstract AstronomicalSourceProto getSourceFromLine(String line, int index);
 
-  protected String rKeyFromName(String name) {
-    return "R.string." + name.replaceAll(" ", "_").toLowerCase();
+  /**
+   * Gets the list of string IDs for the object names (that is, of the
+   * form R.string.foo).
+   * @param names pipe-separated object names
+   */
+  protected List<String> rKeysFromName(String names) {
+    List<String> rNames = new ArrayList<>();
+    for (String name : names.split(NAME_DELIMITER)) {
+      rNames.add("R.string." + name.replaceAll(" ", "_").toLowerCase());
+    }
+    return rNames;
   }
 
   protected GeocentricCoordinatesProto getCoords(float ra, float dec) {

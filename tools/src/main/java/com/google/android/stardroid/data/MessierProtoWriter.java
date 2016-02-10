@@ -20,6 +20,7 @@ import com.google.android.stardroid.source.proto.SourceFullProto.LabelElementPro
 import com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto;
 
 import java.io.IOException;
+import java.util.List;
 
 /**
  * Class for reading the messier csv file and writing the contents to protocol
@@ -57,13 +58,19 @@ public class MessierProtoWriter extends AbstractProtoWriter {
     LabelElementProto.Builder labelBuilder = LabelElementProto.newBuilder();
     labelBuilder.setColor(LABEL_COLOR);
     labelBuilder.setLocation(coords);
-    labelBuilder.setREMOVEStringIndex(rKeyFromName(tokens[0]));
+    List<String> rKeysForName = rKeysFromName(tokens[0]);
+    if (!rKeysForName.isEmpty()) {
+      labelBuilder.setREMOVEStringIndex(rKeysForName.get(0));
+    }
     builder.addLabel(labelBuilder);
 
     PointElementProto.Builder pointBuilder = PointElementProto.newBuilder();
     pointBuilder.setColor(POINT_COLOR);
     pointBuilder.setLocation(coords);
     pointBuilder.setSize(POINT_SIZE);
+    for (String rKey : rKeysForName) {
+      builder.addREMOVENameIds(rKey);
+    }
 
     builder.setSearchLocation(coords);
     return builder.build();

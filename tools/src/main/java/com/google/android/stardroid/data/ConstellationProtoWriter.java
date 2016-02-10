@@ -23,7 +23,6 @@ import com.google.android.stardroid.source.proto.SourceFullProto.LineElementProt
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -54,7 +53,7 @@ public class ConstellationProtoWriter {
   public static int LABEL_COLOR = 0x80c97cb2;
 
   public static List<LabelElementProto> readLabels(String filename) {
-    List<LabelElementProto> result = new ArrayList<LabelElementProto>();
+    List<LabelElementProto> result = new ArrayList<>();
     try {
       BufferedReader in = new BufferedReader(new FileReader(new File(filename)));
 

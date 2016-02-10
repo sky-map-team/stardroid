@@ -3925,30 +3925,39 @@ public final class SourceFullProto {
     int getNameIds(int index);
 
     /**
-     * <code>optional string REMOVE_name_ids = 999;</code>
+     * <code>repeated string REMOVE_name_ids = 999;</code>
      *
      * <pre>
-     * The name of this object.
+     * The names of this object.
      * </pre>
      */
-    boolean hasREMOVENameIds();
+    com.google.protobuf.ProtocolStringList
+        getREMOVENameIdsList();
     /**
-     * <code>optional string REMOVE_name_ids = 999;</code>
+     * <code>repeated string REMOVE_name_ids = 999;</code>
      *
      * <pre>
-     * The name of this object.
+     * The names of this object.
      * </pre>
      */
-    java.lang.String getREMOVENameIds();
+    int getREMOVENameIdsCount();
     /**
-     * <code>optional string REMOVE_name_ids = 999;</code>
+     * <code>repeated string REMOVE_name_ids = 999;</code>
      *
      * <pre>
-     * The name of this object.
+     * The names of this object.
+     * </pre>
+     */
+    java.lang.String getREMOVENameIds(int index);
+    /**
+     * <code>repeated string REMOVE_name_ids = 999;</code>
+     *
+     * <pre>
+     * The names of this object.
      * </pre>
      */
     com.google.protobuf.ByteString
-        getREMOVENameIdsBytes();
+        getREMOVENameIdsBytes(int index);
 
     /**
      * <code>optional .stardroid_source.GeocentricCoordinatesProto search_location = 2;</code>
@@ -4226,7 +4235,7 @@ public final class SourceFullProto {
             }
             case 18: {
               com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000002) == 0x00000002)) {
+              if (((bitField0_ & 0x00000001) == 0x00000001)) {
                 subBuilder = searchLocation_.toBuilder();
               }
               searchLocation_ = input.readMessage(com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.PARSER, extensionRegistry);
@@ -4234,16 +4243,16 @@ public final class SourceFullProto {
                 subBuilder.mergeFrom(searchLocation_);
                 searchLocation_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00000002;
+              bitField0_ |= 0x00000001;
               break;
             }
             case 29: {
-              bitField0_ |= 0x00000004;
+              bitField0_ |= 0x00000002;
               searchLevel_ = input.readFloat();
               break;
             }
             case 37: {
-              bitField0_ |= 0x00000008;
+              bitField0_ |= 0x00000004;
               level_ = input.readFloat();
               break;
             }
@@ -4273,8 +4282,11 @@ public final class SourceFullProto {
             }
             case 7994: {
               com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000001;
-              rEMOVENameIds_ = bs;
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                rEMOVENameIds_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              rEMOVENameIds_.add(bs);
               break;
             }
           }
@@ -4296,6 +4308,9 @@ public final class SourceFullProto {
         }
         if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
           line_ = java.util.Collections.unmodifiableList(line_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+          rEMOVENameIds_ = rEMOVENameIds_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -4367,57 +4382,48 @@ public final class SourceFullProto {
     }
 
     public static final int REMOVE_NAME_IDS_FIELD_NUMBER = 999;
-    private java.lang.Object rEMOVENameIds_;
+    private com.google.protobuf.LazyStringList rEMOVENameIds_;
     /**
-     * <code>optional string REMOVE_name_ids = 999;</code>
+     * <code>repeated string REMOVE_name_ids = 999;</code>
      *
      * <pre>
-     * The name of this object.
+     * The names of this object.
      * </pre>
      */
-    public boolean hasREMOVENameIds() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
+    public com.google.protobuf.ProtocolStringList
+        getREMOVENameIdsList() {
+      return rEMOVENameIds_;
     }
     /**
-     * <code>optional string REMOVE_name_ids = 999;</code>
+     * <code>repeated string REMOVE_name_ids = 999;</code>
      *
      * <pre>
-     * The name of this object.
+     * The names of this object.
      * </pre>
      */
-    public java.lang.String getREMOVENameIds() {
-      java.lang.Object ref = rEMOVENameIds_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          rEMOVENameIds_ = s;
-        }
-        return s;
-      }
+    public int getREMOVENameIdsCount() {
+      return rEMOVENameIds_.size();
     }
     /**
-     * <code>optional string REMOVE_name_ids = 999;</code>
+     * <code>repeated string REMOVE_name_ids = 999;</code>
      *
      * <pre>
-     * The name of this object.
+     * The names of this object.
+     * </pre>
+     */
+    public java.lang.String getREMOVENameIds(int index) {
+      return rEMOVENameIds_.get(index);
+    }
+    /**
+     * <code>repeated string REMOVE_name_ids = 999;</code>
+     *
+     * <pre>
+     * The names of this object.
      * </pre>
      */
     public com.google.protobuf.ByteString
-        getREMOVENameIdsBytes() {
-      java.lang.Object ref = rEMOVENameIds_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        rEMOVENameIds_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+        getREMOVENameIdsBytes(int index) {
+      return rEMOVENameIds_.getByteString(index);
     }
 
     public static final int SEARCH_LOCATION_FIELD_NUMBER = 2;
@@ -4430,7 +4436,7 @@ public final class SourceFullProto {
      * </pre>
      */
     public boolean hasSearchLocation() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <code>optional .stardroid_source.GeocentricCoordinatesProto search_location = 2;</code>
@@ -4464,7 +4470,7 @@ public final class SourceFullProto {
      * </pre>
      */
     public boolean hasSearchLevel() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <code>optional float search_level = 3 [default = 0];</code>
@@ -4488,7 +4494,7 @@ public final class SourceFullProto {
      * </pre>
      */
     public boolean hasLevel() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
      * <code>optional float level = 4 [default = 0];</code>
@@ -4668,7 +4674,7 @@ public final class SourceFullProto {
 
     private void initFields() {
       nameIds_ = java.util.Collections.emptyList();
-      rEMOVENameIds_ = "";
+      rEMOVENameIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       searchLocation_ = com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.getDefaultInstance();
       searchLevel_ = 0F;
       level_ = 0F;
@@ -4692,13 +4698,13 @@ public final class SourceFullProto {
       for (int i = 0; i < nameIds_.size(); i++) {
         output.writeUInt32(1, nameIds_.get(i));
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeMessage(2, searchLocation_);
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeFloat(3, searchLevel_);
       }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeFloat(4, level_);
       }
       for (int i = 0; i < point_.size(); i++) {
@@ -4710,8 +4716,8 @@ public final class SourceFullProto {
       for (int i = 0; i < line_.size(); i++) {
         output.writeMessage(7, line_.get(i));
       }
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeBytes(999, getREMOVENameIdsBytes());
+      for (int i = 0; i < rEMOVENameIds_.size(); i++) {
+        output.writeBytes(999, rEMOVENameIds_.getByteString(i));
       }
       getUnknownFields().writeTo(output);
     }
@@ -4731,15 +4737,15 @@ public final class SourceFullProto {
         size += dataSize;
         size += 1 * getNameIdsList().size();
       }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, searchLocation_);
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(3, searchLevel_);
       }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(4, level_);
       }
@@ -4755,9 +4761,14 @@ public final class SourceFullProto {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, line_.get(i));
       }
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(999, getREMOVENameIdsBytes());
+      {
+        int dataSize = 0;
+        for (int i = 0; i < rEMOVENameIds_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeBytesSizeNoTag(rEMOVENameIds_.getByteString(i));
+        }
+        size += dataSize;
+        size += 2 * getREMOVENameIdsList().size();
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -4890,7 +4901,7 @@ public final class SourceFullProto {
         super.clear();
         nameIds_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
-        rEMOVENameIds_ = "";
+        rEMOVENameIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000002);
         if (searchLocationBuilder_ == null) {
           searchLocation_ = com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto.getDefaultInstance();
@@ -4953,12 +4964,13 @@ public final class SourceFullProto {
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.nameIds_ = nameIds_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000001;
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          rEMOVENameIds_ = rEMOVENameIds_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.rEMOVENameIds_ = rEMOVENameIds_;
         if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000002;
+          to_bitField0_ |= 0x00000001;
         }
         if (searchLocationBuilder_ == null) {
           result.searchLocation_ = searchLocation_;
@@ -4966,11 +4978,11 @@ public final class SourceFullProto {
           result.searchLocation_ = searchLocationBuilder_.build();
         }
         if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-          to_bitField0_ |= 0x00000004;
+          to_bitField0_ |= 0x00000002;
         }
         result.searchLevel_ = searchLevel_;
         if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
-          to_bitField0_ |= 0x00000008;
+          to_bitField0_ |= 0x00000004;
         }
         result.level_ = level_;
         if (pointBuilder_ == null) {
@@ -5026,9 +5038,14 @@ public final class SourceFullProto {
           }
           onChanged();
         }
-        if (other.hasREMOVENameIds()) {
-          bitField0_ |= 0x00000002;
-          rEMOVENameIds_ = other.rEMOVENameIds_;
+        if (!other.rEMOVENameIds_.isEmpty()) {
+          if (rEMOVENameIds_.isEmpty()) {
+            rEMOVENameIds_ = other.rEMOVENameIds_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureREMOVENameIdsIsMutable();
+            rEMOVENameIds_.addAll(other.rEMOVENameIds_);
+          }
           onChanged();
         }
         if (other.hasSearchLocation()) {
@@ -5246,102 +5263,131 @@ public final class SourceFullProto {
         return this;
       }
 
-      private java.lang.Object rEMOVENameIds_ = "";
-      /**
-       * <code>optional string REMOVE_name_ids = 999;</code>
-       *
-       * <pre>
-       * The name of this object.
-       * </pre>
-       */
-      public boolean hasREMOVENameIds() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
+      private com.google.protobuf.LazyStringList rEMOVENameIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureREMOVENameIdsIsMutable() {
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+          rEMOVENameIds_ = new com.google.protobuf.LazyStringArrayList(rEMOVENameIds_);
+          bitField0_ |= 0x00000002;
+         }
       }
       /**
-       * <code>optional string REMOVE_name_ids = 999;</code>
+       * <code>repeated string REMOVE_name_ids = 999;</code>
        *
        * <pre>
-       * The name of this object.
+       * The names of this object.
        * </pre>
        */
-      public java.lang.String getREMOVENameIds() {
-        java.lang.Object ref = rEMOVENameIds_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            rEMOVENameIds_ = s;
-          }
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      public com.google.protobuf.ProtocolStringList
+          getREMOVENameIdsList() {
+        return rEMOVENameIds_.getUnmodifiableView();
       }
       /**
-       * <code>optional string REMOVE_name_ids = 999;</code>
+       * <code>repeated string REMOVE_name_ids = 999;</code>
        *
        * <pre>
-       * The name of this object.
+       * The names of this object.
+       * </pre>
+       */
+      public int getREMOVENameIdsCount() {
+        return rEMOVENameIds_.size();
+      }
+      /**
+       * <code>repeated string REMOVE_name_ids = 999;</code>
+       *
+       * <pre>
+       * The names of this object.
+       * </pre>
+       */
+      public java.lang.String getREMOVENameIds(int index) {
+        return rEMOVENameIds_.get(index);
+      }
+      /**
+       * <code>repeated string REMOVE_name_ids = 999;</code>
+       *
+       * <pre>
+       * The names of this object.
        * </pre>
        */
       public com.google.protobuf.ByteString
-          getREMOVENameIdsBytes() {
-        java.lang.Object ref = rEMOVENameIds_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          rEMOVENameIds_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+          getREMOVENameIdsBytes(int index) {
+        return rEMOVENameIds_.getByteString(index);
       }
       /**
-       * <code>optional string REMOVE_name_ids = 999;</code>
+       * <code>repeated string REMOVE_name_ids = 999;</code>
        *
        * <pre>
-       * The name of this object.
+       * The names of this object.
        * </pre>
        */
       public Builder setREMOVENameIds(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureREMOVENameIdsIsMutable();
+        rEMOVENameIds_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string REMOVE_name_ids = 999;</code>
+       *
+       * <pre>
+       * The names of this object.
+       * </pre>
+       */
+      public Builder addREMOVENameIds(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
-        rEMOVENameIds_ = value;
+  ensureREMOVENameIdsIsMutable();
+        rEMOVENameIds_.add(value);
         onChanged();
         return this;
       }
       /**
-       * <code>optional string REMOVE_name_ids = 999;</code>
+       * <code>repeated string REMOVE_name_ids = 999;</code>
        *
        * <pre>
-       * The name of this object.
+       * The names of this object.
+       * </pre>
+       */
+      public Builder addAllREMOVENameIds(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureREMOVENameIdsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, rEMOVENameIds_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string REMOVE_name_ids = 999;</code>
+       *
+       * <pre>
+       * The names of this object.
        * </pre>
        */
       public Builder clearREMOVENameIds() {
+        rEMOVENameIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000002);
-        rEMOVENameIds_ = getDefaultInstance().getREMOVENameIds();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string REMOVE_name_ids = 999;</code>
+       * <code>repeated string REMOVE_name_ids = 999;</code>
        *
        * <pre>
-       * The name of this object.
+       * The names of this object.
        * </pre>
        */
-      public Builder setREMOVENameIdsBytes(
+      public Builder addREMOVENameIdsBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000002;
-        rEMOVENameIds_ = value;
+  ensureREMOVENameIdsIsMutable();
+        rEMOVENameIds_.add(value);
         onChanged();
         return this;
       }
@@ -7285,7 +7331,7 @@ public final class SourceFullProto {
       "dth\030\002 \001(\002:\0031.5\022<\n\006vertex\030\003 \003(\0132,.stardro" +
       "id_source.GeocentricCoordinatesProto\"\321\002\n" +
       "\027AstronomicalSourceProto\022\020\n\010name_ids\030\001 \003" +
-      "(\r\022\030\n\017REMOVE_name_ids\030\347\007 \001(\t\022E\n\017search_l" +
+      "(\r\022\030\n\017REMOVE_name_ids\030\347\007 \003(\t\022E\n\017search_l" +
       "ocation\030\002 \001(\0132,.stardroid_source.Geocent" +
       "ricCoordinatesProto\022\027\n\014search_level\030\003 \001(",
       "\002:\0010\022\020\n\005level\030\004 \001(\002:\0010\0222\n\005point\030\005 \003(\0132#." +
