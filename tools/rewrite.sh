@@ -10,7 +10,8 @@ $ROOT_APP/build/intermediates/classes/release:\
 libs/protobuf-java-2.6.1.jar\
 "
 
+DATA_DIR=data
 
-java -cp $CLASSPATH com.google.android.stardroid.data.AsciiProtoRewriter stars_R.ascii
-java -cp $CLASSPATH com.google.android.stardroid.data.AsciiProtoRewriter messier_R.ascii
-java -cp $CLASSPATH com.google.android.stardroid.data.AsciiProtoRewriter constellations_R.ascii
+java -cp $CLASSPATH com.google.android.stardroid.data.AsciiProtoRewriter $DATA_DIR/stars_R.ascii
+java -cp $CLASSPATH com.google.android.stardroid.data.AsciiProtoRewriter $DATA_DIR/messier_R.ascii
+java -cp $CLASSPATH com.google.android.stardroid.data.AsciiProtoRewriter $DATA_DIR/constellations_R.ascii

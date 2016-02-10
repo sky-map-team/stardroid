@@ -1,11 +1,11 @@
 Object,Type,RA (h),DEC (deg),Magnitude,Size (arcminutes),NGC#,Constellation,Detailed Type,Common Name
-M1,Nebula,5.575,22.01667,8.4,6,NGC1952,Taurus,Supernova Remnant,Crab Nebula
+M1|crab nebula|,Nebula,5.575,22.01667,8.4,6,NGC1952,Taurus,Supernova Remnant,Crab Nebula
 M2,Globular Cluster,21.55833,-0.81667,6.5,12.9,NGC7089,Aquarius,Globular Cluster,
 M3,Globular Cluster,13.70333,28.38333,6.4,16.2,NGC5272,Canes Venaciti,Globular Cluster,
 M4,Globular Cluster,16.39333,-26.53333,5.9,26.3,NGC6121,Scorpius,Globular Cluster,
 M5,Globular Cluster,15.31,2.08333,5.8,17.4,NGC5904,Serpens,Globular Cluster,
-M6,Open Cluster,17.66833,-32.21667,4.2,15,NGC6405,Scorpius,Open Cluster,Butterfly Cluster
-M7,Open Cluster,17.89833,-34.81667,3.3,80,NGC6475,Scorpius,Open Cluster,The Scorpion's Tail
+M6|butterfly cluster,Open Cluster,17.66833,-32.21667,4.2,15,NGC6405,Scorpius,Open Cluster,Butterfly Cluster
+M7|scorpions tail,Open Cluster,17.89833,-34.81667,3.3,80,NGC6475,Scorpius,Open Cluster,The Scorpion's Tail
 M8,Nebula,18.06333,-24.38333,5.8,90,NGC6523,Sagittarius,Diffuse Nebula,Lagoon Nebula
 M9,Globular Cluster,17.32,-18.51667,7.9,9.3,NGC6333,Ophiuchus,Globular Cluster,
 M10,Globular Cluster,16.95167,-4.1,6.6,15.1,NGC6254,Ophiuchus,Globular Cluster,
@@ -29,7 +29,7 @@ M27,Nebula,19.99333,22.71667,8.1,15.2,NGC6853,Vulpecula,Planetary Nebula,Dumbbel
 M28,Globular Cluster,18.40833,-24.86667,6.9,11.2,NGC6626,Sagittarius,Globular Cluster,
 M29,Open Cluster,20.39833,38.53333,6.6,7,NGC6913,Cygnus,Open Cluster,
 M30,Globular Cluster,21.67333,-23.18333,7.5,11,NGC7099,Capricornus,Globular Cluster,
-M31,Galaxy,0.71167,41.26667,3.5,178,NGC224,Andromeda,Spiral Galaxy,Andromeda Galaxy
+M31|andromeda galaxy,Galaxy,0.71167,41.26667,3.5,178,NGC224,Andromeda,Spiral Galaxy,Andromeda Galaxy
 M32,Galaxy,0.71167,40.86667,8.2,7.6,NGC221,Andromeda,Elliptical Galaxy,A Satellite of the Andromeda Galaxy M31
 M33,Galaxy,1.565,30.65,5.7,62,NGC598,Triangulum,Spiral Galaxy,Triangulum Galaxy
 M34,Open Cluster,2.7,42.78333,5.2,35,NGC1039,Perseus,Open Cluster,
@@ -42,20 +42,20 @@ M40,Open Cluster,12.37333,58.08333,0,0,NGC0000,Ursa Major,Binary Star,Winnecke 4
 M41,Open Cluster,6.76667,-20.73333,4.5,38,NGC2287,Canis Major,Open Cluster,
 M42,Nebula,5.59,-5.45,4,66,NGC1976,Orion,Diffuse Nebula,Orion Nebula
 M43,Nebula,5.59333,-5.26667,9,20,NGC1982,Orion,Diffuse Nebula,DeMairan's Nebula part of Orion Nebula
-M44,Open Cluster,8.66833,19.98333,3.1,95,NGC2632,Cancer,Open Cluster,Beehive Cluster Praesepe
-M45,Open Cluster,3.783333,24.11667,0,0,NGC0000,Taurus,Open Cluster,Pleiades
+M44|beehive cluster|praesepe,Open Cluster,8.66833,19.98333,3.1,95,NGC2632,Cancer,Open Cluster,Beehive Cluster Praesepe
+M45|pleidies|seven sisters,Open Cluster,3.783333,24.11667,0,0,NGC0000,Taurus,Open Cluster,Pleiades
 M46,Open Cluster,7.69667,-14.81667,6.1,27,NGC2437,Puppis,Open Cluster,
 M47,Open Cluster,7.61,-14.5,4.4,30,NGC2422,Puppis,Open Cluster,
 M48,Open Cluster,8.23,-5.8,5.8,54,NGC2548,Hydra,Open Cluster,
 M49,Galaxy,12.49667,8,8.4,8.9,NGC4472,Virgo,Elliptical Galaxy,
 M50,Open Cluster,7.05333,-8.33333,5.9,16,NGC2323,Monoceros,Open Cluster,
-M51,Galaxy,13.49833,47.2,8.4,11,NGC5194,Canes Venaciti,Spiral Galaxy,Whirlpool Galaxy
+M51|whirlpool galaxy,Galaxy,13.49833,47.2,8.4,11,NGC5194,Canes Venaciti,Spiral Galaxy,Whirlpool Galaxy
 M52,Open Cluster,23.40333,61.58333,6.9,13,NGC7654,Cassiopeia,Open Cluster,
 M53,Globular Cluster,13.215,18.16667,7.7,12.6,NGC5024,Coma Berenices,Globular Cluster,
 M54,Globular Cluster,18.91833,-30.48333,7.7,9.1,NGC6715,Sagittarius,Globular Cluster,
 M55,Globular Cluster,19.66667,-30.96667,7,19,NGC6809,Sagittarius,Globular Cluster,
 M56,Globular Cluster,19.27667,30.18333,8.3,7.1,NGC6779,Lyra,Globular Cluster,
-M57,Nebula,18.89333,33.03333,9,2.5,NGC6720,Lyra,Planetary Nebula,Ring Nebula
+M57|ring nebula,Nebula,18.89333,33.03333,9,2.5,NGC6720,Lyra,Planetary Nebula,Ring Nebula
 M58,Galaxy,12.62833,11.81667,9.8,5.4,NGC4579,Virgo,Spiral Galaxy,
 M59,Galaxy,12.7,11.65,9.8,5.1,NGC4621,Virgo,Elliptical Galaxy,
 M60,Galaxy,12.72833,11.55,8.8,7.2,NGC4649,Virgo,Elliptical Galaxy,
@@ -109,10 +109,10 @@ M107,Globular Cluster,16.54167,-13.05,8.1,10,NGC6171,Ophiuchus,Globular Cluster,
 M108,Galaxy,11.19167,55.66667,10.1,8.3,NGC3556,Ursa Major,Spiral Galaxy,
 M109,Galaxy,11.96,53.38333,9.8,7.6,NGC3992,Ursa Major,Spiral Galaxy,
 M110,Galaxy,0.67333,41.68333,8,17.4,NGC205,Andromeda,Elliptical Galaxy,A Satellite of the Andromeda Galaxy M31
-NGC6543,Nebula,17.97595,66.6332,9.8,0.33,NGC6543,Draco,Planetary Nebula,Cat's Eye Nebula
-NGC5139,Globular Cluster,13.44608,-47.47686,3.7,36.3,NGC5139,Centaurus,Globular Cluster,Omega Centauri
+NGC6543|cats eye nebula,Nebula,17.97595,66.6332,9.8,0.33,NGC6543,Draco,Planetary Nebula,Cat's Eye Nebula
+NGC5139|omega centauri,Globular Cluster,13.44608,-47.47686,3.7,36.3,NGC5139,Centaurus,Globular Cluster,Omega Centauri
 V838 Mon,Other,7.06801,-3.84725,15.74,0.1,V838,Monoceros,Other,V838 Monocerotis
-HDF,Hubble,12.613722,62.21611,20,0.1,HDF,Ursa Major,Other,Hubble Deep Field
+HDF|hubble deep field,Hubble,12.613722,62.21611,20,0.1,HDF,Ursa Major,Other,Hubble Deep Field
 
 
 

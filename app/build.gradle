@@ -7,7 +7,9 @@ android {
     defaultConfig {
         applicationId "com.google.android.stardroid"
         minSdkVersion 3
-        targetSdkVersion 23
+        // TODO(jontayler): setting this disables the legacy menu in newer
+        // phones.  Restore once we leave the old Androids behind.
+        // targetSdkVersion 23
         versionCode 1113
         versionName "1.6.5"
     }

@@ -119,7 +119,7 @@ public class ConstellationProtoWriter {
   }
 
   private static AstronomicalSourcesProto.Builder readLines(String filename) {
-    List<AstronomicalSourceProto.Builder> list = new ArrayList<AstronomicalSourceProto.Builder>();
+    List<AstronomicalSourceProto.Builder> list = new ArrayList<>();
     try {
       BufferedReader in = new BufferedReader(new FileReader(new File(filename)));
 

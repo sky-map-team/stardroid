@@ -4,12 +4,14 @@ build/classes/main:\
 libs/protobuf-java-2.6.1.jar\
 "
 
-java -cp $CLASSPATH \
-com.google.android.stardroid.data.ConstellationProtoWriter data/constellation_names_and_lines.kml constellations
+DATA_DIR=data
 
 java -cp $CLASSPATH \
-com.google.android.stardroid.data.MessierProtoWriter data/messier.csv messier
+com.google.android.stardroid.data.ConstellationProtoWriter $DATA_DIR/constellation_names_and_lines.kml $DATA_DIR/constellations
 
 java -cp $CLASSPATH \
-com.google.android.stardroid.data.StellarProtoWriter data/stardata_names.txt stars
+com.google.android.stardroid.data.MessierProtoWriter $DATA_DIR/messier.csv $DATA_DIR/messier
+
+java -cp $CLASSPATH \
+com.google.android.stardroid.data.StellarProtoWriter $DATA_DIR/stardata_names.txt $DATA_DIR/stars
 

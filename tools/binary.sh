@@ -10,14 +10,16 @@ $ROOT_APP/build/intermediates/classes/release:\
 libs/protobuf-java-2.6.1.jar\
 "
 
-DATADIR=$ROOT_APP/src/main/assets
+IN_DATA_DIR=data
 
-java -cp $CLASSPATH com.google.android.stardroid.data.AsciiToBinaryProtoWriter constellations.ascii
-cp constellations.binary $DATADIR
+OUT_DATA_DIR=$ROOT_APP/src/main/assets
 
-java -cp $CLASSPATH com.google.android.stardroid.data.AsciiToBinaryProtoWriter stars.ascii
-cp stars.binary $DATADIR
+java -cp $CLASSPATH com.google.android.stardroid.data.AsciiToBinaryProtoWriter $IN_DATA_DIR/constellations.ascii
+mv $IN_DATA_DIR/constellations.binary $OUT_DATA_DIR
 
-java -cp $CLASSPATH com.google.android.stardroid.data.AsciiToBinaryProtoWriter messier.ascii
-cp messier.binary $DATADIR
+java -cp $CLASSPATH com.google.android.stardroid.data.AsciiToBinaryProtoWriter $IN_DATA_DIR/stars.ascii
+mv $IN_DATA_DIR/stars.binary $OUT_DATA_DIR
+
+java -cp $CLASSPATH com.google.android.stardroid.data.AsciiToBinaryProtoWriter $IN_DATA_DIR/messier.ascii
+mv $IN_DATA_DIR/messier.binary $OUT_DATA_DIR
 
