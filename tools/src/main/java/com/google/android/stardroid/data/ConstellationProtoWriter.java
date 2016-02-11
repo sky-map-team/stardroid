@@ -15,6 +15,7 @@
 package com.google.android.stardroid.data;
 
 import com.google.android.stardroid.base.Closeables;
+import com.google.android.stardroid.base.Lists;
 import com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto;
 import com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourcesProto;
 import com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto;
@@ -48,12 +49,31 @@ public class ConstellationProtoWriter {
           "Lupus", "Tucana"};
 
   private static final HashSet<String> CONSTELLATIONS =
-      new HashSet<String>(Arrays.asList(CONSTELLATION_ARRAY));
+      new HashSet<>(Arrays.asList(CONSTELLATION_ARRAY));
 
-  public static int LABEL_COLOR = 0x80c97cb2;
+  private static int LABEL_COLOR = 0x80c97cb2;
 
-  public static List<LabelElementProto> readLabels(String filename) {
-    List<LabelElementProto> result = new ArrayList<>();
+  private static final String NAME_DELIMITER = "[|]+";
+  /**
+   * Get the string id form of the object name (that is, of the form R.string.foo).
+   * @param name object name
+   */
+  private static String rKeyFromName(String name) {
+    return "R.string." + name.replaceAll(" ", "_").toLowerCase();
+  }
+
+  /**
+   * Gets the list of constellation names.  First will be used for label, rest
+   * as search terms.
+   *
+   * @param nameList pipe-separated object names
+   */
+  private static List<String> namesFromList(String nameList) {
+    return Lists.asList(nameList.split(NAME_DELIMITER));
+  }
+
+  public static List<LabelWithSynonyms> readLabels(String filename) {
+    List<LabelWithSynonyms> result = new ArrayList<>();
     try {
       BufferedReader in = new BufferedReader(new FileReader(new File(filename)));
 
@@ -66,7 +86,13 @@ public class ConstellationProtoWriter {
         s = in.readLine().trim();
         if (s.indexOf("<name>") < 0) continue;
 
-        String name = s.substring(6, s.length() - 7);
+        String namesList = s.substring(6, s.length() - 7);
+        List<String> names = namesFromList(namesList);
+        if (names.isEmpty()) {
+          throw new RuntimeException("Bad constellation name line " + s);
+        }
+        String labelName = names.get(0);
+
         in.readLine(); // style url line.
         in.readLine(); // Point
         s = in.readLine().trim();
@@ -78,13 +104,17 @@ public class ConstellationProtoWriter {
         float ra = getRa(Float.parseFloat(tokens[0]));
         float dec = Float.parseFloat(tokens[1]);
 
-        if (CONSTELLATIONS.remove(name)) {
-          LabelElementProto.Builder builder = LabelElementProto.newBuilder();
-          builder.setColor(LABEL_COLOR);
-          builder.setREMOVEStringIndex("R.string." + name.replaceAll(" ", "_").toLowerCase());
-          builder.setLocation(getCoords(ra, dec));
-          result.add(builder.build());
+
+        if (CONSTELLATIONS.remove(labelName)) {
+          LabelElementProto.Builder labelBuilder = LabelElementProto.newBuilder();
+          labelBuilder.setColor(LABEL_COLOR);
+          labelBuilder.setREMOVEStringIndex(rKeyFromName(labelName));
+          labelBuilder.setLocation(getCoords(ra, dec));
+          LabelWithSynonyms labelWithSynonyms = new LabelWithSynonyms(labelBuilder.build(), names);
+          result.add(labelWithSynonyms);
+          num++;
         }
+
       }
       in.close();
 
@@ -97,7 +127,8 @@ public class ConstellationProtoWriter {
         throw new RuntimeException();
       }
 
-      System.out.println(num);
+      System.out.println("Number of constellation names added: " + num);
+
       return result;
     } catch (IOException e) {
       e.printStackTrace();
@@ -119,7 +150,7 @@ public class ConstellationProtoWriter {
   }
 
   private static AstronomicalSourcesProto.Builder readLines(String filename) {
-    List<AstronomicalSourceProto.Builder> list = new ArrayList<>();
+    List<AstronomicalSourceProto.Builder> sourceList = new ArrayList<>();
     try {
       BufferedReader in = new BufferedReader(new FileReader(new File(filename)));
 
@@ -135,21 +166,21 @@ public class ConstellationProtoWriter {
           throw new RuntimeException("Unexpected coordinate line: " + s);
         }
 
-        LineElementProto.Builder builder = LineElementProto.newBuilder();
-        builder.setColor(LABEL_COLOR);
+        LineElementProto.Builder lineElementBuilder = LineElementProto.newBuilder();
+        lineElementBuilder.setColor(LABEL_COLOR);
         while (!(s = in.readLine().trim()).equals("</coordinates>")) {
           String[] tokens = s.split(",");
           float ra = getRa(Float.parseFloat(tokens[0]));
           float dec = Float.parseFloat(tokens[1]);
-          builder.addVertex(getCoords(ra, dec));
+          lineElementBuilder.addVertex(getCoords(ra, dec));
         }
-        addToList(list, builder);
+        addToList(sourceList, lineElementBuilder);
       }
 
-      System.out.println(num + " " + list.size());
+      System.out.println(num + " " + sourceList.size());
       AstronomicalSourcesProto.Builder result = AstronomicalSourcesProto.newBuilder();
-      for (AstronomicalSourceProto.Builder builder : list) {
-        result.addSource(builder);
+      for (AstronomicalSourceProto.Builder sourceBuilder : sourceList) {
+        result.addSource(sourceBuilder);
       }
       return result;
     } catch (IOException e) {
@@ -194,7 +225,7 @@ public class ConstellationProtoWriter {
   }
 
   private static AstronomicalSourcesProto combineLabelsConstellations(
-      List<LabelElementProto> labels, AstronomicalSourcesProto.Builder constellations) {
+      List<LabelWithSynonyms> labels, AstronomicalSourcesProto.Builder constellations) {
     AstronomicalSourcesProto.Builder result = AstronomicalSourcesProto.newBuilder();
     for (AstronomicalSourceProto constellation : constellations.getSourceList()) {
       ClosestConstellation cc = new ClosestConstellation();
@@ -204,26 +235,30 @@ public class ConstellationProtoWriter {
         }
       }
 
-      AstronomicalSourceProto.Builder builder = AstronomicalSourceProto.newBuilder();
-      builder.mergeFrom(constellation);
+      AstronomicalSourceProto.Builder sourceBuilder = AstronomicalSourceProto.newBuilder();
+      sourceBuilder.mergeFrom(constellation);
       if (cc.label != null) {
-        builder.addLabel(cc.label);
-        builder.setSearchLocation(cc.label.getLocation());
+        sourceBuilder.addLabel(cc.label);
+        sourceBuilder.setSearchLocation(cc.label.getLocation());
+        for (String name : cc.synonyms) {
+          sourceBuilder.addREMOVENameIds(rKeyFromName(name));
+        }
       }
-      result.addSource(builder);
+      result.addSource(sourceBuilder);
     }
     return result.build();
   }
 
   /** Returns the label which is closest to the given constellation center. */
   private static ClosestConstellation checkDistances(GeocentricCoordinatesProto coords,
-      List<LabelElementProto> labels, ClosestConstellation cc) {
+      List<LabelWithSynonyms> labels, ClosestConstellation cc) {
 
-    for (LabelElementProto s : labels) {
-      double dist = getDistance(coords, s.getLocation());
+    for (LabelWithSynonyms l : labels) {
+      double dist = getDistance(coords, l.label.getLocation());
       if (dist < cc.distance) {
-        cc.label = s;
+        cc.label = l.label;
         cc.distance = dist;
+        cc.synonyms = l.synonyms;
       }
     }
     return cc;
@@ -238,18 +273,10 @@ public class ConstellationProtoWriter {
     args[0] = args[0].trim();
     args[1] = args[1].trim();
 
-    List<LabelElementProto> labels = readLabels(args[0]);
+    List<LabelWithSynonyms> labels = readLabels(args[0]);
     AstronomicalSourcesProto.Builder constellations = readLines(args[0]);
     AstronomicalSourcesProto sources = combineLabelsConstellations(labels, constellations);
 
-    /*FileOutputStream out = null;
-    try {
-      out = new FileOutputStream(args[1] + ".binary");
-      sources.writeTo(out);
-    } finally {
-      Closeables.closeSilently(out);
-    }
-    */
     PrintWriter writer = null;
     try {
       writer = new PrintWriter(new FileWriter(args[1] + "_R.ascii"));
@@ -264,5 +291,15 @@ public class ConstellationProtoWriter {
   private static class ClosestConstellation {
     LabelElementProto label = null;
     double distance = Double.MAX_VALUE;
+    List<String> synonyms;
+  }
+
+  private static class LabelWithSynonyms {
+    LabelWithSynonyms(LabelElementProto label, List<String> synonyms) {
+      this.label = label;
+      this.synonyms = synonyms;
+    }
+    LabelElementProto label;
+    List<String> synonyms;
   }
 }

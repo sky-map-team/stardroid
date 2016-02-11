@@ -122,7 +122,7 @@
     </Point>
   </Placemark>
   <Placemark>
-    <name>Capricornus</name>
+    <name>Capricornus|Capricorn</name>
     <styleUrl>#con_names</styleUrl>
     <Point>
       <coordinates>136.585327,-19.65,0</coordinates>
@@ -220,7 +220,7 @@
     </Point>
   </Placemark>
   <Placemark>
-    <name>Crux</name>
+    <name>Crux|Southern Cross</name>
     <styleUrl>#con_names</styleUrl>
     <Point>
       <coordinates>7.728124,-59.700001,0</coordinates>
@@ -521,7 +521,7 @@
     </Point>
   </Placemark>
   <Placemark>
-    <name>Scorpius</name>
+    <name>Scorpius|Scorpio</name>
     <styleUrl>#con_names</styleUrl>
     <Point>
       <coordinates>73.66835800000001,-35.669998,0</coordinates>
@@ -598,14 +598,14 @@
     </Point>
   </Placemark>
   <Placemark>
-    <name>Ursa Major</name>
+    <name>Ursa Major|Plough|Big Dipper|Great Bear</name>
     <styleUrl>#con_names</styleUrl>
     <Point>
       <coordinates>-25.633064,57.48,0</coordinates>
     </Point>
   </Placemark>
   <Placemark>
-    <name>Ursa Minor</name>
+    <name>Ursa Minor|Little Bear|Little Dipper</name>
     <styleUrl>#con_names</styleUrl>
     <Point>
       <coordinates>45.225616,82.040001,0</coordinates>
