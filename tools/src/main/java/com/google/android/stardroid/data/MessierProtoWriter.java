@@ -52,7 +52,7 @@ public class MessierProtoWriter extends AbstractProtoWriter {
     float dec = Float.parseFloat(tokens[3]);
     float magnitude = 4.9f;
 
-    AstronomicalSourceProto.Builder builder = AstronomicalSourceProto.newBuilder();
+    AstronomicalSourceProto.Builder sourceBuilder = AstronomicalSourceProto.newBuilder();
     GeocentricCoordinatesProto coords = getCoords(ra, dec);
 
     LabelElementProto.Builder labelBuilder = LabelElementProto.newBuilder();
@@ -62,18 +62,20 @@ public class MessierProtoWriter extends AbstractProtoWriter {
     if (!rKeysForName.isEmpty()) {
       labelBuilder.setREMOVEStringIndex(rKeysForName.get(0));
     }
-    builder.addLabel(labelBuilder);
+    sourceBuilder.addLabel(labelBuilder);
 
     PointElementProto.Builder pointBuilder = PointElementProto.newBuilder();
     pointBuilder.setColor(POINT_COLOR);
     pointBuilder.setLocation(coords);
     pointBuilder.setSize(POINT_SIZE);
+    // TODO(johntaylor): consider setting messier object shape
+    sourceBuilder.addPoint(pointBuilder);
     for (String rKey : rKeysForName) {
-      builder.addREMOVENameIds(rKey);
+      sourceBuilder.addREMOVENameIds(rKey);
     }
 
-    builder.setSearchLocation(coords);
-    return builder.build();
+    sourceBuilder.setSearchLocation(coords);
+    return sourceBuilder.build();
   }
 
   public static void main(String[] args) throws IOException {
