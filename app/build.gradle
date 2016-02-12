@@ -1,0 +1,48 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 10
+    buildToolsVersion "23.0.2"
+
+    defaultConfig {
+        applicationId "com.google.android.stardroid"
+        minSdkVersion 3
+        // TODO(jontayler): setting this disables the legacy menu in newer
+        // phones.  Restore once we leave the old Androids behind.
+        // targetSdkVersion 23
+        versionCode 1113
+        versionName "1.6.5"
+    }
+    // Set the environment variables KSTOREPWD and KEYPWD to the keystore
+    // and key passwords to generate a signed release..
+    signingConfigs {
+        release {
+            storeFile file("stardroid-release-key.keystore")
+            storePassword System.getenv("KSTOREPWD")
+            keyPassword System.getenv("KEYPWD")
+            keyAlias "stardroid"
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            if (System.getenv("KSTOREPWD") != null) {
+                signingConfig signingConfigs.release
+            }
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard.cfg'
+        }
+    }
+
+    lintOptions {
+        // Lint complains because of missing translations.
+        // TODO(jontayler): fix the missing translations.
+        abortOnError false
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:3.8.1'
+    androidTestCompile 'junit:junit:4.12'
+    androidTestCompile 'org.easymock:easymock:2.5.2'
+}

@@ -18,6 +18,6 @@
     <delete dir="${dest}"/>
   </target>
   <target name="buildskymap">
-    <ant antfile="${skymapbuildfile}" inheritAll="false" target="compile"/>
+    <ant antfile="${skymapbuildfile}" inheritAll="false" target="debug"/>
   </target>
 </project>
