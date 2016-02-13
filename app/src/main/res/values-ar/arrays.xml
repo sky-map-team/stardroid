@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="popular_date_examples">
+        <item translation_description="The user's current time">الآن</item>
+        <item>الغروب القادم</item>
+        <item>الشروق القادم</item>
+        <item>بدر القمر القادم</item>
+        <item>هبوط أبولو ١١ في القمر</item>
+        <item>كسوف الشمس في ٢٩ مايو ١٩١٩م</item>
+    </string-array>
+    <string-array name="sensor_speed">
+        <item translation_description="Slow sensor speed">بطيء</item>
+        <item translation_description="Normal sensor speed">متوسط</item>
+        <item translation_description="Fast sensor speed">سريع</item>
+    </string-array>
+    <string-array name="sensor_damping">
+        <item translation_description="Standard sensor damping factor">اعتيادي</item>
+        <item translation_description="High sensor damping factor">عالي</item>
+    </string-array>
+</resources>
