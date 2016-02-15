@@ -11,7 +11,7 @@ android {
         // phones.  Restore once we leave the old Androids behind.
         // targetSdkVersion 23
         versionCode 1113
-        versionName "1.6.4-alpha1"
+        versionName "1.6.5-alpha1"
         buildConfigField 'String', 'GOOGLE_ANALYTICS_CODE', '""'
     }
     // Set the environment variables KSTOREPWD and KEYPWD to the keystore
