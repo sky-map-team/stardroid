@@ -217,8 +217,8 @@ public class LocationController extends AbstractController implements LocationLi
 
     LatLong newLocation = new LatLong(location.getLatitude(), location.getLongitude());
 
-    Log.d(TAG, "Latitude " + newLocation.latitude);
-    Log.d(TAG, "Longitude " + newLocation.longitude);
+    Log.d(TAG, "Latitude " + newLocation.getLatitude());
+    Log.d(TAG, "Longitude " + newLocation.getLongitude());
     setLocationInModel(newLocation, location.getProvider());
 
     // Only need get the location once.
@@ -234,15 +234,15 @@ public class LocationController extends AbstractController implements LocationLi
     List<Address> addresses = new ArrayList<Address>();
     String place = "Unknown";
     try {
-      addresses = geoCoder.getFromLocation(location.latitude, location.longitude, 1);
+      addresses = geoCoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
     } catch (IOException e) {
       Log.e(TAG, "Unable to reverse geocode location " + location);
     }
 
     if (addresses == null || addresses.size() == 0) {
       Log.d(TAG, "No addresses returned");
-      place = String.format(context.getString(R.string.location_long_lat), location.longitude,
-          location.latitude);
+      place = String.format(context.getString(R.string.location_long_lat), location.getLongitude(),
+              location.getLatitude());
     } else {
       place = getSummaryOfPlace(location, addresses.get(0));
     }
@@ -256,7 +256,7 @@ public class LocationController extends AbstractController implements LocationLi
 
   private String getSummaryOfPlace(LatLong location, Address address) {
     String template = context.getString(R.string.location_long_lat);
-    String longLat = String.format(template, location.longitude, location.latitude);
+    String longLat = String.format(template, location.getLongitude(), location.getLatitude());
     if (address == null) {
       return longLat;
     }

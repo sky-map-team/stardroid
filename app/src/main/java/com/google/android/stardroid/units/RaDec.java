@@ -91,10 +91,10 @@ public class RaDec {
    * In the southern hemisphere, objects never set if dec < -90 - lat.
    */
   public boolean isCircumpolarFor(LatLong loc) {
-    if (loc.latitude > 0.0f) {
-      return (this.dec > (90.0f - loc.latitude));
+    if (loc.getLatitude() > 0.0f) {
+      return (this.dec > (90.0f - loc.getLatitude()));
     } else {
-      return (this.dec < (-90.0f - loc.latitude));
+      return (this.dec < (-90.0f - loc.getLatitude()));
     }
   }
 
@@ -106,10 +106,10 @@ public class RaDec {
    * In the southern hemisphere, objects never rise if dec > 90 - lat.
    */
   public boolean isNeverVisible(LatLong loc) {
-    if (loc.latitude > 0.0f) {
-      return (this.dec < (loc.latitude - 90.0f));
+    if (loc.getLatitude() > 0.0f) {
+      return (this.dec < (loc.getLatitude() - 90.0f));
     } else {
-      return (this.dec > (90.0f + loc.latitude));
+      return (this.dec > (90.0f + loc.getLatitude()));
     }
   }
 }
