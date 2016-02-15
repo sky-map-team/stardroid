@@ -14,14 +14,14 @@
 
 package com.google.android.stardroid.layers;
 
+import android.content.SharedPreferences;
+import android.content.res.Resources;
+
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.control.AstronomerModel;
 import com.google.android.stardroid.provider.ephemeris.Planet;
 import com.google.android.stardroid.provider.ephemeris.PlanetSource;
 import com.google.android.stardroid.source.AstronomicalSource;
-
-import android.content.SharedPreferences;
-import android.content.res.Resources;
 
 import java.util.ArrayList;
 
@@ -56,9 +56,9 @@ public class PlanetsLayer extends AbstractSourceLayer {
   }
 
   @Override
-  public int getLayerId() {
+  public int getLayerDepthOrder() {
     // TODO(brent): refactor these to a common location.
-    return -103;
+    return 60;
   }
 
   @Override

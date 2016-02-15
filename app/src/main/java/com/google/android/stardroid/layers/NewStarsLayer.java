@@ -14,10 +14,10 @@
 
 package com.google.android.stardroid.layers;
 
-import com.google.android.stardroid.R;
-
 import android.content.res.AssetManager;
 import android.content.res.Resources;
+
+import com.google.android.stardroid.R;
 
 /**
  * An implementation of the {@link AbstractFileBasedLayer} for displaying stars
@@ -32,8 +32,8 @@ public class NewStarsLayer extends AbstractFileBasedLayer {
   }
 
   @Override
-  public int getLayerId() {
-    return -100;
+  public int getLayerDepthOrder() {
+    return 30;
   }
 
   @Override

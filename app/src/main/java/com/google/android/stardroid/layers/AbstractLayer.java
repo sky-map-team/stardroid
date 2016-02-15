@@ -14,10 +14,13 @@
 
 package com.google.android.stardroid.layers;
 
+import android.content.res.Resources;
+import android.util.Log;
+
 import com.google.android.stardroid.base.Maps;
 import com.google.android.stardroid.renderer.RendererController;
-import com.google.android.stardroid.renderer.RendererControllerBase;
 import com.google.android.stardroid.renderer.RendererController.AtomicSection;
+import com.google.android.stardroid.renderer.RendererControllerBase;
 import com.google.android.stardroid.renderer.RendererControllerBase.RenderManager;
 import com.google.android.stardroid.renderer.RendererObjectManager.UpdateType;
 import com.google.android.stardroid.renderer.util.UpdateClosure;
@@ -29,16 +32,13 @@ import com.google.android.stardroid.source.TextSource;
 import com.google.android.stardroid.util.Blog;
 import com.google.android.stardroid.util.MiscUtil;
 
-import android.content.res.Resources;
-import android.util.Log;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.EnumSet;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Set;
 import java.util.Map.Entry;
+import java.util.Set;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
@@ -182,16 +182,16 @@ public abstract class AbstractLayer implements Layer {
   @SuppressWarnings("unchecked")
   <E> RenderManager<E> createRenderManager(Class<E> clazz, RendererControllerBase controller) {
     if (clazz.equals(ImageSource.class)) {
-      return (RenderManager<E>) controller.createImageManager(getLayerId());
+      return (RenderManager<E>) controller.createImageManager(getLayerDepthOrder());
 
     } else if (clazz.equals(TextSource.class)) {
-      return (RenderManager<E>) controller.createLabelManager(getLayerId());
+      return (RenderManager<E>) controller.createLabelManager(getLayerDepthOrder());
 
     } else if (clazz.equals(LineSource.class)) {
-      return (RenderManager<E>) controller.createLineManager(getLayerId());
+      return (RenderManager<E>) controller.createLineManager(getLayerDepthOrder());
 
     } else if (clazz.equals(PointSource.class)) {
-      return (RenderManager<E>) controller.createPointManager(getLayerId());
+      return (RenderManager<E>) controller.createPointManager(getLayerDepthOrder());
     }
     throw new IllegalStateException("Unknown source type: " + clazz);
   }
@@ -213,7 +213,7 @@ public abstract class AbstractLayer implements Layer {
   /**
    * Provides a string ID to the internationalized name of this layer.
    */
-  // TODO(brent): could this be combined with getLayerId?  Not sure - they
+  // TODO(brent): could this be combined with getLayerDepthOrder?  Not sure - they
   // serve slightly different purposes.
   protected abstract int getLayerNameId();
 

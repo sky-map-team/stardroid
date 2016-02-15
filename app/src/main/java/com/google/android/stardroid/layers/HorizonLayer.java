@@ -14,6 +14,9 @@
 
 package com.google.android.stardroid.layers;
 
+import android.content.res.Resources;
+import android.graphics.Color;
+
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.base.Lists;
 import com.google.android.stardroid.base.TimeConstants;
@@ -27,9 +30,6 @@ import com.google.android.stardroid.source.TextSource;
 import com.google.android.stardroid.source.impl.LineSourceImpl;
 import com.google.android.stardroid.source.impl.TextSourceImpl;
 import com.google.android.stardroid.units.GeocentricCoordinates;
-
-import android.content.res.Resources;
-import android.graphics.Color;
 
 import java.util.ArrayList;
 import java.util.EnumSet;
@@ -55,8 +55,8 @@ public class HorizonLayer extends AbstractSourceLayer {
   }
 
   @Override
-  public int getLayerId() {
-    return -105;
+  public int getLayerDepthOrder() {
+    return 90;
   }
   
   // TODO(brent): Remove this.
