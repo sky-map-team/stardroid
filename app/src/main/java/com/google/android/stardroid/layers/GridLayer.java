@@ -14,6 +14,9 @@
 
 package com.google.android.stardroid.layers;
 
+import android.content.res.Resources;
+import android.graphics.Color;
+
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.source.AbstractAstronomicalSource;
 import com.google.android.stardroid.source.AstronomicalSource;
@@ -23,9 +26,6 @@ import com.google.android.stardroid.source.impl.LineSourceImpl;
 import com.google.android.stardroid.source.impl.TextSourceImpl;
 import com.google.android.stardroid.units.GeocentricCoordinates;
 import com.google.android.stardroid.units.RaDec;
-
-import android.content.res.Resources;
-import android.graphics.Color;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,8 +54,8 @@ public class GridLayer extends AbstractSourceLayer {
   }
 
   @Override
-  public int getLayerId() {
-    return -104;
+  public int getLayerDepthOrder() {
+    return 0;
   }
 
   @Override

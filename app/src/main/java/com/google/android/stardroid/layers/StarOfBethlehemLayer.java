@@ -14,6 +14,9 @@
 
 package com.google.android.stardroid.layers;
 
+import android.content.res.Resources;
+import android.util.Log;
+
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.base.TimeConstants;
 import com.google.android.stardroid.control.AstronomerModel;
@@ -26,9 +29,6 @@ import com.google.android.stardroid.source.impl.ImageSourceImpl;
 import com.google.android.stardroid.units.GeocentricCoordinates;
 import com.google.android.stardroid.units.Vector3;
 import com.google.android.stardroid.util.MiscUtil;
-
-import android.content.res.Resources;
-import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -56,8 +56,8 @@ public class StarOfBethlehemLayer extends AbstractSourceLayer {
   }
 
   @Override
-  public int getLayerId() {
-    return -100;
+  public int getLayerDepthOrder() {
+    return 40;
   }
 
   // TODO(brent): Remove this.
