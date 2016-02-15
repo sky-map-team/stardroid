@@ -14,14 +14,6 @@
 
 package com.google.android.stardroid.control;
 
-import static com.google.android.stardroid.util.Geometry.addVectors;
-import static com.google.android.stardroid.util.Geometry.calculateRADecOfZenith;
-import static com.google.android.stardroid.util.Geometry.matrixMultiply;
-import static com.google.android.stardroid.util.Geometry.matrixVectorMultiply;
-import static com.google.android.stardroid.util.Geometry.scalarProduct;
-import static com.google.android.stardroid.util.Geometry.scaleVector;
-import static com.google.android.stardroid.util.Geometry.vectorProduct;
-
 import com.google.android.stardroid.ApplicationConstants;
 import com.google.android.stardroid.units.GeocentricCoordinates;
 import com.google.android.stardroid.units.LatLong;
@@ -32,6 +24,14 @@ import com.google.android.stardroid.util.Geometry;
 import com.google.android.stardroid.util.MiscUtil;
 
 import java.util.Date;
+
+import static com.google.android.stardroid.util.Geometry.addVectors;
+import static com.google.android.stardroid.util.Geometry.calculateRADecOfZenith;
+import static com.google.android.stardroid.util.Geometry.matrixMultiply;
+import static com.google.android.stardroid.util.Geometry.matrixVectorMultiply;
+import static com.google.android.stardroid.util.Geometry.scalarProduct;
+import static com.google.android.stardroid.util.Geometry.scaleVector;
+import static com.google.android.stardroid.util.Geometry.vectorProduct;
 
 /**
  * The model of the astronomer.

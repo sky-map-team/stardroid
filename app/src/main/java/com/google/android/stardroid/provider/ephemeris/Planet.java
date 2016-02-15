@@ -564,9 +564,9 @@ public enum Planet {
       // The value of -0.83 works for the diameter of the Sun and Moon. We
       // assume that other objects are simply points.
       float bodySize = (this == Planet.Sun || this == Planet.Moon) ? -0.83f : 0.0f;
-      float hourAngle = calculateHourAngle(bodySize, loc.latitude, raDec.dec);
+      float hourAngle = calculateHourAngle(bodySize, loc.getLatitude(), raDec.dec);
 
-      delta = (gha + loc.longitude + (sign * hourAngle)) / 15.0f;
+      delta = (gha + loc.getLongitude() + (sign * hourAngle)) / 15.0f;
       while (delta < -24.0f) {
         delta = delta + 24.0f;
       }

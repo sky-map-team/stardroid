@@ -22,12 +22,20 @@ import com.google.android.stardroid.util.MathUtil;
  * 
  */
 public class LatLong {
-  public float latitude;
-  public float longitude;
+  private float latitude;
+  private float longitude;
 
   public LatLong(float latitude, float longitude) {
     this.latitude = latitude;
     this.longitude = longitude;
+    // Silently enforce reasonable limits
+    if (this.latitude > 90f) {
+      this.latitude = 90f;
+    }
+    if (this.latitude < -90f) {
+      this.latitude = -90f;
+    }
+    this.longitude = flooredMod(this.longitude + 180f, 360f) - 180f;
   }
 
   /**
@@ -46,11 +54,26 @@ public class LatLong {
    */
   public float distanceFrom(LatLong other) {
     // Some misuse of the astronomy math classes
-    GeocentricCoordinates otherPnt = GeocentricCoordinates.getInstance(other.longitude,
-                                                                       other.latitude);
-    GeocentricCoordinates thisPnt = GeocentricCoordinates.getInstance(this.longitude,
-                                                                      this.latitude);
+    GeocentricCoordinates otherPnt = GeocentricCoordinates.getInstance(other.getLongitude(),
+            other.getLatitude());
+    GeocentricCoordinates thisPnt = GeocentricCoordinates.getInstance(this.getLongitude(),
+            this.getLatitude());
     float cosTheta = Geometry.cosineSimilarity(thisPnt, otherPnt);
     return MathUtil.acos(cosTheta) * 180f / MathUtil.PI;
+  }
+
+  public float getLatitude() {
+    return latitude;
+  }
+
+  public float getLongitude() {
+    return longitude;
+  }
+
+  /**
+   * Returns the 'floored' mod assuming n>0.
+   */
+  private static float flooredMod(float a, float n){
+    return a<0 ? (a%n + n)%n : a%n;
   }
 }
