@@ -12,6 +12,7 @@ android {
         // targetSdkVersion 23
         versionCode 1114
         versionName "1.6.6-RC1"
+        buildConfigField 'String', 'GOOGLE_ANALYTICS_CODE', '""'
     }
     // Set the environment variables KSTOREPWD and KEYPWD to the keystore
     // and key passwords to generate a signed release..
@@ -30,6 +31,11 @@ android {
                 signingConfig signingConfigs.release
             }
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard.cfg'
+            Properties properties = new Properties()
+            // Sky Map devs should create this file with the Google Analytics key
+            properties.load(project.file('no-checkin.properties').newDataInputStream())
+            def analyticsKey = properties.getProperty('analytics-key')
+            buildConfigField 'String', 'GOOGLE_ANALYTICS_CODE', analyticsKey
         }
     }
 
@@ -46,3 +52,4 @@ dependencies {
     androidTestCompile 'junit:junit:4.12'
     androidTestCompile 'org.easymock:easymock:2.5.2'
 }
+
