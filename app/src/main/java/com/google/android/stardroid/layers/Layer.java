@@ -44,9 +44,10 @@ public interface Layer {
    void registerWithRenderer(RendererController controller);
 
   /**
-   * Return the id associated with this layer.
+   * Returns the z-ordering of the layers.  Lower numbers are rendered first and
+   * are therefore 'behind' higher numbered layers.
    */
-   int getLayerId();
+   int getLayerDepthOrder();
 
   /**
    * Returns the preference label associated with this layer.

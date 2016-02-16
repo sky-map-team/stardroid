@@ -33,15 +33,17 @@ import java.util.Date;
 import java.util.TimeZone;
 
 public enum Planet {
-  Mercury(R.drawable.mercury, R.string.mercury, 1L * TimeConstants.MILLISECONDS_PER_DAY),
-  Venus(R.drawable.venus, R.string.venus, 1L * TimeConstants.MILLISECONDS_PER_DAY),
-  Sun(R.drawable.sun, R.string.sun, 1L * TimeConstants.MILLISECONDS_PER_DAY),
-  Mars(R.drawable.mars, R.string.mars, 1L * TimeConstants.MILLISECONDS_PER_DAY),
+  // The order here is the order in which they are drawn.  To ensure that during
+  // conjunctions they display "naturally" order them in reverse distance from Earth.
+  Pluto(R.drawable.pluto, R.string.pluto, 1L * TimeConstants.MILLISECONDS_PER_WEEK),
+  Neptune(R.drawable.neptune, R.string.neptune, 1L * TimeConstants.MILLISECONDS_PER_WEEK),
+  Uranus(R.drawable.uranus, R.string.uranus, 1L * TimeConstants.MILLISECONDS_PER_WEEK),
   Jupiter(R.drawable.jupiter, R.string.jupiter, 1L * TimeConstants.MILLISECONDS_PER_WEEK),
   Saturn(R.drawable.saturn, R.string.saturn, 1L * TimeConstants.MILLISECONDS_PER_WEEK),
-  Uranus(R.drawable.uranus, R.string.uranus, 1L * TimeConstants.MILLISECONDS_PER_WEEK),
-  Neptune(R.drawable.neptune, R.string.neptune, 1L * TimeConstants.MILLISECONDS_PER_WEEK),
-  Pluto(R.drawable.pluto, R.string.pluto, 1L * TimeConstants.MILLISECONDS_PER_WEEK),
+  Mars(R.drawable.mars, R.string.mars, 1L * TimeConstants.MILLISECONDS_PER_DAY),
+  Sun(R.drawable.sun, R.string.sun, 1L * TimeConstants.MILLISECONDS_PER_DAY),
+  Mercury(R.drawable.mercury, R.string.mercury, 1L * TimeConstants.MILLISECONDS_PER_DAY),
+  Venus(R.drawable.venus, R.string.venus, 1L * TimeConstants.MILLISECONDS_PER_DAY),
   Moon(R.drawable.moon4, R.string.moon, 1L * TimeConstants.MILLISECONDS_PER_HOUR);
 
   private static final String TAG = MiscUtil.getTag(Planet.class);
@@ -564,9 +566,9 @@ public enum Planet {
       // The value of -0.83 works for the diameter of the Sun and Moon. We
       // assume that other objects are simply points.
       float bodySize = (this == Planet.Sun || this == Planet.Moon) ? -0.83f : 0.0f;
-      float hourAngle = calculateHourAngle(bodySize, loc.latitude, raDec.dec);
+      float hourAngle = calculateHourAngle(bodySize, loc.getLatitude(), raDec.dec);
 
-      delta = (gha + loc.longitude + (sign * hourAngle)) / 15.0f;
+      delta = (gha + loc.getLongitude() + (sign * hourAngle)) / 15.0f;
       while (delta < -24.0f) {
         delta = delta + 24.0f;
       }

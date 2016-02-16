@@ -14,6 +14,10 @@
 
 package com.google.android.stardroid.layers;
 
+import android.content.res.Resources;
+import android.graphics.Color;
+import android.util.Log;
+
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.base.Closeables;
 import com.google.android.stardroid.base.Lists;
@@ -31,10 +35,6 @@ import com.google.android.stardroid.source.impl.TextSourceImpl;
 import com.google.android.stardroid.units.GeocentricCoordinates;
 import com.google.android.stardroid.util.Blog;
 import com.google.android.stardroid.util.MiscUtil;
-
-import android.content.res.Resources;
-import android.graphics.Color;
-import android.util.Log;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -73,8 +73,8 @@ public class IssLayer extends AbstractSourceLayer {
   }
 
   @Override
-  public int getLayerId() {
-    return -110;
+  public int getLayerDepthOrder() {
+    return 70;
   }
 
   @Override

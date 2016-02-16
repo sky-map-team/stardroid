@@ -14,6 +14,9 @@
 
 package com.google.android.stardroid.layers;
 
+import android.content.res.Resources;
+import android.util.Log;
+
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.base.TimeConstants;
 import com.google.android.stardroid.control.AstronomerModel;
@@ -23,9 +26,6 @@ import com.google.android.stardroid.search.SearchResult;
 import com.google.android.stardroid.units.GeocentricCoordinates;
 import com.google.android.stardroid.units.RaDec;
 import com.google.android.stardroid.util.MiscUtil;
-
-import android.content.res.Resources;
-import android.util.Log;
 
 import java.util.Collections;
 import java.util.Date;
@@ -97,8 +97,8 @@ public class SkyGradientLayer implements Layer {
   }
 
   @Override
-  public int getLayerId() {
-    return 0;
+  public int getLayerDepthOrder() {
+    return -10;
   }
 
   public String getPreferenceId() {

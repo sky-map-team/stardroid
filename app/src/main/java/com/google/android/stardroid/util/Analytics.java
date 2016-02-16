@@ -14,10 +14,11 @@
 
 package com.google.android.stardroid.util;
 
-import com.google.android.apps.analytics.GoogleAnalyticsTracker;
-
 import android.content.Context;
 import android.util.Log;
+
+import com.google.android.apps.analytics.GoogleAnalyticsTracker;
+import com.google.android.stardroid.BuildConfig;
 
 /**
  * Encapsulates interactions with Google Analytics, allowing it to be
@@ -30,7 +31,7 @@ public class Analytics {
   /**
    * Analytics ID associated with http://stardroid-server.appspot.com
    */
-  private static final String WEB_PROPERTY_ID = "TODO";
+  private static final String WEB_PROPERTY_ID = BuildConfig.GOOGLE_ANALYTICS_CODE;
   private static final int DISPATCH_INTERVAL_SECS = 10;
   public static final String PREF_KEY = "enable_analytics";
   private static volatile Analytics analytics;
