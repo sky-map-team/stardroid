@@ -1,15 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 10
+    compileSdkVersion 15
     buildToolsVersion "23.0.2"
 
     defaultConfig {
         applicationId "com.google.android.stardroid"
-        minSdkVersion 10
-        targetSdkVersion 10
-        versionCode 1200
-        versionName "1.7.0-alpha1"
+        minSdkVersion 15
+        targetSdkVersion 15
+        versionCode 1300
+        versionName "1.8.0-alpha1"
         buildConfigField 'String', 'GOOGLE_ANALYTICS_CODE', '""'
     }
     // Set the environment variables KSTOREPWD and KEYPWD to the keystore
