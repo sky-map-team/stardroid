@@ -6,12 +6,10 @@ android {
 
     defaultConfig {
         applicationId "com.google.android.stardroid"
-        minSdkVersion 3
-        // TODO(jontayler): setting this disables the legacy menu in newer
-        // phones.  Restore once we leave the old Androids behind.
-        // targetSdkVersion 23
-        versionCode 1113
-        versionName "1.6.5-alpha1"
+        minSdkVersion 10
+        targetSdkVersion 10
+        versionCode 1200
+        versionName "1.7-alpha1"
         buildConfigField 'String', 'GOOGLE_ANALYTICS_CODE', '""'
     }
     // Set the environment variables KSTOREPWD and KEYPWD to the keystore
