@@ -83,6 +83,8 @@ import java.util.List;
 public class DynamicStarMapActivity extends Activity implements OnSharedPreferenceChangeListener {
   private static final int TIME_DISPLAY_DELAY_MILLIS = 1000;
 
+
+
   /**
    * Passed to the renderer to get per-frame updates from the model.
    *
@@ -131,8 +133,9 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
   private static final int DELAY_BETWEEN_ZOOM_REPEATS_MILLIS = 100;
   private static final float ROTATION_SPEED = 10;
   private static final String TAG = MiscUtil.getTag(DynamicStarMapActivity.class);
-  // Preference that keeps track of whether or not the user accepted the ToS
-  public static final String READ_TOS_PREF = "read_tos";
+  // Preference that keeps track of whether or not the user accepted the ToS for this version
+  // of the app.
+  public static final String READ_TOS_PREF_VERSION = "read_tos_version";
   private ImageButton cancelSearchButton;
   private ControllerGroup controller;
   private GestureDetector gestureDetector;
@@ -167,6 +170,21 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
   private ActivityLightLevelManager activityLightLevelManager;
   private long sessionStartTime;
 
+  private void maybeShowEula(SharedPreferences prefs) {
+    int versionCode = ((StardroidApplication) getApplication()).getVersion();
+    boolean eulaConfirmed = (prefs.getInt(READ_TOS_PREF_VERSION, -1) == versionCode);
+    if (!eulaConfirmed) {
+      showDialog(DialogFactory.DIALOG_EULA_WITH_BUTTONS);
+    }
+  }
+
+  public void recordEulaAccepted() {
+    int versionCode = ((StardroidApplication) getApplication()).getVersion();
+    SharedPreferences.Editor editor = sharedPreferences.edit();
+    editor.putInt(DynamicStarMapActivity.READ_TOS_PREF_VERSION, versionCode);
+    editor.commit();
+  }
+
   @Override
   public void onCreate(Bundle icicle) {
     Log.d(TAG, "onCreate at " + System.currentTimeMillis());
@@ -177,11 +195,7 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
     dialogFactory = new DialogFactory(this);
     sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
     sharedPreferences.registerOnSharedPreferenceChangeListener(this);
-
-    boolean eulaConfirmed = sharedPreferences.getBoolean(READ_TOS_PREF, false);
-    if (!eulaConfirmed) {
-      showDialog(DialogFactory.DIALOG_EULA_WITH_BUTTONS);
-    }
+    maybeShowEula(sharedPreferences);
 
     getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON,
         WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
