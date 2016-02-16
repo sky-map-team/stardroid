@@ -23,14 +23,11 @@ import android.text.Spanned;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.android.stardroid.R;
-import com.google.android.stardroid.R.id;
 import com.google.android.stardroid.R.layout;
 import com.google.android.stardroid.R.string;
 import com.google.android.stardroid.StardroidApplication;
@@ -185,29 +182,16 @@ public class DialogFactory {
   }
 
   /**
-   * Display the Mobile Terms of Service to the user.
+   * Display the Terms of Service and privacy policy to the user.
    */
   private Dialog createTermsOfServiceDialog(boolean hideButtons) {
-      View view = LayoutInflater.from(parentActivity).inflate(layout.tos_view, null);
-      final WebView webView = (WebView) view.findViewById(id.webview);
-      webView.setWebViewClient(new WebViewClient() {
-        @Override
-        public void onPageFinished(WebView view, String url) {
-          pageLoaded(view);
-        }
-        @Override
-        public void onReceivedError(
-            WebView view, int errorCode, String description, String failingUrl) {
-          pageLoaded(view);
-        }
-        private void pageLoaded(WebView view) {
-          webView.setVisibility(View.VISIBLE);
-          webView.requestFocus();
-        }
-      });
-      webView.loadUrl(String.valueOf("http://m.google.com/tospage"));
-
       AlertDialog tosDialog = null;
+      final LayoutInflater inflater = parentActivity.getLayoutInflater();
+      final View view = inflater.inflate(layout.tos_view, null);
+      String eulaText = String.format(parentActivity.getString(R.string.eula_text), getVersionName());
+      Spanned formattedText = Html.fromHtml(eulaText);
+      TextView eulaTextView = (TextView) view.findViewById(R.id.eula_box_text);
+      eulaTextView.setText(formattedText, TextView.BufferType.SPANNABLE);
 
       if (!hideButtons) {
         tosDialog = new Builder(parentActivity)
