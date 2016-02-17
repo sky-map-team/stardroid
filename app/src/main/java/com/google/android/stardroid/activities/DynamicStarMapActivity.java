@@ -82,8 +82,7 @@ import java.util.List;
  */
 public class DynamicStarMapActivity extends Activity implements OnSharedPreferenceChangeListener {
   private static final int TIME_DISPLAY_DELAY_MILLIS = 1000;
-
-
+  private static final int LONG_FADE_TIME_MS = 2500;
 
   /**
    * Passed to the renderer to get per-frame updates from the model.
@@ -197,8 +196,13 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
     sharedPreferences.registerOnSharedPreferenceChangeListener(this);
     maybeShowEula(sharedPreferences);
 
-    getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON,
-        WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+    getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON |
+                         WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+    // TODO(jontayler): upgrade to
+    // getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
+    // when we reach API level 16.
+    getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
 
     model = StardroidApplication.getModel();
     layerManager = StardroidApplication.getLayerManager(getAssets(),
@@ -597,8 +601,20 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
     });
     zooms.setZoomSpeed(DELAY_BETWEEN_ZOOM_REPEATS_MILLIS);
     zooms.hide();
+    WidgetFader navButtonsFader = new WidgetFader(new Fadeable() {
+      @Override
+      public void show() {
+        // Should happen automatically on interaction.
+      }
+
+      @Override
+      public void hide() {
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+      }
+    });
+
     final ButtonLayerView providerButtons = (ButtonLayerView) findViewById(R.id.layer_buttons_control);
-    final WidgetFader layerControlFader = new WidgetFader(providerButtons, 2500);
+    final WidgetFader layerControlFader = new WidgetFader(providerButtons, LONG_FADE_TIME_MS);
     providerButtons.hide();
     final int numChildren = providerButtons.getChildCount();
     for (int i = 0; i < numChildren; ++i) {
@@ -623,7 +639,8 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
 
     MapMover mapMover = new MapMover(model, controller, this, sharedPreferences);
     gestureDetector = new GestureDetector(new GestureInterpreter(
-        new WidgetFader[] {manualControlFader, layerControlFader, zoomControlFader},
+        new WidgetFader[] {manualControlFader, layerControlFader, zoomControlFader,
+                navButtonsFader},
         mapMover));
     dragZoomRotateDetector = new DragRotateZoomGestureDetector(mapMover);
   }

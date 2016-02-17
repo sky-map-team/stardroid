@@ -39,7 +39,9 @@
         android:resource="@xml/searchable" />
     </activity>
 
-    <activity android:name=".activities.EditSettingsActivity"/>
+    <activity
+        android:name=".activities.EditSettingsActivity"
+        android:theme="@android:style/Theme.Holo" />
     <activity android:name=".activities.ImageGalleryActivity"
       android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
     <activity android:name=".activities.ImageDisplayActivity"
