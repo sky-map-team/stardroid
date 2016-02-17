@@ -47,7 +47,7 @@ public class StellarProtoWriter extends AbstractProtoWriter {
     float dec = Float.parseFloat(tokens[2]);
     float ra = Float.parseFloat(tokens[3]);
 
-    if (magnitude >= 5.0f) {
+    if (magnitude >= StarAttributeCalculator.MAX_MAGNITUDE) {
       return null;
     }
 

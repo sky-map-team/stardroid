@@ -21,6 +21,11 @@ import android.graphics.Color;
  *
  */
 public class StarAttributeCalculator {
+  // Much above this and the app crashes - best guess we run out of some openGL resource.
+  // TODO(jontayler): find out why.
+  public static final float MAX_MAGNITUDE = 5.6f;
+  private static final int MAX_SIZE = 5;
+
   private enum Channel {
     A(24), R(16), G(8), B(0);
 
@@ -48,10 +53,10 @@ public class StarAttributeCalculator {
   }
 
   public static int getColor(float magnitude, int baseColor) {
-    if (magnitude > 5.0) return Color.BLACK;
+    if (magnitude > MAX_MAGNITUDE) return Color.BLACK;
     if (magnitude <= 0.0) return baseColor;
 
-    float shade = 1.0f - magnitude/8.0f;
+    float shade = 1.0f - magnitude/(MAX_MAGNITUDE + 3.0f);
 
     int result = 0xFF000000;
     for (Channel c : Channel.values()) {
@@ -80,6 +85,6 @@ public class StarAttributeCalculator {
   }
 
   public static int getSize(float magnitude) {
-    return Math.max(5 - (int)(magnitude), 2);
+    return (int) Math.max(MAX_SIZE - magnitude, 1);
   }
 }

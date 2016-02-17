@@ -14,34 +14,6 @@
 
 package com.google.android.stardroid.activities;
 
-import com.google.android.stardroid.R;
-import com.google.android.stardroid.StardroidApplication;
-import com.google.android.stardroid.activities.util.ActivityLightLevelChanger;
-import com.google.android.stardroid.activities.util.ActivityLightLevelChanger.NightModeable;
-import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
-import com.google.android.stardroid.control.AstronomerModel;
-import com.google.android.stardroid.control.AstronomerModel.Pointing;
-import com.google.android.stardroid.control.ControllerGroup;
-import com.google.android.stardroid.control.MagneticDeclinationCalculatorSwitcher;
-import com.google.android.stardroid.kml.KmlManager;
-import com.google.android.stardroid.layers.LayerManager;
-import com.google.android.stardroid.renderer.RendererController;
-import com.google.android.stardroid.renderer.SkyRenderer;
-import com.google.android.stardroid.renderer.util.AbstractUpdateClosure;
-import com.google.android.stardroid.search.SearchResult;
-import com.google.android.stardroid.touch.DragRotateZoomGestureDetector;
-import com.google.android.stardroid.touch.GestureInterpreter;
-import com.google.android.stardroid.touch.MapMover;
-import com.google.android.stardroid.units.GeocentricCoordinates;
-import com.google.android.stardroid.units.Vector3;
-import com.google.android.stardroid.util.Analytics;
-import com.google.android.stardroid.util.MathUtil;
-import com.google.android.stardroid.util.MiscUtil;
-import com.google.android.stardroid.util.OsVersions;
-import com.google.android.stardroid.views.ButtonLayerView;
-import com.google.android.stardroid.views.WidgetFader;
-import com.google.android.stardroid.views.WidgetFader.Fadeable;
-
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.SearchManager;
@@ -72,6 +44,34 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ZoomControls;
 
+import com.google.android.stardroid.R;
+import com.google.android.stardroid.StardroidApplication;
+import com.google.android.stardroid.activities.util.ActivityLightLevelChanger;
+import com.google.android.stardroid.activities.util.ActivityLightLevelChanger.NightModeable;
+import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
+import com.google.android.stardroid.control.AstronomerModel;
+import com.google.android.stardroid.control.AstronomerModel.Pointing;
+import com.google.android.stardroid.control.ControllerGroup;
+import com.google.android.stardroid.control.MagneticDeclinationCalculatorSwitcher;
+import com.google.android.stardroid.kml.KmlManager;
+import com.google.android.stardroid.layers.LayerManager;
+import com.google.android.stardroid.renderer.RendererController;
+import com.google.android.stardroid.renderer.SkyRenderer;
+import com.google.android.stardroid.renderer.util.AbstractUpdateClosure;
+import com.google.android.stardroid.search.SearchResult;
+import com.google.android.stardroid.touch.DragRotateZoomGestureDetector;
+import com.google.android.stardroid.touch.GestureInterpreter;
+import com.google.android.stardroid.touch.MapMover;
+import com.google.android.stardroid.units.GeocentricCoordinates;
+import com.google.android.stardroid.units.Vector3;
+import com.google.android.stardroid.util.Analytics;
+import com.google.android.stardroid.util.MathUtil;
+import com.google.android.stardroid.util.MiscUtil;
+import com.google.android.stardroid.util.OsVersions;
+import com.google.android.stardroid.views.ButtonLayerView;
+import com.google.android.stardroid.views.WidgetFader;
+import com.google.android.stardroid.views.WidgetFader.Fadeable;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -82,6 +82,8 @@ import java.util.List;
  */
 public class DynamicStarMapActivity extends Activity implements OnSharedPreferenceChangeListener {
   private static final int TIME_DISPLAY_DELAY_MILLIS = 1000;
+
+
 
   /**
    * Passed to the renderer to get per-frame updates from the model.
@@ -131,8 +133,9 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
   private static final int DELAY_BETWEEN_ZOOM_REPEATS_MILLIS = 100;
   private static final float ROTATION_SPEED = 10;
   private static final String TAG = MiscUtil.getTag(DynamicStarMapActivity.class);
-  // Preference that keeps track of whether or not the user accepted the ToS
-  public static final String READ_TOS_PREF = "read_tos";
+  // Preference that keeps track of whether or not the user accepted the ToS for this version
+  // of the app.
+  public static final String READ_TOS_PREF_VERSION = "read_tos_version";
   private ImageButton cancelSearchButton;
   private ControllerGroup controller;
   private GestureDetector gestureDetector;
@@ -167,6 +170,21 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
   private ActivityLightLevelManager activityLightLevelManager;
   private long sessionStartTime;
 
+  private void maybeShowEula(SharedPreferences prefs) {
+    int versionCode = ((StardroidApplication) getApplication()).getVersion();
+    boolean eulaConfirmed = (prefs.getInt(READ_TOS_PREF_VERSION, -1) == versionCode);
+    if (!eulaConfirmed) {
+      showDialog(DialogFactory.DIALOG_EULA_WITH_BUTTONS);
+    }
+  }
+
+  public void recordEulaAccepted() {
+    int versionCode = ((StardroidApplication) getApplication()).getVersion();
+    SharedPreferences.Editor editor = sharedPreferences.edit();
+    editor.putInt(DynamicStarMapActivity.READ_TOS_PREF_VERSION, versionCode);
+    editor.commit();
+  }
+
   @Override
   public void onCreate(Bundle icicle) {
     Log.d(TAG, "onCreate at " + System.currentTimeMillis());
@@ -177,11 +195,7 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
     dialogFactory = new DialogFactory(this);
     sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
     sharedPreferences.registerOnSharedPreferenceChangeListener(this);
-
-    boolean eulaConfirmed = sharedPreferences.getBoolean(READ_TOS_PREF, false);
-    if (!eulaConfirmed) {
-      showDialog(DialogFactory.DIALOG_EULA_WITH_BUTTONS);
-    }
+    maybeShowEula(sharedPreferences);
 
     getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON,
         WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
@@ -356,7 +370,7 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
 
   @Override
   public void onStop() {
-    super.onStart();
+    super.onStop();
     // Define a session as being the time between the main activity being in
     // the foreground and pushed back.  Note that this will mean that sessions
     // do get interrupted by (e.g.) loading preference or help screens.
