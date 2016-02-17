@@ -14,34 +14,28 @@
 
 package com.google.android.stardroid.activities;
 
-import com.google.android.stardroid.R;
-import com.google.android.stardroid.StardroidApplication;
-import com.google.android.stardroid.R.id;
-import com.google.android.stardroid.R.layout;
-import com.google.android.stardroid.R.string;
-import com.google.android.stardroid.kml.KmlException;
-import com.google.android.stardroid.search.SearchResult;
-import com.google.android.stardroid.util.Analytics;
-import com.google.android.stardroid.util.MiscUtil;
-import com.google.android.stardroid.views.TimeTravelDialog;
-
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.app.Dialog;
 import android.content.DialogInterface;
-import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
-import android.preference.PreferenceManager;
 import android.text.Html;
 import android.text.Spanned;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.google.android.stardroid.R;
+import com.google.android.stardroid.R.layout;
+import com.google.android.stardroid.R.string;
+import com.google.android.stardroid.StardroidApplication;
+import com.google.android.stardroid.kml.KmlException;
+import com.google.android.stardroid.search.SearchResult;
+import com.google.android.stardroid.util.Analytics;
+import com.google.android.stardroid.util.MiscUtil;
+import com.google.android.stardroid.views.TimeTravelDialog;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -114,15 +108,18 @@ public class DialogFactory {
                 dialog.dismiss();
               }
             }).create();
-    String versionCode = ((StardroidApplication) parentActivity.getApplication()).getVersionName();
-    String helpText = String.format(parentActivity.getString(R.string.help_text), versionCode);
+    String helpText = String.format(parentActivity.getString(R.string.help_text), getVersionName());
     Spanned formattedHelpText = Html.fromHtml(helpText);
     TextView helpTextView = (TextView) view.findViewById(R.id.help_box_text);
     helpTextView.setText(formattedHelpText, TextView.BufferType.SPANNABLE);
     return alertDialog;
   }
 
-  /**
+  private String getVersionName() {
+    return ((StardroidApplication) parentActivity.getApplication()).getVersionName();
+  }
+
+    /**
    * Creates and returns a dialog indicating that no search results were found.
    */
   private Dialog createNoSearchResultsDialog() {
@@ -185,29 +182,16 @@ public class DialogFactory {
   }
 
   /**
-   * Display the Mobile Terms of Service to the user.
+   * Display the Terms of Service and privacy policy to the user.
    */
   private Dialog createTermsOfServiceDialog(boolean hideButtons) {
-      View view = LayoutInflater.from(parentActivity).inflate(layout.tos_view, null);
-      final WebView webView = (WebView) view.findViewById(id.webview);
-      webView.setWebViewClient(new WebViewClient() {
-        @Override
-        public void onPageFinished(WebView view, String url) {
-          pageLoaded(view);
-        }
-        @Override
-        public void onReceivedError(
-            WebView view, int errorCode, String description, String failingUrl) {
-          pageLoaded(view);
-        }
-        private void pageLoaded(WebView view) {
-          webView.setVisibility(View.VISIBLE);
-          webView.requestFocus();
-        }
-      });
-      webView.loadUrl(String.valueOf("http://m.google.com/tospage"));
-
       AlertDialog tosDialog = null;
+      final LayoutInflater inflater = parentActivity.getLayoutInflater();
+      final View view = inflater.inflate(layout.tos_view, null);
+      String eulaText = String.format(parentActivity.getString(R.string.eula_text), getVersionName());
+      Spanned formattedText = Html.fromHtml(eulaText);
+      TextView eulaTextView = (TextView) view.findViewById(R.id.eula_box_text);
+      eulaTextView.setText(formattedText, TextView.BufferType.SPANNABLE);
 
       if (!hideButtons) {
         tosDialog = new Builder(parentActivity)
@@ -217,11 +201,7 @@ public class DialogFactory {
                 new DialogInterface.OnClickListener() {
                   public void onClick(DialogInterface dialog, int whichButton) {
                     Log.d(TAG, "TOS Dialog closed.  User he say yes.");
-                    SharedPreferences sharedPreferences =
-                        PreferenceManager.getDefaultSharedPreferences(parentActivity);
-                    Editor editor = sharedPreferences.edit();
-                    editor.putBoolean(DynamicStarMapActivity.READ_TOS_PREF, true);
-                    editor.commit();
+                    parentActivity.recordEulaAccepted();
                     dialog.dismiss();
                     Analytics.getInstance(parentActivity).trackEvent(
                         Analytics.APP_CATEGORY, Analytics.TOS_ACCEPT, Analytics.TOS_ACCEPTED, 1);
