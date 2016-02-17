@@ -13,7 +13,17 @@
 // limitations under the License.
 package com.google.android.stardroid;
 
-import com.google.android.stardroid.activities.DynamicStarMapActivity;
+import android.app.Application;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.res.AssetManager;
+import android.content.res.Resources;
+import android.preference.PreferenceManager;
+import android.util.Log;
+
 import com.google.android.stardroid.control.AstronomerModel;
 import com.google.android.stardroid.control.AstronomerModelImpl;
 import com.google.android.stardroid.control.ZeroMagneticDeclinationCalculator;
@@ -32,17 +42,6 @@ import com.google.android.stardroid.util.Analytics.Slice;
 import com.google.android.stardroid.util.MiscUtil;
 import com.google.android.stardroid.util.OsVersions;
 import com.google.android.stardroid.util.PreferenceChangeAnalyticsTracker;
-
-import android.app.Application;
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
-import android.content.pm.PackageManager.NameNotFoundException;
-import android.content.res.AssetManager;
-import android.content.res.Resources;
-import android.preference.PreferenceManager;
-import android.util.Log;
 
 import java.util.Calendar;
 import java.util.concurrent.ExecutorService;
@@ -78,7 +77,7 @@ public class StardroidApplication extends Application {
     super.onCreate();
 
     Log.i(TAG, "OS Version: " + android.os.Build.VERSION.RELEASE
-        + "(" + android.os.Build.VERSION.SDK + ")");
+            + "(" + android.os.Build.VERSION.SDK + ")");
     String versionName = getVersionName();
     Log.i(TAG, "Sky Map version " + versionName + " build " + getVersion());
     backgroundExecutor = new ScheduledThreadPoolExecutor(1);
@@ -111,7 +110,8 @@ public class StardroidApplication extends Application {
       // It's possible a previous version exists, it's just that it wasn't a recent enough
       // version to have set PREVIOUS_APP_VERSION_PREF.  If so, we should see that the TOS
       // have been accepted.
-      if (preferences.contains(DynamicStarMapActivity.READ_TOS_PREF)) {
+      String oldPreviousVersionKey = "read_tos";
+      if (preferences.contains(oldPreviousVersionKey)) {
         previousVersion = UNKNOWN;
       }
     }
@@ -125,8 +125,8 @@ public class StardroidApplication extends Application {
 
     // It will be interesting to see *when* people use Sky Map.
     analytics.trackEvent(
-        Analytics.GENERAL_CATEGORY, Analytics.START_HOUR,
-        Integer.toString(Calendar.getInstance().get(Calendar.HOUR_OF_DAY)) + 'h', 0);
+            Analytics.GENERAL_CATEGORY, Analytics.START_HOUR,
+            Integer.toString(Calendar.getInstance().get(Calendar.HOUR_OF_DAY)) + 'h', 0);
 
     preferences.registerOnSharedPreferenceChangeListener(preferenceChangeAnalyticsTracker);
   }
