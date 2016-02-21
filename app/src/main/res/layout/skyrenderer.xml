@@ -193,11 +193,6 @@
               stardroid:image_off="@drawable/automaticmode"
               stardroid:default_value="true"/>
         </com.google.android.stardroid.views.ButtonLayerView>
-        <ZoomControls
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/zoom_control"
-            android:layout_gravity="bottom|center_horizontal" />
       </FrameLayout>
     </RelativeLayout>
   </FrameLayout>

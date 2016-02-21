@@ -44,7 +44,6 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.ZoomControls;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.StardroidApplication;
@@ -130,7 +129,6 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
   private static final String BUNDLE_Z_TARGET = "bundle_z_target";
   private static final String BUNDLE_SEARCH_MODE = "bundle_search";
   private static final String SOUND_EFFECTS = "sound_effects";
-  private static final int DELAY_BETWEEN_ZOOM_REPEATS_MILLIS = 100;
   private static final float ROTATION_SPEED = 10;
   private static final String TAG = MiscUtil.getTag(DynamicStarMapActivity.class);
   // Preference that keeps track of whether or not the user accepted the ToS for this version
@@ -635,35 +633,6 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
       }
     }, LONG_FADE_TIME_MS);
 
-    final ZoomControls zooms = (ZoomControls) findViewById(R.id.zoom_control);
-    final WidgetFader zoomControlFader = new WidgetFader(new Fadeable() {
-      @Override
-      public void hide() {
-        zooms.hide();
-      }
-
-      @Override
-      public void show() {
-        zooms.show();
-      }
-    }, LONG_FADE_TIME_MS);
-    zooms.setOnZoomInClickListener(new OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        controller.zoomIn();
-        zoomControlFader.keepActive();
-      }
-    });
-    zooms.setOnZoomOutClickListener(new OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        controller.zoomOut();
-        zoomControlFader.keepActive();
-      }
-    });
-    zooms.setZoomSpeed(DELAY_BETWEEN_ZOOM_REPEATS_MILLIS);
-    zooms.hide();
-
     final ButtonLayerView providerButtons = (ButtonLayerView) findViewById(R.id.layer_buttons_control);
     final WidgetFader layerControlFader = new WidgetFader(providerButtons, LONG_FADE_TIME_MS);
     providerButtons.hide();
@@ -689,11 +658,9 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
     });
 
     MapMover mapMover = new MapMover(model, controller, this, sharedPreferences);
-    gestureDetector = new GestureDetector(
-            this,
-            new GestureInterpreter(
-        new WidgetFader[] {
-                systemUiFader, manualControlFader, layerControlFader, zoomControlFader},
+
+    gestureDetector = new GestureDetector(new GestureInterpreter(
+        new WidgetFader[] {manualControlFader, layerControlFader},
         mapMover));
     dragZoomRotateDetector = new DragRotateZoomGestureDetector(mapMover);
   }
