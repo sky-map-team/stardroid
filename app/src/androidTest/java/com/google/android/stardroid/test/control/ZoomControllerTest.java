@@ -43,42 +43,17 @@ public class ZoomControllerTest extends TestCase {
     zoomController.setModel(astronomerModel);
   }
 
-  public void testZoomIn() {
-    float newRadiusOfView = INITIAL_FIELD_OF_VIEW / ZoomController.ZOOM_FACTOR;
-    expect(astronomerModel.getFieldOfView()).andStubReturn(INITIAL_FIELD_OF_VIEW);
-    astronomerModel.setFieldOfView(newRadiusOfView);
-
-    replay(astronomerModel);
-
-    zoomController.zoomIn();
-    verify(astronomerModel);
-  }
-
-  public void testZoomOut() {
-    float newRadiusOfView = INITIAL_FIELD_OF_VIEW * ZoomController.ZOOM_FACTOR;
-    expect(astronomerModel.getFieldOfView()).andStubReturn(INITIAL_FIELD_OF_VIEW);
-    astronomerModel.setFieldOfView(newRadiusOfView);
-
-    replay(astronomerModel);
-
-    zoomController.zoomOut();
-    verify(astronomerModel);
-  }
-
   /**
    * Tests that the maximum field of view is not exceeded.
    */
   public void testZoomOut_tooFar() {
-    // Set this just inside the limit.
-    float initialFieldOfView =
-        (float) (ZoomController.MAX_ZOOM_OUT / Math.sqrt(ZoomController.ZOOM_FACTOR));
     float newFieldOfView = ZoomController.MAX_ZOOM_OUT;
-    expect(astronomerModel.getFieldOfView()).andStubReturn(initialFieldOfView);
+    expect(astronomerModel.getFieldOfView()).andStubReturn(INITIAL_FIELD_OF_VIEW);
     astronomerModel.setFieldOfView(newFieldOfView);
 
     replay(astronomerModel);
 
-    zoomController.zoomOut();
+    zoomController.zoomBy(1000);
     verify(astronomerModel);
   }
 
@@ -89,7 +64,7 @@ public class ZoomControllerTest extends TestCase {
     replay(astronomerModel);
 
     zoomController.setEnabled(false);
-    zoomController.zoomIn();
+    zoomController.zoomBy(0.9f);
     verify(astronomerModel);
   }
 }
