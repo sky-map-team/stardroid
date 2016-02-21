@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 15
+    compileSdkVersion 22
     buildToolsVersion "23.0.2"
 
     defaultConfig {
         applicationId "com.google.android.stardroid"
         minSdkVersion 15
-        targetSdkVersion 15
+        targetSdkVersion 22
         versionCode 1300
         versionName "1.8.0-alpha1"
         buildConfigField 'String', 'GOOGLE_ANALYTICS_CODE', '""'
