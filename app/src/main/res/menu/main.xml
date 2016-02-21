@@ -19,12 +19,14 @@
     <item android:id="@+id/menu_item_search"
           android:orderInCategory="0"
           android:title="@string/menu_search"
-          android:icon="@android:drawable/ic_search_category_default"/>
+          android:icon="@android:drawable/ic_search_category_default"
+          android:showAsAction="ifRoom"/>
 
     <item android:id="@+id/menu_item_dim"
           android:orderInCategory="2"
           android:title="@string/menu_toggle_dim"
-          android:icon="@android:drawable/ic_menu_view"/>
+          android:icon="@android:drawable/ic_menu_view"
+          android:showAsAction="ifRoom"/>
 
     <item android:id="@+id/menu_item_settings"
           android:orderInCategory="3"
@@ -39,7 +41,8 @@
     <item android:id="@+id/menu_item_time"
           android:orderInCategory="5"
           android:title="@string/menu_time"
-          android:icon="@drawable/time_travel_icon"/>
+          android:icon="@drawable/time_travel_icon"
+          android:showAsAction="ifRoom"/>
 
     <item android:id="@+id/menu_item_help"
           android:orderInCategory="6"
@@ -50,15 +53,4 @@
     <item android:id="@+id/menu_item_tos"
           android:orderInCategory="7"
           android:title="@string/menu_tos"/>
-
-    <!-- Disable the following for the next release. -->
-    <!-- TODO(johntaylor): temporary placement until there's an on-screen button -->
-    <!--  item android:id="@+id/menu_item_control_panel"
-          android:orderInCategory="8"
-          android:title="@string/control_panel_btn"/-->
-
-    <!-- TODO(johntaylor): temporary menu item till the new UI is further along -->
-    <!--  item android:id="@+id/menu_item_load_kml"
-          android:orderInCategory="9"
-          android:title="Load KML file"/ -->
 </menu>

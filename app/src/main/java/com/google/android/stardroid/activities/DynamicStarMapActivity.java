@@ -14,6 +14,8 @@
 
 package com.google.android.stardroid.activities;
 
+import android.annotation.SuppressLint;
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.SearchManager;
@@ -53,7 +55,6 @@ import com.google.android.stardroid.control.AstronomerModel;
 import com.google.android.stardroid.control.AstronomerModel.Pointing;
 import com.google.android.stardroid.control.ControllerGroup;
 import com.google.android.stardroid.control.MagneticDeclinationCalculatorSwitcher;
-import com.google.android.stardroid.kml.KmlManager;
 import com.google.android.stardroid.layers.LayerManager;
 import com.google.android.stardroid.renderer.RendererController;
 import com.google.android.stardroid.renderer.SkyRenderer;
@@ -154,7 +155,7 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
   private DialogFactory dialogFactory;
   private MediaPlayer timeTravelNoise;
   private MediaPlayer timeTravelBackNoise;
-  KmlManager kmlManager;
+  //KmlManager kmlManager;
   private Handler handler = new Handler();
   // A list of runnables to post on the handler when we resume.
   private List<Runnable> runnables = new ArrayList<Runnable>();
@@ -196,13 +197,16 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
     sharedPreferences.registerOnSharedPreferenceChangeListener(this);
     maybeShowEula(sharedPreferences);
 
+    // Set up full screen mode, hide the system UI etc.
     getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON |
                          WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
     // TODO(jontayler): upgrade to
     // getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
     // when we reach API level 16.
-    getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+    // http://developer.android.com/training/system-ui/immersive.html for the right way
+    // to do it at API level 19.
+    //getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
 
     model = StardroidApplication.getModel();
     layerManager = StardroidApplication.getLayerManager(getAssets(),
@@ -210,6 +214,26 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
                                                         getResources(),
                                                         this);
     initializeModelViewController();
+
+    mVisible = true;
+    //mControlsView = findViewById(R.id.fullscreen_content_controls);
+    mContentView = findViewById(R.id.main_sky_view);  // TODO rename
+
+
+    // Set up the user interaction to manually show or hide the system UI.
+    //mContentView.setOnClickListener(new View.OnClickListener() {
+    //  @Override
+    //  public void onClick(View view) {
+    //    Log.d("john","on click");
+    //    toggle();
+    //  }
+    //});
+
+    // Upon interacting with UI controls, delay any scheduled hide()
+    // operations to prevent the jarring behavior of controls going away
+    // while interacting with the UI.
+    //findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
+
     // We want to reset to auto mode on every restart, as users seem to get
     // stuck in manual mode and can't find their way out.
     // TODO(johntaylor): this is a bit of an abuse of the prefs system, but
@@ -221,7 +245,6 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
     // Search related
     setDefaultKeyMode(DEFAULT_KEYS_SEARCH_LOCAL);
 
-    kmlManager = new KmlManager(layerManager);
     ActivityLightLevelChanger activityLightLevelChanger = new ActivityLightLevelChanger(this,
         new NightModeable() {
           @Override
@@ -242,6 +265,16 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
       doSearchWithIntent(intent);
     }
     Log.d(TAG, "-onCreate at " + System.currentTimeMillis());
+  }
+
+  @Override
+  protected void onPostCreate(Bundle savedInstanceState) {
+    super.onPostCreate(savedInstanceState);
+
+    // Trigger the initial hide() shortly after the activity has been
+    // created, to briefly hint to the user that UI controls
+    // are available.
+    delayedHide(100);
   }
 
   @Override
@@ -487,7 +520,7 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
 
   @Override
   public boolean onTouchEvent(MotionEvent event) {
-    // Log.d(TAG, "Touch event " + event);
+    Log.d(TAG, "Touch event " + event);
     // Either of the following detectors can absorb the event, but one
     // must not hide it from the other
     boolean eventAbsorbed = false;
@@ -497,6 +530,7 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
     if (dragZoomRotateDetector.onTouchEvent(event)) {
       eventAbsorbed = true;
     }
+    toggle();
     return eventAbsorbed;
   }
 
@@ -573,6 +607,34 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
       }
     });
 
+    WidgetFader systemUiFader = new WidgetFader(new Fadeable() {
+      @Override
+      public void show() {
+        mContentView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION);
+        mVisible = true;
+
+        // Schedule a runnable to display UI elements after a delay
+        mHideHandler.removeCallbacks(mHidePart2Runnable);
+        mHideHandler.postDelayed(mShowPart2Runnable, UI_ANIMATION_DELAY);
+      }
+
+      @Override
+      public void hide() {
+        // Hide UI first
+        ActionBar actionBar = getActionBar();
+        if (actionBar != null) {
+          actionBar.hide();
+        }
+        //mControlsView.setVisibility(View.GONE);
+        //mVisible = false;
+
+        // Schedule a runnable to remove the status and navigation bar after a delay
+        mHideHandler.removeCallbacks(mShowPart2Runnable);
+        mHideHandler.postDelayed(mHidePart2Runnable, UI_ANIMATION_DELAY);
+      }
+    }, LONG_FADE_TIME_MS);
+
     final ZoomControls zooms = (ZoomControls) findViewById(R.id.zoom_control);
     final WidgetFader zoomControlFader = new WidgetFader(new Fadeable() {
       @Override
@@ -584,7 +646,7 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
       public void show() {
         zooms.show();
       }
-    });
+    }, LONG_FADE_TIME_MS);
     zooms.setOnZoomInClickListener(new OnClickListener() {
       @Override
       public void onClick(View v) {
@@ -601,17 +663,6 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
     });
     zooms.setZoomSpeed(DELAY_BETWEEN_ZOOM_REPEATS_MILLIS);
     zooms.hide();
-    WidgetFader navButtonsFader = new WidgetFader(new Fadeable() {
-      @Override
-      public void show() {
-        // Should happen automatically on interaction.
-      }
-
-      @Override
-      public void hide() {
-        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
-      }
-    });
 
     final ButtonLayerView providerButtons = (ButtonLayerView) findViewById(R.id.layer_buttons_control);
     final WidgetFader layerControlFader = new WidgetFader(providerButtons, LONG_FADE_TIME_MS);
@@ -627,7 +678,7 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
       });
     }
     final ButtonLayerView manualButtonLayer = (ButtonLayerView) findViewById(R.id.layer_manual_auto_toggle);
-    final WidgetFader manualControlFader = new WidgetFader(manualButtonLayer);
+    final WidgetFader manualControlFader = new WidgetFader(manualButtonLayer, LONG_FADE_TIME_MS);
     manualButtonLayer.hide();
     final ImageButton manualAuto = (ImageButton) findViewById(R.id.manual_auto_toggle);
     manualAuto.setOnClickListener(new OnClickListener() {
@@ -638,9 +689,11 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
     });
 
     MapMover mapMover = new MapMover(model, controller, this, sharedPreferences);
-    gestureDetector = new GestureDetector(new GestureInterpreter(
-        new WidgetFader[] {manualControlFader, layerControlFader, zoomControlFader,
-                navButtonsFader},
+    gestureDetector = new GestureDetector(
+            this,
+            new GestureInterpreter(
+        new WidgetFader[] {
+                systemUiFader, manualControlFader, layerControlFader, zoomControlFader},
         mapMover));
     dragZoomRotateDetector = new DragRotateZoomGestureDetector(mapMover);
   }
@@ -792,5 +845,125 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
 
   public AstronomerModel getModel() {
     return model;
+  }
+
+  /**
+   * Whether or not the system UI should be auto-hidden after
+   * {@link #AUTO_HIDE_DELAY_MILLIS} milliseconds.
+   */
+  private static final boolean AUTO_HIDE = true;
+
+  /**
+   * If {@link #AUTO_HIDE} is set, the number of milliseconds to wait after
+   * user interaction before hiding the system UI.
+   */
+  private static final int AUTO_HIDE_DELAY_MILLIS = 1000;
+
+  /**
+   * Some older devices needs a small delay between UI widget updates
+   * and a change of the status and navigation bar.
+   */
+  private static final int UI_ANIMATION_DELAY = 300;
+  private final Handler mHideHandler = new Handler();
+  private View mContentView;
+  private final Runnable mHidePart2Runnable = new Runnable() {
+    @SuppressLint("InlinedApi")
+    @Override
+    public void run() {
+      // Delayed removal of status and navigation bar
+
+      // Note that some of these constants are new as of API 16 (Jelly Bean)
+      // and API 19 (KitKat). It is safe to use them, as they are inlined
+      // at compile-time and do nothing on earlier devices.
+      mContentView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE
+              | View.SYSTEM_UI_FLAG_FULLSCREEN
+              | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+              | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+              | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+              | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+    }
+  };
+  //private View mControlsView;
+  private final Runnable mShowPart2Runnable = new Runnable() {
+    @Override
+    public void run() {
+      // Delayed display of UI elements
+      ActionBar actionBar = getActionBar();
+      if (actionBar != null) {
+        actionBar.show();
+      }
+      //mControlsView.setVisibility(View.VISIBLE);
+    }
+  };
+  private boolean mVisible;
+  private final Runnable mHideRunnable = new Runnable() {
+    @Override
+    public void run() {
+      Log.d("john","Running hider");
+      hide();
+    }
+  };
+  /**
+   * Touch listener to use for in-layout UI controls to delay hiding the
+   * system UI. This is to prevent the jarring behavior of controls going away
+   * while interacting with activity UI.
+   */
+  private final View.OnTouchListener mDelayHideTouchListener = new View.OnTouchListener() {
+    @Override
+    public boolean onTouch(View view, MotionEvent motionEvent) {
+      Log.d("john","on touch");
+      if (AUTO_HIDE) {
+        Log.d("john","Setting up delayed hide");
+        delayedHide(AUTO_HIDE_DELAY_MILLIS);
+      }
+      return false;
+    }
+  };
+
+  private void toggle() {
+    if (mVisible) {
+      hide();
+    } else {
+      show();
+      if (AUTO_HIDE) {
+        Log.d("john","Setting up delayed hide");
+        delayedHide(AUTO_HIDE_DELAY_MILLIS);
+      }
+    }
+  }
+
+  private void hide() {
+    // Hide UI first
+    ActionBar actionBar = getActionBar();
+    if (actionBar != null) {
+      actionBar.hide();
+    }
+    //mControlsView.setVisibility(View.GONE);
+    mVisible = false;
+
+    // Schedule a runnable to remove the status and navigation bar after a delay
+    mHideHandler.removeCallbacks(mShowPart2Runnable);
+    mHideHandler.postDelayed(mHidePart2Runnable, UI_ANIMATION_DELAY);
+  }
+
+  //@SuppressLint("InlinedApi")
+  private void show() {
+    // Show the system bar
+    mContentView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION);
+    mVisible = true;
+
+    // Schedule a runnable to display UI elements after a delay
+    mHideHandler.removeCallbacks(mHidePart2Runnable);
+    mHideHandler.postDelayed(mShowPart2Runnable, UI_ANIMATION_DELAY);
+  }
+
+  /**
+   * Schedules a call to hide() in [delay] milliseconds, canceling any
+   * previously scheduled calls.
+   */
+  private void delayedHide(int delayMillis) {
+    mHideHandler.removeCallbacks(mHideRunnable);
+    mHideHandler.postDelayed(mHideRunnable, delayMillis);
   }
 }

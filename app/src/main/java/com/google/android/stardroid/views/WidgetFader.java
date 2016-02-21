@@ -26,38 +26,38 @@ public class WidgetFader implements Runnable {
     void show();
     void hide();
   }
-  private Fadeable controls;
+  private Fadeable control;
   private boolean visible;
   private Handler handler;
-  private int timeOut = 1500;
+  private int showTimeMs = 1500;
   
-  public WidgetFader(Fadeable controls) {
-    this.controls = controls;
+  public WidgetFader(Fadeable control) {
+    this.control = control;
     this.handler = new Handler();
   }
   
-  public WidgetFader(Fadeable controls, int timeOut) {
-    this.controls = controls;
+  public WidgetFader(Fadeable controls, int showTimeMs) {
+    this.control = controls;
     this.handler = new Handler();
-    this.timeOut = timeOut;
+    this.showTimeMs = showTimeMs;
   }
   
   private void makeVisible() {
     if (visible) return;
     visible = true;
-    controls.show();
+    control.show();
   }
   
   public void keepActive() {
     makeVisible();
     handler.removeCallbacks(this);
-    handler.postDelayed(this, timeOut);
+    handler.postDelayed(this, showTimeMs);
   }
   
   private void makeInactive() {
     if (!visible) return;
     visible = false;
-    controls.hide();
+    control.hide();
   }
 
   public void run() {

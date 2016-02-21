@@ -14,13 +14,13 @@
 
 package com.google.android.stardroid.touch;
 
-import com.google.android.stardroid.touch.Flinger.FlingListener;
-import com.google.android.stardroid.util.MiscUtil;
-import com.google.android.stardroid.views.WidgetFader;
-
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
+
+import com.google.android.stardroid.touch.Flinger.FlingListener;
+import com.google.android.stardroid.util.MiscUtil;
+import com.google.android.stardroid.views.WidgetFader;
 
 /**
  * Processes touch events and scrolls the screen in manual mode.
