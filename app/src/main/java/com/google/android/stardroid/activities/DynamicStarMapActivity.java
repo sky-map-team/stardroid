@@ -14,34 +14,6 @@
 
 package com.google.android.stardroid.activities;
 
-import com.google.android.stardroid.R;
-import com.google.android.stardroid.StardroidApplication;
-import com.google.android.stardroid.activities.util.ActivityLightLevelChanger;
-import com.google.android.stardroid.activities.util.ActivityLightLevelChanger.NightModeable;
-import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
-import com.google.android.stardroid.control.AstronomerModel;
-import com.google.android.stardroid.control.AstronomerModel.Pointing;
-import com.google.android.stardroid.control.ControllerGroup;
-import com.google.android.stardroid.control.MagneticDeclinationCalculatorSwitcher;
-import com.google.android.stardroid.kml.KmlManager;
-import com.google.android.stardroid.layers.LayerManager;
-import com.google.android.stardroid.renderer.RendererController;
-import com.google.android.stardroid.renderer.SkyRenderer;
-import com.google.android.stardroid.renderer.util.AbstractUpdateClosure;
-import com.google.android.stardroid.search.SearchResult;
-import com.google.android.stardroid.touch.DragRotateZoomGestureDetector;
-import com.google.android.stardroid.touch.GestureInterpreter;
-import com.google.android.stardroid.touch.MapMover;
-import com.google.android.stardroid.units.GeocentricCoordinates;
-import com.google.android.stardroid.units.Vector3;
-import com.google.android.stardroid.util.Analytics;
-import com.google.android.stardroid.util.MathUtil;
-import com.google.android.stardroid.util.MiscUtil;
-import com.google.android.stardroid.util.OsVersions;
-import com.google.android.stardroid.views.ButtonLayerView;
-import com.google.android.stardroid.views.WidgetFader;
-import com.google.android.stardroid.views.WidgetFader.Fadeable;
-
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.SearchManager;
@@ -70,7 +42,33 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.ZoomControls;
+
+import com.google.android.stardroid.R;
+import com.google.android.stardroid.StardroidApplication;
+import com.google.android.stardroid.activities.util.ActivityLightLevelChanger;
+import com.google.android.stardroid.activities.util.ActivityLightLevelChanger.NightModeable;
+import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
+import com.google.android.stardroid.control.AstronomerModel;
+import com.google.android.stardroid.control.AstronomerModel.Pointing;
+import com.google.android.stardroid.control.ControllerGroup;
+import com.google.android.stardroid.control.MagneticDeclinationCalculatorSwitcher;
+import com.google.android.stardroid.kml.KmlManager;
+import com.google.android.stardroid.layers.LayerManager;
+import com.google.android.stardroid.renderer.RendererController;
+import com.google.android.stardroid.renderer.SkyRenderer;
+import com.google.android.stardroid.renderer.util.AbstractUpdateClosure;
+import com.google.android.stardroid.search.SearchResult;
+import com.google.android.stardroid.touch.DragRotateZoomGestureDetector;
+import com.google.android.stardroid.touch.GestureInterpreter;
+import com.google.android.stardroid.touch.MapMover;
+import com.google.android.stardroid.units.GeocentricCoordinates;
+import com.google.android.stardroid.units.Vector3;
+import com.google.android.stardroid.util.Analytics;
+import com.google.android.stardroid.util.MathUtil;
+import com.google.android.stardroid.util.MiscUtil;
+import com.google.android.stardroid.util.OsVersions;
+import com.google.android.stardroid.views.ButtonLayerView;
+import com.google.android.stardroid.views.WidgetFader;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -128,7 +126,6 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
   private static final String BUNDLE_Z_TARGET = "bundle_z_target";
   private static final String BUNDLE_SEARCH_MODE = "bundle_search";
   private static final String SOUND_EFFECTS = "sound_effects";
-  private static final int DELAY_BETWEEN_ZOOM_REPEATS_MILLIS = 100;
   private static final float ROTATION_SPEED = 10;
   private static final String TAG = MiscUtil.getTag(DynamicStarMapActivity.class);
   // Preference that keeps track of whether or not the user accepted the ToS
@@ -555,34 +552,6 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
       }
     });
 
-    final ZoomControls zooms = (ZoomControls) findViewById(R.id.zoom_control);
-    final WidgetFader zoomControlFader = new WidgetFader(new Fadeable() {
-      @Override
-      public void hide() {
-        zooms.hide();
-      }
-
-      @Override
-      public void show() {
-        zooms.show();
-      }
-    });
-    zooms.setOnZoomInClickListener(new OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        controller.zoomIn();
-        zoomControlFader.keepActive();
-      }
-    });
-    zooms.setOnZoomOutClickListener(new OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        controller.zoomOut();
-        zoomControlFader.keepActive();
-      }
-    });
-    zooms.setZoomSpeed(DELAY_BETWEEN_ZOOM_REPEATS_MILLIS);
-    zooms.hide();
     final ButtonLayerView providerButtons = (ButtonLayerView) findViewById(R.id.layer_buttons_control);
     final WidgetFader layerControlFader = new WidgetFader(providerButtons, 2500);
     providerButtons.hide();
@@ -609,7 +578,7 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
 
     MapMover mapMover = new MapMover(model, controller, this, sharedPreferences);
     gestureDetector = new GestureDetector(new GestureInterpreter(
-        new WidgetFader[] {manualControlFader, layerControlFader, zoomControlFader},
+        new WidgetFader[] {manualControlFader, layerControlFader},
         mapMover));
     dragZoomRotateDetector = new DragRotateZoomGestureDetector(mapMover);
   }
