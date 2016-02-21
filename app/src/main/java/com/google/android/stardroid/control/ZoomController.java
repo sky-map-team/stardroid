@@ -16,6 +16,7 @@ package com.google.android.stardroid.control;
 
 import android.util.Log;
 
+import com.google.android.stardroid.base.VisibleForTesting;
 import com.google.android.stardroid.util.MiscUtil;
 
 /**
@@ -25,22 +26,8 @@ import com.google.android.stardroid.util.MiscUtil;
  */
 public class ZoomController extends AbstractController {
   private static final String TAG = MiscUtil.getTag(ZoomController.class);
-  public static final float ZOOM_FACTOR = (float) Math.pow(1.5, 0.0625);
+  @VisibleForTesting
   public static final float MAX_ZOOM_OUT = 90.0f;
-
-  /**
-   * Decreases the field of view by {@link #ZOOM_FACTOR}.
-   */
-  public void zoomIn() {
-    zoomBy(1.0f / ZOOM_FACTOR);
-  }
-
-  /**
-   * Increases the field of view by {@link #ZOOM_FACTOR}.
-   */
-  public void zoomOut() {
-    zoomBy(ZOOM_FACTOR);
-  }
 
   private void setFieldOfView(float zoomDegrees) {
     if (!enabled) {
@@ -60,6 +47,10 @@ public class ZoomController extends AbstractController {
     // Nothing to do
   }
 
+  /**
+   * Increases the field of view by the given ratio.  That is, a number >1 will zoom the user
+   * out, up to a predetermined maximum.
+   */
   public void zoomBy(float ratio) {
     float zoomDegrees = model.getFieldOfView();
     zoomDegrees = Math.min(zoomDegrees * ratio, MAX_ZOOM_OUT);

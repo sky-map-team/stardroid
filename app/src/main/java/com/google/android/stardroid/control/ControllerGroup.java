@@ -14,12 +14,12 @@
 
 package com.google.android.stardroid.control;
 
+import android.content.Context;
+import android.util.Log;
+
 import com.google.android.stardroid.base.VisibleForTesting;
 import com.google.android.stardroid.units.GeocentricCoordinates;
 import com.google.android.stardroid.util.MiscUtil;
-
-import android.content.Context;
-import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -195,20 +195,6 @@ public class ControllerGroup implements Controller {
    */
   public void rotate(float degrees) {
     manualDirectionController.rotate(degrees);
-  }
-
-  /**
-   * Zooms the user in.
-   */
-  public void zoomIn() {
-    zoomController.zoomIn();
-  }
-
-  /**
-   * Zooms the user out.
-   */
-  public void zoomOut() {
-    zoomController.zoomOut();
   }
 
   /**
