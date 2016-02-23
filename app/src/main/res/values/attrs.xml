@@ -16,7 +16,7 @@
  -->
 
 <resources>
-     <declare-styleable name="ButtonLayerView">
+    <declare-styleable name="ButtonLayerView">
         <attr name="fade_time" format="integer"/>
     </declare-styleable>
     <declare-styleable name="PreferencesButton">
@@ -24,5 +24,14 @@
         <attr name="image_on" format="reference"/>
         <attr name="image_off" format="reference"/>
         <attr name="default_value" format="boolean"/>
+    </declare-styleable>
+
+    <!-- Declare custom theme attributes that allow changing which styles are
+         used for button bars depending on the API level.
+         ?android:attr/buttonBarStyle is new as of API 11 so this is
+         necessary to support previous API levels. -->
+    <declare-styleable name="ButtonBarContainerTheme">
+        <attr name="metaButtonBarStyle" format="reference"/>
+        <attr name="metaButtonBarButtonStyle" format="reference"/>
     </declare-styleable>
 </resources>

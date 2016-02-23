@@ -1,64 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.google.android.stardroid"
-    android:installLocation="auto"
-    android:vmSafeMode="false">
+<manifest package="com.google.android.stardroid"
+          xmlns:android="http://schemas.android.com/apk/res/android"
+          android:installLocation="auto"
+          android:vmSafeMode="false">
+
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
     <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
     <uses-permission android:name="android.permission.INTERNET"/>
     <!-- For Google Analytics -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-feature android:name="android.hardware.location.gps" android:required="false" />
 
-    <application android:label="@string/app_name"
-      android:icon="@drawable/skymap_logo"
-      android:name="StardroidApplication"
-      android:theme="@android:style/Theme.Holo">
+    <uses-feature
+        android:name="android.hardware.location.gps"
+        android:required="false"/>
 
-        <activity android:name=".activities.SplashScreenActivity"
-          android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"
-          android:screenOrientation="nosensor"
-          android:label="@string/app_name">
-          <intent-filter>
-            <action android:name="android.intent.action.MAIN"/>
-            <category android:name="android.intent.category.LAUNCHER"/>
-          </intent-filter>
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true"/>
+
+    <application
+        android:name=".StardroidApplication"
+        android:icon="@drawable/skymap_logo"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.Holo">
+        <activity
+            android:name=".activities.SplashScreenActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="nosensor"
+            android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
+        <activity
+            android:name=".activities.DynamicStarMapActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:screenOrientation="nosensor"
+            android:theme="@style/FullscreenTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
 
-        <activity android:name=".activities.DynamicStarMapActivity"
-          android:theme="@android:style/Theme.Holo"
-          android:label="@string/app_name"
-          android:launchMode="singleTask"
-          android:screenOrientation="nosensor"
-          android:configChanges="keyboardHidden|orientation">
-          <intent-filter>
-            <action android:name="android.intent.action.SEARCH" />
-            <category android:name="android.intent.category.DEFAULT"/>
-          </intent-filter>
-          <meta-data android:name="android.app.searchable"
-            android:resource="@xml/searchable" />
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable"/>
         </activity>
-
         <activity
             android:name=".activities.EditSettingsActivity"
-            android:theme="@android:style/Theme.Holo" />
-        <activity android:name=".activities.ImageGalleryActivity"
-          android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
-        <activity android:name=".activities.ImageDisplayActivity"
-          android:screenOrientation="portrait"
-          android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+            android:theme="@android:style/Theme.Holo"/>
+        <activity
+            android:name=".activities.ImageGalleryActivity"
+            android:theme="@android:style/Theme.Holo"/>
+        <activity
+            android:name=".activities.ImageDisplayActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo"/>
         <!-- Provides search suggestions. -->
         <!-- TODO(johntaylor): What does syncable do? -->
-        <provider android:name="com.google.android.stardroid.search.SearchTermsProvider"
-          android:authorities="com.google.android.stardroid.searchterms"
-          android:syncable="false"/>
+        <provider
+            android:name=".search.SearchTermsProvider"
+            android:authorities="com.google.android.stardroid.searchterms"
+            android:syncable="false"/>
 
     </application>
-    <supports-screens
-      android:xlargeScreens="true"
-      android:largeScreens="true"
-      android:normalScreens="true"
-      android:smallScreens="true"
-      android:anyDensity="true" />
+
 </manifest>

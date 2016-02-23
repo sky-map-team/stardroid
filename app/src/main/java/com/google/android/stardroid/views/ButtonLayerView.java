@@ -23,13 +23,13 @@ import android.view.animation.AlphaAnimation;
 import android.widget.LinearLayout;
 
 import com.google.android.stardroid.R;
-import com.google.android.stardroid.views.WidgetFader.Fadeable;
 
 /**
  *  Contains the provider buttons.
  */
 
-public class ButtonLayerView extends LinearLayout implements Fadeable {
+public class ButtonLayerView extends LinearLayout {
+  // TODO(jontayler): clear up the fade code which is no longer used.
   private int fadeTime = 500;
 
   public ButtonLayerView(Context context) {
