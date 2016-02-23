@@ -10,8 +10,8 @@ android {
         // TODO(jontayler): setting this disables the legacy menu in newer
         // phones.  Restore once we leave the old Androids behind.
         // targetSdkVersion 23
-        versionCode 1114
-        versionName "1.6.5-alpha2"
+        versionCode 1115
+        versionName "1.6.5"
         buildConfigField 'String', 'GOOGLE_ANALYTICS_CODE', '""'
     }
     // Set the environment variables KSTOREPWD and KEYPWD to the keystore
