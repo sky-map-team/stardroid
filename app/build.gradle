@@ -29,11 +29,13 @@ android {
                 signingConfig signingConfigs.release
             }
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard.cfg'
-            Properties properties = new Properties()
-            // Sky Map devs should create this file with the Google Analytics key
-            properties.load(project.file('no-checkin.properties').newDataInputStream())
-            def analyticsKey = properties.getProperty('analytics-key')
-            buildConfigField 'String', 'GOOGLE_ANALYTICS_CODE', analyticsKey
+            if (file('no-checkin.properties').exists()) {
+                Properties properties = new Properties()
+                // Sky Map devs should create this file with the Google Analytics key
+                properties.load(project.file('no-checkin.properties').newDataInputStream())
+                def analyticsKey = properties.getProperty('analytics-key')
+                buildConfigField 'String', 'GOOGLE_ANALYTICS_CODE', analyticsKey
+            }
         }
     }
 
