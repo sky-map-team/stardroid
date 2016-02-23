@@ -8,8 +8,8 @@ android {
         applicationId "com.google.android.stardroid"
         minSdkVersion 10
         targetSdkVersion 10
-        versionCode 1200
-        versionName "1.7.0-alpha1"
+        versionCode 1201
+        versionName "1.7.0"
         buildConfigField 'String', 'GOOGLE_ANALYTICS_CODE', '""'
     }
     // Set the environment variables KSTOREPWD and KEYPWD to the keystore
