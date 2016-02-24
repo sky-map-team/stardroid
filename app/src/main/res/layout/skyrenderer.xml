@@ -170,9 +170,9 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom">
+        android:layout_gravity="center_vertical">
       <FrameLayout
-          android:id="@+id/zoom_and_manual_bar"
+          android:id="@+id/manual_bar"
           android:layout_width="fill_parent"
           android:layout_height="wrap_content"
           android:layout_gravity="bottom">
@@ -180,7 +180,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/layer_manual_auto_toggle"
-            android:layout_gravity="bottom|left"
+            android:layout_gravity="bottom|right"
             android:orientation="vertical"
             stardroid:fade_time="500">
           <com.google.android.stardroid.views.PreferencesButton
@@ -193,11 +193,6 @@
               stardroid:image_off="@drawable/automaticmode"
               stardroid:default_value="true"/>
         </com.google.android.stardroid.views.ButtonLayerView>
-        <ZoomControls
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/zoom_control"
-            android:layout_gravity="bottom|center_horizontal" />
       </FrameLayout>
     </RelativeLayout>
   </FrameLayout>

@@ -20,9 +20,9 @@ import com.google.android.stardroid.base.Closeables;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.lang.reflect.Field;
-import java.lang.reflect.Modifier;
 
 /**
  * Runs through the ascii protocol buffers and replaces all R.string.<constant>
@@ -35,15 +35,13 @@ public class AsciiProtoRewriter {
   // No instances
   private AsciiProtoRewriter() {}
 
-  private static void printFields() {
-    for (Field f : R.string.class.getDeclaredFields()) {
-      if (Modifier.isStatic(f.getModifiers())) {
-        System.out.println(f.getName());
-      }
+  private static class MissingStringException extends Exception {
+    public MissingStringException(String missingName) {
+      super("Missing object name: " + missingName);
     }
   }
 
-  private static int getString(String s) {
+  private static int getString(String s) throws MissingStringException {
     try {
       // Hackily extract the name from "R.string.thename"
       String name = s.substring(10, s.length()-1);
@@ -51,21 +49,15 @@ public class AsciiProtoRewriter {
       // System.out.println("replacing: " + s);
       return f.getInt(null);
     } catch (SecurityException e) {
-      printFields();
-      throw new RuntimeException("Did not find: " + s, e);
+      throw new MissingStringException(s);
     } catch (NoSuchFieldException e) {
-      printFields();
-      throw new RuntimeException("Did not find: " + s, e);
-    } catch (IllegalArgumentException e) {
-      printFields();
-      throw new RuntimeException("Did not find: " + s, e);
+      throw new MissingStringException(s);
     } catch (IllegalAccessException e) {
-      printFields();
-      throw new RuntimeException("Did not find: " + s, e);
+      throw new MissingStringException(s);
     }
   }
 
-  public static void main(String[] args) throws Exception {
+  public static void main(String[] args) throws IOException {
     if (args.length != 1 || !args[0].endsWith("_R.ascii")) {
       System.out.println("Usage: AsciiToBinaryProtoWriter <inputprefix>_R.ascii");
       System.exit(1);
@@ -83,13 +75,18 @@ public class AsciiProtoRewriter {
       String s;
       while ((s = in.readLine()) != null) {
         if (s.contains("REMOVE")) {
-          s = s.replaceAll("REMOVE_","");
-          String[] tokens = s.split("\\s+");
-          for (String token : tokens) {
-            if (token.contains("R.string")) {
-              int value = getString(token);
-              s = s.replaceAll(token, "" + value);
+          try {
+            s = s.replaceAll("REMOVE_", "");
+            String[] tokens = s.split("\\s+");
+            for (String token : tokens) {
+              if (token.contains("R.string")) {
+                int value = getString(token);
+                s = s.replaceAll(token, "" + value);
+              }
             }
+          } catch (MissingStringException m) {
+            System.out.println("Warning: " + m.getMessage() + ".  Skipping...");
+            continue;
           }
         }
         out.println(s);

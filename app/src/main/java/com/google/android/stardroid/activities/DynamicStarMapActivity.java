@@ -42,18 +42,17 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.ZoomControls;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.StardroidApplication;
 import com.google.android.stardroid.activities.util.ActivityLightLevelChanger;
 import com.google.android.stardroid.activities.util.ActivityLightLevelChanger.NightModeable;
 import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
+import com.google.android.stardroid.activities.util.FullscreenControlsManager;
 import com.google.android.stardroid.control.AstronomerModel;
 import com.google.android.stardroid.control.AstronomerModel.Pointing;
 import com.google.android.stardroid.control.ControllerGroup;
 import com.google.android.stardroid.control.MagneticDeclinationCalculatorSwitcher;
-import com.google.android.stardroid.kml.KmlManager;
 import com.google.android.stardroid.layers.LayerManager;
 import com.google.android.stardroid.renderer.RendererController;
 import com.google.android.stardroid.renderer.SkyRenderer;
@@ -69,8 +68,6 @@ import com.google.android.stardroid.util.MathUtil;
 import com.google.android.stardroid.util.MiscUtil;
 import com.google.android.stardroid.util.OsVersions;
 import com.google.android.stardroid.views.ButtonLayerView;
-import com.google.android.stardroid.views.WidgetFader;
-import com.google.android.stardroid.views.WidgetFader.Fadeable;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -82,8 +79,8 @@ import java.util.List;
  */
 public class DynamicStarMapActivity extends Activity implements OnSharedPreferenceChangeListener {
   private static final int TIME_DISPLAY_DELAY_MILLIS = 1000;
-
-
+  private static final int LONG_FADE_TIME_MS = 2500;
+  private FullscreenControlsManager fullscreenControlsManager;
 
   /**
    * Passed to the renderer to get per-frame updates from the model.
@@ -130,7 +127,6 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
   private static final String BUNDLE_Z_TARGET = "bundle_z_target";
   private static final String BUNDLE_SEARCH_MODE = "bundle_search";
   private static final String SOUND_EFFECTS = "sound_effects";
-  private static final int DELAY_BETWEEN_ZOOM_REPEATS_MILLIS = 100;
   private static final float ROTATION_SPEED = 10;
   private static final String TAG = MiscUtil.getTag(DynamicStarMapActivity.class);
   // Preference that keeps track of whether or not the user accepted the ToS for this version
@@ -155,7 +151,7 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
   private DialogFactory dialogFactory;
   private MediaPlayer timeTravelNoise;
   private MediaPlayer timeTravelBackNoise;
-  KmlManager kmlManager;
+  //KmlManager kmlManager;
   private Handler handler = new Handler();
   // A list of runnables to post on the handler when we resume.
   private List<Runnable> runnables = new ArrayList<Runnable>();
@@ -197,8 +193,16 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
     sharedPreferences.registerOnSharedPreferenceChangeListener(this);
     maybeShowEula(sharedPreferences);
 
-    getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON,
-        WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+    // Set up full screen mode, hide the system UI etc.
+    getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON |
+                         WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+    // TODO(jontayler): upgrade to
+    // getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
+    // when we reach API level 16.
+    // http://developer.android.com/training/system-ui/immersive.html for the right way
+    // to do it at API level 19.
+    //getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
 
     model = StardroidApplication.getModel();
     layerManager = StardroidApplication.getLayerManager(getAssets(),
@@ -206,6 +210,7 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
                                                         getResources(),
                                                         this);
     initializeModelViewController();
+
     // We want to reset to auto mode on every restart, as users seem to get
     // stuck in manual mode and can't find their way out.
     // TODO(johntaylor): this is a bit of an abuse of the prefs system, but
@@ -217,7 +222,6 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
     // Search related
     setDefaultKeyMode(DEFAULT_KEYS_SEARCH_LOCAL);
 
-    kmlManager = new KmlManager(layerManager);
     ActivityLightLevelChanger activityLightLevelChanger = new ActivityLightLevelChanger(this,
         new NightModeable() {
           @Override
@@ -241,10 +245,20 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
   }
 
   @Override
+  protected void onPostCreate(Bundle savedInstanceState) {
+    super.onPostCreate(savedInstanceState);
+
+    // Trigger the initial hide() shortly after the activity has been
+    // created, to briefly hint to the user that UI controls
+    // are available.
+    fullscreenControlsManager.flashTheControls();
+  }
+
+  @Override
   public boolean onCreateOptionsMenu(Menu menu) {
     super.onCreateOptionsMenu(menu);
-    MenuInflater inflator = getMenuInflater();
-    inflator.inflate(R.menu.main, menu);
+    MenuInflater inflater = getMenuInflater();
+    inflater.inflate(R.menu.main, menu);
     return true;
   }
 
@@ -483,7 +497,7 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
 
   @Override
   public boolean onTouchEvent(MotionEvent event) {
-    // Log.d(TAG, "Touch event " + event);
+    Log.d(TAG, "Touch event " + event);
     // Either of the following detectors can absorb the event, but one
     // must not hide it from the other
     boolean eventAbsorbed = false;
@@ -569,61 +583,40 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
       }
     });
 
-    final ZoomControls zooms = (ZoomControls) findViewById(R.id.zoom_control);
-    final WidgetFader zoomControlFader = new WidgetFader(new Fadeable() {
-      @Override
-      public void hide() {
-        zooms.hide();
-      }
-
-      @Override
-      public void show() {
-        zooms.show();
-      }
-    });
-    zooms.setOnZoomInClickListener(new OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        controller.zoomIn();
-        zoomControlFader.keepActive();
-      }
-    });
-    zooms.setOnZoomOutClickListener(new OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        controller.zoomOut();
-        zoomControlFader.keepActive();
-      }
-    });
-    zooms.setZoomSpeed(DELAY_BETWEEN_ZOOM_REPEATS_MILLIS);
-    zooms.hide();
     final ButtonLayerView providerButtons = (ButtonLayerView) findViewById(R.id.layer_buttons_control);
-    final WidgetFader layerControlFader = new WidgetFader(providerButtons, 2500);
+    /*final WidgetFader layerControlFader = new WidgetFader(providerButtons, LONG_FADE_TIME_MS);
     providerButtons.hide();
-    final int numChildren = providerButtons.getChildCount();
+
+    */
+    int numChildren = providerButtons.getChildCount();
+    View[] buttonViews = new View[numChildren + 1];
     for (int i = 0; i < numChildren; ++i) {
       final ImageButton button = (ImageButton) providerButtons.getChildAt(i);
-      button.setOnClickListener(new OnClickListener() {
-        @Override
-        public void onClick(View v) {
-          layerControlFader.keepActive();
-        }
-      });
+      buttonViews[i] = button;
     }
+    buttonViews[numChildren] = findViewById(R.id.manual_auto_toggle);
     final ButtonLayerView manualButtonLayer = (ButtonLayerView) findViewById(R.id.layer_manual_auto_toggle);
-    final WidgetFader manualControlFader = new WidgetFader(manualButtonLayer);
-    manualButtonLayer.hide();
-    final ImageButton manualAuto = (ImageButton) findViewById(R.id.manual_auto_toggle);
+
+    //final WidgetFader manualControlFader = new WidgetFader(manualButtonLayer, LONG_FADE_TIME_MS);
+    //manualButtonLayer.hide();
+    /*final ImageButton manualAuto = (ImageButton) findViewById(R.id.manual_auto_toggle);
     manualAuto.setOnClickListener(new OnClickListener() {
       @Override
       public void onClick(View v) {
         manualControlFader.keepActive();
       }
-    });
+    });*/
+
+    fullscreenControlsManager = new FullscreenControlsManager(
+        this,
+        findViewById(R.id.main_sky_view),
+        new View[]{manualButtonLayer, providerButtons},
+        buttonViews);
 
     MapMover mapMover = new MapMover(model, controller, this, sharedPreferences);
-    gestureDetector = new GestureDetector(new GestureInterpreter(
-        new WidgetFader[] {manualControlFader, layerControlFader, zoomControlFader},
+
+    gestureDetector = new GestureDetector(this, new GestureInterpreter(
+        fullscreenControlsManager,
         mapMover));
     dragZoomRotateDetector = new DragRotateZoomGestureDetector(mapMover);
   }
@@ -695,7 +688,7 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
 
     TextView searchPromptText = (TextView) findViewById(R.id.search_status_label);
     searchPromptText.setText(
-        String.format("%s %s", getString(R.string.search_target_looking_message), searchTerm));
+            String.format("%s %s", getString(R.string.search_target_looking_message), searchTerm));
     View searchControlBar = findViewById(R.id.search_control_bar);
     searchControlBar.setVisibility(View.VISIBLE);
   }

@@ -1,17 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 10
+    compileSdkVersion 22
     buildToolsVersion "23.0.2"
 
     defaultConfig {
         applicationId "com.google.android.stardroid"
-        minSdkVersion 3
-        // TODO(jontayler): setting this disables the legacy menu in newer
-        // phones.  Restore once we leave the old Androids behind.
-        // targetSdkVersion 23
-        versionCode 1113
-        versionName "1.6.5-alpha1"
+        minSdkVersion 15
+        targetSdkVersion 22
+        versionCode 1300
+        versionName "1.8.0-alpha1"
         buildConfigField 'String', 'GOOGLE_ANALYTICS_CODE', '""'
     }
     // Set the environment variables KSTOREPWD and KEYPWD to the keystore
@@ -56,4 +54,5 @@ dependencies {
     androidTestCompile 'junit:junit:4.12'
     androidTestCompile 'org.easymock:easymock:2.5.2'
 }
+
 

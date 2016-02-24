@@ -24,14 +24,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.R.layout;
 import com.google.android.stardroid.R.string;
 import com.google.android.stardroid.StardroidApplication;
-import com.google.android.stardroid.kml.KmlException;
 import com.google.android.stardroid.search.SearchResult;
 import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.MiscUtil;
@@ -53,7 +51,6 @@ public class DialogFactory {
   static final int DIALOG_ID_HELP = 4;
   static final int DIALOG_EULA_NO_BUTTONS = 5;
   static final int DIALOG_EULA_WITH_BUTTONS = 6;
-  static final int DIALOG_ID_LOAD_KML = 7;
 
   private DynamicStarMapActivity parentActivity;
   private ArrayAdapter<SearchResult> multipleSearchResultsAdaptor;
@@ -87,8 +84,6 @@ public class DialogFactory {
         return createTermsOfServiceDialog(true);
       case (DIALOG_EULA_WITH_BUTTONS):
         return createTermsOfServiceDialog(false);
-      case (DIALOG_ID_LOAD_KML):
-        return createLoadKmlDialog();
     }
     throw new RuntimeException("Unknown dialog Id.");
   }
@@ -235,43 +230,5 @@ public class DialogFactory {
     TimeTravelDialog timeTravelDialog = new TimeTravelDialog(parentActivity,
         parentActivity.getModel());
     return timeTravelDialog;
-  }
-
-  private Dialog createLoadKmlDialog() {
-    final LayoutInflater inflater = parentActivity.getLayoutInflater();
-    final View view = inflater.inflate(R.layout.load_kml, null);
-    final AlertDialog alertDialog = new Builder(parentActivity)
-        .setTitle(R.string.load_kml_dialog_title)
-        .setView(view)
-        .setNegativeButton(R.string.cancel,
-            new DialogInterface.OnClickListener() {
-              public void onClick(DialogInterface dialog, int whichButton) {
-                Log.d(TAG, "Load Kml Dialog canceled");
-                dialog.dismiss();
-              }
-            })
-        .setPositiveButton(R.string.load_kml_file,
-            new DialogInterface.OnClickListener() {
-              public void onClick(DialogInterface dialog, int whichButton) {
-                Log.d(TAG, "Load Kml Dialog okayed");
-                StardroidApplication.runInBackground(new Runnable() {
-                  public void run() {
-                    try {
-                      String kmlUrl =
-                          ((EditText) view.findViewById(R.id.kml_url_box)).getText().toString();
-                      Log.i("Kml", kmlUrl);
-                      parentActivity.kmlManager.loadKmlLayer(kmlUrl);
-                    } catch (KmlException e) {
-                      // Normally we'd show something to the user here,
-                      // but since this is a temporary hack...
-                      Log.e(TAG, "Error loading Kml", e);
-                    }
-                  }
-                });
-                dialog.dismiss();
-              }
-            })
-        .create();
-    return alertDialog;
   }
 }

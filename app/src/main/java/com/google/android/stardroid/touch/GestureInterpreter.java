@@ -14,13 +14,13 @@
 
 package com.google.android.stardroid.touch;
 
-import com.google.android.stardroid.touch.Flinger.FlingListener;
-import com.google.android.stardroid.util.MiscUtil;
-import com.google.android.stardroid.views.WidgetFader;
-
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
+
+import com.google.android.stardroid.activities.util.FullscreenControlsManager;
+import com.google.android.stardroid.touch.Flinger.FlingListener;
+import com.google.android.stardroid.util.MiscUtil;
 
 /**
  * Processes touch events and scrolls the screen in manual mode.
@@ -29,12 +29,13 @@ import android.view.MotionEvent;
  */
 public class GestureInterpreter extends GestureDetector.SimpleOnGestureListener {
   private static final String TAG = MiscUtil.getTag(GestureInterpreter.class);
-  private WidgetFader[] faders;
+  private FullscreenControlsManager fullscreenControlsManager;
   private MapMover mapMover;
 
-  public GestureInterpreter(WidgetFader[] faders,
-                            MapMover mapMover) {
-    this.faders = faders;
+  public GestureInterpreter(
+      FullscreenControlsManager fullscreenControlsManager,
+      MapMover mapMover) {
+    this.fullscreenControlsManager = fullscreenControlsManager;
     this.mapMover = mapMover;
   }
 
@@ -61,10 +62,7 @@ public class GestureInterpreter extends GestureDetector.SimpleOnGestureListener 
   @Override
   public boolean onSingleTapUp(MotionEvent e) {
     Log.d(TAG, "Tap up");
-    // Bring up the controls
-    for (WidgetFader fader : faders) {
-      fader.keepActive();
-    }
+    fullscreenControlsManager.toggleControls();
     return true;
   }
 
@@ -79,5 +77,4 @@ public class GestureInterpreter extends GestureDetector.SimpleOnGestureListener 
     Log.d(TAG, "Confirmed single tap");
     return false;
   }
-  
 }
