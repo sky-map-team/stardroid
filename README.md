@@ -22,10 +22,12 @@ The apk can be found in `app/build/outputs/apk/`.
 ## Building a release apk
 (Sky Map team only)
 
-Set the following environment variables:
-
-    export KEYPWD=<the key password>
-    export KSTOREPWD=<the key store password>
+Create a file in the app directory called
+`no-checkin.properties` with appropriate values for the
+keys
+    store-pwd=
+    key-pwd=
+    analytics-key=
 
 From the root directory execute
 
