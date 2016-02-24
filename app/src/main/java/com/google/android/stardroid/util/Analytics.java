@@ -82,6 +82,9 @@ public class Analytics {
   public static final String GENERAL_CATEGORY = "General";
   public static final String START_HOUR = "Start up hour";
   public static final String SESSION_LENGTH_BUCKET = "Session length bucket";
+  public static final String SENSOR_AVAILABILITY = "Minimal Sensor Availability";
+  public static final String SENSOR_TYPE = "Sensor Type -";
+  public static final String SENSOR_NAME = "Sensor Name";
   // TODO(johntaylor): use CustomVariable.VISITOR_SCOPE if it gets made public.
   private static final int VISITOR_SCOPE = 1;
 

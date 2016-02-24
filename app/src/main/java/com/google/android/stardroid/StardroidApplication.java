@@ -21,6 +21,8 @@ import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.AssetManager;
 import android.content.res.Resources;
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
@@ -44,6 +46,9 @@ import com.google.android.stardroid.util.OsVersions;
 import com.google.android.stardroid.util.PreferenceChangeAnalyticsTracker;
 
 import java.util.Calendar;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 
@@ -92,6 +97,8 @@ public class StardroidApplication extends Application {
     getLayerManager(assetManager, preferences, resources, this);
 
     setUpAnalytics(versionName, preferences);
+
+    performFeatureCheck();
 
     Log.d(TAG, "StardroidApplication: -onCreate");
   }
@@ -220,5 +227,70 @@ public class StardroidApplication extends Application {
   // to facilitate callbacks on the UI thread.
   public static void runInBackground(Runnable runnable) {
     backgroundExecutor.submit(runnable);
+  }
+
+  /**
+   * Check what features are available to this phone and report back to analytics
+   * so we can judge when to add/drop support.
+   */
+  private void performFeatureCheck() {
+    Analytics analytics = Analytics.getInstance(this);
+    SensorManager sensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
+    if (sensorManager == null) {
+      Log.e(TAG, "No sensor manager");
+      analytics.trackEvent(Analytics.APP_CATEGORY, Analytics.SENSOR_AVAILABILITY, "No Manager", 0);
+    }
+    // Minimum requirements
+    if (sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER) != null) {
+      if (sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD) != null) {
+        Log.i(TAG, "Minimal sensors available");
+        analytics.trackEvent(Analytics.APP_CATEGORY, Analytics.SENSOR_AVAILABILITY, "Yes", 1);
+      } else {
+        Log.e(TAG, "No magnetic field sensor");
+        analytics.trackEvent(
+            Analytics.APP_CATEGORY, Analytics.SENSOR_AVAILABILITY, "No Mag Field", 0);
+      }
+    } else {
+      if (sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD) != null) {
+        Log.e(TAG, "No accelerometer");
+        analytics.trackEvent(Analytics.APP_CATEGORY, Analytics.SENSOR_AVAILABILITY, "No Accel", 0);
+      } else {
+        Log.e(TAG, "No magnetic field sensor or accelerometer");
+        analytics.trackEvent(
+            Analytics.APP_CATEGORY, Analytics.SENSOR_AVAILABILITY, "No Mag Field/Accel", 0);
+      }
+    }
+
+    // Do we at least have defaults for the main ones?
+    int[] importantSensorTypes = {Sensor.TYPE_ACCELEROMETER, Sensor.TYPE_GYROSCOPE,
+        Sensor.TYPE_MAGNETIC_FIELD, Sensor.TYPE_LIGHT, Sensor.TYPE_ROTATION_VECTOR,
+        Sensor.TYPE_ORIENTATION};
+
+    for (int sensorType : importantSensorTypes) {
+      if (sensorManager.getDefaultSensor(sensorType) == null) {
+        Log.i(TAG, "No sensor of type " + sensorType);
+        analytics.trackEvent(
+            Analytics.APP_CATEGORY, Analytics.SENSOR_TYPE + sensorType, "None", 0);
+      } else {
+        Log.i(TAG, "Sensor present of type " + sensorType);
+        analytics.trackEvent(
+            Analytics.APP_CATEGORY, Analytics.SENSOR_TYPE + sensorType, "Present", 1);
+      }
+    }
+
+    // Lastly a dump of all the sensors.
+    Log.d(TAG, "All sensors:");
+    List<Sensor> allSensors = sensorManager.getSensorList(Sensor.TYPE_ALL);
+    Set<String> sensorTypes = new HashSet<>();
+    for (Sensor sensor : allSensors) {
+      Log.i(TAG, sensor.getName());
+      sensorTypes.add(sensor.getStringType());
+    }
+    Log.d(TAG, "All sensors summary:");
+    for (String sensorType : sensorTypes) {
+      Log.i(TAG, sensorType);
+      analytics.trackEvent(
+          Analytics.APP_CATEGORY, Analytics.SENSOR_NAME, sensorType, 1);
+    }
   }
 }
