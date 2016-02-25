@@ -23,6 +23,7 @@ import android.content.res.AssetManager;
 import android.content.res.Resources;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
+import android.os.Build;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
@@ -132,8 +133,8 @@ public class StardroidApplication extends Application {
 
     // It will be interesting to see *when* people use Sky Map.
     analytics.trackEvent(
-            Analytics.GENERAL_CATEGORY, Analytics.START_HOUR,
-            Integer.toString(Calendar.getInstance().get(Calendar.HOUR_OF_DAY)) + 'h', 0);
+        Analytics.GENERAL_CATEGORY, Analytics.START_HOUR,
+        Integer.toString(Calendar.getInstance().get(Calendar.HOUR_OF_DAY)) + 'h', 0);
 
     preferences.registerOnSharedPreferenceChangeListener(preferenceChangeAnalyticsTracker);
   }
@@ -284,13 +285,21 @@ public class StardroidApplication extends Application {
     Set<String> sensorTypes = new HashSet<>();
     for (Sensor sensor : allSensors) {
       Log.i(TAG, sensor.getName());
-      sensorTypes.add(sensor.getStringType());
+      sensorTypes.add(getSafeNameForSensor(sensor));
     }
     Log.d(TAG, "All sensors summary:");
     for (String sensorType : sensorTypes) {
       Log.i(TAG, sensorType);
       analytics.trackEvent(
           Analytics.APP_CATEGORY, Analytics.SENSOR_NAME, sensorType, 1);
+    }
+  }
+
+  private static String getSafeNameForSensor(Sensor sensor) {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT_WATCH) {
+      return sensor.getStringType();
+    } else {
+     return Integer.toString(sensor.getType());
     }
   }
 }
