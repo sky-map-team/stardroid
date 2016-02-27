@@ -42,7 +42,7 @@ public class OsVersions {
   /**
    * Returns the android release code number.  e.g. CUPCAKE = 3, FROYO = 8.
    */
-  public static int version() {
+  private static int version() {
     // TODO(johntaylor): this method can simply return android.os.Build.VERSION.SDK_INT
     // once we no longer support 1.5.
     String versionString = android.os.Build.VERSION.SDK;
@@ -54,7 +54,7 @@ public class OsVersions {
    *
    * Eclair (v5) and above.
    */
-  public static void overridePendingTransition(Activity caller, int in, int out) {
+  private static void overridePendingTransition(Activity caller, int in, int out) {
     invokeByReflection(caller, new Class<?>[] {int.class, int.class},
                        new Object[] {in, out}, "overridePendingTransition");
   }
@@ -65,7 +65,7 @@ public class OsVersions {
    *
    * Eclair (v5) and above.
    */
-  public static int getPointerCount(MotionEvent caller) {
+  private static int getPointerCount(MotionEvent caller) {
     try {
       return (Integer) invokeByReflection(
           caller, new Class<?>[0], new Object[0], "getPointerCount");
@@ -80,7 +80,7 @@ public class OsVersions {
    *
    * Eclair (v5) and above.
    */
-  public static float getX(MotionEvent caller, int index) {
+  private static float getX(MotionEvent caller, int index) {
     try {
       return (Float) invokeByReflection(
           caller, new Class<?>[]{int.class}, new Object[]{index}, "getX");
@@ -95,7 +95,7 @@ public class OsVersions {
    *
    * Eclair (v5) and above.
    */
-  public static float getY(MotionEvent caller, int index) {
+  private static float getY(MotionEvent caller, int index) {
     try {
       return (Float) invokeByReflection(
           caller, new Class<?>[]{int.class}, new Object[]{index}, "getY");
@@ -108,7 +108,7 @@ public class OsVersions {
   /**
    * Sets button backlight brightness.  Only works from Eclair (8) onwards.
    */
-  public static void setButtonBrightness(float buttonBrightness,
+  private static void setButtonBrightness(float buttonBrightness,
       WindowManager.LayoutParams params) {
     try {
       Log.d(TAG, "Setting button brightness");
@@ -123,7 +123,7 @@ public class OsVersions {
    * in Eclair and above.  Otherwise returns -1.0, which seems to
    * give equivalent behavior on Cupcake devices.
    */
-  public static float brightnessOverrideNoneValue() {
+  private static float brightnessOverrideNoneValue() {
     try {
       return (Float) getByReflection(WindowManager.LayoutParams.class, "BRIGHTNESS_OVERRIDE_NONE");
     } catch (UnsupportedOperationException e) {
@@ -136,7 +136,7 @@ public class OsVersions {
    * in Eclair and above.  Otherwise returns 0.0, which is equivalent
    * at present.
    */
-  public static float brightnessOverrideOffValue() {
+  private static float brightnessOverrideOffValue() {
     try {
       return (Float) getByReflection(WindowManager.LayoutParams.class, "BRIGHTNESS_OVERRIDE_OFF");
     } catch (UnsupportedOperationException e) {

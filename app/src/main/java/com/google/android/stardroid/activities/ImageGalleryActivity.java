@@ -14,15 +14,6 @@
 
 package com.google.android.stardroid.activities;
 
-import com.google.android.stardroid.R;
-import com.google.android.stardroid.activities.util.ActivityLightLevelChanger;
-import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
-import com.google.android.stardroid.gallery.GalleryFactory;
-import com.google.android.stardroid.gallery.GalleryImage;
-import com.google.android.stardroid.util.Analytics;
-import com.google.android.stardroid.util.MiscUtil;
-import com.google.android.stardroid.util.OsVersions;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -31,11 +22,19 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
 import android.widget.Gallery;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.AdapterView.OnItemClickListener;
+
+import com.google.android.stardroid.R;
+import com.google.android.stardroid.activities.util.ActivityLightLevelChanger;
+import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
+import com.google.android.stardroid.gallery.GalleryFactory;
+import com.google.android.stardroid.gallery.GalleryImage;
+import com.google.android.stardroid.util.Analytics;
+import com.google.android.stardroid.util.MiscUtil;
 
 import java.util.List;
 
@@ -135,8 +134,6 @@ public class ImageGalleryActivity extends Activity {
     Intent intent = new Intent(ImageGalleryActivity.this, ImageDisplayActivity.class);
     intent.putExtra(ImageGalleryActivity.IMAGE_ID, position);
     startActivity(intent);
-    if (OsVersions.version() >= android.os.Build.VERSION_CODES.ECLAIR) {
-      OsVersions.overridePendingTransition(this, R.anim.fadein, R.anim.fastzoom);
-    }
+    overridePendingTransition(R.anim.fadein, R.anim.fastzoom);
   }
 }

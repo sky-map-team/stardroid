@@ -33,8 +33,8 @@ public class DragRotateZoomGestureDetector {
    */
   public interface DragRotateZoomGestureDetectorListener {
     boolean onDrag(float xPixels, float yPixels);
-    boolean onStretch(double ratio);
-    boolean onRotate(double radians);
+    boolean onStretch(float ratio);
+    boolean onRotate(float radians);
   }
 
   private static final String TAG = MiscUtil.getTag(DragRotateZoomGestureDetector.class);
@@ -132,15 +132,15 @@ public class DragRotateZoomGestureDetector {
       // Log.d(TAG, "Previous vector: " + vectorBeforeX + ", " + vectorBeforeY);
       // Log.d(TAG, "Current vector: " + vectorCurrentX + ", " + vectorCurrentY);
 
-      double lengthRatio = Math.sqrt(normSquared(vectorCurrentX, vectorCurrentY)
+      float lengthRatio = MathUtil.sqrt(normSquared(vectorCurrentX, vectorCurrentY)
           / normSquared(vectorLastX, vectorLastY));
       // Log.d(TAG, "Stretching map by ratio " + ratio);
       listener.onStretch(lengthRatio);
-      double angleLast = Math.atan2(vectorLastX, vectorLastY);
-      double angleCurrent = Math.atan2(vectorCurrentX, vectorCurrentY);
+      float angleLast = MathUtil.atan2(vectorLastX, vectorLastY);
+      float angleCurrent = MathUtil.atan2(vectorCurrentX, vectorCurrentY);
       // Log.d(TAG, "Angle before " + angleBefore);
       // Log.d(TAG, "Angle after " + angleAfter);
-      double angleDelta = angleCurrent - angleLast;
+      float angleDelta = angleCurrent - angleLast;
       // Log.d(TAG, "Rotating map by angle delta " + angleDelta);
       listener.onRotate(angleDelta * MathUtil.RADIANS_TO_DEGREES);
 
