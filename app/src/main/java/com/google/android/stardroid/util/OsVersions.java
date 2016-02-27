@@ -147,7 +147,7 @@ public class OsVersions {
   /**
    * Request that the system status bar be made visible, or hidden.  Honeycomb and above only.
    */
-  public static void setSystemStatusBarVisible(View view, boolean visible) {
+  private static void setSystemStatusBarVisible(View view, boolean visible) {
     try {
       int status = visible ? VIEW_STATUS_BAR_VISIBLE : VIEW_STATUS_BAR_HIDDEN;
       invokeByReflection(view, new Class[] {int.class}, new Object[] {status},
