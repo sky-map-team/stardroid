@@ -14,13 +14,12 @@
 
 package com.google.android.stardroid.touch;
 
+import android.util.Log;
+import android.view.MotionEvent;
+
 import com.google.android.stardroid.util.MathUtil;
 import com.google.android.stardroid.util.MiscUtil;
 import com.google.android.stardroid.util.OsVersions;
-
-import android.util.FloatMath;
-import android.util.Log;
-import android.view.MotionEvent;
 
 /**
  * Detects map drags, rotations and pinch zooms.
@@ -134,7 +133,7 @@ public class DragRotateZoomGestureDetector {
       // Log.d(TAG, "Previous vector: " + vectorBeforeX + ", " + vectorBeforeY);
       // Log.d(TAG, "Current vector: " + vectorCurrentX + ", " + vectorCurrentY);
 
-      float lengthRatio = FloatMath.sqrt(normSquared(vectorCurrentX, vectorCurrentY)
+      float lengthRatio = MathUtil.sqrt(normSquared(vectorCurrentX, vectorCurrentY)
           / normSquared(vectorLastX, vectorLastY));
       // Log.d(TAG, "Stretching map by ratio " + ratio);
       listener.onStretch(lengthRatio);
