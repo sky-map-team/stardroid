@@ -51,7 +51,7 @@ public class MapMover implements
     this.model = model;
     this.controllerGroup = controllerGroup;
     Display display = ((WindowManager) context.getSystemService(
-        Context.WINDOW_SERVICE)).getDefaultDisplay(); 
+        Context.WINDOW_SERVICE)).getDefaultDisplay();
     int screenLongSize = display.getHeight();
     Log.i(TAG, "Screen height is " + screenLongSize + " pixels.");
     sizeTimesRadiansToDegrees = screenLongSize * Geometry.RADIANS_TO_DEGREES;
@@ -86,7 +86,7 @@ public class MapMover implements
 
   @Override
   public void onSharedPreferenceChanged(SharedPreferences sharedPreferences,
-      String key) {
+                                        String key) {
     allowRotation = sharedPreferences.getBoolean(ALLOW_ROTATION, true);
   }
 }

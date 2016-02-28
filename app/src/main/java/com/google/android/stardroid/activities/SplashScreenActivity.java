@@ -20,13 +20,12 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.view.animation.Animation.AnimationListener;
+import android.view.animation.AnimationUtils;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.MiscUtil;
-import com.google.android.stardroid.util.OsVersions;
 
 /**
  * Shows a splash screen, then launch the next activity.
@@ -41,7 +40,6 @@ public class SplashScreenActivity extends Activity {
     setContentView(R.layout.splash);
 
     final View graphic = findViewById(R.id.splash);
-    OsVersions.setSystemStatusBarVisible(findViewById(R.id.splash), false);
 
     Animation fadeAnimation = AnimationUtils.loadAnimation(this, R.anim.fadeout);
     fadeAnimation.setAnimationListener(new AnimationListener() {
