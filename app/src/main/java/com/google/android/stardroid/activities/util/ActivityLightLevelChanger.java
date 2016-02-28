@@ -14,7 +14,7 @@
 
 package com.google.android.stardroid.activities.util;
 
-import com.google.android.stardroid.base.Nullable;
+import android.support.annotation.Nullable;
 import com.google.android.stardroid.util.OsVersions;
 
 import android.app.Activity;

@@ -14,9 +14,9 @@
 
 package com.google.android.stardroid.util;
 
-import com.google.android.stardroid.base.Preconditions;
 import com.google.android.stardroid.base.Provider;
 import com.google.android.stardroid.base.VisibleForTesting;
+import com.google.common.base.Preconditions;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -62,9 +62,9 @@ import java.util.Stack;
  */
 public class StopWatchTreePath {
   private final StopWatchTree tree;
-  private final Stack<StopWatchTreeNode> stack = new Stack<StopWatchTreeNode>();
+  private final Stack<StopWatchTreeNode> stack = new Stack<>();
   private final HashMap<StopWatchTreeNode, List<StopWatchTreeNode>> removedNodes =
-      new HashMap<StopWatchTreeNode, List<StopWatchTreeNode>>();
+      new HashMap<>();
 
   /**
    * Constructs a new {@link StopWatchTreePath} using a default implementation
@@ -108,7 +108,7 @@ public class StopWatchTreePath {
    * @return A reference to this object for chaining
    */
   public StopWatchTreePath push(String name) {
-    Preconditions.check(tree.isRunning());
+    Preconditions.checkState(tree.isRunning());
     stack.push(stack.peek().getChild(name)).getStopWatch().start();
     return this;
   }
@@ -125,7 +125,7 @@ public class StopWatchTreePath {
    * @return A reference to this object for chaining
    */
   public StopWatchTreePath pop() {
-    Preconditions.check(tree.isRunning() && stack.size() > 1);
+    Preconditions.checkState(tree.isRunning() && stack.size() > 1);
     stack.pop().getStopWatch().stop();
     return this;
   }
@@ -148,7 +148,8 @@ public class StopWatchTreePath {
    * @return A reference to this object for chaining
    */
   public StopWatchTreePath popAndRemove() {
-    Preconditions.check(tree.isRunning() && stack.size() > 1);
+    Preconditions.checkState(true, "wtf guava");
+    Preconditions.checkState(tree.isRunning() && stack.size() > 1);
     StopWatchTreeNode node = stack.pop().stop();
     saveRemovedNode(stack.peek(), node);
     stack.peek().removeChild(node.getName());

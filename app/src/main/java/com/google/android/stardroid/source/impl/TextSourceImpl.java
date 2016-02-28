@@ -15,9 +15,9 @@
 
 package com.google.android.stardroid.source.impl;
 
-import com.google.android.stardroid.base.Preconditions;
 import com.google.android.stardroid.source.TextSource;
 import com.google.android.stardroid.units.GeocentricCoordinates;
+import com.google.common.base.Preconditions;
 
 
 /**
@@ -43,7 +43,7 @@ public class TextSourceImpl extends AbstractSource implements TextSource {
 
     super(coords, color);
     this.label = Preconditions.checkNotNull(label);
-    Preconditions.checkNotEqual(label.trim(), "");
+    Preconditions.checkArgument(!"".equals(label.trim()));
 
     this.offset = offset;
     this.fontSize = fontSize;

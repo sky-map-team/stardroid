@@ -14,6 +14,12 @@
 
 package com.google.android.stardroid.renderer;
 
+import android.content.res.Resources;
+import android.opengl.GLSurfaceView;
+import android.opengl.GLU;
+import android.util.FloatMath;
+import android.util.Log;
+
 import com.google.android.stardroid.renderer.util.GLBuffer;
 import com.google.android.stardroid.renderer.util.SkyRegionMap;
 import com.google.android.stardroid.renderer.util.TextureManager;
@@ -22,12 +28,6 @@ import com.google.android.stardroid.units.GeocentricCoordinates;
 import com.google.android.stardroid.units.Vector3;
 import com.google.android.stardroid.util.Matrix4x4;
 import com.google.android.stardroid.util.VectorUtil;
-
-import android.content.res.Resources;
-import android.opengl.GLSurfaceView;
-import android.opengl.GLU;
-import android.util.FloatMath;
-import android.util.Log;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -78,7 +78,7 @@ public class SkyRenderer implements GLSurfaceView.Renderer {
   // A list of managers which need to be reloaded before the next frame is rendered.  This may
   // be because they haven't ever been loaded yet, or because their objects have changed since
   // the last frame.
-  private ArrayList<ManagerReloadData> mManagersToReload = new ArrayList<ManagerReloadData>();
+  private ArrayList<ManagerReloadData> mManagersToReload = new ArrayList<>();
 
   // Maps an integer indicating render order to a list of objects at that level.  The managers
   // will be rendered in order, with the lowest number coming first.

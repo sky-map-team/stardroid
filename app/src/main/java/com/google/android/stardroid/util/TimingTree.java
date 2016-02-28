@@ -14,7 +14,7 @@
 
 package com.google.android.stardroid.util;
 
-import com.google.android.stardroid.base.Preconditions;
+import com.google.common.base.Preconditions;
 
 import java.util.ArrayList;
 import java.util.HashMap;

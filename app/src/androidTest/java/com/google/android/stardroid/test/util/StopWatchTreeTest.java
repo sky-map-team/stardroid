@@ -14,7 +14,6 @@
 
 package com.google.android.stardroid.test.util;
 
-import com.google.android.stardroid.base.PreconditionException;
 import com.google.android.stardroid.util.StopWatch;
 import com.google.android.stardroid.util.StopWatchImpl;
 import com.google.android.stardroid.util.StopWatchTree;
@@ -22,12 +21,12 @@ import com.google.android.stardroid.util.StopWatchTreeNode;
 import com.google.android.stardroid.util.TimingTree;
 import com.google.android.stardroid.util.TimingTreeNode;
 
+import junit.framework.TestCase;
+
 import org.easymock.EasyMock;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import junit.framework.TestCase;
 
 /**
  * Unit tests for the {@link StopWatchTree} class.
@@ -98,7 +97,7 @@ public class StopWatchTreeTest extends TestCase {
     try {
       tree.start();
       fail("Cannot start a currently running tree.");
-    } catch (PreconditionException e) {
+    } catch (IllegalStateException e) {
       // Cannot start a currently running tree.
     }
   }
@@ -128,7 +127,7 @@ public class StopWatchTreeTest extends TestCase {
     try {
       tree.stop();
       fail("Cannot start a currently running tree.");
-    } catch (PreconditionException e) {
+    } catch (IllegalStateException e) {
       // Cannot start a currently running tree.
     }
   }
