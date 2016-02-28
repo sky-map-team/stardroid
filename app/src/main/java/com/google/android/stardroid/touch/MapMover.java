@@ -14,17 +14,15 @@
 
 package com.google.android.stardroid.touch;
 
+import android.content.Context;
+import android.util.Log;
+import android.view.Display;
+import android.view.WindowManager;
+
 import com.google.android.stardroid.control.AstronomerModel;
 import com.google.android.stardroid.control.ControllerGroup;
 import com.google.android.stardroid.util.Geometry;
 import com.google.android.stardroid.util.MiscUtil;
-
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
-import android.util.Log;
-import android.view.Display;
-import android.view.WindowManager;
 
 /**
  * Applies drags, zooms and rotations to the model.
@@ -33,21 +31,14 @@ import android.view.WindowManager;
  * @author John Taylor
  */
 public class MapMover implements
-    DragRotateZoomGestureDetector.DragRotateZoomGestureDetectorListener,
-    OnSharedPreferenceChangeListener {
+    DragRotateZoomGestureDetector.DragRotateZoomGestureDetectorListener {
 
   private static final String TAG = MiscUtil.getTag(MapMover.class);
-  private static final String ALLOW_ROTATION = "allow_rotation";
   private AstronomerModel model;
   private ControllerGroup controllerGroup;
   private float sizeTimesRadiansToDegrees;
-  // Some phones, such as the Nexus 1, only support Duo-touch which means that
-  // rotation is unreliable.  So we allow it to be disabled for users who find
-  // the effect disconcerting.
-  private boolean allowRotation;
 
-  public MapMover(AstronomerModel model, ControllerGroup controllerGroup, Context context,
-                  SharedPreferences sharedPreferences) {
+  public MapMover(AstronomerModel model, ControllerGroup controllerGroup, Context context) {
     this.model = model;
     this.controllerGroup = controllerGroup;
     Display display = ((WindowManager) context.getSystemService(
@@ -55,8 +46,6 @@ public class MapMover implements
     int screenLongSize = display.getHeight();
     Log.i(TAG, "Screen height is " + screenLongSize + " pixels.");
     sizeTimesRadiansToDegrees = screenLongSize * Geometry.RADIANS_TO_DEGREES;
-    sharedPreferences.registerOnSharedPreferenceChangeListener(this);
-    allowRotation = sharedPreferences.getBoolean(ALLOW_ROTATION, true);
   }
 
   @Override
@@ -70,23 +59,13 @@ public class MapMover implements
 
   @Override
   public boolean onRotate(float degrees) {
-    if (allowRotation) {
-      controllerGroup.rotate(-degrees);
-      return true;
-    } else {
-      return false;
-    }
+    controllerGroup.rotate(-degrees);
+    return true;
   }
 
   @Override
   public boolean onStretch(float ratio) {
     controllerGroup.zoomBy(1.0f / ratio);
     return true;
-  }
-
-  @Override
-  public void onSharedPreferenceChanged(SharedPreferences sharedPreferences,
-                                        String key) {
-    allowRotation = sharedPreferences.getBoolean(ALLOW_ROTATION, true);
   }
 }

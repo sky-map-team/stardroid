@@ -147,8 +147,6 @@
     <string name="menu_tos">Terms of Service</string>
     <!-- TODO(johntaylor): the following might be deleted in favor of an icon -->
     <string name="control_panel_btn" translation_description="Label for the control panel button">Control Panel</string>
-    <string name="allow_rotation_pref" translation_description="preference to enable rotation of the map with a two finger movement">Multitouch rotation</string>
-    <string name="allow_rotation_pref_desc" translation_description="a qualification for the Multitouch rotation option">if supported by the phone</string>
 
     <string name="north_pole">NP</string>
     <string name="south_pole">SP</string>

@@ -611,11 +611,10 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
         new View[]{manualButtonLayer, providerButtons},
         buttonViews);
 
-    MapMover mapMover = new MapMover(model, controller, this, sharedPreferences);
+    MapMover mapMover = new MapMover(model, controller, this);
 
     gestureDetector = new GestureDetector(this, new GestureInterpreter(
-        fullscreenControlsManager,
-        mapMover));
+        fullscreenControlsManager, mapMover));
     dragZoomRotateDetector = new DragRotateZoomGestureDetector(mapMover);
   }
 
