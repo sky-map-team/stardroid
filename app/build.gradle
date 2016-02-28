@@ -27,7 +27,7 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard.cfg'
             if (file('no-checkin.properties').exists()) {
                 signingConfig signingConfigs.release
