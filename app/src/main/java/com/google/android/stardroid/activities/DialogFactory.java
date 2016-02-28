@@ -63,8 +63,8 @@ public class DialogFactory {
    */
   public DialogFactory(DynamicStarMapActivity parentActivity) {
     this.parentActivity = parentActivity;
-    multipleSearchResultsAdaptor = new ArrayAdapter<SearchResult>(
-        parentActivity, R.layout.simple_list_item_1, new ArrayList<SearchResult>());
+    multipleSearchResultsAdaptor = new ArrayAdapter<>(
+        parentActivity, android.R.layout.simple_list_item_1, new ArrayList<SearchResult>());
   }
 
   /**
