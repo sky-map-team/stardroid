@@ -18,7 +18,6 @@ import android.content.res.Resources;
 import android.text.format.DateFormat;
 
 import com.google.android.stardroid.R;
-import com.google.android.stardroid.base.Lists;
 import com.google.android.stardroid.base.TimeConstants;
 import com.google.android.stardroid.control.AstronomerModel;
 import com.google.android.stardroid.renderer.RendererObjectManager.UpdateType;
@@ -43,7 +42,7 @@ import java.util.List;
  * @author John Taylor
  */
 public class MeteorShowerLayer extends AbstractSourceLayer {
-  private List<Shower> showers = Lists.newArrayList();
+  private List<Shower> showers = new ArrayList<>();
 
   /**
    * Represents a meteor shower.
@@ -178,8 +177,8 @@ public class MeteorShowerLayer extends AbstractSourceLayer {
     private static final long UPDATE_FREQ_MS = 1L * TimeConstants.MILLISECONDS_PER_DAY;
     private static final float SCALE_FACTOR = 0.03f;
 
-    private final List<ImageSource> imageSources = Lists.newArrayList();
-    private final List<TextSource> labelSources = Lists.newArrayList();
+    private final List<ImageSource> imageSources = new ArrayList<>();
+    private final List<TextSource> labelSources = new ArrayList<>();
 
     private final AstronomerModel model;
 
@@ -188,7 +187,7 @@ public class MeteorShowerLayer extends AbstractSourceLayer {
     private TextSource label;
     private Shower shower;
     private String name;
-    private List<String> searchNames = Lists.newArrayList();
+    private List<String> searchNames = new ArrayList<>();
 
     public MeteorRadiantSource(AstronomerModel model, Shower shower, Resources resources) {
       this.model = model;

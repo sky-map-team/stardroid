@@ -15,7 +15,6 @@
 package com.google.android.stardroid.test.util;
 
 import com.google.android.stardroid.base.Lists;
-import com.google.android.stardroid.base.PreconditionException;
 import com.google.android.stardroid.util.TimingTree;
 import com.google.android.stardroid.util.TimingTreeNode;
 
@@ -38,7 +37,7 @@ public class TimingTreeTest extends TestCase {
     try {
       new TimingTree(null);
       fail("Root node cannot be null");
-    } catch (PreconditionException e) {
+    } catch (NullPointerException e) {
       // root not cannot be null.
     }
   }

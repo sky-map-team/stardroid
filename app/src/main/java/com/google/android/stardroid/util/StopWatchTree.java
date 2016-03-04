@@ -14,8 +14,8 @@
 
 package com.google.android.stardroid.util;
 
-import com.google.android.stardroid.base.Preconditions;
 import com.google.android.stardroid.base.Provider;
+import com.google.common.base.Preconditions;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,7 +59,7 @@ public class StopWatchTree {
    * @return A reference to the root StopWatchTreeNode object for chaining
    */
   public StopWatchTree start() {
-    Preconditions.check(!isRunning());
+    Preconditions.checkState(!isRunning());
     root.start();
     return this;
   }
@@ -73,7 +73,7 @@ public class StopWatchTree {
    * @return A reference to this object for chaining
    */
   public StopWatchTree stop() {
-    Preconditions.check(isRunning());
+    Preconditions.checkState(isRunning());
     root.stop();
     return this;
   }

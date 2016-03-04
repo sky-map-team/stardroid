@@ -14,7 +14,10 @@
 
 package com.google.android.stardroid.layers;
 
-import com.google.android.stardroid.base.Closeables;
+import android.content.res.AssetManager;
+import android.content.res.Resources;
+import android.util.Log;
+
 import com.google.android.stardroid.renderer.RendererObjectManager.UpdateType;
 import com.google.android.stardroid.source.AstronomicalSource;
 import com.google.android.stardroid.source.proto.ProtobufAstronomicalSource;
@@ -24,10 +27,7 @@ import com.google.android.stardroid.util.Blog;
 import com.google.android.stardroid.util.MiscUtil;
 import com.google.android.stardroid.util.StopWatch;
 import com.google.android.stardroid.util.StopWatchImpl;
-
-import android.content.res.AssetManager;
-import android.content.res.Resources;
-import android.util.Log;
+import com.google.common.io.Closeables;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -95,7 +95,7 @@ public abstract class AbstractFileBasedLayer extends AbstractSourceLayer {
     } catch (IOException e) {
       Log.e(TAG, "Unable to open " + sourceFilename);
     } finally {
-      Closeables.closeSilently(in);
+      Closeables.closeQuietly(in);
     }
 
   }

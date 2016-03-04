@@ -14,13 +14,13 @@
 
 package com.google.android.stardroid.data;
 
-import com.google.android.stardroid.base.Closeables;
 import com.google.android.stardroid.base.Lists;
 import com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto;
 import com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourcesProto;
 import com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto;
 import com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto;
 import com.google.android.stardroid.source.proto.SourceFullProto.LineElementProto;
+import com.google.common.io.Closeables;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -266,7 +266,7 @@ public class ConstellationProtoWriter {
 
   public static void main(String[] args) throws IOException {
     if (args.length != 2) {
-      System.out.println("Usage: BinaryConstellationWriter <inputfile> <outputprefix>");
+      System.out.println("Usage: ConstellationWriter <inputfile> <outputprefix>");
       System.exit(0);
     }
 
@@ -282,7 +282,7 @@ public class ConstellationProtoWriter {
       writer = new PrintWriter(new FileWriter(args[1] + "_R.ascii"));
       writer.append(sources.toString());
     } finally {
-      Closeables.closeSilently(writer);
+      Closeables.close(writer, false);
     }
 
     System.out.println("Successfully wrote " + sources.getSourceCount() + " sources.");

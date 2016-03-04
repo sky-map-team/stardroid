@@ -15,10 +15,9 @@
 package com.google.android.stardroid.activities.util;
 
 import android.app.Activity;
+import android.support.annotation.Nullable;
 import android.view.Window;
 import android.view.WindowManager;
-
-import com.google.android.stardroid.base.Nullable;
 
 /**
  * Controls the brightness level of an activity.

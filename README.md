@@ -9,7 +9,8 @@ Android installation:
 
     sdk.dir=<path to your SDK>
 
-Android Developer Studio can create this for you.
+Android Developer Studio can create this for you.  You can regenerate the datafiles and
+rebuild everything with the `build_skymap.sh` script.
 
 ## Building a debug apk
 

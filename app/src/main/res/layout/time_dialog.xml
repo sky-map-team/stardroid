@@ -34,7 +34,7 @@
     android:text="@string/popular_dates_prompt"
     android:paddingLeft="5dip"
     android:paddingBottom="5dip"
-    />
+      />
 
   <LinearLayout
     android:layout_width="fill_parent"
@@ -49,10 +49,7 @@
       android:layout_width="fill_parent"
       android:layout_height="wrap_content"
       android:prompt="@string/popular_dates_prompt"
-      />
-    <LinearLayout
-      android:layout_height="fill_parent"
-      android:layout_width="40px"/>
+        />
   </LinearLayout>
 
   <!-- Custom date prompt -->

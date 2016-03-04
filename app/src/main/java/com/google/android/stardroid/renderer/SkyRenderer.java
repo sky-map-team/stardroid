@@ -78,7 +78,7 @@ public class SkyRenderer implements GLSurfaceView.Renderer {
   // A list of managers which need to be reloaded before the next frame is rendered.  This may
   // be because they haven't ever been loaded yet, or because their objects have changed since
   // the last frame.
-  private ArrayList<ManagerReloadData> mManagersToReload = new ArrayList<ManagerReloadData>();
+  private ArrayList<ManagerReloadData> mManagersToReload = new ArrayList<>();
 
   // Maps an integer indicating render order to a list of objects at that level.  The managers
   // will be rendered in order, with the lowest number coming first.
