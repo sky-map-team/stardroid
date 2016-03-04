@@ -87,8 +87,9 @@ source {
       declination: -60.84
     }
     color: 13618383
-    REMOVE_string_index: "R.string.rigel_kentaurus_a"
+    REMOVE_string_index: "R.string.rigil_kentaurus_a"
   }
+  REMOVE_name_ids: "R.string.rigil_kentaurus_a"
   REMOVE_name_ids: "R.string.rigel_kentaurus_a"
   REMOVE_name_ids: "R.string.alpha_centauri"
   REMOVE_name_ids: "R.string.rigil_kent"
