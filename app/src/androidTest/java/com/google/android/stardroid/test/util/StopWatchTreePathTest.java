@@ -14,13 +14,7 @@
 
 package com.google.android.stardroid.test.util;
 
-import static org.easymock.EasyMock.createMock;
-import static org.easymock.EasyMock.expect;
-import static org.easymock.EasyMock.replay;
-import static org.easymock.EasyMock.verify;
-
 import com.google.android.stardroid.base.Lists;
-import com.google.android.stardroid.base.PreconditionException;
 import com.google.android.stardroid.base.Provider;
 import com.google.android.stardroid.util.StopWatch;
 import com.google.android.stardroid.util.StopWatchTree;
@@ -29,9 +23,14 @@ import com.google.android.stardroid.util.StopWatchTreePath;
 import com.google.android.stardroid.util.TimingTree;
 import com.google.android.stardroid.util.TimingTreeNode;
 
+import junit.framework.TestCase;
+
 import java.util.List;
 
-import junit.framework.TestCase;
+import static org.easymock.EasyMock.createMock;
+import static org.easymock.EasyMock.expect;
+import static org.easymock.EasyMock.replay;
+import static org.easymock.EasyMock.verify;
 
 /**
  * Unit tests for the {@link StopWatchTreePath} class.
@@ -336,7 +335,7 @@ public class StopWatchTreePathTest extends TestCase {
     try {
       path.push("child");
       fail("Cannot push an element onto a stopped tree.");
-    } catch (PreconditionException e) {
+    } catch (IllegalStateException e) {
       // cannot push an element onto a stopped tree
     }
   }
@@ -375,7 +374,7 @@ public class StopWatchTreePathTest extends TestCase {
     try {
       path.pop();
       fail("Cannot push an element onto a stopped tree.");
-    } catch (PreconditionException e) {
+    } catch (IllegalStateException e) {
       // cannot push an element onto a stopped tree
     }
   }
@@ -386,7 +385,7 @@ public class StopWatchTreePathTest extends TestCase {
     try {
       path.pop();
       fail("Cannot pop the root element from a tree.");
-    } catch (PreconditionException e) {
+    } catch (IllegalStateException e) {
       // Cannot pop the root element from a tree;
     }
   }
@@ -524,7 +523,7 @@ public class StopWatchTreePathTest extends TestCase {
     try {
       path.popAndRemove();
       fail("Cannot push an element onto a stopped tree.");
-    } catch (PreconditionException e) {
+    } catch (IllegalStateException e) {
       // cannot push an element onto a stopped tree
     }
   }
@@ -535,7 +534,7 @@ public class StopWatchTreePathTest extends TestCase {
     try {
       path.popAndRemove();
       fail("Cannot pop the root element from a tree.");
-    } catch (PreconditionException e) {
+    } catch (IllegalStateException e) {
       // Cannot pop the root element from a tree;
     }
   }

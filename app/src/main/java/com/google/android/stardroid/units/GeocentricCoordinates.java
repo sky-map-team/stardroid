@@ -14,9 +14,8 @@
 
 package com.google.android.stardroid.units;
 
-import android.util.FloatMath;
-
 import com.google.android.stardroid.util.Geometry;
+import com.google.android.stardroid.util.MathUtil;
 
 /**
  * This class corresponds to an object's location in Euclidean space
@@ -42,9 +41,9 @@ public class GeocentricCoordinates extends Vector3 {
     float raRadians = ra * Geometry.DEGREES_TO_RADIANS;
     float decRadians = dec * Geometry.DEGREES_TO_RADIANS;
 
-    this.x = FloatMath.cos(raRadians) * FloatMath.cos(decRadians);
-    this.y = FloatMath.sin(raRadians) * FloatMath.cos(decRadians);
-    this.z = FloatMath.sin(decRadians);
+    this.x = MathUtil.cos(raRadians) * MathUtil.cos(decRadians);
+    this.y = MathUtil.sin(raRadians) * MathUtil.cos(decRadians);
+    this.z = MathUtil.sin(decRadians);
   }
 
   /**

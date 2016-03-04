@@ -66,7 +66,6 @@ import com.google.android.stardroid.units.Vector3;
 import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.MathUtil;
 import com.google.android.stardroid.util.MiscUtil;
-import com.google.android.stardroid.util.OsVersions;
 import com.google.android.stardroid.views.ButtonLayerView;
 
 import java.text.SimpleDateFormat;
@@ -547,7 +546,6 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
   private void initializeModelViewController() {
     Log.i(TAG, "Initializing Model, View and Controller @ " + System.currentTimeMillis());
     setContentView(R.layout.skyrenderer);
-    OsVersions.setSystemStatusBarVisible(findViewById(R.id.main_sky_view_root), false);
     skyView = (GLSurfaceView) findViewById(R.id.skyrenderer_view);
     // We don't want a depth buffer.
     skyView.setEGLConfigChooser(false);

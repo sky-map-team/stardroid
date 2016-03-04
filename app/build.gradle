@@ -1,35 +1,36 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 22
+    compileSdkVersion 23
     buildToolsVersion "23.0.2"
 
     defaultConfig {
         applicationId "com.google.android.stardroid"
         minSdkVersion 15
-        targetSdkVersion 22
-        versionCode 1300
-        versionName "1.8.0-alpha1"
+        targetSdkVersion 23
+        versionCode 1400
+        versionName "1.9.x"
         buildConfigField 'String', 'GOOGLE_ANALYTICS_CODE', '""'
     }
     // Set the environment variables KSTOREPWD and KEYPWD to the keystore
     // and key passwords to generate a signed release..
     signingConfigs {
         release {
+            Properties properties = new Properties()
+            // Sky Map devs should create this file with the signing passwords
+            properties.load(project.file('no-checkin.properties').newDataInputStream())
             storeFile file("stardroid-release-key.keystore")
-            storePassword System.getenv("KSTOREPWD")
-            keyPassword System.getenv("KEYPWD")
+            storePassword properties.getProperty('store-pwd')
+            keyPassword properties.getProperty('key-pwd')
             keyAlias "stardroid"
         }
     }
     buildTypes {
         release {
-            minifyEnabled false
-            if (System.getenv("KSTOREPWD") != null) {
-                signingConfig signingConfigs.release
-            }
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard.cfg'
             if (file('no-checkin.properties').exists()) {
+                signingConfig signingConfigs.release
                 Properties properties = new Properties()
                 // Sky Map devs should create this file with the Google Analytics key
                 properties.load(project.file('no-checkin.properties').newDataInputStream())
@@ -48,6 +49,8 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:support-annotations:22.1.0'
+    compile 'com.google.guava:guava:19.0'
     testCompile 'junit:junit:4.12'
     testCompile 'org.mockito:mockito-core:1.10.19'
     testCompile 'org.robolectric:robolectric:3.0'

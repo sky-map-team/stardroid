@@ -14,10 +14,8 @@
 
 package com.google.android.stardroid.activities.util;
 
-import com.google.android.stardroid.base.Nullable;
-import com.google.android.stardroid.util.OsVersions;
-
 import android.app.Activity;
+import android.support.annotation.Nullable;
 import android.view.Window;
 import android.view.WindowManager;
 
@@ -59,23 +57,20 @@ public class ActivityLightLevelChanger {
     this.nightModeable = nightmodeable;
   }
 
+  // current setting.
   public void setNightMode(boolean nightMode) {
     if (nightModeable != null) {
       nightModeable.setNightMode(nightMode);
     }
-    float screenBrightness;
-    float buttonBrightness;
-    if (nightMode) {
-      screenBrightness = BRIGHTNESS_DIM;
-      buttonBrightness = OsVersions.brightnessOverrideOffValue();
-    } else {
-      screenBrightness = OsVersions.brightnessOverrideNoneValue();
-      buttonBrightness = OsVersions.brightnessOverrideNoneValue();
-    }
     Window window = activity.getWindow();
     WindowManager.LayoutParams params = window.getAttributes();
-    OsVersions.setButtonBrightness(buttonBrightness, params);
-    params.screenBrightness = screenBrightness;
+    if (nightMode) {
+      params.screenBrightness = BRIGHTNESS_DIM;
+      params.buttonBrightness = WindowManager.LayoutParams.BRIGHTNESS_OVERRIDE_OFF;    // TODO(jontayler): look at this again - at present night mode can be brighter than the phone's
+    } else {
+      params.screenBrightness = WindowManager.LayoutParams.BRIGHTNESS_OVERRIDE_NONE;
+      params.buttonBrightness = WindowManager.LayoutParams.BRIGHTNESS_OVERRIDE_NONE;
+    }
     window.setAttributes(params);
   }
 }

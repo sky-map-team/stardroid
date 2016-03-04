@@ -14,13 +14,11 @@
 
 package com.google.android.stardroid.touch;
 
-import com.google.android.stardroid.util.MathUtil;
-import com.google.android.stardroid.util.MiscUtil;
-import com.google.android.stardroid.util.OsVersions;
-
-import android.util.FloatMath;
 import android.util.Log;
 import android.view.MotionEvent;
+
+import com.google.android.stardroid.util.MathUtil;
+import com.google.android.stardroid.util.MiscUtil;
 
 /**
  * Detects map drags, rotations and pinch zooms.
@@ -104,10 +102,10 @@ public class DragRotateZoomGestureDetector {
 
     if (actionCode == MotionEvent.ACTION_MOVE && currentState == State.DRAGGING2) {
       // Log.d(TAG, "Move with two fingers");
-      float current1X = OsVersions.getX(ev, 0);
-      float current1Y = OsVersions.getY(ev, 0);
-      float current2X = OsVersions.getX(ev, 1);
-      float current2Y = OsVersions.getY(ev, 1);
+      float current1X = ev.getX(0);
+      float current1Y = ev.getY(0);
+      float current2X = ev.getX();
+      float current2Y = ev.getY(1);
       // Log.d(TAG, "Old Point 1: " + lastPointer1X + ", " + lastPointer1Y);
       // Log.d(TAG, "Old Point 2: " + lastPointer2X + ", " + lastPointer2Y);
       // Log.d(TAG, "New Point 1: " + current1X + ", " + current1Y);
@@ -123,7 +121,7 @@ public class DragRotateZoomGestureDetector {
 
       // Dragging map by the mean of the points
       listener.onDrag((distanceMovedX1 + distanceMovedX2) / 2,
-                      (distanceMovedY1 + distanceMovedY2) / 2);
+          (distanceMovedY1 + distanceMovedY2) / 2);
 
       // These are the vectors between the two points.
       float vectorLastX = last1X - last2X;
@@ -134,15 +132,15 @@ public class DragRotateZoomGestureDetector {
       // Log.d(TAG, "Previous vector: " + vectorBeforeX + ", " + vectorBeforeY);
       // Log.d(TAG, "Current vector: " + vectorCurrentX + ", " + vectorCurrentY);
 
-      float lengthRatio = FloatMath.sqrt(normSquared(vectorCurrentX, vectorCurrentY)
+      float lengthRatio = MathUtil.sqrt(normSquared(vectorCurrentX, vectorCurrentY)
           / normSquared(vectorLastX, vectorLastY));
       // Log.d(TAG, "Stretching map by ratio " + ratio);
       listener.onStretch(lengthRatio);
-      double angleLast = Math.atan2(vectorLastX, vectorLastY);
-      double angleCurrent = Math.atan2(vectorCurrentX, vectorCurrentY);
+      float angleLast = MathUtil.atan2(vectorLastX, vectorLastY);
+      float angleCurrent = MathUtil.atan2(vectorCurrentX, vectorCurrentY);
       // Log.d(TAG, "Angle before " + angleBefore);
       // Log.d(TAG, "Angle after " + angleAfter);
-      float angleDelta = (float) (angleCurrent - angleLast);
+      float angleDelta = angleCurrent - angleLast;
       // Log.d(TAG, "Rotating map by angle delta " + angleDelta);
       listener.onRotate(angleDelta * MathUtil.RADIANS_TO_DEGREES);
 
@@ -161,16 +159,16 @@ public class DragRotateZoomGestureDetector {
 
     if (actionCode == MotionEvent.ACTION_POINTER_DOWN && currentState == State.DRAGGING) {
       //Log.d(TAG, "Non primary pointer down " + pointer);
-      int pointerCount = OsVersions.getPointerCount(ev);
+      int pointerCount = ev.getPointerCount();
       if (pointerCount != 2) {
         Log.w(TAG, "Expected exactly two pointers but got " + pointerCount);
         return false;
       }
       currentState = State.DRAGGING2;
-      last1X = OsVersions.getX(ev, 0);
-      last1Y = OsVersions.getY(ev, 0);
-      last2X = OsVersions.getX(ev, 1);
-      last2Y = OsVersions.getY(ev, 1);
+      last1X = ev.getX(0);
+      last1Y = ev.getY(0);
+      last2X = ev.getX(1);
+      last2Y = ev.getY(1);
       return true;
     }
 

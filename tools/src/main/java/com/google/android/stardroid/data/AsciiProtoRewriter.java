@@ -15,7 +15,7 @@
 package com.google.android.stardroid.data;
 
 import com.google.android.stardroid.R;
-import com.google.android.stardroid.base.Closeables;
+import com.google.common.io.Closeables;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -92,8 +92,8 @@ public class AsciiProtoRewriter {
         out.println(s);
       }
     } finally {
-      Closeables.closeSilently(in);
-      Closeables.closeSilently(out);
+      Closeables.closeQuietly(in);
+      Closeables.close(out, false);
     }
   }
 }

@@ -14,7 +14,8 @@
 
 package com.google.android.stardroid.util;
 
-import com.google.android.stardroid.base.Nullable;
+import android.support.annotation.Nullable;
+
 import com.google.android.stardroid.base.VisibleForTesting;
 
 import java.util.ArrayList;
