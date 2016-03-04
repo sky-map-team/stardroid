@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translation_description="Application Title">Google Sky Map</string>
+    <string name="app_name" translation_description="Application Title">Sky Map</string>
     <string name="menu_settings">Einstellungen</string>
     <string name="menu_search">Suche</string>
     <string name="cancel">Abbrechen</string>
@@ -45,7 +45,7 @@
     <string name="dialog_accept" translation_description="accepting the licence agreement">Akzeptieren</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">Nein danke</string>
     <string name="menu_help" translation_description="menu item to show \'Help\' box">Hilfe</string>
-    <string name="help_dialog_title">Hilfe für Google Sky Map</string>
+    <string name="help_dialog_title">Hilfe für Sky Map</string>
     <string name="eula_dialog_title">Endnutzerlizenzvertrag</string>
     <string name="set_manual">Wechsel in manuellen Modus</string>
     <string name="set_auto">Wechsel in autom. Modus</string>
@@ -96,9 +96,9 @@
     <string name="enable_layer_toast">Ebene \"%s\" wird aktiviert.</string>
     <string name="disable_layer_toast">Ebene \"%s\" wird deaktiviert.</string>
     <string name="menu_gallery">Galerie</string>
-    <string name="gallery_image_search_btn">In Google Sky suchen</string>
+    <string name="gallery_image_search_btn">In Sky suchen</string>
     <string name="gallery_image_back_btn">Zurück zur Galerie</string>
-    <string name="hubble_image_gallery_title">Hubble-Galerie in Google Sky Map</string>
+    <string name="hubble_image_gallery_title">Hubble-Galerie</string>
     <string name="hubble_image">Hubble-Bild</string>
     <string name="search_target_found_message" translation_description="displayed when a search target has been located">Gefundenes Ziel:</string>
     <string name="search_overlay_title" translation_description="title for search overlay">Halten Sie Ihr Telefon in Richtung des Pfeils.</string>
@@ -379,4 +379,3 @@
     <string name="load_kml_dialog_title">KML laden</string>
     <string name="load_kml_file">Laden</string>
 </resources>
-    >>>>>>> 65f581748ee843083080a34498034e5b68da290e
