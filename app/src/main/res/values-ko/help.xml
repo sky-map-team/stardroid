@@ -1,17 +1,17 @@
-<resources><string name="help_text" translation_description="Please do not change the &lt; and &gt; markup">&lt;big&gt;&lt;b&gt;Android용 Google 별지도&lt;/b&gt;&lt;/big&gt;&lt;br/&gt;
+<resources><string name="help_text" translation_description="Please do not change the &lt; and &gt; markup">&lt;big&gt;&lt;b&gt;Android용 별지도&lt;/b&gt;&lt;/big&gt;&lt;br/&gt;
 &lt;i&gt;버전 %s&lt;/i&gt;&lt;br/&gt;
 
 &lt;i&gt;https://github.com/sky-map-team/stardroid&lt;/i&gt;&lt;br/&gt;&lt;br/&gt;
 
 &lt;b&gt;소개 및 빠른 시작&lt;/b&gt;&lt;br/&gt;
-Google 별지도는 Android 휴대전화를 밤하늘의 창으로 
+별지도는 Android 휴대전화를 밤하늘의 창으로
 바꿔줍니다. 휴대전화로 위를 가리키면 그 위치의 하늘에 있는 
 가장 밝은 별, 별자리 및 행성이 표시됩니다.&lt;br/&gt;다음 번에 
 밝은 별을 보았을 때 이름을 알고 싶으면 별지도를 사용하세요&lt;br/&gt;
 
 &lt;b&gt;표시 레이어&lt;/b&gt;&lt;br/&gt;
 
-Google 별지도에 표시되는 천체는 레이어로 구성됩니다. 화면에 표시되는 
+별지도에 표시되는 천체는 레이어로 구성됩니다. 화면에 표시되는
 컨트롤을 사용하면 레이어를 전환할 수 있으며 다음과 같은 레이어가 있습니다.&lt;br/&gt;
       별&lt;br/&gt;
       별자리&lt;br/&gt;
@@ -71,7 +71,7 @@ Google 별지도에 표시되는 천체는 레이어로 구성됩니다. 화면�
 같은 다양한 질문에 대한 답을 제공할 수 있습니다. &lt;br/&gt;&lt;br/&gt;
 
 &lt;b&gt;허블 갤러리&lt;/b&gt;&lt;br/&gt;
-별지도에는 Google 스카이의 허블 갤러리가 일부 포함되어 있습니다. 메뉴에서 
+별지도에는 스카이의 허블 갤러리가 일부 포함되어 있습니다. 메뉴에서
 갤러리 항목을 선택하면 갤러리에 액세스할 수 있습니다. 갤러리에서는 손가락으로 
 스크롤하여 제공되는 이미지를 찾아볼 수 있습니다. 
 미리보기 이미지 중 하나를 탭하면 전체 크기의 이미지가 
