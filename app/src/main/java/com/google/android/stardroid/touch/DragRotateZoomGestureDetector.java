@@ -104,7 +104,7 @@ public class DragRotateZoomGestureDetector {
       // Log.d(TAG, "Move with two fingers");
       float current1X = ev.getX(0);
       float current1Y = ev.getY(0);
-      float current2X = ev.getX();
+      float current2X = ev.getX(1);
       float current2Y = ev.getY(1);
       // Log.d(TAG, "Old Point 1: " + lastPointer1X + ", " + lastPointer1Y);
       // Log.d(TAG, "Old Point 2: " + lastPointer2X + ", " + lastPointer2Y);
