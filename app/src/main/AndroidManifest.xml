@@ -26,7 +26,7 @@
         android:name="android.hardware.faketouch"
         android:required="false"/>
     <uses-feature
-        android:name="android.hardware.touchscreen.multitouch.distinct"
+        android:name="android.hardware.faketouch.multitouch.distinct"
         android:required="false"/>
     <uses-feature
         android:name="android.hardware.touchscreen"
