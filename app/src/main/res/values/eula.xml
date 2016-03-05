@@ -1,7 +1,8 @@
 <resources>
 <string name="eula_text" translation_description="Please do not change the &lt; and &gt; markup">
     &lt;i&gt;New in version %s:&lt;/i&gt;&lt;br/&gt;
-    *  Add missing constellation names&lt;br/&gt;
+    *  Add missing constellation names (English only at present - sorry)&lt;br/&gt;
+    *  Fix for the 'pink rectangle' issue reported by some Dutch users
     *  UI fixes&lt;br/&gt;
     &lt;br/&gt;&lt;br/&gt;
 
