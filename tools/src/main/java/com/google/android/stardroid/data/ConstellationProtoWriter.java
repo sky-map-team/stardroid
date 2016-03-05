@@ -114,6 +114,7 @@ public class ConstellationProtoWriter {
 
   public static List<LabelWithSynonyms> readLabels(String filename) {
     List<LabelWithSynonyms> result = new ArrayList<>();
+    List<String> namesToTranslate = new ArrayList<>();
     try {
       BufferedReader in = new BufferedReader(new FileReader(new File(filename)));
 
@@ -156,6 +157,7 @@ public class ConstellationProtoWriter {
           num++;
         } else {
           System.out.println("Not adding label for " + labelName);
+          namesToTranslate.add(labelName);
         }
 
       }
@@ -171,6 +173,12 @@ public class ConstellationProtoWriter {
       }
 
       System.out.println("Number of constellation names added: " + num);
+      System.out.println("Missing translations: ");
+      for (String name : namesToTranslate) {
+        System.out.println(String.format(
+            "<string name=\"%s\" translation_description=\"Name of the %s constellation\">%s</string>",
+            rKeyFromName(name), name, name));
+      }
 
       return result;
     } catch (IOException e) {
@@ -322,23 +330,6 @@ public class ConstellationProtoWriter {
     return result;
   }
 
-  /** Returns the label which is closest to the given constellation center. */
-  // TODO(jontayler): ugh...there's nothing to stop the same label being applied
-  // to two constellations.
-  private static ClosestConstellation checkDistances(GeocentricCoordinatesProto coords,
-      List<LabelWithSynonyms> labels, ClosestConstellation cc) {
-
-    for (LabelWithSynonyms l : labels) {
-      double dist = naiveAngularDistanceBetweenPoints(coords, l.label.getLocation());
-      if (dist < cc.distance) {
-        cc.label = l.label;
-        cc.distance = dist;
-        cc.synonyms = l.synonyms;
-      }
-    }
-    return cc;
-  }
-
   /**
    * Processes the constellation kml and turns it into a proto buffer.  Does a naive
    * job of matching constellation labels to the constellations.  For each constellation we
@@ -373,12 +364,6 @@ public class ConstellationProtoWriter {
     }
 
     System.out.println("Successfully wrote " + sources.getSourceCount() + " sources.");
-  }
-
-  private static class ClosestConstellation {
-    LabelElementProto label = null;
-    double distance = Double.MAX_VALUE;
-    List<String> synonyms;
   }
 
   private static class LabelWithSynonyms {
