@@ -29,7 +29,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -42,54 +41,6 @@ import java.util.Set;
  */
 public class ConstellationProtoWriter {
   private static final double ANGULAR_TOLERANCE_FOR_COINCIDENCE = 0.001;
-  private static String[] CONSTELLATION_ARRAY_WHITELIST =
-      {
-      "Andromeda",
-      "Aquarius",
-      "Aquila",
-      "Aries",
-      "Auriga",
-      "Bootes",
-      "Cancer",
-      "Canis Major",
-      "Capricornus",
-      "Carina",
-      "Cassiopeia",
-      "Centaurus",
-      "Cetus",
-      "Crux",
-      "Cygnus",
-      "Draco",
-      "Eridanus",
-      "Gemini",
-      "Grus",
-      "Hercules",
-      "Hydrus",
-      "Leo",
-      "Libra",
-      "Lupus",
-      "Lyra",
-      "Ophiuchus",
-      "Orion",
-      "Pavo",
-      "Pegasus",
-      "Perseus",
-      "Phoenix",
-      "Pisces",
-      "Piscis Austrinus",
-      "Puppis",
-      "Sagittarius",
-      "Scorpius",
-      "Taurus",
-      "Tucana",
-      "Ursa Major",
-      "Ursa Minor",
-      "Vela",
-      "Virgo",
-      };
-
-  private static final HashSet<String> CONSTELLATION_WHITELIST =
-      new HashSet<>(Arrays.asList(CONSTELLATION_ARRAY_WHITELIST));
 
   private static int LABEL_COLOR = 0x80c97cb2;
 
@@ -114,7 +65,6 @@ public class ConstellationProtoWriter {
 
   public static List<LabelWithSynonyms> readLabels(String filename) {
     List<LabelWithSynonyms> result = new ArrayList<>();
-    List<String> namesToTranslate = new ArrayList<>();
     try {
       BufferedReader in = new BufferedReader(new FileReader(new File(filename)));
 
@@ -146,39 +96,19 @@ public class ConstellationProtoWriter {
         float dec = Float.parseFloat(tokens[1]);
 
 
-        if (CONSTELLATION_WHITELIST.remove(labelName)) {
-          System.out.println("Adding label for " + labelName);
-          LabelElementProto.Builder labelBuilder = LabelElementProto.newBuilder();
-          labelBuilder.setColor(LABEL_COLOR);
-          labelBuilder.setREMOVEStringIndex(rKeyFromName(labelName));
-          labelBuilder.setLocation(getCoords(ra, dec));
-          LabelWithSynonyms labelWithSynonyms = new LabelWithSynonyms(labelBuilder.build(), names);
-          result.add(labelWithSynonyms);
-          num++;
-        } else {
-          System.out.println("Not adding label for " + labelName);
-          namesToTranslate.add(labelName);
-        }
+        System.out.println("Adding label for " + labelName);
+        LabelElementProto.Builder labelBuilder = LabelElementProto.newBuilder();
+        labelBuilder.setColor(LABEL_COLOR);
+        labelBuilder.setREMOVEStringIndex(rKeyFromName(labelName));
+        labelBuilder.setLocation(getCoords(ra, dec));
+        LabelWithSynonyms labelWithSynonyms = new LabelWithSynonyms(labelBuilder.build(), names);
+        result.add(labelWithSynonyms);
+        num++;
 
       }
       in.close();
 
-      if (!CONSTELLATION_WHITELIST.isEmpty()) {
-        int i = 0;
-        for (String constellation : CONSTELLATION_WHITELIST) {
-          System.out.printf("Missing: %d/%d %s\n", ++i, CONSTELLATION_ARRAY_WHITELIST.length, constellation);
-        }
-
-        throw new RuntimeException();
-      }
-
       System.out.println("Number of constellation names added: " + num);
-      System.out.println("Missing translations: ");
-      for (String name : namesToTranslate) {
-        System.out.println(String.format(
-            "<string name=\"%s\" translation_description=\"Name of the %s constellation\">%s</string>",
-            rKeyFromName(name), name, name));
-      }
 
       return result;
     } catch (IOException e) {
