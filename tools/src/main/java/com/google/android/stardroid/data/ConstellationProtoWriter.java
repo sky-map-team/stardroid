@@ -32,6 +32,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Class for reading the constellation KML file and writing the contents to a
@@ -40,16 +41,55 @@ import java.util.List;
  * @author Brent Bryan
  */
 public class ConstellationProtoWriter {
-  private static String[] CONSTELLATION_ARRAY =
-      {"Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpius", "Sagittarius",
-          "Capricornus", "Aquarius", "Pisces", "Ophiuchus", "Orion", "Cassiopeia", "Ursa Major",
-          "Draco", "Crux", "Pegasus", "Andromeda", "Ursa Minor", "Canis Major", "Perseus",
-          "Hercules", "Aquila", "Cygnus", "Lyra", "Bootes", "Eridanus", "Carina", "Vela", "Puppis",
-          "Centaurus", "Auriga", "Pavo", "Hydrus", "Phoenix", "Piscis Austrinus", "Grus", "Cetus",
-          "Lupus", "Tucana"};
+  private static final double ANGULAR_TOLERANCE_FOR_COINCIDENCE = 0.001;
+  private static String[] CONSTELLATION_ARRAY_WHITELIST =
+      {
+      "Andromeda",
+      "Aquarius",
+      "Aquila",
+      "Aries",
+      "Auriga",
+      "Bootes",
+      "Cancer",
+      "Canis Major",
+      "Capricornus",
+      "Carina",
+      "Cassiopeia",
+      "Centaurus",
+      "Cetus",
+      "Crux",
+      "Cygnus",
+      "Draco",
+      "Eridanus",
+      "Gemini",
+      "Grus",
+      "Hercules",
+      "Hydrus",
+      "Leo",
+      "Libra",
+      "Lupus",
+      "Lyra",
+      "Ophiuchus",
+      "Orion",
+      "Pavo",
+      "Pegasus",
+      "Perseus",
+      "Phoenix",
+      "Pisces",
+      "Piscis Austrinus",
+      "Puppis",
+      "Sagittarius",
+      "Scorpius",
+      "Taurus",
+      "Tucana",
+      "Ursa Major",
+      "Ursa Minor",
+      "Vela",
+      "Virgo",
+      };
 
-  private static final HashSet<String> CONSTELLATIONS =
-      new HashSet<>(Arrays.asList(CONSTELLATION_ARRAY));
+  private static final HashSet<String> CONSTELLATION_WHITELIST =
+      new HashSet<>(Arrays.asList(CONSTELLATION_ARRAY_WHITELIST));
 
   private static int LABEL_COLOR = 0x80c97cb2;
 
@@ -105,7 +145,8 @@ public class ConstellationProtoWriter {
         float dec = Float.parseFloat(tokens[1]);
 
 
-        if (CONSTELLATIONS.remove(labelName)) {
+        if (CONSTELLATION_WHITELIST.remove(labelName)) {
+          System.out.println("Adding label for " + labelName);
           LabelElementProto.Builder labelBuilder = LabelElementProto.newBuilder();
           labelBuilder.setColor(LABEL_COLOR);
           labelBuilder.setREMOVEStringIndex(rKeyFromName(labelName));
@@ -113,15 +154,17 @@ public class ConstellationProtoWriter {
           LabelWithSynonyms labelWithSynonyms = new LabelWithSynonyms(labelBuilder.build(), names);
           result.add(labelWithSynonyms);
           num++;
+        } else {
+          System.out.println("Not adding label for " + labelName);
         }
 
       }
       in.close();
 
-      if (!CONSTELLATIONS.isEmpty()) {
+      if (!CONSTELLATION_WHITELIST.isEmpty()) {
         int i = 0;
-        for (String constellation : CONSTELLATIONS) {
-          System.out.printf("Missing: %d/%d %s\n", ++i, CONSTELLATION_ARRAY.length, constellation);
+        for (String constellation : CONSTELLATION_WHITELIST) {
+          System.out.printf("Missing: %d/%d %s\n", ++i, CONSTELLATION_ARRAY_WHITELIST.length, constellation);
         }
 
         throw new RuntimeException();
@@ -208,7 +251,7 @@ public class ConstellationProtoWriter {
   private static boolean sharePoint(LineElementProto p1, LineElementProto.Builder p2) {
     for (GeocentricCoordinatesProto v1 : p1.getVertexList()) {
       for (GeocentricCoordinatesProto v2 : p2.getVertexList()) {
-        if (getDistance(v1, v2) < 0.001) {
+        if (naiveAngularDistanceBetweenPoints(v1, v2) < ANGULAR_TOLERANCE_FOR_COINCIDENCE) {
           return true;
         }
       }
@@ -216,7 +259,13 @@ public class ConstellationProtoWriter {
     return false;
   }
 
-  private static double getDistance(GeocentricCoordinatesProto p1, GeocentricCoordinatesProto p2) {
+  /**
+   * Calculates the supposed angular distance between two points.
+   * It's not going to work near the poles - two identical points could have 90 deg dec and
+   * different RAs and this would calculate them as distant.
+   */
+  private static double naiveAngularDistanceBetweenPoints(
+      GeocentricCoordinatesProto p1, GeocentricCoordinatesProto p2) {
     double t = 0.0;
     t += (p1.getRightAscension() - p2.getRightAscension()) *
         (p1.getRightAscension() - p2.getRightAscension());
@@ -225,22 +274,29 @@ public class ConstellationProtoWriter {
   }
 
   private static AstronomicalSourcesProto combineLabelsConstellations(
-      List<LabelWithSynonyms> labels, AstronomicalSourcesProto.Builder constellations) {
+      Set<LabelWithSynonyms> labels, AstronomicalSourcesProto.Builder constellations) {
     AstronomicalSourcesProto.Builder result = AstronomicalSourcesProto.newBuilder();
+    System.out.println("Combining " + labels.size() + " labels with "
+        + constellations.getSourceList().size() + " constellations");
     for (AstronomicalSourceProto constellation : constellations.getSourceList()) {
-      ClosestConstellation cc = new ClosestConstellation();
-      for (LineElementProto line : constellation.getLineList()) {
-        for (GeocentricCoordinatesProto vertex : line.getVertexList()) {
-          cc = checkDistances(vertex, labels, cc);
+      GeocentricCoordinatesProto centroid = getNaiveCentroid(constellation);
+      double closestDistanceSoFar = Double.MAX_VALUE;
+      LabelWithSynonyms closestLabelSoFar = null;
+      for (LabelWithSynonyms label : labels) {
+        double labelConstellationDistance = naiveAngularDistanceBetweenPoints(
+            label.label.getLocation(), centroid);
+        if (labelConstellationDistance < closestDistanceSoFar) {
+          closestDistanceSoFar = labelConstellationDistance;
+          closestLabelSoFar = label;
         }
       }
-
       AstronomicalSourceProto.Builder sourceBuilder = AstronomicalSourceProto.newBuilder();
       sourceBuilder.mergeFrom(constellation);
-      if (cc.label != null) {
-        sourceBuilder.addLabel(cc.label);
-        sourceBuilder.setSearchLocation(cc.label.getLocation());
-        for (String name : cc.synonyms) {
+      if (closestLabelSoFar != null) {
+        labels.remove(closestLabelSoFar);
+        sourceBuilder.addLabel(closestLabelSoFar.label);
+        sourceBuilder.setSearchLocation(closestLabelSoFar.label.getLocation());
+        for (String name : closestLabelSoFar.synonyms) {
           sourceBuilder.addREMOVENameIds(rKeyFromName(name));
         }
       }
@@ -249,12 +305,31 @@ public class ConstellationProtoWriter {
     return result.build();
   }
 
+  private static GeocentricCoordinatesProto getNaiveCentroid(
+      AstronomicalSourceProto constellation) {
+    double ra = 0;
+    double dec = 0;
+    int count = 0;
+    for (LineElementProto line : constellation.getLineList()) {
+      for (GeocentricCoordinatesProto vertex : line.getVertexList()) {
+        ra += vertex.getRightAscension();
+        dec += vertex.getDeclination();
+        count++;
+      }
+    }
+    GeocentricCoordinatesProto result = GeocentricCoordinatesProto.newBuilder()
+        .setDeclination((float) (dec / count)).setRightAscension((float) ra / count).build();
+    return result;
+  }
+
   /** Returns the label which is closest to the given constellation center. */
+  // TODO(jontayler): ugh...there's nothing to stop the same label being applied
+  // to two constellations.
   private static ClosestConstellation checkDistances(GeocentricCoordinatesProto coords,
       List<LabelWithSynonyms> labels, ClosestConstellation cc) {
 
     for (LabelWithSynonyms l : labels) {
-      double dist = getDistance(coords, l.label.getLocation());
+      double dist = naiveAngularDistanceBetweenPoints(coords, l.label.getLocation());
       if (dist < cc.distance) {
         cc.label = l.label;
         cc.distance = dist;
@@ -264,6 +339,15 @@ public class ConstellationProtoWriter {
     return cc;
   }
 
+  /**
+   * Processes the constellation kml and turns it into a proto buffer.  Does a naive
+   * job of matching constellation labels to the constellations.  For each constellation we
+   * find the nearest label that hasn't yet been assigned.  This just guarantees that all
+   * the labels will be used - some are certainly going to be applied to the wrong
+   * constellation.
+   * TODO(johntaylor): correct the constellation name assignment before we allow individual
+   * constellations to be selected in the app.
+   */
   public static void main(String[] args) throws IOException {
     if (args.length != 2) {
       System.out.println("Usage: ConstellationWriter <inputfile> <outputprefix>");
@@ -274,8 +358,11 @@ public class ConstellationProtoWriter {
     args[1] = args[1].trim();
 
     List<LabelWithSynonyms> labels = readLabels(args[0]);
+    System.out.println("number of labels: " + labels.size());
     AstronomicalSourcesProto.Builder constellations = readLines(args[0]);
-    AstronomicalSourcesProto sources = combineLabelsConstellations(labels, constellations);
+    System.out.println("number of constellations: " + constellations.getSourceList().size());
+    AstronomicalSourcesProto sources = combineLabelsConstellations(
+        new HashSet(labels), constellations);
 
     PrintWriter writer = null;
     try {
