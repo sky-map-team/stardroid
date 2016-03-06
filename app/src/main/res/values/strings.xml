@@ -408,4 +408,14 @@
     <string name="orionids" translation_description="Meteor Shower">Orionids</string>
     <string name="puppidvelids" translation_description="Meteor Shower">Puppid-Velids</string>
     <string name="ursids" translation_description="Meteor Shower">Ursids</string>
+
+    <string name="no_sensor_warning">Your device lacks orientation sensors - automode unavailable</string>
+    <string name="warning_dialog_title">Warning</string>
+    <string name="missing_sensor_dialog_text">Unfortunately your device does not have one of the
+    sensors that Sky Map needs.
+
+        To show you the sky in the direction your phone is pointing Sky Map
+    needs a device that has both a built-in compass and an accelerometer.  You can still use Sky Map,
+    but only by dragging the map manually with your finger.</string>
+    <string name="do_not_show_again">Do not show this message again</string>
 </resources>

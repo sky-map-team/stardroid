@@ -2,6 +2,7 @@
 <string name="eula_text" translation_description="Please do not change the &lt; and &gt; markup">
     &lt;i&gt;New in version %s:&lt;/i&gt;&lt;br/&gt;
     *  Add missing constellation names (English only at present - sorry)&lt;br/&gt;
+    *  Add a warning to the (many) users whos phones lack an internal compass&lt;br/&gt;
     *  Fix for the \'pink rectangle\' issue reported by some Dutch users&lt;br/&gt;
     *  UI fixes&lt;br/&gt;
     &lt;br/&gt;&lt;br/&gt;
