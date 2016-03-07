@@ -21,6 +21,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
 import android.media.MediaPlayer;
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
@@ -119,6 +121,7 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
   }
 
   private static final String AUTO_MODE_PREF_KEY = "auto_mode";
+  public static final String NO_WARN_ABOUT_MISSING_SENSORS = "no warn about missing sensors";
   private static final String BUNDLE_TARGET_NAME = "target_name";
   private static final String BUNDLE_NIGHT_MODE = "night_mode";
   private static final String BUNDLE_X_TARGET = "bundle_x_target";
@@ -138,6 +141,7 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
   private RendererController rendererController;
   private boolean nightMode = false;
   private boolean searchMode = false;
+  private boolean disableAutoMode = false;
   private GeocentricCoordinates searchTarget = GeocentricCoordinates.getInstance(0, 0);
   private SharedPreferences sharedPreferences;
   private GLSurfaceView skyView;
@@ -150,10 +154,9 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
   private DialogFactory dialogFactory;
   private MediaPlayer timeTravelNoise;
   private MediaPlayer timeTravelBackNoise;
-  //KmlManager kmlManager;
   private Handler handler = new Handler();
   // A list of runnables to post on the handler when we resume.
-  private List<Runnable> runnables = new ArrayList<Runnable>();
+  private List<Runnable> onResumeRunnables = new ArrayList<>();
 
   // We need to maintain references to these objects to keep them from
   // getting gc'd.
@@ -169,7 +172,7 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
     int versionCode = ((StardroidApplication) getApplication()).getVersion();
     boolean eulaConfirmed = (prefs.getInt(READ_TOS_PREF_VERSION, -1) == versionCode);
     if (!eulaConfirmed) {
-      showDialog(DialogFactory.DIALOG_EULA_WITH_BUTTONS);
+      showDialog(DialogFactory.DIALOG_ID_EULA_WITH_BUTTONS);
     }
   }
 
@@ -184,11 +187,11 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
   public void onCreate(Bundle icicle) {
     Log.d(TAG, "onCreate at " + System.currentTimeMillis());
     super.onCreate(icicle);
+    sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
     timeTravelNoise = MediaPlayer.create(this, R.raw.timetravel);
     timeTravelBackNoise = MediaPlayer.create(this, R.raw.timetravelback);
     flashAnimation = AnimationUtils.loadAnimation(this, R.anim.timetravelflash);
-    dialogFactory = new DialogFactory(this);
-    sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+    dialogFactory = new DialogFactory(this, sharedPreferences);
     sharedPreferences.registerOnSharedPreferenceChangeListener(this);
     maybeShowEula(sharedPreferences);
 
@@ -205,18 +208,11 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
 
     model = StardroidApplication.getModel();
     layerManager = StardroidApplication.getLayerManager(getAssets(),
-                                                        sharedPreferences,
-                                                        getResources(),
-                                                        this);
+        sharedPreferences,
+        getResources(),
+        this);
+    checkForSensorsAndMaybeWarn();
     initializeModelViewController();
-
-    // We want to reset to auto mode on every restart, as users seem to get
-    // stuck in manual mode and can't find their way out.
-    // TODO(johntaylor): this is a bit of an abuse of the prefs system, but
-    // the button we use is wired into the preferences system.  Should probably
-    // change this to a use a different mechanism.
-    sharedPreferences.edit().putBoolean(AUTO_MODE_PREF_KEY, true).commit();
-    setAutoMode(true);
 
     // Search related
     setDefaultKeyMode(DEFAULT_KEYS_SEARCH_LOCAL);
@@ -241,6 +237,43 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
       doSearchWithIntent(intent);
     }
     Log.d(TAG, "-onCreate at " + System.currentTimeMillis());
+  }
+
+  private void checkForSensorsAndMaybeWarn() {
+    SensorManager sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+    if (sensorManager != null && sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER) != null
+        && sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD) != null) {
+      Log.i(TAG, "Minimum sensors present");
+      // We want to reset to auto mode on every restart, as users seem to get
+      // stuck in manual mode and can't find their way out.
+      // TODO(johntaylor): this is a bit of an abuse of the prefs system, but
+      // the button we use is wired into the preferences system.  Should probably
+      // change this to a use a different mechanism.
+      sharedPreferences.edit().putBoolean(AUTO_MODE_PREF_KEY, true).apply();
+      setAutoMode(true);
+      return;
+    }
+    // Missing at least one sensor.  Warn the user.
+    disableAutoMode = true;
+    handler.post(new Runnable() {
+      @Override
+      public void run() {
+        if (!sharedPreferences.getBoolean(NO_WARN_ABOUT_MISSING_SENSORS, false)) {
+          Log.d(TAG, "showing no sensor dialog");
+          // TODO(jontayler): refactor to use dialog fragments.
+          showDialog(DialogFactory.DIALOG_ID_NO_SENSORS);
+        } else {
+          Log.d(TAG, "showing no sensor toast");
+          Toast.makeText(
+              DynamicStarMapActivity.this, R.string.no_sensor_warning, Toast.LENGTH_LONG).show();
+        }
+        // Force manual mode and remove the button
+        sharedPreferences.edit().putBoolean(AUTO_MODE_PREF_KEY, false).apply();
+        setAutoMode(false);
+        findViewById(R.id.layer_manual_auto_toggle).setVisibility(View.INVISIBLE);
+        disableAutoMode = true;
+      }
+    });
   }
 
   @Override
@@ -296,6 +329,7 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
   @Override
   public boolean onOptionsItemSelected(MenuItem item) {
     super.onOptionsItemSelected(item);
+    fullscreenControlsManager.delayHideTheControls();
     switch (item.getItemId()) {
       case R.id.menu_item_search:
         Log.d(TAG, "Search");
@@ -345,7 +379,7 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
         Log.d(TAG, "Loading ToS");
         Analytics.getInstance(this).trackEvent(Analytics.USER_ACTION_CATEGORY,
             Analytics.MENU_ITEM, Analytics.TOS_OPENED_LABEL, 1);
-        showDialog(DialogFactory.DIALOG_EULA_NO_BUTTONS);
+        showDialog(DialogFactory.DIALOG_ID_EULA_NO_BUTTONS);
         break;
       default:
         Log.e(TAG, "Unwired-up menu item");
@@ -406,7 +440,7 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
     Log.i(TAG, "Starting controller");
     controller.start();
     activityLightLevelManager.onResume();
-    for (Runnable runnable : runnables) {
+    for (Runnable runnable : onResumeRunnables) {
       handler.post(runnable);
     }
     Log.d(TAG, "-onResume at " + System.currentTimeMillis());
@@ -466,7 +500,7 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
   public void onPause() {
     Log.d(TAG, "DynamicStarMap onPause");
     super.onPause();
-    for (Runnable runnable : runnables) {
+    for (Runnable runnable : onResumeRunnables) {
       handler.removeCallbacks(runnable);
     }
     activityLightLevelManager.onPause();
@@ -482,21 +516,21 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
     Log.d(TAG, "Preferences changed: key=" + key);
 
     if (!key.equals(AUTO_MODE_PREF_KEY)) return;
-    final boolean mode = sharedPreferences.getBoolean(key, true);
-    Log.d(TAG, "Automode is set to " + mode);
-    if (!mode) {
+    final boolean autoMode = sharedPreferences.getBoolean(key, true);
+    Log.d(TAG, "Automode is set to " + autoMode);
+    if (!autoMode) {
       Log.d(TAG, "Switching to manual control");
       Toast.makeText(DynamicStarMapActivity.this, R.string.set_manual, Toast.LENGTH_SHORT).show();
     } else {
       Log.d(TAG, "Switching to sensor control");
       Toast.makeText(DynamicStarMapActivity.this, R.string.set_auto, Toast.LENGTH_SHORT).show();
     }
-    setAutoMode(mode);
+    setAutoMode(autoMode);
   }
 
   @Override
   public boolean onTouchEvent(MotionEvent event) {
-    Log.d(TAG, "Touch event " + event);
+    // Log.d(TAG, "Touch event " + event);
     // Either of the following detectors can absorb the event, but one
     // must not hide it from the other
     boolean eventAbsorbed = false;
@@ -511,7 +545,7 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
 
   @Override
   public boolean onTrackballEvent(MotionEvent event) {
-    Log.d(TAG, "Trackball motion " + event);
+    // Log.d(TAG, "Trackball motion " + event);
     controller.rotate(event.getX() * ROTATION_SPEED);
     return true;
   }
@@ -581,34 +615,28 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
       }
     });
 
-    final ButtonLayerView providerButtons = (ButtonLayerView) findViewById(R.id.layer_buttons_control);
-    /*final WidgetFader layerControlFader = new WidgetFader(providerButtons, LONG_FADE_TIME_MS);
-    providerButtons.hide();
+    ButtonLayerView providerButtons = (ButtonLayerView) findViewById(R.id.layer_buttons_control);
 
-    */
     int numChildren = providerButtons.getChildCount();
-    View[] buttonViews = new View[numChildren + 1];
+    List<View> buttonViews = new ArrayList<>();
     for (int i = 0; i < numChildren; ++i) {
-      final ImageButton button = (ImageButton) providerButtons.getChildAt(i);
-      buttonViews[i] = button;
+      ImageButton button = (ImageButton) providerButtons.getChildAt(i);
+      buttonViews.add(button);
     }
-    buttonViews[numChildren] = findViewById(R.id.manual_auto_toggle);
-    final ButtonLayerView manualButtonLayer = (ButtonLayerView) findViewById(R.id.layer_manual_auto_toggle);
+    buttonViews.add(findViewById(R.id.manual_auto_toggle));
+    ButtonLayerView manualButtonLayer = (ButtonLayerView) findViewById(R.id.layer_manual_auto_toggle);
 
-    //final WidgetFader manualControlFader = new WidgetFader(manualButtonLayer, LONG_FADE_TIME_MS);
-    //manualButtonLayer.hide();
-    /*final ImageButton manualAuto = (ImageButton) findViewById(R.id.manual_auto_toggle);
-    manualAuto.setOnClickListener(new OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        manualControlFader.keepActive();
-      }
-    });*/
+    List<View> viewsToShowOrHide = new ArrayList<>();
+    if (!disableAutoMode) {
+      // We don't want this coming back on a screen tap if the phone doesn't support manual mode.
+      viewsToShowOrHide.add(manualButtonLayer);
+    }
+    viewsToShowOrHide.add(providerButtons);
 
     fullscreenControlsManager = new FullscreenControlsManager(
         this,
         findViewById(R.id.main_sky_view),
-        new View[]{manualButtonLayer, providerButtons},
+        viewsToShowOrHide,
         buttonViews);
 
     MapMover mapMover = new MapMover(model, controller, this);
@@ -760,7 +788,7 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
         handler.postDelayed(this, TIME_DISPLAY_DELAY_MILLIS);
       }
     };
-    runnables.add(displayUpdater);
+    onResumeRunnables.add(displayUpdater);
   }
 
   public AstronomerModel getModel() {

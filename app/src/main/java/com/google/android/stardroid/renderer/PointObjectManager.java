@@ -193,8 +193,8 @@ public class PointObjectManager extends RendererObjectManager {
         data.mVertexBuffer.addPoint(topRightPos);
         data.mColorBuffer.addColor(color);
       }
-      Log.i("PointObjectManager",
-            "Vertices: " + data.mVertexBuffer.size() + ", Indices: " + data.mIndexBuffer.size());
+      //Log.i("PointObjectManager",
+      //      "Vertices: " + data.mVertexBuffer.size() + ", Indices: " + data.mIndexBuffer.size());
       data.sources = null;
     }
   }

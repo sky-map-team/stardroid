@@ -14,6 +14,8 @@
 
 package com.google.android.stardroid.touch;
 
+//import android.util.Log;
+
 import android.util.Log;
 import android.view.MotionEvent;
 

@@ -82,7 +82,7 @@ public class StardroidApplication extends Application {
     super.onCreate();
 
     Log.i(TAG, "OS Version: " + android.os.Build.VERSION.RELEASE
-            + "(" + android.os.Build.VERSION.SDK + ")");
+            + "(" + android.os.Build.VERSION.SDK_INT + ")");
     String versionName = getVersionName();
     Log.i(TAG, "Sky Map version " + versionName + " build " + getVersion());
     backgroundExecutor = new ScheduledThreadPoolExecutor(1);
@@ -235,7 +235,7 @@ public class StardroidApplication extends Application {
    */
   private void performFeatureCheck() {
     Analytics analytics = Analytics.getInstance(this);
-    SensorManager sensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
+    SensorManager sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
     if (sensorManager == null) {
       Log.e(TAG, "No sensor manager");
       analytics.trackEvent(

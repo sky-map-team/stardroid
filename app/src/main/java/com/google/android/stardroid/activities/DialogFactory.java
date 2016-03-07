@@ -18,12 +18,14 @@ import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.text.Html;
 import android.text.Spanned;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import com.google.android.stardroid.R;
@@ -44,25 +46,30 @@ import java.util.List;
  *
  * @author John Taylor
  */
+// TODO(jontayler): rework this into dialog fragments.
 public class DialogFactory {
+  private static final String TAG = MiscUtil.getTag(DialogFactory.class);
+
   static final int DIALOG_ID_TIME_TRAVEL = 1;
   static final int DIALOG_ID_MULTIPLE_SEARCH_RESULTS = 2;
   static final int DIALOG_ID_NO_SEARCH_RESULTS = 3;
   static final int DIALOG_ID_HELP = 4;
-  static final int DIALOG_EULA_NO_BUTTONS = 5;
-  static final int DIALOG_EULA_WITH_BUTTONS = 6;
+  static final int DIALOG_ID_EULA_NO_BUTTONS = 5;
+  static final int DIALOG_ID_EULA_WITH_BUTTONS = 6;
+  static final int DIALOG_ID_NO_SENSORS = 7;
 
   private DynamicStarMapActivity parentActivity;
   private ArrayAdapter<SearchResult> multipleSearchResultsAdaptor;
-  private static final String TAG = MiscUtil.getTag(DialogFactory.class);
+  private SharedPreferences preferences;
 
   /**
    * Constructor.
    *
    * @param parentActivity the parent activity showing these dialogs.
    */
-  public DialogFactory(DynamicStarMapActivity parentActivity) {
+  public DialogFactory(DynamicStarMapActivity parentActivity, SharedPreferences preferences) {
     this.parentActivity = parentActivity;
+    this.preferences = preferences;
     multipleSearchResultsAdaptor = new ArrayAdapter<>(
         parentActivity, android.R.layout.simple_list_item_1, new ArrayList<SearchResult>());
   }
@@ -80,12 +87,32 @@ public class DialogFactory {
         return createMultipleSearchResultsDialog();
       case (DialogFactory.DIALOG_ID_TIME_TRAVEL):
         return createTimeTravelDialog();
-      case (DIALOG_EULA_NO_BUTTONS):
+      case (DIALOG_ID_EULA_NO_BUTTONS):
         return createTermsOfServiceDialog(true);
-      case (DIALOG_EULA_WITH_BUTTONS):
+      case (DIALOG_ID_EULA_WITH_BUTTONS):
         return createTermsOfServiceDialog(false);
+      case (DIALOG_ID_NO_SENSORS):
+        return createNoSensorsDialog();
     }
     throw new RuntimeException("Unknown dialog Id.");
+  }
+
+  private Dialog createNoSensorsDialog() {
+    LayoutInflater inflater = parentActivity.getLayoutInflater();
+    final View view = inflater.inflate(R.layout.no_sensor_warning, null);
+    AlertDialog alertDialog = new Builder(parentActivity)
+        .setTitle(R.string.warning_dialog_title)
+        .setView(view).setNegativeButton(android.R.string.ok,
+            new DialogInterface.OnClickListener() {
+              public void onClick(DialogInterface dialog, int whichButton) {
+                Log.d(TAG, "No Sensor Dialog closed");
+                preferences.edit().putBoolean(
+                    DynamicStarMapActivity.NO_WARN_ABOUT_MISSING_SENSORS,
+                    ((CheckBox) view.findViewById(R.id.no_show_dialog_again)).isChecked()).commit();
+                    dialog.dismiss();
+              }
+            }).create();
+    return alertDialog;
   }
 
   /**
@@ -114,7 +141,7 @@ public class DialogFactory {
     return ((StardroidApplication) parentActivity.getApplication()).getVersionName();
   }
 
-    /**
+  /**
    * Creates and returns a dialog indicating that no search results were found.
    */
   private Dialog createNoSearchResultsDialog() {
