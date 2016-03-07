@@ -100,7 +100,7 @@ public class DialogFactory {
   private Dialog createNoSensorsDialog() {
     LayoutInflater inflater = parentActivity.getLayoutInflater();
     final View view = inflater.inflate(R.layout.no_sensor_warning, null);
-    final AlertDialog alertDialog = new Builder(parentActivity)
+    AlertDialog alertDialog = new Builder(parentActivity)
         .setTitle(R.string.warning_dialog_title)
         .setView(view).setNegativeButton(android.R.string.ok,
             new DialogInterface.OnClickListener() {

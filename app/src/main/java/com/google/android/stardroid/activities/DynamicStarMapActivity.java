@@ -121,7 +121,7 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
   }
 
   private static final String AUTO_MODE_PREF_KEY = "auto_mode";
-  public static final String NO_WARN_ABOUT_MISSING_SENSORS = "warn about no sensors";
+  public static final String NO_WARN_ABOUT_MISSING_SENSORS = "no warn about missing sensors";
   private static final String BUNDLE_TARGET_NAME = "target_name";
   private static final String BUNDLE_NIGHT_MODE = "night_mode";
   private static final String BUNDLE_X_TARGET = "bundle_x_target";
