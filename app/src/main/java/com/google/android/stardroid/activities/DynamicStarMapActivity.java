@@ -211,7 +211,7 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
         sharedPreferences,
         getResources(),
         this);
-    checkForSensorsAndMaybeWarn();
+
     initializeModelViewController();
 
     // Search related
@@ -596,6 +596,7 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
     Log.i(TAG, "Set up controllers @ " + System.currentTimeMillis());
     controller = ControllerGroup.createControllerGroup(this);
     controller.setModel(model);
+    checkForSensorsAndMaybeWarn();
     wireUpScreenControls(); // TODO(johntaylor) move these?
     magneticSwitcher = new MagneticDeclinationCalculatorSwitcher(model, sharedPreferences);
     wireUpTimePlayer();  // TODO(widdows) move these?
