@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translation_description="Application Title">Google 星空地图</string>
+    <string name="app_name" translation_description="Application Title">星空地图</string>
     <string name="menu_settings">设置</string>
     <string name="menu_search">搜索</string>
     <string name="cancel">取消</string>
@@ -45,7 +45,7 @@
     <string name="dialog_accept" translation_description="accepting the licence agreement">接受</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">否</string>
     <string name="menu_help" translation_description="menu item to show \'Help\' box">帮助</string>
-    <string name="help_dialog_title">Google 星空地图帮助</string>
+    <string name="help_dialog_title">星空地图帮助</string>
     <string name="eula_dialog_title">最终用户许可协议</string>
     <string name="set_manual">切换到手动模式</string>
     <string name="set_auto">切换到自动模式</string>
@@ -98,7 +98,7 @@
     <string name="menu_gallery">图片库</string>
     <string name="gallery_image_search_btn">在星空中查找</string>
     <string name="gallery_image_back_btn">返回图片库</string>
-    <string name="hubble_image_gallery_title">Google 星空地图哈勃图片库</string>
+    <string name="hubble_image_gallery_title">星空地图哈勃图片库</string>
     <string name="hubble_image">哈勃图片</string>
     <string name="search_target_found_message" translation_description="displayed when a search target has been located">您找到：</string>
     <string name="search_overlay_title" translation_description="title for search overlay">将手机朝向箭头所指的方向</string>
