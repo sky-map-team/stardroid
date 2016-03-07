@@ -241,7 +241,7 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
 
   private void checkForSensorsAndMaybeWarn() {
     SensorManager sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
-    if (sensorManager != null && sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER) == null
+    if (sensorManager != null && sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER) != null
         && sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD) != null) {
       Log.i(TAG, "Minimum sensors present");
       // We want to reset to auto mode on every restart, as users seem to get
