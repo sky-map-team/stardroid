@@ -411,11 +411,13 @@
 
     <string name="no_sensor_warning">Your device lacks orientation sensors - automode unavailable</string>
     <string name="warning_dialog_title">Warning</string>
-    <string name="missing_sensor_dialog_text">Unfortunately your device does not have one of the
-    sensors that Sky Map needs.
-
+    <string name="missing_sensor_dialog_text">\n
+        Unfortunately your device does not have one of the
+    sensors that Sky Map needs.\n\n
         To show you the sky in the direction your phone is pointing Sky Map
-    needs a device that has both a built-in compass and an accelerometer.  You can still use Sky Map,
-    but only by dragging the map manually with your finger.</string>
+    needs both a built-in compass and an accelerometer.\n\n
+        You can still use Sky Map on this device,
+    but only in manual mode where you drag, rotate and stretch the map manually with your fingers.
+    </string>
     <string name="do_not_show_again">Do not show this message again</string>
 </resources>
