@@ -14,17 +14,20 @@
 
 package com.google.android.stardroid.control;
 
-import com.google.android.stardroid.util.MiscUtil;
-import com.google.android.stardroid.util.smoothers.ExponentiallyWeightedSmoother;
-import com.google.android.stardroid.util.smoothers.PlainSmootherModelAdaptor;
-
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
+import android.hardware.Sensor;
 import android.hardware.SensorListener;
 import android.hardware.SensorManager;
 import android.preference.PreferenceManager;
 import android.util.Log;
+
+import com.google.android.stardroid.util.Analytics;
+import com.google.android.stardroid.util.MiscUtil;
+import com.google.android.stardroid.util.SensorAccuracyReporter;
+import com.google.android.stardroid.util.smoothers.ExponentiallyWeightedSmoother;
+import com.google.android.stardroid.util.smoothers.PlainSmootherModelAdaptor;
 
 /**
  * Sets the direction of view from the orientation sensors.
@@ -72,6 +75,7 @@ public class SensorOrientationController extends AbstractController
   private SensorListener accelerometerSmoother;
   private SensorListener compassSmoother;
   private PlainSmootherModelAdaptor modelAdaptor;
+  private SensorAccuracyReporter accuracyReporter;
 
   private SharedPreferences sharedPreferences;
 
@@ -79,6 +83,7 @@ public class SensorOrientationController extends AbstractController
     manager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
     sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
     sharedPreferences.registerOnSharedPreferenceChangeListener(this);
+    accuracyReporter = new SensorAccuracyReporter(Analytics.getInstance(context));
   }
 
   @Override
@@ -118,6 +123,12 @@ public class SensorOrientationController extends AbstractController
       manager.registerListener(compassSmoother,
                                SensorManager.SENSOR_MAGNETIC_FIELD,
                                sensorSpeed);
+      manager.registerListener(
+          accuracyReporter, manager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
+          SensorManager.SENSOR_DELAY_NORMAL);
+      manager.registerListener(
+          accuracyReporter, manager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD),
+          SensorManager.SENSOR_DELAY_NORMAL);
     }
     Log.d(TAG, "Registered sensor listener");
   }
