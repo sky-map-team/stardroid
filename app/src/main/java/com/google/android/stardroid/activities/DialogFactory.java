@@ -215,24 +215,26 @@ public class DialogFactory {
       TextView eulaTextView = (TextView) view.findViewById(R.id.eula_box_text);
       eulaTextView.setText(formattedText, TextView.BufferType.SPANNABLE);
 
+      // Note that we've made the "accept" button the negative button and the "decline" button
+      // the positive button as an experiment.
       if (!hideButtons) {
         tosDialog = new Builder(parentActivity)
             .setTitle(string.menu_tos)
             .setView(view)
-            .setPositiveButton(string.dialog_accept,
+            .setNegativeButton(string.dialog_accept,
                 new DialogInterface.OnClickListener() {
                   public void onClick(DialogInterface dialog, int whichButton) {
-                    Log.d(TAG, "TOS Dialog closed.  User he say yes.");
+                    Log.d(TAG, "TOS Dialog closed.  User accepts.");
                     parentActivity.recordEulaAccepted();
                     dialog.dismiss();
                     Analytics.getInstance(parentActivity).trackEvent(
                         Analytics.APP_CATEGORY, Analytics.TOS_ACCEPT, Analytics.TOS_ACCEPTED, 1);
                   }
                 })
-           .setNegativeButton(string.dialog_decline,
+           .setPositiveButton(string.dialog_decline,
                new DialogInterface.OnClickListener() {
                  public void onClick(DialogInterface dialog, int whichButton) {
-                   Log.d(TAG, "TOS Dialog closed.  User he say no.");
+                   Log.d(TAG, "TOS Dialog closed.  User declines.");
                    dialog.dismiss();
                    Analytics.getInstance(parentActivity).trackEvent(
                        Analytics.APP_CATEGORY, Analytics.TOS_ACCEPT, Analytics.TOS_REJECTED, 0);
