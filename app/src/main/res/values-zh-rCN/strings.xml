@@ -157,7 +157,7 @@
     <string name="eridanus" translation_description="Name of the Eridanus constellation">波江座</string>
     <string name="gemini" translation_description="Name of the Gemini constellation">双子座</string>
     <string name="grus" translation_description="Name of the Grus constellation">天鹤座</string>
-    <string name="hercules" translation_description="Name of the Hercules constellation">武仙座（北河三）</string>
+    <string name="hercules" translation_description="Name of the Hercules constellation">武仙座</string>
     <string name="hydrus" translation_description="Name of the Hydrus constellation">水蛇座</string>
     <string name="leo" translation_description="Name of the Leo constellation">狮子座</string>
     <string name="libra" translation_description="Name of the Libra constellation">天秤座</string>
@@ -225,9 +225,9 @@
     <string name="hamal" translation_description="Name of the Star Hamal">娄宿三（白羊座 α）</string>
     <string name="algieba" translation_description="Name of the Star Algieba">轩辕十二（狮子座 γ）</string>
     <string name="diphda" translation_description="Name of the Star Diphda">土司空（鲸鱼座 β）</string>
-    <string name="nunki" translation_description="Name of the Star Nunki">斗宿四（射手座 s）</string>
+    <string name="nunki" translation_description="Name of the Star Nunki">斗宿四（人马座 s）</string>
     <string name="mirach" translation_description="Name of the Star Mirach">奎宿九（仙女座 β）</string>
-    <string name="alpheratz" translation_description="Name of the Star Alpheratz">壁宿二（猎犬座 α）</string>
+    <string name="alpheratz" translation_description="Name of the Star Alpheratz">壁宿二（仙女座 α）</string>
     <string name="saiph" translation_description="Name of the Star Saiph">参宿六（猎户座 κ）</string>
     <string name="kochab" translation_description="Name of the Star Kochab">北极二（小熊座 β）</string>
     <string name="rasalhague" translation_description="Name of the Star Rasalhague">侯（蛇夫座 α）</string>
@@ -235,7 +235,7 @@
     <string name="denebola" translation_description="Name of the Star Denebola">五帝座一（狮子座 β）</string>
     <string name="alphekka" translation_description="Name of the Star Alphekka">贯索四（北冕座 α）</string>
     <string name="etamin" translation_description="Name of the Star Etamin">天棓四（天龙座 γ）</string>
-    <string name="kaus" translation_description="Name of the Star Kaus">箕宿三（射手座 e）</string>
+    <string name="kaus" translation_description="Name of the Star Kaus">箕宿三（人马座 e）</string>
     <string name="shedir" translation_description="Name of the Star Shedir">王良四（仙后座 α）</string>
     <string name="caph" translation_description="Name of the Star Caph">王良一（仙后座 β）</string>
     <string name="izar" translation_description="Name of the Star Izar">梗河一（牧夫座 ε）</string>
@@ -244,7 +244,7 @@
     <string name="ankaa" translation_description="Name of the Star Ankaa">火鸟六（凤凰座 α）</string>
     <string name="phad" translation_description="Name of the Star Phad">天玑（大熊座 γ）</string>
     <string name="alderamin" translation_description="Name of the Star Alderamin">天钩五（仙王座 α）</string>
-    <string name="scheat" translation_description="Name of the Star Scheat">室宿二（天马座 β）</string>
+    <string name="scheat" translation_description="Name of the Star Scheat">室宿二（飞马座 β）</string>
     <string name="markab" translation_description="Name of the Star Markab">室宿一（飞马座 α）</string>
     <string name="menkar" translation_description="Name of the Star Menkar">天囷一（鲸鱼座 α）</string>
     <string name="arneb" translation_description="Name of the Star Arneb">厕一（天兔座 α）</string>
@@ -379,4 +379,5 @@
     <string name="load_kml_dialog_title">载入 KML</string>
     <string name="load_kml_file">载入</string>
 </resources>
+
 
