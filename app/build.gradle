@@ -8,8 +8,8 @@ android {
         applicationId "com.google.android.stardroid"
         minSdkVersion 10
         targetSdkVersion 10
-        versionCode 1201
-        versionName "1.7.0"
+        versionCode 1202
+        versionName "1.7.1"
         buildConfigField 'String', 'GOOGLE_ANALYTICS_CODE', '""'
     }
     signingConfigs {
