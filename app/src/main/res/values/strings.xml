@@ -34,7 +34,7 @@
     <string name="show_stars_pref">Stars</string>
     <string name="show_constellations_pref">Constellations</string>
     <string name="show_messier_objects_pref" translation_description="The celestial objects catalogued by Charles Messier">Messier Objects</string>
-    <string name="show_planets_pref">Planets</string>
+    <string name="show_planets_pref">Solar System</string>
     <string name="show_grid_pref">RA/Dec Grid</string>
     <string name="show_horizon_pref">Horizon</string>
     <string name="show_sky_gradient" translation_description="This is a shading of the color of the sky used for effect">Sky Gradient</string>
@@ -149,7 +149,6 @@
     <string name="control_panel_btn" translation_description="Label for the control panel button">Control Panel</string>
     <string name="allow_rotation_pref" translation_description="preference to enable rotation of the map with a two finger movement">Multitouch rotation</string>
     <string name="allow_rotation_pref_desc" translation_description="a qualification for the Multitouch rotation option">if supported by the phone</string>
-
     <string name="north_pole">NP</string>
     <string name="south_pole">SP</string>
 
@@ -208,6 +207,7 @@
     <string name="canopus" translation_description="Name of the Star Canopus">Canopus</string>
     <string name="arcturus" translation_description="Name of the Star Arcturus">Arcturus</string>
     <string name="rigel_kentaurus_a" translation_description="Name of the Star Rigel Kentaurus A">Rigel Kentaurus A</string>
+    <string name="rigil_kentaurus_a" translation_description="Name of the Star Rigil Kentaurus A">Rigil Kentaurus A</string>
     <string name="vega" translation_description="Name of the Star Vega">Vega</string>
     <string name="rigel" translation_description="Name of the Star Rigel">Rigel</string>
     <string name="procyon" translation_description="Name of the Star Procyon">Procyon</string>
@@ -409,4 +409,16 @@
     <string name="orionids" translation_description="Meteor Shower">Orionids</string>
     <string name="puppidvelids" translation_description="Meteor Shower">Puppid-Velids</string>
     <string name="ursids" translation_description="Meteor Shower">Ursids</string>
+
+    <string name="no_sensor_warning">Your device lacks orientation sensors - automode unavailable</string>
+    <string name="warning_dialog_title">Warning</string>
+    <string name="missing_sensor_dialog_text">\n
+        Unfortunately your device does not have one of the
+    sensors that Sky Map needs.\n\n
+        To show you the sky in the direction your phone is pointing Sky Map
+    needs both a built-in compass and an accelerometer.\n\n
+        You can still use Sky Map on this device,
+    but only in manual mode where you drag, rotate and stretch the map manually with your fingers.
+    </string>
+    <string name="do_not_show_again">Do not show this message again</string>
 </resources>
