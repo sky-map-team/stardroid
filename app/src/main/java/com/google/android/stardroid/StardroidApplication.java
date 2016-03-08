@@ -239,28 +239,28 @@ public class StardroidApplication extends Application {
     if (sensorManager == null) {
       Log.e(TAG, "No sensor manager");
       analytics.trackEvent(
-          Analytics.APP_CATEGORY, Analytics.SENSOR_AVAILABILITY, "No Sensor Manager", 0);
+          Analytics.SENSOR_CATEGORY, Analytics.SENSOR_AVAILABILITY, "No Sensor Manager", 0);
     }
     // Minimum requirements
     if (sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER) != null) {
       if (sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD) != null) {
         Log.i(TAG, "Minimal sensors available");
         analytics.trackEvent(
-            Analytics.APP_CATEGORY, Analytics.SENSOR_AVAILABILITY, "Minimal Sensors: Yes", 1);
+            Analytics.SENSOR_CATEGORY, Analytics.SENSOR_AVAILABILITY, "Minimal Sensors: Yes", 1);
       } else {
         Log.e(TAG, "No magnetic field sensor");
         analytics.trackEvent(
-            Analytics.APP_CATEGORY, Analytics.SENSOR_AVAILABILITY, "No Mag Field Sensor", 0);
+            Analytics.SENSOR_CATEGORY, Analytics.SENSOR_AVAILABILITY, "No Mag Field Sensor", 0);
       }
     } else {
       if (sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD) != null) {
         Log.e(TAG, "No accelerometer");
         analytics.trackEvent(
-            Analytics.APP_CATEGORY, Analytics.SENSOR_AVAILABILITY, "No Accel Sensor", 0);
+            Analytics.SENSOR_CATEGORY, Analytics.SENSOR_AVAILABILITY, "No Accel Sensor", 0);
       } else {
         Log.e(TAG, "No magnetic field sensor or accelerometer");
         analytics.trackEvent(
-            Analytics.APP_CATEGORY, Analytics.SENSOR_AVAILABILITY, "No Mag Field/Accel Sensors", 0);
+            Analytics.SENSOR_CATEGORY, Analytics.SENSOR_AVAILABILITY, "No Mag Field/Accel Sensors", 0);
       }
     }
 
@@ -273,11 +273,11 @@ public class StardroidApplication extends Application {
       if (sensorManager.getDefaultSensor(sensorType) == null) {
         Log.i(TAG, "No sensor of type " + sensorType);
         analytics.trackEvent(
-            Analytics.APP_CATEGORY, Analytics.SENSOR_TYPE + sensorType, "Sensor Absent", 0);
+            Analytics.SENSOR_CATEGORY, Analytics.SENSOR_TYPE + sensorType, "Sensor Absent", 0);
       } else {
         Log.i(TAG, "Sensor present of type " + sensorType);
         analytics.trackEvent(
-            Analytics.APP_CATEGORY, Analytics.SENSOR_TYPE + sensorType, "Sensor Present", 1);
+            Analytics.SENSOR_CATEGORY, Analytics.SENSOR_TYPE + sensorType, "Sensor Present", 1);
       }
     }
 
@@ -287,21 +287,13 @@ public class StardroidApplication extends Application {
     Set<String> sensorTypes = new HashSet<>();
     for (Sensor sensor : allSensors) {
       Log.i(TAG, sensor.getName());
-      sensorTypes.add(getSafeNameForSensor(sensor));
+      sensorTypes.add(Analytics.getSafeNameForSensor(sensor));
     }
     Log.d(TAG, "All sensors summary:");
     for (String sensorType : sensorTypes) {
       Log.i(TAG, sensorType);
       analytics.trackEvent(
-          Analytics.APP_CATEGORY, Analytics.SENSOR_NAME, sensorType, 1);
-    }
-  }
-
-  private static String getSafeNameForSensor(Sensor sensor) {
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT_WATCH) {
-      return "Sensor type: " + sensor.getStringType() + ": " + sensor.getType();
-    } else {
-     return "Sensor type: " + sensor.getType();
+          Analytics.SENSOR_CATEGORY, Analytics.SENSOR_NAME, sensorType, 1);
     }
   }
 }

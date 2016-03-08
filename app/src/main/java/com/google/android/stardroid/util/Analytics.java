@@ -15,6 +15,8 @@
 package com.google.android.stardroid.util;
 
 import android.content.Context;
+import android.hardware.Sensor;
+import android.os.Build;
 import android.util.Log;
 
 import com.google.android.apps.analytics.GoogleAnalyticsTracker;
@@ -40,6 +42,18 @@ public class Analytics {
   private boolean isRunning;
   private Context context;
   private static final String TAG = MiscUtil.getTag(Analytics.class);
+
+  /**
+   * Returns either the name of the sensor or a string version of the sensor type id, depending
+   * on the supported OS level along with some context.
+   */
+  public static String getSafeNameForSensor(Sensor sensor) {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT_WATCH) {
+      return "Sensor type: " + sensor.getStringType() + ": " + sensor.getType();
+    } else {
+      return "Sensor type: " + sensor.getType();
+    }
+  }
 
   /**
    * Custom vars (for slicing and dicing)
@@ -81,10 +95,14 @@ public class Analytics {
   public static final String SEARCH = "Search";
   public static final String GENERAL_CATEGORY = "General";
   public static final String START_HOUR = "Start up hour";
+
+  public static final String SENSOR_CATEGORY = "Sensors";
   public static final String SESSION_LENGTH_BUCKET = "Session length bucket";
   public static final String SENSOR_AVAILABILITY = "Minimal Sensor Availability";
   public static final String SENSOR_TYPE = "Sensor Type - ";
   public static final String SENSOR_NAME = "Sensor Name";
+  public static final String HIGH_SENSOR_ACCURACY_ACHIEVED = "High Accuracy Achieved";
+  public static final String SENSOR_ACCURACY_CHANGED = "Sensor Accuracy Changed";
   // TODO(johntaylor): use CustomVariable.VISITOR_SCOPE if it gets made public.
   private static final int VISITOR_SCOPE = 1;
 
