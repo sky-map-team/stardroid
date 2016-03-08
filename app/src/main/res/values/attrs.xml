@@ -16,7 +16,7 @@
  -->
 
 <resources>
-     <declare-styleable name="ButtonLayerView">
+    <declare-styleable name="ButtonLayerView">
         <attr name="fade_time" format="integer"/>
     </declare-styleable>
     <declare-styleable name="PreferencesButton">

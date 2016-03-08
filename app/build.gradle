@@ -12,28 +12,29 @@ android {
         versionName "1.7.0"
         buildConfigField 'String', 'GOOGLE_ANALYTICS_CODE', '""'
     }
-    // Set the environment variables KSTOREPWD and KEYPWD to the keystore
-    // and key passwords to generate a signed release..
     signingConfigs {
         release {
+            Properties properties = new Properties()
+            // Sky Map devs should create this file with the signing passwords
+            properties.load(project.file('no-checkin.properties').newDataInputStream())
             storeFile file("stardroid-release-key.keystore")
-            storePassword System.getenv("KSTOREPWD")
-            keyPassword System.getenv("KEYPWD")
+            storePassword properties.getProperty('store-pwd')
+            keyPassword properties.getProperty('key-pwd')
             keyAlias "stardroid"
         }
     }
     buildTypes {
         release {
-            minifyEnabled false
-            if (System.getenv("KSTOREPWD") != null) {
-                signingConfig signingConfigs.release
-            }
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard.cfg'
-            Properties properties = new Properties()
-            // Sky Map devs should create this file with the Google Analytics key
-            properties.load(project.file('no-checkin.properties').newDataInputStream())
-            def analyticsKey = properties.getProperty('analytics-key')
-            buildConfigField 'String', 'GOOGLE_ANALYTICS_CODE', analyticsKey
+            if (file('no-checkin.properties').exists()) {
+                signingConfig signingConfigs.release
+                Properties properties = new Properties()
+                // Sky Map devs should create this file with the Google Analytics key
+                properties.load(project.file('no-checkin.properties').newDataInputStream())
+                def analyticsKey = properties.getProperty('analytics-key')
+                buildConfigField 'String', 'GOOGLE_ANALYTICS_CODE', analyticsKey
+            }
         }
     }
 
