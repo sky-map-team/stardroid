@@ -75,7 +75,7 @@ public class SensorAccuracyReporter implements SensorEventListener {
       case SensorManager.SENSOR_STATUS_NO_CONTACT:
         return "nocontact";
       case SensorManager.SENSOR_STATUS_UNRELIABLE:
-        return "unrelieable";
+        return "unreliable";
       default:
         return "unknown";
     }
