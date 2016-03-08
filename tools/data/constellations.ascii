@@ -1,3 +1,8 @@
+# The canonical source of constellation data (unlike the stars and messier proto files
+# which are derived from CSV).
+# TODO(jontayler): some of the labels will be attached to incorrect constellations.  Since
+# at present we show all the constellations or none this does not matter, but we should fix
+# it.
 source {
   search_location {
     right_ascension: 83.718834
