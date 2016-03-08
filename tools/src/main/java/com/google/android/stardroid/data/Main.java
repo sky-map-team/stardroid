@@ -8,12 +8,12 @@ import java.io.IOException;
  * Usage:
  *   java com.google.android.stardroid.data.Main <command> <args>
  *
- *   where command is one of GenStars, GenConstellations, GenMessier, Rewrite, Binary
+ *   where command is one of GenStars, GenMessier, Rewrite, Binary
  *   See the various writer classes for the args.
  */
 public class Main {
   private enum Command {
-    GenStars, GenConstellations, GenMessier, Rewrite, Binary
+    GenStars, GenMessier, Rewrite, Binary
   }
 
   public static void main(String[] in) throws IOException {
@@ -29,9 +29,6 @@ public class Main {
     switch (command) {
       case GenStars:
         StellarProtoWriter.main(args);
-        break;
-      case GenConstellations:
-        ConstellationProtoWriter.main(args);
         break;
       case GenMessier:
         MessierProtoWriter.main(args);
