@@ -12,8 +12,6 @@ android {
         versionName "1.8.1 - beta2"
         buildConfigField 'String', 'GOOGLE_ANALYTICS_CODE', '""'
     }
-    // Set the environment variables KSTOREPWD and KEYPWD to the keystore
-    // and key passwords to generate a signed release..
     signingConfigs {
         release {
             Properties properties = new Properties()
