@@ -1,3 +1,8 @@
+# The canonical source of constellation data (unlike the stars and messier proto files
+# which are derived from CSV).
+# TODO(jontayler): some of the labels will be attached to incorrect constellations.  Since
+# at present we show all the constellations or none this does not matter, but we should fix
+# it.
 source {
   search_location {
     right_ascension: 83.718834
@@ -294,16 +299,16 @@ source {
 }
 source {
   search_location {
-    right_ascension: 103.00154
-    declination: 24.82
+    right_ascension: 114.67344
+    declination: 6.76
   }
   label {
     location {
-      right_ascension: 103.00154
-      declination: 24.82
+      right_ascension: 114.67344
+      declination: 6.76
     }
     color: 2160688306
-    string_index: 2131165271
+    string_index: 2131165584
   }
   line {
     color: 2160688306
@@ -316,7 +321,7 @@ source {
       declination: 8.2833
     }
   }
-  name_ids: 2131165271
+  name_ids: 2131165584
 }
 source {
   search_location {
@@ -438,16 +443,16 @@ source {
 }
 source {
   search_location {
-    right_ascension: 83.718834
-    declination: 3.59
+    right_ascension: 104.716225
+    declination: -3.74
   }
   label {
     location {
-      right_ascension: 83.718834
-      declination: 3.59
+      right_ascension: 104.716225
+      declination: -3.74
     }
     color: 2160688306
-    string_index: 2131165461
+    string_index: 2131165611
   }
   line {
     color: 2160688306
@@ -517,20 +522,20 @@ source {
       declination: -6.2833
     }
   }
-  name_ids: 2131165461
+  name_ids: 2131165611
 }
 source {
   search_location {
-    right_ascension: 102.7308
-    declination: -22.69
+    right_ascension: 81.76349
+    declination: -19.35
   }
   label {
     location {
-      right_ascension: 102.7308
-      declination: -22.69
+      right_ascension: 81.76349
+      declination: -19.35
     }
     color: 2160688306
-    string_index: 2131165224
+    string_index: 2131165606
   }
   line {
     color: 2160688306
@@ -608,20 +613,20 @@ source {
       declination: -12.95
     }
   }
-  name_ids: 2131165224
+  name_ids: 2131165606
 }
 source {
   search_location {
-    right_ascension: 159.41112
-    declination: 13.0
+    right_ascension: 151.94531
+    declination: -1.87
   }
   label {
     location {
-      right_ascension: 159.41112
-      declination: 13.0
+      right_ascension: 151.94531
+      declination: -1.87
     }
     color: 2160688306
-    string_index: 2131165292
+    string_index: 2131165626
   }
   line {
     color: 2160688306
@@ -642,20 +647,20 @@ source {
       declination: -0.37
     }
   }
-  name_ids: 2131165292
+  name_ids: 2131165626
 }
 source {
   search_location {
-    right_ascension: 118.41868
-    declination: -32.39
+    right_ascension: 133.73053
+    declination: -29.21
   }
   label {
     location {
-      right_ascension: 118.41868
-      declination: -32.39
+      right_ascension: 133.73053
+      declination: -29.21
     }
     color: 2160688306
-    string_index: 2131165487
+    string_index: 2131165617
   }
   line {
     color: 2160688306
@@ -672,20 +677,20 @@ source {
       declination: -27.7
     }
   }
-  name_ids: 2131165487
+  name_ids: 2131165617
 }
 source {
   search_location {
-    right_ascension: 40.250015
-    declination: 22.57
+    right_ascension: 30.728989
+    declination: 32.34
   }
   label {
     location {
-      right_ascension: 40.250015
-      declination: 22.57
+      right_ascension: 30.728989
+      declination: 32.34
     }
     color: 2160688306
-    string_index: 2131165214
+    string_index: 2131165628
   }
   line {
     color: 2160688306
@@ -706,7 +711,7 @@ source {
       declination: 29.5833
     }
   }
-  name_ids: 2131165214
+  name_ids: 2131165628
 }
 source {
   search_location {
@@ -859,16 +864,16 @@ source {
 }
 source {
   search_location {
-    right_ascension: 154.36694
-    declination: 57.48
+    right_ascension: 155.16412
+    declination: 33.24
   }
   label {
     location {
-      right_ascension: 154.36694
-      declination: 57.48
+      right_ascension: 155.16412
+      declination: 33.24
     }
     color: 2160688306
-    string_index: 2131165560
+    string_index: 2131165605
   }
   line {
     color: 2160688306
@@ -889,23 +894,20 @@ source {
       declination: 36.7
     }
   }
-  name_ids: 2131165560
-  name_ids: 2131165476
-  name_ids: 2131165219
-  name_ids: 2131165274
+  name_ids: 2131165605
 }
 source {
   search_location {
-    right_ascension: 127.80434
-    declination: 23.56
+    right_ascension: 116.327965
+    declination: 47.83
   }
   label {
     location {
-      right_ascension: 127.80434
-      declination: 23.56
+      right_ascension: 116.327965
+      declination: 47.83
     }
     color: 2160688306
-    string_index: 2131165223
+    string_index: 2131165607
   }
   line {
     color: 2160688306
@@ -934,7 +936,7 @@ source {
       declination: 59.0167
     }
   }
-  name_ids: 2131165223
+  name_ids: 2131165607
 }
 source {
   search_location {
@@ -1072,16 +1074,16 @@ source {
 }
 source {
   search_location {
-    right_ascension: 231.27214
-    declination: -42.28
+    right_ascension: 194.78241
+    declination: -44.0
   }
   label {
     location {
-      right_ascension: 231.27214
-      declination: -42.28
+      right_ascension: 194.78241
+      declination: -44.0
     }
     color: 2160688306
-    string_index: 2131165313
+    string_index: 2131165234
   }
   line {
     color: 2160688306
@@ -1164,20 +1166,20 @@ source {
       declination: -63.0167
     }
   }
-  name_ids: 2131165313
+  name_ids: 2131165234
 }
 source {
   search_location {
-    right_ascension: 200.69356
-    declination: -3.49
+    right_ascension: 170.68654
+    declination: -13.25
   }
   label {
     location {
-      right_ascension: 200.69356
-      declination: -3.49
+      right_ascension: 170.68654
+      declination: -13.25
     }
     color: 2160688306
-    string_index: 2131165571
+    string_index: 2131165593
   }
   line {
     color: 2160688306
@@ -1225,20 +1227,20 @@ source {
       declination: -14.7667
     }
   }
-  name_ids: 2131165571
+  name_ids: 2131165593
 }
 source {
   search_location {
-    right_ascension: 140.43887
-    declination: -48.51
+    right_ascension: 152.18597
+    declination: -33.65
   }
   label {
     location {
-      right_ascension: 140.43887
-      declination: -48.51
+      right_ascension: 152.18597
+      declination: -33.65
     }
     color: 2160688306
-    string_index: 2131165568
+    string_index: 2131165578
   }
   line {
     color: 2160688306
@@ -1263,20 +1265,20 @@ source {
       declination: -31.0833
     }
   }
-  name_ids: 2131165568
+  name_ids: 2131165578
 }
 source {
   search_location {
-    right_ascension: 194.78241
-    declination: -44.0
+    right_ascension: 137.4156
+    declination: -11.32
   }
   label {
     location {
-      right_ascension: 194.78241
-      declination: -44.0
+      right_ascension: 137.4156
+      declination: -11.32
     }
     color: 2160688306
-    string_index: 2131165234
+    string_index: 2131165602
   }
   line {
     color: 2160688306
@@ -1353,7 +1355,7 @@ source {
       declination: 5.95
     }
   }
-  name_ids: 2131165234
+  name_ids: 2131165602
 }
 source {
   search_location {
@@ -1422,16 +1424,16 @@ source {
 }
 source {
   search_location {
-    right_ascension: 102.7308
-    declination: -22.69
+    right_ascension: 85.80955
+    declination: -37.08
   }
   label {
     location {
-      right_ascension: 102.7308
-      declination: -22.69
+      right_ascension: 85.80955
+      declination: -37.08
     }
     color: 2160688306
-    string_index: 2131165224
+    string_index: 2131165588
   }
   line {
     color: 2160688306
@@ -1467,7 +1469,7 @@ source {
       declination: -42.8167
     }
   }
-  name_ids: 2131165224
+  name_ids: 2131165588
 }
 source {
   search_location {
@@ -1586,16 +1588,16 @@ source {
 }
 source {
   search_location {
-    right_ascension: 116.73407
-    declination: -57.17
+    right_ascension: 80.936226
+    declination: -51.63
   }
   label {
     location {
-      right_ascension: 116.73407
-      declination: -57.17
+      right_ascension: 80.936226
+      declination: -51.63
     }
     color: 2160688306
-    string_index: 2131165230
+    string_index: 2131165616
   }
   line {
     color: 2160688306
@@ -1620,20 +1622,20 @@ source {
       declination: -61.9333
     }
   }
-  name_ids: 2131165230
+  name_ids: 2131165616
 }
 source {
   search_location {
-    right_ascension: 116.73407
-    declination: -57.17
+    right_ascension: 80.21425
+    declination: -63.99
   }
   label {
     location {
-      right_ascension: 116.73407
-      declination: -57.17
+      right_ascension: 80.21425
+      declination: -63.99
     }
     color: 2160688306
-    string_index: 2131165230
+    string_index: 2131165596
   }
   line {
     color: 2160688306
@@ -1658,7 +1660,7 @@ source {
       declination: -65.7333
     }
   }
-  name_ids: 2131165230
+  name_ids: 2131165596
 }
 source {
   search_location {
@@ -1788,16 +1790,16 @@ source {
 }
 source {
   search_location {
-    right_ascension: 340.18484
-    declination: 19.65
+    right_ascension: 338.63562
+    declination: 46.67
   }
   label {
     location {
-      right_ascension: 340.18484
-      declination: 19.65
+      right_ascension: 338.63562
+      declination: 46.67
     }
     color: 2160688306
-    string_index: 2131165466
+    string_index: 2131165604
   }
   line {
     color: 2160688306
@@ -1829,20 +1831,20 @@ source {
       declination: 46.4667
     }
   }
-  name_ids: 2131165466
+  name_ids: 2131165604
 }
 source {
   search_location {
-    right_ascension: 89.44949
-    declination: 42.81
+    right_ascension: 61.593353
+    declination: 17.34
   }
   label {
     location {
-      right_ascension: 89.44949
-      declination: 42.81
+      right_ascension: 61.593353
+      declination: 17.34
     }
     color: 2160688306
-    string_index: 2131165216
+    string_index: 2131165538
   }
   line {
     color: 2160688306
@@ -1936,7 +1938,7 @@ source {
       declination: 44.95
     }
   }
-  name_ids: 2131165216
+  name_ids: 2131165538
 }
 source {
   search_location {
@@ -1974,16 +1976,16 @@ source {
 }
 source {
   search_location {
-    right_ascension: 38.941437
-    declination: -72.08
+    right_ascension: 48.312057
+    declination: -52.0
   }
   label {
     location {
-      right_ascension: 38.941437
-      declination: -72.08
+      right_ascension: 48.312057
+      declination: -52.0
     }
     color: 2160688306
-    string_index: 2131165285
+    string_index: 2131165601
   }
   line {
     color: 2160688306
@@ -2004,20 +2006,20 @@ source {
       declination: -54.55
     }
   }
-  name_ids: 2131165285
+  name_ids: 2131165601
 }
 source {
   search_location {
-    right_ascension: 58.299355
-    declination: -17.01
+    right_ascension: 71.009094
+    declination: -38.83
   }
   label {
     location {
-      right_ascension: 58.299355
-      declination: -17.01
+      right_ascension: 71.009094
+      declination: -38.83
     }
     color: 2160688306
-    string_index: 2131165262
+    string_index: 2131165581
   }
   line {
     color: 2160688306
@@ -2038,7 +2040,7 @@ source {
       declination: -44.95
     }
   }
-  name_ids: 2131165262
+  name_ids: 2131165581
 }
 source {
   search_location {
@@ -2080,16 +2082,16 @@ source {
 }
 source {
   search_location {
-    right_ascension: 11.010101
-    declination: -48.23
+    right_ascension: 10.041107
+    declination: -35.49
   }
   label {
     location {
-      right_ascension: 11.010101
-      declination: -48.23
+      right_ascension: 10.041107
+      declination: -35.49
     }
     color: 2160688306
-    string_index: 2131165470
+    string_index: 2131165622
   }
   line {
     color: 2160688306
@@ -2106,7 +2108,7 @@ source {
       declination: -35.721157
     }
   }
-  name_ids: 2131165470
+  name_ids: 2131165622
 }
 source {
   search_location {
@@ -2199,16 +2201,16 @@ source {
 }
 source {
   search_location {
-    right_ascension: 58.299355
-    declination: -17.01
+    right_ascension: 41.603714
+    declination: -30.94
   }
   label {
     location {
-      right_ascension: 58.299355
-      declination: -17.01
+      right_ascension: 41.603714
+      declination: -30.94
     }
     color: 2160688306
-    string_index: 2131165262
+    string_index: 2131165599
   }
   line {
     color: 2160688306
@@ -2225,7 +2227,7 @@ source {
       declination: -29.3
     }
   }
-  name_ids: 2131165262
+  name_ids: 2131165599
 }
 source {
   search_location {
@@ -2346,16 +2348,16 @@ source {
 }
 source {
   search_location {
-    right_ascension: 89.44949
-    declination: 42.81
+    right_ascension: 92.51788
+    declination: 71.96
   }
   label {
     location {
-      right_ascension: 89.44949
-      declination: 42.81
+      right_ascension: 92.51788
+      declination: 71.96
     }
     color: 2160688306
-    string_index: 2131165216
+    string_index: 2131165582
   }
   line {
     color: 2160688306
@@ -2391,7 +2393,7 @@ source {
       declination: 76.9667
     }
   }
-  name_ids: 2131165216
+  name_ids: 2131165582
 }
 source {
   search_location {
@@ -3027,16 +3029,16 @@ source {
 }
 source {
   search_location {
-    right_ascension: 13.08577
-    declination: 60.3
+    right_ascension: 58.645294
+    declination: -60.49
   }
   label {
     location {
-      right_ascension: 13.08577
-      declination: 60.3
+      right_ascension: 58.645294
+      declination: -60.49
     }
     color: 2160688306
-    string_index: 2131165231
+    string_index: 2131165618
   }
   line {
     color: 2160688306
@@ -3049,20 +3051,20 @@ source {
       declination: 89.52555
     }
   }
-  name_ids: 2131165231
+  name_ids: 2131165618
 }
 source {
   search_location {
-    right_ascension: 225.22562
-    declination: 82.04
+    right_ascension: 269.91275
+    declination: 66.06
   }
   label {
     location {
-      right_ascension: 225.22562
-      declination: 82.04
+      right_ascension: 269.91275
+      declination: 66.06
     }
     color: 2160688306
-    string_index: 2131165561
+    string_index: 2131165252
   }
   line {
     color: 2160688306
@@ -3099,22 +3101,20 @@ source {
       declination: 77.8
     }
   }
-  name_ids: 2131165561
-  name_ids: 2131165295
-  name_ids: 2131165296
+  name_ids: 2131165252
 }
 source {
   search_location {
-    right_ascension: 309.81683
-    declination: 49.58
+    right_ascension: 337.17664
+    declination: 72.56
   }
   label {
     location {
-      right_ascension: 309.81683
-      declination: 49.58
+      right_ascension: 337.17664
+      declination: 72.56
     }
     color: 2160688306
-    string_index: 2131165242
+    string_index: 2131165585
   }
   line {
     color: 2160688306
@@ -3154,20 +3154,20 @@ source {
       declination: 66.2
     }
   }
-  name_ids: 2131165242
+  name_ids: 2131165585
 }
 source {
   search_location {
-    right_ascension: 187.72812
-    declination: -59.7
+    right_ascension: 169.5
+    declination: -80.5
   }
   label {
     location {
-      right_ascension: 187.72812
-      declination: -59.7
+      right_ascension: 169.5
+      declination: -80.5
     }
     color: 2160688306
-    string_index: 2131165240
+    string_index: 2131165586
   }
   line {
     color: 2160688306
@@ -3196,21 +3196,20 @@ source {
       declination: -76.9167
     }
   }
-  name_ids: 2131165240
-  name_ids: 2131165531
+  name_ids: 2131165586
 }
 source {
   search_location {
-    right_ascension: 231.27214
-    declination: -42.28
+    right_ascension: 218.50224
+    declination: -67.7
   }
   label {
     location {
-      right_ascension: 231.27214
-      declination: -42.28
+      right_ascension: 218.50224
+      declination: -67.7
     }
     color: 2160688306
-    string_index: 2131165313
+    string_index: 2131165587
   }
   line {
     color: 2160688306
@@ -3227,20 +3226,20 @@ source {
       declination: -58.8
     }
   }
-  name_ids: 2131165313
+  name_ids: 2131165587
 }
 source {
   search_location {
-    right_ascension: 200.69356
-    declination: -3.49
+    right_ascension: 191.7441
+    declination: 22.65
   }
   label {
     location {
-      right_ascension: 200.69356
-      declination: -3.49
+      right_ascension: 191.7441
+      declination: 22.65
     }
     color: 2160688306
-    string_index: 2131165571
+    string_index: 2131165589
   }
   line {
     color: 2160688306
@@ -3257,20 +3256,20 @@ source {
       declination: 28.2667
     }
   }
-  name_ids: 2131165571
+  name_ids: 2131165589
 }
 source {
   search_location {
-    right_ascension: 291.57196
-    declination: -29.11
+    right_ascension: 280.59195
+    declination: -41.25
   }
   label {
     location {
-      right_ascension: 291.57196
-      declination: -29.11
+      right_ascension: 280.59195
+      declination: -41.25
     }
     color: 2160688306
-    string_index: 2131165495
+    string_index: 2131165590
   }
   line {
     color: 2160688306
@@ -3315,20 +3314,20 @@ source {
       declination: -42.3167
     }
   }
-  name_ids: 2131165495
+  name_ids: 2131165590
 }
 source {
   search_location {
-    right_ascension: 220.90881
-    declination: 32.33
+    right_ascension: 238.85286
+    declination: 32.63
   }
   label {
     location {
-      right_ascension: 220.90881
-      declination: 32.33
+      right_ascension: 238.85286
+      declination: 32.63
     }
     color: 2160688306
-    string_index: 2131165220
+    string_index: 2131165591
   }
   line {
     color: 2160688306
@@ -3361,7 +3360,7 @@ source {
       declination: 29.85
     }
   }
-  name_ids: 2131165220
+  name_ids: 2131165591
 }
 source {
   search_location {
@@ -3392,16 +3391,16 @@ source {
 }
 source {
   search_location {
-    right_ascension: 187.72812
-    declination: -59.7
+    right_ascension: 187.41226
+    declination: -69.87
   }
   label {
     location {
-      right_ascension: 187.72812
-      declination: -59.7
+      right_ascension: 187.41226
+      declination: -69.87
     }
     color: 2160688306
-    string_index: 2131165240
+    string_index: 2131165612
   }
   line {
     color: 2160688306
@@ -3414,21 +3413,20 @@ source {
       declination: -63.1
     }
   }
-  name_ids: 2131165240
-  name_ids: 2131165531
+  name_ids: 2131165612
 }
 source {
   search_location {
-    right_ascension: 200.69356
-    declination: -3.49
+    right_ascension: 186.31425
+    declination: -18.36
   }
   label {
     location {
-      right_ascension: 200.69356
-      declination: -3.49
+      right_ascension: 186.31425
+      declination: -18.36
     }
     color: 2160688306
-    string_index: 2131165571
+    string_index: 2131165592
   }
   line {
     color: 2160688306
@@ -3457,20 +3455,20 @@ source {
       declination: -22.6167
     }
   }
-  name_ids: 2131165571
+  name_ids: 2131165592
 }
 source {
   search_location {
-    right_ascension: 220.90881
-    declination: 32.33
+    right_ascension: 195.83528
+    declination: 42.35
   }
   label {
     location {
-      right_ascension: 220.90881
-      declination: 32.33
+      right_ascension: 195.83528
+      declination: 42.35
     }
     color: 2160688306
-    string_index: 2131165220
+    string_index: 2131165583
   }
   line {
     color: 2160688306
@@ -3483,7 +3481,7 @@ source {
       declination: 41.35
     }
   }
-  name_ids: 2131165220
+  name_ids: 2131165583
 }
 source {
   search_location {
@@ -3548,16 +3546,16 @@ source {
 }
 source {
   search_location {
-    right_ascension: 296.1595
-    declination: 3.37
+    right_ascension: 310.7945
+    declination: 12.1
   }
   label {
     location {
-      right_ascension: 296.1595
-      declination: 3.37
+      right_ascension: 310.7945
+      declination: 12.1
     }
     color: 2160688306
-    string_index: 2131165212
+    string_index: 2131165594
   }
   line {
     color: 2160688306
@@ -3586,20 +3584,20 @@ source {
       declination: 14.6
     }
   }
-  name_ids: 2131165212
+  name_ids: 2131165594
 }
 source {
   search_location {
-    right_ascension: 269.91275
-    declination: 66.06
+    right_ascension: 225.22562
+    declination: 82.04
   }
   label {
     location {
-      right_ascension: 269.91275
-      declination: 66.06
+      right_ascension: 225.22562
+      declination: 82.04
     }
     color: 2160688306
-    string_index: 2131165252
+    string_index: 2131165561
   }
   line {
     color: 2160688306
@@ -3668,20 +3666,22 @@ source {
       declination: 56.8667
     }
   }
-  name_ids: 2131165252
+  name_ids: 2131165561
+  name_ids: 2131165295
+  name_ids: 2131165296
 }
 source {
   search_location {
-    right_ascension: 296.1595
-    declination: 3.37
+    right_ascension: 318.63867
+    declination: 7.94
   }
   label {
     location {
-      right_ascension: 296.1595
-      declination: 3.37
+      right_ascension: 318.63867
+      declination: 7.94
     }
     color: 2160688306
-    string_index: 2131165212
+    string_index: 2131165597
   }
   line {
     color: 2160688306
@@ -3698,7 +3698,7 @@ source {
       declination: 10.1333
     }
   }
-  name_ids: 2131165212
+  name_ids: 2131165597
 }
 source {
   search_location {
@@ -3947,16 +3947,16 @@ source {
 }
 source {
   search_location {
-    right_ascension: 337.77826
-    declination: -42.86
+    right_ascension: 317.93903
+    declination: -52.68
   }
   label {
     location {
-      right_ascension: 337.77826
-      declination: -42.86
+      right_ascension: 317.93903
+      declination: -52.68
     }
     color: 2160688306
-    string_index: 2131165275
+    string_index: 2131165603
   }
   line {
     color: 2160688306
@@ -3984,20 +3984,20 @@ source {
       declination: -58.45
     }
   }
-  name_ids: 2131165275
+  name_ids: 2131165603
 }
 source {
   search_location {
-    right_ascension: 340.18484
-    declination: 19.65
+    right_ascension: 306.34235
+    declination: 25.03
   }
   label {
     location {
-      right_ascension: 340.18484
-      declination: 19.65
+      right_ascension: 306.34235
+      declination: 25.03
     }
     color: 2160688306
-    string_index: 2131165466
+    string_index: 2131165631
   }
   line {
     color: 2160688306
@@ -4049,7 +4049,7 @@ source {
       declination: 37.75
     }
   }
-  name_ids: 2131165466
+  name_ids: 2131165631
 }
 source {
   search_location {
@@ -4214,16 +4214,16 @@ source {
 }
 source {
   search_location {
-    right_ascension: 116.73407
-    declination: -57.17
+    right_ascension: 82.72612
+    declination: -79.99
   }
   label {
     location {
-      right_ascension: 116.73407
-      declination: -57.17
+      right_ascension: 82.72612
+      declination: -79.99
     }
     color: 2160688306
-    string_index: 2131165230
+    string_index: 2131165608
   }
   line {
     color: 2160688306
@@ -4244,20 +4244,20 @@ source {
       declination: -71.3167
     }
   }
-  name_ids: 2131165230
+  name_ids: 2131165608
 }
 source {
   search_location {
-    right_ascension: 316.58533
-    declination: -19.65
+    right_ascension: 314.99097
+    declination: -36.2
   }
   label {
     location {
-      right_ascension: 316.58533
-      declination: -19.65
+      right_ascension: 314.99097
+      declination: -36.2
     }
     color: 2160688306
-    string_index: 2131165229
+    string_index: 2131165609
   }
   line {
     color: 2160688306
@@ -4286,21 +4286,20 @@ source {
       declination: -33.7833
     }
   }
-  name_ids: 2131165229
-  name_ids: 2131165228
+  name_ids: 2131165609
 }
 source {
   search_location {
-    right_ascension: 187.72812
-    declination: -59.7
+    right_ascension: 242.52289
+    declination: -65.9
   }
   label {
     location {
-      right_ascension: 187.72812
-      declination: -59.7
+      right_ascension: 242.52289
+      declination: -65.9
     }
     color: 2160688306
-    string_index: 2131165240
+    string_index: 2131165629
   }
   line {
     color: 2160688306
@@ -4333,21 +4332,20 @@ source {
       declination: -69.1333
     }
   }
-  name_ids: 2131165240
-  name_ids: 2131165531
+  name_ids: 2131165629
 }
 source {
   search_location {
-    right_ascension: 231.27214
-    declination: -42.28
+    right_ascension: 241.28952
+    declination: -52.29
   }
   label {
     location {
-      right_ascension: 231.27214
-      declination: -42.28
+      right_ascension: 241.28952
+      declination: -52.29
     }
     color: 2160688306
-    string_index: 2131165313
+    string_index: 2131165614
   }
   line {
     color: 2160688306
@@ -4372,20 +4370,20 @@ source {
       declination: -45.1667
     }
   }
-  name_ids: 2131165313
+  name_ids: 2131165614
 }
 source {
   search_location {
-    right_ascension: 358.39963
-    declination: -64.06
+    right_ascension: 288.1877
+    declination: -65.14
   }
   label {
     location {
-      right_ascension: 358.39963
-      declination: -64.06
+      right_ascension: 288.1877
+      declination: -65.14
     }
     color: 2160688306
-    string_index: 2131165557
+    string_index: 2131165465
   }
   line {
     color: 2160688306
@@ -4406,7 +4404,7 @@ source {
       declination: -81.3833
     }
   }
-  name_ids: 2131165557
+  name_ids: 2131165465
 }
 source {
   search_location {
@@ -4619,16 +4617,16 @@ source {
 }
 source {
   search_location {
-    right_ascension: 288.1877
-    declination: -65.14
+    right_ascension: 289.45117
+    declination: -51.54
   }
   label {
     location {
-      right_ascension: 288.1877
-      declination: -65.14
+      right_ascension: 289.45117
+      declination: -51.54
     }
     color: 2160688306
-    string_index: 2131165465
+    string_index: 2131165627
   }
   line {
     color: 2160688306
@@ -4714,20 +4712,20 @@ source {
       declination: -64.7333
     }
   }
-  name_ids: 2131165465
+  name_ids: 2131165627
 }
 source {
   search_location {
-    right_ascension: 337.07135
-    declination: -31.43
+    right_ascension: 316.58533
+    declination: -19.65
   }
   label {
     location {
-      right_ascension: 337.07135
-      declination: -31.43
+      right_ascension: 316.58533
+      declination: -19.65
     }
     color: 2160688306
-    string_index: 2131165473
+    string_index: 2131165229
   }
   line {
     color: 2160688306
@@ -4776,20 +4774,21 @@ source {
       declination: -32.55
     }
   }
-  name_ids: 2131165473
+  name_ids: 2131165229
+  name_ids: 2131165228
 }
 source {
   search_location {
-    right_ascension: 38.941437
-    declination: -72.08
+    right_ascension: 115.19988
+    declination: -69.39
   }
   label {
     location {
-      right_ascension: 38.941437
-      declination: -72.08
+      right_ascension: 115.19988
+      declination: -69.39
     }
     color: 2160688306
-    string_index: 2131165285
+    string_index: 2131165630
   }
   line {
     color: 2160688306
@@ -4814,7 +4813,7 @@ source {
       declination: -62.4667
     }
   }
-  name_ids: 2131165285
+  name_ids: 2131165630
 }
 source {
   search_location {
@@ -4912,16 +4911,16 @@ source {
 }
 source {
   search_location {
-    right_ascension: 296.1595
-    declination: 3.37
+    right_ascension: 280.5318
+    declination: -10.11
   }
   label {
     location {
-      right_ascension: 296.1595
-      declination: 3.37
+      right_ascension: 280.5318
+      declination: -10.11
     }
     color: 2160688306
-    string_index: 2131165212
+    string_index: 2131165623
   }
   line {
     color: 2160688306
@@ -4938,20 +4937,20 @@ source {
       declination: -14.5667
     }
   }
-  name_ids: 2131165212
+  name_ids: 2131165623
 }
 source {
   search_location {
-    right_ascension: 296.1595
-    declination: 3.37
+    right_ascension: 295.81357
+    declination: 18.0
   }
   label {
     location {
-      right_ascension: 296.1595
-      declination: 3.37
+      right_ascension: 295.81357
+      declination: 18.0
     }
     color: 2160688306
-    string_index: 2131165212
+    string_index: 2131165621
   }
   line {
     color: 2160688306
@@ -4979,7 +4978,7 @@ source {
       declination: 17.4833
     }
   }
-  name_ids: 2131165212
+  name_ids: 2131165621
 }
 source {
   search_location {
@@ -5067,16 +5066,16 @@ source {
 }
 source {
   search_location {
-    right_ascension: 231.27214
-    declination: -42.28
+    right_ascension: 242.67331
+    declination: -76.41
   }
   label {
     location {
-      right_ascension: 231.27214
-      declination: -42.28
+      right_ascension: 242.67331
+      declination: -76.41
     }
     color: 2160688306
-    string_index: 2131165313
+    string_index: 2131165579
   }
   line {
     color: 2160688306
@@ -5101,7 +5100,7 @@ source {
       declination: -78.7
     }
   }
-  name_ids: 2131165313
+  name_ids: 2131165579
 }
 source {
   search_location {
@@ -5167,16 +5166,16 @@ source {
 }
 source {
   search_location {
-    right_ascension: 341.38812
-    declination: -10.53
+    right_ascension: 270.1083
+    declination: -13.52
   }
   label {
     location {
-      right_ascension: 341.38812
-      declination: -10.53
+      right_ascension: 270.1083
+      declination: -13.52
     }
     color: 2160688306
-    string_index: 2131165211
+    string_index: 2131165625
   }
   line {
     color: 2160688306
@@ -5286,20 +5285,20 @@ source {
       declination: -23.75
     }
   }
-  name_ids: 2131165211
+  name_ids: 2131165625
 }
 source {
   search_location {
-    right_ascension: 341.38812
-    declination: -10.53
+    right_ascension: 333.5066
+    declination: -84.73
   }
   label {
     location {
-      right_ascension: 341.38812
-      declination: -10.53
+      right_ascension: 333.5066
+      declination: -84.73
     }
     color: 2160688306
-    string_index: 2131165211
+    string_index: 2131165615
   }
   line {
     color: 2160688306
@@ -5320,20 +5319,20 @@ source {
       declination: -20.9167
     }
   }
-  name_ids: 2131165211
+  name_ids: 2131165615
 }
 source {
   search_location {
-    right_ascension: 253.66837
-    declination: -35.67
+    right_ascension: 259.1734
+    declination: -51.89
   }
   label {
     location {
-      right_ascension: 253.66837
-      declination: -35.67
+      right_ascension: 259.1734
+      declination: -51.89
     }
     color: 2160688306
-    string_index: 2131165501
+    string_index: 2131165580
   }
   line {
     color: 2160688306
@@ -5380,21 +5379,20 @@ source {
       declination: -59.05
     }
   }
-  name_ids: 2131165501
-  name_ids: 2131165499
+  name_ids: 2131165580
 }
 source {
   search_location {
-    right_ascension: 116.73407
-    declination: -57.17
+    right_ascension: 236.61174
+    declination: 10.85
   }
   label {
     location {
-      right_ascension: 116.73407
-      declination: -57.17
+      right_ascension: 236.61174
+      declination: 10.85
     }
     color: 2160688306
-    string_index: 2131165230
+    string_index: 2131165624
   }
   line {
     color: 2160688306
@@ -5442,20 +5440,20 @@ source {
       declination: -70.3833
     }
   }
-  name_ids: 2131165230
+  name_ids: 2131165624
 }
 source {
   search_location {
-    right_ascension: 284.39734
-    declination: 40.65
+    right_ascension: 220.90881
+    declination: 32.33
   }
   label {
     location {
-      right_ascension: 284.39734
-      declination: 40.65
+      right_ascension: 220.90881
+      declination: 32.33
     }
     color: 2160688306
-    string_index: 2131165314
+    string_index: 2131165220
   }
   line {
     color: 2160688306
@@ -5472,21 +5470,9 @@ source {
       declination: 21.4
     }
   }
-  name_ids: 2131165314
+  name_ids: 2131165220
 }
 source {
-  search_location {
-    right_ascension: 220.90881
-    declination: 32.33
-  }
-  label {
-    location {
-      right_ascension: 220.90881
-      declination: 32.33
-    }
-    color: 2160688306
-    string_index: 2131165220
-  }
   line {
     color: 2160688306
     vertex {
@@ -5575,21 +5561,8 @@ source {
       declination: 27.0833
     }
   }
-  name_ids: 2131165220
 }
 source {
-  search_location {
-    right_ascension: 316.58533
-    declination: -19.65
-  }
-  label {
-    location {
-      right_ascension: 316.58533
-      declination: -19.65
-    }
-    color: 2160688306
-    string_index: 2131165229
-  }
   line {
     color: 2160688306
     vertex {
@@ -5681,22 +5654,8 @@ source {
       declination: -26.9333
     }
   }
-  name_ids: 2131165229
-  name_ids: 2131165228
 }
 source {
-  search_location {
-    right_ascension: 358.39963
-    declination: -64.06
-  }
-  label {
-    location {
-      right_ascension: 358.39963
-      declination: -64.06
-    }
-    color: 2160688306
-    string_index: 2131165557
-  }
   line {
     color: 2160688306
     vertex {
@@ -5738,21 +5697,8 @@ source {
       declination: -58.2333
     }
   }
-  name_ids: 2131165557
 }
 source {
-  search_location {
-    right_ascension: 11.010101
-    declination: -48.23
-  }
-  label {
-    location {
-      right_ascension: 11.010101
-      declination: -48.23
-    }
-    color: 2160688306
-    string_index: 2131165470
-  }
   line {
     color: 2160688306
     vertex {
@@ -5772,21 +5718,8 @@ source {
       declination: -61.427338
     }
   }
-  name_ids: 2131165470
 }
 source {
-  search_location {
-    right_ascension: 231.27214
-    declination: -42.28
-  }
-  label {
-    location {
-      right_ascension: 231.27214
-      declination: -42.28
-    }
-    color: 2160688306
-    string_index: 2131165313
-  }
   line {
     color: 2160688306
     vertex {
@@ -5810,21 +5743,8 @@ source {
       declination: -69.0333
     }
   }
-  name_ids: 2131165313
 }
 source {
-  search_location {
-    right_ascension: 288.1877
-    declination: -65.14
-  }
-  label {
-    location {
-      right_ascension: 288.1877
-      declination: -65.14
-    }
-    color: 2160688306
-    string_index: 2131165465
-  }
   line {
     color: 2160688306
     vertex {
@@ -5860,5 +5780,4 @@ source {
       declination: -45.95
     }
   }
-  name_ids: 2131165465
 }
