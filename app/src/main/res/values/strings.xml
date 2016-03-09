@@ -409,15 +409,19 @@
     <string name="puppidvelids" translation_description="Meteor Shower">Puppid-Velids</string>
     <string name="ursids" translation_description="Meteor Shower">Ursids</string>
 
-    <string name="no_sensor_warning">Your device lacks orientation sensors - automode unavailable</string>
-    <string name="warning_dialog_title">Warning</string>
+    <string name="no_sensor_warning">Your device may lack orientation sensors - automode may not work</string>
+    <string name="warning_dialog_title">Bad news!</string>
     <string name="missing_sensor_dialog_text">\n
-        Unfortunately your device does not have one of the
+        Unfortunately your device might not have one of the
     sensors that Sky Map needs.\n\n
         To show you the sky in the direction your phone is pointing Sky Map
-    needs both a built-in compass and an accelerometer.\n\n
-        You can still use Sky Map on this device,
-    but only in manual mode where you drag, rotate and stretch the map manually with your fingers.
+    needs both a built-in compass and an accelerometer.  Your device reports that it is missing
+        one of them.  The good news is that some devices (for example some Moto E phones) falsely claim
+        not to have a compass but actually do.\n\n
+
+        If your device really is missing a sensor then auto-mode will not work.  However, you
+        can still use Sky Map on this device in manual mode where you drag, rotate and stretch the
+        map with your fingers.
     </string>
     <string name="do_not_show_again">Do not show this message again</string>
 </resources>
