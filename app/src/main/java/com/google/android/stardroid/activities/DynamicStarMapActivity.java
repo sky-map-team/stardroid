@@ -51,6 +51,7 @@ import com.google.android.stardroid.activities.util.ActivityLightLevelChanger;
 import com.google.android.stardroid.activities.util.ActivityLightLevelChanger.NightModeable;
 import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
 import com.google.android.stardroid.activities.util.FullscreenControlsManager;
+import com.google.android.stardroid.base.Lists;
 import com.google.android.stardroid.control.AstronomerModel;
 import com.google.android.stardroid.control.AstronomerModel.Pointing;
 import com.google.android.stardroid.control.ControllerGroup;
@@ -141,7 +142,6 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
   private RendererController rendererController;
   private boolean nightMode = false;
   private boolean searchMode = false;
-  private boolean disableAutoMode = false;
   private GeocentricCoordinates searchTarget = GeocentricCoordinates.getInstance(0, 0);
   private SharedPreferences sharedPreferences;
   private GLSurfaceView skyView;
@@ -213,6 +213,7 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
         this);
 
     initializeModelViewController();
+    checkForSensorsAndMaybeWarn();
 
     // Search related
     setDefaultKeyMode(DEFAULT_KEYS_SEARCH_LOCAL);
@@ -254,7 +255,6 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
       return;
     }
     // Missing at least one sensor.  Warn the user.
-    disableAutoMode = true;
     handler.post(new Runnable() {
       @Override
       public void run() {
@@ -262,16 +262,15 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
           Log.d(TAG, "showing no sensor dialog");
           // TODO(jontayler): refactor to use dialog fragments.
           showDialog(DialogFactory.DIALOG_ID_NO_SENSORS);
+          // First time, force manual mode.
+          sharedPreferences.edit().putBoolean(AUTO_MODE_PREF_KEY, false).apply();
+          setAutoMode(false);
         } else {
           Log.d(TAG, "showing no sensor toast");
           Toast.makeText(
               DynamicStarMapActivity.this, R.string.no_sensor_warning, Toast.LENGTH_LONG).show();
+          // Don't force manual mode second time through - leave it up to the user.
         }
-        // Force manual mode and remove the button
-        sharedPreferences.edit().putBoolean(AUTO_MODE_PREF_KEY, false).apply();
-        setAutoMode(false);
-        findViewById(R.id.layer_manual_auto_toggle).setVisibility(View.INVISIBLE);
-        disableAutoMode = true;
       }
     });
   }
@@ -596,7 +595,6 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
     Log.i(TAG, "Set up controllers @ " + System.currentTimeMillis());
     controller = ControllerGroup.createControllerGroup(this);
     controller.setModel(model);
-    checkForSensorsAndMaybeWarn();
     wireUpScreenControls(); // TODO(johntaylor) move these?
     magneticSwitcher = new MagneticDeclinationCalculatorSwitcher(model, sharedPreferences);
     wireUpTimePlayer();  // TODO(widdows) move these?
@@ -625,19 +623,13 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
       buttonViews.add(button);
     }
     buttonViews.add(findViewById(R.id.manual_auto_toggle));
-    ButtonLayerView manualButtonLayer = (ButtonLayerView) findViewById(R.id.layer_manual_auto_toggle);
-
-    List<View> viewsToShowOrHide = new ArrayList<>();
-    if (!disableAutoMode) {
-      // We don't want this coming back on a screen tap if the phone doesn't support manual mode.
-      viewsToShowOrHide.add(manualButtonLayer);
-    }
-    viewsToShowOrHide.add(providerButtons);
+    ButtonLayerView manualButtonLayer = (ButtonLayerView) findViewById(
+        R.id.layer_manual_auto_toggle);
 
     fullscreenControlsManager = new FullscreenControlsManager(
         this,
         findViewById(R.id.main_sky_view),
-        viewsToShowOrHide,
+        Lists.<View>asList(manualButtonLayer, providerButtons),
         buttonViews);
 
     MapMover mapMover = new MapMover(model, controller, this);
