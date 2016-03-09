@@ -78,7 +78,7 @@
     <string name="time_travel_close_message">Back to the present ...</string>
     <!--  -->
     <string name="popular_dates_prompt" translation_description="Label for a list of dates the user can choose from">Popular dates</string>
-    <string name="custom_date_prompt" translation_description="Label telling the user to manually specify a date">Or select your own date</string>
+    <string name="custom_date_prompt" translation_description="Label telling the user to manually specify a date">Or select your own date:</string>
     <string name="change_date_prompt">Change the date</string>
     <string name="change_time_prompt">Change the time</string>
     <string name="now_visiting"
