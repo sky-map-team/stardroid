@@ -17,10 +17,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:id="@+id/menu_item_search"
-          android:orderInCategory="0"
+          android:orderInCategory="1"
           android:title="@string/menu_search"
-          android:icon="@android:drawable/ic_search_category_default"
-          android:showAsAction="ifRoom"/>
+          android:icon="@android:drawable/ic_menu_search"
+          android:showAsAction="always"/>
 
     <item android:id="@+id/menu_item_dim"
           android:orderInCategory="2"
@@ -31,11 +31,13 @@
     <item android:id="@+id/menu_item_settings"
           android:orderInCategory="3"
           android:title="@string/menu_settings"
+          android:showAsAction="never"
           android:icon="@android:drawable/ic_menu_preferences"/>
 
     <item android:id="@+id/menu_item_gallery"
           android:orderInCategory="4"
           android:title="@string/menu_gallery"
+          android:showAsAction="ifRoom"
           android:icon="@android:drawable/ic_menu_gallery"/>
 
     <item android:id="@+id/menu_item_time"
@@ -47,10 +49,12 @@
     <item android:id="@+id/menu_item_help"
           android:orderInCategory="6"
           android:title="@string/menu_help"
+          android:showAsAction="never"
           android:icon="@android:drawable/ic_menu_info_details"/>
 
     <!-- TODO(serafini): We need an icon for this? -->
     <item android:id="@+id/menu_item_tos"
           android:orderInCategory="7"
+          android:showAsAction="never"
           android:title="@string/menu_tos"/>
 </menu>
