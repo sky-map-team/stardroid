@@ -14,14 +14,6 @@
 
 package com.google.android.stardroid.activities;
 
-import com.google.android.stardroid.R;
-import com.google.android.stardroid.activities.util.ActivityLightLevelChanger;
-import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
-import com.google.android.stardroid.gallery.GalleryFactory;
-import com.google.android.stardroid.gallery.GalleryImage;
-import com.google.android.stardroid.util.Analytics;
-import com.google.android.stardroid.util.MiscUtil;
-
 import android.app.Activity;
 import android.app.SearchManager;
 import android.content.Intent;
@@ -35,6 +27,14 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.google.android.stardroid.R;
+import com.google.android.stardroid.activities.util.ActivityLightLevelChanger;
+import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
+import com.google.android.stardroid.gallery.GalleryFactory;
+import com.google.android.stardroid.gallery.GalleryImage;
+import com.google.android.stardroid.util.Analytics;
+import com.google.android.stardroid.util.MiscUtil;
 
 import java.util.List;
 
@@ -91,7 +91,7 @@ public class ImageDisplayActivity extends Activity {
   @Override
   public void onStart() {
     super.onStart();
-    Analytics.getInstance(this).trackPageView(Analytics.IMAGE_DISPLAY_ACTIVITY);
+    Analytics.getPreviouslyCreatedInstance().trackPageView(Analytics.IMAGE_DISPLAY_ACTIVITY);
   }
 
   @Override

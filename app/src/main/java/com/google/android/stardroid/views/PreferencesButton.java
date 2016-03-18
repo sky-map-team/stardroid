@@ -96,7 +96,7 @@ public class PreferencesButton extends ImageButton
   @Override
   public void onClick(View v) {
     isOn = !isOn;
-    Analytics.getInstance(getContext()).trackEvent(
+    Analytics.getPreviouslyCreatedInstance().trackEvent(
         Analytics.USER_ACTION_CATEGORY, Analytics.PREFERENCE_BUTTON_TOGGLE, prefKey, isOn ? 1 : 0);
     setVisuallyOnOrOff();
     setPreference();

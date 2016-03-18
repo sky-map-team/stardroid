@@ -14,13 +14,16 @@
 
 package com.google.android.stardroid.util;
 
-import android.content.Context;
 import android.hardware.Sensor;
 import android.os.Build;
+import android.support.annotation.Nullable;
 import android.util.Log;
 
-import com.google.android.apps.analytics.GoogleAnalyticsTracker;
+import com.google.android.gms.analytics.GoogleAnalytics;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 import com.google.android.stardroid.BuildConfig;
+import com.google.android.stardroid.StardroidApplication;
 
 /**
  * Encapsulates interactions with Google Analytics, allowing it to be
@@ -28,7 +31,7 @@ import com.google.android.stardroid.BuildConfig;
  *
  * @author John Taylor
  */
-// TODO(johntaylor): Can we avoid this being a global singleton?
+// TODO(johntaylor): refactor this away.
 public class Analytics {
   /**
    * Analytics ID associated with http://stardroid-server.appspot.com
@@ -36,11 +39,11 @@ public class Analytics {
   private static final String WEB_PROPERTY_ID = BuildConfig.GOOGLE_ANALYTICS_CODE;
   private static final int DISPATCH_INTERVAL_SECS = 10;
   public static final String PREF_KEY = "enable_analytics";
-  private static volatile Analytics analytics;
-
-  private volatile boolean isEnabled = true;
-  private boolean isRunning;
-  private Context context;
+  private static volatile Analytics instance;
+  private final HitBuilders.ScreenViewBuilder screenViewBuilder = new HitBuilders.ScreenViewBuilder();
+  private final HitBuilders.EventBuilder eventBuilder = new HitBuilders.EventBuilder();
+  private GoogleAnalytics googleAnalytics;
+  private Tracker tracker;
   private static final String TAG = MiscUtil.getTag(Analytics.class);
 
   /**
@@ -107,72 +110,64 @@ public class Analytics {
   private static final int VISITOR_SCOPE = 1;
 
   /**
-   * Returns a shared Analytics object.  If one doesn't exist, then it's
-   * created and linked to the supplied context.  You must call setEnabled(true)
-   * to start data collection.
+   * Returns a the previously constructed analytics object, or null if one doesn't exist.
+   * TODO(jontayler): horrible kludge - switch to dagger to get rid of this.
    */
-  public static Analytics getInstance(Context context) {
-    if (analytics == null) {
-      analytics = new Analytics(context);
-    }
-    return analytics;
+  @Nullable
+  public static Analytics getPreviouslyCreatedInstance() {
+    return instance;
   }
 
-  private Analytics(Context context) {
-    this.context = context;
+  /**
+   * Returns the singleton Analytics instance.
+   */
+  public static Analytics getInstance(StardroidApplication application) {
+    if (instance == null) {
+      instance = new Analytics(application);
+    }
+    return instance;
+  }
+
+  private Analytics(StardroidApplication application) {
+    googleAnalytics = GoogleAnalytics.getInstance(application);
+    googleAnalytics.enableAutoActivityReports(application);
+    // Can also use R.xml.global_tracker if we're prepared to reveal our analytics Id.
+    tracker = googleAnalytics.newTracker(BuildConfig.GOOGLE_ANALYTICS_CODE);
+    tracker.setAppVersion(application.getVersionName());
   }
 
   public void setEnabled(boolean enabled) {
-    this.isEnabled = enabled;
-    Log.d(TAG, isEnabled ? "Enabling stats collection" : "Disabling stats collection");
-    if (isEnabled && !isRunning) {
-      Log.d(TAG, "Enabling analytics");
-      GoogleAnalyticsTracker.getInstance().start(
-          WEB_PROPERTY_ID, DISPATCH_INTERVAL_SECS, context);
-      isRunning = true;
-    } else if (!isEnabled && isRunning){
-      Log.d(TAG, "Disabling analytics");
-      // TODO(johntaylor): find out if we really need to dispatch first
-      GoogleAnalyticsTracker.getInstance().dispatch();
-      GoogleAnalyticsTracker.getInstance().stop();
-      isRunning = false;
-    }
+    Log.d(TAG, enabled ? "Enabling stats collection" : "Disabling stats collection");
+    googleAnalytics.setAppOptOut(!enabled);
   }
 
   /**
-   * Sets the version of Sky Map.  This must be called before the first call to setEnabled();
-   */
-  public void setProductVersion(String versionString) {
-    GoogleAnalyticsTracker.getInstance().setProductVersion("Google Sky Map", versionString);
-  }
-
-  /**
-   * Tracks a webpage visit - see {@link GoogleAnalyticsTracker#trackPageView(String)}.
+   * Tracks a screen view.
    */
   public void trackPageView(String page) {
-    if (isEnabled) {
-      Log.d(TAG, "Logging page " + page);
-      GoogleAnalyticsTracker.getInstance().trackPageView(page);
-    }
+    Log.d(TAG, "Logging page " + page);
+    tracker.setScreenName(page);
+    tracker.send(screenViewBuilder.build());
   }
 
   /**
-   * Tracks events - see {@link GoogleAnalyticsTracker#trackEvent(String, String, String, int)}.
+   * Tracks and event.
+   *
+   * @see com.google.android.gms.analytics.HitBuilders.EventBuilder
    */
-  public void trackEvent(String category, String action, String label, int value) {
-    if (isEnabled) {
-      Log.d(TAG, String.format("Logging event %s (%s) label %s value %d",
-          action, category, label, value));
-      GoogleAnalyticsTracker.getInstance().trackEvent(category, action, label, value);
-    }
+  public void trackEvent(String category, String action, String label, long value) {
+    Log.d(TAG, String.format("Logging event %s (%s) label %s value %d",
+        action, category, label, value));
+    tracker.send(eventBuilder.setCategory(category).setAction(action).setLabel(label)
+        .setValue(value).build());
   }
 
   /**
-   * Sets customer variables - see {@link GoogleAnalyticsTracker#setCustomVar(int, String, String)}.
+   * Sets custom variables for slicing..
    */
   public void setCustomVar(Slice slice, String value) {
     Log.d(TAG, String.format("Setting custom variable %s to %s", slice.toString(), value));
-    GoogleAnalyticsTracker.getInstance().setCustomVar(
-        slice.ordinal() + 1, slice.toString(), value, VISITOR_SCOPE);
+    eventBuilder.setCustomDimension(slice.ordinal() + 1, value);
+    screenViewBuilder.setCustomDimension(slice.ordinal() + 1, value);
   }
 }

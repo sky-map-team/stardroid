@@ -72,8 +72,7 @@ public class StardroidApplication extends Application {
 
   // We need to maintain references to this object to keep it from
   // getting gc'd.
-  private final PreferenceChangeAnalyticsTracker preferenceChangeAnalyticsTracker =
-      new PreferenceChangeAnalyticsTracker(Analytics.getInstance(this));
+  private PreferenceChangeAnalyticsTracker preferenceChangeAnalyticsTracker;
 
 
   @Override
@@ -105,12 +104,12 @@ public class StardroidApplication extends Application {
 
   private void setUpAnalytics(String versionName, SharedPreferences preferences) {
     Analytics analytics = Analytics.getInstance(this);
-    analytics.setProductVersion(versionName);
     analytics.setCustomVar(Slice.ANDROID_OS, Integer.toString(Build.VERSION.SDK_INT));
     analytics.setCustomVar(Slice.SKYMAP_VERSION, versionName);
     analytics.setCustomVar(Slice.DEVICE_NAME, android.os.Build.MODEL);
     analytics.setEnabled(preferences.getBoolean(Analytics.PREF_KEY, true));
     analytics.trackPageView(Analytics.APPLICATION_CREATE);
+    analytics.trackEvent("Ignore", "IgnoreAction", "IgnoreLabel2", 1);
 
     String previousVersion = preferences.getString(PREVIOUS_APP_VERSION_PREF, NONE);
     if (previousVersion.equals(NONE)) {
@@ -135,6 +134,8 @@ public class StardroidApplication extends Application {
         Analytics.GENERAL_CATEGORY, Analytics.START_HOUR,
         Integer.toString(Calendar.getInstance().get(Calendar.HOUR_OF_DAY)) + 'h', 0);
 
+    preferenceChangeAnalyticsTracker =
+        new PreferenceChangeAnalyticsTracker(Analytics.getInstance(this));
     preferences.registerOnSharedPreferenceChangeListener(preferenceChangeAnalyticsTracker);
   }
 

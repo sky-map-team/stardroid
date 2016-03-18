@@ -227,7 +227,7 @@ public class DialogFactory {
                     Log.d(TAG, "TOS Dialog closed.  User accepts.");
                     parentActivity.recordEulaAccepted();
                     dialog.dismiss();
-                    Analytics.getInstance(parentActivity).trackEvent(
+                    Analytics.getPreviouslyCreatedInstance().trackEvent(
                         Analytics.APP_CATEGORY, Analytics.TOS_ACCEPT, Analytics.TOS_ACCEPTED, 1);
                   }
                 })
@@ -236,7 +236,7 @@ public class DialogFactory {
                  public void onClick(DialogInterface dialog, int whichButton) {
                    Log.d(TAG, "TOS Dialog closed.  User declines.");
                    dialog.dismiss();
-                   Analytics.getInstance(parentActivity).trackEvent(
+                   Analytics.getPreviouslyCreatedInstance().trackEvent(
                        Analytics.APP_CATEGORY, Analytics.TOS_ACCEPT, Analytics.TOS_REJECTED, 0);
                    parentActivity.finish();
                  }
