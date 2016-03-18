@@ -14,9 +14,9 @@
 
 package com.google.android.stardroid.gallery;
 
-import com.google.android.stardroid.R;
-
 import android.content.res.Resources;
+
+import com.google.android.stardroid.R;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -53,7 +53,7 @@ public class HardcodedGallery implements Gallery {
   private ArrayList<GalleryImage> createImages() {
     ArrayList<GalleryImage> galleryImages = new ArrayList<GalleryImage>();
     // Note the internationalized names in places.  Be sure that if the
-    // search term is internationlized in the search index then it is here too.
+    // search term is internationalized in the search index then it is here too.
     add(galleryImages, R.drawable.hubble_m1, R.string.crab_nebula, R.string.crab_nebula);
     add(galleryImages, R.drawable.hubble_m13, R.string.hercules_gc, R.string.hercules_gc);
     add(galleryImages, R.drawable.hubble_m16, R.string.eagle_nebula, R.string.eagle_nebula);

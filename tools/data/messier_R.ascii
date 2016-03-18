@@ -299,6 +299,7 @@ source {
     REMOVE_string_index: "R.string.m13"
   }
   REMOVE_name_ids: "R.string.m13"
+  REMOVE_name_ids: "R.string.hercules_gc"
 }
 source {
   search_location {
@@ -368,6 +369,7 @@ source {
     REMOVE_string_index: "R.string.m16"
   }
   REMOVE_name_ids: "R.string.m16"
+  REMOVE_name_ids: "R.string.eagle_nebula"
 }
 source {
   search_location {
@@ -2330,6 +2332,7 @@ source {
     REMOVE_string_index: "R.string.m101"
   }
   REMOVE_name_ids: "R.string.m101"
+  REMOVE_name_ids: "R.string.pinwheel_galaxy"
 }
 source {
   search_location {
@@ -2399,6 +2402,7 @@ source {
     REMOVE_string_index: "R.string.m104"
   }
   REMOVE_name_ids: "R.string.m104"
+  REMOVE_name_ids: "R.string.sombrero_galaxy"
 }
 source {
   search_location {
