@@ -100,7 +100,7 @@ public class ImageGalleryActivity extends Activity {
   @Override
   public void onStart() {
     super.onStart();
-    Analytics.getInstance(this).trackPageView(Analytics.IMAGE_GALLERY_ACTIVITY);
+    Analytics.getPreviouslyCreatedInstance().trackPageView(Analytics.IMAGE_GALLERY_ACTIVITY);
   }
 
   @Override

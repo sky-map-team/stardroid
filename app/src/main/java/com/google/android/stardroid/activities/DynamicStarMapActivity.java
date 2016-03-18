@@ -332,19 +332,19 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
     switch (item.getItemId()) {
       case R.id.menu_item_search:
         Log.d(TAG, "Search");
-        Analytics.getInstance(this).trackEvent(Analytics.USER_ACTION_CATEGORY,
+        Analytics.getPreviouslyCreatedInstance().trackEvent(Analytics.USER_ACTION_CATEGORY,
             Analytics.MENU_ITEM, Analytics.SEARCH_REQUESTED_LABEL, 1);
         onSearchRequested();
         break;
       case R.id.menu_item_settings:
         Log.d(TAG, "Settings");
-        Analytics.getInstance(this).trackEvent(Analytics.USER_ACTION_CATEGORY,
+        Analytics.getPreviouslyCreatedInstance().trackEvent(Analytics.USER_ACTION_CATEGORY,
             Analytics.MENU_ITEM, Analytics.SETTINGS_OPENED_LABEL, 1);
         startActivity(new Intent(this, EditSettingsActivity.class));
         break;
       case R.id.menu_item_help:
         Log.d(TAG, "Help");
-        Analytics.getInstance(this).trackEvent(Analytics.USER_ACTION_CATEGORY,
+        Analytics.getPreviouslyCreatedInstance().trackEvent(Analytics.USER_ACTION_CATEGORY,
             Analytics.MENU_ITEM, Analytics.HELP_OPENED_LABEL, 1);
         showDialog(DialogFactory.DIALOG_ID_HELP);
         break;
@@ -353,12 +353,12 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
         nightMode = !nightMode;
         sharedPreferences.edit().putString(ActivityLightLevelManager.LIGHT_MODE_KEY,
             nightMode ? "NIGHT" : "DAY").commit();
-        Analytics.getInstance(this).trackEvent(Analytics.USER_ACTION_CATEGORY,
+        Analytics.getPreviouslyCreatedInstance().trackEvent(Analytics.USER_ACTION_CATEGORY,
             Analytics.MENU_ITEM, Analytics.TOGGLED_NIGHT_MODE_LABEL, nightMode ? 1 : 0);
         break;
       case R.id.menu_item_time:
         Log.d(TAG, "Starting Time Dialog from menu");
-        Analytics.getInstance(this).trackEvent(Analytics.USER_ACTION_CATEGORY,
+        Analytics.getPreviouslyCreatedInstance().trackEvent(Analytics.USER_ACTION_CATEGORY,
             Analytics.MENU_ITEM, Analytics.TIME_TRAVEL_OPENED_LABEL, 1);
         if (!timePlayerUI.isShown()) {
           Log.d(TAG, "Resetting time in time travel dialog.");
@@ -370,13 +370,13 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
         break;
       case R.id.menu_item_gallery:
         Log.d(TAG, "Loading gallery");
-        Analytics.getInstance(this).trackEvent(Analytics.USER_ACTION_CATEGORY,
+        Analytics.getPreviouslyCreatedInstance().trackEvent(Analytics.USER_ACTION_CATEGORY,
             Analytics.MENU_ITEM, Analytics.GALLERY_OPENED_LABEL, 1);
         startActivity(new Intent(this, ImageGalleryActivity.class));
         break;
       case R.id.menu_item_tos:
         Log.d(TAG, "Loading ToS");
-        Analytics.getInstance(this).trackEvent(Analytics.USER_ACTION_CATEGORY,
+        Analytics.getPreviouslyCreatedInstance().trackEvent(Analytics.USER_ACTION_CATEGORY,
             Analytics.MENU_ITEM, Analytics.TOS_OPENED_LABEL, 1);
         showDialog(DialogFactory.DIALOG_ID_EULA_NO_BUTTONS);
         break;
@@ -390,7 +390,7 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
   @Override
   public void onStart() {
     super.onStart();
-    Analytics.getInstance(this).trackPageView(Analytics.DYNAMIC_STARMAP_ACTIVITY);
+    Analytics.getPreviouslyCreatedInstance().trackPageView(Analytics.DYNAMIC_STARMAP_ACTIVITY);
     sessionStartTime = System.currentTimeMillis();
   }
 
@@ -423,7 +423,7 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
     int sessionLengthSeconds = (int) ((
         System.currentTimeMillis() - sessionStartTime) / 1000);
     SessionBucketLength bucket = getSessionLengthBucket(sessionLengthSeconds);
-    Analytics.getInstance(this).trackEvent(
+    Analytics.getPreviouslyCreatedInstance().trackEvent(
         Analytics.GENERAL_CATEGORY, Analytics.SESSION_LENGTH_BUCKET,
         bucket.toString(), sessionLengthSeconds);
   }
@@ -560,7 +560,7 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
     Log.d(TAG, "Query string " + queryString);
     List<SearchResult> results = layerManager.searchByObjectName(queryString);
     // Log the search, with value "1" for successful searches
-    Analytics.getInstance(this).trackEvent(
+    Analytics.getPreviouslyCreatedInstance().trackEvent(
         Analytics.USER_ACTION_CATEGORY, Analytics.SEARCH, "search:" + queryString,
         results.size() > 0 ? 1 : 0);
     if (results.size() == 0) {

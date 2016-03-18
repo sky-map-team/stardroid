@@ -62,7 +62,7 @@ public class SplashScreenActivity extends Activity {
   @Override
   public void onStart() {
     super.onStart();
-    Analytics.getInstance(this).trackPageView(Analytics.SPLASH_SCREEN_ACTIVITY);
+    Analytics.getPreviouslyCreatedInstance().trackPageView(Analytics.SPLASH_SCREEN_ACTIVITY);
   }
 
   @Override

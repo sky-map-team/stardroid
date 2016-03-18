@@ -83,7 +83,7 @@ public class SensorOrientationController extends AbstractController
     manager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
     sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
     sharedPreferences.registerOnSharedPreferenceChangeListener(this);
-    accuracyReporter = new SensorAccuracyReporter(Analytics.getInstance(context));
+    accuracyReporter = new SensorAccuracyReporter(Analytics.getPreviouslyCreatedInstance());
   }
 
   @Override

@@ -13,12 +13,6 @@
 // limitations under the License.
 package com.google.android.stardroid.activities;
 
-import com.google.android.stardroid.R;
-import com.google.android.stardroid.activities.util.ActivityLightLevelChanger;
-import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
-import com.google.android.stardroid.util.Analytics;
-import com.google.android.stardroid.util.MiscUtil;
-
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
@@ -27,11 +21,17 @@ import android.location.Geocoder;
 import android.os.Bundle;
 import android.preference.EditTextPreference;
 import android.preference.Preference;
+import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
-import android.preference.Preference.OnPreferenceChangeListener;
 import android.util.Log;
 import android.widget.Toast;
+
+import com.google.android.stardroid.R;
+import com.google.android.stardroid.activities.util.ActivityLightLevelChanger;
+import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
+import com.google.android.stardroid.util.Analytics;
+import com.google.android.stardroid.util.MiscUtil;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -75,7 +75,7 @@ public class EditSettingsActivity extends PreferenceActivity {
   @Override
   public void onStart() {
     super.onStart();
-    Analytics.getInstance(this).trackPageView(Analytics.EDIT_SETTINGS_ACTIVITY);
+    Analytics.getPreviouslyCreatedInstance().trackPageView(Analytics.EDIT_SETTINGS_ACTIVITY);
   }
 
   @Override
@@ -97,7 +97,8 @@ public class EditSettingsActivity extends PreferenceActivity {
    */
   private void updatePreferences() {
     Log.d(TAG, "Updating preferences");
-    Analytics.getInstance(this).setEnabled(findPreference(Analytics.PREF_KEY).isEnabled());
+    Analytics.getPreviouslyCreatedInstance().setEnabled(
+        findPreference(Analytics.PREF_KEY).isEnabled());
   }
 
   protected boolean setLatLongFromPlace(String place) {
