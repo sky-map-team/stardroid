@@ -11,10 +11,10 @@ M9,Globular Cluster,17.32,-18.51667,7.9,9.3,NGC6333,Ophiuchus,Globular Cluster,
 M10,Globular Cluster,16.95167,-4.1,6.6,15.1,NGC6254,Ophiuchus,Globular Cluster,
 M11,Open Cluster,18.85167,-6.26667,5.8,14,NGC6705,Scutum,Open Cluster,Wild Duck Cluster
 M12,Globular Cluster,16.78667,-1.95,6.6,14.5,NGC6218,Ophiuchus,Globular Cluster,
-M13,Globular Cluster,16.695,36.46667,5.9,16.6,NGC6205,Hercules,Globular Cluster,Hercules Globular Cluster
+M13|hercules_gc,Globular Cluster,16.695,36.46667,5.9,16.6,NGC6205,Hercules,Globular Cluster,Hercules Globular Cluster
 M14,Globular Cluster,17.62667,-3.25,7.6,11.7,NGC6402,Ophiuchus,Globular Cluster,
 M15,Globular Cluster,21.5,12.16667,6.4,12.3,NGC7078,Pegasus,Globular Cluster,
-M16,Open Cluster,18.31333,-13.78333,6,35,NGC6611,Serpens,Open Cluster,Associated with the Eagle Nebula
+M16|eagle_nebula,Open Cluster,18.31333,-13.78333,6,35,NGC6611,Serpens,Open Cluster,Associated with the Eagle Nebula
 M17,Open Cluster,18.34667,-16.18333,6,46,NGC6618,Sagittarius,Diffuse Nebula,Omega Swan Horseshoe or Lobster Nebula
 M18,Open Cluster,18.33167,-17.13333,6.9,9,NGC6613,Sagittarius,Open Cluster,
 M19,Globular Cluster,17.04333,-26.26667,7.2,13.5,NGC6273,Ophiuchus,Globular Cluster,
@@ -99,10 +99,10 @@ M97,Nebula,11.24667,55.01667,11.2,3.2,NGC3587,Ursa Major,Planetary Nebula,Owl Ne
 M98,Galaxy,12.23,14.9,10.1,9.5,NGC4192,Coma Berenices,Spiral Galaxy,
 M99,Galaxy,12.31333,14.41667,9.8,5.4,NGC4254,Coma Berenices,Spiral Galaxy,
 M100,Galaxy,12.38167,15.81667,9.4,6.9,NGC4321,Coma Berenices,Spiral Galaxy,
-M101,Galaxy,14.05333,54.35,7.7,26.9,NGC5457,Ursa Major,Spiral Galaxy,Pinwheel Galaxy
+M101|pinwheel_galaxy,Galaxy,14.05333,54.35,7.7,26.9,NGC5457,Ursa Major,Spiral Galaxy,Pinwheel Galaxy
 M102,Galaxy,14.05333,54.35,7.7,26.9,NGC5457,Ursa Major,Spiral Galaxy,May duplicate M101
 M103,Open Cluster,1.55333,60.7,7.4,6,NGC581,Cassiopeia,Open Cluster,
-M104,Galaxy,12.66667,-11.61667,8.3,8.9,NGC4594,Virgo,Spiral Galaxy,Sombrero Galaxy
+M104|sombrero_galaxy,Galaxy,12.66667,-11.61667,8.3,8.9,NGC4594,Virgo,Spiral Galaxy,Sombrero Galaxy
 M105,Galaxy,10.79667,12.58333,9.3,4.5,NGC3379,Leo,Elliptical Galaxy,
 M106,Galaxy,12.31667,47.3,8.3,18.2,NGC4258,Canes Venaciti,Spiral Galaxy,
 M107,Globular Cluster,16.54167,-13.05,8.1,10,NGC6171,Ophiuchus,Globular Cluster,
