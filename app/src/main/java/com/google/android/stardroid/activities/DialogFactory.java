@@ -109,7 +109,7 @@ public class DialogFactory {
                 preferences.edit().putBoolean(
                     DynamicStarMapActivity.NO_WARN_ABOUT_MISSING_SENSORS,
                     ((CheckBox) view.findViewById(R.id.no_show_dialog_again)).isChecked()).commit();
-                    dialog.dismiss();
+                dialog.dismiss();
               }
             }).create();
     return alertDialog;
@@ -207,48 +207,59 @@ public class DialogFactory {
    * Display the Terms of Service and privacy policy to the user.
    */
   private Dialog createTermsOfServiceDialog(boolean hideButtons) {
-      AlertDialog tosDialog = null;
-      final LayoutInflater inflater = parentActivity.getLayoutInflater();
-      final View view = inflater.inflate(layout.tos_view, null);
-      String eulaText = String.format(parentActivity.getString(R.string.eula_text), getVersionName());
-      Spanned formattedText = Html.fromHtml(eulaText);
-      TextView eulaTextView = (TextView) view.findViewById(R.id.eula_box_text);
-      eulaTextView.setText(formattedText, TextView.BufferType.SPANNABLE);
+    AlertDialog tosDialog = null;
+    LayoutInflater inflater = parentActivity.getLayoutInflater();
+    View view = inflater.inflate(layout.tos_view, null);
 
-      // Note that we've made the "accept" button the negative button and the "decline" button
-      // the positive button as an experiment.
-      if (!hideButtons) {
-        tosDialog = new Builder(parentActivity)
-            .setTitle(string.menu_tos)
-            .setView(view)
-            .setNegativeButton(string.dialog_accept,
-                new DialogInterface.OnClickListener() {
-                  public void onClick(DialogInterface dialog, int whichButton) {
-                    Log.d(TAG, "TOS Dialog closed.  User accepts.");
-                    parentActivity.recordEulaAccepted();
-                    dialog.dismiss();
-                    Analytics.getPreviouslyCreatedInstance().trackEvent(
-                        Analytics.APP_CATEGORY, Analytics.TOS_ACCEPT, Analytics.TOS_ACCEPTED, 1);
-                  }
-                })
-           .setPositiveButton(string.dialog_decline,
-               new DialogInterface.OnClickListener() {
-                 public void onClick(DialogInterface dialog, int whichButton) {
-                   Log.d(TAG, "TOS Dialog closed.  User declines.");
-                   dialog.dismiss();
-                   Analytics.getPreviouslyCreatedInstance().trackEvent(
-                       Analytics.APP_CATEGORY, Analytics.TOS_ACCEPT, Analytics.TOS_REJECTED, 0);
-                   parentActivity.finish();
-                 }
-               })
-           .create();
-      } else {
-          tosDialog = new Builder(parentActivity)
-              .setTitle(string.menu_tos)
-              .setView(view)
-              .create();
-      }
-      return tosDialog;
+    String apologyText = parentActivity.getString(string.language_apology_text);
+    Spanned formattedApologyText = Html.fromHtml(apologyText);
+    TextView apologyTextView = (TextView) view.findViewById(R.id.language_apology_box_text);
+    apologyTextView.setText(formattedApologyText, TextView.BufferType.SPANNABLE);
+
+    String whatsNewText = String.format(parentActivity.getString(string.whats_new_text), getVersionName());
+    Spanned formattedWhatsNewText = Html.fromHtml(whatsNewText);
+    TextView whatsNewTextView = (TextView) view.findViewById(R.id.whats_new_box_text);
+    whatsNewTextView.setText(formattedWhatsNewText, TextView.BufferType.SPANNABLE);
+
+    String eulaText = String.format(parentActivity.getString(R.string.eula_text), getVersionName());
+    Spanned formattedEulaText = Html.fromHtml(eulaText);
+    TextView eulaTextView = (TextView) view.findViewById(R.id.eula_box_text);
+    eulaTextView.setText(formattedEulaText, TextView.BufferType.SPANNABLE);
+
+    // Note that we've made the "accept" button the negative button and the "decline" button
+    // the positive button as an experiment.
+    if (!hideButtons) {
+      tosDialog = new Builder(parentActivity)
+          .setTitle(string.menu_tos)
+          .setView(view)
+          .setNegativeButton(string.dialog_accept,
+              new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int whichButton) {
+                  Log.d(TAG, "TOS Dialog closed.  User accepts.");
+                  parentActivity.recordEulaAccepted();
+                  dialog.dismiss();
+                  Analytics.getPreviouslyCreatedInstance().trackEvent(
+                      Analytics.APP_CATEGORY, Analytics.TOS_ACCEPT, Analytics.TOS_ACCEPTED, 1);
+                }
+              })
+          .setPositiveButton(string.dialog_decline,
+              new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int whichButton) {
+                  Log.d(TAG, "TOS Dialog closed.  User declines.");
+                  dialog.dismiss();
+                  Analytics.getPreviouslyCreatedInstance().trackEvent(
+                      Analytics.APP_CATEGORY, Analytics.TOS_ACCEPT, Analytics.TOS_REJECTED, 0);
+                  parentActivity.finish();
+                }
+              })
+          .create();
+    } else {
+      tosDialog = new Builder(parentActivity)
+          .setTitle(string.menu_tos)
+          .setView(view)
+          .create();
+    }
+    return tosDialog;
   }
 
   /**
