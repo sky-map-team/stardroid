@@ -1,11 +1,7 @@
 <resources>
-<string name="eula_text" translation_description="Please do not change the &lt; and &gt; markup">
-    &lt;i&gt;New in version %s:&lt;/i&gt;&lt;br/&gt;
-    *  Fixed gallery search&lt;br/&gt;
-    *  Change Cassiopeia to the more popular W shape&lt;br/&gt;
-    &lt;br/&gt;&lt;br/&gt;
-
-    &lt;big&gt;&lt;b&gt;Privacy Policy&lt;/b&gt;&lt;/big&gt;&lt;br/&gt;
+<string name="eula_text" translation_description="Privacy policy and EULA in html">
+    <![CDATA[
+    <h1>Privacy Policy</h1>
     This App uses Google Analytics to help analyse how people use it.
     Google Analytics collects standard internet log information and visitor behaviour information
     in an anonymous form. Note that the data is anonymous - no personally identifiable information
@@ -15,21 +11,21 @@
     have particular versions of Android or have phones that have certain features (such as a gyroscope).
     This is essential for us to discover which features
     people like and dislike and when we can drop support for obsolete versions of Android
-    and thus make Sky Map better.  We might share these reports with third parties.&lt;br/&gt;
+    and thus make Sky Map better.  We might share these reports with third parties.<br/>
     We respect your privacy and do not collect your personal information - we cannot tell anything about
     you as a user. If you do not
     wish to share this anonymous data with Google Analytics you can opt out via the settings menu.
     Otherwise, thank you for helping make Sky Map better. For more information on
     Google Analytics see  https://www.google.com/analytics/
 
-    &lt;br/&gt;&lt;br/&gt;
-    &lt;big&gt;&lt;b&gt;End User Licensing Agreement&lt;/b&gt;&lt;/big&gt;&lt;br/&gt;
+    <br/><br/>
+    <h1>End User Licensing Agreement</h1>
     By using Sky Map, you are agreeing to these terms. Please read them carefully.
     \"We\" and \"Sky Map Devs\" refers to the authors and contributors to the Sky Map codebase.
     \"The App\" refers to the Sky Map application.
-    &lt;br/&gt;&lt;br/&gt;
+    <br/><br/>
 
-    &lt;b&gt;Summary&lt;/b&gt;&lt;&lt;br/&gt;
+    <h2>Summary</h2>
     Sky Map comes with no warranties!
     If you choose to use it to navigate the high seas and you
     hit an iceberg, it\'s your responsibility. If you tell your kids that the bright thing in
@@ -40,11 +36,11 @@
     tear a hole in the fabric of space and time, OK - that one is on us.  Any other calamities
     not listed above - not our responsibility.  Don\'t use it while driving or carrying scissors.
 
-    &lt;br/&gt;&lt;br/&gt;
+    <br/><br/>
     Boring legalese version follows.
-    &lt;br/&gt;&lt;br/&gt;
+    <br/><br/>
 
-    &lt;b&gt;Using Sky Map&lt;/b&gt;&lt;br/&gt;
+    <h2>Using Sky Map</h2>
     
     Using Sky Map does not give you ownership of any intellectual property rights 
     over the content you access.
@@ -54,65 +50,65 @@
     used in Sky Map.
     Don’t remove, obscure, or alter any legal notices displayed in or along with Sky Map.
 
-    &lt;br/&gt;&lt;br/&gt;
-    &lt;b&gt;Privacy&lt;/b&gt;&lt;br/&gt;
+    <br/><br/>
+    <h2>Privacy</h2>
 
     Our privacy policy (see above) explains how we treat your personal data and protect your privacy
     when you use Sky Map.
     By using Sky Map, you agree that we can use such data in accordance with our privacy policy.
-    &lt;br/&gt;&lt;br/&gt;
+    <br/><br/>
 
-    &lt;b&gt;About Sky Map&lt;/b&gt;&lt;br/&gt;
+    <h2>About Sky Map</h2>
 
     This software may update automatically on your device once a new version or
     feature is available.
     The Sky Map Developers give you a personal, worldwide, royalty-free, non-assignable and
     non-exclusive license to use Sky Map in the manner permitted by these terms.
     You may use the Sky Map source code in accordance with the license at
-    https://github.com/sky-map-team/stardroid/blob/master/LICENSE.md .&lt;br/&gt;
+    https://github.com/sky-map-team/stardroid/blob/master/LICENSE.md .<br/>
     We are constantly changing and improving Sky Map. We may add or remove
     features at any time, and we may stop supporting it or publishing it altogether.
-    &lt;br/&gt;&lt;br/&gt;
+    <br/><br/>
 
-    &lt;b&gt;Warranties and Disclaimers&lt;/b&gt;&lt;br/&gt;
+    <h2>Warranties and Disclaimers</h2>
 
     We are proud of Sky Map but we make no promises about it.  Note the
-    following:&lt;br/&gt;
+    following:<br/>
 
     OTHER THAN AS EXPRESSLY SET OUT IN THESE TERMS OR ADDITIONAL TERMS, NEITHER SKY MAP DEVS
     NOR ITS SUPPLIERS OR DISTRIBUTORS MAKE ANY SPECIFIC PROMISES ABOUT THE APP.
     FOR EXAMPLE, WE DON’T MAKE ANY COMMITMENTS ABOUT THE CONTENT WITHIN THE APP,
     THE SPECIFIC FUNCTIONS OF THE APP, OR THEIR RELIABILITY, AVAILABILITY, OR ABILITY TO MEET
-    YOUR NEEDS. WE PROVIDE THE APP “AS IS”.&lt;br/&gt;
+    YOUR NEEDS. WE PROVIDE THE APP “AS IS”.<br/>
 
     SOME JURISDICTIONS PROVIDE FOR CERTAIN WARRANTIES, LIKE THE IMPLIED WARRANTY OF MERCHANTABILITY,
     FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT.
     TO THE EXTENT PERMITTED BY LAW, WE EXCLUDE ALL WARRANTIES.
-    &lt;br/&gt;&lt;br/&gt;
+    <br/><br/>
 
-    &lt;b&gt;Liability for Sky Map&lt;/b&gt;&lt;br/&gt;
+    <h2>Liability for Sky Map</h2>
 
     WHEN PERMITTED BY LAW, SKY MAP DEVS, AND THEIR SUPPLIERS AND DISTRIBUTORS,
     WILL NOT BE RESPONSIBLE FOR LOST PROFITS, REVENUES, OR DATA, FINANCIAL LOSSES OR INDIRECT,
-    SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES.&lt;br/&gt;
+    SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES.<br/>
 
     TO THE EXTENT PERMITTED BY LAW, THE TOTAL LIABILITY OF SKY MAP DEVS, AND ITS SUPPLIERS AND
     DISTRIBUTORS,
     FOR ANY CLAIMS UNDER THESE TERMS, INCLUDING FOR ANY IMPLIED WARRANTIES, IS LIMITED TO THE AMOUNT
-    YOU PAID US TO USE THE APP (i.e. nothing).&lt;br/&gt;
+    YOU PAID US TO USE THE APP (i.e. nothing).<br/>
 
     IN ALL CASES, SKY MAP DEVS WILL NOT BE LIABLE FOR ANY LOSS
-    OR DAMAGE CAUSED BY THE APP.&lt;br/&gt;&lt;br/&gt;
+    OR DAMAGE CAUSED BY THE APP.<br/><br/>
 
-    &lt;b&gt;Business uses of Sky Map&lt;/b&gt;&lt;br/&gt;
+    <h2>Business uses of Sky Map</h2>
 
     If you are using Sky Map on behalf of a business, that business accepts these terms.
     It will hold harmless and indemnify Sky Map Devs
     from any claim, suit or action arising from or related to the use of the Services or violation
     of these terms, including any liability or expense arising from claims, losses, damages, suits,
-    judgments, litigation costs and attorneys’ fees.&lt;br/&gt;&lt;br/&gt;
+    judgments, litigation costs and attorneys’ fees.<br/><br/>
 
-    &lt;b&gt;About these Terms&lt;/b&gt;&lt;br/&gt;
+    <h2>About these Terms</h2>
 
     We may modify these terms or any additional terms that apply to the App to, for example,
     reflect changes to the law or changes to Sky Map.
@@ -125,5 +121,6 @@
     that we are giving up any rights that we may have (such as taking action in the future).
 
     If it turns out that a particular term is not enforceable, this will not affect any other terms.
+    ]]>
 </string>
 </resources>
