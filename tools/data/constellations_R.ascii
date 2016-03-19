@@ -1568,20 +1568,9 @@ source {
       right_ascension: 10.129166
       declination: 56.5333
     }
-  }
-  line {
-    color: 2160688306
     vertex {
-      right_ascension: 14.175003
-      declination: 60.7167
-    }
-    vertex {
-      right_ascension: 8.25
-      declination: 62.9333
-    }
-    vertex {
-      right_ascension: 2.2916718
-      declination: 59.15
+          right_ascension: 2.2916718
+          declination: 59.15
     }
   }
   REMOVE_name_ids: "R.string.cassiopeia"
