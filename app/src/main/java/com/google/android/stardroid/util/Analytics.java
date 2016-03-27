@@ -95,6 +95,7 @@ public class Analytics {
   public static final String TIME_TRAVEL_OPENED_LABEL = "Time Travel Opened";
   public static final String GALLERY_OPENED_LABEL = "Gallery Opened";
   public static final String TOS_OPENED_LABEL = "TOS Opened";
+  public static final String DIAGNOSTICS_OPENED_LABEL = "Diagnostics Opened";
   public static final String SEARCH = "Search";
   public static final String GENERAL_CATEGORY = "General";
   public static final String START_HOUR = "Start up hour";

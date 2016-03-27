@@ -227,7 +227,7 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
     activityLightLevelManager = new ActivityLightLevelManager(activityLightLevelChanger,
                                                               sharedPreferences);
 
-    final PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
+    PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
     wakeLock = pm.newWakeLock(PowerManager.SCREEN_BRIGHT_WAKE_LOCK, TAG);
 
     // Were we started as the result of a search?
@@ -379,6 +379,12 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
         Analytics.getPreviouslyCreatedInstance().trackEvent(Analytics.USER_ACTION_CATEGORY,
             Analytics.MENU_ITEM, Analytics.TOS_OPENED_LABEL, 1);
         showDialog(DialogFactory.DIALOG_ID_EULA_NO_BUTTONS);
+        break;
+      case R.id.menu_item_diagnostics:
+        Log.d(TAG, "Loading Diagnostics");
+        Analytics.getPreviouslyCreatedInstance().trackEvent(Analytics.USER_ACTION_CATEGORY,
+            Analytics.MENU_ITEM, Analytics.DIAGNOSTICS_OPENED_LABEL, 1);
+        startActivity(new Intent(this, DiagnosticActivity.class));
         break;
       default:
         Log.e(TAG, "Unwired-up menu item");

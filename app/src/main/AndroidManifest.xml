@@ -14,8 +14,10 @@
     <uses-feature
         android:name="android.hardware.location.gps"
         android:required="false"/>
-    <!-- Sensor requirements.  Making required=false for now - we do want to support
-         these users as best we can. -->
+    <!--
+         Sensor requirements.  Making required=false for now - we do want to support
+         these users as best we can.
+    -->
     <uses-feature
         android:name="android.hardware.sensor.accelerometer"
         android:required="false"/>
@@ -92,6 +94,10 @@
             android:authorities="com.google.android.stardroid.searchterms"
             android:syncable="false"/>
 
+        <activity
+            android:name=".activities.DiagnosticActivity"
+            android:label="@string/title_activity_diagnostic">
+        </activity>
     </application>
 
 </manifest>
