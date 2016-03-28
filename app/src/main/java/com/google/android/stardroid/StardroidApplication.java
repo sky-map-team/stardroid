@@ -69,6 +69,7 @@ public class StardroidApplication extends Application {
   private static AstronomerModel model;
   private static LayerManager layerManager;
   private static ExecutorService backgroundExecutor;
+  private ApplicationComponent component;
 
   // We need to maintain references to this object to keep it from
   // getting gc'd.
@@ -80,6 +81,11 @@ public class StardroidApplication extends Application {
     Log.d(TAG, "StardroidApplication: onCreate");
     super.onCreate();
 
+    component = DaggerApplicationComponent.builder()
+        .applicationModule(new ApplicationModule(this))
+        .build();
+    component.inject(this);
+
     Log.i(TAG, "OS Version: " + android.os.Build.VERSION.RELEASE
             + "(" + android.os.Build.VERSION.SDK_INT + ")");
     String versionName = getVersionName();
@@ -90,6 +96,7 @@ public class StardroidApplication extends Application {
     PreferenceManager.setDefaultValues(this, R.xml.preference_screen, false);
 
     AssetManager assetManager = this.getAssets();
+    // TODO(jontayler): inject this instead
     SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
     Resources resources = this.getResources();
     // Start the LayerManager initializing
