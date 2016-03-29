@@ -2,10 +2,15 @@ package com.google.android.stardroid;
 
 import android.app.Application;
 import android.content.SharedPreferences;
+import android.content.res.AssetManager;
+import android.content.res.Resources;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
 import com.google.android.stardroid.util.MiscUtil;
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
 
 import javax.inject.Singleton;
 
@@ -26,10 +31,24 @@ public class ApplicationModule {
     this.app = app;
   }
 
-  @Provides
-  @Singleton
+  @Provides @Singleton
   SharedPreferences provideSharedPreferences() {
     Log.d(TAG, "Providing shared preferences");
     return PreferenceManager.getDefaultSharedPreferences(app);
+  }
+
+  @Provides @Singleton
+  ExecutorService provideBackgroundExecutor() {
+    return new ScheduledThreadPoolExecutor(1);
+  }
+
+  @Provides @Singleton
+  AssetManager provideAssetManager() {
+    return app.getAssets();
+  }
+
+  @Provides @Singleton
+  Resources provideResources() {
+    return app.getResources();
   }
 }

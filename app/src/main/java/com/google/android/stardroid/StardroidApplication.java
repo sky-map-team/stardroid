@@ -50,7 +50,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.ScheduledThreadPoolExecutor;
 
 import javax.inject.Inject;
 
@@ -72,9 +71,12 @@ public class StardroidApplication extends Application {
   // things it needs; there seems to be no easy way for a ContentProvider
   // to access its Application object.
   private static AstronomerModel model;
+  // TODO(jontayler): inject the layer manager instead
   private static LayerManager layerManager;
-  private static ExecutorService backgroundExecutor;
-  private ApplicationComponent component;
+  @Inject
+  static ExecutorService backgroundExecutor;
+  @Inject AssetManager assetManager;
+  @Inject Resources resources;
 
   // We need to maintain references to this object to keep it from
   // getting gc'd.
@@ -86,7 +88,7 @@ public class StardroidApplication extends Application {
     Log.d(TAG, "StardroidApplication: onCreate");
     super.onCreate();
 
-    component = DaggerApplicationComponent.builder()
+    ApplicationComponent component = DaggerApplicationComponent.builder()
         .applicationModule(new ApplicationModule(this))
         .build();
     component.inject(this);
@@ -95,13 +97,11 @@ public class StardroidApplication extends Application {
             + "(" + android.os.Build.VERSION.SDK_INT + ")");
     String versionName = getVersionName();
     Log.i(TAG, "Sky Map version " + versionName + " build " + getVersion());
-    backgroundExecutor = new ScheduledThreadPoolExecutor(1);
+
     // This populates the default values from the preferences XML file. See
     // {@link DefaultValues} for more details.
     PreferenceManager.setDefaultValues(this, R.xml.preference_screen, false);
 
-    AssetManager assetManager = this.getAssets();
-    Resources resources = this.getResources();
     // Start the LayerManager initializing
     getLayerManager(assetManager, preferences, resources, this);
 
