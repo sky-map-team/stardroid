@@ -52,6 +52,8 @@ import java.util.Set;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 
+import javax.inject.Inject;
+
 /**
  * The main Stardroid Application class.
  *
@@ -62,6 +64,9 @@ public class StardroidApplication extends Application {
   private static final String PREVIOUS_APP_VERSION_PREF = "previous_app_version";
   private static final String NONE = "Clean install";
   private static final String UNKNOWN = "Unknown previous version";
+
+  @Inject
+  SharedPreferences preferences;
   // The Application class is a singleton, so treat it as such, with static
   // fields.  This is necessary so that the content provider can access the
   // things it needs; there seems to be no easy way for a ContentProvider
@@ -96,20 +101,18 @@ public class StardroidApplication extends Application {
     PreferenceManager.setDefaultValues(this, R.xml.preference_screen, false);
 
     AssetManager assetManager = this.getAssets();
-    // TODO(jontayler): inject this instead
-    SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
     Resources resources = this.getResources();
     // Start the LayerManager initializing
     getLayerManager(assetManager, preferences, resources, this);
 
-    setUpAnalytics(versionName, preferences);
+    setUpAnalytics(versionName);
 
     performFeatureCheck();
 
     Log.d(TAG, "StardroidApplication: -onCreate");
   }
 
-  private void setUpAnalytics(String versionName, SharedPreferences preferences) {
+  private void setUpAnalytics(String versionName) {
     Analytics analytics = Analytics.getInstance(this);
     analytics.setCustomVar(Slice.ANDROID_OS, Integer.toString(Build.VERSION.SDK_INT));
     analytics.setCustomVar(Slice.SKYMAP_VERSION, versionName);
