@@ -16,7 +16,6 @@ package com.google.android.stardroid.util;
 
 import android.hardware.Sensor;
 import android.os.Build;
-import android.support.annotation.Nullable;
 import android.util.Log;
 
 import com.google.android.gms.analytics.GoogleAnalytics;
@@ -24,6 +23,8 @@ import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
 import com.google.android.stardroid.BuildConfig;
 import com.google.android.stardroid.StardroidApplication;
+
+import javax.inject.Inject;
 
 /**
  * Encapsulates interactions with Google Analytics, allowing it to be
@@ -110,26 +111,8 @@ public class Analytics {
   // TODO(johntaylor): use CustomVariable.VISITOR_SCOPE if it gets made public.
   private static final int VISITOR_SCOPE = 1;
 
-  /**
-   * Returns a the previously constructed analytics object, or null if one doesn't exist.
-   * TODO(jontayler): horrible kludge - switch to dagger to get rid of this.
-   */
-  @Nullable
-  public static Analytics getPreviouslyCreatedInstance() {
-    return instance;
-  }
-
-  /**
-   * Returns the singleton Analytics instance.
-   */
-  public static Analytics getInstance(StardroidApplication application) {
-    if (instance == null) {
-      instance = new Analytics(application);
-    }
-    return instance;
-  }
-
-  private Analytics(StardroidApplication application) {
+  @Inject
+  Analytics(StardroidApplication application) {
     googleAnalytics = GoogleAnalytics.getInstance(application);
     googleAnalytics.enableAutoActivityReports(application);
     // Can also use R.xml.global_tracker if we're prepared to reveal our analytics Id.

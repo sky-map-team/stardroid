@@ -29,6 +29,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.stardroid.R;
+import com.google.android.stardroid.StardroidApplication;
 import com.google.android.stardroid.activities.util.ActivityLightLevelChanger;
 import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
 import com.google.android.stardroid.gallery.GalleryFactory;
@@ -37,6 +38,8 @@ import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.MiscUtil;
 
 import java.util.List;
+
+import javax.inject.Inject;
 
 /**
  * Shows an image to the user and allows them to search for it.
@@ -49,10 +52,13 @@ public class ImageDisplayActivity extends Activity {
   private static final int ERROR_MAGIC_NUMBER = -1;
   private GalleryImage selectedImage;
   private ActivityLightLevelManager activityLightLevelManager;
+  @Inject
+  Analytics analytics;
 
   @Override
   protected void onCreate(Bundle icicle) {
     super.onCreate(icicle);
+    ((StardroidApplication) getApplication()).getApplicationComponent().inject(this);
     setContentView(R.layout.imagedisplay);
     activityLightLevelManager = new ActivityLightLevelManager(
         new ActivityLightLevelChanger(this, null),
@@ -91,7 +97,7 @@ public class ImageDisplayActivity extends Activity {
   @Override
   public void onStart() {
     super.onStart();
-    Analytics.getPreviouslyCreatedInstance().trackPageView(Analytics.IMAGE_DISPLAY_ACTIVITY);
+    analytics.trackPageView(Analytics.IMAGE_DISPLAY_ACTIVITY);
   }
 
   @Override
