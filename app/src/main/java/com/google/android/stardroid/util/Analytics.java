@@ -32,7 +32,6 @@ import javax.inject.Inject;
  *
  * @author John Taylor
  */
-// TODO(johntaylor): refactor this away.
 public class Analytics {
   /**
    * Analytics ID associated with http://stardroid-server.appspot.com
@@ -69,6 +68,7 @@ public class Analytics {
 
   // Page Views
   public static final String APPLICATION_CREATE = "/ApplicationCreate";
+  public static final String DIAGNOSTICS_ACTIVITY = "/MainPage/Diagnostics";
   public static final String DYNAMIC_STARMAP_ACTIVITY = "/MainPage";
   public static final String EDIT_SETTINGS_ACTIVITY = "/MainPage/EditSettings";
   public static final String SPLASH_SCREEN_ACTIVITY = "/SplashScreen";

@@ -384,7 +384,7 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
         break;
       case R.id.menu_item_diagnostics:
         Log.d(TAG, "Loading Diagnostics");
-        Analytics.getPreviouslyCreatedInstance().trackEvent(Analytics.USER_ACTION_CATEGORY,
+       analytics.trackEvent(Analytics.USER_ACTION_CATEGORY,
             Analytics.MENU_ITEM, Analytics.DIAGNOSTICS_OPENED_LABEL, 1);
         startActivity(new Intent(this, DiagnosticActivity.class));
         break;

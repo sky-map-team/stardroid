@@ -1,5 +1,6 @@
 package com.google.android.stardroid;
 
+import com.google.android.stardroid.activities.DiagnosticActivity;
 import com.google.android.stardroid.activities.DynamicStarMapModule;
 import com.google.android.stardroid.activities.DynamicStarMapSubcomponent;
 import com.google.android.stardroid.activities.EditSettingsActivity;
@@ -19,9 +20,12 @@ import dagger.Component;
 @Component(modules={ApplicationModule.class})
 public interface ApplicationComponent {
   void inject(StardroidApplication app);
-  void inject(SplashScreenActivity activity);
+
+  void inject(DiagnosticActivity activity);
   void inject(EditSettingsActivity activity);
   void inject(ImageDisplayActivity activity);
   void inject(ImageGalleryActivity activity);
+  void inject(SplashScreenActivity activity);
+
   DynamicStarMapSubcomponent newDynamicStarMapSubcomponent(DynamicStarMapModule activityModule);
 }
