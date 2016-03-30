@@ -1,6 +1,5 @@
 package com.google.android.stardroid;
 
-import android.app.Application;
 import android.content.SharedPreferences;
 import android.content.res.AssetManager;
 import android.content.res.Resources;
@@ -23,12 +22,17 @@ import dagger.Provides;
  */
 @Module
 public class ApplicationModule {
-  private static final String TAG = MiscUtil.getTag(StardroidApplication.class);
-  private Application app;
+  private static final String TAG = MiscUtil.getTag(ApplicationModule.class);
+  private StardroidApplication app;
 
-  public ApplicationModule(Application app) {
+  public ApplicationModule(StardroidApplication app) {
     Log.d(TAG, "Creating application module for " + app);
     this.app = app;
+  }
+
+  @Provides @Singleton
+  StardroidApplication provideApplication() {
+    return app;
   }
 
   @Provides @Singleton

@@ -29,6 +29,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.stardroid.R;
+import com.google.android.stardroid.StardroidApplication;
 import com.google.android.stardroid.activities.util.ActivityLightLevelChanger;
 import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
 import com.google.android.stardroid.gallery.GalleryFactory;
@@ -37,6 +38,8 @@ import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.MiscUtil;
 
 import java.util.List;
+
+import javax.inject.Inject;
 
 /**
  * Displays a series of images to the user.  Selecting an image
@@ -52,6 +55,8 @@ public class ImageGalleryActivity extends Activity {
   private List<GalleryImage> galleryImages;
 
   private ActivityLightLevelManager activityLightLevelManager;
+  @Inject
+  Analytics analytics;
 
   private class ImageAdapter extends BaseAdapter {
     public int getCount() {
@@ -89,6 +94,7 @@ public class ImageGalleryActivity extends Activity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+    ((StardroidApplication) getApplication()).getApplicationComponent().inject(this);
     setContentView(R.layout.imagegallery);
     activityLightLevelManager = new ActivityLightLevelManager(
         new ActivityLightLevelChanger(this, null),
@@ -100,7 +106,7 @@ public class ImageGalleryActivity extends Activity {
   @Override
   public void onStart() {
     super.onStart();
-    Analytics.getPreviouslyCreatedInstance().trackPageView(Analytics.IMAGE_GALLERY_ACTIVITY);
+    analytics.trackPageView(Analytics.IMAGE_GALLERY_ACTIVITY);
   }
 
   @Override

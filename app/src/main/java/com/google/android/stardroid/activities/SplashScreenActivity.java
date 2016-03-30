@@ -24,8 +24,11 @@ import android.view.animation.Animation.AnimationListener;
 import android.view.animation.AnimationUtils;
 
 import com.google.android.stardroid.R;
+import com.google.android.stardroid.StardroidApplication;
 import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.MiscUtil;
+
+import javax.inject.Inject;
 
 /**
  * Shows a splash screen, then launch the next activity.
@@ -33,11 +36,14 @@ import com.google.android.stardroid.util.MiscUtil;
 public class SplashScreenActivity extends Activity {
   private final static String TAG = MiscUtil.getTag(SplashScreenActivity.class);
 
+  @Inject Analytics analytics;
+
   @Override
   public void onCreate(Bundle savedInstanceState) {
     Log.d(TAG, "SplashScreen onCreate");
     super.onCreate(savedInstanceState);
     setContentView(R.layout.splash);
+    ((StardroidApplication) getApplication()).getApplicationComponent().inject(this);
 
     final View graphic = findViewById(R.id.splash);
 
@@ -62,7 +68,7 @@ public class SplashScreenActivity extends Activity {
   @Override
   public void onStart() {
     super.onStart();
-    Analytics.getPreviouslyCreatedInstance().trackPageView(Analytics.SPLASH_SCREEN_ACTIVITY);
+    analytics.trackPageView(Analytics.SPLASH_SCREEN_ACTIVITY);
   }
 
   @Override

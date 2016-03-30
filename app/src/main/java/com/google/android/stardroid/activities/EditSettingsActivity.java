@@ -28,6 +28,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.google.android.stardroid.R;
+import com.google.android.stardroid.StardroidApplication;
 import com.google.android.stardroid.activities.util.ActivityLightLevelChanger;
 import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
 import com.google.android.stardroid.util.Analytics;
@@ -36,6 +37,8 @@ import com.google.android.stardroid.util.MiscUtil;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.inject.Inject;
 
 /**
  * Edit the user's preferences.
@@ -50,10 +53,13 @@ public class EditSettingsActivity extends PreferenceActivity {
   private static final String TAG = MiscUtil.getTag(EditSettingsActivity.class);
   private Geocoder geocoder;
   private ActivityLightLevelManager activityLightLevelManager;
+  @Inject
+  Analytics analytics;
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+    ((StardroidApplication) getApplication()).getApplicationComponent().inject(this);
     activityLightLevelManager = new ActivityLightLevelManager(
         new ActivityLightLevelChanger(this, null),
         PreferenceManager.getDefaultSharedPreferences(this));
@@ -75,7 +81,7 @@ public class EditSettingsActivity extends PreferenceActivity {
   @Override
   public void onStart() {
     super.onStart();
-    Analytics.getPreviouslyCreatedInstance().trackPageView(Analytics.EDIT_SETTINGS_ACTIVITY);
+    analytics.trackPageView(Analytics.EDIT_SETTINGS_ACTIVITY);
   }
 
   @Override
@@ -97,8 +103,7 @@ public class EditSettingsActivity extends PreferenceActivity {
    */
   private void updatePreferences() {
     Log.d(TAG, "Updating preferences");
-    Analytics.getPreviouslyCreatedInstance().setEnabled(
-        findPreference(Analytics.PREF_KEY).isEnabled());
+    analytics.setEnabled(findPreference(Analytics.PREF_KEY).isEnabled());
   }
 
   protected boolean setLatLongFromPlace(String place) {

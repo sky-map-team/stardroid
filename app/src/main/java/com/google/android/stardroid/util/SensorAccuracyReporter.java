@@ -11,6 +11,8 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import javax.inject.Inject;
+
 /**
  * Logs the reported accuracy of the compass.
  */
@@ -21,7 +23,8 @@ public class SensorAccuracyReporter implements SensorEventListener {
   private Set<Sensor> highAccuracyAchievedForSensor = new HashSet<>();
   private Map<Sensor, Long> timeSinceLastUpdateForSensor = new HashMap<>();
 
-  public SensorAccuracyReporter(Analytics analytics) {
+  @Inject
+  SensorAccuracyReporter(Analytics analytics) {
     this.analytics = analytics;
     this.startTimeMs = System.currentTimeMillis();
   }

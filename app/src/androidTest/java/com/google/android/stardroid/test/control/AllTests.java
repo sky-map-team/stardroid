@@ -28,7 +28,6 @@ public class AllTests {
     //$JUnit-BEGIN$
     suite.addTestSuite(AstronomerModelWithMagneticVariationTest.class);
     suite.addTestSuite(AstronomerModelTest.class);
-    suite.addTestSuite(ControllerGroupTest.class);
     suite.addTestSuite(TransitioningCompositeClockTest.class);
     suite.addTestSuite(ZoomControllerTest.class);
     //$JUnit-END$

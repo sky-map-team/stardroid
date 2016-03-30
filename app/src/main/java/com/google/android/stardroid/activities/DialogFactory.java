@@ -40,6 +40,8 @@ import com.google.android.stardroid.views.TimeTravelDialog;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
+
 /**
  * A grab bag of dialogs used in the DynamicStarMapActivity.  Extracted
  * to this class simply to reduce clutter in an already complex class.
@@ -61,15 +63,19 @@ public class DialogFactory {
   private DynamicStarMapActivity parentActivity;
   private ArrayAdapter<SearchResult> multipleSearchResultsAdaptor;
   private SharedPreferences preferences;
+  private Analytics analytics;
 
   /**
    * Constructor.
    *
    * @param parentActivity the parent activity showing these dialogs.
    */
-  public DialogFactory(DynamicStarMapActivity parentActivity, SharedPreferences preferences) {
+  @Inject
+  DialogFactory(DynamicStarMapActivity parentActivity, SharedPreferences preferences,
+                Analytics analytics) {
     this.parentActivity = parentActivity;
     this.preferences = preferences;
+    this.analytics = analytics;
     multipleSearchResultsAdaptor = new ArrayAdapter<>(
         parentActivity, android.R.layout.simple_list_item_1, new ArrayList<SearchResult>());
   }
@@ -238,7 +244,7 @@ public class DialogFactory {
                   Log.d(TAG, "TOS Dialog closed.  User accepts.");
                   parentActivity.recordEulaAccepted();
                   dialog.dismiss();
-                  Analytics.getPreviouslyCreatedInstance().trackEvent(
+                  analytics.trackEvent(
                       Analytics.APP_CATEGORY, Analytics.TOS_ACCEPT, Analytics.TOS_ACCEPTED, 1);
                 }
               })
@@ -247,7 +253,7 @@ public class DialogFactory {
                 public void onClick(DialogInterface dialog, int whichButton) {
                   Log.d(TAG, "TOS Dialog closed.  User declines.");
                   dialog.dismiss();
-                  Analytics.getPreviouslyCreatedInstance().trackEvent(
+                  analytics.trackEvent(
                       Analytics.APP_CATEGORY, Analytics.TOS_ACCEPT, Analytics.TOS_REJECTED, 0);
                   parentActivity.finish();
                 }
