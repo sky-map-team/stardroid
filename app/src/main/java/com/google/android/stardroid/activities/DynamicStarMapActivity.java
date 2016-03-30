@@ -28,7 +28,6 @@ import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.PowerManager;
-import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.KeyEvent;
@@ -40,7 +39,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.WindowManager;
 import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -76,12 +74,14 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.inject.Inject;
+import javax.inject.Named;
+
 /**
  * The main map-rendering Activity.
  */
 public class DynamicStarMapActivity extends Activity implements OnSharedPreferenceChangeListener {
   private static final int TIME_DISPLAY_DELAY_MILLIS = 1000;
-  private static final int LONG_FADE_TIME_MS = 2500;
   private FullscreenControlsManager fullscreenControlsManager;
 
   /**
@@ -136,14 +136,16 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
   // of the app.
   public static final String READ_TOS_PREF_VERSION = "read_tos_version";
   private ImageButton cancelSearchButton;
-  private ControllerGroup controller;
+  @Inject ControllerGroup controller;
   private GestureDetector gestureDetector;
   private AstronomerModel model;
   private RendererController rendererController;
   private boolean nightMode = false;
   private boolean searchMode = false;
   private GeocentricCoordinates searchTarget = GeocentricCoordinates.getInstance(0, 0);
-  private SharedPreferences sharedPreferences;
+
+  @Inject
+  SharedPreferences sharedPreferences;
   private GLSurfaceView skyView;
   private PowerManager.WakeLock wakeLock;
   private String searchTargetName;
@@ -151,10 +153,11 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
   // TODO(widdows): Figure out if we should break out the
   // time dialog and time player into separate activities.
   private View timePlayerUI;
-  private DialogFactory dialogFactory;
-  private MediaPlayer timeTravelNoise;
-  private MediaPlayer timeTravelBackNoise;
-  private Handler handler = new Handler();
+  @Inject DialogFactory dialogFactory;
+  @Inject @Named("timetravel") MediaPlayer timeTravelNoise;
+  @Inject @Named("timetravelback") MediaPlayer timeTravelBackNoise;
+  @Inject Handler handler;
+  @Inject Analytics analytics;
   // A list of runnables to post on the handler when we resume.
   private List<Runnable> onResumeRunnables = new ArrayList<>();
 
@@ -187,11 +190,10 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
   public void onCreate(Bundle icicle) {
     Log.d(TAG, "onCreate at " + System.currentTimeMillis());
     super.onCreate(icicle);
-    sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-    timeTravelNoise = MediaPlayer.create(this, R.raw.timetravel);
-    timeTravelBackNoise = MediaPlayer.create(this, R.raw.timetravelback);
-    flashAnimation = AnimationUtils.loadAnimation(this, R.anim.timetravelflash);
-    dialogFactory = new DialogFactory(this, sharedPreferences);
+
+    ((StardroidApplication) getApplication()).getApplicationComponent().newDynamicStarMapSubcomponent(
+        new DynamicStarMapModule(this)).inject(this);
+
     sharedPreferences.registerOnSharedPreferenceChangeListener(this);
     maybeShowEula(sharedPreferences);
 
@@ -332,19 +334,19 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
     switch (item.getItemId()) {
       case R.id.menu_item_search:
         Log.d(TAG, "Search");
-        Analytics.getPreviouslyCreatedInstance().trackEvent(Analytics.USER_ACTION_CATEGORY,
+        analytics.trackEvent(Analytics.USER_ACTION_CATEGORY,
             Analytics.MENU_ITEM, Analytics.SEARCH_REQUESTED_LABEL, 1);
         onSearchRequested();
         break;
       case R.id.menu_item_settings:
         Log.d(TAG, "Settings");
-        Analytics.getPreviouslyCreatedInstance().trackEvent(Analytics.USER_ACTION_CATEGORY,
+        analytics.trackEvent(Analytics.USER_ACTION_CATEGORY,
             Analytics.MENU_ITEM, Analytics.SETTINGS_OPENED_LABEL, 1);
         startActivity(new Intent(this, EditSettingsActivity.class));
         break;
       case R.id.menu_item_help:
         Log.d(TAG, "Help");
-        Analytics.getPreviouslyCreatedInstance().trackEvent(Analytics.USER_ACTION_CATEGORY,
+        analytics.trackEvent(Analytics.USER_ACTION_CATEGORY,
             Analytics.MENU_ITEM, Analytics.HELP_OPENED_LABEL, 1);
         showDialog(DialogFactory.DIALOG_ID_HELP);
         break;
@@ -353,12 +355,12 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
         nightMode = !nightMode;
         sharedPreferences.edit().putString(ActivityLightLevelManager.LIGHT_MODE_KEY,
             nightMode ? "NIGHT" : "DAY").commit();
-        Analytics.getPreviouslyCreatedInstance().trackEvent(Analytics.USER_ACTION_CATEGORY,
+        analytics.trackEvent(Analytics.USER_ACTION_CATEGORY,
             Analytics.MENU_ITEM, Analytics.TOGGLED_NIGHT_MODE_LABEL, nightMode ? 1 : 0);
         break;
       case R.id.menu_item_time:
         Log.d(TAG, "Starting Time Dialog from menu");
-        Analytics.getPreviouslyCreatedInstance().trackEvent(Analytics.USER_ACTION_CATEGORY,
+        analytics.trackEvent(Analytics.USER_ACTION_CATEGORY,
             Analytics.MENU_ITEM, Analytics.TIME_TRAVEL_OPENED_LABEL, 1);
         if (!timePlayerUI.isShown()) {
           Log.d(TAG, "Resetting time in time travel dialog.");
@@ -370,13 +372,13 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
         break;
       case R.id.menu_item_gallery:
         Log.d(TAG, "Loading gallery");
-        Analytics.getPreviouslyCreatedInstance().trackEvent(Analytics.USER_ACTION_CATEGORY,
+        analytics.trackEvent(Analytics.USER_ACTION_CATEGORY,
             Analytics.MENU_ITEM, Analytics.GALLERY_OPENED_LABEL, 1);
         startActivity(new Intent(this, ImageGalleryActivity.class));
         break;
       case R.id.menu_item_tos:
         Log.d(TAG, "Loading ToS");
-        Analytics.getPreviouslyCreatedInstance().trackEvent(Analytics.USER_ACTION_CATEGORY,
+        analytics.trackEvent(Analytics.USER_ACTION_CATEGORY,
             Analytics.MENU_ITEM, Analytics.TOS_OPENED_LABEL, 1);
         showDialog(DialogFactory.DIALOG_ID_EULA_NO_BUTTONS);
         break;
@@ -390,7 +392,7 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
   @Override
   public void onStart() {
     super.onStart();
-    Analytics.getPreviouslyCreatedInstance().trackPageView(Analytics.DYNAMIC_STARMAP_ACTIVITY);
+    analytics.trackPageView(Analytics.DYNAMIC_STARMAP_ACTIVITY);
     sessionStartTime = System.currentTimeMillis();
   }
 
@@ -423,7 +425,7 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
     int sessionLengthSeconds = (int) ((
         System.currentTimeMillis() - sessionStartTime) / 1000);
     SessionBucketLength bucket = getSessionLengthBucket(sessionLengthSeconds);
-    Analytics.getPreviouslyCreatedInstance().trackEvent(
+    analytics.trackEvent(
         Analytics.GENERAL_CATEGORY, Analytics.SESSION_LENGTH_BUCKET,
         bucket.toString(), sessionLengthSeconds);
   }
@@ -560,7 +562,7 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
     Log.d(TAG, "Query string " + queryString);
     List<SearchResult> results = layerManager.searchByObjectName(queryString);
     // Log the search, with value "1" for successful searches
-    Analytics.getPreviouslyCreatedInstance().trackEvent(
+    analytics.trackEvent(
         Analytics.USER_ACTION_CATEGORY, Analytics.SEARCH, "search:" + queryString,
         results.size() > 0 ? 1 : 0);
     if (results.size() == 0) {
@@ -593,7 +595,6 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
     Log.i(TAG, "Setting layers @ " + System.currentTimeMillis());
     layerManager.registerWithRenderer(rendererController);
     Log.i(TAG, "Set up controllers @ " + System.currentTimeMillis());
-    controller = ControllerGroup.createControllerGroup(this);
     controller.setModel(model);
     wireUpScreenControls(); // TODO(johntaylor) move these?
     magneticSwitcher = new MagneticDeclinationCalculatorSwitcher(model, sharedPreferences);

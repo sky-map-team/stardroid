@@ -44,13 +44,15 @@ import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.Analytics.Slice;
 import com.google.android.stardroid.util.MiscUtil;
 import com.google.android.stardroid.util.PreferenceChangeAnalyticsTracker;
+import com.google.android.stardroid.views.PreferencesButton;
 
 import java.util.Calendar;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.ScheduledThreadPoolExecutor;
+
+import javax.inject.Inject;
 
 /**
  * The main Stardroid Application class.
@@ -62,17 +64,26 @@ public class StardroidApplication extends Application {
   private static final String PREVIOUS_APP_VERSION_PREF = "previous_app_version";
   private static final String NONE = "Clean install";
   private static final String UNKNOWN = "Unknown previous version";
+
+  @Inject
+  SharedPreferences preferences;
   // The Application class is a singleton, so treat it as such, with static
   // fields.  This is necessary so that the content provider can access the
   // things it needs; there seems to be no easy way for a ContentProvider
   // to access its Application object.
   private static AstronomerModel model;
+  // TODO(jontayler): inject the layer manager instead
   private static LayerManager layerManager;
-  private static ExecutorService backgroundExecutor;
+  @Inject
+  static ExecutorService backgroundExecutor;
+  @Inject AssetManager assetManager;
+  @Inject Resources resources;
+  @Inject Analytics analytics;
 
   // We need to maintain references to this object to keep it from
   // getting gc'd.
-  private PreferenceChangeAnalyticsTracker preferenceChangeAnalyticsTracker;
+  @Inject PreferenceChangeAnalyticsTracker preferenceChangeAnalyticsTracker;
+  private ApplicationComponent component;
 
 
   @Override
@@ -80,36 +91,43 @@ public class StardroidApplication extends Application {
     Log.d(TAG, "StardroidApplication: onCreate");
     super.onCreate();
 
+    component = DaggerApplicationComponent.builder()
+        .applicationModule(new ApplicationModule(this))
+        .build();
+    component.inject(this);
+
     Log.i(TAG, "OS Version: " + android.os.Build.VERSION.RELEASE
             + "(" + android.os.Build.VERSION.SDK_INT + ")");
     String versionName = getVersionName();
     Log.i(TAG, "Sky Map version " + versionName + " build " + getVersion());
-    backgroundExecutor = new ScheduledThreadPoolExecutor(1);
+
     // This populates the default values from the preferences XML file. See
     // {@link DefaultValues} for more details.
     PreferenceManager.setDefaultValues(this, R.xml.preference_screen, false);
 
-    AssetManager assetManager = this.getAssets();
-    SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-    Resources resources = this.getResources();
     // Start the LayerManager initializing
     getLayerManager(assetManager, preferences, resources, this);
 
-    setUpAnalytics(versionName, preferences);
+    setUpAnalytics(versionName);
 
     performFeatureCheck();
 
     Log.d(TAG, "StardroidApplication: -onCreate");
   }
 
-  private void setUpAnalytics(String versionName, SharedPreferences preferences) {
-    Analytics analytics = Analytics.getInstance(this);
+  public ApplicationComponent getApplicationComponent() {
+    return component;
+  }
+
+  private void setUpAnalytics(String versionName) {
     analytics.setCustomVar(Slice.ANDROID_OS, Integer.toString(Build.VERSION.SDK_INT));
     analytics.setCustomVar(Slice.SKYMAP_VERSION, versionName);
     analytics.setCustomVar(Slice.DEVICE_NAME, android.os.Build.MODEL);
     analytics.setEnabled(preferences.getBoolean(Analytics.PREF_KEY, true));
     analytics.trackPageView(Analytics.APPLICATION_CREATE);
     analytics.trackEvent("Ignore", "IgnoreAction", "IgnoreLabel2", 1);
+    // Ugly hack since this isn't injectable
+    PreferencesButton.setAnalytics(analytics);
 
     String previousVersion = preferences.getString(PREVIOUS_APP_VERSION_PREF, NONE);
     if (previousVersion.equals(NONE)) {
@@ -134,15 +152,13 @@ public class StardroidApplication extends Application {
         Analytics.GENERAL_CATEGORY, Analytics.START_HOUR,
         Integer.toString(Calendar.getInstance().get(Calendar.HOUR_OF_DAY)) + 'h', 0);
 
-    preferenceChangeAnalyticsTracker =
-        new PreferenceChangeAnalyticsTracker(Analytics.getInstance(this));
     preferences.registerOnSharedPreferenceChangeListener(preferenceChangeAnalyticsTracker);
   }
 
   @Override
   public void onTerminate() {
     super.onTerminate();
-    Analytics.getInstance(this).setEnabled(false);
+    analytics.setEnabled(false);
   }
 
   /**
@@ -235,7 +251,6 @@ public class StardroidApplication extends Application {
    * so we can judge when to add/drop support.
    */
   private void performFeatureCheck() {
-    Analytics analytics = Analytics.getInstance(this);
     SensorManager sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
     if (sensorManager == null) {
       Log.e(TAG, "No sensor manager");

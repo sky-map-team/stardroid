@@ -23,11 +23,12 @@ import android.hardware.SensorManager;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
-import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.MiscUtil;
 import com.google.android.stardroid.util.SensorAccuracyReporter;
 import com.google.android.stardroid.util.smoothers.ExponentiallyWeightedSmoother;
 import com.google.android.stardroid.util.smoothers.PlainSmootherModelAdaptor;
+
+import javax.inject.Inject;
 
 /**
  * Sets the direction of view from the orientation sensors.
@@ -79,11 +80,12 @@ public class SensorOrientationController extends AbstractController
 
   private SharedPreferences sharedPreferences;
 
-  public SensorOrientationController(Context context) {
+  @Inject
+  SensorOrientationController(Context context, SensorAccuracyReporter accuracyReporter) {
     manager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
     sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
     sharedPreferences.registerOnSharedPreferenceChangeListener(this);
-    accuracyReporter = new SensorAccuracyReporter(Analytics.getPreviouslyCreatedInstance());
+    this.accuracyReporter = accuracyReporter;
   }
 
   @Override
