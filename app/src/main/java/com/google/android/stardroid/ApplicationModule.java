@@ -1,8 +1,10 @@
 package com.google.android.stardroid;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.AssetManager;
 import android.content.res.Resources;
+import android.hardware.SensorManager;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
@@ -54,5 +56,10 @@ public class ApplicationModule {
   @Provides @Singleton
   Resources provideResources() {
     return app.getResources();
+  }
+
+  @Provides @Singleton
+  SensorManager provideSensorManager() {
+    return (SensorManager) app.getSystemService(Context.SENSOR_SERVICE);
   }
 }

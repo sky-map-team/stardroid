@@ -165,6 +165,7 @@ public class StardroidApplication extends Application {
    * Returns the version string for Sky Map.
    */
   public String getVersionName() {
+    // TODO(jontayler): update to use the info created by gradle.
     PackageManager packageManager = getPackageManager();
     try {
       PackageInfo info = packageManager.getPackageInfo(this.getPackageName(), 0);
