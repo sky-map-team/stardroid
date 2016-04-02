@@ -96,13 +96,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Accuracy: High"
+                    android:text="Accuracy: <waiting>"
                     android:id="@+id/diagnose_compass_accuracy_txt"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0, 0, 0"
+                    android:text="-, -, -"
                     android:id="@+id/diagnose_compass_values_txt"/>
             </TableRow>
 
@@ -118,13 +118,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Accuracy: Low"
+                    android:text="Accuracy: <waiting>"
                     android:id="@+id/diagnose_accelerometer_accuracy_txt"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0, 0, 0"
+                    android:text="-, -, -"
                     android:id="@+id/diagnose_accelerometer_values_txt"/>
             </TableRow>
 
@@ -140,7 +140,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Absent"
+                    android:text="Accuracy: <waiting>"
                     android:id="@+id/diagnose_gyro_accuracy_txt"/>
 
                 <TextView
@@ -162,7 +162,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Absent"
+                    android:text="Accuracy: <waiting>"
                     android:id="@+id/diagnose_light_accuracy_txt"/>
 
                 <TextView
@@ -195,7 +195,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Absent"
+                    android:text="<waiting>"
                     android:id="@+id/diagnose_gps_status_txt"/>
             </TableRow>
             <TableRow
@@ -210,7 +210,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Allowed"
+                    android:text="<waiting>"
                     android:id="@+id/diagnose_location_permission_txt"/>
             </TableRow>
 
@@ -226,7 +226,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="-100, 40 (manual)"
+                    android:text="--, -- (manual)"
                     android:id="@+id/diagnose_location_txt"/>
             </TableRow>
             <TableRow

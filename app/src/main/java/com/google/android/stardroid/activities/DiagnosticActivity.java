@@ -15,6 +15,9 @@ import com.google.android.stardroid.StardroidApplication;
 import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.MiscUtil;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.inject.Inject;
 
 // TODO(jontayler): i18n the strings
@@ -86,6 +89,8 @@ public class DiagnosticActivity extends Activity implements SensorEventListener 
   }
 
   public void onAccuracyChanged(Sensor sensor, int accuracy) {
+    knownSensorAccuracies.add(sensor);
+    Log.d(TAG, "set size" + knownSensorAccuracies.size());
     int accuracyViewId;
     if (sensor == accelSensor) {
       accuracyViewId = R.id.diagnose_accelerometer_accuracy_txt;
@@ -102,26 +107,30 @@ public class DiagnosticActivity extends Activity implements SensorEventListener 
     String accuracyTxt = "Unknown";
     switch (accuracy) {
       case SensorManager.SENSOR_STATUS_UNRELIABLE:
-        accuracyTxt = "Unreliable";
+        accuracyTxt = "Accuracy: Unreliable";
         break;
       case SensorManager.SENSOR_STATUS_ACCURACY_LOW:
-        accuracyTxt = "Low";
+        accuracyTxt = "Acuracy: Low";
         break;
       case SensorManager.SENSOR_STATUS_ACCURACY_MEDIUM:
-        accuracyTxt = "Medium";
+        accuracyTxt = "Accuracy: Medium";
         break;
       case SensorManager.SENSOR_STATUS_ACCURACY_HIGH:
-        accuracyTxt = "High";
+        accuracyTxt = "Accuracy: High";
         break;
       case SensorManager.SENSOR_STATUS_NO_CONTACT:
-        accuracyTxt = "No contact";
+        accuracyTxt = "Accuracy: No contact";
         break;
     }
     setText(accuracyViewId, accuracyTxt);
   }
 
+  private Set<Sensor> knownSensorAccuracies = new HashSet<>();
   public void onSensorChanged(SensorEvent event) {
     Sensor sensor = event.sensor;
+    if (!knownSensorAccuracies.contains(sensor)) {
+      onAccuracyChanged(sensor, event.accuracy);
+    }
     int valuesViewId;
     if (sensor == accelSensor) {
       valuesViewId = R.id.diagnose_accelerometer_values_txt;
