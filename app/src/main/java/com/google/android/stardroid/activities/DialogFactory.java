@@ -14,6 +14,7 @@
 
 package com.google.android.stardroid.activities;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.app.Dialog;
@@ -28,6 +29,7 @@ import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
+import com.google.android.stardroid.ApplicationConstants;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.R.layout;
 import com.google.android.stardroid.R.string;
@@ -60,7 +62,7 @@ public class DialogFactory {
   static final int DIALOG_ID_EULA_WITH_BUTTONS = 6;
   static final int DIALOG_ID_NO_SENSORS = 7;
 
-  private DynamicStarMapActivity parentActivity;
+  private Activity parentActivity;
   private ArrayAdapter<SearchResult> multipleSearchResultsAdaptor;
   private SharedPreferences preferences;
   private Analytics analytics;
@@ -83,7 +85,7 @@ public class DialogFactory {
   /**
    * Creates dialogs on demand.  Delegated to by the parentActivity.
    */
-  public Dialog onCreateDialog(int id) {
+  private Dialog onCreateDialog(int id) {
     switch (id) {
       case (DialogFactory.DIALOG_ID_HELP):
         return createHelpDialog();
@@ -113,7 +115,7 @@ public class DialogFactory {
               public void onClick(DialogInterface dialog, int whichButton) {
                 Log.d(TAG, "No Sensor Dialog closed");
                 preferences.edit().putBoolean(
-                    DynamicStarMapActivity.NO_WARN_ABOUT_MISSING_SENSORS,
+                    ApplicationConstants.NO_WARN_ABOUT_MISSING_SENSORS,
                     ((CheckBox) view.findViewById(R.id.no_show_dialog_again)).isChecked()).commit();
                 dialog.dismiss();
               }
@@ -213,7 +215,7 @@ public class DialogFactory {
    * Display the Terms of Service and privacy policy to the user.
    */
   private Dialog createTermsOfServiceDialog(boolean hideButtons) {
-    AlertDialog tosDialog = null;
+    AlertDialog tosDialog;
     LayoutInflater inflater = parentActivity.getLayoutInflater();
     View view = inflater.inflate(layout.tos_view, null);
 

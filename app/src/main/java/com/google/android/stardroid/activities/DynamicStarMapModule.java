@@ -1,5 +1,6 @@
 package com.google.android.stardroid.activities;
 
+import android.app.Activity;
 import android.content.Context;
 import android.media.MediaPlayer;
 import android.os.Handler;
@@ -32,7 +33,13 @@ public class DynamicStarMapModule {
 
   @Provides
   @Singleton
-  DynamicStarMapActivity provideActivity() {
+  DynamicStarMapActivity provideDynamicStarMapActivity() {
+    return activity;
+  }
+
+  @Provides
+  @Singleton
+  Activity provideActivity() {
     return activity;
   }
 

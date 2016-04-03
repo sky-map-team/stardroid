@@ -16,13 +16,14 @@ package com.google.android.stardroid.activities;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
-import android.view.animation.AnimationUtils;
 
+import com.google.android.stardroid.ApplicationConstants;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.StardroidApplication;
 import com.google.android.stardroid.util.Analytics;
@@ -37,17 +38,21 @@ public class SplashScreenActivity extends Activity {
   private final static String TAG = MiscUtil.getTag(SplashScreenActivity.class);
 
   @Inject Analytics analytics;
+  @Inject SharedPreferences sharedPreferences;
+  @Inject Animation fadeAnimation;
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
     Log.d(TAG, "SplashScreen onCreate");
     super.onCreate(savedInstanceState);
     setContentView(R.layout.splash);
-    ((StardroidApplication) getApplication()).getApplicationComponent().inject(this);
+    ((StardroidApplication) getApplication()).getApplicationComponent().newSplashScreenSubcomponent(
+        new SplashScreenModule(this)).inject(this);
 
     final View graphic = findViewById(R.id.splash);
 
-    Animation fadeAnimation = AnimationUtils.loadAnimation(this, R.anim.fadeout);
+    maybeShowEula();
+
     fadeAnimation.setAnimationListener(new AnimationListener() {
       public void onAnimationEnd(Animation arg0) {
         Log.d(TAG, "SplashScreen.Animation onAnimationEnd");
@@ -89,5 +94,21 @@ public class SplashScreenActivity extends Activity {
     Intent intent = new Intent(this, DynamicStarMapActivity.class);
     startActivity(intent);
     super.finish();
+  }
+
+  private void maybeShowEula() {
+    int versionCode = ((StardroidApplication) getApplication()).getVersion();
+    boolean eulaConfirmed = (sharedPreferences.getInt(
+        ApplicationConstants.READ_TOS_PREF_VERSION, -1) == versionCode);
+    if (!eulaConfirmed) {
+      showDialog(DialogFactory.DIALOG_ID_EULA_WITH_BUTTONS);
+    }
+  }
+
+  public void recordEulaAccepted() {
+    int versionCode = ((StardroidApplication) getApplication()).getVersion();
+    SharedPreferences.Editor editor = sharedPreferences.edit();
+    editor.putInt(ApplicationConstants.READ_TOS_PREF_VERSION, versionCode);
+    editor.commit();
   }
 }

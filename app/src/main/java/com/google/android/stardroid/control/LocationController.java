@@ -50,7 +50,7 @@ import java.util.List;
  */
 public class LocationController extends AbstractController implements LocationListener {
   // Must match the key in the preferences file.
-  private static final String NO_AUTO_LOCATE = "no_auto_locate";
+  public static final String NO_AUTO_LOCATE = "no_auto_locate";
   // Must match the key in the preferences file.
   private static final String FORCE_GPS = "force_gps";
   private static final int MINIMUM_DISTANCE_BEFORE_UPDATE_METRES = 2000;
