@@ -14,6 +14,7 @@
 
 package com.google.android.stardroid.activities;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.app.Dialog;
@@ -28,6 +29,7 @@ import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
+import com.google.android.stardroid.ApplicationConstants;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.R.string;
 import com.google.android.stardroid.StardroidApplication;
@@ -106,7 +108,7 @@ public class DialogFactory {
               public void onClick(DialogInterface dialog, int whichButton) {
                 Log.d(TAG, "No Sensor Dialog closed");
                 preferences.edit().putBoolean(
-                    DynamicStarMapActivity.NO_WARN_ABOUT_MISSING_SENSORS,
+                    ApplicationConstants.NO_WARN_ABOUT_MISSING_SENSORS,
                     ((CheckBox) view.findViewById(R.id.no_show_dialog_again)).isChecked()).commit();
                 dialog.dismiss();
               }
