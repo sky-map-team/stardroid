@@ -45,6 +45,7 @@ public class SplashScreenActivity extends Activity
   @Inject Animation fadeAnimation;
   @Inject EulaDialogFragment eulaDialogFragmentWithButtons;
   @Inject FragmentManager fragmentManager;
+  private View graphic;
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
@@ -54,9 +55,7 @@ public class SplashScreenActivity extends Activity
     ((StardroidApplication) getApplication()).getApplicationComponent().newSplashScreenSubcomponent(
         new SplashScreenModule(this)).inject(this);
 
-    final View graphic = findViewById(R.id.splash);
-
-    boolean eulaShown = maybeShowEula();
+    graphic = findViewById(R.id.splash);
 
     fadeAnimation.setAnimationListener(new AnimationListener() {
       public void onAnimationEnd(Animation arg0) {
@@ -74,6 +73,12 @@ public class SplashScreenActivity extends Activity
         Log.d(TAG, "SplashScreen.Animcation onAnimationStart");
       }
     });
+  }
+
+  @Override
+  public void onResume() {
+    super.onResume();
+    boolean eulaShown = maybeShowEula();
     if (!eulaShown) {
       // User has previously accepted - let's get on with it!
       graphic.startAnimation(fadeAnimation);

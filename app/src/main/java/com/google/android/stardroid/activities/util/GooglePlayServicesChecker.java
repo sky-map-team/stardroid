@@ -78,7 +78,7 @@ public class GooglePlayServicesChecker implements LocationPermissionRationaleFra
   private void checkLocationServicesEnabled() {
     if (ActivityCompat.checkSelfPermission(parent, Manifest.permission.ACCESS_FINE_LOCATION)
         != PackageManager.PERMISSION_GRANTED) {
-      Log.d(TAG, "Location permission not enabled - prompting user");
+      Log.d(TAG, "Location permission not enabled - maybe prompting user");
       // Check Permissions now
       if (ActivityCompat.shouldShowRequestPermissionRationale(
           parent, Manifest.permission.ACCESS_FINE_LOCATION)) {

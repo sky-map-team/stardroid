@@ -87,47 +87,54 @@ public class LocationController extends AbstractController implements LocationLi
       return;
     }
 
-    if (locationManager == null) {
-      // TODO(johntaylor): find out under what circumstances this can happen.
-      Log.e(TAG, "Location manager was null - using preferences");
-      setLocationFromPrefs();
-      return;
-    }
-
-    Criteria locationCriteria = new Criteria();
-    locationCriteria.setAccuracy(forceGps ? Criteria.ACCURACY_FINE : Criteria.ACCURACY_COARSE);
-    locationCriteria.setAltitudeRequired(false);
-    locationCriteria.setBearingRequired(false);
-    locationCriteria.setCostAllowed(true);
-    locationCriteria.setSpeedRequired(false);
-    locationCriteria.setPowerRequirement(Criteria.POWER_LOW);
-
-    String locationProvider = locationManager.getBestProvider(locationCriteria, true);
-    if (locationProvider == null) {
-      Log.w(TAG, "No location provider is enabled");
-      String possiblelocationProvider = locationManager.getBestProvider(locationCriteria, false);
-      if (possiblelocationProvider == null) {
-        // TODO(johntaylor): should we make this a dialog?
-        Toast.makeText(context, R.string.location_no_auto, Toast.LENGTH_LONG).show();
+    try {
+      if (locationManager == null) {
+        // TODO(johntaylor): find out under what circumstances this can happen.
+        Log.e(TAG, "Location manager was null - using preferences");
         setLocationFromPrefs();
         return;
       }
 
-      AlertDialog.Builder alertDialog = getSwitchOnGPSDialog();
-      alertDialog.show();
-      return;
-    } else {
-      Log.d(TAG, "Got location provider " + locationProvider);
-    }
+      Criteria locationCriteria = new Criteria();
+      locationCriteria.setAccuracy(forceGps ? Criteria.ACCURACY_FINE : Criteria.ACCURACY_COARSE);
+      locationCriteria.setAltitudeRequired(false);
+      locationCriteria.setBearingRequired(false);
+      locationCriteria.setCostAllowed(true);
+      locationCriteria.setSpeedRequired(false);
+      locationCriteria.setPowerRequirement(Criteria.POWER_LOW);
 
-    locationManager.requestLocationUpdates(locationProvider, LOCATION_UPDATE_TIME_MILLISECONDS,
-                                                             MINIMUM_DISTANCE_BEFORE_UPDATE_METRES,
-                                                             this);
+      String locationProvider = locationManager.getBestProvider(locationCriteria, true);
+      if (locationProvider == null) {
+        Log.w(TAG, "No location provider is enabled");
+        String possiblelocationProvider = locationManager.getBestProvider(locationCriteria, false);
+        if (possiblelocationProvider == null) {
+          Log.i(TAG, "No location provider is even available");
+          // TODO(johntaylor): should we make this a dialog?
+          Toast.makeText(context, R.string.location_no_auto, Toast.LENGTH_LONG).show();
+          setLocationFromPrefs();
+          return;
+        }
 
-    Location location = locationManager.getLastKnownLocation(locationProvider);
-    if (location != null) {
-      LatLong myLocation = new LatLong(location.getLatitude(), location.getLongitude());
-      setLocationInModel(myLocation, location.getProvider());
+        AlertDialog.Builder alertDialog = getSwitchOnGPSDialog();
+        alertDialog.show();
+        return;
+      } else {
+        Log.d(TAG, "Got location provider " + locationProvider);
+      }
+
+      locationManager.requestLocationUpdates(locationProvider, LOCATION_UPDATE_TIME_MILLISECONDS,
+          MINIMUM_DISTANCE_BEFORE_UPDATE_METRES,
+          this);
+
+      Location location = locationManager.getLastKnownLocation(locationProvider);
+      if (location != null) {
+        LatLong myLocation = new LatLong(location.getLatitude(), location.getLongitude());
+        setLocationInModel(myLocation, location.getProvider());
+      }
+
+    } catch (SecurityException securityException) {
+      Log.d(TAG, "Caught " + securityException);
+      Log.d(TAG, "Most likely user has not enabled this permission");
     }
 
     Log.d(TAG, "LocationController -start");
@@ -169,12 +176,13 @@ public class LocationController extends AbstractController implements LocationLi
   }
 
   private void setLocationFromPrefs() {
+    Log.d(TAG, "Setting location from preferences");
     String longitude_s = PreferenceManager.getDefaultSharedPreferences(context)
-                                          .getString("longitude", "");
+                                          .getString("longitude", "0");
     String latitude_s = PreferenceManager.getDefaultSharedPreferences(context)
-                                         .getString("latitude", "");
+                                         .getString("latitude", "0");
 
-    float longitude = -80, latitude = 40;
+    float longitude = 0, latitude = 0;
     try {
       longitude = Float.parseFloat(longitude_s);
       latitude = Float.parseFloat(latitude_s);

@@ -193,6 +193,10 @@ public class DynamicStarMapActivity extends Activity
     // to do it at API level 19.
     //getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
 
+    // Eventually we should check at the point of use, but this will do for now.  If the
+    // user revokes the permission later then odd things may happen.
+    playServicesChecker.maybeCheckForGooglePlayServices();
+
     model = StardroidApplication.getModel();
     layerManager = StardroidApplication.getLayerManager(getAssets(),
         sharedPreferences,
@@ -245,12 +249,14 @@ public class DynamicStarMapActivity extends Activity
     handler.post(new Runnable() {
       @Override
       public void run() {
-        if (!sharedPreferences.getBoolean(ApplicationConstants.NO_WARN_ABOUT_MISSING_SENSORS, false)) {
+        if (!sharedPreferences
+            .getBoolean(ApplicationConstants.NO_WARN_ABOUT_MISSING_SENSORS, false)) {
           Log.d(TAG, "showing no sensor dialog");
           // TODO(jontayler): refactor to use dialog fragments.
           showDialog(DialogFactory.DIALOG_ID_NO_SENSORS);
           // First time, force manual mode.
-          sharedPreferences.edit().putBoolean(ApplicationConstants.AUTO_MODE_PREF_KEY, false).apply();
+          sharedPreferences.edit().putBoolean(ApplicationConstants.AUTO_MODE_PREF_KEY, false)
+              .apply();
           setAutoMode(false);
         } else {
           Log.d(TAG, "showing no sensor toast");
@@ -421,8 +427,7 @@ public class DynamicStarMapActivity extends Activity
     Log.d(TAG, "onResume at " + System.currentTimeMillis());
     super.onResume();
     Log.i(TAG, "Resuming");
-    // We check each time because the user might have changed their location preferences.
-    playServicesChecker.maybeCheckForGooglePlayServices();
+
     wakeLock.acquire();
     Log.i(TAG, "Starting view");
     skyView.onResume();
@@ -469,7 +474,7 @@ public class DynamicStarMapActivity extends Activity
     flashTheScreen();
     controller.useRealTime();
     Toast.makeText(this,
-                   R.string.time_travel_close_message,
+        R.string.time_travel_close_message,
                    Toast.LENGTH_SHORT).show();
     Log.d(TAG, "Leaving Time Travel mode.");
     timePlayerUI.setVisibility(View.GONE);
