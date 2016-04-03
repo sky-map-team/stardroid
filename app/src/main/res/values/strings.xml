@@ -48,6 +48,7 @@
     <string name="malformed_loc_error">Latitude or longitude setting isn\'t a number.</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Accept</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">No Thanks</string>
+    <string name="dialog_ok_button">OK</string>
     <string name="menu_help" translation_description="menu item to show \'Help\' box">Help</string>
     <string name="help_dialog_title">Help for Sky Map</string>
     <string name="eula_dialog_title">End User License Agreement</string>
@@ -424,4 +425,7 @@
         map with your fingers.
     </string>
     <string name="do_not_show_again">Do not show this message again</string>
+    <string name="location_rationale_title">Why do we ask for your location?</string>
+    <string name="location_rationale_text">The stars you can see depend on where on planet earth you are.  Without your location we cannot show you an accurate map.  If you do not want your phone to give us your location you can provide it manually in the settings.  You need only provide the nearest city.</string>
+    <string name="play_services_error">Warning: Google Play Services error - Automatic location might not work</string>
 </resources>

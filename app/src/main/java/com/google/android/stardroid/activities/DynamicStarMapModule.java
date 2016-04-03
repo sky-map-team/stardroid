@@ -11,6 +11,7 @@ import android.view.animation.AnimationUtils;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
+import com.google.android.stardroid.activities.dialogs.LocationPermissionRationaleFragment;
 import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.MiscUtil;
 
@@ -79,12 +80,20 @@ public class DynamicStarMapModule {
   }
 
   @Provides
+  @Singleton
   FragmentManager provideFragmentManager() {
     return activity.getFragmentManager();
   }
 
   @Provides
+  @Singleton
   EulaDialogFragment provideEulaFragmentWithoutButtons(Analytics analytics) {
     return new EulaDialogFragment(activity, false, analytics, null);
+  }
+
+  @Provides
+  @Singleton
+  LocationPermissionRationaleFragment provideLocationFragment() {
+    return new LocationPermissionRationaleFragment();
   }
 }
