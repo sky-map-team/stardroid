@@ -31,7 +31,6 @@ import android.widget.TextView;
 
 import com.google.android.stardroid.ApplicationConstants;
 import com.google.android.stardroid.R;
-import com.google.android.stardroid.R.layout;
 import com.google.android.stardroid.R.string;
 import com.google.android.stardroid.StardroidApplication;
 import com.google.android.stardroid.search.SearchResult;
@@ -58,11 +57,9 @@ public class DialogFactory {
   static final int DIALOG_ID_MULTIPLE_SEARCH_RESULTS = 2;
   static final int DIALOG_ID_NO_SEARCH_RESULTS = 3;
   static final int DIALOG_ID_HELP = 4;
-  static final int DIALOG_ID_EULA_NO_BUTTONS = 5;
-  static final int DIALOG_ID_EULA_WITH_BUTTONS = 6;
   static final int DIALOG_ID_NO_SENSORS = 7;
 
-  private Activity parentActivity;
+  private DynamicStarMapActivity parentActivity;
   private ArrayAdapter<SearchResult> multipleSearchResultsAdaptor;
   private SharedPreferences preferences;
   private Analytics analytics;
@@ -85,7 +82,7 @@ public class DialogFactory {
   /**
    * Creates dialogs on demand.  Delegated to by the parentActivity.
    */
-  private Dialog onCreateDialog(int id) {
+  public Dialog onCreateDialog(int id) {
     switch (id) {
       case (DialogFactory.DIALOG_ID_HELP):
         return createHelpDialog();
@@ -95,10 +92,6 @@ public class DialogFactory {
         return createMultipleSearchResultsDialog();
       case (DialogFactory.DIALOG_ID_TIME_TRAVEL):
         return createTimeTravelDialog();
-      case (DIALOG_ID_EULA_NO_BUTTONS):
-        return createTermsOfServiceDialog(true);
-      case (DIALOG_ID_EULA_WITH_BUTTONS):
-        return createTermsOfServiceDialog(false);
       case (DIALOG_ID_NO_SENSORS):
         return createNoSensorsDialog();
     }
@@ -209,65 +202,6 @@ public class DialogFactory {
       multipleSearchResultsAdaptor.add(result);
     }
     parentActivity.showDialog(DialogFactory.DIALOG_ID_MULTIPLE_SEARCH_RESULTS);
-  }
-
-  /**
-   * Display the Terms of Service and privacy policy to the user.
-   */
-  private Dialog createTermsOfServiceDialog(boolean hideButtons) {
-    AlertDialog tosDialog;
-    LayoutInflater inflater = parentActivity.getLayoutInflater();
-    View view = inflater.inflate(layout.tos_view, null);
-
-    String apologyText = parentActivity.getString(string.language_apology_text);
-    Spanned formattedApologyText = Html.fromHtml(apologyText);
-    TextView apologyTextView = (TextView) view.findViewById(R.id.language_apology_box_text);
-    apologyTextView.setText(formattedApologyText, TextView.BufferType.SPANNABLE);
-
-    String whatsNewText = String.format(parentActivity.getString(string.whats_new_text), getVersionName());
-    Spanned formattedWhatsNewText = Html.fromHtml(whatsNewText);
-    TextView whatsNewTextView = (TextView) view.findViewById(R.id.whats_new_box_text);
-    whatsNewTextView.setText(formattedWhatsNewText, TextView.BufferType.SPANNABLE);
-
-    String eulaText = String.format(parentActivity.getString(R.string.eula_text), getVersionName());
-    Spanned formattedEulaText = Html.fromHtml(eulaText);
-    TextView eulaTextView = (TextView) view.findViewById(R.id.eula_box_text);
-    eulaTextView.setText(formattedEulaText, TextView.BufferType.SPANNABLE);
-
-    // Note that we've made the "accept" button the negative button and the "decline" button
-    // the positive button as an experiment.
-    if (!hideButtons) {
-      tosDialog = new Builder(parentActivity)
-          .setTitle(string.menu_tos)
-          .setView(view)
-          .setNegativeButton(string.dialog_accept,
-              new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int whichButton) {
-                  Log.d(TAG, "TOS Dialog closed.  User accepts.");
-                  parentActivity.recordEulaAccepted();
-                  dialog.dismiss();
-                  analytics.trackEvent(
-                      Analytics.APP_CATEGORY, Analytics.TOS_ACCEPT, Analytics.TOS_ACCEPTED, 1);
-                }
-              })
-          .setPositiveButton(string.dialog_decline,
-              new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int whichButton) {
-                  Log.d(TAG, "TOS Dialog closed.  User declines.");
-                  dialog.dismiss();
-                  analytics.trackEvent(
-                      Analytics.APP_CATEGORY, Analytics.TOS_ACCEPT, Analytics.TOS_REJECTED, 0);
-                  parentActivity.finish();
-                }
-              })
-          .create();
-    } else {
-      tosDialog = new Builder(parentActivity)
-          .setTitle(string.menu_tos)
-          .setView(view)
-          .create();
-    }
-    return tosDialog;
   }
 
   /**

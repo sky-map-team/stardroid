@@ -16,6 +16,7 @@ package com.google.android.stardroid.activities;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.app.FragmentManager;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
@@ -46,6 +47,7 @@ import android.widget.Toast;
 import com.google.android.stardroid.ApplicationConstants;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.StardroidApplication;
+import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
 import com.google.android.stardroid.activities.util.ActivityLightLevelChanger;
 import com.google.android.stardroid.activities.util.ActivityLightLevelChanger.NightModeable;
 import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
@@ -82,7 +84,8 @@ import javax.inject.Named;
 /**
  * The main map-rendering Activity.
  */
-public class DynamicStarMapActivity extends Activity implements OnSharedPreferenceChangeListener {
+public class DynamicStarMapActivity extends Activity
+    implements OnSharedPreferenceChangeListener {
   private static final int TIME_DISPLAY_DELAY_MILLIS = 1000;
   private FullscreenControlsManager fullscreenControlsManager;
 
@@ -154,6 +157,8 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
   @Inject Handler handler;
   @Inject Analytics analytics;
   @Inject GooglePlayServicesChecker playServicesChecker;
+  @Inject FragmentManager fragmentManager;
+  @Inject EulaDialogFragment eulaDialogFragmentNoButtons;
   // A list of runnables to post on the handler when we resume.
   private List<Runnable> onResumeRunnables = new ArrayList<>();
 
@@ -166,8 +171,6 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
   @Inject Animation flashAnimation;
   private ActivityLightLevelManager activityLightLevelManager;
   private long sessionStartTime;
-
-
 
   @Override
   public void onCreate(Bundle icicle) {
@@ -363,7 +366,7 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
         Log.d(TAG, "Loading ToS");
         analytics.trackEvent(Analytics.USER_ACTION_CATEGORY,
             Analytics.MENU_ITEM, Analytics.TOS_OPENED_LABEL, 1);
-        showDialog(DialogFactory.DIALOG_ID_EULA_NO_BUTTONS);
+        eulaDialogFragmentNoButtons.show(fragmentManager, "Eula Dialog No Buttons");
         break;
       default:
         Log.e(TAG, "Unwired-up menu item");

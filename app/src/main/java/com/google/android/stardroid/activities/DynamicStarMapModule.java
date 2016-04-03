@@ -1,6 +1,7 @@
 package com.google.android.stardroid.activities;
 
 import android.app.Activity;
+import android.app.FragmentManager;
 import android.content.Context;
 import android.media.MediaPlayer;
 import android.os.Handler;
@@ -9,6 +10,8 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
 import com.google.android.stardroid.R;
+import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
+import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.MiscUtil;
 
 import javax.inject.Named;
@@ -73,5 +76,15 @@ public class DynamicStarMapModule {
   @Singleton
   Handler provideHandler() {
     return new Handler();
+  }
+
+  @Provides
+  FragmentManager provideFragmentManager() {
+    return activity.getFragmentManager();
+  }
+
+  @Provides
+  EulaDialogFragment provideEulaFragmentWithoutButtons(Analytics analytics) {
+    return new EulaDialogFragment(activity, false, analytics, null);
   }
 }

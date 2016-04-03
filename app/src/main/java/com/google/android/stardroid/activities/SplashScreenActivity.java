@@ -15,6 +15,7 @@
 package com.google.android.stardroid.activities;
 
 import android.app.Activity;
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -26,6 +27,7 @@ import android.view.animation.Animation.AnimationListener;
 import com.google.android.stardroid.ApplicationConstants;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.StardroidApplication;
+import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
 import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.MiscUtil;
 
@@ -34,12 +36,15 @@ import javax.inject.Inject;
 /**
  * Shows a splash screen, then launch the next activity.
  */
-public class SplashScreenActivity extends Activity {
+public class SplashScreenActivity extends Activity
+    implements EulaDialogFragment.EulaAcceptanceListener {
   private final static String TAG = MiscUtil.getTag(SplashScreenActivity.class);
 
   @Inject Analytics analytics;
   @Inject SharedPreferences sharedPreferences;
   @Inject Animation fadeAnimation;
+  @Inject EulaDialogFragment eulaDialogFragmentWithButtons;
+  @Inject FragmentManager fragmentManager;
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
@@ -51,12 +56,14 @@ public class SplashScreenActivity extends Activity {
 
     final View graphic = findViewById(R.id.splash);
 
-    maybeShowEula();
+    boolean eulaShown = maybeShowEula();
 
     fadeAnimation.setAnimationListener(new AnimationListener() {
       public void onAnimationEnd(Animation arg0) {
         Log.d(TAG, "SplashScreen.Animation onAnimationEnd");
         graphic.setVisibility(View.INVISIBLE);
+        Intent intent = new Intent(SplashScreenActivity.this, DynamicStarMapActivity.class);
+        startActivity(intent);
         finish();
       }
 
@@ -67,7 +74,10 @@ public class SplashScreenActivity extends Activity {
         Log.d(TAG, "SplashScreen.Animcation onAnimationStart");
       }
     });
-    graphic.startAnimation(fadeAnimation);
+    if (!eulaShown) {
+      // User has previously accepted - let's get on with it!
+      graphic.startAnimation(fadeAnimation);
+    }
   }
 
   @Override
@@ -88,27 +98,32 @@ public class SplashScreenActivity extends Activity {
     super.onDestroy();
   }
 
-  @Override
-  public void finish() {
-    Log.d(TAG,"SplashScreen finish called");
-    Intent intent = new Intent(this, DynamicStarMapActivity.class);
-    startActivity(intent);
-    super.finish();
-  }
-
-  private void maybeShowEula() {
+  private boolean maybeShowEula() {
     int versionCode = ((StardroidApplication) getApplication()).getVersion();
-    boolean eulaConfirmed = (sharedPreferences.getInt(
+    boolean eulaAlreadyConfirmed = (sharedPreferences.getInt(
         ApplicationConstants.READ_TOS_PREF_VERSION, -1) == versionCode);
-    if (!eulaConfirmed) {
-      showDialog(DialogFactory.DIALOG_ID_EULA_WITH_BUTTONS);
+    if (!eulaAlreadyConfirmed) {
+      eulaDialogFragmentWithButtons.show(fragmentManager, "Eula Dialog");
+      return true;
+    } else {
+      return false;
     }
   }
 
-  public void recordEulaAccepted() {
+  @Override
+  public void eulaAccepted() {
     int versionCode = ((StardroidApplication) getApplication()).getVersion();
     SharedPreferences.Editor editor = sharedPreferences.edit();
     editor.putInt(ApplicationConstants.READ_TOS_PREF_VERSION, versionCode);
     editor.commit();
+    // Let's go.
+    View graphic = findViewById(R.id.splash);
+    graphic.startAnimation(fadeAnimation);
+  }
+
+  @Override
+  public void eulaRejected() {
+    Log.d(TAG, "Sorry chum, no accept, no app.");
+    finish();
   }
 }

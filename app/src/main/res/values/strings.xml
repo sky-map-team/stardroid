@@ -18,7 +18,7 @@
     <string name="location_long_pref">Longitude</string>
     <string name="degrees" translation_description="angular degrees">Degrees</string>
     <string name="preferences">preferences</string>
-    <string name="location_no_auto">Your phone does not support auto-location.   You can set the location manually in preferences.</string>
+    <string name="location_no_auto">Auto-location permission is disabled on your phone.   You can set the location manually in preferences.</string>
     <string name="location_offer_to_enable">Auto-location is disabled.  Would you like to enable it?</string>
     <string name="location_offer_to_enable_gps_title">Auto-location disabled</string>
     <string name="location_set_auto">Location set from %1$s to %2$s</string>
