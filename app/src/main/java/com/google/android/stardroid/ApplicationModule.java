@@ -6,6 +6,7 @@ import android.content.res.Resources;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
+import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.stardroid.util.MiscUtil;
 
 import java.util.concurrent.ExecutorService;
@@ -55,4 +56,14 @@ public class ApplicationModule {
   Resources provideResources() {
     return app.getResources();
   }
+
+  @Provides @Singleton
+  GoogleApiAvailability providePlayServicesApiAvailability() {
+    return GoogleApiAvailability.getInstance();
+  }
+
+  /*@Provides @Singleton
+  GoogleApiAvailability providePlayServicesApiAvailability() {
+    return GoogleApiAvailability.getInstance();
+  }*/
 }

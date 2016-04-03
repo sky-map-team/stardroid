@@ -6,6 +6,7 @@ import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.text.Html;
 import android.text.Spanned;
 import android.util.Log;
@@ -35,7 +36,7 @@ public class EulaDialogFragment extends DialogFragment {
   }
 
   public EulaDialogFragment(Activity parentActivity, boolean showButtons, Analytics analytics,
-                            EulaAcceptanceListener resultListener) {
+                            @Nullable EulaAcceptanceListener resultListener) {
     this.parentActivity = parentActivity;
     this.showButtons = showButtons;
     this.analytics = analytics;
@@ -72,28 +73,45 @@ public class EulaDialogFragment extends DialogFragment {
           .setNegativeButton(R.string.dialog_accept,
               new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int whichButton) {
-                  Log.d(TAG, "TOS Dialog closed.  User accepts.");
-                  resultListener.eulaAccepted();
-                  dialog.dismiss();
-                  analytics.trackEvent(
-                      Analytics.APP_CATEGORY, Analytics.TOS_ACCEPT, Analytics.TOS_ACCEPTED, 1);
+                  acceptEula(dialog);
                 }
               })
           .setPositiveButton(R.string.dialog_decline,
               new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int whichButton) {
-                  Log.d(TAG, "TOS Dialog closed.  User declines.");
-                  dialog.dismiss();
-                  analytics.trackEvent(
-                      Analytics.APP_CATEGORY, Analytics.TOS_ACCEPT, Analytics.TOS_REJECTED, 0);
-                  resultListener.eulaRejected();
+                  rejectEula(dialog);
                 }
               });
     }
     return tosDialogBuilder.create();
   }
 
+  private void acceptEula(DialogInterface dialog) {
+    Log.d(TAG, "TOS Dialog closed.  User accepts.");
+    dialog.dismiss();
+    analytics.trackEvent(
+        Analytics.APP_CATEGORY, Analytics.TOS_ACCEPT, Analytics.TOS_ACCEPTED, 1);
+    if (resultListener != null) {
+      resultListener.eulaAccepted();
+    }
+  }
+
+  private void rejectEula(DialogInterface dialog) {
+    Log.d(TAG, "TOS Dialog closed.  User declines.");
+    dialog.dismiss();
+    analytics.trackEvent(
+        Analytics.APP_CATEGORY, Analytics.TOS_ACCEPT, Analytics.TOS_REJECTED, 0);
+    if (resultListener != null) {
+      resultListener.eulaRejected();
+    }
+  }
+
   private String getVersionName() {
     return ((StardroidApplication) parentActivity.getApplication()).getVersionName();
+  }
+
+  @Override
+  public void onCancel(DialogInterface dialog) {
+    rejectEula(dialog);
   }
 }

@@ -1,5 +1,6 @@
 package com.google.android.stardroid.activities;
 
+import android.app.Activity;
 import android.app.FragmentManager;
 import android.content.Context;
 import android.media.MediaPlayer;
@@ -10,6 +11,7 @@ import android.view.animation.AnimationUtils;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
+import com.google.android.stardroid.activities.dialogs.LocationPermissionRationaleFragment;
 import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.MiscUtil;
 
@@ -35,7 +37,13 @@ public class DynamicStarMapModule {
 
   @Provides
   @Singleton
-  DynamicStarMapActivity provideActivity() {
+  DynamicStarMapActivity provideDynamicStarMapActivity() {
+    return activity;
+  }
+
+  @Provides
+  @Singleton
+  Activity provideActivity() {
     return activity;
   }
 
@@ -72,19 +80,20 @@ public class DynamicStarMapModule {
   }
 
   @Provides
+  @Singleton
   FragmentManager provideFragmentManager() {
     return activity.getFragmentManager();
   }
 
   @Provides
-  @Named("buttons")
-  EulaDialogFragment provideEulaFragmentWithButtons(Analytics analytics) {
-    return new EulaDialogFragment(activity, true, analytics, activity);
+  @Singleton
+  EulaDialogFragment provideEulaFragmentWithoutButtons(Analytics analytics) {
+    return new EulaDialogFragment(activity, false, analytics, null);
   }
 
   @Provides
-  @Named("nobuttons")
-  EulaDialogFragment provideEulaFragmentWithoutButtons(Analytics analytics) {
-    return new EulaDialogFragment(activity, false, analytics, activity);
+  @Singleton
+  LocationPermissionRationaleFragment provideLocationFragment() {
+    return new LocationPermissionRationaleFragment();
   }
 }
