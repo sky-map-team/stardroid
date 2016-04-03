@@ -46,6 +46,8 @@ public class SensorOrientationController extends AbstractController
   private static final String SENSOR_SPEED_STANDARD = "STANDARD";
   private static final String SENSOR_SPEED_PREF_KEY = "sensor_speed";
 
+  private static final String SENSOR_DAMPING_REALLY_HIGH = "REALLY HIGH";
+  private static final String SENSOR_DAMPING_EXTRA_HIGH = "EXTRA HIGH";
   private static final String SENSOR_DAMPING_HIGH = "HIGH";
   private static final String SENSOR_DAMPING_STANDARD = "STANDARD";
   private static final String SENSOR_DAMPING_PREF_KEY = "sensor_damping";
@@ -65,11 +67,15 @@ public class SensorOrientationController extends AbstractController
    */
   private static final SensorDampingSettings[] ACC_DAMPING_SETTINGS = new SensorDampingSettings[] {
         new SensorDampingSettings(0.7f, 3),
-        new SensorDampingSettings(0.7f, 3)
+        new SensorDampingSettings(0.7f, 3),
+        new SensorDampingSettings(0.1f, 3),
+        new SensorDampingSettings(0.1f, 3),
   };
   private static final SensorDampingSettings[] MAG_DAMPING_SETTINGS = new SensorDampingSettings[] {
       new SensorDampingSettings(0.05f, 3),  // Derived for the Nexus One
-      new SensorDampingSettings(0.001f, 4)  // Derived for the unpatched MyTouch Slide
+      new SensorDampingSettings(0.001f, 4),  // Derived for the unpatched MyTouch Slide
+      new SensorDampingSettings(0.0001f, 5),  // Just guessed for Nexus 6
+      new SensorDampingSettings(0.000001f, 5)  // Just guessed for Nexus 6
   };
 
   private SensorManager manager;
@@ -102,6 +108,10 @@ public class SensorOrientationController extends AbstractController
     int dampingIndex = 0;
     if (SENSOR_DAMPING_HIGH.equals(dampingPreference)) {
       dampingIndex = 1;
+    } else if (SENSOR_DAMPING_EXTRA_HIGH.equals(dampingPreference)) {
+      dampingIndex = 2;
+    } else if (SENSOR_DAMPING_REALLY_HIGH.equals(dampingPreference)) {
+      dampingIndex = 3;
     }
     int sensorSpeed = SensorManager.SENSOR_DELAY_GAME;
     if (SENSOR_SPEED_SLOW.equals(speedPreference)) {

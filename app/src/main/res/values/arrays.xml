@@ -14,7 +14,9 @@
         <item translation_description="Fast sensor speed">Fast</item>
     </string-array>
     <string-array name="sensor_damping">
-        <item translation_description="Standard sensor damping factor">Standard</item>
-        <item translation_description="High sensor damping factor">High</item>
+        <item translation_description="Low sensor damping factor">Jumpy</item>
+        <item translation_description="Medium sensor damping factor">Medium</item>
+        <item translation_description="Extra High sensor damping factor">About right</item>
+        <item translation_description="Really High sensor damping factor">Laggy</item>
     </string-array>
 </resources>
