@@ -9,5 +9,7 @@
     <string-array name="sensor_damping_values">
         <item translation_description="DO NOT TRANSLATE">STANDARD</item>
         <item translation_description="DO NOT TRANSLATE">HIGH</item>
+        <item translation_description="DO NOT TRANSLATE">EXTRA HIGH</item>
+        <item translation_description="DO NOT TRANSLATE">REALLY HIGH</item>
     </string-array>
 </resources>

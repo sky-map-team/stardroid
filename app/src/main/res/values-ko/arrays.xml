@@ -14,6 +14,8 @@
         <item>빠름</item>
     </string-array>
     <string-array name="sensor_damping">
+        <item>Jumpy</item>
+        <item>Medium</item>
         <item>표준</item>
         <item>높음</item>
     </string-array>

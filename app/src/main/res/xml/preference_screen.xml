@@ -95,7 +95,7 @@
             android:title="@string/sensor_damping"
             android:entryValues="@array/sensor_damping_values"
             android:entries="@array/sensor_damping"
-            android:defaultValue="STANDARD" />
+            android:defaultValue="EXTRA HIGH" />
       </PreferenceCategory>
     </PreferenceScreen>
     <CheckBoxPreference
