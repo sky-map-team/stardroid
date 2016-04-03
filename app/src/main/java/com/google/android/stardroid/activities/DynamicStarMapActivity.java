@@ -16,6 +16,7 @@ package com.google.android.stardroid.activities;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.app.FragmentManager;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
@@ -45,6 +46,7 @@ import android.widget.Toast;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.StardroidApplication;
+import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
 import com.google.android.stardroid.activities.util.ActivityLightLevelChanger;
 import com.google.android.stardroid.activities.util.ActivityLightLevelChanger.NightModeable;
 import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
@@ -80,7 +82,8 @@ import javax.inject.Named;
 /**
  * The main map-rendering Activity.
  */
-public class DynamicStarMapActivity extends Activity implements OnSharedPreferenceChangeListener {
+public class DynamicStarMapActivity extends Activity
+    implements OnSharedPreferenceChangeListener, EulaDialogFragment.EulaAcceptanceListener {
   private static final int TIME_DISPLAY_DELAY_MILLIS = 1000;
   private FullscreenControlsManager fullscreenControlsManager;
 
@@ -158,6 +161,9 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
   @Inject @Named("timetravelback") MediaPlayer timeTravelBackNoise;
   @Inject Handler handler;
   @Inject Analytics analytics;
+  @Inject FragmentManager fragmentManager;
+  @Inject @Named("buttons") EulaDialogFragment eulaDialogFragmentWithButtons;
+  @Inject @Named("nobuttons") EulaDialogFragment eulaDialogFragmentNoButtons;
   // A list of runnables to post on the handler when we resume.
   private List<Runnable> onResumeRunnables = new ArrayList<>();
 
@@ -167,7 +173,7 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
   private MagneticDeclinationCalculatorSwitcher magneticSwitcher;
 
   private DragRotateZoomGestureDetector dragZoomRotateDetector;
-  private Animation flashAnimation;
+  @Inject Animation flashAnimation;
   private ActivityLightLevelManager activityLightLevelManager;
   private long sessionStartTime;
 
@@ -175,15 +181,25 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
     int versionCode = ((StardroidApplication) getApplication()).getVersion();
     boolean eulaConfirmed = (prefs.getInt(READ_TOS_PREF_VERSION, -1) == versionCode);
     if (!eulaConfirmed) {
-      showDialog(DialogFactory.DIALOG_ID_EULA_WITH_BUTTONS);
+      eulaDialogFragmentWithButtons.show(fragmentManager, "Eula Dialog");
     }
   }
 
-  public void recordEulaAccepted() {
+
+
+  @Override
+  public void eulaAccepted() {
     int versionCode = ((StardroidApplication) getApplication()).getVersion();
     SharedPreferences.Editor editor = sharedPreferences.edit();
     editor.putInt(DynamicStarMapActivity.READ_TOS_PREF_VERSION, versionCode);
     editor.commit();
+  }
+
+
+  @Override
+  public void eulaRejected() {
+    Log.d(TAG, "Sorry chum, no accept, no app.");
+    finish();
   }
 
   @Override
@@ -380,7 +396,7 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
         Log.d(TAG, "Loading ToS");
         analytics.trackEvent(Analytics.USER_ACTION_CATEGORY,
             Analytics.MENU_ITEM, Analytics.TOS_OPENED_LABEL, 1);
-        showDialog(DialogFactory.DIALOG_ID_EULA_NO_BUTTONS);
+        eulaDialogFragmentNoButtons.show(fragmentManager, "Eula Dialog No Buttons");
         break;
       default:
         Log.e(TAG, "Unwired-up menu item");
@@ -707,7 +723,7 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
 
     TextView searchPromptText = (TextView) findViewById(R.id.search_status_label);
     searchPromptText.setText(
-            String.format("%s %s", getString(R.string.search_target_looking_message), searchTerm));
+        String.format("%s %s", getString(R.string.search_target_looking_message), searchTerm));
     View searchControlBar = findViewById(R.id.search_control_bar);
     searchControlBar.setVisibility(View.VISIBLE);
   }
