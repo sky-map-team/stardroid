@@ -80,6 +80,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.inject.Provider;
 
 /**
  * The main map-rendering Activity.
@@ -152,8 +153,10 @@ public class DynamicStarMapActivity extends Activity
   // time dialog and time player into separate activities.
   private View timePlayerUI;
   @Inject DialogFactory dialogFactory;
-  @Inject @Named("timetravel") MediaPlayer timeTravelNoise;
-  @Inject @Named("timetravelback") MediaPlayer timeTravelBackNoise;
+  @Inject @Named("timetravel") Provider<MediaPlayer> timeTravelNoiseProvider;
+  @Inject @Named("timetravelback") Provider<MediaPlayer> timeTravelBackNoiseProvider;
+  private MediaPlayer timeTravelNoise;
+  private MediaPlayer timeTravelBackNoise;
   @Inject Handler handler;
   @Inject Analytics analytics;
   @Inject GooglePlayServicesChecker playServicesChecker;
@@ -427,6 +430,8 @@ public class DynamicStarMapActivity extends Activity
     Log.d(TAG, "onResume at " + System.currentTimeMillis());
     super.onResume();
     Log.i(TAG, "Resuming");
+    timeTravelNoise = timeTravelNoiseProvider.get();
+    timeTravelBackNoise = timeTravelBackNoiseProvider.get();
 
     wakeLock.acquire();
     Log.i(TAG, "Starting view");
@@ -449,7 +454,7 @@ public class DynamicStarMapActivity extends Activity
     if (sharedPreferences.getBoolean(ApplicationConstants.SOUND_EFFECTS, true)) {
       try {
         timeTravelNoise.start();
-      } catch (IllegalStateException e) {
+      } catch (IllegalStateException | NullPointerException e) {
         Log.e(TAG, "Exception trying to play time travel sound", e);
         // It's not the end of the world - carry on.
       }
@@ -466,7 +471,7 @@ public class DynamicStarMapActivity extends Activity
     if (sharedPreferences.getBoolean(ApplicationConstants.SOUND_EFFECTS, true)) {
       try {
         timeTravelBackNoise.start();
-      } catch (IllegalStateException e) {
+      } catch (IllegalStateException | NullPointerException e) {
         Log.e(TAG, "Exception trying to play return time travel sound", e);
         // It's not the end of the world - carry on.
       }
@@ -494,6 +499,12 @@ public class DynamicStarMapActivity extends Activity
   public void onPause() {
     Log.d(TAG, "DynamicStarMap onPause");
     super.onPause();
+    if (timeTravelNoise != null) {
+      timeTravelNoise.release();
+    }
+    if (timeTravelBackNoise != null) {
+      timeTravelBackNoise.release();
+    }
     for (Runnable runnable : onResumeRunnables) {
       handler.removeCallbacks(runnable);
     }
