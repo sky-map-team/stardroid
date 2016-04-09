@@ -66,17 +66,15 @@ public class EulaDialogFragment extends DialogFragment {
     AlertDialog.Builder tosDialogBuilder = new AlertDialog.Builder(parentActivity)
         .setTitle(R.string.menu_tos)
         .setView(view);
-    // Note that we've made the "accept" button the negative button and the "decline" button
-    // the positive button as an experiment.
     if (showButtons) {
       tosDialogBuilder
-          .setNegativeButton(R.string.dialog_accept,
+          .setPositiveButton(R.string.dialog_accept,
               new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int whichButton) {
                   acceptEula(dialog);
                 }
               })
-          .setPositiveButton(R.string.dialog_decline,
+          .setNegativeButton(R.string.dialog_decline,
               new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int whichButton) {
                   rejectEula(dialog);
