@@ -54,14 +54,12 @@ public class DynamicStarMapModule {
   }
 
   @Provides
-  @Singleton
   @Named("timetravel")
   MediaPlayer provideTimeTravelNoise() {
     return MediaPlayer.create(activity, R.raw.timetravel);
   }
 
   @Provides
-  @Singleton
   @Named("timetravelback")
   MediaPlayer provideTimeTravelBackNoise() {
     return MediaPlayer.create(activity, R.raw.timetravelback);

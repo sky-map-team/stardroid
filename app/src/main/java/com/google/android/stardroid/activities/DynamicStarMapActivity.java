@@ -501,9 +501,11 @@ public class DynamicStarMapActivity extends Activity
     super.onPause();
     if (timeTravelNoise != null) {
       timeTravelNoise.release();
+      timeTravelNoise = null;
     }
     if (timeTravelBackNoise != null) {
       timeTravelBackNoise.release();
+      timeTravelBackNoise = null;
     }
     for (Runnable runnable : onResumeRunnables) {
       handler.removeCallbacks(runnable);
