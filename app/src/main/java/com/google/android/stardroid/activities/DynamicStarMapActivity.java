@@ -14,7 +14,6 @@
 
 package com.google.android.stardroid.activities;
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.app.FragmentManager;
 import android.app.SearchManager;
@@ -85,7 +84,7 @@ import javax.inject.Provider;
 /**
  * The main map-rendering Activity.
  */
-public class DynamicStarMapActivity extends Activity
+public class DynamicStarMapActivity extends InjectableActivity
     implements OnSharedPreferenceChangeListener {
   private static final int TIME_DISPLAY_DELAY_MILLIS = 1000;
   private FullscreenControlsManager fullscreenControlsManager;
@@ -180,8 +179,8 @@ public class DynamicStarMapActivity extends Activity
     Log.d(TAG, "onCreate at " + System.currentTimeMillis());
     super.onCreate(icicle);
 
-    ((StardroidApplication) getApplication()).getApplicationComponent()
-        .newDynamicStarMapSubcomponent(new DynamicStarMapModule(this)).inject(this);
+    DaggerDynamicStarMapComponent.builder().applicationComponent(getApplicationComponent())
+        .dynamicStarMapModule(new DynamicStarMapModule(this)).build().inject(this);
 
     sharedPreferences.registerOnSharedPreferenceChangeListener(this);
 

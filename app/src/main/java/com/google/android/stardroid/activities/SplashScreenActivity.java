@@ -14,7 +14,6 @@
 
 package com.google.android.stardroid.activities;
 
-import android.app.Activity;
 import android.app.FragmentManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -36,7 +35,7 @@ import javax.inject.Inject;
 /**
  * Shows a splash screen, then launch the next activity.
  */
-public class SplashScreenActivity extends Activity
+public class SplashScreenActivity extends InjectableActivity
     implements EulaDialogFragment.EulaAcceptanceListener {
   private final static String TAG = MiscUtil.getTag(SplashScreenActivity.class);
 
@@ -49,17 +48,18 @@ public class SplashScreenActivity extends Activity
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
-    Log.d(TAG, "SplashScreen onCreate");
+    Log.d(TAG, "onCreate");
     super.onCreate(savedInstanceState);
     setContentView(R.layout.splash);
-    ((StardroidApplication) getApplication()).getApplicationComponent().newSplashScreenSubcomponent(
-        new SplashScreenModule(this)).inject(this);
+    DaggerSplashScreenComponent.builder()
+        .applicationComponent(getApplicationComponent())
+        .splashScreenModule(new SplashScreenModule(this)).build().inject(this);
 
     graphic = findViewById(R.id.splash);
 
     fadeAnimation.setAnimationListener(new AnimationListener() {
       public void onAnimationEnd(Animation arg0) {
-        Log.d(TAG, "SplashScreen.Animation onAnimationEnd");
+        Log.d(TAG, "onAnimationEnd");
         graphic.setVisibility(View.INVISIBLE);
         Intent intent = new Intent(SplashScreenActivity.this, DynamicStarMapActivity.class);
         startActivity(intent);
@@ -93,13 +93,13 @@ public class SplashScreenActivity extends Activity
 
   @Override
   public void onPause() {
-    Log.d(TAG, "SplashScreen onPause");
+    Log.d(TAG, "onPause");
     super.onPause();
   }
 
   @Override
   public void onDestroy() {
-    Log.d(TAG, "SplashScreen onDestroy");
+    Log.d(TAG, "onDestroy");
     super.onDestroy();
   }
 
@@ -108,7 +108,11 @@ public class SplashScreenActivity extends Activity
     boolean eulaAlreadyConfirmed = (sharedPreferences.getInt(
         ApplicationConstants.READ_TOS_PREF_VERSION, -1) == versionCode);
     if (!eulaAlreadyConfirmed) {
-      eulaDialogFragmentWithButtons.show(fragmentManager, "Eula Dialog");
+      // If we don't make this check there can be crashes when the app is backgrounded and
+      // brought back if the Activity has been killed.  This seems to be a framework bug.
+      if (!eulaDialogFragmentWithButtons.isAdded()) {
+        eulaDialogFragmentWithButtons.show(fragmentManager, "Eula Dialog");
+      }
       return true;
     } else {
       return false;

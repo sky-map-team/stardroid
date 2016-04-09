@@ -6,9 +6,8 @@ import android.view.animation.AnimationUtils;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
+import com.google.android.stardroid.scopes.PerActivity;
 import com.google.android.stardroid.util.Analytics;
-
-import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
@@ -16,6 +15,7 @@ import dagger.Provides;
 /**
  * Created by johntaylor on 4/2/16.
  */
+@PerActivity
 @Module
 public class SplashScreenModule {
   private SplashScreenActivity activity;
@@ -25,8 +25,8 @@ public class SplashScreenModule {
   }
 
   @Provides
-  @Singleton
-  Animation provideTimeTravelFlashAnimation() {
+//  @Singleton
+  Animation provideFadeoutAnimation() {
     return AnimationUtils.loadAnimation(activity, R.anim.fadeout);
   }
 

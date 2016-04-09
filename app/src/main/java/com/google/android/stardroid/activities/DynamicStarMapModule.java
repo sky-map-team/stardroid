@@ -9,14 +9,15 @@ import android.util.Log;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
+import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
 import com.google.android.stardroid.activities.dialogs.LocationPermissionRationaleFragment;
+import com.google.android.stardroid.scopes.PerActivity;
 import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.MiscUtil;
 
 import javax.inject.Named;
-import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
@@ -36,19 +37,19 @@ public class DynamicStarMapModule {
   }
 
   @Provides
-  @Singleton
+  @PerActivity
   DynamicStarMapActivity provideDynamicStarMapActivity() {
     return activity;
   }
 
   @Provides
-  @Singleton
+  @PerActivity
   Activity provideActivity() {
     return activity;
   }
 
   @Provides
-  @Singleton
+  @PerActivity
   Context provideActivityContext() {
     return activity;
   }
@@ -66,32 +67,39 @@ public class DynamicStarMapModule {
   }
 
   @Provides
-  @Singleton
+  @PerActivity
   Animation provideTimeTravelFlashAnimation() {
     return AnimationUtils.loadAnimation(activity, R.anim.timetravelflash);
   }
 
   @Provides
-  @Singleton
+  @PerActivity
   Handler provideHandler() {
     return new Handler();
   }
 
   @Provides
-  @Singleton
+  @PerActivity
   FragmentManager provideFragmentManager() {
     return activity.getFragmentManager();
   }
 
   @Provides
-  @Singleton
+  @PerActivity
   EulaDialogFragment provideEulaFragmentWithoutButtons(Analytics analytics) {
     return new EulaDialogFragment(activity, false, analytics, null);
   }
 
   @Provides
-  @Singleton
+  @PerActivity
   LocationPermissionRationaleFragment provideLocationFragment() {
     return new LocationPermissionRationaleFragment();
+  }
+
+
+  @Provides
+  @PerActivity
+  GoogleApiAvailability providePlayServicesApiAvailability() {
+    return GoogleApiAvailability.getInstance();
   }
 }

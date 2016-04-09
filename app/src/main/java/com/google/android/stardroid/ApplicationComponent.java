@@ -1,12 +1,10 @@
 package com.google.android.stardroid;
 
-import com.google.android.stardroid.activities.DynamicStarMapModule;
-import com.google.android.stardroid.activities.DynamicStarMapSubcomponent;
+import android.content.SharedPreferences;
+
 import com.google.android.stardroid.activities.EditSettingsActivity;
 import com.google.android.stardroid.activities.ImageDisplayActivity;
 import com.google.android.stardroid.activities.ImageGalleryActivity;
-import com.google.android.stardroid.activities.SplashScreenModule;
-import com.google.android.stardroid.activities.SplashScreenSubcomponent;
 
 import javax.inject.Singleton;
 
@@ -19,10 +17,13 @@ import dagger.Component;
 @Singleton
 @Component(modules={ApplicationModule.class})
 public interface ApplicationComponent {
+  // What we expose to dependent components
+  StardroidApplication provideStardroidApplication();
+  SharedPreferences provideSharedPreferences();
+
+  // Who can we inject
   void inject(StardroidApplication app);
   void inject(EditSettingsActivity activity);
   void inject(ImageDisplayActivity activity);
   void inject(ImageGalleryActivity activity);
-  DynamicStarMapSubcomponent newDynamicStarMapSubcomponent(DynamicStarMapModule activityModule);
-  SplashScreenSubcomponent newSplashScreenSubcomponent(SplashScreenModule activityModule);
 }
