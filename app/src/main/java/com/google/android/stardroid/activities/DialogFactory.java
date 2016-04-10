@@ -19,19 +19,14 @@ import android.app.AlertDialog.Builder;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
-import android.text.Html;
-import android.text.Spanned;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
-import android.widget.TextView;
 
 import com.google.android.stardroid.ApplicationConstants;
 import com.google.android.stardroid.R;
-import com.google.android.stardroid.R.string;
-import com.google.android.stardroid.StardroidApplication;
 import com.google.android.stardroid.search.SearchResult;
 import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.MiscUtil;
@@ -51,8 +46,6 @@ import javax.inject.Inject;
 public class DialogFactory {
   private static final String TAG = MiscUtil.getTag(DialogFactory.class);
 
-  static final int DIALOG_ID_MULTIPLE_SEARCH_RESULTS = 2;
-  public static final int DIALOG_ID_NO_SEARCH_RESULTS = 3;
   static final int DIALOG_ID_NO_SENSORS = 7;
 
   private DynamicStarMapActivity parentActivity;
@@ -80,10 +73,6 @@ public class DialogFactory {
    */
   public Dialog onCreateDialog(int id) {
     switch (id) {
-      case (DialogFactory.DIALOG_ID_NO_SEARCH_RESULTS):
-        return createNoSearchResultsDialog();
-      case (DialogFactory.DIALOG_ID_MULTIPLE_SEARCH_RESULTS):
-        return createMultipleSearchResultsDialog();
       case (DIALOG_ID_NO_SENSORS):
         return createNoSensorsDialog();
     }
@@ -108,72 +97,8 @@ public class DialogFactory {
     return alertDialog;
   }
 
-  /**
-   * Creates and returns a help dialog box.
-   */
-  private Dialog createHelpDialog() {
-    final LayoutInflater inflater = parentActivity.getLayoutInflater();
-    final View view = inflater.inflate(R.layout.help, null);
-    final AlertDialog alertDialog = new Builder(parentActivity)
-        .setTitle(R.string.help_dialog_title)
-        .setView(view).setNegativeButton(android.R.string.ok,
-            new DialogInterface.OnClickListener() {
-              public void onClick(DialogInterface dialog, int whichButton) {
-                Log.d(TAG, "Help Dialog closed");
-                dialog.dismiss();
-              }
-            }).create();
-    String helpText = String.format(parentActivity.getString(R.string.help_text), getVersionName());
-    Spanned formattedHelpText = Html.fromHtml(helpText);
-    TextView helpTextView = (TextView) view.findViewById(R.id.help_box_text);
-    helpTextView.setText(formattedHelpText, TextView.BufferType.SPANNABLE);
-    return alertDialog;
-  }
 
-  private String getVersionName() {
-    return ((StardroidApplication) parentActivity.getApplication()).getVersionName();
-  }
 
-  /**
-   * Creates and returns a dialog indicating that no search results were found.
-   */
-  private Dialog createNoSearchResultsDialog() {
-    final AlertDialog dialog = new Builder(parentActivity)
-        .setTitle(string.no_search_title).setMessage(string.no_search_results_text)
-        .setNegativeButton(android.R.string.ok, new DialogInterface.OnClickListener() {
-          public void onClick(DialogInterface dialog, int whichButton) {
-            Log.d(TAG, "No search results Dialog closed");
-            dialog.dismiss();
-          }
-        }).create();
-    return dialog;
-  }
-
-  /**
-   * Creates and returns a dialog allowing the user to choose amongst several search
-   * results.  The search results are stored in the {@link #multipleSearchResultsAdaptor}.
-   */
-  private Dialog createMultipleSearchResultsDialog() {
-    final DialogInterface.OnClickListener onClickListener = new DialogInterface.OnClickListener() {
-      public void onClick(DialogInterface dialog, int whichButton) {
-        if (whichButton == Dialog.BUTTON2) {
-          Log.d(TAG, "Many search results Dialog closed with cancel");
-          dialog.dismiss();
-        } else {
-          final SearchResult item = multipleSearchResultsAdaptor.getItem(whichButton);
-          parentActivity.activateSearchTarget(item.coords, item.capitalizedName);
-          dialog.dismiss();
-        }
-      }
-    };
-
-    final AlertDialog dialog = new Builder(parentActivity)
-        .setTitle(string.many_search_results_title)
-        .setNegativeButton(android.R.string.cancel, onClickListener)
-        .setAdapter(multipleSearchResultsAdaptor, onClickListener)
-        .create();
-    return dialog;
-  }
 
   /**
    * Helper method that modifies the {@link #multipleSearchResultsAdaptor}.
@@ -188,11 +113,12 @@ public class DialogFactory {
    *
    * @param results the search results
    */
-  public void showUserChooseResultDialog(List<SearchResult> results) {
+  // TODO? Dead?
+  private void showUserChooseResultDialog(List<SearchResult> results) {
     multipleSearchResultsAdaptor.clear();
     for (SearchResult result : results) {
       multipleSearchResultsAdaptor.add(result);
     }
-    parentActivity.showDialog(DialogFactory.DIALOG_ID_MULTIPLE_SEARCH_RESULTS);
+    //parentActivity.showDialog(DialogFactory.DIALOG_ID_MULTIPLE_SEARCH_RESULTS);
   }
 }

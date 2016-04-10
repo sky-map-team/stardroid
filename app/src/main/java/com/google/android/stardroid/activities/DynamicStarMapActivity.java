@@ -48,6 +48,8 @@ import com.google.android.stardroid.R;
 import com.google.android.stardroid.StardroidApplication;
 import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
 import com.google.android.stardroid.activities.dialogs.HelpDialogFragment;
+import com.google.android.stardroid.activities.dialogs.MultipleSearchResultsDialogFragment;
+import com.google.android.stardroid.activities.dialogs.NoSearchResultsDialogFragment;
 import com.google.android.stardroid.activities.dialogs.TimeTravelDialogFragment;
 import com.google.android.stardroid.activities.util.ActivityLightLevelChanger;
 import com.google.android.stardroid.activities.util.ActivityLightLevelChanger.NightModeable;
@@ -172,6 +174,8 @@ public class DynamicStarMapActivity extends InjectableActivity
   @Inject EulaDialogFragment eulaDialogFragmentNoButtons;
   @Inject TimeTravelDialogFragment timeTravelDialogFragment;
   @Inject HelpDialogFragment helpDialogFragment;
+  @Inject NoSearchResultsDialogFragment noSearchResultsDialogFragment;
+  @Inject MultipleSearchResultsDialogFragment multipleSearchResultsDialogFragment;
   // A list of runnables to post on the handler when we resume.
   private List<Runnable> onResumeRunnables = new ArrayList<>();
 
@@ -585,15 +589,23 @@ public class DynamicStarMapActivity extends InjectableActivity
         results.size() > 0 ? 1 : 0);
     if (results.size() == 0) {
       Log.d(TAG, "No results returned");
-      showDialog(DialogFactory.DIALOG_ID_NO_SEARCH_RESULTS);
+      noSearchResultsDialogFragment.show(fragmentManager, "No Search Results");
     } else if (results.size() > 1) {
       Log.d(TAG, "Multiple results returned");
-      dialogFactory.showUserChooseResultDialog(results);
+      showUserChooseResultDialog(results);
     } else {
       Log.d(TAG, "One result returned.");
       final SearchResult result = results.get(0);
       activateSearchTarget(result.coords, result.capitalizedName);
     }
+  }
+
+  private void showUserChooseResultDialog(List<SearchResult> results) {
+    multipleSearchResultsDialogFragment.clearResults();
+    for (SearchResult result : results) {
+      multipleSearchResultsDialogFragment.add(result);
+    }
+    multipleSearchResultsDialogFragment.show(fragmentManager, "Multiple Search Results");
   }
 
   private void initializeModelViewController() {
