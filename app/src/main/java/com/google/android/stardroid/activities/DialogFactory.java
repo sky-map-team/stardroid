@@ -14,7 +14,6 @@
 
 package com.google.android.stardroid.activities;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.app.Dialog;
@@ -36,7 +35,6 @@ import com.google.android.stardroid.StardroidApplication;
 import com.google.android.stardroid.search.SearchResult;
 import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.MiscUtil;
-import com.google.android.stardroid.views.TimeTravelDialog;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,9 +51,8 @@ import javax.inject.Inject;
 public class DialogFactory {
   private static final String TAG = MiscUtil.getTag(DialogFactory.class);
 
-  static final int DIALOG_ID_TIME_TRAVEL = 1;
   static final int DIALOG_ID_MULTIPLE_SEARCH_RESULTS = 2;
-  static final int DIALOG_ID_NO_SEARCH_RESULTS = 3;
+  public static final int DIALOG_ID_NO_SEARCH_RESULTS = 3;
   static final int DIALOG_ID_HELP = 4;
   static final int DIALOG_ID_NO_SENSORS = 7;
 
@@ -90,8 +87,6 @@ public class DialogFactory {
         return createNoSearchResultsDialog();
       case (DialogFactory.DIALOG_ID_MULTIPLE_SEARCH_RESULTS):
         return createMultipleSearchResultsDialog();
-      case (DialogFactory.DIALOG_ID_TIME_TRAVEL):
-        return createTimeTravelDialog();
       case (DIALOG_ID_NO_SENSORS):
         return createNoSensorsDialog();
     }
@@ -202,15 +197,5 @@ public class DialogFactory {
       multipleSearchResultsAdaptor.add(result);
     }
     parentActivity.showDialog(DialogFactory.DIALOG_ID_MULTIPLE_SEARCH_RESULTS);
-  }
-
-  /**
-   * Creates the time travel dialog.
-   */
-  private Dialog createTimeTravelDialog() {
-    Log.d(TAG, "Creating time dialog.");
-    TimeTravelDialog timeTravelDialog = new TimeTravelDialog(parentActivity,
-        parentActivity.getModel());
-    return timeTravelDialog;
   }
 }

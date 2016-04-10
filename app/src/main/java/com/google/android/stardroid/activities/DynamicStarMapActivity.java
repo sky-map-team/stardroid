@@ -47,6 +47,7 @@ import com.google.android.stardroid.ApplicationConstants;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.StardroidApplication;
 import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
+import com.google.android.stardroid.activities.dialogs.TimeTravelDialogFragment;
 import com.google.android.stardroid.activities.util.ActivityLightLevelChanger;
 import com.google.android.stardroid.activities.util.ActivityLightLevelChanger.NightModeable;
 import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
@@ -168,6 +169,7 @@ public class DynamicStarMapActivity extends InjectableActivity
   @Inject GooglePlayServicesChecker playServicesChecker;
   @Inject FragmentManager fragmentManager;
   @Inject EulaDialogFragment eulaDialogFragmentNoButtons;
+  @Inject TimeTravelDialogFragment timeTravelDialogFragment;
   // A list of runnables to post on the handler when we resume.
   private List<Runnable> onResumeRunnables = new ArrayList<>();
 
@@ -371,7 +373,7 @@ public class DynamicStarMapActivity extends InjectableActivity
         } else {
           Log.d(TAG, "Resuming current time travel dialog.");
         }
-        showDialog(DialogFactory.DIALOG_ID_TIME_TRAVEL);
+        timeTravelDialogFragment.show(fragmentManager, "Time Travel");
         break;
       case R.id.menu_item_gallery:
         Log.d(TAG, "Loading gallery");
@@ -706,7 +708,7 @@ public class DynamicStarMapActivity extends InjectableActivity
     super.onSaveInstanceState(icicle);
   }
 
-  void activateSearchTarget(GeocentricCoordinates target, final String searchTerm) {
+  public void activateSearchTarget(GeocentricCoordinates target, final String searchTerm) {
     Log.d(TAG, "Item " + searchTerm + " selected");
     // Store these for later.
     searchTarget = target;

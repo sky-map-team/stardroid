@@ -13,6 +13,7 @@ import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
 import com.google.android.stardroid.activities.dialogs.LocationPermissionRationaleFragment;
+import com.google.android.stardroid.activities.dialogs.TimeTravelDialogFragment;
 import com.google.android.stardroid.inject.PerActivity;
 import com.google.android.stardroid.util.MiscUtil;
 
@@ -58,6 +59,12 @@ public class DynamicStarMapModule {
   EulaDialogFragment provideEulaDialogFragment() {
     EulaDialogFragment fragment = new EulaDialogFragment();
     return fragment;
+  }
+
+  @Provides
+  @PerActivity
+  TimeTravelDialogFragment provideTimeTravelDialogFragment() {
+    return new TimeTravelDialogFragment();
   }
 
   @Provides
