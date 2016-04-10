@@ -111,7 +111,11 @@ public class SplashScreenActivity extends InjectableActivity
     boolean eulaAlreadyConfirmed = (sharedPreferences.getInt(
         ApplicationConstants.READ_TOS_PREF_VERSION, -1) == versionCode);
     if (!eulaAlreadyConfirmed) {
-      eulaDialogFragmentWithButtons.show(fragmentManager, "Eula Dialog");
+      // On older devices (pre 5) there seems to be a framework bug - if the activity is
+      // backgrounded while the dialog is showing and then brought back there's an exception thrown.
+      if (!eulaDialogFragmentWithButtons.isAdded()) {
+        eulaDialogFragmentWithButtons.show(fragmentManager, "Eula Dialog");
+      }
       return true;
     } else {
       return false;
