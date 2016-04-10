@@ -111,11 +111,7 @@ public class SplashScreenActivity extends InjectableActivity
     boolean eulaAlreadyConfirmed = (sharedPreferences.getInt(
         ApplicationConstants.READ_TOS_PREF_VERSION, -1) == versionCode);
     if (!eulaAlreadyConfirmed) {
-      // If we don't make this check there can be crashes when the app is backgrounded and
-      // brought back if the Activity has been killed.  This seems to be a framework bug.
-      if (!eulaDialogFragmentWithButtons.isAdded()) {
-        eulaDialogFragmentWithButtons.show(fragmentManager, "Eula Dialog");
-      }
+      eulaDialogFragmentWithButtons.show(fragmentManager, "Eula Dialog");
       return true;
     } else {
       return false;
