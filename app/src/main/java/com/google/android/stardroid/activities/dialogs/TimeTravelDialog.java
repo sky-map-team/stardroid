@@ -228,7 +228,15 @@ public class TimeTravelDialog extends Dialog {
       case 4:  // Moon Landing 1969.
         setDate(new Date(-14182953622L));
         break;
-      case 5: // Solar Eclipse 1919. Hand-tuned to look OK, no exact moment.
+      case 5: // Solar Eclipse 2017 North America.
+        // Source: http://mainfacts.com/timestamp-date-converter-calculator
+        setDate(new Date(1503340380000L));
+        break;
+      case 6: // Solar Eclipse 2016. Hand-tuned to look OK, no exact moment.
+        // Source: http://mainfacts.com/timestamp-date-converter-calculator
+        setDate(new Date(1457489160000L));
+        break;
+      case 7: // Solar Eclipse 1919. Hand-tuned to look OK, no exact moment.
         setDate(new Date(-1596619190000L));
         break;
       default:
