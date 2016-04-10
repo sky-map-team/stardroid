@@ -14,7 +14,6 @@
 
 package com.google.android.stardroid.activities;
 
-import android.app.Dialog;
 import android.app.FragmentManager;
 import android.app.SearchManager;
 import android.content.Context;
@@ -163,7 +162,6 @@ public class DynamicStarMapActivity extends InjectableActivity
   // time dialog and time player into separate activities.
   private View timePlayerUI;
   private DynamicStarMapComponent daggerComponent;
-  @Inject DialogFactory dialogFactory;
   @Inject @Named("timetravel") Provider<MediaPlayer> timeTravelNoiseProvider;
   @Inject @Named("timetravelback") Provider<MediaPlayer> timeTravelBackNoiseProvider;
   private MediaPlayer timeTravelNoise;
@@ -676,11 +674,6 @@ public class DynamicStarMapActivity extends InjectableActivity
     searchControlBar.setVisibility(View.INVISIBLE);
     rendererController.queueDisableSearchOverlay();
     searchMode = false;
-  }
-
-  @Override
-  protected Dialog onCreateDialog(int id) {
-    return dialogFactory.onCreateDialog(id);
   }
 
   @Override
