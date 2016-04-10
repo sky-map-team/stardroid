@@ -53,7 +53,6 @@ public class DialogFactory {
 
   static final int DIALOG_ID_MULTIPLE_SEARCH_RESULTS = 2;
   public static final int DIALOG_ID_NO_SEARCH_RESULTS = 3;
-  static final int DIALOG_ID_HELP = 4;
   static final int DIALOG_ID_NO_SENSORS = 7;
 
   private DynamicStarMapActivity parentActivity;
@@ -81,8 +80,6 @@ public class DialogFactory {
    */
   public Dialog onCreateDialog(int id) {
     switch (id) {
-      case (DialogFactory.DIALOG_ID_HELP):
-        return createHelpDialog();
       case (DialogFactory.DIALOG_ID_NO_SEARCH_RESULTS):
         return createNoSearchResultsDialog();
       case (DialogFactory.DIALOG_ID_MULTIPLE_SEARCH_RESULTS):

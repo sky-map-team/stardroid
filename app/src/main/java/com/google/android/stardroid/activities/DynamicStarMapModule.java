@@ -12,6 +12,7 @@ import android.view.animation.AnimationUtils;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
+import com.google.android.stardroid.activities.dialogs.HelpDialogFragment;
 import com.google.android.stardroid.activities.dialogs.LocationPermissionRationaleFragment;
 import com.google.android.stardroid.activities.dialogs.TimeTravelDialogFragment;
 import com.google.android.stardroid.inject.PerActivity;
@@ -65,6 +66,12 @@ public class DynamicStarMapModule {
   @PerActivity
   TimeTravelDialogFragment provideTimeTravelDialogFragment() {
     return new TimeTravelDialogFragment();
+  }
+
+  @Provides
+  @PerActivity
+  HelpDialogFragment provideHelpDialogFragment() {
+    return new HelpDialogFragment();
   }
 
   @Provides

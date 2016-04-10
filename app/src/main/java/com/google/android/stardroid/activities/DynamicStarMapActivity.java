@@ -47,6 +47,7 @@ import com.google.android.stardroid.ApplicationConstants;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.StardroidApplication;
 import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
+import com.google.android.stardroid.activities.dialogs.HelpDialogFragment;
 import com.google.android.stardroid.activities.dialogs.TimeTravelDialogFragment;
 import com.google.android.stardroid.activities.util.ActivityLightLevelChanger;
 import com.google.android.stardroid.activities.util.ActivityLightLevelChanger.NightModeable;
@@ -170,6 +171,7 @@ public class DynamicStarMapActivity extends InjectableActivity
   @Inject FragmentManager fragmentManager;
   @Inject EulaDialogFragment eulaDialogFragmentNoButtons;
   @Inject TimeTravelDialogFragment timeTravelDialogFragment;
+  @Inject HelpDialogFragment helpDialogFragment;
   // A list of runnables to post on the handler when we resume.
   private List<Runnable> onResumeRunnables = new ArrayList<>();
 
@@ -353,7 +355,7 @@ public class DynamicStarMapActivity extends InjectableActivity
         Log.d(TAG, "Help");
         analytics.trackEvent(Analytics.USER_ACTION_CATEGORY,
             Analytics.MENU_ITEM, Analytics.HELP_OPENED_LABEL, 1);
-        showDialog(DialogFactory.DIALOG_ID_HELP);
+        helpDialogFragment.show(fragmentManager, "Help Dialog");
         break;
       case R.id.menu_item_dim:
         Log.d(TAG, "Toggling nightmode");

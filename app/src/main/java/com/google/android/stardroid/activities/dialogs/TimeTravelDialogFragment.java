@@ -7,12 +7,11 @@ import android.os.Bundle;
 import com.google.android.stardroid.activities.DynamicStarMapActivity;
 import com.google.android.stardroid.inject.HasComponent;
 import com.google.android.stardroid.util.MiscUtil;
-import com.google.android.stardroid.views.TimeTravelDialog;
 
 import javax.inject.Inject;
 
 /**
- * End User License agreement dialog.
+ * Time travel dialog fragment.
  * Created by johntaylor on 4/3/16.
  */
 public class TimeTravelDialogFragment extends DialogFragment {
