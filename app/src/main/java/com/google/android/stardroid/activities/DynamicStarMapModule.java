@@ -16,6 +16,7 @@ import com.google.android.stardroid.activities.dialogs.HelpDialogFragment;
 import com.google.android.stardroid.activities.dialogs.LocationPermissionRationaleFragment;
 import com.google.android.stardroid.activities.dialogs.MultipleSearchResultsDialogFragment;
 import com.google.android.stardroid.activities.dialogs.NoSearchResultsDialogFragment;
+import com.google.android.stardroid.activities.dialogs.NoSensorsDialogFragment;
 import com.google.android.stardroid.activities.dialogs.TimeTravelDialogFragment;
 import com.google.android.stardroid.inject.PerActivity;
 import com.google.android.stardroid.util.MiscUtil;
@@ -86,6 +87,12 @@ public class DynamicStarMapModule {
   @PerActivity
   MultipleSearchResultsDialogFragment provideMultipleSearchResultsDialogFragment() {
     return new MultipleSearchResultsDialogFragment();
+  }
+
+  @Provides
+  @PerActivity
+  NoSensorsDialogFragment provideNoSensorsDialogFragment() {
+    return new NoSensorsDialogFragment();
   }
 
   @Provides

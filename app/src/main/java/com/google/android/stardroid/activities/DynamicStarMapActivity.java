@@ -50,6 +50,7 @@ import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
 import com.google.android.stardroid.activities.dialogs.HelpDialogFragment;
 import com.google.android.stardroid.activities.dialogs.MultipleSearchResultsDialogFragment;
 import com.google.android.stardroid.activities.dialogs.NoSearchResultsDialogFragment;
+import com.google.android.stardroid.activities.dialogs.NoSensorsDialogFragment;
 import com.google.android.stardroid.activities.dialogs.TimeTravelDialogFragment;
 import com.google.android.stardroid.activities.util.ActivityLightLevelChanger;
 import com.google.android.stardroid.activities.util.ActivityLightLevelChanger.NightModeable;
@@ -176,6 +177,7 @@ public class DynamicStarMapActivity extends InjectableActivity
   @Inject HelpDialogFragment helpDialogFragment;
   @Inject NoSearchResultsDialogFragment noSearchResultsDialogFragment;
   @Inject MultipleSearchResultsDialogFragment multipleSearchResultsDialogFragment;
+  @Inject NoSensorsDialogFragment noSensorsDialogFragment;
   // A list of runnables to post on the handler when we resume.
   private List<Runnable> onResumeRunnables = new ArrayList<>();
 
@@ -271,8 +273,7 @@ public class DynamicStarMapActivity extends InjectableActivity
         if (!sharedPreferences
             .getBoolean(ApplicationConstants.NO_WARN_ABOUT_MISSING_SENSORS, false)) {
           Log.d(TAG, "showing no sensor dialog");
-          // TODO(jontayler): refactor to use dialog fragments.
-          showDialog(DialogFactory.DIALOG_ID_NO_SENSORS);
+          noSensorsDialogFragment.show(fragmentManager, "No sensors dialog");
           // First time, force manual mode.
           sharedPreferences.edit().putBoolean(ApplicationConstants.AUTO_MODE_PREF_KEY, false)
               .apply();

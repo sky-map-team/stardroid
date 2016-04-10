@@ -32,7 +32,6 @@ import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.MiscUtil;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import javax.inject.Inject;
 
@@ -45,8 +44,6 @@ import javax.inject.Inject;
 // TODO(jontayler): rework this into dialog fragments.
 public class DialogFactory {
   private static final String TAG = MiscUtil.getTag(DialogFactory.class);
-
-  static final int DIALOG_ID_NO_SENSORS = 7;
 
   private DynamicStarMapActivity parentActivity;
   private ArrayAdapter<SearchResult> multipleSearchResultsAdaptor;
@@ -72,11 +69,7 @@ public class DialogFactory {
    * Creates dialogs on demand.  Delegated to by the parentActivity.
    */
   public Dialog onCreateDialog(int id) {
-    switch (id) {
-      case (DIALOG_ID_NO_SENSORS):
         return createNoSensorsDialog();
-    }
-    throw new RuntimeException("Unknown dialog Id.");
   }
 
   private Dialog createNoSensorsDialog() {
@@ -95,30 +88,5 @@ public class DialogFactory {
               }
             }).create();
     return alertDialog;
-  }
-
-
-
-
-  /**
-   * Helper method that modifies the {@link #multipleSearchResultsAdaptor}.
-   * This isn't really the right way to do it.  The correct thing
-   * to do would be to do away with this method and pass the search results to
-   * the dialog creator inside a Bundle.  However, that would require
-   * SearchResults to be made into a Parcelable.  Furthermore, onCreateDialog
-   * is not called the second time this dialog is requested, so we would have
-   * to override onPrepareDialog instead
-   * ...and that has only been around since API v8.
-   * So, enough excuses - this is wrong, but so much easier.
-   *
-   * @param results the search results
-   */
-  // TODO? Dead?
-  private void showUserChooseResultDialog(List<SearchResult> results) {
-    multipleSearchResultsAdaptor.clear();
-    for (SearchResult result : results) {
-      multipleSearchResultsAdaptor.add(result);
-    }
-    //parentActivity.showDialog(DialogFactory.DIALOG_ID_MULTIPLE_SEARCH_RESULTS);
   }
 }
