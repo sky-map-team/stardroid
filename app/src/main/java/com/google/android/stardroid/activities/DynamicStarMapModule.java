@@ -13,8 +13,7 @@ import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
 import com.google.android.stardroid.activities.dialogs.LocationPermissionRationaleFragment;
-import com.google.android.stardroid.scopes.PerActivity;
-import com.google.android.stardroid.util.Analytics;
+import com.google.android.stardroid.inject.PerActivity;
 import com.google.android.stardroid.util.MiscUtil;
 
 import javax.inject.Named;
@@ -55,12 +54,21 @@ public class DynamicStarMapModule {
   }
 
   @Provides
+  @PerActivity
+  EulaDialogFragment provideEulaDialogFragment() {
+    EulaDialogFragment fragment = new EulaDialogFragment();
+    return fragment;
+  }
+
+  @Provides
+  @PerActivity
   @Named("timetravel")
   MediaPlayer provideTimeTravelNoise() {
     return MediaPlayer.create(activity, R.raw.timetravel);
   }
 
   @Provides
+  @PerActivity
   @Named("timetravelback")
   MediaPlayer provideTimeTravelBackNoise() {
     return MediaPlayer.create(activity, R.raw.timetravelback);
@@ -82,12 +90,6 @@ public class DynamicStarMapModule {
   @PerActivity
   FragmentManager provideFragmentManager() {
     return activity.getFragmentManager();
-  }
-
-  @Provides
-  @PerActivity
-  EulaDialogFragment provideEulaFragmentWithoutButtons(Analytics analytics) {
-    return new EulaDialogFragment(activity, false, analytics, null);
   }
 
   @Provides

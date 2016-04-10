@@ -57,6 +57,7 @@ import com.google.android.stardroid.control.AstronomerModel;
 import com.google.android.stardroid.control.AstronomerModel.Pointing;
 import com.google.android.stardroid.control.ControllerGroup;
 import com.google.android.stardroid.control.MagneticDeclinationCalculatorSwitcher;
+import com.google.android.stardroid.inject.HasComponent;
 import com.google.android.stardroid.layers.LayerManager;
 import com.google.android.stardroid.renderer.RendererController;
 import com.google.android.stardroid.renderer.SkyRenderer;
@@ -85,9 +86,14 @@ import javax.inject.Provider;
  * The main map-rendering Activity.
  */
 public class DynamicStarMapActivity extends InjectableActivity
-    implements OnSharedPreferenceChangeListener {
+    implements OnSharedPreferenceChangeListener, HasComponent<DynamicStarMapComponent> {
   private static final int TIME_DISPLAY_DELAY_MILLIS = 1000;
   private FullscreenControlsManager fullscreenControlsManager;
+
+  @Override
+  public DynamicStarMapComponent getComponent() {
+    return daggerComponent;
+  }
 
   /**
    * Passed to the renderer to get per-frame updates from the model.
@@ -151,6 +157,7 @@ public class DynamicStarMapActivity extends InjectableActivity
   // TODO(widdows): Figure out if we should break out the
   // time dialog and time player into separate activities.
   private View timePlayerUI;
+  private DynamicStarMapComponent daggerComponent;
   @Inject DialogFactory dialogFactory;
   @Inject @Named("timetravel") Provider<MediaPlayer> timeTravelNoiseProvider;
   @Inject @Named("timetravelback") Provider<MediaPlayer> timeTravelBackNoiseProvider;
@@ -179,8 +186,10 @@ public class DynamicStarMapActivity extends InjectableActivity
     Log.d(TAG, "onCreate at " + System.currentTimeMillis());
     super.onCreate(icicle);
 
-    DaggerDynamicStarMapComponent.builder().applicationComponent(getApplicationComponent())
-        .dynamicStarMapModule(new DynamicStarMapModule(this)).build().inject(this);
+    daggerComponent = DaggerDynamicStarMapComponent.builder()
+        .applicationComponent(getApplicationComponent())
+        .dynamicStarMapModule(new DynamicStarMapModule(this)).build();
+    daggerComponent.inject(this);
 
     sharedPreferences.registerOnSharedPreferenceChangeListener(this);
 

@@ -27,6 +27,7 @@ import com.google.android.stardroid.ApplicationConstants;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.StardroidApplication;
 import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
+import com.google.android.stardroid.inject.HasComponent;
 import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.MiscUtil;
 
@@ -36,7 +37,7 @@ import javax.inject.Inject;
  * Shows a splash screen, then launch the next activity.
  */
 public class SplashScreenActivity extends InjectableActivity
-    implements EulaDialogFragment.EulaAcceptanceListener {
+    implements EulaDialogFragment.EulaAcceptanceListener, HasComponent<SplashScreenComponent> {
   private final static String TAG = MiscUtil.getTag(SplashScreenActivity.class);
 
   @Inject Analytics analytics;
@@ -45,15 +46,17 @@ public class SplashScreenActivity extends InjectableActivity
   @Inject EulaDialogFragment eulaDialogFragmentWithButtons;
   @Inject FragmentManager fragmentManager;
   private View graphic;
+  private SplashScreenComponent daggerComponent;
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
     Log.d(TAG, "onCreate");
     super.onCreate(savedInstanceState);
     setContentView(R.layout.splash);
-    DaggerSplashScreenComponent.builder()
+    daggerComponent = DaggerSplashScreenComponent.builder()
         .applicationComponent(getApplicationComponent())
-        .splashScreenModule(new SplashScreenModule(this)).build().inject(this);
+        .splashScreenModule(new SplashScreenModule(this)).build();
+    daggerComponent.inject(this);
 
     graphic = findViewById(R.id.splash);
 
@@ -134,5 +137,10 @@ public class SplashScreenActivity extends InjectableActivity
   public void eulaRejected() {
     Log.d(TAG, "Sorry chum, no accept, no app.");
     finish();
+  }
+
+  @Override
+  public SplashScreenComponent getComponent() {
+    return daggerComponent;
   }
 }

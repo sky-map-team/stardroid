@@ -6,7 +6,6 @@ import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.text.Html;
 import android.text.Spanned;
 import android.util.Log;
@@ -16,8 +15,11 @@ import android.widget.TextView;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.StardroidApplication;
+import com.google.android.stardroid.inject.HasComponent;
 import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.MiscUtil;
+
+import javax.inject.Inject;
 
 /**
  * End User License agreement dialog.
@@ -25,9 +27,8 @@ import com.google.android.stardroid.util.MiscUtil;
  */
 public class EulaDialogFragment extends DialogFragment {
   private static final String TAG = MiscUtil.getTag(EulaDialogFragment.class);
-  private Activity parentActivity;
-  private boolean showButtons;
-  private Analytics analytics;
+  @Inject Activity parentActivity;
+  @Inject Analytics analytics;
   private EulaAcceptanceListener resultListener;
 
   public interface EulaAcceptanceListener {
@@ -35,16 +36,19 @@ public class EulaDialogFragment extends DialogFragment {
     void eulaRejected();
   }
 
-  public EulaDialogFragment(Activity parentActivity, boolean showButtons, Analytics analytics,
-                            @Nullable EulaAcceptanceListener resultListener) {
-    this.parentActivity = parentActivity;
-    this.showButtons = showButtons;
-    this.analytics = analytics;
+  public interface ActivityComponent {
+    void inject(EulaDialogFragment fragment);
+  }
+
+  public void setEulaAcceptanceListener(EulaAcceptanceListener resultListener) {
     this.resultListener = resultListener;
   }
 
   @Override
   public Dialog onCreateDialog(Bundle savedInstanceState) {
+    // Activities using this dialog MUST implement this interface.  Obviously.
+    ((HasComponent<ActivityComponent>) getActivity()).getComponent().inject(this);
+
     LayoutInflater inflater = parentActivity.getLayoutInflater();
     View view = inflater.inflate(R.layout.tos_view, null);
 
@@ -68,7 +72,7 @@ public class EulaDialogFragment extends DialogFragment {
         .setView(view);
     // Note that we've made the "accept" button the negative button and the "decline" button
     // the positive button as an experiment.
-    if (showButtons) {
+    if (resultListener != null) {
       tosDialogBuilder
           .setNegativeButton(R.string.dialog_accept,
               new DialogInterface.OnClickListener() {

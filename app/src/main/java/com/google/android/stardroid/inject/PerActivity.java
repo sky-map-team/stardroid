@@ -1,4 +1,4 @@
-package com.google.android.stardroid.scopes;
+package com.google.android.stardroid.inject;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

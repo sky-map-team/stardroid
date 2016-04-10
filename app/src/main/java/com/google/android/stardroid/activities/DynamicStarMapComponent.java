@@ -1,7 +1,8 @@
 package com.google.android.stardroid.activities;
 
 import com.google.android.stardroid.ApplicationComponent;
-import com.google.android.stardroid.scopes.PerActivity;
+import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
+import com.google.android.stardroid.inject.PerActivity;
 
 import dagger.Component;
 
@@ -10,7 +11,7 @@ import dagger.Component;
  */
 @PerActivity
 @Component(modules={DynamicStarMapModule.class}, dependencies={ApplicationComponent.class})
-public interface DynamicStarMapComponent {
+public interface DynamicStarMapComponent extends EulaDialogFragment.ActivityComponent {
   void inject(DynamicStarMapActivity activity);
 }
 
