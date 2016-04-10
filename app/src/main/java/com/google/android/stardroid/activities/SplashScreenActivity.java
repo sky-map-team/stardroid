@@ -14,7 +14,6 @@
 
 package com.google.android.stardroid.activities;
 
-import android.app.Activity;
 import android.app.FragmentManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -28,6 +27,7 @@ import com.google.android.stardroid.ApplicationConstants;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.StardroidApplication;
 import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
+import com.google.android.stardroid.inject.HasComponent;
 import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.MiscUtil;
 
@@ -36,8 +36,8 @@ import javax.inject.Inject;
 /**
  * Shows a splash screen, then launch the next activity.
  */
-public class SplashScreenActivity extends Activity
-    implements EulaDialogFragment.EulaAcceptanceListener {
+public class SplashScreenActivity extends InjectableActivity
+    implements EulaDialogFragment.EulaAcceptanceListener, HasComponent<SplashScreenComponent> {
   private final static String TAG = MiscUtil.getTag(SplashScreenActivity.class);
 
   @Inject Analytics analytics;
@@ -46,20 +46,23 @@ public class SplashScreenActivity extends Activity
   @Inject EulaDialogFragment eulaDialogFragmentWithButtons;
   @Inject FragmentManager fragmentManager;
   private View graphic;
+  private SplashScreenComponent daggerComponent;
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
-    Log.d(TAG, "SplashScreen onCreate");
+    Log.d(TAG, "onCreate");
     super.onCreate(savedInstanceState);
     setContentView(R.layout.splash);
-    ((StardroidApplication) getApplication()).getApplicationComponent().newSplashScreenSubcomponent(
-        new SplashScreenModule(this)).inject(this);
+    daggerComponent = DaggerSplashScreenComponent.builder()
+        .applicationComponent(getApplicationComponent())
+        .splashScreenModule(new SplashScreenModule(this)).build();
+    daggerComponent.inject(this);
 
     graphic = findViewById(R.id.splash);
 
     fadeAnimation.setAnimationListener(new AnimationListener() {
       public void onAnimationEnd(Animation arg0) {
-        Log.d(TAG, "SplashScreen.Animation onAnimationEnd");
+        Log.d(TAG, "onAnimationEnd");
         graphic.setVisibility(View.INVISIBLE);
         Intent intent = new Intent(SplashScreenActivity.this, DynamicStarMapActivity.class);
         startActivity(intent);
@@ -93,13 +96,13 @@ public class SplashScreenActivity extends Activity
 
   @Override
   public void onPause() {
-    Log.d(TAG, "SplashScreen onPause");
+    Log.d(TAG, "onPause");
     super.onPause();
   }
 
   @Override
   public void onDestroy() {
-    Log.d(TAG, "SplashScreen onDestroy");
+    Log.d(TAG, "onDestroy");
     super.onDestroy();
   }
 
@@ -130,5 +133,10 @@ public class SplashScreenActivity extends Activity
   public void eulaRejected() {
     Log.d(TAG, "Sorry chum, no accept, no app.");
     finish();
+  }
+
+  @Override
+  public SplashScreenComponent getComponent() {
+    return daggerComponent;
   }
 }
