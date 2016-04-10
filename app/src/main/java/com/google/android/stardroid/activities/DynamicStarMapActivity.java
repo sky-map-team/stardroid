@@ -14,7 +14,6 @@
 
 package com.google.android.stardroid.activities;
 
-import android.app.Dialog;
 import android.app.FragmentManager;
 import android.app.SearchManager;
 import android.content.Context;
@@ -47,6 +46,11 @@ import com.google.android.stardroid.ApplicationConstants;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.StardroidApplication;
 import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
+import com.google.android.stardroid.activities.dialogs.HelpDialogFragment;
+import com.google.android.stardroid.activities.dialogs.MultipleSearchResultsDialogFragment;
+import com.google.android.stardroid.activities.dialogs.NoSearchResultsDialogFragment;
+import com.google.android.stardroid.activities.dialogs.NoSensorsDialogFragment;
+import com.google.android.stardroid.activities.dialogs.TimeTravelDialogFragment;
 import com.google.android.stardroid.activities.util.ActivityLightLevelChanger;
 import com.google.android.stardroid.activities.util.ActivityLightLevelChanger.NightModeable;
 import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
@@ -158,7 +162,6 @@ public class DynamicStarMapActivity extends InjectableActivity
   // time dialog and time player into separate activities.
   private View timePlayerUI;
   private DynamicStarMapComponent daggerComponent;
-  @Inject DialogFactory dialogFactory;
   @Inject @Named("timetravel") Provider<MediaPlayer> timeTravelNoiseProvider;
   @Inject @Named("timetravelback") Provider<MediaPlayer> timeTravelBackNoiseProvider;
   private MediaPlayer timeTravelNoise;
@@ -168,6 +171,11 @@ public class DynamicStarMapActivity extends InjectableActivity
   @Inject GooglePlayServicesChecker playServicesChecker;
   @Inject FragmentManager fragmentManager;
   @Inject EulaDialogFragment eulaDialogFragmentNoButtons;
+  @Inject TimeTravelDialogFragment timeTravelDialogFragment;
+  @Inject HelpDialogFragment helpDialogFragment;
+  @Inject NoSearchResultsDialogFragment noSearchResultsDialogFragment;
+  @Inject MultipleSearchResultsDialogFragment multipleSearchResultsDialogFragment;
+  @Inject NoSensorsDialogFragment noSensorsDialogFragment;
   // A list of runnables to post on the handler when we resume.
   private List<Runnable> onResumeRunnables = new ArrayList<>();
 
@@ -263,8 +271,7 @@ public class DynamicStarMapActivity extends InjectableActivity
         if (!sharedPreferences
             .getBoolean(ApplicationConstants.NO_WARN_ABOUT_MISSING_SENSORS, false)) {
           Log.d(TAG, "showing no sensor dialog");
-          // TODO(jontayler): refactor to use dialog fragments.
-          showDialog(DialogFactory.DIALOG_ID_NO_SENSORS);
+          noSensorsDialogFragment.show(fragmentManager, "No sensors dialog");
           // First time, force manual mode.
           sharedPreferences.edit().putBoolean(ApplicationConstants.AUTO_MODE_PREF_KEY, false)
               .apply();
@@ -351,7 +358,7 @@ public class DynamicStarMapActivity extends InjectableActivity
         Log.d(TAG, "Help");
         analytics.trackEvent(Analytics.USER_ACTION_CATEGORY,
             Analytics.MENU_ITEM, Analytics.HELP_OPENED_LABEL, 1);
-        showDialog(DialogFactory.DIALOG_ID_HELP);
+        helpDialogFragment.show(fragmentManager, "Help Dialog");
         break;
       case R.id.menu_item_dim:
         Log.d(TAG, "Toggling nightmode");
@@ -371,7 +378,7 @@ public class DynamicStarMapActivity extends InjectableActivity
         } else {
           Log.d(TAG, "Resuming current time travel dialog.");
         }
-        showDialog(DialogFactory.DIALOG_ID_TIME_TRAVEL);
+        timeTravelDialogFragment.show(fragmentManager, "Time Travel");
         break;
       case R.id.menu_item_gallery:
         Log.d(TAG, "Loading gallery");
@@ -581,15 +588,23 @@ public class DynamicStarMapActivity extends InjectableActivity
         results.size() > 0 ? 1 : 0);
     if (results.size() == 0) {
       Log.d(TAG, "No results returned");
-      showDialog(DialogFactory.DIALOG_ID_NO_SEARCH_RESULTS);
+      noSearchResultsDialogFragment.show(fragmentManager, "No Search Results");
     } else if (results.size() > 1) {
       Log.d(TAG, "Multiple results returned");
-      dialogFactory.showUserChooseResultDialog(results);
+      showUserChooseResultDialog(results);
     } else {
       Log.d(TAG, "One result returned.");
       final SearchResult result = results.get(0);
       activateSearchTarget(result.coords, result.capitalizedName);
     }
+  }
+
+  private void showUserChooseResultDialog(List<SearchResult> results) {
+    multipleSearchResultsDialogFragment.clearResults();
+    for (SearchResult result : results) {
+      multipleSearchResultsDialogFragment.add(result);
+    }
+    multipleSearchResultsDialogFragment.show(fragmentManager, "Multiple Search Results");
   }
 
   private void initializeModelViewController() {
@@ -662,11 +677,6 @@ public class DynamicStarMapActivity extends InjectableActivity
   }
 
   @Override
-  protected Dialog onCreateDialog(int id) {
-    return dialogFactory.onCreateDialog(id);
-  }
-
-  @Override
   protected void onNewIntent(Intent intent) {
     super.onNewIntent(intent);
     Log.d(TAG, "New Intent received " + intent);
@@ -706,7 +716,7 @@ public class DynamicStarMapActivity extends InjectableActivity
     super.onSaveInstanceState(icicle);
   }
 
-  void activateSearchTarget(GeocentricCoordinates target, final String searchTerm) {
+  public void activateSearchTarget(GeocentricCoordinates target, final String searchTerm) {
     Log.d(TAG, "Item " + searchTerm + " selected");
     // Store these for later.
     searchTarget = target;
