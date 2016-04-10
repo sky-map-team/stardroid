@@ -65,8 +65,7 @@ public class StardroidApplication extends Application {
   private static final String NONE = "Clean install";
   private static final String UNKNOWN = "Unknown previous version";
 
-  @Inject
-  SharedPreferences preferences;
+  @Inject SharedPreferences preferences;
   // The Application class is a singleton, so treat it as such, with static
   // fields.  This is necessary so that the content provider can access the
   // things it needs; there seems to be no easy way for a ContentProvider
@@ -74,8 +73,7 @@ public class StardroidApplication extends Application {
   private static AstronomerModel model;
   // TODO(jontayler): inject the layer manager instead
   private static LayerManager layerManager;
-  @Inject
-  static ExecutorService backgroundExecutor;
+  @Inject static ExecutorService backgroundExecutor;
   @Inject AssetManager assetManager;
   @Inject Resources resources;
   @Inject Analytics analytics;
@@ -124,12 +122,12 @@ public class StardroidApplication extends Application {
     analytics.setCustomVar(Slice.SKYMAP_VERSION, versionName);
     analytics.setCustomVar(Slice.DEVICE_NAME, android.os.Build.MODEL);
     analytics.setEnabled(preferences.getBoolean(Analytics.PREF_KEY, true));
-    analytics.trackPageView(Analytics.APPLICATION_CREATE);
-    analytics.trackEvent("Ignore", "IgnoreAction", "IgnoreLabel2", 1);
+
     // Ugly hack since this isn't injectable
     PreferencesButton.setAnalytics(analytics);
 
     String previousVersion = preferences.getString(PREVIOUS_APP_VERSION_PREF, NONE);
+    boolean newUser = false;
     if (previousVersion.equals(NONE)) {
       // It's possible a previous version exists, it's just that it wasn't a recent enough
       // version to have set PREVIOUS_APP_VERSION_PREF.  If so, we should see that the TOS
@@ -137,8 +135,15 @@ public class StardroidApplication extends Application {
       String oldPreviousVersionKey = "read_tos";
       if (preferences.contains(oldPreviousVersionKey)) {
         previousVersion = UNKNOWN;
+      } else {
+        // Best guess that this is the first every run of a new user.
+        // Could also be someone with a new device.
+        newUser = true;
       }
     }
+    analytics.setCustomVar(Slice.NEW_USER, Boolean.toString(newUser));
+
+    analytics.trackPageView(Analytics.APPLICATION_CREATE);
     preferences.edit().putString(PREVIOUS_APP_VERSION_PREF, versionName).commit();
     if (!previousVersion.equals(versionName)) {
       // It's either an upgrade or a new installation
