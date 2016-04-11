@@ -15,13 +15,16 @@ android {
     }
     signingConfigs {
         release {
-            Properties properties = new Properties()
-            // Sky Map devs should create this file with the signing passwords
-            properties.load(project.file('no-checkin.properties').newDataInputStream())
-            storeFile file("stardroid-release-key.keystore")
-            storePassword properties.getProperty('store-pwd')
-            keyPassword properties.getProperty('key-pwd')
-            keyAlias "stardroid"
+            if (project.hasProperty('no-checkin.properties')
+                    && new File(project.property('no-checkin.properties')).exists()) {
+                Properties properties = new Properties()
+                // Sky Map devs should create this file with the signing passwords
+                properties.load(project.file('no-checkin.properties').newDataInputStream())
+                storeFile file("stardroid-release-key.keystore")
+                storePassword properties.getProperty('store-pwd')
+                keyPassword properties.getProperty('key-pwd')
+                keyAlias "stardroid"
+            }
         }
     }
     buildTypes {
