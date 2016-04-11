@@ -14,7 +14,12 @@
 
 package com.google.android.stardroid.search;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * Given a set of strings such as search terms, this class allows you to search
@@ -27,7 +32,7 @@ public class PrefixStore {
   static private class TrieNode {
     Map<Character, TrieNode> children = new HashMap<>();
 
-    // we need to stored the originals as to support insensitive case searching
+    // we need to store the originals to support insensitive case searching
     Set<String> results = new HashSet<>();
   }
 
