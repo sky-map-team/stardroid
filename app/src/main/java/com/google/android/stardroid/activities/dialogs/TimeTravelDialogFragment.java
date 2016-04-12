@@ -1,7 +1,6 @@
 package com.google.android.stardroid.activities.dialogs;
 
 import android.app.Dialog;
-import android.app.DialogFragment;
 import android.os.Bundle;
 
 import com.google.android.stardroid.activities.DynamicStarMapActivity;
@@ -14,7 +13,9 @@ import javax.inject.Inject;
  * Time travel dialog fragment.
  * Created by johntaylor on 4/3/16.
  */
-public class TimeTravelDialogFragment extends DialogFragment {
+// TODO(jontayler): see if this crashes when backgrounded on older devices and use
+// the fragment in this package if so.
+public class TimeTravelDialogFragment extends android.app.DialogFragment {
   private static final String TAG = MiscUtil.getTag(TimeTravelDialogFragment.class);
   @Inject DynamicStarMapActivity parentActivity;
 

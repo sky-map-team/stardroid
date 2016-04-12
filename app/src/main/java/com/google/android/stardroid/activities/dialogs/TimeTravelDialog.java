@@ -14,13 +14,6 @@
 
 package com.google.android.stardroid.activities.dialogs;
 
-import com.google.android.stardroid.R;
-import com.google.android.stardroid.activities.DynamicStarMapActivity;
-import com.google.android.stardroid.control.AstronomerModel;
-import com.google.android.stardroid.provider.ephemeris.Planet;
-import com.google.android.stardroid.util.MiscUtil;
-import com.google.android.stardroid.util.TimeUtil;
-
 import android.app.DatePickerDialog;
 import android.app.DatePickerDialog.OnDateSetListener;
 import android.app.Dialog;
@@ -37,6 +30,13 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
+
+import com.google.android.stardroid.R;
+import com.google.android.stardroid.activities.DynamicStarMapActivity;
+import com.google.android.stardroid.control.AstronomerModel;
+import com.google.android.stardroid.provider.ephemeris.Planet;
+import com.google.android.stardroid.util.MiscUtil;
+import com.google.android.stardroid.util.TimeUtil;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -91,14 +91,14 @@ public class TimeTravelDialog extends Dialog {
     goButton.setOnClickListener(new View.OnClickListener() {
         public void onClick(View v) {
           parentActivity.setTimeTravelMode(calendar.getTime());
-          hide();
+          dismiss();
         }
       });
 
     Button cancelButton = (Button) findViewById(R.id.timeTravelCancel);
     cancelButton.setOnClickListener(new View.OnClickListener() {
         public void onClick(View v) {
-          hide();
+          dismiss();
         }
       });
 
@@ -225,19 +225,24 @@ public class TimeTravelDialog extends Dialog {
         Date nextFullMoon = Planet.getNextFullMoon(calendar.getTime());
         setDate(nextFullMoon);
         break;
-      case 4:  // Moon Landing 1969.
-        setDate(new Date(-14182953622L));
+      case 4: // Mercury transit 2016.
+        // Source: http://eclipsewise.com/oh/tm2016.html
+        // http://mainfacts.com/timestamp-date-converter-calculator
+        setDate(new Date(1462805846000L));
         break;
-      case 5: // Solar Eclipse 2017 North America.
+      case 6: // Solar Eclipse 2017 North America.
         // Source: http://mainfacts.com/timestamp-date-converter-calculator
         setDate(new Date(1503340380000L));
         break;
-      case 6: // Solar Eclipse 2016. Hand-tuned to look OK, no exact moment.
+      case 7: // Solar Eclipse 2016.
         // Source: http://mainfacts.com/timestamp-date-converter-calculator
         setDate(new Date(1457489160000L));
         break;
-      case 7: // Solar Eclipse 1919. Hand-tuned to look OK, no exact moment.
+      case 8: // Solar Eclipse 1919.
         setDate(new Date(-1596619190000L));
+        break;
+      case 9:  // Moon Landing 1969.
+        setDate(new Date(-14182953622L));
         break;
       default:
         Log.d(TAG, "Incorrect popular date index!");

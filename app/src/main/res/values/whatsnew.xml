@@ -3,8 +3,10 @@
     <string name="whats_new_text" translation_description="Description of new features in this version in html">
 <![CDATA[
     <h1>New in version %s</h1>
-    \t • Two new solar eclipses in time travel mode <br/>
-    \t • Two new images in the gallery
+    \t • The Mercury transit and two new solar eclipses in time travel mode <br/>
+    \t • Made the planet motion in time travel smoother <br/>
+    \t • Two new images in the gallery <br/>
+    \t • Internal efficiency improvements to search (thanks tricao)
 ]]>
     </string>
 </resources>
