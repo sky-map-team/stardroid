@@ -1,8 +1,7 @@
 <PreferenceScreen
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:key="stardroid.preferences">
-  <PreferenceCategory
-    android:title="@string/provider_prefs">
+  <PreferenceCategory android:title="@string/provider_prefs">
     <!-- TODO(johntaylor): restore this once it's toggling properly CheckBoxPreference
       android:key="show_sky_gradient"
       android:defaultValue="true"
@@ -60,21 +59,23 @@
           android:title="@string/location_placename"
           android:summary="@string/location_placename_hint"
           android:dependency="no_auto_locate"
-          android:defaultValue="Pisa" />
+          android:defaultValue="" />
         <EditTextPreference
           android:key="latitude"
           android:layout="?android:attr/preferenceLayoutChild"
           android:title="@string/location_lat_pref"
           android:dependency="no_auto_locate"
           android:summary="@string/degrees"
-          android:defaultValue="43.7166667"/>
+          android:inputType="number"
+          android:defaultValue="0"/>
         <EditTextPreference
           android:key="longitude"
           android:layout="?android:attr/preferenceLayoutChild"
           android:title="@string/location_long_pref"
           android:dependency="no_auto_locate"
           android:summary="@string/degrees"
-        android:defaultValue="10.3833333"/>
+          android:inputType="number"
+          android:defaultValue="0"/>
         <CheckBoxPreference
           android:defaultValue="true"
           android:title="@string/use_magnetic_correction"
@@ -94,7 +95,7 @@
             android:title="@string/sensor_damping"
             android:entryValues="@array/sensor_damping_values"
             android:entries="@array/sensor_damping"
-            android:defaultValue="STANDARD" />
+            android:defaultValue="EXTRA HIGH" />
       </PreferenceCategory>
     </PreferenceScreen>
     <CheckBoxPreference

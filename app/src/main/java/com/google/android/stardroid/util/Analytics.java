@@ -63,7 +63,7 @@ public class Analytics {
    * At most 5 can be defined.
    */
   public static enum Slice {
-    ANDROID_OS, SKYMAP_VERSION, DEVICE_NAME;
+    ANDROID_OS, SKYMAP_VERSION, DEVICE_NAME, NEW_USER;
   }
 
   // Page Views

@@ -18,7 +18,7 @@
     <string name="location_long_pref">Longitude</string>
     <string name="degrees" translation_description="angular degrees">Degrees</string>
     <string name="preferences">preferences</string>
-    <string name="location_no_auto">Your phone does not support auto-location.   You can set the location manually in preferences.</string>
+    <string name="location_no_auto">Auto-location permission is disabled on your phone.   You can set the location manually in preferences.  Until then the map will be incorrect.</string>
     <string name="location_offer_to_enable">Auto-location is disabled.  Would you like to enable it?</string>
     <string name="location_offer_to_enable_gps_title">Auto-location disabled</string>
     <string name="location_set_auto">Location set from %1$s to %2$s</string>
@@ -48,6 +48,7 @@
     <string name="malformed_loc_error">Latitude or longitude setting isn\'t a number.</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Accept</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">No Thanks</string>
+    <string name="dialog_ok_button">OK</string>
     <string name="menu_help" translation_description="menu item to show \'Help\' box">Help</string>
     <string name="help_dialog_title">Help for Sky Map</string>
     <string name="eula_dialog_title">End User License Agreement</string>
@@ -426,93 +427,34 @@
     </string>
     <string name="do_not_show_again">Do not show this message again</string>
     <string name="title_activity_diagnostic">Diagnostics</string>
-    <string name="large_text">
-        "Material is the metaphor.\n\n"
-
-        "A material metaphor is the unifying theory of a rationalized space and a system of motion."
-        "The material is grounded in tactile reality, inspired by the study of paper and ink, yet "
-        "technologically advanced and open to imagination and magic.\n"
-        "Surfaces and edges of the material provide visual cues that are grounded in reality. The "
-        "use of familiar tactile attributes helps users quickly understand affordances. Yet the "
-        "flexibility of the material creates new affordances that supercede those in the physical "
-        "world, without breaking the rules of physics.\n"
-        "The fundamentals of light, surface, and movement are key to conveying how objects move, "
-        "interact, and exist in space and in relation to each other. Realistic lighting shows "
-        "seams, divides space, and indicates moving parts.\n\n"
-
-        "Bold, graphic, intentional.\n\n"
-
-        "The foundational elements of print based design typography, grids, space, scale, color, "
-        "and use of imagery guide visual treatments. These elements do far more than please the "
-        "eye. They create hierarchy, meaning, and focus. Deliberate color choices, edge to edge "
-        "imagery, large scale typography, and intentional white space create a bold and graphic "
-        "interface that immerse the user in the experience.\n"
-        "An emphasis on user actions makes core functionality immediately apparent and provides "
-        "waypoints for the user.\n\n"
-
-        "Motion provides meaning.\n\n"
-
-        "Motion respects and reinforces the user as the prime mover. Primary user actions are "
-        "inflection points that initiate motion, transforming the whole design.\n"
-        "All action takes place in a single environment. Objects are presented to the user without "
-        "breaking the continuity of experience even as they transform and reorganize.\n"
-        "Motion is meaningful and appropriate, serving to focus attention and maintain continuity. "
-        "Feedback is subtle yet clear. Transitions are efﬁcient yet coherent.\n\n"
-
-        "3D world.\n\n"
-
-        "The material environment is a 3D space, which means all objects have x, y, and z "
-        "dimensions. The z-axis is perpendicularly aligned to the plane of the display, with the "
-        "positive z-axis extending towards the viewer. Every sheet of material occupies a single "
-        "position along the z-axis and has a standard 1dp thickness.\n"
-        "On the web, the z-axis is used for layering and not for perspective. The 3D world is "
-        "emulated by manipulating the y-axis.\n\n"
-
-        "Light and shadow.\n\n"
-
-        "Within the material environment, virtual lights illuminate the scene. Key lights create "
-        "directional shadows, while ambient light creates soft shadows from all angles.\n"
-        "Shadows in the material environment are cast by these two light sources. In Android "
-        "development, shadows occur when light sources are blocked by sheets of material at "
-        "various positions along the z-axis. On the web, shadows are depicted by manipulating the "
-        "y-axis only. The following example shows the card with a height of 6dp.\n\n"
-
-        "Resting elevation.\n\n"
-
-        "All material objects, regardless of size, have a resting elevation, or default elevation "
-        "that does not change. If an object changes elevation, it should return to its resting "
-        "elevation as soon as possible.\n\n"
-
-        "Component elevations.\n\n"
-
-        "The resting elevation for a component type is consistent across apps (e.g., FAB elevation "
-        "does not vary from 6dp in one app to 16dp in another app).\n"
-        "Components may have different resting elevations across platforms, depending on the depth "
-        "of the environment (e.g., TV has a greater depth than mobile or desktop).\n\n"
-
-        "Responsive elevation and dynamic elevation offsets.\n\n"
-
-        "Some component types have responsive elevation, meaning they change elevation in response "
-        "to user input (e.g., normal, focused, and pressed) or system events. These elevation "
-        "changes are consistently implemented using dynamic elevation offsets.\n"
-        "Dynamic elevation offsets are the goal elevation that a component moves towards, relative "
-        "to the component’s resting state. They ensure that elevation changes are consistent "
-        "across actions and component types. For example, all components that lift on press have "
-        "the same elevation change relative to their resting elevation.\n"
-        "Once the input event is completed or cancelled, the component will return to its resting "
-        "elevation.\n\n"
-
-        "Avoiding elevation interference.\n\n"
-
-        "Components with responsive elevations may encounter other components as they move between "
-        "their resting elevations and dynamic elevation offsets. Because material cannot pass "
-        "through other material, components avoid interfering with one another any number of ways, "
-        "whether on a per component basis or using the entire app layout.\n"
-        "On a component level, components can move or be removed before they cause interference. "
-        "For example, a floating action button (FAB) can disappear or move off screen before a "
-        "user picks up a card, or it can move if a snackbar appears.\n"
-        "On the layout level, design your app layout to minimize opportunities for interference. "
-        "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
-        "when a user tries to pick up one of cards.\n\n"
-    </string>
+    <string name="location_rationale_title">Why do we ask for your location?</string>
+    <string name="location_rationale_text">The stars you can see depend on where on planet earth you are.  Without your location we cannot show you an accurate map.  If you do not want your phone to give us your location you can provide it manually in the settings.  You need only provide the nearest city.</string>
+    <string name="play_services_error">Warning: Google Play Services error - Automatic location might not work</string>
+    <string name="sensor_absent">Absent</string>
+    <string name="sensor_accuracy_unknown">Unknown</string>
+    <string name="sensor_accuracy_unreliable">Accuracy: Unreliable</string>
+    <string name="sensor_accuracy_low">Accuracy: Low</string>
+    <string name="sensor_accuracy_medium">Accuracy: Medium</string>
+    <string name="sensor_accuracy_high">Accuracy: High</string>
+    <string name="sensor_accuracy_nocontact">Accuracy: No contact</string>
+    <string name="diagnostics_activity_general_heading">General</string>
+    <string name="diagnostics_activity_phone">Phone</string>
+    <string name="diagnostics_activity_android_version">Android version</string>
+    <string name="diagnostics_activity_sky_map_version">Sky Map version</string>
+    <string name="diagnostics_activity_sensors_heading">Sensors</string>
+    <string name="diagnostics_activity_compass">Compass</string>
+    <string name="diagnostics_activity_accelerometer">Accelerometer</string>
+    <string name="diagnostics_activity_gyroscope">Gyroscope</string>
+    <string name="diagnostics_activity_light_level">Light level</string>
+    <string name="diagnostics_activity_location_and_time_heading">Location and Time</string>
+    <string name="diagnostics_activity_gps">GPS</string>
+    <string name="diagnostics_activity_location_permission">Location permission</string>
+    <string name="diagnostics_activity_location">Location</string>
+    <string name="diagnostics_activity_pointing_ra_dec">Pointing (RA, DEC)</string>
+    <string name="diagnostics_activity_magnetic_correction">Magnetic correction</string>
+    <string name="diagnostics_activity_local_datetime">Local datetime</string>
+    <string name="diagnostics_activity_universal_time">Universal time</string>
+    <string name="diagnostics_activity_opengl">OpenGL</string>
+    <string name="diagnostics_activity_network_heading">Network</string>
+    <string name="diagnostics_activity_connection">Connection</string>
 </resources>

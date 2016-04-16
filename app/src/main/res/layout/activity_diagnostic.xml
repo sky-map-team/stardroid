@@ -9,35 +9,34 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:divider="#0f3c91"
+        android:orientation="vertical"
         android:padding="15dp"
         android:showDividers="beginning|middle|end">
 
         <TableLayout
+            style="@style/TableSection"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="General"/>
+                android:text="@string/diagnostics_activity_general_heading"
+                android:textAppearance="?android:attr/textAppearanceMedium"/>
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Phone"/>
+                    style="@style/TableRow_RowHeading"
+                    android:text="@string/diagnostics_activity_phone"/>
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Nexus 5x"
-                    android:id="@+id/diagnose_phone_txt"/>
+                    android:id="@+id/diagnose_phone_txt"
+                    style="@style/TableRow_Element"
+                    android:text="Nexus 5x"/>
             </TableRow>
 
             <TableRow
@@ -45,65 +44,74 @@
                 android:layout_height="match_parent">
 
                 <TextView
+                    style="@style/TableRow_RowHeading"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Android version"/>
+                    android:text="@string/diagnostics_activity_android_version"/>
 
                 <TextView
+                    android:id="@+id/diagnose_android_version_txt"
+                    style="@style/TableRow_Element"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="6.1 (xxx)"
-                    android:id="@+id/diagnose_android_version_txt"/>
+                    android:text="6.1 (xxx)"/>
 
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                >
 
                 <TextView
+                    style="@style/TableRow_RowHeading"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sky Map version"/>
+                    android:text="@string/diagnostics_activity_sky_map_version"/>
 
                 <TextView
+                    android:id="@+id/diagnose_skymap_version_txt"
+                    style="@style/TableRow_Element"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0.0.1 (9999)"
-                    android:id="@+id/diagnose_skymap_version_txt"/>
+                    android:text="0.0.1 (9999)"/>
             </TableRow>
         </TableLayout>
 
         <TableLayout
+            style="@style/TableSection"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Sensors"/>
+                android:text="@string/diagnostics_activity_sensors_heading"
+                android:textAppearance="?android:attr/textAppearanceMedium"/>
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <TextView
+                    style="@style/TableRow_RowHeading"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Compass"/>
+                    android:text="@string/diagnostics_activity_compass"/>
 
                 <TextView
+                    android:id="@+id/diagnose_compass_accuracy_txt"
+                    style="@style/TableRow_Element"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Accuracy: <waiting>"
-                    android:id="@+id/diagnose_compass_accuracy_txt"/>
+                    android:text="Accuracy: (waiting)"/>
 
                 <TextView
+                    android:id="@+id/diagnose_compass_values_txt"
+                    style="@style/TableRow_Element"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="-, -, -"
-                    android:id="@+id/diagnose_compass_values_txt"/>
+                    android:text="-, -, -"/>
             </TableRow>
 
             <TableRow
@@ -111,21 +119,24 @@
                 android:layout_height="match_parent">
 
                 <TextView
+                    style="@style/TableRow_RowHeading"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Accelerometer"/>
+                    android:text="@string/diagnostics_activity_accelerometer"/>
 
                 <TextView
+                    android:id="@+id/diagnose_accelerometer_accuracy_txt"
+                    style="@style/TableRow_Element"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Accuracy: <waiting>"
-                    android:id="@+id/diagnose_accelerometer_accuracy_txt"/>
+                    android:text="Accuracy: (waiting)"/>
 
                 <TextView
+                    android:id="@+id/diagnose_accelerometer_values_txt"
+                    style="@style/TableRow_Element"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="-, -, -"
-                    android:id="@+id/diagnose_accelerometer_values_txt"/>
+                    android:text="-, -, -"/>
             </TableRow>
 
             <TableRow
@@ -133,21 +144,24 @@
                 android:layout_height="match_parent">
 
                 <TextView
+                    style="@style/TableRow_RowHeading"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Gyroscope"/>
+                    android:text="@string/diagnostics_activity_gyroscope"/>
 
                 <TextView
+                    android:id="@+id/diagnose_gyro_accuracy_txt"
+                    style="@style/TableRow_Element"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Accuracy: <waiting>"
-                    android:id="@+id/diagnose_gyro_accuracy_txt"/>
+                    android:text="Accuracy: (waiting)"/>
 
                 <TextView
+                    android:id="@+id/diagnose_gyro_values_txt"
+                    style="@style/TableRow_Element"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="-, -, -"
-                    android:id="@+id/diagnose_gyro_values_txt"/>
+                    android:text="-, -, -"/>
             </TableRow>
 
             <TableRow
@@ -155,63 +169,54 @@
                 android:layout_height="match_parent">
 
                 <TextView
+                    style="@style/TableRow_RowHeading"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Light level"/>
+                    android:text="@string/diagnostics_activity_light_level"/>
 
                 <TextView
+                    android:id="@+id/diagnose_light_accuracy_txt"
+                    style="@style/TableRow_Element"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Accuracy: <waiting>"
-                    android:id="@+id/diagnose_light_accuracy_txt"/>
+                    android:text="Accuracy: (waiting)"/>
 
                 <TextView
+                    android:id="@+id/diagnose_light_values_txt"
+                    style="@style/TableRow_Element"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="-, -, -"
-                    android:id="@+id/diagnose_light_values_txt"/>
+                    android:text="-, -, -"/>
             </TableRow>
         </TableLayout>
 
         <TableLayout
+            style="@style/TableSection"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Location and Time"/>
+                android:text="@string/diagnostics_activity_location_and_time_heading"
+                android:textAppearance="?android:attr/textAppearanceMedium"/>
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <TextView
+                    style="@style/TableRow_RowHeading"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="GPS"/>
+                    android:text="@string/diagnostics_activity_gps"/>
 
                 <TextView
+                    android:id="@+id/diagnose_gps_status_txt"
+                    style="@style/TableRow_Element"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="<waiting>"
-                    android:id="@+id/diagnose_gps_status_txt"/>
-            </TableRow>
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Location permission"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="<waiting>"
-                    android:id="@+id/diagnose_location_permission_txt"/>
+                    android:text="(waiting)"/>
             </TableRow>
 
             <TableRow
@@ -219,133 +224,165 @@
                 android:layout_height="match_parent">
 
                 <TextView
+                    style="@style/TableRow_RowHeading"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Location"/>
+                    android:text="@string/diagnostics_activity_location_permission"/>
 
                 <TextView
+                    android:id="@+id/diagnose_location_permission_txt"
+                    style="@style/TableRow_Element"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="--, -- (manual)"
-                    android:id="@+id/diagnose_location_txt"/>
+                    android:text="(waiting)"/>
             </TableRow>
+
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <TextView
+                    style="@style/TableRow_RowHeading"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Pointing (RA, DEC)"/>
+                    android:text="@string/diagnostics_activity_location"/>
 
                 <TextView
+                    android:id="@+id/diagnose_location_txt"
+                    style="@style/TableRow_Element"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="-123, 32"
-                    android:id="@+id/diagnose_pointing_txt"/>
+                    android:text="--, -- (manual)"/>
             </TableRow>
+
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <TextView
+                    style="@style/TableRow_RowHeading"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Magnetic correction"/>
+                    android:text="@string/diagnostics_activity_pointing_ra_dec"/>
 
                 <TextView
+                    android:id="@+id/diagnose_pointing_txt"
+                    style="@style/TableRow_Element"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="+5"
-                    android:id="@+id/diagnose_magnetic_correction_txt"/>
+                    android:text="-123, 32"/>
             </TableRow>
-<!-- add ra, dec, geo correction -->
+
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <TextView
+                    style="@style/TableRow_RowHeading"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Local datetime"/>
+                    android:text="@string/diagnostics_activity_magnetic_correction"/>
 
                 <TextView
+                    android:id="@+id/diagnose_magnetic_correction_txt"
+                    style="@style/TableRow_Element"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="13:33 July 20, 1969"
-                    android:id="@+id/diagnose_local_datetime_txt"/>
+                    android:text="+?"/>
             </TableRow>
+
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <TextView
+                    style="@style/TableRow_RowHeading"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Universal time"/>
+                    android:text="@string/diagnostics_activity_local_datetime"/>
 
                 <TextView
+                    android:id="@+id/diagnose_local_datetime_txt"
+                    style="@style/TableRow_Element"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="20:18 July 20, 1969"
-                    android:id="@+id/diagnose_utc_datetime_txt"/>
+                    android:text="13:33 July 20, 1969"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    style="@style/TableRow_RowHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/diagnostics_activity_universal_time"/>
+
+                <TextView
+                    android:id="@+id/diagnose_utc_datetime_txt"
+                    style="@style/TableRow_Element"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20:18 July 20, 1969"/>
             </TableRow>
         </TableLayout>
 
         <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            style="@style/TableSection">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Graphics"/>
+                android:text="Graphics"
+                android:textAppearance="?android:attr/textAppearanceMedium"/>
+
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <TextView
+                    style="@style/TableRow_RowHeading"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="OpenGL"/>
+                    android:text="@string/diagnostics_activity_opengl"/>
 
                 <TextView
+                    android:id="@+id/diagnose_opengl_capabilities_txt"
+                    style="@style/TableRow_Element"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="x, y, z"
-                    android:id="@+id/diagnose_opengl_capabilities_txt"/>
+                    android:text="x, y, z"/>
             </TableRow>
+        </TableLayout>
 
-            <TableLayout
+        <TableLayout
+            style="@style/TableSection">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/diagnostics_activity_network_heading"
+                android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+            <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <TextView
+                    style="@style/TableRow_RowHeading"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Network"/>
+                    android:text="@string/diagnostics_activity_connection"/>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Connection"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="WiFi"
-                        android:id="@+id/diagnose_network_status_txt"/>
-                </TableRow>
-            </TableLayout>
-
+                <TextView
+                    android:id="@+id/diagnose_network_status_txt"
+                    style="@style/TableRow_Element"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="WiFi?"/>
+            </TableRow>
         </TableLayout>
-
     </LinearLayout>
 
 </android.support.v4.widget.NestedScrollView>

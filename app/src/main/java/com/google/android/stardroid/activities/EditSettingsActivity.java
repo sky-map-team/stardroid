@@ -35,7 +35,6 @@ import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.MiscUtil;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -107,7 +106,7 @@ public class EditSettingsActivity extends PreferenceActivity {
   }
 
   protected boolean setLatLongFromPlace(String place) {
-    List<Address> addresses = new ArrayList<Address>();
+    List<Address> addresses;
     try {
       addresses = geocoder.getFromLocationName(place, 1);
     } catch (IOException e) {

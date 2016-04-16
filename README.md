@@ -50,3 +50,11 @@ The apk can be found in `app/build/outputs/apk/`.
 The data files need munging to take into account the string ID files in the generated `R` file.  Information on
 how to do this is in the tools directory.  If you update any strings in Sky Map it's quite likely you'll
 have to regenerate the star data files or the app will crash or put incorrect labels on things.
+
+# Code and Language Contributions
+
+In general, bug fix contributions are welcome, though please email us first before embarking on any major changes or feature additions.  We're particularly grateful for fixed or new translations.
+
+## Coding Style
+
+We follow the [Google style guide](https://google.github.io/styleguide/javaguide.html) (or try to).  We wrap at 100 chars and we do use the common Android style of prefixing member variables with a 'm'.

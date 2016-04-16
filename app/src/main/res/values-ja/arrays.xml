@@ -5,8 +5,11 @@
         <item>次の日没</item>
         <item>次の日の出</item>
         <item>次の満月</item>
-        <item>アポロ11号の月面着陸</item>
+        <item>Mercury transit of 2016-05-09</item>
+        <item>2017年8月21日の日食</item>
+        <item>2016年3月9日の日食</item>
         <item>1919年5月29日の日食</item>
+        <item>アポロ11号の月面着陸</item>
     </string-array>
     <string-array name="sensor_speed">
         <item>低速</item>
@@ -14,6 +17,8 @@
         <item>高速</item>
     </string-array>
     <string-array name="sensor_damping">
+        <item>Jumpy</item>
+        <item>Medium</item>
         <item>標準</item>
         <item>高</item>
     </string-array>

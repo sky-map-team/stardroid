@@ -20,7 +20,6 @@ import java.util.Set;
 
 import javax.inject.Inject;
 
-// TODO(jontayler): i18n the strings
 public class DiagnosticActivity extends Activity implements SensorEventListener {
   private static final String TAG = MiscUtil.getTag(DiagnosticActivity.class);
 
@@ -58,25 +57,25 @@ public class DiagnosticActivity extends Activity implements SensorEventListener 
     super.onResume();
     accelSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
     if (accelSensor == null) {
-      setText(R.id.diagnose_accelerometer_accuracy_txt, "Absent");
+      setText(R.id.diagnose_accelerometer_accuracy_txt, getString(R.string.sensor_absent));
     } else {
       sensorManager.registerListener(this, accelSensor, SensorManager.SENSOR_DELAY_NORMAL);
     }
     magSensor = sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
     if (magSensor == null) {
-      setText(R.id.diagnose_compass_accuracy_txt, "Absent");
+      setText(R.id.diagnose_compass_accuracy_txt, getString(R.string.sensor_absent));
     } else {
       sensorManager.registerListener(this, magSensor, SensorManager.SENSOR_DELAY_NORMAL);
     }
     gyroSensor = sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
     if (gyroSensor == null) {
-      setText(R.id.diagnose_gyro_accuracy_txt, "Absent");
+      setText(R.id.diagnose_gyro_accuracy_txt, getString(R.string.sensor_absent));
     } else {
       sensorManager.registerListener(this, gyroSensor, SensorManager.SENSOR_DELAY_NORMAL);
     }
     lightSensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
     if (lightSensor == null) {
-      setText(R.id.diagnose_light_accuracy_txt, "Absent");
+      setText(R.id.diagnose_light_accuracy_txt, getString(R.string.sensor_absent));
     } else {
       sensorManager.registerListener(this, lightSensor, SensorManager.SENSOR_DELAY_UI);
     }
@@ -104,28 +103,29 @@ public class DiagnosticActivity extends Activity implements SensorEventListener 
       Log.e(TAG, "Receiving accuracy change for unknown sensor " + sensor);
       return;
     }
-    String accuracyTxt = "Unknown";
+    String accuracyTxt = getString(R.string.sensor_accuracy_unknown);
     switch (accuracy) {
       case SensorManager.SENSOR_STATUS_UNRELIABLE:
-        accuracyTxt = "Accuracy: Unreliable";
+        accuracyTxt = getString(R.string.sensor_accuracy_unreliable);
         break;
       case SensorManager.SENSOR_STATUS_ACCURACY_LOW:
-        accuracyTxt = "Acuracy: Low";
+        accuracyTxt = getString(R.string.sensor_accuracy_low);
         break;
       case SensorManager.SENSOR_STATUS_ACCURACY_MEDIUM:
-        accuracyTxt = "Accuracy: Medium";
+        accuracyTxt = getString(R.string.sensor_accuracy_medium);
         break;
       case SensorManager.SENSOR_STATUS_ACCURACY_HIGH:
-        accuracyTxt = "Accuracy: High";
+        accuracyTxt = getString(R.string.sensor_accuracy_high);
         break;
       case SensorManager.SENSOR_STATUS_NO_CONTACT:
-        accuracyTxt = "Accuracy: No contact";
+        accuracyTxt = getString(R.string.sensor_accuracy_nocontact);
         break;
     }
     setText(accuracyViewId, accuracyTxt);
   }
 
   private Set<Sensor> knownSensorAccuracies = new HashSet<>();
+  
   public void onSensorChanged(SensorEvent event) {
     Sensor sensor = event.sensor;
     if (!knownSensorAccuracies.contains(sensor)) {

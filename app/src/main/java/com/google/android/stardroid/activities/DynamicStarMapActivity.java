@@ -14,8 +14,7 @@
 
 package com.google.android.stardroid.activities;
 
-import android.app.Activity;
-import android.app.Dialog;
+import android.app.FragmentManager;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
@@ -43,17 +42,26 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.stardroid.ApplicationConstants;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.StardroidApplication;
+import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
+import com.google.android.stardroid.activities.dialogs.HelpDialogFragment;
+import com.google.android.stardroid.activities.dialogs.MultipleSearchResultsDialogFragment;
+import com.google.android.stardroid.activities.dialogs.NoSearchResultsDialogFragment;
+import com.google.android.stardroid.activities.dialogs.NoSensorsDialogFragment;
+import com.google.android.stardroid.activities.dialogs.TimeTravelDialogFragment;
 import com.google.android.stardroid.activities.util.ActivityLightLevelChanger;
 import com.google.android.stardroid.activities.util.ActivityLightLevelChanger.NightModeable;
 import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
 import com.google.android.stardroid.activities.util.FullscreenControlsManager;
+import com.google.android.stardroid.activities.util.GooglePlayServicesChecker;
 import com.google.android.stardroid.base.Lists;
 import com.google.android.stardroid.control.AstronomerModel;
 import com.google.android.stardroid.control.AstronomerModel.Pointing;
 import com.google.android.stardroid.control.ControllerGroup;
 import com.google.android.stardroid.control.MagneticDeclinationCalculatorSwitcher;
+import com.google.android.stardroid.inject.HasComponent;
 import com.google.android.stardroid.layers.LayerManager;
 import com.google.android.stardroid.renderer.RendererController;
 import com.google.android.stardroid.renderer.SkyRenderer;
@@ -76,13 +84,20 @@ import java.util.List;
 
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.inject.Provider;
 
 /**
  * The main map-rendering Activity.
  */
-public class DynamicStarMapActivity extends Activity implements OnSharedPreferenceChangeListener {
+public class DynamicStarMapActivity extends InjectableActivity
+    implements OnSharedPreferenceChangeListener, HasComponent<DynamicStarMapComponent> {
   private static final int TIME_DISPLAY_DELAY_MILLIS = 1000;
   private FullscreenControlsManager fullscreenControlsManager;
+
+  @Override
+  public DynamicStarMapComponent getComponent() {
+    return daggerComponent;
+  }
 
   /**
    * Passed to the renderer to get per-frame updates from the model.
@@ -121,20 +136,14 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
     }
   }
 
-  private static final String AUTO_MODE_PREF_KEY = "auto_mode";
-  public static final String NO_WARN_ABOUT_MISSING_SENSORS = "no warn about missing sensors";
-  private static final String BUNDLE_TARGET_NAME = "target_name";
-  private static final String BUNDLE_NIGHT_MODE = "night_mode";
-  private static final String BUNDLE_X_TARGET = "bundle_x_target";
-  private static final String BUNDLE_Y_TARGET = "bundle_y_target";
-  private static final String BUNDLE_Z_TARGET = "bundle_z_target";
-  private static final String BUNDLE_SEARCH_MODE = "bundle_search";
-  private static final String SOUND_EFFECTS = "sound_effects";
+  // Activity for result Ids
+  public static final int GOOGLE_PLAY_SERVICES_REQUEST_CODE = 1;
+  public static final int GOOGLE_PLAY_SERVICES_REQUEST_LOCATION_PERMISSION_CODE = 2;
+  // End Activity for result Ids
+
   private static final float ROTATION_SPEED = 10;
   private static final String TAG = MiscUtil.getTag(DynamicStarMapActivity.class);
-  // Preference that keeps track of whether or not the user accepted the ToS for this version
-  // of the app.
-  public static final String READ_TOS_PREF_VERSION = "read_tos_version";
+
   private ImageButton cancelSearchButton;
   @Inject ControllerGroup controller;
   private GestureDetector gestureDetector;
@@ -144,8 +153,7 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
   private boolean searchMode = false;
   private GeocentricCoordinates searchTarget = GeocentricCoordinates.getInstance(0, 0);
 
-  @Inject
-  SharedPreferences sharedPreferences;
+  @Inject SharedPreferences sharedPreferences;
   private GLSurfaceView skyView;
   private PowerManager.WakeLock wakeLock;
   private String searchTargetName;
@@ -153,11 +161,21 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
   // TODO(widdows): Figure out if we should break out the
   // time dialog and time player into separate activities.
   private View timePlayerUI;
-  @Inject DialogFactory dialogFactory;
-  @Inject @Named("timetravel") MediaPlayer timeTravelNoise;
-  @Inject @Named("timetravelback") MediaPlayer timeTravelBackNoise;
+  private DynamicStarMapComponent daggerComponent;
+  @Inject @Named("timetravel") Provider<MediaPlayer> timeTravelNoiseProvider;
+  @Inject @Named("timetravelback") Provider<MediaPlayer> timeTravelBackNoiseProvider;
+  private MediaPlayer timeTravelNoise;
+  private MediaPlayer timeTravelBackNoise;
   @Inject Handler handler;
   @Inject Analytics analytics;
+  @Inject GooglePlayServicesChecker playServicesChecker;
+  @Inject FragmentManager fragmentManager;
+  @Inject EulaDialogFragment eulaDialogFragmentNoButtons;
+  @Inject TimeTravelDialogFragment timeTravelDialogFragment;
+  @Inject HelpDialogFragment helpDialogFragment;
+  @Inject NoSearchResultsDialogFragment noSearchResultsDialogFragment;
+  @Inject MultipleSearchResultsDialogFragment multipleSearchResultsDialogFragment;
+  @Inject NoSensorsDialogFragment noSensorsDialogFragment;
   // A list of runnables to post on the handler when we resume.
   private List<Runnable> onResumeRunnables = new ArrayList<>();
 
@@ -167,35 +185,21 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
   private MagneticDeclinationCalculatorSwitcher magneticSwitcher;
 
   private DragRotateZoomGestureDetector dragZoomRotateDetector;
-  private Animation flashAnimation;
+  @Inject Animation flashAnimation;
   private ActivityLightLevelManager activityLightLevelManager;
   private long sessionStartTime;
-
-  private void maybeShowEula(SharedPreferences prefs) {
-    int versionCode = ((StardroidApplication) getApplication()).getVersion();
-    boolean eulaConfirmed = (prefs.getInt(READ_TOS_PREF_VERSION, -1) == versionCode);
-    if (!eulaConfirmed) {
-      showDialog(DialogFactory.DIALOG_ID_EULA_WITH_BUTTONS);
-    }
-  }
-
-  public void recordEulaAccepted() {
-    int versionCode = ((StardroidApplication) getApplication()).getVersion();
-    SharedPreferences.Editor editor = sharedPreferences.edit();
-    editor.putInt(DynamicStarMapActivity.READ_TOS_PREF_VERSION, versionCode);
-    editor.commit();
-  }
 
   @Override
   public void onCreate(Bundle icicle) {
     Log.d(TAG, "onCreate at " + System.currentTimeMillis());
     super.onCreate(icicle);
 
-    ((StardroidApplication) getApplication()).getApplicationComponent().newDynamicStarMapSubcomponent(
-        new DynamicStarMapModule(this)).inject(this);
+    daggerComponent = DaggerDynamicStarMapComponent.builder()
+        .applicationComponent(getApplicationComponent())
+        .dynamicStarMapModule(new DynamicStarMapModule(this)).build();
+    daggerComponent.inject(this);
 
     sharedPreferences.registerOnSharedPreferenceChangeListener(this);
-    maybeShowEula(sharedPreferences);
 
     // Set up full screen mode, hide the system UI etc.
     getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON |
@@ -207,6 +211,10 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
     // http://developer.android.com/training/system-ui/immersive.html for the right way
     // to do it at API level 19.
     //getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+
+    // Eventually we should check at the point of use, but this will do for now.  If the
+    // user revokes the permission later then odd things may happen.
+    playServicesChecker.maybeCheckForGooglePlayServices();
 
     model = StardroidApplication.getModel();
     layerManager = StardroidApplication.getLayerManager(getAssets(),
@@ -223,8 +231,8 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
     ActivityLightLevelChanger activityLightLevelChanger = new ActivityLightLevelChanger(this,
         new NightModeable() {
           @Override
-          public void setNightMode(boolean nightMode) {
-            DynamicStarMapActivity.this.rendererController.queueNightVisionMode(nightMode);
+          public void setNightMode(boolean nightMode1) {
+            DynamicStarMapActivity.this.rendererController.queueNightVisionMode(nightMode1);
           }});
     activityLightLevelManager = new ActivityLightLevelManager(activityLightLevelChanger,
                                                               sharedPreferences);
@@ -252,7 +260,7 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
       // TODO(johntaylor): this is a bit of an abuse of the prefs system, but
       // the button we use is wired into the preferences system.  Should probably
       // change this to a use a different mechanism.
-      sharedPreferences.edit().putBoolean(AUTO_MODE_PREF_KEY, true).apply();
+      sharedPreferences.edit().putBoolean(ApplicationConstants.AUTO_MODE_PREF_KEY, true).apply();
       setAutoMode(true);
       return;
     }
@@ -260,12 +268,13 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
     handler.post(new Runnable() {
       @Override
       public void run() {
-        if (!sharedPreferences.getBoolean(NO_WARN_ABOUT_MISSING_SENSORS, false)) {
+        if (!sharedPreferences
+            .getBoolean(ApplicationConstants.NO_WARN_ABOUT_MISSING_SENSORS, false)) {
           Log.d(TAG, "showing no sensor dialog");
-          // TODO(jontayler): refactor to use dialog fragments.
-          showDialog(DialogFactory.DIALOG_ID_NO_SENSORS);
+          noSensorsDialogFragment.show(fragmentManager, "No sensors dialog");
           // First time, force manual mode.
-          sharedPreferences.edit().putBoolean(AUTO_MODE_PREF_KEY, false).apply();
+          sharedPreferences.edit().putBoolean(ApplicationConstants.AUTO_MODE_PREF_KEY, false)
+              .apply();
           setAutoMode(false);
         } else {
           Log.d(TAG, "showing no sensor toast");
@@ -280,11 +289,12 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
   @Override
   protected void onPostCreate(Bundle savedInstanceState) {
     super.onPostCreate(savedInstanceState);
-
     // Trigger the initial hide() shortly after the activity has been
     // created, to briefly hint to the user that UI controls
     // are available.
-    fullscreenControlsManager.flashTheControls();
+    if (fullscreenControlsManager != null) {
+      fullscreenControlsManager.flashTheControls();
+    }
   }
 
   @Override
@@ -348,7 +358,7 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
         Log.d(TAG, "Help");
         analytics.trackEvent(Analytics.USER_ACTION_CATEGORY,
             Analytics.MENU_ITEM, Analytics.HELP_OPENED_LABEL, 1);
-        showDialog(DialogFactory.DIALOG_ID_HELP);
+        helpDialogFragment.show(fragmentManager, "Help Dialog");
         break;
       case R.id.menu_item_dim:
         Log.d(TAG, "Toggling nightmode");
@@ -368,7 +378,7 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
         } else {
           Log.d(TAG, "Resuming current time travel dialog.");
         }
-        showDialog(DialogFactory.DIALOG_ID_TIME_TRAVEL);
+        timeTravelDialogFragment.show(fragmentManager, "Time Travel");
         break;
       case R.id.menu_item_gallery:
         Log.d(TAG, "Loading gallery");
@@ -380,7 +390,7 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
         Log.d(TAG, "Loading ToS");
         analytics.trackEvent(Analytics.USER_ACTION_CATEGORY,
             Analytics.MENU_ITEM, Analytics.TOS_OPENED_LABEL, 1);
-        showDialog(DialogFactory.DIALOG_ID_EULA_NO_BUTTONS);
+        eulaDialogFragmentNoButtons.show(fragmentManager, "Eula Dialog No Buttons");
         break;
       case R.id.menu_item_diagnostics:
         Log.d(TAG, "Loading Diagnostics");
@@ -441,6 +451,9 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
     Log.d(TAG, "onResume at " + System.currentTimeMillis());
     super.onResume();
     Log.i(TAG, "Resuming");
+    timeTravelNoise = timeTravelNoiseProvider.get();
+    timeTravelBackNoise = timeTravelBackNoiseProvider.get();
+
     wakeLock.acquire();
     Log.i(TAG, "Starting view");
     skyView.onResume();
@@ -459,10 +472,10 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
                    String.format(getString(R.string.time_travel_start_message_alt),
                                  dateFormatter.format(newTime)),
                    Toast.LENGTH_LONG).show();
-    if (sharedPreferences.getBoolean(SOUND_EFFECTS, true)) {
+    if (sharedPreferences.getBoolean(ApplicationConstants.SOUND_EFFECTS, true)) {
       try {
         timeTravelNoise.start();
-      } catch (IllegalStateException e) {
+      } catch (IllegalStateException | NullPointerException e) {
         Log.e(TAG, "Exception trying to play time travel sound", e);
         // It's not the end of the world - carry on.
       }
@@ -476,10 +489,10 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
   }
 
   public void setNormalTimeModel() {
-    if (sharedPreferences.getBoolean(SOUND_EFFECTS, true)) {
+    if (sharedPreferences.getBoolean(ApplicationConstants.SOUND_EFFECTS, true)) {
       try {
         timeTravelBackNoise.start();
-      } catch (IllegalStateException e) {
+      } catch (IllegalStateException | NullPointerException e) {
         Log.e(TAG, "Exception trying to play return time travel sound", e);
         // It's not the end of the world - carry on.
       }
@@ -487,7 +500,7 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
     flashTheScreen();
     controller.useRealTime();
     Toast.makeText(this,
-                   R.string.time_travel_close_message,
+        R.string.time_travel_close_message,
                    Toast.LENGTH_SHORT).show();
     Log.d(TAG, "Leaving Time Travel mode.");
     timePlayerUI.setVisibility(View.GONE);
@@ -507,6 +520,14 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
   public void onPause() {
     Log.d(TAG, "DynamicStarMap onPause");
     super.onPause();
+    if (timeTravelNoise != null) {
+      timeTravelNoise.release();
+      timeTravelNoise = null;
+    }
+    if (timeTravelBackNoise != null) {
+      timeTravelBackNoise.release();
+      timeTravelBackNoise = null;
+    }
     for (Runnable runnable : onResumeRunnables) {
       handler.removeCallbacks(runnable);
     }
@@ -522,7 +543,7 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
   public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
     Log.d(TAG, "Preferences changed: key=" + key);
 
-    if (!key.equals(AUTO_MODE_PREF_KEY)) return;
+    if (!key.equals(ApplicationConstants.AUTO_MODE_PREF_KEY)) return;
     final boolean autoMode = sharedPreferences.getBoolean(key, true);
     Log.d(TAG, "Automode is set to " + autoMode);
     if (!autoMode) {
@@ -573,15 +594,23 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
         results.size() > 0 ? 1 : 0);
     if (results.size() == 0) {
       Log.d(TAG, "No results returned");
-      showDialog(DialogFactory.DIALOG_ID_NO_SEARCH_RESULTS);
+      noSearchResultsDialogFragment.show(fragmentManager, "No Search Results");
     } else if (results.size() > 1) {
       Log.d(TAG, "Multiple results returned");
-      dialogFactory.showUserChooseResultDialog(results);
+      showUserChooseResultDialog(results);
     } else {
       Log.d(TAG, "One result returned.");
       final SearchResult result = results.get(0);
       activateSearchTarget(result.coords, result.capitalizedName);
     }
+  }
+
+  private void showUserChooseResultDialog(List<SearchResult> results) {
+    multipleSearchResultsDialogFragment.clearResults();
+    for (SearchResult result : results) {
+      multipleSearchResultsDialogFragment.add(result);
+    }
+    multipleSearchResultsDialogFragment.show(fragmentManager, "Multiple Search Results");
   }
 
   private void initializeModelViewController() {
@@ -654,11 +683,6 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
   }
 
   @Override
-  protected Dialog onCreateDialog(int id) {
-    return dialogFactory.onCreateDialog(id);
-  }
-
-  @Override
   protected void onNewIntent(Intent intent) {
     super.onNewIntent(intent);
     Log.d(TAG, "New Intent received " + intent);
@@ -672,33 +696,33 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
     Log.d(TAG, "DynamicStarMap onRestoreInstanceState");
     super.onRestoreInstanceState(icicle);
     if (icicle == null) return;
-    searchMode = icicle.getBoolean(BUNDLE_SEARCH_MODE);
-    float x = icicle.getFloat(BUNDLE_X_TARGET);
-    float y = icicle.getFloat(BUNDLE_Y_TARGET);
-    float z = icicle.getFloat(BUNDLE_Z_TARGET);
+    searchMode = icicle.getBoolean(ApplicationConstants.BUNDLE_SEARCH_MODE);
+    float x = icicle.getFloat(ApplicationConstants.BUNDLE_X_TARGET);
+    float y = icicle.getFloat(ApplicationConstants.BUNDLE_Y_TARGET);
+    float z = icicle.getFloat(ApplicationConstants.BUNDLE_Z_TARGET);
     searchTarget = new GeocentricCoordinates(x, y, z);
-    searchTargetName = icicle.getString(BUNDLE_TARGET_NAME);
+    searchTargetName = icicle.getString(ApplicationConstants.BUNDLE_TARGET_NAME);
     if (searchMode) {
       Log.d(TAG, "Searching for target " + searchTargetName + " at target=" + searchTarget);
       rendererController.queueEnableSearchOverlay(searchTarget, searchTargetName);
       cancelSearchButton.setVisibility(View.VISIBLE);
     }
-    nightMode = icicle.getBoolean(BUNDLE_NIGHT_MODE, false);
+    nightMode = icicle.getBoolean(ApplicationConstants.BUNDLE_NIGHT_MODE, false);
   }
 
   @Override
   protected void onSaveInstanceState(Bundle icicle) {
     Log.d(TAG, "DynamicStarMap onSaveInstanceState");
-    icicle.putBoolean(BUNDLE_SEARCH_MODE, searchMode);
-    icicle.putFloat(BUNDLE_X_TARGET, searchTarget.x);
-    icicle.putFloat(BUNDLE_Y_TARGET, searchTarget.y);
-    icicle.putFloat(BUNDLE_Z_TARGET, searchTarget.z);
-    icicle.putString(BUNDLE_TARGET_NAME, searchTargetName);
-    icicle.putBoolean(BUNDLE_NIGHT_MODE, nightMode);
+    icicle.putBoolean(ApplicationConstants.BUNDLE_SEARCH_MODE, searchMode);
+    icicle.putFloat(ApplicationConstants.BUNDLE_X_TARGET, searchTarget.x);
+    icicle.putFloat(ApplicationConstants.BUNDLE_Y_TARGET, searchTarget.y);
+    icicle.putFloat(ApplicationConstants.BUNDLE_Z_TARGET, searchTarget.z);
+    icicle.putString(ApplicationConstants.BUNDLE_TARGET_NAME, searchTargetName);
+    icicle.putBoolean(ApplicationConstants.BUNDLE_NIGHT_MODE, nightMode);
     super.onSaveInstanceState(icicle);
   }
 
-  void activateSearchTarget(GeocentricCoordinates target, final String searchTerm) {
+  public void activateSearchTarget(GeocentricCoordinates target, final String searchTerm) {
     Log.d(TAG, "Item " + searchTerm + " selected");
     // Store these for later.
     searchTarget = target;
@@ -706,14 +730,14 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
     Log.d(TAG, "Searching for target=" + target);
     rendererController.queueViewerUpDirection(model.getZenith().copy());
     rendererController.queueEnableSearchOverlay(target.copy(), searchTerm);
-    boolean autoMode = sharedPreferences.getBoolean(AUTO_MODE_PREF_KEY, true);
+    boolean autoMode = sharedPreferences.getBoolean(ApplicationConstants.AUTO_MODE_PREF_KEY, true);
     if (!autoMode) {
       controller.teleport(target);
     }
 
     TextView searchPromptText = (TextView) findViewById(R.id.search_status_label);
     searchPromptText.setText(
-            String.format("%s %s", getString(R.string.search_target_looking_message), searchTerm));
+        String.format("%s %s", getString(R.string.search_target_looking_message), searchTerm));
     View searchControlBar = findViewById(R.id.search_control_bar);
     searchControlBar.setVisibility(View.VISIBLE);
   }
@@ -793,5 +817,25 @@ public class DynamicStarMapActivity extends Activity implements OnSharedPreferen
 
   public AstronomerModel getModel() {
     return model;
+  }
+
+  @Override
+  protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    if (requestCode == GOOGLE_PLAY_SERVICES_REQUEST_CODE) {
+      playServicesChecker.runAfterDialog();
+      return;
+    }
+    Log.w(TAG, "Unhandled activity result");
+  }
+
+  @Override
+  public void onRequestPermissionsResult(int requestCode,
+                                         String[] permissions,
+                                         int[] grantResults) {
+    if (requestCode == GOOGLE_PLAY_SERVICES_REQUEST_LOCATION_PERMISSION_CODE) {
+      playServicesChecker.runAfterPermissionsCheck(requestCode, permissions, grantResults);
+      return;
+    }
+    Log.w(TAG, "Unhandled request permissions result");
   }
 }

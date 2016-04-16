@@ -104,6 +104,11 @@ public class DragRotateZoomGestureDetector {
 
     if (actionCode == MotionEvent.ACTION_MOVE && currentState == State.DRAGGING2) {
       // Log.d(TAG, "Move with two fingers");
+      int pointerCount = ev.getPointerCount();
+      if (pointerCount != 2) {
+        Log.w(TAG, "Expected exactly two pointers but got " + pointerCount);
+        return false;
+      }
       float current1X = ev.getX(0);
       float current1Y = ev.getY(0);
       float current2X = ev.getX(1);
