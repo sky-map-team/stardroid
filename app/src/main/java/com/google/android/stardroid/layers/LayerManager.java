@@ -14,31 +14,32 @@
 
 package com.google.android.stardroid.layers;
 
-import com.google.android.stardroid.control.AstronomerModel;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
+import android.util.Log;
+
 import com.google.android.stardroid.renderer.RendererController;
 import com.google.android.stardroid.search.SearchResult;
 import com.google.android.stardroid.search.SearchTermsProvider.SearchTerm;
 import com.google.android.stardroid.util.MiscUtil;
-
-import android.content.SharedPreferences;
-import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
-import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import javax.inject.Inject;
+
 /**
  * Allows a group of layers to be controlled together.
  */
 public class LayerManager implements OnSharedPreferenceChangeListener {
   private static final String TAG = MiscUtil.getTag(LayerManager.class);
-  private final ArrayList<Layer> layers = new ArrayList<Layer>();
+  private final List<Layer> layers = new ArrayList<>();
   private final SharedPreferences sharedPreferences;
 
-  // TODO(johntaylor): delete the model parameter
-  public LayerManager(SharedPreferences sharedPreferences, AstronomerModel model) {
+  @Inject
+  public LayerManager(SharedPreferences sharedPreferences) {
     this.sharedPreferences = sharedPreferences;
     sharedPreferences.registerOnSharedPreferenceChangeListener(this);
   }
@@ -102,7 +103,7 @@ public class LayerManager implements OnSharedPreferenceChangeListener {
    * @return a set of matching queries.
    */
   public Set<SearchTerm> getObjectNamesMatchingPrefix(String prefix) {
-    HashSet<SearchTerm> all = new HashSet<SearchTerm>();
+    Set<SearchTerm> all = new HashSet<>();
     for (Layer layer : layers) {
       if (isLayerVisible(layer)) {
         for (String query : layer.getObjectNamesMatchingPrefix(prefix)) {

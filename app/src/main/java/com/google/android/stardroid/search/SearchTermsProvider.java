@@ -17,13 +17,10 @@ package com.google.android.stardroid.search;
 import android.app.SearchManager;
 import android.content.ContentProvider;
 import android.content.ContentValues;
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.content.UriMatcher;
 import android.database.Cursor;
 import android.database.MatrixCursor;
 import android.net.Uri;
-import android.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -32,6 +29,8 @@ import com.google.android.stardroid.layers.LayerManager;
 import com.google.android.stardroid.util.MiscUtil;
 
 import java.util.Set;
+
+import javax.inject.Inject;
 
 /**
  * Provides search suggestions for a list of words and their definitions.
@@ -52,7 +51,7 @@ public class SearchTermsProvider extends ContentProvider {
   public static final Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY);
   private static final int SEARCH_SUGGEST = 0;
   private static final UriMatcher uriMatcher = buildUriMatcher();
-  private LayerManager layerManager;
+  @Inject LayerManager layerManager;
 
   /**
    * The columns we'll include in our search suggestions.
@@ -74,10 +73,13 @@ public class SearchTermsProvider extends ContentProvider {
 
   @Override
   public boolean onCreate() {
-    Context context = getContext();
-    SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
-    layerManager = StardroidApplication.getLayerManager(context.getAssets(), preferences,
-                                                        context.getResources(), context);
+    // It is possible that the application has not been created yet.
+    StardroidApplication app = (StardroidApplication) getContext().getApplicationContext();
+    if (app == null) {
+      Log.e(TAG, "Application has not been created - content provider cannot start");
+      return false;
+    }
+    app.getApplicationComponent().inject(this);
     return true;
   }
 

@@ -44,7 +44,6 @@ import android.widget.Toast;
 
 import com.google.android.stardroid.ApplicationConstants;
 import com.google.android.stardroid.R;
-import com.google.android.stardroid.StardroidApplication;
 import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
 import com.google.android.stardroid.activities.dialogs.HelpDialogFragment;
 import com.google.android.stardroid.activities.dialogs.MultipleSearchResultsDialogFragment;
@@ -147,7 +146,7 @@ public class DynamicStarMapActivity extends InjectableActivity
   private ImageButton cancelSearchButton;
   @Inject ControllerGroup controller;
   private GestureDetector gestureDetector;
-  private AstronomerModel model;
+  @Inject AstronomerModel model;
   private RendererController rendererController;
   private boolean nightMode = false;
   private boolean searchMode = false;
@@ -157,7 +156,7 @@ public class DynamicStarMapActivity extends InjectableActivity
   private GLSurfaceView skyView;
   private PowerManager.WakeLock wakeLock;
   private String searchTargetName;
-  private LayerManager layerManager;
+  @Inject LayerManager layerManager;
   // TODO(widdows): Figure out if we should break out the
   // time dialog and time player into separate activities.
   private View timePlayerUI;
@@ -182,7 +181,7 @@ public class DynamicStarMapActivity extends InjectableActivity
   // We need to maintain references to these objects to keep them from
   // getting gc'd.
   @SuppressWarnings("unused")
-  private MagneticDeclinationCalculatorSwitcher magneticSwitcher;
+  @Inject MagneticDeclinationCalculatorSwitcher magneticSwitcher;
 
   private DragRotateZoomGestureDetector dragZoomRotateDetector;
   @Inject Animation flashAnimation;
@@ -215,12 +214,6 @@ public class DynamicStarMapActivity extends InjectableActivity
     // Eventually we should check at the point of use, but this will do for now.  If the
     // user revokes the permission later then odd things may happen.
     playServicesChecker.maybeCheckForGooglePlayServices();
-
-    model = StardroidApplication.getModel();
-    layerManager = StardroidApplication.getLayerManager(getAssets(),
-        sharedPreferences,
-        getResources(),
-        this);
 
     initializeModelViewController();
     checkForSensorsAndMaybeWarn();
@@ -632,7 +625,6 @@ public class DynamicStarMapActivity extends InjectableActivity
     Log.i(TAG, "Set up controllers @ " + System.currentTimeMillis());
     controller.setModel(model);
     wireUpScreenControls(); // TODO(johntaylor) move these?
-    magneticSwitcher = new MagneticDeclinationCalculatorSwitcher(model, sharedPreferences);
     wireUpTimePlayer();  // TODO(widdows) move these?
   }
 

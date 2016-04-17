@@ -28,8 +28,6 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 
 import com.google.android.stardroid.control.AstronomerModel;
-import com.google.android.stardroid.control.AstronomerModelImpl;
-import com.google.android.stardroid.control.ZeroMagneticDeclinationCalculator;
 import com.google.android.stardroid.layers.EclipticLayer;
 import com.google.android.stardroid.layers.GridLayer;
 import com.google.android.stardroid.layers.HorizonLayer;
@@ -66,17 +64,12 @@ public class StardroidApplication extends Application {
   private static final String UNKNOWN = "Unknown previous version";
 
   @Inject SharedPreferences preferences;
-  // The Application class is a singleton, so treat it as such, with static
-  // fields.  This is necessary so that the content provider can access the
-  // things it needs; there seems to be no easy way for a ContentProvider
-  // to access its Application object.
-  private static AstronomerModel model;
-  // TODO(jontayler): inject the layer manager instead
-  private static LayerManager layerManager;
+  @Inject LayerManager layerManager;
   @Inject static ExecutorService backgroundExecutor;
   @Inject AssetManager assetManager;
   @Inject Resources resources;
   @Inject Analytics analytics;
+  @Inject AstronomerModel model;
 
   // We need to maintain references to this object to keep it from
   // getting gc'd.
@@ -200,23 +193,21 @@ public class StardroidApplication extends Application {
    * This should return relatively quickly, with the catalogs initializing
    * themselves on background threads.
    */
-  public static synchronized LayerManager getLayerManager(AssetManager assetManager,
+  private LayerManager getLayerManager(AssetManager assetManager,
                                                           SharedPreferences preferences,
                                                           Resources resources,
                                                           Context context) {
     if (layerManager == null) {
       Log.i(TAG, "Initializing LayerManager");
-      layerManager = new LayerManager(preferences, getModel());
-
       layerManager.addLayer(new NewStarsLayer(assetManager, resources));
       layerManager.addLayer(new NewMessierLayer(assetManager, resources));
       layerManager.addLayer(new NewConstellationsLayer(assetManager, resources));
-      layerManager.addLayer(new PlanetsLayer(getModel(), resources, preferences));
-      layerManager.addLayer(new MeteorShowerLayer(getModel(), resources));
+      layerManager.addLayer(new PlanetsLayer(model, resources, preferences));
+      layerManager.addLayer(new MeteorShowerLayer(model, resources));
       layerManager.addLayer(new GridLayer(resources, 24, 19));
-      layerManager.addLayer(new HorizonLayer(getModel(), resources));
+      layerManager.addLayer(new HorizonLayer(model, resources));
       layerManager.addLayer(new EclipticLayer(resources));
-      layerManager.addLayer(new SkyGradientLayer(getModel(), resources));
+      layerManager.addLayer(new SkyGradientLayer(model, resources));
       // layerManager.addLayer(new IssLayer(resources, getModel()));
 
       layerManager.initialize();
@@ -224,16 +215,6 @@ public class StardroidApplication extends Application {
       Log.i(TAG, "LayerManager already initialized.");
     }
     return layerManager;
-  }
-
-  /**
-   * Return the model.
-   */
-  public static synchronized AstronomerModel getModel() {
-    if (model == null) {
-      model = new AstronomerModelImpl(new ZeroMagneticDeclinationCalculator());
-    }
-    return model;
   }
 
   /**

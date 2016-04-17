@@ -8,11 +8,17 @@ import android.hardware.SensorManager;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
+import com.google.android.stardroid.control.AstronomerModel;
+import com.google.android.stardroid.control.AstronomerModelImpl;
+import com.google.android.stardroid.control.MagneticDeclinationCalculator;
+import com.google.android.stardroid.control.RealMagneticDeclinationCalculator;
+import com.google.android.stardroid.control.ZeroMagneticDeclinationCalculator;
 import com.google.android.stardroid.util.MiscUtil;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 
+import javax.inject.Named;
 import javax.inject.Singleton;
 
 import dagger.Module;
@@ -41,6 +47,22 @@ public class ApplicationModule {
   SharedPreferences provideSharedPreferences() {
     Log.d(TAG, "Providing shared preferences");
     return PreferenceManager.getDefaultSharedPreferences(app);
+  }
+
+  @Provides @Singleton
+  AstronomerModel provideAstronomerModel(
+      @Named("zero") MagneticDeclinationCalculator magneticDeclinationCalculator) {
+    return new AstronomerModelImpl(magneticDeclinationCalculator);
+  }
+
+  @Provides @Singleton @Named("zero")
+  MagneticDeclinationCalculator provideDefaultMagneticDeclinationCalculator() {
+    return new ZeroMagneticDeclinationCalculator();
+  }
+
+  @Provides @Singleton @Named("real")
+  MagneticDeclinationCalculator provideRealMagneticDeclinationCalculator() {
+    return new RealMagneticDeclinationCalculator();
   }
 
   @Provides @Singleton

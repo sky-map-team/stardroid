@@ -20,6 +20,9 @@ import android.util.Log;
 
 import com.google.android.stardroid.util.MiscUtil;
 
+import javax.inject.Inject;
+import javax.inject.Named;
+
 /**
  * Aggregates the RealMagneticDeclinationCalculator and the
  * ZeroMagneticDeclinationCalculator and switches them in the AstronomerModel.
@@ -32,8 +35,8 @@ public class MagneticDeclinationCalculatorSwitcher implements OnSharedPreference
   private static final String KEY = "use_magnetic_correction";
   private static final String TAG = MiscUtil.getTag(MagneticDeclinationCalculatorSwitcher.class);
 
-  private RealMagneticDeclinationCalculator realCalculator;
-  private ZeroMagneticDeclinationCalculator zeroCalculator;
+  private MagneticDeclinationCalculator realCalculator;
+  private MagneticDeclinationCalculator zeroCalculator;
   private AstronomerModel model;
 
   /**
@@ -43,10 +46,14 @@ public class MagneticDeclinationCalculatorSwitcher implements OnSharedPreference
    * @param preferences a SharedPreferences object which will indicate which
    * calculator to use.
    */
-  public MagneticDeclinationCalculatorSwitcher(AstronomerModel model,
-                                               SharedPreferences preferences) {
-    zeroCalculator = new ZeroMagneticDeclinationCalculator();
-    realCalculator = new RealMagneticDeclinationCalculator();
+  @Inject
+  public MagneticDeclinationCalculatorSwitcher(
+      AstronomerModel model,
+      SharedPreferences preferences,
+      @Named("zero") MagneticDeclinationCalculator zeroCalculator,
+      @Named("real") MagneticDeclinationCalculator realCalculator) {
+    this.zeroCalculator = zeroCalculator;
+    this.realCalculator = realCalculator;
     this.model = model;
     preferences.registerOnSharedPreferenceChangeListener(this);
     setTheModelsCalculator(preferences);

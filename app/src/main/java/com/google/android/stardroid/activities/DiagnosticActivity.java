@@ -34,7 +34,8 @@ public class DiagnosticActivity extends Activity implements SensorEventListener 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    ((StardroidApplication) getApplication()).getApplicationComponent().inject(this);
+    DaggerDiagnosticActivityComponent.builder().applicationComponent(
+      ((StardroidApplication) getApplication()).getApplicationComponent()).build().inject(this);
     setContentView(R.layout.activity_diagnostic);
   }
 
