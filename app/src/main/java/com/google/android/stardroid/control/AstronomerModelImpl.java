@@ -90,10 +90,10 @@ public class AstronomerModelImpl implements AstronomerModel {
   private Pointing pointing = new Pointing();
 
   /** The sensor acceleration in the phone's coordinate system. */
-  private Vector3 acceleration = ApplicationConstants.INITIAL_DOWN;
+  private Vector3 acceleration = ApplicationConstants.INITIAL_DOWN.copy();
 
   /** The sensor magnetic field in the phone's coordinate system. */
-  private Vector3 magneticField = ApplicationConstants.INITIAL_SOUTH;
+  private Vector3 magneticField = ApplicationConstants.INITIAL_SOUTH.copy();
 
   /** North along the ground in celestial coordinates. */
   private Vector3 trueNorthCelestial = new Vector3(1, 0, 0);
