@@ -135,8 +135,7 @@ public class DiagnosticActivity extends Activity implements SensorEventListener 
     }
     setText(R.id.diagnose_gps_status_txt, gpsStatusMessage);
     LatLong currentLocation = locationController.getCurrentLocation();
-    String locationMessage = currentLocation.getLatitude() + ", " + currentLocation.getLongitude()
-        + locationController.getCurrentProvider() + ")";
+    String locationMessage = currentLocation.getLatitude() + ", " + currentLocation.getLongitude();
     // Current provider not working    + " (" + locationController.getCurrentProvider() + ")";
     setText(R.id.diagnose_location_txt, locationMessage);
   }
