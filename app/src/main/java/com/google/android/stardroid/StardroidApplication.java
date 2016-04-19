@@ -21,6 +21,7 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.os.Build;
+import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
@@ -60,7 +61,6 @@ public class StardroidApplication extends Application {
   // getting gc'd.
   @Inject PreferenceChangeAnalyticsTracker preferenceChangeAnalyticsTracker;
   private ApplicationComponent component;
-
 
   @Override
   public void onCreate() {

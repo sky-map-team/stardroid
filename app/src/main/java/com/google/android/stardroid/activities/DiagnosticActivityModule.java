@@ -2,6 +2,7 @@ package com.google.android.stardroid.activities;
 
 import android.app.Activity;
 import android.content.Context;
+import android.os.Handler;
 
 import com.google.android.stardroid.inject.PerActivity;
 
@@ -29,5 +30,11 @@ public class DiagnosticActivityModule {
   @PerActivity
   Context provideActivityContext() {
     return activity;
+  }
+
+  @Provides
+  @PerActivity
+  Handler provideHandler() {
+    return new Handler();
   }
 }

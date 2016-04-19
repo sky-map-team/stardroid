@@ -3,6 +3,7 @@ package com.google.android.stardroid;
 import android.content.SharedPreferences;
 import android.hardware.SensorManager;
 import android.location.LocationManager;
+import android.net.ConnectivityManager;
 
 import com.google.android.stardroid.activities.EditSettingsActivity;
 import com.google.android.stardroid.activities.ImageDisplayActivity;
@@ -28,6 +29,7 @@ public interface ApplicationComponent {
   StardroidApplication provideStardroidApplication();
   SharedPreferences provideSharedPreferences();
   SensorManager provideSensorManager();
+  ConnectivityManager provideConnectivityManager();
   AstronomerModel provideAstronomerModel();
   LocationManager provideLocationManager();
   LayerManager provideLayerManager();

@@ -7,8 +7,11 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.location.LocationManager;
 import android.location.LocationProvider;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.widget.TextView;
 
@@ -17,6 +20,7 @@ import com.google.android.stardroid.StardroidApplication;
 import com.google.android.stardroid.control.AstronomerModel;
 import com.google.android.stardroid.control.LocationController;
 import com.google.android.stardroid.units.GeocentricCoordinates;
+import com.google.android.stardroid.units.LatLong;
 import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.MiscUtil;
 
@@ -30,13 +34,17 @@ import javax.inject.Inject;
 
 public class DiagnosticActivity extends Activity implements SensorEventListener {
   private static final String TAG = MiscUtil.getTag(DiagnosticActivity.class);
+  private static final int UPDATE_PERIOD_MILLIS = 500;
 
   @Inject Analytics analytics;
   @Inject StardroidApplication app;
   @Inject SensorManager sensorManager;
+  @Inject ConnectivityManager connectivityManager;
   @Inject LocationManager locationManager;
   @Inject LocationController locationController;
   @Inject AstronomerModel model;
+  @Inject Handler handler;
+
   private Sensor accelSensor;
   private Sensor magSensor;
   private Sensor gyroSensor;
@@ -46,7 +54,8 @@ public class DiagnosticActivity extends Activity implements SensorEventListener 
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     DaggerDiagnosticActivityComponent.builder().applicationComponent(
-      ((StardroidApplication) getApplication()).getApplicationComponent()).build().inject(this);
+      ((StardroidApplication) getApplication()).getApplicationComponent())
+        .diagnosticActivityModule(new DiagnosticActivityModule(this)).build().inject(this);
     setContentView(R.layout.activity_diagnostic);
   }
 
@@ -64,12 +73,23 @@ public class DiagnosticActivity extends Activity implements SensorEventListener 
     setText(R.id.diagnose_skymap_version_txt, skyMapVersion);
   }
 
+  private boolean continueUpdates;
+
   @Override
   public void onResume() {
     super.onResume();
     onResumeSensors();
-    onResumeGps();
-    onResumeModel();
+    continueUpdates = true;
+    handler.post(new Runnable() {
+      public void run() {
+        updateLocation();
+        updateModel();
+        updateNetwork();
+        if (continueUpdates) {
+          handler.postDelayed(this, UPDATE_PERIOD_MILLIS);
+        }
+      }
+    });
   }
 
   private void onResumeSensors() {
@@ -99,30 +119,34 @@ public class DiagnosticActivity extends Activity implements SensorEventListener 
     }
   }
 
-  private void onResumeGps() {
+  private void updateLocation() {
     // TODO(johntaylor): add other things like number of satellites and status
     String gpsStatusMessage;
     try {
       LocationProvider gps = locationManager.getProvider(LocationManager.GPS_PROVIDER);
       boolean gpsStatus = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
       if (gps == null) {
-        gpsStatusMessage = "No GPS";
+        gpsStatusMessage = getString(R.string.no_gps);
       } else {
-        gpsStatusMessage = gpsStatus ? "Enabled" : "Disabled";
+        gpsStatusMessage = gpsStatus ? getString(R.string.enabled) : getString(R.string.disabled);
       }
     } catch (SecurityException ex) {
-      gpsStatusMessage = "Permission disabled";
+      gpsStatusMessage = getString(R.string.permission_disabled);
     }
     setText(R.id.diagnose_gps_status_txt, gpsStatusMessage);
-    String locationMessage = locationController.getCurrentLocation().toString()
-        + " (" + locationController.getCurrentProvider() + ")";
+    LatLong currentLocation = locationController.getCurrentLocation();
+    String locationMessage = currentLocation.getLatitude() + ", " + currentLocation.getLongitude()
+        + locationController.getCurrentProvider() + ")";
+    // Current provider not working    + " (" + locationController.getCurrentProvider() + ")";
     setText(R.id.diagnose_location_txt, locationMessage);
   }
 
-  private void onResumeModel() {
+  private void updateModel() {
     float magCorrection = model.getMagneticCorrection();
     setText(R.id.diagnose_magnetic_correction_txt,
-        Math.abs(magCorrection) + magCorrection > 0 ? "E" : "W" + " degrees");
+        Math.abs(magCorrection) + " " + (magCorrection > 0
+            ? getString(R.string.east) : getString(R.string.west)) + " "
+            + getString(R.string.degrees));
     AstronomerModel.Pointing pointing = model.getPointing();
     GeocentricCoordinates lineOfSight = pointing.getLineOfSight();
     // TODO(johntaylor): maybe show RA in hours instead
@@ -139,6 +163,7 @@ public class DiagnosticActivity extends Activity implements SensorEventListener 
   @Override
   public void onPause() {
     super.onPause();
+    continueUpdates = false;
     sensorManager.unregisterListener(this);
   }
 
@@ -206,6 +231,22 @@ public class DiagnosticActivity extends Activity implements SensorEventListener 
     }
     valuesText.setLength(valuesText.length() - 1);
     setText(valuesViewId, valuesText.toString());
+  }
+
+  private void updateNetwork() {
+    NetworkInfo activeNetwork = connectivityManager.getActiveNetworkInfo();
+    boolean isConnected = activeNetwork != null &&
+        activeNetwork.isConnectedOrConnecting();
+    String message = isConnected ? getString(R.string.connected) : getString(R.string.disconnected);
+    if (isConnected) {
+      if (activeNetwork.getType() == ConnectivityManager.TYPE_WIFI) {
+        message += getString(R.string.wifi);
+      }
+      if (activeNetwork.getType() == ConnectivityManager.TYPE_MOBILE) {
+        message += getString(R.string.cell_network);
+      }
+    }
+    setText(R.id.diagnose_network_status_txt, message);
   }
 
   private void setText(int viewId, String text) {
