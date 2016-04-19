@@ -28,6 +28,8 @@ import java.util.Date;
  * @author John Taylor
  */
 public interface AstronomerModel {
+
+
   /**
    * A POJO to hold the user's view direction.
    *
@@ -114,6 +116,8 @@ public interface AstronomerModel {
   float getFieldOfView();
 
   void setFieldOfView(float degrees);
+
+  float getMagneticCorrection();
 
   /**
    * Returns the time, as UTC.

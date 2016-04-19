@@ -28,8 +28,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import javax.inject.Inject;
-
 /**
  * Allows a group of layers to be controlled together.
  */
@@ -38,8 +36,8 @@ public class LayerManager implements OnSharedPreferenceChangeListener {
   private final List<Layer> layers = new ArrayList<>();
   private final SharedPreferences sharedPreferences;
 
-  @Inject
   public LayerManager(SharedPreferences sharedPreferences) {
+    Log.d(TAG, "Creating LayerManager");
     this.sharedPreferences = sharedPreferences;
     sharedPreferences.registerOnSharedPreferenceChangeListener(this);
   }
@@ -86,7 +84,7 @@ public class LayerManager implements OnSharedPreferenceChangeListener {
    * @return a list of all matching objects.
    */
   public List<SearchResult> searchByObjectName(String name) {
-    ArrayList<SearchResult> all = new ArrayList<SearchResult>();
+    List<SearchResult> all = new ArrayList<>();
     for (Layer layer : layers) {
       if (isLayerVisible(layer)) {
         all.addAll(layer.searchByObjectName(name));

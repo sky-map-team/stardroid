@@ -134,6 +134,11 @@ public class AstronomerModelImpl implements AstronomerModel {
   }
 
   @Override
+  public float getMagneticCorrection() {
+    return magneticDeclinationCalculator.getDeclination();
+  }
+
+  @Override
   public Date getTime() {
     return new Date(clock.getTimeInMillisSinceEpoch());
   }

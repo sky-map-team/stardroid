@@ -14,30 +14,17 @@
 package com.google.android.stardroid;
 
 import android.app.Application;
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
-import android.content.res.AssetManager;
-import android.content.res.Resources;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.os.Build;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
-import com.google.android.stardroid.control.AstronomerModel;
-import com.google.android.stardroid.layers.EclipticLayer;
-import com.google.android.stardroid.layers.GridLayer;
-import com.google.android.stardroid.layers.HorizonLayer;
 import com.google.android.stardroid.layers.LayerManager;
-import com.google.android.stardroid.layers.MeteorShowerLayer;
-import com.google.android.stardroid.layers.NewConstellationsLayer;
-import com.google.android.stardroid.layers.NewMessierLayer;
-import com.google.android.stardroid.layers.NewStarsLayer;
-import com.google.android.stardroid.layers.PlanetsLayer;
-import com.google.android.stardroid.layers.SkyGradientLayer;
 import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.Analytics.Slice;
 import com.google.android.stardroid.util.MiscUtil;
@@ -64,12 +51,10 @@ public class StardroidApplication extends Application {
   private static final String UNKNOWN = "Unknown previous version";
 
   @Inject SharedPreferences preferences;
+  // We keep a reference to this just to start it initializing.
   @Inject LayerManager layerManager;
   @Inject static ExecutorService backgroundExecutor;
-  @Inject AssetManager assetManager;
-  @Inject Resources resources;
   @Inject Analytics analytics;
-  @Inject AstronomerModel model;
 
   // We need to maintain references to this object to keep it from
   // getting gc'd.
@@ -95,9 +80,6 @@ public class StardroidApplication extends Application {
     // This populates the default values from the preferences XML file. See
     // {@link DefaultValues} for more details.
     PreferenceManager.setDefaultValues(this, R.xml.preference_screen, false);
-
-    // Start the LayerManager initializing
-    getLayerManager(assetManager, preferences, resources, this);
 
     setUpAnalytics(versionName);
 
@@ -186,35 +168,6 @@ public class StardroidApplication extends Application {
       Log.e(TAG, "Unable to obtain package info");
       return -1;
     }
-  }
-
-  /**
-   * Get the catalog.
-   * This should return relatively quickly, with the catalogs initializing
-   * themselves on background threads.
-   */
-  private LayerManager getLayerManager(AssetManager assetManager,
-                                                          SharedPreferences preferences,
-                                                          Resources resources,
-                                                          Context context) {
-    if (layerManager == null) {
-      Log.i(TAG, "Initializing LayerManager");
-      layerManager.addLayer(new NewStarsLayer(assetManager, resources));
-      layerManager.addLayer(new NewMessierLayer(assetManager, resources));
-      layerManager.addLayer(new NewConstellationsLayer(assetManager, resources));
-      layerManager.addLayer(new PlanetsLayer(model, resources, preferences));
-      layerManager.addLayer(new MeteorShowerLayer(model, resources));
-      layerManager.addLayer(new GridLayer(resources, 24, 19));
-      layerManager.addLayer(new HorizonLayer(model, resources));
-      layerManager.addLayer(new EclipticLayer(resources));
-      layerManager.addLayer(new SkyGradientLayer(model, resources));
-      // layerManager.addLayer(new IssLayer(resources, getModel()));
-
-      layerManager.initialize();
-    } else {
-      Log.i(TAG, "LayerManager already initialized.");
-    }
-    return layerManager;
   }
 
   /**

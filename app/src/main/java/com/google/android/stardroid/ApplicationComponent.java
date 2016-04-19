@@ -2,12 +2,14 @@ package com.google.android.stardroid;
 
 import android.content.SharedPreferences;
 import android.hardware.SensorManager;
+import android.location.LocationManager;
 
 import com.google.android.stardroid.activities.EditSettingsActivity;
 import com.google.android.stardroid.activities.ImageDisplayActivity;
 import com.google.android.stardroid.activities.ImageGalleryActivity;
 import com.google.android.stardroid.control.AstronomerModel;
 import com.google.android.stardroid.control.MagneticDeclinationCalculator;
+import com.google.android.stardroid.layers.LayerManager;
 import com.google.android.stardroid.search.SearchTermsProvider;
 
 import javax.inject.Named;
@@ -27,6 +29,8 @@ public interface ApplicationComponent {
   SharedPreferences provideSharedPreferences();
   SensorManager provideSensorManager();
   AstronomerModel provideAstronomerModel();
+  LocationManager provideLocationManager();
+  LayerManager provideLayerManager();
   @Named("zero") MagneticDeclinationCalculator provideMagDec1();
   @Named("real") MagneticDeclinationCalculator provideMagDec2();
 

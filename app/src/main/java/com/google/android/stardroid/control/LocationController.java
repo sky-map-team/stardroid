@@ -18,9 +18,9 @@ import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.DialogInterface.OnClickListener;
 import android.content.SharedPreferences.Editor;
 import android.location.Address;
 import android.location.Criteria;
@@ -42,6 +42,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
+
 /**
  * Sets the AstronomerModel's (and thus the user's) position using one of the
  * network, GPS or user-set preferences.
@@ -61,14 +63,15 @@ public class LocationController extends AbstractController implements LocationLi
   private Context context;
   private LocationManager locationManager;
 
-  public LocationController(Context context) {
+  @Inject
+  public LocationController(Context context, LocationManager locationManager) {
     this.context = context;
-    locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
     if (locationManager != null) {
       Log.d(TAG, "Got location Manager");
     } else {
       Log.d(TAG, "Didn't get location manager");
     }
+    this.locationManager = locationManager;
   }
 
   @Override
@@ -148,7 +151,21 @@ public class LocationController extends AbstractController implements LocationLi
     } else {
       Log.d(TAG, "Location not changed sufficiently to tell the user");
     }
+    currentProvider = provider;
     model.setLocation(location);
+  }
+
+  /**
+   * Last known provider;
+   */
+  private String currentProvider = "unknown";
+
+  public String getCurrentProvider() {
+    return currentProvider;
+  }
+
+  public LatLong getCurrentLocation() {
+    return model.getLocation();
   }
 
   private Builder getSwitchOnGPSDialog() {

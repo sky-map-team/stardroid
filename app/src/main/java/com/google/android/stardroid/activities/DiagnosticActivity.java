@@ -5,6 +5,8 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.location.LocationManager;
+import android.location.LocationProvider;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,11 +14,17 @@ import android.widget.TextView;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.StardroidApplication;
+import com.google.android.stardroid.control.AstronomerModel;
+import com.google.android.stardroid.control.LocationController;
+import com.google.android.stardroid.units.GeocentricCoordinates;
 import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.MiscUtil;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.TimeZone;
 
 import javax.inject.Inject;
 
@@ -26,6 +34,9 @@ public class DiagnosticActivity extends Activity implements SensorEventListener 
   @Inject Analytics analytics;
   @Inject StardroidApplication app;
   @Inject SensorManager sensorManager;
+  @Inject LocationManager locationManager;
+  @Inject LocationController locationController;
+  @Inject AstronomerModel model;
   private Sensor accelSensor;
   private Sensor magSensor;
   private Sensor gyroSensor;
@@ -56,6 +67,12 @@ public class DiagnosticActivity extends Activity implements SensorEventListener 
   @Override
   public void onResume() {
     super.onResume();
+    onResumeSensors();
+    onResumeGps();
+    onResumeModel();
+  }
+
+  private void onResumeSensors() {
     accelSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
     if (accelSensor == null) {
       setText(R.id.diagnose_accelerometer_accuracy_txt, getString(R.string.sensor_absent));
@@ -80,6 +97,43 @@ public class DiagnosticActivity extends Activity implements SensorEventListener 
     } else {
       sensorManager.registerListener(this, lightSensor, SensorManager.SENSOR_DELAY_UI);
     }
+  }
+
+  private void onResumeGps() {
+    // TODO(johntaylor): add other things like number of satellites and status
+    String gpsStatusMessage;
+    try {
+      LocationProvider gps = locationManager.getProvider(LocationManager.GPS_PROVIDER);
+      boolean gpsStatus = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+      if (gps == null) {
+        gpsStatusMessage = "No GPS";
+      } else {
+        gpsStatusMessage = gpsStatus ? "Enabled" : "Disabled";
+      }
+    } catch (SecurityException ex) {
+      gpsStatusMessage = "Permission disabled";
+    }
+    setText(R.id.diagnose_gps_status_txt, gpsStatusMessage);
+    String locationMessage = locationController.getCurrentLocation().toString()
+        + " (" + locationController.getCurrentProvider() + ")";
+    setText(R.id.diagnose_location_txt, locationMessage);
+  }
+
+  private void onResumeModel() {
+    float magCorrection = model.getMagneticCorrection();
+    setText(R.id.diagnose_magnetic_correction_txt,
+        Math.abs(magCorrection) + magCorrection > 0 ? "E" : "W" + " degrees");
+    AstronomerModel.Pointing pointing = model.getPointing();
+    GeocentricCoordinates lineOfSight = pointing.getLineOfSight();
+    // TODO(johntaylor): maybe show RA in hours instead
+    setText(R.id.diagnose_pointing_txt, lineOfSight.getRa() + ", " + lineOfSight.getDec());
+    Date nowTime = model.getTime();
+    SimpleDateFormat dateFormatUtc = new SimpleDateFormat("yyyy-MMM-dd HH:mm:ss");
+    dateFormatUtc.setTimeZone(TimeZone.getTimeZone("UTC"));
+    SimpleDateFormat dateFormatLocal = new SimpleDateFormat("yyyy-MMM-dd HH:mm:ss");
+
+    setText(R.id.diagnose_utc_datetime_txt, dateFormatUtc.format(nowTime));
+    setText(R.id.diagnose_local_datetime_txt, dateFormatLocal.format(nowTime));
   }
 
   @Override
