@@ -93,6 +93,9 @@ public class SearchTermsProvider extends ContentProvider {
       return false;
     }
     ApplicationComponent component = ((StardroidApplication) appContext).getApplicationComponent();
+    if (component == null) {
+      return false;
+    }
     component.inject(this);
     alreadyInjected = true;
     return true;
