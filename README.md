@@ -57,4 +57,4 @@ In general, bug fix contributions are welcome, though please email us first befo
 
 ## Coding Style
 
-We follow the [Google style guide](https://google.github.io/styleguide/javaguide.html) (or try to).  We wrap at 100 chars and we do use the common Android style of prefixing member variables with a 'm'.
+We follow the [Google style guide](https://google.github.io/styleguide/javaguide.html) (or try to).  We wrap at 100 chars and we do not use the common Android style of prefixing member variables with a 'm'.
