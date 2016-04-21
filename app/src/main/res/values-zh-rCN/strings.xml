@@ -188,11 +188,12 @@
     <string name="big_dipper" translation_description="Name of the Big Dipper constellation">大熊座（北斗七星）</string>
     <string name="great_bear" translation_description="Name of the Great Bear constellation">大熊座</string>
     <string name="plough" translation_description="Name of the Plough constellation">大熊座</string>
-    <string name="sirius" translation_description="Name of the Star Sirius">天狼星</string>
+    <string name="sirius" translation_description="Name of the Star Sirius">天狼星（大犬座 α）</string>
     <string name="canopus" translation_description="Name of the Star Canopus">老人星（船底座 α）</string>
     <string name="arcturus" translation_description="Name of the Star Arcturus">大角星（牧夫座 α）</string>
     <string name="rigel_kentaurus_a" translation_description="Name of the Star Rigel Kentaurus A">南门二（半人马座 α）</string>
-    <string name="vega" translation_description="Name of the Star Vega">织女星</string>
+    <string name="rigil_kentaurus_a" translation_description="Name of the Star Rigel Kentaurus A">南门二（半人马座 α）</string>
+    <string name="vega" translation_description="Name of the Star Vega">织女一（天鹰座 α）</string>
     <string name="rigel" translation_description="Name of the Star Rigel">参宿七（猎户座 β）</string>
     <string name="procyon" translation_description="Name of the Star Procyon">南河三（小犬座 α）</string>
     <string name="betelgeuse" translation_description="Name of the Star Betelgeuse">参宿四（猎户座 α）</string>
@@ -206,11 +207,11 @@
     <string name="antares" translation_description="Name of the Star Antares">心宿二（天蝎座 α）</string>
     <string name="pollux" translation_description="Name of the Star Pollux">北河三（双子座 β）</string>
     <string name="fomalhaut" translation_description="Name of the Star Fomalhaut">北落师门（南鱼座 α）</string>
-    <string name="deneb" translation_description="Name of the Star Deneb">天津四</string>
+    <string name="deneb" translation_description="Name of the Star Deneb">天津四（天鹅座 α）</string>
     <string name="regulus" translation_description="Name of the Star Regulus">轩辕十四（狮子座 α）</string>
     <string name="adhara" translation_description="Name of the Star Adhara">弧矢七（大犬座 ε）</string>
     <string name="shaula" translation_description="Name of the Star Shaula">尾宿八（天蝎座 λ）</string>
-    <string name="alnath" translation_description="Name of the Star Alnath">娄宿三</string>
+    <string name="alnath" translation_description="Name of the Star Alnath">五车五（金牛座 β）</string>
     <string name="alnilam" translation_description="Name of the Star Alnilam">参宿二（猎户座 ε）</string>
     <string name="alnair" translation_description="Name of the Star Alnair">鹤一（天鹤座 α）</string>
     <string name="alioth" translation_description="Name of the Star Alioth">玉衡（大熊座 ε）</string>
@@ -220,12 +221,12 @@
     <string name="alkaid" translation_description="Name of the Star Alkaid">摇光（大熊座 η）</string>
     <string name="alhena" translation_description="Name of the Star Alhena">井宿三（双子座 γ）</string>
     <string name="castor" translation_description="Name of the Star Castor">北河二（双子座 α）</string>
-    <string name="polaris" translation_description="Name of the Star Polaris">北极星</string>
+    <string name="polaris" translation_description="Name of the Star Polaris">北极星（小熊座 α）</string>
     <string name="alphard" translation_description="Name of the Star Alphard">星宿一（长蛇座 α）</string>
     <string name="hamal" translation_description="Name of the Star Hamal">娄宿三（白羊座 α）</string>
     <string name="algieba" translation_description="Name of the Star Algieba">轩辕十二（狮子座 γ）</string>
     <string name="diphda" translation_description="Name of the Star Diphda">土司空（鲸鱼座 β）</string>
-    <string name="nunki" translation_description="Name of the Star Nunki">斗宿四（人马座 s）</string>
+    <string name="nunki" translation_description="Name of the Star Nunki">斗宿四（人马座 σ）</string>
     <string name="mirach" translation_description="Name of the Star Mirach">奎宿九（仙女座 β）</string>
     <string name="alpheratz" translation_description="Name of the Star Alpheratz">壁宿二（仙女座 α）</string>
     <string name="saiph" translation_description="Name of the Star Saiph">参宿六（猎户座 κ）</string>
@@ -248,13 +249,13 @@
     <string name="markab" translation_description="Name of the Star Markab">室宿一（飞马座 α）</string>
     <string name="menkar" translation_description="Name of the Star Menkar">天囷一（鲸鱼座 α）</string>
     <string name="arneb" translation_description="Name of the Star Arneb">厕一（天兔座 α）</string>
-    <string name="unukalhai" translation_description="Name of the Star Unukalhai">蜀（天市右垣，巨蛇座 α）</string>
-    <string name="algenib" translation_description="Name of the Star Algenib">壁宿一（人马座 γ）</string>
+    <string name="unukalhai" translation_description="Name of the Star Unukalhai">蜀，天市右垣七（巨蛇座 α）</string>
+    <string name="algenib" translation_description="Name of the Star Algenib">壁宿一（飞马座 γ）</string>
     <string name="vindemiatrix" translation_description="Name of the Star Vindemiatrix">东次将，太微左垣四（室女座 ε）</string>
     <string name="alcyone" translation_description="Name of the Star Alcyone">昴宿六（金牛座 η）</string>
-    <string name="dog_star" translation_description="Name of the Dog Star (Sirius)">天狼星</string>
-    <string name="north_star" translation_description="Name of the North Star">北极星</string>
-    <string name="pole_star" translation_description="Name of the (North) Pole Star">北极星</string>
+    <string name="dog_star" translation_description="Name of the Dog Star (Sirius)">天狼星（大犬座 α）</string>
+    <string name="north_star" translation_description="Name of the North Star">北极星（小熊座 α）</string>
+    <string name="pole_star" translation_description="Name of the (North) Pole Star">北极星（小熊座 α）</string>
     <string name="m1" translation_description="Name of the Messier object M1">M1</string>
     <string name="m2" translation_description="Name of the Messier object M2">M2</string>
     <string name="m3" translation_description="Name of the Messier object M3">M3</string>
@@ -368,10 +369,10 @@
     <string name="ngc6543" translation_description="Name of the Messier object NGC6543">NGC6543</string>
     <string name="ngc5139" translation_description="Name of the Messier object NGC5139">NGC5139</string>
     <string name="butterfly_cluster" translation_description="Name of the Messier object Butterfly Cluster">蝴蝶星团</string>
-    <string name="scorpions_tail" translation_description="Name of the Messier object Scorpion\'s Tail">天蝎座的尾巴</string>
+    <string name="scorpions_tail" translation_description="Name of the Messier object Scorpion\'s Tail">托勒密星团</string>
     <string name="winnecke_4" translation_description="Name of the Messier object Winnecke 4">梅西尔·40</string>
-    <string name="beehive_cluster" translation_description="Name of the Messier object Beehive Cluster">蜂巢星团</string>
-    <string name="praesepe" translation_description="Name of the Messier object Praesepe">尾宿八（天蝎座 λ）</string>
+    <string name="beehive_cluster" translation_description="Name of the Messier object Beehive Cluster">鬼宿星团</string>
+    <string name="praesepe" translation_description="Name of the Messier object Praesepe">鬼宿星团</string>
     <string name="seven_sisters" translation_description="Name of the Messier object Seven Sisters">昴宿星团</string>
     <string name="space_station" translation_description="Name of the Internation Space Station">国际空间站</string>
     <string name="space_shuttle" translation_description="Name of the Space Shuttle">航天飞机</string>
