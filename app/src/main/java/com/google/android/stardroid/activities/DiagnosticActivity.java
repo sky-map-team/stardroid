@@ -48,6 +48,7 @@ public class DiagnosticActivity extends Activity implements SensorEventListener 
   private Sensor accelSensor;
   private Sensor magSensor;
   private Sensor gyroSensor;
+  private Sensor rotationVectorSensor;
   private Sensor lightSensor;
 
   @Override
@@ -110,6 +111,12 @@ public class DiagnosticActivity extends Activity implements SensorEventListener 
       setText(R.id.diagnose_gyro_accuracy_txt, getString(R.string.sensor_absent));
     } else {
       sensorManager.registerListener(this, gyroSensor, SensorManager.SENSOR_DELAY_NORMAL);
+    }
+    rotationVectorSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR);
+    if (rotationVectorSensor == null) {
+      setText(R.id.diagnose_rotation_accuracy_txt, getString(R.string.sensor_absent));
+    } else {
+      sensorManager.registerListener(this, rotationVectorSensor, SensorManager.SENSOR_DELAY_NORMAL);
     }
     lightSensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
     if (lightSensor == null) {
@@ -176,6 +183,8 @@ public class DiagnosticActivity extends Activity implements SensorEventListener 
       accuracyViewId = R.id.diagnose_compass_accuracy_txt;
     } else if (sensor == gyroSensor) {
       accuracyViewId = R.id.diagnose_gyro_accuracy_txt;
+    } else if (sensor == rotationVectorSensor) {
+      accuracyViewId = R.id.diagnose_rotation_accuracy_txt;
     } else if (sensor == lightSensor) {
       accuracyViewId = R.id.diagnose_light_accuracy_txt;
     } else {
@@ -217,6 +226,8 @@ public class DiagnosticActivity extends Activity implements SensorEventListener 
       valuesViewId = R.id.diagnose_compass_values_txt;
     } else if (sensor == gyroSensor) {
       valuesViewId = R.id.diagnose_gyro_values_txt;
+    } else if (sensor == rotationVectorSensor) {
+      valuesViewId = R.id.diagnose_rotation_values_txt;
     } else if (sensor == lightSensor) {
       valuesViewId = R.id.diagnose_light_values_txt;
     } else {
@@ -225,7 +236,7 @@ public class DiagnosticActivity extends Activity implements SensorEventListener 
     }
     StringBuilder valuesText = new StringBuilder();
     for (float value : event.values) {
-      valuesText.append(String.format("%.1f", value));
+      valuesText.append(String.format("%.2f", value));
       valuesText.append(',');
     }
     valuesText.setLength(valuesText.length() - 1);
