@@ -47,8 +47,9 @@ public class ControllerGroup implements Controller {
 
   // TODO(jontayler): inject everything else.
   @Inject
-  ControllerGroup(Context context, SensorOrientationController sensorOrientationController) {
-    addController(new LocationController(context));
+  ControllerGroup(Context context, SensorOrientationController sensorOrientationController,
+                  LocationController locationController) {
+    addController(locationController);
     this.sensorOrientationController = sensorOrientationController;
     addController(sensorOrientationController);
     manualDirectionController = new ManualOrientationController();

@@ -37,6 +37,10 @@ public class GeocentricCoordinates extends Vector3 {
     updateFromRaDec(raDec.ra, raDec.dec);
   }
 
+
+  /**
+   * Updates these coordinates with the given ra and dec in degrees.
+   */
   private void updateFromRaDec(float ra, float dec) {
     float raRadians = ra * Geometry.DEGREES_TO_RADIANS;
     float decRadians = dec * Geometry.DEGREES_TO_RADIANS;
@@ -44,6 +48,18 @@ public class GeocentricCoordinates extends Vector3 {
     this.x = MathUtil.cos(raRadians) * MathUtil.cos(decRadians);
     this.y = MathUtil.sin(raRadians) * MathUtil.cos(decRadians);
     this.z = MathUtil.sin(decRadians);
+  }
+
+  /** Returns the RA in degrees */
+  public float getRa() {
+    // Assumes unit sphere.
+    return Geometry.RADIANS_TO_DEGREES * MathUtil.atan2(y, x);
+  }
+
+  /** Returns the declination in degrees */
+  public float getDec() {
+    // Assumes unit sphere.
+    return Geometry.RADIANS_TO_DEGREES * MathUtil.asin(z);
   }
 
   /**

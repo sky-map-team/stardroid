@@ -3,20 +3,19 @@ apply plugin: 'com.neenbedankt.android-apt'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.2"
+    buildToolsVersion "23.0.3"
 
     defaultConfig {
         applicationId "com.google.android.stardroid"
         minSdkVersion 15
         targetSdkVersion 23
-        versionCode 1416
-        versionName "1.8.4 - alpha2"
+        versionCode 1419
+        versionName "1.8.4 - alpha4"
         buildConfigField 'String', 'GOOGLE_ANALYTICS_CODE', '""'
     }
     signingConfigs {
         release {
-            if (project.hasProperty('no-checkin.properties')
-                    && new File(project.property('no-checkin.properties')).exists()) {
+            if (project.file('no-checkin.properties').exists()) {
                 Properties properties = new Properties()
                 // Sky Map devs should create this file with the signing passwords
                 properties.load(project.file('no-checkin.properties').newDataInputStream())
@@ -51,7 +50,7 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:support-annotations:23.1.0'
+    compile 'com.android.support:support-annotations:23.2.1'
     compile 'com.google.guava:guava:19.0'
     compile 'com.google.android.gms:play-services-analytics:8.4.0'
     compile 'com.google.android.gms:play-services-location:8.4.0'

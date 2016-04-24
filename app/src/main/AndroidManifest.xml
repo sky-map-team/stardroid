@@ -14,8 +14,10 @@
     <uses-feature
         android:name="android.hardware.location.gps"
         android:required="false"/>
-    <!-- Sensor requirements.  Making required=false for now - we do want to support
-         these users as best we can. -->
+    <!--
+         Sensor requirements.  Making required=false for now - we do want to support
+         these users as best we can.
+    -->
     <uses-feature
         android:name="android.hardware.sensor.accelerometer"
         android:required="false"/>
@@ -85,13 +87,16 @@
             android:name=".activities.ImageDisplayActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Holo"/>
+        <activity
+            android:name=".activities.DiagnosticActivity"
+            android:label="@string/title_activity_diagnostic">
+        </activity>
         <!-- Provides search suggestions. -->
-        <!-- TODO(johntaylor): What does syncable do? -->
         <provider
             android:name=".search.SearchTermsProvider"
             android:authorities="com.google.android.stardroid.searchterms"
+            android:exported="false"
             android:syncable="false"/>
-
     </application>
 
 </manifest>
