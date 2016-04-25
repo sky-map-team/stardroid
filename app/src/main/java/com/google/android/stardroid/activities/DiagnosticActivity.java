@@ -1,6 +1,5 @@
 package com.google.android.stardroid.activities;
 
-import android.app.Activity;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -33,7 +32,7 @@ import java.util.TimeZone;
 
 import javax.inject.Inject;
 
-public class DiagnosticActivity extends Activity implements SensorEventListener {
+public class DiagnosticActivity extends InjectableActivity implements SensorEventListener {
   private static final String TAG = MiscUtil.getTag(DiagnosticActivity.class);
   private static final int UPDATE_PERIOD_MILLIS = 500;
 
@@ -57,8 +56,8 @@ public class DiagnosticActivity extends Activity implements SensorEventListener 
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     DaggerDiagnosticActivityComponent.builder().applicationComponent(
-      ((StardroidApplication) getApplication()).getApplicationComponent())
-        .diagnosticActivityModule(new DiagnosticActivityModule(this)).build().inject(this);
+      getApplicationComponent()).diagnosticActivityModule(new DiagnosticActivityModule(this))
+          .build().inject(this);
     setContentView(R.layout.activity_diagnostic);
   }
 

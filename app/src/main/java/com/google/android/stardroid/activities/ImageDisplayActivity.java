@@ -47,7 +47,7 @@ import javax.inject.Inject;
  * @author John Taylor
  *
  */
-public class ImageDisplayActivity extends Activity {
+public class ImageDisplayActivity extends InjectableActivity {
   private static final String TAG = MiscUtil.getTag(ImageDisplayActivity.class);
   private static final int ERROR_MAGIC_NUMBER = -1;
   private GalleryImage selectedImage;
@@ -58,7 +58,7 @@ public class ImageDisplayActivity extends Activity {
   @Override
   protected void onCreate(Bundle icicle) {
     super.onCreate(icicle);
-    ((StardroidApplication) getApplication()).getApplicationComponent().inject(this);
+    getApplicationComponent().inject(this);
     setContentView(R.layout.imagedisplay);
     activityLightLevelManager = new ActivityLightLevelManager(
         new ActivityLightLevelChanger(this, null),
