@@ -20,7 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Compass -"
+            android:text="@string/compass_calibration_activity_heading_compass"
             />
 
         <TextView
@@ -44,7 +44,7 @@
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Do not show this again"
+        android:text="@string/compass_calibration_activity_do_not_show_this_again"
         android:id="@+id/compass_calib_activity_donotshow"/>
 
 </LinearLayout>

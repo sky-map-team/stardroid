@@ -465,4 +465,6 @@
     <string name="wifi">" (wifi)"</string>
     <string name="cell_network">" (cell)"</string>
     <string name="menu_calibrate">Calibrate</string>
+    <string name="compass_calibration_activity_heading_compass">Compass -</string>
+    <string name="compass_calibration_activity_do_not_show_this_again">Do not show this again</string>
 </resources>
