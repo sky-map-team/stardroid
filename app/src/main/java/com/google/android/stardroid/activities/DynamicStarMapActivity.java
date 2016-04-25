@@ -74,6 +74,7 @@ import com.google.android.stardroid.units.Vector3;
 import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.MathUtil;
 import com.google.android.stardroid.util.MiscUtil;
+import com.google.android.stardroid.util.SensorAccuracyMonitor;
 import com.google.android.stardroid.views.ButtonLayerView;
 
 import java.text.SimpleDateFormat;
@@ -175,6 +176,7 @@ public class DynamicStarMapActivity extends InjectableActivity
   @Inject NoSearchResultsDialogFragment noSearchResultsDialogFragment;
   @Inject MultipleSearchResultsDialogFragment multipleSearchResultsDialogFragment;
   @Inject NoSensorsDialogFragment noSensorsDialogFragment;
+  @Inject SensorAccuracyMonitor sensorAccuracyMonitor;
   // A list of runnables to post on the handler when we resume.
   private List<Runnable> onResumeRunnables = new ArrayList<>();
 
@@ -461,6 +463,9 @@ public class DynamicStarMapActivity extends InjectableActivity
     Log.i(TAG, "Starting controller");
     controller.start();
     activityLightLevelManager.onResume();
+    if (controller.isAutoMode()) {
+      sensorAccuracyMonitor.start();
+    }
     for (Runnable runnable : onResumeRunnables) {
       handler.post(runnable);
     }
@@ -521,6 +526,7 @@ public class DynamicStarMapActivity extends InjectableActivity
   public void onPause() {
     Log.d(TAG, "DynamicStarMap onPause");
     super.onPause();
+    sensorAccuracyMonitor.stop();
     if (timeTravelNoise != null) {
       timeTravelNoise.release();
       timeTravelNoise = null;
@@ -638,6 +644,11 @@ public class DynamicStarMapActivity extends InjectableActivity
 
   private void setAutoMode(boolean auto) {
     controller.setAutoMode(auto);
+    if (auto) {
+      sensorAccuracyMonitor.start();
+    } else {
+      sensorAccuracyMonitor.stop();
+    }
   }
 
   private void wireUpScreenControls() {

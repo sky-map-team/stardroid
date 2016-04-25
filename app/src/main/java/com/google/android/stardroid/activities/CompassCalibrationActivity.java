@@ -1,13 +1,14 @@
 package com.google.android.stardroid.activities;
 
+import android.content.SharedPreferences;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.webkit.WebView;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import com.google.android.stardroid.R;
@@ -18,12 +19,14 @@ import javax.inject.Inject;
 
 public class CompassCalibrationActivity extends InjectableActivity implements SensorEventListener {
   public static final String HIDE_CHECKBOX = "hide checkbox";
+  public static final String DONT_SHOW_CALIBRATION_DIALOG = "no calibration dialog";
   private static final String TAG = MiscUtil.getTag(CompassCalibrationActivity.class);
-  private static final int SAMPLING_PERIOD_MS = 1000;
   private Sensor magneticSensor;
+  private CheckBox checkBoxView;
 
   @Inject SensorManager sensorManager;
   @Inject SensorAccuracyDecoder accuracyDecoder;
+  @Inject SharedPreferences sharedPreferences;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -35,25 +38,36 @@ public class CompassCalibrationActivity extends InjectableActivity implements Se
     setContentView(R.layout.activity_compass_calibration);
     WebView web = (WebView) findViewById(R.id.compass_calib_activity_webview);
     web.loadUrl("file:///android_asset/html/how_to_calibrate.html");
-    View checkBoxView = findViewById(R.id.compass_calib_activity_donotshow);
+
+    checkBoxView = (CheckBox) findViewById(R.id.compass_calib_activity_donotshow);
     boolean hideCheckbox = getIntent().getBooleanExtra(HIDE_CHECKBOX, false);
     if (hideCheckbox) {
-      Log.d(TAG, "Hiding checkbox");
       checkBoxView.setVisibility(View.GONE);
+      View reasonText = findViewById(R.id.compass_calib_activity_explain_why);
+      reasonText.setVisibility(View.GONE);
     }
     magneticSensor = sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
+    if (magneticSensor == null) {
+      ((TextView) findViewById(R.id.compass_calib_activity_compass_accuracy)).setText(
+          getString(R.string.sensor_absent));
+    }
   }
 
   @Override
   public void onResume() {
     super.onResume();
-    sensorManager.registerListener(this, magneticSensor, SAMPLING_PERIOD_MS);
+    if (magneticSensor != null) {
+      sensorManager.registerListener(this, magneticSensor, SensorManager.SENSOR_DELAY_UI);
+    }
   }
 
   @Override
   public void onPause() {
     super.onPause();
     sensorManager.unregisterListener(this);
+    if (checkBoxView.isChecked()) {
+      sharedPreferences.edit().putBoolean(DONT_SHOW_CALIBRATION_DIALOG, true).commit();
+    }
   }
 
   private boolean accuracyReceived = false;
