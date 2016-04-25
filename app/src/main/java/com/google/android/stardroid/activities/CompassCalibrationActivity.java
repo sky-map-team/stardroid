@@ -85,4 +85,8 @@ public class CompassCalibrationActivity extends InjectableActivity implements Se
     String accuracyText = accuracyDecoder.getTextForAccuracy(accuracy);
     ((TextView) findViewById(R.id.compass_calib_activity_compass_accuracy)).setText(accuracyText);
   }
+
+  public void onOkClicked(View unused) {
+    finish();
+  }
 }

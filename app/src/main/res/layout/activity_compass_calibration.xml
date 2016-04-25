@@ -58,5 +58,14 @@
             android:text="@string/compass_calibration_activity_do_not_show_this_again"
             android:id="@+id/compass_calib_activity_donotshow"/>
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@android:string/ok"
+            android:id="@+id/button"
+            android:layout_gravity="center_horizontal"
+            android:nestedScrollingEnabled="false"
+            android:onClick="onOkClicked"/>
+
     </LinearLayout>
 </android.support.v4.widget.NestedScrollView>
