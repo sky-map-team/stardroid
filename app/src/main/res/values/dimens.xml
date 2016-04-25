@@ -8,4 +8,7 @@
     <dimen name="menu_text_size">10pt</dimen>
     <color name="menu_gray">#ff888888</color>
     <dimen name="text_margin">16dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
 </resources>

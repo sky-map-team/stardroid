@@ -431,7 +431,7 @@
     <string name="location_rationale_text">The stars you can see depend on where on planet earth you are.  Without your location we cannot show you an accurate map.  If you do not want your phone to give us your location you can provide it manually in the settings.  You need only provide the nearest city.</string>
     <string name="play_services_error">Warning: Google Play Services error - Automatic location might not work</string>
     <string name="sensor_absent">Absent</string>
-    <string name="sensor_accuracy_unknown">Unknown</string>
+    <string name="sensor_accuracy_unknown">Accuracy: Unknown</string>
     <string name="sensor_accuracy_unreliable">Accuracy: Unreliable</string>
     <string name="sensor_accuracy_low">Accuracy: Low</string>
     <string name="sensor_accuracy_medium">Accuracy: Medium</string>
@@ -464,4 +464,5 @@
     <string name="disconnected">Disconnected</string>
     <string name="wifi">" (wifi)"</string>
     <string name="cell_network">" (cell)"</string>
+    <string name="menu_calibrate">Calibrate</string>
 </resources>

@@ -385,6 +385,14 @@ public class DynamicStarMapActivity extends InjectableActivity
             Analytics.MENU_ITEM, Analytics.TOS_OPENED_LABEL, 1);
         eulaDialogFragmentNoButtons.show(fragmentManager, "Eula Dialog No Buttons");
         break;
+      case R.id.menu_item_calibrate:
+        Log.d(TAG, "Loading Calibration");
+        analytics.trackEvent(Analytics.USER_ACTION_CATEGORY,
+            Analytics.MENU_ITEM, Analytics.CALIBRATION_OPENED_LABEL, 1);
+        Intent intent = new Intent(this, CompassCalibrationActivity.class);
+        intent.putExtra(CompassCalibrationActivity.HIDE_CHECKBOX, true);
+        startActivity(intent);
+        break;
       case R.id.menu_item_diagnostics:
         Log.d(TAG, "Loading Diagnostics");
        analytics.trackEvent(Analytics.USER_ACTION_CATEGORY,

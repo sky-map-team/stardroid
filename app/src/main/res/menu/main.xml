@@ -46,20 +46,25 @@
           android:icon="@drawable/time_travel_icon"
           android:showAsAction="ifRoom"/>
 
+    <item android:id="@+id/menu_item_calibrate"
+          android:orderInCategory="7"
+          android:title="@string/menu_calibrate"
+          android:showAsAction="never"/>
+
     <item android:id="@+id/menu_item_diagnostics"
-          android:orderInCategory="6"
+          android:orderInCategory="8"
           android:title="@string/menu_diagnostics"
           android:showAsAction="never"/>
 
     <item android:id="@+id/menu_item_help"
-          android:orderInCategory="7"
+          android:orderInCategory="9"
           android:title="@string/menu_help"
           android:showAsAction="never"
           android:icon="@android:drawable/ic_menu_info_details"/>
 
     <!-- TODO(serafini): We need an icon for this? -->
     <item android:id="@+id/menu_item_tos"
-          android:orderInCategory="8"
+          android:orderInCategory="10"
           android:showAsAction="never"
           android:title="@string/menu_tos"/>
 </menu>

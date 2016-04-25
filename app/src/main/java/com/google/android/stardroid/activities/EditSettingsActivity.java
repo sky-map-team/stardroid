@@ -52,8 +52,7 @@ public class EditSettingsActivity extends PreferenceActivity {
   private static final String TAG = MiscUtil.getTag(EditSettingsActivity.class);
   private Geocoder geocoder;
   private ActivityLightLevelManager activityLightLevelManager;
-  @Inject
-  Analytics analytics;
+  @Inject Analytics analytics;
 
   @Override
   public void onCreate(Bundle savedInstanceState) {

@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.StardroidApplication;
+import com.google.android.stardroid.activities.util.SensorAccuracyDecoder;
 import com.google.android.stardroid.control.AstronomerModel;
 import com.google.android.stardroid.control.LocationController;
 import com.google.android.stardroid.units.GeocentricCoordinates;
@@ -44,6 +45,7 @@ public class DiagnosticActivity extends Activity implements SensorEventListener 
   @Inject LocationController locationController;
   @Inject AstronomerModel model;
   @Inject Handler handler;
+  @Inject SensorAccuracyDecoder sensorAccuracyDecoder;
 
   private Sensor accelSensor;
   private Sensor magSensor;
@@ -191,25 +193,7 @@ public class DiagnosticActivity extends Activity implements SensorEventListener 
       Log.e(TAG, "Receiving accuracy change for unknown sensor " + sensor);
       return;
     }
-    String accuracyTxt = getString(R.string.sensor_accuracy_unknown);
-    switch (accuracy) {
-      case SensorManager.SENSOR_STATUS_UNRELIABLE:
-        accuracyTxt = getString(R.string.sensor_accuracy_unreliable);
-        break;
-      case SensorManager.SENSOR_STATUS_ACCURACY_LOW:
-        accuracyTxt = getString(R.string.sensor_accuracy_low);
-        break;
-      case SensorManager.SENSOR_STATUS_ACCURACY_MEDIUM:
-        accuracyTxt = getString(R.string.sensor_accuracy_medium);
-        break;
-      case SensorManager.SENSOR_STATUS_ACCURACY_HIGH:
-        accuracyTxt = getString(R.string.sensor_accuracy_high);
-        break;
-      case SensorManager.SENSOR_STATUS_NO_CONTACT:
-        accuracyTxt = getString(R.string.sensor_accuracy_nocontact);
-        break;
-    }
-    setText(accuracyViewId, accuracyTxt);
+    setText(accuracyViewId, sensorAccuracyDecoder.getTextForAccuracy(accuracy));
   }
 
   private Set<Sensor> knownSensorAccuracies = new HashSet<>();

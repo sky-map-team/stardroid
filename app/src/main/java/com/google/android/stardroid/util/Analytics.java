@@ -93,6 +93,7 @@ public class Analytics {
   public static final String SEARCH_REQUESTED_LABEL = "Search Requested";
   public static final String SETTINGS_OPENED_LABEL = "Settings Opened";
   public static final String HELP_OPENED_LABEL = "Help Opened";
+  public static final String CALIBRATION_OPENED_LABEL = "Calibration Opened";
   public static final String TIME_TRAVEL_OPENED_LABEL = "Time Travel Opened";
   public static final String GALLERY_OPENED_LABEL = "Gallery Opened";
   public static final String TOS_OPENED_LABEL = "TOS Opened";
