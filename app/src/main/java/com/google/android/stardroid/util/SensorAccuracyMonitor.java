@@ -37,6 +37,7 @@ public class SensorAccuracyMonitor implements SensorEventListener {
   }
 
   private boolean started = false;
+  private boolean hasReading = false;
 
   /**
    * Starts monitoring.
@@ -57,17 +58,21 @@ public class SensorAccuracyMonitor implements SensorEventListener {
    */
   public void stop() {
     started = false;
+    hasReading = false;
     sensorManager.unregisterListener(this);
   }
 
 
   @Override
   public void onSensorChanged(SensorEvent event) {
-    // Ignore for now
+    if (!hasReading) {
+      onAccuracyChanged(event.sensor, event.accuracy);
+    }
   }
 
   @Override
   public void onAccuracyChanged(Sensor sensor, int accuracy) {
+    hasReading = true;
     if (accuracy == SensorManager.SENSOR_STATUS_ACCURACY_HIGH
         || accuracy == SensorManager.SENSOR_STATUS_ACCURACY_MEDIUM) {
       return;  // OK
