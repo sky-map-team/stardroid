@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Your compass needs to be calibrated"
+            android:text="@string/compass_calibration_activity_warning"
             android:id="@+id/compass_calib_activity_explain_why"/>
 
         <LinearLayout
