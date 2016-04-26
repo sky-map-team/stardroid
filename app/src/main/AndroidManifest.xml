@@ -97,6 +97,9 @@
             android:authorities="com.google.android.stardroid.searchterms"
             android:exported="false"
             android:syncable="false"/>
+
+        <activity android:name=".activities.CompassCalibrationActivity">
+        </activity>
     </application>
 
 </manifest>

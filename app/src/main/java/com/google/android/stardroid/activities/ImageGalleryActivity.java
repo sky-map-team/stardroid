@@ -14,7 +14,6 @@
 
 package com.google.android.stardroid.activities;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -29,7 +28,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.stardroid.R;
-import com.google.android.stardroid.StardroidApplication;
 import com.google.android.stardroid.activities.util.ActivityLightLevelChanger;
 import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
 import com.google.android.stardroid.gallery.GalleryFactory;
@@ -47,7 +45,7 @@ import javax.inject.Inject;
  *
  * @author John Taylor
  */
-public class ImageGalleryActivity extends Activity {
+public class ImageGalleryActivity extends InjectableActivity {
   /** The index of the image id Intent extra.*/
   public static final String IMAGE_ID = "image_id";
 
@@ -94,7 +92,7 @@ public class ImageGalleryActivity extends Activity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    ((StardroidApplication) getApplication()).getApplicationComponent().inject(this);
+    getApplicationComponent().inject(this);
     setContentView(R.layout.imagegallery);
     activityLightLevelManager = new ActivityLightLevelManager(
         new ActivityLightLevelChanger(this, null),

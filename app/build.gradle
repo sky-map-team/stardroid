@@ -9,8 +9,8 @@ android {
         applicationId "com.google.android.stardroid"
         minSdkVersion 15
         targetSdkVersion 23
-        versionCode 1419
-        versionName "1.8.4 - alpha4"
+        versionCode 1425
+        versionName "1.8.4 - alpha9"
         buildConfigField 'String', 'GOOGLE_ANALYTICS_CODE', '""'
     }
     signingConfigs {
