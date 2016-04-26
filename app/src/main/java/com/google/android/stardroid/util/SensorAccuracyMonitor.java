@@ -9,6 +9,7 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 
 import com.google.android.stardroid.activities.CompassCalibrationActivity;
+import com.google.android.stardroid.base.TimeConstants;
 
 import javax.inject.Inject;
 
@@ -70,8 +71,17 @@ public class SensorAccuracyMonitor implements SensorEventListener {
     }
   }
 
+  private long lastWarnedMillis = Long.MIN_VALUE;
+  private static final long MIN_INTERVAL_BETWEEN_WARNINGS =
+      10 * TimeConstants.MILLISECONDS_PER_SECOND;
+
   @Override
   public void onAccuracyChanged(Sensor sensor, int accuracy) {
+    long nowMillis = System.currentTimeMillis();
+    if ((nowMillis - lastWarnedMillis) < MIN_INTERVAL_BETWEEN_WARNINGS) {
+      return;
+    }
+    lastWarnedMillis = nowMillis;
     hasReading = true;
     if (accuracy == SensorManager.SENSOR_STATUS_ACCURACY_HIGH
         || accuracy == SensorManager.SENSOR_STATUS_ACCURACY_MEDIUM) {
