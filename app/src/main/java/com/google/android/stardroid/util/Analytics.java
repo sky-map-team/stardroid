@@ -68,6 +68,7 @@ public class Analytics {
 
   // Page Views
   public static final String APPLICATION_CREATE = "/ApplicationCreate";
+  public static final String COMPASS_CALIBRATION_ACTIVITY = "/MainPage/Calibration";
   public static final String DIAGNOSTICS_ACTIVITY = "/MainPage/Diagnostics";
   public static final String DYNAMIC_STARMAP_ACTIVITY = "/MainPage";
   public static final String EDIT_SETTINGS_ACTIVITY = "/MainPage/EditSettings";
