@@ -3,12 +3,7 @@
     <string name="whats_new_text" translation_description="Description of new features in this version in html">
 <![CDATA[
     <h1>New in version %s</h1>
-    \t • The Mercury transit and two new solar eclipses in time travel mode <br/>
-    \t • Made the planet motion in time travel smoother <br/>
-    \t • Two new images in the gallery <br/>
-    \t • Compass calibration assistance <br/>
-    \t • Internal efficiency improvements to search (credit: tricao) <br/>
-    \t • A new basic diagnostics page for debugging.
+    \t • Added option to reverse the magnetic sensor for the small number of phones (e.g. some OnePlusOnes) that have incorrectly implemented the sensor API <br/>
 ]]>
     </string>
 </resources>

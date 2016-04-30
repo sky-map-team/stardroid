@@ -29,6 +29,7 @@ import com.google.android.stardroid.util.smoothers.ExponentiallyWeightedSmoother
 import com.google.android.stardroid.util.smoothers.PlainSmootherModelAdaptor;
 
 import javax.inject.Inject;
+import javax.inject.Provider;
 
 /**
  * Sets the direction of view from the orientation sensors.
@@ -81,22 +82,24 @@ public class SensorOrientationController extends AbstractController
   private SensorManager manager;
   private SensorListener accelerometerSmoother;
   private SensorListener compassSmoother;
-  private PlainSmootherModelAdaptor modelAdaptor;
+  private Provider<PlainSmootherModelAdaptor> modelAdaptorProvider;
   private SensorAccuracyReporter accuracyReporter;
 
   private SharedPreferences sharedPreferences;
 
   @Inject
-  SensorOrientationController(Context context, SensorAccuracyReporter accuracyReporter) {
+  SensorOrientationController(Context context, SensorAccuracyReporter accuracyReporter,
+                              Provider<PlainSmootherModelAdaptor> modelAdaptorProvider) {
     manager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
     sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
     sharedPreferences.registerOnSharedPreferenceChangeListener(this);
     this.accuracyReporter = accuracyReporter;
+    this.modelAdaptorProvider = modelAdaptorProvider;
   }
 
   @Override
   public void start() {
-    modelAdaptor = new PlainSmootherModelAdaptor(model);
+    PlainSmootherModelAdaptor modelAdaptor = modelAdaptorProvider.get();
 
     Log.d(TAG, "Exponentially weighted smoothers used");
     String dampingPreference = sharedPreferences.getString(SENSOR_DAMPING_PREF_KEY,
