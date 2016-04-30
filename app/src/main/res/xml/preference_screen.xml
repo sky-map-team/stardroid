@@ -93,7 +93,7 @@
             android:entries="@array/sensor_damping"
             android:defaultValue="EXTRA HIGH" />
         <CheckBoxPreference
-            android:defaultValue="true"
+            android:defaultValue="false"
             android:title="@string/sensor_reverse_preference_title"
             android:summary="@string/sensor_reverse_preference_summary"
             android:key="reverse_magnetic_z"/>

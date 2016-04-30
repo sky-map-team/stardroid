@@ -42,7 +42,7 @@ public class PlainSmootherModelAdaptor implements SensorListener {
   @Inject
   PlainSmootherModelAdaptor(AstronomerModel model, SharedPreferences sharedPreferences) {
     this.model = model;
-    reverseMagneticZaxis = !sharedPreferences.getBoolean(REVERSE_MAGNETIC_Z_PREFKEY, false);
+    reverseMagneticZaxis = sharedPreferences.getBoolean(REVERSE_MAGNETIC_Z_PREFKEY, false);
   }
 
   @Override
@@ -56,8 +56,10 @@ public class PlainSmootherModelAdaptor implements SensorListener {
       magneticValues.y = values[1];
       // The z direction for the mag magneticField sensor is in the opposite
       // direction to that for accelerometer, except on some phones that are doing it wrong.
-      // TODO(johntaylor): this might not be the best place to reverse this.
-      magneticValues.z = reverseMagneticZaxis ? -values[2] : values[2];
+      // Yes that's right, the right thing to do is to invert it.  So if we reverse that,
+      // we don't invert it.  Got it?
+      // TODO(johntaylor): this might not be the best place to do this.
+      magneticValues.z = reverseMagneticZaxis ? values[2] : -values[2];
     } else {
       Log.e(TAG, "Pump is receiving values that aren't accel or magnetic");
     }
