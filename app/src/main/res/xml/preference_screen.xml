@@ -66,7 +66,7 @@
           android:title="@string/location_lat_pref"
           android:dependency="no_auto_locate"
           android:summary="@string/degrees"
-          android:inputType="number"
+          android:inputType="number|numberSigned|numberDecimal"
           android:defaultValue="0"/>
         <EditTextPreference
           android:key="longitude"
@@ -74,7 +74,7 @@
           android:title="@string/location_long_pref"
           android:dependency="no_auto_locate"
           android:summary="@string/degrees"
-          android:inputType="number"
+          android:inputType="number|numberSigned|numberDecimal"
           android:defaultValue="0"/>
         <CheckBoxPreference
           android:defaultValue="true"
