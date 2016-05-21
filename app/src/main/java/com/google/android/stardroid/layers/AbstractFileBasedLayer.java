@@ -46,10 +46,10 @@ import java.util.concurrent.Executors;
 
 public abstract class AbstractFileBasedLayer extends AbstractSourceLayer {
   private static final String TAG = MiscUtil.getTag(AbstractFileBasedLayer.class);
-  private static final Executor BACKGROUND_EXECUTOR = Executors.newFixedThreadPool(1);
+  protected static final Executor BACKGROUND_EXECUTOR = Executors.newFixedThreadPool(1);
 
   private final AssetManager assetManager;
-  private final String fileName;
+  protected final String fileName;
   private final ArrayList<AstronomicalSource> fileSources = new ArrayList<AstronomicalSource>();
 
   public AbstractFileBasedLayer(AssetManager assetManager, Resources resources, String fileName) {
@@ -58,8 +58,13 @@ public abstract class AbstractFileBasedLayer extends AbstractSourceLayer {
     this.fileName = fileName;
   }
 
+  public void preInit() {
+
+  }
+
   @Override
   public void initialize() {
+    preInit();
     BACKGROUND_EXECUTOR.execute(new Runnable() {
       public void run() {
         readSourceFile(fileName);
@@ -73,7 +78,7 @@ public abstract class AbstractFileBasedLayer extends AbstractSourceLayer {
     sources.addAll(fileSources);
   }
 
-  private void readSourceFile(String sourceFilename) {
+  protected void readSourceFile(String sourceFilename) {
     StopWatch watch = new StopWatchImpl().start();
 
     Log.d(TAG, "Loading Proto File: " + sourceFilename + "...");

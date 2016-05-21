@@ -47,4 +47,17 @@ public class NewConstellationsLayer extends AbstractFileBasedLayer {
   public String getPreferenceId() {
     return "source_provider.1";
   }
+
+  @Override
+  public void preInit() {
+    BACKGROUND_EXECUTOR.execute(new Runnable() {
+      public void run() {
+        try {
+          Thread.sleep(15000);
+        } catch (InterruptedException e) {
+          //ignore
+        }
+      }
+    });
+  }
 }
