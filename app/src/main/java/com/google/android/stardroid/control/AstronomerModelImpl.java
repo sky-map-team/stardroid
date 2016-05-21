@@ -14,6 +14,8 @@
 
 package com.google.android.stardroid.control;
 
+import android.util.Log;
+
 import com.google.android.stardroid.ApplicationConstants;
 import com.google.android.stardroid.units.GeocentricCoordinates;
 import com.google.android.stardroid.units.LatLong;
@@ -159,8 +161,16 @@ public class AstronomerModelImpl implements AstronomerModel {
     return acceleration;
   }
 
+  private static final float TOL = 0.01f;
+
   @Override
   public void setPhoneSensorValues(Vector3 acceleration, Vector3 magneticField) {
+    if (magneticField.length2() < TOL || acceleration.length2() < TOL) {
+      Log.w(TAG, "Invalid sensor values - ignoring");
+      Log.w(TAG, "Mag: " + magneticField);
+      Log.w(TAG, "Accel: " + acceleration);
+      return;
+    }
     this.acceleration.assign(acceleration);
     this.magneticField.assign(magneticField);
   }
