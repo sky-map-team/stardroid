@@ -22,6 +22,7 @@ import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
 import com.google.android.stardroid.BuildConfig;
+import com.google.android.stardroid.R;
 import com.google.android.stardroid.StardroidApplication;
 
 import javax.inject.Inject;
@@ -88,7 +89,6 @@ public class Analytics {
   public static final String PREFERENCE_BUTTON_TOGGLE = "Preference button toggled";
   public static final String USER_ACTION_CATEGORY = "User Action";
   public static final String TOGGLED_MANUAL_MODE_LABEL = "Toggled Manual Mode";
-  public static final String TOGGLED_TIME_TRAVEL_MODE_LABEL = "Toggled Time Travel Mode";
   public static final String MENU_ITEM = "Pressed Menu Item";
   public static final String TOGGLED_NIGHT_MODE_LABEL = "Toggled Night Mode";
   public static final String SEARCH_REQUESTED_LABEL = "Search Requested";
@@ -110,16 +110,15 @@ public class Analytics {
   public static final String SENSOR_NAME = "Sensor Name";
   public static final String HIGH_SENSOR_ACCURACY_ACHIEVED = "High Accuracy Achieved";
   public static final String SENSOR_ACCURACY_CHANGED = "Sensor Accuracy Changed";
-  // TODO(johntaylor): use CustomVariable.VISITOR_SCOPE if it gets made public.
-  private static final int VISITOR_SCOPE = 1;
 
   @Inject
   Analytics(StardroidApplication application) {
     googleAnalytics = GoogleAnalytics.getInstance(application);
-    googleAnalytics.enableAutoActivityReports(application);
     // Can also use R.xml.global_tracker if we're prepared to reveal our analytics Id.
     tracker = googleAnalytics.newTracker(BuildConfig.GOOGLE_ANALYTICS_CODE);
     tracker.setAppVersion(application.getVersionName());
+    tracker.setAppId("com.google.android.stardroid");
+    tracker.setAppName(application.getString(R.string.app_name));
   }
 
   public void setEnabled(boolean enabled) {
@@ -149,7 +148,7 @@ public class Analytics {
   }
 
   /**
-   * Sets custom variables for slicing..
+   * Sets custom variables for slicing.
    */
   public void setCustomVar(Slice slice, String value) {
     Log.d(TAG, String.format("Setting custom variable %s to %s", slice.toString(), value));
