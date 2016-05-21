@@ -2,10 +2,6 @@
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:key="stardroid.preferences">
   <PreferenceCategory android:title="@string/provider_prefs">
-    <!-- TODO(johntaylor): restore this once it's toggling properly CheckBoxPreference
-      android:key="show_sky_gradient"
-      android:defaultValue="true"
-      android:title="@string/show_sky_gradient" /-->
     <CheckBoxPreference
       android:key="source_provider.0"
       android:defaultValue="true"
@@ -96,6 +92,11 @@
             android:entryValues="@array/sensor_damping_values"
             android:entries="@array/sensor_damping"
             android:defaultValue="EXTRA HIGH" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:title="@string/sensor_reverse_preference_title"
+            android:summary="@string/sensor_reverse_preference_summary"
+            android:key="reverse_magnetic_z"/>
       </PreferenceCategory>
     </PreferenceScreen>
     <CheckBoxPreference

@@ -468,4 +468,6 @@
     <string name="compass_calibration_activity_heading_compass">Compass -</string>
     <string name="compass_calibration_activity_do_not_show_this_again">Do not show this again</string>
     <string name="compass_calibration_activity_warning">Your compass needs to be calibrated</string>
+    <string name="sensor_reverse_preference_title">Reverse Magnetic Z</string>
+    <string name="sensor_reverse_preference_summary">Fix for phones with incorrectly implemented sensors - requires restart</string>
 </resources>

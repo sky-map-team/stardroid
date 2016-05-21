@@ -14,14 +14,17 @@
 
 package com.google.android.stardroid.util.smoothers;
 
+import android.content.SharedPreferences;
+import android.hardware.SensorListener;
+import android.hardware.SensorManager;
+import android.util.Log;
+
 import com.google.android.stardroid.ApplicationConstants;
 import com.google.android.stardroid.control.AstronomerModel;
 import com.google.android.stardroid.units.Vector3;
 import com.google.android.stardroid.util.MiscUtil;
 
-import android.hardware.SensorListener;
-import android.hardware.SensorManager;
-import android.util.Log;
+import javax.inject.Inject;
 
 /**
  * Adapts sensor output for use with the astronomer model.
@@ -30,12 +33,16 @@ import android.util.Log;
  */
 public class PlainSmootherModelAdaptor implements SensorListener {
   private static final String TAG = MiscUtil.getTag(PlainSmootherModelAdaptor.class);
+  private static final String REVERSE_MAGNETIC_Z_PREFKEY = "reverse_magnetic_z";
   private Vector3 magneticValues = ApplicationConstants.INITIAL_SOUTH.copy();
   private Vector3 acceleration = ApplicationConstants.INITIAL_DOWN.copy();
   private AstronomerModel model;
+  private boolean reverseMagneticZaxis;
 
-  public PlainSmootherModelAdaptor(AstronomerModel model) {
+  @Inject
+  PlainSmootherModelAdaptor(AstronomerModel model, SharedPreferences sharedPreferences) {
     this.model = model;
+    reverseMagneticZaxis = sharedPreferences.getBoolean(REVERSE_MAGNETIC_Z_PREFKEY, false);
   }
 
   @Override
@@ -48,9 +55,11 @@ public class PlainSmootherModelAdaptor implements SensorListener {
       magneticValues.x = values[0];
       magneticValues.y = values[1];
       // The z direction for the mag magneticField sensor is in the opposite
-      // direction to that for accelerometer.
-      // TODO(johntaylor): this might not be the best place to reverse this.
-      magneticValues.z = -values[2];
+      // direction to that for accelerometer, except on some phones that are doing it wrong.
+      // Yes that's right, the right thing to do is to invert it.  So if we reverse that,
+      // we don't invert it.  Got it?
+      // TODO(johntaylor): this might not be the best place to do this.
+      magneticValues.z = reverseMagneticZaxis ? values[2] : -values[2];
     } else {
       Log.e(TAG, "Pump is receiving values that aren't accel or magnetic");
     }
