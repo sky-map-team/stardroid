@@ -5,7 +5,7 @@
     <h1>New in version %s</h1>
     \t • Added option to reverse the magnetic sensor for the small number of phones (e.g. some OnePlusOnes) that have incorrectly implemented the sensor API <br/>
     \t • German translation fix<br/>
-    \t • Fixed manual location bugfix (couldn't enter negative numbers)<br/>
+    \t • Fixed manual location bugfix (couldn\'t enter negative numbers)<br/>
 ]]>
     </string>
 </resources>
