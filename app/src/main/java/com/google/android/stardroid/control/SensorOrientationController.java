@@ -89,8 +89,9 @@ public class SensorOrientationController extends AbstractController
 
   @Inject
   SensorOrientationController(Context context, SensorAccuracyReporter accuracyReporter,
-                              Provider<PlainSmootherModelAdaptor> modelAdaptorProvider) {
-    manager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
+                              Provider<PlainSmootherModelAdaptor> modelAdaptorProvider,
+                              SensorManager manager) {
+    this.manager = manager;
     sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
     sharedPreferences.registerOnSharedPreferenceChangeListener(this);
     this.accuracyReporter = accuracyReporter;

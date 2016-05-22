@@ -97,6 +97,8 @@ public class AstronomerModelImpl implements AstronomerModel {
   /** The sensor magnetic field in the phone's coordinate system. */
   private Vector3 magneticField = ApplicationConstants.INITIAL_SOUTH.copy();
 
+  private float[] rotationVector = new float[]{1, 0, 0, 0};
+
   /** North along the ground in celestial coordinates. */
   private Vector3 trueNorthCelestial = new Vector3(1, 0, 0);
 
@@ -165,6 +167,18 @@ public class AstronomerModelImpl implements AstronomerModel {
 
   @Override
   public void setPhoneSensorValues(Vector3 acceleration, Vector3 magneticField) {
+    if (magneticField.length2() < TOL || acceleration.length2() < TOL) {
+      Log.w(TAG, "Invalid sensor values - ignoring");
+      Log.w(TAG, "Mag: " + magneticField);
+      Log.w(TAG, "Accel: " + acceleration);
+      return;
+    }
+    this.acceleration.assign(acceleration);
+    this.magneticField.assign(magneticField);
+  }
+
+  @Override
+  public void setPhoneSensorValues(float[] rotationVector) {
     if (magneticField.length2() < TOL || acceleration.length2() < TOL) {
       Log.w(TAG, "Invalid sensor values - ignoring");
       Log.w(TAG, "Mag: " + magneticField);
@@ -279,9 +293,9 @@ public class AstronomerModelImpl implements AstronomerModel {
 
   /**
    * Calculates local North and Up vectors in terms of the phone's coordinate
-   * frame.
+   * frame from the magnetic field and accelerometer sensors.
    */
-  private void calculateLocalNorthAndUpInPhoneCoords() {
+  private void calculateLocalNorthAndUpInPhoneCoordsFromAccelAndMagFieldSensors() {
     // TODO(johntaylor): we can reduce the number of vector copies done in here.
     Vector3 down = acceleration.copy();
     down.normalize();
@@ -292,6 +306,31 @@ public class AstronomerModelImpl implements AstronomerModel {
     // This is the vector to magnetic North *along the ground*.
     Vector3 magneticNorthPhone = addVectors(magneticFieldToNorth,
                                  scaleVector(down, -scalarProduct(magneticFieldToNorth, down)));
+    magneticNorthPhone.normalize();
+    Vector3 upPhone = scaleVector(down, -1);
+    Vector3 magneticEastPhone = vectorProduct(magneticNorthPhone, upPhone);
+
+    // The matrix is orthogonal, so transpose it to find its inverse.
+    // Easiest way to do that is to construct it from row vectors instead
+    // of column vectors.
+    axesPhoneInverseMatrix = new Matrix33(magneticNorthPhone, upPhone, magneticEastPhone, false);
+  }
+
+  /**
+   * Calculates local North and Up vectors in terms of the phone's coordinate
+   * frame from the rotation matrix.  A temporary hack till we rebuild the rendering codel.
+   */
+  private void calculateLocalNorthAndUpInPhoneCoordsFromRotationMatrixSensor() {
+    // TODO(johntaylor): we can reduce the number of vector copies done in here.
+    Vector3 down = acceleration.copy();
+    down.normalize();
+    // Magnetic field goes *from* North to South, so reverse it.
+    Vector3 magneticFieldToNorth = magneticField.copy();
+    magneticFieldToNorth.scale(-1);
+    magneticFieldToNorth.normalize();
+    // This is the vector to magnetic North *along the ground*.
+    Vector3 magneticNorthPhone = addVectors(magneticFieldToNorth,
+        scaleVector(down, -scalarProduct(magneticFieldToNorth, down)));
     magneticNorthPhone.normalize();
     Vector3 upPhone = scaleVector(down, -1);
     Vector3 magneticEastPhone = vectorProduct(magneticNorthPhone, upPhone);
@@ -315,7 +354,7 @@ public class AstronomerModelImpl implements AstronomerModel {
    */
   @Override
   public Pointing getPointing() {
-    calculateLocalNorthAndUpInPhoneCoords();
+    calculateLocalNorthAndUpInPhoneCoordsFromAccelAndMagFieldSensors();
     calculatePointing();
     return pointing;
   }
