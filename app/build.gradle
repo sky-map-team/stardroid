@@ -10,7 +10,7 @@ android {
         minSdkVersion 15
         targetSdkVersion 23
         versionCode 1428
-        versionName "1.8.5 - alpha1"
+        versionName "1.8.5"
         buildConfigField 'String', 'GOOGLE_ANALYTICS_CODE', '""'
     }
     signingConfigs {
