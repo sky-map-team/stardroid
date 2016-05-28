@@ -18,6 +18,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
 import android.hardware.SensorListener;
 import android.hardware.SensorManager;
 import android.preference.PreferenceManager;
@@ -37,7 +39,7 @@ import javax.inject.Provider;
  * @author John Taylor
  */
 public class SensorOrientationController extends AbstractController
-    implements OnSharedPreferenceChangeListener {
+    implements OnSharedPreferenceChangeListener, SensorEventListener {
   // TODO(johntaylor): this class needs to be refactored to use the new
   // sensor API and to behave properly when sensors are not available.
 
@@ -84,6 +86,7 @@ public class SensorOrientationController extends AbstractController
   private SensorListener compassSmoother;
   private Provider<PlainSmootherModelAdaptor> modelAdaptorProvider;
   private SensorAccuracyReporter accuracyReporter;
+  private Sensor rotationSensor;
 
   private SharedPreferences sharedPreferences;
 
@@ -96,6 +99,7 @@ public class SensorOrientationController extends AbstractController
     sharedPreferences.registerOnSharedPreferenceChangeListener(this);
     this.accuracyReporter = accuracyReporter;
     this.modelAdaptorProvider = modelAdaptorProvider;
+    this.rotationSensor = manager.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR);
   }
 
   @Override
@@ -133,12 +137,14 @@ public class SensorOrientationController extends AbstractController
         MAG_DAMPING_SETTINGS[dampingIndex].exponent);
 
     if (manager != null) {
-      manager.registerListener(accelerometerSmoother,
+      // TODO(jontayler): make it an option
+      /*manager.registerListener(accelerometerSmoother,
                                SensorManager.SENSOR_ACCELEROMETER,
                                sensorSpeed);
       manager.registerListener(compassSmoother,
                                SensorManager.SENSOR_MAGNETIC_FIELD,
-                               sensorSpeed);
+                               sensorSpeed);*/
+      manager.registerListener(this, rotationSensor, SensorManager.SENSOR_DELAY_GAME);
       manager.registerListener(
           accuracyReporter, manager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
           SensorManager.SENSOR_DELAY_NORMAL);
@@ -154,6 +160,7 @@ public class SensorOrientationController extends AbstractController
     Log.d(TAG, "Unregistering sensor listeners");
     manager.unregisterListener(accelerometerSmoother);
     manager.unregisterListener(compassSmoother);
+    manager.unregisterListener(this);
   }
 
   @Override
@@ -163,5 +170,18 @@ public class SensorOrientationController extends AbstractController
       stop();
       start();
     }
+  }
+
+  @Override
+  public void onSensorChanged(SensorEvent event) {
+    if (event.sensor != rotationSensor) {
+      return;
+    }
+    model.setPhoneSensorValues(event.values);
+  }
+
+  @Override
+  public void onAccuracyChanged(Sensor sensor, int accuracy) {
+    // Ignore
   }
 }

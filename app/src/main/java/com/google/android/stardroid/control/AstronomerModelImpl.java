@@ -14,6 +14,7 @@
 
 package com.google.android.stardroid.control;
 
+import android.hardware.SensorManager;
 import android.util.Log;
 
 import com.google.android.stardroid.ApplicationConstants;
@@ -25,6 +26,7 @@ import com.google.android.stardroid.units.Vector3;
 import com.google.android.stardroid.util.Geometry;
 import com.google.android.stardroid.util.MiscUtil;
 
+import java.util.Arrays;
 import java.util.Date;
 
 import static com.google.android.stardroid.util.Geometry.addVectors;
@@ -96,6 +98,8 @@ public class AstronomerModelImpl implements AstronomerModel {
 
   /** The sensor magnetic field in the phone's coordinate system. */
   private Vector3 magneticField = ApplicationConstants.INITIAL_SOUTH.copy();
+
+  private boolean useRotationVector = false;
 
   private float[] rotationVector = new float[]{1, 0, 0, 0};
 
@@ -175,18 +179,14 @@ public class AstronomerModelImpl implements AstronomerModel {
     }
     this.acceleration.assign(acceleration);
     this.magneticField.assign(magneticField);
+    useRotationVector = false;
   }
 
   @Override
   public void setPhoneSensorValues(float[] rotationVector) {
-    if (magneticField.length2() < TOL || acceleration.length2() < TOL) {
-      Log.w(TAG, "Invalid sensor values - ignoring");
-      Log.w(TAG, "Mag: " + magneticField);
-      Log.w(TAG, "Accel: " + acceleration);
-      return;
-    }
-    this.acceleration.assign(acceleration);
-    this.magneticField.assign(magneticField);
+    // TODO(jontayler): What checks do we need for this to be valid?
+    this.rotationVector = Arrays.copyOf(rotationVector, rotationVector.length);
+    useRotationVector = true;
   }
 
   @Override
@@ -291,24 +291,39 @@ public class AstronomerModelImpl implements AstronomerModel {
                                                magneticEastCelestial);
   }
 
+  // TODO(jontayler): with the switch to using the rotation vector sensor this is rather
+  // convoluted and doing too much work.  It can be greatly simplified when we rewrite the
+  // rendering module.
   /**
    * Calculates local North and Up vectors in terms of the phone's coordinate
    * frame from the magnetic field and accelerometer sensors.
    */
   private void calculateLocalNorthAndUpInPhoneCoordsFromAccelAndMagFieldSensors() {
-    // TODO(johntaylor): we can reduce the number of vector copies done in here.
-    Vector3 down = acceleration.copy();
-    down.normalize();
-    // Magnetic field goes *from* North to South, so reverse it.
-    Vector3 magneticFieldToNorth = magneticField.copy();
-    magneticFieldToNorth.scale(-1);
-    magneticFieldToNorth.normalize();
-    // This is the vector to magnetic North *along the ground*.
-    Vector3 magneticNorthPhone = addVectors(magneticFieldToNorth,
-                                 scaleVector(down, -scalarProduct(magneticFieldToNorth, down)));
-    magneticNorthPhone.normalize();
-    Vector3 upPhone = scaleVector(down, -1);
-    Vector3 magneticEastPhone = vectorProduct(magneticNorthPhone, upPhone);
+    Vector3 magneticNorthPhone;
+    Vector3 upPhone;
+    Vector3 magneticEastPhone;
+    if (useRotationVector) {
+      float[] rotationMatrix = new float[9];
+      SensorManager.getRotationMatrixFromVector(rotationMatrix, rotationVector);
+      // The up and north vectors are the 2nd and 3rd rows of this matrix.
+      magneticNorthPhone = new Vector3(rotationMatrix[3], rotationMatrix[4], rotationMatrix[5]);
+      upPhone = new Vector3(rotationMatrix[6], rotationMatrix[7], rotationMatrix[8]);
+      magneticEastPhone = new Vector3(rotationMatrix[0], rotationMatrix[1], rotationMatrix[2]);
+    } else {
+      // TODO(johntaylor): we can reduce the number of vector copies done in here.
+      Vector3 down = acceleration.copy();
+      down.normalize();
+      // Magnetic field goes *from* North to South, so reverse it.
+      Vector3 magneticFieldToNorth = magneticField.copy();
+      magneticFieldToNorth.scale(-1);
+      magneticFieldToNorth.normalize();
+      // This is the vector to magnetic North *along the ground*.
+      magneticNorthPhone = addVectors(magneticFieldToNorth,
+          scaleVector(down, -scalarProduct(magneticFieldToNorth, down)));
+      magneticNorthPhone.normalize();
+      upPhone = scaleVector(down, -1);
+      magneticEastPhone = vectorProduct(magneticNorthPhone, upPhone);
+    }
 
     // The matrix is orthogonal, so transpose it to find its inverse.
     // Easiest way to do that is to construct it from row vectors instead
