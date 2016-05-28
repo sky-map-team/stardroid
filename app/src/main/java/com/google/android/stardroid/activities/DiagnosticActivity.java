@@ -217,8 +217,37 @@ public class DiagnosticActivity extends InjectableActivity implements SensorEven
       Log.e(TAG, "Receiving values for unknown sensor " + sensor);
       return;
     }
+    float[] values = event.values;
+    setArrayValuesInUi(valuesViewId, values);
+
+    // Something special for rotation sensor - convert to a matrix.
+    if (sensor == rotationVectorSensor) {
+      float[] matrix = new float[9];
+      SensorManager.getRotationMatrixFromVector(matrix, event.values);
+      for (int row = 0; row < 3; ++row) {
+        switch(row) {
+          case 0:
+            valuesViewId = R.id.diagnose_rotation_matrix_row1_txt;
+            break;
+          case 1:
+            valuesViewId = R.id.diagnose_rotation_matrix_row2_txt;
+            break;
+          case 2:
+          default:
+            valuesViewId = R.id.diagnose_rotation_matrix_row3_txt;
+        }
+        float[] rowValues = new float[3];
+        for (int col = 0; col < 3; ++col) {
+          rowValues[col] = matrix[row * 3 + col];
+        }
+        setArrayValuesInUi(valuesViewId, rowValues);
+      }
+    }
+  }
+
+  private void setArrayValuesInUi(int valuesViewId, float[] values) {
     StringBuilder valuesText = new StringBuilder();
-    for (float value : event.values) {
+    for (float value : values) {
       valuesText.append(String.format("%.2f", value));
       valuesText.append(',');
     }

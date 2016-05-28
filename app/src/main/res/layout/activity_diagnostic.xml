@@ -200,6 +200,56 @@
                     style="@style/TableRow_RowHeading"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="@string/diagnostics_activity_rotation_matrix"/>
+
+                <TextView
+                    style="@style/TableRow_Element"
+                    android:id="@+id/diagnose_rotation_matrix_row1_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-, -, -"/>
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    style="@style/TableRow_RowHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    style="@style/TableRow_Element"
+                    android:id="@+id/diagnose_rotation_matrix_row2_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-, -, -"/>
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    style="@style/TableRow_RowHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    style="@style/TableRow_Element"
+                    android:id="@+id/diagnose_rotation_matrix_row3_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-, -, -"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    style="@style/TableRow_RowHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="@string/diagnostics_activity_light_level"/>
 
                 <TextView
