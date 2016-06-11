@@ -17,9 +17,9 @@
         <item>Быстро</item>
     </string-array>
     <string-array name="sensor_damping">
-        <item>Jumpy</item>
-        <item>Medium</item>
-        <item>Обычно</item>
-        <item>Высокий</item>
+        <item>Скачками</item>
+        <item>Среднее</item>
+        <item>Обычное</item>
+        <item>Высокое</item>
     </string-array>
 </resources>
