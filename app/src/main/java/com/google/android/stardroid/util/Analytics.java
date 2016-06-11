@@ -106,6 +106,7 @@ public class Analytics {
   public static final String SENSOR_CATEGORY = "Sensors";
   public static final String SESSION_LENGTH_BUCKET = "Session length bucket";
   public static final String SENSOR_AVAILABILITY = "Minimal Sensor Availability";
+  public static final String ROT_SENSOR_AVAILABILITY = "Rotation Sensor Availability";
   public static final String SENSOR_TYPE = "Sensor Type - ";
   public static final String SENSOR_NAME = "Sensor Name";
   public static final String HIGH_SENSOR_ACCURACY_ACHIEVED = "High Accuracy Achieved";

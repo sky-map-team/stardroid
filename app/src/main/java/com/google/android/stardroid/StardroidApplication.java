@@ -21,7 +21,6 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.os.Build;
-import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
@@ -56,6 +55,7 @@ public class StardroidApplication extends Application {
   @Inject LayerManager layerManager;
   @Inject static ExecutorService backgroundExecutor;
   @Inject Analytics analytics;
+  @Inject SensorManager sensorManager;
 
   // We need to maintain references to this object to keep it from
   // getting gc'd.
@@ -191,15 +191,14 @@ public class StardroidApplication extends Application {
    * so we can judge when to add/drop support.
    */
   private void performFeatureCheck() {
-    SensorManager sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
     if (sensorManager == null) {
       Log.e(TAG, "No sensor manager");
       analytics.trackEvent(
           Analytics.SENSOR_CATEGORY, Analytics.SENSOR_AVAILABILITY, "No Sensor Manager", 0);
     }
     // Minimum requirements
-    if (sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER) != null) {
-      if (sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD) != null) {
+    if (hasDefaultSensor(Sensor.TYPE_ACCELEROMETER)) {
+      if (hasDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD)) {
         Log.i(TAG, "Minimal sensors available");
         analytics.trackEvent(
             Analytics.SENSOR_CATEGORY, Analytics.SENSOR_AVAILABILITY, "Minimal Sensors: Yes", 1);
@@ -209,7 +208,7 @@ public class StardroidApplication extends Application {
             Analytics.SENSOR_CATEGORY, Analytics.SENSOR_AVAILABILITY, "No Mag Field Sensor", 0);
       }
     } else {
-      if (sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD) != null) {
+      if (hasDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD)) {
         Log.e(TAG, "No accelerometer");
         analytics.trackEvent(
             Analytics.SENSOR_CATEGORY, Analytics.SENSOR_AVAILABILITY, "No Accel Sensor", 0);
@@ -220,13 +219,27 @@ public class StardroidApplication extends Application {
       }
     }
 
+    // Check for a particularly strange combo
+    if (hasDefaultSensor(Sensor.TYPE_ROTATION_VECTOR)) {
+      if (hasDefaultSensor(Sensor.TYPE_ACCELEROMETER) && hasDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD)) {
+        analytics.trackEvent(
+            Analytics.SENSOR_CATEGORY, Analytics.ROT_SENSOR_AVAILABILITY, "OK", 1);
+      } else {
+        analytics.trackEvent(
+            Analytics.SENSOR_CATEGORY, Analytics.ROT_SENSOR_AVAILABILITY, "Missing Mag/Accel", 0);
+      }
+    } else {
+      analytics.trackEvent(
+          Analytics.SENSOR_CATEGORY, Analytics.ROT_SENSOR_AVAILABILITY, "No rotation", 0);
+    }
+
     // Do we at least have defaults for the main ones?
     int[] importantSensorTypes = {Sensor.TYPE_ACCELEROMETER, Sensor.TYPE_GYROSCOPE,
         Sensor.TYPE_MAGNETIC_FIELD, Sensor.TYPE_LIGHT, Sensor.TYPE_ROTATION_VECTOR,
         Sensor.TYPE_ORIENTATION};
 
     for (int sensorType : importantSensorTypes) {
-      if (sensorManager.getDefaultSensor(sensorType) == null) {
+      if (hasDefaultSensor(sensorType)) {
         Log.i(TAG, "No sensor of type " + sensorType);
         analytics.trackEvent(
             Analytics.SENSOR_CATEGORY, Analytics.SENSOR_TYPE + sensorType, "Sensor Absent", 0);
@@ -251,5 +264,9 @@ public class StardroidApplication extends Application {
       analytics.trackEvent(
           Analytics.SENSOR_CATEGORY, Analytics.SENSOR_NAME, sensorType, 1);
     }
+  }
+
+  private boolean hasDefaultSensor(int sensorType) {
+    return sensorManager.getDefaultSensor(sensorType) != null;
   }
 }
