@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.StardroidApplication;
+import com.google.android.stardroid.activities.util.NameSeeker;
 import com.google.android.stardroid.inject.HasComponent;
 import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.MiscUtil;
@@ -28,6 +29,7 @@ public class EulaDialogFragment extends DialogFragment {
   private static final String TAG = MiscUtil.getTag(EulaDialogFragment.class);
   @Inject Activity parentActivity;
   @Inject Analytics analytics;
+  @Inject NameSeeker nameSeeker;
   private EulaAcceptanceListener resultListener;
 
   public interface EulaAcceptanceListener {
@@ -55,11 +57,6 @@ public class EulaDialogFragment extends DialogFragment {
     Spanned formattedApologyText = Html.fromHtml(apologyText);
     TextView apologyTextView = (TextView) view.findViewById(R.id.language_apology_box_text);
     apologyTextView.setText(formattedApologyText, TextView.BufferType.SPANNABLE);
-
-    String whatsNewText = String.format(parentActivity.getString(R.string.whats_new_text), getVersionName());
-    Spanned formattedWhatsNewText = Html.fromHtml(whatsNewText);
-    TextView whatsNewTextView = (TextView) view.findViewById(R.id.whats_new_box_text);
-    whatsNewTextView.setText(formattedWhatsNewText, TextView.BufferType.SPANNABLE);
 
     String eulaText = String.format(parentActivity.getString(R.string.eula_text), getVersionName());
     Spanned formattedEulaText = Html.fromHtml(eulaText);

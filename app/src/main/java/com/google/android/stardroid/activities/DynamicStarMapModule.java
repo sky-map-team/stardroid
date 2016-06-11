@@ -18,6 +18,7 @@ import com.google.android.stardroid.activities.dialogs.MultipleSearchResultsDial
 import com.google.android.stardroid.activities.dialogs.NoSearchResultsDialogFragment;
 import com.google.android.stardroid.activities.dialogs.NoSensorsDialogFragment;
 import com.google.android.stardroid.activities.dialogs.TimeTravelDialogFragment;
+import com.google.android.stardroid.activities.dialogs.WhatsNewDialogFragment;
 import com.google.android.stardroid.inject.PerActivity;
 import com.google.android.stardroid.util.MiscUtil;
 
