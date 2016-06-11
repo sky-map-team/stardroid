@@ -4,9 +4,11 @@
 <![CDATA[
     <h1>Welcome %1$s</h1>
     <h2>New in version %2$s</h2>
-    \t • Added option to reverse the magnetic sensor for the small number of phones (e.g. some OnePlusOnes) that have incorrectly implemented the sensor API <br/>
-    \t • German translation fix<br/>
-    \t • Fixed manual location bugfix (couldn\'t enter negative numbers)<br/>
+    \t • Make the calibration dialogs less frequent<br/>
+    \t • Chinese translation fix<br/>
+    \t • Added Epsilon Lyrae (by request)<br/>
+    \t • New: no need to accept EULA with each update from now on<br/>
+    \t • Minor stability fixes<br/>
 ]]>
     </string>
 </resources>
