@@ -14,7 +14,6 @@ import android.widget.TextView;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.StardroidApplication;
-import com.google.android.stardroid.activities.util.NameSeeker;
 import com.google.android.stardroid.inject.HasComponent;
 import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.MiscUtil;
@@ -29,7 +28,6 @@ public class EulaDialogFragment extends DialogFragment {
   private static final String TAG = MiscUtil.getTag(EulaDialogFragment.class);
   @Inject Activity parentActivity;
   @Inject Analytics analytics;
-  @Inject NameSeeker nameSeeker;
   private EulaAcceptanceListener resultListener;
 
   public interface EulaAcceptanceListener {
