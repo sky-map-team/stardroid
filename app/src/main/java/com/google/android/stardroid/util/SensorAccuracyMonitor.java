@@ -74,7 +74,7 @@ public class SensorAccuracyMonitor implements SensorEventListener {
 
   private long lastWarnedMillis = System.currentTimeMillis() - MIN_INTERVAL_BETWEEN_WARNINGS - 1;
   private static final long MIN_INTERVAL_BETWEEN_WARNINGS =
-      10 * TimeConstants.MILLISECONDS_PER_SECOND;
+      60 * TimeConstants.MILLISECONDS_PER_SECOND;
 
   @Override
   public void onAccuracyChanged(Sensor sensor, int accuracy) {

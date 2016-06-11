@@ -100,7 +100,8 @@
             android:exported="false"
             android:syncable="false"/>
 
-        <activity android:name=".activities.CompassCalibrationActivity">
+        <activity android:name=".activities.CompassCalibrationActivity"
+                  android:launchMode="singleTop">
         </activity>
     </application>
 
