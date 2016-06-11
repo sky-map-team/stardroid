@@ -27,6 +27,8 @@ import com.google.android.stardroid.ApplicationConstants;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.StardroidApplication;
 import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
+import com.google.android.stardroid.activities.dialogs.WhatsNewDialogFragment;
+import com.google.android.stardroid.activities.util.NameSeeker;
 import com.google.android.stardroid.inject.HasComponent;
 import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.MiscUtil;
@@ -37,14 +39,18 @@ import javax.inject.Inject;
  * Shows a splash screen, then launch the next activity.
  */
 public class SplashScreenActivity extends InjectableActivity
-    implements EulaDialogFragment.EulaAcceptanceListener, HasComponent<SplashScreenComponent> {
+    implements EulaDialogFragment.EulaAcceptanceListener, WhatsNewDialogFragment.CloseListener,
+    HasComponent<SplashScreenComponent> {
   private final static String TAG = MiscUtil.getTag(SplashScreenActivity.class);
 
+  @Inject StardroidApplication app;
   @Inject Analytics analytics;
   @Inject SharedPreferences sharedPreferences;
   @Inject Animation fadeAnimation;
   @Inject EulaDialogFragment eulaDialogFragmentWithButtons;
   @Inject FragmentManager fragmentManager;
+  @Inject NameSeeker ns;
+  @Inject WhatsNewDialogFragment whatsNewDialogFragment;
   private View graphic;
   private SplashScreenComponent daggerComponent;
 
@@ -64,9 +70,7 @@ public class SplashScreenActivity extends InjectableActivity
       public void onAnimationEnd(Animation arg0) {
         Log.d(TAG, "onAnimationEnd");
         graphic.setVisibility(View.INVISIBLE);
-        Intent intent = new Intent(SplashScreenActivity.this, DynamicStarMapActivity.class);
-        startActivity(intent);
-        finish();
+        maybeShowWhatsNewAndEnd();
       }
 
       public void onAnimationRepeat(Animation arg0) {
@@ -107,9 +111,8 @@ public class SplashScreenActivity extends InjectableActivity
   }
 
   private boolean maybeShowEula() {
-    int versionCode = ((StardroidApplication) getApplication()).getVersion();
     boolean eulaAlreadyConfirmed = (sharedPreferences.getInt(
-        ApplicationConstants.READ_TOS_PREF_VERSION, -1) == versionCode);
+        ApplicationConstants.READ_TOS_PREF_VERSION, -1) == EULA_VERSION_CODE);
     if (!eulaAlreadyConfirmed) {
       eulaDialogFragmentWithButtons.show(fragmentManager, "Eula Dialog");
       return true;
@@ -118,11 +121,13 @@ public class SplashScreenActivity extends InjectableActivity
     }
   }
 
+  // Update this with new versions of the EULA
+  private static final int EULA_VERSION_CODE = 1;
+
   @Override
   public void eulaAccepted() {
-    int versionCode = ((StardroidApplication) getApplication()).getVersion();
     SharedPreferences.Editor editor = sharedPreferences.edit();
-    editor.putInt(ApplicationConstants.READ_TOS_PREF_VERSION, versionCode);
+    editor.putInt(ApplicationConstants.READ_TOS_PREF_VERSION, EULA_VERSION_CODE);
     editor.commit();
     // Let's go.
     View graphic = findViewById(R.id.splash);
@@ -132,6 +137,32 @@ public class SplashScreenActivity extends InjectableActivity
   @Override
   public void eulaRejected() {
     Log.d(TAG, "Sorry chum, no accept, no app.");
+    finish();
+  }
+
+  private void maybeShowWhatsNewAndEnd() {
+    boolean whatsNewSeen = (sharedPreferences.getInt(
+        ApplicationConstants.READ_WHATS_NEW_PREF_VERSION, -1) == app.getVersion());
+    if (whatsNewSeen) {
+      launchSkyMap();
+    } else {
+      whatsNewDialogFragment.show(fragmentManager, "Whats New Dialog");
+    }
+  }
+
+  // What's new dialog closed.
+  @Override
+  public void dialogClosed() {
+    SharedPreferences.Editor editor = sharedPreferences.edit();
+    editor.putInt(ApplicationConstants.READ_WHATS_NEW_PREF_VERSION, app.getVersion());
+    editor.commit();
+    launchSkyMap();
+  }
+
+  private void launchSkyMap() {
+    Intent intent = new Intent(SplashScreenActivity.this, DynamicStarMapActivity.class);
+    ns.check();
+    startActivity(intent);
     finish();
   }
 

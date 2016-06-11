@@ -2,7 +2,8 @@
 <resources>
     <string name="whats_new_text" translation_description="Description of new features in this version in html">
 <![CDATA[
-    <h1>New in version %s</h1>
+    <h1>Welcome %1$s</h1>
+    <h2>New in version %2$s</h2>
     \t • Added option to reverse the magnetic sensor for the small number of phones (e.g. some OnePlusOnes) that have incorrectly implemented the sensor API <br/>
     \t • German translation fix<br/>
     \t • Fixed manual location bugfix (couldn\'t enter negative numbers)<br/>

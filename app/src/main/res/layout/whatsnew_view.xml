@@ -10,19 +10,12 @@
         android:paddingRight="5dp">
         <TextView
             xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/language_apology_box_text"
+            android:id="@+id/whats_new_box_text"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:autoLink="web"
             style="@style/text"
-            android:text="@string/language_apology_text"/>
-        <TextView
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/eula_box_text"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:autoLink="web"
-            style="@style/text"
-            android:text="EULA TEXT"/>
+            android:text="@string/whats_new_text"
+            android:paddingBottom="10dp"/>
     </LinearLayout>
 </ScrollView>

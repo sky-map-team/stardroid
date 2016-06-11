@@ -11,6 +11,8 @@
     <!-- For Google Analytics -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+
     <uses-feature
         android:name="android.hardware.location.gps"
         android:required="false"/>
