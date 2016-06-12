@@ -13,7 +13,6 @@ import android.widget.TextView;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.StardroidApplication;
-import com.google.android.stardroid.activities.util.NameSeeker;
 import com.google.android.stardroid.inject.HasComponent;
 import com.google.android.stardroid.util.MiscUtil;
 
@@ -25,7 +24,6 @@ import javax.inject.Inject;
 public class WhatsNewDialogFragment extends DialogFragment {
   private static final String TAG = MiscUtil.getTag(WhatsNewDialogFragment.class);
   @Inject Activity parentActivity;
-  @Inject NameSeeker nameSeeker;
   private CloseListener closeListener;
 
   public interface CloseListener {
@@ -48,8 +46,7 @@ public class WhatsNewDialogFragment extends DialogFragment {
     LayoutInflater inflater = parentActivity.getLayoutInflater();
     View view = inflater.inflate(R.layout.whatsnew_view, null);
 
-    String userName = nameSeeker.getFirstNameOrEmpty();
-    String whatsNewText = String.format(parentActivity.getString(R.string.whats_new_text), userName, getVersionName());
+    String whatsNewText = String.format(parentActivity.getString(R.string.whats_new_text), getVersionName());
     Spanned formattedWhatsNewText = Html.fromHtml(whatsNewText);
     TextView whatsNewTextView = (TextView) view.findViewById(R.id.whats_new_box_text);
     whatsNewTextView.setText(formattedWhatsNewText, TextView.BufferType.SPANNABLE);

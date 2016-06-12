@@ -28,7 +28,7 @@ import com.google.android.stardroid.R;
 import com.google.android.stardroid.StardroidApplication;
 import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
 import com.google.android.stardroid.activities.dialogs.WhatsNewDialogFragment;
-import com.google.android.stardroid.activities.util.NameSeeker;
+import com.google.android.stardroid.activities.util.ConstraintsChecker;
 import com.google.android.stardroid.inject.HasComponent;
 import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.MiscUtil;
@@ -49,8 +49,8 @@ public class SplashScreenActivity extends InjectableActivity
   @Inject Animation fadeAnimation;
   @Inject EulaDialogFragment eulaDialogFragmentWithButtons;
   @Inject FragmentManager fragmentManager;
-  @Inject NameSeeker ns;
   @Inject WhatsNewDialogFragment whatsNewDialogFragment;
+  @Inject ConstraintsChecker cc;
   private View graphic;
   private SplashScreenComponent daggerComponent;
 
@@ -161,7 +161,7 @@ public class SplashScreenActivity extends InjectableActivity
 
   private void launchSkyMap() {
     Intent intent = new Intent(SplashScreenActivity.this, DynamicStarMapActivity.class);
-    ns.check();
+    cc.check();
     startActivity(intent);
     finish();
   }

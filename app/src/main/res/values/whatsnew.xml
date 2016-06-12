@@ -2,12 +2,12 @@
 <resources>
     <string name="whats_new_text" translation_description="Description of new features in this version in html">
 <![CDATA[
-    <h1>Welcome %1$s</h1>
-    <h2>New in version %2$s</h2>
+    <h1>New in version %s</h1>
     \t • Make the calibration dialogs less frequent<br/>
     \t • Chinese translation fix<br/>
     \t • Added Epsilon Lyrae (by request)<br/>
     \t • New: no need to accept EULA with each update from now on<br/>
+    \t • Removes an unneeded permission<br/>
     \t • Minor stability fixes<br/>
 ]]>
     </string>
