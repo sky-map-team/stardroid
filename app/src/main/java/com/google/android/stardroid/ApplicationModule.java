@@ -1,5 +1,6 @@
 package com.google.android.stardroid;
 
+import android.accounts.AccountManager;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.AssetManager;
@@ -53,6 +54,11 @@ public class ApplicationModule {
   @Provides
   @Singleton
   StardroidApplication provideApplication() {
+    return app;
+  }
+
+  @Provides
+  Context provideContext() {
     return app;
   }
 
@@ -118,6 +124,12 @@ public class ApplicationModule {
   @Singleton
   ConnectivityManager provideConnectivityManager() {
     return (ConnectivityManager) app.getSystemService(Context.CONNECTIVITY_SERVICE);
+  }
+
+  @Provides
+  @Singleton
+  AccountManager provideAccountManager(Context context) {
+    return AccountManager.get(context);
   }
 
   @Provides @Singleton

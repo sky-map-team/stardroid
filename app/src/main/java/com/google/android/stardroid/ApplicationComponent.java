@@ -1,5 +1,6 @@
 package com.google.android.stardroid;
 
+import android.accounts.AccountManager;
 import android.content.SharedPreferences;
 import android.hardware.SensorManager;
 import android.location.LocationManager;
@@ -33,6 +34,7 @@ public interface ApplicationComponent {
   AstronomerModel provideAstronomerModel();
   LocationManager provideLocationManager();
   LayerManager provideLayerManager();
+  AccountManager provideAccountManager();
   @Named("zero") MagneticDeclinationCalculator provideMagDec1();
   @Named("real") MagneticDeclinationCalculator provideMagDec2();
 

@@ -7,6 +7,7 @@ import android.view.animation.AnimationUtils;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
+import com.google.android.stardroid.activities.dialogs.WhatsNewDialogFragment;
 import com.google.android.stardroid.inject.PerActivity;
 
 import dagger.Module;
@@ -29,6 +30,14 @@ public class SplashScreenModule {
     EulaDialogFragment fragment = new EulaDialogFragment();
     fragment.setEulaAcceptanceListener(activity);
     return fragment;
+  }
+
+  @Provides
+  @PerActivity
+  WhatsNewDialogFragment provideWhatsNewDialogFragment() {
+    WhatsNewDialogFragment whatsNewDialogFragment = new WhatsNewDialogFragment();
+    whatsNewDialogFragment.setCloseListener(activity);
+    return whatsNewDialogFragment;
   }
 
   @Provides

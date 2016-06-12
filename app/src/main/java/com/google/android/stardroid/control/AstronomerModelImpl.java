@@ -246,6 +246,9 @@ public class AstronomerModelImpl implements AstronomerModel {
       return;
     }
 
+    calculateLocalNorthAndUpInCelestialCoords(false);
+    calculateLocalNorthAndUpInPhoneCoordsFromAccelAndMagFieldSensors();
+
     Matrix33 transform = matrixMultiply(axesMagneticCelestialMatrix, axesPhoneInverseMatrix);
 
     Vector3 viewInSpaceSpace = matrixVectorMultiply(transform, POINTING_DIR_IN_PHONE_COORDS);
@@ -369,7 +372,6 @@ public class AstronomerModelImpl implements AstronomerModel {
    */
   @Override
   public Pointing getPointing() {
-    calculateLocalNorthAndUpInPhoneCoordsFromAccelAndMagFieldSensors();
     calculatePointing();
     return pointing;
   }

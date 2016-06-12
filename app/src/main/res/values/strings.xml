@@ -274,6 +274,7 @@
     <string name="pole_star" translation_description="Name of the (North) Pole Star">Pole Star</string>
     <string name="alpha_centauri" translation_description="Name of the star Alpha Centauri">Alpha Centauri</string>
     <string name="rigil_kent" translation_description="Name of the star Rigil Kent">Rigil Kent</string>
+    <string name="e_lyrae" translation_description="Name of the star ε Lyrae">ε Lyrae</string>
 
     <string name="m1" translation_description="Name of the Messier object M1">M1</string>
     <string name="m2" translation_description="Name of the Messier object M2">M2</string>
@@ -471,4 +472,5 @@
     <string name="compass_calibration_activity_warning">Your compass needs to be calibrated</string>
     <string name="sensor_reverse_preference_title">Reverse Magnetic Z</string>
     <string name="sensor_reverse_preference_summary">Fix for phones with incorrectly implemented sensors - requires restart</string>
+    <string name="whats_new_dialog_title">What\'s new</string>
 </resources>

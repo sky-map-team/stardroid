@@ -15844,6 +15844,15 @@ source {
     color: 4285822068
     size: 1
   }
+  label {
+    location {
+      right_ascension: 281.1
+      declination: 39.67
+    }
+    color: 13618383
+    REMOVE_string_index: "R.string.e_lyrae"
+  }
+  REMOVE_name_ids: "R.string.e_lyrae"
 }
 source {
   search_location {

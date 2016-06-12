@@ -87,12 +87,12 @@ source {
       declination: -60.84
     }
     color: 13618383
-    string_index: 2131165609
+    string_index: 2131165610
   }
-  name_ids: 2131165609
-  name_ids: 2131165525
   name_ids: 2131165610
-  name_ids: 2131165693
+  name_ids: 2131165525
+  name_ids: 2131165609
+  name_ids: 2131165694
 }
 source {
   search_location {
@@ -15844,6 +15844,15 @@ source {
     color: 4285822068
     size: 1
   }
+  label {
+    location {
+      right_ascension: 281.1
+      declination: 39.67
+    }
+    color: 13618383
+    string_index: 2131165660
+  }
+  name_ids: 2131165660
 }
 source {
   search_location {

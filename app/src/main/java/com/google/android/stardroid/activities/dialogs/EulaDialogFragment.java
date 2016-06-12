@@ -56,11 +56,6 @@ public class EulaDialogFragment extends DialogFragment {
     TextView apologyTextView = (TextView) view.findViewById(R.id.language_apology_box_text);
     apologyTextView.setText(formattedApologyText, TextView.BufferType.SPANNABLE);
 
-    String whatsNewText = String.format(parentActivity.getString(R.string.whats_new_text), getVersionName());
-    Spanned formattedWhatsNewText = Html.fromHtml(whatsNewText);
-    TextView whatsNewTextView = (TextView) view.findViewById(R.id.whats_new_box_text);
-    whatsNewTextView.setText(formattedWhatsNewText, TextView.BufferType.SPANNABLE);
-
     String eulaText = String.format(parentActivity.getString(R.string.eula_text), getVersionName());
     Spanned formattedEulaText = Html.fromHtml(eulaText);
     TextView eulaTextView = (TextView) view.findViewById(R.id.eula_box_text);
