@@ -27,6 +27,7 @@ import com.google.android.stardroid.util.MiscUtil;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.Locale;
 import java.util.Set;
 import java.util.TimeZone;
 
@@ -66,7 +67,8 @@ public class DiagnosticActivity extends InjectableActivity implements SensorEven
     super.onStart();
     analytics.trackPageView(Analytics.DIAGNOSTICS_ACTIVITY);
 
-    setText(R.id.diagnose_phone_txt, Build.MODEL);
+    setText(R.id.diagnose_phone_txt, Build.MODEL + " (" + Build.HARDWARE + ") " +
+        Locale.getDefault().getLanguage());
     String androidVersion = String.format(Build.VERSION.RELEASE + " (%d)", Build.VERSION.SDK_INT);
     setText(R.id.diagnose_android_version_txt, androidVersion);
 
