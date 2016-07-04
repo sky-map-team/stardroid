@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="popular_date_examples">
+        <item translation_description="The user's current time">Τώρα</item>
+        <item>Επόμενο ηλιοβασίλεμα</item>
+        <item>Επόμενη ανατολή ηλίου</item>
+        <item>Επόμενη πανσέληνος</item>
+        <item>Διάβαση του Ερμή στις 9 Μαϊ 2016</item>
+        <item>Ηλιακή έκλειψη στις 21 Αυγ 2017</item>
+        <item>Ηλιακή έκλειψη στις 9 Μαρ 2016</item>
+        <item>Ηλιακή έκλειψη στις 29 Μαϊ 1919</item>
+        <item>Προσελήνωση του Apollo 11</item>
+    </string-array>
+    <string-array name="sensor_speed">
+        <item translation_description="Slow sensor speed">Αργή</item>
+        <item translation_description="Normal sensor speed">Μέτρια</item>
+        <item translation_description="Fast sensor speed">Γρήγορη</item>
+    </string-array>
+    <string-array name="sensor_damping">
+        <item translation_description="Low sensor damping factor">Χαμηλή</item>
+        <item translation_description="Medium sensor damping factor">Μέτρια</item>
+        <item translation_description="Extra High sensor damping factor">Υψηλή</item>
+        <item translation_description="Really High sensor damping factor">Πολύ υψηλή</item>
+    </string-array>
+</resources>
