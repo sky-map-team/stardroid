@@ -5,9 +5,9 @@
         <item>Следующий заход Солнца</item>
         <item>Следующий восход Солнца</item>
         <item>Следующее полнолуние</item>
-        <item>Mercury transit of May 09, 2016</item>
-        <item>Солнечное затмение Aug 21, 2017 г.</item>
-        <item>Солнечное затмение March 9, 2016 г.</item>
+        <item>Транзит Меркурия 9 мая 2016 г.</item>
+        <item>Солнечное затмение 21 августа 2017 г.</item>
+        <item>Солнечное затмение 9 марта 2016 г.</item>
         <item>Солнечное затмение 29 мая 1919 г.</item>
         <item>Посадка на Луну Аполлона 11</item>
     </string-array>
@@ -17,9 +17,9 @@
         <item>Быстро</item>
     </string-array>
     <string-array name="sensor_damping">
-        <item>Jumpy</item>
-        <item>Medium</item>
-        <item>Обычно</item>
-        <item>Высокий</item>
+        <item>Скачками</item>
+        <item>Среднее</item>
+        <item>Обычное</item>
+        <item>Высокое</item>
     </string-array>
 </resources>
