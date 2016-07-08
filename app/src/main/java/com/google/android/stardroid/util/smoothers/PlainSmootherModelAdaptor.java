@@ -33,7 +33,6 @@ import javax.inject.Inject;
  */
 public class PlainSmootherModelAdaptor implements SensorListener {
   private static final String TAG = MiscUtil.getTag(PlainSmootherModelAdaptor.class);
-  private static final String REVERSE_MAGNETIC_Z_PREFKEY = "reverse_magnetic_z";
   private Vector3 magneticValues = ApplicationConstants.INITIAL_SOUTH.copy();
   private Vector3 acceleration = ApplicationConstants.INITIAL_DOWN.copy();
   private AstronomerModel model;
@@ -42,7 +41,8 @@ public class PlainSmootherModelAdaptor implements SensorListener {
   @Inject
   PlainSmootherModelAdaptor(AstronomerModel model, SharedPreferences sharedPreferences) {
     this.model = model;
-    reverseMagneticZaxis = sharedPreferences.getBoolean(REVERSE_MAGNETIC_Z_PREFKEY, false);
+    reverseMagneticZaxis = sharedPreferences.getBoolean(
+        ApplicationConstants.REVERSE_MAGNETIC_Z_PREFKEY, false);
   }
 
   @Override

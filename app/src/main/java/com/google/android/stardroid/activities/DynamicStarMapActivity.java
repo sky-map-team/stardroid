@@ -549,18 +549,25 @@ public class DynamicStarMapActivity extends InjectableActivity
   @Override
   public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
     Log.d(TAG, "Preferences changed: key=" + key);
-
-    if (!key.equals(ApplicationConstants.AUTO_MODE_PREF_KEY)) return;
-    final boolean autoMode = sharedPreferences.getBoolean(key, true);
-    Log.d(TAG, "Automode is set to " + autoMode);
-    if (!autoMode) {
-      Log.d(TAG, "Switching to manual control");
-      Toast.makeText(DynamicStarMapActivity.this, R.string.set_manual, Toast.LENGTH_SHORT).show();
-    } else {
-      Log.d(TAG, "Switching to sensor control");
-      Toast.makeText(DynamicStarMapActivity.this, R.string.set_auto, Toast.LENGTH_SHORT).show();
+    switch (key) {
+      case ApplicationConstants.AUTO_MODE_PREF_KEY:
+        boolean autoMode = sharedPreferences.getBoolean(key, true);
+        Log.d(TAG, "Automode is set to " + autoMode);
+        if (!autoMode) {
+          Log.d(TAG, "Switching to manual control");
+          Toast.makeText(DynamicStarMapActivity.this, R.string.set_manual, Toast.LENGTH_SHORT).show();
+        } else {
+          Log.d(TAG, "Switching to sensor control");
+          Toast.makeText(DynamicStarMapActivity.this, R.string.set_auto, Toast.LENGTH_SHORT).show();
+        }
+        setAutoMode(autoMode);
+        break;
+      case ApplicationConstants.SHARED_PREFERENCE_EXPERIMENTAL_USE_GYRO:
+        boolean useGyro = sharedPreferences.getBoolean(key, false);
+        model.setUseRotationVector(useGyro);
+      default:
+        return;
     }
-    setAutoMode(autoMode);
   }
 
   @Override
@@ -628,6 +635,8 @@ public class DynamicStarMapActivity extends InjectableActivity
     skyView.setEGLConfigChooser(false);
     SkyRenderer renderer = new SkyRenderer(getResources());
     skyView.setRenderer(renderer);
+
+    sharedPreferences.getBoolean(ApplicationConstants.SHARED_PREFERENCE_EXPERIMENTAL_USE_GYRO, false);
 
     rendererController = new RendererController(renderer, skyView);
     // The renderer will now call back every frame to get model updates.

@@ -30,6 +30,8 @@ import java.util.Date;
 public interface AstronomerModel {
 
 
+  void setUseRotationVector(boolean useRotationVector);
+
   /**
    * A POJO to hold the user's view direction.
    *

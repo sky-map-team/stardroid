@@ -473,4 +473,6 @@
     <string name="sensor_reverse_preference_title">Reverse Magnetic Z</string>
     <string name="sensor_reverse_preference_summary">Fix for phones with incorrectly implemented sensors - requires restart</string>
     <string name="whats_new_dialog_title">What\'s new</string>
+    <string name="use_gyro_preference_title">Use gyro (experimental)</string>
+    <string name="use_gyro_preference_summary">Makes map motion smoother. Not all phones have a gyro.</string>
 </resources>

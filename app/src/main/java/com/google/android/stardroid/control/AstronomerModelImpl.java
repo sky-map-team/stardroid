@@ -392,4 +392,9 @@ public class AstronomerModelImpl implements AstronomerModel {
   public long getTimeMillis() {
     return clock.getTimeInMillisSinceEpoch();
   }
+
+  @Override
+  public void setUseRotationVector(boolean useRotationVector) {
+    this.useRotationVector = useRotationVector;
+  }
 }

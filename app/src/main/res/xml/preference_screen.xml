@@ -80,6 +80,11 @@
     </PreferenceScreen>
     <PreferenceScreen android:title="@string/sensor_prefs">
       <PreferenceCategory>
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:title="@string/use_gyro_preference_title"
+            android:summary="@string/use_gyro_preference_summary"
+            android:key="experimental_use_gyro"/>
         <ListPreference
             android:key="sensor_speed"
             android:title="@string/sensor_speed"
