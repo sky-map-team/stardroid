@@ -451,12 +451,13 @@
     <string name="diagnostics_activity_location_and_time_heading">Location and Time</string>
     <string name="diagnostics_activity_gps">GPS</string>
     <string name="diagnostics_activity_location">Location (lat, long)</string>
-    <string name="diagnostics_activity_pointing_ra_dec">Pointing snapshot (RA, DEC)</string>
-    <string name="diagnostics_activity_magnetic_correction">Magnetic correction</string>
+    <string name="diagnostics_activity_pointing_ra_dec">Pointing snapshot</string>
+    <string name="diagnostics_activity_magnetic_correction">Mag correction</string>
     <string name="diagnostics_activity_local_datetime">Local datetime</string>
     <string name="diagnostics_activity_universal_time">Universal datetime</string>
     <string name="diagnostics_activity_network_heading">Network</string>
     <string name="diagnostics_activity_connection">Connection</string>
+    <string name="diagnostics_activity_rotation_matrix">Rot Matrix</string>
     <string name="enabled">Enabled</string>
     <string name="disabled">Disabled</string>
     <string name="permission_disabled">Permission disabled</string>
@@ -472,4 +473,6 @@
     <string name="sensor_reverse_preference_title">Reverse Magnetic Z</string>
     <string name="sensor_reverse_preference_summary">Fix for phones with incorrectly implemented sensors - requires restart</string>
     <string name="whats_new_dialog_title">What\'s new</string>
+    <string name="use_gyro_preference_title">Use gyro (experimental)</string>
+    <string name="use_gyro_preference_summary">Makes map motion smoother. Not all phones have a gyro.</string>
 </resources>

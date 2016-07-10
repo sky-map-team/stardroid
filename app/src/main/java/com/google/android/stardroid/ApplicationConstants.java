@@ -40,6 +40,20 @@ public class ApplicationConstants {
   // Preference that keeps track of whether or not the user accepted the ToS for this version
   public static final String READ_TOS_PREF_VERSION = "read_tos_version";
   public static final String READ_WHATS_NEW_PREF_VERSION = "read_whats_new_version";
+  public static final String SHARED_PREFERENCE_EXPERIMENTAL_USE_GYRO = "experimental_use_gyro";
+  // Attention - the following strings must match those in strings.xml and notranslate-arrays.xml.
+  public static final String SENSOR_SPEED_HIGH = "FAST";
+  public static final String SENSOR_SPEED_SLOW = "SLOW";
+  public static final String SENSOR_SPEED_STANDARD = "STANDARD";
+  public static final String SENSOR_SPEED_PREF_KEY = "sensor_speed";
+  public static final String SENSOR_DAMPING_REALLY_HIGH = "REALLY HIGH";
+  public static final String SENSOR_DAMPING_EXTRA_HIGH = "EXTRA HIGH";
+  public static final String SENSOR_DAMPING_HIGH = "HIGH";
+  public static final String SENSOR_DAMPING_STANDARD = "STANDARD";
+  public static final String SENSOR_DAMPING_PREF_KEY = "sensor_damping";
+  public static final String REVERSE_MAGNETIC_Z_PREFKEY = "reverse_magnetic_z";
+
+
   // End Preference Keys
 
 }

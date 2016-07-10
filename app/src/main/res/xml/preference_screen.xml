@@ -1,84 +1,14 @@
 <PreferenceScreen
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:key="stardroid.preferences">
-  <PreferenceCategory android:title="@string/provider_prefs">
-    <CheckBoxPreference
-      android:key="source_provider.0"
-      android:defaultValue="true"
-      android:title="@string/show_stars_pref" />
-    <CheckBoxPreference
-      android:key="source_provider.1"
-      android:defaultValue="true"
-      android:title="@string/show_constellations_pref" />
-    <CheckBoxPreference
-      android:key="source_provider.2"
-      android:defaultValue="true"
-      android:title="@string/show_messier_objects_pref" />
-    <CheckBoxPreference
-      android:key="source_provider.3"
-      android:defaultValue="true"
-      android:title="@string/show_planets_pref" />
-    <CheckBoxPreference
-      android:key="source_provider.6"
-      android:defaultValue="true"
-      android:title="@string/show_meteors_pref" />
-    <CheckBoxPreference
-      android:key="source_provider.4"
-      android:defaultValue="true"
-      android:title="@string/show_grid_pref" />
-    <CheckBoxPreference
-      android:key="source_provider.5"
-      android:defaultValue="true"
-      android:title="@string/show_horizon_pref" />
-    <!--  TODO(johntaylor): restore this once it's toggling properly CheckBoxPreference
-      android:key="show_planetary_images"
-      android:defaultValue="true"
-      android:title="@string/planetary_images" /-->
-  </PreferenceCategory>
-  <PreferenceCategory android:title="@string/other">
-    <PreferenceScreen android:title="@string/location_prefs">
-      <PreferenceCategory>
-        <CheckBoxPreference
+  <PreferenceCategory>
+      <CheckBoxPreference
           android:defaultValue="false"
-          android:title="@string/force_gps_pref"
-          android:summary="@string/force_gps_pref_hint"
-          android:key="force_gps"/>
-        <CheckBoxPreference
-          android:defaultValue="false"
-          android:title="@string/no_use_gps_pref"
-          android:summary="@string/no_use_gps_pref_hint"
-          android:key="no_auto_locate"/>
-        <!-- Set the default location to Galileo's birthplace -->
-        <EditTextPreference
-          android:key="location"
-          android:layout="?android:attr/preferenceLayoutChild"
-          android:title="@string/location_placename"
-          android:summary="@string/location_placename_hint"
-          android:dependency="no_auto_locate"
-          android:defaultValue="" />
-        <EditTextPreference
-          android:key="latitude"
-          android:layout="?android:attr/preferenceLayoutChild"
-          android:title="@string/location_lat_pref"
-          android:dependency="no_auto_locate"
-          android:summary="@string/degrees"
-          android:inputType="number|numberSigned|numberDecimal"
-          android:defaultValue="0"/>
-        <EditTextPreference
-          android:key="longitude"
-          android:layout="?android:attr/preferenceLayoutChild"
-          android:title="@string/location_long_pref"
-          android:dependency="no_auto_locate"
-          android:summary="@string/degrees"
-          android:inputType="number|numberSigned|numberDecimal"
-          android:defaultValue="0"/>
-        <CheckBoxPreference
-          android:defaultValue="true"
-          android:title="@string/use_magnetic_correction"
-          android:key="use_magnetic_correction"/>
-      </PreferenceCategory>
-    </PreferenceScreen>
-    <PreferenceScreen android:title="@string/sensor_prefs">
+          android:title="@string/use_gyro_preference_title"
+          android:summary="@string/use_gyro_preference_summary"
+          android:key="experimental_use_gyro"/>
+
+    <PreferenceScreen android:key="sensor_prefs" android:title="@string/sensor_prefs">
       <PreferenceCategory>
         <ListPreference
             android:key="sensor_speed"
@@ -97,6 +27,48 @@
             android:title="@string/sensor_reverse_preference_title"
             android:summary="@string/sensor_reverse_preference_summary"
             android:key="reverse_magnetic_z"/>
+      </PreferenceCategory>
+    </PreferenceScreen>
+    <PreferenceScreen android:title="@string/location_prefs">
+      <PreferenceCategory>
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:title="@string/force_gps_pref"
+            android:summary="@string/force_gps_pref_hint"
+            android:key="force_gps"/>
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:title="@string/no_use_gps_pref"
+            android:summary="@string/no_use_gps_pref_hint"
+            android:key="no_auto_locate"/>
+        <!-- Set the default location to Galileo's birthplace -->
+        <EditTextPreference
+            android:key="location"
+            android:layout="?android:attr/preferenceLayoutChild"
+            android:title="@string/location_placename"
+            android:summary="@string/location_placename_hint"
+            android:dependency="no_auto_locate"
+            android:defaultValue="" />
+        <EditTextPreference
+            android:key="latitude"
+            android:layout="?android:attr/preferenceLayoutChild"
+            android:title="@string/location_lat_pref"
+            android:dependency="no_auto_locate"
+            android:summary="@string/degrees"
+            android:inputType="number|numberSigned|numberDecimal"
+            android:defaultValue="0"/>
+        <EditTextPreference
+            android:key="longitude"
+            android:layout="?android:attr/preferenceLayoutChild"
+            android:title="@string/location_long_pref"
+            android:dependency="no_auto_locate"
+            android:summary="@string/degrees"
+            android:inputType="number|numberSigned|numberDecimal"
+            android:defaultValue="0"/>
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:title="@string/use_magnetic_correction"
+            android:key="use_magnetic_correction"/>
       </PreferenceCategory>
     </PreferenceScreen>
     <CheckBoxPreference

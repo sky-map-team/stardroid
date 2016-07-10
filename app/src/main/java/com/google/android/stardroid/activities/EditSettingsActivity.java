@@ -16,17 +16,19 @@ package com.google.android.stardroid.activities;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
+import android.content.SharedPreferences;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
 import android.preference.EditTextPreference;
 import android.preference.Preference;
-import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceActivity;
+import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.google.android.stardroid.ApplicationConstants;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.StardroidApplication;
 import com.google.android.stardroid.activities.util.ActivityLightLevelChanger;
@@ -43,6 +45,15 @@ import javax.inject.Inject;
  * Edit the user's preferences.
  */
 public class EditSettingsActivity extends PreferenceActivity {
+  private MyPreferenceFragment preferenceFragment;
+  
+  public static class MyPreferenceFragment extends PreferenceFragment {
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+      super.onCreate(savedInstanceState);
+      addPreferencesFromResource(R.xml.preference_screen);
+    }
+  }
   /**
    * These must match the keys in the preference_screen.xml file.
    */
@@ -53,6 +64,7 @@ public class EditSettingsActivity extends PreferenceActivity {
   private Geocoder geocoder;
   private ActivityLightLevelManager activityLightLevelManager;
   @Inject Analytics analytics;
+  @Inject SharedPreferences sharedPreferences;
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
@@ -62,24 +74,42 @@ public class EditSettingsActivity extends PreferenceActivity {
         new ActivityLightLevelChanger(this, null),
         PreferenceManager.getDefaultSharedPreferences(this));
     geocoder = new Geocoder(this);
-    addPreferencesFromResource(R.xml.preference_screen);
-    Preference editPreference = findPreference(LOCATION);
-    // TODO(johntaylor) if the lat long prefs get changed manually, we should really
-    // reset the placename to "" too.
-    editPreference.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
-
-      public boolean onPreferenceChange(Preference preference, Object newValue) {
-        Log.d(TAG, "Place to be updated to " + newValue);
-        boolean success = setLatLongFromPlace(newValue.toString());
-        return success;
-      }
-    });
+    preferenceFragment = new MyPreferenceFragment();
+    getFragmentManager().beginTransaction().replace(android.R.id.content,
+        preferenceFragment).commit();
+    
   }
 
   @Override
   public void onStart() {
     super.onStart();
     analytics.trackPageView(Analytics.EDIT_SETTINGS_ACTIVITY);
+    Preference locationPreference = preferenceFragment.findPreference(LOCATION);
+    // TODO(johntaylor) if the lat long prefs get changed manually, we should really
+    // reset the placename to "" too.
+    locationPreference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+    
+      public boolean onPreferenceChange(Preference preference, Object newValue) {
+        Log.d(TAG, "Place to be updated to " + newValue);
+        boolean success = setLatLongFromPlace(newValue.toString());
+        return success;
+      }
+    });
+
+    Preference gyroPreference = preferenceFragment.findPreference(
+        ApplicationConstants.SHARED_PREFERENCE_EXPERIMENTAL_USE_GYRO);
+    gyroPreference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+
+      public boolean onPreferenceChange(Preference preference, Object newValue) {
+        Log.d(TAG, "Toggling gyro preference " + newValue);
+        enableNonGyroSensorPrefs(!((Boolean) newValue));
+        return true;
+      }
+    });
+
+    enableNonGyroSensorPrefs(
+        !sharedPreferences.getBoolean(ApplicationConstants.SHARED_PREFERENCE_EXPERIMENTAL_USE_GYRO,
+            false));
   }
 
   @Override
@@ -95,13 +125,23 @@ public class EditSettingsActivity extends PreferenceActivity {
     activityLightLevelManager.onPause();
   }
 
+  private void enableNonGyroSensorPrefs(boolean enabled) {
+    // These settings aren't compatible with the gyro.
+    preferenceFragment.findPreference(
+        "sensor_prefs").setEnabled(enabled);
+    preferenceFragment.findPreference(
+        ApplicationConstants.SENSOR_SPEED_PREF_KEY).setEnabled(enabled);
+    preferenceFragment.findPreference(
+        ApplicationConstants.REVERSE_MAGNETIC_Z_PREFKEY).setEnabled(enabled);
+  }
+
   /**
    * Updates preferences on singletons, so we don't have to register
    * preference change listeners for them.
    */
   private void updatePreferences() {
     Log.d(TAG, "Updating preferences");
-    analytics.setEnabled(findPreference(Analytics.PREF_KEY).isEnabled());
+    analytics.setEnabled(preferenceFragment.findPreference(Analytics.PREF_KEY).isEnabled());
   }
 
   protected boolean setLatLongFromPlace(String place) {
@@ -123,8 +163,8 @@ public class EditSettingsActivity extends PreferenceActivity {
   }
 
   private void setLatLong(double latitude, double longitude) {
-    EditTextPreference latPreference = (EditTextPreference) findPreference(LATITUDE);
-    EditTextPreference longPreference = (EditTextPreference) findPreference(LONGITUDE);
+    EditTextPreference latPreference = (EditTextPreference) preferenceFragment.findPreference(LATITUDE);
+    EditTextPreference longPreference = (EditTextPreference) preferenceFragment.findPreference(LONGITUDE);
     latPreference.setText(Double.toString(latitude));
     longPreference.setText(Double.toString(longitude));
     String message = String.format(getString(R.string.location_place_found), latitude, longitude);

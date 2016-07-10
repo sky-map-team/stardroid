@@ -30,6 +30,8 @@ import java.util.Date;
 public interface AstronomerModel {
 
 
+  void setUseRotationVector(boolean useRotationVector);
+
   /**
    * A POJO to hold the user's view direction.
    *
@@ -164,6 +166,12 @@ public interface AstronomerModel {
    * and z coming perpendicularly out of the phone increasing towards the user.
    */
   void setPhoneSensorValues(Vector3 acceleration, Vector3 magneticField);
+
+  /**
+   * Sets the phone's rotation vector from the fused gyro/mag field/accelerometer.
+   * Alternative to {@link #setPhoneSensorValues(Vector3, Vector3)}
+   */
+  void setPhoneSensorValues(float[] rotationVector);
 
   /**
    * Returns the user's North in celestial coordinates.

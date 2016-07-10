@@ -98,32 +98,33 @@ public class DiagnosticActivity extends InjectableActivity implements SensorEven
 
   private void onResumeSensors() {
     accelSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+    int absentSensorColor = getResources().getColor(R.color.absent_sensor);
     if (accelSensor == null) {
-      setText(R.id.diagnose_accelerometer_accuracy_txt, getString(R.string.sensor_absent));
+      setColor(R.id.diagnose_accelerometer_values_txt, absentSensorColor);
     } else {
       sensorManager.registerListener(this, accelSensor, SensorManager.SENSOR_DELAY_NORMAL);
     }
     magSensor = sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
     if (magSensor == null) {
-      setText(R.id.diagnose_compass_accuracy_txt, getString(R.string.sensor_absent));
+      setColor(R.id.diagnose_compass_values_txt, absentSensorColor);
     } else {
       sensorManager.registerListener(this, magSensor, SensorManager.SENSOR_DELAY_NORMAL);
     }
     gyroSensor = sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
     if (gyroSensor == null) {
-      setText(R.id.diagnose_gyro_accuracy_txt, getString(R.string.sensor_absent));
+      setColor(R.id.diagnose_gyro_values_txt, absentSensorColor);
     } else {
       sensorManager.registerListener(this, gyroSensor, SensorManager.SENSOR_DELAY_NORMAL);
     }
     rotationVectorSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR);
     if (rotationVectorSensor == null) {
-      setText(R.id.diagnose_rotation_accuracy_txt, getString(R.string.sensor_absent));
+      setColor(R.id.diagnose_rotation_values_txt, absentSensorColor);
     } else {
       sensorManager.registerListener(this, rotationVectorSensor, SensorManager.SENSOR_DELAY_NORMAL);
     }
     lightSensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
     if (lightSensor == null) {
-      setText(R.id.diagnose_light_accuracy_txt, getString(R.string.sensor_absent));
+      setColor(R.id.diagnose_light_values_txt, absentSensorColor);
     } else {
       sensorManager.registerListener(this, lightSensor, SensorManager.SENSOR_DELAY_UI);
     }
@@ -179,22 +180,22 @@ public class DiagnosticActivity extends InjectableActivity implements SensorEven
   public void onAccuracyChanged(Sensor sensor, int accuracy) {
     knownSensorAccuracies.add(sensor);
     Log.d(TAG, "set size" + knownSensorAccuracies.size());
-    int accuracyViewId;
+    int sensorViewId;
     if (sensor == accelSensor) {
-      accuracyViewId = R.id.diagnose_accelerometer_accuracy_txt;
+      sensorViewId = R.id.diagnose_accelerometer_values_txt;
     } else if (sensor == magSensor) {
-      accuracyViewId = R.id.diagnose_compass_accuracy_txt;
+      sensorViewId = R.id.diagnose_compass_values_txt;
     } else if (sensor == gyroSensor) {
-      accuracyViewId = R.id.diagnose_gyro_accuracy_txt;
+      sensorViewId = R.id.diagnose_gyro_values_txt;
     } else if (sensor == rotationVectorSensor) {
-      accuracyViewId = R.id.diagnose_rotation_accuracy_txt;
+      sensorViewId = R.id.diagnose_rotation_values_txt;
     } else if (sensor == lightSensor) {
-      accuracyViewId = R.id.diagnose_light_accuracy_txt;
+      sensorViewId = R.id.diagnose_light_values_txt;
     } else {
       Log.e(TAG, "Receiving accuracy change for unknown sensor " + sensor);
       return;
     }
-    setText(accuracyViewId, sensorAccuracyDecoder.getTextForAccuracy(accuracy));
+    setColor(sensorViewId, sensorAccuracyDecoder.getColorForAccuracy(accuracy));
   }
 
   private Set<Sensor> knownSensorAccuracies = new HashSet<>();
@@ -219,8 +220,37 @@ public class DiagnosticActivity extends InjectableActivity implements SensorEven
       Log.e(TAG, "Receiving values for unknown sensor " + sensor);
       return;
     }
+    float[] values = event.values;
+    setArrayValuesInUi(valuesViewId, values);
+
+    // Something special for rotation sensor - convert to a matrix.
+    if (sensor == rotationVectorSensor) {
+      float[] matrix = new float[9];
+      SensorManager.getRotationMatrixFromVector(matrix, event.values);
+      for (int row = 0; row < 3; ++row) {
+        switch(row) {
+          case 0:
+            valuesViewId = R.id.diagnose_rotation_matrix_row1_txt;
+            break;
+          case 1:
+            valuesViewId = R.id.diagnose_rotation_matrix_row2_txt;
+            break;
+          case 2:
+          default:
+            valuesViewId = R.id.diagnose_rotation_matrix_row3_txt;
+        }
+        float[] rowValues = new float[3];
+        for (int col = 0; col < 3; ++col) {
+          rowValues[col] = matrix[row * 3 + col];
+        }
+        setArrayValuesInUi(valuesViewId, rowValues);
+      }
+    }
+  }
+
+  private void setArrayValuesInUi(int valuesViewId, float[] values) {
     StringBuilder valuesText = new StringBuilder();
-    for (float value : event.values) {
+    for (float value : values) {
       valuesText.append(String.format("%.2f", value));
       valuesText.append(',');
     }
@@ -246,5 +276,9 @@ public class DiagnosticActivity extends InjectableActivity implements SensorEven
 
   private void setText(int viewId, String text) {
     ((TextView) findViewById(viewId)).setText(text);
+  }
+
+  private void setColor(int viewId, int color) {
+    ((TextView) findViewById(viewId)).setTextColor(color);
   }
 }
