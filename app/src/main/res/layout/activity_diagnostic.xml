@@ -103,13 +103,6 @@
                     android:text="@string/diagnostics_activity_compass"/>
 
                 <TextView
-                    android:id="@+id/diagnose_compass_accuracy_txt"
-                    style="@style/TableRow_Element"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Acc: (waiting)"/>
-
-                <TextView
                     android:id="@+id/diagnose_compass_values_txt"
                     style="@style/TableRow_Element"
                     android:layout_width="wrap_content"
@@ -126,13 +119,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/diagnostics_activity_accelerometer"/>
-
-                <TextView
-                    android:id="@+id/diagnose_accelerometer_accuracy_txt"
-                    style="@style/TableRow_Element"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Acc: (waiting)"/>
 
                 <TextView
                     android:id="@+id/diagnose_accelerometer_values_txt"
@@ -153,13 +139,6 @@
                     android:text="@string/diagnostics_activity_gyroscope"/>
 
                 <TextView
-                    android:id="@+id/diagnose_gyro_accuracy_txt"
-                    style="@style/TableRow_Element"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Acc: (waiting)"/>
-
-                <TextView
                     android:id="@+id/diagnose_gyro_values_txt"
                     style="@style/TableRow_Element"
                     android:layout_width="wrap_content"
@@ -176,13 +155,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/diagnostics_activity_rotation_vector"/>
-
-                <TextView
-                    style="@style/TableRow_Element"
-                    android:id="@+id/diagnose_rotation_accuracy_txt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Acc: (waiting)"/>
 
                 <TextView
                     style="@style/TableRow_Element"
@@ -251,13 +223,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/diagnostics_activity_light_level"/>
-
-                <TextView
-                    android:id="@+id/diagnose_light_accuracy_txt"
-                    style="@style/TableRow_Element"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Acc: (waiting)"/>
 
                 <TextView
                     android:id="@+id/diagnose_light_values_txt"

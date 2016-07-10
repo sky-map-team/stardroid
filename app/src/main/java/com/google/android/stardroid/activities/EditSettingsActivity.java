@@ -16,6 +16,7 @@ package com.google.android.stardroid.activities;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
+import android.content.SharedPreferences;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
@@ -63,6 +64,7 @@ public class EditSettingsActivity extends PreferenceActivity {
   private Geocoder geocoder;
   private ActivityLightLevelManager activityLightLevelManager;
   @Inject Analytics analytics;
+  @Inject SharedPreferences sharedPreferences;
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
@@ -104,6 +106,10 @@ public class EditSettingsActivity extends PreferenceActivity {
         return true;
       }
     });
+
+    enableNonGyroSensorPrefs(
+        !sharedPreferences.getBoolean(ApplicationConstants.SHARED_PREFERENCE_EXPERIMENTAL_USE_GYRO,
+            false));
   }
 
   @Override
@@ -122,7 +128,7 @@ public class EditSettingsActivity extends PreferenceActivity {
   private void enableNonGyroSensorPrefs(boolean enabled) {
     // These settings aren't compatible with the gyro.
     preferenceFragment.findPreference(
-        ApplicationConstants.SENSOR_DAMPING_PREF_KEY).setEnabled(enabled);
+        "sensor_prefs").setEnabled(enabled);
     preferenceFragment.findPreference(
         ApplicationConstants.SENSOR_SPEED_PREF_KEY).setEnabled(enabled);
     preferenceFragment.findPreference(
