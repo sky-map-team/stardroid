@@ -82,7 +82,7 @@ public class PreferencesButton extends ImageButton
     imageOn = a.getDrawable(R.styleable.PreferencesButton_image_on);
     imageOff = a.getDrawable(R.styleable.PreferencesButton_image_off);
     prefKey = a.getString(R.styleable.PreferencesButton_pref_key);
-    defaultValue = a.getBoolean(R.styleable.PreferencesButton_default_value, false);
+    defaultValue = a.getBoolean(R.styleable.PreferencesButton_default_value, true);
     Log.d(TAG, "Preference key is " + prefKey);
   }
 
@@ -101,9 +101,8 @@ public class PreferencesButton extends ImageButton
   
   private void setPreference() {
     Log.d(TAG, "Setting preference " + prefKey + " to... " + isOn);
-    // TODO(put this on a background thread)
     if (prefKey != null) {
-      preferences.edit().putBoolean(prefKey, isOn).commit();  
+      preferences.edit().putBoolean(prefKey, isOn).apply();
     }
   }
 
