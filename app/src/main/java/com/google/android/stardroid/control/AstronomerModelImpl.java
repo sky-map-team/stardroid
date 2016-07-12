@@ -96,6 +96,8 @@ public class AstronomerModelImpl implements AstronomerModel {
   /** The sensor acceleration in the phone's coordinate system. */
   private Vector3 acceleration = ApplicationConstants.INITIAL_DOWN.copy();
 
+  private Vector3 upPhone = Geometry.scaleVector(acceleration, -1);
+
   /** The sensor magnetic field in the phone's coordinate system. */
   private Vector3 magneticField = ApplicationConstants.INITIAL_SOUTH.copy();
 
@@ -163,8 +165,8 @@ public class AstronomerModelImpl implements AstronomerModel {
   }
 
   @Override
-  public Vector3 getPhoneAcceleration() {
-    return acceleration;
+  public Vector3 getPhoneUpDirection() {
+    return upPhone;
   }
 
   private static final float TOL = 0.01f;
@@ -303,7 +305,6 @@ public class AstronomerModelImpl implements AstronomerModel {
    */
   private void calculateLocalNorthAndUpInPhoneCoordsFromSensors() {
     Vector3 magneticNorthPhone;
-    Vector3 upPhone;
     Vector3 magneticEastPhone;
     if (useRotationVector) {
       float[] rotationMatrix = new float[9];
@@ -327,7 +328,6 @@ public class AstronomerModelImpl implements AstronomerModel {
       upPhone = scaleVector(down, -1);
       magneticEastPhone = vectorProduct(magneticNorthPhone, upPhone);
     }
-
     // The matrix is orthogonal, so transpose it to find its inverse.
     // Easiest way to do that is to construct it from row vectors instead
     // of column vectors.
@@ -366,10 +366,5 @@ public class AstronomerModelImpl implements AstronomerModel {
   @Override
   public long getTimeMillis() {
     return clock.getTimeInMillisSinceEpoch();
-  }
-
-  @Override
-  public void setUseRotationVector(boolean useRotationVector) {
-    this.useRotationVector = useRotationVector;
   }
 }

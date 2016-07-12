@@ -127,8 +127,8 @@ public class DynamicStarMapActivity extends InjectableActivity
 
       rendererController.queueSetViewOrientation(directionX, directionY, directionZ, upX, upY, upZ);
 
-      Vector3 acceleration = model.getPhoneAcceleration();
-      rendererController.queueTextAngle(MathUtil.atan2(-acceleration.x, -acceleration.y));
+      Vector3 up = model.getPhoneUpDirection();
+      rendererController.queueTextAngle(MathUtil.atan2(up.x, up.y));
       rendererController.queueViewerUpDirection(model.getZenith().copy());
 
       float fieldOfView = model.getFieldOfView();
@@ -563,8 +563,7 @@ public class DynamicStarMapActivity extends InjectableActivity
         setAutoMode(autoMode);
         break;
       case ApplicationConstants.SHARED_PREFERENCE_EXPERIMENTAL_USE_GYRO:
-        boolean useGyro = sharedPreferences.getBoolean(key, false);
-        model.setUseRotationVector(useGyro);
+        // Do nothing - the sensor controller will take care of it.
       default:
         return;
     }

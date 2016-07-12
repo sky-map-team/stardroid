@@ -14,13 +14,13 @@
 
 package com.google.android.stardroid.util;
 
-import java.util.Date;
-
 import com.google.android.stardroid.units.GeocentricCoordinates;
 import com.google.android.stardroid.units.LatLong;
 import com.google.android.stardroid.units.Matrix33;
 import com.google.android.stardroid.units.RaDec;
 import com.google.android.stardroid.units.Vector3;
+
+import java.util.Date;
 
 /**
  * Utilities for working with angles, distances, matrices, and time.
@@ -77,7 +77,7 @@ public class Geometry {
   }
 
   /**
-   * Scales the vector by the given amount
+   * Scales the vector by the given amount and returns a new vector.
    */
   public static Vector3 scaleVector(Vector3 v, float scale) {
     return new Vector3 (scale * v.x, scale * v.y, scale * v.z);
