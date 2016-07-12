@@ -28,10 +28,6 @@ import java.util.Date;
  * @author John Taylor
  */
 public interface AstronomerModel {
-
-
-  void setUseRotationVector(boolean useRotationVector);
-
   /**
    * A POJO to hold the user's view direction.
    *
@@ -156,7 +152,7 @@ public interface AstronomerModel {
    * 
    * <p>The returned object should not be modified.
    */
-  Vector3 getPhoneAcceleration();
+  Vector3 getPhoneUpDirection();
 
   /**
    * Sets the acceleration and magnetic field in the phone frame.
