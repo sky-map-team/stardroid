@@ -1,3 +1,5 @@
+# Sky Map [![Build Status](https://travis-ci.org/sky-map-team/stardroid.svg?branch=master)](https://travis-ci.org/sky-map-team/stardroid)
+
 This is the source repository for Sky Map. You should see the following
 two directories:
  * app: Application source
