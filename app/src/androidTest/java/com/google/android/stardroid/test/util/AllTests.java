@@ -33,12 +33,7 @@ public class AllTests {
     suite.addTestSuite(GeometryTest.class);
     suite.addTestSuite(ImmutableEqualsTesterTest.class);
     suite.addTestSuite(SiderealTimeRegressionTest.class);
-    suite.addTestSuite(StopWatchTreeNodeTest.class);
-    suite.addTestSuite(StopWatchTreePathTest.class);
-    suite.addTestSuite(StopWatchTreeTest.class);
     suite.addTestSuite(TimeUtilTest.class);
-    suite.addTestSuite(TimingTreeNodeTest.class);
-    suite.addTestSuite(TimingTreeTest.class);
     suite.addTestSuite(VectorUtilTest.class);
     suite.addTestSuite(WeakHashSetTest.class);
     //$JUnit-END$
