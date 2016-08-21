@@ -46,6 +46,12 @@ android {
         // TODO(jontayler): fix the missing translations.
         abortOnError false
     }
+
+    // This enables long timeouts required on slow environments, e.g. Travis
+    adbOptions {
+        timeOutInMs 10 * 60 * 1000  // 10 minutes
+        installOptions "-d", "-t"
+    }
 }
 
 dependencies {
