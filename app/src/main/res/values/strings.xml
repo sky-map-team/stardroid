@@ -39,9 +39,9 @@
     <string name="show_horizon_pref">Horizon</string>
     <string name="show_sky_gradient" translation_description="This is a shading of the color of the sky used for effect">Sky Gradient</string>
     <string name="show_meteors_pref">Meteor Showers</string>
-    <string name="sensor_prefs">Sensor Settings</string>
-    <string name="sensor_speed" translation_description="How quickly the sensor should send us data">Sensor Speed</string>
-    <string name="sensor_damping" translation_description="The amount of smoothing applied to the sensor outputs.">Damping</string>
+    <string name="sensor_prefs">Sensor Settings (experts)</string>
+    <string name="sensor_speed" translation_description="Old, non gyro sensors only: How quickly the sensor should send us data">Sensor Speed</string>
+    <string name="sensor_damping" translation_description="Old, non gyro sensors only: The amount of smoothing applied to the sensor outputs.">Damping</string>
     <string name="ecliptic">Ecliptic</string>
     <!-- Just in case we decide to have such a layer for the 4/24 launch -->
     <string name="show_hubble_layer_pref">Hubble Images</string>
@@ -473,6 +473,6 @@
     <string name="sensor_reverse_preference_title">Reverse Magnetic Z</string>
     <string name="sensor_reverse_preference_summary">Fix for phones with incorrectly implemented sensors - requires restart</string>
     <string name="whats_new_dialog_title">What\'s new</string>
-    <string name="use_gyro_preference_title">Use gyro (experimental)</string>
-    <string name="use_gyro_preference_summary">Makes map motion smoother. Not all phones have a gyro.</string>
+    <string name="disable_gyro_preference_title">Disable gyroscope</string>
+    <string name="disable_gyro_preference_summary">Not all devices have a gyro - if yours does then you\'ll get better results with it enabled and this box unchecked.  On the other hand if your device does not have a gyro and then Sky Map will probably not work if you uncheck this box.</string>
 </resources>

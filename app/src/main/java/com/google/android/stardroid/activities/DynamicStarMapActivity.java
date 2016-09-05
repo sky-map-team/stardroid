@@ -562,8 +562,6 @@ public class DynamicStarMapActivity extends InjectableActivity
         }
         setAutoMode(autoMode);
         break;
-      case ApplicationConstants.SHARED_PREFERENCE_EXPERIMENTAL_USE_GYRO:
-        // Do nothing - the sensor controller will take care of it.
       default:
         return;
     }
@@ -634,8 +632,6 @@ public class DynamicStarMapActivity extends InjectableActivity
     skyView.setEGLConfigChooser(false);
     SkyRenderer renderer = new SkyRenderer(getResources());
     skyView.setRenderer(renderer);
-
-    sharedPreferences.getBoolean(ApplicationConstants.SHARED_PREFERENCE_EXPERIMENTAL_USE_GYRO, false);
 
     rendererController = new RendererController(renderer, skyView);
     // The renderer will now call back every frame to get model updates.

@@ -2,33 +2,6 @@
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:key="stardroid.preferences">
   <PreferenceCategory>
-      <CheckBoxPreference
-          android:defaultValue="false"
-          android:title="@string/use_gyro_preference_title"
-          android:summary="@string/use_gyro_preference_summary"
-          android:key="experimental_use_gyro"/>
-
-    <PreferenceScreen android:key="sensor_prefs" android:title="@string/sensor_prefs">
-      <PreferenceCategory>
-        <ListPreference
-            android:key="sensor_speed"
-            android:title="@string/sensor_speed"
-            android:entryValues="@array/sensor_speed_values"
-            android:entries="@array/sensor_speed"
-            android:defaultValue="STANDARD" />
-        <ListPreference
-            android:key="sensor_damping"
-            android:title="@string/sensor_damping"
-            android:entryValues="@array/sensor_damping_values"
-            android:entries="@array/sensor_damping"
-            android:defaultValue="EXTRA HIGH" />
-        <CheckBoxPreference
-            android:defaultValue="false"
-            android:title="@string/sensor_reverse_preference_title"
-            android:summary="@string/sensor_reverse_preference_summary"
-            android:key="reverse_magnetic_z"/>
-      </PreferenceCategory>
-    </PreferenceScreen>
     <PreferenceScreen android:title="@string/location_prefs">
       <PreferenceCategory>
         <CheckBoxPreference
@@ -82,4 +55,30 @@
         android:summary="@string/enable_analytics_desc"
         android:key="enable_analytics"/>
   </PreferenceCategory>
+  <PreferenceScreen android:key="sensor_prefs" android:title="@string/sensor_prefs">
+    <PreferenceCategory>
+      <CheckBoxPreference
+          android:defaultValue="false"
+          android:title="@string/disable_gyro_preference_title"
+          android:summary="@string/disable_gyro_preference_summary"
+          android:key="disable_gyro"/>
+      <ListPreference
+          android:key="sensor_speed"
+          android:title="@string/sensor_speed"
+          android:entryValues="@array/sensor_speed_values"
+          android:entries="@array/sensor_speed"
+          android:defaultValue="STANDARD" />
+      <ListPreference
+          android:key="sensor_damping"
+          android:title="@string/sensor_damping"
+          android:entryValues="@array/sensor_damping_values"
+          android:entries="@array/sensor_damping"
+          android:defaultValue="EXTRA HIGH" />
+      <CheckBoxPreference
+          android:defaultValue="false"
+          android:title="@string/sensor_reverse_preference_title"
+          android:summary="@string/sensor_reverse_preference_summary"
+          android:key="reverse_magnetic_z"/>
+    </PreferenceCategory>
+  </PreferenceScreen>
 </PreferenceScreen>
