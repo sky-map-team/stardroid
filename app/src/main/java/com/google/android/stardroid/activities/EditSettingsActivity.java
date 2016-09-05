@@ -97,18 +97,18 @@ public class EditSettingsActivity extends PreferenceActivity {
     });
 
     Preference gyroPreference = preferenceFragment.findPreference(
-        ApplicationConstants.SHARED_PREFERENCE_EXPERIMENTAL_USE_GYRO);
+        ApplicationConstants.SHARED_PREFERENCE_DISABLE_GYRO);
     gyroPreference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
 
       public boolean onPreferenceChange(Preference preference, Object newValue) {
         Log.d(TAG, "Toggling gyro preference " + newValue);
-        enableNonGyroSensorPrefs(!((Boolean) newValue));
+        enableNonGyroSensorPrefs(((Boolean) newValue));
         return true;
       }
     });
 
     enableNonGyroSensorPrefs(
-        !sharedPreferences.getBoolean(ApplicationConstants.SHARED_PREFERENCE_EXPERIMENTAL_USE_GYRO,
+        sharedPreferences.getBoolean(ApplicationConstants.SHARED_PREFERENCE_DISABLE_GYRO,
             false));
   }
 
@@ -128,9 +128,9 @@ public class EditSettingsActivity extends PreferenceActivity {
   private void enableNonGyroSensorPrefs(boolean enabled) {
     // These settings aren't compatible with the gyro.
     preferenceFragment.findPreference(
-        "sensor_prefs").setEnabled(enabled);
-    preferenceFragment.findPreference(
         ApplicationConstants.SENSOR_SPEED_PREF_KEY).setEnabled(enabled);
+    preferenceFragment.findPreference(
+        ApplicationConstants.SENSOR_DAMPING_PREF_KEY).setEnabled(enabled);
     preferenceFragment.findPreference(
         ApplicationConstants.REVERSE_MAGNETIC_Z_PREFKEY).setEnabled(enabled);
   }

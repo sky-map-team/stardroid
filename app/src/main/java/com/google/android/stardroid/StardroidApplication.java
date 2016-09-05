@@ -173,8 +173,6 @@ public class StardroidApplication extends Application {
   /**
    * Schedules this runnable to run as soon as possible on a background
    * thread.
-   *
-   * @param runnable
    */
   // TODO(johntaylor): the idea, and I'm not sure yet whether it's a good one,
   // is to centralize the management of background threads so we don't have
@@ -220,8 +218,10 @@ public class StardroidApplication extends Application {
     }
 
     // Check for a particularly strange combo
+    boolean hasRotationSensor = false;
     if (hasDefaultSensor(Sensor.TYPE_ROTATION_VECTOR)) {
       if (hasDefaultSensor(Sensor.TYPE_ACCELEROMETER) && hasDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD)) {
+        hasRotationSensor = true;
         analytics.trackEvent(
             Analytics.SENSOR_CATEGORY, Analytics.ROT_SENSOR_AVAILABILITY, "OK", 1);
       } else {
@@ -231,6 +231,12 @@ public class StardroidApplication extends Application {
     } else {
       analytics.trackEvent(
           Analytics.SENSOR_CATEGORY, Analytics.ROT_SENSOR_AVAILABILITY, "No rotation", 0);
+    }
+
+    // Enable Gyro if available and user hasn't already disabled it.
+    if (!preferences.contains(ApplicationConstants.SHARED_PREFERENCE_DISABLE_GYRO)) {
+      preferences.edit().putBoolean(
+          ApplicationConstants.SHARED_PREFERENCE_DISABLE_GYRO, !hasRotationSensor).apply();
     }
 
     // Do we at least have defaults for the main ones?
