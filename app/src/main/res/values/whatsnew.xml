@@ -3,6 +3,7 @@
     <string name="whats_new_text" translation_description="Description of new features in this version in html">
 <![CDATA[
     <h1>New in version %s</h1>
+    \t • Bugfix for the time travel dates (whoops - thanks to the many users who reported the bug)<br/>
     \t • Fixed German translations (thanks: JohannesWestphal)<br/>
 ]]>
     </string>

@@ -230,18 +230,18 @@ public class TimeTravelDialog extends Dialog {
         // http://mainfacts.com/timestamp-date-converter-calculator
         setDate(new Date(1462805846000L));
         break;
-      case 6: // Solar Eclipse 2017 North America.
+      case 5: // Solar Eclipse 2017 North America.
         // Source: http://mainfacts.com/timestamp-date-converter-calculator
         setDate(new Date(1503340380000L));
         break;
-      case 7: // Solar Eclipse 2016.
+      case 6: // Solar Eclipse 2016.
         // Source: http://mainfacts.com/timestamp-date-converter-calculator
         setDate(new Date(1457489160000L));
         break;
-      case 8: // Solar Eclipse 1919.
+      case 7: // Solar Eclipse 1919.
         setDate(new Date(-1596619190000L));
         break;
-      case 9:  // Moon Landing 1969.
+      case 8:  // Moon Landing 1969.
         setDate(new Date(-14182953622L));
         break;
       default:
