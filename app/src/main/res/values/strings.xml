@@ -474,5 +474,5 @@
     <string name="sensor_reverse_preference_summary">Fix for phones with incorrectly implemented sensors - requires restart</string>
     <string name="whats_new_dialog_title">What\'s new</string>
     <string name="disable_gyro_preference_title">Disable gyroscope</string>
-    <string name="disable_gyro_preference_summary">Not all devices have a gyro - if yours does then you\'ll get better results with it enabled and this box unchecked.  On the other hand if your device does not have a gyro and then Sky Map will probably not work if you uncheck this box.</string>
+    <string name="disable_gyro_preference_summary">Not all devices have a gyro - if yours does then you\'ll get better results with it enabled and this box unchecked.  On the other hand if your device does not have a gyro then Sky Map will probably not work if you uncheck this box.</string>
 </resources>
