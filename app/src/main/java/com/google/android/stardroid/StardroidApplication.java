@@ -236,7 +236,7 @@ public class StardroidApplication extends Application {
     // Enable Gyro if available and user hasn't already disabled it.
     if (!preferences.contains(ApplicationConstants.SHARED_PREFERENCE_DISABLE_GYRO)) {
       preferences.edit().putBoolean(
-          ApplicationConstants.SHARED_PREFERENCE_DISABLE_GYRO, !hasRotationSensor);
+          ApplicationConstants.SHARED_PREFERENCE_DISABLE_GYRO, !hasRotationSensor).apply();
     }
 
     // Do we at least have defaults for the main ones?
