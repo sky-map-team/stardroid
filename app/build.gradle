@@ -9,7 +9,7 @@ android {
         applicationId "com.google.android.stardroid"
         minSdkVersion 15
         targetSdkVersion 23
-        versionCode 1460
+        versionCode 1461
         versionName "1.9.1"
         buildConfigField 'String', 'GOOGLE_ANALYTICS_CODE', '""'
     }
