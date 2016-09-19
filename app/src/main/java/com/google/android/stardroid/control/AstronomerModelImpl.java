@@ -26,7 +26,6 @@ import com.google.android.stardroid.units.Vector3;
 import com.google.android.stardroid.util.Geometry;
 import com.google.android.stardroid.util.MiscUtil;
 
-import java.util.Arrays;
 import java.util.Date;
 
 import static com.google.android.stardroid.util.Geometry.addVectors;
@@ -187,7 +186,9 @@ public class AstronomerModelImpl implements AstronomerModel {
   @Override
   public void setPhoneSensorValues(float[] rotationVector) {
     // TODO(jontayler): What checks do we need for this to be valid?
-    this.rotationVector = Arrays.copyOf(rotationVector, rotationVector.length);
+    // Note on some phones such as the Galaxy S4 this vector is the wrong size and needs to be
+    // truncated to 4.
+    System.arraycopy(rotationVector, 0, this.rotationVector, 0, Math.max(rotationVector.length, 4));
     useRotationVector = true;
   }
 
