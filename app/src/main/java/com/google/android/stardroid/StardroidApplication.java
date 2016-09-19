@@ -217,13 +217,20 @@ public class StardroidApplication extends Application {
       }
     }
 
-    // Check for a particularly strange combo
+    // Check for a particularly strange combo - it would be weird to have a rotation sensor
+    // but no accelerometer or magnetic field sensor
     boolean hasRotationSensor = false;
     if (hasDefaultSensor(Sensor.TYPE_ROTATION_VECTOR)) {
-      if (hasDefaultSensor(Sensor.TYPE_ACCELEROMETER) && hasDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD)) {
+      if (hasDefaultSensor(Sensor.TYPE_ACCELEROMETER) && hasDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD)
+          && hasDefaultSensor(Sensor.TYPE_GYROSCOPE)) {
         hasRotationSensor = true;
         analytics.trackEvent(
-            Analytics.SENSOR_CATEGORY, Analytics.ROT_SENSOR_AVAILABILITY, "OK", 1);
+            Analytics.SENSOR_CATEGORY, Analytics.ROT_SENSOR_AVAILABILITY, "OK - All", 1);
+      } else if (hasDefaultSensor(Sensor.TYPE_ACCELEROMETER) && hasDefaultSensor(
+          Sensor.TYPE_MAGNETIC_FIELD)) {
+        hasRotationSensor = true;
+        analytics.trackEvent(
+            Analytics.SENSOR_CATEGORY, Analytics.ROT_SENSOR_AVAILABILITY, "OK - No gyro", 1);
       } else {
         analytics.trackEvent(
             Analytics.SENSOR_CATEGORY, Analytics.ROT_SENSOR_AVAILABILITY, "Missing Mag/Accel", 0);
@@ -273,6 +280,6 @@ public class StardroidApplication extends Application {
   }
 
   private boolean hasDefaultSensor(int sensorType) {
-    return sensorManager.getDefaultSensor(sensorType) != null;
+    return sensorManager != null && sensorManager.getDefaultSensor(sensorType) != null;
   }
 }
