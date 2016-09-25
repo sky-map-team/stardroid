@@ -230,7 +230,6 @@ public class StardroidApplication extends Application {
             Analytics.SENSOR_CATEGORY, Analytics.ROT_SENSOR_AVAILABILITY, "OK - All", 1);
       } else if (hasDefaultSensor(Sensor.TYPE_ACCELEROMETER) && hasDefaultSensor(
           Sensor.TYPE_MAGNETIC_FIELD)) {
-        // Although the phone claims to have a gyro
         hasRotationSensor = true;
         analytics.trackEvent(
             Analytics.SENSOR_CATEGORY, Analytics.ROT_SENSOR_AVAILABILITY, "OK - No gyro", 1);
