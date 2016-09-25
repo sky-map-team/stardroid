@@ -20,6 +20,7 @@ import javax.inject.Inject;
  */
 public class SensorAccuracyMonitor implements SensorEventListener {
   private static final String TAG = MiscUtil.getTag(SensorAccuracyMonitor.class);
+  private static final String LAST_CALIBRATION_WARNING_PREF_KEY = "Last calibration warning time";
 
   private SensorManager sensorManager;
   private Sensor compassSensor;
@@ -28,9 +29,10 @@ public class SensorAccuracyMonitor implements SensorEventListener {
   private Toaster toaster;
 
   @Inject
-  public SensorAccuracyMonitor(
+  SensorAccuracyMonitor(
       SensorManager sensorManager, Context context, SharedPreferences sharedPreferences,
       Toaster toaster) {
+    Log.d(TAG, "Creating new accuracy monitor");
     this.sensorManager = sensorManager;
     this.context = context;
     this.sharedPreferences = sharedPreferences;
@@ -48,6 +50,7 @@ public class SensorAccuracyMonitor implements SensorEventListener {
     if (started) {
       return;
     }
+    Log.d(TAG, "Starting monitoring compass accuracy");
     if (compassSensor != null) {
       sensorManager.registerListener(this, compassSensor, SensorManager.SENSOR_DELAY_UI);
     }
@@ -59,6 +62,7 @@ public class SensorAccuracyMonitor implements SensorEventListener {
    * ensure the app does not needlessly consume power when in the background.
    */
   public void stop() {
+    Log.d(TAG, "Stopping monitoring compass accuracy");
     started = false;
     hasReading = false;
     sensorManager.unregisterListener(this);
@@ -72,7 +76,6 @@ public class SensorAccuracyMonitor implements SensorEventListener {
     }
   }
 
-  private long lastWarnedMillis = System.currentTimeMillis() - MIN_INTERVAL_BETWEEN_WARNINGS - 1;
   private static final long MIN_INTERVAL_BETWEEN_WARNINGS =
       60 * TimeConstants.MILLISECONDS_PER_SECOND;
 
@@ -83,12 +86,14 @@ public class SensorAccuracyMonitor implements SensorEventListener {
         || accuracy == SensorManager.SENSOR_STATUS_ACCURACY_MEDIUM) {
       return;  // OK
     }
+    Log.d(TAG, "Compass accuracy insufficient");
     long nowMillis = System.currentTimeMillis();
+    long lastWarnedMillis = sharedPreferences.getLong(LAST_CALIBRATION_WARNING_PREF_KEY, 0);
     if (nowMillis - lastWarnedMillis < MIN_INTERVAL_BETWEEN_WARNINGS) {
-      Log.d(TAG, "too soon");
+      Log.d(TAG, "...but too soon to warn again");
       return;
     }
-    lastWarnedMillis = nowMillis;
+    sharedPreferences.edit().putLong(LAST_CALIBRATION_WARNING_PREF_KEY, nowMillis).apply();
     boolean dontShowDialog = sharedPreferences.getBoolean(
         CompassCalibrationActivity.DONT_SHOW_CALIBRATION_DIALOG, false);
     if (dontShowDialog) {
