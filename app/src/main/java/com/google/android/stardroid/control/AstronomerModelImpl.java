@@ -188,7 +188,7 @@ public class AstronomerModelImpl implements AstronomerModel {
     // TODO(jontayler): What checks do we need for this to be valid?
     // Note on some phones such as the Galaxy S4 this vector is the wrong size and needs to be
     // truncated to 4.
-    System.arraycopy(rotationVector, 0, this.rotationVector, 0, Math.max(rotationVector.length, 4));
+    System.arraycopy(rotationVector, 0, this.rotationVector, 0, Math.min(rotationVector.length, 4));
     useRotationVector = true;
   }
 
