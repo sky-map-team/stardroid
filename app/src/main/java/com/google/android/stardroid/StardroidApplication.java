@@ -19,6 +19,8 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Build;
 import android.preference.PreferenceManager;
@@ -280,6 +282,30 @@ public class StardroidApplication extends Application {
   }
 
   private boolean hasDefaultSensor(int sensorType) {
-    return sensorManager != null && sensorManager.getDefaultSensor(sensorType) != null;
+    if (sensorManager == null) {
+      return false;
+    }
+    Sensor sensor = sensorManager.getDefaultSensor(sensorType);
+    if (sensor == null) {
+      return false;
+    }
+    SensorEventListener dummy = new SensorEventListener() {
+      @Override
+      public void onSensorChanged(SensorEvent event) {
+        // Nothing
+      }
+
+      @Override
+      public void onAccuracyChanged(Sensor sensor, int accuracy) {
+        // Nothing
+      }
+    };
+    boolean success = sensorManager.registerListener(
+        dummy, sensor, SensorManager.SENSOR_DELAY_UI);
+    analytics.trackEvent(
+        Analytics.SENSOR_CATEGORY, Analytics.SENSOR_LIAR, Analytics.getSafeNameForSensor(sensor),
+        1);
+    sensorManager.unregisterListener(dummy);
+    return success;
   }
 }
