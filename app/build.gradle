@@ -9,8 +9,8 @@ android {
         applicationId "com.google.android.stardroid"
         minSdkVersion 15
         targetSdkVersion 23
-        versionCode 1475
-        versionName "1.9.1f"
+        versionCode 1480
+        versionName "1.9.2"
         buildConfigField 'String', 'GOOGLE_ANALYTICS_CODE', '""'
     }
     signingConfigs {
@@ -28,7 +28,7 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled true
+            minifyEnabled true 
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard.cfg'
             if (file('no-checkin.properties').exists()) {
                 signingConfig signingConfigs.release

@@ -227,15 +227,17 @@ public class StardroidApplication extends Application {
           && hasDefaultSensor(Sensor.TYPE_GYROSCOPE)) {
         hasRotationSensor = true;
         analytics.trackEvent(
-            Analytics.SENSOR_CATEGORY, Analytics.ROT_SENSOR_AVAILABILITY, "OK - All", 1);
+            Analytics.SENSOR_CATEGORY, Analytics.ROT_SENSOR_AVAILABILITY, "OK - All Sensors", 1);
       } else if (hasDefaultSensor(Sensor.TYPE_ACCELEROMETER) && hasDefaultSensor(
           Sensor.TYPE_MAGNETIC_FIELD)) {
-        hasRotationSensor = true;
+        // Even though it allegedly has the rotation vector sensor too many gyro-less phones
+        // lie about this, so put these devices on the 'classic' sensor code for now.
+        hasRotationSensor = false;
         analytics.trackEvent(
-            Analytics.SENSOR_CATEGORY, Analytics.ROT_SENSOR_AVAILABILITY, "OK - No gyro", 1);
+            Analytics.SENSOR_CATEGORY, Analytics.ROT_SENSOR_AVAILABILITY, "Disabled - No gyro", 1);
       } else {
         analytics.trackEvent(
-            Analytics.SENSOR_CATEGORY, Analytics.ROT_SENSOR_AVAILABILITY, "Missing Mag/Accel", 0);
+            Analytics.SENSOR_CATEGORY, Analytics.ROT_SENSOR_AVAILABILITY, "Disabled - Missing Mag/Accel", 0);
       }
     } else {
       analytics.trackEvent(
