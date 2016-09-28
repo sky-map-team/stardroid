@@ -302,9 +302,11 @@ public class StardroidApplication extends Application {
     };
     boolean success = sensorManager.registerListener(
         dummy, sensor, SensorManager.SENSOR_DELAY_UI);
-    analytics.trackEvent(
-        Analytics.SENSOR_CATEGORY, Analytics.SENSOR_LIAR, Analytics.getSafeNameForSensor(sensor),
-        1);
+    if (!success) {
+      analytics.trackEvent(
+          Analytics.SENSOR_CATEGORY, Analytics.SENSOR_LIAR, Analytics.getSafeNameForSensor(sensor),
+          1);
+    }
     sensorManager.unregisterListener(dummy);
     return success;
   }

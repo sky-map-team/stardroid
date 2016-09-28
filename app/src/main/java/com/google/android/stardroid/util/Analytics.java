@@ -112,7 +112,7 @@ public class Analytics {
   public static final String HIGH_SENSOR_ACCURACY_ACHIEVED = "High Accuracy Achieved";
   public static final String SENSOR_ACCURACY_CHANGED = "Sensor Accuracy Changed";
   // Phone claims to have a sensor, but then doesn't allow registration of a listener.
-  public static final String SENSOR_LIAR = "Sensor Liar";
+  public static final String SENSOR_LIAR = "Sensor Liar!";
 
   @Inject
   Analytics(StardroidApplication application) {
