@@ -405,7 +405,7 @@
     <string name="enable_analytics_desc">Sky Map durch das Übermitteln anonymer Daten an Google Analytics verbessern</string>
     <string name="enabled">Aktiviert</string>
     <string name="location_rationale_title">Worum benötigen wir Ihren Standort?</string>
-    <string name="location_rationale_text">Die Sterne, die Sie am Himmel sehen können, hängen von Ihrer Position auf der Erde ab. Ohne Ihren Standort können wir Ihnen keine akurate Sternenkarte darstellen. Wenn Sie der automatischen Standortbestimmung durch Ihr Gerät nicht zustimmen, können Sie in den Einstellungen manuell einen Standort festlegen. Es reicht dabei aus, die nächste Stadt anzugeben.</string>
+    <string name="location_rationale_text">Die Sterne, die Sie am Himmel sehen können, hängen von Ihrer Position auf der Erde ab. Ohne Ihren Standort können wir Ihnen keine akkurate Sternenkarte darstellen. Wenn Sie der automatischen Standortbestimmung durch Ihr Gerät nicht zustimmen, können Sie in den Einstellungen manuell einen Standort festlegen. Es reicht dabei aus, die nächste Stadt anzugeben.</string>
     <string name="menu_calibrate">Kalibrieren</string>
     <string name="menu_diagnostics">Diagnose</string>
     <string name="no_sensor_warning">Ihr Gerät scheint keine Sensoren zur Bestimmung der Orientierung zu besitzen - Der automatische Modus könnte nicht funktionieren</string>
