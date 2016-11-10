@@ -105,6 +105,7 @@ public class SkyRenderer implements GLSurfaceView.Renderer {
 
   // Returns true if the buffers should be swapped, false otherwise.
   public void onDrawFrame(GL10 gl) {
+
     // Initialize any of the unloaded managers.
     for (ManagerReloadData data : mManagersToReload) {
       data.manager.reload(gl, data.fullReload);
@@ -134,6 +135,7 @@ public class SkyRenderer implements GLSurfaceView.Renderer {
     for (UpdateClosure update : mUpdateClosures) {
       update.run();
     }
+
   }
 
   public void onSurfaceCreated(GL10 gl, EGLConfig config) {
@@ -313,6 +315,7 @@ public class SkyRenderer implements GLSurfaceView.Renderer {
     upY *= oneOverUpLen;
     upZ *= oneOverUpLen;
 
+    Log.d("SWEG", Float.toString(upX) + " : " + Float.toString(upY) + " : " + Float.toString(upZ));
     mRenderState.setLookDir(new GeocentricCoordinates(dirX, dirY, dirZ));
     mRenderState.setUpDir(new GeocentricCoordinates(upX, upY, upZ));
 

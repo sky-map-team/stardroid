@@ -81,6 +81,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -113,7 +114,6 @@ public class DynamicStarMapActivity extends InjectableActivity
       this.model = model;
       this.rendererController = rendererController;
     }
-
     @Override
     public void run() {
       Pointing pointing = model.getPointing();
@@ -125,12 +125,11 @@ public class DynamicStarMapActivity extends InjectableActivity
       float upY = pointing.getPerpendicularY();
       float upZ = pointing.getPerpendicularZ();
 
+      //Log.d("SWEG", Float.toString(upX) + " : " + Float.toString(upY) + " : " + Float.toString(upZ));
       rendererController.queueSetViewOrientation(directionX, directionY, directionZ, upX, upY, upZ);
-
       Vector3 up = model.getPhoneUpDirection();
       rendererController.queueTextAngle(MathUtil.atan2(up.x, up.y));
       rendererController.queueViewerUpDirection(model.getZenith().copy());
-
       float fieldOfView = model.getFieldOfView();
       rendererController.queueFieldOfView(fieldOfView);
     }
@@ -628,6 +627,8 @@ public class DynamicStarMapActivity extends InjectableActivity
     Log.i(TAG, "Initializing Model, View and Controller @ " + System.currentTimeMillis());
     setContentView(R.layout.skyrenderer);
     skyView = (GLSurfaceView) findViewById(R.id.skyrenderer_view);
+
+    //mashala
     // We don't want a depth buffer.
     skyView.setEGLConfigChooser(false);
     SkyRenderer renderer = new SkyRenderer(getResources());
