@@ -92,6 +92,7 @@ public class AstronomerModelImpl implements AstronomerModel {
    * celestial coordinates combined with a perpendicular vector along the
    * phone's longer side.
    */
+
   private Pointing pointing = new Pointing();
 
   /** The sensor acceleration in the phone's coordinate system. */

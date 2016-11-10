@@ -315,7 +315,6 @@ public class SkyRenderer implements GLSurfaceView.Renderer {
     upY *= oneOverUpLen;
     upZ *= oneOverUpLen;
 
-    Log.d("SWEG", Float.toString(upX) + " : " + Float.toString(upY) + " : " + Float.toString(upZ));
     mRenderState.setLookDir(new GeocentricCoordinates(dirX, dirY, dirZ));
     mRenderState.setUpDir(new GeocentricCoordinates(upX, upY, upZ));
 

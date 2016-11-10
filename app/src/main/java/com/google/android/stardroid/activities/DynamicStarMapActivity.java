@@ -125,7 +125,6 @@ public class DynamicStarMapActivity extends InjectableActivity
       float upY = pointing.getPerpendicularY();
       float upZ = pointing.getPerpendicularZ();
 
-      //Log.d("SWEG", Float.toString(upX) + " : " + Float.toString(upY) + " : " + Float.toString(upZ));
       rendererController.queueSetViewOrientation(directionX, directionY, directionZ, upX, upY, upZ);
       Vector3 up = model.getPhoneUpDirection();
       rendererController.queueTextAngle(MathUtil.atan2(up.x, up.y));
@@ -628,7 +627,6 @@ public class DynamicStarMapActivity extends InjectableActivity
     setContentView(R.layout.skyrenderer);
     skyView = (GLSurfaceView) findViewById(R.id.skyrenderer_view);
 
-    //mashala
     // We don't want a depth buffer.
     skyView.setEGLConfigChooser(false);
     SkyRenderer renderer = new SkyRenderer(getResources());

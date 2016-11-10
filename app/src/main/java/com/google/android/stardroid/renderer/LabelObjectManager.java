@@ -322,6 +322,7 @@ public class LabelObjectManager extends RendererObjectManager {
     gl.glPushMatrix();
     
     gl.glTranslatef(screenPos.x, screenPos.y, 0);
+    //HERE
     //gl.glRotatef(MathUtil.RADIANS_TO_DEGREES * getRenderState().getUpAngle(), 0, 0, -1);
     gl.glScalef(label.getWidthInPixels(), label.getHeightInPixels(), 1);
    
