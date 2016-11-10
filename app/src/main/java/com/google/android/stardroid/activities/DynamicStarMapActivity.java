@@ -87,6 +87,8 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import javax.inject.Provider;
 
+import static com.google.android.stardroid.util.Geometry.matrixVectorMultiply;
+
 /**
  * The main map-rendering Activity.
  */
@@ -108,14 +110,19 @@ public class DynamicStarMapActivity extends InjectableActivity
   private static final class RendererModelUpdateClosure extends AbstractUpdateClosure {
     private RendererController rendererController;
     private AstronomerModel model;
+    private boolean horizontalRotation;
 
     public RendererModelUpdateClosure(AstronomerModel model,
-        RendererController rendererController) {
+        RendererController rendererController, SharedPreferences sharedPreferences) {
       this.model = model;
       this.rendererController = rendererController;
+      this.horizontalRotation = sharedPreferences.getBoolean(ApplicationConstants.ROTATE_HORIZON_PREFKEY, false);
+      model.setHorizontalRotation(this.horizontalRotation);
     }
+
     @Override
     public void run() {
+
       Pointing pointing = model.getPointing();
       float directionX = pointing.getLineOfSightX();
       float directionY = pointing.getLineOfSightY();
@@ -560,6 +567,8 @@ public class DynamicStarMapActivity extends InjectableActivity
         }
         setAutoMode(autoMode);
         break;
+      case ApplicationConstants.ROTATE_HORIZON_PREFKEY:
+        model.setHorizontalRotation(sharedPreferences.getBoolean(key, false));
       default:
         return;
     }
@@ -635,7 +644,7 @@ public class DynamicStarMapActivity extends InjectableActivity
     rendererController = new RendererController(renderer, skyView);
     // The renderer will now call back every frame to get model updates.
     rendererController.addUpdateClosure(
-        new RendererModelUpdateClosure(model, rendererController));
+        new RendererModelUpdateClosure(model, rendererController, sharedPreferences));
 
     Log.i(TAG, "Setting layers @ " + System.currentTimeMillis());
     layerManager.registerWithRenderer(rendererController);

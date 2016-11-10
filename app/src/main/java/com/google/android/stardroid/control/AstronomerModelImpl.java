@@ -14,10 +14,13 @@
 
 package com.google.android.stardroid.control;
 
+import android.content.SharedPreferences;
 import android.hardware.SensorManager;
 import android.util.Log;
 
 import com.google.android.stardroid.ApplicationConstants;
+import com.google.android.stardroid.StardroidApplication;
+import com.google.android.stardroid.activities.DynamicStarMapActivity;
 import com.google.android.stardroid.units.GeocentricCoordinates;
 import com.google.android.stardroid.units.LatLong;
 import com.google.android.stardroid.units.Matrix33;
@@ -38,7 +41,7 @@ import static com.google.android.stardroid.util.Geometry.vectorProduct;
 
 /**
  * The model of the astronomer.
- *
+ * <p/>
  * <p>Stores all the data about where and when he is and where he's looking and
  * handles translations between three frames of reference:
  * <ol>
@@ -50,22 +53,22 @@ import static com.google.android.stardroid.util.Geometry.vectorProduct;
  * along the ground y is due north along the ground, and z points towards the
  * zenith.
  * </ol>
- *
+ * <p/>
  * <p>We calculate the local frame in phone coords, and in celestial coords and
  * calculate a transform between the two.
  * In the following, N, E, U correspond to the local
  * North, East and Up vectors (ie N, E along the ground, Up to the Zenith)
- *
+ * <p/>
  * <p>In Phone Space: axesPhone = [N, E, U]
- *
+ * <p/>
  * <p>In Celestial Space: axesSpace = [N, E, U]
- *
+ * <p/>
  * <p>We find T such that axesCelestial = T * axesPhone
- *
+ * <p/>
  * <p>Then, [viewDir, viewUp]_celestial = T * [viewDir, viewUp]_phone
- *
+ * <p/>
  * <p>where the latter vector is trivial to calculate.
- *
+ * <p/>
  * <p>Implementation note: this class isn't making defensive copies and
  * so is vulnerable to clients changing its internal state.
  *
@@ -76,7 +79,8 @@ public class AstronomerModelImpl implements AstronomerModel {
   private static final Vector3 POINTING_DIR_IN_PHONE_COORDS = new Vector3(0, 0, -1);
   private static final Vector3 SCREEN_UP_IN_PHONE_COORDS = new Vector3(0, 1, 0);
   private static final Vector3 SCREEN_DOWN_IN_PHONE_COORDS = new Vector3(1, 0, 0);
-  //EDITED HERE, REMOVE THIS
+  private Vector3 screenInPhoneCoords = SCREEN_UP_IN_PHONE_COORDS;
+  
   private static final Vector3 AXIS_OF_EARTHS_ROTATION = new Vector3(0, 0, 1);
   private static final long MINIMUM_TIME_BETWEEN_CELESTIAL_COORD_UPDATES_MILLIS = 60000L;
 
@@ -95,39 +99,63 @@ public class AstronomerModelImpl implements AstronomerModel {
 
   private Pointing pointing = new Pointing();
 
-  /** The sensor acceleration in the phone's coordinate system. */
+  /**
+   * The sensor acceleration in the phone's coordinate system.
+   */
   private Vector3 acceleration = ApplicationConstants.INITIAL_DOWN.copy();
 
   private Vector3 upPhone = Geometry.scaleVector(acceleration, -1);
 
-  /** The sensor magnetic field in the phone's coordinate system. */
+  /**
+   * The sensor magnetic field in the phone's coordinate system.
+   */
   private Vector3 magneticField = ApplicationConstants.INITIAL_SOUTH.copy();
 
   private boolean useRotationVector = false;
 
   private float[] rotationVector = new float[]{1, 0, 0, 0};
 
-  /** North along the ground in celestial coordinates. */
+  /**
+   * North along the ground in celestial coordinates.
+   */
   private Vector3 trueNorthCelestial = new Vector3(1, 0, 0);
 
-  /** Up in celestial coordinates. */
+  /**
+   * Up in celestial coordinates.
+   */
   private Vector3 upCelestial = new Vector3(0, 1, 0);
 
-  /** East in celestial coordinates. */
+  /**
+   * East in celestial coordinates.
+   */
   private Vector3 trueEastCelestial = AXIS_OF_EARTHS_ROTATION;
 
-  /** [North, Up, East]^-1 in phone coordinates. */
+  /**
+   * [North, Up, East]^-1 in phone coordinates.
+   */
   private Matrix33 axesPhoneInverseMatrix = Matrix33.getIdMatrix();
 
-  /** [North, Up, East] in celestial coordinates. */
+  /**
+   * [North, Up, East] in celestial coordinates.
+   */
   private Matrix33 axesMagneticCelestialMatrix = Matrix33.getIdMatrix();
 
   /**
    * @param magneticDeclinationCalculator A calculator that will provide the
-   * magnetic correction from True North to Magnetic North.
+   *                                      magnetic correction from True North to Magnetic North.
    */
   public AstronomerModelImpl(MagneticDeclinationCalculator magneticDeclinationCalculator) {
     setMagneticDeclinationCalculator(magneticDeclinationCalculator);
+  }
+
+  @Override
+  public void setHorizontalRotation(boolean value) {
+    if (value) {
+      screenInPhoneCoords = SCREEN_DOWN_IN_PHONE_COORDS;
+    }
+    else {
+      screenInPhoneCoords = SCREEN_UP_IN_PHONE_COORDS;
+    }
   }
 
   @Override
@@ -205,7 +233,7 @@ public class AstronomerModelImpl implements AstronomerModel {
   public GeocentricCoordinates getSouth() {
     calculateLocalNorthAndUpInCelestialCoords(false);
     return GeocentricCoordinates.getInstanceFromVector3(Geometry.scaleVector(trueNorthCelestial,
-                                                                             -1));
+        -1));
   }
 
   @Override
@@ -230,7 +258,7 @@ public class AstronomerModelImpl implements AstronomerModel {
   public GeocentricCoordinates getWest() {
     calculateLocalNorthAndUpInCelestialCoords(false);
     return GeocentricCoordinates.getInstanceFromVector3(Geometry.scaleVector(trueEastCelestial,
-                                                                             -1));
+        -1));
   }
 
   @Override
@@ -243,7 +271,7 @@ public class AstronomerModelImpl implements AstronomerModel {
    * Updates the astronomer's 'pointing', that is, the direction the phone is
    * facing in celestial coordinates and also the 'up' vector along the
    * screen (also in celestial coordinates).
-   *
+   * <p/>
    * <p>This method requires that {@link #axesMagneticCelestialMatrix} and
    * {@link #axesPhoneInverseMatrix} are currently up to date.
    */
@@ -258,8 +286,7 @@ public class AstronomerModelImpl implements AstronomerModel {
     Matrix33 transform = matrixMultiply(axesMagneticCelestialMatrix, axesPhoneInverseMatrix);
 
     Vector3 viewInSpaceSpace = matrixVectorMultiply(transform, POINTING_DIR_IN_PHONE_COORDS);
-    Vector3 screenUpInSpaceSpace = matrixVectorMultiply(transform, SCREEN_DOWN_IN_PHONE_COORDS);
-
+    Vector3 screenUpInSpaceSpace = matrixVectorMultiply(transform, screenInPhoneCoords);
 
     pointing.updateLineOfSight(viewInSpaceSpace);
     pointing.updatePerpendicular(screenUpInSpaceSpace);
@@ -273,7 +300,7 @@ public class AstronomerModelImpl implements AstronomerModel {
     long currentTime = clock.getTimeInMillisSinceEpoch();
     if (!forceUpdate &&
         Math.abs(currentTime - celestialCoordsLastUpdated) <
-        MINIMUM_TIME_BETWEEN_CELESTIAL_COORD_UPDATES_MILLIS) {
+            MINIMUM_TIME_BETWEEN_CELESTIAL_COORD_UPDATES_MILLIS) {
       return;
     }
     celestialCoordsLastUpdated = currentTime;
@@ -293,17 +320,18 @@ public class AstronomerModelImpl implements AstronomerModel {
         magneticDeclinationCalculator.getDeclination(), upCelestial);
 
     Vector3 magneticNorthCelestial = Geometry.matrixVectorMultiply(rotationMatrix,
-                                                                   trueNorthCelestial);
+        trueNorthCelestial);
     Vector3 magneticEastCelestial = vectorProduct(magneticNorthCelestial, upCelestial);
 
     axesMagneticCelestialMatrix = new Matrix33(magneticNorthCelestial,
-                                               upCelestial,
-                                               magneticEastCelestial);
+        upCelestial,
+        magneticEastCelestial);
   }
 
   // TODO(jontayler): with the switch to using the rotation vector sensor this is rather
   // convoluted and doing too much work.  It can be greatly simplified when we rewrite the
   // rendering module.
+
   /**
    * Calculates local North and Up vectors in terms of the phone's coordinate
    * frame from the magnetic field and accelerometer sensors.

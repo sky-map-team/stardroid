@@ -117,6 +117,7 @@ public interface AstronomerModel {
 
   float getMagneticCorrection();
 
+  void setHorizontalRotation(boolean value);
   /**
    * Returns the time, as UTC.
    */
