@@ -17,6 +17,7 @@ package com.google.android.stardroid.renderer;
 import android.graphics.Paint;
 import android.graphics.Typeface;
 
+import com.google.android.stardroid.activities.DynamicStarMapActivity;
 import com.google.android.stardroid.renderer.util.GLBuffer;
 import com.google.android.stardroid.renderer.util.LabelMaker;
 import com.google.android.stardroid.renderer.util.SkyRegionMap;
@@ -332,6 +333,7 @@ public class LabelObjectManager extends RendererObjectManager {
     } else {
       gl.glColor4x(label.fixedR, label.fixedG, label.fixedB, label.fixedA);
     }
+
     gl.glDrawArrays(GL10.GL_TRIANGLE_STRIP, 0, 4);
     
     gl.glPopMatrix();
