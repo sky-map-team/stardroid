@@ -14,8 +14,6 @@
 
 package com.google.android.stardroid.util;
 
-import android.hardware.Sensor;
-import android.os.Build;
 import android.util.Log;
 
 import com.google.android.gms.analytics.GoogleAnalytics;
@@ -46,18 +44,6 @@ public class Analytics {
   private GoogleAnalytics googleAnalytics;
   private Tracker tracker;
   private static final String TAG = MiscUtil.getTag(Analytics.class);
-
-  /**
-   * Returns either the name of the sensor or a string version of the sensor type id, depending
-   * on the supported OS level along with some context.
-   */
-  public static String getSafeNameForSensor(Sensor sensor) {
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT_WATCH) {
-      return "Sensor type: " + sensor.getStringType() + ": " + sensor.getType();
-    } else {
-      return "Sensor type: " + sensor.getType();
-    }
-  }
 
   /**
    * Custom vars (for slicing and dicing)

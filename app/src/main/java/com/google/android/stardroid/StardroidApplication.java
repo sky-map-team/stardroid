@@ -187,6 +187,18 @@ public class StardroidApplication extends Application {
   }
 
   /**
+   * Returns either the name of the sensor or a string version of the sensor type id, depending
+   * on the supported OS level along with some context.
+   */
+  public static String getSafeNameForSensor(Sensor sensor) {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT_WATCH) {
+      return "Sensor type: " + sensor.getStringType() + ": " + sensor.getType();
+    } else {
+      return "Sensor type: " + sensor.getType();
+    }
+  }
+
+  /**
    * Check what features are available to this phone and report back to analytics
    * so we can judge when to add/drop support.
    */
@@ -273,7 +285,7 @@ public class StardroidApplication extends Application {
     Set<String> sensorTypes = new HashSet<>();
     for (Sensor sensor : allSensors) {
       Log.i(TAG, sensor.getName());
-      sensorTypes.add(Analytics.getSafeNameForSensor(sensor));
+      sensorTypes.add(getSafeNameForSensor(sensor));
     }
     Log.d(TAG, "All sensors summary:");
     for (String sensorType : sensorTypes) {
@@ -306,7 +318,7 @@ public class StardroidApplication extends Application {
         dummy, sensor, SensorManager.SENSOR_DELAY_UI);
     if (!success) {
       analytics.trackEvent(
-          Analytics.SENSOR_CATEGORY, Analytics.SENSOR_LIAR, Analytics.getSafeNameForSensor(sensor),
+          Analytics.SENSOR_CATEGORY, Analytics.SENSOR_LIAR, getSafeNameForSensor(sensor),
           1);
     }
     sensorManager.unregisterListener(dummy);
