@@ -52,14 +52,26 @@ android {
         timeOutInMs 10 * 60 * 1000  // 10 minutes
         installOptions "-d", "-t"
     }
+
+    productFlavors {
+      // includes gms Google servies
+      gms {
+        resValue "string", "analytics_enabled", "true"
+      }
+
+      // uses only open source software
+      fdroid {
+        resValue "string", "analytics_enabled", "false"
+      }
+    }
 }
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:support-annotations:23.2.1'
     compile 'com.google.guava:guava:19.0'
-    compile 'com.google.android.gms:play-services-analytics:8.4.0'
-    compile 'com.google.android.gms:play-services-location:8.4.0'
+    gmsCompile 'com.google.android.gms:play-services-analytics:8.4.0'
+    gmsCompile 'com.google.android.gms:play-services-location:8.4.0'
     compile "com.android.support:support-v4:24.0.0"
     compile 'com.google.dagger:dagger:2.0.2'
     provided 'javax.annotation:jsr250-api:1.0'  // For annotations not in Android but needed by Dagger
