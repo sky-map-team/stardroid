@@ -28,7 +28,7 @@ import android.util.Log;
 
 import com.google.android.stardroid.layers.LayerManager;
 import com.google.android.stardroid.util.Analytics;
-import com.google.android.stardroid.util.Analytics.Slice;
+import com.google.android.stardroid.util.AnalyticsInterface.Slice;
 import com.google.android.stardroid.util.MiscUtil;
 import com.google.android.stardroid.util.PreferenceChangeAnalyticsTracker;
 import com.google.android.stardroid.views.PreferencesButton;
