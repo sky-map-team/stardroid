@@ -52,6 +52,7 @@ public class ApplicationConstants {
   public static final String SENSOR_DAMPING_STANDARD = "STANDARD";
   public static final String SENSOR_DAMPING_PREF_KEY = "sensor_damping";
   public static final String REVERSE_MAGNETIC_Z_PREFKEY = "reverse_magnetic_z";
+  public static final String ROTATE_HORIZON_PREFKEY = "rotate_horizon";
 
 
   // End Preference Keys

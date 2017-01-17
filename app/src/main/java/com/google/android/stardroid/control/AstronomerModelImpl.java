@@ -75,6 +75,8 @@ public class AstronomerModelImpl implements AstronomerModel {
   private static final String TAG = MiscUtil.getTag(AstronomerModelImpl.class);
   private static final Vector3 POINTING_DIR_IN_PHONE_COORDS = new Vector3(0, 0, -1);
   private static final Vector3 SCREEN_UP_IN_PHONE_COORDS = new Vector3(0, 1, 0);
+  private static final Vector3 SCREEN_DOWN_IN_PHONE_COORDS = new Vector3(1, 0, 0);
+  private Vector3 screenInPhoneCoords = SCREEN_UP_IN_PHONE_COORDS;
   private static final Vector3 AXIS_OF_EARTHS_ROTATION = new Vector3(0, 0, 1);
   private static final long MINIMUM_TIME_BETWEEN_CELESTIAL_COORD_UPDATES_MILLIS = 60000L;
 
@@ -125,6 +127,16 @@ public class AstronomerModelImpl implements AstronomerModel {
    */
   public AstronomerModelImpl(MagneticDeclinationCalculator magneticDeclinationCalculator) {
     setMagneticDeclinationCalculator(magneticDeclinationCalculator);
+  }
+
+  @Override
+  public void setHorizontalRotation(boolean value) {
+    if (value) {
+      screenInPhoneCoords = SCREEN_DOWN_IN_PHONE_COORDS;
+    }
+    else {
+      screenInPhoneCoords = SCREEN_UP_IN_PHONE_COORDS;
+    }
   }
 
   @Override
@@ -255,7 +267,7 @@ public class AstronomerModelImpl implements AstronomerModel {
     Matrix33 transform = matrixMultiply(axesMagneticCelestialMatrix, axesPhoneInverseMatrix);
 
     Vector3 viewInSpaceSpace = matrixVectorMultiply(transform, POINTING_DIR_IN_PHONE_COORDS);
-    Vector3 screenUpInSpaceSpace = matrixVectorMultiply(transform, SCREEN_UP_IN_PHONE_COORDS);
+    Vector3 screenUpInSpaceSpace = matrixVectorMultiply(transform, screenInPhoneCoords);
 
     pointing.updateLineOfSight(viewInSpaceSpace);
     pointing.updatePerpendicular(screenUpInSpaceSpace);
