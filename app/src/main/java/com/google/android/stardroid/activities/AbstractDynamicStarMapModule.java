@@ -9,7 +9,6 @@ import android.util.Log;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
-import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
 import com.google.android.stardroid.activities.dialogs.HelpDialogFragment;
@@ -31,11 +30,11 @@ import dagger.Provides;
  * Created by johntaylor on 3/29/16.
  */
 @Module
-public class DynamicStarMapModule {
+public class AbstractDynamicStarMapModule {
   private static final String TAG = MiscUtil.getTag(DynamicStarMapModule.class);
   private DynamicStarMapActivity activity;
 
-  public DynamicStarMapModule(DynamicStarMapActivity activity) {
+  public AbstractDynamicStarMapModule(DynamicStarMapActivity activity) {
     Log.d(TAG, "Creating activity module for " + activity);
     this.activity = activity;
   }
@@ -131,12 +130,5 @@ public class DynamicStarMapModule {
   @PerActivity
   LocationPermissionRationaleFragment provideLocationFragment() {
     return new LocationPermissionRationaleFragment();
-  }
-
-
-  @Provides
-  @PerActivity
-  GoogleApiAvailability providePlayServicesApiAvailability() {
-    return GoogleApiAvailability.getInstance();
   }
 }

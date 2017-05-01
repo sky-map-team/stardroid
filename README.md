@@ -45,7 +45,7 @@ The apk can be found in `app/build/outputs/apk/`.
 
 ## Running tests
 
-    ./gradlew app:connectedAndroidTest
+    ./gradlew app:connectedGmsDebugAndroidTest
 
 ## Regenerating the star data files
 
