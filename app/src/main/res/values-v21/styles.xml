@@ -1,0 +1,21 @@
+<resources>
+
+    <style name="BaseTheme" parent="@android:style/Theme.Material">
+    </style>
+
+    <style name="FullscreenTheme" parent="@android:style/Theme.Material">
+        <item name="android:actionBarStyle">@style/FullscreenActionBarStyle</item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="metaButtonBarStyle">?android:attr/buttonBarStyle</item>
+        <item name="metaButtonBarButtonStyle">?android:attr/buttonBarButtonStyle</item>
+    </style>
+
+    <style name="FullscreenActionBarStyle" parent="android:Widget.Material.ActionBar">
+        <item name="android:background">@color/black_overlay</item>
+    </style>
+
+    <style name="FullscreenNoActionBarActivity" parent="@android:style/Theme.Material.NoActionBar.Fullscreen">
+    </style>
+
+</resources>
