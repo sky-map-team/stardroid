@@ -2,11 +2,12 @@
 
 buildscript {
     repositories {
+        google()
         jcenter()
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.0'
+        classpath 'com.android.tools.build:gradle:3.0.1'
 
         // Specified as going here by the Analytics instructions.
         classpath 'com.google.gms:google-services:2.0.0-alpha6'
@@ -21,6 +22,7 @@ buildscript {
 
 allprojects {
     repositories {
+        google()
         jcenter()
     }
 }

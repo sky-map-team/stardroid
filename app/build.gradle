@@ -1,10 +1,10 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.neenbedankt.android-apt'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion "23.0.3"
+    compileSdkVersion 26
+    buildToolsVersion "26.0.2"
 
+    flavorDimensions "default"
     defaultConfig {
         applicationId "com.google.android.stardroid"
         minSdkVersion 15
@@ -72,10 +72,10 @@ dependencies {
     compile 'com.google.guava:guava:19.0'
     gmsCompile 'com.google.android.gms:play-services-analytics:8.4.0'
     gmsCompile 'com.google.android.gms:play-services-location:8.4.0'
-    compile "com.android.support:support-v4:24.0.0"
+    compile "com.android.support:support-v4:26.1.0"
     compile 'com.google.dagger:dagger:2.0.2'
     provided 'javax.annotation:jsr250-api:1.0'  // For annotations not in Android but needed by Dagger
-    apt 'com.google.dagger:dagger-compiler:2.0.2'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.0.2'
     testCompile 'junit:junit:4.12'
     testCompile 'org.mockito:mockito-core:1.10.19'
     testCompile 'org.robolectric:robolectric:3.0'
