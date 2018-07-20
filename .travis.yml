@@ -102,17 +102,12 @@ install:
   # Update sdk tools to latest version and install/update components
   - echo yes | sdkmanager "tools"
   - echo yes | sdkmanager "platforms;android-26" # Latest platform required by SDK tools
-  - echo yes | sdkmanager "platforms;android-${API}" # Android platform required by emulator
+  - echo yes | sdkmanager "platforms;android-${ANDROID_API_LEVEL}" # Android platform required by emulator
   - echo yes | sdkmanager "extras;android;m2repository"
   - echo yes | sdkmanager "extras;google;m2repository"
   - echo yes | sdkmanager "extras;m2repository;com;android;support;constraint;constraint-layout;1.0.2"
   - echo yes | sdkmanager "extras;m2repository;com;android;support;constraint;constraint-layout-solver;1.0.2"
   - echo yes | sdkmanager "$EMULATOR" # Install emulator system image
-  # Create and start emulator
-  - echo no | avdmanager create avd -n acib -k "$EMULATOR" -f --abi "$ABI" --tag "$TAG"
-  - emulator -avd acib -engine classic -no-window -camera-back none -camera-front none -verbose -qemu -m 512 &
-  # Start adbd, wait for device connected and show android serial
-  - adb wait-for-device get-serialno
   # Show version and download Gradle Wrapper if it's not already cached
   - cd ${TRAVIS_BUILD_DIR}/${DIR} && ./gradlew --version
   # Clean project and download missing dependencies and components
