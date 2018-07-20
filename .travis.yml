@@ -79,6 +79,10 @@ install:
   # Check components status
   - sdkmanager --list || true
 
+before_install:
+  - export EMULATOR="system-images;android-${ANDROID_API_LEVEL};${ANDROID_TAG};${ANDROID_ABI}" # Used to install/create emulator
+  - echo 'count=0' > /home/travis/.android/repositories.cfg # Avoid warning
+
 install:
   # List and delete unnecessary components to free space
   - sdkmanager --list || true
