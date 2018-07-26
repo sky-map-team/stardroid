@@ -55,7 +55,6 @@ public class StardroidApplication extends Application {
   @Inject SharedPreferences preferences;
   // We keep a reference to this just to start it initializing.
   @Inject LayerManager layerManager;
-  @Inject static ExecutorService backgroundExecutor;
   @Inject Analytics analytics;
   @Inject SensorManager sensorManager;
 
@@ -170,20 +169,6 @@ public class StardroidApplication extends Application {
       Log.e(TAG, "Unable to obtain package info");
       return -1;
     }
-  }
-
-  /**
-   * Schedules this runnable to run as soon as possible on a background
-   * thread.
-   */
-  // TODO(johntaylor): the idea, and I'm not sure yet whether it's a good one,
-  // is to centralize the management of background threads so we don't have
-  // them scattered all over the app.  We can then control how many threads
-  // are spawned, perhaps having a VIP service for extra important runnables
-  // that we'd prefer not to queue, as well as providing convenience functions
-  // to facilitate callbacks on the UI thread.
-  public static void runInBackground(Runnable runnable) {
-    backgroundExecutor.submit(runnable);
   }
 
   /**
