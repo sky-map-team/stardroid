@@ -2,7 +2,6 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion "26.0.2"
 
     flavorDimensions "default"
     defaultConfig {
@@ -73,9 +72,9 @@ dependencies {
     gmsCompile 'com.google.android.gms:play-services-analytics:8.4.0'
     gmsCompile 'com.google.android.gms:play-services-location:8.4.0'
     compile "com.android.support:support-v4:26.1.0"
-    compile 'com.google.dagger:dagger:2.0.2'
+    compile 'com.google.dagger:dagger:2.14.1'
     provided 'javax.annotation:jsr250-api:1.0'  // For annotations not in Android but needed by Dagger
-    annotationProcessor 'com.google.dagger:dagger-compiler:2.0.2'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.14.1'
     testCompile 'junit:junit:4.12'
     testCompile 'org.mockito:mockito-core:1.10.19'
     testCompile 'org.robolectric:robolectric:3.0'
