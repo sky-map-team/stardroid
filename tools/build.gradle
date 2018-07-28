@@ -5,7 +5,7 @@ dependencies {
     compile project(path: ':app',configuration:'default')
     compile 'com.google.guava:guava:21.0'
     // TODO(jontayler): Terrible hack that should go when we revamp the tools.
-    compile files('../app/build/intermediates/classes/gms/release/')
+    compile files('../app/build/intermediates/classes/fdroid/release/')
     compile fileTree(include: ['*.jar'], dir: 'libs')
 }
 
