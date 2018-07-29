@@ -18,16 +18,16 @@ cache:
 
 env:
   matrix:
-  - EMULATOR_API_LEVEL=23  ANDROID_EMULATOR_IMAGE=sys-img-armeabi-v7a-android-23
-  - EMULATOR_API_LEVEL=22  ANDROID_EMULATOR_IMAGE=sys-img-armeabi-v7a-android-22
-  - EMULATOR_API_LEVEL=21  ANDROID_EMULATOR_IMAGE=sys-img-armeabi-v7a-android-21
-  - EMULATOR_API_LEVEL=19  ANDROID_EMULATOR_IMAGE=sys-img-armeabi-v7a-android-19
+#- EMULATOR_API_LEVEL=23  ANDROID_EMULATOR_IMAGE=sys-img-armeabi-v7a-android-23
+  - EMULATOR_API_LEVEL=22  ANDROID_EMULATOR_IMAGE=sys-img-x86-android-22
+#  - EMULATOR_API_LEVEL=21  ANDROID_EMULATOR_IMAGE=sys-img-armeabi-v7a-android-21
+#  - EMULATOR_API_LEVEL=19  ANDROID_EMULATOR_IMAGE=sys-img-armeabi-v7a-android-19
 
   global:
     - ANDROID_API_LEVEL=27
     - ANDROID_BUILD_TOOLS_VERSION=27.0.3
     - ADB_INSTALL_TIMEOUT=20 # wait up to 20 minutes for adb to connect to emulator (2 minutes by default)
-    - ANDROID_ABI=armeabi-v7a
+    - ANDROID_ABI=x86
     
 android:
   components:
@@ -81,8 +81,8 @@ install:
 
 before_script:
   # Create and start the emulator
-  - sdkmanager "system-images;android-"$EMULATOR_API_LEVEL";google_apis;armeabi-v7a"
-  - echo no | avdmanager -v create avd -f -n test -k "system-images;android-"$EMULATOR_API_LEVEL";google_apis;armeabi-v7a"
+  - sdkmanager "system-images;android-"$EMULATOR_API_LEVEL";google_apis;$ANDROID_ABI"
+  - echo no | avdmanager -v create avd -f -n test -k "system-images;android-$EMULATOR_API_LEVEL;google_apis;$ANDROID_ABI"
   - $ANDROID_HOME/emulator/emulator -avd test -no-audio -no-window &
 
   - android-wait-for-emulator
