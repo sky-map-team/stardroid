@@ -19,7 +19,7 @@ cache:
 env:
   matrix:
 # - EMULATOR_API_LEVEL=23  ANDROID_EMULATOR_IMAGE=sys-img-armeabi-v7a-android-23
-  - EMULATOR_API_LEVEL=22  ANDROID_EMULATOR_IMAGE=sys-img-arm64-v8a-android-22
+  - EMULATOR_API_LEVEL=24  ANDROID_EMULATOR_IMAGE=sys-img-arm64-v8a-android-24
 # - EMULATOR_API_LEVEL=21  ANDROID_EMULATOR_IMAGE=sys-img-armeabi-v7a-android-21
 # - EMULATOR_API_LEVEL=19  ANDROID_EMULATOR_IMAGE=sys-img-armeabi-v7a-android-19
 
