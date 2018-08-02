@@ -97,8 +97,8 @@ before_script:
   - adb shell input keyevent 1 &
 script:
   - ./gradlew test # Local unit test
-  - ./gradlew connectedAndroidTest # Instrumented unit test
-  - ./gradlew lint #maybe at some point
+  - travis_wait 30 ./gradlew connectedAndroidTest # Instrumented unit test
+  #- ./gradlew lint #maybe at some point
   #- ./gradlew clean test build
 after_script:
   - echo $ANDROID_TARGET 
