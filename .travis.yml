@@ -1,49 +1,108 @@
+# Setting java 1.8 
 language: android
-jdk: oraclejdk8
-# Use the Travis Container-Based Infrastructure
-sudo: false
+jdk:
+  - oraclejdk8
+
+sudo: required # disables container-based builds which have a maximum of 4GB of memory
+
+# caching as advised by travis
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -rf $HOME/.gradle/caches/*/plugin-resolution/
 
 cache:
   directories:
-    - ${TRAVIS_BUILD_DIR}/gradle/caches/
-    - ${TRAVIS_BUILD_DIR}/gradle/wrapper/dists/
+  - $HOME/.gradle/caches/
+  - $HOME/.gradle/wrapper/
+  - $HOME/.android/build-cache
 
 env:
-  global:
-    - ANDROID_API_LEVEL=24
-    - EMULATOR_API_LEVEL=21
-    - ANDROID_BUILD_TOOLS_VERSION=23.0.3
-    - ANDROID_ABI=armeabi-v7a
-    - ANDROID_TAG=google_apis
-    - ADB_INSTALL_TIMEOUT=20 # minutes (2 minutes by default)
+  matrix:
+# - EMULATOR_API_LEVEL=23  ANDROID_EMULATOR_IMAGE=sys-img-armeabi-v7a-android-23
+  - EMULATOR_API_LEVEL=24  ANDROID_EMULATOR_IMAGE=sys-img-arm64-v8a-android-24
+# - EMULATOR_API_LEVEL=21  ANDROID_EMULATOR_IMAGE=sys-img-armeabi-v7a-android-21
+# - EMULATOR_API_LEVEL=19  ANDROID_EMULATOR_IMAGE=sys-img-armeabi-v7a-android-19
 
+  global:
+    - ANDROID_API_LEVEL=27
+    - ANDROID_BUILD_TOOLS_VERSION=27.0.3
+    - ADB_INSTALL_TIMEOUT=20 # wait up to 20 minutes for adb to connect to emulator (2 minutes by default)
+    - ANDROID_ABI=arm64-v8a
+    
 android:
   components:
+    # Base components 
     - tools # to get the new `repository-11.xml`
-    - platform-tools
-    - tools # to install Android SDK tools 25.1.x
-    - build-tools-$ANDROID_BUILD_TOOLS_VERSION
-    - android-$ANDROID_API_LEVEL
-    - android-$EMULATOR_API_LEVEL
-    # For Google APIs
-    - addon-google_apis-google-$ANDROID_API_LEVEL
-    - addon-google_apis-google-$EMULATOR_API_LEVEL
-    # Google Play Services
-    - extra-google-google_play_services
-    # Support library
+    - tools # https://github.com/travis-ci/travis-ci/issues/6040#issuecomment-219367943)
+    - platform-tools   
+    - build-tools-$ANDROID_BUILD_TOOLS_VERSION # get the build tools version to build the project
+
+    # used sdk versions
+    - android-$ANDROID_API_LEVEL # get the android sdk version to build the project
+    - android-$EMULATOR_API_LEVEL # get the android sdk version for the emulator
+
+    # Get the latest version of additional components
     - extra-android-support
-    # Latest artifacts in local repository
     - extra-google-m2repository
     - extra-android-m2repository
-    # Specify at least one system image
-    - sys-img-armeabi-v7a-google_apis-$ANDROID_API_LEVEL
-    - sys-img-armeabi-v7a-google_apis-$EMULATOR_API_LEVEL
+    - extra-google-google_play_services
+
+    # Specify the needed emulator
+    - $ANDROID_EMULATOR_IMAGE
+
+licenses:
+  - 'android-sdk-license-.+'
+  - '.+'
+
+# Emulator Management: Create, Start and Wait
+before_install:
+  - echo $ANDROID_TARGET 
+  - echo $ANDROID_ABI
+  - adb logcat > logcat.log & 
+
+install:
+  - sdkmanager --list || true # List all available targets, device definitions and AVDs.
+  # Update sdk tools to latest version and install/update components
+  - echo yes | sdkmanager "tools"
+  - echo yes | sdkmanager "platform-tools"
+  - echo yes | sdkmanager "build-tools;"$ANDROID_BUILD_TOOLS_VERSION
+  - echo yes | sdkmanager "platforms;android-"$ANDROID_API_LEVEL # Latest platform required by SDK tools
+
+  - echo yes | sdkmanager "extras;android;m2repository"
+  - echo yes | sdkmanager "extras;google;m2repository"
+  - echo yes | sdkmanager "extras;m2repository;com;android;support;constraint;constraint-layout;1.0.2"
+  - echo yes | sdkmanager "extras;m2repository;com;android;support;constraint;constraint-layout-solver;1.0.2"
+
+  - echo yes | sdkmanager --update
+  - echo yes | sdkmanager --licenses
+
+  # Check components status
+  - sdkmanager --list || true
 
 before_script:
-  # Create and start emulator
-  - echo no | android create avd --force -n test -t "android-"$EMULATOR_API_LEVEL --abi $ANDROID_ABI --tag $ANDROID_TAG
-  - emulator -avd test -no-skin -no-audio -no-window &
+  # Create and start the emulator
+  - sdkmanager "system-images;android-"$EMULATOR_API_LEVEL";google_apis;$ANDROID_ABI"
+  - echo no | avdmanager -v create avd -f -n test -k "system-images;android-$EMULATOR_API_LEVEL;google_apis;$ANDROID_ABI"
+  - $ANDROID_HOME/emulator/emulator -avd test -no-audio -no-window &
+
   - android-wait-for-emulator
 
+  # Turn off animations
+  - adb shell settings put global window_animation_scale 0 &
+  - adb shell settings put global transition_animation_scale 0 &
+  - adb shell settings put global animator_duration_scale 0 &
+
+  # Wake up
+  - adb shell input keyevent 82 &
+  - adb shell input keyevent 1 &
 script:
-  - ./gradlew app:connectedGmsDebugAndroidTest -PdisablePreDex
+  - ./gradlew test # Local unit test
+  # Temporarily disable emulator based tests until the world figures out how to make them run again
+  # - ./gradlew connectedAndroidTest # Instrumented unit test
+  #- ./gradlew lint #maybe at some point
+  #- ./gradlew clean test build
+after_script:
+  - echo $ANDROID_TARGET 
+  - echo $ANDROID_ABI
+  - cat /home/travis/build/sky-map-team/stardroid/sdk-messaging/build/outputs/lint-results-debug.xml
+  - cat /home/travis/build/sky-map-team/stardroid/sdk/build/reports/androidTests/connected/index.html
