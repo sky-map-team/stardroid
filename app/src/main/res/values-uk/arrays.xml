@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="popular_date_examples">
+        <item>Зараз</item>
+        <item>Наступний захід Сонця</item>
+        <item>Наступний схід Сонця</item>
+        <item>Наступний повний місяць</item>
+        <item>Транзит Меркурія 9 травня 2016 р.</item>
+        <item>Сонячне затемнення 21 серпня 2017 р.</item>
+        <item>Сонячне затемнення 9 березня 2016 р.</item>
+        <item>Сонячне затемнення 29 травня 1919 р.</item>
+        <item>Посадка на Місяць Аполлона 11</item>
+    </string-array>
+    <string-array name="sensor_speed">
+        <item>Повільно</item>
+        <item>Звичайно</item>
+        <item>Швидко</item>
+    </string-array>
+    <string-array name="sensor_damping">
+        <item>Стрибками</item>
+        <item>Середнє</item>
+        <item>Звичайне</item>
+        <item>Високе</item>
+    </string-array>
+</resources>
