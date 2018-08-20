@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="whats_new_text" translation_description="Description of new features in this version in html">
+<![CDATA[
+    <h1>Нове у версії %s</h1>
+    \t • Використання гіроскопа тепер є стандартним для телефонів, які підтримують його<br/>
+    \t • Обхід для помилки Samsung S4 та Note 3, які спричиняли аварійне завершення роботи<br/>
+    \t • Вирішені проблеми, пов\'язані з помилкою в деяких телефонах, які не відповідають статусу датчика обертання<br/>
+]]>
+    </string>
+</resources>

@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translation_description="Application Title">Sky Map</string>
+    <string name="menu_settings">Налаштування</string>
+    <string name="menu_search">Пошук</string>
+    <string name="cancel">Відміна</string>
+    <string name="set">Налаштувати</string>
+    <string name="go">Вперед!</string>
+    <string name="location_prefs">Параметри розташування</string>
+    <string name="force_gps_pref">Завжди викор. GPS</string>
+    <string name="force_gps_pref_hint" translation_description="this string continues from \'Always use GPS\'">якщо ввімк., навіть якщо доступне знаходження місця розташування через інтернет мережу</string>
+    <string name="no_use_gps_pref">Задати м/р вручну</string>
+    <string name="no_use_gps_pref_hint">Введіть назву або шир./дов.</string>
+    <string name="location_placename">Назва місця</string>
+    <string name="location_placename_hint" translation_description="An example address.  Translators: please pick an address suitable for your country.  If it has an astronomical connection (e.g. the address of an observatory or famous astronomer) then that would be even better.">наприклад Україна, Київ, вул. Грушевського, б. 5/3</string>
+    <string name="location_lat_pref">Широта</string>
+    <string name="location_long_pref">Довгота</string>
+    <string name="degrees">Градуси</string>
+    <string name="preferences">налаштування</string>
+    <string name="location_no_auto">Телефон не підтримує автовизначення місця розташування. Його можна задати вручну в налаштуваннях.</string>
+    <string name="location_offer_to_enable">Автовизначення місця розташування вимкнене. Хочете ввімкнути?</string>
+    <string name="location_offer_to_enable_gps_title">Автовизн. м/р вимкн.</string>
+    <string name="location_set_auto">М/р змінено з %1$s на %2$s</string>
+    <string name="location_unable_to_geocode">Неможливо визначити місце розташування – ймовірно, недоступна мережа.</string>
+    <string name="location_not_found_title" translation_description="dialog box title when location not found">Вибачте</string>
+    <string name="location_not_found" translation_description="dialog message when placename not found">Не знайдено: %s.</string>
+    <string name="location_long_lat">Довгота:%1$s, широта:%2$s</string>
+    <string name="location_place_found">Місце знайдене. Встан. широта %1$f і довгота %2$f</string>
+    <string name="use_magnetic_correction">Викор. магнітну корекцію</string>
+    <string name="use_magnetic_correction_hint">Використовуйте інформацію про своє місце розташування, щоб змінити орієнтацію з магнітного на справжній географічний Північний полюс</string>
+    <string name="provider_prefs" translation_description="Dialog box title for a preferences dialog">Показати...</string>
+    <string name="show_stars_pref">Зірки</string>
+    <string name="show_constellations_pref">Сузір\'я</string>
+    <string name="show_messier_objects_pref" translation_description="The celestial objects catalogued by Charles Messier">Об\'єкти Мессьє</string>
+    <string name="show_planets_pref">Планети</string>
+    <string name="show_grid_pref">RA/Dec сітка</string>
+    <string name="show_horizon_pref">Горизонт</string>
+    <string name="show_sky_gradient">Градієнт неба</string>
+    <string name="sensor_prefs">Налаштування матриці</string>
+    <string name="sensor_speed">Швидкість матриці</string>
+    <string name="sensor_damping" translation_description="The amount of smoothing applied to the sensor outputs.">Згладжування</string>
+    <string name="ecliptic">Екліптика</string>
+    <string name="show_hubble_layer_pref">Фотографії, зняті телескопом Хаббл</string>
+    <string name="malformed_loc_error">Значення широти або довготи не є числом.</string>
+    <string name="dialog_accept" translation_description="accepting the licence agreement">Прийняти</string>
+    <string name="dialog_decline" translation_description="declining the licence agreement">Ні, дякую</string>
+    <string name="menu_help" translation_description="menu item to show \'Help\' box">Довідка</string>
+    <string name="help_dialog_title">Довідка Sky Map</string>
+    <string name="eula_dialog_title">Ліцензійна угода кінцевого користувача</string>
+    <string name="set_manual">Перехід в ручний режим</string>
+    <string name="set_auto">Перехід в авт. режим</string>
+    <string name="menu_zoom_in">Збільшити</string>
+    <string name="menu_zoom_out">Зменшити</string>
+    <string name="menu_toggle_dim">Нічний режим ввімкн./вимкн.</string>
+    <string name="zenith">ЗЕНІТ</string>
+    <string name="nadir">НАДІР</string>
+    <string name="north">ПІВНІЧ</string>
+    <string name="east">СХІД</string>
+    <string name="west">ЗАХІД</string>
+    <string name="south">ПІВДЕНЬ</string>
+    <string name="search_label">Пошук на небі</string>
+    <string name="search_hint" translation_description="an example search target">наприклад Марс</string>
+    <string name="no_search_title">Немає результатів</string>
+    <string name="no_search_results_text">Нічого не знайдено.</string>
+    <string name="many_search_results_title">Можливо, ви мали на увазі:</string>
+    <string name="many_search_results_text">Виберіть результат</string>
+    <string name="searching_for_text">Пошук %s...</string>
+    <string name="found_target_text">Знайдено: %s.</string>
+    <string name="other">Інше</string>
+    <string name="planetary_images">Показувати зображення планет</string>
+    <string name="menu_time">Подорож у часі</string>
+    <string name="time_travel_start_message">Подорож крізь час...</string>
+    <string name="time_travel_start_message_alt">Подорож у часі до об\'єкта %s...</string>
+    <string name="time_travel_close_message">Назад в сьогодення...</string>
+    <string name="popular_dates_prompt" translation_description="label for a list of dates the user can choose from">Популярні дати</string>
+    <string name="custom_date_prompt" translation_description="label telling the user to manually specify a data">Або виберіть іншу дату</string>
+    <string name="change_date_prompt">Змінити дату</string>
+    <string name="change_time_prompt">Змінити час</string>
+    <string name="now_visiting" translation_description="tells the user what time they are visiting">Перегляд: %s</string>
+    <string name="time_travel_label_past" translation_description="label showing that we are in the past">Подорож у часі: минуле</string>
+    <string name="time_travel_label_future" translation_description="label showing that we are in the future">Подорож у часі: майбутнє</string>
+    <string name="time_travel_stopped" translation_description="label showing rate of travel through time">Подорож у часі зупинено</string>
+    <string name="time_travel_second_speed" translation_description="label showing rate of travel through time">Подорож зі швидкістю &gt; @ 1 с/с</string>
+    <string name="time_travel_minute_speed" translation_description="label showing rate of travel through time">Подорож зі швидкістю &gt; @ 1 хв/с</string>
+    <string name="time_travel_10minute_speed" translation_description="label showing rate of travel through time">Подорож зі швидкістю &gt; @ 10 хв/с</string>
+    <string name="time_travel_hour_speed" translation_description="label showing rate of travel through time">Подорож зі швидкістю &gt; @ 1 год/с</string>
+    <string name="time_travel_day_speed" translation_description="label showing rate of travel through time">Подорож зі швидкістю &gt; @ 1 дн/с</string>
+    <string name="time_travel_week_speed" translation_description="label showing rate of travel through time">Подорож зі швидкістю &gt; @ 1 тжд/с</string>
+    <string name="time_travel_second_speed_back" translation_description="label showing rate of travel through time">Подорож зі швидкістю &lt; @ 1 с/с</string>
+    <string name="time_travel_minute_speed_back" translation_description="label showing rate of travel through time">Подорож зі швидкістю &lt; @ 1 хв/с</string>
+    <string name="time_travel_10minute_speed_back" translation_description="label showing rate of travel through time">Подорож зі швидкістю &lt; @ 10 хв/с</string>
+    <string name="time_travel_hour_speed_back" translation_description="label showing rate of travel through time">Подорож зі швидкістю &lt; @ 1 год/с</string>
+    <string name="time_travel_day_speed_back" translation_description="label showing rate of travel through time">Подорож зі швидкістю &lt; @ 1 дн/с</string>
+    <string name="time_travel_week_speed_back" translation_description="label showing rate of travel through time">Подорож зі швидкістю &lt; @ 1 тжд/с</string>
+    <string name="use_sound_effects" translation_description="A preferences menu label">Ввімкнути звук</string>
+    <string name="enable_layer_toast">Ввімкнення шару %s</string>
+    <string name="disable_layer_toast">Вимкнення шару %s</string>
+    <string name="menu_gallery">Галерея</string>
+    <string name="gallery_image_search_btn">Знайти на небі</string>
+    <string name="gallery_image_back_btn">Назад в галерею</string>
+    <string name="hubble_image_gallery_title">Галерея Хаббл для Sky Map</string>
+    <string name="hubble_image">Фотографія, відзнята телескопом Хаббл</string>
+    <string name="search_target_found_message" translation_description="displayed when a search target has been located">Ви знайшли:</string>
+    <string name="search_overlay_title" translation_description="title for search overlay">Поверніть телефон в напрямку стрілки</string>
+    <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">Пошук:</string>
+    <string name="sun_wont_set_message">Протягом найближчих 24 годин заходу Сонця в вашому місці розташування не буде.</string>
+    <string name="sun_wont_rise_message">Протягом найближчих 24 годин сходу Сонця в вашому місці розташування не буде.</string>
+    <string name="sun">Сонце</string>
+    <string name="moon">Місяць</string>
+    <string name="mercury">Меркурій</string>
+    <string name="venus">Венера</string>
+    <string name="earth">Земля</string>
+    <string name="mars">Марс</string>
+    <string name="jupiter">Юпітер</string>
+    <string name="saturn">Сатурн</string>
+    <string name="uranus">Уран</string>
+    <string name="neptune">Нептун</string>
+    <string name="pluto">Плутон</string>
+    <string name="crab_nebula" translation_description="hubble object">Крабовидна туманність</string>
+    <string name="eagle_nebula" translation_description="hubble object">Туманність Орла</string>
+    <string name="andromeda_galaxy" translation_description="hubble object">Туманність Андромеди</string>
+    <string name="orion_nebula" translation_description="hubble object">Туманність Оріона</string>
+    <string name="whirlpool_galaxy" translation_description="hubble object">Галактика Вир</string>
+    <string name="ring_nebula" translation_description="hubble object">Планетарна туманність</string>
+    <string name="pinwheel_galaxy" translation_description="hubble object">Галактика Вертушка</string>
+    <string name="sombrero_galaxy" translation_description="hubble object">Галактика Сомбреро</string>
+    <string name="hercules_gc" translation_description="hubble object">Кулясте скупчення Геркулеса</string>
+    <string name="pleiades" translation_description="hubble object">Плеяди</string>
+    <string name="cats_eye_nebula" translation_description="hubble object">Туманність Котяче Око</string>
+    <string name="omega_centauri" translation_description="hubble object">Кулясте скупчення Омега Центавра</string>
+    <string name="v838_mon" translation_description="hubble object">V838 Єдинорога</string>
+    <string name="sn1987a" translation_description="hubble object">Наднова 1987a</string>
+    <string name="hubble_deep_field" translation_description="hubble object">Область глибокого огляду Хаббла</string>
+    <string name="rho_oph" translation_description="hubble object">Ро Змієносця</string>
+    <string name="menu_tos">Умови надання послуг</string>
+    <string name="menu_diagnostics">Діагностика</string>
+    <string name="control_panel_btn" translation_description="Label for the control panel button">Панель управління</string>
+    <string name="allow_rotation_pref" translation_description="preference to enable rotation of the map with a two finger movement">Поворот двома пальцями</string>
+    <string name="allow_rotation_pref_desc" translation_description="a qualification for the Multitouch rotation option">якщо підтримується телефоном</string>
+    <string name="north_pole">Пн.П</string>
+    <string name="south_pole">Пд.П</string>
+    <string name="andromeda" translation_description="Name of the Andromeda constellation">Андромеда</string>
+    <string name="aquarius" translation_description="Name of the Aquarius constellation">Водолій</string>
+    <string name="aquila" translation_description="Name of the Aquila constellation">Орел</string>
+    <string name="aries" translation_description="Name of the Aries constellation">Овен</string>
+    <string name="auriga" translation_description="Name of the Auriga constellation">Візничий</string>
+    <string name="bootes" translation_description="Name of the Bootes constellation">Волопас</string>
+    <string name="cancer" translation_description="Name of the Cancer constellation">Рак</string>
+    <string name="canis_major" translation_description="Name of the Canis Major constellation">Великий Пес</string>
+    <string name="capricornus" translation_description="Name of the Capricornus constellation">Козеріг</string>
+    <string name="carina" translation_description="Name of the Carina constellation">Кіль</string>
+    <string name="cassiopeia" translation_description="Name of the Cassiopeia constellation">Кассіопея</string>
+    <string name="centaurus" translation_description="Name of the Centaurus constellation">Кентавр</string>
+    <string name="cetus" translation_description="Name of the Cetus constellation">Кит</string>
+    <string name="crux" translation_description="Name of the Crux constellation">Південний хрест</string>
+    <string name="cygnus" translation_description="Name of the Cygnus constellation">Лебідь</string>
+    <string name="draco" translation_description="Name of the Draco constellation">Дракон</string>
+    <string name="eridanus" translation_description="Name of the Eridanus constellation">Ерідан</string>
+    <string name="gemini" translation_description="Name of the Gemini constellation">Близнюки</string>
+    <string name="grus" translation_description="Name of the Grus constellation">Журавель</string>
+    <string name="hercules" translation_description="Name of the Hercules constellation">Геркулес</string>
+    <string name="hydrus" translation_description="Name of the Hydrus constellation">Гідра</string>
+    <string name="leo" translation_description="Name of the Leo constellation">Лев</string>
+    <string name="libra" translation_description="Name of the Libra constellation">Терези</string>
+    <string name="lupus" translation_description="Name of the Lupus constellation">Вовк</string>
+    <string name="lyra" translation_description="Name of the Lyra constellation">Ліра</string>
+    <string name="ophiuchus" translation_description="Name of the Ophiuchus constellation">Змієносець</string>
+    <string name="orion" translation_description="Name of the Orion constellation">Оріон</string>
+    <string name="pavo" translation_description="Name of the Pavo constellation">Павлін</string>
+    <string name="pegasus" translation_description="Name of the Pegasus constellation">Пегас</string>
+    <string name="perseus" translation_description="Name of the Perseus constellation">Персей</string>
+    <string name="phoenix" translation_description="Name of the Phoenix constellation">Фенікс</string>
+    <string name="pisces" translation_description="Name of the Pisces constellation">Риби</string>
+    <string name="piscis_austrinus" translation_description="Name of the Piscis Austrinus constellation">Південна Риба</string>
+    <string name="puppis" translation_description="Name of the Puppis constellation">Корма</string>
+    <string name="sagittarius" translation_description="Name of the Sagittarius constellation">Стрілець</string>
+    <string name="scorpius" translation_description="Name of the Scorpius constellation">Скорпіон</string>
+    <string name="taurus" translation_description="Name of the Taurus constellation">Телець</string>
+    <string name="tucana" translation_description="Name of the Tucana constellation">Тукан</string>
+    <string name="ursa_major" translation_description="Name of the Ursa Major constellation">Велика Ведмедиця</string>
+    <string name="ursa_minor" translation_description="Name of the Ursa Minor constellation">Мала Ведмедиця</string>
+    <string name="vela" translation_description="Name of the Vela constellation">Вітрила</string>
+    <string name="virgo" translation_description="Name of the Virgo constellation">Діва</string>
+    <string name="capricorn" translation_description="Name of the Capricorn constellation">Козеріг</string>
+    <string name="southern_cross" translation_description="Name of the Southern Cross constellation">Південний Хрест</string>
+    <string name="scorpio" translation_description="Name of the Scorpio constellation">Скорпіон</string>
+    <string name="little_dipper" translation_description="Name of the Little Dipper constellation">Мала Ведмедиця</string>
+    <string name="little_bear" translation_description="Name of the Little Bear constellation">Мала Ведмедиця</string>
+    <string name="big_dipper" translation_description="Name of the Big Dipper constellation">Велика Ведмедиця</string>
+    <string name="great_bear" translation_description="Name of the Great Bear constellation">Велика Ведмедиця</string>
+    <string name="plough" translation_description="Name of the Plough constellation">Велика Ведмедиця</string>
+    <string name="sirius" translation_description="Name of the Star Sirius">Сіріус</string>
+    <string name="canopus" translation_description="Name of the Star Canopus">Канопус</string>
+    <string name="arcturus" translation_description="Name of the Star Arcturus">Арктур</string>
+    <string name="rigel_kentaurus_a" translation_description="Name of the Star Rigel Kentaurus A">Рігель Центавра А</string>
+    <string name="rigil_kentaurus_a" translation_description="Name of the Star Rigil Kentaurus A">Рігіл Центавра А</string>
+    <string name="vega" translation_description="Name of the Star Vega">Вега</string>
+    <string name="rigel" translation_description="Name of the Star Rigel">Рігель</string>
+    <string name="procyon" translation_description="Name of the Star Procyon">Проціон</string>
+    <string name="betelgeuse" translation_description="Name of the Star Betelgeuse">Бетельгейзе</string>
+    <string name="achernar" translation_description="Name of the Star Achernar">Ахернар</string>
+    <string name="hadar" translation_description="Name of the Star Hadar">Хадар</string>
+    <string name="capella" translation_description="Name of the Star Capella">Капелла</string>
+    <string name="altair" translation_description="Name of the Star Altair">Альтаїр</string>
+    <string name="acrux" translation_description="Name of the Star Acrux">Акрукс</string>
+    <string name="aldebaran" translation_description="Name of the Star Aldebaran">Альдебаран</string>
+    <string name="spica" translation_description="Name of the Star Spica">Спіка</string>
+    <string name="antares" translation_description="Name of the Star Antares">Антарес</string>
+    <string name="pollux" translation_description="Name of the Star Pollux">Поллукс</string>
+    <string name="fomalhaut" translation_description="Name of the Star Fomalhaut">Фомальгаут</string>
+    <string name="deneb" translation_description="Name of the Star Deneb">Денеб</string>
+    <string name="regulus" translation_description="Name of the Star Regulus">Регул</string>
+    <string name="adhara" translation_description="Name of the Star Adhara">Адхара</string>
+    <string name="shaula" translation_description="Name of the Star Shaula">Шаула</string>
+    <string name="alnath" translation_description="Name of the Star Alnath">Альнах</string>
+    <string name="alnilam" translation_description="Name of the Star Alnilam">Альнілам</string>
+    <string name="alnair" translation_description="Name of the Star Alnair">АльнаЇр</string>
+    <string name="alioth" translation_description="Name of the Star Alioth">Аліот</string>
+    <string name="mirphak" translation_description="Name of the Star Mirphak">Мірфак</string>
+    <string name="kaus_australis" translation_description="Name of the Star Kaus Australis">Каус Австраліс</string>
+    <string name="dubhe" translation_description="Name of the Star Dubhe">Дубхе</string>
+    <string name="alkaid" translation_description="Name of the Star Alkaid">АлькаЇд</string>
+    <string name="alhena" translation_description="Name of the Star Alhena">Альхена</string>
+    <string name="castor" translation_description="Name of the Star Castor">Кастор</string>
+    <string name="polaris" translation_description="Name of the Star Polaris">Полярна зірка</string>
+    <string name="alphard" translation_description="Name of the Star Alphard">Альфард</string>
+    <string name="hamal" translation_description="Name of the Star Hamal">Гамаль</string>
+    <string name="algieba" translation_description="Name of the Star Algieba">Альджеба</string>
+    <string name="diphda" translation_description="Name of the Star Diphda">Діфда</string>
+    <string name="nunki" translation_description="Name of the Star Nunki">Нункі</string>
+    <string name="mirach" translation_description="Name of the Star Mirach">Мірах</string>
+    <string name="alpheratz" translation_description="Name of the Star Alpheratz">Альферац</string>
+    <string name="saiph" translation_description="Name of the Star Saiph">Саїф</string>
+    <string name="kochab" translation_description="Name of the Star Kochab">Кохаб</string>
+    <string name="rasalhague" translation_description="Name of the Star Rasalhague">Рас-Альхаг</string>
+    <string name="algol" translation_description="Name of the Star Algol">Алголь</string>
+    <string name="denebola" translation_description="Name of the Star Denebola">Денебола</string>
+    <string name="alphekka" translation_description="Name of the Star Alphekka">Альфекка</string>
+    <string name="etamin" translation_description="Name of the Star Etamin">Етамін</string>
+    <string name="kaus" translation_description="Name of the Star Kaus">Каус</string>
+    <string name="shedir" translation_description="Name of the Star Shedir">Шедар</string>
+    <string name="caph" translation_description="Name of the Star Caph">Каф</string>
+    <string name="izar" translation_description="Name of the Star Izar">Міцар</string>
+    <string name="merak" translation_description="Name of the Star Merak">Мерак</string>
+    <string name="enif" translation_description="Name of the Star Enif">Еніф</string>
+    <string name="ankaa" translation_description="Name of the Star Ankaa">Анкаа</string>
+    <string name="phad" translation_description="Name of the Star Phad">Фекда</string>
+    <string name="alderamin" translation_description="Name of the Star Alderamin">Альдерамін</string>
+    <string name="scheat" translation_description="Name of the Star Scheat">Шеат</string>
+    <string name="markab" translation_description="Name of the Star Markab">Маркаб</string>
+    <string name="menkar" translation_description="Name of the Star Menkar">Менкар</string>
+    <string name="arneb" translation_description="Name of the Star Arneb">Арнеб</string>
+    <string name="unukalhai" translation_description="Name of the Star Unukalhai">Унукалхай</string>
+    <string name="algenib" translation_description="Name of the Star Algenib">Альгеніб (Пуп Коня)</string>
+    <string name="vindemiatrix" translation_description="Name of the Star Vindemiatrix">Віндеміатрікс</string>
+    <string name="alcyone" translation_description="Name of the Star Alcyone">Альціона</string>
+    <string name="dog_star" translation_description="Name of the Dog Star (Sirius)">Собача зірка</string>
+    <string name="north_star" translation_description="Name of the North Star">Полярна зірка</string>
+    <string name="pole_star" translation_description="Name of the (North) Pole Star">Полярна зірка</string>
+    <string name="m1" translation_description="Name of the Messier object M1">M1</string>
+    <string name="m2" translation_description="Name of the Messier object M2">M2</string>
+    <string name="m3" translation_description="Name of the Messier object M3">M3</string>
+    <string name="m4" translation_description="Name of the Messier object M4">M4</string>
+    <string name="m5" translation_description="Name of the Messier object M5">M5</string>
+    <string name="m6" translation_description="Name of the Messier object M6">M6</string>
+    <string name="m7" translation_description="Name of the Messier object M7">M7</string>
+    <string name="m8" translation_description="Name of the Messier object M8">M8</string>
+    <string name="m9" translation_description="Name of the Messier object M9">M9</string>
+    <string name="m10" translation_description="Name of the Messier object M10">M10</string>
+    <string name="m11" translation_description="Name of the Messier object M11">M11</string>
+    <string name="m12" translation_description="Name of the Messier object M12">M12</string>
+    <string name="m13" translation_description="Name of the Messier object M13">M13</string>
+    <string name="m14" translation_description="Name of the Messier object M14">M14</string>
+    <string name="m15" translation_description="Name of the Messier object M15">M15</string>
+    <string name="m16" translation_description="Name of the Messier object M16">M16</string>
+    <string name="m17" translation_description="Name of the Messier object M17">M17</string>
+    <string name="m18" translation_description="Name of the Messier object M18">M18</string>
+    <string name="m19" translation_description="Name of the Messier object M19">M19</string>
+    <string name="m20" translation_description="Name of the Messier object M20">M20</string>
+    <string name="m21" translation_description="Name of the Messier object M21">M21</string>
+    <string name="m22" translation_description="Name of the Messier object M22">M22</string>
+    <string name="m23" translation_description="Name of the Messier object M23">M23</string>
+    <string name="m24" translation_description="Name of the Messier object M24">M24</string>
+    <string name="m25" translation_description="Name of the Messier object M25">M25</string>
+    <string name="m26" translation_description="Name of the Messier object M26">M26</string>
+    <string name="m27" translation_description="Name of the Messier object M27">M27</string>
+    <string name="m28" translation_description="Name of the Messier object M28">M28</string>
+    <string name="m29" translation_description="Name of the Messier object M29">M29</string>
+    <string name="m30" translation_description="Name of the Messier object M30">M30</string>
+    <string name="m31" translation_description="Name of the Messier object M31">M31</string>
+    <string name="m32" translation_description="Name of the Messier object M32">M32</string>
+    <string name="m33" translation_description="Name of the Messier object M33">M33</string>
+    <string name="m34" translation_description="Name of the Messier object M34">M34</string>
+    <string name="m35" translation_description="Name of the Messier object M35">M35</string>
+    <string name="m36" translation_description="Name of the Messier object M36">M36</string>
+    <string name="m37" translation_description="Name of the Messier object M37">M37</string>
+    <string name="m38" translation_description="Name of the Messier object M38">M38</string>
+    <string name="m39" translation_description="Name of the Messier object M39">M39</string>
+    <string name="m40" translation_description="Name of the Messier object M40">M40</string>
+    <string name="m41" translation_description="Name of the Messier object M41">M41</string>
+    <string name="m42" translation_description="Name of the Messier object M42">M42</string>
+    <string name="m43" translation_description="Name of the Messier object M43">M43</string>
+    <string name="m44" translation_description="Name of the Messier object M44">M44</string>
+    <string name="m45" translation_description="Name of the Messier object M45">M45</string>
+    <string name="m46" translation_description="Name of the Messier object M46">M46</string>
+    <string name="m47" translation_description="Name of the Messier object M47">M47</string>
+    <string name="m48" translation_description="Name of the Messier object M48">M48</string>
+    <string name="m49" translation_description="Name of the Messier object M49">M49</string>
+    <string name="m50" translation_description="Name of the Messier object M50">M50</string>
+    <string name="m51" translation_description="Name of the Messier object M51">M51</string>
+    <string name="m52" translation_description="Name of the Messier object M52">M52</string>
+    <string name="m53" translation_description="Name of the Messier object M53">M53</string>
+    <string name="m54" translation_description="Name of the Messier object M54">M54</string>
+    <string name="m55" translation_description="Name of the Messier object M55">M55</string>
+    <string name="m56" translation_description="Name of the Messier object M56">M56</string>
+    <string name="m57" translation_description="Name of the Messier object M57">M57</string>
+    <string name="m58" translation_description="Name of the Messier object M58">M58</string>
+    <string name="m59" translation_description="Name of the Messier object M59">M59</string>
+    <string name="m60" translation_description="Name of the Messier object M60">M60</string>
+    <string name="m61" translation_description="Name of the Messier object M61">M61</string>
+    <string name="m62" translation_description="Name of the Messier object M62">M62</string>
+    <string name="m63" translation_description="Name of the Messier object M63">M63</string>
+    <string name="m64" translation_description="Name of the Messier object M64">M64</string>
+    <string name="m65" translation_description="Name of the Messier object M65">M65</string>
+    <string name="m66" translation_description="Name of the Messier object M66">M66</string>
+    <string name="m67" translation_description="Name of the Messier object M67">M67</string>
+    <string name="m68" translation_description="Name of the Messier object M68">M68</string>
+    <string name="m69" translation_description="Name of the Messier object M69">M69</string>
+    <string name="m70" translation_description="Name of the Messier object M70">M70</string>
+    <string name="m71" translation_description="Name of the Messier object M71">M71</string>
+    <string name="m72" translation_description="Name of the Messier object M72">M72</string>
+    <string name="m73" translation_description="Name of the Messier object M73">M73</string>
+    <string name="m74" translation_description="Name of the Messier object M74">M74</string>
+    <string name="m75" translation_description="Name of the Messier object M75">M75</string>
+    <string name="m76" translation_description="Name of the Messier object M76">M76</string>
+    <string name="m77" translation_description="Name of the Messier object M77">M77</string>
+    <string name="m78" translation_description="Name of the Messier object M78">M78</string>
+    <string name="m79" translation_description="Name of the Messier object M79">M79</string>
+    <string name="m80" translation_description="Name of the Messier object M80">M80</string>
+    <string name="m81" translation_description="Name of the Messier object M81">M81</string>
+    <string name="m82" translation_description="Name of the Messier object M82">M82</string>
+    <string name="m83" translation_description="Name of the Messier object M83">M83</string>
+    <string name="m84" translation_description="Name of the Messier object M84">M84</string>
+    <string name="m85" translation_description="Name of the Messier object M85">M85</string>
+    <string name="m86" translation_description="Name of the Messier object M86">M86</string>
+    <string name="m87" translation_description="Name of the Messier object M87">M87</string>
+    <string name="m88" translation_description="Name of the Messier object M88">M88</string>
+    <string name="m89" translation_description="Name of the Messier object M89">M89</string>
+    <string name="m90" translation_description="Name of the Messier object M90">M90</string>
+    <string name="m91" translation_description="Name of the Messier object M91">M91</string>
+    <string name="m92" translation_description="Name of the Messier object M92">M92</string>
+    <string name="m93" translation_description="Name of the Messier object M93">M93</string>
+    <string name="m94" translation_description="Name of the Messier object M94">M94</string>
+    <string name="m95" translation_description="Name of the Messier object M95">M95</string>
+    <string name="m96" translation_description="Name of the Messier object M96">M96</string>
+    <string name="m97" translation_description="Name of the Messier object M97">M97</string>
+    <string name="m98" translation_description="Name of the Messier object M98">M98</string>
+    <string name="m99" translation_description="Name of the Messier object M99">M99</string>
+    <string name="m100" translation_description="Name of the Messier object M100">M100</string>
+    <string name="m101" translation_description="Name of the Messier object M101">M101</string>
+    <string name="m102" translation_description="Name of the Messier object M102">M102</string>
+    <string name="m103" translation_description="Name of the Messier object M103">M103</string>
+    <string name="m104" translation_description="Name of the Messier object M104">M104</string>
+    <string name="m105" translation_description="Name of the Messier object M105">M105</string>
+    <string name="m106" translation_description="Name of the Messier object M106">M106</string>
+    <string name="m107" translation_description="Name of the Messier object M107">M107</string>
+    <string name="m108" translation_description="Name of the Messier object M108">M108</string>
+    <string name="m109" translation_description="Name of the Messier object M109">M109</string>
+    <string name="m110" translation_description="Name of the Messier object M110">M110</string>
+    <string name="ngc6543" translation_description="Name of the Messier object NGC6543">NGC 6543</string>
+    <string name="ngc5139" translation_description="Name of the Messier object NGC5139">NGC 5139</string>
+    <string name="butterfly_cluster" translation_description="Name of the Messier object Butterfly Cluster">Скупчення Метелик</string>
+    <string name="scorpions_tail" translation_description="Name of the Messier object Scorpion\'s Tail">Хвіст Скорпіона</string>
+    <string name="winnecke_4" translation_description="Name of the Messier object Winnecke 4">Віннеке 4</string>
+    <string name="beehive_cluster" translation_description="Name of the Messier object Beehive Cluster">Скупчення Вулик</string>
+    <string name="praesepe" translation_description="Name of the Messier object Praesepe">Ясла</string>
+    <string name="seven_sisters" translation_description="Name of the Messier object Seven Sisters">Сім сестер</string>
+    <string name="space_station" translation_description="Name of the Internation Space Station">Міжнародна орбітальна станція</string>
+    <string name="space_shuttle" translation_description="Name of the Space Shuttle">Space Shuttle</string>
+    <string name="kml_load_error">Не вдалося завантажити файл KML</string>
+    <string name="load_kml_dialog_title">Завантаження KML</string>
+    <string name="load_kml_file">Завантажити</string>
+    <string name="enable_analytics">Надсилати статистику використання</string>
+    <string name="enable_analytics_desc">Зробіть Sky Map кращою, відправивши анонімні дані в Google Analytics</string>
+    <string name="leonids" translation_description="Meteor Shower">Леоніди</string>
+    <string name="geminids" translation_description="Meteor Shower">Гемініди</string>
+    <string name="quadrantids" translation_description="Meteor Shower">Квадрантиди</string>
+    <string name="lyrids" translation_description="Meteor Shower">Ліриди</string>
+    <string name="aquariids" translation_description="Meteor Shower">Ета Аквариди</string>
+    <string name="deltaaquariids" translation_description="Meteor Shower">Дельта Аквариди</string>
+    <string name="perseids" translation_description="Meteor Shower">Персеїди</string>
+    <string name="orionids" translation_description="Meteor Shower">Оріоніди</string>
+    <string name="puppidvelids" translation_description="Meteor Shower">Пуппіди-Веліди</string>
+    <string name="ursids" translation_description="Meteor Shower">Урсіди</string>
+
+    <string name="no_sensor_warning">У вашому пристрої недостатньо орієнтаційних датчиків - автоналаштування може не працювати</string>
+    <string name="warning_dialog_title">Погані новини!</string>
+    <string name="missing_sensor_dialog_text">\n
+        На жаль, у вашого пристрою може не бути одного з тих
+     датчиків, які потребує Sky Map.\n\n
+        Щоб показати вам частину неба, на яку вказує телефон, Sky Map
+     потрібен як вбудований компас, так і акселерометр. Ваш пристрій повідомляє, що один з них відсутній.
+         Хороша новина полягає в тому, що деякі пристрої (наприклад, деякі телефони Moto E) помилково стверджують
+         що не мають компаса, але насправді працюють.\n\n
+
+        Якщо на вашому пристрої відсутній сенсор, то автоматичний режим не працюватиме. Тим не менш
+         все ж можна використовувати Sky Map на цьому пристрої в ручному режимі, де ви перетягуєте, повертаєте та розтягуєте
+         карту пальцями.
+    </string>
+    <string name="do_not_show_again">Більше не показувати це повідомлення</string>
+    <string name="title_activity_diagnostic">Діагностика</string>
+    <string name="location_rationale_title">Чому ми запитуємо про ваше місце розташування?</string>
+    <string name="location_rationale_text">Зірки, які ви можете бачити, залежать від того, де ви знаходитесь на планеті Земля. Без вашого розташування ми не можемо показати точну карту. Якщо ви не хочете, щоб ваш телефон дав нам своє місцеположення, ви можете надати його вручну в налаштуваннях. Вам потрібно лише ввести найближче місто.</string>
+    <string name="play_services_error">Попередження: помилка служби Google Play - автоматичне місце розташування може не працювати</string>
+    <string name="sensor_absent">Відсутня</string>
+    <string name="sensor_accuracy_unknown">Точність: невідомо</string>
+    <string name="sensor_accuracy_unreliable">Точність: ненадійна</string>
+    <string name="sensor_accuracy_low">Точність: Низька</string>
+    <string name="sensor_accuracy_medium">Точність: Середня</string>
+    <string name="sensor_accuracy_high">Точність: Висока</string>
+    <string name="sensor_accuracy_nocontact">Точність: Немає зв\'язку</string>
+    <string name="diagnostics_activity_general_heading">Загальний</string>
+    <string name="diagnostics_activity_phone">Пристрій</string>
+    <string name="diagnostics_activity_android_version">Версія Android</string>
+    <string name="diagnostics_activity_sky_map_version">Версія Sky Map</string>
+    <string name="diagnostics_activity_sensors_heading">Сенсори</string>
+    <string name="diagnostics_activity_compass">Компас</string>
+    <string name="diagnostics_activity_accelerometer">Акселерометр</string>
+    <string name="diagnostics_activity_rotation_vector">Обертання</string>
+    <string name="diagnostics_activity_gyroscope">Гіроскоп</string>
+    <string name="diagnostics_activity_light_level">Рівень освітленості</string>
+    <string name="diagnostics_activity_location_and_time_heading">Місце та час</string>
+    <string name="diagnostics_activity_gps">GPS</string>
+    <string name="diagnostics_activity_location">Розташування (ш., д.)</string>
+    <string name="diagnostics_activity_pointing_ra_dec">Вказівник</string>
+    <string name="diagnostics_activity_magnetic_correction">Mag корекція</string>
+    <string name="diagnostics_activity_local_datetime">Місцевий час</string>
+    <string name="diagnostics_activity_universal_time">Універсальний час</string>
+    <string name="diagnostics_activity_network_heading">Мережа</string>
+    <string name="diagnostics_activity_connection">З\'єднання</string>
+    <string name="diagnostics_activity_rotation_matrix">Rot Matrix</string>
+    <string name="enabled">Ввімкнено</string>
+    <string name="disabled">Вимкнено</string>
+    <string name="permission_disabled">Дозвіл не надано</string>
+    <string name="no_gps">Немає GPS</string>
+    <string name="connected">З\'єднано</string>
+    <string name="disconnected">Роз\'єднано</string>
+    <string name="wifi">" (wifi)"</string>
+    <string name="cell_network">" (виклик)"</string>
+    <string name="menu_calibrate">Калібрувати</string>
+    <string name="compass_calibration_activity_heading_compass">Компас -</string>
+    <string name="compass_calibration_activity_do_not_show_this_again">Більше не показувати</string>
+    <string name="compass_calibration_activity_warning">Ваш компас потрібно відкалібрувати</string>
+    <string name="sensor_reverse_preference_title">Зворотне магнітне Z</string>
+    <string name="sensor_reverse_preference_summary">Налагодження для телефонів з неправильно впровадженими датчиками - вимагає перезавантаження</string>
+    <string name="whats_new_dialog_title">Що нового</string>
+    <string name="disable_gyro_preference_title">Вимкнути гіроскоп</string>
+    <string name="disable_gyro_preference_summary">Не всі пристрої мають гіроскоп - якщо у вас є, то ви отримаєте кращі результати, якщо він буде активованим, і цей поле не буде позначеним. З іншого боку, якщо ваш пристрій не має гіроскопа, Sky Map, ймовірно, не буде працювати, якщо ви знімете позначку з цього поля.</string>
+    <string name="rotate_horizon_preference_title">Обертати по горизонту</string>
+    <string name="rotate_horizon_preference_summary">Поворот на горизонті 90 градусів (для екранів з примусовим ландшафтом, такими як smartglasses)</string>
+
+</resources>
