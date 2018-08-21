@@ -52,6 +52,9 @@ public class Analytics implements AnalyticsInterface {
     tracker.setAppVersion(application.getVersionName());
     tracker.setAppId("com.google.android.stardroid");
     tracker.setAppName(application.getString(R.string.app_name));
+    // Sample only 0.01% of events in order to avoid violating Analytics' Terms of Service.
+    // TODO(jontayler): move to Firebase
+    tracker.setSampleRate(0.01);
   }
 
   public void setEnabled(boolean enabled) {
