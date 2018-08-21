@@ -3,9 +3,9 @@
     <string name="whats_new_text" translation_description="Description of new features in this version in html">
 <![CDATA[
     <h1>New in version %s</h1>
-    \t • Using the gyro is now the default for phones that support it<br/>
-    \t • Workaround for a Samsung S4 and Note 3 bug that caused a crash on start up<br/>
-    \t • Workaround for a bug in some phones that misreport rotation sensor status<br/>
+    \t • Fixed M31 image<br/>
+    \t • Ukranian support - thanks Lukyanov<br/>
+    \t • Other language fixes<br/>
 ]]>
     </string>
 </resources>
