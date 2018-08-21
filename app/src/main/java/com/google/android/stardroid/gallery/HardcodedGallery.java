@@ -65,7 +65,7 @@ public class HardcodedGallery implements Gallery {
     add(galleryImages, R.drawable.hubble_m1, R.string.crab_nebula, R.string.crab_nebula);
     add(galleryImages, R.drawable.hubble_m13, R.string.hercules_gc, R.string.hercules_gc);
     add(galleryImages, R.drawable.hubble_m16, R.string.eagle_nebula, R.string.eagle_nebula);
-    add(galleryImages, R.drawable.hubble_m31, R.string.andromeda_galaxy, R.string.andromeda_galaxy);
+    add(galleryImages, R.drawable.kennett_m31, R.string.andromeda_galaxy, R.string.andromeda_galaxy);
     add(galleryImages, R.drawable.hubble_m45, R.string.pleiades, R.string.pleiades);
     add(galleryImages, R.drawable.hubble_m51a, R.string.whirlpool_galaxy, R.string.whirlpool_galaxy);
     add(galleryImages, R.drawable.hubble_m57, R.string.ring_nebula, R.string.ring_nebula);
