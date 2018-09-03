@@ -1,14 +1,9 @@
 <resources>
-
-    <style name="title" parent="text">
-        <item name="android:textStyle">bold</item>
+    <!-- Main App Theme to make global changes easier -->
+    <style name = "AppTheme" parent="@android:style/Theme.Holo">
     </style>
 
-    <style name="text">
-        <item name="android:paddingLeft">5px</item>
-    </style>
-
-    <style name="FullscreenTheme" parent="@android:style/Theme.Holo">
+    <style name="FullscreenTheme" parent="AppTheme">
         <item name="android:actionBarStyle">@style/FullscreenActionBarStyle</item>
         <item name="android:windowActionBarOverlay">true</item>
         <item name="android:windowBackground">@null</item>
@@ -40,5 +35,13 @@
         <item name="android:layout_height">match_parent</item>
         <item name="android:paddingTop">5dp</item>
         <item name="android:paddingBottom">5dp</item>
+    </style>
+
+    <style name="title" parent="text">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="text">
+        <item name="android:paddingLeft">5px</item>
     </style>
 </resources>

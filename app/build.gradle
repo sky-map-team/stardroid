@@ -59,9 +59,9 @@ android {
       }
 
       // uses only open source software
-      fdroid {
-        resValue "string", "analytics_enabled", "false"
-      }
+      //fdroid {
+      //  resValue "string", "analytics_enabled", "false"
+      //}
     }
 }
 
