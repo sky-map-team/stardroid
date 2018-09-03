@@ -1,15 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 28
 
     flavorDimensions "default"
     defaultConfig {
         applicationId "com.google.android.stardroid"
-        minSdkVersion 15
-        targetSdkVersion 24
-        versionCode 1490
-        versionName "1.9.3"
+        minSdkVersion 28
+        targetSdkVersion 28
+        versionCode 1500
+        versionName "1.9.3 - P"
         buildConfigField 'String', 'GOOGLE_ANALYTICS_CODE', '""'
     }
     signingConfigs {
