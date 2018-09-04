@@ -1,4 +1,6 @@
 # Sky Map [![Build Status](https://travis-ci.org/sky-map-team/stardroid.svg?branch=master)](https://travis-ci.org/sky-map-team/stardroid)
+[![Code Quality: Java](https://img.shields.io/lgtm/grade/java/g/sky-map-team/stardroid.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/sky-map-team/stardroid/context:java)
+[![Total Alerts](https://img.shields.io/lgtm/alerts/g/sky-map-team/stardroid.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/sky-map-team/stardroid/alerts)
 
 This is the source repository for Sky Map. You should see the following
 two directories:
