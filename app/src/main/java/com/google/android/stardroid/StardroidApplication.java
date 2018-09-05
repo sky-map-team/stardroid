@@ -37,7 +37,6 @@ import java.util.Calendar;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.concurrent.ExecutorService;
 
 import javax.inject.Inject;
 
@@ -192,6 +191,7 @@ public class StardroidApplication extends Application {
       Log.e(TAG, "No sensor manager");
       analytics.trackEvent(
           Analytics.SENSOR_CATEGORY, Analytics.SENSOR_AVAILABILITY, "No Sensor Manager", 0);
+      return;
     }
     // Minimum requirements
     if (hasDefaultSensor(Sensor.TYPE_ACCELEROMETER)) {

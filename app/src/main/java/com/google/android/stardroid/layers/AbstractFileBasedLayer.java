@@ -58,7 +58,7 @@ public abstract class AbstractFileBasedLayer extends AbstractSourceLayer {
   }
 
   @Override
-  public void initialize() {
+  public synchronized void initialize() {
     BACKGROUND_EXECUTOR.execute(new Runnable() {
       public void run() {
         readSourceFile(fileName);

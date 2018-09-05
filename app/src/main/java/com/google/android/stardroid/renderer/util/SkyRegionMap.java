@@ -333,7 +333,7 @@ public class SkyRegionMap<RegionRenderingData> {
     // For debugging only: make sure we're within the maximum region coverage angle.
     if (data.regionCenterDotProduct < MathUtil.cos(REGION_COVERAGE_ANGLE_IN_RADIANS)) {
       Log.e("ActiveSkyRegionData",
-            "Object put in region, but outside of coverage angle." +
+            "Object put in region, but outside of coverage angle. " +
             "Angle was " + MathUtil.acos(data.regionCenterDotProduct) + " vs "  +
             REGION_COVERAGE_ANGLE_IN_RADIANS + ". Region was " + data.region);
     }
