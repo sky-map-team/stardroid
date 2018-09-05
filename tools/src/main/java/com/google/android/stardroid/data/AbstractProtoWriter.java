@@ -114,7 +114,8 @@ public abstract class AbstractProtoWriter {
 
     System.out.println("Input File: "+args[0]);
     System.out.println("Output Prefix: "+args[1]);
-
-    writeFiles(args[1], readSources(new BufferedReader(new FileReader(args[0]))));
+    try (BufferedReader in = new BufferedReader(new FileReader(args[0]))) {
+      writeFiles(args[1], readSources(in));
+    }
   }
 }

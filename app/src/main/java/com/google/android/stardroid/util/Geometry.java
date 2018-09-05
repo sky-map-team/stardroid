@@ -176,7 +176,7 @@ public class Geometry {
     float zxm = z * xm;
 
     Matrix33 rotationMatrix = new Matrix33(x * xm + cosD, xym + zs, zxm - ys,
-                                           xym - zs, y * ym+cosD, yzm + xs,
+                                           xym - zs, y * ym + cosD, yzm + xs,
                                            zxm + ys, yzm - xs, z * zm + cosD);
     return rotationMatrix;
   }
