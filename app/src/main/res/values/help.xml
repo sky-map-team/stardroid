@@ -5,56 +5,48 @@
 &lt;i&gt;https://github.com/sky-map-team/stardroid&lt;/i&gt;&lt;br/&gt;&lt;br/&gt;
 
 &lt;b&gt;Introduction and Quick Start&lt;/b&gt;&lt;br/&gt;
-Sky Map turns your Android-powered mobile phone into a window on the
-night sky.  When you point your phone up you will see a map of the brightest
-stars, constellations, and planets in that part of the sky.&lt;br/&gt;Next time you see a
-bright  star and want to know what it\'s called, use Sky Map!&lt;br/&gt;
+Sky Map is your catalog of the night sky! Point your Android-powered device up, and you will see a map of the brightest
+stars, constellations, and planets in that part of the sky.&lt;br/&gt;
 
 &lt;b&gt;Visible Layers&lt;/b&gt;&lt;br/&gt;
-
 Sky Map organizes the objects it shows you into layers.  Each layer can
 be toggled using the on-screen controls.  The layers are:&lt;br/&gt;
-      Stars&lt;br/&gt;
-      Constellations&lt;br/&gt;
-      Messier Objects&lt;br/&gt;
-      Planets&lt;br/&gt;
-      Meteor Showers&lt;br/&gt;
-      Right Ascension and Declination Grid&lt;br/&gt;
-      Horizon and cardinal points&lt;br/&gt;&lt;br/&gt;
-The brightest stars and most prominent constellations are labeled, as are the
-planets.  The planets are displayed as images that are larger than
-actual size.  The horizon is represented as a straight line.  Unless you live
-somewhere that is completely flat and free of buildings, it is likely that
-Sky Map will show you objects above the horizon line that you are actually
-unable to see.&lt;br/&gt;&lt;br/&gt;
+      <span>&#8226;</span> Stars&lt;br/&gt;
+      <span>&#8226;</span> Constellations&lt;br/&gt;
+      <span>&#8226;</span> Messier Objects&lt;br/&gt;
+      <span>&#8226;</span> Planets&lt;br/&gt;
+      <span>&#8226;</span> Meteor Showers&lt;br/&gt;
+      <span>&#8226;</span> Right Ascension and Declination Grid&lt;br/&gt;
+      <span>&#8226;</span> Horizon and cardinal points&lt;br/&gt;&lt;br/&gt;
+      
+The brightest stars, constellations, and planets are labeled. 
+Planets display as images that are larger than they will appear in the sky.
+Sky Map may show objects that are above the horizon line (represented as a straight line)
+that you may not be able to see, unless you live in an area that is flat and without buildings.&lt;br/&gt;&lt;br/&gt;
 
 &lt;b&gt;On-screen controls&lt;/b&gt;&lt;br/&gt;
-Tap on the screen to show the on-screen controls.  On one side of the screen are
+Tap on the screen to show the on-screen controls. On one side of the screen are
 the toggles for the layers described above.  They are orange when the layers are
 enabled and white when disabled.&lt;br/&gt;
 
-Along the bottom of the screen are zoom controls, and a toggle to switch between
+The other side of the screen has a toggle to switch between
 automatic and manual mode.&lt;br/&gt;&lt;br/&gt;
 &lt;b&gt;Navigation Modes&lt;/b&gt;&lt;br/&gt;
-When first installed Sky Map is in Automatic Mode and uses the phone\'s sensors
-to show you a map of the sky in the direction you are holding the phone.  By
+When first installed Sky Map will be in Automatic Mode and will use the phone\'s sensors
+to display a map of the sky in the direction your phone is pointing. By
 switching into Manual Mode, you can drag the map with your finger to explore the
-sky.  Move the trackball or D-pad left and right to rotate the map.  On multitouch phones
-you can also rotate the map with two fingers and use a pinch gesture to zoom in and out.
+sky. You can also rotate the map with two fingers and use a pinch gesture to zoom in and out.
 &lt;br/&gt;&lt;br/&gt;
 
 &lt;b&gt;Search&lt;/b&gt;&lt;br/&gt;
-Sky Map helps you answer the question \'What is that star over there?\'  It can
-also answer the question \'Where is ...?\'  Access the search function through
-the phone\'s menu button or through the Quick Search Box directly on the
-Desktop.  Start typing in the name of the planet, star or constellation you wish
-to find and Sky Map will provide a list of matching search items.  Select one
-and Sky Map will display a targeting circle and an arrow showing you how to move
-the phone (and yourself) to find the object.  As you move the phone and close in
-on the target, the circle will change from blue to red, finally turning orange
+Sky Map helps answer the question \'What star is that?\' or \'Where is ...?\'
+Access the search function through the phone\'s menu button or through the Quick Search Box directly on the
+Desktop. Enter the name of the star, constellation, or planet you wish
+to find, and Sky Map will list the matching search items. Select one
+and Sky Map will display a targeting circle and an arrow prompting you where to point
+the phone to find the object. The circle will change from blue to red, finally turning orange
 when the object is within your field of view.&lt;br/&gt;
-Note that if you are in Manual Mode,
-Sky Map will simply move the map to show you the object.&lt;br/&gt;
+NOTE: If you are in Manual Mode, Sky Map will simply move the map to show you the object.&lt;br/&gt;
 To exit Search Mode, tap the small cross in the corner of the screen.&lt;br/&gt;&lt;br/&gt;
 
 &lt;b&gt;Time Travel&lt;/b&gt;&lt;br/&gt;
@@ -63,7 +55,7 @@ Time Travel mode enables you to use Sky Map to see the sky at times
 other than the present. Select \'Time Travel\' from the main menu, and
 then select one of the Popular Dates or choose your own date and time
 using the \'Change the Date\' and \'Change the Time\' dialogs. Selections
-are limited to the years 1900-2100 due to limitations on accuracy,
+are restricted to the years 1900-2100 due to limitations on accuracy
 caused mainly by the gravitational influence of Jupiter. When you\'re
 done, press \'Go!\' to fly through time to your destination. Your Sky
 Map is now in time travel mode, displaying the date you\'re visiting,
