@@ -14,12 +14,13 @@
 
 package com.google.android.stardroid.util;
 
+import android.util.FloatMath;
+
 /**
  * Methods for doing mathematical operations with floats.
  *
  * @author Brent Bryan
  */
-// TODO(jontayler): eliminate this class if we can eliminate floats.
 public class MathUtil {
   private MathUtil() {}
 
@@ -33,27 +34,27 @@ public class MathUtil {
   }
 
   public static float sqrt(float x) {
-    return (float) Math.sqrt(x);
+    return (float)Math.sqrt(x);
   }
 
   public static float floor(float x) {
-    return (float) Math.floor(x);
+    return (float)Math.floor(x);
   }
 
   public static float ceil(float x) {
-    return (float) Math.ceil(x);
+    return (float)Math.ceil(x);
   }
 
   public static float sin(float x) {
-    return (float) Math.sin(x);
+    return (float)Math.sin(x);
   }
 
   public static float cos(float x) {
-    return (float) Math.cos(x);
+    return (float)Math.cos(x);
   }
 
   public static float tan(float x) {
-    return sin(x) / cos(x);
+    return (float)Math.sin(x) / (float)Math.cos(x);
   }
 
   public static float asin(float x) {

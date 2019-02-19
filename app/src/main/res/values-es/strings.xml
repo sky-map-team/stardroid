@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translation_description="Application Title">Sky Map</string>
+    <string name="app_name" translation_description="Application Title">Sky Map de Google</string>
     <string name="menu_settings">Config.</string>
     <string name="menu_search">Buscar</string>
     <string name="cancel">Cancelar</string>
@@ -58,7 +58,7 @@
     <string name="east">ESTE</string>
     <string name="west">OESTE</string>
     <string name="south">SUR</string>
-    <string name="search_label">Buscar</string>
+    <string name="search_label">Buscar en el cielo</string>
     <string name="search_hint" translation_description="an example search target">p. ej., Marte.</string>
     <string name="no_search_title">No hay resultados.</string>
     <string name="no_search_results_text">No se encontraron result.</string>

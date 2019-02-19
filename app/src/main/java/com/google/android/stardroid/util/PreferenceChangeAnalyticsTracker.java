@@ -22,8 +22,6 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.inject.Inject;
-
 /**
  * Tracks changes in preferences and logs them to Google Analytics.
  *
@@ -33,8 +31,7 @@ public class PreferenceChangeAnalyticsTracker implements OnSharedPreferenceChang
   private Analytics analytics;
   private static final String TAG = MiscUtil.getTag(PreferenceChangeAnalyticsTracker.class);
 
-  @Inject
-  PreferenceChangeAnalyticsTracker(Analytics analytics) {
+  public PreferenceChangeAnalyticsTracker(Analytics analytics) {
     this.analytics = analytics;
   }
 

@@ -14,6 +14,14 @@
 
 package com.google.android.stardroid.activities;
 
+import com.google.android.stardroid.R;
+import com.google.android.stardroid.activities.util.ActivityLightLevelChanger;
+import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
+import com.google.android.stardroid.gallery.GalleryFactory;
+import com.google.android.stardroid.gallery.GalleryImage;
+import com.google.android.stardroid.util.Analytics;
+import com.google.android.stardroid.util.MiscUtil;
+
 import android.app.Activity;
 import android.app.SearchManager;
 import android.content.Intent;
@@ -28,18 +36,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.android.stardroid.R;
-import com.google.android.stardroid.StardroidApplication;
-import com.google.android.stardroid.activities.util.ActivityLightLevelChanger;
-import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
-import com.google.android.stardroid.gallery.GalleryFactory;
-import com.google.android.stardroid.gallery.GalleryImage;
-import com.google.android.stardroid.util.Analytics;
-import com.google.android.stardroid.util.MiscUtil;
-
 import java.util.List;
-
-import javax.inject.Inject;
 
 /**
  * Shows an image to the user and allows them to search for it.
@@ -47,18 +44,15 @@ import javax.inject.Inject;
  * @author John Taylor
  *
  */
-public class ImageDisplayActivity extends InjectableActivity {
+public class ImageDisplayActivity extends Activity {
   private static final String TAG = MiscUtil.getTag(ImageDisplayActivity.class);
   private static final int ERROR_MAGIC_NUMBER = -1;
   private GalleryImage selectedImage;
   private ActivityLightLevelManager activityLightLevelManager;
-  @Inject
-  Analytics analytics;
 
   @Override
   protected void onCreate(Bundle icicle) {
     super.onCreate(icicle);
-    getApplicationComponent().inject(this);
     setContentView(R.layout.imagedisplay);
     activityLightLevelManager = new ActivityLightLevelManager(
         new ActivityLightLevelChanger(this, null),
@@ -97,7 +91,7 @@ public class ImageDisplayActivity extends InjectableActivity {
   @Override
   public void onStart() {
     super.onStart();
-    analytics.trackPageView(Analytics.IMAGE_DISPLAY_ACTIVITY);
+    Analytics.getInstance(this).trackPageView(Analytics.IMAGE_DISPLAY_ACTIVITY);
   }
 
   @Override

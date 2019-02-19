@@ -14,14 +14,15 @@
 
 package com.google.android.stardroid.test.base;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.EnumSet;
+import java.util.List;
+
 import com.google.android.stardroid.base.Lists;
 import com.google.android.stardroid.base.Transform;
 
 import junit.framework.TestCase;
-
-import java.util.Arrays;
-import java.util.EnumSet;
-import java.util.List;
 
 /**
  * Unittests for the Lists class.
@@ -72,5 +73,28 @@ public class ListsTest extends TestCase {
     assertEquals(4, newList.get(1).intValue());
     assertEquals(1, newList.get(2).intValue());
     assertTrue(startList == newList);
+  }
+
+  public void testNewArrayList() {
+    ArrayList<String> list = Lists.newArrayList();
+    assertEquals(0, list.size());
+
+    // ensure that the list is modifiable
+    list.add("foo");
+    assertEquals("foo", list.get(0));
+  }
+
+  public void testEmptyList() {
+    List<String> list = Lists.emptyList();
+
+    assertEquals(0, list.size());
+
+    // ensure the list is immutable
+    try {
+      list.add("foo");
+      fail("List should be immutable");
+    } catch (UnsupportedOperationException e) {
+      // list should be immutable.
+    }
   }
 }

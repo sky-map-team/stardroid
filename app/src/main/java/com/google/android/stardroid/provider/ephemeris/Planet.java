@@ -35,16 +35,16 @@ import java.util.TimeZone;
 public enum Planet {
   // The order here is the order in which they are drawn.  To ensure that during
   // conjunctions they display "naturally" order them in reverse distance from Earth.
-  Pluto(R.drawable.pluto, R.string.pluto, 1L * TimeConstants.MILLISECONDS_PER_HOUR),
-  Neptune(R.drawable.neptune, R.string.neptune, 1L * TimeConstants.MILLISECONDS_PER_HOUR),
-  Uranus(R.drawable.uranus, R.string.uranus, 1L * TimeConstants.MILLISECONDS_PER_HOUR),
-  Jupiter(R.drawable.jupiter, R.string.jupiter, 1L * TimeConstants.MILLISECONDS_PER_HOUR),
-  Saturn(R.drawable.saturn, R.string.saturn, 1L * TimeConstants.MILLISECONDS_PER_HOUR),
-  Mars(R.drawable.mars, R.string.mars, 1L * TimeConstants.MILLISECONDS_PER_HOUR),
-  Sun(R.drawable.sun, R.string.sun, 1L * TimeConstants.MILLISECONDS_PER_HOUR),
-  Mercury(R.drawable.mercury, R.string.mercury, 1L * TimeConstants.MILLISECONDS_PER_HOUR),
-  Venus(R.drawable.venus, R.string.venus, 1L * TimeConstants.MILLISECONDS_PER_HOUR),
-  Moon(R.drawable.moon4, R.string.moon, 1L * TimeConstants.MILLISECONDS_PER_MINUTE);
+  Pluto(R.drawable.pluto, R.string.pluto, 1L * TimeConstants.MILLISECONDS_PER_WEEK),
+  Neptune(R.drawable.neptune, R.string.neptune, 1L * TimeConstants.MILLISECONDS_PER_WEEK),
+  Uranus(R.drawable.uranus, R.string.uranus, 1L * TimeConstants.MILLISECONDS_PER_WEEK),
+  Jupiter(R.drawable.jupiter, R.string.jupiter, 1L * TimeConstants.MILLISECONDS_PER_WEEK),
+  Saturn(R.drawable.saturn, R.string.saturn, 1L * TimeConstants.MILLISECONDS_PER_WEEK),
+  Mars(R.drawable.mars, R.string.mars, 1L * TimeConstants.MILLISECONDS_PER_DAY),
+  Sun(R.drawable.sun, R.string.sun, 1L * TimeConstants.MILLISECONDS_PER_DAY),
+  Mercury(R.drawable.mercury, R.string.mercury, 1L * TimeConstants.MILLISECONDS_PER_DAY),
+  Venus(R.drawable.venus, R.string.venus, 1L * TimeConstants.MILLISECONDS_PER_DAY),
+  Moon(R.drawable.moon4, R.string.moon, 1L * TimeConstants.MILLISECONDS_PER_HOUR);
 
   private static final String TAG = MiscUtil.getTag(Planet.class);
 

@@ -32,7 +32,6 @@ import com.google.android.stardroid.util.MiscUtil;
 public class PreferencesButton extends ImageButton
     implements android.view.View.OnClickListener, OnSharedPreferenceChangeListener {
   private static final String TAG = MiscUtil.getTag(PreferencesButton.class);
-  private static Analytics analytics;
   private OnClickListener secondaryOnClickListener;
 
   @Override
@@ -59,33 +58,20 @@ public class PreferencesButton extends ImageButton
     init();
   }
 
-  public PreferencesButton(Context context) {
-    super(context);
-    init();
-  }
-
-  /**
-   * Sets the {@link Analytics} instance for reporting preference toggles.
-   *
-   * This class gets instantiated by the system and there's not obvious way to access anything
-   * dagger-ey to inject the {@link Analytics}.  Since it's not vital to the class'
-   * functioning and we'll probably kill this class anyway at some point I can live with this
-   * hack.
-   * @param analytics
-   */
-  public static void setAnalytics(Analytics analytics) {
-    PreferencesButton.analytics = analytics;
-  }
-
-  public void setAttrs(Context context, AttributeSet attrs) {
+  private void setAttrs(Context context, AttributeSet attrs) {
     TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.PreferencesButton);
     imageOn = a.getDrawable(R.styleable.PreferencesButton_image_on);
     imageOff = a.getDrawable(R.styleable.PreferencesButton_image_off);
     prefKey = a.getString(R.styleable.PreferencesButton_pref_key);
-    defaultValue = a.getBoolean(R.styleable.PreferencesButton_default_value, true);
+    defaultValue = a.getBoolean(R.styleable.PreferencesButton_default_value, false);
     Log.d(TAG, "Preference key is " + prefKey);
   }
 
+  public PreferencesButton(Context context) {
+    super(context);
+    init();
+  }
+  
   private void init() {
     super.setOnClickListener(this);
     preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
@@ -100,19 +86,18 @@ public class PreferencesButton extends ImageButton
   }
   
   private void setPreference() {
-    Log.d(TAG, "Setting preference " + prefKey + " to... " + isOn);
+    Log.d(TAG, "Setting preference " + prefKey + " to " + isOn);
+    // TODO(put this on a background thread)
     if (prefKey != null) {
-      preferences.edit().putBoolean(prefKey, isOn).apply();
+      preferences.edit().putBoolean(prefKey, isOn).commit();  
     }
   }
 
   @Override
   public void onClick(View v) {
     isOn = !isOn;
-    if (analytics != null) {
-      analytics.trackEvent(
-          Analytics.USER_ACTION_CATEGORY, Analytics.PREFERENCE_BUTTON_TOGGLE, prefKey, isOn ? 1 : 0);
-    }
+    Analytics.getInstance(getContext()).trackEvent(
+        Analytics.USER_ACTION_CATEGORY, Analytics.PREFERENCE_BUTTON_TOGGLE, prefKey, isOn ? 1 : 0);
     setVisuallyOnOrOff();
     setPreference();
     if (secondaryOnClickListener != null) {

@@ -1,17 +1,17 @@
-<resources><string name="help_text" translation_description="Please do not change the &lt; and &gt; markup">&lt;big&gt;&lt;b&gt;Sky Map dla systemu Android&lt;/b&gt;&lt;/big&gt;&lt;br/&gt;
+<resources><string name="help_text" translation_description="Please do not change the &lt; and &gt; markup">&lt;big&gt;&lt;b&gt;Google Sky Map dla systemu Android&lt;/b&gt;&lt;/big&gt;&lt;br/&gt;
 &lt;i&gt;Wersja %s&lt;/i&gt;&lt;br/&gt;
 
 &lt;i&gt;https://github.com/sky-map-team/stardroid&lt;/i&gt;&lt;br/&gt;&lt;br/&gt;
 
 &lt;b&gt;Wprowadzenie&lt;/b&gt;&lt;br/&gt;
-Program Sky Map zmienia Twój telefon komórkowy z systemem Android w okno
+Program Google Sky Map zmienia Twój telefon komórkowy z systemem Android w okno
 na nocne niebo. Gdy skierujesz telefon w górę, zobaczysz mapę najjaśniejszych
 gwiazd, gwiazdozbiorów i planet w tej części nieba.&lt;br/&gt;Kiedy następnym razem zobaczysz
 gwiazdę i zechcesz dowiedzieć się, jak się ona nazywa, skorzystaj z programu Sky Map!&lt;br/&gt;
 
 &lt;b&gt;Widoczne warstwy&lt;/b&gt;&lt;br/&gt;
 
-Obiekty widoczne w programie Sky Map zorganizowane są w warstwy. Każdą
+Obiekty widoczne w programie Google Sky Map zorganizowane są w warstwy. Każdą
 warstwę można włączać i wyłączać przy użyciu ekranowych elementów sterujących. Dostępne warstwy to:&lt;br/&gt;
       Gwiazdy&lt;br/&gt;
       Gwiazdozbiory&lt;br/&gt;
@@ -75,7 +75,7 @@ będzie znów okazja zobaczyć Merkurego?” albo „Kiedy zacząć zbiory
 winorośli zgodnie z wytycznymi Hezjoda?”.&lt;br/&gt;&lt;br/&gt;
 
 &lt;b&gt;Galeria teleskopu Hubble’a&lt;/b&gt;&lt;br/&gt;
-Program Sky Map zawiera podzbiór Galerii teleskopu Hubble’a z programu Sky Map. Dostęp do Galerii
+Program Sky Map zawiera podzbiór Galerii teleskopu Hubble’a z programu Google Sky. Dostęp do Galerii
 zapewnia element Galeria w menu. Po przejściu do Galerii można przeglądać
 dostępne zdjęcia, przewijając je palcem. Dotknięcie jednej z miniatur
 powoduje wyświetlenie w programie Sky Map obrazu w pełnym rozmiarze. Dotknięcie
@@ -149,6 +149,4 @@ Położenia obiektów Układu Słonecznego są wyliczane na podstawie danych dos
 Dane położenia sferycznego uzyskano z
 (http://www2.research.att.com/~njas/coverings)&lt;br/&gt;
 Zdjęcia z teleskopu Hubble\'a dostarczone przez Instytut Naukowy Teleskopu Kosmicznego NASA
-(http://hubblesite.org/)&lt;br/&gt;
-M31 image Peter Kennett (https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg)&lt;br/&gt;
-</string></resources>
+(http://hubblesite.org/)&lt;br/&gt;</string></resources>

@@ -14,9 +14,9 @@
 
 package com.google.android.stardroid.gallery;
 
-import android.content.res.Resources;
-
 import com.google.android.stardroid.R;
+
+import android.content.res.Resources;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -53,19 +53,11 @@ public class HardcodedGallery implements Gallery {
   private ArrayList<GalleryImage> createImages() {
     ArrayList<GalleryImage> galleryImages = new ArrayList<GalleryImage>();
     // Note the internationalized names in places.  Be sure that if the
-    // search term is internationalized in the search index then it is here too.
-    add(galleryImages, R.drawable.messenger_11_07_39, R.string.mercury, R.string.mercury);
-    add(galleryImages, R.drawable.hubble_venus_clouds_tops, R.string.venus, R.string.venus);
-    add(galleryImages, R.drawable.hubble_mars, R.string.mars, R.string.mars);
-    add(galleryImages, R.drawable.hubble_jupiter, R.string.jupiter, R.string.jupiter);
-    add(galleryImages, R.drawable.hubble_saturn, R.string.saturn, R.string.saturn);
-    add(galleryImages, R.drawable.hubble_uranus, R.string.uranus, R.string.uranus);
-    add(galleryImages, R.drawable.hubble_neptune, R.string.neptune, R.string.neptune);
-    add(galleryImages, R.drawable.nh_pluto_in_false_color, R.string.pluto, R.string.pluto);
+    // search term is internationlized in the search index then it is here too.
     add(galleryImages, R.drawable.hubble_m1, R.string.crab_nebula, R.string.crab_nebula);
     add(galleryImages, R.drawable.hubble_m13, R.string.hercules_gc, R.string.hercules_gc);
     add(galleryImages, R.drawable.hubble_m16, R.string.eagle_nebula, R.string.eagle_nebula);
-    add(galleryImages, R.drawable.kennett_m31, R.string.andromeda_galaxy, R.string.andromeda_galaxy);
+    add(galleryImages, R.drawable.hubble_m31, R.string.andromeda_galaxy, R.string.andromeda_galaxy);
     add(galleryImages, R.drawable.hubble_m45, R.string.pleiades, R.string.pleiades);
     add(galleryImages, R.drawable.hubble_m51a, R.string.whirlpool_galaxy, R.string.whirlpool_galaxy);
     add(galleryImages, R.drawable.hubble_m57, R.string.ring_nebula, R.string.ring_nebula);
@@ -76,6 +68,13 @@ public class HardcodedGallery implements Gallery {
     add(galleryImages, R.drawable.hubble_orion, R.string.orion_nebula, R.string.orion_nebula);
     add(galleryImages, R.drawable.hubble_ultra_deep_field, R.string.hubble_deep_field, R.string.hubble_deep_field);
     add(galleryImages, R.drawable.hubble_v838, R.string.v838_mon, R.string.v838_mon);
+    add(galleryImages, R.drawable.hubble_venus_clouds_tops, R.string.venus, R.string.venus);
+    add(galleryImages, R.drawable.hubble_mars, R.string.mars, R.string.mars);
+    add(galleryImages, R.drawable.hubble_jupiter, R.string.jupiter, R.string.jupiter);
+    add(galleryImages, R.drawable.hubble_saturn, R.string.saturn, R.string.saturn);
+    add(galleryImages, R.drawable.hubble_uranus, R.string.uranus, R.string.uranus);
+    add(galleryImages, R.drawable.hubble_neptune, R.string.neptune, R.string.neptune);
+    add(galleryImages, R.drawable.hubble_pluto, R.string.pluto, R.string.pluto);
     return galleryImages;
   }
 

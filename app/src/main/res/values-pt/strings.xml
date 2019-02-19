@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translation_description="Application Title">Sky Map</string>
+    <string name="app_name" translation_description="Application Title">Google Sky Map</string>
     <string name="menu_settings">Configurações</string>
     <string name="menu_search">Pesquisar</string>
     <string name="cancel">Cancelar</string>
@@ -45,7 +45,7 @@
     <string name="dialog_accept" translation_description="accepting the licence agreement">Aceito</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">Não aceito</string>
     <string name="menu_help" translation_description="menu item to show \'Help\' box">Ajuda</string>
-    <string name="help_dialog_title">Ajuda do Sky Map</string>
+    <string name="help_dialog_title">Ajuda do Google Sky Map</string>
     <string name="eula_dialog_title">Contrato de licença de usuário final</string>
     <string name="set_manual">Alternando p/ modo manual</string>
     <string name="set_auto">Alternando p/ modo automático</string>
@@ -58,7 +58,7 @@
     <string name="east">LESTE</string>
     <string name="west">OESTE</string>
     <string name="south">SUL</string>
-    <string name="search_label">Pesquisar</string>
+    <string name="search_label">Pesquisar no Google Sky</string>
     <string name="search_hint" translation_description="an example search target">p. ex. Marte</string>
     <string name="no_search_title">Sem resultado</string>
     <string name="no_search_results_text">Nenhum resultado encontrado.</string>
@@ -98,7 +98,7 @@
     <string name="menu_gallery">Galeria</string>
     <string name="gallery_image_search_btn">Localizar no céu</string>
     <string name="gallery_image_back_btn">Voltar para galeria</string>
-    <string name="hubble_image_gallery_title">Galeria do Hubble do Sky Map</string>
+    <string name="hubble_image_gallery_title">Galeria do Hubble do Google Sky Map</string>
     <string name="hubble_image">Imagem do Hubble</string>
     <string name="search_target_found_message" translation_description="displayed when a search target has been located">Você encontrou:</string>
     <string name="search_overlay_title" translation_description="title for search overlay">Aponte o seu telefone em direção à seta</string>

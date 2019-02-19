@@ -14,8 +14,9 @@
 
 package com.google.android.stardroid.units;
 
+import android.util.FloatMath;
+
 import com.google.android.stardroid.util.Geometry;
-import com.google.android.stardroid.util.MathUtil;
 
 /**
  * This class corresponds to an object's location in Euclidean space
@@ -37,29 +38,13 @@ public class GeocentricCoordinates extends Vector3 {
     updateFromRaDec(raDec.ra, raDec.dec);
   }
 
-
-  /**
-   * Updates these coordinates with the given ra and dec in degrees.
-   */
   private void updateFromRaDec(float ra, float dec) {
     float raRadians = ra * Geometry.DEGREES_TO_RADIANS;
     float decRadians = dec * Geometry.DEGREES_TO_RADIANS;
 
-    this.x = MathUtil.cos(raRadians) * MathUtil.cos(decRadians);
-    this.y = MathUtil.sin(raRadians) * MathUtil.cos(decRadians);
-    this.z = MathUtil.sin(decRadians);
-  }
-
-  /** Returns the RA in degrees */
-  public float getRa() {
-    // Assumes unit sphere.
-    return Geometry.RADIANS_TO_DEGREES * MathUtil.atan2(y, x);
-  }
-
-  /** Returns the declination in degrees */
-  public float getDec() {
-    // Assumes unit sphere.
-    return Geometry.RADIANS_TO_DEGREES * MathUtil.asin(z);
+    this.x = (float)Math.cos(raRadians) * (float)Math.cos(decRadians);
+    this.y = (float)Math.sin(raRadians) * (float)Math.cos(decRadians);
+    this.z = (float)Math.sin(decRadians);
   }
 
   /**

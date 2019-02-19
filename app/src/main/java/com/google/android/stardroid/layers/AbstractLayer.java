@@ -17,6 +17,7 @@ package com.google.android.stardroid.layers;
 import android.content.res.Resources;
 import android.util.Log;
 
+import com.google.android.stardroid.base.Maps;
 import com.google.android.stardroid.renderer.RendererController;
 import com.google.android.stardroid.renderer.RendererController.AtomicSection;
 import com.google.android.stardroid.renderer.RendererControllerBase;
@@ -50,7 +51,7 @@ public abstract class AbstractLayer implements Layer {
   private static final String TAG = MiscUtil.getTag(AbstractLayer.class);
 
   private final ReentrantLock renderMapLock = new ReentrantLock();
-  private final HashMap<Class<?>, RenderManager<?>> renderMap = new HashMap<>();
+  private final HashMap<Class<?>, RenderManager<?>> renderMap = Maps.newHashMap();
   private final Resources resources;
 
   private RendererController renderer;

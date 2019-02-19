@@ -115,10 +115,6 @@ public interface AstronomerModel {
 
   void setFieldOfView(float degrees);
 
-  void setHorizontalRotation(boolean value);
-
-  float getMagneticCorrection();
-
   /**
    * Returns the time, as UTC.
    */
@@ -154,7 +150,7 @@ public interface AstronomerModel {
    * 
    * <p>The returned object should not be modified.
    */
-  Vector3 getPhoneUpDirection();
+  Vector3 getPhoneAcceleration();
 
   /**
    * Sets the acceleration and magnetic field in the phone frame.
@@ -164,12 +160,6 @@ public interface AstronomerModel {
    * and z coming perpendicularly out of the phone increasing towards the user.
    */
   void setPhoneSensorValues(Vector3 acceleration, Vector3 magneticField);
-
-  /**
-   * Sets the phone's rotation vector from the fused gyro/mag field/accelerometer.
-   * Alternative to {@link #setPhoneSensorValues(Vector3, Vector3)}
-   */
-  void setPhoneSensorValues(float[] rotationVector);
 
   /**
    * Returns the user's North in celestial coordinates.

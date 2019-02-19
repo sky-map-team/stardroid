@@ -15,8 +15,8 @@
 
 package com.google.android.stardroid.data;
 
+import com.google.android.stardroid.base.Closeables;
 import com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourcesProto;
-import com.google.common.io.Closeables;
 import com.google.protobuf.TextFormat;
 
 import java.io.FileOutputStream;
@@ -50,8 +50,8 @@ public class AsciiToBinaryProtoWriter {
       System.out.println("Source count " + sources.getSourceCount());
       sources.writeTo(out);
     } finally {
-      Closeables.closeQuietly(in);
-      Closeables.close(out, false);
+      Closeables.closeSilently(in);
+      Closeables.closeSilently(out);
     }
   }
 }

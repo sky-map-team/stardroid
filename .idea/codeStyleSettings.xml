@@ -3,18 +3,6 @@
   <component name="ProjectCodeStyleSettingsManager">
     <option name="PER_PROJECT_SETTINGS">
       <value>
-        <option name="OTHER_INDENT_OPTIONS">
-          <value>
-            <option name="INDENT_SIZE" value="2" />
-            <option name="CONTINUATION_INDENT_SIZE" value="4" />
-            <option name="TAB_SIZE" value="2" />
-            <option name="USE_TAB_CHARACTER" value="false" />
-            <option name="SMART_TABS" value="false" />
-            <option name="LABEL_INDENT_SIZE" value="0" />
-            <option name="LABEL_INDENT_ABSOLUTE" value="false" />
-            <option name="USE_RELATIVE_INDENTS" value="false" />
-          </value>
-        </option>
         <option name="CLASS_COUNT_TO_USE_IMPORT_ON_DEMAND" value="99" />
         <option name="NAMES_COUNT_TO_USE_IMPORT_ON_DEMAND" value="99" />
         <option name="PACKAGES_TO_USE_IMPORT_ON_DEMAND">
@@ -46,10 +34,6 @@
         <AndroidXmlCodeStyleSettings>
           <option name="USE_CUSTOM_SETTINGS" value="true" />
         </AndroidXmlCodeStyleSettings>
-        <JavaCodeStyleSettings>
-          <option name="DO_NOT_WRAP_AFTER_SINGLE_ANNOTATION" value="true" />
-          <option name="ANNOTATION_PARAMETER_WRAP" value="1" />
-        </JavaCodeStyleSettings>
         <Objective-C-extensions>
           <option name="GENERATE_INSTANCE_VARIABLES_FOR_PROPERTIES" value="ASK" />
           <option name="RELEASE_STYLE" value="IVAR" />
@@ -81,44 +65,6 @@
         <XML>
           <option name="XML_LEGACY_SETTINGS_IMPORTED" value="true" />
         </XML>
-        <codeStyleSettings language="JAVA">
-          <option name="RIGHT_MARGIN" value="100" />
-          <option name="CALL_PARAMETERS_WRAP" value="1" />
-          <option name="METHOD_PARAMETERS_WRAP" value="1" />
-          <option name="RESOURCE_LIST_WRAP" value="1" />
-          <option name="EXTENDS_LIST_WRAP" value="1" />
-          <option name="THROWS_LIST_WRAP" value="1" />
-          <option name="EXTENDS_KEYWORD_WRAP" value="1" />
-          <option name="THROWS_KEYWORD_WRAP" value="1" />
-          <option name="METHOD_CALL_CHAIN_WRAP" value="1" />
-          <option name="BINARY_OPERATION_WRAP" value="1" />
-          <option name="TERNARY_OPERATION_WRAP" value="1" />
-          <option name="ARRAY_INITIALIZER_WRAP" value="1" />
-          <option name="ASSIGNMENT_WRAP" value="1" />
-          <option name="ASSERT_STATEMENT_WRAP" value="1" />
-          <option name="WRAP_LONG_LINES" value="true" />
-          <option name="PARAMETER_ANNOTATION_WRAP" value="1" />
-          <option name="VARIABLE_ANNOTATION_WRAP" value="1" />
-          <option name="ENUM_CONSTANTS_WRAP" value="1" />
-          <indentOptions>
-            <option name="INDENT_SIZE" value="2" />
-            <option name="CONTINUATION_INDENT_SIZE" value="4" />
-            <option name="TAB_SIZE" value="2" />
-            <option name="KEEP_INDENTS_ON_EMPTY_LINES" value="true" />
-          </indentOptions>
-          <arrangement>
-            <groups>
-              <group>
-                <type>GETTERS_AND_SETTERS</type>
-                <order>KEEP</order>
-              </group>
-              <group>
-                <type>OVERRIDDEN_METHODS</type>
-                <order>KEEP</order>
-              </group>
-            </groups>
-          </arrangement>
-        </codeStyleSettings>
         <codeStyleSettings language="XML">
           <option name="FORCE_REARRANGE_MODE" value="1" />
           <indentOptions>
@@ -278,6 +224,6 @@
         </codeStyleSettings>
       </value>
     </option>
-    <option name="USE_PER_PROJECT_SETTINGS" value="true" />
+    <option name="PREFERRED_PROJECT_CODE_STYLE" value="Default (1)" />
   </component>
 </project>

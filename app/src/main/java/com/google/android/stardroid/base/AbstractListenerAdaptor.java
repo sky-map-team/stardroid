@@ -14,10 +14,9 @@
 
 package com.google.android.stardroid.base;
 
-import com.google.android.stardroid.util.WeakHashSet;
-import com.google.common.base.Preconditions;
-
 import java.util.Iterator;
+
+import com.google.android.stardroid.util.WeakHashSet;
 
 /**
  * This class is a base class for objects which fire events to listeners.

@@ -1,0 +1,12 @@
+<!-- For some brain dead reason the built-in TextView simple_list_item_1 has a foreground
+     color identical to its background color.  This layout is a copy, but with the colors
+     corrected.  TODO(johntaylor) switch to using the built-in layout if this ever gets fixed. -->
+<TextView
+   xmlns:android="http://schemas.android.com/apk/res/android"
+   android:layout_width="fill_parent"
+   android:layout_height="wrap_content"
+   android:textAppearance="?android:attr/textAppearanceLarge"
+   android:gravity="center_vertical" android:paddingLeft="6dip"
+   android:minHeight="?android:attr/listPreferredItemHeight"
+   android:textColor="#000000" />
+   

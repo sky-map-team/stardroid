@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translation_description="Application Title">Sky Map</string>
+    <string name="app_name" translation_description="Application Title">Google Sky Map</string>
     <string name="menu_settings">Paramètres</string>
     <string name="menu_search">Rechercher</string>
     <string name="cancel">Annuler</string>
@@ -58,7 +58,7 @@
     <string name="east">EST</string>
     <string name="west">OUEST</string>
     <string name="south">SUD</string>
-    <string name="search_label">Rechercher</string>
+    <string name="search_label">Rechercher dans le ciel</string>
     <string name="search_hint" translation_description="an example search target">Ex. : Mars</string>
     <string name="no_search_title">Aucun résultat</string>
     <string name="no_search_results_text">Aucun résultat trouvé</string>
@@ -96,9 +96,9 @@
     <string name="enable_layer_toast">Activation des données géographiques %s</string>
     <string name="disable_layer_toast">Désactivation des données géographiques %s</string>
     <string name="menu_gallery">Galerie</string>
-    <string name="gallery_image_search_btn">Rechercher dans Sky Map</string>
+    <string name="gallery_image_search_btn">Rechercher dans Google Sky</string>
     <string name="gallery_image_back_btn">Retour à la galerie</string>
-    <string name="hubble_image_gallery_title">Galerie Hubble</string>
+    <string name="hubble_image_gallery_title">Galerie Hubble Sky Map</string>
     <string name="hubble_image">Image Hubble</string>
     <string name="search_target_found_message" translation_description="displayed when a search target has been located">Vous avez trouvé :</string>
     <string name="search_overlay_title" translation_description="title for search overlay">Dirigez votre téléphone vers la flèche</string>

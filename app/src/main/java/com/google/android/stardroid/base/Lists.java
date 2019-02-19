@@ -16,6 +16,7 @@ package com.google.android.stardroid.base;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -33,7 +34,7 @@ public class Lists {
    * List. Does not change the given Iterable, or the items stored therein.
    */
   public static <E, F> List<F> transform(Iterable<E> iterable, Transform<E, F> transform) {
-    List<F> result = new ArrayList<>();
+    List<F> result = new ArrayList<F>();
     for (E e : iterable) {
       result.add(transform.transform(e));
     }
@@ -62,5 +63,15 @@ public class Lists {
    */
   public static <E> List<E> asList(E... objects) {
     return Arrays.asList(objects);
+  }
+
+  /** Returns a new ArrayList of the given type. */
+  public static <E> ArrayList<E> newArrayList() {
+    return new ArrayList<E>();
+  }
+
+  /** Returns a new immutable empty list */
+  public static <E> List<E> emptyList() {
+    return Collections.emptyList();
   }
 }

@@ -18,21 +18,20 @@ import android.app.SearchManager;
 import android.content.ContentProvider;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.UriMatcher;
 import android.database.Cursor;
 import android.database.MatrixCursor;
 import android.net.Uri;
+import android.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.google.android.stardroid.ApplicationComponent;
 import com.google.android.stardroid.StardroidApplication;
 import com.google.android.stardroid.layers.LayerManager;
 import com.google.android.stardroid.util.MiscUtil;
 
 import java.util.Set;
-
-import javax.inject.Inject;
 
 /**
  * Provides search suggestions for a list of words and their definitions.
@@ -53,7 +52,7 @@ public class SearchTermsProvider extends ContentProvider {
   public static final Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY);
   private static final int SEARCH_SUGGEST = 0;
   private static final UriMatcher uriMatcher = buildUriMatcher();
-  @Inject LayerManager layerManager;
+  private LayerManager layerManager;
 
   /**
    * The columns we'll include in our search suggestions.
@@ -75,29 +74,10 @@ public class SearchTermsProvider extends ContentProvider {
 
   @Override
   public boolean onCreate() {
-    maybeInjectMe();
-    return true;
-  }
-
-  private boolean alreadyInjected;
-
-  private boolean maybeInjectMe() {
-    // Ugh.  Android's separation of content providers from their owning apps makes this
-    // almost impossible.  TODO(jontayler): revisit and see if we can make this less
-    // nasty.
-    if (alreadyInjected) {
-      return true;
-    }
-    Context appContext = getContext().getApplicationContext();
-    if (!(appContext instanceof StardroidApplication)) {
-      return false;
-    }
-    ApplicationComponent component = ((StardroidApplication) appContext).getApplicationComponent();
-    if (component == null) {
-      return false;
-    }
-    component.inject(this);
-    alreadyInjected = true;
+    Context context = getContext();
+    SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+    layerManager = StardroidApplication.getLayerManager(context.getAssets(), preferences,
+                                                        context.getResources(), context);
     return true;
   }
 
@@ -105,9 +85,6 @@ public class SearchTermsProvider extends ContentProvider {
   public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs,
                       String sortOrder) {
     Log.d(TAG, "Got query for " + uri);
-    if (!maybeInjectMe()) {
-      return null;
-    };
     if (!TextUtils.isEmpty(selection)) {
       throw new IllegalArgumentException("selection not allowed for " + uri);
     }
@@ -143,7 +120,7 @@ public class SearchTermsProvider extends ContentProvider {
     return cursor;
   }
 
-  private static int s = 0;
+  static int s = 0;
 
   private Object[] columnValuesOfSuggestion(SearchTerm suggestion) {
     return new String[] {Integer.toString(s++), // _id

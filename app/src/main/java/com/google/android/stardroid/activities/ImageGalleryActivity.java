@@ -14,19 +14,6 @@
 
 package com.google.android.stardroid.activities;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.preference.PreferenceManager;
-import android.util.Log;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.BaseAdapter;
-import android.widget.Gallery;
-import android.widget.ImageView;
-import android.widget.TextView;
-
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.util.ActivityLightLevelChanger;
 import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
@@ -34,10 +21,23 @@ import com.google.android.stardroid.gallery.GalleryFactory;
 import com.google.android.stardroid.gallery.GalleryImage;
 import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.MiscUtil;
+import com.google.android.stardroid.util.OsVersions;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.util.Log;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.BaseAdapter;
+import android.widget.Gallery;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.AdapterView.OnItemClickListener;
 
 import java.util.List;
-
-import javax.inject.Inject;
 
 /**
  * Displays a series of images to the user.  Selecting an image
@@ -45,7 +45,7 @@ import javax.inject.Inject;
  *
  * @author John Taylor
  */
-public class ImageGalleryActivity extends InjectableActivity {
+public class ImageGalleryActivity extends Activity {
   /** The index of the image id Intent extra.*/
   public static final String IMAGE_ID = "image_id";
 
@@ -53,8 +53,6 @@ public class ImageGalleryActivity extends InjectableActivity {
   private List<GalleryImage> galleryImages;
 
   private ActivityLightLevelManager activityLightLevelManager;
-  @Inject
-  Analytics analytics;
 
   private class ImageAdapter extends BaseAdapter {
     public int getCount() {
@@ -92,7 +90,6 @@ public class ImageGalleryActivity extends InjectableActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    getApplicationComponent().inject(this);
     setContentView(R.layout.imagegallery);
     activityLightLevelManager = new ActivityLightLevelManager(
         new ActivityLightLevelChanger(this, null),
@@ -104,7 +101,7 @@ public class ImageGalleryActivity extends InjectableActivity {
   @Override
   public void onStart() {
     super.onStart();
-    analytics.trackPageView(Analytics.IMAGE_GALLERY_ACTIVITY);
+    Analytics.getInstance(this).trackPageView(Analytics.IMAGE_GALLERY_ACTIVITY);
   }
 
   @Override
@@ -138,6 +135,8 @@ public class ImageGalleryActivity extends InjectableActivity {
     Intent intent = new Intent(ImageGalleryActivity.this, ImageDisplayActivity.class);
     intent.putExtra(ImageGalleryActivity.IMAGE_ID, position);
     startActivity(intent);
-    overridePendingTransition(R.anim.fadein, R.anim.fastzoom);
+    if (OsVersions.version() >= android.os.Build.VERSION_CODES.ECLAIR) {
+      OsVersions.overridePendingTransition(this, R.anim.fadein, R.anim.fastzoom);
+    }
   }
 }

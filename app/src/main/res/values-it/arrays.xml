@@ -1,25 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string-array name="popular_date_examples">
-        <item>Adesso</item>
-        <item>Prossimo tramonto</item>
-        <item>Prossima alba</item>
-        <item>Prossima luna piena</item>
-        <item>Mercury transit of May 09, 2016</item>
-        <item>Eclissi solare del Aug 21, 2017</item>
-        <item>Eclissi solare del March 9, 2016</item>
-        <item>Eclissi solare del 29 maggio 1919</item>
-        <item>Allunaggio dell\'Apollo 11</item>
-    </string-array>
-    <string-array name="sensor_speed">
-        <item>Lento</item>
-        <item>Standard</item>
-        <item>Veloce</item>
-    </string-array>
-    <string-array name="sensor_damping">
-        <item>Jumpy</item>
-        <item>Medium</item>
-        <item>Standard</item>
-        <item>Alto</item>
-    </string-array>
-</resources>
+<resources><string-array name="popular_date_examples"><item>Adesso</item><item>Prossimo tramonto</item><item>Prossima alba</item><item>Prossima luna piena</item><item>Allunaggio dell\'Apollo 11</item><item>Eclissi solare del 29 maggio 1919</item></string-array><string-array name="sensor_speed"><item>Lento</item><item>Standard</item><item>Veloce</item></string-array><string-array name="sensor_damping"><item>Standard</item><item>Alto</item></string-array></resources>

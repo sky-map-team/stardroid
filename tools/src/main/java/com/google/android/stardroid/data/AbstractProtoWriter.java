@@ -14,11 +14,11 @@
 
 package com.google.android.stardroid.data;
 
+import com.google.android.stardroid.base.Closeables;
 import com.google.android.stardroid.source.AstronomicalSource;
 import com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto;
 import com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourcesProto;
 import com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto;
-import com.google.common.io.Closeables;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -98,7 +98,7 @@ public abstract class AbstractProtoWriter {
       writer = new PrintWriter(new FileWriter(prefix + "_R.ascii"));
       writer.append(sources.toString());
     } finally {
-      Closeables.close(writer, false);
+      Closeables.closeSilently(writer);
     }
 
     System.out.println("Successfully wrote " + sources.getSourceCount() + " sources.");
@@ -114,8 +114,7 @@ public abstract class AbstractProtoWriter {
 
     System.out.println("Input File: "+args[0]);
     System.out.println("Output Prefix: "+args[1]);
-    try (BufferedReader in = new BufferedReader(new FileReader(args[0]))) {
-      writeFiles(args[1], readSources(in));
-    }
+
+    writeFiles(args[1], readSources(new BufferedReader(new FileReader(args[0]))));
   }
 }

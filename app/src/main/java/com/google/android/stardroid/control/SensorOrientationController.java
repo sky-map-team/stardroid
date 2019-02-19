@@ -14,21 +14,17 @@
 
 package com.google.android.stardroid.control;
 
-import android.content.SharedPreferences;
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
-import android.hardware.SensorListener;
-import android.hardware.SensorManager;
-import android.util.Log;
-
-import com.google.android.stardroid.ApplicationConstants;
 import com.google.android.stardroid.util.MiscUtil;
 import com.google.android.stardroid.util.smoothers.ExponentiallyWeightedSmoother;
 import com.google.android.stardroid.util.smoothers.PlainSmootherModelAdaptor;
 
-import javax.inject.Inject;
-import javax.inject.Provider;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
+import android.hardware.SensorListener;
+import android.hardware.SensorManager;
+import android.preference.PreferenceManager;
+import android.util.Log;
 
 /**
  * Sets the direction of view from the orientation sensors.
@@ -36,9 +32,19 @@ import javax.inject.Provider;
  * @author John Taylor
  */
 public class SensorOrientationController extends AbstractController
-    implements SensorEventListener {
+    implements OnSharedPreferenceChangeListener {
   // TODO(johntaylor): this class needs to be refactored to use the new
   // sensor API and to behave properly when sensors are not available.
+
+  // Attention - the following strings must match those in strings.xml and notranslate-arrays.xml.
+  private static final String SENSOR_SPEED_HIGH = "FAST";
+  private static final String SENSOR_SPEED_SLOW = "SLOW";
+  private static final String SENSOR_SPEED_STANDARD = "STANDARD";
+  private static final String SENSOR_SPEED_PREF_KEY = "sensor_speed";
+
+  private static final String SENSOR_DAMPING_HIGH = "HIGH";
+  private static final String SENSOR_DAMPING_STANDARD = "STANDARD";
+  private static final String SENSOR_DAMPING_PREF_KEY = "sensor_damping";
 
   private static class SensorDampingSettings {
     public float damping;
@@ -55,106 +61,80 @@ public class SensorOrientationController extends AbstractController
    */
   private static final SensorDampingSettings[] ACC_DAMPING_SETTINGS = new SensorDampingSettings[] {
         new SensorDampingSettings(0.7f, 3),
-        new SensorDampingSettings(0.7f, 3),
-        new SensorDampingSettings(0.1f, 3),
-        new SensorDampingSettings(0.1f, 3),
+        new SensorDampingSettings(0.7f, 3)
   };
   private static final SensorDampingSettings[] MAG_DAMPING_SETTINGS = new SensorDampingSettings[] {
       new SensorDampingSettings(0.05f, 3),  // Derived for the Nexus One
-      new SensorDampingSettings(0.001f, 4),  // Derived for the unpatched MyTouch Slide
-      new SensorDampingSettings(0.0001f, 5),  // Just guessed for Nexus 6
-      new SensorDampingSettings(0.000001f, 5)  // Just guessed for Nexus 6
+      new SensorDampingSettings(0.001f, 4)  // Derived for the unpatched MyTouch Slide
   };
 
   private SensorManager manager;
   private SensorListener accelerometerSmoother;
   private SensorListener compassSmoother;
-  private Provider<PlainSmootherModelAdaptor> modelAdaptorProvider;
-  private Sensor rotationSensor;
+  private PlainSmootherModelAdaptor modelAdaptor;
+
   private SharedPreferences sharedPreferences;
 
-  @Inject
-  SensorOrientationController(Provider<PlainSmootherModelAdaptor> modelAdaptorProvider,
-                              SensorManager manager, SharedPreferences sharedPreferences) {
-    this.manager = manager;
-    this.modelAdaptorProvider = modelAdaptorProvider;
-    this.rotationSensor = manager.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR);
-    this.sharedPreferences = sharedPreferences;
+  public SensorOrientationController(Context context) {
+    manager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
+    sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+    sharedPreferences.registerOnSharedPreferenceChangeListener(this);
   }
 
   @Override
   public void start() {
-    PlainSmootherModelAdaptor modelAdaptor = modelAdaptorProvider.get();
+    modelAdaptor = new PlainSmootherModelAdaptor(model);
+
+    Log.d(TAG, "Exponentially weighted smoothers used");
+    String dampingPreference = sharedPreferences.getString(SENSOR_DAMPING_PREF_KEY,
+        SENSOR_DAMPING_STANDARD);
+    String speedPreference = sharedPreferences.getString(SENSOR_SPEED_PREF_KEY,
+        SENSOR_SPEED_STANDARD);
+    Log.d(TAG, "Sensor damping preference " + dampingPreference);
+    Log.d(TAG, "Sensor speed preference " + speedPreference);
+    int dampingIndex = 0;
+    if (SENSOR_DAMPING_HIGH.equals(dampingPreference)) {
+      dampingIndex = 1;
+    }
+    int sensorSpeed = SensorManager.SENSOR_DELAY_GAME;
+    if (SENSOR_SPEED_SLOW.equals(speedPreference)) {
+      sensorSpeed = SensorManager.SENSOR_DELAY_NORMAL;
+    } else if (SENSOR_SPEED_HIGH.equals(speedPreference)) {
+      sensorSpeed = SensorManager.SENSOR_DELAY_FASTEST;
+    }
+    accelerometerSmoother = new ExponentiallyWeightedSmoother(
+        modelAdaptor,
+        ACC_DAMPING_SETTINGS[dampingIndex].damping,
+        ACC_DAMPING_SETTINGS[dampingIndex].exponent);
+    compassSmoother = new ExponentiallyWeightedSmoother(
+        modelAdaptor,
+        MAG_DAMPING_SETTINGS[dampingIndex].damping,
+        MAG_DAMPING_SETTINGS[dampingIndex].exponent);
 
     if (manager != null) {
-      if (!sharedPreferences.getBoolean(ApplicationConstants.SHARED_PREFERENCE_DISABLE_GYRO,
-          false)) {
-        Log.d(TAG, "Using rotation sensor");
-        manager.registerListener(this, rotationSensor, SensorManager.SENSOR_DELAY_GAME);
-      } else {
-        // TODO(jontayler): remove this code once enough it's used in few enough phones.
-        Log.d(TAG, "Using classic sensors");
-        Log.d(TAG, "Exponentially weighted smoothers used");
-        String dampingPreference = sharedPreferences.getString(
-            ApplicationConstants.SENSOR_DAMPING_PREF_KEY,
-            ApplicationConstants.SENSOR_DAMPING_STANDARD);
-        String speedPreference = sharedPreferences.getString(ApplicationConstants.SENSOR_SPEED_PREF_KEY,
-            ApplicationConstants.SENSOR_SPEED_STANDARD);
-        Log.d(TAG, "Sensor damping preference " + dampingPreference);
-        Log.d(TAG, "Sensor speed preference " + speedPreference);
-        int dampingIndex = 0;
-        if (ApplicationConstants.SENSOR_DAMPING_HIGH.equals(dampingPreference)) {
-          dampingIndex = 1;
-        } else if (ApplicationConstants.SENSOR_DAMPING_EXTRA_HIGH.equals(dampingPreference)) {
-          dampingIndex = 2;
-        } else if (ApplicationConstants.SENSOR_DAMPING_REALLY_HIGH.equals(dampingPreference)) {
-          dampingIndex = 3;
-        }
-        int sensorSpeed = SensorManager.SENSOR_DELAY_GAME;
-        if (ApplicationConstants.SENSOR_SPEED_SLOW.equals(speedPreference)) {
-          sensorSpeed = SensorManager.SENSOR_DELAY_NORMAL;
-        } else if (ApplicationConstants.SENSOR_SPEED_HIGH.equals(speedPreference)) {
-          sensorSpeed = SensorManager.SENSOR_DELAY_FASTEST;
-        }
-        accelerometerSmoother = new ExponentiallyWeightedSmoother(
-            modelAdaptor,
-            ACC_DAMPING_SETTINGS[dampingIndex].damping,
-            ACC_DAMPING_SETTINGS[dampingIndex].exponent);
-        compassSmoother = new ExponentiallyWeightedSmoother(
-            modelAdaptor,
-            MAG_DAMPING_SETTINGS[dampingIndex].damping,
-            MAG_DAMPING_SETTINGS[dampingIndex].exponent);
-        manager.registerListener(accelerometerSmoother,
-                                 SensorManager.SENSOR_ACCELEROMETER,
-                                 sensorSpeed);
-        manager.registerListener(compassSmoother,
-                                 SensorManager.SENSOR_MAGNETIC_FIELD,
-                                 sensorSpeed);
-      }
+      manager.registerListener(accelerometerSmoother,
+                               SensorManager.SENSOR_ACCELEROMETER,
+                               sensorSpeed);
+      manager.registerListener(compassSmoother,
+                               SensorManager.SENSOR_MAGNETIC_FIELD,
+                               sensorSpeed);
     }
     Log.d(TAG, "Registered sensor listener");
   }
 
   @Override
   public void stop() {
-    Log.d(
-        TAG, "Unregistering sensor listeners: " + accelerometerSmoother + ", "
-            + compassSmoother + ", " + this);
+    Log.d(TAG, "Unregistering sensor listeners");
     manager.unregisterListener(accelerometerSmoother);
     manager.unregisterListener(compassSmoother);
-    manager.unregisterListener(this);
   }
 
   @Override
-  public void onSensorChanged(SensorEvent event) {
-    if (event.sensor != rotationSensor) {
-      return;
+  public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+    if (SENSOR_DAMPING_PREF_KEY.equals(key) || SENSOR_SPEED_PREF_KEY.equals(key)) {
+      Log.d(TAG, "User sensor preferences changed - restarting sensor controllers");
+      stop();
+      start();
     }
-    model.setPhoneSensorValues(event.values);
-  }
-
-  @Override
-  public void onAccuracyChanged(Sensor sensor, int accuracy) {
-    // Ignore
   }
 }

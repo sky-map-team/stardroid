@@ -65,18 +65,8 @@ public class Vector3 {
     this.z = other.z;
   }
 
-  /**
-   * Returns the vector's length.
-   */
   public float length() {
-    return MathUtil.sqrt(length2());
-  }
-
-  /**
-   * Returns the square of the vector's length.
-   */
-  public float length2() {
-    return this.x*this.x + this.y*this.y + this.z*this.z;
+    return MathUtil.sqrt(this.x*this.x + this.y*this.y + this.z*this.z);
   }
 
   /**

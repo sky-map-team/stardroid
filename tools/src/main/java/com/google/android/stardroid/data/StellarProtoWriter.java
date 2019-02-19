@@ -36,7 +36,7 @@ public class StellarProtoWriter extends AbstractProtoWriter {
 
   @Override
   protected AstronomicalSourceProto getSourceFromLine(String line, int count) {
-    // name, mag, dec, ra
+    // name, mag, ra, dec
     String[] tokens = line.split(",");
     if (tokens.length != 7) {
       throw new RuntimeException("Found " + tokens.length + ".  Expected 7.");

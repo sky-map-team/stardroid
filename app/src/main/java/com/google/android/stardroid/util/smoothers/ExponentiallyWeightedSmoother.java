@@ -13,24 +13,21 @@
 // limitations under the License.
 package com.google.android.stardroid.util.smoothers;
 
-import android.hardware.SensorListener;
-import android.util.Log;
-
 import com.google.android.stardroid.util.MathUtil;
-import com.google.android.stardroid.util.MiscUtil;
+
+import android.hardware.SensorListener;
 
 /**
  * Exponentially weighted smoothing, as suggested by Chris M.
  *
  */
 public class ExponentiallyWeightedSmoother extends SensorSmoother {
-  private static final String TAG = MiscUtil.getTag(ExponentiallyWeightedSmoother.class);
+
   private float alpha;
   private int exponent;
 
   public ExponentiallyWeightedSmoother(SensorListener listener, float alpha, int exponent) {
     super(listener);
-    Log.d(TAG, "ExponentionallyWeightedSmoother with alpha = " + alpha + " and exp = " + exponent);
     this.alpha = alpha;
     this.exponent = exponent;
   }

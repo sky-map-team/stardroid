@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translation_description="Application Title">Карта звездного неба</string>
+    <string name="app_name" translation_description="Application Title">Google Карта звездного неба</string>
     <string name="menu_settings">Настройки</string>
     <string name="menu_search">Поиск</string>
     <string name="cancel">Отмена</string>
@@ -39,13 +39,13 @@
     <string name="sensor_prefs">Настройки матрицы</string>
     <string name="sensor_speed">Скорость матрицы</string>
     <string name="sensor_damping" translation_description="The amount of       smoothing applied to the sensor outputs.">Сглаживание</string>
-    <string name="ecliptic">эклиптика</string>
+    <string name="ecliptic">Эклептика</string>
     <string name="show_hubble_layer_pref">Фотографии, отснятые телескопом Хаббл</string>
     <string name="malformed_loc_error">Значение широты или долготы не явл. числом.</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Принять</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">Нет, спасибо</string>
     <string name="menu_help" translation_description="menu item to show \'Help\' box">Справка</string>
-    <string name="help_dialog_title">Справка Карты звездного неба</string>
+    <string name="help_dialog_title">Справка Google Карты звездного неба</string>
     <string name="eula_dialog_title">Лицензионное соглашение конечного пользователя</string>
     <string name="set_manual">Переключение в ручной режим</string>
     <string name="set_auto">Перекл. в авт. режим</string>
@@ -98,7 +98,7 @@
     <string name="menu_gallery">Галерея</string>
     <string name="gallery_image_search_btn">Найти в небе</string>
     <string name="gallery_image_back_btn">Назад в галерею</string>
-    <string name="hubble_image_gallery_title">Галерея Хаббл для Карты звездного неба</string>
+    <string name="hubble_image_gallery_title">Галерея Хаббл для Google Карты звездного неба</string>
     <string name="hubble_image">Фотография, отснятая телескопом Хаббл</string>
     <string name="search_target_found_message" translation_description="displayed when a search target has been located">Вы нашли:</string>
     <string name="search_overlay_title" translation_description="title for search overlay">Поверните телефон в направлении стрелки</string>
@@ -379,4 +379,3 @@
     <string name="load_kml_dialog_title">Загрузка KML</string>
     <string name="load_kml_file">Загрузить</string>
 </resources>
-

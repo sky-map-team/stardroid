@@ -32,9 +32,12 @@ public class AllTests extends TestCase {
   public static Test suite() {
     TestSuite suite = new TestSuite("com.google.android.stardroid.base");
     suite.addTestSuite(AbstractListenerAdaptorTest.class);
+    suite.addTestSuite(CloseablesTest.class);
     suite.addTestSuite(FixedSizePriorityQueueTest.class);
     suite.addTestSuite(ListsTest.class);
+    suite.addTestSuite(MapsTest.class);
     suite.addTestSuite(PairTest.class);
+    suite.addTestSuite(PreconditionsTest.class);
     return suite;
   }
 }

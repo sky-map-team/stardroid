@@ -1,8 +1,3 @@
-# The canonical source of constellation data (unlike the stars and messier proto files
-# which are derived from CSV).
-# TODO(jontayler): some of the labels will be attached to incorrect constellations.  Since
-# at present we show all the constellations or none this does not matter, but we should fix
-# it.
 source {
   search_location {
     right_ascension: 83.718834
@@ -299,16 +294,16 @@ source {
 }
 source {
   search_location {
-    right_ascension: 114.67344
-    declination: 6.76
+    right_ascension: 103.00154
+    declination: 24.82
   }
   label {
     location {
-      right_ascension: 114.67344
-      declination: 6.76
+      right_ascension: 103.00154
+      declination: 24.82
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.canis_minor"
+    REMOVE_string_index: "R.string.gemini"
   }
   line {
     color: 2160688306
@@ -321,7 +316,7 @@ source {
       declination: 8.2833
     }
   }
-  REMOVE_name_ids: "R.string.canis_minor"
+  REMOVE_name_ids: "R.string.gemini"
 }
 source {
   search_location {
@@ -443,16 +438,16 @@ source {
 }
 source {
   search_location {
-    right_ascension: 104.716225
-    declination: -3.74
+    right_ascension: 83.718834
+    declination: 3.59
   }
   label {
     location {
-      right_ascension: 104.716225
-      declination: -3.74
+      right_ascension: 83.718834
+      declination: 3.59
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.monoceros"
+    REMOVE_string_index: "R.string.orion"
   }
   line {
     color: 2160688306
@@ -522,20 +517,20 @@ source {
       declination: -6.2833
     }
   }
-  REMOVE_name_ids: "R.string.monoceros"
+  REMOVE_name_ids: "R.string.orion"
 }
 source {
   search_location {
-    right_ascension: 81.76349
-    declination: -19.35
+    right_ascension: 102.7308
+    declination: -22.69
   }
   label {
     location {
-      right_ascension: 81.76349
-      declination: -19.35
+      right_ascension: 102.7308
+      declination: -22.69
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.lepus"
+    REMOVE_string_index: "R.string.canis_major"
   }
   line {
     color: 2160688306
@@ -613,20 +608,20 @@ source {
       declination: -12.95
     }
   }
-  REMOVE_name_ids: "R.string.lepus"
+  REMOVE_name_ids: "R.string.canis_major"
 }
 source {
   search_location {
-    right_ascension: 151.94531
-    declination: -1.87
+    right_ascension: 159.41112
+    declination: 13.0
   }
   label {
     location {
-      right_ascension: 151.94531
-      declination: -1.87
+      right_ascension: 159.41112
+      declination: 13.0
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.sextans"
+    REMOVE_string_index: "R.string.leo"
   }
   line {
     color: 2160688306
@@ -647,20 +642,20 @@ source {
       declination: -0.37
     }
   }
-  REMOVE_name_ids: "R.string.sextans"
+  REMOVE_name_ids: "R.string.leo"
 }
 source {
   search_location {
-    right_ascension: 133.73053
-    declination: -29.21
+    right_ascension: 118.41868
+    declination: -32.39
   }
   label {
     location {
-      right_ascension: 133.73053
-      declination: -29.21
+      right_ascension: 118.41868
+      declination: -32.39
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.pyxis"
+    REMOVE_string_index: "R.string.puppis"
   }
   line {
     color: 2160688306
@@ -677,20 +672,20 @@ source {
       declination: -27.7
     }
   }
-  REMOVE_name_ids: "R.string.pyxis"
+  REMOVE_name_ids: "R.string.puppis"
 }
 source {
   search_location {
-    right_ascension: 30.728989
-    declination: 32.34
+    right_ascension: 40.250015
+    declination: 22.57
   }
   label {
     location {
-      right_ascension: 30.728989
-      declination: 32.34
+      right_ascension: 40.250015
+      declination: 22.57
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.triangulum"
+    REMOVE_string_index: "R.string.aries"
   }
   line {
     color: 2160688306
@@ -711,7 +706,7 @@ source {
       declination: 29.5833
     }
   }
-  REMOVE_name_ids: "R.string.triangulum"
+  REMOVE_name_ids: "R.string.aries"
 }
 source {
   search_location {
@@ -864,16 +859,16 @@ source {
 }
 source {
   search_location {
-    right_ascension: 155.16412
-    declination: 33.24
+    right_ascension: 154.36694
+    declination: 57.48
   }
   label {
     location {
-      right_ascension: 155.16412
-      declination: 33.24
+      right_ascension: 154.36694
+      declination: 57.48
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.leo_minor"
+    REMOVE_string_index: "R.string.ursa_major"
   }
   line {
     color: 2160688306
@@ -894,20 +889,23 @@ source {
       declination: 36.7
     }
   }
-  REMOVE_name_ids: "R.string.leo_minor"
+  REMOVE_name_ids: "R.string.ursa_major"
+  REMOVE_name_ids: "R.string.plough"
+  REMOVE_name_ids: "R.string.big_dipper"
+  REMOVE_name_ids: "R.string.great_bear"
 }
 source {
   search_location {
-    right_ascension: 116.327965
-    declination: 47.83
+    right_ascension: 127.80434
+    declination: 23.56
   }
   label {
     location {
-      right_ascension: 116.327965
-      declination: 47.83
+      right_ascension: 127.80434
+      declination: 23.56
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.lynx"
+    REMOVE_string_index: "R.string.cancer"
   }
   line {
     color: 2160688306
@@ -936,7 +934,7 @@ source {
       declination: 59.0167
     }
   }
-  REMOVE_name_ids: "R.string.lynx"
+  REMOVE_name_ids: "R.string.cancer"
 }
 source {
   search_location {
@@ -1074,16 +1072,16 @@ source {
 }
 source {
   search_location {
-    right_ascension: 194.78241
-    declination: -44.0
+    right_ascension: 231.27214
+    declination: -42.28
   }
   label {
     location {
-      right_ascension: 194.78241
-      declination: -44.0
+      right_ascension: 231.27214
+      declination: -42.28
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.centaurus"
+    REMOVE_string_index: "R.string.lupus"
   }
   line {
     color: 2160688306
@@ -1166,20 +1164,20 @@ source {
       declination: -63.0167
     }
   }
-  REMOVE_name_ids: "R.string.centaurus"
+  REMOVE_name_ids: "R.string.lupus"
 }
 source {
   search_location {
-    right_ascension: 170.68654
-    declination: -13.25
+    right_ascension: 200.69356
+    declination: -3.49
   }
   label {
     location {
-      right_ascension: 170.68654
-      declination: -13.25
+      right_ascension: 200.69356
+      declination: -3.49
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.crater"
+    REMOVE_string_index: "R.string.virgo"
   }
   line {
     color: 2160688306
@@ -1227,20 +1225,20 @@ source {
       declination: -14.7667
     }
   }
-  REMOVE_name_ids: "R.string.crater"
+  REMOVE_name_ids: "R.string.virgo"
 }
 source {
   search_location {
-    right_ascension: 152.18597
-    declination: -33.65
+    right_ascension: 140.43887
+    declination: -48.51
   }
   label {
     location {
-      right_ascension: 152.18597
-      declination: -33.65
+      right_ascension: 140.43887
+      declination: -48.51
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.antlia"
+    REMOVE_string_index: "R.string.vela"
   }
   line {
     color: 2160688306
@@ -1265,20 +1263,20 @@ source {
       declination: -31.0833
     }
   }
-  REMOVE_name_ids: "R.string.antlia"
+  REMOVE_name_ids: "R.string.vela"
 }
 source {
   search_location {
-    right_ascension: 137.4156
-    declination: -11.32
+    right_ascension: 194.78241
+    declination: -44.0
   }
   label {
     location {
-      right_ascension: 137.4156
-      declination: -11.32
+      right_ascension: 194.78241
+      declination: -44.0
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.hydra"
+    REMOVE_string_index: "R.string.centaurus"
   }
   line {
     color: 2160688306
@@ -1355,7 +1353,7 @@ source {
       declination: 5.95
     }
   }
-  REMOVE_name_ids: "R.string.hydra"
+  REMOVE_name_ids: "R.string.centaurus"
 }
 source {
   search_location {
@@ -1424,16 +1422,16 @@ source {
 }
 source {
   search_location {
-    right_ascension: 85.80955
-    declination: -37.08
+    right_ascension: 102.7308
+    declination: -22.69
   }
   label {
     location {
-      right_ascension: 85.80955
-      declination: -37.08
+      right_ascension: 102.7308
+      declination: -22.69
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.columba"
+    REMOVE_string_index: "R.string.canis_major"
   }
   line {
     color: 2160688306
@@ -1469,7 +1467,7 @@ source {
       declination: -42.8167
     }
   }
-  REMOVE_name_ids: "R.string.columba"
+  REMOVE_name_ids: "R.string.canis_major"
 }
 source {
   search_location {
@@ -1568,25 +1566,36 @@ source {
       right_ascension: 10.129166
       declination: 56.5333
     }
+  }
+  line {
+    color: 2160688306
     vertex {
-          right_ascension: 2.2916718
-          declination: 59.15
+      right_ascension: 14.175003
+      declination: 60.7167
+    }
+    vertex {
+      right_ascension: 8.25
+      declination: 62.9333
+    }
+    vertex {
+      right_ascension: 2.2916718
+      declination: 59.15
     }
   }
   REMOVE_name_ids: "R.string.cassiopeia"
 }
 source {
   search_location {
-    right_ascension: 80.936226
-    declination: -51.63
+    right_ascension: 116.73407
+    declination: -57.17
   }
   label {
     location {
-      right_ascension: 80.936226
-      declination: -51.63
+      right_ascension: 116.73407
+      declination: -57.17
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.pictor"
+    REMOVE_string_index: "R.string.carina"
   }
   line {
     color: 2160688306
@@ -1611,20 +1620,20 @@ source {
       declination: -61.9333
     }
   }
-  REMOVE_name_ids: "R.string.pictor"
+  REMOVE_name_ids: "R.string.carina"
 }
 source {
   search_location {
-    right_ascension: 80.21425
-    declination: -63.99
+    right_ascension: 116.73407
+    declination: -57.17
   }
   label {
     location {
-      right_ascension: 80.21425
-      declination: -63.99
+      right_ascension: 116.73407
+      declination: -57.17
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.dorado"
+    REMOVE_string_index: "R.string.carina"
   }
   line {
     color: 2160688306
@@ -1649,7 +1658,7 @@ source {
       declination: -65.7333
     }
   }
-  REMOVE_name_ids: "R.string.dorado"
+  REMOVE_name_ids: "R.string.carina"
 }
 source {
   search_location {
@@ -1779,16 +1788,16 @@ source {
 }
 source {
   search_location {
-    right_ascension: 338.63562
-    declination: 46.67
+    right_ascension: 340.18484
+    declination: 19.65
   }
   label {
     location {
-      right_ascension: 338.63562
-      declination: 46.67
+      right_ascension: 340.18484
+      declination: 19.65
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.lacerta"
+    REMOVE_string_index: "R.string.pegasus"
   }
   line {
     color: 2160688306
@@ -1820,20 +1829,20 @@ source {
       declination: 46.4667
     }
   }
-  REMOVE_name_ids: "R.string.lacerta"
+  REMOVE_name_ids: "R.string.pegasus"
 }
 source {
   search_location {
-    right_ascension: 61.593353
-    declination: 17.34
+    right_ascension: 89.44949
+    declination: 42.81
   }
   label {
     location {
-      right_ascension: 61.593353
-      declination: 17.34
+      right_ascension: 89.44949
+      declination: 42.81
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.taurus"
+    REMOVE_string_index: "R.string.auriga"
   }
   line {
     color: 2160688306
@@ -1927,7 +1936,7 @@ source {
       declination: 44.95
     }
   }
-  REMOVE_name_ids: "R.string.taurus"
+  REMOVE_name_ids: "R.string.auriga"
 }
 source {
   search_location {
@@ -1965,16 +1974,16 @@ source {
 }
 source {
   search_location {
-    right_ascension: 48.312057
-    declination: -52.0
+    right_ascension: 38.941437
+    declination: -72.08
   }
   label {
     location {
-      right_ascension: 48.312057
-      declination: -52.0
+      right_ascension: 38.941437
+      declination: -72.08
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.horologium"
+    REMOVE_string_index: "R.string.hydrus"
   }
   line {
     color: 2160688306
@@ -1995,20 +2004,20 @@ source {
       declination: -54.55
     }
   }
-  REMOVE_name_ids: "R.string.horologium"
+  REMOVE_name_ids: "R.string.hydrus"
 }
 source {
   search_location {
-    right_ascension: 71.009094
-    declination: -38.83
+    right_ascension: 58.299355
+    declination: -17.01
   }
   label {
     location {
-      right_ascension: 71.009094
-      declination: -38.83
+      right_ascension: 58.299355
+      declination: -17.01
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.caelum"
+    REMOVE_string_index: "R.string.eridanus"
   }
   line {
     color: 2160688306
@@ -2029,7 +2038,7 @@ source {
       declination: -44.95
     }
   }
-  REMOVE_name_ids: "R.string.caelum"
+  REMOVE_name_ids: "R.string.eridanus"
 }
 source {
   search_location {
@@ -2071,16 +2080,16 @@ source {
 }
 source {
   search_location {
-    right_ascension: 10.041107
-    declination: -35.49
+    right_ascension: 11.010101
+    declination: -48.23
   }
   label {
     location {
-      right_ascension: 10.041107
-      declination: -35.49
+      right_ascension: 11.010101
+      declination: -48.23
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.sculptor"
+    REMOVE_string_index: "R.string.phoenix"
   }
   line {
     color: 2160688306
@@ -2097,7 +2106,7 @@ source {
       declination: -35.721157
     }
   }
-  REMOVE_name_ids: "R.string.sculptor"
+  REMOVE_name_ids: "R.string.phoenix"
 }
 source {
   search_location {
@@ -2190,16 +2199,16 @@ source {
 }
 source {
   search_location {
-    right_ascension: 41.603714
-    declination: -30.94
+    right_ascension: 58.299355
+    declination: -17.01
   }
   label {
     location {
-      right_ascension: 41.603714
-      declination: -30.94
+      right_ascension: 58.299355
+      declination: -17.01
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.fornax"
+    REMOVE_string_index: "R.string.eridanus"
   }
   line {
     color: 2160688306
@@ -2216,7 +2225,7 @@ source {
       declination: -29.3
     }
   }
-  REMOVE_name_ids: "R.string.fornax"
+  REMOVE_name_ids: "R.string.eridanus"
 }
 source {
   search_location {
@@ -2337,16 +2346,16 @@ source {
 }
 source {
   search_location {
-    right_ascension: 92.51788
-    declination: 71.96
+    right_ascension: 89.44949
+    declination: 42.81
   }
   label {
     location {
-      right_ascension: 92.51788
-      declination: 71.96
+      right_ascension: 89.44949
+      declination: 42.81
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.camelopardalis"
+    REMOVE_string_index: "R.string.auriga"
   }
   line {
     color: 2160688306
@@ -2382,7 +2391,7 @@ source {
       declination: 76.9667
     }
   }
-  REMOVE_name_ids: "R.string.camelopardalis"
+  REMOVE_name_ids: "R.string.auriga"
 }
 source {
   search_location {
@@ -3018,16 +3027,16 @@ source {
 }
 source {
   search_location {
-    right_ascension: 58.645294
-    declination: -60.49
+    right_ascension: 13.08577
+    declination: 60.3
   }
   label {
     location {
-      right_ascension: 58.645294
-      declination: -60.49
+      right_ascension: 13.08577
+      declination: 60.3
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.reticulum"
+    REMOVE_string_index: "R.string.cassiopeia"
   }
   line {
     color: 2160688306
@@ -3040,20 +3049,20 @@ source {
       declination: 89.52555
     }
   }
-  REMOVE_name_ids: "R.string.reticulum"
+  REMOVE_name_ids: "R.string.cassiopeia"
 }
 source {
   search_location {
-    right_ascension: 269.91275
-    declination: 66.06
+    right_ascension: 225.22562
+    declination: 82.04
   }
   label {
     location {
-      right_ascension: 269.91275
-      declination: 66.06
+      right_ascension: 225.22562
+      declination: 82.04
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.draco"
+    REMOVE_string_index: "R.string.ursa_minor"
   }
   line {
     color: 2160688306
@@ -3090,20 +3099,22 @@ source {
       declination: 77.8
     }
   }
-  REMOVE_name_ids: "R.string.draco"
+  REMOVE_name_ids: "R.string.ursa_minor"
+  REMOVE_name_ids: "R.string.little_bear"
+  REMOVE_name_ids: "R.string.little_dipper"
 }
 source {
   search_location {
-    right_ascension: 337.17664
-    declination: 72.56
+    right_ascension: 309.81683
+    declination: 49.58
   }
   label {
     location {
-      right_ascension: 337.17664
-      declination: 72.56
+      right_ascension: 309.81683
+      declination: 49.58
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.cepheus"
+    REMOVE_string_index: "R.string.cygnus"
   }
   line {
     color: 2160688306
@@ -3143,20 +3154,20 @@ source {
       declination: 66.2
     }
   }
-  REMOVE_name_ids: "R.string.cepheus"
+  REMOVE_name_ids: "R.string.cygnus"
 }
 source {
   search_location {
-    right_ascension: 169.5
-    declination: -80.5
+    right_ascension: 187.72812
+    declination: -59.7
   }
   label {
     location {
-      right_ascension: 169.5
-      declination: -80.5
+      right_ascension: 187.72812
+      declination: -59.7
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.chamaeleon"
+    REMOVE_string_index: "R.string.crux"
   }
   line {
     color: 2160688306
@@ -3185,20 +3196,21 @@ source {
       declination: -76.9167
     }
   }
-  REMOVE_name_ids: "R.string.chamaeleon"
+  REMOVE_name_ids: "R.string.crux"
+  REMOVE_name_ids: "R.string.southern_cross"
 }
 source {
   search_location {
-    right_ascension: 218.50224
-    declination: -67.7
+    right_ascension: 231.27214
+    declination: -42.28
   }
   label {
     location {
-      right_ascension: 218.50224
-      declination: -67.7
+      right_ascension: 231.27214
+      declination: -42.28
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.circinus"
+    REMOVE_string_index: "R.string.lupus"
   }
   line {
     color: 2160688306
@@ -3215,20 +3227,20 @@ source {
       declination: -58.8
     }
   }
-  REMOVE_name_ids: "R.string.circinus"
+  REMOVE_name_ids: "R.string.lupus"
 }
 source {
   search_location {
-    right_ascension: 191.7441
-    declination: 22.65
+    right_ascension: 200.69356
+    declination: -3.49
   }
   label {
     location {
-      right_ascension: 191.7441
-      declination: 22.65
+      right_ascension: 200.69356
+      declination: -3.49
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.coma_berenices"
+    REMOVE_string_index: "R.string.virgo"
   }
   line {
     color: 2160688306
@@ -3245,20 +3257,20 @@ source {
       declination: 28.2667
     }
   }
-  REMOVE_name_ids: "R.string.coma_berenices"
+  REMOVE_name_ids: "R.string.virgo"
 }
 source {
   search_location {
-    right_ascension: 280.59195
-    declination: -41.25
+    right_ascension: 291.57196
+    declination: -29.11
   }
   label {
     location {
-      right_ascension: 280.59195
-      declination: -41.25
+      right_ascension: 291.57196
+      declination: -29.11
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.corona_australis"
+    REMOVE_string_index: "R.string.sagittarius"
   }
   line {
     color: 2160688306
@@ -3303,20 +3315,20 @@ source {
       declination: -42.3167
     }
   }
-  REMOVE_name_ids: "R.string.corona_australis"
+  REMOVE_name_ids: "R.string.sagittarius"
 }
 source {
   search_location {
-    right_ascension: 238.85286
-    declination: 32.63
+    right_ascension: 220.90881
+    declination: 32.33
   }
   label {
     location {
-      right_ascension: 238.85286
-      declination: 32.63
+      right_ascension: 220.90881
+      declination: 32.33
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.corona_borealis"
+    REMOVE_string_index: "R.string.bootes"
   }
   line {
     color: 2160688306
@@ -3349,7 +3361,7 @@ source {
       declination: 29.85
     }
   }
-  REMOVE_name_ids: "R.string.corona_borealis"
+  REMOVE_name_ids: "R.string.bootes"
 }
 source {
   search_location {
@@ -3380,16 +3392,16 @@ source {
 }
 source {
   search_location {
-    right_ascension: 187.41226
-    declination: -69.87
+    right_ascension: 187.72812
+    declination: -59.7
   }
   label {
     location {
-      right_ascension: 187.41226
-      declination: -69.87
+      right_ascension: 187.72812
+      declination: -59.7
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.musca"
+    REMOVE_string_index: "R.string.crux"
   }
   line {
     color: 2160688306
@@ -3402,20 +3414,21 @@ source {
       declination: -63.1
     }
   }
-  REMOVE_name_ids: "R.string.musca"
+  REMOVE_name_ids: "R.string.crux"
+  REMOVE_name_ids: "R.string.southern_cross"
 }
 source {
   search_location {
-    right_ascension: 186.31425
-    declination: -18.36
+    right_ascension: 200.69356
+    declination: -3.49
   }
   label {
     location {
-      right_ascension: 186.31425
-      declination: -18.36
+      right_ascension: 200.69356
+      declination: -3.49
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.corvus"
+    REMOVE_string_index: "R.string.virgo"
   }
   line {
     color: 2160688306
@@ -3444,20 +3457,20 @@ source {
       declination: -22.6167
     }
   }
-  REMOVE_name_ids: "R.string.corvus"
+  REMOVE_name_ids: "R.string.virgo"
 }
 source {
   search_location {
-    right_ascension: 195.83528
-    declination: 42.35
+    right_ascension: 220.90881
+    declination: 32.33
   }
   label {
     location {
-      right_ascension: 195.83528
-      declination: 42.35
+      right_ascension: 220.90881
+      declination: 32.33
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.canes_venatici"
+    REMOVE_string_index: "R.string.bootes"
   }
   line {
     color: 2160688306
@@ -3470,7 +3483,7 @@ source {
       declination: 41.35
     }
   }
-  REMOVE_name_ids: "R.string.canes_venatici"
+  REMOVE_name_ids: "R.string.bootes"
 }
 source {
   search_location {
@@ -3535,16 +3548,16 @@ source {
 }
 source {
   search_location {
-    right_ascension: 310.7945
-    declination: 12.1
+    right_ascension: 296.1595
+    declination: 3.37
   }
   label {
     location {
-      right_ascension: 310.7945
-      declination: 12.1
+      right_ascension: 296.1595
+      declination: 3.37
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.delphinus"
+    REMOVE_string_index: "R.string.aquila"
   }
   line {
     color: 2160688306
@@ -3573,20 +3586,20 @@ source {
       declination: 14.6
     }
   }
-  REMOVE_name_ids: "R.string.delphinus"
+  REMOVE_name_ids: "R.string.aquila"
 }
 source {
   search_location {
-    right_ascension: 225.22562
-    declination: 82.04
+    right_ascension: 269.91275
+    declination: 66.06
   }
   label {
     location {
-      right_ascension: 225.22562
-      declination: 82.04
+      right_ascension: 269.91275
+      declination: 66.06
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.ursa_minor"
+    REMOVE_string_index: "R.string.draco"
   }
   line {
     color: 2160688306
@@ -3655,22 +3668,20 @@ source {
       declination: 56.8667
     }
   }
-  REMOVE_name_ids: "R.string.ursa_minor"
-  REMOVE_name_ids: "R.string.little_bear"
-  REMOVE_name_ids: "R.string.little_dipper"
+  REMOVE_name_ids: "R.string.draco"
 }
 source {
   search_location {
-    right_ascension: 318.63867
-    declination: 7.94
+    right_ascension: 296.1595
+    declination: 3.37
   }
   label {
     location {
-      right_ascension: 318.63867
-      declination: 7.94
+      right_ascension: 296.1595
+      declination: 3.37
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.equuleus"
+    REMOVE_string_index: "R.string.aquila"
   }
   line {
     color: 2160688306
@@ -3687,7 +3698,7 @@ source {
       declination: 10.1333
     }
   }
-  REMOVE_name_ids: "R.string.equuleus"
+  REMOVE_name_ids: "R.string.aquila"
 }
 source {
   search_location {
@@ -3936,16 +3947,16 @@ source {
 }
 source {
   search_location {
-    right_ascension: 317.93903
-    declination: -52.68
+    right_ascension: 337.77826
+    declination: -42.86
   }
   label {
     location {
-      right_ascension: 317.93903
-      declination: -52.68
+      right_ascension: 337.77826
+      declination: -42.86
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.indus"
+    REMOVE_string_index: "R.string.grus"
   }
   line {
     color: 2160688306
@@ -3973,20 +3984,20 @@ source {
       declination: -58.45
     }
   }
-  REMOVE_name_ids: "R.string.indus"
+  REMOVE_name_ids: "R.string.grus"
 }
 source {
   search_location {
-    right_ascension: 306.34235
-    declination: 25.03
+    right_ascension: 340.18484
+    declination: 19.65
   }
   label {
     location {
-      right_ascension: 306.34235
-      declination: 25.03
+      right_ascension: 340.18484
+      declination: 19.65
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.vulpecula"
+    REMOVE_string_index: "R.string.pegasus"
   }
   line {
     color: 2160688306
@@ -4038,7 +4049,7 @@ source {
       declination: 37.75
     }
   }
-  REMOVE_name_ids: "R.string.vulpecula"
+  REMOVE_name_ids: "R.string.pegasus"
 }
 source {
   search_location {
@@ -4203,16 +4214,16 @@ source {
 }
 source {
   search_location {
-    right_ascension: 82.72612
-    declination: -79.99
+    right_ascension: 116.73407
+    declination: -57.17
   }
   label {
     location {
-      right_ascension: 82.72612
-      declination: -79.99
+      right_ascension: 116.73407
+      declination: -57.17
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.mensa"
+    REMOVE_string_index: "R.string.carina"
   }
   line {
     color: 2160688306
@@ -4233,20 +4244,20 @@ source {
       declination: -71.3167
     }
   }
-  REMOVE_name_ids: "R.string.mensa"
+  REMOVE_name_ids: "R.string.carina"
 }
 source {
   search_location {
-    right_ascension: 314.99097
-    declination: -36.2
+    right_ascension: 316.58533
+    declination: -19.65
   }
   label {
     location {
-      right_ascension: 314.99097
-      declination: -36.2
+      right_ascension: 316.58533
+      declination: -19.65
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.microscopium"
+    REMOVE_string_index: "R.string.capricornus"
   }
   line {
     color: 2160688306
@@ -4275,20 +4286,21 @@ source {
       declination: -33.7833
     }
   }
-  REMOVE_name_ids: "R.string.microscopium"
+  REMOVE_name_ids: "R.string.capricornus"
+  REMOVE_name_ids: "R.string.capricorn"
 }
 source {
   search_location {
-    right_ascension: 242.52289
-    declination: -65.9
+    right_ascension: 187.72812
+    declination: -59.7
   }
   label {
     location {
-      right_ascension: 242.52289
-      declination: -65.9
+      right_ascension: 187.72812
+      declination: -59.7
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.triangulum_australe"
+    REMOVE_string_index: "R.string.crux"
   }
   line {
     color: 2160688306
@@ -4321,20 +4333,21 @@ source {
       declination: -69.1333
     }
   }
-  REMOVE_name_ids: "R.string.triangulum_australe"
+  REMOVE_name_ids: "R.string.crux"
+  REMOVE_name_ids: "R.string.southern_cross"
 }
 source {
   search_location {
-    right_ascension: 241.28952
-    declination: -52.29
+    right_ascension: 231.27214
+    declination: -42.28
   }
   label {
     location {
-      right_ascension: 241.28952
-      declination: -52.29
+      right_ascension: 231.27214
+      declination: -42.28
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.norma"
+    REMOVE_string_index: "R.string.lupus"
   }
   line {
     color: 2160688306
@@ -4359,20 +4372,20 @@ source {
       declination: -45.1667
     }
   }
-  REMOVE_name_ids: "R.string.norma"
+  REMOVE_name_ids: "R.string.lupus"
 }
 source {
   search_location {
-    right_ascension: 288.1877
-    declination: -65.14
+    right_ascension: 358.39963
+    declination: -64.06
   }
   label {
     location {
-      right_ascension: 288.1877
-      declination: -65.14
+      right_ascension: 358.39963
+      declination: -64.06
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.pavo"
+    REMOVE_string_index: "R.string.tucana"
   }
   line {
     color: 2160688306
@@ -4393,7 +4406,7 @@ source {
       declination: -81.3833
     }
   }
-  REMOVE_name_ids: "R.string.pavo"
+  REMOVE_name_ids: "R.string.tucana"
 }
 source {
   search_location {
@@ -4606,16 +4619,16 @@ source {
 }
 source {
   search_location {
-    right_ascension: 289.45117
-    declination: -51.54
+    right_ascension: 288.1877
+    declination: -65.14
   }
   label {
     location {
-      right_ascension: 289.45117
-      declination: -51.54
+      right_ascension: 288.1877
+      declination: -65.14
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.telescopium"
+    REMOVE_string_index: "R.string.pavo"
   }
   line {
     color: 2160688306
@@ -4701,20 +4714,20 @@ source {
       declination: -64.7333
     }
   }
-  REMOVE_name_ids: "R.string.telescopium"
+  REMOVE_name_ids: "R.string.pavo"
 }
 source {
   search_location {
-    right_ascension: 316.58533
-    declination: -19.65
+    right_ascension: 337.07135
+    declination: -31.43
   }
   label {
     location {
-      right_ascension: 316.58533
-      declination: -19.65
+      right_ascension: 337.07135
+      declination: -31.43
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.capricornus"
+    REMOVE_string_index: "R.string.piscis_austrinus"
   }
   line {
     color: 2160688306
@@ -4763,21 +4776,20 @@ source {
       declination: -32.55
     }
   }
-  REMOVE_name_ids: "R.string.capricornus"
-  REMOVE_name_ids: "R.string.capricorn"
+  REMOVE_name_ids: "R.string.piscis_austrinus"
 }
 source {
   search_location {
-    right_ascension: 115.19988
-    declination: -69.39
+    right_ascension: 38.941437
+    declination: -72.08
   }
   label {
     location {
-      right_ascension: 115.19988
-      declination: -69.39
+      right_ascension: 38.941437
+      declination: -72.08
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.volans"
+    REMOVE_string_index: "R.string.hydrus"
   }
   line {
     color: 2160688306
@@ -4802,7 +4814,7 @@ source {
       declination: -62.4667
     }
   }
-  REMOVE_name_ids: "R.string.volans"
+  REMOVE_name_ids: "R.string.hydrus"
 }
 source {
   search_location {
@@ -4900,16 +4912,16 @@ source {
 }
 source {
   search_location {
-    right_ascension: 280.5318
-    declination: -10.11
+    right_ascension: 296.1595
+    declination: 3.37
   }
   label {
     location {
-      right_ascension: 280.5318
-      declination: -10.11
+      right_ascension: 296.1595
+      declination: 3.37
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.scutum"
+    REMOVE_string_index: "R.string.aquila"
   }
   line {
     color: 2160688306
@@ -4926,20 +4938,20 @@ source {
       declination: -14.5667
     }
   }
-  REMOVE_name_ids: "R.string.scutum"
+  REMOVE_name_ids: "R.string.aquila"
 }
 source {
   search_location {
-    right_ascension: 295.81357
-    declination: 18.0
+    right_ascension: 296.1595
+    declination: 3.37
   }
   label {
     location {
-      right_ascension: 295.81357
-      declination: 18.0
+      right_ascension: 296.1595
+      declination: 3.37
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.sagitta"
+    REMOVE_string_index: "R.string.aquila"
   }
   line {
     color: 2160688306
@@ -4967,7 +4979,7 @@ source {
       declination: 17.4833
     }
   }
-  REMOVE_name_ids: "R.string.sagitta"
+  REMOVE_name_ids: "R.string.aquila"
 }
 source {
   search_location {
@@ -5055,16 +5067,16 @@ source {
 }
 source {
   search_location {
-    right_ascension: 242.67331
-    declination: -76.41
+    right_ascension: 231.27214
+    declination: -42.28
   }
   label {
     location {
-      right_ascension: 242.67331
-      declination: -76.41
+      right_ascension: 231.27214
+      declination: -42.28
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.apus"
+    REMOVE_string_index: "R.string.lupus"
   }
   line {
     color: 2160688306
@@ -5089,7 +5101,7 @@ source {
       declination: -78.7
     }
   }
-  REMOVE_name_ids: "R.string.apus"
+  REMOVE_name_ids: "R.string.lupus"
 }
 source {
   search_location {
@@ -5155,16 +5167,16 @@ source {
 }
 source {
   search_location {
-    right_ascension: 270.1083
-    declination: -13.52
+    right_ascension: 341.38812
+    declination: -10.53
   }
   label {
     location {
-      right_ascension: 270.1083
-      declination: -13.52
+      right_ascension: 341.38812
+      declination: -10.53
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.serpens_cauda"
+    REMOVE_string_index: "R.string.aquarius"
   }
   line {
     color: 2160688306
@@ -5274,20 +5286,20 @@ source {
       declination: -23.75
     }
   }
-  REMOVE_name_ids: "R.string.serpens_cauda"
+  REMOVE_name_ids: "R.string.aquarius"
 }
 source {
   search_location {
-    right_ascension: 333.5066
-    declination: -84.73
+    right_ascension: 341.38812
+    declination: -10.53
   }
   label {
     location {
-      right_ascension: 333.5066
-      declination: -84.73
+      right_ascension: 341.38812
+      declination: -10.53
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.octans"
+    REMOVE_string_index: "R.string.aquarius"
   }
   line {
     color: 2160688306
@@ -5308,20 +5320,20 @@ source {
       declination: -20.9167
     }
   }
-  REMOVE_name_ids: "R.string.octans"
+  REMOVE_name_ids: "R.string.aquarius"
 }
 source {
   search_location {
-    right_ascension: 259.1734
-    declination: -51.89
+    right_ascension: 253.66837
+    declination: -35.67
   }
   label {
     location {
-      right_ascension: 259.1734
-      declination: -51.89
+      right_ascension: 253.66837
+      declination: -35.67
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.ara"
+    REMOVE_string_index: "R.string.scorpius"
   }
   line {
     color: 2160688306
@@ -5368,20 +5380,21 @@ source {
       declination: -59.05
     }
   }
-  REMOVE_name_ids: "R.string.ara"
+  REMOVE_name_ids: "R.string.scorpius"
+  REMOVE_name_ids: "R.string.scorpio"
 }
 source {
   search_location {
-    right_ascension: 236.61174
-    declination: 10.85
+    right_ascension: 116.73407
+    declination: -57.17
   }
   label {
     location {
-      right_ascension: 236.61174
-      declination: 10.85
+      right_ascension: 116.73407
+      declination: -57.17
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.serpens_caput"
+    REMOVE_string_index: "R.string.carina"
   }
   line {
     color: 2160688306
@@ -5429,20 +5442,20 @@ source {
       declination: -70.3833
     }
   }
-  REMOVE_name_ids: "R.string.serpens_caput"
+  REMOVE_name_ids: "R.string.carina"
 }
 source {
   search_location {
-    right_ascension: 220.90881
-    declination: 32.33
+    right_ascension: 284.39734
+    declination: 40.65
   }
   label {
     location {
-      right_ascension: 220.90881
-      declination: 32.33
+      right_ascension: 284.39734
+      declination: 40.65
     }
     color: 2160688306
-    REMOVE_string_index: "R.string.bootes"
+    REMOVE_string_index: "R.string.lyra"
   }
   line {
     color: 2160688306
@@ -5459,9 +5472,21 @@ source {
       declination: 21.4
     }
   }
-  REMOVE_name_ids: "R.string.bootes"
+  REMOVE_name_ids: "R.string.lyra"
 }
 source {
+  search_location {
+    right_ascension: 220.90881
+    declination: 32.33
+  }
+  label {
+    location {
+      right_ascension: 220.90881
+      declination: 32.33
+    }
+    color: 2160688306
+    REMOVE_string_index: "R.string.bootes"
+  }
   line {
     color: 2160688306
     vertex {
@@ -5550,8 +5575,21 @@ source {
       declination: 27.0833
     }
   }
+  REMOVE_name_ids: "R.string.bootes"
 }
 source {
+  search_location {
+    right_ascension: 316.58533
+    declination: -19.65
+  }
+  label {
+    location {
+      right_ascension: 316.58533
+      declination: -19.65
+    }
+    color: 2160688306
+    REMOVE_string_index: "R.string.capricornus"
+  }
   line {
     color: 2160688306
     vertex {
@@ -5643,8 +5681,22 @@ source {
       declination: -26.9333
     }
   }
+  REMOVE_name_ids: "R.string.capricornus"
+  REMOVE_name_ids: "R.string.capricorn"
 }
 source {
+  search_location {
+    right_ascension: 358.39963
+    declination: -64.06
+  }
+  label {
+    location {
+      right_ascension: 358.39963
+      declination: -64.06
+    }
+    color: 2160688306
+    REMOVE_string_index: "R.string.tucana"
+  }
   line {
     color: 2160688306
     vertex {
@@ -5686,8 +5738,21 @@ source {
       declination: -58.2333
     }
   }
+  REMOVE_name_ids: "R.string.tucana"
 }
 source {
+  search_location {
+    right_ascension: 11.010101
+    declination: -48.23
+  }
+  label {
+    location {
+      right_ascension: 11.010101
+      declination: -48.23
+    }
+    color: 2160688306
+    REMOVE_string_index: "R.string.phoenix"
+  }
   line {
     color: 2160688306
     vertex {
@@ -5707,8 +5772,21 @@ source {
       declination: -61.427338
     }
   }
+  REMOVE_name_ids: "R.string.phoenix"
 }
 source {
+  search_location {
+    right_ascension: 231.27214
+    declination: -42.28
+  }
+  label {
+    location {
+      right_ascension: 231.27214
+      declination: -42.28
+    }
+    color: 2160688306
+    REMOVE_string_index: "R.string.lupus"
+  }
   line {
     color: 2160688306
     vertex {
@@ -5732,8 +5810,21 @@ source {
       declination: -69.0333
     }
   }
+  REMOVE_name_ids: "R.string.lupus"
 }
 source {
+  search_location {
+    right_ascension: 288.1877
+    declination: -65.14
+  }
+  label {
+    location {
+      right_ascension: 288.1877
+      declination: -65.14
+    }
+    color: 2160688306
+    REMOVE_string_index: "R.string.pavo"
+  }
   line {
     color: 2160688306
     vertex {
@@ -5769,4 +5860,5 @@ source {
       declination: -45.95
     }
   }
+  REMOVE_name_ids: "R.string.pavo"
 }

@@ -8,7 +8,7 @@
     <string name="go">Los</string>
     <string name="location_prefs">Standorteinstellungen</string>
     <string name="force_gps_pref">Immer GPS verwenden</string>
-    <string name="force_gps_pref_hint" translation_description="this string continues from \'Always use GPS\'">Auch wenn Netzwerkstandort verfügbar</string>
+    <string name="force_gps_pref_hint" translation_description="this string continues from \'Always use GPS\'">falls aktiviert; auch bei verfügbarem Netzwerkstandort</string>
     <string name="no_use_gps_pref">Ort manuell festlegen</string>
     <string name="no_use_gps_pref_hint">Geben Sie einen Ort oder Breiten-/Längengrad ein.</string>
     <string name="location_placename">Ortsname</string>
@@ -21,13 +21,13 @@
     <string name="location_offer_to_enable">Der autom. Standort ist deaktiviert. Aktivieren?</string>
     <string name="location_offer_to_enable_gps_title">Autom. Standort deaktiviert</string>
     <string name="location_set_auto">Ort von %1$s auf %2$s festgelegt</string>
-    <string name="location_unable_to_geocode">Ihr Standort konnte nicht ermittelt werden. Sind Sie mit einem Mobilfunknetz verbunden?</string>
+    <string name="location_unable_to_geocode">Ihr Ort konnte nicht ermittelt werden. Ist Ihr Netzwerk verfügbar?</string>
     <string name="location_not_found_title" translation_description="dialog box title when location not found">Sorry</string>
     <string name="location_not_found" translation_description="dialog message when placename not found">%s nicht gefunden</string>
     <string name="location_long_lat">Längengrad:%1$s, Breitengrad:%2$s</string>
     <string name="location_place_found">Ort gefunden. Breitengrad %1$f und Längengrad %2$f</string>
     <string name="use_magnetic_correction">Magnetische Korrektur verwenden</string>
-    <string name="use_magnetic_correction_hint">Korrigiert die magnetische Nordrichtung anhand Ihrer Position zur geografischen Nordrichtung.</string>
+    <string name="use_magnetic_correction_hint">Korrigieren Sie die magnetische Nordrichtung anhand Ihrer Position in die geografische Nordrichtung.</string>
     <string name="provider_prefs" translation_description="Dialog box title for a preferences dialog">Anzeigen...</string>
     <string name="show_stars_pref">Sterne</string>
     <string name="show_constellations_pref">Konstellationen</string>
@@ -45,10 +45,10 @@
     <string name="dialog_accept" translation_description="accepting the licence agreement">Akzeptieren</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">Nein danke</string>
     <string name="menu_help" translation_description="menu item to show \'Help\' box">Hilfe</string>
-    <string name="help_dialog_title">Hilfe zu Sky Map</string>
+    <string name="help_dialog_title">Hilfe für Sky Map</string>
     <string name="eula_dialog_title">Endnutzerlizenzvertrag</string>
     <string name="set_manual">Wechsel in manuellen Modus</string>
-    <string name="set_auto">Wechsel in automatischen Modus</string>
+    <string name="set_auto">Wechsel in autom. Modus</string>
     <string name="menu_zoom_in">Heranzoomen</string>
     <string name="menu_zoom_out">Herauszoomen</string>
     <string name="menu_toggle_dim">Nachtmodus ein/aus</string>
@@ -63,7 +63,7 @@
     <string name="no_search_title">Keine Ergebnisse</string>
     <string name="no_search_results_text">Keine Ergebnisse gefunden</string>
     <string name="many_search_results_title">Meinten Sie?</string>
-    <string name="many_search_results_text">Bitte einen Eintrag auswählen</string>
+    <string name="many_search_results_text">Bitte 1 auswählen</string>
     <string name="searching_for_text">Suche nach %s...</string>
     <string name="found_target_text">%s gefunden</string>
     <string name="other">Sonstiges</string>
@@ -96,12 +96,12 @@
     <string name="enable_layer_toast">Ebene \"%s\" wird aktiviert.</string>
     <string name="disable_layer_toast">Ebene \"%s\" wird deaktiviert.</string>
     <string name="menu_gallery">Galerie</string>
-    <string name="gallery_image_search_btn">Suchen</string>
+    <string name="gallery_image_search_btn">In Sky suchen</string>
     <string name="gallery_image_back_btn">Zurück zur Galerie</string>
     <string name="hubble_image_gallery_title">Hubble-Galerie</string>
     <string name="hubble_image">Hubble-Bild</string>
     <string name="search_target_found_message" translation_description="displayed when a search target has been located">Gefundenes Ziel:</string>
-    <string name="search_overlay_title" translation_description="title for search overlay">Bewegen Sie Ihr Telefon in Richtung des Pfeils.</string>
+    <string name="search_overlay_title" translation_description="title for search overlay">Halten Sie Ihr Telefon in Richtung des Pfeils.</string>
     <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">Suche nach:</string>
     <string name="sun_wont_set_message">Die Sonne geht in den nächsten 24 Stunden nicht an Ihrem aktuellen Standort unter.</string>
     <string name="sun_wont_rise_message">Die Sonne geht in den nächsten 24 Stunden nicht an Ihrem aktuellen Standort auf.</string>
@@ -210,7 +210,7 @@
     <string name="regulus" translation_description="Name of the Star Regulus">Regulus</string>
     <string name="adhara" translation_description="Name of the Star Adhara">Adhara</string>
     <string name="shaula" translation_description="Name of the Star Shaula">Shaula</string>
-    <string name="alnath" translation_description="Name of the Star Alnath">Elnath</string>
+    <string name="alnath" translation_description="Name of the Star Alnath">Etamin</string>
     <string name="alnilam" translation_description="Name of the Star Alnilam">Alnilam</string>
     <string name="alnair" translation_description="Name of the Star Alnair">Alnair</string>
     <string name="alioth" translation_description="Name of the Star Alioth">Alioth</string>
@@ -378,54 +378,4 @@
     <string name="kml_load_error">KML-Datei konnte nicht geladen werden.</string>
     <string name="load_kml_dialog_title">KML laden</string>
     <string name="load_kml_file">Laden</string>
-    <string name="compass_calibration_activity_do_not_show_this_again">Diese Meldung nicht mehr anzeigen</string>
-    <string name="compass_calibration_activity_warning">Ihr Kompass muss kalibriert werden</string>
-    <string name="connected">Verbunden</string>
-    <string name="diagnostics_activity_accelerometer">Beschleunigungssensor</string>
-    <string name="diagnostics_activity_android_version">Android Version</string>
-    <string name="diagnostics_activity_compass">Kompass</string>
-    <string name="diagnostics_activity_connection">Verbindung</string>
-    <string name="diagnostics_activity_general_heading">Allgemein</string>
-    <string name="diagnostics_activity_gyroscope">Gyroskop</string>
-    <string name="diagnostics_activity_light_level">Helligkeit</string>
-    <string name="diagnostics_activity_local_datetime">Ortszeit</string>
-    <string name="diagnostics_activity_location">Standort (Länge, Breite)</string>
-    <string name="diagnostics_activity_location_and_time_heading">Standort und Zeit</string>
-    <string name="diagnostics_activity_magnetic_correction">Magnetische Korrektur</string>
-    <string name="diagnostics_activity_network_heading">Netzwerk</string>
-    <string name="diagnostics_activity_phone">Gerät</string>
-    <string name="diagnostics_activity_rotation_matrix">Rotationsmatrix</string>
-    <string name="diagnostics_activity_sensors_heading">Sensoren</string>
-    <string name="diagnostics_activity_sky_map_version">Sky Map Version</string>
-    <string name="diagnostics_activity_universal_time">UTC</string>
-    <string name="disabled">Deaktiviert</string>
-    <string name="disconnected">Getrennt</string>
-    <string name="do_not_show_again">Diese Meldung nicht mehr anzeigen</string>
-    <string name="enable_analytics">Nutzungsstatistiken senden</string>
-    <string name="enable_analytics_desc">Sky Map durch das Übermitteln anonymer Daten an Google Analytics verbessern</string>
-    <string name="enabled">Aktiviert</string>
-    <string name="location_rationale_title">Worum benötigen wir Ihren Standort?</string>
-    <string name="location_rationale_text">Die Sterne, die Sie am Himmel sehen können, hängen von Ihrer Position auf der Erde ab. Ohne Ihren Standort können wir Ihnen keine akkurate Sternenkarte darstellen. Wenn Sie der automatischen Standortbestimmung durch Ihr Gerät nicht zustimmen, können Sie in den Einstellungen manuell einen Standort festlegen. Es reicht dabei aus, die nächste Stadt anzugeben.</string>
-    <string name="menu_calibrate">Kalibrieren</string>
-    <string name="menu_diagnostics">Diagnose</string>
-    <string name="no_sensor_warning">Ihr Gerät scheint keine Sensoren zur Bestimmung der Orientierung zu besitzen - Der automatische Modus könnte nicht funktionieren</string>
-    <string name="permission_disabled">Berechtigung deaktiviert</string>
-    <string name="play_services_error">Achtung: Google Play Services Fehler - Automatische Erkennung des Standorts könnte nicht funktionieren</string>
-    <string name="sensor_absent">Nicht vorhanden</string>
-    <string name="sensor_accuracy_high">Genauigkeit: Hoch</string>
-    <string name="sensor_accuracy_low">Genauigkeit: Niedrig</string>
-    <string name="sensor_accuracy_medium">Genauigkeit: Mittel</string>
-    <string name="sensor_accuracy_nocontact">Genauigkeit: Kein Kontakt</string>
-    <string name="sensor_accuracy_unknown">Genauigkeit: Unbekannt</string>
-    <string name="sensor_accuracy_unreliable">Genauigkeit: Nicht abrufbar</string>
-    <string name="compass_calibration_activity_heading_compass">Kompass -</string>
-    <string name="no_gps">Kein GPS</string>
-    <string name="sensor_reverse_preference_summary">Lösung für Geräte mit falsch implementierten Sensoren - Benötigt Neustart der App</string>
-    <string name="sensor_reverse_preference_title">Magnetische Z-Achse invertieren</string>
-    <string name="use_gyro_preference_title">Gyroskop verwenden (Experimentell))</string>
-    <string name="use_gyro_preference_summary">Sorgt für flüssigere Bewegungen. Nicht alle Geräte besitzen ein Gyroskop.</string>
-    <string name="warning_dialog_title">Warnung!</string>
-    <string name="wifi">" (WLAN)"</string>
-    <string name="diagnostics_activity_pointing_ra_dec">Letzte Blickrichtung (RA, D)</string>
 </resources>
-

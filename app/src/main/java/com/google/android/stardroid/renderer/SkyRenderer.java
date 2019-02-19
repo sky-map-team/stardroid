@@ -14,20 +14,20 @@
 
 package com.google.android.stardroid.renderer;
 
-import android.content.res.Resources;
-import android.opengl.GLSurfaceView;
-import android.opengl.GLU;
-import android.util.Log;
-
 import com.google.android.stardroid.renderer.util.GLBuffer;
 import com.google.android.stardroid.renderer.util.SkyRegionMap;
 import com.google.android.stardroid.renderer.util.TextureManager;
 import com.google.android.stardroid.renderer.util.UpdateClosure;
 import com.google.android.stardroid.units.GeocentricCoordinates;
 import com.google.android.stardroid.units.Vector3;
-import com.google.android.stardroid.util.MathUtil;
 import com.google.android.stardroid.util.Matrix4x4;
 import com.google.android.stardroid.util.VectorUtil;
+
+import android.content.res.Resources;
+import android.opengl.GLSurfaceView;
+import android.opengl.GLU;
+import android.util.FloatMath;
+import android.util.Log;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -78,7 +78,7 @@ public class SkyRenderer implements GLSurfaceView.Renderer {
   // A list of managers which need to be reloaded before the next frame is rendered.  This may
   // be because they haven't ever been loaded yet, or because their objects have changed since
   // the last frame.
-  private ArrayList<ManagerReloadData> mManagersToReload = new ArrayList<>();
+  private ArrayList<ManagerReloadData> mManagersToReload = new ArrayList<ManagerReloadData>();
 
   // Maps an integer indicating render order to a list of objects at that level.  The managers
   // will be rendered in order, with the lowest number coming first.
@@ -293,7 +293,7 @@ public class SkyRenderer implements GLSurfaceView.Renderer {
   public void setViewOrientation(float dirX, float dirY, float dirZ,
                                  float upX, float upY, float upZ) {
     // Normalize the look direction
-    float dirLen = MathUtil.sqrt(dirX * dirX + dirY * dirY + dirZ * dirZ);
+    float dirLen = (float)Math.sqrt(dirX*dirX + dirY*dirY + dirZ*dirZ);
     float oneOverDirLen = 1.0f / dirLen;
     dirX *= oneOverDirLen;
     dirY *= oneOverDirLen;
@@ -307,7 +307,7 @@ public class SkyRenderer implements GLSurfaceView.Renderer {
     upZ -= lookDotUp * dirZ;
 
     // Normalize the up vector
-    float upLen = MathUtil.sqrt(upX*upX + upY*upY + upZ*upZ);
+    float upLen = (float)Math.sqrt(upX*upX + upY*upY + upZ*upZ);
     float oneOverUpLen = 1.0f / upLen;
     upX *= oneOverUpLen;
     upY *= oneOverUpLen;
@@ -464,8 +464,8 @@ class RenderState implements RenderStateInterface {
   public void setRadiusOfView(float radius) { mRadiusOfView = radius; }
   public void setUpAngle(float angle) {
     mUpAngle = angle;
-    mCosUpAngle = MathUtil.cos(angle);
-    mSinUpAngle = MathUtil.sin(angle);
+    mCosUpAngle = (float)Math.cos(angle);
+    mSinUpAngle = (float)Math.sin(angle);
   }
   public void setScreenSize(int width, int height) {
     mScreenWidth = width;

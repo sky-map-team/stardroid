@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translation_description="Application Title">Sky Map</string>
+    <string name="app_name" translation_description="Application Title">Google Sky Map</string>
     <string name="menu_settings">Configuración</string>
     <string name="menu_search">Buscar</string>
     <string name="cancel">Cancelar</string>
@@ -45,7 +45,7 @@
     <string name="dialog_accept" translation_description="accepting the licence agreement">Aceptar</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">No, gracias</string>
     <string name="menu_help" translation_description="menu item to show \'Help\' box">Ayuda</string>
-    <string name="help_dialog_title">Ayuda de Sky Map</string>
+    <string name="help_dialog_title">Ayuda de Google Sky Map</string>
     <string name="eula_dialog_title">Acuerdo de licencia de usuario final</string>
     <string name="set_manual">Modo manual activado</string>
     <string name="set_auto">Modo automático activado</string>
@@ -58,7 +58,7 @@
     <string name="east">ESTE</string>
     <string name="west">OESTE</string>
     <string name="south">SUR</string>
-    <string name="search_label">Buscar</string>
+    <string name="search_label">Buscar en Sky Map</string>
     <string name="search_hint" translation_description="an example search target">ej: Marte</string>
     <string name="no_search_title">Sin resultados</string>
     <string name="no_search_results_text">No hay resultados</string>

@@ -14,20 +14,20 @@
 
 package com.google.android.stardroid.control;
 
-import android.util.Log;
+import static com.google.android.stardroid.base.TimeConstants.MILLISECONDS_PER_DAY;
+import static com.google.android.stardroid.base.TimeConstants.SECONDS_PER_HOUR;
+import static com.google.android.stardroid.base.TimeConstants.SECONDS_PER_MINUTE;
+import static com.google.android.stardroid.base.TimeConstants.SECONDS_PER_10MINUTE;
+import static com.google.android.stardroid.base.TimeConstants.SECONDS_PER_SECOND;
+import static com.google.android.stardroid.base.TimeConstants.SECONDS_PER_DAY;
+import static com.google.android.stardroid.base.TimeConstants.SECONDS_PER_WEEK;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.util.MiscUtil;
 
-import java.util.Date;
+import android.util.Log;
 
-import static com.google.android.stardroid.base.TimeConstants.MILLISECONDS_PER_DAY;
-import static com.google.android.stardroid.base.TimeConstants.SECONDS_PER_10MINUTE;
-import static com.google.android.stardroid.base.TimeConstants.SECONDS_PER_DAY;
-import static com.google.android.stardroid.base.TimeConstants.SECONDS_PER_HOUR;
-import static com.google.android.stardroid.base.TimeConstants.SECONDS_PER_MINUTE;
-import static com.google.android.stardroid.base.TimeConstants.SECONDS_PER_SECOND;
-import static com.google.android.stardroid.base.TimeConstants.SECONDS_PER_WEEK;
+import java.util.Date;
 
 /**
  * Controls time as selected / created by the user in Time Travel mode.

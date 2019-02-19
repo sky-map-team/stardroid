@@ -18,9 +18,9 @@ import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.DialogInterface.OnClickListener;
 import android.content.SharedPreferences.Editor;
 import android.location.Address;
 import android.location.Criteria;
@@ -42,8 +42,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.inject.Inject;
-
 /**
  * Sets the AstronomerModel's (and thus the user's) position using one of the
  * network, GPS or user-set preferences.
@@ -52,7 +50,7 @@ import javax.inject.Inject;
  */
 public class LocationController extends AbstractController implements LocationListener {
   // Must match the key in the preferences file.
-  public static final String NO_AUTO_LOCATE = "no_auto_locate";
+  private static final String NO_AUTO_LOCATE = "no_auto_locate";
   // Must match the key in the preferences file.
   private static final String FORCE_GPS = "force_gps";
   private static final int MINIMUM_DISTANCE_BEFORE_UPDATE_METRES = 2000;
@@ -63,15 +61,14 @@ public class LocationController extends AbstractController implements LocationLi
   private Context context;
   private LocationManager locationManager;
 
-  @Inject
-  public LocationController(Context context, LocationManager locationManager) {
+  public LocationController(Context context) {
     this.context = context;
+    locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
     if (locationManager != null) {
       Log.d(TAG, "Got location Manager");
     } else {
       Log.d(TAG, "Didn't get location manager");
     }
-    this.locationManager = locationManager;
   }
 
   @Override
@@ -90,54 +87,47 @@ public class LocationController extends AbstractController implements LocationLi
       return;
     }
 
-    try {
-      if (locationManager == null) {
-        // TODO(johntaylor): find out under what circumstances this can happen.
-        Log.e(TAG, "Location manager was null - using preferences");
+    if (locationManager == null) {
+      // TODO(johntaylor): find out under what circumstances this can happen.
+      Log.e(TAG, "Location manager was null - using preferences");
+      setLocationFromPrefs();
+      return;
+    }
+
+    Criteria locationCriteria = new Criteria();
+    locationCriteria.setAccuracy(forceGps ? Criteria.ACCURACY_FINE : Criteria.ACCURACY_COARSE);
+    locationCriteria.setAltitudeRequired(false);
+    locationCriteria.setBearingRequired(false);
+    locationCriteria.setCostAllowed(true);
+    locationCriteria.setSpeedRequired(false);
+    locationCriteria.setPowerRequirement(Criteria.POWER_LOW);
+
+    String locationProvider = locationManager.getBestProvider(locationCriteria, true);
+    if (locationProvider == null) {
+      Log.w(TAG, "No location provider is enabled");
+      String possiblelocationProvider = locationManager.getBestProvider(locationCriteria, false);
+      if (possiblelocationProvider == null) {
+        // TODO(johntaylor): should we make this a dialog?
+        Toast.makeText(context, R.string.location_no_auto, Toast.LENGTH_LONG).show();
         setLocationFromPrefs();
         return;
       }
 
-      Criteria locationCriteria = new Criteria();
-      locationCriteria.setAccuracy(forceGps ? Criteria.ACCURACY_FINE : Criteria.ACCURACY_COARSE);
-      locationCriteria.setAltitudeRequired(false);
-      locationCriteria.setBearingRequired(false);
-      locationCriteria.setCostAllowed(true);
-      locationCriteria.setSpeedRequired(false);
-      locationCriteria.setPowerRequirement(Criteria.POWER_LOW);
+      AlertDialog.Builder alertDialog = getSwitchOnGPSDialog();
+      alertDialog.show();
+      return;
+    } else {
+      Log.d(TAG, "Got location provider " + locationProvider);
+    }
 
-      String locationProvider = locationManager.getBestProvider(locationCriteria, true);
-      if (locationProvider == null) {
-        Log.w(TAG, "No location provider is enabled");
-        String possiblelocationProvider = locationManager.getBestProvider(locationCriteria, false);
-        if (possiblelocationProvider == null) {
-          Log.i(TAG, "No location provider is even available");
-          // TODO(johntaylor): should we make this a dialog?
-          Toast.makeText(context, R.string.location_no_auto, Toast.LENGTH_LONG).show();
-          setLocationFromPrefs();
-          return;
-        }
+    locationManager.requestLocationUpdates(locationProvider, LOCATION_UPDATE_TIME_MILLISECONDS,
+                                                             MINIMUM_DISTANCE_BEFORE_UPDATE_METRES,
+                                                             this);
 
-        AlertDialog.Builder alertDialog = getSwitchOnGPSDialog();
-        alertDialog.show();
-        return;
-      } else {
-        Log.d(TAG, "Got location provider " + locationProvider);
-      }
-
-      locationManager.requestLocationUpdates(locationProvider, LOCATION_UPDATE_TIME_MILLISECONDS,
-          MINIMUM_DISTANCE_BEFORE_UPDATE_METRES,
-          this);
-
-      Location location = locationManager.getLastKnownLocation(locationProvider);
-      if (location != null) {
-        LatLong myLocation = new LatLong(location.getLatitude(), location.getLongitude());
-        setLocationInModel(myLocation, location.getProvider());
-      }
-
-    } catch (SecurityException securityException) {
-      Log.d(TAG, "Caught " + securityException);
-      Log.d(TAG, "Most likely user has not enabled this permission");
+    Location location = locationManager.getLastKnownLocation(locationProvider);
+    if (location != null) {
+      LatLong myLocation = new LatLong(location.getLatitude(), location.getLongitude());
+      setLocationInModel(myLocation, location.getProvider());
     }
 
     Log.d(TAG, "LocationController -start");
@@ -151,21 +141,7 @@ public class LocationController extends AbstractController implements LocationLi
     } else {
       Log.d(TAG, "Location not changed sufficiently to tell the user");
     }
-    currentProvider = provider;
     model.setLocation(location);
-  }
-
-  /**
-   * Last known provider;
-   */
-  private String currentProvider = "unknown";
-
-  public String getCurrentProvider() {
-    return currentProvider;
-  }
-
-  public LatLong getCurrentLocation() {
-    return model.getLocation();
   }
 
   private Builder getSwitchOnGPSDialog() {
@@ -193,13 +169,12 @@ public class LocationController extends AbstractController implements LocationLi
   }
 
   private void setLocationFromPrefs() {
-    Log.d(TAG, "Setting location from preferences");
     String longitude_s = PreferenceManager.getDefaultSharedPreferences(context)
-                                          .getString("longitude", "0");
+                                          .getString("longitude", "");
     String latitude_s = PreferenceManager.getDefaultSharedPreferences(context)
-                                         .getString("latitude", "0");
+                                         .getString("latitude", "");
 
-    float longitude = 0, latitude = 0;
+    float longitude = -80, latitude = 40;
     try {
       longitude = Float.parseFloat(longitude_s);
       latitude = Float.parseFloat(latitude_s);

@@ -1,9 +1,5 @@
 <resources>
 
     <color name="black_overlay">#66000000</color>
-    <color name="high_accuracy">#ff00ff00</color>
-    <color name="medium_accuracy">#ff0000ff</color>
-    <color name="low_accuracy">#ffff6900</color>
-    <color name="bad_sensor">#ffff0000</color>
-    <color name="absent_sensor">#ffa0a0a0</color>
+
 </resources>

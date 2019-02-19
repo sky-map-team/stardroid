@@ -19,6 +19,7 @@ import android.graphics.Color;
 import android.util.Log;
 
 import com.google.android.stardroid.R;
+import com.google.android.stardroid.base.Closeables;
 import com.google.android.stardroid.base.Lists;
 import com.google.android.stardroid.base.TimeConstants;
 import com.google.android.stardroid.control.AstronomerModel;
@@ -34,7 +35,6 @@ import com.google.android.stardroid.source.impl.TextSourceImpl;
 import com.google.android.stardroid.units.GeocentricCoordinates;
 import com.google.android.stardroid.util.Blog;
 import com.google.android.stardroid.util.MiscUtil;
-import com.google.common.io.Closeables;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -141,7 +141,7 @@ public class IssLayer extends AbstractSourceLayer {
       } catch (IOException e) {
         Log.e(TAG, "Error reading Orbital Elements");
       } finally {
-        Closeables.closeQuietly(in);
+        Closeables.closeSilently(in);
       }
       return null;
     }

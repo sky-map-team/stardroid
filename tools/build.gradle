@@ -1,19 +1,15 @@
-apply plugin: 'application'
-
+apply plugin: 'java'
 
 dependencies {
-    compile project(path: ':app',configuration:'default')
-    compile 'com.google.guava:guava:21.0'
-    // TODO(jontayler): Terrible hack that should go when we revamp the tools.
-    compile files('../app/build/intermediates/classes/gms/release/')
-    compile fileTree(include: ['*.jar'], dir: 'libs')
+//    compile project(':app')
+//    implementation project(path: ':androidLibrary', configuration: 'default')
+//    // TODO(jontayler): Terrible hack that should go when we revamp the tools.
+//    compile files('../app/build/intermediates/classes/release/')//.filter{!it.toString().contains("SourceFullProto")}
+//    //compile fileTree(include: ['**/*.*'], dir: '../app/build/intermediates/classes/release')
+//    compile fileTree(include: ['*.jar'], dir: 'libs')
 }
 
-// Gradle fail.  Creating multiple distributions in a distributions {} does not generate
-// multiple executable distributions with the application plugin.
-// So instead we create one monster than can do it all.
-applicationName = "datagen"
-mainClassName = "com.google.android.stardroid.data.Main"
-
-
-
+//task printit << {
+//    System.out.println(project(':app').sourceSets['main'])
+//    System.out.println(project(':app').getBuildDir())
+//}

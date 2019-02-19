@@ -10,9 +10,6 @@ import android.view.View;
 
 import com.google.android.stardroid.util.MiscUtil;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Manages the showing and hiding of controls and system UI in full screen mode.
  *
@@ -40,21 +37,29 @@ public class FullscreenControlsManager {
 
   private Activity mActivity;
   private View mContentView;
-  private List<View> mViewsToHide;
+  private View[] mControlViews;
   private boolean mVisible;
 
   public FullscreenControlsManager(
-          Activity parentActivity, View contentView,
-          List<View> viewsToHide, List<View> viewsToTriggerHide) {
+          Activity parentActivity, View contentView, View[] controlViews, View[] buttonViews) {
     mActivity = parentActivity;
     mVisible = true;
-    mViewsToHide = new ArrayList(viewsToHide);
+    mControlViews = controlViews;
     mContentView = contentView;
 
+/*
+    // Set up the user interaction to manually show or hide the system UI.
+    mContentView.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+        toggle();
+      }
+    });
+*/
     // Upon interacting with UI controls, delay any scheduled hide()
     // operations to prevent the jarring behavior of controls going away
     // while interacting with the UI.
-    for (View buttonView : viewsToTriggerHide) {
+    for (View buttonView : buttonViews) {
       buttonView.setOnTouchListener(mDelayHideTouchListener);
     }
   }
@@ -73,10 +78,6 @@ public class FullscreenControlsManager {
     // created, to briefly hint to the user that UI controls
     // are available.
     delayedHide(1000);
-  }
-
-  public void delayHideTheControls() {
-    delayedHide(AUTO_HIDE_DELAY_MILLIS);
   }
 
   /**
@@ -108,8 +109,8 @@ public class FullscreenControlsManager {
     if (actionBar != null) {
       actionBar.hide();
     }
-    for (View view : mViewsToHide) {
-      view.setVisibility(View.GONE);
+    for (View controlView : mControlViews) {
+      controlView.setVisibility(View.GONE);
     }
     mVisible = false;
 
@@ -156,8 +157,8 @@ public class FullscreenControlsManager {
       if (actionBar != null) {
         actionBar.show();
       }
-      for (View view : mViewsToHide) {
-        view.setVisibility(View.VISIBLE);
+      for (View controlView : mControlViews) {
+        controlView.setVisibility(View.VISIBLE);
       }
     }
   };
