@@ -2,11 +2,11 @@ apply plugin: 'application'
 
 
 dependencies {
-    compile project(path: ':app',configuration:'default')
-    compile 'com.google.guava:guava:21.0'
+    implementation project(path: ':app',configuration:'default')
+    implementation 'com.google.guava:guava:21.0'
     // TODO(jontayler): Terrible hack that should go when we revamp the tools.
-    compile files('../app/build/intermediates/classes/gms/release/')
-    compile fileTree(include: ['*.jar'], dir: 'libs')
+    implementation files('../app/build/intermediates/classes/gms/release/')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
 }
 
 // Gradle fail.  Creating multiple distributions in a distributions {} does not generate
