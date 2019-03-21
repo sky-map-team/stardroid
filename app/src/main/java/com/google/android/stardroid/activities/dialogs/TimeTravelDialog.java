@@ -20,6 +20,7 @@ import android.app.Dialog;
 import android.app.TimePickerDialog;
 import android.app.TimePickerDialog.OnTimeSetListener;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -50,6 +51,7 @@ import java.util.Date;
  */
 public class TimeTravelDialog extends Dialog {
   private static final String TAG = MiscUtil.getTag(TimeTravelDialog.class);
+  private static final int MIN_CLICK_TIME = 1000;
   private Spinner popularDatesMenu;
   private TextView dateTimeReadout;
   private DynamicStarMapActivity parentActivity;
@@ -57,6 +59,7 @@ public class TimeTravelDialog extends Dialog {
   // This is the date we will apply to the controller when the user hits go.
   private Calendar calendar = Calendar.getInstance();
   private AstronomerModel model;
+  private long lastClickTime = 0;
 
   public TimeTravelDialog(final DynamicStarMapActivity parentActivity,
                           final AstronomerModel model) {
@@ -76,6 +79,8 @@ public class TimeTravelDialog extends Dialog {
     Button changeDateButton = (Button) findViewById(R.id.pickDate);
     changeDateButton.setOnClickListener(new View.OnClickListener() {
         public void onClick(View v) {
+          if (SystemClock.elapsedRealtime() - lastClickTime < MIN_CLICK_TIME) return;
+          lastClickTime = SystemClock.elapsedRealtime();
           createDatePicker().show();
         }
       });
@@ -83,6 +88,8 @@ public class TimeTravelDialog extends Dialog {
     Button changeTimeButton = (Button) findViewById(R.id.pickTime);
     changeTimeButton.setOnClickListener(new View.OnClickListener() {
         public void onClick(View v) {
+          if (SystemClock.elapsedRealtime() - lastClickTime < MIN_CLICK_TIME) return;
+          lastClickTime = SystemClock.elapsedRealtime();
           createTimePicker().show();
         }
       });
