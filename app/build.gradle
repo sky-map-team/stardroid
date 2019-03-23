@@ -69,11 +69,11 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:support-annotations:23.2.1'
     implementation 'com.google.guava:guava:19.0'
-    gmsImplementation 'com.google.android.gms:play-services-analytics:8.4.0'
-    gmsImplementation 'com.google.android.gms:play-services-location:8.4.0'
+    gmsImplementation 'com.google.android.gms:play-services-analytics:16.0.7'
+    gmsImplementation 'com.google.android.gms:play-services-location:16.0.0'
     implementation "com.android.support:support-v4:26.1.0"
     implementation 'com.google.dagger:dagger:2.14.1'
-    compileOnly 'javax.annotation:jsr250-api:1.0'  // For annotations not in Android but needed by Dagger
+    implementation 'javax.annotation:jsr250-api:1.0'  // For annotations not in Android but needed by Dagger
     annotationProcessor 'com.google.dagger:dagger-compiler:2.14.1'
     testImplementation 'junit:junit:4.12'
     testImplementation 'org.mockito:mockito-core:1.10.19'
