@@ -103,6 +103,38 @@ public class PreferencesButton extends ImageButton
     Log.d(TAG, "Setting preference " + prefKey + " to... " + isOn);
     if (prefKey != null) {
       preferences.edit().putBoolean(prefKey, isOn).apply();
+      String s;
+      if(prefKey.equals("source_provider.0") && isOn){
+        s = "Stars are visible";
+      }else if(prefKey.equals("source_provider.0") && !isOn){
+        s = "Stars are not visible";
+      }else if(prefKey.equals("source_provider.1") && isOn){
+        s = "Constellation are visible";
+      }else if(prefKey.equals("source_provider.1") && !isOn){
+        s = "Constellation are not visible";
+      }else if(prefKey.equals("source_provider.2") && isOn){
+        s = "Messier are visible";
+      }else if(prefKey.equals("source_provider.2") && !isOn){
+        s = "Messier are not visible";
+      }else if(prefKey.equals("source_provider.3") && isOn){
+        s = "Planets are visible";
+      }else if(prefKey.equals("source_provider.3") && !isOn){
+        s = "Planets are not visible";
+      }else if(prefKey.equals("source_provider.4") && isOn){
+        s = "Grid is visible";
+      }else if(prefKey.equals("source_provider.4") && !isOn){
+        s = "Grid is not visible";
+      }else if(prefKey.equals("source_provider.5") && isOn){
+        s = "Horizon is visible";
+      }else if(prefKey.equals("source_provider.5") && !isOn){
+        s = "Horizon is not visible";
+      }else if(prefKey.equals("source_provider.6") && isOn){
+        s = "Meteors are visible";
+      }else {
+        s = "Meteors are not visible";
+      }
+      Toaster toaster=new Toaster(getContext());
+      toaster.toastShort(s);
     }
   }
 
