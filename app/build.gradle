@@ -80,6 +80,9 @@ dependencies {
     testImplementation 'org.robolectric:robolectric:3.0'
     androidTestImplementation 'junit:junit:4.12'
     androidTestImplementation 'org.easymock:easymock:2.5.2'
+    // retrofit2
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
 }
 
 apply plugin: 'com.google.gms.google-services'
