@@ -25,4 +25,8 @@ public class Toaster {
   public void toastLong(String s) {
     Toast.makeText(context, s, Toast.LENGTH_LONG).show();
   }
+
+  public void toastShort(String s) {
+    Toast.makeText(context, s, Toast.LENGTH_SHORT).show();
+  }
 }
