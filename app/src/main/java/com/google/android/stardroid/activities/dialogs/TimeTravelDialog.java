@@ -33,6 +33,7 @@ import android.widget.Toast;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.DynamicStarMapActivity;
+import com.google.android.stardroid.activities.util.OnSingleClickListener;
 import com.google.android.stardroid.control.AstronomerModel;
 import com.google.android.stardroid.provider.ephemeris.Planet;
 import com.google.android.stardroid.util.MiscUtil;
@@ -74,15 +75,15 @@ public class TimeTravelDialog extends Dialog {
     dateTimeReadout = (TextView) findViewById(R.id.dateDisplay);
     // Capture and wire up the buttons
     Button changeDateButton = (Button) findViewById(R.id.pickDate);
-    changeDateButton.setOnClickListener(new View.OnClickListener() {
-        public void onClick(View v) {
+    changeDateButton.setOnClickListener(new OnSingleClickListener() {
+        public void onSingleClick(View v) {
           createDatePicker().show();
         }
       });
 
     Button changeTimeButton = (Button) findViewById(R.id.pickTime);
-    changeTimeButton.setOnClickListener(new View.OnClickListener() {
-        public void onClick(View v) {
+    changeTimeButton.setOnClickListener(new OnSingleClickListener() {
+        public void onSingleClick(View v) {
           createTimePicker().show();
         }
       });
