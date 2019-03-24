@@ -15,7 +15,7 @@
             android:summary="@string/no_use_gps_pref_hint"
             android:key="no_auto_locate"/>
         <!-- Set the default location to Galileo's birthplace -->
-        <EditTextPreference
+        <com.google.android.stardroid.activities.util.AutoCompletePreference
             android:key="location"
             android:layout="?android:attr/preferenceLayoutChild"
             android:title="@string/location_placename"
