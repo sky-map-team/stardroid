@@ -378,5 +378,93 @@
     <string name="kml_load_error">Не удалось загрузить файл KML</string>
     <string name="load_kml_dialog_title">Загрузка KML</string>
     <string name="load_kml_file">Загрузить</string>
+
+    <!--new translation added by Makhanov Madiyar-->
+    <string name="show_meteors_pref">Метеоритные дожди</string>
+    <string name="hdf" translation_description="hubble object">Область глубокого обзора Хаббла</string>
+    <string name="menu_diagnostics">Диагностика</string>
+    <string name="alpha_centauri" translation_description="Name of the star Alpha Centauri">Альфа Центавра</string>
+    <string name="rigil_kent" translation_description="Name of the star Rigil Kent">Ригель Кентаурус</string>
+    <string name="e_lyrae" translation_description="Name of the star ε Lyrae">ε Лиры</string>
+    <string name="rigil_kentaurus_a" translation_description="Name of the Star Rigil Kentaurus A">Ригель Центавра А</string>
+
+    <string name="enable_analytics">Отправить статистику использования</string>
+    <string name="enable_analytics_desc">Сделайте Sky Map лучше, отправив анонимные данные в Google Analytics</string>
+    <string name="leonids" translation_description="Meteor Shower">Леониды</string>
+    <string name="geminids" translation_description="Meteor Shower">Геминиды</string>
+    <string name="quadrantids" translation_description="Meteor Shower">Квадрантиды</string>
+    <string name="lyrids" translation_description="Meteor Shower">Лириды</string>
+    <string name="aquariids" translation_description="Meteor Shower">эта-Аквариды</string>
+    <string name="deltaaquariids" translation_description="Meteor Shower">дельта-Аквариды</string>
+    <string name="perseids" translation_description="Meteor Shower">Персеиды</string>
+    <string name="orionids" translation_description="Meteor Shower">Ориониды</string>
+    <string name="puppidvelids" translation_description="Meteor Shower">Пуппиды-Велиды</string>
+    <string name="ursids" translation_description="Meteor Shower">Урсиды</string>
+
+    <string name="no_sensor_warning">На вашем устройстве могут отсутствовать датчики ориентации - автоматический режим может не работать</string>
+    <string name="warning_dialog_title">Плохие новости!</string>
+    <string name="missing_sensor_dialog_text">\n
+        К сожалению, на вашем устройстве может отсутствовать
+     датчики, которые нужны Sky Map.\n\n
+        Чтобы показать вам небо в направлении, указанном вашим телефоном, Sky Map
+     нужен как встроенный компас, так и акселерометр.  Ваше устройство сообщает, что один из них
+        отсутствует.  Хорошей новостью является то, что некоторые устройства (например, некоторые телефоны Moto E) ложно утверждают
+         что не имеют компас, но на самом деле работают.\n\n
+
+        Если на вашем устройстве действительно отсутствует датчик, то автоматический режим не будет работать.  Тем не менее, вы
+         можно по-прежнему использовать Sky Map на этом устройстве в ручном режиме, где можете вращать и растягивать
+         карту пальцами.
+    </string>
+    <string name="do_not_show_again">Не показывать это сообщение снова</string>
+    <string name="title_activity_diagnostic">Диагностика</string>
+    <string name="location_rationale_title">Почему мы спрашиваем ваше местоположение?</string>
+    <string name="location_rationale_text">Звезды, которые вы видите, зависят от того, где вы находитесь на планете Земля. Без вашего местоположения мы не сможем показать вам точную карту. Если вы не хотите, чтобы ваш телефон сообщал нам ваше местоположение, вы можете указать его вручную в настройках. Вам нужно только предоставить ближайший город.</string>
+    <string name="play_services_error">Предупреждение: Ошибка служб Google Play - автоматическое определение местоположения может не работать</string>
+    <string name="sensor_absent">Отсутствует</string>
+    <string name="sensor_accuracy_unknown">Точность: неизвестна</string>
+    <string name="sensor_accuracy_unreliable">Точность: Ненадежна</string>
+    <string name="sensor_accuracy_low">Точность: низкая</string>
+    <string name="sensor_accuracy_medium">Точность: средняя</string>
+    <string name="sensor_accuracy_high">Точность: высокая</string>
+    <string name="sensor_accuracy_nocontact">Точность: нет данных</string>
+    <string name="diagnostics_activity_general_heading">Общие</string>
+    <string name="diagnostics_activity_phone">Устройство</string>
+    <string name="diagnostics_activity_android_version">Версия Android</string>
+    <string name="diagnostics_activity_sky_map_version">Версия Sky Map</string>
+    <string name="diagnostics_activity_sensors_heading">Датчики</string>
+    <string name="diagnostics_activity_compass">Компас</string>
+    <string name="diagnostics_activity_accelerometer">Акселерометр</string>
+    <string name="diagnostics_activity_rotation_vector">Вращение</string>
+    <string name="diagnostics_activity_gyroscope">Гироскоп</string>
+    <string name="diagnostics_activity_light_level">Уровень освещенности</string>
+    <string name="diagnostics_activity_location_and_time_heading">Местоположение и время</string>
+    <string name="diagnostics_activity_gps">GPS</string>
+    <string name="diagnostics_activity_location">Местоположение (ш, д)</string>
+    <string name="diagnostics_activity_pointing_ra_dec">Указывающий снимок</string>
+    <string name="diagnostics_activity_magnetic_correction">Магнитная коррекция</string>
+    <string name="diagnostics_activity_local_datetime">Местное время</string>
+    <string name="diagnostics_activity_universal_time">Глобальное время</string>
+    <string name="diagnostics_activity_network_heading">Сеть</string>
+    <string name="diagnostics_activity_connection">Соединение</string>
+    <string name="diagnostics_activity_rotation_matrix">Матрица вращения</string>
+    <string name="enabled">Включено</string>
+    <string name="disabled">Выключено</string>
+    <string name="permission_disabled">Разрешение отключено</string>
+    <string name="no_gps">Нет GPS</string>
+    <string name="connected">Соединено</string>
+    <string name="disconnected">Не соединено</string>
+    <string name="wifi">" (wifi)"</string>
+    <string name="cell_network">" (мобильный)"</string>
+    <string name="menu_calibrate">Калибровка</string>
+    <string name="compass_calibration_activity_heading_compass">Компас -</string>
+    <string name="compass_calibration_activity_do_not_show_this_again">Не показывать это снова</string>
+    <string name="compass_calibration_activity_warning">Ваш компас должен быть откалиброван</string>
+    <string name="sensor_reverse_preference_title">Обратный магнитный Z</string>
+    <string name="sensor_reverse_preference_summary">Исправлено для телефонов с неправильно установленными датчиками - требуется перезагрузка</string>
+    <string name="whats_new_dialog_title">Что нового</string>
+    <string name="disable_gyro_preference_title">Отключить гироскоп</string>
+    <string name="disable_gyro_preference_summary">Не на всех устройствах есть гироскоп - если у вас есть, то вы получите лучшие результаты, если он включен, а этот флажок снят. С другой стороны, если ваше устройство не имеет гироскопа, Sky Map, вероятно, не будет работать, если вы снимите этот флажок.</string>
+    <string name="rotate_horizon_preference_title">Повернуть горизонтально</string>
+    <string name="rotate_horizon_preference_summary">Поворот на 90 градусов по горизонтали (для экранов с альбомной ориентацией, таких как умные очки)</string>
 </resources>
 
