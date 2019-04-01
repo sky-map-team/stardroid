@@ -84,15 +84,30 @@ public class EditSettingsActivity extends PreferenceActivity {
   public void onStart() {
     super.onStart();
     analytics.trackPageView(Analytics.EDIT_SETTINGS_ACTIVITY);
-    Preference locationPreference = preferenceFragment.findPreference(LOCATION);
-    // TODO(johntaylor) if the lat long prefs get changed manually, we should really
-    // reset the placename to "" too.
+    final Preference locationPreference = preferenceFragment.findPreference(LOCATION);
+    Preference latitudePreference = preferenceFragment.findPreference(LATITUDE);
+    Preference longitudePreference = preferenceFragment.findPreference(LONGITUDE);
     locationPreference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
     
       public boolean onPreferenceChange(Preference preference, Object newValue) {
         Log.d(TAG, "Place to be updated to " + newValue);
-        boolean success = setLatLongFromPlace(newValue.toString());
-        return success;
+        return setLatLongFromPlace(newValue.toString());
+      }
+    });
+  
+    latitudePreference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+    
+      public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ((EditTextPreference) locationPreference).setText("");
+        return true;
+      }
+    });
+  
+    longitudePreference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+    
+      public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ((EditTextPreference) locationPreference).setText("");
+        return true;
       }
     });
 
