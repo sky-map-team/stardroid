@@ -12,7 +12,7 @@
     android:id="@+id/main_sky_view"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:layout_weight="1">
+    android:layout_weight="1">+
     <android.opengl.GLSurfaceView
       android:layout_width="fill_parent"
       android:layout_height="fill_parent"
@@ -38,7 +38,6 @@
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"
         android:visibility="gone" />
-
       <!-- Include a place for the search controls bar -->
       <RelativeLayout
         android:id="@+id/search_control_bar"
@@ -47,13 +46,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#20990099"
-        android:visibility="gone">
+        android:visibility="gone"
+          android:layout_marginTop="?android:attr/actionBarSize">
         <ImageView
           android:id="@+id/search_icon"
           android:layout_width="34dip"
           android:layout_height="wrap_content"
           android:src="@drawable/search_lens_very_small"
-          android:paddingTop="10dip" />
+          android:paddingTop="10dip"/>
         <TextView
           android:id="@+id/search_status_label"
           android:layout_width="fill_parent"
