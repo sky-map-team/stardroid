@@ -52,7 +52,7 @@ public class LocationManagerCheck {
 
         builder.setMessage(
                 "You need to activate location service to use this feature. Please turn on network or GPS mode in location settings")
-                .setTitle("LostyFound")
+                .setTitle("Enable Location")
                 .setCancelable(false)
                 .setPositiveButton("Settings",
                         new DialogInterface.OnClickListener() {
