@@ -13,7 +13,10 @@
 // limitations under the License.
 package com.google.android.stardroid;
 
+import android.Manifest;
+import android.app.Activity;
 import android.app.Application;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -22,8 +25,11 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.Build;
 import android.preference.PreferenceManager;
+import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 
 import com.google.android.stardroid.layers.LayerManager;
@@ -46,51 +52,84 @@ import javax.inject.Inject;
  * @author John Taylor
  */
 public class StardroidApplication extends Application {
-  private static final String TAG = MiscUtil.getTag(StardroidApplication.class);
-  private static final String PREVIOUS_APP_VERSION_PREF = "previous_app_version";
-  private static final String NONE = "Clean install";
-  private static final String UNKNOWN = "Unknown previous version";
+    private static final String TAG = MiscUtil.getTag(StardroidApplication.class);
+    private static final String PREVIOUS_APP_VERSION_PREF = "previous_app_version";
+    private static final String NONE = "Clean install";
+    private static final String UNKNOWN = "Unknown previous version";
 
-  @Inject SharedPreferences preferences;
-  // We keep a reference to this just to start it initializing.
-  @Inject LayerManager layerManager;
-  @Inject Analytics analytics;
-  @Inject SensorManager sensorManager;
+    @Inject
+    SharedPreferences preferences;
+    // We keep a reference to this just to start it initializing.
+    @Inject
+    LayerManager layerManager;
+    @Inject
+    Analytics analytics;
+    @Inject
+    SensorManager sensorManager;
 
-  // We need to maintain references to this object to keep it from
-  // getting gc'd.
-  @Inject PreferenceChangeAnalyticsTracker preferenceChangeAnalyticsTracker;
-  private ApplicationComponent component;
+    // We need to maintain references to this object to keep it from
+    // getting gc'd.
+    @Inject
+    PreferenceChangeAnalyticsTracker preferenceChangeAnalyticsTracker;
+    private ApplicationComponent component;
 
-  @Override
-  public void onCreate() {
-    Log.d(TAG, "StardroidApplication: onCreate");
-    super.onCreate();
+    @Override
+    public void onCreate() {
+        Log.d(TAG, "StardroidApplication: onCreate");
+        super.onCreate();
 
-    component = DaggerApplicationComponent.builder()
-        .applicationModule(new ApplicationModule(this))
-        .build();
-    component.inject(this);
+        component = DaggerApplicationComponent.builder()
+                .applicationModule(new ApplicationModule(this))
+                .build();
+        component.inject(this);
 
-    Log.i(TAG, "OS Version: " + android.os.Build.VERSION.RELEASE
-            + "(" + android.os.Build.VERSION.SDK_INT + ")");
-    String versionName = getVersionName();
-    Log.i(TAG, "Sky Map version " + versionName + " build " + getVersion());
+        Log.i(TAG, "OS Version: " + android.os.Build.VERSION.RELEASE
+                + "(" + android.os.Build.VERSION.SDK_INT + ")");
+        String versionName = getVersionName();
+        Log.i(TAG, "Sky Map version " + versionName + " build " + getVersion());
 
-    // This populates the default values from the preferences XML file. See
-    // {@link DefaultValues} for more details.
-    PreferenceManager.setDefaultValues(this, R.xml.preference_screen, false);
+        // This populates the default values from the preferences XML file. See
+        // {@link DefaultValues} for more details.
+        PreferenceManager.setDefaultValues(this, R.xml.preference_screen, false);
 
-    setUpAnalytics(versionName);
+        setUpAnalytics(versionName);
 
-    performFeatureCheck();
+        checkLocationPerms();
 
-    Log.d(TAG, "StardroidApplication: -onCreate");
-  }
+        performFeatureCheck();
 
-  public ApplicationComponent getApplicationComponent() {
-    return component;
-  }
+        Log.d(TAG, "StardroidApplication: -onCreate");
+    }
+
+    public ApplicationComponent getApplicationComponent() {
+        return component;
+    }
+
+    private void checkLocationPerms() {
+        LocationManagerCheck locationManagerCheck = new LocationManagerCheck(this);
+        Location location = null;
+        LocationManager locationManager =
+                (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
+
+        if (locationManagerCheck.isLocationServiceAvailable()) {
+
+            if (locationManagerCheck.getProviderType() == 1) {
+                if (ActivityCompat.checkSelfPermission(this,
+                        Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager
+                        .PERMISSION_GRANTED
+                        && ActivityCompat.checkSelfPermission(this,
+                        Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager
+                        .PERMISSION_GRANTED) {
+                    location = locationManager
+                            .getLastKnownLocation(LocationManager.GPS_PROVIDER);
+                    return;
+                }else if (locationManagerCheck.getProviderType() == 2)
+                    location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+            }
+            } else {
+                locationManagerCheck.createLocationServiceError(getApplicationContext());
+            }
+        }
 
   private void setUpAnalytics(String versionName) {
     analytics.setCustomVar(Slice.ANDROID_OS, Integer.toString(Build.VERSION.SDK_INT));
