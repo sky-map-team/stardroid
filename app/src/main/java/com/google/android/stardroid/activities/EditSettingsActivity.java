@@ -85,8 +85,10 @@ public class EditSettingsActivity extends PreferenceActivity {
     super.onStart();
     analytics.trackPageView(Analytics.EDIT_SETTINGS_ACTIVITY);
     final Preference locationPreference = preferenceFragment.findPreference(LOCATION);
-    Preference latitudePreference = preferenceFragment.findPreference(LATITUDE);
-    Preference longitudePreference = preferenceFragment.findPreference(LONGITUDE);
+    final Preference latitudePreference = preferenceFragment.findPreference(LATITUDE);
+    final Preference longitudePreference = preferenceFragment.findPreference(LONGITUDE);
+    latitudePreference.setSummary(sharedPreferences.getString(LATITUDE, "Degrees"));
+    longitudePreference.setSummary(sharedPreferences.getString(LONGITUDE, "Degrees"));
     locationPreference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
     
       public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -99,6 +101,7 @@ public class EditSettingsActivity extends PreferenceActivity {
     
       public boolean onPreferenceChange(Preference preference, Object newValue) {
         ((EditTextPreference) locationPreference).setText("");
+        latitudePreference.setSummary(newValue.toString());
         return true;
       }
     });
@@ -107,6 +110,7 @@ public class EditSettingsActivity extends PreferenceActivity {
     
       public boolean onPreferenceChange(Preference preference, Object newValue) {
         ((EditTextPreference) locationPreference).setText("");
+        longitudePreference.setSummary(newValue.toString());
         return true;
       }
     });
@@ -182,6 +186,8 @@ public class EditSettingsActivity extends PreferenceActivity {
     EditTextPreference longPreference = (EditTextPreference) preferenceFragment.findPreference(LONGITUDE);
     latPreference.setText(Double.toString(latitude));
     longPreference.setText(Double.toString(longitude));
+    longPreference.setSummary(sharedPreferences.getString(LATITUDE, "Degrees"));
+    latPreference.setSummary(sharedPreferences.getString(LONGITUDE, "Degrees"));
     String message = String.format(getString(R.string.location_place_found), latitude, longitude);
     Log.d(TAG, message);
     Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
