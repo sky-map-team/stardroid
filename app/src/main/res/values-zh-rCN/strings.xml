@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Please add  translation_description="" attributes to Strings to assist the translators. -->
 <resources>
     <string name="app_name" translation_description="Application Title">星空地图</string>
     <string name="menu_settings">设置</string>
@@ -28,6 +29,7 @@
     <string name="location_place_found">地点已找到。正在设置纬度 %1$f 和经度 %2$f</string>
     <string name="use_magnetic_correction">使用磁力修正</string>
     <string name="use_magnetic_correction_hint">利用您掌握的地理位置知识，将方位从地球磁场北极更正为实际的地理北极</string>
+    <!-- This string is too long and currently unused -->
     <string name="provider_prefs" translation_description="Dialog box title for a preferences dialog">显示...</string>
     <string name="show_stars_pref">恒星</string>
     <string name="show_constellations_pref">星座</string>
@@ -36,10 +38,12 @@
     <string name="show_grid_pref">赤经赤纬网格</string>
     <string name="show_horizon_pref">水平线</string>
     <string name="show_sky_gradient">天空梯度</string>
+    <string name="show_meteors_pref">流星雨</string>
     <string name="sensor_prefs">传感器设置</string>
     <string name="sensor_speed">传感器速度</string>
     <string name="sensor_damping" translation_description="The amount of       smoothing applied to the sensor outputs.">阻尼</string>
     <string name="ecliptic">黄道</string>
+    <!-- Just in case we decide to have such a layer for the 4/24 launch -->
     <string name="show_hubble_layer_pref">哈勃图片</string>
     <string name="malformed_loc_error">纬度或经度设置不是数字。</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">接受</string>

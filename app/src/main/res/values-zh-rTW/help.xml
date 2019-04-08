@@ -1,4 +1,5 @@
-<resources><string name="help_text" translation_description="Please do not change the &lt; and &gt; markup">&lt;big&gt;&lt;b&gt;星空圖 Android 版&lt;/b&gt;&lt;/big&gt;&lt;br/&gt;
+<resources>
+<string name="help_text" translation_description="Please do not change the &lt; and &gt; markup">&lt;big&gt;&lt;b&gt;星空圖 Android 版&lt;/b&gt;&lt;/big&gt;&lt;br/&gt;
 &lt;i&gt;版本 %s&lt;/i&gt;&lt;br/&gt;
 
 &lt;i&gt;https://github.com/sky-map-team/stardroid&lt;/i&gt;&lt;br/&gt;&lt;br/&gt;
@@ -86,4 +87,5 @@ SFA 星圖 (http://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html)&lt;
 「哈伯望遠鏡影像」係由 NASA 的「太空望遠鏡科學研究所」提供
 (http://hubblesite.org/)&lt;br/&gt;
 M31 image Peter Kennett (https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg)&lt;br/&gt;
-</string></resources>
+</string>
+</resources>
