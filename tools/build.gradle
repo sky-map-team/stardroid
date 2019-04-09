@@ -5,7 +5,7 @@ dependencies {
     implementation project(path: ':app',configuration:'default')
     implementation 'com.google.guava:guava:21.0'
     // TODO(jontayler): Terrible hack that should go when we revamp the tools.
-    implementation files('../app/build/intermediates/classes/gms/release/')
+    implementation files('../app/build/intermediates/classes/')
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 }
 
