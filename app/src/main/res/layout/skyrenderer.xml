@@ -21,7 +21,7 @@
     <View
       android:layout_width="fill_parent"
       android:layout_height="fill_parent"
-      android:background="#ff990099"
+      android:background="#ff990090"
       android:visibility="invisible"
       android:id="@+id/view_mask"/>
 
