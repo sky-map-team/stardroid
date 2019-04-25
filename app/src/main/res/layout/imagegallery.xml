@@ -13,10 +13,11 @@
       android:layout_height="wrap_content"
       android:text="@string/hubble_image_gallery_title"
       android:gravity="center_horizontal"/>
-  <Gallery
-      android:id="@+id/image_gallery"
-      android:layout_width="fill_parent"
-      android:layout_height="wrap_content"
-      android:unselectedAlpha = "0.4"
-      android:spacing = "10px"/>
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:id="@+id/gallery_list"
+        android:layout_margin="10dp"
+        android:scrollbars="vertical"
+        android:layout_height="wrap_content">
+    </android.support.v7.widget.RecyclerView>
 </LinearLayout>
