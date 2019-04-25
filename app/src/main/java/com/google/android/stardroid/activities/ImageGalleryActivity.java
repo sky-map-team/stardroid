@@ -17,24 +17,29 @@ package com.google.android.stardroid.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
-import android.widget.Gallery;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.util.ActivityLightLevelChanger;
 import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
+import com.google.android.stardroid.gallery.Gallery;
 import com.google.android.stardroid.gallery.GalleryFactory;
 import com.google.android.stardroid.gallery.GalleryImage;
 import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.MiscUtil;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -56,37 +61,53 @@ public class ImageGalleryActivity extends InjectableActivity {
   @Inject
   Analytics analytics;
 
-  private class ImageAdapter extends BaseAdapter {
-    public int getCount() {
-      return galleryImages.size();
+  private class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.MyViewHolder> {
+
+
+    class MyViewHolder extends RecyclerView.ViewHolder {
+
+      ImageView galleryImage;
+      TextView galleryTitle;
+      LinearLayout galleryItemLayout;
+      MyViewHolder(View v) {
+        super(v);
+
+        this.galleryImage = v.findViewById(R.id.image_gallery_image);
+        this.galleryTitle = v.findViewById(R.id.image_gallery_title);
+        this.galleryItemLayout = v.findViewById(R.id.galleryItemLayout);
+      }
     }
 
-    public Object getItem(int position) {
-      return position;
+    @Override
+    public ImageAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+      View view = LayoutInflater.from(parent.getContext())
+              .inflate(R.layout.imagedisplaypanel, parent, false);
+      return new MyViewHolder(view);
     }
+
+    @Override
+    public void onBindViewHolder(ImageAdapter.MyViewHolder holder, final int position) {
+
+      holder.galleryImage.setImageResource(galleryImages.get(position).imageId);
+      holder.galleryTitle.setText(galleryImages.get(position).name);
+
+      holder.galleryItemLayout.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+          showImage(position);
+        }
+      });
+    }
+
     public long getItemId(int position) {
       return position;
     }
 
-    /**
-     * Returns a new ImageView to be displayed, depending on the position passed.
-     */
-    public View getView(int position, View convertView, ViewGroup parent) {
-      Log.d(TAG, "Get view called for position "+ position);
-      ViewGroup imagePanel;
-      if (convertView != null && convertView instanceof ViewGroup) {
-        imagePanel = (ViewGroup) convertView;
-      } else {
-        imagePanel = (ViewGroup) getLayoutInflater().inflate(
-            R.layout.imagedisplaypanel, parent, false);
-      }
-      GalleryImage galleryImage = galleryImages.get(position);
-      ImageView imageView = (ImageView) imagePanel.findViewById(R.id.image_gallery_image);
-      imageView.setImageResource(galleryImage.imageId);
-      TextView imageLabel = (TextView) imagePanel.findViewById(R.id.image_gallery_title);
-      imageLabel.setText(galleryImage.name);
-      return imagePanel;
+    @Override
+    public int getItemCount() {
+      return galleryImages.size();
     }
+
   }
 
   @Override
@@ -99,6 +120,7 @@ public class ImageGalleryActivity extends InjectableActivity {
         PreferenceManager.getDefaultSharedPreferences(this));
     this.galleryImages = GalleryFactory.getGallery(getResources()).getGalleryImages();
     addImagesToGallery();
+
   }
 
   @Override
@@ -120,15 +142,12 @@ public class ImageGalleryActivity extends InjectableActivity {
   }
 
   private void addImagesToGallery() {
-    Gallery gallery = (Gallery) findViewById(R.id.image_gallery);
+
+    RecyclerView mRecyclerView = findViewById(R.id.gallery_list);
+    RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this);
+    mRecyclerView.setLayoutManager(mLayoutManager);
     ImageAdapter imageAdapter = new ImageAdapter();
-    gallery.setAdapter(imageAdapter);
-    gallery.setOnItemClickListener(new OnItemClickListener() {
-      @Override
-      public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-        showImage(position);
-      }
-  });
+    mRecyclerView.setAdapter(imageAdapter);
   }
 
   /**
