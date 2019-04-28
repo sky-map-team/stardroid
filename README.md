@@ -56,8 +56,17 @@ how to do this is in the tools directory.  If you update any strings in Sky Map 
 have to regenerate the star data files or the app will crash or put incorrect labels on things.
 
 # Code and Language Contributions
+Yes, we know that Sky Map's code and UX is very dated. It needs a big overhaul.
 
-In general, bug fix contributions are welcome, though please email us first before embarking on any major changes or feature additions.  We're particularly grateful for fixed or new translations.
+In general, bug fix contributions are welcome, for example simple one file fixes or dependency version upgrades.  We're particularly grateful for fixed or new translations since as the app is developed we lose the 100% coverage of non-English languages that we once had.
+
+**However, please email us (or file a feature request) first before embarking on any major changes or feature additions. We may have a different vision for the direction of the app and it would be a pity to do work that we can't accept and would be wasted.**
+
+It is likely we'll be slow to respond to emails and PR requests. Depending on what else is going on it might be days, it might be months. I do apologize for that - life is busy. Sometimes the reply might be simply to point you at this documentation, which will seem very ungrateful and unfriendly. Again, I apologize, but it's the only way to keep up with the emails.
+
+Small, focussed PRs to fix bugs or upgrade dependencies etc are very easy for us to approve. If your PR does too much it might get stalled because even if 90% of it is welcome there might be 10% that we're not happy with. So keep them small if you can. Plus, we'll be able to review them faster.
+
+Thanks for your contributions! They're definitely appreciated even if our slowness to respond might make it seem otherwise.
 
 ## Coding Style
 

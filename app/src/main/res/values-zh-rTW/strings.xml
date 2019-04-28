@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Please add  translation_description="" attributes to Strings to assist the translators. -->
 <resources>
     <string name="app_name" translation_description="Application Title">天象圖</string>
     <string name="menu_settings">設定</string>
@@ -28,6 +29,7 @@
     <string name="location_place_found">已找到地點，正在設定緯度%1$f與經度%2$f</string>
     <string name="use_magnetic_correction">使用地磁校正</string>
     <string name="use_magnetic_correction_hint">運用您所掌握的位置資訊，將方位從地磁北方修正至地理北方</string>
+    <!-- This string is too long and currently unused -->
     <string name="provider_prefs" translation_description="Dialog box title for a preferences dialog">顯示...</string>
     <string name="show_stars_pref">星體</string>
     <string name="show_constellations_pref">星座</string>
@@ -35,15 +37,18 @@
     <string name="show_planets_pref">行星</string>
     <string name="show_grid_pref">赤道座標線</string>
     <string name="show_horizon_pref">地平線</string>
-    <string name="show_sky_gradient">星空漸層色</string>
+    <string name="show_sky_gradient" translation_description="This is a shading of the color of the sky used for effect">星空漸層色</string>
+    <string name="show_meteors_pref">流星雨</string>
     <string name="sensor_prefs">感應器設定</string>
-    <string name="sensor_speed">感應器速度</string>
-    <string name="sensor_damping" translation_description="The amount of       smoothing applied to the sensor outputs.">阻尼</string>
+    <string name="sensor_speed" translation_description="Old, non gyro sensors only: How quickly the sensor should send us data">感應器速度</string>
+    <string name="sensor_damping" translation_description="Old, non gyro sensors only: The amount of smoothing applied to the sensor outputs.">阻尼</string>
     <string name="ecliptic">黃道</string>
+    <!-- Just in case we decide to have such a layer for the 4/24 launch -->
     <string name="show_hubble_layer_pref">哈伯望遠鏡影像</string>
     <string name="malformed_loc_error">經緯度設定值並非數字。</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">接受</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">不，謝謝</string>
+    <string name="dialog_ok_button">OK</string>
     <string name="menu_help" translation_description="menu item to show \'Help\' box">說明</string>
     <string name="help_dialog_title">星空圖說明</string>
     <string name="eula_dialog_title">使用者授權協議</string>
@@ -53,46 +58,50 @@
     <string name="menu_zoom_out">縮小</string>
     <string name="menu_toggle_dim">切換至夜間模式</string>
     <string name="zenith">天頂</string>
-    <string name="nadir">NADIR</string>
+    <string name="nadir">天底</string>
     <string name="north">北</string>
     <string name="east">東</string>
     <string name="west">西</string>
     <string name="south">南</string>
     <string name="search_label">搜尋星空</string>
-    <string name="search_hint" translation_description="an example search target">例如火星</string>
+    <string name="search_hint" translation_description="an example search target">例如：火星</string>
     <string name="no_search_title">沒有相符的結果</string>
     <string name="no_search_results_text">找不到相符的結果。</string>
     <string name="many_search_results_title">您是不是要查：</string>
     <string name="many_search_results_text">請選取一個結果</string>
     <string name="searching_for_text">正在搜尋%s...</string>
     <string name="found_target_text">找到%s。</string>
-    <string name="other">其他</string>
+    <string name="other" translation_description="A preference category (ie preferences that don't belong in any other category)">其他</string>
     <string name="planetary_images">顯示行星圖片</string>
     <string name="menu_time">時光旅行</string>
     <string name="time_travel_start_message">時光旅行...</string>
     <string name="time_travel_start_message_alt">時光轉移到 %s...</string>
     <string name="time_travel_close_message">回到現在...</string>
-    <string name="popular_dates_prompt" translation_description="label for a list of dates the user can choose from">熱門日期</string>
-    <string name="custom_date_prompt" translation_description="label telling the user to manually specify a data">或是自行選取日期</string>
+    <!--  -->
+    <string name="popular_dates_prompt" translation_description="Label for a list of dates the user can choose from">熱門日期</string>
+    <string name="custom_date_prompt" translation_description="Label telling the user to manually specify a date">或是自行選取日期</string>
     <string name="change_date_prompt">變更日期</string>
     <string name="change_time_prompt">變更時間</string>
-    <string name="now_visiting" translation_description="tells the user what time they are visiting">時間切換到：%s</string>
-    <string name="time_travel_label_past" translation_description="label showing that we are in the past">時光旅行：過去</string>
-    <string name="time_travel_label_future" translation_description="label showing that we are in the future">時光旅行：未來</string>
-    <string name="time_travel_stopped" translation_description="label showing rate of travel through time">時光旅行停滯</string>
-    <string name="time_travel_second_speed" translation_description="label showing rate of travel through time">時光快轉，速度：1 秒/秒</string>
-    <string name="time_travel_minute_speed" translation_description="label showing rate of travel through time">時光快轉，速度：1 分鐘/秒</string>
-    <string name="time_travel_10minute_speed" translation_description="label showing rate of travel through time">時光快轉，速度：10 分鐘/秒</string>
-    <string name="time_travel_hour_speed" translation_description="label showing rate of travel through time">時光快轉，速度：1 小時/秒</string>
-    <string name="time_travel_day_speed" translation_description="label showing rate of travel through time">時光快轉，速度：1 天/秒</string>
-    <string name="time_travel_week_speed" translation_description="label showing rate of travel through time">時光快轉，速度：1 週/秒</string>
-    <string name="time_travel_second_speed_back" translation_description="label showing rate of travel through time">時光倒轉，速度：1 秒/秒</string>
-    <string name="time_travel_minute_speed_back" translation_description="label showing rate of travel through time">時光倒轉，速度：1 分鐘/秒</string>
-    <string name="time_travel_10minute_speed_back" translation_description="label showing rate of travel through time">時光倒轉，速度：10 分鐘/秒</string>
-    <string name="time_travel_hour_speed_back" translation_description="label showing rate of travel through time">時光倒轉，速度：1 小時/秒</string>
-    <string name="time_travel_day_speed_back" translation_description="label showing rate of travel through time">時光倒轉，速度：1 天/秒</string>
-    <string name="time_travel_week_speed_back" translation_description="label showing rate of travel through time">時光倒轉，速度：1 週/秒</string>
+    <string name="now_visiting"
+            translation_description="used in time travel dialog to tell the user what time they are visiting, time formatted as yyyy.mm.dd at hh.mm.ss + timezone">
+        時間切換到：%s</string>
+    <string name="time_travel_label_past" translation_description="Label showing that we are in the past">時光旅行：過去</string>
+    <string name="time_travel_label_future" translation_description="Label showing that we are in the future">時光旅行：未來</string>
+    <string name="time_travel_stopped" translation_description="Label showing rate of travel through time">時光旅行停滯</string>
+    <string name="time_travel_second_speed" translation_description="Label showing rate of travel through time">時光快轉，速度：1 秒/秒</string>
+    <string name="time_travel_minute_speed" translation_description="Label showing rate of travel through time">時光快轉，速度：1 分鐘/秒</string>
+    <string name="time_travel_10minute_speed" translation_description="Label showing rate of travel through time">時光快轉，速度：10 分鐘/秒</string>
+    <string name="time_travel_hour_speed" translation_description="Label showing rate of travel through time">時光快轉，速度：1 小時/秒</string>
+    <string name="time_travel_day_speed" translation_description="Label showing rate of travel through time">時光快轉，速度：1 天/秒</string>
+    <string name="time_travel_week_speed" translation_description="Label showing rate of travel through time">時光快轉，速度：1 週/秒</string>
+    <string name="time_travel_second_speed_back" translation_description="Label showing rate of travel through time">時光倒轉，速度：1 秒/秒</string>
+    <string name="time_travel_minute_speed_back" translation_description="Label showing rate of travel through time">時光倒轉，速度：1 分鐘/秒</string>
+    <string name="time_travel_10minute_speed_back" translation_description="Label showing rate of travel through time">時光倒轉，速度：10 分鐘/秒</string>
+    <string name="time_travel_hour_speed_back" translation_description="Label showing rate of travel through time">時光倒轉，速度：1 小時/秒</string>
+    <string name="time_travel_day_speed_back" translation_description="Label showing rate of travel through time">時光倒轉，速度：1 天/秒</string>
+    <string name="time_travel_week_speed_back" translation_description="Label showing rate of travel through time">時光倒轉，速度：1 週/秒</string>
     <string name="use_sound_effects" translation_description="A preferences menu label">啟用音效</string>
+
     <string name="enable_layer_toast">啟用「%s」圖層</string>
     <string name="disable_layer_toast">停用「%s」圖層</string>
     <string name="menu_gallery">圖庫</string>
@@ -100,11 +109,14 @@
     <string name="gallery_image_back_btn">返回圖庫</string>
     <string name="hubble_image_gallery_title">星空圖哈伯望遠鏡圖庫</string>
     <string name="hubble_image">哈伯望遠鏡影像</string>
+    <!--  TODO(johntaylor): currently unused -->
+
     <string name="search_target_found_message" translation_description="displayed when a search target has been located">您已找到：</string>
     <string name="search_overlay_title" translation_description="title for search overlay">將手機指向箭頭方向</string>
     <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">正在尋找：</string>
     <string name="sun_wont_set_message">您目前的位置未來 24 小時之內看不到日落。</string>
     <string name="sun_wont_rise_message">您目前的位置未來 24 小時之內看不到日出。</string>
+
     <string name="sun">太陽</string>
     <string name="moon">月球</string>
     <string name="mercury">水星</string>
@@ -134,11 +146,13 @@
     <string name="hdf" translation_description="hubble object">哈伯深場影像</string>
     <string name="rho_oph" translation_description="hubble object">心宿增四星</string>
     <string name="menu_tos">服務條款</string>
+    <string name="menu_diagnostics">診斷</string>
+    <!-- TODO(johntaylor): the following might be deleted in favor of an icon -->
     <string name="control_panel_btn" translation_description="Label for the control panel button">控制台</string>
-    <string name="allow_rotation_pref" translation_description="preference to enable rotation of the map with a two finger movement">多點觸控旋轉</string>
-    <string name="allow_rotation_pref_desc" translation_description="a qualification for the Multitouch rotation option">視手機是否支援</string>
+
     <string name="north_pole">北極</string>
     <string name="south_pole">南極</string>
+
     <string name="andromeda" translation_description="Name of the Andromeda constellation">仙女座</string>
     <string name="aquarius" translation_description="Name of the Aquarius constellation">寶瓶座</string>
     <string name="aquila" translation_description="Name of the Aquila constellation">天鷹座</string>
@@ -189,6 +203,7 @@
     <string name="big_dipper" translation_description="Name of the Big Dipper constellation">北斗七星</string>
     <string name="great_bear" translation_description="Name of the Great Bear constellation">大熊座</string>
     <string name="plough" translation_description="Name of the Plough constellation">北斗七星</string>
+
     <string name="sirius" translation_description="Name of the Star Sirius">天狼星</string>
     <string name="canopus" translation_description="Name of the Star Canopus">老人星</string>
     <string name="arcturus" translation_description="Name of the Star Arcturus">大角星</string>
@@ -260,6 +275,7 @@
     <string name="alpha_centauri" translation_description="Name of the star Alpha Centauri">南門二</string>
     <string name="rigil_kent" translation_description="Name of the star Rigil Kent">南門二</string>
     <string name="e_lyrae" translation_description="Name of the star ε Lyrae">織女二</string>
+
     <string name="m1" translation_description="Name of the Messier object M1">M1 蟹狀星雲</string>
     <string name="m2" translation_description="Name of the Messier object M2">M2</string>
     <string name="m3" translation_description="Name of the Messier object M3">M3</string>
@@ -395,5 +411,66 @@
     <string name="orionids" translation_description="Meteor Shower">獵戶座流星雨</string>
     <string name="puppidvelids" translation_description="Meteor Shower">船尾/船帆座流星雨</string>
     <string name="ursids" translation_description="Meteor Shower">小熊座流星雨</string>
-</resources>
 
+    <string name="no_sensor_warning">你的裝置沒有方位感應器 - 自動模式可能無法運作</string>
+    <string name="warning_dialog_title">壞消息！</string>
+    <string name="missing_sensor_dialog_text">\n
+        您的裝置可能不具備 Sky Map 所需的感應器之一。\n\n
+        Sky Map 需要內建羅盤與加速計才能自動顯示裝置所指向的星空。您的裝置回報其中一個感應器不存在。
+        好消息是有些裝置的回報不完全正確，例如某些 Moto E 型號手機，其實具備羅盤功能卻回報沒有。\n\n
+
+        缺少需要的感應器，自動模式將無法運作。但您仍然可以使用手指在手動模式下拖曳、旋轉、縮放星空圖。
+    </string>
+    <string name="do_not_show_again">不要再顯示這個訊息</string>
+    <string name="title_activity_diagnostic">診斷</string>
+    <string name="location_rationale_title">我們為何詢問您的位置？</string>
+    <string name="location_rationale_text">您所能看到的星空是由您所在的位置而定，沒有位置資訊我們無法顯示精確的星空圖，如果不願意提供您的位置，可以在設定選單裡手動設定您附近的城市。</string>
+
+    <string name="play_services_error">提醒：Google Play 服務有問題 - 自動定位可能無法運作</string>
+    <string name="sensor_absent">不存在</string>
+    <string name="sensor_accuracy_unknown">精確度：未知</string>
+    <string name="sensor_accuracy_unreliable">精確度：不可靠</string>
+    <string name="sensor_accuracy_low">精確度：低</string>
+    <string name="sensor_accuracy_medium">精確度：中</string>
+    <string name="sensor_accuracy_high">精確度：高</string>
+    <string name="sensor_accuracy_nocontact">精確度：未接觸</string>
+    <string name="diagnostics_activity_general_heading">一般</string>
+    <string name="diagnostics_activity_phone">裝置</string>
+    <string name="diagnostics_activity_android_version">Android 版本</string>
+    <string name="diagnostics_activity_sky_map_version">Sky Map 版本</string>
+    <string name="diagnostics_activity_sensors_heading">感應器</string>
+    <string name="diagnostics_activity_compass">羅盤</string>
+    <string name="diagnostics_activity_accelerometer">加速計</string>
+    <string name="diagnostics_activity_rotation_vector">旋轉</string>
+    <string name="diagnostics_activity_gyroscope">陀螺儀</string>
+    <string name="diagnostics_activity_light_level">光度</string>
+    <string name="diagnostics_activity_location_and_time_heading">位置與時間</string>
+    <string name="diagnostics_activity_gps">GPS</string>
+    <string name="diagnostics_activity_location">位置 (緯度, 經度)</string>
+    <string name="diagnostics_activity_pointing_ra_dec">指向快照</string>
+    <string name="diagnostics_activity_magnetic_correction">地磁修正</string>
+    <string name="diagnostics_activity_local_datetime">本地時間</string>
+    <string name="diagnostics_activity_universal_time">全球標準時間</string>
+    <string name="diagnostics_activity_network_heading">網路</string>
+    <string name="diagnostics_activity_connection">連線</string>
+    <string name="diagnostics_activity_rotation_matrix">旋轉矩陣</string>
+    <string name="enabled">已啟用</string>
+    <string name="disabled">已停用</string>
+    <string name="permission_disabled">權限已停用</string>
+    <string name="no_gps">無 GPS</string>
+    <string name="connected">已連線</string>
+    <string name="disconnected">已斷線</string>
+    <string name="wifi">" (無線網路)"</string>
+    <string name="cell_network">" (電信網路)"</string>
+    <string name="menu_calibrate">校正</string>
+    <string name="compass_calibration_activity_heading_compass">羅盤 -</string>
+    <string name="compass_calibration_activity_do_not_show_this_again">不要再顯示這個訊息</string>
+    <string name="compass_calibration_activity_warning">您的羅盤需要校正</string>
+    <string name="sensor_reverse_preference_title">磁場反向</string>
+    <string name="sensor_reverse_preference_summary">修正手機感應器錯誤 - 需重新開機</string>
+    <string name="whats_new_dialog_title">最新消息</string>
+    <string name="disable_gyro_preference_title">停用陀螺儀</string>
+    <string name="disable_gyro_preference_summary">不是所有裝置都有陀螺儀 - 如果您的裝置具備陀螺儀，清除這個核取方塊以啟用它，可以得到更好的效果。反之，如果您的裝置沒有陀螺儀卻取消停用，Sky Map 可能無法運作。</string>
+    <string name="rotate_horizon_preference_title">地平線旋轉</string>
+    <string name="rotate_horizon_preference_summary">地平線旋轉九十度（給橫幅式螢幕裝置，例如智慧眼鏡）</string>
+</resources>
