@@ -18,5 +18,5 @@
       android:layout_width="fill_parent"
       android:layout_height="wrap_content"
       android:unselectedAlpha = "0.4"
-      android:spacing = "10px"/>
+      android:spacing = "@dimen/gallery_spacing"/>
 </LinearLayout>
