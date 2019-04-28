@@ -159,8 +159,7 @@ public class DiagnosticActivity extends InjectableActivity implements SensorEven
             + getString(R.string.degrees));
     AstronomerModel.Pointing pointing = model.getPointing();
     GeocentricCoordinates lineOfSight = pointing.getLineOfSight();
-    // TODO(johntaylor): maybe show RA in hours instead
-    setText(R.id.diagnose_pointing_txt, lineOfSight.getRa() + ", " + lineOfSight.getDec());
+    setText(R.id.diagnose_pointing_txt, getDegreeInHour(lineOfSight.getRa()) + ", " + lineOfSight.getDec());
     Date nowTime = model.getTime();
     SimpleDateFormat dateFormatUtc = new SimpleDateFormat("yyyy-MMM-dd HH:mm:ss");
     dateFormatUtc.setTimeZone(TimeZone.getTimeZone("UTC"));
@@ -280,5 +279,12 @@ public class DiagnosticActivity extends InjectableActivity implements SensorEven
 
   private void setColor(int viewId, int color) {
     ((TextView) findViewById(viewId)).setTextColor(color);
+  }
+  
+  private String getDegreeInHour(float deg) {
+    int h = (int) deg / 15;
+    int m = (int) ((deg / 15 - h) * 60);
+    int s = (int) ((((deg / 15 - h) * 60) - m) * 60);
+    return h + "h " + m + "m " + s + "s ";
   }
 }
