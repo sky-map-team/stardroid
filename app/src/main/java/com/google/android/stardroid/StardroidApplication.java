@@ -94,8 +94,8 @@ public class StardroidApplication extends Application {
     Log.d(TAG, "StardroidApplication: -onCreate");
   }
 
-    public ApplicationComponent getApplicationComponent() {
-        return component;
+  public ApplicationComponent getApplicationComponent() {
+    return component;
   }
 
     private void checkLocationPerms() {
