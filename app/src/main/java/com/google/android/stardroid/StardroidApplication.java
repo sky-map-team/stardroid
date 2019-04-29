@@ -91,12 +91,12 @@ public class StardroidApplication extends Application {
 
     performFeatureCheck();
 
-        Log.d(TAG, "StardroidApplication: -onCreate");
-    }
+    Log.d(TAG, "StardroidApplication: -onCreate");
+  }
 
     public ApplicationComponent getApplicationComponent() {
         return component;
-    }
+  }
 
     private void checkLocationPerms() {
         LocationManagerCheck locationManagerCheck = new LocationManagerCheck(this);
