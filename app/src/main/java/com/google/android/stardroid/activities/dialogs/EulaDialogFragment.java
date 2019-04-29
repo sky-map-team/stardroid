@@ -29,6 +29,7 @@ public class EulaDialogFragment extends DialogFragment {
   @Inject Activity parentActivity;
   @Inject Analytics analytics;
   private EulaAcceptanceListener resultListener;
+  private String versionName;
 
   public interface EulaAcceptanceListener {
     void eulaAccepted();
@@ -56,7 +57,9 @@ public class EulaDialogFragment extends DialogFragment {
     TextView apologyTextView = (TextView) view.findViewById(R.id.language_apology_box_text);
     apologyTextView.setText(formattedApologyText, TextView.BufferType.SPANNABLE);
 
-    String eulaText = String.format(parentActivity.getString(R.string.eula_text), getVersionName());
+    String eulaText = parentActivity.getString(R.string.eula_text);
+    // If the version name is ever needed
+    versionName = getVersionName();
     Spanned formattedEulaText = Html.fromHtml(eulaText);
     TextView eulaTextView = (TextView) view.findViewById(R.id.eula_box_text);
     eulaTextView.setText(formattedEulaText, TextView.BufferType.SPANNABLE);
