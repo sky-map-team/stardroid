@@ -107,9 +107,9 @@ public class ProtobufAstronomicalSource extends AbstractAstronomicalSource {
     }
     ArrayList<TextSource> points = new ArrayList<TextSource>(proto.getLabelCount());
     for (LabelElementProto element : proto.getLabelList()) {
-    points.add(new TextSourceImpl(getCoords(element.getLocation()),
-        resources.getString(element.getStringIndex()),
-        element.getColor(), element.getOffset(), element.getFontSize()));
+      points.add(new TextSourceImpl(getCoords(element.getLocation()),
+          resources.getString(element.getStringIndex()),
+          element.getColor(), element.getOffset(), element.getFontSize()));
     }
     return points;
 
