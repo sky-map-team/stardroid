@@ -76,7 +76,7 @@ public class ProtobufAstronomicalSource extends AbstractAstronomicalSource {
     if (names == null) {
       names = new ArrayList<String>(proto.getNameIdsCount());
       for (int id : proto.getNameIdsList()) {
-//        names.add(resources.getString(id));
+        names.add(resources.getString(id));
       }
     }
     return names;
