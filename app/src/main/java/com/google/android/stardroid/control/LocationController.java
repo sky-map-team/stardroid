@@ -115,11 +115,11 @@ public class LocationController extends AbstractController implements LocationLi
           // TODO(johntaylor): should we make this a dialog?
           Toast.makeText(context, R.string.location_no_auto, Toast.LENGTH_LONG).show();
           setLocationFromPrefs();
+          AlertDialog.Builder alertDialog = getSwitchOnGPSDialog();
+          alertDialog.show();
           return;
         }
 
-        AlertDialog.Builder alertDialog = getSwitchOnGPSDialog();
-        alertDialog.show();
         return;
       } else {
         Log.d(TAG, "Got location provider " + locationProvider);
