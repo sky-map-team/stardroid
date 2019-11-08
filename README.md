@@ -8,7 +8,7 @@ two directories:
  * tools: Source for generating binary data used by the app.
 
 To build SkyMap, you can use Android Developer Studio or Gradle.  Begin by
-by creating a `local.properties` file containing the location of your
+creating a `local.properties` file containing the location of your
 Android installation:
 
     sdk.dir=<path to your SDK>
@@ -58,7 +58,7 @@ have to regenerate the star data files or the app will crash or put incorrect la
 # Code and Language Contributions
 Yes, we know that Sky Map's code and UX is very dated. It needs a big overhaul.
 
-In general, bug fix contributions are welcome, for example simple one file fixes or dependency version upgrades.  We're particularly grateful for fixed or new translations since as the app is developed we lose the 100% coverage of non-English languages that we once had.
+In general, bug fix contributions are welcome, for example, simple one file fixes or dependency version upgrades.  We're particularly grateful for fixed or new translations since as the app is developed we lose the 100% coverage of non-English languages that we once had.
 
 **However, please email us (or file a feature request) first before embarking on any major changes or feature additions. We may have a different vision for the direction of the app and it would be a pity to do work that we can't accept and would be wasted.**
 
@@ -70,4 +70,4 @@ Thanks for your contributions! They're definitely appreciated even if our slowne
 
 ## Coding Style
 
-We follow the [Google style guide](https://google.github.io/styleguide/javaguide.html) (or try to).  We wrap at 100 chars and we do not use the common Android style of prefixing member variables with a 'm'.
+We follow the [Google style guide](https://google.github.io/styleguide/javaguide.html) (or try to).  We wrap at 100 chars and we do not use the common Android style of prefixing member variables with a 'm'. 
