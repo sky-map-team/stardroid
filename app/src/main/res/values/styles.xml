@@ -1,6 +1,6 @@
 <resources>
     <!-- Main App Theme to make global changes easier -->
-    <style name = "AppTheme" parent="@android:style/Theme.Holo">
+    <style name = "AppTheme" parent="@android:style/Theme.DeviceDefault">
     </style>
 
     <style name="FullscreenTheme" parent="AppTheme">
