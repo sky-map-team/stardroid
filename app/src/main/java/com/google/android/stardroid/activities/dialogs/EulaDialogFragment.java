@@ -87,9 +87,9 @@ public class EulaDialogFragment extends DialogFragment {
     dialog.dismiss();
     analytics.trackEvent(
         Analytics.APP_CATEGORY, Analytics.TOS_ACCEPT, Analytics.TOS_ACCEPTED, 1);
-    if (resultListener != null) {
+    if (resultListener != null)
       resultListener.eulaAccepted();
-    }
+
   }
 
   private void rejectEula(DialogInterface dialog) {
@@ -97,9 +97,9 @@ public class EulaDialogFragment extends DialogFragment {
     dialog.dismiss();
     analytics.trackEvent(
         Analytics.APP_CATEGORY, Analytics.TOS_ACCEPT, Analytics.TOS_REJECTED, 0);
-    if (resultListener != null) {
+    if (resultListener != null)
       resultListener.eulaRejected();
-    }
+
   }
 
   private String getVersionName() {

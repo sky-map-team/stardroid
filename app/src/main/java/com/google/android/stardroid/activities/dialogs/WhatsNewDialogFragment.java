@@ -64,9 +64,9 @@ public class WhatsNewDialogFragment extends DialogFragment {
   }
 
   private void endItNow(DialogInterface dialog) {
-    if (closeListener != null) {
+    if (closeListener != null)
       closeListener.dialogClosed();
-    }
+
     dialog.dismiss();
   }
 
