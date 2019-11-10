@@ -38,8 +38,8 @@ public class LocationPermissionRationaleFragment extends DialogFragment implemen
 
   @Override
   public void onClick(DialogInterface ignore1, int ignore2) {
-    if (resultListener != null) {
+    if (resultListener != null)
       resultListener.done();
-    }
+
   }
 }
