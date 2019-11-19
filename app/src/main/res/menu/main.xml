@@ -66,5 +66,6 @@
     <item android:id="@+id/menu_item_tos"
           android:orderInCategory="10"
           android:showAsAction="never"
-          android:title="@string/menu_tos"/>
+          android:title="@string/menu_tos"
+          android:icon="@drawable/ic_description_white_24dp"/>
 </menu>
