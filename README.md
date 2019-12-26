@@ -40,7 +40,7 @@ From the root directory execute
 
 or
 
-    ./gradlew assembleRelease
+    ./gradlew assembleRelease 
 
 The apk can be found in `app/build/outputs/apk/`.
 
