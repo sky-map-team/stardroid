@@ -1,5 +1,26 @@
 source {
   search_location {
+    right_ascension: 120.0
+    declination: 47.5
+  }
+  point {
+    location {
+      right_ascension: 120.0
+      declination: 47.5
+    }
+    color: 4761665
+    size: 3
+  }
+  label {
+    location {
+      right_ascension: 120.0
+      declination: 47.5
+    }
+    color: 4761665
+  }
+}
+source {
+  search_location {
     right_ascension: 83.625
     declination: 22.01667
   }
