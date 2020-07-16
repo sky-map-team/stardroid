@@ -17,7 +17,9 @@ source {
       declination: 47.5
     }
     color: 4761665
+    string_index: 2131558761
   }
+  name_ids: 2131558761
 }
 source {
   search_location {
@@ -181,7 +183,7 @@ source {
     string_index: 2131558700
   }
   name_ids: 2131558700
-  name_ids: 2131558829
+  name_ids: 2131558830
 }
 source {
   search_location {
@@ -1037,7 +1039,7 @@ source {
   }
   name_ids: 2131558672
   name_ids: 2131558438
-  name_ids: 2131558803
+  name_ids: 2131558804
 }
 source {
   search_location {
@@ -1061,8 +1063,8 @@ source {
     string_index: 2131558673
   }
   name_ids: 2131558673
-  name_ids: 2131558796
-  name_ids: 2131558856
+  name_ids: 2131558797
+  name_ids: 2131558857
 }
 source {
   search_location {
@@ -1201,7 +1203,7 @@ source {
     string_index: 2131558680
   }
   name_ids: 2131558680
-  name_ids: 2131558928
+  name_ids: 2131558929
 }
 source {
   search_location {
@@ -1340,7 +1342,7 @@ source {
     string_index: 2131558686
   }
   name_ids: 2131558686
-  name_ids: 2131558820
+  name_ids: 2131558821
 }
 source {
   search_location {
@@ -2353,7 +2355,7 @@ source {
     string_index: 2131558626
   }
   name_ids: 2131558626
-  name_ids: 2131558791
+  name_ids: 2131558792
 }
 source {
   search_location {
@@ -2423,7 +2425,7 @@ source {
     string_index: 2131558629
   }
   name_ids: 2131558629
-  name_ids: 2131558871
+  name_ids: 2131558872
 }
 source {
   search_location {
@@ -2582,9 +2584,9 @@ source {
       declination: 66.6332
     }
     color: 4761665
-    string_index: 2131558763
+    string_index: 2131558764
   }
-  name_ids: 2131558763
+  name_ids: 2131558764
   name_ids: 2131558458
 }
 source {
@@ -2606,10 +2608,10 @@ source {
       declination: -47.47686
     }
     color: 4761665
-    string_index: 2131558762
+    string_index: 2131558763
   }
-  name_ids: 2131558762
-  name_ids: 2131558777
+  name_ids: 2131558763
+  name_ids: 2131558778
 }
 source {
   search_location {
@@ -2630,9 +2632,9 @@ source {
       declination: -3.84725
     }
     color: 4761665
-    string_index: 2131558916
+    string_index: 2131558917
   }
-  name_ids: 2131558916
+  name_ids: 2131558917
 }
 source {
   search_location {
