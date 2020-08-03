@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="popular_date_examples">
+        <item translation_description="The user's current time">Nawr</item>
+        <item>Machlud haul y noswaith nesaf</item><!-- 1 -->
+        <item>Gwawr y bore nesaf</item><!-- 2 -->
+        <item>Lleuad llawn nesaf</item><!-- 3 -->
+        <item>Croesiad Mercher 9 Mai 2016</item><!-- 4 -->
+        <item>Diffyg ar yr haul 21 Awst 2017</item><!-- 5 -->
+        <item>Diffyg ar yr haul 9 Mawrth 2016</item><!-- 6 -->
+        <item>Diffyg ar yr haul 29 Mai 1919</item><!-- 7 -->
+        <item>Glanio Apollo 11 ar y lleuad</item><!-- 8 -->
+    </string-array>
+    <string-array name="sensor_speed">
+        <item translation_description="Slow sensor speed">Araf</item>
+        <item translation_description="Normal sensor speed">Arferol</item>
+        <item translation_description="Fast sensor speed">Cyflym</item>
+    </string-array>
+    <string-array name="sensor_damping">
+        <item translation_description="Low sensor damping factor">Yn neidio</item>
+        <item translation_description="Medium sensor damping factor">Canolradd</item>
+        <item translation_description="Extra High sensor damping factor">Cyffredinol gywir</item>
+        <item translation_description="Really High sensor damping factor">Yn araf</item>
+    </string-array>
+</resources>
