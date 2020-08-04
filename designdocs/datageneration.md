@@ -32,9 +32,83 @@ in a database.
 
 ### Storing the data
 
+ConteneProvider database?
+
 ### Data format
 
-### Online vs offline
+#### Protocol Buffers (binary)
++ Compact format for storage and transmission.
+- Not human readable, so other base format needed
+- Needs a fairly non-standard tool chain (how well used are they outside of Google?)
+
+
+#### Protocol Buffers (text)
++ Human-readable
++ Quite compact and nice to read
++ What we already use
++ Type safe
+- Poorly documented
+
+Only needed as the 'reference' file - the binary files would be shipped with the app.
+
+##### Example (made up schema)
+
+```prototext
+name: "Sirius"
+ra: 123
+dec: 10
+localized_name { 
+  locale: "fr"
+  name: "sirius"
+}
+localized_name {
+  locale: "de"
+  name: "blah"
+}
+```
+
+#### JSON
++ Good support.
++ Human-readable
+- Not as compact and nice to read as text protos
+
+#### Example
+
+```json
+{
+   "name":"Sirius",
+   "ra":110,
+   "dec":10,
+   "localized_names":{
+      "fr":"sirius",
+      "de":"blah"
+   }
+}
+
+```
+
+#### XML
++ Human-readable
+- Pretty darn ugly
+
+##### Example
+I can't even.
+
+#### CSV
++ Human-readable
++ Good support
+- Not great for structured data
+
+##### Example
+
+```csv
+name, ra, dec, localized_names
+Sirius, 100, 10, fr:sirius|de:blah
+```
+
+Other options: https://en.wikipedia.org/wiki/Comparison_of_data-serialization_formats
+
+### Online vs Offline
 
 Key features to preserve in Sky Map are its small footprint and ability to work offline where
 cell reception is limited. This suggests that
