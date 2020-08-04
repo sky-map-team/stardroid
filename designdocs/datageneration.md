@@ -10,8 +10,8 @@ problems:
     interesting happens (e.g. Comet Neowise). Not can users choose to just have the basics
     with a light footprint or expand to more objects if they wish.
     1 The build process is awful, largely due to the way localization is done. Typically in
-    Android strings are stored in __strings.xml__ files which are processed during the build to
-    have unique integer ids. Localization is done by supplying multiple copies of _strings.xml__,
+    Android strings are stored in `strings.xml` files which are processed during the build to
+    have unique integer ids. Localization is done by supplying multiple copies of `strings.xml`,
     one for each language. The binary datafiles include these integer ids so that the code
     can look up the correct translation for the name of an object at runtime. The problem is that
     these ids are generated and are not known in advance. Consequently Sky Map uses a convoluted
