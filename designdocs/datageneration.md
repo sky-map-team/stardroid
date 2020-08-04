@@ -6,10 +6,10 @@ Currently Sky Map's data is bundled as binary protocol buffer files containing s
 constellation lines, messier objects etc. These binary files are generated from text files,
 typically csv or text proto files, during a separate step in the build process. This causes two
 problems:
-    1 The data files are static. There is no opportunity to update them online when something
+   1. The data files are static. There is no opportunity to update them online when something
     interesting happens (e.g. Comet Neowise). Not can users choose to just have the basics
     with a light footprint or expand to more objects if they wish.
-    1 The build process is awful, largely due to the way localization is done. Typically in
+   1. The build process is awful, largely due to the way localization is done. Typically in
     Android strings are stored in `strings.xml` files which are processed during the build to
     have unique integer ids. Localization is done by supplying multiple copies of `strings.xml`,
     one for each language. The binary datafiles include these integer ids so that the code
@@ -21,7 +21,7 @@ problems:
     or the app will simply crash. We've had several releases where stars have been inadvertently
     labelled as "Terms of Service" or "Gyroscope". It makes the build process flaky and not
     especially portable.
-    1 It's pretty bad, really.
+   1. It's pretty bad, really.
 
 ## Ideas
 ### Localization
