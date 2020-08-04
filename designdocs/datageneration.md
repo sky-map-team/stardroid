@@ -37,17 +37,17 @@ ConteneProvider database?
 ### Data format
 
 #### Protocol Buffers (binary)
-+ Compact format for storage and transmission.
-- Not human readable, so other base format needed
-- Needs a fairly non-standard tool chain (how well used are they outside of Google?)
+    + Compact format for storage and transmission.
+    - Not human readable, so other base format needed
+    - Needs a fairly non-standard tool chain (how well used are they outside of Google?)
 
 
 #### Protocol Buffers (text)
-+ Human-readable
-+ Quite compact and nice to read
-+ What we already use
-+ Type safe
-- Poorly documented
+    + Human-readable
+    + Quite compact and nice to read
+    + What we already use
+    + Type safe
+    - Poorly documented
 
 Only needed as the 'reference' file - the binary files would be shipped with the app.
 
@@ -68,9 +68,9 @@ localized_name {
 ```
 
 #### JSON
-+ Good support.
-+ Human-readable
-- Not as compact and nice to read as text protos
+    + Good support.
+    + Human-readable
+    - Not as compact and nice to read as text protos?
 
 #### Example
 
@@ -88,16 +88,16 @@ localized_name {
 ```
 
 #### XML
-+ Human-readable
-- Pretty darn ugly
+    + "Human"-"readable"
+    - Pretty darn ugly
 
 ##### Example
 I can't even.
 
 #### CSV
-+ Human-readable
-+ Good support
-- Not great for structured data
+    + Human-readable
+    + Good support
+    - Not great for structured data
 
 ##### Example
 
