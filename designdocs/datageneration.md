@@ -32,7 +32,11 @@ in a database.
 
 ### Storing the data
 
-ConteneProvider database?
+Using a database as provided by [Room](https://developer.android.com/training/data-storage/room)
+looks promising:
+
+    + Can prepopulate the database from a provided file. 
+    + Can store arbitrary objects
 
 ### Data format
 
@@ -40,7 +44,8 @@ ConteneProvider database?
     + Compact format for storage and transmission.
     - Not human readable, so other base format needed
     - Needs a fairly non-standard tool chain (how well used are they outside of Google?)
-
+    + Android [support](https://github.com/protocolbuffers/protobuf/blob/v3.9.0/java/lite.md)
+     + gRPC [support](https://developer.android.com/guide/topics/connectivity/grpc)
 
 #### Protocol Buffers (text)
     + Human-readable
