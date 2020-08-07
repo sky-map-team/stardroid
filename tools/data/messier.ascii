@@ -1,5 +1,143 @@
 source {
   search_location {
+    right_ascension: 129.9
+    declination: 48.18
+  }
+  point {
+    location {
+      right_ascension: 129.9
+      declination: 48.18
+    }
+    color: 4761665
+    size: 3
+  }
+  label {
+    location {
+      right_ascension: 129.9
+      declination: 48.18
+    }
+    color: 4761665
+    string_index: 2131558761
+  }
+  name_ids: 2131558761
+}
+source {
+  search_location {
+    right_ascension: 151.5
+    declination: 46.02
+  }
+  point {
+    location {
+      right_ascension: 151.5
+      declination: 46.02
+    }
+    color: 4761665
+    size: 3
+  }
+  label {
+    location {
+      right_ascension: 151.5
+      declination: 46.02
+    }
+    color: 4761665
+    string_index: 2131558762
+  }
+  name_ids: 2131558762
+}
+source {
+  search_location {
+    right_ascension: 169.95
+    declination: 39.67
+  }
+  point {
+    location {
+      right_ascension: 169.95
+      declination: 39.67
+    }
+    color: 4761665
+    size: 3
+  }
+  label {
+    location {
+      right_ascension: 169.95
+      declination: 39.67
+    }
+    color: 4761665
+    string_index: 2131558763
+  }
+  name_ids: 2131558763
+}
+source {
+  search_location {
+    right_ascension: 183.15
+    declination: 31.67
+  }
+  point {
+    location {
+      right_ascension: 183.15
+      declination: 31.67
+    }
+    color: 4761665
+    size: 3
+  }
+  label {
+    location {
+      right_ascension: 183.15
+      declination: 31.67
+    }
+    color: 4761665
+    string_index: 2131558764
+  }
+  name_ids: 2131558764
+}
+source {
+  search_location {
+    right_ascension: 192.0
+    declination: 24.1
+  }
+  point {
+    location {
+      right_ascension: 192.0
+      declination: 24.1
+    }
+    color: 4761665
+    size: 3
+  }
+  label {
+    location {
+      right_ascension: 192.0
+      declination: 24.1
+    }
+    color: 4761665
+    string_index: 2131558765
+  }
+  name_ids: 2131558765
+}
+source {
+  search_location {
+    right_ascension: 198.3
+    declination: 17.67
+  }
+  point {
+    location {
+      right_ascension: 198.3
+      declination: 17.67
+    }
+    color: 4761665
+    size: 3
+  }
+  label {
+    location {
+      right_ascension: 198.3
+      declination: 17.67
+    }
+    color: 4761665
+    string_index: 2131558766
+  }
+  name_ids: 2131558766
+}
+source {
+  search_location {
     right_ascension: 83.625
     declination: 22.01667
   }
@@ -160,7 +298,7 @@ source {
     string_index: 2131558700
   }
   name_ids: 2131558700
-  name_ids: 2131558829
+  name_ids: 2131558835
 }
 source {
   search_location {
@@ -1016,7 +1154,7 @@ source {
   }
   name_ids: 2131558672
   name_ids: 2131558438
-  name_ids: 2131558803
+  name_ids: 2131558809
 }
 source {
   search_location {
@@ -1040,8 +1178,8 @@ source {
     string_index: 2131558673
   }
   name_ids: 2131558673
-  name_ids: 2131558796
-  name_ids: 2131558856
+  name_ids: 2131558802
+  name_ids: 2131558862
 }
 source {
   search_location {
@@ -1180,7 +1318,7 @@ source {
     string_index: 2131558680
   }
   name_ids: 2131558680
-  name_ids: 2131558928
+  name_ids: 2131558934
 }
 source {
   search_location {
@@ -1319,7 +1457,7 @@ source {
     string_index: 2131558686
   }
   name_ids: 2131558686
-  name_ids: 2131558820
+  name_ids: 2131558826
 }
 source {
   search_location {
@@ -2332,7 +2470,7 @@ source {
     string_index: 2131558626
   }
   name_ids: 2131558626
-  name_ids: 2131558791
+  name_ids: 2131558797
 }
 source {
   search_location {
@@ -2402,7 +2540,7 @@ source {
     string_index: 2131558629
   }
   name_ids: 2131558629
-  name_ids: 2131558871
+  name_ids: 2131558877
 }
 source {
   search_location {
@@ -2561,9 +2699,9 @@ source {
       declination: 66.6332
     }
     color: 4761665
-    string_index: 2131558763
+    string_index: 2131558769
   }
-  name_ids: 2131558763
+  name_ids: 2131558769
   name_ids: 2131558458
 }
 source {
@@ -2585,10 +2723,10 @@ source {
       declination: -47.47686
     }
     color: 4761665
-    string_index: 2131558762
+    string_index: 2131558768
   }
-  name_ids: 2131558762
-  name_ids: 2131558777
+  name_ids: 2131558768
+  name_ids: 2131558783
 }
 source {
   search_location {
@@ -2609,9 +2747,9 @@ source {
       declination: -3.84725
     }
     color: 4761665
-    string_index: 2131558916
+    string_index: 2131558922
   }
-  name_ids: 2131558916
+  name_ids: 2131558922
 }
 source {
   search_location {
