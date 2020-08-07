@@ -7,9 +7,9 @@ android {
     defaultConfig {
         applicationId "com.google.android.stardroid"
         minSdkVersion 15
-        targetSdkVersion 26
-        versionCode 1491
-        versionName "1.9.3"
+        targetSdkVersion 28
+        versionCode 1510
+        versionName "1.9.4 - neowisehack"
         buildConfigField 'String', 'GOOGLE_ANALYTICS_CODE', '""'
     }
     signingConfigs {

@@ -3,9 +3,8 @@
     <string name="whats_new_text" translation_description="Description of new features in this version in html">
 <![CDATA[
     <h1>New in version %s</h1>
-    \t • Fixed M31 image<br/>
-    \t • Ukranian support - thanks Lukyanov<br/>
-    \t • Other language fixes<br/>
+    \t • Temporary support for Comet Neowise! Locations courtesy of space.com<br/>
+    \t • Some translation fixes including Norwegian<br/>
 ]]>
     </string>
 </resources>
