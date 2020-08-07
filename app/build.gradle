@@ -1,7 +1,8 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 28
 
     flavorDimensions "default"
     defaultConfig {
@@ -69,7 +70,7 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:support-annotations:23.2.1'
     implementation 'com.google.guava:guava:19.0'
-    gmsImplementation 'com.google.android.gms:play-services-analytics:16.0.7'
+    gmsImplementation 'com.google.firebase:firebase-analytics:17.2.2'
     gmsImplementation 'com.google.android.gms:play-services-location:16.0.0'
     implementation "com.android.support:support-v4:26.1.0"
     implementation 'com.google.dagger:dagger:2.14.1'
@@ -82,6 +83,6 @@ dependencies {
     androidTestImplementation 'org.easymock:easymock:2.5.2'
 }
 
-apply plugin: 'com.google.gms.google-services'
+
 
 
