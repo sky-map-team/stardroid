@@ -42,8 +42,8 @@ android {
 
     lintOptions {
         // Lint complains because of missing translations.
-        // TODO(jontayler): fix the missing translations.
-        abortOnError false
+        // (Missing translations now removed)
+        // abortOnError false
     }
 
     // This enables long timeouts required on slow environments, e.g. Travis
