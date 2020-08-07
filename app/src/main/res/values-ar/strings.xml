@@ -148,8 +148,6 @@
     <string name="menu_tos">Terms of Service</string>
     <!-- TODO(johntaylor): the following might be deleted in favor of an icon -->
     <string name="control_panel_btn" translation_description="Label for the control panel button">لوحة التحكم</string>
-    <string name="allow_rotation_pref" translation_description="preference to enable rotation of the map with a two finger movement">التدور بتعدد اللمس</string>
-    <string name="allow_rotation_pref_desc" translation_description="a qualification for the Multitouch rotation option">إذا كان الجهاز يدعم هذه الخاصية فقط</string>
 
     <string name="north_pole">NP</string>
     <string name="south_pole">SP</string>
@@ -408,6 +406,4 @@
     <string name="orionids" translation_description="Meteor Shower">Orionids</string>
     <string name="puppidvelids" translation_description="Meteor Shower">Puppid-Velids</string>
     <string name="ursids" translation_description="Meteor Shower">Ursids</string>
-
-    <string name="hour_marker">س%d</string>
 </resources>
