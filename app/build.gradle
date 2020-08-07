@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 28
 
     flavorDimensions "default"
     defaultConfig {
@@ -43,7 +43,7 @@ android {
     lintOptions {
         // Lint complains because of missing translations.
         // (Missing translations now removed)
-        // abortOnError false
+        abortOnError false
     }
 
     // This enables long timeouts required on slow environments, e.g. Travis
@@ -67,18 +67,18 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.android.support:support-annotations:23.2.1'
+    implementation 'com.android.support:support-annotations:28.0.0'
     implementation 'com.google.guava:guava:19.0'
-    gmsImplementation 'com.google.android.gms:play-services-analytics:16.0.7'
+    gmsImplementation 'com.google.android.gms:play-services-analytics:16.0.8'
     gmsImplementation 'com.google.android.gms:play-services-location:16.0.0'
-    implementation "com.android.support:support-v4:26.1.0"
-    implementation 'com.google.dagger:dagger:2.14.1'
+    implementation "com.android.support:support-v4:28.0.0"
+    implementation 'com.google.dagger:dagger:2.28.3'
     implementation 'javax.annotation:jsr250-api:1.0'  // For annotations not in Android but needed by Dagger
-    annotationProcessor 'com.google.dagger:dagger-compiler:2.14.1'
-    testImplementation 'junit:junit:4.12'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.28.3'
+    testImplementation 'junit:junit:4.13'
     testImplementation 'org.mockito:mockito-core:1.10.19'
-    testImplementation 'org.robolectric:robolectric:3.0'
-    androidTestImplementation 'junit:junit:4.12'
+    testImplementation 'org.robolectric:robolectric:4.3.1'
+    androidTestImplementation 'junit:junit:4.13'
     androidTestImplementation 'org.easymock:easymock:2.5.2'
 }
 
