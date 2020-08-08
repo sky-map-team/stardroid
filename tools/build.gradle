@@ -1,19 +1,17 @@
 apply plugin: 'application'
 
-
 dependencies {
-    implementation project(path: ':app',configuration:'default')
+    implementation project(path: ':app', configuration: 'default')
+
+    implementation 'com.google.protobuf:protobuf-java:2.6.1'
     implementation 'com.google.guava:guava:21.0'
+
     // TODO(jontayler): Terrible hack that should go when we revamp the tools.
     implementation files('../app/build/intermediates/classes/gms/release/')
-    implementation 'com.google.protobuf:protobuf-java:2.6.1'
 }
 
 // Gradle fail.  Creating multiple distributions in a distributions {} does not generate
 // multiple executable distributions with the application plugin.
-// So instead we create one monster than can do it all.
+// So instead we create one monster that can do it all.
 applicationName = "datagen"
 mainClassName = "com.google.android.stardroid.data.Main"
-
-
-
