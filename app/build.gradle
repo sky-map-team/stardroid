@@ -59,14 +59,14 @@ android {
       }
 
       // uses only open source software
-      //fdroid {
-      //  resValue "string", "analytics_enabled", "false"
-      //}
+      fdroid {
+        resValue "string", "analytics_enabled", "false"
+      }
     }
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.google.protobuf:protobuf-java:2.3.0'
     implementation 'com.android.support:support-annotations:28.0.0'
     implementation 'com.google.guava:guava:19.0'
     gmsImplementation 'com.google.android.gms:play-services-analytics:16.0.8'

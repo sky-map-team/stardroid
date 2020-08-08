@@ -6,7 +6,7 @@ dependencies {
     implementation 'com.google.guava:guava:21.0'
     // TODO(jontayler): Terrible hack that should go when we revamp the tools.
     implementation files('../app/build/intermediates/classes/gms/release/')
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.google.protobuf:protobuf-java:2.6.1'
 }
 
 // Gradle fail.  Creating multiple distributions in a distributions {} does not generate
