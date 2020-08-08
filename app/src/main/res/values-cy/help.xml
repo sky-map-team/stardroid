@@ -1,0 +1,135 @@
+<resources>
+<string name="help_text" translation_description="Please do not change the &lt; and &gt; markup">
+&lt;big&gt;&lt;b&gt;Sky Map ar gyfer Android&lt;/b&gt;&lt;/big&gt;&lt;br/&gt;
+&lt;i&gt;Fersiwn %s&lt;/i&gt;&lt;br/&gt;
+&lt;i&gt;https://github.com/sky-map-team/stardroid&lt;/i&gt;&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;Cyflwyniad a Chychwyn yn Gyflym&lt;/b&gt;&lt;br/&gt;
+Sky Map yw dy gatalog o\'r awyr nos! Pwyntia dy ddyfais Android i fyny a gweld map 
+o\'r sêr, cytser a phlanedau mwyaf disglair yn y rhan honno o\'r wybren.&lt;br/&gt;
+
+&lt;b&gt;Haenau Gweladwy&lt;/b&gt;&lt;br/&gt;
+Trefna Sky Map y gwrthrychau mae\'n eu dangos ar wahanol haenau. Gellir 
+toglo pob haen o\'r rheolaeth ar y sgrin. Yr haenau yw:&lt;br/&gt;
+      <span>&#8226;</span> Sêr&lt;br/&gt;
+      <span>&#8226;</span> Cytser&lt;br/&gt;
+      <span>&#8226;</span> Gwrthrychau Messier&lt;br/&gt;
+      <span>&#8226;</span> Planedau&lt;br/&gt;
+      <span>&#8226;</span> Cawodydd Meteor&lt;br/&gt;
+      <span>&#8226;</span> Grid Esgyniad Cywir a Gogwydd&lt;br/&gt;
+      <span>&#8226;</span> Gorwel a Phwyntiau Cardinal&lt;br/&gt;&lt;br/&gt;
+      
+Mae\'r sêr, cytser a phlanedau mwyaf disglair wedi\'u labelu. 
+Dangosir planedau fel delweddau sy\'n fwy nag ydynt yn ymddangos yn yr awyr.
+Oherwydd tirlun anwastad neu adeiladau o dy amgylch, mae\'n debyg na fydd
+yn bosib gweld pob un o\'r gwrthrychau mae\'r map yn eu dangos uwch y gorwel.&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;Rheolaeth ar y sgrin&lt;/b&gt;&lt;br/&gt;
+Tapia ar y sgrin i ddangos y panel rheolaeth. Ceir botymau toglo\'r haenau 
+ar y chwith. Maent yn oren tra bod yr haenau i\'w gweld ac yn wyn tra bod 
+yr haenau wedi\'u diffodd.&lt;br/&gt;
+
+Ar y dde, ceir botwm i doglo rhwng llywio awtomatig a llywio â llaw.&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;Moddau Llywio&lt;/b&gt;&lt;br/&gt;
+Yn rhagosodedig, mae Sky Map yn agor yn y modd llywio awtomatig. Defnyddir synwyryddion
+dy ddyfais i ddangos map o\'r awyr ym mha bynnag cyfeiriad mae dy ddyfais yn pwyntio.
+Yn y modd llaw, ti sy\'n rheoli\'r map. Llusga\'r map gyda dy fys i ddarganfod mannau
+eraill o\'r awyr a defnyddia dau fys i droi\'r map neu chwyddo mewn ac allan wrth binsio.&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;Chwilio&lt;/b&gt;&lt;br/&gt;
+Helpa Sky Map ateb cwestiynau fel \'Pa seren yw honno?\' neu \'Ble mae ...?\'
+Mae\'r nodwedd chwilio ar gael drwy fotwm dewislen y ddyfais neu\'r blwch chwilio 
+cyflym ar y brif sgrin. Rho enw\'r seren, cytser neu blaned rwyt am ddod o hyd iddi. 
+Bydd Sky Map yn dangos cylch targedu a saeth yn dangos i ba gyfeiriad i symud dy 
+ddyfais i ddod o hyd i\'r gwrthrych. Newida\'r cylch o las i goch, ac yna i oren 
+pan fo\'r gwrthrych o fewn golwg.&lt;br/&gt;
+NODER: Os rwyt yn y modd llywio â llaw, bydd Sky Map yn symud y map i ddangos y 
+gwrthrych yn hytrach na gofyn i ti pwyntio\'r ddyfais tua\'r rhan honno o\'r wybren.&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;Teithio Amser&lt;/b&gt;&lt;br/&gt;
+Mae modd Teithio Amser yn dy alluogi i weld yr awyr fel yr oedd yn ymddangos
+rhyw bryd arall mewn amser. Dewisa \'Teithio Amser\' o\'r brif dewislen
+yna dewisa un o\'r dyddiadau poblogaidd neu rhoi dyddiad ac amser dy hun
+wrth ddefnyddio deialogau \'Newid y Dyddiad\' a \'Newid yr Amser\'. Mae\'r 
+dewis yn cyfyngedig i\'r blynyddoedd rhwng 1900 a 2100 oherwydd cyfyngiadau
+cywirdeb, yn bennaf oherwydd dylanwad disgyrchiant y blaned Iau. Ar ôl
+dewis dyddiad a gwasgu \'Mynd!\' bydd Sky Map yn y modd teithio amser ac yn
+dangos y ddyddiad rwyt yn ymweld â, gyda fotymau rheoli \'chwarae\' ymlaen
+neu nôl trwy amser o yno. Clicia ar y botymau hyn unwaith i ddechrau symud
+yn araf trwy amser, neu sawl tro i deithio\'n gynt ac yn gynt.&lt;br/&gt;
+
+Gellir defnyddio Teithio Amser i ateb ystod o gwestiynnau, gan gynnwys
+\'Pa bethau fydd yn weladwy jyst wedi i\'r haul machlud heno?\', \'Pa 
+bryd nesaf bydd cyfle da i weld y blaned Mercher?\', ac \'Yn ôl 
+Hesiod, pa bryd dylwn gynaeafu fy ngrawnwin?\'&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;Oriel Hubble&lt;/b&gt;&lt;br/&gt;
+Cynwysa Sky Map oriel o ddelweddau o delesgop Hubble. Gellir pori
+neu chwilio\'r delweddau yn yr Oriel.&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;Modd Golwg Nos&lt;/b&gt;&lt;br/&gt;
+Pwrpas modd golwg nos yw gwarchod dy lygaid wrth ddefnyddio\'r ap yn y 
+tywyllwch. Yn y modd hwn, mae Sky Map yn pylu\'r sgrin ac yn defnyddio coch
+ar gefndir ddu. Mae dewis yr opsiwn eto yn toglo nôl i\'r modd arferol.&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;Gosod Dy Leoliad&lt;/b&gt;&lt;br/&gt;
+Mae ar Sky Map angen gwybod dy leoliad bras er mwyn dangos map o\'r awyr 
+fel y mae i\'w weld o dy leoliad. Yn rhagosodedig, mae\'n adnabod dy leoliad 
+o dy rwydwaith symudol. Os nad oes signal neu os nad wyt wedi galluogi
+rhwydwaith, defnyddir GPS dy ddyfais. Gellir gosod dy leoliad dy hun yng 
+ngosodiadau\'r ap, naill ai wrth roi enw lle neu gyfesurynnau (lledred a 
+hydred). Noder bod ar Sky Map angen cysylltiad data neu wi-fi i gael dy 
+gyfesurynnau o enw lle.&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;Cyfyngiadau a Datrys Problemau&lt;/b&gt;&lt;br/&gt;
+&lt;i&gt;Dyw\'r map ddim yn gywir.&lt;/i&gt;&lt;br/&gt;
+Gall fod nifer o resymau pam nad yw\'r map yn dangos yr awyr yn gwbl gywir:&lt;br/&gt;
+1) Ydy dy gwmpawd wedi\'i raddnodi? Dalia dy ddyfais ac wrth droi dy arddwn symud y 
+ddyfais mewn patrwm rhif wyth i galibro ei synwyryddion cyfeiriad. Mae\'n bosib 
+bydd angen ail-adrodd hyn. Nodwedd o\'r ddyfais yw hyn, nid Sky Map.&lt;br/&gt;
+2) Ydy\'r ap yn gwybod dy leoliad cywir? Ydy GPS neu leoliad rhwydwaith dy ddyfais
+ymlaen?&lt;br/&gt;
+3) Ydy\'r amser a chylchfa amser cywir wedi\'i osod? Mae Sky Map yn cyfrifo amser 
+GMT ac mae angen gwybod yr amser a dy gylchfa amser i wneud hyn. Os oes cerdyn 
+SIM yn dy ddyfais, bydd rhain fel arfer wedi eu gosod yn gywir.&lt;br/&gt;
+4) Ydy cywiriad magnetig wedi\'i droi ymlaen? Mewn rhai rhannau o\'r byd gall 
+y gwahaniaeth rhwng gogledd cywir a gogledd magnetig fod cymaint a 20 gradd.&lt;br/&gt;
+&lt;i&gt;Dyw\'r map ddim yn symud.&lt;/i&gt;&lt;br/&gt;
+Wyt ti ym modd llywio â llaw? Os ddim, gall hyn fod oherwydd cwmpawd heb ei galibro.
+Dilyna\'r camau uchod i gael dy ddyfais i adnabod y cyfeiriad yn gywir.&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;Clodrestr&lt;/b&gt;&lt;br/&gt;
+&lt;i&gt;Peirianneg, Dylunio a Rheolaeth Cynnyrch&lt;/i&gt;&lt;br/&gt;
+Brent Bryan, Dominic Widdows, Hector Ouilhet, James Powell,
+John Taylor, Kevin Serafini, Lior Ron&lt;br/&gt;&lt;br/&gt;
+
+&lt;i&gt;Cyfranwyr Cod Agored&lt;/i&gt;&lt;br/&gt;
+Christopher Wilcox, PhD&lt;br/&gt;&lt;br/&gt;
+
+&lt;i&gt;Lleoleiddiad Cymraeg&lt;/i&gt;&lt;br/&gt;
+Aled Powell&lt;br/&gt;&lt;br/&gt;
+
+&lt;b&gt;Cydnabyddiaeth&lt;/b&gt;&lt;br/&gt;
+Datblygwyd Sky Map yn wreiddiol fel "Google Sky Map" gan Google Inc. a chafodd ei 
+ryddhau yn god agored yn 2012.
+Defnyddia Sky Map mapiau o ddata gan:&lt;br/&gt;
+Centre de Donnees astronomiques de Strasbourg (http://cdsweb.u-strasbg.fr/)&lt;br/&gt;
+The Bright Star Catalogue, 5th Revised Ed. (Hoffleit D., Warren Jr W.H.)&lt;br/&gt;
+The HYG Database, HYG v1.0. (http://www.astronexus.com/)&lt;br/&gt;
+History and Accurate Positions for the NGC/IC Objects (Harold G. Corwin Jr)&lt;br/&gt;
+Revised New General Catalogue of Nonstellar Astronomical Objects
+(Sulentic J.W., Tifft W.G.)&lt;br/&gt;
+Siartau Sêr SFA
+(http://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html)&lt;br/&gt;
+Cyfrifir lleoliadau gwrthrychau cysawd yr haul o ddata gan USNO
+(http://www.usno.navy.mil/USNO/astronomical-applications)&lt;br/&gt;
+Data sfferig gan
+(http://www2.research.att.com/~njas/coverings)&lt;br/&gt;
+Delweddau Hubble gan Space Telescope Science Institute NASA
+(http://hubblesite.org/)&lt;br/&gt;
+Data cawodydd meteor o\'r International Meteor Organization
+(http://www.imo.net/data)&lt;br/&gt;
+Delwedd M31 gan Peter Kennett (https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg)&lt;br/&gt;
+</string>
+</resources>

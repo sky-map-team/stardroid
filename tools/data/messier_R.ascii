@@ -1,5 +1,143 @@
 source {
   search_location {
+    right_ascension: 129.9
+    declination: 48.18
+  }
+  point {
+    location {
+      right_ascension: 129.9
+      declination: 48.18
+    }
+    color: 4761665
+    size: 3
+  }
+  label {
+    location {
+      right_ascension: 129.9
+      declination: 48.18
+    }
+    color: 4761665
+    REMOVE_string_index: "R.string.neowise1"
+  }
+  REMOVE_name_ids: "R.string.neowise1"
+}
+source {
+  search_location {
+    right_ascension: 151.5
+    declination: 46.02
+  }
+  point {
+    location {
+      right_ascension: 151.5
+      declination: 46.02
+    }
+    color: 4761665
+    size: 3
+  }
+  label {
+    location {
+      right_ascension: 151.5
+      declination: 46.02
+    }
+    color: 4761665
+    REMOVE_string_index: "R.string.neowise2"
+  }
+  REMOVE_name_ids: "R.string.neowise2"
+}
+source {
+  search_location {
+    right_ascension: 169.95
+    declination: 39.67
+  }
+  point {
+    location {
+      right_ascension: 169.95
+      declination: 39.67
+    }
+    color: 4761665
+    size: 3
+  }
+  label {
+    location {
+      right_ascension: 169.95
+      declination: 39.67
+    }
+    color: 4761665
+    REMOVE_string_index: "R.string.neowise3"
+  }
+  REMOVE_name_ids: "R.string.neowise3"
+}
+source {
+  search_location {
+    right_ascension: 183.15
+    declination: 31.67
+  }
+  point {
+    location {
+      right_ascension: 183.15
+      declination: 31.67
+    }
+    color: 4761665
+    size: 3
+  }
+  label {
+    location {
+      right_ascension: 183.15
+      declination: 31.67
+    }
+    color: 4761665
+    REMOVE_string_index: "R.string.neowise4"
+  }
+  REMOVE_name_ids: "R.string.neowise4"
+}
+source {
+  search_location {
+    right_ascension: 192.0
+    declination: 24.1
+  }
+  point {
+    location {
+      right_ascension: 192.0
+      declination: 24.1
+    }
+    color: 4761665
+    size: 3
+  }
+  label {
+    location {
+      right_ascension: 192.0
+      declination: 24.1
+    }
+    color: 4761665
+    REMOVE_string_index: "R.string.neowise5"
+  }
+  REMOVE_name_ids: "R.string.neowise5"
+}
+source {
+  search_location {
+    right_ascension: 198.3
+    declination: 17.67
+  }
+  point {
+    location {
+      right_ascension: 198.3
+      declination: 17.67
+    }
+    color: 4761665
+    size: 3
+  }
+  label {
+    location {
+      right_ascension: 198.3
+      declination: 17.67
+    }
+    color: 4761665
+    REMOVE_string_index: "R.string.neowise6"
+  }
+  REMOVE_name_ids: "R.string.neowise6"
+}
+source {
+  search_location {
     right_ascension: 83.625
     declination: 22.01667
   }
