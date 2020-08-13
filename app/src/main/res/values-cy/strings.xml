@@ -90,16 +90,16 @@
     <string name="time_travel_stopped" translation_description="Label showing rate of travel through time">Teithio amser wedi rhewi</string>
     <string name="time_travel_second_speed" translation_description="Label showing rate of travel through time.  The symbol means greater than.">Yn teithio &gt; 1 eil/eil</string>
     <string name="time_travel_minute_speed" translation_description="Label showing rate of travel through time">Yn teithio &gt; 1 mun/eil</string>
-    <string name="time_travel_10munute_speed" translation_description="Label showing rate of travel through time">Yn teithio &gt; 10 mun/eil</string>
-    <string name="time_travel_awr_speed" translation_description="Label showing rate of travel through time">Yn teithio &gt; 1 awr/eil</string>
-    <string name="time_travel_diwrnod_speed" translation_description="Label showing rate of travel through time">Yn teithio &gt; 1 diwrnod/eil</string>
-    <string name="time_travel_wythnos_speed" translation_description="Label showing rate of travel through time">Yn teithio &gt; 1 wythnos/eil</string>
-    <string name="time_travel_eilond_speed_back" translation_description="Label showing rate of travel through time">Yn teithio &lt; 1 eil/eil</string>
-    <string name="time_travel_munute_speed_back" translation_description="Label showing rate of travel through time">Yn teithio &lt; 1 mun/eil</string>
-    <string name="time_travel_10munute_speed_back" translation_description="Label showing rate of travel through time">Yn teithio &lt; 10 mun/eil</string>
-    <string name="time_travel_awr_speed_back" translation_description="Label showing rate of travel through time">Yn teithio &lt; 1 awr/eil</string>
-    <string name="time_travel_diwrnod_speed_back" translation_description="Label showing rate of travel through time">Yn teithio &lt; 1 diwrnod/eil</string>
-    <string name="time_travel_wythnos_speed_back" translation_description="Label showing rate of travel through time">Yn teithio &lt; 1 wythnos/eil</string>
+    <string name="time_travel_10minute_speed" translation_description="Label showing rate of travel through time">Yn teithio &gt; 10 mun/eil</string>
+    <string name="time_travel_hour_speed" translation_description="Label showing rate of travel through time">Yn teithio &gt; 1 awr/eil</string>
+    <string name="time_travel_day_speed" translation_description="Label showing rate of travel through time">Yn teithio &gt; 1 diwrnod/eil</string>
+    <string name="time_travel_week_speed" translation_description="Label showing rate of travel through time">Yn teithio &gt; 1 wythnos/eil</string>
+    <string name="time_travel_second_speed_back" translation_description="Label showing rate of travel through time">Yn teithio &lt; 1 eil/eil</string>
+    <string name="time_travel_minute_speed_back" translation_description="Label showing rate of travel through time">Yn teithio &lt; 1 mun/eil</string>
+    <string name="time_travel_10minute_speed_back" translation_description="Label showing rate of travel through time">Yn teithio &lt; 10 mun/eil</string>
+    <string name="time_travel_hour_speed_back" translation_description="Label showing rate of travel through time">Yn teithio &lt; 1 awr/eil</string>
+    <string name="time_travel_day_speed_back" translation_description="Label showing rate of travel through time">Yn teithio &lt; 1 diwrnod/eil</string>
+    <string name="time_travel_week_speed_back" translation_description="Label showing rate of travel through time">Yn teithio &lt; 1 wythnos/eil</string>
     <string name="use_sound_effects" translation_description="A preferences menu label">Galluogi sain</string>
 
     <string name="enable_layer_toast">Yn galluogi haen %s</string>
