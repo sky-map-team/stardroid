@@ -1,13 +1,8 @@
-.gradle/
-local.properties
+.gradle
+/local.properties
 # User-specific configurations
-.idea/
+/.idea/*
 *.iml
 .DS_Store
-build/
-captures/
-
-tools/bin/
-app/no-checkin.properties
-app/gen/
-*.keystore
+/build
+/captures
