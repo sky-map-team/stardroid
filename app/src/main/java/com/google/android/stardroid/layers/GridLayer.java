@@ -39,18 +39,26 @@ import java.util.List;
  * @author John Taylor
  */
 public class GridLayer extends AbstractSourceLayer {
-  private final int numRaSources;
-  private final int numDecSources;
+  private final int numRightAscentionLines;
+  private final int numDeclinationLines;
 
+  /**
+   *
+   * @param resources
+   * @param numRightAscentionLines
+   * @param numDeclinationLines The number of declination lines to show including the poles
+   *                            on each side of the equator. 9 is a good number for 10 degree
+   *                            intervals.
+   */
   public GridLayer(Resources resources, int numRightAscentionLines, int numDeclinationLines) {
     super(resources, false);
-    this.numRaSources = numRightAscentionLines;
-    this.numDecSources = numDeclinationLines;
+    this.numRightAscentionLines = numRightAscentionLines;
+    this.numDeclinationLines = numDeclinationLines;
   }
 
   @Override
   protected void initializeAstroSources(ArrayList<AstronomicalSource> sources) {
-    sources.add(new GridSource(getResources(), numRaSources, numDecSources));
+    sources.add(new GridSource(getResources(), numRightAscentionLines, numDeclinationLines));
   }
 
   @Override
@@ -84,9 +92,6 @@ public class GridLayer extends AbstractSourceLayer {
       for (int r = 0; r < numRaSources; r++) {
         lineSources.add(createRaLine(r, numRaSources));
       }
-      for (int d = 0; d < numDecSources; d++) {
-        lineSources.add(createDecLine(d, numDecSources));
-      }
 
       /** North & South pole, hour markers every 2hrs. */
       textSources.add(new TextSourceImpl(0f, 90f, res.getString(R.string.north_pole), LINE_COLOR));
@@ -95,6 +100,16 @@ public class GridLayer extends AbstractSourceLayer {
         float ra = index * 30.0f;
         String title = String.format("%dh", 2 * index);
         textSources.add(new TextSourceImpl(ra, 0.0f, title, LINE_COLOR));
+      }
+
+      lineSources.add(createDecLine(0, 0)); // Equator
+      // Note that we don't create lines at the poles.
+      for (int d = 1; d < numDecSources; d++) {
+        float dec = d * 90.0f / numDecSources;
+        lineSources.add(createDecLine(d, dec));
+        textSources.add(new TextSourceImpl(0f, dec, String.format("%d°", (int) dec), LINE_COLOR));
+        lineSources.add(createDecLine(d, -dec));
+        textSources.add(new TextSourceImpl(0f, -dec, String.format("%d°", (int) -dec), LINE_COLOR));
       }
     }
 
@@ -117,9 +132,8 @@ public class GridLayer extends AbstractSourceLayer {
       return line;
     }
 
-    private LineSourceImpl createDecLine(int index, int numDecSources) {
+    private LineSourceImpl createDecLine(int index, float dec) {
       LineSourceImpl line = new LineSourceImpl(LINE_COLOR);
-      float dec = 90.0f - (index + 1.0f) * 180.0f / (numDecSources + 1.0f);
       for (int i = 0; i < NUM_RA_VERTICES; i++) {
         float ra = i * 360.0f / NUM_RA_VERTICES;
         RaDec raDec = new RaDec(ra, dec);
