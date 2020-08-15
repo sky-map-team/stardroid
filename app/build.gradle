@@ -8,8 +8,8 @@ android {
         applicationId "com.google.android.stardroid"
         minSdkVersion 15
         targetSdkVersion 28
-        versionCode 1511
-        versionName "1.9.5 - cymraeg"
+        versionCode 1510
+        versionName "1.9.4 - neowisehack"
         buildConfigField 'String', 'GOOGLE_ANALYTICS_CODE', '""'
     }
 
