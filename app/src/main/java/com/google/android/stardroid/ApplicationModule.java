@@ -143,7 +143,7 @@ public class ApplicationModule {
     layerManager.addLayer(new NewConstellationsLayer(assetManager, resources));
     layerManager.addLayer(new PlanetsLayer(model, resources, preferences));
     layerManager.addLayer(new MeteorShowerLayer(model, resources));
-    layerManager.addLayer(new GridLayer(resources, 24, 19));
+    layerManager.addLayer(new GridLayer(resources, 24, 9));
     layerManager.addLayer(new HorizonLayer(model, resources));
     layerManager.addLayer(new EclipticLayer(resources));
     layerManager.addLayer(new SkyGradientLayer(model, resources));
