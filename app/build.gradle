@@ -3,8 +3,8 @@ apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 28
+    buildToolsVersion "29.0.3"
 
-    flavorDimensions "default"
     defaultConfig {
         applicationId "com.google.android.stardroid"
         minSdkVersion 15
@@ -13,6 +13,7 @@ android {
         versionName "1.9.4 - neowisehack"
         buildConfigField 'String', 'GOOGLE_ANALYTICS_CODE', '""'
     }
+
     signingConfigs {
         release {
             if (project.file('no-checkin.properties').exists()) {
@@ -26,6 +27,7 @@ android {
             }
         }
     }
+
     buildTypes {
         release {
             minifyEnabled true
@@ -43,7 +45,7 @@ android {
 
     lintOptions {
         // Lint complains because of missing translations.
-        // TODO(jontayler): fix the missing translations.
+        // (Missing translations now removed)
         abortOnError false
     }
 
@@ -53,36 +55,42 @@ android {
         installOptions "-d", "-t"
     }
 
+    flavorDimensions "default"
     productFlavors {
-      // includes gms Google servies
-      gms {
-        resValue "string", "analytics_enabled", "true"
-      }
+        // includes gms Google services
+        gms {
+            resValue "string", "analytics_enabled", "true"
+        }
 
-      // uses only open source software
-      //fdroid {
-      //  resValue "string", "analytics_enabled", "false"
-      //}
+        // uses only open source software
+        fdroid {
+            resValue "string", "analytics_enabled", "false"
+        }
     }
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.android.support:support-annotations:23.2.1'
+// Android support
+    implementation 'com.android.support:support-annotations:28.0.0'
+    implementation "com.android.support:support-v4:28.0.0"
+
+// Third-party
     implementation 'com.google.guava:guava:19.0'
-    gmsImplementation 'com.google.firebase:firebase-analytics:17.2.2'
+    implementation 'com.google.dagger:dagger:2.28.3'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.28.3'
+    // For annotations not in Android but needed by Dagger
+    implementation 'javax.annotation:jsr250-api:1.0'
+    implementation 'com.google.protobuf:protobuf-java:2.3.0'
+
+// Flavor
+    gmsImplementation 'com.google.android.gms:play-services-analytics:16.0.8'
     gmsImplementation 'com.google.android.gms:play-services-location:16.0.0'
-    implementation "com.android.support:support-v4:26.1.0"
-    implementation 'com.google.dagger:dagger:2.14.1'
-    implementation 'javax.annotation:jsr250-api:1.0'  // For annotations not in Android but needed by Dagger
-    annotationProcessor 'com.google.dagger:dagger-compiler:2.14.1'
-    testImplementation 'junit:junit:4.12'
+   // gmsImplementation 'com.google.firebase:firebase-analytics:17.2.2'
+
+// Testing
+    testImplementation 'junit:junit:4.13'
     testImplementation 'org.mockito:mockito-core:1.10.19'
-    testImplementation 'org.robolectric:robolectric:3.0'
-    androidTestImplementation 'junit:junit:4.12'
+    testImplementation 'org.robolectric:robolectric:4.3.1'
+    androidTestImplementation 'junit:junit:4.13'
     androidTestImplementation 'org.easymock:easymock:2.5.2'
 }
-
-
-
-
