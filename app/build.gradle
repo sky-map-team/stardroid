@@ -70,8 +70,8 @@ android {
 
 dependencies {
 // Android support
-    implementation 'com.android.support:support-annotations:28.0.0'
-    implementation "com.android.support:support-v4:28.0.0"
+    implementation 'androidx.annotation:annotation:1.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
 // Third-party
     implementation 'com.google.guava:guava:19.0'
