@@ -5,14 +5,11 @@ import android.app.Activity;
 import android.app.FragmentManager;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.support.v4.app.ActivityCompat;
+import androidx.core.app.ActivityCompat;
 import android.util.Log;
-import android.widget.Toast;
 
-import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.DynamicStarMapActivity;
 import com.google.android.stardroid.activities.dialogs.LocationPermissionRationaleFragment;
-import com.google.android.stardroid.control.LocationController;
 import com.google.android.stardroid.util.MiscUtil;
 
 /**
