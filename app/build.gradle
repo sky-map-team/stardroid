@@ -7,7 +7,7 @@ android {
 
     defaultConfig {
         applicationId "com.google.android.stardroid"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 28
         versionCode 1510
         versionName "1.9.4 - neowisehack"
@@ -85,7 +85,7 @@ dependencies {
 // Flavor
     gmsImplementation 'com.google.android.gms:play-services-analytics:16.0.8'
     gmsImplementation 'com.google.android.gms:play-services-location:16.0.0'
-   // gmsImplementation 'com.google.firebase:firebase-analytics:17.2.2'
+    gmsImplementation 'com.google.firebase:firebase-analytics:17.5.0'
 
 // Testing
     testImplementation 'junit:junit:4.13'

@@ -1,46 +1,40 @@
 {
   "project_info": {
-    "project_id": "stardroid-server",
-    "project_number": "583920233139",
-    "name": "stardroid-server"
+    "project_number": "1013100360622",
+    "firebase_url": "https://sky-map-1286.firebaseio.com",
+    "project_id": "sky-map-1286",
+    "storage_bucket": "sky-map-1286.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:583920233139:android:29df6819e18e898a",
-        "client_id": "android:com.google.android.stardroid",
-        "client_type": 1,
+        "mobilesdk_app_id": "1:1013100360622:android:8dd01fc8df295f5188ce3f",
         "android_client_info": {
-          "package_name": "com.google.android.stardroid",
-          "certificate_hash": []
+          "package_name": "com.google.android.stardroid"
         }
       },
-      "oauth_client": [],
-      "api_key": [{ "current_key": ""}],
+      "oauth_client": [
+        {
+          "client_id": "1013100360622-4iu644qmfpolb5099bqs8ftsrnesk64o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIDxuptKY39yXYb0RIjclfJkUTDWJPTrY"
+        }
+      ],
       "services": {
-        "analytics_service": {
-          "status": 2,
-          "analytics_property": {
-            "tracking_id": "replaceme"
-          }
-        },
-        "cloud_messaging_service": {
-          "status": 1,
-          "apns_config": []
-        },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
-        },
-        "google_signin_service": {
-          "status": 1
-        },
-        "ads_service": {
-          "status": 1
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1013100360622-4iu644qmfpolb5099bqs8ftsrnesk64o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
   ],
-  "client_info": [],
-  "ARTIFACT_VERSION": "1"
+  "configuration_version": "1"
 }
