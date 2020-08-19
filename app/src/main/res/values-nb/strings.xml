@@ -412,7 +412,7 @@
     <string name="puppidvelids" translation_description="Meteor Shower">Puppid-velidene</string>
     <string name="ursids" translation_description="Meteor Shower">Ursidene</string>
 
-    <string name="no_sensor_warning">Your device may lack orientation sensors - automode may not work</string>
+    <string name="no_sensor_warning">Enheten din kan mangle orienteringssensorer - auto-modus fungerer kanskje ikke</string>
     <string name="warning_dialog_title">Bad news!</string>
     <string name="missing_sensor_dialog_text">\n
         Unfortunately your device might not have one of the
@@ -450,7 +450,7 @@
     <string name="diagnostics_activity_light_level">Lysnivå</string>
     <string name="diagnostics_activity_location_and_time_heading">Sted og tid</string>
     <string name="diagnostics_activity_gps">GPS</string>
-    <string name="diagnostics_activity_location">Posisjon (le., br.)</string>
+    <string name="diagnostics_activity_location">Posisjon (br., le.)</string>
     <string name="diagnostics_activity_pointing_ra_dec">Peke-øyeblikksbilde</string>
     <string name="diagnostics_activity_magnetic_correction">Magnetisk korreksjon</string>
     <string name="diagnostics_activity_local_datetime">Lokal dato-tid</string>
