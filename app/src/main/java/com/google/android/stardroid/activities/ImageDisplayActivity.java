@@ -97,7 +97,6 @@ public class ImageDisplayActivity extends InjectableActivity {
   @Override
   public void onStart() {
     super.onStart();
-    analytics.trackPageView(Analytics.IMAGE_DISPLAY_ACTIVITY);
   }
 
   @Override

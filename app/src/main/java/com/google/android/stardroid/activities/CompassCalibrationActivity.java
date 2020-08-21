@@ -95,6 +95,5 @@ public class CompassCalibrationActivity extends InjectableActivity implements Se
   @Override
   public void onStart() {
     super.onStart();
-    analytics.trackPageView(Analytics.COMPASS_CALIBRATION_ACTIVITY);
   }
 }

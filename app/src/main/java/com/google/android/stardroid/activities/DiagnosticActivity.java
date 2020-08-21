@@ -65,7 +65,6 @@ public class DiagnosticActivity extends InjectableActivity implements SensorEven
   @Override
   public void onStart() {
     super.onStart();
-    analytics.trackPageView(Analytics.DIAGNOSTICS_ACTIVITY);
 
     setText(R.id.diagnose_phone_txt, Build.MODEL + " (" + Build.HARDWARE + ") " +
         Locale.getDefault().getLanguage());

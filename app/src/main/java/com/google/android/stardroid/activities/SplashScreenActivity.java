@@ -95,7 +95,6 @@ public class SplashScreenActivity extends InjectableActivity
   @Override
   public void onStart() {
     super.onStart();
-    analytics.trackPageView(Analytics.SPLASH_SCREEN_ACTIVITY);
   }
 
   @Override

@@ -83,7 +83,6 @@ public class EditSettingsActivity extends PreferenceActivity {
   @Override
   public void onStart() {
     super.onStart();
-    analytics.trackPageView(Analytics.EDIT_SETTINGS_ACTIVITY);
     final Preference locationPreference = preferenceFragment.findPreference(LOCATION);
     Preference latitudePreference = preferenceFragment.findPreference(LATITUDE);
     Preference longitudePreference = preferenceFragment.findPreference(LONGITUDE);

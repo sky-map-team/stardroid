@@ -14,6 +14,11 @@ android {
         buildConfigField 'String', 'GOOGLE_ANALYTICS_CODE', '""'
     }
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
     signingConfigs {
         release {
             if (project.file('no-checkin.properties').exists()) {

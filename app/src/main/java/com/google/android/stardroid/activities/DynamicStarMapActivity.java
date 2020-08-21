@@ -414,7 +414,6 @@ public class DynamicStarMapActivity extends InjectableActivity
   @Override
   public void onStart() {
     super.onStart();
-    analytics.trackPageView(Analytics.DYNAMIC_STARMAP_ACTIVITY);
     sessionStartTime = System.currentTimeMillis();
   }
 

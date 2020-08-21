@@ -29,22 +29,9 @@ public class Analytics implements AnalyticsInterface {
   @Inject
   Analytics(StardroidApplication application) { }
 
+  @Override
   public void setEnabled(boolean enabled) { }
 
-  /**
-   * Tracks a screen view.
-   */
-  public void trackPageView(String page) { }
-
-  /**
-   * Tracks and event.
-   *
-   * @see com.google.android.gms.analytics.HitBuilders.EventBuilder
-   */
-  public void trackEvent(String category, String action, String label, long value) { }
-
-  /**
-   * Sets custom variables for slicing.
-   */
-  public void setCustomVar(Slice slice, String value) { }
+  @Override
+  public void trackEvent(String event, Bundle params) { }
 }
