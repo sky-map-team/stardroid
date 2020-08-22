@@ -17,6 +17,7 @@ package com.google.android.stardroid.util;
 import android.os.Bundle;
 
 import com.google.android.stardroid.StardroidApplication;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 import javax.inject.Inject;
 
@@ -43,13 +44,17 @@ public interface AnalyticsInterface {
   // Events & Categories
   static final String TOS_ACCEPT = "Terms Of Service";
   static final String APP_CATEGORY = "Application";
-  static final String TOS_ACCEPTED = "TOS Accepted";
-  static final String TOS_REJECTED = "TOS Rejected";
+  static final String TOS_ACCEPTED_EVENT = "TOS Accepted";
+  static final String TOS_REJECTED_EVENT = "TOS Rejected";
   static final String PREFERENCE_TOGGLE = "Preference toggled";
-  static final String PREFERENCE_BUTTON_TOGGLE = "Preference button toggled";
+  static final String PREFERENCE_BUTTON_TOGGLE_EVENT = "Preference button toggled";
+  static final String PREFERENCE_BUTTON_TOGGLE_VALUE = "preference_toggle_value";
+  static final String PREFERENCE_CHANGE_EVENT = "Preference Change";
+  static final String PREFERENCE_CHANGE_EVENT_VALUE = "value";
   static final String USER_ACTION_CATEGORY = "User Action";
   static final String TOGGLED_MANUAL_MODE_LABEL = "Toggled Manual Mode";
   static final String MENU_ITEM = "Pressed Menu Item";
+  static final String MENU_ITEM_EVENT_NAME = "menu_item";
   static final String TOGGLED_NIGHT_MODE_LABEL = "Toggled Night Mode";
   static final String SEARCH_REQUESTED_LABEL = "Search Requested";
   static final String SETTINGS_OPENED_LABEL = "Settings Opened";
@@ -59,13 +64,16 @@ public interface AnalyticsInterface {
   static final String GALLERY_OPENED_LABEL = "Gallery Opened";
   static final String TOS_OPENED_LABEL = "TOS Opened";
   static final String DIAGNOSTICS_OPENED_LABEL = "Diagnostics Opened";
-  static final String SEARCH = "Search";
+  static final String SEARCH_EVENT = FirebaseAnalytics.Event.SEARCH;
+  static final String SEARCH_TERM = FirebaseAnalytics.Param.SEARCH_TERM;
+  static final String SEARCH_SUCCESS = "search_success";
   static final String GENERAL_CATEGORY = "General";
   static final String START_EVENT = "Start up event";
   static final String START_EVENT_HOUR = "hour";
 
   static final String SENSOR_CATEGORY = "Sensors";
-  static final String SESSION_LENGTH_BUCKET = "Session length bucket";
+  static final String SESSION_LENGTH_EVENT = "Session length";
+  static final String SESSION_LENGTH_TIME = "Session length";
   static final String SENSOR_AVAILABILITY = "Minimal Sensor Availability";
   static final String ROT_SENSOR_AVAILABILITY = "Rotation Sensor Availability";
   static final String SENSOR_TYPE = "Sensor Type - ";

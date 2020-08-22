@@ -14,6 +14,7 @@
 
 package com.google.android.stardroid.util;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -62,5 +63,11 @@ public class Analytics implements AnalyticsInterface {
   public void trackEvent(String event, Bundle params) {
     Log.d(TAG, String.format("Logging event %s", event));
     firebaseAnalytics.logEvent(event, params);
+  }
+
+  @Override
+  public void setUserProperty(String propertyName, String propertyValue) {
+    Log.d(TAG, String.format("Logging user property %s, %s", propertyName, propertyValue));
+    firebaseAnalytics.setUserProperty(propertyName, propertyValue);
   }
 }

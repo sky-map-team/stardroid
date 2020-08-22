@@ -57,7 +57,7 @@ public class StardroidApplication extends Application {
   @Inject SharedPreferences preferences;
   // We keep a reference to this just to start it initializing.
   @Inject LayerManager layerManager;
-  @Inject Analytics analytics;
+  @Inject AnalyticsInterface analytics;
   @Inject SensorManager sensorManager;
 
   // We need to maintain references to this object to keep it from
