@@ -87,9 +87,12 @@ public class CompassCalibrationActivity extends InjectableActivity implements Se
   @Override
   public void onAccuracyChanged(Sensor sensor, int accuracy) {
     accuracyReceived = true;
+    TextView accuracyTextView = findViewById(R.id.compass_calib_activity_compass_accuracy);
     String accuracyText = accuracyDecoder.getTextForAccuracy(accuracy);
-    ((TextView) findViewById(R.id.compass_calib_activity_compass_accuracy)).setText(accuracyText);
+    accuracyTextView.setText(accuracyText);
+    accuracyTextView.setTextColor(accuracyDecoder.getColorForAccuracy(accuracy));
     if (accuracy == SensorManager.SENSOR_STATUS_ACCURACY_HIGH) {
+      // TODO: we don't really want to do this if the dialog was user-invoked.
       toaster.toastLong(R.string.sensor_accuracy_high);
       this.finish();
     }
