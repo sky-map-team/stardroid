@@ -42,6 +42,6 @@ public class Analytics implements AnalyticsInterface {
 
     @Override
     public void setUserProperty(String propertyName, String propertyValue) {
-    
+
     }
 }

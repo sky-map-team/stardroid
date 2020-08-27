@@ -9,5 +9,6 @@ captures/
 
 tools/bin/
 app/no-checkin.properties
+app/src/gms/google-services.json
 app/gen/
 *.keystore
