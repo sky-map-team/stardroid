@@ -10,11 +10,13 @@ import android.view.View;
 import android.webkit.WebView;
 import android.widget.CheckBox;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.util.SensorAccuracyDecoder;
 import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.MiscUtil;
+import com.google.android.stardroid.util.Toaster;
 
 import javax.inject.Inject;
 
@@ -29,6 +31,7 @@ public class CompassCalibrationActivity extends InjectableActivity implements Se
   @Inject SensorAccuracyDecoder accuracyDecoder;
   @Inject SharedPreferences sharedPreferences;
   @Inject Analytics analytics;
+  @Inject Toaster toaster;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -86,6 +89,10 @@ public class CompassCalibrationActivity extends InjectableActivity implements Se
     accuracyReceived = true;
     String accuracyText = accuracyDecoder.getTextForAccuracy(accuracy);
     ((TextView) findViewById(R.id.compass_calib_activity_compass_accuracy)).setText(accuracyText);
+    if (accuracy == SensorManager.SENSOR_STATUS_ACCURACY_HIGH) {
+      toaster.toastLong(R.string.sensor_accuracy_high);
+      this.finish();
+    }
   }
 
   public void onOkClicked(View unused) {
