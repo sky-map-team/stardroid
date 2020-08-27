@@ -23,6 +23,7 @@ import javax.inject.Inject;
 public class CompassCalibrationActivity extends InjectableActivity implements SensorEventListener {
   public static final String HIDE_CHECKBOX = "hide checkbox";
   public static final String DONT_SHOW_CALIBRATION_DIALOG = "no calibration dialog";
+  public static final String AUTO_DISMISSABLE = "auto dismissable";
   private static final String TAG = MiscUtil.getTag(CompassCalibrationActivity.class);
   private Sensor magneticSensor;
   private CheckBox checkBoxView;
@@ -91,8 +92,8 @@ public class CompassCalibrationActivity extends InjectableActivity implements Se
     String accuracyText = accuracyDecoder.getTextForAccuracy(accuracy);
     accuracyTextView.setText(accuracyText);
     accuracyTextView.setTextColor(accuracyDecoder.getColorForAccuracy(accuracy));
-    if (accuracy == SensorManager.SENSOR_STATUS_ACCURACY_HIGH) {
-      // TODO: we don't really want to do this if the dialog was user-invoked.
+    if (accuracy == SensorManager.SENSOR_STATUS_ACCURACY_HIGH
+        && getIntent().getBooleanExtra(AUTO_DISMISSABLE, false)) {
       toaster.toastLong(R.string.sensor_accuracy_high);
       this.finish();
     }

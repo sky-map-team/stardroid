@@ -101,6 +101,7 @@ public class SensorAccuracyMonitor implements SensorEventListener {
     } else {
       Intent intent = new Intent(context, CompassCalibrationActivity.class);
       intent.putExtra(CompassCalibrationActivity.HIDE_CHECKBOX, false);
+      intent.putExtra(CompassCalibrationActivity.AUTO_DISMISSABLE, true);
       context.startActivity(intent);
     }
   }
