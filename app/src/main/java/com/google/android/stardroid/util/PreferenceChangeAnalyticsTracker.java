@@ -40,7 +40,7 @@ public class PreferenceChangeAnalyticsTracker implements OnSharedPreferenceChang
   }
 
   private Set<String> stringPreferenceWhiteList = new HashSet<String>(Arrays.asList(new String[] {
-      "sensor_speed", "sensor_damping"
+      "sensor_speed", "sensor_damping, lightmode"
   }));
 
   private void trackPreferenceChange(SharedPreferences sharedPreferences, String key) {
