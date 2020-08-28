@@ -61,7 +61,7 @@ public class Analytics implements AnalyticsInterface {
 
   @Override
   public void trackEvent(String event, Bundle params) {
-    Log.d(TAG, String.format("Logging event %s", event));
+    Log.d(TAG, String.format("Logging event %s, %s", event, params));
     firebaseAnalytics.logEvent(event, params);
   }
 

@@ -16,11 +16,19 @@ Android installation:
 Android Developer Studio can create this for you.  You can regenerate the datafiles and
 rebuild everything with the `build_skymap.sh` script.
 
+## Building
+
+The build process is pretty horrible and involves three stages. To make it easier please use the shell script
+
+    ./build_skymap.sh
+    
+(or its f-droid equivalent). This is the easiest way to tell if you've messed something up.  If you just want to quickly regenerate an apk please see the following instructions (note: assembleRelease won't work because the f-droid flavor needs some tweaking which is done by the shell script - so make sure you build the Gms flavor specifically).
+
 ## Building a debug apk
 
 From the root directory execute
 
-    ./gradlew assembleDebug
+    ./gradlew assembleGmsDebug
 
 The apk can be found in `app/build/outputs/apk/`.
 
@@ -36,11 +44,11 @@ keys
 
 From the root directory execute
 
-    ./gradlew assemble
+    ./gradlew assembleGms
 
 or
 
-    ./gradlew assembleRelease
+    ./gradlew assembleGmsRelease
 
 The apk can be found in `app/build/outputs/apk/`.
 

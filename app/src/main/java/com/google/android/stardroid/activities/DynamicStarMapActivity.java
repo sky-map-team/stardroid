@@ -344,17 +344,17 @@ public class DynamicStarMapActivity extends InjectableActivity
     switch (item.getItemId()) {
       case R.id.menu_item_search:
         Log.d(TAG, "Search");
-        menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_NAME, Analytics.SEARCH_REQUESTED_LABEL);
+        menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.SEARCH_REQUESTED_LABEL);
         onSearchRequested();
         break;
       case R.id.menu_item_settings:
         Log.d(TAG, "Settings");
-        menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_NAME, Analytics.SETTINGS_OPENED_LABEL);
+        menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.SETTINGS_OPENED_LABEL);
         startActivity(new Intent(this, EditSettingsActivity.class));
         break;
       case R.id.menu_item_help:
         Log.d(TAG, "Help");
-        menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_NAME, Analytics.HELP_OPENED_LABEL);
+        menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.HELP_OPENED_LABEL);
         helpDialogFragment.show(fragmentManager, "Help Dialog");
         break;
       case R.id.menu_item_dim:
@@ -362,11 +362,11 @@ public class DynamicStarMapActivity extends InjectableActivity
         nightMode = !nightMode;
         sharedPreferences.edit().putString(ActivityLightLevelManager.LIGHT_MODE_KEY,
             nightMode ? "NIGHT" : "DAY").commit();
-        menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_NAME, Analytics.TOGGLED_NIGHT_MODE_LABEL);
+        menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.TOGGLED_NIGHT_MODE_LABEL);
         break;
       case R.id.menu_item_time:
         Log.d(TAG, "Starting Time Dialog from menu");
-        menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_NAME, Analytics.TIME_TRAVEL_OPENED_LABEL);
+        menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.TIME_TRAVEL_OPENED_LABEL);
         if (!timePlayerUI.isShown()) {
           Log.d(TAG, "Resetting time in time travel dialog.");
           controller.goTimeTravel(new Date());
@@ -377,32 +377,31 @@ public class DynamicStarMapActivity extends InjectableActivity
         break;
       case R.id.menu_item_gallery:
         Log.d(TAG, "Loading gallery");
-        menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_NAME, Analytics.GALLERY_OPENED_LABEL);
+        menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.GALLERY_OPENED_LABEL);
         startActivity(new Intent(this, ImageGalleryActivity.class));
         break;
       case R.id.menu_item_tos:
         Log.d(TAG, "Loading ToS");
-        menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_NAME, Analytics.TOS_OPENED_LABEL);
+        menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.TOS_OPENED_LABEL);
         eulaDialogFragmentNoButtons.show(fragmentManager, "Eula Dialog No Buttons");
         break;
       case R.id.menu_item_calibrate:
         Log.d(TAG, "Loading Calibration");
-        menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_NAME, Analytics.CALIBRATION_OPENED_LABEL);
+        menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.CALIBRATION_OPENED_LABEL);
         Intent intent = new Intent(this, CompassCalibrationActivity.class);
         intent.putExtra(CompassCalibrationActivity.HIDE_CHECKBOX, true);
         startActivity(intent);
         break;
       case R.id.menu_item_diagnostics:
         Log.d(TAG, "Loading Diagnostics");
-        menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_NAME, Analytics.DIAGNOSTICS_OPENED_LABEL);
+        menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.DIAGNOSTICS_OPENED_LABEL);
         startActivity(new Intent(this, DiagnosticActivity.class));
         break;
       default:
         Log.e(TAG, "Unwired-up menu item");
         return false;
     }
-    // repeat this
-    analytics.trackEvent(Analytics.MENU_ITEM, menuEventBundle);
+    analytics.trackEvent(Analytics.MENU_ITEM_EVENT, menuEventBundle);
     return true;
   }
 
@@ -443,7 +442,7 @@ public class DynamicStarMapActivity extends InjectableActivity
     SessionBucketLength bucket = getSessionLengthBucket(sessionLengthSeconds);
     Bundle b = new Bundle();
     // Let's see how well Analytics buckets things and log the raw number
-    b.putInt(Analytics.SESSION_LENGTH_TIME, sessionLengthSeconds);
+    b.putInt(Analytics.SESSION_LENGTH_TIME_VALUE, sessionLengthSeconds);
     analytics.trackEvent(Analytics.SESSION_LENGTH_EVENT, b);
   }
 
@@ -648,7 +647,7 @@ public class DynamicStarMapActivity extends InjectableActivity
 
   private void setAutoMode(boolean auto) {
     Bundle b = new Bundle();
-    b.putString(Analytics.MENU_ITEM_EVENT_NAME, Analytics.TOGGLED_MANUAL_MODE_LABEL);
+    b.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.TOGGLED_MANUAL_MODE_LABEL);
     controller.setAutoMode(auto);
     if (auto) {
       sensorAccuracyMonitor.start();
