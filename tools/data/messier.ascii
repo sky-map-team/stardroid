@@ -1,143 +1,5 @@
 source {
   search_location {
-    right_ascension: 129.9
-    declination: 48.18
-  }
-  point {
-    location {
-      right_ascension: 129.9
-      declination: 48.18
-    }
-    color: 4761665
-    size: 3
-  }
-  label {
-    location {
-      right_ascension: 129.9
-      declination: 48.18
-    }
-    color: 4761665
-    string_index: 2131493224
-  }
-  name_ids: 2131493224
-}
-source {
-  search_location {
-    right_ascension: 151.5
-    declination: 46.02
-  }
-  point {
-    location {
-      right_ascension: 151.5
-      declination: 46.02
-    }
-    color: 4761665
-    size: 3
-  }
-  label {
-    location {
-      right_ascension: 151.5
-      declination: 46.02
-    }
-    color: 4761665
-    string_index: 2131493225
-  }
-  name_ids: 2131493225
-}
-source {
-  search_location {
-    right_ascension: 169.95
-    declination: 39.67
-  }
-  point {
-    location {
-      right_ascension: 169.95
-      declination: 39.67
-    }
-    color: 4761665
-    size: 3
-  }
-  label {
-    location {
-      right_ascension: 169.95
-      declination: 39.67
-    }
-    color: 4761665
-    string_index: 2131493226
-  }
-  name_ids: 2131493226
-}
-source {
-  search_location {
-    right_ascension: 183.15
-    declination: 31.67
-  }
-  point {
-    location {
-      right_ascension: 183.15
-      declination: 31.67
-    }
-    color: 4761665
-    size: 3
-  }
-  label {
-    location {
-      right_ascension: 183.15
-      declination: 31.67
-    }
-    color: 4761665
-    string_index: 2131493227
-  }
-  name_ids: 2131493227
-}
-source {
-  search_location {
-    right_ascension: 192.0
-    declination: 24.1
-  }
-  point {
-    location {
-      right_ascension: 192.0
-      declination: 24.1
-    }
-    color: 4761665
-    size: 3
-  }
-  label {
-    location {
-      right_ascension: 192.0
-      declination: 24.1
-    }
-    color: 4761665
-    string_index: 2131493228
-  }
-  name_ids: 2131493228
-}
-source {
-  search_location {
-    right_ascension: 198.3
-    declination: 17.67
-  }
-  point {
-    location {
-      right_ascension: 198.3
-      declination: 17.67
-    }
-    color: 4761665
-    size: 3
-  }
-  label {
-    location {
-      right_ascension: 198.3
-      declination: 17.67
-    }
-    color: 4761665
-    string_index: 2131493229
-  }
-  name_ids: 2131493229
-}
-source {
-  search_location {
     right_ascension: 83.625
     declination: 22.01667
   }
@@ -298,7 +160,7 @@ source {
     string_index: 2131493163
   }
   name_ids: 2131493163
-  name_ids: 2131493298
+  name_ids: 2131493292
 }
 source {
   search_location {
@@ -1154,7 +1016,7 @@ source {
   }
   name_ids: 2131493135
   name_ids: 2131492900
-  name_ids: 2131493272
+  name_ids: 2131493266
 }
 source {
   search_location {
@@ -1178,8 +1040,8 @@ source {
     string_index: 2131493136
   }
   name_ids: 2131493136
-  name_ids: 2131493265
-  name_ids: 2131493325
+  name_ids: 2131493259
+  name_ids: 2131493319
 }
 source {
   search_location {
@@ -1318,7 +1180,7 @@ source {
     string_index: 2131493143
   }
   name_ids: 2131493143
-  name_ids: 2131493395
+  name_ids: 2131493389
 }
 source {
   search_location {
@@ -1457,7 +1319,7 @@ source {
     string_index: 2131493149
   }
   name_ids: 2131493149
-  name_ids: 2131493289
+  name_ids: 2131493283
 }
 source {
   search_location {
@@ -2470,7 +2332,7 @@ source {
     string_index: 2131493089
   }
   name_ids: 2131493089
-  name_ids: 2131493260
+  name_ids: 2131493254
 }
 source {
   search_location {
@@ -2540,7 +2402,7 @@ source {
     string_index: 2131493092
   }
   name_ids: 2131493092
-  name_ids: 2131493340
+  name_ids: 2131493334
 }
 source {
   search_location {
@@ -2699,9 +2561,9 @@ source {
       declination: 66.6332
     }
     color: 4761665
-    string_index: 2131493232
+    string_index: 2131493226
   }
-  name_ids: 2131493232
+  name_ids: 2131493226
   name_ids: 2131492920
 }
 source {
@@ -2723,10 +2585,10 @@ source {
       declination: -47.47686
     }
     color: 4761665
-    string_index: 2131493231
+    string_index: 2131493225
   }
-  name_ids: 2131493231
-  name_ids: 2131493246
+  name_ids: 2131493225
+  name_ids: 2131493240
 }
 source {
   search_location {
@@ -2747,9 +2609,9 @@ source {
       declination: -3.84725
     }
     color: 4761665
-    string_index: 2131493383
+    string_index: 2131493377
   }
-  name_ids: 2131493383
+  name_ids: 2131493377
 }
 source {
   search_location {
