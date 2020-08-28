@@ -14,14 +14,21 @@
 
 package com.google.android.stardroid.util;
 
+import android.content.Context;
+import android.os.Bundle;
 import android.util.Log;
+
+import androidx.annotation.NonNull;
 
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.stardroid.BuildConfig;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.StardroidApplication;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 import javax.inject.Inject;
 
@@ -35,60 +42,32 @@ public class Analytics implements AnalyticsInterface {
   /**
    * Analytics ID associated with http://stardroid-server.appspot.com
    */
-  private static final String WEB_PROPERTY_ID = BuildConfig.GOOGLE_ANALYTICS_CODE;
-  private static final int DISPATCH_INTERVAL_SECS = 10;
-  private static volatile Analytics instance;
-  private final HitBuilders.ScreenViewBuilder screenViewBuilder = new HitBuilders.ScreenViewBuilder();
   private final HitBuilders.EventBuilder eventBuilder = new HitBuilders.EventBuilder();
-  private GoogleAnalytics googleAnalytics;
-  private Tracker tracker;
+  private FirebaseAnalytics firebaseAnalytics;
   private static final String TAG = MiscUtil.getTag(Analytics.class);
 
   @Inject
   Analytics(StardroidApplication application) {
-    googleAnalytics = GoogleAnalytics.getInstance(application);
-    // Can also use R.xml.global_tracker if we're prepared to reveal our analytics Id.
-    tracker = googleAnalytics.newTracker(BuildConfig.GOOGLE_ANALYTICS_CODE);
-    tracker.setAppVersion(application.getVersionName());
-    tracker.setAppId("com.google.android.stardroid");
-    tracker.setAppName(application.getString(R.string.app_name));
-    // Sample only 0.01% of events in order to avoid violating Analytics' Terms of Service.
-    // TODO(jontayler): move to Firebase
-    tracker.setSampleRate(0.01);
+    firebaseAnalytics = FirebaseAnalytics.getInstance(application);
+    Task<String> appId = firebaseAnalytics.getAppInstanceId();
+    appId.addOnCompleteListener(task -> Log.d(TAG, "Firebase ID " + task.getResult()));
   }
 
+  @Override
   public void setEnabled(boolean enabled) {
     Log.d(TAG, enabled ? "Enabling stats collection" : "Disabling stats collection");
-    googleAnalytics.setAppOptOut(!enabled);
+    firebaseAnalytics.setAnalyticsCollectionEnabled(enabled);
   }
 
-  /**
-   * Tracks a screen view.
-   */
-  public void trackPageView(String page) {
-    Log.d(TAG, "Logging page " + page);
-    tracker.setScreenName(page);
-    tracker.send(screenViewBuilder.build());
+  @Override
+  public void trackEvent(String event, Bundle params) {
+    Log.d(TAG, String.format("Logging event %s, %s", event, params));
+    firebaseAnalytics.logEvent(event, params);
   }
 
-  /**
-   * Tracks and event.
-   *
-   * @see com.google.android.gms.analytics.HitBuilders.EventBuilder
-   */
-  public void trackEvent(String category, String action, String label, long value) {
-    Log.d(TAG, String.format("Logging event %s (%s) label %s value %d",
-        action, category, label, value));
-    tracker.send(eventBuilder.setCategory(category).setAction(action).setLabel(label)
-        .setValue(value).build());
-  }
-
-  /**
-   * Sets custom variables for slicing.
-   */
-  public void setCustomVar(Slice slice, String value) {
-    Log.d(TAG, String.format("Setting custom variable %s to %s", slice.toString(), value));
-    eventBuilder.setCustomDimension(slice.ordinal() + 1, value);
-    screenViewBuilder.setCustomDimension(slice.ordinal() + 1, value);
+  @Override
+  public void setUserProperty(String propertyName, String propertyValue) {
+    Log.d(TAG, String.format("Logging user property %s, %s", propertyName, propertyValue));
+    firebaseAnalytics.setUserProperty(propertyName, propertyValue);
   }
 }

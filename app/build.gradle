@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 30
@@ -6,11 +7,16 @@ android {
 
     defaultConfig {
         applicationId "com.google.android.stardroid"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 30
-        versionCode 1510
-        versionName "1.9.4 - neowisehack"
+        versionCode 1514
+        versionName "1.9.5 - analytics"
         buildConfigField 'String', 'GOOGLE_ANALYTICS_CODE', '""'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
     signingConfigs {
@@ -84,6 +90,7 @@ dependencies {
 // Flavor
     gmsImplementation 'com.google.android.gms:play-services-analytics:16.0.8'
     gmsImplementation 'com.google.android.gms:play-services-location:16.0.0'
+    gmsImplementation 'com.google.firebase:firebase-analytics:17.5.0'
 
 // Testing
     testImplementation 'junit:junit:4.13'
@@ -92,5 +99,3 @@ dependencies {
     androidTestImplementation 'junit:junit:4.13'
     androidTestImplementation 'org.easymock:easymock:2.5.2'
 }
-
-apply plugin: 'com.google.gms.google-services'

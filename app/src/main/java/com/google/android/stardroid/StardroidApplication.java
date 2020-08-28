@@ -23,16 +23,19 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Build;
+import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.text.TextUtils;
 import android.util.Log;
 
 import com.google.android.stardroid.layers.LayerManager;
 import com.google.android.stardroid.util.Analytics;
-import com.google.android.stardroid.util.AnalyticsInterface.Slice;
+import com.google.android.stardroid.util.AnalyticsInterface;
 import com.google.android.stardroid.util.MiscUtil;
 import com.google.android.stardroid.util.PreferenceChangeAnalyticsTracker;
 import com.google.android.stardroid.views.PreferencesButton;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashSet;
 import java.util.List;
@@ -54,7 +57,7 @@ public class StardroidApplication extends Application {
   @Inject SharedPreferences preferences;
   // We keep a reference to this just to start it initializing.
   @Inject LayerManager layerManager;
-  @Inject Analytics analytics;
+  @Inject AnalyticsInterface analytics;
   @Inject SensorManager sensorManager;
 
   // We need to maintain references to this object to keep it from
@@ -93,9 +96,6 @@ public class StardroidApplication extends Application {
   }
 
   private void setUpAnalytics(String versionName) {
-    analytics.setCustomVar(Slice.ANDROID_OS, Integer.toString(Build.VERSION.SDK_INT));
-    analytics.setCustomVar(Slice.SKYMAP_VERSION, versionName);
-    analytics.setCustomVar(Slice.DEVICE_NAME, android.os.Build.MODEL);
     analytics.setEnabled(preferences.getBoolean(Analytics.PREF_KEY, true));
 
     // Ugly hack since this isn't injectable
@@ -116,21 +116,19 @@ public class StardroidApplication extends Application {
         newUser = true;
       }
     }
-    analytics.setCustomVar(Slice.NEW_USER, Boolean.toString(newUser));
+    analytics.setUserProperty(AnalyticsInterface.NEW_USER, Boolean.toString(newUser));
 
-    analytics.trackPageView(Analytics.APPLICATION_CREATE);
     preferences.edit().putString(PREVIOUS_APP_VERSION_PREF, versionName).commit();
     if (!previousVersion.equals(versionName)) {
       // It's either an upgrade or a new installation
       Log.d(TAG, "New installation: version " + versionName);
-      analytics.trackEvent(Analytics.INSTALL_CATEGORY, Analytics.INSTALL_EVENT + versionName,
-          Analytics.PREVIOUS_VERSION + previousVersion, 1);
+      // No need to track any more - it's automatic in Firebase.
     }
 
     // It will be interesting to see *when* people use Sky Map.
-    analytics.trackEvent(
-        Analytics.GENERAL_CATEGORY, Analytics.START_HOUR,
-        Integer.toString(Calendar.getInstance().get(Calendar.HOUR_OF_DAY)) + 'h', 0);
+    Bundle b = new Bundle();
+    b.putInt(Analytics.START_EVENT_HOUR, Calendar.getInstance().get(Calendar.HOUR_OF_DAY));
+    analytics.trackEvent(Analytics.START_EVENT, b);
 
     preferences.registerOnSharedPreferenceChangeListener(preferenceChangeAnalyticsTracker);
   }
@@ -189,79 +187,47 @@ public class StardroidApplication extends Application {
   private void performFeatureCheck() {
     if (sensorManager == null) {
       Log.e(TAG, "No sensor manager");
-      analytics.trackEvent(
-          Analytics.SENSOR_CATEGORY, Analytics.SENSOR_AVAILABILITY, "No Sensor Manager", 0);
+      analytics.setUserProperty(Analytics.DEVICE_SENSORS, Analytics.DEVICE_SENSORS_NONE);
       return;
     }
-    // Minimum requirements
+    // Reported available sensors
+    List<String> reportedSensors = new ArrayList<>();
     if (hasDefaultSensor(Sensor.TYPE_ACCELEROMETER)) {
-      if (hasDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD)) {
-        Log.i(TAG, "Minimal sensors available");
-        analytics.trackEvent(
-            Analytics.SENSOR_CATEGORY, Analytics.SENSOR_AVAILABILITY, "Minimal Sensors: Yes", 1);
-      } else {
-        Log.e(TAG, "No magnetic field sensor");
-        analytics.trackEvent(
-            Analytics.SENSOR_CATEGORY, Analytics.SENSOR_AVAILABILITY, "No Mag Field Sensor", 0);
-      }
-    } else {
-      if (hasDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD)) {
-        Log.e(TAG, "No accelerometer");
-        analytics.trackEvent(
-            Analytics.SENSOR_CATEGORY, Analytics.SENSOR_AVAILABILITY, "No Accel Sensor", 0);
-      } else {
-        Log.e(TAG, "No magnetic field sensor or accelerometer");
-        analytics.trackEvent(
-            Analytics.SENSOR_CATEGORY, Analytics.SENSOR_AVAILABILITY, "No Mag Field/Accel Sensors", 0);
-      }
+      reportedSensors.add(Analytics.DEVICE_SENSORS_ACCELEROMETER);
     }
+    if (hasDefaultSensor(Sensor.TYPE_GYROSCOPE)) {
+      reportedSensors.add(Analytics.DEVICE_SENSORS_GYRO);
+    }
+    if (hasDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD)) {
+      reportedSensors.add(Analytics.DEVICE_SENSORS_MAGNETIC);
+    }
+    if (hasDefaultSensor(Sensor.TYPE_ROTATION_VECTOR)) {
+      reportedSensors.add(Analytics.DEVICE_SENSORS_ROTATION);
+    }
+
+    // TODO: Change to String.join once we're at API > 26
+    analytics.setUserProperty(
+            Analytics.DEVICE_SENSORS, TextUtils.join("|", reportedSensors));
 
     // Check for a particularly strange combo - it would be weird to have a rotation sensor
     // but no accelerometer or magnetic field sensor
     boolean hasRotationSensor = false;
     if (hasDefaultSensor(Sensor.TYPE_ROTATION_VECTOR)) {
       if (hasDefaultSensor(Sensor.TYPE_ACCELEROMETER) && hasDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD)
-          && hasDefaultSensor(Sensor.TYPE_GYROSCOPE)) {
+              && hasDefaultSensor(Sensor.TYPE_GYROSCOPE)) {
         hasRotationSensor = true;
-        analytics.trackEvent(
-            Analytics.SENSOR_CATEGORY, Analytics.ROT_SENSOR_AVAILABILITY, "OK - All Sensors", 1);
       } else if (hasDefaultSensor(Sensor.TYPE_ACCELEROMETER) && hasDefaultSensor(
-          Sensor.TYPE_MAGNETIC_FIELD)) {
+              Sensor.TYPE_MAGNETIC_FIELD)) {
         // Even though it allegedly has the rotation vector sensor too many gyro-less phones
         // lie about this, so put these devices on the 'classic' sensor code for now.
         hasRotationSensor = false;
-        analytics.trackEvent(
-            Analytics.SENSOR_CATEGORY, Analytics.ROT_SENSOR_AVAILABILITY, "Disabled - No gyro", 1);
-      } else {
-        analytics.trackEvent(
-            Analytics.SENSOR_CATEGORY, Analytics.ROT_SENSOR_AVAILABILITY, "Disabled - Missing Mag/Accel", 0);
       }
-    } else {
-      analytics.trackEvent(
-          Analytics.SENSOR_CATEGORY, Analytics.ROT_SENSOR_AVAILABILITY, "No rotation", 0);
     }
 
     // Enable Gyro if available and user hasn't already disabled it.
     if (!preferences.contains(ApplicationConstants.SHARED_PREFERENCE_DISABLE_GYRO)) {
       preferences.edit().putBoolean(
           ApplicationConstants.SHARED_PREFERENCE_DISABLE_GYRO, !hasRotationSensor).apply();
-    }
-
-    // Do we at least have defaults for the main ones?
-    int[] importantSensorTypes = {Sensor.TYPE_ACCELEROMETER, Sensor.TYPE_GYROSCOPE,
-        Sensor.TYPE_MAGNETIC_FIELD, Sensor.TYPE_LIGHT, Sensor.TYPE_ROTATION_VECTOR,
-        Sensor.TYPE_ORIENTATION};
-
-    for (int sensorType : importantSensorTypes) {
-      if (hasDefaultSensor(sensorType)) {
-        Log.i(TAG, "No sensor of type " + sensorType);
-        analytics.trackEvent(
-            Analytics.SENSOR_CATEGORY, Analytics.SENSOR_TYPE + sensorType, "Sensor Absent", 0);
-      } else {
-        Log.i(TAG, "Sensor present of type " + sensorType);
-        analytics.trackEvent(
-            Analytics.SENSOR_CATEGORY, Analytics.SENSOR_TYPE + sensorType, "Sensor Present", 1);
-      }
     }
 
     // Lastly a dump of all the sensors.
@@ -275,8 +241,6 @@ public class StardroidApplication extends Application {
     Log.d(TAG, "All sensors summary:");
     for (String sensorType : sensorTypes) {
       Log.i(TAG, sensorType);
-      analytics.trackEvent(
-          Analytics.SENSOR_CATEGORY, Analytics.SENSOR_NAME, sensorType, 1);
     }
   }
 
@@ -302,9 +266,7 @@ public class StardroidApplication extends Application {
     boolean success = sensorManager.registerListener(
         dummy, sensor, SensorManager.SENSOR_DELAY_UI);
     if (!success) {
-      analytics.trackEvent(
-          Analytics.SENSOR_CATEGORY, Analytics.SENSOR_LIAR, getSafeNameForSensor(sensor),
-          1);
+      analytics.setUserProperty(Analytics.SENSOR_LIAR, "true");
     }
     sensorManager.unregisterListener(dummy);
     return success;

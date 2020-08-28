@@ -13,6 +13,7 @@ import com.google.android.stardroid.control.AstronomerModel;
 import com.google.android.stardroid.control.MagneticDeclinationCalculator;
 import com.google.android.stardroid.layers.LayerManager;
 import com.google.android.stardroid.search.SearchTermsProvider;
+import com.google.android.stardroid.util.AnalyticsInterface;
 
 import javax.inject.Named;
 import javax.inject.Singleton;
@@ -35,6 +36,7 @@ public interface ApplicationComponent {
   LocationManager provideLocationManager();
   LayerManager provideLayerManager();
   AccountManager provideAccountManager();
+  AnalyticsInterface provideAnaytics();
   @Named("zero") MagneticDeclinationCalculator provideMagDec1();
   @Named("real") MagneticDeclinationCalculator provideMagDec2();
 

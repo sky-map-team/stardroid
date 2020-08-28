@@ -26,6 +26,8 @@ import com.google.android.stardroid.layers.NewMessierLayer;
 import com.google.android.stardroid.layers.NewStarsLayer;
 import com.google.android.stardroid.layers.PlanetsLayer;
 import com.google.android.stardroid.layers.SkyGradientLayer;
+import com.google.android.stardroid.util.Analytics;
+import com.google.android.stardroid.util.AnalyticsInterface;
 import com.google.android.stardroid.util.MiscUtil;
 
 import java.util.concurrent.ExecutorService;
@@ -94,6 +96,12 @@ public class ApplicationModule {
   @Named("real")
   MagneticDeclinationCalculator provideRealMagneticDeclinationCalculator() {
     return new RealMagneticDeclinationCalculator();
+  }
+
+  @Provides
+  @Singleton
+  AnalyticsInterface provideAnalytics(Analytics analytics) {
+    return analytics;
   }
 
   @Provides

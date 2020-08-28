@@ -104,7 +104,6 @@ public class ImageGalleryActivity extends InjectableActivity {
   @Override
   public void onStart() {
     super.onStart();
-    analytics.trackPageView(Analytics.IMAGE_GALLERY_ACTIVITY);
   }
 
   @Override

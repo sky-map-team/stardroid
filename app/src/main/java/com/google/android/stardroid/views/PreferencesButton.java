@@ -19,6 +19,7 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
+import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -27,12 +28,13 @@ import android.widget.ImageButton;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.util.Analytics;
+import com.google.android.stardroid.util.AnalyticsInterface;
 import com.google.android.stardroid.util.MiscUtil;
 
 public class PreferencesButton extends ImageButton
     implements android.view.View.OnClickListener, OnSharedPreferenceChangeListener {
   private static final String TAG = MiscUtil.getTag(PreferencesButton.class);
-  private static Analytics analytics;
+  private static AnalyticsInterface analytics;
   private OnClickListener secondaryOnClickListener;
 
   @Override
@@ -73,7 +75,7 @@ public class PreferencesButton extends ImageButton
    * hack.
    * @param analytics
    */
-  public static void setAnalytics(Analytics analytics) {
+  public static void setAnalytics(AnalyticsInterface analytics) {
     PreferencesButton.analytics = analytics;
   }
 
@@ -110,8 +112,9 @@ public class PreferencesButton extends ImageButton
   public void onClick(View v) {
     isOn = !isOn;
     if (analytics != null) {
-      analytics.trackEvent(
-          Analytics.USER_ACTION_CATEGORY, Analytics.PREFERENCE_BUTTON_TOGGLE, prefKey, isOn ? 1 : 0);
+      Bundle b = new Bundle();
+      b.putString(Analytics.PREFERENCE_BUTTON_TOGGLE_VALUE, prefKey + ":" + isOn);
+      analytics.trackEvent(Analytics.PREFERENCE_BUTTON_TOGGLE_EVENT, b);
     }
     setVisuallyOnOrOff();
     setPreference();

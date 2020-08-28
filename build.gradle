@@ -9,8 +9,8 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:4.0.1'
 
-        // Specified as going here by the Analytics instructions.
-        classpath 'com.google.gms:google-services:3.2.0'
+        // Specified as going here by the Firebase instructions.
+        classpath 'com.google.gms:google-services:4.3.3'
 
         // the latest version of the android-apt plugin
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.4'

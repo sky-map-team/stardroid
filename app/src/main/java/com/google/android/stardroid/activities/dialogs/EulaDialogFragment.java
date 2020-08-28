@@ -85,8 +85,7 @@ public class EulaDialogFragment extends DialogFragment {
   private void acceptEula(DialogInterface dialog) {
     Log.d(TAG, "TOS Dialog closed.  User accepts.");
     dialog.dismiss();
-    analytics.trackEvent(
-        Analytics.APP_CATEGORY, Analytics.TOS_ACCEPT, Analytics.TOS_ACCEPTED, 1);
+    analytics.trackEvent(Analytics.TOS_ACCEPTED_EVENT, new Bundle());
     if (resultListener != null) {
       resultListener.eulaAccepted();
     }
@@ -95,8 +94,7 @@ public class EulaDialogFragment extends DialogFragment {
   private void rejectEula(DialogInterface dialog) {
     Log.d(TAG, "TOS Dialog closed.  User declines.");
     dialog.dismiss();
-    analytics.trackEvent(
-        Analytics.APP_CATEGORY, Analytics.TOS_ACCEPT, Analytics.TOS_REJECTED, 0);
+    analytics.trackEvent(Analytics.TOS_REJECTED_EVENT, new Bundle());
     if (resultListener != null) {
       resultListener.eulaRejected();
     }
