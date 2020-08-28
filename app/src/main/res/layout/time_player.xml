@@ -10,6 +10,13 @@
     android:layout_height="wrap_content"
     android:background="#20990099">
 
+ <!-- Spacer -->
+ <View
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     android:layout_weight="1"
+     android:orientation="vertical"/>
+
  <!-- Top bar with icon, status message, time, and cancel button. -->
  <RelativeLayout
     android:orientation="vertical"
@@ -31,7 +38,7 @@
     android:layout_height="wrap_content"
     android:text="Time travel: Fill in label ..."
     android:layout_toRightOf="@id/time_travel_icon"
-    android.paddingLeft="10dip"
+    android:paddingLeft="10dip"
     android:textAppearance="?android:attr/textAppearanceMedium"
     android:layout_marginLeft="2dip"
     />
@@ -113,5 +120,9 @@
     />
 
  </LinearLayout>
-
+ <!-- Spacer -->
+ <View
+     android:layout_width="match_parent"
+     android:layout_height="50dp"
+     android:orientation="vertical"/>
 </LinearLayout>
