@@ -76,6 +76,7 @@ import com.google.android.stardroid.util.MathUtil;
 import com.google.android.stardroid.util.MiscUtil;
 import com.google.android.stardroid.util.SensorAccuracyMonitor;
 import com.google.android.stardroid.views.ButtonLayerView;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -400,7 +401,6 @@ public class DynamicStarMapActivity extends InjectableActivity
         Log.e(TAG, "Unwired-up menu item");
         return false;
     }
-    // repeat this
     analytics.trackEvent(Analytics.MENU_ITEM_EVENT, menuEventBundle);
     return true;
   }

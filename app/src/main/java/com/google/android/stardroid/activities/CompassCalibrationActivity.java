@@ -10,17 +10,20 @@ import android.view.View;
 import android.webkit.WebView;
 import android.widget.CheckBox;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.util.SensorAccuracyDecoder;
 import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.MiscUtil;
+import com.google.android.stardroid.util.Toaster;
 
 import javax.inject.Inject;
 
 public class CompassCalibrationActivity extends InjectableActivity implements SensorEventListener {
   public static final String HIDE_CHECKBOX = "hide checkbox";
   public static final String DONT_SHOW_CALIBRATION_DIALOG = "no calibration dialog";
+  public static final String AUTO_DISMISSABLE = "auto dismissable";
   private static final String TAG = MiscUtil.getTag(CompassCalibrationActivity.class);
   private Sensor magneticSensor;
   private CheckBox checkBoxView;
@@ -29,6 +32,7 @@ public class CompassCalibrationActivity extends InjectableActivity implements Se
   @Inject SensorAccuracyDecoder accuracyDecoder;
   @Inject SharedPreferences sharedPreferences;
   @Inject Analytics analytics;
+  @Inject Toaster toaster;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -84,8 +88,15 @@ public class CompassCalibrationActivity extends InjectableActivity implements Se
   @Override
   public void onAccuracyChanged(Sensor sensor, int accuracy) {
     accuracyReceived = true;
+    TextView accuracyTextView = findViewById(R.id.compass_calib_activity_compass_accuracy);
     String accuracyText = accuracyDecoder.getTextForAccuracy(accuracy);
-    ((TextView) findViewById(R.id.compass_calib_activity_compass_accuracy)).setText(accuracyText);
+    accuracyTextView.setText(accuracyText);
+    accuracyTextView.setTextColor(accuracyDecoder.getColorForAccuracy(accuracy));
+    if (accuracy == SensorManager.SENSOR_STATUS_ACCURACY_HIGH
+        && getIntent().getBooleanExtra(AUTO_DISMISSABLE, false)) {
+      toaster.toastLong(R.string.sensor_accuracy_high);
+      this.finish();
+    }
   }
 
   public void onOkClicked(View unused) {
