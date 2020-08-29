@@ -26,6 +26,8 @@ import com.google.android.stardroid.layers.NewMessierLayer;
 import com.google.android.stardroid.layers.NewStarsLayer;
 import com.google.android.stardroid.layers.PlanetsLayer;
 import com.google.android.stardroid.layers.SkyGradientLayer;
+import com.google.android.stardroid.util.Analytics;
+import com.google.android.stardroid.util.AnalyticsInterface;
 import com.google.android.stardroid.util.MiscUtil;
 
 import java.util.concurrent.ExecutorService;
@@ -98,6 +100,12 @@ public class ApplicationModule {
 
   @Provides
   @Singleton
+  AnalyticsInterface provideAnalytics(Analytics analytics) {
+    return analytics;
+  }
+
+  @Provides
+  @Singleton
   ExecutorService provideBackgroundExecutor() {
     return new ScheduledThreadPoolExecutor(1);
   }
@@ -143,7 +151,7 @@ public class ApplicationModule {
     layerManager.addLayer(new NewConstellationsLayer(assetManager, resources));
     layerManager.addLayer(new PlanetsLayer(model, resources, preferences));
     layerManager.addLayer(new MeteorShowerLayer(model, resources));
-    layerManager.addLayer(new GridLayer(resources, 24, 19));
+    layerManager.addLayer(new GridLayer(resources, 24, 9));
     layerManager.addLayer(new HorizonLayer(model, resources));
     layerManager.addLayer(new EclipticLayer(resources));
     layerManager.addLayer(new SkyGradientLayer(model, resources));

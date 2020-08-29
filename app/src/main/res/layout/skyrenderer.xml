@@ -89,8 +89,7 @@
         android:orientation="vertical"
         android:background="@drawable/sidebarnoelements"
         stardroid:fade_time="500">
-
-        <com.google.android.stardroid.views.PreferencesButton
+      <com.google.android.stardroid.views.PreferencesButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingTop="11px"
@@ -184,33 +183,15 @@
             android:layout_gravity="bottom|right"
             android:orientation="vertical"
             stardroid:fade_time="500">
-
           <com.google.android.stardroid.views.PreferencesButton
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:background="#00000000"
               android:id="@+id/manual_auto_toggle"
-              android:paddingBottom="11px"
-              android:paddingLeft="5px"
-              android:paddingTop="7px"
               stardroid:pref_key="auto_mode"
               stardroid:image_on="@drawable/manualmode"
               stardroid:image_off="@drawable/automaticmode"
               stardroid:default_value="true"/>
-
-            <com.google.android.stardroid.views.PreferencesButton
-                android:id="@+id/show_hide_toolbar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#00000000"
-                android:paddingBottom="11px"
-                android:paddingLeft="5px"
-                android:paddingTop="7px"
-                stardroid:default_value="true"
-                stardroid:image_off="@drawable/eye"
-                stardroid:image_on="@drawable/eye_off"
-                stardroid:pref_key="auto_hide"/>
-
         </com.google.android.stardroid.views.ButtonLayerView>
       </FrameLayout>
     </RelativeLayout>

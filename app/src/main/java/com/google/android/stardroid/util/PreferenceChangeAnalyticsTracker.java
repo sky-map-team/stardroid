@@ -16,6 +16,7 @@ package com.google.android.stardroid.util;
 
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
+import android.os.Bundle;
 import android.util.Log;
 
 import java.util.Arrays;
@@ -39,7 +40,7 @@ public class PreferenceChangeAnalyticsTracker implements OnSharedPreferenceChang
   }
 
   private Set<String> stringPreferenceWhiteList = new HashSet<String>(Arrays.asList(new String[] {
-      "sensor_speed", "sensor_damping"
+      "sensor_speed", "sensor_damping, lightmode"
   }));
 
   private void trackPreferenceChange(SharedPreferences sharedPreferences, String key) {
@@ -47,59 +48,48 @@ public class PreferenceChangeAnalyticsTracker implements OnSharedPreferenceChang
     // There is no way to get a preference without knowing its type.  Consequently, we try
     // each type and silently swallow the exception if we guess wrong.  If this proves expensive
     // we might switch to caching the type.
-    try {
-      String value = sharedPreferences.getString(key, "unknown");
-      // Unlike the numeric valued preferences, we could inadvertently log PII if we blindly log
-      // all String values.
-      // Instead we maintain a whitelist of things we're allowed to log.  If the key isn't in
-      // the whitelist, then we only log that it changed, not what it changed to.
-      if (!stringPreferenceWhiteList.contains(key)) {
-        value = "PII";
-      }
-      analytics.trackEvent(Analytics.USER_ACTION_CATEGORY,
-                           "Preference: " + key, "Preference: " + value, 0);
-      return;
-    } catch (ClassCastException cce) {
-      // Thrown if the pref wasn't a string.
-    }
-    try {
-      boolean value = sharedPreferences.getBoolean(key, false);
-      analytics.trackEvent(Analytics.USER_ACTION_CATEGORY,
-                           Analytics.PREFERENCE_TOGGLE, "Preference:" + key,  value ? 1 : 0);
-      return;
-    } catch (ClassCastException cce) {
-      // Thrown if the pref wasn't a boolean.
-    }
-    try {
-      int value = sharedPreferences.getInt(key, 0);
-      analytics.trackEvent(Analytics.USER_ACTION_CATEGORY,
-                           Analytics.PREFERENCE_TOGGLE, "Preference:" + key, value);
-      return;
-    } catch (ClassCastException cce) {
-      // Thrown if the pref wasn't an integer.
-    }
-    try {
-      @SuppressWarnings("unused")
-      long unused = sharedPreferences.getLong(key, 0);
-      analytics.trackEvent(Analytics.USER_ACTION_CATEGORY,
-                           Analytics.PREFERENCE_TOGGLE, "Preference:" + key, 0);
-      return;
-    } catch (ClassCastException cce) {
-      // Thrown if the pref wasn't an integer.
-    }
-    try {
-      @SuppressWarnings("unused")
-      float unused = sharedPreferences.getFloat(key, 0);
-      analytics.trackEvent(Analytics.USER_ACTION_CATEGORY,
-                           Analytics.PREFERENCE_TOGGLE, "Preference:" + key, 0);
-      return;
-    } catch (ClassCastException cce) {
-      // Thrown if the pref wasn't a float.
-    }
+    Bundle prefBundle = new Bundle();
+    String value = getPreferenceAsString(sharedPreferences, key);
+    prefBundle.putString(Analytics.PREFERENCE_CHANGE_EVENT_VALUE, key + ":" + value);
+    analytics.trackEvent(Analytics.PREFERENCE_CHANGE_EVENT, prefBundle);
   }
 
   @Override
   public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
     trackPreferenceChange(sharedPreferences, key);
+  }
+
+  private String getPreferenceAsString(SharedPreferences sharedPreferences, String key) {
+    String value = "unknown";
+    try {
+      value = sharedPreferences.getString(key, "unknown");
+      if (!stringPreferenceWhiteList.contains(key)) {
+        value = "PII";
+      }
+    } catch (ClassCastException cce) {
+      // Thrown if the pref wasn't a string.
+    }
+    try {
+      value = Boolean.toString(sharedPreferences.getBoolean(key, false));
+    } catch (ClassCastException cce) {
+      // Thrown if the pref wasn't a boolean.
+    }
+    try {
+      value = Integer.toString(sharedPreferences.getInt(key, 0));
+    } catch (ClassCastException cce) {
+      // Thrown if the pref wasn't an integer.
+    }
+    try {
+      value = Long.toString(sharedPreferences.getLong(key, 0));
+    } catch (ClassCastException cce) {
+      // Thrown if the pref wasn't an integer.
+    }
+    try {
+      value = Float.toString(sharedPreferences.getFloat(key, 0));
+    } catch (ClassCastException cce) {
+      // Thrown if the pref wasn't a float.
+    }
+    // Other types are possible, but those are the ones we care about.
+    return value;
   }
 }

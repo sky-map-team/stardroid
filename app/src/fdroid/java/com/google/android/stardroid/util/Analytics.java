@@ -14,6 +14,8 @@
 
 package com.google.android.stardroid.util;
 
+import android.os.Bundle;
+
 import com.google.android.stardroid.StardroidApplication;
 
 import javax.inject.Inject;
@@ -26,25 +28,20 @@ import javax.inject.Inject;
  */
 public class Analytics implements AnalyticsInterface {
 
-  @Inject
-  Analytics(StardroidApplication application) { }
+    @Inject
+    Analytics(StardroidApplication application) {
+    }
 
-  public void setEnabled(boolean enabled) { }
+    @Override
+    public void setEnabled(boolean enabled) {
+    }
 
-  /**
-   * Tracks a screen view.
-   */
-  public void trackPageView(String page) { }
+    @Override
+    public void trackEvent(String event, Bundle params) {
+    }
 
-  /**
-   * Tracks and event.
-   *
-   * @see com.google.android.gms.analytics.HitBuilders.EventBuilder
-   */
-  public void trackEvent(String category, String action, String label, long value) { }
+    @Override
+    public void setUserProperty(String propertyName, String propertyValue) {
 
-  /**
-   * Sets custom variables for slicing.
-   */
-  public void setCustomVar(Slice slice, String value) { }
+    }
 }

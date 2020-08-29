@@ -14,12 +14,15 @@
 
 package com.google.android.stardroid.util;
 
+import android.os.Bundle;
+
 import com.google.android.stardroid.StardroidApplication;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 import javax.inject.Inject;
 
 /**
- * Encapsulates interactions with Google Analytics, allowing it to be
+ * Encapsulates interactions with Firebase Analytics, allowing it to be
  * disabled etc.
  *
  * @author John Taylor
@@ -27,77 +30,53 @@ import javax.inject.Inject;
 public interface AnalyticsInterface {
   static final String PREF_KEY = "enable_analytics";
 
-  /**
-   * Custom vars (for slicing and dicing)
-   * At most 5 can be defined.
-   */
-  static enum Slice {
-    ANDROID_OS, SKYMAP_VERSION, DEVICE_NAME, NEW_USER;
-  }
-
-  // Page Views
-  static final String APPLICATION_CREATE = "/ApplicationCreate";
-  static final String COMPASS_CALIBRATION_ACTIVITY = "/MainPage/Calibration";
-  static final String DIAGNOSTICS_ACTIVITY = "/MainPage/Diagnostics";
-  static final String DYNAMIC_STARMAP_ACTIVITY = "/MainPage";
-  static final String EDIT_SETTINGS_ACTIVITY = "/MainPage/EditSettings";
-  static final String SPLASH_SCREEN_ACTIVITY = "/SplashScreen";
-  static final String IMAGE_GALLERY_ACTIVITY = "/MainPage/ImageGallery";
-  static final String IMAGE_DISPLAY_ACTIVITY = "/MainPage/ImageGallery/ImageDisplay";
+  // User properties
+  static final String NEW_USER = "new_user_prop";  // Might be the same as the build-in prop - let's check
+  static final String DEVICE_SENSORS = "device_sensors_prop"; // Alphabetically ordered list of relevant sensors
+  static final String DEVICE_SENSORS_NONE = "none";
+  static final String DEVICE_SENSORS_ACCELEROMETER = "accel";
+  static final String DEVICE_SENSORS_GYRO = "gyro";
+  static final String DEVICE_SENSORS_MAGNETIC = "mag";
+  static final String DEVICE_SENSORS_ROTATION = "rot";
+  // Phone claims to have a sensor, but then doesn't allow registration of a listener.
+  static final String SENSOR_LIAR = "sensor_liar_prop";
 
   // Events & Categories
-  static final String TOS_ACCEPT = "Terms Of Service";
-  static final String APP_CATEGORY = "Application";
-  static final String TOS_ACCEPTED = "TOS Accepted";
-  static final String TOS_REJECTED = "TOS Rejected";
-  static final String INSTALL_CATEGORY = "Installation";
-  static final String INSTALL_EVENT = "Installed Version: ";
-  static final String PREVIOUS_VERSION = "Prevous Version: ";
-  static final String PREFERENCE_TOGGLE = "Preference toggled";
-  static final String PREFERENCE_BUTTON_TOGGLE = "Preference button toggled";
-  static final String USER_ACTION_CATEGORY = "User Action";
-  static final String TOGGLED_MANUAL_MODE_LABEL = "Toggled Manual Mode";
-  static final String MENU_ITEM = "Pressed Menu Item";
-  static final String TOGGLED_NIGHT_MODE_LABEL = "Toggled Night Mode";
-  static final String SEARCH_REQUESTED_LABEL = "Search Requested";
-  static final String SETTINGS_OPENED_LABEL = "Settings Opened";
-  static final String HELP_OPENED_LABEL = "Help Opened";
-  static final String CALIBRATION_OPENED_LABEL = "Calibration Opened";
-  static final String TIME_TRAVEL_OPENED_LABEL = "Time Travel Opened";
-  static final String GALLERY_OPENED_LABEL = "Gallery Opened";
-  static final String TOS_OPENED_LABEL = "TOS Opened";
-  static final String DIAGNOSTICS_OPENED_LABEL = "Diagnostics Opened";
-  static final String SEARCH = "Search";
-  static final String GENERAL_CATEGORY = "General";
-  static final String START_HOUR = "Start up hour";
+  static final String TOS_ACCEPTED_EVENT = "TOS_accepted_ev";
+  static final String TOS_REJECTED_EVENT = "TOS_rejected_ev";
+  static final String PREFERENCE_BUTTON_TOGGLE_EVENT = "preference_button_toggled_ev";
+  static final String PREFERENCE_BUTTON_TOGGLE_VALUE = "preference_toggle_value";
+  static final String PREFERENCE_CHANGE_EVENT = "preference_change_ev";
+  static final String PREFERENCE_CHANGE_EVENT_VALUE = "value";
+  static final String TOGGLED_MANUAL_MODE_LABEL = "toggled_manual_mode_ev";
+  static final String MENU_ITEM_EVENT = "menu_item_pressed_ev";
+  static final String MENU_ITEM_EVENT_VALUE = "menu_item";
+  static final String TOGGLED_NIGHT_MODE_LABEL = "night_mode";
+  static final String SEARCH_REQUESTED_LABEL = "search_requested";
+  static final String SETTINGS_OPENED_LABEL = "settings_opened";
+  static final String HELP_OPENED_LABEL = "help_opened";
+  static final String CALIBRATION_OPENED_LABEL = "calibration_opened";
+  static final String TIME_TRAVEL_OPENED_LABEL = "time_travel_opened";
+  static final String GALLERY_OPENED_LABEL = "gallery_opened";
+  static final String TOS_OPENED_LABEL = "TOS_opened";
+  static final String DIAGNOSTICS_OPENED_LABEL = "diagnostics_opened";
+  static final String SEARCH_EVENT = FirebaseAnalytics.Event.SEARCH;
+  static final String SEARCH_TERM = FirebaseAnalytics.Param.SEARCH_TERM;
+  static final String SEARCH_SUCCESS = "search_success";
+  static final String START_EVENT = "start_up_event_ev";
+  static final String START_EVENT_HOUR = "hour";
 
-  static final String SENSOR_CATEGORY = "Sensors";
-  static final String SESSION_LENGTH_BUCKET = "Session length bucket";
-  static final String SENSOR_AVAILABILITY = "Minimal Sensor Availability";
-  static final String ROT_SENSOR_AVAILABILITY = "Rotation Sensor Availability";
-  static final String SENSOR_TYPE = "Sensor Type - ";
-  static final String SENSOR_NAME = "Sensor Name";
-  static final String HIGH_SENSOR_ACCURACY_ACHIEVED = "High Accuracy Achieved";
-  static final String SENSOR_ACCURACY_CHANGED = "Sensor Accuracy Changed";
-  // Phone claims to have a sensor, but then doesn't allow registration of a listener.
-  static final String SENSOR_LIAR = "Sensor Liar!";
+  static final String SESSION_LENGTH_EVENT = "session_length_ev";
+  static final String SESSION_LENGTH_TIME_VALUE = "session_length";
 
   void setEnabled(boolean enabled);
 
   /**
-   * Tracks a screen view.
-   */
-  void trackPageView(String page);
-
-  /**
-   * Tracks and event.
+   * Tracks an event.
    *
-   * @see com.google.android.gms.analytics.HitBuilders.EventBuilder
+   * @see com.google.firebase.analytics.FirebaseAnalytics
    */
-  void trackEvent(String category, String action, String label, long value);
+  void trackEvent(String event, Bundle params);
 
-  /**
-   * Sets custom variables for slicing.
-   */
-  void setCustomVar(Slice slice, String value);
+  void setUserProperty(String propertyName, String propertyValue);
 }

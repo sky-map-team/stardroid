@@ -18,17 +18,17 @@
     <string name="location_long_pref">Lengdegrad</string>
     <string name="degrees" translation_description="angular degrees">Grader</string>
     <string name="preferences">innstillinger</string>
-    <string name="location_no_auto">Auto-location permission is disabled on your phone.   You can set the location manually in preferences.  Until then the map will be incorrect.</string>
-    <string name="location_offer_to_enable">Auto-location is disabled.  Would you like to enable it?</string>
-    <string name="location_offer_to_enable_gps_title">Auto-location disabled</string>
+    <string name="location_no_auto">Tillatelse for auto-posisjonering er deaktivert på din telefon.   Du kan stille inn posisjonen manuelt under Stedsinnstillinger.  Inntil da vil kartet være uriktig.</string>
+    <string name="location_offer_to_enable">Auto-posisjonering er deaktivert.  Aktivere?</string>
+    <string name="location_offer_to_enable_gps_title">Auto-posisjonering deaktivert</string>
     <string name="location_set_auto">Sted bestemt fra %1$s til %2$s</string>
-    <string name="location_unable_to_geocode">Unable to decode your location - perhaps your network isn\'t available?</string>
+    <string name="location_unable_to_geocode">Kan ikke bestemme posisjonen din - kanskje er ikke nettverket ditt tilgjengelig?</string>
     <string name="location_not_found_title" translation_description="dialog box title when location not found">Beklager</string>
     <string name="location_not_found" translation_description="dialog message when placename not found">%s ikke funnet.</string>
     <string name="location_long_lat">Lengdegrad:%1$s, breddegrad:%2$s</string>
     <string name="location_place_found">Sted funnet. Breddegrad %1$f og lengdegrad %2$f</string>
     <string name="use_magnetic_correction">Bruk magnetisk korrigering</string>
-    <string name="use_magnetic_correction_hint">Use knowledge of your location to correct orientation from magnetic north to true north</string>
+    <string name="use_magnetic_correction_hint">Bruk kjennskap om posisjonen din for å korrigere retning fra magnetisk nord til geografisk nord</string>
     <!-- This string is too long and currently unused -->
     <string name="provider_prefs" translation_description="Dialog box title for a preferences dialog">Vis...</string>
     <string name="show_stars_pref">Stjerner</string>
@@ -114,8 +114,8 @@
     <string name="search_target_found_message" translation_description="displayed when a search target has been located">Du fant:</string>
     <string name="search_overlay_title" translation_description="title for search overlay">Beveg telefonen din i pilretning</string>
     <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">Ser etter:</string>
-    <string name="sun_wont_set_message">The sun will not set during the next 24 hours at your current location.</string>
-    <string name="sun_wont_rise_message">The sun will not rise during the next 24 hours at your current location.</string>
+    <string name="sun_wont_set_message">Solen går ikke ned i løpet av de neste 24 timene på ditt nåværende sted.</string>
+    <string name="sun_wont_rise_message">Solen står ikke opp i løpet av de neste 24 timene på ditt nåværende sted.</string>
 
     <string name="sun">Solen</string>
     <string name="moon">Månen</string>
@@ -148,7 +148,7 @@
     <string name="menu_tos">Vilkår for bruk</string>
     <string name="menu_diagnostics">Diagnostikk</string>
     <!-- TODO(johntaylor): the following might be deleted in favor of an icon -->
-    <string name="control_panel_btn" translation_description="Label for the control panel button">Control Panel</string>
+    <string name="control_panel_btn" translation_description="Label for the control panel button">Kontrollpanel</string>
 
     <string name="north_pole">NP</string>
     <string name="south_pole">SP</string>
@@ -394,13 +394,13 @@
     <string name="beehive_cluster" translation_description="Name of the Messier object Beehive Cluster">Bikubehopen</string>
     <string name="praesepe" translation_description="Name of the Messier object Praesepe">Krybben</string>
     <string name="seven_sisters" translation_description="Name of the Messier object Seven Sisters">De syv søstre</string>
-    <string name="space_station" translation_description="Name of the Internation Space Station">International Space Station</string>
-    <string name="space_shuttle" translation_description="Name of the Space Shuttle">Space Shuttle</string>
+    <string name="space_station" translation_description="Name of the Internation Space Station">Den internasjonale romstasjonen</string>
+    <string name="space_shuttle" translation_description="Name of the Space Shuttle">Romferge</string>
     <string name="kml_load_error">Feilet i å laste KML-fil</string>
     <string name="load_kml_dialog_title">Last KML</string>
     <string name="load_kml_file">Last</string>
-    <string name="enable_analytics">Send usage statistics</string>
-    <string name="enable_analytics_desc">Make Sky Map better by sending anonymous data to Google Analytics</string>
+    <string name="enable_analytics">Send bruksstatistikk</string>
+    <string name="enable_analytics_desc">Gjør Sky Map bedre ved å sende anonyme data til Google Analytics</string>
     <string name="leonids" translation_description="Meteor Shower">Leonidene</string>
     <string name="geminids" translation_description="Meteor Shower">Geminidene</string>
     <string name="quadrantids" translation_description="Meteor Shower">Quadrantidene</string>
@@ -412,7 +412,7 @@
     <string name="puppidvelids" translation_description="Meteor Shower">Puppid-velidene</string>
     <string name="ursids" translation_description="Meteor Shower">Ursidene</string>
 
-    <string name="no_sensor_warning">Your device may lack orientation sensors - automode may not work</string>
+    <string name="no_sensor_warning">Enheten din kan mangle orienteringssensorer - auto-modus fungerer kanskje ikke</string>
     <string name="warning_dialog_title">Bad news!</string>
     <string name="missing_sensor_dialog_text">\n
         Unfortunately your device might not have one of the
@@ -427,7 +427,7 @@
         map with your fingers.
     </string>
     <string name="do_not_show_again">Ikke vis denne meldingen igjen</string>
-    <string name="title_activity_diagnostic">Diagnostics</string>
+    <string name="title_activity_diagnostic">Diagnostikk</string>
     <string name="location_rationale_title">Why do we ask for your location?</string>
     <string name="location_rationale_text">The stars you can see depend on where on planet earth you are.  Without your location we cannot show you an accurate map.  If you do not want your phone to give us your location you can provide it manually in the settings.  You need only provide the nearest city.</string>
     <string name="play_services_error">Warning: Google Play Services error - Automatic location might not work</string>
@@ -438,43 +438,43 @@
     <string name="sensor_accuracy_medium">Nøyaktighet: Middels</string>
     <string name="sensor_accuracy_high">Nøyaktighet: Høy</string>
     <string name="sensor_accuracy_nocontact">Nøyaktighet: Ingen kontakt</string>
-    <string name="diagnostics_activity_general_heading">General</string>
-    <string name="diagnostics_activity_phone">Device</string>
-    <string name="diagnostics_activity_android_version">Android version</string>
-    <string name="diagnostics_activity_sky_map_version">Sky Map version</string>
-    <string name="diagnostics_activity_sensors_heading">Sensors</string>
-    <string name="diagnostics_activity_compass">Compass</string>
-    <string name="diagnostics_activity_accelerometer">Accelerometer</string>
-    <string name="diagnostics_activity_rotation_vector">Rotation</string>
-    <string name="diagnostics_activity_gyroscope">Gyroscope</string>
-    <string name="diagnostics_activity_light_level">Light level</string>
-    <string name="diagnostics_activity_location_and_time_heading">Location and Time</string>
+    <string name="diagnostics_activity_general_heading">Generelt</string>
+    <string name="diagnostics_activity_phone">Enhet</string>
+    <string name="diagnostics_activity_android_version">Android-versjon</string>
+    <string name="diagnostics_activity_sky_map_version">Sky Map-versjon</string>
+    <string name="diagnostics_activity_sensors_heading">Sensorer</string>
+    <string name="diagnostics_activity_compass">Kompass</string>
+    <string name="diagnostics_activity_accelerometer">Akselerometer</string>
+    <string name="diagnostics_activity_rotation_vector">Rotasjon</string>
+    <string name="diagnostics_activity_gyroscope">Gyroskop</string>
+    <string name="diagnostics_activity_light_level">Lysnivå</string>
+    <string name="diagnostics_activity_location_and_time_heading">Sted og tid</string>
     <string name="diagnostics_activity_gps">GPS</string>
-    <string name="diagnostics_activity_location">Location (lat, long)</string>
-    <string name="diagnostics_activity_pointing_ra_dec">Pointing snapshot</string>
-    <string name="diagnostics_activity_magnetic_correction">Mag correction</string>
-    <string name="diagnostics_activity_local_datetime">Local datetime</string>
-    <string name="diagnostics_activity_universal_time">Universal datetime</string>
-    <string name="diagnostics_activity_network_heading">Network</string>
-    <string name="diagnostics_activity_connection">Connection</string>
-    <string name="diagnostics_activity_rotation_matrix">Rot Matrix</string>
-    <string name="enabled">Enabled</string>
-    <string name="disabled">Disabled</string>
-    <string name="permission_disabled">Permission disabled</string>
+    <string name="diagnostics_activity_location">Posisjon (br., le.)</string>
+    <string name="diagnostics_activity_pointing_ra_dec">Peke-øyeblikksbilde</string>
+    <string name="diagnostics_activity_magnetic_correction">Magnetisk korreksjon</string>
+    <string name="diagnostics_activity_local_datetime">Lokal dato-tid</string>
+    <string name="diagnostics_activity_universal_time">Universell dato-tid</string>
+    <string name="diagnostics_activity_network_heading">Nettverk</string>
+    <string name="diagnostics_activity_connection">Forbindelse</string>
+    <string name="diagnostics_activity_rotation_matrix">Rotasjonsmatrise</string>
+    <string name="enabled">Aktivert</string>
+    <string name="disabled">Deaktivert</string>
+    <string name="permission_disabled">Tillatelse deaktivert</string>
     <string name="no_gps">Ingen GPS</string>
-    <string name="connected">Connected</string>
-    <string name="disconnected">Disconnected</string>
+    <string name="connected">Tilkoblet</string>
+    <string name="disconnected">Frakoblet</string>
     <string name="wifi">" (wifi)"</string>
-    <string name="cell_network">" (cell)"</string>
+    <string name="cell_network">" (mobilnett)"</string>
     <string name="menu_calibrate">Kalibrer</string>
     <string name="compass_calibration_activity_heading_compass">Kompass -</string>
     <string name="compass_calibration_activity_do_not_show_this_again">Ikke vis dette igjen</string>
     <string name="compass_calibration_activity_warning">Kompasset ditt må kalibreres</string>
-    <string name="sensor_reverse_preference_title">Reverse Magnetic Z</string>
-    <string name="sensor_reverse_preference_summary">Fix for phones with incorrectly implemented sensors - requires restart</string>
-    <string name="whats_new_dialog_title">What\'s new</string>
+    <string name="sensor_reverse_preference_title">Reverser Magnetisk Z</string>
+    <string name="sensor_reverse_preference_summary">Løsning for telefoner med uriktig implementerte sensorer - krever omstart</string>
+    <string name="whats_new_dialog_title">Hva er nytt</string>
     <string name="disable_gyro_preference_title">Deaktiver gyroskop</string>
-    <string name="disable_gyro_preference_summary">Not all devices have a gyro - if yours does then you\'ll get better results with it enabled and this box unchecked.  On the other hand if your device does not have a gyro then Sky Map will probably not work if you uncheck this box.</string>
+    <string name="disable_gyro_preference_summary">Ikke alle enheter har gyroskop - hvis din har det vil du få bedre resultater med gyroskop aktivert og denne boksen ikke krysset av.  På den annen side hvis enheten ikke har gyroskop så vil Sky Map sannsynligvis ikke fungere hvis du fjerner avkryssingen av denne boksen.</string>
     <string name="rotate_horizon_preference_title">Roter horisont</string>
     <string name="rotate_horizon_preference_summary">Roter horisont 90 grader (for skjermer med påtvunget landskapsorientering slik som smartbriller)</string>
 </resources>

@@ -3,9 +3,7 @@ package com.google.android.stardroid.activities.util;
 import android.annotation.SuppressLint;
 import android.app.ActionBar;
 import android.app.Activity;
-import android.content.SharedPreferences;
 import android.os.Handler;
-import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -23,9 +21,14 @@ import java.util.List;
 public class FullscreenControlsManager {
   private static final String TAG = MiscUtil.getTag(FullscreenControlsManager.class);
   /**
-   * number of milliseconds to wait after
-   * user interaction before hiding the system UI
-   * if autoHide is true in shared preferences.
+   * Whether or not the system UI should be auto-hidden after
+   * {@link #AUTO_HIDE_DELAY_MILLIS} milliseconds.
+   */
+  private static final boolean AUTO_HIDE = true;
+
+  /**
+   * If {@link #AUTO_HIDE} is set, the number of milliseconds to wait after
+   * user interaction before hiding the system UI.
    */
   private static final int AUTO_HIDE_DELAY_MILLIS = 1000;
 
@@ -84,8 +87,7 @@ public class FullscreenControlsManager {
   private final View.OnTouchListener mDelayHideTouchListener = new View.OnTouchListener() {
     @Override
     public boolean onTouch(View view, MotionEvent motionEvent) {
-      //Note this function should not be executed when hide_show_toolbar button is clicked
-      if (autoHideEnabled()) {
+      if (AUTO_HIDE) {
         delayedHide(AUTO_HIDE_DELAY_MILLIS);
       }
       return false;
@@ -93,12 +95,10 @@ public class FullscreenControlsManager {
   };
 
   private void toggle() {
-    if (autoHideEnabled()) {
-      if (mVisible) {
-        hide();
-      } else {
-        show();
-      }
+    if (mVisible) {
+      hide();
+    } else {
+      show();
     }
   }
 
@@ -178,11 +178,5 @@ public class FullscreenControlsManager {
   private void delayedHide(int delayMillis) {
     mHideHandler.removeCallbacks(mHideRunnable);
     mHideHandler.postDelayed(mHideRunnable, delayMillis);
-  }
-  
-  private boolean autoHideEnabled() {
-    SharedPreferences preferences = PreferenceManager
-        .getDefaultSharedPreferences(mActivity.getApplicationContext());
-    return preferences.getBoolean("auto_hide", true);
   }
 }
