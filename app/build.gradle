@@ -76,8 +76,8 @@ android {
 
 dependencies {
 // Android support
-    implementation 'androidx.annotation:annotation:1.0.0'
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.preference:preference:1.1.1'
 
 // Third-party
     implementation 'com.google.guava:guava:19.0'

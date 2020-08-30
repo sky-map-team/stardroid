@@ -24,9 +24,10 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.util.Log;
+
+import androidx.preference.PreferenceManager;
 
 import com.google.android.stardroid.layers.LayerManager;
 import com.google.android.stardroid.util.Analytics;
