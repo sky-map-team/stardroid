@@ -23,12 +23,23 @@ problems:
     especially portable.
    1. It's pretty bad, really.
 
+## Requirements
+   * A human-friendly 'base format' in which to store the canonical versions of the data
+   * Localization must work, and must be relatively friendly for our volunteer translators
+   * Wire format should be compact (in case I end up paying for bandwidth)
+   * App storage format should be compact (not everyone has lots of storage)
+   * Allows for a 'standard' build process instead of the monstrosity we have now. It's OK to have a separate processing stage to create the datafiles that need to ship with the app, but it shouldn't depend on the app itself as it does now.
+
 ## Ideas
 ### Localization
 
 This is a tricky one as a search of the entire web (I read it all) yielded no great ideas on
 how to elegantly localize 'dynamic' data such as you might have if our data files were stored
 in a database.
+
+Should we keep all the localizations in with the object data? Or can we continue to leverage Android's resource tooling.
+
+One example would be to have the base data files store the English (default - sorry!) names. A script could extract them to a strings.xml file so we can take advantage of Android's tool chain to spot missing translations. At runtime, instead of needing the datafiles to contain the resource IDs as we do now (which is the source of the problem) we could use something like this to set them [getIndentifier](https://developer.android.com/reference/android/content/res/Resources.html#getIdentifier). It's not very efficient, so we'd want to do this once at start up.
 
 ### Storing the data
 
