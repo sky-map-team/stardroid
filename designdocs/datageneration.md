@@ -30,6 +30,138 @@ problems:
    * App storage format should be compact (not everyone has lots of storage)
    * Allows for a 'standard' build process instead of the monstrosity we have now. It's OK to have a separate processing stage to create the datafiles that need to ship with the app, but it shouldn't depend on the app itself as it does now.
 
+TBD - currently there's a bit of a confused mess between "astronomical sources" - ie the actual
+objects themselves and UI elements like line and point sources. This also needs work.
+
+## What needs to go in the data model?
+
+In the following P0 gives functional parity (note we might actually currently have more in the
+app but not used them.)
+
+### Fixed, point like objects such as stars
+Note that some future version could also show the stars from different locations (e.g. from Alpha Centuri) 
+or different times (one millions years hence). Steady on though.
+
+#### P0 (parity)
+    * Ra
+    * Dec
+    * Apparent Magnitude
+    * Scientific name
+    * Common name
+    * Layer name (or some other means to group them)
+
+#### P1
+    * Color
+    * Representative image
+    * Link to wikipedia?
+
+#### P2
+    * Absolute magnitude
+    * Constellation it belongs to
+    * Distance
+    * Informational snippet (scraped from wikipedia if T&C allow)
+    * Other informational data - see the [wikipedia side bar](https://en.wikipedia.org/wiki/Polaris)
+    * What about variable stars?
+ 
+
+### Fixed, extended objects such as Nebulae and galaxies
+Currently these are modelled as points.
+
+#### P0 (parity)
+    * Ra
+    * Dec
+    * Apparent Magnitude
+    * Scientific name
+    * Common name
+
+#### P1
+    * Type (e.g. galaxy, globular cluster)
+    * Map image with some bounds (ra, dec for the corners? or just a size?)
+    * Representative image (for info page)
+    * Link to wikipedia?
+
+#### P2
+    * Absolute magnitude
+    * Constellation it belongs to
+    * Distance
+    * Informational snippet (scraped from wikipedia if T&C allow)
+    * Other informational data - see the [wikipedia side bar](https://en.wikipedia.org/wiki/Andromeda_Galaxy)
+
+#### Larger extended objects
+Images that could cover more of the sky such as constellation drawings, hubble imagery or
+infrared surveys.
+
+    * As above, but probably more important to have precise image bounds and maybe some info
+    on how to transform.
+
+### Fixed, occasionally visible point like objects: meteor radiants
+Always in the same place, but not always relevant.
+
+    * Mostly as for stars, but with a visibility constraint. Perhaps simple like a time bound.
+
+### Fixed, line-based features: constellation lines, boundaries, right ascension/declination grids, Ecliptic
+
+Some things, like the grids and Ecliptic might be best just calculated as they are now.
+
+#### P0 (parity)
+    * Scientific name
+    * Common name
+    * Name location (Ra, dec)
+    * Search location 
+    * Sequence of polylines: Color, [ra, dec] segments
+    
+### User-specific line-based features: zenith, nadir, horizon, "real horizon" (generated from location)
+
+Currently calculated.
+
+#### P0 (parity)
+     * Name
+     * Name location
+     * Sequence of polylines: Color, [lat, long] segments
+
+#### P1
+     * Search location
+
+### Other User-specific features: daylight shading, cloud coverage, adjustments for light pollution.
+
+TBD
+
+### Time-dependent sun-orbiting objects: sun (special case!), planets, comets
+Mostly don't move that quickly.
+
+#### P0 (Parity)
+
+    * Scientific name
+    * Common name
+    * Map Image and map scaling (different from actual scaling)
+    * Distance from Earth (or some way to calculate depth order)
+    * Update frequency
+        * Used in early days to avoid frequent recalculation - probably not a problem on modern
+        devices.
+    * Orbital elements 
+    
+#### P1
+
+    * Object metadata, as for stars
+    * Constants to calculate apparent magnitude from phase angle (not used currently as we
+    just show the image).
+    * A scaling factor so we can show the map images correctly sized.
+
+
+### Time-dependent earth-orbiting objects: Moon, ISS, Easter eggs like Santa, StarOfB
+Can move quickly (ISS). User's location on Earth can matter a little (Moon) or be crucial (ISS).
+ 
+#### P0 (Parity)
+
+    * Scientific name
+    * Common name
+    * Image sequence (moon phases)
+    * Geocentric orbital elements
+    
+#### P1
+
+    * Object metadata, as for stars
+
 ## Ideas
 ### Localization
 
@@ -41,7 +173,7 @@ Should we keep all the localizations in with the object data? Or can we continue
 
 One example would be to have the base data files store the English (default - sorry!) names. A script could extract them to a strings.xml file so we can take advantage of Android's tool chain to spot missing translations. At runtime, instead of needing the datafiles to contain the resource IDs as we do now (which is the source of the problem) we could use something like this to set them [getIndentifier](https://developer.android.com/reference/android/content/res/Resources.html#getIdentifier). It's not very efficient, so we'd want to do this once at start up.
 
-### Storing the data
+### Storing the data on device
 
 Using a database as provided by [Room](https://developer.android.com/training/data-storage/room)
 looks promising:
@@ -50,6 +182,15 @@ looks promising:
     + Can store arbitrary objects
 
 ### Data format
+
+Note: There are several parts to this problem with different weightings in the solution. We don't
+need one size fits all.
+
+    * The 'ground truth' format - mostly edited by humans. Currently we have several.
+    * The wire format (for when we do OTA updates). Needs to be compact and extensible - backwards
+    compatibility could be an issue here.
+    * The on-device format. Also needs to be compact. Not so important to be backwards compatible
+    since we can transform it on update, or simply redownload the data.
 
 #### Protocol Buffers (binary)
     + Compact format for storage and transmission.
@@ -112,6 +253,7 @@ I can't even.
 
 #### CSV
     + Human-readable
+    + Easy to manage in, say, a spreadsheet
     + Good support
     - Not great for structured data
 
@@ -136,3 +278,12 @@ Other desirable features would be
    * The ability to push new updates to phones (e.g. if a dataset contains errors)
    * The ability to make users aware of new updates
    * Low bandwidth requirements (both for the users' and my own bank balances)
+   
+
+## Plan
+  1. Refactor the planets, sun and moon layers to make them less complex (separate design)
+  1. Add support in code for ISS (it's a much needed feature)
+  1. Try setting the resource ids on start up, instead of with the current baroque system.
+  1. Move the fixed point items (stars, messier) to a new system
+  1. Move the fixed constellation lines to a new system
+  1. Move the planets etc to a new DB-based system 

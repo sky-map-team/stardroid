@@ -1,4 +1,4 @@
-# Revamp analytics
+# Revamp analytics [Mostly implemented and launched]
 
 Without knowing how we're doing it's harder to improve. We used to have Google Analytics
 in the non-F-droid version of the app, but a couple of years ago our hit rate grew so high
@@ -12,7 +12,7 @@ some analytics will have been sent.
 
 ## Requirements
 
-*   Ask users up front if they want to disable analytics
+*   Ask users up front if they want to disable analytics [not yet implemented]
     * Ideally show them what we're collecting
 *   Track which features are useful, and which we can safely make less accessible or retire
 altogether
