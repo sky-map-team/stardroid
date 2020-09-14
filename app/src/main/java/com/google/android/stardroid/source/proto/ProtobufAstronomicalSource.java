@@ -16,6 +16,7 @@ package com.google.android.stardroid.source.proto;
 
 import android.content.res.Resources;
 
+import com.google.android.stardroid.R;
 import com.google.android.stardroid.source.AbstractAstronomicalSource;
 import com.google.android.stardroid.source.LineSource;
 import com.google.android.stardroid.source.PointSource;
@@ -65,6 +66,29 @@ public class ProtobufAstronomicalSource extends AbstractAstronomicalSource {
   public ProtobufAstronomicalSource(AstronomicalSourceProto proto, Resources resources) {
     this.proto = proto;
     this.resources = resources;
+    // Not ideal to be doing this in the constructor. TODO(john): investigate which threads
+    // this is all happening on.
+    proto = processStringIds(proto);
+  }
+
+  /**
+   * The data files contain only the text version of the string Ids. Looking them up
+   * by this id will be expensive so precalculate any integer ids. See the datageneration
+   * design doc for an explanation.
+   */
+  private static AstronomicalSourceProto processStringIds(AstronomicalSourceProto proto) {
+    AstronomicalSourceProto.Builder processed = proto.toBuilder();
+    for (String strId : proto.getNameStrIdsList()) {
+      processed.addNameIntIds(toInt(strId));
+    }
+    for (LabelElementProto.Builder label : processed.getLabelBuilderList()) {
+      label.setStringsIntId(toInt(label.getStringsStrId()));
+    }
+    return processed.build();
+  }
+
+  private static int toInt(String stringId) {
+    return R.string.missing_label;
   }
 
   @Override
@@ -104,7 +128,7 @@ public class ProtobufAstronomicalSource extends AbstractAstronomicalSource {
     ArrayList<TextSource> points = new ArrayList<TextSource>(proto.getLabelCount());
     for (LabelElementProto element : proto.getLabelList()) {
       points.add(new TextSourceImpl(getCoords(element.getLocation()),
-          resources.getString(element.getStringsIntId()),
+          resources.getString(R.string.missing_label), // WHy not working?element.getStringsIntId()),
           element.getColor(), element.getOffset(), element.getFontSize()));
     }
     return points;
