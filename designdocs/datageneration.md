@@ -24,6 +24,7 @@ problems:
    1. It's pretty bad, really.
 
 ## Requirements
+
    * A human-friendly 'base format' in which to store the canonical versions of the data
    * Localization must work, and must be relatively friendly for our volunteer translators
    * Wire format should be compact (in case I end up paying for bandwidth)
@@ -43,84 +44,93 @@ Note that some future version could also show the stars from different locations
 or different times (one millions years hence). Steady on though.
 
 #### P0 (parity)
-    * Ra
-    * Dec
-    * Apparent Magnitude
-    * Scientific name
-    * Common name
-    * Layer name (or some other means to group them)
+
+   * Ra
+   * Dec
+   * Apparent Magnitude
+   * Scientific name
+   * Common name
+   * Layer name (or some other means to group them)
 
 #### P1
-    * Color
-    * Representative image
-    * Link to wikipedia?
+
+   * Color
+   * Representative image
+   * Link to wikipedia?
 
 #### P2
-    * Absolute magnitude
-    * Constellation it belongs to
-    * Distance
-    * Informational snippet (scraped from wikipedia if T&C allow)
-    * Other informational data - see the [wikipedia side bar](https://en.wikipedia.org/wiki/Polaris)
-    * What about variable stars?
+
+   * Absolute magnitude
+   * Constellation it belongs to
+   * Distance
+   * Informational snippet (scraped from wikipedia if T&C allow)
+   * Other informational data - see the [wikipedia side bar](https://en.wikipedia.org/wiki/Polaris)
+   * What about variable stars?
  
 
 ### Fixed, extended objects such as Nebulae and galaxies
 Currently these are modelled as points.
 
 #### P0 (parity)
-    * Ra
-    * Dec
-    * Apparent Magnitude
-    * Scientific name
-    * Common name
+
+   * Ra
+   * Dec
+   * Apparent Magnitude
+   * Scientific name
+   * Common name
 
 #### P1
-    * Type (e.g. galaxy, globular cluster)
-    * Map image with some bounds (ra, dec for the corners? or just a size?)
-    * Representative image (for info page)
-    * Link to wikipedia?
+
+   * Type (e.g. galaxy, globular cluster)
+   * Map image with some bounds (ra, dec for the corners? or just a size?)
+   * Representative image (for info page)
+   * Link to wikipedia?
 
 #### P2
-    * Absolute magnitude
-    * Constellation it belongs to
-    * Distance
-    * Informational snippet (scraped from wikipedia if T&C allow)
-    * Other informational data - see the [wikipedia side bar](https://en.wikipedia.org/wiki/Andromeda_Galaxy)
+
+   * Absolute magnitude
+   * Constellation it belongs to
+   * Distance
+   * Informational snippet (scraped from wikipedia if T&C allow)
+   * Other informational data - see the [wikipedia side bar](https://en.wikipedia.org/wiki/Andromeda_Galaxy)
 
 #### Larger extended objects
 Images that could cover more of the sky such as constellation drawings, hubble imagery or
 infrared surveys.
 
-    * As above, but probably more important to have precise image bounds and maybe some info
-    on how to transform.
+   * As above, but probably more important to have precise image bounds and maybe some info
+     on how to transform.
 
 ### Fixed, occasionally visible point like objects: meteor radiants
 Always in the same place, but not always relevant.
 
-    * Mostly as for stars, but with a visibility constraint. Perhaps simple like a time bound.
+   * Mostly as for stars, but with a visibility constraint. Perhaps simple like a time bound.
 
 ### Fixed, line-based features: constellation lines, boundaries, right ascension/declination grids, Ecliptic
 
 Some things, like the grids and Ecliptic might be best just calculated as they are now.
 
 #### P0 (parity)
-    * Scientific name
-    * Common name
-    * Name location (Ra, dec)
-    * Search location 
-    * Sequence of polylines: Color, [ra, dec] segments
+
+   * Scientific name
+   * Common name
+   * Name location (Ra, dec)
+   * Search location 
+   * Sequence of polylines: Color, [ra, dec] segments
     
 ### User-specific line-based features: zenith, nadir, horizon, "real horizon" (generated from location)
 
 Currently calculated.
 
 #### P0 (parity)
-     * Name
-     * Name location
-     * Sequence of polylines: Color, [lat, long] segments
+
+   * Name
+   * Name location
+   * Sequence of polylines: Color, [lat, long] segments
 
 #### P1
-     * Search location
+
+   * Search location
 
 ### Other User-specific features: daylight shading, cloud coverage, adjustments for light pollution.
 
@@ -131,21 +141,21 @@ Mostly don't move that quickly.
 
 #### P0 (Parity)
 
-    * Scientific name
-    * Common name
-    * Map Image and map scaling (different from actual scaling)
-    * Distance from Earth (or some way to calculate depth order)
-    * Update frequency
+   * Scientific name
+   * Common name
+   * Map Image and map scaling (different from actual scaling)
+   * Distance from Earth (or some way to calculate depth order)
+   * Update frequency
         * Used in early days to avoid frequent recalculation - probably not a problem on modern
         devices.
-    * Orbital elements 
+   * Orbital elements 
     
 #### P1
 
-    * Object metadata, as for stars
-    * Constants to calculate apparent magnitude from phase angle (not used currently as we
+   * Object metadata, as for stars
+   * Constants to calculate apparent magnitude from phase angle (not used currently as we
     just show the image).
-    * A scaling factor so we can show the map images correctly sized.
+   * A scaling factor so we can show the map images correctly sized.
 
 
 ### Time-dependent earth-orbiting objects: Moon, ISS, Easter eggs like Santa, StarOfB
@@ -153,14 +163,14 @@ Can move quickly (ISS). User's location on Earth can matter a little (Moon) or b
  
 #### P0 (Parity)
 
-    * Scientific name
-    * Common name
-    * Image sequence (moon phases)
-    * Geocentric orbital elements
+   * Scientific name
+   * Common name
+   * Image sequence (moon phases)
+   * Geocentric orbital elements
     
 #### P1
 
-    * Object metadata, as for stars
+   * Object metadata, as for stars
 
 ## Ideas
 ### Localization
@@ -186,10 +196,10 @@ looks promising:
 Note: There are several parts to this problem with different weightings in the solution. We don't
 need one size fits all.
 
-    * The 'ground truth' format - mostly edited by humans. Currently we have several.
-    * The wire format (for when we do OTA updates). Needs to be compact and extensible - backwards
+   * The 'ground truth' format - mostly edited by humans. Currently we have several.
+   * The wire format (for when we do OTA updates). Needs to be compact and extensible - backwards
     compatibility could be an issue here.
-    * The on-device format. Also needs to be compact. Not so important to be backwards compatible
+   * The on-device format. Also needs to be compact. Not so important to be backwards compatible
     since we can transform it on update, or simply redownload the data.
 
 #### Protocol Buffers (binary)
