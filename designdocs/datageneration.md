@@ -179,9 +179,17 @@ This is a tricky one as a search of the entire web (I read it all) yielded no gr
 how to elegantly localize 'dynamic' data such as you might have if our data files were stored
 in a database.
 
-Should we keep all the localizations in with the object data? Or can we continue to leverage Android's resource tooling.
+Should we keep all the localizations in with the object data? Or can we continue to leverage
+Android's resource tooling?
 
-One example would be to have the base data files store the English (default - sorry!) names. A script could extract them to a strings.xml file so we can take advantage of Android's tool chain to spot missing translations. At runtime, instead of needing the datafiles to contain the resource IDs as we do now (which is the source of the problem) we could use something like this to set them [getIndentifier](https://developer.android.com/reference/android/content/res/Resources.html#getIdentifier). It's not very efficient, so we'd want to do this once at start up.
+One example would be to have the base data files store the English (default - sorry!) names.
+A script could extract them to a strings.xml file so we can take advantage of Android's tool chain
+to spot missing translations. At runtime, instead of needing the datafiles to contain the
+resource IDs as we do now (which is the source of the problem) we could use something like this
+to set them [getIdentifier](https://developer.android.com/reference/android/content/res/Resources.html#getIdentifier).
+It's not very efficient, so we'd want to do this once at start up. This might work for the base
+data, but we'll need some other mechanism for downloaded data (won't be in the values folder)
+and large data like object descriptions.
 
 ### Storing the data on device
 
