@@ -34,7 +34,7 @@ public class Main {
         MessierProtoWriter.main(args);
         break;
       case Rewrite:
-        AsciiProtoRewriter.main(args);
+        // AsciiProtoRewriter.main(args);
         break;
       case Binary:
         AsciiToBinaryProtoWriter.main(args);

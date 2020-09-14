@@ -1,0 +1,16 @@
+apply plugin: 'java-library'
+apply plugin: 'com.google.protobuf'
+
+dependencies {
+    implementation 'com.google.protobuf:protobuf-java:3.4.0'
+}
+
+protobuf {
+    protoc {
+        // Download from repositories
+        artifact = 'com.google.protobuf:protoc:3.0.0'
+    }
+}
+
+sourceCompatibility = "1.7"
+targetCompatibility = "1.7"

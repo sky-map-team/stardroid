@@ -21,11 +21,10 @@ import android.util.Log;
 import com.google.android.stardroid.renderer.RendererObjectManager.UpdateType;
 import com.google.android.stardroid.source.AstronomicalSource;
 import com.google.android.stardroid.source.proto.ProtobufAstronomicalSource;
-import com.google.android.stardroid.source.proto.SourceProto.AstronomicalSourceProto;
-import com.google.android.stardroid.source.proto.SourceProto.AstronomicalSourcesProto;
 import com.google.android.stardroid.util.Blog;
 import com.google.android.stardroid.util.MiscUtil;
 import com.google.common.io.Closeables;
+import com.google.android.stardroid.source.proto.SourceProto.*;
 
 import java.io.IOException;
 import java.io.InputStream;

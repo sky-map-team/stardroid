@@ -14,10 +14,9 @@
 
 package com.google.android.stardroid.data;
 
-import com.google.android.stardroid.source.AstronomicalSource;
-import com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto;
-import com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourcesProto;
-import com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto;
+import com.google.android.stardroid.source.proto.SourceProto.AstronomicalSourceProto;
+import com.google.android.stardroid.source.proto.SourceProto.AstronomicalSourcesProto;
+import com.google.android.stardroid.source.proto.SourceProto.GeocentricCoordinatesProto;
 import com.google.common.io.Closeables;
 
 import java.io.BufferedReader;

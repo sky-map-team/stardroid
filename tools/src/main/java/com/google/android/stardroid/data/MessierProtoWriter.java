@@ -14,13 +14,14 @@
 
 package com.google.android.stardroid.data;
 
-import com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto;
-import com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto;
-import com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto;
-import com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto;
-
 import java.io.IOException;
 import java.util.List;
+
+import com.google.android.stardroid.source.proto.SourceProto.AstronomicalSourceProto;
+import com.google.android.stardroid.source.proto.SourceProto.GeocentricCoordinatesProto;
+import com.google.android.stardroid.source.proto.SourceProto.LabelElementProto;
+import com.google.android.stardroid.source.proto.SourceProto.PointElementProto;
+
 
 /**
  * Class for reading the messier csv file and writing the contents to protocol
@@ -60,7 +61,7 @@ public class MessierProtoWriter extends AbstractProtoWriter {
     labelBuilder.setLocation(coords);
     List<String> rKeysForName = rKeysFromName(tokens[0]);
     if (!rKeysForName.isEmpty()) {
-      labelBuilder.setREMOVEStringIndex(rKeysForName.get(0));
+      labelBuilder.setStringsStrId(rKeysForName.get(0));
     }
     sourceBuilder.addLabel(labelBuilder);
 
@@ -71,7 +72,7 @@ public class MessierProtoWriter extends AbstractProtoWriter {
     // TODO(johntaylor): consider setting messier object shape
     sourceBuilder.addPoint(pointBuilder);
     for (String rKey : rKeysForName) {
-      sourceBuilder.addREMOVENameIds(rKey);
+      sourceBuilder.addNameStrIds(rKey);
     }
 
     sourceBuilder.setSearchLocation(coords);

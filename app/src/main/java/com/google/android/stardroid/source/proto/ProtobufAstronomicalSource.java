@@ -14,6 +14,8 @@
 
 package com.google.android.stardroid.source.proto;
 
+import android.content.res.Resources;
+
 import com.google.android.stardroid.source.AbstractAstronomicalSource;
 import com.google.android.stardroid.source.LineSource;
 import com.google.android.stardroid.source.PointSource;
@@ -21,14 +23,8 @@ import com.google.android.stardroid.source.TextSource;
 import com.google.android.stardroid.source.impl.LineSourceImpl;
 import com.google.android.stardroid.source.impl.PointSourceImpl;
 import com.google.android.stardroid.source.impl.TextSourceImpl;
-import com.google.android.stardroid.source.proto.SourceProto.AstronomicalSourceProto;
-import com.google.android.stardroid.source.proto.SourceProto.GeocentricCoordinatesProto;
-import com.google.android.stardroid.source.proto.SourceProto.LabelElementProto;
-import com.google.android.stardroid.source.proto.SourceProto.LineElementProto;
-import com.google.android.stardroid.source.proto.SourceProto.PointElementProto;
+import com.google.android.stardroid.source.proto.SourceProto.*;
 import com.google.android.stardroid.units.GeocentricCoordinates;
-
-import android.content.res.Resources;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -74,8 +70,8 @@ public class ProtobufAstronomicalSource extends AbstractAstronomicalSource {
   @Override
   public synchronized ArrayList<String> getNames() {
     if (names == null) {
-      names = new ArrayList<String>(proto.getNameIdsCount());
-      for (int id : proto.getNameIdsList()) {
+      names = new ArrayList<String>(proto.getNameIntIdsCount());
+      for (int id : proto.getNameIntIdsList()) {
         names.add(resources.getString(id));
       }
     }
@@ -108,7 +104,7 @@ public class ProtobufAstronomicalSource extends AbstractAstronomicalSource {
     ArrayList<TextSource> points = new ArrayList<TextSource>(proto.getLabelCount());
     for (LabelElementProto element : proto.getLabelList()) {
       points.add(new TextSourceImpl(getCoords(element.getLocation()),
-          resources.getString(element.getStringIndex()),
+          resources.getString(element.getStringsIntId()),
           element.getColor(), element.getOffset(), element.getFontSize()));
     }
     return points;
