@@ -8,7 +8,7 @@ import java.io.IOException;
  * Usage:
  *   java com.google.android.stardroid.data.Main <command> <args>
  *
- *   where command is one of GenStars, GenMessier, Rewrite, Binary
+ *   where command is one of GenStars, GenMessier, Binary
  *   See the various writer classes for the args.
  */
 public class Main {
@@ -32,9 +32,6 @@ public class Main {
         break;
       case GenMessier:
         MessierProtoWriter.main(args);
-        break;
-      case Rewrite:
-        // AsciiProtoRewriter.main(args);
         break;
       case Binary:
         AsciiToBinaryProtoWriter.main(args);

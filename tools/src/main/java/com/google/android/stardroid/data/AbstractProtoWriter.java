@@ -94,7 +94,7 @@ public abstract class AbstractProtoWriter {
 
     PrintWriter writer = null;
     try {
-      writer = new PrintWriter(new FileWriter(prefix + "_R.ascii"));
+      writer = new PrintWriter(new FileWriter(prefix + ".ascii"));
       writer.append(sources.toString());
     } finally {
       Closeables.close(writer, false);

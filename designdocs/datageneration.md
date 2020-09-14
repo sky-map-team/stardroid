@@ -291,9 +291,9 @@ Other desirable features would be
    
 
 ## Plan
+  1. Try setting the resource ids on start up, instead of with the current baroque system. __IN PROGRESS__
   1. Refactor the planets, sun and moon layers to make them less complex (separate design)
   1. Add support in code for ISS (it's a much needed feature)
-  1. Try setting the resource ids on start up, instead of with the current baroque system.
   1. Move the fixed point items (stars, messier) to a new system
   1. Move the fixed constellation lines to a new system
   1. Move the planets etc to a new DB-based system 
