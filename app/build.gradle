@@ -35,7 +35,7 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard.cfg'
             if (file('no-checkin.properties').exists()) {
                 signingConfig signingConfigs.release
@@ -75,7 +75,7 @@ android {
 }
 
 dependencies {
-    implementation project(':datamodel')
+    implementation project(path: ':datamodel')
 
 // Android support
     implementation 'androidx.annotation:annotation:1.0.0'

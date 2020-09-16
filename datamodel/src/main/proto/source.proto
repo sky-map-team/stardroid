@@ -21,7 +21,7 @@ package stardroid_source;
 
 option java_package = "com.google.android.stardroid.source.proto";
 option java_outer_classname = "SourceProto";
-// option optimize_for = LITE_RUNTIME;
+//option optimize_for = LITE_RUNTIME;  // ??
 
 // Enumeration over shapes which can be drawn in the renderer.
 enum Shape {

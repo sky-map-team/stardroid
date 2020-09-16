@@ -15,6 +15,7 @@
 package com.google.android.stardroid.source.proto;
 
 import android.content.res.Resources;
+import android.util.Log;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.source.AbstractAstronomicalSource;
@@ -26,6 +27,7 @@ import com.google.android.stardroid.source.impl.PointSourceImpl;
 import com.google.android.stardroid.source.impl.TextSourceImpl;
 import com.google.android.stardroid.source.proto.SourceProto.*;
 import com.google.android.stardroid.units.GeocentricCoordinates;
+import com.google.android.stardroid.util.MiscUtil;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -41,6 +43,8 @@ import java.util.Map;
  * @author Brent Bryan
  */
 public class ProtobufAstronomicalSource extends AbstractAstronomicalSource {
+  private static final String TAG = MiscUtil.getTag(ProtobufAstronomicalSource.class);
+
   private static final Map<SourceProto.Shape, PointSource.Shape> shapeMap =
     new HashMap<SourceProto.Shape, PointSource.Shape>();
 
@@ -84,10 +88,12 @@ public class ProtobufAstronomicalSource extends AbstractAstronomicalSource {
     for (LabelElementProto.Builder label : processed.getLabelBuilderList()) {
       label.setStringsIntId(toInt(label.getStringsStrId()));
     }
+    Log.d(TAG, "Processed " + processed.getLabelList());
     return processed.build();
   }
 
   private static int toInt(String stringId) {
+    Log.d(TAG, stringId + R.string.missing_label);
     return R.string.missing_label;
   }
 
@@ -127,8 +133,9 @@ public class ProtobufAstronomicalSource extends AbstractAstronomicalSource {
     }
     ArrayList<TextSource> points = new ArrayList<TextSource>(proto.getLabelCount());
     for (LabelElementProto element : proto.getLabelList()) {
+      Log.d(TAG, "Label " + element.getStringsIntId() + " : " + element.getStringsStrId());
       points.add(new TextSourceImpl(getCoords(element.getLocation()),
-          resources.getString(R.string.missing_label), // WHy not working?element.getStringsIntId()),
+          resources.getString(R.string.missing_label), //element.getStringsIntId()),
           element.getColor(), element.getOffset(), element.getFontSize()));
     }
     return points;
