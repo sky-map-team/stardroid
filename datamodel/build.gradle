@@ -1,5 +1,6 @@
 apply plugin: 'java-library'
 apply plugin: 'com.google.protobuf'
+apply plugin: 'idea'
 
 dependencies {
     implementation 'com.google.protobuf:protobuf-java:3.4.0'
