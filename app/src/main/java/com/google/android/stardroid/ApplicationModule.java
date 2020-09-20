@@ -19,6 +19,7 @@ import com.google.android.stardroid.control.ZeroMagneticDeclinationCalculator;
 import com.google.android.stardroid.layers.EclipticLayer;
 import com.google.android.stardroid.layers.GridLayer;
 import com.google.android.stardroid.layers.HorizonLayer;
+import com.google.android.stardroid.layers.IssLayer;
 import com.google.android.stardroid.layers.LayerManager;
 import com.google.android.stardroid.layers.MeteorShowerLayer;
 import com.google.android.stardroid.layers.NewConstellationsLayer;
@@ -155,7 +156,7 @@ public class ApplicationModule {
     layerManager.addLayer(new HorizonLayer(model, resources));
     layerManager.addLayer(new EclipticLayer(resources));
     layerManager.addLayer(new SkyGradientLayer(model, resources));
-    // layerManager.addLayer(new IssLayer(resources, getModel()));
+    layerManager.addLayer(new IssLayer(resources, model));
 
     layerManager.initialize();
     return layerManager;

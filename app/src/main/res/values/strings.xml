@@ -39,12 +39,13 @@
     <string name="show_horizon_pref">Horizon</string>
     <string name="show_sky_gradient" translation_description="This is a shading of the color of the sky used for effect">Sky Gradient</string>
     <string name="show_meteors_pref">Meteor Showers</string>
+    <string name="show_satellite_layer_pref" translation_description="The layer for satellites">Satellites</string>
+    <!-- Just in case we decide to have such a layer for the 4/24 launch -->
+    <string name="show_hubble_layer_pref">Hubble Images</string>
     <string name="sensor_prefs">Sensor Settings (experts)</string>
     <string name="sensor_speed" translation_description="Old, non gyro sensors only: How quickly the sensor should send us data">Sensor Speed</string>
     <string name="sensor_damping" translation_description="Old, non gyro sensors only: The amount of smoothing applied to the sensor outputs.">Damping</string>
     <string name="ecliptic">Ecliptic</string>
-    <!-- Just in case we decide to have such a layer for the 4/24 launch -->
-    <string name="show_hubble_layer_pref">Hubble Images</string>
     <string name="malformed_loc_error">Latitude or longitude setting isn\'t a number.</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Accept</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">No Thanks</string>
