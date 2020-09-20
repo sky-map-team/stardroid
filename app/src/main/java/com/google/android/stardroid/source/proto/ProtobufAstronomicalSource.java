@@ -25,7 +25,11 @@ import com.google.android.stardroid.source.TextSource;
 import com.google.android.stardroid.source.impl.LineSourceImpl;
 import com.google.android.stardroid.source.impl.PointSourceImpl;
 import com.google.android.stardroid.source.impl.TextSourceImpl;
-import com.google.android.stardroid.source.proto.SourceProto.*;
+import com.google.android.stardroid.source.proto.SourceProto.AstronomicalSourceProto;
+import com.google.android.stardroid.source.proto.SourceProto.GeocentricCoordinatesProto;
+import com.google.android.stardroid.source.proto.SourceProto.LabelElementProto;
+import com.google.android.stardroid.source.proto.SourceProto.LineElementProto;
+import com.google.android.stardroid.source.proto.SourceProto.PointElementProto;
 import com.google.android.stardroid.units.GeocentricCoordinates;
 import com.google.android.stardroid.util.MiscUtil;
 

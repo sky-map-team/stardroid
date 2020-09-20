@@ -5,12 +5,6 @@ dependencies {
 
     implementation 'com.google.protobuf:protobuf-java:3.4.0'
     implementation 'com.google.guava:guava:21.0'
-
-    // TODO(jontayler): Terrible hack that should go when we revamp the tools.
-    //implementation files('../app/build/intermediates/classes/gms/release/')
-    // New output locations since the android plugin 'upgrade'.
-    //implementation files ('../app/build/intermediates/javac/gmsRelease/classes/')
-    //implementation files ('../app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/gmsRelease/R.jar')
 }
 
 // Gradle fail.  Creating multiple distributions in a distributions {} does not generate
