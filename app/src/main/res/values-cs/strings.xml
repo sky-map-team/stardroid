@@ -20,7 +20,7 @@
     <string name="location_no_auto">Váš telefon nepodporuje automatické určení polohy. Polohu můžete nastavit ručně v nastavení.</string>
     <string name="location_offer_to_enable">Automatické určení polohy je deaktivováno. Chce je aktivovat?</string>
     <string name="location_offer_to_enable_gps_title">Automatické určení polohy deaktivováno</string>
-    <string name="location_set_auto">Poloha nastavena od %1$s po %2$s</string>
+    <string name="location_set_auto">Poloha nastavena pomocí %1$s na %2$s</string>
     <string name="location_unable_to_geocode">Nelze najít vaši polohu, možná je síť nedostupná?</string>
     <string name="location_not_found_title" translation_description="dialog box title when location not found">Nenalezeno</string>
     <string name="location_not_found" translation_description="dialog message when placename not found">Nelze nalézt „%s“</string>
@@ -378,8 +378,8 @@
     <string name="load_kml_file">Načíst</string>
     <string name="show_meteors_pref">Meteorické roje</string>
     <string name="quadrantids" translation_description="Meteor Shower">Kvadrantidy</string>
-    <string name="compass_calibration_activity_heading_compass">Kompas -</string>
-    <string name="diagnostics_activity_magnetic_correction">Mag korekce</string>
+    <string name="compass_calibration_activity_heading_compass">Kompas</string>
+    <string name="diagnostics_activity_magnetic_correction">Magnetická korekce</string>
     <string name="menu_diagnostics">Diagnostika</string>
     <string name="permission_disabled">Povolení odmítnuto</string>
     <string name="sensor_absent">Senzor chybí</string>
@@ -392,7 +392,7 @@
     <string name="diagnostics_activity_universal_time">Univerzální čas</string>
     <string name="location_rationale_title">Proč potřebujeme vaši lokaci?</string>
     <string name="diagnostics_activity_rotation_vector">Rotace</string>
-    <string name="diagnostics_activity_location_and_time_heading">lokace a čas</string>
+    <string name="diagnostics_activity_location_and_time_heading">Lokace a čas</string>
     <string name="e_lyrae" translation_description="Name of the star ε Lyrae">Epsylon Lyrae</string>
     <string name="perseids" translation_description="Meteor Shower">Perseidy</string>
     <string name="sensor_accuracy_unreliable">Přesnost: Nespolehlivá</string>
@@ -411,7 +411,7 @@
             Avšak Sky Map lze stále používat v manuálním módu tím že budete mapu posouvat otačet a zoomovat prsty.
         </string>
     <string name="compass_calibration_activity_do_not_show_this_again">Toto již nezobrazovat</string>
-    <string name="diagnostics_activity_location">Lokace (lat, long)</string>
+    <string name="diagnostics_activity_location">Lokace (šíkař, délka)</string>
     <string name="diagnostics_activity_sensors_heading">Senzory</string>
     <string name="orionids" translation_description="Meteor Shower">Orionidy</string>
     <string name="diagnostics_activity_sky_map_version">Verze Sky Map</string>
@@ -447,7 +447,7 @@
     <string name="deltaaquariids" translation_description="Meteor Shower">Jižní Delta Aquaridy</string>
     <string name="do_not_show_again">Tuto zprávu již nezobrazovat</string>
     <string name="diagnostics_activity_gyroscope">Gyroskop</string>
-    <string name="diagnostics_activity_network_heading">Síť</string>
+    <string name="diagnostics_activity_network_heading">Sítě</string>
     <string name="diagnostics_activity_local_datetime">Místní čas</string>
     <string name="rotate_horizon_preference_summary">Otočit horizont o 90 stupňů (pro zařízení s vynuceným zobrazení na šírku, např. chytré brýle)</string>
     <string name="sensor_reverse_preference_title">Obrátit magnetické pole v ose Z</string>
@@ -456,7 +456,7 @@
     <string name="wifi">" (wifi)"</string>
     <string name="sensor_accuracy_low">Přesnost: Nízká</string>
     <string name="diagnostics_activity_gps">GPS</string>
-    <string name="diagnostics_activity_pointing_ra_dec">ukazující snapshot</string>
+    <string name="diagnostics_activity_pointing_ra_dec">Ukazující/ilustrační snapshot</string>
     <string name="connected">Připojeno</string>
     <string name="sensor_accuracy_unknown">Přesnost: Neznámá</string>
 </resources>
