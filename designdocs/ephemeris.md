@@ -67,7 +67,7 @@ Contains a helper function to calculate coordinates from a given Planet and Date
 (BAD) and another helper to calculate them from `OrbitalElements` (maybe ok).
 
 Has a helper function to create a new `HeliocentricCoordinates` as "equatorial" coordinates
-based on an "OBLIQUITY" constant.
+based on an "OBLIQUITY" constant (converting to/from the Ecliptic plane).
 
 ### `OrbitalElements`
 
@@ -83,6 +83,9 @@ orbits. These are:
 
 The calculation comes from: http://ssd.jpl.nasa.gov/?planet_pos
 and has some math to calculate the 'anomaly'.
+
+Good reference as to how this works: http://www.stjarnhimlen.se/comp/tutorial.html
+
 
 ## Planets
 Modelled by the `Planet` enum. Each instance has a drawable, name,
@@ -147,3 +150,18 @@ However...all the OpenGL libraries are still built around `float`s... so we shou
 
 This code is complex and easy to break. We'll need some smoke tests at a high level in the API to make sure we don't break anything when messing up the internals.
 `PlanetTest` and `RaDecTest` have some great examples.
+
+## Efficiency
+
+Currently positions are only updated at certain granularities that depend on the object in question.
+On the other hand, some calculations (like calculating the orbital elements) probably only need
+to be calculated once per user session (unless time travelling, perhaps). Is the extra complication
+justified on modern phones? Some kind of profiling would help here.
+
+## Clean up the code
+    * Separate general linear algebra classes from astronomy specific ones
+    * Data holder classes like RaDec are doing too much. It's OK for them to have helper
+    methods specific to their purpose (e.g. conversion functions) but they shouldn't be calculating
+    planetary positions!
+    * A cleaner high-level API to position calculation
+    * Separation of sun-orbiting objects and earth-orbiting objects.
