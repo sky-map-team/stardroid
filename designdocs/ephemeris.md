@@ -158,6 +158,11 @@ On the other hand, some calculations (like calculating the orbital elements) pro
 to be calculated once per user session (unless time travelling, perhaps). Is the extra complication
 justified on modern phones? Some kind of profiling would help here.
 
+Update: Profiler shows no significant difference in energy usage when the min update time is
+set to 0. Doesn't really change the UX much either as the Moon already updates frequently
+and the 'jumpiness' in time travel mode is unchanged - perhaps it's the rate of 'ticks' in TT
+mode that actually needs to be addressed.
+
 ## Clean up the code
     * Separate general linear algebra classes from astronomy specific ones
     * Data holder classes like RaDec are doing too much. It's OK for them to have helper
