@@ -16,7 +16,6 @@ package com.google.android.stardroid.activities;
 
 import android.app.FragmentManager;
 import android.app.SearchManager;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
@@ -41,6 +40,8 @@ import android.view.animation.Animation;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.core.content.ContextCompat;
 
 import com.google.android.stardroid.ApplicationConstants;
 import com.google.android.stardroid.R;
@@ -236,8 +237,10 @@ public class DynamicStarMapActivity extends InjectableActivity
     activityLightLevelManager = new ActivityLightLevelManager(activityLightLevelChanger,
                                                               sharedPreferences);
 
-    PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
-    wakeLock = pm.newWakeLock(PowerManager.SCREEN_BRIGHT_WAKE_LOCK, TAG);
+    PowerManager pm = ContextCompat.getSystemService(this, PowerManager.class);
+    if (pm != null) {
+      wakeLock = pm.newWakeLock(PowerManager.SCREEN_BRIGHT_WAKE_LOCK, TAG);
+    }
 
     // Were we started as the result of a search?
     Intent intent = getIntent();
@@ -250,7 +253,7 @@ public class DynamicStarMapActivity extends InjectableActivity
   }
 
   private void checkForSensorsAndMaybeWarn() {
-    SensorManager sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+    SensorManager sensorManager = ContextCompat.getSystemService(this, SensorManager.class);
     if (sensorManager != null && sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER) != null
         && sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD) != null) {
       Log.i(TAG, "Minimum sensors present");

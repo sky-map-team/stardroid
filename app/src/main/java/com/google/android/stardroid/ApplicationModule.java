@@ -10,6 +10,7 @@ import android.location.LocationManager;
 import android.net.ConnectivityManager;
 import android.util.Log;
 
+import androidx.core.content.ContextCompat;
 import androidx.preference.PreferenceManager;
 
 import com.google.android.stardroid.control.AstronomerModel;
@@ -75,7 +76,7 @@ public class ApplicationModule {
   @Provides
   @Singleton
   LocationManager provideLocationManager() {
-    return (LocationManager) app.getSystemService(Context.LOCATION_SERVICE);
+    return ContextCompat.getSystemService(app, LocationManager.class);
   }
 
   @Provides
@@ -126,13 +127,13 @@ public class ApplicationModule {
   @Provides
   @Singleton
   SensorManager provideSensorManager() {
-    return (SensorManager) app.getSystemService(Context.SENSOR_SERVICE);
+    return ContextCompat.getSystemService(app, SensorManager.class);
   }
 
   @Provides
   @Singleton
   ConnectivityManager provideConnectivityManager() {
-    return (ConnectivityManager) app.getSystemService(Context.CONNECTIVITY_SERVICE);
+    return ContextCompat.getSystemService(app, ConnectivityManager.class);
   }
 
   @Provides
