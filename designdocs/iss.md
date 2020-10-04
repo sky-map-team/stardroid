@@ -14,6 +14,10 @@ simple in the meantime - just a labelled dot on the screen will do.
 code to get over the network updates to the Orbital Elements, but it was never completed.
    * Unlike our other objects, the user's location must be taken into account
    * It's going to move a lot faster
+   
+The current object location code is a bit of a tangled mess - it was thrown together in a hurry
+by 3 different developers (including me). Before adding ISS support it makes sense to try to
+clean that up a little bit.  See ephemeris.md.
 
 ## Data sources
 
