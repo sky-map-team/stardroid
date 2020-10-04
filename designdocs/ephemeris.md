@@ -1,7 +1,7 @@
 # How are the current object positions calculated?
 
 Some notes on how object positions are calculated in Sky Map. The code is old and crusty and
-was thrown together quite quickly by several folks so a roadmap is useful
+was thrown together quite quickly by several folks so a roadmap is useful.
 
 In most cases the problem boils down to calculating the object's Right Ascension and Declination.
 Once Ra and Dec are established and converted into
