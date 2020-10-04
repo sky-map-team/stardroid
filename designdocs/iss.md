@@ -17,7 +17,7 @@ code to get over the network updates to the Orbital Elements, but it was never c
    
 The current object location code is a bit of a tangled mess - it was thrown together in a hurry
 by 3 different developers (including me). Before adding ISS support it makes sense to try to
-clean that up a little bit.  See ephemeris.md.
+clean that up a little bit.  See [ephemeris.md](ephemeris.md).
 
 ## Data sources
 
