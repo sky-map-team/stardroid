@@ -91,13 +91,13 @@ public class GeocentricCoordinates extends Vector3 {
    * Assumes it's an array of length 3.
    * @param xyz
    */
-  public void updateFromFloatArray(float[] xyz) {
+  private void updateFromFloatArray(float[] xyz) {
     this.x = xyz[0];
     this.y = xyz[1];
     this.z = xyz[2];
   }
 
-  public void updateFromVector3(Vector3 v) {
+  private void updateFromVector3(Vector3 v) {
     this.x = v.x;
     this.y = v.y;
     this.z = v.z;

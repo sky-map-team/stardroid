@@ -14,11 +14,11 @@
 
 package com.google.android.stardroid.units;
 
-import java.util.Date;
-
 import com.google.android.stardroid.provider.ephemeris.Planet;
 import com.google.android.stardroid.util.Geometry;
 import com.google.android.stardroid.util.MathUtil;
+
+import java.util.Date;
 
 public class RaDec {
   public float ra;        // In degrees
@@ -90,7 +90,7 @@ public class RaDec {
    * In the northern hemisphere, objects never set if dec > 90 - lat.
    * In the southern hemisphere, objects never set if dec < -90 - lat.
    */
-  public boolean isCircumpolarFor(LatLong loc) {
+  private boolean isCircumpolarFor(LatLong loc) {
     if (loc.getLatitude() > 0.0f) {
       return (this.dec > (90.0f - loc.getLatitude()));
     } else {
@@ -105,7 +105,7 @@ public class RaDec {
    * In the northern hemisphere, objects never rise if dec < lat - 90.
    * In the southern hemisphere, objects never rise if dec > 90 - lat.
    */
-  public boolean isNeverVisible(LatLong loc) {
+  private boolean isNeverVisible(LatLong loc) {
     if (loc.getLatitude() > 0.0f) {
       return (this.dec < (loc.getLatitude() - 90.0f));
     } else {
