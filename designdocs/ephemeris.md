@@ -84,10 +84,9 @@ orbits. These are:
 The calculation comes from: http://ssd.jpl.nasa.gov/?planet_pos
 and has some math to calculate the 'anomaly'.
 
-
 ## Planets
 Modelled by the `Planet` enum. Each instance has a drawable, name,
-update frequency (further planets move slower!)
+update frequency (more distant planets move slower!). Confusingly the `Planet` enum is used to model sun-orbiting objects like the 8 planets, but also the Sun (basically modelling Earth's orbit and then inverting it) and the Moon (hacked in as an afterthought).
 
 The enum has many (too many) responsibilities. It has a method
 to calculate the lunar phase (used to show different images).
@@ -128,3 +127,23 @@ there.
 ## Stars, Messier objects & Constellations etc
 
 These objects have fixed RA and Dec without any time dependence.
+
+# Proposed Refactorings
+## Where is the API consumed?
+The main consumer of the planet locations is in the `PlanetSource` class via the `RaDec.getInstance` method. This, at present, is essentially the public API to the object location code (for solar system objects).
+
+## Eliminate redundant code
+
+We have methods that appear to be unused. We have classes for doing linear algebra that could probably be replaced by platform provided ones such as 
+android.graphics.Matrix or android.opengl.
+
+## Floats to Doubles?
+
+Back in the day on the early devices it was strongly recommended to use `float` for efficiency reasons. This recommendation (like other oddities like making local copies of fields) seems to be no longer be recommended: https://developer.android.com/training/articles/perf-tips
+
+However...all the OpenGL libraries are still built around `float`s... so we should leave this as-is unless we run into accuracy issues that require `double`s.
+
+## Testing
+
+This code is complex and easy to break. We'll need some smoke tests at a high level in the API to make sure we don't break anything when messing up the internals.
+`PlanetTest` and `RaDecTest` have some great examples.
