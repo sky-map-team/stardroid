@@ -27,6 +27,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 
+import androidx.core.content.pm.PackageInfoCompat;
 import androidx.preference.PreferenceManager;
 
 import com.google.android.stardroid.layers.LayerManager;
@@ -158,11 +159,11 @@ public class StardroidApplication extends Application {
   /**
    * Returns the build number for Sky Map.
    */
-  public int getVersion() {
+  public long getVersion() {
     PackageManager packageManager = getPackageManager();
     try {
       PackageInfo info = packageManager.getPackageInfo(this.getPackageName(), 0);
-      return info.versionCode;
+      return PackageInfoCompat.getLongVersionCode(info);
     } catch (NameNotFoundException e) {
       Log.e(TAG, "Unable to obtain package info");
       return -1;

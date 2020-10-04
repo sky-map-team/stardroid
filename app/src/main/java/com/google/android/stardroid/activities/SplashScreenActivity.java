@@ -153,7 +153,7 @@ public class SplashScreenActivity extends InjectableActivity
   @Override
   public void dialogClosed() {
     SharedPreferences.Editor editor = sharedPreferences.edit();
-    editor.putInt(ApplicationConstants.READ_WHATS_NEW_PREF_VERSION, app.getVersion());
+    editor.putLong(ApplicationConstants.READ_WHATS_NEW_PREF_VERSION, app.getVersion());
     editor.commit();
     launchSkyMap();
   }

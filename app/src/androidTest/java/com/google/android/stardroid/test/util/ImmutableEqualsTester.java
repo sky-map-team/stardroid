@@ -17,7 +17,7 @@ package com.google.android.stardroid.test.util;
 import com.google.android.stardroid.base.Provider;
 import com.google.android.stardroid.base.VisibleForTesting;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
