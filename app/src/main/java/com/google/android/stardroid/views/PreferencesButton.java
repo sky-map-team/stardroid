@@ -20,11 +20,12 @@ import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
+
+import androidx.preference.PreferenceManager;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.util.Analytics;

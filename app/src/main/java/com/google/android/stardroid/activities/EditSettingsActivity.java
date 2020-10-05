@@ -20,13 +20,14 @@ import android.content.SharedPreferences;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
-import android.preference.EditTextPreference;
-import android.preference.Preference;
-import android.preference.PreferenceActivity;
-import android.preference.PreferenceFragment;
-import android.preference.PreferenceManager;
 import android.util.Log;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.preference.EditTextPreference;
+import androidx.preference.Preference;
+import androidx.preference.PreferenceFragmentCompat;
+import androidx.preference.PreferenceManager;
 
 import com.google.android.stardroid.ApplicationConstants;
 import com.google.android.stardroid.R;
@@ -44,13 +45,13 @@ import javax.inject.Inject;
 /**
  * Edit the user's preferences.
  */
-public class EditSettingsActivity extends PreferenceActivity {
+public class EditSettingsActivity extends AppCompatActivity {
   private MyPreferenceFragment preferenceFragment;
-  
-  public static class MyPreferenceFragment extends PreferenceFragment {
+
+  public static class MyPreferenceFragment extends PreferenceFragmentCompat {
+
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-      super.onCreate(savedInstanceState);
+    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
       addPreferencesFromResource(R.xml.preference_screen);
     }
   }
@@ -75,7 +76,7 @@ public class EditSettingsActivity extends PreferenceActivity {
         PreferenceManager.getDefaultSharedPreferences(this));
     geocoder = new Geocoder(this);
     preferenceFragment = new MyPreferenceFragment();
-    getFragmentManager().beginTransaction().replace(android.R.id.content,
+    getSupportFragmentManager().beginTransaction().replace(android.R.id.content,
         preferenceFragment).commit();
     
   }
@@ -86,40 +87,48 @@ public class EditSettingsActivity extends PreferenceActivity {
     final Preference locationPreference = preferenceFragment.findPreference(LOCATION);
     Preference latitudePreference = preferenceFragment.findPreference(LATITUDE);
     Preference longitudePreference = preferenceFragment.findPreference(LONGITUDE);
-    locationPreference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
-    
-      public boolean onPreferenceChange(Preference preference, Object newValue) {
-        Log.d(TAG, "Place to be updated to " + newValue);
-        return setLatLongFromPlace(newValue.toString());
-      }
-    });
-  
-    latitudePreference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
-    
-      public boolean onPreferenceChange(Preference preference, Object newValue) {
-        ((EditTextPreference) locationPreference).setText("");
-        return true;
-      }
-    });
-  
-    longitudePreference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
-    
-      public boolean onPreferenceChange(Preference preference, Object newValue) {
-        ((EditTextPreference) locationPreference).setText("");
-        return true;
-      }
-    });
+    if (locationPreference != null) {
+      locationPreference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+
+        public boolean onPreferenceChange(Preference preference, Object newValue) {
+          Log.d(TAG, "Place to be updated to " + newValue);
+          return setLatLongFromPlace(newValue.toString());
+        }
+      });
+    }
+
+    if (latitudePreference != null) {
+      latitudePreference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+
+        public boolean onPreferenceChange(Preference preference, Object newValue) {
+          ((EditTextPreference) locationPreference).setText("");
+          return true;
+        }
+      });
+    }
+
+    if (longitudePreference != null) {
+      longitudePreference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+
+        public boolean onPreferenceChange(Preference preference, Object newValue) {
+          ((EditTextPreference) locationPreference).setText("");
+          return true;
+        }
+      });
+    }
 
     Preference gyroPreference = preferenceFragment.findPreference(
         ApplicationConstants.SHARED_PREFERENCE_DISABLE_GYRO);
-    gyroPreference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+    if (gyroPreference != null) {
+      gyroPreference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
 
-      public boolean onPreferenceChange(Preference preference, Object newValue) {
-        Log.d(TAG, "Toggling gyro preference " + newValue);
-        enableNonGyroSensorPrefs(((Boolean) newValue));
-        return true;
-      }
-    });
+        public boolean onPreferenceChange(Preference preference, Object newValue) {
+          Log.d(TAG, "Toggling gyro preference " + newValue);
+          enableNonGyroSensorPrefs(((Boolean) newValue));
+          return true;
+        }
+      });
+    }
 
     enableNonGyroSensorPrefs(
         sharedPreferences.getBoolean(ApplicationConstants.SHARED_PREFERENCE_DISABLE_GYRO,
@@ -177,10 +186,14 @@ public class EditSettingsActivity extends PreferenceActivity {
   }
 
   private void setLatLong(double latitude, double longitude) {
-    EditTextPreference latPreference = (EditTextPreference) preferenceFragment.findPreference(LATITUDE);
-    EditTextPreference longPreference = (EditTextPreference) preferenceFragment.findPreference(LONGITUDE);
-    latPreference.setText(Double.toString(latitude));
-    longPreference.setText(Double.toString(longitude));
+    EditTextPreference latPreference = preferenceFragment.findPreference(LATITUDE);
+    EditTextPreference longPreference = preferenceFragment.findPreference(LONGITUDE);
+    if (latPreference != null) {
+      latPreference.setText(Double.toString(latitude));
+    }
+    if (longPreference != null) {
+      longPreference.setText(Double.toString(longitude));
+    }
     String message = String.format(getString(R.string.location_place_found), latitude, longitude);
     Log.d(TAG, message);
     Toast.makeText(this, message, Toast.LENGTH_SHORT).show();

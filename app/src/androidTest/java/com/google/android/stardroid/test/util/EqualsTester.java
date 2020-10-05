@@ -14,7 +14,7 @@
 
 package com.google.android.stardroid.test.util;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 
 import java.util.ArrayList;
 import java.util.Arrays;
