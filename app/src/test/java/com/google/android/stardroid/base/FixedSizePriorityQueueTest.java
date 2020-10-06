@@ -12,15 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package base;
+package com.google.android.stardroid.base;
+
+import junit.framework.TestCase;
 
 import java.util.Arrays;
 import java.util.Comparator;
-
-import com.google.android.stardroid.base.Filter;
-import com.google.android.stardroid.base.FixedSizePriorityQueue;
-
-import junit.framework.TestCase;
 
 /**
  * Unit tests for the FixedSizePriorityQueue class.

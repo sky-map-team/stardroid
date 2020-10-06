@@ -12,17 +12,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package base;
-
-import java.util.HashSet;
-import java.util.List;
+package com.google.android.stardroid.base;
 
 import junit.framework.TestCase;
 
 import org.easymock.EasyMock;
 
-import com.google.android.stardroid.base.AbstractListenerAdaptor;
-import com.google.android.stardroid.base.Lists;
+import java.util.HashSet;
+import java.util.List;
 
 /**
  * Unittests for the AbstractListenerAdaptor.

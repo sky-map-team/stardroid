@@ -528,8 +528,8 @@ public enum Planet {
     }
     riseSetTime.setTimeInMillis(newTime);
     if (!riseSetTime.after(now)) {
-      //Log.e(TAG, "Next rise set time (" + riseSetTime.toString()
-      //           + ") should be after current time (" + now.toString() + ")");
+      Log.e(TAG, "Next rise set time (" + riseSetTime.toString()
+                 + ") should be after current time (" + now.toString() + ")");
     }
     return riseSetTime;
   }
@@ -590,7 +590,7 @@ public enum Planet {
 
     // Return failure if we didn't converge.
     if (counter == MAX_ITERATIONS) {
-      //Log.d(TAG, "Rise/Set calculation didn't converge.");
+      Log.d(TAG, "Rise/Set calculation didn't converge.");
       return -1.0f;
     }
 
