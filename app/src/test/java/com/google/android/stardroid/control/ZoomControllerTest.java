@@ -14,27 +14,34 @@
 
 package com.google.android.stardroid.control;
 
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.robolectric.RobolectricTestRunner;
+import org.robolectric.annotation.Config;
+
 import static org.easymock.EasyMock.createMock;
 import static org.easymock.EasyMock.expect;
 import static org.easymock.EasyMock.replay;
 import static org.easymock.EasyMock.verify;
 
-import junit.framework.TestCase;
-
 /**
  * Test suite for the {@link ZoomController}.
  *
  * @author John Taylor
+ *
+ * Tests that require roboelectric for API calls.
  */
-public class ZoomControllerTest extends TestCase {
+@RunWith(RobolectricTestRunner.class)
+@Config(manifest=Config.NONE)
+public class ZoomControllerTest {
   private static final float INITIAL_FIELD_OF_VIEW = 30.0f;
 
   private AstronomerModel astronomerModel;
   private ZoomController zoomController;
 
-  @Override
-  protected void setUp() throws Exception {
-    super.setUp();
+  @Before
+  public void setUp() throws Exception {
     astronomerModel = createMock(AstronomerModel.class);
     zoomController = new ZoomController();
     zoomController.setModel(astronomerModel);
@@ -43,6 +50,7 @@ public class ZoomControllerTest extends TestCase {
   /**
    * Tests that the maximum field of view is not exceeded.
    */
+  @Test
   public void testZoomOut_tooFar() {
     float newFieldOfView = ZoomController.MAX_ZOOM_OUT;
     expect(astronomerModel.getFieldOfView()).andStubReturn(INITIAL_FIELD_OF_VIEW);
@@ -54,6 +62,7 @@ public class ZoomControllerTest extends TestCase {
     verify(astronomerModel);
   }
 
+  @Test
   public void testZoomIn_modelNotUpdatedWhenControllerNotEnabled() {
     expect(astronomerModel.getFieldOfView()).andReturn(INITIAL_FIELD_OF_VIEW);
     // Note that setFieldOfView will not be called

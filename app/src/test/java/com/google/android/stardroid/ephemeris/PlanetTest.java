@@ -20,10 +20,17 @@ import com.google.android.stardroid.units.RaDec;
 
 import junit.framework.TestCase;
 
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.robolectric.RobolectricTestRunner;
+import org.robolectric.annotation.Config;
+
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.TimeZone;
 
+@RunWith(RobolectricTestRunner.class)
+@Config(manifest= Config.NONE)
 public class PlanetTest extends TestCase {
   // Accuracy of our position calculations, in degrees.
   private static final float POS_TOL = 0.2f;
@@ -35,6 +42,7 @@ public class PlanetTest extends TestCase {
   private static final float HOURS_TO_DEGREES = 360.0f/24.0f;
 
   // Verify that we are calculating a valid lunar RA/Dec.
+  @Test
   public void testLunarGeocentricLocation() {
     GregorianCalendar testCal = new GregorianCalendar();
     testCal.setTimeZone(TimeZone.getTimeZone("GMT"));
@@ -60,6 +68,7 @@ public class PlanetTest extends TestCase {
 
   // Verify illumination calculations for bodies that matter (Mercury, Venus, Mars, and Moon)
   // TODO(serafini): please fix and reenable
+  // @Test
   public void disableTestIllumination() {
     GregorianCalendar testCal = new GregorianCalendar();
     testCal.setTimeZone(TimeZone.getTimeZone("GMT"));
@@ -86,6 +95,7 @@ public class PlanetTest extends TestCase {
     assertEquals(99.6, Planet.Mars.calculatePercentIlluminated(testCal.getTime()), PHASE_TOL);
   }
 
+  @Test
   public void testCalcNextRiseSetTime() {
     GregorianCalendar testCal = new GregorianCalendar();
     testCal.setTimeZone(TimeZone.getTimeZone("GMT"));

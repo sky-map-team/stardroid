@@ -16,6 +16,11 @@ package com.google.android.stardroid.control;
 
 import junit.framework.TestCase;
 
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.robolectric.RobolectricTestRunner;
+import org.robolectric.annotation.Config;
+
 import java.util.Date;
 
 /**
@@ -23,6 +28,8 @@ import java.util.Date;
  * 
  * @author John Taylor
  */
+@RunWith(RobolectricTestRunner.class)
+@Config(manifest= Config.NONE)
 public class TransitioningCompositeClockTest extends TestCase {
   /**
    * A fake clock for which we can set the time.
@@ -46,6 +53,7 @@ public class TransitioningCompositeClockTest extends TestCase {
     }
   }
 
+  @Test
   public void testInterpolant() {
     double tol = 1e-3;
     assertEquals(0, TransitioningCompositeClock.interpolate(0, 10, 0), tol);
@@ -62,6 +70,7 @@ public class TransitioningCompositeClockTest extends TestCase {
     assertEquals(0.0, dydx1, tol);
   }
 
+  @Test
   public void testTransition() {
     TimeTravelClock timeTravelClock = new TimeTravelClock();
     FakeClock fakeClock = new FakeClock();
