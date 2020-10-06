@@ -1179,13 +1179,8 @@ source {
     color: 4761665
     string_index: 2131624244
   }
-<<<<<<< HEAD
-  name_ids: 2131493143
-  name_ids: 2131493390
-=======
   name_ids: 2131624244
-  name_ids: 2131624496
->>>>>>> unittests
+  name_ids: 2131624497
 }
 source {
   search_location {
@@ -2406,13 +2401,8 @@ source {
     color: 4761665
     string_index: 2131624193
   }
-<<<<<<< HEAD
-  name_ids: 2131493092
-  name_ids: 2131493335
-=======
   name_ids: 2131624193
-  name_ids: 2131624438
->>>>>>> unittests
+  name_ids: 2131624439
 }
 source {
   search_location {
@@ -2619,15 +2609,9 @@ source {
       declination: -3.84725
     }
     color: 4761665
-<<<<<<< HEAD
-    string_index: 2131493378
+    string_index: 2131624485
   }
-  name_ids: 2131493378
-=======
-    string_index: 2131624484
-  }
-  name_ids: 2131624484
->>>>>>> unittests
+  name_ids: 2131624485
 }
 source {
   search_location {
