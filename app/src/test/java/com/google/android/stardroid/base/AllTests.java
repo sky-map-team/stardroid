@@ -12,22 +12,29 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.google.android.stardroid.test;
+package base;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
+/**
+ * Test Suite for classes in com.google.android.stardroid.base
+ * 
+ * @author Brent Bryan
+ */
 public class AllTests extends TestCase {
-
+  
+  // No instances
+  private AllTests() {
+  }
+  
   public static Test suite() {
-    TestSuite suite = new TestSuite("com.google.android.stardroid.test");
-    suite.addTest(com.google.android.stardroid.test.base.AllTests.suite());
-    suite.addTest(com.google.android.stardroid.control.AllTests.suite());
-    suite.addTest(com.google.android.stardroid.search.AllTests.suite());
-    suite.addTest(com.google.android.stardroid.test.units.AllTests.suite());
-    suite.addTest(com.google.android.stardroid.util.AllTests.suite());
-
+    TestSuite suite = new TestSuite("com.google.android.stardroid.base");
+    suite.addTestSuite(AbstractListenerAdaptorTest.class);
+    suite.addTestSuite(FixedSizePriorityQueueTest.class);
+    suite.addTestSuite(ListsTest.class);
+    suite.addTestSuite(PairTest.class);
     return suite;
   }
 }

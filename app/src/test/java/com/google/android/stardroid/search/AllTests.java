@@ -4,7 +4,7 @@
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
 //
-//     http://www.apache.org/licenses/LICENSE-2.0
+// http://www.apache.org/licenses/LICENSE-2.0
 //
 // Unless required by applicable law or agreed to in writing, software
 // distributed under the License is distributed on an "AS IS" BASIS,
@@ -12,22 +12,26 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.google.android.stardroid.test;
+package com.google.android.stardroid.search;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
+/**
+ * Test Suite for classes in com.google.android.stardroid.search
+ * 
+ * @author John Taylor
+ */
 public class AllTests extends TestCase {
-
+  
+  // No instances
+  private AllTests() {
+  }
+  
   public static Test suite() {
-    TestSuite suite = new TestSuite("com.google.android.stardroid.test");
-    suite.addTest(com.google.android.stardroid.test.base.AllTests.suite());
-    suite.addTest(com.google.android.stardroid.control.AllTests.suite());
-    suite.addTest(com.google.android.stardroid.search.AllTests.suite());
-    suite.addTest(com.google.android.stardroid.test.units.AllTests.suite());
-    suite.addTest(com.google.android.stardroid.util.AllTests.suite());
-
+    TestSuite suite = new TestSuite("com.google.android.stardroid.search");
+    suite.addTestSuite(PrefixStoreTest.class);
     return suite;
   }
 }

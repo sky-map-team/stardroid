@@ -12,22 +12,25 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.google.android.stardroid.test;
+package com.google.android.stardroid.control;
 
 import junit.framework.Test;
-import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
-public class AllTests extends TestCase {
-
+/**
+ * A TestSuite for the com.google.android.stardroid.control package.
+ * 
+ * @author John Taylor
+ */
+public class AllTests {
   public static Test suite() {
-    TestSuite suite = new TestSuite("com.google.android.stardroid.test");
-    suite.addTest(com.google.android.stardroid.test.base.AllTests.suite());
-    suite.addTest(com.google.android.stardroid.control.AllTests.suite());
-    suite.addTest(com.google.android.stardroid.search.AllTests.suite());
-    suite.addTest(com.google.android.stardroid.test.units.AllTests.suite());
-    suite.addTest(com.google.android.stardroid.util.AllTests.suite());
-
+    TestSuite suite = new TestSuite("com.google.android.stardroid.control");
+    //$JUnit-BEGIN$
+    suite.addTestSuite(AstronomerModelWithMagneticVariationTest.class);
+    suite.addTestSuite(AstronomerModelTest.class);
+    suite.addTestSuite(TransitioningCompositeClockTest.class);
+    suite.addTestSuite(ZoomControllerTest.class);
+    //$JUnit-END$
     return suite;
   }
 }

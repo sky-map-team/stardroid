@@ -14,7 +14,7 @@
 
 package com.google.android.stardroid.provider.ephemeris;
 
-import android.util.Log;
+// import android.util.Log;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.base.TimeConstants;
@@ -90,7 +90,7 @@ public enum Planet {
   private int getLunarPhaseImageId(Date time) {
     // First, calculate phase angle:
     float phase = calculatePhaseAngle(time);
-    Log.d(TAG, "Lunar phase = " + phase);
+    // Log.d(TAG, "Lunar phase = " + phase);
 
     // Next, figure out what resource id to return.
     if (phase < 22.5f) {
@@ -106,7 +106,7 @@ public enum Planet {
     // If phase is increasing, we are waxing. If not, we are waning.
     Date tomorrow = new Date(time.getTime() + 24 * 3600 * 1000);
     float phase2 = calculatePhaseAngle(tomorrow);
-    Log.d(TAG, "Tomorrow's phase = " + phase2);
+    // Log.d(TAG, "Tomorrow's phase = " + phase2);
 
     if (phase < 67.5f) {
       // Crescent
@@ -383,7 +383,7 @@ public enum Planet {
       }
       waxing = (nextPhase > phase);
       phase = nextPhase;
-      Log.d(TAG, "Phase: " + phase + "\tDate:" + fullMoon);
+      // Log.d(TAG, "Phase: " + phase + "\tDate:" + fullMoon);
     }
   }
 
@@ -451,7 +451,7 @@ public enum Planet {
         mag = -1.0f;
         break;
       default:
-        Log.e(MiscUtil.getTag(this), "Invalid planet: " + this);
+        // Log.e(MiscUtil.getTag(this), "Invalid planet: " + this);
         // At least make it faint!
         mag = 100f;
         break;
@@ -523,13 +523,13 @@ public enum Planet {
     long newTime = dayStart + riseSetUtMillis + riseSetTime.get(Calendar.ZONE_OFFSET);
     // If the newTime is before the current time, go forward 1 day.
     if (newTime < now.getTimeInMillis()) {
-      Log.d(TAG, "Nearest Rise/Set is in the past. Adding one day.");
+      // Log.d(TAG, "Nearest Rise/Set is in the past. Adding one day.");
       newTime += TimeConstants.MILLISECONDS_PER_DAY;
     }
     riseSetTime.setTimeInMillis(newTime);
     if (!riseSetTime.after(now)) {
-      Log.e(TAG, "Next rise set time (" + riseSetTime.toString()
-                 + ") should be after current time (" + now.toString() + ")");
+      //Log.e(TAG, "Next rise set time (" + riseSetTime.toString()
+      //           + ") should be after current time (" + now.toString() + ")");
     }
     return riseSetTime;
   }
@@ -590,7 +590,7 @@ public enum Planet {
 
     // Return failure if we didn't converge.
     if (counter == MAX_ITERATIONS) {
-      Log.d(TAG, "Rise/Set calculation didn't converge.");
+      //Log.d(TAG, "Rise/Set calculation didn't converge.");
       return -1.0f;
     }
 

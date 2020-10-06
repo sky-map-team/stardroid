@@ -16,8 +16,6 @@ package com.google.android.stardroid.control;
 
 import com.google.android.stardroid.util.MiscUtil;
 
-import android.util.Log;
-
 import java.util.Date;
 
 /**
@@ -87,7 +85,7 @@ public class TransitioningCompositeClock implements Clock {
       case TIME_TRAVEL:
         return timeTravelClock.getTimeInMillisSinceEpoch();
     }
-    Log.e(TAG, "Mode is neither realtime or timetravel - this should never happen");
+    // Log.e(TAG, "Mode is neither realtime or timetravel - this should never happen");
     // While this will never happen - if it does let's just return real time.
     return realClock.getTimeInMillisSinceEpoch();
   }
