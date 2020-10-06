@@ -44,7 +44,7 @@ public class MultipleSearchResultsDialogFragment extends DialogFragment {
 
     DialogInterface.OnClickListener onClickListener = new DialogInterface.OnClickListener() {
       public void onClick(DialogInterface dialog, int whichButton) {
-        if (whichButton == Dialog.BUTTON2) {
+        if (whichButton == Dialog.BUTTON_NEGATIVE) {
           Log.d(TAG, "Many search results Dialog closed with cancel");
           dialog.dismiss();
         } else {

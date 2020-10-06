@@ -14,9 +14,9 @@
 
 package com.google.android.stardroid.control;
 
-import com.google.android.stardroid.util.MiscUtil;
-
 import android.util.Log;
+
+import com.google.android.stardroid.util.MiscUtil;
 
 import java.util.Date;
 

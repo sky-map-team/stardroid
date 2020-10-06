@@ -140,7 +140,7 @@ public class SplashScreenActivity extends InjectableActivity
   }
 
   private void maybeShowWhatsNewAndEnd() {
-    boolean whatsNewSeen = (sharedPreferences.getInt(
+    boolean whatsNewSeen = (sharedPreferences.getLong(
         ApplicationConstants.READ_WHATS_NEW_PREF_VERSION, -1) == app.getVersion());
     if (whatsNewSeen) {
       launchSkyMap();
@@ -153,7 +153,7 @@ public class SplashScreenActivity extends InjectableActivity
   @Override
   public void dialogClosed() {
     SharedPreferences.Editor editor = sharedPreferences.edit();
-    editor.putInt(ApplicationConstants.READ_WHATS_NEW_PREF_VERSION, app.getVersion());
+    editor.putLong(ApplicationConstants.READ_WHATS_NEW_PREF_VERSION, app.getVersion());
     editor.commit();
     launchSkyMap();
   }

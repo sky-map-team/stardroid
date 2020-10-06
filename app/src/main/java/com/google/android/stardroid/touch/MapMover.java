@@ -15,9 +15,8 @@
 package com.google.android.stardroid.touch;
 
 import android.content.Context;
+import android.util.DisplayMetrics;
 import android.util.Log;
-import android.view.Display;
-import android.view.WindowManager;
 
 import com.google.android.stardroid.control.AstronomerModel;
 import com.google.android.stardroid.control.ControllerGroup;
@@ -41,9 +40,8 @@ public class MapMover implements
   public MapMover(AstronomerModel model, ControllerGroup controllerGroup, Context context) {
     this.model = model;
     this.controllerGroup = controllerGroup;
-    Display display = ((WindowManager) context.getSystemService(
-        Context.WINDOW_SERVICE)).getDefaultDisplay();
-    int screenLongSize = display.getHeight();
+    DisplayMetrics metrics = context.getResources().getDisplayMetrics();
+    int screenLongSize = metrics.heightPixels;
     Log.i(TAG, "Screen height is " + screenLongSize + " pixels.");
     sizeTimesRadiansToDegrees = screenLongSize * Geometry.RADIANS_TO_DEGREES;
   }

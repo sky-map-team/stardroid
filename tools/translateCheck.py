@@ -2,54 +2,75 @@
 from bs4 import BeautifulSoup # pip install beautifulsoup4 lxml
 from pathlib import Path
 
-enca="utf-8"
+enca="utf-8" #used encoding
 
+#get root of project
 resfolder=Path(__file__).absolute().parent.parent.joinpath("app/src/main/res")
 
+#get folder with reference string
 referencefolder= resfolder.joinpath("values")
 
+#get language
+lang = input("write two letter iso code of your country like fr: ")
 
-
-
-ender = input("write two letter iso code of your country like fr: ")
-
-toTranslateFolder= resfolder.joinpath(f"values-{ender}")
+#target folder to translate
+toTranslateFolder= resfolder.joinpath(f"values-{lang}")
 
 if not toTranslateFolder.is_dir():
     print(f"your folder is not folder or does not exist {toTranslateFolder}")
     exit(0)
 
 
-def diffmaker(endpath):
+def checker(file):
+    """
+    prints 
+    * diff between reference and target translation
+    * duplicates in target translation
+    """
     print("=======================================================")
-    toCompare = toTranslateFolder.joinpath(endpath)
-    reference =  referencefolder.joinpath(endpath)
+    toCompare = toTranslateFolder.joinpath(file)
+    reference =  referencefolder.joinpath(file)
     if not toCompare.is_file():
-        print(f"translation for {endpath} dont exists, coppy it from {reference}")
+        print(f"translation for {file} dont exists, coppy it from {reference}")
         return
     
     toCompare = BeautifulSoup(toCompare.open(encoding=enca), "xml")
     reference = BeautifulSoup(reference.open(encoding=enca), "xml")
 
     def fetchAllNames(src):
-        outSet = set()
-        for string in src.find_all("string"):
-            outSet.add(string["name"])
-        return outSet
+        # returns iterator
+        return map(lambda string: string["name"], src.find_all("string"))
 
-    toCompare = fetchAllNames(toCompare)
-    missing = set()
-
-
-    for one in fetchAllNames(reference):
+    toCompare = list(fetchAllNames(toCompare))
+    errBuffer = ""
+    #diff pringing
+    for one in set(fetchAllNames(reference)):
         if one not in toCompare:
-            missing.add(str(reference.find("string",attrs={"name":one})))
+            errBuffer += str(reference.find("string",attrs={"name":one}))+"\n"
     
-    if(len(missing)>0):
-        print(f"missing from {endpath} (contains oreginal strings)\n------------------------------------------------------\n"+"\n".join(missing))
+    if errBuffer!="":
+        errBuffer= f"missing from {file} (contains oreginal strings)\n------------------------------------------------------\n{errBuffer}"
 
+    #duplication detection
+    seen = set()
+    dupes = {}
+    for x in toCompare:
+        if x not in seen:
+            seen.add(x)
+        elif x in dupes:
+            dupes[x]+=1
+        else:
+            dupes[x]=2
+    
+    if(len(dupes)>0):
+        errBuffer+= f"\n\nfound  duplicates in {file} \n\n"
+        for key,value in dupes.items():
+           errBuffer+= f"<string name=\"{key}\">    is present {value} times  \n" 
 
-diffmaker("strings.xml")
-
-diffmaker("celestial_objects.xml")
-
+    if(errBuffer!=""):
+        print(errBuffer)
+    else:
+        print(f"no fixes needed in {file}")
+    
+checker("strings.xml")
+checker("celestial_objects.xml")

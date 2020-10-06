@@ -29,10 +29,11 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.util.Log;
 import android.widget.Toast;
+
+import androidx.preference.PreferenceManager;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.units.LatLong;
@@ -172,14 +173,14 @@ public class LocationController extends AbstractController implements LocationLi
     AlertDialog.Builder dialog = new AlertDialog.Builder(context);
     dialog.setTitle(R.string.location_offer_to_enable_gps_title);
     dialog.setMessage(R.string.location_offer_to_enable);
-    dialog.setPositiveButton(android.R.string.yes, new OnClickListener() {
+    dialog.setPositiveButton(android.R.string.ok, new OnClickListener() {
       public void onClick(DialogInterface dialog, int which) {
         Log.d(TAG, "Sending to editor location prefs page");
         Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
         context.startActivity(intent);
       }
     });
-    dialog.setNegativeButton(android.R.string.no, new OnClickListener() {
+    dialog.setNegativeButton(android.R.string.cancel, new OnClickListener() {
       public void onClick(DialogInterface dialog, int which) {
         Log.d(TAG, "User doesn't want to enable location.");
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);

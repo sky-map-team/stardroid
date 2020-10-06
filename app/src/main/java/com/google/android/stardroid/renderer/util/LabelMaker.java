@@ -260,7 +260,7 @@ public class LabelMaker {
   }
 
   private void beginAdding(GL10 gl) {
-    Bitmap.Config config = mFullColor ? Bitmap.Config.ARGB_4444 : Bitmap.Config.ALPHA_8;
+    Bitmap.Config config = mFullColor ? Bitmap.Config.ARGB_8888 : Bitmap.Config.ALPHA_8;
     mBitmap = Bitmap.createBitmap(mStrikeWidth, mStrikeHeight, config);
     mCanvas = new Canvas(mBitmap);
     mBitmap.eraseColor(0);
