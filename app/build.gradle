@@ -35,7 +35,7 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard.cfg'
             if (file('no-checkin.properties').exists()) {
                 signingConfig signingConfigs.release
@@ -87,7 +87,7 @@ dependencies {
     annotationProcessor 'com.google.dagger:dagger-compiler:2.28.3'
     // For annotations not in Android but needed by Dagger
     implementation 'javax.annotation:jsr250-api:1.0'
-    implementation 'com.google.protobuf:protobuf-java:3.4.0'
+    implementation 'com.google.protobuf:protobuf-javalite:3.8.0'
 
 // Flavor
     gmsImplementation 'com.google.android.gms:play-services-analytics:16.0.8'

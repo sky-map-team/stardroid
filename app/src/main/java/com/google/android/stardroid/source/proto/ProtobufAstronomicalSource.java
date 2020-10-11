@@ -89,9 +89,19 @@ public class ProtobufAstronomicalSource extends AbstractAstronomicalSource {
     for (String strId : proto.getNameStrIdsList()) {
       processed.addNameIntIds(toInt(strId));
     }
-    for (LabelElementProto.Builder label : processed.getLabelBuilderList()) {
-      label.setStringsIntId(toInt(label.getStringsStrId()));
+    // <rant>
+    // Work around Google's clumsy protocol buffer API. For some inexplicable reason the current
+    // version lacks the getFooBuilderList described here:
+    // https://developers.google.com/protocol-buffers/docs/reference/java-generated#fields
+    // </rant>
+    List<LabelElementProto> newLabels = new ArrayList<>(processed.getLabelCount());
+    for (LabelElementProto label : processed.getLabelList()) {
+      LabelElementProto.Builder labelBuilder = label.toBuilder();
+      labelBuilder.setStringsIntId(toInt(label.getStringsStrId()));
+      newLabels.add(labelBuilder.build());
     }
+    processed.clearLabel();
+    processed.addAllLabel(newLabels);
     Log.d(TAG, "Processed " + processed.getLabelList());
     return processed.build();
   }
@@ -139,7 +149,7 @@ public class ProtobufAstronomicalSource extends AbstractAstronomicalSource {
     for (LabelElementProto element : proto.getLabelList()) {
       Log.d(TAG, "Label " + element.getStringsIntId() + " : " + element.getStringsStrId());
       points.add(new TextSourceImpl(getCoords(element.getLocation()),
-          resources.getString(R.string.missing_label), //element.getStringsIntId()),
+          resources.getString(element.getStringsIntId()),
           element.getColor(), element.getOffset(), element.getFontSize()));
     }
     return points;

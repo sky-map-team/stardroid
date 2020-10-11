@@ -17,6 +17,8 @@
 // This file defines protocol buffers to serialize astronomical objects to be
 // displayed as part of SkyMap.
 
+syntax = "proto2";
+
 package stardroid_source;
 
 option java_package = "com.google.android.stardroid.source.proto";
