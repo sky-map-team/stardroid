@@ -31,7 +31,7 @@ import java.util.List;
  *
  * @author Brent Bryan
  */
-public class StellarProtoWriter extends AbstractProtoWriter {
+public class StellarAsciiProtoWriter extends AbstractAsciiProtoWriter {
   private static final int STAR_COLOR = 0xcfcccf;
 
   @Override
@@ -80,6 +80,6 @@ public class StellarProtoWriter extends AbstractProtoWriter {
   }
 
   public static void main(String[] args) throws IOException {
-    new StellarProtoWriter().run(args);
+    new StellarAsciiProtoWriter().run(args);
   }
 }

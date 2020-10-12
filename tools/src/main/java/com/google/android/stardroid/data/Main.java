@@ -28,10 +28,10 @@ public class Main {
     }
     switch (command) {
       case GenStars:
-        StellarProtoWriter.main(args);
+        StellarAsciiProtoWriter.main(args);
         break;
       case GenMessier:
-        MessierProtoWriter.main(args);
+        MessierAsciiProtoWriter.main(args);
         break;
       case Binary:
         AsciiToBinaryProtoWriter.main(args);

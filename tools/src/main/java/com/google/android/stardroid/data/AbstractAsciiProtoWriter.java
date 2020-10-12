@@ -34,7 +34,7 @@ import java.util.List;
  *
  * @author Brent Bryan
  */
-public abstract class AbstractProtoWriter {
+public abstract class AbstractAsciiProtoWriter {
   private static final String NAME_DELIMITER = "[|]+";
   /**
    * Returns the AstronomicalSource associated with the given line, or null if
@@ -50,7 +50,7 @@ public abstract class AbstractProtoWriter {
   protected List<String> rKeysFromName(String names) {
     List<String> rNames = new ArrayList<>();
     for (String name : names.split(NAME_DELIMITER)) {
-      rNames.add("R.string." + name.replaceAll(" ", "_").toLowerCase());
+      rNames.add(name.replaceAll(" ", "_").toLowerCase());
     }
     return rNames;
   }

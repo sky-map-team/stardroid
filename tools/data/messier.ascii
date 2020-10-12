@@ -17,9 +17,9 @@ source {
       declination: 48.18
     }
     color: 4761665
-    strings_str_id: "R.string.neowise1"
+    strings_str_id: "neowise1"
   }
-  name_str_ids: "R.string.neowise1"
+  name_str_ids: "neowise1"
 }
 source {
   search_location {
@@ -40,9 +40,9 @@ source {
       declination: 46.02
     }
     color: 4761665
-    strings_str_id: "R.string.neowise2"
+    strings_str_id: "neowise2"
   }
-  name_str_ids: "R.string.neowise2"
+  name_str_ids: "neowise2"
 }
 source {
   search_location {
@@ -63,9 +63,9 @@ source {
       declination: 39.67
     }
     color: 4761665
-    strings_str_id: "R.string.neowise3"
+    strings_str_id: "neowise3"
   }
-  name_str_ids: "R.string.neowise3"
+  name_str_ids: "neowise3"
 }
 source {
   search_location {
@@ -86,9 +86,9 @@ source {
       declination: 31.67
     }
     color: 4761665
-    strings_str_id: "R.string.neowise4"
+    strings_str_id: "neowise4"
   }
-  name_str_ids: "R.string.neowise4"
+  name_str_ids: "neowise4"
 }
 source {
   search_location {
@@ -109,9 +109,9 @@ source {
       declination: 24.1
     }
     color: 4761665
-    strings_str_id: "R.string.neowise5"
+    strings_str_id: "neowise5"
   }
-  name_str_ids: "R.string.neowise5"
+  name_str_ids: "neowise5"
 }
 source {
   search_location {
@@ -132,9 +132,9 @@ source {
       declination: 17.67
     }
     color: 4761665
-    strings_str_id: "R.string.neowise6"
+    strings_str_id: "neowise6"
   }
-  name_str_ids: "R.string.neowise6"
+  name_str_ids: "neowise6"
 }
 source {
   search_location {
@@ -155,10 +155,10 @@ source {
       declination: 22.01667
     }
     color: 4761665
-    strings_str_id: "R.string.m1"
+    strings_str_id: "m1"
   }
-  name_str_ids: "R.string.m1"
-  name_str_ids: "R.string.crab_nebula"
+  name_str_ids: "m1"
+  name_str_ids: "crab_nebula"
 }
 source {
   search_location {
@@ -179,9 +179,9 @@ source {
       declination: -0.81667
     }
     color: 4761665
-    strings_str_id: "R.string.m2"
+    strings_str_id: "m2"
   }
-  name_str_ids: "R.string.m2"
+  name_str_ids: "m2"
 }
 source {
   search_location {
@@ -202,9 +202,9 @@ source {
       declination: 28.38333
     }
     color: 4761665
-    strings_str_id: "R.string.m3"
+    strings_str_id: "m3"
   }
-  name_str_ids: "R.string.m3"
+  name_str_ids: "m3"
 }
 source {
   search_location {
@@ -225,9 +225,9 @@ source {
       declination: -26.53333
     }
     color: 4761665
-    strings_str_id: "R.string.m4"
+    strings_str_id: "m4"
   }
-  name_str_ids: "R.string.m4"
+  name_str_ids: "m4"
 }
 source {
   search_location {
@@ -248,9 +248,9 @@ source {
       declination: 2.08333
     }
     color: 4761665
-    strings_str_id: "R.string.m5"
+    strings_str_id: "m5"
   }
-  name_str_ids: "R.string.m5"
+  name_str_ids: "m5"
 }
 source {
   search_location {
@@ -271,10 +271,10 @@ source {
       declination: -32.21667
     }
     color: 4761665
-    strings_str_id: "R.string.m6"
+    strings_str_id: "m6"
   }
-  name_str_ids: "R.string.m6"
-  name_str_ids: "R.string.butterfly_cluster"
+  name_str_ids: "m6"
+  name_str_ids: "butterfly_cluster"
 }
 source {
   search_location {
@@ -295,10 +295,10 @@ source {
       declination: -34.81667
     }
     color: 4761665
-    strings_str_id: "R.string.m7"
+    strings_str_id: "m7"
   }
-  name_str_ids: "R.string.m7"
-  name_str_ids: "R.string.scorpions_tail"
+  name_str_ids: "m7"
+  name_str_ids: "scorpions_tail"
 }
 source {
   search_location {
@@ -319,9 +319,9 @@ source {
       declination: -24.38333
     }
     color: 4761665
-    strings_str_id: "R.string.m8"
+    strings_str_id: "m8"
   }
-  name_str_ids: "R.string.m8"
+  name_str_ids: "m8"
 }
 source {
   search_location {
@@ -342,9 +342,9 @@ source {
       declination: -18.51667
     }
     color: 4761665
-    strings_str_id: "R.string.m9"
+    strings_str_id: "m9"
   }
-  name_str_ids: "R.string.m9"
+  name_str_ids: "m9"
 }
 source {
   search_location {
@@ -365,9 +365,9 @@ source {
       declination: -4.1
     }
     color: 4761665
-    strings_str_id: "R.string.m10"
+    strings_str_id: "m10"
   }
-  name_str_ids: "R.string.m10"
+  name_str_ids: "m10"
 }
 source {
   search_location {
@@ -388,9 +388,9 @@ source {
       declination: -6.26667
     }
     color: 4761665
-    strings_str_id: "R.string.m11"
+    strings_str_id: "m11"
   }
-  name_str_ids: "R.string.m11"
+  name_str_ids: "m11"
 }
 source {
   search_location {
@@ -411,9 +411,9 @@ source {
       declination: -1.95
     }
     color: 4761665
-    strings_str_id: "R.string.m12"
+    strings_str_id: "m12"
   }
-  name_str_ids: "R.string.m12"
+  name_str_ids: "m12"
 }
 source {
   search_location {
@@ -434,10 +434,10 @@ source {
       declination: 36.46667
     }
     color: 4761665
-    strings_str_id: "R.string.m13"
+    strings_str_id: "m13"
   }
-  name_str_ids: "R.string.m13"
-  name_str_ids: "R.string.hercules_gc"
+  name_str_ids: "m13"
+  name_str_ids: "hercules_gc"
 }
 source {
   search_location {
@@ -458,9 +458,9 @@ source {
       declination: -3.25
     }
     color: 4761665
-    strings_str_id: "R.string.m14"
+    strings_str_id: "m14"
   }
-  name_str_ids: "R.string.m14"
+  name_str_ids: "m14"
 }
 source {
   search_location {
@@ -481,9 +481,9 @@ source {
       declination: 12.16667
     }
     color: 4761665
-    strings_str_id: "R.string.m15"
+    strings_str_id: "m15"
   }
-  name_str_ids: "R.string.m15"
+  name_str_ids: "m15"
 }
 source {
   search_location {
@@ -504,10 +504,10 @@ source {
       declination: -13.78333
     }
     color: 4761665
-    strings_str_id: "R.string.m16"
+    strings_str_id: "m16"
   }
-  name_str_ids: "R.string.m16"
-  name_str_ids: "R.string.eagle_nebula"
+  name_str_ids: "m16"
+  name_str_ids: "eagle_nebula"
 }
 source {
   search_location {
@@ -528,9 +528,9 @@ source {
       declination: -16.18333
     }
     color: 4761665
-    strings_str_id: "R.string.m17"
+    strings_str_id: "m17"
   }
-  name_str_ids: "R.string.m17"
+  name_str_ids: "m17"
 }
 source {
   search_location {
@@ -551,9 +551,9 @@ source {
       declination: -17.13333
     }
     color: 4761665
-    strings_str_id: "R.string.m18"
+    strings_str_id: "m18"
   }
-  name_str_ids: "R.string.m18"
+  name_str_ids: "m18"
 }
 source {
   search_location {
@@ -574,9 +574,9 @@ source {
       declination: -26.26667
     }
     color: 4761665
-    strings_str_id: "R.string.m19"
+    strings_str_id: "m19"
   }
-  name_str_ids: "R.string.m19"
+  name_str_ids: "m19"
 }
 source {
   search_location {
@@ -597,9 +597,9 @@ source {
       declination: -23.03333
     }
     color: 4761665
-    strings_str_id: "R.string.m20"
+    strings_str_id: "m20"
   }
-  name_str_ids: "R.string.m20"
+  name_str_ids: "m20"
 }
 source {
   search_location {
@@ -620,9 +620,9 @@ source {
       declination: -22.5
     }
     color: 4761665
-    strings_str_id: "R.string.m21"
+    strings_str_id: "m21"
   }
-  name_str_ids: "R.string.m21"
+  name_str_ids: "m21"
 }
 source {
   search_location {
@@ -643,9 +643,9 @@ source {
       declination: -23.9
     }
     color: 4761665
-    strings_str_id: "R.string.m22"
+    strings_str_id: "m22"
   }
-  name_str_ids: "R.string.m22"
+  name_str_ids: "m22"
 }
 source {
   search_location {
@@ -666,9 +666,9 @@ source {
       declination: -19.01667
     }
     color: 4761665
-    strings_str_id: "R.string.m23"
+    strings_str_id: "m23"
   }
-  name_str_ids: "R.string.m23"
+  name_str_ids: "m23"
 }
 source {
   search_location {
@@ -689,9 +689,9 @@ source {
       declination: -18.41667
     }
     color: 4761665
-    strings_str_id: "R.string.m24"
+    strings_str_id: "m24"
   }
-  name_str_ids: "R.string.m24"
+  name_str_ids: "m24"
 }
 source {
   search_location {
@@ -712,9 +712,9 @@ source {
       declination: -19.25
     }
     color: 4761665
-    strings_str_id: "R.string.m25"
+    strings_str_id: "m25"
   }
-  name_str_ids: "R.string.m25"
+  name_str_ids: "m25"
 }
 source {
   search_location {
@@ -735,9 +735,9 @@ source {
       declination: -9.4
     }
     color: 4761665
-    strings_str_id: "R.string.m26"
+    strings_str_id: "m26"
   }
-  name_str_ids: "R.string.m26"
+  name_str_ids: "m26"
 }
 source {
   search_location {
@@ -758,9 +758,9 @@ source {
       declination: 22.71667
     }
     color: 4761665
-    strings_str_id: "R.string.m27"
+    strings_str_id: "m27"
   }
-  name_str_ids: "R.string.m27"
+  name_str_ids: "m27"
 }
 source {
   search_location {
@@ -781,9 +781,9 @@ source {
       declination: -24.86667
     }
     color: 4761665
-    strings_str_id: "R.string.m28"
+    strings_str_id: "m28"
   }
-  name_str_ids: "R.string.m28"
+  name_str_ids: "m28"
 }
 source {
   search_location {
@@ -804,9 +804,9 @@ source {
       declination: 38.53333
     }
     color: 4761665
-    strings_str_id: "R.string.m29"
+    strings_str_id: "m29"
   }
-  name_str_ids: "R.string.m29"
+  name_str_ids: "m29"
 }
 source {
   search_location {
@@ -827,9 +827,9 @@ source {
       declination: -23.18333
     }
     color: 4761665
-    strings_str_id: "R.string.m30"
+    strings_str_id: "m30"
   }
-  name_str_ids: "R.string.m30"
+  name_str_ids: "m30"
 }
 source {
   search_location {
@@ -850,10 +850,10 @@ source {
       declination: 41.26667
     }
     color: 4761665
-    strings_str_id: "R.string.m31"
+    strings_str_id: "m31"
   }
-  name_str_ids: "R.string.m31"
-  name_str_ids: "R.string.andromeda_galaxy"
+  name_str_ids: "m31"
+  name_str_ids: "andromeda_galaxy"
 }
 source {
   search_location {
@@ -874,9 +874,9 @@ source {
       declination: 40.86667
     }
     color: 4761665
-    strings_str_id: "R.string.m32"
+    strings_str_id: "m32"
   }
-  name_str_ids: "R.string.m32"
+  name_str_ids: "m32"
 }
 source {
   search_location {
@@ -897,9 +897,9 @@ source {
       declination: 30.65
     }
     color: 4761665
-    strings_str_id: "R.string.m33"
+    strings_str_id: "m33"
   }
-  name_str_ids: "R.string.m33"
+  name_str_ids: "m33"
 }
 source {
   search_location {
@@ -920,9 +920,9 @@ source {
       declination: 42.78333
     }
     color: 4761665
-    strings_str_id: "R.string.m34"
+    strings_str_id: "m34"
   }
-  name_str_ids: "R.string.m34"
+  name_str_ids: "m34"
 }
 source {
   search_location {
@@ -943,9 +943,9 @@ source {
       declination: 24.33333
     }
     color: 4761665
-    strings_str_id: "R.string.m35"
+    strings_str_id: "m35"
   }
-  name_str_ids: "R.string.m35"
+  name_str_ids: "m35"
 }
 source {
   search_location {
@@ -966,9 +966,9 @@ source {
       declination: 34.13333
     }
     color: 4761665
-    strings_str_id: "R.string.m36"
+    strings_str_id: "m36"
   }
-  name_str_ids: "R.string.m36"
+  name_str_ids: "m36"
 }
 source {
   search_location {
@@ -989,9 +989,9 @@ source {
       declination: 32.55
     }
     color: 4761665
-    strings_str_id: "R.string.m37"
+    strings_str_id: "m37"
   }
-  name_str_ids: "R.string.m37"
+  name_str_ids: "m37"
 }
 source {
   search_location {
@@ -1012,9 +1012,9 @@ source {
       declination: 35.83333
     }
     color: 4761665
-    strings_str_id: "R.string.m38"
+    strings_str_id: "m38"
   }
-  name_str_ids: "R.string.m38"
+  name_str_ids: "m38"
 }
 source {
   search_location {
@@ -1035,9 +1035,9 @@ source {
       declination: 48.43333
     }
     color: 4761665
-    strings_str_id: "R.string.m39"
+    strings_str_id: "m39"
   }
-  name_str_ids: "R.string.m39"
+  name_str_ids: "m39"
 }
 source {
   search_location {
@@ -1058,9 +1058,9 @@ source {
       declination: 58.08333
     }
     color: 4761665
-    strings_str_id: "R.string.m40"
+    strings_str_id: "m40"
   }
-  name_str_ids: "R.string.m40"
+  name_str_ids: "m40"
 }
 source {
   search_location {
@@ -1081,9 +1081,9 @@ source {
       declination: -20.73333
     }
     color: 4761665
-    strings_str_id: "R.string.m41"
+    strings_str_id: "m41"
   }
-  name_str_ids: "R.string.m41"
+  name_str_ids: "m41"
 }
 source {
   search_location {
@@ -1104,9 +1104,9 @@ source {
       declination: -5.45
     }
     color: 4761665
-    strings_str_id: "R.string.m42"
+    strings_str_id: "m42"
   }
-  name_str_ids: "R.string.m42"
+  name_str_ids: "m42"
 }
 source {
   search_location {
@@ -1127,9 +1127,9 @@ source {
       declination: -5.26667
     }
     color: 4761665
-    strings_str_id: "R.string.m43"
+    strings_str_id: "m43"
   }
-  name_str_ids: "R.string.m43"
+  name_str_ids: "m43"
 }
 source {
   search_location {
@@ -1150,11 +1150,11 @@ source {
       declination: 19.98333
     }
     color: 4761665
-    strings_str_id: "R.string.m44"
+    strings_str_id: "m44"
   }
-  name_str_ids: "R.string.m44"
-  name_str_ids: "R.string.beehive_cluster"
-  name_str_ids: "R.string.praesepe"
+  name_str_ids: "m44"
+  name_str_ids: "beehive_cluster"
+  name_str_ids: "praesepe"
 }
 source {
   search_location {
@@ -1175,11 +1175,11 @@ source {
       declination: 24.11667
     }
     color: 4761665
-    strings_str_id: "R.string.m45"
+    strings_str_id: "m45"
   }
-  name_str_ids: "R.string.m45"
-  name_str_ids: "R.string.pleiades"
-  name_str_ids: "R.string.seven_sisters"
+  name_str_ids: "m45"
+  name_str_ids: "pleiades"
+  name_str_ids: "seven_sisters"
 }
 source {
   search_location {
@@ -1200,9 +1200,9 @@ source {
       declination: -14.81667
     }
     color: 4761665
-    strings_str_id: "R.string.m46"
+    strings_str_id: "m46"
   }
-  name_str_ids: "R.string.m46"
+  name_str_ids: "m46"
 }
 source {
   search_location {
@@ -1223,9 +1223,9 @@ source {
       declination: -14.5
     }
     color: 4761665
-    strings_str_id: "R.string.m47"
+    strings_str_id: "m47"
   }
-  name_str_ids: "R.string.m47"
+  name_str_ids: "m47"
 }
 source {
   search_location {
@@ -1246,9 +1246,9 @@ source {
       declination: -5.8
     }
     color: 4761665
-    strings_str_id: "R.string.m48"
+    strings_str_id: "m48"
   }
-  name_str_ids: "R.string.m48"
+  name_str_ids: "m48"
 }
 source {
   search_location {
@@ -1269,9 +1269,9 @@ source {
       declination: 8.0
     }
     color: 4761665
-    strings_str_id: "R.string.m49"
+    strings_str_id: "m49"
   }
-  name_str_ids: "R.string.m49"
+  name_str_ids: "m49"
 }
 source {
   search_location {
@@ -1292,9 +1292,9 @@ source {
       declination: -8.33333
     }
     color: 4761665
-    strings_str_id: "R.string.m50"
+    strings_str_id: "m50"
   }
-  name_str_ids: "R.string.m50"
+  name_str_ids: "m50"
 }
 source {
   search_location {
@@ -1315,10 +1315,10 @@ source {
       declination: 47.2
     }
     color: 4761665
-    strings_str_id: "R.string.m51"
+    strings_str_id: "m51"
   }
-  name_str_ids: "R.string.m51"
-  name_str_ids: "R.string.whirlpool_galaxy"
+  name_str_ids: "m51"
+  name_str_ids: "whirlpool_galaxy"
 }
 source {
   search_location {
@@ -1339,9 +1339,9 @@ source {
       declination: 61.58333
     }
     color: 4761665
-    strings_str_id: "R.string.m52"
+    strings_str_id: "m52"
   }
-  name_str_ids: "R.string.m52"
+  name_str_ids: "m52"
 }
 source {
   search_location {
@@ -1362,9 +1362,9 @@ source {
       declination: 18.16667
     }
     color: 4761665
-    strings_str_id: "R.string.m53"
+    strings_str_id: "m53"
   }
-  name_str_ids: "R.string.m53"
+  name_str_ids: "m53"
 }
 source {
   search_location {
@@ -1385,9 +1385,9 @@ source {
       declination: -30.48333
     }
     color: 4761665
-    strings_str_id: "R.string.m54"
+    strings_str_id: "m54"
   }
-  name_str_ids: "R.string.m54"
+  name_str_ids: "m54"
 }
 source {
   search_location {
@@ -1408,9 +1408,9 @@ source {
       declination: -30.96667
     }
     color: 4761665
-    strings_str_id: "R.string.m55"
+    strings_str_id: "m55"
   }
-  name_str_ids: "R.string.m55"
+  name_str_ids: "m55"
 }
 source {
   search_location {
@@ -1431,9 +1431,9 @@ source {
       declination: 30.18333
     }
     color: 4761665
-    strings_str_id: "R.string.m56"
+    strings_str_id: "m56"
   }
-  name_str_ids: "R.string.m56"
+  name_str_ids: "m56"
 }
 source {
   search_location {
@@ -1454,10 +1454,10 @@ source {
       declination: 33.03333
     }
     color: 4761665
-    strings_str_id: "R.string.m57"
+    strings_str_id: "m57"
   }
-  name_str_ids: "R.string.m57"
-  name_str_ids: "R.string.ring_nebula"
+  name_str_ids: "m57"
+  name_str_ids: "ring_nebula"
 }
 source {
   search_location {
@@ -1478,9 +1478,9 @@ source {
       declination: 11.81667
     }
     color: 4761665
-    strings_str_id: "R.string.m58"
+    strings_str_id: "m58"
   }
-  name_str_ids: "R.string.m58"
+  name_str_ids: "m58"
 }
 source {
   search_location {
@@ -1501,9 +1501,9 @@ source {
       declination: 11.65
     }
     color: 4761665
-    strings_str_id: "R.string.m59"
+    strings_str_id: "m59"
   }
-  name_str_ids: "R.string.m59"
+  name_str_ids: "m59"
 }
 source {
   search_location {
@@ -1524,9 +1524,9 @@ source {
       declination: 11.55
     }
     color: 4761665
-    strings_str_id: "R.string.m60"
+    strings_str_id: "m60"
   }
-  name_str_ids: "R.string.m60"
+  name_str_ids: "m60"
 }
 source {
   search_location {
@@ -1547,9 +1547,9 @@ source {
       declination: 4.46667
     }
     color: 4761665
-    strings_str_id: "R.string.m61"
+    strings_str_id: "m61"
   }
-  name_str_ids: "R.string.m61"
+  name_str_ids: "m61"
 }
 source {
   search_location {
@@ -1570,9 +1570,9 @@ source {
       declination: -30.11667
     }
     color: 4761665
-    strings_str_id: "R.string.m62"
+    strings_str_id: "m62"
   }
-  name_str_ids: "R.string.m62"
+  name_str_ids: "m62"
 }
 source {
   search_location {
@@ -1593,9 +1593,9 @@ source {
       declination: 42.03333
     }
     color: 4761665
-    strings_str_id: "R.string.m63"
+    strings_str_id: "m63"
   }
-  name_str_ids: "R.string.m63"
+  name_str_ids: "m63"
 }
 source {
   search_location {
@@ -1616,9 +1616,9 @@ source {
       declination: 21.68333
     }
     color: 4761665
-    strings_str_id: "R.string.m64"
+    strings_str_id: "m64"
   }
-  name_str_ids: "R.string.m64"
+  name_str_ids: "m64"
 }
 source {
   search_location {
@@ -1639,9 +1639,9 @@ source {
       declination: 13.08333
     }
     color: 4761665
-    strings_str_id: "R.string.m65"
+    strings_str_id: "m65"
   }
-  name_str_ids: "R.string.m65"
+  name_str_ids: "m65"
 }
 source {
   search_location {
@@ -1662,9 +1662,9 @@ source {
       declination: 12.98333
     }
     color: 4761665
-    strings_str_id: "R.string.m66"
+    strings_str_id: "m66"
   }
-  name_str_ids: "R.string.m66"
+  name_str_ids: "m66"
 }
 source {
   search_location {
@@ -1685,9 +1685,9 @@ source {
       declination: 11.81667
     }
     color: 4761665
-    strings_str_id: "R.string.m67"
+    strings_str_id: "m67"
   }
-  name_str_ids: "R.string.m67"
+  name_str_ids: "m67"
 }
 source {
   search_location {
@@ -1708,9 +1708,9 @@ source {
       declination: -26.75
     }
     color: 4761665
-    strings_str_id: "R.string.m68"
+    strings_str_id: "m68"
   }
-  name_str_ids: "R.string.m68"
+  name_str_ids: "m68"
 }
 source {
   search_location {
@@ -1731,9 +1731,9 @@ source {
       declination: -32.35
     }
     color: 4761665
-    strings_str_id: "R.string.m69"
+    strings_str_id: "m69"
   }
-  name_str_ids: "R.string.m69"
+  name_str_ids: "m69"
 }
 source {
   search_location {
@@ -1754,9 +1754,9 @@ source {
       declination: -32.3
     }
     color: 4761665
-    strings_str_id: "R.string.m70"
+    strings_str_id: "m70"
   }
-  name_str_ids: "R.string.m70"
+  name_str_ids: "m70"
 }
 source {
   search_location {
@@ -1777,9 +1777,9 @@ source {
       declination: 18.78333
     }
     color: 4761665
-    strings_str_id: "R.string.m71"
+    strings_str_id: "m71"
   }
-  name_str_ids: "R.string.m71"
+  name_str_ids: "m71"
 }
 source {
   search_location {
@@ -1800,9 +1800,9 @@ source {
       declination: -12.53333
     }
     color: 4761665
-    strings_str_id: "R.string.m72"
+    strings_str_id: "m72"
   }
-  name_str_ids: "R.string.m72"
+  name_str_ids: "m72"
 }
 source {
   search_location {
@@ -1823,9 +1823,9 @@ source {
       declination: -12.63333
     }
     color: 4761665
-    strings_str_id: "R.string.m73"
+    strings_str_id: "m73"
   }
-  name_str_ids: "R.string.m73"
+  name_str_ids: "m73"
 }
 source {
   search_location {
@@ -1846,9 +1846,9 @@ source {
       declination: 15.78333
     }
     color: 4761665
-    strings_str_id: "R.string.m74"
+    strings_str_id: "m74"
   }
-  name_str_ids: "R.string.m74"
+  name_str_ids: "m74"
 }
 source {
   search_location {
@@ -1869,9 +1869,9 @@ source {
       declination: -21.91667
     }
     color: 4761665
-    strings_str_id: "R.string.m75"
+    strings_str_id: "m75"
   }
-  name_str_ids: "R.string.m75"
+  name_str_ids: "m75"
 }
 source {
   search_location {
@@ -1892,9 +1892,9 @@ source {
       declination: 51.56667
     }
     color: 4761665
-    strings_str_id: "R.string.m76"
+    strings_str_id: "m76"
   }
-  name_str_ids: "R.string.m76"
+  name_str_ids: "m76"
 }
 source {
   search_location {
@@ -1915,9 +1915,9 @@ source {
       declination: -0.01667
     }
     color: 4761665
-    strings_str_id: "R.string.m77"
+    strings_str_id: "m77"
   }
-  name_str_ids: "R.string.m77"
+  name_str_ids: "m77"
 }
 source {
   search_location {
@@ -1938,9 +1938,9 @@ source {
       declination: 0.05
     }
     color: 4761665
-    strings_str_id: "R.string.m78"
+    strings_str_id: "m78"
   }
-  name_str_ids: "R.string.m78"
+  name_str_ids: "m78"
 }
 source {
   search_location {
@@ -1961,9 +1961,9 @@ source {
       declination: -24.55
     }
     color: 4761665
-    strings_str_id: "R.string.m79"
+    strings_str_id: "m79"
   }
-  name_str_ids: "R.string.m79"
+  name_str_ids: "m79"
 }
 source {
   search_location {
@@ -1984,9 +1984,9 @@ source {
       declination: -22.98333
     }
     color: 4761665
-    strings_str_id: "R.string.m80"
+    strings_str_id: "m80"
   }
-  name_str_ids: "R.string.m80"
+  name_str_ids: "m80"
 }
 source {
   search_location {
@@ -2007,9 +2007,9 @@ source {
       declination: 69.06667
     }
     color: 4761665
-    strings_str_id: "R.string.m81"
+    strings_str_id: "m81"
   }
-  name_str_ids: "R.string.m81"
+  name_str_ids: "m81"
 }
 source {
   search_location {
@@ -2030,9 +2030,9 @@ source {
       declination: 69.68333
     }
     color: 4761665
-    strings_str_id: "R.string.m82"
+    strings_str_id: "m82"
   }
-  name_str_ids: "R.string.m82"
+  name_str_ids: "m82"
 }
 source {
   search_location {
@@ -2053,9 +2053,9 @@ source {
       declination: -29.86667
     }
     color: 4761665
-    strings_str_id: "R.string.m83"
+    strings_str_id: "m83"
   }
-  name_str_ids: "R.string.m83"
+  name_str_ids: "m83"
 }
 source {
   search_location {
@@ -2076,9 +2076,9 @@ source {
       declination: 12.88333
     }
     color: 4761665
-    strings_str_id: "R.string.m84"
+    strings_str_id: "m84"
   }
-  name_str_ids: "R.string.m84"
+  name_str_ids: "m84"
 }
 source {
   search_location {
@@ -2099,9 +2099,9 @@ source {
       declination: 18.18333
     }
     color: 4761665
-    strings_str_id: "R.string.m85"
+    strings_str_id: "m85"
   }
-  name_str_ids: "R.string.m85"
+  name_str_ids: "m85"
 }
 source {
   search_location {
@@ -2122,9 +2122,9 @@ source {
       declination: 12.95
     }
     color: 4761665
-    strings_str_id: "R.string.m86"
+    strings_str_id: "m86"
   }
-  name_str_ids: "R.string.m86"
+  name_str_ids: "m86"
 }
 source {
   search_location {
@@ -2145,9 +2145,9 @@ source {
       declination: 12.4
     }
     color: 4761665
-    strings_str_id: "R.string.m87"
+    strings_str_id: "m87"
   }
-  name_str_ids: "R.string.m87"
+  name_str_ids: "m87"
 }
 source {
   search_location {
@@ -2168,9 +2168,9 @@ source {
       declination: 14.41667
     }
     color: 4761665
-    strings_str_id: "R.string.m88"
+    strings_str_id: "m88"
   }
-  name_str_ids: "R.string.m88"
+  name_str_ids: "m88"
 }
 source {
   search_location {
@@ -2191,9 +2191,9 @@ source {
       declination: 12.55
     }
     color: 4761665
-    strings_str_id: "R.string.m89"
+    strings_str_id: "m89"
   }
-  name_str_ids: "R.string.m89"
+  name_str_ids: "m89"
 }
 source {
   search_location {
@@ -2214,9 +2214,9 @@ source {
       declination: 13.16667
     }
     color: 4761665
-    strings_str_id: "R.string.m90"
+    strings_str_id: "m90"
   }
-  name_str_ids: "R.string.m90"
+  name_str_ids: "m90"
 }
 source {
   search_location {
@@ -2237,9 +2237,9 @@ source {
       declination: 14.5
     }
     color: 4761665
-    strings_str_id: "R.string.m91"
+    strings_str_id: "m91"
   }
-  name_str_ids: "R.string.m91"
+  name_str_ids: "m91"
 }
 source {
   search_location {
@@ -2260,9 +2260,9 @@ source {
       declination: 43.13333
     }
     color: 4761665
-    strings_str_id: "R.string.m92"
+    strings_str_id: "m92"
   }
-  name_str_ids: "R.string.m92"
+  name_str_ids: "m92"
 }
 source {
   search_location {
@@ -2283,9 +2283,9 @@ source {
       declination: -23.86667
     }
     color: 4761665
-    strings_str_id: "R.string.m93"
+    strings_str_id: "m93"
   }
-  name_str_ids: "R.string.m93"
+  name_str_ids: "m93"
 }
 source {
   search_location {
@@ -2306,9 +2306,9 @@ source {
       declination: 41.11667
     }
     color: 4761665
-    strings_str_id: "R.string.m94"
+    strings_str_id: "m94"
   }
-  name_str_ids: "R.string.m94"
+  name_str_ids: "m94"
 }
 source {
   search_location {
@@ -2329,9 +2329,9 @@ source {
       declination: 11.7
     }
     color: 4761665
-    strings_str_id: "R.string.m95"
+    strings_str_id: "m95"
   }
-  name_str_ids: "R.string.m95"
+  name_str_ids: "m95"
 }
 source {
   search_location {
@@ -2352,9 +2352,9 @@ source {
       declination: 11.81667
     }
     color: 4761665
-    strings_str_id: "R.string.m96"
+    strings_str_id: "m96"
   }
-  name_str_ids: "R.string.m96"
+  name_str_ids: "m96"
 }
 source {
   search_location {
@@ -2375,9 +2375,9 @@ source {
       declination: 55.01667
     }
     color: 4761665
-    strings_str_id: "R.string.m97"
+    strings_str_id: "m97"
   }
-  name_str_ids: "R.string.m97"
+  name_str_ids: "m97"
 }
 source {
   search_location {
@@ -2398,9 +2398,9 @@ source {
       declination: 14.9
     }
     color: 4761665
-    strings_str_id: "R.string.m98"
+    strings_str_id: "m98"
   }
-  name_str_ids: "R.string.m98"
+  name_str_ids: "m98"
 }
 source {
   search_location {
@@ -2421,9 +2421,9 @@ source {
       declination: 14.41667
     }
     color: 4761665
-    strings_str_id: "R.string.m99"
+    strings_str_id: "m99"
   }
-  name_str_ids: "R.string.m99"
+  name_str_ids: "m99"
 }
 source {
   search_location {
@@ -2444,9 +2444,9 @@ source {
       declination: 15.81667
     }
     color: 4761665
-    strings_str_id: "R.string.m100"
+    strings_str_id: "m100"
   }
-  name_str_ids: "R.string.m100"
+  name_str_ids: "m100"
 }
 source {
   search_location {
@@ -2467,10 +2467,10 @@ source {
       declination: 54.35
     }
     color: 4761665
-    strings_str_id: "R.string.m101"
+    strings_str_id: "m101"
   }
-  name_str_ids: "R.string.m101"
-  name_str_ids: "R.string.pinwheel_galaxy"
+  name_str_ids: "m101"
+  name_str_ids: "pinwheel_galaxy"
 }
 source {
   search_location {
@@ -2491,9 +2491,9 @@ source {
       declination: 54.35
     }
     color: 4761665
-    strings_str_id: "R.string.m102"
+    strings_str_id: "m102"
   }
-  name_str_ids: "R.string.m102"
+  name_str_ids: "m102"
 }
 source {
   search_location {
@@ -2514,9 +2514,9 @@ source {
       declination: 60.7
     }
     color: 4761665
-    strings_str_id: "R.string.m103"
+    strings_str_id: "m103"
   }
-  name_str_ids: "R.string.m103"
+  name_str_ids: "m103"
 }
 source {
   search_location {
@@ -2537,10 +2537,10 @@ source {
       declination: -11.61667
     }
     color: 4761665
-    strings_str_id: "R.string.m104"
+    strings_str_id: "m104"
   }
-  name_str_ids: "R.string.m104"
-  name_str_ids: "R.string.sombrero_galaxy"
+  name_str_ids: "m104"
+  name_str_ids: "sombrero_galaxy"
 }
 source {
   search_location {
@@ -2561,9 +2561,9 @@ source {
       declination: 12.58333
     }
     color: 4761665
-    strings_str_id: "R.string.m105"
+    strings_str_id: "m105"
   }
-  name_str_ids: "R.string.m105"
+  name_str_ids: "m105"
 }
 source {
   search_location {
@@ -2584,9 +2584,9 @@ source {
       declination: 47.3
     }
     color: 4761665
-    strings_str_id: "R.string.m106"
+    strings_str_id: "m106"
   }
-  name_str_ids: "R.string.m106"
+  name_str_ids: "m106"
 }
 source {
   search_location {
@@ -2607,9 +2607,9 @@ source {
       declination: -13.05
     }
     color: 4761665
-    strings_str_id: "R.string.m107"
+    strings_str_id: "m107"
   }
-  name_str_ids: "R.string.m107"
+  name_str_ids: "m107"
 }
 source {
   search_location {
@@ -2630,9 +2630,9 @@ source {
       declination: 55.66667
     }
     color: 4761665
-    strings_str_id: "R.string.m108"
+    strings_str_id: "m108"
   }
-  name_str_ids: "R.string.m108"
+  name_str_ids: "m108"
 }
 source {
   search_location {
@@ -2653,9 +2653,9 @@ source {
       declination: 53.38333
     }
     color: 4761665
-    strings_str_id: "R.string.m109"
+    strings_str_id: "m109"
   }
-  name_str_ids: "R.string.m109"
+  name_str_ids: "m109"
 }
 source {
   search_location {
@@ -2676,9 +2676,9 @@ source {
       declination: 41.68333
     }
     color: 4761665
-    strings_str_id: "R.string.m110"
+    strings_str_id: "m110"
   }
-  name_str_ids: "R.string.m110"
+  name_str_ids: "m110"
 }
 source {
   search_location {
@@ -2699,10 +2699,10 @@ source {
       declination: 66.6332
     }
     color: 4761665
-    strings_str_id: "R.string.ngc6543"
+    strings_str_id: "ngc6543"
   }
-  name_str_ids: "R.string.ngc6543"
-  name_str_ids: "R.string.cats_eye_nebula"
+  name_str_ids: "ngc6543"
+  name_str_ids: "cats_eye_nebula"
 }
 source {
   search_location {
@@ -2723,10 +2723,10 @@ source {
       declination: -47.47686
     }
     color: 4761665
-    strings_str_id: "R.string.ngc5139"
+    strings_str_id: "ngc5139"
   }
-  name_str_ids: "R.string.ngc5139"
-  name_str_ids: "R.string.omega_centauri"
+  name_str_ids: "ngc5139"
+  name_str_ids: "omega_centauri"
 }
 source {
   search_location {
@@ -2747,9 +2747,9 @@ source {
       declination: -3.84725
     }
     color: 4761665
-    strings_str_id: "R.string.v838_mon"
+    strings_str_id: "v838_mon"
   }
-  name_str_ids: "R.string.v838_mon"
+  name_str_ids: "v838_mon"
 }
 source {
   search_location {
@@ -2770,8 +2770,8 @@ source {
       declination: 62.21611
     }
     color: 4761665
-    strings_str_id: "R.string.hdf"
+    strings_str_id: "hdf"
   }
-  name_str_ids: "R.string.hdf"
-  name_str_ids: "R.string.hubble_deep_field"
+  name_str_ids: "hdf"
+  name_str_ids: "hubble_deep_field"
 }

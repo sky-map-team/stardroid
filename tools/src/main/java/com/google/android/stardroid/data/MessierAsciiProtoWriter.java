@@ -29,7 +29,7 @@ import com.google.android.stardroid.source.proto.SourceProto.PointElementProto;
  *
  * @author brent@google.com (Brent Bryan)
  */
-public class MessierProtoWriter extends AbstractProtoWriter {
+public class MessierAsciiProtoWriter extends AbstractAsciiProtoWriter {
   // TODO(mrhector): verify colors
   private static final int LABEL_COLOR = 0x48a841; // argb
   private static final int POINT_COLOR = 0x48a841; // abgr (!)
@@ -80,6 +80,6 @@ public class MessierProtoWriter extends AbstractProtoWriter {
   }
 
   public static void main(String[] args) throws IOException {
-    new MessierProtoWriter().run(args);
+    new MessierAsciiProtoWriter().run(args);
   }
 }
