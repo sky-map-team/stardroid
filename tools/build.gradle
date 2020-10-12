@@ -1,9 +1,27 @@
 apply plugin: 'application'
+apply plugin: 'com.google.protobuf'
+
+
+sourceSets {
+    main {
+        proto {
+            // In addition to the default 'src/main/proto'
+            srcDir '../datamodel/src/main/proto'
+        }
+    }
+}
+
+protobuf {
+    protoc {
+        // Download from repositories
+        artifact = 'com.google.protobuf:protoc:3.8.0'
+    }
+}
 
 dependencies {
-    implementation project(':datamodel')
-
-    implementation 'com.google.protobuf:protobuf-java:3.4.0'
+    // Unlike the Android App which should only use the lite version of protos we need the full
+    // version here as we need TextFormat which doesn't exist in the lite app.
+    implementation 'com.google.protobuf:protobuf-java:3.8.0'
     implementation 'com.google.guava:guava:21.0'
 }
 

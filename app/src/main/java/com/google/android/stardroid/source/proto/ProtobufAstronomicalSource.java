@@ -106,7 +106,6 @@ public class ProtobufAstronomicalSource extends AbstractAstronomicalSource {
     }
     processed.clearLabel();
     processed.addAllLabel(newLabels);
-    Log.d(TAG, "Processed " + processed.getLabelList());
     return processed.build();
   }
 
