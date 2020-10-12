@@ -1,6 +1,6 @@
 apply plugin: 'application'
 apply plugin: 'com.google.protobuf'
-
+apply plugin: 'idea'
 
 sourceSets {
     main {
