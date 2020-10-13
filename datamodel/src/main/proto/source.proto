@@ -17,11 +17,12 @@
 // This file defines protocol buffers to serialize astronomical objects to be
 // displayed as part of SkyMap.
 
+syntax = "proto2";
+
 package stardroid_source;
 
 option java_package = "com.google.android.stardroid.source.proto";
 option java_outer_classname = "SourceProto";
-option optimize_for = LITE_RUNTIME;
 
 // Enumeration over shapes which can be drawn in the renderer.
 enum Shape {
@@ -63,6 +64,7 @@ message PointElementProto {
 }
 
 // Message for label (text string) displayed in SkyMap
+// Nextid: 7
 message LabelElementProto {
   // Location on which this label should be drawn.
   optional GeocentricCoordinatesProto location = 1;
@@ -71,8 +73,9 @@ message LabelElementProto {
   optional uint32 color = 2 [default = 0xFFFFFFFF];
 
   // Index in the strings.xml file of the string that should be displayed for
-  // this label.
-  optional int32 string_index = 3;
+  // this label and its string counterpart (usuall snake cased).
+  optional int32 strings_int_id = 3;
+  optional string strings_str_id = 6;
 
   // The string to display to the user.
   // optional string REMOVE_string_index = 999;
@@ -100,18 +103,19 @@ message LineElementProto {
 
 // This message corresponds to a single astronomical object.  For instance,
 // this message could represent a constellation.  This constellation is
-// composed of its stars (points), the lines which draw it's shape, as well as
+// composed of its stars (points), the lines which draw its shape, as well as
 // its label.
 //
 // TODO(brent): add support for images.
+// nextid: 9
 message AstronomicalSourceProto {
-
   // Ids of the strings in the strings.xml file which correspond to names for
   // this object.
-  repeated uint32 name_ids = 1;
+  repeated uint32 name_int_ids = 1;
 
-  // The names of this object.
-  // repeated string REMOVE_name_ids = 999;
+  // The string ids into the strings.xml file - usually snake cased versions of the common
+  // names.
+  repeated string name_str_ids = 8;
 
   // The location to which SkyMap should direct the user.
   optional GeocentricCoordinatesProto search_location = 2;

@@ -1,16 +1,28 @@
 apply plugin: 'application'
+apply plugin: 'com.google.protobuf'
+apply plugin: 'idea'
+
+sourceSets {
+    main {
+        proto {
+            // In addition to the default 'src/main/proto'
+            srcDir '../datamodel/src/main/proto'
+        }
+    }
+}
+
+protobuf {
+    protoc {
+        // Download from repositories
+        artifact = 'com.google.protobuf:protoc:3.8.0'
+    }
+}
 
 dependencies {
-    implementation project(path: ':app', configuration: 'default')
-
-    implementation 'com.google.protobuf:protobuf-java:2.6.1'
+    // Unlike the Android App which should only use the lite version of protos we need the full
+    // version here as we need TextFormat which doesn't exist in the lite app.
+    implementation 'com.google.protobuf:protobuf-java:3.8.0'
     implementation 'com.google.guava:guava:21.0'
-
-    // TODO(jontayler): Terrible hack that should go when we revamp the tools.
-    implementation files('../app/build/intermediates/classes/gms/release/')
-    // New output locations since the android plugin 'upgrade'.
-    implementation files ('../app/build/intermediates/javac/gmsRelease/classes/')
-    implementation files ('../app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/gmsRelease/R.jar')
 }
 
 // Gradle fail.  Creating multiple distributions in a distributions {} does not generate

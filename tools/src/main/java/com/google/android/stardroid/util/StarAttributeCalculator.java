@@ -66,11 +66,11 @@ public class StarAttributeCalculator {
   }
 
   /** Print out the byte associated with the R,G, and B color components in the given Color int. */
-  private static void printBytes(int color) {
+/*  private static void printBytes(int color) {
     System.out.println(colorToString(color));
   }
-
-  public static String colorToString(final int color) {
+/*
+  private static String colorToString(final int color) {
     return String.format("a=%03d, r=%03d, g=%03d, b=%03d",
         Color.alpha(color), Color.red(color), Color.green(color), Color.blue(color));
   }
@@ -83,7 +83,7 @@ public class StarAttributeCalculator {
       System.out.println();
     }
   }
-
+*/
   public static int getSize(float magnitude) {
     return (int) Math.max(MAX_SIZE - magnitude, 1);
   }

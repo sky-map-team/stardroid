@@ -75,6 +75,8 @@ android {
 }
 
 dependencies {
+    implementation project(path: ':datamodel')
+
 // Android support
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.preference:preference:1.1.1'
@@ -85,7 +87,9 @@ dependencies {
     annotationProcessor 'com.google.dagger:dagger-compiler:2.28.3'
     // For annotations not in Android but needed by Dagger
     implementation 'javax.annotation:jsr250-api:1.0'
-    implementation 'com.google.protobuf:protobuf-java:2.3.0'
+    // Lite version for Android - it's lighter (obviously) but also doesn't use reflection
+    // which can cause no end of problems with minifiers like proguard.
+    implementation 'com.google.protobuf:protobuf-javalite:3.8.0'
 
 // Flavor
     gmsImplementation 'com.google.android.gms:play-services-analytics:16.0.8'

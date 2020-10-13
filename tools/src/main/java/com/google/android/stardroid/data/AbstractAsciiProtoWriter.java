@@ -14,10 +14,9 @@
 
 package com.google.android.stardroid.data;
 
-import com.google.android.stardroid.source.AstronomicalSource;
-import com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto;
-import com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourcesProto;
-import com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto;
+import com.google.android.stardroid.source.proto.SourceProto.AstronomicalSourceProto;
+import com.google.android.stardroid.source.proto.SourceProto.AstronomicalSourcesProto;
+import com.google.android.stardroid.source.proto.SourceProto.GeocentricCoordinatesProto;
 import com.google.common.io.Closeables;
 
 import java.io.BufferedReader;
@@ -35,7 +34,7 @@ import java.util.List;
  *
  * @author Brent Bryan
  */
-public abstract class AbstractProtoWriter {
+public abstract class AbstractAsciiProtoWriter {
   private static final String NAME_DELIMITER = "[|]+";
   /**
    * Returns the AstronomicalSource associated with the given line, or null if
@@ -51,7 +50,7 @@ public abstract class AbstractProtoWriter {
   protected List<String> rKeysFromName(String names) {
     List<String> rNames = new ArrayList<>();
     for (String name : names.split(NAME_DELIMITER)) {
-      rNames.add("R.string." + name.replaceAll(" ", "_").toLowerCase());
+      rNames.add(name.replaceAll(" ", "_").toLowerCase());
     }
     return rNames;
   }
@@ -95,7 +94,7 @@ public abstract class AbstractProtoWriter {
 
     PrintWriter writer = null;
     try {
-      writer = new PrintWriter(new FileWriter(prefix + "_R.ascii"));
+      writer = new PrintWriter(new FileWriter(prefix + ".ascii"));
       writer.append(sources.toString());
     } finally {
       Closeables.close(writer, false);

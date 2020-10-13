@@ -117,6 +117,8 @@
     <string name="sun_wont_set_message">The sun will not set during the next 24 hours at your current location.</string>
     <string name="sun_wont_rise_message">The sun will not rise during the next 24 hours at your current location.</string>
 
+    <string name="missing_label" translation_description="Used to indicate to the developer that they've added a resource with no translation.">MISSING_LBL</string>
+
     <string name="sun">Sun</string>
     <string name="moon">Moon</string>
     <string name="mercury">Mercury</string>

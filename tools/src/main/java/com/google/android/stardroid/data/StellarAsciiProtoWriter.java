@@ -16,10 +16,10 @@ package com.google.android.stardroid.data;
 
 import android.graphics.Color;
 
-import com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourceProto;
-import com.google.android.stardroid.source.proto.SourceFullProto.GeocentricCoordinatesProto;
-import com.google.android.stardroid.source.proto.SourceFullProto.LabelElementProto;
-import com.google.android.stardroid.source.proto.SourceFullProto.PointElementProto;
+import com.google.android.stardroid.source.proto.SourceProto.AstronomicalSourceProto;
+import com.google.android.stardroid.source.proto.SourceProto.GeocentricCoordinatesProto;
+import com.google.android.stardroid.source.proto.SourceProto.LabelElementProto;
+import com.google.android.stardroid.source.proto.SourceProto.PointElementProto;
 import com.google.android.stardroid.util.StarAttributeCalculator;
 
 import java.io.IOException;
@@ -31,7 +31,7 @@ import java.util.List;
  *
  * @author Brent Bryan
  */
-public class StellarProtoWriter extends AbstractProtoWriter {
+public class StellarAsciiProtoWriter extends AbstractAsciiProtoWriter {
   private static final int STAR_COLOR = 0xcfcccf;
 
   @Override
@@ -62,17 +62,17 @@ public class StellarProtoWriter extends AbstractProtoWriter {
     pointBuilder.setSize(size);
     builder.addPoint(pointBuilder);
 
-    if (name != null && !name.trim().equals("")) {
+    if (name != null && !name.trim().isEmpty()) {
       LabelElementProto.Builder labelBuilder = LabelElementProto.newBuilder();
       labelBuilder.setColor(STAR_COLOR);
       labelBuilder.setLocation(getCoords(ra, dec));
       List<String> rKeysForName = rKeysFromName(name);
       if (!rKeysForName.isEmpty()) {
-        labelBuilder.setREMOVEStringIndex(rKeysForName.get(0));
+        labelBuilder.setStringsStrId(rKeysForName.get(0));
       }
       builder.addLabel(labelBuilder);
       for (String rKey : rKeysForName) {
-        builder.addREMOVENameIds(rKey);
+        builder.addNameStrIds(rKey);
       }
     }
     builder.setSearchLocation(coords);
@@ -80,6 +80,6 @@ public class StellarProtoWriter extends AbstractProtoWriter {
   }
 
   public static void main(String[] args) throws IOException {
-    new StellarProtoWriter().run(args);
+    new StellarAsciiProtoWriter().run(args);
   }
 }
