@@ -9,8 +9,8 @@ android {
         applicationId "com.google.android.stardroid"
         minSdkVersion 16
         targetSdkVersion 30
-        versionCode 1514
-        versionName "1.9.5 - analytics"
+        versionCode 1516
+        versionName "1.9.5 - RC2"
         buildConfigField 'String', 'GOOGLE_ANALYTICS_CODE', '""'
     }
 
@@ -78,8 +78,8 @@ dependencies {
     implementation project(path: ':datamodel')
 
 // Android support
-    implementation 'androidx.annotation:annotation:1.0.0'
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.preference:preference:1.1.1'
 
 // Third-party
     implementation 'com.google.guava:guava:19.0'

@@ -39,7 +39,7 @@ public class ApplicationConstants {
   public static final String SOUND_EFFECTS = "sound_effects";
   // Preference that keeps track of whether or not the user accepted the ToS for this version
   public static final String READ_TOS_PREF_VERSION = "read_tos_version";
-  public static final String READ_WHATS_NEW_PREF_VERSION = "read_whats_new_version";
+  public static final String READ_WHATS_NEW_PREF_VERSION = "read_whats_new_version1";
   public static final String SHARED_PREFERENCE_DISABLE_GYRO = "disable_gyro";
   // Attention - the following strings must match those in strings.xml and notranslate-arrays.xml.
   public static final String SENSOR_SPEED_HIGH = "FAST";
