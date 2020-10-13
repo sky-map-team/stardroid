@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="popular_date_examples">
-        <item>Ahora</item>
-        <item>Schedar</item>
-        <item>Cruz del sur</item>
-        <item>Siguiente luna llena</item>
-        <item>Mercury transit of May 09, 2016</item>
-        <item>Eclipse solar del Aug 21, 2017</item>
-        <item>Eclipse solar del March 9, 2016</item>
-        <item>Eclipse solar del 29 de mayo de 1919</item>
-        <item>Alunizaje de Apollo 11</item>
+        <item translation_description="The user's current time">Ahora</item>
+        <item>Próxima puesta del Sol</item><!-- 1 -->
+        <item>Próximo amanecer</item><!-- 2 -->
+        <item>Siguiente luna llena</item><!-- 3 -->
+        <item>Tránsito de Mercurio del 09 may, 2016</item><!-- 4 -->
+        <item>Eclipse solar del 21 ago, 2017</item><!-- 5 -->
+        <item>Eclipse solar del 09 mar, 2016</item><!-- 6 -->
+        <item>Eclipse solar del 29 may, 1919</item><!-- 7 -->
+        <item>Alunizaje del Apolo 11</item><!-- 8 -->
     </string-array>
     <string-array name="sensor_speed">
-        <item>Lento</item>
-        <item>Estándar</item>
-        <item>rápida</item>
+        <item translation_description="Slow sensor speed">Lento</item>
+        <item translation_description="Normal sensor speed">Medio</item>
+        <item translation_description="Fast sensor speed">Rápido</item>
     </string-array>
     <string-array name="sensor_damping">
-        <item>Jumpy</item>
-        <item>Medium</item>
-        <item>Estándar</item>
-        <item>Alto</item>
+        <item translation_description="Low sensor damping factor">Baja</item>
+        <item translation_description="Medium sensor damping factor">Media</item>
+        <item translation_description="Extra High sensor damping factor">Estándar</item>
+        <item translation_description="Really High sensor damping factor">Alta</item>
     </string-array>
 </resources>
