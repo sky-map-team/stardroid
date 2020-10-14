@@ -26,6 +26,7 @@ import com.google.android.stardroid.source.proto.SourceProto.AstronomicalSources
 import com.google.android.stardroid.util.Blog;
 import com.google.android.stardroid.util.MiscUtil;
 import com.google.common.io.Closeables;
+import com.google.protobuf.Parser;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -77,10 +78,10 @@ public abstract class AbstractFileBasedLayer extends AbstractSourceLayer {
     InputStream in = null;
     try {
       in = assetManager.open(sourceFilename, AssetManager.ACCESS_BUFFER);
-      AstronomicalSourcesProto.Builder builder = AstronomicalSourcesProto.newBuilder();
-      builder.mergeFrom(in);
+      Parser<AstronomicalSourcesProto> parser = AstronomicalSourcesProto.parser();
+      AstronomicalSourcesProto sources = parser.parseFrom(in);
 
-      for (AstronomicalSourceProto proto : builder.build().getSourceList()) {
+      for (AstronomicalSourceProto proto : sources.getSourceList()) {
         fileSources.add(new ProtobufAstronomicalSource(proto, getResources()));
       }
       Log.d(TAG, "Found: " + fileSources.size() + " sources");
