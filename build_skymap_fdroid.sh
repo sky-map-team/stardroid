@@ -5,7 +5,7 @@
 sed -i -e 's/gms/fdroid/' tools/build.gradle
 sed -i -e '/gmsCompile/d' app/build.gradle
 sed -i -e '/com.google.gms.google-services/d' app/build.gradle
-./gradlew clean assembleFdroid installDist
+./gradlew clean installDist
 (cd tools
 # Gah. Gradle gets the classpath for the tools wrong.  Fix:
 sed -i -e 's#CLASSPATH=#CLASSPATH=$APP_HOME/lib/:#g' build/install/datagen/bin/datagen
