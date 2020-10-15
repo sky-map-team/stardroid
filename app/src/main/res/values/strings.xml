@@ -18,7 +18,7 @@
     <string name="location_long_pref">Longitude</string>
     <string name="degrees" translation_description="angular degrees">Degrees</string>
     <string name="preferences">preferences</string>
-    <string name="location_no_auto">Your phone does not support auto-location.   You can set the location manually in preferences.</string>
+    <string name="location_no_auto">Auto-location permission is disabled on your phone.   You can set the location manually in preferences.  Until then the map will be incorrect.</string>
     <string name="location_offer_to_enable">Auto-location is disabled.  Would you like to enable it?</string>
     <string name="location_offer_to_enable_gps_title">Auto-location disabled</string>
     <string name="location_set_auto">Location set from %1$s to %2$s</string>
@@ -39,15 +39,16 @@
     <string name="show_horizon_pref">Horizon</string>
     <string name="show_sky_gradient" translation_description="This is a shading of the color of the sky used for effect">Sky Gradient</string>
     <string name="show_meteors_pref">Meteor Showers</string>
-    <string name="sensor_prefs">Sensor Settings</string>
-    <string name="sensor_speed" translation_description="How quickly the sensor should send us data">Sensor Speed</string>
-    <string name="sensor_damping" translation_description="The amount of smoothing applied to the sensor outputs.">Damping</string>
+    <string name="sensor_prefs">Sensor Settings (experts)</string>
+    <string name="sensor_speed" translation_description="Old, non gyro sensors only: How quickly the sensor should send us data">Sensor Speed</string>
+    <string name="sensor_damping" translation_description="Old, non gyro sensors only: The amount of smoothing applied to the sensor outputs.">Damping</string>
     <string name="ecliptic">Ecliptic</string>
     <!-- Just in case we decide to have such a layer for the 4/24 launch -->
     <string name="show_hubble_layer_pref">Hubble Images</string>
     <string name="malformed_loc_error">Latitude or longitude setting isn\'t a number.</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Accept</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">No Thanks</string>
+    <string name="dialog_ok_button">OK</string>
     <string name="menu_help" translation_description="menu item to show \'Help\' box">Help</string>
     <string name="help_dialog_title">Help for Sky Map</string>
     <string name="eula_dialog_title">End User License Agreement</string>
@@ -78,7 +79,7 @@
     <string name="time_travel_close_message">Back to the present ...</string>
     <!--  -->
     <string name="popular_dates_prompt" translation_description="Label for a list of dates the user can choose from">Popular dates</string>
-    <string name="custom_date_prompt" translation_description="Label telling the user to manually specify a date">Or select your own date</string>
+    <string name="custom_date_prompt" translation_description="Label telling the user to manually specify a date">Or select your own date:</string>
     <string name="change_date_prompt">Change the date</string>
     <string name="change_time_prompt">Change the time</string>
     <string name="now_visiting"
@@ -106,7 +107,7 @@
     <string name="menu_gallery">Gallery</string>
     <string name="gallery_image_search_btn">Find in sky</string>
     <string name="gallery_image_back_btn">Back to gallery</string>
-    <string name="hubble_image_gallery_title">Sky Map Hubble Gallery</string>
+    <string name="hubble_image_gallery_title">Sky Map Gallery</string>
     <string name="hubble_image">Hubble Image</string>
     <!--  TODO(johntaylor): currently unused -->
 
@@ -115,6 +116,8 @@
     <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">Looking for:</string>
     <string name="sun_wont_set_message">The sun will not set during the next 24 hours at your current location.</string>
     <string name="sun_wont_rise_message">The sun will not rise during the next 24 hours at your current location.</string>
+
+    <string name="missing_label" translation_description="Used to indicate to the developer that they've added a resource with no translation.">MISSING_LBL</string>
 
     <string name="sun">Sun</string>
     <string name="moon">Moon</string>
@@ -145,6 +148,7 @@
     <string name="hdf" translation_description="hubble object">Hubble Deep Field</string>
     <string name="rho_oph" translation_description="hubble object">Rho Ophiuchus</string>
     <string name="menu_tos">Terms of Service</string>
+    <string name="menu_diagnostics">Diagnostics</string>
     <!-- TODO(johntaylor): the following might be deleted in favor of an icon -->
     <string name="control_panel_btn" translation_description="Label for the control panel button">Control Panel</string>
 
@@ -272,6 +276,7 @@
     <string name="pole_star" translation_description="Name of the (North) Pole Star">Pole Star</string>
     <string name="alpha_centauri" translation_description="Name of the star Alpha Centauri">Alpha Centauri</string>
     <string name="rigil_kent" translation_description="Name of the star Rigil Kent">Rigil Kent</string>
+    <string name="e_lyrae" translation_description="Name of the star ε Lyrae">ε Lyrae</string>
 
     <string name="m1" translation_description="Name of the Messier object M1">M1</string>
     <string name="m2" translation_description="Name of the Messier object M2">M2</string>
@@ -408,4 +413,70 @@
     <string name="orionids" translation_description="Meteor Shower">Orionids</string>
     <string name="puppidvelids" translation_description="Meteor Shower">Puppid-Velids</string>
     <string name="ursids" translation_description="Meteor Shower">Ursids</string>
+
+    <string name="no_sensor_warning">Your device may lack orientation sensors - automode may not work</string>
+    <string name="warning_dialog_title">Bad news!</string>
+    <string name="missing_sensor_dialog_text">\n
+        Unfortunately your device might not have one of the
+    sensors that Sky Map needs.\n\n
+        To show you the sky in the direction your phone is pointing Sky Map
+    needs both a built-in compass and an accelerometer.  Your device reports that it is missing
+        one of them.  The good news is that some devices (for example some Moto E phones) falsely claim
+        not to have a compass but actually do.\n\n
+
+        If your device really is missing a sensor then auto-mode will not work.  However, you
+        can still use Sky Map on this device in manual mode where you drag, rotate and stretch the
+        map with your fingers.
+    </string>
+    <string name="do_not_show_again">Do not show this message again</string>
+    <string name="title_activity_diagnostic">Diagnostics</string>
+    <string name="location_rationale_title">Why do we ask for your location?</string>
+    <string name="location_rationale_text">The stars you can see depend on where on planet earth you are.  Without your location we cannot show you an accurate map.  If you do not want your phone to give us your location you can provide it manually in the settings.  You need only provide the nearest city.</string>
+    <string name="play_services_error">Warning: Google Play Services error - Automatic location might not work</string>
+    <string name="sensor_absent">Absent</string>
+    <string name="sensor_accuracy_unknown">Accuracy: Unknown</string>
+    <string name="sensor_accuracy_unreliable">Accuracy: Unreliable</string>
+    <string name="sensor_accuracy_low">Accuracy: Low</string>
+    <string name="sensor_accuracy_medium">Accuracy: Medium</string>
+    <string name="sensor_accuracy_high">Accuracy: High</string>
+    <string name="sensor_accuracy_nocontact">Accuracy: No contact</string>
+    <string name="diagnostics_activity_general_heading">General</string>
+    <string name="diagnostics_activity_phone">Device</string>
+    <string name="diagnostics_activity_android_version">Android version</string>
+    <string name="diagnostics_activity_sky_map_version">Sky Map version</string>
+    <string name="diagnostics_activity_sensors_heading">Sensors</string>
+    <string name="diagnostics_activity_compass">Compass</string>
+    <string name="diagnostics_activity_accelerometer">Accelerometer</string>
+    <string name="diagnostics_activity_rotation_vector">Rotation</string>
+    <string name="diagnostics_activity_gyroscope">Gyroscope</string>
+    <string name="diagnostics_activity_light_level">Light level</string>
+    <string name="diagnostics_activity_location_and_time_heading">Location and Time</string>
+    <string name="diagnostics_activity_gps">GPS</string>
+    <string name="diagnostics_activity_location">Location (lat, long)</string>
+    <string name="diagnostics_activity_pointing_ra_dec">Pointing snapshot</string>
+    <string name="diagnostics_activity_magnetic_correction">Mag correction</string>
+    <string name="diagnostics_activity_local_datetime">Local datetime</string>
+    <string name="diagnostics_activity_universal_time">Universal datetime</string>
+    <string name="diagnostics_activity_network_heading">Network</string>
+    <string name="diagnostics_activity_connection">Connection</string>
+    <string name="diagnostics_activity_rotation_matrix">Rot Matrix</string>
+    <string name="enabled">Enabled</string>
+    <string name="disabled">Disabled</string>
+    <string name="permission_disabled">Permission disabled</string>
+    <string name="no_gps">No GPS</string>
+    <string name="connected">Connected</string>
+    <string name="disconnected">Disconnected</string>
+    <string name="wifi">" (wifi)"</string>
+    <string name="cell_network">" (cell)"</string>
+    <string name="menu_calibrate">Calibrate</string>
+    <string name="compass_calibration_activity_heading_compass">Compass -</string>
+    <string name="compass_calibration_activity_do_not_show_this_again">Do not show this again</string>
+    <string name="compass_calibration_activity_warning">Your compass needs to be calibrated</string>
+    <string name="sensor_reverse_preference_title">Reverse Magnetic Z</string>
+    <string name="sensor_reverse_preference_summary">Fix for phones with incorrectly implemented sensors - requires restart</string>
+    <string name="whats_new_dialog_title">What\'s new</string>
+    <string name="disable_gyro_preference_title">Disable gyroscope</string>
+    <string name="disable_gyro_preference_summary">Not all devices have a gyro - if yours does then you\'ll get better results with it enabled and this box unchecked.  On the other hand if your device does not have a gyro then Sky Map will probably not work if you uncheck this box.</string>
+    <string name="rotate_horizon_preference_title">Rotate horizon</string>
+    <string name="rotate_horizon_preference_summary">Rotate by 90 degree horizon (for screens with forced landscape, such as smartglasses)</string>
 </resources>

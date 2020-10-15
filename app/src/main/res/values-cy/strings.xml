@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Please add  translation_description="" attributes to Strings to assist the translators. -->
+<resources>
+    <string name="app_name" translation_description="Application Title">Sky Map</string>
+    <string name="menu_settings">Gosodiadau</string>
+    <string name="menu_search">Chwilio</string>
+    <string name="cancel">Diddymu</string>
+    <string name="set" translation_description="Button label. Set the date to the given value">Gosod</string>
+    <string name="go">Mynd!</string>
+    <string name="location_prefs">Gosodiadau Lleoliad</string>
+    <string name="force_gps_pref">Defnyddio GPS o hyd</string>
+    <string name="force_gps_pref_hint" translation_description="this string continues from \'Always use GPS\'">os alluogir, hyd yn oed pan mae lleoliad rhwydwaith ar gael</string>
+    <string name="no_use_gps_pref">Gosod lleoliad dy hun</string>
+    <string name="no_use_gps_pref_hint">Rho enw lle neu leoliad lledred/hydred</string>
+    <string name="location_placename">Enw lle</string>
+    <string name="location_placename_hint" translation_description="An example address.  Translators: please pick an address suitable for your country.  If it has an astronomical connection (e.g. the address of an observatory or famous astronomer) then that would be even better.">e.e. 43 Ffordd Glyndŵr, Pen-y-cae, Wrecsam.</string>
+    <string name="location_lat_pref">Lledred</string>
+    <string name="location_long_pref">Hydred</string>
+    <string name="degrees" translation_description="angular degrees">Graddau</string>
+    <string name="preferences">dewisiadau</string>
+    <string name="location_no_auto">Nid yw caniatâd adnabod lleoliad ymlaen ar dy ddyfais. Gellir gosod y lleoliad dy hun yn y dewisiadau. Bydd y map yn anghywir nes bod lleoliad wedi\'i osod.</string>
+    <string name="location_offer_to_enable">Dyw adnabod lleoliad heb ei alluogi. Wyt ti am ei alluogi?</string>
+    <string name="location_offer_to_enable_gps_title">Adnabod lleoliad wedi\'i analluogi</string>
+    <string name="location_set_auto">Lleoliad wedi\'i osod o %1$s i %2$s</string>
+    <string name="location_unable_to_geocode">Methu ag adnabod dy leoliad. Efallai nad yw dy rwydwaith ar gael?</string>
+    <string name="location_not_found_title" translation_description="dialog box title when location not found">Ymddiheuriadau</string>
+    <string name="location_not_found" translation_description="dialog message when placename not found">%s heb ei ganfod.</string>
+    <string name="location_long_lat">Hydred:%1$s, Ledred:%2$s</string>
+    <string name="location_place_found">Wedi canfod lleoliad. Yn gosod lledred %1$f a hydred %2$f</string>
+    <string name="use_magnetic_correction">Defnyddio cywiriad magnetig</string>
+    <string name="use_magnetic_correction_hint">Defnyddia dy wybodaeth am dy leoliad i gywiro\'r cyfeiriad o\'r gogledd magnetig i\'r gwir ogledd.</string>
+    <!-- This string is too long and currently unused -->
+    <string name="provider_prefs" translation_description="Dialog box title for a preferences dialog">Dangos...</string>
+    <string name="show_stars_pref">Sêr</string>
+    <string name="show_constellations_pref">Cytser</string>
+    <string name="show_messier_objects_pref" translation_description="The celestial objects catalogued by Charles Messier">Gwrthrychau Messier</string>
+    <string name="show_planets_pref">Cysawd yr Haul</string>
+    <string name="show_grid_pref">Grid RA/Dec</string>
+    <string name="show_horizon_pref">Gorwel</string>
+    <string name="show_sky_gradient" translation_description="This is a shading of the color of the sky used for effect">Graddfa Awyr</string>
+    <string name="show_meteors_pref">Sêr gwib</string>
+    <string name="sensor_prefs">Gosodiadau Synhwyrydd (arbenigwyr)</string>
+    <string name="sensor_speed" translation_description="Old, non gyro sensors only: How quickly the sensor should send us data">Cyflymder Synhwyrydd</string>
+    <string name="sensor_damping" translation_description="Old, non gyro sensors only: The amount of smoothing applied to the sensor outputs.">Dampio</string>
+    <string name="ecliptic">Ecliptig</string>
+    <!-- Just in case we decide to have such a layer for the 4/24 launch -->
+    <string name="show_hubble_layer_pref">Lluniau Hubble</string>
+    <string name="malformed_loc_error">Nid yw gosodiad lledred na hydred yn rif.</string>
+    <string name="dialog_accept" translation_description="accepting the licence agreement">Derbyn</string>
+    <string name="dialog_decline" translation_description="declining the licence agreement">Dim diolch</string>
+    <string name="dialog_ok_button">Iawn</string>
+    <string name="menu_help" translation_description="menu item to show \'Help\' box">Cymorth</string>
+    <string name="help_dialog_title">Cymorth defnyddio Sky Map</string>
+    <string name="eula_dialog_title">End User License Agreement</string>
+    <string name="set_manual">Yn newid i\'r modd llaw</string>
+    <string name="set_auto">Yn newid i\'r modd awtomatig</string>
+    <string name="menu_zoom_in">Chwyddo mewn</string>
+    <string name="menu_zoom_out">Chwyddo allan</string>
+    <string name="menu_toggle_dim">Toglo modd nos</string>
+    <string name="zenith">ANTERTH</string>
+    <string name="nadir">NADIR</string>
+    <string name="north">GOGLEDD</string>
+    <string name="east">DWYRAIN</string>
+    <string name="west">GORLLEWIN</string>
+    <string name="south">DE</string>
+    <string name="search_label">Chwilio\'r Awyr</string>
+    <string name="search_hint" translation_description="an example search target">e.e. Mawrth</string>
+    <string name="no_search_title">Dim canlyniadau</string>
+    <string name="no_search_results_text">Ni chanfuwyd unrhyw ganlyniadau.</string>
+    <string name="many_search_results_title">A oeddet yn meddwl?</string>
+    <string name="many_search_results_text">Dewisa un</string>
+    <string name="searching_for_text">Yn chwilio am %s...</string>
+    <string name="found_target_text">Wedi canfod %s.</string>
+    <string name="other" translation_description="A preference category (ie preferences that don't belong in any other category)">Arall</string>
+    <string name="planetary_images">Dangos Delweddau Planedau</string>
+    <string name="menu_time">Teithio mewn Amser</string>
+    <string name="time_travel_start_message">Yn teithio trwy amser ...</string>
+    <string name="time_travel_start_message_alt">Yn teithio trwy amser i %s ...</string>
+    <string name="time_travel_close_message">Nôl i\'r presennol ...</string>
+    <!--  -->
+    <string name="popular_dates_prompt" translation_description="Label for a list of dates the user can choose from">Dyddiadau poblogaidd</string>
+    <string name="custom_date_prompt" translation_description="Label telling the user to manually specify a date">Neu ddewis dy ddyddiad dy hun:</string>
+    <string name="change_date_prompt">Newid y dyddiad</string>
+    <string name="change_time_prompt">Newid yr amser</string>
+    <string name="now_visiting"
+            translation_description="used in time travel dialog to tell the user what time they are visiting, time formatted as yyyy.mm.dd at hh.mm.ss + timezone">
+        Nawr yn ymweld â: %s</string>
+    <string name="time_travel_label_past" translation_description="Label showing that we are in the past">Teithio Amser: Gorffennol</string>
+    <string name="time_travel_label_future" translation_description="Label showing that we are in the future">Teithio Amser: Dyfodol</string>
+    <string name="time_travel_stopped" translation_description="Label showing rate of travel through time">Teithio amser wedi rhewi</string>
+    <string name="time_travel_second_speed" translation_description="Label showing rate of travel through time.  The symbol means greater than.">Yn teithio &gt; 1 eil/eil</string>
+    <string name="time_travel_minute_speed" translation_description="Label showing rate of travel through time">Yn teithio &gt; 1 mun/eil</string>
+    <string name="time_travel_10minute_speed" translation_description="Label showing rate of travel through time">Yn teithio &gt; 10 mun/eil</string>
+    <string name="time_travel_hour_speed" translation_description="Label showing rate of travel through time">Yn teithio &gt; 1 awr/eil</string>
+    <string name="time_travel_day_speed" translation_description="Label showing rate of travel through time">Yn teithio &gt; 1 diwrnod/eil</string>
+    <string name="time_travel_week_speed" translation_description="Label showing rate of travel through time">Yn teithio &gt; 1 wythnos/eil</string>
+    <string name="time_travel_second_speed_back" translation_description="Label showing rate of travel through time">Yn teithio &lt; 1 eil/eil</string>
+    <string name="time_travel_minute_speed_back" translation_description="Label showing rate of travel through time">Yn teithio &lt; 1 mun/eil</string>
+    <string name="time_travel_10minute_speed_back" translation_description="Label showing rate of travel through time">Yn teithio &lt; 10 mun/eil</string>
+    <string name="time_travel_hour_speed_back" translation_description="Label showing rate of travel through time">Yn teithio &lt; 1 awr/eil</string>
+    <string name="time_travel_day_speed_back" translation_description="Label showing rate of travel through time">Yn teithio &lt; 1 diwrnod/eil</string>
+    <string name="time_travel_week_speed_back" translation_description="Label showing rate of travel through time">Yn teithio &lt; 1 wythnos/eil</string>
+    <string name="use_sound_effects" translation_description="A preferences menu label">Galluogi sain</string>
+
+    <string name="enable_layer_toast">Yn galluogi haen %s</string>
+    <string name="disable_layer_toast">Yn analluogi haen %s</string>
+    <string name="menu_gallery">Oriel</string>
+    <string name="gallery_image_search_btn">Canfod yn yr awyr</string>
+    <string name="gallery_image_back_btn">Nôl i\'r oriel</string>
+    <string name="hubble_image_gallery_title">Oriel Sky Map</string>
+    <string name="hubble_image">Delwedd Hubble</string>
+    <!--  TODO(johntaylor): currently unused -->
+
+    <string name="search_target_found_message" translation_description="displayed when a search target has been located">Canfyddaist:</string>
+    <string name="search_overlay_title" translation_description="title for search overlay">Pwyntia dy ddyfais tua\'r saeth</string>
+    <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">Yn chwilio am:</string>
+    <string name="sun_wont_set_message">Dyw\'r haul ddim yn machlud o fewn y 24 awr nesaf yn dy leoliad cyfredol.</string>
+    <string name="sun_wont_rise_message">Dyw\'r haul ddim yn codi o fewn y 24 awr nesaf yn dy leoliad cyfredol.</string>
+
+    <string name="sun">Haul</string>
+    <string name="moon">Lleuad</string>
+    <string name="mercury">Mercher</string>
+    <string name="venus">Gwener</string>
+    <string name="earth">Daear</string>
+    <string name="mars">Mawrth</string>
+    <string name="jupiter">Iau</string>
+    <string name="saturn">Sadwrn</string>
+    <string name="uranus">Wranws</string>
+    <string name="neptune">Neifion</string>
+    <string name="pluto">Plwton</string>
+    <string name="crab_nebula" translation_description="hubble object">Nifwl Cranc</string>
+    <string name="eagle_nebula" translation_description="hubble object">Nifwl Eryr</string>
+    <string name="andromeda_galaxy" translation_description="hubble object">Galaeth Andromeda</string>
+    <string name="orion_nebula" translation_description="hubble object">Nifwla Orion</string>
+    <string name="whirlpool_galaxy" translation_description="hubble object">Galaeth Drobwll</string>
+    <string name="ring_nebula" translation_description="hubble object">Nifwl Cylch</string>
+    <string name="pinwheel_galaxy" translation_description="hubble object">Pinwheel Galaxy</string>
+    <string name="sombrero_galaxy" translation_description="hubble object">Galaeth Sombrero</string>
+    <string name="hercules_gc" translation_description="hubble object">Clwstwr Amgrwn Hercules</string>
+    <string name="pleiades" translation_description="hubble object">Pleiades</string>
+    <string name="cats_eye_nebula" translation_description="hubble object">Nifwl Llygad Gath</string>
+    <string name="omega_centauri" translation_description="hubble object">Clwstwr Amgrwn Omega Centauri</string>
+    <string name="v838_mon" translation_description="hubble object">V838 Monocerotis</string>
+    <string name="sn1987a" translation_description="hubble object">Uwchnofa 1987a</string>
+    <string name="hubble_deep_field" translation_description="hubble object">Maes Dwfn Hubble</string>
+    <string name="hdf" translation_description="hubble object">Maes Dwfn Hubble</string>
+    <string name="rho_oph" translation_description="hubble object">Rho Ophiuchus</string>
+    <string name="menu_tos">Telerau Gwasanaeth</string>
+    <string name="menu_diagnostics">Diagnosteg</string>
+    <!-- TODO(johntaylor): the following might be deleted in favor of an icon -->
+    <string name="control_panel_btn" translation_description="Label for the control panel button">Panel Rheolaeth</string>
+
+    <string name="north_pole">PyG</string>
+    <string name="south_pole">PyD</string>
+
+    <string name="andromeda" translation_description="Name of the Andromeda constellation">Andromeda</string>
+    <string name="aquarius" translation_description="Name of the Aquarius constellation">Aquarius</string>
+    <string name="aquila" translation_description="Name of the Aquila constellation">Aquila</string>
+    <string name="aries" translation_description="Name of the Aries constellation">Aries</string>
+    <string name="auriga" translation_description="Name of the Auriga constellation">Auriga</string>
+    <string name="bootes" translation_description="Name of the Bootes constellation">Bootes</string>
+    <string name="cancer" translation_description="Name of the Cancer constellation">Cancer</string>
+    <string name="canis_major" translation_description="Name of the Canis Major constellation">Canis Major</string>
+    <string name="capricornus" translation_description="Name of the Capricornus constellation">Capricornus</string>
+    <string name="carina" translation_description="Name of the Carina constellation">Carina</string>
+    <string name="cassiopeia" translation_description="Name of the Cassiopeia constellation">Cassiopeia</string>
+    <string name="centaurus" translation_description="Name of the Centaurus constellation">Centaurus</string>
+    <string name="cetus" translation_description="Name of the Cetus constellation">Cetus</string>
+    <string name="crux" translation_description="Name of the Crux constellation">Crux</string>
+    <string name="cygnus" translation_description="Name of the Cygnus constellation">Cygnus</string>
+    <string name="draco" translation_description="Name of the Draco constellation">Draco</string>
+    <string name="eridanus" translation_description="Name of the Eridanus constellation">Eridanus</string>
+    <string name="gemini" translation_description="Name of the Gemini constellation">Gemini</string>
+    <string name="grus" translation_description="Name of the Grus constellation">Grus</string>
+    <string name="hercules" translation_description="Name of the Hercules constellation">Hercules</string>
+    <string name="hydrus" translation_description="Name of the Hydrus constellation">Hydrus</string>
+    <string name="leo" translation_description="Name of the Leo constellation">Leo</string>
+    <string name="libra" translation_description="Name of the Libra constellation">Libra</string>
+    <string name="lupus" translation_description="Name of the Lupus constellation">Lupus</string>
+    <string name="lyra" translation_description="Name of the Lyra constellation">Lyra</string>
+    <string name="ophiuchus" translation_description="Name of the Ophiuchus constellation">Ophiuchus</string>
+    <string name="orion" translation_description="Name of the Orion constellation">Orion</string>
+    <string name="pavo" translation_description="Name of the Pavo constellation">Pavo</string>
+    <string name="pegasus" translation_description="Name of the Pegasus constellation">Pegasus</string>
+    <string name="perseus" translation_description="Name of the Perseus constellation">Perseus</string>
+    <string name="phoenix" translation_description="Name of the Phoenix constellation">Phoenix</string>
+    <string name="pisces" translation_description="Name of the Pisces constellation">Pisces</string>
+    <string name="piscis_austrinus" translation_description="Name of the Piscis Austrinus constellation">Piscis Austrinus</string>
+    <string name="puppis" translation_description="Name of the Puppis constellation">Puppis</string>
+    <string name="sagittarius" translation_description="Name of the Sagittarius constellation">Sagittarius</string>
+    <string name="scorpius" translation_description="Name of the Scorpius constellation">Scorpius</string>
+    <string name="taurus" translation_description="Name of the Taurus constellation">Taurus</string>
+    <string name="tucana" translation_description="Name of the Tucana constellation">Tucana</string>
+    <string name="ursa_major" translation_description="Name of the Ursa Major constellation">Ursa Major</string>
+    <string name="ursa_minor" translation_description="Name of the Ursa Minor constellation">Ursa Minor</string>
+    <string name="vela" translation_description="Name of the Vela constellation">Vela</string>
+    <string name="virgo" translation_description="Name of the Virgo constellation">Virgo</string>
+    <string name="capricorn" translation_description="Name of the Capricorn constellation">Capricorn</string>
+    <string name="southern_cross" translation_description="Name of the Southern Cross constellation">Croes Ddeheuol</string>
+    <string name="scorpio" translation_description="Name of the Scorpio constellation">Scorpio</string>
+    <string name="little_dipper" translation_description="Name of the Little Dipper constellation">Little Dipper</string>
+    <string name="little_bear" translation_description="Name of the Little Bear constellation">Arth Fach</string>
+    <string name="big_dipper" translation_description="Name of the Big Dipper constellation">Big Dipper</string>
+    <string name="great_bear" translation_description="Name of the Great Bear constellation">Arth Fawr</string>
+    <string name="plough" translation_description="Name of the Plough constellation">Aradr</string>
+
+    <string name="sirius" translation_description="Name of the Star Sirius">Sirius</string>
+    <string name="canopus" translation_description="Name of the Star Canopus">Canopus</string>
+    <string name="arcturus" translation_description="Name of the Star Arcturus">Arcturus</string>
+    <string name="rigel_kentaurus_a" translation_description="Name of the Star Rigel Kentaurus A">Rigel Kentaurus A</string>
+    <string name="rigil_kentaurus_a" translation_description="Name of the Star Rigil Kentaurus A">Rigil Kentaurus A</string>
+    <string name="vega" translation_description="Name of the Star Vega">Vega</string>
+    <string name="rigel" translation_description="Name of the Star Rigel">Rigel</string>
+    <string name="procyon" translation_description="Name of the Star Procyon">Procyon</string>
+    <string name="betelgeuse" translation_description="Name of the Star Betelgeuse">Betelgeuse</string>
+    <string name="achernar" translation_description="Name of the Star Achernar">Achernar</string>
+    <string name="hadar" translation_description="Name of the Star Hadar">Hadar</string>
+    <string name="capella" translation_description="Name of the Star Capella">Capella</string>
+    <string name="altair" translation_description="Name of the Star Altair">Altair</string>
+    <string name="acrux" translation_description="Name of the Star Acrux">Acrux</string>
+    <string name="aldebaran" translation_description="Name of the Star Aldebaran">Aldebaran</string>
+    <string name="spica" translation_description="Name of the Star Spica">Spica</string>
+    <string name="antares" translation_description="Name of the Star Antares">Antares</string>
+    <string name="pollux" translation_description="Name of the Star Pollux">Pollux</string>
+    <string name="fomalhaut" translation_description="Name of the Star Fomalhaut">Fomalhaut</string>
+    <string name="deneb" translation_description="Name of the Star Deneb">Deneb</string>
+    <string name="regulus" translation_description="Name of the Star Regulus">Regulus</string>
+    <string name="adhara" translation_description="Name of the Star Adhara">Adhara</string>
+    <string name="shaula" translation_description="Name of the Star Shaula">Shaula</string>
+    <string name="alnath" translation_description="Name of the Star Alnath">Alnath</string>
+    <string name="alnilam" translation_description="Name of the Star Alnilam">Alnilam</string>
+    <string name="alnair" translation_description="Name of the Star Alnair">Alnair</string>
+    <string name="alioth" translation_description="Name of the Star Alioth">Alioth</string>
+    <string name="mirphak" translation_description="Name of the Star Mirphak">Mirphak</string>
+    <string name="kaus_australis" translation_description="Name of the Star Kaus Australis">Kaus Australis</string>
+    <string name="dubhe" translation_description="Name of the Star Dubhe">Dubhe</string>
+    <string name="alkaid" translation_description="Name of the Star Alkaid">Alkaid</string>
+    <string name="alhena" translation_description="Name of the Star Alhena">Alhena</string>
+    <string name="castor" translation_description="Name of the Star Castor">Castor</string>
+    <string name="polaris" translation_description="Name of the Star Polaris">Polaris</string>
+    <string name="alphard" translation_description="Name of the Star Alphard">Alphard</string>
+    <string name="hamal" translation_description="Name of the Star Hamal">Hamal</string>
+    <string name="algieba" translation_description="Name of the Star Algieba">Algieba</string>
+    <string name="diphda" translation_description="Name of the Star Diphda">Diphda</string>
+    <string name="nunki" translation_description="Name of the Star Nunki">Nunki</string>
+    <string name="mirach" translation_description="Name of the Star Mirach">Mirach</string>
+    <string name="alpheratz" translation_description="Name of the Star Alpheratz">Alpheratz</string>
+    <string name="saiph" translation_description="Name of the Star Saiph">Saiph</string>
+    <string name="kochab" translation_description="Name of the Star Kochab">Kochab</string>
+    <string name="rasalhague" translation_description="Name of the Star Rasalhague">Rasalhague</string>
+    <string name="algol" translation_description="Name of the Star Algol">Algol</string>
+    <string name="denebola" translation_description="Name of the Star Denebola">Denebola</string>
+    <string name="alphekka" translation_description="Name of the Star Alphekka">Alphekka</string>
+    <string name="etamin" translation_description="Name of the Star Etamin">Etamin</string>
+    <string name="kaus" translation_description="Name of the Star Kaus">Kaus</string>
+    <string name="shedir" translation_description="Name of the Star Shedir">Shedir</string>
+    <string name="caph" translation_description="Name of the Star Caph">Caph</string>
+    <string name="izar" translation_description="Name of the Star Izar">Izar</string>
+    <string name="merak" translation_description="Name of the Star Merak">Merak</string>
+    <string name="enif" translation_description="Name of the Star Enif">Enif</string>
+    <string name="ankaa" translation_description="Name of the Star Ankaa">Ankaa</string>
+    <string name="phad" translation_description="Name of the Star Phad">Phad</string>
+    <string name="alderamin" translation_description="Name of the Star Alderamin">Alderamin</string>
+    <string name="scheat" translation_description="Name of the Star Scheat">Scheat</string>
+    <string name="markab" translation_description="Name of the Star Markab">Markab</string>
+    <string name="menkar" translation_description="Name of the Star Menkar">Menkar</string>
+    <string name="arneb" translation_description="Name of the Star Arneb">Arneb</string>
+    <string name="unukalhai" translation_description="Name of the Star Unukalhai">Unukalhai</string>
+    <string name="algenib" translation_description="Name of the Star Algenib">Algenib</string>
+    <string name="vindemiatrix" translation_description="Name of the Star Vindemiatrix">Vindemiatrix</string>
+    <string name="alcyone" translation_description="Name of the Star Alcyone">Alcyone</string>
+    <string name="dog_star" translation_description="Name of the Dog Star (Sirius)">Seren y Ci</string>
+    <string name="north_star" translation_description="Name of the North Star">Seren y Gogledd</string>
+    <string name="pole_star" translation_description="Name of the (North) Pole Star">Seren Pegwn</string>
+    <string name="alpha_centauri" translation_description="Name of the star Alpha Centauri">Alpha Centauri</string>
+    <string name="rigil_kent" translation_description="Name of the star Rigil Kent">Rigil Kent</string>
+    <string name="e_lyrae" translation_description="Name of the star ε Lyrae">ε Lyrae</string>
+
+    <string name="m1" translation_description="Name of the Messier object M1">M1</string>
+    <string name="m2" translation_description="Name of the Messier object M2">M2</string>
+    <string name="m3" translation_description="Name of the Messier object M3">M3</string>
+    <string name="m4" translation_description="Name of the Messier object M4">M4</string>
+    <string name="m5" translation_description="Name of the Messier object M5">M5</string>
+    <string name="m6" translation_description="Name of the Messier object M6">M6</string>
+    <string name="m7" translation_description="Name of the Messier object M7">M7</string>
+    <string name="m8" translation_description="Name of the Messier object M8">M8</string>
+    <string name="m9" translation_description="Name of the Messier object M9">M9</string>
+    <string name="m10" translation_description="Name of the Messier object M10">M10</string>
+    <string name="m11" translation_description="Name of the Messier object M11">M11</string>
+    <string name="m12" translation_description="Name of the Messier object M12">M12</string>
+    <string name="m13" translation_description="Name of the Messier object M13">M13</string>
+    <string name="m14" translation_description="Name of the Messier object M14">M14</string>
+    <string name="m15" translation_description="Name of the Messier object M15">M15</string>
+    <string name="m16" translation_description="Name of the Messier object M16">M16</string>
+    <string name="m17" translation_description="Name of the Messier object M17">M17</string>
+    <string name="m18" translation_description="Name of the Messier object M18">M18</string>
+    <string name="m19" translation_description="Name of the Messier object M19">M19</string>
+    <string name="m20" translation_description="Name of the Messier object M20">M20</string>
+    <string name="m21" translation_description="Name of the Messier object M21">M21</string>
+    <string name="m22" translation_description="Name of the Messier object M22">M22</string>
+    <string name="m23" translation_description="Name of the Messier object M23">M23</string>
+    <string name="m24" translation_description="Name of the Messier object M24">M24</string>
+    <string name="m25" translation_description="Name of the Messier object M25">M25</string>
+    <string name="m26" translation_description="Name of the Messier object M26">M26</string>
+    <string name="m27" translation_description="Name of the Messier object M27">M27</string>
+    <string name="m28" translation_description="Name of the Messier object M28">M28</string>
+    <string name="m29" translation_description="Name of the Messier object M29">M29</string>
+    <string name="m30" translation_description="Name of the Messier object M30">M30</string>
+    <string name="m31" translation_description="Name of the Messier object M31">M31</string>
+    <string name="m32" translation_description="Name of the Messier object M32">M32</string>
+    <string name="m33" translation_description="Name of the Messier object M33">M33</string>
+    <string name="m34" translation_description="Name of the Messier object M34">M34</string>
+    <string name="m35" translation_description="Name of the Messier object M35">M35</string>
+    <string name="m36" translation_description="Name of the Messier object M36">M36</string>
+    <string name="m37" translation_description="Name of the Messier object M37">M37</string>
+    <string name="m38" translation_description="Name of the Messier object M38">M38</string>
+    <string name="m39" translation_description="Name of the Messier object M39">M39</string>
+    <string name="m40" translation_description="Name of the Messier object M40">M40</string>
+    <string name="m41" translation_description="Name of the Messier object M41">M41</string>
+    <string name="m42" translation_description="Name of the Messier object M42">M42</string>
+    <string name="m43" translation_description="Name of the Messier object M43">M43</string>
+    <string name="m44" translation_description="Name of the Messier object M44">M44</string>
+    <string name="m45" translation_description="Name of the Messier object M45">M45</string>
+    <string name="m46" translation_description="Name of the Messier object M46">M46</string>
+    <string name="m47" translation_description="Name of the Messier object M47">M47</string>
+    <string name="m48" translation_description="Name of the Messier object M48">M48</string>
+    <string name="m49" translation_description="Name of the Messier object M49">M49</string>
+    <string name="m50" translation_description="Name of the Messier object M50">M50</string>
+    <string name="m51" translation_description="Name of the Messier object M51">M51</string>
+    <string name="m52" translation_description="Name of the Messier object M52">M52</string>
+    <string name="m53" translation_description="Name of the Messier object M53">M53</string>
+    <string name="m54" translation_description="Name of the Messier object M54">M54</string>
+    <string name="m55" translation_description="Name of the Messier object M55">M55</string>
+    <string name="m56" translation_description="Name of the Messier object M56">M56</string>
+    <string name="m57" translation_description="Name of the Messier object M57">M57</string>
+    <string name="m58" translation_description="Name of the Messier object M58">M58</string>
+    <string name="m59" translation_description="Name of the Messier object M59">M59</string>
+    <string name="m60" translation_description="Name of the Messier object M60">M60</string>
+    <string name="m61" translation_description="Name of the Messier object M61">M61</string>
+    <string name="m62" translation_description="Name of the Messier object M62">M62</string>
+    <string name="m63" translation_description="Name of the Messier object M63">M63</string>
+    <string name="m64" translation_description="Name of the Messier object M64">M64</string>
+    <string name="m65" translation_description="Name of the Messier object M65">M65</string>
+    <string name="m66" translation_description="Name of the Messier object M66">M66</string>
+    <string name="m67" translation_description="Name of the Messier object M67">M67</string>
+    <string name="m68" translation_description="Name of the Messier object M68">M68</string>
+    <string name="m69" translation_description="Name of the Messier object M69">M69</string>
+    <string name="m70" translation_description="Name of the Messier object M70">M70</string>
+    <string name="m71" translation_description="Name of the Messier object M71">M71</string>
+    <string name="m72" translation_description="Name of the Messier object M72">M72</string>
+    <string name="m73" translation_description="Name of the Messier object M73">M73</string>
+    <string name="m74" translation_description="Name of the Messier object M74">M74</string>
+    <string name="m75" translation_description="Name of the Messier object M75">M75</string>
+    <string name="m76" translation_description="Name of the Messier object M76">M76</string>
+    <string name="m77" translation_description="Name of the Messier object M77">M77</string>
+    <string name="m78" translation_description="Name of the Messier object M78">M78</string>
+    <string name="m79" translation_description="Name of the Messier object M79">M79</string>
+    <string name="m80" translation_description="Name of the Messier object M80">M80</string>
+    <string name="m81" translation_description="Name of the Messier object M81">M81</string>
+    <string name="m82" translation_description="Name of the Messier object M82">M82</string>
+    <string name="m83" translation_description="Name of the Messier object M83">M83</string>
+    <string name="m84" translation_description="Name of the Messier object M84">M84</string>
+    <string name="m85" translation_description="Name of the Messier object M85">M85</string>
+    <string name="m86" translation_description="Name of the Messier object M86">M86</string>
+    <string name="m87" translation_description="Name of the Messier object M87">M87</string>
+    <string name="m88" translation_description="Name of the Messier object M88">M88</string>
+    <string name="m89" translation_description="Name of the Messier object M89">M89</string>
+    <string name="m90" translation_description="Name of the Messier object M90">M90</string>
+    <string name="m91" translation_description="Name of the Messier object M91">M91</string>
+    <string name="m92" translation_description="Name of the Messier object M92">M92</string>
+    <string name="m93" translation_description="Name of the Messier object M93">M93</string>
+    <string name="m94" translation_description="Name of the Messier object M94">M94</string>
+    <string name="m95" translation_description="Name of the Messier object M95">M95</string>
+    <string name="m96" translation_description="Name of the Messier object M96">M96</string>
+    <string name="m97" translation_description="Name of the Messier object M97">M97</string>
+    <string name="m98" translation_description="Name of the Messier object M98">M98</string>
+    <string name="m99" translation_description="Name of the Messier object M99">M99</string>
+    <string name="m100" translation_description="Name of the Messier object M100">M100</string>
+    <string name="m101" translation_description="Name of the Messier object M101">M101</string>
+    <string name="m102" translation_description="Name of the Messier object M102">M102</string>
+    <string name="m103" translation_description="Name of the Messier object M103">M103</string>
+    <string name="m104" translation_description="Name of the Messier object M104">M104</string>
+    <string name="m105" translation_description="Name of the Messier object M105">M105</string>
+    <string name="m106" translation_description="Name of the Messier object M106">M106</string>
+    <string name="m107" translation_description="Name of the Messier object M107">M107</string>
+    <string name="m108" translation_description="Name of the Messier object M108">M108</string>
+    <string name="m109" translation_description="Name of the Messier object M109">M109</string>
+    <string name="m110" translation_description="Name of the Messier object M110">M110</string>
+    <string name="ngc6543" translation_description="Name of the Messier object NGC6543">NGC6543</string>
+    <string name="ngc5139" translation_description="Name of the Messier object NGC5139">NGC5139</string>
+    <string name="butterfly_cluster" translation_description="Name of the Messier object Butterfly Cluster">Clwstwr Pili-pala</string>
+    <string name="scorpions_tail" translation_description="Name of the Messier object Scorpion\'s Tail">Cynffon Sgorpion</string>
+    <string name="winnecke_4" translation_description="Name of the Messier object Winnecke 4">Winnecke 4</string>
+    <string name="beehive_cluster" translation_description="Name of the Messier object Beehive Cluster">Clwstwr Cwch Gwenyn</string>
+    <string name="praesepe" translation_description="Name of the Messier object Praesepe">Praesepe</string>
+    <string name="seven_sisters" translation_description="Name of the Messier object Seven Sisters">Saith Chwaer</string>
+    <string name="space_station" translation_description="Name of the Internation Space Station">Gorsaf Ofod Rhyngwladol</string>
+    <string name="space_shuttle" translation_description="Name of the Space Shuttle">Gwennol Ofod</string>
+    <string name="kml_load_error">Methwyd â llwytho ffeil KML</string>
+    <string name="load_kml_dialog_title">Llwytho KML</string>
+    <string name="load_kml_file">Llwytho</string>
+    <string name="enable_analytics">Anfon ystadegau defnydd</string>
+    <string name="enable_analytics_desc">Helpa wella Sky Map wrth anfon data anhysbys</string>
+    <string name="leonids" translation_description="Meteor Shower">Leonids</string>
+    <string name="geminids" translation_description="Meteor Shower">Geminids</string>
+    <string name="quadrantids" translation_description="Meteor Shower">Quadrantids</string>
+    <string name="lyrids" translation_description="Meteor Shower">Lyrids</string>
+    <string name="aquariids" translation_description="Meteor Shower">Eta Aquariids</string>
+    <string name="deltaaquariids" translation_description="Meteor Shower">Delta Aquariids</string>
+    <string name="perseids" translation_description="Meteor Shower">Perseids</string>
+    <string name="orionids" translation_description="Meteor Shower">Orionids</string>
+    <string name="puppidvelids" translation_description="Meteor Shower">Puppid-Velids</string>
+    <string name="ursids" translation_description="Meteor Shower">Ursids</string>
+
+    <string name="no_sensor_warning">Mae\'n bosib nad oes gan dy ddyfais synwyryddion cyfeiriad i\'r modd awtomatig gweithio.</string>
+    <string name="warning_dialog_title">Newyddion drwg!</string>
+    <string name="missing_sensor_dialog_text">\n
+        Yn anffodus, mae\'n bosib nad oes gan dy ddyfais un o\'r synwyryddion sydd ei angen ar Sky Map.\n\n
+        Er mwyn dangos yr awyr yn y cyfeiriad mae dy ddyfais yn pwyntio mae ar Sky Map angen cwmpawd a mesurydd cyflymiad. Mae dy ddyfais yn adrodd bod un ohonynt ar goll. Mae rhai dyfeisiau (e.e. Moto E) yn honni yn anghywir nad oes ynddynt gwmpawd.\n\n
+
+        Os oes wir synhwyrydd ar goll o dy ddyfais, ni fydd modd awto-synhwyro yn gweithio. Fodd bynnag, gellir dal i ddefnyddio Sky Map ar y ddyfais hon ym modd llaw, a llusgo, troi a chwyddo\'r map gyda dy fysedd.
+    </string>
+    <string name="do_not_show_again">Peidio â dangos y neges hon eto</string>
+    <string name="title_activity_diagnostic">Diagnosteg</string>
+    <string name="location_rationale_title">Pam ydym yn gofyn am dy leoliad?</string>
+    <string name="location_rationale_text">Mae pa sêr rwyt yn eu gweld yn dibynnu o ba ran o\'r blaned rwyt yn edrych. Heb wybod dy leoliad, ni allwn ddangos map cywir i ti. Os nad wyt am i dy ddyfais rhannu dy leoliad gyda ni, gellir gosod unrhyw leoliad o dy ddewis yn y gosodiadau.</string>
+    <string name="play_services_error">Rhybudd: Gwall Google Play Services - Posib na fydd adnabod lleoliad yn gweithio</string>
+    <string name="sensor_absent">Absennol</string>
+    <string name="sensor_accuracy_unknown">Cywirdeb: Anhysbys</string>
+    <string name="sensor_accuracy_unreliable">Cywirdeb: Annibynadwy</string>
+    <string name="sensor_accuracy_low">Cywirdeb: Isel</string>
+    <string name="sensor_accuracy_medium">Cywirdeb: Canolig</string>
+    <string name="sensor_accuracy_high">Cywirdeb: Uchel</string>
+    <string name="sensor_accuracy_nocontact">Cywirdeb: Dim cyswllt</string>
+    <string name="diagnostics_activity_general_heading">Cyffredinol</string>
+    <string name="diagnostics_activity_phone">Dyfais</string>
+    <string name="diagnostics_activity_android_version">Fersiwn Android</string>
+    <string name="diagnostics_activity_sky_map_version">Fersiwn Sky Map</string>
+    <string name="diagnostics_activity_sensors_heading">Synwyryddion</string>
+    <string name="diagnostics_activity_compass">Cwmpawd</string>
+    <string name="diagnostics_activity_accelerometer">Mesurydd Cyflymiad</string>
+    <string name="diagnostics_activity_rotation_vector">Cylchdro</string>
+    <string name="diagnostics_activity_gyroscope">Geirosgop</string>
+    <string name="diagnostics_activity_light_level">Lefel golau</string>
+    <string name="diagnostics_activity_location_and_time_heading">Lleoliad ac amser</string>
+    <string name="diagnostics_activity_gps">GPS</string>
+    <string name="diagnostics_activity_location">Lleoliad (lled., hyd.)</string>
+    <string name="diagnostics_activity_pointing_ra_dec">Pointing snapshot</string>
+    <string name="diagnostics_activity_magnetic_correction">Mag correction</string>
+    <string name="diagnostics_activity_local_datetime">Local datetime</string>
+    <string name="diagnostics_activity_universal_time">Universal datetime</string>
+    <string name="diagnostics_activity_network_heading">Rhwydwaith</string>
+    <string name="diagnostics_activity_connection">Cysylltiad</string>
+    <string name="diagnostics_activity_rotation_matrix">Rot Matrix</string>
+    <string name="enabled">Galluogwyd</string>
+    <string name="disabled">Analluogwyd</string>
+    <string name="permission_disabled">Caniatâd heb ei roi</string>
+    <string name="no_gps">Dim GPS</string>
+    <string name="connected">Wedi cysylltu</string>
+    <string name="disconnected">Heb gysylltu</string>
+    <string name="wifi">" (Wi-Fi)"</string>
+    <string name="cell_network">" (symudol)"</string>
+    <string name="menu_calibrate">Calibro</string>
+    <string name="compass_calibration_activity_heading_compass">Cwmpawd -</string>
+    <string name="compass_calibration_activity_do_not_show_this_again">Peidio â dangos hyn eto</string>
+    <string name="compass_calibration_activity_warning">Mae angen calibro dy gwmpawd</string>
+    <string name="sensor_reverse_preference_title">Gwrthdroi Z Magnetig</string>
+    <string name="sensor_reverse_preference_summary">Dull cywiro ar gyfer dyfeisiau â synwyryddion wedi\'u rhoi ar waith yn anghywir; angen ailgychwyn</string>
+    <string name="whats_new_dialog_title">Yn newydd</string>
+    <string name="disable_gyro_preference_title">Analluogi geirosgop</string>
+    <string name="disable_gyro_preference_summary">Nid oes gan bob dyfais geirosgop. Os oes un gan dy ddyfais di, bydd gwell canlyniadau os yw wedi\'i alluogi a\'r blwch hwn heb ei ddewis. Ar y llaw arall, os nad oes gan dy ddyfais geirosgop, mae\'n debyg na fydd Sky Map yn gweithio os yw\'r blwch hwn wedi\'i ddewis.</string>
+    <string name="rotate_horizon_preference_title">Cylchdroi wrth y gorwel</string>
+    <string name="rotate_horizon_preference_summary">Cylchdroi 90 gradd wrth y gorwel (ar gyfer sgriniau ble nad yw gorweddiad darlun yn bosib, e.e. sbectol glyfar)</string>
+</resources>

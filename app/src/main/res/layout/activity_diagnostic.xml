@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.google.android.stardroid.activities.DiagnosticActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="#0f3c91"
+        android:orientation="vertical"
+        android:showDividers="beginning|middle|end">
+
+        <TableLayout
+            style="@style/TableSection"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/diagnostics_activity_general_heading"
+                android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    style="@style/TableRow_RowHeading"
+                    android:text="@string/diagnostics_activity_phone"/>
+
+                <TextView
+                    android:id="@+id/diagnose_phone_txt"
+                    style="@style/TableRow_Element"
+                    android:text="Nexus 5x"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    style="@style/TableRow_RowHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/diagnostics_activity_android_version"/>
+
+                <TextView
+                    android:id="@+id/diagnose_android_version_txt"
+                    style="@style/TableRow_Element"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6.1 (xxx)"/>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <TextView
+                    style="@style/TableRow_RowHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/diagnostics_activity_sky_map_version"/>
+
+                <TextView
+                    android:id="@+id/diagnose_skymap_version_txt"
+                    style="@style/TableRow_Element"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0.0.1 (9999)"/>
+            </TableRow>
+        </TableLayout>
+
+        <TableLayout
+            style="@style/TableSection"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/diagnostics_activity_sensors_heading"
+                android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    style="@style/TableRow_RowHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/diagnostics_activity_compass"/>
+
+                <TextView
+                    android:id="@+id/diagnose_compass_values_txt"
+                    style="@style/TableRow_Element"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-, -, -"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    style="@style/TableRow_RowHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/diagnostics_activity_accelerometer"/>
+
+                <TextView
+                    android:id="@+id/diagnose_accelerometer_values_txt"
+                    style="@style/TableRow_Element"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-, -, -"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    style="@style/TableRow_RowHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/diagnostics_activity_gyroscope"/>
+
+                <TextView
+                    android:id="@+id/diagnose_gyro_values_txt"
+                    style="@style/TableRow_Element"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-, -, -"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    style="@style/TableRow_RowHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/diagnostics_activity_rotation_vector"/>
+
+                <TextView
+                    style="@style/TableRow_Element"
+                    android:id="@+id/diagnose_rotation_values_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-, -, -"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    style="@style/TableRow_RowHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/diagnostics_activity_rotation_matrix"/>
+
+                <TextView
+                    style="@style/TableRow_Element"
+                    android:id="@+id/diagnose_rotation_matrix_row1_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-, -, -"/>
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    style="@style/TableRow_RowHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    style="@style/TableRow_Element"
+                    android:id="@+id/diagnose_rotation_matrix_row2_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-, -, -"/>
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    style="@style/TableRow_RowHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    style="@style/TableRow_Element"
+                    android:id="@+id/diagnose_rotation_matrix_row3_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-, -, -"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    style="@style/TableRow_RowHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/diagnostics_activity_light_level"/>
+
+                <TextView
+                    android:id="@+id/diagnose_light_values_txt"
+                    style="@style/TableRow_Element"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-, -, -"/>
+            </TableRow>
+        </TableLayout>
+
+        <TableLayout
+            style="@style/TableSection"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/diagnostics_activity_location_and_time_heading"
+                android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    style="@style/TableRow_RowHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/diagnostics_activity_gps"/>
+
+                <TextView
+                    android:id="@+id/diagnose_gps_status_txt"
+                    style="@style/TableRow_Element"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(waiting)"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    style="@style/TableRow_RowHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/diagnostics_activity_location"/>
+
+                <TextView
+                    android:id="@+id/diagnose_location_txt"
+                    style="@style/TableRow_Element"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="--, -- (manual)"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    style="@style/TableRow_RowHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/diagnostics_activity_pointing_ra_dec"/>
+
+                <TextView
+                    android:id="@+id/diagnose_pointing_txt"
+                    style="@style/TableRow_Element"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-123, 32"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    style="@style/TableRow_RowHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/diagnostics_activity_magnetic_correction"/>
+
+                <TextView
+                    android:id="@+id/diagnose_magnetic_correction_txt"
+                    style="@style/TableRow_Element"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+?"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    style="@style/TableRow_RowHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/diagnostics_activity_local_datetime"/>
+
+                <TextView
+                    android:id="@+id/diagnose_local_datetime_txt"
+                    style="@style/TableRow_Element"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="13:33 July 20, 1969"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    style="@style/TableRow_RowHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/diagnostics_activity_universal_time"/>
+
+                <TextView
+                    android:id="@+id/diagnose_utc_datetime_txt"
+                    style="@style/TableRow_Element"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20:18 July 20, 1969"/>
+            </TableRow>
+        </TableLayout>
+
+        <TableLayout
+            style="@style/TableSection">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/diagnostics_activity_network_heading"
+                android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    style="@style/TableRow_RowHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/diagnostics_activity_connection"/>
+
+                <TextView
+                    android:id="@+id/diagnose_network_status_txt"
+                    style="@style/TableRow_Element"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="WiFi?"/>
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

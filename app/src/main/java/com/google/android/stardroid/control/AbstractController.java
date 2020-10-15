@@ -14,9 +14,11 @@
 
 package com.google.android.stardroid.control;
 
+import android.util.Log;
+
 import com.google.android.stardroid.util.MiscUtil;
 
-import android.util.Log;
+import javax.inject.Inject;
 
 /**
  * Implements some of the boilerplate of a {@link Controller}.
@@ -25,9 +27,10 @@ import android.util.Log;
  */
 public abstract class AbstractController implements Controller {
   private static final String TAG = MiscUtil.getTag(AbstractController.class);
-  protected AstronomerModel model;
+  @Inject AstronomerModel model;
   protected boolean enabled = true;
 
+  // TODO(jontayler): remove this
   @Override
   public void setModel(AstronomerModel model) {
     this.model = model;

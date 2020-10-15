@@ -14,43 +14,36 @@
 package com.google.android.stardroid;
 
 import android.app.Application;
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
-import android.content.res.AssetManager;
-import android.content.res.Resources;
 import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Build;
-import android.preference.PreferenceManager;
+import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 
-import com.google.android.stardroid.control.AstronomerModel;
-import com.google.android.stardroid.control.AstronomerModelImpl;
-import com.google.android.stardroid.control.ZeroMagneticDeclinationCalculator;
-import com.google.android.stardroid.layers.EclipticLayer;
-import com.google.android.stardroid.layers.GridLayer;
-import com.google.android.stardroid.layers.HorizonLayer;
+import androidx.core.content.pm.PackageInfoCompat;
+import androidx.preference.PreferenceManager;
+
 import com.google.android.stardroid.layers.LayerManager;
-import com.google.android.stardroid.layers.MeteorShowerLayer;
-import com.google.android.stardroid.layers.NewConstellationsLayer;
-import com.google.android.stardroid.layers.NewMessierLayer;
-import com.google.android.stardroid.layers.NewStarsLayer;
-import com.google.android.stardroid.layers.PlanetsLayer;
-import com.google.android.stardroid.layers.SkyGradientLayer;
 import com.google.android.stardroid.util.Analytics;
-import com.google.android.stardroid.util.Analytics.Slice;
+import com.google.android.stardroid.util.AnalyticsInterface;
 import com.google.android.stardroid.util.MiscUtil;
 import com.google.android.stardroid.util.PreferenceChangeAnalyticsTracker;
+import com.google.android.stardroid.views.PreferencesButton;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.ScheduledThreadPoolExecutor;
+
+import javax.inject.Inject;
 
 /**
  * The main Stardroid Application class.
@@ -62,57 +55,56 @@ public class StardroidApplication extends Application {
   private static final String PREVIOUS_APP_VERSION_PREF = "previous_app_version";
   private static final String NONE = "Clean install";
   private static final String UNKNOWN = "Unknown previous version";
-  // The Application class is a singleton, so treat it as such, with static
-  // fields.  This is necessary so that the content provider can access the
-  // things it needs; there seems to be no easy way for a ContentProvider
-  // to access its Application object.
-  private static AstronomerModel model;
-  private static LayerManager layerManager;
-  private static ExecutorService backgroundExecutor;
+
+  @Inject SharedPreferences preferences;
+  // We keep a reference to this just to start it initializing.
+  @Inject LayerManager layerManager;
+  @Inject AnalyticsInterface analytics;
+  @Inject SensorManager sensorManager;
 
   // We need to maintain references to this object to keep it from
   // getting gc'd.
-  private final PreferenceChangeAnalyticsTracker preferenceChangeAnalyticsTracker =
-      new PreferenceChangeAnalyticsTracker(Analytics.getInstance(this));
-
+  @Inject PreferenceChangeAnalyticsTracker preferenceChangeAnalyticsTracker;
+  private ApplicationComponent component;
 
   @Override
   public void onCreate() {
     Log.d(TAG, "StardroidApplication: onCreate");
     super.onCreate();
 
+    component = DaggerApplicationComponent.builder()
+        .applicationModule(new ApplicationModule(this))
+        .build();
+    component.inject(this);
+
     Log.i(TAG, "OS Version: " + android.os.Build.VERSION.RELEASE
-            + "(" + android.os.Build.VERSION.SDK + ")");
+            + "(" + android.os.Build.VERSION.SDK_INT + ")");
     String versionName = getVersionName();
     Log.i(TAG, "Sky Map version " + versionName + " build " + getVersion());
-    backgroundExecutor = new ScheduledThreadPoolExecutor(1);
+
     // This populates the default values from the preferences XML file. See
     // {@link DefaultValues} for more details.
     PreferenceManager.setDefaultValues(this, R.xml.preference_screen, false);
 
-    AssetManager assetManager = this.getAssets();
-    SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-    Resources resources = this.getResources();
-    // Start the LayerManager initializing
-    getLayerManager(assetManager, preferences, resources, this);
-
-    setUpAnalytics(versionName, preferences);
+    setUpAnalytics(versionName);
 
     performFeatureCheck();
 
     Log.d(TAG, "StardroidApplication: -onCreate");
   }
 
-  private void setUpAnalytics(String versionName, SharedPreferences preferences) {
-    Analytics analytics = Analytics.getInstance(this);
-    analytics.setProductVersion(versionName);
-    analytics.setCustomVar(Slice.ANDROID_OS, Integer.toString(Build.VERSION.SDK_INT));
-    analytics.setCustomVar(Slice.SKYMAP_VERSION, versionName);
-    analytics.setCustomVar(Slice.DEVICE_NAME, android.os.Build.MODEL);
+  public ApplicationComponent getApplicationComponent() {
+    return component;
+  }
+
+  private void setUpAnalytics(String versionName) {
     analytics.setEnabled(preferences.getBoolean(Analytics.PREF_KEY, true));
-    analytics.trackPageView(Analytics.APPLICATION_CREATE);
+
+    // Ugly hack since this isn't injectable
+    PreferencesButton.setAnalytics(analytics);
 
     String previousVersion = preferences.getString(PREVIOUS_APP_VERSION_PREF, NONE);
+    boolean newUser = false;
     if (previousVersion.equals(NONE)) {
       // It's possible a previous version exists, it's just that it wasn't a recent enough
       // version to have set PREVIOUS_APP_VERSION_PREF.  If so, we should see that the TOS
@@ -120,20 +112,25 @@ public class StardroidApplication extends Application {
       String oldPreviousVersionKey = "read_tos";
       if (preferences.contains(oldPreviousVersionKey)) {
         previousVersion = UNKNOWN;
+      } else {
+        // Best guess that this is the first every run of a new user.
+        // Could also be someone with a new device.
+        newUser = true;
       }
     }
+    analytics.setUserProperty(AnalyticsInterface.NEW_USER, Boolean.toString(newUser));
+
     preferences.edit().putString(PREVIOUS_APP_VERSION_PREF, versionName).commit();
     if (!previousVersion.equals(versionName)) {
       // It's either an upgrade or a new installation
       Log.d(TAG, "New installation: version " + versionName);
-      analytics.trackEvent(Analytics.INSTALL_CATEGORY, Analytics.INSTALL_EVENT + versionName,
-          Analytics.PREVIOUS_VERSION + previousVersion, 1);
+      // No need to track any more - it's automatic in Firebase.
     }
 
     // It will be interesting to see *when* people use Sky Map.
-    analytics.trackEvent(
-        Analytics.GENERAL_CATEGORY, Analytics.START_HOUR,
-        Integer.toString(Calendar.getInstance().get(Calendar.HOUR_OF_DAY)) + 'h', 0);
+    Bundle b = new Bundle();
+    b.putInt(Analytics.START_EVENT_HOUR, Calendar.getInstance().get(Calendar.HOUR_OF_DAY));
+    analytics.trackEvent(Analytics.START_EVENT, b);
 
     preferences.registerOnSharedPreferenceChangeListener(preferenceChangeAnalyticsTracker);
   }
@@ -141,13 +138,14 @@ public class StardroidApplication extends Application {
   @Override
   public void onTerminate() {
     super.onTerminate();
-    Analytics.getInstance(this).setEnabled(false);
+    analytics.setEnabled(false);
   }
 
   /**
    * Returns the version string for Sky Map.
    */
   public String getVersionName() {
+    // TODO(jontayler): update to use the info created by gradle.
     PackageManager packageManager = getPackageManager();
     try {
       PackageInfo info = packageManager.getPackageInfo(this.getPackageName(), 0);
@@ -161,11 +159,11 @@ public class StardroidApplication extends Application {
   /**
    * Returns the build number for Sky Map.
    */
-  public int getVersion() {
+  public long getVersion() {
     PackageManager packageManager = getPackageManager();
     try {
       PackageInfo info = packageManager.getPackageInfo(this.getPackageName(), 0);
-      return info.versionCode;
+      return PackageInfoCompat.getLongVersionCode(info);
     } catch (NameNotFoundException e) {
       Log.e(TAG, "Unable to obtain package info");
       return -1;
@@ -173,60 +171,15 @@ public class StardroidApplication extends Application {
   }
 
   /**
-   * Get the catalog.
-   * This should return relatively quickly, with the catalogs initializing
-   * themselves on background threads.
+   * Returns either the name of the sensor or a string version of the sensor type id, depending
+   * on the supported OS level along with some context.
    */
-  public static synchronized LayerManager getLayerManager(AssetManager assetManager,
-                                                          SharedPreferences preferences,
-                                                          Resources resources,
-                                                          Context context) {
-    if (layerManager == null) {
-      Log.i(TAG, "Initializing LayerManager");
-      layerManager = new LayerManager(preferences, getModel());
-
-      layerManager.addLayer(new NewStarsLayer(assetManager, resources));
-      layerManager.addLayer(new NewMessierLayer(assetManager, resources));
-      layerManager.addLayer(new NewConstellationsLayer(assetManager, resources));
-      layerManager.addLayer(new PlanetsLayer(getModel(), resources, preferences));
-      layerManager.addLayer(new MeteorShowerLayer(getModel(), resources));
-      layerManager.addLayer(new GridLayer(resources, 24, 19));
-      layerManager.addLayer(new HorizonLayer(getModel(), resources));
-      layerManager.addLayer(new EclipticLayer(resources));
-      layerManager.addLayer(new SkyGradientLayer(getModel(), resources));
-      // layerManager.addLayer(new IssLayer(resources, getModel()));
-
-      layerManager.initialize();
+  public static String getSafeNameForSensor(Sensor sensor) {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT_WATCH) {
+      return "Sensor type: " + sensor.getStringType() + ": " + sensor.getType();
     } else {
-      Log.i(TAG, "LayerManager already initialized.");
+      return "Sensor type: " + sensor.getType();
     }
-    return layerManager;
-  }
-
-  /**
-   * Return the model.
-   */
-  public static synchronized AstronomerModel getModel() {
-    if (model == null) {
-      model = new AstronomerModelImpl(new ZeroMagneticDeclinationCalculator());
-    }
-    return model;
-  }
-
-  /**
-   * Schedules this runnable to run as soon as possible on a background
-   * thread.
-   *
-   * @param runnable
-   */
-  // TODO(johntaylor): the idea, and I'm not sure yet whether it's a good one,
-  // is to centralize the management of background threads so we don't have
-  // them scattered all over the app.  We can then control how many threads
-  // are spawned, perhaps having a VIP service for extra important runnables
-  // that we'd prefer not to queue, as well as providing convenience functions
-  // to facilitate callbacks on the UI thread.
-  public static void runInBackground(Runnable runnable) {
-    backgroundExecutor.submit(runnable);
   }
 
   /**
@@ -234,51 +187,49 @@ public class StardroidApplication extends Application {
    * so we can judge when to add/drop support.
    */
   private void performFeatureCheck() {
-    Analytics analytics = Analytics.getInstance(this);
-    SensorManager sensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
     if (sensorManager == null) {
       Log.e(TAG, "No sensor manager");
-      analytics.trackEvent(
-          Analytics.APP_CATEGORY, Analytics.SENSOR_AVAILABILITY, "No Sensor Manager", 0);
+      analytics.setUserProperty(Analytics.DEVICE_SENSORS, Analytics.DEVICE_SENSORS_NONE);
+      return;
     }
-    // Minimum requirements
-    if (sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER) != null) {
-      if (sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD) != null) {
-        Log.i(TAG, "Minimal sensors available");
-        analytics.trackEvent(
-            Analytics.APP_CATEGORY, Analytics.SENSOR_AVAILABILITY, "Minimal Sensors: Yes", 1);
-      } else {
-        Log.e(TAG, "No magnetic field sensor");
-        analytics.trackEvent(
-            Analytics.APP_CATEGORY, Analytics.SENSOR_AVAILABILITY, "No Mag Field Sensor", 0);
-      }
-    } else {
-      if (sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD) != null) {
-        Log.e(TAG, "No accelerometer");
-        analytics.trackEvent(
-            Analytics.APP_CATEGORY, Analytics.SENSOR_AVAILABILITY, "No Accel Sensor", 0);
-      } else {
-        Log.e(TAG, "No magnetic field sensor or accelerometer");
-        analytics.trackEvent(
-            Analytics.APP_CATEGORY, Analytics.SENSOR_AVAILABILITY, "No Mag Field/Accel Sensors", 0);
+    // Reported available sensors
+    List<String> reportedSensors = new ArrayList<>();
+    if (hasDefaultSensor(Sensor.TYPE_ACCELEROMETER)) {
+      reportedSensors.add(Analytics.DEVICE_SENSORS_ACCELEROMETER);
+    }
+    if (hasDefaultSensor(Sensor.TYPE_GYROSCOPE)) {
+      reportedSensors.add(Analytics.DEVICE_SENSORS_GYRO);
+    }
+    if (hasDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD)) {
+      reportedSensors.add(Analytics.DEVICE_SENSORS_MAGNETIC);
+    }
+    if (hasDefaultSensor(Sensor.TYPE_ROTATION_VECTOR)) {
+      reportedSensors.add(Analytics.DEVICE_SENSORS_ROTATION);
+    }
+
+    // TODO: Change to String.join once we're at API > 26
+    analytics.setUserProperty(
+            Analytics.DEVICE_SENSORS, TextUtils.join("|", reportedSensors));
+
+    // Check for a particularly strange combo - it would be weird to have a rotation sensor
+    // but no accelerometer or magnetic field sensor
+    boolean hasRotationSensor = false;
+    if (hasDefaultSensor(Sensor.TYPE_ROTATION_VECTOR)) {
+      if (hasDefaultSensor(Sensor.TYPE_ACCELEROMETER) && hasDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD)
+              && hasDefaultSensor(Sensor.TYPE_GYROSCOPE)) {
+        hasRotationSensor = true;
+      } else if (hasDefaultSensor(Sensor.TYPE_ACCELEROMETER) && hasDefaultSensor(
+              Sensor.TYPE_MAGNETIC_FIELD)) {
+        // Even though it allegedly has the rotation vector sensor too many gyro-less phones
+        // lie about this, so put these devices on the 'classic' sensor code for now.
+        hasRotationSensor = false;
       }
     }
 
-    // Do we at least have defaults for the main ones?
-    int[] importantSensorTypes = {Sensor.TYPE_ACCELEROMETER, Sensor.TYPE_GYROSCOPE,
-        Sensor.TYPE_MAGNETIC_FIELD, Sensor.TYPE_LIGHT, Sensor.TYPE_ROTATION_VECTOR,
-        Sensor.TYPE_ORIENTATION};
-
-    for (int sensorType : importantSensorTypes) {
-      if (sensorManager.getDefaultSensor(sensorType) == null) {
-        Log.i(TAG, "No sensor of type " + sensorType);
-        analytics.trackEvent(
-            Analytics.APP_CATEGORY, Analytics.SENSOR_TYPE + sensorType, "Sensor Absent", 0);
-      } else {
-        Log.i(TAG, "Sensor present of type " + sensorType);
-        analytics.trackEvent(
-            Analytics.APP_CATEGORY, Analytics.SENSOR_TYPE + sensorType, "Sensor Present", 1);
-      }
+    // Enable Gyro if available and user hasn't already disabled it.
+    if (!preferences.contains(ApplicationConstants.SHARED_PREFERENCE_DISABLE_GYRO)) {
+      preferences.edit().putBoolean(
+          ApplicationConstants.SHARED_PREFERENCE_DISABLE_GYRO, !hasRotationSensor).apply();
     }
 
     // Lastly a dump of all the sensors.
@@ -292,16 +243,34 @@ public class StardroidApplication extends Application {
     Log.d(TAG, "All sensors summary:");
     for (String sensorType : sensorTypes) {
       Log.i(TAG, sensorType);
-      analytics.trackEvent(
-          Analytics.APP_CATEGORY, Analytics.SENSOR_NAME, sensorType, 1);
     }
   }
 
-  private static String getSafeNameForSensor(Sensor sensor) {
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT_WATCH) {
-      return "Sensor type: " + sensor.getStringType() + ": " + sensor.getType();
-    } else {
-     return "Sensor type: " + sensor.getType();
+  private boolean hasDefaultSensor(int sensorType) {
+    if (sensorManager == null) {
+      return false;
     }
+    Sensor sensor = sensorManager.getDefaultSensor(sensorType);
+    if (sensor == null) {
+      return false;
+    }
+    SensorEventListener dummy = new SensorEventListener() {
+      @Override
+      public void onSensorChanged(SensorEvent event) {
+        // Nothing
+      }
+
+      @Override
+      public void onAccuracyChanged(Sensor sensor, int accuracy) {
+        // Nothing
+      }
+    };
+    boolean success = sensorManager.registerListener(
+        dummy, sensor, SensorManager.SENSOR_DELAY_UI);
+    if (!success) {
+      analytics.setUserProperty(Analytics.SENSOR_LIAR, "true");
+    }
+    sensorManager.unregisterListener(dummy);
+    return success;
   }
 }

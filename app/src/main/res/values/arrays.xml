@@ -2,11 +2,14 @@
 <resources>
     <string-array name="popular_date_examples">
         <item translation_description="The user's current time">Now</item>
-        <item>Next evening sunset</item>
-        <item>Next morning sunrise</item>
-        <item>Next full moon</item>
-        <item>Apollo 11 moon landing</item>
-        <item>Solar eclipse of May 29, 1919</item>
+        <item>Next evening sunset</item><!-- 1 -->
+        <item>Next morning sunrise</item><!-- 2 -->
+        <item>Next full moon</item><!-- 3 -->
+        <item>Mercury transit of May 09, 2016</item><!-- 4 -->
+        <item>Solar eclipse of Aug 21, 2017</item><!-- 5 -->
+        <item>Solar eclipse of March 9, 2016</item><!-- 6 -->
+        <item>Solar eclipse of May 29, 1919</item><!-- 7 -->
+        <item>Apollo 11 moon landing</item><!-- 8 -->
     </string-array>
     <string-array name="sensor_speed">
         <item translation_description="Slow sensor speed">Slow</item>
@@ -14,7 +17,9 @@
         <item translation_description="Fast sensor speed">Fast</item>
     </string-array>
     <string-array name="sensor_damping">
-        <item translation_description="Standard sensor damping factor">Standard</item>
-        <item translation_description="High sensor damping factor">High</item>
+        <item translation_description="Low sensor damping factor">Jumpy</item>
+        <item translation_description="Medium sensor damping factor">Medium</item>
+        <item translation_description="Extra High sensor damping factor">About right</item>
+        <item translation_description="Really High sensor damping factor">Laggy</item>
     </string-array>
 </resources>

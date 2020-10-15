@@ -1,21 +1,32 @@
-apply plugin: 'java'
 apply plugin: 'application'
-apply plugin: 'distribution'
+apply plugin: 'com.google.protobuf'
+apply plugin: 'idea'
 
+sourceSets {
+    main {
+        proto {
+            // In addition to the default 'src/main/proto'
+            srcDir '../datamodel/src/main/proto'
+        }
+    }
+}
+
+protobuf {
+    protoc {
+        // Download from repositories
+        artifact = 'com.google.protobuf:protoc:3.8.0'
+    }
+}
 
 dependencies {
-    compile project(':app')
-    compile 'com.google.guava:guava:19.0'
-    // TODO(jontayler): Terrible hack that should go when we revamp the tools.
-    compile files('../app/build/intermediates/classes/release/')
-    compile fileTree(include: ['*.jar'], dir: 'libs')
+    // Unlike the Android App which should only use the lite version of protos we need the full
+    // version here as we need TextFormat which doesn't exist in the lite app.
+    implementation 'com.google.protobuf:protobuf-java:3.8.0'
+    implementation 'com.google.guava:guava:21.0'
 }
 
 // Gradle fail.  Creating multiple distributions in a distributions {} does not generate
 // multiple executable distributions with the application plugin.
-// So instead we create one monster than can do it all.
+// So instead we create one monster that can do it all.
 applicationName = "datagen"
 mainClassName = "com.google.android.stardroid.data.Main"
-
-
-

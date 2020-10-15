@@ -5,8 +5,11 @@
         <item>Próximo pôr do sol</item>
         <item>Próximo nascer do sol</item>
         <item>Próxima lua cheia</item>
-        <item>Pouso da Apollo 11 na lua</item>
+        <item>Mercury transit of May 09, 2016</item>
+        <item>Eclipse solar em Aug 21, 2017</item>
+        <item>Eclipse solar em March 9, 2016</item>
         <item>Eclipse solar em 29 de maio de 1919</item>
+        <item>Pouso da Apollo 11 na lua</item>
     </string-array>
     <string-array name="sensor_speed">
         <item>Lenta</item>
@@ -14,6 +17,8 @@
         <item>Rápida</item>
     </string-array>
     <string-array name="sensor_damping">
+        <item>Jumpy</item>
+        <item>Medium</item>
         <item>Padrão</item>
         <item>Alta</item>
     </string-array>

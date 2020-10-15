@@ -24,6 +24,8 @@ import com.google.android.stardroid.util.MiscUtil;
 import java.util.ArrayList;
 import java.util.Date;
 
+import javax.inject.Inject;
+
 /**
  * Manages all the different controllers that affect the model of the observer.
  * Is both a factory and acts as a facade to the underlying controllers.
@@ -43,31 +45,20 @@ public class ControllerGroup implements Controller {
   private boolean usingAutoMode = true;
   private AstronomerModel model;
 
-  /**
-   * Creates controller group, fully populated with the required subcontrollers.
-   */
-  public static ControllerGroup createControllerGroup(Context context) {
-    ControllerGroup group = new ControllerGroup();
-
-    group.addController(new LocationController(context));
-    group.sensorOrientationController = new SensorOrientationController(context);
-    group.addController(group.sensorOrientationController);
-    group.manualDirectionController = new ManualOrientationController();
-    group.addController(group.manualDirectionController);
-    group.zoomController = new ZoomController();
-    group.addController(group.zoomController);
-    group.teleportingController = new TeleportingController();
-    group.addController(group.teleportingController);
-    group.setAutoMode(true);
-    return group;
-  }
-
-  /**
-   * Clients will generally use the factory method
-   * {@link #createControllerGroup(Context)}.
-   */
-  @VisibleForTesting
-  public ControllerGroup() {
+  // TODO(jontayler): inject everything else.
+  @Inject
+  ControllerGroup(Context context, SensorOrientationController sensorOrientationController,
+                  LocationController locationController) {
+    addController(locationController);
+    this.sensorOrientationController = sensorOrientationController;
+    addController(sensorOrientationController);
+    manualDirectionController = new ManualOrientationController();
+    addController(manualDirectionController);
+    zoomController = new ZoomController();
+    addController(zoomController);
+    teleportingController = new TeleportingController();
+    addController(teleportingController);
+    setAutoMode(true);
   }
 
   @Override
@@ -207,7 +198,7 @@ public class ControllerGroup implements Controller {
   }
   
   /**
-   * Adds a new controller to this group.
+   * Adds a new controller to this 
    */
   @VisibleForTesting
   public void addController(Controller controller) {

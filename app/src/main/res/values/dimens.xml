@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-  <!--
+<!--
     Introduced to support TimeTravel changes. The policy of having these
     values in a dimens.xml file is not implemented consistently throughout
     stardroid package.
   -->
 <resources>
-  <dimen name="menu_text_size">10pt</dimen>
-  <color name="menu_gray">#ff888888</color>
+    <dimen name="menu_text_size">10pt</dimen>
+    <color name="menu_gray">#ff888888</color>
+    <dimen name="text_margin">16dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="gallery_spacing">10px</dimen>
 </resources>

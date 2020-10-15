@@ -14,10 +14,8 @@
 
 package com.google.android.stardroid.activities;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +25,8 @@ import android.widget.BaseAdapter;
 import android.widget.Gallery;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.preference.PreferenceManager;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.util.ActivityLightLevelChanger;
@@ -38,13 +38,15 @@ import com.google.android.stardroid.util.MiscUtil;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
 /**
  * Displays a series of images to the user.  Selecting an image
  * invokes Sky Map Search.
  *
  * @author John Taylor
  */
-public class ImageGalleryActivity extends Activity {
+public class ImageGalleryActivity extends InjectableActivity {
   /** The index of the image id Intent extra.*/
   public static final String IMAGE_ID = "image_id";
 
@@ -52,6 +54,8 @@ public class ImageGalleryActivity extends Activity {
   private List<GalleryImage> galleryImages;
 
   private ActivityLightLevelManager activityLightLevelManager;
+  @Inject
+  Analytics analytics;
 
   private class ImageAdapter extends BaseAdapter {
     public int getCount() {
@@ -89,6 +93,7 @@ public class ImageGalleryActivity extends Activity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+    getApplicationComponent().inject(this);
     setContentView(R.layout.imagegallery);
     activityLightLevelManager = new ActivityLightLevelManager(
         new ActivityLightLevelChanger(this, null),
@@ -100,7 +105,6 @@ public class ImageGalleryActivity extends Activity {
   @Override
   public void onStart() {
     super.onStart();
-    Analytics.getInstance(this).trackPageView(Analytics.IMAGE_GALLERY_ACTIVITY);
   }
 
   @Override

@@ -14,6 +14,9 @@
 
 package com.google.android.stardroid.control;
 
+import android.hardware.SensorManager;
+import android.util.Log;
+
 import com.google.android.stardroid.ApplicationConstants;
 import com.google.android.stardroid.units.GeocentricCoordinates;
 import com.google.android.stardroid.units.LatLong;
@@ -72,6 +75,8 @@ public class AstronomerModelImpl implements AstronomerModel {
   private static final String TAG = MiscUtil.getTag(AstronomerModelImpl.class);
   private static final Vector3 POINTING_DIR_IN_PHONE_COORDS = new Vector3(0, 0, -1);
   private static final Vector3 SCREEN_UP_IN_PHONE_COORDS = new Vector3(0, 1, 0);
+  private static final Vector3 SCREEN_DOWN_IN_PHONE_COORDS = new Vector3(1, 0, 0);
+  private Vector3 screenInPhoneCoords = SCREEN_UP_IN_PHONE_COORDS;
   private static final Vector3 AXIS_OF_EARTHS_ROTATION = new Vector3(0, 0, 1);
   private static final long MINIMUM_TIME_BETWEEN_CELESTIAL_COORD_UPDATES_MILLIS = 60000L;
 
@@ -90,10 +95,16 @@ public class AstronomerModelImpl implements AstronomerModel {
   private Pointing pointing = new Pointing();
 
   /** The sensor acceleration in the phone's coordinate system. */
-  private Vector3 acceleration = ApplicationConstants.INITIAL_DOWN;
+  private Vector3 acceleration = ApplicationConstants.INITIAL_DOWN.copy();
+
+  private Vector3 upPhone = Geometry.scaleVector(acceleration, -1);
 
   /** The sensor magnetic field in the phone's coordinate system. */
-  private Vector3 magneticField = ApplicationConstants.INITIAL_SOUTH;
+  private Vector3 magneticField = ApplicationConstants.INITIAL_SOUTH.copy();
+
+  private boolean useRotationVector = false;
+
+  private float[] rotationVector = new float[]{1, 0, 0, 0};
 
   /** North along the ground in celestial coordinates. */
   private Vector3 trueNorthCelestial = new Vector3(1, 0, 0);
@@ -119,6 +130,16 @@ public class AstronomerModelImpl implements AstronomerModel {
   }
 
   @Override
+  public void setHorizontalRotation(boolean value) {
+    if (value) {
+      screenInPhoneCoords = SCREEN_DOWN_IN_PHONE_COORDS;
+    }
+    else {
+      screenInPhoneCoords = SCREEN_UP_IN_PHONE_COORDS;
+    }
+  }
+
+  @Override
   public void setAutoUpdatePointing(boolean autoUpdatePointing) {
     this.autoUpdatePointing = autoUpdatePointing;
   }
@@ -131,6 +152,11 @@ public class AstronomerModelImpl implements AstronomerModel {
   @Override
   public void setFieldOfView(float degrees) {
     fieldOfView = degrees;
+  }
+
+  @Override
+  public float getMagneticCorrection() {
+    return magneticDeclinationCalculator.getDeclination();
   }
 
   @Override
@@ -150,14 +176,32 @@ public class AstronomerModelImpl implements AstronomerModel {
   }
 
   @Override
-  public Vector3 getPhoneAcceleration() {
-    return acceleration;
+  public Vector3 getPhoneUpDirection() {
+    return upPhone;
   }
+
+  private static final float TOL = 0.01f;
 
   @Override
   public void setPhoneSensorValues(Vector3 acceleration, Vector3 magneticField) {
+    if (magneticField.length2() < TOL || acceleration.length2() < TOL) {
+      Log.w(TAG, "Invalid sensor values - ignoring");
+      Log.w(TAG, "Mag: " + magneticField);
+      Log.w(TAG, "Accel: " + acceleration);
+      return;
+    }
     this.acceleration.assign(acceleration);
     this.magneticField.assign(magneticField);
+    useRotationVector = false;
+  }
+
+  @Override
+  public void setPhoneSensorValues(float[] rotationVector) {
+    // TODO(jontayler): What checks do we need for this to be valid?
+    // Note on some phones such as the Galaxy S4 this vector is the wrong size and needs to be
+    // truncated to 4.
+    System.arraycopy(rotationVector, 0, this.rotationVector, 0, Math.min(rotationVector.length, 4));
+    useRotationVector = true;
   }
 
   @Override
@@ -217,10 +261,13 @@ public class AstronomerModelImpl implements AstronomerModel {
       return;
     }
 
+    calculateLocalNorthAndUpInCelestialCoords(false);
+    calculateLocalNorthAndUpInPhoneCoordsFromSensors();
+
     Matrix33 transform = matrixMultiply(axesMagneticCelestialMatrix, axesPhoneInverseMatrix);
 
     Vector3 viewInSpaceSpace = matrixVectorMultiply(transform, POINTING_DIR_IN_PHONE_COORDS);
-    Vector3 screenUpInSpaceSpace = matrixVectorMultiply(transform, SCREEN_UP_IN_PHONE_COORDS);
+    Vector3 screenUpInSpaceSpace = matrixVectorMultiply(transform, screenInPhoneCoords);
 
     pointing.updateLineOfSight(viewInSpaceSpace);
     pointing.updatePerpendicular(screenUpInSpaceSpace);
@@ -262,25 +309,38 @@ public class AstronomerModelImpl implements AstronomerModel {
                                                magneticEastCelestial);
   }
 
+  // TODO(jontayler): with the switch to using the rotation vector sensor this is rather
+  // convoluted and doing too much work.  It can be greatly simplified when we rewrite the
+  // rendering module.
   /**
    * Calculates local North and Up vectors in terms of the phone's coordinate
-   * frame.
+   * frame from the magnetic field and accelerometer sensors.
    */
-  private void calculateLocalNorthAndUpInPhoneCoords() {
-    // TODO(johntaylor): we can reduce the number of vector copies done in here.
-    Vector3 down = acceleration.copy();
-    down.normalize();
-    // Magnetic field goes *from* North to South, so reverse it.
-    Vector3 magneticFieldToNorth = magneticField.copy();
-    magneticFieldToNorth.scale(-1);
-    magneticFieldToNorth.normalize();
-    // This is the vector to magnetic North *along the ground*.
-    Vector3 magneticNorthPhone = addVectors(magneticFieldToNorth,
-                                 scaleVector(down, -scalarProduct(magneticFieldToNorth, down)));
-    magneticNorthPhone.normalize();
-    Vector3 upPhone = scaleVector(down, -1);
-    Vector3 magneticEastPhone = vectorProduct(magneticNorthPhone, upPhone);
-
+  private void calculateLocalNorthAndUpInPhoneCoordsFromSensors() {
+    Vector3 magneticNorthPhone;
+    Vector3 magneticEastPhone;
+    if (useRotationVector) {
+      float[] rotationMatrix = new float[9];
+      SensorManager.getRotationMatrixFromVector(rotationMatrix, rotationVector);
+      // The up and north vectors are the 2nd and 3rd rows of this matrix.
+      magneticNorthPhone = new Vector3(rotationMatrix[3], rotationMatrix[4], rotationMatrix[5]);
+      upPhone = new Vector3(rotationMatrix[6], rotationMatrix[7], rotationMatrix[8]);
+      magneticEastPhone = new Vector3(rotationMatrix[0], rotationMatrix[1], rotationMatrix[2]);
+    } else {
+      // TODO(johntaylor): we can reduce the number of vector copies done in here.
+      Vector3 down = acceleration.copy();
+      down.normalize();
+      // Magnetic field goes *from* North to South, so reverse it.
+      Vector3 magneticFieldToNorth = magneticField.copy();
+      magneticFieldToNorth.scale(-1);
+      magneticFieldToNorth.normalize();
+      // This is the vector to magnetic North *along the ground*.
+      magneticNorthPhone = addVectors(magneticFieldToNorth,
+          scaleVector(down, -scalarProduct(magneticFieldToNorth, down)));
+      magneticNorthPhone.normalize();
+      upPhone = scaleVector(down, -1);
+      magneticEastPhone = vectorProduct(magneticNorthPhone, upPhone);
+    }
     // The matrix is orthogonal, so transpose it to find its inverse.
     // Easiest way to do that is to construct it from row vectors instead
     // of column vectors.
@@ -300,7 +360,6 @@ public class AstronomerModelImpl implements AstronomerModel {
    */
   @Override
   public Pointing getPointing() {
-    calculateLocalNorthAndUpInPhoneCoords();
     calculatePointing();
     return pointing;
   }

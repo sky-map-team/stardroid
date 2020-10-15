@@ -14,6 +14,28 @@
     <uses-feature
         android:name="android.hardware.location.gps"
         android:required="false"/>
+    <!--
+         Sensor requirements.  Making required=false for now - we do want to support
+         these users as best we can.
+    -->
+    <uses-feature
+        android:name="android.hardware.sensor.accelerometer"
+        android:required="false"/>
+    <uses-feature
+        android:name="android.hardware.sensor.compass"
+        android:required="false"/>
+    <uses-feature
+        android:name="android.hardware.faketouch"
+        android:required="false"/>
+    <uses-feature
+        android:name="android.hardware.faketouch.multitouch.distinct"
+        android:required="false"/>
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false"/>
+    <uses-feature
+        android:name="android.hardware.touchscreen.multitouch.distinct"
+        android:required="false"/>
 
     <supports-screens
         android:anyDensity="true"
@@ -26,7 +48,7 @@
         android:name=".StardroidApplication"
         android:icon="@drawable/skymap_logo"
         android:label="@string/app_name"
-        android:theme="@android:style/Theme.Holo">
+        android:theme="@style/AppTheme">
         <activity
             android:name=".activities.SplashScreenActivity"
             android:label="@string/app_name"
@@ -34,7 +56,6 @@
             android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
-
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
@@ -47,7 +68,6 @@
             android:theme="@style/FullscreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH"/>
-
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
 
@@ -56,22 +76,26 @@
                 android:resource="@xml/searchable"/>
         </activity>
         <activity
-            android:name=".activities.EditSettingsActivity"
-            android:theme="@android:style/Theme.Holo"/>
+            android:name=".activities.EditSettingsActivity"/>
         <activity
-            android:name=".activities.ImageGalleryActivity"
-            android:theme="@android:style/Theme.Holo"/>
+            android:name=".activities.ImageGalleryActivity"/>
         <activity
             android:name=".activities.ImageDisplayActivity"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Holo"/>
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activities.DiagnosticActivity"
+            android:label="@string/title_activity_diagnostic">
+        </activity>
         <!-- Provides search suggestions. -->
-        <!-- TODO(johntaylor): What does syncable do? -->
         <provider
             android:name=".search.SearchTermsProvider"
             android:authorities="com.google.android.stardroid.searchterms"
+            android:exported="false"
             android:syncable="false"/>
 
+        <activity android:name=".activities.CompassCalibrationActivity"
+                  android:launchMode="singleTop">
+        </activity>
     </application>
 
 </manifest>

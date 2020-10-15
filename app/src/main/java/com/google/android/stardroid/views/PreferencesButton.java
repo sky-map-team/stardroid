@@ -19,19 +19,23 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
-import android.preference.PreferenceManager;
+import android.os.Bundle;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 
+import androidx.preference.PreferenceManager;
+
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.util.Analytics;
+import com.google.android.stardroid.util.AnalyticsInterface;
 import com.google.android.stardroid.util.MiscUtil;
 
 public class PreferencesButton extends ImageButton
     implements android.view.View.OnClickListener, OnSharedPreferenceChangeListener {
   private static final String TAG = MiscUtil.getTag(PreferencesButton.class);
+  private static AnalyticsInterface analytics;
   private OnClickListener secondaryOnClickListener;
 
   @Override
@@ -58,20 +62,33 @@ public class PreferencesButton extends ImageButton
     init();
   }
 
-  private void setAttrs(Context context, AttributeSet attrs) {
-    TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.PreferencesButton);
-    imageOn = a.getDrawable(R.styleable.PreferencesButton_image_on);
-    imageOff = a.getDrawable(R.styleable.PreferencesButton_image_off);
-    prefKey = a.getString(R.styleable.PreferencesButton_pref_key);
-    defaultValue = a.getBoolean(R.styleable.PreferencesButton_default_value, false);
-    Log.d(TAG, "Preference key is " + prefKey);
-  }
-
   public PreferencesButton(Context context) {
     super(context);
     init();
   }
-  
+
+  /**
+   * Sets the {@link Analytics} instance for reporting preference toggles.
+   *
+   * This class gets instantiated by the system and there's not obvious way to access anything
+   * dagger-ey to inject the {@link Analytics}.  Since it's not vital to the class'
+   * functioning and we'll probably kill this class anyway at some point I can live with this
+   * hack.
+   * @param analytics
+   */
+  public static void setAnalytics(AnalyticsInterface analytics) {
+    PreferencesButton.analytics = analytics;
+  }
+
+  public void setAttrs(Context context, AttributeSet attrs) {
+    TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.PreferencesButton);
+    imageOn = a.getDrawable(R.styleable.PreferencesButton_image_on);
+    imageOff = a.getDrawable(R.styleable.PreferencesButton_image_off);
+    prefKey = a.getString(R.styleable.PreferencesButton_pref_key);
+    defaultValue = a.getBoolean(R.styleable.PreferencesButton_default_value, true);
+    Log.d(TAG, "Preference key is " + prefKey);
+  }
+
   private void init() {
     super.setOnClickListener(this);
     preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
@@ -86,18 +103,20 @@ public class PreferencesButton extends ImageButton
   }
   
   private void setPreference() {
-    Log.d(TAG, "Setting preference " + prefKey + " to " + isOn);
-    // TODO(put this on a background thread)
+    Log.d(TAG, "Setting preference " + prefKey + " to... " + isOn);
     if (prefKey != null) {
-      preferences.edit().putBoolean(prefKey, isOn).commit();  
+      preferences.edit().putBoolean(prefKey, isOn).apply();
     }
   }
 
   @Override
   public void onClick(View v) {
     isOn = !isOn;
-    Analytics.getInstance(getContext()).trackEvent(
-        Analytics.USER_ACTION_CATEGORY, Analytics.PREFERENCE_BUTTON_TOGGLE, prefKey, isOn ? 1 : 0);
+    if (analytics != null) {
+      Bundle b = new Bundle();
+      b.putString(Analytics.PREFERENCE_BUTTON_TOGGLE_VALUE, prefKey + ":" + isOn);
+      analytics.trackEvent(Analytics.PREFERENCE_BUTTON_TOGGLE_EVENT, b);
+    }
     setVisuallyOnOrOff();
     setPreference();
     if (secondaryOnClickListener != null) {

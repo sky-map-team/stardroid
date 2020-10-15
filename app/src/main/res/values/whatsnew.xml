@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="whats_new_text" translation_description="Description of new features in this version in html">
+<![CDATA[
+    <h1>New in version %s</h1>
+    \t • Internal update to the data generation code<br/>
+]]>
+    </string>
+</resources>

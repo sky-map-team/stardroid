@@ -18,6 +18,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -27,39 +28,61 @@ import java.util.Set;
  *
  */
 public class PrefixStore {
-  // This is a naive implementation that simply stores all the prefixes in a
-  // hashmap.  A better solution would be to use a trie.
-  // TODO(johntaylor): reimplement this, probably as a trie.
-  private HashMap<String, HashSet<String>> store = new HashMap<String, HashSet<String>>();
+
+  static private class TrieNode {
+    Map<Character, TrieNode> children = new HashMap<>();
+
+    // we need to store the originals to support insensitive case searching
+    Set<String> results = new HashSet<>();
+  }
+
+  private TrieNode root = new TrieNode();
+
   private static final Set<String> EMPTY_SET = Collections.unmodifiableSet(new HashSet<String>());
 
   /**
    * Search for any queries matching this prefix.  Note that the prefix is
    * case-independent.
+   *
+   * TODO(@tcao) refactor this API. Search should return a relevance ranked list.
    */
   public Set<String> queryByPrefix(String prefix) {
-    HashSet<String> results = store.get(prefix.toLowerCase());
-    if (results == null) {
-      return EMPTY_SET;
+    prefix = prefix.toLowerCase();
+    TrieNode n = root;
+    for (int i = 0; i < prefix.length(); i++) {
+      TrieNode c = n.children.get(prefix.charAt(i));
+      if (c == null) {
+        return EMPTY_SET;
+      }
+      n = c;
     }
-    return results;
+    Set<String> coll = new HashSet<String>();
+    collect(n, coll);
+    return coll;
+  }
+
+  private void collect(TrieNode n, Collection<String> coll) {
+    coll.addAll(n.results);
+    for (Character ch : n.children.keySet()) {
+      collect(n.children.get(ch), coll);
+    }
   }
 
   /**
    * Put a new string in the store.
    */
   public void add(String string) {
-    // Add value to every prefix list.  Not exactly space-efficient, but time's
-    // getting on.
-    for (int i = 0; i < string.length(); ++i) {
-      String prefix = string.substring(0, i + 1).toLowerCase();
-      HashSet<String> currentList = store.get(prefix);
-      if (currentList == null) {
-        currentList = new HashSet<String>();
-        store.put(prefix.toLowerCase(), currentList);
+    TrieNode n = root;
+    String lower = string.toLowerCase();
+    for (int i = 0; i < lower.length(); i++) {
+      TrieNode c = n.children.get(lower.charAt(i));
+      if (c == null) {
+        c = new TrieNode();
+        n.children.put(lower.charAt(i), c);
       }
-      currentList.add(string);
+      n = c;
     }
+    n.results.add(string);
   }
 
   /**

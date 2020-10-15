@@ -25,14 +25,14 @@ import com.google.android.stardroid.source.proto.SourceProto.AstronomicalSourceP
 import com.google.android.stardroid.source.proto.SourceProto.AstronomicalSourcesProto;
 import com.google.android.stardroid.util.Blog;
 import com.google.android.stardroid.util.MiscUtil;
-import com.google.android.stardroid.util.StopWatch;
-import com.google.android.stardroid.util.StopWatchImpl;
 import com.google.common.io.Closeables;
+import com.google.protobuf.Parser;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.EnumSet;
+import java.util.List;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
@@ -50,7 +50,7 @@ public abstract class AbstractFileBasedLayer extends AbstractSourceLayer {
 
   private final AssetManager assetManager;
   private final String fileName;
-  private final ArrayList<AstronomicalSource> fileSources = new ArrayList<AstronomicalSource>();
+  private final List<AstronomicalSource> fileSources = new ArrayList<>();
 
   public AbstractFileBasedLayer(AssetManager assetManager, Resources resources, String fileName) {
     super(resources, false);
@@ -59,7 +59,7 @@ public abstract class AbstractFileBasedLayer extends AbstractSourceLayer {
   }
 
   @Override
-  public void initialize() {
+  public synchronized void initialize() {
     BACKGROUND_EXECUTOR.execute(new Runnable() {
       public void run() {
         readSourceFile(fileName);
@@ -74,21 +74,19 @@ public abstract class AbstractFileBasedLayer extends AbstractSourceLayer {
   }
 
   private void readSourceFile(String sourceFilename) {
-    StopWatch watch = new StopWatchImpl().start();
-
     Log.d(TAG, "Loading Proto File: " + sourceFilename + "...");
     InputStream in = null;
     try {
       in = assetManager.open(sourceFilename, AssetManager.ACCESS_BUFFER);
-      AstronomicalSourcesProto.Builder builder = AstronomicalSourcesProto.newBuilder();
-      builder.mergeFrom(in);
+      Parser<AstronomicalSourcesProto> parser = AstronomicalSourcesProto.parser();
+      AstronomicalSourcesProto sources = parser.parseFrom(in);
 
-      for (AstronomicalSourceProto proto : builder.build().getSourceList()) {
+      for (AstronomicalSourceProto proto : sources.getSourceList()) {
         fileSources.add(new ProtobufAstronomicalSource(proto, getResources()));
       }
       Log.d(TAG, "Found: " + fileSources.size() + " sources");
-      String s = String.format("Finished Loading: %s > %s | Found %s sourcs.\n",
-          sourceFilename, watch.end(), fileSources.size());
+      String s = String.format("Finished Loading: %s | Found %s sourcs.\n",
+          sourceFilename, fileSources.size());
        Blog.d(this, s);
 
        refreshSources(EnumSet.of(UpdateType.Reset));
