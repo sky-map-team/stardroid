@@ -9,8 +9,8 @@ android {
         applicationId "com.google.android.stardroid"
         minSdkVersion 16
         targetSdkVersion 30
-        versionCode 1519
-        versionName "1.9.6 - RC2"
+        versionCode 1520
+        versionName "1.9.6 - RC3"
         buildConfigField 'String', 'GOOGLE_ANALYTICS_CODE', '""'
     }
 
@@ -89,7 +89,7 @@ dependencies {
     implementation 'javax.annotation:jsr250-api:1.0'
     // Lite version for Android - it's lighter (obviously) but also doesn't use reflection
     // which can cause no end of problems with minifiers like proguard.
-    implementation 'com.google.protobuf:protobuf-javalite:3.8.0'
+    implementation 'com.google.protobuf:protobuf-javalite:3.13.0'
 
 // Flavor
     gmsImplementation 'com.google.android.gms:play-services-analytics:16.0.8'

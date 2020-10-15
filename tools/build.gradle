@@ -14,14 +14,14 @@ sourceSets {
 protobuf {
     protoc {
         // Download from repositories
-        artifact = 'com.google.protobuf:protoc:3.8.0'
+        artifact = 'com.google.protobuf:protoc:3.13.0'
     }
 }
 
 dependencies {
     // Unlike the Android App which should only use the lite version of protos we need the full
     // version here as we need TextFormat which doesn't exist in the lite app.
-    implementation 'com.google.protobuf:protobuf-java:3.8.0'
+    implementation 'com.google.protobuf:protobuf-java:3.13.0'
     implementation 'com.google.guava:guava:21.0'
 }
 

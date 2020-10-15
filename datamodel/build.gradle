@@ -3,13 +3,13 @@ apply plugin: 'com.google.protobuf'
 apply plugin: 'idea'
 
 dependencies {
-    implementation 'com.google.protobuf:protobuf-javalite:3.8.0'
+    implementation 'com.google.protobuf:protobuf-javalite:3.13.0'
 }
 
 protobuf {
     protoc {
         // Download from repositories
-        artifact = 'com.google.protobuf:protoc:3.8.0'
+        artifact = 'com.google.protobuf:protoc:3.13.0'
     }
 
     generateProtoTasks {
