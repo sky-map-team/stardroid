@@ -183,7 +183,7 @@ in a database.
 Should we keep all the localizations in with the object data? Or can we continue to leverage
 Android's resource tooling?
 
-One example would be to have the base data files store the English (default - sorry!) names.
+One option would be to have the base data files store the English (default - sorry!) names.
 A script could extract them to a strings.xml file so we can take advantage of Android's tool chain
 to spot missing translations.
  
