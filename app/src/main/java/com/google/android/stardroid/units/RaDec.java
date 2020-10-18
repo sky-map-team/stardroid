@@ -14,11 +14,11 @@
 
 package com.google.android.stardroid.units;
 
-import java.util.Date;
-
 import com.google.android.stardroid.provider.ephemeris.Planet;
 import com.google.android.stardroid.util.Geometry;
 import com.google.android.stardroid.util.MathUtil;
+
+import java.util.Date;
 
 public class RaDec {
   public float ra;        // In degrees
@@ -45,6 +45,10 @@ public class RaDec {
     return new RaDec(ra, dec);
   }
 
+  /**
+   * @deprecated Use Universe.getPlanet instead.
+   */
+  @Deprecated
   public static RaDec getInstance(Planet planet, Date time,
       HeliocentricCoordinates earthCoordinates) {
     // TODO(serafini): This is a temporary hack until we re-factor the Planetary calculations.
