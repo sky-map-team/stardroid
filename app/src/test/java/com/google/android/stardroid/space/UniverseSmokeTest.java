@@ -10,6 +10,7 @@ import java.util.GregorianCalendar;
 import java.util.TimeZone;
 
 import static junit.framework.TestCase.assertEquals;
+import static com.google.common.truth.Truth.assertThat;
 
 /**
  * Position tests of the celestial objects - mostly extracted from the RaDecTest.
@@ -47,7 +48,7 @@ public class UniverseSmokeTest {
         earthCoords = HeliocentricCoordinates.getInstance(Planet.Sun, testCal.getTime());
 
         pos = RaDec.getInstance(Planet.Sun, testCal.getTime(), earthCoords);
-        assertEquals(18.813 * HOURS_TO_DEGREES, pos.ra, EPSILON);
+        assertThat(pos.ra).isWithin(EPSILON).of(18.813f * HOURS_TO_DEGREES);
         assertEquals(-22.97, pos.dec, EPSILON);
 
         pos = RaDec.getInstance(Planet.Mercury, testCal.getTime(), earthCoords);
