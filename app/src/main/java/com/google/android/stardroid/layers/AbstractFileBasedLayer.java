@@ -23,7 +23,6 @@ import com.google.android.stardroid.source.AstronomicalSource;
 import com.google.android.stardroid.source.proto.ProtobufAstronomicalSource;
 import com.google.android.stardroid.source.proto.SourceProto.AstronomicalSourceProto;
 import com.google.android.stardroid.source.proto.SourceProto.AstronomicalSourcesProto;
-import com.google.android.stardroid.util.Blog;
 import com.google.android.stardroid.util.MiscUtil;
 import com.google.common.io.Closeables;
 import com.google.protobuf.Parser;
@@ -87,7 +86,7 @@ public abstract class AbstractFileBasedLayer extends AbstractSourceLayer {
       Log.d(TAG, "Found: " + fileSources.size() + " sources");
       String s = String.format("Finished Loading: %s | Found %s sourcs.\n",
           sourceFilename, fileSources.size());
-       Blog.d(this, s);
+       Log.d(TAG, s);
 
        refreshSources(EnumSet.of(UpdateType.Reset));
     } catch (IOException e) {

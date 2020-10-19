@@ -32,7 +32,6 @@ import com.google.android.stardroid.source.TextSource;
 import com.google.android.stardroid.source.impl.PointSourceImpl;
 import com.google.android.stardroid.source.impl.TextSourceImpl;
 import com.google.android.stardroid.units.GeocentricCoordinates;
-import com.google.android.stardroid.util.Blog;
 import com.google.android.stardroid.util.MiscUtil;
 import com.google.common.io.Closeables;
 
@@ -123,7 +122,7 @@ public class IssLayer extends AbstractSourceLayer {
         for (int pi = 0; pi < params.length; pi++) {
           sb.append(" " + params[pi]);
         }
-        Blog.d(this, "Params: " + sb);
+        //Blog.d(this, "Params: " + sb);
       }
       return null;
     }
@@ -150,7 +149,7 @@ public class IssLayer extends AbstractSourceLayer {
     public void run() {
       long currentTimeMs = System.currentTimeMillis();
       if ((currentTimeMs - lastSuccessfulUpdateMs) > UPDATE_FREQ_MS) {
-        Blog.d(this, "Fetching ISS data...");
+        //Blog.d(this, "Fetching ISS data...");
         OrbitalElements elements = getOrbitalElements(URL_STRING);
         if (elements == null) {
           Log.d(TAG, "Error downloading ISS orbital data");
