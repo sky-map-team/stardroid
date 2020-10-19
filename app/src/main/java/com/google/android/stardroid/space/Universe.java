@@ -43,8 +43,7 @@ public class Universe {
      */
     public RaDec getMoonRaDec(Date datetime) {
         HeliocentricCoordinates sunCoords = HeliocentricCoordinates.getInstance(Planet.Sun, datetime);
-        return RaDec.getInstance(Planet.Moon, datetime, sunCoords);
-        //return Planet.calculateLunarGeocentricLocation(datetime);
+        return Planet.calculateLunarGeocentricLocation(datetime);
     }
 
     /**
