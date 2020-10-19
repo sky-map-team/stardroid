@@ -29,6 +29,20 @@ public class RaDec {
     this.dec = dec;
   }
 
+  public RaDec(float raHours, float raMinutes, float raSeconds,
+               float decDegrees, float decMinutes, float decSeconds) {
+    this(raDegreesFromHMS(raHours, raMinutes, raSeconds),
+            decDegreesFromDMS(decDegrees, decMinutes, decSeconds));
+  }
+
+  public static float raDegreesFromHMS(float h, float m, float s) {
+    return 360 / 24 * (h + m / 60 + s / 60 / 60);
+  }
+
+  public static float decDegreesFromDMS(float d, float m, float s) {
+    return d + m / 60 + s / 60 / 60;
+  }
+
   @Override public String toString() {
     StringBuffer sb = new StringBuffer();
     sb.append("RA: " + ra + " degrees\n");
