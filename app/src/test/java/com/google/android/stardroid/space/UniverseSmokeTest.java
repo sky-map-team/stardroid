@@ -1,7 +1,6 @@
 package com.google.android.stardroid.space;
 
 import com.google.android.stardroid.provider.ephemeris.Planet;
-import com.google.android.stardroid.units.HeliocentricCoordinates;
 import com.google.android.stardroid.units.RaDec;
 
 import org.junit.Test;
@@ -22,6 +21,8 @@ public class UniverseSmokeTest {
     // Convert from hours to degrees
     private static final float HOURS_TO_DEGREES = 360.0f/24.0f;
 
+    private Universe universe = new Universe();
+
     // Verify that we are calculating the correct RA/Dec for the various solar system objects.
     // All of the reference data comes from the US Naval Observatories web site:
     // http://aa.usno.navy.mil/data/
@@ -31,7 +32,6 @@ public class UniverseSmokeTest {
         testCal.setTimeZone(TimeZone.getTimeZone("GMT"));
 
         RaDec pos = null;
-        HeliocentricCoordinates earthCoords = null;
 
         // 2009 Jan  1, 12:00 UT1
         // Sun       18h 48.8m  -22d 58m
@@ -44,41 +44,40 @@ public class UniverseSmokeTest {
         // Neptune   21h 39.7m  -14d 22m
         // Pluto     18h 05.3m  -17d 45m
         testCal.set(2009, GregorianCalendar.JANUARY, 1, 12, 0, 0);
-        earthCoords = HeliocentricCoordinates.getInstance(Planet.Sun, testCal.getTime());
 
-        pos = RaDec.getInstance(Planet.Sun, testCal.getTime(), earthCoords);
+        pos = universe.getSunRaDec(testCal.getTime());
         assertThat(pos.ra).isWithin(EPSILON).of(18.813f * HOURS_TO_DEGREES);
         assertThat(pos.dec).isWithin(EPSILON).of(-22.97f);
 
-        pos = RaDec.getInstance(Planet.Mercury, testCal.getTime(), earthCoords);
+        pos = universe.getRaDec(Planet.Mercury, testCal.getTime());
         assertThat(pos.ra).isWithin(EPSILON).of(20.177f * HOURS_TO_DEGREES);
         assertThat(pos.dec).isWithin(EPSILON).of(-21.60f);
 
-        pos = RaDec.getInstance(Planet.Venus, testCal.getTime(), earthCoords);
+        pos = universe.getRaDec(Planet.Venus, testCal.getTime());
         assertThat(pos.ra).isWithin(EPSILON).of(22.033f * HOURS_TO_DEGREES);
         assertThat(pos.dec).isWithin(EPSILON).of(-13.60f);
 
-        pos = RaDec.getInstance(Planet.Mars, testCal.getTime(), earthCoords);
+        pos = universe.getRaDec(Planet.Mars, testCal.getTime());
         assertThat(pos.ra).isWithin(EPSILON).of(18.285f * HOURS_TO_DEGREES);
         assertThat(pos.dec).isWithin(EPSILON).of(-24.08f);
 
-        pos = RaDec.getInstance(Planet.Jupiter, testCal.getTime(), earthCoords);
+        pos = universe.getRaDec(Planet.Jupiter, testCal.getTime());
         assertThat(pos.ra).isWithin(EPSILON).of(20.085f * HOURS_TO_DEGREES);
         assertThat(pos.dec).isWithin(EPSILON).of(-20.75f);
 
-        pos = RaDec.getInstance(Planet.Saturn, testCal.getTime(), earthCoords);
+        pos = universe.getRaDec(Planet.Saturn, testCal.getTime());
         assertThat(pos.ra).isWithin(EPSILON).of(11.550f * HOURS_TO_DEGREES);
         assertThat(pos.dec).isWithin(EPSILON).of(5.15f);
 
-        pos = RaDec.getInstance(Planet.Uranus, testCal.getTime(), earthCoords);
+        pos = universe.getRaDec(Planet.Uranus, testCal.getTime());
         assertThat(pos.ra).isWithin(EPSILON).of(23.362f * HOURS_TO_DEGREES);
         assertThat(pos.dec).isWithin(EPSILON).of(-4.95f);
 
-        pos = RaDec.getInstance(Planet.Neptune, testCal.getTime(), earthCoords);
+        pos = universe.getRaDec(Planet.Neptune, testCal.getTime());
         assertThat(pos.ra).isWithin(EPSILON).of(21.662f * HOURS_TO_DEGREES);
         assertThat(pos.dec).isWithin(EPSILON).of(-14.37f);
 
-        pos = RaDec.getInstance(Planet.Pluto, testCal.getTime(), earthCoords);
+        pos = universe.getRaDec(Planet.Pluto, testCal.getTime());
         assertThat(pos.ra).isWithin(EPSILON).of(18.088f * HOURS_TO_DEGREES);
         assertThat(pos.dec).isWithin(EPSILON).of(-17.75f);
 
@@ -93,41 +92,40 @@ public class UniverseSmokeTest {
         // Neptune   21h 46.7m  -13d 51m
         // Pluto     18h 02.8m  -18d 00m
         testCal.set(2009, GregorianCalendar.SEPTEMBER, 20, 12, 0, 0);
-        earthCoords = HeliocentricCoordinates.getInstance(Planet.Sun, testCal.getTime());
 
-        pos = RaDec.getInstance(Planet.Sun, testCal.getTime(), earthCoords);
+        pos = universe.getSunRaDec(testCal.getTime());
         assertThat(pos.ra).isWithin(EPSILON).of(11.857f * HOURS_TO_DEGREES);
         assertThat(pos.dec).isWithin(EPSILON).of(0.933f);
 
-        pos = RaDec.getInstance(Planet.Mercury, testCal.getTime(), earthCoords);
+        pos = universe.getRaDec(Planet.Mercury, testCal.getTime());
         assertThat(pos.ra).isWithin(EPSILON).of(11.768f * HOURS_TO_DEGREES);
         assertThat(pos.dec).isWithin(EPSILON).of(-1.75f);
 
-        pos = RaDec.getInstance(Planet.Venus, testCal.getTime(), earthCoords);
+        pos = universe.getRaDec(Planet.Venus, testCal.getTime());
         assertThat(pos.ra).isWithin(EPSILON).of(10.157f * HOURS_TO_DEGREES);
         assertThat(pos.dec).isWithin(EPSILON).of(12.35f);
 
-        pos = RaDec.getInstance(Planet.Mars, testCal.getTime(), earthCoords);
+        pos = universe.getRaDec(Planet.Mars, testCal.getTime());
         assertThat(pos.ra).isWithin(EPSILON).of(7.143f * HOURS_TO_DEGREES);
         assertThat(pos.dec).isWithin(EPSILON).of(23.05f);
 
-        pos = RaDec.getInstance(Planet.Jupiter, testCal.getTime(), earthCoords);
+        pos = universe.getRaDec(Planet.Jupiter, testCal.getTime());
         assertThat(pos.ra).isWithin(EPSILON).of(21.387f * HOURS_TO_DEGREES);
         assertThat(pos.dec).isWithin(EPSILON).of(-16.48f);
 
-        pos = RaDec.getInstance(Planet.Saturn, testCal.getTime(), earthCoords);
+        pos = universe.getRaDec(Planet.Saturn, testCal.getTime());
         assertThat(pos.ra).isWithin(EPSILON).of(11.767f * HOURS_TO_DEGREES);
         assertThat(pos.dec).isWithin(EPSILON).of(3.67f);
 
-        pos = RaDec.getInstance(Planet.Uranus, testCal.getTime(), earthCoords);
+        pos = universe.getRaDec(Planet.Uranus, testCal.getTime());
         assertThat(pos.ra).isWithin(EPSILON).of(23.685f * HOURS_TO_DEGREES);
         assertThat(pos.dec).isWithin(EPSILON).of(-2.92f);
 
-        pos = RaDec.getInstance(Planet.Neptune, testCal.getTime(), earthCoords);
+        pos = universe.getRaDec(Planet.Neptune, testCal.getTime());
         assertThat(pos.ra).isWithin(EPSILON).of(21.778f * HOURS_TO_DEGREES);
         assertThat(pos.dec).isWithin(EPSILON).of(-13.85f);
 
-        pos = RaDec.getInstance(Planet.Pluto, testCal.getTime(), earthCoords);
+        pos = universe.getRaDec(Planet.Pluto, testCal.getTime());
         assertThat(pos.ra).isWithin(EPSILON).of(18.047f * HOURS_TO_DEGREES);
         assertThat(pos.dec).isWithin(EPSILON).of(-18.00f);
 
@@ -143,41 +141,40 @@ public class UniverseSmokeTest {
         // Neptune   21 55.8  -13 07
         // Pluto     18 21.5  -18 50
         testCal.set(2010, GregorianCalendar.DECEMBER, 25, 12, 0, 0);
-        earthCoords = HeliocentricCoordinates.getInstance(Planet.Sun, testCal.getTime());
 
-        pos = RaDec.getInstance(Planet.Sun, testCal.getTime(), earthCoords);
+        pos = universe.getSunRaDec(testCal.getTime());
         assertThat(pos.ra).isWithin(EPSILON).of(18.260f * HOURS_TO_DEGREES);
         assertThat(pos.dec).isWithin(EPSILON).of(-23.38f);
 
-        pos = RaDec.getInstance(Planet.Mercury, testCal.getTime(), earthCoords);
+        pos = universe.getRaDec(Planet.Mercury, testCal.getTime());
         assertThat(pos.ra).isWithin(EPSILON).of(17.403f * HOURS_TO_DEGREES);
         assertThat(pos.dec).isWithin(EPSILON).of(-20.17f);
 
-        pos = RaDec.getInstance(Planet.Venus, testCal.getTime(), earthCoords);
+        pos = universe.getRaDec(Planet.Venus, testCal.getTime());
         assertThat(pos.ra).isWithin(EPSILON).of(15.068f * HOURS_TO_DEGREES);
         assertThat(pos.dec).isWithin(EPSILON).of(-13.83f);
 
-        pos = RaDec.getInstance(Planet.Mars, testCal.getTime(), earthCoords);
+        pos = universe.getRaDec(Planet.Mars, testCal.getTime());
         assertThat(pos.ra).isWithin(EPSILON).of(18.975f * HOURS_TO_DEGREES);
         assertThat(pos.dec).isWithin(EPSILON).of(-23.72f);
 
-        pos = RaDec.getInstance(Planet.Jupiter, testCal.getTime(), earthCoords);
+        pos = universe.getRaDec(Planet.Jupiter, testCal.getTime());
         assertThat(pos.ra).isWithin(EPSILON).of(23.773f * HOURS_TO_DEGREES);
         assertThat(pos.dec).isWithin(EPSILON).of(-2.88f);
 
-        pos = RaDec.getInstance(Planet.Saturn, testCal.getTime(), earthCoords);
+        pos = universe.getRaDec(Planet.Saturn, testCal.getTime());
         assertThat(pos.ra).isWithin(EPSILON).of(13.065f * HOURS_TO_DEGREES);
         assertThat(pos.dec).isWithin(EPSILON).of(-4.23f);
 
-        pos = RaDec.getInstance(Planet.Uranus, testCal.getTime(), earthCoords);
+        pos = universe.getRaDec(Planet.Uranus, testCal.getTime());
         assertThat(pos.ra).isWithin(EPSILON).of(23.827f * HOURS_TO_DEGREES);
         assertThat(pos.dec).isWithin(EPSILON).of(-1.93f);
 
-        pos = RaDec.getInstance(Planet.Neptune, testCal.getTime(), earthCoords);
+        pos = universe.getRaDec(Planet.Neptune, testCal.getTime());
         assertThat(pos.ra).isWithin(EPSILON).of(21.930f * HOURS_TO_DEGREES);
         assertThat(pos.dec).isWithin(EPSILON).of(-13.12f);
 
-        pos = RaDec.getInstance(Planet.Pluto, testCal.getTime(), earthCoords);
+        pos = universe.getRaDec(Planet.Pluto, testCal.getTime());
         assertThat(pos.ra).isWithin(EPSILON).of(18.358f * HOURS_TO_DEGREES);
     }
 }
