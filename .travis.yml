@@ -30,7 +30,7 @@
 # Note: Flutter supports down to API 16
 
 language: generic
-dist: trusty
+dist: bionic
 
 # specify global envs and jobs
 env:
