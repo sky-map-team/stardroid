@@ -65,7 +65,7 @@ Connected device/emulator required tests:
 Note that if you don't have a `google-services.json` file (and we don't check it in to version control so you probably don't) then the "Gms" flavor of the build will fail. To just build the Fdroid flavor that doesn't need it:
 
     ./gradlew testFdroidDebugUnitTest
-    ./gradlew app:connectedFroidDebugAndroidTest
+    ./gradlew app:connectedFdroidDebugAndroidTest
 
 # Code and Language Contributions
 Yes, we know that Sky Map's code and UX is very dated. It needs a big overhaul.
