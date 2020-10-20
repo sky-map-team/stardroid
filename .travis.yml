@@ -289,7 +289,7 @@ install:
 
 before_script:
   # wait for emulator to finish startup
-  - ./script/android-wait-for-emulator.sh
+  - android-wait-for-emulator
   # unlock screen
   - adb shell input keyevent 82 &
 
