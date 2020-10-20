@@ -22,7 +22,7 @@ public class LatLong2Test extends TestCase {
   public void testDistanceFrom90Degrees() {
     LatLong l1 = new LatLong(0, 0);
     LatLong l2 = new LatLong(0, 90);
-    assertEquals(90f, l1.distanceFrom(l2), TOL);
+    assertEquals(90000f, l1.distanceFrom(l2), TOL);
   }
 
   public void testDistanceFromSame() {
