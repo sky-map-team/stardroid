@@ -30,7 +30,7 @@
 # Note: Flutter supports down to API 16
 
 language: generic
-dist: bionic
+dist: trusty
 
 # specify global envs and jobs
 env:
@@ -52,96 +52,7 @@ env:
   # (see "sdkmanager --list --verbose| grep ^system-images" for full list)
   jobs:
     - API=29 ABI=x86_64      GOO=google_apis_playstore
-    - API=29 ABI=x86         GOO=google_apis_playstore
-    - API=29 ABI=x86_64      GOO=google_apis
-    - API=29 ABI=x86         GOO=google_apis
-    - API=29 ABI=x86_64      GOO=default
-    - API=29 ABI=x86         GOO=default
 
-    - API=28 ABI=x86_64      GOO=google_apis_playstore
-    - API=28 ABI=x86         GOO=google_apis_playstore
-    - API=28 ABI=x86_64      GOO=google_apis
-    - API=28 ABI=x86         GOO=google_apis
-    - API=28 ABI=x86_64      GOO=default
-    - API=28 ABI=x86         GOO=default
-
-    - API=27 ABI=x86         GOO=google_apis_playstore
-    - API=27 ABI=x86         GOO=google_apis
-    - API=27 ABI=x86_64      GOO=default
-    - API=27 ABI=x86         GOO=default
-
-    - API=26 ABI=x86         GOO=google_apis_playstore
-    - API=26 ABI=x86_64      GOO=google_apis
-    - API=26 ABI=x86         GOO=google_apis
-    - API=26 ABI=x86_64      GOO=default
-    - API=26 ABI=x86         GOO=default
-
-    - API=25 ABI=x86         GOO=google_apis_playstore
-    - API=25 ABI=x86_64      GOO=google_apis
-    - API=25 ABI=x86         GOO=google_apis
-    - API=25 ABI=x86_64      GOO=default
-    - API=25 ABI=x86         GOO=default
-    - API=25 ABI=armeabi-v7a GOO=google_apis
-    - API=25 ABI=arm64-v8a   GOO=google_apis
-
-    - API=24 ABI=x86_64      GOO=google_apis
-    - API=24 ABI=x86         GOO=google_apis
-    - API=24 ABI=armeabi-v7a GOO=google_apis
-    - API=24 ABI=arm64-v8a   GOO=google_apis
-    - API=24 ABI=x86_64      GOO=default
-    - API=24 ABI=x86         GOO=default
-    - API=24 ABI=armeabi-v7a GOO=default
-    - API=24 ABI=arm64-v8a   GOO=default
-
-    - API=23 ABI=x86_64      GOO=google_apis
-    - API=23 ABI=x86         GOO=google_apis
-    - API=23 ABI=armeabi-v7a GOO=google_apis
-    - API=23 ABI=x86_64      GOO=default
-    - API=23 ABI=x86         GOO=default
-    - API=23 ABI=armeabi-v7a GOO=default
-
-    - API=22 ABI=x86_64      GOO=google_apis
-    - API=22 ABI=x86         GOO=google_apis
-    - API=22 ABI=armeabi-v7a GOO=google_apis
-    - API=22 ABI=x86_64      GOO=default
-    - API=22 ABI=x86         GOO=default
-    - API=22 ABI=armeabi-v7a GOO=default
-
-    - API=21 ABI=x86_64      GOO=google_apis
-    - API=21 ABI=x86         GOO=google_apis
-    - API=21 ABI=armeabi-v7a GOO=google_apis
-    - API=21 ABI=x86_64      GOO=default
-    - API=21 ABI=x86         GOO=default
-    - API=21 ABI=armeabi-v7a GOO=default
-
-    # API=20  -- not released
-
-    - API=19 ABI=x86         GOO=google_apis
-    - API=19 ABI=x86         GOO=default
-    - API=19 ABI=armeabi-v7a GOO=google_apis
-    - API=19 ABI=armeabi-v7a GOO=default
-
-    - API=18 ABI=x86         GOO=google_apis
-    - API=18 ABI=x86         GOO=default
-    - API=18 ABI=armeabi-v7a GOO=google_apis
-    - API=18 ABI=armeabi-v7a GOO=default
-
-    - API=17 ABI=x86         GOO=google_apis
-    - API=17 ABI=x86         GOO=default
-    - API=17 ABI=armeabi-v7a GOO=google_apis
-    - API=17 ABI=armeabi-v7a GOO=default
-
-    - API=16 ABI=x86         GOO=google_apis
-    - API=16 ABI=x86         GOO=default
-    - API=16 ABI=armeabi-v7a GOO=google_apis
-    - API=16 ABI=armeabi-v7a GOO=default
-
-    # API=15 -- not supported by flutter
-    # API=14 -- not released
-    # API=13 -- not released
-    # API=12 -- not released
-    # API=11 -- not released
-    # API=10 -- not supported by flutter
 
 jobs:
   fast_finish: true
