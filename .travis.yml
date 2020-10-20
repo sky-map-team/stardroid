@@ -79,30 +79,14 @@ install:
   # Check components status
   - sdkmanager --list || true
 
-before_script:
-  # Create and start the emulator
-  - sdkmanager "system-images;android-"$EMULATOR_API_LEVEL";google_apis;$ANDROID_ABI"
-  - echo no | avdmanager -v create avd -f -n test -k "system-images;android-$EMULATOR_API_LEVEL;google_apis;$ANDROID_ABI"
-  - $ANDROID_HOME/emulator/emulator -avd test -no-audio -no-window &
 
-  - android-wait-for-emulator
-
-  # Turn off animations
-  - adb shell settings put global window_animation_scale 0 &
-  - adb shell settings put global transition_animation_scale 0 &
-  - adb shell settings put global animator_duration_scale 0 &
-
-  # Wake up
-  - adb shell input keyevent 82 &
-  - adb shell input keyevent 1 &
 script:
-  - ./gradlew test # Local unit test
+# Just do unit tests and check if we build.
+# Use the Fdroid flavor as it doesn't require the google services config
+  - ./gradlew testFdroidDebugUnitTest
+  - ./gradlew assembleFdroidDebug
   # Temporarily disable emulator based tests until the world figures out how to make them run again
   # - ./gradlew connectedAndroidTest # Instrumented unit test
   #- ./gradlew lint #maybe at some point
   #- ./gradlew clean test build
-after_script:
-  - echo $ANDROID_TARGET 
-  - echo $ANDROID_ABI
-  - cat /home/travis/build/sky-map-team/stardroid/sdk-messaging/build/outputs/lint-results-debug.xml
-  - cat /home/travis/build/sky-map-team/stardroid/sdk/build/reports/androidTests/connected/index.html
+
