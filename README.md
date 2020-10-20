@@ -28,7 +28,7 @@ The build process is pretty horrible and involves three stages. To make it easie
 
 From the root directory execute
 
-    ./gradlew assembleGmsDebug
+    ./gradlew assembleFdroidDebug
 
 The apk can be found in `app/build/outputs/apk/`.
 
@@ -54,14 +54,18 @@ The apk can be found in `app/build/outputs/apk/`.
 
 
 ## Running tests
+Unit tests:
 
-    ./gradlew app:connectedGmsDebugAndroidTest
+    ./gradlew test
 
-## Regenerating the star data files
+Connected device/emulator required tests:
 
-The data files need munging to take into account the string ID files in the generated `R` file.  Information on
-how to do this is in the tools directory.  If you update any strings in Sky Map it's quite likely you'll
-have to regenerate the star data files or the app will crash or put incorrect labels on things.
+    ./gradlew app:connectedAndroidTest
+
+Note that if you don't have a `google-services.json` file (and we don't check it in to version control so you probably don't) then the "Gms" flavor of the build will fail. To just build the Fdroid flavor that doesn't need it:
+
+    ./gradlew testFdroidDebugUnitTest
+    ./gradlew app:connectedFroidDebugAndroidTest
 
 # Code and Language Contributions
 Yes, we know that Sky Map's code and UX is very dated. It needs a big overhaul.
