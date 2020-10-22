@@ -1,92 +1,226 @@
-# Setting java 1.8 
-language: android
-jdk:
-  - oraclejdk8
+# This file was largely copied from
+# https://github.com/mmcc007/test_emulators
 
-sudo: required # disables container-based builds which have a maximum of 4GB of memory
+# Run android emulator on accelerated intel CPU
+# or on emulated ARM CPU.
+# Includes test.
 
-# caching as advised by travis
-before_cache:
-  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
-  - rm -rf $HOME/.gradle/caches/*/plugin-resolution/
+#    +-----------+--------------------+--------------------+
+#    | API Level |     Code Name      | Android OS version |
+#    +-----------+--------------------+--------------------+
+#    |        29 | 10                 |                 10 |
+#    |        28 | Pie                |                  9 |
+#    |        27 | Oreo               |                8.1 |
+#    |        26 | Oreo               |  (dropped ARM) 8.0 |
+#    |        25 | Nougat             |                7.1 |
+#    |        24 | Nougat             |                7.0 |
+#    |        23 | Marshmallow        |                6.0 |
+#    |        22 | Lollipop           |                5.1 |
+#    |        21 | Lollipop           |                5.0 |
+#    |        20 | Not released       |                    |
+#    |        19 | Kitkat             |                4.4 |
+#    |        18 | Jellybean          |                4.3 |
+#    |        17 | Jellybean          |                4.2 |
+#    |        16 | Jellybean          |                4.1 |
+#    |        15 | Ice Cream Sandwich |                4.0 |
+#    |        14 | Not Released       |                    |
+#    |        13 | Not Released       |                    |
+#    |        12 | Not Released       |                    |
+#    |        11 | Not Released       |                    |
+#    |        10 | Gingerbread        |                2.3 |
+#    +-----------+--------------------+--------------------+
+# "https://en.wikipedia.org/wiki/Android_(operating_system)#Platform_information"
+# Note: Flutter supports down to API 16
 
-cache:
-  directories:
-  - $HOME/.gradle/caches/
-  - $HOME/.gradle/wrapper/
-  - $HOME/.android/build-cache
+language: generic
+dist: bionic
 
+# specify global envs and jobs
 env:
-  matrix:
-# - EMULATOR_API_LEVEL=23  ANDROID_EMULATOR_IMAGE=sys-img-armeabi-v7a-android-23
-  - EMULATOR_API_LEVEL=24  ANDROID_EMULATOR_IMAGE=sys-img-arm64-v8a-android-24
-# - EMULATOR_API_LEVEL=21  ANDROID_EMULATOR_IMAGE=sys-img-armeabi-v7a-android-21
-# - EMULATOR_API_LEVEL=19  ANDROID_EMULATOR_IMAGE=sys-img-armeabi-v7a-android-19
-
   global:
-    - ANDROID_API_LEVEL=27
-    - ANDROID_BUILD_TOOLS_VERSION=29.0.3
-    - ADB_INSTALL_TIMEOUT=20 # wait up to 20 minutes for adb to connect to emulator (2 minutes by default)
-    - ANDROID_ABI=arm64-v8a
-    
-android:
-  components:
-    # Base components 
-    - tools # to get the new `repository-11.xml`
-    - tools # https://github.com/travis-ci/travis-ci/issues/6040#issuecomment-219367943)
-    - platform-tools   
-    - build-tools-$ANDROID_BUILD_TOOLS_VERSION # get the build tools version to build the project
+    - ANDROID_TOOLS=4333796 # android-28
+    - ANDROID_HOME=${HOME}/android-sdk
+    - GRAVIS="https://raw.githubusercontent.com/DanySK/Gravis-CI/master/"
+    - JDK="1.8" # the JDK used for running tests
+    - TOOLS=${ANDROID_HOME}/tools
+    # PATH order is incredibly important. e.g. the 'emulator' script exists in more than one place!
+    - PATH=${ANDROID_HOME}:${ANDROID_HOME}/emulator:${TOOLS}:${TOOLS}/bin:${ANDROID_HOME}/platform-tools:${PATH}
+    - FLUTTER_CHANNEL=stable
+    - FLUTTER_VERSION=1.9.1+hotfix.6-${FLUTTER_CHANNEL}
+    - FLUTTER_HOME=${HOME}/flutter
+    - PATH=${HOME}/.pub-cache/bin:${PATH}
+    - PATH=${FLUTTER_HOME}/bin:${FLUTTER_HOME}/bin/cache/dart-sdk/bin:${PATH}
 
-    # used sdk versions
-    - android-$ANDROID_API_LEVEL # get the android sdk version to build the project
-    - android-$EMULATOR_API_LEVEL # get the android sdk version for the emulator
+  # matrix of APIxABIxGOO
+  # (see "sdkmanager --list --verbose| grep ^system-images" for full list)
+  # See https://github.com/mmcc007/test_emulators for many more options.
+  jobs:
+    - API=29 ABI=x86_64      GOO=google_apis_playstore
 
-    # Get the latest version of additional components
-    - extra-android-support
-    - extra-google-m2repository
-    - extra-android-m2repository
-    - extra-google-google_play_services
 
-    # Specify the needed emulator
-    - $ANDROID_EMULATOR_IMAGE
+jobs:
+  fast_finish: true
+  # jobs that are flakey or fail consistently
+  allow_failures:
+    - env: API=29 ABI=x86_64      GOO=google_apis_playstore # flutter driver: "No devices found."
+    - env: API=29 ABI=x86         GOO=google_apis_playstore # flutter doctor: device offline
+    - env: API=29 ABI=x86_64      GOO=google_apis # flutter drive: "Bad state: No element"
+    - env: API=29 ABI=x86         GOO=google_apis # DriverError: Failed to fulfill GetHealth due to remote error
+    - env: API=29 ABI=x86_64      GOO=default     # hangs while resolving gradle dependencies, etc...
+    - env: API=29 ABI=x86         GOO=default     # hangs while resolving dependencies
 
-licenses:
-  - 'android-sdk-license-.+'
-  - '.+'
+    - env: API=28 ABI=x86_64      GOO=google_apis_playstore # flutter driver hangs
+    - env: API=28 ABI=x86         GOO=google_apis_playstore # flutter driver hangs
+    - env: API=28 ABI=x86         GOO=google_apis # DriverError: Failed to fulfill GetHealth due to remote error
 
-# Emulator Management: Create, Start and Wait
+    - env: API=26 ABI=x86         GOO=google_apis_playstore # hangs after installing apk
+    - env: API=26 ABI=x86         GOO=google_apis # hangs during assembleDebug and resolving dependencies
+    - env: API=26 ABI=x86         GOO=default     # emulator hangs
+
+    - env: API=25 ABI=x86         GOO=google_apis_playstore # hangs after installing apk
+    - env: API=25 ABI=armeabi-v7a GOO=google_apis # flutter drive reports "apk: Can't find service: package"
+    - env: API=25 ABI=arm64-v8a   GOO=google_apis # Timeout (600 seconds) reached; failed to start emulator
+
+    - env: API=24 ABI=x86         GOO=google_apis # flutter driver hangs after resolving gradle dependencies
+    - env: API=24 ABI=armeabi-v7a GOO=google_apis # hangs during Installing build/app/outputs/apk/app.apk...
+    - env: API=24 ABI=arm64-v8a   GOO=google_apis # Timeout (600 seconds) reached; failed to start emulator
+    - env: API=24 ABI=armeabi-v7a GOO=default     # hangs after installing apk
+    - env: API=24 ABI=arm64-v8a   GOO=default     # Timeout (600 seconds) reached; failed to start emulator
+
+    - env: API=23 ABI=armeabi-v7a GOO=google_apis # hangs during Installing build/app/outputs/apk/app.apk...
+    - env: API=23 ABI=armeabi-v7a GOO=default     # hangs after installing apk
+
+    - env: API=22 ABI=x86_64      GOO=google_apis # hangs during gradle assemble
+    - env: API=22 ABI=armeabi-v7a GOO=google_apis # hangs after installing apk
+    - env: API=22 ABI=x86_64      GOO=default     # flutter drive hangs during installation of apk
+
+    - env: API=21 ABI=armeabi-v7a GOO=google_apis # Timeout (600 seconds) reached; failed to start emulator
+    - env: API=21 ABI=armeabi-v7a GOO=default     # hangs before test starts
+
+    - env: API=19 ABI=armeabi-v7a GOO=google_apis # hangs after installing apk
+    - env: API=19 ABI=armeabi-v7a GOO=default     # hangs on Installing build/app/outputs/apk/app.apk...
+
+    - env: API=18 ABI=x86         GOO=google_apis # hangs during test
+    - env: API=18 ABI=x86         GOO=default     # hangs during flutter doctor
+    - env: API=18 ABI=armeabi-v7a GOO=google_apis # flutter driver: incorrect success after installing apk
+
+    - env: API=17 ABI=x86         GOO=google_apis # FlutterDriver: It is taking an unusually long time to connect to the VM...
+    - env: API=17 ABI=x86         GOO=default     # FlutterDriver: It is taking an unusually long time to connect to the VM...
+
+    - env: API=16 ABI=x86         GOO=google_apis # FlutterDriver: It is taking an unusually long time to connect to the VM...
+    - env: API=16 ABI=x86         GOO=default     # FlutterDriver: It is taking an unusually long time to connect to the VM...
+    - env: API=16 ABI=armeabi-v7a GOO=google_apis # hangs after installing apk
+    - env: API=16 ABI=armeabi-v7a GOO=default     # hangs after installing apk
+
 before_install:
-  - echo $ANDROID_TARGET 
-  - echo $ANDROID_ABI
-  - adb logcat > logcat.log & 
+  - java -version
+
+  # Set up KVM
+  - sudo apt-get -y --no-install-recommends install bridge-utils libpulse0 libvirt-bin qemu-kvm virtinst ubuntu-vm-builder > /dev/null
+  # add travis user to groups
+  - sudo adduser $USER libvirt
+  - sudo adduser $USER kvm
+
+  # Set up JDK 8 for Android SDK
+  - curl "${GRAVIS}.install-jdk-travis.sh" --output ~/.install-jdk-travis.sh
+  - export TARGET_JDK="${JDK}"
+  - JDK="1.8" # used when running sdkmanager
+  - source ~/.install-jdk-travis.sh
+
+  # Set up Android SDK
+  - wget -q "https://dl.google.com/android/repository/sdk-tools-linux-$ANDROID_TOOLS.zip" -O android-sdk-tools.zip
+  - unzip -q android-sdk-tools.zip -d ${ANDROID_HOME}
+  - rm android-sdk-tools.zip
+
+  # Avoid harmless sdkmanager warning
+  - mkdir ~/.android
+  - echo 'count=0' > ~/.android/repositories.cfg
+
+  # Accept licenses before installing components, no need to echo y for each component
+  - yes | sdkmanager --licenses >/dev/null
 
 install:
-  - sdkmanager --list || true # List all available targets, device definitions and AVDs.
-  # Update sdk tools to latest version and install/update components
-  - echo yes | sdkmanager "tools"
-  - echo yes | sdkmanager "platform-tools"
-  - echo yes | sdkmanager "build-tools;"$ANDROID_BUILD_TOOLS_VERSION
-  - echo yes | sdkmanager "platforms;android-"$ANDROID_API_LEVEL # Latest platform required by SDK tools
+  # Download SDK tools
+  - sdkmanager "platform-tools" >/dev/null
+  - sdkmanager "tools" >/dev/null # A second time per Travis docs, gets latest versions
+  - sdkmanager "build-tools;28.0.3" >/dev/null # Implicit gradle dependency - gradle drives changes
+  - sdkmanager "platforms;android-$API" >/dev/null # We need the API of the emulator we will run
+  - sdkmanager "platforms;android-28" >/dev/null # We need the API of the current compileSdkVersion from gradle.properties  -
 
-  - echo yes | sdkmanager "extras;android;m2repository"
-  - echo yes | sdkmanager "extras;google;m2repository"
-  - echo yes | sdkmanager "extras;m2repository;com;android;support;constraint;constraint-layout;1.0.2"
-  - echo yes | sdkmanager "extras;m2repository;com;android;support;constraint;constraint-layout-solver;1.0.2"
+  - sdkmanager "emulator" >/dev/null
+  - |
+    if [[ $ABI =~ "arm" ]]; then
+      # Download a pinned version of the emulator since default version can cause issues
+      ${ANDROID_HOME}/emulator/emulator -version
+      emulator_version=5264690 # 29.2.1.0 (build_id 5889189) ==> 28.0.23.0 (build_id 5264690)
+      # sudo apt-get install -y libunwind8 libc++1
+      curl -fo emulator.zip "https://dl.google.com/android/repository/emulator-linux-$emulator_version.zip"
+      rm -rf "${ANDROID_HOME}/emulator"
+      unzip -q emulator.zip -d "${ANDROID_HOME}"
+      rm -f emulator.zip
+      # install build tools and platforms for arm (to allow emulator to run)
+      sdkmanager "build-tools;25.0.2" "platforms;android-25" > /dev/null
+    fi
+  - ${ANDROID_HOME}/emulator/emulator -version
 
-  - echo yes | sdkmanager --update
-  - echo yes | sdkmanager --licenses
+  - sdkmanager "extras;android;m2repository" >/dev/null
+  - sdkmanager "system-images;android-$API;$GOO;$ABI" >/dev/null # install system images for emulator
 
-  # Check components status
-  - sdkmanager --list || true
+  # Create an Android emulator
+  #  - echo no | avdmanager --verbose create avd --force -n test -k "system-images;android-$API;$GOO;$ABI" -c 10M
+  - echo no | avdmanager --verbose create avd --force -n test -k "system-images;android-$API;$GOO;$ABI"
+  #  - EMU_PARAMS="
+  #      -verbose
+  #      -no-snapshot
+  #      -no-window
+  #      -no-audio
+  #      -no-boot-anim
+  #      -camera-back none
+  #      -camera-front none
+  #      -selinux permissive
+  #      -qemu -m 2048"
+  - EMU_PARAMS="
+    -avd test
+    -verbose
+    -no-window
+    -no-audio
+    "
+  - EMU_COMMAND="emulator"
+  - |
+    if [[ $ABI =~ "x86" ]]; then
+      EMU_PARAMS="${EMU_PARAMS} -no-window"
+    else
+      # emulate graphics if running on ARM
+      EMU_PARAMS="${EMU_PARAMS} -gpu swiftshader"
+    fi
+  # This double "sudo" monstrosity is used to have Travis execute the
+  # emulator with its new group permissions and help preserve the rule
+  # of least privilege.
+  - sudo -E sudo -u $USER -E bash -c "${ANDROID_HOME}/emulator/${EMU_COMMAND} ${EMU_PARAMS} &"
 
+  # Switch back to our target JDK version to build and run tests
+  - JDK="${TARGET_JDK}"
+  - source ~/.install-jdk-travis.sh
+
+before_script:
+  # wait for emulator to finish startup
+  - tools/android-wait-for-emulator
+  # unlock screen
+  - adb shell input keyevent 82 &
 
 script:
-# Just do unit tests and check if we build.
-# Use the Fdroid flavor as it doesn't require the google services config
-  - ./gradlew testFdroidDebugUnitTest
+  - set -e
   - ./gradlew assembleFdroidDebug
-  # Temporarily disable emulator based tests until the world figures out how to make them run again
-  # - ./gradlew connectedAndroidTest # Instrumented unit test
-  #- ./gradlew lint #maybe at some point
-  #- ./gradlew clean test build
+  - ./gradlew testFdroidDebugUnitTest
+  - ./gradlew app:connectedFdroidDebugAndroidTest
+
+#before_cache:
+#  - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
+#  - curl "${GRAVIS}.clean_gradle_cache.sh" --output ~/.clean_gradle_cache.sh
+#  - bash ~/.clean_gradle_cache.sh
+#
+#cache:
+#  directories:
+#    - $HOME/.gradle/caches/
+#    - $HOME/.gradle/wrapper/
 
