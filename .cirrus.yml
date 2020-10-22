@@ -9,7 +9,7 @@ check_android_task:
   create_device_script:
     echo no | avdmanager create avd --force
     -n test
-    -k "system-images;android-29;default;armeabi-v7a"
+    -k "system-images;android-29;default;x86"
   start_emulator_background_script:
     $ANDROID_HOME/emulator/emulator
     -avd test
