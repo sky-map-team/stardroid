@@ -1,3 +1,6 @@
+# This file was largely copied from
+# https://github.com/mmcc007/test_emulators
+
 # Run android emulator on accelerated intel CPU
 # or on emulated ARM CPU.
 # Includes test.
@@ -50,6 +53,7 @@ env:
 
   # matrix of APIxABIxGOO
   # (see "sdkmanager --list --verbose| grep ^system-images" for full list)
+  # See https://github.com/mmcc007/test_emulators for many more options.
   jobs:
     - API=29 ABI=x86_64      GOO=google_apis_playstore
 
