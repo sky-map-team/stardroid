@@ -1,0 +1,99 @@
+<resources>
+<string name="eula_text" translation_description="Privacy policy and EULA in html">
+    <![CDATA[
+    <h1>Acuerdo de licencia del usuario final</h1>
+    Al usar Sky Map, aceptas estos términos. Por favor, léelos con atención.
+    \"Nosotros\" y \"Sky Map Devs\" se refieren a los autores y colaboradores del código base de Sky Map.
+    \"La App\" se refiere a la aplicación Sky Map.
+    <br/><br/>
+    <h2>Resumen</h2>
+    ¡Sky Map no tiene garantías! Si bien no podemos pensar en una forma concebible de que pueda dañar tu
+    teléfono o a ti (excepto tal vez que te cause dolor de cuello al mirar hacia el cielo) la estás usando
+    bajo tu propio riesgo.
+    <br/><br/>
+    Sigue una aburrida versión legal.
+    <br/><br/>
+    <h2>Usando Sky Map</h2>
+    
+    El uso de Sky Map no te otorga la autoría de ningún derecho de propiedad intelectual
+    sobre el contenido al que accedas.
+    No puedes usar el contenido de Sky Map a menos que obtengas el permiso de sus propietarios
+    (ver ayuda/agradecimientos) o está,
+    de lo contrario, permitido por ley. Estos términos no te otorgan el derecho a usar ninguna marca o logotipo
+    usado en Sky Map.
+    No elimines, ocultes ni modifiques ningún aviso legal que se muestre en Sky Map o junto con él.
+    <br/><br/>
+    <h2>Privacidad</h2>
+    Nuestra política de privacidad (ver más abajo) explica cómo tratamos tus datos personales y protegemos su privacidad
+    cuando usas Sky Map.
+    Al usar Sky Map, aceptas que podemos usar dichos datos de acuerdo con nuestra política de privacidad.
+    <br/><br/>
+    <h2>Acerca de Sky Map</h2>
+    Este software puede actualizarse automáticamente en ru dispositivo una vez que una versión nueva o
+    función esté disponible.
+    Los desarrolladores de Sky Map te brindan una licencia personal, mundial, libre de regalías, no asignable y
+    no exclusiva para usar Sky Map de la manera permitida por estos términos.
+    Puedes usar el código fuente de Sky Map de acuerdo con la licencia en
+    https://github.com/sky-map-team/stardroid/blob/master/LICENSE.md .<br/>
+    Cambiamos y mejoramos constantemente Sky Map. Podemos añadir o eliminar
+    funciones en cualquier momento, y podemos dejar de admitirlas o publicarlas por completo.
+    <br/><br/>
+    <h2>Garantías y exenciones de responsabilidad</h2>
+    Estamos orgullosos de Sky Map pero no hacemos promesas al respecto. Toma en cuenta
+    lo siguiente:<br/>
+    DISTINTOS DE LO EXPRESAMENTE ESTABLECIDO EN ESTOS TÉRMINOS O TÉRMINOS ADICIONALES, NI LOS DESARROLLADORES DE SKY MAP
+    NI SUS PROVEEDORES O DISTRIBUIDORES HACEN PROMESAS ESPECÍFICAS SOBRE LA APLICACIÓN.
+    POR EJEMPLO, NO HACEMOS NINGÚN COMPROMISO SOBRE EL CONTENIDO DE LA APLICACIÓN,
+    LAS FUNCIONES ESPECÍFICAS DE LA APLICACIÓN O SU FIABILIDAD, DISPONIBILIDAD O CAPACIDAD PARA SATISFACER
+    TUS NECESIDADES. BRINDAMOS LA APLICACIÓN "TAL CUAL".<br/>
+    ALGUNAS JURISDICCIONES OFRECEN CIERTAS GARANTÍAS, COMO LA GARANTÍA IMPLÍCITA DE COMERCIABILIDAD,
+    APTITUD PARA UN PROPÓSITO PARTICULAR Y NO INFRACCIÓN.
+    EN LA MEDIDA EN QUE LO PERMITA LA LEY, EXCLUIMOS TODAS LAS GARANTÍAS.
+    <br/><br/>
+    <h2>Responsabilidad por Sky Map</h2>
+    CUANDO LO PERMITA LA LEY, LOS DESARROLLADORES DE SKY MAP, Y SUS PROVEEDORES Y DISTRIBUIDORES
+    NO SERÁN RESPONSABLES DE LA PÉRDIDA DE BENEFICIOS, INGRESOS O DATOS, PÉRDIDAS FINANCIERAS O DAÑOS INDIRECTOS,
+    ESPECIALES, CONSECUENTES, EJEMPLARES O PUNITIVOS.<br/>
+    EN LA MEDIDA PERMITIDA POR LA LEY, LA RESPONSABILIDAD TOTAL DE LOS DESARROLLADORES DE SKY MAP, Y SUS PROVEEDORES Y
+    DISTRIBUIDORES,
+    POR CUALQUIER RECLAMO BAJO ESTOS TÉRMINOS, INCLUYENDO CUALQUIER GARANTÍA IMPLÍCITA, SE LIMITA A LA CANTIDAD
+    QUE TÚ NOS PAGASTE POR USAR LA APLICACIÓN (es decir, nada).<br/>
+    EN TODOS LOS CASOS, LOS DESARROLLADORES DE SKY MAP NO SERÁN RESPONSABLE DE NINGUNA PÉRDIDA
+    O DAÑO CAUSADO POR LA APLICACIÓN.<br/><br/>
+    <h2>Usos comerciales de Sky Map</h2>
+    Si usas Sky Map en nombre de una empresa, esa empresa acepta estos términos.
+    Eximirá de responsabilidad e indemnizará a los desarrolladores de Sky Map
+    de cualquier reclamo, demanda o acción que surja o esté relacionada con el uso de los Servicios o la violación
+    de estos términos, incluida cualquier responsabilidad o gasto que surja de reclamos, pérdidas, daños, demandas,
+    juicios, litigios, costos y honorarios de abogados.<br/><br/>
+    <h2>Acerca de estos Términos</h2>
+    Podemos modificar estos términos o cualquier término adicional que se aplique a la Aplicación para, por ejemplo,
+    reflejar cambios en la ley o cambios en Sky Map.
+    Estos términos se volverán a mostrar en la aplicación cuando hagamos modificaciones.
+    Si no estás de acuerdo con los términos modificados, debes dejar de usar la aplicación.
+    Si hay un conflicto entre estos términos y los términos adicionales, los términos adicionales
+    controlarán el conflicto.
+    Si no cumples con estos términos y no tomamos medidas de inmediato, esto no significa
+    que estamos renunciando a cualquier derecho que podamos tener (como tomar medidas en el futuro).
+    Si resulta que un término en particular no es ejecutable, esto no afectará a ningún otro término.
+    <br/><br/>
+    <h1>Política de Privacidad</h1>
+    Esta aplicación usa Firebase Analytics para ayudar a analizar cómo la usan las personas.
+    Firebase Analytics recopila información estándar de registro de Internet e información sobre el comportamiento de los visitantes
+    de forma anónima. Ten en cuenta que los datos son anónimos, ninguna información de identificación personal
+    es recopilada. Esta información anónima
+    se transmite a Google, no a los desarrolladores de Sky Map. Luego, Firebase Analytics compila
+    informes estadísticos que nos dicen cosas como el porcentaje de usuarios que usan determinadas funciones,
+    tienen versiones particulares de Android o tienen teléfonos que tienen ciertas características (como un giroscopio).
+    Esto es esencial para que descubramos qué características
+    a la gente le gusta y no le gusta y cuándo podemos dejar de admitir versiones obsoletas de Android
+    y así mejorar Sky Map. Considéralo una forma de votar sin esfuerzo y de forma anónima
+    sobre las funciones que te gustan y las que no.<br/>
+    Respetamos tu privacidad y no recopilamos tu información personal; no podemos decir nada sobre
+    ti como usuario. Si no
+    deseas compartir estos datos anónimos con Firebase Analytics, puedes optar por no participar a través del menú de ajustes.
+    De lo contrario, gracias por ayudarnos a mejorar Sky Map. Para obtener más información sobre
+    Firebase Analytics mira  https://www.google.com/analytics/
+    ]]>
+</string>
+</resources>
