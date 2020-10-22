@@ -2,11 +2,13 @@ container:
   image: cirrusci/android-sdk:29
   cpu: 4
   memory: 10G
+  kvm: true
 
 check_android_task:
   list_versions_script:
     sdkmanager --list --verbose| grep ^system-images
   create_device_script:
+    sdkmanager "system-images;android-29;default;x86"
     echo no | avdmanager create avd --force
     -n test
     -k "system-images;android-29;default;x86"
