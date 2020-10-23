@@ -5,6 +5,8 @@ container:
   kvm: true
 
 check_android_task:
+  wtf_script:
+    ls -al
   fix_kvm_script:
     sudo chown cirrus:cirrus /dev/kvm
   list_versions_script:
