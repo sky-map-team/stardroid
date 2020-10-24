@@ -23,4 +23,4 @@ check_android_task:
   wait_for_emulator_script:
     - ./tools/android-wait-for-emulator
     - adb shell input keyevent 82
-  check_script: ./gradlew testFdroidDebugUnitTest connectedFdroidDebugAndroidTest
+  check_script: ./gradlew check connectedCheck
