@@ -12,6 +12,7 @@ android {
         versionCode 1520
         versionName "1.9.6 - RC3"
         buildConfigField 'String', 'GOOGLE_ANALYTICS_CODE', '""'
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     compileOptions {
@@ -97,10 +98,18 @@ dependencies {
     gmsImplementation 'com.google.firebase:firebase-analytics:17.5.0'
 
 // Testing
-    testImplementation 'junit:junit:4.13'
+    testImplementation 'junit:junit:4.13.1'
     testImplementation 'org.mockito:mockito-core:1.10.19'
     testImplementation 'org.robolectric:robolectric:4.3.1'
     testImplementation 'org.easymock:easymock:2.5.2'
-    androidTestImplementation 'junit:junit:4.13'
-    androidTestImplementation 'org.easymock:easymock:2.5.2'
+    androidTestImplementation 'junit:junit:4.13.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test:runner:1.3.0'
+    androidTestImplementation 'androidx.test:rules:1.3.0'
+    // Optional -- Hamcrest library
+    androidTestImplementation 'org.hamcrest:hamcrest-library:1.3'
+    // Optional -- UI testing with Espresso
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    // Optional -- UI testing with UI Automator
+    // androidTestImplementation 'androidx.test.uiautomator:uiautomator:2.2.0'
 }
