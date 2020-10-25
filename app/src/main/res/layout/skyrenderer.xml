@@ -144,6 +144,16 @@
         stardroid:pref_key="source_provider.6"
         stardroid:image_on="@drawable/b_meteor_on"
         stardroid:image_off="@drawable/b_meteor_off" />
+        <!--com.google.android.stardroid.views.PreferencesButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="7px"
+            android:paddingBottom="11px"
+            android:paddingLeft="5px"
+            android:background="#00000000"
+            stardroid:pref_key="@string/show_satellite_layer_pref"
+            stardroid:image_on="@drawable/b_iss_on"
+            stardroid:image_off="@drawable/b_iss_off" /-->
        <com.google.android.stardroid.views.PreferencesButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

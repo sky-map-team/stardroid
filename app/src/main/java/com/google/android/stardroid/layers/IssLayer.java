@@ -78,8 +78,7 @@ public class IssLayer extends AbstractSourceLayer {
 
   @Override
   protected int getLayerNameId() {
-    // TODO(brent): Update to different preference
-    return R.string.show_hubble_layer_pref;
+    return R.string.show_satellite_layer_pref;
   }
 
   /** Thread Runnable which parses the orbital elements out of the Url. */

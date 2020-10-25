@@ -157,7 +157,7 @@ public class ApplicationModule {
     layerManager.addLayer(new HorizonLayer(model, resources));
     layerManager.addLayer(new EclipticLayer(resources));
     layerManager.addLayer(new SkyGradientLayer(model, resources));
-    // layerManager.addLayer(new IssLayer(resources, getModel()));
+    // layerManager.addLayer(new IssLayer(resources, model));
 
     layerManager.initialize();
     return layerManager;

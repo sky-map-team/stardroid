@@ -14,10 +14,10 @@
 
 package com.google.android.stardroid.provider.ephemeris;
 
-import java.util.Date;
-
 import com.google.android.stardroid.units.HeliocentricCoordinates;
 import com.google.android.stardroid.units.RaDec;
+
+import java.util.Date;
 
 /**
  * Calculate the position of the Sun in RA and Dec
