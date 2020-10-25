@@ -26,7 +26,51 @@
       android:id="@+id/view_mask"/>
 
     <!-- Include a place for all the modal controls. -->
-    <LinearLayout
+      <RelativeLayout
+          android:id="@+id/search_control_bar"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:background="#20990099"
+          android:orientation="vertical"
+          android:padding="1dip"
+          android:visibility="gone">
+
+          <ImageView
+              android:id="@+id/search_icon"
+              android:layout_width="34dip"
+              android:layout_height="wrap_content"
+              android:paddingTop="10dip"
+              android:src="@drawable/search_lens_very_small" />
+
+          <TextView
+              android:id="@+id/search_status_label"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="2dip"
+              android:layout_toRightOf="@id/search_icon"
+              android:paddingLeft="10dip"
+              android:textAppearance="?android:attr/textAppearanceMedium" />
+
+          <TextView
+              android:id="@+id/search_prompt"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:layout_below="@id/search_status_label"
+              android:layout_marginLeft="34dip"
+              android:text="@string/search_overlay_title"
+              android:textAppearance="?android:attr/textAppearanceSmall" />
+
+          <ImageButton
+              android:id="@+id/cancel_search_button"
+              android:layout_width="32dip"
+              android:layout_height="wrap_content"
+              android:layout_alignParentRight="true"
+              android:background="@android:color/transparent"
+              android:clickable="true"
+              android:src="@drawable/time_travel_close" />
+      </RelativeLayout>
+
+      <LinearLayout
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:orientation="vertical">
@@ -40,46 +84,7 @@
         android:visibility="gone" />
 
       <!-- Include a place for the search controls bar -->
-      <RelativeLayout
-        android:id="@+id/search_control_bar"
-        android:orientation="vertical"
-        android:padding="1dip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#20990099"
-        android:visibility="gone">
-        <ImageView
-          android:id="@+id/search_icon"
-          android:layout_width="34dip"
-          android:layout_height="wrap_content"
-          android:src="@drawable/search_lens_very_small"
-          android:paddingTop="10dip" />
-        <TextView
-          android:id="@+id/search_status_label"
-          android:layout_width="fill_parent"
-          android:layout_height="wrap_content"
-          android:layout_toRightOf="@id/search_icon"
-          android:paddingLeft="10dip"
-          android:textAppearance="?android:attr/textAppearanceMedium"
-          android:layout_marginLeft="2dip" />
-        <TextView
-          android:id="@+id/search_prompt"
-          android:layout_width="fill_parent"
-          android:layout_height="wrap_content"
-          android:text="@string/search_overlay_title"
-          android:layout_below="@id/search_status_label"
-          android:layout_marginLeft="34dip"
-          android:textAppearance="?android:attr/textAppearanceSmall" />
-        <ImageButton
-          android:id="@+id/cancel_search_button"
-          android:background="@android:color/transparent"
-          android:clickable="true"
-          android:layout_width="32dip"
-          android:layout_height="wrap_content"
-          android:src="@drawable/time_travel_close"
-          android:layout_alignParentRight="true" />
-      </RelativeLayout>
-    </LinearLayout>
+      </LinearLayout>
     <!--  The layers/providers button -->
     <com.google.android.stardroid.views.ButtonLayerView
         android:layout_width="wrap_content"
