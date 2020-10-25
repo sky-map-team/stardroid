@@ -1,0 +1,26 @@
+container:
+  image: cirrusci/android-sdk:29
+  cpu: 4
+  memory: 10G
+  kvm: true
+
+check_android_task:
+  wtf_script:
+    - ls -al
+    - ls -al tools
+  fix_kvm_script:
+    sudo chown cirrus:cirrus /dev/kvm
+  list_versions_script:
+    sdkmanager --list --verbose| grep ^system-images
+  create_device_script:
+    - sdkmanager "system-images;android-29;google_apis;x86"
+    - echo no | avdmanager create avd --force -n test -k "system-images;android-29;google_apis;x86"
+  start_emulator_background_script:
+    $ANDROID_HOME/emulator/emulator
+    -avd test
+    -no-audio
+    -no-window
+  wait_for_emulator_script:
+    - ./tools/android-wait-for-emulator
+    - adb shell input keyevent 82
+  check_script: ./gradlew testFdroidDebugUnitTest connectedFdroidDebugAndroidTest

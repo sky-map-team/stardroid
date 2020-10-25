@@ -15,9 +15,9 @@
 
 package com.google.android.stardroid.data;
 
-import com.google.android.stardroid.source.proto.SourceFullProto.AstronomicalSourcesProto;
 import com.google.common.io.Closeables;
 import com.google.protobuf.TextFormat;
+import com.google.android.stardroid.source.proto.SourceProto.AstronomicalSourcesProto;
 
 import java.io.FileOutputStream;
 import java.io.FileReader;

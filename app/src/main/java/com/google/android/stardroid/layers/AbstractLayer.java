@@ -28,7 +28,6 @@ import com.google.android.stardroid.source.ImageSource;
 import com.google.android.stardroid.source.LineSource;
 import com.google.android.stardroid.source.PointSource;
 import com.google.android.stardroid.source.TextSource;
-import com.google.android.stardroid.util.Blog;
 import com.google.android.stardroid.util.MiscUtil;
 
 import java.util.ArrayList;
@@ -164,7 +163,7 @@ public abstract class AbstractLayer implements Layer {
       if (manager != null) {
         // TODO(brent): we should really just disable this layer, but in a
         // manner that it will automatically be reenabled when appropriate.
-        Blog.d(this, "       " + clazz.getSimpleName());
+        Log.d(TAG, "       " + clazz.getSimpleName());
         manager.queueObjects(Collections.<E>emptyList(), updateType, atomic);
       }
       return;

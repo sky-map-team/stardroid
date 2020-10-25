@@ -1,0 +1,143 @@
+// Copyright 2010 Google Inc.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//
+// Author: Brent Bryan
+//
+// This file defines protocol buffers to serialize astronomical objects to be
+// displayed as part of SkyMap.
+
+syntax = "proto2";
+
+package stardroid_source;
+
+option java_package = "com.google.android.stardroid.source.proto";
+option java_outer_classname = "SourceProto";
+
+// Enumeration over shapes which can be drawn in the renderer.
+enum Shape {
+  CIRCLE = 0;
+  STAR = 1;
+  ELLIPTICAL_GALAXY = 2;
+  SPIRAL_GALAXY = 3;
+  IRREGULAR_GALAXY = 4;
+  LENTICULAR_GALAXY = 5;
+  GLOBULAR_CLUSTER = 6;
+  OPEN_CLUSTER = 7;
+  NEBULA = 8;
+  HUBBLE_DEEP_FIELD = 9;
+}
+
+// Protocol buffer representation of the GeocentricCoordinates domain object.
+message GeocentricCoordinatesProto {
+  // the right ascension of the object in degrees
+  optional float right_ascension = 1;
+
+  // the declination of the object in degrees
+  optional float declination = 2;
+}
+
+// Message for a point object displayed in SkyMap
+message PointElementProto {
+
+  // Location of the point source.
+  optional GeocentricCoordinatesProto location = 1;
+
+  // Color that the point should be in SkyMap.
+  optional uint32 color = 2 [default = 0xFFFFFFFF];
+
+  // Width (in pixels) that the point should be in SkyMap.
+  optional int32 size = 3 [default = 3];
+
+  // Shape to use to draw this object in SkyMap.
+  optional Shape shape = 4 [default = CIRCLE];
+}
+
+// Message for label (text string) displayed in SkyMap
+// Nextid: 7
+message LabelElementProto {
+  // Location on which this label should be drawn.
+  optional GeocentricCoordinatesProto location = 1;
+
+  // Color that the text should be displayed in.
+  optional uint32 color = 2 [default = 0xFFFFFFFF];
+
+  // Index in the strings.xml file of the string that should be displayed for
+  // this label and its string counterpart (usuall snake cased).
+  optional int32 strings_int_id = 3;
+  optional string strings_str_id = 6;
+
+  // The string to display to the user.
+  // optional string REMOVE_string_index = 999;
+
+  // Size of the font (in pixels) that should be used to draw this label.
+  optional int32 font_size = 4 [default = 15];
+
+  // Angle in degrees by which the text should be shifted from the location
+  // Offsets are typically non-zero to ensure that the text of an object does
+  // not obscure the object itself.
+  optional float offset = 5 [default = 0.02];
+}
+
+// Message for a line displayed in SkyMap
+message LineElementProto {
+  // Color that should be used to draw the line.
+  optional uint32 color = 1 [default = 0xFFFFFFFF];
+
+  // the width of the line in pixels.
+  optional float line_width = 2 [default = 1.5];
+
+  // Vertices of the line.  This array should never have less than two objects.
+  repeated GeocentricCoordinatesProto vertex = 3;
+}
+
+// This message corresponds to a single astronomical object.  For instance,
+// this message could represent a constellation.  This constellation is
+// composed of its stars (points), the lines which draw its shape, as well as
+// its label.
+//
+// TODO(brent): add support for images.
+// nextid: 9
+message AstronomicalSourceProto {
+  // Ids of the strings in the strings.xml file which correspond to names for
+  // this object.
+  repeated uint32 name_int_ids = 1;
+
+  // The string ids into the strings.xml file - usually snake cased versions of the common
+  // names.
+  repeated string name_str_ids = 8;
+
+  // The location to which SkyMap should direct the user.
+  optional GeocentricCoordinatesProto search_location = 2;
+
+  // The level to which SkyMap should zoom to automatically when searching for
+  // the object in manual mode.
+  optional float search_level = 3 [default = 0.0];
+
+  // The level at which this object becomes visible.
+  optional float level = 4 [default = 0.0];
+
+  // Points which comprise this objects (e.g. the stars).
+  repeated PointElementProto point = 5;
+
+  // Labels which comprise this objects (e.g. the name).
+  repeated LabelElementProto label = 6;
+
+  // Lines which comprise this objects (e.g. lines of the constellation).
+  repeated LineElementProto line = 7;
+}
+
+// A collection of AstronomicalSources
+message AstronomicalSourcesProto {
+  repeated AstronomicalSourceProto source = 1;
+}

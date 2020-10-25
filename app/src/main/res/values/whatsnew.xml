@@ -3,14 +3,7 @@
     <string name="whats_new_text" translation_description="Description of new features in this version in html">
 <![CDATA[
     <h1>New in version %s</h1>
-    \t • Welsh language support (many thanks Cymrodor)<br/>
-    \t • Some Norwegian translation fixes (credit: FTNo)<br/>
-    \t • Restored Firebase Analytics<br/>
-    \t • Made the Calibration dialog less aggressive and self-closing<br/>
-    \t • Shortened the End User License Agreement<br/>
-    \t • Retired the temporary data hack for Neowise<br/>
-    \t • Changed the declination lines to be 10 degrees apart instead of 9 and added labels<br/>
-    \t • Moved the time travel dialog controls to the bottom so they do not clash with the Android UI<br/>
+    \t • Internal update to the data generation code<br/>
 ]]>
     </string>
 </resources>
