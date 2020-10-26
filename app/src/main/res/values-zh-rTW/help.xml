@@ -1,7 +1,7 @@
 <resources>
-<string name="help_text" translation_description="Please do not change the &lt; and &gt; markup">&lt;big&gt;&lt;b&gt;星空圖 Android 版&lt;/b&gt;&lt;/big&gt;&lt;br/&gt;
+<string name="help_text" translation_description="Please do not change the &lt; and &gt; markup">
+&lt;big&gt;&lt;b&gt;星空圖 Android 版&lt;/b&gt;&lt;/big&gt;&lt;br/&gt;
 &lt;i&gt;版本 %s&lt;/i&gt;&lt;br/&gt;
-
 &lt;i&gt;https://github.com/sky-map-team/stardroid&lt;/i&gt;&lt;br/&gt;&lt;br/&gt;
 
 &lt;b&gt;簡介與快速入門&lt;/b&gt;&lt;br/&gt;
@@ -10,18 +10,21 @@
 &lt;b&gt;可見圖層&lt;/b&gt;&lt;br/&gt;
 
 「星空圖」會以圖層歸類各種物體，而您可以透過螢幕控制介面切換至各個圖層。系統提供的圖層包括：&lt;br/&gt;
-      星球&lt;br/&gt;
-      星座&lt;br/&gt;
-      梅西耶天體&lt;br/&gt;
-      行星&lt;br/&gt;
-      赤經與赤緯網格&lt;br/&gt;
-      地平線與基本方位&lt;br/&gt;
+      <span>&#8226;</span> 恆星&lt;br/&gt;
+      <span>&#8226;</span> 星座&lt;br/&gt;
+      <span>&#8226;</span> 梅西耶天體&lt;br/&gt;
+      <span>&#8226;</span> 行星&lt;br/&gt;
+      <span>&#8226;</span> 流星雨&lt;br/&gt;
+      <span>&#8226;</span> 赤經與赤緯網格&lt;br/&gt;
+      <span>&#8226;</span> 地平線與基本方位&lt;br/&gt;
+      
 星空圖清楚標示了最明亮的星體、最耀眼的星座以及行星。行星的圖示略大於實際觀看時的大小，地平線則以直線表示。除非您居住在一望無際、沒有任何建築物的平原上，否則「星空圖」通常會顯示地平線上原本肉眼看不到的星體。&lt;br/&gt;&lt;br/&gt;
 
 &lt;b&gt;螢幕控制介面&lt;/b&gt;&lt;br/&gt;
 輕觸螢幕，螢幕控制介面即會顯示。上述各個圖層的切換選項列於螢幕一側；已啟用的圖層選項會以橘色顯示，未啟用的圖層選項則呈現白色。&lt;br/&gt;
 
 螢幕底端有縮放控制介面，以及手動與自動模式的切換控制介面。&lt;br/&gt;&lt;br/&gt;
+
 &lt;b&gt;導覽模式&lt;/b&gt;&lt;br/&gt;
 初次安裝「星空圖」後，程式會以「自動模式」啟動，並運用手機感應器偵測手機指向位置，進而顯示該處的星空圖。如果您切換至「手動模式」，即可利用手指拖曳星空圖，探索整個星空。您也可以轉動軌跡球或是輕壓方向鍵的左右兩側，旋轉星空圖。使用支援多點觸控功能的手機時，您還可以運用兩指旋轉星空圖或縮小和放大檢視範圍。
 &lt;br/&gt;&lt;br/&gt;
@@ -31,7 +34,7 @@
 請注意，如果您使用的是「手動模式」，「星空圖」會直接將星空圖移至適當位置以顯示目標天體。&lt;br/&gt;
 如要退出「搜尋模式」，只要輕觸畫面右上角的小叉叉即可。&lt;br/&gt;&lt;br/&gt;
 
-&lt;b&gt;時光旅行 (新功能！)&lt;/b&gt;&lt;br/&gt;
+&lt;b&gt;時光旅行&lt;/b&gt;&lt;br/&gt;
 
 「星空圖」的「時光旅行」模式能讓您穿梭在各個時空，探索無垠的星空。您只需從主選單選取 [時光旅行]，再從 [熱門日期] 選取日期，或是透過「變更日期」及「變更時間」對話方塊自行選取其他日期時間，即可使用進行時光旅行。由於木星引力會影響星空圖的準確度，我們只能提供 1900 至 2100 年之間的星空資料。選定日期後只要按一下 [前往！]，系統即會帶您飛越時空，前往您指定的時間點。「星空圖」的「時光旅行模式」會顯示您造訪的日期，並提供「倒轉」及「快轉」控制介面，任您觀看星空的變化。按一下按鈕，就能慢慢觀看星空隨著時間的變化，如果多按幾次按鈕，變化的速度也會隨之加快。&lt;br/&gt;
 
@@ -47,7 +50,7 @@
 「星空圖」必須取得您的約略位置資訊，才能顯示正確的星空圖。根據預設，系統會由您的手機網路取得這項資訊。如果您位於無訊號的地點，或已停用網路定位功能，系統將使用手機的 GPS 取得定位資訊。您也可以透過設定選單手動設定位置，方法是輸入地名或經緯度資訊 (以度為單位)。請注意，「星空圖」只有在具備資料傳輸連線的情況下，才能將地名轉換為您所在的經緯度。&lt;br/&gt;&lt;br/&gt;
 
 &lt;b&gt;疑難排解與功能限制&lt;/b&gt;&lt;br/&gt;
-&lt;i&gt;星空圖不準確。&lt;/i&gt;&lt;br/&gt;
+&lt;i&gt;星空圖與現時星空不符&lt;/i&gt;&lt;br/&gt;
 如果您發現星空圖顯示的資訊與實際星空不符，可能的原因如下：&lt;br/&gt;
 1) 您的指南針是否經過校準？建議您拿起手機，然後轉動手腕將手機循著 8 字形移動，即可進行校準；您可能必須不定時重複此動作進行校準 (這是手機內建的功能，並非「星空圖」提供的功能)。&lt;br/&gt;
 2) 應用程式設定的位置是否正確？您的 GPS 或手機定位功能是否已啟用？&lt;br/&gt;
@@ -57,26 +60,18 @@
 您是否處於手動模式？如果您未啟用手動模式，這可能是因為您的指南針尚未經過校準。請按照上述步驟進行校準，星空圖即可隨您移動。&lt;br/&gt;&lt;br/&gt;
 
 &lt;b&gt;工作人員&lt;/b&gt;&lt;br/&gt;
-&lt;i&gt;工程及設計&lt;/i&gt;&lt;br/&gt;
-Brent Bryan、Dominic Widdows、Hector Ouilhet、James Powell、John Taylor 及 Kevin Serafini&lt;br/&gt;
+&lt;i&gt;工程、設計、產品企劃&lt;/i&gt;&lt;br/&gt;
+Brent Bryan, Dominic Widdows, Hector Ouilhet, James Powell,
+John Taylor, Kevin Serafini, Lior Ron&lt;br/&gt;&lt;br/&gt;
 
-&lt;i&gt;產品企劃&lt;/i&gt;&lt;br/&gt;
-Lior Ron&lt;br/&gt;
-
-&lt;i&gt;公關事務&lt;/i&gt;&lt;br/&gt;
-Aaron Stein 及 Erin Gleason&lt;br/&gt;
-
-&lt;i&gt;產品行銷&lt;/i&gt;&lt;br/&gt;
-Effie Seiberg 及 Linda Tong&lt;br/&gt;
-
-&lt;i&gt;翻譯&lt;/i&gt;&lt;br/&gt;
-Jelena Oertel&lt;br/&gt;&lt;br/&gt;
-
+&lt;i&gt;開源程式碼貢獻者&lt;/i&gt;&lt;br/&gt;
+Christopher Wilcox, PhD&lt;br/&gt;&lt;br/&gt;
 
 &lt;b&gt;銘謝&lt;/b&gt;&lt;br/&gt;
+星空圖原先是由谷歌公司開發，並且在 2012 年釋出原始碼成為開源軟體。
 「星空圖」之技術資料來源如下：&lt;br/&gt;
 Centre de Donnees astronomiques de Strasbourg (http://cdsweb.u-strasbg.fr/)&lt;br/&gt;
-The Bright Star Catalogue, 5th Revised Ed. (Hoffleit D. 及 Warren Jr W.H.)&lt;br/&gt;
+The Bright Star Catalogue, 5th Revised Ed. (Hoffleit D., Warren Jr W.H.)&lt;br/&gt;
 HYG 資料庫，HYG v1.0 (http://www.astronexus.com/)&lt;br/&gt;
 History and Accurate Positions for the NGC/IC Objects (Harold G. Corwin Jr)&lt;br/&gt;
 Revised New General Catalogue of Nonstellar Astronomical Objects (Sulentic J.W. 及 Tifft W.G.)&lt;br/&gt;
@@ -86,6 +81,9 @@ SFA 星圖 (http://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html)&lt;
 (http://www2.research.att.com/~njas/coverings)&lt;br/&gt;
 「哈伯望遠鏡影像」係由 NASA 的「太空望遠鏡科學研究所」提供
 (http://hubblesite.org/)&lt;br/&gt;
-M31 image Peter Kennett (https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg)&lt;br/&gt;
+流星雨資料由「國際流星雨組織」提供
+(http://www.imo.net/data)&lt;br/&gt;
+M31 image by Peter Kennett (https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg)&lt;br/&gt;
 </string>
 </resources>
+
