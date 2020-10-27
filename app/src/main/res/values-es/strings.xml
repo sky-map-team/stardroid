@@ -39,12 +39,13 @@
     <string name="show_horizon_pref">Horizonte</string>
     <string name="show_sky_gradient" translation_description="This is a shading of the color of the sky used for effect">Gradiente del cielo</string>
     <string name="show_meteors_pref">Lluvias de meteoros</string>
+    <string name="show_satellite_layer_pref" translation_description="The layer for satellites">Satélites</string>
+    <!-- Just in case we decide to have such a layer for the 4/24 launch -->
+    <string name="show_hubble_layer_pref">Imágenes del Hubble</string>
     <string name="sensor_prefs">Ajustes del sensor</string>
     <string name="sensor_speed" translation_description="Old, non gyro sensors only: How quickly the sensor should send us data">Velocidad del sensor</string>
     <string name="sensor_damping" translation_description="Old, non gyro sensors only: The amount of smoothing applied to the sensor outputs.">Humedad</string>
     <string name="ecliptic">Eclíptica</string>
-    <!-- Just in case we decide to have such a layer for the 4/24 launch -->
-    <string name="show_hubble_layer_pref">Imágenes del Hubble</string>
     <string name="malformed_loc_error">El ajuste de lat/long no es un número.</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Acepto</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">No, gracias</string>
