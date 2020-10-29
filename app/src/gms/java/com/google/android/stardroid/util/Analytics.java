@@ -14,19 +14,11 @@
 
 package com.google.android.stardroid.util;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 
-import androidx.annotation.NonNull;
-
-import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.HitBuilders;
-import com.google.android.gms.analytics.Tracker;
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.stardroid.BuildConfig;
-import com.google.android.stardroid.R;
 import com.google.android.stardroid.StardroidApplication;
 import com.google.firebase.analytics.FirebaseAnalytics;
 

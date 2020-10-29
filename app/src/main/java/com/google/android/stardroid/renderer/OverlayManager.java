@@ -18,8 +18,6 @@ import android.content.res.Resources;
 import android.opengl.GLU;
 import android.util.Log;
 
-import com.google.android.stardroid.R;
-import com.google.android.stardroid.renderer.LabelOverlayManager.Label;
 import com.google.android.stardroid.renderer.util.ColoredQuad;
 import com.google.android.stardroid.renderer.util.SearchHelper;
 import com.google.android.stardroid.renderer.util.TextureManager;

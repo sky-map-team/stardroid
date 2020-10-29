@@ -16,10 +16,7 @@ package com.google.android.stardroid.util;
 
 import android.os.Bundle;
 
-import com.google.android.stardroid.StardroidApplication;
 import com.google.firebase.analytics.FirebaseAnalytics;
-
-import javax.inject.Inject;
 
 /**
  * Encapsulates interactions with Firebase Analytics, allowing it to be
