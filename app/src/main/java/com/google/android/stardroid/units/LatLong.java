@@ -74,6 +74,6 @@ public class LatLong {
    * Returns the 'floored' mod assuming n>0.
    */
   private static float flooredMod(float a, float n){
-    return a<0 ? (a%n + n)%n : a%n;
+    return (a < 0 ? a % n + n : a) %n;
   }
 }
