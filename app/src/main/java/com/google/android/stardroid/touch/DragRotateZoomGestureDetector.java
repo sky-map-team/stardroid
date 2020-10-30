@@ -41,9 +41,9 @@ public class DragRotateZoomGestureDetector {
 
   private static final String TAG = MiscUtil.getTag(DragRotateZoomGestureDetector.class);
 
-  private DragRotateZoomGestureDetectorListener listener;;
+  private DragRotateZoomGestureDetectorListener listener;
 
-  public DragRotateZoomGestureDetector(DragRotateZoomGestureDetectorListener listener) {
+    public DragRotateZoomGestureDetector(DragRotateZoomGestureDetectorListener listener) {
     this.listener = listener;
   }
 

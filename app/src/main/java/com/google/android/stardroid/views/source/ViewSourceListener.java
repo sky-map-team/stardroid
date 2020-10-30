@@ -39,7 +39,7 @@ public interface ViewSourceListener {
    * @param id a unique identify integer for this set of point sources.
    * @param s a list of PointSources which should be used.
    */
-  public void setPointSources(int id, List<PointSource> s);
+  void setPointSources(int id, List<PointSource> s);
 
   /**
    * Sets all of the TextSources for a specific id in response to one or more
@@ -50,7 +50,7 @@ public interface ViewSourceListener {
    * @param id a unique identify integer for this set of point sources.
    * @param s a list of TextSources which should be used.
    */
-  public void setTextSources(int id, List<TextSource> s);
+  void setTextSources(int id, List<TextSource> s);
 
   /**
    * Sets all of the ImageSources for a specific id in response to one or more
@@ -61,7 +61,7 @@ public interface ViewSourceListener {
    * @param id a unique identify integer for this set of point sources.
    * @param s a list of ImageSources which should be used.
    */
-  public void setImageSources(int id, List<ImageSource> s);
+  void setImageSources(int id, List<ImageSource> s);
 
   /**
    * Sets all of the PolyLineSources for a specific id in response to one or more
@@ -72,5 +72,5 @@ public interface ViewSourceListener {
    * @param id a unique identify integer for this set of point sources.
    * @param s a list of PolyLineSources which should be used.
    */
-  public void setPolyLineSources(int id, List<LineSource> s);
+  void setPolyLineSources(int id, List<LineSource> s);
 }

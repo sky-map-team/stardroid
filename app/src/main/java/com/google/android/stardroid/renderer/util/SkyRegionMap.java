@@ -69,7 +69,7 @@ public class SkyRegionMap<RegionRenderingData> {
    * Interface for a factory that constructs a rendering data.
    */
   public interface RegionDataFactory<RegionRenderingData> {
-    public RegionRenderingData construct();
+    RegionRenderingData construct();
   }
 
   /**

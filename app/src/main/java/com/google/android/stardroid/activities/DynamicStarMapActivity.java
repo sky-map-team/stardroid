@@ -604,7 +604,7 @@ public class DynamicStarMapActivity extends InjectableActivity
     b.putString(Analytics.SEARCH_TERM, queryString);
     b.putBoolean(Analytics.SEARCH_SUCCESS, results.size() > 0);
     analytics.trackEvent(Analytics.SEARCH_EVENT, b);
-    if (results.size() == 0) {
+    if (results.isEmpty()) {
       Log.d(TAG, "No results returned");
       noSearchResultsDialogFragment.show(fragmentManager, "No Search Results");
     } else if (results.size() > 1) {

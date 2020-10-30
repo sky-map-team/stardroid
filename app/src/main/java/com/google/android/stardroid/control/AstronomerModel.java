@@ -33,7 +33,7 @@ public interface AstronomerModel {
    *
    * @author John Taylor
    */
-  public static class Pointing {
+  class Pointing {
     private final GeocentricCoordinates lineOfSight;
     private final GeocentricCoordinates perpendicular;
 

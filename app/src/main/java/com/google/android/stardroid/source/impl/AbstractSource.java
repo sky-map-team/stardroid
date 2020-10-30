@@ -34,7 +34,7 @@ public abstract class AbstractSource implements Colorable, PositionSource {
    *  defines how often it's provider expects its value to change.
    */
   public enum UpdateGranularity {
-    Second, Minute, Hour, Day, Year;
+    Second, Minute, Hour, Day, Year
   }
 
   public UpdateGranularity granularity;

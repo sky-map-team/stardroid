@@ -107,7 +107,7 @@ public class SearchTermsProvider extends ContentProvider {
     Log.d(TAG, "Got query for " + uri);
     if (!maybeInjectMe()) {
       return null;
-    };
+    }
     if (!TextUtils.isEmpty(selection)) {
       throw new IllegalArgumentException("selection not allowed for " + uri);
     }

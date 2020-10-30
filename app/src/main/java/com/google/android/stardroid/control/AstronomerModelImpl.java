@@ -104,7 +104,7 @@ public class AstronomerModelImpl implements AstronomerModel {
 
   private boolean useRotationVector = false;
 
-  private float[] rotationVector = new float[]{1, 0, 0, 0};
+  private float[] rotationVector = {1, 0, 0, 0};
 
   /** North along the ground in celestial coordinates. */
   private Vector3 trueNorthCelestial = new Vector3(1, 0, 0);

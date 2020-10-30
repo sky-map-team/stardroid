@@ -30,7 +30,7 @@ public interface LineSource extends Colorable {
   /**
    * Returns the width of the line to be drawn.
    */
-  public float getLineWidth();
+  float getLineWidth();
 
   // TODO(brent): Discuss with James to add solid, dashed, dotted, etc.
   
@@ -38,5 +38,5 @@ public interface LineSource extends Colorable {
    * Returns an ordered list of the vertices which should be used to draw a
    * polyline in the renderer.
    */
-  public List<GeocentricCoordinates> getVertices();
+  List<GeocentricCoordinates> getVertices();
 }

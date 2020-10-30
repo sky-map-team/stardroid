@@ -136,7 +136,7 @@ public abstract class RendererControllerBase {
     }
   }
 
-  protected static interface EventQueuer {
+  protected interface EventQueuer {
     void queueEvent(Runnable r);
   }
 
