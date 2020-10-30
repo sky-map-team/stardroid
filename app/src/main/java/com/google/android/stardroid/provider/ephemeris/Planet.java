@@ -321,12 +321,10 @@ public enum Planet {
     float earthDistance = planetCoords.DistanceFrom(earthCoords);
 
     // Finally, calculate the phase of the body.
-    float phase = MathUtil.acos((earthDistance * earthDistance +
+    return MathUtil.acos((earthDistance * earthDistance +
         planetCoords.radius * planetCoords.radius -
         earthCoords.radius * earthCoords.radius) /
         (2.0f * earthDistance * planetCoords.radius)) * Geometry.RADIANS_TO_DEGREES;
-
-    return phase;
   }
 
   /**

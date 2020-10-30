@@ -28,8 +28,7 @@ public class TimeTravelDialogFragment extends android.app.DialogFragment {
     // Activities using this dialog MUST implement this interface.  Obviously.
     ((HasComponent<ActivityComponent>) getActivity()).getComponent().inject(this);
 
-    TimeTravelDialog timeTravelDialog = new TimeTravelDialog(parentActivity,
+    return new TimeTravelDialog(parentActivity,
         parentActivity.getModel());
-    return timeTravelDialog;
   }
 }

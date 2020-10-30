@@ -60,8 +60,7 @@ public class AbstractDynamicStarMapModule {
   @Provides
   @PerActivity
   EulaDialogFragment provideEulaDialogFragment() {
-    EulaDialogFragment fragment = new EulaDialogFragment();
-    return fragment;
+    return new EulaDialogFragment();
   }
 
   @Provides
