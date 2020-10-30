@@ -144,8 +144,8 @@ public class OverlayManager extends RendererObjectManager {
 
     gl.glMatrixMode(GL10.GL_MODELVIEW);
     gl.glPushMatrix();
-    float left = mWidth / 2;
-    float bottom = mHeight / 2;
+    float left = mWidth / 2.0f;
+    float bottom = mHeight / 2.0f;
     gl.glLoadIdentity();
     GLU.gluOrtho2D(gl, left, -left, bottom, -bottom);
   }
