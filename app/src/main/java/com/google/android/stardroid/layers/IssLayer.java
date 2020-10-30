@@ -118,8 +118,8 @@ public class IssLayer extends AbstractSourceLayer {
       if (i == params.length) {  // we read all the data.
         // TODO(serafini): Add magic here to create orbital elements or whatever.
         StringBuilder sb = new StringBuilder();
-        for (int pi = 0; pi < params.length; pi++) {
-          sb.append(" " + params[pi]);
+        for (float param : params) {
+          sb.append(" ").append(param);
         }
         //Blog.d(this, "Params: " + sb);
       }
