@@ -89,10 +89,7 @@ public class LabelObjectManager extends RendererObjectManager {
     mQuadBuffer.position(0);
     
     // We want to initialize the labels of a sky region to an empty list.
-    mSkyRegions.setRegionDataFactory(
-        new SkyRegionMap.RegionDataFactory<ArrayList<Label>>() {
-          public ArrayList<Label> construct() { return new ArrayList<Label>(); }
-        });
+    mSkyRegions.setRegionDataFactory(ArrayList::new);
   }
   
   @Override

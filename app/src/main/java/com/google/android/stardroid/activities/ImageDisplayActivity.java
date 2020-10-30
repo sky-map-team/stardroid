@@ -21,7 +21,6 @@ import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -77,19 +76,9 @@ public class ImageDisplayActivity extends InjectableActivity {
     TextView label = (TextView) findViewById(R.id.gallery_image_title);
     label.setText(selectedImage.name);
     Button backButton = (Button) findViewById(R.id.gallery_image_back_btn);
-    backButton.setOnClickListener(new OnClickListener() {
-      @Override
-      public void onClick(View view) {
-        goBack(view);
-      }
-    });
+    backButton.setOnClickListener(this::goBack);
     Button searchButton = (Button) findViewById(R.id.gallery_image_search_btn);
-    searchButton.setOnClickListener(new OnClickListener() {
-      @Override
-      public void onClick(View view) {
-        doSearch(view);
-      }
-    });
+    searchButton.setOnClickListener(this::doSearch);
 
   }
 

@@ -73,11 +73,7 @@ public class RendererController extends RendererControllerBase {
 
   public RendererController(SkyRenderer renderer, final GLSurfaceView view) {
     super(renderer);
-    mQueuer = new EventQueuer() {
-      public void queueEvent(Runnable r) {
-        view.queueEvent(r);
-      }
-    };
+    mQueuer = view::queueEvent;
   }
 
   @Override
