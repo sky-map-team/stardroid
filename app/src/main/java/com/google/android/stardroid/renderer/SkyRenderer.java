@@ -122,8 +122,7 @@ public class SkyRenderer implements GLSurfaceView.Renderer {
 
     gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
 
-    for (int layer : mLayersToManagersMap.keySet()) {
-      Set<RendererObjectManager> managers = mLayersToManagersMap.get(layer);
+    for (Set<RendererObjectManager> managers : mLayersToManagersMap.values()) {
       for (RendererObjectManager rom : managers) {
         rom.draw(gl);
       }
@@ -182,6 +181,7 @@ public class SkyRenderer implements GLSurfaceView.Renderer {
     for (String model : badModels) {
       if (android.os.Build.MODEL.contains(model)) {
         canUseVBO = false;
+        break;
       }
     }
     Log.i("SkyRenderer", "Model: " + android.os.Build.MODEL);

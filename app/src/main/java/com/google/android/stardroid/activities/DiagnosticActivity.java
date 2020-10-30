@@ -238,9 +238,7 @@ public class DiagnosticActivity extends InjectableActivity implements SensorEven
             valuesViewId = R.id.diagnose_rotation_matrix_row3_txt;
         }
         float[] rowValues = new float[3];
-        for (int col = 0; col < 3; ++col) {
-          rowValues[col] = matrix[row * 3 + col];
-        }
+        System.arraycopy(matrix, row * 3, rowValues, 0, 3);
         setArrayValuesInUi(valuesViewId, rowValues);
       }
     }

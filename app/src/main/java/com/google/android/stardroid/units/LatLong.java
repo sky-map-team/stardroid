@@ -54,10 +54,10 @@ public class LatLong {
    */
   public float distanceFrom(LatLong other) {
     // Some misuse of the astronomy math classes
-    GeocentricCoordinates otherPnt = GeocentricCoordinates.getInstance(other.getLongitude(),
-            other.getLatitude());
-    GeocentricCoordinates thisPnt = GeocentricCoordinates.getInstance(this.getLongitude(),
-            this.getLatitude());
+    GeocentricCoordinates otherPnt = GeocentricCoordinates.getInstance(other.longitude,
+            other.latitude);
+    GeocentricCoordinates thisPnt = GeocentricCoordinates.getInstance(this.longitude,
+            this.latitude);
     float cosTheta = Geometry.cosineSimilarity(thisPnt, otherPnt);
     return MathUtil.acos(cosTheta) * 180f / MathUtil.PI;
   }

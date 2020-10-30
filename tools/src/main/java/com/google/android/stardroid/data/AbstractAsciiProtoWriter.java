@@ -68,7 +68,7 @@ public abstract class AbstractAsciiProtoWriter {
     String line;
     while ((line = in.readLine()) != null) {
       line = line.trim();
-      if (line.equals("")) {
+      if (line.isEmpty()) {
         continue;
       }
 
