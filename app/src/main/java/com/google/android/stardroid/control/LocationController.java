@@ -28,6 +28,7 @@ import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
@@ -196,9 +197,9 @@ public class LocationController extends AbstractController implements LocationLi
   private void setLocationFromPrefs() {
     Log.d(TAG, "Setting location from preferences");
     String longitude_s = PreferenceManager.getDefaultSharedPreferences(context)
-                                          .getString("longitude", "0");
+                .getString("longitude", "0");
     String latitude_s = PreferenceManager.getDefaultSharedPreferences(context)
-                                         .getString("latitude", "0");
+                .getString("latitude", "0");
 
     float longitude = 0, latitude = 0;
     try {
@@ -253,32 +254,36 @@ public class LocationController extends AbstractController implements LocationLi
     Log.d(TAG, "LocationController -onLocationChanged");
   }
 
-  private void showLocationToUser(LatLong location, String provider) {
+  private void showLocationToUser(final LatLong location, final String provider) {
     // TODO(johntaylor): move this notification to a separate thread)
     Log.d(TAG, "Reverse geocoding location");
-    Geocoder geoCoder = new Geocoder(context);
-    List<Address> addresses = new ArrayList<Address>();
-    String place = "Unknown";
-    try {
-      addresses = geoCoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
-    } catch (IOException e) {
-      Log.e(TAG, "Unable to reverse geocode location " + location);
+        new AsyncTask<Void, Integer, String> (){
+            protected String doInBackground(Void... urls) {
+                Geocoder geoCoder = new Geocoder(context);
+                List<Address> addresses = new ArrayList<Address>();
+                String place = "Unknown";
+                try {
+                    addresses = geoCoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
+                } catch (IOException e) {
+                    Log.e(TAG, "Unable to reverse geocode location " + location);
+                }
+                if (addresses == null || addresses.size() == 0) {
+                    Log.d(TAG, "No addresses returned");
+                    place = String.format(context.getString(R.string.location_long_lat), location.getLongitude(),
+                            location.getLatitude());
+                } else {
+                    place = getSummaryOfPlace(location, addresses.get(0));
+                }
+                Log.d(TAG, "Location set to " + place);
+                return place;
+            }
+            protected void onPostExecute(String result) {
+                String messageTemplate = context.getString(R.string.location_set_auto);
+                String message = String.format(messageTemplate, provider, result);
+                Toast.makeText(context, message, Toast.LENGTH_LONG).show();
+            }
+        }.execute();
     }
-
-    if (addresses == null || addresses.size() == 0) {
-      Log.d(TAG, "No addresses returned");
-      place = String.format(context.getString(R.string.location_long_lat), location.getLongitude(),
-              location.getLatitude());
-    } else {
-      place = getSummaryOfPlace(location, addresses.get(0));
-    }
-
-    Log.d(TAG, "Location set to " + place);
-
-    String messageTemplate = context.getString(R.string.location_set_auto);
-    String message = String.format(messageTemplate, provider, place);
-    Toast.makeText(context, message, Toast.LENGTH_LONG).show();
-  }
 
   private String getSummaryOfPlace(LatLong location, Address address) {
     String template = context.getString(R.string.location_long_lat);
