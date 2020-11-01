@@ -51,7 +51,7 @@ public class DynamicStarMapActivityTest {
     // Espresso should make this kind of crap unnecessary - investigate what's going on...
     // we probably have some ill behaved animation.
     Thread.sleep(100);
-    // Not obvious why IsDisplay
+    // Not obvious why IsDisplayed not working here?
     onView(withId(R.id.layer_buttons_control)).check(matches(withEffectiveVisibility(ViewMatchers.Visibility.VISIBLE)));
     Log.w(TAG, "Is visible? Waiting");
     onView(withId(R.id.skyrenderer_view)).perform(click());
