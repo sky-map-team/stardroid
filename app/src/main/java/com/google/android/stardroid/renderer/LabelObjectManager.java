@@ -89,10 +89,7 @@ public class LabelObjectManager extends RendererObjectManager {
     mQuadBuffer.position(0);
     
     // We want to initialize the labels of a sky region to an empty list.
-    mSkyRegions.setRegionDataFactory(
-        new SkyRegionMap.RegionDataFactory<ArrayList<Label>>() {
-          public ArrayList<Label> construct() { return new ArrayList<Label>(); }
-        });
+    mSkyRegions.setRegionDataFactory(ArrayList::new);
   }
   
   @Override
@@ -257,7 +254,7 @@ public class LabelObjectManager extends RendererObjectManager {
   private static class Label extends LabelMaker.LabelData {
     public Label(TextSource ts) {
       super(ts.getText(), 0xffffffff, ts.getFontSize());
-      if (ts.getText() == null || ts.getText().equals("")) {
+      if (ts.getText() == null || ts.getText().isEmpty()) {
         throw new RuntimeException("Bad Label: " + ts.getClass());
       }
       

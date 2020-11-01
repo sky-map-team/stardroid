@@ -31,7 +31,7 @@ public class StarAttributeCalculator {
 
     private final int offset;
 
-    private Channel(int offset) {
+    Channel(int offset) {
       this.offset = offset;
     }
 

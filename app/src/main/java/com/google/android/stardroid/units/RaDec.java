@@ -30,10 +30,8 @@ public class RaDec {
   }
 
   @Override public String toString() {
-    StringBuffer sb = new StringBuffer();
-    sb.append("RA: " + ra + " degrees\n");
-    sb.append("Dec: " + dec + " degrees\n");
-    return sb.toString();
+    return "RA: " + ra + " degrees\n" +
+            "Dec: " + dec + " degrees\n";
   }
 
   public static RaDec calculateRaDecDist(HeliocentricCoordinates coords) {

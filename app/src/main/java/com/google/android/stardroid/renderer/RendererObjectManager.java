@@ -51,13 +51,7 @@ public abstract class RendererObjectManager implements Comparable<RendererObject
     if (getClass() != rom.getClass()) {
       return getClass().getName().compareTo(rom.getClass().getName());
     }
-    if (mIndex < rom.mIndex) {
-      return -1;
-    } else if (mIndex == rom.mIndex) {
-      return 0;
-    } else {
-      return 1;
-    }
+    return Integer.compare(mIndex, rom.mIndex);
   }
 
   final int getLayer() {

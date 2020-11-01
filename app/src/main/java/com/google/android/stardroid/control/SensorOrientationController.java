@@ -53,13 +53,13 @@ public class SensorOrientationController extends AbstractController
    * Parameters that control the smoothing of the accelerometer and
    * magnetic sensors.
    */
-  private static final SensorDampingSettings[] ACC_DAMPING_SETTINGS = new SensorDampingSettings[] {
+  private static final SensorDampingSettings[] ACC_DAMPING_SETTINGS = {
         new SensorDampingSettings(0.7f, 3),
         new SensorDampingSettings(0.7f, 3),
         new SensorDampingSettings(0.1f, 3),
         new SensorDampingSettings(0.1f, 3),
   };
-  private static final SensorDampingSettings[] MAG_DAMPING_SETTINGS = new SensorDampingSettings[] {
+  private static final SensorDampingSettings[] MAG_DAMPING_SETTINGS = {
       new SensorDampingSettings(0.05f, 3),  // Derived for the Nexus One
       new SensorDampingSettings(0.001f, 4),  // Derived for the unpatched MyTouch Slide
       new SensorDampingSettings(0.0001f, 5),  // Just guessed for Nexus 6

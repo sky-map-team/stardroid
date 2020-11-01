@@ -192,8 +192,8 @@ public class TimeTravelDialog extends Dialog {
 
   private void updateDisplay() {
     Date date = calendar.getTime();
-    dateTimeReadout.setText(String.format(parentActivity.getString(R.string.now_visiting,
-                                                                   dateFormat.format(date))));
+    dateTimeReadout.setText(parentActivity.getString(R.string.now_visiting,
+                                                                   dateFormat.format(date)));
   }
 
   private void setToNextSunRiseOrSet(Planet.RiseSetIndicator indicator) {

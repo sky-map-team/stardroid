@@ -77,7 +77,6 @@ import com.google.android.stardroid.util.MathUtil;
 import com.google.android.stardroid.util.MiscUtil;
 import com.google.android.stardroid.util.SensorAccuracyMonitor;
 import com.google.android.stardroid.views.ButtonLayerView;
-import com.google.firebase.analytics.FirebaseAnalytics;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -605,7 +604,7 @@ public class DynamicStarMapActivity extends InjectableActivity
     b.putString(Analytics.SEARCH_TERM, queryString);
     b.putBoolean(Analytics.SEARCH_SUCCESS, results.size() > 0);
     analytics.trackEvent(Analytics.SEARCH_EVENT, b);
-    if (results.size() == 0) {
+    if (results.isEmpty()) {
       Log.d(TAG, "No results returned");
       noSearchResultsDialogFragment.show(fragmentManager, "No Search Results");
     } else if (results.size() > 1) {

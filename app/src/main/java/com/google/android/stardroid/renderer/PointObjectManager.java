@@ -63,10 +63,7 @@ public class PointObjectManager extends RendererObjectManager {
   public PointObjectManager(int layer, TextureManager textureManager) {
     super(layer, textureManager);
     // We want to initialize the labels of a sky region to an empty set of data.
-    mSkyRegions.setRegionDataFactory(
-        new SkyRegionMap.RegionDataFactory<RegionData>() {
-          public RegionData construct() { return new RegionData(); }
-        });
+    mSkyRegions.setRegionDataFactory(RegionData::new);
   }
 
   public void updateObjects(List<PointSource> points, EnumSet<UpdateType> updateType) {

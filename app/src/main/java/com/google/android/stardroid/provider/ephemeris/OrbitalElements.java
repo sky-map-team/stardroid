@@ -93,14 +93,11 @@ public class OrbitalElements {
 
   @Override
   public String toString() {
-    StringBuffer sb = new StringBuffer();
-    sb.append("Mean Distance: " + distance + " (AU)\n");
-    sb.append("Eccentricity: " + eccentricity + "\n");
-    sb.append("Inclination: " + inclination + " (AngleUtils.RADIANS)\n");
-    sb.append("Ascending Node: " + ascendingNode + " (AngleUtils.RADIANS)\n");
-    sb.append("Perihelion: " + perihelion + " (AngleUtils.RADIANS)\n");
-    sb.append("Mean Longitude: " + meanLongitude + " (AngleUtils.RADIANS)\n");
-
-    return sb.toString();
+    return "Mean Distance: " + distance + " (AU)\n" +
+            "Eccentricity: " + eccentricity + "\n" +
+            "Inclination: " + inclination + " (AngleUtils.RADIANS)\n" +
+            "Ascending Node: " + ascendingNode + " (AngleUtils.RADIANS)\n" +
+            "Perihelion: " + perihelion + " (AngleUtils.RADIANS)\n" +
+            "Mean Longitude: " + meanLongitude + " (AngleUtils.RADIANS)\n";
   }
 }
