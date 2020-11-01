@@ -47,6 +47,7 @@ public class DynamicStarMapActivityTest {
     Log.w(TAG, "Waiting....");
     Thread.sleep(FullscreenControlsManager.INITIALLY_SHOW_CONTROLS_FOR_MILLIS * 2);
     Log.w(TAG, "Click");
+    onView(withId(R.id.skyrenderer_view)).check(matches(isDisplayed()));
     onView(withId(R.id.skyrenderer_view)).perform(click());
     // Espresso should make this kind of crap unnecessary - investigate what's going on...
     // we probably have some ill behaved animation.
