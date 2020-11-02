@@ -130,6 +130,7 @@ install:
     -verbose
     -no-window
     -no-audio
+    -no-skin
     "
   - EMU_COMMAND="emulator"
   - |
@@ -157,7 +158,7 @@ before_script:
 script:
   - ./gradlew assembleFdroidDebug
   - ./gradlew testFdroidDebugUnitTest
-  - ./gradlew app:connectedFdroidDebugAndroidTest
+  - ./gradlew app:connectedFdroidDebugAndroidTest --debug
 
 #before_cache:
 #  - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
