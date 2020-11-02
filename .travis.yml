@@ -33,6 +33,7 @@
 # Note: Flutter supports down to API 16
 
 language: generic
+os: linux
 dist: bionic
 
 # specify global envs and jobs

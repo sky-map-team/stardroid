@@ -5,6 +5,8 @@ container:
   kvm: true
 
 check_android_task:
+  build_artifacts:
+    path: "/tmp/cirrus-ci-build/app/build/reports/**"
   fix_kvm_script:
     sudo chown cirrus:cirrus /dev/kvm
   list_versions_script:
