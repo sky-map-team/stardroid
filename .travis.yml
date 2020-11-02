@@ -156,17 +156,17 @@ before_script:
   - adb shell input keyevent 82 &
 
 script:
+  - ./gradlew app:connectedFdroidDebugAndroidTest
   - ./gradlew assembleFdroidDebug
   - ./gradlew testFdroidDebugUnitTest
-  - ./gradlew app:connectedFdroidDebugAndroidTest --debug
 
-#before_cache:
-#  - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
-#  - curl "${GRAVIS}.clean_gradle_cache.sh" --output ~/.clean_gradle_cache.sh
-#  - bash ~/.clean_gradle_cache.sh
-#
-#cache:
-#  directories:
-#    - $HOME/.gradle/caches/
-#    - $HOME/.gradle/wrapper/
+before_cache:
+  - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
+  - curl "${GRAVIS}.clean_gradle_cache.sh" --output ~/.clean_gradle_cache.sh
+  - bash ~/.clean_gradle_cache.sh
+
+cache:
+  directories:
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
 

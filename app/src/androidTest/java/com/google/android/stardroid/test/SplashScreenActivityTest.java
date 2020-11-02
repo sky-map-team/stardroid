@@ -39,7 +39,7 @@ public class SplashScreenActivityTest {
     assertEquals("com.google.android.stardroid", appContext.getPackageName());
   }
 
-  @Test
+  //@Test
   public void showsTermsAndConditions_newUser() {
     Context context = getInstrumentation().getTargetContext();
     SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(context).edit();
