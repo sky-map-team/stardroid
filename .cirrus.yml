@@ -5,8 +5,6 @@ container:
   kvm: true
 
 check_android_task:
-  build_artifacts:
-    path: "/tmp/cirrus-ci-build/app/build/reports/**"
   fix_kvm_script:
     sudo chown cirrus:cirrus /dev/kvm
   list_versions_script:
@@ -23,3 +21,7 @@ check_android_task:
     - ./tools/android-wait-for-emulator
     - adb shell input keyevent 82
   check_script: ./gradlew check connectedCheck
+  build_artifacts:
+    path: "/tmp/cirrus-ci-build/app/build/reports/**"
+  onespecific_artifacts:
+    path: "/tmp/cirrus-ci-build/app/build/reports/androidTests/connected/flavors/fdroidDebugAndroidTest/index.html"
