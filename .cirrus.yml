@@ -21,7 +21,8 @@ check_android_task:
     - ./tools/android-wait-for-emulator
     - adb shell input keyevent 82
   check_script: ./gradlew check connectedCheck
-  build_artifacts:
-    path: "/tmp/cirrus-ci-build/app/build/reports/**"
-  onespecific_artifacts:
-    path: "/tmp/cirrus-ci-build/app/build/reports/androidTests/connected/flavors/fdroidDebugAndroidTest/index.html"
+  always:
+    build_artifacts:
+      path: "/tmp/cirrus-ci-build/app/build/reports/**"
+    onespecific_artifacts:
+      path: "/tmp/cirrus-ci-build/app/build/reports/androidTests/connected/flavors/fdroidDebugAndroidTest/index.html"
