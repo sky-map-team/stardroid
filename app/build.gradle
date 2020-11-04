@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.google.android.stardroid"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 30
         versionCode 1520
         versionName "1.9.6 - RC3"
