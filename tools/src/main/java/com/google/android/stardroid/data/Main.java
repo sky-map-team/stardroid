@@ -23,9 +23,7 @@ public class Main {
     }
     Command command = Command.valueOf(in[0]);
     String[] args = new String[in.length - 1];
-    for (int cnt = 1; cnt < in.length; cnt++) {
-      args[cnt - 1] = in[cnt];
-    }
+    System.arraycopy(in, 1, args, 0, in.length - 1);
     switch (command) {
       case GenStars:
         StellarAsciiProtoWriter.main(args);

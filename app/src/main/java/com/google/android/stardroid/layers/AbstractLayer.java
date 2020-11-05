@@ -28,7 +28,6 @@ import com.google.android.stardroid.source.ImageSource;
 import com.google.android.stardroid.source.LineSource;
 import com.google.android.stardroid.source.PointSource;
 import com.google.android.stardroid.source.TextSource;
-import com.google.android.stardroid.util.Blog;
 import com.google.android.stardroid.util.MiscUtil;
 
 import java.util.ArrayList;
@@ -164,7 +163,7 @@ public abstract class AbstractLayer implements Layer {
       if (manager != null) {
         // TODO(brent): we should really just disable this layer, but in a
         // manner that it will automatically be reenabled when appropriate.
-        Blog.d(this, "       " + clazz.getSimpleName());
+        Log.d(TAG, "       " + clazz.getSimpleName());
         manager.queueObjects(Collections.<E>emptyList(), updateType, atomic);
       }
       return;
@@ -180,16 +179,16 @@ public abstract class AbstractLayer implements Layer {
 
   @SuppressWarnings("unchecked")
   <E> RenderManager<E> createRenderManager(Class<E> clazz, RendererControllerBase controller) {
-    if (clazz.equals(ImageSource.class)) {
+    if (clazz == ImageSource.class) {
       return (RenderManager<E>) controller.createImageManager(getLayerDepthOrder());
 
-    } else if (clazz.equals(TextSource.class)) {
+    } else if (clazz == TextSource.class) {
       return (RenderManager<E>) controller.createLabelManager(getLayerDepthOrder());
 
-    } else if (clazz.equals(LineSource.class)) {
+    } else if (clazz == LineSource.class) {
       return (RenderManager<E>) controller.createLineManager(getLayerDepthOrder());
 
-    } else if (clazz.equals(PointSource.class)) {
+    } else if (clazz == PointSource.class) {
       return (RenderManager<E>) controller.createPointManager(getLayerDepthOrder());
     }
     throw new IllegalStateException("Unknown source type: " + clazz);

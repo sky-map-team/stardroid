@@ -21,6 +21,6 @@ package com.google.android.stardroid.source;
  * @author Brent Bryan
  */
 public interface RendererSource {
-  public enum SourceType {POINT, LINE, TEXT, IMAGE}
+  enum SourceType {POINT, LINE, TEXT, IMAGE}
 
 }

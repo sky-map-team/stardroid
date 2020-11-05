@@ -18,11 +18,14 @@ rebuild everything with the `build_skymap.sh` script.
 
 ## Building
 
-The build process is pretty horrible and involves three stages. To make it easier please use the shell script
+The build process is pretty horribles. To make it easier please use the shell script
 
     ./build_skymap.sh
     
-(or its f-droid equivalent). This is the easiest way to tell if you've messed something up.  If you just want to quickly regenerate an apk please see the following instructions (note: assembleRelease won't work because the f-droid flavor needs some tweaking which is done by the shell script - so make sure you build the Gms flavor specifically).
+(or its f-droid equivalent). This is the easiest way to tell if you've messed something up.
+If you just want to quickly regenerate an apk please see the following instructions
+(note: assembleRelease won't work because the f-droid flavor needs some tweaking which
+is done by the shell script - so make sure you build the Gms flavor specifically).
 
 ## Building a debug apk
 
@@ -42,6 +45,8 @@ keys
     key-pwd=
     analytics-key=
 
+and overwrite google-services.json with the correct file.
+
 From the root directory execute
 
     ./gradlew assembleGms
@@ -54,14 +59,13 @@ The apk can be found in `app/build/outputs/apk/`.
 
 
 ## Running tests
+Unit tests:
 
-    ./gradlew app:connectedGmsDebugAndroidTest
+    ./gradlew test
 
-## Regenerating the star data files
+Connected device/emulator required tests:
 
-The data files need munging to take into account the string ID files in the generated `R` file.  Information on
-how to do this is in the tools directory.  If you update any strings in Sky Map it's quite likely you'll
-have to regenerate the star data files or the app will crash or put incorrect labels on things.
+    ./gradlew app:connectedAndroidTest
 
 # Code and Language Contributions
 Yes, we know that Sky Map's code and UX is very dated. It needs a big overhaul.

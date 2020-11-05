@@ -14,10 +14,10 @@
 
 package com.google.android.stardroid.provider.ephemeris;
 
-import java.util.Date;
-
 import com.google.android.stardroid.units.HeliocentricCoordinates;
 import com.google.android.stardroid.units.RaDec;
+
+import java.util.Date;
 
 /**
  * Calculate the position of the Sun in RA and Dec
@@ -30,7 +30,6 @@ import com.google.android.stardroid.units.RaDec;
 public class SolarPositionCalculator {
   public static RaDec getSolarPosition(Date time) {
     HeliocentricCoordinates sunCoordinates = HeliocentricCoordinates.getInstance(Planet.Sun, time);
-    RaDec raDec = RaDec.getInstance(Planet.Sun, time, sunCoordinates);
-    return raDec;
+    return RaDec.getInstance(Planet.Sun, time, sunCoordinates);
   }
 }

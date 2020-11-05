@@ -43,7 +43,7 @@ public class TextSourceImpl extends AbstractSource implements TextSource {
 
     super(coords, color);
     this.label = Preconditions.checkNotNull(label);
-    Preconditions.checkArgument(!"".equals(label.trim()));
+    Preconditions.checkArgument(!label.trim().isEmpty());
 
     this.offset = offset;
     this.fontSize = fontSize;

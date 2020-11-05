@@ -27,13 +27,13 @@ public interface ImageSource extends PositionSource {
   /**
    * Returns the image to be displayed at the specified point.
    */
-  public Bitmap getImage();
+  Bitmap getImage();
 
   // TODO(brent): talk to James to determine what's really needed here.
   
-  public float[] getVerticalCorner();
+  float[] getVerticalCorner();
   
-  public float[] getHorizontalCorner();
+  float[] getHorizontalCorner();
   
-  public boolean requiresBlending();
+  boolean requiresBlending();
 }

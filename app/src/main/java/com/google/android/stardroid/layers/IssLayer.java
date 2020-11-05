@@ -32,7 +32,6 @@ import com.google.android.stardroid.source.TextSource;
 import com.google.android.stardroid.source.impl.PointSourceImpl;
 import com.google.android.stardroid.source.impl.TextSourceImpl;
 import com.google.android.stardroid.units.GeocentricCoordinates;
-import com.google.android.stardroid.util.Blog;
 import com.google.android.stardroid.util.MiscUtil;
 import com.google.common.io.Closeables;
 
@@ -79,8 +78,7 @@ public class IssLayer extends AbstractSourceLayer {
 
   @Override
   protected int getLayerNameId() {
-    // TODO(brent): Update to different preference
-    return R.string.show_hubble_layer_pref;
+    return R.string.show_satellite_layer_pref;
   }
 
   /** Thread Runnable which parses the orbital elements out of the Url. */
@@ -120,10 +118,10 @@ public class IssLayer extends AbstractSourceLayer {
       if (i == params.length) {  // we read all the data.
         // TODO(serafini): Add magic here to create orbital elements or whatever.
         StringBuilder sb = new StringBuilder();
-        for (int pi = 0; pi < params.length; pi++) {
-          sb.append(" " + params[pi]);
+        for (float param : params) {
+          sb.append(" ").append(param);
         }
-        Blog.d(this, "Params: " + sb);
+        //Blog.d(this, "Params: " + sb);
       }
       return null;
     }
@@ -150,7 +148,7 @@ public class IssLayer extends AbstractSourceLayer {
     public void run() {
       long currentTimeMs = System.currentTimeMillis();
       if ((currentTimeMs - lastSuccessfulUpdateMs) > UPDATE_FREQ_MS) {
-        Blog.d(this, "Fetching ISS data...");
+        //Blog.d(this, "Fetching ISS data...");
         OrbitalElements elements = getOrbitalElements(URL_STRING);
         if (elements == null) {
           Log.d(TAG, "Error downloading ISS orbital data");

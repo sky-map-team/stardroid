@@ -106,11 +106,10 @@ public class Geometry {
   public static GeocentricCoordinates getXYZ(RaDec raDec) {
     float raRadians = raDec.ra * DEGREES_TO_RADIANS;
     float decRadians = raDec.dec * DEGREES_TO_RADIANS;
-    GeocentricCoordinates result = new GeocentricCoordinates(
+    return new GeocentricCoordinates(
         MathUtil.cos(raRadians) * MathUtil.cos(decRadians),
         MathUtil.sin(raRadians) * MathUtil.cos(decRadians),
         MathUtil.sin(decRadians));
-    return result;
   }
 
   /**
@@ -175,9 +174,8 @@ public class Geometry {
     float yzm = y * zm;
     float zxm = z * xm;
 
-    Matrix33 rotationMatrix = new Matrix33(x * xm + cosD, xym + zs, zxm - ys,
+    return new Matrix33(x * xm + cosD, xym + zs, zxm - ys,
                                            xym - zs, y * ym + cosD, yzm + xs,
                                            zxm + ys, yzm - xs, z * zm + cosD);
-    return rotationMatrix;
   }
 }

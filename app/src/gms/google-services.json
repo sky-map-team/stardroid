@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1",
+    "firebase_url": "This is a dummy file and should be replaced by a real one",
+    "project_id": "1",
+    "storage_bucket": "1"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1",
+        "android_client_info": {
+          "package_name": "com.google.android.stardroid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": ""
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

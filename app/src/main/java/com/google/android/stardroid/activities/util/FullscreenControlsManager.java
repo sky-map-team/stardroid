@@ -164,12 +164,7 @@ public class FullscreenControlsManager {
 
   private final Handler mHideHandler = new Handler();
 
-  private final Runnable mHideRunnable = new Runnable() {
-    @Override
-    public void run() {
-      hide();
-    }
-  };
+  private final Runnable mHideRunnable = this::hide;
 
   /**
    * Schedules a call to hide() in [delay] milliseconds, canceling any

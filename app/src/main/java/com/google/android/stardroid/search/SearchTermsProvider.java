@@ -107,7 +107,7 @@ public class SearchTermsProvider extends ContentProvider {
     Log.d(TAG, "Got query for " + uri);
     if (!maybeInjectMe()) {
       return null;
-    };
+    }
     if (!TextUtils.isEmpty(selection)) {
       throw new IllegalArgumentException("selection not allowed for " + uri);
     }
@@ -117,17 +117,15 @@ public class SearchTermsProvider extends ContentProvider {
     if (!TextUtils.isEmpty(sortOrder)) {
       throw new IllegalArgumentException("sortOrder not allowed for " + uri);
     }
-    switch (uriMatcher.match(uri)) {
-      case SEARCH_SUGGEST:
-        String query = null;
-        if (uri.getPathSegments().size() > 1) {
-          query = uri.getLastPathSegment();
-        }
-        Log.d(TAG, "Got suggestions query for " + query);
-        return getSuggestions(query);
-      default:
-        throw new IllegalArgumentException("Unknown URL " + uri);
+    if (uriMatcher.match(uri) == SEARCH_SUGGEST) {
+      String query = null;
+      if (uri.getPathSegments().size() > 1) {
+        query = uri.getLastPathSegment();
+      }
+      Log.d(TAG, "Got suggestions query for " + query);
+      return getSuggestions(query);
     }
+    throw new IllegalArgumentException("Unknown URL " + uri);
   }
 
   private Cursor getSuggestions(String query) {
@@ -158,12 +156,10 @@ public class SearchTermsProvider extends ContentProvider {
    */
   @Override
   public String getType(Uri uri) {
-    switch (uriMatcher.match(uri)) {
-      case SEARCH_SUGGEST:
-        return SearchManager.SUGGEST_MIME_TYPE;
-      default:
-        throw new IllegalArgumentException("Unknown URL " + uri);
+    if (uriMatcher.match(uri) == SEARCH_SUGGEST) {
+      return SearchManager.SUGGEST_MIME_TYPE;
     }
+    throw new IllegalArgumentException("Unknown URL " + uri);
   }
 
   @Override

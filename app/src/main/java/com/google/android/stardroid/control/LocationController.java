@@ -265,7 +265,7 @@ public class LocationController extends AbstractController implements LocationLi
       Log.e(TAG, "Unable to reverse geocode location " + location);
     }
 
-    if (addresses == null || addresses.size() == 0) {
+    if (addresses == null || addresses.isEmpty()) {
       Log.d(TAG, "No addresses returned");
       place = String.format(context.getString(R.string.location_long_lat), location.getLongitude(),
               location.getLatitude());
@@ -286,8 +286,7 @@ public class LocationController extends AbstractController implements LocationLi
     if (address == null) {
       return longLat;
     }
-    String place = null;
-    place = address.getLocality();
+    String place = address.getLocality();
     if (place == null) {
       place = address.getSubAdminArea();
     }

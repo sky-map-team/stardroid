@@ -27,5 +27,5 @@ public interface PositionSource {
   /**
    * Returns the location of the source in Geocentric Euclidean coordinates.
    */
-  public GeocentricCoordinates getLocation();
+  GeocentricCoordinates getLocation();
 }

@@ -122,8 +122,7 @@ public class SkyRenderer implements GLSurfaceView.Renderer {
 
     gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
 
-    for (int layer : mLayersToManagersMap.keySet()) {
-      Set<RendererObjectManager> managers = mLayersToManagersMap.get(layer);
+    for (Set<RendererObjectManager> managers : mLayersToManagersMap.values()) {
       for (RendererObjectManager rom : managers) {
         rom.draw(gl);
       }
@@ -182,6 +181,7 @@ public class SkyRenderer implements GLSurfaceView.Renderer {
     for (String model : badModels) {
       if (android.os.Build.MODEL.contains(model)) {
         canUseVBO = false;
+        break;
       }
     }
     Log.i("SkyRenderer", "Model: " + android.os.Build.MODEL);
@@ -423,20 +423,20 @@ public class SkyRenderer implements GLSurfaceView.Renderer {
 }
 
 interface RenderStateInterface {
-  public GeocentricCoordinates getCameraPos();
-  public GeocentricCoordinates getLookDir();
-  public GeocentricCoordinates getUpDir();
-  public float getRadiusOfView();
-  public float getUpAngle();
-  public float getCosUpAngle();
-  public float getSinUpAngle();
-  public int getScreenWidth();
-  public int getScreenHeight();
-  public Matrix4x4 getTransformToDeviceMatrix();
-  public Matrix4x4 getTransformToScreenMatrix();
-  public Resources getResources();
-  public boolean getNightVisionMode();
-  public SkyRegionMap.ActiveRegionData getActiveSkyRegions();
+  GeocentricCoordinates getCameraPos();
+  GeocentricCoordinates getLookDir();
+  GeocentricCoordinates getUpDir();
+  float getRadiusOfView();
+  float getUpAngle();
+  float getCosUpAngle();
+  float getSinUpAngle();
+  int getScreenWidth();
+  int getScreenHeight();
+  Matrix4x4 getTransformToDeviceMatrix();
+  Matrix4x4 getTransformToScreenMatrix();
+  Resources getResources();
+  boolean getNightVisionMode();
+  SkyRegionMap.ActiveRegionData getActiveSkyRegions();
 }
 
 // TODO(jpowell): RenderState is a bad name.  This class is a grab-bag of

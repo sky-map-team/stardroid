@@ -32,8 +32,8 @@ public class ActivityLightLevelChanger {
    * @author John Taylor
    *
    */
-  public static interface NightModeable {
-    public void setNightMode(boolean nightMode);
+  public interface NightModeable {
+    void setNightMode(boolean nightMode);
   }
 
   // This value is based on inspecting the Android source code for the

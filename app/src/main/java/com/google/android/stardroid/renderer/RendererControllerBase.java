@@ -136,7 +136,7 @@ public abstract class RendererControllerBase {
     }
   }
 
-  protected static interface EventQueuer {
+  protected interface EventQueuer {
     void queueEvent(Runnable r);
   }
 
@@ -230,9 +230,7 @@ public abstract class RendererControllerBase {
 
   public void queueDisableSkyGradient() {
     final String msg = "Disabling sky gradient";
-    queueRunnable(msg, CommandType.Data, new Runnable() { public void run() {
-      mRenderer.disableSkyGradient();
-    }});
+    queueRunnable(msg, CommandType.Data, mRenderer::disableSkyGradient);
   }
 
   public void queueEnableSearchOverlay(final GeocentricCoordinates target,
@@ -245,9 +243,7 @@ public abstract class RendererControllerBase {
 
   public void queueDisableSearchOverlay() {
     final String msg = "Disabling search overlay";
-    queueRunnable(msg, CommandType.Data, new Runnable() { public void run() {
-      mRenderer.disableSearchOverlay();
-    }});
+    queueRunnable(msg, CommandType.Data, mRenderer::disableSearchOverlay);
   }
 
   public void addUpdateClosure(final UpdateClosure runnable) {
@@ -284,9 +280,7 @@ public abstract class RendererControllerBase {
   public void waitUntilFinished() {
     final ConditionVariable cv = new ConditionVariable();
     String msg = "Waiting until operations have finished";
-    queueRunnable(msg, CommandType.Synchronization, new Runnable() { public void run() {
-      cv.open();
-    }});
+    queueRunnable(msg, CommandType.Synchronization, cv::open);
     cv.block();
   }
 

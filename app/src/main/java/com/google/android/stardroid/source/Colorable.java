@@ -25,5 +25,5 @@ public interface Colorable {
    * Returns the color (as an Android Color int) associated with the given
    * object.
    */
-  public int getColor();
+  int getColor();
 }

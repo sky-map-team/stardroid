@@ -39,12 +39,13 @@
     <string name="show_horizon_pref">水平线</string>
     <string name="show_sky_gradient">天空梯度</string>
     <string name="show_meteors_pref">流星雨</string>
+    <string name="show_satellite_layer_pref" translation_description="The layer for satellites">人造卫星</string>
+    <!-- Just in case we decide to have such a layer for the 4/24 launch -->
+    <string name="show_hubble_layer_pref">哈勃图片</string>
     <string name="sensor_prefs">传感器设置</string>
     <string name="sensor_speed">传感器速度</string>
     <string name="sensor_damping" translation_description="The amount of       smoothing applied to the sensor outputs.">阻尼</string>
     <string name="ecliptic">黄道</string>
-    <!-- Just in case we decide to have such a layer for the 4/24 launch -->
-    <string name="show_hubble_layer_pref">哈勃图片</string>
     <string name="malformed_loc_error">纬度或经度设置不是数字。</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">接受</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">否</string>
@@ -109,6 +110,9 @@
     <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">查找内容：</string>
     <string name="sun_wont_set_message">在未来 24 小时内太阳不会在您当前所在的位置落下。</string>
     <string name="sun_wont_rise_message">在未来 24 小时内太阳不会在您当前所在的位置升起。</string>
+
+    <string name="missing_label" translation_description="Used to indicate to the developer that they've added a resource with no translation.">等待翻译</string>
+
     <string name="sun">太阳</string>
     <string name="moon">月球</string>
     <string name="mercury">水星</string>

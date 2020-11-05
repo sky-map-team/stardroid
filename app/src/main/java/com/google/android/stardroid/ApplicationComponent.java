@@ -25,7 +25,7 @@ import dagger.Component;
  * Created by johntaylor on 3/26/16.
  */
 @Singleton
-@Component(modules={ApplicationModule.class})
+@Component(modules = ApplicationModule.class)
 public interface ApplicationComponent {
   // What we expose to dependent components
   StardroidApplication provideStardroidApplication();

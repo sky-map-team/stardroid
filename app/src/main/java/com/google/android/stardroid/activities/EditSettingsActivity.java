@@ -166,7 +166,7 @@ public class EditSettingsActivity extends PreferenceActivity {
       Toast.makeText(this, getString(R.string.location_unable_to_geocode), Toast.LENGTH_SHORT).show();
       return false;
     }
-    if (addresses.size() == 0) {
+    if (addresses.isEmpty()) {
       showNotFoundDialog(place);
       return false;
     }

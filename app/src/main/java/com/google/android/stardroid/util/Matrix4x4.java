@@ -22,9 +22,7 @@ public class Matrix4x4 {
 
   public Matrix4x4(float[] contents) {
     assert(contents.length == 16);
-    for (int i = 0; i < 16; ++i) {
-      mValues[i] = contents[i];
-    }
+    System.arraycopy(contents, 0, mValues, 0, 16);
   }
 
   public static Matrix4x4 createIdentity() {

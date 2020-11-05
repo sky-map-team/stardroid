@@ -21,5 +21,5 @@ package com.google.android.stardroid.base;
  */
 public interface Transform <E, F> {
   
-  public F transform(E e);
+  F transform(E e);
 }

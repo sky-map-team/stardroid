@@ -44,10 +44,8 @@ public class RaDec {
   }
 
   @Override public String toString() {
-    StringBuffer sb = new StringBuffer();
-    sb.append("RA: " + ra + " degrees\n");
-    sb.append("Dec: " + dec + " degrees\n");
-    return sb.toString();
+    return "RA: " + ra + " degrees\n" +
+            "Dec: " + dec + " degrees\n";
   }
 
   public static RaDec calculateRaDecDist(HeliocentricCoordinates coords) {
@@ -108,7 +106,7 @@ public class RaDec {
    * In the northern hemisphere, objects never set if dec > 90 - lat.
    * In the southern hemisphere, objects never set if dec < -90 - lat.
    */
-  public boolean isCircumpolarFor(LatLong loc) {
+  private boolean isCircumpolarFor(LatLong loc) {
     if (loc.getLatitude() > 0.0f) {
       return (this.dec > (90.0f - loc.getLatitude()));
     } else {
@@ -123,7 +121,7 @@ public class RaDec {
    * In the northern hemisphere, objects never rise if dec < lat - 90.
    * In the southern hemisphere, objects never rise if dec > 90 - lat.
    */
-  public boolean isNeverVisible(LatLong loc) {
+  private boolean isNeverVisible(LatLong loc) {
     if (loc.getLatitude() > 0.0f) {
       return (this.dec < (loc.getLatitude() - 90.0f));
     } else {

@@ -33,7 +33,7 @@ public class TransitioningCompositeClock implements Clock {
   private static final String TAG = MiscUtil.getTag(TransitioningCompositeClock.class);
   private Clock realClock;
   private TimeTravelClock timeTravelClock;
-  private enum Mode {REAL_TIME, TRANSITION, TIME_TRAVEL};
+  private enum Mode {REAL_TIME, TRANSITION, TIME_TRAVEL}
   private Mode mode = Mode.REAL_TIME;
   private long startTime;
   private long endTime;
