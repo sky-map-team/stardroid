@@ -28,6 +28,6 @@ check_android_task:
       - ls /tmp/cirrus-ci-build/app
       - ls /tmp/cirrus-ci-build/app/build/reports
     build_artifacts:
-      path: "/tmp/cirrus-ci-build/app/build/reports/**"
+      path: "cirrus-ci-build/app/build/reports/**"
     onespecific_artifacts:
-      path: "/tmp/cirrus-ci-build/app/build/reports/androidTests/connected/flavors/fdroidDebugAndroidTest/index.html"
+      path: "cirrus-ci-build/app/build/reports/androidTests/connected/flavors/fdroidDebugAndroidTest/index.html"
