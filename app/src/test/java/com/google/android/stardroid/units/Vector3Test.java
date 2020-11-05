@@ -14,17 +14,18 @@
 
 package com.google.android.stardroid.units;
 
-import com.google.android.stardroid.units.Vector3;
+import org.junit.Test;
 
-import junit.framework.TestCase;
+import static com.google.common.truth.Truth.assertThat;
 
-public class Vector3Test extends TestCase {
+public class Vector3Test {
+  @Test
   public void testEquals() {
     Vector3 one = new Vector3(1, 2, 3);
     Vector3 two = new Vector3(2, 4, 6);
     one.scale(2);
-    assertTrue(one.equals(two));
-    assertFalse(one == two);
-    assertTrue(one.hashCode() == two.hashCode());
+    assertThat(one).isEqualTo(two);
+    assertThat(one).isNotSameInstanceAs(two);
+    assertThat(one.hashCode()).isEqualTo(two.hashCode());
   }
 }

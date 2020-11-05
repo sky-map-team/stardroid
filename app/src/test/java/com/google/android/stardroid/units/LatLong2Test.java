@@ -14,38 +14,45 @@
 
 package com.google.android.stardroid.units;
 
-import junit.framework.TestCase;
+import org.junit.Test;
 
-public class LatLong2Test extends TestCase {
+import static com.google.common.truth.Truth.assertThat;
+
+public class LatLong2Test {
   private static final float TOL = 1e-4f;
 
+  @Test
   public void testDistanceFrom90Degrees() {
     LatLong l1 = new LatLong(0, 0);
     LatLong l2 = new LatLong(0, 90);
-    assertEquals(90f, l1.distanceFrom(l2), TOL);
+    assertThat(l1.distanceFrom(l2)).isWithin(TOL).of(90f);
   }
 
+  @Test
   public void testDistanceFromSame() {
     LatLong l1 = new LatLong(30, 9);
     LatLong l2 = new LatLong(30, 9);
-    assertEquals(0f, l1.distanceFrom(l2), TOL);  
+    assertThat(l1.distanceFrom(l2)).isWithin(TOL).of(0f);
   }
 
+  @Test
   public void testDistanceFromOppositePoles() {
     LatLong l1 = new LatLong(-90, 45);
     LatLong l2 = new LatLong(90, 45);
-    assertEquals(180f, l1.distanceFrom(l2), TOL);
+    assertThat(l1.distanceFrom(l2)).isWithin(TOL).of(180f);
   }
 
+  @Test
   public void testDistanceFromOnEquator() {
     LatLong l1 = new LatLong(0, -20);
     LatLong l2 = new LatLong(0, 30);
-    assertEquals(50f, l1.distanceFrom(l2), TOL);
+    assertThat(l1.distanceFrom(l2)).isWithin(TOL).of(50f);
   }
 
+  @Test
   public void testDistanceFromOnMeridian() {
     LatLong l1 = new LatLong(-10, 0);
     LatLong l2 = new LatLong(40, 0);
-    assertEquals(50f, l1.distanceFrom(l2), TOL);
+    assertThat(l1.distanceFrom(l2)).isWithin(TOL).of(50f);
   }
 }

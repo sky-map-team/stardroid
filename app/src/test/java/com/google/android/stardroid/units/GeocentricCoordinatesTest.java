@@ -14,18 +14,17 @@
 
 package com.google.android.stardroid.units;
 
-import com.google.android.stardroid.units.GeocentricCoordinates;
-import com.google.android.stardroid.units.Vector3;
-
 import junit.framework.TestCase;
+import static com.google.common.truth.Truth.assertThat;
+
 
 public class GeocentricCoordinatesTest extends TestCase {
   public void testEquals() {
     Vector3 one = new GeocentricCoordinates(1, 2, 3);
     Vector3 two = new GeocentricCoordinates(2, 4, 6);
     one.scale(2);
-    assertTrue(one.equals(two));
-    assertFalse(one == two);
-    assertTrue(one.hashCode() == two.hashCode());
+    assertThat(one).isEqualTo(two);;
+    assertThat(one).isNotSameInstanceAs(two);
+    assertThat(one.hashCode()).isEqualTo(two.hashCode());
   }
 }
