@@ -1,11 +1,9 @@
 package com.google.android.stardroid.units
 
+import com.google.common.truth.Truth.assertThat
+import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
-import com.google.android.stardroid.units.LatLong
-import com.google.common.truth.Truth
-import com.google.android.stardroid.units.LatLongRoboTest
-import org.junit.Test
 import org.robolectric.annotation.Config
 
 /**
@@ -18,14 +16,14 @@ class LatLongRoboTest {
     fun latLong_testDistance() {
         val point1 = LatLong(0.0, 0.0)
         val point2 = LatLong(90.0, 0.0)
-        Truth.assertThat(point1.distanceFrom(point2)).isWithin(TOL).of(90f)
+        assertThat(point1.distanceFrom(point2)).isWithin(TOL).of(90f)
     }
 
     @Test
     fun latLong_testDistance2() {
         val point1 = LatLong(45.0, 45.0)
         val point2 = LatLong(90.0, 0.0)
-        Truth.assertThat(point1.distanceFrom(point2)).isWithin(TOL).of(45f)
+        assertThat(point1.distanceFrom(point2)).isWithin(TOL).of(45f)
     }
 
     companion object {
