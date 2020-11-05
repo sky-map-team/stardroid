@@ -20,7 +20,11 @@ check_android_task:
   wait_for_emulator_script:
     - ./tools/android-wait-for-emulator
     - adb shell input keyevent 82
-  check_script: ./gradlew check connectedCheck
+  check_script:
+    - ./gradlew check connectedCheck
+    - ls /tmp/cirrus-ci-build/
+    - ls /tmp/cirrus-ci-build/app
+    - ls /tmp/cirrus-ci-build/app/build/reports
   always:
     build_artifacts:
       path: "/tmp/cirrus-ci-build/app/build/reports/**"
