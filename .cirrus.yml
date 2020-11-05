@@ -22,10 +22,11 @@ check_android_task:
     - adb shell input keyevent 82
   check_script:
     - ./gradlew check connectedCheck
-    - ls /tmp/cirrus-ci-build/
-    - ls /tmp/cirrus-ci-build/app
-    - ls /tmp/cirrus-ci-build/app/build/reports
   always:
+    wtf_script:
+      - ls /tmp/cirrus-ci-build/
+      - ls /tmp/cirrus-ci-build/app
+      - ls /tmp/cirrus-ci-build/app/build/reports
     build_artifacts:
       path: "/tmp/cirrus-ci-build/app/build/reports/**"
     onespecific_artifacts:
