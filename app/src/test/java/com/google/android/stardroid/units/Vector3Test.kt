@@ -11,21 +11,19 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+package com.google.android.stardroid.units
 
-package com.google.android.stardroid.units;
+import com.google.common.truth.Truth.assertThat
+import org.junit.Test
 
-import org.junit.Test;
-
-import static com.google.common.truth.Truth.assertThat;
-
-public class Vector3Test {
-  @Test
-  public void testEquals() {
-    Vector3 one = new Vector3(1, 2, 3);
-    Vector3 two = new Vector3(2, 4, 6);
-    one.scale(2);
-    assertThat(one).isEqualTo(two);
-    assertThat(one).isNotSameInstanceAs(two);
-    assertThat(one.hashCode()).isEqualTo(two.hashCode());
-  }
+class Vector3Test {
+    @Test
+    fun testEquals() {
+        val one = Vector3(1f, 2f, 3f)
+        val two = Vector3(2f, 4f, 6f)
+        one.scale(2f)
+        assertThat(one).isEqualTo(two)
+        assertThat(one).isNotSameInstanceAs(two)
+        assertThat(one.hashCode()).isEqualTo(two.hashCode())
+    }
 }
