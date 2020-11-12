@@ -22,7 +22,7 @@ class Universe {
      * Gets the location of a planet at a particular date.
      * Possibly a temporary swap for RaDec.getInstance.
      */
-    fun getRaDec(planet: Planet?, datetime: Date?): RaDec {
+    fun getRaDec(planet: Planet, datetime: Date): RaDec {
         val sunCoords = HeliocentricCoordinates.getInstance(Planet.Sun, datetime)
         return RaDec.getInstance(planet, datetime, sunCoords)
     }
@@ -31,7 +31,7 @@ class Universe {
      * Gets the RaDec of the Moon at a particular date.
      * TODO Factor this away
      */
-    fun getMoonRaDec(datetime: Date?): RaDec {
+    fun getMoonRaDec(datetime: Date): RaDec {
         val sunCoords = HeliocentricCoordinates.getInstance(Planet.Sun, datetime)
         return Planet.calculateLunarGeocentricLocation(datetime)
     }
@@ -40,7 +40,7 @@ class Universe {
      * Gets the RaDec of the sun at a particular date.
      * TODO Factor this away
      */
-    fun getSunRaDec(datetime: Date?): RaDec {
+    fun getSunRaDec(datetime: Date): RaDec {
         val sunCoords = HeliocentricCoordinates.getInstance(Planet.Sun, datetime)
         return RaDec.getInstance(Planet.Sun, datetime, sunCoords)
     }
