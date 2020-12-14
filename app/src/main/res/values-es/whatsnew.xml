@@ -3,6 +3,8 @@
     <string name="whats_new_text" translation_description="Description of new features in this version in html">
 <![CDATA[
     <h1>Lo nuevo en la versión %s</h1>
+    \t • Corregido el orden de Júpiter y Saturno<br/>
+    \t • Añadida la Gran Conjunción (Júpiter/Saturno) en el modo viaje en el tiempo<br/>
     \t • Actualización interna del código de generación de datos<br/>
 ]]>
     </string>
