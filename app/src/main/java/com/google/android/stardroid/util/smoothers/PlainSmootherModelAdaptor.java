@@ -15,7 +15,9 @@
 package com.google.android.stardroid.util.smoothers;
 
 import android.content.SharedPreferences;
-import android.hardware.SensorListener;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.util.Log;
 
@@ -31,7 +33,7 @@ import javax.inject.Inject;
  *
  * @author John Taylor
  */
-public class PlainSmootherModelAdaptor implements SensorListener {
+public class PlainSmootherModelAdaptor implements SensorEventListener {
   private static final String TAG = MiscUtil.getTag(PlainSmootherModelAdaptor.class);
   private Vector3 magneticValues = ApplicationConstants.INITIAL_SOUTH.copy();
   private Vector3 acceleration = ApplicationConstants.INITIAL_DOWN.copy();
@@ -46,28 +48,29 @@ public class PlainSmootherModelAdaptor implements SensorListener {
   }
 
   @Override
-  public void onSensorChanged(int sensor, float[] values) {
-    if (sensor == SensorManager.SENSOR_ACCELEROMETER) {
-      acceleration.x = values[0];
-      acceleration.y = values[1];
-      acceleration.z = values[2];
-    } else if (sensor == SensorManager.SENSOR_MAGNETIC_FIELD) {
-      magneticValues.x = values[0];
-      magneticValues.y = values[1];
+  public void onSensorChanged(SensorEvent event) {
+    if (event.sensor.getType() == SensorManager.SENSOR_ACCELEROMETER) {
+      acceleration.x = event.values[0];
+      acceleration.y = event.values[1];
+      acceleration.z = event.values[2];
+    } else if (event.sensor.getType() == SensorManager.SENSOR_MAGNETIC_FIELD) {
+      magneticValues.x = event.values[0];
+      magneticValues.y = event.values[1];
       // The z direction for the mag magneticField sensor is in the opposite
       // direction to that for accelerometer, except on some phones that are doing it wrong.
       // Yes that's right, the right thing to do is to invert it.  So if we reverse that,
       // we don't invert it.  Got it?
       // TODO(johntaylor): this might not be the best place to do this.
-      magneticValues.z = reverseMagneticZaxis ? values[2] : -values[2];
+      magneticValues.z = reverseMagneticZaxis ? event.values[2] : -event.values[2];
     } else {
       Log.e(TAG, "Pump is receiving values that aren't accel or magnetic");
     }
     model.setPhoneSensorValues(acceleration, magneticValues);
+
   }
 
   @Override
-  public void onAccuracyChanged(int sensor, int accuracy) {
-    // Do nothing, at present.
+  public void onAccuracyChanged(Sensor sensor, int accuracy) {
+
   }
 }
