@@ -103,12 +103,19 @@ network location turned on?&lt;br/&gt;
 3) Do you have the correct time and timezone set?
 Sky Map needs to calculate Universal Time, and it needs your local time AND
 timezone to do this.  If your device has a SIM card then these will usually be
-set correctly.&lt;br/&gt;
+set correctly. Open Sky Map\'s diagnostics page to check that time and location are correct. &lt;br/&gt;
 4) Do you have magnetic correction switched on?  In some parts of the world the
 difference between magnetic North and True North can be as much as 20 degrees.&lt;br/&gt;
 &lt;i&gt;The map does not move&lt;/i&gt;&lt;br/&gt;
-Are you in manual mode?  If not, this could be due to an uncalibrated compass.
-Follow the steps above to \'unstick\' it.&lt;br/&gt;&lt;br/&gt;
+1) Are you in manual mode?  If not, this could be due to an uncalibrated compass.
+Follow the steps above to \'unstick\' it.&lt;br/&gt;
+2) Does your phone have all the necessary sensors? Not all phones do. It must have at least a
+compass and an accelerometer and ideally a gyroscope. Sky Map\'s Diagnostics page will show
+which sensors you have. If your phone does not have a gyro, try selecting
+\'Disable gyro\' in Settings/Sensor Settings(experts).&lt;br/&gt;
+
+&lt;b&gt;If all else fails, send us an email (preferably with a screenshot of your Diagnostics page)
+and we\'ll help you figure it out.&lt;/b&gt; &lt;br/&gt;&lt;br/&gt;
 
 &lt;b&gt;Credits&lt;/b&gt;&lt;br/&gt;
 &lt;i&gt;Engineering, Design and Product Management&lt;/i&gt;&lt;br/&gt;
