@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest package="com.google.android.stardroid"
-          xmlns:android="http://schemas.android.com/apk/res/android"
-          android:installLocation="auto"
-          android:vmSafeMode="false">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:installLocation="auto"
+    android:vmSafeMode="false">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
@@ -76,9 +76,11 @@
                 android:resource="@xml/searchable"/>
         </activity>
         <activity
-            android:name=".activities.EditSettingsActivity"/>
+            android:name=".activities.EditSettingsActivity"
+            android:label="Settings"/>
         <activity
-            android:name=".activities.ImageGalleryActivity"/>
+            android:name=".activities.ImageGalleryActivity"
+            android:label="Gallery"/>
         <activity
             android:name=".activities.ImageDisplayActivity"
             android:screenOrientation="portrait"/>
@@ -94,7 +96,8 @@
             android:syncable="false"/>
 
         <activity android:name=".activities.CompassCalibrationActivity"
-                  android:launchMode="singleTop">
+            android:launchMode="singleTop"
+            android:label="Calibration">
         </activity>
     </application>
 
