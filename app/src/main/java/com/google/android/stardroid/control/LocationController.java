@@ -114,7 +114,18 @@ public class LocationController extends AbstractController implements LocationLi
         if (possiblelocationProvider == null) {
           Log.i(TAG, "No location provider is even available");
           // TODO(johntaylor): should we make this a dialog?
-          Toast.makeText(context, R.string.location_no_auto, Toast.LENGTH_LONG).show();
+//          Toast.makeText(context, R.string.location_no_auto, Toast.LENGTH_LONG).show();
+          AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
+          alertDialogBuilder
+                  .setTitle("Warning")
+                  .setMessage(R.string.location_no_auto)
+                  .setNegativeButton("Cancel", new OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                      dialogInterface.dismiss();
+                    }
+                  })
+                  .create();
           setLocationFromPrefs();
           return;
         }
