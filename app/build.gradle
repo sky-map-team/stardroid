@@ -1,6 +1,5 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 31
@@ -9,7 +8,7 @@ android {
     defaultConfig {
         applicationId "com.google.android.stardroid"
         minSdkVersion 21
-        targetSdkVersion 30
+        targetSdkVersion 31
         versionCode 1524
         versionName "1.9.7 - RC1"
         buildConfigField 'String', 'GOOGLE_ANALYTICS_CODE', '""'
