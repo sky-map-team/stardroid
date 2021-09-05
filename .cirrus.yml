@@ -22,7 +22,7 @@ check_android_task:
 
 task:
   name: Android Lint
-  lint_script: ./gradlew lintDebug
+  lint_script: ./gradlew lintGmsDebug
   always:
     android-lint_artifacts:
       path: "**/reports/lint-results-debug.xml"
