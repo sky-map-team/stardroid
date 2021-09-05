@@ -25,6 +25,6 @@ task:
   lint_script: ./gradlew lintGmsDebug
   always:
     android-lint_artifacts:
-      path: "**/reports/lint-results-debug.xml"
+      path: "**/reports/lint-results-gmsDebug.xml"
       type: text/xml
       format: android-lint
