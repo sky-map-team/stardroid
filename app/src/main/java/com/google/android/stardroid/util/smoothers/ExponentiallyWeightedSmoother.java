@@ -41,7 +41,7 @@ public class ExponentiallyWeightedSmoother extends SensorSmoother {
 
   @Override
   public void onSensorChanged(SensorEvent event) {
-    for (int i = 0; i < Math.max(3, event.values.length); ++i) {
+    for (int i = 0; i < Math.min(3, event.values.length); ++i) {
       last[i] = current[i];
       float diff = event.values[i] - last[i];
       float correction = diff * alpha;
