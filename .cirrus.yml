@@ -5,8 +5,6 @@ container:
   kvm: true
 
 check_android_task:
-  fix_kvm_script:
-    sudo chown cirrus:cirrus /dev/kvm
   list_versions_script:
     sdkmanager --list --verbose| grep ^system-images
   create_device_script:
@@ -21,3 +19,12 @@ check_android_task:
     - ./tools/android-wait-for-emulator
     - adb shell input keyevent 82
   check_script: ./gradlew check connectedCheck
+
+task:
+  name: Android Lint
+  lint_script: ./gradlew lintGmsDebug
+  always:
+    android-lint_artifacts:
+      path: "**/reports/lint-results-gmsDebug.xml"
+      type: text/xml
+      format: android-lint
