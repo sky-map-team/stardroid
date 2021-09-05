@@ -26,6 +26,7 @@ import com.google.android.stardroid.util.MiscUtil;
  */
 public class ExponentiallyWeightedSmoother extends SensorSmoother {
   private static final String TAG = MiscUtil.getTag(ExponentiallyWeightedSmoother.class);
+  private static final int MAX_SIZE = 3;
   private float alpha;
   private int exponent;
 
@@ -36,12 +37,12 @@ public class ExponentiallyWeightedSmoother extends SensorSmoother {
     this.exponent = exponent;
   }
 
-  private float[] last = new float[3];
-  private float[] current = new float[3];
+  private float[] last = new float[MAX_SIZE];
+  private float[] current = new float[MAX_SIZE];
 
   @Override
   public void onSensorChanged(SensorEvent event) {
-    for (int i = 0; i < Math.min(3, event.values.length); ++i) {
+    for (int i = 0; i < Math.min(MAX_SIZE, event.values.length); ++i) {
       last[i] = current[i];
       float diff = event.values[i] - last[i];
       float correction = diff * alpha;
