@@ -5,8 +5,6 @@ container:
   kvm: true
 
 check_android_task:
-  fix_kvm_script:
-    sudo chown cirrus:cirrus /dev/kvm
   list_versions_script:
     sdkmanager --list --verbose| grep ^system-images
   create_device_script:
