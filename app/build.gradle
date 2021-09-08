@@ -3,13 +3,13 @@ apply plugin: 'kotlin-android'
 apply plugin: 'com.google.gms.google-services'
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 31
     buildToolsVersion "29.0.3"
 
     defaultConfig {
         applicationId "com.google.android.stardroid"
         minSdkVersion 21
-        targetSdkVersion 30
+        targetSdkVersion 31
         versionCode 1521
         versionName "1.9.6 - RC4"
         buildConfigField 'String', 'GOOGLE_ANALYTICS_CODE', '""'
@@ -113,7 +113,7 @@ dependencies {
     androidTestImplementation 'org.hamcrest:hamcrest-library:1.3'
     // Optional -- UI testing with Espresso
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-    implementation "androidx.core:core-ktx:+"
+    implementation "androidx.core:core-ktx:1.6.0"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     // Optional -- UI testing with UI Automator
     // androidTestImplementation 'androidx.test.uiautomator:uiautomator:2.2.0'
