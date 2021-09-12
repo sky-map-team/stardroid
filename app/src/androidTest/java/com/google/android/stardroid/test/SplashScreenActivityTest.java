@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import androidx.lifecycle.Lifecycle;
 import androidx.preference.PreferenceManager;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
+import androidx.test.platform.app.InstrumentationRegistry;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.SplashScreenActivity;
@@ -33,13 +34,6 @@ public class SplashScreenActivityTest {
       new ActivityScenarioRule(SplashScreenActivity.class);
 
   @Test
-  public void useAppContext() {
-    // Context of the app under test.
-    Context appContext = getInstrumentation().getTargetContext();
-    assertEquals("com.google.android.stardroid", appContext.getPackageName());
-  }
-
-  //@Test
   public void showsTermsAndConditions_newUser() {
     Context context = getInstrumentation().getTargetContext();
     SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(context).edit();
