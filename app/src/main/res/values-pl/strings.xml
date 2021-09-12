@@ -1,54 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Please add  translation_description="" attributes to Strings to assist the translators. -->
 <resources>
     <string name="app_name" translation_description="Application Title">Sky Map</string>
     <string name="menu_settings">Ustawienia</string>
     <string name="menu_search">Szukaj</string>
     <string name="cancel">Anuluj</string>
-    <string name="set">Ustaw</string>
-    <string name="go">Przejdź</string>
+    <string name="set" translation_description="Button label. Set the date to the given value">Ustaw</string>
+    <string name="go">Udaj się!</string>
     <string name="location_prefs">Ustawienia lokalizacji</string>
-    <string name="force_gps_pref">Zawsze używaj odbiornika GPS</string>
-    <string name="force_gps_pref_hint" translation_description="this string continues from \'Always use GPS\'">jeśli jest włączony, nawet gdy dostępna jest lokalizacja sieciowa</string>
+    <string name="force_gps_pref">Zawsze używaj GPS-u</string>
+    <string name="force_gps_pref_hint" translation_description="this string continues from \'Always use GPS\'">nawet jeśli lokalizacja sieciowa jest dostępna</string>
     <string name="no_use_gps_pref">Ustaw lokalizację ręcznie</string>
     <string name="no_use_gps_pref_hint">Wprowadź poniżej miejsce lub szerokość/długość geograficzną</string>
     <string name="location_placename">Nazwa miejsca</string>
-    <string name="location_placename_hint" translation_description="An example address.  Translators: please pick an address suitable for your country.  If it has an astronomical connection (e.g. the address of an observatory or famous astronomer) then that would be even better.">np. ulica Orla 171, 30-244 Kraków.</string>
+    <string name="location_placename_hint" translation_description="An example address.  Translators: please pick an address suitable for your country.  If it has an astronomical connection (e.g. the address of an observatory or famous astronomer) then that would be even better.">np. ulica Orla 171, 30-244 Kraków</string>
     <string name="location_lat_pref">Szerokość geograficzna</string>
     <string name="location_long_pref">Długość geograficzna</string>
-    <string name="degrees">Stopnie</string>
+    <string name="degrees" translation_description="angular degrees">Stopnie</string>
     <string name="preferences">ustawienia</string>
-    <string name="location_no_auto">Twój telefon nie obsługuje automatycznego wyznaczania lokalizacji. Lokalizację możesz wybrać ręcznie w ustawieniach.</string>
-    <string name="location_offer_to_enable">Automatyczne wyznaczanie lokalizacji jest wyłączone. Czy chcesz je włączyć?</string>
-    <string name="location_offer_to_enable_gps_title">Automatyczne wyznaczanie lokalizacji jest wyłączone</string>
-    <string name="location_set_auto">Ustawienie lokalizacji z %1$s na %2$s</string>
-    <string name="location_unable_to_geocode">Nie można rozpoznać Twojej lokalizacji – być może Twoja sieć jest niedostępna.</string>
-    <string name="location_not_found_title" translation_description="dialog box title when location not found">Niestety</string>
+    <string name="location_no_auto">Uprawnienie do automatycznej lokalizacji jest wyłączone w Twoim telefonie. Włącz je ręcznie w ustawieniach, aby mapa była prawidłowa.</string>
+    <string name="location_offer_to_enable">Automatyczna lokalizacja jest wyłączona. Czy chcesz ją włączyć?</string>
+    <string name="location_offer_to_enable_gps_title">Automatyczna lokalizacja wyłączona</string>
+    <string name="location_set_auto">Lokalizacja zmieniona przez %1$s na %2$s</string>
+    <string name="location_unable_to_geocode">Nie można rozpoznać Twojej lokalizacji – może Twoja sieć jest niedostępna?</string>
+    <string name="location_not_found_title" translation_description="dialog box title when location not found">Przepraszamy</string>
     <string name="location_not_found" translation_description="dialog message when placename not found">Nie znaleziono: %s.</string>
-    <string name="location_long_lat">Długość geograficzna:%1$s, szerokość geograficzna:%2$s</string>
-    <string name="location_place_found">Znaleziono miejsce. Ustawianie szerokości %1$f i długości %2$f geograficznych</string>
-    <string name="use_magnetic_correction">Użyj poprawki magnetycznej</string>
-    <string name="use_magnetic_correction_hint">Użyj informacji o lokalizacji do poprawienia orientacji z północy magnetycznej na rzeczywistą</string>
+    <string name="location_long_lat">Długość: %1$s, szerokość: %2$s</string>
+    <string name="location_place_found">Znaleziono miejsce. Ustawienie szerokości %1$f i długości %2$f</string>
+    <string name="use_magnetic_correction">Używaj poprawki magnetycznej</string>
+    <string name="use_magnetic_correction_hint">Wykorzystuj wiedzę o lokalizacji, aby poprawiać orientację z północy magnetycznej na rzeczywistą</string>
+    <!-- This string is too long and currently unused -->
     <string name="provider_prefs" translation_description="Dialog box title for a preferences dialog">Pokaż...</string>
     <string name="show_stars_pref">Gwiazdy</string>
     <string name="show_constellations_pref">Gwiazdozbiory</string>
     <string name="show_messier_objects_pref" translation_description="The celestial objects catalogued by Charles Messier">Katalog Messiera</string>
-    <string name="show_planets_pref">Planety</string>
+    <string name="show_planets_pref">Układ Słoneczny</string>
     <string name="show_grid_pref">Siatka RA/Dec</string>
     <string name="show_horizon_pref">Horyzont</string>
-    <string name="show_sky_gradient">Gradient nieba</string>
+    <string name="show_sky_gradient" translation_description="This is a shading of the color of the sky used for effect">Gradient nieba</string>
+    <string name="show_meteors_pref">Roje meteorów</string>
+    <string name="show_satellite_layer_pref" translation_description="The layer for satellites">Satelity</string>
+    <!-- Just in case we decide to have such a layer for the 4/24 launch -->
+    <string name="show_hubble_layer_pref">Zdjęcia z teleskopu Hubble’a</string>
     <string name="sensor_prefs">Ustawienia czujnika</string>
-    <string name="sensor_speed">Szybkość czujnika</string>
+    <string name="sensor_speed" translation_description="Old, non gyro sensors only: How quickly the sensor should send us data">Prędkość czujnika</string>
     <string name="sensor_damping" translation_description="The amount of       smoothing applied to the sensor outputs.">Tłumienie</string>
     <string name="ecliptic">Ekliptyka</string>
-    <string name="show_hubble_layer_pref">Zdjęcia z teleskopu Hubble’a</string>
-    <string name="malformed_loc_error">Ustawienie szerokości lub długości geograficznej nie jest liczbą.</string>
+    <string name="malformed_loc_error">Szerokość lub długość geograficzna nie jest liczbą.</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Akceptuj</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">Nie, dziękuję</string>
+    <string name="dialog_ok_button">OK</string>
     <string name="menu_help" translation_description="menu item to show \'Help\' box">Pomoc</string>
-    <string name="help_dialog_title">Pomoc do programu Sky Map</string>
-    <string name="eula_dialog_title">Umowa licencyjna użytkownika</string>
-    <string name="set_manual">Przełączanie do trybu ręcznego</string>
-    <string name="set_auto">Przełączanie do trybu automatycznego</string>
+    <string name="help_dialog_title">Pomoc Sky Map</string>
+    <string name="eula_dialog_title">Umowa licencyjna użytkownika końcowego</string>
+    <string name="set_manual">Przełączanie na tryb ręczny</string>
+    <string name="set_auto">Przełączanie na tryb automatyczny</string>
     <string name="menu_zoom_in">Powiększ</string>
     <string name="menu_zoom_out">Pomniejsz</string>
     <string name="menu_toggle_dim">Przełącz tryb nocny</string>
@@ -66,45 +72,54 @@
     <string name="many_search_results_text">Wybierz jeden</string>
     <string name="searching_for_text">Wyszukiwanie %s...</string>
     <string name="found_target_text">Znaleziono %s.</string>
-    <string name="other">Pozostałe</string>
+    <string name="other" translation_description="A preference category (ie preferences that don't belong in any other category)">Inne</string>
     <string name="planetary_images">Pokaż zdjęcia planet</string>
     <string name="menu_time">Podróż w czasie</string>
     <string name="time_travel_start_message">Podróżowanie w czasie...</string>
-    <string name="time_travel_start_message_alt">Podróż w czasie do %s...</string>
+    <string name="time_travel_start_message_alt">Podróżowanie w czasie do %s...</string>
     <string name="time_travel_close_message">Powrót do teraźniejszości...</string>
+    <!--  -->
     <string name="popular_dates_prompt" translation_description="label for a list of dates the user can choose from">Popularne daty</string>
     <string name="custom_date_prompt" translation_description="label telling the user to manually specify a data">Lub wybierz żądaną datę</string>
     <string name="change_date_prompt">Zmień datę</string>
     <string name="change_time_prompt">Zmień godzinę</string>
-    <string name="now_visiting" translation_description="tells the user what time they are visiting">Czas, który odwiedzasz: %s</string>
+    <string name="now_visiting"
+            translation_description="used in time travel dialog to tell the user what time they are visiting, time formatted as yyyy.mm.dd at hh.mm.ss + timezone">
+        Teraz odwiedzasz: %s</string>
     <string name="time_travel_label_past" translation_description="label showing that we are in the past">Podróż w czasie: przeszłość</string>
-    <string name="time_travel_label_future" translation_description="label showing that we are in the future">Podróż w czasie: Przyszłość</string>
-    <string name="time_travel_stopped" translation_description="label showing rate of travel through time">Podróż w czasie wstrzymana</string>
-    <string name="time_travel_second_speed" translation_description="label showing rate of travel through time">Podróż &gt; 1 s/s</string>
-    <string name="time_travel_minute_speed" translation_description="label showing rate of travel through time">Podróż &gt; 1 min/s</string>
-    <string name="time_travel_10minute_speed" translation_description="label showing rate of travel through time">Podróż &gt; 10 min/s</string>
-    <string name="time_travel_hour_speed" translation_description="label showing rate of travel through time">Podróż &gt; 1 godz./s</string>
-    <string name="time_travel_day_speed" translation_description="label showing rate of travel through time">Podróż &gt; 1 dzień/s</string>
-    <string name="time_travel_week_speed" translation_description="label showing rate of travel through time">Podróż &gt; 1 tydzień/s</string>
-    <string name="time_travel_second_speed_back" translation_description="label showing rate of travel through time">Podróż &lt; 1 s/s</string>
-    <string name="time_travel_minute_speed_back" translation_description="label showing rate of travel through time">Podróż &lt; 1 min/s</string>
-    <string name="time_travel_10minute_speed_back" translation_description="label showing rate of travel through time">Podróż &lt; 10 min/s</string>
-    <string name="time_travel_hour_speed_back" translation_description="label showing rate of travel through time">Podróż &lt; 1 godz./s</string>
-    <string name="time_travel_day_speed_back" translation_description="label showing rate of travel through time">Podróż &lt; 1 dzień/s</string>
-    <string name="time_travel_week_speed_back" translation_description="label showing rate of travel through time">Podróż &lt; 1 tydzień/s</string>
+    <string name="time_travel_label_future" translation_description="label showing that we are in the future">Podróż w czasie: przyszłość</string>
+    <string name="time_travel_stopped" translation_description="label showing rate of travel through time">Podróż w czasie zamrożona</string>
+    <string name="time_travel_second_speed" translation_description="Label showing rate of travel through time.  The symbol means greater than.">Podróżowanie &gt; 1 sek./sek.</string>
+    <string name="time_travel_minute_speed" translation_description="label showing rate of travel through time">Podróżowanie &gt; 1 min/sek.</string>
+    <string name="time_travel_10minute_speed" translation_description="label showing rate of travel through time">Podróżowanie &gt; 10 min/sek.</string>
+    <string name="time_travel_hour_speed" translation_description="label showing rate of travel through time">Podróżowanie &gt; 1 godz./sek.</string>
+    <string name="time_travel_day_speed" translation_description="label showing rate of travel through time">Podróżowanie &gt; 1 dzień/sek.</string>
+    <string name="time_travel_week_speed" translation_description="label showing rate of travel through time">Podróżowanie &gt; 1 tydz./sek.</string>
+    <string name="time_travel_second_speed_back" translation_description="label showing rate of travel through time">Podróżowanie &lt; 1 sek./sek.</string>
+    <string name="time_travel_minute_speed_back" translation_description="label showing rate of travel through time">Podróżowanie &lt; 1 min/sek.</string>
+    <string name="time_travel_10minute_speed_back" translation_description="label showing rate of travel through time">Podróżowanie &lt; 10 min/sek.</string>
+    <string name="time_travel_hour_speed_back" translation_description="label showing rate of travel through time">Podróżowanie &lt; 1 godz./sek.</string>
+    <string name="time_travel_day_speed_back" translation_description="label showing rate of travel through time">Podróżowanie &lt; 1 dzień/sek.</string>
+    <string name="time_travel_week_speed_back" translation_description="label showing rate of travel through time">Podróżowanie &lt; 1 tydz./sek.</string>
     <string name="use_sound_effects" translation_description="A preferences menu label">Włącz dźwięk</string>
+
     <string name="enable_layer_toast">Włączanie warstwy %s</string>
     <string name="disable_layer_toast">Wyłączanie warstwy %s</string>
     <string name="menu_gallery">Galeria</string>
     <string name="gallery_image_search_btn">Znajdź na niebie</string>
     <string name="gallery_image_back_btn">Powrót do galerii</string>
-    <string name="hubble_image_gallery_title">Galeria teleskopu Hubble’a w programie Sky Map</string>
-    <string name="hubble_image">Zdjęcie z teleskopu Hubble\'a</string>
+    <string name="hubble_image_gallery_title">Galeria Sky Map</string>
+    <string name="hubble_image">Zdjęcie z teleskopu Hubble’a</string>
+        <!--  TODO(johntaylor): currently unused -->
+
     <string name="search_target_found_message" translation_description="displayed when a search target has been located">Znaleziono:</string>
-    <string name="search_overlay_title" translation_description="title for search overlay">Skieruj telefon zgodnie ze wskazaniem strzałki</string>
+    <string name="search_overlay_title" translation_description="title for search overlay">Kieruj telefon zgodnie ze wskazaniem strzałki</string>
     <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">Wyszukiwanie:</string>
-    <string name="sun_wont_set_message">W Twojej bieżącej lokalizacji Słońce nie zajdzie w ciągu następnych 24 godzin.</string>
+    <string name="sun_wont_set_message">W Twojej bieżącej lokalizacji Słońce nie zejdzie w ciągu następnych 24 godzin.</string>
     <string name="sun_wont_rise_message">W Twojej bieżącej lokalizacji Słońce nie wzejdzie w ciągu następnych 24 godzin.</string>
+
+    <string name="missing_label" translation_description="Used to indicate to the developer that they've added a resource with no translation.">MISSING_LBL</string>
+
     <string name="sun">Słońce</string>
     <string name="moon">Księżyc</string>
     <string name="mercury">Merkury</string>
@@ -124,18 +139,23 @@
     <string name="ring_nebula" translation_description="hubble object">Mgławica Pierścień</string>
     <string name="pinwheel_galaxy" translation_description="hubble object">Galaktyka Wiatraczek</string>
     <string name="sombrero_galaxy" translation_description="hubble object">Galaktyka Sombrero</string>
-    <string name="hercules_gc" translation_description="hubble object">Gromada kulista Herkulesa</string>
+    <string name="hercules_gc" translation_description="hubble object">Gromada Herkulesa</string>
     <string name="pleiades" translation_description="hubble object">Plejady</string>
     <string name="cats_eye_nebula" translation_description="hubble object">Mgławica Kocie Oko</string>
-    <string name="omega_centauri" translation_description="hubble object">Gromada kulista Omega Centauri</string>
+    <string name="omega_centauri" translation_description="hubble object">Omega Centauri</string>
     <string name="v838_mon" translation_description="hubble object">V838 Monocerotis</string>
     <string name="sn1987a" translation_description="hubble object">Supernowa 1987a</string>
-    <string name="hubble_deep_field" translation_description="hubble object">Głębokie pole Hubble\'a</string>
-    <string name="rho_oph" translation_description="hubble object">Rho Ophiuchi</string>
+    <string name="hubble_deep_field" translation_description="hubble object">Głębokie pole Hubble’a</string>
+    <string name="hdf" translation_description="hubble object">HDF</string>
+    <string name="rho_oph" translation_description="hubble object">Ro Ophiuchi</string>
     <string name="menu_tos">Warunki korzystania z usługi</string>
+    <string name="menu_diagnostics">Diagnostyka</string>
+    <!-- TODO(johntaylor): the following might be deleted in favor of an icon -->
     <string name="control_panel_btn" translation_description="Label for the control panel button">Panel sterowania</string>
+
     <string name="north_pole">Biegun północny</string>
     <string name="south_pole">Biegun południowy</string>
+    
     <string name="andromeda" translation_description="Name of the Andromeda constellation">Andromeda</string>
     <string name="aquarius" translation_description="Name of the Aquarius constellation">Wodnik</string>
     <string name="aquila" translation_description="Name of the Aquila constellation">Orzeł</string>
@@ -146,17 +166,17 @@
     <string name="canis_major" translation_description="Name of the Canis Major constellation">Wielki Pies</string>
     <string name="capricornus" translation_description="Name of the Capricornus constellation">Koziorożec</string>
     <string name="carina" translation_description="Name of the Carina constellation">Kil</string>
-    <string name="cassiopeia" translation_description="Name of the Cassiopeia constellation">Kasjopea</string>
+    <string name="cassiopeia" translation_description="Name of the Cassiopeia constellation">Kasjopeja</string>
     <string name="centaurus" translation_description="Name of the Centaurus constellation">Centaur</string>
     <string name="cetus" translation_description="Name of the Cetus constellation">Wieloryb</string>
     <string name="crux" translation_description="Name of the Crux constellation">Krzyż Południa</string>
-    <string name="cygnus" translation_description="Name of the Cygnus constellation">Cygnus</string>
-    <string name="draco" translation_description="Name of the Draco constellation">Draco</string>
+    <string name="cygnus" translation_description="Name of the Cygnus constellation">Łabędź</string>
+    <string name="draco" translation_description="Name of the Draco constellation">Smok</string>
     <string name="eridanus" translation_description="Name of the Eridanus constellation">Erydan</string>
     <string name="gemini" translation_description="Name of the Gemini constellation">Bliźnięta</string>
     <string name="grus" translation_description="Name of the Grus constellation">Żuraw</string>
     <string name="hercules" translation_description="Name of the Hercules constellation">Herkules</string>
-    <string name="hydrus" translation_description="Name of the Hydrus constellation">Wąż Wodny</string>
+    <string name="hydrus" translation_description="Name of the Hydrus constellation">Hydra</string>
     <string name="leo" translation_description="Name of the Leo constellation">Lew</string>
     <string name="libra" translation_description="Name of the Libra constellation">Waga</string>
     <string name="lupus" translation_description="Name of the Lupus constellation">Wilk</string>
@@ -166,7 +186,7 @@
     <string name="pavo" translation_description="Name of the Pavo constellation">Paw</string>
     <string name="pegasus" translation_description="Name of the Pegasus constellation">Pegaz</string>
     <string name="perseus" translation_description="Name of the Perseus constellation">Perseusz</string>
-    <string name="phoenix" translation_description="Name of the Phoenix constellation">Phoenix</string>
+    <string name="phoenix" translation_description="Name of the Phoenix constellation">Feniks</string>
     <string name="pisces" translation_description="Name of the Pisces constellation">Ryby</string>
     <string name="piscis_austrinus" translation_description="Name of the Piscis Austrinus constellation">Ryba Południowa</string>
     <string name="puppis" translation_description="Name of the Puppis constellation">Rufa</string>
@@ -186,10 +206,12 @@
     <string name="big_dipper" translation_description="Name of the Big Dipper constellation">Wielki Wóz</string>
     <string name="great_bear" translation_description="Name of the Great Bear constellation">Wielka Niedźwiedzica</string>
     <string name="plough" translation_description="Name of the Plough constellation">Wielki Wóz</string>
+
     <string name="sirius" translation_description="Name of the Star Sirius">Syriusz</string>
     <string name="canopus" translation_description="Name of the Star Canopus">Kanopus</string>
     <string name="arcturus" translation_description="Name of the Star Arcturus">Arktur</string>
     <string name="rigel_kentaurus_a" translation_description="Name of the Star Rigel Kentaurus A">Rigel Kentaurus A</string>
+    <string name="rigil_kentaurus_a" translation_description="Name of the Star Rigil Kentaurus A">Rigil Kentaurus A</string>
     <string name="vega" translation_description="Name of the Star Vega">Wega</string>
     <string name="rigel" translation_description="Name of the Star Rigel">Rigel</string>
     <string name="procyon" translation_description="Name of the Star Procyon">Procjon</string>
@@ -202,18 +224,18 @@
     <string name="aldebaran" translation_description="Name of the Star Aldebaran">Aldebaran</string>
     <string name="spica" translation_description="Name of the Star Spica">Kłos</string>
     <string name="antares" translation_description="Name of the Star Antares">Antares</string>
-    <string name="pollux" translation_description="Name of the Star Pollux">Pollux</string>
+    <string name="pollux" translation_description="Name of the Star Pollux">Polluks</string>
     <string name="fomalhaut" translation_description="Name of the Star Fomalhaut">Fomalhaut</string>
     <string name="deneb" translation_description="Name of the Star Deneb">Deneb</string>
     <string name="regulus" translation_description="Name of the Star Regulus">Regulus</string>
     <string name="adhara" translation_description="Name of the Star Adhara">Adara</string>
     <string name="shaula" translation_description="Name of the Star Shaula">Shaula</string>
-    <string name="alnath" translation_description="Name of the Star Alnath">Alnath</string>
+    <string name="alnath" translation_description="Name of the Star Alnath">Elnath</string>
     <string name="alnilam" translation_description="Name of the Star Alnilam">Alnilam</string>
     <string name="alnair" translation_description="Name of the Star Alnair">Alnair</string>
     <string name="alioth" translation_description="Name of the Star Alioth">Alioth</string>
-    <string name="mirphak" translation_description="Name of the Star Mirphak">Mirphak</string>
-    <string name="kaus_australis" translation_description="Name of the Star Kaus Australis">Kaus Południowy</string>
+    <string name="mirphak" translation_description="Name of the Star Mirphak">Mirfak</string>
+    <string name="kaus_australis" translation_description="Name of the Star Kaus Australis">Kaus Australis</string>
     <string name="dubhe" translation_description="Name of the Star Dubhe">Dubhe</string>
     <string name="alkaid" translation_description="Name of the Star Alkaid">Alkaid</string>
     <string name="alhena" translation_description="Name of the Star Alhena">Alhena</string>
@@ -226,7 +248,7 @@
     <string name="nunki" translation_description="Name of the Star Nunki">Nunki</string>
     <string name="mirach" translation_description="Name of the Star Mirach">Mirach</string>
     <string name="alpheratz" translation_description="Name of the Star Alpheratz">Alpheratz</string>
-    <string name="saiph" translation_description="Name of the Star Saiph">Saiph</string>
+    <string name="saiph" translation_description="Name of the Star Saiph">Saif</string>
     <string name="kochab" translation_description="Name of the Star Kochab">Kochab</string>
     <string name="rasalhague" translation_description="Name of the Star Rasalhague">Rasalhague</string>
     <string name="algol" translation_description="Name of the Star Algol">Algol</string>
@@ -234,7 +256,7 @@
     <string name="alphekka" translation_description="Name of the Star Alphekka">Alphekka</string>
     <string name="etamin" translation_description="Name of the Star Etamin">Etamin</string>
     <string name="kaus" translation_description="Name of the Star Kaus">Kaus</string>
-    <string name="shedir" translation_description="Name of the Star Shedir">Shedir</string>
+    <string name="shedir" translation_description="Name of the Star Shedir">Szedar</string>
     <string name="caph" translation_description="Name of the Star Caph">Caph</string>
     <string name="izar" translation_description="Name of the Star Izar">Izar</string>
     <string name="merak" translation_description="Name of the Star Merak">Merak</string>
@@ -249,10 +271,14 @@
     <string name="unukalhai" translation_description="Name of the Star Unukalhai">Unukalhai</string>
     <string name="algenib" translation_description="Name of the Star Algenib">Algenib</string>
     <string name="vindemiatrix" translation_description="Name of the Star Vindemiatrix">Vindemiatrix</string>
-    <string name="alcyone" translation_description="Name of the Star Alcyone">Alcyone</string>
+    <string name="alcyone" translation_description="Name of the Star Alcyone">Alkione</string>
     <string name="dog_star" translation_description="Name of the Dog Star (Sirius)">Psia Gwiazda</string>
     <string name="north_star" translation_description="Name of the North Star">Gwiazda Północna</string>
-    <string name="pole_star" translation_description="Name of the (North) Pole Star">Gwiazda Polarna</string>
+    <string name="pole_star" translation_description="Name of the (North) Pole Star">Gwiazda Biegunowa</string>
+    <string name="alpha_centauri" translation_description="Name of the star Alpha Centauri">Alfa Centauri</string>
+    <string name="rigil_kent" translation_description="Name of the star Rigil Kent">Rigil Kentaurus</string>
+    <string name="e_lyrae" translation_description="Name of the star ε Lyrae">Epsilon Lyrae</string>
+
     <string name="m1" translation_description="Name of the Messier object M1">M1</string>
     <string name="m2" translation_description="Name of the Messier object M2">M2</string>
     <string name="m3" translation_description="Name of the Messier object M3">M3</string>
@@ -366,14 +392,87 @@
     <string name="ngc6543" translation_description="Name of the Messier object NGC6543">NGC 6543</string>
     <string name="ngc5139" translation_description="Name of the Messier object NGC5139">NGC 5139</string>
     <string name="butterfly_cluster" translation_description="Name of the Messier object Butterfly Cluster">Gromada Motyl</string>
-    <string name="scorpions_tail" translation_description="Name of the Messier object Scorpion\'s Tail">Ogon skorpiona</string>
+    <string name="scorpions_tail" translation_description="Name of the Messier object Scorpion\'s Tail">Gromada Ptolemeusza</string>
     <string name="winnecke_4" translation_description="Name of the Messier object Winnecke 4">Winnecke 4</string>
     <string name="beehive_cluster" translation_description="Name of the Messier object Beehive Cluster">Gromada Ul</string>
-    <string name="praesepe" translation_description="Name of the Messier object Praesepe">Gromada Żłobek</string>
+    <string name="praesepe" translation_description="Name of the Messier object Praesepe">Gromada Żłóbek</string>
     <string name="seven_sisters" translation_description="Name of the Messier object Seven Sisters">Siedem Sióstr</string>
     <string name="space_station" translation_description="Name of the Internation Space Station">Międzynarodowa Stacja Kosmiczna</string>
     <string name="space_shuttle" translation_description="Name of the Space Shuttle">Prom kosmiczny</string>
     <string name="kml_load_error">Nie udało się wczytać pliku KML</string>
     <string name="load_kml_dialog_title">Wczytaj plik KML</string>
     <string name="load_kml_file">Wczytaj</string>
+    <string name="enable_analytics">Wysyłaj statystyki użytkowania</string>
+    <string name="enable_analytics_desc">Ulepszaj Sky Map, wysyłając anonimowe dane do Google Analytics</string>
+    <string name="leonids" translation_description="Meteor Shower">Leonidy</string>
+    <string name="geminids" translation_description="Meteor Shower">Geminidy</string>
+    <string name="quadrantids" translation_description="Meteor Shower">Kwadrantydy</string>
+    <string name="lyrids" translation_description="Meteor Shower">Lirydy</string>
+    <string name="aquariids" translation_description="Meteor Shower">Eta Akwarydy</string>
+    <string name="deltaaquariids" translation_description="Meteor Shower">Południowe delta Akwarydy</string>
+    <string name="perseids" translation_description="Meteor Shower">Perseidy</string>
+    <string name="orionids" translation_description="Meteor Shower">Orionidy</string>
+    <string name="puppidvelids" translation_description="Meteor Shower">Pi Puppidy</string>
+    <string name="ursids" translation_description="Meteor Shower">Ursydy</string>
+
+    <string name="no_sensor_warning">Twojemu urządzeniu może brakować czujników orientacji – tryb automatyczny może nie działać</string>
+    <string name="warning_dialog_title">Złe wieści!</string>
+    <string name="missing_sensor_dialog_text">\n
+        Niestety, Twoje urządzenie może nie mieć jednego z czujników, których wymaga Sky Map.\n\n
+        Aby pokazywać niebo w kierunku, który wskazuje Twój telefon, Sky Map potrzebuje zarówno wbudowanego kompasu, jak i akcelerometru. Twoje urządzenie zgłasza, że brakuje jednego z nich. Dobrą wiadomością jest to, że niektóre urządzenia (np. niektóre telefony Moto E) fałszywie twierdzą, że nie mają kompasu, ale w rzeczywistości go mają.\n\n
+
+        Jeśli Twoje urządzenie naprawdę nie ma czujnika, tryb automatyczny nie będzie działać. Jednak 
+        nadal możesz używać Sky Map na tym urządzeniu w trybie ręcznym, w którym przeciągasz, obracasz i rozciągasz mapę palcami.
+    </string>
+    <string name="do_not_show_again">Nie pokazuj ponownie tej wiadomości</string>
+    <string name="title_activity_diagnostic">Diagnostyka</string>
+    <string name="location_rationale_title">Dlaczego pytamy o Twoją lokalizację?</string>
+    <string name="location_rationale_text">Możliwość zobaczenia gwiazd zależy od miejsca, w którym się znajdujesz. Bez Twojej lokalizacji nie możemy pokazać Ci dokładnej mapy. Jeśli nie chcesz, aby Twój telefon podawał nam Twoją lokalizację, możesz podać ją ręcznie w ustawieniach. Wystarczy podać najbliższe miasto.</string>
+    <string name="play_services_error">Ostrzeżenie: Błąd Usług Google Play – automatyczna lokalizacja może nie działać</string>
+    <string name="sensor_absent">Nieobecny</string>
+    <string name="sensor_accuracy_unknown">Dokładność: nieznana</string>
+    <string name="sensor_accuracy_unreliable">Dokładność: niepewna</string>
+    <string name="sensor_accuracy_low">Dokładność: niska</string>
+    <string name="sensor_accuracy_medium">Dokładność: średnia</string>
+    <string name="sensor_accuracy_high">Dokładność: wysoka</string>
+    <string name="sensor_accuracy_nocontact">Dokładność: brak połączenia</string>
+    <string name="diagnostics_activity_general_heading">Ogólne</string>
+    <string name="diagnostics_activity_phone">Urządzenie</string>
+    <string name="diagnostics_activity_android_version">Wersja Androida</string>
+    <string name="diagnostics_activity_sky_map_version">Wersja Sky Map</string>
+    <string name="diagnostics_activity_sensors_heading">Czujniki</string>
+    <string name="diagnostics_activity_compass">Kompas</string>
+    <string name="diagnostics_activity_accelerometer">Akcelerometr</string>
+    <string name="diagnostics_activity_rotation_vector">Obrót</string>
+    <string name="diagnostics_activity_gyroscope">Żyroskop</string>
+    <string name="diagnostics_activity_light_level">Poziom światła</string>
+    <string name="diagnostics_activity_location_and_time_heading">Lokalizacja i czas</string>
+    <string name="diagnostics_activity_gps">GPS</string>
+    <string name="diagnostics_activity_location">Lokalizacja (szer., dł.)</string>
+    <string name="diagnostics_activity_pointing_ra_dec">Migawka wskaźnika</string>
+    <string name="diagnostics_activity_magnetic_correction">Korekcja magnetyczna</string>
+    <string name="diagnostics_activity_local_datetime">Czas lokalny</string>
+    <string name="diagnostics_activity_universal_time">Czas uniwersalny</string>
+    <string name="diagnostics_activity_network_heading">Sieć</string>
+    <string name="diagnostics_activity_connection">Połączenie</string>
+    <string name="diagnostics_activity_rotation_matrix">Macierz rotacji</string>
+    <string name="enabled">Włączony</string>
+    <string name="disabled">Wyłączony</string>
+    <string name="permission_disabled">Brak uprawnienia</string>
+    <string name="no_gps">Brak GPS-u</string>
+    <string name="connected">Połączony</string>
+    <string name="disconnected">Rozłączony</string>
+    <string name="wifi">" (Wi-Fi)"</string>
+    <string name="cell_network">" (sieć komórkowa)"</string>
+    <string name="menu_calibrate">Kalibruj</string>
+    <string name="compass_calibration_activity_heading_compass">Kompas –</string>
+    <string name="compass_calibration_activity_do_not_show_this_again">Nie pokazuj tego ponownie</string>
+    <string name="compass_calibration_activity_warning">Twój kompas wymaga kalibracji</string>
+    <string name="sensor_reverse_preference_title">Odwróć oś Z magnetometru</string>
+    <string name="sensor_reverse_preference_summary">Poprawka dla telefonów z nieprawidłowo zaimplementowanymi czujnikami – wymaga ponownego uruchomienia</string>
+    <string name="whats_new_dialog_title">Co nowego</string>
+    <string name="disable_gyro_preference_title">Wyłącz żyroskop</string>
+    <string name="disable_gyro_preference_summary">Nie wszystkie urządzenia mają żyroskop – jeśli Twoje posiada, uzyskasz lepsze wyniki z włączonym żyroskopem i odznaczeniem tego pola. Z drugiej strony, jeśli Twoje urządzenie nie ma żyroskopu, Sky Map prawdopodobnie nie będzie działać, jeśli odznaczysz to pole</string>
+    <string name="rotate_horizon_preference_title">Obracaj horyzont</string>
+    <string name="rotate_horizon_preference_summary">Obracaj horyzont o 90° (dla ekranów z wymuszoną poziomą orientacją ekranu, takich jak inteligentne okulary)</string>
 </resources>
