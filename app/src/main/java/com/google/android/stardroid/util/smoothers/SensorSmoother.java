@@ -14,23 +14,21 @@
 
 package com.google.android.stardroid.util.smoothers;
 
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
+import android.hardware.SensorListener;
 
 
-public abstract class SensorSmoother implements SensorEventListener {
+public abstract class SensorSmoother implements SensorListener {
 
-  protected SensorEventListener listener;
+  protected SensorListener listener;
 
-  public SensorSmoother(SensorEventListener listener) {
+  public SensorSmoother(SensorListener listener) {
     this.listener = listener;
   }
 
-  public abstract void onSensorChanged(SensorEvent event);
-
   @Override
-  public void onAccuracyChanged(Sensor sensor, int accuracy) {
+  public void onAccuracyChanged(int sensor, int accuracy) {
     // Do Nothing
   }
+
+  public abstract void onSensorChanged(int sensor, float[] values);
 }
