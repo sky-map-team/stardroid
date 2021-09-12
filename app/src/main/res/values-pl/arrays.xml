@@ -1,25 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="popular_date_examples">
-        <item>Teraz</item>
-        <item>Zachód następnego wieczoru</item>
-        <item>Wschód następnego ranka</item>
+        <item translation_description="The user's current time">Teraz</item>
+        <item>Zachód Słońca następnego wieczoru</item>
+        <item>Wschód Słońca następnego ranka</item>
         <item>Kolejna pełnia</item>
-        <item>Mercury transit of May 09, 2016</item>
-        <item>Zaćmienie Słońca z Aug 21, 2017</item>
-        <item>Zaćmienie Słońca z March 9, 2016</item>
+        <item>Tranzyt Merkurego z 9 maja 2016 r.</item>
+        <item>Zaćmienie Słońca z 21 sierpnia 2017 r.</item>
+        <item>Zaćmienie Słońca z 9 marca 2016 r.</item>
         <item>Zaćmienie Słońca z 29 maja 1919 r.</item>
         <item>Lądowanie Apollo 11 na Księżycu</item>
+        <item>Koniunkcja Jowisza i Saturna z 2020 r.</item>
     </string-array>
     <string-array name="sensor_speed">
-        <item>Wolno</item>
-        <item>Standardowo</item>
-        <item>Szybko</item>
+        <item translation_description="Slow sensor speed">Niska</item>
+        <item translation_description="Normal sensor speed">Normalna</item>
+        <item translation_description="Fast sensor speed">Wysoka</item>
     </string-array>
     <string-array name="sensor_damping">
-        <item>Jumpy</item>
-        <item>Medium</item>
-        <item>Standardowo</item>
-        <item>Wysoki</item>
+        <item translation_description="Low sensor damping factor">Skokowe</item>
+        <item translation_description="Medium sensor damping factor">Średnie</item>
+        <item translation_description="Extra High sensor damping factor">W sam raz</item>
+        <item translation_description="Really High sensor damping factor">Opóźniające</item>
     </string-array>
 </resources>
