@@ -18,6 +18,7 @@ import android.content.SharedPreferences;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
+import android.hardware.SensorListener;
 import android.hardware.SensorManager;
 import android.util.Log;
 
@@ -66,8 +67,8 @@ public class SensorOrientationController extends AbstractController
   };
 
   private SensorManager manager;
-  private SensorEventListener accelerometerSmoother;
-  private SensorEventListener compassSmoother;
+  private SensorListener accelerometerSmoother;
+  private SensorListener compassSmoother;
   private Provider<PlainSmootherModelAdaptor> modelAdaptorProvider;
   private Sensor rotationSensor;
   private SharedPreferences sharedPreferences;
@@ -124,10 +125,10 @@ public class SensorOrientationController extends AbstractController
             MAG_DAMPING_SETTINGS[dampingIndex].damping,
             MAG_DAMPING_SETTINGS[dampingIndex].exponent);
         manager.registerListener(accelerometerSmoother,
-                manager.getDefaultSensor(SensorManager.SENSOR_ACCELEROMETER),
-                sensorSpeed);
+                                 SensorManager.SENSOR_ACCELEROMETER,
+                                 sensorSpeed);
         manager.registerListener(compassSmoother,
-                manager.getDefaultSensor(SensorManager.SENSOR_MAGNETIC_FIELD),
+                                 SensorManager.SENSOR_MAGNETIC_FIELD,
                                  sensorSpeed);
       }
     }
