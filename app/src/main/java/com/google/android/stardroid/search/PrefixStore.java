@@ -63,8 +63,8 @@ public class PrefixStore {
 
   private void collect(TrieNode n, Collection<String> coll) {
     coll.addAll(n.results);
-    for (Character ch : n.children.keySet()) {
-      collect(n.children.get(ch), coll);
+    for (TrieNode trieNode : n.children.values()) {
+      collect(trieNode, coll);
     }
   }
 

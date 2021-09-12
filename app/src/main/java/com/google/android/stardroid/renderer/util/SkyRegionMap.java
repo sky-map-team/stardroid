@@ -69,7 +69,7 @@ public class SkyRegionMap<RegionRenderingData> {
    * Interface for a factory that constructs a rendering data.
    */
   public interface RegionDataFactory<RegionRenderingData> {
-    public RegionRenderingData construct();
+    RegionRenderingData construct();
   }
 
   /**
@@ -434,7 +434,6 @@ public class SkyRegionMap<RegionRenderingData> {
           data.add(regionData);
         }
       }
-      return data;
     } else {
       for (int i = 0; i < REGION_CENTERS.length; i++) {
         // Need to specially compute the visible regions.
@@ -445,8 +444,8 @@ public class SkyRegionMap<RegionRenderingData> {
           }
         }
       }
-      return data;
     }
+    return data;
   }
 
   public Collection<RegionRenderingData> getDataForAllRegions() {

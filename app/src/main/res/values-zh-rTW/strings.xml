@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Please add  translation_description="" attributes to Strings to assist the translators. -->
 <resources>
-    <string name="app_name" translation_description="Application Title">天象圖</string>
+    <string name="app_name" translation_description="Application Title">星空圖</string>
     <string name="menu_settings">設定</string>
     <string name="menu_search">搜尋</string>
     <string name="cancel">取消</string>
@@ -39,12 +39,13 @@
     <string name="show_horizon_pref">地平線</string>
     <string name="show_sky_gradient" translation_description="This is a shading of the color of the sky used for effect">星空漸層色</string>
     <string name="show_meteors_pref">流星雨</string>
+    <string name="show_satellite_layer_pref" translation_description="The layer for satellites">人造衛星</string>
+    <!-- Just in case we decide to have such a layer for the 4/24 launch -->
+    <string name="show_hubble_layer_pref">哈伯望遠鏡影像</string>
     <string name="sensor_prefs">感應器設定</string>
     <string name="sensor_speed" translation_description="Old, non gyro sensors only: How quickly the sensor should send us data">感應器速度</string>
     <string name="sensor_damping" translation_description="Old, non gyro sensors only: The amount of smoothing applied to the sensor outputs.">阻尼</string>
     <string name="ecliptic">黃道</string>
-    <!-- Just in case we decide to have such a layer for the 4/24 launch -->
-    <string name="show_hubble_layer_pref">哈伯望遠鏡影像</string>
     <string name="malformed_loc_error">經緯度設定值並非數字。</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">接受</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">不，謝謝</string>
@@ -116,6 +117,8 @@
     <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">正在尋找：</string>
     <string name="sun_wont_set_message">您目前的位置未來 24 小時之內看不到日落。</string>
     <string name="sun_wont_rise_message">您目前的位置未來 24 小時之內看不到日出。</string>
+
+    <string name="missing_label" translation_description="Used to indicate to the developer that they've added a resource with no translation.">待翻譯</string>
 
     <string name="sun">太陽</string>
     <string name="moon">月球</string>
@@ -400,7 +403,7 @@
     <string name="load_kml_dialog_title">載入 KML</string>
     <string name="load_kml_file">載入</string>
     <string name="enable_analytics">傳送使用統計資料</string>
-    <string name="enable_analytics_desc">傳送匿名資料給 Google Analytics 以改善天象圖</string>
+    <string name="enable_analytics_desc">傳送匿名資料給 Google Analytics 以改善星空圖</string>
     <string name="leonids" translation_description="Meteor Shower">獅子座流星雨</string>
     <string name="geminids" translation_description="Meteor Shower">雙子座流星雨</string>
     <string name="quadrantids" translation_description="Meteor Shower">象限儀座流星雨</string>

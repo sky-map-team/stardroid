@@ -30,7 +30,6 @@ import java.util.Date;
 public class SolarPositionCalculator {
   public static RaDec getSolarPosition(Date time) {
     HeliocentricCoordinates sunCoordinates = HeliocentricCoordinates.getInstance(Planet.Sun, time);
-    RaDec raDec = RaDec.getInstance(Planet.Sun, time, sunCoordinates);
-    return raDec;
+    return RaDec.getInstance(Planet.Sun, time, sunCoordinates);
   }
 }

@@ -39,12 +39,13 @@
     <string name="show_horizon_pref">Horisont</string>
     <string name="show_sky_gradient" translation_description="This is a shading of the color of the sky used for effect">Himmelgradient</string>
     <string name="show_meteors_pref">Meteorsvermer</string>
+    <string name="show_satellite_layer_pref" translation_description="The layer for satellites">Satellitter</string>
+    <!-- Just in case we decide to have such a layer for the 4/24 launch -->
+    <string name="show_hubble_layer_pref">Hubble-bilder</string>
     <string name="sensor_prefs">Sensorinnstillinger (eksperter)</string>
     <string name="sensor_speed" translation_description="Old, non gyro sensors only: How quickly the sensor should send us data">Sensorhastighet</string>
     <string name="sensor_damping" translation_description="Old, non gyro sensors only: The amount of smoothing applied to the sensor outputs.">Demping</string>
     <string name="ecliptic">Ekliptikken</string>
-    <!-- Just in case we decide to have such a layer for the 4/24 launch -->
-    <string name="show_hubble_layer_pref">Hubble-bilder</string>
     <string name="malformed_loc_error">Bredde- eller lengdegradinnstilling er ikke et tall.</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Aksepter</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">Nei takk</string>
@@ -116,6 +117,8 @@
     <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">Ser etter:</string>
     <string name="sun_wont_set_message">Solen går ikke ned i løpet av de neste 24 timene på ditt nåværende sted.</string>
     <string name="sun_wont_rise_message">Solen står ikke opp i løpet av de neste 24 timene på ditt nåværende sted.</string>
+
+    <string name="missing_label" translation_description="Used to indicate to the developer that they've added a resource with no translation.">MISSING_LBL</string>
 
     <string name="sun">Solen</string>
     <string name="moon">Månen</string>

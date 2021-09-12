@@ -55,11 +55,10 @@ public class TimeUtil {
     int month = cal.get(Calendar.MONTH) + 1;
     int day = cal.get(Calendar.DAY_OF_MONTH);
 
-    double jd = 367.0 * year - Math.floor(7.0 * (year
+    return 367.0 * year - Math.floor(7.0 * (year
                     + Math.floor((month + 9.0) / 12.0)) / 4.0)
                 + Math.floor(275.0 * month / 9.0) + day
                 + 1721013.5 + hour/24.0;
-    return jd;
   }
   
   /**

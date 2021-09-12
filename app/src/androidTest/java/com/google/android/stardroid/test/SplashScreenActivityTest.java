@@ -56,4 +56,11 @@ public class SplashScreenActivityTest {
    // onView(withId(R.id.splash)).check(matches(isDisplayed()));
     onView(withId(R.id.whats_new_box_text)).check(matches(isDisplayed()));
   }
+
+  @Test
+  public void useAppContext() {
+      // Context of the app under test.
+      Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
+      assertEquals("com.google.android.stardroid", appContext.getPackageName());
+  }
 }

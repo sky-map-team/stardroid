@@ -58,7 +58,6 @@ env:
   jobs:
     - API=29 ABI=x86_64      GOO=google_apis_playstore
 
-
 before_install:
   - java -version
 
@@ -157,9 +156,9 @@ before_script:
   - adb shell input keyevent 82 &
 
 script:
-  - ./gradlew app:connectedFdroidDebugAndroidTest
   - ./gradlew assembleFdroidDebug
   - ./gradlew testFdroidDebugUnitTest
+  - ./gradlew app:connectedFdroidDebugAndroidTest
 
 before_cache:
   - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock

@@ -25,19 +25,19 @@ public interface TextSource extends Colorable, PositionSource {
   /**
    * Returns the text to be displayed at the specified location in the renderer.
    */
-  public String getText();
+  String getText();
 
   /**
    * Changes the text in this {@link TextSource}.
    */
-  public void setText(String newText);
+  void setText(String newText);
   
   /**
    * Returns the size of the font in points (e.g. 10, 12).
    */
-  public int getFontSize();
+  int getFontSize();
   
-  public float getOffset();
+  float getOffset();
   // TODO(brent): talk to James: can we add font, style info?
   // TODO(brent): can we specify label orientation?
 }

@@ -1,17 +1,15 @@
 container:
-  image: cirrusci/android-sdk:19
+  image: cirrusci/android-sdk:30
   cpu: 4
   memory: 10G
   kvm: true
 
 check_android_task:
-  fix_kvm_script:
-    sudo chown cirrus:cirrus /dev/kvm
   list_versions_script:
     sdkmanager --list --verbose| grep ^system-images
   create_device_script:
-    - echo y | sdkmanager "system-images;android-19;google_apis;x86"
-    - echo no | avdmanager create avd --force -n test -k "system-images;android-19;google_apis;x86"
+    - sdkmanager "system-images;android-30;google_apis;x86"
+    - echo no | avdmanager create avd --force -n test -k "system-images;android-30;google_apis;x86"
   start_emulator_background_script:
     $ANDROID_HOME/emulator/emulator
     -avd test
@@ -31,3 +29,12 @@ check_android_task:
       path: "app/build/reports/**"
     onespecific_artifacts:
       path: "app/build/reports/androidTests/connected/flavors/fdroidDebugAndroidTest/index.html"
+
+task:
+  name: Android Lint
+  lint_script: ./gradlew lintGmsDebug
+  always:
+    android-lint_artifacts:
+      path: "**/reports/lint-results-gmsDebug.xml"
+      type: text/xml
+      format: android-lint

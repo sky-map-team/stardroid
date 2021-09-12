@@ -39,7 +39,7 @@ public class NoSensorsDialogFragment extends DialogFragment {
 
     LayoutInflater inflater = parentActivity.getLayoutInflater();
     final View view = inflater.inflate(R.layout.no_sensor_warning, null);
-    AlertDialog alertDialog = new AlertDialog.Builder(parentActivity)
+    return new AlertDialog.Builder(parentActivity)
         .setTitle(R.string.warning_dialog_title)
         .setView(view).setNegativeButton(android.R.string.ok,
             new DialogInterface.OnClickListener() {
@@ -51,6 +51,5 @@ public class NoSensorsDialogFragment extends DialogFragment {
                 dialog.dismiss();
               }
             }).create();
-    return alertDialog;
   }
 }

@@ -38,8 +38,8 @@ public enum Planet {
   Pluto(R.drawable.pluto, R.string.pluto, 1L * TimeConstants.MILLISECONDS_PER_HOUR),
   Neptune(R.drawable.neptune, R.string.neptune, 1L * TimeConstants.MILLISECONDS_PER_HOUR),
   Uranus(R.drawable.uranus, R.string.uranus, 1L * TimeConstants.MILLISECONDS_PER_HOUR),
-  Jupiter(R.drawable.jupiter, R.string.jupiter, 1L * TimeConstants.MILLISECONDS_PER_HOUR),
   Saturn(R.drawable.saturn, R.string.saturn, 1L * TimeConstants.MILLISECONDS_PER_HOUR),
+  Jupiter(R.drawable.jupiter, R.string.jupiter, 1L * TimeConstants.MILLISECONDS_PER_HOUR),
   Mars(R.drawable.mars, R.string.mars, 1L * TimeConstants.MILLISECONDS_PER_HOUR),
   Sun(R.drawable.sun, R.string.sun, 1L * TimeConstants.MILLISECONDS_PER_HOUR),
   Mercury(R.drawable.mercury, R.string.mercury, 1L * TimeConstants.MILLISECONDS_PER_HOUR),
@@ -321,12 +321,10 @@ public enum Planet {
     float earthDistance = planetCoords.DistanceFrom(earthCoords);
 
     // Finally, calculate the phase of the body.
-    float phase = MathUtil.acos((earthDistance * earthDistance +
+    return MathUtil.acos((earthDistance * earthDistance +
         planetCoords.radius * planetCoords.radius -
         earthCoords.radius * earthCoords.radius) /
         (2.0f * earthDistance * planetCoords.radius)) * Geometry.RADIANS_TO_DEGREES;
-
-    return phase;
   }
 
   /**
@@ -351,10 +349,9 @@ public enum Planet {
     float phase = Moon.calculatePhaseAngle(now);
 
     // Next, figure out if the moon is waxing or waning.
-    boolean isWaxing = false;
     Date later = new Date(now.getTime() + 1 * 3600 * 1000);
     float phase2 = Moon.calculatePhaseAngle(later);
-    isWaxing = phase2 > phase;
+    boolean isWaxing = phase2 > phase;
 
     // If moon is waxing, next full moon is (180.0 - phase)/360.0 * 29.53.
     // If moon is waning, next full moon is (360.0 - phase)/360.0 * 29.53.

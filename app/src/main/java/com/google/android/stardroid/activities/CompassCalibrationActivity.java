@@ -10,7 +10,6 @@ import android.view.View;
 import android.webkit.WebView;
 import android.widget.CheckBox;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.util.SensorAccuracyDecoder;

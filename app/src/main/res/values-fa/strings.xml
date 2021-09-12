@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Please add  translation_description="" attributes to Strings to assist the translators. -->
+<resources>
+    <string name="app_name" translation_description="Application Title">نقشه‌ی آسمان</string>
+    <string name="menu_settings">تنظیمات</string>
+    <string name="menu_search">جستجو</string>
+    <string name="cancel">لغو</string>
+    <string name="set" translation_description="Button label. Set the date to the given value">اعمال</string>
+    <string name="go">برو!</string>
+    <string name="location_prefs">تنظیمات مکان</string>
+    <string name="force_gps_pref">همیشه از سنسور مکان استفاده کن</string>
+    <string name="force_gps_pref_hint" translation_description="this string continues from \'Always use GPS\'">حتی اگر شبکه در دسترس باشد</string>
+    <string name="no_use_gps_pref">تنظیم دستی مکان</string>
+    <string name="no_use_gps_pref_hint">نام مکان یا طول/عرض جغرافیایی را وارد کنید</string>
+    <string name="location_placename">نام مکان</string>
+    <string name="location_placename_hint" translation_description="An example address.  Translators: please pick an address suitable for your country.  If it has an astronomical connection (e.g. the address of an observatory or famous astronomer) then that would be even better.">مثلا: تهران</string>
+    <string name="location_lat_pref">عرض جغرافیایی</string>
+    <string name="location_long_pref">طول جغرافیایی</string>
+    <string name="degrees" translation_description="angular degrees">درجه</string>
+    <string name="preferences">تنظیمات</string>
+    <string name="location_no_auto">دسترسی خودکار به موقعیت مکانی در گوشی‌تان غیرفعال شده است. شما می‌توانید مکان را به صورت دستی در تنظیمات وارد کنید. بدون تعیین موقعیت، نقشه آسمان درست نمایش داده نمی‌شود.</string>
+    <string name="location_offer_to_enable">تشخیص خودکار مکان غیرفعال شده. می‌خواهید فعالش کنید؟</string>
+    <string name="location_offer_to_enable_gps_title">تشخیص خودکار مکان، غیرفعال شده است</string>
+    <string name="location_set_auto">مکان از %1$s به %2$s تنظیم شد</string>
+    <string name="location_unable_to_geocode">مکان تشخیص داده نشد. شاید شبکه شما در دسترس نباشد؟</string>
+    <string name="location_not_found_title" translation_description="dialog box title when location not found">نامشخص</string>
+    <string name="location_not_found" translation_description="dialog message when placename not found">%s یافت نشد.</string>
+    <string name="location_long_lat">طول جغرافیایی:%1$s, عرض جغرافیایی:%2$s</string>
+    <string name="location_place_found">مکان پیدا شد. عرض جغرافیایی %1$f و طول جغرافیایی %2$f</string>
+    <string name="use_magnetic_correction">اصلاح با جهت‌نمای مغناطیسی</string>
+    <string name="use_magnetic_correction_hint">اصلاح شمال مغناطیسی به شمال واقعی بر اساس مکان شما</string>
+    <!-- This string is too long and currently unused -->
+    <string name="provider_prefs" translation_description="Dialog box title for a preferences dialog">نمایش…</string>
+    <string name="show_stars_pref">ستاره‌ها</string>
+    <string name="show_constellations_pref">صورت‌های فلکی</string>
+    <string name="show_messier_objects_pref" translation_description="The celestial objects catalogued by Charles Messier">اجرام مسیه</string>
+    <string name="show_planets_pref">منظومه شمسی</string>
+    <string name="show_grid_pref">مختصات RA/Dec</string>
+    <string name="show_horizon_pref">افق</string>
+    <string name="show_sky_gradient" translation_description="This is a shading of the color of the sky used for effect">گرادیان آسمان</string>
+    <string name="show_meteors_pref">بارش شهابی</string>
+    <string name="show_satellite_layer_pref" translation_description="The layer for satellites">ماهواره‌ها</string>
+    <!-- Just in case we decide to have such a layer for the 4/24 launch -->
+    <string name="show_hubble_layer_pref">تصاویر (تلسکوپ) هابل</string>
+    <string name="sensor_prefs">تنظیمات حسگرها (پیشرفته)</string>
+    <string name="sensor_speed" translation_description="Old, non gyro sensors only: How quickly the sensor should send us data">سرعت حسگر</string>
+    <string name="sensor_damping" translation_description="Old, non gyro sensors only: The amount of smoothing applied to the sensor outputs.">میرایی</string>
+    <string name="ecliptic">دایرة البروج</string>
+    <string name="malformed_loc_error">طول و عرض جغرافیایی باید عدد (با ارقام انگلیسی) باشند</string>
+    <string name="dialog_accept" translation_description="accepting the licence agreement">قبول</string>
+    <string name="dialog_decline" translation_description="declining the licence agreement">خیر. متشکرم</string>
+    <string name="dialog_ok_button">باشه</string>
+    <string name="menu_help" translation_description="menu item to show \'Help\' box">راهنما</string>
+    <string name="help_dialog_title">راهنمای برنامه</string>
+    <string name="eula_dialog_title">توافقنامه با کاربر</string>
+    <string name="set_manual">رفتن به حالت دستی</string>
+    <string name="set_auto">رفتن به حالت خودکار</string>
+    <string name="menu_zoom_in">بزرگ‌نمایی</string>
+    <string name="menu_zoom_out">کوچک‌نمایی</string>
+    <string name="menu_toggle_dim">تغییر حالت شب</string>
+    <string name="zenith">سمت الرأس</string>
+    <string name="nadir">پاسو</string>
+    <string name="north">شماسل</string>
+    <string name="east">شرق</string>
+    <string name="west">غرب</string>
+    <string name="south">جنوب</string>
+    <string name="search_label">جستجو در آسمان</string>
+    <string name="search_hint" translation_description="an example search target">مثلا: مریخ</string>
+    <string name="no_search_title">فاقد نتیجه</string>
+    <string name="no_search_results_text">نتیجه‌ای یافت نشد.</string>
+    <string name="many_search_results_title">آیا منظورتان این است؟</string>
+    <string name="many_search_results_text">لطفا یک مورد را انتخاب کنید</string>
+    <string name="searching_for_text">جستجو برای %s...</string>
+    <string name="found_target_text">%s نتیجه</string>
+    <string name="other" translation_description="A preference category (ie preferences that don't belong in any other category)">سایر موارد</string>
+    <string name="planetary_images">نمایش تصاویر سیارات</string>
+    <string name="menu_time">سفر زمانی</string>
+    <string name="time_travel_start_message">سفر در زمان...</string>
+    <string name="time_travel_start_message_alt">سفر در زمان تا %s ...</string>
+    <string name="time_travel_close_message">بازگشت به زمان حال...</string>
+    <!--  -->
+    <string name="popular_dates_prompt" translation_description="Label for a list of dates the user can choose from">تاریخ‌های مشهور</string>
+    <string name="custom_date_prompt" translation_description="Label telling the user to manually specify a date">یا انتخاب تاریخ دلخواه:</string>
+    <string name="change_date_prompt">تغییر تاریخ</string>
+    <string name="change_time_prompt">تغییر ساعت</string>
+    <string name="now_visiting"
+            translation_description="used in time travel dialog to tell the user what time they are visiting, time formatted as yyyy.mm.dd at hh.mm.ss + timezone">
+        در حال تماشای تاریخ: %s</string>
+    <string name="time_travel_label_past" translation_description="Label showing that we are in the past">سفر زمانی به: گذشته</string>
+    <string name="time_travel_label_future" translation_description="Label showing that we are in the future">سفر زمانی به: آینده</string>
+    <string name="time_travel_stopped" translation_description="Label showing rate of travel through time">سفر زمانی متوقف شد</string>
+    <string name="time_travel_second_speed" translation_description="Label showing rate of travel through time.  The symbol means greater than.">سفر با سرعت &gt; @ 1 sec/sec</string>
+    <string name="time_travel_minute_speed" translation_description="Label showing rate of travel through time">سفر با سرعت &gt; @ 1 min/sec</string>
+    <string name="time_travel_10minute_speed" translation_description="Label showing rate of travel through time">سفر با سرعت &gt; @ 10 min/sec</string>
+    <string name="time_travel_hour_speed" translation_description="Label showing rate of travel through time">سفر با سرعت &gt; @ 1 hour/sec</string>
+    <string name="time_travel_day_speed" translation_description="Label showing rate of travel through time">سفر با سرعت &gt; @ 1 day/sec</string>
+    <string name="time_travel_week_speed" translation_description="Label showing rate of travel through time">سفر با سرعت &gt; @ 1 week/sec</string>
+    <string name="time_travel_second_speed_back" translation_description="Label showing rate of travel through time">سفر با سرعت &lt; @ 1 sec/sec</string>
+    <string name="time_travel_minute_speed_back" translation_description="Label showing rate of travel through time">سفر با سرعت &lt; @ 1 min/sec</string>
+    <string name="time_travel_10minute_speed_back" translation_description="Label showing rate of travel through time">سفر با سرعت &lt; @ 10 min/sec</string>
+    <string name="time_travel_hour_speed_back" translation_description="Label showing rate of travel through time">سفر با سرعت &lt; @ 1 hour/sec</string>
+    <string name="time_travel_day_speed_back" translation_description="Label showing rate of travel through time">سفر با سرعت &lt; @ 1 day/sec</string>
+    <string name="time_travel_week_speed_back" translation_description="Label showing rate of travel through time">سفر با سرعت &lt; @ 1 week/sec</string>
+    <string name="use_sound_effects" translation_description="A preferences menu label">فعال کردن صدا</string>
+
+    <string name="enable_layer_toast">فعال کردن %s layer</string>
+    <string name="disable_layer_toast">غیرفعال کردن %s layer</string>
+    <string name="menu_gallery">آلبوم</string>
+    <string name="gallery_image_search_btn">جستجو در آسمان</string>
+    <string name="gallery_image_back_btn">بازگشت به آلبوم</string>
+    <string name="hubble_image_gallery_title">آلبوم برنامه</string>
+    <string name="hubble_image">تصاویر (تلسکوپ) هابل</string>
+    <!--  TODO(johntaylor): currently unused -->
+
+    <string name="search_target_found_message" translation_description="displayed when a search target has been located">نتیجه:</string>
+    <string name="search_overlay_title" translation_description="title for search overlay">تلفن خود را به سمت فلش قرار دهید</string>
+    <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">جستجو برای:</string>
+    <string name="sun_wont_set_message">در مکان انتخابی شما، خورشید تا ۲۴ ساعت آینده غروب نمی‌کند.</string>
+    <string name="sun_wont_rise_message">در مکان انتخابی شما، خورشید تا ۲۴ ساعت آینده طلوع نمی‌کند.</string>
+
+    <string name="missing_label" translation_description="Used to indicate to the developer that they've added a resource with no translation.">MISSING_LBL</string>
+
+    <string name="sun">خورشید</string>
+    <string name="moon">ماه</string>
+    <string name="mercury">عطارد</string>
+    <string name="venus">زهره</string>
+    <string name="earth">زمین</string>
+    <string name="mars">مریخ</string>
+    <string name="jupiter">مشتری</string>
+    <string name="saturn">زحل</string>
+    <string name="uranus">اورانوس</string>
+    <string name="neptune">نپتون</string>
+    <string name="pluto">پلوتون</string>
+    <string name="crab_nebula" translation_description="hubble object">سحابی خرچنگ</string>
+    <string name="eagle_nebula" translation_description="hubble object">سحابی عقاب</string>
+    <string name="andromeda_galaxy" translation_description="hubble object">کهکشان آندرومدا</string>
+    <string name="orion_nebula" translation_description="hubble object">سحابی جبار</string>
+    <string name="whirlpool_galaxy" translation_description="hubble object">کهکشان گرداب</string>
+    <string name="ring_nebula" translation_description="hubble object">سحابی حلقه ای</string>
+    <string name="pinwheel_galaxy" translation_description="hubble object">کهکشان فرفره</string>
+    <string name="sombrero_galaxy" translation_description="hubble object">کهکشان سومبررو</string>
+    <string name="hercules_gc" translation_description="hubble object">خوشه کروی هرکول</string>
+    <string name="pleiades" translation_description="hubble object">پليادها</string>
+    <string name="cats_eye_nebula" translation_description="hubble object">سحابی چشم گربه</string>
+    <string name="omega_centauri" translation_description="hubble object">خوشه کروی امگا قنطورس</string>
+    <string name="v838_mon" translation_description="hubble object">تکشاخ وی۸۳۸</string>
+    <string name="sn1987a" translation_description="hubble object">اس‌ان ۱۹۸۷ای</string>
+    <string name="hubble_deep_field" translation_description="hubble object">زمینه ژرف هابل</string>
+    <string name="hdf" translation_description="hubble object">زمینه ژرف هابل</string>
+    <string name="rho_oph" translation_description="hubble object">رو مارافسای</string>
+    <string name="menu_tos">شرایط استفاده</string>
+    <string name="menu_diagnostics">عیب یابی</string>
+    <!-- TODO(johntaylor): the following might be deleted in favor of an icon -->
+    <string name="control_panel_btn" translation_description="Label for the control panel button">تابلوی کنترل</string>
+
+    <string name="north_pole">شمال</string>
+    <string name="south_pole">جنوب</string>
+
+    <string name="andromeda" translation_description="Name of the Andromeda constellation">زن زنجیر شده</string>
+    <string name="aquarius" translation_description="Name of the Aquarius constellation">دلو</string>
+    <string name="aquila" translation_description="Name of the Aquila constellation">عقاب</string>
+    <string name="aries" translation_description="Name of the Aries constellation">حمل</string>
+    <string name="auriga" translation_description="Name of the Auriga constellation">ارابه‌ران</string>
+    <string name="bootes" translation_description="Name of the Bootes constellation">گاوران</string>
+    <string name="cancer" translation_description="Name of the Cancer constellation">سرطان</string>
+    <string name="canis_major" translation_description="Name of the Canis Major constellation">سگ بزرگ</string>
+    <string name="capricornus" translation_description="Name of the Capricornus constellation">بزغاله (جدی)</string>
+    <string name="carina" translation_description="Name of the Carina constellation">شاه‌تخته</string>
+    <string name="cassiopeia" translation_description="Name of the Cassiopeia constellation">کاسیوپه (ذات‌الکرسی)</string>
+    <string name="centaurus" translation_description="Name of the Centaurus constellation">کنتاوروس (قنطورس)</string>
+    <string name="cetus" translation_description="Name of the Cetus constellation">نهنگ</string>
+    <string name="crux" translation_description="Name of the Crux constellation">چلیپا</string>
+    <string name="cygnus" translation_description="Name of the Cygnus constellation">ماکیان</string>
+    <string name="draco" translation_description="Name of the Draco constellation">اژدها</string>
+    <string name="eridanus" translation_description="Name of the Eridanus constellation">رود</string>
+    <string name="gemini" translation_description="Name of the Gemini constellation">دوپیکر (جوزا)</string>
+    <string name="grus" translation_description="Name of the Grus constellation">درنا</string>
+    <string name="hercules" translation_description="Name of the Hercules constellation">هرکول</string>
+    <string name="hydrus" translation_description="Name of the Hydrus constellation">آبمار (مار آبی)</string>
+    <string name="leo" translation_description="Name of the Leo constellation">شیر (اسد)</string>
+    <string name="libra" translation_description="Name of the Libra constellation">ترازو (میزان)</string>
+    <string name="lupus" translation_description="Name of the Lupus constellation">گرگ</string>
+    <string name="lyra" translation_description="Name of the Lyra constellation">چنگ</string>
+    <string name="ophiuchus" translation_description="Name of the Ophiuchus constellation">مارافسا/مارگیر/ماردار </string>
+    <string name="orion" translation_description="Name of the Orion constellation">اوریون</string>
+    <string name="pavo" translation_description="Name of the Pavo constellation">طاووس</string>
+    <string name="pegasus" translation_description="Name of the Pegasus constellation">اسب بال‌دار</string>
+    <string name="perseus" translation_description="Name of the Perseus constellation">پرسیوس</string>
+    <string name="phoenix" translation_description="Name of the Phoenix constellation">ققنوس</string>
+    <string name="pisces" translation_description="Name of the Pisces constellation">ماهی (حوت)</string>
+    <string name="piscis_austrinus" translation_description="Name of the Piscis Austrinus constellation">ماهی جنوبی</string>
+    <string name="puppis" translation_description="Name of the Puppis constellation">دم کشتی</string>
+    <string name="sagittarius" translation_description="Name of the Sagittarius constellation">کمان (قوس)</string>
+    <string name="scorpius" translation_description="Name of the Scorpius constellation">عقرب</string>
+    <string name="taurus" translation_description="Name of the Taurus constellation">گاو (ثور)</string>
+    <string name="tucana" translation_description="Name of the Tucana constellation">توکان</string>
+    <string name="ursa_major" translation_description="Name of the Ursa Major constellation">خرس بزرگ</string>
+    <string name="ursa_minor" translation_description="Name of the Ursa Minor constellation">خرس کوچک</string>
+    <string name="vela" translation_description="Name of the Vela constellation">بادبان</string>
+    <string name="virgo" translation_description="Name of the Virgo constellation">دوشیزه</string>
+    <string name="capricorn" translation_description="Name of the Capricorn constellation">بزغاله (جدی)</string>
+    <string name="southern_cross" translation_description="Name of the Southern Cross constellation">چلیپا</string>
+    <string name="scorpio" translation_description="Name of the Scorpio constellation">برج عقرب</string>
+    <string name="little_dipper" translation_description="Name of the Little Dipper constellation">قاشق کوچک</string>
+    <string name="little_bear" translation_description="Name of the Little Bear constellation">خرس کوچک</string>
+    <string name="big_dipper" translation_description="Name of the Big Dipper constellation">خرس بزرگ</string>
+    <string name="great_bear" translation_description="Name of the Great Bear constellation">خرس عظیم</string>
+    <string name="plough" translation_description="Name of the Plough constellation">شخم زدن</string>
+
+    <string name="sirius" translation_description="Name of the Star Sirius">شعرا</string>
+    <string name="canopus" translation_description="Name of the Star Canopus">سهیل</string>
+    <string name="arcturus" translation_description="Name of the Star Arcturus">ژوبین‌دار</string>
+    <string name="rigel_kentaurus_a" translation_description="Name of the Star Rigel Kentaurus A">آلفا قنطورس</string>
+    <string name="rigil_kentaurus_a" translation_description="Name of the Star Rigil Kentaurus A">آلفا قنطورس</string>
+    <string name="vega" translation_description="Name of the Star Vega">کرکس نشسته (وگا)</string>
+    <string name="rigel" translation_description="Name of the Star Rigel">پای شکارچی</string>
+    <string name="procyon" translation_description="Name of the Star Procyon">شعرای شامی</string>
+    <string name="betelgeuse" translation_description="Name of the Star Betelgeuse">ابط الجوزا / آلفای شکارچی</string>
+    <string name="achernar" translation_description="Name of the Star Achernar">آخرالنهر</string>
+    <string name="hadar" translation_description="Name of the Star Hadar">بتا قنطورس (حضار)</string>
+    <string name="capella" translation_description="Name of the Star Capella">سروش (عیوق)</string>
+    <string name="altair" translation_description="Name of the Star Altair">کرکس پرنده</string>
+    <string name="acrux" translation_description="Name of the Star Acrux">آلفا صلیب</string>
+    <string name="aldebaran" translation_description="Name of the Star Aldebaran">دبران</string>
+    <string name="spica" translation_description="Name of the Star Spica">بی‌ژوبین</string>
+    <string name="antares" translation_description="Name of the Star Antares">قلب‌العقرب</string>
+    <string name="pollux" translation_description="Name of the Star Pollux">سرپسین</string>
+    <string name="fomalhaut" translation_description="Name of the Star Fomalhaut">دهان ماهی</string>
+    <string name="deneb" translation_description="Name of the Star Deneb">دنب</string>
+    <string name="regulus" translation_description="Name of the Star Regulus">قلب‌الاسد</string>
+    <string name="adhara" translation_description="Name of the Star Adhara">عذارا</string>
+    <string name="shaula" translation_description="Name of the Star Shaula">لاندا کژدم</string>
+    <string name="alnath" translation_description="Name of the Star Alnath">نطح</string>
+    <string name="alnilam" translation_description="Name of the Star Alnilam">نظام</string>
+    <string name="alnair" translation_description="Name of the Star Alnair">نیر</string>
+    <string name="alioth" translation_description="Name of the Star Alioth">جون</string>
+    <string name="mirphak" translation_description="Name of the Star Mirphak">مرفق‌الثریا (جنب)</string>
+    <string name="kaus_australis" translation_description="Name of the Star Kaus Australis">قوس جنوبی</string>
+    <string name="dubhe" translation_description="Name of the Star Dubhe">دبه</string>
+    <string name="alkaid" translation_description="Name of the Star Alkaid">قائد</string>
+    <string name="alhena" translation_description="Name of the Star Alhena">هنعه (میسان)</string>
+    <string name="castor" translation_description="Name of the Star Castor">سرپیشین</string>
+    <string name="polaris" translation_description="Name of the Star Polaris">جدی</string>
+    <string name="alphard" translation_description="Name of the Star Alphard">قلب‌الفرد</string>
+    <string name="hamal" translation_description="Name of the Star Hamal">حمل</string>
+    <string name="algieba" translation_description="Name of the Star Algieba">جبهه</string>
+    <string name="diphda" translation_description="Name of the Star Diphda">ضفدع</string>
+    <string name="nunki" translation_description="Name of the Star Nunki">سیگما کمان (نانکی)</string>
+    <string name="mirach" translation_description="Name of the Star Mirach">جنب‌المسلسله</string>
+    <string name="alpheratz" translation_description="Name of the Star Alpheratz">سرةالفرس</string>
+    <string name="saiph" translation_description="Name of the Star Saiph">سیف (کاپا شکارچی)</string>
+    <string name="kochab" translation_description="Name of the Star Kochab">کوکب</string>
+    <string name="rasalhague" translation_description="Name of the Star Rasalhague">آلفا مارافسای</string>
+    <string name="algol" translation_description="Name of the Star Algol">رأس‌الغول</string>
+    <string name="denebola" translation_description="Name of the Star Denebola">ذنب‌الاسد</string>
+    <string name="alphekka" translation_description="Name of the Star Alphekka">فکه</string>
+    <string name="etamin" translation_description="Name of the Star Etamin">گاما اژدها</string>
+    <string name="kaus" translation_description="Name of the Star Kaus">قوس</string>
+    <string name="shedir" translation_description="Name of the Star Shedir">صدر</string>
+    <string name="caph" translation_description="Name of the Star Caph">کف‌الخضیب</string>
+    <string name="izar" translation_description="Name of the Star Izar">ازار</string>
+    <string name="merak" translation_description="Name of the Star Merak">مراق</string>
+    <string name="enif" translation_description="Name of the Star Enif">انف (اسب بالدار)</string>
+    <string name="ankaa" translation_description="Name of the Star Ankaa">عنقا</string>
+    <string name="phad" translation_description="Name of the Star Phad">فخْذ</string>
+    <string name="alderamin" translation_description="Name of the Star Alderamin">بازوی راست</string>
+    <string name="scheat" translation_description="Name of the Star Scheat">ساعد الفرس</string>
+    <string name="markab" translation_description="Name of the Star Markab">مرکب‌الفرس</string>
+    <string name="menkar" translation_description="Name of the Star Menkar">منخر</string>
+    <string name="arneb" translation_description="Name of the Star Arneb">ارنب</string>
+    <string name="unukalhai" translation_description="Name of the Star Unukalhai">عنق‌الحیه (گردن مار)</string>
+    <string name="algenib" translation_description="Name of the Star Algenib">گاما پگاسوس</string>
+    <string name="vindemiatrix" translation_description="Name of the Star Vindemiatrix">انگورچین</string>
+    <string name="alcyone" translation_description="Name of the Star Alcyone">نیرثریا</string>
+    <string name="dog_star" translation_description="Name of the Dog Star (Sirius)">شباهنگ (شعرای یمانی)</string>
+    <string name="north_star" translation_description="Name of the North Star">ستاره شمالی</string>
+    <string name="pole_star" translation_description="Name of the (North) Pole Star">ستاره قطبی</string>
+    <string name="alpha_centauri" translation_description="Name of the star Alpha Centauri">آلفا قنطورس</string>
+    <string name="rigil_kent" translation_description="Name of the star Rigil Kent">آلفا قنطورس</string>
+    <string name="e_lyrae" translation_description="Name of the star ε Lyrae">اپسیلون شلیاق</string>
+
+    <string name="m1" translation_description="Name of the Messier object M1">M1</string>
+    <string name="m2" translation_description="Name of the Messier object M2">M2</string>
+    <string name="m3" translation_description="Name of the Messier object M3">M3</string>
+    <string name="m4" translation_description="Name of the Messier object M4">M4</string>
+    <string name="m5" translation_description="Name of the Messier object M5">M5</string>
+    <string name="m6" translation_description="Name of the Messier object M6">M6</string>
+    <string name="m7" translation_description="Name of the Messier object M7">M7</string>
+    <string name="m8" translation_description="Name of the Messier object M8">M8</string>
+    <string name="m9" translation_description="Name of the Messier object M9">M9</string>
+    <string name="m10" translation_description="Name of the Messier object M10">M10</string>
+    <string name="m11" translation_description="Name of the Messier object M11">M11</string>
+    <string name="m12" translation_description="Name of the Messier object M12">M12</string>
+    <string name="m13" translation_description="Name of the Messier object M13">M13</string>
+    <string name="m14" translation_description="Name of the Messier object M14">M14</string>
+    <string name="m15" translation_description="Name of the Messier object M15">M15</string>
+    <string name="m16" translation_description="Name of the Messier object M16">M16</string>
+    <string name="m17" translation_description="Name of the Messier object M17">M17</string>
+    <string name="m18" translation_description="Name of the Messier object M18">M18</string>
+    <string name="m19" translation_description="Name of the Messier object M19">M19</string>
+    <string name="m20" translation_description="Name of the Messier object M20">M20</string>
+    <string name="m21" translation_description="Name of the Messier object M21">M21</string>
+    <string name="m22" translation_description="Name of the Messier object M22">M22</string>
+    <string name="m23" translation_description="Name of the Messier object M23">M23</string>
+    <string name="m24" translation_description="Name of the Messier object M24">M24</string>
+    <string name="m25" translation_description="Name of the Messier object M25">M25</string>
+    <string name="m26" translation_description="Name of the Messier object M26">M26</string>
+    <string name="m27" translation_description="Name of the Messier object M27">M27</string>
+    <string name="m28" translation_description="Name of the Messier object M28">M28</string>
+    <string name="m29" translation_description="Name of the Messier object M29">M29</string>
+    <string name="m30" translation_description="Name of the Messier object M30">M30</string>
+    <string name="m31" translation_description="Name of the Messier object M31">M31</string>
+    <string name="m32" translation_description="Name of the Messier object M32">M32</string>
+    <string name="m33" translation_description="Name of the Messier object M33">M33</string>
+    <string name="m34" translation_description="Name of the Messier object M34">M34</string>
+    <string name="m35" translation_description="Name of the Messier object M35">M35</string>
+    <string name="m36" translation_description="Name of the Messier object M36">M36</string>
+    <string name="m37" translation_description="Name of the Messier object M37">M37</string>
+    <string name="m38" translation_description="Name of the Messier object M38">M38</string>
+    <string name="m39" translation_description="Name of the Messier object M39">M39</string>
+    <string name="m40" translation_description="Name of the Messier object M40">M40</string>
+    <string name="m41" translation_description="Name of the Messier object M41">M41</string>
+    <string name="m42" translation_description="Name of the Messier object M42">M42</string>
+    <string name="m43" translation_description="Name of the Messier object M43">M43</string>
+    <string name="m44" translation_description="Name of the Messier object M44">M44</string>
+    <string name="m45" translation_description="Name of the Messier object M45">M45</string>
+    <string name="m46" translation_description="Name of the Messier object M46">M46</string>
+    <string name="m47" translation_description="Name of the Messier object M47">M47</string>
+    <string name="m48" translation_description="Name of the Messier object M48">M48</string>
+    <string name="m49" translation_description="Name of the Messier object M49">M49</string>
+    <string name="m50" translation_description="Name of the Messier object M50">M50</string>
+    <string name="m51" translation_description="Name of the Messier object M51">M51</string>
+    <string name="m52" translation_description="Name of the Messier object M52">M52</string>
+    <string name="m53" translation_description="Name of the Messier object M53">M53</string>
+    <string name="m54" translation_description="Name of the Messier object M54">M54</string>
+    <string name="m55" translation_description="Name of the Messier object M55">M55</string>
+    <string name="m56" translation_description="Name of the Messier object M56">M56</string>
+    <string name="m57" translation_description="Name of the Messier object M57">M57</string>
+    <string name="m58" translation_description="Name of the Messier object M58">M58</string>
+    <string name="m59" translation_description="Name of the Messier object M59">M59</string>
+    <string name="m60" translation_description="Name of the Messier object M60">M60</string>
+    <string name="m61" translation_description="Name of the Messier object M61">M61</string>
+    <string name="m62" translation_description="Name of the Messier object M62">M62</string>
+    <string name="m63" translation_description="Name of the Messier object M63">M63</string>
+    <string name="m64" translation_description="Name of the Messier object M64">M64</string>
+    <string name="m65" translation_description="Name of the Messier object M65">M65</string>
+    <string name="m66" translation_description="Name of the Messier object M66">M66</string>
+    <string name="m67" translation_description="Name of the Messier object M67">M67</string>
+    <string name="m68" translation_description="Name of the Messier object M68">M68</string>
+    <string name="m69" translation_description="Name of the Messier object M69">M69</string>
+    <string name="m70" translation_description="Name of the Messier object M70">M70</string>
+    <string name="m71" translation_description="Name of the Messier object M71">M71</string>
+    <string name="m72" translation_description="Name of the Messier object M72">M72</string>
+    <string name="m73" translation_description="Name of the Messier object M73">M73</string>
+    <string name="m74" translation_description="Name of the Messier object M74">M74</string>
+    <string name="m75" translation_description="Name of the Messier object M75">M75</string>
+    <string name="m76" translation_description="Name of the Messier object M76">M76</string>
+    <string name="m77" translation_description="Name of the Messier object M77">M77</string>
+    <string name="m78" translation_description="Name of the Messier object M78">M78</string>
+    <string name="m79" translation_description="Name of the Messier object M79">M79</string>
+    <string name="m80" translation_description="Name of the Messier object M80">M80</string>
+    <string name="m81" translation_description="Name of the Messier object M81">M81</string>
+    <string name="m82" translation_description="Name of the Messier object M82">M82</string>
+    <string name="m83" translation_description="Name of the Messier object M83">M83</string>
+    <string name="m84" translation_description="Name of the Messier object M84">M84</string>
+    <string name="m85" translation_description="Name of the Messier object M85">M85</string>
+    <string name="m86" translation_description="Name of the Messier object M86">M86</string>
+    <string name="m87" translation_description="Name of the Messier object M87">M87</string>
+    <string name="m88" translation_description="Name of the Messier object M88">M88</string>
+    <string name="m89" translation_description="Name of the Messier object M89">M89</string>
+    <string name="m90" translation_description="Name of the Messier object M90">M90</string>
+    <string name="m91" translation_description="Name of the Messier object M91">M91</string>
+    <string name="m92" translation_description="Name of the Messier object M92">M92</string>
+    <string name="m93" translation_description="Name of the Messier object M93">M93</string>
+    <string name="m94" translation_description="Name of the Messier object M94">M94</string>
+    <string name="m95" translation_description="Name of the Messier object M95">M95</string>
+    <string name="m96" translation_description="Name of the Messier object M96">M96</string>
+    <string name="m97" translation_description="Name of the Messier object M97">M97</string>
+    <string name="m98" translation_description="Name of the Messier object M98">M98</string>
+    <string name="m99" translation_description="Name of the Messier object M99">M99</string>
+    <string name="m100" translation_description="Name of the Messier object M100">M100</string>
+    <string name="m101" translation_description="Name of the Messier object M101">M101</string>
+    <string name="m102" translation_description="Name of the Messier object M102">M102</string>
+    <string name="m103" translation_description="Name of the Messier object M103">M103</string>
+    <string name="m104" translation_description="Name of the Messier object M104">M104</string>
+    <string name="m105" translation_description="Name of the Messier object M105">M105</string>
+    <string name="m106" translation_description="Name of the Messier object M106">M106</string>
+    <string name="m107" translation_description="Name of the Messier object M107">M107</string>
+    <string name="m108" translation_description="Name of the Messier object M108">M108</string>
+    <string name="m109" translation_description="Name of the Messier object M109">M109</string>
+    <string name="m110" translation_description="Name of the Messier object M110">M110</string>
+    <string name="ngc6543" translation_description="Name of the Messier object NGC6543">NGC6543</string>
+    <string name="ngc5139" translation_description="Name of the Messier object NGC5139">NGC5139</string>
+    <string name="butterfly_cluster" translation_description="Name of the Messier object Butterfly Cluster">خوشه پروانه</string>
+    <string name="scorpions_tail" translation_description="Name of the Messier object Scorpion\'s Tail">دم عقرب</string>
+    <string name="winnecke_4" translation_description="Name of the Messier object Winnecke 4">وینکه ۴</string>
+    <string name="beehive_cluster" translation_description="Name of the Messier object Beehive Cluster">خوشه کندوی عسل</string>
+    <string name="praesepe" translation_description="Name of the Messier object Praesepe">خوشه کندوی عسل</string>
+    <string name="seven_sisters" translation_description="Name of the Messier object Seven Sisters">خوشه پروین (ثریا)</string>
+    <string name="space_station" translation_description="Name of the Internation Space Station">ایستگاه فضایی بین‌المللی</string>
+    <string name="space_shuttle" translation_description="Name of the Space Shuttle">شاتل فضایی</string>
+    <string name="kml_load_error">بارگیری فایل KML ناموفق بود</string>
+    <string name="load_kml_dialog_title">بارگیری KML</string>
+    <string name="load_kml_file">بارگیری</string>
+    <string name="enable_analytics">ارسال آمار استفاده</string>
+    <string name="enable_analytics_desc">بهبود برنامه با ارسال ناشناس آمار استفاده</string>
+    <string name="leonids" translation_description="Meteor Shower">بارش شهابی اسدی</string>
+    <string name="geminids" translation_description="Meteor Shower">بارش شهابی جوزایی</string>
+    <string name="quadrantids" translation_description="Meteor Shower">بارش شهابی ربعی</string>
+    <string name="lyrids" translation_description="Meteor Shower">بارش شهابی شلیاقی</string>
+    <string name="aquariids" translation_description="Meteor Shower">بارش شهابی اتا دلوی</string>
+    <string name="deltaaquariids" translation_description="Meteor Shower">بارش شهابی دلتای جنوبی</string>
+    <string name="perseids" translation_description="Meteor Shower">بارش شهابی برساوشی</string>
+    <string name="orionids" translation_description="Meteor Shower">بارش شهابی جباری</string>
+    <string name="puppidvelids" translation_description="Meteor Shower">بارش شهابی پی‌کشتیدمی</string>
+    <string name="ursids" translation_description="Meteor Shower">بارش شهابی دبی</string>
+
+    <string name="no_sensor_warning">دستگاه شما ممکن است فاقد سنسورهای جهت‌گیری باشد - ممکن است خودکار عمل نکند</string>
+    <string name="warning_dialog_title">یه خبر بد!</string>
+    <string name="missing_sensor_dialog_text">\n
+        متأسفانه دستگاه شما فاقد یکی از حسگرهای لازم برای برنامه است.\n\n
+		برای نمایش آسمان در افقی که گوشی شما به آن سمت گرفته شده؛ برنامه نیاز به قطب‌نما و شتاب‌سنج دارد که ظاهر گوشی شما فاقد یکی از آنهاست.
+		(هرچند برخی گوشی‌ها مثل سری E موتورولا ممکن است اشتباها فاقد حسگرها فوق تشخیص داده شود).\n\n
+		در گوشی‌های فاقد، حالت «خودکار» کار نمی‌کند و شما لازم است از حالت دستی استفاده کنید و با انگشتان‌تان، صفحه را به سمتی که می‌خواهید، حرکت دهید یا بچرخانید یا بزرگنمایی کنید.
+    </string>
+    <string name="do_not_show_again">دیگر این پیام را نمایش نده</string>
+    <string name="title_activity_diagnostic">عیب یابی</string>
+    <string name="location_rationale_title">چرا مکان شما مهم است؟</string>
+    <string name="location_rationale_text">نمای ستاره‌هایی که می‌توانید ببینید، به مکان شما بستگی دارد. بدون موقعیت مکانی شما نمی‌توانیم نقشه دقیقی به شما نشان دهیم. اگر نمی‌خواهید تلفن شما موقعیت مکانی خود را به ما بدهد، می‌توانید آن را به صورت دستی در تنظیمات وارد کنید؛ شما کافی است نزدیک‌ترین شهر را درج کنید.</string>
+    <string name="play_services_error">توجه: خطای خدمات گوگل پلی؛ موقعیت خودکار ممکن است درست کار نکند</string>
+    <string name="sensor_absent">غایب</string>
+    <string name="sensor_accuracy_unknown">دقت: نامعلوم</string>
+    <string name="sensor_accuracy_unreliable">دقت: غیرقابل اعتماد</string>
+    <string name="sensor_accuracy_low">دقت: پایین</string>
+    <string name="sensor_accuracy_medium">دقت: متوسط</string>
+    <string name="sensor_accuracy_high">دقت: بالا</string>
+    <string name="sensor_accuracy_nocontact">دقت: بدون اتصال</string>
+    <string name="diagnostics_activity_general_heading">عمومی</string>
+    <string name="diagnostics_activity_phone">وسیله</string>
+    <string name="diagnostics_activity_android_version">نسخه اندروید</string>
+    <string name="diagnostics_activity_sky_map_version">نسخه‌ی برنامه</string>
+    <string name="diagnostics_activity_sensors_heading">حسگرها</string>
+    <string name="diagnostics_activity_compass">قطب‌نما</string>
+    <string name="diagnostics_activity_accelerometer">شتاب‌سنج</string>
+    <string name="diagnostics_activity_rotation_vector">چرخش</string>
+    <string name="diagnostics_activity_gyroscope">ژیروسکوپ</string>
+    <string name="diagnostics_activity_light_level">سطح نور</string>
+    <string name="diagnostics_activity_location_and_time_heading">مکان و زمان</string>
+    <string name="diagnostics_activity_gps">جی پی اس</string>
+    <string name="diagnostics_activity_location">طول و عرض جغرافیایی</string>
+    <string name="diagnostics_activity_pointing_ra_dec">عکس نما</string>
+    <string name="diagnostics_activity_magnetic_correction">تصحیح مغناطیسی</string>
+    <string name="diagnostics_activity_local_datetime">زمان محلی</string>
+    <string name="diagnostics_activity_universal_time">زمان جهانی</string>
+    <string name="diagnostics_activity_network_heading">شبکه</string>
+    <string name="diagnostics_activity_connection">اتصال</string>
+    <string name="diagnostics_activity_rotation_matrix">ماتریس چرخش</string>
+    <string name="enabled">فعال</string>
+    <string name="disabled">غیرفعال</string>
+    <string name="permission_disabled">دسترسی غیرفعال شده</string>
+    <string name="no_gps">فاقد جی پی اس</string>
+    <string name="connected">متصل</string>
+    <string name="disconnected">قطع</string>
+    <string name="wifi">" (وایفای)"</string>
+    <string name="cell_network">" (دیتا)"</string>
+    <string name="menu_calibrate">کالیبره</string>
+    <string name="compass_calibration_activity_heading_compass">قطب‌نما -</string>
+    <string name="compass_calibration_activity_do_not_show_this_again">دوباره این را نمایش نده</string>
+    <string name="compass_calibration_activity_warning">گوشی شما نیاز به کالیبره‌شدن دارد</string>
+    <string name="sensor_reverse_preference_title">معکوس کردن حسگر مغناطیسی</string>
+    <string name="sensor_reverse_preference_summary">رفع اشکال تلفن‌هایی که حسگرهایشان درست عمل نمی‌کند (نیازمند راه‌اندازی مجدد)</string>
+    <string name="whats_new_dialog_title">تغییرات جدید برنامه</string>
+    <string name="disable_gyro_preference_title">غیرفعال کردن ژیروسکوپ</string>
+    <string name="disable_gyro_preference_summary">همه دستگاه‌ها دارای ژیروسکوپ نیستند - اگر گوشی شما دارد، با فعال کردن آن و علامت زدن این کادر، نتایج بهتری خواهید گرفت. اگر دستگاه شما دارای ژیروسکوپ نباشد، اگر علامت این کادر را بردارید، برنامه کار نمی‌کند.</string>
+    <string name="rotate_horizon_preference_title">چرخش افق</string>
+    <string name="rotate_horizon_preference_summary">چرخش با افق 90 درجه (برای صفحه هایی با چشم انداز اجباری ، مانند عینک های هوشمند)</string>
+</resources>

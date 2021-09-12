@@ -18,8 +18,6 @@ import android.content.res.Resources;
 import android.opengl.GLU;
 import android.util.Log;
 
-import com.google.android.stardroid.R;
-import com.google.android.stardroid.renderer.LabelOverlayManager.Label;
 import com.google.android.stardroid.renderer.util.ColoredQuad;
 import com.google.android.stardroid.renderer.util.SearchHelper;
 import com.google.android.stardroid.renderer.util.TextureManager;
@@ -146,8 +144,8 @@ public class OverlayManager extends RendererObjectManager {
 
     gl.glMatrixMode(GL10.GL_MODELVIEW);
     gl.glPushMatrix();
-    float left = mWidth / 2;
-    float bottom = mHeight / 2;
+    float left = mWidth / 2.0f;
+    float bottom = mHeight / 2.0f;
     gl.glLoadIdentity();
     GLU.gluOrtho2D(gl, left, -left, bottom, -bottom);
   }

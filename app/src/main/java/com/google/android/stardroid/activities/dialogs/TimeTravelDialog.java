@@ -192,8 +192,8 @@ public class TimeTravelDialog extends Dialog {
 
   private void updateDisplay() {
     Date date = calendar.getTime();
-    dateTimeReadout.setText(String.format(parentActivity.getString(R.string.now_visiting,
-                                                                   dateFormat.format(date))));
+    dateTimeReadout.setText(parentActivity.getString(R.string.now_visiting,
+                                                                   dateFormat.format(date)));
   }
 
   private void setToNextSunRiseOrSet(Planet.RiseSetIndicator indicator) {
@@ -250,6 +250,9 @@ public class TimeTravelDialog extends Dialog {
         break;
       case 8:  // Moon Landing 1969.
         setDate(new Date(-14182953622L));
+        break;
+      case 9:  // 2020 Saturn/Jupiter conjunction
+        setDate(new Date(1608574800000L));
         break;
       default:
         Log.d(TAG, "Incorrect popular date index!");
