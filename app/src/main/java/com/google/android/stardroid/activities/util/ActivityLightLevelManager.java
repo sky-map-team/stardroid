@@ -72,7 +72,7 @@ public class ActivityLightLevelManager implements OnSharedPreferenceChangeListen
 
   @Override
   public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-    if (!key.equals(LIGHT_MODE_KEY)) {
+    if (!LIGHT_MODE_KEY.equals(key)) {
       return;
     }
     setActivityMode(getLightModePreference());
