@@ -80,8 +80,6 @@ public class SplashScreenActivity extends InjectableActivity
         Log.d(TAG, "SplashScreen.Animation onAnimationStart");
       }
     });
-    eulaDialogFragmentWithButtons.setEulaAcceptanceListener(this);
-    whatsNewDialogFragment.setCloseListener(this);
   }
 
   @Override
