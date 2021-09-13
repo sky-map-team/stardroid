@@ -2,6 +2,7 @@ package com.google.android.stardroid.test;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
 
 import androidx.lifecycle.Lifecycle;
 import androidx.preference.PreferenceManager;
@@ -11,8 +12,11 @@ import androidx.test.platform.app.InstrumentationRegistry;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.SplashScreenActivity;
 
+import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExternalResource;
+import org.junit.rules.RuleChain;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
@@ -29,29 +33,56 @@ If you're running this on your phone and you get an error about
  */
 
 public class SplashScreenActivityTest {
-  @Rule
-  public ActivityScenarioRule<SplashScreenActivity> testRule =
+  private static class PreferenceCleanerRule extends ExternalResource {
+    @Override
+    protected void before() throws Throwable {
+      Log.d("TESTTEST", "clearning");
+      Context context = getInstrumentation().getTargetContext();
+      SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(context).edit();
+      editor.clear();
+      editor.commit();
+    };
+
+    @Override
+    protected void after() {
+      // code to tear down the external resource
+    };
+  }
+
+  private PreferenceCleanerRule preferenceCleanerRule = new PreferenceCleanerRule();
+
+  private ActivityScenarioRule<SplashScreenActivity> testRule =
       new ActivityScenarioRule(SplashScreenActivity.class);
 
-  @Test
+  @Rule
+  public RuleChain chain = RuleChain.outerRule(preferenceCleanerRule).around(testRule);
+
+  //@Test
   public void showsTermsAndConditions_newUser() {
-    Context context = getInstrumentation().getTargetContext();
-    SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(context).edit();
-    editor.clear();
-    editor.commit();
+    //Context context = getInstrumentation().getTargetContext();
+    //SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(context).edit();
+    //editor.clear();
+    //editor.commit();
     // Pick up the changed preferences.
-    testRule.getScenario().moveToState(Lifecycle.State.RESUMED);
+    //testRule.getScenario().moveToState(Lifecycle.State.RESUMED);
     onView(withId(R.id.eula_box_text)).inRoot(isDialog()).check(matches(isDisplayed()));
   }
 
   @Test
-  public void showsSplashScreenAfterTocAccept() {
+  public void showsSplashScreenAfterTocAccept() throws InterruptedException {
+    Log.d("TESTTEST", "Doing test");
+    onView(withId(R.id.eula_box_text)).inRoot(isDialog()).check(matches(isDisplayed()));
     onView(withId(android.R.id.button1)).inRoot(isDialog()).perform(click());
-   // onView(withId(R.id.splash)).check(matches(isDisplayed()));
+    Thread.sleep(500);
+    //onView(withId(R.id.splash)).check(matches(isDisplayed()));
+    // Thread.sleep(30000);
     onView(withId(R.id.whats_new_box_text)).check(matches(isDisplayed()));
+    // TODO - need to find a way for the test to stay live while we check this.
+    //
+    Thread.sleep(5000);
   }
 
-  @Test
+ // @Test
   public void useAppContext() {
       // Context of the app under test.
       Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
