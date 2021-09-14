@@ -27,7 +27,8 @@ check_android_task:
     adb shell settings put global transition_animation_scale 0.0
     adb shell settings put global animator_duration_scale 0.0
   check_script:
-    ./gradlew check connectedCheck
+    # ./gradlew check connectedCheck
+    ./gradlew check :app:connectedGmsDebugAndroidTest
   always:
     wtf_script:
       - ls /tmp/cirrus-ci-build/
