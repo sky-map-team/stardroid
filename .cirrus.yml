@@ -1,12 +1,16 @@
 container:
   image: cirrusci/android-sdk:30
-  cpu: 4
-  memory: 10G
+  cpu: 8
+  memory: 24G
   kvm: true
 
 check_android_task:
   list_versions_script:
     sdkmanager --list --verbose| grep ^system-images
+  env:
+    API_LEVEL: 30
+    TARGET: default
+    ARCH: x86_64
   create_device_script:
     - sdkmanager "system-images;android-30;google_apis;x86"
     - echo no | avdmanager create avd --force -n test -k "system-images;android-30;google_apis;x86"
@@ -16,11 +20,14 @@ check_android_task:
     -no-audio
     -no-window
   wait_for_emulator_script:
-    - ./tools/android-wait-for-emulator
-    - adb shell input keyevent 82
-    - adb shell am broadcast -a android.intent.action.CLOSE_SYSTEM_DIALOGS
+    ./tools/android-wait-for-emulator
+    adb shell input keyevent 82
+  disable_animations_script: |
+    adb shell settings put global window_animation_scale 0.0
+    adb shell settings put global transition_animation_scale 0.0
+    adb shell settings put global animator_duration_scale 0.0
   check_script:
-    - ./gradlew check connectedCheck
+    ./gradlew check connectedCheck
   always:
     wtf_script:
       - ls /tmp/cirrus-ci-build/
