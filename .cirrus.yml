@@ -18,6 +18,7 @@ check_android_task:
   wait_for_emulator_script:
     - ./tools/android-wait-for-emulator
     - adb shell input keyevent 82
+    - adb shell am broadcast -a android.intent.action.CLOSE_SYSTEM_DIALOGS
   check_script:
     - ./gradlew check connectedCheck
   always:
