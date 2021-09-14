@@ -1,12 +1,15 @@
 package com.google.android.stardroid.test;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.util.Log;
 
 import androidx.preference.PreferenceManager;
 import androidx.test.espresso.matcher.ViewMatchers;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
+import androidx.test.rule.GrantPermissionRule;
+import androidx.test.uiautomator.UiDevice;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.CompassCalibrationActivity;
@@ -19,10 +22,13 @@ import org.junit.Test;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
+import static androidx.test.espresso.action.ViewActions.pressBack;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
+import static androidx.test.espresso.matcher.RootMatchers.isDialog;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withEffectiveVisibility;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
+import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
 import static org.hamcrest.Matchers.not;
 
@@ -30,6 +36,13 @@ public class DynamicStarMapActivityTest {
   @Rule
   public ActivityScenarioRule<DynamicStarMapActivity> testRule =
       new ActivityScenarioRule(DynamicStarMapActivity.class);
+
+  // For other great ideas about the permissions dialogs see
+  // https://alexzh.com/ui-testing-of-android-runtime-permissions/
+  @Rule
+  public androidx.test.rule.GrantPermissionRule permissionRule = GrantPermissionRule.grant(
+      android.Manifest.permission.ACCESS_FINE_LOCATION
+  );
 
   @Before
   public void disableCalibrationDialog() {
