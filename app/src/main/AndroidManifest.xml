@@ -67,7 +67,7 @@
             android:launchMode="singleTask"
             android:screenOrientation="nosensor"
             android:theme="@style/FullscreenTheme"
-            android:exported="true>
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH"/>
                 <category android:name="android.intent.category.DEFAULT"/>
