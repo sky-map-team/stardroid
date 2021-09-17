@@ -101,14 +101,21 @@ Esta es una característica del teléfono, en lugar de Sky Map.&lt;br/&gt;
 2) ¿La aplicación tiene una corrección precisa de tu ubicación? ¿Está activado el GPS o
 o la ubicación de red?&lt;br/&gt;
 3) ¿Tienes configurada la hora y la zona horaria correctas?
-Sky Map necesita calcular la hora universal, y necesita tu hora local Y
+Sky Map necesita calcular la hora universal, y necesita tu hora local y
 la zona horaria. Si tu dispositivo tiene una tarjeta SIM, generalmente se
-establece correctamente.&lt;br/&gt;
+establece correctamente. Abre la página de diagnósticos de Sky Map y verifica que la hora y ubicación sean correctas.&lt;br/&gt;
 4) ¿Tienes la corrección magnética activada? En algunas partes del mundo la
 diferencia entre el norte magnético y el norte verdadero puede ser de hasta 20 grados.&lt;br/&gt;
 &lt;i&gt;El mapa no se mueve&lt;/i&gt;&lt;br/&gt;
-¿Estás en modo manual? Si no, esto podría deberse a una brújula no calibrada.
-Sigue los pasos anteriores para calibrarla.&lt;br/&gt;&lt;br/&gt;
+1) ¿Estás en modo manual? Si no, puede deberse a la brújula sin calibrar.
+Sigue los pasos de arriba para desmarcarlo.&lt;br/&gt;
+2) ¿Tu teléfono tiene todos los sensores necesarios? No todos los teléfonos los tienen. Debe tener al menos una
+brújula y un acelerómetro e idealmente un giroscopio. La página de diagnósticos de Sky Map mostrará
+cuáles sensores tienes. Si tu teléfono no tiene giroscopio, intenta seleccionar
+\'Desactivar giroscopio\' en Ajustes/Ajustes del sensor.&lt;br/&gt;
+
+&lt;b&gt;Si todo lo demás falla, envíanos un correo (con una captura de pantalla de Diagnósticos)
+y te ayudaremos a resolverlo.&lt;/b&gt; &lt;br/&gt;&lt;br/&gt;
 
 &lt;b&gt;Créditos&lt;/b&gt;&lt;br/&gt;
 &lt;i&gt;Ingeniería, diseño y gestión de productos&lt;/i&gt;&lt;br/&gt;
