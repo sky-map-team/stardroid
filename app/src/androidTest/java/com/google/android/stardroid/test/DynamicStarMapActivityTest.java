@@ -15,10 +15,13 @@ import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.CompassCalibrationActivity;
 import com.google.android.stardroid.activities.DynamicStarMapActivity;
 import com.google.android.stardroid.activities.util.FullscreenControlsManager;
+import com.google.android.stardroid.control.LocationController;
 
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExternalResource;
+import org.junit.rules.RuleChain;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
@@ -33,9 +36,34 @@ import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentat
 import static org.hamcrest.Matchers.not;
 
 public class DynamicStarMapActivityTest {
+
+  private static class SetupRule extends ExternalResource {
+    @Override
+    protected void before() throws Throwable {
+      // We have to set preferences very early otherwise the app starts and doesn't pick them up.
+      Context context = getInstrumentation().getTargetContext();
+      SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(context).edit();
+      editor.putBoolean(CompassCalibrationActivity.DONT_SHOW_CALIBRATION_DIALOG, true);
+      // This disables the Google Play Services check - the Emulator should include them,
+      // for some reason it's complaining anyway.
+      editor.putBoolean(LocationController.NO_AUTO_LOCATE, true);
+      editor.commit();
+    };
+
+    @Override
+    protected void after() {
+      // code to tear down the external resource
+    };
+  }
+
+  private SetupRule firstRule = new SetupRule();
+
   @Rule
   public ActivityScenarioRule<DynamicStarMapActivity> testRule =
       new ActivityScenarioRule(DynamicStarMapActivity.class);
+
+  @Rule
+  public RuleChain chain = RuleChain.outerRule(firstRule).around(testRule);
 
   // For other great ideas about the permissions dialogs see
   // https://alexzh.com/ui-testing-of-android-runtime-permissions/
@@ -49,6 +77,7 @@ public class DynamicStarMapActivityTest {
     Context context = getInstrumentation().getTargetContext();
     SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(context).edit();
     editor.putBoolean(CompassCalibrationActivity.DONT_SHOW_CALIBRATION_DIALOG, true);
+    editor.putBoolean(LocationController.NO_AUTO_LOCATE, true);  // This disables the Google Play Services check
     editor.commit();
   }
 
