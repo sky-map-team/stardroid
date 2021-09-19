@@ -43,9 +43,6 @@ public class DynamicStarMapActivityTest {
       Context context = getInstrumentation().getTargetContext();
       SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(context).edit();
       editor.putBoolean(CompassCalibrationActivity.DONT_SHOW_CALIBRATION_DIALOG, true);
-      // This disables the Google Play Services check - the Emulator should include them,
-      // for some reason it's complaining anyway.
-      editor.putBoolean(LocationController.NO_AUTO_LOCATE, true);
       editor.commit();
     };
 

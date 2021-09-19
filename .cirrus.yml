@@ -10,10 +10,10 @@ check_android_task:
   env:
     API_LEVEL: 30
     TARGET: default
-    ARCH: x86_64
+    ARCH: x86
   create_device_script:
-    - sdkmanager "system-images;android-$API_LEVEL;google_apis;$ARCH"
-    - echo no | avdmanager create avd --force -n test -k "system-images;android-$API_LEVEL;google_apis;$ARCH"
+    - sdkmanager "system-images;android-$API_LEVEL;google_apis_playstore;$ARCH"
+    - echo no | avdmanager create avd --force -n test -k "system-images;android-$API_LEVEL;google_apis_playstore;$ARCH"
   start_emulator_background_script:
     $ANDROID_HOME/emulator/emulator
     -avd test
