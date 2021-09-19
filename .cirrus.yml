@@ -19,6 +19,8 @@ check_android_task:
     -avd test
     -no-audio
     -no-window
+    -no-snapshot
+    -no-boot-anim
   wait_for_emulator_script:
     ./tools/android-wait-for-emulator
     adb shell input keyevent 82
@@ -27,7 +29,8 @@ check_android_task:
     adb shell settings put global transition_animation_scale 0.0
     adb shell settings put global animator_duration_scale 0.0
   check_script:
-    ./gradlew check connectedCheck
+    ./gradlew check :app:connectedGmsDebugAndroidTest
+    ./gradlew check :app:connectedFDroidDebugAndroidTest
   always:
     build_artifacts:
       path: "app/build/reports/**"
