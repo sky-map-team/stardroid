@@ -12,8 +12,8 @@ check_android_task:
     TARGET: default
     ARCH: x86_64
   create_device_script:
-    - sdkmanager "system-images;android-30;google_apis;x86"
-    - echo no | avdmanager create avd --force -n test -k "system-images;android-30;google_apis;x86"
+    - sdkmanager "system-images;android-$API_LEVEL;google_apis;$ARCH"
+    - echo no | avdmanager create avd --force -n test -k "system-images;android-$API_LEVEL;google_apis;$ARCH"
   start_emulator_background_script:
     $ANDROID_HOME/emulator/emulator
     -avd test
@@ -27,8 +27,7 @@ check_android_task:
     adb shell settings put global transition_animation_scale 0.0
     adb shell settings put global animator_duration_scale 0.0
   check_script:
-    # ./gradlew check connectedCheck
-    ./gradlew check :app:connectedAndroidTest
+    ./gradlew check connectedCheck
   always:
     build_artifacts:
       path: "app/build/reports/**"
