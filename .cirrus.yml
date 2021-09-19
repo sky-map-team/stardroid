@@ -28,16 +28,10 @@ check_android_task:
     adb shell settings put global animator_duration_scale 0.0
   check_script:
     # ./gradlew check connectedCheck
-    ./gradlew check :app:connectedGmsDebugAndroidTest
+    ./gradlew check :app:connectedAndroidTest
   always:
-    wtf_script:
-      - ls /tmp/cirrus-ci-build/
-      - ls /tmp/cirrus-ci-build/app
-      - ls /tmp/cirrus-ci-build/app/build/reports
     build_artifacts:
       path: "app/build/reports/**"
-    onespecific_artifacts:
-      path: "app/build/reports/androidTests/connected/flavors/fdroidDebugAndroidTest/index.html"
 
 task:
   name: Android Lint
