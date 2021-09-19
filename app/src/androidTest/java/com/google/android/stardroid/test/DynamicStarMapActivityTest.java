@@ -9,7 +9,6 @@ import androidx.preference.PreferenceManager;
 import androidx.test.espresso.matcher.ViewMatchers;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.rule.GrantPermissionRule;
-import androidx.test.uiautomator.UiDevice;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.CompassCalibrationActivity;
