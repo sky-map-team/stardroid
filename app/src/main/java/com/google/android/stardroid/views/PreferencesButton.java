@@ -127,7 +127,7 @@ public class PreferencesButton extends ImageButton
   @Override
   public void onSharedPreferenceChanged(SharedPreferences sharedPreferences,
       String changedKey) {
-    if (changedKey.equals(prefKey)) {
+    if (changedKey !=null && changedKey.equals(prefKey)) {
       isOn = sharedPreferences.getBoolean(changedKey, isOn);
       setVisuallyOnOrOff();
     }    

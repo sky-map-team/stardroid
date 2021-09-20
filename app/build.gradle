@@ -3,7 +3,6 @@ apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 31
-    buildToolsVersion "29.0.3"
 
     defaultConfig {
         applicationId "com.google.android.stardroid"
@@ -59,6 +58,10 @@ android {
     adbOptions {
         timeOutInMs 10 * 60 * 1000  // 10 minutes
         installOptions "-d", "-t"
+    }
+    
+    testOptions {
+        animationsDisabled = true
     }
 
     flavorDimensions "default"

@@ -1,15 +1,21 @@
 container:
   image: cirrusci/android-sdk:30
-  cpu: 4
-  memory: 10G
+  cpu: 8
+  memory: 24G
   kvm: true
 
 check_android_task:
   list_versions_script:
-    sdkmanager --list --verbose| grep ^system-images
+    - sdkmanager --list --verbose| grep ^system-images
+  env:
+    ARCH: x86
+    matrix:
+      - API_LEVEL: 28
+      - API_LEVEL: 29
+      - API_LEVEL: 30
   create_device_script:
-    - sdkmanager "system-images;android-30;google_apis;x86"
-    - echo no | avdmanager create avd --force -n test -k "system-images;android-30;google_apis;x86"
+    - sdkmanager "system-images;android-${API_LEVEL};google_apis_playstore;${ARCH}"
+    - echo no | avdmanager create avd --force -n test -k "system-images;android-${API_LEVEL};google_apis_playstore;${ARCH}"
   start_emulator_background_script:
     $ANDROID_HOME/emulator/emulator
     -avd test
@@ -18,13 +24,22 @@ check_android_task:
   wait_for_emulator_script:
     - ./tools/android-wait-for-emulator
     - adb shell input keyevent 82
-  check_script: ./gradlew check connectedCheck
+  disable_animations_script:
+    - adb shell settings put global window_animation_scale 0.0
+    - adb shell settings put global transition_animation_scale 0.0
+    - adb shell settings put global animator_duration_scale 0.0
+  check_script:
+    - ./gradlew check :app:connectedGmsDebugAndroidTest
+    - ./gradlew check :app:connectedFDroidDebugAndroidTest
+  always:
+    build_artifacts:
+      path: "app/build/reports/**"
 
 task:
   name: Android Lint
   lint_script: ./gradlew lintGmsDebug
-  always:
-    android-lint_artifacts:
-      path: "**/reports/lint-results-gmsDebug.xml"
-      type: text/xml
-      format: android-lint
+  # always:
+  #   android-lint_artifacts:
+  #     path: "**/reports/lint-results-gmsDebug.xml"
+  #     type: text/xml
+  #    format: android-lint

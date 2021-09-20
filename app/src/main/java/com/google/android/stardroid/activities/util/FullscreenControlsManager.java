@@ -37,6 +37,7 @@ public class FullscreenControlsManager {
    * and a change of the status and navigation bar.
    */
   private static final int UI_ANIMATION_DELAY = 300;
+  public static final int INITIALLY_SHOW_CONTROLS_FOR_MILLIS = 1000;
 
   private Activity mActivity;
   private View mContentView;
@@ -72,7 +73,7 @@ public class FullscreenControlsManager {
     // Trigger the initial hide() shortly after the activity has been
     // created, to briefly hint to the user that UI controls
     // are available.
-    delayedHide(1000);
+    delayedHide(INITIALLY_SHOW_CONTROLS_FOR_MILLIS);
   }
 
   public void delayHideTheControls() {

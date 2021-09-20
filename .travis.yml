@@ -33,6 +33,7 @@
 # Note: Flutter supports down to API 16
 
 language: generic
+os: linux
 dist: bionic
 
 # specify global envs and jobs
@@ -129,6 +130,7 @@ install:
     -verbose
     -no-window
     -no-audio
+    -no-skin
     "
   - EMU_COMMAND="emulator"
   - |
@@ -158,13 +160,13 @@ script:
   - ./gradlew testFdroidDebugUnitTest
   - ./gradlew app:connectedFdroidDebugAndroidTest
 
-#before_cache:
-#  - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
-#  - curl "${GRAVIS}.clean_gradle_cache.sh" --output ~/.clean_gradle_cache.sh
-#  - bash ~/.clean_gradle_cache.sh
-#
-#cache:
-#  directories:
-#    - $HOME/.gradle/caches/
-#    - $HOME/.gradle/wrapper/
+before_cache:
+  - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
+  - curl "${GRAVIS}.clean_gradle_cache.sh" --output ~/.clean_gradle_cache.sh
+  - bash ~/.clean_gradle_cache.sh
+
+cache:
+  directories:
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
 

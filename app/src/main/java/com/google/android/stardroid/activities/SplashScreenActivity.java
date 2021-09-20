@@ -67,7 +67,7 @@ public class SplashScreenActivity extends InjectableActivity
     graphic = findViewById(R.id.splash);
 
     fadeAnimation.setAnimationListener(new AnimationListener() {
-      public void onAnimationEnd(Animation arg0) {
+      public void onAnimationEnd(Animation unused) {
         Log.d(TAG, "onAnimationEnd");
         graphic.setVisibility(View.INVISIBLE);
         maybeShowWhatsNewAndEnd();
@@ -77,17 +77,20 @@ public class SplashScreenActivity extends InjectableActivity
       }
 
       public void onAnimationStart(Animation arg0) {
-        Log.d(TAG, "SplashScreen.Animcation onAnimationStart");
+        Log.d(TAG, "SplashScreen.Animation onAnimationStart");
       }
     });
   }
 
   @Override
   public void onResume() {
+    Log.d(TAG, "onResume");
     super.onResume();
-    boolean eulaShown = maybeShowEula();
-    if (!eulaShown) {
+    boolean eulaShowing = maybeShowEula();
+    Log.d(TAG, "Eula showing " + eulaShowing);
+    if (!eulaShowing) {
       // User has previously accepted - let's get on with it!
+      Log.d(TAG, "EULA already accepted");
       graphic.startAnimation(fadeAnimation);
     }
   }
@@ -129,7 +132,6 @@ public class SplashScreenActivity extends InjectableActivity
     editor.putInt(ApplicationConstants.READ_TOS_PREF_VERSION, EULA_VERSION_CODE);
     editor.commit();
     // Let's go.
-    View graphic = findViewById(R.id.splash);
     graphic.startAnimation(fadeAnimation);
   }
 
