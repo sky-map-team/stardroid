@@ -8,9 +8,11 @@ check_android_task:
   list_versions_script:
     sdkmanager --list --verbose| grep ^system-images
   env:
-    API_LEVEL: 30
-    TARGET: default
     ARCH: x86
+    matrix:
+      - API_LEVEL: 28
+      - API_LEVEL: 29
+      - API_LEVEL: 30
   create_device_script:
     - sdkmanager "system-images;android-${API_LEVEL};google_apis_playstore;${ARCH}"
     - echo no | avdmanager create avd --force -n test -k "system-images;android-${API_LEVEL};google_apis_playstore;${ARCH}"
