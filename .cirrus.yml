@@ -6,7 +6,7 @@ container:
 
 check_android_task:
   list_versions_script:
-    sdkmanager --list --verbose| grep ^system-images
+    - sdkmanager --list --verbose| grep ^system-images
   env:
     ARCH: x86
     matrix:
@@ -22,15 +22,15 @@ check_android_task:
     -no-audio
     -no-window
   wait_for_emulator_script:
-    ./tools/android-wait-for-emulator
-    adb shell input keyevent 82
+    - ./tools/android-wait-for-emulator
+    - adb shell input keyevent 82
   disable_animations_script: |
-    adb shell settings put global window_animation_scale 0.0
-    adb shell settings put global transition_animation_scale 0.0
-    adb shell settings put global animator_duration_scale 0.0
+    - adb shell settings put global window_animation_scale 0.0
+    - adb shell settings put global transition_animation_scale 0.0
+    - adb shell settings put global animator_duration_scale 0.0
   check_script:
-    ./gradlew check :app:connectedGmsDebugAndroidTest
-    ./gradlew check :app:connectedFDroidDebugAndroidTest
+    - ./gradlew check :app:connectedGmsDebugAndroidTest
+    - ./gradlew check :app:connectedFDroidDebugAndroidTest
   always:
     build_artifacts:
       path: "app/build/reports/**"
