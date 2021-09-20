@@ -24,7 +24,7 @@ check_android_task:
   wait_for_emulator_script:
     - ./tools/android-wait-for-emulator
     - adb shell input keyevent 82
-  disable_animations_script: |
+  disable_animations_script:
     - adb shell settings put global window_animation_scale 0.0
     - adb shell settings put global transition_animation_scale 0.0
     - adb shell settings put global animator_duration_scale 0.0
