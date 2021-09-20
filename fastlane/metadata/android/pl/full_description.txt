@@ -1,0 +1,26 @@
+Sky Map to podręczne planetarium dla Twojego urządzenia z Androidem. Korzystaj z niego, aby identyfikować gwiazdy, planety, mgławice i nie tylko. Oryginalnie tworzony jako Google Sky Map, został przekazany społeczności open source.
+
+<b>Rozwiązywanie problemów/Najczęściej zadawane pytania</b>
+
+<i>Mapa nie porusza się/punkty są w złym miejscu</i>
+Upewnij się, że aplikacja nie została przełączona w tryb ręczny. Czy Twój telefon ma kompas? Jeśli nie, Sky Map nie będzie w stanie określić Twojego położenia. Zajrzyj tutaj: http://www.gsmarena.com/
+
+Spróbuj skalibrować swój kompas, poruszając urządzeniem na kształt ósemki lub tak jak opisano to tutaj: https://www.youtube.com/watch?v=k1EPbAapaeI.
+
+Czy są w pobliżu jakieś magnesy lub metalowe przedmioty, które mogą interferować z kompasem?
+
+Spróbuj wyłączyć „korekcję magnetyczną” (w ustawieniach) i sprawdź, czy mapa jest dokładniejsza.
+
+<i>Dlaczego automatyczna lokalizacja nie jest wspierana przez mój telefon?</i>
+Od Androida 6 zmienił się sposób działania uprawnień. Musisz nadać Sky Map uprawnienie do lokalizacji tak, jak zostało to opisane tutaj: https://support.google.com/googleplay/answer/6270602?p=app_permissons_m
+
+<i>Mapa się trzęsie</i>
+Spróbuj dostosować prędkość czujnika i tłumienie (w ustawieniach). Wkrótce będziemy mieli lepsze rozwiązanie!
+
+<i>Czy potrzebuję połączenia z Internetem?</i>
+Nie, ale niektóre funkcje (jak ręczne wpisywanie lokalizacji) nie będą działać. Będziesz musiał(a) użyć GPS-u albo wprowadzić ręcznie długość i szerokość geograficzną.
+
+<b>Znajdź nas w innych miejscach:</b>
+⭐ GitHub: https://github.com/sky-map-team/stardroid
+⭐ Facebook: https://www.facebook.com/groups/113507592330/
+⭐ Twitter: http://twitter.com/skymapdevs
