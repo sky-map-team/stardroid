@@ -1,38 +1,37 @@
-container:
-  image: reactivecircus/android-emulator-30:latest
-  cpu: 8
-  memory: 24G
-  kvm: true
-
 check_android_task:
   gradle_cache:
     folder: ~/.gradle/caches
   list_versions_script:
     - sdkmanager --list --verbose| grep ^system-images
+  name: Run Android instrumented tests (API $API_LEVEL)
+  timeout_in: 30m
+  only_if: $CIRRUS_BRANCH == "master" || $CIRRUS_PR != ""
   env:
-    ARCH: x86_64
     matrix:
+      - API_LEVEL: 27
       - API_LEVEL: 28
-      - API_LEVEL: 29
-      - API_LEVEL: 30
+    JAVA_TOOL_OPTIONS: -Xmx6g
+    GRADLE_OPTS: -Dorg.gradle.daemon=false -Dkotlin.incremental=false -Dkotlin.compiler.execution.strategy=in-process
+    ARCH: x86_64
+  container:
+    image: reactivecircus/android-emulator-${API_LEVEL}:latest
+    kvm: true
+    cpu: 8
+    memory: 24G
   create_device_script:
-    - sdkmanager "system-images;android-${API_LEVEL};google_apis_playstore;${ARCH}"
-    - echo no | avdmanager create avd --force -n test -k "system-images;android-${API_LEVEL};google_apis_playstore;${ARCH}"
+    echo no | avdmanager create avd --force --name "api-${API_LEVEL}" --abi "${TARGET}/${ARCH}" --package "system-images;android-${API_LEVEL};${TARGET};${ARCH}"
   start_emulator_background_script:
-    $ANDROID_HOME/emulator/emulator
-    -avd test
-    -no-audio
-    -no-window
+    $ANDROID_HOME/emulator/emulator -avd "api-${API_LEVEL}" -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim -camera-back none
+  assemble_instrumented_tests_script:
+    ./gradlew assembleDebugAndroidTest
   wait_for_emulator_script:
-    - ./tools/android-wait-for-emulator
-    - adb shell input keyevent 82
-  disable_animations_script:
-    - adb shell settings put global window_animation_scale 0.0
-    - adb shell settings put global transition_animation_scale 0.0
-    - adb shell settings put global animator_duration_scale 0.0
-  check_script:
-    - ./gradlew check :app:connectedGmsDebugAndroidTest
-    - ./gradlew check :app:connectedFDroidDebugAndroidTest
+    adb wait-for-device shell 'while [[ -z $(getprop sys.boot_completed) ]]; do sleep 3; done; input keyevent 82'
+  disable_animations_script: |
+    adb shell settings put global window_animation_scale 0.0
+    adb shell settings put global transition_animation_scale 0.0
+    adb shell settings put global animator_duration_scale 0.0
+  run_instrumented_tests_script:
+    ./gradlew connectedDebugAndroidTest
   always:
     build_artifacts:
       path: "app/build/reports/**"
@@ -45,6 +44,11 @@ check_android_task:
 
 task:
   name: Android Lint
+  container:
+    image: reactivecircus/android-emulator-30:latest
+    kvm: true
+    cpu: 8
+    memory: 24G
   lint_script: ./gradlew lintGmsDebug
   # always:
   #   android-lint_artifacts:
