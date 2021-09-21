@@ -8,11 +8,10 @@ check_android_task:
   only_if: $CIRRUS_BRANCH == "master" || $CIRRUS_PR != ""
   env:
     matrix:
-      - API_LEVEL: 27
       - API_LEVEL: 28
     JAVA_TOOL_OPTIONS: -Xmx6g
     GRADLE_OPTS: -Dorg.gradle.daemon=false -Dkotlin.incremental=false -Dkotlin.compiler.execution.strategy=in-process
-    ARCH: x86_64
+    ARCH: x86
   container:
     image: reactivecircus/android-emulator-${API_LEVEL}:latest
     kvm: true
