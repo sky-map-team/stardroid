@@ -8,7 +8,7 @@ check_android_task:
   list_versions_script:
     - sdkmanager --list --verbose| grep ^system-images
   env:
-    ARCH: x86
+    ARCH: x86_64
     matrix:
       - API_LEVEL: 28
       - API_LEVEL: 29
@@ -22,7 +22,8 @@ check_android_task:
     -no-audio
     -no-window
   wait_for_emulator_script:
-    - ./tools/android-wait-for-emulator
+    # - ./tools/android-wait-for-emulator
+    - adb wait-for-device
     - adb shell input keyevent 82
   disable_animations_script:
     - adb shell settings put global window_animation_scale 0.0
