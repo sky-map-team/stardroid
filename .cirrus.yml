@@ -5,6 +5,8 @@ container:
   kvm: true
 
 check_android_task:
+  gradle_cache:
+    folder: ~/.gradle/caches
   list_versions_script:
     - sdkmanager --list --verbose| grep ^system-images
   env:
@@ -22,8 +24,8 @@ check_android_task:
     -no-audio
     -no-window
   wait_for_emulator_script:
-    # - ./tools/android-wait-for-emulator
     - adb wait-for-device
+    - ./tools/android-wait-for-emulator
     - adb shell input keyevent 82
   disable_animations_script:
     - adb shell settings put global window_animation_scale 0.0
@@ -35,6 +37,12 @@ check_android_task:
   always:
     build_artifacts:
       path: "app/build/reports/**"
+    cleanup_before_cache_script:
+      - rm -rf ~/.gradle/caches/$GRADLE_VERSION/
+      - rm -rf ~/.gradle/caches/transforms-1
+      - rm -rf ~/.gradle/caches/journal-1
+      - rm -rf ~/.gradle/caches/jars-3/*/buildSrc.jar
+      - find ~/.gradle/caches/ -name "*.lock" -type f -delete
 
 task:
   name: Android Lint
