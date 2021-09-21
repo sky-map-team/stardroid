@@ -25,6 +25,7 @@ check_android_task:
     -no-window
   wait_for_emulator_script:
     - adb wait-for-device
+    - echo "wait for device done"
     - ./tools/android-wait-for-emulator
     - adb shell input keyevent 82
   disable_animations_script:
