@@ -18,7 +18,7 @@ check_android_task:
     - echo no | avdmanager create avd --force -n test_{$API_LEVEL} -k "system-images;android-${API_LEVEL};google_apis_playstore;${ARCH}"
   start_emulator_background_script:
     $ANDROID_HOME/emulator/emulator
-    -avd test_{$API_LEVEL}
+    -avd test_${API_LEVEL}
     -no-audio
     -no-window
   wait_for_emulator_script:
