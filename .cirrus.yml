@@ -19,12 +19,12 @@ check_android_task:
     cpu: 8
     memory: 24G
   create_device_script:
-    echo no | avdmanager create avd --force --name "api-${API_LEVEL}" --package "system-images;android-28;default;x86"
-    # echo no | avdmanager create avd --force --name "api-${API_LEVEL}" --abi "${TARGET}/${ARCH}" --package "system-images;android-${API_LEVEL};${TARGET};${ARCH}"
+    # echo no | avdmanager create avd --force --name "api-${API_LEVEL}" --package "system-images;android-28;default;x86"
+    echo no | avdmanager create avd --force --name "api-${API_LEVEL}" --package "system-images;android-${API_LEVEL};${TARGET};${ARCH}"
   start_emulator_background_script:
-    $ANDROID_HOME/emulator/emulator -avd "api-${API_LEVEL}" -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim -camera-back none
+    /emulator -avd "api-${API_LEVEL}" -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim -camera-back none
   assemble_instrumented_tests_script:
-    ./gradlew assembleDebugAndroidTest
+    ./gradlew assembleGmsDebugAndroidTest
   wait_for_emulator_script:
     adb wait-for-device shell 'while [[ -z $(getprop sys.boot_completed) ]]; do sleep 3; done; input keyevent 82'
   disable_animations_script: |
