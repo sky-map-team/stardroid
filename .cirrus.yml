@@ -22,7 +22,8 @@ check_android_task:
     # echo no | avdmanager create avd --force --name "api-${API_LEVEL}" --package "system-images;android-28;default;x86"
     echo no | avdmanager create avd --force --name "api-${API_LEVEL}" --package "system-images;android-${API_LEVEL};${TARGET};${ARCH}"
   start_emulator_background_script:
-    /emulator -avd "api-${API_LEVEL}" -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim -camera-back none
+    which avdmanager
+    emulator -avd "api-${API_LEVEL}" -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim -camera-back none
   assemble_instrumented_tests_script:
     ./gradlew assembleGmsDebugAndroidTest
   wait_for_emulator_script:
