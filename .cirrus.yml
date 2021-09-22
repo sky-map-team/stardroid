@@ -12,14 +12,13 @@ check_android_task:
     JAVA_TOOL_OPTIONS: -Xmx6g
     GRADLE_OPTS: -Dorg.gradle.daemon=false -Dkotlin.incremental=false -Dkotlin.compiler.execution.strategy=in-process
     ARCH: x86_64
-    TARGET: default
   container:
     image: reactivecircus/android-emulator-${API_LEVEL}:latest
     kvm: true
     cpu: 8
     memory: 24G
   create_device_script:
-    echo no | avdmanager create avd --force --name "api-${API_LEVEL}" --abi "${TARGET}/${ARCH}" --package "system-images;android-${API_LEVEL};${TARGET};${ARCH}"
+    echo no | avdmanager create avd --force --name "api-${API_LEVEL}" --abi "${TARGET}/${ARCH}" --package "system-images;android-${API_LEVEL};${ARCH}"
   start_emulator_background_script:
     $ANDROID_HOME/emulator/emulator -avd "api-${API_LEVEL}" -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim -camera-back none
   assemble_instrumented_tests_script:
