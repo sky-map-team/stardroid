@@ -19,8 +19,8 @@ check_android_task:
     cpu: 8
     memory: 24G
   create_device_script:
-    # echo no | avdmanager create avd --force --name "api-${API_LEVEL}" --package "system-images;android-28;default;x86"
-    echo no | avdmanager create avd --force --name "api-${API_LEVEL}" --package "system-images;android-${API_LEVEL};${TARGET};${ARCH}"
+    echo no | avdmanager create avd --force --name "api-${API_LEVEL}" --package "system-images;android-28;google_apis_playstore;x86"
+    # echo no | avdmanager create avd --force --name "api-${API_LEVEL}" --package "system-images;android-${API_LEVEL};${TARGET};${ARCH}"
   start_emulator_background_script:
     which avdmanager
     emulator -avd "api-${API_LEVEL}" -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim -camera-back none
