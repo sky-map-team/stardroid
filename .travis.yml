@@ -42,7 +42,7 @@ env:
     - ANDROID_TOOLS=4333796 # android-28
     - ANDROID_HOME=${HOME}/android-sdk
     - GRAVIS="https://raw.githubusercontent.com/DanySK/Gravis-CI/master/"
-    - JDK="1.8" # the JDK used for running tests
+    - JDK="11" # the JDK used for running tests
     - TOOLS=${ANDROID_HOME}/tools
     # PATH order is incredibly important. e.g. the 'emulator' script exists in more than one place!
     - PATH=${ANDROID_HOME}:${ANDROID_HOME}/emulator:${TOOLS}:${TOOLS}/bin:${ANDROID_HOME}/platform-tools:${PATH}
