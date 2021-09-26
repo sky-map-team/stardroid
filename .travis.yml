@@ -70,7 +70,7 @@ before_install:
   # Set up JDK 8 for Android SDK
   - curl "${GRAVIS}.install-jdk-travis.sh" --output ~/.install-jdk-travis.sh
   - export TARGET_JDK="${JDK}"
-  - JDK="1.8" # used when running sdkmanager
+  - echo ${JDK}
   - source ~/.install-jdk-travis.sh
 
   # Set up Android SDK
