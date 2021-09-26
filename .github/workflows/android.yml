@@ -9,7 +9,7 @@ on:
 
 jobs:
   build_and_unit_test:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: set up JDK
