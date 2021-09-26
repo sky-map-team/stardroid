@@ -87,10 +87,10 @@ before_install:
 
 install:
   # Download SDK tools
-  - sdkmanager "platform-tools" #>/dev/null
-  - sdkmanager "tools" #>/dev/null # A second time per Travis docs, gets latest versions
-  - sdkmanager "build-tools;28.0.3"  # >/dev/null # Implicit gradle dependency - gradle drives changes
-  - sdkmanager "platforms;android-$API" # >/dev/null # We need the API of the emulator we will run
+  - sdkmanager "platform-tools" >/dev/null
+  - sdkmanager "tools" >/dev/null # A second time per Travis docs, gets latest versions
+  - sdkmanager "build-tools;28.0.3"  >/dev/null # Implicit gradle dependency - gradle drives changes
+  - sdkmanager "platforms;android-$API" >/dev/null # We need the API of the emulator we will run
   - sdkmanager "platforms;android-29" #>/dev/null # We need the API of the current compileSdkVersion from gradle.properties  -
 
   - sdkmanager "emulator" #>/dev/null
