@@ -69,7 +69,7 @@ public class SplashScreenActivityTest {
     onView(withId(R.id.whats_new_box_text)).check(matches(isDisplayed()));
   }
 
-  @Test
+  //@Test
   public void showNoAcceptTandCs() throws InterruptedException {
     Log.d("TESTTEST", "Doing test");
     onView(withId(R.id.eula_box_text)).inRoot(isDialog()).check(matches(isDisplayed()));
