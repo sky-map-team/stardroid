@@ -3,41 +3,9 @@ dist: trusty
 jdk: oraclejdk11
 sudo: required
 
-android:
-  licenses:
-    - 'android-sdk-preview-license-.+'
-    - 'android-sdk-license-.+'
-    - 'google-gdk-license-.+'
-
-  components:
-    - tools
-    - build-tools-30.0.2
-    - android-30
-    - extra-google-google_play_services
-    - extra-google-m2repository
-    - extra-android-m2repository
-
-before_install:
-  - chmod +x gradlew
-  - yes | sdkmanager "platforms;android-30"
-
-before_script:
-  - echo no | android create avd --force -n test -t android-30
-  - emulator -avd test -no-audio -no-window &
-  - android-wait-for-emulator
-  - adb shell input keyevent 82 &
-
-script:
-  - ./gradlew clean build
-  - ./gradlew test
-  - ./gradlew build check
-
-before_cache:
-  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
-  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
-
-cache:
-  directories:
-    - $HOME/.gradle/caches/
-    - $HOME/.gradle/wrapper/
-    - $HOME/.android/build-cache
+# Travis support for Android is a mess these days. Their instructions on
+# https://docs.travis-ci.com/user/languages/android/#ci-environment-for-android-projects
+# just don't work.  One problem seems to be that the version of sdkmanager *requires* Java 8.addons:
+# So if your build uses a recent version of the android gradle plugin and Java 11+ then you'repos:
+# kinda hosed unless you want to jump through a lot of hoops that will amost certainly make
+# things seriously fragile.
