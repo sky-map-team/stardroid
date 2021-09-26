@@ -1,7 +1,7 @@
-language: android
-dist: trusty
-jdk: oraclejdk11
-sudo: required
+# language: android
+# dist: trusty
+# jdk: oraclejdk11
+# sudo: required
 
 # Travis support for Android is a mess these days. Their instructions on
 # https://docs.travis-ci.com/user/languages/android/#ci-environment-for-android-projects
