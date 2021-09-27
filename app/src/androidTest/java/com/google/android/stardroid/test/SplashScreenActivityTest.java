@@ -76,7 +76,7 @@ public class SplashScreenActivityTest {
     // Decline button
     onView(withId(android.R.id.button2)).inRoot(isDialog()).perform(click());
     // Sigh. There seems nothing better here.
-    Thread.sleep(700);
+    Thread.sleep(2000);
     assertThat(testRule.getScenario().getState(), equalTo(Lifecycle.State.DESTROYED));
   }
 
