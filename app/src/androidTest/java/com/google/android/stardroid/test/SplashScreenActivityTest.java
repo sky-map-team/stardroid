@@ -69,14 +69,14 @@ public class SplashScreenActivityTest {
     onView(withId(R.id.whats_new_box_text)).check(matches(isDisplayed()));
   }
 
-  //@Test
+  @Test
   public void showNoAcceptTandCs() throws InterruptedException {
     Log.d("TESTTEST", "Doing test");
     onView(withId(R.id.eula_box_text)).inRoot(isDialog()).check(matches(isDisplayed()));
     // Decline button
     onView(withId(android.R.id.button2)).inRoot(isDialog()).perform(click());
     // Sigh. There seems nothing better here.
-    Thread.sleep(700);
+    Thread.sleep(5000);
     assertThat(testRule.getScenario().getState(), equalTo(Lifecycle.State.DESTROYED));
   }
 
