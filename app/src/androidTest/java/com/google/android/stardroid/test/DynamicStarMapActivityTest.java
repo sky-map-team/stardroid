@@ -79,7 +79,7 @@ public class DynamicStarMapActivityTest {
 
   private static final String TAG = "STARTEST";
 
-  //@Test
+  @Test
   public void testSkyMapTouchControlsShowAndThenGo() throws Exception {
     // Wait for initial controls to go away. This is bad.
     // Perhaps use idling resources?
