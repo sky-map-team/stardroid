@@ -47,7 +47,7 @@ jobs:
           target: ${{ matrix.target }}
           arch: x86_64
           profile: Nexus 6
-          script: adb logcat | grep Stardroid & ./gradlew connectedGmsDebugAndroidTest -x lint --stacktrace
+          script: adb logcat Stardroid:I *:W & ./gradlew connectedGmsDebugAndroidTest -x lint --stacktrace
 
       - run: ls
       - run: ls app/build/reports/androidTests/connected/flavors/gms
