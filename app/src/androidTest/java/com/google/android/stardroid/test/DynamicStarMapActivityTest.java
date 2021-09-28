@@ -54,8 +54,7 @@ public class DynamicStarMapActivityTest {
 
   private SetupRule firstRule = new SetupRule();
 
-  @Rule
-  public ActivityScenarioRule<DynamicStarMapActivity> testRule =
+  private ActivityScenarioRule<DynamicStarMapActivity> testRule =
       new ActivityScenarioRule(DynamicStarMapActivity.class);
 
   @Rule
@@ -97,7 +96,7 @@ public class DynamicStarMapActivityTest {
     onView(withId(R.id.main_sky_view_root)).perform(click());
     Thread.sleep(100);
     onView(withId(R.id.layer_buttons_control)).check(matches(not(withEffectiveVisibility(ViewMatchers.Visibility.VISIBLE))));
-    
+
      */
   }
 }
