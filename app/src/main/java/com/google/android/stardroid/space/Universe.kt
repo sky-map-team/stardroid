@@ -24,7 +24,7 @@ class Universe {
      */
     fun getRaDec(planet: Planet, datetime: Date): RaDec {
         val sunCoords = HeliocentricCoordinates.getInstance(Planet.Sun, datetime)
-        return RaDec.getInstance(planet, datetime, sunCoords)
+        return RaDec.getInstanceDontUse(planet, datetime, sunCoords)
     }
 
     /**
@@ -42,6 +42,6 @@ class Universe {
      */
     fun getSunRaDec(datetime: Date): RaDec {
         val sunCoords = HeliocentricCoordinates.getInstance(Planet.Sun, datetime)
-        return RaDec.getInstance(Planet.Sun, datetime, sunCoords)
+        return RaDec.getInstanceDontUse(Planet.Sun, datetime, sunCoords)
     }
 }

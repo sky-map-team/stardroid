@@ -19,6 +19,7 @@ import android.util.Log;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.base.TimeConstants;
 import com.google.android.stardroid.base.VisibleForTesting;
+import com.google.android.stardroid.space.Universe;
 import com.google.android.stardroid.units.GeocentricCoordinates;
 import com.google.android.stardroid.units.HeliocentricCoordinates;
 import com.google.android.stardroid.units.LatLong;
@@ -55,6 +56,8 @@ public enum Planet {
   private int nameResourceId;
 
   private final long updateFreqMs;
+
+  private Universe universe = new Universe();
 
   Planet(int imageResourceId, int nameResourceId, long updateFreqMs) {
     this.imageResourceId = imageResourceId;
@@ -552,9 +555,7 @@ public enum Planet {
       // Calculate the hour angle and declination of the planet.
       // TODO(serafini): Need to fix this for arbitrary RA/Dec locations.
       Date tmp = cal.getTime();
-      HeliocentricCoordinates sunCoordinates =
-        HeliocentricCoordinates.getInstance(Planet.Sun, tmp);
-      RaDec raDec = RaDec.getInstance(this, tmp, sunCoordinates);
+      RaDec raDec = universe.getRaDec(this, tmp);
 
       // GHA = GST - RA. (In degrees.)
       float gst = TimeUtil.meanSiderealTime(tmp, 0);

@@ -25,6 +25,7 @@ import com.google.android.stardroid.source.TextSource;
 import com.google.android.stardroid.source.impl.ImageSourceImpl;
 import com.google.android.stardroid.source.impl.PointSourceImpl;
 import com.google.android.stardroid.source.impl.TextSourceImpl;
+import com.google.android.stardroid.space.Universe;
 import com.google.android.stardroid.units.GeocentricCoordinates;
 import com.google.android.stardroid.units.HeliocentricCoordinates;
 import com.google.android.stardroid.units.RaDec;
@@ -76,6 +77,8 @@ public class PlanetSource extends AbstractAstronomicalSource {
     this.preferences = prefs;
   }
 
+  private Universe universe = new Universe();
+
   @Override
   public List<String> getNames() {
     return Lists.asList(name);
@@ -89,7 +92,7 @@ public class PlanetSource extends AbstractAstronomicalSource {
   private void updateCoords(Date time) {
     this.lastUpdateTimeMs = time.getTime();
     this.sunCoords = HeliocentricCoordinates.getInstance(Planet.Sun, time);
-    this.currentCoords.updateFromRaDec(RaDec.getInstance(planet, time, sunCoords));
+    this.currentCoords.updateFromRaDec(universe.getRaDec(planet, time));
     for (ImageSourceImpl imageSource : imageSources) {
       imageSource.setUpVector(sunCoords);  // TODO(johntaylor): figure out why we do this.
     }

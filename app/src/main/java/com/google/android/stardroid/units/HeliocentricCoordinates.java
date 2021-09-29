@@ -56,6 +56,10 @@ public class HeliocentricCoordinates extends Vector3 {
     return MathUtil.sqrt(dx * dx + dy * dy + dz * dz);
   }
 
+  @Deprecated
+  /**
+   * @deprecated - move this to Universe or something.
+   */
   public static HeliocentricCoordinates getInstance(Planet planet, Date date) {
     return getInstance(planet.getOrbitalElements(date));
   }

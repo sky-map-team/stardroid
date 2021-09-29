@@ -6,5 +6,5 @@ import com.google.android.stardroid.units.RaDec
  * Base class for any celestial objects.
  */
 open class CelestialObject {
-    position : RaDec
+    lateinit var position : RaDec
 }
