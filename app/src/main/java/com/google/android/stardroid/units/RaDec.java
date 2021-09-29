@@ -61,7 +61,7 @@ public class RaDec {
    * @deprecated Use Universe.getPlanet instead.
    */
   @Deprecated
-  public static RaDec getInstance(Planet planet, Date time,
+  public static RaDec getInstanceDontUse(Planet planet, Date time,
       HeliocentricCoordinates earthCoordinates) {
     // TODO(serafini): This is a temporary hack until we re-factor the Planetary calculations.
     if (planet.equals(Planet.Moon)) {
