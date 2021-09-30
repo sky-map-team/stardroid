@@ -22,6 +22,8 @@ class Universe {
      * a temporary shim.
      */
     private val planetMap: MutableMap<Planet, CelestialObject> = HashMap()
+    private val sun = Sun()
+    private val moon = Moon()
 
     init {
         for (planet in Planet.values()) {
@@ -51,8 +53,7 @@ class Universe {
      * TODO Factor this away
      */
     fun getMoonRaDec(datetime: Date): RaDec {
-        val sunCoords = HeliocentricCoordinates.getInstance(Planet.Sun, datetime)
-        return Planet.calculateLunarGeocentricLocation(datetime)
+        return moon.getPosition(datetime)
     }
 
     /**
@@ -60,7 +61,6 @@ class Universe {
      * TODO Factor this away
      */
     fun getSunRaDec(datetime: Date): RaDec {
-        val sunCoords = HeliocentricCoordinates.getInstance(Planet.Sun, datetime)
-        return RaDec.getInstanceDontUse(Planet.Sun, datetime, sunCoords)
+        return sun.getPosition(datetime)
     }
 }

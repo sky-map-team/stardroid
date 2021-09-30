@@ -6,11 +6,11 @@ import com.google.android.stardroid.units.RaDec
 import java.util.*
 
 /**
- * The Sun is special as it's at the center of the solar system.
+ * A likely temporary class to represent the Moon.
  */
-class Sun : SolarSystemObject() {
+class Moon : EarthOrbitingObject() {
     override fun getPosition(date: Date): RaDec {
         val sunCoords = HeliocentricCoordinates.getInstance(Planet.Sun, date)
-        return RaDec.getInstanceDontUse(Planet.Sun, date, sunCoords)
+        return Planet.calculateLunarGeocentricLocation(date)
     }
 }
