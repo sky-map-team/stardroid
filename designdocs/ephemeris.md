@@ -170,3 +170,26 @@ mode that actually needs to be addressed.
     planetary positions!
     * A cleaner high-level API to position calculation
     * Separation of sun-orbiting objects and earth-orbiting objects.
+
+## New API
+What should a new API look like?
+
+Ideally some base celestial object that has the core attributes needed to present the object on the
+screen, with some specialization in subclasses.  Some facade "universe" class can provide access
+to the set of all objects.  Some class hierarchy like:
+
+#### CelestialObject
+    * RA, Dec
+    * Apparent Magnitude
+    * Appearance
+        * Color
+        * Icon
+        * Image (at least one)
+    * Apparent size?
+    * Distance to earth (used for ordering - does the ordering ever change? Presumably in principle for sun/mercury/venus)
+
+#### Solar System Object
+    * Phase (only really matters for mercury, venus, moon)
+
+There should be other objects in the hierarchy that factor out common behaviors for (say) earth-orbiting
+and sun-orbiting objects, but these could be mostly transparent to everything else?

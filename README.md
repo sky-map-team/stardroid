@@ -18,7 +18,7 @@ rebuild everything with the `build_skymap.sh` script.
 
 ## Building
 
-The build process is pretty horribles. To make it easier please use the shell script
+The build process is pretty horrible. To make it easier please use the shell script
 
     ./build_skymap.sh
     

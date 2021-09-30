@@ -54,39 +54,39 @@ public class RaDecTest extends TestCase {
     testCal.set(2009, GregorianCalendar.JANUARY, 1, 12, 0, 0);
     earthCoords = HeliocentricCoordinates.getInstance(Planet.Sun, testCal.getTime());
 
-    pos = RaDec.getInstance(Planet.Sun, testCal.getTime(), earthCoords);
+    pos = RaDec.getInstanceDontUse(Planet.Sun, testCal.getTime(), earthCoords);
     assertEquals(18.813 * HOURS_TO_DEGREES, pos.ra, EPSILON);
     assertEquals(-22.97, pos.dec, EPSILON);
     
-    pos = RaDec.getInstance(Planet.Mercury, testCal.getTime(), earthCoords);
+    pos = RaDec.getInstanceDontUse(Planet.Mercury, testCal.getTime(), earthCoords);
     assertEquals(20.177 * HOURS_TO_DEGREES, pos.ra, EPSILON);
     assertEquals(-21.60, pos.dec, EPSILON);
     
-    pos = RaDec.getInstance(Planet.Venus, testCal.getTime(), earthCoords);
+    pos = RaDec.getInstanceDontUse(Planet.Venus, testCal.getTime(), earthCoords);
     assertEquals(22.033 * HOURS_TO_DEGREES, pos.ra, EPSILON);
     assertEquals(-13.60, pos.dec, EPSILON);
 
-    pos = RaDec.getInstance(Planet.Mars, testCal.getTime(), earthCoords);
+    pos = RaDec.getInstanceDontUse(Planet.Mars, testCal.getTime(), earthCoords);
     assertEquals(18.285 * HOURS_TO_DEGREES, pos.ra, EPSILON);
     assertEquals(-24.08, pos.dec, EPSILON);
     
-    pos = RaDec.getInstance(Planet.Jupiter, testCal.getTime(), earthCoords);
+    pos = RaDec.getInstanceDontUse(Planet.Jupiter, testCal.getTime(), earthCoords);
     assertEquals(20.085 * HOURS_TO_DEGREES, pos.ra, EPSILON);
     assertEquals(-20.75, pos.dec, EPSILON);
 
-    pos = RaDec.getInstance(Planet.Saturn, testCal.getTime(), earthCoords);
+    pos = RaDec.getInstanceDontUse(Planet.Saturn, testCal.getTime(), earthCoords);
     assertEquals(11.550 * HOURS_TO_DEGREES, pos.ra, EPSILON);
     assertEquals(5.15, pos.dec, EPSILON);
 
-    pos = RaDec.getInstance(Planet.Uranus, testCal.getTime(), earthCoords);
+    pos = RaDec.getInstanceDontUse(Planet.Uranus, testCal.getTime(), earthCoords);
     assertEquals(23.362 * HOURS_TO_DEGREES, pos.ra, EPSILON);
     assertEquals(-4.95, pos.dec, EPSILON);
 
-    pos = RaDec.getInstance(Planet.Neptune, testCal.getTime(), earthCoords);
+    pos = RaDec.getInstanceDontUse(Planet.Neptune, testCal.getTime(), earthCoords);
     assertEquals(21.662 * HOURS_TO_DEGREES, pos.ra, EPSILON);
     assertEquals(-14.37, pos.dec, EPSILON);
 
-    pos = RaDec.getInstance(Planet.Pluto, testCal.getTime(), earthCoords);
+    pos = RaDec.getInstanceDontUse(Planet.Pluto, testCal.getTime(), earthCoords);
     assertEquals(18.088 * HOURS_TO_DEGREES, pos.ra, EPSILON);
     assertEquals(-17.75, pos.dec, EPSILON);
 
@@ -103,39 +103,39 @@ public class RaDecTest extends TestCase {
     testCal.set(2009, GregorianCalendar.SEPTEMBER, 20, 12, 0, 0);
     earthCoords = HeliocentricCoordinates.getInstance(Planet.Sun, testCal.getTime());
 
-    pos = RaDec.getInstance(Planet.Sun, testCal.getTime(), earthCoords);
+    pos = RaDec.getInstanceDontUse(Planet.Sun, testCal.getTime(), earthCoords);
     assertEquals(11.857 * HOURS_TO_DEGREES, pos.ra, EPSILON);
     assertEquals(0.933, pos.dec, EPSILON);
     
-    pos = RaDec.getInstance(Planet.Mercury, testCal.getTime(), earthCoords);
+    pos = RaDec.getInstanceDontUse(Planet.Mercury, testCal.getTime(), earthCoords);
     assertEquals(11.768 * HOURS_TO_DEGREES, pos.ra, EPSILON);
     assertEquals(-1.75, pos.dec, EPSILON);
 
-    pos = RaDec.getInstance(Planet.Venus, testCal.getTime(), earthCoords);
+    pos = RaDec.getInstanceDontUse(Planet.Venus, testCal.getTime(), earthCoords);
     assertEquals(10.157 * HOURS_TO_DEGREES, pos.ra, EPSILON);
     assertEquals(12.35, pos.dec, EPSILON);
 
-    pos = RaDec.getInstance(Planet.Mars, testCal.getTime(), earthCoords);
+    pos = RaDec.getInstanceDontUse(Planet.Mars, testCal.getTime(), earthCoords);
     assertEquals(7.143 * HOURS_TO_DEGREES, pos.ra, EPSILON);
     assertEquals(23.05, pos.dec, EPSILON);
     
-    pos = RaDec.getInstance(Planet.Jupiter, testCal.getTime(), earthCoords);
+    pos = RaDec.getInstanceDontUse(Planet.Jupiter, testCal.getTime(), earthCoords);
     assertEquals(21.387 * HOURS_TO_DEGREES, pos.ra, EPSILON);
     assertEquals(-16.48, pos.dec, EPSILON);
 
-    pos = RaDec.getInstance(Planet.Saturn, testCal.getTime(), earthCoords);
+    pos = RaDec.getInstanceDontUse(Planet.Saturn, testCal.getTime(), earthCoords);
     assertEquals(11.767 * HOURS_TO_DEGREES, pos.ra, EPSILON);
     assertEquals(3.67, pos.dec, EPSILON);
 
-    pos = RaDec.getInstance(Planet.Uranus, testCal.getTime(), earthCoords);
+    pos = RaDec.getInstanceDontUse(Planet.Uranus, testCal.getTime(), earthCoords);
     assertEquals(23.685 * HOURS_TO_DEGREES, pos.ra, EPSILON);
     assertEquals(-2.92, pos.dec, EPSILON);
 
-    pos = RaDec.getInstance(Planet.Neptune, testCal.getTime(), earthCoords);
+    pos = RaDec.getInstanceDontUse(Planet.Neptune, testCal.getTime(), earthCoords);
     assertEquals(21.778 * HOURS_TO_DEGREES, pos.ra, EPSILON);
     assertEquals(-13.85, pos.dec, EPSILON);
 
-    pos = RaDec.getInstance(Planet.Pluto, testCal.getTime(), earthCoords);
+    pos = RaDec.getInstanceDontUse(Planet.Pluto, testCal.getTime(), earthCoords);
     assertEquals(18.047 * HOURS_TO_DEGREES, pos.ra, EPSILON);
     assertEquals(-18.00, pos.dec, EPSILON);
 
@@ -153,39 +153,39 @@ public class RaDecTest extends TestCase {
     testCal.set(2010, GregorianCalendar.DECEMBER, 25, 12, 0, 0);
     earthCoords = HeliocentricCoordinates.getInstance(Planet.Sun, testCal.getTime());
 
-    pos = RaDec.getInstance(Planet.Sun, testCal.getTime(), earthCoords);
+    pos = RaDec.getInstanceDontUse(Planet.Sun, testCal.getTime(), earthCoords);
     assertEquals(18.260 * HOURS_TO_DEGREES, pos.ra, EPSILON);
     assertEquals(-23.38, pos.dec, EPSILON);
     
-    pos = RaDec.getInstance(Planet.Mercury, testCal.getTime(), earthCoords);
+    pos = RaDec.getInstanceDontUse(Planet.Mercury, testCal.getTime(), earthCoords);
     assertEquals(17.403 * HOURS_TO_DEGREES, pos.ra, EPSILON);
     assertEquals(-20.17, pos.dec, EPSILON);
 
-    pos = RaDec.getInstance(Planet.Venus, testCal.getTime(), earthCoords);
+    pos = RaDec.getInstanceDontUse(Planet.Venus, testCal.getTime(), earthCoords);
     assertEquals(15.068 * HOURS_TO_DEGREES, pos.ra, EPSILON);
     assertEquals(-13.83, pos.dec, EPSILON);
 
-    pos = RaDec.getInstance(Planet.Mars, testCal.getTime(), earthCoords);
+    pos = RaDec.getInstanceDontUse(Planet.Mars, testCal.getTime(), earthCoords);
     assertEquals(18.975 * HOURS_TO_DEGREES, pos.ra, EPSILON);
     assertEquals(-23.72, pos.dec, EPSILON);
     
-    pos = RaDec.getInstance(Planet.Jupiter, testCal.getTime(), earthCoords);
+    pos = RaDec.getInstanceDontUse(Planet.Jupiter, testCal.getTime(), earthCoords);
     assertEquals(23.773 * HOURS_TO_DEGREES, pos.ra, EPSILON);
     assertEquals(-2.88, pos.dec, EPSILON);
 
-    pos = RaDec.getInstance(Planet.Saturn, testCal.getTime(), earthCoords);
+    pos = RaDec.getInstanceDontUse(Planet.Saturn, testCal.getTime(), earthCoords);
     assertEquals(13.065 * HOURS_TO_DEGREES, pos.ra, EPSILON);
     assertEquals(-4.23, pos.dec, EPSILON);
 
-    pos = RaDec.getInstance(Planet.Uranus, testCal.getTime(), earthCoords);
+    pos = RaDec.getInstanceDontUse(Planet.Uranus, testCal.getTime(), earthCoords);
     assertEquals(23.827 * HOURS_TO_DEGREES, pos.ra, EPSILON);
     assertEquals(-1.93, pos.dec, EPSILON);
 
-    pos = RaDec.getInstance(Planet.Neptune, testCal.getTime(), earthCoords);
+    pos = RaDec.getInstanceDontUse(Planet.Neptune, testCal.getTime(), earthCoords);
     assertEquals(21.930 * HOURS_TO_DEGREES, pos.ra, EPSILON);
     assertEquals(-13.12, pos.dec, EPSILON);
 
-    pos = RaDec.getInstance(Planet.Pluto, testCal.getTime(), earthCoords);
+    pos = RaDec.getInstanceDontUse(Planet.Pluto, testCal.getTime(), earthCoords);
     assertEquals(18.358 * HOURS_TO_DEGREES, pos.ra, EPSILON);
   }
 }
