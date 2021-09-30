@@ -1,6 +1,5 @@
 package com.google.android.stardroid.space
 
-import com.google.android.stardroid.space.SolarSystemObject
 import com.google.android.stardroid.provider.ephemeris.Planet
 import com.google.android.stardroid.units.RaDec
 import com.google.android.stardroid.units.HeliocentricCoordinates
@@ -16,15 +15,35 @@ class Universe {
     /**
      * Returns all the solar system objects in the universe.
      */
-    val solarSystemObjects: List<SolarSystemObject> = ArrayList()
+    private val solarSystemObjects: List<SolarSystemObject> = ArrayList()
+
+    /**
+     * A map from the planet enum to the corresponding CelestialObject. Possibly just
+     * a temporary shim.
+     */
+    private val planetMap: MutableMap<Planet, CelestialObject> = HashMap()
+
+    init {
+        for (planet in Planet.values()) {
+            if (planet != Planet.Moon && planet != Planet.Sun) {
+                planetMap.put(planet, SunOrbitingObject(planet))
+            }
+        }
+    }
 
     /**
      * Gets the location of a planet at a particular date.
      * Possibly a temporary swap for RaDec.getInstance.
      */
     fun getRaDec(planet: Planet, datetime: Date): RaDec {
-        val sunCoords = HeliocentricCoordinates.getInstance(Planet.Sun, datetime)
-        return RaDec.getInstanceDontUse(planet, datetime, sunCoords)
+        if (planet == Planet.Sun) {
+            return getSunRaDec(datetime)
+        }
+        if (planet == Planet.Moon) {
+            return getMoonRaDec(datetime)
+        }
+        // Not null, because all the enum values are in the map except for Sun and Moon.
+        return planetMap.get(planet)!!.getPosition(datetime)
     }
 
     /**

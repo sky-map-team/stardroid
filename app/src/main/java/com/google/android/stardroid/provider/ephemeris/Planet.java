@@ -57,8 +57,6 @@ public enum Planet {
 
   private final long updateFreqMs;
 
-  private Universe universe = new Universe();
-
   Planet(int imageResourceId, int nameResourceId, long updateFreqMs) {
     this.imageResourceId = imageResourceId;
     this.nameResourceId = nameResourceId;
@@ -555,7 +553,8 @@ public enum Planet {
       // Calculate the hour angle and declination of the planet.
       // TODO(serafini): Need to fix this for arbitrary RA/Dec locations.
       Date tmp = cal.getTime();
-      RaDec raDec = universe.getRaDec(this, tmp);
+      // TODO(jontayler): factor this away so we don't have to create a new Universe each time.
+      RaDec raDec = new Universe().getRaDec(this, tmp);
 
       // GHA = GST - RA. (In degrees.)
       float gst = TimeUtil.meanSiderealTime(tmp, 0);

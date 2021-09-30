@@ -192,4 +192,6 @@ to the set of all objects.  Some class hierarchy like:
     * Phase (only really matters for mercury, venus, moon)
 
 There should be other objects in the hierarchy that factor out common behaviors for (say) earth-orbiting
-and sun-orbiting objects, but these could be mostly transparent to everything else?
+and sun-orbiting objects, but these could be mostly transparent to everything else?  The current
+hierarchy as of this commit is somewhat more elaborate and can probably be pruned. Some behavior
+might be best done as mixins.
