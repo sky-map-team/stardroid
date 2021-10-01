@@ -548,6 +548,9 @@ public class DynamicStarMapActivity extends InjectableActivity
   @Override
   public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
     Log.d(TAG, "Preferences changed: key=" + key);
+    if (key == null) {
+      return;
+    }
     switch (key) {
       case ApplicationConstants.AUTO_MODE_PREF_KEY:
         boolean autoMode = sharedPreferences.getBoolean(key, true);

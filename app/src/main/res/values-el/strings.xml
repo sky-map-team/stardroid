@@ -9,7 +9,7 @@
     <string name="go">Πάμε!</string>
     <string name="location_prefs">Ρυθμίσεις τοποθεσίας</string>
     <string name="force_gps_pref">Πάντα χρήση GPS</string>
-    <string name="force_gps_pref_hint" translation_description="this string continues from \'Always use GPS\'">, ακόμη και αν η τοποθεσία δικτύου είναι διαθέσιμη</string>
+    <string name="force_gps_pref_hint" translation_description="this string continues from \'Always use GPS\'">Ακόμη και αν η τοποθεσία δικτύου είναι διαθέσιμη</string>
     <string name="no_use_gps_pref">Ορισμός τοποθεσίας</string>
     <string name="no_use_gps_pref_hint">Εισάγετε μια τοποθεσία ή γεωγ. μήκος/πλάτος παρακάτω</string>
     <string name="location_placename">Όνομα τοποθεσίας</string>
@@ -39,12 +39,13 @@
     <string name="show_horizon_pref">Ορίζοντας</string>
     <string name="show_sky_gradient" translation_description="This is a shading of the color of the sky used for effect">Απόχρωση ουρανού</string>
     <string name="show_meteors_pref">Βροχές διαττόντων</string>
+    <string name="show_satellite_layer_pref" translation_description="The layer for satellites">Δορυφόροι</string>
+    <!-- Just in case we decide to have such a layer for the 4/24 launch -->
+    <string name="show_hubble_layer_pref">Εικόνες από Hubble</string>
     <string name="sensor_prefs">Ρυθμίσεις αισθητήρα</string>
     <string name="sensor_speed" translation_description="How quickly the sensor should send us data">Ταχύτητα αισθητήρα</string>
     <string name="sensor_damping" translation_description="The amount of smoothing applied to the sensor outputs.">Εξομάλυνση</string>
     <string name="ecliptic">Εκλειπτική</string>
-    <!-- Just in case we decide to have such a layer for the 4/24 launch -->
-    <string name="show_hubble_layer_pref">Εικόνες από Hubble</string>
     <string name="malformed_loc_error">Το γεωγραφικό μήκος ή πλάτος πρέπει να είναι αριθμός.</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Αποδοχή</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">Όχι, ευχαριστώ</string>
@@ -116,6 +117,8 @@
     <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">Αναζήτηση για:</string>
     <string name="sun_wont_set_message">Ο ήλιος δε θα δύσει μέσα στις επόμενες 24 ώρες στην τρέχουσα τοποθεσία σας.</string>
     <string name="sun_wont_rise_message">Ο ήλιος δε θα ανατείλει μέσα στις επόμενες 24 ώρες στην τρέχουσα τοποθεσία σας.</string>
+
+    <string name="missing_label" translation_description="Used to indicate to the developer that they've added a resource with no translation.">MISSING_LBL</string>
 
     <string name="sun">Ήλιος</string>
     <string name="moon">Σελήνη</string>
@@ -427,44 +430,45 @@
         όπου μετακινείτε, περιστρέφετε και εστιάζετε στον χάρτη με τα δάχτυλά σας.
     </string>
     <string name="do_not_show_again">Να μην εμφανιστεί ξανά αυτό το μήνυμα</string>
-    <string name="title_activity_diagnostic">Diagnostics</string>
+    <string name="title_activity_diagnostic">Διαγνωστικά</string>
     <string name="location_rationale_title">Γιατί ζητάμε την τοποθεσία σας;</string>
     <string name="location_rationale_text">Το ποιά αστέρια μπορείτε να δείτε εξαρτάται από το σημείο της Γης στο οποίο βρίσκεστε. Χωρίς την τοποθεσία σας δεν μπορούμε να σας εμφανίσουμε ακριβή χάρτη. Εάν δεν επιθυμείτε να μας αποστέλλει η συσκευή σας την τοποθεσία σας, μπορείτε να το ορίσετε στις ρυθμίσεις.  Το μόνο που χρειάζεται είναι να ορίσετε την κοντινότερή σας πόλη.</string>
     <string name="play_services_error">Προειδοποίηση: Σφάλμα υπηρεσιών Google Play - η αυτόματη τοποθεσία μπορεί να μη λειτουργεί</string>
-    <string name="sensor_absent">Absent</string>
-    <string name="sensor_accuracy_unknown">Accuracy: Unknown</string>
-    <string name="sensor_accuracy_unreliable">Accuracy: Unreliable</string>
-    <string name="sensor_accuracy_low">Accuracy: Low</string>
-    <string name="sensor_accuracy_medium">Accuracy: Medium</string>
-    <string name="sensor_accuracy_high">Accuracy: High</string>
-    <string name="sensor_accuracy_nocontact">Accuracy: No contact</string>
-    <string name="diagnostics_activity_general_heading">General</string>
-    <string name="diagnostics_activity_phone">Device</string>
-    <string name="diagnostics_activity_android_version">Android version</string>
-    <string name="diagnostics_activity_sky_map_version">Sky Map version</string>
-    <string name="diagnostics_activity_sensors_heading">Sensors</string>
-    <string name="diagnostics_activity_compass">Compass</string>
-    <string name="diagnostics_activity_accelerometer">Accelerometer</string>
-    <string name="diagnostics_activity_rotation_vector">Rotation</string>
-    <string name="diagnostics_activity_gyroscope">Gyroscope</string>
-    <string name="diagnostics_activity_light_level">Light level</string>
+    <string name="sensor_absent">Απών</string>
+    <string name="sensor_accuracy_unknown">Ακρίβεια: Άγνωστη</string>
+    <string name="sensor_accuracy_unreliable">Ακρίβεια: Αναξιόπιστη</string>
+    <string name="sensor_accuracy_low">Ακρίβεια: Χαμηλή</string>
+    <string name="sensor_accuracy_medium">Ακρίβεια: Μέτρια</string>
+    <string name="sensor_accuracy_high">Ακρίβεια: Υψηλή</string>
+    <string name="sensor_accuracy_nocontact">Ακρίβεια: Καμία επαφή</string>
+    <string name="diagnostics_activity_general_heading">Γενικά</string>
+    <string name="diagnostics_activity_phone">Συσκευή</string>
+    <string name="diagnostics_activity_android_version">Έκδοση Android</string>
+    <string name="diagnostics_activity_sky_map_version">Έκδοση Sky Map</string>
+    <string name="diagnostics_activity_sensors_heading">Αισθητήρες</string>
+    <string name="diagnostics_activity_compass">Πυξίδα</string>
+    <string name="diagnostics_activity_accelerometer">Επιταχυνσόμετρο</string>
+    <string name="diagnostics_activity_rotation_vector">Περιστροφή</string>
+    <string name="diagnostics_activity_gyroscope">Γυροσκόπιο</string>
+    <string name="diagnostics_activity_light_level">Επίπεδο φωτός</string>
     <string name="diagnostics_activity_location_and_time_heading">Τοποθεσία και ώρα</string>
     <string name="diagnostics_activity_gps">GPS</string>
-    <string name="diagnostics_activity_location">Location (lat, long)</string>
-    <string name="diagnostics_activity_pointing_ra_dec">Pointing snapshot (RA, DEC)</string>
-    <string name="diagnostics_activity_magnetic_correction">Magnetic correction</string>
-    <string name="diagnostics_activity_local_datetime">Local datetime</string>
-    <string name="diagnostics_activity_universal_time">Universal datetime</string>
-    <string name="diagnostics_activity_network_heading">Network</string>
-    <string name="diagnostics_activity_connection">Connection</string>
-    <string name="enabled">Enabled</string>
-    <string name="disabled">Disabled</string>
-    <string name="permission_disabled">Permission disabled</string>
-    <string name="no_gps">No GPS</string>
-    <string name="connected">Connected</string>
-    <string name="disconnected">Disconnected</string>
+    <string name="diagnostics_activity_location">Τοποθεσία (πλάτος, μήκος)</string>
+    <string name="diagnostics_activity_pointing_ra_dec">Στιγμιότυπο στόχευσης</string>
+    <string name="diagnostics_activity_magnetic_correction">Μαγνητική διόρθωση</string>
+    <string name="diagnostics_activity_local_datetime">Τοπική ώρα</string>
+    <string name="diagnostics_activity_universal_time">Διεθνής ώρα</string>
+    <string name="diagnostics_activity_network_heading">Δίκτυο</string>
+    <string name="diagnostics_activity_connection">Σύνδεση</string>
+    <string name="diagnostics_activity_rotation_matrix">Rot Matrix</string>
+    <string name="enabled">Ενεργή</string>
+    <string name="disabled">Ανενεργή</string>
+    <string name="permission_disabled">Ανενεργή άδεια</string>
+    <string name="no_gps">Απουσία GPS</string>
+    <string name="connected">Συνδεδεμένο</string>
+    <string name="disconnected">Αποσυνδεδεμένο</string>
     <string name="wifi">" (wifi)"</string>
-    <string name="cell_network">" (cell)"</string>
+    <string name="cell_network">" (δεδομένα)"</string>
     <string name="menu_calibrate">Βαθμονόμηση</string>
     <string name="compass_calibration_activity_heading_compass">Πυξίδα -</string>
     <string name="compass_calibration_activity_do_not_show_this_again">Να μην εμφανιστεί ξανά</string>
@@ -472,4 +476,8 @@
     <string name="sensor_reverse_preference_title">Αντιστροφή του μαγνητικού Ζ</string>
     <string name="sensor_reverse_preference_summary">Για συσκευές με εσφαλμένη υλοποίηση του αισθητήρα - απαιτεί επανεκκίνηση</string>
     <string name="whats_new_dialog_title">Τι νέο υπάρχει</string>
+    <string name="disable_gyro_preference_title">Απενεργοποίηση γυροσκοπίου</string>
+    <string name="disable_gyro_preference_summary">Δεν έχουν όλες οι συκευές γυροσκόπιο. Αν η δική σας έχει, θα έχετε καλύτερα αποτελέσματα αν το έχετε ενεργό και αυτή τη ρύθμιση ανενεργή. Από την άλλη, αν η συσκευή σας δεν έχει γυροσκόπιο, το Sky Map μάλλον δε θα λειτουργήσει αν απενεργοποιήσετε αυτή τη ρύθμιση.</string>
+    <string name="rotate_horizon_preference_title">Περιστροφή ορίζοντα</string>
+    <string name="rotate_horizon_preference_summary">Περιστροφή του ορίζοντα κατά 90 μοίρες (για οθόνες με εξαναγκασμένη λειτουργία landscape, όπως smartglasses)</string>
 </resources>

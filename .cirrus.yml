@@ -1,23 +1,44 @@
 container:
-  image: cirrusci/android-sdk:29
-  cpu: 4
-  memory: 10G
+  image: cirrusci/android-sdk:30
+  cpu: 8
+  memory: 24G
   kvm: true
 
 check_android_task:
-  fix_kvm_script:
-    sudo chown cirrus:cirrus /dev/kvm
+  # execution_lock: OneEmulatorAtATime
   list_versions_script:
-    sdkmanager --list --verbose| grep ^system-images
-  create_device_script:
-    - sdkmanager "system-images;android-29;google_apis;x86"
-    - echo no | avdmanager create avd --force -n test -k "system-images;android-29;google_apis;x86"
-  start_emulator_background_script:
-    $ANDROID_HOME/emulator/emulator
-    -avd test
-    -no-audio
-    -no-window
-  wait_for_emulator_script:
-    - ./tools/android-wait-for-emulator
-    - adb shell input keyevent 82
-  check_script: ./gradlew check connectedCheck
+    - sdkmanager --list --verbose| grep ^system-images
+  # env:
+  #  ARCH: x86
+  #  matrix:
+  #    - API_LEVEL: 28
+  #    - API_LEVEL: 29
+  #    - API_LEVEL: 30
+  # create_device_script:
+  #  - sdkmanager "system-images;android-${API_LEVEL};google_apis_playstore;${ARCH}"
+  #  - echo no | avdmanager create avd --force -n test_${API_LEVEL} -k "system-images;android-${API_LEVEL};google_apis_playstore;${ARCH}"
+  # start_emulator_background_script:
+  #   $ANDROID_HOME/emulator/emulator -avd test_${API_LEVEL} -no-audio -no-window -read-only
+  # wait_for_emulator_script:
+  #  - ./tools/android-wait-for-emulator
+  #  - adb shell input keyevent 82
+  # disable_animations_script:
+  #   - adb shell settings put global window_animation_scale 0.0
+  #   - adb shell settings put global transition_animation_scale 0.0
+  #  - adb shell settings put global animator_duration_scale 0.0
+  check_script:
+    - ./gradlew build testGmsDebugUnitTest
+  #  - ./gradlew check :app:connectedGmsDebugAndroidTest
+  #  - ./gradlew check :app:connectedFDroidDebugAndroidTest
+  always:
+    build_artifacts:
+      path: "app/build/reports/**"
+
+task:
+  name: Android Lint
+  lint_script: ./gradlew lintGmsDebug
+  # always:
+  #   android-lint_artifacts:
+  #     path: "**/reports/lint-results-gmsDebug.xml"
+  #     type: text/xml
+  #    format: android-lint

@@ -45,6 +45,7 @@ public class EulaDialogFragment extends DialogFragment {
 
   @Override
   public Dialog onCreateDialog(Bundle savedInstanceState) {
+    Log.d(TAG, "onCreateDialog");
     // Activities using this dialog MUST implement this interface.  Obviously.
     ((HasComponent<ActivityComponent>) getActivity()).getComponent().inject(this);
 
