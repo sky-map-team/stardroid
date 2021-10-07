@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import static com.google.common.truth.Truth.assertThat;
 
-public class RaDecTest2 {
+public class RaDecTest {
     private static float EPS = 1e-5f;
     @Test
     public void testRaFromHMS() {

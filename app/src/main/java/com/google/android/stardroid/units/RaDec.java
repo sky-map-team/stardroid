@@ -14,11 +14,8 @@
 
 package com.google.android.stardroid.units;
 
-import com.google.android.stardroid.provider.ephemeris.Planet;
 import com.google.android.stardroid.util.Geometry;
 import com.google.android.stardroid.util.MathUtil;
-
-import java.util.Date;
 
 public class RaDec {
   public float ra;        // In degrees
