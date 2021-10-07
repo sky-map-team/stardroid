@@ -42,7 +42,7 @@ public class HeliocentricCoordinates extends Vector3 {
     this.z -= other.z;
   }
 
-  public HeliocentricCoordinates CalculateEquatorialCoordinates() {
+  public HeliocentricCoordinates calculateEquatorialCoordinates() {
     return new HeliocentricCoordinates(this.radius,
         this.x,
         this.y * MathUtil.cos(OBLIQUITY) - this.z * MathUtil.sin(OBLIQUITY),

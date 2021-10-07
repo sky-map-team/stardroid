@@ -15,7 +15,7 @@ class Sun : SolarSystemObject() {
                 actuallyTheseAreEarthCoords.radius, actuallyTheseAreEarthCoords.x * -1.0f,
                 actuallyTheseAreEarthCoords.y * -1.0f, actuallyTheseAreEarthCoords.z * -1.0f
             )
-        val equ = sunInEarthCoords.CalculateEquatorialCoordinates()
+        val equ = sunInEarthCoords.calculateEquatorialCoordinates()
         return RaDec.calculateRaDecDist(equ)
     }
 }

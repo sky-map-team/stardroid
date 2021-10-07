@@ -13,7 +13,7 @@ class SunOrbitingObject(private val planet : Planet) : SolarSystemObject() {
         val sunCoords = HeliocentricCoordinates.getInstance(Planet.Sun, date)
         var myCoords = HeliocentricCoordinates.getInstance(planet, date)
         myCoords.Subtract(sunCoords)
-        val equ = myCoords.CalculateEquatorialCoordinates()
+        val equ = myCoords.calculateEquatorialCoordinates()
         return RaDec.calculateRaDecDist(equ)
     }
 }
