@@ -57,31 +57,6 @@ public class RaDec {
     return new RaDec(ra, dec);
   }
 
-  /**
-   * @deprecated Use Universe.getPlanet instead.
-   */
-  @Deprecated
-  public static RaDec getInstanceDontUse(Planet planet, Date time,
-      HeliocentricCoordinates earthCoordinates) {
-    // TODO(serafini): This is a temporary hack until we re-factor the Planetary calculations.
-    if (planet.equals(Planet.Moon)) {
-      return Planet.calculateLunarGeocentricLocation(time);
-    }
-
-    HeliocentricCoordinates coords = null;
-    if (planet.equals(Planet.Sun)) {
-      // Invert the view, since we want the Sun in earth coordinates, not the Earth in sun
-      // coordinates.
-      coords = new HeliocentricCoordinates(earthCoordinates.radius, earthCoordinates.x * -1.0f,
-                                           earthCoordinates.y * -1.0f, earthCoordinates.z * -1.0f);
-    } else {
-      coords = HeliocentricCoordinates.getInstance(planet, time);
-      coords.Subtract(earthCoordinates);
-    }
-    HeliocentricCoordinates equ = coords.CalculateEquatorialCoordinates();
-    return calculateRaDecDist(equ);
-  }
-
   public static RaDec getInstance(GeocentricCoordinates coords) {
     float raRad = MathUtil.atan2(coords.y, coords.x);
     if (raRad < 0) raRad += MathUtil.TWO_PI;

@@ -22,7 +22,7 @@ import com.google.android.stardroid.units.GeocentricCoordinates
 import com.google.android.stardroid.util.MathUtil
 import java.util.*
 
-class RaDec(// In degrees
+class RaDec2(// In degrees
     var ra: Float, // In degrees
     var dec: Float
 ) {
@@ -74,14 +74,17 @@ Dec: $dec degrees
     }
 
     companion object {
+        @JvmStatic
         fun raDegreesFromHMS(h: Float, m: Float, s: Float): Float {
             return 360 / 24 * (h + m / 60 + s / 60 / 60)
         }
 
+        @JvmStatic
         fun decDegreesFromDMS(d: Float, m: Float, s: Float): Float {
             return d + m / 60 + s / 60 / 60
         }
 
+        @JvmStatic
         fun calculateRaDecDist(coords: HeliocentricCoordinates): RaDec {
             // find the RA and DEC from the rectangular equatorial coords
             val ra =
@@ -117,6 +120,7 @@ Dec: $dec degrees
             return calculateRaDecDist(equ)
         }
 
+        @JvmStatic
         fun getInstance(coords: GeocentricCoordinates): RaDec {
             var raRad = MathUtil.atan2(coords.y, coords.x)
             if (raRad < 0) raRad += MathUtil.TWO_PI
