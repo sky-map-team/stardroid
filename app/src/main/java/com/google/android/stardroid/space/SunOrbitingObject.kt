@@ -8,12 +8,18 @@ import java.util.*
 /**
  * An object that orbits the sun.
  */
-class SunOrbitingObject(private val planet : Planet) : SolarSystemObject() {
+open class SunOrbitingObject(private val planet : Planet) : SolarSystemObject() {
     override fun getPosition(date: Date): RaDec {
-        val sunCoords = HeliocentricCoordinates.getInstance(Planet.Sun, date)
-        var myCoords = HeliocentricCoordinates.getInstance(planet, date)
-        myCoords.Subtract(sunCoords)
+        val earthCoords = getEarthHeliocentricCoordinates(date)
+        var myCoords = getMyHeliocentricCoordinates(date)
+        myCoords.Subtract(earthCoords)
         val equ = myCoords.calculateEquatorialCoordinates()
         return RaDec.calculateRaDecDist(equ)
     }
+
+    protected open fun getMyHeliocentricCoordinates(date: Date) =
+        HeliocentricCoordinates.getInstance(planet, date)
+
+    protected fun getEarthHeliocentricCoordinates(date: Date) =
+        HeliocentricCoordinates.getInstance(Planet.Sun, date)
 }

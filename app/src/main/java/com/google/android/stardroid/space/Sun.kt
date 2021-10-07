@@ -7,15 +7,10 @@ import java.util.*
 
 /**
  * The Sun is special as it's at the center of the solar system.
+ *
+ * It's a sort of trivial sun-orbiting object.
  */
-class Sun : SolarSystemObject() {
-    override fun getPosition(date: Date): RaDec {
-        val actuallyTheseAreEarthCoords = HeliocentricCoordinates.getInstance(Planet.Sun, date)
-        var sunInEarthCoords = HeliocentricCoordinates(
-                actuallyTheseAreEarthCoords.radius, actuallyTheseAreEarthCoords.x * -1.0f,
-                actuallyTheseAreEarthCoords.y * -1.0f, actuallyTheseAreEarthCoords.z * -1.0f
-            )
-        val equ = sunInEarthCoords.calculateEquatorialCoordinates()
-        return RaDec.calculateRaDecDist(equ)
-    }
+class Sun : SunOrbitingObject(Planet.Sun) {
+    protected override fun getMyHeliocentricCoordinates(date: Date) =
+        HeliocentricCoordinates(0.0f, 0.0f, 0.0f, 0.0f)
 }
