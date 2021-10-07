@@ -7,7 +7,7 @@ import org.junit.Test
 import java.util.*
 
 /**
- * Position tests of the celestial objects - mostly extracted from the RaDecTest.
+ * Position tests of the celestial objects.
  */
 class UniverseSmokeTest {
     private val universe = Universe()
