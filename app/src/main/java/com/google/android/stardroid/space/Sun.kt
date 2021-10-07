@@ -10,20 +10,12 @@ import java.util.*
  */
 class Sun : SolarSystemObject() {
     override fun getPosition(date: Date): RaDec {
-        val sunCoords = HeliocentricCoordinates.getInstance(Planet.Sun, date)
-        var coords: HeliocentricCoordinates? = null
-        if (Planet.Sun == Planet.Sun) {
-            // Invert the view, since we want the Sun in earth coordinates, not the Earth in sun
-            // coordinates.
-            coords = HeliocentricCoordinates(
-                sunCoords.radius, sunCoords.x * -1.0f,
-                sunCoords.y * -1.0f, sunCoords.z * -1.0f
+        val actuallyTheseAreEarthCoords = HeliocentricCoordinates.getInstance(Planet.Sun, date)
+        var sunInEarthCoords = HeliocentricCoordinates(
+                actuallyTheseAreEarthCoords.radius, actuallyTheseAreEarthCoords.x * -1.0f,
+                actuallyTheseAreEarthCoords.y * -1.0f, actuallyTheseAreEarthCoords.z * -1.0f
             )
-        } else {
-            coords = HeliocentricCoordinates.getInstance(Planet.Sun, date)
-            coords.Subtract(sunCoords)
-        }
-        val equ = coords!!.CalculateEquatorialCoordinates()
+        val equ = sunInEarthCoords.CalculateEquatorialCoordinates()
         return RaDec.calculateRaDecDist(equ)
     }
 }
