@@ -10,7 +10,6 @@ import java.util.*
  */
 class Moon : EarthOrbitingObject() {
     override fun getPosition(date: Date): RaDec {
-        val sunCoords = HeliocentricCoordinates.getInstance(Planet.Sun, date)
         return Planet.calculateLunarGeocentricLocation(date)
     }
 }
