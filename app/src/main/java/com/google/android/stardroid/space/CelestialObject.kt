@@ -7,7 +7,5 @@ import java.util.*
  * Base class for any celestial objects.
  */
 abstract class CelestialObject {
-    //lateinit var position : RaDec
-
-    abstract fun getPosition(date : Date) : RaDec
+    abstract fun getRaDec(date : Date) : RaDec
 }

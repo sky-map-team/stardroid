@@ -2,7 +2,6 @@ package com.google.android.stardroid.space
 
 import com.google.android.stardroid.provider.ephemeris.Planet
 import com.google.android.stardroid.units.RaDec
-import com.google.android.stardroid.units.HeliocentricCoordinates
 import java.util.*
 
 /**
@@ -45,7 +44,7 @@ class Universe {
             return getMoonRaDec(datetime)
         }
         // Not null, because all the enum values are in the map except for Sun and Moon.
-        return planetMap.get(planet)!!.getPosition(datetime)
+        return planetMap.get(planet)!!.getRaDec(datetime)
     }
 
     /**
@@ -53,7 +52,7 @@ class Universe {
      * TODO Factor this away
      */
     fun getMoonRaDec(datetime: Date): RaDec {
-        return moon.getPosition(datetime)
+        return moon.getRaDec(datetime)
     }
 
     /**
@@ -61,6 +60,6 @@ class Universe {
      * TODO Factor this away
      */
     fun getSunRaDec(datetime: Date): RaDec {
-        return sun.getPosition(datetime)
+        return sun.getRaDec(datetime)
     }
 }

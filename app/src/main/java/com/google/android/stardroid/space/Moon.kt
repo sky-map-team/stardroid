@@ -9,7 +9,7 @@ import java.util.*
  * A likely temporary class to represent the Moon.
  */
 class Moon : EarthOrbitingObject() {
-    override fun getPosition(date: Date): RaDec {
+    override fun getRaDec(date: Date): RaDec {
         return Planet.calculateLunarGeocentricLocation(date)
     }
 }
