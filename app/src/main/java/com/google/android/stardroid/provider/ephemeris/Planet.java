@@ -558,12 +558,12 @@ public enum Planet {
 
       // GHA = GST - RA. (In degrees.)
       float gst = TimeUtil.meanSiderealTime(tmp, 0);
-      float gha = gst - raDec.ra;
+      float gha = gst - raDec.getRa();
 
       // The value of -0.83 works for the diameter of the Sun and Moon. We
       // assume that other objects are simply points.
       float bodySize = (this == Planet.Sun || this == Planet.Moon) ? -0.83f : 0.0f;
-      float hourAngle = calculateHourAngle(bodySize, loc.getLatitude(), raDec.dec);
+      float hourAngle = calculateHourAngle(bodySize, loc.getLatitude(), raDec.getDec());
 
       delta = (gha + loc.getLongitude() + (sign * hourAngle)) / 15.0f;
       while (delta < -24.0f) {

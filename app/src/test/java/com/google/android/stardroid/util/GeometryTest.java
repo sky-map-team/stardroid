@@ -73,8 +73,8 @@ public class GeometryTest extends TestCase {
       float z = testValues[4];
       RaDec result =
           RaDec.getInstance(new GeocentricCoordinates(x, y, z));
-      assertEquals(ra, result.ra, TOL);
-      assertEquals(dec, result.dec, TOL);
+      assertEquals(ra, result.getRa(), TOL);
+      assertEquals(dec, result.getDec(), TOL);
     }
   }
 

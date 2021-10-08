@@ -34,7 +34,7 @@ public class GeocentricCoordinates extends Vector3 {
    * {@link RaDec}.
    */
   public void updateFromRaDec(RaDec raDec) {
-    updateFromRaDec(raDec.ra, raDec.dec);
+    updateFromRaDec(raDec.getRa(), raDec.getDec());
   }
 
 
@@ -66,7 +66,7 @@ public class GeocentricCoordinates extends Vector3 {
    * Convert ra and dec to x,y,z where the point is place on the unit sphere.
    */
   public static GeocentricCoordinates getInstance(RaDec raDec) {
-    return getInstance(raDec.ra, raDec.dec);
+    return getInstance(raDec.getRa(), raDec.getDec());
   }
 
   public static GeocentricCoordinates getInstance(float ra, float dec) {
