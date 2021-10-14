@@ -38,8 +38,8 @@ public class AstronomerModelTest extends TestCase {
 
   private static void assertVectorEquals(Vector3 v1, Vector3 v2, float tol_angle,
       float tol_length) {
-    float normv1 = v1.length();
-    float normv2 = v2.length();
+    float normv1 = v1.getLength();
+    float normv2 = v2.getLength();
     assertEquals("Vectors of different lengths", normv1, normv2, tol_length);
     float cosineSim = Geometry.cosineSimilarity(v1, v2);
     float cosTol = MathUtil.cos(tol_angle);

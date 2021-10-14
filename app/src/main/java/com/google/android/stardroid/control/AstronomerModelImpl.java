@@ -184,7 +184,7 @@ public class AstronomerModelImpl implements AstronomerModel {
 
   @Override
   public void setPhoneSensorValues(Vector3 acceleration, Vector3 magneticField) {
-    if (magneticField.length2() < TOL || acceleration.length2() < TOL) {
+    if (magneticField.getLength2() < TOL || acceleration.getLength2() < TOL) {
       Log.w(TAG, "Invalid sensor values - ignoring");
       Log.w(TAG, "Mag: " + magneticField);
       Log.w(TAG, "Accel: " + acceleration);
