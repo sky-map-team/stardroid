@@ -1,8 +1,8 @@
 package com.google.android.stardroid.units
 
-import com.google.android.stardroid.units.RaDec.Companion.raDegreesFromHMS
 import com.google.android.stardroid.units.RaDec.Companion.decDegreesFromDMS
-import com.google.common.truth.Truth.assertThat;
+import com.google.android.stardroid.units.RaDec.Companion.raDegreesFromHMS
+import com.google.common.truth.Truth.assertThat
 import org.junit.Test
 
 class RaDecTest {
