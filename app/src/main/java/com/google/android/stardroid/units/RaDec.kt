@@ -16,29 +16,11 @@ package com.google.android.stardroid.units
 import com.google.android.stardroid.util.Geometry
 import com.google.android.stardroid.util.MathUtil
 
-class RaDec(// In degrees
+data class RaDec(
     var ra: Float, // In degrees
-    var dec: Float
+    var dec: Float // In degrees
 ) {
-    constructor(
-        raHours: Float, raMinutes: Float, raSeconds: Float,
-        decDegrees: Float, decMinutes: Float, decSeconds: Float
-    ) : this(
-        raDegreesFromHMS(raHours, raMinutes, raSeconds),
-        decDegreesFromDMS(decDegrees, decMinutes, decSeconds)
-    ) {
-    }
 
-    override fun toString(): String {
-        return """RA: $ra degrees
-Dec: $dec degrees
-"""
-    }
-    // This should be relatively easy to do. In the northern hemisphere,
-    // objects never set if dec > 90 - lat and never rise if dec < lat -
-    // 90. In the southern hemisphere, objects never set if dec < -90 - lat
-    // and never rise if dec > 90 + lat. There must be a better way to do
-    // this...
     /**
      * Return true if the given Ra/Dec is always above the horizon. Return
      * false otherwise.
@@ -46,6 +28,11 @@ Dec: $dec degrees
      * In the southern hemisphere, objects never set if dec < -90 - lat.
      */
     private fun isCircumpolarFor(loc: LatLong): Boolean {
+        // This should be relatively easy to do. In the northern hemisphere,
+        // objects never set if dec > 90 - lat and never rise if dec < lat -
+        // 90. In the southern hemisphere, objects never set if dec < -90 - lat
+        // and never rise if dec > 90 + lat. There must be a better way to do
+        // this...
         return if (loc.latitude > 0.0f) {
             dec > 90.0f - loc.latitude
         } else {
@@ -90,7 +77,7 @@ Dec: $dec degrees
         }
 
         @JvmStatic
-        fun getInstance(coords: GeocentricCoordinates): RaDec {
+        fun fromGeocentricCoords(coords: GeocentricCoordinates): RaDec {
             var raRad = MathUtil.atan2(coords.y, coords.x)
             if (raRad < 0) raRad += MathUtil.TWO_PI
             val decRad = MathUtil.atan2(
@@ -102,5 +89,14 @@ Dec: $dec degrees
                 decRad * Geometry.RADIANS_TO_DEGREES
             )
         }
+
+        @JvmStatic
+        fun fromHoursMinutesSeconds(
+            raHours: Float, raMinutes: Float, raSeconds: Float,
+            decDegrees: Float, decMinutes: Float, decSeconds: Float
+        ) = RaDec(
+            raDegreesFromHMS(raHours, raMinutes, raSeconds),
+            decDegreesFromDMS(decDegrees, decMinutes, decSeconds)
+        )
     }
 }
