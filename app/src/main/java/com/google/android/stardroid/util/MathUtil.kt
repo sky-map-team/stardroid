@@ -24,6 +24,7 @@ object MathUtil {
     const val TWO_PI = 2f * PI
     const val DEGREES_TO_RADIANS = PI / 180
     const val RADIANS_TO_DEGREES = 180 / PI
+
     @JvmStatic
     fun abs(x: Float): Float {
         return Math.abs(x)
@@ -85,6 +86,6 @@ object MathUtil {
     }
 }
 
-fun flooredMod(a: Float, n: Float): Float {
-    return (if (a < 0) a % n + n else a) % n
-}
+fun flooredMod(a: Float, n: Float) = (if (a < 0) a % n + n else a) % n
+
+fun norm(x: Float, y: Float, z: Float) = MathUtil.sqrt(x * x + y * y + z * z)

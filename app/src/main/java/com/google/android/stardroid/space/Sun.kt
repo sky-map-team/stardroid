@@ -12,5 +12,5 @@ import java.util.*
  */
 class Sun : SunOrbitingObject(Planet.Sun) {
     protected override fun getMyHeliocentricCoordinates(date: Date) =
-        HeliocentricCoordinates(0.0f, 0.0f, 0.0f, 0.0f)
+        HeliocentricCoordinates(0.0f, 0.0f, 0.0f)
 }

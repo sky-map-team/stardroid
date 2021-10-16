@@ -14,6 +14,7 @@
 package com.google.android.stardroid.units
 
 import com.google.android.stardroid.util.MathUtil
+import com.google.android.stardroid.util.MathUtil.sqrt
 
 // TODO(jontayler): Convert to a data class once things don't inherit from it.
 open class Vector3 {
@@ -93,6 +94,26 @@ open class Vector3 {
         x *= scale
         y *= scale
         z *= scale
+    }
+
+    /**
+     * Subtracts the values of the given vector from this
+     * object.
+     */
+    fun subtract(other: Vector3) {
+        x -= other.x
+        y -= other.y
+        z -= other.z
+    }
+
+    /**
+     * Return the distance between one vector and the next.
+     */
+    fun distanceFrom(other: Vector3): Float {
+        val dx = x - other.x
+        val dy = y - other.y
+        val dz = z - other.z
+        return sqrt(dx * dx + dy * dy + dz * dz)
     }
 
     open fun toFloatArray(): FloatArray {

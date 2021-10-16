@@ -319,13 +319,13 @@ public enum Planet {
 
     // Second, determine position relative to Earth
     HeliocentricCoordinates earthCoords = HeliocentricCoordinates.getInstance(Planet.Sun.getOrbitalElements(time));
-    float earthDistance = planetCoords.DistanceFrom(earthCoords);
+    float earthDistance = planetCoords.distanceFrom(earthCoords);
 
     // Finally, calculate the phase of the body.
     return MathUtil.acos((earthDistance * earthDistance +
-        planetCoords.radius * planetCoords.radius -
-        earthCoords.radius * earthCoords.radius) /
-        (2.0f * earthDistance * planetCoords.radius)) * Geometry.RADIANS_TO_DEGREES;
+        planetCoords.getRadius() * planetCoords.getRadius() -
+        earthCoords.getRadius() * earthCoords.getRadius()) /
+        (2.0f * earthDistance * planetCoords.getRadius())) * Geometry.RADIANS_TO_DEGREES;
   }
 
   /**
@@ -408,13 +408,13 @@ public enum Planet {
 
     // Second, determine position relative to Earth
     HeliocentricCoordinates earthCoords = HeliocentricCoordinates.getInstance(Planet.Sun.getOrbitalElements(time));
-    float earthDistance = planetCoords.DistanceFrom(earthCoords);
+    float earthDistance = planetCoords.distanceFrom(earthCoords);
 
     // Third, calculate the phase of the body.
     float phase = MathUtil.acos((earthDistance * earthDistance +
-        planetCoords.radius * planetCoords.radius -
-        earthCoords.radius * earthCoords.radius) /
-        (2.0f * earthDistance * planetCoords.radius)) * Geometry.RADIANS_TO_DEGREES;
+        planetCoords.getRadius() * planetCoords.getRadius() -
+        earthCoords.getRadius() * earthCoords.getRadius()) /
+        (2.0f * earthDistance * planetCoords.getRadius())) * Geometry.RADIANS_TO_DEGREES;
     float p = phase/100.0f;     // Normalized phase angle
 
     // Finally, calculate the magnitude of the body.
@@ -454,7 +454,7 @@ public enum Planet {
         mag = 100f;
         break;
     }
-    return (mag + 5.0f * MathUtil.log10(planetCoords.radius * earthDistance));
+    return (mag + 5.0f * MathUtil.log10(planetCoords.getRadius() * earthDistance));
   }
 
 
