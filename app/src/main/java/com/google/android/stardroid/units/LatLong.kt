@@ -15,10 +15,7 @@ package com.google.android.stardroid.units
 
 import com.google.android.stardroid.util.Geometry
 import com.google.android.stardroid.util.MathUtil
-
-fun flooredMod(a: Float, n: Float): Float {
-    return (if (a < 0) a % n + n else a) % n
-}
+import com.google.android.stardroid.util.flooredMod
 
 /**
  * A simple struct for latitude and longitude.
