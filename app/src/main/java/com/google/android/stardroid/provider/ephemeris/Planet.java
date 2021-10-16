@@ -305,7 +305,7 @@ public enum Planet {
       RaDec moonRaDec = calculateLunarGeocentricLocation(time);
       GeocentricCoordinates moon = GeocentricCoordinates.getInstance(moonRaDec);
 
-      HeliocentricCoordinates sunCoords = HeliocentricCoordinates.getInstance(Planet.Sun, time);
+      HeliocentricCoordinates sunCoords = HeliocentricCoordinates.getInstance(Planet.Sun.getOrbitalElements(time));
       RaDec sunRaDec = RaDec.calculateRaDecDist(sunCoords);
       GeocentricCoordinates sun = GeocentricCoordinates.getInstance(sunRaDec);
 
@@ -315,10 +315,10 @@ public enum Planet {
     }
 
     // First, determine position in the solar system.
-    HeliocentricCoordinates planetCoords = HeliocentricCoordinates.getInstance(this, time);
+    HeliocentricCoordinates planetCoords = HeliocentricCoordinates.getInstance(getOrbitalElements(time));
 
     // Second, determine position relative to Earth
-    HeliocentricCoordinates earthCoords = HeliocentricCoordinates.getInstance(Planet.Sun, time);
+    HeliocentricCoordinates earthCoords = HeliocentricCoordinates.getInstance(Planet.Sun.getOrbitalElements(time));
     float earthDistance = planetCoords.DistanceFrom(earthCoords);
 
     // Finally, calculate the phase of the body.
@@ -404,10 +404,10 @@ public enum Planet {
     }
 
     // First, determine position in the solar system.
-    HeliocentricCoordinates planetCoords = HeliocentricCoordinates.getInstance(this, time);
+    HeliocentricCoordinates planetCoords = HeliocentricCoordinates.getInstance(getOrbitalElements(time));
 
     // Second, determine position relative to Earth
-    HeliocentricCoordinates earthCoords = HeliocentricCoordinates.getInstance(Planet.Sun, time);
+    HeliocentricCoordinates earthCoords = HeliocentricCoordinates.getInstance(Planet.Sun.getOrbitalElements(time));
     float earthDistance = planetCoords.DistanceFrom(earthCoords);
 
     // Third, calculate the phase of the body.

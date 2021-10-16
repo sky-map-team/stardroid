@@ -14,10 +14,7 @@
 
 package com.google.android.stardroid.units;
 
-import java.util.Date;
-
 import com.google.android.stardroid.provider.ephemeris.OrbitalElements;
-import com.google.android.stardroid.provider.ephemeris.Planet;
 import com.google.android.stardroid.util.Geometry;
 import com.google.android.stardroid.util.MathUtil;
 
@@ -54,14 +51,6 @@ public class HeliocentricCoordinates extends Vector3 {
     float dy = this.y - other.y;
     float dz = this.z - other.z;
     return MathUtil.sqrt(dx * dx + dy * dy + dz * dz);
-  }
-
-  @Deprecated
-  /**
-   * @deprecated - move this to Universe or something.
-   */
-  public static HeliocentricCoordinates getInstance(Planet planet, Date date) {
-    return getInstance(planet.getOrbitalElements(date));
   }
 
   public static HeliocentricCoordinates getInstance(OrbitalElements elem) {

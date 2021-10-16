@@ -28,7 +28,6 @@ import com.google.android.stardroid.source.impl.TextSourceImpl;
 import com.google.android.stardroid.space.Universe;
 import com.google.android.stardroid.units.GeocentricCoordinates;
 import com.google.android.stardroid.units.HeliocentricCoordinates;
-import com.google.android.stardroid.units.RaDec;
 import com.google.android.stardroid.units.Vector3;
 
 import android.content.SharedPreferences;
@@ -91,7 +90,7 @@ public class PlanetSource extends AbstractAstronomicalSource {
 
   private void updateCoords(Date time) {
     this.lastUpdateTimeMs = time.getTime();
-    this.sunCoords = HeliocentricCoordinates.getInstance(Planet.Sun, time);
+    this.sunCoords = HeliocentricCoordinates.getInstance(Planet.Sun.getOrbitalElements(time));
     this.currentCoords.updateFromRaDec(universe.getRaDec(planet, time));
     for (ImageSourceImpl imageSource : imageSources) {
       imageSource.setUpVector(sunCoords);  // TODO(johntaylor): figure out why we do this.
