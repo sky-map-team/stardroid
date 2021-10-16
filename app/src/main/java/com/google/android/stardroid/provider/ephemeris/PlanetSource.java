@@ -61,7 +61,7 @@ public class PlanetSource extends AbstractAstronomicalSource {
   private final String name;
   private final SharedPreferences preferences;
   private final GeocentricCoordinates currentCoords = new GeocentricCoordinates(0, 0, 0);
-  private HeliocentricCoordinates sunCoords;
+  private Vector3 sunCoords;
   private int imageId = -1;
 
   private long lastUpdateTimeMs  = 0L;
@@ -90,7 +90,7 @@ public class PlanetSource extends AbstractAstronomicalSource {
 
   private void updateCoords(Date time) {
     this.lastUpdateTimeMs = time.getTime();
-    this.sunCoords = HeliocentricCoordinates.getInstance(Planet.Sun.getOrbitalElements(time));
+    this.sunCoords = HeliocentricCoordinates.heliocentricCoordinatesFromOrbitalElements(Planet.Sun.getOrbitalElements(time));
     this.currentCoords.updateFromRaDec(universe.getRaDec(planet, time));
     for (ImageSourceImpl imageSource : imageSources) {
       imageSource.setUpVector(sunCoords);  // TODO(johntaylor): figure out why we do this.

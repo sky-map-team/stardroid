@@ -24,6 +24,7 @@ import com.google.android.stardroid.units.GeocentricCoordinates;
 import com.google.android.stardroid.units.HeliocentricCoordinates;
 import com.google.android.stardroid.units.LatLong;
 import com.google.android.stardroid.units.RaDec;
+import com.google.android.stardroid.units.Vector3;
 import com.google.android.stardroid.util.Geometry;
 import com.google.android.stardroid.util.MathUtil;
 import com.google.android.stardroid.util.MiscUtil;
@@ -305,7 +306,7 @@ public enum Planet {
       RaDec moonRaDec = calculateLunarGeocentricLocation(time);
       GeocentricCoordinates moon = GeocentricCoordinates.getInstance(moonRaDec);
 
-      HeliocentricCoordinates sunCoords = HeliocentricCoordinates.getInstance(Planet.Sun.getOrbitalElements(time));
+      Vector3 sunCoords = HeliocentricCoordinates.heliocentricCoordinatesFromOrbitalElements(Planet.Sun.getOrbitalElements(time));
       RaDec sunRaDec = RaDec.calculateRaDecDist(sunCoords);
       GeocentricCoordinates sun = GeocentricCoordinates.getInstance(sunRaDec);
 
@@ -315,17 +316,17 @@ public enum Planet {
     }
 
     // First, determine position in the solar system.
-    HeliocentricCoordinates planetCoords = HeliocentricCoordinates.getInstance(getOrbitalElements(time));
+    Vector3 planetCoords = HeliocentricCoordinates.heliocentricCoordinatesFromOrbitalElements(getOrbitalElements(time));
 
     // Second, determine position relative to Earth
-    HeliocentricCoordinates earthCoords = HeliocentricCoordinates.getInstance(Planet.Sun.getOrbitalElements(time));
+    Vector3 earthCoords = HeliocentricCoordinates.heliocentricCoordinatesFromOrbitalElements(Planet.Sun.getOrbitalElements(time));
     float earthDistance = planetCoords.distanceFrom(earthCoords);
 
     // Finally, calculate the phase of the body.
     return MathUtil.acos((earthDistance * earthDistance +
-        planetCoords.getRadius() * planetCoords.getRadius() -
-        earthCoords.getRadius() * earthCoords.getRadius()) /
-        (2.0f * earthDistance * planetCoords.getRadius())) * Geometry.RADIANS_TO_DEGREES;
+        planetCoords.getLength2() -
+        earthCoords.getLength2()) /
+        (2.0f * earthDistance * planetCoords.getLength())) * Geometry.RADIANS_TO_DEGREES;
   }
 
   /**
@@ -404,17 +405,17 @@ public enum Planet {
     }
 
     // First, determine position in the solar system.
-    HeliocentricCoordinates planetCoords = HeliocentricCoordinates.getInstance(getOrbitalElements(time));
+    Vector3 planetCoords = HeliocentricCoordinates.heliocentricCoordinatesFromOrbitalElements(getOrbitalElements(time));
 
     // Second, determine position relative to Earth
-    HeliocentricCoordinates earthCoords = HeliocentricCoordinates.getInstance(Planet.Sun.getOrbitalElements(time));
+    Vector3 earthCoords = HeliocentricCoordinates.heliocentricCoordinatesFromOrbitalElements(Planet.Sun.getOrbitalElements(time));
     float earthDistance = planetCoords.distanceFrom(earthCoords);
 
     // Third, calculate the phase of the body.
     float phase = MathUtil.acos((earthDistance * earthDistance +
-        planetCoords.getRadius() * planetCoords.getRadius() -
-        earthCoords.getRadius() * earthCoords.getRadius()) /
-        (2.0f * earthDistance * planetCoords.getRadius())) * Geometry.RADIANS_TO_DEGREES;
+        planetCoords.getLength2() -
+        earthCoords.getLength2()) /
+        (2.0f * earthDistance * planetCoords.getLength())) * Geometry.RADIANS_TO_DEGREES;
     float p = phase/100.0f;     // Normalized phase angle
 
     // Finally, calculate the magnitude of the body.
@@ -454,7 +455,7 @@ public enum Planet {
         mag = 100f;
         break;
     }
-    return (mag + 5.0f * MathUtil.log10(planetCoords.getRadius() * earthDistance));
+    return (mag + 5.0f * MathUtil.log10(planetCoords.getLength() * earthDistance));
   }
 
 

@@ -66,7 +66,7 @@ data class RaDec(
         }
 
         @JvmStatic
-        fun calculateRaDecDist(coords: HeliocentricCoordinates): RaDec {
+        fun calculateRaDecDist(coords: Vector3): RaDec {
             // find the RA and DEC from the rectangular equatorial coords
             val ra =
                 Geometry.mod2pi(MathUtil.atan2(coords.y, coords.x)) * Geometry.RADIANS_TO_DEGREES

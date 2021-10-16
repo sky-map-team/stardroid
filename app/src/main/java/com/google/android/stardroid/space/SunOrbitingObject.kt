@@ -1,7 +1,8 @@
 package com.google.android.stardroid.space
 
 import com.google.android.stardroid.provider.ephemeris.Planet
-import com.google.android.stardroid.units.HeliocentricCoordinates.Companion.getInstance
+import com.google.android.stardroid.units.HeliocentricCoordinates
+import com.google.android.stardroid.units.HeliocentricCoordinates.Companion.heliocentricCoordinatesFromOrbitalElements
 import com.google.android.stardroid.units.RaDec
 import java.util.*
 
@@ -13,13 +14,13 @@ open class SunOrbitingObject(private val planet : Planet) : SolarSystemObject() 
         val earthCoords = getEarthHeliocentricCoordinates(date)
         var myCoords = getMyHeliocentricCoordinates(date)
         myCoords.subtract(earthCoords)
-        val equ = myCoords.calculateEquatorialCoordinates()
+        val equ = HeliocentricCoordinates.convertToEquatorialCoordinates(myCoords)
         return RaDec.calculateRaDecDist(equ)
     }
 
     protected open fun getMyHeliocentricCoordinates(date: Date) =
-        getInstance(planet.getOrbitalElements(date))
+        heliocentricCoordinatesFromOrbitalElements(planet.getOrbitalElements(date))
 
     protected fun getEarthHeliocentricCoordinates(date: Date) =
-        getInstance(Planet.Sun.getOrbitalElements(date))
+        heliocentricCoordinatesFromOrbitalElements(Planet.Sun.getOrbitalElements(date))
 }

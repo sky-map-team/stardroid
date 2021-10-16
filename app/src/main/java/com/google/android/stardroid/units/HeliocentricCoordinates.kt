@@ -18,27 +18,7 @@ import com.google.android.stardroid.util.MathUtil.sin
 import com.google.android.stardroid.util.Geometry
 import com.google.android.stardroid.provider.ephemeris.OrbitalElements
 
-class HeliocentricCoordinates(
-    xh: Float, yh: Float, zh: Float
-) : Vector3(xh, yh, zh) {
-
-    val radius
-      get() = this.length
-
-
-    fun calculateEquatorialCoordinates(): HeliocentricCoordinates {
-        return HeliocentricCoordinates(
-            x,
-            y * cos(OBLIQUITY) - z * sin(OBLIQUITY),
-            y * sin(OBLIQUITY) + z * cos(OBLIQUITY)
-        )
-    }
-
-
-
-    override fun toString(): String {
-        return String.format("(%f, %f, %f)", x, y, z)
-    }
+class HeliocentricCoordinates() {
 
     companion object {
         // Value of the obliquity of the ecliptic for J2000
@@ -50,7 +30,7 @@ class HeliocentricCoordinates(
          * and measured in Astronomical units.
          */
         @JvmStatic
-        fun getInstance(elem: OrbitalElements): HeliocentricCoordinates {
+        fun heliocentricCoordinatesFromOrbitalElements(elem: OrbitalElements): Vector3 {
             val anomaly = elem.anomaly
             val ecc = elem.eccentricity
             val radius = elem.distance * (1 - ecc * ecc) / (1 + ecc * cos(anomaly))
@@ -68,7 +48,20 @@ class HeliocentricCoordinates(
                             cos(asc) * sin(anomaly + per - asc) *
                             cos(inc))
             val zh = radius * (sin(anomaly + per - asc) * sin(inc))
-            return HeliocentricCoordinates(xh, yh, zh)
+            return Vector3(xh, yh, zh)
+        }
+
+        /**
+         * Converts to coordinates centered on Earth in the Earth's rotational plane to
+         * coordinates in Earth's equatorial plane.
+         */
+        @JvmStatic
+        fun convertToEquatorialCoordinates(earthOrbitalPlane : Vector3): Vector3 {
+            return Vector3(
+                earthOrbitalPlane.x,
+                earthOrbitalPlane.y * cos(OBLIQUITY) - earthOrbitalPlane.z * sin(OBLIQUITY),
+                earthOrbitalPlane.y * sin(OBLIQUITY) + earthOrbitalPlane.z * cos(OBLIQUITY)
+            )
         }
     }
 }
