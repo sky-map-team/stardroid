@@ -75,32 +75,9 @@ public class GeocentricCoordinates extends Vector3 {
     return coords;
   }
 
-  /**
-   * Convert ra and dec to x,y,z where the point is place on the unit sphere.
-   */
-  public static GeocentricCoordinates getInstanceFromFloatArray(float[] xyz) {
-    return new GeocentricCoordinates(xyz[0], xyz[1], xyz[2]);
-  }
-
   @Override
   public float[] toFloatArray() {
     return new float[] {x, y, z};
-  }
-
-  /**
-   * Assumes it's an array of length 3.
-   * @param xyz
-   */
-  private void updateFromFloatArray(float[] xyz) {
-    this.x = xyz[0];
-    this.y = xyz[1];
-    this.z = xyz[2];
-  }
-
-  private void updateFromVector3(Vector3 v) {
-    this.x = v.x;
-    this.y = v.y;
-    this.z = v.z;
   }
 
   @Override
