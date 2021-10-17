@@ -95,6 +95,41 @@ public class PlanetTest extends TestCase {
     assertEquals(99.6, Planet.Mars.calculatePercentIlluminated(testCal.getTime()), PHASE_TOL);
   }
 
+  private static float REG_TOL = 0.0001f;
+  // These are copies of the above tests that are disabled, but 'fixed' to pass. This doesn't
+  // mean the calculations are correct...just that any refactorings we do haven't changed them.
+  // This obviously needs to be revisited.
+  @Test
+  public void regressionTests() {
+    GregorianCalendar testCal = new GregorianCalendar();
+    testCal.setTimeZone(TimeZone.getTimeZone("GMT"));
+
+    // 2010 Dec 25, 12:00 UT1
+    testCal.set(2010, GregorianCalendar.DECEMBER, 25, 12, 0, 0);
+    assertEquals(21.742111206054688, Planet.Moon.calculatePercentIlluminated(testCal.getTime()), REG_TOL);
+    assertEquals(12.131664276123047, Planet.Mercury.calculatePercentIlluminated(testCal.getTime()), REG_TOL);
+    assertEquals(42.03889846801758, Planet.Venus.calculatePercentIlluminated(testCal.getTime()), REG_TOL);
+    assertEquals(99.64849853515625, Planet.Mars.calculatePercentIlluminated(testCal.getTime()), REG_TOL);
+
+    // Don't trust these numbers
+
+    assertEquals(124.41324615478516, Planet.Moon.calculatePhaseAngle(testCal.getTime()), REG_TOL);
+    assertEquals(139.23260498046875, Planet.Mercury.calculatePhaseAngle(testCal.getTime()), REG_TOL);
+    assertEquals(99.1617431640625, Planet.Venus.calculatePhaseAngle(testCal.getTime()), REG_TOL);
+    assertEquals(6.797830581665039, Planet.Mars.calculatePhaseAngle(testCal.getTime()), REG_TOL);
+
+    assertEquals(-10, Planet.Moon.getMagnitude(testCal.getTime()), REG_TOL);
+    assertEquals(1.7964696884155273, Planet.Mercury.getMagnitude(testCal.getTime()), REG_TOL);
+    assertEquals(-4.544736385345459, Planet.Venus.getMagnitude(testCal.getTime()), REG_TOL);
+    assertEquals(1.2287708520889282, Planet.Mars.getMagnitude(testCal.getTime()), REG_TOL);
+    assertEquals(-2.377939224243164, Planet.Jupiter.getMagnitude(testCal.getTime()), REG_TOL);
+    assertEquals(1.1006574630737305, Planet.Saturn.getMagnitude(testCal.getTime()), REG_TOL);
+    assertEquals(5.848583698272705, Planet.Uranus.getMagnitude(testCal.getTime()), REG_TOL);
+    assertEquals(7.944333076477051, Planet.Neptune.getMagnitude(testCal.getTime()), REG_TOL);
+    assertEquals(14.110675811767578, Planet.Pluto.getMagnitude(testCal.getTime()), REG_TOL);
+    assertEquals(-27, Planet.Sun.getMagnitude(testCal.getTime()), REG_TOL);
+  }
+
   @Test
   public void testCalcNextRiseSetTime() {
     GregorianCalendar testCal = new GregorianCalendar();

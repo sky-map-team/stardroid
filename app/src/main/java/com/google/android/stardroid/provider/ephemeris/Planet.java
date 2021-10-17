@@ -295,8 +295,9 @@ public enum Planet {
   /**
    * Calculates the phase angle of the planet, in degrees.
    */
+  // TODO(jontayler): not clear why default viz doesn't work here.
   @VisibleForTesting
-  float calculatePhaseAngle(Date time) {
+  public float calculatePhaseAngle(Date time) {
     // For the moon, we will approximate phase angle by calculating the
     // elongation of the moon relative to the sun. This is accurate to within
     // about 1%.
