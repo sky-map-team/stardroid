@@ -55,8 +55,8 @@ public class ManualOrientationController extends AbstractController {
       return;
     }
     Pointing pointing = model.getPointing();
-    GeocentricCoordinates pointingXyz = pointing.getLineOfSight();
-    GeocentricCoordinates topXyz = pointing.getPerpendicular();
+    Vector3 pointingXyz = pointing.getLineOfSight();
+    Vector3 topXyz = pointing.getPerpendicular();
     Vector3 horizontalXyz = Geometry.vectorProduct(pointingXyz, topXyz);
     Vector3 deltaXyz = Geometry.scaleVector(horizontalXyz, radians);
 
@@ -78,9 +78,9 @@ public class ManualOrientationController extends AbstractController {
     }
     // Log.d(TAG, "Scrolling up down");
     Pointing pointing = model.getPointing();
-    GeocentricCoordinates pointingXyz = pointing.getLineOfSight();
+    Vector3 pointingXyz = pointing.getLineOfSight();
     // Log.d(TAG, "Current view direction " + viewDir);
-    GeocentricCoordinates topXyz = pointing.getPerpendicular();
+    Vector3 topXyz = pointing.getPerpendicular();
 
     Vector3 deltaXyz = Geometry.scaleVector(topXyz, -radians);
     Vector3 newPointingXyz = Geometry.addVectors(pointingXyz, deltaXyz);
@@ -102,11 +102,11 @@ public class ManualOrientationController extends AbstractController {
     }
     Log.d(TAG, "Rotating by " + degrees);
     Pointing pointing = model.getPointing();
-    GeocentricCoordinates pointingXyz = pointing.getLineOfSight();
+    Vector3 pointingXyz = pointing.getLineOfSight();
 
     Matrix33 rotation = Geometry.calculateRotationMatrix(degrees, pointingXyz);
 
-    GeocentricCoordinates topXyz = pointing.getPerpendicular();
+    Vector3 topXyz = pointing.getPerpendicular();
 
     Vector3 newUpXyz = Geometry.matrixVectorMultiply(rotation, topXyz);
     newUpXyz.normalize();

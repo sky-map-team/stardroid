@@ -133,7 +133,7 @@ public class LabelObjectManager extends RendererObjectManager {
       // transformations manually, we can just update the positions stored
       // on the label objects.
       for (int i = 0; i < mLabels.length; i++) {
-        GeocentricCoordinates pos = labels.get(i).getLocation();
+        Vector3 pos = labels.get(i).getLocation();
         mLabels[i].x = pos.x;
         mLabels[i].y = pos.y;
         mLabels[i].z = pos.z;
@@ -147,7 +147,7 @@ public class LabelObjectManager extends RendererObjectManager {
     for (Label l : mLabels) {
       int region;
       if (COMPUTE_REGIONS) {
-        region = SkyRegionMap.getObjectRegion(new GeocentricCoordinates(l.x, l.y, l.z));
+        region = SkyRegionMap.getObjectRegion(new Vector3(l.x, l.y, l.z));
       } else {
         region = SkyRegionMap.CATCHALL_REGION_ID;
       }

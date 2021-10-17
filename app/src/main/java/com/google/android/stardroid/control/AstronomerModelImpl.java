@@ -205,41 +205,39 @@ public class AstronomerModelImpl implements AstronomerModel {
   }
 
   @Override
-  public GeocentricCoordinates getNorth() {
+  public Vector3 getNorth() {
     calculateLocalNorthAndUpInCelestialCoords(false);
-    return GeocentricCoordinates.getInstanceFromVector3(trueNorthCelestial);
+    return trueNorthCelestial.copy();
   }
 
   @Override
-  public GeocentricCoordinates getSouth() {
+  public Vector3 getSouth() {
     calculateLocalNorthAndUpInCelestialCoords(false);
-    return GeocentricCoordinates.getInstanceFromVector3(Geometry.scaleVector(trueNorthCelestial,
-                                                                             -1));
+    return Geometry.scaleVector(trueNorthCelestial, -1);
   }
 
   @Override
-  public GeocentricCoordinates getZenith() {
+  public Vector3 getZenith() {
     calculateLocalNorthAndUpInCelestialCoords(false);
-    return GeocentricCoordinates.getInstanceFromVector3(upCelestial);
+    return upCelestial.copy();
   }
 
   @Override
-  public GeocentricCoordinates getNadir() {
+  public Vector3 getNadir() {
     calculateLocalNorthAndUpInCelestialCoords(false);
-    return GeocentricCoordinates.getInstanceFromVector3(Geometry.scaleVector(upCelestial, -1));
+    return Geometry.scaleVector(upCelestial, -1);
   }
 
   @Override
-  public GeocentricCoordinates getEast() {
+  public Vector3 getEast() {
     calculateLocalNorthAndUpInCelestialCoords(false);
-    return GeocentricCoordinates.getInstanceFromVector3(trueEastCelestial);
+    return trueEastCelestial.copy();
   }
 
   @Override
-  public GeocentricCoordinates getWest() {
+  public Vector3 getWest() {
     calculateLocalNorthAndUpInCelestialCoords(false);
-    return GeocentricCoordinates.getInstanceFromVector3(Geometry.scaleVector(trueEastCelestial,
-                                                                             -1));
+    return Geometry.scaleVector(trueEastCelestial,-1);
   }
 
   @Override
@@ -287,7 +285,7 @@ public class AstronomerModelImpl implements AstronomerModel {
     celestialCoordsLastUpdated = currentTime;
     updateMagneticCorrection();
     RaDec up = calculateRADecOfZenith(getTime(), location);
-    upCelestial = GeocentricCoordinates.getInstance(up);
+    upCelestial = GeocentricCoordinates.getGeocentricCoords(up);
     Vector3 z = AXIS_OF_EARTHS_ROTATION;
     float zDotu = scalarProduct(upCelestial, z);
     trueNorthCelestial = addVectors(z, scaleVector(upCelestial, -zDotu));

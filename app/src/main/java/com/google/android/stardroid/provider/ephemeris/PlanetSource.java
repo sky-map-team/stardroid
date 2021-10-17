@@ -14,6 +14,8 @@
 
 package com.google.android.stardroid.provider.ephemeris;
 
+import static com.google.android.stardroid.units.GeocentricCoordinates.updateFromRaDec;
+
 import com.google.android.stardroid.base.Lists;
 import com.google.android.stardroid.control.AstronomerModel;
 import com.google.android.stardroid.renderer.RendererObjectManager.UpdateType;
@@ -60,7 +62,7 @@ public class PlanetSource extends AbstractAstronomicalSource {
   private final AstronomerModel model;
   private final String name;
   private final SharedPreferences preferences;
-  private final GeocentricCoordinates currentCoords = new GeocentricCoordinates(0, 0, 0);
+  private final Vector3 currentCoords = new Vector3(0, 0, 0);
   private Vector3 sunCoords;
   private int imageId = -1;
 
@@ -84,14 +86,14 @@ public class PlanetSource extends AbstractAstronomicalSource {
   }
 
   @Override
-  public GeocentricCoordinates getSearchLocation() {
+  public Vector3 getSearchLocation() {
     return currentCoords;
   }
 
   private void updateCoords(Date time) {
     this.lastUpdateTimeMs = time.getTime();
     this.sunCoords = HeliocentricCoordinates.heliocentricCoordinatesFromOrbitalElements(Planet.Sun.getOrbitalElements(time));
-    this.currentCoords.updateFromRaDec(universe.getRaDec(planet, time));
+    updateFromRaDec(this.currentCoords, universe.getRaDec(planet, time));
     for (ImageSourceImpl imageSource : imageSources) {
       imageSource.setUpVector(sunCoords);  // TODO(johntaylor): figure out why we do this.
     }

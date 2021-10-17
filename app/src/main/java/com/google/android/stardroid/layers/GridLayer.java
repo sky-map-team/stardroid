@@ -124,11 +124,11 @@ public class GridLayer extends AbstractSourceLayer {
         float dec = 90.0f - i * 180.0f / (NUM_DEC_VERTICES - 1);
         RaDec raDec = new RaDec(ra, dec);
         line.raDecs.add(raDec);
-        line.vertices.add(GeocentricCoordinates.getInstance(raDec));
+        line.vertices.add(GeocentricCoordinates.getGeocentricCoords(raDec));
       }
       RaDec raDec = new RaDec(0.0f, -90.0f);
       line.raDecs.add(raDec);
-      line.vertices.add(GeocentricCoordinates.getInstance(raDec));
+      line.vertices.add(GeocentricCoordinates.getGeocentricCoords(raDec));
       return line;
     }
 
@@ -138,11 +138,11 @@ public class GridLayer extends AbstractSourceLayer {
         float ra = i * 360.0f / NUM_RA_VERTICES;
         RaDec raDec = new RaDec(ra, dec);
         line.raDecs.add(raDec);
-        line.vertices.add(GeocentricCoordinates.getInstance(raDec));
+        line.vertices.add(GeocentricCoordinates.getGeocentricCoords(raDec));
       }
       RaDec raDec = new RaDec(0.0f, dec);
       line.raDecs.add(raDec);
-      line.vertices.add(GeocentricCoordinates.getInstance(raDec));
+      line.vertices.add(GeocentricCoordinates.getGeocentricCoords(raDec));
       return line;
     }
 

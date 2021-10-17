@@ -15,7 +15,7 @@
 package com.google.android.stardroid.source;
 
 import com.google.android.stardroid.renderer.RendererObjectManager.UpdateType;
-import com.google.android.stardroid.units.GeocentricCoordinates;
+import com.google.android.stardroid.units.Vector3;
 
 import java.util.Collections;
 import java.util.EnumSet;
@@ -46,7 +46,7 @@ public abstract class AbstractAstronomicalSource implements AstronomicalSource, 
   }
 
   @Override
-  public GeocentricCoordinates getSearchLocation() {
+  public Vector3 getSearchLocation() {
     throw new UnsupportedOperationException("Should not be called");
   }
 

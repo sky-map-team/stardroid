@@ -17,10 +17,11 @@ import com.google.common.truth.Truth.assertThat
 import org.junit.Test
 
 class GeocentricCoordinatesTest {
+    // TODO(jontayler): add some real tests for this class.
     @Test
     fun testEquals() {
-        val one: Vector3 = GeocentricCoordinates(1f, 2f, 3f)
-        val two: Vector3 = GeocentricCoordinates(2f, 4f, 6f)
+        val one: Vector3 = Vector3(1f, 2f, 3f)
+        val two: Vector3 = Vector3(2f, 4f, 6f)
         one.scale(2f)
         assertThat(one).isEqualTo(two)
         assertThat(one).isNotSameInstanceAs(two)

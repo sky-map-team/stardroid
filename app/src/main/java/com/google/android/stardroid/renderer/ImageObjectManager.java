@@ -22,6 +22,7 @@ import com.google.android.stardroid.renderer.util.TextureReference;
 import com.google.android.stardroid.renderer.util.VertexBuffer;
 import com.google.android.stardroid.source.ImageSource;
 import com.google.android.stardroid.units.GeocentricCoordinates;
+import com.google.android.stardroid.units.Vector3;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -89,7 +90,7 @@ public class ImageObjectManager extends RendererObjectManager {
     if (reset || type.contains(UpdateType.UpdatePositions)) {
       for (int i = 0; i < imageSources.size(); i++) {
         ImageSource is = imageSources.get(i);
-        GeocentricCoordinates xyz = is.getLocation();
+        Vector3 xyz = is.getLocation();
         float px = xyz.x;
         float py = xyz.y;
         float pz = xyz.z;

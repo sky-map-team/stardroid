@@ -20,6 +20,7 @@ import com.google.android.stardroid.source.LineSource;
 import com.google.android.stardroid.source.PointSource;
 import com.google.android.stardroid.source.TextSource;
 import com.google.android.stardroid.units.GeocentricCoordinates;
+import com.google.android.stardroid.units.Vector3;
 
 import android.os.ConditionVariable;
 import android.util.Log;
@@ -206,7 +207,7 @@ public abstract class RendererControllerBase {
     }});
   }
 
-  public void queueViewerUpDirection(final GeocentricCoordinates up) {
+  public void queueViewerUpDirection(final Vector3 up) {
     final String msg = "Setting up direction: " + up;
     queueRunnable(msg, CommandType.View, new Runnable() { public void run() {
       mRenderer.setViewerUpDirection(up);
@@ -221,7 +222,7 @@ public abstract class RendererControllerBase {
     }});
   }
 
-  public void queueEnableSkyGradient(final GeocentricCoordinates sunPosition) {
+  public void queueEnableSkyGradient(final Vector3 sunPosition) {
     final String msg = "Enabling sky gradient at: " + sunPosition;
     queueRunnable(msg, CommandType.Data, new Runnable() { public void run() {
       mRenderer.enableSkyGradient(sunPosition);
@@ -233,7 +234,7 @@ public abstract class RendererControllerBase {
     queueRunnable(msg, CommandType.Data, mRenderer::disableSkyGradient);
   }
 
-  public void queueEnableSearchOverlay(final GeocentricCoordinates target,
+  public void queueEnableSearchOverlay(final Vector3 target,
                                        final String targetName) {
     final String msg = "Enabling search overlay";
     queueRunnable(msg, CommandType.Data, new Runnable() { public void run() {

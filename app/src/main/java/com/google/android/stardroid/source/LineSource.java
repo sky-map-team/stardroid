@@ -14,9 +14,9 @@
 
 package com.google.android.stardroid.source;
 
-import java.util.List;
+import com.google.android.stardroid.units.Vector3;
 
-import com.google.android.stardroid.units.GeocentricCoordinates;
+import java.util.List;
 
 /**
  * This interface corresponds to a set of successive line segments (drawn from
@@ -37,6 +37,7 @@ public interface LineSource extends Colorable {
   /**
    * Returns an ordered list of the vertices which should be used to draw a
    * polyline in the renderer.
+   * @return
    */
-  List<GeocentricCoordinates> getVertices();
+  List<Vector3> getVertices();
 }

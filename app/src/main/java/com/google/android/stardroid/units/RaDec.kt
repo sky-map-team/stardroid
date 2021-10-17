@@ -77,7 +77,7 @@ data class RaDec(
         }
 
         @JvmStatic
-        fun fromGeocentricCoords(coords: GeocentricCoordinates): RaDec {
+        fun fromGeocentricCoords(coords: Vector3): RaDec {
             var raRad = MathUtil.atan2(coords.y, coords.x)
             if (raRad < 0) raRad += MathUtil.TWO_PI
             val decRad = MathUtil.atan2(

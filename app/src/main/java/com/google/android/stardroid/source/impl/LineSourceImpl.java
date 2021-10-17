@@ -21,27 +21,27 @@ import java.util.List;
 import android.graphics.Color;
 
 import com.google.android.stardroid.source.LineSource;
-import com.google.android.stardroid.units.GeocentricCoordinates;
 import com.google.android.stardroid.units.RaDec;
+import com.google.android.stardroid.units.Vector3;
 
 /**
  * For representing constellations, constellation boundaries etc.
  */
 public class LineSourceImpl extends AbstractSource implements LineSource {
 
-  public final List<GeocentricCoordinates> vertices;
+  public final List<Vector3> vertices;
   public final List<RaDec> raDecs;
   public final float lineWidth;
 
   public LineSourceImpl() {
-    this(Color.WHITE, new ArrayList<GeocentricCoordinates>(), 1.5f);
+    this(Color.WHITE, new ArrayList<Vector3>(), 1.5f);
   }
 
   public LineSourceImpl(int color) {
-    this(color, new ArrayList<GeocentricCoordinates>(), 1.5f);
+    this(color, new ArrayList<Vector3>(), 1.5f);
   }
 
-  public LineSourceImpl(int color, List<GeocentricCoordinates> vertices, float lineWidth) {
+  public LineSourceImpl(int color, List<Vector3> vertices, float lineWidth) {
     super(color);
 
     this.vertices = vertices;
@@ -52,12 +52,12 @@ public class LineSourceImpl extends AbstractSource implements LineSource {
   public float getLineWidth() {
     return lineWidth;
   }
-  public List<GeocentricCoordinates> getVertices() {
-    List<GeocentricCoordinates> result;
+  public List<Vector3> getVertices() {
+    List<Vector3> result;
     if (vertices != null) {
       result = vertices;
     } else {
-      result = new ArrayList<GeocentricCoordinates>();
+      result = new ArrayList<Vector3>();
     }
     return Collections.unmodifiableList(result);
   }

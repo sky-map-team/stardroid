@@ -155,7 +155,7 @@ public class DynamicStarMapActivity extends InjectableActivity
   private RendererController rendererController;
   private boolean nightMode = false;
   private boolean searchMode = false;
-  private GeocentricCoordinates searchTarget = GeocentricCoordinates.getInstance(0, 0);
+  private Vector3 searchTarget = GeocentricCoordinates.getGeocentricCoords(0, 0);
 
   @Inject SharedPreferences sharedPreferences;
   private GLSurfaceView skyView;
@@ -721,7 +721,7 @@ public class DynamicStarMapActivity extends InjectableActivity
     float x = icicle.getFloat(ApplicationConstants.BUNDLE_X_TARGET);
     float y = icicle.getFloat(ApplicationConstants.BUNDLE_Y_TARGET);
     float z = icicle.getFloat(ApplicationConstants.BUNDLE_Z_TARGET);
-    searchTarget = new GeocentricCoordinates(x, y, z);
+    searchTarget = new Vector3(x, y, z);
     searchTargetName = icicle.getString(ApplicationConstants.BUNDLE_TARGET_NAME);
     if (searchMode) {
       Log.d(TAG, "Searching for target " + searchTargetName + " at target=" + searchTarget);
@@ -743,7 +743,7 @@ public class DynamicStarMapActivity extends InjectableActivity
     super.onSaveInstanceState(icicle);
   }
 
-  public void activateSearchTarget(GeocentricCoordinates target, final String searchTerm) {
+  public void activateSearchTarget(Vector3 target, final String searchTerm) {
     Log.d(TAG, "Item " + searchTerm + " selected");
     // Store these for later.
     searchTarget = target;

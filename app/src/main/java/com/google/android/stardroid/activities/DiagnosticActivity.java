@@ -1,5 +1,8 @@
 package com.google.android.stardroid.activities;
 
+import static com.google.android.stardroid.units.GeocentricCoordinates.getDecOfUnitGeocentricVector;
+import static com.google.android.stardroid.units.GeocentricCoordinates.getRaOfUnitGeocentricVector;
+
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -21,6 +24,7 @@ import com.google.android.stardroid.control.AstronomerModel;
 import com.google.android.stardroid.control.LocationController;
 import com.google.android.stardroid.units.GeocentricCoordinates;
 import com.google.android.stardroid.units.LatLong;
+import com.google.android.stardroid.units.Vector3;
 import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.MiscUtil;
 
@@ -157,8 +161,8 @@ public class DiagnosticActivity extends InjectableActivity implements SensorEven
             ? getString(R.string.east) : getString(R.string.west)) + " "
             + getString(R.string.degrees));
     AstronomerModel.Pointing pointing = model.getPointing();
-    GeocentricCoordinates lineOfSight = pointing.getLineOfSight();
-    setText(R.id.diagnose_pointing_txt, getDegreeInHour(lineOfSight.getRa()) + ", " + lineOfSight.getDec());
+    Vector3 lineOfSight = pointing.getLineOfSight();
+    setText(R.id.diagnose_pointing_txt, getDegreeInHour(getRaOfUnitGeocentricVector(lineOfSight)) + ", " + getDecOfUnitGeocentricVector(lineOfSight));
     Date nowTime = model.getTime();
     SimpleDateFormat dateFormatUtc = new SimpleDateFormat("yyyy-MMM-dd HH:mm:ss");
     dateFormatUtc.setTimeZone(TimeZone.getTimeZone("UTC"));

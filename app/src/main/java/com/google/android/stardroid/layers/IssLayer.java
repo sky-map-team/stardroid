@@ -32,6 +32,7 @@ import com.google.android.stardroid.source.TextSource;
 import com.google.android.stardroid.source.impl.PointSourceImpl;
 import com.google.android.stardroid.source.impl.TextSourceImpl;
 import com.google.android.stardroid.units.GeocentricCoordinates;
+import com.google.android.stardroid.units.Vector3;
 import com.google.android.stardroid.util.MiscUtil;
 import com.google.common.io.Closeables;
 
@@ -165,7 +166,7 @@ public class IssLayer extends AbstractSourceLayer {
     private static final long UPDATE_FREQ_MS = 1L * TimeConstants.MILLISECONDS_PER_SECOND;
     private static final int ISS_COLOR = Color.YELLOW;
 
-    private final GeocentricCoordinates coords = new GeocentricCoordinates(1f, 0f, 0f);
+    private final Vector3 coords = new Vector3(1f, 0f, 0f);
     private final ArrayList<PointSource> pointSources = new ArrayList<PointSource>();
     private final ArrayList<TextSource> textSources = new ArrayList<TextSource>();
     private final AstronomerModel model;
@@ -194,7 +195,7 @@ public class IssLayer extends AbstractSourceLayer {
     }
 
     @Override
-    public GeocentricCoordinates getSearchLocation() {
+    public Vector3 getSearchLocation() {
       return coords;
     }
 

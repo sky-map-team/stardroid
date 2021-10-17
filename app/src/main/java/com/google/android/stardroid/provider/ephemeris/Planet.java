@@ -305,11 +305,11 @@ public enum Planet {
     // about 1%.
     if (this == Planet.Moon) {
       RaDec moonRaDec = calculateLunarGeocentricLocation(time);
-      GeocentricCoordinates moon = GeocentricCoordinates.getInstance(moonRaDec);
+      Vector3 moon = GeocentricCoordinates.getGeocentricCoords(moonRaDec);
 
       Vector3 sunCoords = HeliocentricCoordinates.heliocentricCoordinatesFromOrbitalElements(Planet.Sun.getOrbitalElements(time));
       RaDec sunRaDec = RaDec.calculateRaDecDist(sunCoords);
-      GeocentricCoordinates sun = GeocentricCoordinates.getInstance(sunRaDec);
+      Vector3 sun = GeocentricCoordinates.getGeocentricCoords(sunRaDec);
 
       return 180.0f -
           MathUtil.acos(sun.x * moon.x + sun.y * moon.y + sun.z * moon.z)

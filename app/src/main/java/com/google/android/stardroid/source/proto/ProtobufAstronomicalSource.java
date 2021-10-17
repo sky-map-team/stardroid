@@ -31,6 +31,7 @@ import com.google.android.stardroid.source.proto.SourceProto.LabelElementProto;
 import com.google.android.stardroid.source.proto.SourceProto.LineElementProto;
 import com.google.android.stardroid.source.proto.SourceProto.PointElementProto;
 import com.google.android.stardroid.units.GeocentricCoordinates;
+import com.google.android.stardroid.units.Vector3;
 import com.google.android.stardroid.util.MiscUtil;
 
 import java.util.ArrayList;
@@ -126,7 +127,7 @@ public class ProtobufAstronomicalSource extends AbstractAstronomicalSource {
   }
 
   @Override
-  public GeocentricCoordinates getSearchLocation() {
+  public Vector3 getSearchLocation() {
     return getCoords(proto.getSearchLocation());
   }
 
@@ -165,7 +166,7 @@ public class ProtobufAstronomicalSource extends AbstractAstronomicalSource {
     }
     ArrayList<LineSource> points = new ArrayList<>(proto.getLineCount());
     for (LineElementProto element : proto.getLineList()) {
-      ArrayList<GeocentricCoordinates> vertices =
+      ArrayList<Vector3> vertices =
           new ArrayList<>(element.getVertexCount());
       for (GeocentricCoordinatesProto elementVertex : element.getVertexList()) {
         vertices.add(getCoords(elementVertex));
@@ -175,7 +176,7 @@ public class ProtobufAstronomicalSource extends AbstractAstronomicalSource {
     return points;
   }
 
-  private static GeocentricCoordinates getCoords(GeocentricCoordinatesProto proto) {
-    return GeocentricCoordinates.getInstance(proto.getRightAscension(), proto.getDeclination());
+  private static Vector3 getCoords(GeocentricCoordinatesProto proto) {
+    return GeocentricCoordinates.getGeocentricCoords(proto.getRightAscension(), proto.getDeclination());
   }
 }

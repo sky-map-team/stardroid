@@ -26,6 +26,7 @@ import com.google.android.stardroid.source.PointSource;
 import com.google.android.stardroid.source.Sources;
 import com.google.android.stardroid.source.TextSource;
 import com.google.android.stardroid.units.GeocentricCoordinates;
+import com.google.android.stardroid.units.Vector3;
 import com.google.android.stardroid.util.MiscUtil;
 
 import android.content.res.Resources;
@@ -78,7 +79,7 @@ public abstract class AbstractSourceLayer extends AbstractLayer {
 
       List<String> names = astroSource.getNames();
       if (!names.isEmpty()) {
-        GeocentricCoordinates searchLoc = astroSource.getSearchLocation();
+        Vector3 searchLoc = astroSource.getSearchLocation();
         for (String name : names) {
           searchIndex.put(name.toLowerCase(), new SearchResult(name, searchLoc));
           prefixStore.add(name.toLowerCase());

@@ -19,6 +19,7 @@ import android.util.Log;
 
 import com.google.android.stardroid.base.VisibleForTesting;
 import com.google.android.stardroid.units.GeocentricCoordinates;
+import com.google.android.stardroid.units.Vector3;
 import com.google.android.stardroid.util.MiscUtil;
 
 import java.util.ArrayList;
@@ -193,7 +194,7 @@ public class ControllerGroup implements Controller {
    *
    * @param target the destination
    */
-  public void teleport(GeocentricCoordinates target) {
+  public void teleport(Vector3 target) {
     teleportingController.teleport(target);
   }
   

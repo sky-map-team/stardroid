@@ -14,7 +14,6 @@
 
 package com.google.android.stardroid.control;
 
-import com.google.android.stardroid.units.GeocentricCoordinates;
 import com.google.android.stardroid.units.LatLong;
 import com.google.android.stardroid.units.Vector3;
 import com.google.android.stardroid.util.Geometry;
@@ -185,14 +184,14 @@ public class AstronomerModelWithMagneticVariationTest extends TestCase {
     };
     astronomer.setClock(fakeClock);
     astronomer.setPhoneSensorValues(acceleration, magneticField);
-    GeocentricCoordinates pointing = astronomer.getPointing().getLineOfSight();
-    GeocentricCoordinates upAlongPhone = astronomer.getPointing().getPerpendicular();
-    GeocentricCoordinates north = astronomer.getNorth();
-    GeocentricCoordinates east = astronomer.getEast();
-    GeocentricCoordinates south = astronomer.getSouth();
-    GeocentricCoordinates west = astronomer.getWest();
-    GeocentricCoordinates zenith = astronomer.getZenith();
-    GeocentricCoordinates nadir = astronomer.getNadir();
+    Vector3 pointing = astronomer.getPointing().getLineOfSight();
+    Vector3 upAlongPhone = astronomer.getPointing().getPerpendicular();
+    Vector3 north = astronomer.getNorth();
+    Vector3 east = astronomer.getEast();
+    Vector3 south = astronomer.getSouth();
+    Vector3 west = astronomer.getWest();
+    Vector3 zenith = astronomer.getZenith();
+    Vector3 nadir = astronomer.getNadir();
     assertVectorEquals(expectedZenith, zenith, TOL_LENGTH, TOL_ANGLE);
     assertVectorEquals(expectedNadir, nadir, TOL_LENGTH, TOL_ANGLE);
     assertVectorEquals(expectedNorth, north, TOL_LENGTH, TOL_ANGLE);

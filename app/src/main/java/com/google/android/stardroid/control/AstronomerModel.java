@@ -34,18 +34,19 @@ public interface AstronomerModel {
    * @author John Taylor
    */
   class Pointing {
-    private final GeocentricCoordinates lineOfSight;
-    private final GeocentricCoordinates perpendicular;
+    // Geocentric coordinates
+    private final Vector3 lineOfSight;
+    private final Vector3 perpendicular;
 
-    public Pointing(GeocentricCoordinates lineOfSight,
-                    GeocentricCoordinates perpendicular) {
+    public Pointing(Vector3 lineOfSight,
+                    Vector3 perpendicular) {
       this.lineOfSight = lineOfSight.copy();
       this.perpendicular = perpendicular.copy();
     }
 
     public Pointing() {
-      this(new GeocentricCoordinates(1, 0, 0),
-           new GeocentricCoordinates(0, 1, 0));
+      this(new Vector3(1, 0, 0),
+           new Vector3(0, 1, 0));
     }
 
     /**
@@ -54,7 +55,7 @@ public interface AstronomerModel {
      * GeocentricCoordinates object it might be more efficient to
      * use {@link #getLineOfSightX()} etc.
      */
-    public GeocentricCoordinates getLineOfSight() {
+    public Vector3 getLineOfSight() {
       return lineOfSight.copy();
     }
 
@@ -64,7 +65,7 @@ public interface AstronomerModel {
      * GeocentricCoordinates object it might be more efficient to
      * use {@link #getLineOfSightX()} etc.
      */
-    public GeocentricCoordinates getPerpendicular() {
+    public Vector3 getPerpendicular() {
       return perpendicular.copy();
     }
 
@@ -174,32 +175,32 @@ public interface AstronomerModel {
   /**
    * Returns the user's North in celestial coordinates.
    */
-  GeocentricCoordinates getNorth();
+  Vector3 getNorth();
 
   /**
    * Returns the user's South in celestial coordinates.
    */
-  GeocentricCoordinates getSouth();
+  Vector3 getSouth();
 
   /**
    * Returns the user's Zenith in celestial coordinates.
    */
-  GeocentricCoordinates getZenith();
+  Vector3 getZenith();
 
   /**
    * Returns the user's Nadir in celestial coordinates.
    */
-  GeocentricCoordinates getNadir();
+  Vector3 getNadir();
 
   /**
    * Returns the user's East in celestial coordinates.
    */
-  GeocentricCoordinates getEast();
+  Vector3 getEast();
 
   /**
    * Returns the user's West in celestial coordinates.
    */
-  GeocentricCoordinates getWest();
+  Vector3 getWest();
 
   void setMagneticDeclinationCalculator(MagneticDeclinationCalculator calculator);
 
