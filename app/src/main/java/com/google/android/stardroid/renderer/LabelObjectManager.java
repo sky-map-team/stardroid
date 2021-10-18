@@ -17,17 +17,16 @@ package com.google.android.stardroid.renderer;
 import android.graphics.Paint;
 import android.graphics.Typeface;
 
+import com.google.android.stardroid.math.MathUtil;
+import com.google.android.stardroid.math.Matrix4x4;
+import com.google.android.stardroid.math.Vector3;
 import com.google.android.stardroid.renderer.util.GLBuffer;
 import com.google.android.stardroid.renderer.util.LabelMaker;
 import com.google.android.stardroid.renderer.util.SkyRegionMap;
 import com.google.android.stardroid.renderer.util.TextureManager;
 import com.google.android.stardroid.renderer.util.TextureReference;
 import com.google.android.stardroid.source.TextSource;
-import com.google.android.stardroid.math.GeocentricCoordinates;
-import com.google.android.stardroid.math.Vector3;
 import com.google.android.stardroid.util.FixedPoint;
-import com.google.android.stardroid.util.MathUtil;
-import com.google.android.stardroid.util.Matrix4x4;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;

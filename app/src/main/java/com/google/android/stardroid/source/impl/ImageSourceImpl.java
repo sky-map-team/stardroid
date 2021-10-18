@@ -17,13 +17,13 @@ package com.google.android.stardroid.source.impl;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
 import android.graphics.BitmapFactory.Options;
+import android.graphics.Color;
 
-import com.google.android.stardroid.source.ImageSource;
 import com.google.android.stardroid.math.GeocentricCoordinates;
 import com.google.android.stardroid.math.Vector3;
-import com.google.android.stardroid.util.VectorUtil;
+import com.google.android.stardroid.math.VectorUtil;
+import com.google.android.stardroid.source.ImageSource;
 
 /**
  *  A celestial object represented by an image, such as a planet or a

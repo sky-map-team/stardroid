@@ -14,17 +14,17 @@
 
 package com.google.android.stardroid.renderer;
 
-import javax.microedition.khronos.opengles.GL10;
-
 import android.content.res.Resources;
 
 import com.google.android.stardroid.R;
+import com.google.android.stardroid.math.MathUtil;
+import com.google.android.stardroid.math.Vector3;
 import com.google.android.stardroid.renderer.util.SearchHelper;
 import com.google.android.stardroid.renderer.util.TextureManager;
 import com.google.android.stardroid.renderer.util.TextureReference;
 import com.google.android.stardroid.renderer.util.TexturedQuad;
-import com.google.android.stardroid.math.Vector3;
-import com.google.android.stardroid.util.MathUtil;
+
+import javax.microedition.khronos.opengles.GL10;
 
 public class CrosshairOverlay {
 

@@ -20,7 +20,7 @@ package com.google.android.stardroid.math;
  *
  * @author Dominic Widdows
  */
-public class Matrix33 implements Cloneable {
+public class Matrix3x3 implements Cloneable {
 
   public float xx;
   public float xy;
@@ -44,9 +44,9 @@ public class Matrix33 implements Cloneable {
    * @param zy row 3, col 2
    * @param zz row 3, col 3
    */
-  public Matrix33(float xx, float xy, float xz,
-                  float yx, float yy, float yz,
-                  float zx, float zy, float zz) {
+  public Matrix3x3(float xx, float xy, float xz,
+                   float yx, float yy, float yz,
+                   float zx, float zy, float zz) {
     this.xx = xx;
     this.xy = xy;
     this.xz = xz;
@@ -61,7 +61,7 @@ public class Matrix33 implements Cloneable {
   /**
    * Construct a matrix from three column vectors.
    */
-  public Matrix33(Vector3 v1, Vector3 v2, Vector3 v3) {
+  public Matrix3x3(Vector3 v1, Vector3 v2, Vector3 v3) {
     this(v1, v2, v3, true);
   }
 
@@ -70,7 +70,7 @@ public class Matrix33 implements Cloneable {
    * @param columnVectors true if the vectors are column vectors, otherwise
    * they're row vectors.
    */
-  public Matrix33(Vector3 v1, Vector3 v2, Vector3 v3, boolean columnVectors) {
+  public Matrix3x3(Vector3 v1, Vector3 v2, Vector3 v3, boolean columnVectors) {
     if (columnVectors) {
       this.xx = v1.x;
       this.yx = v1.y;
@@ -96,31 +96,31 @@ public class Matrix33 implements Cloneable {
 
   // TODO(widdows): rename this to something like copyOf().
   @Override
-  public Matrix33 clone() {
-    return new Matrix33(xx, xy, xz,
+  public Matrix3x3 clone() {
+    return new Matrix3x3(xx, xy, xz,
                         yx, yy, yz,
                         zx, zy, zz);
   }
 
-  public static Matrix33 getIdMatrix() {
-    return new Matrix33(1, 0, 0, 0, 1, 0, 0, 0, 1);
+  public static Matrix3x3 getIdMatrix() {
+    return new Matrix3x3(1, 0, 0, 0, 1, 0, 0, 0, 1);
   }
 
   /**
    * Create a zero matrix.
    */
-  public Matrix33() {
-    new Matrix33(0, 0, 0, 0, 0, 0, 0, 0, 0);
+  public Matrix3x3() {
+    new Matrix3x3(0, 0, 0, 0, 0, 0, 0, 0, 0);
   }
 
   public float getDeterminant() {
     return xx*yy*zz + xy*yz*zx + xz*yx*zy - xx*yz*zy - yy*zx*xz - zz*xy*yx;
   }
 
-  public Matrix33 getInverse() {
+  public Matrix3x3 getInverse() {
     float det = getDeterminant();
     if (det == 0.0) return null;
-    return new Matrix33(
+    return new Matrix3x3(
         (yy*zz - yz*zy) / det, (xz*zy - xy*zz) / det, (xy*yz - xz*yy) / det,
         (yz*zx - yx*zz) / det, (xx*zz - xz*zx) / det, (xz*yx - xx*yz) / det,
         (yx*zy - yy*zx) / det, (xy*zx - xx*zy) / det, (xx*yy - xy*yx) / det);

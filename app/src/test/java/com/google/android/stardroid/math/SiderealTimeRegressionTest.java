@@ -12,13 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.google.android.stardroid.util;
+package com.google.android.stardroid.math;
+
+import junit.framework.TestCase;
 
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.TimeZone;
-
-import junit.framework.TestCase;
 
 /**
  * Tests based on data from

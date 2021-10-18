@@ -12,10 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.google.android.stardroid.util;
-
-import com.google.android.stardroid.math.Vector3;
-
+package com.google.android.stardroid.math;
 
 public class VectorUtil {
   public static Vector3 zero() {
@@ -33,7 +30,7 @@ public class VectorUtil {
   }
   
   public static float angleBetween(Vector3 p1, Vector3 p2) {
-    return MathUtil.acos(dotProduct(p1, p2) / (length(p1) * length(p2))); 
+    return MathUtil.acos(dotProduct(p1, p2) / (length(p1) * length(p2)));
   }
   
   public static float length(Vector3 v) {

@@ -13,9 +13,6 @@
 // limitations under the License.
 package com.google.android.stardroid.math
 
-import com.google.android.stardroid.util.Geometry
-import com.google.android.stardroid.util.MathUtil
-
 data class RaDec(
     var ra: Float, // In degrees
     var dec: Float // In degrees

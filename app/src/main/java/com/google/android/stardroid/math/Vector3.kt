@@ -13,8 +13,7 @@
 // limitations under the License.
 package com.google.android.stardroid.math
 
-import com.google.android.stardroid.util.MathUtil
-import com.google.android.stardroid.util.MathUtil.sqrt
+import com.google.android.stardroid.math.MathUtil.sqrt
 
 data class Vector3(@JvmField var x : Float, @JvmField var y : Float, @JvmField var z : Float) {
 

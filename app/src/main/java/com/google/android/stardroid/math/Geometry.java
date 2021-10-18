@@ -12,13 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.google.android.stardroid.util;
-
-import com.google.android.stardroid.math.GeocentricCoordinates;
-import com.google.android.stardroid.math.LatLong;
-import com.google.android.stardroid.math.Matrix33;
-import com.google.android.stardroid.math.RaDec;
-import com.google.android.stardroid.math.Vector3;
+package com.google.android.stardroid.math;
 
 import java.util.Date;
 
@@ -126,8 +120,8 @@ public class Geometry {
   /**
    * Multiply two 3X3 matrices m1 * m2.
    */
-  public static Matrix33 matrixMultiply(Matrix33 m1, Matrix33 m2) {
-    return new Matrix33(m1.xx*m2.xx + m1.xy*m2.yx + m1.xz*m2.zx,
+  public static Matrix3x3 matrixMultiply(Matrix3x3 m1, Matrix3x3 m2) {
+    return new Matrix3x3(m1.xx*m2.xx + m1.xy*m2.yx + m1.xz*m2.zx,
                         m1.xx*m2.xy + m1.xy*m2.yy + m1.xz*m2.zy,
                         m1.xx*m2.xz + m1.xy*m2.yz + m1.xz*m2.zz,
                         m1.yx*m2.xx + m1.yy*m2.yx + m1.yz*m2.zx,
@@ -141,7 +135,7 @@ public class Geometry {
   /**
    * Calculate w = m * v where m is a 3X3 matrix and v a column vector.
    */
-  public static Vector3 matrixVectorMultiply(Matrix33 m, Vector3 v) {
+  public static Vector3 matrixVectorMultiply(Matrix3x3 m, Vector3 v) {
     return new Vector3(m.xx*v.x + m.xy*v.y + m.xz*v.z,
                        m.yx*v.x + m.yy*v.y + m.yz*v.z,
                        m.zx*v.x + m.zy*v.y + m.zz*v.z);
@@ -153,7 +147,7 @@ public class Geometry {
    * @param degrees
    * @param axis - must be a unit vector.
    */
-  public static Matrix33 calculateRotationMatrix(float degrees, Vector3 axis) {
+  public static Matrix3x3 calculateRotationMatrix(float degrees, Vector3 axis) {
     // Construct the rotation matrix about this vector
     float cosD = MathUtil.cos(degrees * Geometry.DEGREES_TO_RADIANS);
     float sinD = MathUtil.sin(degrees * Geometry.DEGREES_TO_RADIANS);
@@ -175,7 +169,7 @@ public class Geometry {
     float yzm = y * zm;
     float zxm = z * xm;
 
-    return new Matrix33(x * xm + cosD, xym + zs, zxm - ys,
+    return new Matrix3x3(x * xm + cosD, xym + zs, zxm - ys,
                                            xym - zs, y * ym + cosD, yzm + xs,
                                            zxm + ys, yzm - xs, z * zm + cosD);
   }

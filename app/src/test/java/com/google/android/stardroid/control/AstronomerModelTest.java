@@ -14,15 +14,15 @@
 
 package com.google.android.stardroid.control;
 
+import com.google.android.stardroid.math.Geometry;
 import com.google.android.stardroid.math.LatLong;
+import com.google.android.stardroid.math.MathUtil;
 import com.google.android.stardroid.math.Vector3;
-import com.google.android.stardroid.util.Geometry;
-import com.google.android.stardroid.util.MathUtil;
+
+import junit.framework.TestCase;
 
 import java.util.GregorianCalendar;
 import java.util.TimeZone;
-
-import junit.framework.TestCase;
 
 /**
  * Test of the {@link AstronomerModelImpl} class.

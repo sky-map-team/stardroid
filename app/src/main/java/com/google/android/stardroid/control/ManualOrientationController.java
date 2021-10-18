@@ -14,14 +14,13 @@
 
 package com.google.android.stardroid.control;
 
-import com.google.android.stardroid.control.AstronomerModel.Pointing;
-import com.google.android.stardroid.math.GeocentricCoordinates;
-import com.google.android.stardroid.math.Matrix33;
-import com.google.android.stardroid.math.Vector3;
-import com.google.android.stardroid.util.Geometry;
-import com.google.android.stardroid.util.MiscUtil;
-
 import android.util.Log;
+
+import com.google.android.stardroid.control.AstronomerModel.Pointing;
+import com.google.android.stardroid.math.Geometry;
+import com.google.android.stardroid.math.Matrix3x3;
+import com.google.android.stardroid.math.Vector3;
+import com.google.android.stardroid.util.MiscUtil;
 
 /**
  * Allows user-input elements such as touch screens and trackballs to move the
@@ -104,7 +103,7 @@ public class ManualOrientationController extends AbstractController {
     Pointing pointing = model.getPointing();
     Vector3 pointingXyz = pointing.getLineOfSight();
 
-    Matrix33 rotation = Geometry.calculateRotationMatrix(degrees, pointingXyz);
+    Matrix3x3 rotation = Geometry.calculateRotationMatrix(degrees, pointingXyz);
 
     Vector3 topXyz = pointing.getPerpendicular();
 

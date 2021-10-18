@@ -16,13 +16,13 @@ package com.google.android.stardroid.renderer;
 
 import android.util.Log;
 
+import com.google.android.stardroid.math.MathUtil;
+import com.google.android.stardroid.math.Vector3;
+import com.google.android.stardroid.math.VectorUtil;
 import com.google.android.stardroid.renderer.util.ColorBuffer;
 import com.google.android.stardroid.renderer.util.IndexBuffer;
 import com.google.android.stardroid.renderer.util.TextureManager;
 import com.google.android.stardroid.renderer.util.VertexBuffer;
-import com.google.android.stardroid.math.Vector3;
-import com.google.android.stardroid.util.MathUtil;
-import com.google.android.stardroid.util.VectorUtil;
 
 import javax.microedition.khronos.opengles.GL10;
 

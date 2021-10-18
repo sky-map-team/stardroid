@@ -19,7 +19,7 @@ package com.google.android.stardroid.touch;
 import android.util.Log;
 import android.view.MotionEvent;
 
-import com.google.android.stardroid.util.MathUtil;
+import com.google.android.stardroid.math.MathUtil;
 import com.google.android.stardroid.util.MiscUtil;
 
 /**

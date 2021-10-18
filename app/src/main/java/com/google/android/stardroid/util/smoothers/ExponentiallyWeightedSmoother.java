@@ -16,7 +16,7 @@ package com.google.android.stardroid.util.smoothers;
 import android.hardware.SensorListener;
 import android.util.Log;
 
-import com.google.android.stardroid.util.MathUtil;
+import com.google.android.stardroid.math.MathUtil;
 import com.google.android.stardroid.util.MiscUtil;
 
 /**

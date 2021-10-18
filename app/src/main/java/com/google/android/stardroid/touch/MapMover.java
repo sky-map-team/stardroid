@@ -20,7 +20,7 @@ import android.util.Log;
 
 import com.google.android.stardroid.control.AstronomerModel;
 import com.google.android.stardroid.control.ControllerGroup;
-import com.google.android.stardroid.util.Geometry;
+import com.google.android.stardroid.math.Geometry;
 import com.google.android.stardroid.util.MiscUtil;
 
 /**

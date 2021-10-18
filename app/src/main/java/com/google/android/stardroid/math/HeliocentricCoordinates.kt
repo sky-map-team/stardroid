@@ -13,10 +13,9 @@
 // limitations under the License.
 package com.google.android.stardroid.math
 
-import com.google.android.stardroid.util.MathUtil.cos
-import com.google.android.stardroid.util.MathUtil.sin
-import com.google.android.stardroid.util.Geometry
 import com.google.android.stardroid.ephemeris.OrbitalElements
+import com.google.android.stardroid.math.MathUtil.cos
+import com.google.android.stardroid.math.MathUtil.sin
 
 class HeliocentricCoordinates() {
 

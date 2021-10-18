@@ -13,10 +13,6 @@
 // limitations under the License.
 package com.google.android.stardroid.math
 
-import com.google.android.stardroid.util.Geometry
-import com.google.android.stardroid.util.MathUtil
-import com.google.android.stardroid.util.flooredMod
-
 /**
  * A simple struct for latitude and longitude.
  */

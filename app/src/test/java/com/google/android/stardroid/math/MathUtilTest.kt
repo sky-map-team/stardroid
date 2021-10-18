@@ -1,4 +1,4 @@
-package com.google.android.stardroid.util
+package com.google.android.stardroid.math
 
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test

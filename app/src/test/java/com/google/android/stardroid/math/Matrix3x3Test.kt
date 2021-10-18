@@ -13,38 +13,77 @@
 // limitations under the License.
 package com.google.android.stardroid.math
 
-import com.google.android.stardroid.util.Geometry
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test
 
-class Matrix33Test {
+class Matrix3x3Test {
     @Test
     fun testDeterminant() {
-        assertThat(Matrix33.getIdMatrix().determinant).isWithin(TOL).of(1f)
+        assertThat(Matrix3x3.getIdMatrix().determinant).isWithin(TOL).of(1f)
     }
 
     @Test
     fun testIdInverse() {
-        assertMatricesEqual(Matrix33.getIdMatrix(), Matrix33.getIdMatrix().inverse, TOL)
+        assertMatricesEqual(Matrix3x3.getIdMatrix(), Matrix3x3.getIdMatrix().inverse, TOL)
     }
 
     @Test
     fun testMatrix33Inversion() {
-        var m = Matrix33(1F, 2f, 0f, 0f, 1f, 5f, 0f, 0f, 1f)
+        var m = Matrix3x3(
+            1F,
+            2f,
+            0f,
+            0f,
+            1f,
+            5f,
+            0f,
+            0f,
+            1f
+        )
         var inv = m.inverse
         var product = Geometry.matrixMultiply(m, inv)
-        assertMatricesEqual(Matrix33.getIdMatrix(), product, TOL)
-        m = Matrix33(1f, 2f, 3f, 6f, 5f, 4f, 0f, 0f, 1f)
+        assertMatricesEqual(Matrix3x3.getIdMatrix(), product, TOL)
+        m = Matrix3x3(
+            1f,
+            2f,
+            3f,
+            6f,
+            5f,
+            4f,
+            0f,
+            0f,
+            1f
+        )
         inv = m.inverse
         product = Geometry.matrixMultiply(m, inv)
-        assertMatricesEqual(Matrix33.getIdMatrix(), product, TOL)
+        assertMatricesEqual(Matrix3x3.getIdMatrix(), product, TOL)
     }
 
     @Test
     fun testTranspose() {
-        val m = Matrix33(1f, 2f, 3f, 4f, 5f, 6f, 7f, 8f, 9f)
+        val m = Matrix3x3(
+            1f,
+            2f,
+            3f,
+            4f,
+            5f,
+            6f,
+            7f,
+            8f,
+            9f
+        )
         m.transpose()
-        val mt = Matrix33(1f, 4f, 7f, 2f, 5f, 8f, 3f, 6f, 9f)
+        val mt = Matrix3x3(
+            1f,
+            4f,
+            7f,
+            2f,
+            5f,
+            8f,
+            3f,
+            6f,
+            9f
+        )
         assertMatricesEqual(m, mt, TOL)
     }
 
@@ -53,10 +92,12 @@ class Matrix33Test {
         val v1 = Vector3(1f, 2f, 3f)
         val v2 = Vector3(4f, 5f, 6f)
         val v3 = Vector3(7f, 8f, 9f)
-        val m = Matrix33(1f, 4f, 7f,
-                2f, 5f, 8f,
-                3f, 6f, 9f)
-        val mt = Matrix33(v1, v2, v3)
+        val m = Matrix3x3(
+            1f, 4f, 7f,
+            2f, 5f, 8f,
+            3f, 6f, 9f
+        )
+        val mt = Matrix3x3(v1, v2, v3)
         assertMatricesEqual(m, mt, TOL)
     }
 
@@ -65,18 +106,20 @@ class Matrix33Test {
         val v1 = Vector3(1f, 2f, 3f)
         val v2 = Vector3(4f, 5f, 6f)
         val v3 = Vector3(7f, 8f, 9f)
-        val m = Matrix33(1f, 4f, 7f,
-                2f, 5f, 8f,
-                3f, 6f, 9f)
+        val m = Matrix3x3(
+            1f, 4f, 7f,
+            2f, 5f, 8f,
+            3f, 6f, 9f
+        )
         m.transpose()
-        val mt = Matrix33(v1, v2, v3, false)
+        val mt = Matrix3x3(v1, v2, v3, false)
         assertMatricesEqual(m, mt, TOL)
     }
 
     companion object {
         private const val TOL = 0.00001f
         @JvmStatic
-        fun assertMatricesEqual(m1: Matrix33, m2: Matrix33, TOL: Float) {
+        fun assertMatricesEqual(m1: Matrix3x3, m2: Matrix3x3, TOL: Float) {
             assertThat(m1.xx).isWithin(TOL).of(m2.xx)
             assertThat(m1.xy).isWithin(TOL).of(m2.xy)
             assertThat(m1.xz).isWithin(TOL).of(m2.xz)

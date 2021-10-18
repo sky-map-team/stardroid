@@ -14,13 +14,12 @@
 
 package com.google.android.stardroid.control;
 
-import com.google.android.stardroid.control.AstronomerModel.Pointing;
-import com.google.android.stardroid.math.GeocentricCoordinates;
-import com.google.android.stardroid.math.Vector3;
-import com.google.android.stardroid.util.MiscUtil;
-import com.google.android.stardroid.util.VectorUtil;
-
 import android.util.Log;
+
+import com.google.android.stardroid.control.AstronomerModel.Pointing;
+import com.google.android.stardroid.math.Vector3;
+import com.google.android.stardroid.math.VectorUtil;
+import com.google.android.stardroid.util.MiscUtil;
 
 /**
  * Flies the user to the search target in manual mode.
