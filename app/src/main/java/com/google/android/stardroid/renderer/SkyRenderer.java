@@ -23,7 +23,6 @@ import com.google.android.stardroid.renderer.util.GLBuffer;
 import com.google.android.stardroid.renderer.util.SkyRegionMap;
 import com.google.android.stardroid.renderer.util.TextureManager;
 import com.google.android.stardroid.renderer.util.UpdateClosure;
-import com.google.android.stardroid.units.GeocentricCoordinates;
 import com.google.android.stardroid.units.Vector3;
 import com.google.android.stardroid.util.MathUtil;
 import com.google.android.stardroid.util.Matrix4x4;
@@ -458,9 +457,9 @@ class RenderState implements RenderStateInterface {
   public boolean getNightVisionMode() { return mNightVisionMode; }
   public SkyRegionMap.ActiveRegionData getActiveSkyRegions() { return mActiveSkyRegionSet; }
 
-  public void setCameraPos(Vector3 pos) { mCameraPos = pos.copy(); }
-  public void setLookDir(Vector3 dir) { mLookDir = dir.copy(); }
-  public void setUpDir(Vector3 dir) { mUpDir = dir.copy(); }
+  public void setCameraPos(Vector3 pos) { mCameraPos = pos.copyForJ(); }
+  public void setLookDir(Vector3 dir) { mLookDir = dir.copyForJ(); }
+  public void setUpDir(Vector3 dir) { mUpDir = dir.copyForJ(); }
   public void setRadiusOfView(float radius) { mRadiusOfView = radius; }
   public void setUpAngle(float angle) {
     mUpAngle = angle;

@@ -95,12 +95,12 @@ public class AstronomerModelImpl implements AstronomerModel {
   private Pointing pointing = new Pointing();
 
   /** The sensor acceleration in the phone's coordinate system. */
-  private Vector3 acceleration = ApplicationConstants.INITIAL_DOWN.copy();
+  private Vector3 acceleration = ApplicationConstants.INITIAL_DOWN.copyForJ();
 
   private Vector3 upPhone = Geometry.scaleVector(acceleration, -1);
 
   /** The sensor magnetic field in the phone's coordinate system. */
-  private Vector3 magneticField = ApplicationConstants.INITIAL_SOUTH.copy();
+  private Vector3 magneticField = ApplicationConstants.INITIAL_SOUTH.copyForJ();
 
   private boolean useRotationVector = false;
 
@@ -207,7 +207,7 @@ public class AstronomerModelImpl implements AstronomerModel {
   @Override
   public Vector3 getNorth() {
     calculateLocalNorthAndUpInCelestialCoords(false);
-    return trueNorthCelestial.copy();
+    return trueNorthCelestial.copyForJ();
   }
 
   @Override
@@ -219,7 +219,7 @@ public class AstronomerModelImpl implements AstronomerModel {
   @Override
   public Vector3 getZenith() {
     calculateLocalNorthAndUpInCelestialCoords(false);
-    return upCelestial.copy();
+    return upCelestial.copyForJ();
   }
 
   @Override
@@ -231,7 +231,7 @@ public class AstronomerModelImpl implements AstronomerModel {
   @Override
   public Vector3 getEast() {
     calculateLocalNorthAndUpInCelestialCoords(false);
-    return trueEastCelestial.copy();
+    return trueEastCelestial.copyForJ();
   }
 
   @Override
@@ -326,10 +326,10 @@ public class AstronomerModelImpl implements AstronomerModel {
       magneticEastPhone = new Vector3(rotationMatrix[0], rotationMatrix[1], rotationMatrix[2]);
     } else {
       // TODO(johntaylor): we can reduce the number of vector copies done in here.
-      Vector3 down = acceleration.copy();
+      Vector3 down = acceleration.copyForJ();
       down.normalize();
       // Magnetic field goes *from* North to South, so reverse it.
-      Vector3 magneticFieldToNorth = magneticField.copy();
+      Vector3 magneticFieldToNorth = magneticField.copyForJ();
       magneticFieldToNorth.scale(-1);
       magneticFieldToNorth.normalize();
       // This is the vector to magnetic North *along the ground*.

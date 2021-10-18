@@ -14,7 +14,6 @@
 
 package com.google.android.stardroid.control;
 
-import com.google.android.stardroid.units.GeocentricCoordinates;
 import com.google.android.stardroid.units.LatLong;
 import com.google.android.stardroid.units.Vector3;
 
@@ -40,8 +39,8 @@ public interface AstronomerModel {
 
     public Pointing(Vector3 lineOfSight,
                     Vector3 perpendicular) {
-      this.lineOfSight = lineOfSight.copy();
-      this.perpendicular = perpendicular.copy();
+      this.lineOfSight = lineOfSight.copyForJ();
+      this.perpendicular = perpendicular.copyForJ();
     }
 
     public Pointing() {
@@ -56,7 +55,7 @@ public interface AstronomerModel {
      * use {@link #getLineOfSightX()} etc.
      */
     public Vector3 getLineOfSight() {
-      return lineOfSight.copy();
+      return lineOfSight.copyForJ();
     }
 
     /**
@@ -66,7 +65,7 @@ public interface AstronomerModel {
      * use {@link #getLineOfSightX()} etc.
      */
     public Vector3 getPerpendicular() {
-      return perpendicular.copy();
+      return perpendicular.copyForJ();
     }
 
     public float getLineOfSightX() {
@@ -93,7 +92,6 @@ public interface AstronomerModel {
      */
     void updatePerpendicular(Vector3 newPerpendicular) {
       perpendicular.assign(newPerpendicular);
-      
     }
 
     /**

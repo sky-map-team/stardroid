@@ -126,7 +126,7 @@ public class SkyBox extends RendererObjectManager {
   }
   
   public void setSunPosition(Vector3 pos) {
-    mSunPos = pos.copy();
+    mSunPos = pos.copyForJ();
     //Log.d("SkyBox", "SunPos: " + pos.toString());
   }
   

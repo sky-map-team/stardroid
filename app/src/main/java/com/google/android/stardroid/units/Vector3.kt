@@ -16,16 +16,7 @@ package com.google.android.stardroid.units
 import com.google.android.stardroid.util.MathUtil
 import com.google.android.stardroid.util.MathUtil.sqrt
 
-// TODO(jontayler): Convert to a data class once things don't inherit from it.
-open class Vector3 {
-    @JvmField
-    var x: Float
-
-    @JvmField
-    var y: Float
-
-    @JvmField
-    var z: Float
+data class Vector3(@JvmField var x : Float, @JvmField var y : Float, @JvmField var z : Float) {
 
     /**
      * The square of the vector's length
@@ -36,11 +27,6 @@ open class Vector3 {
     val length
         get() = MathUtil.sqrt(length2)
 
-    constructor(x: Float, y: Float, z: Float) {
-        this.x = x
-        this.y = y
-        this.z = z
-    }
 
     /**
      * Constructs a Vector3 from a float[2] object.
@@ -48,15 +34,8 @@ open class Vector3 {
      * you should already be questioning your use of float[] instead of Vector3.
      * @param xyz
      */
-    constructor(xyz: FloatArray) {
+    constructor(xyz: FloatArray) : this(xyz[0], xyz[1], xyz[2]) {
         require(xyz.size == 3) { "Trying to create 3 vector from array of length: " + xyz.size }
-        x = xyz[0]
-        y = xyz[1]
-        z = xyz[2]
-    }
-
-    open fun copy(): Vector3 {
-        return Vector3(x, y, z)
     }
 
     /**
@@ -78,7 +57,7 @@ open class Vector3 {
     }
 
     /**
-     * Normalize the vector in place, i.e., map it to the corresponding unit vector.
+     * Normalizes the vector in place, i.e., map it to the corresponding unit vector.
      */
     fun normalize() {
         val norm = length
@@ -88,7 +67,7 @@ open class Vector3 {
     }
 
     /**
-     * Scale the vector in place.
+     * Scales the vector in place.
      */
     fun scale(scale: Float) {
         x *= scale
@@ -107,7 +86,7 @@ open class Vector3 {
     }
 
     /**
-     * Return the distance between one vector and the next.
+     * Returns the distance between one vector and the next.
      */
     fun distanceFrom(other: Vector3): Float {
         val dx = x - other.x
@@ -116,24 +95,11 @@ open class Vector3 {
         return sqrt(dx * dx + dy * dy + dz * dz)
     }
 
-    open fun toFloatArray(): FloatArray {
-        return floatArrayOf(x, y, z)
-    }
-
-    override fun equals(other: Any?): Boolean {
-        if (other !is Vector3) return false
-        // float equals is a bit of a dodgy concept
-        return other.x == x && other.y == y && other.z == z
-    }
-
-    override fun hashCode(): Int {
-        // This is dumb, but it will do for now.
-        return java.lang.Float.floatToIntBits(x) + java.lang.Float.floatToIntBits(y) + java.lang.Float.floatToIntBits(
-            z
-        )
-    }
-
-    override fun toString(): String {
-        return String.format("x=%f, y=%f, z=%f", x, y, z)
+    /**
+     * Java can't call Kotlin's copy() method due not supporting default params.
+     * Temporary shim until Java is all gone.
+     */
+    fun copyForJ() : Vector3 {
+        return copy()
     }
 }

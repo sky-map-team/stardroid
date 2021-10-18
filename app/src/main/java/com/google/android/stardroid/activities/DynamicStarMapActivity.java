@@ -133,7 +133,7 @@ public class DynamicStarMapActivity extends InjectableActivity
 
       Vector3 up = model.getPhoneUpDirection();
       rendererController.queueTextAngle(MathUtil.atan2(up.x, up.y));
-      rendererController.queueViewerUpDirection(model.getZenith().copy());
+      rendererController.queueViewerUpDirection(model.getZenith().copyForJ());
 
       float fieldOfView = model.getFieldOfView();
       rendererController.queueFieldOfView(fieldOfView);
@@ -749,8 +749,8 @@ public class DynamicStarMapActivity extends InjectableActivity
     searchTarget = target;
     searchTargetName = searchTerm;
     Log.d(TAG, "Searching for target=" + target);
-    rendererController.queueViewerUpDirection(model.getZenith().copy());
-    rendererController.queueEnableSearchOverlay(target.copy(), searchTerm);
+    rendererController.queueViewerUpDirection(model.getZenith().copyForJ());
+    rendererController.queueEnableSearchOverlay(target.copyForJ(), searchTerm);
     boolean autoMode = sharedPreferences.getBoolean(ApplicationConstants.AUTO_MODE_PREF_KEY, true);
     if (!autoMode) {
       controller.teleport(target);
