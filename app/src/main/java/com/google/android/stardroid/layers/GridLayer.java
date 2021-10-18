@@ -24,8 +24,8 @@ import com.google.android.stardroid.source.LineSource;
 import com.google.android.stardroid.source.TextSource;
 import com.google.android.stardroid.source.impl.LineSourceImpl;
 import com.google.android.stardroid.source.impl.TextSourceImpl;
-import com.google.android.stardroid.units.GeocentricCoordinates;
-import com.google.android.stardroid.units.RaDec;
+import com.google.android.stardroid.math.GeocentricCoordinates;
+import com.google.android.stardroid.math.RaDec;
 
 import java.util.ArrayList;
 import java.util.List;

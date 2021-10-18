@@ -1,9 +1,9 @@
 package com.google.android.stardroid.space
 
-import com.google.android.stardroid.provider.ephemeris.Planet
-import com.google.android.stardroid.units.HeliocentricCoordinates
-import com.google.android.stardroid.units.HeliocentricCoordinates.Companion.heliocentricCoordinatesFromOrbitalElements
-import com.google.android.stardroid.units.RaDec
+import com.google.android.stardroid.ephemeris.Planet
+import com.google.android.stardroid.math.HeliocentricCoordinates
+import com.google.android.stardroid.math.HeliocentricCoordinates.Companion.heliocentricCoordinatesFromOrbitalElements
+import com.google.android.stardroid.math.RaDec
 import java.util.*
 
 /**

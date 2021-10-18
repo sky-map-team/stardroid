@@ -36,7 +36,7 @@ import android.widget.Toast;
 import androidx.preference.PreferenceManager;
 
 import com.google.android.stardroid.R;
-import com.google.android.stardroid.units.LatLong;
+import com.google.android.stardroid.math.LatLong;
 import com.google.android.stardroid.util.MiscUtil;
 
 import java.io.IOException;

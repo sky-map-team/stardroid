@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.google.android.stardroid.provider.ephemeris;
+package com.google.android.stardroid.ephemeris;
 
 import android.util.Log;
 

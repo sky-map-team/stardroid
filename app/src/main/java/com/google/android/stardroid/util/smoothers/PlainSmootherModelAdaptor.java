@@ -21,7 +21,7 @@ import android.util.Log;
 
 import com.google.android.stardroid.ApplicationConstants;
 import com.google.android.stardroid.control.AstronomerModel;
-import com.google.android.stardroid.units.Vector3;
+import com.google.android.stardroid.math.Vector3;
 import com.google.android.stardroid.util.MiscUtil;
 
 import javax.inject.Inject;

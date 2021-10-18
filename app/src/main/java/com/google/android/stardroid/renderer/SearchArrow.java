@@ -21,7 +21,7 @@ import com.google.android.stardroid.renderer.util.SearchHelper;
 import com.google.android.stardroid.renderer.util.TextureManager;
 import com.google.android.stardroid.renderer.util.TextureReference;
 import com.google.android.stardroid.renderer.util.TexturedQuad;
-import com.google.android.stardroid.units.Vector3;
+import com.google.android.stardroid.math.Vector3;
 import com.google.android.stardroid.util.FixedPoint;
 import com.google.android.stardroid.util.MathUtil;
 import com.google.android.stardroid.util.VectorUtil;

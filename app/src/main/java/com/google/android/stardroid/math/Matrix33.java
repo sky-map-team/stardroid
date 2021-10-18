@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.google.android.stardroid.units;
+package com.google.android.stardroid.math;
 
 /**
  * Class for representing a 3x3 matrix explicitly, avoiding heap

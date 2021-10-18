@@ -14,7 +14,7 @@
 
 package com.google.android.stardroid.source;
 
-import com.google.android.stardroid.units.Vector3;
+import com.google.android.stardroid.math.Vector3;
 
 /**
  * This interface corresponds to sources which are located at a singular fixed

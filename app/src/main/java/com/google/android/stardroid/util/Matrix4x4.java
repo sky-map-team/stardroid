@@ -14,7 +14,7 @@
 
 package com.google.android.stardroid.util;
 
-import com.google.android.stardroid.units.Vector3;
+import com.google.android.stardroid.math.Vector3;
 
 public class Matrix4x4 {
 

@@ -12,9 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.google.android.stardroid.provider.ephemeris;
+package com.google.android.stardroid.ephemeris;
 
-import static com.google.android.stardroid.units.GeocentricCoordinates.updateFromRaDec;
+import static com.google.android.stardroid.math.GeocentricCoordinates.updateFromRaDec;
 
 import com.google.android.stardroid.base.Lists;
 import com.google.android.stardroid.control.AstronomerModel;
@@ -28,9 +28,8 @@ import com.google.android.stardroid.source.impl.ImageSourceImpl;
 import com.google.android.stardroid.source.impl.PointSourceImpl;
 import com.google.android.stardroid.source.impl.TextSourceImpl;
 import com.google.android.stardroid.space.Universe;
-import com.google.android.stardroid.units.GeocentricCoordinates;
-import com.google.android.stardroid.units.HeliocentricCoordinates;
-import com.google.android.stardroid.units.Vector3;
+import com.google.android.stardroid.math.HeliocentricCoordinates;
+import com.google.android.stardroid.math.Vector3;
 
 import android.content.SharedPreferences;
 import android.content.res.Resources;

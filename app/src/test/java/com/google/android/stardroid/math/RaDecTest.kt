@@ -1,7 +1,7 @@
-package com.google.android.stardroid.units
+package com.google.android.stardroid.math
 
-import com.google.android.stardroid.units.RaDec.Companion.decDegreesFromDMS
-import com.google.android.stardroid.units.RaDec.Companion.raDegreesFromHMS
+import com.google.android.stardroid.math.RaDec.Companion.decDegreesFromDMS
+import com.google.android.stardroid.math.RaDec.Companion.raDegreesFromHMS
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test
 

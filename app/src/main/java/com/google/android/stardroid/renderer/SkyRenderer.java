@@ -23,7 +23,7 @@ import com.google.android.stardroid.renderer.util.GLBuffer;
 import com.google.android.stardroid.renderer.util.SkyRegionMap;
 import com.google.android.stardroid.renderer.util.TextureManager;
 import com.google.android.stardroid.renderer.util.UpdateClosure;
-import com.google.android.stardroid.units.Vector3;
+import com.google.android.stardroid.math.Vector3;
 import com.google.android.stardroid.util.MathUtil;
 import com.google.android.stardroid.util.Matrix4x4;
 import com.google.android.stardroid.util.VectorUtil;

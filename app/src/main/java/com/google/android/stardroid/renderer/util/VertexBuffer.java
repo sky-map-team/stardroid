@@ -21,7 +21,7 @@ import java.nio.IntBuffer;
 import javax.microedition.khronos.opengles.GL10;
 import javax.microedition.khronos.opengles.GL11;
 
-import com.google.android.stardroid.units.Vector3;
+import com.google.android.stardroid.math.Vector3;
 import com.google.android.stardroid.util.FixedPoint;
 
 public class VertexBuffer {

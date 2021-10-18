@@ -14,9 +14,9 @@
 
 package com.google.android.stardroid.ephemeris;
 
-import com.google.android.stardroid.provider.ephemeris.Planet;
-import com.google.android.stardroid.units.LatLong;
-import com.google.android.stardroid.units.RaDec;
+import com.google.android.stardroid.ephemeris.Planet;
+import com.google.android.stardroid.math.LatLong;
+import com.google.android.stardroid.math.RaDec;
 
 import junit.framework.TestCase;
 

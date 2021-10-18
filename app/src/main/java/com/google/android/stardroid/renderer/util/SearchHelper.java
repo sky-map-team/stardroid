@@ -14,7 +14,7 @@
 
 package com.google.android.stardroid.renderer.util;
 
-import com.google.android.stardroid.units.Vector3;
+import com.google.android.stardroid.math.Vector3;
 import com.google.android.stardroid.util.MathUtil;
 import com.google.android.stardroid.util.Matrix4x4;
 

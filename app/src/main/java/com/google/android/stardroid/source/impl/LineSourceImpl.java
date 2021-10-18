@@ -21,8 +21,8 @@ import java.util.List;
 import android.graphics.Color;
 
 import com.google.android.stardroid.source.LineSource;
-import com.google.android.stardroid.units.RaDec;
-import com.google.android.stardroid.units.Vector3;
+import com.google.android.stardroid.math.RaDec;
+import com.google.android.stardroid.math.Vector3;
 
 /**
  * For representing constellations, constellation boundaries etc.
