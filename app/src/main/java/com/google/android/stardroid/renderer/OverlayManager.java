@@ -77,7 +77,7 @@ public class OverlayManager extends RendererObjectManager {
                                 0, screenHeight, 0);
   }
 
-  public void setViewOrientation(GeocentricCoordinates lookDir, GeocentricCoordinates upDir) {
+  public void setViewOrientation(Vector3 lookDir, Vector3 upDir) {
     mLookDir = lookDir;
     mUpDir = upDir;
     mMustUpdateTransformedOrientation = true;
@@ -110,7 +110,7 @@ public class OverlayManager extends RendererObjectManager {
   }
 
   // viewerUp MUST be normalized.
-  public void setViewerUpDirection(GeocentricCoordinates viewerUp) {
+  public void setViewerUpDirection(Vector3 viewerUp) {
     // Log.d("OverlayManager", "Setting viewer up " + viewerUp);
     if (MathUtil.abs(viewerUp.y) < 0.999f) {
       Vector3 cp = VectorUtil.crossProduct(viewerUp, new Vector3(0, 1, 0));
@@ -122,7 +122,7 @@ public class OverlayManager extends RendererObjectManager {
     mMustUpdateTransformedOrientation = true;
   }
 
-  public void enableSearchOverlay(GeocentricCoordinates target, String targetName) {
+  public void enableSearchOverlay(Vector3 target, String targetName) {
     Log.d("OverlayManager", "Searching for " + target);
     mSearching = true;
     mSearchHelper.setTransform(getRenderState().getTransformToDeviceMatrix());

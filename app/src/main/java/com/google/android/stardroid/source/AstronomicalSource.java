@@ -16,6 +16,7 @@ package com.google.android.stardroid.source;
 
 import com.google.android.stardroid.renderer.RendererObjectManager.UpdateType;
 import com.google.android.stardroid.units.GeocentricCoordinates;
+import com.google.android.stardroid.units.Vector3;
 
 import java.util.EnumSet;
 import java.util.List;
@@ -37,8 +38,9 @@ public interface AstronomicalSource {
   /**
    * Returns the {@link GeocentricCoordinates} of the center of this object.
    * This is the point to which the user will be directed for a search.
+   * @return
    */
-  GeocentricCoordinates getSearchLocation();
+  Vector3 getSearchLocation();
 
   /**
    * Returns the zoom level to which the user should be taken (in manual mode)

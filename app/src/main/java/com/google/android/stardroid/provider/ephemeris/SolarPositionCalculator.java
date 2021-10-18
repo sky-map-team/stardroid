@@ -14,6 +14,7 @@
 
 package com.google.android.stardroid.provider.ephemeris;
 
+import com.google.android.stardroid.space.Universe;
 import com.google.android.stardroid.units.HeliocentricCoordinates;
 import com.google.android.stardroid.units.RaDec;
 
@@ -28,8 +29,8 @@ import java.util.Date;
  *
  */
 public class SolarPositionCalculator {
+  private static Universe universe = new Universe();
   public static RaDec getSolarPosition(Date time) {
-    HeliocentricCoordinates sunCoordinates = HeliocentricCoordinates.getInstance(Planet.Sun, time);
-    return RaDec.getInstance(Planet.Sun, time, sunCoordinates);
+    return universe.getSunRaDec(time);
   }
 }

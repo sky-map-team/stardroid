@@ -68,10 +68,10 @@ public class ImageSourceImpl extends AbstractSource implements ImageSource {
 
   public ImageSourceImpl(float ra, float dec, Resources res, int id, Vector3 upVec,
       float imageScale) {
-    this(GeocentricCoordinates.getInstance(ra, dec), res, id, upVec, imageScale);
+    this(GeocentricCoordinates.getGeocentricCoords(ra, dec), res, id, upVec, imageScale);
   }
 
-  public ImageSourceImpl(GeocentricCoordinates coords, Resources res, int id, Vector3 upVec,
+  public ImageSourceImpl(Vector3 coords, Resources res, int id, Vector3 upVec,
       float imageScale) {
     super(coords, Color.WHITE);
     this.imageScale = imageScale;

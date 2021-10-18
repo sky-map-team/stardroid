@@ -20,7 +20,6 @@ import com.google.android.stardroid.renderer.util.ColorBuffer;
 import com.google.android.stardroid.renderer.util.IndexBuffer;
 import com.google.android.stardroid.renderer.util.TextureManager;
 import com.google.android.stardroid.renderer.util.VertexBuffer;
-import com.google.android.stardroid.units.GeocentricCoordinates;
 import com.google.android.stardroid.units.Vector3;
 import com.google.android.stardroid.util.MathUtil;
 import com.google.android.stardroid.util.VectorUtil;
@@ -126,8 +125,8 @@ public class SkyBox extends RendererObjectManager {
     mIndexBuffer.reload();
   }
   
-  public void setSunPosition(GeocentricCoordinates pos) {
-    mSunPos = pos.copy();
+  public void setSunPosition(Vector3 pos) {
+    mSunPos = pos.copyForJ();
     //Log.d("SkyBox", "SunPos: " + pos.toString());
   }
   
@@ -174,5 +173,5 @@ public class SkyBox extends RendererObjectManager {
   VertexBuffer mVertexBuffer = new VertexBuffer(true);
   ColorBuffer mColorBuffer = new ColorBuffer(true);
   IndexBuffer mIndexBuffer = new IndexBuffer(true);
-  GeocentricCoordinates mSunPos = new GeocentricCoordinates(0, 1, 0);
+  Vector3 mSunPos = new Vector3(0, 1, 0);
 }

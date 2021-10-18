@@ -16,6 +16,7 @@ package com.google.android.stardroid.source.impl;
 
 import com.google.android.stardroid.source.PointSource;
 import com.google.android.stardroid.units.GeocentricCoordinates;
+import com.google.android.stardroid.units.Vector3;
 
 /**
  * This class represents a astronomical point source, such as a star, or a distant galaxy.
@@ -28,14 +29,14 @@ public class PointSourceImpl extends AbstractSource implements PointSource {
   private final Shape pointShape;
 
   public PointSourceImpl(float ra, float dec, int color, int size) {
-    this(GeocentricCoordinates.getInstance(ra, dec), color, size);
+    this(GeocentricCoordinates.getGeocentricCoords(ra, dec), color, size);
   }
 
-  public PointSourceImpl(GeocentricCoordinates coords, int color, int size) {
+  public PointSourceImpl(Vector3 coords, int color, int size) {
     this(coords, color, size, Shape.CIRCLE);
   }
 
-  public PointSourceImpl(GeocentricCoordinates coords, int color, int size, Shape pointShape) {
+  public PointSourceImpl(Vector3 coords, int color, int size, Shape pointShape) {
     super(coords, color);
     this.size = size;
     this.pointShape = pointShape;

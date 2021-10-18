@@ -14,6 +14,8 @@
 
 package com.google.android.stardroid.provider.ephemeris;
 
+import static com.google.android.stardroid.units.GeocentricCoordinates.updateFromRaDec;
+
 import com.google.android.stardroid.base.Lists;
 import com.google.android.stardroid.control.AstronomerModel;
 import com.google.android.stardroid.renderer.RendererObjectManager.UpdateType;
@@ -25,9 +27,9 @@ import com.google.android.stardroid.source.TextSource;
 import com.google.android.stardroid.source.impl.ImageSourceImpl;
 import com.google.android.stardroid.source.impl.PointSourceImpl;
 import com.google.android.stardroid.source.impl.TextSourceImpl;
+import com.google.android.stardroid.space.Universe;
 import com.google.android.stardroid.units.GeocentricCoordinates;
 import com.google.android.stardroid.units.HeliocentricCoordinates;
-import com.google.android.stardroid.units.RaDec;
 import com.google.android.stardroid.units.Vector3;
 
 import android.content.SharedPreferences;
@@ -60,8 +62,8 @@ public class PlanetSource extends AbstractAstronomicalSource {
   private final AstronomerModel model;
   private final String name;
   private final SharedPreferences preferences;
-  private final GeocentricCoordinates currentCoords = new GeocentricCoordinates(0, 0, 0);
-  private HeliocentricCoordinates sunCoords;
+  private final Vector3 currentCoords = new Vector3(0, 0, 0);
+  private Vector3 sunCoords;
   private int imageId = -1;
 
   private long lastUpdateTimeMs  = 0L;
@@ -76,20 +78,22 @@ public class PlanetSource extends AbstractAstronomicalSource {
     this.preferences = prefs;
   }
 
+  private Universe universe = new Universe();
+
   @Override
   public List<String> getNames() {
     return Lists.asList(name);
   }
 
   @Override
-  public GeocentricCoordinates getSearchLocation() {
+  public Vector3 getSearchLocation() {
     return currentCoords;
   }
 
   private void updateCoords(Date time) {
     this.lastUpdateTimeMs = time.getTime();
-    this.sunCoords = HeliocentricCoordinates.getInstance(Planet.Sun, time);
-    this.currentCoords.updateFromRaDec(RaDec.getInstance(planet, time, sunCoords));
+    this.sunCoords = HeliocentricCoordinates.heliocentricCoordinatesFromOrbitalElements(Planet.Sun.getOrbitalElements(time));
+    updateFromRaDec(this.currentCoords, universe.getRaDec(planet, time));
     for (ImageSourceImpl imageSource : imageSources) {
       imageSource.setUpVector(sunCoords);  // TODO(johntaylor): figure out why we do this.
     }

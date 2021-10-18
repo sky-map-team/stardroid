@@ -60,9 +60,10 @@ public class SplashScreenActivityTest {
   @Test
   public void showsWhatsNewAfterTandCs_newUser() throws InterruptedException {
     onView(withId(R.id.eula_box_text)).inRoot(isDialog()).check(matches(isDisplayed()));
+    Thread.sleep(2000);
     onView(withId(android.R.id.button1)).inRoot(isDialog()).perform(click());
     // TODO: figure out how to dispense with crap like hand-tuned waiting times.
-    // Thread.sleep(200);
+    Thread.sleep(2000);
     // Can't detect this since the UI is still changing.
     // TODO: figure out how we could.
     //onView(withId(R.id.splash)).check(matches(isDisplayed()));

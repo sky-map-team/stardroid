@@ -57,7 +57,7 @@ public class GeometryTest extends TestCase {
       float x = testValues[2];
       float y = testValues[3];
       float z = testValues[4];
-      GeocentricCoordinates result = Geometry.getXYZ(new RaDec(ra, dec));
+      Vector3 result = Geometry.getXYZ(new RaDec(ra, dec));
       assertEquals(x, result.x, TOL);
       assertEquals(y, result.y, TOL);
       assertEquals(z, result.z, TOL);
@@ -72,9 +72,9 @@ public class GeometryTest extends TestCase {
       float y = testValues[3];
       float z = testValues[4];
       RaDec result =
-          RaDec.getInstance(new GeocentricCoordinates(x, y, z));
-      assertEquals(ra, result.ra, TOL);
-      assertEquals(dec, result.dec, TOL);
+          RaDec.fromGeocentricCoords(new Vector3(x, y, z));
+      assertEquals(ra, result.getRa(), TOL);
+      assertEquals(dec, result.getDec(), TOL);
     }
   }
 

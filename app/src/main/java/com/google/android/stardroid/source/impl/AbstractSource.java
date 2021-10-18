@@ -19,6 +19,7 @@ import android.graphics.Color;
 import com.google.android.stardroid.source.Colorable;
 import com.google.android.stardroid.source.PositionSource;
 import com.google.android.stardroid.units.GeocentricCoordinates;
+import com.google.android.stardroid.units.Vector3;
 
 import java.util.List;
 
@@ -40,20 +41,20 @@ public abstract class AbstractSource implements Colorable, PositionSource {
   public UpdateGranularity granularity;
 
   private final int color;
-  private final GeocentricCoordinates xyz;
+  private final Vector3 xyz;
   private List<String> names;
 
   @Deprecated
   AbstractSource() {
-    this(GeocentricCoordinates.getInstance(0.0f, 0.0f), Color.BLACK);
+    this(GeocentricCoordinates.getGeocentricCoords(0.0f, 0.0f), Color.BLACK);
   }
 
   protected AbstractSource(int color) {
-    this(GeocentricCoordinates.getInstance(0.0f, 0.0f), color);
+    this(GeocentricCoordinates.getGeocentricCoords(0.0f, 0.0f), color);
   }
 
-  protected AbstractSource(GeocentricCoordinates coords, int color) {
-    this.xyz = coords;
+  protected AbstractSource(Vector3 geocentricCoords, int color) {
+    this.xyz = geocentricCoords;
     this.color = color;
   }
 
@@ -71,7 +72,7 @@ public abstract class AbstractSource implements Colorable, PositionSource {
   }
 
   @Override
-  public GeocentricCoordinates getLocation() {
+  public Vector3 getLocation() {
     return xyz;
   }
 }

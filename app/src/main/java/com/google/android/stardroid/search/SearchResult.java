@@ -15,6 +15,7 @@
 package com.google.android.stardroid.search;
 
 import com.google.android.stardroid.units.GeocentricCoordinates;
+import com.google.android.stardroid.units.Vector3;
 
 /**
  * A single search result.
@@ -23,15 +24,15 @@ import com.google.android.stardroid.units.GeocentricCoordinates;
  */
 public class SearchResult {
   /** The coordinates of the object.*/
-  public GeocentricCoordinates coords;
+  public Vector3 coords;
   /** The user-presentable name of the object, properly capitalized.*/
   public String capitalizedName;
 
   /**
    * @param capitalizedName The user-presentable name of the object, properly capitalized.
-   * @param coords The coordinates of the object.
+   * @param coords The geocentric coordinates of the object.
    */
-  public SearchResult(String capitalizedName, GeocentricCoordinates coords) {
+  public SearchResult(String capitalizedName, Vector3 coords) {
     this.capitalizedName = capitalizedName;
     this.coords = coords;
   }

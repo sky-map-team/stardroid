@@ -95,12 +95,12 @@ public class AstronomerModelImpl implements AstronomerModel {
   private Pointing pointing = new Pointing();
 
   /** The sensor acceleration in the phone's coordinate system. */
-  private Vector3 acceleration = ApplicationConstants.INITIAL_DOWN.copy();
+  private Vector3 acceleration = ApplicationConstants.INITIAL_DOWN.copyForJ();
 
   private Vector3 upPhone = Geometry.scaleVector(acceleration, -1);
 
   /** The sensor magnetic field in the phone's coordinate system. */
-  private Vector3 magneticField = ApplicationConstants.INITIAL_SOUTH.copy();
+  private Vector3 magneticField = ApplicationConstants.INITIAL_SOUTH.copyForJ();
 
   private boolean useRotationVector = false;
 
@@ -184,7 +184,7 @@ public class AstronomerModelImpl implements AstronomerModel {
 
   @Override
   public void setPhoneSensorValues(Vector3 acceleration, Vector3 magneticField) {
-    if (magneticField.length2() < TOL || acceleration.length2() < TOL) {
+    if (magneticField.getLength2() < TOL || acceleration.getLength2() < TOL) {
       Log.w(TAG, "Invalid sensor values - ignoring");
       Log.w(TAG, "Mag: " + magneticField);
       Log.w(TAG, "Accel: " + acceleration);
@@ -205,41 +205,39 @@ public class AstronomerModelImpl implements AstronomerModel {
   }
 
   @Override
-  public GeocentricCoordinates getNorth() {
+  public Vector3 getNorth() {
     calculateLocalNorthAndUpInCelestialCoords(false);
-    return GeocentricCoordinates.getInstanceFromVector3(trueNorthCelestial);
+    return trueNorthCelestial.copyForJ();
   }
 
   @Override
-  public GeocentricCoordinates getSouth() {
+  public Vector3 getSouth() {
     calculateLocalNorthAndUpInCelestialCoords(false);
-    return GeocentricCoordinates.getInstanceFromVector3(Geometry.scaleVector(trueNorthCelestial,
-                                                                             -1));
+    return Geometry.scaleVector(trueNorthCelestial, -1);
   }
 
   @Override
-  public GeocentricCoordinates getZenith() {
+  public Vector3 getZenith() {
     calculateLocalNorthAndUpInCelestialCoords(false);
-    return GeocentricCoordinates.getInstanceFromVector3(upCelestial);
+    return upCelestial.copyForJ();
   }
 
   @Override
-  public GeocentricCoordinates getNadir() {
+  public Vector3 getNadir() {
     calculateLocalNorthAndUpInCelestialCoords(false);
-    return GeocentricCoordinates.getInstanceFromVector3(Geometry.scaleVector(upCelestial, -1));
+    return Geometry.scaleVector(upCelestial, -1);
   }
 
   @Override
-  public GeocentricCoordinates getEast() {
+  public Vector3 getEast() {
     calculateLocalNorthAndUpInCelestialCoords(false);
-    return GeocentricCoordinates.getInstanceFromVector3(trueEastCelestial);
+    return trueEastCelestial.copyForJ();
   }
 
   @Override
-  public GeocentricCoordinates getWest() {
+  public Vector3 getWest() {
     calculateLocalNorthAndUpInCelestialCoords(false);
-    return GeocentricCoordinates.getInstanceFromVector3(Geometry.scaleVector(trueEastCelestial,
-                                                                             -1));
+    return Geometry.scaleVector(trueEastCelestial,-1);
   }
 
   @Override
@@ -287,7 +285,7 @@ public class AstronomerModelImpl implements AstronomerModel {
     celestialCoordsLastUpdated = currentTime;
     updateMagneticCorrection();
     RaDec up = calculateRADecOfZenith(getTime(), location);
-    upCelestial = GeocentricCoordinates.getInstance(up);
+    upCelestial = GeocentricCoordinates.getGeocentricCoords(up);
     Vector3 z = AXIS_OF_EARTHS_ROTATION;
     float zDotu = scalarProduct(upCelestial, z);
     trueNorthCelestial = addVectors(z, scaleVector(upCelestial, -zDotu));
@@ -328,10 +326,10 @@ public class AstronomerModelImpl implements AstronomerModel {
       magneticEastPhone = new Vector3(rotationMatrix[0], rotationMatrix[1], rotationMatrix[2]);
     } else {
       // TODO(johntaylor): we can reduce the number of vector copies done in here.
-      Vector3 down = acceleration.copy();
+      Vector3 down = acceleration.copyForJ();
       down.normalize();
       // Magnetic field goes *from* North to South, so reverse it.
-      Vector3 magneticFieldToNorth = magneticField.copy();
+      Vector3 magneticFieldToNorth = magneticField.copyForJ();
       magneticFieldToNorth.scale(-1);
       magneticFieldToNorth.normalize();
       // This is the vector to magnetic North *along the ground*.

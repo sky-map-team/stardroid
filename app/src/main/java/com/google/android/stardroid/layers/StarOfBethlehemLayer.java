@@ -85,12 +85,12 @@ public class StarOfBethlehemLayer extends AbstractSourceLayer {
     private final AstronomerModel model;
 
     private long lastUpdateTimeMs = 0L;
-    private GeocentricCoordinates coords;
+    private Vector3 coords;
     private ImageSourceImpl theImage;
 
     public StarOfBethlehemSource(AstronomerModel model, Resources resources) {
       this.model = model;
-      coords = new GeocentricCoordinates(1, 0, 0);
+      coords = new Vector3(1, 0, 0);
       // star_off2 is a 1pxX1px image that should be invisible.
       // We'd prefer not to show any image except on the Christmas dates, but there
       // appears to be a bug in the renderer in that new images added later don't get
@@ -110,8 +110,8 @@ public class StarOfBethlehemLayer extends AbstractSourceLayer {
             && (calendar.get(Calendar.DAY_OF_MONTH) == 25)) {
         Log.d(TAG, "Showing Easter Egg");
         theImage.setImageId(R.drawable.star_of_b);
-        GeocentricCoordinates zenith = model.getZenith();
-        GeocentricCoordinates east = model.getEast();
+        Vector3 zenith = model.getZenith();
+        Vector3 east = model.getEast();
         coords.assign((zenith.x + 2 * east.x) / 3,
                       (zenith.y + 2 * east.y) / 3,
                       (zenith.z + 2 * east.z) / 3);

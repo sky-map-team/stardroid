@@ -30,6 +30,7 @@ import com.google.android.stardroid.source.TextSource;
 import com.google.android.stardroid.source.impl.LineSourceImpl;
 import com.google.android.stardroid.source.impl.TextSourceImpl;
 import com.google.android.stardroid.units.GeocentricCoordinates;
+import com.google.android.stardroid.units.Vector3;
 
 import java.util.ArrayList;
 import java.util.EnumSet;
@@ -84,12 +85,12 @@ public class HorizonLayer extends AbstractSourceLayer {
     private static final int LABEL_COLOR = Color.argb(120, 245, 176, 86);
     private static final long UPDATE_FREQ_MS = 1L * TimeConstants.MILLISECONDS_PER_SECOND;
 
-    private final GeocentricCoordinates zenith = new GeocentricCoordinates(0, 0, 0);
-    private final GeocentricCoordinates nadir = new GeocentricCoordinates(0, 0, 0);
-    private final GeocentricCoordinates north = new GeocentricCoordinates(0, 0, 0);
-    private final GeocentricCoordinates south = new GeocentricCoordinates(0, 0, 0);
-    private final GeocentricCoordinates east = new GeocentricCoordinates(0, 0, 0);
-    private final GeocentricCoordinates west = new GeocentricCoordinates(0, 0, 0);
+    private final Vector3 zenith = new Vector3(0, 0, 0);
+    private final Vector3 nadir = new Vector3(0, 0, 0);
+    private final Vector3 north = new Vector3(0, 0, 0);
+    private final Vector3 south = new Vector3(0, 0, 0);
+    private final Vector3 east = new Vector3(0, 0, 0);
+    private final Vector3 west = new Vector3(0, 0, 0);
 
     private final ArrayList<LineSource> lineSources = new ArrayList<LineSource>();
     private final ArrayList<TextSource> textSources = new ArrayList<TextSource>();
@@ -100,7 +101,7 @@ public class HorizonLayer extends AbstractSourceLayer {
     public HorizonSource(AstronomerModel model, Resources res) {
       this.model = model;
 
-      List<GeocentricCoordinates> vertices = Lists.asList(north, east, south, west, north);
+      List<Vector3> vertices = Lists.asList(north, east, south, west, north);
       lineSources.add(new LineSourceImpl(LINE_COLOR, vertices, 1.5f));
 
       textSources.add(new TextSourceImpl(zenith, res.getString(R.string.zenith), LABEL_COLOR));

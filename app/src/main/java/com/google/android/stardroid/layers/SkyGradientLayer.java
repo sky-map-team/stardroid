@@ -89,7 +89,7 @@ public class SkyGradientLayer implements Layer {
       // Log.d(TAG, "Enabling sky gradient with sun position " + sunPosition);
       rendererLock.lock();
       try {
-        renderer.queueEnableSkyGradient(GeocentricCoordinates.getInstance(sunPosition));
+        renderer.queueEnableSkyGradient(GeocentricCoordinates.getGeocentricCoords(sunPosition));
       } finally {
         rendererLock.unlock();
       }

@@ -103,10 +103,11 @@ public class Geometry {
   /**
    * Convert ra and dec to x,y,z where the point is place on the unit sphere.
    */
-  public static GeocentricCoordinates getXYZ(RaDec raDec) {
-    float raRadians = raDec.ra * DEGREES_TO_RADIANS;
-    float decRadians = raDec.dec * DEGREES_TO_RADIANS;
-    return new GeocentricCoordinates(
+  // TODO(jontayler): is this a dupe method?
+  public static Vector3 getXYZ(RaDec raDec) {
+    float raRadians = raDec.getRa() * DEGREES_TO_RADIANS;
+    float decRadians = raDec.getDec() * DEGREES_TO_RADIANS;
+    return new Vector3(
         MathUtil.cos(raRadians) * MathUtil.cos(decRadians),
         MathUtil.sin(raRadians) * MathUtil.cos(decRadians),
         MathUtil.sin(decRadians));

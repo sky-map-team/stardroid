@@ -36,10 +36,10 @@ public class TeleportingController extends AbstractController {
    *
    * @param targetXyz The destination pointing.
    */
-  public void teleport(final GeocentricCoordinates targetXyz) {
+  public void teleport(final Vector3 targetXyz) {
     Log.d(TAG, "Teleporting to target " + targetXyz);
     Pointing pointing = model.getPointing();
-    final GeocentricCoordinates hereXyz = pointing.getLineOfSight();
+    final Vector3 hereXyz = pointing.getLineOfSight();
     if (targetXyz.equals(hereXyz)) {
       return;
     }

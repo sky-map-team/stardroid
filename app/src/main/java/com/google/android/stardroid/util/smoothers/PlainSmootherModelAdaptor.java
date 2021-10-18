@@ -33,8 +33,8 @@ import javax.inject.Inject;
  */
 public class PlainSmootherModelAdaptor implements SensorListener {
   private static final String TAG = MiscUtil.getTag(PlainSmootherModelAdaptor.class);
-  private Vector3 magneticValues = ApplicationConstants.INITIAL_SOUTH.copy();
-  private Vector3 acceleration = ApplicationConstants.INITIAL_DOWN.copy();
+  private Vector3 magneticValues = ApplicationConstants.INITIAL_SOUTH.copyForJ();
+  private Vector3 acceleration = ApplicationConstants.INITIAL_DOWN.copyForJ();
   private AstronomerModel model;
   private boolean reverseMagneticZaxis;
 

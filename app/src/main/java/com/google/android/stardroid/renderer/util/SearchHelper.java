@@ -26,7 +26,7 @@ public class SearchHelper {
   
   public void setTarget(Vector3 target, String targetName) {
     mTargetName = targetName;
-    mTarget = target.copy();
+    mTarget = target.copyForJ();
     mTransformedPosition = null;
     mLastUpdateTime = System.currentTimeMillis();
     mTransitionFactor = targetInFocusRadiusImpl() ? 1 : 0;

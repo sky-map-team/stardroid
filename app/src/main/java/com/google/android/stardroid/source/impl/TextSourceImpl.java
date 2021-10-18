@@ -17,6 +17,7 @@ package com.google.android.stardroid.source.impl;
 
 import com.google.android.stardroid.source.TextSource;
 import com.google.android.stardroid.units.GeocentricCoordinates;
+import com.google.android.stardroid.units.Vector3;
 import com.google.common.base.Preconditions;
 
 
@@ -31,15 +32,15 @@ public class TextSourceImpl extends AbstractSource implements TextSource {
   public final int fontSize;
 
   public TextSourceImpl(float ra, float dec, String label, int color) {
-    this(GeocentricCoordinates.getInstance(ra, dec), label, color);
+    this(GeocentricCoordinates.getGeocentricCoords(ra, dec), label, color);
   }
 
-  public TextSourceImpl(GeocentricCoordinates coords, String label, int color) {
+  public TextSourceImpl(Vector3 coords, String label, int color) {
     this(coords, label, color, 0.02f, 15);
   }
 
-  public TextSourceImpl(GeocentricCoordinates coords, String label, int color, float offset,
-      int fontSize) {
+  public TextSourceImpl(Vector3 coords, String label, int color, float offset,
+                        int fontSize) {
 
     super(coords, color);
     this.label = Preconditions.checkNotNull(label);

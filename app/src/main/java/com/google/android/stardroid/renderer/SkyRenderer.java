@@ -23,7 +23,6 @@ import com.google.android.stardroid.renderer.util.GLBuffer;
 import com.google.android.stardroid.renderer.util.SkyRegionMap;
 import com.google.android.stardroid.renderer.util.TextureManager;
 import com.google.android.stardroid.renderer.util.UpdateClosure;
-import com.google.android.stardroid.units.GeocentricCoordinates;
 import com.google.android.stardroid.units.Vector3;
 import com.google.android.stardroid.util.MathUtil;
 import com.google.android.stardroid.util.Matrix4x4;
@@ -227,7 +226,7 @@ public class SkyRenderer implements GLSurfaceView.Renderer {
 
   // Sets up from the perspective of the viewer.
   // ie, the zenith in celestial coordinates.
-  public void setViewerUpDirection(GeocentricCoordinates up) {
+  public void setViewerUpDirection(Vector3 up) {
     mOverlayManager.setViewerUpDirection(up);
   }
 
@@ -257,7 +256,7 @@ public class SkyRenderer implements GLSurfaceView.Renderer {
     managers.remove(m);
   }
 
-  public void enableSkyGradient(GeocentricCoordinates sunPosition) {
+  public void enableSkyGradient(Vector3 sunPosition) {
     mSkyBox.setSunPosition(sunPosition);
     mSkyBox.enable(true);
   }
@@ -266,7 +265,7 @@ public class SkyRenderer implements GLSurfaceView.Renderer {
     mSkyBox.enable(false);
   }
 
-  public void enableSearchOverlay(GeocentricCoordinates target, String targetName) {
+  public void enableSearchOverlay(Vector3 target, String targetName) {
     mOverlayManager.enableSearchOverlay(target, targetName);
   }
 
@@ -313,13 +312,13 @@ public class SkyRenderer implements GLSurfaceView.Renderer {
     upY *= oneOverUpLen;
     upZ *= oneOverUpLen;
 
-    mRenderState.setLookDir(new GeocentricCoordinates(dirX, dirY, dirZ));
-    mRenderState.setUpDir(new GeocentricCoordinates(upX, upY, upZ));
+    mRenderState.setLookDir(new Vector3(dirX, dirY, dirZ));
+    mRenderState.setUpDir(new Vector3(upX, upY, upZ));
 
     mMustUpdateView = true;
 
-    mOverlayManager.setViewOrientation(new GeocentricCoordinates(dirX, dirY, dirZ),
-                                       new GeocentricCoordinates(upX, upY, upZ));
+    mOverlayManager.setViewOrientation(new Vector3(dirX, dirY, dirZ),
+                                       new Vector3(upX, upY, upZ));
   }
 
   protected int getWidth() { return mRenderState.getScreenWidth(); }
@@ -423,9 +422,9 @@ public class SkyRenderer implements GLSurfaceView.Renderer {
 }
 
 interface RenderStateInterface {
-  GeocentricCoordinates getCameraPos();
-  GeocentricCoordinates getLookDir();
-  GeocentricCoordinates getUpDir();
+  Vector3 getCameraPos();
+  Vector3 getLookDir();
+  Vector3 getUpDir();
   float getRadiusOfView();
   float getUpAngle();
   float getCosUpAngle();
@@ -443,9 +442,9 @@ interface RenderStateInterface {
 // general state which is set once per-frame, and which individual managers
 // may need to render the frame.  Come up with a better name for this.
 class RenderState implements RenderStateInterface {
-  public GeocentricCoordinates getCameraPos() { return mCameraPos; }
-  public GeocentricCoordinates getLookDir() { return mLookDir; }
-  public GeocentricCoordinates getUpDir() { return mUpDir; }
+  public Vector3 getCameraPos() { return mCameraPos; }
+  public Vector3 getLookDir() { return mLookDir; }
+  public Vector3 getUpDir() { return mUpDir; }
   public float getRadiusOfView() { return mRadiusOfView; }
   public float getUpAngle() { return mUpAngle; }
   public float getCosUpAngle() { return mCosUpAngle; }
@@ -458,9 +457,9 @@ class RenderState implements RenderStateInterface {
   public boolean getNightVisionMode() { return mNightVisionMode; }
   public SkyRegionMap.ActiveRegionData getActiveSkyRegions() { return mActiveSkyRegionSet; }
 
-  public void setCameraPos(GeocentricCoordinates pos) { mCameraPos = pos.copy(); }
-  public void setLookDir(GeocentricCoordinates dir) { mLookDir = dir.copy(); }
-  public void setUpDir(GeocentricCoordinates dir) { mUpDir = dir.copy(); }
+  public void setCameraPos(Vector3 pos) { mCameraPos = pos.copyForJ(); }
+  public void setLookDir(Vector3 dir) { mLookDir = dir.copyForJ(); }
+  public void setUpDir(Vector3 dir) { mUpDir = dir.copyForJ(); }
   public void setRadiusOfView(float radius) { mRadiusOfView = radius; }
   public void setUpAngle(float angle) {
     mUpAngle = angle;
@@ -482,9 +481,9 @@ class RenderState implements RenderStateInterface {
     mActiveSkyRegionSet = set;
   }
 
-  private GeocentricCoordinates mCameraPos = new GeocentricCoordinates(0, 0, 0);
-  private GeocentricCoordinates mLookDir = new GeocentricCoordinates(1, 0, 0);
-  private GeocentricCoordinates mUpDir = new GeocentricCoordinates(0, 1, 0);
+  private Vector3 mCameraPos = new Vector3(0, 0, 0);
+  private Vector3 mLookDir = new Vector3(1, 0, 0);
+  private Vector3 mUpDir = new Vector3(0, 1, 0);
   private float mRadiusOfView = 45;  // in degrees
   private float mUpAngle = 0;
   private float mCosUpAngle = 1;

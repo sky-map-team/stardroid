@@ -22,7 +22,6 @@ import com.google.android.stardroid.renderer.util.TextureManager;
 import com.google.android.stardroid.renderer.util.TextureReference;
 import com.google.android.stardroid.renderer.util.VertexBuffer;
 import com.google.android.stardroid.source.LineSource;
-import com.google.android.stardroid.units.GeocentricCoordinates;
 import com.google.android.stardroid.units.Vector3;
 import com.google.android.stardroid.util.MathUtil;
 import com.google.android.stardroid.util.VectorUtil;
@@ -77,7 +76,7 @@ public class PolyLineObjectManager extends RendererObjectManager {
     
     short vertexIndex = 0;
     for (LineSource l : lines) {
-      List<GeocentricCoordinates> coords = l.getVertices();
+      List<Vector3> coords = l.getVertices();
       if (coords.size() < 2)
         continue;
 

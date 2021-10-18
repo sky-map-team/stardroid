@@ -16,7 +16,7 @@ package com.google.android.stardroid.renderer.util;
 
 import android.util.Log;
 
-import com.google.android.stardroid.units.GeocentricCoordinates;
+import com.google.android.stardroid.units.Vector3;
 import com.google.android.stardroid.util.MathUtil;
 import com.google.android.stardroid.util.VectorUtil;
 
@@ -185,39 +185,39 @@ public class SkyRegionMap<RegionRenderingData> {
 
   // 32 points to cover the sphere.  Each region is about 22.7 degrees.
   public static final float REGION_COVERAGE_ANGLE_IN_RADIANS = 0.396023592f;
-  public static final GeocentricCoordinates[] REGION_CENTERS = {
-    new GeocentricCoordinates(-0.850649066269f, 0.525733930059f, -0.000001851469f),
-    new GeocentricCoordinates(-0.934170971625f, 0.000004098751f, -0.356825719588f),
-    new GeocentricCoordinates(0.577349931933f, 0.577346773818f, 0.577354100533f),
-    new GeocentricCoordinates(0.577350600623f, -0.577350601554f, -0.577349603176f),
-    new GeocentricCoordinates(-0.577354427427f, -0.577349954285f, 0.577346424572f),
-    new GeocentricCoordinates(-0.577346098609f, 0.577353779227f, -0.577350928448f),
-    new GeocentricCoordinates(-0.577349943109f, -0.577346729115f, -0.577354134060f),
-    new GeocentricCoordinates(-0.577350598760f, 0.577350586653f, 0.577349620871f),
-    new GeocentricCoordinates(0.577354458161f, 0.577349932864f, -0.577346415259f),
-    new GeocentricCoordinates(0.577346091159f, -0.577353793196f, 0.577350921929f),
-    new GeocentricCoordinates(-0.850652559660f, -0.525728277862f, -0.000004770234f),
-    new GeocentricCoordinates(-0.934173742309f, 0.000002107583f, 0.356818466447f),
-    new GeocentricCoordinates(0.525734450668f, 0.000000594184f, -0.850648744032f),
-    new GeocentricCoordinates(0.000002468936f, -0.356819496490f, -0.934173349291f),
-    new GeocentricCoordinates(0.525727798231f, -0.000004087575f, 0.850652855821f),
-    new GeocentricCoordinates(-0.000002444722f, 0.356819517910f, 0.934173340909f),
-    new GeocentricCoordinates(-0.525727787986f, 0.000004113652f, -0.850652862340f),
-    new GeocentricCoordinates(0.000004847534f, 0.356824675575f, -0.934171371162f),
-    new GeocentricCoordinates(-0.000004885718f, -0.850652267225f, 0.525728750974f),
-    new GeocentricCoordinates(-0.356825215742f, -0.934171164408f, -0.000003995374f),
-    new GeocentricCoordinates(0.000000767410f, 0.850649364293f, 0.525733447634f),
-    new GeocentricCoordinates(0.356825180352f, 0.934171177447f, 0.000003952533f),
-    new GeocentricCoordinates(-0.000000790693f, -0.850649344735f, -0.525733478367f),
-    new GeocentricCoordinates(0.356818960048f, -0.934173554182f, -0.000001195818f),
-    new GeocentricCoordinates(0.850652555004f, 0.525728284381f, 0.000004773028f),
-    new GeocentricCoordinates(0.934170960449f, -0.000004090369f, 0.356825748459f),
-    new GeocentricCoordinates(-0.525734410621f, -0.000000609085f, 0.850648769177f),
-    new GeocentricCoordinates(-0.000004815869f, -0.356824668124f, 0.934171373956f),
-    new GeocentricCoordinates(0.000004877336f, 0.850652255118f, -0.525728769600f),
-    new GeocentricCoordinates(-0.356819001026f, 0.934173538350f, 0.000001183711f),
-    new GeocentricCoordinates(0.850649050437f, -0.525733955204f, 0.000001879409f),
-    new GeocentricCoordinates(0.934173759073f, -0.000002136454f, -0.356818422675f),
+  public static final Vector3[] REGION_CENTERS = {
+    new Vector3(-0.850649066269f, 0.525733930059f, -0.000001851469f),
+    new Vector3(-0.934170971625f, 0.000004098751f, -0.356825719588f),
+    new Vector3(0.577349931933f, 0.577346773818f, 0.577354100533f),
+    new Vector3(0.577350600623f, -0.577350601554f, -0.577349603176f),
+    new Vector3(-0.577354427427f, -0.577349954285f, 0.577346424572f),
+    new Vector3(-0.577346098609f, 0.577353779227f, -0.577350928448f),
+    new Vector3(-0.577349943109f, -0.577346729115f, -0.577354134060f),
+    new Vector3(-0.577350598760f, 0.577350586653f, 0.577349620871f),
+    new Vector3(0.577354458161f, 0.577349932864f, -0.577346415259f),
+    new Vector3(0.577346091159f, -0.577353793196f, 0.577350921929f),
+    new Vector3(-0.850652559660f, -0.525728277862f, -0.000004770234f),
+    new Vector3(-0.934173742309f, 0.000002107583f, 0.356818466447f),
+    new Vector3(0.525734450668f, 0.000000594184f, -0.850648744032f),
+    new Vector3(0.000002468936f, -0.356819496490f, -0.934173349291f),
+    new Vector3(0.525727798231f, -0.000004087575f, 0.850652855821f),
+    new Vector3(-0.000002444722f, 0.356819517910f, 0.934173340909f),
+    new Vector3(-0.525727787986f, 0.000004113652f, -0.850652862340f),
+    new Vector3(0.000004847534f, 0.356824675575f, -0.934171371162f),
+    new Vector3(-0.000004885718f, -0.850652267225f, 0.525728750974f),
+    new Vector3(-0.356825215742f, -0.934171164408f, -0.000003995374f),
+    new Vector3(0.000000767410f, 0.850649364293f, 0.525733447634f),
+    new Vector3(0.356825180352f, 0.934171177447f, 0.000003952533f),
+    new Vector3(-0.000000790693f, -0.850649344735f, -0.525733478367f),
+    new Vector3(0.356818960048f, -0.934173554182f, -0.000001195818f),
+    new Vector3(0.850652555004f, 0.525728284381f, 0.000004773028f),
+    new Vector3(0.934170960449f, -0.000004090369f, 0.356825748459f),
+    new Vector3(-0.525734410621f, -0.000000609085f, 0.850648769177f),
+    new Vector3(-0.000004815869f, -0.356824668124f, 0.934171373956f),
+    new Vector3(0.000004877336f, 0.850652255118f, -0.525728769600f),
+    new Vector3(-0.356819001026f, 0.934173538350f, 0.000001183711f),
+    new Vector3(0.850649050437f, -0.525733955204f, 0.000001879409f),
+    new Vector3(0.934173759073f, -0.000002136454f, -0.356818422675f),
   };
 
   // This is the coverage angle of each region.  For most sky region
@@ -251,7 +251,7 @@ public class SkyRegionMap<RegionRenderingData> {
    * active regions.
    */
   public static ActiveRegionData getActiveRegions(
-      GeocentricCoordinates lookDir,
+      Vector3 lookDir,
       float fovyInDegrees,
       float aspect) {
     // We effectively compute a screen "region" here.  The center of this
@@ -303,7 +303,7 @@ public class SkyRegionMap<RegionRenderingData> {
    * @param position
    * @return The region the point belongs in.
    */
-  public static int getObjectRegion(GeocentricCoordinates position) {
+  public static int getObjectRegion(Vector3 position) {
     return getObjectRegionData(position).region;
   }
 
@@ -317,7 +317,7 @@ public class SkyRegionMap<RegionRenderingData> {
    * @param position
    * @return The closest region and dot product with center of that region.
    */
-  public static ObjectRegionData getObjectRegionData(GeocentricCoordinates position) {
+  public static ObjectRegionData getObjectRegionData(Vector3 position) {
     // The closest region will minimize the angle between the vectors, which
     // will maximize the dot product, so we just return the region which
     // does that.
