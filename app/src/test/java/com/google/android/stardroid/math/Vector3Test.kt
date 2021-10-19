@@ -37,10 +37,40 @@ class Vector3Test {
     }
 
     @Test
-    fun testNorm() {
-        val pythag = Vector3(3f, 4f, 0f)
-        pythag.normalize()
-        assertThat(pythag.length).isWithin(TOL).of(1f)
-        assertThat(pythag.x / pythag.y).isWithin(TOL).of(3f/4f)
+    fun testNormalize() {
+        val v = Vector3(3f, 4f, 0f)
+        v.normalize()
+        assertThat(v.length).isWithin(TOL).of(1f)
+        assertThat(v.x / v.y).isWithin(TOL).of(3f/4f)
+    }
+
+    @Test
+    fun testScale() {
+        val v = Vector3(3f, 4f, 5f)
+        v.scale(2f)
+        Vector3Subject.assertThat(v).isWithin(TOL).of(Vector3(6f, 8f, 10f))
+    }
+
+    @Test
+    fun testSubtract() {
+        val v1 = Vector3(1f, 2f, 3f)
+        val v2 = Vector3(-2f, 2f, 2f)
+        v1.subtract(v2)
+        Vector3Subject.assertThat(v1).isWithin(TOL).of(Vector3(3f, 0f, 1f))
+    }
+
+    @Test
+    fun testDistanceFrom() {
+        val v1 = Vector3(1f, 2f, 5f)
+        val v2 = Vector3(-2f, 2f, 1f)
+        assertThat(v1.distanceFrom(v2)).isWithin(TOL).of(5f)
+    }
+
+    @Test
+    fun testDotProduct() {
+        val v1 = Vector3(1f, 2f, 3f)
+        val v2 = Vector3(0.3f, 0.4f, 0.5f)
+        val dp = VectorUtil.dotProduct(v1, v2)
+        assertThat(dp).isWithin(TOL).of(2.6f)
     }
 }

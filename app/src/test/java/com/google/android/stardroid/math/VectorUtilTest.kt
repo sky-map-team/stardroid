@@ -19,11 +19,5 @@ import org.junit.Test
 private const val TOL = 0.00001f
 
 class VectorUtilTest {
-    @Test
-    fun testDotProduct() {
-        val v1 = Vector3(1f, 2f, 3f)
-        val v2 = Vector3(0.3f, 0.4f, 0.5f)
-        val dp = VectorUtil.dotProduct(v1, v2)
-        assertThat(dp).isWithin(TOL).of(2.6f)
-    }
+
 }
