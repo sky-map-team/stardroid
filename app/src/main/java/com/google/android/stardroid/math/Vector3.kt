@@ -14,6 +14,11 @@
 package com.google.android.stardroid.math
 
 import com.google.android.stardroid.math.MathUtil.sqrt
+import com.google.android.stardroid.math.VectorUtil.dotProduct
+
+
+
+
 
 data class Vector3(@JvmField var x : Float, @JvmField var y : Float, @JvmField var z : Float) {
 
@@ -100,5 +105,31 @@ data class Vector3(@JvmField var x : Float, @JvmField var y : Float, @JvmField v
      */
     fun copyForJ() : Vector3 {
         return copy()
+    }
+
+    fun scaleCopy(factor: Float): Vector3 {
+        val scaled = copy()
+        scaled.scale(factor)
+        return scaled
+    }
+
+    fun negateCopy(): Vector3 {
+        return scaleCopy(-1f)
+    }
+
+    fun normalizedCopy(): Vector3 {
+        return if (length < 0.000001f) {
+            zero()
+        } else scaleCopy(1.0f / length)
+    }
+
+    fun projectOntoUnit(onto: Vector3): Vector3 {
+        return onto.scaleCopy(dotProduct(this, onto))
+    }
+
+    companion object Factory {
+        // TODO(jontayler): remove once VectorUtil method is inlined?
+        @JvmStatic
+        fun zero() = Vector3(0f, 0f, 0f)
     }
 }

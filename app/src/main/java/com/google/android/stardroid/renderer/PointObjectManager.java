@@ -164,7 +164,7 @@ public class PointObjectManager extends RendererObjectManager {
         data.mTexCoordBuffer.addTexCoords(texOffsetU + starWidthInTexels, 0);
 
         Vector3 pos = p.getLocation();
-        Vector3 u = VectorUtil.normalized(VectorUtil.crossProduct(pos, up));
+        Vector3 u = VectorUtil.crossProduct(pos, up).normalizedCopy();
         Vector3 v = VectorUtil.crossProduct(u, pos);
 
         float s = p.getSize() * sizeFactor;

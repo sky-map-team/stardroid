@@ -150,7 +150,7 @@ public class SkyBox extends RendererObjectManager {
 
     // Rotate the sky box to the position of the sun.
     Vector3 cp = VectorUtil.crossProduct(new Vector3(0, 1, 0), mSunPos);
-    cp = VectorUtil.normalized(cp);
+    cp = cp.normalizedCopy();
     float angle = 180.0f / MathUtil.PI * MathUtil.acos(mSunPos.y);
     gl.glRotatef(angle, cp.x, cp.y, cp.z);
     

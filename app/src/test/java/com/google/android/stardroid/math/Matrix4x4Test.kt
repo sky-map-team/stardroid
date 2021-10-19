@@ -151,8 +151,7 @@ class Matrix4x4Test : TestCase() {
     }
 
     fun testRotation3x3UnalignedAxis() {
-        var axis: Vector3? = Vector3(1f, 1f, 1f)
-        axis = VectorUtil.normalized(axis)
+        var axis = Vector3(1f, 1f, 1f).normalizedCopy()
         val numRotations = 5
         val m = createRotation(MathUtil.TWO_PI / numRotations, axis)
         val start = Vector3(2.34f, 3f, -17.6f)

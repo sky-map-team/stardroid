@@ -167,7 +167,7 @@ public class SearchArrow {
   }
   
   public void setTarget(Vector3 position) {
-    position = VectorUtil.normalized(position);
+    position = position.normalizedCopy();
     mTargetPhi = MathUtil.acos(position.y);
     mTargetTheta = MathUtil.atan2(position.z, position.x);
   }
@@ -178,8 +178,8 @@ public class SearchArrow {
   private static float angleBetweenVectorsWithRespectToAxis(Vector3 v1, Vector3 v2, Vector3 axis) {
     // Make v1 perpendicular to axis.  We want an orthonormal basis for the plane perpendicular
     // to axis.  After rotating v1, the projection of v1 and v2 into this plane should be equal.
-    Vector3 v1proj = VectorUtil.difference(v1, VectorUtil.projectOntoUnit(v1, axis));
-    v1proj = VectorUtil.normalized(v1proj);
+    Vector3 v1proj = VectorUtil.difference(v1, v1.projectOntoUnit(axis));
+    v1proj = v1proj.normalizedCopy();
     
     // Get the vector perpendicular to the one you're rotating and the axis.  Since axis and v1proj
     // are orthonormal, this one must be a unit vector perpendicular to all three.

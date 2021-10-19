@@ -94,7 +94,7 @@ public class PolyLineObjectManager extends RendererObjectManager {
         avg.scale(0.5f);
         // I'm assuming that the points will already be on a unit sphere.  If this is not the case,
         // then we should normalize it here.
-        Vector3 v = VectorUtil.normalized(VectorUtil.crossProduct(u, avg));
+        Vector3 v = VectorUtil.crossProduct(u, avg).normalizedCopy();
         v.scale(sizeFactor * l.getLineWidth());
         
         

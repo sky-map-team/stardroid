@@ -119,7 +119,7 @@ public class ImageSourceImpl extends AbstractSource implements ImageSource {
 
   public void setUpVector(Vector3 upVec) {
     Vector3 p = this.getLocation();
-    Vector3 u = VectorUtil.negate(VectorUtil.normalized(VectorUtil.crossProduct(p, upVec)));
+    Vector3 u = VectorUtil.crossProduct(p, upVec).normalizedCopy().negateCopy();
     Vector3 v = VectorUtil.crossProduct(u, p);
 
     v.scale(imageScale);

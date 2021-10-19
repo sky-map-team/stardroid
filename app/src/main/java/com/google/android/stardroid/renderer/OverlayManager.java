@@ -113,7 +113,7 @@ public class OverlayManager extends RendererObjectManager {
     // Log.d("OverlayManager", "Setting viewer up " + viewerUp);
     if (MathUtil.abs(viewerUp.y) < 0.999f) {
       Vector3 cp = VectorUtil.crossProduct(viewerUp, new Vector3(0, 1, 0));
-      cp = VectorUtil.normalized(cp);
+      cp = cp.normalizedCopy();
       mGeoToViewerTransform = Matrix4x4.createRotation(MathUtil.acos(viewerUp.y), cp);
     } else {
       mGeoToViewerTransform = Matrix4x4.createIdentity();
