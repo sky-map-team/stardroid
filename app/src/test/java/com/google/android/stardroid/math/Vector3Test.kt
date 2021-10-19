@@ -16,9 +16,9 @@ package com.google.android.stardroid.math
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test
 
-class Vector3Test {
-    private val TOL = 1e-9f
+private const val TOL = 1e-9f
 
+class Vector3Test {
     @Test
     fun testEquals() {
         val one = Vector3(1f, 2f, 3f)
