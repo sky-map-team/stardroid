@@ -1,7 +1,7 @@
 package com.google.android.stardroid.space
 
-import com.google.android.stardroid.provider.ephemeris.Planet
-import com.google.android.stardroid.units.RaDec
+import com.google.android.stardroid.ephemeris.Planet
+import com.google.android.stardroid.math.RaDec
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test
 import java.util.*

@@ -29,8 +29,7 @@ import com.google.android.stardroid.source.Sources;
 import com.google.android.stardroid.source.TextSource;
 import com.google.android.stardroid.source.impl.LineSourceImpl;
 import com.google.android.stardroid.source.impl.TextSourceImpl;
-import com.google.android.stardroid.units.GeocentricCoordinates;
-import com.google.android.stardroid.units.Vector3;
+import com.google.android.stardroid.math.Vector3;
 
 import java.util.ArrayList;
 import java.util.EnumSet;

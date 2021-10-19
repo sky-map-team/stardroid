@@ -1,7 +1,7 @@
 package com.google.android.stardroid.space
 
-import com.google.android.stardroid.provider.ephemeris.Planet
-import com.google.android.stardroid.units.Vector3
+import com.google.android.stardroid.ephemeris.Planet
+import com.google.android.stardroid.math.Vector3
 import java.util.*
 
 /**

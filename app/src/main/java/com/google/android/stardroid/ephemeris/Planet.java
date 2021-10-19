@@ -12,23 +12,23 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.google.android.stardroid.provider.ephemeris;
+package com.google.android.stardroid.ephemeris;
 
 import android.util.Log;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.base.TimeConstants;
 import com.google.android.stardroid.base.VisibleForTesting;
+import com.google.android.stardroid.math.GeocentricCoordinates;
+import com.google.android.stardroid.math.Geometry;
+import com.google.android.stardroid.math.HeliocentricCoordinates;
+import com.google.android.stardroid.math.LatLong;
+import com.google.android.stardroid.math.MathUtil;
+import com.google.android.stardroid.math.RaDec;
+import com.google.android.stardroid.math.TimeUtil;
+import com.google.android.stardroid.math.Vector3;
 import com.google.android.stardroid.space.Universe;
-import com.google.android.stardroid.units.GeocentricCoordinates;
-import com.google.android.stardroid.units.HeliocentricCoordinates;
-import com.google.android.stardroid.units.LatLong;
-import com.google.android.stardroid.units.RaDec;
-import com.google.android.stardroid.units.Vector3;
-import com.google.android.stardroid.util.Geometry;
-import com.google.android.stardroid.util.MathUtil;
 import com.google.android.stardroid.util.MiscUtil;
-import com.google.android.stardroid.util.TimeUtil;
 
 import java.util.Calendar;
 import java.util.Date;

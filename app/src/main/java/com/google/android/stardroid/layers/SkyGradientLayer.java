@@ -20,11 +20,11 @@ import android.util.Log;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.base.TimeConstants;
 import com.google.android.stardroid.control.AstronomerModel;
-import com.google.android.stardroid.provider.ephemeris.SolarPositionCalculator;
+import com.google.android.stardroid.ephemeris.SolarPositionCalculator;
 import com.google.android.stardroid.renderer.RendererController;
 import com.google.android.stardroid.search.SearchResult;
-import com.google.android.stardroid.units.GeocentricCoordinates;
-import com.google.android.stardroid.units.RaDec;
+import com.google.android.stardroid.math.GeocentricCoordinates;
+import com.google.android.stardroid.math.RaDec;
 import com.google.android.stardroid.util.MiscUtil;
 
 import java.util.Collections;

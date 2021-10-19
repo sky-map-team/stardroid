@@ -1,6 +1,6 @@
 package com.google.android.stardroid.space
 
-import com.google.android.stardroid.units.RaDec
+import com.google.android.stardroid.math.RaDec
 import java.util.*
 
 /**

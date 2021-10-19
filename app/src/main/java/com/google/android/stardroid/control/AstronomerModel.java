@@ -14,8 +14,8 @@
 
 package com.google.android.stardroid.control;
 
-import com.google.android.stardroid.units.LatLong;
-import com.google.android.stardroid.units.Vector3;
+import com.google.android.stardroid.math.LatLong;
+import com.google.android.stardroid.math.Vector3;
 
 import java.util.Date;
 

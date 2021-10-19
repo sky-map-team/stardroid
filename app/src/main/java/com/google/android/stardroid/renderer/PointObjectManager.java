@@ -17,6 +17,9 @@ package com.google.android.stardroid.renderer;
 import android.util.Log;
 
 import com.google.android.stardroid.R;
+import com.google.android.stardroid.math.MathUtil;
+import com.google.android.stardroid.math.Vector3;
+import com.google.android.stardroid.math.VectorUtil;
 import com.google.android.stardroid.renderer.util.IndexBuffer;
 import com.google.android.stardroid.renderer.util.NightVisionColorBuffer;
 import com.google.android.stardroid.renderer.util.SkyRegionMap;
@@ -25,9 +28,6 @@ import com.google.android.stardroid.renderer.util.TextureManager;
 import com.google.android.stardroid.renderer.util.TextureReference;
 import com.google.android.stardroid.renderer.util.VertexBuffer;
 import com.google.android.stardroid.source.PointSource;
-import com.google.android.stardroid.units.Vector3;
-import com.google.android.stardroid.util.MathUtil;
-import com.google.android.stardroid.util.VectorUtil;
 
 import java.util.ArrayList;
 import java.util.EnumSet;

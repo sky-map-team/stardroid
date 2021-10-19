@@ -35,9 +35,9 @@ import android.widget.Toast;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.DynamicStarMapActivity;
 import com.google.android.stardroid.control.AstronomerModel;
-import com.google.android.stardroid.provider.ephemeris.Planet;
+import com.google.android.stardroid.ephemeris.Planet;
+import com.google.android.stardroid.math.TimeUtil;
 import com.google.android.stardroid.util.MiscUtil;
-import com.google.android.stardroid.util.TimeUtil;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

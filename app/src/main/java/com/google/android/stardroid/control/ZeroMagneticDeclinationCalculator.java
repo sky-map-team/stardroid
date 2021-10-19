@@ -14,7 +14,7 @@
 
 package com.google.android.stardroid.control;
 
-import com.google.android.stardroid.units.LatLong;
+import com.google.android.stardroid.math.LatLong;
 
 /**
  * A trivial calculator that returns zero magnetic declination.  Used when

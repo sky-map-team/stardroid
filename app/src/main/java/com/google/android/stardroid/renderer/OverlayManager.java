@@ -18,14 +18,13 @@ import android.content.res.Resources;
 import android.opengl.GLU;
 import android.util.Log;
 
+import com.google.android.stardroid.math.MathUtil;
+import com.google.android.stardroid.math.Matrix4x4;
+import com.google.android.stardroid.math.Vector3;
+import com.google.android.stardroid.math.VectorUtil;
 import com.google.android.stardroid.renderer.util.ColoredQuad;
 import com.google.android.stardroid.renderer.util.SearchHelper;
 import com.google.android.stardroid.renderer.util.TextureManager;
-import com.google.android.stardroid.units.GeocentricCoordinates;
-import com.google.android.stardroid.units.Vector3;
-import com.google.android.stardroid.util.MathUtil;
-import com.google.android.stardroid.util.Matrix4x4;
-import com.google.android.stardroid.util.VectorUtil;
 
 import javax.microedition.khronos.opengles.GL10;
 

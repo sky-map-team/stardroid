@@ -14,27 +14,27 @@
 
 package com.google.android.stardroid.control;
 
+import static com.google.android.stardroid.math.Geometry.addVectors;
+import static com.google.android.stardroid.math.Geometry.calculateRADecOfZenith;
+import static com.google.android.stardroid.math.Geometry.matrixMultiply;
+import static com.google.android.stardroid.math.Geometry.matrixVectorMultiply;
+import static com.google.android.stardroid.math.Geometry.scalarProduct;
+import static com.google.android.stardroid.math.Geometry.scaleVector;
+import static com.google.android.stardroid.math.Geometry.vectorProduct;
+
 import android.hardware.SensorManager;
 import android.util.Log;
 
 import com.google.android.stardroid.ApplicationConstants;
-import com.google.android.stardroid.units.GeocentricCoordinates;
-import com.google.android.stardroid.units.LatLong;
-import com.google.android.stardroid.units.Matrix33;
-import com.google.android.stardroid.units.RaDec;
-import com.google.android.stardroid.units.Vector3;
-import com.google.android.stardroid.util.Geometry;
+import com.google.android.stardroid.math.GeocentricCoordinates;
+import com.google.android.stardroid.math.Geometry;
+import com.google.android.stardroid.math.LatLong;
+import com.google.android.stardroid.math.Matrix3x3;
+import com.google.android.stardroid.math.RaDec;
+import com.google.android.stardroid.math.Vector3;
 import com.google.android.stardroid.util.MiscUtil;
 
 import java.util.Date;
-
-import static com.google.android.stardroid.util.Geometry.addVectors;
-import static com.google.android.stardroid.util.Geometry.calculateRADecOfZenith;
-import static com.google.android.stardroid.util.Geometry.matrixMultiply;
-import static com.google.android.stardroid.util.Geometry.matrixVectorMultiply;
-import static com.google.android.stardroid.util.Geometry.scalarProduct;
-import static com.google.android.stardroid.util.Geometry.scaleVector;
-import static com.google.android.stardroid.util.Geometry.vectorProduct;
 
 /**
  * The model of the astronomer.
@@ -116,10 +116,10 @@ public class AstronomerModelImpl implements AstronomerModel {
   private Vector3 trueEastCelestial = AXIS_OF_EARTHS_ROTATION;
 
   /** [North, Up, East]^-1 in phone coordinates. */
-  private Matrix33 axesPhoneInverseMatrix = Matrix33.getIdMatrix();
+  private Matrix3x3 axesPhoneInverseMatrix = Matrix3x3.getIdMatrix();
 
   /** [North, Up, East] in celestial coordinates. */
-  private Matrix33 axesMagneticCelestialMatrix = Matrix33.getIdMatrix();
+  private Matrix3x3 axesMagneticCelestialMatrix = Matrix3x3.getIdMatrix();
 
   /**
    * @param magneticDeclinationCalculator A calculator that will provide the
@@ -262,7 +262,7 @@ public class AstronomerModelImpl implements AstronomerModel {
     calculateLocalNorthAndUpInCelestialCoords(false);
     calculateLocalNorthAndUpInPhoneCoordsFromSensors();
 
-    Matrix33 transform = matrixMultiply(axesMagneticCelestialMatrix, axesPhoneInverseMatrix);
+    Matrix3x3 transform = matrixMultiply(axesMagneticCelestialMatrix, axesPhoneInverseMatrix);
 
     Vector3 viewInSpaceSpace = matrixVectorMultiply(transform, POINTING_DIR_IN_PHONE_COORDS);
     Vector3 screenUpInSpaceSpace = matrixVectorMultiply(transform, screenInPhoneCoords);
@@ -295,14 +295,14 @@ public class AstronomerModelImpl implements AstronomerModel {
     // Apply magnetic correction.  Rather than correct the phone's axes for
     // the magnetic declination, it's more efficient to rotate the
     // celestial axes by the same amount in the opposite direction.
-    Matrix33 rotationMatrix = Geometry.calculateRotationMatrix(
+    Matrix3x3 rotationMatrix = Geometry.calculateRotationMatrix(
         magneticDeclinationCalculator.getDeclination(), upCelestial);
 
     Vector3 magneticNorthCelestial = Geometry.matrixVectorMultiply(rotationMatrix,
                                                                    trueNorthCelestial);
     Vector3 magneticEastCelestial = vectorProduct(magneticNorthCelestial, upCelestial);
 
-    axesMagneticCelestialMatrix = new Matrix33(magneticNorthCelestial,
+    axesMagneticCelestialMatrix = new Matrix3x3(magneticNorthCelestial,
                                                upCelestial,
                                                magneticEastCelestial);
   }
@@ -342,7 +342,7 @@ public class AstronomerModelImpl implements AstronomerModel {
     // The matrix is orthogonal, so transpose it to find its inverse.
     // Easiest way to do that is to construct it from row vectors instead
     // of column vectors.
-    axesPhoneInverseMatrix = new Matrix33(magneticNorthPhone, upPhone, magneticEastPhone, false);
+    axesPhoneInverseMatrix = new Matrix3x3(magneticNorthPhone, upPhone, magneticEastPhone, false);
   }
 
   /**

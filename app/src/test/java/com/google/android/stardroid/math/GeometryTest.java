@@ -12,13 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.google.android.stardroid.util;
-
-import com.google.android.stardroid.units.Matrix33Test;
-import com.google.android.stardroid.units.GeocentricCoordinates;
-import com.google.android.stardroid.units.Matrix33;
-import com.google.android.stardroid.units.RaDec;
-import com.google.android.stardroid.units.Vector3;
+package com.google.android.stardroid.math;
 
 import junit.framework.TestCase;
 
@@ -31,7 +25,7 @@ public class GeometryTest extends TestCase {
     assertEquals(v.z, w.z, TOL);
   }
 
-  private void assertMatrixSame(Matrix33 m1, Matrix33 m2, double tol) {
+  private void assertMatrixSame(Matrix3x3 m1, Matrix3x3 m2, double tol) {
     assertEquals(m1.xx, m2.xx, tol);
     assertEquals(m1.xy, m2.xy, tol);
     assertEquals(m1.xz, m2.xz, tol);
@@ -103,28 +97,28 @@ public class GeometryTest extends TestCase {
   }
 
   public void testMatrixInversion() {
-    Matrix33 m = new Matrix33 (1, 2, 0, 0, 1, 5, 0, 0, 1);
+    Matrix3x3 m = new Matrix3x3(1, 2, 0, 0, 1, 5, 0, 0, 1);
     System.out.println(GeometryTest.formatMatrix(m));
-    Matrix33 inv = m.getInverse();
+    Matrix3x3 inv = m.getInverse();
     System.out.println(GeometryTest.formatMatrix(inv));
-    Matrix33 product = Geometry.matrixMultiply(m, inv);
+    Matrix3x3 product = Geometry.matrixMultiply(m, inv);
     System.out.println(GeometryTest.formatMatrix(product));
   }
 
   public void testCalculateRotationMatrix() {
-    Matrix33 noRotation = Geometry.calculateRotationMatrix(0, new Vector3(1, 2, 3));
-    Matrix33 identity = new Matrix33(1, 0, 0, 0, 1, 0, 0, 0, 1);
+    Matrix3x3 noRotation = Geometry.calculateRotationMatrix(0, new Vector3(1, 2, 3));
+    Matrix3x3 identity = new Matrix3x3(1, 0, 0, 0, 1, 0, 0, 0, 1);
     assertMatrixSame(identity, noRotation, TOL);
 
-    Matrix33 rotAboutZ = Geometry.calculateRotationMatrix(90, new Vector3(0, 0, 1));
-    assertMatrixSame(new Matrix33(0, 1, 0, -1, 0, 0, 0, 0, 1), rotAboutZ, TOL);
+    Matrix3x3 rotAboutZ = Geometry.calculateRotationMatrix(90, new Vector3(0, 0, 1));
+    assertMatrixSame(new Matrix3x3(0, 1, 0, -1, 0, 0, 0, 0, 1), rotAboutZ, TOL);
 
     Vector3 axis = new Vector3(2, -4, 1);
     axis.normalize();
-    Matrix33 rotA = Geometry.calculateRotationMatrix(30, axis);
-    Matrix33 rotB = Geometry.calculateRotationMatrix(-30, axis);
+    Matrix3x3 rotA = Geometry.calculateRotationMatrix(30, axis);
+    Matrix3x3 rotB = Geometry.calculateRotationMatrix(-30, axis);
 
-    Matrix33 shouldBeIdentity = Geometry.matrixMultiply(rotA, rotB);
+    Matrix3x3 shouldBeIdentity = Geometry.matrixMultiply(rotA, rotB);
     assertMatrixSame(identity, shouldBeIdentity, TOL);
 
     Vector3 axisPerpendicular = new Vector3(4, 2, 0);
@@ -141,13 +135,13 @@ public class GeometryTest extends TestCase {
   }
 
   public void testMatrixMultiply() {
-    Matrix33 m1 = new Matrix33(1, 2, 4, -1, -3, 5, 3, 2, 6);
-    Matrix33 m2 = new Matrix33(3, -1, 4, 0, 2, 1, 2, -1, 2);
+    Matrix3x3 m1 = new Matrix3x3(1, 2, 4, -1, -3, 5, 3, 2, 6);
+    Matrix3x3 m2 = new Matrix3x3(3, -1, 4, 0, 2, 1, 2, -1, 2);
     Vector3 v1 = new Vector3(0, -1, 2);
     Vector3 v2 = new Vector3(2, -2, 3);
 
-    Matrix33Test.assertMatricesEqual(
-        new Matrix33(11, -1, 14, 7, -10, 3, 21, -5, 26),
+    Matrix3x3Test.assertMatricesEqual(
+        new Matrix3x3(11, -1, 14, 7, -10, 3, 21, -5, 26),
         Geometry.matrixMultiply(m1, m2), (float) TOL);
 
     assertVectorsEqual(new Vector3(6, 13, 10),
@@ -156,7 +150,7 @@ public class GeometryTest extends TestCase {
           Geometry.matrixVectorMultiply(m1, v2));
   }
 
-  public static String formatMatrix(Matrix33 m) {
+  public static String formatMatrix(Matrix3x3 m) {
     return m.xx + " " + m.xy + " " + m.xz + " "
       + m.yx + " " + m.yy + " " + m.yz + " "
       + m.zx + " " + m.zy + " " + m.zz;

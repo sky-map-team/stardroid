@@ -12,9 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.google.android.stardroid.util;
-
-import com.google.android.stardroid.units.Vector3;
+package com.google.android.stardroid.math;
 
 public class Matrix4x4 {
 

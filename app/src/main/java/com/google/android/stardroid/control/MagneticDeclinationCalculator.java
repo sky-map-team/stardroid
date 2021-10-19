@@ -14,7 +14,7 @@
 
 package com.google.android.stardroid.control;
 
-import com.google.android.stardroid.units.LatLong;
+import com.google.android.stardroid.math.LatLong;
 
 /**
  * Passed to the {@link AstronomerModel} to calculate the local magnetic

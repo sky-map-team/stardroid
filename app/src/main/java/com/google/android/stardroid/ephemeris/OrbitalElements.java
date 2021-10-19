@@ -12,12 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.google.android.stardroid.provider.ephemeris;
+package com.google.android.stardroid.ephemeris;
 
 import android.util.Log;
 
-import com.google.android.stardroid.util.Geometry;
-import com.google.android.stardroid.util.MathUtil;
+import com.google.android.stardroid.math.Geometry;
+import com.google.android.stardroid.math.MathUtil;
 import com.google.android.stardroid.util.MiscUtil;
 
 /**

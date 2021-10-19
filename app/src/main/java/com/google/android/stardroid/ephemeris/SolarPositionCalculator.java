@@ -12,11 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.google.android.stardroid.provider.ephemeris;
+package com.google.android.stardroid.ephemeris;
 
 import com.google.android.stardroid.space.Universe;
-import com.google.android.stardroid.units.HeliocentricCoordinates;
-import com.google.android.stardroid.units.RaDec;
+import com.google.android.stardroid.math.HeliocentricCoordinates;
+import com.google.android.stardroid.math.RaDec;
 
 import java.util.Date;
 

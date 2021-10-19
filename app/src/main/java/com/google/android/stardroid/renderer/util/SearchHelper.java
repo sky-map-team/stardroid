@@ -14,9 +14,9 @@
 
 package com.google.android.stardroid.renderer.util;
 
-import com.google.android.stardroid.units.Vector3;
-import com.google.android.stardroid.util.MathUtil;
-import com.google.android.stardroid.util.Matrix4x4;
+import com.google.android.stardroid.math.MathUtil;
+import com.google.android.stardroid.math.Matrix4x4;
+import com.google.android.stardroid.math.Vector3;
 
 public class SearchHelper {
   public void resize(int width, int height) {

@@ -15,8 +15,8 @@
 package com.google.android.stardroid.source;
 
 import com.google.android.stardroid.renderer.RendererObjectManager.UpdateType;
-import com.google.android.stardroid.units.GeocentricCoordinates;
-import com.google.android.stardroid.units.Vector3;
+import com.google.android.stardroid.math.GeocentricCoordinates;
+import com.google.android.stardroid.math.Vector3;
 
 import java.util.EnumSet;
 import java.util.List;
