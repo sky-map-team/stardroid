@@ -28,6 +28,7 @@ import android.hardware.SensorManager
 import android.util.Log
 import com.google.android.stardroid.util.MiscUtil
 import java.util.*
+import kotlin.math.abs
 
 /**
  * The model of the astronomer.
@@ -90,11 +91,11 @@ class AstronomerModelImpl(magneticDeclinationCalculator: MagneticDeclinationCalc
     private val pointing = Pointing()
 
     /** The sensor acceleration in the phone's coordinate system.  */
-    private val acceleration = ApplicationConstants.INITIAL_DOWN.copyForJ()
+    private val acceleration = ApplicationConstants.INITIAL_DOWN.copy()
     private var upPhone = acceleration * -1f
 
     /** The sensor magnetic field in the phone's coordinate system.  */
-    private val magneticField = ApplicationConstants.INITIAL_SOUTH.copyForJ()
+    private val magneticField = ApplicationConstants.INITIAL_SOUTH.copy()
     private var useRotationVector = false
     private val rotationVector = floatArrayOf(1f, 0f, 0f, 0f)
 
@@ -174,48 +175,39 @@ class AstronomerModelImpl(magneticDeclinationCalculator: MagneticDeclinationCalc
             0,
             this.rotationVector,
             0,
-            Math.min(rotationVector.size, 4)
+            rotationVector.size.coerceAtMost(4)
         )
         useRotationVector = true
     }
 
     override fun getNorth(): Vector3 {
         calculateLocalNorthAndUpInCelestialCoords(false)
-        return trueNorthCelestial.copyForJ()
+        return trueNorthCelestial.copy()
     }
 
     override fun getSouth(): Vector3 {
         calculateLocalNorthAndUpInCelestialCoords(false)
-        return trueNorthCelestial * -1f
-        /**
-         * Scales the vector by the given amount and returns a new vector.
-         */
+        return -trueNorthCelestial
     }
 
     override fun getZenith(): Vector3 {
         calculateLocalNorthAndUpInCelestialCoords(false)
-        return upCelestial.copyForJ()
+        return upCelestial.copy()
     }
 
     override fun getNadir(): Vector3 {
         calculateLocalNorthAndUpInCelestialCoords(false)
-        return upCelestial * -1f
-        /**
-         * Scales the vector by the given amount and returns a new vector.
-         */
+        return -upCelestial
     }
 
     override fun getEast(): Vector3 {
         calculateLocalNorthAndUpInCelestialCoords(false)
-        return trueEastCelestial.copyForJ()
+        return trueEastCelestial.copy()
     }
 
     override fun getWest(): Vector3 {
         calculateLocalNorthAndUpInCelestialCoords(false)
-        return trueEastCelestial * -1f
-        /**
-         * Scales the vector by the given amount and returns a new vector.
-         */
+        return -trueEastCelestial
     }
 
     override fun setMagneticDeclinationCalculator(calculator: MagneticDeclinationCalculator) {
@@ -252,7 +244,7 @@ class AstronomerModelImpl(magneticDeclinationCalculator: MagneticDeclinationCalc
     private fun calculateLocalNorthAndUpInCelestialCoords(forceUpdate: Boolean) {
         val currentTime = clock.timeInMillisSinceEpoch
         if (!forceUpdate &&
-            Math.abs(currentTime - celestialCoordsLastUpdated) <
+            abs(currentTime - celestialCoordsLastUpdated) <
             MINIMUM_TIME_BETWEEN_CELESTIAL_COORD_UPDATES_MILLIS
         ) {
             return
@@ -263,18 +255,7 @@ class AstronomerModelImpl(magneticDeclinationCalculator: MagneticDeclinationCalc
         upCelestial = getGeocentricCoords(up)
         val z = AXIS_OF_EARTHS_ROTATION
         val zDotu = upCelestial dot z
-        trueNorthCelestial =
-                /**
-                 * Creates and returns a new Vector3 which is the sum of both arguments.
-                 * @param first
-                 * @param second
-                 * @return vector sum first + second
-                 */
-            z +
-                    /**
-                     * Scales the vector by the given amount and returns a new vector.
-                     */
-                    upCelestial * -zDotu
+        trueNorthCelestial = z - upCelestial * zDotu
         trueNorthCelestial.normalize()
         trueEastCelestial = trueNorthCelestial * upCelestial
 
@@ -314,31 +295,17 @@ class AstronomerModelImpl(magneticDeclinationCalculator: MagneticDeclinationCalc
             magneticEastPhone = Vector3(rotationMatrix[0], rotationMatrix[1], rotationMatrix[2])
         } else {
             // TODO(johntaylor): we can reduce the number of vector copies done in here.
-            val down = acceleration.copyForJ()
+            val down = acceleration.copy()
             down.normalize()
             // Magnetic field goes *from* North to South, so reverse it.
-            val magneticFieldToNorth = magneticField.copyForJ()
+            val magneticFieldToNorth = magneticField.copy()
             magneticFieldToNorth.timesAssign(-1f)
             magneticFieldToNorth.normalize()
             // This is the vector to magnetic North *along the ground*.
             magneticNorthPhone =
-                    /**
-                     * Creates and returns a new Vector3 which is the sum of both arguments.
-                     * @param first
-                     * @param second
-                     * @return vector sum first + second
-                     */
-                magneticFieldToNorth +
-                        /**
-                         * Scales the vector by the given amount and returns a new vector.
-                         */
-                        down * -(magneticFieldToNorth dot down)
+                magneticFieldToNorth - down * (magneticFieldToNorth dot down)
             magneticNorthPhone.normalize()
-            upPhone =
-                    /**
-                     * Scales the vector by the given amount and returns a new vector.
-                     */
-                down * -1f
+            upPhone = -down
             magneticEastPhone = magneticNorthPhone * upPhone
         }
         // The matrix is orthogonal, so transpose it to find its inverse.
