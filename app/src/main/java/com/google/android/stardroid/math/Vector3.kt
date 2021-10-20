@@ -154,6 +154,14 @@ data class Vector3(@JvmField var x : Float, @JvmField var y : Float, @JvmField v
         return unitVector * (this dot unitVector)
     }
 
+    fun cosineSimilarity(
+        v: Vector3
+    ) = ((this dot v)
+            / sqrt(
+        (this dot this)
+                * (v dot v)
+    ))
+
     companion object Factory {
         fun zero() = Vector3(0f, 0f, 0f)
         fun unitX() = Vector3(1f, 0f, 0f)
@@ -161,3 +169,4 @@ data class Vector3(@JvmField var x : Float, @JvmField var y : Float, @JvmField v
         fun unitZ() = Vector3(0f, 0f, 1f)
     }
 }
+

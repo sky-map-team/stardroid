@@ -17,7 +17,6 @@ import com.google.android.stardroid.math.MathUtil.ceil
 import com.google.android.stardroid.math.MathUtil.cos
 import com.google.android.stardroid.math.MathUtil.floor
 import com.google.android.stardroid.math.MathUtil.sin
-import com.google.android.stardroid.math.MathUtil.sqrt
 import java.util.*
 
 /**
@@ -59,45 +58,6 @@ object Geometry {
             result = MathUtil.TWO_PI + result
         }
         return result
-    }
-
-    @JvmStatic
-    fun scalarProduct(v1: Vector3, v2: Vector3): Float {
-        return v1 dot v2
-    }
-
-    @JvmStatic
-    fun vectorProduct(v1: Vector3, v2: Vector3): Vector3 {
-        return v1 * v2
-    }
-
-    /**
-     * Scales the vector by the given amount and returns a new vector.
-     */
-    @JvmStatic
-    fun scaleVector(v: Vector3, scale: Float): Vector3 {
-        return v * scale
-    }
-
-    /**
-     * Creates and returns a new Vector3 which is the sum of both arguments.
-     * @param first
-     * @param second
-     * @return vector sum first + second
-     */
-    @JvmStatic
-    fun addVectors(first: Vector3, second: Vector3): Vector3 {
-        return first + second
-    }
-
-    @JvmStatic
-    fun cosineSimilarity(v1: Vector3, v2: Vector3): Float {
-        // We might want to optimize this implementation at some point.
-        return (scalarProduct(v1, v2)
-                / sqrt(
-            scalarProduct(v1, v1)
-                    * scalarProduct(v2, v2)
-        ))
     }
 
     /**
@@ -187,3 +147,4 @@ object Geometry {
         )
     }
 }
+

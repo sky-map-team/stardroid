@@ -131,4 +131,11 @@ class Vector3Test {
         Vector3Subject.assertThat(v2 * projection).isWithin(TOL).of(Vector3.zero())
         assertThat((v1 - projection) dot projection).isWithin(TOL).of(0f)
     }
+
+    @Test
+    fun testCosineSimilarity() {
+        val v1 = Vector3(1f,2f, 3f)
+        val v2 = Vector3(2f, -1f, 10f)
+        assertThat(v1.cosineSimilarity(v2)).isWithin(TOL).of(0.78246075f)
+    }
 }

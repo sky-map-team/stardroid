@@ -17,8 +17,6 @@ import com.google.android.stardroid.math.Geometry.calculateRotationMatrix
 import com.google.android.stardroid.math.Geometry.getXYZ
 import com.google.android.stardroid.math.Geometry.matrixMultiply
 import com.google.android.stardroid.math.Geometry.matrixVectorMultiply
-import com.google.android.stardroid.math.Geometry.scalarProduct
-import com.google.android.stardroid.math.Geometry.vectorProduct
 import com.google.android.stardroid.math.Matrix3x3Test.Companion.assertMatricesEqual
 import com.google.android.stardroid.math.RaDec.Companion.fromGeocentricCoords
 import com.google.common.truth.Truth.assertThat
@@ -88,22 +86,22 @@ class GeometryTest {
         // Check that z is x X y
         val x = Vector3(1f, 0f, 0f)
         val y = Vector3(0f, 1f, 0f)
-        val z = vectorProduct(x, y)
+        val z = x * y
         assertVectorsEqual(z, Vector3(0f, 0f, 1f))
 
         // Check that a X b is perpendicular to a and b
         val a = Vector3(1f, -2f, 3f)
         val b = Vector3(2f, 0f, -4f)
-        val c = vectorProduct(a, b)
-        val aDotc = scalarProduct(a, c)
-        val bDotc = scalarProduct(b, c)
+        val c = a * b
+        val aDotc = a dot c
+        val bDotc = b dot c
         assertThat(aDotc).isWithin(TOL).of(0.0f)
         assertThat(bDotc).isWithin(TOL).of(0.0f)
 
         // Check that |a X b| is correct
         val v = Vector3(1f, 2f, 0f)
-        val ww = vectorProduct(x, v)
-        val wwDotww = scalarProduct(ww, ww)
+        val ww = x * v
+        val wwDotww = ww dot ww
         assertThat(wwDotww).isWithin(TOL)
             .of(Math.pow(1f * Math.sqrt(5.0) * Math.sin(Math.atan(2.0)), 2.0).toFloat())
     }
@@ -134,11 +132,11 @@ class GeometryTest {
         val rotatedAxisPerpendicular = matrixVectorMultiply(rotA, axisPerpendicular)
 
         // Should still be perpendicular
-        assertThat(scalarProduct(axis, rotatedAxisPerpendicular)).isWithin(TOL).of(0.0f)
+        assertThat(axis dot rotatedAxisPerpendicular).isWithin(TOL).of(0.0f)
         // And the angle between them should be 30 degrees
         axisPerpendicular.normalize()
         rotatedAxisPerpendicular.normalize()
-        assertThat(scalarProduct(axisPerpendicular, rotatedAxisPerpendicular)).isWithin(TOL)
+        assertThat(axisPerpendicular dot rotatedAxisPerpendicular).isWithin(TOL)
             .of(
                 Math.cos(30.0 * Geometry.DEGREES_TO_RADIANS).toFloat()
             )

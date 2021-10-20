@@ -13,21 +13,12 @@
 // limitations under the License.
 package com.google.android.stardroid.control
 
-import com.google.android.stardroid.math.MathUtil.sqrt
-import com.google.android.stardroid.math.Vector3.length
-import com.google.android.stardroid.math.Geometry.cosineSimilarity
-import com.google.android.stardroid.math.MathUtil.cos
-import junit.framework.TestCase
-import com.google.android.stardroid.control.AstronomerModel
-import kotlin.Throws
-import com.google.android.stardroid.control.AstronomerModelImpl
-import com.google.android.stardroid.control.ZeroMagneticDeclinationCalculator
-import com.google.android.stardroid.math.Vector3
-import com.google.android.stardroid.control.AstronomerModelTest
-import junit.framework.AssertionFailedError
 import com.google.android.stardroid.math.LatLong
-import com.google.android.stardroid.math.Geometry
-import java.lang.Exception
+import com.google.android.stardroid.math.MathUtil.cos
+import com.google.android.stardroid.math.MathUtil.sqrt
+import com.google.android.stardroid.math.Vector3
+import junit.framework.AssertionFailedError
+import junit.framework.TestCase
 import java.util.*
 
 /**
@@ -48,8 +39,8 @@ class AstronomerModelTest : TestCase() {
      * Checks that our assertion method works as intended.
      */
     fun testAssertVectorEquals_sameVector() {
-        val v1 = Vector3(0, 0, 1)
-        val v2 = Vector3(0, 0, 1)
+        val v1 = Vector3.unitZ()
+        val v2 = Vector3.unitZ()
         assertVectorEquals(v1, v2, 0.0001f, 0.0001f)
     }
 
@@ -57,8 +48,8 @@ class AstronomerModelTest : TestCase() {
      * Checks that our assertion method works as intended.
      */
     fun testAssertVectorEquals_differentLengths() {
-        val v1 = Vector3(0, 0, 1.0f)
-        val v2 = Vector3(0, 0, 1.1f)
+        val v1 = Vector3(0f, 0f, 1.0f)
+        val v2 = Vector3(0f, 0f, 1.1f)
         try {
             assertVectorEquals(v1, v2, 0.0001f, 0.0001f)
             fail("Vectors should have been found to have different lengths.")
@@ -71,8 +62,8 @@ class AstronomerModelTest : TestCase() {
      * Checks that our assertion method works as intended.
      */
     fun testAssertVectorEquals_differentDirections() {
-        val v1 = Vector3(0, 0, 1)
-        val v2 = Vector3(0, 1, 0)
+        val v1 = Vector3.unitZ()
+        val v2 = Vector3.unitY()
         try {
             assertVectorEquals(v1, v2, 0.0001f, 0.0001f)
             fail("Vectors should have been found to point in different directions.")
@@ -85,18 +76,18 @@ class AstronomerModelTest : TestCase() {
      * The phone is flat, long side pointing North at lat,long = 0, 90.
      */
     fun testSetPhoneSensorValues_phoneFlatAtLat0Long90() {
-        val location = LatLong(0, 90)
+        val location = LatLong(0f, 90f)
         // Phone flat on back, top edge towards North
         // The following are in the phone's coordinate system.
-        val acceleration = Vector3(0, 0, -10)
-        val magneticField = Vector3(0, -1, 10)
+        val acceleration = Vector3(0f, 0f, -10f)
+        val magneticField = Vector3(0f, -1f, 10f)
         // The following are in the celestial coordinate system.
-        val expectedZenith = Vector3(0, 1, 0)
-        val expectedNadir = Vector3(0, -1, 0)
-        val expectedNorth = Vector3(0, 0, 1)
-        val expectedEast = Vector3(-1, 0, 0)
-        val expectedSouth = Vector3(0, 0, -1)
-        val expectedWest = Vector3(1, 0, 0)
+        val expectedZenith = Vector3(0f, 1f, 0f)
+        val expectedNadir = Vector3(0f, -1f, 0f)
+        val expectedNorth = Vector3(0f, 0f, 1f)
+        val expectedEast = Vector3(-1f, 0f, 0f)
+        val expectedSouth = Vector3(0f, 0f, -1f)
+        val expectedWest = Vector3(1f, 0f, 0f)
         checkModelOrientation(
             location, acceleration, magneticField, expectedZenith, expectedNadir,
             expectedNorth, expectedEast, expectedSouth, expectedWest, expectedNadir,
@@ -108,15 +99,15 @@ class AstronomerModelTest : TestCase() {
      * As previous test, but at lat, long = (45, 0)
      */
     fun testSetPhoneSensorValues_phoneFlatAtLat45Long0() {
-        val location = LatLong(45, 0)
-        val acceleration = Vector3(0, 0, -10)
-        val magneticField = Vector3(0, -10, 0)
-        val expectedZenith = Vector3(1 / SQRT2, 0, 1 / SQRT2)
-        val expectedNadir = Vector3(-1 / SQRT2, 0, -1 / SQRT2)
-        val expectedNorth = Vector3(-1 / SQRT2, 0, 1 / SQRT2)
-        val expectedEast = Vector3(0, 1, 0)
-        val expectedSouth = Vector3(1 / SQRT2, 0, -1 / SQRT2)
-        val expectedWest = Vector3(0, -1, 0)
+        val location = LatLong(45f, 0f)
+        val acceleration = Vector3(0f, 0f, -10f)
+        val magneticField = Vector3(0f, -10f, 0f)
+        val expectedZenith = Vector3(1 / SQRT2, 0f, 1 / SQRT2)
+        val expectedNadir = Vector3(-1 / SQRT2, 0f, -1 / SQRT2)
+        val expectedNorth = Vector3(-1 / SQRT2, 0f, 1 / SQRT2)
+        val expectedEast = Vector3(0f, 1f, 0f)
+        val expectedSouth = Vector3(1 / SQRT2, 0f, -1 / SQRT2)
+        val expectedWest = Vector3(0f, -1f, 0f)
         checkModelOrientation(
             location, acceleration, magneticField, expectedZenith, expectedNadir,
             expectedNorth, expectedEast, expectedSouth, expectedWest, expectedNadir,
@@ -128,16 +119,16 @@ class AstronomerModelTest : TestCase() {
      * As previous test, but at lat, long = (0, 0)
      */
     fun testSetPhoneSensorValues_phoneFlatOnEquatorAtMeridian() {
-        val location = LatLong(0, 0)
+        val location = LatLong(0f, 0f)
         // Phone flat on back, top edge towards North
-        val acceleration = Vector3(0, 0, -10)
-        val magneticField = Vector3(0, -1, 10)
-        val expectedZenith = Vector3(1, 0, 0)
-        val expectedNadir = Vector3(-1, 0, 0)
-        val expectedNorth = Vector3(0, 0, 1)
-        val expectedEast = Vector3(0, 1, 0)
-        val expectedSouth = Vector3(0, 0, -1)
-        val expectedWest = Vector3(0, -1, 0)
+        val acceleration = Vector3(0f, 0f, -10f)
+        val magneticField = Vector3(0f, -1f, 10f)
+        val expectedZenith = Vector3(1f, 0f, 0f)
+        val expectedNadir = Vector3(-1f, 0f, 0f)
+        val expectedNorth = Vector3(0f, 0f, 1f)
+        val expectedEast = Vector3(0f, 1f, 0f)
+        val expectedSouth = Vector3(0f, 0f, -1f)
+        val expectedWest = Vector3(0f, -1f, 0f)
         checkModelOrientation(
             location, acceleration, magneticField, expectedZenith, expectedNadir,
             expectedNorth, expectedEast, expectedSouth, expectedWest, expectedNadir,
@@ -150,15 +141,15 @@ class AstronomerModelTest : TestCase() {
      * and pointing east.
      */
     fun testSetPhoneSensorValues_phoneLandscapeFacingEastOnEquatorAtMeridian() {
-        val location = LatLong(0, 0)
-        val acceleration = Vector3(10, 0, 0)
-        val magneticField = Vector3(-10, 1, 0)
-        val expectedZenith = Vector3(1, 0, 0)
-        val expectedNadir = Vector3(-1, 0, 0)
-        val expectedNorth = Vector3(0, 0, 1)
-        val expectedEast = Vector3(0, 1, 0)
-        val expectedSouth = Vector3(0, 0, -1)
-        val expectedWest = Vector3(0, -1, 0)
+        val location = LatLong(0f, 0f)
+        val acceleration = Vector3(10f, 0f, 0f)
+        val magneticField = Vector3(-10f, 1f, 0f)
+        val expectedZenith = Vector3(1f, 0f, 0f)
+        val expectedNadir = Vector3(-1f, 0f, 0f)
+        val expectedNorth = Vector3(0f, 0f, 1f)
+        val expectedEast = Vector3(0f, 1f, 0f)
+        val expectedSouth = Vector3(0f, 0f, -1f)
+        val expectedWest = Vector3(0f, -1f, 0f)
         checkModelOrientation(
             location, acceleration, magneticField, expectedZenith, expectedNadir,
             expectedNorth, expectedEast, expectedSouth, expectedWest, expectedEast,
@@ -170,15 +161,15 @@ class AstronomerModelTest : TestCase() {
      * As previous test, but in portrait mode facing north.
      */
     fun testSetPhoneSensorValues_phoneStandingUpFacingNorthOnEquatorAtMeridian() {
-        val location = LatLong(0, 0)
-        val acceleration = Vector3(0, -10, 0)
-        val magneticField = Vector3(0, 10, 1)
-        val expectedZenith = Vector3(1, 0, 0)
-        val expectedNadir = Vector3(-1, 0, 0)
-        val expectedNorth = Vector3(0, 0, 1)
-        val expectedEast = Vector3(0, 1, 0)
-        val expectedSouth = Vector3(0, 0, -1)
-        val expectedWest = Vector3(0, -1, 0)
+        val location = LatLong(0f, 0f)
+        val acceleration = Vector3(0f, -10f, 0f)
+        val magneticField = Vector3(0f, 10f, 1f)
+        val expectedZenith = Vector3(1f, 0f, 0f)
+        val expectedNadir = Vector3(-1f, 0f, 0f)
+        val expectedNorth = Vector3(0f, 0f, 1f)
+        val expectedEast = Vector3(0f, 1f, 0f)
+        val expectedSouth = Vector3(0f, 0f, -1f)
+        val expectedWest = Vector3(0f, -1f, 0f)
         checkModelOrientation(
             location, acceleration, magneticField, expectedZenith, expectedNadir,
             expectedNorth, expectedEast, expectedSouth, expectedWest, expectedNorth,
@@ -237,7 +228,8 @@ class AstronomerModelTest : TestCase() {
             val normv1 = v1.length
             val normv2 = v2.length
             assertEquals("Vectors of different lengths", normv1, normv2, tol_length)
-            val cosineSim = cosineSimilarity(v1, v2)
+            val cosineSim =         // We might want to optimize this implementation at some point.
+                v1.cosineSimilarity(v2)
             val cosTol = cos(tol_angle)
             assertTrue("Vectors in different directions", cosineSim >= cosTol)
         }

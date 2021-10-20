@@ -45,7 +45,7 @@ data class LatLong(private val _latitudeDeg: Float, private val _longitudeDeg: F
             longitude,
             latitude
         )
-        val cosTheta = Geometry.cosineSimilarity(thisPnt, otherPnt)
+        val cosTheta = thisPnt.cosineSimilarity(otherPnt)
         return MathUtil.acos(cosTheta) * 180f / MathUtil.PI
     }
 }

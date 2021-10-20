@@ -14,18 +14,8 @@
 package com.google.android.stardroid.control
 
 import android.util.Log
-import com.google.android.stardroid.math.Geometry.vectorProduct
-import com.google.android.stardroid.math.Geometry.scaleVector
-import com.google.android.stardroid.math.Geometry.addVectors
-import com.google.android.stardroid.math.Vector3.normalize
 import com.google.android.stardroid.math.Geometry.calculateRotationMatrix
 import com.google.android.stardroid.math.Geometry.matrixVectorMultiply
-import com.google.android.stardroid.control.AbstractController
-import com.google.android.stardroid.control.AstronomerModel.Pointing
-import com.google.android.stardroid.math.Vector3
-import com.google.android.stardroid.math.Geometry
-import com.google.android.stardroid.control.ManualOrientationController
-import com.google.android.stardroid.math.Matrix3x3
 import com.google.android.stardroid.util.MiscUtil
 
 /**
@@ -58,9 +48,20 @@ class ManualOrientationController : AbstractController() {
         val pointing = model.pointing
         val pointingXyz = pointing.lineOfSight
         val topXyz = pointing.perpendicular
-        val horizontalXyz = vectorProduct(pointingXyz, topXyz)
-        val deltaXyz = scaleVector(horizontalXyz, radians)
-        val newPointingXyz = addVectors(pointingXyz, deltaXyz)
+        val horizontalXyz = pointingXyz * topXyz
+        val deltaXyz =
+            /**
+             * Scales the vector by the given amount and returns a new vector.
+             */
+            horizontalXyz * radians
+        val newPointingXyz =
+            /**
+             * Creates and returns a new Vector3 which is the sum of both arguments.
+             * @param first
+             * @param second
+             * @return vector sum first + second
+             */
+            pointingXyz + deltaXyz
         newPointingXyz.normalize()
         model.setPointing(newPointingXyz, topXyz)
     }
@@ -80,11 +81,33 @@ class ManualOrientationController : AbstractController() {
         val pointingXyz = pointing.lineOfSight
         // Log.d(TAG, "Current view direction " + viewDir);
         val topXyz = pointing.perpendicular
-        val deltaXyz = scaleVector(topXyz, -radians)
-        val newPointingXyz = addVectors(pointingXyz, deltaXyz)
+        val deltaXyz =
+            /**
+             * Scales the vector by the given amount and returns a new vector.
+             */
+            topXyz * -radians
+        val newPointingXyz =
+            /**
+             * Creates and returns a new Vector3 which is the sum of both arguments.
+             * @param first
+             * @param second
+             * @return vector sum first + second
+             */
+            pointingXyz + deltaXyz
         newPointingXyz.normalize()
-        val deltaUpXyz = scaleVector(pointingXyz, radians)
-        val newUpXyz = addVectors(topXyz, deltaUpXyz)
+        val deltaUpXyz =
+            /**
+             * Scales the vector by the given amount and returns a new vector.
+             */
+            pointingXyz * radians
+        val newUpXyz =
+            /**
+             * Creates and returns a new Vector3 which is the sum of both arguments.
+             * @param first
+             * @param second
+             * @return vector sum first + second
+             */
+            topXyz + deltaUpXyz
         newUpXyz.normalize()
         model.setPointing(newPointingXyz, newUpXyz)
     }
