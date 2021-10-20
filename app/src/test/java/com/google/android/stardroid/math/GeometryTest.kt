@@ -25,11 +25,6 @@ import org.junit.Test
 private const val TOL = 0.00001f
 
 class GeometryTest {
-    fun assertVectorsEqual(v: Vector3, w: Vector3) {
-        assertThat(w.x).isWithin(TOL).of(v.x)
-        assertThat(w.y).isWithin(TOL).of(v.y)
-        assertThat(w.z).isWithin(TOL).of(v.z)
-    }
 
     private fun assertMatrixSame(m1: Matrix3x3, m2: Matrix3x3, tol: Float) {
         assertThat(m2.xx).isWithin(tol).of(m1.xx)
@@ -82,31 +77,6 @@ class GeometryTest {
     }
 
     @Test
-    fun testVectorProduct() {
-        // Check that z is x X y
-        val x = Vector3(1f, 0f, 0f)
-        val y = Vector3(0f, 1f, 0f)
-        val z = x * y
-        assertVectorsEqual(z, Vector3(0f, 0f, 1f))
-
-        // Check that a X b is perpendicular to a and b
-        val a = Vector3(1f, -2f, 3f)
-        val b = Vector3(2f, 0f, -4f)
-        val c = a * b
-        val aDotc = a dot c
-        val bDotc = b dot c
-        assertThat(aDotc).isWithin(TOL).of(0.0f)
-        assertThat(bDotc).isWithin(TOL).of(0.0f)
-
-        // Check that |a X b| is correct
-        val v = Vector3(1f, 2f, 0f)
-        val ww = x * v
-        val wwDotww = ww dot ww
-        assertThat(wwDotww).isWithin(TOL)
-            .of(Math.pow(1f * Math.sqrt(5.0) * Math.sin(Math.atan(2.0)), 2.0).toFloat())
-    }
-
-    @Test
     fun testMatrixInversion() {
         val m = Matrix3x3(1f, 2f, 0f, 0f, 1f, 5f, 0f, 0f, 1f)
         val inv = m.inverse
@@ -152,12 +122,10 @@ class GeometryTest {
             Matrix3x3(11f, -1f, 14f, 7f, -10f, 3f, 21f, -5f, 26f),
             matrixMultiply(m1, m2), TOL.toFloat()
         )
-        assertVectorsEqual(
-            Vector3(6f, 13f, 10f),
+        Vector3Subject.assertThat(Vector3(6f, 13f, 10f)).isWithin(TOL).of(
             matrixVectorMultiply(m1, v1)
         )
-        assertVectorsEqual(
-            Vector3(10f, 19f, 20f),
+        Vector3Subject.assertThat(Vector3(10f, 19f, 20f)).isWithin(TOL).of(
             matrixVectorMultiply(m1, v2)
         )
     }

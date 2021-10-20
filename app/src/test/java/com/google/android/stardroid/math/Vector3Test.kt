@@ -138,4 +138,29 @@ class Vector3Test {
         val v2 = Vector3(2f, -1f, 10f)
         assertThat(v1.cosineSimilarity(v2)).isWithin(TOL).of(0.78246075f)
     }
+
+    @Test
+    fun testVectorProduct() {
+        // Why waste a good test?
+        // Check that z is x X y
+        val x = Vector3(1f, 0f, 0f)
+        val y = Vector3(0f, 1f, 0f)
+        val z = x * y
+        Vector3Subject.assertThat(z).isWithin(TOL).of(Vector3(0f, 0f, 1f))
+
+        // Check that a X b is perpendicular to a and b
+        val a = Vector3(1f, -2f, 3f)
+        val b = Vector3(2f, 0f, -4f)
+        val c = a * b
+        val aDotc = a dot c
+        val bDotc = b dot c
+        assertThat(aDotc).isWithin(TOL).of(0.0f)
+        assertThat(bDotc).isWithin(TOL).of(0.0f)
+
+        // Check that |a X b| is correct
+        val v = Vector3(1f, 2f, 0f)
+        val ww = x * v
+        assertThat(ww dot ww).isWithin(TOL)
+            .of(Math.pow(1f * Math.sqrt(5.0) * Math.sin(Math.atan(2.0)), 2.0).toFloat())
+    }
 }
