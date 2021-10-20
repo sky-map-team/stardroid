@@ -100,7 +100,6 @@ class Vector3Test {
     fun testCrossProduct() {
         Vector3Subject.assertThat(Vector3.unitX() * Vector3.unitY()).isWithin(TOL).of(
             Vector3.unitZ())
-        System.out.println(Vector3.unitX() * Vector3.unitY())
         val v1 = Vector3(1f, 2f, 3f)
         val v2 = Vector3(-1f, 3f, -3f)
         val v3 = v1 * v2
