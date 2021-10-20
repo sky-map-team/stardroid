@@ -49,19 +49,8 @@ class ManualOrientationController : AbstractController() {
         val pointingXyz = pointing.lineOfSight
         val topXyz = pointing.perpendicular
         val horizontalXyz = pointingXyz * topXyz
-        val deltaXyz =
-            /**
-             * Scales the vector by the given amount and returns a new vector.
-             */
-            horizontalXyz * radians
-        val newPointingXyz =
-            /**
-             * Creates and returns a new Vector3 which is the sum of both arguments.
-             * @param first
-             * @param second
-             * @return vector sum first + second
-             */
-            pointingXyz + deltaXyz
+        val deltaXyz = horizontalXyz * radians
+        val newPointingXyz = pointingXyz + deltaXyz
         newPointingXyz.normalize()
         model.setPointing(newPointingXyz, topXyz)
     }
@@ -81,33 +70,11 @@ class ManualOrientationController : AbstractController() {
         val pointingXyz = pointing.lineOfSight
         // Log.d(TAG, "Current view direction " + viewDir);
         val topXyz = pointing.perpendicular
-        val deltaXyz =
-            /**
-             * Scales the vector by the given amount and returns a new vector.
-             */
-            topXyz * -radians
-        val newPointingXyz =
-            /**
-             * Creates and returns a new Vector3 which is the sum of both arguments.
-             * @param first
-             * @param second
-             * @return vector sum first + second
-             */
-            pointingXyz + deltaXyz
+        val deltaXyz = topXyz * -radians
+        val newPointingXyz = pointingXyz + deltaXyz
         newPointingXyz.normalize()
-        val deltaUpXyz =
-            /**
-             * Scales the vector by the given amount and returns a new vector.
-             */
-            pointingXyz * radians
-        val newUpXyz =
-            /**
-             * Creates and returns a new Vector3 which is the sum of both arguments.
-             * @param first
-             * @param second
-             * @return vector sum first + second
-             */
-            topXyz + deltaUpXyz
+        val deltaUpXyz = pointingXyz * radians
+        val newUpXyz =  topXyz + deltaUpXyz
         newUpXyz.normalize()
         model.setPointing(newPointingXyz, newUpXyz)
     }
