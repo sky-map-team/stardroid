@@ -63,16 +63,12 @@ object Geometry {
 
     @JvmStatic
     fun scalarProduct(v1: Vector3, v2: Vector3): Float {
-        return v1.x * v2.x + v1.y * v2.y + v1.z * v2.z
+        return v1 dot v2
     }
 
     @JvmStatic
     fun vectorProduct(v1: Vector3, v2: Vector3): Vector3 {
-        return Vector3(
-            v1.y * v2.z - v1.z * v2.y,
-            -v1.x * v2.z + v1.z * v2.x,
-            v1.x * v2.y - v1.y * v2.x
-        )
+        return v1 * v2
     }
 
     /**
@@ -80,7 +76,7 @@ object Geometry {
      */
     @JvmStatic
     fun scaleVector(v: Vector3, scale: Float): Vector3 {
-        return Vector3(scale * v.x, scale * v.y, scale * v.z)
+        return v * scale
     }
 
     /**
@@ -91,7 +87,7 @@ object Geometry {
      */
     @JvmStatic
     fun addVectors(first: Vector3, second: Vector3): Vector3 {
-        return Vector3(first.x + second.x, first.y + second.y, first.z + second.z)
+        return first + second
     }
 
     @JvmStatic
