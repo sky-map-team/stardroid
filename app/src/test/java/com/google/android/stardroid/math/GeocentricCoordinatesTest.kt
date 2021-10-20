@@ -22,7 +22,7 @@ class GeocentricCoordinatesTest {
     fun testEquals() {
         val one: Vector3 = Vector3(1f, 2f, 3f)
         val two: Vector3 = Vector3(2f, 4f, 6f)
-        one.scale(2f)
+        one.timesAssign(2f)
         assertThat(one).isEqualTo(two)
         assertThat(one).isNotSameInstanceAs(two)
         assertThat(one.hashCode()).isEqualTo(two.hashCode())

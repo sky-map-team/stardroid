@@ -330,7 +330,7 @@ public class AstronomerModelImpl implements AstronomerModel {
       down.normalize();
       // Magnetic field goes *from* North to South, so reverse it.
       Vector3 magneticFieldToNorth = magneticField.copyForJ();
-      magneticFieldToNorth.scale(-1);
+      magneticFieldToNorth.timesAssign(-1);
       magneticFieldToNorth.normalize();
       // This is the vector to magnetic North *along the ground*.
       magneticNorthPhone = addVectors(magneticFieldToNorth,

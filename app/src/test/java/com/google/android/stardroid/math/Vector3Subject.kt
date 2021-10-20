@@ -15,9 +15,9 @@ class Vector3Subject private constructor(metadata: FailureMetadata, private val 
 
     inner class TolerantComparison(val tol: Float) {
         fun of(other: Vector3) {
-            check("x is out of tolerance").that(other.x).isWithin(1f).of(actual.x)
-            check("y is out of tolerance").that(other.y).isWithin(1f).of(actual.y)
-            check("z is out of tolerance").that(other.z).isWithin(1f).of(actual.z)
+            check("x is out of tolerance").that(other.x).isWithin(tol).of(actual.x)
+            check("y is out of tolerance").that(other.y).isWithin(tol).of(actual.y)
+            check("z is out of tolerance").that(other.z).isWithin(tol).of(actual.z)
         }
     }
 

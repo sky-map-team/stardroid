@@ -22,7 +22,6 @@ import android.util.Log;
 import com.google.android.stardroid.math.MathUtil;
 import com.google.android.stardroid.math.Matrix4x4;
 import com.google.android.stardroid.math.Vector3;
-import com.google.android.stardroid.math.VectorUtil;
 import com.google.android.stardroid.renderer.util.GLBuffer;
 import com.google.android.stardroid.renderer.util.SkyRegionMap;
 import com.google.android.stardroid.renderer.util.TextureManager;
@@ -347,7 +346,7 @@ public class SkyRenderer implements GLSurfaceView.Renderer {
     // lookDir cross up.
     Vector3 lookDir = mRenderState.getLookDir();
     Vector3 upDir = mRenderState.getUpDir();
-    Vector3 right = VectorUtil.crossProduct(lookDir, upDir);
+    Vector3 right = lookDir.times(upDir);
 
     mViewMatrix = Matrix4x4.createView(lookDir, upDir, right);
 

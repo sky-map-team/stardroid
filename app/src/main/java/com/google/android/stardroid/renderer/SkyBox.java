@@ -18,7 +18,6 @@ import android.util.Log;
 
 import com.google.android.stardroid.math.MathUtil;
 import com.google.android.stardroid.math.Vector3;
-import com.google.android.stardroid.math.VectorUtil;
 import com.google.android.stardroid.renderer.util.ColorBuffer;
 import com.google.android.stardroid.renderer.util.IndexBuffer;
 import com.google.android.stardroid.renderer.util.TextureManager;
@@ -149,7 +148,7 @@ public class SkyBox extends RendererObjectManager {
     gl.glPushMatrix();
 
     // Rotate the sky box to the position of the sun.
-    Vector3 cp = VectorUtil.crossProduct(new Vector3(0, 1, 0), mSunPos);
+    Vector3 cp = new Vector3(0, 1, 0).times(mSunPos);
     cp = cp.normalizedCopy();
     float angle = 180.0f / MathUtil.PI * MathUtil.acos(mSunPos.y);
     gl.glRotatef(angle, cp.x, cp.y, cp.z);

@@ -14,11 +14,6 @@
 package com.google.android.stardroid.math
 
 import com.google.android.stardroid.math.MathUtil.sqrt
-import com.google.android.stardroid.math.VectorUtil.dotProduct
-
-
-
-
 
 data class Vector3(@JvmField var x : Float, @JvmField var y : Float, @JvmField var z : Float) {
 
@@ -30,7 +25,6 @@ data class Vector3(@JvmField var x : Float, @JvmField var y : Float, @JvmField v
 
     val length
         get() = MathUtil.sqrt(length2)
-
 
     /**
      * Constructs a Vector3 from a float[2] object.
@@ -63,7 +57,7 @@ data class Vector3(@JvmField var x : Float, @JvmField var y : Float, @JvmField v
     /**
      * Normalizes the vector in place, i.e., map it to the corresponding unit vector.
      */
-    fun normalize() {
+    fun normalize() : Unit {
         val norm = length
         x /= norm
         y /= norm
@@ -73,7 +67,7 @@ data class Vector3(@JvmField var x : Float, @JvmField var y : Float, @JvmField v
     /**
      * Scales the vector in place.
      */
-    fun scale(scale: Float) {
+    operator fun timesAssign(scale: Float) {
         x *= scale
         y *= scale
         z *= scale
@@ -83,10 +77,28 @@ data class Vector3(@JvmField var x : Float, @JvmField var y : Float, @JvmField v
      * Subtracts the values of the given vector from this
      * object.
      */
-    fun subtract(other: Vector3) {
+    operator fun minusAssign(other: Vector3) {
         x -= other.x
         y -= other.y
         z -= other.z
+    }
+
+    /**
+     * Returns the Vector dot product
+     */
+    infix fun dot(p2: Vector3): Float {
+        return x * p2.x + y * p2.y + z * p2.z
+    }
+
+    /**
+     * Returns the Vector cross product.
+     */
+    operator fun times(p2: Vector3): Vector3 {
+        return Vector3(
+            y * p2.z - z * p2.y,
+            -x * p2.z + z * p2.x,
+            x * p2.y - y * p2.x
+        )
     }
 
     /**
@@ -107,29 +119,45 @@ data class Vector3(@JvmField var x : Float, @JvmField var y : Float, @JvmField v
         return copy()
     }
 
-    fun scaleCopy(factor: Float): Vector3 {
+    operator fun plus(v2: Vector3): Vector3 {
+        return Vector3(x + v2.x, y + v2.y, z + v2.z)
+    }
+
+    operator fun minus(v2: Vector3): Vector3 {
+        return plus(-v2)
+    }
+
+    operator fun times(factor: Float): Vector3 {
         val scaled = copy()
-        scaled.scale(factor)
+        scaled *= factor
         return scaled
     }
 
-    fun negateCopy(): Vector3 {
-        return scaleCopy(-1f)
+    operator fun div(factor: Float): Vector3 {
+        return this * (1 / factor)
+    }
+
+    operator fun unaryMinus(): Vector3 {
+        return this * -1f
     }
 
     fun normalizedCopy(): Vector3 {
         return if (length < 0.000001f) {
             zero()
-        } else scaleCopy(1.0f / length)
+        } else this / length
     }
 
-    fun projectOntoUnit(onto: Vector3): Vector3 {
-        return onto.scaleCopy(dotProduct(this, onto))
+    /**
+     * Projects this vector onto the given unit vector.
+     */
+    fun projectOnto(unitVector: Vector3): Vector3 {
+        return unitVector * (this dot unitVector)
     }
 
     companion object Factory {
-        // TODO(jontayler): remove once VectorUtil method is inlined?
-        @JvmStatic
         fun zero() = Vector3(0f, 0f, 0f)
+        fun unitX() = Vector3(1f, 0f, 0f)
+        fun unitY() = Vector3(0f, 1f, 0f)
+        fun unitZ() = Vector3(0f, 0f, 1f)
     }
 }

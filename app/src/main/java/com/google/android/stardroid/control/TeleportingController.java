@@ -18,7 +18,6 @@ import android.util.Log;
 
 import com.google.android.stardroid.control.AstronomerModel.Pointing;
 import com.google.android.stardroid.math.Vector3;
-import com.google.android.stardroid.math.VectorUtil;
 import com.google.android.stardroid.util.MiscUtil;
 
 /**
@@ -49,8 +48,8 @@ public class TeleportingController extends AbstractController {
     // the screen in celestial coordinates.)
     Vector3 hereTopXyz = pointing.getPerpendicular();
     hereTopXyz.normalize();
-    final Vector3 normal = VectorUtil.crossProduct(hereXyz, hereTopXyz);
-    Vector3 newUpXyz = VectorUtil.crossProduct(normal, targetXyz);
+    final Vector3 normal = hereXyz.times(hereTopXyz);
+    Vector3 newUpXyz = normal.times(targetXyz);
 
     model.setPointing(targetXyz, newUpXyz);
   }

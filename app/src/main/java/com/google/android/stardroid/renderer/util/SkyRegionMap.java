@@ -18,7 +18,6 @@ import android.util.Log;
 
 import com.google.android.stardroid.math.MathUtil;
 import com.google.android.stardroid.math.Vector3;
-import com.google.android.stardroid.math.VectorUtil;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -282,7 +281,7 @@ public class SkyRegionMap<RegionRenderingData> {
     float[] regionCenterDotProducts = new float[REGION_CENTERS.length];
     ArrayList<Integer> activeStandardRegions = new ArrayList<Integer>();
     for (int i = 0; i < REGION_CENTERS.length; i++) {
-      float dotProduct = VectorUtil.dotProduct(lookDir, REGION_CENTERS[i]);
+      float dotProduct = lookDir.dot(REGION_CENTERS[i]);
       regionCenterDotProducts[i] = dotProduct;
       if (dotProduct > dotProductThreshold) {
         activeStandardRegions.add(i);
@@ -323,7 +322,7 @@ public class SkyRegionMap<RegionRenderingData> {
     // does that.
     ObjectRegionData data = new ObjectRegionData();
     for (int i = 0; i < REGION_CENTERS.length; i++) {
-      float dotProduct = VectorUtil.dotProduct(REGION_CENTERS[i], position);
+      float dotProduct = REGION_CENTERS[i].dot(position);
       if (dotProduct > data.regionCenterDotProduct) {
         data.regionCenterDotProduct = dotProduct;
         data.region = i;

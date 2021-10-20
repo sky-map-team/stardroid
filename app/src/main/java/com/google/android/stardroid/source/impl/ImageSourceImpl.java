@@ -22,7 +22,6 @@ import android.graphics.Color;
 
 import com.google.android.stardroid.math.GeocentricCoordinates;
 import com.google.android.stardroid.math.Vector3;
-import com.google.android.stardroid.math.VectorUtil;
 import com.google.android.stardroid.source.ImageSource;
 
 /**
@@ -119,11 +118,11 @@ public class ImageSourceImpl extends AbstractSource implements ImageSource {
 
   public void setUpVector(Vector3 upVec) {
     Vector3 p = this.getLocation();
-    Vector3 u = VectorUtil.crossProduct(p, upVec).normalizedCopy().negateCopy();
-    Vector3 v = VectorUtil.crossProduct(u, p);
+    Vector3 u = p.times(upVec).normalizedCopy().unaryMinus();
+    Vector3 v = u.times(p);
 
-    v.scale(imageScale);
-    u.scale(imageScale);
+    v.timesAssign(imageScale);
+    u.timesAssign(imageScale);
 
     // TODO(serafini): Can we replace these with a float[]?
     ux = u.x;

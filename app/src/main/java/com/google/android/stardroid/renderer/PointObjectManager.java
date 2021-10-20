@@ -19,7 +19,6 @@ import android.util.Log;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.math.MathUtil;
 import com.google.android.stardroid.math.Vector3;
-import com.google.android.stardroid.math.VectorUtil;
 import com.google.android.stardroid.renderer.util.IndexBuffer;
 import com.google.android.stardroid.renderer.util.NightVisionColorBuffer;
 import com.google.android.stardroid.renderer.util.SkyRegionMap;
@@ -164,8 +163,8 @@ public class PointObjectManager extends RendererObjectManager {
         data.mTexCoordBuffer.addTexCoords(texOffsetU + starWidthInTexels, 0);
 
         Vector3 pos = p.getLocation();
-        Vector3 u = VectorUtil.crossProduct(pos, up).normalizedCopy();
-        Vector3 v = VectorUtil.crossProduct(u, pos);
+        Vector3 u = pos.times(up).normalizedCopy();
+        Vector3 v = u.times(pos);
 
         float s = p.getSize() * sizeFactor;
 

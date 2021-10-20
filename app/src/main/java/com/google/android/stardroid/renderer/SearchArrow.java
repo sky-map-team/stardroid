@@ -19,7 +19,6 @@ import android.content.res.Resources;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.math.MathUtil;
 import com.google.android.stardroid.math.Vector3;
-import com.google.android.stardroid.math.VectorUtil;
 import com.google.android.stardroid.renderer.util.SearchHelper;
 import com.google.android.stardroid.renderer.util.TextureManager;
 import com.google.android.stardroid.renderer.util.TextureReference;
@@ -178,16 +177,16 @@ public class SearchArrow {
   private static float angleBetweenVectorsWithRespectToAxis(Vector3 v1, Vector3 v2, Vector3 axis) {
     // Make v1 perpendicular to axis.  We want an orthonormal basis for the plane perpendicular
     // to axis.  After rotating v1, the projection of v1 and v2 into this plane should be equal.
-    Vector3 v1proj = VectorUtil.difference(v1, v1.projectOntoUnit(axis));
+    Vector3 v1proj = v1.minus(v1.projectOnto(axis));
     v1proj = v1proj.normalizedCopy();
     
     // Get the vector perpendicular to the one you're rotating and the axis.  Since axis and v1proj
     // are orthonormal, this one must be a unit vector perpendicular to all three.
-    Vector3 perp = VectorUtil.crossProduct(axis, v1proj);
+    Vector3 perp = axis.times(v1proj);
     
     // v2 is perpendicular to axis, so therefore it's already in the same plane as v1proj perp.
-    float cosAngle = VectorUtil.dotProduct(v1proj, v2);
-    float sinAngle = -VectorUtil.dotProduct(perp, v2);
+    float cosAngle = v1proj.dot(v2);
+    float sinAngle = -perp.dot(v2);
     
     return MathUtil.atan2(sinAngle, cosAngle);
   }
