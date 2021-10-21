@@ -20,6 +20,14 @@ class Matrix3x3Test {
     @Test
     fun testDeterminant() {
         assertThat(Matrix3x3.identity.determinant).isWithin(TOL).of(1f)
+        assertThat(
+            Matrix3x3(1f, 2f, 3f, 4f, 5f, 6f, 7f, 8f, 9f)
+                .determinant
+        ).isWithin(TOL).of(0f)
+        assertThat(
+            Matrix3x3(1f, 2f, 33f, 4f, 5f, 6f, 7f, 8f, 11f)
+                .determinant
+        ).isWithin(TOL).of(-96f)
     }
 
     @Test
@@ -41,9 +49,7 @@ class Matrix3x3Test {
             0f,
             1f
         )
-        var inv = m.inverse
-        var product = m * inv!!
-        Matrix3x3Subject.assertThat(Matrix3x3.identity).isWithin(TOL).of(product)
+        Matrix3x3Subject.assertThat(Matrix3x3.identity).isWithin(TOL).of(m * m.inverse!!)
         m = Matrix3x3(
             1f,
             2f,
@@ -55,19 +61,10 @@ class Matrix3x3Test {
             0f,
             1f
         )
-        inv = m.inverse
-        product = m * inv!!
-        Matrix3x3Subject.assertThat(Matrix3x3.identity).isWithin(TOL).of(product)
-    }
+        Matrix3x3Subject.assertThat(Matrix3x3.identity).isWithin(TOL).of(m * m.inverse!!)
 
-    @Test
-    fun testMatrix33Inversion2() {
-        // Why waste a good test?
-        val m = Matrix3x3(1f, 2f, 0f, 0f, 1f, 5f, 0f, 0f, 1f)
-        val inv = m.inverse
-        val product = m * inv!!
-        val identity = Matrix3x3(1f, 0f, 0f, 0f, 1f, 0f, 0f, 0f, 1f)
-        Matrix3x3Subject.assertThat(product).isWithin(TOL).of(identity)
+        m = Matrix3x3(1f, 2f, 0f, 0f, 1f, 5f, 0f, 0f, 1f)
+        Matrix3x3Subject.assertThat(m * m.inverse!!).isWithin(TOL).of(Matrix3x3.identity)
     }
 
 
@@ -79,7 +76,7 @@ class Matrix3x3Test {
         val v2 = Vector3(2f, -2f, 3f)
         Matrix3x3Subject.assertThat(
             Matrix3x3(11f, -1f, 14f, 7f, -10f, 3f, 21f, -5f, 26f)
-            ).isWithin(TOL).of(m1 * m2)
+        ).isWithin(TOL).of(m1 * m2)
         Vector3Subject.assertThat(Vector3(6f, 13f, 10f)).isWithin(TOL).of(m1 * v1)
         Vector3Subject.assertThat(Vector3(10f, 19f, 20f)).isWithin(TOL).of(m1 * v2)
     }
