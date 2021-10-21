@@ -25,18 +25,6 @@ private const val TOL = 0.00001f
 
 class GeometryTest {
 
-    private fun assertMatrixSame(m1: Matrix3x3, m2: Matrix3x3, tol: Float) {
-        assertThat(m2.xx).isWithin(tol).of(m1.xx)
-        assertThat(m2.xy).isWithin(tol).of(m1.xy)
-        assertThat(m2.xz).isWithin(tol).of(m1.xz)
-        assertThat(m2.yx).isWithin(tol).of(m1.yx)
-        assertThat(m2.yy).isWithin(tol).of(m1.yy)
-        assertThat(m2.yz).isWithin(tol).of(m1.yz)
-        assertThat(m2.zx).isWithin(tol).of(m1.zx)
-        assertThat(m2.zy).isWithin(tol).of(m1.zy)
-        assertThat(m2.zz).isWithin(tol).of(m1.zz)
-    }
-
     private val allTestValues = arrayOf(
         floatArrayOf(0f, 0f, 1f, 0f, 0f),
         floatArrayOf(90f, 0f, 0f, 1f, 0f),
@@ -76,27 +64,19 @@ class GeometryTest {
     }
 
     @Test
-    fun testMatrixInversion() {
-        val m = Matrix3x3(1f, 2f, 0f, 0f, 1f, 5f, 0f, 0f, 1f)
-        val inv = m.inverse
-        val product = matrixMultiply(m, inv!!)
-        val identity = Matrix3x3(1f, 0f, 0f, 0f, 1f, 0f, 0f, 0f, 1f)
-        assertMatrixSame(product, identity, TOL)
-    }
-
-    @Test
     fun testCalculateRotationMatrix() {
         val noRotation = calculateRotationMatrix(0f, Vector3(1f, 2f, 3f))
         val identity = Matrix3x3(1f, 0f, 0f, 0f, 1f, 0f, 0f, 0f, 1f)
-        assertMatrixSame(identity, noRotation, TOL)
+        Matrix3x3Subject.assertThat(identity).isWithin(TOL).of(noRotation)
         val rotAboutZ = calculateRotationMatrix(90f, Vector3(0f, 0f, 1f))
-        assertMatrixSame(Matrix3x3(0f, 1f, 0f, -1f, 0f, 0f, 0f, 0f, 1f), rotAboutZ, TOL)
+        Matrix3x3Subject.assertThat(Matrix3x3(0f, 1f, 0f, -1f, 0f, 0f, 0f, 0f, 1f)).isWithin(TOL)
+            .of(rotAboutZ)
         val axis = Vector3(2f, -4f, 1f)
         axis.normalize()
         val rotA = calculateRotationMatrix(30f, axis)
         val rotB = calculateRotationMatrix(-30f, axis)
         val shouldBeIdentity = matrixMultiply(rotA, rotB)
-        assertMatrixSame(identity, shouldBeIdentity, TOL)
+        Matrix3x3Subject.assertThat(identity).isWithin(TOL).of(shouldBeIdentity)
         val axisPerpendicular = Vector3(4f, 2f, 0f)
         val rotatedAxisPerpendicular = matrixVectorMultiply(rotA, axisPerpendicular)
 
@@ -109,22 +89,5 @@ class GeometryTest {
             .of(
                 Math.cos(30.0 * Geometry.DEGREES_TO_RADIANS).toFloat()
             )
-    }
-
-    @Test
-    fun testMatrixMultiply() {
-        val m1 = Matrix3x3(1f, 2f, 4f, -1f, -3f, 5f, 3f, 2f, 6f)
-        val m2 = Matrix3x3(3f, -1f, 4f, 0f, 2f, 1f, 2f, -1f, 2f)
-        val v1 = Vector3(0f, -1f, 2f)
-        val v2 = Vector3(2f, -2f, 3f)
-        Matrix3x3Subject.assertThat(Matrix3x3(11f, -1f, 14f, 7f, -10f, 3f, 21f, -5f, 26f)).isWithin(
-            TOL.toFloat()
-        ).of(matrixMultiply(m1, m2))
-        Vector3Subject.assertThat(Vector3(6f, 13f, 10f)).isWithin(TOL).of(
-            matrixVectorMultiply(m1, v1)
-        )
-        Vector3Subject.assertThat(Vector3(10f, 19f, 20f)).isWithin(TOL).of(
-            matrixVectorMultiply(m1, v2)
-        )
     }
 }
