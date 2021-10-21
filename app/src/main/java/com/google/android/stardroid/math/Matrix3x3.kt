@@ -13,6 +13,7 @@
 // limitations under the License.
 package com.google.android.stardroid.math
 
+import com.google.android.stardroid.math.MathUtil.abs
 import kotlin.jvm.JvmOverloads
 
 /**
@@ -20,64 +21,32 @@ import kotlin.jvm.JvmOverloads
  * allocation as far as possible.
  *
  * @author Dominic Widdows
+ *
+ * Construct a new matrix.
+ * @param xx row 1, col 1
+ * @param xy row 1, col 2
+ * @param xz row 1, col 3
+ * @param yx row 2, col 1
+ * @param yy row 2, col 2
+ * @param yz row 2, col 3
+ * @param zx row 3, col 1
+ * @param zy row 3, col 2
+ * @param zz row 3, col 3
  */
-class Matrix3x3 : Cloneable {
-    @JvmField
-    var xx = 0f
-    @JvmField
-    var xy = 0f
-    @JvmField
-    var xz = 0f
-    @JvmField
-    var yx = 0f
-    @JvmField
-    var yy = 0f
-    @JvmField
-    var yz = 0f
-    @JvmField
-    var zx = 0f
-    @JvmField
-    var zy = 0f
-    @JvmField
-    var zz = 0f
+data class Matrix3x3(
+    var xx: Float, var xy: Float, var xz: Float,
+    var yx: Float, var yy: Float, var yz: Float,
+    var zx: Float, var zy: Float, var zz: Float
+) {
 
-    /**
-     * Construct a new matrix.
-     * @param xx row 1, col 1
-     * @param xy row 1, col 2
-     * @param xz row 1, col 3
-     * @param yx row 2, col 1
-     * @param yy row 2, col 2
-     * @param yz row 2, col 3
-     * @param zx row 3, col 1
-     * @param zy row 3, col 2
-     * @param zz row 3, col 3
-     */
-    constructor(
-        xx: Float, xy: Float, xz: Float,
-        yx: Float, yy: Float, yz: Float,
-        zx: Float, zy: Float, zz: Float
-    ) {
-        this.xx = xx
-        this.xy = xy
-        this.xz = xz
-        this.yx = yx
-        this.yy = yy
-        this.yz = yz
-        this.zx = zx
-        this.zy = zy
-        this.zz = zz
-    }
     /**
      * Construct a matrix from three vectors.
      * @param columnVectors true if the vectors are column vectors, otherwise
      * they're row vectors.
      */
-    /**
-     * Construct a matrix from three column vectors.
-     */
     @JvmOverloads
-    constructor(v1: Vector3, v2: Vector3, v3: Vector3, columnVectors: Boolean = true) {
+    constructor(v1: Vector3, v2: Vector3, v3: Vector3, columnVectors: Boolean = true) : this(
+        0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f) {
         if (columnVectors) {
             xx = v1.x
             yx = v1.y
@@ -101,36 +70,29 @@ class Matrix3x3 : Cloneable {
         }
     }
 
-    // TODO(widdows): rename this to something like copyOf().
-    public override fun clone(): Matrix3x3 {
-        return Matrix3x3(
-            xx, xy, xz,
-            yx, yy, yz,
-            zx, zy, zz
-        )
-    }
-
-    /**
-     * Create a zero matrix.
-     */
-    constructor() {
-        Matrix3x3(0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f)
-    }
-
     val determinant: Float
         get() = xx * yy * zz + xy * yz * zx + xz * yx * zy - xx * yz * zy - yy * zx * xz - zz * xy * yx
+
+    /**
+     * Returns the inverse matrix or null if the determinant is close to zero.
+     */
     val inverse: Matrix3x3?
         get() {
-            val det = determinant
-            return if (det.toDouble() == 0.0) null else Matrix3x3(
-                (yy * zz - yz * zy) / det, (xz * zy - xy * zz) / det, (xy * yz - xz * yy) / det,
-                (yz * zx - yx * zz) / det, (xx * zz - xz * zx) / det, (xz * yx - xx * yz) / det,
-                (yx * zy - yy * zx) / det, (xy * zx - xx * zy) / det, (xx * yy - xy * yx) / det
+            return if (abs(determinant) < 0.00001f) null else Matrix3x3(
+                (yy * zz - yz * zy) / determinant,
+                (xz * zy - xy * zz) / determinant,
+                (xy * yz - xz * yy) / determinant,
+                (yz * zx - yx * zz) / determinant,
+                (xx * zz - xz * zx) / determinant,
+                (xz * yx - xx * yz) / determinant,
+                (yx * zy - yy * zx) / determinant,
+                (xy * zx - xx * zy) / determinant,
+                (xx * yy - xy * yx) / determinant
             )
         }
 
     /**
-     * Transpose the matrix, in place.
+     * Transposes the matrix, in place.
      */
     fun transpose() {
         var tmp: Float
@@ -147,7 +109,6 @@ class Matrix3x3 : Cloneable {
 
     companion object {
         @JvmStatic
-        val idMatrix: Matrix3x3
-            get() = Matrix3x3(1f, 0f, 0f, 0f, 1f, 0f, 0f, 0f, 1f)
+        val identity: Matrix3x3 = Matrix3x3(1f, 0f, 0f, 0f, 1f, 0f, 0f, 0f, 1f)
     }
 }

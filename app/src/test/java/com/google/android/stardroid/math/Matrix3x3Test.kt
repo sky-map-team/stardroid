@@ -19,12 +19,13 @@ import org.junit.Test
 class Matrix3x3Test {
     @Test
     fun testDeterminant() {
-        assertThat(Matrix3x3.idMatrix.determinant).isWithin(TOL).of(1f)
+        assertThat(Matrix3x3.identity.determinant).isWithin(TOL).of(1f)
     }
 
     @Test
     fun testIdInverse() {
-        assertMatricesEqual(Matrix3x3.idMatrix, Matrix3x3.idMatrix.inverse, TOL)
+        Matrix3x3Subject.assertThat(Matrix3x3.identity).isWithin(TOL)
+            .of(Matrix3x3.identity.inverse!!)
     }
 
     @Test
@@ -42,7 +43,7 @@ class Matrix3x3Test {
         )
         var inv = m.inverse
         var product = Geometry.matrixMultiply(m, inv!!)
-        assertMatricesEqual(Matrix3x3.idMatrix, product, TOL)
+        Matrix3x3Subject.assertThat(Matrix3x3.identity).isWithin(TOL).of(product)
         m = Matrix3x3(
             1f,
             2f,
@@ -56,7 +57,7 @@ class Matrix3x3Test {
         )
         inv = m.inverse
         product = Geometry.matrixMultiply(m, inv!!)
-        assertMatricesEqual(Matrix3x3.idMatrix, product, TOL)
+        Matrix3x3Subject.assertThat(Matrix3x3.identity).isWithin(TOL).of(product)
     }
 
     @Test
@@ -84,7 +85,7 @@ class Matrix3x3Test {
             6f,
             9f
         )
-        assertMatricesEqual(m, mt, TOL)
+        Matrix3x3Subject.assertThat(m).isWithin(TOL).of(mt)
     }
 
     @Test
@@ -98,7 +99,7 @@ class Matrix3x3Test {
             3f, 6f, 9f
         )
         val mt = Matrix3x3(v1, v2, v3)
-        assertMatricesEqual(m, mt, TOL)
+        Matrix3x3Subject.assertThat(m).isWithin(TOL).of(mt)
     }
 
     @Test
@@ -113,26 +114,10 @@ class Matrix3x3Test {
         )
         m.transpose()
         val mt = Matrix3x3(v1, v2, v3, false)
-        assertMatricesEqual(m, mt, TOL)
+        Matrix3x3Subject.assertThat(m).isWithin(TOL).of(mt)
     }
 
     companion object {
         private const val TOL = 0.00001f
-        @JvmStatic
-        fun assertMatricesEqual(m1: Matrix3x3?, m2: Matrix3x3?, TOL: Float) {
-            assertThat(m1).isNotNull()
-            assertThat(m2).isNotNull()
-            if (m1 != null && m2 != null) {
-                assertThat(m1.xx).isWithin(TOL).of(m2.xx)
-                assertThat(m1.xy).isWithin(TOL).of(m2.xy)
-                assertThat(m1.xz).isWithin(TOL).of(m2.xz)
-                assertThat(m1.yx).isWithin(TOL).of(m2.yx)
-                assertThat(m1.yy).isWithin(TOL).of(m2.yy)
-                assertThat(m1.yz).isWithin(TOL).of(m2.yz)
-                assertThat(m1.zx).isWithin(TOL).of(m2.zx)
-                assertThat(m1.zy).isWithin(TOL).of(m2.zy)
-                assertThat(m1.zz).isWithin(TOL).of(m2.zz)
-            }
-        }
     }
 }

@@ -17,7 +17,6 @@ import com.google.android.stardroid.math.Geometry.calculateRotationMatrix
 import com.google.android.stardroid.math.Geometry.getXYZ
 import com.google.android.stardroid.math.Geometry.matrixMultiply
 import com.google.android.stardroid.math.Geometry.matrixVectorMultiply
-import com.google.android.stardroid.math.Matrix3x3Test.Companion.assertMatricesEqual
 import com.google.android.stardroid.math.RaDec.Companion.fromGeocentricCoords
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test
@@ -118,10 +117,9 @@ class GeometryTest {
         val m2 = Matrix3x3(3f, -1f, 4f, 0f, 2f, 1f, 2f, -1f, 2f)
         val v1 = Vector3(0f, -1f, 2f)
         val v2 = Vector3(2f, -2f, 3f)
-        assertMatricesEqual(
-            Matrix3x3(11f, -1f, 14f, 7f, -10f, 3f, 21f, -5f, 26f),
-            matrixMultiply(m1, m2), TOL.toFloat()
-        )
+        Matrix3x3Subject.assertThat(Matrix3x3(11f, -1f, 14f, 7f, -10f, 3f, 21f, -5f, 26f)).isWithin(
+            TOL.toFloat()
+        ).of(matrixMultiply(m1, m2))
         Vector3Subject.assertThat(Vector3(6f, 13f, 10f)).isWithin(TOL).of(
             matrixVectorMultiply(m1, v1)
         )

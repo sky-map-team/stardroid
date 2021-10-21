@@ -13,7 +13,7 @@
 // limitations under the License.
 package com.google.android.stardroid.control
 
-import com.google.android.stardroid.math.Matrix3x3.Companion.idMatrix
+import com.google.android.stardroid.math.Matrix3x3.Companion.identity
 import com.google.android.stardroid.math.Geometry.matrixMultiply
 import com.google.android.stardroid.math.Geometry.matrixVectorMultiply
 import com.google.android.stardroid.math.Geometry.calculateRADecOfZenith
@@ -109,10 +109,10 @@ class AstronomerModelImpl(magneticDeclinationCalculator: MagneticDeclinationCalc
     private var trueEastCelestial = AXIS_OF_EARTHS_ROTATION
 
     /** [North, Up, East]^-1 in phone coordinates.  */
-    private var axesPhoneInverseMatrix = idMatrix
+    private var axesPhoneInverseMatrix = identity
 
     /** [North, Up, East] in celestial coordinates.  */
-    private var axesMagneticCelestialMatrix = idMatrix
+    private var axesMagneticCelestialMatrix = identity
     override fun setHorizontalRotation(value: Boolean) {
         screenInPhoneCoords = if (value) {
             SCREEN_DOWN_IN_PHONE_COORDS
