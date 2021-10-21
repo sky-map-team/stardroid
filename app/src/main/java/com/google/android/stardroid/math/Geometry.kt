@@ -87,36 +87,6 @@ object Geometry {
     }
 
     /**
-     * Multiply two 3X3 matrices m1 * m2.
-     */
-    @JvmStatic
-    fun matrixMultiply(m1: Matrix3x3, m2: Matrix3x3): Matrix3x3 {
-        return Matrix3x3(
-            m1.xx * m2.xx + m1.xy * m2.yx + m1.xz * m2.zx,
-            m1.xx * m2.xy + m1.xy * m2.yy + m1.xz * m2.zy,
-            m1.xx * m2.xz + m1.xy * m2.yz + m1.xz * m2.zz,
-            m1.yx * m2.xx + m1.yy * m2.yx + m1.yz * m2.zx,
-            m1.yx * m2.xy + m1.yy * m2.yy + m1.yz * m2.zy,
-            m1.yx * m2.xz + m1.yy * m2.yz + m1.yz * m2.zz,
-            m1.zx * m2.xx + m1.zy * m2.yx + m1.zz * m2.zx,
-            m1.zx * m2.xy + m1.zy * m2.yy + m1.zz * m2.zy,
-            m1.zx * m2.xz + m1.zy * m2.yz + m1.zz * m2.zz
-        )
-    }
-
-    /**
-     * Calculate w = m * v where m is a 3X3 matrix and v a column vector.
-     */
-    @JvmStatic
-    fun matrixVectorMultiply(m: Matrix3x3, v: Vector3): Vector3 {
-        return Vector3(
-            m.xx * v.x + m.xy * v.y + m.xz * v.z,
-            m.yx * v.x + m.yy * v.y + m.yz * v.z,
-            m.zx * v.x + m.zy * v.y + m.zz * v.z
-        )
-    }
-
-    /**
      * Calculate the rotation matrix for a certain number of degrees about the
      * give axis.
      * @param degrees

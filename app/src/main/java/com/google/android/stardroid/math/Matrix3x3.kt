@@ -107,6 +107,22 @@ data class Matrix3x3(
         zy = tmp
     }
 
+    operator fun times(m : Matrix3x3) = Matrix3x3(
+            this.xx * m.xx + this.xy * m.yx + this.xz * m.zx,
+            this.xx * m.xy + this.xy * m.yy + this.xz * m.zy,
+            this.xx * m.xz + this.xy * m.yz + this.xz * m.zz,
+            this.yx * m.xx + this.yy * m.yx + this.yz * m.zx,
+            this.yx * m.xy + this.yy * m.yy + this.yz * m.zy,
+            this.yx * m.xz + this.yy * m.yz + this.yz * m.zz,
+            this.zx * m.xx + this.zy * m.yx + this.zz * m.zx,
+            this.zx * m.xy + this.zy * m.yy + this.zz * m.zy,
+            this.zx * m.xz + this.zy * m.yz + this.zz * m.zz)
+
+    operator fun times(v : Vector3) = Vector3(
+        this.xx * v.x + this.xy * v.y + this.xz * v.z,
+        this.yx * v.x + this.yy * v.y + this.yz * v.z,
+        this.zx * v.x + this.zy * v.y + this.zz * v.z)
+
     companion object {
         @JvmStatic
         val identity: Matrix3x3 = Matrix3x3(1f, 0f, 0f, 0f, 1f, 0f, 0f, 0f, 1f)

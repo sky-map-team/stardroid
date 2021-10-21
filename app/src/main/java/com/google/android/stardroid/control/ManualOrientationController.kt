@@ -15,7 +15,6 @@ package com.google.android.stardroid.control
 
 import android.util.Log
 import com.google.android.stardroid.math.Geometry.calculateRotationMatrix
-import com.google.android.stardroid.math.Geometry.matrixVectorMultiply
 import com.google.android.stardroid.util.MiscUtil
 
 /**
@@ -91,7 +90,7 @@ class ManualOrientationController : AbstractController() {
         val pointingXyz = pointing.lineOfSight
         val rotation = calculateRotationMatrix(degrees, pointingXyz)
         val topXyz = pointing.perpendicular
-        val newUpXyz = matrixVectorMultiply(rotation, topXyz)
+        val newUpXyz = rotation * topXyz
         newUpXyz.normalize()
         model.setPointing(pointingXyz, newUpXyz)
     }

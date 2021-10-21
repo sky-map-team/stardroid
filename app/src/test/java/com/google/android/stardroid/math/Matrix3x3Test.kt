@@ -42,7 +42,7 @@ class Matrix3x3Test {
             1f
         )
         var inv = m.inverse
-        var product = Geometry.matrixMultiply(m, inv!!)
+        var product = m * inv!!
         Matrix3x3Subject.assertThat(Matrix3x3.identity).isWithin(TOL).of(product)
         m = Matrix3x3(
             1f,
@@ -56,7 +56,7 @@ class Matrix3x3Test {
             1f
         )
         inv = m.inverse
-        product = Geometry.matrixMultiply(m, inv!!)
+        product = m * inv!!
         Matrix3x3Subject.assertThat(Matrix3x3.identity).isWithin(TOL).of(product)
     }
 
@@ -65,7 +65,7 @@ class Matrix3x3Test {
         // Why waste a good test?
         val m = Matrix3x3(1f, 2f, 0f, 0f, 1f, 5f, 0f, 0f, 1f)
         val inv = m.inverse
-        val product = Geometry.matrixMultiply(m, inv!!)
+        val product = m * inv!!
         val identity = Matrix3x3(1f, 0f, 0f, 0f, 1f, 0f, 0f, 0f, 1f)
         Matrix3x3Subject.assertThat(product).isWithin(TOL).of(identity)
     }
@@ -77,15 +77,11 @@ class Matrix3x3Test {
         val m2 = Matrix3x3(3f, -1f, 4f, 0f, 2f, 1f, 2f, -1f, 2f)
         val v1 = Vector3(0f, -1f, 2f)
         val v2 = Vector3(2f, -2f, 3f)
-        Matrix3x3Subject.assertThat(Matrix3x3(11f, -1f, 14f, 7f, -10f, 3f, 21f, -5f, 26f)).isWithin(
-            TOL
-        ).of(Geometry.matrixMultiply(m1, m2))
-        Vector3Subject.assertThat(Vector3(6f, 13f, 10f)).isWithin(TOL).of(
-            Geometry.matrixVectorMultiply(m1, v1)
-        )
-        Vector3Subject.assertThat(Vector3(10f, 19f, 20f)).isWithin(TOL).of(
-            Geometry.matrixVectorMultiply(m1, v2)
-        )
+        Matrix3x3Subject.assertThat(
+            Matrix3x3(11f, -1f, 14f, 7f, -10f, 3f, 21f, -5f, 26f)
+            ).isWithin(TOL).of(m1 * m2)
+        Vector3Subject.assertThat(Vector3(6f, 13f, 10f)).isWithin(TOL).of(m1 * v1)
+        Vector3Subject.assertThat(Vector3(10f, 19f, 20f)).isWithin(TOL).of(m1 * v2)
     }
 
     @Test

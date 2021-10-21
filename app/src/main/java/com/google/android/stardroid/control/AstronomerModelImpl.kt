@@ -14,8 +14,6 @@
 package com.google.android.stardroid.control
 
 import com.google.android.stardroid.math.Matrix3x3.Companion.identity
-import com.google.android.stardroid.math.Geometry.matrixMultiply
-import com.google.android.stardroid.math.Geometry.matrixVectorMultiply
 import com.google.android.stardroid.math.Geometry.calculateRADecOfZenith
 import com.google.android.stardroid.math.GeocentricCoordinates.getGeocentricCoords
 import com.google.android.stardroid.math.Geometry.calculateRotationMatrix
@@ -230,9 +228,9 @@ class AstronomerModelImpl(magneticDeclinationCalculator: MagneticDeclinationCalc
         }
         calculateLocalNorthAndUpInCelestialCoords(false)
         calculateLocalNorthAndUpInPhoneCoordsFromSensors()
-        val transform = matrixMultiply(axesMagneticCelestialMatrix, axesPhoneInverseMatrix)
-        val viewInSpaceSpace = matrixVectorMultiply(transform, POINTING_DIR_IN_PHONE_COORDS)
-        val screenUpInSpaceSpace = matrixVectorMultiply(transform, screenInPhoneCoords)
+        val transform = axesMagneticCelestialMatrix * axesPhoneInverseMatrix
+        val viewInSpaceSpace =  transform * POINTING_DIR_IN_PHONE_COORDS
+        val screenUpInSpaceSpace = transform * screenInPhoneCoords
         pointing.updateLineOfSight(viewInSpaceSpace)
         pointing.updatePerpendicular(screenUpInSpaceSpace)
     }
@@ -265,10 +263,7 @@ class AstronomerModelImpl(magneticDeclinationCalculator: MagneticDeclinationCalc
         val rotationMatrix = calculateRotationMatrix(
             magneticDeclinationCalculator!!.declination, upCelestial
         )
-        val magneticNorthCelestial = matrixVectorMultiply(
-            rotationMatrix,
-            trueNorthCelestial
-        )
+        val magneticNorthCelestial = rotationMatrix * trueNorthCelestial
         val magneticEastCelestial = magneticNorthCelestial * upCelestial
         axesMagneticCelestialMatrix = Matrix3x3(
             magneticNorthCelestial,

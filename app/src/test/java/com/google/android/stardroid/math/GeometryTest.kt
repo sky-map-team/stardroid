@@ -15,8 +15,6 @@ package com.google.android.stardroid.math
 
 import com.google.android.stardroid.math.Geometry.calculateRotationMatrix
 import com.google.android.stardroid.math.Geometry.getXYZ
-import com.google.android.stardroid.math.Geometry.matrixMultiply
-import com.google.android.stardroid.math.Geometry.matrixVectorMultiply
 import com.google.android.stardroid.math.RaDec.Companion.fromGeocentricCoords
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test
@@ -75,10 +73,10 @@ class GeometryTest {
         axis.normalize()
         val rotA = calculateRotationMatrix(30f, axis)
         val rotB = calculateRotationMatrix(-30f, axis)
-        val shouldBeIdentity = matrixMultiply(rotA, rotB)
+        val shouldBeIdentity = rotA * rotB
         Matrix3x3Subject.assertThat(identity).isWithin(TOL).of(shouldBeIdentity)
         val axisPerpendicular = Vector3(4f, 2f, 0f)
-        val rotatedAxisPerpendicular = matrixVectorMultiply(rotA, axisPerpendicular)
+        val rotatedAxisPerpendicular = rotA * axisPerpendicular
 
         // Should still be perpendicular
         assertThat(axis dot rotatedAxisPerpendicular).isWithin(TOL).of(0.0f)
