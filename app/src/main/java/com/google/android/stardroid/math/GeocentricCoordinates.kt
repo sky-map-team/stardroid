@@ -13,10 +13,10 @@
 // limitations under the License.
 package com.google.android.stardroid.math
 
-import com.google.android.stardroid.math.MathUtil.asin
-import com.google.android.stardroid.math.MathUtil.atan2
-import com.google.android.stardroid.math.MathUtil.cos
-import com.google.android.stardroid.math.MathUtil.sin
+import com.google.android.stardroid.math.MathUtils.asin
+import com.google.android.stardroid.math.MathUtils.atan2
+import com.google.android.stardroid.math.MathUtils.cos
+import com.google.android.stardroid.math.MathUtils.sin
 
 /**
  * Utilities for dealing with a vector representing an object's location in Euclidean space

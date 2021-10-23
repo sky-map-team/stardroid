@@ -13,10 +13,10 @@
 // limitations under the License.
 package com.google.android.stardroid.math
 
-import com.google.android.stardroid.math.MathUtil.ceil
-import com.google.android.stardroid.math.MathUtil.cos
-import com.google.android.stardroid.math.MathUtil.floor
-import com.google.android.stardroid.math.MathUtil.sin
+import com.google.android.stardroid.math.MathUtils.ceil
+import com.google.android.stardroid.math.MathUtils.cos
+import com.google.android.stardroid.math.MathUtils.floor
+import com.google.android.stardroid.math.MathUtils.sin
 import java.util.*
 
 /**
@@ -29,10 +29,10 @@ import java.util.*
  */
 object Geometry {
     // Convert Degrees to Radians
-    const val DEGREES_TO_RADIANS = MathUtil.PI / 180.0f
+    const val DEGREES_TO_RADIANS = MathUtils.PI / 180.0f
 
     // Convert Radians to Degrees
-    const val RADIANS_TO_DEGREES = 180.0f / MathUtil.PI
+    const val RADIANS_TO_DEGREES = 180.0f / MathUtils.PI
 
     /**
      * Return the integer part of a number
@@ -52,10 +52,10 @@ object Geometry {
      */
     @JvmStatic
     fun mod2pi(x: Float): Float {
-        val factor = x / MathUtil.TWO_PI
-        var result = MathUtil.TWO_PI * (factor - abs_floor(factor))
+        val factor = x / MathUtils.TWO_PI
+        var result = MathUtils.TWO_PI * (factor - abs_floor(factor))
         if (result < 0.0) {
-            result = MathUtil.TWO_PI + result
+            result = MathUtils.TWO_PI + result
         }
         return result
     }

@@ -17,7 +17,7 @@ package com.google.android.stardroid.ephemeris;
 import android.util.Log;
 
 import com.google.android.stardroid.math.Geometry;
-import com.google.android.stardroid.math.MathUtil;
+import com.google.android.stardroid.math.MathUtils;
 import com.google.android.stardroid.util.MiscUtil;
 
 /**
@@ -68,26 +68,26 @@ public class OrbitalElements {
   // Return value is in radians.
   private static float calculateTrueAnomaly(float m, float e) {
     // initial approximation of eccentric anomaly
-    float e0 = m + e * MathUtil.sin(m) * (1.0f + e * MathUtil.cos(m));
+    float e0 = m + e * MathUtils.sin(m) * (1.0f + e * MathUtils.cos(m));
     float e1;
 
     // iterate to improve accuracy
     int counter = 0;
     do {
       e1 = e0;
-      e0 = e1 - (e1 - e * MathUtil.sin(e1) - m) / (1.0f - e * MathUtil.cos(e1));
+      e0 = e1 - (e1 - e * MathUtils.sin(e1) - m) / (1.0f - e * MathUtils.cos(e1));
       if (counter++ > 100) {
         Log.d(TAG, "Failed to converge! Exiting.");
         Log.d(TAG, "e1 = " + e1 + ", e0 = " + e0);
-        Log.d(TAG, "diff = " + MathUtil.abs(e0 - e1));
+        Log.d(TAG, "diff = " + MathUtils.abs(e0 - e1));
         break;
       }
-    } while (MathUtil.abs(e0 - e1) > EPSILON);
+    } while (MathUtils.abs(e0 - e1) > EPSILON);
 
     // convert eccentric anomaly to true anomaly
     float v =
-        2f * MathUtil.atan(MathUtil.sqrt((1 + e) / (1 - e))
-            * MathUtil.tan(0.5f * e0));
+        2f * MathUtils.atan(MathUtils.sqrt((1 + e) / (1 - e))
+            * MathUtils.tan(0.5f * e0));
     return Geometry.mod2pi(v);
   }
 

@@ -13,51 +13,15 @@
 // limitations under the License.
 package com.google.android.stardroid.math
 
+import com.google.android.stardroid.math.MathUtils.sqrt
 import com.google.android.stardroid.math.Matrix4x4.Companion.createIdentity
-import com.google.android.stardroid.math.Matrix4x4.Companion.multiplyMM
+import com.google.android.stardroid.math.Matrix4x4.Companion.createRotation
 import com.google.android.stardroid.math.Matrix4x4.Companion.createScaling
 import com.google.android.stardroid.math.Matrix4x4.Companion.createTranslation
-import com.google.android.stardroid.math.Matrix4x4.Companion.multiplyMV
-import com.google.android.stardroid.math.Matrix4x4.Companion.createRotation
-import com.google.android.stardroid.math.MathUtil.sqrt
-import junit.framework.TestCase
+import org.junit.Test
 
-class Matrix4x4Test : TestCase() {
-    fun wrap(matrix: FloatArray): Array<Float?> {
-        val m = arrayOfNulls<Float>(matrix.size)
-        for (i in matrix.indices) {
-            m[i] = matrix[i]
-        }
-        return m
-    }
-
-    fun assertVectorsEqual(v1: Vector3, v2: Vector3) {
-        assertEquals(v1.x, v2.x, DELTA)
-        assertEquals(v1.y, v2.y, DELTA)
-        assertEquals(v1.z, v2.z, DELTA)
-    }
-
-    fun assertMatEqual(mat1: Matrix4x4, mat2: Matrix4x4) {
-        val m1 = mat1.floatArray
-        val m2 = mat2.floatArray
-        assertEquals(m1[0], m2[0], DELTA)
-        assertEquals(m1[1], m2[1], DELTA)
-        assertEquals(m1[2], m2[2], DELTA)
-        assertEquals(m1[3], m2[3], DELTA)
-        assertEquals(m1[4], m2[4], DELTA)
-        assertEquals(m1[5], m2[5], DELTA)
-        assertEquals(m1[6], m2[6], DELTA)
-        assertEquals(m1[7], m2[7], DELTA)
-        assertEquals(m1[8], m2[8], DELTA)
-        assertEquals(m1[9], m2[9], DELTA)
-        assertEquals(m1[10], m2[10], DELTA)
-        assertEquals(m1[11], m2[11], DELTA)
-        assertEquals(m1[12], m2[12], DELTA)
-        assertEquals(m1[13], m2[13], DELTA)
-        assertEquals(m1[14], m2[14], DELTA)
-        assertEquals(m1[15], m2[15], DELTA)
-    }
-
+class Matrix4x4Test {
+    @Test
     fun testMultiplyByIdentity() {
         val identity = createIdentity()
         val m = Matrix4x4(
@@ -80,10 +44,11 @@ class Matrix4x4Test : TestCase() {
                 16f
             )
         )
-        assertMatEqual(m, multiplyMM(identity, m))
-        assertMatEqual(m, multiplyMM(m, identity))
+        Matrix4x4Subject.assertThat(m).isWithin(TOL).of(identity * m)
+        Matrix4x4Subject.assertThat(m).isWithin(TOL).of(m * identity)
     }
 
+    @Test
     fun testMultiplyByScaling() {
         val m = Matrix4x4(
             floatArrayOf(
@@ -126,44 +91,48 @@ class Matrix4x4Test : TestCase() {
                 0f
             )
         )
-        assertMatEqual(expected, multiplyMM(scaling, m))
-        assertMatEqual(expected, multiplyMM(m, scaling))
+        Matrix4x4Subject.assertThat(expected).isWithin(TOL).of(scaling * m)
     }
 
+    @Test
     fun testMultiplyByTranslation() {
         val v = Vector3(1f, 1f, 1f)
         val trans = createTranslation(1f, 2f, 3f)
         val expected = Vector3(2f, 3f, 4f)
-        assertVectorsEqual(expected, multiplyMV(trans, v))
+        Vector3Subject.assertThat(expected).isWithin(TOL).of(trans * v)
     }
 
+    @Test
     fun testRotation3x3ParallelRotationHasNoEffect() {
-        val m = createRotation(MathUtil.PI, Vector3(0f, 1f, 0f))
+        val m = createRotation(MathUtils.PI, Vector3(0f, 1f, 0f))
         val v = Vector3(0f, 2f, 0f)
-        assertVectorsEqual(v, multiplyMV(m, v))
+        Vector3Subject.assertThat(v).isWithin(TOL).of(m * v)
     }
 
+    @Test
     fun testRotation3x3PerpendicularRotation() {
-        val m = createRotation(MathUtil.PI * 0.25f, Vector3(0f, -1f, 0f))
+        val m = createRotation(MathUtils.PI * 0.25f, Vector3(0f, -1f, 0f))
         val v = Vector3(1f, 0f, 0f)
         val oneOverSqrt2 = 1.0f / sqrt(2.0f)
-        assertVectorsEqual(Vector3(oneOverSqrt2, 0f, oneOverSqrt2), multiplyMV(m, v))
+        Vector3Subject.assertThat(Vector3(oneOverSqrt2, 0f, oneOverSqrt2)).isWithin(TOL)
+            .of(m * v)
     }
 
+    @Test
     fun testRotation3x3UnalignedAxis() {
-        var axis = Vector3(1f, 1f, 1f).normalizedCopy()
+        val axis = Vector3(1f, 1f, 1f).normalizedCopy()
         val numRotations = 5
-        val m = createRotation(MathUtil.TWO_PI / numRotations, axis)
+        val m = createRotation(MathUtils.TWO_PI / numRotations, axis)
         val start = Vector3(2.34f, 3f, -17.6f)
         // float oneOverSqrt2 = 1.0f / MathUtil.sqrt(2.0f);
         var v = start
         for (i in 0..4) {
-            v = multiplyMV(m, v)
+            v = m * v
         }
-        assertVectorsEqual(start, v)
+        Vector3Subject.assertThat(start).isWithin(TOL).of(v)
     }
 
     companion object {
-        const val DELTA = 0.00001f
+        const val TOL = 0.00001f
     }
 }

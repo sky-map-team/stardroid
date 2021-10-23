@@ -15,7 +15,7 @@
 package com.google.android.stardroid.renderer;
 
 import com.google.android.stardroid.R;
-import com.google.android.stardroid.math.MathUtil;
+import com.google.android.stardroid.math.MathUtils;
 import com.google.android.stardroid.math.Vector3;
 import com.google.android.stardroid.renderer.util.IndexBuffer;
 import com.google.android.stardroid.renderer.util.NightVisionColorBuffer;
@@ -68,8 +68,8 @@ public class PolyLineObjectManager extends RendererObjectManager {
     ib.reset(numIndices);
     
     // See comment in PointObjectManager for justification of this calculation.
-    float fovyInRadians = 60 * MathUtil.PI / 180.0f; 
-    float sizeFactor = MathUtil.tan(fovyInRadians * 0.5f) / 480;
+    float fovyInRadians = 60 * MathUtils.PI / 180.0f; 
+    float sizeFactor = MathUtils.tan(fovyInRadians * 0.5f) / 480;
     
     boolean opaque = true;
     

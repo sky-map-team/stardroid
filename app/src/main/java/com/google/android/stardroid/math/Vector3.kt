@@ -13,7 +13,7 @@
 // limitations under the License.
 package com.google.android.stardroid.math
 
-import com.google.android.stardroid.math.MathUtil.sqrt
+import com.google.android.stardroid.math.MathUtils.sqrt
 
 data class Vector3(@JvmField var x : Float, @JvmField var y : Float, @JvmField var z : Float) {
 
@@ -24,7 +24,7 @@ data class Vector3(@JvmField var x : Float, @JvmField var y : Float, @JvmField v
         get() = x * x + y * y + z * z
 
     val length
-        get() = MathUtil.sqrt(length2)
+        get() = MathUtils.sqrt(length2)
 
     /**
      * Constructs a Vector3 from a float[2] object.

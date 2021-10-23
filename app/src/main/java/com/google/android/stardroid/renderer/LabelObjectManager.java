@@ -17,7 +17,7 @@ package com.google.android.stardroid.renderer;
 import android.graphics.Paint;
 import android.graphics.Typeface;
 
-import com.google.android.stardroid.math.MathUtil;
+import com.google.android.stardroid.math.MathUtils;
 import com.google.android.stardroid.math.Matrix4x4;
 import com.google.android.stardroid.math.Vector3;
 import com.google.android.stardroid.renderer.util.GLBuffer;
@@ -224,8 +224,8 @@ public class LabelObjectManager extends RendererObjectManager {
     // If a label isn't within the field of view angle from the target vector, it can't
     // be on the screen.  Compute the cosine of this angle so we can quickly identify these.
     // TODO(jpowell): I know I can make this tighter - do so.
-    final float DEGREES_TO_RADIANS = MathUtil.PI / 180.0f;
-    mDotProductThreshold = MathUtil.cos(rs.getRadiusOfView() * DEGREES_TO_RADIANS * 
+    final float DEGREES_TO_RADIANS = MathUtils.PI / 180.0f;
+    mDotProductThreshold = MathUtils.cos(rs.getRadiusOfView() * DEGREES_TO_RADIANS *
         (1 + viewWidth / viewHeight) * 0.5f); 
   }
 
@@ -318,7 +318,7 @@ public class LabelObjectManager extends RendererObjectManager {
     gl.glPushMatrix();
     
     gl.glTranslatef(screenPos.x, screenPos.y, 0);
-    gl.glRotatef(MathUtil.RADIANS_TO_DEGREES * getRenderState().getUpAngle(), 0, 0, -1);
+    gl.glRotatef(MathUtils.RADIANS_TO_DEGREES * getRenderState().getUpAngle(), 0, 0, -1);
     gl.glScalef(label.getWidthInPixels(), label.getHeightInPixels(), 1);
    
     gl.glVertexPointer(2, GL10.GL_FIXED, 0, mQuadBuffer);

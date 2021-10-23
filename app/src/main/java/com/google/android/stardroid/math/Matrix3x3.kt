@@ -13,7 +13,7 @@
 // limitations under the License.
 package com.google.android.stardroid.math
 
-import com.google.android.stardroid.math.MathUtil.abs
+import com.google.android.stardroid.math.MathUtils.abs
 import kotlin.jvm.JvmOverloads
 
 /**

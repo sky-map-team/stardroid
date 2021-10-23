@@ -14,7 +14,7 @@
 
 package com.google.android.stardroid.renderer.util;
 
-import com.google.android.stardroid.math.MathUtil;
+import com.google.android.stardroid.math.MathUtils;
 import com.google.android.stardroid.math.Matrix4x4;
 import com.google.android.stardroid.math.Vector3;
 
@@ -83,7 +83,7 @@ public class SearchHelper {
     if (position.z > 0) {
       float dx = position.x * mHalfScreenWidth;
       float dy = position.y * mHalfScreenHeight;
-      return MathUtil.sqrt(dx*dx + dy*dy);
+      return MathUtils.sqrt(dx*dx + dy*dy);
     } else {
       return Float.POSITIVE_INFINITY;
     }

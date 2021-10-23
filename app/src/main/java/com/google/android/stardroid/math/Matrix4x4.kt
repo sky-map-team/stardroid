@@ -13,18 +13,55 @@
 // limitations under the License.
 package com.google.android.stardroid.math
 
-import com.google.android.stardroid.math.MathUtil.sin
-import com.google.android.stardroid.math.MathUtil.cos
-import com.google.android.stardroid.math.MathUtil.tan
+import com.google.android.stardroid.math.MathUtils.sin
+import com.google.android.stardroid.math.MathUtils.cos
+import com.google.android.stardroid.math.MathUtils.tan
 
+/**
+ * Represents a 4x4 matrix, specifically for use in rendering code. Consequently includes
+ * functions for creating matrices for doing things like rotations.
+ */
 class Matrix4x4 {
-    constructor() {}
     constructor(contents: FloatArray) {
         assert(contents.size == 16)
         System.arraycopy(contents, 0, floatArray, 0, 16)
     }
 
     val floatArray = FloatArray(16)
+
+    operator fun times(mat2 : Matrix4x4): Matrix4x4 {
+        val m = this.floatArray
+        val n = mat2.floatArray
+        return Matrix4x4(
+            floatArrayOf(
+                m[0] * n[0] + m[4] * n[1] + m[8] * n[2] + m[12] * n[3],
+                m[1] * n[0] + m[5] * n[1] + m[9] * n[2] + m[13] * n[3],
+                m[2] * n[0] + m[6] * n[1] + m[10] * n[2] + m[14] * n[3],
+                m[3] * n[0] + m[7] * n[1] + m[11] * n[2] + m[15] * n[3],
+                m[0] * n[4] + m[4] * n[5] + m[8] * n[6] + m[12] * n[7],
+                m[1] * n[4] + m[5] * n[5] + m[9] * n[6] + m[13] * n[7],
+                m[2] * n[4] + m[6] * n[5] + m[10] * n[6] + m[14] * n[7],
+                m[3] * n[4] + m[7] * n[5] + m[11] * n[6] + m[15] * n[7],
+                m[0] * n[8] + m[4] * n[9] + m[8] * n[10] + m[12] * n[11],
+                m[1] * n[8] + m[5] * n[9] + m[9] * n[10] + m[13] * n[11],
+                m[2] * n[8] + m[6] * n[9] + m[10] * n[10] + m[14] * n[11],
+                m[3] * n[8] + m[7] * n[9] + m[11] * n[10] + m[15] * n[11],
+                m[0] * n[12] + m[4] * n[13] + m[8] * n[14] + m[12] * n[15],
+                m[1] * n[12] + m[5] * n[13] + m[9] * n[14] + m[13] * n[15],
+                m[2] * n[12] + m[6] * n[13] + m[10] * n[14] + m[14] * n[15],
+                m[3] * n[12] + m[7] * n[13] + m[11] * n[14] + m[15] * n[15]
+            )
+        )
+    }
+
+    operator fun times(v : Vector3): Vector3 {
+        val m = this.floatArray
+        return Vector3(
+            m[0] * v.x + m[4] * v.y + m[8] * v.z + m[12],
+            m[1] * v.x + m[5] * v.y + m[9] * v.z + m[13],
+            m[2] * v.x + m[6] * v.y + m[10] * v.z + m[14]
+        )
+    }
 
     companion object {
         @JvmStatic
@@ -53,21 +90,21 @@ class Matrix4x4 {
 
         // axis MUST be normalized.
         @JvmStatic
-        fun createRotation(angle: Float, axis: Vector3): Matrix4x4 {
+        fun createRotation(angleRadians: Float, unitAxis: Vector3): Matrix4x4 {
             val m = FloatArray(16)
-            val xSqr = axis.x * axis.x
-            val ySqr = axis.y * axis.y
-            val zSqr = axis.z * axis.z
-            val sinAngle = sin(angle)
-            val cosAngle = cos(angle)
+            val xSqr = unitAxis.x * unitAxis.x
+            val ySqr = unitAxis.y * unitAxis.y
+            val zSqr = unitAxis.z * unitAxis.z
+            val sinAngle = sin(angleRadians)
+            val cosAngle = cos(angleRadians)
             val oneMinusCosAngle = 1 - cosAngle
-            val xSinAngle = axis.x * sinAngle
-            val ySinAngle = axis.y * sinAngle
-            val zSinAngle = axis.z * sinAngle
-            val zOneMinusCosAngle = axis.z * oneMinusCosAngle
-            val xyOneMinusCosAngle = axis.x * axis.y * oneMinusCosAngle
-            val xzOneMinusCosAngle = axis.x * zOneMinusCosAngle
-            val yzOneMinusCosAngle = axis.y * zOneMinusCosAngle
+            val xSinAngle = unitAxis.x * sinAngle
+            val ySinAngle = unitAxis.y * sinAngle
+            val zSinAngle = unitAxis.z * sinAngle
+            val zOneMinusCosAngle = unitAxis.z * oneMinusCosAngle
+            val xyOneMinusCosAngle = unitAxis.x * unitAxis.y * oneMinusCosAngle
+            val xzOneMinusCosAngle = unitAxis.x * zOneMinusCosAngle
+            val yzOneMinusCosAngle = unitAxis.y * zOneMinusCosAngle
             m[0] = xSqr + (ySqr + zSqr) * cosAngle
             m[1] = xyOneMinusCosAngle + zSinAngle
             m[2] = xzOneMinusCosAngle - ySinAngle
@@ -124,40 +161,16 @@ class Matrix4x4 {
             )
         }
 
+        // TODO(johntaylor): inline and remove this once we're fully on Kotlin.
         @JvmStatic
-        fun multiplyMM(mat1: Matrix4x4, mat2: Matrix4x4): Matrix4x4 {
-            val m = mat1.floatArray
-            val n = mat2.floatArray
-            return Matrix4x4(
-                floatArrayOf(
-                    m[0] * n[0] + m[4] * n[1] + m[8] * n[2] + m[12] * n[3],
-                    m[1] * n[0] + m[5] * n[1] + m[9] * n[2] + m[13] * n[3],
-                    m[2] * n[0] + m[6] * n[1] + m[10] * n[2] + m[14] * n[3],
-                    m[3] * n[0] + m[7] * n[1] + m[11] * n[2] + m[15] * n[3],
-                    m[0] * n[4] + m[4] * n[5] + m[8] * n[6] + m[12] * n[7],
-                    m[1] * n[4] + m[5] * n[5] + m[9] * n[6] + m[13] * n[7],
-                    m[2] * n[4] + m[6] * n[5] + m[10] * n[6] + m[14] * n[7],
-                    m[3] * n[4] + m[7] * n[5] + m[11] * n[6] + m[15] * n[7],
-                    m[0] * n[8] + m[4] * n[9] + m[8] * n[10] + m[12] * n[11],
-                    m[1] * n[8] + m[5] * n[9] + m[9] * n[10] + m[13] * n[11],
-                    m[2] * n[8] + m[6] * n[9] + m[10] * n[10] + m[14] * n[11],
-                    m[3] * n[8] + m[7] * n[9] + m[11] * n[10] + m[15] * n[11],
-                    m[0] * n[12] + m[4] * n[13] + m[8] * n[14] + m[12] * n[15],
-                    m[1] * n[12] + m[5] * n[13] + m[9] * n[14] + m[13] * n[15],
-                    m[2] * n[12] + m[6] * n[13] + m[10] * n[14] + m[14] * n[15],
-                    m[3] * n[12] + m[7] * n[13] + m[11] * n[14] + m[15] * n[15]
-                )
-            )
+        fun times(mat1: Matrix4x4, mat2: Matrix4x4): Matrix4x4 {
+            return mat1 * mat2
         }
 
+        // TODO(johntaylor): inline and remove this once we're fully on Kotlin.
         @JvmStatic
         fun multiplyMV(mat: Matrix4x4, v: Vector3): Vector3 {
-            val m = mat.floatArray
-            return Vector3(
-                m[0] * v.x + m[4] * v.y + m[8] * v.z + m[12],
-                m[1] * v.x + m[5] * v.y + m[9] * v.z + m[13],
-                m[2] * v.x + m[6] * v.y + m[10] * v.z + m[14]
-            )
+            return mat * v
         }
 
         /**

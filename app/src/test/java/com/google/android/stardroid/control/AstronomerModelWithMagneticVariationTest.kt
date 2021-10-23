@@ -15,9 +15,9 @@ package com.google.android.stardroid.control
 
 import com.google.android.stardroid.math.Geometry
 import com.google.android.stardroid.math.LatLong
-import com.google.android.stardroid.math.MathUtil.cos
-import com.google.android.stardroid.math.MathUtil.sin
-import com.google.android.stardroid.math.MathUtil.sqrt
+import com.google.android.stardroid.math.MathUtils.cos
+import com.google.android.stardroid.math.MathUtils.sin
+import com.google.android.stardroid.math.MathUtils.sqrt
 import com.google.android.stardroid.math.Vector3
 import junit.framework.AssertionFailedError
 import junit.framework.TestCase

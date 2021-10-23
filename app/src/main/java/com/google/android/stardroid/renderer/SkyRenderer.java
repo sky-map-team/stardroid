@@ -19,7 +19,7 @@ import android.opengl.GLSurfaceView;
 import android.opengl.GLU;
 import android.util.Log;
 
-import com.google.android.stardroid.math.MathUtil;
+import com.google.android.stardroid.math.MathUtils;
 import com.google.android.stardroid.math.Matrix4x4;
 import com.google.android.stardroid.math.Vector3;
 import com.google.android.stardroid.renderer.util.GLBuffer;
@@ -291,7 +291,7 @@ public class SkyRenderer implements GLSurfaceView.Renderer {
   public void setViewOrientation(float dirX, float dirY, float dirZ,
                                  float upX, float upY, float upZ) {
     // Normalize the look direction
-    float dirLen = MathUtil.sqrt(dirX * dirX + dirY * dirY + dirZ * dirZ);
+    float dirLen = MathUtils.sqrt(dirX * dirX + dirY * dirY + dirZ * dirZ);
     float oneOverDirLen = 1.0f / dirLen;
     dirX *= oneOverDirLen;
     dirY *= oneOverDirLen;
@@ -305,7 +305,7 @@ public class SkyRenderer implements GLSurfaceView.Renderer {
     upZ -= lookDotUp * dirZ;
 
     // Normalize the up vector
-    float upLen = MathUtil.sqrt(upX*upX + upY*upY + upZ*upZ);
+    float upLen = MathUtils.sqrt(upX*upX + upY*upY + upZ*upZ);
     float oneOverUpLen = 1.0f / upLen;
     upX *= oneOverUpLen;
     upY *= oneOverUpLen;
@@ -383,14 +383,14 @@ public class SkyRenderer implements GLSurfaceView.Renderer {
       // are useful in different circumstances, so we'll pre-compute
       // matrices to do the transformations from world coordinates
       // into each of these.
-      Matrix4x4 transformToDevice = Matrix4x4.multiplyMM(mProjectionMatrix, mViewMatrix);
+      Matrix4x4 transformToDevice = Matrix4x4.times(mProjectionMatrix, mViewMatrix);
 
       Matrix4x4 translate = Matrix4x4.createTranslation(1, 1, 0);
       Matrix4x4 scale = Matrix4x4.createScaling(mRenderState.getScreenWidth() * 0.5f,
                                                 mRenderState.getScreenHeight() * 0.5f, 1);
 
       Matrix4x4 transformToScreen =
-          Matrix4x4.multiplyMM(Matrix4x4.multiplyMM(scale, translate),
+          Matrix4x4.times(Matrix4x4.times(scale, translate),
                                transformToDevice);
 
       mRenderState.setTransformationMatrices(transformToDevice, transformToScreen);
@@ -462,8 +462,8 @@ class RenderState implements RenderStateInterface {
   public void setRadiusOfView(float radius) { mRadiusOfView = radius; }
   public void setUpAngle(float angle) {
     mUpAngle = angle;
-    mCosUpAngle = MathUtil.cos(angle);
-    mSinUpAngle = MathUtil.sin(angle);
+    mCosUpAngle = MathUtils.cos(angle);
+    mSinUpAngle = MathUtils.sin(angle);
   }
   public void setScreenSize(int width, int height) {
     mScreenWidth = width;

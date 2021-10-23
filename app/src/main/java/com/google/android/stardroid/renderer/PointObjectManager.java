@@ -17,7 +17,7 @@ package com.google.android.stardroid.renderer;
 import android.util.Log;
 
 import com.google.android.stardroid.R;
-import com.google.android.stardroid.math.MathUtil;
+import com.google.android.stardroid.math.MathUtils;
 import com.google.android.stardroid.math.Vector3;
 import com.google.android.stardroid.renderer.util.IndexBuffer;
 import com.google.android.stardroid.renderer.util.NightVisionColorBuffer;
@@ -121,8 +121,8 @@ public class PointObjectManager extends RendererObjectManager {
       // pixels high, a size of 1 means "1 pixel," so calculate sizeFactor
       // based on this.  These numbers mostly come from the fact that that's
       // what I think looks reasonable.
-      float fovyInRadians = 60 * MathUtil.PI / 180.0f;
-      float sizeFactor = MathUtil.tan(fovyInRadians * 0.5f) / 480;
+      float fovyInRadians = 60 * MathUtils.PI / 180.0f;
+      float sizeFactor = MathUtils.tan(fovyInRadians * 0.5f) / 480;
 
       Vector3 bottomLeftPos = new Vector3(0, 0, 0);
       Vector3 topLeftPos = new Vector3(0, 0, 0);

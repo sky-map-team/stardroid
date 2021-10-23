@@ -14,8 +14,8 @@
 package com.google.android.stardroid.math
 
 import com.google.android.stardroid.ephemeris.OrbitalElements
-import com.google.android.stardroid.math.MathUtil.cos
-import com.google.android.stardroid.math.MathUtil.sin
+import com.google.android.stardroid.math.MathUtils.cos
+import com.google.android.stardroid.math.MathUtils.sin
 
 class HeliocentricCoordinates() {
 
