@@ -23,3 +23,8 @@ clean that up a little bit.  See [ephemeris.md](ephemeris.md).
 
 https://wheretheiss.at/w/developer
 https://spaceflight.nasa.gov/realdata/sightings/SSapplications/Post/JavaSSOP/orbit/ISS/SVPOST.html (used in the existing code - ironically it's going to be shut down in October).
+http://celestrak.com/NORAD/documentation/spacetrk.pdf
+https://www.space-track.org/
+https://www.nasa.gov/feature/spaceflightnasagov-has-been-retired/
+https://github.com/Bill-Gray/sat_code
+https://www.satellite-calculations.com/TLETracker/SatTracker.htm
