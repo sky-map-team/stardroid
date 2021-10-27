@@ -98,7 +98,7 @@ class AstronomerModelImpl(magneticDeclinationCalculator: MagneticDeclinationCalc
     private val rotationVector = floatArrayOf(1f, 0f, 0f, 0f)
 
     /** North along the ground in celestial coordinates.  */
-    private var trueNorthCelestial = Vector3.unitY()
+    private var trueNorthCelestial = Vector3.unitX()
 
     /** Up in celestial coordinates.  */
     private var upCelestial = Vector3.unitY()
@@ -343,7 +343,7 @@ class AstronomerModelImpl(magneticDeclinationCalculator: MagneticDeclinationCalc
         private val TAG = MiscUtil.getTag(AstronomerModelImpl::class.java)
         private val POINTING_DIR_IN_PHONE_COORDS = -Vector3.unitZ()
         private val SCREEN_UP_IN_PHONE_COORDS = Vector3.unitY()
-        private val SCREEN_DOWN_IN_PHONE_COORDS = Vector3.unitX()
+        private val SCREEN_DOWN_IN_PHONE_COORDS = Vector3.unitX()  // TODO(jontayler) this can't be right
         private val AXIS_OF_EARTHS_ROTATION = Vector3.unitZ()
         private const val MINIMUM_TIME_BETWEEN_CELESTIAL_COORD_UPDATES_MILLIS = 60000L
         private const val TOL = 0.01f
