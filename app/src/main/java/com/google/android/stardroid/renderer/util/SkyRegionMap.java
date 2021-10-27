@@ -14,6 +14,8 @@
 
 package com.google.android.stardroid.renderer.util;
 
+import static com.google.android.stardroid.math.MathUtilsKt.DEGREES_TO_RADIANS;
+
 import android.util.Log;
 
 import com.google.android.stardroid.math.MathUtils;
@@ -268,7 +270,7 @@ public class SkyRegionMap<RegionRenderingData> {
     // and the corner of the screen.  This distance is:
     // d = sin(fovy / 2) * sqrt(1 + aspect^2).
     // The angle for the screen region is the arcsin of this value.
-    float halfFovy = (fovyInDegrees * MathUtils.DEGREES_TO_RADIANS) / 2;
+    float halfFovy = (fovyInDegrees * DEGREES_TO_RADIANS) / 2;
     float screenAngle = MathUtils.asin(
         MathUtils.sin(halfFovy) * MathUtils.sqrt(1 + aspect * aspect));
 

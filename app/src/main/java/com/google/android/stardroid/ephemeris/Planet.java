@@ -14,13 +14,16 @@
 
 package com.google.android.stardroid.ephemeris;
 
+import static com.google.android.stardroid.math.MathUtilsKt.DEGREES_TO_RADIANS;
+import static com.google.android.stardroid.math.MathUtilsKt.RADIANS_TO_DEGREES;
+import static com.google.android.stardroid.math.MathUtilsKt.mod2pi;
+
 import android.util.Log;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.base.TimeConstants;
 import com.google.android.stardroid.base.VisibleForTesting;
 import com.google.android.stardroid.math.GeocentricCoordinates;
-import com.google.android.stardroid.math.Geometry;
 import com.google.android.stardroid.math.HeliocentricCoordinates;
 import com.google.android.stardroid.math.LatLong;
 import com.google.android.stardroid.math.MathUtils;
@@ -135,22 +138,22 @@ public enum Planet {
       case Mercury: {
         float a = 0.38709927f + 0.00000037f * jc;
         float e = 0.20563593f + 0.00001906f * jc;
-        float i = (7.00497902f - 0.00594749f * jc) * Geometry.DEGREES_TO_RADIANS;
+        float i = (7.00497902f - 0.00594749f * jc) * DEGREES_TO_RADIANS;
         float l =
-            Geometry.mod2pi((252.25032350f + 149472.67411175f * jc) * Geometry.DEGREES_TO_RADIANS);
-        float w = (77.45779628f + 0.16047689f * jc) * Geometry.DEGREES_TO_RADIANS;
-        float o = (48.33076593f - 0.12534081f * jc) * Geometry.DEGREES_TO_RADIANS;
+            mod2pi((252.25032350f + 149472.67411175f * jc) * DEGREES_TO_RADIANS);
+        float w = (77.45779628f + 0.16047689f * jc) * DEGREES_TO_RADIANS;
+        float o = (48.33076593f - 0.12534081f * jc) * DEGREES_TO_RADIANS;
         return new OrbitalElements(a, e, i, o, w, l);
       }
 
       case Venus: {
         float a = 0.72333566f + 0.00000390f * jc;
         float e = 0.00677672f - 0.00004107f * jc;
-        float i = (3.39467605f - 0.00078890f * jc) * Geometry.DEGREES_TO_RADIANS;
+        float i = (3.39467605f - 0.00078890f * jc) * DEGREES_TO_RADIANS;
         float l =
-            Geometry.mod2pi((181.97909950f + 58517.81538729f * jc) * Geometry.DEGREES_TO_RADIANS);
-        float w = (131.60246718f + 0.00268329f * jc) * Geometry.DEGREES_TO_RADIANS;
-        float o = (76.67984255f - 0.27769418f * jc) * Geometry.DEGREES_TO_RADIANS;
+            mod2pi((181.97909950f + 58517.81538729f * jc) * DEGREES_TO_RADIANS);
+        float w = (131.60246718f + 0.00268329f * jc) * DEGREES_TO_RADIANS;
+        float o = (76.67984255f - 0.27769418f * jc) * DEGREES_TO_RADIANS;
         return new OrbitalElements(a, e, i, o, w, l);
       }
 
@@ -158,10 +161,10 @@ public enum Planet {
       case Sun: {
         float a = 1.00000261f + 0.00000562f * jc;
         float e = 0.01671123f - 0.00004392f * jc;
-        float i = (-0.00001531f - 0.01294668f * jc) * Geometry.DEGREES_TO_RADIANS;
+        float i = (-0.00001531f - 0.01294668f * jc) * DEGREES_TO_RADIANS;
         float l =
-            Geometry.mod2pi((100.46457166f + 35999.37244981f * jc) * Geometry.DEGREES_TO_RADIANS);
-        float w = (102.93768193f + 0.32327364f * jc) * Geometry.DEGREES_TO_RADIANS;
+            mod2pi((100.46457166f + 35999.37244981f * jc) * DEGREES_TO_RADIANS);
+        float w = (102.93768193f + 0.32327364f * jc) * DEGREES_TO_RADIANS;
         float o = 0.0f;
         return new OrbitalElements(a, e, i, o, w, l);
       }
@@ -169,66 +172,66 @@ public enum Planet {
       case Mars: {
         float a = 1.52371034f + 0.00001847f * jc;
         float e = 0.09339410f + 0.00007882f * jc;
-        float i = (1.84969142f - 0.00813131f * jc) * Geometry.DEGREES_TO_RADIANS;
+        float i = (1.84969142f - 0.00813131f * jc) * DEGREES_TO_RADIANS;
         float l =
-            Geometry.mod2pi((-4.55343205f + 19140.30268499f * jc) * Geometry.DEGREES_TO_RADIANS);
-        float w = (-23.94362959f + 0.44441088f * jc) * Geometry.DEGREES_TO_RADIANS;
-        float o = (49.55953891f - 0.29257343f * jc) * Geometry.DEGREES_TO_RADIANS;
+            mod2pi((-4.55343205f + 19140.30268499f * jc) * DEGREES_TO_RADIANS);
+        float w = (-23.94362959f + 0.44441088f * jc) * DEGREES_TO_RADIANS;
+        float o = (49.55953891f - 0.29257343f * jc) * DEGREES_TO_RADIANS;
         return new OrbitalElements(a, e, i, o, w, l);
       }
 
       case Jupiter: {
         float a = 5.20288700f - 0.00011607f * jc;
         float e = 0.04838624f - 0.00013253f * jc;
-        float i = (1.30439695f - 0.00183714f * jc) * Geometry.DEGREES_TO_RADIANS;
+        float i = (1.30439695f - 0.00183714f * jc) * DEGREES_TO_RADIANS;
         float l =
-            Geometry.mod2pi((34.39644051f + 3034.74612775f * jc) * Geometry.DEGREES_TO_RADIANS);
-        float w = (14.72847983f + 0.21252668f * jc) * Geometry.DEGREES_TO_RADIANS;
-        float o = (100.47390909f + 0.20469106f * jc) * Geometry.DEGREES_TO_RADIANS;
+            mod2pi((34.39644051f + 3034.74612775f * jc) * DEGREES_TO_RADIANS);
+        float w = (14.72847983f + 0.21252668f * jc) * DEGREES_TO_RADIANS;
+        float o = (100.47390909f + 0.20469106f * jc) * DEGREES_TO_RADIANS;
         return new OrbitalElements(a, e, i, o, w, l);
       }
 
       case Saturn: {
         float a = 9.53667594f - 0.00125060f * jc;
         float e = 0.05386179f - 0.00050991f * jc;
-        float i = (2.48599187f + 0.00193609f * jc) * Geometry.DEGREES_TO_RADIANS;
+        float i = (2.48599187f + 0.00193609f * jc) * DEGREES_TO_RADIANS;
         float l =
-            Geometry.mod2pi((49.95424423f + 1222.49362201f * jc) * Geometry.DEGREES_TO_RADIANS);
-        float w = (92.59887831f - 0.41897216f * jc) * Geometry.DEGREES_TO_RADIANS;
-        float o = (113.66242448f - 0.28867794f * jc) * Geometry.DEGREES_TO_RADIANS;
+            mod2pi((49.95424423f + 1222.49362201f * jc) * DEGREES_TO_RADIANS);
+        float w = (92.59887831f - 0.41897216f * jc) * DEGREES_TO_RADIANS;
+        float o = (113.66242448f - 0.28867794f * jc) * DEGREES_TO_RADIANS;
         return new OrbitalElements(a, e, i, o, w, l);
       }
 
       case Uranus: {
         float a = 19.18916464f - 0.00196176f * jc;
         float e = 0.04725744f - 0.00004397f * jc;
-        float i = (0.77263783f - 0.00242939f * jc) * Geometry.DEGREES_TO_RADIANS;
+        float i = (0.77263783f - 0.00242939f * jc) * DEGREES_TO_RADIANS;
         float l =
-            Geometry.mod2pi((313.23810451f + 428.48202785f * jc) * Geometry.DEGREES_TO_RADIANS);
-        float w = (170.95427630f + 0.40805281f * jc) * Geometry.DEGREES_TO_RADIANS;
-        float o = (74.01692503f + 0.04240589f * jc) * Geometry.DEGREES_TO_RADIANS;
+            mod2pi((313.23810451f + 428.48202785f * jc) * DEGREES_TO_RADIANS);
+        float w = (170.95427630f + 0.40805281f * jc) * DEGREES_TO_RADIANS;
+        float o = (74.01692503f + 0.04240589f * jc) * DEGREES_TO_RADIANS;
         return new OrbitalElements(a, e, i, o, w, l);
       }
 
       case Neptune: {
         float a = 30.06992276f + 0.00026291f * jc;
         float e = 0.00859048f + 0.00005105f * jc;
-        float i = (1.77004347f + 0.00035372f * jc) * Geometry.DEGREES_TO_RADIANS;
+        float i = (1.77004347f + 0.00035372f * jc) * DEGREES_TO_RADIANS;
         float l =
-            Geometry.mod2pi((-55.12002969f + 218.45945325f * jc) * Geometry.DEGREES_TO_RADIANS);
-        float w = (44.96476227f - 0.32241464f * jc) * Geometry.DEGREES_TO_RADIANS;
-        float o = (131.78422574f - 0.00508664f * jc) * Geometry.DEGREES_TO_RADIANS;
+            mod2pi((-55.12002969f + 218.45945325f * jc) * DEGREES_TO_RADIANS);
+        float w = (44.96476227f - 0.32241464f * jc) * DEGREES_TO_RADIANS;
+        float o = (131.78422574f - 0.00508664f * jc) * DEGREES_TO_RADIANS;
         return new OrbitalElements(a, e, i, o, w, l);
       }
 
       case Pluto: {
         float a = 39.48211675f - 0.00031596f * jc;
         float e = 0.24882730f + 0.00005170f * jc;
-        float i = (17.14001206f + 0.00004818f * jc) * Geometry.DEGREES_TO_RADIANS;
+        float i = (17.14001206f + 0.00004818f * jc) * DEGREES_TO_RADIANS;
         float l =
-            Geometry.mod2pi((238.92903833f + 145.20780515f * jc) * Geometry.DEGREES_TO_RADIANS);
-        float w = (224.06891629f - 0.04062942f * jc) * Geometry.DEGREES_TO_RADIANS;
-        float o = (110.30393684f - 0.01183482f * jc) * Geometry.DEGREES_TO_RADIANS;
+            mod2pi((238.92903833f + 145.20780515f * jc) * DEGREES_TO_RADIANS);
+        float w = (224.06891629f - 0.04062942f * jc) * DEGREES_TO_RADIANS;
+        float o = (110.30393684f - 0.01183482f * jc) * DEGREES_TO_RADIANS;
         return new OrbitalElements(a, e, i, o, w, l);
       }
 
@@ -258,38 +261,38 @@ public enum Planet {
     // Second, calculate the approximate geocentric orbital elements.
     float lambda =
         218.32f + 481267.881f * t + 6.29f
-            * MathUtils.sin((135.0f + 477198.87f * t) * Geometry.DEGREES_TO_RADIANS) - 1.27f
-            * MathUtils.sin((259.3f - 413335.36f * t) * Geometry.DEGREES_TO_RADIANS) + 0.66f
-            * MathUtils.sin((235.7f + 890534.22f * t) * Geometry.DEGREES_TO_RADIANS) + 0.21f
-            * MathUtils.sin((269.9f + 954397.74f * t) * Geometry.DEGREES_TO_RADIANS) - 0.19f
-            * MathUtils.sin((357.5f + 35999.05f * t) * Geometry.DEGREES_TO_RADIANS) - 0.11f
-            * MathUtils.sin((186.5f + 966404.03f * t) * Geometry.DEGREES_TO_RADIANS);
+            * MathUtils.sin((135.0f + 477198.87f * t) * DEGREES_TO_RADIANS) - 1.27f
+            * MathUtils.sin((259.3f - 413335.36f * t) * DEGREES_TO_RADIANS) + 0.66f
+            * MathUtils.sin((235.7f + 890534.22f * t) * DEGREES_TO_RADIANS) + 0.21f
+            * MathUtils.sin((269.9f + 954397.74f * t) * DEGREES_TO_RADIANS) - 0.19f
+            * MathUtils.sin((357.5f + 35999.05f * t) * DEGREES_TO_RADIANS) - 0.11f
+            * MathUtils.sin((186.5f + 966404.03f * t) * DEGREES_TO_RADIANS);
     float beta =
-        5.13f * MathUtils.sin((93.3f + 483202.02f * t) * Geometry.DEGREES_TO_RADIANS) + 0.28f
-            * MathUtils.sin((228.2f + 960400.89f * t) * Geometry.DEGREES_TO_RADIANS) - 0.28f
-            * MathUtils.sin((318.3f + 6003.15f * t) * Geometry.DEGREES_TO_RADIANS) - 0.17f
-            * MathUtils.sin((217.6f - 407332.21f * t) * Geometry.DEGREES_TO_RADIANS);
+        5.13f * MathUtils.sin((93.3f + 483202.02f * t) * DEGREES_TO_RADIANS) + 0.28f
+            * MathUtils.sin((228.2f + 960400.89f * t) * DEGREES_TO_RADIANS) - 0.28f
+            * MathUtils.sin((318.3f + 6003.15f * t) * DEGREES_TO_RADIANS) - 0.17f
+            * MathUtils.sin((217.6f - 407332.21f * t) * DEGREES_TO_RADIANS);
     //float pi =
-    //    0.9508f + 0.0518f * MathUtil.cos((135.0f + 477198.87f * t) * Geometry.DEGREES_TO_RADIANS)
-    //        + 0.0095f * MathUtil.cos((259.3f - 413335.36f * t) * Geometry.DEGREES_TO_RADIANS)
-    //        + 0.0078f * MathUtil.cos((235.7f + 890534.22f * t) * Geometry.DEGREES_TO_RADIANS)
-    //        + 0.0028f * MathUtil.cos((269.9f + 954397.74f * t) * Geometry.DEGREES_TO_RADIANS);
-    // float r = 1.0f / MathUtil.sin(pi * Geometry.DEGREES_TO_RADIANS);
+    //    0.9508f + 0.0518f * MathUtil.cos((135.0f + 477198.87f * t) * DEGREES_TO_RADIANS)
+    //        + 0.0095f * MathUtil.cos((259.3f - 413335.36f * t) * DEGREES_TO_RADIANS)
+    //        + 0.0078f * MathUtil.cos((235.7f + 890534.22f * t) * DEGREES_TO_RADIANS)
+    //        + 0.0028f * MathUtil.cos((269.9f + 954397.74f * t) * DEGREES_TO_RADIANS);
+    // float r = 1.0f / MathUtil.sin(pi * DEGREES_TO_RADIANS);
 
     // Third, convert to RA and Dec.
     float l =
-        MathUtils.cos(beta * Geometry.DEGREES_TO_RADIANS)
-            * MathUtils.cos(lambda * Geometry.DEGREES_TO_RADIANS);
+        MathUtils.cos(beta * DEGREES_TO_RADIANS)
+            * MathUtils.cos(lambda * DEGREES_TO_RADIANS);
     float m =
-        0.9175f * MathUtils.cos(beta * Geometry.DEGREES_TO_RADIANS)
-            * MathUtils.sin(lambda * Geometry.DEGREES_TO_RADIANS) - 0.3978f
-            * MathUtils.sin(beta * Geometry.DEGREES_TO_RADIANS);
+        0.9175f * MathUtils.cos(beta * DEGREES_TO_RADIANS)
+            * MathUtils.sin(lambda * DEGREES_TO_RADIANS) - 0.3978f
+            * MathUtils.sin(beta * DEGREES_TO_RADIANS);
     float n =
-        0.3978f * MathUtils.cos(beta * Geometry.DEGREES_TO_RADIANS)
-            * MathUtils.sin(lambda * Geometry.DEGREES_TO_RADIANS) + 0.9175f
-            * MathUtils.sin(beta * Geometry.DEGREES_TO_RADIANS);
-    float ra = Geometry.mod2pi(MathUtils.atan2(m, l)) * Geometry.RADIANS_TO_DEGREES;
-    float dec = MathUtils.asin(n) * Geometry.RADIANS_TO_DEGREES;
+        0.3978f * MathUtils.cos(beta * DEGREES_TO_RADIANS)
+            * MathUtils.sin(lambda * DEGREES_TO_RADIANS) + 0.9175f
+            * MathUtils.sin(beta * DEGREES_TO_RADIANS);
+    float ra = mod2pi(MathUtils.atan2(m, l)) * RADIANS_TO_DEGREES;
+    float dec = MathUtils.asin(n) * RADIANS_TO_DEGREES;
 
     return new RaDec(ra, dec);
   }
@@ -313,7 +316,7 @@ public enum Planet {
 
       return 180.0f -
           MathUtils.acos(sun.x * moon.x + sun.y * moon.y + sun.z * moon.z)
-          * Geometry.RADIANS_TO_DEGREES;
+          * RADIANS_TO_DEGREES;
     }
 
     // First, determine position in the solar system.
@@ -327,7 +330,7 @@ public enum Planet {
     return MathUtils.acos((earthDistance * earthDistance +
         planetCoords.getLength2() -
         earthCoords.getLength2()) /
-        (2.0f * earthDistance * planetCoords.getLength())) * Geometry.RADIANS_TO_DEGREES;
+        (2.0f * earthDistance * planetCoords.getLength())) * RADIANS_TO_DEGREES;
   }
 
   /**
@@ -338,7 +341,7 @@ public enum Planet {
   @VisibleForTesting
   public float calculatePercentIlluminated(Date time) {
     float phaseAngle = this.calculatePhaseAngle(time);
-    return 50.0f * (1.0f + MathUtils.cos(phaseAngle * Geometry.DEGREES_TO_RADIANS));
+    return 50.0f * (1.0f + MathUtils.cos(phaseAngle * DEGREES_TO_RADIANS));
   }
 
 
@@ -416,7 +419,7 @@ public enum Planet {
     float phase = MathUtils.acos((earthDistance * earthDistance +
         planetCoords.getLength2() -
         earthCoords.getLength2()) /
-        (2.0f * earthDistance * planetCoords.getLength())) * Geometry.RADIANS_TO_DEGREES;
+        (2.0f * earthDistance * planetCoords.getLength())) * RADIANS_TO_DEGREES;
     float p = phase/100.0f;     // Normalized phase angle
 
     // Finally, calculate the magnitude of the body.
@@ -610,12 +613,12 @@ public enum Planet {
   // cos ha = (sin alt - sin lat * sin dec) / (cos lat * cos dec)
   public static float calculateHourAngle(float altitude, float latitude,
                                          float declination) {
-    float altRads = altitude * MathUtils.DEGREES_TO_RADIANS;
-    float latRads = latitude * MathUtils.DEGREES_TO_RADIANS;
-    float decRads = declination * MathUtils.DEGREES_TO_RADIANS;
+    float altRads = altitude * DEGREES_TO_RADIANS;
+    float latRads = latitude * DEGREES_TO_RADIANS;
+    float decRads = declination * DEGREES_TO_RADIANS;
     float cosHa = (MathUtils.sin(altRads) - MathUtils.sin(latRads) * MathUtils.sin(decRads)) /
         (MathUtils.cos(latRads) * MathUtils.cos(decRads));
 
-    return MathUtils.RADIANS_TO_DEGREES * MathUtils.acos(cosHa);
+    return RADIANS_TO_DEGREES * MathUtils.acos(cosHa);
   }
 }

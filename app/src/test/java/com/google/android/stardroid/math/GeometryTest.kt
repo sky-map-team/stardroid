@@ -84,8 +84,6 @@ class GeometryTest {
         axisPerpendicular.normalize()
         rotatedAxisPerpendicular.normalize()
         assertThat(axisPerpendicular dot rotatedAxisPerpendicular).isWithin(TOL)
-            .of(
-                Math.cos(30.0 * Geometry.DEGREES_TO_RADIANS).toFloat()
-            )
+            .of(Math.cos(30.0 * DEGREES_TO_RADIANS).toFloat())
     }
 }

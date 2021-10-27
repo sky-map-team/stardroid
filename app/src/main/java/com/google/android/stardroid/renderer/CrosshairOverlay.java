@@ -14,6 +14,8 @@
 
 package com.google.android.stardroid.renderer;
 
+import static com.google.android.stardroid.math.MathUtilsKt.TWO_PI;
+
 import android.content.res.Resources;
 
 import com.google.android.stardroid.R;
@@ -54,7 +56,7 @@ public class CrosshairOverlay {
     
     int period = 1000;
     long time = System.currentTimeMillis();
-    float intensity = 0.7f + 0.3f * MathUtils.sin((time % period) * MathUtils.TWO_PI / period);
+    float intensity = 0.7f + 0.3f * MathUtils.sin((time % period) * TWO_PI / period);
     if (nightVisionMode) {
       gl.glColor4f(intensity, 0, 0, 0.7f);
     } else {

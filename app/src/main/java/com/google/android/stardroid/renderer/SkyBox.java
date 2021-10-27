@@ -14,6 +14,9 @@
 
 package com.google.android.stardroid.renderer;
 
+import static com.google.android.stardroid.math.MathUtilsKt.RADIANS_TO_DEGREES;
+import static com.google.android.stardroid.math.MathUtilsKt.TWO_PI;
+
 import android.util.Log;
 
 import com.google.android.stardroid.math.MathUtils;
@@ -40,7 +43,7 @@ public class SkyBox extends RendererObjectManager {
     float[] cosAngles = new float[NUM_STEPS_IN_BAND];
     
     float angleInBand = 0;
-    float dAngle = MathUtils.TWO_PI / (NUM_STEPS_IN_BAND - 1);
+    float dAngle = TWO_PI / (NUM_STEPS_IN_BAND - 1);
     for (int i = 0; i < NUM_STEPS_IN_BAND; i++) {
       sinAngles[i] = MathUtils.sin(angleInBand);
       cosAngles[i] = MathUtils.cos(angleInBand);
@@ -150,7 +153,7 @@ public class SkyBox extends RendererObjectManager {
     // Rotate the sky box to the position of the sun.
     Vector3 cp = new Vector3(0, 1, 0).times(mSunPos);
     cp = cp.normalizedCopy();
-    float angle = 180.0f / MathUtils.PI * MathUtils.acos(mSunPos.y);
+    float angle = RADIANS_TO_DEGREES * MathUtils.acos(mSunPos.y);
     gl.glRotatef(angle, cp.x, cp.y, cp.z);
     
     mVertexBuffer.set(gl);

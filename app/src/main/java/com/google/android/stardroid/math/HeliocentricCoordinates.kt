@@ -21,7 +21,7 @@ class HeliocentricCoordinates() {
 
     companion object {
         // Value of the obliquity of the ecliptic for J2000
-        private const val OBLIQUITY = 23.439281f * Geometry.DEGREES_TO_RADIANS
+        private const val OBLIQUITY = 23.439281f * DEGREES_TO_RADIANS
 
         /**
          * Converts OrbitalElements into "HeliocentricCoordinates" - cartesian coordinates

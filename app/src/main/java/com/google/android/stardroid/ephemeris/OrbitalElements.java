@@ -14,6 +14,8 @@
 
 package com.google.android.stardroid.ephemeris;
 
+import static com.google.android.stardroid.math.MathUtilsKt.mod2pi;
+
 import android.util.Log;
 
 import com.google.android.stardroid.math.Geometry;
@@ -88,7 +90,7 @@ public class OrbitalElements {
     float v =
         2f * MathUtils.atan(MathUtils.sqrt((1 + e) / (1 - e))
             * MathUtils.tan(0.5f * e0));
-    return Geometry.mod2pi(v);
+    return mod2pi(v);
   }
 
   @Override

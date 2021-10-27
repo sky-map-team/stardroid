@@ -14,6 +14,8 @@
 
 package com.google.android.stardroid.touch;
 
+import static com.google.android.stardroid.math.MathUtilsKt.RADIANS_TO_DEGREES;
+
 import android.content.Context;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -43,7 +45,7 @@ public class MapMover implements
     DisplayMetrics metrics = context.getResources().getDisplayMetrics();
     int screenLongSize = metrics.heightPixels;
     Log.i(TAG, "Screen height is " + screenLongSize + " pixels.");
-    sizeTimesRadiansToDegrees = screenLongSize * Geometry.RADIANS_TO_DEGREES;
+    sizeTimesRadiansToDegrees = screenLongSize * RADIANS_TO_DEGREES;
   }
 
   @Override

@@ -14,6 +14,9 @@
 
 package com.google.android.stardroid.renderer;
 
+import static com.google.android.stardroid.math.MathUtilsKt.PI;
+import static com.google.android.stardroid.math.MathUtilsKt.TWO_PI;
+
 import android.content.res.Resources;
 
 import com.google.android.stardroid.R;
@@ -85,10 +88,10 @@ public class SearchArrow {
     
     // diffTheta could potentially be in the range from (-2*Pi, 2*Pi), but we need it
     // in the range (-Pi, Pi).
-    if (diffTheta > MathUtils.PI) {
-      diffTheta -= MathUtils.TWO_PI;
-    } else if (diffTheta < -MathUtils.PI) {
-      diffTheta += MathUtils.TWO_PI;
+    if (diffTheta > PI) {
+      diffTheta -= TWO_PI;
+    } else if (diffTheta < -PI) {
+      diffTheta += TWO_PI;
     }
     
     // The image I'm using is an arrow pointing right, so an angle of 0 corresponds to that. 
@@ -103,14 +106,14 @@ public class SearchArrow {
     angle += roll;
     
     // Distance is a normalized value of the distance.
-    float distance = 1.0f / (1.414f * MathUtils.PI) * 
+    float distance = 1.0f / (1.414f * PI) *
         MathUtils.sqrt(diffTheta * diffTheta + diffPhi * diffPhi);
    
     gl.glEnable(GL10.GL_BLEND);
     gl.glBlendFunc(GL10.GL_SRC_ALPHA, GL10.GL_ONE_MINUS_SRC_ALPHA);
     
     gl.glPushMatrix();
-    gl.glRotatef(angle * 180.0f / MathUtils.PI, 0, 0, -1);
+    gl.glRotatef(angle * 180.0f / PI, 0, 0, -1);
     
     gl.glTexEnvf(GL10.GL_TEXTURE_ENV, GL10.GL_TEXTURE_ENV_MODE, GL10.GL_BLEND);
     

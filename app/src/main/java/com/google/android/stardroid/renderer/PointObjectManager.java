@@ -14,6 +14,8 @@
 
 package com.google.android.stardroid.renderer;
 
+import static com.google.android.stardroid.math.MathUtilsKt.DEGREES_TO_RADIANS;
+
 import android.util.Log;
 
 import com.google.android.stardroid.R;
@@ -121,7 +123,7 @@ public class PointObjectManager extends RendererObjectManager {
       // pixels high, a size of 1 means "1 pixel," so calculate sizeFactor
       // based on this.  These numbers mostly come from the fact that that's
       // what I think looks reasonable.
-      float fovyInRadians = 60 * MathUtils.PI / 180.0f;
+      float fovyInRadians = 60 * DEGREES_TO_RADIANS;
       float sizeFactor = MathUtils.tan(fovyInRadians * 0.5f) / 480;
 
       Vector3 bottomLeftPos = new Vector3(0, 0, 0);

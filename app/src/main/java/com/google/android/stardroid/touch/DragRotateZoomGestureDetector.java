@@ -16,6 +16,8 @@ package com.google.android.stardroid.touch;
 
 //import android.util.Log;
 
+import static com.google.android.stardroid.math.MathUtilsKt.RADIANS_TO_DEGREES;
+
 import android.util.Log;
 import android.view.MotionEvent;
 
@@ -149,7 +151,7 @@ public class DragRotateZoomGestureDetector {
       // Log.d(TAG, "Angle after " + angleAfter);
       float angleDelta = angleCurrent - angleLast;
       // Log.d(TAG, "Rotating map by angle delta " + angleDelta);
-      listener.onRotate(angleDelta * MathUtils.RADIANS_TO_DEGREES);
+      listener.onRotate(angleDelta * RADIANS_TO_DEGREES);
 
       last1X = current1X;
       last1Y = current1Y;

@@ -13,9 +13,7 @@
 // limitations under the License.
 package com.google.android.stardroid.math
 
-import com.google.android.stardroid.math.MathUtils.ceil
 import com.google.android.stardroid.math.MathUtils.cos
-import com.google.android.stardroid.math.MathUtils.floor
 import com.google.android.stardroid.math.MathUtils.sin
 import java.util.*
 
@@ -28,37 +26,9 @@ import java.util.*
  * @author John Taylor
  */
 object Geometry {
-    // Convert Degrees to Radians
-    const val DEGREES_TO_RADIANS = MathUtils.PI / 180.0f
 
-    // Convert Radians to Degrees
-    const val RADIANS_TO_DEGREES = 180.0f / MathUtils.PI
 
-    /**
-     * Return the integer part of a number
-     */
-    fun abs_floor(x: Float): Float {
-        val result: Float
-        result =
-            if (x >= 0.0) floor(x) else ceil(
-                x
-            )
-        return result
-    }
 
-    /**
-     * Returns the modulo the given value by 2\pi. Returns an angle in the range 0
-     * to 2\pi radians.
-     */
-    @JvmStatic
-    fun mod2pi(x: Float): Float {
-        val factor = x / MathUtils.TWO_PI
-        var result = MathUtils.TWO_PI * (factor - abs_floor(factor))
-        if (result < 0.0) {
-            result = MathUtils.TWO_PI + result
-        }
-        return result
-    }
 
     /**
      * Convert ra and dec to x,y,z where the point is place on the unit sphere.

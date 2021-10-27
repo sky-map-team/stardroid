@@ -104,14 +104,14 @@ class Matrix4x4Test {
 
     @Test
     fun testRotation3x3ParallelRotationHasNoEffect() {
-        val m = createRotation(MathUtils.PI, Vector3(0f, 1f, 0f))
+        val m = createRotation(PI, Vector3(0f, 1f, 0f))
         val v = Vector3(0f, 2f, 0f)
         Vector3Subject.assertThat(v).isWithin(TOL).of(m * v)
     }
 
     @Test
     fun testRotation3x3PerpendicularRotation() {
-        val m = createRotation(MathUtils.PI * 0.25f, Vector3(0f, -1f, 0f))
+        val m = createRotation(PI * 0.25f, Vector3(0f, -1f, 0f))
         val v = Vector3(1f, 0f, 0f)
         val oneOverSqrt2 = 1.0f / sqrt(2.0f)
         Vector3Subject.assertThat(Vector3(oneOverSqrt2, 0f, oneOverSqrt2)).isWithin(TOL)
@@ -122,7 +122,7 @@ class Matrix4x4Test {
     fun testRotation3x3UnalignedAxis() {
         val axis = Vector3(1f, 1f, 1f).normalizedCopy()
         val numRotations = 5
-        val m = createRotation(MathUtils.TWO_PI / numRotations, axis)
+        val m = createRotation(TWO_PI / numRotations, axis)
         val start = Vector3(2.34f, 3f, -17.6f)
         // float oneOverSqrt2 = 1.0f / MathUtil.sqrt(2.0f);
         var v = start

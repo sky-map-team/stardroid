@@ -14,6 +14,8 @@
 
 package com.google.android.stardroid.renderer;
 
+import static com.google.android.stardroid.math.MathUtilsKt.DEGREES_TO_RADIANS;
+
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.math.MathUtils;
 import com.google.android.stardroid.math.Vector3;
@@ -68,7 +70,7 @@ public class PolyLineObjectManager extends RendererObjectManager {
     ib.reset(numIndices);
     
     // See comment in PointObjectManager for justification of this calculation.
-    float fovyInRadians = 60 * MathUtils.PI / 180.0f; 
+    float fovyInRadians = 60 * DEGREES_TO_RADIANS;
     float sizeFactor = MathUtils.tan(fovyInRadians * 0.5f) / 480;
     
     boolean opaque = true;

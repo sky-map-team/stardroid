@@ -13,7 +13,7 @@
 // limitations under the License.
 package com.google.android.stardroid.control
 
-import com.google.android.stardroid.math.Geometry
+import com.google.android.stardroid.math.DEGREES_TO_RADIANS
 import com.google.android.stardroid.math.LatLong
 import com.google.android.stardroid.math.MathUtils.cos
 import com.google.android.stardroid.math.MathUtils.sin
@@ -112,9 +112,9 @@ class AstronomerModelWithMagneticVariationTest : TestCase() {
         val location = LatLong(0f, 0f)
         val acceleration = Vector3(0f, -10f, 0f)
         val magneticField = Vector3(
-            -sin(radians(10f)),
+            -sin(10f * DEGREES_TO_RADIANS),
             10f,
-            cos(radians(10f))
+            cos(10f * DEGREES_TO_RADIANS)
         )
         val expectedZenith = Vector3(1f, 0f, 0f)
         val expectedNadir = Vector3(-1f, 0f, 0f)
@@ -210,11 +210,5 @@ class AstronomerModelWithMagneticVariationTest : TestCase() {
             //TODO look at iteration in Julian day
         }
 
-        /**
-         * Convert from degrees to radians.
-         */
-        private fun radians(degrees: Float): Float {
-            return degrees * Geometry.DEGREES_TO_RADIANS
-        }
     }
 }

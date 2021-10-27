@@ -40,8 +40,8 @@ object GeocentricCoordinates {
      * Updates these coordinates with the given ra and dec in degrees.
      */
     private fun updateFromRaDec(v: Vector3, ra: Float, dec: Float) {
-        val raRadians = ra * Geometry.DEGREES_TO_RADIANS
-        val decRadians = dec * Geometry.DEGREES_TO_RADIANS
+        val raRadians = ra * DEGREES_TO_RADIANS
+        val decRadians = dec * DEGREES_TO_RADIANS
         v.x = cos(raRadians) * cos(decRadians)
         v.y = sin(raRadians) * cos(decRadians)
         v.z = sin(decRadians)
@@ -52,14 +52,14 @@ object GeocentricCoordinates {
     @JvmStatic
     fun getRaOfUnitGeocentricVector(v: Vector3): Float {
         // Assumes unit sphere.
-        return Geometry.RADIANS_TO_DEGREES * atan2(v.y, v.x)
+        return RADIANS_TO_DEGREES * atan2(v.y, v.x)
     }
 
     /** Returns the declination in degrees from the given vector assuming it's in Geocentric coordinates  */
     @JvmStatic
     fun getDecOfUnitGeocentricVector(v: Vector3): Float {
         // Assumes unit sphere.
-        return Geometry.RADIANS_TO_DEGREES * asin(v.z)
+        return RADIANS_TO_DEGREES * asin(v.z)
     }
 
     /**
