@@ -106,14 +106,14 @@ public class PlanetTest extends TestCase {
 
     // 2010 Dec 25, 12:00 UT1
     testCal.set(2010, GregorianCalendar.DECEMBER, 25, 12, 0, 0);
-    assertEquals(21.742111206054688, Planet.Moon.calculatePercentIlluminated(testCal.getTime()), REG_TOL);
+    assertEquals(21.741992950439453, Planet.Moon.calculatePercentIlluminated(testCal.getTime()), REG_TOL);
     assertEquals(12.131664276123047, Planet.Mercury.calculatePercentIlluminated(testCal.getTime()), REG_TOL);
     assertEquals(42.03889846801758, Planet.Venus.calculatePercentIlluminated(testCal.getTime()), REG_TOL);
     assertEquals(99.64849853515625, Planet.Mars.calculatePercentIlluminated(testCal.getTime()), REG_TOL);
 
     // Don't trust these numbers
 
-    assertEquals(124.41324615478516, Planet.Moon.calculatePhaseAngle(testCal.getTime()), REG_TOL);
+    assertEquals(124.41341400146484, Planet.Moon.calculatePhaseAngle(testCal.getTime()), REG_TOL);
     assertEquals(139.23260498046875, Planet.Mercury.calculatePhaseAngle(testCal.getTime()), REG_TOL);
     assertEquals(99.1617431640625, Planet.Venus.calculatePhaseAngle(testCal.getTime()), REG_TOL);
     assertEquals(6.797830581665039, Planet.Mars.calculatePhaseAngle(testCal.getTime()), REG_TOL);

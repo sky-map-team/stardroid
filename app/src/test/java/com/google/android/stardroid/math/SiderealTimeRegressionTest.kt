@@ -14,8 +14,6 @@
 package com.google.android.stardroid.math
 
 import junit.framework.TestCase
-import com.google.android.stardroid.math.TimeUtil
-import com.google.android.stardroid.math.SiderealTimeRegressionTest
 import com.google.common.truth.Truth.assertThat
 import java.util.*
 
@@ -31,8 +29,8 @@ class SiderealTimeRegressionTest : TestCase() {
         val calendar = GregorianCalendar(TimeZone.getTimeZone("UTC"))
         calendar[2009, 2, 20, 12, 7] = 24
         val time = calendar.time
-        assertThat(TimeUtil.calculateJulianDay(time)).isWithin(0.0007).of(2454911.00514) // accurate to 1 min
-        assertThat(TimeUtil.meanSiderealTime(time, 0f) % 360).isWithin(ANGULAR_TOL).of(0f)
+        assertThat(julianDay(time)).isWithin(0.0007).of(2454911.00514) // accurate to 1 min
+        assertThat(meanSiderealTime(time, 0f) % 360).isWithin(ANGULAR_TOL).of(0f)
     }
 
     fun testZeroTimeAt90Longitude() {
@@ -40,17 +38,17 @@ class SiderealTimeRegressionTest : TestCase() {
         val calendar = GregorianCalendar(TimeZone.getTimeZone("UTC"))
         calendar[2009, 2, 20, 12, 7] = 24
         val time = calendar.time
-        assertThat(TimeUtil.meanSiderealTime(time, 90f) % 360).isWithin(ANGULAR_TOL).of(90f)
+        assertThat(meanSiderealTime(time, 90f) % 360).isWithin(ANGULAR_TOL).of(90f)
     }
 
     fun testABitMoreInteresting() {
         val calendar = GregorianCalendar(TimeZone.getTimeZone("UTC"))
         calendar[2000, 0, 1, 0, 0] = 0
         val time = calendar.time
-        assertThat(TimeUtil.calculateJulianDay(time)).isWithin(0.0007).of(2451544.5) // accurate to 1 min
+        assertThat(julianDay(time)).isWithin(0.0007).of(2451544.5) // accurate to 1 min
         // Sidereal time should be 6:39:51
         val expectedTime = (6f + 39f / 60 + 51f / 60 / 60) / 24 * 360
-        assertThat(TimeUtil.meanSiderealTime(time, 0f) % 360).isWithin(ANGULAR_TOL).of(expectedTime)
+        assertThat(meanSiderealTime(time, 0f) % 360).isWithin(ANGULAR_TOL).of(expectedTime)
     }
 
     companion object {

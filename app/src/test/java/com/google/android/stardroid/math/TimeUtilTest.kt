@@ -38,7 +38,7 @@ class TimeUtilTest {
         // January 1, 2000 at midday corresponds to JD = 2451545.0, according to
         // http://en.wikipedia.org/wiki/Julian_day#Gregorian_calendar_from_Julian_day_number.
         // So midnight before is half a day earlier.
-        assertThat(TimeUtil.calculateJulianDay(year2000.time)).isWithin(TOL)
+        assertThat(julianDay(year2000.time)).isWithin(TOL)
             .of(2451544.5)
     }
 
@@ -52,19 +52,19 @@ class TimeUtilTest {
 
         // Jan 1, 2009, 12:00 UT1 
         testCal[2009, GregorianCalendar.JANUARY, 1, 12, 0] = 0
-        assertThat(TimeUtil.calculateJulianDay(testCal.time)).isWithin(TOL).of(2454833.0)
+        assertThat(julianDay(testCal.time)).isWithin(TOL).of(2454833.0)
 
         // Jul 4, 2009, 12:00 UT1
         testCal[2009, GregorianCalendar.JULY, 4, 12, 0] = 0
-        assertThat(TimeUtil.calculateJulianDay(testCal.time)).isWithin(TOL).of(2455017.0)
+        assertThat(julianDay(testCal.time)).isWithin(TOL).of(2455017.0)
 
         // Sep 20, 2009, 12:00 UT1
         testCal[2009, GregorianCalendar.SEPTEMBER, 20, 12, 0] = 0
-        assertThat(TimeUtil.calculateJulianDay(testCal.time)).isWithin(TOL).of(2455095.0)
+        assertThat(julianDay(testCal.time)).isWithin(TOL).of(2455095.0)
 
         // Dec 25, 2010, 12:00 UT1
         testCal[2010, GregorianCalendar.DECEMBER, 25, 12, 0] = 0
-        assertThat(TimeUtil.calculateJulianDay(testCal.time)).isWithin(TOL).of(2455556.0)
+        assertThat(julianDay(testCal.time)).isWithin(TOL).of(2455556.0)
     }
 
     // Make sure that we correctly generate Julian dates. Standard values
@@ -77,19 +77,19 @@ class TimeUtilTest {
 
         // Jan 1, 2009, 12:00 UT1 
         testCal[2009, GregorianCalendar.JANUARY, 1, 12, 0] = 0
-        assertThat(TimeUtil.julianCenturies(testCal.time)).isWithin(TOL).of(0.09002)
+        assertThat(julianCenturies(testCal.time)).isWithin(TOL).of(0.09002)
 
         // Jul 4, 2009, 12:00 UT1
         testCal[2009, GregorianCalendar.JULY, 4, 12, 0] = 0
-        assertThat(TimeUtil.julianCenturies(testCal.time)).isWithin(TOL).of(0.09506)
+        assertThat(julianCenturies(testCal.time)).isWithin(TOL).of(0.09506)
 
         // Sep 20, 2009, 12:00 UT1
         testCal[2009, GregorianCalendar.SEPTEMBER, 20, 12, 0] = 0
-        assertThat(TimeUtil.julianCenturies(testCal.time)).isWithin(TOL).of(0.09719)
+        assertThat(julianCenturies(testCal.time)).isWithin(TOL).of(0.09719)
 
         // Dec 25, 2010, 12:00 UT1
         testCal[2010, GregorianCalendar.DECEMBER, 25, 12, 0] = 0
-        assertThat(TimeUtil.julianCenturies(testCal.time)).isWithin(TOL).of(0.10982)
+        assertThat(julianCenturies(testCal.time)).isWithin(TOL).of(0.10982)
     }
 
     // Verify that we are calculating the correct local mean sidereal time.
@@ -106,29 +106,29 @@ class TimeUtilTest {
         // A couple of select dates:
         // Jan  1, 2009, 12:00 UT1
         testCal[2009, GregorianCalendar.JANUARY, 1, 12, 0] = 0
-        assertThat(TimeUtil.meanSiderealTime(testCal.time, pit)).isWithin(LMST_TOL)
+        assertThat(meanSiderealTime(testCal.time, pit)).isWithin(LMST_TOL)
             .of(13.42f * HOURS_TO_DEGREES)
-        assertThat(TimeUtil.meanSiderealTime(testCal.time, lon)).isWithin(LMST_TOL)
+        assertThat(meanSiderealTime(testCal.time, lon)).isWithin(LMST_TOL)
             .of(18.74f * HOURS_TO_DEGREES)
-        assertThat(TimeUtil.meanSiderealTime(testCal.time, tok)).isWithin(LMST_TOL)
+        assertThat(meanSiderealTime(testCal.time, tok)).isWithin(LMST_TOL)
             .of(4.07f * HOURS_TO_DEGREES)
 
         // Sep 20, 2009, 12:00 UT1
         testCal[2009, GregorianCalendar.SEPTEMBER, 20, 12, 0] = 0
-        assertThat(TimeUtil.meanSiderealTime(testCal.time, pit)).isWithin(LMST_TOL)
+        assertThat(meanSiderealTime(testCal.time, pit)).isWithin(LMST_TOL)
             .of(6.64f * HOURS_TO_DEGREES)
-        assertThat(TimeUtil.meanSiderealTime(testCal.time, lon)).isWithin(LMST_TOL)
+        assertThat(meanSiderealTime(testCal.time, lon)).isWithin(LMST_TOL)
             .of(11.96f * HOURS_TO_DEGREES)
-        assertThat(TimeUtil.meanSiderealTime(testCal.time, tok)).isWithin(LMST_TOL)
+        assertThat(meanSiderealTime(testCal.time, tok)).isWithin(LMST_TOL)
             .of(21.29f * HOURS_TO_DEGREES)
 
         // Dec 25, 2010, 12:00 UT1
         testCal[2010, GregorianCalendar.DECEMBER, 25, 12, 0] = 0
-        assertThat(TimeUtil.meanSiderealTime(testCal.time, pit)).isWithin(LMST_TOL)
+        assertThat(meanSiderealTime(testCal.time, pit)).isWithin(LMST_TOL)
             .of(12.92815f * HOURS_TO_DEGREES)
-        assertThat(TimeUtil.meanSiderealTime(testCal.time, lon)).isWithin(LMST_TOL)
+        assertThat(meanSiderealTime(testCal.time, lon)).isWithin(LMST_TOL)
             .of(18.25f * HOURS_TO_DEGREES)
-        assertThat(TimeUtil.meanSiderealTime(testCal.time, tok)).isWithin(LMST_TOL)
+        assertThat(meanSiderealTime(testCal.time, tok)).isWithin(LMST_TOL)
             .of(3.58f * HOURS_TO_DEGREES)
     }
 

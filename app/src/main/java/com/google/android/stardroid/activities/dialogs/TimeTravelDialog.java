@@ -14,6 +14,8 @@
 
 package com.google.android.stardroid.activities.dialogs;
 
+import static com.google.android.stardroid.math.TimeUtilsKt.normalizeHours;
+
 import android.app.DatePickerDialog;
 import android.app.DatePickerDialog.OnDateSetListener;
 import android.app.Dialog;
@@ -36,7 +38,6 @@ import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.DynamicStarMapActivity;
 import com.google.android.stardroid.control.AstronomerModel;
 import com.google.android.stardroid.ephemeris.Planet;
-import com.google.android.stardroid.math.TimeUtil;
 import com.google.android.stardroid.util.MiscUtil;
 
 import java.text.SimpleDateFormat;
@@ -201,7 +202,7 @@ public class TimeTravelDialog extends Dialog {
     if (riseset == null) {
       Toast.makeText(this.getContext(), R.string.sun_wont_set_message, Toast.LENGTH_SHORT).show();
     } else {
-      Log.d(TAG, "Sun rise or set is at: " + TimeUtil.normalizeHours(
+      Log.d(TAG, "Sun rise or set is at: " + normalizeHours(
             riseset.get(Calendar.HOUR_OF_DAY)) + ":" + riseset.get(Calendar.MINUTE));
       setDate(riseset.getTime());
     }

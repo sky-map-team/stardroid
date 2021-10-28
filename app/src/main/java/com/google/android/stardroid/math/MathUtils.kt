@@ -13,8 +13,7 @@
 // limitations under the License.
 package com.google.android.stardroid.math
 
-import com.google.android.stardroid.math.MathUtils.ceil
-import com.google.android.stardroid.math.MathUtils.floor
+import kotlin.math.truncate
 
 /**
  * Basic methods for doing mathematical operations with floats.
@@ -32,19 +31,26 @@ fun flooredMod(a: Float, n: Float) = (if (a < 0) a % n + n else a) % n
  * Returns the modulo the given value by 2\pi. Returns an angle in the range 0
  * to 2\pi radians.
  */
-fun mod2pi(x: Float): Float {
-    val factor = x / TWO_PI
-    var result = TWO_PI * (factor - abs_floor(factor))
-    if (result < 0.0) {
-        result = TWO_PI + result
-    }
-    return result
+fun mod2pi(x: Float) = positiveMod(x, TWO_PI)
+
+/**
+ * Calculates x modulus y, but ensures that the result lies in [0, y)
+ */
+public fun positiveMod(x: Double, y: Double): Double {
+    var remainder = x % y
+    if (remainder < 0) remainder += y
+    return remainder
 }
 
 /**
- * Return the integer part of a number
+ * Calculates x modulus y, but ensures that the result lies in [0, y)
  */
-fun abs_floor(x: Float) = if (x >= 0.0) floor(x) else ceil(x)
+// Sadly we can't use generics for this.
+private fun positiveMod(x: Float, y: Float): Float {
+    var remainder = x % y
+    if (remainder < 0) remainder += y
+    return remainder
+}
 
 /** Calculates the length of the vector []x, y, z] */
 fun norm(x: Float, y: Float, z: Float) = kotlin.math.sqrt(x * x + y * y + z * z)

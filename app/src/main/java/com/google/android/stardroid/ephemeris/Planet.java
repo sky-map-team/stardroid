@@ -17,6 +17,9 @@ package com.google.android.stardroid.ephemeris;
 import static com.google.android.stardroid.math.MathUtilsKt.DEGREES_TO_RADIANS;
 import static com.google.android.stardroid.math.MathUtilsKt.RADIANS_TO_DEGREES;
 import static com.google.android.stardroid.math.MathUtilsKt.mod2pi;
+import static com.google.android.stardroid.math.TimeUtilsKt.julianCenturies;
+import static com.google.android.stardroid.math.TimeUtilsKt.julianDay;
+import static com.google.android.stardroid.math.TimeUtilsKt.meanSiderealTime;
 
 import android.util.Log;
 
@@ -28,7 +31,6 @@ import com.google.android.stardroid.math.HeliocentricCoordinates;
 import com.google.android.stardroid.math.LatLong;
 import com.google.android.stardroid.math.MathUtils;
 import com.google.android.stardroid.math.RaDec;
-import com.google.android.stardroid.math.TimeUtil;
 import com.google.android.stardroid.math.Vector3;
 import com.google.android.stardroid.space.Universe;
 import com.google.android.stardroid.util.MiscUtil;
@@ -132,7 +134,7 @@ public enum Planet {
   // 3000 BC to 3000 AD.
   public OrbitalElements getOrbitalElements(Date date) {
     // Centuries since J2000
-    float jc = (float) TimeUtil.julianCenturies(date);
+    float jc = (float) julianCenturies(date);
 
     switch (this) {
       case Mercury: {
@@ -256,7 +258,7 @@ public enum Planet {
    */
   public static RaDec calculateLunarGeocentricLocation(Date time) {
     // First, calculate the number of Julian centuries from J2000.0.
-    float t = (float) ((TimeUtil.calculateJulianDay(time) - 2451545.0f) / 36525.0f);
+    float t = (float) ((julianDay(time) - 2451545.0f) / 36525.0f);
 
     // Second, calculate the approximate geocentric orbital elements.
     float lambda =
@@ -562,7 +564,7 @@ public enum Planet {
       RaDec raDec = new Universe().getRaDec(this, tmp);
 
       // GHA = GST - RA. (In degrees.)
-      float gst = TimeUtil.meanSiderealTime(tmp, 0);
+      float gst = meanSiderealTime(tmp, 0);
       float gha = gst - raDec.getRa();
 
       // The value of -0.83 works for the diameter of the Sun and Moon. We

@@ -49,9 +49,9 @@ object Geometry {
      * Compute celestial coordinates of zenith from utc, lat long.
      */
     @JvmStatic
-    fun calculateRADecOfZenith(utc: Date?, location: LatLong): RaDec {
+    fun calculateRADecOfZenith(utc: Date, location: LatLong): RaDec {
         // compute overhead RA in degrees
-        val my_ra = TimeUtil.meanSiderealTime(utc, location.longitude)
+        val my_ra = meanSiderealTime(utc, location.longitude)
         val my_dec = location.latitude
         return RaDec(my_ra, my_dec)
     }
