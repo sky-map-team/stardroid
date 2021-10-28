@@ -13,6 +13,10 @@
 // limitations under the License.
 package com.google.android.stardroid.math
 
+import kotlin.math.atan
+import kotlin.math.atan2
+import kotlin.math.sqrt
+
 data class RaDec(
     var ra: Float, // In degrees
     var dec: Float // In degrees
@@ -65,20 +69,20 @@ data class RaDec(
         @JvmStatic
         fun calculateRaDecDist(coords: Vector3): RaDec {
             // find the RA and DEC from the rectangular equatorial coords
-            val ra = mod2pi(MathUtils.atan2(coords.y, coords.x)) * RADIANS_TO_DEGREES
+            val ra = mod2pi(atan2(coords.y, coords.x)) * RADIANS_TO_DEGREES
             val dec =
-                (MathUtils.atan(coords.z / MathUtils.sqrt(coords.x * coords.x + coords.y * coords.y))
+                (atan(coords.z / MathUtils.sqrt(coords.x * coords.x + coords.y * coords.y))
                         * RADIANS_TO_DEGREES)
             return RaDec(ra, dec)
         }
 
         @JvmStatic
         fun fromGeocentricCoords(coords: Vector3): RaDec {
-            var raRad = MathUtils.atan2(coords.y, coords.x)
+            var raRad = atan2(coords.y, coords.x)
             if (raRad < 0) raRad += TWO_PI
-            val decRad = MathUtils.atan2(
+            val decRad = atan2(
                 coords.z,
-                MathUtils.sqrt(coords.x * coords.x + coords.y * coords.y)
+                sqrt(coords.x * coords.x + coords.y * coords.y)
             )
             return RaDec(
                 raRad * RADIANS_TO_DEGREES,

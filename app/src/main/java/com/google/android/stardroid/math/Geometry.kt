@@ -26,12 +26,8 @@ import java.util.*
  * @author John Taylor
  */
 object Geometry {
-
-
-
-
     /**
-     * Convert ra and dec to x,y,z where the point is place on the unit sphere.
+     * Converts ra and dec to x,y,z where the point is place on the unit sphere.
      */
     // TODO(jontayler): is this a dupe method?
     @JvmStatic
@@ -46,18 +42,18 @@ object Geometry {
     }
 
     /**
-     * Compute celestial coordinates of zenith from utc, lat long.
+     * Computes celestial coordinates of zenith from utc, lat long.
      */
     @JvmStatic
     fun calculateRADecOfZenith(utc: Date, location: LatLong): RaDec {
         // compute overhead RA in degrees
-        val my_ra = meanSiderealTime(utc, location.longitude)
-        val my_dec = location.latitude
-        return RaDec(my_ra, my_dec)
+        val myRa = meanSiderealTime(utc, location.longitude)
+        val myDec = location.latitude
+        return RaDec(myRa, myDec)
     }
 
     /**
-     * Calculate the rotation matrix for a certain number of degrees about the
+     * Calculates the rotation matrix for a certain number of degrees about the
      * give axis.
      * @param degrees
      * @param axis - must be a unit vector.
