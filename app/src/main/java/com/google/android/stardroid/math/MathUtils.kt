@@ -13,8 +13,6 @@
 // limitations under the License.
 package com.google.android.stardroid.math
 
-import kotlin.math.truncate
-
 /**
  * Basic methods for doing mathematical operations with floats.
  *
@@ -36,7 +34,7 @@ fun mod2pi(x: Float) = positiveMod(x, TWO_PI)
 /**
  * Calculates x modulus y, but ensures that the result lies in [0, y)
  */
-public fun positiveMod(x: Double, y: Double): Double {
+fun positiveMod(x: Double, y: Double): Double {
     var remainder = x % y
     if (remainder < 0) remainder += y
     return remainder

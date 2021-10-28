@@ -3,8 +3,9 @@ package com.google.android.stardroid.math
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test
 
+private const val TOL = 1e-5f
+
 class MathUtilTest {
-    private val TOL = 1e-5f
 
     @Test
     fun testNorm() {
@@ -21,8 +22,8 @@ class MathUtilTest {
 
     @Test
     fun testMod2pi() {
-        assertThat(mod2pi(PI/2)).isWithin(TOL).of(PI/2)
-        assertThat(mod2pi(7 * PI / 3)).isWithin(TOL).of(PI/3)
+        assertThat(mod2pi(PI / 2)).isWithin(TOL).of(PI / 2)
+        assertThat(mod2pi(7 * PI / 3)).isWithin(TOL).of(PI / 3)
         assertThat(mod2pi(-PI / 4)).isWithin(TOL).of(1.75f * PI)
     }
 }
