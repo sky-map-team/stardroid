@@ -24,7 +24,7 @@ import com.google.android.stardroid.source.LineSource;
 import com.google.android.stardroid.source.TextSource;
 import com.google.android.stardroid.source.impl.LineSourceImpl;
 import com.google.android.stardroid.source.impl.TextSourceImpl;
-import com.google.android.stardroid.math.CoordinateManipulations;
+import com.google.android.stardroid.math.CoordinateManipulationsKt;
 import com.google.android.stardroid.math.RaDec;
 
 import java.util.ArrayList;
@@ -124,11 +124,11 @@ public class GridLayer extends AbstractSourceLayer {
         float dec = 90.0f - i * 180.0f / (NUM_DEC_VERTICES - 1);
         RaDec raDec = new RaDec(ra, dec);
         line.raDecs.add(raDec);
-        line.vertices.add(CoordinateManipulations.getGeocentricCoords(raDec));
+        line.vertices.add(CoordinateManipulationsKt.getGeocentricCoords(raDec));
       }
       RaDec raDec = new RaDec(0.0f, -90.0f);
       line.raDecs.add(raDec);
-      line.vertices.add(CoordinateManipulations.getGeocentricCoords(raDec));
+      line.vertices.add(CoordinateManipulationsKt.getGeocentricCoords(raDec));
       return line;
     }
 
@@ -138,11 +138,11 @@ public class GridLayer extends AbstractSourceLayer {
         float ra = i * 360.0f / NUM_RA_VERTICES;
         RaDec raDec = new RaDec(ra, dec);
         line.raDecs.add(raDec);
-        line.vertices.add(CoordinateManipulations.getGeocentricCoords(raDec));
+        line.vertices.add(CoordinateManipulationsKt.getGeocentricCoords(raDec));
       }
       RaDec raDec = new RaDec(0.0f, dec);
       line.raDecs.add(raDec);
-      line.vertices.add(CoordinateManipulations.getGeocentricCoords(raDec));
+      line.vertices.add(CoordinateManipulationsKt.getGeocentricCoords(raDec));
       return line;
     }
 

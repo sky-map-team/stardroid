@@ -24,7 +24,7 @@ import com.google.android.stardroid.source.LineSource;
 import com.google.android.stardroid.source.TextSource;
 import com.google.android.stardroid.source.impl.LineSourceImpl;
 import com.google.android.stardroid.source.impl.TextSourceImpl;
-import com.google.android.stardroid.math.CoordinateManipulations;
+import com.google.android.stardroid.math.CoordinateManipulationsKt;
 import com.google.android.stardroid.math.Vector3;
 
 import java.util.ArrayList;
@@ -82,7 +82,7 @@ public class EclipticLayer extends AbstractSourceLayer {
 
       ArrayList<Vector3> vertices = new ArrayList<Vector3>();
       for (int i = 0; i < ra.length; ++i) {
-        vertices.add(CoordinateManipulations.getGeocentricCoords(ra[i], dec[i]));
+        vertices.add(CoordinateManipulationsKt.getGeocentricCoords(ra[i], dec[i]));
       }
       lineSources.add(new LineSourceImpl(LINE_COLOR, vertices, 1.5f));
     }

@@ -15,7 +15,6 @@ package com.google.android.stardroid.control
 
 import com.google.android.stardroid.math.Matrix3x3.Companion.identity
 import com.google.android.stardroid.math.Geometry.calculateRADecOfZenith
-import com.google.android.stardroid.math.CoordinateManipulations.getGeocentricCoords
 import com.google.android.stardroid.math.Geometry.calculateRotationMatrix
 import com.google.android.stardroid.math.Vector3
 import com.google.android.stardroid.math.LatLong
@@ -24,6 +23,7 @@ import com.google.android.stardroid.ApplicationConstants
 import com.google.android.stardroid.math.Matrix3x3
 import android.hardware.SensorManager
 import android.util.Log
+import com.google.android.stardroid.math.getGeocentricCoords
 import com.google.android.stardroid.util.MiscUtil
 import java.util.*
 import kotlin.math.abs

@@ -1,7 +1,7 @@
 package com.google.android.stardroid.activities;
 
-import static com.google.android.stardroid.math.CoordinateManipulations.getDecOfUnitGeocentricVector;
-import static com.google.android.stardroid.math.CoordinateManipulations.getRaOfUnitGeocentricVector;
+import static com.google.android.stardroid.math.CoordinateManipulationsKt.getDecOfUnitGeocentricVector;
+import static com.google.android.stardroid.math.CoordinateManipulationsKt.getRaOfUnitGeocentricVector;
 
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;

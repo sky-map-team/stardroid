@@ -20,56 +20,58 @@ import com.google.android.stardroid.math.MathUtils.sin
 
 /**
  * Utilities for manipulating different coordinate systems.
+ *
+ * |RaDec| represents right ascension and declination.  It's a pair of angles roughly analogous
+ * to latitude and longitude. Centered on Earth, they are fixed in space.
+ *
+ * Geocentric coordinates. These are coordinates centered on Earth and fixed in space. They
+ * can be freely converted to the angles |RaDec|. The z axis corresponds to a Dec of 90 degrees
+ * and the x axis to a right ascension of zero and a dec of zero.
  */
-// TODO(jontayler): just make these functions somewhere.
-object CoordinateManipulations {
-    /**
-     * Updates the given vector with the supplied RaDec.
-     * [RaDec].
-     */
-    @JvmStatic
-    fun updateFromRaDec(v: Vector3, raDec: RaDec) {
-        updateFromRaDec(v, raDec.ra, raDec.dec)
-    }
 
-    /**
-     * Updates these coordinates with the given ra and dec in degrees.
-     */
-    private fun updateFromRaDec(v: Vector3, ra: Float, dec: Float) {
-        val raRadians = ra * DEGREES_TO_RADIANS
-        val decRadians = dec * DEGREES_TO_RADIANS
-        v.x = cos(raRadians) * cos(decRadians)
-        v.y = sin(raRadians) * cos(decRadians)
-        v.z = sin(decRadians)
-    }
+/**
+ * Updates the given vector with the supplied RaDec.
+ * [RaDec].
+ */
+fun updateFromRaDec(v: Vector3, raDec: RaDec) {
+    updateFromRaDec(v, raDec.ra, raDec.dec)
+}
 
-    /** Returns the RA in degrees from the given vector assuming it's in Geocentric coordinates  */
-    // TODO(jontayler): define the different coordinate systems somewhere.
-    @JvmStatic
-    fun getRaOfUnitGeocentricVector(v: Vector3): Float {
-        // Assumes unit sphere.
-        return RADIANS_TO_DEGREES * atan2(v.y, v.x)
-    }
+/**
+ * Updates these coordinates with the given ra and dec in degrees.
+ */
+private fun updateFromRaDec(v: Vector3, ra: Float, dec: Float) {
+    val raRadians = ra * DEGREES_TO_RADIANS
+    val decRadians = dec * DEGREES_TO_RADIANS
+    v.x = cos(raRadians) * cos(decRadians)
+    v.y = sin(raRadians) * cos(decRadians)
+    v.z = sin(decRadians)
+}
 
-    /** Returns the declination in degrees from the given vector assuming it's in Geocentric coordinates  */
-    @JvmStatic
-    fun getDecOfUnitGeocentricVector(v: Vector3): Float {
-        // Assumes unit sphere.
-        return RADIANS_TO_DEGREES * asin(v.z)
-    }
+/** Returns the RA in degrees from the given vector assuming it's a unit vector in Geocentric coordinates  */
+fun getRaOfUnitGeocentricVector(v: Vector3): Float {
+    // Assumes unit sphere.
+    return RADIANS_TO_DEGREES * atan2(v.y, v.x)
+}
 
-    /**
-     * Convert ra and dec to x,y,z where the point is place on the unit sphere.
-     */
-    @JvmStatic
-    fun getGeocentricCoords(raDec: RaDec): Vector3 {
-        return getGeocentricCoords(raDec.ra, raDec.dec)
-    }
+/** Returns the declination in degrees from the given vector assuming it's a unit vector in Geocentric coordinates  */
+fun getDecOfUnitGeocentricVector(v: Vector3): Float {
+    // Assumes unit sphere.
+    return RADIANS_TO_DEGREES * asin(v.z)
+}
 
-    @JvmStatic
-    fun getGeocentricCoords(ra: Float, dec: Float): Vector3 {
-        val coords = Vector3(0.0f, 0.0f, 0.0f)
-        updateFromRaDec(coords, ra, dec)
-        return coords
-    }
+/**
+ * Converts ra and dec to x,y,z Geocentric where the point is place on the unit sphere.
+ */
+fun getGeocentricCoords(raDec: RaDec): Vector3 {
+    return getGeocentricCoords(raDec.ra, raDec.dec)
+}
+
+/**
+ * Converts ra and dec to x,y,z Geocentric where the point is place on the unit sphere.
+ */
+fun getGeocentricCoords(ra: Float, dec: Float): Vector3 {
+    val coords = Vector3(0.0f, 0.0f, 0.0f)
+    updateFromRaDec(coords, ra, dec)
+    return coords
 }

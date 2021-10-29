@@ -37,11 +37,11 @@ data class LatLong(private val _latitudeDeg: Float, private val _longitudeDeg: F
      */
     fun distanceFrom(other: LatLong): Float {
         // Some misuse of the astronomy math classes
-        val otherPnt = CoordinateManipulations.getGeocentricCoords(
+        val otherPnt = getGeocentricCoords(
             other.longitude,
             other.latitude
         )
-        val thisPnt = CoordinateManipulations.getGeocentricCoords(
+        val thisPnt = getGeocentricCoords(
             longitude,
             latitude
         )

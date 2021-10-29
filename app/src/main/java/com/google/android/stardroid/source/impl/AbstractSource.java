@@ -18,7 +18,7 @@ import android.graphics.Color;
 
 import com.google.android.stardroid.source.Colorable;
 import com.google.android.stardroid.source.PositionSource;
-import com.google.android.stardroid.math.CoordinateManipulations;
+import com.google.android.stardroid.math.CoordinateManipulationsKt;
 import com.google.android.stardroid.math.Vector3;
 
 import java.util.List;
@@ -46,11 +46,11 @@ public abstract class AbstractSource implements Colorable, PositionSource {
 
   @Deprecated
   AbstractSource() {
-    this(CoordinateManipulations.getGeocentricCoords(0.0f, 0.0f), Color.BLACK);
+    this(CoordinateManipulationsKt.getGeocentricCoords(0.0f, 0.0f), Color.BLACK);
   }
 
   protected AbstractSource(int color) {
-    this(CoordinateManipulations.getGeocentricCoords(0.0f, 0.0f), color);
+    this(CoordinateManipulationsKt.getGeocentricCoords(0.0f, 0.0f), color);
   }
 
   protected AbstractSource(Vector3 geocentricCoords, int color) {

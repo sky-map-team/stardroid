@@ -14,7 +14,7 @@
 
 package com.google.android.stardroid.ephemeris;
 
-import static com.google.android.stardroid.math.CoordinateManipulations.updateFromRaDec;
+import static com.google.android.stardroid.math.CoordinateManipulationsKt.updateFromRaDec;
 
 import com.google.android.stardroid.base.Lists;
 import com.google.android.stardroid.control.AstronomerModel;

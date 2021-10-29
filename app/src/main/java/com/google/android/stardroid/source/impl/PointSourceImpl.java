@@ -15,7 +15,7 @@
 package com.google.android.stardroid.source.impl;
 
 import com.google.android.stardroid.source.PointSource;
-import com.google.android.stardroid.math.CoordinateManipulations;
+import com.google.android.stardroid.math.CoordinateManipulationsKt;
 import com.google.android.stardroid.math.Vector3;
 
 /**
@@ -29,7 +29,7 @@ public class PointSourceImpl extends AbstractSource implements PointSource {
   private final Shape pointShape;
 
   public PointSourceImpl(float ra, float dec, int color, int size) {
-    this(CoordinateManipulations.getGeocentricCoords(ra, dec), color, size);
+    this(CoordinateManipulationsKt.getGeocentricCoords(ra, dec), color, size);
   }
 
   public PointSourceImpl(Vector3 coords, int color, int size) {

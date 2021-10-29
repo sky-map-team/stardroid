@@ -26,7 +26,7 @@ import android.util.Log;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.base.TimeConstants;
 import com.google.android.stardroid.base.VisibleForTesting;
-import com.google.android.stardroid.math.CoordinateManipulations;
+import com.google.android.stardroid.math.CoordinateManipulationsKt;
 import com.google.android.stardroid.math.HeliocentricCoordinates;
 import com.google.android.stardroid.math.LatLong;
 import com.google.android.stardroid.math.MathUtils;
@@ -310,11 +310,11 @@ public enum Planet {
     // about 1%.
     if (this == Planet.Moon) {
       RaDec moonRaDec = calculateLunarGeocentricLocation(time);
-      Vector3 moon = CoordinateManipulations.getGeocentricCoords(moonRaDec);
+      Vector3 moon = CoordinateManipulationsKt.getGeocentricCoords(moonRaDec);
 
       Vector3 sunCoords = HeliocentricCoordinates.heliocentricCoordinatesFromOrbitalElements(Planet.Sun.getOrbitalElements(time));
       RaDec sunRaDec = RaDec.calculateRaDecDist(sunCoords);
-      Vector3 sun = CoordinateManipulations.getGeocentricCoords(sunRaDec);
+      Vector3 sun = CoordinateManipulationsKt.getGeocentricCoords(sunRaDec);
 
       return 180.0f -
           MathUtils.acos(sun.x * moon.x + sun.y * moon.y + sun.z * moon.z)

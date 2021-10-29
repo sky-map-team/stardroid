@@ -20,7 +20,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.BitmapFactory.Options;
 import android.graphics.Color;
 
-import com.google.android.stardroid.math.CoordinateManipulations;
+import com.google.android.stardroid.math.CoordinateManipulationsKt;
 import com.google.android.stardroid.math.Vector3;
 import com.google.android.stardroid.source.ImageSource;
 
@@ -67,7 +67,7 @@ public class ImageSourceImpl extends AbstractSource implements ImageSource {
 
   public ImageSourceImpl(float ra, float dec, Resources res, int id, Vector3 upVec,
       float imageScale) {
-    this(CoordinateManipulations.getGeocentricCoords(ra, dec), res, id, upVec, imageScale);
+    this(CoordinateManipulationsKt.getGeocentricCoords(ra, dec), res, id, upVec, imageScale);
   }
 
   public ImageSourceImpl(Vector3 coords, Resources res, int id, Vector3 upVec,
