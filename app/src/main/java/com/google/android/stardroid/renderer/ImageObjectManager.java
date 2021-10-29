@@ -21,7 +21,6 @@ import com.google.android.stardroid.renderer.util.TextureManager;
 import com.google.android.stardroid.renderer.util.TextureReference;
 import com.google.android.stardroid.renderer.util.VertexBuffer;
 import com.google.android.stardroid.source.ImageSource;
-import com.google.android.stardroid.math.GeocentricCoordinates;
 import com.google.android.stardroid.math.Vector3;
 
 import java.nio.ByteBuffer;

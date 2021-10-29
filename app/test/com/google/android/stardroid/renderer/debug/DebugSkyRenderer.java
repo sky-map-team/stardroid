@@ -31,7 +31,7 @@ import com.google.android.stardroid.source.TextSource;
 import com.google.android.stardroid.source.impl.LineSourceImpl;
 import com.google.android.stardroid.source.impl.PointSourceImpl;
 import com.google.android.stardroid.source.impl.TextSourceImpl;
-import com.google.android.stardroid.math.GeocentricCoordinates;
+import com.google.android.stardroid.math.CoordinateManipulations;
 
 // This class is for debugging the sky renderer.
 public class DebugSkyRenderer extends SkyRenderer {

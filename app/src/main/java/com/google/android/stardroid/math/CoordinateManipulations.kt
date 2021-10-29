@@ -19,14 +19,10 @@ import com.google.android.stardroid.math.MathUtils.cos
 import com.google.android.stardroid.math.MathUtils.sin
 
 /**
- * Utilities for dealing with a vector representing an object's location in Euclidean space
- * when it is projected onto a unit sphere (with the Earth at the
- * center).
- *
- * @author Brent Bryan
+ * Utilities for manipulating different coordinate systems.
  */
 // TODO(jontayler): just make these functions somewhere.
-object GeocentricCoordinates {
+object CoordinateManipulations {
     /**
      * Updates the given vector with the supplied RaDec.
      * [RaDec].

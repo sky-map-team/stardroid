@@ -28,7 +28,7 @@ import com.google.android.stardroid.source.Sources;
 import com.google.android.stardroid.source.TextSource;
 import com.google.android.stardroid.source.impl.ImageSourceImpl;
 import com.google.android.stardroid.source.impl.TextSourceImpl;
-import com.google.android.stardroid.math.GeocentricCoordinates;
+import com.google.android.stardroid.math.CoordinateManipulations;
 import com.google.android.stardroid.math.Vector3;
 
 import java.util.ArrayList;
@@ -83,61 +83,61 @@ public class MeteorShowerLayer extends AbstractSourceLayer {
     // Note the zero-based month. 10=November
     // Actual start for Quadrantids is December 28 - but we can't cross a year boundary.
     showers.add(new Shower("quadrantids",
-                            R.string.quadrantids, GeocentricCoordinates.getGeocentricCoords(230, 49),
+                            R.string.quadrantids, CoordinateManipulations.getGeocentricCoords(230, 49),
                             new Date(ANY_OLD_YEAR, 0, 1),
                             new Date(ANY_OLD_YEAR, 0, 4),
                             new Date(ANY_OLD_YEAR, 0, 12),
                             120));
     showers.add(new Shower("lyrids",
-                           R.string.lyrids, GeocentricCoordinates.getGeocentricCoords(271, 34),
+                           R.string.lyrids, CoordinateManipulations.getGeocentricCoords(271, 34),
                            new Date(ANY_OLD_YEAR, 3, 16),
                            new Date(ANY_OLD_YEAR, 3, 22),
                            new Date(ANY_OLD_YEAR, 3, 25),
                            18));
     showers.add(new Shower("e-aquariids",
-                            R.string.aquariids, GeocentricCoordinates.getGeocentricCoords(338, -1),
+                            R.string.aquariids, CoordinateManipulations.getGeocentricCoords(338, -1),
                             new Date(ANY_OLD_YEAR, 3, 19),
                             new Date(ANY_OLD_YEAR, 4, 6),
                             new Date(ANY_OLD_YEAR, 4, 28),
                             70));
     showers.add(new Shower("d-aquariids",
-                            R.string.deltaaquariids, GeocentricCoordinates.getGeocentricCoords(340, -16),
+                            R.string.deltaaquariids, CoordinateManipulations.getGeocentricCoords(340, -16),
                             new Date(ANY_OLD_YEAR, 6, 12),
                             new Date(ANY_OLD_YEAR, 6, 30),
                             new Date(ANY_OLD_YEAR, 7, 23),
                             16));
     showers.add(new Shower("perseids",
-                            R.string.perseids, GeocentricCoordinates.getGeocentricCoords(48, 58),
+                            R.string.perseids, CoordinateManipulations.getGeocentricCoords(48, 58),
                             new Date(ANY_OLD_YEAR, 6, 17),
                             new Date(ANY_OLD_YEAR, 7, 13),
                             new Date(ANY_OLD_YEAR, 7, 24),
                             100));
     showers.add(new Shower("orionids",
-                            R.string.orionids, GeocentricCoordinates.getGeocentricCoords(95, 16),
+                            R.string.orionids, CoordinateManipulations.getGeocentricCoords(95, 16),
                             new Date(ANY_OLD_YEAR, 9, 2),
                             new Date(ANY_OLD_YEAR, 9, 21),
                             new Date(ANY_OLD_YEAR, 10, 7),
                             25));
     showers.add(new Shower("leonids",
-                            R.string.leonids, GeocentricCoordinates.getGeocentricCoords(152, 22),
+                            R.string.leonids, CoordinateManipulations.getGeocentricCoords(152, 22),
                             new Date(ANY_OLD_YEAR, 10, 6),
                             new Date(ANY_OLD_YEAR, 10, 18),
                             new Date(ANY_OLD_YEAR, 10, 30),
                             20));
     showers.add(new Shower("puppid-velids",
-                            R.string.puppidvelids, GeocentricCoordinates.getGeocentricCoords(123, -45),
+                            R.string.puppidvelids, CoordinateManipulations.getGeocentricCoords(123, -45),
                             new Date(ANY_OLD_YEAR, 11, 1),
                             new Date(ANY_OLD_YEAR, 11, 7),
                             new Date(ANY_OLD_YEAR, 11, 15),
                             10));
     showers.add(new Shower("geminids",
-                            R.string.geminids, GeocentricCoordinates.getGeocentricCoords(112, 33),
+                            R.string.geminids, CoordinateManipulations.getGeocentricCoords(112, 33),
                             new Date(ANY_OLD_YEAR, 11, 7),
                             new Date(ANY_OLD_YEAR, 11, 14),
                             new Date(ANY_OLD_YEAR, 11, 17),
                             120));
     showers.add(new Shower("ursides",
-                            R.string.ursids, GeocentricCoordinates.getGeocentricCoords(217, 76),
+                            R.string.ursids, CoordinateManipulations.getGeocentricCoords(217, 76),
                             new Date(ANY_OLD_YEAR, 11, 17),
                             new Date(ANY_OLD_YEAR, 11, 23),
                             new Date(ANY_OLD_YEAR, 11, 26),

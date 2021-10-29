@@ -1,7 +1,7 @@
 package com.google.android.stardroid.activities;
 
-import static com.google.android.stardroid.math.GeocentricCoordinates.getDecOfUnitGeocentricVector;
-import static com.google.android.stardroid.math.GeocentricCoordinates.getRaOfUnitGeocentricVector;
+import static com.google.android.stardroid.math.CoordinateManipulations.getDecOfUnitGeocentricVector;
+import static com.google.android.stardroid.math.CoordinateManipulations.getRaOfUnitGeocentricVector;
 
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -22,7 +22,6 @@ import com.google.android.stardroid.StardroidApplication;
 import com.google.android.stardroid.activities.util.SensorAccuracyDecoder;
 import com.google.android.stardroid.control.AstronomerModel;
 import com.google.android.stardroid.control.LocationController;
-import com.google.android.stardroid.math.GeocentricCoordinates;
 import com.google.android.stardroid.math.LatLong;
 import com.google.android.stardroid.math.Vector3;
 import com.google.android.stardroid.util.Analytics;

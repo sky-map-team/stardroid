@@ -23,7 +23,7 @@ import com.google.android.stardroid.control.AstronomerModel;
 import com.google.android.stardroid.ephemeris.SolarPositionCalculator;
 import com.google.android.stardroid.renderer.RendererController;
 import com.google.android.stardroid.search.SearchResult;
-import com.google.android.stardroid.math.GeocentricCoordinates;
+import com.google.android.stardroid.math.CoordinateManipulations;
 import com.google.android.stardroid.math.RaDec;
 import com.google.android.stardroid.util.MiscUtil;
 
@@ -89,7 +89,7 @@ public class SkyGradientLayer implements Layer {
       // Log.d(TAG, "Enabling sky gradient with sun position " + sunPosition);
       rendererLock.lock();
       try {
-        renderer.queueEnableSkyGradient(GeocentricCoordinates.getGeocentricCoords(sunPosition));
+        renderer.queueEnableSkyGradient(CoordinateManipulations.getGeocentricCoords(sunPosition));
       } finally {
         rendererLock.unlock();
       }

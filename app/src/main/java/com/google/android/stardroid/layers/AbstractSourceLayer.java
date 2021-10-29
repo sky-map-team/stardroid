@@ -25,7 +25,6 @@ import com.google.android.stardroid.source.LineSource;
 import com.google.android.stardroid.source.PointSource;
 import com.google.android.stardroid.source.Sources;
 import com.google.android.stardroid.source.TextSource;
-import com.google.android.stardroid.math.GeocentricCoordinates;
 import com.google.android.stardroid.math.Vector3;
 import com.google.android.stardroid.util.MiscUtil;
 

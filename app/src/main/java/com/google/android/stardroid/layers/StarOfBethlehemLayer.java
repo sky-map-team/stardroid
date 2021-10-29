@@ -26,7 +26,6 @@ import com.google.android.stardroid.source.AstronomicalSource;
 import com.google.android.stardroid.source.ImageSource;
 import com.google.android.stardroid.source.Sources;
 import com.google.android.stardroid.source.impl.ImageSourceImpl;
-import com.google.android.stardroid.math.GeocentricCoordinates;
 import com.google.android.stardroid.math.Vector3;
 import com.google.android.stardroid.util.MiscUtil;
 
