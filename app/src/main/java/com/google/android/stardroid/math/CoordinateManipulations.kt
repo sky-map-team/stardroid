@@ -30,22 +30,21 @@ import com.google.android.stardroid.math.MathUtils.sin
  */
 
 /**
- * Updates the given vector with the supplied RaDec.
- * [RaDec].
+ * Updates the given vector with the supplied [RaDec].
  */
-fun updateFromRaDec(v: Vector3, raDec: RaDec) {
-    updateFromRaDec(v, raDec.ra, raDec.dec)
+fun Vector3.updateFromRaDec(raDec: RaDec) {
+    this.updateFromRaDec(raDec.ra, raDec.dec)
 }
 
 /**
  * Updates these coordinates with the given ra and dec in degrees.
  */
-private fun updateFromRaDec(v: Vector3, ra: Float, dec: Float) {
+private fun Vector3.updateFromRaDec(ra: Float, dec: Float) {
     val raRadians = ra * DEGREES_TO_RADIANS
     val decRadians = dec * DEGREES_TO_RADIANS
-    v.x = cos(raRadians) * cos(decRadians)
-    v.y = sin(raRadians) * cos(decRadians)
-    v.z = sin(decRadians)
+    this.x = cos(raRadians) * cos(decRadians)
+    this.y = sin(raRadians) * cos(decRadians)
+    this.z = sin(decRadians)
 }
 
 /** Returns the RA in degrees from the given vector assuming it's a unit vector in Geocentric coordinates  */
@@ -72,6 +71,6 @@ fun getGeocentricCoords(raDec: RaDec): Vector3 {
  */
 fun getGeocentricCoords(ra: Float, dec: Float): Vector3 {
     val coords = Vector3(0.0f, 0.0f, 0.0f)
-    updateFromRaDec(coords, ra, dec)
+    coords.updateFromRaDec(ra, dec)
     return coords
 }
