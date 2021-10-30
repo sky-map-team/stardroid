@@ -22,7 +22,7 @@ import com.google.android.stardroid.math.MathUtils.tan
  * functions for creating matrices for doing things like rotations.
  */
 data class Matrix4x4(private val contents: FloatArray) {
-    private val floatArray = FloatArray(16)
+    val floatArray = FloatArray(16)
 
     init {
         assert(contents.size == 16)

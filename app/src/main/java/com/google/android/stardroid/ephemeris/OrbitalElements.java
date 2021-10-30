@@ -18,7 +18,6 @@ import static com.google.android.stardroid.math.MathUtilsKt.mod2pi;
 
 import android.util.Log;
 
-import com.google.android.stardroid.math.Geometry;
 import com.google.android.stardroid.math.MathUtils;
 import com.google.android.stardroid.util.MiscUtil;
 
