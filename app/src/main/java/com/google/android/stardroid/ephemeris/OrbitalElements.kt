@@ -40,61 +40,50 @@ import com.google.android.stardroid.util.MiscUtil
  * @author Kevin Serafini
  * @author Brent Bryan
  */
-class OrbitalElements(// Mean distance (AU)
-    val distance: Float, // Eccentricity of orbit
-    val eccentricity: Float, // Inclination of orbit (AngleUtils.RADIANS)
-    val inclination: Float, // Longitude of ascending node (AngleUtils.RADIANS)
-    val ascendingNode: Float, // Longitude of perihelion (AngleUtils.RADIANS)
-    val perihelion: Float, // Mean longitude (AngleUtils.RADIANS)
-    val meanLongitude: Float
+data class OrbitalElements(
+    val distance: Float, // Mean distance (AU)
+    val eccentricity: Float, // Eccentricity of orbit
+    val inclination: Float, // Inclination of orbit (AngleUtils.RADIANS)
+    val ascendingNode: Float, // Longitude of ascending node (AngleUtils.RADIANS)
+    val perihelion: Float, // Longitude of perihelion (AngleUtils.RADIANS)
+    val meanLongitude: Float // Mean longitude (AngleUtils.RADIANS)
 ) {
     val anomaly: Float
         get() = calculateTrueAnomaly(meanLongitude - perihelion, eccentricity)
 
-    override fun toString(): String {
-        return """Mean Distance: $distance (AU)
-Eccentricity: $eccentricity
-Inclination: $inclination (AngleUtils.RADIANS)
-Ascending Node: $ascendingNode (AngleUtils.RADIANS)
-Perihelion: $perihelion (AngleUtils.RADIANS)
-Mean Longitude: $meanLongitude (AngleUtils.RADIANS)
-"""
-    }
+    private val TAG = MiscUtil.getTag(OrbitalElements::class.java)
 
-    companion object {
-        private val TAG = MiscUtil.getTag(OrbitalElements::class.java)
+    // calculation error
 
-        // calculation error
-        private const val EPSILON = 1.0e-6f
+    // compute the true anomaly from mean anomaly using iteration
+    // m - mean anomaly in radians
+    // e - orbit eccentricity
+    // Return value is in radians.
+    private fun calculateTrueAnomaly(m: Float, e: Float): Float {
+        // initial approximation of eccentric anomaly
+        var e0 = m + e * sin(m) * (1.0f + e * cos(m))
+        var e1: Float
 
-        // compute the true anomaly from mean anomaly using iteration
-        // m - mean anomaly in radians
-        // e - orbit eccentricity
-        // Return value is in radians.
-        private fun calculateTrueAnomaly(m: Float, e: Float): Float {
-            // initial approximation of eccentric anomaly
-            var e0 = m + e * sin(m) * (1.0f + e * cos(m))
-            var e1: Float
+        // iterate to improve accuracy
+        var counter = 0
+        do {
+            e1 = e0
+            e0 = e1 - (e1 - e * sin(e1) - m) / (1.0f - e * cos(e1))
+            if (counter++ > 100) {
+                Log.d(TAG, "Failed to converge! Exiting.")
+                Log.d(TAG, "e1 = $e1, e0 = $e0")
+                Log.d(TAG, "diff = " + abs(e0 - e1))
+                break
+            }
+        } while (abs(e0 - e1) > EPSILON)
 
-            // iterate to improve accuracy
-            var counter = 0
-            do {
-                e1 = e0
-                e0 = e1 - (e1 - e * sin(e1) - m) / (1.0f - e * cos(e1))
-                if (counter++ > 100) {
-                    Log.d(TAG, "Failed to converge! Exiting.")
-                    Log.d(TAG, "e1 = $e1, e0 = $e0")
-                    Log.d(TAG, "diff = " + abs(e0 - e1))
-                    break
-                }
-            } while (abs(e0 - e1) > EPSILON)
-
-            // convert eccentric anomaly to true anomaly
-            val v = 2f * atan(
-                sqrt((1 + e) / (1 - e))
-                        * tan(0.5f * e0)
-            )
-            return mod2pi(v)
-        }
+        // convert eccentric anomaly to true anomaly
+        val v = 2f * atan(
+            sqrt((1 + e) / (1 - e))
+                    * tan(0.5f * e0)
+        )
+        return mod2pi(v)
     }
 }
+
+private const val EPSILON = 1.0e-6f
