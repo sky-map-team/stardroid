@@ -14,7 +14,7 @@
 package com.google.android.stardroid.control
 
 import android.util.Log
-import com.google.android.stardroid.math.Geometry.calculateRotationMatrix
+import com.google.android.stardroid.math.calculateRotationMatrix
 import com.google.android.stardroid.util.MiscUtil
 
 /**

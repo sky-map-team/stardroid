@@ -18,7 +18,7 @@ import org.junit.Test
 
 private const val TOL = 0.00001f
 
-class GeometryTest {
+class AstronomyTest {
     @Test
     fun testCalculateRotationMatrix() {
         val noRotation = calculateRotationMatrix(0f, Vector3(1f, 2f, 3f))
