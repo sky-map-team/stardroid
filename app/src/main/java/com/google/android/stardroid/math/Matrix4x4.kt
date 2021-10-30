@@ -21,13 +21,13 @@ import com.google.android.stardroid.math.MathUtils.tan
  * Represents a 4x4 matrix, specifically for use in rendering code. Consequently includes
  * functions for creating matrices for doing things like rotations.
  */
-class Matrix4x4 {
-    constructor(contents: FloatArray) {
+data class Matrix4x4(private val contents: FloatArray) {
+    private val floatArray = FloatArray(16)
+
+    init {
         assert(contents.size == 16)
         System.arraycopy(contents, 0, floatArray, 0, 16)
     }
-
-    val floatArray = FloatArray(16)
 
     operator fun times(mat2 : Matrix4x4): Matrix4x4 {
         val m = this.floatArray
