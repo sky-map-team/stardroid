@@ -32,39 +32,11 @@ import java.util.TimeZone;
 @RunWith(RobolectricTestRunner.class)
 @Config(manifest= Config.NONE)
 public class PlanetTest extends TestCase {
-  // Accuracy of our position calculations, in degrees.
-  private static final float POS_TOL = 0.2f;
 
   // Accuracy of our Illumination calculations, in percent.
   private static final float PHASE_TOL = 1.0f;
 
-  // Convert from hours to degrees
-  private static final float HOURS_TO_DEGREES = 360.0f/24.0f;
 
-  // Verify that we are calculating a valid lunar RA/Dec.
-  @Test
-  public void testLunarGeocentricLocation() {
-    GregorianCalendar testCal = new GregorianCalendar();
-    testCal.setTimeZone(TimeZone.getTimeZone("GMT"));
-
-    // 2009 Jan  1, 12:00 UT1: RA = 22h 27m 20.423s, Dec = - 7d  9m 49.94s
-    testCal.set(2009, GregorianCalendar.JANUARY, 1, 12, 0, 0);
-    RaDec lunarPos = Planet.calculateLunarGeocentricLocation(testCal.getTime());
-    assertEquals(22.456 * HOURS_TO_DEGREES, lunarPos.getRa(), POS_TOL);
-    assertEquals(-7.164, lunarPos.getDec(), POS_TOL);
-
-    // 2009 Sep 20, 12:00 UT1: RA = 13h  7m 23.974s, Dec = -12d 36m  6.15s
-    testCal.set(2009, GregorianCalendar.SEPTEMBER, 20, 12, 0, 0);
-    lunarPos = Planet.calculateLunarGeocentricLocation(testCal.getTime());
-    assertEquals(13.123 * HOURS_TO_DEGREES, lunarPos.getRa(), POS_TOL);
-    assertEquals(-12.602, lunarPos.getDec(), POS_TOL);
-
-    // 2010 Dec 25, 12:00 UT1: RA =  9h 54m 53.914s, Dec = +8d 3m 22.00s
-    testCal.set(2010, GregorianCalendar.DECEMBER, 25, 12, 0, 0);
-    lunarPos = Planet.calculateLunarGeocentricLocation(testCal.getTime());
-    assertEquals(9.915 * HOURS_TO_DEGREES, lunarPos.getRa(), POS_TOL);
-    assertEquals(8.056, lunarPos.getDec(), POS_TOL);
-  }
 
   // Verify illumination calculations for bodies that matter (Mercury, Venus, Mars, and Moon)
   // TODO(serafini): please fix and reenable

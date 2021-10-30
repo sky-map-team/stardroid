@@ -16,9 +16,12 @@ package com.google.android.stardroid.math
 import java.util.*
 import kotlin.math.floor
 
-private const val MINUTES_PER_HOUR = 60.0
+public const val MINUTES_PER_HOUR = 60.0
 
-private const val SECONDS_PER_HOUR = 3600.0
+public const val SECONDS_PER_HOUR = 3600.0
+
+// Convert from hours to degrees
+public const val HOURS_TO_DEGREES = 360.0f / 24.0f
 
 /**
  * Utilities for working with Dates and times.
