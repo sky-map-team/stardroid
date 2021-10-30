@@ -14,6 +14,7 @@
 
 package com.google.android.stardroid.ephemeris;
 
+import static com.google.android.stardroid.math.CoordinateManipulationsKt.heliocentricCoordinatesFromOrbitalElements;
 import static com.google.android.stardroid.math.CoordinateManipulationsKt.updateFromRaDec;
 
 import com.google.android.stardroid.base.Lists;
@@ -28,7 +29,6 @@ import com.google.android.stardroid.source.impl.ImageSourceImpl;
 import com.google.android.stardroid.source.impl.PointSourceImpl;
 import com.google.android.stardroid.source.impl.TextSourceImpl;
 import com.google.android.stardroid.space.Universe;
-import com.google.android.stardroid.math.HeliocentricCoordinates;
 import com.google.android.stardroid.math.Vector3;
 
 import android.content.SharedPreferences;
@@ -91,7 +91,7 @@ public class PlanetSource extends AbstractAstronomicalSource {
 
   private void updateCoords(Date time) {
     this.lastUpdateTimeMs = time.getTime();
-    this.sunCoords = HeliocentricCoordinates.heliocentricCoordinatesFromOrbitalElements(Planet.Sun.getOrbitalElements(time));
+    this.sunCoords = heliocentricCoordinatesFromOrbitalElements(Planet.Sun.getOrbitalElements(time));
     updateFromRaDec(this.currentCoords, universe.getRaDec(planet, time));
     for (ImageSourceImpl imageSource : imageSources) {
       imageSource.setUpVector(sunCoords);  // TODO(johntaylor): figure out why we do this.

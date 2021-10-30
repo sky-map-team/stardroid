@@ -14,6 +14,7 @@
 
 package com.google.android.stardroid.ephemeris;
 
+import static com.google.android.stardroid.math.CoordinateManipulationsKt.heliocentricCoordinatesFromOrbitalElements;
 import static com.google.android.stardroid.math.MathUtilsKt.DEGREES_TO_RADIANS;
 import static com.google.android.stardroid.math.MathUtilsKt.RADIANS_TO_DEGREES;
 import static com.google.android.stardroid.math.MathUtilsKt.mod2pi;
@@ -27,7 +28,6 @@ import com.google.android.stardroid.R;
 import com.google.android.stardroid.base.TimeConstants;
 import com.google.android.stardroid.base.VisibleForTesting;
 import com.google.android.stardroid.math.CoordinateManipulationsKt;
-import com.google.android.stardroid.math.HeliocentricCoordinates;
 import com.google.android.stardroid.math.LatLong;
 import com.google.android.stardroid.math.MathUtils;
 import com.google.android.stardroid.math.RaDec;
@@ -312,7 +312,7 @@ public enum Planet {
       RaDec moonRaDec = calculateLunarGeocentricLocation(time);
       Vector3 moon = CoordinateManipulationsKt.getGeocentricCoords(moonRaDec);
 
-      Vector3 sunCoords = HeliocentricCoordinates.heliocentricCoordinatesFromOrbitalElements(Planet.Sun.getOrbitalElements(time));
+      Vector3 sunCoords = heliocentricCoordinatesFromOrbitalElements(Planet.Sun.getOrbitalElements(time));
       RaDec sunRaDec = RaDec.calculateRaDecDist(sunCoords);
       Vector3 sun = CoordinateManipulationsKt.getGeocentricCoords(sunRaDec);
 
@@ -322,10 +322,10 @@ public enum Planet {
     }
 
     // First, determine position in the solar system.
-    Vector3 planetCoords = HeliocentricCoordinates.heliocentricCoordinatesFromOrbitalElements(getOrbitalElements(time));
+    Vector3 planetCoords = heliocentricCoordinatesFromOrbitalElements(getOrbitalElements(time));
 
     // Second, determine position relative to Earth
-    Vector3 earthCoords = HeliocentricCoordinates.heliocentricCoordinatesFromOrbitalElements(Planet.Sun.getOrbitalElements(time));
+    Vector3 earthCoords = heliocentricCoordinatesFromOrbitalElements(Planet.Sun.getOrbitalElements(time));
     float earthDistance = planetCoords.distanceFrom(earthCoords);
 
     // Finally, calculate the phase of the body.
@@ -411,10 +411,10 @@ public enum Planet {
     }
 
     // First, determine position in the solar system.
-    Vector3 planetCoords = HeliocentricCoordinates.heliocentricCoordinatesFromOrbitalElements(getOrbitalElements(time));
+    Vector3 planetCoords = heliocentricCoordinatesFromOrbitalElements(getOrbitalElements(time));
 
     // Second, determine position relative to Earth
-    Vector3 earthCoords = HeliocentricCoordinates.heliocentricCoordinatesFromOrbitalElements(Planet.Sun.getOrbitalElements(time));
+    Vector3 earthCoords = heliocentricCoordinatesFromOrbitalElements(Planet.Sun.getOrbitalElements(time));
     float earthDistance = planetCoords.distanceFrom(earthCoords);
 
     // Third, calculate the phase of the body.

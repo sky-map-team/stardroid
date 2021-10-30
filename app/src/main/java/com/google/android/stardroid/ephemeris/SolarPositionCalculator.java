@@ -15,7 +15,6 @@
 package com.google.android.stardroid.ephemeris;
 
 import com.google.android.stardroid.space.Universe;
-import com.google.android.stardroid.math.HeliocentricCoordinates;
 import com.google.android.stardroid.math.RaDec;
 
 import java.util.Date;

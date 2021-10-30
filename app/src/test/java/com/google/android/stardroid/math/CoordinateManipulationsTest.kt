@@ -16,7 +16,7 @@ package com.google.android.stardroid.math
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test
 
-class GeocentricCoordinatesTest {
+class CoordinateManipulationsTest {
     // TODO(jontayler): add some real tests for this class.
     @Test
     fun testEquals() {

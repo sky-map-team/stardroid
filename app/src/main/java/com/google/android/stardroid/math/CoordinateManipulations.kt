@@ -13,6 +13,7 @@
 // limitations under the License.
 package com.google.android.stardroid.math
 
+import com.google.android.stardroid.ephemeris.OrbitalElements
 import com.google.android.stardroid.math.MathUtils.asin
 import com.google.android.stardroid.math.MathUtils.atan2
 import com.google.android.stardroid.math.MathUtils.cos
@@ -74,3 +75,45 @@ fun getGeocentricCoords(ra: Float, dec: Float): Vector3 {
     coords.updateFromRaDec(ra, dec)
     return coords
 }
+
+// Value of the obliquity of the ecliptic for J2000
+private const val OBLIQUITY = 23.439281f * DEGREES_TO_RADIANS
+
+/**
+ * Converts OrbitalElements into "HeliocentricCoordinates" - cartesian coordinates
+ * centered on the sun with a z-axis pointing normal to Earth's orbital plane
+ * and measured in Astronomical units.
+ */
+fun heliocentricCoordinatesFromOrbitalElements(elem: OrbitalElements): Vector3 {
+    val anomaly = elem.anomaly
+    val ecc = elem.eccentricity
+    val radius = elem.distance * (1 - ecc * ecc) / (1 + ecc * cos(anomaly))
+
+    // heliocentric rectangular coordinates of planet
+    val per = elem.perihelion
+    val asc = elem.ascendingNode
+    val inc = elem.inclination
+    val xh = radius *
+            (cos(asc) * cos(anomaly + per - asc) -
+                    sin(asc) * sin(anomaly + per - asc) *
+                    cos(inc))
+    val yh = radius *
+            (sin(asc) * cos(anomaly + per - asc) +
+                    cos(asc) * sin(anomaly + per - asc) *
+                    cos(inc))
+    val zh = radius * (sin(anomaly + per - asc) * sin(inc))
+    return Vector3(xh, yh, zh)
+}
+
+/**
+ * Converts to coordinates centered on Earth in the Earth's rotational plane to
+ * coordinates in Earth's equatorial plane.
+ */
+fun convertToEquatorialCoordinates(earthOrbitalPlane : Vector3): Vector3 {
+    return Vector3(
+        earthOrbitalPlane.x,
+        earthOrbitalPlane.y * cos(OBLIQUITY) - earthOrbitalPlane.z * sin(OBLIQUITY),
+        earthOrbitalPlane.y * sin(OBLIQUITY) + earthOrbitalPlane.z * cos(OBLIQUITY)
+    )
+}
+
