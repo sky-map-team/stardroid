@@ -32,6 +32,7 @@ import com.google.android.stardroid.math.LatLong;
 import com.google.android.stardroid.math.MathUtils;
 import com.google.android.stardroid.math.RaDec;
 import com.google.android.stardroid.math.Vector3;
+import com.google.android.stardroid.space.Moon;
 import com.google.android.stardroid.space.Universe;
 import com.google.android.stardroid.util.MiscUtil;
 
@@ -246,58 +247,8 @@ public enum Planet {
   // TODO(serafini): We need to correct the Ra/Dec for the user's location. The
   // current calculation is probably accurate to a degree or two, but we can,
   // and should, do better.
-  /**
-   * Calculate the geocentric right ascension and declination of the moon using
-   * an approximation as described on page D22 of the 2008 Astronomical Almanac
-   * All of the variables in this method use the same names as those described
-   * in the text: lambda = Ecliptic longitude (degrees) beta = Ecliptic latitude
-   * (degrees) pi = horizontal parallax (degrees) r = distance (Earth radii)
-   *
-   * NOTE: The text does not give a specific time period where the approximation
-   * is valid, but it should be valid through at least 2009.
-   */
-  public static RaDec calculateLunarGeocentricLocation(Date time) {
-    // First, calculate the number of Julian centuries from J2000.0.
-    float t = (float) ((julianDay(time) - 2451545.0f) / 36525.0f);
 
-    // Second, calculate the approximate geocentric orbital elements.
-    float lambda =
-        218.32f + 481267.881f * t + 6.29f
-            * MathUtils.sin((135.0f + 477198.87f * t) * DEGREES_TO_RADIANS) - 1.27f
-            * MathUtils.sin((259.3f - 413335.36f * t) * DEGREES_TO_RADIANS) + 0.66f
-            * MathUtils.sin((235.7f + 890534.22f * t) * DEGREES_TO_RADIANS) + 0.21f
-            * MathUtils.sin((269.9f + 954397.74f * t) * DEGREES_TO_RADIANS) - 0.19f
-            * MathUtils.sin((357.5f + 35999.05f * t) * DEGREES_TO_RADIANS) - 0.11f
-            * MathUtils.sin((186.5f + 966404.03f * t) * DEGREES_TO_RADIANS);
-    float beta =
-        5.13f * MathUtils.sin((93.3f + 483202.02f * t) * DEGREES_TO_RADIANS) + 0.28f
-            * MathUtils.sin((228.2f + 960400.89f * t) * DEGREES_TO_RADIANS) - 0.28f
-            * MathUtils.sin((318.3f + 6003.15f * t) * DEGREES_TO_RADIANS) - 0.17f
-            * MathUtils.sin((217.6f - 407332.21f * t) * DEGREES_TO_RADIANS);
-    //float pi =
-    //    0.9508f + 0.0518f * MathUtil.cos((135.0f + 477198.87f * t) * DEGREES_TO_RADIANS)
-    //        + 0.0095f * MathUtil.cos((259.3f - 413335.36f * t) * DEGREES_TO_RADIANS)
-    //        + 0.0078f * MathUtil.cos((235.7f + 890534.22f * t) * DEGREES_TO_RADIANS)
-    //        + 0.0028f * MathUtil.cos((269.9f + 954397.74f * t) * DEGREES_TO_RADIANS);
-    // float r = 1.0f / MathUtil.sin(pi * DEGREES_TO_RADIANS);
-
-    // Third, convert to RA and Dec.
-    float l =
-        MathUtils.cos(beta * DEGREES_TO_RADIANS)
-            * MathUtils.cos(lambda * DEGREES_TO_RADIANS);
-    float m =
-        0.9175f * MathUtils.cos(beta * DEGREES_TO_RADIANS)
-            * MathUtils.sin(lambda * DEGREES_TO_RADIANS) - 0.3978f
-            * MathUtils.sin(beta * DEGREES_TO_RADIANS);
-    float n =
-        0.3978f * MathUtils.cos(beta * DEGREES_TO_RADIANS)
-            * MathUtils.sin(lambda * DEGREES_TO_RADIANS) + 0.9175f
-            * MathUtils.sin(beta * DEGREES_TO_RADIANS);
-    float ra = mod2pi(MathUtils.atan2(m, l)) * RADIANS_TO_DEGREES;
-    float dec = MathUtils.asin(n) * RADIANS_TO_DEGREES;
-
-    return new RaDec(ra, dec);
-  }
+  private static com.google.android.stardroid.space.Moon moon = new Moon();
 
   /**
    * Calculates the phase angle of the planet, in degrees.
@@ -309,7 +260,7 @@ public enum Planet {
     // elongation of the moon relative to the sun. This is accurate to within
     // about 1%.
     if (this == Planet.Moon) {
-      RaDec moonRaDec = calculateLunarGeocentricLocation(time);
+      RaDec moonRaDec = moon.getRaDec(time);
       Vector3 moon = CoordinateManipulationsKt.getGeocentricCoords(moonRaDec);
 
       Vector3 sunCoords = heliocentricCoordinatesFromOrbitalElements(Planet.Sun.getOrbitalElements(time));

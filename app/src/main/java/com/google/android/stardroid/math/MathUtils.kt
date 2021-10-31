@@ -20,8 +20,8 @@ package com.google.android.stardroid.math
  */
 const val PI = Math.PI.toFloat()
 const val TWO_PI = 2f * PI
-const val DEGREES_TO_RADIANS = PI / 180
-const val RADIANS_TO_DEGREES = 180 / PI
+const val DEGREES_TO_RADIANS = PI / 180.0f
+const val RADIANS_TO_DEGREES = 180.0f / PI
 
 fun flooredMod(a: Float, n: Float) = (if (a < 0) a % n + n else a) % n
 
