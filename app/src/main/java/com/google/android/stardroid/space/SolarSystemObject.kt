@@ -6,7 +6,7 @@ import java.util.*
 /**
  * A celestial object that lives in our solar system.
  */
-abstract class SolarSystemObject(private val planet : Planet) : MovingObject() {
+abstract class SolarSystemObject(protected val planet : Planet) : MovingObject() {
     fun getUpdateFrequencyMs(): Long {
         return planet.updateFrequencyMs
     }

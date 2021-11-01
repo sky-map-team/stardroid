@@ -13,8 +13,6 @@ import java.util.*
  * A likely temporary class to represent the Moon.
  */
 class Moon : EarthOrbitingObject(Planet.Moon) {
-    private val planet = Planet.Moon
-
     override fun getRaDec(date: Date): RaDec {
         /**
          * Calculate the geocentric right ascension and declination of the moon using

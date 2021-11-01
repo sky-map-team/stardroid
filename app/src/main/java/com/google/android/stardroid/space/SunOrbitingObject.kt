@@ -9,7 +9,7 @@ import java.util.*
 /**
  * An object that orbits the sun.
  */
-open class SunOrbitingObject(private val planet : Planet) : SolarSystemObject(planet) {
+open class SunOrbitingObject(planet : Planet) : SolarSystemObject(planet) {
     override fun getRaDec(date: Date): RaDec {
         val earthCoords = getEarthHeliocentricCoordinates(date)
         var myCoords = getMyHeliocentricCoordinates(date)

@@ -7,4 +7,4 @@ import java.util.*
 /**
  * An object that orbits Earth.
  */
-abstract class EarthOrbitingObject(private val planet : Planet) : SolarSystemObject(planet)
+abstract class EarthOrbitingObject(planet : Planet) : SolarSystemObject(planet)
