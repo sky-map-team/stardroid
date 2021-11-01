@@ -101,5 +101,5 @@ class Moon : EarthOrbitingObject(Planet.Moon) {
     // TODO(serafini): For now, return semi-reasonable values for the Sun and
     // Moon. We shouldn't call this method for those bodies, but we want to do
     // something sane if we do.
-    override fun getMagnitude(time: Date?) = -10.0f
+    override fun getMagnitude(time: Date) = -10.0f
 }

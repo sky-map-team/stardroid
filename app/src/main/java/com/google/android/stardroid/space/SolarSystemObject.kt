@@ -109,7 +109,7 @@ abstract class SolarSystemObject(protected val planet : Planet) : MovingObject()
      * calculations above. For now, I'm going to duplicate some code to avoid
      * some redundant calculations at run time.
      */
-    open fun getMagnitude(time: Date?): Float {
+    open fun getMagnitude(time: Date): Float {
         // First, determine position in the solar system.
         val planetCoords = heliocentricCoordinatesFromOrbitalElements(planet.getOrbitalElements(time))
 

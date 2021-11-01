@@ -83,9 +83,9 @@ enum class Planet
     // This gives us a good approximation for the years 1800 to 2050 AD.
     // TODO(serafini): Update the numbers so we can extend the approximation to cover 
     // 3000 BC to 3000 AD.
-    fun getOrbitalElements(date: Date?): OrbitalElements {
+    fun getOrbitalElements(date: Date): OrbitalElements {
         // Centuries since J2000
-        val jc = julianCenturies(date!!).toFloat()
+        val jc = julianCenturies(date).toFloat()
         return when (this) {
             Mercury -> {
                 val a = 0.38709927f + 0.00000037f * jc

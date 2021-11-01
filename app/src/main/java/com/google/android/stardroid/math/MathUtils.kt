@@ -50,7 +50,7 @@ private fun positiveMod(x: Float, y: Float): Float {
     return remainder
 }
 
-/** Calculates the length of the vector []x, y, z] */
+/** Calculates the length of the vector [x, y, z] */
 fun norm(x: Float, y: Float, z: Float) = kotlin.math.sqrt(x * x + y * y + z * z)
 
 
@@ -62,12 +62,6 @@ object MathUtils {
 
     @JvmStatic
     fun sqrt(x: Float) = kotlin.math.sqrt(x)
-
-    @JvmStatic
-    fun floor(x: Float) = kotlin.math.floor(x)
-
-    @JvmStatic
-    fun ceil(x: Float) = kotlin.math.ceil(x)
 
     @JvmStatic
     fun sin(x: Float) = kotlin.math.sin(x)
