@@ -1,6 +1,5 @@
 package com.google.android.stardroid.space
 
-import com.google.android.stardroid.ephemeris.Planet
 import com.google.android.stardroid.math.HOURS_TO_DEGREES
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test
