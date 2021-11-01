@@ -17,6 +17,8 @@ package com.google.android.stardroid.ephemeris;
 import com.google.android.stardroid.ephemeris.Planet;
 import com.google.android.stardroid.math.LatLong;
 import com.google.android.stardroid.math.RaDec;
+import com.google.android.stardroid.space.CelestialObject;
+import com.google.android.stardroid.space.Universe;
 
 import junit.framework.TestCase;
 
@@ -33,77 +35,9 @@ import java.util.TimeZone;
 @Config(manifest= Config.NONE)
 public class PlanetTest extends TestCase {
 
-  // Accuracy of our Illumination calculations, in percent.
-  private static final float PHASE_TOL = 1.0f;
-
-
-
-  // Verify illumination calculations for bodies that matter (Mercury, Venus, Mars, and Moon)
-  // TODO(serafini): please fix and reenable
-  // @Test
-  public void disableTestIllumination() {
-    GregorianCalendar testCal = new GregorianCalendar();
-    testCal.setTimeZone(TimeZone.getTimeZone("GMT"));
-
-    // 2009 Jan  1, 12:00 UT1
-    testCal.set(2009, GregorianCalendar.JANUARY, 1, 12, 0, 0);
-    assertEquals(21.2, Planet.Moon.calculatePercentIlluminated(testCal.getTime()), PHASE_TOL);
-    assertEquals(69.5, Planet.Mercury.calculatePercentIlluminated(testCal.getTime()), PHASE_TOL);
-    assertEquals(57.5, Planet.Venus.calculatePercentIlluminated(testCal.getTime()), PHASE_TOL);
-    assertEquals(99.8, Planet.Mars.calculatePercentIlluminated(testCal.getTime()), PHASE_TOL);
-
-    // 2009 Sep 20, 12:00 UT1
-    testCal.set(2009, GregorianCalendar.SEPTEMBER, 20, 12, 0, 0);
-    assertEquals(4.1, Planet.Moon.calculatePercentIlluminated(testCal.getTime()), PHASE_TOL);
-    assertEquals(0.5, Planet.Mercury.calculatePercentIlluminated(testCal.getTime()), PHASE_TOL);
-    assertEquals(88.0, Planet.Venus.calculatePercentIlluminated(testCal.getTime()), PHASE_TOL);
-    assertEquals(88.7, Planet.Mars.calculatePercentIlluminated(testCal.getTime()), PHASE_TOL);
-
-    // 2010 Dec 25, 12:00 UT1
-    testCal.set(2010, GregorianCalendar.DECEMBER, 25, 12, 0, 0);
-    assertEquals(79.0, Planet.Moon.calculatePercentIlluminated(testCal.getTime()), PHASE_TOL);
-    assertEquals(12.1, Planet.Mercury.calculatePercentIlluminated(testCal.getTime()), PHASE_TOL);
-    assertEquals(42.0, Planet.Venus.calculatePercentIlluminated(testCal.getTime()), PHASE_TOL);
-    assertEquals(99.6, Planet.Mars.calculatePercentIlluminated(testCal.getTime()), PHASE_TOL);
-  }
-
-  private static float REG_TOL = 0.0001f;
-  // These are copies of the above tests that are disabled, but 'fixed' to pass. This doesn't
-  // mean the calculations are correct...just that any refactorings we do haven't changed them.
-  // This obviously needs to be revisited.
-  @Test
-  public void regressionTests() {
-    GregorianCalendar testCal = new GregorianCalendar();
-    testCal.setTimeZone(TimeZone.getTimeZone("GMT"));
-
-    // 2010 Dec 25, 12:00 UT1
-    testCal.set(2010, GregorianCalendar.DECEMBER, 25, 12, 0, 0);
-    assertEquals(21.741992950439453, Planet.Moon.calculatePercentIlluminated(testCal.getTime()), REG_TOL);
-    assertEquals(12.131664276123047, Planet.Mercury.calculatePercentIlluminated(testCal.getTime()), REG_TOL);
-    assertEquals(42.03889846801758, Planet.Venus.calculatePercentIlluminated(testCal.getTime()), REG_TOL);
-    assertEquals(99.64849853515625, Planet.Mars.calculatePercentIlluminated(testCal.getTime()), REG_TOL);
-
-    // Don't trust these numbers
-
-    assertEquals(124.41341400146484, Planet.Moon.calculatePhaseAngle(testCal.getTime()), REG_TOL);
-    assertEquals(139.23260498046875, Planet.Mercury.calculatePhaseAngle(testCal.getTime()), REG_TOL);
-    assertEquals(99.1617431640625, Planet.Venus.calculatePhaseAngle(testCal.getTime()), REG_TOL);
-    assertEquals(6.797830581665039, Planet.Mars.calculatePhaseAngle(testCal.getTime()), REG_TOL);
-
-    assertEquals(-10, Planet.Moon.getMagnitude(testCal.getTime()), REG_TOL);
-    assertEquals(1.7964696884155273, Planet.Mercury.getMagnitude(testCal.getTime()), REG_TOL);
-    assertEquals(-4.544736385345459, Planet.Venus.getMagnitude(testCal.getTime()), REG_TOL);
-    assertEquals(1.2287708520889282, Planet.Mars.getMagnitude(testCal.getTime()), REG_TOL);
-    assertEquals(-2.377939224243164, Planet.Jupiter.getMagnitude(testCal.getTime()), REG_TOL);
-    assertEquals(1.1006574630737305, Planet.Saturn.getMagnitude(testCal.getTime()), REG_TOL);
-    assertEquals(5.848583698272705, Planet.Uranus.getMagnitude(testCal.getTime()), REG_TOL);
-    assertEquals(7.944333076477051, Planet.Neptune.getMagnitude(testCal.getTime()), REG_TOL);
-    assertEquals(14.110675811767578, Planet.Pluto.getMagnitude(testCal.getTime()), REG_TOL);
-    assertEquals(-27, Planet.Sun.getMagnitude(testCal.getTime()), REG_TOL);
-  }
-
   @Test
   public void testCalcNextRiseSetTime() {
+    Universe universe = new Universe();
     GregorianCalendar testCal = new GregorianCalendar();
     testCal.setTimeZone(TimeZone.getTimeZone("GMT"));
 
@@ -111,13 +45,13 @@ public class PlanetTest extends TestCase {
     // At the equinox, sunset should be between 17:00 and 18:59.
     testCal.set(2010, GregorianCalendar.MARCH, 21, 12, 0, 0);
     LatLong loc = new LatLong(60, 0);
-    Calendar sunset = Planet.Sun.calcNextRiseSetTime(testCal, loc, Planet.RiseSetIndicator.SET);
+    Calendar sunset = universe.solarSystemObjectFor(Planet.Sun).calcNextRiseSetTime(testCal, loc, CelestialObject.RiseSetIndicator.SET);
     sunset.setTimeZone(TimeZone.getTimeZone("GMT"));
     assertEquals(true,
                  17 <= sunset.get(Calendar.HOUR_OF_DAY) && 18 >= sunset.get(Calendar.HOUR_OF_DAY));
     assertEquals(21, sunset.get(Calendar.DAY_OF_MONTH));
     // Sunrise should be between 5:00 and 6:59 the following day.
-    Calendar sunrise = Planet.Sun.calcNextRiseSetTime(testCal, loc, Planet.RiseSetIndicator.RISE);
+    Calendar sunrise = universe.solarSystemObjectFor(Planet.Sun).calcNextRiseSetTime(testCal, loc, CelestialObject.RiseSetIndicator.RISE);
     sunrise.setTimeZone(TimeZone.getTimeZone("GMT"));
     assertEquals(true,
                  5 <= sunrise.get(Calendar.HOUR_OF_DAY) && 6 >= sunrise.get(Calendar.HOUR_OF_DAY));
@@ -125,13 +59,13 @@ public class PlanetTest extends TestCase {
 
     // In midsummer, sunset should be between 20:00 and 21:59.
     testCal.set(2010, GregorianCalendar.JUNE, 21, 12, 0, 0);
-    sunset = Planet.Sun.calcNextRiseSetTime(testCal, loc, Planet.RiseSetIndicator.SET);
+    sunset = universe.solarSystemObjectFor(Planet.Sun).calcNextRiseSetTime(testCal, loc, CelestialObject.RiseSetIndicator.SET);
     sunset.setTimeZone(TimeZone.getTimeZone("GMT"));
     assertEquals(true,
                  20 <= sunset.get(Calendar.HOUR_OF_DAY) && 21 >= sunset.get(Calendar.HOUR_OF_DAY));
     assertEquals(21, sunset.get(Calendar.DAY_OF_MONTH));
     // Sunrise should be between 2:00 and 3:59 the following day.
-    sunrise = Planet.Sun.calcNextRiseSetTime(testCal, loc, Planet.RiseSetIndicator.RISE);
+    sunrise = universe.solarSystemObjectFor(Planet.Sun).calcNextRiseSetTime(testCal, loc, CelestialObject.RiseSetIndicator.RISE);
     sunrise.setTimeZone(TimeZone.getTimeZone("GMT"));
     assertEquals(true,
                  2 <= sunrise.get(Calendar.HOUR_OF_DAY) && 3 >= sunrise.get(Calendar.HOUR_OF_DAY));
@@ -139,13 +73,13 @@ public class PlanetTest extends TestCase {
 
     // In midwinter, sunset should be between 14:00 and 15:59.
     testCal.set(2010, GregorianCalendar.DECEMBER, 21, 12, 0, 0);
-    sunset = Planet.Sun.calcNextRiseSetTime(testCal, loc, Planet.RiseSetIndicator.SET);
+    sunset = universe.solarSystemObjectFor(Planet.Sun).calcNextRiseSetTime(testCal, loc, CelestialObject.RiseSetIndicator.SET);
     sunset.setTimeZone(TimeZone.getTimeZone("GMT"));
     assertEquals(true,
                  14 <= sunset.get(Calendar.HOUR_OF_DAY) && 15 >= sunset.get(Calendar.HOUR_OF_DAY));
     assertEquals(21, sunset.get(Calendar.DAY_OF_MONTH));
     // Sunrise should be between 8:00 and 9:59 the following day.
-    sunrise = Planet.Sun.calcNextRiseSetTime(testCal, loc, Planet.RiseSetIndicator.RISE);
+    sunrise = universe.solarSystemObjectFor(Planet.Sun).calcNextRiseSetTime(testCal, loc, CelestialObject.RiseSetIndicator.RISE);
     sunrise.setTimeZone(TimeZone.getTimeZone("GMT"));
     assertEquals(true,
                  8 <= sunrise.get(Calendar.HOUR_OF_DAY) && 9 >= sunrise.get(Calendar.HOUR_OF_DAY));
@@ -156,13 +90,13 @@ public class PlanetTest extends TestCase {
     // At the equinox, sunset should be between 17:00 and 18:59.
     testCal.set(2010, GregorianCalendar.MARCH, 21, 12, 0, 0);
     loc = new LatLong(60, -75);
-    sunset = Planet.Sun.calcNextRiseSetTime(testCal, loc, Planet.RiseSetIndicator.SET);
+    sunset = universe.solarSystemObjectFor(Planet.Sun).calcNextRiseSetTime(testCal, loc, CelestialObject.RiseSetIndicator.SET);
     sunset.setTimeZone(TimeZone.getTimeZone("EST"));
     assertEquals(true,
                  17 <= sunset.get(Calendar.HOUR_OF_DAY) && 18 >= sunset.get(Calendar.HOUR_OF_DAY));
     assertEquals(21, sunset.get(Calendar.DAY_OF_MONTH));
     // Sunrise should be between 5:00 and 6:59 the following day.
-    sunrise = Planet.Sun.calcNextRiseSetTime(testCal, loc, Planet.RiseSetIndicator.RISE);
+    sunrise = universe.solarSystemObjectFor(Planet.Sun).calcNextRiseSetTime(testCal, loc, CelestialObject.RiseSetIndicator.RISE);
     sunrise.setTimeZone(TimeZone.getTimeZone("EST"));
     assertEquals(true,
                  5 <= sunrise.get(Calendar.HOUR_OF_DAY) && 6 >= sunrise.get(Calendar.HOUR_OF_DAY));
@@ -170,13 +104,13 @@ public class PlanetTest extends TestCase {
 
     // In midsummer, sunset should be between 20:00 and 21:59.
     testCal.set(2010, GregorianCalendar.JUNE, 21, 12, 0, 0);
-    sunset = Planet.Sun.calcNextRiseSetTime(testCal, loc, Planet.RiseSetIndicator.SET);
+    sunset = universe.solarSystemObjectFor(Planet.Sun).calcNextRiseSetTime(testCal, loc, CelestialObject.RiseSetIndicator.SET);
     sunset.setTimeZone(TimeZone.getTimeZone("EST"));
     assertEquals(true,
                  20 <= sunset.get(Calendar.HOUR_OF_DAY) && 21 >= sunset.get(Calendar.HOUR_OF_DAY));
     assertEquals(21, sunset.get(Calendar.DAY_OF_MONTH));
     // Sunrise should be between 2:00 and 3:59 the following day.
-    sunrise = Planet.Sun.calcNextRiseSetTime(testCal, loc, Planet.RiseSetIndicator.RISE);
+    sunrise = universe.solarSystemObjectFor(Planet.Sun).calcNextRiseSetTime(testCal, loc, CelestialObject.RiseSetIndicator.RISE);
     sunrise.setTimeZone(TimeZone.getTimeZone("EST"));
     assertEquals(true,
                  2 <= sunrise.get(Calendar.HOUR_OF_DAY) && 3 >= sunrise.get(Calendar.HOUR_OF_DAY));
@@ -184,13 +118,13 @@ public class PlanetTest extends TestCase {
 
     // In midwinter, sunset should be between 14:00 and 15:59.
     testCal.set(2010, GregorianCalendar.DECEMBER, 21, 12, 0, 0);
-    sunset = Planet.Sun.calcNextRiseSetTime(testCal, loc, Planet.RiseSetIndicator.SET);
+    sunset = universe.solarSystemObjectFor(Planet.Sun).calcNextRiseSetTime(testCal, loc, CelestialObject.RiseSetIndicator.SET);
     sunset.setTimeZone(TimeZone.getTimeZone("EST"));
     assertEquals(true,
                  14 <= sunset.get(Calendar.HOUR_OF_DAY) && 15 >= sunset.get(Calendar.HOUR_OF_DAY));
     assertEquals(21, sunset.get(Calendar.DAY_OF_MONTH));
     // Sunrise should be between 8:00 and 9:59 the following day.
-    sunrise = Planet.Sun.calcNextRiseSetTime(testCal, loc, Planet.RiseSetIndicator.RISE);
+    sunrise = universe.solarSystemObjectFor(Planet.Sun).calcNextRiseSetTime(testCal, loc, CelestialObject.RiseSetIndicator.RISE);
     sunrise.setTimeZone(TimeZone.getTimeZone("EST"));
     assertEquals(true,
                  8 <= sunrise.get(Calendar.HOUR_OF_DAY) && 9 >= sunrise.get(Calendar.HOUR_OF_DAY));

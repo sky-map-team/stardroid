@@ -33,7 +33,7 @@ class Universe {
      * Gets the |SolarSystemObject| corresponding to the given |Planet|.
      * TODO(johntaylor): probably a temporary shim.
      */
-    fun solarSystemObjectFor(planet : Planet) = solarSystemObjectMap[planet]
+    fun solarSystemObjectFor(planet : Planet) : SolarSystemObject = solarSystemObjectMap[planet]!!
 
     /**
      * Gets the location of a planet at a particular date.

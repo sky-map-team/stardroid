@@ -109,12 +109,12 @@ public class PlanetSource extends AbstractAstronomicalSource {
 
     if (planet == Planet.Moon) {
       imageSources.add(new ImageSourceImpl(currentCoords, resources, imageId, sunCoords,
-          planet.getPlanetaryImageSize()));
+          solarSystemObject.getPlanetaryImageSize()));
     } else {
       boolean usePlanetaryImages = preferences.getBoolean(SHOW_PLANETARY_IMAGES, true);
       if (usePlanetaryImages || planet == Planet.Sun) {
         imageSources.add(new ImageSourceImpl(currentCoords, resources, imageId, UP,
-            planet.getPlanetaryImageSize()));
+            solarSystemObject.getPlanetaryImageSize()));
       } else {
         pointSources.add(new PointSourceImpl(currentCoords, PLANET_COLOR, PLANET_SIZE));
       }

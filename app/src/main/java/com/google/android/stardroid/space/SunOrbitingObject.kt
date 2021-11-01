@@ -35,6 +35,6 @@ open class SunOrbitingObject(planet : Planet) : SolarSystemObject(planet) {
 
     /** Returns the resource id for the planet's image.  */
     override fun getImageResourceId(time: Date): Int {
-        return planet.getImageResourceId(time)
+        return planet.getImageResourceId()
     }
 }

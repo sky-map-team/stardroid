@@ -14,6 +14,7 @@
 
 package com.google.android.stardroid.activities.dialogs;
 
+import static com.google.android.stardroid.math.AstronomyKt.getNextFullMoon;
 import static com.google.android.stardroid.math.TimeUtilsKt.normalizeHours;
 
 import android.app.DatePickerDialog;
@@ -38,6 +39,8 @@ import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.DynamicStarMapActivity;
 import com.google.android.stardroid.control.AstronomerModel;
 import com.google.android.stardroid.ephemeris.Planet;
+import com.google.android.stardroid.space.CelestialObject;
+import com.google.android.stardroid.space.Universe;
 import com.google.android.stardroid.util.MiscUtil;
 
 import java.text.SimpleDateFormat;
@@ -197,8 +200,11 @@ public class TimeTravelDialog extends Dialog {
                                                                    dateFormat.format(date)));
   }
 
-  private void setToNextSunRiseOrSet(Planet.RiseSetIndicator indicator) {
-    Calendar riseset = Planet.Sun.calcNextRiseSetTime(calendar, model.getLocation(), indicator);
+  private Universe universe = new Universe();
+
+  private void setToNextSunRiseOrSet(CelestialObject.RiseSetIndicator indicator) {
+    Calendar riseset = universe.solarSystemObjectFor(Planet.Sun).calcNextRiseSetTime(
+        calendar, model.getLocation(), indicator);
     if (riseset == null) {
       Toast.makeText(this.getContext(), R.string.sun_wont_set_message, Toast.LENGTH_SHORT).show();
     } else {
@@ -224,13 +230,13 @@ public class TimeTravelDialog extends Dialog {
         calendar.setTime(new Date());
         break;
       case 1:  // Next sunset
-        setToNextSunRiseOrSet(Planet.RiseSetIndicator.SET);
+        setToNextSunRiseOrSet(CelestialObject.RiseSetIndicator.SET);
         break;
       case 2:  // Next sunrise
-        setToNextSunRiseOrSet(Planet.RiseSetIndicator.RISE);
+        setToNextSunRiseOrSet(CelestialObject.RiseSetIndicator.RISE);
         break;
       case 3:  // Next full moon
-        Date nextFullMoon = Planet.getNextFullMoon(calendar.getTime());
+        Date nextFullMoon = getNextFullMoon(calendar.getTime());
         setDate(nextFullMoon);
         break;
       case 4: // Mercury transit 2016.

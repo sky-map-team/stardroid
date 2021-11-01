@@ -66,7 +66,7 @@ class Moon : EarthOrbitingObject(Planet.Moon) {
      */
     fun getLunarPhaseImageId(time: Date): Int {
         // First, calculate phase angle:
-        val phase: Float = planet.calculatePhaseAngle(time)
+        val phase: Float = calculatePhaseAngle(time)
         // Log.d(TAG, "Lunar phase = $phase")
 
         // Next, figure out what resource id to return.
@@ -82,7 +82,7 @@ class Moon : EarthOrbitingObject(Planet.Moon) {
         // waxing or waning. Calculate the phase angle one day in the future.
         // If phase is increasing, we are waxing. If not, we are waning.
         val tomorrow = Date(time.time + 24 * 3600 * 1000)
-        val phase2: Float = planet.calculatePhaseAngle(tomorrow)
+        val phase2: Float = calculatePhaseAngle(tomorrow)
         // Log.d(TAG, "Tomorrow's phase = $phase2")
         if (phase < 67.5f) {
             // Crescent
@@ -95,4 +95,11 @@ class Moon : EarthOrbitingObject(Planet.Moon) {
         // Gibbous
         return if (phase2 > phase) R.drawable.moon3 else R.drawable.moon5
     }
+
+    override val bodySize = -0.83f
+
+    // TODO(serafini): For now, return semi-reasonable values for the Sun and
+    // Moon. We shouldn't call this method for those bodies, but we want to do
+    // something sane if we do.
+    override fun getMagnitude(time: Date?) = -10.0f
 }
