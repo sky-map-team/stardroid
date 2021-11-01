@@ -1,5 +1,8 @@
 package com.google.android.stardroid.space
 
+import android.util.Log
+import com.google.android.stardroid.R
+import com.google.android.stardroid.ephemeris.Planet
 import com.google.android.stardroid.math.*
 import com.google.android.stardroid.math.MathUtils.asin
 import com.google.android.stardroid.math.MathUtils.atan2
@@ -10,7 +13,9 @@ import java.util.*
 /**
  * A likely temporary class to represent the Moon.
  */
-class Moon : EarthOrbitingObject() {
+class Moon : EarthOrbitingObject(Planet.Moon) {
+    private val planet = Planet.Moon
+
     override fun getRaDec(date: Date): RaDec {
         /**
          * Calculate the geocentric right ascension and declination of the moon using
@@ -53,5 +58,44 @@ class Moon : EarthOrbitingObject() {
         val ra: Float = mod2pi(atan2(m, l)) * RADIANS_TO_DEGREES
         val dec: Float = asin(n) * RADIANS_TO_DEGREES
         return RaDec(ra, dec)
+    }
+
+    /** Returns the resource id for the planet's image.  */
+    override fun getImageResourceId(time: Date) = getLunarPhaseImageId(time)
+
+    /**
+     * Determine the Moon's phase and return the resource ID of the correct
+     * image.
+     */
+    fun getLunarPhaseImageId(time: Date): Int {
+        // First, calculate phase angle:
+        val phase: Float = planet.calculatePhaseAngle(time)
+        // Log.d(TAG, "Lunar phase = $phase")
+
+        // Next, figure out what resource id to return.
+        if (phase < 22.5f) {
+            // New moon.
+            return R.drawable.moon0
+        } else if (phase > 150.0f) {
+            // Full moon.
+            return R.drawable.moon4
+        }
+
+        // Either crescent, quarter, or gibbous. Need to see whether we are
+        // waxing or waning. Calculate the phase angle one day in the future.
+        // If phase is increasing, we are waxing. If not, we are waning.
+        val tomorrow = Date(time.time + 24 * 3600 * 1000)
+        val phase2: Float = planet.calculatePhaseAngle(tomorrow)
+        // Log.d(TAG, "Tomorrow's phase = $phase2")
+        if (phase < 67.5f) {
+            // Crescent
+            return if (phase2 > phase) R.drawable.moon1 else R.drawable.moon7
+        } else if (phase < 112.5f) {
+            // Quarter
+            return if (phase2 > phase) R.drawable.moon2 else R.drawable.moon6
+        }
+
+        // Gibbous
+        return if (phase2 > phase) R.drawable.moon3 else R.drawable.moon5
     }
 }

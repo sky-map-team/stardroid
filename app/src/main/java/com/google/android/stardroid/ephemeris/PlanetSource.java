@@ -28,6 +28,8 @@ import com.google.android.stardroid.source.TextSource;
 import com.google.android.stardroid.source.impl.ImageSourceImpl;
 import com.google.android.stardroid.source.impl.PointSourceImpl;
 import com.google.android.stardroid.source.impl.TextSourceImpl;
+import com.google.android.stardroid.space.CelestialObject;
+import com.google.android.stardroid.space.SolarSystemObject;
 import com.google.android.stardroid.space.Universe;
 import com.google.android.stardroid.math.Vector3;
 
@@ -62,22 +64,23 @@ public class PlanetSource extends AbstractAstronomicalSource {
   private final String name;
   private final SharedPreferences preferences;
   private final Vector3 currentCoords = new Vector3(0, 0, 0);
+  private final SolarSystemObject solarSystemObject;
   private Vector3 sunCoords;
   private int imageId = -1;
 
   private long lastUpdateTimeMs  = 0L;
+  private Universe universe = new Universe();
 
   public PlanetSource(Planet planet, Resources resources,
       AstronomerModel model, SharedPreferences prefs) {
-
     this.planet = planet;
+    this.solarSystemObject = universe.solarSystemObjectFor(planet);
     this.resources = resources;
     this.model = model;
-    this.name = resources.getString(planet.getNameResourceId());
+    this.name = resources.getString(solarSystemObject.getNameResourceId());
     this.preferences = prefs;
   }
 
-  private Universe universe = new Universe();
 
   @Override
   public List<String> getNames() {
@@ -102,7 +105,7 @@ public class PlanetSource extends AbstractAstronomicalSource {
   public Sources initialize() {
     Date time = model.getTime();
     updateCoords(time);
-    this.imageId = planet.getImageResourceId(time);
+    this.imageId = solarSystemObject.getImageResourceId(time);
 
     if (planet == Planet.Moon) {
       imageSources.add(new ImageSourceImpl(currentCoords, resources, imageId, sunCoords,
@@ -126,7 +129,7 @@ public class PlanetSource extends AbstractAstronomicalSource {
     EnumSet<UpdateType> updates = EnumSet.noneOf(UpdateType.class);
 
     Date modelTime = model.getTime();
-    if (Math.abs(modelTime.getTime() - lastUpdateTimeMs) > planet.getUpdateFrequencyMs()) {
+    if (Math.abs(modelTime.getTime() - lastUpdateTimeMs) > solarSystemObject.getUpdateFrequencyMs()) {
       updates.add(UpdateType.UpdatePositions);
       // update location
       updateCoords(modelTime);
@@ -137,7 +140,7 @@ public class PlanetSource extends AbstractAstronomicalSource {
         imageSources.get(0).setUpVector(sunCoords);
 
         // update image:
-        int newImageId = planet.getImageResourceId(modelTime);
+        int newImageId = solarSystemObject.getImageResourceId(modelTime);
         if (newImageId != imageId) {
           imageId = newImageId;
           imageSources.get(0).setImageId(imageId);

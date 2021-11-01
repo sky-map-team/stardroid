@@ -12,25 +12,26 @@ import java.util.*
  */
 class Universe {
     /**
-     * Returns all the solar system objects in the universe.
-     */
-    private val solarSystemObjects: List<SolarSystemObject> = ArrayList()
-
-    /**
      * A map from the planet enum to the corresponding CelestialObject. Possibly just
      * a temporary shim.
      */
-    private val planetMap: MutableMap<Planet, CelestialObject> = HashMap()
+    private val solarSystemObjectMap: MutableMap<Planet, SolarSystemObject> = HashMap()
     private val sun = Sun()
     private val moon = Moon()
 
     init {
         for (planet in Planet.values()) {
             if (planet != Planet.Moon && planet != Planet.Sun) {
-                planetMap.put(planet, SunOrbitingObject(planet))
+                solarSystemObjectMap.put(planet, SunOrbitingObject(planet))
             }
         }
     }
+
+    /**
+     * Gets the |SolarSystemObject| corresponding to the given |Planet|.
+     * TODO(johntaylor): probably a temporary shim.
+     */
+    fun solarSystemObjectFor(planet : Planet) = solarSystemObjectMap[planet]
 
     /**
      * Gets the location of a planet at a particular date.
@@ -44,12 +45,12 @@ class Universe {
             return getMoonRaDec(datetime)
         }
         // Not null, because all the enum values are in the map except for Sun and Moon.
-        return planetMap.get(planet)!!.getRaDec(datetime)
+        return solarSystemObjectMap.get(planet)!!.getRaDec(datetime)
     }
 
     /**
      * Gets the RaDec of the Moon at a particular date.
-     * TODO Factor this away
+     * TODO(jontayler) Factor this away
      */
     fun getMoonRaDec(datetime: Date): RaDec {
         return moon.getRaDec(datetime)
@@ -57,7 +58,7 @@ class Universe {
 
     /**
      * Gets the RaDec of the sun at a particular date.
-     * TODO Factor this away
+     * TODO(jontayloer) Factor this away
      */
     fun getSunRaDec(datetime: Date): RaDec {
         return sun.getRaDec(datetime)

@@ -19,7 +19,6 @@ import static com.google.android.stardroid.math.MathUtilsKt.DEGREES_TO_RADIANS;
 import static com.google.android.stardroid.math.MathUtilsKt.RADIANS_TO_DEGREES;
 import static com.google.android.stardroid.math.MathUtilsKt.mod2pi;
 import static com.google.android.stardroid.math.TimeUtilsKt.julianCenturies;
-import static com.google.android.stardroid.math.TimeUtilsKt.julianDay;
 import static com.google.android.stardroid.math.TimeUtilsKt.meanSiderealTime;
 
 import android.util.Log;
@@ -57,10 +56,10 @@ public enum Planet {
   private static final String TAG = MiscUtil.getTag(Planet.class);
 
   // Resource ID to use for a planet's image.
-  private int imageResourceId;
+  private final int imageResourceId;
 
   // String ID
-  private int nameResourceId;
+  private final int nameResourceId;
 
   private final long updateFreqMs;
 
@@ -85,49 +84,8 @@ public enum Planet {
 
   /** Returns the resource id for the planet's image. */
   public int getImageResourceId(Date time) {
-    if (this.equals(Planet.Moon)) {
-      return getLunarPhaseImageId(time);
-    }
     return this.imageResourceId;
   }
-
-  /**
-   * Determine the Moon's phase and return the resource ID of the correct
-   * image.
-   */
-  private int getLunarPhaseImageId(Date time) {
-    // First, calculate phase angle:
-    float phase = calculatePhaseAngle(time);
-    Log.d(TAG, "Lunar phase = " + phase);
-
-    // Next, figure out what resource id to return.
-    if (phase < 22.5f) {
-      // New moon.
-      return R.drawable.moon0;
-    } else if (phase > 150.0f) {
-      // Full moon.
-      return R.drawable.moon4;
-    }
-
-    // Either crescent, quarter, or gibbous. Need to see whether we are
-    // waxing or waning. Calculate the phase angle one day in the future.
-    // If phase is increasing, we are waxing. If not, we are waning.
-    Date tomorrow = new Date(time.getTime() + 24 * 3600 * 1000);
-    float phase2 = calculatePhaseAngle(tomorrow);
-    Log.d(TAG, "Tomorrow's phase = " + phase2);
-
-    if (phase < 67.5f) {
-      // Crescent
-      return (phase2 > phase) ? R.drawable.moon1 : R.drawable.moon7;
-    } else if (phase < 112.5f) {
-      // Quarter
-      return (phase2 > phase) ? R.drawable.moon2 : R.drawable.moon6;
-    }
-
-    // Gibbous
-    return (phase2 > phase) ? R.drawable.moon3 : R.drawable.moon5;
-  }
-
 
   // Taken from JPL's Planetary Positions page: http://ssd.jpl.nasa.gov/?planet_pos
   // This gives us a good approximation for the years 1800 to 2050 AD.
