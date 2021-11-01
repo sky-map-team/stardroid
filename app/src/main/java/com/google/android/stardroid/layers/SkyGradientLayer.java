@@ -20,6 +20,7 @@ import android.util.Log;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.base.TimeConstants;
 import com.google.android.stardroid.control.AstronomerModel;
+import com.google.android.stardroid.ephemeris.Planet;
 import com.google.android.stardroid.renderer.RendererController;
 import com.google.android.stardroid.search.SearchResult;
 import com.google.android.stardroid.math.CoordinateManipulationsKt;
@@ -86,7 +87,7 @@ public class SkyGradientLayer implements Layer {
     if (Math.abs(modelTime.getTime() - lastUpdateTimeMs) > UPDATE_FREQUENCY_MS) {
       lastUpdateTimeMs = modelTime.getTime();
 
-      RaDec sunPosition = universe.getSunRaDec(modelTime);
+      RaDec sunPosition = universe.solarSystemObjectFor(Planet.Sun).getRaDec(modelTime);
       // Log.d(TAG, "Enabling sky gradient with sun position " + sunPosition);
       rendererLock.lock();
       try {

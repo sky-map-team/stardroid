@@ -25,6 +25,8 @@ class Universe {
                 solarSystemObjectMap.put(planet, SunOrbitingObject(planet))
             }
         }
+        solarSystemObjectMap.put(Planet.Moon, moon)
+        solarSystemObjectMap.put(Planet.Sun, sun)
     }
 
     /**
@@ -38,29 +40,6 @@ class Universe {
      * Possibly a temporary swap for RaDec.getInstance.
      */
     fun getRaDec(planet: Planet, datetime: Date): RaDec {
-        if (planet == Planet.Sun) {
-            return getSunRaDec(datetime)
-        }
-        if (planet == Planet.Moon) {
-            return getMoonRaDec(datetime)
-        }
-        // Not null, because all the enum values are in the map except for Sun and Moon.
         return solarSystemObjectMap.get(planet)!!.getRaDec(datetime)
-    }
-
-    /**
-     * Gets the RaDec of the Moon at a particular date.
-     * TODO(jontayler) Factor this away
-     */
-    fun getMoonRaDec(datetime: Date): RaDec {
-        return moon.getRaDec(datetime)
-    }
-
-    /**
-     * Gets the RaDec of the sun at a particular date.
-     * TODO(jontayloer) Factor this away
-     */
-    fun getSunRaDec(datetime: Date): RaDec {
-        return sun.getRaDec(datetime)
     }
 }

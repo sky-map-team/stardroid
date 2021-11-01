@@ -34,7 +34,7 @@ class UniverseSmokeTest {
         // Pluto     18h 05.3m  -17d 45m
         testCal[2009, GregorianCalendar.JANUARY, 1, 12, 0] = 0
         run {
-            val pos = universe.getSunRaDec(testCal.time)
+            val pos = universe.getRaDec(Planet.Sun, testCal.time)
             assertThat(pos.ra).isWithin(EPSILON).of(18.813f * HOURS_TO_DEGREES)
             assertThat(pos.dec).isWithin(EPSILON).of(-22.97f)
         }
@@ -90,7 +90,7 @@ class UniverseSmokeTest {
         // Pluto     18h 02.8m  -18d 00m
         testCal[2009, GregorianCalendar.SEPTEMBER, 20, 12, 0] = 0
         run {
-            val pos = universe.getSunRaDec(testCal.time)
+            val pos = universe.getRaDec(Planet.Sun, testCal.time)
             assertThat(pos.ra).isWithin(EPSILON).of(11.857f * HOURS_TO_DEGREES)
             assertThat(pos.dec).isWithin(EPSILON).of(0.933f)
         }
@@ -147,7 +147,7 @@ class UniverseSmokeTest {
         // Pluto     18 21.5  -18 50
         testCal[2010, GregorianCalendar.DECEMBER, 25, 12, 0] = 0
         run {
-            val pos = universe.getSunRaDec(testCal.time)
+            val pos = universe.getRaDec(Planet.Sun, testCal.time)
             assertThat(pos.ra).isWithin(EPSILON).of(18.260f * HOURS_TO_DEGREES)
             assertThat(pos.dec).isWithin(EPSILON).of(-23.38f)
         }
@@ -199,19 +199,19 @@ class UniverseSmokeTest {
         testCal.timeZone = TimeZone.getTimeZone("GMT")
         run {
             testCal[2020, GregorianCalendar.OCTOBER, 12, 0, 0] = 0
-            val pos = universe.getMoonRaDec(testCal.time)
+            val pos = universe.getRaDec(Planet.Moon, testCal.time)
             assertThat(pos.ra).isWithin(LUNAR_TOL).of(RaDec.raDegreesFromHMS(9f, 4f, 15.0f))
             assertThat(pos.dec).isWithin(LUNAR_TOL).of(RaDec.decDegreesFromDMS(20f, 2f, 36.0f))
         }
         run {
             testCal[2009, GregorianCalendar.FEBRUARY, 11, 0, 0] = 0
-            val pos = universe.getMoonRaDec(testCal.time)
+            val pos = universe.getRaDec(Planet.Moon, testCal.time)
             assertThat(pos.ra).isWithin(LUNAR_TOL).of(RaDec.raDegreesFromHMS(10f, 44f, 47f))
             assertThat(pos.dec).isWithin(LUNAR_TOL).of(RaDec.decDegreesFromDMS(4f, 24f, 29f))
         }
         run {
             testCal[2005, GregorianCalendar.APRIL, 11, 0, 0] = 0
-            val pos = universe.getMoonRaDec(testCal.time)
+            val pos = universe.getRaDec(Planet.Moon, testCal.time)
             assertThat(pos.ra).isWithin(LUNAR_TOL).of(RaDec.raDegreesFromHMS(2f, 52f, 10f))
             assertThat(pos.dec).isWithin(LUNAR_TOL).of(RaDec.decDegreesFromDMS(18f, 2f, 40f))
         }

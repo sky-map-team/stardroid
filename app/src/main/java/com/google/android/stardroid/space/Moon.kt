@@ -1,6 +1,5 @@
 package com.google.android.stardroid.space
 
-import android.util.Log
 import com.google.android.stardroid.R
 import com.google.android.stardroid.ephemeris.Planet
 import com.google.android.stardroid.math.*
