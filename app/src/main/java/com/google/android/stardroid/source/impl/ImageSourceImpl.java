@@ -20,9 +20,8 @@ import android.graphics.BitmapFactory;
 import android.graphics.BitmapFactory.Options;
 import android.graphics.Color;
 
-import com.google.android.stardroid.math.GeocentricCoordinates;
+import com.google.android.stardroid.math.CoordinateManipulationsKt;
 import com.google.android.stardroid.math.Vector3;
-import com.google.android.stardroid.math.VectorUtil;
 import com.google.android.stardroid.source.ImageSource;
 
 /**
@@ -68,7 +67,7 @@ public class ImageSourceImpl extends AbstractSource implements ImageSource {
 
   public ImageSourceImpl(float ra, float dec, Resources res, int id, Vector3 upVec,
       float imageScale) {
-    this(GeocentricCoordinates.getGeocentricCoords(ra, dec), res, id, upVec, imageScale);
+    this(CoordinateManipulationsKt.getGeocentricCoords(ra, dec), res, id, upVec, imageScale);
   }
 
   public ImageSourceImpl(Vector3 coords, Resources res, int id, Vector3 upVec,
@@ -119,11 +118,11 @@ public class ImageSourceImpl extends AbstractSource implements ImageSource {
 
   public void setUpVector(Vector3 upVec) {
     Vector3 p = this.getLocation();
-    Vector3 u = VectorUtil.negate(VectorUtil.normalized(VectorUtil.crossProduct(p, upVec)));
-    Vector3 v = VectorUtil.crossProduct(u, p);
+    Vector3 u = p.times(upVec).normalizedCopy().unaryMinus();
+    Vector3 v = u.times(p);
 
-    v.scale(imageScale);
-    u.scale(imageScale);
+    v.timesAssign(imageScale);
+    u.timesAssign(imageScale);
 
     // TODO(serafini): Can we replace these with a float[]?
     ux = u.x;

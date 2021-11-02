@@ -14,12 +14,13 @@
 
 package com.google.android.stardroid.renderer;
 
+import static com.google.android.stardroid.math.MathUtilsKt.DEGREES_TO_RADIANS;
+
 import android.util.Log;
 
 import com.google.android.stardroid.R;
-import com.google.android.stardroid.math.MathUtil;
+import com.google.android.stardroid.math.MathUtils;
 import com.google.android.stardroid.math.Vector3;
-import com.google.android.stardroid.math.VectorUtil;
 import com.google.android.stardroid.renderer.util.IndexBuffer;
 import com.google.android.stardroid.renderer.util.NightVisionColorBuffer;
 import com.google.android.stardroid.renderer.util.SkyRegionMap;
@@ -122,8 +123,8 @@ public class PointObjectManager extends RendererObjectManager {
       // pixels high, a size of 1 means "1 pixel," so calculate sizeFactor
       // based on this.  These numbers mostly come from the fact that that's
       // what I think looks reasonable.
-      float fovyInRadians = 60 * MathUtil.PI / 180.0f;
-      float sizeFactor = MathUtil.tan(fovyInRadians * 0.5f) / 480;
+      float fovyInRadians = 60 * DEGREES_TO_RADIANS;
+      float sizeFactor = MathUtils.tan(fovyInRadians * 0.5f) / 480;
 
       Vector3 bottomLeftPos = new Vector3(0, 0, 0);
       Vector3 topLeftPos = new Vector3(0, 0, 0);
@@ -164,8 +165,8 @@ public class PointObjectManager extends RendererObjectManager {
         data.mTexCoordBuffer.addTexCoords(texOffsetU + starWidthInTexels, 0);
 
         Vector3 pos = p.getLocation();
-        Vector3 u = VectorUtil.normalized(VectorUtil.crossProduct(pos, up));
-        Vector3 v = VectorUtil.crossProduct(u, pos);
+        Vector3 u = pos.times(up).normalizedCopy();
+        Vector3 v = u.times(pos);
 
         float s = p.getSize() * sizeFactor;
 

@@ -16,7 +16,7 @@ package com.google.android.stardroid.util.smoothers;
 import android.hardware.SensorListener;
 import android.util.Log;
 
-import com.google.android.stardroid.math.MathUtil;
+import com.google.android.stardroid.math.MathUtils;
 import com.google.android.stardroid.util.MiscUtil;
 
 /**
@@ -45,10 +45,10 @@ public class ExponentiallyWeightedSmoother extends SensorSmoother {
       float diff = values[i] - last[i];
       float correction = diff * alpha;
       for (int j = 1; j < exponent; ++j) {
-        correction *= MathUtil.abs(diff);
+        correction *= MathUtils.abs(diff);
       }
-      if (correction > MathUtil.abs(diff) ||
-          correction < -MathUtil.abs(diff)) correction = diff;
+      if (correction > MathUtils.abs(diff) ||
+          correction < -MathUtils.abs(diff)) correction = diff;
       current[i] = last[i] + correction;
     }
     listener.onSensorChanged(sensor, current);

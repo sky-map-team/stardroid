@@ -14,10 +14,11 @@
 
 package com.google.android.stardroid.renderer;
 
+import static com.google.android.stardroid.math.MathUtilsKt.DEGREES_TO_RADIANS;
+
 import com.google.android.stardroid.R;
-import com.google.android.stardroid.math.MathUtil;
+import com.google.android.stardroid.math.MathUtils;
 import com.google.android.stardroid.math.Vector3;
-import com.google.android.stardroid.math.VectorUtil;
 import com.google.android.stardroid.renderer.util.IndexBuffer;
 import com.google.android.stardroid.renderer.util.NightVisionColorBuffer;
 import com.google.android.stardroid.renderer.util.TexCoordBuffer;
@@ -69,8 +70,8 @@ public class PolyLineObjectManager extends RendererObjectManager {
     ib.reset(numIndices);
     
     // See comment in PointObjectManager for justification of this calculation.
-    float fovyInRadians = 60 * MathUtil.PI / 180.0f; 
-    float sizeFactor = MathUtil.tan(fovyInRadians * 0.5f) / 480;
+    float fovyInRadians = 60 * DEGREES_TO_RADIANS;
+    float sizeFactor = MathUtils.tan(fovyInRadians * 0.5f) / 480;
     
     boolean opaque = true;
     
@@ -88,35 +89,35 @@ public class PolyLineObjectManager extends RendererObjectManager {
       for (int i = 0; i < coords.size() - 1; i++) {
         Vector3 p1 = coords.get(i);
         Vector3 p2 = coords.get(i+1);
-        Vector3 u = VectorUtil.difference(p2, p1);
+        Vector3 u = p2.minus(p1);
         // The normal to the quad should face the origin at its midpoint.
-        Vector3 avg = VectorUtil.sum(p1, p2);
-        avg.scale(0.5f);
+        Vector3 avg = p1.plus(p2);
+        avg.timesAssign(0.5f);
         // I'm assuming that the points will already be on a unit sphere.  If this is not the case,
         // then we should normalize it here.
-        Vector3 v = VectorUtil.normalized(VectorUtil.crossProduct(u, avg));
-        v.scale(sizeFactor * l.getLineWidth());
+        Vector3 v = u.times(avg).normalizedCopy();
+        v.timesAssign(sizeFactor * l.getLineWidth());
         
         
         // Add the vertices
         
         // Lower left corner
-        vb.addPoint(VectorUtil.difference(p1, v));
+        vb.addPoint(p1.minus(v));
         cb.addColor(color);
         tb.addTexCoords(0, 1);
         
         // Upper left corner
-        vb.addPoint(VectorUtil.sum(p1, v));
+        vb.addPoint(p1.plus(v));
         cb.addColor(color);
         tb.addTexCoords(0, 0);
         
         // Lower left corner
-        vb.addPoint(VectorUtil.difference(p2, v));
+        vb.addPoint(p2.minus(v));
         cb.addColor(color);
         tb.addTexCoords(1, 1);
         
         // Upper left corner
-        vb.addPoint(VectorUtil.sum(p2, v));
+        vb.addPoint(p2.plus(v));
         cb.addColor(color);
         tb.addTexCoords(1, 0);
         

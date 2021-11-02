@@ -19,12 +19,21 @@ import org.junit.Test
 class Matrix3x3Test {
     @Test
     fun testDeterminant() {
-        assertThat(Matrix3x3.getIdMatrix().determinant).isWithin(TOL).of(1f)
+        assertThat(Matrix3x3.identity.determinant).isWithin(TOL).of(1f)
+        assertThat(
+            Matrix3x3(1f, 2f, 3f, 4f, 5f, 6f, 7f, 8f, 9f)
+                .determinant
+        ).isWithin(TOL).of(0f)
+        assertThat(
+            Matrix3x3(1f, 2f, 33f, 4f, 5f, 6f, 7f, 8f, 11f)
+                .determinant
+        ).isWithin(TOL).of(-96f)
     }
 
     @Test
     fun testIdInverse() {
-        assertMatricesEqual(Matrix3x3.getIdMatrix(), Matrix3x3.getIdMatrix().inverse, TOL)
+        Matrix3x3Subject.assertThat(Matrix3x3.identity).isWithin(TOL)
+            .of(Matrix3x3.identity.inverse!!)
     }
 
     @Test
@@ -40,9 +49,7 @@ class Matrix3x3Test {
             0f,
             1f
         )
-        var inv = m.inverse
-        var product = Geometry.matrixMultiply(m, inv)
-        assertMatricesEqual(Matrix3x3.getIdMatrix(), product, TOL)
+        Matrix3x3Subject.assertThat(Matrix3x3.identity).isWithin(TOL).of(m * m.inverse!!)
         m = Matrix3x3(
             1f,
             2f,
@@ -54,9 +61,24 @@ class Matrix3x3Test {
             0f,
             1f
         )
-        inv = m.inverse
-        product = Geometry.matrixMultiply(m, inv)
-        assertMatricesEqual(Matrix3x3.getIdMatrix(), product, TOL)
+        Matrix3x3Subject.assertThat(Matrix3x3.identity).isWithin(TOL).of(m * m.inverse!!)
+
+        m = Matrix3x3(1f, 2f, 0f, 0f, 1f, 5f, 0f, 0f, 1f)
+        Matrix3x3Subject.assertThat(m * m.inverse!!).isWithin(TOL).of(Matrix3x3.identity)
+    }
+
+
+    @Test
+    fun testMatrixMultiply() {
+        val m1 = Matrix3x3(1f, 2f, 4f, -1f, -3f, 5f, 3f, 2f, 6f)
+        val m2 = Matrix3x3(3f, -1f, 4f, 0f, 2f, 1f, 2f, -1f, 2f)
+        val v1 = Vector3(0f, -1f, 2f)
+        val v2 = Vector3(2f, -2f, 3f)
+        Matrix3x3Subject.assertThat(
+            Matrix3x3(11f, -1f, 14f, 7f, -10f, 3f, 21f, -5f, 26f)
+        ).isWithin(TOL).of(m1 * m2)
+        Vector3Subject.assertThat(Vector3(6f, 13f, 10f)).isWithin(TOL).of(m1 * v1)
+        Vector3Subject.assertThat(Vector3(10f, 19f, 20f)).isWithin(TOL).of(m1 * v2)
     }
 
     @Test
@@ -84,7 +106,7 @@ class Matrix3x3Test {
             6f,
             9f
         )
-        assertMatricesEqual(m, mt, TOL)
+        Matrix3x3Subject.assertThat(m).isWithin(TOL).of(mt)
     }
 
     @Test
@@ -98,7 +120,7 @@ class Matrix3x3Test {
             3f, 6f, 9f
         )
         val mt = Matrix3x3(v1, v2, v3)
-        assertMatricesEqual(m, mt, TOL)
+        Matrix3x3Subject.assertThat(m).isWithin(TOL).of(mt)
     }
 
     @Test
@@ -113,22 +135,10 @@ class Matrix3x3Test {
         )
         m.transpose()
         val mt = Matrix3x3(v1, v2, v3, false)
-        assertMatricesEqual(m, mt, TOL)
+        Matrix3x3Subject.assertThat(m).isWithin(TOL).of(mt)
     }
 
     companion object {
         private const val TOL = 0.00001f
-        @JvmStatic
-        fun assertMatricesEqual(m1: Matrix3x3, m2: Matrix3x3, TOL: Float) {
-            assertThat(m1.xx).isWithin(TOL).of(m2.xx)
-            assertThat(m1.xy).isWithin(TOL).of(m2.xy)
-            assertThat(m1.xz).isWithin(TOL).of(m2.xz)
-            assertThat(m1.yx).isWithin(TOL).of(m2.yx)
-            assertThat(m1.yy).isWithin(TOL).of(m2.yy)
-            assertThat(m1.yz).isWithin(TOL).of(m2.yz)
-            assertThat(m1.zx).isWithin(TOL).of(m2.zx)
-            assertThat(m1.zy).isWithin(TOL).of(m2.zy)
-            assertThat(m1.zz).isWithin(TOL).of(m2.zz)
-        }
     }
 }

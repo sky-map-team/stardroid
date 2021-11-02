@@ -15,7 +15,6 @@
 package com.google.android.stardroid.source;
 
 import com.google.android.stardroid.renderer.RendererObjectManager.UpdateType;
-import com.google.android.stardroid.math.GeocentricCoordinates;
 import com.google.android.stardroid.math.Vector3;
 
 import java.util.EnumSet;
@@ -36,7 +35,7 @@ public interface AstronomicalSource {
   List<String> getNames();
 
   /**
-   * Returns the {@link GeocentricCoordinates} of the center of this object.
+   * Returns the GeocentriCoordinates of the center of this object.
    * This is the point to which the user will be directed for a search.
    * @return
    */

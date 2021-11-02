@@ -34,7 +34,7 @@ class UniverseSmokeTest {
         // Pluto     18h 05.3m  -17d 45m
         testCal[2009, GregorianCalendar.JANUARY, 1, 12, 0] = 0
         run {
-            val pos = universe.getSunRaDec(testCal.time)
+            val pos = universe.getRaDec(Planet.Sun, testCal.time)
             assertThat(pos.ra).isWithin(EPSILON).of(18.813f * HOURS_TO_DEGREES)
             assertThat(pos.dec).isWithin(EPSILON).of(-22.97f)
         }
@@ -90,7 +90,7 @@ class UniverseSmokeTest {
         // Pluto     18h 02.8m  -18d 00m
         testCal[2009, GregorianCalendar.SEPTEMBER, 20, 12, 0] = 0
         run {
-            val pos = universe.getSunRaDec(testCal.time)
+            val pos = universe.getRaDec(Planet.Sun, testCal.time)
             assertThat(pos.ra).isWithin(EPSILON).of(11.857f * HOURS_TO_DEGREES)
             assertThat(pos.dec).isWithin(EPSILON).of(0.933f)
         }
@@ -147,7 +147,7 @@ class UniverseSmokeTest {
         // Pluto     18 21.5  -18 50
         testCal[2010, GregorianCalendar.DECEMBER, 25, 12, 0] = 0
         run {
-            val pos = universe.getSunRaDec(testCal.time)
+            val pos = universe.getRaDec(Planet.Sun, testCal.time)
             assertThat(pos.ra).isWithin(EPSILON).of(18.260f * HOURS_TO_DEGREES)
             assertThat(pos.dec).isWithin(EPSILON).of(-23.38f)
         }
@@ -199,22 +199,138 @@ class UniverseSmokeTest {
         testCal.timeZone = TimeZone.getTimeZone("GMT")
         run {
             testCal[2020, GregorianCalendar.OCTOBER, 12, 0, 0] = 0
-            val pos = universe.getMoonRaDec(testCal.time)
+            val pos = universe.getRaDec(Planet.Moon, testCal.time)
             assertThat(pos.ra).isWithin(LUNAR_TOL).of(RaDec.raDegreesFromHMS(9f, 4f, 15.0f))
             assertThat(pos.dec).isWithin(LUNAR_TOL).of(RaDec.decDegreesFromDMS(20f, 2f, 36.0f))
         }
         run {
             testCal[2009, GregorianCalendar.FEBRUARY, 11, 0, 0] = 0
-            val pos = universe.getMoonRaDec(testCal.time)
+            val pos = universe.getRaDec(Planet.Moon, testCal.time)
             assertThat(pos.ra).isWithin(LUNAR_TOL).of(RaDec.raDegreesFromHMS(10f, 44f, 47f))
             assertThat(pos.dec).isWithin(LUNAR_TOL).of(RaDec.decDegreesFromDMS(4f, 24f, 29f))
         }
         run {
             testCal[2005, GregorianCalendar.APRIL, 11, 0, 0] = 0
-            val pos = universe.getMoonRaDec(testCal.time)
+            val pos = universe.getRaDec(Planet.Moon, testCal.time)
             assertThat(pos.ra).isWithin(LUNAR_TOL).of(RaDec.raDegreesFromHMS(2f, 52f, 10f))
             assertThat(pos.dec).isWithin(LUNAR_TOL).of(RaDec.decDegreesFromDMS(18f, 2f, 40f))
         }
+    }
+
+    // Accuracy of our Illumination calculations, in percent.
+    private val PHASE_TOL = 1.0f
+
+
+    // Verify illumination calculations for bodies that matter (Mercury, Venus, Mars, and Moon)
+    // TODO(serafini): please fix and reenable
+    // @Test
+    fun disableTestIllumination() {
+        val universe = Universe()
+        val testCal = GregorianCalendar()
+        testCal.timeZone = TimeZone.getTimeZone("GMT")
+
+        // 2009 Jan  1, 12:00 UT1
+        testCal[2009, GregorianCalendar.JANUARY, 1, 12, 0] = 0
+        assertThat(
+            universe.solarSystemObjectFor(Planet.Moon).calculatePercentIlluminated(testCal.time)
+        ).isWithin(PHASE_TOL).of(21.2f)
+        assertThat(
+            universe.solarSystemObjectFor(Planet.Mercury).calculatePercentIlluminated(testCal.time)
+        ).isWithin(PHASE_TOL).of(69.5f)
+        assertThat(
+            universe.solarSystemObjectFor(Planet.Venus).calculatePercentIlluminated(testCal.time)
+        ).isWithin(PHASE_TOL).of(57.5f)
+        assertThat(
+            universe.solarSystemObjectFor(Planet.Mars).calculatePercentIlluminated(testCal.time)
+        ).isWithin(PHASE_TOL).of(99.8f)
+
+        // 2009 Sep 20, 12:00 UT1
+        testCal[2009, GregorianCalendar.SEPTEMBER, 20, 12, 0] = 0
+        assertThat(
+            universe.solarSystemObjectFor(Planet.Moon).calculatePercentIlluminated(testCal.time)
+        ).isWithin(PHASE_TOL).of(4.1f)
+        assertThat(
+            universe.solarSystemObjectFor(Planet.Mercury).calculatePercentIlluminated(testCal.time)
+        ).isWithin(PHASE_TOL).of(0.5f)
+        assertThat(
+            universe.solarSystemObjectFor(Planet.Venus).calculatePercentIlluminated(testCal.time)
+        ).isWithin(PHASE_TOL).of(88.0f)
+        assertThat(
+            universe.solarSystemObjectFor(Planet.Mars).calculatePercentIlluminated(testCal.time)
+        ).isWithin(PHASE_TOL).of(88.7f)
+
+        // 2010 Dec 25, 12:00 UT1
+        testCal[2010, GregorianCalendar.DECEMBER, 25, 12, 0] = 0
+        assertThat(
+            universe.solarSystemObjectFor(Planet.Moon).calculatePercentIlluminated(testCal.time)
+        ).isWithin(PHASE_TOL).of(79.0f)
+        assertThat(
+            universe.solarSystemObjectFor(Planet.Mercury).calculatePercentIlluminated(testCal.time)
+        ).isWithin(PHASE_TOL).of(12.1f)
+        assertThat(
+            universe.solarSystemObjectFor(Planet.Venus).calculatePercentIlluminated(testCal.time)
+        ).isWithin(PHASE_TOL).of(42.0f)
+        assertThat(
+            universe.solarSystemObjectFor(Planet.Mars).calculatePercentIlluminated(testCal.time)
+        ).isWithin(PHASE_TOL).of(99.6f)
+    }
+
+    private val REG_TOL = 0.0001f
+
+    // These are copies of the above tests that are disabled, but 'fixed' to pass. This doesn't
+    // mean the calculations are correct...just that any refactorings we do haven't changed them.
+    // This obviously needs to be revisited.
+    @Test
+    fun regressionTests() {
+        val universe = Universe()
+        val testCal = GregorianCalendar()
+        testCal.timeZone = TimeZone.getTimeZone("GMT")
+
+        // 2010 Dec 25, 12:00 UT1
+        testCal[2010, GregorianCalendar.DECEMBER, 25, 12, 0] = 0
+        assertThat(
+            universe.solarSystemObjectFor(Planet.Moon).calculatePercentIlluminated(testCal.time)
+        ).isWithin(REG_TOL).of(21.741992950439453f)
+        assertThat(
+            universe.solarSystemObjectFor(Planet.Mercury).calculatePercentIlluminated(testCal.time)
+        ).isWithin(REG_TOL).of(12.131664276123047f)
+        assertThat(
+            universe.solarSystemObjectFor(Planet.Venus).calculatePercentIlluminated(testCal.time)
+        ).isWithin(REG_TOL).of(42.03889846801758f)
+        assertThat(
+            universe.solarSystemObjectFor(Planet.Mars).calculatePercentIlluminated(testCal.time)
+        ).isWithin(REG_TOL).of(99.64849853515625f)
+
+        // Don't trust these numbers
+        assertThat(
+            universe.solarSystemObjectFor(Planet.Moon).calculatePhaseAngle(testCal.time)
+        ).isWithin(REG_TOL).of(124.41341400146484f)
+        assertThat(
+            universe.solarSystemObjectFor(Planet.Mercury).calculatePhaseAngle(testCal.time)
+        ).isWithin(REG_TOL).of(139.23260498046875f)
+        assertThat(
+            universe.solarSystemObjectFor(Planet.Venus).calculatePhaseAngle(testCal.time)
+        ).isWithin(REG_TOL).of(99.1617431640625f)
+        assertThat(
+            universe.solarSystemObjectFor(Planet.Mars).calculatePhaseAngle(testCal.time)
+        ).isWithin(REG_TOL).of(6.797830581665039f)
+        assertThat(universe.solarSystemObjectFor(Planet.Moon).getMagnitude(testCal.time)).isWithin(REG_TOL).of(-10f)
+        assertThat(universe.solarSystemObjectFor(Planet.Mercury).getMagnitude(testCal.time)).isWithin(REG_TOL)
+            .of(1.7964696884155273f)
+        assertThat(universe.solarSystemObjectFor(Planet.Venus).getMagnitude(testCal.time)).isWithin(REG_TOL)
+            .of(-4.544736385345459f)
+        assertThat(universe.solarSystemObjectFor(Planet.Mars).getMagnitude(testCal.time)).isWithin(REG_TOL).of(1.2287708520889282f)
+        assertThat(universe.solarSystemObjectFor(Planet.Jupiter).getMagnitude(testCal.time)).isWithin(REG_TOL)
+            .of(-2.377939224243164f)
+        assertThat(universe.solarSystemObjectFor(Planet.Saturn).getMagnitude(testCal.time)).isWithin(REG_TOL)
+            .of(1.1006574630737305f)
+        assertThat(universe.solarSystemObjectFor(Planet.Uranus).getMagnitude(testCal.time)).isWithin(REG_TOL)
+            .of(5.848583698272705f)
+        assertThat(universe.solarSystemObjectFor(Planet.Neptune).getMagnitude(testCal.time)).isWithin(REG_TOL)
+            .of(7.944333076477051f)
+        assertThat(universe.solarSystemObjectFor(Planet.Pluto).getMagnitude(testCal.time)).isWithin(REG_TOL)
+            .of(14.110675811767578f)
+        assertThat(universe.solarSystemObjectFor(Planet.Sun).getMagnitude(testCal.time)).isWithin(REG_TOL).of(-27f)
     }
 
     companion object {

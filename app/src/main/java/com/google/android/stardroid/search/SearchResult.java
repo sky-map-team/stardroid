@@ -14,7 +14,6 @@
 
 package com.google.android.stardroid.search;
 
-import com.google.android.stardroid.math.GeocentricCoordinates;
 import com.google.android.stardroid.math.Vector3;
 
 /**

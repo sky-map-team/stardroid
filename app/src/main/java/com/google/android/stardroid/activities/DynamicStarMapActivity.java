@@ -63,8 +63,8 @@ import com.google.android.stardroid.control.ControllerGroup;
 import com.google.android.stardroid.control.MagneticDeclinationCalculatorSwitcher;
 import com.google.android.stardroid.inject.HasComponent;
 import com.google.android.stardroid.layers.LayerManager;
-import com.google.android.stardroid.math.GeocentricCoordinates;
-import com.google.android.stardroid.math.MathUtil;
+import com.google.android.stardroid.math.CoordinateManipulationsKt;
+import com.google.android.stardroid.math.MathUtils;
 import com.google.android.stardroid.math.Vector3;
 import com.google.android.stardroid.renderer.RendererController;
 import com.google.android.stardroid.renderer.SkyRenderer;
@@ -132,7 +132,7 @@ public class DynamicStarMapActivity extends InjectableActivity
       rendererController.queueSetViewOrientation(directionX, directionY, directionZ, upX, upY, upZ);
 
       Vector3 up = model.getPhoneUpDirection();
-      rendererController.queueTextAngle(MathUtil.atan2(up.x, up.y));
+      rendererController.queueTextAngle(MathUtils.atan2(up.x, up.y));
       rendererController.queueViewerUpDirection(model.getZenith().copyForJ());
 
       float fieldOfView = model.getFieldOfView();
@@ -155,7 +155,7 @@ public class DynamicStarMapActivity extends InjectableActivity
   private RendererController rendererController;
   private boolean nightMode = false;
   private boolean searchMode = false;
-  private Vector3 searchTarget = GeocentricCoordinates.getGeocentricCoords(0, 0);
+  private Vector3 searchTarget = CoordinateManipulationsKt.getGeocentricCoords(0, 0);
 
   @Inject SharedPreferences sharedPreferences;
   private GLSurfaceView skyView;

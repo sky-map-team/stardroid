@@ -18,7 +18,6 @@ import android.content.Context;
 import android.util.Log;
 
 import com.google.android.stardroid.base.VisibleForTesting;
-import com.google.android.stardroid.math.GeocentricCoordinates;
 import com.google.android.stardroid.math.Vector3;
 import com.google.android.stardroid.util.MiscUtil;
 

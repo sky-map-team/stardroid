@@ -14,11 +14,13 @@
 
 package com.google.android.stardroid.renderer;
 
+import static com.google.android.stardroid.math.MathUtilsKt.RADIANS_TO_DEGREES;
+import static com.google.android.stardroid.math.MathUtilsKt.TWO_PI;
+
 import android.util.Log;
 
-import com.google.android.stardroid.math.MathUtil;
+import com.google.android.stardroid.math.MathUtils;
 import com.google.android.stardroid.math.Vector3;
-import com.google.android.stardroid.math.VectorUtil;
 import com.google.android.stardroid.renderer.util.ColorBuffer;
 import com.google.android.stardroid.renderer.util.IndexBuffer;
 import com.google.android.stardroid.renderer.util.TextureManager;
@@ -41,10 +43,10 @@ public class SkyBox extends RendererObjectManager {
     float[] cosAngles = new float[NUM_STEPS_IN_BAND];
     
     float angleInBand = 0;
-    float dAngle = MathUtil.TWO_PI / (NUM_STEPS_IN_BAND - 1);
+    float dAngle = TWO_PI / (NUM_STEPS_IN_BAND - 1);
     for (int i = 0; i < NUM_STEPS_IN_BAND; i++) {
-      sinAngles[i] = MathUtil.sin(angleInBand);
-      cosAngles[i] = MathUtil.cos(angleInBand);
+      sinAngles[i] = MathUtils.sin(angleInBand);
+      cosAngles[i] = MathUtils.cos(angleInBand);
       angleInBand += dAngle;
     }
     
@@ -66,7 +68,7 @@ public class SkyBox extends RendererObjectManager {
         color = (intensity << 16) | (intensity << 8) | intensity | 0xff000000;
       }
       
-      float sinPhi = bandPos > -1 ? MathUtil.sqrt(1 - bandPos*bandPos) : 0; 
+      float sinPhi = bandPos > -1 ? MathUtils.sqrt(1 - bandPos*bandPos) : 0; 
       for (int i = 0; i < NUM_STEPS_IN_BAND; i++) {
         vb.addPoint(cosAngles[i] * sinPhi, bandPos, sinAngles[i] * sinPhi);
         cb.addColor(color);
@@ -149,9 +151,9 @@ public class SkyBox extends RendererObjectManager {
     gl.glPushMatrix();
 
     // Rotate the sky box to the position of the sun.
-    Vector3 cp = VectorUtil.crossProduct(new Vector3(0, 1, 0), mSunPos);
-    cp = VectorUtil.normalized(cp);
-    float angle = 180.0f / MathUtil.PI * MathUtil.acos(mSunPos.y);
+    Vector3 cp = new Vector3(0, 1, 0).times(mSunPos);
+    cp = cp.normalizedCopy();
+    float angle = RADIANS_TO_DEGREES * MathUtils.acos(mSunPos.y);
     gl.glRotatef(angle, cp.x, cp.y, cp.z);
     
     mVertexBuffer.set(gl);

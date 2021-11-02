@@ -16,10 +16,12 @@ package com.google.android.stardroid.touch;
 
 //import android.util.Log;
 
+import static com.google.android.stardroid.math.MathUtilsKt.RADIANS_TO_DEGREES;
+
 import android.util.Log;
 import android.view.MotionEvent;
 
-import com.google.android.stardroid.math.MathUtil;
+import com.google.android.stardroid.math.MathUtils;
 import com.google.android.stardroid.util.MiscUtil;
 
 /**
@@ -139,17 +141,17 @@ public class DragRotateZoomGestureDetector {
       // Log.d(TAG, "Previous vector: " + vectorBeforeX + ", " + vectorBeforeY);
       // Log.d(TAG, "Current vector: " + vectorCurrentX + ", " + vectorCurrentY);
 
-      float lengthRatio = MathUtil.sqrt(normSquared(vectorCurrentX, vectorCurrentY)
+      float lengthRatio = MathUtils.sqrt(normSquared(vectorCurrentX, vectorCurrentY)
           / normSquared(vectorLastX, vectorLastY));
       // Log.d(TAG, "Stretching map by ratio " + ratio);
       listener.onStretch(lengthRatio);
-      float angleLast = MathUtil.atan2(vectorLastX, vectorLastY);
-      float angleCurrent = MathUtil.atan2(vectorCurrentX, vectorCurrentY);
+      float angleLast = MathUtils.atan2(vectorLastX, vectorLastY);
+      float angleCurrent = MathUtils.atan2(vectorCurrentX, vectorCurrentY);
       // Log.d(TAG, "Angle before " + angleBefore);
       // Log.d(TAG, "Angle after " + angleAfter);
       float angleDelta = angleCurrent - angleLast;
       // Log.d(TAG, "Rotating map by angle delta " + angleDelta);
-      listener.onRotate(angleDelta * MathUtil.RADIANS_TO_DEGREES);
+      listener.onRotate(angleDelta * RADIANS_TO_DEGREES);
 
       last1X = current1X;
       last1Y = current1Y;

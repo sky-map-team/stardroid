@@ -30,7 +30,7 @@ import com.google.android.stardroid.source.proto.SourceProto.GeocentricCoordinat
 import com.google.android.stardroid.source.proto.SourceProto.LabelElementProto;
 import com.google.android.stardroid.source.proto.SourceProto.LineElementProto;
 import com.google.android.stardroid.source.proto.SourceProto.PointElementProto;
-import com.google.android.stardroid.math.GeocentricCoordinates;
+import com.google.android.stardroid.math.CoordinateManipulationsKt;
 import com.google.android.stardroid.math.Vector3;
 import com.google.android.stardroid.util.MiscUtil;
 
@@ -177,6 +177,6 @@ public class ProtobufAstronomicalSource extends AbstractAstronomicalSource {
   }
 
   private static Vector3 getCoords(GeocentricCoordinatesProto proto) {
-    return GeocentricCoordinates.getGeocentricCoords(proto.getRightAscension(), proto.getDeclination());
+    return CoordinateManipulationsKt.getGeocentricCoords(proto.getRightAscension(), proto.getDeclination());
   }
 }

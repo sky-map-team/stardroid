@@ -37,15 +37,15 @@ data class LatLong(private val _latitudeDeg: Float, private val _longitudeDeg: F
      */
     fun distanceFrom(other: LatLong): Float {
         // Some misuse of the astronomy math classes
-        val otherPnt = GeocentricCoordinates.getGeocentricCoords(
+        val otherPnt = getGeocentricCoords(
             other.longitude,
             other.latitude
         )
-        val thisPnt = GeocentricCoordinates.getGeocentricCoords(
+        val thisPnt = getGeocentricCoords(
             longitude,
             latitude
         )
-        val cosTheta = Geometry.cosineSimilarity(thisPnt, otherPnt)
-        return MathUtil.acos(cosTheta) * 180f / MathUtil.PI
+        val cosTheta = thisPnt.cosineSimilarity(otherPnt)
+        return MathUtils.acos(cosTheta) * 180f / PI
     }
 }

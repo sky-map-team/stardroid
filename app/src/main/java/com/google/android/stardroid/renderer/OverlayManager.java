@@ -18,10 +18,9 @@ import android.content.res.Resources;
 import android.opengl.GLU;
 import android.util.Log;
 
-import com.google.android.stardroid.math.MathUtil;
+import com.google.android.stardroid.math.MathUtils;
 import com.google.android.stardroid.math.Matrix4x4;
 import com.google.android.stardroid.math.Vector3;
-import com.google.android.stardroid.math.VectorUtil;
 import com.google.android.stardroid.renderer.util.ColoredQuad;
 import com.google.android.stardroid.renderer.util.SearchHelper;
 import com.google.android.stardroid.renderer.util.TextureManager;
@@ -111,10 +110,10 @@ public class OverlayManager extends RendererObjectManager {
   // viewerUp MUST be normalized.
   public void setViewerUpDirection(Vector3 viewerUp) {
     // Log.d("OverlayManager", "Setting viewer up " + viewerUp);
-    if (MathUtil.abs(viewerUp.y) < 0.999f) {
-      Vector3 cp = VectorUtil.crossProduct(viewerUp, new Vector3(0, 1, 0));
-      cp = VectorUtil.normalized(cp);
-      mGeoToViewerTransform = Matrix4x4.createRotation(MathUtil.acos(viewerUp.y), cp);
+    if (MathUtils.abs(viewerUp.y) < 0.999f) {
+      Vector3 cp = viewerUp.times(new Vector3(0, 1, 0));
+      cp = cp.normalizedCopy();
+      mGeoToViewerTransform = Matrix4x4.createRotation(MathUtils.acos(viewerUp.y), cp);
     } else {
       mGeoToViewerTransform = Matrix4x4.createIdentity();
     }

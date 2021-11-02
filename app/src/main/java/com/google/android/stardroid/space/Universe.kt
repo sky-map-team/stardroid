@@ -12,54 +12,34 @@ import java.util.*
  */
 class Universe {
     /**
-     * Returns all the solar system objects in the universe.
-     */
-    private val solarSystemObjects: List<SolarSystemObject> = ArrayList()
-
-    /**
      * A map from the planet enum to the corresponding CelestialObject. Possibly just
      * a temporary shim.
      */
-    private val planetMap: MutableMap<Planet, CelestialObject> = HashMap()
+    private val solarSystemObjectMap: MutableMap<Planet, SolarSystemObject> = HashMap()
     private val sun = Sun()
     private val moon = Moon()
 
     init {
         for (planet in Planet.values()) {
             if (planet != Planet.Moon && planet != Planet.Sun) {
-                planetMap.put(planet, SunOrbitingObject(planet))
+                solarSystemObjectMap.put(planet, SunOrbitingObject(planet))
             }
         }
+        solarSystemObjectMap.put(Planet.Moon, moon)
+        solarSystemObjectMap.put(Planet.Sun, sun)
     }
+
+    /**
+     * Gets the |SolarSystemObject| corresponding to the given |Planet|.
+     * TODO(johntaylor): probably a temporary shim.
+     */
+    fun solarSystemObjectFor(planet : Planet) : SolarSystemObject = solarSystemObjectMap[planet]!!
 
     /**
      * Gets the location of a planet at a particular date.
      * Possibly a temporary swap for RaDec.getInstance.
      */
     fun getRaDec(planet: Planet, datetime: Date): RaDec {
-        if (planet == Planet.Sun) {
-            return getSunRaDec(datetime)
-        }
-        if (planet == Planet.Moon) {
-            return getMoonRaDec(datetime)
-        }
-        // Not null, because all the enum values are in the map except for Sun and Moon.
-        return planetMap.get(planet)!!.getRaDec(datetime)
-    }
-
-    /**
-     * Gets the RaDec of the Moon at a particular date.
-     * TODO Factor this away
-     */
-    fun getMoonRaDec(datetime: Date): RaDec {
-        return moon.getRaDec(datetime)
-    }
-
-    /**
-     * Gets the RaDec of the sun at a particular date.
-     * TODO Factor this away
-     */
-    fun getSunRaDec(datetime: Date): RaDec {
-        return sun.getRaDec(datetime)
+        return solarSystemObjectMap.get(planet)!!.getRaDec(datetime)
     }
 }

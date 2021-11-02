@@ -14,11 +14,12 @@
 
 package com.google.android.stardroid.renderer.util;
 
+import static com.google.android.stardroid.math.MathUtilsKt.DEGREES_TO_RADIANS;
+
 import android.util.Log;
 
-import com.google.android.stardroid.math.MathUtil;
+import com.google.android.stardroid.math.MathUtils;
 import com.google.android.stardroid.math.Vector3;
-import com.google.android.stardroid.math.VectorUtil;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -125,7 +126,7 @@ public class SkyRegionMap<RegionRenderingData> {
       // S and R are unit vectors, so S dot R = cos(angle between S and R)
       // S dot R > cos(s + r)
       // So the regions where this holds true are the visible regions.
-      return regionCenterDotProducts[region] > MathUtil.cos(coverageAngle + screenAngle);
+      return regionCenterDotProducts[region] > MathUtils.cos(coverageAngle + screenAngle);
     }
   }
 
@@ -269,20 +270,20 @@ public class SkyRegionMap<RegionRenderingData> {
     // and the corner of the screen.  This distance is:
     // d = sin(fovy / 2) * sqrt(1 + aspect^2).
     // The angle for the screen region is the arcsin of this value.
-    float halfFovy = (fovyInDegrees * MathUtil.DEGREES_TO_RADIANS) / 2;
-    float screenAngle = MathUtil.asin(
-        MathUtil.sin(halfFovy) * MathUtil.sqrt(1 + aspect * aspect));
+    float halfFovy = (fovyInDegrees * DEGREES_TO_RADIANS) / 2;
+    float screenAngle = MathUtils.asin(
+        MathUtils.sin(halfFovy) * MathUtils.sqrt(1 + aspect * aspect));
 
     // Next, determine whether or not the region is active.  See the
     // regionIsActive method for an explanation of the math here.
     // We don't use that method because if we did, we would repeatedly
     // compute the same cosine in that function.
     float angleThreshold = screenAngle + REGION_COVERAGE_ANGLE_IN_RADIANS;
-    float dotProductThreshold = MathUtil.cos(angleThreshold);
+    float dotProductThreshold = MathUtils.cos(angleThreshold);
     float[] regionCenterDotProducts = new float[REGION_CENTERS.length];
     ArrayList<Integer> activeStandardRegions = new ArrayList<Integer>();
     for (int i = 0; i < REGION_CENTERS.length; i++) {
-      float dotProduct = VectorUtil.dotProduct(lookDir, REGION_CENTERS[i]);
+      float dotProduct = lookDir.dot(REGION_CENTERS[i]);
       regionCenterDotProducts[i] = dotProduct;
       if (dotProduct > dotProductThreshold) {
         activeStandardRegions.add(i);
@@ -323,7 +324,7 @@ public class SkyRegionMap<RegionRenderingData> {
     // does that.
     ObjectRegionData data = new ObjectRegionData();
     for (int i = 0; i < REGION_CENTERS.length; i++) {
-      float dotProduct = VectorUtil.dotProduct(REGION_CENTERS[i], position);
+      float dotProduct = REGION_CENTERS[i].dot(position);
       if (dotProduct > data.regionCenterDotProduct) {
         data.regionCenterDotProduct = dotProduct;
         data.region = i;
@@ -331,10 +332,10 @@ public class SkyRegionMap<RegionRenderingData> {
     }
 
     // For debugging only: make sure we're within the maximum region coverage angle.
-    if (data.regionCenterDotProduct < MathUtil.cos(REGION_COVERAGE_ANGLE_IN_RADIANS)) {
+    if (data.regionCenterDotProduct < MathUtils.cos(REGION_COVERAGE_ANGLE_IN_RADIANS)) {
       Log.e("ActiveSkyRegionData",
             "Object put in region, but outside of coverage angle. " +
-            "Angle was " + MathUtil.acos(data.regionCenterDotProduct) + " vs "  +
+            "Angle was " + MathUtils.acos(data.regionCenterDotProduct) + " vs "  +
             REGION_COVERAGE_ANGLE_IN_RADIANS + ". Region was " + data.region);
     }
 

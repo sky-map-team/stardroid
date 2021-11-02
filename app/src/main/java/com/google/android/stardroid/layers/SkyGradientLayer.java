@@ -20,11 +20,12 @@ import android.util.Log;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.base.TimeConstants;
 import com.google.android.stardroid.control.AstronomerModel;
-import com.google.android.stardroid.ephemeris.SolarPositionCalculator;
+import com.google.android.stardroid.ephemeris.Planet;
 import com.google.android.stardroid.renderer.RendererController;
 import com.google.android.stardroid.search.SearchResult;
-import com.google.android.stardroid.math.GeocentricCoordinates;
+import com.google.android.stardroid.math.CoordinateManipulationsKt;
 import com.google.android.stardroid.math.RaDec;
+import com.google.android.stardroid.space.Universe;
 import com.google.android.stardroid.util.MiscUtil;
 
 import java.util.Collections;
@@ -42,6 +43,7 @@ import java.util.concurrent.locks.ReentrantLock;
 public class SkyGradientLayer implements Layer {
   private static final String TAG = MiscUtil.getTag(SkyGradientLayer.class);
   private static final long UPDATE_FREQUENCY_MS = 5L * TimeConstants.MILLISECONDS_PER_MINUTE;
+  public static final Universe universe = new Universe();
 
   private final ReentrantLock rendererLock = new ReentrantLock();
   private final AstronomerModel model;
@@ -85,11 +87,11 @@ public class SkyGradientLayer implements Layer {
     if (Math.abs(modelTime.getTime() - lastUpdateTimeMs) > UPDATE_FREQUENCY_MS) {
       lastUpdateTimeMs = modelTime.getTime();
 
-      RaDec sunPosition = SolarPositionCalculator.getSolarPosition(modelTime);
+      RaDec sunPosition = universe.solarSystemObjectFor(Planet.Sun).getRaDec(modelTime);
       // Log.d(TAG, "Enabling sky gradient with sun position " + sunPosition);
       rendererLock.lock();
       try {
-        renderer.queueEnableSkyGradient(GeocentricCoordinates.getGeocentricCoords(sunPosition));
+        renderer.queueEnableSkyGradient(CoordinateManipulationsKt.getGeocentricCoords(sunPosition));
       } finally {
         rendererLock.unlock();
       }
