@@ -14,6 +14,8 @@
 
 package com.google.android.stardroid.source;
 
+import com.google.android.stardroid.source.impl.ImagePrimitive;
+
 import java.util.List;
 
 /**

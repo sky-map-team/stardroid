@@ -23,10 +23,9 @@ import com.google.android.stardroid.control.AstronomerModel;
 import com.google.android.stardroid.renderer.RendererObjectManager.UpdateType;
 import com.google.android.stardroid.source.AbstractAstronomicalSource;
 import com.google.android.stardroid.source.AstronomicalSource;
-import com.google.android.stardroid.source.ImagePrimitive;
 import com.google.android.stardroid.source.Sources;
 import com.google.android.stardroid.source.TextPrimitive;
-import com.google.android.stardroid.source.impl.ImagePrimitiveImpl;
+import com.google.android.stardroid.source.impl.ImagePrimitive;
 import com.google.android.stardroid.source.impl.TextPrimitiveImpl;
 import com.google.android.stardroid.math.CoordinateManipulationsKt;
 import com.google.android.stardroid.math.Vector3;
@@ -183,7 +182,7 @@ public class MeteorShowerLayer extends AbstractSourceLayer {
     private final AstronomerModel model;
 
     private long lastUpdateTimeMs = 0L;
-    private ImagePrimitiveImpl theImage;
+    private ImagePrimitive theImage;
     private TextPrimitive label;
     private Shower shower;
     private String name;
@@ -204,7 +203,7 @@ public class MeteorShowerLayer extends AbstractSourceLayer {
       // appears to be a bug in the renderer/layer interface in that Update values are not
       // respected.  Ditto the label.
       // TODO(johntaylor): fix the bug and remove this blank image
-      theImage = new ImagePrimitiveImpl(shower.radiant, resources, R.drawable.blank, UP, SCALE_FACTOR);
+      theImage = new ImagePrimitive(shower.radiant, resources, R.drawable.blank, UP, SCALE_FACTOR);
       imageSources.add(theImage);
       label = new TextPrimitiveImpl(shower.radiant, name, LABEL_COLOR);
       labelSources.add(label);

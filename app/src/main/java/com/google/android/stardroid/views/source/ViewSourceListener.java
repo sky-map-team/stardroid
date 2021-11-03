@@ -16,10 +16,10 @@ package com.google.android.stardroid.views.source;
 
 import java.util.List;
 
-import com.google.android.stardroid.source.ImagePrimitive;
 import com.google.android.stardroid.source.LinePrimitive;
 import com.google.android.stardroid.source.PointPrimitive;
 import com.google.android.stardroid.source.TextPrimitive;
+import com.google.android.stardroid.source.impl.ImagePrimitive;
 
 /**
  * Defines a simple listener interface which responds to changes in the sources and 

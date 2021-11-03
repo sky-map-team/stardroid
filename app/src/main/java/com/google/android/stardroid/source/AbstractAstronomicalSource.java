@@ -16,6 +16,7 @@ package com.google.android.stardroid.source;
 
 import com.google.android.stardroid.renderer.RendererObjectManager.UpdateType;
 import com.google.android.stardroid.math.Vector3;
+import com.google.android.stardroid.source.impl.ImagePrimitive;
 
 import java.util.Collections;
 import java.util.EnumSet;

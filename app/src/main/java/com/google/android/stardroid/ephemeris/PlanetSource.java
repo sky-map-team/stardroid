@@ -21,11 +21,10 @@ import com.google.android.stardroid.base.Lists;
 import com.google.android.stardroid.control.AstronomerModel;
 import com.google.android.stardroid.renderer.RendererObjectManager.UpdateType;
 import com.google.android.stardroid.source.AbstractAstronomicalSource;
-import com.google.android.stardroid.source.ImagePrimitive;
 import com.google.android.stardroid.source.PointPrimitive;
 import com.google.android.stardroid.source.Sources;
 import com.google.android.stardroid.source.TextPrimitive;
-import com.google.android.stardroid.source.impl.ImagePrimitiveImpl;
+import com.google.android.stardroid.source.impl.ImagePrimitive;
 import com.google.android.stardroid.source.impl.PointPrimitiveImpl;
 import com.google.android.stardroid.source.impl.TextPrimitiveImpl;
 import com.google.android.stardroid.space.SolarSystemObject;
@@ -55,7 +54,7 @@ public class PlanetSource extends AbstractAstronomicalSource {
   private static final Vector3 UP = new Vector3(0.0f, 1.0f, 0.0f);
 
   private final ArrayList<PointPrimitive> pointPrimitives = new ArrayList<PointPrimitive>();
-  private final ArrayList<ImagePrimitiveImpl> imagePrimitives = new ArrayList<ImagePrimitiveImpl>();
+  private final ArrayList<ImagePrimitive> imagePrimitives = new ArrayList<ImagePrimitive>();
   private final ArrayList<TextPrimitive> labelPrimitives = new ArrayList<TextPrimitive>();
   private final Planet planet;
   private final Resources resources;
@@ -95,7 +94,7 @@ public class PlanetSource extends AbstractAstronomicalSource {
     this.lastUpdateTimeMs = time.getTime();
     this.sunCoords = heliocentricCoordinatesFromOrbitalElements(Planet.Sun.getOrbitalElements(time));
     updateFromRaDec(this.currentCoords, universe.getRaDec(planet, time));
-    for (ImagePrimitiveImpl imagePrimitives : imagePrimitives) {
+    for (ImagePrimitive imagePrimitives : imagePrimitives) {
       imagePrimitives.setUpVector(sunCoords);  // TODO(johntaylor): figure out why we do this.
     }
   }
@@ -107,12 +106,12 @@ public class PlanetSource extends AbstractAstronomicalSource {
     this.imageId = solarSystemObject.getImageResourceId(time);
 
     if (planet == Planet.Moon) {
-      imagePrimitives.add(new ImagePrimitiveImpl(currentCoords, resources, imageId, sunCoords,
+      imagePrimitives.add(new ImagePrimitive(currentCoords, resources, imageId, sunCoords,
           solarSystemObject.getPlanetaryImageSize()));
     } else {
       boolean usePlanetaryImages = preferences.getBoolean(SHOW_PLANETARY_IMAGES, true);
       if (usePlanetaryImages || planet == Planet.Sun) {
-        imagePrimitives.add(new ImagePrimitiveImpl(currentCoords, resources, imageId, UP,
+        imagePrimitives.add(new ImagePrimitive(currentCoords, resources, imageId, UP,
             solarSystemObject.getPlanetaryImageSize()));
       } else {
         pointPrimitives.add(new PointPrimitiveImpl(currentCoords, PLANET_COLOR, PLANET_SIZE));
