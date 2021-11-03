@@ -47,7 +47,7 @@ public abstract class AbstractSourceLayer extends AbstractLayer {
   private static final String TAG = MiscUtil.getTag(AbstractSourceLayer.class);
 
   private final ArrayList<TextPrimitive> textPrimitives = new ArrayList<TextPrimitive>();
-  private final ArrayList<ImagePrimitive> imageSources = new ArrayList<ImagePrimitive>();
+  private final ArrayList<ImagePrimitive> imagePrimitives = new ArrayList<ImagePrimitive>();
   private final ArrayList<PointPrimitive> pointPrimitives = new ArrayList<PointPrimitive>();
   private final ArrayList<LinePrimitive> linePrimitives = new ArrayList<LinePrimitive>();
   private final ArrayList<AstronomicalSource> astroSources = new ArrayList<AstronomicalSource>();
@@ -72,7 +72,7 @@ public abstract class AbstractSourceLayer extends AbstractLayer {
       Sources sources = astroSource.initialize();
 
       textPrimitives.addAll(sources.getLabels());
-      imageSources.addAll(sources.getImages());
+      imagePrimitives.addAll(sources.getImages());
       pointPrimitives.addAll(sources.getPoints());
       linePrimitives.addAll(sources.getLines());
 
@@ -141,7 +141,7 @@ public abstract class AbstractSourceLayer extends AbstractLayer {
   }
 
   private final void redraw(EnumSet<UpdateType> updateTypes) {
-    super.redraw(textPrimitives, pointPrimitives, linePrimitives, imageSources, updateTypes);
+    super.redraw(textPrimitives, pointPrimitives, linePrimitives, imagePrimitives, updateTypes);
   }
 
   @Override
