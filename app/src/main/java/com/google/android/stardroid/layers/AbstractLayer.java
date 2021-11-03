@@ -113,8 +113,8 @@ public abstract class AbstractLayer implements Layer {
       final ArrayList<TextPrimitive> textPrimitives,
       final ArrayList<PointPrimitive> pointPrimitives,
       final ArrayList<LinePrimitive> linePrimitives,
-      final ArrayList<ImagePrimitive> imageSources) {
-    redraw(textPrimitives, pointPrimitives, linePrimitives, imageSources, EnumSet.of(UpdateType.Reset));
+      final ArrayList<ImagePrimitive> imagePrimitives) {
+    redraw(textPrimitives, pointPrimitives, linePrimitives, imagePrimitives, EnumSet.of(UpdateType.Reset));
   }
 
   /**
@@ -127,7 +127,7 @@ public abstract class AbstractLayer implements Layer {
       final ArrayList<TextPrimitive> textPrimitives,
       final ArrayList<PointPrimitive> pointPrimitives,
       final ArrayList<LinePrimitive> linePrimitives,
-      final ArrayList<ImagePrimitive> imageSources,
+      final ArrayList<ImagePrimitive> imagePrimitives,
       EnumSet<UpdateType> updateTypes) {
 
     // Log.d(TAG, getLayerName() + " Updating renderer: " + updateTypes);
@@ -143,7 +143,7 @@ public abstract class AbstractLayer implements Layer {
       setSources(textPrimitives, updateTypes, TextPrimitive.class, atomic);
       setSources(pointPrimitives, updateTypes, PointPrimitive.class, atomic);
       setSources(linePrimitives, updateTypes, LinePrimitive.class, atomic);
-      setSources(imageSources, updateTypes, ImagePrimitive.class, atomic);
+      setSources(imagePrimitives, updateTypes, ImagePrimitive.class, atomic);
       renderer.queueAtomic(atomic);
     } finally {
       renderMapLock.unlock();
