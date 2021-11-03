@@ -15,7 +15,7 @@
 
 package com.google.android.stardroid.source.impl;
 
-import com.google.android.stardroid.source.TextSource;
+import com.google.android.stardroid.source.TextPrimitive;
 import com.google.android.stardroid.math.CoordinateManipulationsKt;
 import com.google.android.stardroid.math.Vector3;
 import com.google.common.base.Preconditions;
@@ -26,7 +26,7 @@ import com.google.common.base.Preconditions;
  *
  * @author Brent Bryan
  */
-public class TextSourceImpl extends AbstractSource implements TextSource {
+public class TextSourceImpl extends AbstractSource implements TextPrimitive {
   public String label;
   public final float offset;
   public final int fontSize;

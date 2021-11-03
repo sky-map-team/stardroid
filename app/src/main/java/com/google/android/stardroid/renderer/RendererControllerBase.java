@@ -15,10 +15,10 @@
 package com.google.android.stardroid.renderer;
 
 import com.google.android.stardroid.renderer.util.UpdateClosure;
-import com.google.android.stardroid.source.ImageSource;
-import com.google.android.stardroid.source.LineSource;
-import com.google.android.stardroid.source.PointSource;
-import com.google.android.stardroid.source.TextSource;
+import com.google.android.stardroid.source.ImagePrimitive;
+import com.google.android.stardroid.source.LinePrimitive;
+import com.google.android.stardroid.source.PointPrimitive;
+import com.google.android.stardroid.source.TextPrimitive;
 import com.google.android.stardroid.math.Vector3;
 
 import android.os.ConditionVariable;
@@ -63,13 +63,13 @@ public abstract class RendererControllerBase {
   /**
    * Class for managing a set of point objects.
    */
-  public static class PointManager extends RenderManager<PointSource> {
+  public static class PointManager extends RenderManager<PointPrimitive> {
     private PointManager(PointObjectManager manager) {
       super(manager);
     }
 
     @Override
-    public void queueObjects(final List<PointSource> points,
+    public void queueObjects(final List<PointPrimitive> points,
                              final EnumSet<RendererObjectManager.UpdateType> updateType,
                              RendererControllerBase controller) {
       String msg = "Setting point objects";
@@ -82,13 +82,13 @@ public abstract class RendererControllerBase {
   /**
    * Class for managing a set of polyline objects.
    */
-  public static class LineManager extends RenderManager<LineSource> {
+  public static class LineManager extends RenderManager<LinePrimitive> {
     private LineManager(PolyLineObjectManager manager) {
       super(manager);
     }
 
     @Override
-    public void queueObjects(final List<LineSource> lines,
+    public void queueObjects(final List<LinePrimitive> lines,
                              final EnumSet<RendererObjectManager.UpdateType> updateType,
                              RendererControllerBase controller) {
       String msg = "Setting line objects";
@@ -101,13 +101,13 @@ public abstract class RendererControllerBase {
   /**
    * Class for managing a set of text label objects.
    */
-  public static class LabelManager extends RenderManager<TextSource> {
+  public static class LabelManager extends RenderManager<TextPrimitive> {
     private LabelManager(LabelObjectManager manager) {
       super(manager);
     }
 
     @Override
-    public void queueObjects(final List<TextSource> labels,
+    public void queueObjects(final List<TextPrimitive> labels,
                              final EnumSet<RendererObjectManager.UpdateType> updateType,
                              RendererControllerBase controller) {
       String msg = "Setting label objects";
@@ -120,13 +120,13 @@ public abstract class RendererControllerBase {
   /**
    * Class for managing a set of image objects.
    */
-  public static class ImageManager extends RenderManager<ImageSource> {
+  public static class ImageManager extends RenderManager<ImagePrimitive> {
     private ImageManager(ImageObjectManager manager) {
       super(manager);
     }
 
     @Override
-    public void queueObjects(final List<ImageSource> images,
+    public void queueObjects(final List<ImagePrimitive> images,
                              final EnumSet<RendererObjectManager.UpdateType> updateType,
                              RendererControllerBase controller) {
       String msg = "Setting image objects";

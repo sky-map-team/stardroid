@@ -21,14 +21,13 @@ import com.google.android.stardroid.base.Lists;
 import com.google.android.stardroid.control.AstronomerModel;
 import com.google.android.stardroid.renderer.RendererObjectManager.UpdateType;
 import com.google.android.stardroid.source.AbstractAstronomicalSource;
-import com.google.android.stardroid.source.ImageSource;
-import com.google.android.stardroid.source.PointSource;
+import com.google.android.stardroid.source.ImagePrimitive;
+import com.google.android.stardroid.source.PointPrimitive;
 import com.google.android.stardroid.source.Sources;
-import com.google.android.stardroid.source.TextSource;
-import com.google.android.stardroid.source.impl.ImageSourceImpl;
-import com.google.android.stardroid.source.impl.PointSourceImpl;
+import com.google.android.stardroid.source.TextPrimitive;
+import com.google.android.stardroid.source.impl.ImagePrimitiveImpl;
+import com.google.android.stardroid.source.impl.PointPrimitiveImpl;
 import com.google.android.stardroid.source.impl.TextSourceImpl;
-import com.google.android.stardroid.space.CelestialObject;
 import com.google.android.stardroid.space.SolarSystemObject;
 import com.google.android.stardroid.space.Universe;
 import com.google.android.stardroid.math.Vector3;
@@ -55,9 +54,9 @@ public class PlanetSource extends AbstractAstronomicalSource {
   private static final String SHOW_PLANETARY_IMAGES = "show_planetary_images";
   private static final Vector3 UP = new Vector3(0.0f, 1.0f, 0.0f);
 
-  private final ArrayList<PointSource> pointSources = new ArrayList<PointSource>();
-  private final ArrayList<ImageSourceImpl> imageSources = new ArrayList<ImageSourceImpl>();
-  private final ArrayList<TextSource> labelSources = new ArrayList<TextSource>();
+  private final ArrayList<PointPrimitive> pointPrimitives = new ArrayList<PointPrimitive>();
+  private final ArrayList<ImagePrimitiveImpl> imagePrimitives = new ArrayList<ImagePrimitiveImpl>();
+  private final ArrayList<TextPrimitive> labelPrimitives = new ArrayList<TextPrimitive>();
   private final Planet planet;
   private final Resources resources;
   private final AstronomerModel model;
@@ -96,8 +95,8 @@ public class PlanetSource extends AbstractAstronomicalSource {
     this.lastUpdateTimeMs = time.getTime();
     this.sunCoords = heliocentricCoordinatesFromOrbitalElements(Planet.Sun.getOrbitalElements(time));
     updateFromRaDec(this.currentCoords, universe.getRaDec(planet, time));
-    for (ImageSourceImpl imageSource : imageSources) {
-      imageSource.setUpVector(sunCoords);  // TODO(johntaylor): figure out why we do this.
+    for (ImagePrimitiveImpl imagePrimitives : imagePrimitives) {
+      imagePrimitives.setUpVector(sunCoords);  // TODO(johntaylor): figure out why we do this.
     }
   }
 
@@ -108,18 +107,18 @@ public class PlanetSource extends AbstractAstronomicalSource {
     this.imageId = solarSystemObject.getImageResourceId(time);
 
     if (planet == Planet.Moon) {
-      imageSources.add(new ImageSourceImpl(currentCoords, resources, imageId, sunCoords,
+      imagePrimitives.add(new ImagePrimitiveImpl(currentCoords, resources, imageId, sunCoords,
           solarSystemObject.getPlanetaryImageSize()));
     } else {
       boolean usePlanetaryImages = preferences.getBoolean(SHOW_PLANETARY_IMAGES, true);
       if (usePlanetaryImages || planet == Planet.Sun) {
-        imageSources.add(new ImageSourceImpl(currentCoords, resources, imageId, UP,
+        imagePrimitives.add(new ImagePrimitiveImpl(currentCoords, resources, imageId, UP,
             solarSystemObject.getPlanetaryImageSize()));
       } else {
-        pointSources.add(new PointSourceImpl(currentCoords, PLANET_COLOR, PLANET_SIZE));
+        pointPrimitives.add(new PointPrimitiveImpl(currentCoords, PLANET_COLOR, PLANET_SIZE));
       }
     }
-    labelSources.add(new TextSourceImpl(currentCoords, name, PLANET_LABEL_COLOR));
+    labelPrimitives.add(new TextSourceImpl(currentCoords, name, PLANET_LABEL_COLOR));
 
     return this;
   }
@@ -135,15 +134,15 @@ public class PlanetSource extends AbstractAstronomicalSource {
       updateCoords(modelTime);
 
       // For moon only:
-      if (planet == Planet.Moon && !imageSources.isEmpty()) {
+      if (planet == Planet.Moon && !imagePrimitives.isEmpty()) {
         // Update up vector.
-        imageSources.get(0).setUpVector(sunCoords);
+        imagePrimitives.get(0).setUpVector(sunCoords);
 
         // update image:
         int newImageId = solarSystemObject.getImageResourceId(modelTime);
         if (newImageId != imageId) {
           imageId = newImageId;
-          imageSources.get(0).setImageId(imageId);
+          imagePrimitives.get(0).setImageId(imageId);
           updates.add(UpdateType.UpdateImages);
         }
       }
@@ -152,17 +151,17 @@ public class PlanetSource extends AbstractAstronomicalSource {
   }
 
   @Override
-  public List<? extends ImageSource> getImages() {
-    return imageSources;
+  public List<? extends ImagePrimitive> getImages() {
+    return imagePrimitives;
   }
 
   @Override
-  public List<? extends TextSource> getLabels() {
-    return labelSources;
+  public List<? extends TextPrimitive> getLabels() {
+    return labelPrimitives;
   }
 
   @Override
-  public List<? extends PointSource> getPoints() {
-    return pointSources;
+  public List<? extends PointPrimitive> getPoints() {
+    return pointPrimitives;
   }
 }

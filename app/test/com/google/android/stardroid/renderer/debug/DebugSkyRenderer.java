@@ -71,13 +71,13 @@ public class DebugSkyRenderer extends SkyRenderer {
     GeocentricCoordinates coords = new GeocentricCoordinates(1f, 0f, 0f);
     PointSourceImpl p1 = new PointSourceImpl(coords, 0xff, 2);
 
-//    PointSource p2 = new PointSource(0, 0, 0, 0, 0, 0, 2);
+//    PointPrimitive p2 = new PointPrimitive(0, 0, 0, 0, 0, 0, 2);
 //    p2.xyz.x = 0;
 //    p2.xyz.y = 1;
 //    p2.xyz.z = 4;
 //    p2.color = 0xff00; // green
 //
-//    PointSource p3 = new PointSource(0, 0, 0, 0, 0, 0, 2);
+//    PointPrimitive p3 = new PointPrimitive(0, 0, 0, 0, 0, 0, 2);
 //    p3.xyz.x = 1;
 //    p3.xyz.y = -1;
 //    p3.xyz.z = 4;
@@ -125,8 +125,8 @@ public class DebugSkyRenderer extends SkyRenderer {
     /*
      * TODO(serafini): Fix the unit tests.
 
-    ArrayList<ImageSource> images = new ArrayList<ImageSource>();
-    com.google.android.stardroid.source.impl.ImageSourceImpl is1 = new com.google.android.stardroid.source.impl.ImageSourceImpl(0.0f, 0, 0, null);
+    ArrayList<ImagePrimitive> images = new ArrayList<ImagePrimitive>();
+    com.google.android.stardroid.source.impl.ImagePrimitiveImpl is1 = new com.google.android.stardroid.source.impl.ImagePrimitiveImpl(0.0f, 0, 0, null);
     is1.xyz.x = 0;
     is1.xyz.y = 0;
     is1.xyz.z = 5;
@@ -139,7 +139,7 @@ public class DebugSkyRenderer extends SkyRenderer {
     is1.vy = 0.2f;
     is1.vz = 0.0f;
 
-    com.google.android.stardroid.source.impl.ImageSourceImpl is2 = new com.google.android.stardroid.source.impl.ImageSourceImpl(0.0f, 0, 0, null);
+    com.google.android.stardroid.source.impl.ImagePrimitiveImpl is2 = new com.google.android.stardroid.source.impl.ImagePrimitiveImpl(0.0f, 0, 0, null);
     is2.xyz.x = 1;
     is2.xyz.y = 1;
     is2.xyz.z = 5;

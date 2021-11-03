@@ -14,7 +14,7 @@
 
 package com.google.android.stardroid.source.impl;
 
-import com.google.android.stardroid.source.PointSource;
+import com.google.android.stardroid.source.PointPrimitive;
 import com.google.android.stardroid.math.CoordinateManipulationsKt;
 import com.google.android.stardroid.math.Vector3;
 
@@ -24,19 +24,19 @@ import com.google.android.stardroid.math.Vector3;
  * @author Brent Bryan
  */
 
-public class PointSourceImpl extends AbstractSource implements PointSource {
+public class PointPrimitiveImpl extends AbstractSource implements PointPrimitive {
   public final int size;
   private final Shape pointShape;
 
-  public PointSourceImpl(float ra, float dec, int color, int size) {
+  public PointPrimitiveImpl(float ra, float dec, int color, int size) {
     this(CoordinateManipulationsKt.getGeocentricCoords(ra, dec), color, size);
   }
 
-  public PointSourceImpl(Vector3 coords, int color, int size) {
+  public PointPrimitiveImpl(Vector3 coords, int color, int size) {
     this(coords, color, size, Shape.CIRCLE);
   }
 
-  public PointSourceImpl(Vector3 coords, int color, int size, Shape pointShape) {
+  public PointPrimitiveImpl(Vector3 coords, int color, int size, Shape pointShape) {
     super(coords, color);
     this.size = size;
     this.pointShape = pointShape;

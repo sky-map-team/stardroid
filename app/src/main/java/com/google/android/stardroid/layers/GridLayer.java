@@ -20,9 +20,9 @@ import android.graphics.Color;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.source.AbstractAstronomicalSource;
 import com.google.android.stardroid.source.AstronomicalSource;
-import com.google.android.stardroid.source.LineSource;
-import com.google.android.stardroid.source.TextSource;
-import com.google.android.stardroid.source.impl.LineSourceImpl;
+import com.google.android.stardroid.source.LinePrimitive;
+import com.google.android.stardroid.source.TextPrimitive;
+import com.google.android.stardroid.source.impl.LinePrimitiveImpl;
 import com.google.android.stardroid.source.impl.TextSourceImpl;
 import com.google.android.stardroid.math.CoordinateManipulationsKt;
 import com.google.android.stardroid.math.RaDec;
@@ -85,7 +85,7 @@ public class GridLayer extends AbstractSourceLayer {
     /** every 10 degrees */
     private static final int NUM_RA_VERTICES = 36;
 
-    private final ArrayList<LineSourceImpl> lineSources = new ArrayList<LineSourceImpl>();
+    private final ArrayList<LinePrimitiveImpl> lineSources = new ArrayList<LinePrimitiveImpl>();
     private final ArrayList<TextSourceImpl> textSources = new ArrayList<TextSourceImpl>();
 
     public GridSource(Resources res, int numRaSources, int numDecSources) {
@@ -117,8 +117,8 @@ public class GridLayer extends AbstractSourceLayer {
      * Constructs a single longitude line. These lines run from the north pole to
      * the south pole at fixed Right Ascensions.
      */
-    private LineSourceImpl createRaLine(int index, int numRaSources) {
-      LineSourceImpl line = new LineSourceImpl(LINE_COLOR);
+    private LinePrimitiveImpl createRaLine(int index, int numRaSources) {
+      LinePrimitiveImpl line = new LinePrimitiveImpl(LINE_COLOR);
       float ra = index * 360.0f / numRaSources;
       for (int i = 0; i < NUM_DEC_VERTICES - 1; i++) {
         float dec = 90.0f - i * 180.0f / (NUM_DEC_VERTICES - 1);
@@ -132,8 +132,8 @@ public class GridLayer extends AbstractSourceLayer {
       return line;
     }
 
-    private LineSourceImpl createDecLine(int index, float dec) {
-      LineSourceImpl line = new LineSourceImpl(LINE_COLOR);
+    private LinePrimitiveImpl createDecLine(int index, float dec) {
+      LinePrimitiveImpl line = new LinePrimitiveImpl(LINE_COLOR);
       for (int i = 0; i < NUM_RA_VERTICES; i++) {
         float ra = i * 360.0f / NUM_RA_VERTICES;
         RaDec raDec = new RaDec(ra, dec);
@@ -147,12 +147,12 @@ public class GridLayer extends AbstractSourceLayer {
     }
 
     @Override
-    public List<? extends TextSource> getLabels() {
+    public List<? extends TextPrimitive> getLabels() {
       return textSources;
     }
 
     @Override
-    public List<? extends LineSource> getLines() {
+    public List<? extends LinePrimitive> getLines() {
       return lineSources;
     }
   }

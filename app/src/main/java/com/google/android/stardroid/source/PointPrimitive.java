@@ -20,7 +20,7 @@ package com.google.android.stardroid.source;
  *
  * @author Brent Bryan
  */
-public interface PointSource extends Colorable, PositionSource {
+public interface PointPrimitive extends HasColor, HasPosition {
   enum Shape {
     CIRCLE(0),
     STAR(1),

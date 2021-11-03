@@ -16,8 +16,8 @@ package com.google.android.stardroid.source.impl;
 
 import android.graphics.Color;
 
-import com.google.android.stardroid.source.Colorable;
-import com.google.android.stardroid.source.PositionSource;
+import com.google.android.stardroid.source.HasColor;
+import com.google.android.stardroid.source.HasPosition;
 import com.google.android.stardroid.math.CoordinateManipulationsKt;
 import com.google.android.stardroid.math.Vector3;
 
@@ -30,7 +30,7 @@ import java.util.List;
  *
  * @author Brent Bryan
  */
-public abstract class AbstractSource implements Colorable, PositionSource {
+public abstract class AbstractSource implements HasColor, HasPosition {
   /** Each source has an update granularity associated with it, which
    *  defines how often it's provider expects its value to change.
    */

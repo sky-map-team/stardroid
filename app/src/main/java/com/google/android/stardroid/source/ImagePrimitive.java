@@ -14,13 +14,26 @@
 
 package com.google.android.stardroid.source;
 
+import android.graphics.Bitmap;
+
 /**
- * This interface represents the base class of objects which are to be displayed by
- * the UI, such as points, lines and labels.
- *
+ * This source corresponds to an image to be drawn at a specific point on the
+ * sky by the renderer.
+ * 
  * @author Brent Bryan
  */
-public interface RendererSource {
-  enum SourceType {POINT, LINE, TEXT, IMAGE}
+public interface ImagePrimitive extends HasPosition {
 
+  /**
+   * Returns the image to be displayed at the specified point.
+   */
+  Bitmap getImage();
+
+  // TODO(brent): talk to James to determine what's really needed here.
+  
+  float[] getVerticalCorner();
+  
+  float[] getHorizontalCorner();
+  
+  boolean requiresBlending();
 }

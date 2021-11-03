@@ -14,26 +14,30 @@
 
 package com.google.android.stardroid.source;
 
-import android.graphics.Bitmap;
-
 /**
- * This source corresponds to an image to be drawn at a specific point on the
- * sky by the renderer.
+ * This interface corresponds to a text label placed at some fixed location in
+ * space.
  * 
  * @author Brent Bryan
  */
-public interface ImageSource extends PositionSource {
+public interface TextPrimitive extends HasColor, HasPosition {
 
   /**
-   * Returns the image to be displayed at the specified point.
+   * Returns the text to be displayed at the specified location in the renderer.
    */
-  Bitmap getImage();
+  String getText();
 
-  // TODO(brent): talk to James to determine what's really needed here.
+  /**
+   * Changes the text in this {@link TextPrimitive}.
+   */
+  void setText(String newText);
   
-  float[] getVerticalCorner();
+  /**
+   * Returns the size of the font in points (e.g. 10, 12).
+   */
+  int getFontSize();
   
-  float[] getHorizontalCorner();
-  
-  boolean requiresBlending();
+  float getOffset();
+  // TODO(brent): talk to James: can we add font, style info?
+  // TODO(brent): can we specify label orientation?
 }

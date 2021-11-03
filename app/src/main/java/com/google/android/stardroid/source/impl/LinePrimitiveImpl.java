@@ -20,28 +20,28 @@ import java.util.List;
 
 import android.graphics.Color;
 
-import com.google.android.stardroid.source.LineSource;
+import com.google.android.stardroid.source.LinePrimitive;
 import com.google.android.stardroid.math.RaDec;
 import com.google.android.stardroid.math.Vector3;
 
 /**
  * For representing constellations, constellation boundaries etc.
  */
-public class LineSourceImpl extends AbstractSource implements LineSource {
+public class LinePrimitiveImpl extends AbstractSource implements LinePrimitive {
 
   public final List<Vector3> vertices;
   public final List<RaDec> raDecs;
   public final float lineWidth;
 
-  public LineSourceImpl() {
+  public LinePrimitiveImpl() {
     this(Color.WHITE, new ArrayList<Vector3>(), 1.5f);
   }
 
-  public LineSourceImpl(int color) {
+  public LinePrimitiveImpl(int color) {
     this(color, new ArrayList<Vector3>(), 1.5f);
   }
 
-  public LineSourceImpl(int color, List<Vector3> vertices, float lineWidth) {
+  public LinePrimitiveImpl(int color, List<Vector3> vertices, float lineWidth) {
     super(color);
 
     this.vertices = vertices;

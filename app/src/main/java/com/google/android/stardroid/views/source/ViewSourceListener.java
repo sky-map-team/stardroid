@@ -16,10 +16,10 @@ package com.google.android.stardroid.views.source;
 
 import java.util.List;
 
-import com.google.android.stardroid.source.ImageSource;
-import com.google.android.stardroid.source.LineSource;
-import com.google.android.stardroid.source.PointSource;
-import com.google.android.stardroid.source.TextSource;
+import com.google.android.stardroid.source.ImagePrimitive;
+import com.google.android.stardroid.source.LinePrimitive;
+import com.google.android.stardroid.source.PointPrimitive;
+import com.google.android.stardroid.source.TextPrimitive;
 
 /**
  * Defines a simple listener interface which responds to changes in the sources and 
@@ -39,7 +39,7 @@ public interface ViewSourceListener {
    * @param id a unique identify integer for this set of point sources.
    * @param s a list of PointSources which should be used.
    */
-  void setPointSources(int id, List<PointSource> s);
+  void setPointSources(int id, List<PointPrimitive> s);
 
   /**
    * Sets all of the TextSources for a specific id in response to one or more
@@ -50,7 +50,7 @@ public interface ViewSourceListener {
    * @param id a unique identify integer for this set of point sources.
    * @param s a list of TextSources which should be used.
    */
-  void setTextSources(int id, List<TextSource> s);
+  void setTextSources(int id, List<TextPrimitive> s);
 
   /**
    * Sets all of the ImageSources for a specific id in response to one or more
@@ -61,7 +61,7 @@ public interface ViewSourceListener {
    * @param id a unique identify integer for this set of point sources.
    * @param s a list of ImageSources which should be used.
    */
-  void setImageSources(int id, List<ImageSource> s);
+  void setImageSources(int id, List<ImagePrimitive> s);
 
   /**
    * Sets all of the PolyLineSources for a specific id in response to one or more
@@ -72,5 +72,5 @@ public interface ViewSourceListener {
    * @param id a unique identify integer for this set of point sources.
    * @param s a list of PolyLineSources which should be used.
    */
-  void setPolyLineSources(int id, List<LineSource> s);
+  void setPolyLineSources(int id, List<LinePrimitive> s);
 }

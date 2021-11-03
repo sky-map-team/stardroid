@@ -22,13 +22,13 @@ import android.graphics.Color;
 
 import com.google.android.stardroid.math.CoordinateManipulationsKt;
 import com.google.android.stardroid.math.Vector3;
-import com.google.android.stardroid.source.ImageSource;
+import com.google.android.stardroid.source.ImagePrimitive;
 
 /**
  *  A celestial object represented by an image, such as a planet or a
  *  galaxy.
  */
-public class ImageSourceImpl extends AbstractSource implements ImageSource {
+public class ImagePrimitiveImpl extends AbstractSource implements ImagePrimitive {
 
   static Vector3 up = new Vector3(0.0f, 1.0f, 0.0f);
 
@@ -57,26 +57,26 @@ public class ImageSourceImpl extends AbstractSource implements ImageSource {
   private final Resources resources;
 
 
-  public ImageSourceImpl(float ra, float dec, Resources res, int id) {
+  public ImagePrimitiveImpl(float ra, float dec, Resources res, int id) {
     this(ra, dec, res, id, up, 1.0f);
   }
 
-  public ImageSourceImpl(float ra, float dec, Resources res, int id, Vector3 upVec) {
+  public ImagePrimitiveImpl(float ra, float dec, Resources res, int id, Vector3 upVec) {
     this(ra, dec, res, id, upVec, 1.0f);
   }
 
-  public ImageSourceImpl(float ra, float dec, Resources res, int id, Vector3 upVec,
-      float imageScale) {
+  public ImagePrimitiveImpl(float ra, float dec, Resources res, int id, Vector3 upVec,
+                            float imageScale) {
     this(CoordinateManipulationsKt.getGeocentricCoords(ra, dec), res, id, upVec, imageScale);
   }
 
-  public ImageSourceImpl(Vector3 coords, Resources res, int id, Vector3 upVec,
-      float imageScale) {
+  public ImagePrimitiveImpl(Vector3 coords, Resources res, int id, Vector3 upVec,
+                            float imageScale) {
     super(coords, Color.WHITE);
     this.imageScale = imageScale;
 
     // TODO(jpowell): We're never freeing this resource, so we leak it every
-    // time we create a new ImageSourceImpl and garbage collect an old one.
+    // time we create a new ImagePrimitiveImpl and garbage collect an old one.
     // We need to make sure it gets freed.
     // We should also cache this so we don't have to keep reloading these
     // which is really slow and adds noticeable lag to the application when it

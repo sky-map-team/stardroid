@@ -14,30 +14,30 @@
 
 package com.google.android.stardroid.source;
 
+import com.google.android.stardroid.math.Vector3;
+
+import java.util.List;
+
 /**
- * This interface corresponds to a text label placed at some fixed location in
- * space.
+ * This interface corresponds to a set of successive line segments (drawn from
+ * consecutive vertices). That is, for the vertices {A, B, C, D}, lines should
+ * be drawn between A and B, B and C, and C and D.
  * 
  * @author Brent Bryan
  */
-public interface TextSource extends Colorable, PositionSource {
+public interface LinePrimitive extends HasColor {
 
   /**
-   * Returns the text to be displayed at the specified location in the renderer.
+   * Returns the width of the line to be drawn.
    */
-  String getText();
+  float getLineWidth();
 
-  /**
-   * Changes the text in this {@link TextSource}.
-   */
-  void setText(String newText);
+  // TODO(brent): Discuss with James to add solid, dashed, dotted, etc.
   
   /**
-   * Returns the size of the font in points (e.g. 10, 12).
+   * Returns an ordered list of the vertices which should be used to draw a
+   * polyline in the renderer.
+   * @return
    */
-  int getFontSize();
-  
-  float getOffset();
-  // TODO(brent): talk to James: can we add font, style info?
-  // TODO(brent): can we specify label orientation?
+  List<Vector3> getVertices();
 }

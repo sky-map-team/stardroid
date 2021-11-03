@@ -19,11 +19,11 @@ import android.util.Log;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.source.AbstractAstronomicalSource;
-import com.google.android.stardroid.source.LineSource;
-import com.google.android.stardroid.source.PointSource;
-import com.google.android.stardroid.source.TextSource;
-import com.google.android.stardroid.source.impl.LineSourceImpl;
-import com.google.android.stardroid.source.impl.PointSourceImpl;
+import com.google.android.stardroid.source.LinePrimitive;
+import com.google.android.stardroid.source.PointPrimitive;
+import com.google.android.stardroid.source.TextPrimitive;
+import com.google.android.stardroid.source.impl.LinePrimitiveImpl;
+import com.google.android.stardroid.source.impl.PointPrimitiveImpl;
 import com.google.android.stardroid.source.impl.TextSourceImpl;
 import com.google.android.stardroid.source.proto.SourceProto.AstronomicalSourceProto;
 import com.google.android.stardroid.source.proto.SourceProto.GeocentricCoordinatesProto;
@@ -50,8 +50,8 @@ import java.util.Map;
 public class ProtobufAstronomicalSource extends AbstractAstronomicalSource {
   private static final String TAG = MiscUtil.getTag(ProtobufAstronomicalSource.class);
 
-  private static final Map<SourceProto.Shape, PointSource.Shape> shapeMap =
-    new HashMap<SourceProto.Shape, PointSource.Shape>();
+  private static final Map<SourceProto.Shape, PointPrimitive.Shape> shapeMap =
+    new HashMap<SourceProto.Shape, PointPrimitive.Shape>();
 
   // Ideally we'd get this from Context.getPackageName but for some reason passing it in as a
   // string via the contructor results in it always being null when I need it. Buggered if
@@ -59,16 +59,16 @@ public class ProtobufAstronomicalSource extends AbstractAstronomicalSource {
   public static final String PACKAGE = "com.google.android.stardroid";
 
   static {
-    shapeMap.put(SourceProto.Shape.CIRCLE, PointSource.Shape.CIRCLE);
-    shapeMap.put(SourceProto.Shape.STAR, PointSource.Shape.CIRCLE);
-    shapeMap.put(SourceProto.Shape.ELLIPTICAL_GALAXY, PointSource.Shape.ELLIPTICAL_GALAXY);
-    shapeMap.put(SourceProto.Shape.SPIRAL_GALAXY, PointSource.Shape.SPIRAL_GALAXY);
-    shapeMap.put(SourceProto.Shape.IRREGULAR_GALAXY, PointSource.Shape.IRREGULAR_GALAXY);
-    shapeMap.put(SourceProto.Shape.LENTICULAR_GALAXY, PointSource.Shape.LENTICULAR_GALAXY);
-    shapeMap.put(SourceProto.Shape.GLOBULAR_CLUSTER, PointSource.Shape.GLOBULAR_CLUSTER);
-    shapeMap.put(SourceProto.Shape.OPEN_CLUSTER, PointSource.Shape.OPEN_CLUSTER);
-    shapeMap.put(SourceProto.Shape.NEBULA, PointSource.Shape.NEBULA);
-    shapeMap.put(SourceProto.Shape.HUBBLE_DEEP_FIELD, PointSource.Shape.HUBBLE_DEEP_FIELD);
+    shapeMap.put(SourceProto.Shape.CIRCLE, PointPrimitive.Shape.CIRCLE);
+    shapeMap.put(SourceProto.Shape.STAR, PointPrimitive.Shape.CIRCLE);
+    shapeMap.put(SourceProto.Shape.ELLIPTICAL_GALAXY, PointPrimitive.Shape.ELLIPTICAL_GALAXY);
+    shapeMap.put(SourceProto.Shape.SPIRAL_GALAXY, PointPrimitive.Shape.SPIRAL_GALAXY);
+    shapeMap.put(SourceProto.Shape.IRREGULAR_GALAXY, PointPrimitive.Shape.IRREGULAR_GALAXY);
+    shapeMap.put(SourceProto.Shape.LENTICULAR_GALAXY, PointPrimitive.Shape.LENTICULAR_GALAXY);
+    shapeMap.put(SourceProto.Shape.GLOBULAR_CLUSTER, PointPrimitive.Shape.GLOBULAR_CLUSTER);
+    shapeMap.put(SourceProto.Shape.OPEN_CLUSTER, PointPrimitive.Shape.OPEN_CLUSTER);
+    shapeMap.put(SourceProto.Shape.NEBULA, PointPrimitive.Shape.NEBULA);
+    shapeMap.put(SourceProto.Shape.HUBBLE_DEEP_FIELD, PointPrimitive.Shape.HUBBLE_DEEP_FIELD);
   }
 
   private final AstronomicalSourceProto proto;
@@ -132,24 +132,24 @@ public class ProtobufAstronomicalSource extends AbstractAstronomicalSource {
   }
 
   @Override
-  public List<PointSource> getPoints() {
+  public List<PointPrimitive> getPoints() {
     if (proto.getPointCount() == 0) {
-      return Collections.<PointSource>emptyList();
+      return Collections.<PointPrimitive>emptyList();
     }
-    ArrayList<PointSource> points = new ArrayList<>(proto.getPointCount());
+    ArrayList<PointPrimitive> points = new ArrayList<>(proto.getPointCount());
     for (PointElementProto element : proto.getPointList()) {
-      points.add(new PointSourceImpl(getCoords(element.getLocation()),
+      points.add(new PointPrimitiveImpl(getCoords(element.getLocation()),
           element.getColor(), element.getSize(), shapeMap.get(element.getShape())));
     }
     return points;
   }
 
   @Override
-  public List<TextSource> getLabels() {
+  public List<TextPrimitive> getLabels() {
     if (proto.getLabelCount() == 0) {
-      return Collections.<TextSource>emptyList();
+      return Collections.<TextPrimitive>emptyList();
     }
-    ArrayList<TextSource> points = new ArrayList<TextSource>(proto.getLabelCount());
+    ArrayList<TextPrimitive> points = new ArrayList<TextPrimitive>(proto.getLabelCount());
     for (LabelElementProto element : proto.getLabelList()) {
       Log.d(TAG, "Label " + element.getStringsIntId() + " : " + element.getStringsStrId());
       points.add(new TextSourceImpl(getCoords(element.getLocation()),
@@ -160,18 +160,18 @@ public class ProtobufAstronomicalSource extends AbstractAstronomicalSource {
   }
 
   @Override
-  public List<LineSource> getLines() {
+  public List<LinePrimitive> getLines() {
     if (proto.getLineCount() == 0) {
-      return Collections.<LineSource>emptyList();
+      return Collections.<LinePrimitive>emptyList();
     }
-    ArrayList<LineSource> points = new ArrayList<>(proto.getLineCount());
+    ArrayList<LinePrimitive> points = new ArrayList<>(proto.getLineCount());
     for (LineElementProto element : proto.getLineList()) {
       ArrayList<Vector3> vertices =
           new ArrayList<>(element.getVertexCount());
       for (GeocentricCoordinatesProto elementVertex : element.getVertexList()) {
         vertices.add(getCoords(elementVertex));
       }
-      points.add(new LineSourceImpl(element.getColor(), vertices, element.getLineWidth()));
+      points.add(new LinePrimitiveImpl(element.getColor(), vertices, element.getLineWidth()));
     }
     return points;
   }

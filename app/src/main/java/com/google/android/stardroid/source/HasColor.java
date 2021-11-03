@@ -14,19 +14,16 @@
 
 package com.google.android.stardroid.source;
 
-import com.google.android.stardroid.math.Vector3;
-
 /**
- * This interface corresponds to sources which are located at a singular fixed
- * point in the sky, such as stars and planets.
+ * This interface indicates that a Source has a color associated with it.
  * 
  * @author Brent Bryan
  */
-public interface PositionSource {
+public interface HasColor {
 
   /**
-   * Returns the location of the source in Geocentric Euclidean coordinates.
-   * @return
+   * Returns the color (as an Android Color int) associated with the given
+   * object.
    */
-  Vector3 getLocation();
+  int getColor();
 }

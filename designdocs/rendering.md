@@ -20,8 +20,8 @@ but rather are to facilitate search.
 `Sources` provides methods to get the primitive types associated with the objects: lines, images,
 etc.
 
-The primitives are `LineSource`, `PointSource`, `TextSource` and `ImageSource` and there are a
-few interfaces to separate out common functionality. For example, the sources which have a specific
+The primitives are `LinePrimitive`, `PointPrimitive`, `TextPrimitive` and `ImagePrimitive` and there are a
+few interfaces to separate out common functionality. For example, the primitives which have a specific
 position and the sources which have a color.
 
 ## Concrete astronomical objects

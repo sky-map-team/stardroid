@@ -16,10 +16,10 @@ package com.google.android.stardroid.source.impl;
 
 import java.util.ArrayList;
 
-import com.google.android.stardroid.source.ImageSource;
-import com.google.android.stardroid.source.LineSource;
-import com.google.android.stardroid.source.PointSource;
-import com.google.android.stardroid.source.TextSource;
+import com.google.android.stardroid.source.ImagePrimitive;
+import com.google.android.stardroid.source.LinePrimitive;
+import com.google.android.stardroid.source.PointPrimitive;
+import com.google.android.stardroid.source.TextPrimitive;
 
 /**
  * Simple class for implementing the AstronomicalSource interface. We may merge
@@ -33,10 +33,10 @@ public class AstronomicalSourceImpl {
   private float level;
   private ArrayList<String> names;
 
-  private ArrayList<ImageSource> imageSources;
-  private ArrayList<LineSource> lineSources;
-  private ArrayList<PointSource> pointSources;
-  private ArrayList<TextSource> textSources;
+  private ArrayList<ImagePrimitive> imagePrimitives;
+  private ArrayList<LinePrimitive> linePrimitives;
+  private ArrayList<PointPrimitive> pointPrimitives;
+  private ArrayList<TextPrimitive> textPrimitives;
 
   public ArrayList<String> getNames() {
     return names;
@@ -54,63 +54,63 @@ public class AstronomicalSourceImpl {
     this.level = level;
   }
 
-  public ArrayList<ImageSource> getImageSources() {
-    return imageSources;
+  public ArrayList<ImagePrimitive> getImagePrimitives() {
+    return imagePrimitives;
   }
 
-  public void setImageSources(ArrayList<ImageSource> imageSources) {
-    this.imageSources = imageSources;
+  public void setImagePrimitives(ArrayList<ImagePrimitive> imagePrimitives) {
+    this.imagePrimitives = imagePrimitives;
   }
 
-  public ArrayList<LineSource> getLineSources() {
-    return lineSources;
+  public ArrayList<LinePrimitive> getLineSources() {
+    return linePrimitives;
   }
 
-  public void setLineSources(ArrayList<LineSource> lineSources) {
-    this.lineSources = lineSources;
+  public void setLineSources(ArrayList<LinePrimitive> linePrimitives) {
+    this.linePrimitives = linePrimitives;
   }
 
-  public ArrayList<PointSource> getPointSources() {
-    return pointSources;
+  public ArrayList<PointPrimitive> getPointSources() {
+    return pointPrimitives;
   }
 
-  public void setPointSources(ArrayList<PointSource> pointSources) {
-    this.pointSources = pointSources;
+  public void setPointSources(ArrayList<PointPrimitive> pointPrimitives) {
+    this.pointPrimitives = pointPrimitives;
   }
 
-  public ArrayList<TextSource> getTextSources() {
-    return textSources;
+  public ArrayList<TextPrimitive> getTextSources() {
+    return textPrimitives;
   }
 
-  public void setTextSources(ArrayList<TextSource> textSources) {
-    this.textSources = textSources;
+  public void setTextSources(ArrayList<TextPrimitive> textPrimitives) {
+    this.textPrimitives = textPrimitives;
   }
 
-  public void addPoint(PointSource point) {
+  public void addPoint(PointPrimitive point) {
     if (point == null) {
-      pointSources = new ArrayList<PointSource>();
+      pointPrimitives = new ArrayList<PointPrimitive>();
     }
-    pointSources.add(point);
+    pointPrimitives.add(point);
   }
 
-  public void addLabel(TextSource label) {
+  public void addLabel(TextPrimitive label) {
     if (label == null) {
-      textSources = new ArrayList<TextSource>();
+      textPrimitives = new ArrayList<TextPrimitive>();
     }
-    textSources.add(label);
+    textPrimitives.add(label);
   }
 
-  public void addImage(ImageSource image) {
+  public void addImage(ImagePrimitive image) {
     if (image == null) {
-      imageSources = new ArrayList<ImageSource>();
+      imagePrimitives = new ArrayList<ImagePrimitive>();
     }
-    imageSources.add(image);
+    imagePrimitives.add(image);
   }
 
-  public void addLine(LineSource line) {
+  public void addLine(LinePrimitive line) {
     if (line == null) {
-      lineSources = new ArrayList<LineSource>();
+      linePrimitives = new ArrayList<LinePrimitive>();
     }
-    lineSources.add(line);
+    linePrimitives.add(line);
   }
 }

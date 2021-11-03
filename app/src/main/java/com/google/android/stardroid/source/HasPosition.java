@@ -16,28 +16,17 @@ package com.google.android.stardroid.source;
 
 import com.google.android.stardroid.math.Vector3;
 
-import java.util.List;
-
 /**
- * This interface corresponds to a set of successive line segments (drawn from
- * consecutive vertices). That is, for the vertices {A, B, C, D}, lines should
- * be drawn between A and B, B and C, and C and D.
+ * This interface corresponds to sources which are located at a singular fixed
+ * point in the sky, such as stars and planets.
  * 
  * @author Brent Bryan
  */
-public interface LineSource extends Colorable {
+public interface HasPosition {
 
   /**
-   * Returns the width of the line to be drawn.
-   */
-  float getLineWidth();
-
-  // TODO(brent): Discuss with James to add solid, dashed, dotted, etc.
-  
-  /**
-   * Returns an ordered list of the vertices which should be used to draw a
-   * polyline in the renderer.
+   * Returns the location of the source in Geocentric Euclidean coordinates.
    * @return
    */
-  List<Vector3> getVertices();
+  Vector3 getLocation();
 }
