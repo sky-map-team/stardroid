@@ -13,59 +13,16 @@
 // limitations under the License.
 package com.google.android.stardroid.layers
 
-import com.google.android.stardroid.math.getGeocentricCoords
-import com.google.android.stardroid.math.Vector3.assign
-import com.google.android.stardroid.space.Universe.solarSystemObjectFor
-import com.google.android.stardroid.space.CelestialObject.getRaDec
-import android.content.res.AssetManager
-import com.google.android.stardroid.layers.AbstractSourceLayer
-import com.google.android.stardroid.source.AstronomicalSource
-import com.google.android.stardroid.layers.AbstractFileBasedLayer
-import com.google.android.stardroid.source.proto.ProtobufAstronomicalSource
-import com.google.android.stardroid.renderer.RendererObjectManager.UpdateType
-import com.google.android.stardroid.util.MiscUtil
-import com.google.android.stardroid.renderer.RendererControllerBase.RenderManager
-import com.google.android.stardroid.renderer.RendererController
-import com.google.android.stardroid.layers.AbstractLayer
-import com.google.android.stardroid.renderer.RendererController.AtomicSection
-import com.google.android.stardroid.renderer.util.UpdateClosure
-import com.google.android.stardroid.source.TextPrimitive
-import com.google.android.stardroid.source.PointPrimitive
-import com.google.android.stardroid.source.LinePrimitive
-import com.google.android.stardroid.source.ImagePrimitive
-import com.google.android.stardroid.renderer.RendererControllerBase
-import com.google.android.stardroid.search.PrefixStore
-import com.google.android.stardroid.layers.AbstractSourceLayer.SourceUpdateClosure
-import com.google.android.stardroid.source.Sources
-import com.google.android.stardroid.math.Vector3
-import com.google.android.stardroid.renderer.util.AbstractUpdateClosure
-import com.google.android.stardroid.layers.EclipticLayer.EclipticSource
-import com.google.android.stardroid.R
-import com.google.android.stardroid.source.AbstractAstronomicalSource
-import com.google.android.stardroid.layers.GridLayer.GridSource
-import com.google.android.stardroid.math.RaDec
-import com.google.android.stardroid.control.AstronomerModel
-import com.google.android.stardroid.layers.HorizonLayer.HorizonSource
-import com.google.android.stardroid.base.TimeConstants
-import com.google.android.stardroid.layers.IssLayer.IssSource
-import com.google.android.stardroid.layers.IssLayer.OrbitalElementsGrabber
-import kotlin.Throws
-import com.google.android.stardroid.ephemeris.OrbitalElements
-import android.content.SharedPreferences
-import android.content.SharedPreferences.OnSharedPreferenceChangeListener
 import android.content.res.Resources
 import android.graphics.Color
-import com.google.android.stardroid.layers.LayerManager
-import com.google.android.stardroid.search.SearchTermsProvider.SearchTerm
-import com.google.android.stardroid.layers.MeteorShowerLayer.Shower
-import com.google.android.stardroid.layers.MeteorShowerLayer
-import com.google.android.stardroid.layers.MeteorShowerLayer.MeteorRadiantSource
-import com.google.android.stardroid.ephemeris.Planet
-import com.google.android.stardroid.ephemeris.PlanetSource
-import com.google.android.stardroid.layers.SkyGradientLayer
-import com.google.android.stardroid.layers.StarOfBethlehemLayer.StarOfBethlehemSource
-import com.google.android.stardroid.layers.StarOfBethlehemLayer
-import java.util.ArrayList
+import com.google.android.stardroid.R
+import com.google.android.stardroid.math.Vector3
+import com.google.android.stardroid.math.getGeocentricCoords
+import com.google.android.stardroid.source.AbstractAstronomicalSource
+import com.google.android.stardroid.source.AstronomicalSource
+import com.google.android.stardroid.source.LinePrimitive
+import com.google.android.stardroid.source.TextPrimitive
+import java.util.*
 
 /**
  * Creates a Layer for the Ecliptic.
