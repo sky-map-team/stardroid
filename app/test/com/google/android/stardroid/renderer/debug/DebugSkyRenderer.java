@@ -25,12 +25,9 @@ import android.os.SystemClock;
 import android.util.FloatMath;
 
 import com.google.android.stardroid.renderer.SkyRenderer;
-import com.google.android.stardroid.source.LineSource;
-import com.google.android.stardroid.source.PointSource;
-import com.google.android.stardroid.source.TextSource;
-import com.google.android.stardroid.source.impl.LineSourceImpl;
-import com.google.android.stardroid.source.impl.PointSourceImpl;
-import com.google.android.stardroid.source.impl.TextSourceImpl;
+import com.google.android.stardroid.source.LinePrimitive;
+import com.google.android.stardroid.source.PointPrimitive;
+import com.google.android.stardroid.source.TextPrimitive;
 import com.google.android.stardroid.math.CoordinateManipulations;
 
 // This class is for debugging the sky renderer.
@@ -69,64 +66,64 @@ public class DebugSkyRenderer extends SkyRenderer {
 
   private void debugSetPointObjects() {
     GeocentricCoordinates coords = new GeocentricCoordinates(1f, 0f, 0f);
-    PointSourceImpl p1 = new PointSourceImpl(coords, 0xff, 2);
+    PointPrimitive p1 = new PointPrimitive(coords, 0xff, 2);
 
-//    PointSource p2 = new PointSource(0, 0, 0, 0, 0, 0, 2);
+//    PointPrimitive p2 = new PointPrimitive(0, 0, 0, 0, 0, 0, 2);
 //    p2.xyz.x = 0;
 //    p2.xyz.y = 1;
 //    p2.xyz.z = 4;
 //    p2.color = 0xff00; // green
 //
-//    PointSource p3 = new PointSource(0, 0, 0, 0, 0, 0, 2);
+//    PointPrimitive p3 = new PointPrimitive(0, 0, 0, 0, 0, 0, 2);
 //    p3.xyz.x = 1;
 //    p3.xyz.y = -1;
 //    p3.xyz.z = 4;
 //    p3.color = 0xff0000; // blue
 
-    ArrayList<PointSource> points = new ArrayList<PointSource>();
+    ArrayList<PointPrimitive> points = new ArrayList<PointPrimitive>();
     points.add(p1);
 //    points.add(p2);
 //    points.add(p3);
-    // forceSetPointSources(points, 0);
+    // forceSetPointPrimitives(points, 0);
   }
 
   void debugSetPolyLineObjects() {
-    LineSourceImpl line1 = new LineSourceImpl(0xffffffff);
+    LinePrimitive line1 = new LinePrimitive(0xffffffff);
     line1.vertices.add(new GeocentricCoordinates(-1, -1, 4));
     line1.vertices.add(new GeocentricCoordinates(0, 1, 4));
     line1.vertices.add(new GeocentricCoordinates(0, 0, 4));
     line1.vertices.add(new GeocentricCoordinates(1, 0, 4));
 
-    LineSourceImpl line2 = new LineSourceImpl(0xffffffff);
+    LinePrimitive line2 = new LinePrimitive(0xffffffff);
     line2.vertices.add(new GeocentricCoordinates(1, -1.5f, 4));
     line2.vertices.add(new GeocentricCoordinates(0, -0.5f, 4));
 
-    ArrayList<LineSource> lines = new ArrayList<LineSource>();
+    ArrayList<LinePrimitive> lines = new ArrayList<LinePrimitive>();
     lines.add(line1);
     lines.add(line2);
 
-    // forceSetPolyLineSources(lines, 0);
+    // forceSetPolyLinePrimitives(lines, 0);
   }
 
   void debugSetLabelObjects() {
-    ArrayList<TextSource> labels = new ArrayList<TextSource>();
+    ArrayList<TextPrimitive> labels = new ArrayList<TextPrimitive>();
     GeocentricCoordinates coords1 = new GeocentricCoordinates(0, 0, 4);
-    TextSourceImpl ts1 = new TextSourceImpl(coords1, "Foo", 0xffffff00);
+    TextPrimitive ts1 = new TextPrimitive(coords1, "Foo", 0xffffff00);
 
     GeocentricCoordinates coords2 = new GeocentricCoordinates(1, -1.5f, 4);
-    TextSourceImpl ts2 = new TextSourceImpl(coords2, "Bar", 0xff00ffff);
+    TextPrimitive ts2 = new TextPrimitive(coords2, "Bar", 0xff00ffff);
     labels.add(ts1);
     labels.add(ts2);
 
-    // forceSetTextSources(labels, 0);
+    // forceSetTextPrimitives(labels, 0);
   }
 
   void debugSetImageObjects() {
     /*
      * TODO(serafini): Fix the unit tests.
 
-    ArrayList<ImageSource> images = new ArrayList<ImageSource>();
-    com.google.android.stardroid.source.impl.ImageSourceImpl is1 = new com.google.android.stardroid.source.impl.ImageSourceImpl(0.0f, 0, 0, null);
+    ArrayList<ImagePrimitive> images = new ArrayList<ImagePrimitive>();
+    com.google.android.stardroid.source.ImagePrimitive is1 = new com.google.android.stardroid.source.ImagePrimitive(0.0f, 0, 0, null);
     is1.xyz.x = 0;
     is1.xyz.y = 0;
     is1.xyz.z = 5;
@@ -139,7 +136,7 @@ public class DebugSkyRenderer extends SkyRenderer {
     is1.vy = 0.2f;
     is1.vz = 0.0f;
 
-    com.google.android.stardroid.source.impl.ImageSourceImpl is2 = new com.google.android.stardroid.source.impl.ImageSourceImpl(0.0f, 0, 0, null);
+    com.google.android.stardroid.source.ImagePrimitive is2 = new com.google.android.stardroid.source.ImagePrimitive(0.0f, 0, 0, null);
     is2.xyz.x = 1;
     is2.xyz.y = 1;
     is2.xyz.z = 5;
@@ -155,7 +152,7 @@ public class DebugSkyRenderer extends SkyRenderer {
     images.add(is1);
     images.add(is2);
 
-    forceSetImageSources(images, 0);
+    forceSetImagePrimitives(images, 0);
      */
   }
 

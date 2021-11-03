@@ -24,10 +24,10 @@ import com.google.android.stardroid.renderer.RendererControllerBase.RenderManage
 import com.google.android.stardroid.renderer.RendererObjectManager.UpdateType;
 import com.google.android.stardroid.renderer.util.UpdateClosure;
 import com.google.android.stardroid.search.SearchResult;
-import com.google.android.stardroid.source.ImageSource;
-import com.google.android.stardroid.source.LineSource;
-import com.google.android.stardroid.source.PointSource;
-import com.google.android.stardroid.source.TextSource;
+import com.google.android.stardroid.source.ImagePrimitive;
+import com.google.android.stardroid.source.LinePrimitive;
+import com.google.android.stardroid.source.PointPrimitive;
+import com.google.android.stardroid.source.TextPrimitive;
 import com.google.android.stardroid.util.MiscUtil;
 
 import java.util.ArrayList;
@@ -110,11 +110,11 @@ public abstract class AbstractLayer implements Layer {
 
 
   protected void redraw(
-      final ArrayList<TextSource> textSources,
-      final ArrayList<PointSource> pointSources,
-      final ArrayList<LineSource> lineSources,
-      final ArrayList<ImageSource> imageSources) {
-    redraw(textSources, pointSources, lineSources, imageSources, EnumSet.of(UpdateType.Reset));
+      final ArrayList<TextPrimitive> textPrimitives,
+      final ArrayList<PointPrimitive> pointPrimitives,
+      final ArrayList<LinePrimitive> linePrimitives,
+      final ArrayList<ImagePrimitive> imagePrimitives) {
+    redraw(textPrimitives, pointPrimitives, linePrimitives, imagePrimitives, EnumSet.of(UpdateType.Reset));
   }
 
   /**
@@ -124,10 +124,10 @@ public abstract class AbstractLayer implements Layer {
    * of UI elements.
    */
   protected void redraw(
-      final ArrayList<TextSource> textSources,
-      final ArrayList<PointSource> pointSources,
-      final ArrayList<LineSource> lineSources,
-      final ArrayList<ImageSource> imageSources,
+      final ArrayList<TextPrimitive> textPrimitives,
+      final ArrayList<PointPrimitive> pointPrimitives,
+      final ArrayList<LinePrimitive> linePrimitives,
+      final ArrayList<ImagePrimitive> imagePrimitives,
       EnumSet<UpdateType> updateTypes) {
 
     // Log.d(TAG, getLayerName() + " Updating renderer: " + updateTypes);
@@ -140,10 +140,10 @@ public abstract class AbstractLayer implements Layer {
     try {
       // Blog.d(this, "Redraw: " + updateTypes);
       AtomicSection atomic = renderer.createAtomic();
-      setSources(textSources, updateTypes, TextSource.class, atomic);
-      setSources(pointSources, updateTypes, PointSource.class, atomic);
-      setSources(lineSources, updateTypes, LineSource.class, atomic);
-      setSources(imageSources, updateTypes, ImageSource.class, atomic);
+      setSources(textPrimitives, updateTypes, TextPrimitive.class, atomic);
+      setSources(pointPrimitives, updateTypes, PointPrimitive.class, atomic);
+      setSources(linePrimitives, updateTypes, LinePrimitive.class, atomic);
+      setSources(imagePrimitives, updateTypes, ImagePrimitive.class, atomic);
       renderer.queueAtomic(atomic);
     } finally {
       renderMapLock.unlock();
@@ -179,16 +179,16 @@ public abstract class AbstractLayer implements Layer {
 
   @SuppressWarnings("unchecked")
   <E> RenderManager<E> createRenderManager(Class<E> clazz, RendererControllerBase controller) {
-    if (clazz == ImageSource.class) {
+    if (clazz == ImagePrimitive.class) {
       return (RenderManager<E>) controller.createImageManager(getLayerDepthOrder());
 
-    } else if (clazz == TextSource.class) {
+    } else if (clazz == TextPrimitive.class) {
       return (RenderManager<E>) controller.createLabelManager(getLayerDepthOrder());
 
-    } else if (clazz == LineSource.class) {
+    } else if (clazz == LinePrimitive.class) {
       return (RenderManager<E>) controller.createLineManager(getLayerDepthOrder());
 
-    } else if (clazz == PointSource.class) {
+    } else if (clazz == PointPrimitive.class) {
       return (RenderManager<E>) controller.createPointManager(getLayerDepthOrder());
     }
     throw new IllegalStateException("Unknown source type: " + clazz);

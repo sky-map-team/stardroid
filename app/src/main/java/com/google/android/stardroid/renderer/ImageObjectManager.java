@@ -20,8 +20,8 @@ import com.google.android.stardroid.renderer.util.TexCoordBuffer;
 import com.google.android.stardroid.renderer.util.TextureManager;
 import com.google.android.stardroid.renderer.util.TextureReference;
 import com.google.android.stardroid.renderer.util.VertexBuffer;
-import com.google.android.stardroid.source.ImageSource;
 import com.google.android.stardroid.math.Vector3;
+import com.google.android.stardroid.source.ImagePrimitive;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -51,7 +51,7 @@ public class ImageObjectManager extends RendererObjectManager {
     super(layer, manager);
   }
 
-  public void updateObjects(List<ImageSource> imageSources, EnumSet<UpdateType> type) {
+  public void updateObjects(List<ImagePrimitive> imageSources, EnumSet<UpdateType> type) {
     if (!type.contains(UpdateType.Reset) && imageSources.size() != mImages.length) {
       logUpdateMismatch("ImageObjectManager", imageSources.size(), mImages.length, type);
       return;
@@ -75,7 +75,7 @@ public class ImageObjectManager extends RendererObjectManager {
 
     if (reset) {
       for (int i = 0; i < imageSources.size(); i++) {
-        ImageSource is = imageSources.get(i);
+        ImagePrimitive is = imageSources.get(i);
 
         images[i] = new Image();
         //TODO(brent): Fix this method.
@@ -88,7 +88,7 @@ public class ImageObjectManager extends RendererObjectManager {
     // Update the positions in the position and tex coord buffers.
     if (reset || type.contains(UpdateType.UpdatePositions)) {
       for (int i = 0; i < imageSources.size(); i++) {
-        ImageSource is = imageSources.get(i);
+        ImagePrimitive is = imageSources.get(i);
         Vector3 xyz = is.getLocation();
         float px = xyz.x;
         float py = xyz.y;
@@ -126,7 +126,7 @@ public class ImageObjectManager extends RendererObjectManager {
     // not doing a reset.
     if (type.contains(UpdateType.UpdateImages)) {
       for (int i = 0; i < imageSources.size(); i++) {
-        ImageSource is = imageSources.get(i);
+        ImagePrimitive is = imageSources.get(i);
         images[i].bitmap = is.getImage();
       }
     }

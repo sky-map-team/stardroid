@@ -12,12 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.google.android.stardroid.source.impl;
+package com.google.android.stardroid.source;
 
 import android.graphics.Color;
 
-import com.google.android.stardroid.source.Colorable;
-import com.google.android.stardroid.source.PositionSource;
 import com.google.android.stardroid.math.CoordinateManipulationsKt;
 import com.google.android.stardroid.math.Vector3;
 
@@ -30,7 +28,7 @@ import java.util.List;
  *
  * @author Brent Bryan
  */
-public abstract class AbstractSource implements Colorable, PositionSource {
+public abstract class AbstractPrimitive {
   /** Each source has an update granularity associated with it, which
    *  defines how often it's provider expects its value to change.
    */
@@ -45,15 +43,15 @@ public abstract class AbstractSource implements Colorable, PositionSource {
   private List<String> names;
 
   @Deprecated
-  AbstractSource() {
+  AbstractPrimitive() {
     this(CoordinateManipulationsKt.getGeocentricCoords(0.0f, 0.0f), Color.BLACK);
   }
 
-  protected AbstractSource(int color) {
+  protected AbstractPrimitive(int color) {
     this(CoordinateManipulationsKt.getGeocentricCoords(0.0f, 0.0f), color);
   }
 
-  protected AbstractSource(Vector3 geocentricCoords, int color) {
+  protected AbstractPrimitive(Vector3 geocentricCoords, int color) {
     this.xyz = geocentricCoords;
     this.color = color;
   }
@@ -66,12 +64,10 @@ public abstract class AbstractSource implements Colorable, PositionSource {
     this.names = names;
   }
 
-  @Override
   public int getColor() {
     return color;
   }
 
-  @Override
   public Vector3 getLocation() {
     return xyz;
   }

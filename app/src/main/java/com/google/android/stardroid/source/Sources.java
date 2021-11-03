@@ -26,14 +26,14 @@ import java.util.List;
 public interface Sources {
 
   /** Returns the list of points that should be drawn in the renderer. */
-  List<? extends PointSource> getPoints();
+  List<? extends PointPrimitive> getPoints();
 
   /** Returns the list of text labels that should be drawn in the renderer. */
-  List<? extends TextSource> getLabels();
+  List<? extends TextPrimitive> getLabels();
 
   /** Returns the list of lines that should be drawn in the renderer. */
-  List<? extends LineSource> getLines();
+  List<? extends LinePrimitive> getLines();
 
   /** Returns the list of images that should be drawn in the renderer. */
-  List<? extends ImageSource> getImages();
+  List<? extends ImagePrimitive> getImages();
 }

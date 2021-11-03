@@ -28,7 +28,7 @@ import com.google.android.stardroid.renderer.util.LabelMaker;
 import com.google.android.stardroid.renderer.util.SkyRegionMap;
 import com.google.android.stardroid.renderer.util.TextureManager;
 import com.google.android.stardroid.renderer.util.TextureReference;
-import com.google.android.stardroid.source.TextSource;
+import com.google.android.stardroid.source.TextPrimitive;
 import com.google.android.stardroid.util.FixedPoint;
 
 import java.nio.ByteBuffer;
@@ -119,7 +119,7 @@ public class LabelObjectManager extends RendererObjectManager {
                                       textureManager());
   }
 
-  public void updateObjects(List<TextSource> labels, EnumSet<UpdateType> updateType) {
+  public void updateObjects(List<TextPrimitive> labels, EnumSet<UpdateType> updateType) {
     if (updateType.contains(UpdateType.Reset)) {
       mLabels = new Label[labels.size()];
       for (int i = 0; i < labels.size(); i++) {
@@ -253,7 +253,7 @@ public class LabelObjectManager extends RendererObjectManager {
    * the label than to have two textures, one with red labels and one without. 
    */
   private static class Label extends LabelMaker.LabelData {
-    public Label(TextSource ts) {
+    public Label(TextPrimitive ts) {
       super(ts.getText(), 0xffffffff, ts.getFontSize());
       if (ts.getText() == null || ts.getText().isEmpty()) {
         throw new RuntimeException("Bad Label: " + ts.getClass());

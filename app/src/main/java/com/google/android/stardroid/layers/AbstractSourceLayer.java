@@ -20,12 +20,12 @@ import com.google.android.stardroid.renderer.util.UpdateClosure;
 import com.google.android.stardroid.search.PrefixStore;
 import com.google.android.stardroid.search.SearchResult;
 import com.google.android.stardroid.source.AstronomicalSource;
-import com.google.android.stardroid.source.ImageSource;
-import com.google.android.stardroid.source.LineSource;
-import com.google.android.stardroid.source.PointSource;
 import com.google.android.stardroid.source.Sources;
-import com.google.android.stardroid.source.TextSource;
 import com.google.android.stardroid.math.Vector3;
+import com.google.android.stardroid.source.ImagePrimitive;
+import com.google.android.stardroid.source.LinePrimitive;
+import com.google.android.stardroid.source.PointPrimitive;
+import com.google.android.stardroid.source.TextPrimitive;
 import com.google.android.stardroid.util.MiscUtil;
 
 import android.content.res.Resources;
@@ -46,10 +46,10 @@ import java.util.Set;
 public abstract class AbstractSourceLayer extends AbstractLayer {
   private static final String TAG = MiscUtil.getTag(AbstractSourceLayer.class);
 
-  private final ArrayList<TextSource> textSources = new ArrayList<TextSource>();
-  private final ArrayList<ImageSource> imageSources = new ArrayList<ImageSource>();
-  private final ArrayList<PointSource> pointSources = new ArrayList<PointSource>();
-  private final ArrayList<LineSource> lineSources = new ArrayList<LineSource>();
+  private final ArrayList<TextPrimitive> textPrimitives = new ArrayList<TextPrimitive>();
+  private final ArrayList<ImagePrimitive> imagePrimitives = new ArrayList<ImagePrimitive>();
+  private final ArrayList<PointPrimitive> pointPrimitives = new ArrayList<PointPrimitive>();
+  private final ArrayList<LinePrimitive> linePrimitives = new ArrayList<LinePrimitive>();
   private final ArrayList<AstronomicalSource> astroSources = new ArrayList<AstronomicalSource>();
 
   private HashMap<String, SearchResult> searchIndex = new HashMap<String, SearchResult>();
@@ -71,10 +71,10 @@ public abstract class AbstractSourceLayer extends AbstractLayer {
     for (AstronomicalSource astroSource : astroSources) {
       Sources sources = astroSource.initialize();
 
-      textSources.addAll(sources.getLabels());
-      imageSources.addAll(sources.getImages());
-      pointSources.addAll(sources.getPoints());
-      lineSources.addAll(sources.getLines());
+      textPrimitives.addAll(sources.getLabels());
+      imagePrimitives.addAll(sources.getImages());
+      pointPrimitives.addAll(sources.getPoints());
+      linePrimitives.addAll(sources.getLines());
 
       List<String> names = astroSource.getNames();
       if (!names.isEmpty()) {
@@ -141,7 +141,7 @@ public abstract class AbstractSourceLayer extends AbstractLayer {
   }
 
   private final void redraw(EnumSet<UpdateType> updateTypes) {
-    super.redraw(textSources, pointSources, lineSources, imageSources, updateTypes);
+    super.redraw(textPrimitives, pointPrimitives, linePrimitives, imagePrimitives, updateTypes);
   }
 
   @Override

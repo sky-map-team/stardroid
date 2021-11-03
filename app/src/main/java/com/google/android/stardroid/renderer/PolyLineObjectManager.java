@@ -25,7 +25,7 @@ import com.google.android.stardroid.renderer.util.TexCoordBuffer;
 import com.google.android.stardroid.renderer.util.TextureManager;
 import com.google.android.stardroid.renderer.util.TextureReference;
 import com.google.android.stardroid.renderer.util.VertexBuffer;
-import com.google.android.stardroid.source.LineSource;
+import com.google.android.stardroid.source.LinePrimitive;
 
 import java.util.EnumSet;
 import java.util.List;
@@ -44,14 +44,14 @@ public class PolyLineObjectManager extends RendererObjectManager {
     super(layer, textureManager);
   }
   
-  public void updateObjects(List<LineSource> lines, EnumSet<UpdateType> updateType) {
+  public void updateObjects(List<LinePrimitive> lines, EnumSet<UpdateType> updateType) {
     // We only care about updates to positions, ignore any other updates.
     if (!updateType.contains(UpdateType.Reset) && 
         !updateType.contains(UpdateType.UpdatePositions)) {
       return;
     }
     int numLineSegments = 0;
-    for (LineSource l : lines) {
+    for (LinePrimitive l : lines) {
       numLineSegments += l.getVertices().size() - 1;
     }
     
@@ -76,7 +76,7 @@ public class PolyLineObjectManager extends RendererObjectManager {
     boolean opaque = true;
     
     short vertexIndex = 0;
-    for (LineSource l : lines) {
+    for (LinePrimitive l : lines) {
       List<Vector3> coords = l.getVertices();
       if (coords.size() < 2)
         continue;

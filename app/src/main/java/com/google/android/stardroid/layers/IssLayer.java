@@ -26,11 +26,9 @@ import com.google.android.stardroid.ephemeris.OrbitalElements;
 import com.google.android.stardroid.renderer.RendererObjectManager.UpdateType;
 import com.google.android.stardroid.source.AbstractAstronomicalSource;
 import com.google.android.stardroid.source.AstronomicalSource;
-import com.google.android.stardroid.source.PointSource;
 import com.google.android.stardroid.source.Sources;
-import com.google.android.stardroid.source.TextSource;
-import com.google.android.stardroid.source.impl.PointSourceImpl;
-import com.google.android.stardroid.source.impl.TextSourceImpl;
+import com.google.android.stardroid.source.PointPrimitive;
+import com.google.android.stardroid.source.TextPrimitive;
 import com.google.android.stardroid.math.Vector3;
 import com.google.android.stardroid.util.MiscUtil;
 import com.google.common.io.Closeables;
@@ -166,8 +164,8 @@ public class IssLayer extends AbstractSourceLayer {
     private static final int ISS_COLOR = Color.YELLOW;
 
     private final Vector3 coords = new Vector3(1f, 0f, 0f);
-    private final ArrayList<PointSource> pointSources = new ArrayList<PointSource>();
-    private final ArrayList<TextSource> textSources = new ArrayList<TextSource>();
+    private final ArrayList<PointPrimitive> pointPrimitives = new ArrayList<PointPrimitive>();
+    private final ArrayList<TextPrimitive> textPrimitives = new ArrayList<TextPrimitive>();
     private final AstronomerModel model;
     private final String name;
 
@@ -179,8 +177,8 @@ public class IssLayer extends AbstractSourceLayer {
       this.model = model;
       this.name = resources.getString(R.string.space_station);
 
-      pointSources.add(new PointSourceImpl(coords, ISS_COLOR, 5));
-      textSources.add(new TextSourceImpl(coords, name, ISS_COLOR));
+      pointPrimitives.add(new PointPrimitive(coords, ISS_COLOR, 5));
+      textPrimitives.add(new TextPrimitive(coords, name, ISS_COLOR));
     }
 
     public synchronized void setOrbitalElements(OrbitalElements elements) {
@@ -232,13 +230,13 @@ public class IssLayer extends AbstractSourceLayer {
     }
 
     @Override
-    public List<? extends TextSource> getLabels() {
-      return textSources;
+    public List<TextPrimitive> getLabels() {
+      return textPrimitives;
     }
 
     @Override
-    public List<? extends PointSource> getPoints() {
-      return pointSources;
+    public List<PointPrimitive> getPoints() {
+      return pointPrimitives;
     }
   }
 

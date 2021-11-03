@@ -12,9 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.google.android.stardroid.source.impl;
+package com.google.android.stardroid.source;
 
-import com.google.android.stardroid.source.PointSource;
 import com.google.android.stardroid.math.CoordinateManipulationsKt;
 import com.google.android.stardroid.math.Vector3;
 
@@ -24,31 +23,53 @@ import com.google.android.stardroid.math.Vector3;
  * @author Brent Bryan
  */
 
-public class PointSourceImpl extends AbstractSource implements PointSource {
+public class PointPrimitive extends AbstractPrimitive {
   public final int size;
   private final Shape pointShape;
 
-  public PointSourceImpl(float ra, float dec, int color, int size) {
+  public PointPrimitive(float ra, float dec, int color, int size) {
     this(CoordinateManipulationsKt.getGeocentricCoords(ra, dec), color, size);
   }
 
-  public PointSourceImpl(Vector3 coords, int color, int size) {
+  public PointPrimitive(Vector3 coords, int color, int size) {
     this(coords, color, size, Shape.CIRCLE);
   }
 
-  public PointSourceImpl(Vector3 coords, int color, int size, Shape pointShape) {
+  public PointPrimitive(Vector3 coords, int color, int size, Shape pointShape) {
     super(coords, color);
     this.size = size;
     this.pointShape = pointShape;
   }
 
-  @Override
   public int getSize() {
     return size;
   }
 
-  @Override
   public Shape getPointShape() {
     return pointShape;
+  }
+
+  public enum Shape {
+    CIRCLE(0),
+    STAR(1),
+    ELLIPTICAL_GALAXY(2),
+    SPIRAL_GALAXY(3),
+    IRREGULAR_GALAXY(4),
+    LENTICULAR_GALAXY(3),
+    GLOBULAR_CLUSTER(5),
+    OPEN_CLUSTER(6),
+    NEBULA(7),
+    HUBBLE_DEEP_FIELD(8);
+
+    private final int imageIndex;
+
+    Shape(int imageIndex) {
+      this.imageIndex = imageIndex;
+    }
+
+    public int getImageIndex() {
+      // return imageIndex;
+      return 0;
+    }
   }
 }

@@ -22,7 +22,7 @@ import java.util.List;
 
 /**
  * This class represents a single source shown in SkyMap. An AstronomicalSource
- * may consist of several components. For instance, a constellation may have a
+ * may consist of several primitives. For instance, a constellation may have a
  * label, an image, as well as the star to star lines.
  *
  * @author Brent Bryan

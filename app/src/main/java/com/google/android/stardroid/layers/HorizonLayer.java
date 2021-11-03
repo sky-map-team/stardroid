@@ -24,11 +24,9 @@ import com.google.android.stardroid.control.AstronomerModel;
 import com.google.android.stardroid.renderer.RendererObjectManager.UpdateType;
 import com.google.android.stardroid.source.AbstractAstronomicalSource;
 import com.google.android.stardroid.source.AstronomicalSource;
-import com.google.android.stardroid.source.LineSource;
 import com.google.android.stardroid.source.Sources;
-import com.google.android.stardroid.source.TextSource;
-import com.google.android.stardroid.source.impl.LineSourceImpl;
-import com.google.android.stardroid.source.impl.TextSourceImpl;
+import com.google.android.stardroid.source.LinePrimitive;
+import com.google.android.stardroid.source.TextPrimitive;
 import com.google.android.stardroid.math.Vector3;
 
 import java.util.ArrayList;
@@ -91,8 +89,8 @@ public class HorizonLayer extends AbstractSourceLayer {
     private final Vector3 east = new Vector3(0, 0, 0);
     private final Vector3 west = new Vector3(0, 0, 0);
 
-    private final ArrayList<LineSource> lineSources = new ArrayList<LineSource>();
-    private final ArrayList<TextSource> textSources = new ArrayList<TextSource>();
+    private final ArrayList<LinePrimitive> linePrimitives = new ArrayList<LinePrimitive>();
+    private final ArrayList<TextPrimitive> textPrimitives = new ArrayList<TextPrimitive>();
     private final AstronomerModel model;
 
     private long lastUpdateTimeMs = 0L;
@@ -101,14 +99,14 @@ public class HorizonLayer extends AbstractSourceLayer {
       this.model = model;
 
       List<Vector3> vertices = Lists.asList(north, east, south, west, north);
-      lineSources.add(new LineSourceImpl(LINE_COLOR, vertices, 1.5f));
+      linePrimitives.add(new LinePrimitive(LINE_COLOR, vertices, 1.5f));
 
-      textSources.add(new TextSourceImpl(zenith, res.getString(R.string.zenith), LABEL_COLOR));
-      textSources.add(new TextSourceImpl(nadir, res.getString(R.string.nadir), LABEL_COLOR));
-      textSources.add(new TextSourceImpl(north, res.getString(R.string.north), LABEL_COLOR));
-      textSources.add(new TextSourceImpl(south, res.getString(R.string.south), LABEL_COLOR));
-      textSources.add(new TextSourceImpl(east, res.getString(R.string.east), LABEL_COLOR));
-      textSources.add(new TextSourceImpl(west, res.getString(R.string.west), LABEL_COLOR));
+      textPrimitives.add(new TextPrimitive(zenith, res.getString(R.string.zenith), LABEL_COLOR));
+      textPrimitives.add(new TextPrimitive(nadir, res.getString(R.string.nadir), LABEL_COLOR));
+      textPrimitives.add(new TextPrimitive(north, res.getString(R.string.north), LABEL_COLOR));
+      textPrimitives.add(new TextPrimitive(south, res.getString(R.string.south), LABEL_COLOR));
+      textPrimitives.add(new TextPrimitive(east, res.getString(R.string.east), LABEL_COLOR));
+      textPrimitives.add(new TextPrimitive(west, res.getString(R.string.west), LABEL_COLOR));
     }
 
     private void updateCoords() {
@@ -142,13 +140,13 @@ public class HorizonLayer extends AbstractSourceLayer {
     }
 
     @Override
-    public List<? extends TextSource> getLabels() {
-      return textSources;
+    public List<TextPrimitive> getLabels() {
+      return textPrimitives;
     }
 
     @Override
-    public List<? extends LineSource> getLines() {
-      return lineSources;
+    public List<LinePrimitive> getLines() {
+      return linePrimitives;
     }
   }
 }

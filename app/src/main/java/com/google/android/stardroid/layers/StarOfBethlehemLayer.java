@@ -23,9 +23,8 @@ import com.google.android.stardroid.control.AstronomerModel;
 import com.google.android.stardroid.renderer.RendererObjectManager.UpdateType;
 import com.google.android.stardroid.source.AbstractAstronomicalSource;
 import com.google.android.stardroid.source.AstronomicalSource;
-import com.google.android.stardroid.source.ImageSource;
 import com.google.android.stardroid.source.Sources;
-import com.google.android.stardroid.source.impl.ImageSourceImpl;
+import com.google.android.stardroid.source.ImagePrimitive;
 import com.google.android.stardroid.math.Vector3;
 import com.google.android.stardroid.util.MiscUtil;
 
@@ -80,12 +79,12 @@ public class StarOfBethlehemLayer extends AbstractSourceLayer {
     private static final long UPDATE_FREQ_MS = 1L * TimeConstants.MILLISECONDS_PER_MINUTE;
     private static final float SCALE_FACTOR = 0.03f;
 
-    private final List<ImageSource> imageSources = new ArrayList<ImageSource>();
+    private final List<ImagePrimitive> imageSources = new ArrayList<ImagePrimitive>();
     private final AstronomerModel model;
 
     private long lastUpdateTimeMs = 0L;
     private Vector3 coords;
-    private ImageSourceImpl theImage;
+    private ImagePrimitive theImage;
 
     public StarOfBethlehemSource(AstronomerModel model, Resources resources) {
       this.model = model;
@@ -94,7 +93,7 @@ public class StarOfBethlehemLayer extends AbstractSourceLayer {
       // We'd prefer not to show any image except on the Christmas dates, but there
       // appears to be a bug in the renderer in that new images added later don't get
       // picked up, even if we return UpdateType.Reset.
-      theImage = new ImageSourceImpl(coords, resources, R.drawable.blank, UP, SCALE_FACTOR);
+      theImage = new ImagePrimitive(coords, resources, R.drawable.blank, UP, SCALE_FACTOR);
       imageSources.add(theImage);
     }
 
@@ -138,7 +137,7 @@ public class StarOfBethlehemLayer extends AbstractSourceLayer {
     }
 
     @Override
-    public List<? extends ImageSource> getImages() {
+    public List<ImagePrimitive> getImages() {
       return imageSources;
     }
   }

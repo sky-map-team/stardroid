@@ -23,11 +23,9 @@ import com.google.android.stardroid.control.AstronomerModel;
 import com.google.android.stardroid.renderer.RendererObjectManager.UpdateType;
 import com.google.android.stardroid.source.AbstractAstronomicalSource;
 import com.google.android.stardroid.source.AstronomicalSource;
-import com.google.android.stardroid.source.ImageSource;
 import com.google.android.stardroid.source.Sources;
-import com.google.android.stardroid.source.TextSource;
-import com.google.android.stardroid.source.impl.ImageSourceImpl;
-import com.google.android.stardroid.source.impl.TextSourceImpl;
+import com.google.android.stardroid.source.ImagePrimitive;
+import com.google.android.stardroid.source.TextPrimitive;
 import com.google.android.stardroid.math.CoordinateManipulationsKt;
 import com.google.android.stardroid.math.Vector3;
 
@@ -177,14 +175,14 @@ public class MeteorShowerLayer extends AbstractSourceLayer {
     private static final long UPDATE_FREQ_MS = 1L * TimeConstants.MILLISECONDS_PER_DAY;
     private static final float SCALE_FACTOR = 0.03f;
 
-    private final List<ImageSource> imageSources = new ArrayList<>();
-    private final List<TextSource> labelSources = new ArrayList<>();
+    private final List<ImagePrimitive> imagePrimitives = new ArrayList<>();
+    private final List<TextPrimitive> labelPrimitives = new ArrayList<>();
 
     private final AstronomerModel model;
 
     private long lastUpdateTimeMs = 0L;
-    private ImageSourceImpl theImage;
-    private TextSource label;
+    private ImagePrimitive theImage;
+    private TextPrimitive label;
     private Shower shower;
     private String name;
     private List<String> searchNames = new ArrayList<>();
@@ -204,10 +202,10 @@ public class MeteorShowerLayer extends AbstractSourceLayer {
       // appears to be a bug in the renderer/layer interface in that Update values are not
       // respected.  Ditto the label.
       // TODO(johntaylor): fix the bug and remove this blank image
-      theImage = new ImageSourceImpl(shower.radiant, resources, R.drawable.blank, UP, SCALE_FACTOR);
-      imageSources.add(theImage);
-      label = new TextSourceImpl(shower.radiant, name, LABEL_COLOR);
-      labelSources.add(label);
+      theImage = new ImagePrimitive(shower.radiant, resources, R.drawable.blank, UP, SCALE_FACTOR);
+      imagePrimitives.add(theImage);
+      label = new TextPrimitive(shower.radiant, name, LABEL_COLOR);
+      labelPrimitives.add(label);
     }
 
     @Override
@@ -269,13 +267,13 @@ public class MeteorShowerLayer extends AbstractSourceLayer {
     }
 
     @Override
-    public List<? extends ImageSource> getImages() {
-      return imageSources;
+    public List<ImagePrimitive> getImages() {
+      return imagePrimitives;
     }
 
     @Override
-    public List<? extends TextSource> getLabels() {
-      return labelSources;
+    public List<TextPrimitive> getLabels() {
+      return labelPrimitives;
     }
   }
 }

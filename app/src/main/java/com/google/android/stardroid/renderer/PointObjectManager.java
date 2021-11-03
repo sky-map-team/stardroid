@@ -28,7 +28,7 @@ import com.google.android.stardroid.renderer.util.TexCoordBuffer;
 import com.google.android.stardroid.renderer.util.TextureManager;
 import com.google.android.stardroid.renderer.util.TextureReference;
 import com.google.android.stardroid.renderer.util.VertexBuffer;
-import com.google.android.stardroid.source.PointSource;
+import com.google.android.stardroid.source.PointPrimitive;
 
 import java.util.ArrayList;
 import java.util.EnumSet;
@@ -45,7 +45,7 @@ public class PointObjectManager extends RendererObjectManager {
   private class RegionData {
     // TODO(jpowell): This is a convenient hack until the catalog tells us the
     // region for all of its sources.  Remove this once we add that.
-    List<PointSource> sources = new ArrayList<PointSource>();
+    List<PointPrimitive> sources = new ArrayList<PointPrimitive>();
 
     private VertexBuffer mVertexBuffer = new VertexBuffer(true);
     private NightVisionColorBuffer mColorBuffer = new NightVisionColorBuffer(true);
@@ -67,7 +67,7 @@ public class PointObjectManager extends RendererObjectManager {
     mSkyRegions.setRegionDataFactory(RegionData::new);
   }
 
-  public void updateObjects(List<PointSource> points, EnumSet<UpdateType> updateType) {
+  public void updateObjects(List<PointPrimitive> points, EnumSet<UpdateType> updateType) {
     boolean onlyUpdatePoints = true;
     // We only care about updates to positions, ignore any other updates.
     if (updateType.contains(UpdateType.Reset)) {
@@ -91,7 +91,7 @@ public class PointObjectManager extends RendererObjectManager {
     if (COMPUTE_REGIONS) {
       // Find the region for each point, and put it in a separate list
       // for that region.
-      for (PointSource point : points) {
+      for (PointPrimitive point : points) {
         int region = points.size() < MINIMUM_NUM_POINTS_FOR_REGIONS
             ? SkyRegionMap.CATCHALL_REGION_ID
             : SkyRegionMap.getObjectRegion(point.getLocation());
@@ -138,7 +138,7 @@ public class PointObjectManager extends RendererObjectManager {
 
       float starWidthInTexels = 1.0f / NUM_STARS_IN_TEXTURE;
 
-      for (PointSource p : data.sources) {
+      for (PointPrimitive p : data.sources) {
         int color = 0xff000000 | p.getColor();  // Force alpha to 0xff
         short bottomLeft = index++;
         short topLeft = index++;

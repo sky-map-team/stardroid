@@ -51,22 +51,22 @@ public abstract class AbstractAstronomicalSource implements AstronomicalSource, 
   }
 
   @Override
-  public List<? extends ImageSource> getImages() {
+  public List<ImagePrimitive> getImages() {
     return Collections.emptyList();
   }
 
   @Override
-  public List<? extends TextSource> getLabels() {
+  public List<TextPrimitive> getLabels() {
     return Collections.emptyList();
   }
 
   @Override
-  public List<? extends LineSource> getLines() {
+  public List<LinePrimitive> getLines() {
     return Collections.emptyList();
   }
 
   @Override
-  public List<? extends PointSource> getPoints() {
+  public List<PointPrimitive> getPoints() {
     return Collections.emptyList();
   }
 }
