@@ -175,8 +175,8 @@ public class MeteorShowerLayer extends AbstractSourceLayer {
     private static final long UPDATE_FREQ_MS = 1L * TimeConstants.MILLISECONDS_PER_DAY;
     private static final float SCALE_FACTOR = 0.03f;
 
-    private final List<ImagePrimitive> imageSources = new ArrayList<>();
-    private final List<TextPrimitive> labelSources = new ArrayList<>();
+    private final List<ImagePrimitive> imagePrimitives = new ArrayList<>();
+    private final List<TextPrimitive> labelPrimitives = new ArrayList<>();
 
     private final AstronomerModel model;
 
@@ -203,9 +203,9 @@ public class MeteorShowerLayer extends AbstractSourceLayer {
       // respected.  Ditto the label.
       // TODO(johntaylor): fix the bug and remove this blank image
       theImage = new ImagePrimitive(shower.radiant, resources, R.drawable.blank, UP, SCALE_FACTOR);
-      imageSources.add(theImage);
+      imagePrimitives.add(theImage);
       label = new TextPrimitive(shower.radiant, name, LABEL_COLOR);
-      labelSources.add(label);
+      labelPrimitives.add(label);
     }
 
     @Override
@@ -267,13 +267,13 @@ public class MeteorShowerLayer extends AbstractSourceLayer {
     }
 
     @Override
-    public List<? extends ImagePrimitive> getImages() {
-      return imageSources;
+    public List<ImagePrimitive> getImages() {
+      return imagePrimitives;
     }
 
     @Override
-    public List<? extends TextPrimitive> getLabels() {
-      return labelSources;
+    public List<TextPrimitive> getLabels() {
+      return labelPrimitives;
     }
   }
 }

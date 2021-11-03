@@ -137,7 +137,7 @@ public class StarOfBethlehemLayer extends AbstractSourceLayer {
     }
 
     @Override
-    public List<? extends ImagePrimitive> getImages() {
+    public List<ImagePrimitive> getImages() {
       return imageSources;
     }
   }

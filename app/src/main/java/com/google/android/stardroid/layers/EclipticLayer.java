@@ -86,12 +86,12 @@ public class EclipticLayer extends AbstractSourceLayer {
     }
 
     @Override
-    public List<? extends TextPrimitive> getLabels() {
+    public List<TextPrimitive> getLabels() {
       return textPrimitives;
     }
 
     @Override
-    public List<? extends LinePrimitive> getLines() {
+    public List<LinePrimitive> getLines() {
       return linePrimitives;
     }
   }

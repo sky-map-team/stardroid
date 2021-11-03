@@ -230,12 +230,12 @@ public class IssLayer extends AbstractSourceLayer {
     }
 
     @Override
-    public List<? extends TextPrimitive> getLabels() {
+    public List<TextPrimitive> getLabels() {
       return textPrimitives;
     }
 
     @Override
-    public List<? extends PointPrimitive> getPoints() {
+    public List<PointPrimitive> getPoints() {
       return pointPrimitives;
     }
   }

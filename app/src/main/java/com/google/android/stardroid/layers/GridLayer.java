@@ -145,12 +145,12 @@ public class GridLayer extends AbstractSourceLayer {
     }
 
     @Override
-    public List<? extends TextPrimitive> getLabels() {
+    public List<TextPrimitive> getLabels() {
       return textSources;
     }
 
     @Override
-    public List<? extends LinePrimitive> getLines() {
+    public List<LinePrimitive> getLines() {
       return lineSources;
     }
   }

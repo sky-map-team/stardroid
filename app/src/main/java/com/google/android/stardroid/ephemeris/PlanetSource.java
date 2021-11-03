@@ -148,17 +148,17 @@ public class PlanetSource extends AbstractAstronomicalSource {
   }
 
   @Override
-  public List<? extends ImagePrimitive> getImages() {
+  public List<ImagePrimitive> getImages() {
     return imagePrimitives;
   }
 
   @Override
-  public List<? extends TextPrimitive> getLabels() {
+  public List<TextPrimitive> getLabels() {
     return labelPrimitives;
   }
 
   @Override
-  public List<? extends PointPrimitive> getPoints() {
+  public List<PointPrimitive> getPoints() {
     return pointPrimitives;
   }
 }
