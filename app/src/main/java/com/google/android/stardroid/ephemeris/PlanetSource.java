@@ -27,7 +27,7 @@ import com.google.android.stardroid.source.Sources;
 import com.google.android.stardroid.source.TextPrimitive;
 import com.google.android.stardroid.source.impl.ImagePrimitiveImpl;
 import com.google.android.stardroid.source.impl.PointPrimitiveImpl;
-import com.google.android.stardroid.source.impl.TextSourceImpl;
+import com.google.android.stardroid.source.impl.TextPrimitiveImpl;
 import com.google.android.stardroid.space.SolarSystemObject;
 import com.google.android.stardroid.space.Universe;
 import com.google.android.stardroid.math.Vector3;
@@ -118,7 +118,7 @@ public class PlanetSource extends AbstractAstronomicalSource {
         pointPrimitives.add(new PointPrimitiveImpl(currentCoords, PLANET_COLOR, PLANET_SIZE));
       }
     }
-    labelPrimitives.add(new TextSourceImpl(currentCoords, name, PLANET_LABEL_COLOR));
+    labelPrimitives.add(new TextPrimitiveImpl(currentCoords, name, PLANET_LABEL_COLOR));
 
     return this;
   }

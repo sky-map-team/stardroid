@@ -27,7 +27,7 @@ import com.google.android.stardroid.math.Vector3;
 /**
  * For representing constellations, constellation boundaries etc.
  */
-public class LinePrimitiveImpl extends AbstractSource implements LinePrimitive {
+public class LinePrimitiveImpl extends AbstractPrimitive implements LinePrimitive {
 
   public final List<Vector3> vertices;
   public final List<RaDec> raDecs;

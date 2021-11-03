@@ -27,7 +27,7 @@ import com.google.android.stardroid.source.ImagePrimitive;
 import com.google.android.stardroid.source.Sources;
 import com.google.android.stardroid.source.TextPrimitive;
 import com.google.android.stardroid.source.impl.ImagePrimitiveImpl;
-import com.google.android.stardroid.source.impl.TextSourceImpl;
+import com.google.android.stardroid.source.impl.TextPrimitiveImpl;
 import com.google.android.stardroid.math.CoordinateManipulationsKt;
 import com.google.android.stardroid.math.Vector3;
 
@@ -206,7 +206,7 @@ public class MeteorShowerLayer extends AbstractSourceLayer {
       // TODO(johntaylor): fix the bug and remove this blank image
       theImage = new ImagePrimitiveImpl(shower.radiant, resources, R.drawable.blank, UP, SCALE_FACTOR);
       imageSources.add(theImage);
-      label = new TextSourceImpl(shower.radiant, name, LABEL_COLOR);
+      label = new TextPrimitiveImpl(shower.radiant, name, LABEL_COLOR);
       labelSources.add(label);
     }
 

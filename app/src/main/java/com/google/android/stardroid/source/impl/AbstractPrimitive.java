@@ -30,7 +30,7 @@ import java.util.List;
  *
  * @author Brent Bryan
  */
-public abstract class AbstractSource implements HasColor, HasPosition {
+public abstract class AbstractPrimitive implements HasColor, HasPosition {
   /** Each source has an update granularity associated with it, which
    *  defines how often it's provider expects its value to change.
    */
@@ -45,15 +45,15 @@ public abstract class AbstractSource implements HasColor, HasPosition {
   private List<String> names;
 
   @Deprecated
-  AbstractSource() {
+  AbstractPrimitive() {
     this(CoordinateManipulationsKt.getGeocentricCoords(0.0f, 0.0f), Color.BLACK);
   }
 
-  protected AbstractSource(int color) {
+  protected AbstractPrimitive(int color) {
     this(CoordinateManipulationsKt.getGeocentricCoords(0.0f, 0.0f), color);
   }
 
-  protected AbstractSource(Vector3 geocentricCoords, int color) {
+  protected AbstractPrimitive(Vector3 geocentricCoords, int color) {
     this.xyz = geocentricCoords;
     this.color = color;
   }

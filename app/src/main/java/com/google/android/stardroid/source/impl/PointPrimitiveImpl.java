@@ -24,7 +24,7 @@ import com.google.android.stardroid.math.Vector3;
  * @author Brent Bryan
  */
 
-public class PointPrimitiveImpl extends AbstractSource implements PointPrimitive {
+public class PointPrimitiveImpl extends AbstractPrimitive implements PointPrimitive {
   public final int size;
   private final Shape pointShape;
 

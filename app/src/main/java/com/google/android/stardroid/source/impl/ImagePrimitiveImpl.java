@@ -28,7 +28,7 @@ import com.google.android.stardroid.source.ImagePrimitive;
  *  A celestial object represented by an image, such as a planet or a
  *  galaxy.
  */
-public class ImagePrimitiveImpl extends AbstractSource implements ImagePrimitive {
+public class ImagePrimitiveImpl extends AbstractPrimitive implements ImagePrimitive {
 
   static Vector3 up = new Vector3(0.0f, 1.0f, 0.0f);
 

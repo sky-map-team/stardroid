@@ -23,7 +23,7 @@ import com.google.android.stardroid.source.AstronomicalSource;
 import com.google.android.stardroid.source.LinePrimitive;
 import com.google.android.stardroid.source.TextPrimitive;
 import com.google.android.stardroid.source.impl.LinePrimitiveImpl;
-import com.google.android.stardroid.source.impl.TextSourceImpl;
+import com.google.android.stardroid.source.impl.TextPrimitiveImpl;
 import com.google.android.stardroid.math.CoordinateManipulationsKt;
 import com.google.android.stardroid.math.Vector3;
 
@@ -73,8 +73,8 @@ public class EclipticLayer extends AbstractSourceLayer {
 
     public EclipticSource(Resources res) {
       String title = res.getString(R.string.ecliptic);
-      textPrimitives.add(new TextSourceImpl(90.0f, EPSILON, title, LINE_COLOR));
-      textPrimitives.add(new TextSourceImpl(270f, -EPSILON, title, LINE_COLOR));
+      textPrimitives.add(new TextPrimitiveImpl(90.0f, EPSILON, title, LINE_COLOR));
+      textPrimitives.add(new TextPrimitiveImpl(270f, -EPSILON, title, LINE_COLOR));
 
       // Create line source.
       float[] ra = {0, 90, 180, 270, 0};

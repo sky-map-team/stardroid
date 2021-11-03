@@ -23,7 +23,7 @@ import com.google.android.stardroid.source.AstronomicalSource;
 import com.google.android.stardroid.source.LinePrimitive;
 import com.google.android.stardroid.source.TextPrimitive;
 import com.google.android.stardroid.source.impl.LinePrimitiveImpl;
-import com.google.android.stardroid.source.impl.TextSourceImpl;
+import com.google.android.stardroid.source.impl.TextPrimitiveImpl;
 import com.google.android.stardroid.math.CoordinateManipulationsKt;
 import com.google.android.stardroid.math.RaDec;
 
@@ -86,7 +86,7 @@ public class GridLayer extends AbstractSourceLayer {
     private static final int NUM_RA_VERTICES = 36;
 
     private final ArrayList<LinePrimitiveImpl> lineSources = new ArrayList<LinePrimitiveImpl>();
-    private final ArrayList<TextSourceImpl> textSources = new ArrayList<TextSourceImpl>();
+    private final ArrayList<TextPrimitiveImpl> textSources = new ArrayList<TextPrimitiveImpl>();
 
     public GridSource(Resources res, int numRaSources, int numDecSources) {
       for (int r = 0; r < numRaSources; r++) {
@@ -94,12 +94,12 @@ public class GridLayer extends AbstractSourceLayer {
       }
 
       /** North & South pole, hour markers every 2hrs. */
-      textSources.add(new TextSourceImpl(0f, 90f, res.getString(R.string.north_pole), LINE_COLOR));
-      textSources.add(new TextSourceImpl(0f, -90f, res.getString(R.string.south_pole), LINE_COLOR));
+      textSources.add(new TextPrimitiveImpl(0f, 90f, res.getString(R.string.north_pole), LINE_COLOR));
+      textSources.add(new TextPrimitiveImpl(0f, -90f, res.getString(R.string.south_pole), LINE_COLOR));
       for (int index = 0; index < 12; index++) {
         float ra = index * 30.0f;
         String title = String.format("%dh", 2 * index);
-        textSources.add(new TextSourceImpl(ra, 0.0f, title, LINE_COLOR));
+        textSources.add(new TextPrimitiveImpl(ra, 0.0f, title, LINE_COLOR));
       }
 
       lineSources.add(createDecLine(0, 0)); // Equator
@@ -107,9 +107,9 @@ public class GridLayer extends AbstractSourceLayer {
       for (int d = 1; d < numDecSources; d++) {
         float dec = d * 90.0f / numDecSources;
         lineSources.add(createDecLine(d, dec));
-        textSources.add(new TextSourceImpl(0f, dec, String.format("%d°", (int) dec), LINE_COLOR));
+        textSources.add(new TextPrimitiveImpl(0f, dec, String.format("%d°", (int) dec), LINE_COLOR));
         lineSources.add(createDecLine(d, -dec));
-        textSources.add(new TextSourceImpl(0f, -dec, String.format("%d°", (int) -dec), LINE_COLOR));
+        textSources.add(new TextPrimitiveImpl(0f, -dec, String.format("%d°", (int) -dec), LINE_COLOR));
       }
     }
 

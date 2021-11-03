@@ -24,7 +24,7 @@ import com.google.android.stardroid.source.PointPrimitive;
 import com.google.android.stardroid.source.TextPrimitive;
 import com.google.android.stardroid.source.impl.LinePrimitiveImpl;
 import com.google.android.stardroid.source.impl.PointPrimitiveImpl;
-import com.google.android.stardroid.source.impl.TextSourceImpl;
+import com.google.android.stardroid.source.impl.TextPrimitiveImpl;
 import com.google.android.stardroid.source.proto.SourceProto.AstronomicalSourceProto;
 import com.google.android.stardroid.source.proto.SourceProto.GeocentricCoordinatesProto;
 import com.google.android.stardroid.source.proto.SourceProto.LabelElementProto;
@@ -152,7 +152,7 @@ public class ProtobufAstronomicalSource extends AbstractAstronomicalSource {
     ArrayList<TextPrimitive> points = new ArrayList<TextPrimitive>(proto.getLabelCount());
     for (LabelElementProto element : proto.getLabelList()) {
       Log.d(TAG, "Label " + element.getStringsIntId() + " : " + element.getStringsStrId());
-      points.add(new TextSourceImpl(getCoords(element.getLocation()),
+      points.add(new TextPrimitiveImpl(getCoords(element.getLocation()),
           resources.getString(element.getStringsIntId()),
           element.getColor(), element.getOffset(), element.getFontSize()));
     }

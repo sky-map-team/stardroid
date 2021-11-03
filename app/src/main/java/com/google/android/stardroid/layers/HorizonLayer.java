@@ -28,7 +28,7 @@ import com.google.android.stardroid.source.LinePrimitive;
 import com.google.android.stardroid.source.Sources;
 import com.google.android.stardroid.source.TextPrimitive;
 import com.google.android.stardroid.source.impl.LinePrimitiveImpl;
-import com.google.android.stardroid.source.impl.TextSourceImpl;
+import com.google.android.stardroid.source.impl.TextPrimitiveImpl;
 import com.google.android.stardroid.math.Vector3;
 
 import java.util.ArrayList;
@@ -103,12 +103,12 @@ public class HorizonLayer extends AbstractSourceLayer {
       List<Vector3> vertices = Lists.asList(north, east, south, west, north);
       linePrimitives.add(new LinePrimitiveImpl(LINE_COLOR, vertices, 1.5f));
 
-      textPrimitives.add(new TextSourceImpl(zenith, res.getString(R.string.zenith), LABEL_COLOR));
-      textPrimitives.add(new TextSourceImpl(nadir, res.getString(R.string.nadir), LABEL_COLOR));
-      textPrimitives.add(new TextSourceImpl(north, res.getString(R.string.north), LABEL_COLOR));
-      textPrimitives.add(new TextSourceImpl(south, res.getString(R.string.south), LABEL_COLOR));
-      textPrimitives.add(new TextSourceImpl(east, res.getString(R.string.east), LABEL_COLOR));
-      textPrimitives.add(new TextSourceImpl(west, res.getString(R.string.west), LABEL_COLOR));
+      textPrimitives.add(new TextPrimitiveImpl(zenith, res.getString(R.string.zenith), LABEL_COLOR));
+      textPrimitives.add(new TextPrimitiveImpl(nadir, res.getString(R.string.nadir), LABEL_COLOR));
+      textPrimitives.add(new TextPrimitiveImpl(north, res.getString(R.string.north), LABEL_COLOR));
+      textPrimitives.add(new TextPrimitiveImpl(south, res.getString(R.string.south), LABEL_COLOR));
+      textPrimitives.add(new TextPrimitiveImpl(east, res.getString(R.string.east), LABEL_COLOR));
+      textPrimitives.add(new TextPrimitiveImpl(west, res.getString(R.string.west), LABEL_COLOR));
     }
 
     private void updateCoords() {

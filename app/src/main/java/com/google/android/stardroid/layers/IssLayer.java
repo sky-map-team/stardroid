@@ -30,7 +30,7 @@ import com.google.android.stardroid.source.PointPrimitive;
 import com.google.android.stardroid.source.Sources;
 import com.google.android.stardroid.source.TextPrimitive;
 import com.google.android.stardroid.source.impl.PointPrimitiveImpl;
-import com.google.android.stardroid.source.impl.TextSourceImpl;
+import com.google.android.stardroid.source.impl.TextPrimitiveImpl;
 import com.google.android.stardroid.math.Vector3;
 import com.google.android.stardroid.util.MiscUtil;
 import com.google.common.io.Closeables;
@@ -180,7 +180,7 @@ public class IssLayer extends AbstractSourceLayer {
       this.name = resources.getString(R.string.space_station);
 
       pointPrimitives.add(new PointPrimitiveImpl(coords, ISS_COLOR, 5));
-      textPrimitives.add(new TextSourceImpl(coords, name, ISS_COLOR));
+      textPrimitives.add(new TextPrimitiveImpl(coords, name, ISS_COLOR));
     }
 
     public synchronized void setOrbitalElements(OrbitalElements elements) {

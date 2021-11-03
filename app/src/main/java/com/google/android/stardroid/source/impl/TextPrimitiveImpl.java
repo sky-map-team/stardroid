@@ -26,21 +26,21 @@ import com.google.common.base.Preconditions;
  *
  * @author Brent Bryan
  */
-public class TextSourceImpl extends AbstractSource implements TextPrimitive {
+public class TextPrimitiveImpl extends AbstractPrimitive implements TextPrimitive {
   public String label;
   public final float offset;
   public final int fontSize;
 
-  public TextSourceImpl(float ra, float dec, String label, int color) {
+  public TextPrimitiveImpl(float ra, float dec, String label, int color) {
     this(CoordinateManipulationsKt.getGeocentricCoords(ra, dec), label, color);
   }
 
-  public TextSourceImpl(Vector3 coords, String label, int color) {
+  public TextPrimitiveImpl(Vector3 coords, String label, int color) {
     this(coords, label, color, 0.02f, 15);
   }
 
-  public TextSourceImpl(Vector3 coords, String label, int color, float offset,
-                        int fontSize) {
+  public TextPrimitiveImpl(Vector3 coords, String label, int color, float offset,
+                           int fontSize) {
 
     super(coords, color);
     this.label = Preconditions.checkNotNull(label);
