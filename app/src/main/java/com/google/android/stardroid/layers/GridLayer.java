@@ -83,31 +83,31 @@ public class GridLayer extends AbstractSourceLayer {
     /** every 10 degrees */
     private static final int NUM_RA_VERTICES = 36;
 
-    private final ArrayList<LinePrimitive> lineSources = new ArrayList<LinePrimitive>();
-    private final ArrayList<TextPrimitive> textSources = new ArrayList<TextPrimitive>();
+    private final ArrayList<LinePrimitive> linePrimitives = new ArrayList<LinePrimitive>();
+    private final ArrayList<TextPrimitive> textPrimitives = new ArrayList<TextPrimitive>();
 
     public GridSource(Resources res, int numRaSources, int numDecSources) {
       for (int r = 0; r < numRaSources; r++) {
-        lineSources.add(createRaLine(r, numRaSources));
+        linePrimitives.add(createRaLine(r, numRaSources));
       }
 
       /** North & South pole, hour markers every 2hrs. */
-      textSources.add(new TextPrimitive(0f, 90f, res.getString(R.string.north_pole), LINE_COLOR));
-      textSources.add(new TextPrimitive(0f, -90f, res.getString(R.string.south_pole), LINE_COLOR));
+      textPrimitives.add(new TextPrimitive(0f, 90f, res.getString(R.string.north_pole), LINE_COLOR));
+      textPrimitives.add(new TextPrimitive(0f, -90f, res.getString(R.string.south_pole), LINE_COLOR));
       for (int index = 0; index < 12; index++) {
         float ra = index * 30.0f;
         String title = String.format("%dh", 2 * index);
-        textSources.add(new TextPrimitive(ra, 0.0f, title, LINE_COLOR));
+        textPrimitives.add(new TextPrimitive(ra, 0.0f, title, LINE_COLOR));
       }
 
-      lineSources.add(createDecLine(0, 0)); // Equator
+      linePrimitives.add(createDecLine(0, 0)); // Equator
       // Note that we don't create lines at the poles.
       for (int d = 1; d < numDecSources; d++) {
         float dec = d * 90.0f / numDecSources;
-        lineSources.add(createDecLine(d, dec));
-        textSources.add(new TextPrimitive(0f, dec, String.format("%d°", (int) dec), LINE_COLOR));
-        lineSources.add(createDecLine(d, -dec));
-        textSources.add(new TextPrimitive(0f, -dec, String.format("%d°", (int) -dec), LINE_COLOR));
+        linePrimitives.add(createDecLine(d, dec));
+        textPrimitives.add(new TextPrimitive(0f, dec, String.format("%d°", (int) dec), LINE_COLOR));
+        linePrimitives.add(createDecLine(d, -dec));
+        textPrimitives.add(new TextPrimitive(0f, -dec, String.format("%d°", (int) -dec), LINE_COLOR));
       }
     }
 
@@ -146,12 +146,12 @@ public class GridLayer extends AbstractSourceLayer {
 
     @Override
     public List<TextPrimitive> getLabels() {
-      return textSources;
+      return textPrimitives;
     }
 
     @Override
     public List<LinePrimitive> getLines() {
-      return lineSources;
+      return linePrimitives;
     }
   }
 }
