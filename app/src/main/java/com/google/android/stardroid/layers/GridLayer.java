@@ -22,8 +22,6 @@ import com.google.android.stardroid.source.AbstractAstronomicalSource;
 import com.google.android.stardroid.source.AstronomicalSource;
 import com.google.android.stardroid.source.LinePrimitive;
 import com.google.android.stardroid.source.TextPrimitive;
-import com.google.android.stardroid.source.impl.LinePrimitiveImpl;
-import com.google.android.stardroid.source.impl.TextPrimitiveImpl;
 import com.google.android.stardroid.math.CoordinateManipulationsKt;
 import com.google.android.stardroid.math.RaDec;
 
@@ -85,8 +83,8 @@ public class GridLayer extends AbstractSourceLayer {
     /** every 10 degrees */
     private static final int NUM_RA_VERTICES = 36;
 
-    private final ArrayList<LinePrimitiveImpl> lineSources = new ArrayList<LinePrimitiveImpl>();
-    private final ArrayList<TextPrimitiveImpl> textSources = new ArrayList<TextPrimitiveImpl>();
+    private final ArrayList<LinePrimitive> lineSources = new ArrayList<LinePrimitive>();
+    private final ArrayList<TextPrimitive> textSources = new ArrayList<TextPrimitive>();
 
     public GridSource(Resources res, int numRaSources, int numDecSources) {
       for (int r = 0; r < numRaSources; r++) {
@@ -94,12 +92,12 @@ public class GridLayer extends AbstractSourceLayer {
       }
 
       /** North & South pole, hour markers every 2hrs. */
-      textSources.add(new TextPrimitiveImpl(0f, 90f, res.getString(R.string.north_pole), LINE_COLOR));
-      textSources.add(new TextPrimitiveImpl(0f, -90f, res.getString(R.string.south_pole), LINE_COLOR));
+      textSources.add(new TextPrimitive(0f, 90f, res.getString(R.string.north_pole), LINE_COLOR));
+      textSources.add(new TextPrimitive(0f, -90f, res.getString(R.string.south_pole), LINE_COLOR));
       for (int index = 0; index < 12; index++) {
         float ra = index * 30.0f;
         String title = String.format("%dh", 2 * index);
-        textSources.add(new TextPrimitiveImpl(ra, 0.0f, title, LINE_COLOR));
+        textSources.add(new TextPrimitive(ra, 0.0f, title, LINE_COLOR));
       }
 
       lineSources.add(createDecLine(0, 0)); // Equator
@@ -107,9 +105,9 @@ public class GridLayer extends AbstractSourceLayer {
       for (int d = 1; d < numDecSources; d++) {
         float dec = d * 90.0f / numDecSources;
         lineSources.add(createDecLine(d, dec));
-        textSources.add(new TextPrimitiveImpl(0f, dec, String.format("%d°", (int) dec), LINE_COLOR));
+        textSources.add(new TextPrimitive(0f, dec, String.format("%d°", (int) dec), LINE_COLOR));
         lineSources.add(createDecLine(d, -dec));
-        textSources.add(new TextPrimitiveImpl(0f, -dec, String.format("%d°", (int) -dec), LINE_COLOR));
+        textSources.add(new TextPrimitive(0f, -dec, String.format("%d°", (int) -dec), LINE_COLOR));
       }
     }
 
@@ -117,8 +115,8 @@ public class GridLayer extends AbstractSourceLayer {
      * Constructs a single longitude line. These lines run from the north pole to
      * the south pole at fixed Right Ascensions.
      */
-    private LinePrimitiveImpl createRaLine(int index, int numRaSources) {
-      LinePrimitiveImpl line = new LinePrimitiveImpl(LINE_COLOR);
+    private LinePrimitive createRaLine(int index, int numRaSources) {
+      LinePrimitive line = new LinePrimitive(LINE_COLOR);
       float ra = index * 360.0f / numRaSources;
       for (int i = 0; i < NUM_DEC_VERTICES - 1; i++) {
         float dec = 90.0f - i * 180.0f / (NUM_DEC_VERTICES - 1);
@@ -132,8 +130,8 @@ public class GridLayer extends AbstractSourceLayer {
       return line;
     }
 
-    private LinePrimitiveImpl createDecLine(int index, float dec) {
-      LinePrimitiveImpl line = new LinePrimitiveImpl(LINE_COLOR);
+    private LinePrimitive createDecLine(int index, float dec) {
+      LinePrimitive line = new LinePrimitive(LINE_COLOR);
       for (int i = 0; i < NUM_RA_VERTICES; i++) {
         float ra = i * 360.0f / NUM_RA_VERTICES;
         RaDec raDec = new RaDec(ra, dec);

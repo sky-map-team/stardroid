@@ -26,11 +26,9 @@ import com.google.android.stardroid.ephemeris.OrbitalElements;
 import com.google.android.stardroid.renderer.RendererObjectManager.UpdateType;
 import com.google.android.stardroid.source.AbstractAstronomicalSource;
 import com.google.android.stardroid.source.AstronomicalSource;
-import com.google.android.stardroid.source.PointPrimitive;
 import com.google.android.stardroid.source.Sources;
+import com.google.android.stardroid.source.PointPrimitive;
 import com.google.android.stardroid.source.TextPrimitive;
-import com.google.android.stardroid.source.impl.PointPrimitiveImpl;
-import com.google.android.stardroid.source.impl.TextPrimitiveImpl;
 import com.google.android.stardroid.math.Vector3;
 import com.google.android.stardroid.util.MiscUtil;
 import com.google.common.io.Closeables;
@@ -179,8 +177,8 @@ public class IssLayer extends AbstractSourceLayer {
       this.model = model;
       this.name = resources.getString(R.string.space_station);
 
-      pointPrimitives.add(new PointPrimitiveImpl(coords, ISS_COLOR, 5));
-      textPrimitives.add(new TextPrimitiveImpl(coords, name, ISS_COLOR));
+      pointPrimitives.add(new PointPrimitive(coords, ISS_COLOR, 5));
+      textPrimitives.add(new TextPrimitive(coords, name, ISS_COLOR));
     }
 
     public synchronized void setOrbitalElements(OrbitalElements elements) {

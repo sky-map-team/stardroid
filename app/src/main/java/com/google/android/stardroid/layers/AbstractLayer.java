@@ -24,10 +24,10 @@ import com.google.android.stardroid.renderer.RendererControllerBase.RenderManage
 import com.google.android.stardroid.renderer.RendererObjectManager.UpdateType;
 import com.google.android.stardroid.renderer.util.UpdateClosure;
 import com.google.android.stardroid.search.SearchResult;
+import com.google.android.stardroid.source.ImagePrimitive;
 import com.google.android.stardroid.source.LinePrimitive;
 import com.google.android.stardroid.source.PointPrimitive;
 import com.google.android.stardroid.source.TextPrimitive;
-import com.google.android.stardroid.source.impl.ImagePrimitive;
 import com.google.android.stardroid.util.MiscUtil;
 
 import java.util.ArrayList;

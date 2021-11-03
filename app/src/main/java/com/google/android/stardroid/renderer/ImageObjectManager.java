@@ -21,7 +21,7 @@ import com.google.android.stardroid.renderer.util.TextureManager;
 import com.google.android.stardroid.renderer.util.TextureReference;
 import com.google.android.stardroid.renderer.util.VertexBuffer;
 import com.google.android.stardroid.math.Vector3;
-import com.google.android.stardroid.source.impl.ImagePrimitive;
+import com.google.android.stardroid.source.ImagePrimitive;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;

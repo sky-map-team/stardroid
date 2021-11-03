@@ -21,12 +21,10 @@ import com.google.android.stardroid.base.Lists;
 import com.google.android.stardroid.control.AstronomerModel;
 import com.google.android.stardroid.renderer.RendererObjectManager.UpdateType;
 import com.google.android.stardroid.source.AbstractAstronomicalSource;
-import com.google.android.stardroid.source.PointPrimitive;
 import com.google.android.stardroid.source.Sources;
+import com.google.android.stardroid.source.ImagePrimitive;
+import com.google.android.stardroid.source.PointPrimitive;
 import com.google.android.stardroid.source.TextPrimitive;
-import com.google.android.stardroid.source.impl.ImagePrimitive;
-import com.google.android.stardroid.source.impl.PointPrimitiveImpl;
-import com.google.android.stardroid.source.impl.TextPrimitiveImpl;
 import com.google.android.stardroid.space.SolarSystemObject;
 import com.google.android.stardroid.space.Universe;
 import com.google.android.stardroid.math.Vector3;
@@ -114,10 +112,10 @@ public class PlanetSource extends AbstractAstronomicalSource {
         imagePrimitives.add(new ImagePrimitive(currentCoords, resources, imageId, UP,
             solarSystemObject.getPlanetaryImageSize()));
       } else {
-        pointPrimitives.add(new PointPrimitiveImpl(currentCoords, PLANET_COLOR, PLANET_SIZE));
+        pointPrimitives.add(new PointPrimitive(currentCoords, PLANET_COLOR, PLANET_SIZE));
       }
     }
-    labelPrimitives.add(new TextPrimitiveImpl(currentCoords, name, PLANET_LABEL_COLOR));
+    labelPrimitives.add(new TextPrimitive(currentCoords, name, PLANET_LABEL_COLOR));
 
     return this;
   }

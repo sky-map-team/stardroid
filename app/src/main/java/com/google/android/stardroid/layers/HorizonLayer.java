@@ -24,11 +24,9 @@ import com.google.android.stardroid.control.AstronomerModel;
 import com.google.android.stardroid.renderer.RendererObjectManager.UpdateType;
 import com.google.android.stardroid.source.AbstractAstronomicalSource;
 import com.google.android.stardroid.source.AstronomicalSource;
-import com.google.android.stardroid.source.LinePrimitive;
 import com.google.android.stardroid.source.Sources;
+import com.google.android.stardroid.source.LinePrimitive;
 import com.google.android.stardroid.source.TextPrimitive;
-import com.google.android.stardroid.source.impl.LinePrimitiveImpl;
-import com.google.android.stardroid.source.impl.TextPrimitiveImpl;
 import com.google.android.stardroid.math.Vector3;
 
 import java.util.ArrayList;
@@ -101,14 +99,14 @@ public class HorizonLayer extends AbstractSourceLayer {
       this.model = model;
 
       List<Vector3> vertices = Lists.asList(north, east, south, west, north);
-      linePrimitives.add(new LinePrimitiveImpl(LINE_COLOR, vertices, 1.5f));
+      linePrimitives.add(new LinePrimitive(LINE_COLOR, vertices, 1.5f));
 
-      textPrimitives.add(new TextPrimitiveImpl(zenith, res.getString(R.string.zenith), LABEL_COLOR));
-      textPrimitives.add(new TextPrimitiveImpl(nadir, res.getString(R.string.nadir), LABEL_COLOR));
-      textPrimitives.add(new TextPrimitiveImpl(north, res.getString(R.string.north), LABEL_COLOR));
-      textPrimitives.add(new TextPrimitiveImpl(south, res.getString(R.string.south), LABEL_COLOR));
-      textPrimitives.add(new TextPrimitiveImpl(east, res.getString(R.string.east), LABEL_COLOR));
-      textPrimitives.add(new TextPrimitiveImpl(west, res.getString(R.string.west), LABEL_COLOR));
+      textPrimitives.add(new TextPrimitive(zenith, res.getString(R.string.zenith), LABEL_COLOR));
+      textPrimitives.add(new TextPrimitive(nadir, res.getString(R.string.nadir), LABEL_COLOR));
+      textPrimitives.add(new TextPrimitive(north, res.getString(R.string.north), LABEL_COLOR));
+      textPrimitives.add(new TextPrimitive(south, res.getString(R.string.south), LABEL_COLOR));
+      textPrimitives.add(new TextPrimitive(east, res.getString(R.string.east), LABEL_COLOR));
+      textPrimitives.add(new TextPrimitive(west, res.getString(R.string.west), LABEL_COLOR));
     }
 
     private void updateCoords() {

@@ -20,12 +20,12 @@ import com.google.android.stardroid.renderer.util.UpdateClosure;
 import com.google.android.stardroid.search.PrefixStore;
 import com.google.android.stardroid.search.SearchResult;
 import com.google.android.stardroid.source.AstronomicalSource;
+import com.google.android.stardroid.source.Sources;
+import com.google.android.stardroid.math.Vector3;
+import com.google.android.stardroid.source.ImagePrimitive;
 import com.google.android.stardroid.source.LinePrimitive;
 import com.google.android.stardroid.source.PointPrimitive;
-import com.google.android.stardroid.source.Sources;
 import com.google.android.stardroid.source.TextPrimitive;
-import com.google.android.stardroid.math.Vector3;
-import com.google.android.stardroid.source.impl.ImagePrimitive;
 import com.google.android.stardroid.util.MiscUtil;
 
 import android.content.res.Resources;

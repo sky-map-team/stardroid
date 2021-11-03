@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.google.android.stardroid.source.impl;
+package com.google.android.stardroid.source;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -20,28 +20,27 @@ import java.util.List;
 
 import android.graphics.Color;
 
-import com.google.android.stardroid.source.LinePrimitive;
 import com.google.android.stardroid.math.RaDec;
 import com.google.android.stardroid.math.Vector3;
 
 /**
  * For representing constellations, constellation boundaries etc.
  */
-public class LinePrimitiveImpl extends AbstractPrimitive implements LinePrimitive {
+public class LinePrimitive extends AbstractPrimitive {
 
   public final List<Vector3> vertices;
   public final List<RaDec> raDecs;
   public final float lineWidth;
 
-  public LinePrimitiveImpl() {
+  public LinePrimitive() {
     this(Color.WHITE, new ArrayList<Vector3>(), 1.5f);
   }
 
-  public LinePrimitiveImpl(int color) {
+  public LinePrimitive(int color) {
     this(color, new ArrayList<Vector3>(), 1.5f);
   }
 
-  public LinePrimitiveImpl(int color, List<Vector3> vertices, float lineWidth) {
+  public LinePrimitive(int color, List<Vector3> vertices, float lineWidth) {
     super(color);
 
     this.vertices = vertices;

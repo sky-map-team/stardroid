@@ -24,7 +24,7 @@ import com.google.android.stardroid.renderer.RendererObjectManager.UpdateType;
 import com.google.android.stardroid.source.AbstractAstronomicalSource;
 import com.google.android.stardroid.source.AstronomicalSource;
 import com.google.android.stardroid.source.Sources;
-import com.google.android.stardroid.source.impl.ImagePrimitive;
+import com.google.android.stardroid.source.ImagePrimitive;
 import com.google.android.stardroid.math.Vector3;
 import com.google.android.stardroid.util.MiscUtil;
 

@@ -22,9 +22,6 @@ import com.google.android.stardroid.source.AbstractAstronomicalSource;
 import com.google.android.stardroid.source.LinePrimitive;
 import com.google.android.stardroid.source.PointPrimitive;
 import com.google.android.stardroid.source.TextPrimitive;
-import com.google.android.stardroid.source.impl.LinePrimitiveImpl;
-import com.google.android.stardroid.source.impl.PointPrimitiveImpl;
-import com.google.android.stardroid.source.impl.TextPrimitiveImpl;
 import com.google.android.stardroid.source.proto.SourceProto.AstronomicalSourceProto;
 import com.google.android.stardroid.source.proto.SourceProto.GeocentricCoordinatesProto;
 import com.google.android.stardroid.source.proto.SourceProto.LabelElementProto;
@@ -138,7 +135,7 @@ public class ProtobufAstronomicalSource extends AbstractAstronomicalSource {
     }
     ArrayList<PointPrimitive> points = new ArrayList<>(proto.getPointCount());
     for (PointElementProto element : proto.getPointList()) {
-      points.add(new PointPrimitiveImpl(getCoords(element.getLocation()),
+      points.add(new PointPrimitive(getCoords(element.getLocation()),
           element.getColor(), element.getSize(), shapeMap.get(element.getShape())));
     }
     return points;
@@ -152,7 +149,7 @@ public class ProtobufAstronomicalSource extends AbstractAstronomicalSource {
     ArrayList<TextPrimitive> points = new ArrayList<TextPrimitive>(proto.getLabelCount());
     for (LabelElementProto element : proto.getLabelList()) {
       Log.d(TAG, "Label " + element.getStringsIntId() + " : " + element.getStringsStrId());
-      points.add(new TextPrimitiveImpl(getCoords(element.getLocation()),
+      points.add(new TextPrimitive(getCoords(element.getLocation()),
           resources.getString(element.getStringsIntId()),
           element.getColor(), element.getOffset(), element.getFontSize()));
     }
@@ -171,7 +168,7 @@ public class ProtobufAstronomicalSource extends AbstractAstronomicalSource {
       for (GeocentricCoordinatesProto elementVertex : element.getVertexList()) {
         vertices.add(getCoords(elementVertex));
       }
-      points.add(new LinePrimitiveImpl(element.getColor(), vertices, element.getLineWidth()));
+      points.add(new LinePrimitive(element.getColor(), vertices, element.getLineWidth()));
     }
     return points;
   }

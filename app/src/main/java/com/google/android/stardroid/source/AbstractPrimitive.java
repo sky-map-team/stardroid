@@ -12,12 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.google.android.stardroid.source.impl;
+package com.google.android.stardroid.source;
 
 import android.graphics.Color;
 
-import com.google.android.stardroid.source.HasColor;
-import com.google.android.stardroid.source.HasPosition;
 import com.google.android.stardroid.math.CoordinateManipulationsKt;
 import com.google.android.stardroid.math.Vector3;
 
@@ -30,7 +28,7 @@ import java.util.List;
  *
  * @author Brent Bryan
  */
-public abstract class AbstractPrimitive implements HasColor, HasPosition {
+public abstract class AbstractPrimitive {
   /** Each source has an update granularity associated with it, which
    *  defines how often it's provider expects its value to change.
    */
@@ -66,12 +64,10 @@ public abstract class AbstractPrimitive implements HasColor, HasPosition {
     this.names = names;
   }
 
-  @Override
   public int getColor() {
     return color;
   }
 
-  @Override
   public Vector3 getLocation() {
     return xyz;
   }

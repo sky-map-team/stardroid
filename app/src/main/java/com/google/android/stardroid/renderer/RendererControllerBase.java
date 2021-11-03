@@ -15,11 +15,11 @@
 package com.google.android.stardroid.renderer;
 
 import com.google.android.stardroid.renderer.util.UpdateClosure;
+import com.google.android.stardroid.math.Vector3;
+import com.google.android.stardroid.source.ImagePrimitive;
 import com.google.android.stardroid.source.LinePrimitive;
 import com.google.android.stardroid.source.PointPrimitive;
 import com.google.android.stardroid.source.TextPrimitive;
-import com.google.android.stardroid.math.Vector3;
-import com.google.android.stardroid.source.impl.ImagePrimitive;
 
 import android.os.ConditionVariable;
 import android.util.Log;

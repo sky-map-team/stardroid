@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.google.android.stardroid.source.impl;
+package com.google.android.stardroid.source;
 
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -22,13 +22,12 @@ import android.graphics.Color;
 
 import com.google.android.stardroid.math.CoordinateManipulationsKt;
 import com.google.android.stardroid.math.Vector3;
-import com.google.android.stardroid.source.HasPosition;
 
 /**
  *  A celestial object represented by an image, such as a planet or a
  *  galaxy.
  */
-public class ImagePrimitive extends AbstractPrimitive implements HasPosition {
+public class ImagePrimitive extends AbstractPrimitive {
 
   static Vector3 up = new Vector3(0.0f, 1.0f, 0.0f);
 
