@@ -15,7 +15,6 @@ package com.google.android.stardroid.layers
 
 import android.content.res.Resources
 import android.util.Log
-import com.google.android.stardroid.layers.AbstractLayer
 import com.google.android.stardroid.renderer.RendererController
 import com.google.android.stardroid.renderer.RendererController.AtomicSection
 import com.google.android.stardroid.renderer.RendererControllerBase
@@ -39,42 +38,36 @@ import java.util.concurrent.locks.ReentrantLock
  */
 abstract class AbstractLayer(protected val resources: Resources) : Layer {
     private val renderMapLock = ReentrantLock()
-    private val renderMap = HashMap<Class<*>, RenderManager<*>?>()
-    private var renderer: RendererController? = null
-    override fun registerWithRenderer(rendererController: RendererController?) {
+    private val renderMap = HashMap<Class<*>, RenderManager<*>>()
+    private lateinit var renderer: RendererController
+
+    override fun registerWithRenderer(rendererController: RendererController) {
         renderMap.clear()
         renderer = rendererController
         updateLayerForControllerChange()
     }
 
     protected abstract fun updateLayerForControllerChange()
+
     override fun setVisible(visible: Boolean) {
         renderMapLock.lock()
         try {
-            if (renderer == null) {
-                Log.w(TAG, "Renderer not set - aborting " + this.javaClass.simpleName)
-                return
-            }
-            val atomic = renderer!!.createAtomic()
+            val atomic = renderer.createAtomic()
             for ((_, value) in renderMap) {
-                value!!.queueEnabled(visible, atomic)
+                value.queueEnabled(visible, atomic)
             }
-            renderer!!.queueAtomic(atomic)
+            renderer.queueAtomic(atomic)
         } finally {
             renderMapLock.unlock()
         }
     }
 
-    protected fun addUpdateClosure(closure: UpdateClosure?) {
-        if (renderer != null) {
-            renderer!!.addUpdateClosure(closure)
-        }
+    protected fun addUpdateClosure(closure: UpdateClosure) {
+        renderer.addUpdateClosure(closure)
     }
 
-    protected fun removeUpdateClosure(closure: UpdateClosure?) {
-        if (renderer != null) {
-            renderer!!.removeUpdateCallback(closure)
-        }
+    protected fun removeUpdateClosure(closure: UpdateClosure) {
+        renderer.removeUpdateCallback(closure)
     }
 
     /**
@@ -84,33 +77,27 @@ abstract class AbstractLayer(protected val resources: Resources) : Layer {
     protected abstract fun redraw()
 
     /**
-     * Updates the renderer (using the given [UpdateType]), with then given set of
+     * Updates the renderer (using the given [UpdateType]) with the given set of
      * UI elements.  Depending on the value of [UpdateType], current sources will
      * either have their state updated, or will be overwritten by the given set
      * of UI elements.
      */
     protected fun redraw(
-        textPrimitives: ArrayList<TextPrimitive>?,
-        pointPrimitives: ArrayList<PointPrimitive>?,
-        linePrimitives: ArrayList<LinePrimitive>?,
-        imagePrimitives: ArrayList<ImagePrimitive>?,
+        textPrimitives: List<TextPrimitive>,
+        pointPrimitives: List<PointPrimitive>,
+        linePrimitives: List<LinePrimitive>,
+        imagePrimitives: List<ImagePrimitive>,
         updateTypes: EnumSet<UpdateType> = EnumSet.of(UpdateType.Reset)
     ) {
-
-        // Log.d(TAG, getLayerName() + " Updating renderer: " + updateTypes);
-        if (renderer == null) {
-            Log.w(TAG, "Renderer not set - aborting: " + this.javaClass.simpleName)
-            return
-        }
         renderMapLock.lock()
         try {
             // Blog.d(this, "Redraw: " + updateTypes);
-            val atomic = renderer!!.createAtomic()
+            val atomic = (renderer ?: return).createAtomic()
             setSources(textPrimitives, updateTypes, TextPrimitive::class.java, atomic)
             setSources(pointPrimitives, updateTypes, PointPrimitive::class.java, atomic)
             setSources(linePrimitives, updateTypes, LinePrimitive::class.java, atomic)
             setSources(imagePrimitives, updateTypes, ImagePrimitive::class.java, atomic)
-            renderer!!.queueAtomic(atomic)
+            renderer.queueAtomic(atomic)
         } finally {
             renderMapLock.unlock()
         }
@@ -121,11 +108,11 @@ abstract class AbstractLayer(protected val resources: Resources) : Layer {
      * creating (or disabling) the [RenderManager] if necessary.
      */
     private fun <E> setSources(
-        sources: ArrayList<E>?, updateType: EnumSet<UpdateType>,
+        sources: List<E>, updateType: EnumSet<UpdateType>,
         clazz: Class<E>, atomic: AtomicSection
     ) {
         var manager = renderMap[clazz] as RenderManager<E>?
-        if (sources == null || sources.isEmpty()) {
+        if (sources.isEmpty()) {
             if (manager != null) {
                 // TODO(brent): we should really just disable this layer, but in a
                 // manner that it will automatically be reenabled when appropriate.
@@ -145,20 +132,15 @@ abstract class AbstractLayer(protected val resources: Resources) : Layer {
     fun <E> createRenderManager(
         clazz: Class<E>,
         controller: RendererControllerBase
-    ): RenderManager<E> {
-        if (clazz == ImagePrimitive::class.java) {
-            return controller.createImageManager(layerDepthOrder) as RenderManager<E>
-        } else if (clazz == TextPrimitive::class.java) {
-            return controller.createLabelManager(layerDepthOrder) as RenderManager<E>
-        } else if (clazz == LinePrimitive::class.java) {
-            return controller.createLineManager(layerDepthOrder) as RenderManager<E>
-        } else if (clazz == PointPrimitive::class.java) {
-            return controller.createPointManager(layerDepthOrder) as RenderManager<E>
-        }
-        throw IllegalStateException("Unknown source type: $clazz")
+    ) = when (clazz) {
+        ImagePrimitive::class.java -> controller.createImageManager(layerDepthOrder) as RenderManager<E>
+        TextPrimitive::class.java -> controller.createLabelManager(layerDepthOrder) as RenderManager<E>
+        LinePrimitive::class.java -> controller.createLineManager(layerDepthOrder) as RenderManager<E>
+        PointPrimitive::class.java -> controller.createPointManager(layerDepthOrder) as RenderManager<E>
+        else -> throw IllegalStateException("Unknown source type: $clazz")
     }
 
-    override fun searchByObjectName(name: String): List<SearchResult?>? {
+    override fun searchByObjectName(name: String): List<SearchResult> {
         // By default, layers will return no search results.
         // Override this if the layer should be searchable.
         return emptyList()
@@ -179,9 +161,7 @@ abstract class AbstractLayer(protected val resources: Resources) : Layer {
     override val preferenceId: String
         get() = getPreferenceId(layerNameId)
 
-    protected fun getPreferenceId(layerNameId: Int): String {
-        return "source_provider.$layerNameId"
-    }
+    protected fun getPreferenceId(layerNameId: Int) = "source_provider.$layerNameId"
 
     override val layerName: String
         get() = getStringFromId(layerNameId)
@@ -189,11 +169,8 @@ abstract class AbstractLayer(protected val resources: Resources) : Layer {
     /**
      * Return an internationalized string from a string resource id.
      */
-    protected fun getStringFromId(resourceId: Int): String {
-        return resources.getString(resourceId)
-    }
+    protected fun getStringFromId(resourceId: Int) = resources.getString(resourceId)
 
-    companion object {
-        private val TAG = MiscUtil.getTag(AbstractLayer::class.java)
-    }
+    private val TAG = MiscUtil.getTag(AbstractLayer::class.java)
+
 }

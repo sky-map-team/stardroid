@@ -33,10 +33,10 @@ interface Layer {
     fun initialize()
 
     /**
-     * Registers this layer with the given [RendererController].  None of
-     * the objects in this layer can be displayed until this method is called.
+     * Registers this layer with the given [RendererController].  Must be called before this class
+     * is used.
      */
-    fun registerWithRenderer(controller: RendererController?)
+    fun registerWithRenderer(rendererController: RendererController)
 
     /**
      * Returns the z-ordering of the layers.  Lower numbers are rendered first and
@@ -67,7 +67,7 @@ interface Layer {
      * @param name the name to search for
      * @return a list of all matching objects.
      */
-    fun searchByObjectName(name: String): List<SearchResult?>?
+    fun searchByObjectName(name: String): List<SearchResult>
 
     /**
      * Given a string prefix, find all possible queries for which we have a

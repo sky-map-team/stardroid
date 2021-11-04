@@ -71,7 +71,7 @@ abstract class AbstractSourceLayer(resources: Resources, private val shouldUpdat
             if (closure == null) {
                 closure = SourceUpdateClosure(this)
             }
-            addUpdateClosure(closure)
+            addUpdateClosure(closure!!)
         }
     }
 
@@ -117,9 +117,9 @@ abstract class AbstractSourceLayer(resources: Resources, private val shouldUpdat
         super.redraw(textPrimitives, pointPrimitives, linePrimitives, imagePrimitives, updateTypes)
     }
 
-    override fun searchByObjectName(name: String): List<SearchResult?>? {
+    override fun searchByObjectName(name: String): List<SearchResult> {
         Log.d(TAG, "Search planets layer for $name")
-        val matches: MutableList<SearchResult?> = ArrayList()
+        val matches: MutableList<SearchResult> = ArrayList()
         val searchResult = searchIndex[name.toLowerCase()]
         if (searchResult != null) {
             matches.add(searchResult)

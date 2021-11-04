@@ -39,7 +39,7 @@ class LayerManager(sharedPreferences: SharedPreferences) : OnSharedPreferenceCha
         }
     }
 
-    fun registerWithRenderer(renderer: RendererController?) {
+    fun registerWithRenderer(renderer: RendererController) {
         for (layer in layers) {
             layer.registerWithRenderer(renderer)
             val prefId = layer.preferenceId

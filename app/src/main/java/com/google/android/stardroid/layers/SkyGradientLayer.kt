@@ -19,7 +19,6 @@ import com.google.android.stardroid.R
 import com.google.android.stardroid.base.TimeConstants
 import com.google.android.stardroid.control.AstronomerModel
 import com.google.android.stardroid.ephemeris.Planet
-import com.google.android.stardroid.layers.SkyGradientLayer
 import com.google.android.stardroid.math.getGeocentricCoords
 import com.google.android.stardroid.renderer.RendererController
 import com.google.android.stardroid.search.SearchResult
@@ -39,8 +38,8 @@ class SkyGradientLayer(private val model: AstronomerModel, private val resources
     private var renderer: RendererController? = null
     private var lastUpdateTimeMs = 0L
     override fun initialize() {}
-    override fun registerWithRenderer(controller: RendererController?) {
-        renderer = controller
+    override fun registerWithRenderer(rendererController: RendererController) {
+        renderer = rendererController
         redraw()
     }
 
@@ -83,7 +82,7 @@ class SkyGradientLayer(private val model: AstronomerModel, private val resources
     private val layerNameId: Int
         private get() = R.string.show_sky_gradient
 
-    override fun searchByObjectName(name: String): List<SearchResult?>? {
+    override fun searchByObjectName(name: String): List<SearchResult> {
         return emptyList()
     }
 
