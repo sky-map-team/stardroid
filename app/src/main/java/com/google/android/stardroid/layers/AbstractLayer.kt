@@ -91,8 +91,7 @@ abstract class AbstractLayer(protected val resources: Resources) : Layer {
     ) {
         renderMapLock.lock()
         try {
-            // Blog.d(this, "Redraw: " + updateTypes);
-            val atomic = (renderer ?: return).createAtomic()
+            val atomic = renderer.createAtomic()
             setSources(textPrimitives, updateTypes, TextPrimitive::class.java, atomic)
             setSources(pointPrimitives, updateTypes, PointPrimitive::class.java, atomic)
             setSources(linePrimitives, updateTypes, LinePrimitive::class.java, atomic)
@@ -113,19 +112,16 @@ abstract class AbstractLayer(protected val resources: Resources) : Layer {
     ) {
         var manager = renderMap[clazz] as RenderManager<E>?
         if (sources.isEmpty()) {
-            if (manager != null) {
-                // TODO(brent): we should really just disable this layer, but in a
-                // manner that it will automatically be reenabled when appropriate.
-                Log.d(TAG, "       " + clazz.simpleName)
-                manager.queueObjects(emptyList(), updateType, atomic)
-            }
+            // TODO(brent): when null we should really just disable this layer, but in a
+            // manner that it will automatically be reenabled when appropriate.
+            Log.d(TAG, "       " + clazz.simpleName)
+            manager?.queueObjects(emptyList(), updateType, atomic)
             return
         }
         if (manager == null) {
             manager = createRenderManager(clazz, atomic)
             renderMap[clazz] = manager
         }
-        // Blog.d(this, "       " + clazz.getSimpleName() + " " + sources.size());
         manager.queueObjects(sources, updateType, atomic)
     }
 
