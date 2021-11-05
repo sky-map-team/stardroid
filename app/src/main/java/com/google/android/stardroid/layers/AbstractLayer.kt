@@ -14,7 +14,6 @@
 package com.google.android.stardroid.layers
 
 import android.content.res.Resources
-import android.util.Log
 import com.google.android.stardroid.renderer.RendererController
 import com.google.android.stardroid.renderer.RendererController.AtomicSection
 import com.google.android.stardroid.renderer.RendererControllerBase
@@ -111,13 +110,6 @@ abstract class AbstractLayer(protected val resources: Resources) : Layer {
         clazz: Class<E>, atomic: AtomicSection
     ) {
         var manager = renderMap[clazz] as RenderManager<E>?
-        if (sources.isEmpty()) {
-            // TODO(brent): when null we should really just disable this layer, but in a
-            // manner that it will automatically be reenabled when appropriate.
-            Log.d(TAG, "       " + clazz.simpleName)
-            manager?.queueObjects(emptyList(), updateType, atomic)
-            return
-        }
         if (manager == null) {
             manager = createRenderManager(clazz, atomic)
             renderMap[clazz] = manager
@@ -125,7 +117,10 @@ abstract class AbstractLayer(protected val resources: Resources) : Layer {
         manager.queueObjects(sources, updateType, atomic)
     }
 
-    fun <E> createRenderManager(
+    // TODO(jontayler): see if we can simplify this with a reworking of the renderer code.
+    // The use of generics here is marginal - it reduces lines of code a little vs having
+    // primitive-specific versions os setSources but is less readable.
+    private fun <E> createRenderManager(
         clazz: Class<E>,
         controller: RendererControllerBase
     ) = when (clazz) {
@@ -165,7 +160,7 @@ abstract class AbstractLayer(protected val resources: Resources) : Layer {
     /**
      * Return an internationalized string from a string resource id.
      */
-    protected fun getStringFromId(resourceId: Int) = resources.getString(resourceId)
+    private fun getStringFromId(resourceId: Int) = resources.getString(resourceId)
 
     private val TAG = MiscUtil.getTag(AbstractLayer::class.java)
 
