@@ -65,10 +65,6 @@ abstract class AbstractLayer(protected val resources: Resources) : Layer {
         renderer.addUpdateClosure(closure)
     }
 
-    protected fun removeUpdateClosure(closure: UpdateClosure) {
-        renderer.removeUpdateCallback(closure)
-    }
-
     /**
      * Forces a redraw of this layer, clearing all of the information about this
      * layer in the renderer and repopulating it.

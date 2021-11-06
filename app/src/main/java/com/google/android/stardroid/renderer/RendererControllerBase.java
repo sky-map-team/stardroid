@@ -256,16 +256,6 @@ public abstract class RendererControllerBase {
     });
   }
 
-  public void removeUpdateCallback(final UpdateClosure update) {
-    final String msg = "Removing update callback";
-    queueRunnable(msg, CommandType.Data, new Runnable() {
-      @Override
-      public void run() {
-        mRenderer.removeUpdateCallback(update);
-      }
-    });
-  }
-
   /**
    * Must be called once to register an object manager to the renderer.
    * @param rom

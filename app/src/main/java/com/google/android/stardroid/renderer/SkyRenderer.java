@@ -219,10 +219,6 @@ public class SkyRenderer implements GLSurfaceView.Renderer {
     mUpdateClosures.add(update);
   }
 
-  public void removeUpdateCallback(UpdateClosure update) {
-    mUpdateClosures.remove(update);
-  }
-
   // Sets up from the perspective of the viewer.
   // ie, the zenith in celestial coordinates.
   public void setViewerUpDirection(Vector3 up) {
