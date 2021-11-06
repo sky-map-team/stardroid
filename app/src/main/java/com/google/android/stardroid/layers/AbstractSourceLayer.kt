@@ -15,7 +15,6 @@ package com.google.android.stardroid.layers
 
 import android.content.res.Resources
 import android.util.Log
-import com.google.android.stardroid.layers.AbstractSourceLayer
 import com.google.android.stardroid.renderer.RendererObjectManager.UpdateType
 import com.google.android.stardroid.renderer.util.AbstractUpdateClosure
 import com.google.android.stardroid.renderer.util.UpdateClosure
@@ -41,6 +40,7 @@ abstract class AbstractSourceLayer(resources: Resources, private val shouldUpdat
     private val searchIndex = HashMap<String, SearchResult>()
     private val prefixStore = PrefixStore()
     private var closure: SourceUpdateClosure? = null
+
     @Synchronized
     override fun initialize() {
         astroSources.clear()

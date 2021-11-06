@@ -16,7 +16,6 @@ package com.google.android.stardroid.layers
 import android.content.SharedPreferences
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener
 import android.util.Log
-import com.google.android.stardroid.layers.LayerManager
 import com.google.android.stardroid.renderer.RendererController
 import com.google.android.stardroid.search.SearchResult
 import com.google.android.stardroid.search.SearchTermsProvider.SearchTerm
@@ -26,12 +25,10 @@ import java.util.*
 /**
  * Allows a group of layers to be controlled together.
  */
-class LayerManager(sharedPreferences: SharedPreferences) : OnSharedPreferenceChangeListener {
+class LayerManager(private val sharedPreferences: SharedPreferences) : OnSharedPreferenceChangeListener {
     private val layers: MutableList<Layer> = ArrayList()
-    private val sharedPreferences: SharedPreferences
-    fun addLayer(layer: Layer) {
-        layers.add(layer)
-    }
+
+    fun addLayer(layer: Layer) = layers.add(layer)
 
     fun initialize() {
         for (layer in layers) {
@@ -58,12 +55,6 @@ class LayerManager(sharedPreferences: SharedPreferences) : OnSharedPreferenceCha
     }
 
     /**
-     * Returns the name of this object.
-     */
-    val name: String
-        get() = "Layer Manager"
-
-    /**
      * Search all visible layers for an object with the given name.
      * @param name the name to search for
      * @return a list of all matching objects.
@@ -72,7 +63,7 @@ class LayerManager(sharedPreferences: SharedPreferences) : OnSharedPreferenceCha
         val all: MutableList<SearchResult?> = ArrayList()
         for (layer in layers) {
             if (isLayerVisible(layer)) {
-                all.addAll(layer.searchByObjectName(name)!!)
+                all.addAll(layer.searchByObjectName(name))
             }
         }
         Log.d(TAG, "Got " + all.size + " results in total for " + name)
@@ -99,9 +90,7 @@ class LayerManager(sharedPreferences: SharedPreferences) : OnSharedPreferenceCha
         return all
     }
 
-    private fun isLayerVisible(layer: Layer): Boolean {
-        return sharedPreferences.getBoolean(layer.preferenceId, true)
-    }
+    private fun isLayerVisible(layer: Layer) = sharedPreferences.getBoolean(layer.preferenceId, true)
 
     companion object {
         private val TAG = MiscUtil.getTag(LayerManager::class.java)
@@ -109,7 +98,6 @@ class LayerManager(sharedPreferences: SharedPreferences) : OnSharedPreferenceCha
 
     init {
         Log.d(TAG, "Creating LayerManager")
-        this.sharedPreferences = sharedPreferences
         sharedPreferences.registerOnSharedPreferenceChangeListener(this)
     }
 }
