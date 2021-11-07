@@ -51,6 +51,7 @@ abstract class AbstractLayer(protected val resources: Resources) : Layer {
     protected abstract fun updateLayerForControllerChange()
 
     override fun setVisible(visible: Boolean) {
+        if (renderer == null) return
         renderMapLock.lock()
         try {
             val atomic = renderer?.createAtomic()
