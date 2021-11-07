@@ -30,6 +30,7 @@ import com.google.android.stardroid.renderer.util.UpdateClosure;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
@@ -51,7 +52,7 @@ public class SkyRenderer implements GLSurfaceView.Renderer {
   private boolean mMustUpdateView = true;
   private boolean mMustUpdateProjection = true;
 
-  private Set<UpdateClosure> mUpdateClosures = new TreeSet<UpdateClosure>();
+  private Set<UpdateClosure> mUpdateClosures = new HashSet<>();
 
   private RendererObjectManager.UpdateListener mUpdateListener =
       new RendererObjectManager.UpdateListener() {
