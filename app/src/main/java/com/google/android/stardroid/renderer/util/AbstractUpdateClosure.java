@@ -23,8 +23,8 @@ package com.google.android.stardroid.renderer.util;
  * @author John Taylor
  */
 public abstract class AbstractUpdateClosure implements UpdateClosure {
-  @Override
-  public int compareTo(UpdateClosure that) {
+  //@Override
+  /*public int compareTo(UpdateClosure that) {
     int thisHashCode = this.hashCode();
     int thatHashCode = that.hashCode();
 
@@ -32,5 +32,5 @@ public abstract class AbstractUpdateClosure implements UpdateClosure {
       return 0;
     }
     return (thisHashCode < thatHashCode) ? -1 : 1;
-  }
+  }*/
 }
