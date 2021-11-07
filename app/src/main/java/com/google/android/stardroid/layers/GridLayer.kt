@@ -161,7 +161,7 @@ class GridLayer
                     TextPrimitive(
                         0f,
                         -dec,
-                        String.format("%d°", -dec as Int),
+                        String.format("%d°", -dec.toInt()),
                         LINE_COLOR
                     )
                 )

@@ -38,7 +38,7 @@ import java.util.concurrent.locks.ReentrantLock
 abstract class AbstractLayer(protected val resources: Resources) : Layer {
     private val renderMapLock = ReentrantLock()
     private val renderMap = HashMap<Class<*>, RenderManager<*>>()
-    private lateinit var renderer: RendererController
+    private /*lateinit*/ var renderer: RendererController? = null
 
     override fun registerWithRenderer(rendererController: RendererController) {
         renderMap.clear()
@@ -49,24 +49,25 @@ abstract class AbstractLayer(protected val resources: Resources) : Layer {
     protected abstract fun updateLayerForControllerChange()
 
     override fun setVisible(visible: Boolean) {
+        if (renderer == null) return
         renderMapLock.lock()
         try {
-            val atomic = renderer.createAtomic()
+            val atomic = renderer?.createAtomic()
             for ((_, value) in renderMap) {
                 value.queueEnabled(visible, atomic)
             }
-            renderer.queueAtomic(atomic)
+            renderer?.queueAtomic(atomic)
         } finally {
             renderMapLock.unlock()
         }
     }
 
     protected fun addUpdateClosure(closure: UpdateClosure) {
-        renderer.addUpdateClosure(closure)
+        renderer?.addUpdateClosure(closure)
     }
 
     protected fun removeUpdateClosure(closure: UpdateClosure) {
-        renderer.removeUpdateCallback(closure)
+        renderer?.removeUpdateCallback(closure)
     }
 
     /**
@@ -88,14 +89,15 @@ abstract class AbstractLayer(protected val resources: Resources) : Layer {
         imagePrimitives: List<ImagePrimitive>,
         updateTypes: EnumSet<UpdateType> = EnumSet.of(UpdateType.Reset)
     ) {
+        if (renderer == null) return
         renderMapLock.lock()
         try {
-            val atomic = renderer.createAtomic()
-            setSources(textPrimitives, updateTypes, TextPrimitive::class.java, atomic)
+            val atomic = renderer?.createAtomic()
+            setSources(textPrimitives, updateTypes, TextPrimitive::class.java, atomic!!)
             setSources(pointPrimitives, updateTypes, PointPrimitive::class.java, atomic)
             setSources(linePrimitives, updateTypes, LinePrimitive::class.java, atomic)
             setSources(imagePrimitives, updateTypes, ImagePrimitive::class.java, atomic)
-            renderer.queueAtomic(atomic)
+            renderer?.queueAtomic(atomic)
         } finally {
             renderMapLock.unlock()
         }
