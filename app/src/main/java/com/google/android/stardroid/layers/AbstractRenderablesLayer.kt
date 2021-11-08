@@ -28,7 +28,7 @@ import java.util.*
  * @author Brent Bryan
  */
 // TODO(brent): merge with AbstractLayer?
-abstract class AbstractSourceLayer(resources: Resources, private val shouldUpdate: Boolean) :
+abstract class AbstractRenderablesLayer(resources: Resources, private val shouldUpdate: Boolean) :
     AbstractLayer(resources) {
     private val textPrimitives = ArrayList<TextPrimitive>()
     private val imagePrimitives = ArrayList<ImagePrimitive>()
@@ -130,6 +130,6 @@ abstract class AbstractSourceLayer(resources: Resources, private val shouldUpdat
     }
 
     companion object {
-        private val TAG = MiscUtil.getTag(AbstractSourceLayer::class.java)
+        private val TAG = MiscUtil.getTag(AbstractRenderablesLayer::class.java)
     }
 }

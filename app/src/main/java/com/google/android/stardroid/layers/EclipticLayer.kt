@@ -30,7 +30,7 @@ import java.util.*
  * @author John Taylor
  * @author Brent Bryan
  */
-class EclipticLayer(resources: Resources) : AbstractSourceLayer(resources, false) {
+class EclipticLayer(resources: Resources) : AbstractRenderablesLayer(resources, false) {
     override fun initializeAstroSources(sources: ArrayList<AstronomicalRenderable>) {
         sources.add(EclipticRenderable(resources))
     }

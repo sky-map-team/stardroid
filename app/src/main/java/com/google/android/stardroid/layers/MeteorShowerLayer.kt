@@ -31,7 +31,7 @@ import kotlin.math.abs
  * @author John Taylor
  */
 class MeteorShowerLayer(private val model: AstronomerModel, resources: Resources) :
-    AbstractSourceLayer(resources, true) {
+    AbstractRenderablesLayer(resources, true) {
     private val showers: MutableList<Shower> = ArrayList()
 
     /**

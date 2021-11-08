@@ -43,7 +43,7 @@ class GridLayer
     resources: Resources,
     private val numRightAscensionLines: Int,
     private val numDeclinationLines: Int
-) : AbstractSourceLayer(resources, false) {
+) : AbstractRenderablesLayer(resources, false) {
 
     override fun initializeAstroSources(sources: ArrayList<AstronomicalRenderable>) {
         sources.add(GridRenderable(resources, numRightAscensionLines, numDeclinationLines))

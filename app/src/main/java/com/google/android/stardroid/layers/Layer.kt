@@ -20,6 +20,8 @@ import com.google.android.stardroid.renderables.AstronomicalRenderable
 /**
  * A logical collection of objects which should be displayed in SkyMap. For
  * instance, the set of objects which should be turned off / on simultaneously.
+ * A |Layer| takes care of interacting with the |Renderer| and giving it the graphical
+ * primitives it needs to display.
  *
  * @author Brent Bryan
  */

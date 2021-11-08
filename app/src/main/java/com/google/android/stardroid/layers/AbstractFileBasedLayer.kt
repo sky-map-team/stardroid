@@ -39,7 +39,7 @@ abstract class AbstractFileBasedLayer(
     private val assetManager: AssetManager,
     resources: Resources,
     private val fileName: String
-) : AbstractSourceLayer(resources, false) {
+) : AbstractRenderablesLayer(resources, false) {
     private val fileSources: MutableList<AstronomicalRenderable> = ArrayList()
     @Synchronized
     override fun initialize() {

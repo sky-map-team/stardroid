@@ -33,7 +33,7 @@ class PlanetsLayer(
     private val model: AstronomerModel,
     resources: Resources,
     private val preferences: SharedPreferences
-) : AbstractSourceLayer(resources, true) {
+) : AbstractRenderablesLayer(resources, true) {
     override fun initializeAstroSources(sources: ArrayList<AstronomicalRenderable>) {
         for (planet in Planet.values()) {
             sources.add(

@@ -32,7 +32,7 @@ import kotlin.math.abs
  * @author John Taylor
  */
 class HorizonLayer(private val model: AstronomerModel, resources: Resources) :
-    AbstractSourceLayer(resources, true) {
+    AbstractRenderablesLayer(resources, true) {
     override fun initializeAstroSources(sources: ArrayList<AstronomicalRenderable>) {
         sources.add(HorizonRenderable(model, resources))
     }

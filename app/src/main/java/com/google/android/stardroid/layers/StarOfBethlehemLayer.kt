@@ -34,7 +34,7 @@ import kotlin.math.abs
  * @author John Taylor
  */
 class StarOfBethlehemLayer(private val model: AstronomerModel, resources: Resources) :
-    AbstractSourceLayer(resources, true) {
+    AbstractRenderablesLayer(resources, true) {
     override fun initializeAstroSources(sources: ArrayList<AstronomicalRenderable>) {
         sources.add(StarOfBethlehemRenderable(model, resources))
     }

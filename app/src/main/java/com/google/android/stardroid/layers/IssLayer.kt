@@ -37,7 +37,7 @@ import java.util.concurrent.TimeUnit
  * @author Brent Bryan
  */
 class IssLayer(resources: Resources, model: AstronomerModel) :
-    AbstractSourceLayer(resources, true) {
+    AbstractRenderablesLayer(resources, true) {
     private val scheduler = Executors.newScheduledThreadPool(1)
     private val issRenderable: IssRenderable = IssRenderable(model, resources)
     override fun initializeAstroSources(sources: ArrayList<AstronomicalRenderable>) {
