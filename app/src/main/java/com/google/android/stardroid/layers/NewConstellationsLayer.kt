@@ -26,15 +26,11 @@ import com.google.android.stardroid.R
  */
 class NewConstellationsLayer(assetManager: AssetManager, resources: Resources) :
     AbstractFileBasedLayer(assetManager, resources, "constellations.binary") {
-    override val layerDepthOrder: Int
-        get() = 10
+    override val layerDepthOrder = 10
 
     // TODO(johntaylor): rename this string id.
-    override val layerNameId: Int
-        get() =// TODO(johntaylor): rename this string id.
-            R.string.show_constellations_pref
+    override val layerNameId = R.string.show_constellations_pref
 
     // TODO(brent): Remove this.
-    override val preferenceId: String
-        get() = "source_provider.1"
+    override val preferenceId = "source_provider.1"
 }

@@ -35,32 +35,28 @@ class EclipticLayer(resources: Resources) : AbstractSourceLayer(resources, false
         sources.add(EclipticRenderable(resources))
     }
 
-    override val layerDepthOrder: Int
-        get() = 50
-    override val layerNameId: Int
-        get() = R.string.show_grid_pref
-    override val preferenceId: String
-        get() = "source_provider.4"
+    override val layerDepthOrder = 50
+    override val layerNameId = R.string.show_grid_pref
+    override val preferenceId = "source_provider.4"
 
     /** Implementation of [AstronomicalRenderable] for the ecliptic source.  */
-    private class EclipticRenderable(res: Resources?) : AbstractAstronomicalRenderable() {
+    private class EclipticRenderable(resources: Resources) : AbstractAstronomicalRenderable() {
         override val labels: MutableList<TextPrimitive> = ArrayList()
         override val lines: MutableList<LinePrimitive> = ArrayList()
 
         companion object {
-            // Earth's Angular Tilt
-            private const val EPSILON = 23.439281f
+            private const val EARTHS_ANGULAR_TILT = 23.439281f
             private val LINE_COLOR = Color.argb(20, 248, 239, 188)
         }
 
         init {
-            val title = res!!.getString(R.string.ecliptic)
-            labels.add(TextPrimitive(90.0f, EPSILON, title, LINE_COLOR))
-            labels.add(TextPrimitive(270f, -EPSILON, title, LINE_COLOR))
+            val title = resources.getString(R.string.ecliptic)
+            labels.add(TextPrimitive(90.0f, EARTHS_ANGULAR_TILT, title, LINE_COLOR))
+            labels.add(TextPrimitive(270f, -EARTHS_ANGULAR_TILT, title, LINE_COLOR))
 
             // Create line source.
             val ra = floatArrayOf(0f, 90f, 180f, 270f, 0f)
-            val dec = floatArrayOf(0f, EPSILON, 0f, -EPSILON, 0f)
+            val dec = floatArrayOf(0f, EARTHS_ANGULAR_TILT, 0f, -EARTHS_ANGULAR_TILT, 0f)
             val vertices = ArrayList<Vector3>()
             for (i in ra.indices) {
                 vertices.add(getGeocentricCoords(ra[i], dec[i]))

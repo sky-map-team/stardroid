@@ -25,6 +25,7 @@ import com.google.android.stardroid.search.SearchResult
 import com.google.android.stardroid.space.Universe
 import com.google.android.stardroid.util.MiscUtil
 import java.util.concurrent.locks.ReentrantLock
+import kotlin.math.abs
 
 /**
  * If enabled, keeps the sky gradient up to date.
@@ -32,7 +33,7 @@ import java.util.concurrent.locks.ReentrantLock
  * @author John Taylor
  * @author Brent Bryan
  */
-class SkyGradientLayer(private val model: AstronomerModel, private val resources: Resources) :
+class SkyGradientLayer(private val model: AstronomerModel, resources: Resources) :
     Layer {
     private val rendererLock = ReentrantLock()
     private var renderer: RendererController? = null
@@ -50,7 +51,7 @@ class SkyGradientLayer(private val model: AstronomerModel, private val resources
         } else {
             rendererLock.lock()
             try {
-                renderer!!.queueDisableSkyGradient()
+                renderer?.queueDisableSkyGradient()
             } finally {
                 rendererLock.unlock()
             }
@@ -60,27 +61,23 @@ class SkyGradientLayer(private val model: AstronomerModel, private val resources
     /** Redraws the sky shading gradient using the model's current time.  */
     protected fun redraw() {
         val modelTime = model.time
-        if (Math.abs(modelTime.time - lastUpdateTimeMs) > UPDATE_FREQUENCY_MS) {
+        if (abs(modelTime.time - lastUpdateTimeMs) > UPDATE_FREQUENCY_MS) {
             lastUpdateTimeMs = modelTime.time
             val sunPosition = universe.solarSystemObjectFor(Planet.Sun).getRaDec(modelTime)
             // Log.d(TAG, "Enabling sky gradient with sun position " + sunPosition);
             rendererLock.lock()
             try {
-                renderer!!.queueEnableSkyGradient(getGeocentricCoords(sunPosition))
+                renderer?.queueEnableSkyGradient(getGeocentricCoords(sunPosition))
             } finally {
                 rendererLock.unlock()
             }
         }
     }
 
-    override val layerDepthOrder: Int
-        get() = -10
-    override val preferenceId: String
-        get() = "source_provider.$layerNameId"
-    override val layerName: String
-        get() = resources.getString(layerNameId)
-    private val layerNameId: Int
-        private get() = R.string.show_sky_gradient
+    override val layerDepthOrder = -10
+    private val layerNameId = R.string.show_sky_gradient
+    override val preferenceId = "source_provider.$layerNameId"
+    override val layerName = resources.getString(layerNameId)
 
     override fun searchByObjectName(name: String): List<SearchResult> {
         return emptyList()

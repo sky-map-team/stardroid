@@ -26,14 +26,11 @@ import com.google.android.stardroid.R
  */
 class NewStarsLayer(assetManager: AssetManager, resources: Resources) :
     AbstractFileBasedLayer(assetManager, resources, "stars.binary") {
-    override val layerDepthOrder: Int
-        get() = 30
+    override val layerDepthOrder = 30
 
     // TODO(johntaylor): rename this Id
-    protected override val layerNameId: Int
-        protected get() = R.string.show_stars_pref // TODO(johntaylor): rename this Id
+    override val layerNameId = R.string.show_stars_pref // TODO(johntaylor): rename this Id
 
     // TODO(brent): Remove this.
-    override val preferenceId: String
-        get() = "source_provider.0"
+    override val preferenceId = "source_provider.0"
 }

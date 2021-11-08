@@ -25,7 +25,7 @@ import com.google.android.stardroid.source.TextPrimitive
 import java.util.*
 
 /**
- * Creates a Layer which returns Renderable which correspond to grid lines parallel
+ * Creates a Layer containing a Renderable which correspond to grid lines parallel
  * to the celestial equator and the hour angle. That is, returns a set of lines
  * with constant right ascension, and another set with constant declination.
  *
@@ -36,32 +36,28 @@ class GridLayer
 /**
  *
  * @param resources
- * @param numRightAscentionLines
+ * @param numRightAscensionLines
  * @param numDeclinationLines The number of declination lines to show including the poles
- * on each side of the equator. 9 is a good number for 10 degree
- * intervals.
+ * on each side of the equator. 9 is a good number for 10 degree intervals.
  */(
     resources: Resources,
-    private val numRightAscentionLines: Int,
+    private val numRightAscensionLines: Int,
     private val numDeclinationLines: Int
 ) : AbstractSourceLayer(resources, false) {
+
     override fun initializeAstroSources(sources: ArrayList<AstronomicalRenderable>) {
-        sources.add(GridRenderable(resources, numRightAscentionLines, numDeclinationLines))
+        sources.add(GridRenderable(resources, numRightAscensionLines, numDeclinationLines))
     }
 
-    override val layerDepthOrder: Int
-        get() = 0
+    override val layerDepthOrder = 0
 
-    // TODO(johntaylor): rename this string Id.
-    override val layerNameId: Int
-        get() = R.string.show_grid_pref // TODO(johntaylor): rename this string Id.
+    override val layerNameId = R.string.show_grid_pref // TODO(johntaylor): rename this string Id.
 
     // TODO(brent): Remove this.
-    override val preferenceId: String
-        get() = "source_provider.4"
+    override val preferenceId = "source_provider.4"
 
     /** Implementation of the grid elements as an [AstronomicalRenderable]  */
-    internal class GridRenderable(res: Resources?, numRaSources: Int, numDecSources: Int) :
+    internal class GridRenderable(resources: Resources, numRaSources: Int, numDecSources: Int) :
         AbstractAstronomicalRenderable() {
         override val labels: MutableList<TextPrimitive> = ArrayList()
         override val lines: MutableList<LinePrimitive> = ArrayList()
@@ -85,7 +81,7 @@ class GridLayer
             return line
         }
 
-        private fun createDecLine(index: Int, dec: Float): LinePrimitive {
+        private fun createDecLine(dec: Float): LinePrimitive {
             val line = LinePrimitive(LINE_COLOR)
             for (i in 0 until NUM_RA_VERTICES) {
                 val ra = i * 360.0f / NUM_RA_VERTICES
@@ -118,7 +114,7 @@ class GridLayer
                 TextPrimitive(
                     0f,
                     90f,
-                    res!!.getString(R.string.north_pole),
+                    resources.getString(R.string.north_pole),
                     LINE_COLOR
                 )
             )
@@ -126,7 +122,7 @@ class GridLayer
                 TextPrimitive(
                     0f,
                     -90f,
-                    res.getString(R.string.south_pole),
+                    resources.getString(R.string.south_pole),
                     LINE_COLOR
                 )
             )
@@ -135,11 +131,11 @@ class GridLayer
                 val title = String.format("%dh", 2 * index)
                 labels.add(TextPrimitive(ra, 0.0f, title, LINE_COLOR))
             }
-            lines.add(createDecLine(0, 0f)) // Equator
+            lines.add(createDecLine(0f)) // Equator
             // Note that we don't create lines at the poles.
             for (d in 1 until numDecSources) {
                 val dec = d * 90.0f / numDecSources
-                lines.add(createDecLine(d, dec))
+                lines.add(createDecLine(dec))
                 labels.add(
                     TextPrimitive(
                         0f,
@@ -148,7 +144,7 @@ class GridLayer
                         LINE_COLOR
                     )
                 )
-                lines.add(createDecLine(d, -dec))
+                lines.add(createDecLine(-dec))
                 labels.add(
                     TextPrimitive(
                         0f,

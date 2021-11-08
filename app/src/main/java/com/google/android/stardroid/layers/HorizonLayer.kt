@@ -23,6 +23,7 @@ import com.google.android.stardroid.math.Vector3
 import com.google.android.stardroid.renderer.RendererObjectManager.UpdateType
 import com.google.android.stardroid.source.*
 import java.util.*
+import kotlin.math.abs
 
 /**
  * Creates a mark at the zenith, nadir and cardinal point and a horizon.
@@ -36,25 +37,19 @@ class HorizonLayer(private val model: AstronomerModel, resources: Resources) :
         sources.add(HorizonRenderable(model, resources))
     }
 
-    override val layerDepthOrder: Int
-        get() = 90
+    override val layerDepthOrder = 90
 
     // TODO(brent): Remove this.
-    override val preferenceId: String
-        get() = "source_provider.5"
+    override val preferenceId = "source_provider.5"
 
     // TODO(johntaylor): i18n
-    override val layerName: String
-        get() =// TODO(johntaylor): i18n
-            "Horizon"
+    override val layerName = "Horizon"
 
-    // TODO(johntaylor): rename this string id
-    protected override val layerNameId: Int
-        protected get() = R.string.show_horizon_pref // TODO(johntaylor): rename this string id
+    override val layerNameId = R.string.show_horizon_pref // TODO(johntaylor): rename this string id
 
     /** Implementation of [AstronomicalRenderable] for the horizon source.  */
-    internal class HorizonRenderable(private val model: AstronomerModel, res: Resources?) :
-          AbstractAstronomicalRenderable() {
+    internal class HorizonRenderable(private val model: AstronomerModel, resources: Resources) :
+        AbstractAstronomicalRenderable() {
         private val zenith = Vector3(0f, 0f, 0f)
         private val nadir = Vector3(0f, 0f, 0f)
         private val north = Vector3(0f, 0f, 0f)
@@ -82,7 +77,7 @@ class HorizonLayer(private val model: AstronomerModel, resources: Resources) :
             val updateTypes = EnumSet.noneOf(UpdateType::class.java)
 
             // TODO(brent): Add distance here.
-            if (Math.abs(model.time.time - lastUpdateTimeMs) > UPDATE_FREQ_MS) {
+            if (abs(model.time.time - lastUpdateTimeMs) > UPDATE_FREQ_MS) {
                 updateCoords()
                 updateTypes.add(UpdateType.UpdatePositions)
             }
@@ -103,12 +98,12 @@ class HorizonLayer(private val model: AstronomerModel, resources: Resources) :
         init {
             val vertices = Lists.asList(north, east, south, west, north)
             lines.add(LinePrimitive(LINE_COLOR, vertices, 1.5f))
-            labels.add(TextPrimitive(zenith, res!!.getString(R.string.zenith), LABEL_COLOR))
-            labels.add(TextPrimitive(nadir, res.getString(R.string.nadir), LABEL_COLOR))
-            labels.add(TextPrimitive(north, res.getString(R.string.north), LABEL_COLOR))
-            labels.add(TextPrimitive(south, res.getString(R.string.south), LABEL_COLOR))
-            labels.add(TextPrimitive(east, res.getString(R.string.east), LABEL_COLOR))
-            labels.add(TextPrimitive(west, res.getString(R.string.west), LABEL_COLOR))
+            labels.add(TextPrimitive(zenith, resources.getString(R.string.zenith), LABEL_COLOR))
+            labels.add(TextPrimitive(nadir, resources.getString(R.string.nadir), LABEL_COLOR))
+            labels.add(TextPrimitive(north, resources.getString(R.string.north), LABEL_COLOR))
+            labels.add(TextPrimitive(south, resources.getString(R.string.south), LABEL_COLOR))
+            labels.add(TextPrimitive(east, resources.getString(R.string.east), LABEL_COLOR))
+            labels.add(TextPrimitive(west, resources.getString(R.string.west), LABEL_COLOR))
         }
     }
 }

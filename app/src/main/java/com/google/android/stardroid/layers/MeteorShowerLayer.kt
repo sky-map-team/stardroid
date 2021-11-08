@@ -23,6 +23,7 @@ import com.google.android.stardroid.math.getGeocentricCoords
 import com.google.android.stardroid.renderer.RendererObjectManager.UpdateType
 import com.google.android.stardroid.source.*
 import java.util.*
+import kotlin.math.abs
 
 /**
  * A [Layer] to show well-known meteor showers.
@@ -37,7 +38,7 @@ class MeteorShowerLayer(private val model: AstronomerModel, resources: Resources
      * Represents a meteor shower.
      */
     private class Shower(
-        name: String?, val nameId: Int, val radiant: Vector3,
+        val nameId: Int, val radiant: Vector3,
         val start: Date, val peak: Date, val end: Date, val peakMeteorsPerHour: Int
     )
 
@@ -48,7 +49,6 @@ class MeteorShowerLayer(private val model: AstronomerModel, resources: Resources
         // Actual start for Quadrantids is December 28 - but we can't cross a year boundary.
         showers.add(
             Shower(
-                "quadrantids",
                 R.string.quadrantids, getGeocentricCoords(230f, 49f),
                 Date(ANY_OLD_YEAR, 0, 1),
                 Date(ANY_OLD_YEAR, 0, 4),
@@ -58,7 +58,6 @@ class MeteorShowerLayer(private val model: AstronomerModel, resources: Resources
         )
         showers.add(
             Shower(
-                "lyrids",
                 R.string.lyrids, getGeocentricCoords(271f, 34f),
                 Date(ANY_OLD_YEAR, 3, 16),
                 Date(ANY_OLD_YEAR, 3, 22),
@@ -68,7 +67,6 @@ class MeteorShowerLayer(private val model: AstronomerModel, resources: Resources
         )
         showers.add(
             Shower(
-                "e-aquariids",
                 R.string.aquariids, getGeocentricCoords(338f, -1f),
                 Date(ANY_OLD_YEAR, 3, 19),
                 Date(ANY_OLD_YEAR, 4, 6),
@@ -78,7 +76,6 @@ class MeteorShowerLayer(private val model: AstronomerModel, resources: Resources
         )
         showers.add(
             Shower(
-                "d-aquariids",
                 R.string.deltaaquariids, getGeocentricCoords(340f, -16f),
                 Date(ANY_OLD_YEAR, 6, 12),
                 Date(ANY_OLD_YEAR, 6, 30),
@@ -88,7 +85,6 @@ class MeteorShowerLayer(private val model: AstronomerModel, resources: Resources
         )
         showers.add(
             Shower(
-                "perseids",
                 R.string.perseids, getGeocentricCoords(48f, 58f),
                 Date(ANY_OLD_YEAR, 6, 17),
                 Date(ANY_OLD_YEAR, 7, 13),
@@ -98,7 +94,6 @@ class MeteorShowerLayer(private val model: AstronomerModel, resources: Resources
         )
         showers.add(
             Shower(
-                "orionids",
                 R.string.orionids, getGeocentricCoords(95f, 16f),
                 Date(ANY_OLD_YEAR, 9, 2),
                 Date(ANY_OLD_YEAR, 9, 21),
@@ -108,7 +103,6 @@ class MeteorShowerLayer(private val model: AstronomerModel, resources: Resources
         )
         showers.add(
             Shower(
-                "leonids",
                 R.string.leonids, getGeocentricCoords(152f, 22f),
                 Date(ANY_OLD_YEAR, 10, 6),
                 Date(ANY_OLD_YEAR, 10, 18),
@@ -118,7 +112,6 @@ class MeteorShowerLayer(private val model: AstronomerModel, resources: Resources
         )
         showers.add(
             Shower(
-                "puppid-velids",
                 R.string.puppidvelids, getGeocentricCoords(123f, -45f),
                 Date(ANY_OLD_YEAR, 11, 1),
                 Date(ANY_OLD_YEAR, 11, 7),
@@ -128,7 +121,6 @@ class MeteorShowerLayer(private val model: AstronomerModel, resources: Resources
         )
         showers.add(
             Shower(
-                "geminids",
                 R.string.geminids, getGeocentricCoords(112f, 33f),
                 Date(ANY_OLD_YEAR, 11, 7),
                 Date(ANY_OLD_YEAR, 11, 14),
@@ -138,7 +130,6 @@ class MeteorShowerLayer(private val model: AstronomerModel, resources: Resources
         )
         showers.add(
             Shower(
-                "ursides",
                 R.string.ursids, getGeocentricCoords(217f, 76f),
                 Date(ANY_OLD_YEAR, 11, 17),
                 Date(ANY_OLD_YEAR, 11, 23),
@@ -154,31 +145,25 @@ class MeteorShowerLayer(private val model: AstronomerModel, resources: Resources
         }
     }
 
-    override val layerDepthOrder: Int
-        get() = 80
-    override val preferenceId: String
-        get() = "source_provider.6"
-    override val layerName: String
-        get() = "Meteor Showers"
-    override val layerNameId: Int
-        get() = R.string.show_meteors_pref
+    override val layerDepthOrder = 80
+    override val preferenceId = "source_provider.6"
+    override val layerName = "Meteor Showers"
+    override val layerNameId = R.string.show_meteors_pref
 
     private class MeteorRadiantRenderable(
         private val model: AstronomerModel,
         private val shower: Shower,
-        resources: Resources?
+        resources: Resources
     ) : AbstractAstronomicalRenderable() {
         override val labels: MutableList<TextPrimitive> = ArrayList()
         override val images: MutableList<ImagePrimitive> = ArrayList()
         private var lastUpdateTimeMs = 0L
         private val theImage: ImagePrimitive
         private val label: TextPrimitive
-        private val name: String
+        private val name = resources.getString(shower.nameId)
         override val names: MutableList<String> = ArrayList()
         override val searchLocation: Vector3
-            get() {
-                return shower.radiant
-            }
+            get() = shower.radiant
 
         private fun updateShower() {
             lastUpdateTimeMs = model.time.time
@@ -190,8 +175,7 @@ class MeteorShowerLayer(private val model: AstronomerModel, resources: Resources
             // TODO(johntaylor): consider varying the sizes by scaling factor as time progresses.
             if (now.after(shower.start) && now.before(shower.end)) {
                 label.text = name
-                val percentToPeak: Double
-                percentToPeak = if (now.before(shower.peak)) {
+                val percentToPeak = if (now.before(shower.peak)) {
                     (now.time - shower.start.time).toDouble() /
                             (shower.peak.time - shower.start.time)
                 } else {
@@ -218,7 +202,7 @@ class MeteorShowerLayer(private val model: AstronomerModel, resources: Resources
 
         override fun update(): EnumSet<UpdateType> {
             val updateTypes = EnumSet.noneOf(UpdateType::class.java)
-            if (Math.abs(model.time.time - lastUpdateTimeMs) > UPDATE_FREQ_MS) {
+            if (abs(model.time.time - lastUpdateTimeMs) > UPDATE_FREQ_MS) {
                 updateShower()
                 updateTypes.add(UpdateType.Reset)
             }
@@ -233,7 +217,6 @@ class MeteorShowerLayer(private val model: AstronomerModel, resources: Resources
         }
 
         init {
-            name = resources!!.getString(shower.nameId)
             // Not sure what the right user experience should be here.  Should we only show up
             // in the search results when the shower is visible?  For now, just ensure
             // that it's obvious from the search label.

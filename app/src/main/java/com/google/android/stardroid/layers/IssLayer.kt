@@ -36,22 +36,19 @@ import java.util.concurrent.TimeUnit
 /**
  * @author Brent Bryan
  */
-class IssLayer(resources: Resources, private val model: AstronomerModel) :
+class IssLayer(resources: Resources, model: AstronomerModel) :
     AbstractSourceLayer(resources, true) {
     private val scheduler = Executors.newScheduledThreadPool(1)
-    private var issRenderable: IssRenderable? = null
+    private val issRenderable: IssRenderable = IssRenderable(model, resources)
     override fun initializeAstroSources(sources: ArrayList<AstronomicalRenderable>) {
-        issRenderable = IssRenderable(model, resources)
-        sources.add(issRenderable!!)
+        sources.add(issRenderable)
         scheduler.scheduleAtFixedRate(
-            OrbitalElementsGrabber(issRenderable!!), 0, 60, TimeUnit.SECONDS
+            OrbitalElementsGrabber(issRenderable), 0, 60, TimeUnit.SECONDS
         )
     }
 
-    override val layerDepthOrder: Int
-        get() = 70
-    protected override val layerNameId: Int
-        protected get() = R.string.show_satellite_layer_pref
+    override val layerDepthOrder = 70
+    override val layerNameId = R.string.show_satellite_layer_pref
 
     /** Thread Runnable which parses the orbital elements out of the Url.  */
     internal class OrbitalElementsGrabber(private val renderable: IssRenderable) : Runnable {

@@ -26,6 +26,7 @@ import com.google.android.stardroid.source.ImagePrimitive
 import com.google.android.stardroid.source.Renderable
 import com.google.android.stardroid.util.MiscUtil
 import java.util.*
+import kotlin.math.abs
 
 /**
  * A [Layer] specially for Christmas.
@@ -38,23 +39,21 @@ class StarOfBethlehemLayer(private val model: AstronomerModel, resources: Resour
         sources.add(StarOfBethlehemRenderable(model, resources))
     }
 
-    override val layerDepthOrder: Int
-        get() = 40
+    override val layerDepthOrder = 40
 
     // TODO(brent): Remove this.
-    override val preferenceId: String
-        get() = "source_provider.0"
-    override val layerName: String
-        get() = "Easter Egg"
-    override val layerNameId: Int
-        get() = R.string.show_stars_pref
+    override val preferenceId = "source_provider.0"
+    override val layerName = "Easter Egg"
+    override val layerNameId = R.string.show_stars_pref
 
-    private class StarOfBethlehemRenderable(private val model: AstronomerModel, resources: Resources?) :
+    private class StarOfBethlehemRenderable(private val model: AstronomerModel, resources: Resources) :
         AbstractAstronomicalRenderable() {
         override val images: MutableList<ImagePrimitive> = ArrayList()
         private var lastUpdateTimeMs = 0L
-        private val coords: Vector3
-        private val theImage: ImagePrimitive
+        private val coords = Vector3(1f, 0f, 0f)
+        private val theImage: ImagePrimitive =
+            ImagePrimitive(coords, resources, R.drawable.blank, UP, SCALE_FACTOR)
+
         private fun updateStar() {
             lastUpdateTimeMs = model.time.time
             // We will only show the star if it's Christmas Eve.
@@ -87,7 +86,7 @@ class StarOfBethlehemLayer(private val model: AstronomerModel, resources: Resour
 
         override fun update(): EnumSet<UpdateType> {
             val updateTypes = EnumSet.noneOf(UpdateType::class.java)
-            if (Math.abs(model.time.time - lastUpdateTimeMs) > UPDATE_FREQ_MS) {
+            if (abs(model.time.time - lastUpdateTimeMs) > UPDATE_FREQ_MS) {
                 updateStar()
                 updateTypes.add(UpdateType.UpdateImages)
                 updateTypes.add(UpdateType.UpdatePositions)
@@ -102,12 +101,10 @@ class StarOfBethlehemLayer(private val model: AstronomerModel, resources: Resour
         }
 
         init {
-            coords = Vector3(1f, 0f, 0f)
             // star_off2 is a 1pxX1px image that should be invisible.
             // We'd prefer not to show any image except on the Christmas dates, but there
             // appears to be a bug in the renderer in that new images added later don't get
             // picked up, even if we return UpdateType.Reset.
-            theImage = ImagePrimitive(coords, resources, R.drawable.blank, UP, SCALE_FACTOR)
             images.add(theImage)
         }
     }

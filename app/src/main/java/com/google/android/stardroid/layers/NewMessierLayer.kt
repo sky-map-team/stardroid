@@ -26,15 +26,11 @@ import com.google.android.stardroid.R
  */
 class NewMessierLayer(assetManager: AssetManager, resources: Resources) :
     AbstractFileBasedLayer(assetManager, resources, "messier.binary") {
-    override val layerDepthOrder: Int
-        get() = 20
+    override val layerDepthOrder = 20
 
     // TODO(johntaylor): rename this string id
-    protected override val layerNameId: Int
-        protected get() =// TODO(johntaylor): rename this string id
-            R.string.show_messier_objects_pref
+    override val layerNameId = R.string.show_messier_objects_pref
 
     // TODO(brent): Remove this.
-    override val preferenceId: String
-        get() = "source_provider.2"
+    override val preferenceId = "source_provider.2"
 }

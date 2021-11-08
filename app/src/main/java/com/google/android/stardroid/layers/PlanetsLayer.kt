@@ -48,15 +48,11 @@ class PlanetsLayer(
     }
 
     // TODO(brent): Remove this.
-    override val preferenceId: String
-        get() = "source_provider.3"
+    override val preferenceId = "source_provider.3"
 
     // TODO(brent): refactor these to a common location.
-    override val layerDepthOrder: Int
-        get() =// TODO(brent): refactor these to a common location.
-            60
+    override val layerDepthOrder = 60
 
     // TODO(johntaylor): rename the string id.
-    override val layerNameId: Int
-        get() = R.string.show_planets_pref // TODO(johntaylor): rename the string id.
+    override val layerNameId  = R.string.show_planets_pref // TODO(johntaylor): rename the string id.
 }
