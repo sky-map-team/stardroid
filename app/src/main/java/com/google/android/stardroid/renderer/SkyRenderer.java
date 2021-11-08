@@ -25,7 +25,6 @@ import com.google.android.stardroid.math.Vector3;
 import com.google.android.stardroid.renderer.util.GLBuffer;
 import com.google.android.stardroid.renderer.util.SkyRegionMap;
 import com.google.android.stardroid.renderer.util.TextureManager;
-import com.google.android.stardroid.renderer.util.UpdateClosure;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -52,7 +51,7 @@ public class SkyRenderer implements GLSurfaceView.Renderer {
   private boolean mMustUpdateView = true;
   private boolean mMustUpdateProjection = true;
 
-  private Set<UpdateClosure> mUpdateClosures = new HashSet<>();
+  private Set<Runnable> mUpdateClosures = new HashSet<>();
 
   private RendererObjectManager.UpdateListener mUpdateListener =
       new RendererObjectManager.UpdateListener() {
@@ -129,7 +128,7 @@ public class SkyRenderer implements GLSurfaceView.Renderer {
     checkForErrors(gl);
 
     // Queue updates for the next frame.
-    for (UpdateClosure update : mUpdateClosures) {
+    for (Runnable update : mUpdateClosures) {
       update.run();
     }
   }
@@ -216,7 +215,7 @@ public class SkyRenderer implements GLSurfaceView.Renderer {
     mMustUpdateProjection = true;
   }
 
-  public void addUpdateClosure(UpdateClosure update) {
+  public void addUpdateClosure(Runnable update) {
     mUpdateClosures.add(update);
   }
 

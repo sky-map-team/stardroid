@@ -19,7 +19,6 @@ import com.google.android.stardroid.renderer.RendererController.AtomicSection
 import com.google.android.stardroid.renderer.RendererControllerBase
 import com.google.android.stardroid.renderer.RendererControllerBase.RenderManager
 import com.google.android.stardroid.renderer.RendererObjectManager.UpdateType
-import com.google.android.stardroid.renderer.util.UpdateClosure
 import com.google.android.stardroid.search.SearchResult
 import com.google.android.stardroid.source.ImagePrimitive
 import com.google.android.stardroid.source.LinePrimitive
@@ -64,7 +63,7 @@ abstract class AbstractLayer(protected val resources: Resources) : Layer {
         }
     }
 
-    protected fun addUpdateClosure(closure: UpdateClosure) {
+    protected fun addUpdateClosure(closure: Runnable) {
         renderer?.addUpdateClosure(closure)
     }
 

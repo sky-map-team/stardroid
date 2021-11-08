@@ -14,7 +14,6 @@
 
 package com.google.android.stardroid.renderer;
 
-import com.google.android.stardroid.renderer.util.UpdateClosure;
 import com.google.android.stardroid.math.Vector3;
 import com.google.android.stardroid.source.ImagePrimitive;
 import com.google.android.stardroid.source.LinePrimitive;
@@ -246,7 +245,7 @@ public abstract class RendererControllerBase {
     queueRunnable(msg, CommandType.Data, mRenderer::disableSearchOverlay);
   }
 
-  public void addUpdateClosure(final UpdateClosure runnable) {
+  public void addUpdateClosure(final Runnable runnable) {
     final String msg = "Setting update callback";
     queueRunnable(msg, CommandType.Data, new Runnable() {
       @Override

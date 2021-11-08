@@ -16,8 +16,6 @@ package com.google.android.stardroid.layers
 import android.content.res.Resources
 import android.util.Log
 import com.google.android.stardroid.renderer.RendererObjectManager.UpdateType
-import com.google.android.stardroid.renderer.util.AbstractUpdateClosure
-import com.google.android.stardroid.renderer.util.UpdateClosure
 import com.google.android.stardroid.search.PrefixStore
 import com.google.android.stardroid.search.SearchResult
 import com.google.android.stardroid.source.*
@@ -39,7 +37,6 @@ abstract class AbstractSourceLayer(resources: Resources, private val shouldUpdat
     private val astroSources = ArrayList<AstronomicalSource>()
     private val searchIndex = HashMap<String, SearchResult>()
     private val prefixStore = PrefixStore()
-    private var closure: SourceUpdateClosure? = null
 
     @Synchronized
     override fun initialize() {
@@ -68,10 +65,7 @@ abstract class AbstractSourceLayer(resources: Resources, private val shouldUpdat
     override fun updateLayerForControllerChange() {
         refreshSources(EnumSet.of(UpdateType.Reset))
         if (shouldUpdate) {
-            if (closure == null) {
-                closure = SourceUpdateClosure(this)
-            }
-            addUpdateClosure(closure!!)
+            addUpdateClosure(this::refreshSources)
         }
     }
 
@@ -133,13 +127,6 @@ abstract class AbstractSourceLayer(resources: Resources, private val shouldUpdat
         val results = prefixStore.queryByPrefix(prefix)
         Log.d(TAG, "Got " + results.size + " results for prefix " + prefix + " in " + layerName)
         return results
-    }
-
-    /** Implementation of the [UpdateClosure] interface used to update a layer  */
-    class SourceUpdateClosure(private val layer: AbstractSourceLayer) : AbstractUpdateClosure() {
-        override fun run() {
-            layer.refreshSources()
-        }
     }
 
     companion object {
