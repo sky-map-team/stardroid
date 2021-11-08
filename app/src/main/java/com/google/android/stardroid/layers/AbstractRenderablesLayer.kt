@@ -99,14 +99,6 @@ abstract class AbstractRenderablesLayer(resources: Resources, private val should
         }
     }
 
-    /**
-     * Forcefully resets and redraws all sources on this layer everything on
-     * this layer.
-     */
-    override fun redraw() {
-        refreshSources(EnumSet.of(UpdateType.Reset))
-    }
-
     private fun redraw(updateTypes: EnumSet<UpdateType>) {
         super.redraw(textPrimitives, pointPrimitives, linePrimitives, imagePrimitives, updateTypes)
     }

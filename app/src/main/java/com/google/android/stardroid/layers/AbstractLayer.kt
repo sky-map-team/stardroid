@@ -68,12 +68,6 @@ abstract class AbstractLayer(protected val resources: Resources) : Layer {
     }
 
     /**
-     * Forces a redraw of this layer, clearing all of the information about this
-     * layer in the renderer and repopulating it.
-     */
-    protected abstract fun redraw()
-
-    /**
      * Updates the renderer (using the given [UpdateType]) with the given set of
      * UI elements.  Depending on the value of [UpdateType], current sources will
      * either have their state updated, or will be overwritten by the given set
