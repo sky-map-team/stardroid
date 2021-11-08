@@ -18,7 +18,8 @@ import android.content.res.Resources;
 import android.util.Log;
 
 import com.google.android.stardroid.R;
-import com.google.android.stardroid.source.AbstractAstronomicalSource;
+import com.google.android.stardroid.source.AbstractAstronomicalRenderable;
+import com.google.android.stardroid.source.AstronomicalRenderable;
 import com.google.android.stardroid.source.LinePrimitive;
 import com.google.android.stardroid.source.PointPrimitive;
 import com.google.android.stardroid.source.TextPrimitive;
@@ -39,13 +40,13 @@ import java.util.Map;
 
 /**
  * Implementation of the
- * {@link com.google.android.stardroid.source.AstronomicalSource} interface
+ * {@link AstronomicalRenderable} interface
  * from objects serialized as protocol buffers.
  *
  * @author Brent Bryan
  */
-public class ProtobufAstronomicalSource extends AbstractAstronomicalSource {
-  private static final String TAG = MiscUtil.getTag(ProtobufAstronomicalSource.class);
+public class ProtobufAstronomicalRenderable extends AbstractAstronomicalRenderable {
+  private static final String TAG = MiscUtil.getTag(ProtobufAstronomicalRenderable.class);
 
   private static final Map<SourceProto.Shape, PointPrimitive.Shape> shapeMap =
     new HashMap<SourceProto.Shape, PointPrimitive.Shape>();
@@ -74,7 +75,7 @@ public class ProtobufAstronomicalSource extends AbstractAstronomicalSource {
   // Lazily construct the names.
   private ArrayList<String> names;
 
-  public ProtobufAstronomicalSource(AstronomicalSourceProto originalProto, Resources resources) {
+  public ProtobufAstronomicalRenderable(AstronomicalSourceProto originalProto, Resources resources) {
     this.resources = resources;
     // Not ideal to be doing this in the constructor. TODO(john): investigate which threads
     // this is all happening on.

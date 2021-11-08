@@ -21,7 +21,6 @@ import com.google.android.stardroid.base.Lists
 import com.google.android.stardroid.base.TimeConstants
 import com.google.android.stardroid.control.AstronomerModel
 import com.google.android.stardroid.ephemeris.OrbitalElements
-import com.google.android.stardroid.layers.IssLayer.OrbitalElementsGrabber
 import com.google.android.stardroid.math.Vector3
 import com.google.android.stardroid.renderer.RendererObjectManager.UpdateType
 import com.google.android.stardroid.source.*
@@ -42,7 +41,7 @@ class IssLayer(resources: Resources, private val model: AstronomerModel) :
     AbstractSourceLayer(resources, true) {
     private val scheduler = Executors.newScheduledThreadPool(1)
     private var issSource: IssSource? = null
-    override fun initializeAstroSources(sources: ArrayList<AstronomicalSource>) {
+    override fun initializeAstroSources(sources: ArrayList<AstronomicalRenderable>) {
         issSource = IssSource(model, resources)
         sources.add(issSource!!)
         scheduler.scheduleAtFixedRate(
@@ -130,9 +129,9 @@ class IssLayer(resources: Resources, private val model: AstronomerModel) :
         }
     }
 
-    /** AstronomicalSource corresponding to the International Space Station.  */
+    /** AstronomicalRenderable corresponding to the International Space Station.  */
     internal class IssSource(private val model: AstronomerModel, resources: Resources?) :
-        AbstractAstronomicalSource() {
+        AbstractAstronomicalRenderable() {
         private val coords = Vector3(1f, 0f, 0f)
         private val pointPrimitives = ArrayList<PointPrimitive>()
         private val textPrimitives = ArrayList<TextPrimitive>()
@@ -164,7 +163,7 @@ class IssLayer(resources: Resources, private val model: AstronomerModel) :
             // issCoords.assign(...);
         }
 
-        override fun initialize(): Sources {
+        override fun initialize(): Renderable {
             updateCoords(model.time)
             return this
         }

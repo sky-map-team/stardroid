@@ -17,8 +17,8 @@ import android.content.res.AssetManager
 import android.content.res.Resources
 import android.util.Log
 import com.google.android.stardroid.renderer.RendererObjectManager.UpdateType
-import com.google.android.stardroid.source.AstronomicalSource
-import com.google.android.stardroid.source.proto.ProtobufAstronomicalSource
+import com.google.android.stardroid.source.AstronomicalRenderable
+import com.google.android.stardroid.source.proto.ProtobufAstronomicalRenderable
 import com.google.android.stardroid.source.proto.SourceProto
 import com.google.android.stardroid.util.MiscUtil
 import com.google.common.io.Closeables
@@ -40,7 +40,7 @@ abstract class AbstractFileBasedLayer(
     resources: Resources,
     private val fileName: String
 ) : AbstractSourceLayer(resources, false) {
-    private val fileSources: MutableList<AstronomicalSource> = ArrayList()
+    private val fileSources: MutableList<AstronomicalRenderable> = ArrayList()
     @Synchronized
     override fun initialize() {
         BACKGROUND_EXECUTOR.execute {
@@ -49,7 +49,7 @@ abstract class AbstractFileBasedLayer(
         }
     }
 
-    override fun initializeAstroSources(sources: ArrayList<AstronomicalSource>) {
+    override fun initializeAstroSources(sources: ArrayList<AstronomicalRenderable>) {
         sources.addAll(fileSources)
     }
 
@@ -61,7 +61,12 @@ abstract class AbstractFileBasedLayer(
             val parser = SourceProto.AstronomicalSourcesProto.parser()
             val sources = parser.parseFrom(`in`)
             for (proto in sources.sourceList) {
-                fileSources.add(ProtobufAstronomicalSource(proto, resources))
+                fileSources.add(
+                    ProtobufAstronomicalRenderable(
+                        proto,
+                        resources
+                    )
+                )
             }
             Log.d(TAG, "Found: " + fileSources.size + " sources")
             val s = String.format(

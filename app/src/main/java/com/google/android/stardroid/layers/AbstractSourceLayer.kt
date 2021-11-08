@@ -23,7 +23,7 @@ import com.google.android.stardroid.util.MiscUtil
 import java.util.*
 
 /**
- * Layer for objects which are [AstronomicalSource]s.
+ * Layer for objects which are [AstronomicalRenderable]s.
  *
  * @author Brent Bryan
  */
@@ -34,7 +34,7 @@ abstract class AbstractSourceLayer(resources: Resources, private val shouldUpdat
     private val imagePrimitives = ArrayList<ImagePrimitive>()
     private val pointPrimitives = ArrayList<PointPrimitive>()
     private val linePrimitives = ArrayList<LinePrimitive>()
-    private val astroSources = ArrayList<AstronomicalSource>()
+    private val astroSources = ArrayList<AstronomicalRenderable>()
     private val searchIndex = HashMap<String, SearchResult>()
     private val prefixStore = PrefixStore()
 
@@ -71,9 +71,9 @@ abstract class AbstractSourceLayer(resources: Resources, private val shouldUpdat
 
     /**
      * Subclasses should override this method and add all their
-     * [AstronomicalSource] to the given [ArrayList].
+     * [AstronomicalRenderable] to the given [ArrayList].
      */
-    protected abstract fun initializeAstroSources(sources: ArrayList<AstronomicalSource>)
+    protected abstract fun initializeAstroSources(sources: ArrayList<AstronomicalRenderable>)
 
     /**
      * Redraws the sources on this layer, after first refreshing them based on

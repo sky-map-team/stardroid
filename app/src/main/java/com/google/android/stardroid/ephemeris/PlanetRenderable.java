@@ -20,8 +20,9 @@ import static com.google.android.stardroid.math.CoordinateManipulationsKt.update
 import com.google.android.stardroid.base.Lists;
 import com.google.android.stardroid.control.AstronomerModel;
 import com.google.android.stardroid.renderer.RendererObjectManager.UpdateType;
-import com.google.android.stardroid.source.AbstractAstronomicalSource;
-import com.google.android.stardroid.source.Sources;
+import com.google.android.stardroid.source.AbstractAstronomicalRenderable;
+import com.google.android.stardroid.source.AstronomicalRenderable;
+import com.google.android.stardroid.source.Renderable;
 import com.google.android.stardroid.source.ImagePrimitive;
 import com.google.android.stardroid.source.PointPrimitive;
 import com.google.android.stardroid.source.TextPrimitive;
@@ -40,11 +41,11 @@ import java.util.List;
 
 /**
  * Implementation of the
- * {@link com.google.android.stardroid.source.AstronomicalSource} for planets.
+ * {@link AstronomicalRenderable} for planets.
  *
  * @author Brent Bryan
  */
-public class PlanetSource extends AbstractAstronomicalSource {
+public class PlanetRenderable extends AbstractAstronomicalRenderable {
   private static final int PLANET_SIZE = 3;
   private static final int PLANET_COLOR = Color.argb(20, 129, 126, 246);
   private static final int PLANET_LABEL_COLOR = 0xf67e81;
@@ -67,8 +68,8 @@ public class PlanetSource extends AbstractAstronomicalSource {
   private long lastUpdateTimeMs  = 0L;
   private Universe universe = new Universe();
 
-  public PlanetSource(Planet planet, Resources resources,
-      AstronomerModel model, SharedPreferences prefs) {
+  public PlanetRenderable(Planet planet, Resources resources,
+                          AstronomerModel model, SharedPreferences prefs) {
     this.planet = planet;
     this.solarSystemObject = universe.solarSystemObjectFor(planet);
     this.resources = resources;
@@ -98,7 +99,7 @@ public class PlanetSource extends AbstractAstronomicalSource {
   }
 
   @Override
-  public Sources initialize() {
+  public Renderable initialize() {
     Date time = model.getTime();
     updateCoords(time);
     this.imageId = solarSystemObject.getImageResourceId(time);

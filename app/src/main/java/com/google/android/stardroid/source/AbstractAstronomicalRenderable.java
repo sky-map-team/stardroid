@@ -22,15 +22,15 @@ import java.util.EnumSet;
 import java.util.List;
 
 /**
- * Base implementation of the {@link AstronomicalSource} and {@link Sources}
+ * Base implementation of the {@link AstronomicalRenderable} and {@link Renderable}
  * interfaces.
  *
  * @author Brent Bryan
  */
-public abstract class AbstractAstronomicalSource implements AstronomicalSource, Sources {
+public abstract class AbstractAstronomicalRenderable implements AstronomicalRenderable {
 
   @Override
-  public Sources initialize() {
+  public Renderable initialize() {
     return this;
   }
 

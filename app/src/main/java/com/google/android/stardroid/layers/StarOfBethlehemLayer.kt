@@ -18,13 +18,12 @@ import android.util.Log
 import com.google.android.stardroid.R
 import com.google.android.stardroid.base.TimeConstants
 import com.google.android.stardroid.control.AstronomerModel
-import com.google.android.stardroid.layers.StarOfBethlehemLayer
 import com.google.android.stardroid.math.Vector3
 import com.google.android.stardroid.renderer.RendererObjectManager.UpdateType
-import com.google.android.stardroid.source.AbstractAstronomicalSource
-import com.google.android.stardroid.source.AstronomicalSource
+import com.google.android.stardroid.source.AbstractAstronomicalRenderable
+import com.google.android.stardroid.source.AstronomicalRenderable
 import com.google.android.stardroid.source.ImagePrimitive
-import com.google.android.stardroid.source.Sources
+import com.google.android.stardroid.source.Renderable
 import com.google.android.stardroid.util.MiscUtil
 import java.util.*
 
@@ -35,7 +34,7 @@ import java.util.*
  */
 class StarOfBethlehemLayer(private val model: AstronomerModel, resources: Resources) :
     AbstractSourceLayer(resources, true) {
-    override fun initializeAstroSources(sources: ArrayList<AstronomicalSource>) {
+    override fun initializeAstroSources(sources: ArrayList<AstronomicalRenderable>) {
         sources.add(StarOfBethlehemSource(model, resources))
     }
 
@@ -51,7 +50,7 @@ class StarOfBethlehemLayer(private val model: AstronomerModel, resources: Resour
         protected get() = R.string.show_stars_pref
 
     private class StarOfBethlehemSource(private val model: AstronomerModel, resources: Resources?) :
-        AbstractAstronomicalSource() {
+        AbstractAstronomicalRenderable() {
         private val imageSources: MutableList<ImagePrimitive> = ArrayList()
         private var lastUpdateTimeMs = 0L
         private val coords: Vector3
@@ -81,7 +80,7 @@ class StarOfBethlehemLayer(private val model: AstronomerModel, resources: Resour
             }
         }
 
-        override fun initialize(): Sources {
+        override fun initialize(): Renderable {
             updateStar()
             return this
         }

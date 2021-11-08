@@ -148,7 +148,7 @@ class MeteorShowerLayer(private val model: AstronomerModel, resources: Resources
         )
     }
 
-    override fun initializeAstroSources(sources: ArrayList<AstronomicalSource>) {
+    override fun initializeAstroSources(sources: ArrayList<AstronomicalRenderable>) {
         for (shower in showers) {
             sources.add(MeteorRadiantSource(model, shower, resources))
         }
@@ -167,7 +167,7 @@ class MeteorShowerLayer(private val model: AstronomerModel, resources: Resources
         private val model: AstronomerModel,
         private val shower: Shower,
         resources: Resources?
-    ) : AbstractAstronomicalSource() {
+    ) : AbstractAstronomicalRenderable() {
         private val imagePrimitives: MutableList<ImagePrimitive> = ArrayList()
         private val labelPrimitives: MutableList<TextPrimitive> = ArrayList()
         private var lastUpdateTimeMs = 0L
@@ -214,7 +214,7 @@ class MeteorShowerLayer(private val model: AstronomerModel, resources: Resources
             }
         }
 
-        override fun initialize(): Sources {
+        override fun initialize(): Renderable {
             updateShower()
             return this
         }

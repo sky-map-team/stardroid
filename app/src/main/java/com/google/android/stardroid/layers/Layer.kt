@@ -15,7 +15,7 @@ package com.google.android.stardroid.layers
 
 import com.google.android.stardroid.renderer.RendererController
 import com.google.android.stardroid.search.SearchResult
-import com.google.android.stardroid.source.AstronomicalSource
+import com.google.android.stardroid.source.AstronomicalRenderable
 
 /**
  * A logical collection of objects which should be displayed in SkyMap. For
@@ -55,7 +55,7 @@ interface Layer {
     val layerName: String
 
     /**
-     * Sets whether the [AstronomicalSource]s in this layer should be shown
+     * Sets whether the [AstronomicalRenderable]s in this layer should be shown
      * by the renderer.
      */
     fun setVisible(visible: Boolean)

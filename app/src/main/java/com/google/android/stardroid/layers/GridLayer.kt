@@ -18,14 +18,14 @@ import android.graphics.Color
 import com.google.android.stardroid.R
 import com.google.android.stardroid.math.RaDec
 import com.google.android.stardroid.math.getGeocentricCoords
-import com.google.android.stardroid.source.AbstractAstronomicalSource
-import com.google.android.stardroid.source.AstronomicalSource
+import com.google.android.stardroid.source.AbstractAstronomicalRenderable
+import com.google.android.stardroid.source.AstronomicalRenderable
 import com.google.android.stardroid.source.LinePrimitive
 import com.google.android.stardroid.source.TextPrimitive
 import java.util.*
 
 /**
- * Creates a Layer which returns Sources which correspond to grid lines parallel
+ * Creates a Layer which returns Renderable which correspond to grid lines parallel
  * to the celestial equator and the hour angle. That is, returns a set of lines
  * with constant right ascension, and another set with constant declination.
  *
@@ -45,7 +45,7 @@ class GridLayer
     private val numRightAscentionLines: Int,
     private val numDeclinationLines: Int
 ) : AbstractSourceLayer(resources, false) {
-    override fun initializeAstroSources(sources: ArrayList<AstronomicalSource>) {
+    override fun initializeAstroSources(sources: ArrayList<AstronomicalRenderable>) {
         sources.add(GridSource(resources, numRightAscentionLines, numDeclinationLines))
     }
 
@@ -60,9 +60,9 @@ class GridLayer
     override val preferenceId: String
         get() = "source_provider.4"
 
-    /** Implementation of the grid elements as an [AstronomicalSource]  */
+    /** Implementation of the grid elements as an [AstronomicalRenderable]  */
     internal class GridSource(res: Resources?, numRaSources: Int, numDecSources: Int) :
-        AbstractAstronomicalSource() {
+        AbstractAstronomicalRenderable() {
         private val linePrimitives = ArrayList<LinePrimitive>()
         private val textPrimitives = ArrayList<TextPrimitive>()
 

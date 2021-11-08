@@ -17,13 +17,12 @@ package com.google.android.stardroid.source;
 import java.util.List;
 
 /**
- * Data object which contains all of the elements for an
- * {@link AstronomicalSource}. These elements describe the lines, text, images,
- * etc sent to renderer to be drawn.
+ * A composite of the graphical primitives which comprise a particular astronomical object.
+ * These elements describe the lines, text, images, etc sent to renderer to be drawn.
  *
  * @author Brent Bryan
  */
-public interface Sources {
+public interface Renderable {
 
   /** Returns the list of points that should be drawn in the renderer. */
   List<? extends PointPrimitive> getPoints();

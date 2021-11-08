@@ -21,13 +21,13 @@ import java.util.EnumSet;
 import java.util.List;
 
 /**
- * This class represents a single source shown in SkyMap. An AstronomicalSource
+ * This class represents a single source shown in SkyMap. An AstronomicalRenderable
  * may consist of several primitives. For instance, a constellation may have a
  * label, an image, as well as the star to star lines.
  *
  * @author Brent Bryan
  */
-public interface AstronomicalSource {
+public interface AstronomicalRenderable extends Renderable {
   /**
    * Returns a list of names associated with this source. Names in this list
    * should be internationalized.
@@ -55,14 +55,14 @@ public interface AstronomicalSource {
   // float getLevel();
 
   /**
-   * Initializes and returns the elements for this {@link AstronomicalSource}.
+   * Initializes and returns the elements for this {@link AstronomicalRenderable}.
    * Elements should have their positions, images, etc update to the current
    * time / location information.
    */
-  Sources initialize();
+  Renderable initialize();
 
   /**
-   * Updates the {@link Sources} of this {@link AstronomicalSource} in response
+   * Updates the {@link Renderable} of this {@link AstronomicalRenderable} in response
    * to a change in the user's location or current time. Changes can be caused
    * by the user moving to a new location or time progressing, or by the user
    * manually selecting a different location. Returns the minimal Set of

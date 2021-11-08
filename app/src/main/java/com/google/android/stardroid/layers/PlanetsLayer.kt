@@ -18,8 +18,8 @@ import android.content.res.Resources
 import com.google.android.stardroid.R
 import com.google.android.stardroid.control.AstronomerModel
 import com.google.android.stardroid.ephemeris.Planet
-import com.google.android.stardroid.ephemeris.PlanetSource
-import com.google.android.stardroid.source.AstronomicalSource
+import com.google.android.stardroid.ephemeris.PlanetRenderable
+import com.google.android.stardroid.source.AstronomicalRenderable
 import java.util.*
 
 /**
@@ -34,9 +34,16 @@ class PlanetsLayer(
     resources: Resources,
     private val preferences: SharedPreferences
 ) : AbstractSourceLayer(resources, true) {
-    override fun initializeAstroSources(sources: ArrayList<AstronomicalSource>) {
+    override fun initializeAstroSources(sources: ArrayList<AstronomicalRenderable>) {
         for (planet in Planet.values()) {
-            sources.add(PlanetSource(planet, resources, model, preferences))
+            sources.add(
+                PlanetRenderable(
+                    planet,
+                    resources,
+                    model,
+                    preferences
+                )
+            )
         }
     }
 

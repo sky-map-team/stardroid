@@ -32,7 +32,7 @@ import java.util.*
  */
 class HorizonLayer(private val model: AstronomerModel, resources: Resources) :
     AbstractSourceLayer(resources, true) {
-    override fun initializeAstroSources(sources: ArrayList<AstronomicalSource>) {
+    override fun initializeAstroSources(sources: ArrayList<AstronomicalRenderable>) {
         sources.add(HorizonSource(model, resources))
     }
 
@@ -52,9 +52,9 @@ class HorizonLayer(private val model: AstronomerModel, resources: Resources) :
     protected override val layerNameId: Int
         protected get() = R.string.show_horizon_pref // TODO(johntaylor): rename this string id
 
-    /** Implementation of [AstronomicalSource] for the horizon source.  */
+    /** Implementation of [AstronomicalRenderable] for the horizon source.  */
     internal class HorizonSource(private val model: AstronomerModel, res: Resources?) :
-        AbstractAstronomicalSource() {
+        AbstractAstronomicalRenderable() {
         private val zenith = Vector3(0f, 0f, 0f)
         private val nadir = Vector3(0f, 0f, 0f)
         private val north = Vector3(0f, 0f, 0f)
@@ -75,7 +75,7 @@ class HorizonLayer(private val model: AstronomerModel, resources: Resources) :
             west.assign(model.west)
         }
 
-        override fun initialize(): Sources {
+        override fun initialize(): Renderable {
             updateCoords()
             return this
         }

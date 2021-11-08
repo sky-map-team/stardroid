@@ -18,8 +18,8 @@ import android.graphics.Color
 import com.google.android.stardroid.R
 import com.google.android.stardroid.math.Vector3
 import com.google.android.stardroid.math.getGeocentricCoords
-import com.google.android.stardroid.source.AbstractAstronomicalSource
-import com.google.android.stardroid.source.AstronomicalSource
+import com.google.android.stardroid.source.AbstractAstronomicalRenderable
+import com.google.android.stardroid.source.AstronomicalRenderable
 import com.google.android.stardroid.source.LinePrimitive
 import com.google.android.stardroid.source.TextPrimitive
 import java.util.*
@@ -31,7 +31,7 @@ import java.util.*
  * @author Brent Bryan
  */
 class EclipticLayer(resources: Resources) : AbstractSourceLayer(resources, false) {
-    override fun initializeAstroSources(sources: ArrayList<AstronomicalSource>) {
+    override fun initializeAstroSources(sources: ArrayList<AstronomicalRenderable>) {
         sources.add(EclipticSource(resources))
     }
 
@@ -42,8 +42,8 @@ class EclipticLayer(resources: Resources) : AbstractSourceLayer(resources, false
     override val preferenceId: String
         get() = "source_provider.4"
 
-    /** Implementation of [AstronomicalSource] for the ecliptic source.  */
-    private class EclipticSource(res: Resources?) : AbstractAstronomicalSource() {
+    /** Implementation of [AstronomicalRenderable] for the ecliptic source.  */
+    private class EclipticSource(res: Resources?) : AbstractAstronomicalRenderable() {
         private val linePrimitives = ArrayList<LinePrimitive>()
         private val textPrimitives = ArrayList<TextPrimitive>()
         override fun getLabels(): List<TextPrimitive> {
