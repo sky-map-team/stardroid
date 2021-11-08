@@ -17,11 +17,9 @@ import android.util.Log
 import com.google.android.stardroid.math.MathUtils.sin
 import com.google.android.stardroid.math.MathUtils.cos
 import com.google.android.stardroid.math.MathUtils.abs
-import com.google.android.stardroid.math.MathUtils.atan
 import com.google.android.stardroid.math.MathUtils.sqrt
 import com.google.android.stardroid.math.MathUtils.tan
 import com.google.android.stardroid.math.mod2pi
-import com.google.android.stardroid.ephemeris.OrbitalElements
 import com.google.android.stardroid.util.MiscUtil
 
 /**
@@ -78,7 +76,7 @@ data class OrbitalElements(
         } while (abs(e0 - e1) > EPSILON)
 
         // convert eccentric anomaly to true anomaly
-        val v = 2f * atan(
+        val v = 2f * kotlin.math.atan(
             sqrt((1 + e) / (1 - e))
                     * tan(0.5f * e0)
         )

@@ -79,11 +79,6 @@ object MathUtils {
     fun acos(x: Float) = kotlin.math.acos(x)
 
     @JvmStatic
-    fun atan(x: Float) = kotlin.math.atan(x)
-
-    @JvmStatic
     fun atan2(y: Float, x: Float) = kotlin.math.atan2(y, x)
 
-    @JvmStatic
-    fun log10(x: Float) = kotlin.math.log10(x)
 }

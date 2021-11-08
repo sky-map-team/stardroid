@@ -8,16 +8,10 @@ import java.util.*
 
 import com.google.android.stardroid.math.RaDec.Companion.calculateRaDecDist
 import kotlin.math.cos
-import com.google.android.stardroid.space.Moon
 import com.google.android.stardroid.util.MiscUtil
 
 import com.google.android.stardroid.math.Vector3
-
-
-
-
-
-
+import kotlin.math.log10
 
 
 /**
@@ -147,6 +141,6 @@ abstract class SolarSystemObject(protected val planet : Planet) : MovingObject()
                 100f
             }
         }
-        return mag + 5.0f * MathUtils.log10(planetCoords.length * earthDistance)
+        return mag + 5.0f * log10(planetCoords.length * earthDistance)
     }
 }
