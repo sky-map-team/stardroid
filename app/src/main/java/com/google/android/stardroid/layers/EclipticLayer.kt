@@ -32,27 +32,20 @@ import java.util.*
  */
 class EclipticLayer(resources: Resources) : AbstractSourceLayer(resources, false) {
     override fun initializeAstroSources(sources: ArrayList<AstronomicalRenderable>) {
-        sources.add(EclipticSource(resources))
+        sources.add(EclipticRenderable(resources))
     }
 
     override val layerDepthOrder: Int
         get() = 50
-    protected override val layerNameId: Int
-        protected get() = R.string.show_grid_pref
+    override val layerNameId: Int
+        get() = R.string.show_grid_pref
     override val preferenceId: String
         get() = "source_provider.4"
 
     /** Implementation of [AstronomicalRenderable] for the ecliptic source.  */
-    private class EclipticSource(res: Resources?) : AbstractAstronomicalRenderable() {
-        private val linePrimitives = ArrayList<LinePrimitive>()
-        private val textPrimitives = ArrayList<TextPrimitive>()
-        override fun getLabels(): List<TextPrimitive> {
-            return textPrimitives
-        }
-
-        override fun getLines(): List<LinePrimitive> {
-            return linePrimitives
-        }
+    private class EclipticRenderable(res: Resources?) : AbstractAstronomicalRenderable() {
+        override val labels: MutableList<TextPrimitive> = ArrayList()
+        override val lines: MutableList<LinePrimitive> = ArrayList()
 
         companion object {
             // Earth's Angular Tilt
@@ -62,8 +55,8 @@ class EclipticLayer(resources: Resources) : AbstractSourceLayer(resources, false
 
         init {
             val title = res!!.getString(R.string.ecliptic)
-            textPrimitives.add(TextPrimitive(90.0f, EPSILON, title, LINE_COLOR))
-            textPrimitives.add(TextPrimitive(270f, -EPSILON, title, LINE_COLOR))
+            labels.add(TextPrimitive(90.0f, EPSILON, title, LINE_COLOR))
+            labels.add(TextPrimitive(270f, -EPSILON, title, LINE_COLOR))
 
             // Create line source.
             val ra = floatArrayOf(0f, 90f, 180f, 270f, 0f)
@@ -72,7 +65,7 @@ class EclipticLayer(resources: Resources) : AbstractSourceLayer(resources, false
             for (i in ra.indices) {
                 vertices.add(getGeocentricCoords(ra[i], dec[i]))
             }
-            linePrimitives.add(LinePrimitive(LINE_COLOR, vertices, 1.5f))
+            lines.add(LinePrimitive(LINE_COLOR, vertices, 1.5f))
         }
     }
 }

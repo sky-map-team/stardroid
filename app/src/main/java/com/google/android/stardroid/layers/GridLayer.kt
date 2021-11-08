@@ -46,25 +46,25 @@ class GridLayer
     private val numDeclinationLines: Int
 ) : AbstractSourceLayer(resources, false) {
     override fun initializeAstroSources(sources: ArrayList<AstronomicalRenderable>) {
-        sources.add(GridSource(resources, numRightAscentionLines, numDeclinationLines))
+        sources.add(GridRenderable(resources, numRightAscentionLines, numDeclinationLines))
     }
 
     override val layerDepthOrder: Int
         get() = 0
 
     // TODO(johntaylor): rename this string Id.
-    protected override val layerNameId: Int
-        protected get() = R.string.show_grid_pref // TODO(johntaylor): rename this string Id.
+    override val layerNameId: Int
+        get() = R.string.show_grid_pref // TODO(johntaylor): rename this string Id.
 
     // TODO(brent): Remove this.
     override val preferenceId: String
         get() = "source_provider.4"
 
     /** Implementation of the grid elements as an [AstronomicalRenderable]  */
-    internal class GridSource(res: Resources?, numRaSources: Int, numDecSources: Int) :
+    internal class GridRenderable(res: Resources?, numRaSources: Int, numDecSources: Int) :
         AbstractAstronomicalRenderable() {
-        private val linePrimitives = ArrayList<LinePrimitive>()
-        private val textPrimitives = ArrayList<TextPrimitive>()
+        override val labels: MutableList<TextPrimitive> = ArrayList()
+        override val lines: MutableList<LinePrimitive> = ArrayList()
 
         /**
          * Constructs a single longitude line. These lines run from the north pole to
@@ -99,14 +99,6 @@ class GridLayer
             return line
         }
 
-        override fun getLabels(): List<TextPrimitive> {
-            return textPrimitives
-        }
-
-        override fun getLines(): List<LinePrimitive> {
-            return linePrimitives
-        }
-
         companion object {
             private val LINE_COLOR = Color.argb(20, 248, 239, 188)
 
@@ -119,10 +111,10 @@ class GridLayer
 
         init {
             for (r in 0 until numRaSources) {
-                linePrimitives.add(createRaLine(r, numRaSources))
+                lines.add(createRaLine(r, numRaSources))
             }
             /** North & South pole, hour markers every 2hrs.  */
-            textPrimitives.add(
+            labels.add(
                 TextPrimitive(
                     0f,
                     90f,
@@ -130,7 +122,7 @@ class GridLayer
                     LINE_COLOR
                 )
             )
-            textPrimitives.add(
+            labels.add(
                 TextPrimitive(
                     0f,
                     -90f,
@@ -141,14 +133,14 @@ class GridLayer
             for (index in 0..11) {
                 val ra = index * 30.0f
                 val title = String.format("%dh", 2 * index)
-                textPrimitives.add(TextPrimitive(ra, 0.0f, title, LINE_COLOR))
+                labels.add(TextPrimitive(ra, 0.0f, title, LINE_COLOR))
             }
-            linePrimitives.add(createDecLine(0, 0f)) // Equator
+            lines.add(createDecLine(0, 0f)) // Equator
             // Note that we don't create lines at the poles.
             for (d in 1 until numDecSources) {
                 val dec = d * 90.0f / numDecSources
-                linePrimitives.add(createDecLine(d, dec))
-                textPrimitives.add(
+                lines.add(createDecLine(d, dec))
+                labels.add(
                     TextPrimitive(
                         0f,
                         dec,
@@ -156,8 +148,8 @@ class GridLayer
                         LINE_COLOR
                     )
                 )
-                linePrimitives.add(createDecLine(d, -dec))
-                textPrimitives.add(
+                lines.add(createDecLine(d, -dec))
+                labels.add(
                     TextPrimitive(
                         0f,
                         -dec,

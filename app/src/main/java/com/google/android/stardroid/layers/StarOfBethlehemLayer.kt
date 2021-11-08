@@ -35,7 +35,7 @@ import java.util.*
 class StarOfBethlehemLayer(private val model: AstronomerModel, resources: Resources) :
     AbstractSourceLayer(resources, true) {
     override fun initializeAstroSources(sources: ArrayList<AstronomicalRenderable>) {
-        sources.add(StarOfBethlehemSource(model, resources))
+        sources.add(StarOfBethlehemRenderable(model, resources))
     }
 
     override val layerDepthOrder: Int
@@ -46,12 +46,12 @@ class StarOfBethlehemLayer(private val model: AstronomerModel, resources: Resour
         get() = "source_provider.0"
     override val layerName: String
         get() = "Easter Egg"
-    protected override val layerNameId: Int
-        protected get() = R.string.show_stars_pref
+    override val layerNameId: Int
+        get() = R.string.show_stars_pref
 
-    private class StarOfBethlehemSource(private val model: AstronomerModel, resources: Resources?) :
+    private class StarOfBethlehemRenderable(private val model: AstronomerModel, resources: Resources?) :
         AbstractAstronomicalRenderable() {
-        private val imageSources: MutableList<ImagePrimitive> = ArrayList()
+        override val images: MutableList<ImagePrimitive> = ArrayList()
         private var lastUpdateTimeMs = 0L
         private val coords: Vector3
         private val theImage: ImagePrimitive
@@ -95,10 +95,6 @@ class StarOfBethlehemLayer(private val model: AstronomerModel, resources: Resour
             return updateTypes
         }
 
-        override fun getImages(): List<ImagePrimitive> {
-            return imageSources
-        }
-
         companion object {
             private val UP = Vector3(0.0f, 1.0f, 0.0f)
             private const val UPDATE_FREQ_MS = 1L * TimeConstants.MILLISECONDS_PER_MINUTE
@@ -112,7 +108,7 @@ class StarOfBethlehemLayer(private val model: AstronomerModel, resources: Resour
             // appears to be a bug in the renderer in that new images added later don't get
             // picked up, even if we return UpdateType.Reset.
             theImage = ImagePrimitive(coords, resources, R.drawable.blank, UP, SCALE_FACTOR)
-            imageSources.add(theImage)
+            images.add(theImage)
         }
     }
 

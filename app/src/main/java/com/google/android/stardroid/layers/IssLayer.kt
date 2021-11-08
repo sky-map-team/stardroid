@@ -17,7 +17,6 @@ import android.content.res.Resources
 import android.graphics.Color
 import android.util.Log
 import com.google.android.stardroid.R
-import com.google.android.stardroid.base.Lists
 import com.google.android.stardroid.base.TimeConstants
 import com.google.android.stardroid.control.AstronomerModel
 import com.google.android.stardroid.ephemeris.OrbitalElements
@@ -40,12 +39,12 @@ import java.util.concurrent.TimeUnit
 class IssLayer(resources: Resources, private val model: AstronomerModel) :
     AbstractSourceLayer(resources, true) {
     private val scheduler = Executors.newScheduledThreadPool(1)
-    private var issSource: IssSource? = null
+    private var issRenderable: IssRenderable? = null
     override fun initializeAstroSources(sources: ArrayList<AstronomicalRenderable>) {
-        issSource = IssSource(model, resources)
-        sources.add(issSource!!)
+        issRenderable = IssRenderable(model, resources)
+        sources.add(issRenderable!!)
         scheduler.scheduleAtFixedRate(
-            OrbitalElementsGrabber(issSource!!), 0, 60, TimeUnit.SECONDS
+            OrbitalElementsGrabber(issRenderable!!), 0, 60, TimeUnit.SECONDS
         )
     }
 
@@ -55,7 +54,7 @@ class IssLayer(resources: Resources, private val model: AstronomerModel) :
         protected get() = R.string.show_satellite_layer_pref
 
     /** Thread Runnable which parses the orbital elements out of the Url.  */
-    internal class OrbitalElementsGrabber(private val source: IssSource) : Runnable {
+    internal class OrbitalElementsGrabber(private val renderable: IssRenderable) : Runnable {
         private var lastSuccessfulUpdateMs = -1L
 
         /**
@@ -116,7 +115,7 @@ class IssLayer(resources: Resources, private val model: AstronomerModel) :
                     Log.d(TAG, "Error downloading ISS orbital data")
                 } else {
                     lastSuccessfulUpdateMs = currentTimeMs
-                    source.setOrbitalElements(elements)
+                    renderable.setOrbitalElements(elements)
                 }
             }
         }
@@ -130,7 +129,7 @@ class IssLayer(resources: Resources, private val model: AstronomerModel) :
     }
 
     /** AstronomicalRenderable corresponding to the International Space Station.  */
-    internal class IssSource(private val model: AstronomerModel, resources: Resources?) :
+    internal class IssRenderable(private val model: AstronomerModel, resources: Resources?) :
         AbstractAstronomicalRenderable() {
         private val coords = Vector3(1f, 0f, 0f)
         private val pointPrimitives = ArrayList<PointPrimitive>()
@@ -143,14 +142,6 @@ class IssLayer(resources: Resources, private val model: AstronomerModel) :
         fun setOrbitalElements(elements: OrbitalElements?) {
             orbitalElements = elements
             orbitalElementsChanged = true
-        }
-
-        override fun getNames(): List<String> {
-            return Lists.asList(name)
-        }
-
-        override fun getSearchLocation(): Vector3 {
-            return coords
         }
 
         private fun updateCoords(time: Date) {
@@ -181,14 +172,6 @@ class IssLayer(resources: Resources, private val model: AstronomerModel) :
                 }
             }
             return updateTypes
-        }
-
-        override fun getLabels(): List<TextPrimitive> {
-            return textPrimitives
-        }
-
-        override fun getPoints(): List<PointPrimitive> {
-            return pointPrimitives
         }
 
         companion object {

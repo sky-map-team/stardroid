@@ -57,6 +57,6 @@ class PlanetsLayer(
             60
 
     // TODO(johntaylor): rename the string id.
-    protected override val layerNameId: Int
-        protected get() = R.string.show_planets_pref // TODO(johntaylor): rename the string id.
+    override val layerNameId: Int
+        get() = R.string.show_planets_pref // TODO(johntaylor): rename the string id.
 }

@@ -11,10 +11,7 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-
-package com.google.android.stardroid.source;
-
-import java.util.List;
+package com.google.android.stardroid.source
 
 /**
  * A composite of the graphical primitives which comprise a particular astronomical object.
@@ -22,17 +19,16 @@ import java.util.List;
  *
  * @author Brent Bryan
  */
-public interface Renderable {
+interface Renderable {
+    /** Returns the list of points that should be drawn in the renderer.  */
+    val points: List<PointPrimitive>
 
-  /** Returns the list of points that should be drawn in the renderer. */
-  List<? extends PointPrimitive> getPoints();
+    /** Returns the list of text labels that should be drawn in the renderer.  */
+    val labels: List<TextPrimitive>
 
-  /** Returns the list of text labels that should be drawn in the renderer. */
-  List<? extends TextPrimitive> getLabels();
+    /** Returns the list of lines that should be drawn in the renderer.  */
+    val lines: List<LinePrimitive>
 
-  /** Returns the list of lines that should be drawn in the renderer. */
-  List<? extends LinePrimitive> getLines();
-
-  /** Returns the list of images that should be drawn in the renderer. */
-  List<? extends ImagePrimitive> getImages();
+    /** Returns the list of images that should be drawn in the renderer.  */
+    val images: List<ImagePrimitive>
 }

@@ -34,23 +34,23 @@ abstract class AbstractSourceLayer(resources: Resources, private val shouldUpdat
     private val imagePrimitives = ArrayList<ImagePrimitive>()
     private val pointPrimitives = ArrayList<PointPrimitive>()
     private val linePrimitives = ArrayList<LinePrimitive>()
-    private val astroSources = ArrayList<AstronomicalRenderable>()
+    private val astroRenderables = ArrayList<AstronomicalRenderable>()
     private val searchIndex = HashMap<String, SearchResult>()
     private val prefixStore = PrefixStore()
 
     @Synchronized
     override fun initialize() {
-        astroSources.clear()
-        initializeAstroSources(astroSources)
-        for (astroSource in astroSources) {
-            val sources = astroSource.initialize()
-            textPrimitives.addAll(sources.labels)
-            imagePrimitives.addAll(sources.images)
-            pointPrimitives.addAll(sources.points)
-            linePrimitives.addAll(sources.lines)
-            val names = astroSource.names
+        astroRenderables.clear()
+        initializeAstroSources(astroRenderables)
+        for (astroRenderable in astroRenderables) {
+            val renderables = astroRenderable.initialize()
+            textPrimitives.addAll(renderables.labels)
+            imagePrimitives.addAll(renderables.images)
+            pointPrimitives.addAll(renderables.points)
+            linePrimitives.addAll(renderables.lines)
+            val names = astroRenderable.names
             if (!names.isEmpty()) {
-                val searchLoc = astroSource.searchLocation
+                val searchLoc = astroRenderable.searchLocation
                 for (name in names) {
                     searchIndex[name.toLowerCase()] = SearchResult(name, searchLoc)
                     prefixStore.add(name.toLowerCase())
@@ -91,8 +91,8 @@ abstract class AbstractSourceLayer(resources: Resources, private val shouldUpdat
      */
     @Synchronized
     protected fun refreshSources(updateTypes: EnumSet<UpdateType>) {
-        for (astroSource in astroSources) {
-            updateTypes.addAll(astroSource.update())
+        for (astroRenderable in astroRenderables) {
+            updateTypes.addAll(astroRenderable.update())
         }
         if (!updateTypes.isEmpty()) {
             redraw(updateTypes)

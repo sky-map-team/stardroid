@@ -150,7 +150,7 @@ class MeteorShowerLayer(private val model: AstronomerModel, resources: Resources
 
     override fun initializeAstroSources(sources: ArrayList<AstronomicalRenderable>) {
         for (shower in showers) {
-            sources.add(MeteorRadiantSource(model, shower, resources))
+            sources.add(MeteorRadiantRenderable(model, shower, resources))
         }
     }
 
@@ -160,28 +160,25 @@ class MeteorShowerLayer(private val model: AstronomerModel, resources: Resources
         get() = "source_provider.6"
     override val layerName: String
         get() = "Meteor Showers"
-    protected override val layerNameId: Int
-        protected get() = R.string.show_meteors_pref
+    override val layerNameId: Int
+        get() = R.string.show_meteors_pref
 
-    private class MeteorRadiantSource(
+    private class MeteorRadiantRenderable(
         private val model: AstronomerModel,
         private val shower: Shower,
         resources: Resources?
     ) : AbstractAstronomicalRenderable() {
-        private val imagePrimitives: MutableList<ImagePrimitive> = ArrayList()
-        private val labelPrimitives: MutableList<TextPrimitive> = ArrayList()
+        override val labels: MutableList<TextPrimitive> = ArrayList()
+        override val images: MutableList<ImagePrimitive> = ArrayList()
         private var lastUpdateTimeMs = 0L
         private val theImage: ImagePrimitive
         private val label: TextPrimitive
         private val name: String
-        private val searchNames: MutableList<String> = ArrayList()
-        override fun getNames(): List<String> {
-            return searchNames
-        }
-
-        override fun getSearchLocation(): Vector3 {
-            return shower.radiant
-        }
+        override val names: MutableList<String> = ArrayList()
+        override val searchLocation: Vector3
+            get() {
+                return shower.radiant
+            }
 
         private fun updateShower() {
             lastUpdateTimeMs = model.time.time
@@ -228,14 +225,6 @@ class MeteorShowerLayer(private val model: AstronomerModel, resources: Resources
             return updateTypes
         }
 
-        override fun getImages(): List<ImagePrimitive> {
-            return imagePrimitives
-        }
-
-        override fun getLabels(): List<TextPrimitive> {
-            return labelPrimitives
-        }
-
         companion object {
             private const val LABEL_COLOR = 0xf67e81
             private val UP = Vector3(0.0f, 1.0f, 0.0f)
@@ -250,16 +239,16 @@ class MeteorShowerLayer(private val model: AstronomerModel, resources: Resources
             // that it's obvious from the search label.
             val startDate = DateFormat.format("MMM dd", shower.start)
             val endDate = DateFormat.format("MMM dd", shower.end)
-            searchNames.add("$name ($startDate-$endDate)")
+            names.add("$name ($startDate-$endDate)")
             // blank is a 1pxX1px image that should be invisible.
             // We'd prefer not to show any image except on the shower dates, but there
             // appears to be a bug in the renderer/layer interface in that Update values are not
             // respected.  Ditto the label.
             // TODO(johntaylor): fix the bug and remove this blank image
             theImage = ImagePrimitive(shower.radiant, resources, R.drawable.blank, UP, SCALE_FACTOR)
-            imagePrimitives.add(theImage)
+            images.add(theImage)
             label = TextPrimitive(shower.radiant, name, LABEL_COLOR)
-            labelPrimitives.add(label)
+            labels.add(label)
         }
     }
 

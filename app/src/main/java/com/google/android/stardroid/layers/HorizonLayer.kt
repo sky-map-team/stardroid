@@ -33,7 +33,7 @@ import java.util.*
 class HorizonLayer(private val model: AstronomerModel, resources: Resources) :
     AbstractSourceLayer(resources, true) {
     override fun initializeAstroSources(sources: ArrayList<AstronomicalRenderable>) {
-        sources.add(HorizonSource(model, resources))
+        sources.add(HorizonRenderable(model, resources))
     }
 
     override val layerDepthOrder: Int
@@ -53,16 +53,14 @@ class HorizonLayer(private val model: AstronomerModel, resources: Resources) :
         protected get() = R.string.show_horizon_pref // TODO(johntaylor): rename this string id
 
     /** Implementation of [AstronomicalRenderable] for the horizon source.  */
-    internal class HorizonSource(private val model: AstronomerModel, res: Resources?) :
-        AbstractAstronomicalRenderable() {
+    internal class HorizonRenderable(private val model: AstronomerModel, res: Resources?) :
+          AbstractAstronomicalRenderable() {
         private val zenith = Vector3(0f, 0f, 0f)
         private val nadir = Vector3(0f, 0f, 0f)
         private val north = Vector3(0f, 0f, 0f)
         private val south = Vector3(0f, 0f, 0f)
         private val east = Vector3(0f, 0f, 0f)
         private val west = Vector3(0f, 0f, 0f)
-        private val linePrimitives = ArrayList<LinePrimitive>()
-        private val textPrimitives = ArrayList<TextPrimitive>()
         private var lastUpdateTimeMs = 0L
         private fun updateCoords() {
             // Blog.d(this, "Updating Coords: " + (model.getTime().getTime() - lastUpdateTimeMs));
@@ -91,13 +89,8 @@ class HorizonLayer(private val model: AstronomerModel, resources: Resources) :
             return updateTypes
         }
 
-        override fun getLabels(): List<TextPrimitive> {
-            return textPrimitives
-        }
-
-        override fun getLines(): List<LinePrimitive> {
-            return linePrimitives
-        }
+        override val labels: MutableList<TextPrimitive> = ArrayList()
+        override val lines: MutableList<LinePrimitive> = ArrayList()
 
         companion object {
             // Due to a bug in the G1 rendering code text and lines render in different
@@ -109,13 +102,13 @@ class HorizonLayer(private val model: AstronomerModel, resources: Resources) :
 
         init {
             val vertices = Lists.asList(north, east, south, west, north)
-            linePrimitives.add(LinePrimitive(LINE_COLOR, vertices, 1.5f))
-            textPrimitives.add(TextPrimitive(zenith, res!!.getString(R.string.zenith), LABEL_COLOR))
-            textPrimitives.add(TextPrimitive(nadir, res.getString(R.string.nadir), LABEL_COLOR))
-            textPrimitives.add(TextPrimitive(north, res.getString(R.string.north), LABEL_COLOR))
-            textPrimitives.add(TextPrimitive(south, res.getString(R.string.south), LABEL_COLOR))
-            textPrimitives.add(TextPrimitive(east, res.getString(R.string.east), LABEL_COLOR))
-            textPrimitives.add(TextPrimitive(west, res.getString(R.string.west), LABEL_COLOR))
+            lines.add(LinePrimitive(LINE_COLOR, vertices, 1.5f))
+            labels.add(TextPrimitive(zenith, res!!.getString(R.string.zenith), LABEL_COLOR))
+            labels.add(TextPrimitive(nadir, res.getString(R.string.nadir), LABEL_COLOR))
+            labels.add(TextPrimitive(north, res.getString(R.string.north), LABEL_COLOR))
+            labels.add(TextPrimitive(south, res.getString(R.string.south), LABEL_COLOR))
+            labels.add(TextPrimitive(east, res.getString(R.string.east), LABEL_COLOR))
+            labels.add(TextPrimitive(west, res.getString(R.string.west), LABEL_COLOR))
         }
     }
 }
