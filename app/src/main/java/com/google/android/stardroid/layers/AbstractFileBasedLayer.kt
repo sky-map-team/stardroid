@@ -55,11 +55,11 @@ abstract class AbstractFileBasedLayer(
 
     private fun readSourceFile(sourceFilename: String) {
         Log.d(TAG, "Loading Proto File: $sourceFilename...")
-        var `in`: InputStream? = null
+        var inputStream: InputStream? = null
         try {
-            `in` = assetManager.open(sourceFilename, AssetManager.ACCESS_BUFFER)
+            inputStream = assetManager.open(sourceFilename, AssetManager.ACCESS_BUFFER)
             val parser = SourceProto.AstronomicalSourcesProto.parser()
-            val sources = parser.parseFrom(`in`)
+            val sources = parser.parseFrom(inputStream)
             for (proto in sources.sourceList) {
                 fileSources.add(
                     ProtobufAstronomicalRenderable(
@@ -78,7 +78,7 @@ abstract class AbstractFileBasedLayer(
         } catch (e: IOException) {
             Log.e(TAG, "Unable to open $sourceFilename")
         } finally {
-            Closeables.closeQuietly(`in`)
+            Closeables.closeQuietly(inputStream)
         }
     }
 
