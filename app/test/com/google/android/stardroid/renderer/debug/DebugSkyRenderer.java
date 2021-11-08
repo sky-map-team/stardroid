@@ -123,7 +123,7 @@ public class DebugSkyRenderer extends SkyRenderer {
      * TODO(serafini): Fix the unit tests.
 
     ArrayList<ImagePrimitive> images = new ArrayList<ImagePrimitive>();
-    com.google.android.stardroid.source.ImagePrimitive is1 = new com.google.android.stardroid.source.ImagePrimitive(0.0f, 0, 0, null);
+    ImagePrimitive is1 = new ImagePrimitive(0.0f, 0, 0, null);
     is1.xyz.x = 0;
     is1.xyz.y = 0;
     is1.xyz.z = 5;
@@ -136,7 +136,7 @@ public class DebugSkyRenderer extends SkyRenderer {
     is1.vy = 0.2f;
     is1.vz = 0.0f;
 
-    com.google.android.stardroid.source.ImagePrimitive is2 = new com.google.android.stardroid.source.ImagePrimitive(0.0f, 0, 0, null);
+    ImagePrimitive is2 = new ImagePrimitive(0.0f, 0, 0, null);
     is2.xyz.x = 1;
     is2.xyz.y = 1;
     is2.xyz.z = 5;

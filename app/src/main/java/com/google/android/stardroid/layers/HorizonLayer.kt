@@ -20,8 +20,8 @@ import com.google.android.stardroid.base.Lists
 import com.google.android.stardroid.base.TimeConstants
 import com.google.android.stardroid.control.AstronomerModel
 import com.google.android.stardroid.math.Vector3
+import com.google.android.stardroid.renderables.*
 import com.google.android.stardroid.renderer.RendererObjectManager.UpdateType
-import com.google.android.stardroid.source.*
 import java.util.*
 import kotlin.math.abs
 

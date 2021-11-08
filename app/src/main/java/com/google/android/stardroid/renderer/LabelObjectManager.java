@@ -28,7 +28,7 @@ import com.google.android.stardroid.renderer.util.LabelMaker;
 import com.google.android.stardroid.renderer.util.SkyRegionMap;
 import com.google.android.stardroid.renderer.util.TextureManager;
 import com.google.android.stardroid.renderer.util.TextureReference;
-import com.google.android.stardroid.source.TextPrimitive;
+import com.google.android.stardroid.renderables.TextPrimitive;
 import com.google.android.stardroid.util.FixedPoint;
 
 import java.nio.ByteBuffer;

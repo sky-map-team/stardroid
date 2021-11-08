@@ -18,10 +18,10 @@ import android.graphics.Color
 import com.google.android.stardroid.R
 import com.google.android.stardroid.math.Vector3
 import com.google.android.stardroid.math.getGeocentricCoords
-import com.google.android.stardroid.source.AbstractAstronomicalRenderable
-import com.google.android.stardroid.source.AstronomicalRenderable
-import com.google.android.stardroid.source.LinePrimitive
-import com.google.android.stardroid.source.TextPrimitive
+import com.google.android.stardroid.renderables.AbstractAstronomicalRenderable
+import com.google.android.stardroid.renderables.AstronomicalRenderable
+import com.google.android.stardroid.renderables.LinePrimitive
+import com.google.android.stardroid.renderables.TextPrimitive
 import java.util.*
 
 /**

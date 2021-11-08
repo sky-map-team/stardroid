@@ -17,8 +17,8 @@ import android.content.res.AssetManager
 import android.content.res.Resources
 import android.util.Log
 import com.google.android.stardroid.renderer.RendererObjectManager.UpdateType
-import com.google.android.stardroid.source.AstronomicalRenderable
-import com.google.android.stardroid.source.proto.ProtobufAstronomicalRenderable
+import com.google.android.stardroid.renderables.AstronomicalRenderable
+import com.google.android.stardroid.renderables.proto.ProtobufAstronomicalRenderable
 import com.google.android.stardroid.source.proto.SourceProto
 import com.google.android.stardroid.util.MiscUtil
 import com.google.common.io.Closeables

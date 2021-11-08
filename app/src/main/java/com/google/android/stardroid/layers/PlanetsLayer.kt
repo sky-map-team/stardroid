@@ -19,7 +19,7 @@ import com.google.android.stardroid.R
 import com.google.android.stardroid.control.AstronomerModel
 import com.google.android.stardroid.ephemeris.Planet
 import com.google.android.stardroid.ephemeris.PlanetRenderable
-import com.google.android.stardroid.source.AstronomicalRenderable
+import com.google.android.stardroid.renderables.AstronomicalRenderable
 import java.util.*
 
 /**

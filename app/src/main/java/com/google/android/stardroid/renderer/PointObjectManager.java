@@ -28,7 +28,7 @@ import com.google.android.stardroid.renderer.util.TexCoordBuffer;
 import com.google.android.stardroid.renderer.util.TextureManager;
 import com.google.android.stardroid.renderer.util.TextureReference;
 import com.google.android.stardroid.renderer.util.VertexBuffer;
-import com.google.android.stardroid.source.PointPrimitive;
+import com.google.android.stardroid.renderables.PointPrimitive;
 
 import java.util.ArrayList;
 import java.util.EnumSet;

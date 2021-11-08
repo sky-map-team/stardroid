@@ -18,12 +18,11 @@ import android.content.res.Resources
 import android.graphics.Color
 import com.google.android.stardroid.base.Lists
 import com.google.android.stardroid.control.AstronomerModel
-import com.google.android.stardroid.ephemeris.Planet
 import com.google.android.stardroid.math.Vector3
 import com.google.android.stardroid.math.heliocentricCoordinatesFromOrbitalElements
 import com.google.android.stardroid.math.updateFromRaDec
+import com.google.android.stardroid.renderables.*
 import com.google.android.stardroid.renderer.RendererObjectManager.UpdateType
-import com.google.android.stardroid.source.*
 import com.google.android.stardroid.space.SolarSystemObject
 import com.google.android.stardroid.space.Universe
 import java.util.*

@@ -11,14 +11,19 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-package com.google.android.stardroid.source.proto
+package com.google.android.stardroid.renderables.proto
 
 import android.content.res.Resources
 import android.util.Log
 import com.google.android.stardroid.R
 import com.google.android.stardroid.math.Vector3
 import com.google.android.stardroid.math.getGeocentricCoords
+import com.google.android.stardroid.renderables.AbstractAstronomicalRenderable
+import com.google.android.stardroid.renderables.LinePrimitive
+import com.google.android.stardroid.renderables.PointPrimitive
+import com.google.android.stardroid.renderables.TextPrimitive
 import com.google.android.stardroid.source.*
+import com.google.android.stardroid.source.proto.SourceProto
 import com.google.android.stardroid.util.MiscUtil
 import java.util.*
 

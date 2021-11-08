@@ -25,7 +25,7 @@ import com.google.android.stardroid.renderer.util.TexCoordBuffer;
 import com.google.android.stardroid.renderer.util.TextureManager;
 import com.google.android.stardroid.renderer.util.TextureReference;
 import com.google.android.stardroid.renderer.util.VertexBuffer;
-import com.google.android.stardroid.source.LinePrimitive;
+import com.google.android.stardroid.renderables.LinePrimitive;
 
 import java.util.EnumSet;
 import java.util.List;

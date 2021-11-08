@@ -20,10 +20,10 @@ import com.google.android.stardroid.base.TimeConstants
 import com.google.android.stardroid.control.AstronomerModel
 import com.google.android.stardroid.math.Vector3
 import com.google.android.stardroid.renderer.RendererObjectManager.UpdateType
-import com.google.android.stardroid.source.AbstractAstronomicalRenderable
-import com.google.android.stardroid.source.AstronomicalRenderable
-import com.google.android.stardroid.source.ImagePrimitive
-import com.google.android.stardroid.source.Renderable
+import com.google.android.stardroid.renderables.AbstractAstronomicalRenderable
+import com.google.android.stardroid.renderables.AstronomicalRenderable
+import com.google.android.stardroid.renderables.ImagePrimitive
+import com.google.android.stardroid.renderables.Renderable
 import com.google.android.stardroid.util.MiscUtil
 import java.util.*
 import kotlin.math.abs

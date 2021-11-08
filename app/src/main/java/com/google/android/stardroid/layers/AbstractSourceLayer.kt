@@ -15,10 +15,10 @@ package com.google.android.stardroid.layers
 
 import android.content.res.Resources
 import android.util.Log
+import com.google.android.stardroid.renderables.*
 import com.google.android.stardroid.renderer.RendererObjectManager.UpdateType
 import com.google.android.stardroid.search.PrefixStore
 import com.google.android.stardroid.search.SearchResult
-import com.google.android.stardroid.source.*
 import com.google.android.stardroid.util.MiscUtil
 import java.util.*
 

@@ -20,10 +20,10 @@ import com.google.android.stardroid.renderer.RendererControllerBase
 import com.google.android.stardroid.renderer.RendererControllerBase.RenderManager
 import com.google.android.stardroid.renderer.RendererObjectManager.UpdateType
 import com.google.android.stardroid.search.SearchResult
-import com.google.android.stardroid.source.ImagePrimitive
-import com.google.android.stardroid.source.LinePrimitive
-import com.google.android.stardroid.source.PointPrimitive
-import com.google.android.stardroid.source.TextPrimitive
+import com.google.android.stardroid.renderables.ImagePrimitive
+import com.google.android.stardroid.renderables.LinePrimitive
+import com.google.android.stardroid.renderables.PointPrimitive
+import com.google.android.stardroid.renderables.TextPrimitive
 import com.google.android.stardroid.util.MiscUtil
 import java.util.*
 import java.util.concurrent.locks.ReentrantLock

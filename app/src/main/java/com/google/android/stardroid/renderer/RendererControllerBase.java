@@ -15,10 +15,10 @@
 package com.google.android.stardroid.renderer;
 
 import com.google.android.stardroid.math.Vector3;
-import com.google.android.stardroid.source.ImagePrimitive;
-import com.google.android.stardroid.source.LinePrimitive;
-import com.google.android.stardroid.source.PointPrimitive;
-import com.google.android.stardroid.source.TextPrimitive;
+import com.google.android.stardroid.renderables.ImagePrimitive;
+import com.google.android.stardroid.renderables.LinePrimitive;
+import com.google.android.stardroid.renderables.PointPrimitive;
+import com.google.android.stardroid.renderables.TextPrimitive;
 
 import android.os.ConditionVariable;
 import android.util.Log;
