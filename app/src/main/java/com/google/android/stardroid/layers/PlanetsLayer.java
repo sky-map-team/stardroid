@@ -48,9 +48,8 @@ public class PlanetsLayer extends AbstractSourceLayer {
       sources.add(new PlanetSource(planet, getResources(), model, preferences));
     }
   }
-
-  // TODO(brent): Remove this.
-  @Override
+  // If the preference Id is needed. There is no super method and no need
+  // to override.
   public String getPreferenceId() {
     return "source_provider.3";
   }
@@ -63,6 +62,6 @@ public class PlanetsLayer extends AbstractSourceLayer {
 
   @Override
   protected int getLayerNameId() {
-    return R.string.show_planets_pref;  // TODO(johntaylor): rename the string id.
+    return R.string.solar_system;
   }
 }
