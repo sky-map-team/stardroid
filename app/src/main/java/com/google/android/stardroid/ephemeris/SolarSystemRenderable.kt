@@ -46,21 +46,24 @@ class SolarSystemRenderable(
     private val preferences: SharedPreferences
     private val currentCoords = Vector3(0f, 0f, 0f)
     private val solarSystemObject: SolarSystemObject
-    private var sunCoords: Vector3? = null
+    private var earthCoords: Vector3
     private var imageId = -1
     private var lastUpdateTimeMs = 0L
     private val universe = Universe()
     override val names: List<String>
         get() = Lists.asList(name)
-    override val searchLocation: Vector3?
+    override val searchLocation: Vector3
         get() = currentCoords
 
     private fun updateCoords(time: Date) {
         lastUpdateTimeMs = time.time
-        sunCoords = heliocentricCoordinatesFromOrbitalElements(SolarSystemBody.Sun.getOrbitalElements(time))
+        // TODO(johntaylor): figure out why we do this - presumably to make sure the images
+        // are orientated correctly taking into account the Earth's orbital plane.
+        // I'm not sure we're doing this right though.
+        earthCoords = heliocentricCoordinatesFromOrbitalElements(SolarSystemBody.Earth.getOrbitalElements(time))
         currentCoords.updateFromRaDec(universe.getRaDec(solarSystemBody, time))
         for (imagePrimitives in imagePrimitives) {
-            imagePrimitives.setUpVector(sunCoords) // TODO(johntaylor): figure out why we do this.
+            imagePrimitives.setUpVector(earthCoords)
         }
     }
 
@@ -71,7 +74,7 @@ class SolarSystemRenderable(
         if (solarSystemBody === SolarSystemBody.Moon) {
             imagePrimitives.add(
                 ImagePrimitive(
-                    currentCoords, resources, imageId, sunCoords,
+                    currentCoords, resources, imageId, earthCoords,
                     solarSystemObject.getPlanetaryImageSize()
                 )
             )
@@ -103,7 +106,7 @@ class SolarSystemRenderable(
             // For moon only:
             if (solarSystemBody === SolarSystemBody.Moon && !imagePrimitives.isEmpty()) {
                 // Update up vector.
-                imagePrimitives[0].setUpVector(sunCoords)
+                imagePrimitives[0].setUpVector(earthCoords)
 
                 // update image:
                 val newImageId = solarSystemObject.getImageResourceId(modelTime)
@@ -138,5 +141,7 @@ class SolarSystemRenderable(
         this.model = model
         name = resources.getString(solarSystemObject.getNameResourceId())
         preferences = prefs
+        earthCoords = heliocentricCoordinatesFromOrbitalElements(
+            SolarSystemBody.Earth.getOrbitalElements(model.time))
     }
 }
