@@ -2,8 +2,9 @@ package com.google.android.stardroid.math
 
 import java.util.*
 import com.google.android.stardroid.base.TimeConstants
-import com.google.android.stardroid.ephemeris.SolarSystemBody
+import com.google.android.stardroid.ephemeris.Planet
 
+import com.google.android.stardroid.space.Moon
 import com.google.android.stardroid.space.Universe
 
 
@@ -29,7 +30,7 @@ fun calculateRADecOfZenith(utc: Date, location: LatLong): RaDec {
 // of the full and new moons...
 fun getNextFullMoon(now: Date): Date {
     val universe = Universe()
-    val moon = universe.solarSystemObjectFor(SolarSystemBody.Moon)
+    val moon = universe.solarSystemObjectFor(Planet.Moon)
     // First, get the moon's current phase.
     val phase: Float = moon.calculatePhaseAngle(now)
 
@@ -52,7 +53,7 @@ fun getNextFullMoon(now: Date): Date {
  */
 fun getNextFullMoonSlow(now: Date): Date {
     val universe = Universe()
-    val moon = universe.solarSystemObjectFor(SolarSystemBody.Moon)
+    val moon = universe.solarSystemObjectFor(Planet.Moon)
     val fullMoon = Date(now.time)
     var phase: Float = moon.calculatePhaseAngle(now)
     var waxing = false

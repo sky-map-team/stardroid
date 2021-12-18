@@ -1,6 +1,6 @@
 package com.google.android.stardroid.space
 
-import com.google.android.stardroid.ephemeris.SolarSystemBody
+import com.google.android.stardroid.ephemeris.Planet
 import com.google.android.stardroid.math.Vector3
 import java.util.*
 
@@ -9,7 +9,7 @@ import java.util.*
  *
  * It's a sort of trivial sun-orbiting object.
  */
-class Sun : SunOrbitingObject(SolarSystemBody.Sun) {
+class Sun : SunOrbitingObject(Planet.Sun) {
     override protected val bodySize = -0.83f
 
     protected override fun getMyHeliocentricCoordinates(date: Date) =

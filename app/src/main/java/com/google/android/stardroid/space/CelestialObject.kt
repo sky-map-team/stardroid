@@ -1,6 +1,7 @@
 package com.google.android.stardroid.space
 
 import java.util.*
+import com.google.android.stardroid.ephemeris.Planet
 
 import com.google.android.stardroid.base.TimeConstants
 import com.google.android.stardroid.math.*

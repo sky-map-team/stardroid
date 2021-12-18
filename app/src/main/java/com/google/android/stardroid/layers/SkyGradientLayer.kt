@@ -18,7 +18,7 @@ import android.util.Log
 import com.google.android.stardroid.R
 import com.google.android.stardroid.base.TimeConstants
 import com.google.android.stardroid.control.AstronomerModel
-import com.google.android.stardroid.ephemeris.SolarSystemBody
+import com.google.android.stardroid.ephemeris.Planet
 import com.google.android.stardroid.math.getGeocentricCoords
 import com.google.android.stardroid.renderer.RendererController
 import com.google.android.stardroid.search.SearchResult
@@ -63,7 +63,7 @@ class SkyGradientLayer(private val model: AstronomerModel, resources: Resources)
         val modelTime = model.time
         if (abs(modelTime.time - lastUpdateTimeMs) > UPDATE_FREQUENCY_MS) {
             lastUpdateTimeMs = modelTime.time
-            val sunPosition = universe.solarSystemObjectFor(SolarSystemBody.Sun).getRaDec(modelTime)
+            val sunPosition = universe.solarSystemObjectFor(Planet.Sun).getRaDec(modelTime)
             // Log.d(TAG, "Enabling sky gradient with sun position " + sunPosition);
             rendererLock.lock()
             try {

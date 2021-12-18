@@ -10,25 +10,6 @@ Once Ra and Dec are established and converted into
  the direction of the phone in the same coordinate system and the 
  rendering code takes it from there.
 
-## Coordinate systems
-The old code had different classes for different kinds of cooordinate systems but these have now
-all been cleaned up to use `Vector3` but it's still useful to distinguish between the different
-systems.
-
-### `RaDec`
-A pair of floats representing right ascension and declination.  This is usually what we want
-to end up with in order to render the object.
-
-### Geocentric Coordinates
-A 3-vector fixed at the Earth's center, with the z-axis through the North/South Poles
-but the x and y axes fixed in space in such a way that (1, 0, 0) has a right ascension of zero.
-Trivially convertable into an `RaDec`.
-
-### Heleocentric Coordinates
-A 3-vector fixed at the Sun's center, with the z-axis perpendicular to the Earth's orbital plane.
-TODO(jontayler): define the x, y aces.
-
-
 ## Useful classes
 ### `Vector3`
 A 3-vector of floats (without any particular semantic meaning) used to represent directions
@@ -48,9 +29,20 @@ Contains various helper functions that convert coordinates (often `Vector3`s) in
 coordinate systems (e.g. Geocentric, Heliocentric...).  Also augments the `Vector3` with some
 astronomy-specific extension functions.
 
+### `RaDec`
+A pair of floats representing right ascension and declination.
+
 ### `LatLong`
 A pair of floats representing latitude and longitude. Has some
 helper functions to calculate distance between two points on Earth.
+
+### Geocentric Coordinates
+A `Vector3` representing an object's location in 3-space with the Earth at the center,
+
+The 'z' axis points North and the 'x' axis points at RA, dec = 0, 0.
+
+### Heliocentric Coordinates
+A `Vector3` representing an object's location relative to the Sun.  A
 
 ### `OrbitalElements`
 
@@ -70,19 +62,18 @@ and has some math to calculate the 'anomaly'.
 Good reference as to how this works: http://www.stjarnhimlen.se/comp/tutorial.html
 
 
-## Solar System Objects
-Modelled by the `SolarSystemBody` enum. These are mostly planets.
+## Planets
+Modelled by the `Planet` enum. These are really any solar system objects, not just planets.
 The class contains some ids for its name and default image, as well as logic to calculate
-the `OrbitalElements` for that object (with the exception of the Moon, below). In some future
-version we can add other solar system objects which aren't from a fixed set like this, but
-this enum basically represents the objects you'd expect.
+the `OrbitalElements` for that object (with the exception of the Moon, below).
+
 
 ## Moon
 Instead of `OrbitalElements` there's a special method to get
 the lunar location as a function of time as an Ra and Dec.
 
 ## Sun
-Is actually an instance of the `SolarSystemBody` enum.
+Is actually an instance of the `Planet` enum.
 
 ## Horizon
 
