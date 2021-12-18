@@ -58,7 +58,7 @@ abstract class SolarSystemObject(protected val solarSystemBody : SolarSystemBody
             val moonRaDec: RaDec = this.getRaDec(time)
             val moon: Vector3 = getGeocentricCoords(moonRaDec)
             val sunCoords: Vector3 =
-                heliocentricCoordinatesFromOrbitalElements(SolarSystemBody.Sun.getOrbitalElements(time))
+                heliocentricCoordinatesFromOrbitalElements(SolarSystemBody.Earth.getOrbitalElements(time))
             val sunRaDec = calculateRaDecDist(sunCoords)
             val (x, y, z) = getGeocentricCoords(sunRaDec)
             return 180.0f -

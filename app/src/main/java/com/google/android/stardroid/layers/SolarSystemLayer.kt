@@ -36,7 +36,7 @@ class SolarSystemLayer(
 ) : AbstractRenderablesLayer(resources, true) {
     override fun initializeAstroSources(sources: ArrayList<AstronomicalRenderable>) {
         for (solarSystemBody in SolarSystemBody.values()) {
-            if (solarSystemBody == SolarSystemBody.Earth) continue // Don't try to display earth!
+            if (solarSystemBody === SolarSystemBody.Earth) continue // Don't try to display earth!
             // TODO(jontayler): IIRC this determines the rendering order. We should base it
             // on actual distrance to Earth.
             sources.add(
