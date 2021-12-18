@@ -24,7 +24,7 @@ import com.google.android.stardroid.R
  * @author John Taylor
  * @author Brent Bryan
  */
-class NewConstellationsLayer(assetManager: AssetManager, resources: Resources) :
+class ConstellationsLayer(assetManager: AssetManager, resources: Resources) :
     AbstractFileBasedLayer(assetManager, resources, "constellations.binary") {
     override val layerDepthOrder = 10
 

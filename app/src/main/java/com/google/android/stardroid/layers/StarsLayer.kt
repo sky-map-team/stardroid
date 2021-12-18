@@ -24,7 +24,7 @@ import com.google.android.stardroid.R
  * @author John Taylor
  * @author Brent Bryan
  */
-class NewStarsLayer(assetManager: AssetManager, resources: Resources) :
+class StarsLayer(assetManager: AssetManager, resources: Resources) :
     AbstractFileBasedLayer(assetManager, resources, "stars.binary") {
     override val layerDepthOrder = 30
 

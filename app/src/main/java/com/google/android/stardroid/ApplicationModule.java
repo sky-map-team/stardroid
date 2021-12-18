@@ -23,9 +23,9 @@ import com.google.android.stardroid.layers.GridLayer;
 import com.google.android.stardroid.layers.HorizonLayer;
 import com.google.android.stardroid.layers.LayerManager;
 import com.google.android.stardroid.layers.MeteorShowerLayer;
-import com.google.android.stardroid.layers.NewConstellationsLayer;
-import com.google.android.stardroid.layers.NewMessierLayer;
-import com.google.android.stardroid.layers.NewStarsLayer;
+import com.google.android.stardroid.layers.ConstellationsLayer;
+import com.google.android.stardroid.layers.MessierLayer;
+import com.google.android.stardroid.layers.StarsLayer;
 import com.google.android.stardroid.layers.SolarSystemLayer;
 import com.google.android.stardroid.layers.SkyGradientLayer;
 import com.google.android.stardroid.util.Analytics;
@@ -148,9 +148,9 @@ public class ApplicationModule {
       SharedPreferences preferences) {
     Log.i(TAG, "Initializing LayerManager");
     LayerManager layerManager = new LayerManager(preferences);
-    layerManager.addLayer(new NewStarsLayer(assetManager, resources));
-    layerManager.addLayer(new NewMessierLayer(assetManager, resources));
-    layerManager.addLayer(new NewConstellationsLayer(assetManager, resources));
+    layerManager.addLayer(new StarsLayer(assetManager, resources));
+    layerManager.addLayer(new MessierLayer(assetManager, resources));
+    layerManager.addLayer(new ConstellationsLayer(assetManager, resources));
     layerManager.addLayer(new SolarSystemLayer(model, resources, preferences));
     layerManager.addLayer(new MeteorShowerLayer(model, resources));
     layerManager.addLayer(new GridLayer(resources, 24, 9));

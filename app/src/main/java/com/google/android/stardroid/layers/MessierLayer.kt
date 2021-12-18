@@ -24,7 +24,7 @@ import com.google.android.stardroid.R
  * @author John Taylor
  * @author Brent Bryan
  */
-class NewMessierLayer(assetManager: AssetManager, resources: Resources) :
+class MessierLayer(assetManager: AssetManager, resources: Resources) :
     AbstractFileBasedLayer(assetManager, resources, "messier.binary") {
     override val layerDepthOrder = 20
 
