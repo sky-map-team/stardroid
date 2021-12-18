@@ -26,7 +26,7 @@ import com.google.android.stardroid.layers.MeteorShowerLayer;
 import com.google.android.stardroid.layers.NewConstellationsLayer;
 import com.google.android.stardroid.layers.NewMessierLayer;
 import com.google.android.stardroid.layers.NewStarsLayer;
-import com.google.android.stardroid.layers.PlanetsLayer;
+import com.google.android.stardroid.layers.SolarSystemLayer;
 import com.google.android.stardroid.layers.SkyGradientLayer;
 import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.AnalyticsInterface;
@@ -151,7 +151,7 @@ public class ApplicationModule {
     layerManager.addLayer(new NewStarsLayer(assetManager, resources));
     layerManager.addLayer(new NewMessierLayer(assetManager, resources));
     layerManager.addLayer(new NewConstellationsLayer(assetManager, resources));
-    layerManager.addLayer(new PlanetsLayer(model, resources, preferences));
+    layerManager.addLayer(new SolarSystemLayer(model, resources, preferences));
     layerManager.addLayer(new MeteorShowerLayer(model, resources));
     layerManager.addLayer(new GridLayer(resources, 24, 9));
     layerManager.addLayer(new HorizonLayer(model, resources));

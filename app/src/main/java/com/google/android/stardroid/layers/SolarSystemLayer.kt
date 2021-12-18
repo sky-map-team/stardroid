@@ -29,16 +29,19 @@ import java.util.*
  * @author John Taylor
  * @author Brent Bryan
  */
-class PlanetsLayer(
+class SolarSystemLayer(
     private val model: AstronomerModel,
     resources: Resources,
     private val preferences: SharedPreferences
 ) : AbstractRenderablesLayer(resources, true) {
     override fun initializeAstroSources(sources: ArrayList<AstronomicalRenderable>) {
-        for (planet in SolarSystemBody.values()) {
+        for (solarSystemBody in SolarSystemBody.values()) {
+            if (solarSystemBody == SolarSystemBody.Earth) continue // Don't try to display earth!
+            // TODO(jontayler): IIRC this determines the rendering order. We should base it
+            // on actual distrance to Earth.
             sources.add(
                 SolarSystemRenderable(
-                    planet,
+                    solarSystemBody,
                     resources,
                     model,
                     preferences

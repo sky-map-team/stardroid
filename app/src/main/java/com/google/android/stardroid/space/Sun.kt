@@ -10,9 +10,9 @@ import java.util.*
  * It's a sort of trivial sun-orbiting object.
  */
 class Sun : SunOrbitingObject(SolarSystemBody.Sun) {
-    override protected val bodySize = -0.83f
+    override val bodySize = -0.83f
 
-    protected override fun getMyHeliocentricCoordinates(date: Date) =
+    override fun getMyHeliocentricCoordinates(date: Date) =
         Vector3(0.0f, 0.0f, 0.0f)
 
     // TODO(serafini): For now, return semi-reasonable values for the Sun and

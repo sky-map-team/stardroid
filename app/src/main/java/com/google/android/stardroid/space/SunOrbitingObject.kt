@@ -11,7 +11,8 @@ import java.util.*
  */
 open class SunOrbitingObject(solarSystemBody : SolarSystemBody) : SolarSystemObject(solarSystemBody) {
     override fun getRaDec(date: Date): RaDec {
-        val earthCoords = getEarthHeliocentricCoordinates(date)
+        val earthCoords =
+            heliocentricCoordinatesFromOrbitalElements(SolarSystemBody.Earth.getOrbitalElements(date))
         var myCoords = getMyHeliocentricCoordinates(date)
         myCoords.minusAssign(earthCoords)
         val equ = convertToEquatorialCoordinates(myCoords)
@@ -20,9 +21,6 @@ open class SunOrbitingObject(solarSystemBody : SolarSystemBody) : SolarSystemObj
 
     protected open fun getMyHeliocentricCoordinates(date: Date) =
         heliocentricCoordinatesFromOrbitalElements(solarSystemBody.getOrbitalElements(date))
-
-    protected fun getEarthHeliocentricCoordinates(date: Date) =
-        heliocentricCoordinatesFromOrbitalElements(SolarSystemBody.Sun.getOrbitalElements(date))
 
     /////////////////////
 

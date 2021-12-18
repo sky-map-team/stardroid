@@ -1,6 +1,5 @@
 package com.google.android.stardroid.space
 
-import android.util.Log
 import com.google.android.stardroid.base.VisibleForTesting
 import com.google.android.stardroid.ephemeris.SolarSystemBody
 import com.google.android.stardroid.math.*
@@ -8,7 +7,6 @@ import java.util.*
 
 import com.google.android.stardroid.math.RaDec.Companion.calculateRaDecDist
 import kotlin.math.cos
-import com.google.android.stardroid.util.MiscUtil
 
 import com.google.android.stardroid.math.Vector3
 import kotlin.math.log10
@@ -73,7 +71,7 @@ abstract class SolarSystemObject(protected val solarSystemBody : SolarSystemBody
 
         // Second, determine position relative to Earth
         val earthCoords: Vector3 =
-            heliocentricCoordinatesFromOrbitalElements(SolarSystemBody.Sun.getOrbitalElements(time))
+            heliocentricCoordinatesFromOrbitalElements(SolarSystemBody.Earth.getOrbitalElements(time))
         val earthDistance = planetCoords.distanceFrom(earthCoords)
 
         // Finally, calculate the phase of the body.
@@ -93,6 +91,7 @@ abstract class SolarSystemObject(protected val solarSystemBody : SolarSystemBody
             SolarSystemBody.Jupiter -> 0.025f
             SolarSystemBody.Uranus, SolarSystemBody.Neptune -> 0.015f
             SolarSystemBody.Saturn -> 0.035f
+            else -> throw RuntimeException("Unknown image size for Solar System Object: $this")
         }
     }
 
@@ -109,7 +108,7 @@ abstract class SolarSystemObject(protected val solarSystemBody : SolarSystemBody
 
         // Second, determine position relative to Earth
         val earthCoords =
-            heliocentricCoordinatesFromOrbitalElements(SolarSystemBody.Sun.getOrbitalElements(time))
+            heliocentricCoordinatesFromOrbitalElements(SolarSystemBody.Earth.getOrbitalElements(time))
         val earthDistance = planetCoords.distanceFrom(earthCoords)
 
         // Third, calculate the phase of the body.
@@ -135,11 +134,7 @@ abstract class SolarSystemObject(protected val solarSystemBody : SolarSystemBody
             SolarSystemBody.Uranus -> -7.19f
             SolarSystemBody.Neptune -> -6.87f
             SolarSystemBody.Pluto -> -1.0f
-            else -> {
-                Log.e(MiscUtil.getTag(this), "Invalid planet: $this")
-                // At least make it faint!
-                100f
-            }
+            else -> throw RuntimeException("Unknown magnitude for solar system body $this")
         }
         return mag + 5.0f * log10(planetCoords.length * earthDistance)
     }
