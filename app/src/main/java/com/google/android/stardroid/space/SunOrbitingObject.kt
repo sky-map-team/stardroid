@@ -1,6 +1,6 @@
 package com.google.android.stardroid.space
 
-import com.google.android.stardroid.ephemeris.Planet
+import com.google.android.stardroid.ephemeris.SolarSystemBody
 import com.google.android.stardroid.math.RaDec
 import com.google.android.stardroid.math.convertToEquatorialCoordinates
 import com.google.android.stardroid.math.heliocentricCoordinatesFromOrbitalElements
@@ -9,7 +9,7 @@ import java.util.*
 /**
  * An object that orbits the sun.
  */
-open class SunOrbitingObject(planet : Planet) : SolarSystemObject(planet) {
+open class SunOrbitingObject(planet : SolarSystemBody) : SolarSystemObject(planet) {
     override fun getRaDec(date: Date): RaDec {
         val earthCoords = getEarthHeliocentricCoordinates(date)
         var myCoords = getMyHeliocentricCoordinates(date)
@@ -19,10 +19,10 @@ open class SunOrbitingObject(planet : Planet) : SolarSystemObject(planet) {
     }
 
     protected open fun getMyHeliocentricCoordinates(date: Date) =
-        heliocentricCoordinatesFromOrbitalElements(planet.getOrbitalElements(date))
+        heliocentricCoordinatesFromOrbitalElements(solarSystemBody.getOrbitalElements(date))
 
     protected fun getEarthHeliocentricCoordinates(date: Date) =
-        heliocentricCoordinatesFromOrbitalElements(Planet.Sun.getOrbitalElements(date))
+        heliocentricCoordinatesFromOrbitalElements(SolarSystemBody.Sun.getOrbitalElements(date))
 
     /////////////////////
 
@@ -35,6 +35,6 @@ open class SunOrbitingObject(planet : Planet) : SolarSystemObject(planet) {
 
     /** Returns the resource id for the planet's image.  */
     override fun getImageResourceId(time: Date): Int {
-        return planet.imageResourceId
+        return solarSystemBody.imageResourceId
     }
 }

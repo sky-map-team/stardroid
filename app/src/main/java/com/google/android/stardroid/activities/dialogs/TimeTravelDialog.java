@@ -38,7 +38,7 @@ import android.widget.Toast;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.DynamicStarMapActivity;
 import com.google.android.stardroid.control.AstronomerModel;
-import com.google.android.stardroid.ephemeris.Planet;
+import com.google.android.stardroid.ephemeris.SolarSystemBody;
 import com.google.android.stardroid.space.CelestialObject;
 import com.google.android.stardroid.space.Universe;
 import com.google.android.stardroid.util.MiscUtil;
@@ -203,7 +203,7 @@ public class TimeTravelDialog extends Dialog {
   private Universe universe = new Universe();
 
   private void setToNextSunRiseOrSet(CelestialObject.RiseSetIndicator indicator) {
-    Calendar riseset = universe.solarSystemObjectFor(Planet.Sun).calcNextRiseSetTime(
+    Calendar riseset = universe.solarSystemObjectFor(SolarSystemBody.Sun).calcNextRiseSetTime(
         calendar, model.getLocation(), indicator);
     if (riseset == null) {
       Toast.makeText(this.getContext(), R.string.sun_wont_set_message, Toast.LENGTH_SHORT).show();
