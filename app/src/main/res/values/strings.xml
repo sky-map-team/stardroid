@@ -39,6 +39,7 @@
     <string name="show_horizon_pref">Horizon</string>
     <string name="show_sky_gradient" translation_description="This is a shading of the color of the sky used for effect">Sky Gradient</string>
     <string name="show_meteors_pref">Meteor Showers</string>
+    <string name="show_comet_layer_pref">Comets</string>
     <string name="show_satellite_layer_pref" translation_description="The layer for satellites">Satellites</string>
     <!-- Just in case we decide to have such a layer for the 4/24 launch -->
     <string name="show_hubble_layer_pref">Hubble Images</string>

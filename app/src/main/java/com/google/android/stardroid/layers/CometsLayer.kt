@@ -25,19 +25,22 @@ import com.google.android.stardroid.renderer.RendererObjectManager.UpdateType
 import java.util.*
 import kotlin.math.abs
 
+private val METEOR_SOURCE_PROVIDER = "source_provider.6"
+
 /**
- * A [Layer] to show well-known meteor showers.
+ * A [Layer] to show the occasional transient comet.
  *
  * @author John Taylor
  */
-class MeteorShowerLayer(private val model: AstronomerModel, resources: Resources) :
+// Some of this might eventually get generalized for other 'interpolatable' objects.
+class CometsLayer(private val model: AstronomerModel, resources: Resources) :
     AbstractRenderablesLayer(resources, true) {
     private val showers: MutableList<Shower> = ArrayList()
 
     /**
      * Represents a meteor shower.
      */
-    private data class Shower(
+    private class Shower(
         val nameId: Int, val radiant: Vector3,
         val start: Date, val peak: Date, val end: Date, val peakMeteorsPerHour: Int
     )
@@ -49,108 +52,29 @@ class MeteorShowerLayer(private val model: AstronomerModel, resources: Resources
         // Actual start for Quadrantids is December 28 - but we can't cross a year boundary.
         showers.add(
             Shower(
-                R.string.quadrantids, getGeocentricCoords(230f, 49f),
+                R.string.earth, getGeocentricCoords(240f, 49f),
                 Date(ANY_OLD_YEAR, 0, 1),
                 Date(ANY_OLD_YEAR, 0, 4),
-                Date(ANY_OLD_YEAR, 0, 12),
+                Date(ANY_OLD_YEAR, 11, 31),
                 120
             )
         )
-        showers.add(
-            Shower(
-                R.string.lyrids, getGeocentricCoords(271f, 34f),
-                Date(ANY_OLD_YEAR, 3, 16),
-                Date(ANY_OLD_YEAR, 3, 22),
-                Date(ANY_OLD_YEAR, 3, 25),
-                18
-            )
-        )
-        showers.add(
-            Shower(
-                R.string.aquariids, getGeocentricCoords(338f, -1f),
-                Date(ANY_OLD_YEAR, 3, 19),
-                Date(ANY_OLD_YEAR, 4, 6),
-                Date(ANY_OLD_YEAR, 4, 28),
-                70
-            )
-        )
-        showers.add(
-            Shower(
-                R.string.deltaaquariids, getGeocentricCoords(340f, -16f),
-                Date(ANY_OLD_YEAR, 6, 12),
-                Date(ANY_OLD_YEAR, 6, 30),
-                Date(ANY_OLD_YEAR, 7, 23),
-                16
-            )
-        )
-        showers.add(
-            Shower(
-                R.string.perseids, getGeocentricCoords(48f, 58f),
-                Date(ANY_OLD_YEAR, 6, 17),
-                Date(ANY_OLD_YEAR, 7, 13),
-                Date(ANY_OLD_YEAR, 7, 24),
-                100
-            )
-        )
-        showers.add(
-            Shower(
-                R.string.orionids, getGeocentricCoords(95f, 16f),
-                Date(ANY_OLD_YEAR, 9, 2),
-                Date(ANY_OLD_YEAR, 9, 21),
-                Date(ANY_OLD_YEAR, 10, 7),
-                25
-            )
-        )
-        showers.add(
-            Shower(
-                R.string.leonids, getGeocentricCoords(152f, 22f),
-                Date(ANY_OLD_YEAR, 10, 6),
-                Date(ANY_OLD_YEAR, 10, 18),
-                Date(ANY_OLD_YEAR, 10, 30),
-                20
-            )
-        )
-        showers.add(
-            Shower(
-                R.string.puppidvelids, getGeocentricCoords(123f, -45f),
-                Date(ANY_OLD_YEAR, 11, 1),
-                Date(ANY_OLD_YEAR, 11, 7),
-                Date(ANY_OLD_YEAR, 11, 15),
-                10
-            )
-        )
-        showers.add(
-            Shower(
-                R.string.geminids, getGeocentricCoords(112f, 33f),
-                Date(ANY_OLD_YEAR, 11, 7),
-                Date(ANY_OLD_YEAR, 11, 14),
-                Date(ANY_OLD_YEAR, 11, 17),
-                120
-            )
-        )
-        showers.add(
-            Shower(
-                R.string.ursids, getGeocentricCoords(217f, 76f),
-                Date(ANY_OLD_YEAR, 11, 17),
-                Date(ANY_OLD_YEAR, 11, 23),
-                Date(ANY_OLD_YEAR, 11, 26),
-                10
-            )
-        )
+
     }
 
     override fun initializeAstroSources(sources: ArrayList<AstronomicalRenderable>) {
         for (shower in showers) {
-            sources.add(MeteorRadiantRenderable(model, shower, resources))
+            sources.add(CometRenderable(model, shower, resources))
         }
     }
 
     override val layerDepthOrder = 80
-    override val preferenceId = "source_provider.6"
-    override val layerName = "Meteor Showers"
-    override val layerNameId = R.string.show_meteors_pref
+    // This is the same as the meteor layer.
+    override val preferenceId = METEOR_SOURCE_PROVIDER
+    override val layerName = "Comets"
+    override val layerNameId = R.string.show_comet_layer_pref
 
-    private class MeteorRadiantRenderable(
+    private class CometRenderable(
         private val model: AstronomerModel,
         private val shower: Shower,
         resources: Resources
@@ -189,6 +113,7 @@ class MeteorShowerLayer(private val model: AstronomerModel, resources: Resources
                 } else {
                     theImage.setImageId(R.drawable.meteor1_screen)
                 }
+                theImage.setImageId(R.drawable.earth) // temp placeholder!
             } else {
                 label.text = " "
                 theImage.setImageId(R.drawable.blank)
