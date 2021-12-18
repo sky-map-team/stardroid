@@ -23,9 +23,10 @@ import java.util.*
 
 /**
  * A data holder for some static data about solar system objects.
+ * These are usually planets.
  */
 // Add Color, magnitude, etc.
-enum class Planet
+enum class SolarSystemBody
     (
     // Resource ID to use for a planet's image.
     val imageResourceId: Int,
@@ -173,6 +174,6 @@ enum class Planet
     }
 
     companion object {
-        private val TAG = MiscUtil.getTag(Planet::class.java)
+        private val TAG = MiscUtil.getTag(SolarSystemBody::class.java)
     }
 }

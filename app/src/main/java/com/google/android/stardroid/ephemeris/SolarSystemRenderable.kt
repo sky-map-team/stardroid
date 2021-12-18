@@ -33,8 +33,8 @@ import java.util.*
  *
  * @author Brent Bryan
  */
-class PlanetRenderable(
-    private val planet: Planet, resources: Resources,
+class SolarSystemRenderable(
+    private val solarSystemBody: SolarSystemBody, resources: Resources,
     model: AstronomerModel, prefs: SharedPreferences
 ) : AbstractAstronomicalRenderable() {
     private val pointPrimitives = ArrayList<PointPrimitive>()
@@ -57,8 +57,8 @@ class PlanetRenderable(
 
     private fun updateCoords(time: Date) {
         lastUpdateTimeMs = time.time
-        sunCoords = heliocentricCoordinatesFromOrbitalElements(Planet.Sun.getOrbitalElements(time))
-        currentCoords.updateFromRaDec(universe.getRaDec(planet, time))
+        sunCoords = heliocentricCoordinatesFromOrbitalElements(SolarSystemBody.Sun.getOrbitalElements(time))
+        currentCoords.updateFromRaDec(universe.getRaDec(solarSystemBody, time))
         for (imagePrimitives in imagePrimitives) {
             imagePrimitives.setUpVector(sunCoords) // TODO(johntaylor): figure out why we do this.
         }
@@ -68,7 +68,7 @@ class PlanetRenderable(
         val time = model.time
         updateCoords(time)
         imageId = solarSystemObject.getImageResourceId(time)
-        if (planet === Planet.Moon) {
+        if (solarSystemBody === SolarSystemBody.Moon) {
             imagePrimitives.add(
                 ImagePrimitive(
                     currentCoords, resources, imageId, sunCoords,
@@ -77,7 +77,7 @@ class PlanetRenderable(
             )
         } else {
             val usePlanetaryImages = preferences.getBoolean(SHOW_PLANETARY_IMAGES, true)
-            if (usePlanetaryImages || planet === Planet.Sun) {
+            if (usePlanetaryImages || solarSystemBody === SolarSystemBody.Sun) {
                 imagePrimitives.add(
                     ImagePrimitive(
                         currentCoords, resources, imageId, UP,
@@ -101,7 +101,7 @@ class PlanetRenderable(
             updateCoords(modelTime)
 
             // For moon only:
-            if (planet === Planet.Moon && !imagePrimitives.isEmpty()) {
+            if (solarSystemBody === SolarSystemBody.Moon && !imagePrimitives.isEmpty()) {
                 // Update up vector.
                 imagePrimitives[0].setUpVector(sunCoords)
 
@@ -133,7 +133,7 @@ class PlanetRenderable(
     }
 
     init {
-        solarSystemObject = universe.solarSystemObjectFor(planet)
+        solarSystemObject = universe.solarSystemObjectFor(solarSystemBody)
         this.resources = resources
         this.model = model
         name = resources.getString(solarSystemObject.getNameResourceId())
