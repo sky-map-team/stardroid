@@ -11,25 +11,21 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+package com.google.android.stardroid.util
 
-package com.google.android.stardroid.util;
-
-
-import com.google.android.stardroid.ApplicationConstants;
+import com.google.android.stardroid.ApplicationConstants
 
 /**
  * A collection of miscellaneous utility functions.
- * 
+ *
  * @author Brent Bryan
  */
-public class MiscUtil {
-  private MiscUtil() {}
-  
-  /** Returns the Tag for a class to be used in Android logging statements */
-  public static String getTag(Object o) {
-    if (o instanceof Class<?>) {
-      return ApplicationConstants.APP_NAME + "." + ((Class<?>)o).getSimpleName();
+object MiscUtil {
+    /** Returns the Tag for a class to be used in Android logging statements  */
+    @JvmStatic
+    fun getTag(o: Any): String {
+        return if (o is Class<*>) {
+            ApplicationConstants.APP_NAME + "." + o.simpleName
+        } else ApplicationConstants.APP_NAME + "." + o.javaClass.simpleName
     }
-    return ApplicationConstants.APP_NAME + "." + o.getClass().getSimpleName();
-  }
 }

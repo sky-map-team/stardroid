@@ -1,31 +1,23 @@
 package com.google.android.stardroid.space
 
-import android.util.Log
 import com.google.android.stardroid.base.VisibleForTesting
-import com.google.android.stardroid.ephemeris.Planet
+import com.google.android.stardroid.ephemeris.SolarSystemBody
 import com.google.android.stardroid.math.*
 import java.util.*
 
 import com.google.android.stardroid.math.RaDec.Companion.calculateRaDecDist
 import kotlin.math.cos
-import com.google.android.stardroid.space.Moon
-import com.google.android.stardroid.util.MiscUtil
 
 import com.google.android.stardroid.math.Vector3
-
-
-
-
-
-
+import kotlin.math.log10
 
 
 /**
  * A celestial object that lives in our solar system.
  */
-abstract class SolarSystemObject(protected val planet : Planet) : MovingObject() {
+abstract class SolarSystemObject(protected val solarSystemBody : SolarSystemBody) : MovingObject() {
     fun getUpdateFrequencyMs(): Long {
-        return planet.updateFrequencyMs
+        return solarSystemBody.updateFrequencyMs
     }
 
     /**
@@ -33,7 +25,7 @@ abstract class SolarSystemObject(protected val planet : Planet) : MovingObject()
      * planet.
      */
     fun getNameResourceId(): Int {
-        return planet.nameResourceId
+        return solarSystemBody.nameResourceId
     }
 
     /** Returns the resource id for the planet's image.  */
@@ -62,11 +54,11 @@ abstract class SolarSystemObject(protected val planet : Planet) : MovingObject()
         // TODO(serafini): We need to correct the Ra/Dec for the user's location. The
         // current calculation is probably accurate to a degree or two, but we can,
         // and should, do better.
-        if (planet === Planet.Moon) {
+        if (solarSystemBody === SolarSystemBody.Moon) {
             val moonRaDec: RaDec = this.getRaDec(time)
             val moon: Vector3 = getGeocentricCoords(moonRaDec)
             val sunCoords: Vector3 =
-                heliocentricCoordinatesFromOrbitalElements(Planet.Sun.getOrbitalElements(time))
+                heliocentricCoordinatesFromOrbitalElements(SolarSystemBody.Earth.getOrbitalElements(time))
             val sunRaDec = calculateRaDecDist(sunCoords)
             val (x, y, z) = getGeocentricCoords(sunRaDec)
             return 180.0f -
@@ -75,11 +67,11 @@ abstract class SolarSystemObject(protected val planet : Planet) : MovingObject()
 
         // First, determine position in the solar system.
         val planetCoords: Vector3 =
-            heliocentricCoordinatesFromOrbitalElements(planet.getOrbitalElements(time))
+            heliocentricCoordinatesFromOrbitalElements(solarSystemBody.getOrbitalElements(time))
 
         // Second, determine position relative to Earth
         val earthCoords: Vector3 =
-            heliocentricCoordinatesFromOrbitalElements(Planet.Sun.getOrbitalElements(time))
+            heliocentricCoordinatesFromOrbitalElements(SolarSystemBody.Earth.getOrbitalElements(time))
         val earthDistance = planetCoords.distanceFrom(earthCoords)
 
         // Finally, calculate the phase of the body.
@@ -93,12 +85,13 @@ abstract class SolarSystemObject(protected val planet : Planet) : MovingObject()
 
     // TODO(serafini): This is experimental code used to scale planetary images.
     fun getPlanetaryImageSize(): Float {
-        return when (this.planet) {
-            Planet.Sun, Planet.Moon -> 0.02f
-            Planet.Mercury, Planet.Venus, Planet.Mars, Planet.Pluto -> 0.01f
-            Planet.Jupiter -> 0.025f
-            Planet.Uranus, Planet.Neptune -> 0.015f
-            Planet.Saturn -> 0.035f
+        return when (this.solarSystemBody) {
+            SolarSystemBody.Sun, SolarSystemBody.Moon -> 0.02f
+            SolarSystemBody.Mercury, SolarSystemBody.Venus, SolarSystemBody.Mars, SolarSystemBody.Pluto -> 0.01f
+            SolarSystemBody.Jupiter -> 0.025f
+            SolarSystemBody.Uranus, SolarSystemBody.Neptune -> 0.015f
+            SolarSystemBody.Saturn -> 0.035f
+            else -> throw RuntimeException("Unknown image size for Solar System Object: $this")
         }
     }
 
@@ -111,11 +104,11 @@ abstract class SolarSystemObject(protected val planet : Planet) : MovingObject()
      */
     open fun getMagnitude(time: Date): Float {
         // First, determine position in the solar system.
-        val planetCoords = heliocentricCoordinatesFromOrbitalElements(planet.getOrbitalElements(time))
+        val planetCoords = heliocentricCoordinatesFromOrbitalElements(solarSystemBody.getOrbitalElements(time))
 
         // Second, determine position relative to Earth
         val earthCoords =
-            heliocentricCoordinatesFromOrbitalElements(Planet.Sun.getOrbitalElements(time))
+            heliocentricCoordinatesFromOrbitalElements(SolarSystemBody.Earth.getOrbitalElements(time))
         val earthDistance = planetCoords.distanceFrom(earthCoords)
 
         // Third, calculate the phase of the body.
@@ -129,24 +122,20 @@ abstract class SolarSystemObject(protected val planet : Planet) : MovingObject()
 
         // Finally, calculate the magnitude of the body.
         // Apparent visual magnitude
-        var mag = when (this.planet) {
-            Planet.Mercury -> -0.42f + (3.80f - (2.73f - 2.00f * p) * p) * p
-            Planet.Venus -> -4.40f + (0.09f + (2.39f - 0.65f * p) * p) * p
-            Planet.Mars -> -1.52f + 1.6f * p
-            Planet.Jupiter -> -9.40f + 0.5f * p
-            Planet.Saturn ->         // TODO(serafini): Add the real calculations that consider the position
+        var mag = when (this.solarSystemBody) {
+            SolarSystemBody.Mercury -> -0.42f + (3.80f - (2.73f - 2.00f * p) * p) * p
+            SolarSystemBody.Venus -> -4.40f + (0.09f + (2.39f - 0.65f * p) * p) * p
+            SolarSystemBody.Mars -> -1.52f + 1.6f * p
+            SolarSystemBody.Jupiter -> -9.40f + 0.5f * p
+            SolarSystemBody.Saturn ->         // TODO(serafini): Add the real calculations that consider the position
                 // of the rings. For now, lets assume the following, which gets us a reasonable
                 // approximation of Saturn's magnitude for the near future.
                 -8.75f
-            Planet.Uranus -> -7.19f
-            Planet.Neptune -> -6.87f
-            Planet.Pluto -> -1.0f
-            else -> {
-                Log.e(MiscUtil.getTag(this), "Invalid planet: $this")
-                // At least make it faint!
-                100f
-            }
+            SolarSystemBody.Uranus -> -7.19f
+            SolarSystemBody.Neptune -> -6.87f
+            SolarSystemBody.Pluto -> -1.0f
+            else -> throw RuntimeException("Unknown magnitude for solar system body $this")
         }
-        return mag + 5.0f * MathUtils.log10(planetCoords.length * earthDistance)
+        return mag + 5.0f * log10(planetCoords.length * earthDistance)
     }
 }

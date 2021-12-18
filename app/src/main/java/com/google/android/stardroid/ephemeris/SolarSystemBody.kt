@@ -23,9 +23,10 @@ import java.util.*
 
 /**
  * A data holder for some static data about solar system objects.
+ * These are usually planets.
  */
 // Add Color, magnitude, etc.
-enum class Planet
+enum class SolarSystemBody
     (
     // Resource ID to use for a planet's image.
     val imageResourceId: Int,
@@ -36,6 +37,8 @@ enum class Planet
 ) {
     // The order here is the order in which they are drawn.  To ensure that during
     // conjunctions they display "naturally" order them in reverse distance from Earth.
+    // TODO(jontayler): do this more rigorously - the only times it could really matter are when
+    // Mercury and Venus ought to be behind the Sun.
     Pluto(
         R.drawable.pluto,
         R.string.pluto,
@@ -77,7 +80,8 @@ enum class Planet
         R.string.venus,
         TimeConstants.MILLISECONDS_PER_HOUR
     ),
-    Moon(R.drawable.moon4, R.string.moon, TimeConstants.MILLISECONDS_PER_MINUTE);
+    Moon(R.drawable.moon4, R.string.moon, TimeConstants.MILLISECONDS_PER_MINUTE),
+    Earth(R.drawable.earth, R.string.earth, TimeConstants.MILLISECONDS_PER_HOUR);
 
     // Taken from JPL's Planetary Positions page: http://ssd.jpl.nasa.gov/?planet_pos
     // This gives us a good approximation for the years 1800 to 2050 AD.
@@ -105,7 +109,7 @@ enum class Planet
                 val o: Float = (76.67984255f - 0.27769418f * jc) * DEGREES_TO_RADIANS
                 OrbitalElements(a, e, i, o, w, l)
             }
-            Sun -> {
+            Earth -> {
                 val a = 1.00000261f + 0.00000562f * jc
                 val e = 0.01671123f - 0.00004392f * jc
                 val i: Float = (-0.00001531f - 0.01294668f * jc) * DEGREES_TO_RADIANS
@@ -168,11 +172,11 @@ enum class Planet
                 val o: Float = (110.30393684f - 0.01183482f * jc) * DEGREES_TO_RADIANS
                 OrbitalElements(a, e, i, o, w, l)
             }
-            else -> throw RuntimeException("Unknown Planet: $this")
+            else -> throw RuntimeException("Unknown orbital elements for Solar System Object: $this")
         }
     }
 
     companion object {
-        private val TAG = MiscUtil.getTag(Planet::class.java)
+        private val TAG = MiscUtil.getTag(SolarSystemBody::class.java)
     }
 }

@@ -14,12 +14,11 @@
 
 package com.google.android.stardroid.renderer;
 
-import com.google.android.stardroid.renderer.util.UpdateClosure;
 import com.google.android.stardroid.math.Vector3;
-import com.google.android.stardroid.source.ImagePrimitive;
-import com.google.android.stardroid.source.LinePrimitive;
-import com.google.android.stardroid.source.PointPrimitive;
-import com.google.android.stardroid.source.TextPrimitive;
+import com.google.android.stardroid.renderables.ImagePrimitive;
+import com.google.android.stardroid.renderables.LinePrimitive;
+import com.google.android.stardroid.renderables.PointPrimitive;
+import com.google.android.stardroid.renderables.TextPrimitive;
 
 import android.os.ConditionVariable;
 import android.util.Log;
@@ -246,22 +245,12 @@ public abstract class RendererControllerBase {
     queueRunnable(msg, CommandType.Data, mRenderer::disableSearchOverlay);
   }
 
-  public void addUpdateClosure(final UpdateClosure runnable) {
+  public void addUpdateClosure(final Runnable runnable) {
     final String msg = "Setting update callback";
     queueRunnable(msg, CommandType.Data, new Runnable() {
       @Override
       public void run() {
         mRenderer.addUpdateClosure(runnable);
-      }
-    });
-  }
-
-  public void removeUpdateCallback(final UpdateClosure update) {
-    final String msg = "Removing update callback";
-    queueRunnable(msg, CommandType.Data, new Runnable() {
-      @Override
-      public void run() {
-        mRenderer.removeUpdateCallback(update);
       }
     });
   }

@@ -68,7 +68,6 @@ import com.google.android.stardroid.math.MathUtils;
 import com.google.android.stardroid.math.Vector3;
 import com.google.android.stardroid.renderer.RendererController;
 import com.google.android.stardroid.renderer.SkyRenderer;
-import com.google.android.stardroid.renderer.util.AbstractUpdateClosure;
 import com.google.android.stardroid.search.SearchResult;
 import com.google.android.stardroid.touch.DragRotateZoomGestureDetector;
 import com.google.android.stardroid.touch.GestureInterpreter;
@@ -105,7 +104,7 @@ public class DynamicStarMapActivity extends InjectableActivity
    *
    * @author John Taylor
    */
-  private static final class RendererModelUpdateClosure extends AbstractUpdateClosure {
+  private static final class RendererModelUpdateClosure implements Runnable {
     private RendererController rendererController;
     private AstronomerModel model;
     private boolean horizontalRotation;
