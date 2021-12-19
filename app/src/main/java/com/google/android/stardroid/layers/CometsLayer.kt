@@ -49,18 +49,17 @@ class CometsLayer(private val model: AstronomerModel, resources: Resources) :
    * Simple linear interpolation.
    * Nothing fancy - just linear scan so O(N) in the number of entries.
    */
-  class Interpolator<A, B>(val xs: List<A>, val ys: List<B>)
-      where A : Number, A : Comparable<A>, B : Number {
+  class Interpolator(val xs: List<Long>, val ys: List<Float>) {
     init {
       if (xs.size != ys.size) throw IllegalArgumentException("Arrays must be of same length")
       if (xs.size < 2) throw IllegalArgumentException("Must have at least two entries")
     }
 
-    fun interpolate(x: A) : B {
+    fun interpolate(x: Long): Float {
       if (x < xs.first() || x > xs.last()) throw IllegalArgumentException("Input out of bounds")
       for (i in 0..this.xs.size - 2) {
         if (x >= xs[i] && x <= xs[i + 1]) {
-          return ((x - xs[i]) * ys[i] + (xs[i + 1] - x) * ys[i + 1]) / (xs[i + 1] - xs[i])
+          return ((x - xs[i]) * ys[i + 1] + (xs[i + 1] - x) * ys[i]) / (xs[i + 1] - xs[i])
         }
       }
       throw IllegalArgumentException("Ran off the end - this shouldn't happen")
@@ -70,36 +69,41 @@ class CometsLayer(private val model: AstronomerModel, resources: Resources) :
   private class Comet(
     val nameId: Int, positions: List<TimeEntry>
   ) {
-    val pos = Vector3.zero()
-
     val start: Date
     val end: Date
-    var xInterpolator: Interpolator<Long, Float>
-    var yInterpolator: Interpolator<Long, Float>
-    var zInterpolator: Interpolator<Long, Float>
-    var magInterpolator: Interpolator<Long, Float>
+    val xInterpolator: Interpolator
+    val yInterpolator: Interpolator
+    val zInterpolator: Interpolator
+    val magInterpolator: Interpolator
+
+    fun pos(time: Date): Vector3 {
+      return Vector3(
+        xInterpolator.interpolate(time.time), yInterpolator.interpolate(time.time),
+        zInterpolator.interpolate(time.time)
+      ).normalizedCopy()
+    }
 
     init {
       if (positions.isEmpty()) throw IllegalStateException("Comet has no positions")
       start = positions.first().date
       end = positions.last().date
       var previous = start
-      // TODO(johntaylor): quick and dirty for now, but do something more kotliney later.
+      // TODO(johntaylor): quick and dirty for now, but do something more kotlin-ey later.
       // Maybe with sequences. I don't have time right now.
-      var times = mutableListOf<Long>()
-      var xValues = mutableListOf<Float>()
-      var yValues = mutableListOf<Float>()
-      var zValues = mutableListOf<Float>()
-      var mags = mutableListOf<Float>()
-      for (entry in positions) {
-        if (entry.date.before(previous)) throw java.lang.IllegalStateException("Comet dates not in ascending order")
-        previous = entry.date
-        times.add(entry.date.time)
-        val geoCentricCoords = getGeocentricCoords(entry.raDeg, entry.decDeg)
+      val times = mutableListOf<Long>()
+      val xValues = mutableListOf<Float>()
+      val yValues = mutableListOf<Float>()
+      val zValues = mutableListOf<Float>()
+      val mags = mutableListOf<Float>()
+      for ((date, raDeg, decDeg, mag) in positions) {
+        if (date.before(previous)) throw java.lang.IllegalStateException("Comet dates not in ascending order")
+        previous = date
+        times.add(date.time)
+        val geoCentricCoords = getGeocentricCoords(raDeg, decDeg)
         xValues.add(geoCentricCoords.x)
         yValues.add(geoCentricCoords.y)
         zValues.add(geoCentricCoords.z)
-        mags.add(entry.mag)
+        mags.add(mag)
       }
       xInterpolator = Interpolator(times, xValues)
       yInterpolator = Interpolator(times, yValues)
@@ -122,7 +126,6 @@ class CometsLayer(private val model: AstronomerModel, resources: Resources) :
         )
       )
     )
-
   }
 
   override fun initializeAstroSources(sources: ArrayList<AstronomicalRenderable>) {
@@ -151,10 +154,11 @@ class CometsLayer(private val model: AstronomerModel, resources: Resources) :
     private val label: TextPrimitive
     private val name = resources.getString(comet.nameId)
     override val names = ArrayList<String>()
-    override val searchLocation: Vector3
-      get() = comet.pos
+    private var coords: Vector3
+    override var searchLocation = Vector3.zero()
+      private set
 
-    private fun updateShower() {
+    private fun updateComets() {
       lastUpdateTimeMs = model.time.time
       // We will only show the comet between certain times.
       val now = model.time
@@ -162,6 +166,10 @@ class CometsLayer(private val model: AstronomerModel, resources: Resources) :
       if (now.after(comet.start) && now.before(comet.end)) {
         label.text = name
         theImage.setImageId(R.drawable.earth) // temp placeholder!
+        // TODO(johntaylor): wait...are we really updating the image positions by dipping into
+        // the coordinate object we pass in? That's terrible.
+        coords = comet.pos(now)
+        searchLocation = comet.pos(now)
       } else {
         // TODO(johntaylor): we need a better solution than just blanking out the object!
         label.text = " "
@@ -170,15 +178,16 @@ class CometsLayer(private val model: AstronomerModel, resources: Resources) :
     }
 
     override fun initialize(): Renderable {
-      updateShower()
+      updateComets()
       return this
     }
 
     override fun update(): EnumSet<UpdateType> {
       val updateTypes = EnumSet.noneOf(UpdateType::class.java)
       if (abs(model.time.time - lastUpdateTimeMs) > UPDATE_FREQ_MS) {
-        updateShower()
-        updateTypes.add(UpdateType.Reset)
+        updateComets()
+        updateTypes.add(UpdateType.UpdateImages)
+        updateTypes.add(UpdateType.UpdatePositions)
       }
       return updateTypes
     }
@@ -197,9 +206,10 @@ class CometsLayer(private val model: AstronomerModel, resources: Resources) :
       // appears to be a bug in the renderer/layer interface in that Update values are not
       // respected.  Ditto the label.
       // TODO(johntaylor): fix the bug and remove this blank image
-      theImage = ImagePrimitive(comet.pos, resources, R.drawable.blank, UP, SCALE_FACTOR)
+      coords = comet.pos(model.time)
+      theImage = ImagePrimitive(coords, resources, R.drawable.blank, UP, SCALE_FACTOR)
       images.add(theImage)
-      label = TextPrimitive(comet.pos, name, LABEL_COLOR)
+      label = TextPrimitive(coords, name, LABEL_COLOR)
       labels.add(label)
     }
   }
