@@ -266,7 +266,7 @@ class CometsLayer(private val model: AstronomerModel, resources: Resources) :
       theImage.setUpVector(UP)
       if (now.after(comet.start) && now.before(comet.end)) {
         label.text = name
-        theImage.setImageId(R.drawable.earth) // temp placeholder!
+        theImage.setImageId(R.drawable.comet)
         isVisible = true
         // TODO(johntaylor): wait...are we really updating the image positions by dipping into
         // the coordinate object we pass in? That's terrible.
