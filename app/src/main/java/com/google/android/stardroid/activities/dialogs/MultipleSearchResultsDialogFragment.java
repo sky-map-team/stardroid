@@ -48,7 +48,7 @@ public class MultipleSearchResultsDialogFragment extends DialogFragment {
           Log.d(TAG, "Many search results Dialog closed with cancel");
         } else {
           final SearchResult item = multipleSearchResultsAdaptor.getItem(whichButton);
-          parentActivity.activateSearchTarget(item.coords, item.capitalizedName);
+          parentActivity.activateSearchTarget(item.coords(), item.capitalizedName);
         }
         dialog.dismiss();
       }

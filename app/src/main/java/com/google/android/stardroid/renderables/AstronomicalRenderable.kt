@@ -36,7 +36,13 @@ interface AstronomicalRenderable : Renderable {
      * This is the point to which the user will be directed for a search.
      * @return
      */
-    val searchLocation: Vector3?
+    val searchLocation: Vector3
+
+    /**
+     * True if the object should be visible in search results
+     */
+    var isVisible: Boolean
+
     /**
      * Returns the zoom level to which the user should be taken (in manual mode)
      * to completely see this object when searching.

@@ -69,6 +69,9 @@
     <string name="search_hint" translation_description="an example search target">e.g. Mars</string>
     <string name="no_search_title">No results</string>
     <string name="no_search_results_text">No results were found.</string>
+    <!-- Hopefully this is a temporary measure until we can fix the search engine -->
+    <string name="no_search_results_text2">No results were found. Perhaps the object is not
+        visible at this time.</string>
     <string name="many_search_results_title">Did you mean?</string>
     <string name="many_search_results_text">Please select one</string>
     <string name="searching_for_text">Searching for %s...</string>

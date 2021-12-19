@@ -174,6 +174,7 @@ class MeteorShowerLayer(private val model: AstronomerModel, resources: Resources
             theImage.setUpVector(UP)
             // TODO(johntaylor): consider varying the sizes by scaling factor as time progresses.
             if (now.after(shower.start) && now.before(shower.end)) {
+                isVisible = true
                 label.text = name
                 val percentToPeak = if (now.before(shower.peak)) {
                     (now.time - shower.start.time).toDouble() /
@@ -190,6 +191,7 @@ class MeteorShowerLayer(private val model: AstronomerModel, resources: Resources
                     theImage.setImageId(R.drawable.meteor1_screen)
                 }
             } else {
+                isVisible = false
                 label.text = " "
                 theImage.setImageId(R.drawable.blank)
             }

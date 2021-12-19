@@ -124,7 +124,7 @@ class ProtobufAstronomicalRenderable(
         return names!!
     }
 */
-    override val searchLocation: Vector3?
+    override val searchLocation: Vector3
         get() = getCoords(proto.searchLocation)
 
     override val points: List<PointPrimitive>
