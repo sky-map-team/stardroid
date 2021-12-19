@@ -8,8 +8,8 @@ android {
         applicationId "com.google.android.stardroid"
         minSdkVersion 21
         targetSdkVersion 31
-        versionCode 1524
-        versionName "1.9.7 - RC1"
+        versionCode 1530
+        versionName "1.10.0 - RC1"
         buildConfigField 'String', 'GOOGLE_ANALYTICS_CODE', '""'
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
