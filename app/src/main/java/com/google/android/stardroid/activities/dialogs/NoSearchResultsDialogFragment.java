@@ -32,7 +32,7 @@ public class NoSearchResultsDialogFragment extends DialogFragment {
     ((HasComponent<ActivityComponent>) getActivity()).getComponent().inject(this);
 
     return new AlertDialog.Builder(parentActivity)
-        .setTitle(R.string.no_search_title).setMessage(R.string.no_search_results_text)
+        .setTitle(R.string.no_search_title).setMessage(R.string.no_search_results_text2)
         .setNegativeButton(android.R.string.ok, new DialogInterface.OnClickListener() {
           public void onClick(DialogInterface dialog1, int whichButton) {
             Log.d(TAG, "No search results Dialog closed");

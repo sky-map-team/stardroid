@@ -13,8 +13,6 @@
 // limitations under the License.
 package com.google.android.stardroid.math
 
-import com.google.android.stardroid.math.MathUtils.cos
-import com.google.android.stardroid.math.MathUtils.sin
 import com.google.android.stardroid.math.RaDec.Companion.fromGeocentricCoords
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test

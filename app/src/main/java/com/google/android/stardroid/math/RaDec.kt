@@ -67,27 +67,13 @@ data class RaDec(
         }
 
         @JvmStatic
-        fun calculateRaDecDist(coords: Vector3): RaDec {
+        fun fromGeocentricCoords(coords: Vector3): RaDec {
             // find the RA and DEC from the rectangular equatorial coords
             val ra = mod2pi(atan2(coords.y, coords.x)) * RADIANS_TO_DEGREES
             val dec =
                 (atan(coords.z / sqrt(coords.x * coords.x + coords.y * coords.y))
                         * RADIANS_TO_DEGREES)
             return RaDec(ra, dec)
-        }
-
-        @JvmStatic
-        fun fromGeocentricCoords(coords: Vector3): RaDec {
-            var raRad = atan2(coords.y, coords.x)
-            if (raRad < 0) raRad += TWO_PI
-            val decRad = atan2(
-                coords.z,
-                sqrt(coords.x * coords.x + coords.y * coords.y)
-            )
-            return RaDec(
-                raRad * RADIANS_TO_DEGREES,
-                decRad * RADIANS_TO_DEGREES
-            )
         }
 
         @JvmStatic

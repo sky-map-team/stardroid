@@ -50,9 +50,8 @@ abstract class AbstractRenderablesLayer(resources: Resources, private val should
             linePrimitives.addAll(renderables.lines)
             val names = astroRenderable.names
             if (!names.isEmpty()) {
-                val searchLoc = astroRenderable.searchLocation
                 for (name in names) {
-                    searchIndex[name.toLowerCase()] = SearchResult(name, searchLoc)
+                    searchIndex[name.toLowerCase()] = SearchResult(name, astroRenderable)
                     prefixStore.add(name.toLowerCase())
                 }
             }
@@ -105,9 +104,9 @@ abstract class AbstractRenderablesLayer(resources: Resources, private val should
 
     override fun searchByObjectName(name: String): List<SearchResult> {
         Log.d(TAG, "Search planets layer for $name")
-        val matches: MutableList<SearchResult> = ArrayList()
+        val matches = ArrayList<SearchResult>()
         val searchResult = searchIndex[name.toLowerCase()]
-        if (searchResult != null) {
+        if (searchResult != null && searchResult.renderable.isVisible) {
             matches.add(searchResult)
         }
         Log.d(TAG, layerName + " provided " + matches.size + "results for " + name)
@@ -122,6 +121,6 @@ abstract class AbstractRenderablesLayer(resources: Resources, private val should
     }
 
     companion object {
-        private val TAG = MiscUtil.getTag(AbstractRenderablesLayer::class.java)
+        val TAG = MiscUtil.getTag(AbstractRenderablesLayer::class.java)
     }
 }
