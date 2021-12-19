@@ -14,9 +14,9 @@ open class SunOrbitingObject(solarSystemBody : SolarSystemBody) : SolarSystemObj
         val earthCoords =
             heliocentricCoordinatesFromOrbitalElements(SolarSystemBody.Earth.getOrbitalElements(date))
         var myCoords = getMyHeliocentricCoordinates(date)
-        myCoords.minusAssign(earthCoords)
+        myCoords -= earthCoords
         val equ = convertToEquatorialCoordinates(myCoords)
-        return RaDec.calculateRaDecDist(equ)
+        return RaDec.fromGeocentricCoords(equ)
     }
 
     protected open fun getMyHeliocentricCoordinates(date: Date) =

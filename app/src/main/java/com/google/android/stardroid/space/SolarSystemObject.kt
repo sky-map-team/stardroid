@@ -5,7 +5,7 @@ import com.google.android.stardroid.ephemeris.SolarSystemBody
 import com.google.android.stardroid.math.*
 import java.util.*
 
-import com.google.android.stardroid.math.RaDec.Companion.calculateRaDecDist
+import com.google.android.stardroid.math.RaDec.Companion.fromGeocentricCoords
 import kotlin.math.cos
 
 import com.google.android.stardroid.math.Vector3
@@ -59,7 +59,7 @@ abstract class SolarSystemObject(protected val solarSystemBody : SolarSystemBody
             val moon: Vector3 = getGeocentricCoords(moonRaDec)
             val sunCoords: Vector3 =
                 heliocentricCoordinatesFromOrbitalElements(SolarSystemBody.Earth.getOrbitalElements(time))
-            val sunRaDec = calculateRaDecDist(sunCoords)
+            val sunRaDec = fromGeocentricCoords(sunCoords)
             val (x, y, z) = getGeocentricCoords(sunRaDec)
             return 180.0f -
                     MathUtils.acos(x * moon.x + y * moon.y + z * moon.z) * RADIANS_TO_DEGREES
@@ -75,6 +75,7 @@ abstract class SolarSystemObject(protected val solarSystemBody : SolarSystemBody
         val earthDistance = planetCoords.distanceFrom(earthCoords)
 
         // Finally, calculate the phase of the body.
+        // TODO(johntaylor): reexamine this.
         return MathUtils.acos(
             (earthDistance * earthDistance +
                     planetCoords.length2 -
