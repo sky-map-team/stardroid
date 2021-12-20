@@ -50,7 +50,7 @@ class MeteorShowerLayer(private val model: AstronomerModel, resources: Resources
         showers.add(
             Shower(
                 R.string.quadrantids, getGeocentricCoords(230f, 49f),
-                Date(ANY_OLD_YEAR, 0, 1),
+                Date.fromUtcYmd(ANY_OLD_YEAR, 0, 1),
                 Date(ANY_OLD_YEAR, 0, 4),
                 Date(ANY_OLD_YEAR, 0, 12),
                 120
