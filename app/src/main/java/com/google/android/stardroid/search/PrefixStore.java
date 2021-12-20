@@ -40,6 +40,9 @@ public class PrefixStore {
 
   private static final Set<String> EMPTY_SET = Collections.unmodifiableSet(new HashSet<String>());
 
+  public void clear() {
+    root = new TrieNode();
+  }
   /**
    * Search for any queries matching this prefix.  Note that the prefix is
    * case-independent.

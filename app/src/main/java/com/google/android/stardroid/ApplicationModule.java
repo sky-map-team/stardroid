@@ -18,6 +18,7 @@ import com.google.android.stardroid.control.AstronomerModelImpl;
 import com.google.android.stardroid.control.MagneticDeclinationCalculator;
 import com.google.android.stardroid.control.RealMagneticDeclinationCalculator;
 import com.google.android.stardroid.control.ZeroMagneticDeclinationCalculator;
+import com.google.android.stardroid.layers.CometsLayer;
 import com.google.android.stardroid.layers.EclipticLayer;
 import com.google.android.stardroid.layers.GridLayer;
 import com.google.android.stardroid.layers.HorizonLayer;
@@ -153,6 +154,7 @@ public class ApplicationModule {
     layerManager.addLayer(new ConstellationsLayer(assetManager, resources));
     layerManager.addLayer(new SolarSystemLayer(model, resources, preferences));
     layerManager.addLayer(new MeteorShowerLayer(model, resources));
+    layerManager.addLayer(new CometsLayer(model, resources));
     layerManager.addLayer(new GridLayer(resources, 24, 9));
     layerManager.addLayer(new HorizonLayer(model, resources));
     layerManager.addLayer(new EclipticLayer(resources));

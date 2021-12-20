@@ -35,10 +35,11 @@ abstract class AbstractAstronomicalRenderable : AstronomicalRenderable {
     /** Implementors of this method must implement [.getSearchLocation].  */
     override val names: List<String>
         get() = emptyList()
-    override val searchLocation: Vector3?
+    override val searchLocation: Vector3
         get() {
             throw UnsupportedOperationException("Should not be called")
         }
+    override var isVisible = true
     override val images: List<ImagePrimitive>
         get() = emptyList()
     override val labels: List<TextPrimitive>

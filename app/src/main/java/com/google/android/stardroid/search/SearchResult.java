@@ -15,6 +15,7 @@
 package com.google.android.stardroid.search;
 
 import com.google.android.stardroid.math.Vector3;
+import com.google.android.stardroid.renderables.AstronomicalRenderable;
 
 /**
  * A single search result.
@@ -22,18 +23,23 @@ import com.google.android.stardroid.math.Vector3;
  * @author John Taylor
  */
 public class SearchResult {
-  /** The coordinates of the object.*/
-  public Vector3 coords;
-  /** The user-presentable name of the object, properly capitalized.*/
+  public AstronomicalRenderable renderable;
+  /**
+   * The user-presentable name of the object, properly capitalized.
+   */
   public String capitalizedName;
 
   /**
    * @param capitalizedName The user-presentable name of the object, properly capitalized.
-   * @param coords The geocentric coordinates of the object.
+   * @param renderable      The searched for object..
    */
-  public SearchResult(String capitalizedName, Vector3 coords) {
+  public SearchResult(String capitalizedName, AstronomicalRenderable renderable) {
     this.capitalizedName = capitalizedName;
-    this.coords = coords;
+    this.renderable = renderable;
+  }
+
+  public Vector3 coords() {
+    return renderable.getSearchLocation();
   }
 
   @Override
