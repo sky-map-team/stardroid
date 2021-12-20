@@ -23,6 +23,9 @@ import com.google.android.stardroid.math.getGeocentricCoords
 import com.google.android.stardroid.renderables.*
 import com.google.android.stardroid.renderer.RendererObjectManager.UpdateType
 import com.google.android.stardroid.util.dateFromUtcHmd
+import java.time.LocalDate
+import java.time.LocalDateTime
+import java.time.ZoneId
 import java.util.*
 import kotlin.math.abs
 
@@ -123,7 +126,7 @@ class MeteorShowerLayer(private val model: AstronomerModel, resources: Resources
     showers.add(
       Shower(
         R.string.geminids, getGeocentricCoords(112f, 33f),
-        dateFromUtcHmd(ANY_OLD_YEAR, 12, 7),
+        dateFromUtcHmd(ANY_OLD_YEAR, 12, 6),
         dateFromUtcHmd(ANY_OLD_YEAR, 12, 14),
         dateFromUtcHmd(ANY_OLD_YEAR, 12, 17),
         120
@@ -132,7 +135,7 @@ class MeteorShowerLayer(private val model: AstronomerModel, resources: Resources
     showers.add(
       Shower(
         R.string.ursids, getGeocentricCoords(217f, 76f),
-        dateFromUtcHmd(ANY_OLD_YEAR, 12, 17),
+        dateFromUtcHmd(ANY_OLD_YEAR, 12, 16),
         dateFromUtcHmd(ANY_OLD_YEAR, 12, 23),
         dateFromUtcHmd(ANY_OLD_YEAR, 12, 26),
         10
@@ -169,9 +172,12 @@ class MeteorShowerLayer(private val model: AstronomerModel, resources: Resources
     private fun updateShower() {
       lastUpdateTimeMs = model.time.time
       // We will only show the shower if it's the right time of year.
-      val now = model.time
+      val localDate = model.time.toInstant()
+        .atZone(ZoneId.of("UTC"))
+        .toLocalDate();
       // Standardize on the same year as we stored for the showers.
-      now.year = ANY_OLD_YEAR
+      var now = dateFromUtcHmd(ANY_OLD_YEAR, localDate.monthValue, localDate.dayOfMonth)
+
       theImage.setUpVector(UP)
       // TODO(johntaylor): consider varying the sizes by scaling factor as time progresses.
       if (now.after(shower.start) && now.before(shower.end)) {
@@ -239,7 +245,7 @@ class MeteorShowerLayer(private val model: AstronomerModel, resources: Resources
   }
 
   companion object {
-    private const val ANY_OLD_YEAR = 100 // = year 2000
+    private const val ANY_OLD_YEAR = 2000
 
     /** Number of meteors per hour for the larger graphic  */
     private const val METEOR_THRESHOLD_PER_HR = 10.0
