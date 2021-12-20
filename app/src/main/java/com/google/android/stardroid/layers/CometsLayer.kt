@@ -26,10 +26,7 @@ import com.google.android.stardroid.math.getGeocentricCoords
 import com.google.android.stardroid.renderables.*
 import com.google.android.stardroid.renderer.RendererObjectManager.UpdateType
 import com.google.android.stardroid.util.MiscUtil
-import java.time.LocalDate
-import java.time.LocalTime
-import java.time.ZoneId
-import java.time.ZonedDateTime
+import com.google.android.stardroid.util.dateFromUtcHmd
 import java.util.*
 import kotlin.math.abs
 
@@ -47,18 +44,11 @@ class CometsLayer(private val model: AstronomerModel, resources: Resources) :
 
   @RequiresApi(Build.VERSION_CODES.O)
   data class TimeEntry(
-    private val localdate: LocalDate,  // Assumed UTC
+    val date: Date,
     val raDeg: Float,
     val decDeg: Float,
     val mag: Float
-  ) {
-    val date: Date
-
-    init {
-      val zonedDateTime = ZonedDateTime.of(localdate, LocalTime.MIDNIGHT, ZoneId.of("UTC"))
-      date = Date.from(zonedDateTime.toInstant())
-    }
-  }
+  )
 
   /**
    * Simple linear interpolation.
@@ -141,85 +131,85 @@ class CometsLayer(private val model: AstronomerModel, resources: Resources) :
         R.string.comet_leonard,
         listOf(
           TimeEntry(
-            LocalDate.of(2021, 12, 11),
+            dateFromUtcHmd(2021, 12, 11),
             raDegreesFromHMS(16f, 18f, 29f),
             decDegreesFromDMS(7f, 08f, 17f),
             8f
           ),
           TimeEntry(
-            LocalDate.of(2021, 12, 12),
+            dateFromUtcHmd(2021, 12, 12),
             raDegreesFromHMS(16f, 49f, 54f),
             decDegreesFromDMS(1f, 32f, 35f),
             8f
           ),
           TimeEntry(
-            LocalDate.of(2021, 12, 13),
+            dateFromUtcHmd(2021, 12, 13),
             raDegreesFromHMS(17f, 22f, 18f),
             decDegreesFromDMS(-4f, 18f, 41f),
             8f
           ),
           TimeEntry(
-            LocalDate.of(2021, 12, 14),
+            dateFromUtcHmd(2021, 12, 14),
             raDegreesFromHMS(17f, 54f, 23f),
             decDegreesFromDMS(-9f, 57f, 38f),
             8f
           ),
           TimeEntry(
-            LocalDate.of(2021, 12, 15),
+            dateFromUtcHmd(2021, 12, 15),
             raDegreesFromHMS(18f, 24f, 50f),
             decDegreesFromDMS(-15f, 00f, 35f),
             8f
           ),
           TimeEntry(
-            LocalDate.of(2021, 12, 16),
+            dateFromUtcHmd(2021, 12, 16),
             raDegreesFromHMS(18f, 52f, 44f),
             decDegreesFromDMS(-19f, 15f, 14f),
             8f
           ),
           TimeEntry(
-            LocalDate.of(2021, 12, 17),
+            dateFromUtcHmd(2021, 12, 17),
             raDegreesFromHMS(19f, 17f, 35f),
             decDegreesFromDMS(-22f, 40f, 24f),
             8f
           ),
           TimeEntry(
-            LocalDate.of(2021, 12, 18),
+            dateFromUtcHmd(2021, 12, 18),
             raDegreesFromHMS(19f, 39f, 19f),
             decDegreesFromDMS(-25f, 21f, 51f),
             8f
           ),
           TimeEntry(
-            LocalDate.of(2021, 12, 19),
+            dateFromUtcHmd(2021, 12, 19),
             raDegreesFromHMS(19f, 58f, 04f),
             decDegreesFromDMS(-27f, 27f, 36f),
             9f
           ),
           TimeEntry(
-            LocalDate.of(2021, 12, 20),
+            dateFromUtcHmd(2021, 12, 20),
             raDegreesFromHMS(20f, 14f, 07f),
             decDegreesFromDMS(-29f, 05f, 35f),
             9f
           ),
           TimeEntry(
-            LocalDate.of(2021, 12, 21),
+            dateFromUtcHmd(2021, 12, 21),
             raDegreesFromHMS(20f, 27f, 50f),
             decDegreesFromDMS(-30f, 22f, 22f),
             9f
           ),
           TimeEntry(
-            LocalDate.of(2021, 12, 22),
+            dateFromUtcHmd(2021, 12, 22),
             raDegreesFromHMS(20f, 39f, 30f),
             decDegreesFromDMS(-31f, 23f, 09f),
             9f
           ),
           TimeEntry(
-            LocalDate.of(2021, 12, 23),
+            dateFromUtcHmd(2021, 12, 23),
             raDegreesFromHMS(20f, 49f, 29f),
             decDegreesFromDMS(-32f, 11f, 50f),
             9.23f
           ),
           TimeEntry(
-            LocalDate.of(2021, 12, 24),
+            dateFromUtcHmd(2021, 12, 24),
             raDegreesFromHMS(20f, 58f, 00f),
             decDegreesFromDMS(-32f, 51f, 30f),
             9.36f
