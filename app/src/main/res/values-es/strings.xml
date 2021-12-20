@@ -136,8 +136,8 @@
     <string name="kml_load_error">Error al cargar el archivo KML</string>
     <string name="load_kml_dialog_title">Cargar KML</string>
     <string name="load_kml_file">Cargar</string>
-    <string name="enable_analytics">enviar estadísticas de uso</string>
-    <string name="enable_analytics_desc">Haz Sky Map mejor al enviar datos anónimos a Google Analytics</string>
+    <string name="enable_analytics">Enviar estadísticas de uso</string>
+    <string name="enable_analytics_desc">Mejorar Sky Map enviando datos anónimos a Google Analytics</string>
 
     <string name="no_sensor_warning">Es posible que tu dispositivo no tenga sensores de orientación; el modo auto no funcionará</string>
     <string name="warning_dialog_title">¡Malas noticias!</string>
