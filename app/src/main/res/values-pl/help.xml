@@ -1,4 +1,5 @@
-<resources><string name="help_text" translation_description="Please do not change the &lt; and &gt; markup">
+<resources>
+<string name="help_text" translation_description="Please do not change the &lt; and &gt; markup">
 &lt;big&gt;&lt;b&gt;Sky Map dla Androida&lt;/b&gt;&lt;/big&gt;&lt;br/&gt;
 &lt;i&gt;Wersja %s&lt;/i&gt;&lt;br/&gt;
 &lt;i&gt;https://github.com/sky-map-team/stardroid&lt;/i&gt;&lt;br/&gt;&lt;br/&gt;
@@ -44,7 +45,7 @@ a Sky Map wyświetli listę pasujących obiektów. Wybierz jeden z nich, a Sky M
 i strzałkę wskazującą, w którym kierunku musisz przesunąć telefon, aby znaleźć obiekt.
 Kółko zmieni się z niebieskiego na czerwone, ostatecznie zmieniając się na pomarańczowe,
 gdy tylko obiekt będzie w Twoim polu widzenia.&lt;br/&gt;
-UWAGA: Jeśli jesteś w trybie manualnym, Sky Map po prostu przesunie mapę, aby pokazać obiekt.&lt;br/&gt;
+UWAGA: Jeśli jesteś w trybie ręcznym, Sky Map po prostu przesunie mapę, aby pokazać obiekt.&lt;br/&gt;
 Aby wyjść z trybu wyszukiwania, naciśnij mały krzyżyk w rogu ekranu.&lt;br/&gt;&lt;br/&gt;
 
 &lt;b&gt;Podróż w czasie&lt;/b&gt;&lt;br/&gt;
@@ -106,12 +107,12 @@ są prawidłowe.&lt;br/&gt;
 4) Czy masz włączoną poprawkę magnetyczną? W niektórych częściach świata
 różnica między północą magnetyczną a rzeczywistą może wynosić nawet 20°.&lt;br/&gt;&lt;br/&gt;
 &lt;i&gt;Mapa się nie przesuwa.&lt;/i&gt;&lt;br/&gt;
-1) Czy jesteś w trybie manualnym? Jeśli nie, może to być spowodowane nieskalibrowanym kompasem.
+1) Czy jesteś w trybie ręcznym? Jeśli nie, może to być spowodowane nieskalibrowanym kompasem.
 Wykonaj po kolei powyższe kroki, aby przywrócić działanie.&lt;br/&gt;
 2) Czy Twój telefon ma wszystkie niezbędne czujniki? Nie wszystkie telefony je mają. Musi posiadać przynajmniej
 kompas i akcelerometr oraz najlepiej też żyroskop. Widok diagnostyki Sky Map pokaże, które
 czujniki posiadasz. Jeśli Twój telefon nie ma żyroskopu, spróbuj zaznaczyć „Wyłącz żyroskop”
-w Ustawienia/Ustawienia czujnika.&lt;br/&gt;&lt;br/&gt;
+w Ustawienia/Ustawienia czujnika (zaawansowane).&lt;br/&gt;&lt;br/&gt;
 
 &lt;b&gt;Jeśli nic nie pomoże, wyślij nam e-maila (najlepiej ze zrzutem ekranu widoku diagnostyki), a pomożemy Ci z tym.&lt;/b&gt; &lt;br/&gt;&lt;br/&gt;
 
