@@ -22,7 +22,7 @@ dependencies {
     // Unlike the Android App which should only use the lite version of protos we need the full
     // version here as we need TextFormat which doesn't exist in the lite app.
     implementation 'com.google.protobuf:protobuf-java:3.13.0'
-    implementation 'com.google.guava:guava:21.0'
+    implementation 'com.google.guava:guava:24.1-jre'
 }
 
 // Gradle fail.  Creating multiple distributions in a distributions {} does not generate
@@ -30,3 +30,8 @@ dependencies {
 // So instead we create one monster that can do it all.
 applicationName = "datagen"
 mainClassName = "com.google.android.stardroid.data.Main"
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
