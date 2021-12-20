@@ -29,98 +29,98 @@ import java.util.*
  */
 // TODO(brent): merge with AbstractLayer?
 abstract class AbstractRenderablesLayer(resources: Resources, private val shouldUpdate: Boolean) :
-    AbstractLayer(resources) {
-    private val textPrimitives = ArrayList<TextPrimitive>()
-    private val imagePrimitives = ArrayList<ImagePrimitive>()
-    private val pointPrimitives = ArrayList<PointPrimitive>()
-    private val linePrimitives = ArrayList<LinePrimitive>()
-    private val astroRenderables = ArrayList<AstronomicalRenderable>()
-    private val searchIndex = HashMap<String, SearchResult>()
-    private val prefixStore = PrefixStore()
+  AbstractLayer(resources) {
+  private val textPrimitives = ArrayList<TextPrimitive>()
+  private val imagePrimitives = ArrayList<ImagePrimitive>()
+  private val pointPrimitives = ArrayList<PointPrimitive>()
+  private val linePrimitives = ArrayList<LinePrimitive>()
+  private val astroRenderables = ArrayList<AstronomicalRenderable>()
+  private val searchIndex = HashMap<String, SearchResult>()
+  private val prefixStore = PrefixStore()
 
-    @Synchronized
-    override fun initialize() {
-        astroRenderables.clear()
-        initializeAstroSources(astroRenderables)
-        for (astroRenderable in astroRenderables) {
-            val renderables = astroRenderable.initialize()
-            textPrimitives.addAll(renderables.labels)
-            imagePrimitives.addAll(renderables.images)
-            pointPrimitives.addAll(renderables.points)
-            linePrimitives.addAll(renderables.lines)
-            val names = astroRenderable.names
-            if (!names.isEmpty()) {
-                for (name in names) {
-                    searchIndex[name.toLowerCase()] = SearchResult(name, astroRenderable)
-                    prefixStore.add(name.toLowerCase())
-                }
-            }
+  @Synchronized
+  override fun initialize() {
+    astroRenderables.clear()
+    initializeAstroSources(astroRenderables)
+    for (astroRenderable in astroRenderables) {
+      val renderables = astroRenderable.initialize()
+      textPrimitives.addAll(renderables.labels)
+      imagePrimitives.addAll(renderables.images)
+      pointPrimitives.addAll(renderables.points)
+      linePrimitives.addAll(renderables.lines)
+      val names = astroRenderable.names
+      if (names.isNotEmpty()) {
+        for (name in names) {
+          searchIndex[name.lowercase()] = SearchResult(name, astroRenderable)
+          prefixStore.add(name.lowercase())
         }
-
-        // update the renderer
-        updateLayerForControllerChange()
+      }
     }
 
-    override fun updateLayerForControllerChange() {
-        refreshSources(EnumSet.of(UpdateType.Reset))
-        if (shouldUpdate) {
-            addUpdateClosure(this::refreshSources)
-        }
-    }
+    // update the renderer
+    updateLayerForControllerChange()
+  }
 
-    /**
-     * Subclasses should override this method and add all their
-     * [AstronomicalRenderable] to the given [ArrayList].
-     */
-    protected abstract fun initializeAstroSources(sources: ArrayList<AstronomicalRenderable>)
-
-    /**
-     * Redraws the sources on this layer, after first refreshing them based on
-     * the current state of the
-     * [com.google.android.stardroid.control.AstronomerModel].
-     */
-    protected fun refreshSources() {
-        refreshSources(EnumSet.noneOf(UpdateType::class.java))
+  override fun updateLayerForControllerChange() {
+    refreshSources(EnumSet.of(UpdateType.Reset))
+    if (shouldUpdate) {
+      addUpdateClosure(this::refreshSources)
     }
+  }
 
-    /**
-     * Redraws the sources on this layer, after first refreshing them based on
-     * the current state of the
-     * [com.google.android.stardroid.control.AstronomerModel].
-     */
-    @Synchronized
-    protected fun refreshSources(updateTypes: EnumSet<UpdateType>) {
-        for (astroRenderable in astroRenderables) {
-            updateTypes.addAll(astroRenderable.update())
-        }
-        if (!updateTypes.isEmpty()) {
-            redraw(updateTypes)
-        }
-    }
+  /**
+   * Subclasses should override this method and add all their
+   * [AstronomicalRenderable] to the given [ArrayList].
+   */
+  protected abstract fun initializeAstroSources(sources: ArrayList<AstronomicalRenderable>)
 
-    private fun redraw(updateTypes: EnumSet<UpdateType>) {
-        super.redraw(textPrimitives, pointPrimitives, linePrimitives, imagePrimitives, updateTypes)
-    }
+  /**
+   * Redraws the sources on this layer, after first refreshing them based on
+   * the current state of the
+   * [com.google.android.stardroid.control.AstronomerModel].
+   */
+  private fun refreshSources() {
+    refreshSources(EnumSet.noneOf(UpdateType::class.java))
+  }
 
-    override fun searchByObjectName(name: String): List<SearchResult> {
-        Log.d(TAG, "Search planets layer for $name")
-        val matches = ArrayList<SearchResult>()
-        val searchResult = searchIndex[name.toLowerCase()]
-        if (searchResult != null && searchResult.renderable.isVisible) {
-            matches.add(searchResult)
-        }
-        Log.d(TAG, layerName + " provided " + matches.size + "results for " + name)
-        return matches
+  /**
+   * Redraws the sources on this layer, after first refreshing them based on
+   * the current state of the
+   * [com.google.android.stardroid.control.AstronomerModel].
+   */
+  @Synchronized
+  protected fun refreshSources(updateTypes: EnumSet<UpdateType>) {
+    for (astroRenderable in astroRenderables) {
+      updateTypes.addAll(astroRenderable.update())
     }
+    if (!updateTypes.isEmpty()) {
+      redraw(updateTypes)
+    }
+  }
 
-    override fun getObjectNamesMatchingPrefix(prefix: String): Set<String> {
-        Log.d(TAG, "Searching planets layer for prefix $prefix")
-        val results = prefixStore.queryByPrefix(prefix)
-        Log.d(TAG, "Got " + results.size + " results for prefix " + prefix + " in " + layerName)
-        return results
-    }
+  private fun redraw(updateTypes: EnumSet<UpdateType>) {
+    super.redraw(textPrimitives, pointPrimitives, linePrimitives, imagePrimitives, updateTypes)
+  }
 
-    companion object {
-        val TAG = MiscUtil.getTag(AbstractRenderablesLayer::class.java)
+  override fun searchByObjectName(name: String): List<SearchResult> {
+    Log.d(TAG, "Search planets layer for $name")
+    val matches = ArrayList<SearchResult>()
+    val searchResult = searchIndex[name.lowercase()]
+    if (searchResult != null && searchResult.renderable.isVisible) {
+      matches.add(searchResult)
     }
+    Log.d(TAG, layerName + " provided " + matches.size + "results for " + name)
+    return matches
+  }
+
+  override fun getObjectNamesMatchingPrefix(prefix: String): Set<String> {
+    Log.d(TAG, "Searching planets layer for prefix $prefix")
+    val results = prefixStore.queryByPrefix(prefix)
+    Log.d(TAG, "Got " + results.size + " results for prefix " + prefix + " in " + layerName)
+    return results
+  }
+
+  companion object {
+    val TAG = MiscUtil.getTag(AbstractRenderablesLayer::class.java)
+  }
 }

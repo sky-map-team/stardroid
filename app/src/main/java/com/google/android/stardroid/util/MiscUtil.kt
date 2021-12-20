@@ -14,6 +14,11 @@
 package com.google.android.stardroid.util
 
 import com.google.android.stardroid.ApplicationConstants
+import java.time.LocalDate
+import java.time.LocalTime
+import java.time.ZoneId
+import java.time.ZonedDateTime
+import java.util.*
 
 /**
  * A collection of miscellaneous utility functions.
@@ -28,4 +33,14 @@ object MiscUtil {
             ApplicationConstants.APP_NAME + "." + o.simpleName
         } else ApplicationConstants.APP_NAME + "." + o.javaClass.simpleName
     }
+}
+
+/** Returns a date given the year, month and day in UTC.
+ * The month is specified sanely, ie from 1.
+ */
+fun dateFromUtcHmd(y: Int, m: Int, d: Int) : Date {
+    val localdate = LocalDate.of(y, m, d)
+    val zonedDateTime = ZonedDateTime.of(localdate, LocalTime.MIDNIGHT, ZoneId.of("UTC"))
+    val date = Date.from(zonedDateTime.toInstant())
+    return date
 }
