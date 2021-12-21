@@ -134,6 +134,7 @@ class CometsLayer(private val model: AstronomerModel, resources: Resources) :
   }
 
   private fun initializeComets() {
+    // Data credit: InTheSky.org
     comets.add(
       Comet(
         R.string.comet_leonard,
@@ -239,6 +240,30 @@ class CometsLayer(private val model: AstronomerModel, resources: Resources) :
             LocalDate.of(2021, 12, 27),
             raDegreesFromHMS(21f, 16f, 53f),
             decDegreesFromDMS(-34f, 13f, 17f),
+            9.71f
+          ),
+          TimeEntry(
+            LocalDate.of(2021, 12, 28),
+            raDegreesFromHMS(21f, 22f, 31f),
+            decDegreesFromDMS(-34f, 20f, 38f),
+            9.71f
+          ),
+          TimeEntry(
+            LocalDate.of(2021, 12, 29),
+            raDegreesFromHMS(21f, 26f, 22f),
+            decDegreesFromDMS(-34f, 37f, 11f),
+            9.71f
+          ),
+          TimeEntry(
+            LocalDate.of(2021, 12, 30),
+            raDegreesFromHMS(21f, 29f, 39f),
+            decDegreesFromDMS(-34f, 51f, 29f),
+            9.71f
+          ),
+          TimeEntry(
+            LocalDate.of(2021, 12, 31),
+            raDegreesFromHMS(21f, 32f, 27f),
+            decDegreesFromDMS(-35f, 03f, 55f),
             9.71f
           ),
         )
