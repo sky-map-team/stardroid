@@ -1,5 +1,4 @@
-// Copyright 2011 Google Inc.
-//
+
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
@@ -72,7 +71,7 @@ class CometsLayer(private val model: AstronomerModel, resources: Resources) :
   }
 
   private class Comet(
-    val nameId: Int, private val positions: List<TimeEntry>
+    val nameId: Int, val searchAltNameId: Int, private val positions: List<TimeEntry>
   ) {
     val start: Date
     val end: Date
@@ -129,6 +128,7 @@ class CometsLayer(private val model: AstronomerModel, resources: Resources) :
     comets.add(
       Comet(
         R.string.comet_leonard,
+        R.string.comet_leonard_alt,
         listOf(
           TimeEntry(
             dateFromUtcHmd(2021, 12, 11),
@@ -214,6 +214,48 @@ class CometsLayer(private val model: AstronomerModel, resources: Resources) :
             decDegreesFromDMS(-32f, 51f, 30f),
             9.36f
           ),
+          TimeEntry(
+            dateFromUtcHmd(2021, 12, 25),
+            raDegreesFromHMS(21f, 05f, 18f),
+            decDegreesFromDMS(-33f, 23f, 44f),
+            9.48f
+          ),
+          TimeEntry(
+            dateFromUtcHmd(2021, 12, 26),
+            raDegreesFromHMS(21f, 11f, 32f),
+            decDegreesFromDMS(-33f, 50f, 39f),
+            9.60f
+          ),
+          TimeEntry(
+            dateFromUtcHmd(2021, 12, 27),
+            raDegreesFromHMS(21f, 16f, 53f),
+            decDegreesFromDMS(-34f, 13f, 17f),
+            9.71f
+          ),
+          TimeEntry(
+            dateFromUtcHmd(2021, 12, 28),
+            raDegreesFromHMS(21f, 22f, 31f),
+            decDegreesFromDMS(-34f, 20f, 38f),
+            9.71f
+          ),
+          TimeEntry(
+            dateFromUtcHmd(2021, 12, 29),
+            raDegreesFromHMS(21f, 26f, 22f),
+            decDegreesFromDMS(-34f, 37f, 11f),
+            9.71f
+          ),
+          TimeEntry(
+            dateFromUtcHmd(2021, 12, 30),
+            raDegreesFromHMS(21f, 29f, 39f),
+            decDegreesFromDMS(-34f, 51f, 29f),
+            9.71f
+          ),
+          TimeEntry(
+            dateFromUtcHmd(2021, 12, 31),
+            raDegreesFromHMS(21f, 32f, 27f),
+            decDegreesFromDMS(-35f, 03f, 55f),
+            9.71f
+          ),
         )
       )
     )
@@ -244,6 +286,7 @@ class CometsLayer(private val model: AstronomerModel, resources: Resources) :
     private val theImage: ImagePrimitive
     private val label: TextPrimitive
     private val name = resources.getString(comet.nameId)
+    private val searchAltName = resources.getString(comet.searchAltNameId)
     override val names = ArrayList<String>()
     private var coords: Vector3
     override var searchLocation = Vector3.zero()
@@ -296,6 +339,9 @@ class CometsLayer(private val model: AstronomerModel, resources: Resources) :
 
     init {
       names.add(name)
+      // Our search just does prefix matching right now, so provide alternative names
+      // to compensate.
+      names.add(searchAltName)
       // blank is a 1pxX1px image that should be invisible.
       // We'd prefer not to show any image except on the shower dates, but there
       // appears to be a bug in the renderer/layer interface in that Update values are not
