@@ -80,7 +80,7 @@ class CometsLayer(private val model: AstronomerModel, resources: Resources) :
   }
 
   private class Comet(
-    val nameId: Int, private val positions: List<TimeEntry>
+    val nameId: Int, val searchAltNameId: Int, private val positions: List<TimeEntry>
   ) {
     val start: Date
     val end: Date
@@ -137,6 +137,7 @@ class CometsLayer(private val model: AstronomerModel, resources: Resources) :
     comets.add(
       Comet(
         R.string.comet_leonard,
+        R.string.comet_leonard_alt,
         listOf(
           TimeEntry(
             LocalDate.of(2021, 12, 11),
@@ -222,6 +223,24 @@ class CometsLayer(private val model: AstronomerModel, resources: Resources) :
             decDegreesFromDMS(-32f, 51f, 30f),
             9.36f
           ),
+          TimeEntry(
+            LocalDate.of(2021, 12, 25),
+            raDegreesFromHMS(21f, 05f, 18f),
+            decDegreesFromDMS(-33f, 23f, 44f),
+            9.48f
+          ),
+          TimeEntry(
+            LocalDate.of(2021, 12, 26),
+            raDegreesFromHMS(21f, 11f, 32f),
+            decDegreesFromDMS(-33f, 50f, 39f),
+            9.60f
+          ),
+          TimeEntry(
+            LocalDate.of(2021, 12, 27),
+            raDegreesFromHMS(21f, 16f, 53f),
+            decDegreesFromDMS(-34f, 13f, 17f),
+            9.71f
+          ),
         )
       )
     )
@@ -252,6 +271,7 @@ class CometsLayer(private val model: AstronomerModel, resources: Resources) :
     private val theImage: ImagePrimitive
     private val label: TextPrimitive
     private val name = resources.getString(comet.nameId)
+    private val searchAltName = resources.getString(comet.searchAltNameId)
     override val names = ArrayList<String>()
     private var coords: Vector3
     override var searchLocation = Vector3.zero()
@@ -304,6 +324,9 @@ class CometsLayer(private val model: AstronomerModel, resources: Resources) :
 
     init {
       names.add(name)
+      // Our search just does prefix matching right now, so provide alternative names
+      // to compensate.
+      names.add(searchAltName)
       // blank is a 1pxX1px image that should be invisible.
       // We'd prefer not to show any image except on the shower dates, but there
       // appears to be a bug in the renderer/layer interface in that Update values are not
