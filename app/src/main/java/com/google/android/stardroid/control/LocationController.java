@@ -43,6 +43,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.annotation.Nullable;
 import javax.inject.Inject;
 
 /**
@@ -65,7 +66,7 @@ public class LocationController extends AbstractController implements LocationLi
   private LocationManager locationManager;
 
   @Inject
-  public LocationController(Context context, LocationManager locationManager) {
+  public LocationController(Context context, @Nullable LocationManager locationManager) {
     this.context = context;
     if (locationManager != null) {
       Log.d(TAG, "Got location Manager");
