@@ -343,5 +343,8 @@
 
     <!-- Cometas -->
     <string name="comet_leonard">Cometa Leonard</string>
+    <!-- TODO: no need for these alt names once our search is less lousy -->
+    <string name="comet_leonard_alt">Leonard (Cometa)</string>
     <string name="comet_neowise">Cometa Neowise</string>
+    <string name="comet_neowise_alt">Neowise (Cometa)</string>
 </resources>
