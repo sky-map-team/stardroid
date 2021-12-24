@@ -34,6 +34,7 @@ import java.util.Locale;
 import java.util.Set;
 import java.util.TimeZone;
 
+import javax.annotation.Nullable;
 import javax.inject.Inject;
 
 public class DiagnosticActivity extends InjectableActivity implements SensorEventListener {
@@ -42,9 +43,9 @@ public class DiagnosticActivity extends InjectableActivity implements SensorEven
 
   @Inject Analytics analytics;
   @Inject StardroidApplication app;
-  @Inject SensorManager sensorManager;
-  @Inject ConnectivityManager connectivityManager;
-  @Inject LocationManager locationManager;
+  @Inject @Nullable SensorManager sensorManager;
+  @Inject @Nullable ConnectivityManager connectivityManager;
+  @Inject @Nullable LocationManager locationManager;
   @Inject LocationController locationController;
   @Inject AstronomerModel model;
   @Inject Handler handler;

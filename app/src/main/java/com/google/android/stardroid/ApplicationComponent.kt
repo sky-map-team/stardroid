@@ -25,26 +25,26 @@ import javax.inject.Singleton
 @Component(modules = [ApplicationModule::class])
 interface ApplicationComponent {
   // What we expose to dependent components
-  fun provideStardroidApplication(): StardroidApplication?
-  fun provideSharedPreferences(): SharedPreferences?
+  fun provideStardroidApplication(): StardroidApplication
+  fun provideSharedPreferences(): SharedPreferences
   fun provideSensorManager(): SensorManager?
   fun provideConnectivityManager(): ConnectivityManager?
-  fun provideAstronomerModel(): AstronomerModel?
+  fun provideAstronomerModel(): AstronomerModel
   fun provideLocationManager(): LocationManager?
-  fun provideLayerManager(): LayerManager?
-  fun provideAccountManager(): AccountManager?
-  fun provideAnalytics(): AnalyticsInterface?
+  fun provideLayerManager(): LayerManager
+  fun provideAccountManager(): AccountManager
+  fun provideAnalytics(): AnalyticsInterface
 
   @Named("zero")
-  fun provideMagDec1(): MagneticDeclinationCalculator?
+  fun provideMagDec1(): MagneticDeclinationCalculator
 
   @Named("real")
-  fun provideMagDec2(): MagneticDeclinationCalculator?
+  fun provideMagDec2(): MagneticDeclinationCalculator
 
   // Who can we inject
-  fun inject(app: StardroidApplication?)
-  fun inject(activity: EditSettingsActivity?)
-  fun inject(activity: ImageDisplayActivity?)
-  fun inject(activity: ImageGalleryActivity?)
-  fun inject(provider: SearchTermsProvider?)
+  fun inject(app: StardroidApplication)
+  fun inject(activity: EditSettingsActivity)
+  fun inject(activity: ImageDisplayActivity)
+  fun inject(activity: ImageGalleryActivity)
+  fun inject(provider: SearchTermsProvider)
 }

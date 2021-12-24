@@ -27,6 +27,7 @@ import com.google.android.stardroid.util.MiscUtil;
 import com.google.android.stardroid.util.smoothers.ExponentiallyWeightedSmoother;
 import com.google.android.stardroid.util.smoothers.PlainSmootherModelAdaptor;
 
+import javax.annotation.Nullable;
 import javax.inject.Inject;
 import javax.inject.Provider;
 
@@ -75,7 +76,8 @@ public class SensorOrientationController extends AbstractController
 
   @Inject
   SensorOrientationController(Provider<PlainSmootherModelAdaptor> modelAdaptorProvider,
-                              SensorManager manager, SharedPreferences sharedPreferences) {
+                              @Nullable SensorManager manager,
+                              SharedPreferences sharedPreferences) {
     this.manager = manager;
     this.modelAdaptorProvider = modelAdaptorProvider;
     this.rotationSensor = manager.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR);

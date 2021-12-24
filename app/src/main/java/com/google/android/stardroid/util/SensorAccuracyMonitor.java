@@ -12,6 +12,7 @@ import android.util.Log;
 import com.google.android.stardroid.activities.CompassCalibrationActivity;
 import com.google.android.stardroid.base.TimeConstants;
 
+import javax.annotation.Nullable;
 import javax.inject.Inject;
 
 /**
@@ -30,7 +31,8 @@ public class SensorAccuracyMonitor implements SensorEventListener {
 
   @Inject
   SensorAccuracyMonitor(
-      SensorManager sensorManager, Context context, SharedPreferences sharedPreferences,
+      @Nullable SensorManager sensorManager, Context context,
+          SharedPreferences sharedPreferences,
       Toaster toaster) {
     Log.d(TAG, "Creating new accuracy monitor");
     this.sensorManager = sensorManager;
