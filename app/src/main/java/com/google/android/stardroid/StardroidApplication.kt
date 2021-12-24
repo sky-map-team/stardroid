@@ -108,8 +108,8 @@ class StardroidApplication : Application() {
         newUser = true
       }
     }
-    analytics!!.setUserProperty(AnalyticsInterface.NEW_USER, java.lang.Boolean.toString(newUser))
-    preferences!!.edit().putString(PREVIOUS_APP_VERSION_PREF, versionName).commit()
+    analytics?.setUserProperty(AnalyticsInterface.NEW_USER, java.lang.Boolean.toString(newUser))
+    preferences!!.edit().putString(PREVIOUS_APP_VERSION_PREF, versionName).apply()
     if (previousVersion != versionName) {
       // It's either an upgrade or a new installation
       Log.d(TAG, "New installation: version $versionName")
@@ -119,13 +119,13 @@ class StardroidApplication : Application() {
     // It will be interesting to see *when* people use Sky Map.
     val b = Bundle()
     b.putInt(Analytics.START_EVENT_HOUR, Calendar.getInstance()[Calendar.HOUR_OF_DAY])
-    analytics!!.trackEvent(Analytics.START_EVENT, b)
+    analytics?.trackEvent(Analytics.START_EVENT, b)
     preferences!!.registerOnSharedPreferenceChangeListener(preferenceChangeAnalyticsTracker)
   }
 
   override fun onTerminate() {
     super.onTerminate()
-    analytics!!.setEnabled(false)
+    analytics?.setEnabled(false)
   }// TODO(jontayler): update to use the info created by gradle.
 
   /**
@@ -166,11 +166,11 @@ class StardroidApplication : Application() {
   private fun performFeatureCheck() {
     if (sensorManager == null) {
       Log.e(TAG, "No sensor manager")
-      analytics!!.setUserProperty(Analytics.DEVICE_SENSORS, Analytics.DEVICE_SENSORS_NONE)
+      analytics?.setUserProperty(Analytics.DEVICE_SENSORS, Analytics.DEVICE_SENSORS_NONE)
       return
     }
     // Reported available sensors
-    val reportedSensors: MutableList<String?> = ArrayList()
+    val reportedSensors: MutableList<String> = ArrayList()
     if (hasDefaultSensor(Sensor.TYPE_ACCELEROMETER)) {
       reportedSensors.add(Analytics.DEVICE_SENSORS_ACCELEROMETER)
     }
@@ -185,7 +185,7 @@ class StardroidApplication : Application() {
     }
 
     // TODO: Change to String.join once we're at API > 26
-    analytics!!.setUserProperty(
+    analytics?.setUserProperty(
       Analytics.DEVICE_SENSORS, TextUtils.join("|", reportedSensors)
     )
 
@@ -216,9 +216,9 @@ class StardroidApplication : Application() {
 
     // Lastly a dump of all the sensors.
     Log.d(TAG, "All sensors:")
-    val allSensors = sensorManager!!.getSensorList(Sensor.TYPE_ALL)
+    val allSensors = sensorManager?.getSensorList(Sensor.TYPE_ALL)
     val sensorTypes: MutableSet<String> = HashSet()
-    for (sensor in allSensors) {
+    for (sensor in allSensors?: emptyList()) {
       Log.i(TAG, sensor.name)
       sensorTypes.add(getSafeNameForSensor(sensor))
     }
@@ -229,10 +229,7 @@ class StardroidApplication : Application() {
   }
 
   private fun hasDefaultSensor(sensorType: Int): Boolean {
-    if (sensorManager == null) {
-      return false
-    }
-    val sensor = sensorManager!!.getDefaultSensor(sensorType) ?: return false
+    val sensor = sensorManager?.getDefaultSensor(sensorType) ?: return false
     val dummy: SensorEventListener = object : SensorEventListener {
       override fun onSensorChanged(event: SensorEvent) {
         // Nothing
@@ -242,13 +239,13 @@ class StardroidApplication : Application() {
         // Nothing
       }
     }
-    val success = sensorManager!!.registerListener(
+    val success = sensorManager?.registerListener(
       dummy, sensor, SensorManager.SENSOR_DELAY_UI
-    )
+    ) ?: false
     if (!success) {
-      analytics!!.setUserProperty(Analytics.SENSOR_LIAR, "true")
+      analytics?.setUserProperty(Analytics.SENSOR_LIAR, "true")
     }
-    sensorManager!!.unregisterListener(dummy)
+    sensorManager?.unregisterListener(dummy)
     return success
   }
 
@@ -263,11 +260,7 @@ class StardroidApplication : Application() {
      * on the supported OS level along with some context.
      */
     fun getSafeNameForSensor(sensor: Sensor): String {
-      return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT_WATCH) {
-        "Sensor type: " + sensor.stringType + ": " + sensor.type
-      } else {
-        "Sensor type: " + sensor.type
-      }
+      return  "Sensor type: ${sensor.stringType}: ${sensor.type}"
     }
   }
 }
