@@ -14,16 +14,13 @@
 package com.google.android.stardroid.layers
 
 import android.content.res.Resources
+import com.google.android.stardroid.renderables.*
 import com.google.android.stardroid.renderer.RendererController
 import com.google.android.stardroid.renderer.RendererController.AtomicSection
 import com.google.android.stardroid.renderer.RendererControllerBase
 import com.google.android.stardroid.renderer.RendererControllerBase.RenderManager
 import com.google.android.stardroid.renderer.RendererObjectManager.UpdateType
 import com.google.android.stardroid.search.SearchResult
-import com.google.android.stardroid.renderables.ImagePrimitive
-import com.google.android.stardroid.renderables.LinePrimitive
-import com.google.android.stardroid.renderables.PointPrimitive
-import com.google.android.stardroid.renderables.TextPrimitive
 import com.google.android.stardroid.util.MiscUtil
 import java.util.*
 import java.util.concurrent.locks.ReentrantLock
@@ -98,31 +95,30 @@ abstract class AbstractLayer(protected val resources: Resources) : Layer {
      * Sets the objects on the [RenderManager] to the given values,
      * creating (or disabling) the [RenderManager] if necessary.
      */
-    private fun <E> setSources(
+    private inline fun <reified E : AbstractPrimitive> setSources(
         sources: List<E>, updateType: EnumSet<UpdateType>,
         clazz: Class<E>, atomic: AtomicSection
     ) {
+        @Suppress("UNCHECKED_CAST")
         var manager = renderMap[clazz] as RenderManager<E>?
         if (manager == null) {
-            manager = createRenderManager(clazz, atomic)
+            manager = createRenderManager(atomic)
             renderMap[clazz] = manager
         }
         manager.queueObjects(sources, updateType, atomic)
     }
 
-    // TODO(jontayler): see if we can simplify this with a reworking of the renderer code.
-    // The use of generics here is marginal - it reduces lines of code a little vs having
-    // primitive-specific versions os setSources but is less readable.
-    private fun <E> createRenderManager(
-        clazz: Class<E>,
+    private inline fun <reified E : AbstractPrimitive> createRenderManager(
         controller: RendererControllerBase
-    ) = when (clazz) {
-        ImagePrimitive::class.java -> controller.createImageManager(layerDepthOrder) as RenderManager<E>
-        TextPrimitive::class.java -> controller.createLabelManager(layerDepthOrder) as RenderManager<E>
-        LinePrimitive::class.java -> controller.createLineManager(layerDepthOrder) as RenderManager<E>
-        PointPrimitive::class.java -> controller.createPointManager(layerDepthOrder) as RenderManager<E>
-        else -> throw IllegalStateException("Unknown source type: $clazz")
-    }
+    ) : RenderManager<E> =
+        @Suppress("UNCHECKED_CAST")
+        when (E::class) {
+            ImagePrimitive::class -> controller.createImageManager(layerDepthOrder) as RenderManager<E>
+            TextPrimitive::class -> controller.createLabelManager(layerDepthOrder) as RenderManager<E>
+            LinePrimitive::class -> controller.createLineManager(layerDepthOrder) as RenderManager<E>
+            PointPrimitive::class -> controller.createPointManager(layerDepthOrder) as RenderManager<E>
+            else -> throw IllegalStateException("Unknown source type: $(E::class)")
+        }
 
     override fun searchByObjectName(name: String): List<SearchResult> {
         // By default, layers will return no search results.

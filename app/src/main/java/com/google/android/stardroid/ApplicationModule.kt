@@ -11,7 +11,6 @@ import android.net.ConnectivityManager
 import android.util.Log
 import androidx.core.content.ContextCompat
 import androidx.preference.PreferenceManager
-import com.google.android.stardroid.ApplicationModule
 import com.google.android.stardroid.control.*
 import com.google.android.stardroid.layers.*
 import com.google.android.stardroid.util.Analytics
@@ -59,9 +58,9 @@ class ApplicationModule(app: StardroidApplication) {
   @Provides
   @Singleton
   fun provideAstronomerModel(
-    @Named("zero") magneticDeclinationCalculator: MagneticDeclinationCalculator?
+    @Named("zero") magneticDeclinationCalculator: MagneticDeclinationCalculator
   ): AstronomerModel {
-    return AstronomerModelImpl(magneticDeclinationCalculator!!)
+    return AstronomerModelImpl(magneticDeclinationCalculator)
   }
 
   @Provides
@@ -116,19 +115,19 @@ class ApplicationModule(app: StardroidApplication) {
 
   @Provides
   @Singleton
-  fun provideAccountManager(context: Context?): AccountManager {
+  fun provideAccountManager(context: Context): AccountManager {
     return AccountManager.get(context)
   }
 
   @Provides
   @Singleton
   fun provideLayerManager(
-    assetManager: AssetManager?, resources: Resources?, model: AstronomerModel?,
-    preferences: SharedPreferences?
+    assetManager: AssetManager, resources: Resources, model: AstronomerModel?,
+    preferences: SharedPreferences
   ): LayerManager {
     Log.i(TAG, "Initializing LayerManager")
-    val layerManager = LayerManager(preferences!!)
-    layerManager.addLayer(StarsLayer(assetManager!!, resources!!))
+    val layerManager = LayerManager(preferences)
+    layerManager.addLayer(StarsLayer(assetManager, resources))
     layerManager.addLayer(MessierLayer(assetManager, resources))
     layerManager.addLayer(ConstellationsLayer(assetManager, resources))
     layerManager.addLayer(SolarSystemLayer(model!!, resources, preferences))

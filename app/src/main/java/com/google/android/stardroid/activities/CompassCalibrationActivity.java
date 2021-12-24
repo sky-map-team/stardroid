@@ -17,6 +17,7 @@ import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.MiscUtil;
 import com.google.android.stardroid.util.Toaster;
 
+import javax.annotation.Nullable;
 import javax.inject.Inject;
 
 public class CompassCalibrationActivity extends InjectableActivity implements SensorEventListener {
@@ -27,7 +28,7 @@ public class CompassCalibrationActivity extends InjectableActivity implements Se
   private Sensor magneticSensor;
   private CheckBox checkBoxView;
 
-  @Inject SensorManager sensorManager;
+  @Inject @Nullable SensorManager sensorManager;
   @Inject SensorAccuracyDecoder accuracyDecoder;
   @Inject SharedPreferences sharedPreferences;
   @Inject Analytics analytics;
