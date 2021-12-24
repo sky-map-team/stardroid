@@ -14,6 +14,7 @@ import androidx.preference.PreferenceManager
 import com.google.android.stardroid.control.*
 import com.google.android.stardroid.layers.*
 import com.google.android.stardroid.util.Analytics
+import com.google.android.stardroid.util.AnalyticsInterface
 import com.google.android.stardroid.util.MiscUtil.getTag
 import dagger.Module
 import dagger.Provides
@@ -47,21 +48,21 @@ class ApplicationModule(private val app: StardroidApplication) {
   @Singleton
   fun provideAstronomerModel(
     @Named("zero") magneticDeclinationCalculator: MagneticDeclinationCalculator
-  ) = AstronomerModelImpl(magneticDeclinationCalculator)
+  ): AstronomerModel = AstronomerModelImpl(magneticDeclinationCalculator)
 
   @Provides
   @Singleton
   @Named("zero")
-  fun provideDefaultMagneticDeclinationCalculator() = ZeroMagneticDeclinationCalculator()
+  fun provideDefaultMagneticDeclinationCalculator(): MagneticDeclinationCalculator = ZeroMagneticDeclinationCalculator()
 
   @Provides
   @Singleton
   @Named("real")
-  fun provideRealMagneticDeclinationCalculator() = RealMagneticDeclinationCalculator()
+  fun provideRealMagneticDeclinationCalculator(): MagneticDeclinationCalculator = RealMagneticDeclinationCalculator()
 
   @Provides
   @Singleton
-  fun provideAnalytics(analytics: Analytics) = analytics
+  fun provideAnalytics(analytics: Analytics): AnalyticsInterface = analytics
 
   @Provides
   @Singleton
