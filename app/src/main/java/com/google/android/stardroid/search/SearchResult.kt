@@ -11,39 +11,31 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+package com.google.android.stardroid.search
 
-package com.google.android.stardroid.search;
-
-import com.google.android.stardroid.math.Vector3;
-import com.google.android.stardroid.renderables.AstronomicalRenderable;
+import com.google.android.stardroid.math.Vector3
+import com.google.android.stardroid.renderables.AstronomicalRenderable
 
 /**
  * A single search result.
  *
  * @author John Taylor
  */
-public class SearchResult {
-  public AstronomicalRenderable renderable;
+class SearchResult
+/**
+ * @param capitalizedName The user-presentable name of the object, properly capitalized.
+ * @param renderable      The searched for object..
+ */(
   /**
    * The user-presentable name of the object, properly capitalized.
    */
-  public String capitalizedName;
-
-  /**
-   * @param capitalizedName The user-presentable name of the object, properly capitalized.
-   * @param renderable      The searched for object..
-   */
-  public SearchResult(String capitalizedName, AstronomicalRenderable renderable) {
-    this.capitalizedName = capitalizedName;
-    this.renderable = renderable;
+  var capitalizedName: String, var renderable: AstronomicalRenderable
+) {
+  fun coords(): Vector3 {
+    return renderable.searchLocation
   }
 
-  public Vector3 coords() {
-    return renderable.getSearchLocation();
-  }
-
-  @Override
-  public String toString() {
-    return capitalizedName;
+  override fun toString(): String {
+    return capitalizedName
   }
 }
