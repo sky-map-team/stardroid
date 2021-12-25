@@ -68,7 +68,7 @@ import kotlin.math.abs
  */
 class AstronomerModelImpl(magneticDeclinationCalculator: MagneticDeclinationCalculator) :
     AstronomerModel {
-    private var screenInPhoneCoords = SCREEN_UP_IN_PHONE_COORDS
+    private var screenInPhoneCoords = SCREEN_UP_STANDARD_IN_PHONE_COORDS
     private var magneticDeclinationCalculator: MagneticDeclinationCalculator? = null
     private var autoUpdatePointing = true
     private var fieldOfView = 45f // Degrees
@@ -108,9 +108,9 @@ class AstronomerModelImpl(magneticDeclinationCalculator: MagneticDeclinationCalc
     private var axesMagneticCelestialMatrix = identity
     override fun setHorizontalRotation(value: Boolean) {
         screenInPhoneCoords = if (value) {
-            SCREEN_DOWN_IN_PHONE_COORDS
+            SCREEN_UP_ROTATED_IN_PHONE_COORDS
         } else {
-            SCREEN_UP_IN_PHONE_COORDS
+            SCREEN_UP_STANDARD_IN_PHONE_COORDS
         }
     }
 
@@ -337,8 +337,9 @@ class AstronomerModelImpl(magneticDeclinationCalculator: MagneticDeclinationCalc
     companion object {
         private val TAG = MiscUtil.getTag(AstronomerModelImpl::class.java)
         private val POINTING_DIR_IN_PHONE_COORDS = -Vector3.unitZ()
-        private val SCREEN_UP_IN_PHONE_COORDS = Vector3.unitY()
-        private val SCREEN_DOWN_IN_PHONE_COORDS = Vector3.unitX()  // TODO(jontayler) this can't be right
+        private val SCREEN_UP_STANDARD_IN_PHONE_COORDS = Vector3.unitY()
+        // Some devices like glasses seem to fix the orientation 90 degrees to what we expect.
+        private val SCREEN_UP_ROTATED_IN_PHONE_COORDS = Vector3.unitX()
         private val AXIS_OF_EARTHS_ROTATION = Vector3.unitZ()
         private const val MINIMUM_TIME_BETWEEN_CELESTIAL_COORD_UPDATES_MILLIS = 60000L
         private const val TOL = 0.01f
