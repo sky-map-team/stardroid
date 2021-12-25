@@ -83,9 +83,9 @@ public class ImageGalleryActivity extends InjectableActivity {
       }
       GalleryImage galleryImage = galleryImages.get(position);
       ImageView imageView = (ImageView) imagePanel.findViewById(R.id.image_gallery_image);
-      imageView.setImageResource(galleryImage.imageId);
+      imageView.setImageResource(galleryImage.getImageId());
       TextView imageLabel = (TextView) imagePanel.findViewById(R.id.image_gallery_title);
-      imageLabel.setText(galleryImage.name);
+      imageLabel.setText(galleryImage.getName());
       return imagePanel;
     }
   }

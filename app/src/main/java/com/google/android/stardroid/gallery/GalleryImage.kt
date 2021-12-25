@@ -11,29 +11,11 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-
-package com.google.android.stardroid.gallery;
-
-import android.content.res.Resources;
+package com.google.android.stardroid.gallery
 
 /**
- * Constructs galleries.
+ * Holds data about an image.
  *
  * @author John Taylor
  */
-public class GalleryFactory {
-  private static Gallery gallery;
-
-  private GalleryFactory() {
-  }
-
-  /**
-   * Returns the gallery.  This will usually be a singleton.
-   */
-  public static synchronized Gallery getGallery(Resources resources) {
-    if (gallery == null) {
-      gallery = new HardcodedGallery(resources);
-    }
-    return gallery;
-  }
-}
+class GalleryImage(var imageId: Int, var name: String, var searchTerm: String)

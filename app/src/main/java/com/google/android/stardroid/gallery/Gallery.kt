@@ -11,16 +11,13 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-
-package com.google.android.stardroid.gallery;
-
-import java.util.List;
+package com.google.android.stardroid.gallery
 
 /**
  * A Gallery contains a list of images.
  *
  * @author John Taylor
  */
-public interface Gallery {
-  List<GalleryImage> getGalleryImages();
+interface Gallery {
+  val galleryImages: List<GalleryImage>
 }
