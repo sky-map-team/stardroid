@@ -11,24 +11,14 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+package com.google.android.stardroid.util.smoothers
 
-package com.google.android.stardroid.util.smoothers;
+import android.hardware.SensorListener
 
-import android.hardware.SensorListener;
-
-
-public abstract class SensorSmoother implements SensorListener {
-
-  protected SensorListener listener;
-
-  public SensorSmoother(SensorListener listener) {
-    this.listener = listener;
-  }
-
-  @Override
-  public void onAccuracyChanged(int sensor, int accuracy) {
+abstract class SensorSmoother(protected var listener: SensorListener) : SensorListener {
+  override fun onAccuracyChanged(sensor: Int, accuracy: Int) {
     // Do Nothing
   }
 
-  public abstract void onSensorChanged(int sensor, float[] values);
+  abstract override fun onSensorChanged(sensor: Int, values: FloatArray)
 }

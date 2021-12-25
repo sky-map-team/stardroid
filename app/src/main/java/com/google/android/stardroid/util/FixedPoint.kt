@@ -11,15 +11,14 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+package com.google.android.stardroid.util
 
-package com.google.android.stardroid.util;
+object FixedPoint {
+  const val ONE = 0x00010000
 
-public final class FixedPoint {
-    private FixedPoint() {}
-    public static final int ONE = 0x00010000;
-    
-    /// Converts a float to a 16.16 fixed point number 
-    public final static int floatToFixedPoint(float f) {
-        return (int)(65536F*f);
-    }
+  /// Converts a float to a 16.16 fixed point number 
+  @JvmStatic
+  fun floatToFixedPoint(f: Float): Int {
+    return (65536f * f).toInt()
+  }
 }

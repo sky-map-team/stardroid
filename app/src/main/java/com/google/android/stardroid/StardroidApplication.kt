@@ -27,7 +27,6 @@ import android.util.Log
 import androidx.core.content.pm.PackageInfoCompat
 import androidx.preference.PreferenceManager
 import com.google.android.stardroid.layers.LayerManager
-import com.google.android.stardroid.util.Analytics
 import com.google.android.stardroid.util.AnalyticsInterface
 import com.google.android.stardroid.util.MiscUtil.getTag
 import com.google.android.stardroid.util.PreferenceChangeAnalyticsTracker
@@ -89,11 +88,11 @@ class StardroidApplication : Application() {
   }
 
   private fun setUpAnalytics(versionName: String) {
-    analytics!!.setEnabled(preferences!!.getBoolean(Analytics.PREF_KEY, true))
+    (analytics ?: return).setEnabled((preferences ?: return).getBoolean(AnalyticsInterface.PREF_KEY, true))
 
     // Ugly hack since this isn't injectable
     PreferencesButton.setAnalytics(analytics)
-    var previousVersion = preferences!!.getString(PREVIOUS_APP_VERSION_PREF, NONE)
+    var previousVersion = preferences?.getString(PREVIOUS_APP_VERSION_PREF, NONE)
     var newUser = false
     if (previousVersion == NONE) {
       // It's possible a previous version exists, it's just that it wasn't a recent enough
@@ -118,8 +117,8 @@ class StardroidApplication : Application() {
 
     // It will be interesting to see *when* people use Sky Map.
     val b = Bundle()
-    b.putInt(Analytics.START_EVENT_HOUR, Calendar.getInstance()[Calendar.HOUR_OF_DAY])
-    analytics?.trackEvent(Analytics.START_EVENT, b)
+    b.putInt(AnalyticsInterface.START_EVENT_HOUR, Calendar.getInstance()[Calendar.HOUR_OF_DAY])
+    analytics?.trackEvent(AnalyticsInterface.START_EVENT, b)
     preferences!!.registerOnSharedPreferenceChangeListener(preferenceChangeAnalyticsTracker)
   }
 
@@ -166,27 +165,27 @@ class StardroidApplication : Application() {
   private fun performFeatureCheck() {
     if (sensorManager == null) {
       Log.e(TAG, "No sensor manager")
-      analytics?.setUserProperty(Analytics.DEVICE_SENSORS, Analytics.DEVICE_SENSORS_NONE)
+      analytics?.setUserProperty(AnalyticsInterface.DEVICE_SENSORS, AnalyticsInterface.DEVICE_SENSORS_NONE)
       return
     }
     // Reported available sensors
     val reportedSensors: MutableList<String> = ArrayList()
     if (hasDefaultSensor(Sensor.TYPE_ACCELEROMETER)) {
-      reportedSensors.add(Analytics.DEVICE_SENSORS_ACCELEROMETER)
+      reportedSensors.add(AnalyticsInterface.DEVICE_SENSORS_ACCELEROMETER)
     }
     if (hasDefaultSensor(Sensor.TYPE_GYROSCOPE)) {
-      reportedSensors.add(Analytics.DEVICE_SENSORS_GYRO)
+      reportedSensors.add(AnalyticsInterface.DEVICE_SENSORS_GYRO)
     }
     if (hasDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD)) {
-      reportedSensors.add(Analytics.DEVICE_SENSORS_MAGNETIC)
+      reportedSensors.add(AnalyticsInterface.DEVICE_SENSORS_MAGNETIC)
     }
     if (hasDefaultSensor(Sensor.TYPE_ROTATION_VECTOR)) {
-      reportedSensors.add(Analytics.DEVICE_SENSORS_ROTATION)
+      reportedSensors.add(AnalyticsInterface.DEVICE_SENSORS_ROTATION)
     }
 
     // TODO: Change to String.join once we're at API > 26
     analytics?.setUserProperty(
-      Analytics.DEVICE_SENSORS, TextUtils.join("|", reportedSensors)
+      AnalyticsInterface.DEVICE_SENSORS, TextUtils.join("|", reportedSensors)
     )
 
     // Check for a particularly strange combo - it would be weird to have a rotation sensor
@@ -243,7 +242,7 @@ class StardroidApplication : Application() {
       dummy, sensor, SensorManager.SENSOR_DELAY_UI
     ) ?: false
     if (!success) {
-      analytics?.setUserProperty(Analytics.SENSOR_LIAR, "true")
+      analytics?.setUserProperty(AnalyticsInterface.SENSOR_LIAR, "true")
     }
     sensorManager?.unregisterListener(dummy)
     return success
