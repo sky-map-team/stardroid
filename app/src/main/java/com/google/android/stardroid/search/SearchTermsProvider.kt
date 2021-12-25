@@ -24,7 +24,6 @@ import android.text.TextUtils
 import android.util.Log
 import com.google.android.stardroid.StardroidApplication
 import com.google.android.stardroid.layers.LayerManager
-import com.google.android.stardroid.search.SearchTermsProvider
 import com.google.android.stardroid.util.MiscUtil.getTag
 import javax.inject.Inject
 
@@ -32,7 +31,7 @@ import javax.inject.Inject
  * Provides search suggestions for a list of words and their definitions.
  */
 class SearchTermsProvider : ContentProvider() {
-  class SearchTerm(var query: String, var origin: String)
+  data class SearchTerm(var query: String, var origin: String)
 
   @JvmField
   @Inject
@@ -50,7 +49,7 @@ class SearchTermsProvider : ContentProvider() {
     if (alreadyInjected) {
       return true
     }
-    val appContext = context!!.applicationContext as? StardroidApplication ?: return false
+    val appContext = context?.applicationContext as? StardroidApplication ?: return false
     val component = appContext.applicationComponent ?: return false
     component.inject(this)
     alreadyInjected = true
@@ -94,7 +93,7 @@ class SearchTermsProvider : ContentProvider() {
 
   private fun columnValuesOfSuggestion(suggestion: SearchTerm): Array<String> {
     return arrayOf<String>(
-      Integer.toString(s++),  // _id
+      Integer.toString(id++),  // _id
       suggestion.query,  // query
       suggestion.query,  // text1
       suggestion.origin
@@ -104,7 +103,7 @@ class SearchTermsProvider : ContentProvider() {
   /**
    * All queries for this provider are for the search suggestion mime type.
    */
-  override fun getType(uri: Uri): String? {
+  override fun getType(uri: Uri): String {
     if (uriMatcher.match(uri) == SEARCH_SUGGEST) {
       return SearchManager.SUGGEST_MIME_TYPE
     }
@@ -155,6 +154,6 @@ class SearchTermsProvider : ContentProvider() {
       return matcher
     }
 
-    private var s = 0
+    private var id = 0
   }
 }

@@ -40,11 +40,10 @@ class PrefixStore {
    * TODO(@tcao) refactor this API. Search should return a relevance ranked list.
    */
   fun queryByPrefix(prefix: String): Set<String> {
-    var prefix = prefix
-    prefix = prefix.toLowerCase()
+    val prefixLower = prefix.lowercase()
     var n = root
-    for (i in 0 until prefix.length) {
-      val c = n.children[prefix[i]] ?: return EMPTY_SET
+    for (element in prefixLower) {
+      val c = n.children[element] ?: return EMPTY_SET
       n = c
     }
     val coll: MutableSet<String> = HashSet()
@@ -64,8 +63,8 @@ class PrefixStore {
    */
   fun add(string: String) {
     var n = root
-    val lower = string.toLowerCase()
-    for (i in 0 until lower.length) {
+    val lower = string.lowercase()
+    for (i in lower.indices) {
       var c = n.children[lower[i]]
       if (c == null) {
         c = TrieNode()
