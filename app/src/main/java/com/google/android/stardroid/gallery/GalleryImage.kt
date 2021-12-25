@@ -18,4 +18,4 @@ package com.google.android.stardroid.gallery
  *
  * @author John Taylor
  */
-class GalleryImage(var imageId: Int, var name: String, var searchTerm: String)
+data class GalleryImage(var imageId: Int, var name: String, var searchTerm: String)
