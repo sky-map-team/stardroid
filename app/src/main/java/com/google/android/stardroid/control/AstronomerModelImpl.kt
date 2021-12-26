@@ -68,7 +68,8 @@ import kotlin.math.abs
  */
 class AstronomerModelImpl(magneticDeclinationCalculator: MagneticDeclinationCalculator) :
     AstronomerModel {
-    private var screenInPhoneCoords = SCREEN_UP_STANDARD_IN_PHONE_COORDS
+    private var pointingInPhoneCoords = POINTING_DIR_IN_STANDARD_PHONE_COORDS
+    private var screenUpInPhoneCoords = SCREEN_UP_STANDARD_IN_PHONE_COORDS
     private var magneticDeclinationCalculator: MagneticDeclinationCalculator? = null
     private var autoUpdatePointing = true
     private var fieldOfView = 45f // Degrees
@@ -107,7 +108,7 @@ class AstronomerModelImpl(magneticDeclinationCalculator: MagneticDeclinationCalc
     /** [North, Up, East] in celestial coordinates.  */
     private var axesMagneticCelestialMatrix = identity
     override fun setHorizontalRotation(value: Boolean) {
-        screenInPhoneCoords = if (value) {
+        screenUpInPhoneCoords = if (value) {
             SCREEN_UP_ROTATED_IN_PHONE_COORDS
         } else {
             SCREEN_UP_STANDARD_IN_PHONE_COORDS
@@ -224,8 +225,8 @@ class AstronomerModelImpl(magneticDeclinationCalculator: MagneticDeclinationCalc
         calculateLocalNorthAndUpInCelestialCoords(false)
         calculateLocalNorthAndUpInPhoneCoordsFromSensors()
         val transform = axesMagneticCelestialMatrix * axesPhoneInverseMatrix
-        val viewInSpaceSpace =  transform * POINTING_DIR_IN_PHONE_COORDS
-        val screenUpInSpaceSpace = transform * screenInPhoneCoords
+        val viewInSpaceSpace =  transform * pointingInPhoneCoords
+        val screenUpInSpaceSpace = transform * screenUpInPhoneCoords
         pointing.updateLineOfSight(viewInSpaceSpace)
         pointing.updatePerpendicular(screenUpInSpaceSpace)
     }
@@ -301,7 +302,12 @@ class AstronomerModelImpl(magneticDeclinationCalculator: MagneticDeclinationCalc
         // The matrix is orthogonal, so transpose it to find its inverse.
         // Easiest way to do that is to construct it from row vectors instead
         // of column vectors.
-        axesPhoneInverseMatrix = Matrix3x3(magneticNorthPhone, upPhone, magneticEastPhone, false)
+        var transform = Matrix3x3.identity
+        //transform = Matrix3x3(Vector3.unitZ(), Vector3.unitY(), -Vector3.unitX())
+        axesPhoneInverseMatrix = transform * Matrix3x3(
+            magneticNorthPhone, upPhone, magneticEastPhone, false)
+
+        // weird coordinate transform for telescopes
     }
 
     /**
@@ -336,8 +342,9 @@ class AstronomerModelImpl(magneticDeclinationCalculator: MagneticDeclinationCalc
 
     companion object {
         private val TAG = MiscUtil.getTag(AstronomerModelImpl::class.java)
-        private val POINTING_DIR_IN_PHONE_COORDS = -Vector3.unitZ()
-        private val SCREEN_UP_STANDARD_IN_PHONE_COORDS = Vector3.unitY()
+        private val POINTING_DIR_IN_STANDARD_PHONE_COORDS = -Vector3.unitY()
+        private val POINTING_DIR_IN_LEFT_LANDSCAPE_PHONE_COORDS = -Vector3.unitX()
+        private val SCREEN_UP_STANDARD_IN_PHONE_COORDS = Vector3.unitZ() //Vector3.unitY()
         // Some devices like glasses seem to fix the orientation 90 degrees to what we expect.
         private val SCREEN_UP_ROTATED_IN_PHONE_COORDS = Vector3.unitX()
         private val AXIS_OF_EARTHS_ROTATION = Vector3.unitZ()
@@ -345,10 +352,6 @@ class AstronomerModelImpl(magneticDeclinationCalculator: MagneticDeclinationCalc
         private const val TOL = 0.01f
     }
 
-    /**
-     * @param magneticDeclinationCalculator A calculator that will provide the
-     * magnetic correction from True North to Magnetic North.
-     */
     init {
         setMagneticDeclinationCalculator(magneticDeclinationCalculator)
     }
