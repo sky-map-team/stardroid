@@ -305,7 +305,7 @@ class AstronomerModelImpl(magneticDeclinationCalculator: MagneticDeclinationCalc
      * Updates the angle between True North and Magnetic North.
      */
     private fun updateMagneticCorrection() {
-        magneticDeclinationCalculator!!.setLocationAndTime(location, timeMillis)
+        magneticDeclinationCalculator?.setLocationAndTime(location, timeMillis)
     }
 
     /**

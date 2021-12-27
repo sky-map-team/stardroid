@@ -40,9 +40,79 @@ where `A` is the acceleration vector from the sensor. Why `A`? Because if the ph
 sensor will only feel gravity and it will feel as if the phone is accelerating UP at 9.81m/s.
 
 The magnetic sensor gives a vector from magnetic North to South, but it's not flat along the
-surface of the Earth as we need it.
+surface of the Earth as we need it, so:
+
+`N_p = M - (U_p . M) U_p`
+
+where `M` is the magnetic field vector from south to north and the vectors are all normalized.
+
+Finally
+
+`E_p = N_p X U_p`
+
+## The new way
+
+Now that gyros are more common on phones Android provides a much nicer "rotation sensor" which 
+uses sensor fusion to create an accurate and stable representation of the phone's orientation in
+space. Fortunately, our previous code can be adapted because `E_p`, `N_p` and `U_p` are basically
+the row vectors of the rotation matrix.
+
+## Celestial coordinates
+
+Next step is to calculate those same vectors (N, U, E) in celestial coordiantes.
+`U_c` is the Zenith - its declination is the same as the user's latitude, while its RA depends on 
+the user's time. Once Ra and Dec are know it's just simple trigonometry to convert those angles
+into a vector.
+
+`N_c` is straightforward: the axis of the Earth points North of course and that's just [0, 0, 1] 
+in celestial coordinates. However, we need the vector towards North _along the ground_.  So as 
+with the phone coordinates you need to take the 'vector rejection':
+
+`N_c = z - (U_c . z) U_c`
+
+where `z` = [0, 0, 1] and all the vectors are assumed to be normalized.
+Lastly, `E_c = N_c X U_c`
+
+## Putting it altogether
+
+The direction the phone is pointing is `P` (with another vector `Q` to define the rotation of 
+the phone about the `P` axis).  We want to use a transformation matrix `M` so that we can calculate
+
+`P_c = M P_p`
+
+and 
+
+`Q_c = M Q_p`
+
+How to find `M`?  We can calculate it from:
+
+`[N_c | U_c | E_c] = M [N_p | U_p | E_p]`
+
+Since these vectors are all normalised we can invert them by taking the transpose:
+
+`M = [N_c | U_c | E_c] * [N_p | U_p | E_p]_T` 
+
+So the only thing remaining is to figure out `P_p` and `Q_p` which are usually going to be
+[0, 0, -1] and [0, 0, 1] respectively.
 
 
+## Magnetic correction
+
+All of the above assumes that the phones sensors give you true North, which they don't.
+Instead we apply a magnetic correction (confusingly also called `declination`).
+
+`R_mag` = rotation of declination degrees about `U`.
+
+Rather than apply that correction to the magnetic north vector in phone coords we apply the 
+opposite correction to (true) north in celestial coords. This is because the phone coordinate 
+vectors are updated many times per second as the phone moves, while the celestial coordinates 
+need only be updated when location or wall clock time changes significantly.
+
+
+## The end
+That's how the calculation is done in Sky Map. This is in part for historical reasons: when Sky 
+Map was first written we had to figure everything out from scratch. These days there are plenty 
+of nice helper functions in Android that we could almost certainly be using but are not.
 
 
 ## Legacy stuff
@@ -64,7 +134,9 @@ All values are in micro-Tesla (uT) and measure the ambient magnetic field in the
 
 Note: the magnetic field's Z axis is inverted."
 
-They fixed this when `SensorListener` was deprecated in favor of `SensorEventListener`.
+They fixed this when `SensorListener` was deprecated in favor of `SensorEventListener`.  This
+was cleaned up in Sky Map in f47d668f9bf8264f6187d0312e6a35c108fa64d6 (after much head-scratching
+trying to figure out why down was now up).
 
 
 
