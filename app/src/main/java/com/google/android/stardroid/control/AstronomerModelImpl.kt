@@ -286,17 +286,14 @@ class AstronomerModelImpl(magneticDeclinationCalculator: MagneticDeclinationCalc
             magneticEastPhone = Vector3(rotationMatrix[0], rotationMatrix[1], rotationMatrix[2])
         } else {
             // TODO(johntaylor): we can reduce the number of vector copies done in here.
-            val down = acceleration.copy()
-            down.normalize()
-            // Magnetic field goes *from* North to South, so reverse it.
-            val magneticFieldToNorth = magneticField.copy()
-            magneticFieldToNorth.timesAssign(-1f)
-            magneticFieldToNorth.normalize()
+            upPhone = acceleration.normalizedCopy()
+            val magneticFieldToNorth = magneticField.normalizedCopy()
             // This is the vector to magnetic North *along the ground*.
+            // (The "vector rejection")
             magneticNorthPhone =
-                magneticFieldToNorth - down * (magneticFieldToNorth dot down)
+                magneticFieldToNorth - upPhone * (magneticFieldToNorth dot upPhone)
             magneticNorthPhone.normalize()
-            upPhone = -down
+            // East is the cross-product.
             magneticEastPhone = magneticNorthPhone * upPhone
         }
         // The matrix is orthogonal, so transpose it to find its inverse.
@@ -314,7 +311,7 @@ class AstronomerModelImpl(magneticDeclinationCalculator: MagneticDeclinationCalc
      * Updates the angle between True North and Magnetic North.
      */
     private fun updateMagneticCorrection() {
-        magneticDeclinationCalculator!!.setLocationAndTime(location, timeMillis)
+        magneticDeclinationCalculator?.setLocationAndTime(location, timeMillis)
     }
 
     /**
