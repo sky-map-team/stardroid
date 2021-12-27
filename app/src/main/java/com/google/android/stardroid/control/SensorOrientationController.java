@@ -68,8 +68,8 @@ public class SensorOrientationController extends AbstractController
   };
 
   private SensorManager manager;
-  private SensorListener accelerometerSmoother;
-  private SensorListener compassSmoother;
+  private SensorEventListener accelerometerSmoother;
+  private SensorEventListener compassSmoother;
   private Provider<PlainSmootherModelAdaptor> modelAdaptorProvider;
   private Sensor rotationSensor;
   private SharedPreferences sharedPreferences;
@@ -126,11 +126,18 @@ public class SensorOrientationController extends AbstractController
             modelAdaptor,
             MAG_DAMPING_SETTINGS[dampingIndex].damping,
             MAG_DAMPING_SETTINGS[dampingIndex].exponent);
+        Sensor accelerometer = manager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        Sensor compass = manager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
+        if (accelerometer == null || compass == null) {
+          Log.e(TAG, "Missing accelerometer or compass! Aborting");
+          return;
+        }
+
         manager.registerListener(accelerometerSmoother,
-                                 SensorManager.SENSOR_ACCELEROMETER,
+                                 accelerometer,
                                  sensorSpeed);
         manager.registerListener(compassSmoother,
-                                 SensorManager.SENSOR_MAGNETIC_FIELD,
+                                 compass,
                                  sensorSpeed);
       }
     }

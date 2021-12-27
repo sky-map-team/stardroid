@@ -13,7 +13,9 @@
 // limitations under the License.
 package com.google.android.stardroid.util.smoothers;
 
-import android.hardware.SensorListener;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
 import android.util.Log;
 
 import com.google.android.stardroid.math.MathUtils;
@@ -28,7 +30,7 @@ public class ExponentiallyWeightedSmoother extends SensorSmoother {
   private float alpha;
   private int exponent;
 
-  public ExponentiallyWeightedSmoother(SensorListener listener, float alpha, int exponent) {
+  public ExponentiallyWeightedSmoother(SensorEventListener listener, float alpha, int exponent) {
     super(listener);
     Log.d(TAG, "ExponentionallyWeightedSmoother with alpha = " + alpha + " and exp = " + exponent);
     this.alpha = alpha;
@@ -39,7 +41,11 @@ public class ExponentiallyWeightedSmoother extends SensorSmoother {
   private float[] current = new float[3];
 
   @Override
-  public void onSensorChanged(int sensor, float[] values) {
+  public void onSensorChanged(SensorEvent sensorEvent) {
+    Sensor sensor = sensorEvent.sensor;
+    float[] values = sensorEvent.values;
+
+
     for (int i = 0; i < 3; ++i) {
       last[i] = current[i];
       float diff = values[i] - last[i];
@@ -50,7 +56,9 @@ public class ExponentiallyWeightedSmoother extends SensorSmoother {
       if (correction > MathUtils.abs(diff) ||
           correction < -MathUtils.abs(diff)) correction = diff;
       current[i] = last[i] + correction;
+      sensorEvent.values[i] = current[i];
     }
-    listener.onSensorChanged(sensor, current);
+
+    listener.onSensorChanged(sensorEvent);
   }
 }
