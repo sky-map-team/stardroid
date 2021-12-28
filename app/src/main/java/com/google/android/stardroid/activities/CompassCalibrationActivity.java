@@ -47,7 +47,7 @@ public class CompassCalibrationActivity extends InjectableActivity implements Se
 
     checkBoxView = findViewById(R.id.compass_calib_activity_donotshow);
     boolean hideCheckbox = getIntent().getBooleanExtra(HIDE_CHECKBOX, false);
-    String whatToDoText; hideCheckbox = false;
+    String whatToDoText;
     if (hideCheckbox) {
       // Dialog was user-initiated.
       checkBoxView.setVisibility(View.GONE);
