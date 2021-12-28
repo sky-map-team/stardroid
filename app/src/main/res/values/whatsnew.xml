@@ -3,10 +3,7 @@
     <string name="whats_new_text" translation_description="Description of new features in this version in html">
 <![CDATA[
     <h1>New in version %s</h1>
-    \t • Added Comet Leonard which will be visible through binoculars for a few days around Christmas <br/>
-    \t • Major re-working and simplification of the code - this should allow more features to be added in the future! <br/>
-    \t • Persian Translations (Credit: MLDFRJDN) <br/>
-    \t • Assorted other translation fixes (e.g. credit VegaDark for Spanish, Aga-C for Polish, VasilisKos for Greek, FTNo for Norwegian and more. <br/>
+    \t • Prototype "Optical Tube" mode for telescope users <br/>
 ]]>
     </string>
 </resources>

@@ -114,7 +114,8 @@ public interface AstronomerModel {
 
   void setFieldOfView(float degrees);
 
-  void setHorizontalRotation(boolean value);
+  enum ViewDirectionMode {STANDARD, ROTATE90, TELESCOPE}
+  void setViewDirectionMode(ViewDirectionMode value);
 
   float getMagneticCorrection();
 

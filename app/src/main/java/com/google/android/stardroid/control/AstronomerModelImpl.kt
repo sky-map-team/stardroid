@@ -107,12 +107,23 @@ class AstronomerModelImpl(magneticDeclinationCalculator: MagneticDeclinationCalc
 
     /** [North, Up, East] in celestial coordinates.  */
     private var axesMagneticCelestialMatrix = identity
-    override fun setHorizontalRotation(value: Boolean) {
-        screenUpInPhoneCoords = if (value) {
-            SCREEN_UP_ROTATED_IN_PHONE_COORDS
-        } else {
-            SCREEN_UP_STANDARD_IN_PHONE_COORDS
+    override fun setViewDirectionMode(mode: AstronomerModel.ViewDirectionMode) {
+        val (p, s) = when (mode) {
+            AstronomerModel.ViewDirectionMode.STANDARD -> listOf(
+                POINTING_DIR_IN_STANDARD_PHONE_COORDS,
+                SCREEN_UP_STANDARD_IN_PHONE_COORDS
+            )
+            AstronomerModel.ViewDirectionMode.ROTATE90 -> listOf(
+                POINTING_DIR_IN_STANDARD_PHONE_COORDS,
+                SCREEN_UP_ROTATED_IN_PHONE_COORDS
+            )
+            AstronomerModel.ViewDirectionMode.TELESCOPE -> listOf(
+                POINTING_DIR_FOR_TELESCOPES,
+                SCREEN_UP_FOR_TELESCOPES
+            )
         }
+        pointingInPhoneCoords = p
+        screenUpInPhoneCoords = s
     }
 
     override fun setAutoUpdatePointing(autoUpdatePointing: Boolean) {
@@ -339,11 +350,15 @@ class AstronomerModelImpl(magneticDeclinationCalculator: MagneticDeclinationCalc
 
     companion object {
         private val TAG = MiscUtil.getTag(AstronomerModelImpl::class.java)
-        private val POINTING_DIR_IN_STANDARD_PHONE_COORDS = -Vector3.unitY()
-        private val POINTING_DIR_IN_LEFT_LANDSCAPE_PHONE_COORDS = -Vector3.unitX()
-        private val SCREEN_UP_STANDARD_IN_PHONE_COORDS = Vector3.unitZ() //Vector3.unitY()
+        private val POINTING_DIR_IN_STANDARD_PHONE_COORDS = -Vector3.unitZ()
+        private val SCREEN_UP_STANDARD_IN_PHONE_COORDS = Vector3.unitY()
         // Some devices like glasses seem to fix the orientation 90 degrees to what we expect.
         private val SCREEN_UP_ROTATED_IN_PHONE_COORDS = Vector3.unitX()
+        // For telescopes where you want the phone strapped to the tube so that you're
+        // essentially sighting along the long edge of the phone
+        private val POINTING_DIR_FOR_TELESCOPES = Vector3.unitY()
+        private val SCREEN_UP_FOR_TELESCOPES = Vector3.unitZ()
+
         private val AXIS_OF_EARTHS_ROTATION = Vector3.unitZ()
         private const val MINIMUM_TIME_BETWEEN_CELESTIAL_COORD_UPDATES_MILLIS = 60000L
         private const val TOL = 0.01f

@@ -79,11 +79,13 @@
           android:title="@string/sensor_reverse_preference_title"
           android:summary="@string/sensor_reverse_preference_summary"
           android:key="reverse_magnetic_z"/>
-      <CheckBoxPreference
-          android:defaultValue="false"
+      <ListPreference
+          android:key="viewing_direction"
           android:title="@string/rotate_horizon_preference_title"
           android:summary="@string/rotate_horizon_preference_summary"
-          android:key="rotate_horizon"/>
+          android:entryValues="@array/viewing_direction_values"
+          android:entries="@array/viewing_direction"
+          android:defaultValue="STANDARD" />
     </PreferenceCategory>
   </PreferenceScreen>
 </PreferenceScreen>
