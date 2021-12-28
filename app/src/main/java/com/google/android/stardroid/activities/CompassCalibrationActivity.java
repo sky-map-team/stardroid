@@ -47,20 +47,23 @@ public class CompassCalibrationActivity extends InjectableActivity implements Se
 
     checkBoxView = findViewById(R.id.compass_calib_activity_donotshow);
     boolean hideCheckbox = getIntent().getBooleanExtra(HIDE_CHECKBOX, false);
+    String whatToDoText; hideCheckbox = false;
     if (hideCheckbox) {
       // Dialog was user-initiated.
       checkBoxView.setVisibility(View.GONE);
       View reasonText = findViewById(R.id.compass_calib_activity_explain_why);
       reasonText.setVisibility(View.GONE);
-      TextView explanationText = findViewById(R.id.compass_calib_what_to_do);
-      explanationText.setText(R.string.compass_calib_what_to_do_user);
+      whatToDoText = getString(R.string.compass_calib_what_to_do_user);
     } else {
       checkBoxView.setVisibility(View.VISIBLE);
       View reasonText = findViewById(R.id.compass_calib_activity_explain_why);
       reasonText.setVisibility(View.VISIBLE);
-      TextView explanationText = findViewById(R.id.compass_calib_what_to_do);
-      explanationText.setText(R.string.compass_calib_what_to_do);
+      whatToDoText = getString(R.string.compass_calib_what_to_do);
     }
+    TextView explanationText = findViewById(R.id.compass_calib_what_to_do);
+    explanationText.setText(String.format(whatToDoText,
+        "https://www.youtube.com/watch?v=-Uq7AmSAjt8"));
+
     if (sensorManager != null) {
       magneticSensor = sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
     }

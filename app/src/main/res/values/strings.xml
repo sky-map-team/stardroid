@@ -196,14 +196,20 @@
     <string name="menu_calibrate">Calibrate</string>
     <string name="compass_calibration_activity_heading_compass">Compass -</string>
     <string name="compass_calibration_activity_do_not_show_this_again">Do not show this again</string>
-    <string name="compass_calibration_activity_warning">Your compass needs to be calibrated</string>
-    <string name="compass_calib_what_to_do">Your phone is reporting to Sky Map that its internal compass is uncalibrated.
+    <string name="compass_calibration_activity_warning">Your compass may need to be
+        calibrated</string>
+    <string name="compass_calib_what_to_do"
+        translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL">Your phone is reporting to Sky
+        Map that its internal compass is uncalibrated.
     This is not a Sky Map issue but we can help you try to fix it. To calibrate the compass try moving your phone in a figure of eight
-        motion as demonstrated in the video linked below.</string>
-    <string name="compass_calib_what_to_do_user">Your phone\'s compass accuracy is shown above.
+        motion as demonstrated in this video %s until the accuracy reads \'high\'.</string>
+    <string name="compass_calib_what_to_do_user"
+        transation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL">Your phone\'s
+        compass
+        accuracy is shown above.
     If it is not \'high\' then the compass may need calibrating. This is not a Sky Map issue, but
     a property of your phone. To calibrate the compass try moving your phone in a figure of eight
-        motion as demonstrated in the video linked below.</string>
+        motion as demonstrated in this video %s.</string>
     <string name="sensor_reverse_preference_title">Reverse Magnetic Z</string>
     <string name="sensor_reverse_preference_summary">Fix for phones with incorrectly implemented sensors - requires restart</string>
     <string name="whats_new_dialog_title">What\'s new</string>
