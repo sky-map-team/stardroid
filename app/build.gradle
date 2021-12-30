@@ -12,8 +12,8 @@ android {
         applicationId "com.google.android.stardroid"
         minSdkVersion 26
         targetSdkVersion 31
-        versionCode 1532
-        versionName "1.10.0 - RC3"
+        versionCode 1541
+        versionName "1.10.1 - RC1"
         buildConfigField 'String', 'GOOGLE_ANALYTICS_CODE', '""'
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

@@ -107,14 +107,14 @@ public class DynamicStarMapActivity extends InjectableActivity
   private static final class RendererModelUpdateClosure implements Runnable {
     private RendererController rendererController;
     private AstronomerModel model;
-    private boolean horizontalRotation;
+    private boolean viewDirectionMode;
 
     public RendererModelUpdateClosure(AstronomerModel model,
         RendererController rendererController, SharedPreferences sharedPreferences) {
       this.model = model;
       this.rendererController = rendererController;
-      this.horizontalRotation = sharedPreferences.getBoolean(ApplicationConstants.ROTATE_HORIZON_PREFKEY, false);
-      model.setHorizontalRotation(this.horizontalRotation);
+      // TODO(jontayler): figure out why we need to do this here.
+      updateViewDirectionMode(model, sharedPreferences);
     }
 
     @Override
@@ -136,6 +136,21 @@ public class DynamicStarMapActivity extends InjectableActivity
 
       float fieldOfView = model.getFieldOfView();
       rendererController.queueFieldOfView(fieldOfView);
+    }
+  }
+
+  private static void updateViewDirectionMode(AstronomerModel model, SharedPreferences sharedPreferences) {
+    String viewDirectionMode =
+        sharedPreferences.getString(ApplicationConstants.VIEW_MODE_PREFKEY, "STANDARD");
+    switch(viewDirectionMode) {
+      case "ROTATE90":
+        model.setViewDirectionMode(AstronomerModel.ViewDirectionMode.ROTATE90);
+        break;
+      case "TELESCOPE":
+        model.setViewDirectionMode(AstronomerModel.ViewDirectionMode.TELESCOPE);
+        break;
+      default:
+        model.setViewDirectionMode(AstronomerModel.ViewDirectionMode.STANDARD);
     }
   }
 
@@ -563,8 +578,8 @@ public class DynamicStarMapActivity extends InjectableActivity
         }
         setAutoMode(autoMode);
         break;
-      case ApplicationConstants.ROTATE_HORIZON_PREFKEY:
-        model.setHorizontalRotation(sharedPreferences.getBoolean(key, false));
+      case ApplicationConstants.VIEW_MODE_PREFKEY:
+        updateViewDirectionMode(model, sharedPreferences);
       default:
         return;
     }

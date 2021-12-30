@@ -56,5 +56,5 @@ object ApplicationConstants {
   const val SENSOR_DAMPING_STANDARD = "STANDARD"
   const val SENSOR_DAMPING_PREF_KEY = "sensor_damping"
   const val REVERSE_MAGNETIC_Z_PREFKEY = "reverse_magnetic_z"
-  const val ROTATE_HORIZON_PREFKEY = "rotate_horizon" // End Preference Keys
+  const val VIEW_MODE_PREFKEY = "viewing_direction" // End Preference Keys
 }

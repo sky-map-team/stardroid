@@ -93,8 +93,13 @@ Since these vectors are all normalised we can invert them by taking the transpos
 `M = [N_c | U_c | E_c] * [N_p | U_p | E_p]_T` 
 
 So the only thing remaining is to figure out `P_p` and `Q_p` which are usually going to be
-[0, 0, -1] and [0, 0, 1] respectively.
 
+[0, 0, -1] and [0, 1, 0] respectively.
+
+'Usually' because in certain circumstances you might want them to be different. For example if you
+set `P_p` to be [0, 1, 0] and `Q_p` to be [0, 0, 1] you now will have the screen showing what the
+long edge of the phone is pointing at. This can be useful if using Sky Map with a telescope - 
+you can strap it to the telescope tube.
 
 ## Magnetic correction
 
