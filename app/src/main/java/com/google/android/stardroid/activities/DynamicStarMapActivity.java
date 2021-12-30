@@ -73,6 +73,7 @@ import com.google.android.stardroid.touch.DragRotateZoomGestureDetector;
 import com.google.android.stardroid.touch.GestureInterpreter;
 import com.google.android.stardroid.touch.MapMover;
 import com.google.android.stardroid.util.Analytics;
+import com.google.android.stardroid.util.AnalyticsInterface;
 import com.google.android.stardroid.util.MiscUtil;
 import com.google.android.stardroid.util.SensorAccuracyMonitor;
 import com.google.android.stardroid.views.ButtonLayerView;
@@ -603,9 +604,9 @@ public class DynamicStarMapActivity extends InjectableActivity
     Log.d(TAG, "Query string " + queryString);
     List<SearchResult> results = layerManager.searchByObjectName(queryString);
     Bundle b = new Bundle();
-    b.putString(Analytics.SEARCH_TERM, queryString);
-    b.putBoolean(Analytics.SEARCH_SUCCESS, results.size() > 0);
-    analytics.trackEvent(Analytics.SEARCH_EVENT, b);
+    b.putString(AnalyticsInterface.SEARCH_TERM, queryString);
+    b.putBoolean(AnalyticsInterface.SEARCH_SUCCESS, results.size() > 0);
+    analytics.trackEvent(AnalyticsInterface.SEARCH_EVENT, b);
     if (results.isEmpty()) {
       Log.d(TAG, "No results returned");
       noSearchResultsDialogFragment.show(fragmentManager, "No Search Results");
