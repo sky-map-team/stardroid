@@ -27,7 +27,6 @@ import android.util.Log
 import androidx.core.content.pm.PackageInfoCompat
 import androidx.preference.PreferenceManager
 import com.google.android.stardroid.layers.LayerManager
-import com.google.android.stardroid.util.Analytics
 import com.google.android.stardroid.util.AnalyticsInterface
 import com.google.android.stardroid.util.MiscUtil.getTag
 import com.google.android.stardroid.util.PreferenceChangeAnalyticsTracker
@@ -89,11 +88,11 @@ class StardroidApplication : Application() {
   }
 
   private fun setUpAnalytics(versionName: String) {
-    analytics!!.setEnabled(preferences!!.getBoolean(Analytics.PREF_KEY, true))
+    (analytics ?: return).setEnabled((preferences ?: return).getBoolean(AnalyticsInterface.PREF_KEY, true))
 
     // Ugly hack since this isn't injectable
     PreferencesButton.setAnalytics(analytics)
-    var previousVersion = preferences!!.getString(PREVIOUS_APP_VERSION_PREF, NONE)
+    var previousVersion = preferences?.getString(PREVIOUS_APP_VERSION_PREF, NONE)
     var newUser = false
     if (previousVersion == NONE) {
       // It's possible a previous version exists, it's just that it wasn't a recent enough
@@ -108,8 +107,8 @@ class StardroidApplication : Application() {
         newUser = true
       }
     }
-    analytics!!.setUserProperty(AnalyticsInterface.NEW_USER, java.lang.Boolean.toString(newUser))
-    preferences!!.edit().putString(PREVIOUS_APP_VERSION_PREF, versionName).commit()
+    analytics?.setUserProperty(AnalyticsInterface.NEW_USER, java.lang.Boolean.toString(newUser))
+    preferences!!.edit().putString(PREVIOUS_APP_VERSION_PREF, versionName).apply()
     if (previousVersion != versionName) {
       // It's either an upgrade or a new installation
       Log.d(TAG, "New installation: version $versionName")
@@ -118,14 +117,14 @@ class StardroidApplication : Application() {
 
     // It will be interesting to see *when* people use Sky Map.
     val b = Bundle()
-    b.putInt(Analytics.START_EVENT_HOUR, Calendar.getInstance()[Calendar.HOUR_OF_DAY])
-    analytics!!.trackEvent(Analytics.START_EVENT, b)
+    b.putInt(AnalyticsInterface.START_EVENT_HOUR, Calendar.getInstance()[Calendar.HOUR_OF_DAY])
+    analytics?.trackEvent(AnalyticsInterface.START_EVENT, b)
     preferences!!.registerOnSharedPreferenceChangeListener(preferenceChangeAnalyticsTracker)
   }
 
   override fun onTerminate() {
     super.onTerminate()
-    analytics!!.setEnabled(false)
+    analytics?.setEnabled(false)
   }// TODO(jontayler): update to use the info created by gradle.
 
   /**
@@ -166,27 +165,27 @@ class StardroidApplication : Application() {
   private fun performFeatureCheck() {
     if (sensorManager == null) {
       Log.e(TAG, "No sensor manager")
-      analytics!!.setUserProperty(Analytics.DEVICE_SENSORS, Analytics.DEVICE_SENSORS_NONE)
+      analytics?.setUserProperty(AnalyticsInterface.DEVICE_SENSORS, AnalyticsInterface.DEVICE_SENSORS_NONE)
       return
     }
     // Reported available sensors
-    val reportedSensors: MutableList<String?> = ArrayList()
+    val reportedSensors: MutableList<String> = ArrayList()
     if (hasDefaultSensor(Sensor.TYPE_ACCELEROMETER)) {
-      reportedSensors.add(Analytics.DEVICE_SENSORS_ACCELEROMETER)
+      reportedSensors.add(AnalyticsInterface.DEVICE_SENSORS_ACCELEROMETER)
     }
     if (hasDefaultSensor(Sensor.TYPE_GYROSCOPE)) {
-      reportedSensors.add(Analytics.DEVICE_SENSORS_GYRO)
+      reportedSensors.add(AnalyticsInterface.DEVICE_SENSORS_GYRO)
     }
     if (hasDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD)) {
-      reportedSensors.add(Analytics.DEVICE_SENSORS_MAGNETIC)
+      reportedSensors.add(AnalyticsInterface.DEVICE_SENSORS_MAGNETIC)
     }
     if (hasDefaultSensor(Sensor.TYPE_ROTATION_VECTOR)) {
-      reportedSensors.add(Analytics.DEVICE_SENSORS_ROTATION)
+      reportedSensors.add(AnalyticsInterface.DEVICE_SENSORS_ROTATION)
     }
 
     // TODO: Change to String.join once we're at API > 26
-    analytics!!.setUserProperty(
-      Analytics.DEVICE_SENSORS, TextUtils.join("|", reportedSensors)
+    analytics?.setUserProperty(
+      AnalyticsInterface.DEVICE_SENSORS, TextUtils.join("|", reportedSensors)
     )
 
     // Check for a particularly strange combo - it would be weird to have a rotation sensor
@@ -216,9 +215,9 @@ class StardroidApplication : Application() {
 
     // Lastly a dump of all the sensors.
     Log.d(TAG, "All sensors:")
-    val allSensors = sensorManager!!.getSensorList(Sensor.TYPE_ALL)
+    val allSensors = sensorManager?.getSensorList(Sensor.TYPE_ALL)
     val sensorTypes: MutableSet<String> = HashSet()
-    for (sensor in allSensors) {
+    for (sensor in allSensors?: emptyList()) {
       Log.i(TAG, sensor.name)
       sensorTypes.add(getSafeNameForSensor(sensor))
     }
@@ -229,10 +228,7 @@ class StardroidApplication : Application() {
   }
 
   private fun hasDefaultSensor(sensorType: Int): Boolean {
-    if (sensorManager == null) {
-      return false
-    }
-    val sensor = sensorManager!!.getDefaultSensor(sensorType) ?: return false
+    val sensor = sensorManager?.getDefaultSensor(sensorType) ?: return false
     val dummy: SensorEventListener = object : SensorEventListener {
       override fun onSensorChanged(event: SensorEvent) {
         // Nothing
@@ -242,13 +238,13 @@ class StardroidApplication : Application() {
         // Nothing
       }
     }
-    val success = sensorManager!!.registerListener(
+    val success = sensorManager?.registerListener(
       dummy, sensor, SensorManager.SENSOR_DELAY_UI
-    )
+    ) ?: false
     if (!success) {
-      analytics!!.setUserProperty(Analytics.SENSOR_LIAR, "true")
+      analytics?.setUserProperty(AnalyticsInterface.SENSOR_LIAR, "true")
     }
-    sensorManager!!.unregisterListener(dummy)
+    sensorManager?.unregisterListener(dummy)
     return success
   }
 
@@ -263,11 +259,7 @@ class StardroidApplication : Application() {
      * on the supported OS level along with some context.
      */
     fun getSafeNameForSensor(sensor: Sensor): String {
-      return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT_WATCH) {
-        "Sensor type: " + sensor.stringType + ": " + sensor.type
-      } else {
-        "Sensor type: " + sensor.type
-      }
+      return  "Sensor type: ${sensor.stringType}: ${sensor.type}"
     }
   }
 }

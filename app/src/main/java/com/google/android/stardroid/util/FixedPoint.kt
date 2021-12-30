@@ -1,4 +1,4 @@
-// Copyright 2010 Google Inc.
+// Copyright 2008 Google Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -11,29 +11,14 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+package com.google.android.stardroid.util
 
-package com.google.android.stardroid.gallery;
+object FixedPoint {
+  const val ONE = 0x00010000
 
-import android.content.res.Resources;
-
-/**
- * Constructs galleries.
- *
- * @author John Taylor
- */
-public class GalleryFactory {
-  private static Gallery gallery;
-
-  private GalleryFactory() {
-  }
-
-  /**
-   * Returns the gallery.  This will usually be a singleton.
-   */
-  public static synchronized Gallery getGallery(Resources resources) {
-    if (gallery == null) {
-      gallery = new HardcodedGallery(resources);
-    }
-    return gallery;
+  /// Converts a float to a 16.16 fixed point number 
+  @JvmStatic
+  fun floatToFixedPoint(f: Float): Int {
+    return (65536f * f).toInt()
   }
 }

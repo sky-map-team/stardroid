@@ -72,9 +72,9 @@ public class ImageDisplayActivity extends InjectableActivity {
     List<GalleryImage> galleryImages = GalleryFactory.getGallery(getResources()).getGalleryImages();
     selectedImage = galleryImages.get(position);
     ImageView imageView = (ImageView) findViewById(R.id.gallery_image);
-    imageView.setImageResource(selectedImage.imageId);
+    imageView.setImageResource(selectedImage.getImageId());
     TextView label = (TextView) findViewById(R.id.gallery_image_title);
-    label.setText(selectedImage.name);
+    label.setText(selectedImage.getName());
     Button backButton = (Button) findViewById(R.id.gallery_image_back_btn);
     backButton.setOnClickListener(this::goBack);
     Button searchButton = (Button) findViewById(R.id.gallery_image_search_btn);
@@ -117,7 +117,7 @@ public class ImageDisplayActivity extends InjectableActivity {
 
     Intent queryIntent = new Intent();
     queryIntent.setAction(Intent.ACTION_SEARCH);
-    queryIntent.putExtra(SearchManager.QUERY, selectedImage.searchTerm);
+    queryIntent.putExtra(SearchManager.QUERY, selectedImage.getSearchTerm());
     queryIntent.setClass(ImageDisplayActivity.this, DynamicStarMapActivity.class);
     startActivity(queryIntent);
   }

@@ -9,7 +9,7 @@ import android.hardware.SensorManager
 import android.location.LocationManager
 import android.net.ConnectivityManager
 import android.util.Log
-import androidx.core.content.ContextCompat
+import androidx.core.content.getSystemService
 import androidx.preference.PreferenceManager
 import com.google.android.stardroid.control.*
 import com.google.android.stardroid.layers.*
@@ -18,7 +18,6 @@ import com.google.android.stardroid.util.AnalyticsInterface
 import com.google.android.stardroid.util.MiscUtil.getTag
 import dagger.Module
 import dagger.Provides
-import java.util.concurrent.ExecutorService
 import java.util.concurrent.ScheduledThreadPoolExecutor
 import javax.inject.Named
 import javax.inject.Singleton
@@ -28,96 +27,66 @@ import javax.inject.Singleton
  * Created by johntaylor on 3/26/16.
  */
 @Module
-class ApplicationModule(app: StardroidApplication) {
-  private val app: StardroidApplication
+class ApplicationModule(private val app: StardroidApplication) {
 
   @Provides
   @Singleton
-  fun provideApplication(): StardroidApplication {
-    return app
-  }
+  fun provideApplication() = app
 
   @Provides
-  fun provideContext(): Context {
-    return app
-  }
+  fun provideContext(): Context = app
 
   @Provides
   @Singleton
-  fun provideSharedPreferences(): SharedPreferences {
-    Log.d(TAG, "Providing shared preferences")
-    return PreferenceManager.getDefaultSharedPreferences(app)
-  }
+  fun provideSharedPreferences() = PreferenceManager.getDefaultSharedPreferences(app)
 
   @Provides
   @Singleton
-  fun provideLocationManager(): LocationManager? {
-    return ContextCompat.getSystemService(app, LocationManager::class.java)
-  }
+  fun provideLocationManager() = app.getSystemService<LocationManager>()
 
   @Provides
   @Singleton
   fun provideAstronomerModel(
     @Named("zero") magneticDeclinationCalculator: MagneticDeclinationCalculator
-  ): AstronomerModel {
-    return AstronomerModelImpl(magneticDeclinationCalculator)
-  }
+  ): AstronomerModel = AstronomerModelImpl(magneticDeclinationCalculator)
 
   @Provides
   @Singleton
   @Named("zero")
-  fun provideDefaultMagneticDeclinationCalculator(): MagneticDeclinationCalculator {
-    return ZeroMagneticDeclinationCalculator()
-  }
+  fun provideDefaultMagneticDeclinationCalculator(): MagneticDeclinationCalculator = ZeroMagneticDeclinationCalculator()
 
   @Provides
   @Singleton
   @Named("real")
-  fun provideRealMagneticDeclinationCalculator(): MagneticDeclinationCalculator {
-    return RealMagneticDeclinationCalculator()
-  }
+  fun provideRealMagneticDeclinationCalculator(): MagneticDeclinationCalculator = RealMagneticDeclinationCalculator()
 
   @Provides
   @Singleton
-  fun provideAnalytics(analytics: Analytics): AnalyticsInterface {
-    return analytics
-  }
+  fun provideAnalytics(analytics: Analytics): AnalyticsInterface = analytics
 
   @Provides
   @Singleton
-  fun provideBackgroundExecutor(): ExecutorService {
-    return ScheduledThreadPoolExecutor(1)
-  }
+  fun provideBackgroundExecutor() = ScheduledThreadPoolExecutor(1)
 
   @Provides
   @Singleton
-  fun provideAssetManager(): AssetManager {
-    return app.assets
-  }
+  fun provideAssetManager() = app.assets
 
   @Provides
   @Singleton
-  fun provideResources(): Resources {
-    return app.resources
-  }
+  fun provideResources() = app.resources
 
   @Provides
   @Singleton
-  fun provideSensorManager(): SensorManager? {
-    return ContextCompat.getSystemService(app, SensorManager::class.java)
-  }
+  fun provideSensorManager() = app.getSystemService<SensorManager>()
 
   @Provides
   @Singleton
-  fun provideConnectivityManager(): ConnectivityManager? {
-    return ContextCompat.getSystemService(app, ConnectivityManager::class.java)
-  }
+  fun provideConnectivityManager() = app.getSystemService<ConnectivityManager>()
 
   @Provides
   @Singleton
-  fun provideAccountManager(context: Context): AccountManager {
-    return AccountManager.get(context)
-  }
+  fun provideAccountManager(context: Context) = AccountManager.get(context)
 
   @Provides
   @Singleton
@@ -144,10 +113,5 @@ class ApplicationModule(app: StardroidApplication) {
 
   companion object {
     private val TAG = getTag(ApplicationModule::class.java)
-  }
-
-  init {
-    Log.d(TAG, "Creating application module for $app")
-    this.app = app
   }
 }
