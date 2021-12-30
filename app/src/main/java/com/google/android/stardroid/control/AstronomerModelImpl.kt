@@ -310,12 +310,8 @@ class AstronomerModelImpl(magneticDeclinationCalculator: MagneticDeclinationCalc
         // The matrix is orthogonal, so transpose it to find its inverse.
         // Easiest way to do that is to construct it from row vectors instead
         // of column vectors.
-        var transform = Matrix3x3.identity
-        //transform = Matrix3x3(Vector3.unitZ(), Vector3.unitY(), -Vector3.unitX())
-        axesPhoneInverseMatrix = transform * Matrix3x3(
+        axesPhoneInverseMatrix = Matrix3x3(
             magneticNorthPhone, upPhone, magneticEastPhone, false)
-
-        // weird coordinate transform for telescopes
     }
 
     /**
