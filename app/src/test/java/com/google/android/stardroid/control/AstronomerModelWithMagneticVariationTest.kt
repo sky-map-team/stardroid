@@ -19,8 +19,10 @@ import com.google.android.stardroid.math.MathUtils.cos
 import com.google.android.stardroid.math.MathUtils.sin
 import com.google.android.stardroid.math.MathUtils.sqrt
 import com.google.android.stardroid.math.Vector3
+import com.google.android.stardroid.math.Vector3Subject
 import junit.framework.AssertionFailedError
 import junit.framework.TestCase
+import org.junit.Test
 import java.util.*
 
 /**
@@ -30,7 +32,7 @@ import java.util.*
  */
 // TODO(johntaylor): combine this with AstronomerModelWithMagneticVariationTest
 // as there's currently too much code duplication.
-class AstronomerModelWithMagneticVariationTest : TestCase() {
+class AstronomerModelWithMagneticVariationTest {
     private class MagneticDeclinationCalculation(private val angle: Float) :
         MagneticDeclinationCalculator {
         override fun getDeclination(): Float {
@@ -42,35 +44,14 @@ class AstronomerModelWithMagneticVariationTest : TestCase() {
         }
     }
 
-    fun testAssertVectorEquals() {
-        val v1 = Vector3(0f, 0f, 1f)
-        var v2 = Vector3(0f, 0f, 1f)
-        assertVectorEquals(v1, v2, 0.0001f, 0.0001f)
-        v2 = Vector3(0f, 0f, 1.1f)
-        var failed = false
-        try {
-            assertVectorEquals(v1, v2, 0.0001f, 0.0001f)
-        } catch (e: AssertionFailedError) {
-            failed = true
-        }
-        assertTrue(failed)
-        v2 = Vector3(0f, 1f, 0f)
-        failed = false
-        try {
-            assertVectorEquals(v1, v2, 0.0001f, 0.0001f)
-        } catch (e: AssertionFailedError) {
-            failed = true
-        }
-        assertTrue(failed)
-    }
-
+    @Test
     fun testFlatOnEquatorMag0Degrees() {
         val location = LatLong(0f, 0f)
         // The following vectors are in the phone's coordinate system.
         // Phone flat on back, top edge towards North
-        val acceleration = Vector3(0f, 0f, -10f)
+        val acceleration = Vector3(0f, 0f, 10f)
         // Magnetic field coming in from N
-        val magneticField = Vector3(0f, -5f, -10f)
+        val magneticField = Vector3(0f, 5f, -10f)
 
         // These vectors are in celestial coordinates.
         val expectedZenith = Vector3(1f, 0f, 0f)
@@ -86,13 +67,14 @@ class AstronomerModelWithMagneticVariationTest : TestCase() {
         )
     }
 
+    @Test
     fun testFlatOnEquatorMagN45DegreesW() {
         val location = LatLong(0f, 0f)
         // The following vectors are in the phone's coordinate system.
         // Phone flat on back, top edge towards North
-        val acceleration = Vector3(0f, 0f, -10f)
+        val acceleration = Vector3(0f, 0f, 10f)
         // Magnetic field coming in from NW
-        val magneticField = Vector3(1f, -1f, -10f)
+        val magneticField = Vector3(-1f, 1f, -10f)
 
         // These vectors are in celestial coordinates.
         val expectedZenith = Vector3(1f, 0f, 0f)
@@ -103,18 +85,19 @@ class AstronomerModelWithMagneticVariationTest : TestCase() {
         val expectedWest = Vector3(0f, -1f, 0f)
         checkPointing(
             -45.0f, location, acceleration, magneticField, expectedZenith, expectedNadir,
-            expectedNorth, expectedEast, expectedSouth, expectedWest, expectedNadir,
-            expectedNorth
+            expectedNorth, expectedEast, expectedSouth, expectedWest, expectedPointing = expectedNadir,
+            expectedUpAlongPhone = expectedNorth
         )
     }
 
+    @Test
     fun testStandingUpOnEquatorMagN10DegreesEast() {
         val location = LatLong(0f, 0f)
-        val acceleration = Vector3(0f, -10f, 0f)
+        val acceleration = Vector3(0f, 10f, 0f)
         val magneticField = Vector3(
-            -sin(10f * DEGREES_TO_RADIANS),
+            sin(10f * DEGREES_TO_RADIANS),
             10f,
-            cos(10f * DEGREES_TO_RADIANS)
+            -cos(10f * DEGREES_TO_RADIANS)
         )
         val expectedZenith = Vector3(1f, 0f, 0f)
         val expectedNadir = Vector3(-1f, 0f, 0f)
@@ -126,6 +109,24 @@ class AstronomerModelWithMagneticVariationTest : TestCase() {
             10f, location, acceleration, magneticField, expectedZenith, expectedNadir,
             expectedNorth, expectedEast, expectedSouth, expectedWest, expectedNorth,
             expectedZenith
+        )
+    }
+
+    @Test
+    fun testFlatLat45Long0MagN180Degrees() {
+        val location = LatLong(45f, 0f)
+        val acceleration = Vector3(0f, 0f, 10f)
+        val magneticField = Vector3(0f, -10f, 0f)
+        val expectedZenith = Vector3(1 / SQRT2, 0f, 1 / SQRT2)
+        val expectedNadir = Vector3(-1 / SQRT2, 0f, -1 / SQRT2)
+        val expectedNorth = Vector3(-1 / SQRT2, 0f, 1 / SQRT2)
+        val expectedEast = Vector3(0f, 1f, 0f)
+        val expectedSouth = Vector3(1 / SQRT2, 0f, -1 / SQRT2)
+        val expectedWest = Vector3(0f, -1f, 0f)
+        checkPointing(
+            180f, location, acceleration, magneticField, expectedZenith, expectedNadir,
+            expectedNorth, expectedEast, expectedSouth, expectedWest, expectedPointing = expectedNadir,
+            expectedUpAlongPhone = expectedNorth
         )
     }
 
@@ -157,58 +158,19 @@ class AstronomerModelWithMagneticVariationTest : TestCase() {
             }
         astronomer.setClock(fakeClock)
         astronomer.setPhoneSensorValues(acceleration, magneticField)
-        val pointing = astronomer.pointing.lineOfSight
-        val upAlongPhone = astronomer.pointing.perpendicular
-        val north = astronomer.north
-        val east = astronomer.east
-        val south = astronomer.south
-        val west = astronomer.west
-        val zenith = astronomer.zenith
-        val nadir = astronomer.nadir
-        assertVectorEquals(expectedZenith, zenith, TOL_LENGTH, TOL_ANGLE)
-        assertVectorEquals(expectedNadir, nadir, TOL_LENGTH, TOL_ANGLE)
-        assertVectorEquals(expectedNorth, north, TOL_LENGTH, TOL_ANGLE)
-        assertVectorEquals(expectedEast, east, TOL_LENGTH, TOL_ANGLE)
-        assertVectorEquals(expectedSouth, south, TOL_LENGTH, TOL_ANGLE)
-        assertVectorEquals(expectedWest, west, TOL_LENGTH, TOL_ANGLE)
-        assertVectorEquals(expectedPointing, pointing, TOL_LENGTH, TOL_ANGLE)
-        assertVectorEquals(expectedUpAlongPhone, upAlongPhone, TOL_LENGTH, TOL_ANGLE)
-    }
 
-    fun testFlatLat45Long0MagN180Degrees() {
-        val location = LatLong(45f, 0f)
-        val acceleration = Vector3(0f, 0f, -10f)
-        val magneticField = Vector3(0f, 10f, 0f)
-        val expectedZenith = Vector3(1 / SQRT2, 0f, 1 / SQRT2)
-        val expectedNadir = Vector3(-1 / SQRT2, 0f, -1 / SQRT2)
-        val expectedNorth = Vector3(-1 / SQRT2, 0f, 1 / SQRT2)
-        val expectedEast = Vector3(0f, 1f, 0f)
-        val expectedSouth = Vector3(1 / SQRT2, 0f, -1 / SQRT2)
-        val expectedWest = Vector3(0f, -1f, 0f)
-        checkPointing(
-            180f, location, acceleration, magneticField, expectedZenith, expectedNadir,
-            expectedNorth, expectedEast, expectedSouth, expectedWest, expectedNadir,
-            expectedNorth
-        )
+        Vector3Subject.assertThat(astronomer.zenith).isWithin(TOL).of(expectedZenith)
+        Vector3Subject.assertThat(astronomer.nadir).isWithin(TOL).of(expectedNadir)
+        Vector3Subject.assertThat(astronomer.north).isWithin(TOL).of(expectedNorth)
+        Vector3Subject.assertThat(astronomer.east).isWithin(TOL).of(expectedEast)
+        Vector3Subject.assertThat(astronomer.south).isWithin(TOL).of(expectedSouth)
+        Vector3Subject.assertThat(astronomer.west).isWithin(TOL).of(expectedWest)
+        Vector3Subject.assertThat(astronomer.pointing.lineOfSight).isWithin(TOL).of(expectedPointing)
+        Vector3Subject.assertThat(astronomer.pointing.perpendicular).isWithin(TOL).of(expectedUpAlongPhone)
     }
 
     companion object {
-        private const val TOL_ANGLE = 1e-3.toFloat()
-        private const val TOL_LENGTH = 1e-3.toFloat()
+        private const val TOL = 1e-3.toFloat()
         private val SQRT2 = sqrt(2f)
-        private fun assertVectorEquals(
-            v1: Vector3, v2: Vector3, tol_angle: Float,
-            tol_length: Float
-        ) {
-            val normv1 = v1.length
-            val normv2 = v2.length
-            assertEquals("Vectors of different lengths", normv1, normv2, tol_length)
-            val cosineSim =         // We might want to optimize this implementation at some point.
-                v1.cosineSimilarity(v2)
-            val cosTol = cos(tol_angle)
-            assertTrue("Vectors in different directions", cosineSim >= cosTol)
-            //TODO look at iteration in Julian day
-        }
-
     }
 }

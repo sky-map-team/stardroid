@@ -23,4 +23,11 @@
         <item translation_description="Extra High sensor damping factor">About right</item>
         <item translation_description="Really High sensor damping factor">Laggy</item>
     </string-array>
+    <string-array name="viewing_direction">
+        <item translation_description="Normal viewing">Normal</item>
+        <item translation_description="Rotates the screen by 90 degrees">Rotated horizon</item>
+        <item
+            translation_description="Shows the sky as pointed at by the long edge of the phone">Pointer mode
+        </item>
+    </string-array>
 </resources>
