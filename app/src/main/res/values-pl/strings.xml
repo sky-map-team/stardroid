@@ -70,8 +70,7 @@
     <string name="no_search_title">Brak wyników</string>
     <string name="no_search_results_text">Nie znaleziono żadnych wyników.</string>
     <!-- Hopefully this is a temporary measure until we can fix the search engine -->
-    <string name="no_search_results_text2">Nie znaleziono żadnych wyników. Być może obiekt nie jest
-        widoczny w tej chwili.</string>
+    <string name="no_search_results_text2">Nie znaleziono żadnych wyników. Być może obiekt nie jest widoczny w tej chwili.</string>
     <string name="many_search_results_title">Czy chodziło Ci o?</string>
     <string name="many_search_results_text">Wybierz jeden</string>
     <string name="searching_for_text">Wyszukiwanie %s...</string>
@@ -87,9 +86,7 @@
     <string name="custom_date_prompt" translation_description="label telling the user to manually specify a data">Lub wybierz żądaną datę</string>
     <string name="change_date_prompt">Zmień datę</string>
     <string name="change_time_prompt">Zmień godzinę</string>
-    <string name="now_visiting"
-            translation_description="used in time travel dialog to tell the user what time they are visiting, time formatted as yyyy.mm.dd at hh.mm.ss + timezone">
-        Teraz odwiedzasz: %s</string>
+    <string name="now_visiting" translation_description="used in time travel dialog to tell the user what time they are visiting, time formatted as yyyy.mm.dd at hh.mm.ss + timezone">Teraz odwiedzasz: %s</string>
     <string name="time_travel_label_past" translation_description="label showing that we are in the past">Podróż w czasie: przeszłość</string>
     <string name="time_travel_label_future" translation_description="label showing that we are in the future">Podróż w czasie: przyszłość</string>
     <string name="time_travel_stopped" translation_description="label showing rate of travel through time">Podróż w czasie zamrożona</string>
@@ -114,7 +111,7 @@
     <string name="gallery_image_back_btn">Powrót do galerii</string>
     <string name="hubble_image_gallery_title">Galeria Sky Map</string>
     <string name="hubble_image">Zdjęcie z teleskopu Hubble’a</string>
-        <!--  TODO(johntaylor): currently unused -->
+    <!--  TODO(johntaylor): currently unused -->
 
     <string name="search_target_found_message" translation_description="displayed when a search target has been located">Znaleziono:</string>
     <string name="search_overlay_title" translation_description="title for search overlay">Kieruj telefon zgodnie ze wskazaniem strzałki</string>
@@ -191,11 +188,13 @@
     <string name="compass_calibration_activity_heading_compass">Kompas –</string>
     <string name="compass_calibration_activity_do_not_show_this_again">Nie pokazuj tego ponownie</string>
     <string name="compass_calibration_activity_warning">Twój kompas wymaga kalibracji</string>
+    <string name="compass_calib_what_to_do" translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL">Twój telefon zgłasza do Sky Map, że jego wbudowany kompas jest nieskalibrowany. Nie jest to problem Sky Map, ale możemy spróbować pomóc Ci to naprawić. Aby skalibrować kompas, spróbuj poruszać swoim telefonem na kształt ósemki jak zaprezentowano w tym wideo %s, aż do uzyskania dokładności „wysoka”.</string>
+    <string name="compass_calib_what_to_do_user" transation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL">Dokładność kompasu w Twoim telefonie jest pokazana powyżej. Jeśli nie jest „wysoka”, wtedy kompas może wymagać kalibracji. Nie jest to problem Sky Map, tylko związany z Twoim telefonem. Aby skalibrować kompas, spróbuj poruszać swoim telefonem na kształt ósemki jak zaprezentowano w tym wideo %s.</string>
     <string name="sensor_reverse_preference_title">Odwróć oś Z magnetometru</string>
     <string name="sensor_reverse_preference_summary">Poprawka dla telefonów z nieprawidłowo zaimplementowanymi czujnikami – wymaga ponownego uruchomienia</string>
     <string name="whats_new_dialog_title">Co nowego</string>
     <string name="disable_gyro_preference_title">Wyłącz żyroskop</string>
     <string name="disable_gyro_preference_summary">Nie wszystkie urządzenia mają żyroskop – jeśli Twoje posiada, uzyskasz lepsze wyniki z włączonym żyroskopem i odznaczeniem tego pola. Z drugiej strony, jeśli Twoje urządzenie nie ma żyroskopu, Sky Map prawdopodobnie nie będzie działać, jeśli odznaczysz to pole</string>
     <string name="rotate_horizon_preference_title">Obracaj horyzont</string>
-    <string name="rotate_horizon_preference_summary">Obracaj horyzont o 90° (dla ekranów z wymuszoną poziomą orientacją ekranu, takich jak inteligentne okulary)</string>
+    <string name="rotate_horizon_preference_summary">Obracaj horyzont o 90° (dla ekranów z wymuszoną poziomą orientacją ekranu) lub używaj trybu wskaźnika, aby ekran pokazywał, na co wskazuje góra telefonu (zobacz tekst pomocy)</string>
 </resources>
