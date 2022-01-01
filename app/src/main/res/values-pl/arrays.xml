@@ -23,4 +23,9 @@
         <item translation_description="Extra High sensor damping factor">W sam raz</item>
         <item translation_description="Really High sensor damping factor">Opóźniające</item>
     </string-array>
+        <string-array name="viewing_direction">
+        <item translation_description="Normal viewing">Normalne oglądanie</item>
+        <item translation_description="Rotates the screen by 90 degrees">Obrócony horyzont</item>
+        <item translation_description="Shows the sky as pointed at by the long edge of the phone">Tryb wskaźnika</item>
+    </string-array>
 </resources>
