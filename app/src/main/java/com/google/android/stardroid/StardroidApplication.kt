@@ -40,38 +40,33 @@ import javax.inject.Inject
  * @author John Taylor
  */
 class StardroidApplication : Application() {
-  @JvmField
   @Inject
-  var preferences: SharedPreferences? = null
+  lateinit var preferences: SharedPreferences
 
   // We keep a reference to this just to start it initializing.
-  @JvmField
   @Inject
-  var layerManager: LayerManager? = null
+  lateinit var layerManager: LayerManager
 
-  @JvmField
   @Inject
-  var analytics: AnalyticsInterface? = null
+  lateinit var analytics: AnalyticsInterface
 
-  @JvmField
   @Inject
+  @JvmField
   var sensorManager: SensorManager? = null
 
   // We need to maintain references to this object to keep it from
   // getting gc'd.
-  @JvmField
   @Inject
-  var preferenceChangeAnalyticsTracker: PreferenceChangeAnalyticsTracker? = null
-  var applicationComponent: ApplicationComponent? = null
-    private set
+  lateinit var preferenceChangeAnalyticsTracker: PreferenceChangeAnalyticsTracker
+
+  val applicationComponent: ApplicationComponent = DaggerApplicationComponent.builder()
+    .applicationModule(ApplicationModule(this))
+    .build()
 
   override fun onCreate() {
     Log.d(TAG, "StardroidApplication: onCreate")
     super.onCreate()
-    applicationComponent = DaggerApplicationComponent.builder()
-      .applicationModule(ApplicationModule(this))
-      .build()
-    applicationComponent?.inject(this)
+    applicationComponent.inject(this)
     Log.i(
       TAG, "OS Version: " + Build.VERSION.RELEASE
           + "(" + Build.VERSION.SDK_INT + ")"
@@ -88,18 +83,18 @@ class StardroidApplication : Application() {
   }
 
   private fun setUpAnalytics(versionName: String) {
-    (analytics ?: return).setEnabled((preferences ?: return).getBoolean(AnalyticsInterface.PREF_KEY, true))
+    analytics.setEnabled(preferences.getBoolean(AnalyticsInterface.PREF_KEY, true))
 
     // Ugly hack since this isn't injectable
     PreferencesButton.setAnalytics(analytics)
-    var previousVersion = preferences?.getString(PREVIOUS_APP_VERSION_PREF, NONE)
+    var previousVersion = preferences.getString(PREVIOUS_APP_VERSION_PREF, NONE)
     var newUser = false
     if (previousVersion == NONE) {
       // It's possible a previous version exists, it's just that it wasn't a recent enough
       // version to have set PREVIOUS_APP_VERSION_PREF.  If so, we should see that the TOS
       // have been accepted.
       val oldPreviousVersionKey = "read_tos"
-      if (preferences!!.contains(oldPreviousVersionKey)) {
+      if (preferences.contains(oldPreviousVersionKey)) {
         previousVersion = UNKNOWN
       } else {
         // Best guess that this is the first every run of a new user.
@@ -107,8 +102,8 @@ class StardroidApplication : Application() {
         newUser = true
       }
     }
-    analytics?.setUserProperty(AnalyticsInterface.NEW_USER, java.lang.Boolean.toString(newUser))
-    preferences!!.edit().putString(PREVIOUS_APP_VERSION_PREF, versionName).apply()
+    analytics.setUserProperty(AnalyticsInterface.NEW_USER, java.lang.Boolean.toString(newUser))
+    preferences.edit().putString(PREVIOUS_APP_VERSION_PREF, versionName).apply()
     if (previousVersion != versionName) {
       // It's either an upgrade or a new installation
       Log.d(TAG, "New installation: version $versionName")
@@ -118,13 +113,13 @@ class StardroidApplication : Application() {
     // It will be interesting to see *when* people use Sky Map.
     val b = Bundle()
     b.putInt(AnalyticsInterface.START_EVENT_HOUR, Calendar.getInstance()[Calendar.HOUR_OF_DAY])
-    analytics?.trackEvent(AnalyticsInterface.START_EVENT, b)
-    preferences!!.registerOnSharedPreferenceChangeListener(preferenceChangeAnalyticsTracker)
+    analytics.trackEvent(AnalyticsInterface.START_EVENT, b)
+    preferences.registerOnSharedPreferenceChangeListener(preferenceChangeAnalyticsTracker)
   }
 
   override fun onTerminate() {
     super.onTerminate()
-    analytics?.setEnabled(false)
+    analytics.setEnabled(false)
   }// TODO(jontayler): update to use the info created by gradle.
 
   /**
@@ -165,7 +160,9 @@ class StardroidApplication : Application() {
   private fun performFeatureCheck() {
     if (sensorManager == null) {
       Log.e(TAG, "No sensor manager")
-      analytics?.setUserProperty(AnalyticsInterface.DEVICE_SENSORS, AnalyticsInterface.DEVICE_SENSORS_NONE)
+      analytics.setUserProperty(
+        AnalyticsInterface.DEVICE_SENSORS, AnalyticsInterface.DEVICE_SENSORS_NONE
+      )
       return
     }
     // Reported available sensors
@@ -184,7 +181,7 @@ class StardroidApplication : Application() {
     }
 
     // TODO: Change to String.join once we're at API > 26
-    analytics?.setUserProperty(
+    analytics.setUserProperty(
       AnalyticsInterface.DEVICE_SENSORS, TextUtils.join("|", reportedSensors)
     )
 
@@ -207,8 +204,8 @@ class StardroidApplication : Application() {
     }
 
     // Enable Gyro if available and user hasn't already disabled it.
-    if (!preferences!!.contains(ApplicationConstants.SHARED_PREFERENCE_DISABLE_GYRO)) {
-      preferences!!.edit().putBoolean(
+    if (!preferences.contains(ApplicationConstants.SHARED_PREFERENCE_DISABLE_GYRO)) {
+      preferences.edit().putBoolean(
         ApplicationConstants.SHARED_PREFERENCE_DISABLE_GYRO, !hasRotationSensor
       ).apply()
     }
@@ -217,7 +214,7 @@ class StardroidApplication : Application() {
     Log.d(TAG, "All sensors:")
     val allSensors = sensorManager?.getSensorList(Sensor.TYPE_ALL)
     val sensorTypes: MutableSet<String> = HashSet()
-    for (sensor in allSensors?: emptyList()) {
+    for (sensor in allSensors ?: emptyList()) {
       Log.i(TAG, sensor.name)
       sensorTypes.add(getSafeNameForSensor(sensor))
     }
@@ -242,7 +239,7 @@ class StardroidApplication : Application() {
       dummy, sensor, SensorManager.SENSOR_DELAY_UI
     ) ?: false
     if (!success) {
-      analytics?.setUserProperty(AnalyticsInterface.SENSOR_LIAR, "true")
+      analytics.setUserProperty(AnalyticsInterface.SENSOR_LIAR, "true")
     }
     sensorManager?.unregisterListener(dummy)
     return success
@@ -258,8 +255,6 @@ class StardroidApplication : Application() {
      * Returns either the name of the sensor or a string version of the sensor type id, depending
      * on the supported OS level along with some context.
      */
-    fun getSafeNameForSensor(sensor: Sensor): String {
-      return  "Sensor type: ${sensor.stringType}: ${sensor.type}"
-    }
+    fun getSafeNameForSensor(sensor: Sensor) = "Sensor type: ${sensor.stringType}: ${sensor.type}"
   }
 }
