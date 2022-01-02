@@ -33,9 +33,9 @@ import javax.inject.Inject
 class SearchTermsProvider : ContentProvider() {
   data class SearchTerm(var query: String, var origin: String)
 
-  @JvmField
   @Inject
-  var layerManager: LayerManager? = null
+  lateinit var layerManager: LayerManager
+
   override fun onCreate(): Boolean {
     maybeInjectMe()
     return true
@@ -50,7 +50,7 @@ class SearchTermsProvider : ContentProvider() {
       return true
     }
     val appContext = context?.applicationContext as? StardroidApplication ?: return false
-    val component = appContext.applicationComponent ?: return false
+    val component = appContext.applicationComponent
     component.inject(this)
     alreadyInjected = true
     return true
@@ -83,7 +83,7 @@ class SearchTermsProvider : ContentProvider() {
     if (query == null) {
       return cursor
     }
-    val results = layerManager!!.getObjectNamesMatchingPrefix(query)
+    val results = layerManager.getObjectNamesMatchingPrefix(query)
     Log.d("SearchTermsProvider", "Got results n=" + results.size)
     for (result in results) {
       cursor.addRow(columnValuesOfSuggestion(result))
