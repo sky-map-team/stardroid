@@ -1,6 +1,8 @@
 <resources>
     <!-- Main App Theme to make global changes easier -->
-    <style name = "AppTheme" parent="@android:style/Theme.Holo">
+    <style name = "AppTheme" parent="@style/Theme.AppCompat.NoActionBar">
+    </style>
+    <style name = "AppThemeNoActionBar" parent="@style/Theme.AppCompat.NoActionBar">
     </style>
 
     <style name="FullscreenTheme" parent="AppTheme">
@@ -9,6 +11,13 @@
         <item name="android:windowBackground">@null</item>
         <item name="metaButtonBarStyle">?android:attr/buttonBarStyle</item>
         <item name="metaButtonBarButtonStyle">?android:attr/buttonBarButtonStyle</item>
+    </style>
+
+    <style name="FullscreenNoTitle" parent="AppThemeNoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
     </style>
 
     <style name="FullscreenActionBarStyle" parent="android:Widget.Holo.ActionBar">

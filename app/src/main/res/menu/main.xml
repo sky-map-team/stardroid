@@ -14,57 +14,58 @@
      limitations under the License.
 -->
 
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item android:id="@+id/menu_item_search"
           android:orderInCategory="1"
           android:title="@string/menu_search"
           android:icon="@android:drawable/ic_menu_search"
-          android:showAsAction="always"/>
+          app:showAsAction="always"/>
 
     <item android:id="@+id/menu_item_dim"
           android:orderInCategory="2"
           android:title="@string/menu_toggle_dim"
           android:icon="@android:drawable/ic_menu_view"
-          android:showAsAction="ifRoom"/>
+          app:showAsAction="ifRoom"/>
 
     <item android:id="@+id/menu_item_settings"
           android:orderInCategory="3"
           android:title="@string/menu_settings"
-          android:showAsAction="never"
+          app:showAsAction="never"
           android:icon="@android:drawable/ic_menu_preferences"/>
 
     <item android:id="@+id/menu_item_gallery"
           android:orderInCategory="4"
           android:title="@string/menu_gallery"
-          android:showAsAction="ifRoom"
+          app:showAsAction="ifRoom"
           android:icon="@android:drawable/ic_menu_gallery"/>
 
     <item android:id="@+id/menu_item_time"
           android:orderInCategory="5"
           android:title="@string/menu_time"
           android:icon="@drawable/time_travel_icon"
-          android:showAsAction="ifRoom"/>
+          app:showAsAction="ifRoom"/>
 
     <item android:id="@+id/menu_item_calibrate"
           android:orderInCategory="7"
           android:title="@string/menu_calibrate"
-          android:showAsAction="never"/>
+          app:showAsAction="never"/>
 
     <item android:id="@+id/menu_item_diagnostics"
           android:orderInCategory="8"
           android:title="@string/menu_diagnostics"
-          android:showAsAction="never"/>
+          app:showAsAction="never"/>
 
     <item android:id="@+id/menu_item_help"
           android:orderInCategory="9"
           android:title="@string/menu_help"
-          android:showAsAction="never"
+          app:showAsAction="never"
           android:icon="@android:drawable/ic_menu_info_details"/>
 
     <!-- TODO(serafini): We need an icon for this? -->
     <item android:id="@+id/menu_item_tos"
           android:orderInCategory="10"
-          android:showAsAction="never"
+          app:showAsAction="never"
           android:title="@string/menu_tos"/>
 </menu>

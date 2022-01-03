@@ -14,7 +14,6 @@
 
 package com.google.android.stardroid.activities;
 
-import android.app.FragmentManager;
 import android.app.SearchManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -41,7 +40,9 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
+import androidx.fragment.app.FragmentManager;
 
 import com.google.android.stardroid.ApplicationConstants;
 import com.google.android.stardroid.R;
@@ -235,6 +236,12 @@ public class DynamicStarMapActivity extends InjectableActivity
     // Eventually we should check at the point of use, but this will do for now.  If the
     // user revokes the permission later then odd things may happen.
     playServicesChecker.maybeCheckForGooglePlayServices();
+
+    // Find the toolbar view inside the activity layout
+    Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+    // Sets the Toolbar to act as the ActionBar for this Activity window.
+    // Make sure the toolbar exists in the activity and is not null
+    setSupportActionBar(toolbar);
 
     initializeModelViewController();
     checkForSensorsAndMaybeWarn();

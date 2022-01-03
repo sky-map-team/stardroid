@@ -1,13 +1,14 @@
 package com.google.android.stardroid.activities;
 
 import android.app.Activity;
-import android.app.FragmentManager;
 import android.content.Context;
 import android.media.MediaPlayer;
 import android.os.Handler;
 import android.util.Log;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+
+import androidx.fragment.app.FragmentManager;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
@@ -122,7 +123,7 @@ public class AbstractDynamicStarMapModule {
   @Provides
   @PerActivity
   FragmentManager provideFragmentManager() {
-    return activity.getFragmentManager();
+    return activity.getSupportFragmentManager();
   }
 
   @Provides
