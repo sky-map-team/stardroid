@@ -1,11 +1,10 @@
 package com.google.android.stardroid.activities.util;
 
 import android.app.Activity;
+import android.app.FragmentManager;
 import android.content.SharedPreferences;
 import android.util.Log;
 import android.widget.Toast;
-
-import androidx.fragment.app.FragmentManager;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;

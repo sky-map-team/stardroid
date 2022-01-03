@@ -1,10 +1,9 @@
 package com.google.android.stardroid.activities;
 
 import android.app.Activity;
+import android.app.FragmentManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-
-import androidx.fragment.app.FragmentManager;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
@@ -56,6 +55,6 @@ public class SplashScreenModule {
   @Provides
   @PerActivity
   FragmentManager provideFragmentManager() {
-    return activity.getSupportFragmentManager();
+    return activity.getFragmentManager();
   }
 }

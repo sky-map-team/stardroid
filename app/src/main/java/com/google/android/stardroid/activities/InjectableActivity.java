@@ -1,6 +1,6 @@
 package com.google.android.stardroid.activities;
 
-import androidx.appcompat.app.AppCompatActivity;
+import android.app.Activity;
 
 import com.google.android.stardroid.ApplicationComponent;
 import com.google.android.stardroid.StardroidApplication;
@@ -10,7 +10,7 @@ import com.google.android.stardroid.StardroidApplication;
  *
  * Created by johntaylor on 4/9/16.
  */
-public abstract class InjectableActivity extends AppCompatActivity {
+public abstract class InjectableActivity extends Activity {
   protected ApplicationComponent getApplicationComponent() {
     return ((StardroidApplication) getApplication()).getApplicationComponent();
   }
