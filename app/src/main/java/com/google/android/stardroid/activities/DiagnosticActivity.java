@@ -22,6 +22,7 @@ import com.google.android.stardroid.StardroidApplication;
 import com.google.android.stardroid.activities.util.SensorAccuracyDecoder;
 import com.google.android.stardroid.control.AstronomerModel;
 import com.google.android.stardroid.control.LocationController;
+import com.google.android.stardroid.databinding.ActivityDiagnosticBinding;
 import com.google.android.stardroid.math.LatLong;
 import com.google.android.stardroid.math.Vector3;
 import com.google.android.stardroid.util.Analytics;
@@ -56,6 +57,7 @@ public class DiagnosticActivity extends AppCompatInjectableActivity implements S
   private Sensor gyroSensor;
   private Sensor rotationVectorSensor;
   private Sensor lightSensor;
+  private ActivityDiagnosticBinding binding;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -63,14 +65,15 @@ public class DiagnosticActivity extends AppCompatInjectableActivity implements S
     DaggerDiagnosticActivityComponent.builder().applicationComponent(
       getApplicationComponent()).diagnosticActivityModule(new DiagnosticActivityModule(this))
           .build().inject(this);
-    setContentView(R.layout.activity_diagnostic);
+    binding = ActivityDiagnosticBinding.inflate(this.getLayoutInflater());
+    setContentView(binding.getRoot());
   }
 
   @Override
   public void onStart() {
     super.onStart();
 
-    setText(R.id.diagnose_phone_txt, Build.MODEL + " (" + Build.HARDWARE + ") " +
+    setText(binding.diagnosePhoneTxt, Build.MODEL + " (" + Build.HARDWARE + ") " +
         Locale.getDefault().getLanguage());
     String androidVersion = String.format(Build.VERSION.RELEASE + " (%d)", Build.VERSION.SDK_INT);
     setText(R.id.diagnose_android_version_txt, androidVersion);
@@ -277,6 +280,10 @@ public class DiagnosticActivity extends AppCompatInjectableActivity implements S
   private void setText(int viewId, String text) {
     ((TextView) findViewById(viewId)).setText(text);
   }
+  private void setText(TextView view, String text) {
+    view.setText(text);
+  }
+
 
   private void setColor(int viewId, int color) {
     ((TextView) findViewById(viewId)).setTextColor(color);
