@@ -37,7 +37,7 @@
         <item name="android:paddingBottom">5dp</item>
     </style>
 
-    <style name="title" parent="text">
+    <style name="title_scheduled_for_demolition" parent="text">
         <item name="android:textStyle">bold</item>
     </style>
 
