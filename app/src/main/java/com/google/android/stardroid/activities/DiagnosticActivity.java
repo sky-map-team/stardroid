@@ -37,7 +37,7 @@ import java.util.TimeZone;
 import javax.annotation.Nullable;
 import javax.inject.Inject;
 
-public class DiagnosticActivity extends InjectableActivity implements SensorEventListener {
+public class DiagnosticActivity extends AppCompatInjectableActivity implements SensorEventListener {
   private static final String TAG = MiscUtil.getTag(DiagnosticActivity.class);
   private static final int UPDATE_PERIOD_MILLIS = 500;
 

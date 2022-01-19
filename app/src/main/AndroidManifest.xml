@@ -88,6 +88,7 @@
             android:screenOrientation="portrait"/>
         <activity
             android:name=".activities.DiagnosticActivity"
+            android:theme="@style/AppThemeNew"
             android:label="@string/title_activity_diagnostic">
         </activity>
         <!-- Provides search suggestions. -->

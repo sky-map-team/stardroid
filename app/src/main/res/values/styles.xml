@@ -23,6 +23,7 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <!-- Used in Diagnostic Activity -->
     <style name="TableRow_Element" parent="@android:style/TextAppearance.DeviceDefault.Small">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -37,6 +38,8 @@
         <item name="android:paddingBottom">5dp</item>
     </style>
 
+    <!-- End Used in Diagnostic Activity -->
+
     <style name="title_scheduled_for_demolition" parent="text">
         <item name="android:textStyle">bold</item>
     </style>
@@ -44,4 +47,10 @@
     <style name="text">
         <item name="android:paddingLeft">5px</item>
     </style>
+
+    <!-- New themes here -->
+
+    <!-- App compat activities are required to inherit from Theme.AppCompat or one of its
+    descendents -->
+    <style name="AppThemeNew" parent="Theme.AppCompat"/>
 </resources>
