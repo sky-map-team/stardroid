@@ -67,7 +67,6 @@ public class DiagnosticActivity extends AppCompatInjectableActivity implements S
           .build().inject(this);
     binding = ActivityDiagnosticBinding.inflate(this.getLayoutInflater());
     setContentView(binding.getRoot());
-    //setContentView(R.layout.activity_diagnostic);
   }
 
   @Override
@@ -77,11 +76,11 @@ public class DiagnosticActivity extends AppCompatInjectableActivity implements S
     setText(binding.diagnosePhoneTxt, Build.MODEL + " (" + Build.HARDWARE + ") " +
         Locale.getDefault().getLanguage());
     String androidVersion = String.format(Build.VERSION.RELEASE + " (%d)", Build.VERSION.SDK_INT);
-    setText(R.id.diagnose_android_version_txt, androidVersion);
+    setText(binding.diagnoseAndroidVersionTxt, androidVersion);
 
     String skyMapVersion = String.format(
         app.getVersionName() + " (%d)", app.getVersion());
-    setText(R.id.diagnose_skymap_version_txt, skyMapVersion);
+    setText(binding.diagnoseSkymapVersionTxt, skyMapVersion);
   }
 
   private boolean continueUpdates;
@@ -104,34 +103,37 @@ public class DiagnosticActivity extends AppCompatInjectableActivity implements S
   }
 
   private void onResumeSensors() {
+    if (sensorManager == null) {
+      return;
+    }
     accelSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
     int absentSensorColor = getResources().getColor(R.color.absent_sensor);
     if (accelSensor == null) {
-      setColor(R.id.diagnose_accelerometer_values_txt, absentSensorColor);
+      setColor(binding.diagnoseAccelerometerValuesTxt, absentSensorColor);
     } else {
       sensorManager.registerListener(this, accelSensor, SensorManager.SENSOR_DELAY_NORMAL);
     }
     magSensor = sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
     if (magSensor == null) {
-      setColor(R.id.diagnose_compass_values_txt, absentSensorColor);
+      setColor(binding.diagnoseCompassValuesTxt, absentSensorColor);
     } else {
       sensorManager.registerListener(this, magSensor, SensorManager.SENSOR_DELAY_NORMAL);
     }
     gyroSensor = sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
     if (gyroSensor == null) {
-      setColor(R.id.diagnose_gyro_values_txt, absentSensorColor);
+      setColor(binding.diagnoseGyroValuesTxt, absentSensorColor);
     } else {
       sensorManager.registerListener(this, gyroSensor, SensorManager.SENSOR_DELAY_NORMAL);
     }
     rotationVectorSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR);
     if (rotationVectorSensor == null) {
-      setColor(R.id.diagnose_rotation_values_txt, absentSensorColor);
+      setColor(binding.diagnoseRotationValuesTxt, absentSensorColor);
     } else {
       sensorManager.registerListener(this, rotationVectorSensor, SensorManager.SENSOR_DELAY_NORMAL);
     }
     lightSensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
     if (lightSensor == null) {
-      setColor(R.id.diagnose_light_values_txt, absentSensorColor);
+      setColor(binding.diagnoseLightValuesTxt, absentSensorColor);
     } else {
       sensorManager.registerListener(this, lightSensor, SensorManager.SENSOR_DELAY_UI);
     }
@@ -151,29 +153,30 @@ public class DiagnosticActivity extends AppCompatInjectableActivity implements S
     } catch (SecurityException ex) {
       gpsStatusMessage = getString(R.string.permission_disabled);
     }
-    setText(R.id.diagnose_gps_status_txt, gpsStatusMessage);
+    setText(binding.diagnoseGpsStatusTxt, gpsStatusMessage);
     LatLong currentLocation = locationController.getCurrentLocation();
     String locationMessage = currentLocation.getLatitude() + ", " + currentLocation.getLongitude();
     // Current provider not working    + " (" + locationController.getCurrentProvider() + ")";
-    setText(R.id.diagnose_location_txt, locationMessage);
+    setText(binding.diagnoseLocationTxt, locationMessage);
   }
 
   private void updateModel() {
     float magCorrection = model.getMagneticCorrection();
-    setText(R.id.diagnose_magnetic_correction_txt,
+    setText(binding.diagnoseMagneticCorrectionTxt,
         Math.abs(magCorrection) + " " + (magCorrection > 0
             ? getString(R.string.east) : getString(R.string.west)) + " "
             + getString(R.string.degrees));
     AstronomerModel.Pointing pointing = model.getPointing();
     Vector3 lineOfSight = pointing.getLineOfSight();
-    setText(R.id.diagnose_pointing_txt, getDegreeInHour(getRaOfUnitGeocentricVector(lineOfSight)) + ", " + getDecOfUnitGeocentricVector(lineOfSight));
+    setText(binding.diagnosePointingTxt,
+        getDegreeInHour(getRaOfUnitGeocentricVector(lineOfSight)) + ", " + getDecOfUnitGeocentricVector(lineOfSight));
     Date nowTime = model.getTime();
     SimpleDateFormat dateFormatUtc = new SimpleDateFormat("yyyy-MMM-dd HH:mm:ss");
     dateFormatUtc.setTimeZone(TimeZone.getTimeZone("UTC"));
     SimpleDateFormat dateFormatLocal = new SimpleDateFormat("yyyy-MMM-dd HH:mm:ss");
 
-    setText(R.id.diagnose_utc_datetime_txt, dateFormatUtc.format(nowTime));
-    setText(R.id.diagnose_local_datetime_txt, dateFormatLocal.format(nowTime));
+    setText(binding.diagnoseUtcDatetimeTxt, dateFormatUtc.format(nowTime));
+    setText(binding.diagnoseLocalDatetimeTxt, dateFormatLocal.format(nowTime));
   }
 
   @Override
@@ -186,22 +189,22 @@ public class DiagnosticActivity extends AppCompatInjectableActivity implements S
   public void onAccuracyChanged(Sensor sensor, int accuracy) {
     knownSensorAccuracies.add(sensor);
     Log.d(TAG, "set size" + knownSensorAccuracies.size());
-    int sensorViewId;
+    TextView sensorView;
     if (sensor == accelSensor) {
-      sensorViewId = R.id.diagnose_accelerometer_values_txt;
+      sensorView = binding.diagnoseAccelerometerValuesTxt;
     } else if (sensor == magSensor) {
-      sensorViewId = R.id.diagnose_compass_values_txt;
+      sensorView = binding.diagnoseCompassValuesTxt;
     } else if (sensor == gyroSensor) {
-      sensorViewId = R.id.diagnose_gyro_values_txt;
+      sensorView = binding.diagnoseGyroValuesTxt;
     } else if (sensor == rotationVectorSensor) {
-      sensorViewId = R.id.diagnose_rotation_values_txt;
+      sensorView = binding.diagnoseRotationValuesTxt;
     } else if (sensor == lightSensor) {
-      sensorViewId = R.id.diagnose_light_values_txt;
+      sensorView = binding.diagnoseLightValuesTxt;
     } else {
       Log.e(TAG, "Receiving accuracy change for unknown sensor " + sensor);
       return;
     }
-    setColor(sensorViewId, sensorAccuracyDecoder.getColorForAccuracy(accuracy));
+    setColor(sensorView, sensorAccuracyDecoder.getColorForAccuracy(accuracy));
   }
 
   private Set<Sensor> knownSensorAccuracies = new HashSet<>();
@@ -211,23 +214,23 @@ public class DiagnosticActivity extends AppCompatInjectableActivity implements S
     if (!knownSensorAccuracies.contains(sensor)) {
       onAccuracyChanged(sensor, event.accuracy);
     }
-    int valuesViewId;
+    TextView valuesView;
     if (sensor == accelSensor) {
-      valuesViewId = R.id.diagnose_accelerometer_values_txt;
+      valuesView = binding.diagnoseAccelerometerValuesTxt;
     } else if (sensor == magSensor) {
-      valuesViewId = R.id.diagnose_compass_values_txt;
+      valuesView = binding.diagnoseCompassValuesTxt;
     } else if (sensor == gyroSensor) {
-      valuesViewId = R.id.diagnose_gyro_values_txt;
+      valuesView = binding.diagnoseGyroValuesTxt;
     } else if (sensor == rotationVectorSensor) {
-      valuesViewId = R.id.diagnose_rotation_values_txt;
+      valuesView = binding.diagnoseRotationValuesTxt;
     } else if (sensor == lightSensor) {
-      valuesViewId = R.id.diagnose_light_values_txt;
+      valuesView = binding.diagnoseLightValuesTxt;
     } else {
       Log.e(TAG, "Receiving values for unknown sensor " + sensor);
       return;
     }
     float[] values = event.values;
-    setArrayValuesInUi(valuesViewId, values);
+    setArrayValuesInUi(valuesView, values);
 
     // Something special for rotation sensor - convert to a matrix.
     if (sensor == rotationVectorSensor) {
@@ -236,30 +239,30 @@ public class DiagnosticActivity extends AppCompatInjectableActivity implements S
       for (int row = 0; row < 3; ++row) {
         switch(row) {
           case 0:
-            valuesViewId = R.id.diagnose_rotation_matrix_row1_txt;
+            valuesView = binding.diagnoseRotationMatrixRow1Txt;
             break;
           case 1:
-            valuesViewId = R.id.diagnose_rotation_matrix_row2_txt;
+            valuesView = binding.diagnoseRotationMatrixRow2Txt;
             break;
           case 2:
           default:
-            valuesViewId = R.id.diagnose_rotation_matrix_row3_txt;
+            valuesView = binding.diagnoseRotationMatrixRow3Txt;
         }
         float[] rowValues = new float[3];
         System.arraycopy(matrix, row * 3, rowValues, 0, 3);
-        setArrayValuesInUi(valuesViewId, rowValues);
+        setArrayValuesInUi(valuesView, rowValues);
       }
     }
   }
 
-  private void setArrayValuesInUi(int valuesViewId, float[] values) {
+  private void setArrayValuesInUi(TextView valuesView, float[] values) {
     StringBuilder valuesText = new StringBuilder();
     for (float value : values) {
       valuesText.append(String.format("%.2f", value));
       valuesText.append(',');
     }
     valuesText.setLength(valuesText.length() - 1);
-    setText(valuesViewId, valuesText.toString());
+    setText(valuesView, valuesText.toString());
   }
 
   private void updateNetwork() {
@@ -275,19 +278,16 @@ public class DiagnosticActivity extends AppCompatInjectableActivity implements S
         message += getString(R.string.cell_network);
       }
     }
-    setText(R.id.diagnose_network_status_txt, message);
+    setText(binding.diagnoseNetworkStatusTxt, message);
   }
 
-  private void setText(int viewId, String text) {
-    ((TextView) findViewById(viewId)).setText(text);
-  }
   private void setText(TextView view, String text) {
     view.setText(text);
   }
 
 
-  private void setColor(int viewId, int color) {
-    ((TextView) findViewById(viewId)).setTextColor(color);
+  private void setColor(TextView view, int color) {
+    view.setTextColor(color);
   }
   
   private String getDegreeInHour(float deg) {
