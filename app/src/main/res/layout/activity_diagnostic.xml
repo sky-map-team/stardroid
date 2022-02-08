@@ -12,7 +12,6 @@
     tools:context="com.google.android.stardroid.activities.DiagnosticActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:divider="#0f3c91"
@@ -181,7 +180,7 @@
         <TextView
             android:id="@+id/diagnose_rotation_values_txt"
             style="@style/TableRow_Element"
-            android:layout_width="34dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="-, -, -"
             app:layout_constraintTop_toTopOf="@id/rotation_vector_lbl"
@@ -200,7 +199,7 @@
         <TextView
             android:id="@+id/diagnose_rotation_matrix_row1_txt"
             style="@style/TableRow_Element"
-            android:layout_width="34dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="-, -, -"
             app:layout_constraintTop_toTopOf="@id/rotation_matrix_lbl"
@@ -209,7 +208,7 @@
         <TextView
             android:id="@+id/diagnose_rotation_matrix_row2_txt"
             style="@style/TableRow_Element"
-            android:layout_width="34dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="-, -, -"
             app:layout_constraintTop_toBottomOf="@id/diagnose_rotation_matrix_row1_txt"
@@ -218,7 +217,7 @@
         <TextView
             android:id="@+id/diagnose_rotation_matrix_row3_txt"
             style="@style/TableRow_Element"
-            android:layout_width="34dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="-, -, -"
             app:layout_constraintTop_toBottomOf="@id/diagnose_rotation_matrix_row2_txt"

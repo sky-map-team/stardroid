@@ -67,6 +67,7 @@ public class DiagnosticActivity extends AppCompatInjectableActivity implements S
           .build().inject(this);
     binding = ActivityDiagnosticBinding.inflate(this.getLayoutInflater());
     setContentView(binding.getRoot());
+    //setContentView(R.layout.activity_diagnostic);
   }
 
   @Override
