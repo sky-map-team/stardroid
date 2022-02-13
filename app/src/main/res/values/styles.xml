@@ -52,5 +52,12 @@
 
     <!-- App compat activities are required to inherit from Theme.AppCompat or one of its
     descendents -->
-    <style name="AppThemeNew" parent="Theme.AppCompat"/>
+    <style name="AppThemeNew" parent="Theme.MaterialComponents.DayNight">
+        <item name="textAppearanceSubtitle1">
+            @style/TextAppearance.App.Subtitle1
+        </item>
+    </style>
+
+    <style name = "TextAppearance.App.Subtitle1" parent="TextAppearance.MaterialComponents.Subtitle1">
+    </style>
 </resources>

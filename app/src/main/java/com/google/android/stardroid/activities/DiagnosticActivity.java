@@ -73,14 +73,14 @@ public class DiagnosticActivity extends AppCompatInjectableActivity implements S
   public void onStart() {
     super.onStart();
 
-    binding.diagnosePhoneTxt.setText(Build.MODEL + " (" + Build.HARDWARE + ") " +
+    binding.diagnosticsPhoneTxt.setText(Build.MODEL + " (" + Build.HARDWARE + ") " +
         Locale.getDefault().getLanguage());
     String androidVersion = String.format(Build.VERSION.RELEASE + " (%d)", Build.VERSION.SDK_INT);
-    binding.diagnoseAndroidVersionTxt.setText(androidVersion);
+    binding.diagnosticsAndroidVersionTxt.setText(androidVersion);
 
     String skyMapVersion = String.format(
         app.getVersionName() + " (%d)", app.getVersion());
-    binding.diagnoseSkymapVersionTxt.setText(skyMapVersion);
+    binding.diagnosticsSkymapVersionTxt.setText(skyMapVersion);
   }
 
   private boolean continueUpdates;
@@ -109,31 +109,31 @@ public class DiagnosticActivity extends AppCompatInjectableActivity implements S
     accelSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
     int absentSensorColor = getResources().getColor(R.color.absent_sensor);
     if (accelSensor == null) {
-      binding.diagnoseAccelerometerValuesTxt.setTextColor(absentSensorColor);
+      binding.diagnosticsAccelerometerValuesTxt.setTextColor(absentSensorColor);
     } else {
       sensorManager.registerListener(this, accelSensor, SensorManager.SENSOR_DELAY_NORMAL);
     }
     magSensor = sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
     if (magSensor == null) {
-      binding.diagnoseCompassValuesTxt.setTextColor(absentSensorColor);
+      binding.diagnosticsCompassValuesTxt.setTextColor(absentSensorColor);
     } else {
       sensorManager.registerListener(this, magSensor, SensorManager.SENSOR_DELAY_NORMAL);
     }
     gyroSensor = sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
     if (gyroSensor == null) {
-      binding.diagnoseGyroValuesTxt.setTextColor(absentSensorColor);
+      binding.diagnosticsGyroValuesTxt.setTextColor(absentSensorColor);
     } else {
       sensorManager.registerListener(this, gyroSensor, SensorManager.SENSOR_DELAY_NORMAL);
     }
     rotationVectorSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR);
     if (rotationVectorSensor == null) {
-      binding.diagnoseRotationValuesTxt.setTextColor(absentSensorColor);
+      binding.diagnosticsRotationValuesTxt.setTextColor(absentSensorColor);
     } else {
       sensorManager.registerListener(this, rotationVectorSensor, SensorManager.SENSOR_DELAY_NORMAL);
     }
     lightSensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
     if (lightSensor == null) {
-      binding.diagnoseLightValuesTxt.setTextColor(absentSensorColor);
+      binding.diagnosticsLightValuesTxt.setTextColor(absentSensorColor);
     } else {
       sensorManager.registerListener(this, lightSensor, SensorManager.SENSOR_DELAY_UI);
     }
@@ -153,11 +153,11 @@ public class DiagnosticActivity extends AppCompatInjectableActivity implements S
     } catch (SecurityException ex) {
       gpsStatusMessage = getString(R.string.permission_disabled);
     }
-    binding.diagnoseGpsStatusTxt.setText(gpsStatusMessage);
+    binding.diagnosticsGpsStatusTxt.setText(gpsStatusMessage);
     LatLong currentLocation = locationController.getCurrentLocation();
     String locationMessage = currentLocation.getLatitude() + ", " + currentLocation.getLongitude();
     // Current provider not working    + " (" + locationController.getCurrentProvider() + ")";
-    binding.diagnoseLocationTxt.setText(locationMessage);
+    binding.diagnosticsLocationTxt.setText(locationMessage);
   }
 
   private void updateModel() {
@@ -165,17 +165,17 @@ public class DiagnosticActivity extends AppCompatInjectableActivity implements S
     String text = Math.abs(magCorrection) + " " + (magCorrection > 0
         ? getString(R.string.east) : getString(R.string.west)) + " "
         + getString(R.string.degrees);
-    binding.diagnoseMagneticCorrectionTxt.setText(text);
+    binding.diagnosticsMagneticCorrectionTxt.setText(text);
     AstronomerModel.Pointing pointing = model.getPointing();
     Vector3 lineOfSight = pointing.getLineOfSight();
-    binding.diagnosePointingTxt.setText(getDegreeInHour(getRaOfUnitGeocentricVector(lineOfSight)) + ", " + getDecOfUnitGeocentricVector(lineOfSight));
+    binding.diagnosticsPointingTxt.setText(getDegreeInHour(getRaOfUnitGeocentricVector(lineOfSight)) + ", " + getDecOfUnitGeocentricVector(lineOfSight));
     Date nowTime = model.getTime();
     SimpleDateFormat dateFormatUtc = new SimpleDateFormat("yyyy-MMM-dd HH:mm:ss");
     dateFormatUtc.setTimeZone(TimeZone.getTimeZone("UTC"));
     SimpleDateFormat dateFormatLocal = new SimpleDateFormat("yyyy-MMM-dd HH:mm:ss");
 
-    binding.diagnoseUtcDatetimeTxt.setText(dateFormatUtc.format(nowTime));
-    binding.diagnoseLocalDatetimeTxt.setText(dateFormatLocal.format(nowTime));
+    binding.diagnosticsUtcDatetimeTxt.setText(dateFormatUtc.format(nowTime));
+    binding.diagnosticsLocalDatetimeTxt.setText(dateFormatLocal.format(nowTime));
   }
 
   @Override
@@ -190,15 +190,15 @@ public class DiagnosticActivity extends AppCompatInjectableActivity implements S
     Log.d(TAG, "set size" + knownSensorAccuracies.size());
     TextView sensorView;
     if (sensor == accelSensor) {
-      sensorView = binding.diagnoseAccelerometerValuesTxt;
+      sensorView = binding.diagnosticsAccelerometerValuesTxt;
     } else if (sensor == magSensor) {
-      sensorView = binding.diagnoseCompassValuesTxt;
+      sensorView = binding.diagnosticsCompassValuesTxt;
     } else if (sensor == gyroSensor) {
-      sensorView = binding.diagnoseGyroValuesTxt;
+      sensorView = binding.diagnosticsGyroValuesTxt;
     } else if (sensor == rotationVectorSensor) {
-      sensorView = binding.diagnoseRotationValuesTxt;
+      sensorView = binding.diagnosticsRotationValuesTxt;
     } else if (sensor == lightSensor) {
-      sensorView = binding.diagnoseLightValuesTxt;
+      sensorView = binding.diagnosticsLightValuesTxt;
     } else {
       Log.e(TAG, "Receiving accuracy change for unknown sensor " + sensor);
       return;
@@ -215,15 +215,15 @@ public class DiagnosticActivity extends AppCompatInjectableActivity implements S
     }
     TextView valuesView;
     if (sensor == accelSensor) {
-      valuesView = binding.diagnoseAccelerometerValuesTxt;
+      valuesView = binding.diagnosticsAccelerometerValuesTxt;
     } else if (sensor == magSensor) {
-      valuesView = binding.diagnoseCompassValuesTxt;
+      valuesView = binding.diagnosticsCompassValuesTxt;
     } else if (sensor == gyroSensor) {
-      valuesView = binding.diagnoseGyroValuesTxt;
+      valuesView = binding.diagnosticsGyroValuesTxt;
     } else if (sensor == rotationVectorSensor) {
-      valuesView = binding.diagnoseRotationValuesTxt;
+      valuesView = binding.diagnosticsRotationValuesTxt;
     } else if (sensor == lightSensor) {
-      valuesView = binding.diagnoseLightValuesTxt;
+      valuesView = binding.diagnosticsLightValuesTxt;
     } else {
       Log.e(TAG, "Receiving values for unknown sensor " + sensor);
       return;
@@ -238,14 +238,14 @@ public class DiagnosticActivity extends AppCompatInjectableActivity implements S
       for (int row = 0; row < 3; ++row) {
         switch(row) {
           case 0:
-            valuesView = binding.diagnoseRotationMatrixRow1Txt;
+            valuesView = binding.diagnosticsRotationMatrixRow1Txt;
             break;
           case 1:
-            valuesView = binding.diagnoseRotationMatrixRow2Txt;
+            valuesView = binding.diagnosticsRotationMatrixRow2Txt;
             break;
           case 2:
           default:
-            valuesView = binding.diagnoseRotationMatrixRow3Txt;
+            valuesView = binding.diagnosticsRotationMatrixRow3Txt;
         }
         float[] rowValues = new float[3];
         System.arraycopy(matrix, row * 3, rowValues, 0, 3);
@@ -277,7 +277,7 @@ public class DiagnosticActivity extends AppCompatInjectableActivity implements S
         message += getString(R.string.cell_network);
       }
     }
-    binding.diagnoseNetworkStatusTxt.setText(message);
+    binding.diagnosticsNetworkStatusTxt.setText(message);
   }
 
 
