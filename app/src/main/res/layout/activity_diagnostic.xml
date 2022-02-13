@@ -42,7 +42,6 @@
             android:layout_height="wrap_content"
             android:paddingStart="@dimen/diagnostics_row_left_padding"
             android:text="@string/diagnostics_activity_phone"
-            android:textFontWeight="600"
             app:layout_constraintStart_toStartOf="@id/diagnostics_general_lbl"
             app:layout_constraintTop_toBottomOf="@id/diagnostics_general_lbl" />
 

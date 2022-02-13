@@ -24,6 +24,20 @@
     <!-- App compat activities are required to inherit from Theme.AppCompat or one of its
     descendents -->
     <style name="AppThemeNew" parent="Theme.MaterialComponents.DayNight">
+        <!-- Color overrides -->
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/primaryDarkColor</item>
+        <item name="colorPrimaryVariant">@color/primaryLightColor</item>
+        <item name="colorOnPrimary">@color/primaryTextColor</item>
+        <item name="colorSecondary">@color/secondaryColor</item>
+        <item name="colorSecondaryVariant">@color/secondaryDarkColor</item>
+        <item name="colorOnSecondary">@color/secondaryTextColor</item>
+        <item name="colorSurface">@color/surfaceColor</item>
+        <item name="colorOnSurface">@color/onSurfaceColor</item>
+        <item name="android:colorBackground">@color/backgroundColor</item>
+        <item name="colorOnBackground">@color/onBackgroundColor</item>
+
+        <!-- Typography overrides -->
         <item name="textAppearanceSubtitle1">
             @style/TextAppearance.App.Subtitle1
         </item>
@@ -31,4 +45,6 @@
 
     <style name = "TextAppearance.App.Subtitle1" parent="TextAppearance.MaterialComponents.Subtitle1">
     </style>
+
+
 </resources>

@@ -5,4 +5,19 @@
     <color name="low_accuracy">#FF9800</color>
     <color name="bad_sensor">#E91E63</color>
     <color name="absent_sensor">#ffa0a0a0</color>
+
+    <!-- Some truly hideous colors as placeholders
+         TODO: replace these with real colors with
+         meaningful names -->
+    <color name="primaryColor">#E81607</color>
+    <color name="primaryDarkColor">#6E1D17</color>
+    <color name="primaryLightColor">#F59992</color>
+    <color name="primaryTextColor">#CDDC39</color>
+    <color name="secondaryColor">#3649F4</color>
+    <color name="secondaryDarkColor">#151D68</color>
+    <color name="secondaryTextColor">#B2F436</color>
+    <color name="surfaceColor">#A09998</color>
+    <color name="onSurfaceColor">#FF9800</color>
+    <color name="onBackgroundColor">#2196F3</color>
+    <color name="backgroundColor">#F1E686</color>
 </resources>
