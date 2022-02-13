@@ -13,14 +13,12 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:divider="#0f3c91"
-        android:showDividers="beginning|middle|end">
+        android:layout_height="wrap_content">
 
         <!-- Who on earth decided that a percent of 0.5 means
              50% ?? Abysmal API design. -->
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/halfway"
+            android:id="@+id/diagnostics_halfway"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -38,27 +36,29 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/diagnostics_activity_general_heading"
-            android:textAppearance="?android:attr/textAppearanceMedium"
+            style="?attr/textAppearanceHeadline5"
             android:visibility="visible"
-            app:layout_constraintEnd_toEndOf="@id/halfway"
+            app:layout_constraintEnd_toEndOf="@id/diagnostics_halfway"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:visibility="visible" />
 
         <TextView
             android:id="@+id/diagnostics_device_lbl"
-            style="@style/TableRow_RowHeading"
+            style="?attr/textAppearanceSubtitle1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingStart="@dimen/diagnostics_row_left_padding"
             android:text="@string/diagnostics_activity_phone"
             app:layout_constraintStart_toStartOf="@id/diagnostics_general_lbl"
             app:layout_constraintTop_toBottomOf="@id/diagnostics_general_lbl" />
 
         <TextView
             android:id="@+id/diagnostics_phone_txt"
-            style="@style/TableRow_Element"
+            style="?attr/textAppearanceBody1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingStart="@dimen/diagnostics_row_left_padding"
             app:layout_constraintStart_toEndOf="@+id/diagnostics_general_lbl_end_barrier"
             app:layout_constraintTop_toTopOf="@+id/diagnostics_device_lbl"
             tools:text="Nexus 5x" />
@@ -66,18 +66,20 @@
 
         <TextView
             android:id="@+id/diagnostics_android_version_lbl"
-            style="@style/TableRow_RowHeading"
+            style="?attr/textAppearanceSubtitle1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingStart="@dimen/diagnostics_row_left_padding"
             android:text="@string/diagnostics_activity_android_version"
             app:layout_constraintStart_toStartOf="@id/diagnostics_general_lbl"
             app:layout_constraintTop_toBottomOf="@id/diagnostics_device_lbl" />
 
         <TextView
             android:id="@+id/diagnostics_android_version_txt"
-            style="@style/TableRow_Element"
+            style="?attr/textAppearanceBody1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingStart="@dimen/diagnostics_row_left_padding"
             app:layout_constraintStart_toEndOf="@id/diagnostics_general_lbl_end_barrier"
             app:layout_constraintTop_toTopOf="@id/diagnostics_android_version_lbl"
             tools:text="6.1 (xxx)" />
@@ -85,18 +87,20 @@
 
         <TextView
             android:id="@+id/diagnostics_skymap_version_lbl"
-            style="@style/TableRow_RowHeading"
+            style="?attr/textAppearanceSubtitle1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingStart="@dimen/diagnostics_row_left_padding"
             android:text="@string/diagnostics_activity_sky_map_version"
             app:layout_constraintStart_toStartOf="@id/diagnostics_general_lbl"
             app:layout_constraintTop_toBottomOf="@id/diagnostics_android_version_lbl" />
 
         <TextView
             android:id="@+id/diagnostics_skymap_version_txt"
-            style="@style/TableRow_Element"
+            style="?attr/textAppearanceBody1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingStart="@dimen/diagnostics_row_left_padding"
             app:layout_constraintStart_toEndOf="@id/diagnostics_general_lbl_end_barrier"
             app:layout_constraintTop_toTopOf="@id/diagnostics_skymap_version_lbl"
             tools:text="0.0.1 (9999)" />
@@ -113,25 +117,27 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/diagnostics_activity_sensors_heading"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            app:layout_constraintEnd_toEndOf="@id/halfway"
+            style="?attr/textAppearanceHeadline5"
+            app:layout_constraintEnd_toEndOf="@id/diagnostics_halfway"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/diagnostics_skymap_version_lbl" />
 
         <TextView
             android:id="@+id/diagnostics_compass_lbl"
-            style="@style/TableRow_RowHeading"
+            style="?attr/textAppearanceSubtitle1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingStart="@dimen/diagnostics_row_left_padding"
             android:text="@string/diagnostics_activity_compass"
             app:layout_constraintStart_toStartOf="@id/diagnostics_sensors_lbl"
             app:layout_constraintTop_toBottomOf="@id/diagnostics_sensors_lbl" />
 
         <TextView
             android:id="@+id/diagnostics_compass_values_txt"
-            style="@style/TableRow_Element"
+            style="?attr/textAppearanceBody1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingStart="@dimen/diagnostics_row_left_padding"
             app:layout_constraintStart_toEndOf="@id/diagnostics_sensor_lbl_end_barrier"
             app:layout_constraintTop_toTopOf="@id/diagnostics_compass_lbl"
             tools:text="-, -, -" />
@@ -139,18 +145,20 @@
 
         <TextView
             android:id="@+id/diagnostics_accelerometer_lbl"
-            style="@style/TableRow_RowHeading"
+            style="?attr/textAppearanceSubtitle1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingStart="@dimen/diagnostics_row_left_padding"
             android:text="@string/diagnostics_activity_accelerometer"
             app:layout_constraintStart_toStartOf="@id/diagnostics_sensors_lbl"
             app:layout_constraintTop_toBottomOf="@id/diagnostics_compass_lbl" />
 
         <TextView
             android:id="@+id/diagnostics_accelerometer_values_txt"
-            style="@style/TableRow_Element"
+            style="?attr/textAppearanceBody1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingStart="@dimen/diagnostics_row_left_padding"
             app:layout_constraintStart_toEndOf="@id/diagnostics_sensor_lbl_end_barrier"
             app:layout_constraintTop_toTopOf="@id/diagnostics_accelerometer_lbl"
             tools:text="-, -, -" />
@@ -158,18 +166,20 @@
 
         <TextView
             android:id="@+id/diagnostics_gyroscope_lbl"
-            style="@style/TableRow_RowHeading"
+            style="?attr/textAppearanceSubtitle1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingStart="@dimen/diagnostics_row_left_padding"
             android:text="@string/diagnostics_activity_gyroscope"
             app:layout_constraintStart_toStartOf="@id/diagnostics_sensors_lbl"
             app:layout_constraintTop_toBottomOf="@id/diagnostics_accelerometer_lbl" />
 
         <TextView
             android:id="@+id/diagnostics_gyro_values_txt"
-            style="@style/TableRow_Element"
+            style="?attr/textAppearanceBody1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingStart="@dimen/diagnostics_row_left_padding"
             app:layout_constraintStart_toEndOf="@id/diagnostics_sensor_lbl_end_barrier"
             app:layout_constraintTop_toTopOf="@id/diagnostics_gyroscope_lbl"
             tools:text="-, -, -" />
@@ -177,18 +187,20 @@
 
         <TextView
             android:id="@+id/diagnostics_rotation_vector_lbl"
-            style="@style/TableRow_RowHeading"
+            style="?attr/textAppearanceSubtitle1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingStart="@dimen/diagnostics_row_left_padding"
             android:text="@string/diagnostics_activity_rotation_vector"
             app:layout_constraintStart_toStartOf="@id/diagnostics_sensors_lbl"
             app:layout_constraintTop_toBottomOf="@id/diagnostics_gyroscope_lbl" />
 
         <TextView
             android:id="@+id/diagnostics_rotation_values_txt"
-            style="@style/TableRow_Element"
+            style="?attr/textAppearanceBody1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingStart="@dimen/diagnostics_row_left_padding"
             app:layout_constraintStart_toEndOf="@id/diagnostics_sensor_lbl_end_barrier"
             app:layout_constraintTop_toTopOf="@id/diagnostics_rotation_vector_lbl"
             tools:text="-, -, -" />
@@ -196,36 +208,40 @@
 
         <TextView
             android:id="@+id/diagnostics_rotation_matrix_lbl"
-            style="@style/TableRow_RowHeading"
+            style="?attr/textAppearanceSubtitle1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingStart="@dimen/diagnostics_row_left_padding"
             android:text="@string/diagnostics_activity_rotation_matrix"
             app:layout_constraintStart_toStartOf="@id/diagnostics_sensors_lbl"
             app:layout_constraintTop_toBottomOf="@id/diagnostics_rotation_vector_lbl" />
 
         <TextView
             android:id="@+id/diagnostics_rotation_matrix_row1_txt"
-            style="@style/TableRow_Element"
+            style="?attr/textAppearanceBody1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingStart="@dimen/diagnostics_row_left_padding"
             app:layout_constraintStart_toEndOf="@id/diagnostics_sensor_lbl_end_barrier"
             app:layout_constraintTop_toTopOf="@id/diagnostics_rotation_matrix_lbl"
             tools:text="-, -, -" />
 
         <TextView
             android:id="@+id/diagnostics_rotation_matrix_row2_txt"
-            style="@style/TableRow_Element"
+            style="?attr/textAppearanceBody1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingStart="@dimen/diagnostics_row_left_padding"
             app:layout_constraintStart_toEndOf="@id/diagnostics_sensor_lbl_end_barrier"
             app:layout_constraintTop_toBottomOf="@id/diagnostics_rotation_matrix_row1_txt"
             tools:text="-, -, -" />
 
         <TextView
             android:id="@+id/diagnostics_rotation_matrix_row3_txt"
-            style="@style/TableRow_Element"
+            style="?attr/textAppearanceBody1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingStart="@dimen/diagnostics_row_left_padding"
             app:layout_constraintStart_toEndOf="@id/diagnostics_sensor_lbl_end_barrier"
             app:layout_constraintTop_toBottomOf="@id/diagnostics_rotation_matrix_row2_txt"
             tools:text="-, -, -" />
@@ -233,18 +249,20 @@
 
         <TextView
             android:id="@+id/diagnostics_light_level_lbl"
-            style="@style/TableRow_RowHeading"
+            style="?attr/textAppearanceSubtitle1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingStart="@dimen/diagnostics_row_left_padding"
             android:text="@string/diagnostics_activity_light_level"
             app:layout_constraintStart_toStartOf="@id/diagnostics_sensors_lbl"
             app:layout_constraintTop_toBottomOf="@id/diagnostics_rotation_matrix_row3_txt" />
 
         <TextView
             android:id="@+id/diagnostics_light_values_txt"
-            style="@style/TableRow_Element"
+            style="?attr/textAppearanceBody1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingStart="@dimen/diagnostics_row_left_padding"
             app:layout_constraintStart_toEndOf="@id/diagnostics_sensor_lbl_end_barrier"
             app:layout_constraintTop_toTopOf="@id/diagnostics_light_level_lbl"
             tools:text="500" />
@@ -255,9 +273,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/diagnostics_activity_location_and_time_heading"
-            android:textAppearance="?android:attr/textAppearanceMedium"
+            style="?attr/textAppearanceHeadline5"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@id/halfway"
+            app:layout_constraintStart_toStartOf="@id/diagnostics_halfway"
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.constraintlayout.widget.Barrier
@@ -269,18 +287,20 @@
 
         <TextView
             android:id="@+id/diagnostics_gps_lbl"
-            style="@style/TableRow_RowHeading"
+            style="?attr/textAppearanceSubtitle1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingStart="@dimen/diagnostics_row_left_padding"
             android:text="@string/diagnostics_activity_gps"
             app:layout_constraintStart_toStartOf="@id/diagnostics_location_time_lbl"
             app:layout_constraintTop_toBottomOf="@+id/diagnostics_location_time_lbl" />
 
         <TextView
             android:id="@+id/diagnostics_gps_status_txt"
-            style="@style/TableRow_Element"
+            style="?attr/textAppearanceBody1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingStart="@dimen/diagnostics_row_left_padding"
             app:layout_constraintStart_toEndOf="@id/diagnostics_barrier_location_time_end"
             app:layout_constraintTop_toTopOf="@id/diagnostics_gps_lbl"
             tools:text="(waiting)" />
@@ -288,18 +308,20 @@
 
         <TextView
             android:id="@+id/diagnostics_location_lbl"
-            style="@style/TableRow_RowHeading"
+            style="?attr/textAppearanceSubtitle1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingStart="@dimen/diagnostics_row_left_padding"
             android:text="@string/diagnostics_activity_location"
             app:layout_constraintStart_toStartOf="@id/diagnostics_local_datetime_lbl"
             app:layout_constraintTop_toBottomOf="@id/diagnostics_gps_lbl" />
 
         <TextView
             android:id="@+id/diagnostics_location_txt"
-            style="@style/TableRow_Element"
+            style="?attr/textAppearanceBody1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingStart="@dimen/diagnostics_row_left_padding"
             app:layout_constraintStart_toEndOf="@id/diagnostics_barrier_location_time_end"
             app:layout_constraintTop_toTopOf="@id/diagnostics_location_lbl"
             tools:text="--, -- (manual)" />
@@ -307,18 +329,20 @@
 
         <TextView
             android:id="@+id/diagnostics_pointing_lbl"
-            style="@style/TableRow_RowHeading"
+            style="?attr/textAppearanceSubtitle1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingStart="@dimen/diagnostics_row_left_padding"
             android:text="@string/diagnostics_activity_pointing_ra_dec"
             app:layout_constraintStart_toStartOf="@id/diagnostics_location_time_lbl"
             app:layout_constraintTop_toBottomOf="@id/diagnostics_location_lbl" />
 
         <TextView
             android:id="@+id/diagnostics_pointing_txt"
-            style="@style/TableRow_Element"
+            style="?attr/textAppearanceBody1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingStart="@dimen/diagnostics_row_left_padding"
             app:layout_constraintStart_toEndOf="@id/diagnostics_barrier_location_time_end"
             app:layout_constraintTop_toTopOf="@id/diagnostics_pointing_lbl"
             tools:text="-123, 32" />
@@ -326,18 +350,20 @@
 
         <TextView
             android:id="@+id/diagnostics_mag_correction_lbl"
-            style="@style/TableRow_RowHeading"
-            android:layout_width="130dp"
+            style="?attr/textAppearanceSubtitle1"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingStart="@dimen/diagnostics_row_left_padding"
             android:text="@string/diagnostics_activity_magnetic_correction"
             app:layout_constraintStart_toStartOf="@id/diagnostics_location_time_lbl"
             app:layout_constraintTop_toBottomOf="@id/diagnostics_pointing_lbl" />
 
         <TextView
             android:id="@+id/diagnostics_magnetic_correction_txt"
-            style="@style/TableRow_Element"
+            style="?attr/textAppearanceBody1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingStart="@dimen/diagnostics_row_left_padding"
             app:layout_constraintStart_toEndOf="@id/diagnostics_barrier_location_time_end"
             app:layout_constraintTop_toTopOf="@id/diagnostics_mag_correction_lbl"
             tools:text="+?" />
@@ -345,18 +371,20 @@
 
         <TextView
             android:id="@+id/diagnostics_local_datetime_lbl"
-            style="@style/TableRow_RowHeading"
+            style="?attr/textAppearanceSubtitle1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingStart="@dimen/diagnostics_row_left_padding"
             android:text="@string/diagnostics_activity_local_datetime"
             app:layout_constraintStart_toStartOf="@id/diagnostics_location_time_lbl"
             app:layout_constraintTop_toBottomOf="@id/diagnostics_mag_correction_lbl" />
 
         <TextView
             android:id="@+id/diagnostics_local_datetime_txt"
-            style="@style/TableRow_Element"
+            style="?attr/textAppearanceBody1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingStart="@dimen/diagnostics_row_left_padding"
             app:layout_constraintStart_toEndOf="@id/diagnostics_barrier_location_time_end"
             app:layout_constraintTop_toTopOf="@id/diagnostics_local_datetime_lbl"
             tools:text="13:33 July 20, 1969" />
@@ -364,18 +392,20 @@
 
         <TextView
             android:id="@+id/diagnostics_universal_datetime_lbl"
-            style="@style/TableRow_RowHeading"
+            style="?attr/textAppearanceSubtitle1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingStart="@dimen/diagnostics_row_left_padding"
             android:text="@string/diagnostics_activity_universal_time"
             app:layout_constraintStart_toStartOf="@id/diagnostics_location_time_lbl"
             app:layout_constraintTop_toBottomOf="@id/diagnostics_local_datetime_lbl" />
 
         <TextView
             android:id="@+id/diagnostics_utc_datetime_txt"
-            style="@style/TableRow_Element"
+            style="?attr/textAppearanceBody1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingStart="@dimen/diagnostics_row_left_padding"
             app:layout_constraintStart_toEndOf="@id/diagnostics_barrier_location_time_end"
             app:layout_constraintTop_toTopOf="@id/diagnostics_universal_datetime_lbl"
             tools:text="20:18 July 20, 1969" />
@@ -386,26 +416,28 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/diagnostics_activity_network_heading"
-            android:textAppearance="?android:attr/textAppearanceMedium"
+            style="?attr/textAppearanceHeadline5"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@id/halfway"
+            app:layout_constraintStart_toStartOf="@id/diagnostics_halfway"
             app:layout_constraintTop_toBottomOf="@id/diagnostics_universal_datetime_lbl" />
 
 
         <TextView
             android:id="@+id/diagnostics_connection_lbl"
-            style="@style/TableRow_RowHeading"
+            style="?attr/textAppearanceSubtitle1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingStart="@dimen/diagnostics_row_left_padding"
             android:text="@string/diagnostics_activity_connection"
             app:layout_constraintStart_toStartOf="@id/diagnostics_network_lbl"
             app:layout_constraintTop_toBottomOf="@id/diagnostics_network_lbl" />
 
         <TextView
             android:id="@+id/diagnostics_network_status_txt"
-            style="@style/TableRow_Element"
+            style="?attr/textAppearanceBody1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingStart="@dimen/diagnostics_row_left_padding"
             app:layout_constraintStart_toEndOf="@id/diagnostics_connection_lbl"
             app:layout_constraintTop_toTopOf="@id/diagnostics_connection_lbl"
             tools:text="WiFi?" />
