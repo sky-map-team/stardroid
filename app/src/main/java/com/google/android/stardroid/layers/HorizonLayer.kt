@@ -89,7 +89,7 @@ class HorizonLayer(private val model: AstronomerModel, resources: Resources) :
 
         companion object {
             // Due to a bug in the G1 rendering code text and lines render in different
-            // colors.
+            // colors.  The RGB orderins is backwards for the lines.
             private val LINE_COLOR = Color.argb(120, 86, 176, 245)
             private val LABEL_COLOR = Color.argb(120, 245, 176, 86)
             private const val UPDATE_FREQ_MS = 1L * TimeConstants.MILLISECONDS_PER_SECOND

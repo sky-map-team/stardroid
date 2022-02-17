@@ -25,14 +25,14 @@
     descendents -->
     <style name="AppThemeNew" parent="Theme.MaterialComponents.DayNight">
         <!-- Color overrides -->
-        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimary">@color/button_orange</item>
         <item name="colorPrimaryDark">@color/primaryDarkColor</item>
         <item name="colorPrimaryVariant">@color/primaryLightColor</item>
         <item name="colorOnPrimary">@color/primaryTextColor</item>
         <item name="colorSecondary">@color/secondaryColor</item>
         <item name="colorSecondaryVariant">@color/secondaryDarkColor</item>
         <item name="colorOnSecondary">@color/secondaryTextColor</item>
-        <item name="colorSurface">@color/surfaceColor</item>
+        <item name="colorSurface">@color/constellation_purple</item>
         <item name="colorOnSurface">@color/onSurfaceColor</item>
         <item name="android:colorBackground">@color/backgroundColor</item>
         <item name="colorOnBackground">@color/onBackgroundColor</item>

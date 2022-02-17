@@ -98,9 +98,11 @@
             android:exported="false"
             android:syncable="false"/>
 
-        <activity android:name=".activities.CompassCalibrationActivity"
-                  android:launchMode="singleTop">
-        </activity>
+        <activity
+            android:name=".activities.CompassCalibrationActivity"
+            android:launchMode="singleTop"
+            android:theme="@style/AppThemeNew"
+            android:label="@string/title_activity_calibrate"/>
     </application>
 
 </manifest>
