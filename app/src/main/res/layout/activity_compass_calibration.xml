@@ -26,6 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/compass_calibration_activity_warning"
+            android:paddingTop="@dimen/calibration_top_padding"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/compass_calib_activity_webview" />
@@ -33,6 +34,7 @@
         <TextView
             android:id="@+id/compass_calib_activity_accuracy_lbl"
             style="?attr/textAppearanceSubtitle1"
+            android:paddingTop="@dimen/calibration_top_padding"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/compass_calibration_activity_heading_compass"
@@ -42,8 +44,10 @@
         <TextView
             android:id="@+id/compass_calib_activity_compass_accuracy"
             style="?attr/textAppearanceSubtitle1"
+            android:paddingTop="@dimen/calibration_top_padding"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/calibration_spacer_padding"
             app:layout_constraintStart_toEndOf="@id/compass_calib_activity_accuracy_lbl"
             app:layout_constraintTop_toTopOf="@id/compass_calib_activity_accuracy_lbl"
             tools:text="accuracy: unknown" />
@@ -53,8 +57,9 @@
             style="?attr/textAppearanceBody1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:paddingTop="@dimen/calibration_top_padding"
             android:autoLink="web"
-            android:text="@string/compass_calibration_activity_warning"
+            tools:text="Your phone is reporting to Sky Map that its internal compass is uncalibrated. This is not a Sky Map issue but we can help you try to fix it. To calibrate the compass try moving your phone in a figure of eight motion as demonstrated in this video https://www.youtube.com/watch?v=-Uq7AmSAjt8 until the accuracy reads \'high\'."
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/compass_calib_activity_accuracy_lbl" />
@@ -63,11 +68,13 @@
             android:id="@+id/compass_calib_activity_donotshow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/calibration_left_padding"
             android:text="@string/compass_calibration_activity_do_not_show_this_again"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/compass_calib_what_to_do" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/compass_calib_ok_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
