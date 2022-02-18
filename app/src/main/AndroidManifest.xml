@@ -82,6 +82,10 @@
         <activity
             android:name=".activities.EditSettingsActivity"/>
         <activity
+            android:name=".activities.HelpActivity"
+            android:theme="@style/AppThemeNew"
+            android:label="@string/help_dialog_title"/>
+        <activity
             android:name=".activities.ImageGalleryActivity"/>
         <activity
             android:name=".activities.ImageDisplayActivity"

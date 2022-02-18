@@ -6,6 +6,7 @@ import android.hardware.SensorManager
 import android.location.LocationManager
 import android.net.ConnectivityManager
 import com.google.android.stardroid.activities.EditSettingsActivity
+import com.google.android.stardroid.activities.HelpActivity
 import com.google.android.stardroid.activities.ImageDisplayActivity
 import com.google.android.stardroid.activities.ImageGalleryActivity
 import com.google.android.stardroid.control.AstronomerModel
@@ -44,6 +45,7 @@ interface ApplicationComponent {
   // Who can we inject
   fun inject(app: StardroidApplication)
   fun inject(activity: EditSettingsActivity)
+  fun inject(activity: HelpActivity)
   fun inject(activity: ImageDisplayActivity)
   fun inject(activity: ImageGalleryActivity)
   fun inject(provider: SearchTermsProvider)
