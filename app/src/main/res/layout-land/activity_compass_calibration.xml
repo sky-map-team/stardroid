@@ -13,11 +13,11 @@
 
     <WebView
         android:id="@+id/compass_calib_activity_webview"
-        android:layout_width="228dp"
+        android:layout_width="235dp"
         android:layout_height="wrap_content"
+        android:scrollbars="none"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-    </WebView>
+        app:layout_constraintTop_toTopOf="parent"></WebView>
 
     <TextView
         android:id="@+id/compass_calib_activity_explain_why"
