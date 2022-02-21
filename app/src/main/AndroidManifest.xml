@@ -4,9 +4,9 @@
           android:installLocation="auto"
           android:vmSafeMode="false">
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
-    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
     <uses-permission android:name="android.permission.INTERNET"/>
     <!-- For Google Analytics -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
@@ -49,13 +49,11 @@
         android:icon="@drawable/skymap_logo"
         android:label="@string/app_name"
         android:theme="@style/AppTheme"
-        android:allowBackup="true"
-        android:fullBackupContent="true">
+        android:allowBackup="true">
         <activity
             android:name=".activities.SplashScreenActivity"
-            android:label="@string/app_name"
             android:screenOrientation="nosensor"
-            android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"
+            android:theme="@style/AppThemeNew.NoActionBar"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -65,7 +63,6 @@
         <activity
             android:name=".activities.DynamicStarMapActivity"
             android:configChanges="keyboardHidden|orientation"
-            android:label="@string/app_name"
             android:launchMode="singleTask"
             android:screenOrientation="nosensor"
             android:theme="@style/FullscreenTheme"

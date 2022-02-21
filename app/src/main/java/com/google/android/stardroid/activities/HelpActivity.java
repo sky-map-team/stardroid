@@ -1,24 +1,13 @@
 package com.google.android.stardroid.activities;
 
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.Spanned;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
 import android.widget.TextView;
-
-import androidx.annotation.NonNull;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.StardroidApplication;
-import com.google.android.stardroid.activities.dialogs.DialogFragment;
 import com.google.android.stardroid.databinding.HelpBinding;
-import com.google.android.stardroid.inject.HasComponent;
 import com.google.android.stardroid.util.MiscUtil;
 
 import javax.inject.Inject;
