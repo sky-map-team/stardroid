@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory app:title="@string/sensor_prefs">
+        <SwitchPreferenceCompat
+            app:defaultValue="false"
+            app:key="disable_gyro"
+            app:summary="@string/disable_gyro_preference_summary"
+            app:title="@string/disable_gyro_preference_title" />
+        <ListPreference
+            app:defaultValue="STANDARD"
+            app:entries="@array/sensor_speed"
+            app:entryValues="@array/sensor_speed_values"
+            app:key="sensor_speed"
+            app:title="@string/sensor_speed" />
+        <ListPreference
+            app:defaultValue="EXTRA HIGH"
+            app:entries="@array/sensor_damping"
+            app:entryValues="@array/sensor_damping_values"
+            app:key="sensor_damping"
+            app:title="@string/sensor_damping" />
+        <SwitchPreferenceCompat
+            app:defaultValue="false"
+            app:key="reverse_magnetic_z"
+            app:summary="@string/sensor_reverse_preference_summary"
+            app:title="@string/sensor_reverse_preference_title" />
+        <ListPreference
+            app:defaultValue="STANDARD"
+            app:entries="@array/viewing_direction"
+            app:entryValues="@array/viewing_direction_values"
+            app:key="viewing_direction"
+            app:summary="@string/rotate_horizon_preference_summary"
+            app:title="@string/rotate_horizon_preference_title" />
+    </PreferenceCategory>
+</PreferenceScreen>

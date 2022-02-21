@@ -77,7 +77,8 @@
                 android:resource="@xml/searchable"/>
         </activity>
         <activity
-            android:name=".activities.EditSettingsActivity"/>
+            android:name=".activities.EditSettingsActivity"
+            android:theme="@style/AppThemeNew"/>
         <activity
             android:name=".activities.HelpActivity"
             android:theme="@style/AppThemeNew"

@@ -20,13 +20,13 @@ import android.content.SharedPreferences;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
-import android.preference.EditTextPreference;
-import android.preference.Preference;
-import android.preference.PreferenceActivity;
-import android.preference.PreferenceFragment;
-import android.preference.PreferenceManager;
 import android.util.Log;
 import android.widget.Toast;
+
+import androidx.preference.EditTextPreference;
+import androidx.preference.Preference;
+import androidx.preference.PreferenceFragmentCompat;
+import androidx.preference.PreferenceManager;
 
 import com.google.android.stardroid.ApplicationConstants;
 import com.google.android.stardroid.R;
@@ -44,14 +44,20 @@ import javax.inject.Inject;
 /**
  * Edit the user's preferences.
  */
-public class EditSettingsActivity extends PreferenceActivity {
-  private MyPreferenceFragment preferenceFragment;
+public class EditSettingsActivity extends AppCompatInjectableActivity {
+  private MainPreferenceFragment preferenceFragment;
   
-  public static class MyPreferenceFragment extends PreferenceFragment {
+  public static class MainPreferenceFragment extends PreferenceFragmentCompat {
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-      super.onCreate(savedInstanceState);
-      addPreferencesFromResource(R.xml.preference_screen);
+    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
+      setPreferencesFromResource(R.xml.preference_screen, rootKey);
+    }
+  }
+
+  public static class LocationFragment extends PreferenceFragmentCompat {
+    @Override
+    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
+      setPreferencesFromResource(R.xml.preference_screen_location, rootKey);
     }
   }
   /**
@@ -74,8 +80,8 @@ public class EditSettingsActivity extends PreferenceActivity {
         new ActivityLightLevelChanger(this, null),
         PreferenceManager.getDefaultSharedPreferences(this));
     geocoder = new Geocoder(this);
-    preferenceFragment = new MyPreferenceFragment();
-    getFragmentManager().beginTransaction().replace(android.R.id.content,
+    preferenceFragment = new MainPreferenceFragment();
+    getSupportFragmentManager().beginTransaction().replace(android.R.id.content,
         preferenceFragment).commit();
     
   }
