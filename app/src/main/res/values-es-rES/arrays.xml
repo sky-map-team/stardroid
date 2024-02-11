@@ -2,14 +2,13 @@
 <resources>
     <string-array name="popular_date_examples">
         <item>Ahora</item>
-        <item>Próxima puesta del sol</item>
-        <item>Próxima salida del sol</item>
-        <item>Próx luna llena</item>
-        <item>Mercury transit of May 09, 2016</item>
-        <item>Eclipse solar del Aug 21, 2017</item>
-        <item>Eclipse solar del March 9, 2016</item>
-        <item>Eclipse solar de 29/05/1919</item>
-        <item>Alunizaje del Apolo XI</item>
+        <item>Próxima puesta del sol</item> <!-- 1 -->
+        <item>Próxima salida del sol</item> <!-- 2 -->
+        <item>Próx luna llena</item> <!-- 3 -->
+        <item>Mercury transit of May 09, 2016</item> <!-- 4 -->
+        <item>Eclipse solar del Abril 08, 2024</item> <!-- 5 -->
+        <item>Alunizaje del Apolo XI</item> <!-- 6 -->
+        <item>Conjunción Júpiter-Saturno de 2020</item><!-- 7 -->
     </string-array>
     <string-array name="sensor_speed">
         <item>Lento</item>
