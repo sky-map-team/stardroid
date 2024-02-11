@@ -47,6 +47,7 @@
     <string name="sensor_speed" translation_description="Old, non gyro sensors only: How quickly the sensor should send us data">Sensor Speed</string>
     <string name="sensor_damping" translation_description="Old, non gyro sensors only: The amount of smoothing applied to the sensor outputs.">Damping</string>
     <string name="ecliptic">Ecliptic</string>
+    <string name="eclipse24">Eclipse path 2024-04-08</string>
     <string name="malformed_loc_error">Latitude or longitude setting isn\'t a number.</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Accept</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">No Thanks</string>
