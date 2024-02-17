@@ -47,6 +47,7 @@
     <string name="sensor_speed" translation_description="Old, non gyro sensors only: How quickly the sensor should send us data">Prędkość czujnika</string>
     <string name="sensor_damping" translation_description="The amount of       smoothing applied to the sensor outputs.">Tłumienie</string>
     <string name="ecliptic">Ekliptyka</string>
+    <string name="eclipse24">Tor zaćmienia 08.04.2024</string>
     <string name="malformed_loc_error">Szerokość lub długość geograficzna nie jest liczbą.</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Akceptuj</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">Nie, dziękuję</string>
