@@ -21,4 +21,11 @@
         <item translation_description="Extra High sensor damping factor">Estándar</item>
         <item translation_description="Really High sensor damping factor">Alta</item>
     </string-array>
+    <string-array name="viewing_direction">
+        <item translation_description="Normal viewing">Normal</item>
+        <item translation_description="Rotates the screen by 90 degrees">Horizonte girado</item>
+        <item
+            translation_description="Shows the sky as pointed at by the long edge of the phone">Modo del puntero
+        </item>
+    </string-array>
 </resources>
