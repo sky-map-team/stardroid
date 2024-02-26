@@ -47,6 +47,7 @@
     <string name="sensor_speed" translation_description="Old, non gyro sensors only: How quickly the sensor should send us data">Velocidad del sensor</string>
     <string name="sensor_damping" translation_description="Old, non gyro sensors only: The amount of smoothing applied to the sensor outputs.">Humedad</string>
     <string name="ecliptic">Eclíptica</string>
+    <string name="eclipse24">Ruta del eclipse 08-04-2024</string>
     <string name="malformed_loc_error">El ajuste de lat/long no es un número.</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Acepto</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">No, gracias</string>
@@ -196,12 +197,28 @@
     <string name="menu_calibrate">Calibrar</string>
     <string name="compass_calibration_activity_heading_compass">Brújula -</string>
     <string name="compass_calibration_activity_do_not_show_this_again">No mostrar esto otra vez</string>
-    <string name="compass_calibration_activity_warning">Tu brújula debe ser calibrada</string>
-    <string name="sensor_reverse_preference_title">Z magnético inverso</string>
+    <string name="compass_calibration_activity_warning">Tu brújula debe ser
+        calibrada</string>
+    <string name="compass_calib_what_to_do"
+        translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL">Tu teléfono reporta a Sky
+        Map que su brújula interna no está calibrada.
+    Este no es un problema de Sky Map, pero podemos ayudarte a intentar solucionarlo. Para calibrar la brújula intenta mover tu teléfono en forma de ocho
+        como se demuestra en este video %s hasta que la precisión sea \'alta\'.</string>
+    <string name="compass_calib_what_to_do_user"
+        transation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL">La precisión
+        de la brújula
+        de tu teléfono se muestra arriba.
+    Si no es \'alta\' entonces es posible que sea necesario calibrar la brújula. Esto no es un problema de Sky Map, pero
+    una propiedad de tu teléfono. Para calibrar la brújula intenta mover tu teléfono en forma de ocho
+        como se demuestra en este video %s.</string>
+    <string name="sensor_reverse_preference_title">Z magnética inverso</string>
     <string name="sensor_reverse_preference_summary">Solución para teléfonos con sensores implementados incorrectamente: requiere reiniciar</string>
-    <string name="whats_new_dialog_title">¿Qué hay nuevo?</string>
-    <string name="disable_gyro_preference_title">Desactivar giroscopio</string>
-    <string name="disable_gyro_preference_summary">No todos los dispositivos tienen un giroscopio; si el tuyo lo tiene, obtendrás mejores resultados con él activado y esta opción sin marcar. Pero, si tu dispositivo no lo tiene, es probable que Sky Map no funcione si desmarca esta opción.</string>
-    <string name="rotate_horizon_preference_title">Rotar horizonte</string>
-    <string name="rotate_horizon_preference_summary">Girar el horizonte en 90 grados (para pantallas con paisaje forzado, como lentes inteligentes)</string>
+    <string name="whats_new_dialog_title">Novedades</string>
+    <string name="disable_gyro_preference_title">Disable gyroscope</string>
+    <string name="disable_gyro_preference_summary">Not all devices have a gyro - if yours does then you\'ll get better results with it enabled and this box unchecked.  On the other hand if your device does not have a gyro then Sky Map will probably not work if you uncheck this box.</string>
+    <string name="rotate_horizon_preference_title">Dirección de la vista</string>
+
+    <string name="rotate_horizon_preference_summary">Gira el horizonte 90 grados (para dispositivos
+        con paisajes forzados) o use el modo de puntero para que la pantalla muestre
+        hacia dónde apunta la parte superior del teléfono (ver texto de ayuda).</string>
 </resources>
