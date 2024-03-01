@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+        <PreferenceCategory
+            app:title="@string/location_prefs">
+            <SwitchPreferenceCompat
+                app:defaultValue="false"
+                app:title="@string/force_gps_pref"
+                app:summary="@string/force_gps_pref_hint"
+                app:key="force_gps"/>
+            <SwitchPreferenceCompat
+                app:defaultValue="false"
+                app:title="@string/no_use_gps_pref"
+                app:summary="@string/no_use_gps_pref_hint"
+                app:key="no_auto_locate"/>
+            <!-- Set the default location to Galileo's birthplace -->
+            <EditTextPreference
+                app:key="location"
+                app:title="@string/location_placename"
+                app:summary="@string/location_placename_hint"
+                app:dependency="no_auto_locate"
+                app:defaultValue="" />
+            <EditTextPreference
+                app:key="latitude"
+                app:title="@string/location_lat_pref"
+                app:dependency="no_auto_locate"
+                app:summary="@string/degrees"
+                app:defaultValue="0"/>
+            <EditTextPreference
+                app:key="longitude"
+                app:title="@string/location_long_pref"
+                app:dependency="no_auto_locate"
+                app:summary="@string/degrees"
+                app:defaultValue="0"/>
+            <SwitchPreferenceCompat
+                app:defaultValue="true"
+                app:title="@string/use_magnetic_correction"
+                app:key="use_magnetic_correction"/>
+        </PreferenceCategory>
+</PreferenceScreen>

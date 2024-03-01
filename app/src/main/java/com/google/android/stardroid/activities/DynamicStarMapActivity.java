@@ -46,7 +46,6 @@ import androidx.core.content.ContextCompat;
 import com.google.android.stardroid.ApplicationConstants;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
-import com.google.android.stardroid.activities.dialogs.HelpDialogFragment;
 import com.google.android.stardroid.activities.dialogs.MultipleSearchResultsDialogFragment;
 import com.google.android.stardroid.activities.dialogs.NoSearchResultsDialogFragment;
 import com.google.android.stardroid.activities.dialogs.NoSensorsDialogFragment;
@@ -191,7 +190,6 @@ public class DynamicStarMapActivity extends InjectableActivity
   @Inject FragmentManager fragmentManager;
   @Inject EulaDialogFragment eulaDialogFragmentNoButtons;
   @Inject TimeTravelDialogFragment timeTravelDialogFragment;
-  @Inject HelpDialogFragment helpDialogFragment;
   @Inject NoSearchResultsDialogFragment noSearchResultsDialogFragment;
   @Inject MultipleSearchResultsDialogFragment multipleSearchResultsDialogFragment;
   @Inject NoSensorsDialogFragment noSensorsDialogFragment;
@@ -372,7 +370,7 @@ public class DynamicStarMapActivity extends InjectableActivity
       case R.id.menu_item_help:
         Log.d(TAG, "Help");
         menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.HELP_OPENED_LABEL);
-        helpDialogFragment.show(fragmentManager, "Help Dialog");
+        startActivity(new Intent(this, HelpActivity.class));
         break;
       case R.id.menu_item_dim:
         Log.d(TAG, "Toggling nightmode");

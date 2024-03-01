@@ -23,12 +23,17 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowCompat;
+import androidx.core.view.WindowInsetsCompat;
+import androidx.core.view.WindowInsetsControllerCompat;
+
 import com.google.android.stardroid.ApplicationConstants;
-import com.google.android.stardroid.R;
 import com.google.android.stardroid.StardroidApplication;
 import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
 import com.google.android.stardroid.activities.dialogs.WhatsNewDialogFragment;
 import com.google.android.stardroid.activities.util.ConstraintsChecker;
+import com.google.android.stardroid.databinding.SplashBinding;
 import com.google.android.stardroid.inject.HasComponent;
 import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.MiscUtil;
@@ -38,7 +43,8 @@ import javax.inject.Inject;
 /**
  * Shows a splash screen, then launch the next activity.
  */
-public class SplashScreenActivity extends InjectableActivity
+// TODO(johntaylor): Probably get rid of this altogether
+public class SplashScreenActivity extends AppCompatInjectableActivity
     implements EulaDialogFragment.EulaAcceptanceListener, WhatsNewDialogFragment.CloseListener,
     HasComponent<SplashScreenComponent> {
   private final static String TAG = MiscUtil.getTag(SplashScreenActivity.class);
@@ -57,14 +63,22 @@ public class SplashScreenActivity extends InjectableActivity
   @Override
   public void onCreate(Bundle savedInstanceState) {
     Log.d(TAG, "onCreate");
+    // Despite all this, the splash screen still does not render top to bottom. With the right
+    // lucky swipes on the splash screen it can be provoked into resizing and laying out properly.
+    // There is official documentation at https://developer.android.com/training/gestures/edge-to-edge
+    // but as is typical, it's inadequate.  Not worth further investment since the Splash Screen
+    // should go away anyway.
+    hideSystemBars();
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.splash);
+
     daggerComponent = DaggerSplashScreenComponent.builder()
         .applicationComponent(getApplicationComponent())
         .splashScreenModule(new SplashScreenModule(this)).build();
     daggerComponent.inject(this);
 
-    graphic = findViewById(R.id.splash);
+    SplashBinding binding = SplashBinding.inflate(this.getLayoutInflater());
+    setContentView(binding.getRoot());
+    graphic = binding.splash;
 
     fadeAnimation.setAnimationListener(new AnimationListener() {
       public void onAnimationEnd(Animation unused) {
@@ -80,6 +94,22 @@ public class SplashScreenActivity extends InjectableActivity
         Log.d(TAG, "SplashScreen.Animation onAnimationStart");
       }
     });
+  }
+
+  private void hideSystemBars() {
+    WindowInsetsControllerCompat windowInsetsController =
+        ViewCompat.getWindowInsetsController(getWindow().getDecorView());
+    if (windowInsetsController == null) {
+      Log.e(TAG, "WindowInsetsControllerCompat was null");
+      return;
+    }
+    windowInsetsController.hide(WindowInsetsCompat.Type.systemBars());
+    WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
+
+    // Configure the behavior of the hidden system bars
+    windowInsetsController.setSystemBarsBehavior(
+        WindowInsetsControllerCompat.BEHAVIOR_SHOW_BARS_BY_TOUCH
+    );
   }
 
   @Override
@@ -130,7 +160,7 @@ public class SplashScreenActivity extends InjectableActivity
   public void eulaAccepted() {
     SharedPreferences.Editor editor = sharedPreferences.edit();
     editor.putInt(ApplicationConstants.READ_TOS_PREF_VERSION, EULA_VERSION_CODE);
-    editor.commit();
+    editor.apply();
     // Let's go.
     graphic.startAnimation(fadeAnimation);
   }
@@ -156,7 +186,7 @@ public class SplashScreenActivity extends InjectableActivity
   public void dialogClosed() {
     SharedPreferences.Editor editor = sharedPreferences.edit();
     editor.putLong(ApplicationConstants.READ_WHATS_NEW_PREF_VERSION, app.getVersion());
-    editor.commit();
+    editor.apply();
     launchSkyMap();
   }
 

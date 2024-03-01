@@ -155,7 +155,7 @@
         map with your fingers.
     </string>
     <string name="do_not_show_again">Do not show this message again</string>
-    <string name="title_activity_diagnostic">Diagnostics</string>
+    <string name="title_activity_diagnostic">Sky Map: Diagnostics</string>
     <string name="location_rationale_title">Why do we ask for your location?</string>
     <string name="location_rationale_text">The stars you can see depend on where on planet earth you are.  Without your location we cannot show you an accurate map.  If you do not want your phone to give us your location you can provide it manually in the settings.  You need only provide the nearest city.</string>
     <string name="play_services_error">Warning: Google Play Services error - Automatic location might not work</string>
@@ -221,4 +221,5 @@
     <string name="rotate_horizon_preference_summary">Rotate horizon by 90 degrees (for devices
         with forced landscape) or use pointer mode for the screen to show
         what the top of the phone is pointing at (see help text).</string>
+    <string name="title_activity_calibrate">Sky Map: Calibrate</string>
 </resources>

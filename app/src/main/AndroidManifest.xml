@@ -4,9 +4,9 @@
           android:installLocation="auto"
           android:vmSafeMode="false">
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
-    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
     <uses-permission android:name="android.permission.INTERNET"/>
     <!-- For Google Analytics -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
@@ -48,12 +48,12 @@
         android:name=".StardroidApplication"
         android:icon="@drawable/skymap_logo"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:allowBackup="true">
         <activity
             android:name=".activities.SplashScreenActivity"
-            android:label="@string/app_name"
             android:screenOrientation="nosensor"
-            android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"
+            android:theme="@style/AppThemeNew.NoActionBar"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -63,7 +63,6 @@
         <activity
             android:name=".activities.DynamicStarMapActivity"
             android:configChanges="keyboardHidden|orientation"
-            android:label="@string/app_name"
             android:launchMode="singleTask"
             android:screenOrientation="nosensor"
             android:theme="@style/FullscreenTheme"
@@ -78,7 +77,12 @@
                 android:resource="@xml/searchable"/>
         </activity>
         <activity
-            android:name=".activities.EditSettingsActivity"/>
+            android:name=".activities.EditSettingsActivity"
+            android:theme="@style/AppThemeNew"/>
+        <activity
+            android:name=".activities.HelpActivity"
+            android:theme="@style/AppThemeNew"
+            android:label="@string/help_dialog_title"/>
         <activity
             android:name=".activities.ImageGalleryActivity"/>
         <activity
@@ -86,6 +90,7 @@
             android:screenOrientation="portrait"/>
         <activity
             android:name=".activities.DiagnosticActivity"
+            android:theme="@style/AppThemeNew"
             android:label="@string/title_activity_diagnostic">
         </activity>
         <!-- Provides search suggestions. -->
@@ -95,9 +100,11 @@
             android:exported="false"
             android:syncable="false"/>
 
-        <activity android:name=".activities.CompassCalibrationActivity"
-                  android:launchMode="singleTop">
-        </activity>
+        <activity
+            android:name=".activities.CompassCalibrationActivity"
+            android:launchMode="singleTop"
+            android:theme="@style/AppThemeNew"
+            android:label="@string/title_activity_calibrate"/>
     </application>
 
 </manifest>

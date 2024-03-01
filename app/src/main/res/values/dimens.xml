@@ -12,4 +12,10 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="gallery_spacing">10px</dimen>
+    <dimen name="diagnostics_heading_bottom_padding">5dp</dimen>
+    <dimen name="diagnostics_row_left_padding">5dp</dimen>
+    <dimen name="diagnostics_heading_top_padding">10dp</dimen>
+    <dimen name="calibration_left_padding">10dp</dimen>
+    <dimen name="calibration_spacer_padding">5dp</dimen>
+    <dimen name="calibration_top_padding">10dp</dimen>
 </resources>

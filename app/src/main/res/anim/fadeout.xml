@@ -4,6 +4,6 @@
     <!-- TODO why does it flash back afterwards? -->
     <alpha android:fromAlpha="1.0"
            android:toAlpha="0.1"
-           android:duration="3000"
+           android:duration="2000"
            android:fillAfter="true"/>
 </set>

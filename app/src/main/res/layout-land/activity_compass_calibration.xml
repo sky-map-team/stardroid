@@ -1,89 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.google.android.stardroid.activities.CompassCalibrationActivity">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
 
-        <WebView
-            android:id="@+id/compass_calib_activity_webview"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@android:color/white" />
+    <WebView
+        android:id="@+id/compass_calib_activity_webview"
+        android:layout_width="235dp"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></WebView>
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="@dimen/text_margin"
-            android:layout_weight="2">
+    <TextView
+        android:id="@+id/compass_calib_activity_explain_why"
+        style="?attr/textAppearanceHeadline5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/compass_calibration_activity_warning"
+        android:paddingStart="@dimen/calibration_left_padding"
+        app:layout_constraintStart_toEndOf="@id/compass_calib_activity_webview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="@string/compass_calibration_activity_warning"
-                android:id="@+id/compass_calib_activity_explain_why"/>
+    <TextView
+        android:id="@+id/compass_calib_activity_accuracy_lbl"
+        style="?attr/textAppearanceSubtitle1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/compass_calibration_activity_heading_compass"
+        android:paddingStart="@dimen/calibration_left_padding"
+        android:paddingTop="@dimen/calibration_top_padding"
+        app:layout_constraintStart_toEndOf="@id/compass_calib_activity_webview"
+        app:layout_constraintTop_toBottomOf="@id/compass_calib_activity_explain_why" />
 
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/compass_calib_activity_compass_accuracy"
+        style="?attr/textAppearanceSubtitle1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/calibration_spacer_padding"
+        android:paddingTop="@dimen/calibration_top_padding"
+        app:layout_constraintStart_toEndOf="@id/compass_calib_activity_accuracy_lbl"
+        app:layout_constraintTop_toTopOf="@id/compass_calib_activity_accuracy_lbl"
+        tools:text="accuracy: unknown" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="@string/compass_calibration_activity_heading_compass"
-                    />
+    <TextView
+        android:id="@+id/compass_calib_what_to_do"
+        style="?attr/textAppearanceBody1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:autoLink="web"
+        android:text="@string/compass_calib_what_to_do"
+        android:paddingStart="@dimen/calibration_left_padding"
+        android:paddingTop="@dimen/calibration_top_padding"
+        tools:text="Your phone is reporting to Sky Map that its internal compass is uncalibrated. This is not a Sky Map issue but we can help you try to fix it. To calibrate the compass try moving your phone in a figure of eight motion as demonstrated in this video https://www.youtube.com/watch?v=-Uq7AmSAjt8 until the accuracy reads \'high\'."
+        app:layout_constraintStart_toEndOf="@id/compass_calib_activity_webview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/compass_calib_activity_accuracy_lbl" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:id="@+id/compass_calib_activity_compass_accuracy"
-                    android:text="accuracy: unknown"
-                    android:paddingBottom="10dp"
-                    android:paddingLeft="5dp"
-                    android:paddingTop="5dp"
-                    android:paddingRight="5dp"/>
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/compass_calib_activity_donotshow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/calibration_left_padding"
+        android:text="@string/compass_calibration_activity_do_not_show_this_again"
+        app:layout_constraintStart_toStartOf="@id/compass_calib_what_to_do"
+        app:layout_constraintTop_toBottomOf="@id/compass_calib_what_to_do" />
 
-            </LinearLayout>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/compass_calib_ok_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:nestedScrollingEnabled="false"
+        android:onClick="onOkClicked"
+        android:text="@android:string/ok"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="@string/compass_calibration_activity_warning"
-                android:autoLink="web"
-                android:id="@+id/compass_calib_what_to_do"/>
-
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/compass_calibration_activity_do_not_show_this_again"
-                android:id="@+id/compass_calib_activity_donotshow"/>
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@android:string/ok"
-                android:layout_gravity="center_horizontal"
-                android:nestedScrollingEnabled="false"
-                android:onClick="onOkClicked"/>
-
-        </LinearLayout>
-
-
-    </LinearLayout>
-</androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
