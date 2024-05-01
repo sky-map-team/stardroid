@@ -44,8 +44,6 @@ class HardcodedGallery internal constructor(private val resources: Resources) : 
     val galleryImages = ArrayList<GalleryImage>()
     // Note the internationalized names in places.  Be sure that if the
     // search term is internationalized in the search index then it is here too.
-    add(galleryImages, R.drawable.eclipse_map_2024_notext_1920, R.string.eclipse24, R.string
-      .eclipse24)
     add(galleryImages, R.drawable.messenger_11_07_39, R.string.mercury, R.string.mercury)
     add(galleryImages, R.drawable.hubble_venus_clouds_tops, R.string.venus, R.string.venus)
     add(galleryImages, R.drawable.hubble_mars, R.string.mars, R.string.mars)
