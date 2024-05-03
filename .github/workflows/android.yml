@@ -26,12 +26,18 @@ jobs:
       uses: asadmansr/android-test-report-action@v1.2.0
       if: ${{ always() }} # IMPORTANT: run Android Test Report regardless
   connected_test:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         api-level: [ 29 ]
         target: [ playstore ]
     steps:
+       - name: Enable KVM
+         run: |
+           echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+           sudo udevadm control --reload-rules
+           sudo udevadm trigger --name-match=kvm
+  
       - name: checkout
         uses: actions/checkout@v4
 
