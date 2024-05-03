@@ -17,7 +17,7 @@ jobs:
       uses: actions/setup-java@v4
       with:
         distribution: 'zulu' # See 'Supported distributions' for available options
-        java-version: '21'
+        java-version: '12'
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build with Gradle
@@ -33,13 +33,13 @@ jobs:
         target: [ playstore ]
     steps:
       - name: checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Setup Java
-        uses: actions/setup-java@v2
-        with:
-          java-version: 11
-          distribution: 'adopt'
+        uses: actions/setup-java@v4
+          with:
+            distribution: 'zulu' # See 'Supported distributions' for available options
+            java-version: '12'
 
       - name: run tests
         uses: reactivecircus/android-emulator-runner@v2
