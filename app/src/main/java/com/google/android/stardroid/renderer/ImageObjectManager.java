@@ -26,6 +26,7 @@ import com.google.android.stardroid.renderables.ImagePrimitive;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.IntBuffer;
+import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.List;
 
@@ -52,13 +53,14 @@ public class ImageObjectManager extends RendererObjectManager {
   }
 
   public void updateObjects(List<ImagePrimitive> imageSources, EnumSet<UpdateType> type) {
-    if (!type.contains(UpdateType.Reset) && imageSources.size() != mImages.length) {
-      logUpdateMismatch("ImageObjectManager", imageSources.size(), mImages.length, type);
+    List<ImagePrimitive> safeImages = new ArrayList<>(imageSources);
+    if (!type.contains(UpdateType.Reset) && safeImages.size() != mImages.length) {
+      logUpdateMismatch("ImageObjectManager", safeImages.size(), mImages.length, type);
       return;
     }
     mUpdates.addAll(type);
 
-    int numVertices = imageSources.size() * 4;
+    int numVertices = safeImages.size() * 4;
     VertexBuffer vertexBuffer = mVertexBuffer;
     vertexBuffer.reset(numVertices);
 
@@ -68,14 +70,9 @@ public class ImageObjectManager extends RendererObjectManager {
     Image[] images;
     boolean reset = type.contains(UpdateType.Reset) || type.contains(UpdateType.UpdateImages);
     if (reset) {
-      images = new Image[imageSources.size()];
-    } else {
-      images = mImages;
-    }
-
-    if (reset) {
-      for (int i = 0; i < imageSources.size(); i++) {
-        ImagePrimitive is = imageSources.get(i);
+      images = new Image[safeImages.size()];
+      for (int i = 0; i < safeImages.size(); i++) {
+        ImagePrimitive is = safeImages.get(i);
 
         images[i] = new Image();
         //TODO(brent): Fix this method.
@@ -83,12 +80,14 @@ public class ImageObjectManager extends RendererObjectManager {
         images[i].useBlending = false;
         images[i].bitmap = is.getImage();
       }
+    } else {
+      images = mImages;
     }
 
     // Update the positions in the position and tex coord buffers.
     if (reset || type.contains(UpdateType.UpdatePositions)) {
-      for (int i = 0; i < imageSources.size(); i++) {
-        ImagePrimitive is = imageSources.get(i);
+      for (int i = 0; i < safeImages.size(); i++) {
+        ImagePrimitive is = safeImages.get(i);
         Vector3 xyz = is.getLocation();
         float px = xyz.x;
         float py = xyz.y;
@@ -125,8 +124,8 @@ public class ImageObjectManager extends RendererObjectManager {
     // We already set the image in reset, so only set them here if we're
     // not doing a reset.
     if (type.contains(UpdateType.UpdateImages)) {
-      for (int i = 0; i < imageSources.size(); i++) {
-        ImagePrimitive is = imageSources.get(i);
+      for (int i = 0; i < safeImages.size(); i++) {
+        ImagePrimitive is = safeImages.get(i);
         images[i].bitmap = is.getImage();
       }
     }

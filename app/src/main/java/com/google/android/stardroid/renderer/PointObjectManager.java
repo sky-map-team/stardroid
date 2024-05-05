@@ -84,21 +84,23 @@ public class PointObjectManager extends RendererObjectManager {
       return;
     }
 
-    mNumPoints = points.size();
+    List<PointPrimitive> safePoints = new ArrayList<>(points);
+
+    mNumPoints = safePoints.size();
 
     mSkyRegions.clear();
 
     if (COMPUTE_REGIONS) {
       // Find the region for each point, and put it in a separate list
       // for that region.
-      for (PointPrimitive point : points) {
-        int region = points.size() < MINIMUM_NUM_POINTS_FOR_REGIONS
+      for (PointPrimitive point : safePoints) {
+        int region = safePoints.size() < MINIMUM_NUM_POINTS_FOR_REGIONS
             ? SkyRegionMap.CATCHALL_REGION_ID
             : SkyRegionMap.getObjectRegion(point.getLocation());
         mSkyRegions.getRegionData(region).sources.add(point);
       }
     } else {
-      mSkyRegions.getRegionData(SkyRegionMap.CATCHALL_REGION_ID).sources = points;
+      mSkyRegions.getRegionData(SkyRegionMap.CATCHALL_REGION_ID).sources = safePoints;
     }
 
     // Generate the resources for all of the regions.

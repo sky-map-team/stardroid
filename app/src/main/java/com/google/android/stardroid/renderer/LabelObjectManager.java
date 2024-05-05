@@ -121,9 +121,11 @@ public class LabelObjectManager extends RendererObjectManager {
 
   public void updateObjects(List<TextPrimitive> labels, EnumSet<UpdateType> updateType) {
     if (updateType.contains(UpdateType.Reset)) {
-      mLabels = new Label[labels.size()];
-      for (int i = 0; i < labels.size(); i++) {
-        mLabels[i] = new Label(labels.get(i));
+      // Protect against labels being changed mid-iteration.
+      List<TextPrimitive> safeLabels = new ArrayList<>(labels);
+      mLabels = new Label[safeLabels.size()];
+      for (int i = 0; i < safeLabels.size(); i++) {
+        mLabels[i] = new Label(safeLabels.get(i));
       }
       queueForReload(false);
     } else if (updateType.contains(UpdateType.UpdatePositions)) {

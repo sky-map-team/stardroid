@@ -592,10 +592,10 @@ public class DynamicStarMapActivity extends InjectableActivity
     // Either of the following detectors can absorb the event, but one
     // must not hide it from the other
     boolean eventAbsorbed = false;
-    if (gestureDetector.onTouchEvent(event)) {
+    if (event != null && gestureDetector.onTouchEvent(event)) {
       eventAbsorbed = true;
     }
-    if (dragZoomRotateDetector.onTouchEvent(event)) {
+    if (event != null && dragZoomRotateDetector.onTouchEvent(event)) {
       eventAbsorbed = true;
     }
     return eventAbsorbed;
