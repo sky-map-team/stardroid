@@ -6,7 +6,7 @@
         <item>Neste soloppgang</item><!-- 2 -->
         <item>Neste fullmåne</item><!-- 3 -->
         <item>Merkurpassasje 9. mai 2016</item><!-- 4 -->
-        <item>Solformørkelse 8. apr 2024</item><!-- 5 -->
+        <item>Nord-Amerikansk solformørkelse 8. apr 2024</item><!-- 5 -->
         <item>Apollo 11 månelanding</item><!-- 6 -->
         <item>Jupiter-Saturn-konjunksjon i 2020</item><!-- 7 -->
     </string-array>
@@ -20,5 +20,12 @@
         <item translation_description="Medium sensor damping factor">Medium</item>
         <item translation_description="Extra High sensor damping factor">About right</item>
         <item translation_description="Really High sensor damping factor">Laggy</item>
+    </string-array>
+    <string-array name="viewing_direction">
+        <item translation_description="Normal viewing">Normal</item>
+        <item translation_description="Rotates the screen by 90 degrees">Rotert horisont</item>
+        <item
+            translation_description="Shows the sky as pointed at by the long edge of the phone">Pekemodus
+        </item>
     </string-array>
 </resources>
