@@ -30,7 +30,7 @@ jobs:
     strategy:
       matrix:
         api-level: [ 29 ]
-        target: [ playstore ]
+        target: [ default ]
     steps:
       - name: checkout
         uses: actions/checkout@v4
