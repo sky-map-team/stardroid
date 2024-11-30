@@ -16,8 +16,6 @@ package com.google.android.stardroid.util;
 
 import android.os.Bundle;
 
-import com.google.firebase.analytics.FirebaseAnalytics;
-
 /**
  * Encapsulates interactions with Firebase Analytics, allowing it to be
  * disabled etc.
@@ -57,8 +55,8 @@ public interface AnalyticsInterface {
   String GALLERY_OPENED_LABEL = "gallery_opened";
   String TOS_OPENED_LABEL = "TOS_opened";
   String DIAGNOSTICS_OPENED_LABEL = "diagnostics_opened";
-  String SEARCH_EVENT = FirebaseAnalytics.Event.SEARCH;
-  String SEARCH_TERM = FirebaseAnalytics.Param.SEARCH_TERM;
+  String SEARCH_EVENT = "";
+  String SEARCH_TERM = "";
   String SEARCH_SUCCESS = "search_success";
   String START_EVENT = "start_up_event_ev";
   String START_EVENT_HOUR = "hour";

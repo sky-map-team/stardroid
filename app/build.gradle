@@ -10,12 +10,13 @@ android {
 
     defaultConfig {
         applicationId "com.google.android.stardroid"
-        minSdkVersion 26
+        minSdkVersion 15
         targetSdkVersion 34
-        versionCode 1552
-        versionName "1.10.4"
+        versionCode 1524
+        versionName "1.10.4b"
         buildConfigField 'String', 'GOOGLE_ANALYTICS_CODE', '""'
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
 
     compileOptions {
@@ -72,7 +73,7 @@ android {
     productFlavors {
         // includes gms Google services
         gms {
-            resValue "string", "analytics_enabled", "true"
+            resValue "string", "analytics_enabled", "false"
         }
 
         // uses only open source software
@@ -92,6 +93,9 @@ dependencies {
     implementation 'androidx.preference:preference:1.1.1'
     implementation "androidx.core:core-ktx:1.7.0"
 
+    def multidex_version = "2.0.1"
+    implementation "androidx.multidex:multidex:$multidex_version"
+
 // Third-party
     implementation 'com.google.guava:guava:30.1.1-jre'
     def dagger_version = "2.40"
@@ -106,7 +110,6 @@ dependencies {
 // Flavor
     gmsImplementation 'com.google.android.gms:play-services-analytics:18.0.0'
     gmsImplementation 'com.google.android.gms:play-services-location:19.0.0'
-    gmsImplementation 'com.google.firebase:firebase-analytics:20.0.2'
 
 // Testing
     testImplementation 'junit:junit:4.13.1'
