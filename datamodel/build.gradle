@@ -1,6 +1,11 @@
-apply plugin: 'java-library'
-apply plugin: 'com.google.protobuf'
-apply plugin: 'idea'
+//apply plugin: 'java-library'
+//apply plugin: 'com.google.protobuf'
+//apply plugin: 'idea'
+
+plugins {
+    id 'java-library'
+    id 'com.google.protobuf' version '0.9.4'
+}
 
 dependencies {
     implementation 'com.google.protobuf:protobuf-javalite:3.13.0'
@@ -21,10 +26,6 @@ protobuf {
             }
         }
     }
-}
-
-repositories {
-    mavenCentral()
 }
 
 sourceCompatibility = "1.8"

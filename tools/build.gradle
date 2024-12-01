@@ -1,6 +1,11 @@
-apply plugin: 'application'
-apply plugin: 'com.google.protobuf'
-apply plugin: 'idea'
+//apply plugin: 'application'
+//apply plugin: 'com.google.protobuf'
+//apply plugin: 'idea'
+
+plugins {
+    id 'application'
+    id 'com.google.protobuf' version '0.9.4'
+}
 
 sourceSets {
     main {
