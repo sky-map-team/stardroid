@@ -37,7 +37,7 @@ check_android_task:
 
 task:
   name: Android Lint
-  foo_script: echo $JAVA_HOME
+  foo_script: echo java home is set to $JAVA_HOME
   lint_script: ./gradlew lintGmsDebug
   # always:
   #   android-lint_artifacts:
