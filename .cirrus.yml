@@ -36,7 +36,8 @@ check_android_task:
       path: "app/build/reports/**"
 
 task:
-  name: Android Lint Does This Work
+  name: Android Lint
+  foo_script: echo $JAVA_HOME
   lint_script: ./gradlew lintGmsDebug
   # always:
   #   android-lint_artifacts:
