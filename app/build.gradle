@@ -52,6 +52,8 @@ android {
         targetSdk 35
         versionCode 1552
         versionName "1.10.4"
+        buildConfigField 'String', 'GOOGLE_ANALYTICS_CODE', '""'
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     signingConfigs {
