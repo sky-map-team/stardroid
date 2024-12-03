@@ -36,13 +36,13 @@ check_android_task:
 task:
   name: Android Lint
   env:
-    JAVA_HOME: /usr/lib/jvm/jdk-17
+    JAVA_HOME: /usr/lib/jvm/openjdk-17
   foo_script:
     - echo java home is set to $JAVA_HOME
     - which java
     - ls /usr/lib/
     - ls /usr/lib/jvm/
-    - ls /usr/lib/jvm/jdk-17
+    - ls /usr/lib/jvm/openjdk-17
   lint_script: ./gradlew lintGmsDebug
   # always:
   #   android-lint_artifacts:
