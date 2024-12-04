@@ -3,6 +3,8 @@ container:
   cpu: 8
   memory: 24G
   kvm: true
+  env:
+    JAVA_HOME: /usr/lib/jvm/java-17-openjdk-amd64
 check_android_task:
   # execution_lock: OneEmulatorAtATime
   list_versions_script:
@@ -33,18 +35,7 @@ check_android_task:
     build_artifacts:
       path: "app/build/reports/**"
 
-task:
-  name: Android Lint
-  env:
-    JAVA_HOME: /usr/lib/jvm/java-17-openjdk-amd64
-
-  foo_script:
-    - echo java home is set to $JAVA_HOME
-    - which java
-    - ls /usr/lib/
-    - ls /usr/lib/jvm/
-    - ls /usr/lib/jvm/java-17-openjdk-amd64
-    - ls /usr/lib/jvm/java-1.17.0-openjdk-amd64
+lint_task:
   lint_script: ./gradlew lintGmsDebug
   # always:
   #   android-lint_artifacts:
