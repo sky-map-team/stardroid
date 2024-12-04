@@ -59,7 +59,7 @@ public class ActivityLightLevelChanger {
 
   // current setting.
   public void setNightMode(boolean nightMode) {
-    /*
+
     if (nightModeable != null) {
       nightModeable.setNightMode(nightMode);
     }
@@ -73,7 +73,7 @@ public class ActivityLightLevelChanger {
       params.buttonBrightness = WindowManager.LayoutParams.BRIGHTNESS_OVERRIDE_NONE;
     }
     // window.setAttributes(params);
+
     
-     */
   }
 }
