@@ -82,7 +82,7 @@ class StardroidApplication : Application() {
     Log.d(TAG, "StardroidApplication: -onCreate")
   }
 
-  private fun setUpAnalytics(versionName: String) {
+  private fun setUpAnalytics(versionName: String?) {
     analytics.setEnabled(preferences.getBoolean(AnalyticsInterface.PREF_KEY, true))
 
     // Ugly hack since this isn't injectable
@@ -125,7 +125,7 @@ class StardroidApplication : Application() {
   /**
    * Returns the version string for Sky Map.
    */
-  val versionName: String
+  val versionName: String?
     get() {
       // TODO(jontayler): update to use the info created by gradle.
       val packageManager = packageManager

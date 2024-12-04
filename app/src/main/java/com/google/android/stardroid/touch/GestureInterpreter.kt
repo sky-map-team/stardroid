@@ -35,15 +35,15 @@ class GestureInterpreter(
     )
   }
 
-  override fun onDown(e: MotionEvent): Boolean {
+  override fun onDown(unused: MotionEvent): Boolean {
     Log.d(TAG, "Tap down")
     flinger.stop()
     return true
   }
 
   override fun onFling(
-    e1: MotionEvent,
-    e2: MotionEvent,
+    unused1: MotionEvent?,
+    unused2: MotionEvent,
     velocityX: Float,
     velocityY: Float
   ): Boolean {

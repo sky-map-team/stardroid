@@ -32,18 +32,18 @@ class PreferenceChangeAnalyticsTracker @Inject internal constructor(private val 
       "sensor_speed", "sensor_damping, lightmode"
     )
 
-  private fun trackPreferenceChange(sharedPreferences: SharedPreferences, key: String) {
+  private fun trackPreferenceChange(sharedPreferences: SharedPreferences, key: String?) {
     Log.d(TAG, "Logging pref change $key")
-    // There is no way to get a preference without knowing its type.  Consequently, we try
-    // each type and silently swallow the exception if we guess wrong.  If this proves expensive
-    // we might switch to caching the type.
+    if (key == null) {
+      return;
+    }
     val prefBundle = Bundle()
     val value = getPreferenceAsString(sharedPreferences, key)
     prefBundle.putString(AnalyticsInterface.PREFERENCE_CHANGE_EVENT_VALUE, "$key:$value")
     analytics.trackEvent(AnalyticsInterface.PREFERENCE_CHANGE_EVENT, prefBundle)
   }
 
-  override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences, key: String) {
+  override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences, key: String?) {
     trackPreferenceChange(sharedPreferences, key)
   }
 

@@ -45,7 +45,7 @@ class LayerManager(private val sharedPreferences: SharedPreferences) : OnSharedP
         }
     }
 
-    override fun onSharedPreferenceChanged(prefs: SharedPreferences, key: String) {
+    override fun onSharedPreferenceChanged(prefs: SharedPreferences, key: String?) {
         for (layer in layers) {
             if (layer.preferenceId == key) {
                 val visible = prefs.getBoolean(key, true)

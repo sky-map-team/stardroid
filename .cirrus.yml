@@ -1,9 +1,10 @@
 container:
-  image: cirrusci/android-sdk:30
+  image: ghcr.io/cirruslabs/android-sdk:33
   cpu: 8
   memory: 24G
   kvm: true
-
+  env:
+    JAVA_HOME: /usr/lib/jvm/java-17-openjdk-amd64
 check_android_task:
   # execution_lock: OneEmulatorAtATime
   list_versions_script:
@@ -34,8 +35,7 @@ check_android_task:
     build_artifacts:
       path: "app/build/reports/**"
 
-task:
-  name: Android Lint
+lint_task:
   lint_script: ./gradlew lintGmsDebug
   # always:
   #   android-lint_artifacts:

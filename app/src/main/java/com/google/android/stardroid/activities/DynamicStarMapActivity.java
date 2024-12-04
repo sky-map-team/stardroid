@@ -358,65 +358,56 @@ public class DynamicStarMapActivity extends InjectableActivity
     super.onOptionsItemSelected(item);
     fullscreenControlsManager.delayHideTheControls();
     Bundle menuEventBundle = new Bundle();
-    switch (item.getItemId()) {
-      case R.id.menu_item_search:
-        Log.d(TAG, "Search");
-        menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.SEARCH_REQUESTED_LABEL);
-        onSearchRequested();
-        break;
-      case R.id.menu_item_settings:
-        Log.d(TAG, "Settings");
-        menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.SETTINGS_OPENED_LABEL);
-        startActivity(new Intent(this, EditSettingsActivity.class));
-        break;
-      case R.id.menu_item_help:
-        Log.d(TAG, "Help");
-        menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.HELP_OPENED_LABEL);
-        helpDialogFragment.show(fragmentManager, "Help Dialog");
-        break;
-      case R.id.menu_item_dim:
-        Log.d(TAG, "Toggling nightmode");
-        nightMode = !nightMode;
-        sharedPreferences.edit().putString(ActivityLightLevelManager.LIGHT_MODE_KEY,
-            nightMode ? "NIGHT" : "DAY").commit();
-        menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.TOGGLED_NIGHT_MODE_LABEL);
-        break;
-      case R.id.menu_item_time:
-        Log.d(TAG, "Starting Time Dialog from menu");
-        menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.TIME_TRAVEL_OPENED_LABEL);
-        if (!timePlayerUI.isShown()) {
-          Log.d(TAG, "Resetting time in time travel dialog.");
-          controller.goTimeTravel(new Date());
-        } else {
-          Log.d(TAG, "Resuming current time travel dialog.");
-        }
-        timeTravelDialogFragment.show(fragmentManager, "Time Travel");
-        break;
-      case R.id.menu_item_gallery:
-        Log.d(TAG, "Loading gallery");
-        menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.GALLERY_OPENED_LABEL);
-        startActivity(new Intent(this, ImageGalleryActivity.class));
-        break;
-      case R.id.menu_item_tos:
-        Log.d(TAG, "Loading ToS");
-        menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.TOS_OPENED_LABEL);
-        eulaDialogFragmentNoButtons.show(fragmentManager, "Eula Dialog No Buttons");
-        break;
-      case R.id.menu_item_calibrate:
-        Log.d(TAG, "Loading Calibration");
-        menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.CALIBRATION_OPENED_LABEL);
-        Intent intent = new Intent(this, CompassCalibrationActivity.class);
-        intent.putExtra(CompassCalibrationActivity.HIDE_CHECKBOX, true);
-        startActivity(intent);
-        break;
-      case R.id.menu_item_diagnostics:
-        Log.d(TAG, "Loading Diagnostics");
-        menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.DIAGNOSTICS_OPENED_LABEL);
-        startActivity(new Intent(this, DiagnosticActivity.class));
-        break;
-      default:
-        Log.e(TAG, "Unwired-up menu item");
-        return false;
+    int itemId = item.getItemId();
+    if (itemId == R.id.menu_item_search) {
+      Log.d(TAG, "Search");
+      menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.SEARCH_REQUESTED_LABEL);
+      onSearchRequested();
+    } else if (itemId == R.id.menu_item_settings) {
+      Log.d(TAG, "Settings");
+      menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.SETTINGS_OPENED_LABEL);
+      startActivity(new Intent(this, EditSettingsActivity.class));
+    } else if (itemId == R.id.menu_item_help) {
+      Log.d(TAG, "Help");
+      menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.HELP_OPENED_LABEL);
+      helpDialogFragment.show(fragmentManager, "Help Dialog");
+    } else if (itemId == R.id.menu_item_dim) {
+      Log.d(TAG, "Toggling nightmode");
+      nightMode = !nightMode;
+      sharedPreferences.edit().putString(ActivityLightLevelManager.LIGHT_MODE_KEY,
+          nightMode ? "NIGHT" : "DAY").commit();
+      menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.TOGGLED_NIGHT_MODE_LABEL);
+    } else if (itemId == R.id.menu_item_time) {
+      Log.d(TAG, "Starting Time Dialog from menu");
+      menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.TIME_TRAVEL_OPENED_LABEL);
+      if (!timePlayerUI.isShown()) {
+        Log.d(TAG, "Resetting time in time travel dialog.");
+        controller.goTimeTravel(new Date());
+      } else {
+        Log.d(TAG, "Resuming current time travel dialog.");
+      }
+      timeTravelDialogFragment.show(fragmentManager, "Time Travel");
+    } else if (itemId == R.id.menu_item_gallery) {
+      Log.d(TAG, "Loading gallery");
+      menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.GALLERY_OPENED_LABEL);
+      startActivity(new Intent(this, ImageGalleryActivity.class));
+    } else if (itemId == R.id.menu_item_tos) {
+      Log.d(TAG, "Loading ToS");
+      menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.TOS_OPENED_LABEL);
+      eulaDialogFragmentNoButtons.show(fragmentManager, "Eula Dialog No Buttons");
+    } else if (itemId == R.id.menu_item_calibrate) {
+      Log.d(TAG, "Loading Calibration");
+      menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.CALIBRATION_OPENED_LABEL);
+      Intent intent = new Intent(this, CompassCalibrationActivity.class);
+      intent.putExtra(CompassCalibrationActivity.HIDE_CHECKBOX, true);
+      startActivity(intent);
+    } else if (itemId == R.id.menu_item_diagnostics) {
+      Log.d(TAG, "Loading Diagnostics");
+      menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.DIAGNOSTICS_OPENED_LABEL);
+      startActivity(new Intent(this, DiagnosticActivity.class));
+    } else {
+      Log.e(TAG, "Unwired-up menu item");
+      return false;
     }
     analytics.trackEvent(Analytics.MENU_ITEM_EVENT, menuEventBundle);
     return true;
