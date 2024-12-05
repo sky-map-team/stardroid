@@ -16,6 +16,9 @@ package com.google.android.stardroid.activities.util;
 
 import android.app.Activity;
 import androidx.annotation.Nullable;
+
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.view.Window;
 import android.view.WindowManager;
 
@@ -36,15 +39,18 @@ public class ActivityLightLevelChanger {
     void setNightMode(boolean nightMode);
   }
 
+  // Back in the bad old days it was hard to get the brightness level right.  On some phones
+  // a particular level would be invisible, on others too bright.  We settled on the following
+  // value after some experimentation....
   // This value is based on inspecting the Android source code for the
   // SettingsAppWidgetProvider:
   // http://hi-android.info/src/com/android/settings/widget/SettingsAppWidgetProvider.java.html
   // (We know that 0.05 is OK on the G1 and N1, but not some other phones, so we don't make this
   // as dim as we could...)
-  private static final float BRIGHTNESS_DIM = (float) 20f / 255f;
+  private static final float BRIGHTNESS_DIM_ORIGINAL = (float) 20f / 255f;
 
-  private NightModeable nightModeable;
-  private Activity activity;
+  private final NightModeable nightModeable;
+  private final Activity activity;
 
   /**
    * Wraps an activity with a setNightMode method.
@@ -65,15 +71,18 @@ public class ActivityLightLevelChanger {
     }
     Window window = activity.getWindow();
     WindowManager.LayoutParams params = window.getAttributes();
+    SharedPreferences prefs = activity.getPreferences(Context.MODE_PRIVATE);
+
+
     if (nightMode) {
-      params.screenBrightness = BRIGHTNESS_DIM;
+      params.screenBrightness = WindowManager.LayoutParams.BRIGHTNESS_OVERRIDE_OFF;//BRIGHTNESS_DIM;
       params.buttonBrightness = WindowManager.LayoutParams.BRIGHTNESS_OVERRIDE_OFF;    // TODO(jontayler): look at this again - at present night mode can be brighter than the phone's
     } else {
       params.screenBrightness = WindowManager.LayoutParams.BRIGHTNESS_OVERRIDE_NONE;
       params.buttonBrightness = WindowManager.LayoutParams.BRIGHTNESS_OVERRIDE_NONE;
     }
-    // window.setAttributes(params);
+    window.setAttributes(params);
 
-    
+
   }
 }
