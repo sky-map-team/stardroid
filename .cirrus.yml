@@ -4,7 +4,7 @@ container:
   memory: 24G
   kvm: true
   env:
-    JAVA_HOME: /usr/lib/jvm/java-17-openjdk-amd64
+    JAVA_HOME: /usr/lib/jvm/java-21-openjdk-amd64
 check_android_task:
   # execution_lock: OneEmulatorAtATime
   list_versions_script:
