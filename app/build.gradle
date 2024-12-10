@@ -50,8 +50,8 @@ android {
         applicationId 'com.google.android.stardroid'
         minSdk 26
         targetSdk 34  // 35 breaks the UI
-        versionCode 1553
-        versionName "1.10.5"
+        versionCode 1554
+        versionName "1.10.6"
         buildConfigField 'String', 'GOOGLE_ANALYTICS_CODE', '""'
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
