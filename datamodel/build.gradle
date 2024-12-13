@@ -4,8 +4,11 @@
 
 plugins {
     id 'java-library'
+    //id 'com.android.library' version '8.7.2'
     id 'com.google.protobuf' version '0.9.4'
 }
+
+//compileSdkVersion 26
 
 dependencies {
     implementation 'com.google.protobuf:protobuf-javalite:3.13.0'
