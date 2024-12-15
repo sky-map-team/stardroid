@@ -49,7 +49,7 @@ android {
         // Uniquely identifies the package for publishing.
         applicationId 'com.google.android.stardroid'
         minSdk 26
-        targetSdk 35
+        targetSdk 34
         versionCode 1553
         versionName "1.10.5 - mucking about"
         buildConfigField 'String', 'GOOGLE_ANALYTICS_CODE', '""'

@@ -29,8 +29,8 @@
         </item>
     </string-array>
     <string-array name="auto_dim_texts">
-        <item translation_description="Dimmest screen setting">Dim</item>
-        <item translation_description="Leave it on the system setting">System</item>
+        <item translation_description="Dimmest screen setting">Very Dim</item>
+        <item translation_description="Leave it on the system setting">System Default</item>
         <item translation_description="The setting used for the last 15 years">Classic</item>
     </string-array>
 </resources>

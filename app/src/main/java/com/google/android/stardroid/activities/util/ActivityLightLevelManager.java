@@ -17,6 +17,8 @@ package com.google.android.stardroid.activities.util;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 
+import javax.inject.Inject;
+
 /**
  * Controls an activity's illumination levels.
  *
@@ -24,10 +26,11 @@ import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
  *
  */
 public class ActivityLightLevelManager implements OnSharedPreferenceChangeListener {
-  private ActivityLightLevelChanger lightLevelChanger;
-  private SharedPreferences sharedPreferences;
+  private final ActivityLightLevelChanger lightLevelChanger;
+  private final SharedPreferences sharedPreferences;
   private enum LightMode {DAY, NIGHT, AUTO}
   public static final String LIGHT_MODE_KEY = "lightmode";
+  @Inject
   public ActivityLightLevelManager(ActivityLightLevelChanger lightLevelChanger,
                                    SharedPreferences sharedPreferences) {
     this.lightLevelChanger = lightLevelChanger;

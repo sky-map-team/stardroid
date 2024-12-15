@@ -91,7 +91,8 @@ import javax.inject.Provider;
  * The main map-rendering Activity.
  */
 public class DynamicStarMapActivity extends InjectableActivity
-    implements OnSharedPreferenceChangeListener, HasComponent<DynamicStarMapComponent> {
+    implements OnSharedPreferenceChangeListener, NightModeable,
+    HasComponent<DynamicStarMapComponent> {
   private static final int TIME_DISPLAY_DELAY_MILLIS = 1000;
   private FullscreenControlsManager fullscreenControlsManager;
 
@@ -206,7 +207,7 @@ public class DynamicStarMapActivity extends InjectableActivity
 
   private DragRotateZoomGestureDetector dragZoomRotateDetector;
   @Inject Animation flashAnimation;
-  private ActivityLightLevelManager activityLightLevelManager;
+  @Inject ActivityLightLevelManager activityLightLevelManager;
   private long sessionStartTime;
 
   @Override
@@ -242,14 +243,14 @@ public class DynamicStarMapActivity extends InjectableActivity
     // Search related
     setDefaultKeyMode(DEFAULT_KEYS_SEARCH_LOCAL);
 
-    ActivityLightLevelChanger activityLightLevelChanger = new ActivityLightLevelChanger(this,
+    /*ActivityLightLevelChanger activityLightLevelChanger = new ActivityLightLevelChanger(this,
         new NightModeable() {
           @Override
           public void setNightMode(boolean nightMode1) {
             DynamicStarMapActivity.this.rendererController.queueNightVisionMode(nightMode1);
           }});
     activityLightLevelManager = new ActivityLightLevelManager(activityLightLevelChanger,
-                                                              sharedPreferences);
+                                                              sharedPreferences);*/
 
     PowerManager pm = ContextCompat.getSystemService(this, PowerManager.class);
     if (pm != null) {
@@ -264,6 +265,11 @@ public class DynamicStarMapActivity extends InjectableActivity
       doSearchWithIntent(intent);
     }
     Log.d(TAG, "-onCreate at " + System.currentTimeMillis());
+  }
+
+  @Override
+  public void setNightMode(boolean mode) {
+    rendererController.queueNightVisionMode(mode);
   }
 
   private void checkForSensorsAndMaybeWarn() {
