@@ -43,8 +43,5 @@ interface ApplicationComponent {
 
   // Who can we inject
   fun inject(app: StardroidApplication)
-  fun inject(activity: EditSettingsActivity)
-  fun inject(activity: ImageDisplayActivity)
-  fun inject(activity: ImageGalleryActivity)
   fun inject(provider: SearchTermsProvider)
 }

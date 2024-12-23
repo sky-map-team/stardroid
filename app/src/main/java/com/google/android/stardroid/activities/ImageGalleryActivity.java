@@ -53,7 +53,8 @@ public class ImageGalleryActivity extends InjectableActivity {
   private static final String TAG = MiscUtil.getTag(ImageGalleryActivity.class);
   private List<GalleryImage> galleryImages;
 
-  private ActivityLightLevelManager activityLightLevelManager;
+  @Inject
+  ActivityLightLevelManager activityLightLevelManager;
   @Inject
   Analytics analytics;
 
@@ -93,11 +94,10 @@ public class ImageGalleryActivity extends InjectableActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    getApplicationComponent().inject(this);
+    DaggerImageGalleryActivityComponent.builder().applicationComponent(
+            getApplicationComponent()).imageGalleryActivityModule(new ImageGalleryActivityModule(this))
+        .build().inject(this);
     setContentView(R.layout.imagegallery);
-    activityLightLevelManager = new ActivityLightLevelManager(
-        new ActivityLightLevelChanger(this, null),
-        PreferenceManager.getDefaultSharedPreferences(this));
     this.galleryImages = GalleryFactory.getGallery(getResources()).getGalleryImages();
     addImagesToGallery();
   }

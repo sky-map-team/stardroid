@@ -38,7 +38,7 @@ class ApplicationModule(private val app: StardroidApplication) {
 
   @Provides
   @Singleton
-  fun provideSharedPreferences() = PreferenceManager.getDefaultSharedPreferences(app)
+  fun provideSharedPreferences(): SharedPreferences = PreferenceManager.getDefaultSharedPreferences(app)
 
   @Provides
   @Singleton
@@ -86,7 +86,7 @@ class ApplicationModule(private val app: StardroidApplication) {
 
   @Provides
   @Singleton
-  fun provideAccountManager(context: Context) = AccountManager.get(context)
+  fun provideAccountManager(context: Context): AccountManager = AccountManager.get(context)
 
   @Provides
   @Singleton
