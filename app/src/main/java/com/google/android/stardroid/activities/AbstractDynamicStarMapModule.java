@@ -6,6 +6,7 @@ import android.content.Context;
 import android.media.MediaPlayer;
 import android.os.Handler;
 import android.util.Log;
+import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
@@ -33,7 +34,7 @@ import dagger.Provides;
 @Module
 public class AbstractDynamicStarMapModule {
   private static final String TAG = MiscUtil.getTag(DynamicStarMapModule.class);
-  private DynamicStarMapActivity activity;
+  private final DynamicStarMapActivity activity;
 
   public AbstractDynamicStarMapModule(DynamicStarMapActivity activity) {
     Log.d(TAG, "Creating activity module for " + activity);
@@ -62,6 +63,12 @@ public class AbstractDynamicStarMapModule {
   @PerActivity
   ActivityLightLevelChanger.NightModeable provideNightModeable() {
     return activity;
+  }
+
+  @Provides
+  @PerActivity
+  Window provideWindow() {
+    return activity.getWindow();
   }
 
   @Provides

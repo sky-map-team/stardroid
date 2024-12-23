@@ -60,36 +60,33 @@ public class ActivityLightLevelChanger {
   private enum DIM_OPTIONS {DIM, SYSTEM, CLASSIC};
 
   private final NightModeable nightModeable;
-  private final Activity activity;
+  private final Window window;
+  private final SharedPreferences sharedPreferences;
 
   /**
    * Wraps an activity with a setNightMode method.
    *
-   * @param activity the activity under control
+   * @param window the activity under control
    * @param nightmodeable Allows an activity to have a custom night mode method.  May be null.
    */
   @Inject
-  public ActivityLightLevelChanger(Activity activity, @Nullable NightModeable nightmodeable) {
-    this.activity = activity;
+  public ActivityLightLevelChanger(Window window, SharedPreferences sharedPreferences,
+                                   @Nullable NightModeable nightmodeable) {
+    this.window = window;
+    this.sharedPreferences = sharedPreferences;
     this.nightModeable = nightmodeable;
   }
 
-  // current setting.
   public void setNightMode(boolean nightMode) {
 
     if (nightModeable != null) {
       nightModeable.setNightMode(nightMode);
     }
-    Window window = activity.getWindow();
     WindowManager.LayoutParams params = window.getAttributes();
 
     if (nightMode) {
-      SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(
-          activity);
-      DIM_OPTIONS dimnessOption = DIM_OPTIONS.valueOf(prefs.getString(
-          ApplicationConstants.AUTO_DIMNESS,
-          "boo"));
-      Log.d(MiscUtil.getTag(this.getClass()), "Setting dimness option to " + dimnessOption);
+      DIM_OPTIONS dimnessOption = DIM_OPTIONS.valueOf(sharedPreferences.getString(
+          ApplicationConstants.AUTO_DIMNESS, DIM_OPTIONS.SYSTEM.toString()));
       float dimnessSetting = WindowManager.LayoutParams.BRIGHTNESS_OVERRIDE_NONE;
       switch(dimnessOption) {
         case DIM:

@@ -49,18 +49,18 @@ public class ImageDisplayActivity extends InjectableActivity {
   private static final String TAG = MiscUtil.getTag(ImageDisplayActivity.class);
   private static final int ERROR_MAGIC_NUMBER = -1;
   private GalleryImage selectedImage;
-  private ActivityLightLevelManager activityLightLevelManager;
+  @Inject
+  ActivityLightLevelManager activityLightLevelManager;
   @Inject
   Analytics analytics;
 
   @Override
   protected void onCreate(Bundle icicle) {
     super.onCreate(icicle);
-    getApplicationComponent().inject(this);
+    DaggerImageDisplayActivityComponent.builder().applicationComponent(
+            getApplicationComponent()).imageDisplayActivityModule(new ImageDisplayActivityModule(this))
+        .build().inject(this);
     setContentView(R.layout.imagedisplay);
-    activityLightLevelManager = new ActivityLightLevelManager(
-        new ActivityLightLevelChanger(this, null),
-        PreferenceManager.getDefaultSharedPreferences(this));
     Intent intent = getIntent();
     Log.d(TAG, intent.toString());
     int position  = intent.getIntExtra(ImageGalleryActivity.IMAGE_ID, ERROR_MAGIC_NUMBER);
