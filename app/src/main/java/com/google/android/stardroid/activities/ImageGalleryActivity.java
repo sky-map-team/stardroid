@@ -53,7 +53,8 @@ public class ImageGalleryActivity extends InjectableActivity {
   private static final String TAG = MiscUtil.getTag(ImageGalleryActivity.class);
   private List<GalleryImage> galleryImages;
 
-  private ActivityLightLevelManager activityLightLevelManager;
+  @Inject
+  ActivityLightLevelManager activityLightLevelManager;
   @Inject
   Analytics analytics;
 

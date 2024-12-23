@@ -8,6 +8,8 @@ import android.view.Window;
 import com.google.android.stardroid.activities.util.ActivityLightLevelChanger;
 import com.google.android.stardroid.inject.PerActivity;
 
+import javax.annotation.Nullable;
+
 import dagger.Module;
 import dagger.Provides;
 
@@ -48,6 +50,7 @@ public class EditSettingsActivityModule {
 
   @Provides
   @PerActivity
+  @Nullable
   ActivityLightLevelChanger.NightModeable provideNightModeable() {
     return null;
   }
