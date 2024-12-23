@@ -1,6 +1,8 @@
 package com.google.android.stardroid.activities;
 
+import android.app.Activity;
 import android.content.Context;
+import android.os.Handler;
 import android.view.Window;
 
 import com.google.android.stardroid.activities.util.ActivityLightLevelChanger;
@@ -11,20 +13,30 @@ import javax.annotation.Nullable;
 import dagger.Module;
 import dagger.Provides;
 
-/**
- * Created by johntaylor on 4/24/16.
- */
 @Module
-public class CompassCalibrationModule {
-  private CompassCalibrationActivity activity;
-  public CompassCalibrationModule(CompassCalibrationActivity activity) {
+public class ImageDisplayActivityModule {
+  private final ImageDisplayActivity activity;
+
+  public ImageDisplayActivityModule(ImageDisplayActivity activity) {
     this.activity = activity;
   }
 
   @Provides
   @PerActivity
-  Context provideContext() {
+  Activity provideActivity() {
     return activity;
+  }
+
+  @Provides
+  @PerActivity
+  Context provideActivityContext() {
+    return activity;
+  }
+
+  @Provides
+  @PerActivity
+  Handler provideHandler() {
+    return new Handler();
   }
 
   @Provides
@@ -40,3 +52,4 @@ public class CompassCalibrationModule {
     return null;
   }
 }
+

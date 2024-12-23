@@ -12,6 +12,7 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 
 import com.google.android.stardroid.R;
+import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
 import com.google.android.stardroid.activities.util.SensorAccuracyDecoder;
 import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.MiscUtil;
@@ -33,6 +34,9 @@ public class CompassCalibrationActivity extends InjectableActivity implements Se
   @Inject SharedPreferences sharedPreferences;
   @Inject Analytics analytics;
   @Inject Toaster toaster;
+
+  @Inject
+  ActivityLightLevelManager lightLevelManager;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +80,7 @@ public class CompassCalibrationActivity extends InjectableActivity implements Se
   @Override
   public void onResume() {
     super.onResume();
+    lightLevelManager.onResume();
     if (magneticSensor != null && sensorManager != null) {
       sensorManager.registerListener(this, magneticSensor, SensorManager.SENSOR_DELAY_UI);
     }
@@ -84,6 +89,7 @@ public class CompassCalibrationActivity extends InjectableActivity implements Se
   @Override
   public void onPause() {
     super.onPause();
+    lightLevelManager.onPause();
     if (sensorManager != null) {
       sensorManager.unregisterListener(this);
     }
