@@ -50,8 +50,8 @@ android {
         applicationId 'com.google.android.stardroid'
         minSdk 26
         targetSdk 34
-        versionCode 1553
-        versionName "1.10.5 - mucking about"
+        versionCode 1555
+        versionName "1.10.6"
         buildConfigField 'String', 'GOOGLE_ANALYTICS_CODE', '""'
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
