@@ -243,15 +243,6 @@ public class DynamicStarMapActivity extends InjectableActivity
     // Search related
     setDefaultKeyMode(DEFAULT_KEYS_SEARCH_LOCAL);
 
-    /*ActivityLightLevelChanger activityLightLevelChanger = new ActivityLightLevelChanger(this,
-        new NightModeable() {
-          @Override
-          public void setNightMode(boolean nightMode1) {
-            DynamicStarMapActivity.this.rendererController.queueNightVisionMode(nightMode1);
-          }});
-    activityLightLevelManager = new ActivityLightLevelManager(activityLightLevelChanger,
-                                                              sharedPreferences);*/
-
     PowerManager pm = ContextCompat.getSystemService(this, PowerManager.class);
     if (pm != null) {
       wakeLock = pm.newWakeLock(PowerManager.SCREEN_BRIGHT_WAKE_LOCK, TAG);
