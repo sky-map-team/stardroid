@@ -49,9 +49,9 @@ android {
         // Uniquely identifies the package for publishing.
         applicationId 'com.google.android.stardroid'
         minSdk 26
-        targetSdk 34
+        targetSdk 34  // 35 breaks the UI
         versionCode 1555
-        versionName "1.10.6"
+        versionName "1.10.7"
         buildConfigField 'String', 'GOOGLE_ANALYTICS_CODE', '""'
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
