@@ -13,6 +13,7 @@
 // limitations under the License.
 package com.google.android.stardroid.layers
 
+import android.content.SharedPreferences
 import android.content.res.Resources
 import android.text.format.DateFormat
 import com.google.android.stardroid.R
@@ -34,8 +35,9 @@ import kotlin.math.abs
  *
  * @author John Taylor
  */
-class MeteorShowerLayer(private val model: AstronomerModel, resources: Resources) :
-  AbstractRenderablesLayer(resources, true) {
+class MeteorShowerLayer(private val model: AstronomerModel, resources: Resources, preferences:
+    SharedPreferences) :
+  AbstractRenderablesLayer(resources, true, preferences) {
   private val showers: MutableList<Shower> = ArrayList()
 
   /**

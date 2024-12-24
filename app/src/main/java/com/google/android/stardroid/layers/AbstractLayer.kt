@@ -13,7 +13,9 @@
 // limitations under the License.
 package com.google.android.stardroid.layers
 
+import android.content.SharedPreferences
 import android.content.res.Resources
+import android.util.Log
 import com.google.android.stardroid.renderables.*
 import com.google.android.stardroid.renderer.RendererController
 import com.google.android.stardroid.renderer.RendererController.AtomicSection
@@ -31,7 +33,9 @@ import java.util.concurrent.locks.ReentrantLock
  * @author John Taylor
  * @author Brent Bryan
  */
-abstract class AbstractLayer(protected val resources: Resources) : Layer {
+abstract class AbstractLayer(protected val resources: Resources,
+                             private val preferences: SharedPreferences
+) : Layer {
     private val renderMapLock = ReentrantLock()
     private val renderMap = HashMap<Class<*>, RenderManager<*>>()
     // TODO(jontayler): Try to structure the code better to prevent this from being accessed
@@ -77,15 +81,16 @@ abstract class AbstractLayer(protected val resources: Resources) : Layer {
         imagePrimitives: List<ImagePrimitive>,
         updateTypes: EnumSet<UpdateType> = EnumSet.of(UpdateType.Reset)
     ) {
-        if (renderer == null) return
+        Log.d(TAG, "Redraw")
+        val localRenderer = renderer ?: return
         renderMapLock.lock()
         try {
-            val atomic = renderer?.createAtomic() // won't be null since renderer was checked
-            setSources(textPrimitives, updateTypes, TextPrimitive::class.java, atomic!!)
+            val atomic = localRenderer.createAtomic() // won't be null since renderer was checked
+            setSources(textPrimitives, updateTypes, TextPrimitive::class.java, atomic ?: return)
             setSources(pointPrimitives, updateTypes, PointPrimitive::class.java, atomic)
             setSources(linePrimitives, updateTypes, LinePrimitive::class.java, atomic)
             setSources(imagePrimitives, updateTypes, ImagePrimitive::class.java, atomic)
-            renderer?.queueAtomic(atomic)
+            localRenderer.queueAtomic(atomic)
         } finally {
             renderMapLock.unlock()
         }

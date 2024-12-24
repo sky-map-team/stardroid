@@ -13,6 +13,7 @@
 // limitations under the License.
 package com.google.android.stardroid.layers
 
+import android.content.SharedPreferences
 import android.content.res.Resources
 import android.graphics.Color
 import android.util.Log
@@ -36,8 +37,8 @@ import java.util.concurrent.TimeUnit
 /**
  * @author Brent Bryan
  */
-class IssLayer(resources: Resources, model: AstronomerModel) :
-    AbstractRenderablesLayer(resources, true) {
+class IssLayer(resources: Resources, model: AstronomerModel, preferences: SharedPreferences) :
+    AbstractRenderablesLayer(resources, true, preferences) {
     private val scheduler = Executors.newScheduledThreadPool(1)
     private val issRenderable: IssRenderable = IssRenderable(model, resources)
     override fun initializeAstroSources(sources: ArrayList<AstronomicalRenderable>) {

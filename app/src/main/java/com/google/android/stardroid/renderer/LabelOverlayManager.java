@@ -41,7 +41,7 @@ public class LabelOverlayManager {
   private IndexBuffer mIndexBuffer = null;
   
   public static class Label extends LabelMaker.LabelData {
-    public Label(String text, int color, int size) {
+    private Label(String text, int color, int size) {
       super(text, color, size);
     }
     
@@ -69,8 +69,11 @@ public class LabelOverlayManager {
     private int mX = 0, mY = 0;
     private float mAlpha = 1;
   }
-  
-  public LabelOverlayManager() {
+
+  /**
+   * Made private as unused at the moment.
+   */
+  private LabelOverlayManager() {
     mLabelPaint.setAntiAlias(true);
     
     mVertexBuffer = new VertexBuffer(4, false);

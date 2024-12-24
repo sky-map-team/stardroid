@@ -13,6 +13,7 @@
 // limitations under the License.
 package com.google.android.stardroid.layers
 
+import android.content.SharedPreferences
 import android.content.res.Resources
 import android.graphics.Color
 import com.google.android.stardroid.R
@@ -42,8 +43,9 @@ class GridLayer
  */(
     resources: Resources,
     private val numRightAscensionLines: Int,
-    private val numDeclinationLines: Int
-) : AbstractRenderablesLayer(resources, false) {
+    private val numDeclinationLines: Int,
+    preferences: SharedPreferences
+) : AbstractRenderablesLayer(resources, false, preferences) {
 
     override fun initializeAstroSources(sources: ArrayList<AstronomicalRenderable>) {
         sources.add(GridRenderable(resources, numRightAscensionLines, numDeclinationLines))

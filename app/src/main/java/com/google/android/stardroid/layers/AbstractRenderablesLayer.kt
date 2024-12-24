@@ -13,6 +13,7 @@
 // limitations under the License.
 package com.google.android.stardroid.layers
 
+import android.content.SharedPreferences
 import android.content.res.Resources
 import android.util.Log
 import com.google.android.stardroid.renderables.*
@@ -28,8 +29,9 @@ import java.util.*
  * @author Brent Bryan
  */
 // TODO(brent): merge with AbstractLayer?
-abstract class AbstractRenderablesLayer(resources: Resources, private val shouldUpdate: Boolean) :
-  AbstractLayer(resources) {
+abstract class AbstractRenderablesLayer(resources: Resources, private val shouldUpdate: Boolean,
+      preferences: SharedPreferences) :
+  AbstractLayer(resources, preferences) {
   private val textPrimitives = ArrayList<TextPrimitive>()
   private val imagePrimitives = ArrayList<ImagePrimitive>()
   private val pointPrimitives = ArrayList<PointPrimitive>()

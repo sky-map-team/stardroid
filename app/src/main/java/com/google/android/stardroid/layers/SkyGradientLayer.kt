@@ -13,6 +13,7 @@
 // limitations under the License.
 package com.google.android.stardroid.layers
 
+import android.content.SharedPreferences
 import android.content.res.Resources
 import android.util.Log
 import com.google.android.stardroid.R
@@ -35,13 +36,13 @@ import kotlin.math.abs
  */
 class SkyGradientLayer(private val model: AstronomerModel, resources: Resources) :
     Layer {
-    private val rendererLock = ReentrantLock()
-    private var renderer: RendererController? = null
-    private var lastUpdateTimeMs = 0L
-    override fun initialize() {}
-    override fun registerWithRenderer(rendererController: RendererController) {
-        renderer = rendererController
-        redraw()
+        private val rendererLock = ReentrantLock()
+        private var renderer: RendererController? = null
+        private var lastUpdateTimeMs = 0L
+        override fun initialize() {}
+        override fun registerWithRenderer(rendererController: RendererController) {
+            renderer = rendererController
+            redraw()
     }
 
     override fun setVisible(visible: Boolean) {

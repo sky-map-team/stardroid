@@ -13,6 +13,7 @@
 // limitations under the License.
 package com.google.android.stardroid.layers
 
+import android.content.SharedPreferences
 import android.content.res.AssetManager
 import android.content.res.Resources
 import com.google.android.stardroid.R
@@ -24,8 +25,8 @@ import com.google.android.stardroid.R
  * @author John Taylor
  * @author Brent Bryan
  */
-class StarsLayer(assetManager: AssetManager, resources: Resources) :
-    AbstractFileBasedLayer(assetManager, resources, "stars.binary") {
+class StarsLayer(assetManager: AssetManager, resources: Resources, preferences: SharedPreferences) :
+    AbstractFileBasedLayer(assetManager, resources, "stars.binary", preferences) {
     override val layerDepthOrder = 30
 
     // TODO(johntaylor): rename this Id

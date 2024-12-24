@@ -256,7 +256,7 @@ public class LabelObjectManager extends RendererObjectManager {
    */
   private static class Label extends LabelMaker.LabelData {
     public Label(TextPrimitive ts) {
-      super(ts.getText(), 0xffffffff, ts.getFontSize());
+      super(ts.getText(), 0xffffffff, 1*ts.getFontSize());
       if (ts.getText() == null || ts.getText().isEmpty()) {
         throw new RuntimeException("Bad Label: " + ts.getClass());
       }

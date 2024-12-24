@@ -13,6 +13,7 @@
 // limitations under the License.
 package com.google.android.stardroid.layers
 
+import android.content.SharedPreferences
 import android.content.res.Resources
 import android.util.Log
 import com.google.android.stardroid.R
@@ -33,8 +34,9 @@ import kotlin.math.abs
  *
  * @author John Taylor
  */
-class StarOfBethlehemLayer(private val model: AstronomerModel, resources: Resources) :
-    AbstractRenderablesLayer(resources, true) {
+class StarOfBethlehemLayer(private val model: AstronomerModel, resources: Resources,
+        preferences: SharedPreferences) :
+    AbstractRenderablesLayer(resources, true, preferences) {
     override fun initializeAstroSources(sources: ArrayList<AstronomicalRenderable>) {
         sources.add(StarOfBethlehemRenderable(model, resources))
     }
