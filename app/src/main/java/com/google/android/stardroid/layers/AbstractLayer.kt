@@ -15,7 +15,7 @@ package com.google.android.stardroid.layers
 
 import android.content.SharedPreferences
 import android.content.res.Resources
-import android.util.Log
+import com.google.android.stardroid.ApplicationConstants
 import com.google.android.stardroid.renderables.*
 import com.google.android.stardroid.renderer.RendererController
 import com.google.android.stardroid.renderer.RendererController.AtomicSection
@@ -41,6 +41,13 @@ abstract class AbstractLayer(protected val resources: Resources,
     // TODO(jontayler): Try to structure the code better to prevent this from being accessed
     // before initialization.
     private /*lateinit*/ var renderer: RendererController? = null
+
+    private val fontSizeScale = when( preferences.getString(ApplicationConstants.FONT_SIZE,
+            FONTSIZE.MEDIUM.name)?.let { FONTSIZE.valueOf(it) }) {
+        FONTSIZE.SMALL -> 0.5
+        FONTSIZE.LARGE -> 2.0
+        else -> 1.0
+    }
 
     override fun registerWithRenderer(rendererController: RendererController) {
         renderMap.clear()
@@ -68,6 +75,13 @@ abstract class AbstractLayer(protected val resources: Resources,
         renderer?.addUpdateClosure(closure)
     }
 
+    // Must match the values in notranslate-arrays
+    private enum class FONTSIZE {
+        SMALL,
+        MEDIUM,
+        LARGE
+    }
+
     /**
      * Updates the renderer (using the given [UpdateType]) with the given set of
      * UI elements.  Depending on the value of [UpdateType], current sources will
@@ -81,8 +95,8 @@ abstract class AbstractLayer(protected val resources: Resources,
         imagePrimitives: List<ImagePrimitive>,
         updateTypes: EnumSet<UpdateType> = EnumSet.of(UpdateType.Reset)
     ) {
-        Log.d(TAG, "Redraw")
         val localRenderer = renderer ?: return
+
         renderMapLock.lock()
         try {
             val atomic = localRenderer.createAtomic() // won't be null since renderer was checked
@@ -119,7 +133,8 @@ abstract class AbstractLayer(protected val resources: Resources,
         @Suppress("UNCHECKED_CAST")
         when (E::class) {
             ImagePrimitive::class -> controller.createImageManager(layerDepthOrder) as RenderManager<E>
-            TextPrimitive::class -> controller.createLabelManager(layerDepthOrder) as RenderManager<E>
+            TextPrimitive::class -> controller.createLabelManager(layerDepthOrder, fontSizeScale) as
+                RenderManager<E>
             LinePrimitive::class -> controller.createLineManager(layerDepthOrder) as RenderManager<E>
             PointPrimitive::class -> controller.createPointManager(layerDepthOrder) as RenderManager<E>
             else -> throw IllegalStateException("Unknown source type: $(E::class)")
