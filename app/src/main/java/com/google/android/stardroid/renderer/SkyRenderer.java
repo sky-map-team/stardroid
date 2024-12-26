@@ -407,8 +407,8 @@ public class SkyRenderer implements GLSurfaceView.Renderer {
     return new PolyLineObjectManager(layer, mTextureManager);
   }
 
-  public LabelObjectManager createLabelManager(int layer) {
-    return new LabelObjectManager(layer, mTextureManager);
+  public LabelObjectManager createLabelManager(int layer, double fontSizeScale) {
+    return new LabelObjectManager(layer, mTextureManager, fontSizeScale);
   }
 
   public ImageObjectManager createImageManager(int layer) {

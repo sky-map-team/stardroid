@@ -33,12 +33,12 @@ class SolarSystemLayer(
     private val model: AstronomerModel,
     resources: Resources,
     private val preferences: SharedPreferences
-) : AbstractRenderablesLayer(resources, true) {
+) : AbstractRenderablesLayer(resources, true, preferences) {
     override fun initializeAstroSources(sources: ArrayList<AstronomicalRenderable>) {
         for (solarSystemBody in SolarSystemBody.values()) {
             if (solarSystemBody === SolarSystemBody.Earth) continue // Don't try to display earth!
             // TODO(jontayler): IIRC this determines the rendering order. We should base it
-            // on actual distrance to Earth.
+            // on actual distance to Earth.
             sources.add(
                 SolarSystemRenderable(
                     solarSystemBody,

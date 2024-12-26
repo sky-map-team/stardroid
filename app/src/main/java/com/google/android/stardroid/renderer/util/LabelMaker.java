@@ -109,13 +109,13 @@ public class LabelMaker {
       return mCrop;
     }
 
-    private String mText = "";
-    private int mColor = 0xffffffff;
-    private int mFontSize = 24;
+    private String mText;
+    final private int mColor;
+    final private int mFontSize;
     private int mWidthInPixels = 0;
     private int mHeightInPixels = 0;
-    private IntBuffer mTexCoords = null;
-    private int[] mCrop = null;
+    private IntBuffer mTexCoords;
+    private int[] mCrop;
   }
 
   /**

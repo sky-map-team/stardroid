@@ -51,7 +51,8 @@ public class LabelObjectManager extends RendererObjectManager {
   // Should we compute the regions for the labels?
   // If false, we just put them in the catchall region.
   private static final boolean COMPUTE_REGIONS = true;
-  
+  private final double fontSizeScale;
+
   private Paint mLabelPaint = null;
   private LabelMaker mLabelMaker = null;
   private Label[] mLabels = new Label[0];
@@ -66,8 +67,10 @@ public class LabelObjectManager extends RendererObjectManager {
   
   private TextureReference mTexture = null;
   
-  public LabelObjectManager(int layer, TextureManager textureManager) {
+  public LabelObjectManager(int layer, TextureManager textureManager, double fontSizeScale) {
     super(layer, textureManager);
+
+    this.fontSizeScale = fontSizeScale;
     
     mLabelPaint = new Paint();
     mLabelPaint.setAntiAlias(true);
@@ -125,7 +128,7 @@ public class LabelObjectManager extends RendererObjectManager {
       List<TextPrimitive> safeLabels = new ArrayList<>(labels);
       mLabels = new Label[safeLabels.size()];
       for (int i = 0; i < safeLabels.size(); i++) {
-        mLabels[i] = new Label(safeLabels.get(i));
+        mLabels[i] = new Label(safeLabels.get(i), fontSizeScale);
       }
       queueForReload(false);
     } else if (updateType.contains(UpdateType.UpdatePositions)) {
@@ -255,8 +258,8 @@ public class LabelObjectManager extends RendererObjectManager {
    * the label than to have two textures, one with red labels and one without. 
    */
   private static class Label extends LabelMaker.LabelData {
-    public Label(TextPrimitive ts) {
-      super(ts.getText(), 0xffffffff, ts.getFontSize());
+    public Label(TextPrimitive ts, double fontSizeScale) {
+      super(ts.getText(), 0xffffffff, (int)(fontSizeScale * ts.getFontSize()));
       if (ts.getText() == null || ts.getText().isEmpty()) {
         throw new RuntimeException("Bad Label: " + ts.getClass());
       }

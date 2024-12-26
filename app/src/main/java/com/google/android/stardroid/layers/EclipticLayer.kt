@@ -13,6 +13,7 @@
 // limitations under the License.
 package com.google.android.stardroid.layers
 
+import android.content.SharedPreferences
 import android.content.res.Resources
 import android.graphics.Color
 import com.google.android.stardroid.R
@@ -30,7 +31,8 @@ import java.util.*
  * @author John Taylor
  * @author Brent Bryan
  */
-class EclipticLayer(resources: Resources) : AbstractRenderablesLayer(resources, false) {
+class EclipticLayer(resources: Resources, preferences: SharedPreferences) : AbstractRenderablesLayer
+      (resources, false, preferences) {
     override fun initializeAstroSources(sources: ArrayList<AstronomicalRenderable>) {
         sources.add(EclipticRenderable(resources))
     }

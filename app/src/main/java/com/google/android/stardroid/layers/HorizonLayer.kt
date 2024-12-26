@@ -13,6 +13,7 @@
 // limitations under the License.
 package com.google.android.stardroid.layers
 
+import android.content.SharedPreferences
 import android.content.res.Resources
 import android.graphics.Color
 import com.google.android.stardroid.R
@@ -31,8 +32,8 @@ import kotlin.math.abs
  * @author Brent Bryan
  * @author John Taylor
  */
-class HorizonLayer(private val model: AstronomerModel, resources: Resources) :
-    AbstractRenderablesLayer(resources, true) {
+class HorizonLayer(private val model: AstronomerModel, resources: Resources, preferences: SharedPreferences) :
+    AbstractRenderablesLayer(resources, true, preferences) {
     override fun initializeAstroSources(sources: ArrayList<AstronomicalRenderable>) {
         sources.add(HorizonRenderable(model, resources))
     }
