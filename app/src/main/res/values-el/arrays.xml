@@ -21,4 +21,16 @@
         <item translation_description="Extra High sensor damping factor">Υψηλή</item>
         <item translation_description="Really High sensor damping factor">Πολύ υψηλή</item>
     </string-array>
+    <string-array name="viewing_direction">
+        <item translation_description="Normal viewing">Κανονική</item>
+        <item translation_description="Rotates the screen by 90 degrees">Περιστρεφόμενος ορίζοντας</item>
+        <item
+            translation_description="Shows the sky as pointed at by the long edge of the phone">Λειτουργία δείκτη
+        </item>
+    </string-array>
+    <string-array name="auto_dim_texts">
+        <item translation_description="Dimmest screen setting">Πολύ χαμηλός</item>
+        <item translation_description="Leave it on the system setting">Συστήματος</item>
+        <item translation_description="The setting used for the last 15 years">Κλασσικός</item>
+    </string-array>
 </resources>
