@@ -49,7 +49,6 @@
         android:title="@string/use_sound_effects"
         android:key="sound_effects"/>
     <PreferenceScreen android:key="appearance_prefs" android:title="@string/appearance_prefs">
-      <!--PreferenceCategory-->
       <ListPreference
             android:key="auto_dimness"
             android:title="@string/auto_dimness_preference"
@@ -61,8 +60,7 @@
           android:title="@string/font_size_preference"
           android:entryValues="@array/font_size_enums"
           android:entries="@array/font_size_texts"
-          android:defaultValue="SYSTEM" />
-      <!--/PreferenceCategory-->
+          android:defaultValue="MEDIUM" />
     </PreferenceScreen>
     <!-- Keep in sync with value in utils.Analytics -->
     <CheckBoxPreference
