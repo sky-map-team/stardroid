@@ -44,8 +44,9 @@ abstract class AbstractLayer(protected val resources: Resources,
 
     private val fontSizeScale = when( preferences.getString(ApplicationConstants.FONT_SIZE,
             FONTSIZE.MEDIUM.name)?.let { FONTSIZE.valueOf(it) }) {
-        FONTSIZE.SMALL -> 0.5
-        FONTSIZE.LARGE -> 2.0
+        FONTSIZE.SMALL -> 0.75
+        FONTSIZE.LARGE -> 1.5
+        FONTSIZE.EXTRALARGE -> 2.0
         else -> 1.0
     }
 
@@ -79,7 +80,8 @@ abstract class AbstractLayer(protected val resources: Resources,
     private enum class FONTSIZE {
         SMALL,
         MEDIUM,
-        LARGE
+        LARGE,
+        EXTRALARGE
     }
 
     /**

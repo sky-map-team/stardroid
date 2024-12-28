@@ -58,6 +58,7 @@
       <ListPreference
           android:key="font_size"
           android:title="@string/font_size_preference"
+          android:summary="@string/font_size_preference_description"
           android:entryValues="@array/font_size_enums"
           android:entries="@array/font_size_texts"
           android:defaultValue="MEDIUM" />
