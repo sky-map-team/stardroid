@@ -31,8 +31,8 @@ public abstract class AbstractController implements Controller {
   protected boolean enabled = true;
 
   // TODO(jontayler): remove this
-  @Override
-  public void setModel(AstronomerModel model) {
+  //@Override
+  private void setModel(AstronomerModel model) {
     this.model = model;
   }
 
