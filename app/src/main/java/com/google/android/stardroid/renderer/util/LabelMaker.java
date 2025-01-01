@@ -28,6 +28,11 @@ import java.nio.IntBuffer;
 
 import javax.microedition.khronos.opengles.GL10;
 
+/**
+ * A {@code LabelMaker} creates and managers a texture atlas containing all the supplied
+ * labels (represented as {@code LabelData}).  The letter get updated with their locations
+ * in the texture atlas.
+ */
 public class LabelMaker {
   private int mStrikeWidth;
   private int mStrikeHeight;
