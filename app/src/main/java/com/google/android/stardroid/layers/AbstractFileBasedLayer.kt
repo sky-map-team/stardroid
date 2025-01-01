@@ -13,6 +13,7 @@
 // limitations under the License.
 package com.google.android.stardroid.layers
 
+import android.content.SharedPreferences
 import android.content.res.AssetManager
 import android.content.res.Resources
 import android.util.Log
@@ -38,8 +39,9 @@ import java.util.concurrent.Executors
 abstract class AbstractFileBasedLayer(
     private val assetManager: AssetManager,
     resources: Resources,
-    private val fileName: String
-) : AbstractRenderablesLayer(resources, false) {
+    private val fileName: String,
+    preferences: SharedPreferences
+) : AbstractRenderablesLayer(resources, false, preferences) {
     private val fileSources: MutableList<AstronomicalRenderable> = ArrayList()
     @Synchronized
     override fun initialize() {

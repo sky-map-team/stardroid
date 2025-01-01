@@ -50,8 +50,8 @@ android {
         applicationId 'com.google.android.stardroid'
         minSdk 26
         targetSdk 34  // 35 breaks the UI
-        versionCode 1554
-        versionName "1.10.6"
+        versionCode 1556
+        versionName "1.10.7"
         buildConfigField 'String', 'GOOGLE_ANALYTICS_CODE', '""'
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -119,12 +119,16 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
 // Android support
-    implementation 'androidx.appcompat:appcompat:1.7.0'
+    def appcompat_version = "1.7.0"
+
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
+    // For loading and tinting drawables on older versions of the platform
+    implementation "androidx.appcompat:appcompat-resources:$appcompat_version"
     implementation 'androidx.preference:preference-ktx:1.2.1'
     implementation "androidx.core:core-ktx:1.15.0"
 
 // Third-party
-    implementation 'com.google.guava:guava:32.0.1-jre'
+    implementation 'com.google.guava:guava:33.3.1-jre'
     def dagger_version = "2.48"
     implementation "com.google.dagger:dagger:$dagger_version"
     kapt "com.google.dagger:dagger-compiler:$dagger_version"

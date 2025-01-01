@@ -39,6 +39,8 @@ object ApplicationConstants {
   const val BUNDLE_Z_TARGET = "bundle_z_target"
   const val BUNDLE_SEARCH_MODE = "bundle_search"
   const val SOUND_EFFECTS = "sound_effects"
+  const val AUTO_DIMNESS = "auto_dimness"
+  const val FONT_SIZE = "font_size"
 
   // Preference that keeps track of whether or not the user accepted the ToS for this version
   const val READ_TOS_PREF_VERSION = "read_tos_version"

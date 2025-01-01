@@ -16,8 +16,18 @@ package com.google.android.stardroid.activities.util;
 
 import android.app.Activity;
 import androidx.annotation.Nullable;
+import androidx.preference.PreferenceManager;
+
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
+
+import com.google.android.stardroid.ApplicationConstants;
+import com.google.android.stardroid.util.MiscUtil;
+
+import javax.inject.Inject;
 
 /**
  * Controls the brightness level of an activity.
@@ -36,41 +46,66 @@ public class ActivityLightLevelChanger {
     void setNightMode(boolean nightMode);
   }
 
+  // Back in the bad old days it was hard to get the brightness level right.  On some phones
+  // a particular level would be invisible, on others too bright.  We settled on the following
+  // value after some experimentation....
   // This value is based on inspecting the Android source code for the
   // SettingsAppWidgetProvider:
   // http://hi-android.info/src/com/android/settings/widget/SettingsAppWidgetProvider.java.html
   // (We know that 0.05 is OK on the G1 and N1, but not some other phones, so we don't make this
   // as dim as we could...)
-  private static final float BRIGHTNESS_DIM = (float) 20f / 255f;
+  private static final float BRIGHTNESS_DIM_ORIGINAL = 20f / 255f;
 
-  private NightModeable nightModeable;
-  private Activity activity;
+  // Following must match the values defined in notranslate-arrays.xml
+  private enum DIM_OPTIONS {DIM, SYSTEM, CLASSIC};
+
+  private final NightModeable nightModeable;
+  private final Window window;
+  private final SharedPreferences sharedPreferences;
 
   /**
    * Wraps an activity with a setNightMode method.
    *
-   * @param activity the activity under control
+   * @param window the activity under control
    * @param nightmodeable Allows an activity to have a custom night mode method.  May be null.
    */
-  public ActivityLightLevelChanger(Activity activity, @Nullable NightModeable nightmodeable) {
-    this.activity = activity;
+  @Inject
+  public ActivityLightLevelChanger(Window window, SharedPreferences sharedPreferences,
+                                   @Nullable NightModeable nightmodeable) {
+    this.window = window;
+    this.sharedPreferences = sharedPreferences;
     this.nightModeable = nightmodeable;
   }
 
-  // current setting.
   public void setNightMode(boolean nightMode) {
+
     if (nightModeable != null) {
       nightModeable.setNightMode(nightMode);
     }
-    Window window = activity.getWindow();
     WindowManager.LayoutParams params = window.getAttributes();
+
     if (nightMode) {
-      params.screenBrightness = BRIGHTNESS_DIM;
-      params.buttonBrightness = WindowManager.LayoutParams.BRIGHTNESS_OVERRIDE_OFF;    // TODO(jontayler): look at this again - at present night mode can be brighter than the phone's
+      DIM_OPTIONS dimnessOption = DIM_OPTIONS.valueOf(sharedPreferences.getString(
+          ApplicationConstants.AUTO_DIMNESS, DIM_OPTIONS.SYSTEM.toString()));
+      float dimnessSetting = WindowManager.LayoutParams.BRIGHTNESS_OVERRIDE_NONE;
+      switch(dimnessOption) {
+        case DIM:
+          dimnessSetting = WindowManager.LayoutParams.BRIGHTNESS_OVERRIDE_OFF;
+          break;
+        case CLASSIC:
+          dimnessSetting = BRIGHTNESS_DIM_ORIGINAL;
+          break;
+        default:
+          // System setting.
+      }
+      params.screenBrightness = dimnessSetting;
+      params.buttonBrightness = dimnessSetting;
     } else {
       params.screenBrightness = WindowManager.LayoutParams.BRIGHTNESS_OVERRIDE_NONE;
       params.buttonBrightness = WindowManager.LayoutParams.BRIGHTNESS_OVERRIDE_NONE;
     }
     window.setAttributes(params);
+
+
   }
 }

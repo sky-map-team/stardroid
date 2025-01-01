@@ -28,6 +28,7 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.google.android.stardroid.ApplicationComponent;
 import com.google.android.stardroid.ApplicationConstants;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.StardroidApplication;
@@ -46,7 +47,7 @@ import javax.inject.Inject;
  */
 public class EditSettingsActivity extends PreferenceActivity {
   private MyPreferenceFragment preferenceFragment;
-  
+
   public static class MyPreferenceFragment extends PreferenceFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -62,22 +63,27 @@ public class EditSettingsActivity extends PreferenceActivity {
   private static final String LOCATION = "location";
   private static final String TAG = MiscUtil.getTag(EditSettingsActivity.class);
   private Geocoder geocoder;
-  private ActivityLightLevelManager activityLightLevelManager;
+  @Inject ActivityLightLevelManager activityLightLevelManager;
   @Inject Analytics analytics;
   @Inject SharedPreferences sharedPreferences;
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    ((StardroidApplication) getApplication()).getApplicationComponent().inject(this);
-    activityLightLevelManager = new ActivityLightLevelManager(
-        new ActivityLightLevelChanger(this, null),
-        PreferenceManager.getDefaultSharedPreferences(this));
+
+    DaggerEditSettingsActivityComponent.builder().applicationComponent(
+            getApplicationComponent()).editSettingsActivityModule(new EditSettingsActivityModule(this))
+        .build().inject(this);
+
     geocoder = new Geocoder(this);
     preferenceFragment = new MyPreferenceFragment();
     getFragmentManager().beginTransaction().replace(android.R.id.content,
         preferenceFragment).commit();
     
+  }
+
+  private ApplicationComponent getApplicationComponent() {
+    return ((StardroidApplication) getApplication()).getApplicationComponent();
   }
 
   @Override

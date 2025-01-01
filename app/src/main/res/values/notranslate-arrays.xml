@@ -17,4 +17,14 @@
         <item translation_description="DO NOT TRANSLATE">ROTATE90</item>
         <item translation_description="DO NOT TRANSLATE">TELESCOPE</item>
     </string-array>
+    <string-array name="auto_dim_enums">
+        <item translation_description="DO NOT TRANSLATE">DIM</item>
+        <item translation_description="DO NOT TRANSLATE">SYSTEM</item>
+        <item translation_description="DO NOT TRANSLATE">CLASSIC</item>
+    </string-array>
+    <string-array name="font_size_enums">
+        <item translation_description="DO NOT TRANSLATE">SMALL</item>
+        <item translation_description="DO NOT TRANSLATE">MEDIUM</item>
+        <item translation_description="DO NOT TRANSLATE">LARGE</item>
+    </string-array>
 </resources>

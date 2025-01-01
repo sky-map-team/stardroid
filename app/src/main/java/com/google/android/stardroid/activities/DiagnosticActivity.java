@@ -3,6 +3,7 @@ package com.google.android.stardroid.activities;
 import static com.google.android.stardroid.math.CoordinateManipulationsKt.getDecOfUnitGeocentricVector;
 import static com.google.android.stardroid.math.CoordinateManipulationsKt.getRaOfUnitGeocentricVector;
 
+import android.app.Activity;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -19,6 +20,7 @@ import android.widget.TextView;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.StardroidApplication;
+import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
 import com.google.android.stardroid.activities.util.SensorAccuracyDecoder;
 import com.google.android.stardroid.control.AstronomerModel;
 import com.google.android.stardroid.control.LocationController;
@@ -50,6 +52,9 @@ public class DiagnosticActivity extends InjectableActivity implements SensorEven
   @Inject AstronomerModel model;
   @Inject Handler handler;
   @Inject SensorAccuracyDecoder sensorAccuracyDecoder;
+
+  @Inject
+  ActivityLightLevelManager activityLightLevelManager;
 
   private Sensor accelSensor;
   private Sensor magSensor;
@@ -86,6 +91,7 @@ public class DiagnosticActivity extends InjectableActivity implements SensorEven
   public void onResume() {
     super.onResume();
     onResumeSensors();
+    activityLightLevelManager.onResume();
     continueUpdates = true;
     handler.post(new Runnable() {
       public void run() {
@@ -177,6 +183,7 @@ public class DiagnosticActivity extends InjectableActivity implements SensorEven
     super.onPause();
     continueUpdates = false;
     sensorManager.unregisterListener(this);
+    activityLightLevelManager.onPause();
   }
 
   public void onAccuracyChanged(Sensor sensor, int accuracy) {

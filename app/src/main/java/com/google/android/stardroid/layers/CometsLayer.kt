@@ -12,6 +12,7 @@
 // limitations under the License.
 package com.google.android.stardroid.layers
 
+import android.content.SharedPreferences
 import android.content.res.Resources
 import android.os.Build
 import androidx.annotation.RequiresApi
@@ -37,8 +38,9 @@ private const val METEOR_SOURCE_PROVIDER = "source_provider.6"
  * @author John Taylor
  */
 // Some of this might eventually get generalized for other 'interpolatable' objects.
-class CometsLayer(private val model: AstronomerModel, resources: Resources) :
-  AbstractRenderablesLayer(resources, true) {
+class CometsLayer(private val model: AstronomerModel, resources: Resources,
+      preferences: SharedPreferences) :
+  AbstractRenderablesLayer(resources, true, preferences) {
   private val comets = ArrayList<Comet>()
 
   @RequiresApi(Build.VERSION_CODES.O)

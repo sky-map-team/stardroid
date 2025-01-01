@@ -6,6 +6,7 @@ import android.content.Context;
 import android.media.MediaPlayer;
 import android.os.Handler;
 import android.util.Log;
+import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
@@ -17,6 +18,7 @@ import com.google.android.stardroid.activities.dialogs.MultipleSearchResultsDial
 import com.google.android.stardroid.activities.dialogs.NoSearchResultsDialogFragment;
 import com.google.android.stardroid.activities.dialogs.NoSensorsDialogFragment;
 import com.google.android.stardroid.activities.dialogs.TimeTravelDialogFragment;
+import com.google.android.stardroid.activities.util.ActivityLightLevelChanger;
 import com.google.android.stardroid.inject.PerActivity;
 import com.google.android.stardroid.util.MiscUtil;
 
@@ -32,7 +34,7 @@ import dagger.Provides;
 @Module
 public class AbstractDynamicStarMapModule {
   private static final String TAG = MiscUtil.getTag(DynamicStarMapModule.class);
-  private DynamicStarMapActivity activity;
+  private final DynamicStarMapActivity activity;
 
   public AbstractDynamicStarMapModule(DynamicStarMapActivity activity) {
     Log.d(TAG, "Creating activity module for " + activity);
@@ -55,6 +57,18 @@ public class AbstractDynamicStarMapModule {
   @PerActivity
   Context provideActivityContext() {
     return activity;
+  }
+
+  @Provides
+  @PerActivity
+  ActivityLightLevelChanger.NightModeable provideNightModeable() {
+    return activity;
+  }
+
+  @Provides
+  @PerActivity
+  Window provideWindow() {
+    return activity.getWindow();
   }
 
   @Provides

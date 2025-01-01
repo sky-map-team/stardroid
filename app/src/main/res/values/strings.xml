@@ -46,6 +46,15 @@
     <string name="sensor_prefs">Sensor Settings (experts)</string>
     <string name="sensor_speed" translation_description="Old, non gyro sensors only: How quickly the sensor should send us data">Sensor Speed</string>
     <string name="sensor_damping" translation_description="Old, non gyro sensors only: The amount of smoothing applied to the sensor outputs.">Damping</string>
+    <string name="appearance_prefs"
+        translation_description="Preferences title for section about app appearance">Appearance
+    </string>
+    <string name="auto_dimness_preference"
+        translation_description="Mode for automatically dimming the screen when night mode is selected">
+        Auto screen dimming</string>
+    <string name="font_size_preference"
+        translation_description="Change the font size">
+        Font size</string>
     <string name="ecliptic">Ecliptic</string>
     <string name="eclipse24">Eclipse path 2024-04-08</string>
     <string name="malformed_loc_error">Latitude or longitude setting isn\'t a number.</string>

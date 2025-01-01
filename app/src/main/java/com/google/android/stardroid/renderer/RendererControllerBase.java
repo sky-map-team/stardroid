@@ -172,8 +172,9 @@ public abstract class RendererControllerBase {
     return manager;
   }
 
-  public LabelManager createLabelManager(int layer) {
-    LabelManager manager = new LabelManager(mRenderer.createLabelManager(layer));
+  public LabelManager createLabelManager(int layer, double fontSizeScale) {
+    LabelManager manager = new LabelManager(mRenderer.createLabelManager(layer,
+        fontSizeScale));
     queueAddManager(manager);
     return manager;
   }
