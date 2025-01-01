@@ -36,6 +36,7 @@
     <string-array name="font_size_texts">
         <item translation_description="Smallest font size">Small</item>
         <item translation_description="Normal font size">Medium</item>
-        <item translation_description="Largest font size">Large</item>
+        <item translation_description="Large font size">Large</item>
+        <item translation_description="Largest font size">Extra Large</item>
     </string-array>
 </resources>

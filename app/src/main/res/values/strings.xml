@@ -55,6 +55,9 @@
     <string name="font_size_preference"
         translation_description="Change the font size">
         Font size</string>
+    <string name="font_size_preference_description"
+        translation_description="help to go along with the change font size preference">Requires
+        app restart</string>
     <string name="ecliptic">Ecliptic</string>
     <string name="eclipse24">Eclipse path 2024-04-08</string>
     <string name="malformed_loc_error">Latitude or longitude setting isn\'t a number.</string>
