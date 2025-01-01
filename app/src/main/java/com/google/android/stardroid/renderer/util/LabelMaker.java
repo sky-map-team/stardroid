@@ -133,7 +133,7 @@ public class LabelMaker {
    */
   public LabelMaker(boolean fullColor) {
     mFullColor = fullColor;
-    mStrikeWidth = 512;
+    mStrikeWidth = -1;
     mStrikeHeight = -1;
   }
 
@@ -159,8 +159,17 @@ public class LabelMaker {
                        GL10.GL_CLAMP_TO_EDGE);
 
     gl.glTexEnvf(GL10.GL_TEXTURE_ENV, GL10.GL_TEXTURE_ENV_MODE, GL10.GL_REPLACE);
-    
-    int minHeight = addLabelsInternal(gl, textPaint, false, labels);
+
+    // Maximum allowed text label width, set to window width
+    int maxLabelWidth = mRes.getDisplayMetrics().widthPixels;
+    // mStrikeWidth should be enough to hold maxTextWidth and
+    // rounded up to the nearest power of two, since textures have to be a power of two in size.
+    int roundedWidth = 512;
+    while (roundedWidth < maxLabelWidth)
+      roundedWidth <<= 1;
+    mStrikeWidth = roundedWidth;
+
+    int minHeight = addLabelsInternal(gl, textPaint, false, labels, maxLabelWidth);
     
     // Round up to the nearest power of two, since textures have to be a power of two in size.
     int roundedHeight = 1;
@@ -173,7 +182,7 @@ public class LabelMaker {
     mTexelHeight = (float) (1.0 / mStrikeHeight);
     
     beginAdding(gl);
-    addLabelsInternal(gl, textPaint, true, labels);
+    addLabelsInternal(gl, textPaint, true, labels, maxLabelWidth);
     endAdding(gl);
     
     return mTexture;
@@ -194,10 +203,11 @@ public class LabelMaker {
    * @param gl
    * @param textPaint the paint of the label
    * @param labels the array of labels being added
+   * @param maxLabelWidth maximum display width of a label
    * @return the required height
    */
   private int addLabelsInternal(GL10 gl, Paint textPaint, boolean drawToCanvas, 
-                                LabelData[] labels) {
+                                LabelData[] labels, int maxLabelWidth) {
     int u = 0;
     int v = 0;
     int lineHeight = 0;
@@ -229,7 +239,7 @@ public class LabelMaker {
         // If it's wider than the screen, try it again with a font size of 1
         // smaller.
         fontSize--;
-      } while (fontSize > 0 && width > mRes.getDisplayMetrics().widthPixels);
+      } while (fontSize > 0 && width > maxLabelWidth);
   
       int nextU;
       
