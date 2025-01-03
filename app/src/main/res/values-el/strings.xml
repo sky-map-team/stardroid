@@ -369,4 +369,12 @@
     <string name="auto_dimness_preference"
         translation_description="Mode for automatically dimming the screen when night mode is selected">
         Αυτόματος φωτισμός οθόνης</string>
+    <string name="font_size_preference"
+        translation_description="Change the font size">
+        Μέγεθος γραμματοσειράς</string>
+    <string name="font_size_preference_description"
+        translation_description="help to go along with the change font size preference">Απαιτεί επανεκκίνηση</string>
+    <string name="appearance_prefs"
+        translation_description="Preferences title for section about app appearance">Εμφάνιση
+    </string>
 </resources>
