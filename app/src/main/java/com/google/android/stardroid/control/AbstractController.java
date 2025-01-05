@@ -27,12 +27,11 @@ import javax.inject.Inject;
  */
 public abstract class AbstractController implements Controller {
   private static final String TAG = MiscUtil.getTag(AbstractController.class);
-  @Inject AstronomerModel model;
+  protected AstronomerModel model;
   protected boolean enabled = true;
 
-  // TODO(jontayler): remove this
-  //@Override
-  private void setModel(AstronomerModel model) {
+  @Override
+  public void setModel(AstronomerModel model) {
     this.model = model;
   }
 

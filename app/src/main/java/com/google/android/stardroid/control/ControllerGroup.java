@@ -69,7 +69,7 @@ public class ControllerGroup implements Controller {
     }
   }
 
-  /* @Override
+  @Override
   public void setModel(AstronomerModel model) {
     Log.i(TAG, "Setting model");
     for (Controller controller : controllers) {
@@ -78,7 +78,7 @@ public class ControllerGroup implements Controller {
     this.model = model;
     model.setAutoUpdatePointing(usingAutoMode);
     model.setClock(transitioningClock);
-  }*/
+  }
 
   /**
    * Switches to time-travel model and start with the supplied time.

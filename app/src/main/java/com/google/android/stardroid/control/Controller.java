@@ -33,7 +33,7 @@ public interface Controller {
   /**
    * Sets the {@link AstronomerModel} to be controlled by this controller.
    */
-  //void setModel(AstronomerModel model);
+  void setModel(AstronomerModel model);
 
   /**
    * Starts this controller.
