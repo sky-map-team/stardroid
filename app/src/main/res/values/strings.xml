@@ -25,7 +25,7 @@
     <string name="location_unable_to_geocode">Unable to decode your location - perhaps your network isn\'t available?</string>
     <string name="location_not_found_title" translation_description="dialog box title when location not found">Sorry</string>
     <string name="location_not_found" translation_description="dialog message when placename not found">%s not found.</string>
-    <string name="location_long_lat">Longitude:%1$s, Latitude:%2$s</string>
+    <string name="location_long_lat">Longitude:%1$.2f, Latitude:%2$.2f</string>
     <string name="location_place_found">Place found.  Setting latitude %1$f and longitude %2$f</string>
     <string name="use_magnetic_correction">Use magnetic correction</string>
     <string name="use_magnetic_correction_hint">Use knowledge of your location to correct orientation from magnetic north to true north</string>

@@ -14,6 +14,7 @@
 
 package com.google.android.stardroid.control;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.content.Context;
@@ -33,6 +34,7 @@ import android.provider.Settings;
 import android.util.Log;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.preference.PreferenceManager;
 
 import com.google.android.stardroid.R;
@@ -62,12 +64,12 @@ public class LocationController extends AbstractController implements LocationLi
   private static final String TAG = MiscUtil.getTag(LocationController.class);
   private static final float MIN_DIST_TO_SHOW_TOAST_DEGS = 0.01f;
 
-  private Context context;
+  private Activity activity;
   private LocationManager locationManager;
 
   @Inject
-  public LocationController(Context context, @Nullable LocationManager locationManager) {
-    this.context = context;
+  public LocationController(Activity activity, @Nullable LocationManager locationManager) {
+    this.activity = activity;
     if (locationManager != null) {
       Log.d(TAG, "Got location Manager");
     } else {
@@ -79,10 +81,10 @@ public class LocationController extends AbstractController implements LocationLi
   @Override
   public void start() {
     Log.d(TAG, "LocationController start");
-    boolean noAutoLocate = PreferenceManager.getDefaultSharedPreferences(context).getBoolean(
+    boolean noAutoLocate = PreferenceManager.getDefaultSharedPreferences(activity).getBoolean(
         NO_AUTO_LOCATE, false);
 
-    boolean forceGps = PreferenceManager.getDefaultSharedPreferences(context).getBoolean(FORCE_GPS,
+    boolean forceGps = PreferenceManager.getDefaultSharedPreferences(activity).getBoolean(FORCE_GPS,
         false);
 
     if (noAutoLocate) {
@@ -100,6 +102,8 @@ public class LocationController extends AbstractController implements LocationLi
         return;
       }
 
+      // TODO(jontayler): Another Android Tax - Criteria based APIs are now deprecated
+      // as a bad design decision and this probably needs to be updated.
       Criteria locationCriteria = new Criteria();
       locationCriteria.setAccuracy(forceGps ? Criteria.ACCURACY_FINE : Criteria.ACCURACY_COARSE);
       locationCriteria.setAltitudeRequired(false);
@@ -115,7 +119,7 @@ public class LocationController extends AbstractController implements LocationLi
         if (possiblelocationProvider == null) {
           Log.i(TAG, "No location provider is even available");
           // TODO(johntaylor): should we make this a dialog?
-          Toast.makeText(context, R.string.location_no_auto, Toast.LENGTH_LONG).show();
+          Toast.makeText(activity, R.string.location_no_auto, Toast.LENGTH_LONG).show();
           setLocationFromPrefs();
           return;
         }
@@ -162,32 +166,28 @@ public class LocationController extends AbstractController implements LocationLi
    */
   private String currentProvider = "unknown";
 
-  public String getCurrentProvider() {
-    return currentProvider;
-  }
-
   public LatLong getCurrentLocation() {
     return model.getLocation();
   }
 
   private Builder getSwitchOnGPSDialog() {
-    AlertDialog.Builder dialog = new AlertDialog.Builder(context);
+    AlertDialog.Builder dialog = new AlertDialog.Builder(activity);
     dialog.setTitle(R.string.location_offer_to_enable_gps_title);
     dialog.setMessage(R.string.location_offer_to_enable);
     dialog.setPositiveButton(android.R.string.ok, new OnClickListener() {
       public void onClick(DialogInterface dialog, int which) {
         Log.d(TAG, "Sending to editor location prefs page");
         Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-        context.startActivity(intent);
+        activity.startActivity(intent);
       }
     });
     dialog.setNegativeButton(android.R.string.cancel, new OnClickListener() {
       public void onClick(DialogInterface dialog, int which) {
         Log.d(TAG, "User doesn't want to enable location.");
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(activity);
         Editor editor = prefs.edit();
         editor.putBoolean(NO_AUTO_LOCATE, true);
-        editor.commit();
+        editor.apply();
         setLocationFromPrefs();
       }
     });
@@ -196,9 +196,9 @@ public class LocationController extends AbstractController implements LocationLi
 
   private void setLocationFromPrefs() {
     Log.d(TAG, "Setting location from preferences");
-    String longitude_s = PreferenceManager.getDefaultSharedPreferences(context)
+    String longitude_s = PreferenceManager.getDefaultSharedPreferences(activity)
                                           .getString("longitude", "0");
-    String latitude_s = PreferenceManager.getDefaultSharedPreferences(context)
+    String latitude_s = PreferenceManager.getDefaultSharedPreferences(activity)
                                          .getString("latitude", "0");
 
     float longitude = 0, latitude = 0;
@@ -207,17 +207,17 @@ public class LocationController extends AbstractController implements LocationLi
       latitude = Float.parseFloat(latitude_s);
     } catch (NumberFormatException nfe) {
       Log.e(TAG, "Error parsing latitude or longitude preference");
-      Toast.makeText(context, R.string.malformed_loc_error, Toast.LENGTH_SHORT).show();
+      Toast.makeText(activity, R.string.malformed_loc_error, Toast.LENGTH_SHORT).show();
     }
 
-    Location location = new Location(context.getString(R.string.preferences));
+    Location location = new Location(activity.getString(R.string.preferences));
     location.setLatitude(latitude);
     location.setLongitude(longitude);
 
     Log.d(TAG, "Latitude " + longitude);
     Log.d(TAG, "Longitude " + latitude);
     LatLong myPosition = new LatLong(latitude, longitude);
-    setLocationInModel(myPosition, context.getString(R.string.preferences));
+    setLocationInModel(myPosition, activity.getString(R.string.preferences));
   }
 
   @Override
@@ -257,8 +257,30 @@ public class LocationController extends AbstractController implements LocationLi
   private void showLocationToUser(LatLong location, String provider) {
     // TODO(johntaylor): move this notification to a separate thread)
     Log.d(TAG, "Reverse geocoding location");
-    Geocoder geoCoder = new Geocoder(context);
-    List<Address> addresses = new ArrayList<Address>();
+
+    new Thread(() -> {
+      String place = getPlaceFromLocation(location);
+
+      Log.d(TAG, "Location set to " + place);
+
+        activity.runOnUiThread(() -> {
+        String messageTemplate = activity.getString(R.string.location_set_auto);
+        String message = String.format(messageTemplate, provider, place);
+        Toast.makeText(activity, message, Toast.LENGTH_LONG).show();
+      });
+    }).start();
+  }
+
+  /**
+   * Gets a strinc representation of a location to show to the user.
+   * Might be long running so don't run on the UI thread.
+   * @param location
+   * @return
+   */
+  @NonNull
+  private String getPlaceFromLocation(LatLong location) {
+    Geocoder geoCoder = new Geocoder(activity);
+    List<Address> addresses = new ArrayList<>();
     String place = "Unknown";
     try {
       addresses = geoCoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
@@ -268,21 +290,16 @@ public class LocationController extends AbstractController implements LocationLi
 
     if (addresses == null || addresses.isEmpty()) {
       Log.d(TAG, "No addresses returned");
-      place = String.format(context.getString(R.string.location_long_lat), location.getLongitude(),
-              location.getLatitude());
+      place = String.format(activity.getString(R.string.location_long_lat),
+                            location.getLongitude(), location.getLatitude());
     } else {
       place = getSummaryOfPlace(location, addresses.get(0));
     }
-
-    Log.d(TAG, "Location set to " + place);
-
-    String messageTemplate = context.getString(R.string.location_set_auto);
-    String message = String.format(messageTemplate, provider, place);
-    Toast.makeText(context, message, Toast.LENGTH_LONG).show();
+    return place;
   }
 
   private String getSummaryOfPlace(LatLong location, Address address) {
-    String template = context.getString(R.string.location_long_lat);
+    String template = activity.getString(R.string.location_long_lat);
     String longLat = String.format(template, location.getLongitude(), location.getLatitude());
     if (address == null) {
       return longLat;
