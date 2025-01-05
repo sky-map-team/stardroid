@@ -280,7 +280,7 @@ public class LocationController extends AbstractController implements LocationLi
   @NonNull
   private String getPlaceFromLocation(LatLong location) {
     Geocoder geoCoder = new Geocoder(activity);
-    List<Address> addresses = new ArrayList<Address>();
+    List<Address> addresses = new ArrayList<>();
     String place = "Unknown";
     try {
       addresses = geoCoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
@@ -290,8 +290,8 @@ public class LocationController extends AbstractController implements LocationLi
 
     if (addresses == null || addresses.isEmpty()) {
       Log.d(TAG, "No addresses returned");
-      place = String.format(activity.getString(R.string.location_long_lat), location.getLongitude(),
-              location.getLatitude());
+      place = String.format(activity.getString(R.string.location_long_lat),
+                            location.getLongitude(), location.getLatitude());
     } else {
       place = getSummaryOfPlace(location, addresses.get(0));
     }
