@@ -33,4 +33,10 @@
         <item translation_description="Leave it on the system setting">Συστήματος</item>
         <item translation_description="The setting used for the last 15 years">Κλασσικός</item>
     </string-array>
+    <string-array name="font_size_texts">
+        <item translation_description="Smallest font size">Μικρή</item>
+        <item translation_description="Normal font size">Μεσαία</item>
+        <item translation_description="Large font size">Μεγάλη</item>
+        <item translation_description="Largest font size">Τεράστια</item>
+    </string-array>
 </resources>
