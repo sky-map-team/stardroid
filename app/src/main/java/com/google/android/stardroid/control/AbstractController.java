@@ -27,7 +27,10 @@ import javax.inject.Inject;
  */
 public abstract class AbstractController implements Controller {
   private static final String TAG = MiscUtil.getTag(AbstractController.class);
-  protected AstronomerModel model;
+
+  // This needs the inject annotation because *some* controllers are inject
+  // *sometimes* because the job of converting everything to dagger wasn't completed.
+  @Inject AstronomerModel model;
   protected boolean enabled = true;
 
   @Override
