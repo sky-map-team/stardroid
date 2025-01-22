@@ -36,11 +36,25 @@
     <string name="show_grid_pref">Grade AR/Dec</string>
     <string name="show_horizon_pref">Horizonte</string>
     <string name="show_sky_gradient">Gradiente de céu</string>
+    <string name="show_meteors_pref">Chuvas de Meteoro</string>
+    <string name="show_comet_layer_pref">Cometas</string>
+    <string name="show_satellite_layer_pref" translation_description="The layer for satellites">Satélites</string>
+    <string name="show_hubble_layer_pref">Imagens do Hubble</string>
     <string name="sensor_prefs">Configurações do sensor</string>
     <string name="sensor_speed">Velocidade do sensor</string>
     <string name="sensor_damping" translation_description="The amount of       smoothing applied to the sensor outputs.">Amortecimento</string>
+    <string name="appearance_prefs"
+        translation_description="Preferences title for section about app appearance">Aparência
+    </string>
+    <string name="auto_dimness_preference"
+        translation_description="Mode for automatically dimming the screen when night mode is selected">
+        Escurecer tela automaticamente</string>
+    <string name="font_size_preference"
+        translation_description="Change the font size">
+        Tamanho da fonte</string>
+    <string name="font_size_preference_description"
+        translation_description="help to go along with the change font size preference">Exige reiniciar o aplicativo</string>
     <string name="ecliptic">Eclíptica</string>
-    <string name="show_hubble_layer_pref">Imagens do Hubble</string>
     <string name="malformed_loc_error">A conf. de latitude ou longitude não é um número.</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Aceito</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">Não aceito</string>
@@ -62,12 +76,13 @@
     <string name="search_hint" translation_description="an example search target">p. ex. Marte</string>
     <string name="no_search_title">Sem resultado</string>
     <string name="no_search_results_text">Nenhum resultado encontrado.</string>
+    <string name="no_search_results_text2">Nenhum resultado encontrado. Talvez este objeto não esteja visível neste momento.</string>
     <string name="many_search_results_title">Você quis dizer?</string>
     <string name="many_search_results_text">Selecione um</string>
     <string name="searching_for_text">Pesquisando %s...</string>
     <string name="found_target_text">%s encontrado.</string>
     <string name="other">Outros</string>
-    <string name="planetary_images">Mostrar imagens planetas</string>
+    <string name="planetary_images">Mostrar imagens dos planetas</string>
     <string name="menu_time">Viagem no tempo</string>
     <string name="time_travel_start_message">Viajando no tempo...</string>
     <string name="time_travel_start_message_alt">Viajando no tempo para %s...</string>
@@ -105,6 +120,79 @@
     <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">Procurando:</string>
     <string name="sun_wont_set_message">O sol não irá se pôr durante as próximas 24 horas no seu local atual.</string>
     <string name="sun_wont_rise_message">O sol não nascerá durante as próximas 24 horas no seu local atual.</string>
+    <string name="menu_tos">Termos de Uso</string>
+    <string name="menu_diagnostics">Diagnósticos</string>
+    <string name="control_panel_btn" translation_description="Label for the control panel button">Painel de controle</string>
+    <string name="north_pole">NP</string>
+    <string name="south_pole">SP</string>
+
+    <string name="kml_load_error">Falha ao carregar o arquivo KML</string>
+    <string name="load_kml_dialog_title">Carregar KML</string>
+    <string name="load_kml_file">Carregar</string>
+    <string name="enable_analytics">Enviar estatísticas de uso</string>
+    <string name="enable_analytics_desc">Ajude a melhorar o Sky Map, enviando dados anônimos para o Google Analytics</string>
+
+    <string name="no_sensor_warning">O seu dispositivo pode não ter sensores de orientação - o modo automático pode não funcionar</string>
+    <string name="warning_dialog_title">Oh não!</string>
+    <string name="missing_sensor_dialog_text">\n
+        Infelizmente, o seu dispositivo pode não ter um dos sensores que o Sky Map necessita.\n\n
+        Para mostrar o céu na direção apontada pelo seu aparelho, o Sky Map precisa de uma bússola e um acelerômetro. O seu dispositivo indicou que não tem pelo menos um destes sensores. A boa notícia é que alguns dispositivos (como os smartphones Moto E) falsamente dizem que não têm estes sensores mas na verdade têm.        Se seu dispositivo realmente não tem estes sensores então o modo automático não irá funcionar. No entanto, você ainda poderá usar o Sky Map no modo manual, no qual você arrasta e rotaciona o mapa usando os seus dedos.</string>
+    <string name="do_not_show_again">Não mostrar esta mensagem novamente</string>
+    <string name="title_activity_diagnostic">Diagnósticos</string>
+    <string name="location_rationale_title">Por que nós solicitamos a sua localização?</string>
+    <string name="location_rationale_text">As estrelas que você vê dependem da sua localização no planeta Terra. Precisamos da sua localização para poder lhe mostrar o mapa correto. Caso você não queira que o seu telefone nos informe a sua localização, você pode providenciá-la manualmente nas configurações deste aplicativo. Só é preciso informar a cidade mais próxima.</string>
+    <string name="play_services_error">Atenção: Erro do Google Play Services - A detecção automática da localização pode não funcionar</string>
+    <string name="sensor_absent">Ausente</string>
+    <string name="sensor_accuracy_unknown">Precisão: Desconhecida</string>
+    <string name="sensor_accuracy_unreliable">Precisão: Pouco confiável</string>
+    <string name="sensor_accuracy_low">Precisão: Baixa</string>
+    <string name="sensor_accuracy_medium">Precisão: Média</string>
+    <string name="sensor_accuracy_high">Precisão: Alta</string>
+    <string name="sensor_accuracy_nocontact">Precisão: Sem contato</string>
+    <string name="diagnostics_activity_general_heading">Geral</string>
+    <string name="diagnostics_activity_phone">Dispositivo</string>
+    <string name="diagnostics_activity_android_version">Versão do Android</string>
+    <string name="diagnostics_activity_sky_map_version">Versão do Sky Map</string>
+    <string name="diagnostics_activity_sensors_heading">Sensores</string>
+    <string name="diagnostics_activity_compass">Bússola</string>
+    <string name="diagnostics_activity_accelerometer">Acelerômetro</string>
+    <string name="diagnostics_activity_rotation_vector">Rotação</string>
+    <string name="diagnostics_activity_gyroscope">Giroscópioe</string>
+    <string name="diagnostics_activity_light_level">Nível da luz</string>
+    <string name="diagnostics_activity_location_and_time_heading">Hora e local</string>
+    <string name="diagnostics_activity_gps">GPS</string>
+    <string name="diagnostics_activity_location">Localização (lat, long)</string>
+    <!--<string name="diagnostics_activity_pointing_ra_dec">Pointing snapshot</string>-->
+    <string name="diagnostics_activity_magnetic_correction">Correção mag.</string>
+    <string name="diagnostics_activity_local_datetime">Hora local</string>
+    <string name="diagnostics_activity_universal_time">Hora universal</string>
+    <string name="diagnostics_activity_network_heading">Rede</string>
+    <string name="diagnostics_activity_connection">Conexão</string>
+    <string name="diagnostics_activity_rotation_matrix">Matriz Rot.</string>
+    <string name="enabled">Ativado</string>
+    <string name="disabled">Desativado</string>
+    <string name="permission_disabled">Permssão não concedida</string>
+    <string name="no_gps">Sem GPS</string>
+    <string name="connected">Conectado</string>
+    <string name="disconnected">Disconectado</string>
+    <string name="wifi">" (wifi)"</string>
+    <string name="cell_network">" (celular)"</string>
+    <string name="menu_calibrate">Calibrar</string>
+    <string name="compass_calibration_activity_heading_compass">Bússola -</string>
+    <string name="compass_calibration_activity_do_not_show_this_again">Não mostre isto novamente</string>
+    <string name="compass_calibration_activity_warning">Pode ser que sua bússola precise ser calibrada</string>
+    <string name="compass_calib_what_to_do"
+        translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL"> O seu dispositivo informou para o Sky Map que a sua bússola interna está descalibrada, Isso não é um problema com o Sky Map mas nós podemos ajudá-lo a corrigi-lo. Para calibrar sua bússola, tente mover seu aparelho em um formato de oito, como mostrado no vídeo %s, até que a precisão fique "Alta".</string>
+    <string name="compass_calib_what_to_do_user"
+        transation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"> A precisão da bússola do seu telefone está indicada acima. Caso ela não esteja "Alta", pode ser que você precise calibrá-la. Isto não é um problema do Sky Map, mas do seu telefone. Para calibrar a bússola, tente mover o seu telefone em um formato de oito, como demonstrado neste vídeo: %s.</string>
+    <string name="sensor_reverse_preference_title">Reverter o Z magnético</string>
+    <string name="sensor_reverse_preference_summary">Correção para aparelhos com sensores implementados incorretamente - exige reiniciar</string>
+    <string name="whats_new_dialog_title">O que há de novo</string>
+    <string name="disable_gyro_preference_title">Desativar o giroscópio</string>
+    <string name="disable_gyro_preference_summary"> Nem todos os dispositivos tem um giroscópio - caso o seu tenha você terá melhores resultados com ele ativado e esta configuração desmarcada. Por outro lado, caso seu dispositivo não tenha giroscópio, pode ser que você precise selecionar esta opção.</string>
+    <string name="rotate_horizon_preference_title">Direção da visualização</string>
+    <string name="rotate_horizon_preference_summary"> Ativar a rotação de horizonte por 90 graus (para dispositivos que forçam o modo "paisagem") ou ativar o modo de apontar. (veja a mensagem de ajuda).</string>
+    <!-- TODO: the following belong in celestial-objects.xml -->
     <string name="sun">Sol</string>
     <string name="moon">Lua</string>
     <string name="mercury">Mercúrio</string>
@@ -132,10 +220,6 @@
     <string name="sn1987a" translation_description="hubble object">Supernova 1987a</string>
     <string name="hubble_deep_field" translation_description="hubble object">Campo Profundo do Hubble</string>
     <string name="rho_oph" translation_description="hubble object">Rho Ofiúco</string>
-    <string name="menu_tos">Termos de Serviço</string>
-    <string name="control_panel_btn" translation_description="Label for the control panel button">Painel de controle</string>
-    <string name="north_pole">NP</string>
-    <string name="south_pole">SP</string>
     <string name="andromeda" translation_description="Name of the Andromeda constellation">Andrômeda</string>
     <string name="aquarius" translation_description="Name of the Aquarius constellation">Aquário</string>
     <string name="aquila" translation_description="Name of the Aquila constellation">Águia</string>
@@ -373,7 +457,4 @@
     <string name="seven_sisters" translation_description="Name of the Messier object Seven Sisters">Sete Irmãs</string>
     <string name="space_station" translation_description="Name of the Internation Space Station">Estação Espacial Internacional</string>
     <string name="space_shuttle" translation_description="Name of the Space Shuttle">Ônibus espacial</string>
-    <string name="kml_load_error">Falha ao carregar o arquivo KML</string>
-    <string name="load_kml_dialog_title">Carregar KML</string>
-    <string name="load_kml_file">Carregar</string>
 </resources>
