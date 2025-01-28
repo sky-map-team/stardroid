@@ -92,7 +92,7 @@ public class SensorOrientationController extends AbstractController
       if (!sharedPreferences.getBoolean(ApplicationConstants.SHARED_PREFERENCE_DISABLE_GYRO,
           false)) {
         Log.d(TAG, "Using rotation sensor");
-        manager.registerListener(this, rotationSensor, SensorManager.SENSOR_DELAY_GAME);
+        manager.registerListener(this, rotationSensor, SensorManager.SENSOR_DELAY_NORMAL);
       } else {
         // TODO(jontayler): remove this code once enough it's used in few enough phones.
         Log.d(TAG, "Using classic sensors");
