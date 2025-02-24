@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="popular_date_examples">
-        <item>Nyní</item>
-        <item>Další západ slunce</item>
-        <item>Další východ slunce</item>
-        <item>Další úplněk</item>
-        <item>Tranzit Merkuru 09 Května 2016</item>
-        <item>Zatmění slunce 8 apríli 2024</item>
-        <item>Přistání lodi Apollo 11 na Měsíci</item>
-        <item>Konjunkcia Jupiter-Saturn</item>
+        <item>Teraz</item>
+        <item>Ďalší západ Slnka</item>
+        <item>Ďalší východ Slnka</item>
+        <item>Ďalší spln</item>
+        <item>Prechod Merkúru 9. mája 2016</item>
+        <item>Zatmenie Slnka 8. apríla 2024</item>
+        <item>Pristanie lode Apollo 11 na Mesiaci</item>
+        <item>Konjunkcia Jupiter - Saturn</item>
     </string-array>
     <string-array name="sensor_speed">
-        <item>Pomalé</item>
-        <item>Standardní</item>
-        <item>Rychlé</item>
+        <item>Pomalá</item>
+        <item>Štandardná</item>
+        <item>Rýchla</item>
     </string-array>
     <string-array name="sensor_damping">
-        <item>Žádné</item>
-        <item>Lehké</item>
-        <item>Standardní</item>
-        <item>Vysoké</item>
+        <item>Žiadna</item>
+        <item>Ľahká</item>
+        <item>Štandardná</item>
+        <item>Vysoká</item>
     </string-array>
 </resources>
