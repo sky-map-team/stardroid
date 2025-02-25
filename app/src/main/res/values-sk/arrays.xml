@@ -24,9 +24,7 @@
     <string-array name="viewing_direction">
         <item translation_description="Normal viewing">Normálne</item>
         <item translation_description="Rotates the screen by 90 degrees">Otočený horizont</item>
-        <item
-            translation_description="Shows the sky as pointed at by the long edge of the phone">Režim ukazovateľa
-        </item>
+        <item translation_description="Shows the sky as pointed at by the long edge of the phone">Režim ukazovateľa</item>
     </string-array>
     <string-array name="auto_dim_texts">
         <item translation_description="Dimmest screen setting">Veľmi slabé</item>
