@@ -2,13 +2,17 @@ package com.google.android.stardroid.activities.util;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.FragmentManager;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import androidx.core.app.ActivityCompat;
 import android.util.Log;
 
 import com.google.android.stardroid.activities.DynamicStarMapActivity;
+import com.google.android.stardroid.activities.EditSettingsActivity;
 import com.google.android.stardroid.activities.dialogs.LocationPermissionRationaleFragment;
 import com.google.android.stardroid.util.MiscUtil;
 
@@ -74,7 +78,7 @@ public abstract class AbstractGooglePlayServicesChecker implements LocationPermi
       Log.i(TAG, "User granted permission");
     } else {
       Log.i(TAG, "User denied permission");
-      // TODO(jontayler): Send them to the location dialog;
+      showAlertOnLocationDenied();
     }
   }
 
@@ -89,5 +93,29 @@ public abstract class AbstractGooglePlayServicesChecker implements LocationPermi
   public void done() {
     Log.d(TAG, "Location rationale Dialog has been shown");
     requestLocationPermission();
+  }
+  
+  private void showAlertOnLocationDenied() {
+    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(parent);
+    alertDialogBuilder.setTitle("Warning!");
+    alertDialogBuilder.setMessage("Are you sure you want to disable auto location? You may then need to set location manually.");
+    alertDialogBuilder.setPositiveButton("Yes",
+        new DialogInterface.OnClickListener() {
+          @Override
+          public void onClick(DialogInterface arg0, int arg1) {
+            Intent intent = new Intent(parent.getApplicationContext(), EditSettingsActivity.class);
+            parent.startActivity(intent);
+          }
+        });
+    
+    alertDialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+      @Override
+      public void onClick(DialogInterface dialog, int which) {
+        requestLocationPermission();
+      }
+    });
+    
+    AlertDialog alertDialog = alertDialogBuilder.create();
+    alertDialog.show();
   }
 }
