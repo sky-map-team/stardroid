@@ -14,6 +14,10 @@
 
 package com.google.android.stardroid.control;
 
+import android.os.SystemClock;
+
+import java.util.Calendar;
+
 /**
  * Provides the current time.
  *
@@ -22,7 +26,10 @@ package com.google.android.stardroid.control;
 public class RealClock implements Clock {
   @Override
   public long getTimeInMillisSinceEpoch() {
-    // TODO(johntaylor): consider using SystemClock class.
-    return System.currentTimeMillis();
+    Calendar currentTime = Calendar.getInstance();
+    // For getting the time in UTC
+    long offset = currentTime.get(Calendar.ZONE_OFFSET) +
+            currentTime.get(Calendar.DST_OFFSET);
+    return currentTime.getTimeInMillis() + offset;
   }
 }
