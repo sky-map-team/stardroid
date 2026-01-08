@@ -91,6 +91,8 @@
     <string name="found_target_text">Found %s.</string>
     <string name="other" translation_description="A preference category (ie preferences that don't belong in any other category)">Other</string>
     <string name="planetary_images">Show Planet Images</string>
+    <string name="show_messier_images">Show Messier Images</string>
+    <string name="show_messier_images_summary">Display Messier objects as galaxy icons instead of dots</string>
     <string name="menu_time">Time Travel</string>
     <string name="time_travel_start_message">Traveling through time ...</string>
     <string name="time_travel_start_message_alt">Traveling through time to %s ...</string>

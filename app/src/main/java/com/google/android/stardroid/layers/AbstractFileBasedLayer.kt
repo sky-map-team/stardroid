@@ -40,8 +40,8 @@ abstract class AbstractFileBasedLayer(
     private val assetManager: AssetManager,
     resources: Resources,
     private val fileName: String,
-    preferences: SharedPreferences
-) : AbstractRenderablesLayer(resources, false, preferences) {
+    private val prefs: SharedPreferences
+) : AbstractRenderablesLayer(resources, false, prefs) {
     private val fileSources: MutableList<AstronomicalRenderable> = ArrayList()
     @Synchronized
     override fun initialize() {
@@ -66,7 +66,8 @@ abstract class AbstractFileBasedLayer(
                 fileSources.add(
                     ProtobufAstronomicalRenderable(
                         proto,
-                        resources
+                        resources,
+                        prefs  // Pass preferences
                     )
                 )
             }
