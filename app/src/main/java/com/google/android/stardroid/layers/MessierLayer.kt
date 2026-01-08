@@ -26,8 +26,7 @@ import com.google.android.stardroid.R
  * @author Brent Bryan
  */
 class MessierLayer(assetManager: AssetManager, resources: Resources, preferences: SharedPreferences) :
-    AbstractFileBasedLayer(assetManager, resources, "messier.binary", preferences),
-    SharedPreferences.OnSharedPreferenceChangeListener {
+    AbstractFileBasedLayer(assetManager, resources, "messier.binary", preferences) {
 
     override val layerDepthOrder = 20
 
@@ -37,11 +36,8 @@ class MessierLayer(assetManager: AssetManager, resources: Resources, preferences
     // TODO(brent): Remove this.
     override val preferenceId = "source_provider.2"
 
-    init {
-        preferences.registerOnSharedPreferenceChangeListener(this)
-    }
-
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
+        super.onSharedPreferenceChanged(sharedPreferences, key)
         if (key == SHOW_MESSIER_IMAGES) {
             // Force re-initialization to switch between points and images
             // This will clear and re-read the file, re-collecting primitives

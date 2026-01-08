@@ -35,19 +35,24 @@ import java.util.concurrent.locks.ReentrantLock
  */
 abstract class AbstractLayer(protected val resources: Resources,
                              private val preferences: SharedPreferences
-) : Layer {
+) : Layer, SharedPreferences.OnSharedPreferenceChangeListener {
     private val renderMapLock = ReentrantLock()
     private val renderMap = HashMap<Class<*>, RenderManager<*>>()
     // TODO(jontayler): Try to structure the code better to prevent this from being accessed
     // before initialization.
     private /*lateinit*/ var renderer: RendererController? = null
 
-    private val fontSizeScale = when( preferences.getString(ApplicationConstants.FONT_SIZE,
-            FONTSIZE.MEDIUM.name)?.let { FONTSIZE.valueOf(it) }) {
-        FONTSIZE.SMALL -> 0.75
-        FONTSIZE.LARGE -> 1.5
-        FONTSIZE.EXTRALARGE -> 2.0
-        else -> 1.0
+    protected val fontSizeScale: Double
+        get() = when(preferences.getString(ApplicationConstants.FONT_SIZE,
+                FONTSIZE.MEDIUM.name)?.let { FONTSIZE.valueOf(it) }) {
+            FONTSIZE.SMALL -> 0.75
+            FONTSIZE.LARGE -> 1.5
+            FONTSIZE.EXTRALARGE -> 2.0
+            else -> 1.0
+        }
+
+    init {
+        preferences.registerOnSharedPreferenceChangeListener(this)
     }
 
     override fun registerWithRenderer(rendererController: RendererController) {
@@ -172,6 +177,36 @@ abstract class AbstractLayer(protected val resources: Resources,
      * Return an internationalized string from a string resource id.
      */
     private fun getStringFromId(resourceId: Int) = resources.getString(resourceId)
+
+    override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
+        if (key == ApplicationConstants.FONT_SIZE) {
+            // Font size changed - need to regenerate label textures
+            onFontSizeChanged()
+        }
+    }
+
+    protected open fun onFontSizeChanged() {
+        // Default implementation: clear render map to force recreation of managers
+        // with new font size scale
+        val localRenderer = renderer
+        if (localRenderer != null) {
+            renderMapLock.lock()
+            try {
+                // First disable all existing managers and clear their objects
+                val atomic = localRenderer.createAtomic()
+                if (atomic != null) {
+                    for ((_, value) in renderMap) {
+                        value.queueEnabled(false, atomic)
+                    }
+                    localRenderer.queueAtomic(atomic)
+                }
+                // Now clear the map so new managers will be created
+                renderMap.clear()
+            } finally {
+                renderMapLock.unlock()
+            }
+        }
+    }
 
     private val TAG = MiscUtil.getTag(AbstractLayer::class.java)
 

@@ -57,6 +57,7 @@ abstract class AbstractFileBasedLayer(
 
     private fun readSourceFile(sourceFilename: String) {
         Log.d(TAG, "Loading Proto File: $sourceFilename...")
+        fileSources.clear()  // Clear old sources before re-reading
         var inputStream: InputStream? = null
         try {
             inputStream = assetManager.open(sourceFilename, AssetManager.ACCESS_BUFFER)

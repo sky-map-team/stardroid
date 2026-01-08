@@ -109,6 +109,14 @@ abstract class AbstractRenderablesLayer(resources: Resources, private val should
     super.redraw(textPrimitives, pointPrimitives, linePrimitives, imagePrimitives, updateTypes)
   }
 
+  override fun onFontSizeChanged() {
+    // First clear render map to force recreation of managers with new font scale
+    super.onFontSizeChanged()
+    // Redraw with existing primitives using new managers (with updated fontSizeScale)
+    // Don't call initialize() as it would clear primitive lists while GL thread is using them
+    refreshSources(EnumSet.of(UpdateType.Reset))
+  }
+
   override fun searchByObjectName(name: String): List<SearchResult> {
     Log.d(TAG, "Search planets layer for $name")
     val matches = ArrayList<SearchResult>()
