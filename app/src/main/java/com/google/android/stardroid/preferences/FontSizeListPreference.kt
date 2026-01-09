@@ -11,6 +11,7 @@
 // limitations under the License.
 package com.google.android.stardroid.preferences
 
+import android.app.AlertDialog
 import android.content.Context
 import android.preference.ListPreference
 import android.util.AttributeSet
@@ -41,7 +42,7 @@ class FontSizeListPreference(context: Context, attrs: AttributeSet?) :
         private const val BASE_SIZE_SP = 16f  // Base font size in SP
     }
 
-    override fun onPrepareDialogBuilder(builder: android.app.AlertDialog.Builder) {
+    override fun onPrepareDialogBuilder(builder: AlertDialog.Builder) {
         // Create custom adapter with styled text
         val adapter = FontSizeAdapter(
             context,
