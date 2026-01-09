@@ -55,7 +55,7 @@
             android:entryValues="@array/auto_dim_enums"
             android:entries="@array/auto_dim_texts"
             android:defaultValue="SYSTEM" />
-      <com.google.android.stardroid.preferences.FontSizeListPreference
+      <ListPreference
           android:key="font_size"
           android:title="@string/font_size_preference"
           android:summary="@string/font_size_preference_description"
