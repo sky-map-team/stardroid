@@ -21,4 +21,21 @@
         <item>Padrão</item>
         <item>Alta</item>
     </string-array>
+    <string-array name="viewing_direction">
+        <item>Normal</item>
+        <item>Rotacionar Horizonte</item>
+        <item>Modo Apontar
+        </item>
+    </string-array>
+    <string-array name="auto_dim_texts">
+        <item>Muito escuro</item>
+        <item>Padrão do sistema</item>
+        <item>Clássico</item>
+    </string-array>
+    <string-array name="font_size_texts">
+        <item>Pequeno</item>
+        <item>Médio</item>
+        <item>Grande</item>
+        <item>Bem grande</item>
+    </string-array>
 </resources>

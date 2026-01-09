@@ -21,6 +21,7 @@ import com.google.android.stardroid.source.proto.SourceProto.AstronomicalSourceP
 import com.google.android.stardroid.source.proto.SourceProto.GeocentricCoordinatesProto;
 import com.google.android.stardroid.source.proto.SourceProto.LabelElementProto;
 import com.google.android.stardroid.source.proto.SourceProto.PointElementProto;
+import com.google.android.stardroid.source.proto.SourceProto.Shape;
 
 
 /**
@@ -34,6 +35,30 @@ public class MessierAsciiProtoWriter extends AbstractAsciiProtoWriter {
   private static final int LABEL_COLOR = 0x48a841; // argb
   private static final int POINT_COLOR = 0x48a841; // abgr (!)
   private static final int POINT_SIZE = 3;
+
+  // Map CSV "Detailed Type" to Shape enum
+  private static Shape getShapeFromType(String detailedType) {
+    switch (detailedType.trim()) {
+      case "Spiral Galaxy":
+        return Shape.SPIRAL_GALAXY;
+      case "Elliptical Galaxy":
+        return Shape.ELLIPTICAL_GALAXY;
+      case "Irregular Galaxy":
+        return Shape.IRREGULAR_GALAXY;
+      case "Lenticular Galaxy":
+        return Shape.LENTICULAR_GALAXY;
+      case "Globular Cluster":
+        return Shape.GLOBULAR_CLUSTER;
+      case "Open Cluster":
+        return Shape.OPEN_CLUSTER;
+      case "Diffuse Nebula":
+      case "Planetary Nebula":
+      case "Supernova Remnant":
+        return Shape.NEBULA;
+      default:
+        return Shape.CIRCLE;  // Fallback for unknowns
+    }
+  }
 
   @Override
   protected AstronomicalSourceProto getSourceFromLine(String line, int index) {
@@ -65,11 +90,15 @@ public class MessierAsciiProtoWriter extends AbstractAsciiProtoWriter {
     }
     sourceBuilder.addLabel(labelBuilder);
 
+    // Parse detailed type from column 8
+    String detailedType = tokens.length > 8 ? tokens[8] : "";
+    Shape shape = getShapeFromType(detailedType);
+
     PointElementProto.Builder pointBuilder = PointElementProto.newBuilder();
     pointBuilder.setColor(POINT_COLOR);
     pointBuilder.setLocation(coords);
     pointBuilder.setSize(POINT_SIZE);
-    // TODO(johntaylor): consider setting messier object shape
+    pointBuilder.setShape(shape);  // NEW: Set shape based on type
     sourceBuilder.addPoint(pointBuilder);
     for (String rKey : rKeysForName) {
       sourceBuilder.addNameStrIds(rKey);
