@@ -43,6 +43,11 @@ abstract class AbstractRenderablesLayer(resources: Resources, private val should
   @Synchronized
   override fun initialize() {
     astroRenderables.clear()
+    // Clear cached primitives to allow re-collection when preferences change
+    textPrimitives.clear()
+    imagePrimitives.clear()
+    pointPrimitives.clear()
+    linePrimitives.clear()
     initializeAstroSources(astroRenderables)
     for (astroRenderable in astroRenderables) {
       val renderables = astroRenderable.initialize()
@@ -102,6 +107,14 @@ abstract class AbstractRenderablesLayer(resources: Resources, private val should
 
   private fun redraw(updateTypes: EnumSet<UpdateType>) {
     super.redraw(textPrimitives, pointPrimitives, linePrimitives, imagePrimitives, updateTypes)
+  }
+
+  override fun onFontSizeChanged() {
+    // First clear render map to force recreation of managers with new font scale
+    super.onFontSizeChanged()
+    // Redraw with existing primitives using new managers (with updated fontSizeScale)
+    // Don't call initialize() as it would clear primitive lists while GL thread is using them
+    refreshSources(EnumSet.of(UpdateType.Reset))
   }
 
   override fun searchByObjectName(name: String): List<SearchResult> {
