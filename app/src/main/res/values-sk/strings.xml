@@ -1,462 +1,216 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name" translation_description="Application Title">Sky Map</string>
-    <string name="menu_settings">Nastavení</string>
-    <string name="menu_search">Hledat</string>
-    <string name="cancel">Storno</string>
-    <string name="set">Nastavit</string>
-    <string name="go">Hledat!</string>
-    <string name="location_prefs">Nastavení polohy</string>
-    <string name="force_gps_pref">Vždy používat GPS</string>
-    <string name="force_gps_pref_hint" translation_description="this string continues from \'Always use GPS\'">pokud je aktivované, i když je dostupná síťová poloha</string>
-    <string name="no_use_gps_pref">Nastavit polohu manuálně</string>
-    <string name="no_use_gps_pref_hint">Níže zadejte místo nebo šířku/délku</string>
-    <string name="location_placename">Název místa</string>
-    <string name="location_placename_hint" translation_description="An example address.  Translators: please pick an address suitable for your country.  If it has an astronomical connection (e.g. the address of an observatory or famous astronomer) then that would be even better.">např. Petřín 205, Praha</string>
-    <string name="location_lat_pref">Zeměpisná šířka</string>
-    <string name="location_long_pref">Zeměpisná délka</string>
-    <string name="degrees">Stupně</string>
-    <string name="preferences">předvolby</string>
-    <string name="location_no_auto">Váš telefon nepodporuje automatické určení polohy. Polohu můžete nastavit ručně v nastavení.</string>
-    <string name="location_offer_to_enable">Automatické určení polohy je deaktivováno. Chce je aktivovat?</string>
-    <string name="location_offer_to_enable_gps_title">Automatické určení polohy deaktivováno</string>
-    <string name="location_set_auto">Poloha nastavena pomocí %1$s na %2$s</string>
-    <string name="location_unable_to_geocode">Nelze najít vaši polohu, možná je síť nedostupná?</string>
-    <string name="location_not_found_title" translation_description="dialog box title when location not found">Nenalezeno</string>
-    <string name="location_not_found" translation_description="dialog message when placename not found">Nelze nalézt „%s“</string>
-    <string name="location_long_lat">Zeměpisná délka:%1$s, Zeměpisná šířka:%2$s</string>
-    <string name="location_place_found">Místo nalezeno. Nastavení šířky %1$f a délky %2$f</string>
-    <string name="use_magnetic_correction">Použít magnetickou korekci</string>
-    <string name="use_magnetic_correction_hint">Použije znalost vaší lokace k opravě orientace magnetického pólu na skutečný zeměpisný pól</string>
-    <string name="provider_prefs" translation_description="Dialog box title for a preferences dialog">Zobrazit...</string>
-    <string name="show_stars_pref">Hvězdy</string>
-    <string name="show_constellations_pref">Souhvězdí</string>
-    <string name="show_messier_objects_pref" translation_description="The celestial objects catalogued by Charles Messier">Messierovy objekty</string>
-    <string name="show_planets_pref">Planety</string>
-    <string name="show_grid_pref">Síť RA/Dec</string>
+    <string name="menu_settings">Nastavenia</string>
+    <string name="menu_search">Hľadať</string>
+    <string name="cancel">Zrušiť</string>
+    <string name="set" translation_description="Button label. Set the date to the given value">Nastaviť</string>
+    <string name="go">Choď!</string>
+    <string name="location_prefs">Nastavenie polohy</string>
+    <string name="force_gps_pref">Vždy používať GPS</string>
+    <string name="force_gps_pref_hint" translation_description="this string continues from \'Always use GPS\'">ak je povolené, aj keď je dostupná poloha podľa siete</string>
+    <string name="no_use_gps_pref">Nastaviť polohu manuálne</string>
+    <string name="no_use_gps_pref_hint">Nižšie zadajte miesto alebo šírku/dĺžku</string>
+    <string name="location_placename">Názov miesta</string>
+    <string name="location_placename_hint" translation_description="An example address.  Translators: please pick an address suitable for your country.  If it has an astronomical connection (e.g. the address of an observatory or famous astronomer) then that would be even better.">napr. Nám. SNP, Bratislava</string>
+    <string name="location_lat_pref">Zemepisná šírka</string>
+    <string name="location_long_pref">Zemepisná dĺžka</string>
+    <string name="degrees">Stupne</string>
+    <string name="preferences">predvoľby</string>
+    <string name="location_no_auto">Povolenie na automatické určenie polohy je v telefóne zakázané. Miesto môžete nastaviť manuálne v predvoľbách. Dovtedy bude mapa nesprávna.</string>
+    <string name="location_offer_to_enable">Automatické určenie polohy je zakázané. Chcete ho povoliť?</string>
+    <string name="location_offer_to_enable_gps_title">Automatické určenie polohy zakázané</string>
+    <string name="location_set_auto">Poloha nastavená na %2$s</string>
+    <string name="location_unable_to_geocode">Nie je možné zistiť vašu polohu – sieť možno nie je dostupná</string>
+    <string name="location_not_found_title" translation_description="dialog box title when location not found">Nenájdené</string>
+    <string name="location_not_found" translation_description="dialog message when placename not found">Nedá sa nájsť %s</string>
+    <string name="location_long_lat">Zemepisná dĺžka:%1$.2f, Zemepisná šírka:%2$.2f</string>
+    <string name="location_place_found">Miesto nájdené. Nastavenie šírky %1$f a dĺžky %2$f</string>
+    <string name="use_magnetic_correction">Použiť magnetickú korekciu</string>
+    <string name="use_magnetic_correction_hint">Použije znalosť vašej polohy k oprave orientácie z magnetického pólu na skutočný zemepisný pól</string>
+    <string name="provider_prefs" translation_description="Dialog box title for a preferences dialog">Zobraziť...</string>
+    <string name="show_stars_pref">Hviezdy</string>
+    <string name="show_constellations_pref">Súhvezdia</string>
+    <string name="show_messier_objects_pref" translation_description="The celestial objects catalogued by Charles Messier">Messierove objekty</string>
+    <string name="show_planets_pref">Planéty</string>
+    <string name="show_grid_pref">Sieť RA/Dek</string>
     <string name="show_horizon_pref">Horizont</string>
-    <string name="show_sky_gradient">Gradient oblohy</string>
-    <string name="sensor_prefs">Nastavení čidel</string>
-    <string name="sensor_speed">Rychlost čidel</string>
-    <string name="sensor_damping" translation_description="The amount of smoothing applied to the sensor outputs.">Korekce senzorů</string>
+    <string name="show_sky_gradient" translation_description="This is a shading of the color of the sky used for effect">Gradient oblohy</string>
+    <string name="show_meteors_pref">Meteorické roje</string>
+    <string name="show_comet_layer_pref">Kométy</string>
+    <string name="show_satellite_layer_pref" translation_description="The layer for satellites">Satelity</string>
+    <!-- Just in case we decide to have such a layer for the 4/24 launch -->
+    <string name="show_hubble_layer_pref">Snímky z Hubblovho teleskopu</string>
+    <string name="sensor_prefs">Nastavenie senzorov (pre expertov)</string>
+    <string name="sensor_speed" translation_description="Old, non gyro sensors only: How quickly the sensor should send us data">Rýchlosť senzorov</string>
+    <string name="sensor_damping" translation_description="Old, non gyro sensors only: The amount of smoothing applied to the sensor outputs.">Korekcia senzorov</string>
+    <string name="appearance_prefs"
+        translation_description="Preferences title for section about app appearance">Vzhľad
+    </string>
+    <string name="auto_dimness_preference"
+        translation_description="Mode for automatically dimming the screen when night mode is selected">
+        Autom. stmievanie</string>
+    <string name="font_size_preference"
+        translation_description="Change the font size">
+        Veľkosť písma</string>
+    <string name="font_size_preference_description"
+        translation_description="help to go along with the change font size preference">Vyžaduje reštart aplikácie
+    </string>    
     <string name="ecliptic">Ekliptika</string>
-    <string name="show_hubble_layer_pref">Snímky z Hubbleova teleskopu</string>
-    <string name="malformed_loc_error">Nastavená šířka nebo délka není číslo.</string>
-    <string name="dialog_accept" translation_description="accepting the licence agreement">Přijmout</string>
-    <string name="dialog_decline" translation_description="declining the licence agreement">Odmítnout</string>
-    <string name="menu_help" translation_description="menu item to show \'Help\' box">Nápověda</string>
-    <string name="help_dialog_title">Nápověda pro Sky Map</string>
-    <string name="eula_dialog_title">Licenční smlouva s koncovým uživatelem služby </string>
-    <string name="set_manual">Přepnout na manuální režim</string>
-    <string name="set_auto">Přepnout na automatický režim</string>
-    <string name="menu_zoom_in">Přiblížit</string>
-    <string name="menu_zoom_out">Oddálit</string>
-    <string name="menu_toggle_dim">Přepnout noční/denní režim</string>
+    <string name="eclipse24">Cesta zatmenia 8.4.2024</string>
+    <string name="malformed_loc_error">Nastavená šírka alebo dĺžka nie je číslo.</string>
+    <string name="dialog_accept" translation_description="accepting the licence agreement">Prijať</string>
+    <string name="dialog_decline" translation_description="declining the licence agreement">Odmietnuť</string>
+    <string name="dialog_ok_button">OK</string>
+    <string name="menu_help" translation_description="menu item to show \'Help\' box">Pomoc</string>
+    <string name="help_dialog_title">Pomoc pre Sky Map</string>
+    <string name="eula_dialog_title">Licenčná zmluva s koncovým používateľom</string>
+    <string name="set_manual">Prepínanie na manuálny režim</string>
+    <string name="set_auto">Prepínanie na automatický režim</string>
+    <string name="menu_zoom_in">Priblížiť</string>
+    <string name="menu_zoom_out">Oddialiť</string>
+    <string name="menu_toggle_dim">Prepnúť nočný režim</string>
     <string name="zenith">ZENIT</string>
     <string name="nadir">NADIR</string>
     <string name="north">SEVER</string>
     <string name="east">VÝCHOD</string>
     <string name="west">ZÁPAD</string>
-    <string name="south">JIH</string>
-    <string name="search_label">Hledat na nebi</string>
-    <string name="search_hint" translation_description="an example search target">např. Mars</string>
-    <string name="no_search_title">Nic nenalezeno</string>
-    <string name="no_search_results_text">Nelze najít váš oběkt</string>
-    <string name="many_search_results_title">Možná jste chtěli zadat:</string>
-    <string name="many_search_results_text">Zvolte výsledek</string>
-    <string name="searching_for_text">Hledání %s...</string>
-    <string name="found_target_text">Nalezeno: %s.</string>
-    <string name="other">Jiné</string>
-    <string name="planetary_images">Zobrazit obrázky planet</string>
-    <string name="menu_time">Cestování v čase</string>
-    <string name="time_travel_start_message">Cestování v čase...</string>
-    <string name="time_travel_start_message_alt">Cestování v čase do %s...</string>
-    <string name="time_travel_close_message">Zpět do současnosti...</string>
-    <string name="popular_dates_prompt" translation_description="label for a list of dates the user can choose from">Oblíbená data</string>
-    <string name="custom_date_prompt" translation_description="label telling the user to manually specify a data">Nebo zvolte vlastní datum</string>
-    <string name="change_date_prompt">Změnit datum</string>
-    <string name="change_time_prompt">Změnit čas</string>
-    <string name="now_visiting" translation_description="tells the user what time they are visiting">Nyní jste v této době: %s</string>
-    <string name="time_travel_label_past" translation_description="label showing that we are in the past">Cestování v čase: minulost</string>
-    <string name="time_travel_label_future" translation_description="label showing that we are in the future">Cestování v čase: budoucnost</string>
-    <string name="time_travel_stopped" translation_description="label showing rate of travel through time">Cestování v čase zastaveno</string>
-    <string name="time_travel_second_speed" translation_description="label showing rate of travel through time">Rychlost cestování &gt; 1 s/s</string>
-    <string name="time_travel_minute_speed" translation_description="label showing rate of travel through time">Rychlost cestování &gt; 1 min./s</string>
-    <string name="time_travel_10minute_speed" translation_description="label showing rate of travel through time">Rychlost cestování &gt; 10 min./s</string>
-    <string name="time_travel_hour_speed" translation_description="label showing rate of travel through time">Rychlost cestování &gt; 1 hod./s</string>
-    <string name="time_travel_day_speed" translation_description="label showing rate of travel through time">Rychlost cestování &gt; 1 den/s</string>
-    <string name="time_travel_week_speed" translation_description="label showing rate of travel through time">Rychlost cestování &gt; 1 týden/s</string>
-    <string name="time_travel_second_speed_back" translation_description="label showing rate of travel through time">Rychlost cestování &lt; 1 s/s</string>
-    <string name="time_travel_minute_speed_back" translation_description="label showing rate of travel through time">Rychlost cestování &lt; 1 min./s</string>
-    <string name="time_travel_10minute_speed_back" translation_description="label showing rate of travel through time">Rychlost cestování &lt; 10 min./s</string>
-    <string name="time_travel_hour_speed_back" translation_description="label showing rate of travel through time">Rychlost cestování &lt; 1 hod./s</string>
-    <string name="time_travel_day_speed_back" translation_description="label showing rate of travel through time">Rychlost cestování &lt; 1 den/s</string>
-    <string name="time_travel_week_speed_back" translation_description="label showing rate of travel through time">Rychlost cestování &lt; 1 týden/s</string>
-    <string name="use_sound_effects" translation_description="A preferences menu label">Zapnout zvuk</string>
-    <string name="enable_layer_toast">Aktivace vrstvy %s</string>
-    <string name="disable_layer_toast">Deaktivace vrstvy %s</string>
-    <string name="menu_gallery">Galerie</string>
-    <string name="gallery_image_search_btn">Najít na obloze</string>
-    <string name="gallery_image_back_btn">Zpět do galerie</string>
-    <string name="hubble_image_gallery_title">Galerie snímků z Hubbleova teleskopu na Sky Map</string>
-    <string name="hubble_image">Snímek z Hubbleova teleskopu</string>
-    <string name="search_target_found_message" translation_description="displayed when a search target has been located">Našli jste:</string>
-    <string name="search_overlay_title" translation_description="title for search overlay">Namiřte směrem k šipce</string>
-    <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">Hledám:</string>
-    <string name="sun_wont_set_message">Při vaší poloze slunce během následujících 24 hodin nezapadne.</string>
-    <string name="sun_wont_rise_message">Při vaší polozeslunce během následujících 24 hodin nevyjde.</string>
-    <string name="sun">Slunce</string>
-    <string name="moon">Měsíc</string>
-    <string name="mercury">Merkur</string>
-    <string name="venus">Venuše</string>
-    <string name="earth">Země</string>
-    <string name="mars">Mars</string>
-    <string name="jupiter">Jupiter</string>
-    <string name="saturn">Saturn</string>
-    <string name="uranus">Uran</string>
-    <string name="neptune">Neptun</string>
-    <string name="pluto">Pluto</string>
-    <string name="crab_nebula" translation_description="hubble object">Krabí mlhovina</string>
-    <string name="eagle_nebula" translation_description="hubble object">Orlí mlhovina</string>
-    <string name="andromeda_galaxy" translation_description="hubble object">Galaxie Andromeda</string>
-    <string name="orion_nebula" translation_description="hubble object">Mlhovina Orion</string>
-    <string name="whirlpool_galaxy" translation_description="hubble object">Vírová galaxie</string>
-    <string name="ring_nebula" translation_description="hubble object">Prstencová mlhovina</string>
-    <string name="pinwheel_galaxy" translation_description="hubble object">Galaxie Větrník</string>
-    <string name="sombrero_galaxy" translation_description="hubble object">Galaxie Sombrero</string>
-    <string name="hercules_gc" translation_description="hubble object">Kulová hvězdokupa Herkules</string>
-    <string name="pleiades" translation_description="hubble object">Plejády</string>
-    <string name="cats_eye_nebula" translation_description="hubble object">Mlhovina Kočičí oko</string>
-    <string name="omega_centauri" translation_description="hubble object">Kulová hvězdokupa Omega Centauri</string>
-    <string name="v838_mon" translation_description="hubble object">V838 Monocerotis</string>
-    <string name="sn1987a" translation_description="hubble object">Supernova 1987a</string>
-    <string name="hubble_deep_field" translation_description="hubble object">Hubbleovo hluboké pole</string>
-    <string name="rho_oph" translation_description="hubble object">Rho Ophiuchus</string>
-    <string name="menu_tos">Smluvní podmínky</string>
+    <string name="south">JUH</string>
+    <string name="search_label">Hľadať na nebi</string>
+    <string name="search_hint" translation_description="an example search target">napr. Mars</string>
+    <string name="no_search_title">Nič sa nenašlo</string>
+    <string name="no_search_results_text">Nenašli sa žiadne výsledky.</string>
+    <!-- Hopefully this is a temporary measure until we can fix the search engine -->
+    <string name="no_search_results_text2">Nenašli sa žiadne výsledky. Objekt možno nie je teraz viditeľný.</string>
+    <string name="many_search_results_title">Mysleli ste?</string>
+    <string name="many_search_results_text">Vyberte si jeden</string>
+    <string name="searching_for_text">Hľadanie %s...</string>
+    <string name="found_target_text">Nájdené: %s.</string>
+    <string name="other" translation_description="A preference category (ie preferences that don't belong in any other category)">Iné</string>
+    <string name="planetary_images">Zobraziť obrázky planét</string>
+    <string name="menu_time">Cestovanie v čase</string>
+    <string name="time_travel_start_message">Cestovanie v čase...</string>
+    <string name="time_travel_start_message_alt">Cestovanie v čase do %s...</string>
+    <string name="time_travel_close_message">Späť do súčasnosti...</string>
+    <!--  -->    
+    <string name="popular_dates_prompt" translation_description="label for a list of dates the user can choose from">Obľúbené dátumy</string>
+    <string name="custom_date_prompt" translation_description="label telling the user to manually specify a data">Alebo si zvoľte vlastný dátum</string>
+    <string name="change_date_prompt">Zmeniť dátum</string>
+    <string name="change_time_prompt">Zmeniť čas</string>
+    <string name="now_visiting" translation_description="used in time travel dialog to tell the user what time they are visiting, time formatted as yyyy.mm.dd at hh.mm.ss + timezone">
+        Teraz ste v čase: %s</string>    
+    <string name="time_travel_label_past" translation_description="label showing that we are in the past">Cestovanie v čase: Minulosť</string>
+    <string name="time_travel_label_future" translation_description="label showing that we are in the future">Cestovanie v čase: Budúcnosť</string>
+    <string name="time_travel_stopped" translation_description="label showing rate of travel through time">Cestovanie v čase zastavené</string>
+    <string name="time_travel_second_speed" translation_description="Label showing rate of travel through time.  The symbol means greater than.">Rýchlosť cestovania &gt; 1 s/s</string>
+    <string name="time_travel_minute_speed" translation_description="label showing rate of travel through time">Rýchlosť cestovania &gt; 1 min/s</string>
+    <string name="time_travel_10minute_speed" translation_description="label showing rate of travel through time">Rýchlosť cestovania &gt; 10 min/s</string>
+    <string name="time_travel_hour_speed" translation_description="label showing rate of travel through time">Rýchlosť cestovania &gt; 1 hod/s</string>
+    <string name="time_travel_day_speed" translation_description="label showing rate of travel through time">Rýchlosť cestovania &gt; 1 deň/s</string>
+    <string name="time_travel_week_speed" translation_description="label showing rate of travel through time">Rýchlosť cestovania &gt; 1 týždeň/s</string>
+    <string name="time_travel_second_speed_back" translation_description="label showing rate of travel through time">Rýchlosť cestovania &lt; 1 s/s</string>
+    <string name="time_travel_minute_speed_back" translation_description="label showing rate of travel through time">Rýchlosť cestovania &lt; 1 min/s</string>
+    <string name="time_travel_10minute_speed_back" translation_description="label showing rate of travel through time">Rýchlosť cestovania &lt; 10 min/s</string>
+    <string name="time_travel_hour_speed_back" translation_description="label showing rate of travel through time">Rýchlosť cestovania &lt; 1 hod/s</string>
+    <string name="time_travel_day_speed_back" translation_description="label showing rate of travel through time">Rýchlosť cestovania &lt; 1 deň/s</string>
+    <string name="time_travel_week_speed_back" translation_description="label showing rate of travel through time">Rýchlosť cestovania &lt; 1 týždeň/s</string>
+    <string name="use_sound_effects" translation_description="A preferences menu label">Povoliť zvuk</string>
+    
+    <string name="enable_layer_toast">Aktivácia vrstvy %s</string>
+    <string name="disable_layer_toast">Deaktivácia vrstvy %s</string>
+    <string name="menu_gallery">Galéria</string>
+    <string name="gallery_image_search_btn">Nájsť na oblohe</string>
+    <string name="gallery_image_back_btn">Späť do galérie</string>
+    <string name="hubble_image_gallery_title">Galéria v Sky Map</string>
+    <string name="hubble_image">Snímok z Hubblovho teleskopu</string>
+    
+    <string name="search_target_found_message" translation_description="displayed when a search target has been located">Našli ste:</string>
+    <string name="search_overlay_title" translation_description="title for search overlay">Nasmerujte telefón podľa šípky</string>
+    <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">Hľadám:</string>
+    <string name="sun_wont_set_message">Na vašej aktuálnej polohe nezapadne Slnko počas nasledujúcich 24 hodín.</string>
+    <string name="sun_wont_rise_message">Na vašej aktuálnej polohe nevyjde Slnko počas nasledujúcich 24 hodín.</string>
+
+    <string name="missing_label" translation_description="Used to indicate to the developer that they've added a resource with no translation.">MISSING_LBL</string>
+
+    <string name="menu_tos">Podmienky služby</string>
+    <string name="menu_diagnostics">Diagnostika</string>
+    <!-- TODO(johntaylor): the following might be deleted in favor of an icon -->
     <string name="control_panel_btn" translation_description="Label for the control panel button">Ovládací panel</string>
+
     <string name="north_pole">SP</string>
     <string name="south_pole">JP</string>
-    <string name="andromeda" translation_description="Name of the Andromeda constellation">Andromeda</string>
-    <string name="aquarius" translation_description="Name of the Aquarius constellation">Vodnář</string>
-    <string name="aquila" translation_description="Name of the Aquila constellation">Orel</string>
-    <string name="aries" translation_description="Name of the Aries constellation">Beran</string>
-    <string name="auriga" translation_description="Name of the Auriga constellation">Vozka</string>
-    <string name="bootes" translation_description="Name of the Bootes constellation">Pastýř</string>
-    <string name="cancer" translation_description="Name of the Cancer constellation">Rak</string>
-    <string name="canis_major" translation_description="Name of the Canis Major constellation">Velký pes</string>
-    <string name="capricornus" translation_description="Name of the Capricornus constellation">Kozoroh</string>
-    <string name="carina" translation_description="Name of the Carina constellation">Lodní kýl</string>
-    <string name="cassiopeia" translation_description="Name of the Cassiopeia constellation">Kasiopeja</string>
-    <string name="centaurus" translation_description="Name of the Centaurus constellation">Kentaur</string>
-    <string name="cetus" translation_description="Name of the Cetus constellation">Velryba</string>
-    <string name="crux" translation_description="Name of the Crux constellation">Jižní kříž</string>
-    <string name="cygnus" translation_description="Name of the Cygnus constellation">Labuť</string>
-    <string name="draco" translation_description="Name of the Draco constellation">Drak</string>
-    <string name="eridanus" translation_description="Name of the Eridanus constellation">Eridanus</string>
-    <string name="gemini" translation_description="Name of the Gemini constellation">Blíženci</string>
-    <string name="grus" translation_description="Name of the Grus constellation">Jeřáb</string>
-    <string name="hercules" translation_description="Name of the Hercules constellation">Herkules</string>
-    <string name="hydrus" translation_description="Name of the Hydrus constellation">Malý vodní had</string>
-    <string name="leo" translation_description="Name of the Leo constellation">Lev</string>
-    <string name="libra" translation_description="Name of the Libra constellation">Váhy</string>
-    <string name="lupus" translation_description="Name of the Lupus constellation">Vlk</string>
-    <string name="lyra" translation_description="Name of the Lyra constellation">Lyra</string>
-    <string name="ophiuchus" translation_description="Name of the Ophiuchus constellation">Hadonoš</string>
-    <string name="orion" translation_description="Name of the Orion constellation">Orion</string>
-    <string name="pavo" translation_description="Name of the Pavo constellation">Páv</string>
-    <string name="pegasus" translation_description="Name of the Pegasus constellation">Pegas</string>
-    <string name="perseus" translation_description="Name of the Perseus constellation">Perseus</string>
-    <string name="phoenix" translation_description="Name of the Phoenix constellation">Fénix</string>
-    <string name="pisces" translation_description="Name of the Pisces constellation">Ryby</string>
-    <string name="piscis_austrinus" translation_description="Name of the Piscis Austrinus constellation">Jižní ryby</string>
-    <string name="puppis" translation_description="Name of the Puppis constellation">Lodní kýl</string>
-    <string name="sagittarius" translation_description="Name of the Sagittarius constellation">Střelec</string>
-    <string name="scorpius" translation_description="Name of the Scorpius constellation">Štír</string>
-    <string name="taurus" translation_description="Name of the Taurus constellation">Býk</string>
-    <string name="tucana" translation_description="Name of the Tucana constellation">Tukan</string>
-    <string name="ursa_major" translation_description="Name of the Ursa Major constellation">Velká medvědice</string>
-    <string name="ursa_minor" translation_description="Name of the Ursa Minor constellation">Malá medvědice</string>
-    <string name="vela" translation_description="Name of the Vela constellation">Plachty</string>
-    <string name="virgo" translation_description="Name of the Virgo constellation">Panna</string>
-    <string name="capricorn" translation_description="Name of the Capricorn constellation">Kozoroh</string>
-    <string name="southern_cross" translation_description="Name of the Southern Cross constellation">Jižní kříž</string>
-    <string name="scorpio" translation_description="Name of the Scorpio constellation">Štír</string>
-    <string name="little_dipper" translation_description="Name of the Little Dipper constellation">Malý vůz</string>
-    <string name="little_bear" translation_description="Name of the Little Bear constellation">Malá medvědice</string>
-    <string name="big_dipper" translation_description="Name of the Big Dipper constellation">Velký vůz</string>
-    <string name="great_bear" translation_description="Name of the Great Bear constellation">Velká medvědice</string>
-    <string name="plough" translation_description="Name of the Plough constellation">Velký vůz</string>
-    <string name="sirius" translation_description="Name of the Star Sirius">Sírius</string>
-    <string name="canopus" translation_description="Name of the Star Canopus">Canopus</string>
-    <string name="arcturus" translation_description="Name of the Star Arcturus">Arktur</string>
-    <string name="rigel_kentaurus_a" translation_description="Name of the Star Rigel Kentaurus A">Rigel Kentaurus A</string>
-    <string name="vega" translation_description="Name of the Star Vega">Vega</string>
-    <string name="rigel" translation_description="Name of the Star Rigel">Rigel</string>
-    <string name="procyon" translation_description="Name of the Star Procyon">Procyon</string>
-    <string name="betelgeuse" translation_description="Name of the Star Betelgeuse">Betelgeuse</string>
-    <string name="achernar" translation_description="Name of the Star Achernar">Achernar</string>
-    <string name="hadar" translation_description="Name of the Star Hadar">Hadar</string>
-    <string name="capella" translation_description="Name of the Star Capella">Capella</string>
-    <string name="altair" translation_description="Name of the Star Altair">Altair</string>
-    <string name="acrux" translation_description="Name of the Star Acrux">Acrux</string>
-    <string name="aldebaran" translation_description="Name of the Star Aldebaran">Aldebaran</string>
-    <string name="spica" translation_description="Name of the Star Spica">Spica</string>
-    <string name="antares" translation_description="Name of the Star Antares">Antares</string>
-    <string name="pollux" translation_description="Name of the Star Pollux">Pollux</string>
-    <string name="fomalhaut" translation_description="Name of the Star Fomalhaut">Fomalhaut</string>
-    <string name="deneb" translation_description="Name of the Star Deneb">Deneb</string>
-    <string name="regulus" translation_description="Name of the Star Regulus">Regulus</string>
-    <string name="adhara" translation_description="Name of the Star Adhara">Adhara</string>
-    <string name="shaula" translation_description="Name of the Star Shaula">Shaula</string>
-    <string name="alnath" translation_description="Name of the Star Alnath">Alnath</string>
-    <string name="alnilam" translation_description="Name of the Star Alnilam">Alnilam</string>
-    <string name="alnair" translation_description="Name of the Star Alnair">Alnair</string>
-    <string name="alioth" translation_description="Name of the Star Alioth">Alioth</string>
-    <string name="mirphak" translation_description="Name of the Star Mirphak">Mirphak</string>
-    <string name="kaus_australis" translation_description="Name of the Star Kaus Australis">Kaus Australis</string>
-    <string name="dubhe" translation_description="Name of the Star Dubhe">Dubhe</string>
-    <string name="alkaid" translation_description="Name of the Star Alkaid">Alkaid</string>
-    <string name="alhena" translation_description="Name of the Star Alhena">Alhena</string>
-    <string name="castor" translation_description="Name of the Star Castor">Castor</string>
-    <string name="polaris" translation_description="Name of the Star Polaris">Polárka</string>
-    <string name="alphard" translation_description="Name of the Star Alphard">Alphard</string>
-    <string name="hamal" translation_description="Name of the Star Hamal">Hamal</string>
-    <string name="algieba" translation_description="Name of the Star Algieba">Algieba</string>
-    <string name="diphda" translation_description="Name of the Star Diphda">Deneb Kaitos</string>
-    <string name="nunki" translation_description="Name of the Star Nunki">Nunki</string>
-    <string name="mirach" translation_description="Name of the Star Mirach">Mirach</string>
-    <string name="alpheratz" translation_description="Name of the Star Alpheratz">Alpheratz</string>
-    <string name="saiph" translation_description="Name of the Star Saiph">Saiph</string>
-    <string name="kochab" translation_description="Name of the Star Kochab">Kochab</string>
-    <string name="rasalhague" translation_description="Name of the Star Rasalhague">Rasalhague</string>
-    <string name="algol" translation_description="Name of the Star Algol">Algol</string>
-    <string name="denebola" translation_description="Name of the Star Denebola">Denebola</string>
-    <string name="alphekka" translation_description="Name of the Star Alphekka">Alphekka</string>
-    <string name="etamin" translation_description="Name of the Star Etamin">Etamin</string>
-    <string name="kaus" translation_description="Name of the Star Kaus">Kaus</string>
-    <string name="shedir" translation_description="Name of the Star Shedir">Shedir</string>
-    <string name="caph" translation_description="Name of the Star Caph">Caph</string>
-    <string name="izar" translation_description="Name of the Star Izar">Izar</string>
-    <string name="merak" translation_description="Name of the Star Merak">Merak</string>
-    <string name="enif" translation_description="Name of the Star Enif">Enif</string>
-    <string name="ankaa" translation_description="Name of the Star Ankaa">Ankaa</string>
-    <string name="phad" translation_description="Name of the Star Phad">Phad</string>
-    <string name="alderamin" translation_description="Name of the Star Alderamin">Alderamin</string>
-    <string name="scheat" translation_description="Name of the Star Scheat">Scheat</string>
-    <string name="markab" translation_description="Name of the Star Markab">Markab</string>
-    <string name="menkar" translation_description="Name of the Star Menkar">Menkar</string>
-    <string name="arneb" translation_description="Name of the Star Arneb">Arneb</string>
-    <string name="unukalhai" translation_description="Name of the Star Unukalhai">Unukalhai</string>
-    <string name="algenib" translation_description="Name of the Star Algenib">Algenib</string>
-    <string name="vindemiatrix" translation_description="Name of the Star Vindemiatrix">Vindemiatrix</string>
-    <string name="alcyone" translation_description="Name of the Star Alcyone">Alcyone</string>
-    <string name="dog_star" translation_description="Name of the Dog Star (Sirius)">Psí hvězda</string>
-    <string name="north_star" translation_description="Name of the North Star">Severka</string>
-    <string name="pole_star" translation_description="Name of the (North) Pole Star">Polárka</string>
-    <string name="m1" translation_description="Name of the Messier object M1">M1</string>
-    <string name="m2" translation_description="Name of the Messier object M2">M2</string>
-    <string name="m3" translation_description="Name of the Messier object M3">M3</string>
-    <string name="m4" translation_description="Name of the Messier object M4">M4</string>
-    <string name="m5" translation_description="Name of the Messier object M5">M5</string>
-    <string name="m6" translation_description="Name of the Messier object M6">M6</string>
-    <string name="m7" translation_description="Name of the Messier object M7">M7</string>
-    <string name="m8" translation_description="Name of the Messier object M8">M8</string>
-    <string name="m9" translation_description="Name of the Messier object M9">M9</string>
-    <string name="m10" translation_description="Name of the Messier object M10">M10</string>
-    <string name="m11" translation_description="Name of the Messier object M11">M11</string>
-    <string name="m12" translation_description="Name of the Messier object M12">M12</string>
-    <string name="m13" translation_description="Name of the Messier object M13">M13</string>
-    <string name="m14" translation_description="Name of the Messier object M14">M14</string>
-    <string name="m15" translation_description="Name of the Messier object M15">M15</string>
-    <string name="m16" translation_description="Name of the Messier object M16">M16</string>
-    <string name="m17" translation_description="Name of the Messier object M17">M17</string>
-    <string name="m18" translation_description="Name of the Messier object M18">M18</string>
-    <string name="m19" translation_description="Name of the Messier object M19">M19</string>
-    <string name="m20" translation_description="Name of the Messier object M20">M20</string>
-    <string name="m21" translation_description="Name of the Messier object M21">M21</string>
-    <string name="m22" translation_description="Name of the Messier object M22">M22</string>
-    <string name="m23" translation_description="Name of the Messier object M23">M23</string>
-    <string name="m24" translation_description="Name of the Messier object M24">M24</string>
-    <string name="m25" translation_description="Name of the Messier object M25">M25</string>
-    <string name="m26" translation_description="Name of the Messier object M26">M26</string>
-    <string name="m27" translation_description="Name of the Messier object M27">M27</string>
-    <string name="m28" translation_description="Name of the Messier object M28">M28</string>
-    <string name="m29" translation_description="Name of the Messier object M29">M29</string>
-    <string name="m30" translation_description="Name of the Messier object M30">M30</string>
-    <string name="m31" translation_description="Name of the Messier object M31">M31</string>
-    <string name="m32" translation_description="Name of the Messier object M32">M32</string>
-    <string name="m33" translation_description="Name of the Messier object M33">M33</string>
-    <string name="m34" translation_description="Name of the Messier object M34">M34</string>
-    <string name="m35" translation_description="Name of the Messier object M35">M35</string>
-    <string name="m36" translation_description="Name of the Messier object M36">M36</string>
-    <string name="m37" translation_description="Name of the Messier object M37">M37</string>
-    <string name="m38" translation_description="Name of the Messier object M38">M38</string>
-    <string name="m39" translation_description="Name of the Messier object M39">M39</string>
-    <string name="m40" translation_description="Name of the Messier object M40">M40</string>
-    <string name="m41" translation_description="Name of the Messier object M41">M41</string>
-    <string name="m42" translation_description="Name of the Messier object M42">M42</string>
-    <string name="m43" translation_description="Name of the Messier object M43">M43</string>
-    <string name="m44" translation_description="Name of the Messier object M44">M44</string>
-    <string name="m45" translation_description="Name of the Messier object M45">M45</string>
-    <string name="m46" translation_description="Name of the Messier object M46">M46</string>
-    <string name="m47" translation_description="Name of the Messier object M47">M47</string>
-    <string name="m48" translation_description="Name of the Messier object M48">M48</string>
-    <string name="m49" translation_description="Name of the Messier object M49">M49</string>
-    <string name="m50" translation_description="Name of the Messier object M50">M50</string>
-    <string name="m51" translation_description="Name of the Messier object M51">M51</string>
-    <string name="m52" translation_description="Name of the Messier object M52">M52</string>
-    <string name="m53" translation_description="Name of the Messier object M53">M53</string>
-    <string name="m54" translation_description="Name of the Messier object M54">M54</string>
-    <string name="m55" translation_description="Name of the Messier object M55">M55</string>
-    <string name="m56" translation_description="Name of the Messier object M56">M56</string>
-    <string name="m57" translation_description="Name of the Messier object M57">M57</string>
-    <string name="m58" translation_description="Name of the Messier object M58">M58</string>
-    <string name="m59" translation_description="Name of the Messier object M59">M59</string>
-    <string name="m60" translation_description="Name of the Messier object M60">M60</string>
-    <string name="m61" translation_description="Name of the Messier object M61">M61</string>
-    <string name="m62" translation_description="Name of the Messier object M62">M62</string>
-    <string name="m63" translation_description="Name of the Messier object M63">M63</string>
-    <string name="m64" translation_description="Name of the Messier object M64">M64</string>
-    <string name="m65" translation_description="Name of the Messier object M65">M65</string>
-    <string name="m66" translation_description="Name of the Messier object M66">M66</string>
-    <string name="m67" translation_description="Name of the Messier object M67">M67</string>
-    <string name="m68" translation_description="Name of the Messier object M68">M68</string>
-    <string name="m69" translation_description="Name of the Messier object M69">M69</string>
-    <string name="m70" translation_description="Name of the Messier object M70">M70</string>
-    <string name="m71" translation_description="Name of the Messier object M71">M71</string>
-    <string name="m72" translation_description="Name of the Messier object M72">M72</string>
-    <string name="m73" translation_description="Name of the Messier object M73">M73</string>
-    <string name="m74" translation_description="Name of the Messier object M74">M74</string>
-    <string name="m75" translation_description="Name of the Messier object M75">M75</string>
-    <string name="m76" translation_description="Name of the Messier object M76">M76</string>
-    <string name="m77" translation_description="Name of the Messier object M77">M77</string>
-    <string name="m78" translation_description="Name of the Messier object M78">M78</string>
-    <string name="m79" translation_description="Name of the Messier object M79">M79</string>
-    <string name="m80" translation_description="Name of the Messier object M80">M80</string>
-    <string name="m81" translation_description="Name of the Messier object M81">M81</string>
-    <string name="m82" translation_description="Name of the Messier object M82">M82</string>
-    <string name="m83" translation_description="Name of the Messier object M83">M83</string>
-    <string name="m84" translation_description="Name of the Messier object M84">M84</string>
-    <string name="m85" translation_description="Name of the Messier object M85">M85</string>
-    <string name="m86" translation_description="Name of the Messier object M86">M86</string>
-    <string name="m87" translation_description="Name of the Messier object M87">M87</string>
-    <string name="m88" translation_description="Name of the Messier object M88">M88</string>
-    <string name="m89" translation_description="Name of the Messier object M89">M89</string>
-    <string name="m90" translation_description="Name of the Messier object M90">M90</string>
-    <string name="m91" translation_description="Name of the Messier object M91">M91</string>
-    <string name="m92" translation_description="Name of the Messier object M92">M92</string>
-    <string name="m93" translation_description="Name of the Messier object M93">M93</string>
-    <string name="m94" translation_description="Name of the Messier object M94">M94</string>
-    <string name="m95" translation_description="Name of the Messier object M95">M95</string>
-    <string name="m96" translation_description="Name of the Messier object M96">M96</string>
-    <string name="m97" translation_description="Name of the Messier object M97">M97</string>
-    <string name="m98" translation_description="Name of the Messier object M98">M98</string>
-    <string name="m99" translation_description="Name of the Messier object M99">M99</string>
-    <string name="m100" translation_description="Name of the Messier object M100">M100</string>
-    <string name="m101" translation_description="Name of the Messier object M101">M101</string>
-    <string name="m102" translation_description="Name of the Messier object M102">M102</string>
-    <string name="m103" translation_description="Name of the Messier object M103">M103</string>
-    <string name="m104" translation_description="Name of the Messier object M104">M104</string>
-    <string name="m105" translation_description="Name of the Messier object M105">M105</string>
-    <string name="m106" translation_description="Name of the Messier object M106">M106</string>
-    <string name="m107" translation_description="Name of the Messier object M107">M107</string>
-    <string name="m108" translation_description="Name of the Messier object M108">M108</string>
-    <string name="m109" translation_description="Name of the Messier object M109">M109</string>
-    <string name="m110" translation_description="Name of the Messier object M110">M110</string>
-    <string name="ngc6543" translation_description="Name of the Messier object NGC6543">NGC 6543</string>
-    <string name="ngc5139" translation_description="Name of the Messier object NGC5139">NGC 5139</string>
-    <string name="butterfly_cluster" translation_description="Name of the Messier object Butterfly Cluster">Motýlí hvězdokupa</string>
-    <string name="scorpions_tail" translation_description="Name of the Messier object Scorpion\'s Tail">Ocas štíra</string>
-    <string name="winnecke_4" translation_description="Name of the Messier object Winnecke 4">Winnecke 4</string>
-    <string name="beehive_cluster" translation_description="Name of the Messier object Beehive Cluster">Hvězdokupa Včelí úl</string>
-    <string name="praesepe" translation_description="Name of the Messier object Praesepe">Jesličky</string>
-    <string name="seven_sisters" translation_description="Name of the Messier object Seven Sisters">Sedm sester</string>
-    <string name="space_station" translation_description="Name of the Internation Space Station">Mezinárodní vesmírná stanice</string>
-    <string name="space_shuttle" translation_description="Name of the Space Shuttle">Raketoplán</string>
-    <string name="kml_load_error">Nepodařilo se načíst KML soubor</string>
-    <string name="load_kml_dialog_title">Načíst KML soubor</string>
-    <string name="load_kml_file">Načíst</string>
-    <string name="show_meteors_pref">Meteorické roje</string>
-    <string name="quadrantids" translation_description="Meteor Shower">Kvadrantidy</string>
-    <string name="compass_calibration_activity_heading_compass">Kompas</string>
-    <string name="diagnostics_activity_magnetic_correction">Magnetická korekce</string>
-    <string name="menu_diagnostics">Diagnostika</string>
-    <string name="permission_disabled">Povolení odmítnuto</string>
-    <string name="sensor_absent">Senzor chybí</string>
-    <string name="enable_analytics">Odeslat statistiky o používání</string>
-    <string name="diagnostics_activity_rotation_matrix">Rotační matrice</string>
-    <string name="dialog_ok_button">OK</string>
-    <string name="disconnected">Odpojeno</string>
-    <string name="aquariids" translation_description="Meteor Shower">Éta Aquaridy</string>
-    <string name="warning_dialog_title">Špatné správy</string>
-    <string name="diagnostics_activity_universal_time">Univerzální čas</string>
-    <string name="location_rationale_title">Proč potřebujeme vaši lokaci?</string>
-    <string name="diagnostics_activity_rotation_vector">Rotace</string>
-    <string name="diagnostics_activity_location_and_time_heading">Lokace a čas</string>
-    <string name="e_lyrae" translation_description="Name of the star ε Lyrae">Epsylon Lyrae</string>
-    <string name="perseids" translation_description="Meteor Shower">Perseidy</string>
-    <string name="sensor_accuracy_unreliable">Přesnost: Nespolehlivá</string>
-    <string name="rigil_kentaurus_a" translation_description="Name of the Star Rigil Kentaurus A">Rigil Kentaurus A</string>
-    <string name="no_sensor_warning">Vašemu zařízení mužou chybět orientační senzory - automatický mód nemusí fungovat</string>
-    <string name="leonids" translation_description="Meteor Shower">Leonidy</string>
-    <string name="sensor_accuracy_medium">Přesnost: Střední</string>
+    
+    <string name="kml_load_error">Nepodarilo sa načítať KML súbor</string>
+    <string name="load_kml_dialog_title">Načítať KML súbor</string>
+    <string name="load_kml_file">Načítať</string>
+    <string name="enable_analytics">Posielať štatistiky používania</string>
+    <string name="enable_analytics_desc">Vylepšite Sky Map odosielaním anonymných údajov do služby Google Analytics</string>
+
+    <string name="no_sensor_warning">Vášmu zariadeniu môžu chýbať senzory orientácie – automatický režim nemusí fungovať</string>
+    <string name="warning_dialog_title">Zlé správy!</string>
     <string name="missing_sensor_dialog_text">\n
-            Bohužel vaše zařízení nemusí mít některý z senzorů které Sky Map potřebuje \n\n
-
-            K zobrazení nebezkých oběktů v orientaci vašeho telefonu Sky Map potřebuje vestavěný kompas a akcelerometr.
-            Vaše zařízení však reportuje že nekterý chybý. Dobrou správou však je že některé zařízení to reportují špatně (některe Moto E modely)
-            a v skutečnosti tyto senzory mají.
-
-            Pokud vaše zařízení opravdu nemá tyto senzory automatický mód nebude fungovat.
-            Avšak Sky Map lze stále používat v manuálním módu tím že budete mapu posouvat otačet a zoomovat prsty.
-        </string>
-    <string name="compass_calibration_activity_do_not_show_this_again">Toto již nezobrazovat</string>
-    <string name="diagnostics_activity_location">Lokace (šíkař, délka)</string>
-    <string name="diagnostics_activity_sensors_heading">Senzory</string>
-    <string name="orionids" translation_description="Meteor Shower">Orionidy</string>
-    <string name="diagnostics_activity_sky_map_version">Verze Sky Map</string>
-    <string name="whats_new_dialog_title">Co je nového</string>
-    <string name="diagnostics_activity_light_level">Úroveň světla</string>
-    <string name="disabled">Zakázat</string>
-    <string name="enabled">Povolit</string>
-    <string name="location_rationale_text">Hvězdy které lze vidět jsou závislé na vaši lokaci. Bez lokace nelze zobrazit přesnou mapu. Pokud nechcete uvádět přesnou lokaci lze ji zadat ručně v nastavení.  Stačí napsat nejbližší město.</string>
-    <string name="puppidvelids" translation_description="Meteor Shower">Pí Puppidy</string>
-    <string name="menu_calibrate">Kalibrovat</string>
-    <string name="enable_analytics_desc">Pomozte zlepšit Sky Map odesíláním anonimních dat do Google Analytics</string>
-    <string name="cell_network">"mobilní sít"</string>
-    <string name="diagnostics_activity_general_heading">Obecné</string>
-    <string name="diagnostics_activity_android_version">Verze Androidu</string>
+        Vaše zariadenie, žiaľ, nemusí mať jeden zo senzorov, ktoré Sky Map potrebuje.\n\n
+        Ak chcete zobraziť oblohu v smere, ktorým ukazuje váš telefón, Sky Map potrebuje vstavaný kompas aj akcelerometer. 
+        Vaše zariadenie hlási, že mu chýba jeden z nich. Dobrou správou je, že niektoré zariadenia (napríklad niektoré telefóny Moto E) 
+        nepravdivo tvrdia, že kompas nemajú, ale v skutočnosti ho majú.\n\n
+        Ak vášmu zariadeniu skutočne chýba snímač, automatický režim nebude fungovať. Stále však môžete na tomto zariadení používať Sky Map 
+        v manuálnom režime, kde mapu presúvate, otáčate a zväčšujete prstami.</string>
+    <string name="do_not_show_again">Túto správu viac nezobrazovať</string>
     <string name="title_activity_diagnostic">Diagnostika</string>
-    <string name="sensor_reverse_preference_summary">Oprava pro telefony s převráceným senzorem - vyžaduje restart</string>
-    <string name="rigil_kent" translation_description="Name of the star Rigil Kent">Rigil Kent</string>
-    <string name="hdf" translation_description="hubble object">Hubbleovo hluboké pole</string>
-    <string name="sensor_accuracy_nocontact">Přesnost: Bez kontaktu</string>
-    <string name="disable_gyro_preference_summary">Ne všechny zařízení mají gyroskop - pokud ho vaše zařízení má tak dosáhnete lepších vísledků když je povolen a toto políčko odškrtnuté. Na druhou stranu poku gyroskop vaše zařízení nemá pak Sky nebude fungovat pokud toto políčko odšktnete.</string>
-    <string name="disable_gyro_preference_title">Zakázat gyroskop</string>
-    <string name="diagnostics_activity_connection">Připojení</string>
+    <string name="location_rationale_title">Prečo sa pýtame na vašu polohu?</string>
+    <string name="location_rationale_text">Hviezdy, ktoré môžete vidieť, závisia od toho, kde sa na Zemi nachádzate. Bez vašej polohy vám nemôžeme zobraziť presnú mapu. Ak nechcete, aby nám telefón poskytoval vašu polohu, môžete ju zadať manuálne v nastaveniach. Stačí zadať najbližšie mesto.</string>
+    <string name="play_services_error">Upozornenie: chyba služieb Google Play - Automatické určovanie polohy nemusí fungovať</string>
+    <string name="sensor_absent">Chýba</string>
+    <string name="sensor_accuracy_unknown">Presnosť: Neznáma</string>
+    <string name="sensor_accuracy_unreliable">Presnosť: Nespoľahlivá</string>
+    <string name="sensor_accuracy_low">Presnosť: Nízka</string>
+    <string name="sensor_accuracy_medium">Presnosť: Stredná</string>
+    <string name="sensor_accuracy_high">Presnosť: Vysoká</string>
+    <string name="sensor_accuracy_nocontact">Presnosť: Bez kontaktu</string>
+    <string name="diagnostics_activity_general_heading">Všeobecné</string>
+    <string name="diagnostics_activity_phone">Zariadenie</string>
+    <string name="diagnostics_activity_android_version">Verzia Androidu</string>
+    <string name="diagnostics_activity_sky_map_version">Verzia Sky Map</string>
+    <string name="diagnostics_activity_sensors_heading">Senzory</string>
     <string name="diagnostics_activity_compass">Kompas</string>
-    <string name="play_services_error">Varování: Chyba Google Play služeb - Automatická lokace nemusí fungovat</string>
-    <string name="no_gps">Bez GPS</string>
-    <string name="sensor_accuracy_high">Přesnost: Vysoká</string>
-    <string name="compass_calibration_activity_warning">Je nutné zkalibrovat váš kompas</string>
-    <string name="alpha_centauri" translation_description="Name of the star Alpha Centauri">Alfa Centauri</string>
-    <string name="diagnostics_activity_phone">Zařízení</string>
     <string name="diagnostics_activity_accelerometer">Akcelerometer</string>
-    <string name="lyrids" translation_description="Meteor Shower">Lyridy</string>
-    <string name="rotate_horizon_preference_title">Otočit horizont</string>
-    <string name="deltaaquariids" translation_description="Meteor Shower">Jižní Delta Aquaridy</string>
-    <string name="do_not_show_again">Tuto zprávu již nezobrazovat</string>
+    <string name="diagnostics_activity_rotation_vector">Otočenie</string>
     <string name="diagnostics_activity_gyroscope">Gyroskop</string>
-    <string name="diagnostics_activity_network_heading">Sítě</string>
-    <string name="diagnostics_activity_local_datetime">Místní čas</string>
-    <string name="rotate_horizon_preference_summary">Otočit horizont o 90 stupňů (pro zařízení s vynuceným zobrazení na šírku, např. chytré brýle)</string>
-    <string name="sensor_reverse_preference_title">Obrátit magnetické pole v ose Z</string>
-    <string name="ursids" translation_description="Meteor Shower">Ursidy</string>
-    <string name="geminids" translation_description="Meteor Shower">Geminidy</string>
-    <string name="wifi">" (wifi)"</string>
-    <string name="sensor_accuracy_low">Přesnost: Nízká</string>
+    <string name="diagnostics_activity_light_level">Úroveň svetla</string>
+    <string name="diagnostics_activity_location_and_time_heading">Poloha a čas</string>
     <string name="diagnostics_activity_gps">GPS</string>
-    <string name="diagnostics_activity_pointing_ra_dec">Ukazující/ilustrační snapshot</string>
-    <string name="connected">Připojeno</string>
-    <string name="sensor_accuracy_unknown">Přesnost: Neznámá</string>
+    <string name="diagnostics_activity_location">Poloha (šírka, dĺžka)</string>
+    <string name="diagnostics_activity_pointing_ra_dec">Zobrazená snímka</string>
+    <string name="diagnostics_activity_magnetic_correction">Magnetická korekcia</string>
+    <string name="diagnostics_activity_local_datetime">Miestny čas</string>
+    <string name="diagnostics_activity_universal_time">Univerzálny čas</string>
+    <string name="diagnostics_activity_network_heading">Sieť</string>
+    <string name="diagnostics_activity_connection">Pripojenie</string>
+    <string name="diagnostics_activity_rotation_matrix">Rotačná matica</string>
+    <string name="enabled">Povolené</string>
+    <string name="disabled">Zakázané</string>
+    <string name="permission_disabled">Povolenie zakázané</string>
+    <string name="no_gps">Bez GPS</string>
+    <string name="connected">Pripojené</string>
+    <string name="disconnected">Odpojené</string>
+    <string name="wifi">" (wifi)"</string>
+    <string name="cell_network">" (mobilná sieť)"</string>
+    <string name="menu_calibrate">Kalibrovať</string>
+    <string name="compass_calibration_activity_heading_compass">Kompas -</string>
+    <string name="compass_calibration_activity_do_not_show_this_again">Toto znovu nezobrazovať</string>
+    <string name="compass_calibration_activity_warning">Váš kompas bude možno potrebné skalibrovať</string>
+    <string name="compass_calib_what_to_do"
+        translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL">Váš telefón hlási aplikácii Sky Map, že jeho interný kompas nie je skalibrovaný.
+    Toto nie je problém s aplikáciou Sky Map, ale môžeme vám pomôcť to vyriešiť. Ak chcete skalibrovať kompas, skúste pohybovať telefónom v tvare osmičky tak, ako je to ukázané v tomto videu %s, kým sa nezobrazí presnosť \'vysoká\'.</string>
+    <string name="compass_calib_what_to_do_user"
+        transation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL">Presnosť kompasu vášho telefónu je zobrazená vyššie.
+    Ak nie je \'vysoká\' potom je potrebné kompas skalibrovať. Toto nie je problém s apliáciou Sky Map, ale vlastnosť vášho telefónu. 
+    a property of your phone. Ak chcete skalibrovať kompas, skúste pohybovať telefónom v tvare osmičky tak, ako je to ukázané v tomto videu %s.</string>
+    <string name="sensor_reverse_preference_title">Obrátiť magnetické pole v ose Z</string>
+    <string name="sensor_reverse_preference_summary">Oprava pre telefóny s nesprávne implementovanými senzormi – vyžaduje reštart</string>
+    <string name="whats_new_dialog_title">Čo je nové</string>
+    <string name="disable_gyro_preference_title">Zakázať gyroskop</string>
+    <string name="disable_gyro_preference_summary">Nie všetky zariadenia majú gyroskop – ak ho to vaše má, potom dosiahnete lepšie výsledky, ak bude povolený a toto políčko nebude začiarknuté. Na druhej strane, ak vaše zariadenie nemá gyroskop, potom Sky Map pravdepodobne nebude fungovať, ak zrušíte začiarknutie tohto políčka.</string>
+    <string name="rotate_horizon_preference_title">Zobraziť smer</string>
+    <string name="rotate_horizon_preference_summary">Otočte horizont o 90 stupňov (pre zariadenia s vynúteným zobrazením na šírku) alebo použite Režim ukazovateľa na obrazovke, aby ste ukázali, na čo ukazuje horná časť telefónu (pozri Pomoc).</string> 
 </resources>
