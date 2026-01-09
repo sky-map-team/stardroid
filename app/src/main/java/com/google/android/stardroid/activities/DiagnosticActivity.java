@@ -21,6 +21,7 @@ import android.widget.TextView;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.StardroidApplication;
 import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
+import com.google.android.stardroid.activities.util.EdgeToEdgeFixer;
 import com.google.android.stardroid.activities.util.SensorAccuracyDecoder;
 import com.google.android.stardroid.control.AstronomerModel;
 import com.google.android.stardroid.control.LocationController;
@@ -69,11 +70,16 @@ public class DiagnosticActivity extends InjectableActivity implements SensorEven
       getApplicationComponent()).diagnosticActivityModule(new DiagnosticActivityModule(this))
           .build().inject(this);
     setContentView(R.layout.activity_diagnostic);
+    EdgeToEdgeFixer.applyEdgeToEdgeFixForActionBarActivity(this);
   }
 
   @Override
   public void onStart() {
     super.onStart();
+
+    // Apply edge-to-edge fix
+    android.view.View rootView = findViewById(android.R.id.content);
+    EdgeToEdgeFixer.applyTopPaddingForActionBar(this, rootView);
 
     setText(R.id.diagnose_phone_txt, Build.MODEL + " (" + Build.HARDWARE + ") " +
         Locale.getDefault().getLanguage());

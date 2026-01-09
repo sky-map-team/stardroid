@@ -30,6 +30,7 @@ import androidx.preference.PreferenceManager;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.util.ActivityLightLevelChanger;
 import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
+import com.google.android.stardroid.activities.util.EdgeToEdgeFixer;
 import com.google.android.stardroid.gallery.GalleryFactory;
 import com.google.android.stardroid.gallery.GalleryImage;
 import com.google.android.stardroid.util.Analytics;
@@ -61,6 +62,7 @@ public class ImageDisplayActivity extends InjectableActivity {
             getApplicationComponent()).imageDisplayActivityModule(new ImageDisplayActivityModule(this))
         .build().inject(this);
     setContentView(R.layout.imagedisplay);
+    EdgeToEdgeFixer.applyEdgeToEdgeFixForActionBarActivity(this);
     Intent intent = getIntent();
     Log.d(TAG, intent.toString());
     int position  = intent.getIntExtra(ImageGalleryActivity.IMAGE_ID, ERROR_MAGIC_NUMBER);
@@ -85,6 +87,8 @@ public class ImageDisplayActivity extends InjectableActivity {
   @Override
   public void onStart() {
     super.onStart();
+    View rootView = findViewById(android.R.id.content);
+    EdgeToEdgeFixer.applyTopPaddingForActionBar(this, rootView);
   }
 
   @Override
