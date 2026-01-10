@@ -70,6 +70,9 @@ Connected device/emulator required tests:
 
     ./gradlew app:connectedAndroidTest
 
+## Deploying
+Plug your phone in and run the `deploy.sh` script.  Pass the `-d` flag if you built the debug version.  `undeploy.sh` does the reverse.
+
 # Code and Language Contributions
 Yes, we know that Sky Map's code and UX is very dated. It needs a big overhaul.
 
