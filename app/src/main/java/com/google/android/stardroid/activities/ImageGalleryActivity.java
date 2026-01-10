@@ -31,6 +31,7 @@ import androidx.preference.PreferenceManager;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.util.ActivityLightLevelChanger;
 import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
+import com.google.android.stardroid.activities.util.EdgeToEdgeFixer;
 import com.google.android.stardroid.gallery.GalleryFactory;
 import com.google.android.stardroid.gallery.GalleryImage;
 import com.google.android.stardroid.util.Analytics;
@@ -98,6 +99,7 @@ public class ImageGalleryActivity extends InjectableActivity {
             getApplicationComponent()).imageGalleryActivityModule(new ImageGalleryActivityModule(this))
         .build().inject(this);
     setContentView(R.layout.imagegallery);
+    EdgeToEdgeFixer.applyEdgeToEdgeFixForActionBarActivity(this);
     this.galleryImages = GalleryFactory.getGallery(getResources()).getGalleryImages();
     addImagesToGallery();
   }
@@ -105,6 +107,8 @@ public class ImageGalleryActivity extends InjectableActivity {
   @Override
   public void onStart() {
     super.onStart();
+    View rootView = findViewById(android.R.id.content);
+    EdgeToEdgeFixer.applyTopPaddingForActionBar(this, rootView);
   }
 
   @Override

@@ -26,6 +26,7 @@ import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.stardroid.ApplicationComponent;
@@ -34,6 +35,7 @@ import com.google.android.stardroid.R;
 import com.google.android.stardroid.StardroidApplication;
 import com.google.android.stardroid.activities.util.ActivityLightLevelChanger;
 import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
+import com.google.android.stardroid.activities.util.EdgeToEdgeFixer;
 import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.MiscUtil;
 
@@ -49,6 +51,12 @@ public class EditSettingsActivity extends PreferenceActivity {
   private MyPreferenceFragment preferenceFragment;
 
   public static class MyPreferenceFragment extends PreferenceFragment {
+    private EditSettingsActivity parentActivity;
+
+    public void setParentActivity(EditSettingsActivity activity) {
+      this.parentActivity = activity;
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
       super.onCreate(savedInstanceState);
@@ -77,9 +85,12 @@ public class EditSettingsActivity extends PreferenceActivity {
 
     geocoder = new Geocoder(this);
     preferenceFragment = new MyPreferenceFragment();
+    preferenceFragment.setParentActivity(this);
     getFragmentManager().beginTransaction().replace(android.R.id.content,
         preferenceFragment).commit();
-    
+
+    // Apply edge-to-edge fix for Android 15+
+    EdgeToEdgeFixer.applyEdgeToEdgeFixForActionBarActivity(this);
   }
 
   private ApplicationComponent getApplicationComponent() {
@@ -89,6 +100,9 @@ public class EditSettingsActivity extends PreferenceActivity {
   @Override
   public void onStart() {
     super.onStart();
+    View rootView = findViewById(android.R.id.content);
+    EdgeToEdgeFixer.applyTopPaddingForActionBar(this, rootView);
+
     final Preference locationPreference = preferenceFragment.findPreference(LOCATION);
     Preference latitudePreference = preferenceFragment.findPreference(LATITUDE);
     Preference longitudePreference = preferenceFragment.findPreference(LONGITUDE);

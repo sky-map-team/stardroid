@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
+import com.google.android.stardroid.activities.util.EdgeToEdgeFixer;
 import com.google.android.stardroid.activities.util.SensorAccuracyDecoder;
 import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.MiscUtil;
@@ -46,6 +47,7 @@ public class CompassCalibrationActivity extends InjectableActivity implements Se
         .compassCalibrationModule(new CompassCalibrationModule(this)).build().inject(this);
 
     setContentView(R.layout.activity_compass_calibration);
+    EdgeToEdgeFixer.applyEdgeToEdgeFixForActionBarActivity(this);
     WebView web = findViewById(R.id.compass_calib_activity_webview);
     web.loadUrl("file:///android_asset/html/animated_gif_wrapper.html");
 
@@ -128,5 +130,7 @@ public class CompassCalibrationActivity extends InjectableActivity implements Se
   @Override
   public void onStart() {
     super.onStart();
+    View rootView = findViewById(android.R.id.content);
+    EdgeToEdgeFixer.applyTopPaddingForActionBar(this, rootView);
   }
 }
