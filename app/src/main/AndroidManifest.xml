@@ -77,19 +77,15 @@
                 android:resource="@xml/searchable"/>
         </activity>
         <activity
-            android:name=".activities.EditSettingsActivity"
-            android:windowOptOutEdgeToEdgeEnforcement="true"/>
+            android:name=".activities.EditSettingsActivity"/>
         <activity
-            android:name=".activities.ImageGalleryActivity"
-            android:windowOptOutEdgeToEdgeEnforcement="true"/>
+            android:name=".activities.ImageGalleryActivity"/>
         <activity
             android:name=".activities.ImageDisplayActivity"
-            android:screenOrientation="portrait"
-            android:windowOptOutEdgeToEdgeEnforcement="true"/>
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".activities.DiagnosticActivity"
-            android:label="@string/title_activity_diagnostic"
-            android:windowOptOutEdgeToEdgeEnforcement="true">
+            android:label="@string/title_activity_diagnostic">
         </activity>
         <!-- Provides search suggestions. -->
         <provider
@@ -99,8 +95,7 @@
             android:syncable="false"/>
 
         <activity android:name=".activities.CompassCalibrationActivity"
-                  android:launchMode="singleTop"
-                  android:windowOptOutEdgeToEdgeEnforcement="true">
+                  android:launchMode="singleTop">
         </activity>
     </application>
 
