@@ -93,7 +93,8 @@ class ObjectInfoRegistry @Inject constructor(
 
     private fun loadFromAssets(): Map<String, ObjectInfoEntry> {
         return try {
-            val jsonString = assetManager.open(ASSET_FILE_NAME).bufferedReader().use { it.readText() }
+            val inputStream = assetManager.open(ASSET_FILE_NAME)
+            val jsonString = inputStream.bufferedReader().use { it.readText() }
             parseJson(jsonString)
         } catch (e: Exception) {
             Log.e(TAG, "Failed to load object info from assets", e)

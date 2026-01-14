@@ -82,7 +82,7 @@ class CelestialHitTester @Inject constructor(
 
             // Calculate angular distance between tap and object
             val angularDistance = angularDistanceDegrees(tapDirection, objectDirection)
-            Log.d(TAG, "Object $objectId ($searchName): angular distance = $angularDistance degrees")
+            Log.d(TAG, "Object $objectId ($searchName): distance = $angularDistance deg")
 
             if (angularDistance < bestAngularDistance) {
                 bestAngularDistance = angularDistance
@@ -91,7 +91,7 @@ class CelestialHitTester @Inject constructor(
         }
 
         if (bestMatch != null) {
-            Log.d(TAG, "Found object ${bestMatch.id} at angular distance $bestAngularDistance degrees")
+            Log.d(TAG, "Found object ${bestMatch.id} at $bestAngularDistance deg")
         } else {
             Log.d(TAG, "No object found near tap location")
         }
