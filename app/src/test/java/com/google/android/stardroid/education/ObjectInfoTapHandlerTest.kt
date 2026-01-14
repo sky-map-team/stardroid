@@ -49,7 +49,11 @@ class ObjectInfoTapHandlerTest {
         id = "mars",
         name = "Mars",
         description = "The Red Planet",
-        funFact = "Has Olympus Mons"
+        funFact = "Has Olympus Mons",
+        type = ObjectType.PLANET,
+        distance = "228M km",
+        size = "6,779 km",
+        mass = "6.39 × 10²³ kg"
     )
 
     @Before

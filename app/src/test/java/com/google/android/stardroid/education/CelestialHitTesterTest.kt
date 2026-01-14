@@ -51,8 +51,14 @@ class CelestialHitTesterTest {
 
     private lateinit var hitTester: CelestialHitTester
 
-    private val sunInfo = ObjectInfo("sun", "Sun", "Our star", "Very hot")
-    private val marsInfo = ObjectInfo("mars", "Mars", "Red planet", "Has volcanoes")
+    private val sunInfo = ObjectInfo(
+        "sun", "Sun", "Our star", "Very hot", ObjectType.STAR,
+        "150M km", "1.4M km", "1.989 × 10³⁰ kg", "G2V", "-26.74"
+    )
+    private val marsInfo = ObjectInfo(
+        "mars", "Mars", "Red planet", "Has volcanoes", ObjectType.PLANET,
+        "228M km", "6,779 km", "6.39 × 10²³ kg"
+    )
 
     @Before
     fun setUp() {

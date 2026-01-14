@@ -55,11 +55,22 @@ class ObjectInfoRegistry @Inject constructor(
             return null
         }
 
+        // Get optional scientific data strings
+        val distance = getOptionalString(entry.distanceKey)
+        val size = getOptionalString(entry.sizeKey)
+        val mass = getOptionalString(entry.massKey)
+
         return ObjectInfo(
             id = objectId,
             name = resources.getString(nameResId),
             description = resources.getString(descResId),
-            funFact = resources.getString(funFactResId)
+            funFact = resources.getString(funFactResId),
+            type = parseObjectType(entry.type),
+            distance = distance,
+            size = size,
+            mass = mass,
+            spectralClass = entry.spectralClass,
+            magnitude = entry.magnitude
         )
     }
 
@@ -91,6 +102,28 @@ class ObjectInfoRegistry @Inject constructor(
         return resources.getString(nameResId)
     }
 
+    private fun getOptionalString(key: String?): String? {
+        if (key == null) return null
+        val resources = context.resources
+        val packageName = context.packageName
+        val resId = resources.getIdentifier(key, "string", packageName)
+        return if (resId != 0) resources.getString(resId) else null
+    }
+
+    private fun parseObjectType(typeString: String): ObjectType {
+        return when (typeString.lowercase()) {
+            "planet" -> ObjectType.PLANET
+            "star" -> ObjectType.STAR
+            "moon" -> ObjectType.MOON
+            "dwarf_planet" -> ObjectType.DWARF_PLANET
+            "nebula" -> ObjectType.NEBULA
+            "galaxy" -> ObjectType.GALAXY
+            "cluster" -> ObjectType.CLUSTER
+            "constellation" -> ObjectType.CONSTELLATION
+            else -> ObjectType.STAR
+        }
+    }
+
     private fun loadFromAssets(): Map<String, ObjectInfoEntry> {
         return try {
             val inputStream = assetManager.open(ASSET_FILE_NAME)
@@ -112,7 +145,13 @@ class ObjectInfoRegistry @Inject constructor(
             result[objectId.lowercase()] = ObjectInfoEntry(
                 nameKey = obj.getString("nameKey"),
                 descriptionKey = obj.getString("descriptionKey"),
-                funFactKey = obj.getString("funFactKey")
+                funFactKey = obj.getString("funFactKey"),
+                type = obj.optString("type", "star"),
+                distanceKey = obj.optString("distanceKey", null),
+                sizeKey = obj.optString("sizeKey", null),
+                massKey = obj.optString("massKey", null),
+                spectralClass = obj.optString("spectralClass", null),
+                magnitude = obj.optString("magnitude", null)
             )
         }
 

@@ -226,6 +226,11 @@
     <string name="show_object_info_pref_title">Mostrar info al tocar</string>
     <string name="show_object_info_pref_summary">Toca objetos celestes en modo manual para aprender sobre ellos</string>
     <string name="object_info_funfact_label">Dato curioso:</string>
+    <string name="object_info_distance_label">Distancia:</string>
+    <string name="object_info_size_label">Tamaño:</string>
+    <string name="object_info_mass_label">Masa:</string>
+    <string name="object_info_spectral_label">Espectral:</string>
+    <string name="object_info_magnitude_label">Magnitud:</string>
 
     <!-- Solar System Educational Content -->
     <string name="object_info_sun_description">El Sol es la estrella en el centro de nuestro sistema solar. Proporciona la luz y el calor que hacen posible la vida en la Tierra.</string>
@@ -291,4 +296,228 @@
 
     <string name="object_info_antares_description">Antares es una estrella supergigante roja, el corazón de Escorpio. Su nombre significa \"rival de Marte\" debido a su color rojo.</string>
     <string name="object_info_antares_funfact">Antares es tan grande que si se colocara en nuestro sistema solar, ¡su superficie se extendería más allá de la órbita de Marte!</string>
+
+    <!-- Scientific Data - Solar System -->
+    <string name="object_info_sun_distance">150 millones de km</string>
+    <string name="object_info_sun_size">1,4 millones de km de diámetro</string>
+    <string name="object_info_sun_mass">1,989 × 10³⁰ kg</string>
+    <string name="object_info_moon_distance">384.400 km</string>
+    <string name="object_info_moon_size">3.474 km de diámetro</string>
+    <string name="object_info_moon_mass">7,35 × 10²² kg</string>
+    <string name="object_info_mercury_distance">77 millones de km (promedio)</string>
+    <string name="object_info_mercury_size">4.880 km de diámetro</string>
+    <string name="object_info_mercury_mass">3,3 × 10²³ kg</string>
+    <string name="object_info_venus_distance">108 millones de km (promedio)</string>
+    <string name="object_info_venus_size">12.104 km de diámetro</string>
+    <string name="object_info_venus_mass">4,87 × 10²⁴ kg</string>
+    <string name="object_info_mars_distance">228 millones de km (promedio)</string>
+    <string name="object_info_mars_size">6.779 km de diámetro</string>
+    <string name="object_info_mars_mass">6,39 × 10²³ kg</string>
+    <string name="object_info_jupiter_distance">778 millones de km (promedio)</string>
+    <string name="object_info_jupiter_size">139.820 km de diámetro</string>
+    <string name="object_info_jupiter_mass">1,898 × 10²⁷ kg</string>
+    <string name="object_info_saturn_distance">1,4 mil millones de km (promedio)</string>
+    <string name="object_info_saturn_size">116.460 km de diámetro</string>
+    <string name="object_info_saturn_mass">5,68 × 10²⁶ kg</string>
+    <string name="object_info_uranus_distance">2,9 mil millones de km (promedio)</string>
+    <string name="object_info_uranus_size">50.724 km de diámetro</string>
+    <string name="object_info_uranus_mass">8,68 × 10²⁵ kg</string>
+    <string name="object_info_neptune_distance">4,5 mil millones de km (promedio)</string>
+    <string name="object_info_neptune_size">49.244 km de diámetro</string>
+    <string name="object_info_neptune_mass">1,024 × 10²⁶ kg</string>
+    <string name="object_info_pluto_distance">5,9 mil millones de km (promedio)</string>
+    <string name="object_info_pluto_size">2.377 km de diámetro</string>
+    <string name="object_info_pluto_mass">1,3 × 10²² kg</string>
+
+    <!-- Scientific Data - Stars -->
+    <string name="object_info_sirius_distance">8,6 años luz</string>
+    <string name="object_info_sirius_size">1,7 radios solares</string>
+    <string name="object_info_sirius_mass">2,1 masas solares</string>
+    <string name="object_info_vega_distance">25 años luz</string>
+    <string name="object_info_vega_size">2,4 radios solares</string>
+    <string name="object_info_vega_mass">2,1 masas solares</string>
+    <string name="object_info_betelgeuse_distance">~700 años luz</string>
+    <string name="object_info_betelgeuse_size">~900 radios solares</string>
+    <string name="object_info_betelgeuse_mass">~12 masas solares</string>
+    <string name="object_info_rigel_distance">~860 años luz</string>
+    <string name="object_info_rigel_size">~79 radios solares</string>
+    <string name="object_info_rigel_mass">~23 masas solares</string>
+    <string name="object_info_procyon_distance">11,4 años luz</string>
+    <string name="object_info_procyon_size">2,0 radios solares</string>
+    <string name="object_info_procyon_mass">1,5 masas solares</string>
+    <string name="object_info_polaris_distance">~430 años luz</string>
+    <string name="object_info_polaris_size">~44 radios solares</string>
+    <string name="object_info_polaris_mass">~5,4 masas solares</string>
+    <string name="object_info_deneb_distance">~2.600 años luz</string>
+    <string name="object_info_deneb_size">~200 radios solares</string>
+    <string name="object_info_deneb_mass">~19 masas solares</string>
+    <string name="object_info_arcturus_distance">37 años luz</string>
+    <string name="object_info_arcturus_size">26 radios solares</string>
+    <string name="object_info_arcturus_mass">1,1 masas solares</string>
+    <string name="object_info_canopus_distance">310 años luz</string>
+    <string name="object_info_canopus_size">72 radios solares</string>
+    <string name="object_info_canopus_mass">8,0 masas solares</string>
+    <string name="object_info_aldebaran_distance">65 años luz</string>
+    <string name="object_info_aldebaran_size">44 radios solares</string>
+    <string name="object_info_aldebaran_mass">1,2 masas solares</string>
+    <string name="object_info_antares_distance">~550 años luz</string>
+    <string name="object_info_antares_size">~680 radios solares</string>
+    <string name="object_info_antares_mass">~12 masas solares</string>
+
+    <!-- Additional Bright Stars -->
+    <string name="object_info_capella_description">Capella es la estrella más brillante de Auriga y la sexta más brillante del cielo nocturno. En realidad es un sistema de cuatro estrellas.</string>
+    <string name="object_info_capella_funfact">Capella significa \"cabrita\" en latín. ¡Las culturas antiguas la veían como una cabra cargada en el hombro del Cochero!</string>
+    <string name="object_info_capella_distance">43 años luz</string>
+    <string name="object_info_capella_size">12 radios solares</string>
+    <string name="object_info_capella_mass">2,6 masas solares</string>
+
+    <string name="object_info_altair_description">Altair es la estrella más brillante del Águila y una de las más cercanas visibles a simple vista.</string>
+    <string name="object_info_altair_funfact">¡Altair gira tan rápido (una vez cada 9 horas) que está visiblemente achatada en los polos - es 14% más ancha que alta!</string>
+    <string name="object_info_altair_distance">17 años luz</string>
+    <string name="object_info_altair_size">1,8 radios solares</string>
+    <string name="object_info_altair_mass">1,8 masas solares</string>
+
+    <string name="object_info_spica_description">Spica es la estrella más brillante de Virgo y una de las 20 más brillantes del cielo nocturno. Es un sistema binario.</string>
+    <string name="object_info_spica_funfact">¡Spica está tan cerca de la eclíptica que puede ser ocultada por la Luna. El nombre significa \"espiga de trigo\" en latín!</string>
+    <string name="object_info_spica_distance">250 años luz</string>
+    <string name="object_info_spica_size">7,5 radios solares</string>
+    <string name="object_info_spica_mass">11 masas solares</string>
+
+    <string name="object_info_regulus_description">Régulo es la estrella más brillante de Leo y representa el corazón del león. Es un sistema estelar múltiple.</string>
+    <string name="object_info_regulus_funfact">¡Régulo gira tan rápido que casi se está desgarrando! Completa una rotación en solo 16 horas.</string>
+    <string name="object_info_regulus_distance">79 años luz</string>
+    <string name="object_info_regulus_size">4,4 radios solares</string>
+    <string name="object_info_regulus_mass">3,8 masas solares</string>
+
+    <string name="object_info_pollux_description">Pólux es la más brillante de las estrellas gemelas en Géminis. A diferencia de Cástor, es una sola gigante naranja.</string>
+    <string name="object_info_pollux_funfact">¡Pólux tiene un exoplaneta confirmado! Pollux b es un gigante gaseoso con al menos el doble de la masa de Júpiter.</string>
+    <string name="object_info_pollux_distance">34 años luz</string>
+    <string name="object_info_pollux_size">9,1 radios solares</string>
+    <string name="object_info_pollux_mass">1,9 masas solares</string>
+
+    <string name="object_info_fomalhaut_description">Fomalhaut es la estrella más brillante de Pez Austral y una de las más brillantes del cielo otoñal.</string>
+    <string name="object_info_fomalhaut_funfact">¡Fomalhaut tiene un espectacular disco de escombros, y uno de los primeros exoplanetas fotografiados orbita esta estrella!</string>
+    <string name="object_info_fomalhaut_distance">25 años luz</string>
+    <string name="object_info_fomalhaut_size">1,8 radios solares</string>
+    <string name="object_info_fomalhaut_mass">1,9 masas solares</string>
+
+    <!-- Messier Objects -->
+    <string name="object_info_m1_description">La Nebulosa del Cangrejo es un remanente de supernova en Tauro, resultado de una explosión estelar registrada por astrónomos chinos en 1054 d.C.</string>
+    <string name="object_info_m1_funfact">¡La Nebulosa del Cangrejo contiene un púlsar girando 30 veces por segundo, el núcleo colapsado de la estrella explosionada!</string>
+    <string name="object_info_m1_distance">6.500 años luz</string>
+    <string name="object_info_m1_size">11 años luz de diámetro</string>
+
+    <string name="object_info_m13_description">M13 es un espectacular cúmulo globular en Hércules que contiene unas 300.000 estrellas, uno de los más brillantes del cielo norte.</string>
+    <string name="object_info_m13_funfact">¡En 1974, el mensaje de Arecibo fue enviado hacia M13 como intento de contactar inteligencia extraterrestre!</string>
+    <string name="object_info_m13_distance">22.200 años luz</string>
+    <string name="object_info_m13_size">145 años luz de diámetro</string>
+
+    <string name="object_info_m31_description">La Galaxia de Andrómeda es la gran galaxia espiral más cercana a la Vía Láctea y el objeto más lejano visible a simple vista.</string>
+    <string name="object_info_m31_funfact">¡La Galaxia de Andrómeda se acerca a 110 km/s y colisionará con la Vía Láctea en unos 4.500 millones de años!</string>
+    <string name="object_info_m31_distance">2,5 millones de años luz</string>
+    <string name="object_info_m31_size">220.000 años luz de diámetro</string>
+    <string name="object_info_m31_mass">1,5 billones de masas solares</string>
+
+    <string name="object_info_m42_description">La Nebulosa de Orión es una nebulosa de emisión difusa visible a simple vista, uno de los objetos más fotografiados del cielo nocturno.</string>
+    <string name="object_info_m42_funfact">¡La Nebulosa de Orión es un vivero estelar donde nuevas estrellas están naciendo ahora mismo. Más de 700 estrellas se están formando dentro!</string>
+    <string name="object_info_m42_distance">1.344 años luz</string>
+    <string name="object_info_m42_size">24 años luz de diámetro</string>
+
+    <string name="object_info_m45_description">Las Pléyades son un cúmulo estelar abierto en Tauro, también conocido como las Siete Hermanas, visible a simple vista desde la antigüedad.</string>
+    <string name="object_info_m45_funfact">¡Las Pléyades están entre los cúmulos estelares más cercanos a la Tierra y han sido reconocidas por prácticamente todas las civilizaciones antiguas!</string>
+    <string name="object_info_m45_distance">444 años luz</string>
+    <string name="object_info_m45_size">17 años luz de diámetro</string>
+
+    <string name="object_info_m51_description">La Galaxia del Remolino es una galaxia espiral en Canes Venatici, famosa por sus impresionantes brazos espirales y galaxia compañera.</string>
+    <string name="object_info_m51_funfact">¡El Remolino fue la primera galaxia reconocida por tener estructura espiral, descubierta por Lord Rosse en 1845!</string>
+    <string name="object_info_m51_distance">23 millones de años luz</string>
+    <string name="object_info_m51_size">76.000 años luz de diámetro</string>
+
+    <string name="object_info_m57_description">La Nebulosa del Anillo es una nebulosa planetaria en Lira, una cáscara brillante de gas expulsada por una estrella moribunda similar al Sol.</string>
+    <string name="object_info_m57_funfact">¡La Nebulosa del Anillo se está expandiendo a unos 20 km/s y eventualmente se dispersará en el espacio en los próximos 10.000 años!</string>
+    <string name="object_info_m57_distance">2.300 años luz</string>
+    <string name="object_info_m57_size">1,3 años luz de diámetro</string>
+
+    <string name="object_info_m87_description">M87 es una galaxia elíptica supergigante en Virgo, una de las galaxias más masivas del universo local.</string>
+    <string name="object_info_m87_funfact">¡El agujero negro central de M87 fue el primero en ser fotografiado por el Telescopio del Horizonte de Eventos en 2019 - tiene 6.500 millones de masas solares!</string>
+    <string name="object_info_m87_distance">53 millones de años luz</string>
+    <string name="object_info_m87_size">240.000 años luz de diámetro</string>
+    <string name="object_info_m87_mass">2,4 billones de masas solares</string>
+
+    <!-- Constellations -->
+    <string name="object_info_orion_description">Orión el Cazador es una de las constelaciones más reconocibles, visible desde ambos hemisferios con su distintivo Cinturón de tres estrellas.</string>
+    <string name="object_info_orion_funfact">¡El Cinturón de Orión apunta hacia Sirio (la estrella más brillante) en una dirección y Aldebarán (en Tauro) en la otra!</string>
+    <string name="object_info_orion_size">594 grados cuadrados</string>
+
+    <string name="object_info_ursa_major_description">Osa Mayor contiene el asterismo del Carro Mayor, uno de los patrones estelares más reconocidos del cielo norte.</string>
+    <string name="object_info_ursa_major_funfact">¡Cinco de las estrellas del Carro Mayor están físicamente relacionadas, moviéndose juntas por el espacio como el Grupo Móvil de la Osa Mayor!</string>
+    <string name="object_info_ursa_major_size">1.280 grados cuadrados</string>
+
+    <string name="object_info_ursa_minor_description">Osa Menor contiene el Carro Menor y Polaris, la actual Estrella del Norte que marca el polo norte celeste de la Tierra.</string>
+    <string name="object_info_ursa_minor_funfact">¡Debido a la precesión, Polaris no siempre será la Estrella del Norte - en 14.000 años, Vega ocupará su lugar!</string>
+    <string name="object_info_ursa_minor_size">256 grados cuadrados</string>
+
+    <string name="object_info_cassiopeia_description">Casiopea es una constelación distintiva en forma de W en el cielo norte, nombrada en honor a una reina vanidosa de la mitología griega.</string>
+    <string name="object_info_cassiopeia_funfact">¡La supernova de Tycho Brahe de 1572 apareció en Casiopea, ayudando a probar que los cielos podían cambiar!</string>
+    <string name="object_info_cassiopeia_size">598 grados cuadrados</string>
+
+    <string name="object_info_scorpius_description">Escorpio es una constelación zodiacal prominente con una cola curva distintiva, dominada por la supergigante roja Antares.</string>
+    <string name="object_info_scorpius_funfact">¡En la mitología, Escorpio fue colocado en el cielo opuesto a Orión para que el cazador nunca volviera a ser picado!</string>
+    <string name="object_info_scorpius_size">497 grados cuadrados</string>
+
+    <string name="object_info_leo_description">Leo el León es una constelación zodiacal con Régulo en el corazón del león y el distintivo asterismo de la Hoz.</string>
+    <string name="object_info_leo_funfact">¡La lluvia de meteoros Leónidas en noviembre parece irradiar de Leo y puede producir tormentas espectaculares!</string>
+    <string name="object_info_leo_size">947 grados cuadrados</string>
+
+    <string name="object_info_gemini_description">Géminis presenta las estrellas brillantes Cástor y Pólux, representando a los hermanos gemelos de la mitología griega.</string>
+    <string name="object_info_gemini_funfact">¡A pesar de llamarse gemelos, Cástor es en realidad seis estrellas y Pólux es una gigante naranja - no se parecen en nada!</string>
+    <string name="object_info_gemini_size">514 grados cuadrados</string>
+
+    <string name="object_info_taurus_description">Tauro es una constelación zodiacal que contiene los cúmulos de las Pléyades y las Híades, y la brillante estrella Aldebarán.</string>
+    <string name="object_info_taurus_funfact">¡La Nebulosa del Cangrejo en Tauro es el remanente de una supernova presenciada y registrada por astrónomos chinos en 1054!</string>
+    <string name="object_info_taurus_size">797 grados cuadrados</string>
+
+    <string name="object_info_virgo_description">Virgo es la segunda constelación más grande y un signo zodiacal, conteniendo el Cúmulo de Virgo con más de 2.000 galaxias.</string>
+    <string name="object_info_virgo_funfact">¡El Cúmulo de Virgo es el corazón del Supercúmulo de Virgo, que contiene nuestra propia Vía Láctea!</string>
+    <string name="object_info_virgo_size">1.294 grados cuadrados</string>
+
+    <string name="object_info_sagittarius_description">Sagitario el Arquero apunta hacia el centro de nuestra Vía Láctea, haciéndolo rico en nebulosas y cúmulos estelares.</string>
+    <string name="object_info_sagittarius_funfact">¡Cuando miras a Sagitario, estás mirando hacia Sagitario A*, el agujero negro supermasivo en el centro de nuestra galaxia!</string>
+    <string name="object_info_sagittarius_size">867 grados cuadrados</string>
+
+    <string name="object_info_cygnus_description">Cisne vuela a lo largo de la Vía Láctea, conteniendo el asterismo de la Cruz del Norte y la brillante estrella Deneb.</string>
+    <string name="object_info_cygnus_funfact">¡Cygnus X-1 en esta constelación fue el primer agujero negro ampliamente aceptado, descubierto en 1964!</string>
+    <string name="object_info_cygnus_size">804 grados cuadrados</string>
+
+    <string name="object_info_lyra_description">Lira es una constelación pequeña pero prominente que contiene a Vega, la quinta estrella más brillante del cielo nocturno.</string>
+    <string name="object_info_lyra_funfact">¡Vega fue la Estrella del Norte alrededor del 12.000 a.C. y lo será nuevamente en unos 12.000 años debido a la precesión de la Tierra!</string>
+    <string name="object_info_lyra_size">286 grados cuadrados</string>
+
+    <string name="object_info_aquila_description">Águila es una constelación en el ecuador celeste, conteniendo la brillante estrella Altair en su centro.</string>
+    <string name="object_info_aquila_funfact">¡Altair en Águila es una de las estrellas de rotación más rápida conocidas, girando tan rápido que sobresale en su ecuador!</string>
+    <string name="object_info_aquila_size">652 grados cuadrados</string>
+
+    <string name="object_info_pegasus_description">Pegaso el Caballo Alado es una gran constelación que presenta el Gran Cuadrado de Pegaso, un asterismo prominente del otoño.</string>
+    <string name="object_info_pegasus_funfact">¡51 Pegasi b, descubierto en 1995 en esta constelación, fue el primer exoplaneta encontrado orbitando una estrella similar al Sol!</string>
+    <string name="object_info_pegasus_size">1.121 grados cuadrados</string>
+
+    <string name="object_info_andromeda_description">Andrómeda la Princesa contiene la Galaxia de Andrómeda (M31), la gran galaxia espiral más cercana a nuestra Vía Láctea.</string>
+    <string name="object_info_andromeda_funfact">¡La Galaxia de Andrómeda se acerca a 110 km/s y se fusionará con la Vía Láctea en unos 4.500 millones de años!</string>
+    <string name="object_info_andromeda_size">722 grados cuadrados</string>
+
+    <string name="object_info_centaurus_description">Centauro es una gran constelación del sur que contiene a Alfa Centauri, el sistema estelar más cercano a nuestro Sol.</string>
+    <string name="object_info_centaurus_funfact">¡Próxima Centauri en Centauro está a solo 4,24 años luz de distancia, convirtiéndola en la estrella más cercana a nuestro sistema solar!</string>
+    <string name="object_info_centaurus_size">1.060 grados cuadrados</string>
+
+    <string name="object_info_crux_description">Crux (la Cruz del Sur) es la constelación más pequeña pero una de las más distintivas, usada para navegación en el Hemisferio Sur.</string>
+    <string name="object_info_crux_funfact">¡A pesar de ser la constelación más pequeña, Crux tiene más estrellas brillantes por unidad de área que cualquier otra constelación!</string>
+    <string name="object_info_crux_size">68 grados cuadrados</string>
+
+    <string name="object_info_canis_major_description">Can Mayor sigue a Orión por el cielo y contiene a Sirio, la estrella más brillante visible desde la Tierra.</string>
+    <string name="object_info_canis_major_funfact">¡Los antiguos egipcios basaban su calendario en el orto heliaco de Sirio, que coincidía con la inundación anual del Nilo!</string>
+    <string name="object_info_canis_major_size">380 grados cuadrados</string>
+
+    <string name="object_info_canis_minor_description">Can Menor es una pequeña constelación notable por Proción, la octava estrella más brillante del cielo.</string>
+    <string name="object_info_canis_minor_funfact">¡Proción significa \"antes del perro\" en griego porque sale justo antes de Sirio (la Estrella del Perro) cada noche!</string>
+    <string name="object_info_canis_minor_size">183 grados cuadrados</string>
 </resources>

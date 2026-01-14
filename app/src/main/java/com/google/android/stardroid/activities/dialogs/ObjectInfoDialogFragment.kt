@@ -18,6 +18,7 @@ import android.app.AlertDialog
 import android.app.Dialog
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.TextView
 import com.google.android.stardroid.R
 import com.google.android.stardroid.education.ObjectInfo
@@ -27,7 +28,7 @@ import javax.inject.Inject
 
 /**
  * Dialog fragment that displays educational information about a celestial object.
- * Shows the object name, description, and a fun fact.
+ * Shows the object name, description, scientific data, and a fun fact.
  */
 class ObjectInfoDialogFragment : DialogFragment() {
 
@@ -72,6 +73,33 @@ class ObjectInfoDialogFragment : DialogFragment() {
         view.findViewById<TextView>(R.id.object_info_description).text = info.description
         view.findViewById<TextView>(R.id.object_info_funfact).text = info.funFact
 
+        // Populate scientific data (show only fields that have data)
+        var hasAnyScientificData = false
+
+        hasAnyScientificData = setFieldIfPresent(
+            view, R.id.object_info_distance_row, R.id.object_info_distance, info.distance
+        ) || hasAnyScientificData
+
+        hasAnyScientificData = setFieldIfPresent(
+            view, R.id.object_info_size_row, R.id.object_info_size, info.size
+        ) || hasAnyScientificData
+
+        hasAnyScientificData = setFieldIfPresent(
+            view, R.id.object_info_mass_row, R.id.object_info_mass, info.mass
+        ) || hasAnyScientificData
+
+        hasAnyScientificData = setFieldIfPresent(
+            view, R.id.object_info_spectral_row, R.id.object_info_spectral, info.spectralClass
+        ) || hasAnyScientificData
+
+        hasAnyScientificData = setFieldIfPresent(
+            view, R.id.object_info_magnitude_row, R.id.object_info_magnitude, info.magnitude
+        ) || hasAnyScientificData
+
+        // Hide the entire data section if no scientific data is available
+        val dataSection = view.findViewById<View>(R.id.object_info_data_section)
+        dataSection.visibility = if (hasAnyScientificData) View.VISIBLE else View.GONE
+
         return AlertDialog.Builder(parentActivity)
             .setView(view)
             .setPositiveButton(android.R.string.ok) { dialog, _ ->
@@ -79,6 +107,24 @@ class ObjectInfoDialogFragment : DialogFragment() {
                 dialog.dismiss()
             }
             .create()
+    }
+
+    /**
+     * Sets a field value if it's not null, and makes the row visible.
+     * Returns true if the field was set (value was not null).
+     */
+    private fun setFieldIfPresent(
+        view: View,
+        rowId: Int,
+        valueId: Int,
+        value: String?
+    ): Boolean {
+        if (value != null) {
+            view.findViewById<View>(rowId).visibility = View.VISIBLE
+            view.findViewById<TextView>(valueId).text = value
+            return true
+        }
+        return false
     }
 
     companion object {

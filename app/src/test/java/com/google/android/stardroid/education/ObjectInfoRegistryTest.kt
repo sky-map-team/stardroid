@@ -47,17 +47,34 @@ class ObjectInfoRegistryTest {
 
     private val testJson = """
         {
-          "version": 1,
+          "version": 2,
           "objects": {
             "sun": {
               "nameKey": "sun",
               "descriptionKey": "object_info_sun_description",
-              "funFactKey": "object_info_sun_funfact"
+              "funFactKey": "object_info_sun_funfact",
+              "type": "star",
+              "distanceKey": "object_info_sun_distance",
+              "sizeKey": "object_info_sun_size",
+              "massKey": "object_info_sun_mass",
+              "spectralClass": "G2V",
+              "magnitude": "-26.74"
             },
             "mars": {
               "nameKey": "mars",
               "descriptionKey": "object_info_mars_description",
-              "funFactKey": "object_info_mars_funfact"
+              "funFactKey": "object_info_mars_funfact",
+              "type": "planet",
+              "distanceKey": "object_info_mars_distance",
+              "sizeKey": "object_info_mars_size",
+              "massKey": "object_info_mars_mass"
+            },
+            "m42": {
+              "nameKey": "m42",
+              "descriptionKey": "object_info_m42_description",
+              "funFactKey": "object_info_m42_funfact",
+              "type": "nebula",
+              "magnitude": "4.0"
             }
           }
         }
@@ -73,7 +90,7 @@ class ObjectInfoRegistryTest {
         val inputStream = ByteArrayInputStream(testJson.toByteArray())
         `when`(mockAssetManager.open("object_info.json")).thenReturn(inputStream)
 
-        // Mock string resources
+        // Mock string resources for Sun
         `when`(mockResources.getIdentifier("sun", "string", "com.google.android.stardroid"))
             .thenReturn(1)
         `when`(mockResources.getIdentifier(
@@ -82,6 +99,17 @@ class ObjectInfoRegistryTest {
         `when`(mockResources.getIdentifier(
             "object_info_sun_funfact", "string", "com.google.android.stardroid"))
             .thenReturn(3)
+        `when`(mockResources.getIdentifier(
+            "object_info_sun_distance", "string", "com.google.android.stardroid"))
+            .thenReturn(10)
+        `when`(mockResources.getIdentifier(
+            "object_info_sun_size", "string", "com.google.android.stardroid"))
+            .thenReturn(11)
+        `when`(mockResources.getIdentifier(
+            "object_info_sun_mass", "string", "com.google.android.stardroid"))
+            .thenReturn(12)
+
+        // Mock string resources for Mars
         `when`(mockResources.getIdentifier("mars", "string", "com.google.android.stardroid"))
             .thenReturn(4)
         `when`(mockResources.getIdentifier(
@@ -90,13 +118,42 @@ class ObjectInfoRegistryTest {
         `when`(mockResources.getIdentifier(
             "object_info_mars_funfact", "string", "com.google.android.stardroid"))
             .thenReturn(6)
+        `when`(mockResources.getIdentifier(
+            "object_info_mars_distance", "string", "com.google.android.stardroid"))
+            .thenReturn(13)
+        `when`(mockResources.getIdentifier(
+            "object_info_mars_size", "string", "com.google.android.stardroid"))
+            .thenReturn(14)
+        `when`(mockResources.getIdentifier(
+            "object_info_mars_mass", "string", "com.google.android.stardroid"))
+            .thenReturn(15)
 
+        // Mock string resources for M42
+        `when`(mockResources.getIdentifier("m42", "string", "com.google.android.stardroid"))
+            .thenReturn(7)
+        `when`(mockResources.getIdentifier(
+            "object_info_m42_description", "string", "com.google.android.stardroid"))
+            .thenReturn(8)
+        `when`(mockResources.getIdentifier(
+            "object_info_m42_funfact", "string", "com.google.android.stardroid"))
+            .thenReturn(9)
+
+        // Set string values
         `when`(mockResources.getString(1)).thenReturn("Sun")
         `when`(mockResources.getString(2)).thenReturn("Our star")
         `when`(mockResources.getString(3)).thenReturn("Very hot")
         `when`(mockResources.getString(4)).thenReturn("Mars")
         `when`(mockResources.getString(5)).thenReturn("Red planet")
         `when`(mockResources.getString(6)).thenReturn("Has Olympus Mons")
+        `when`(mockResources.getString(7)).thenReturn("Orion Nebula")
+        `when`(mockResources.getString(8)).thenReturn("A star-forming region")
+        `when`(mockResources.getString(9)).thenReturn("Visible to naked eye")
+        `when`(mockResources.getString(10)).thenReturn("150M km")
+        `when`(mockResources.getString(11)).thenReturn("1.4M km")
+        `when`(mockResources.getString(12)).thenReturn("1.989 × 10³⁰ kg")
+        `when`(mockResources.getString(13)).thenReturn("228M km")
+        `when`(mockResources.getString(14)).thenReturn("6,779 km")
+        `when`(mockResources.getString(15)).thenReturn("6.39 × 10²³ kg")
 
         registry = ObjectInfoRegistry(mockContext, mockAssetManager)
     }
@@ -104,13 +161,14 @@ class ObjectInfoRegistryTest {
     @Test
     fun testSupportedObjectIds() {
         val ids = registry.supportedObjectIds
-        assertThat(ids).containsExactly("sun", "mars")
+        assertThat(ids).containsExactly("sun", "mars", "m42")
     }
 
     @Test
     fun testHasInfo_existingObject() {
         assertThat(registry.hasInfo("sun")).isTrue()
         assertThat(registry.hasInfo("mars")).isTrue()
+        assertThat(registry.hasInfo("m42")).isTrue()
     }
 
     @Test
@@ -127,7 +185,7 @@ class ObjectInfoRegistryTest {
     }
 
     @Test
-    fun testGetInfo_existingObject() {
+    fun testGetInfo_starWithFullData() {
         val info = registry.getInfo("sun")
 
         assertThat(info).isNotNull()
@@ -135,6 +193,38 @@ class ObjectInfoRegistryTest {
         assertThat(info.name).isEqualTo("Sun")
         assertThat(info.description).isEqualTo("Our star")
         assertThat(info.funFact).isEqualTo("Very hot")
+        assertThat(info.type).isEqualTo(ObjectType.STAR)
+        assertThat(info.distance).isEqualTo("150M km")
+        assertThat(info.size).isEqualTo("1.4M km")
+        assertThat(info.mass).isEqualTo("1.989 × 10³⁰ kg")
+        assertThat(info.spectralClass).isEqualTo("G2V")
+        assertThat(info.magnitude).isEqualTo("-26.74")
+    }
+
+    @Test
+    fun testGetInfo_planetWithData() {
+        val info = registry.getInfo("mars")
+
+        assertThat(info).isNotNull()
+        assertThat(info!!.type).isEqualTo(ObjectType.PLANET)
+        assertThat(info.distance).isEqualTo("228M km")
+        assertThat(info.size).isEqualTo("6,779 km")
+        assertThat(info.mass).isEqualTo("6.39 × 10²³ kg")
+        assertThat(info.spectralClass).isNull()
+        assertThat(info.magnitude).isNull()
+    }
+
+    @Test
+    fun testGetInfo_nebulaWithPartialData() {
+        val info = registry.getInfo("m42")
+
+        assertThat(info).isNotNull()
+        assertThat(info!!.type).isEqualTo(ObjectType.NEBULA)
+        assertThat(info.distance).isNull()
+        assertThat(info.size).isNull()
+        assertThat(info.mass).isNull()
+        assertThat(info.spectralClass).isNull()
+        assertThat(info.magnitude).isEqualTo("4.0")
     }
 
     @Test
