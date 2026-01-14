@@ -221,4 +221,74 @@
     <string name="rotate_horizon_preference_summary">Gira el horizonte 90 grados (para dispositivos
         con paisajes forzados) o usa el modo de puntero para que la pantalla muestre
         hacia dónde apunta la parte superior del teléfono (ver texto de ayuda).</string>
+
+    <!-- Educational Object Info Feature -->
+    <string name="show_object_info_pref_title">Mostrar info al tocar</string>
+    <string name="show_object_info_pref_summary">Toca objetos celestes en modo manual para aprender sobre ellos</string>
+    <string name="object_info_funfact_label">Dato curioso:</string>
+
+    <!-- Solar System Educational Content -->
+    <string name="object_info_sun_description">El Sol es la estrella en el centro de nuestro sistema solar. Proporciona la luz y el calor que hacen posible la vida en la Tierra.</string>
+    <string name="object_info_sun_funfact">El Sol contiene el 99,86% de toda la masa de nuestro sistema solar. ¡Aproximadamente 1,3 millones de Tierras cabrían dentro de él!</string>
+
+    <string name="object_info_moon_description">La Luna es el único satélite natural de la Tierra. Influye en nuestras mareas y ha sido visitada por 12 astronautas.</string>
+    <string name="object_info_moon_funfact">La Luna se aleja lentamente de la Tierra a unos 3,8 cm por año. ¡Estaba mucho más cerca hace miles de millones de años!</string>
+
+    <string name="object_info_mercury_description">Mercurio es el planeta más pequeño y el más cercano al Sol. Un año en Mercurio dura solo 88 días terrestres.</string>
+    <string name="object_info_mercury_funfact">A pesar de ser el más cercano al Sol, Mercurio no es el planeta más caliente. ¡Venus es más caliente debido a su densa atmósfera!</string>
+
+    <string name="object_info_venus_description">Venus es el segundo planeta desde el Sol y el más caliente de nuestro sistema solar. A menudo se le llama el gemelo de la Tierra debido a su tamaño similar.</string>
+    <string name="object_info_venus_funfact">¡Un día en Venus es más largo que su año! Tarda 243 días terrestres en girar una vez, pero solo 225 días en orbitar el Sol.</string>
+
+    <string name="object_info_mars_description">Marte es el cuarto planeta desde el Sol, conocido como el Planeta Rojo debido al óxido de hierro en su superficie.</string>
+    <string name="object_info_mars_funfact">Marte tiene el volcán más grande del sistema solar: Olympus Mons, ¡que es 3 veces más alto que el Monte Everest!</string>
+
+    <string name="object_info_jupiter_description">Júpiter es el planeta más grande de nuestro sistema solar. Es un gigante gaseoso con una famosa tormenta llamada la Gran Mancha Roja.</string>
+    <string name="object_info_jupiter_funfact">¡Júpiter tiene al menos 95 lunas conocidas! Su luna más grande, Ganímedes, es más grande que el planeta Mercurio.</string>
+
+    <string name="object_info_saturn_description">Saturno es el sexto planeta desde el Sol, famoso por su espectacular sistema de anillos hechos de hielo y roca.</string>
+    <string name="object_info_saturn_funfact">¡Saturno es tan ligero que flotaría en el agua! Su densidad es menor que la del agua, aunque no existe una bañera lo suficientemente grande para probarlo.</string>
+
+    <string name="object_info_uranus_description">Urano es un gigante de hielo que gira de lado. Fue el primer planeta descubierto usando un telescopio.</string>
+    <string name="object_info_uranus_funfact">Urano gira de lado con una inclinación de 98 grados, ¡posiblemente debido a una colisión con un objeto del tamaño de la Tierra hace mucho tiempo!</string>
+
+    <string name="object_info_neptune_description">Neptuno es el planeta más distante de nuestro sistema solar. Tiene los vientos más fuertes, alcanzando 2.100 km/h.</string>
+    <string name="object_info_neptune_funfact">¡Neptuno fue descubierto a través de las matemáticas! Los científicos predijeron su ubicación antes de que nadie lo viera a través de un telescopio.</string>
+
+    <string name="object_info_pluto_description">Plutón es un planeta enano en el Cinturón de Kuiper. Fue considerado el noveno planeta hasta 2006.</string>
+    <string name="object_info_pluto_funfact">Plutón tiene un glaciar en forma de corazón hecho de hielo de nitrógeno, ¡visible en imágenes de la misión New Horizons de la NASA!</string>
+
+    <!-- Bright Stars Educational Content -->
+    <string name="object_info_sirius_description">Sirio es la estrella más brillante del cielo nocturno, ubicada en la constelación del Can Mayor.</string>
+    <string name="object_info_sirius_funfact">¡Sirio es en realidad un sistema estelar binario! Sirio B, su compañera, es una enana blanca del tamaño de la Tierra pero casi tan masiva como el Sol.</string>
+
+    <string name="object_info_vega_description">Vega es una de las estrellas más brillantes visibles desde la Tierra, ubicada en la constelación de Lira.</string>
+    <string name="object_info_vega_funfact">Vega fue la Estrella Polar hace unos 12.000 años y lo será de nuevo en unos 13.700 años ¡debido al bamboleo de la Tierra!</string>
+
+    <string name="object_info_betelgeuse_description">Betelgeuse es una estrella supergigante roja que marca el hombro de Orión. Es una de las estrellas más grandes visibles a simple vista.</string>
+    <string name="object_info_betelgeuse_funfact">Betelgeuse es tan grande que si se colocara en la posición de nuestro Sol, ¡engulliría a Mercurio, Venus, la Tierra, Marte y posiblemente Júpiter!</string>
+
+    <string name="object_info_rigel_description">Rigel es una estrella supergigante azul que marca el pie de Orión. A pesar de estar más lejos que Betelgeuse, aparece igualmente brillante.</string>
+    <string name="object_info_rigel_funfact">¡Rigel brilla con la luz de unos 120.000 Soles! Es una de las estrellas más luminosas de nuestra región de la Vía Láctea.</string>
+
+    <string name="object_info_procyon_description">Proción es una estrella brillante en la constelación del Can Menor. Es una de nuestras vecinas estelares más cercanas.</string>
+    <string name="object_info_procyon_funfact">Proción significa \"antes del perro\" en griego porque sale justo antes de Sirio, la Estrella del Perro, ¡en el cielo nocturno!</string>
+
+    <string name="object_info_polaris_description">Polaris, la Estrella del Norte, parece casi inmóvil en el cielo mientras otras estrellas giran a su alrededor durante la noche.</string>
+    <string name="object_info_polaris_funfact">¡Polaris es en realidad un sistema de tres estrellas! La estrella principal es una supergigante unas 2.500 veces más brillante que nuestro Sol.</string>
+
+    <string name="object_info_deneb_description">Deneb marca la cola del Cisne. Es parte del asterismo del Triángulo de Verano junto con Vega y Altair.</string>
+    <string name="object_info_deneb_funfact">Deneb es una de las estrellas más distantes visibles a simple vista, ¡ubicada a unos 2.600 años luz de distancia!</string>
+
+    <string name="object_info_arcturus_description">Arturo es la estrella más brillante del hemisferio norte, una gigante naranja en la constelación del Boyero.</string>
+    <string name="object_info_arcturus_funfact">Arturo viaja por el espacio a una velocidad tremenda y ¡pasará más cerca de nuestro sistema solar en unos 4.000 años!</string>
+
+    <string name="object_info_canopus_description">Canopo es la segunda estrella más brillante del cielo nocturno. Es visible principalmente desde el Hemisferio Sur.</string>
+    <string name="object_info_canopus_funfact">Canopo es utilizada por las naves espaciales para navegación porque es muy brillante y está lejos del plano de la eclíptica.</string>
+
+    <string name="object_info_aldebaran_description">Aldebarán es una estrella gigante naranja que representa el ojo de Tauro. Su nombre significa \"el seguidor\" en árabe.</string>
+    <string name="object_info_aldebaran_funfact">Aldebarán parece formar parte del cúmulo estelar de las Híades, pero en realidad está solo a la mitad de la distancia de nosotros: ¡una ilusión óptica cósmica!</string>
+
+    <string name="object_info_antares_description">Antares es una estrella supergigante roja, el corazón de Escorpio. Su nombre significa \"rival de Marte\" debido a su color rojo.</string>
+    <string name="object_info_antares_funfact">Antares es tan grande que si se colocara en nuestro sistema solar, ¡su superficie se extendería más allá de la órbita de Marte!</string>
 </resources>

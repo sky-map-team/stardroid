@@ -457,4 +457,74 @@
     <string name="seven_sisters" translation_description="Name of the Messier object Seven Sisters">Sete Irmãs</string>
     <string name="space_station" translation_description="Name of the Internation Space Station">Estação Espacial Internacional</string>
     <string name="space_shuttle" translation_description="Name of the Space Shuttle">Ônibus espacial</string>
+
+    <!-- Educational Object Info Feature -->
+    <string name="show_object_info_pref_title">Mostrar informações ao tocar</string>
+    <string name="show_object_info_pref_summary">Toque em objetos celestes no modo manual para aprender sobre eles</string>
+    <string name="object_info_funfact_label">Curiosidade:</string>
+
+    <!-- Solar System Educational Content -->
+    <string name="object_info_sun_description">O Sol é a estrela no centro do nosso sistema solar. Ele fornece a luz e o calor que tornam a vida na Terra possível.</string>
+    <string name="object_info_sun_funfact">O Sol contém 99,86% de toda a massa do nosso sistema solar. Cerca de 1,3 milhão de Terras caberiam dentro dele!</string>
+
+    <string name="object_info_moon_description">A Lua é o único satélite natural da Terra. Ela influencia nossas marés e foi visitada por 12 astronautas.</string>
+    <string name="object_info_moon_funfact">A Lua está se afastando lentamente da Terra a cerca de 3,8 cm por ano. Ela era muito mais próxima bilhões de anos atrás!</string>
+
+    <string name="object_info_mercury_description">Mercúrio é o menor planeta e o mais próximo do Sol. Um ano em Mercúrio dura apenas 88 dias terrestres.</string>
+    <string name="object_info_mercury_funfact">Apesar de ser o mais próximo do Sol, Mercúrio não é o planeta mais quente. Vênus é mais quente devido à sua atmosfera densa!</string>
+
+    <string name="object_info_venus_description">Vênus é o segundo planeta a partir do Sol e o mais quente do nosso sistema solar. É frequentemente chamado de gêmeo da Terra devido ao tamanho similar.</string>
+    <string name="object_info_venus_funfact">Um dia em Vênus é mais longo que seu ano! Leva 243 dias terrestres para girar uma vez, mas apenas 225 dias para orbitar o Sol.</string>
+
+    <string name="object_info_mars_description">Marte é o quarto planeta a partir do Sol, conhecido como Planeta Vermelho devido ao óxido de ferro em sua superfície.</string>
+    <string name="object_info_mars_funfact">Marte tem o maior vulcão do sistema solar: Olympus Mons, que é 3 vezes mais alto que o Monte Everest!</string>
+
+    <string name="object_info_jupiter_description">Júpiter é o maior planeta do nosso sistema solar. É um gigante gasoso com uma famosa tempestade chamada Grande Mancha Vermelha.</string>
+    <string name="object_info_jupiter_funfact">Júpiter tem pelo menos 95 luas conhecidas! Sua maior lua, Ganimedes, é maior que o planeta Mercúrio.</string>
+
+    <string name="object_info_saturn_description">Saturno é o sexto planeta a partir do Sol, famoso por seu espetacular sistema de anéis feitos de gelo e rocha.</string>
+    <string name="object_info_saturn_funfact">Saturno é tão leve que flutuaria na água! Sua densidade é menor que a da água, embora não exista banheira grande o suficiente para testar isso.</string>
+
+    <string name="object_info_uranus_description">Urano é um gigante de gelo que gira de lado. Foi o primeiro planeta descoberto usando um telescópio.</string>
+    <string name="object_info_uranus_funfact">Urano gira de lado com uma inclinação de 98 graus, possivelmente devido a uma colisão com um objeto do tamanho da Terra há muito tempo!</string>
+
+    <string name="object_info_neptune_description">Netuno é o planeta mais distante do nosso sistema solar. Tem os ventos mais fortes, chegando a 2.100 km/h.</string>
+    <string name="object_info_neptune_funfact">Netuno foi descoberto através da matemática! Cientistas previram sua localização antes de qualquer um vê-lo através de um telescópio.</string>
+
+    <string name="object_info_pluto_description">Plutão é um planeta anão no Cinturão de Kuiper. Foi considerado o nono planeta até 2006.</string>
+    <string name="object_info_pluto_funfact">Plutão tem uma geleira em forma de coração feita de gelo de nitrogênio, visível em imagens da missão New Horizons da NASA!</string>
+
+    <!-- Bright Stars Educational Content -->
+    <string name="object_info_sirius_description">Sirius é a estrela mais brilhante do céu noturno, localizada na constelação de Cão Maior.</string>
+    <string name="object_info_sirius_funfact">Sirius é na verdade um sistema estelar binário! Sirius B, sua companheira, é uma anã branca do tamanho da Terra mas quase tão massiva quanto o Sol.</string>
+
+    <string name="object_info_vega_description">Vega é uma das estrelas mais brilhantes visíveis da Terra, localizada na constelação de Lira.</string>
+    <string name="object_info_vega_funfact">Vega foi a Estrela Polar há cerca de 12.000 anos e será novamente em cerca de 13.700 anos devido à oscilação da Terra!</string>
+
+    <string name="object_info_betelgeuse_description">Betelgeuse é uma estrela supergigante vermelha que marca o ombro de Órion. É uma das maiores estrelas visíveis a olho nu.</string>
+    <string name="object_info_betelgeuse_funfact">Betelgeuse é tão grande que se fosse colocada na posição do nosso Sol, engoliria Mercúrio, Vênus, Terra, Marte e possivelmente Júpiter!</string>
+
+    <string name="object_info_rigel_description">Rigel é uma estrela supergigante azul que marca o pé de Órion. Apesar de estar mais longe que Betelgeuse, parece igualmente brilhante.</string>
+    <string name="object_info_rigel_funfact">Rigel brilha com a luz de cerca de 120.000 Sóis! É uma das estrelas mais luminosas da nossa região da Via Láctea.</string>
+
+    <string name="object_info_procyon_description">Prócion é uma estrela brilhante na constelação de Cão Menor. É uma das nossas vizinhas estelares mais próximas.</string>
+    <string name="object_info_procyon_funfact">Prócion significa \"antes do cão\" em grego porque nasce pouco antes de Sirius, a Estrela do Cão, no céu noturno!</string>
+
+    <string name="object_info_polaris_description">Polaris, a Estrela do Norte, parece quase imóvel no céu enquanto outras estrelas giram ao seu redor durante a noite.</string>
+    <string name="object_info_polaris_funfact">Polaris é na verdade um sistema de três estrelas! A estrela principal é uma supergigante cerca de 2.500 vezes mais brilhante que o nosso Sol.</string>
+
+    <string name="object_info_deneb_description">Deneb marca a cauda de Cisne. Faz parte do asterismo Triângulo de Verão junto com Vega e Altair.</string>
+    <string name="object_info_deneb_funfact">Deneb é uma das estrelas mais distantes visíveis a olho nu, localizada a cerca de 2.600 anos-luz de distância!</string>
+
+    <string name="object_info_arcturus_description">Arcturus é a estrela mais brilhante do hemisfério norte, uma gigante laranja na constelação de Boieiro.</string>
+    <string name="object_info_arcturus_funfact">Arcturus está viajando pelo espaço a uma velocidade tremenda e passará mais perto do nosso sistema solar em cerca de 4.000 anos!</string>
+
+    <string name="object_info_canopus_description">Canopus é a segunda estrela mais brilhante do céu noturno. É visível principalmente do Hemisfério Sul.</string>
+    <string name="object_info_canopus_funfact">Canopus é usada por naves espaciais para navegação porque é muito brilhante e está longe do plano da eclíptica!</string>
+
+    <string name="object_info_aldebaran_description">Aldebarã é uma estrela gigante laranja que representa o olho de Touro. Seu nome significa \"o seguidor\" em árabe.</string>
+    <string name="object_info_aldebaran_funfact">Aldebarã parece fazer parte do aglomerado estelar das Híades, mas na verdade está apenas a metade da distância de nós - uma ilusão de ótica cósmica!</string>
+
+    <string name="object_info_antares_description">Antares é uma estrela supergigante vermelha, o coração de Escorpião. Seu nome significa \"rival de Marte\" devido à sua cor vermelha.</string>
+    <string name="object_info_antares_funfact">Antares é tão grande que se fosse colocada no nosso sistema solar, sua superfície se estenderia além da órbita de Marte!</string>
 </resources>

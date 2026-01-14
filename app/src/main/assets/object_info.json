@@ -1,0 +1,110 @@
+{
+  "version": 1,
+  "objects": {
+    "sun": {
+      "nameKey": "sun",
+      "descriptionKey": "object_info_sun_description",
+      "funFactKey": "object_info_sun_funfact"
+    },
+    "moon": {
+      "nameKey": "moon",
+      "descriptionKey": "object_info_moon_description",
+      "funFactKey": "object_info_moon_funfact"
+    },
+    "mercury": {
+      "nameKey": "mercury",
+      "descriptionKey": "object_info_mercury_description",
+      "funFactKey": "object_info_mercury_funfact"
+    },
+    "venus": {
+      "nameKey": "venus",
+      "descriptionKey": "object_info_venus_description",
+      "funFactKey": "object_info_venus_funfact"
+    },
+    "mars": {
+      "nameKey": "mars",
+      "descriptionKey": "object_info_mars_description",
+      "funFactKey": "object_info_mars_funfact"
+    },
+    "jupiter": {
+      "nameKey": "jupiter",
+      "descriptionKey": "object_info_jupiter_description",
+      "funFactKey": "object_info_jupiter_funfact"
+    },
+    "saturn": {
+      "nameKey": "saturn",
+      "descriptionKey": "object_info_saturn_description",
+      "funFactKey": "object_info_saturn_funfact"
+    },
+    "uranus": {
+      "nameKey": "uranus",
+      "descriptionKey": "object_info_uranus_description",
+      "funFactKey": "object_info_uranus_funfact"
+    },
+    "neptune": {
+      "nameKey": "neptune",
+      "descriptionKey": "object_info_neptune_description",
+      "funFactKey": "object_info_neptune_funfact"
+    },
+    "pluto": {
+      "nameKey": "pluto",
+      "descriptionKey": "object_info_pluto_description",
+      "funFactKey": "object_info_pluto_funfact"
+    },
+    "sirius": {
+      "nameKey": "sirius",
+      "descriptionKey": "object_info_sirius_description",
+      "funFactKey": "object_info_sirius_funfact"
+    },
+    "vega": {
+      "nameKey": "vega",
+      "descriptionKey": "object_info_vega_description",
+      "funFactKey": "object_info_vega_funfact"
+    },
+    "betelgeuse": {
+      "nameKey": "betelgeuse",
+      "descriptionKey": "object_info_betelgeuse_description",
+      "funFactKey": "object_info_betelgeuse_funfact"
+    },
+    "rigel": {
+      "nameKey": "rigel",
+      "descriptionKey": "object_info_rigel_description",
+      "funFactKey": "object_info_rigel_funfact"
+    },
+    "procyon": {
+      "nameKey": "procyon",
+      "descriptionKey": "object_info_procyon_description",
+      "funFactKey": "object_info_procyon_funfact"
+    },
+    "polaris": {
+      "nameKey": "polaris",
+      "descriptionKey": "object_info_polaris_description",
+      "funFactKey": "object_info_polaris_funfact"
+    },
+    "deneb": {
+      "nameKey": "deneb",
+      "descriptionKey": "object_info_deneb_description",
+      "funFactKey": "object_info_deneb_funfact"
+    },
+    "arcturus": {
+      "nameKey": "arcturus",
+      "descriptionKey": "object_info_arcturus_description",
+      "funFactKey": "object_info_arcturus_funfact"
+    },
+    "canopus": {
+      "nameKey": "canopus",
+      "descriptionKey": "object_info_canopus_description",
+      "funFactKey": "object_info_canopus_funfact"
+    },
+    "aldebaran": {
+      "nameKey": "aldebaran",
+      "descriptionKey": "object_info_aldebaran_description",
+      "funFactKey": "object_info_aldebaran_funfact"
+    },
+    "antares": {
+      "nameKey": "antares",
+      "descriptionKey": "object_info_antares_description",
+      "funFactKey": "object_info_antares_funfact"
+    }
+  }
+}

@@ -236,4 +236,74 @@
     <string name="rotate_horizon_preference_summary">Rotate horizon by 90 degrees (for devices
         with forced landscape) or use pointer mode for the screen to show
         what the top of the phone is pointing at (see help text).</string>
+
+    <!-- Educational Object Info Feature -->
+    <string name="show_object_info_pref_title" translation_description="Preference title for showing info cards when tapping objects">Show info on tap</string>
+    <string name="show_object_info_pref_summary" translation_description="Preference summary for the tap info feature">Tap celestial objects in manual mode to learn about them</string>
+    <string name="object_info_funfact_label" translation_description="Label before the fun fact in info card">Fun fact:</string>
+
+    <!-- Solar System Educational Content -->
+    <string name="object_info_sun_description" translation_description="Short description of the Sun">The Sun is the star at the center of our solar system. It provides the light and heat that makes life on Earth possible.</string>
+    <string name="object_info_sun_funfact" translation_description="Fun fact about the Sun">The Sun contains 99.86% of all mass in our solar system. About 1.3 million Earths could fit inside it!</string>
+
+    <string name="object_info_moon_description" translation_description="Short description of the Moon">The Moon is Earth\'s only natural satellite. It influences our tides and has been visited by 12 astronauts.</string>
+    <string name="object_info_moon_funfact" translation_description="Fun fact about the Moon">The Moon is slowly drifting away from Earth at about 3.8 cm per year. It was much closer billions of years ago!</string>
+
+    <string name="object_info_mercury_description" translation_description="Short description of Mercury">Mercury is the smallest planet and closest to the Sun. A year on Mercury lasts only 88 Earth days.</string>
+    <string name="object_info_mercury_funfact" translation_description="Fun fact about Mercury">Despite being closest to the Sun, Mercury is not the hottest planet. Venus is hotter due to its thick atmosphere!</string>
+
+    <string name="object_info_venus_description" translation_description="Short description of Venus">Venus is the second planet from the Sun and the hottest in our solar system. It\'s often called Earth\'s twin due to similar size.</string>
+    <string name="object_info_venus_funfact" translation_description="Fun fact about Venus">A day on Venus is longer than its year! It takes 243 Earth days to rotate once, but only 225 days to orbit the Sun.</string>
+
+    <string name="object_info_mars_description" translation_description="Short description of Mars">Mars is the fourth planet from the Sun, known as the Red Planet due to iron oxide on its surface.</string>
+    <string name="object_info_mars_funfact" translation_description="Fun fact about Mars">Mars has the largest volcano in the solar system: Olympus Mons, which is 3 times taller than Mount Everest!</string>
+
+    <string name="object_info_jupiter_description" translation_description="Short description of Jupiter">Jupiter is the largest planet in our solar system. It\'s a gas giant with a famous Great Red Spot storm.</string>
+    <string name="object_info_jupiter_funfact" translation_description="Fun fact about Jupiter">Jupiter has at least 95 known moons! Its largest moon, Ganymede, is bigger than the planet Mercury.</string>
+
+    <string name="object_info_saturn_description" translation_description="Short description of Saturn">Saturn is the sixth planet from the Sun, famous for its spectacular ring system made of ice and rock.</string>
+    <string name="object_info_saturn_funfact" translation_description="Fun fact about Saturn">Saturn is so light it would float in water! Its density is less than water, though there\'s no bathtub big enough to test this.</string>
+
+    <string name="object_info_uranus_description" translation_description="Short description of Uranus">Uranus is an ice giant that rotates on its side. It was the first planet discovered using a telescope.</string>
+    <string name="object_info_uranus_funfact" translation_description="Fun fact about Uranus">Uranus rotates on its side at a 98-degree tilt, possibly due to a collision with an Earth-sized object long ago!</string>
+
+    <string name="object_info_neptune_description" translation_description="Short description of Neptune">Neptune is the most distant planet in our solar system. It has the strongest winds, reaching 2,100 km/h.</string>
+    <string name="object_info_neptune_funfact" translation_description="Fun fact about Neptune">Neptune was discovered through mathematics! Scientists predicted its location before anyone saw it through a telescope.</string>
+
+    <string name="object_info_pluto_description" translation_description="Short description of Pluto">Pluto is a dwarf planet in the Kuiper Belt. It was considered the ninth planet until 2006.</string>
+    <string name="object_info_pluto_funfact" translation_description="Fun fact about Pluto">Pluto has a heart-shaped glacier made of nitrogen ice, visible in images from NASA\'s New Horizons mission!</string>
+
+    <!-- Bright Stars Educational Content -->
+    <string name="object_info_sirius_description" translation_description="Short description of Sirius">Sirius is the brightest star in the night sky, located in the constellation Canis Major (the Greater Dog).</string>
+    <string name="object_info_sirius_funfact" translation_description="Fun fact about Sirius">Sirius is actually a binary star system! Sirius B, its companion, is a white dwarf about the size of Earth but nearly as massive as the Sun.</string>
+
+    <string name="object_info_vega_description" translation_description="Short description of Vega">Vega is one of the brightest stars visible from Earth, located in the constellation Lyra (the Harp).</string>
+    <string name="object_info_vega_funfact" translation_description="Fun fact about Vega">Vega was the North Star about 12,000 years ago and will be again in about 13,700 years due to Earth\'s wobble!</string>
+
+    <string name="object_info_betelgeuse_description" translation_description="Short description of Betelgeuse">Betelgeuse is a red supergiant star marking the shoulder of Orion. It\'s one of the largest stars visible to the naked eye.</string>
+    <string name="object_info_betelgeuse_funfact" translation_description="Fun fact about Betelgeuse">Betelgeuse is so large that if placed at our Sun\'s position, it would engulf Mercury, Venus, Earth, Mars, and possibly Jupiter!</string>
+
+    <string name="object_info_rigel_description" translation_description="Short description of Rigel">Rigel is a blue supergiant star marking the foot of Orion. Despite being farther than Betelgeuse, it appears similarly bright.</string>
+    <string name="object_info_rigel_funfact" translation_description="Fun fact about Rigel">Rigel shines with the light of about 120,000 Suns! It\'s one of the most luminous stars in our region of the Milky Way.</string>
+
+    <string name="object_info_procyon_description" translation_description="Short description of Procyon">Procyon is a bright star in the constellation Canis Minor (the Lesser Dog). It\'s one of our closer stellar neighbors.</string>
+    <string name="object_info_procyon_funfact" translation_description="Fun fact about Procyon">Procyon means \"before the dog\" in Greek because it rises just before Sirius, the Dog Star, in the night sky!</string>
+
+    <string name="object_info_polaris_description" translation_description="Short description of Polaris">Polaris, the North Star, appears nearly motionless in the sky while other stars rotate around it throughout the night.</string>
+    <string name="object_info_polaris_funfact" translation_description="Fun fact about Polaris">Polaris is actually a triple star system! The main star is a supergiant about 2,500 times brighter than our Sun.</string>
+
+    <string name="object_info_deneb_description" translation_description="Short description of Deneb">Deneb marks the tail of Cygnus (the Swan). It\'s part of the Summer Triangle asterism along with Vega and Altair.</string>
+    <string name="object_info_deneb_funfact" translation_description="Fun fact about Deneb">Deneb is one of the most distant stars visible to the naked eye, located about 2,600 light-years away!</string>
+
+    <string name="object_info_arcturus_description" translation_description="Short description of Arcturus">Arcturus is the brightest star in the northern hemisphere, an orange giant in the constellation Boötes (the Herdsman).</string>
+    <string name="object_info_arcturus_funfact" translation_description="Fun fact about Arcturus">Arcturus is traveling through space at a tremendous speed and will pass closest to our solar system in about 4,000 years!</string>
+
+    <string name="object_info_canopus_description" translation_description="Short description of Canopus">Canopus is the second-brightest star in the night sky. It\'s visible mainly from the Southern Hemisphere.</string>
+    <string name="object_info_canopus_funfact" translation_description="Fun fact about Canopus">Canopus is used by spacecraft for navigation because it\'s very bright and far from the ecliptic plane!</string>
+
+    <string name="object_info_aldebaran_description" translation_description="Short description of Aldebaran">Aldebaran is an orange giant star that represents the eye of Taurus (the Bull). Its name means \"the follower\" in Arabic.</string>
+    <string name="object_info_aldebaran_funfact" translation_description="Fun fact about Aldebaran">Aldebaran appears to be part of the Hyades star cluster but is actually only half the distance to us - a cosmic optical illusion!</string>
+
+    <string name="object_info_antares_description" translation_description="Short description of Antares">Antares is a red supergiant star, the heart of Scorpius (the Scorpion). Its name means \"rival of Mars\" due to its red color.</string>
+    <string name="object_info_antares_funfact" translation_description="Fun fact about Antares">Antares is so large that if placed in our solar system, its surface would extend past the orbit of Mars!</string>
 </resources>

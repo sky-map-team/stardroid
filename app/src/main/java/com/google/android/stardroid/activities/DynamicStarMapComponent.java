@@ -6,6 +6,7 @@ import com.google.android.stardroid.activities.dialogs.HelpDialogFragment;
 import com.google.android.stardroid.activities.dialogs.MultipleSearchResultsDialogFragment;
 import com.google.android.stardroid.activities.dialogs.NoSearchResultsDialogFragment;
 import com.google.android.stardroid.activities.dialogs.NoSensorsDialogFragment;
+import com.google.android.stardroid.activities.dialogs.ObjectInfoDialogFragment;
 import com.google.android.stardroid.activities.dialogs.TimeTravelDialogFragment;
 import com.google.android.stardroid.inject.PerActivity;
 
@@ -20,7 +21,8 @@ public interface DynamicStarMapComponent extends EulaDialogFragment.ActivityComp
     TimeTravelDialogFragment.ActivityComponent, HelpDialogFragment.ActivityComponent,
     NoSearchResultsDialogFragment.ActivityComponent,
     MultipleSearchResultsDialogFragment.ActivityComponent,
-    NoSensorsDialogFragment.ActivityComponent {
+    NoSensorsDialogFragment.ActivityComponent,
+    ObjectInfoDialogFragment.ActivityComponent {
   void inject(DynamicStarMapActivity activity);
 }
 
