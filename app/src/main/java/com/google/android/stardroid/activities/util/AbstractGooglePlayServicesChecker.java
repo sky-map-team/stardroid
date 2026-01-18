@@ -10,30 +10,25 @@ import android.util.Log;
 
 import com.google.android.stardroid.activities.DynamicStarMapActivity;
 import com.google.android.stardroid.activities.dialogs.LocationPermissionDeniedDialogFragment;
-import com.google.android.stardroid.activities.dialogs.LocationPermissionRationaleFragment;
 import com.google.android.stardroid.util.MiscUtil;
 
 /**
  * Created by johntaylor on 4/2/16.
  */
-public abstract class AbstractGooglePlayServicesChecker implements LocationPermissionRationaleFragment.Callback {
+public abstract class AbstractGooglePlayServicesChecker {
   protected static final String TAG = MiscUtil.getTag(GooglePlayServicesChecker.class);
   protected final Activity parent;
   protected final SharedPreferences preferences;
-  private final LocationPermissionRationaleFragment rationaleDialog;
   private final LocationPermissionDeniedDialogFragment permissionDeniedDialog;
   private final FragmentManager fragmentManager;
 
   AbstractGooglePlayServicesChecker(Activity parent, SharedPreferences preferences,
-                            LocationPermissionRationaleFragment rationaleDialog,
                             LocationPermissionDeniedDialogFragment permissionDeniedDialog,
                             FragmentManager fragmentManager) {
     this.parent = parent;
     this.preferences = preferences;
-    this.rationaleDialog = rationaleDialog;
     this.permissionDeniedDialog = permissionDeniedDialog;
     this.fragmentManager = fragmentManager;
-    rationaleDialog.setCallback(this);
   }
 
   /**
@@ -60,7 +55,7 @@ public abstract class AbstractGooglePlayServicesChecker implements LocationPermi
     permissionDeniedDialog.setCallback(new LocationPermissionDeniedDialogFragment.Callback() {
       @Override
       public void onGrantPermissionClicked() {
-        requestLocationPermission();
+        // App settings is already opened by the dialog
       }
 
       @Override
@@ -103,10 +98,5 @@ public abstract class AbstractGooglePlayServicesChecker implements LocationPermi
   public void runAfterDialog() {
     // Just log for now.
     Log.d(TAG, "Play Services Dialog has been shown");
-  }
-
-  public void done() {
-    Log.d(TAG, "Location rationale Dialog has been shown");
-    requestLocationPermission();
   }
 }
