@@ -65,7 +65,7 @@ public class DynamicStarMapActivityTest {
   // https://alexzh.com/ui-testing-of-android-runtime-permissions/
   @Rule
   public androidx.test.rule.GrantPermissionRule permissionRule = GrantPermissionRule.grant(
-      android.Manifest.permission.ACCESS_FINE_LOCATION
+      android.Manifest.permission.ACCESS_COARSE_LOCATION
   );
 
   @Before

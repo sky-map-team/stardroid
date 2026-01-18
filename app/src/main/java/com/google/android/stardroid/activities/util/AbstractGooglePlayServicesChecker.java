@@ -42,12 +42,12 @@ public abstract class AbstractGooglePlayServicesChecker implements LocationPermi
   public abstract void maybeCheckForGooglePlayServices();
 
   protected void checkLocationServicesEnabled() {
-    if (ActivityCompat.checkSelfPermission(parent, Manifest.permission.ACCESS_FINE_LOCATION)
+    if (ActivityCompat.checkSelfPermission(parent, Manifest.permission.ACCESS_COARSE_LOCATION)
         != PackageManager.PERMISSION_GRANTED) {
       Log.d(TAG, "Location permission not enabled - maybe prompting user");
       // Check Permissions now
       if (ActivityCompat.shouldShowRequestPermissionRationale(
-          parent, Manifest.permission.ACCESS_FINE_LOCATION)) {
+          parent, Manifest.permission.ACCESS_COARSE_LOCATION)) {
         rationaleDialog.show(fragmentManager, "Rationale Dialog");
       } else {
         requestLocationPermission();
@@ -59,7 +59,7 @@ public abstract class AbstractGooglePlayServicesChecker implements LocationPermi
 
   private void requestLocationPermission() {
     ActivityCompat.requestPermissions(parent,
-        new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+        new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},
         DynamicStarMapActivity.GOOGLE_PLAY_SERVICES_REQUEST_LOCATION_PERMISSION_CODE);
   }
 
