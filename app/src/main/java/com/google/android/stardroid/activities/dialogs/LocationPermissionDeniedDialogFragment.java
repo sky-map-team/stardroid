@@ -31,20 +31,8 @@ public class LocationPermissionDeniedDialogFragment extends DialogFragment {
   @Inject Activity parentActivity;
   @Inject SharedPreferences preferences;
 
-  private Callback callback;
-
-  public interface Callback {
-    void onGrantPermissionClicked();
-    void onEnterManuallyClicked();
-    void onLaterClicked();
-  }
-
   public interface ActivityComponent {
     void inject(LocationPermissionDeniedDialogFragment fragment);
-  }
-
-  public void setCallback(Callback callback) {
-    this.callback = callback;
   }
 
   @Override
@@ -59,9 +47,6 @@ public class LocationPermissionDeniedDialogFragment extends DialogFragment {
           public void onClick(DialogInterface dialog, int which) {
             Log.d(TAG, "User chose later");
             dialog.dismiss();
-            if (callback != null) {
-              callback.onLaterClicked();
-            }
           }
         })
         .setNegativeButton(R.string.location_permission_enter_manually, new DialogInterface.OnClickListener() {
@@ -73,9 +58,6 @@ public class LocationPermissionDeniedDialogFragment extends DialogFragment {
                 .apply();
             Intent intent = new Intent(parentActivity, EditSettingsActivity.class);
             parentActivity.startActivity(intent);
-            if (callback != null) {
-              callback.onEnterManuallyClicked();
-            }
           }
         })
         .setPositiveButton(R.string.location_permission_grant, new DialogInterface.OnClickListener() {
@@ -86,9 +68,6 @@ public class LocationPermissionDeniedDialogFragment extends DialogFragment {
             Uri uri = Uri.fromParts("package", parentActivity.getPackageName(), null);
             intent.setData(uri);
             parentActivity.startActivity(intent);
-            if (callback != null) {
-              callback.onGrantPermissionClicked();
-            }
           }
         })
         .create();

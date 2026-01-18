@@ -52,22 +52,6 @@ public abstract class AbstractGooglePlayServicesChecker {
   }
 
   private void showLocationPermissionDialog() {
-    permissionDeniedDialog.setCallback(new LocationPermissionDeniedDialogFragment.Callback() {
-      @Override
-      public void onGrantPermissionClicked() {
-        // App settings is already opened by the dialog
-      }
-
-      @Override
-      public void onEnterManuallyClicked() {
-        // EditSettingsActivity is already started by the dialog
-      }
-
-      @Override
-      public void onLaterClicked() {
-        // User chose to defer - app continues with default location
-      }
-    });
     permissionDeniedDialog.show(fragmentManager, "Location Permission Dialog");
   }
 
