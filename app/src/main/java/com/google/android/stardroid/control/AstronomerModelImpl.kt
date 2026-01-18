@@ -297,7 +297,7 @@ class AstronomerModelImpl(magneticDeclinationCalculator: MagneticDeclinationCalc
             magneticEastPhone = Vector3(rotationMatrix[0], rotationMatrix[1], rotationMatrix[2])
         } else {
             // TODO(johntaylor): we can reduce the number of vector copies done in here.
-            upPhone = acceleration.normalizedCopy()
+            upPhone = -acceleration.normalizedCopy()
             val magneticFieldToNorth = magneticField.normalizedCopy()
             // This is the vector to magnetic North *along the ground*.
             // (The "vector rejection")
