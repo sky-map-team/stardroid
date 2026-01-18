@@ -18,7 +18,7 @@ Android has evolved significantly since 2009. While most of the code has been re
 I'm glad you asked! We have a section on that below.
 
 ---
-<a name="support"></a
+<a name="support"></a>
 ## Support the Project ☕️
 
 <a href="https://www.buymeacoffee.com/skymapdevs" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-blue.png" alt="Buy Me A Coffee" height="41" width="174"></a>
