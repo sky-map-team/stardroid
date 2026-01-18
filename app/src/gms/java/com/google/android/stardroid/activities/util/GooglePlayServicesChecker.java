@@ -10,6 +10,7 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.DynamicStarMapActivity;
+import com.google.android.stardroid.activities.dialogs.LocationPermissionDeniedDialogFragment;
 import com.google.android.stardroid.activities.dialogs.LocationPermissionRationaleFragment;
 import com.google.android.stardroid.control.LocationController;
 
@@ -25,8 +26,9 @@ public class GooglePlayServicesChecker extends AbstractGooglePlayServicesChecker
   GooglePlayServicesChecker(Activity parent, SharedPreferences preferences,
                             GoogleApiAvailability apiAvailability,
                             LocationPermissionRationaleFragment rationaleDialog,
+                            LocationPermissionDeniedDialogFragment permissionDeniedDialog,
                             FragmentManager fragmentManager) {
-    super(parent, preferences, rationaleDialog, fragmentManager);
+    super(parent, preferences, rationaleDialog, permissionDeniedDialog, fragmentManager);
     this.apiAvailability = apiAvailability;
   }
 

@@ -5,6 +5,7 @@ import android.app.FragmentManager;
 import android.content.SharedPreferences;
 import android.util.Log;
 
+import com.google.android.stardroid.activities.dialogs.LocationPermissionDeniedDialogFragment;
 import com.google.android.stardroid.activities.dialogs.LocationPermissionRationaleFragment;
 import com.google.android.stardroid.control.LocationController;
 
@@ -18,8 +19,9 @@ public class GooglePlayServicesChecker extends AbstractGooglePlayServicesChecker
   @Inject
   GooglePlayServicesChecker(Activity parent, SharedPreferences preferences,
                             LocationPermissionRationaleFragment rationaleDialog,
+                            LocationPermissionDeniedDialogFragment permissionDeniedDialog,
                             FragmentManager fragmentManager) {
-    super(parent, preferences, rationaleDialog, fragmentManager);
+    super(parent, preferences, rationaleDialog, permissionDeniedDialog, fragmentManager);
   }
 
   /**
