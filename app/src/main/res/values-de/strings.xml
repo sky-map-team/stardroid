@@ -17,7 +17,6 @@
     <string name="location_long_pref">Geogr. Länge</string>
     <string name="degrees">Grad</string>
     <string name="preferences">Einstellungen</string>
-    <string name="location_no_auto">Ihr Telefon unterstützt den autom. Standort nicht. Legen Sie den Ort in den Einstellungen manuell fest.</string>
     <string name="location_offer_to_enable">Der autom. Standort ist deaktiviert. Aktivieren?</string>
     <string name="location_offer_to_enable_gps_title">Autom. Standort deaktiviert</string>
     <string name="location_set_auto">Ort von %1$s auf %2$s festgelegt</string>
@@ -402,8 +401,6 @@
     <string name="enable_analytics">Nutzungsstatistiken senden</string>
     <string name="enable_analytics_desc">Sky Map durch das Übermitteln anonymer Daten an Google Analytics verbessern</string>
     <string name="enabled">Aktiviert</string>
-    <string name="location_rationale_title">Worum benötigen wir Ihren Standort?</string>
-    <string name="location_rationale_text">Die Sterne, die Sie am Himmel sehen können, hängen von Ihrer Position auf der Erde ab. Ohne Ihren Standort können wir Ihnen keine akkurate Sternenkarte darstellen. Wenn Sie der automatischen Standortbestimmung durch Ihr Gerät nicht zustimmen, können Sie in den Einstellungen manuell einen Standort festlegen. Es reicht dabei aus, die nächste Stadt anzugeben.</string>
     <string name="menu_calibrate">Kalibrieren</string>
     <string name="menu_diagnostics">Diagnose</string>
     <string name="no_sensor_warning">Ihr Gerät scheint keine Sensoren zur Bestimmung der Orientierung zu besitzen - Der automatische Modus könnte nicht funktionieren</string>

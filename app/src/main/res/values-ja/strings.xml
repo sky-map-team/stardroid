@@ -17,7 +17,6 @@
     <string name="location_long_pref">経度</string>
     <string name="degrees" translation_description="angular degrees">度数</string>
     <string name="preferences">設定</string>
-    <string name="location_no_auto">この端末は自動位置機能に対応していません。[設定]から手動で位置を設定できます。</string>
     <string name="location_offer_to_enable">自動位置機能が無効です。有効にしますか？</string>
     <string name="location_offer_to_enable_gps_title">自動位置機能が無効です</string>
     <string name="location_set_auto">位置を%1$sから%2$sに設定</string>
@@ -154,8 +153,6 @@
     </string>
     <string name="do_not_show_again">このメッセージを再び表示しない</string>
     <string name="title_activity_diagnostic">診断</string>
-    <string name="location_rationale_title">なぜ位置情報を要求するのですか?</string>
-    <string name="location_rationale_text">あなたがどの星を見ることができるかはあなたが地球上のどこにいるかによります。位置情報なしでは正確なマップを表示できません。位置情報を教えるようにスマートフォンに設定したくない場合は、設定画面から手動で位置を設定できます。最も近い都市を指定するだけで十分です。</string>
     <string name="play_services_error">警告: Google Play Services エラー - 自動位置判定は動作しないかもしれません</string>
     <string name="sensor_absent">Absent</string>
     <string name="sensor_accuracy_unknown">精度: 不明</string>
