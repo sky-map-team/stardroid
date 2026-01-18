@@ -17,7 +17,6 @@
     <string name="location_long_pref">Boylam</string>
     <string name="degrees" translation_description="angular degrees">Derece</string>
     <string name="preferences">ayarlar</string>
-    <string name="location_no_auto">Otomatik Konum İzni devre dışı bırakıldı. Konumu ayarlar menüsünde el İle değiştirebilirsiniz. Bu zamana kadar harita farklı bir konumda gözükecek.</string>
     <string name="location_offer_to_enable">Otomatik konum devre dışı bırakıldı. Etkinleştirmek ister misiniz?</string>
     <string name="location_offer_to_enable_gps_title">Otomatik konum devre dışı bırakıldı.</string>
     <string name="location_set_auto">Konum %1$s\'den %2$s\'ye ayarlandı.</string>
@@ -152,8 +151,6 @@
     </string>
     <string name="do_not_show_again">Bu mesajı tekrar gösterme</string>
     <string name="title_activity_diagnostic">Kontrol</string>
-    <string name="location_rationale_title">Neden konum bilgisi istiyoruz?</string>
-    <string name="location_rationale_text">Görebileceğiniz yıldızlar, dünya üzerinde nerede olduğunuza bağlıdır. Konumunuzu bize vermezseniz, size doğru bir harita gösteremeyiz. Eğer telefonunuzun konumunu bizimle paylaşmak istemiyorsanız, ayarlar bölümünden konumu elle girebilirsiniz. Sadece en yakın şehri girmeniz yeterlidir.</string>
     <string name="play_services_error">Uyarı: Google Play Hizmetleri hatası - Otomatik konum çalışmayabilir</string>
     <string name="sensor_absent">Yok</string>
     <string name="sensor_accuracy_unknown">Doğruluk: Bilinmiyor</string>

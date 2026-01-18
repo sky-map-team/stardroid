@@ -18,7 +18,6 @@
     <string name="location_long_pref">Długość geograficzna</string>
     <string name="degrees" translation_description="angular degrees">Stopnie</string>
     <string name="preferences">ustawienia</string>
-    <string name="location_no_auto">Uprawnienie do automatycznej lokalizacji jest wyłączone w Twoim telefonie. Włącz je ręcznie w ustawieniach, aby mapa była prawidłowa.</string>
     <string name="location_offer_to_enable">Automatyczna lokalizacja jest wyłączona. Czy chcesz ją włączyć?</string>
     <string name="location_offer_to_enable_gps_title">Automatyczna lokalizacja wyłączona</string>
     <string name="location_set_auto">Lokalizacja zmieniona przez %1$s na %2$s</string>
@@ -147,8 +146,6 @@
     </string>
     <string name="do_not_show_again">Nie pokazuj ponownie tej wiadomości</string>
     <string name="title_activity_diagnostic">Diagnostyka</string>
-    <string name="location_rationale_title">Dlaczego pytamy o Twoją lokalizację?</string>
-    <string name="location_rationale_text">Możliwość zobaczenia gwiazd zależy od miejsca, w którym się znajdujesz. Bez Twojej lokalizacji nie możemy pokazać Ci dokładnej mapy. Jeśli nie chcesz, aby Twój telefon podawał nam Twoją lokalizację, możesz podać ją ręcznie w ustawieniach. Wystarczy podać najbliższe miasto.</string>
     <string name="play_services_error">Ostrzeżenie: Błąd Usług Google Play – automatyczna lokalizacja może nie działać</string>
     <string name="sensor_absent">Nieobecny</string>
     <string name="sensor_accuracy_unknown">Dokładność: nieznana</string>
