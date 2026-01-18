@@ -1,12 +1,57 @@
-# Sky Map [![Build Status](https://travis-ci.org/sky-map-team/stardroid.svg?branch=master)](https://travis-ci.org/sky-map-team/stardroid)
+# Sky Map
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Build Status](https://travis-ci.org/sky-map-team/stardroid.svg?branch=master)](https://travis-ci.org/sky-map-team/stardroid)
+[![Buy Me A Coffee](https://img.shields.io/badge/Support-Buy%20Me%20A%20Coffee-orange?style=flat-square&logo=buy-me-a-coffee)](https://www.buymeacoffee.com/skymapdevs)
 
-This is the source repository for Sky Map.  You can find it in the [Google Play Store](https://play.google.com/store/apps/details?id=com.google.android.stardroid) and on [F-Droid](https://f-droid.org/en/packages/com.google.android.stardroid/).
+Sky Map is the open-source astronomy Android app built for the community.  You can download the official builds from the [Google Play Store](https://play.google.com/store/apps/details?id=com.google.android.stardroid) or from [F-Droid](https://f-droid.org/en/packages/com.google.android.stardroid/).
+
+## FAQ
+### Is this *Google* Sky Map?
+It was originally! 
+
+Sky Map has a *long* history, launching as Google Sky Map on the very first Android phone at Searchology 2009. In 2011 Google ceased active support and the original developers open-sourced it with Google's permission.  Google's [Open Source Programs Office](https://opensource.org/blog/google-ospo-why-we-support-the-osi) kindly allowed us to continue to work on it as a personal project, provided we removed Google's branding from it and did not use Google's resources. Today it is still maintained by the same folks. While we no longer work for Google we continue to develop Sky Map using our own resources.
+
+### Why does it lack feature _X_ or look so dated?
+Android has evolved significantly since 2009. While most of the code has been rewritten since its Google days, the architecture reflects its origins. We are currently working on a complete modernization of the app. In the meantime, we are continually inspired by the community of users who still find joy in its simplicity and quirks.
+
+### How can we help?
+I'm glad you asked! We have a section on that below.
+
+---
+
+## Support the Project ☕️
 
 <a href="https://www.buymeacoffee.com/skymapdevs" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-blue.png" alt="Buy Me A Coffee" height="41" width="174"></a>
 
-Sky Map is free - there is no charge, no ads and we don't sell your data. However, some folks have asked if they can contribute in some small way so if you'd like to you can buy us a coffee by clicking on the above link. This is in no way expected or required but if you insist, I'll take a cappuccino.
+Sky Map is a labor of love maintained our spare time by a couple of ex-Googlers here in Pittsburgh. It is free, open-source, ad-free and we don't track you or sell your data. 
 
-## Building
+If you enjoy using Sky Map, there are several ways to help keep the project alive:
+
+* **Donations:** [Buy Me a Coffee](https://www.buymeacoffee.com/skymapdevs) — Every coffee helps keep the servers running and the code flowing!
+* **Join the beta and give us feedback!** Visit the [Play Store](https://play.google.com/store/apps/details?id=com.google.android.stardroid) on your phone.
+* **Star the Repo:** It costs nothing and helps others find the project.
+* **Contribute:** Submit a Pull Request or [report an issue](https://github.com/sky-map-team/stardroid/issues/).
+
+---
+
+# Code and Language Contributions
+Yes, we know that Sky Map's code and UX is very dated. It needs a big overhaul.
+
+In general, bug fix contributions are welcome, for example, simple one file fixes or dependency version upgrades.  We're particularly grateful for fixed or new translations since we've lost the 100% coverage of non-English languages that we once had.
+
+**However, please email us (or file a feature request) first before embarking on any major changes or feature additions. We may have a different vision for the direction of the app and it would be a pity to do work that we can't accept and would be wasted.**
+
+### A Note on Response Times
+It is likely we'll be slow to respond to emails and PR requests. Depending on what else is going on it might be days, it might be months. I do apologize for that - life is busy. Sometimes the reply might be simply to point you at this documentation, which will seem very ungrateful and unfriendly.
+
+*Pro-tip:* Small, focused PRs to fix bugs or upgrade dependencies etc are very easy for us to approve. If your PR does too much it might get stalled because even if 90% of it is welcome there might be 10% that we're not happy with. So keep them small if you can. Plus, we'll be able to review them faster.
+
+Thanks for your contributions! They're definitely appreciated even if our slowness to respond might make it seem otherwise.
+
+---
+
+## Technical Instructions
+### Building the project
 
 You should see the following
 two directories:
@@ -19,7 +64,7 @@ Android installation:
 
     sdk.dir=<path to your SDK>
 
-Android Developer Studio can create this for you.  You can regenerate the datafiles and
+Android Developer Studio can create this for you.  You can regenerate the data files and
 rebuild everything with the `build_skymap.sh` script:
 
     ./build_skymap.sh
@@ -30,7 +75,7 @@ If you just want to quickly regenerate an apk please see the following instructi
 (note: assembleRelease won't work because the f-droid flavor needs some tweaking which
 is done by the shell script - so make sure you build the Gms flavor specifically).
 
-## Building a debug apk
+### Building a debug apk
 
 From the root directory execute
 
@@ -38,7 +83,7 @@ From the root directory execute
 
 The apk can be found in `app/build/outputs/apk/`.
 
-## Building a release apk
+### Building a release apk
 (Sky Map team only)
 
 Create a file in the app directory called
@@ -61,7 +106,7 @@ or
 The apk can be found in `app/build/outputs/apk/`.
 
 
-## Running tests
+### Running tests
 Unit tests:
 
     ./gradlew test
@@ -70,22 +115,10 @@ Connected device/emulator required tests:
 
     ./gradlew app:connectedAndroidTest
 
-## Deploying
+### Deploying
 Plug your phone in and run the `deploy.sh` script.  Pass the `-d` flag if you built the debug version.  `undeploy.sh` does the reverse.
 
-# Code and Language Contributions
-Yes, we know that Sky Map's code and UX is very dated. It needs a big overhaul.
 
-In general, bug fix contributions are welcome, for example, simple one file fixes or dependency version upgrades.  We're particularly grateful for fixed or new translations since as the app is developed we lose the 100% coverage of non-English languages that we once had.
-
-**However, please email us (or file a feature request) first before embarking on any major changes or feature additions. We may have a different vision for the direction of the app and it would be a pity to do work that we can't accept and would be wasted.**
-
-It is likely we'll be slow to respond to emails and PR requests. Depending on what else is going on it might be days, it might be months. I do apologize for that - life is busy. Sometimes the reply might be simply to point you at this documentation, which will seem very ungrateful and unfriendly. Again, I apologize, but it's the only way to keep up with the emails.
-
-Small, focussed PRs to fix bugs or upgrade dependencies etc are very easy for us to approve. If your PR does too much it might get stalled because even if 90% of it is welcome there might be 10% that we're not happy with. So keep them small if you can. Plus, we'll be able to review them faster.
-
-Thanks for your contributions! They're definitely appreciated even if our slowness to respond might make it seem otherwise.
-
-## Coding Style
+### Coding Style
 
 We follow the [Google style guide](https://google.github.io/styleguide/javaguide.html) (or try to).  We wrap at 100 chars and we do not use the common Android style of prefixing member variables with a 'm'. 
