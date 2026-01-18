@@ -19,11 +19,10 @@
     <string name="location_long_pref">Longitude</string>
     <string name="degrees" translation_description="angular degrees">Degrees</string>
     <string name="preferences">preferences</string>
-    <string name="location_no_auto">Auto-location permission is disabled on your phone.   You can set the location manually in preferences.  Until then the map will be incorrect.</string>
     <string name="location_offer_to_enable">Auto-location is disabled.  Would you like to enable it?</string>
     <string name="location_offer_to_enable_gps_title">Auto-location disabled</string>
     <string name="location_permission_dialog_title">Location Required</string>
-    <string name="location_permission_dialog_message">Sky Map needs your location to show the correct night sky. You can grant permission, enter your location manually, or decide later.</string>
+    <string name="location_permission_dialog_message">Sky Map needs your approximate location to show the correct night sky. You can grant permission, enter your location manually, or decide later. If you decide later, the map will not be accurate until your location has been set.</string>
     <string name="location_permission_grant">Grant Permission</string>
     <string name="location_permission_enter_manually">Enter Manually</string>
     <string name="location_permission_later">Later</string>
