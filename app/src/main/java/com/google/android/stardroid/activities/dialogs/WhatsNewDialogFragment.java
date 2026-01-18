@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.Spanned;
+import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
@@ -50,6 +51,7 @@ public class WhatsNewDialogFragment extends DialogFragment {
     Spanned formattedWhatsNewText = Html.fromHtml(whatsNewText);
     TextView whatsNewTextView = (TextView) view.findViewById(R.id.whats_new_box_text);
     whatsNewTextView.setText(formattedWhatsNewText, TextView.BufferType.SPANNABLE);
+    whatsNewTextView.setMovementMethod(LinkMovementMethod.getInstance());
 
     AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(parentActivity)
         .setTitle(getString(R.string.whats_new_dialog_title))

@@ -1,6 +1,6 @@
 # Sky Map [![Build Status](https://travis-ci.org/sky-map-team/stardroid.svg?branch=master)](https://travis-ci.org/sky-map-team/stardroid)
 
-This is the source repository for Sky Map.  You can find it in the [Google Play Store](https://play.google.com/store/apps/details?id=com.google.android.stardroid) and on [F-Droid](https://f-droid.org/en/packages/com.google.android.stardroid/).
+This [test](app/test)is the source repository for Sky Map.  You can find it in the [Google Play Store](https://play.google.com/store/apps/details?id=com.google.android.stardroid) and on [F-Droid](https://f-droid.org/en/packages/com.google.android.stardroid/).
 
 <a href="https://www.buymeacoffee.com/skymapdevs" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-blue.png" alt="Buy Me A Coffee" height="41" width="174"></a>
 

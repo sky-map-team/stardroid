@@ -2,7 +2,7 @@
 <string name="help_text" translation_description="Please do not change the &lt; and &gt; markup">
 &lt;big&gt;&lt;b&gt;Sky Map για Android&lt;/b&gt;&lt;/big&gt;&lt;br/&gt;
 &lt;i&gt;Έκδοση %s&lt;/i&gt;&lt;br/&gt;
-&lt;i&gt;https://github.com/sky-map-team/stardroid&lt;/i&gt;&lt;br/&gt;&lt;br/&gt;
+&lt;i&gt;https://github.com/sky-map-team/stardroid&lt;/i&gt;lt;i&lt;i&gt;https://github.com/sky-map-team/stardroid&lt;/i&gt;gt;&lt;i&gt;https://github.com/sky-map-team/stardroid&lt;/i&gt;lt;a href="https://github.com/sky-map-team/stardroid"&lt;i&gt;https://github.com/sky-map-team/stardroid&lt;/i&gt;gt;https://github.com/sky-map-team/stardroid&lt;i&gt;https://github.com/sky-map-team/stardroid&lt;/i&gt;lt;/a&lt;i&gt;https://github.com/sky-map-team/stardroid&lt;/i&gt;gt;&lt;i&gt;https://github.com/sky-map-team/stardroid&lt;/i&gt;lt;/i&lt;i&gt;https://github.com/sky-map-team/stardroid&lt;/i&gt;gt;&lt;br/&gt;&lt;br/&gt;
 
 &lt;b&gt;Εισαγωγή και γρήγορη εκκίνηση&lt;/b&gt;&lt;br/&gt;
 Το Sky Map μετατρέπει την Android συσκευή σας σε ένα παράθυρο στο
@@ -132,6 +132,11 @@ Sky Map θα σας εμφανίσει μία λίστα με αντικείμε
 βαθμονομημένη πυξίδα. Ακολουθείστε τις παραπάνω οδηγίες για να την
 \'ξεκολλήσετε\'.&lt;br/&gt;&lt;br/&gt;
 
+&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Support Development&lt;/b&gt;&lt;br/&gt;
+Sky Map is free, open source, and ad-free. If you enjoy using it, please
+consider supporting continued development at
+&lt;a href="https://github.com/sky-map-team/stardroid#support"&gt;our GitHub page&lt;/a&gt;.&lt;br/&gt;&lt;br/&gt;
+
 &lt;b&gt;Μνεία&lt;/b&gt;&lt;br/&gt;
 &lt;i&gt;Ανάπτυξη, Σχεδιασμός και Διαχείριση προϊόντος&lt;/i&gt;&lt;br/&gt;
 Brent Bryan, Dominic Widdows, Hector Ouilhet, James Powell,
@@ -147,23 +152,23 @@ Christopher Wilcox, PhD&lt;br/&gt;&lt;br/&gt;
 Το Sky Map αναπτύχθηκε αρχικά ως "Google Sky Map" από την Google Inc. και έγινε
 ανοιχτού κώδικα το 2012.
 Το Sky Map χρησιμοποιεί χάρτες προερχόμενους από δεδομένα από:&lt;br/&gt;
-Centre de Donnees astronomiques de Strasbourg (https://cdsweb.u-strasbg.fr/)&lt;br/&gt;
+Centre de Donnees astronomiques de Strasbourg (&lt;a href="https://cdsweb.u-strasbg.fr/"&gt;https://cdsweb.u-strasbg.fr/&lt;/a&gt;)&lt;br/&gt;
 The Bright Star Catalogue, 5th Revised Ed. (Hoffleit D., Warren Jr W.H.)&lt;br/&gt;
-The HYG Database, HYG v1.0. (https://www.astronexus.com/)&lt;br/&gt;
+The HYG Database, HYG v1.0. (&lt;a href="https://www.astronexus.com/"&gt;https://www.astronexus.com/&lt;/a&gt;)&lt;br/&gt;
 History and Accurate Positions for the NGC/IC Objects (Harold G. Corwin Jr)&lt;br/&gt;
 Revised New General Catalogue of Nonstellar Astronomical Objects
 (Sulentic J.W., Tifft W.G.)&lt;br/&gt;
 SFA Star Charts
-(https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html)&lt;br/&gt;
+(&lt;a href="https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html"&gt;https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html&lt;/a&gt;)&lt;br/&gt;
 Οι θέσεις των αντικειμένων του ηλιακού συστήματος υπολογίζονται από δεδομένα του USNO
-(https://www.usno.navy.mil/USNO/astronomical-applications)&lt;br/&gt;
+(&lt;a href="https://www.usno.navy.mil/USNO/astronomical-applications"&gt;https://www.usno.navy.mil/USNO/astronomical-applications&lt;/a&gt;)&lt;br/&gt;
 Τα δεδομένα σφαιρικής κάλυψης προέρχονται από
-(https://www2.research.att.com/~njas/coverings)&lt;br/&gt;
+(&lt;a href="https://www2.research.att.com/~njas/coverings"&gt;https://www2.research.att.com/~njas/coverings&lt;/a&gt;)&lt;br/&gt;
 Οι εικόνες του Hubble παρέχονται από το Επιστημονικό Ινστιτούτο Διαστημικού Τηλεσκοπίου της NASA
-(https://hubblesite.org/)&lt;br/&gt;
+(&lt;a href="https://hubblesite.org/"&gt;https://hubblesite.org/&lt;/a&gt;)&lt;br/&gt;
 Δεδομένα για τις βροχές διαττόντων αστέρων από τον Διεθνή Οργανισμό Μετεωριτών
-(https://www.imo.net/data)&lt;br/&gt;
-M31 image Peter Kennett (https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg)&lt;br/&gt;
+(&lt;a href="https://www.imo.net/data"&gt;https://www.imo.net/data&lt;/a&gt;)&lt;br/&gt;
+M31 image Peter Kennett (&lt;a href="https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg"&gt;https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg&lt;/a&gt;)&lt;br/&gt;
 </string>
 </resources>
 

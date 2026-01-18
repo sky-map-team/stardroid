@@ -1,7 +1,7 @@
 <resources><string name="help_text" translation_description="Please do not change the &lt; and &gt; markup">&lt;big&gt;&lt;b&gt;Sky Map для Android&lt;/b&gt;&lt;/big&gt;&lt;br/&gt;
 &lt;i&gt;Версія %s&lt;/i&gt;&lt;br/&gt;
 
-&lt;i&gt;https://github.com/sky-map-team/stardroid&lt;/i&gt;&lt;br/&gt;&lt;br/&gt;
+&lt;i&gt;https://github.com/sky-map-team/stardroid&lt;/i&gt;lt;i&lt;i&gt;https://github.com/sky-map-team/stardroid&lt;/i&gt;gt;&lt;i&gt;https://github.com/sky-map-team/stardroid&lt;/i&gt;lt;a href="https://github.com/sky-map-team/stardroid"&lt;i&gt;https://github.com/sky-map-team/stardroid&lt;/i&gt;gt;https://github.com/sky-map-team/stardroid&lt;i&gt;https://github.com/sky-map-team/stardroid&lt;/i&gt;lt;/a&lt;i&gt;https://github.com/sky-map-team/stardroid&lt;/i&gt;gt;&lt;i&gt;https://github.com/sky-map-team/stardroid&lt;/i&gt;lt;/i&lt;i&gt;https://github.com/sky-map-team/stardroid&lt;/i&gt;gt;&lt;br/&gt;&lt;br/&gt;
 
 &lt;b&gt;Вступ і керівництво для початку роботи&lt;/b&gt;&lt;br/&gt;Sky Map перетворить ваш мобільний телефон на платформі Android в вікно, через яке можна спостерігати зоряне небо. Направте телефон вгору, і ви побачите мапу найяскравіших зірок, сузір\'їв і планет цієї ділянки неба.&lt;br/&gt;А коли вам підморгне якась яскрава зірка, ви зможете дізнатися її ім\'я за допомогою Sky Map!&lt;br/&gt;
 
@@ -55,6 +55,11 @@ Sky Map містить інформацію з Галереї Хаббл для 
 &lt;i&gt;Мапа не переміщається&lt;/i&gt;&lt;br/&gt;
 Перевірте, чи включений автоматичний режим навігації. Якщо цей режим включений, то, можливо, не відкалібрований компас. У пункті \"Не відкалібрований компас\" вище дані інструкції, як це виправити.&lt;br/&gt;&lt;br/&gt;
 
+&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Support Development&lt;/b&gt;&lt;br/&gt;
+Sky Map is free, open source, and ad-free. If you enjoy using it, please
+consider supporting continued development at
+&lt;a href="https://github.com/sky-map-team/stardroid#support"&gt;our GitHub page&lt;/a&gt;.&lt;br/&gt;&lt;br/&gt;
+
 &lt;b&gt;Команда Sky Map&lt;/b&gt;&lt;br/&gt;
 &lt;i&gt;Разробка і дизайн&lt;/i&gt;&lt;br/&gt;
 Брент Брайан, Домінік Уіддовс, Гектор Уілхет, Джеймс Пауелл, Джон Тейлор, Кевін Серафіні&lt;br/&gt;
@@ -74,12 +79,12 @@ Sky Map містить інформацію з Галереї Хаббл для 
 
 &lt;b&gt;Подяки&lt;/b&gt;&lt;br/&gt;
 У Sky Map використані дані з таких джерел:&lt;br/&gt;
-Центр астрономічних даних в Страсбурзі (https://cdsweb.u-strasbg.fr/)&lt;br/&gt;
+Центр астрономічних даних в Страсбурзі (&lt;a href="https://cdsweb.u-strasbg.fr/"&gt;https://cdsweb.u-strasbg.fr/&lt;/a&gt;)&lt;br/&gt;
 Каталог яскравих зір, 5-е вид., випр. (Хоффлейт Д., Уоррен-мол. У. Г.)&lt;br/&gt;
-База даних HYG, HYG вер. 1.0. (https://www.astronexus.com/)&lt;br/&gt;
+База даних HYG, HYG вер. 1.0. (&lt;a href="https://www.astronexus.com/"&gt;https://www.astronexus.com/&lt;/a&gt;)&lt;br/&gt;
 Історія і розташування об\'єктів NGC/IC (Гарольд Г. Корвін-мол.)&lt;br/&gt;
 Виправлений новий загальний каталог незоряних астрономічних об\'єктів (Сулентік Дж. У., Тіффт У. Г.)&lt;br/&gt;
-Мапа зоряного неба SFA (https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html)&lt;br/&gt;
-Розташування об\'єктів Сонячної системи розраховане на основі даних, наданих Військово-морською обсерваторією США (https://www.usno.navy.mil/USNO/astronomical-applications)&lt;br/&gt;
-Дані по сферичному охопленню (https://www2.research.att.com/~njas/coverings)&lt;br/&gt;
-Фотографії Хаббл надані Науковим інститутом космічного телескопа НАСА (https://hubblesite.org/)&lt;br/&gt;</string></resources>
+Мапа зоряного неба SFA (&lt;a href="https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html"&gt;https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html&lt;/a&gt;)&lt;br/&gt;
+Розташування об\'єктів Сонячної системи розраховане на основі даних, наданих Військово-морською обсерваторією США (&lt;a href="https://www.usno.navy.mil/USNO/astronomical-applications"&gt;https://www.usno.navy.mil/USNO/astronomical-applications&lt;/a&gt;)&lt;br/&gt;
+Дані по сферичному охопленню (&lt;a href="https://www2.research.att.com/~njas/coverings"&gt;https://www2.research.att.com/~njas/coverings&lt;/a&gt;)&lt;br/&gt;
+Фотографії Хаббл надані Науковим інститутом космічного телескопа НАСА (&lt;a href="https://hubblesite.org/"&gt;https://hubblesite.org/&lt;/a&gt;)&lt;br/&gt;</string></resources>

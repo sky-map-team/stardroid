@@ -1,7 +1,7 @@
 <resources><string name="help_text" translation_description="Please do not change the &lt; and &gt; markup">&lt;big&gt;&lt;b&gt;Sky Map voor Android&lt;/b&gt;&lt;/big&gt;&lt;br/&gt;
 &lt;i&gt;Versie %s&lt;/i&gt;&lt;br/&gt;
 
-&lt;i&gt;https://github.com/sky-map-team/stardroid&lt;/i&gt;&lt;br/&gt;&lt;br/&gt;
+&lt;i&gt;https://github.com/sky-map-team/stardroid&lt;/i&gt;lt;i&lt;i&gt;https://github.com/sky-map-team/stardroid&lt;/i&gt;gt;&lt;i&gt;https://github.com/sky-map-team/stardroid&lt;/i&gt;lt;a href="https://github.com/sky-map-team/stardroid"&lt;i&gt;https://github.com/sky-map-team/stardroid&lt;/i&gt;gt;https://github.com/sky-map-team/stardroid&lt;i&gt;https://github.com/sky-map-team/stardroid&lt;/i&gt;lt;/a&lt;i&gt;https://github.com/sky-map-team/stardroid&lt;/i&gt;gt;&lt;i&gt;https://github.com/sky-map-team/stardroid&lt;/i&gt;lt;/i&lt;i&gt;https://github.com/sky-map-team/stardroid&lt;/i&gt;gt;&lt;br/&gt;&lt;br/&gt;
 
 &lt;b&gt;Inleiding en snelle startgids&lt;/b&gt;&lt;br/&gt;
 Sky Map maakt van uw Android-telefoon een venster op de sterrenhemel. Wanneer u uw telefoon omhoog richt, krijgt u een kaart te zien van de helderste sterren, sterrenbeelden en planeten in dat gedeelte van de sterrenhemel.&lt;br/&gt;Als u nu een heldere ster ziet en wilt weten hoe deze heet, kunt u Sky Map gebruiken!&lt;br/&gt;
@@ -59,6 +59,11 @@ Sky Map moet terugrekenen naar Universal Time en heeft uw tijd en tijdzone nodig
 Heeft u de handmatige modus ingeschakeld? Zo niet, dan kan dit probleem worden veroorzaakt door een niet-gekalibreerd kompas.
 Volg de bovenstaande stappen om het te kalibreren.&lt;br/&gt;&lt;br/&gt;
 
+&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Support Development&lt;/b&gt;&lt;br/&gt;
+Sky Map is free, open source, and ad-free. If you enjoy using it, please
+consider supporting continued development at
+&lt;a href="https://github.com/sky-map-team/stardroid#support"&gt;our GitHub page&lt;/a&gt;.&lt;br/&gt;&lt;br/&gt;
+
 &lt;b&gt;Credits&lt;/b&gt;&lt;br/&gt;
 &lt;i&gt;Engineering en design&lt;/i&gt;&lt;br/&gt;
 Brent Bryan, Dominic Widdows, Hector Ouilhet, James Powell, John Taylor,
@@ -79,19 +84,19 @@ Jelena Oertel&lt;br/&gt;&lt;br/&gt;
 
 &lt;b&gt;Bronnen&lt;/b&gt;&lt;br/&gt;
 Sky Map is gebaseerd op gegevens van:&lt;br/&gt;
-Centre de Données astronomiques de Strasbourg (https://cdsweb.u-strasbg.fr/)&lt;br/&gt;
+Centre de Données astronomiques de Strasbourg (&lt;a href="https://cdsweb.u-strasbg.fr/"&gt;https://cdsweb.u-strasbg.fr/&lt;/a&gt;)&lt;br/&gt;
 De Bright Star Catalogue, 5th Revised Ed. (Hoffleit D., Warren Jr W.H.)&lt;br/&gt;
-De HYG Database, HYG v1.0. (https://www.astronexus.com/)&lt;br/&gt;
+De HYG Database, HYG v1.0. (&lt;a href="https://www.astronexus.com/"&gt;https://www.astronexus.com/&lt;/a&gt;)&lt;br/&gt;
 History and Accurate Positions for the NGC/IC Objects (Harold G. Corwin Jr)&lt;br/&gt;
 Revised New General Catalogue of Nonstellar Astronomical Objects
 (Sulentic J.W., Tifft W.G.)&lt;br/&gt;
 SFA Star Charts
-(https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html)&lt;br/&gt;
+(&lt;a href="https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html"&gt;https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html&lt;/a&gt;)&lt;br/&gt;
 Posities van objecten in het zonnestelsel worden berekend op basis van gegevens van de USNO
-(https://www.usno.navy.mil/USNO/astronomical-applications)&lt;br/&gt;
+(&lt;a href="https://www.usno.navy.mil/USNO/astronomical-applications"&gt;https://www.usno.navy.mil/USNO/astronomical-applications&lt;/a&gt;)&lt;br/&gt;
 Gegevens voor panoramabeelden zijn afkomstig van
-(https://www2.research.att.com/~njas/coverings)&lt;br/&gt;
+(&lt;a href="https://www2.research.att.com/~njas/coverings"&gt;https://www2.research.att.com/~njas/coverings&lt;/a&gt;)&lt;br/&gt;
 Hubble-beelden zijn afkomstig van het Space Telescope Science Institute van de NASA
-(https://hubblesite.org/)&lt;br/&gt;
-M31 image Peter Kennett (https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg)&lt;br/&gt;
+(&lt;a href="https://hubblesite.org/"&gt;https://hubblesite.org/&lt;/a&gt;)&lt;br/&gt;
+M31 image Peter Kennett (&lt;a href="https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg"&gt;https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg&lt;/a&gt;)&lt;br/&gt;
 </string></resources>
