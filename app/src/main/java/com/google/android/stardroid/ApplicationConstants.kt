@@ -27,7 +27,7 @@ object ApplicationConstants {
 
   /** Default value for 'down' in phone coords when the app starts  */
   @JvmField
-  val INITIAL_DOWN = Vector3(0f, -1f, -9f)
+  val INITIAL_DOWN = Vector3(0f, -4f, -4f)
 
   // Preference keys
   const val AUTO_MODE_PREF_KEY = "auto_mode"
