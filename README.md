@@ -1,4 +1,4 @@
-# Sky Map
+# <img src="https://raw.githubusercontent.com/sky-map-team/stardroid/refs/heads/master/assets/skymap-logo-large.png" width="45" height="45" align="center"> Sky Map
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Build Status](https://travis-ci.org/sky-map-team/stardroid.svg?branch=master)](https://travis-ci.org/sky-map-team/stardroid)
 [![Buy Me A Coffee](https://img.shields.io/badge/Support-Buy%20Me%20A%20Coffee-orange?style=flat-square&logo=buy-me-a-coffee)](https://www.buymeacoffee.com/skymapdevs)
