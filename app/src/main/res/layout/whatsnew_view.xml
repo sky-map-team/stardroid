@@ -13,7 +13,6 @@
             android:id="@+id/whats_new_box_text"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:autoLink="web"
             style="@style/text"
             android:text="@string/whats_new_text"
             android:paddingBottom="10dp"/>

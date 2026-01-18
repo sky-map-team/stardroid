@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.Spanned;
+import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -53,6 +54,7 @@ public class HelpDialogFragment extends DialogFragment {
     Spanned formattedHelpText = Html.fromHtml(helpText);
     TextView helpTextView = (TextView) view.findViewById(R.id.help_box_text);
     helpTextView.setText(formattedHelpText, TextView.BufferType.SPANNABLE);
+    helpTextView.setMovementMethod(LinkMovementMethod.getInstance());
     return alertDialog;
   }
 }

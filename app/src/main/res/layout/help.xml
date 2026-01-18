@@ -14,7 +14,6 @@
       android:id="@+id/help_box_text"
       android:layout_width="fill_parent"
       android:layout_height="fill_parent"
-      android:autoLink="web"
       style="@style/text"/>
   </LinearLayout>
 </ScrollView>

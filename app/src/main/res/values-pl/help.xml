@@ -2,7 +2,7 @@
 <string name="help_text" translation_description="Please do not change the &lt; and &gt; markup">
 &lt;big&gt;&lt;b&gt;Sky Map dla Androida&lt;/b&gt;&lt;/big&gt;&lt;br/&gt;
 &lt;i&gt;Wersja %s&lt;/i&gt;&lt;br/&gt;
-&lt;i&gt;https://github.com/sky-map-team/stardroid&lt;/i&gt;&lt;br/&gt;&lt;br/&gt;
+&lt;i&gt;&lt;a href="https://github.com/sky-map-team/stardroid"&gt;https://github.com/sky-map-team/stardroid&lt;/a&gt;&lt;/i&gt;&lt;br/&gt;&lt;br/&gt;
 
 &lt;b&gt;Wprowadzenie i szybki start&lt;/b&gt;&lt;br/&gt;
 Sky Map to Twój katalog nocnego nieba! Podnieś swoje urządzenie z Androidem do góry, a zobaczysz mapę najjaśniejszych
@@ -123,6 +123,11 @@ Sky Map zawiera teraz prototypowy „Tryb wskaźnika”, w którym ekran nie pok
       Celem tego jest to, że możesz przypiąć telefon do tuby teleskopu i mieć jego ekran
       prostopadle do kierunku tuby. Tryb ten możesz włączyć w ustawieniach czujnika.&lt;br/&gt;&lt;br/&gt;
 
+&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Support Development&lt;/b&gt;&lt;br/&gt;
+Sky Map is free, open source, and ad-free. If you enjoy using it, please
+consider supporting continued development at
+&lt;a href="https://github.com/sky-map-team/stardroid#support"&gt;our GitHub page&lt;/a&gt;.&lt;br/&gt;&lt;br/&gt;
+
 &lt;b&gt;Autorzy&lt;/b&gt;&lt;br/&gt;
 &lt;i&gt;Tworzenie, projektowanie i zarządzanie produktem&lt;/i&gt;&lt;br/&gt;
 Brent Bryan, Dominic Widdows, Hector Ouilhet, James Powell,
@@ -135,24 +140,24 @@ Christopher Wilcox, PhD&lt;br/&gt;&lt;br/&gt;
 Sky Map był oryginalnie tworzony jako „Google Sky Map” przez Google Inc. i został udostępniony
 w postaci otwartoźródłowej w 2012 roku.
 Sky Map wykorzystuje mapy pochodzące z danych z:&lt;br/&gt;
-Centre de Donnees astronomiques de Strasbourg (https://cdsweb.u-strasbg.fr/)&lt;br/&gt;
+Centre de Donnees astronomiques de Strasbourg (&lt;a href="https://cdsweb.u-strasbg.fr/"&gt;https://cdsweb.u-strasbg.fr/&lt;/a&gt;)&lt;br/&gt;
 The Bright Star Catalogue, 5th Revised Ed. (Hoffleit D., Warren Jr W.H.)&lt;br/&gt;
-The HYG Database, HYG v1.0. (https://www.astronexus.com/)&lt;br/&gt;
+The HYG Database, HYG v1.0. (&lt;a href="https://www.astronexus.com/"&gt;https://www.astronexus.com/&lt;/a&gt;)&lt;br/&gt;
 History and Accurate Positions for the NGC/IC Objects (Harold G. Corwin Jr)&lt;br/&gt;
 Revised New General Catalogue of Nonstellar Astronomical Objects
 (Sulentic J.W., Tifft W.G.)&lt;br/&gt;
 SFA Star Charts
-(https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html)&lt;br/&gt;
+(&lt;a href="https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html"&gt;https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html&lt;/a&gt;)&lt;br/&gt;
 Pozycje obiektów w Układzie Słonecznym są obliczane z danych dostarczonych przez USNO
-(https://www.usno.navy.mil/USNO/astronomical-applications)&lt;br/&gt;
+(&lt;a href="https://www.usno.navy.mil/USNO/astronomical-applications"&gt;https://www.usno.navy.mil/USNO/astronomical-applications&lt;/a&gt;)&lt;br/&gt;
 Dane pokrycia sferycznego uzyskane z
-(https://www2.research.att.com/~njas/coverings)&lt;br/&gt;
+(&lt;a href="https://www2.research.att.com/~njas/coverings"&gt;https://www2.research.att.com/~njas/coverings&lt;/a&gt;)&lt;br/&gt;
 Zdjęcia z teleskopu Hubble’a udostępnione przez NASA Space Telescope Science Institute
-(https://hubblesite.org/)&lt;br/&gt;
+(&lt;a href="https://hubblesite.org/"&gt;https://hubblesite.org/&lt;/a&gt;)&lt;br/&gt;
 Mapa zaćmień 2024 dzięki NASA Scientific Visualization Studio&lt;br/&gt;
 Dane o rojach meteorów od International Meteor Organization
-(https://www.imo.net/data)&lt;br/&gt;
-Zdjęcie M31 autorstwa Petera Kennetta (https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg)&lt;br/&gt;
+(&lt;a href="https://www.imo.net/data"&gt;https://www.imo.net/data&lt;/a&gt;)&lt;br/&gt;
+Zdjęcie M31 autorstwa Petera Kennetta (&lt;a href="https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg"&gt;https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg&lt;/a&gt;)&lt;br/&gt;
 Dane o komecie Leonard: In-The-Sky.org&lt;br/&gt;
 </string>
 </resources>

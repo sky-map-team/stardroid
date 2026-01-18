@@ -1,7 +1,7 @@
 <resources><string name="help_text" translation_description="Please do not change the &lt; and &gt; markup">&lt;big&gt;&lt;b&gt;Sky Map pour Android&lt;/b&gt;&lt;/big&gt;&lt;br/&gt;
 &lt;i&gt;Version %s&lt;/i&gt;&lt;br/&gt;
 
-&lt;i&gt;https://github.com/sky-map-team/stardroid&lt;/i&gt;&lt;br/&gt;&lt;br/&gt;
+&lt;i&gt;&lt;a href="https://github.com/sky-map-team/stardroid"&gt;https://github.com/sky-map-team/stardroid&lt;/a&gt;&lt;/i&gt;&lt;br/&gt;&lt;br/&gt;
 
 &lt;b&gt;Introduction et démarrage rapide&lt;/b&gt;&lt;br/&gt;
 Sky Map transforme votre mobile Android en fenêtre ouverte sur l\'univers. Si vous dirigez votre téléphone vers le haut, vous verrez une carte des étoiles les plus brillantes, des constellations et des planètes dans la partie du ciel vers laquelle vous dirigez votre téléphone.&lt;br/&gt;Lorsque vous apercevez une étoile brillante et que vous voulez savoir quel est son nom, Sky Map vous aide à l\'identifier !&lt;br/&gt;
@@ -56,6 +56,11 @@ Pour un certain nombre de raisons, la carte peut ne pas correspondre au ciel que
 &lt;i&gt;La carte ne bouge pas.&lt;/i&gt;&lt;br/&gt;
 Êtes-vous en mode manuel ? Si vous ne l\'êtes pas, il s\'agit peut-être d\'un problème d\'étalonnage de la boussole. Pour résoudre le problème, suivez les étapes ci-dessus.&lt;br/&gt;&lt;br/&gt;
 
+&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Support Development&lt;/b&gt;&lt;br/&gt;
+Sky Map is free, open source, and ad-free. If you enjoy using it, please
+consider supporting continued development at
+&lt;a href="https://github.com/sky-map-team/stardroid#support"&gt;our GitHub page&lt;/a&gt;.&lt;br/&gt;&lt;br/&gt;
+
 &lt;b&gt;Crédits&lt;/b&gt;&lt;br/&gt;
 &lt;i&gt;Ingénierie et conception&lt;/i&gt;&lt;br/&gt;
 Brent Bryan, Dominic Widdows, Hector Ouilhet, James Powell, John Taylor,
@@ -76,19 +81,19 @@ Jelena Oertel&lt;br/&gt;&lt;br/&gt;
 
 &lt;b&gt;Remerciements&lt;/b&gt;&lt;br/&gt;
 Sky Map fait appel aux sources de données suivantes :&lt;br/&gt;
-Centre de Données astronomiques de Strasbourg (https://cdsweb.u-strasbg.fr/)&lt;br/&gt;
+Centre de Données astronomiques de Strasbourg (&lt;a href="https://cdsweb.u-strasbg.fr/"&gt;https://cdsweb.u-strasbg.fr/&lt;/a&gt;)&lt;br/&gt;
 The Bright Star Catalogue, 5th Revised Ed. (Hoffleit D., Warren Jr W.H.)&lt;br/&gt;
-Base de données HYG, HYG v1.0. (https://www.astronexus.com/)&lt;br/&gt;
+Base de données HYG, HYG v1.0. (&lt;a href="https://www.astronexus.com/"&gt;https://www.astronexus.com/&lt;/a&gt;)&lt;br/&gt;
 History and Accurate Positions for the NGC/IC Objects (Harold G. Corwin Jr)&lt;br/&gt;
 Revised New General Catalogue of Nonstellar Astronomical Objects
 (Sulentic J.W., Tifft W.G.)&lt;br/&gt;
 Cartes du ciel SFA
-(https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html)&lt;br/&gt;
+(&lt;a href="https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html"&gt;https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html&lt;/a&gt;)&lt;br/&gt;
 Les positions des objets appartenant au système solaire sont calculées à partir des données de l\'Observatoire naval des États-Unis
-(https://www.usno.navy.mil/USNO/astronomical-applications).&lt;br/&gt;
+(&lt;a href="https://www.usno.navy.mil/USNO/astronomical-applications"&gt;https://www.usno.navy.mil/USNO/astronomical-applications&lt;/a&gt;).&lt;br/&gt;
 Les calques sphériques ont été obtenus à l\'adresse :
-(https://www2.research.att.com/~njas/coverings).&lt;br/&gt;
+(&lt;a href="https://www2.research.att.com/~njas/coverings"&gt;https://www2.research.att.com/~njas/coverings&lt;/a&gt;).&lt;br/&gt;
 Les images Hubble sont fournies par le Space Telescope Science Institute de la NASA
-(https://hubblesite.org/).&lt;br/&gt;
-M31 image Peter Kennett (https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg)&lt;br/&gt;
+(&lt;a href="https://hubblesite.org/"&gt;https://hubblesite.org/&lt;/a&gt;).&lt;br/&gt;
+M31 image Peter Kennett (&lt;a href="https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg"&gt;https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg&lt;/a&gt;)&lt;br/&gt;
 </string></resources>
