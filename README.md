@@ -23,7 +23,7 @@ I'm glad you asked! We have a section on that below.
 
 <a href="https://www.buymeacoffee.com/skymapdevs" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-blue.png" alt="Buy Me A Coffee" height="41" width="174"></a>
 
-Sky Map is a labor of love maintained our spare time by a couple of ex-Googlers here in Pittsburgh. It is free, open-source, ad-free and we don't track you or sell your data. 
+Sky Map is a labor of love maintained in our spare time by a couple of ex-Googlers here in Pittsburgh. It is free, open-source, ad-free and we don't track you or sell your data. 
 
 If you enjoy using Sky Map, there are several ways to help keep the project alive:
 
