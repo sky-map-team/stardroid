@@ -86,7 +86,7 @@ class AstronomerModelImpl(magneticDeclinationCalculator: MagneticDeclinationCalc
 
     /** The sensor acceleration in the phone's coordinate system.  */
     private val acceleration = -ApplicationConstants.INITIAL_DOWN.copy()
-    private var upPhone = acceleration
+    private var upPhone = acceleration.copy()
 
     /** The sensor magnetic field in the phone's coordinate system.  */
     private val magneticField = ApplicationConstants.INITIAL_SOUTH.copy()
