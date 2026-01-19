@@ -7,6 +7,7 @@
     <string name="cancel">Anuluj</string>
     <string name="set" translation_description="Button label. Set the date to the given value">Ustaw</string>
     <string name="go">Udaj się!</string>
+    <string name="other_prefs">Inne</string>
     <string name="location_prefs">Ustawienia lokalizacji</string>
     <string name="force_gps_pref">Zawsze używaj GPS-u</string>
     <string name="force_gps_pref_hint" translation_description="this string continues from \'Always use GPS\'">nawet jeśli lokalizacja sieciowa jest dostępna</string>
@@ -20,11 +21,16 @@
     <string name="preferences">ustawienia</string>
     <string name="location_offer_to_enable">Automatyczna lokalizacja jest wyłączona. Czy chcesz ją włączyć?</string>
     <string name="location_offer_to_enable_gps_title">Automatyczna lokalizacja wyłączona</string>
+    <string name="location_permission_dialog_title">Wymagana lokalizacja</string>
+    <string name="location_permission_dialog_message">Sky Map potrzebuje Twojej przybliżonej lokalizacji, aby wyświetlać prawidłowy obraz nocnego nieba. Możesz nadać uprawnienie, wprowadzić swoją lokalizację ręcznie lub zdecydować później. Jeśli odłożysz decyzję na później, mapa nie będzie dokładna, dopóki Twoja lokalizacja nie zostanie ustawiona.</string>
+    <string name="location_permission_grant">Nadaj uprawnienie</string>
+    <string name="location_permission_enter_manually">Wprowadź ręcznie</string>
+    <string name="location_permission_later">Później</string>
     <string name="location_set_auto">Lokalizacja zmieniona przez %1$s na %2$s</string>
     <string name="location_unable_to_geocode">Nie można rozpoznać Twojej lokalizacji – może Twoja sieć jest niedostępna?</string>
     <string name="location_not_found_title" translation_description="dialog box title when location not found">Przepraszamy</string>
     <string name="location_not_found" translation_description="dialog message when placename not found">Nie znaleziono: %s.</string>
-    <string name="location_long_lat">Długość: %1$s, szerokość: %2$s</string>
+    <string name="location_long_lat">długość: %1$.2f, szerokość: %2$.2f</string>
     <string name="location_place_found">Znaleziono miejsce. Ustawienie szerokości %1$f i długości %2$f</string>
     <string name="use_magnetic_correction">Używaj poprawki magnetycznej</string>
     <string name="use_magnetic_correction_hint">Wykorzystuj wiedzę o lokalizacji, aby poprawiać orientację z północy magnetycznej na rzeczywistą</string>
@@ -44,7 +50,19 @@
     <string name="show_hubble_layer_pref">Zdjęcia z teleskopu Hubble’a</string>
     <string name="sensor_prefs">Ustawienia czujnika (zaawansowane)</string>
     <string name="sensor_speed" translation_description="Old, non gyro sensors only: How quickly the sensor should send us data">Prędkość czujnika</string>
-    <string name="sensor_damping" translation_description="The amount of       smoothing applied to the sensor outputs.">Tłumienie</string>
+    <string name="sensor_damping" translation_description="Old, non gyro sensors only: The amount of smoothing applied to the sensor outputs.">Tłumienie</string>
+    <string name="appearance_prefs"
+        translation_description="Preferences title for section about app appearance">Wygląd
+    </string>
+    <string name="auto_dimness_preference"
+        translation_description="Mode for automatically dimming the screen when night mode is selected">
+        Automatyczne przyciemnianie ekranu</string>
+    <string name="font_size_preference"
+        translation_description="Change the font size">
+        Rozmiar czcionki</string>
+    <string name="font_size_preference_description"
+        translation_description="help to go along with the change font size preference">Dostosuj
+        rozmiar tekstu etykiety</string>
     <string name="ecliptic">Ekliptyka</string>
     <string name="eclipse24">Tor zaćmienia 08.04.2024</string>
     <string name="malformed_loc_error">Szerokość lub długość geograficzna nie jest liczbą.</string>
@@ -77,6 +95,8 @@
     <string name="found_target_text">Znaleziono %s.</string>
     <string name="other" translation_description="A preference category (ie preferences that don't belong in any other category)">Inne</string>
     <string name="planetary_images">Pokaż zdjęcia planet</string>
+    <string name="show_messier_images">Wyświetlaj zdjęcia Messiera</string>
+    <string name="show_messier_images_summary">Wyświetlaj obiekty Messiera jako ikony galaktyk zamiast kropek</string>
     <string name="menu_time">Podróż w czasie</string>
     <string name="time_travel_start_message">Podróżowanie w czasie...</string>
     <string name="time_travel_start_message_alt">Podróżowanie w czasie do %s...</string>

@@ -26,4 +26,15 @@
         <item translation_description="Rotates the screen by 90 degrees">Obrócony horyzont</item>
         <item translation_description="Shows the sky as pointed at by the long edge of the phone">Tryb wskaźnika</item>
     </string-array>
+    <string-array name="auto_dim_texts">
+        <item translation_description="Dimmest screen setting">Bardzo przyciemniony</item>
+        <item translation_description="Leave it on the system setting">Domyślne systemowe</item>
+        <item translation_description="The setting used for the last 15 years">Klasyczne</item>
+    </string-array>
+    <string-array name="font_size_texts">
+        <item translation_description="Smallest font size">Mała</item>
+        <item translation_description="Normal font size">Średnia</item>
+        <item translation_description="Large font size">Duża</item>
+        <item translation_description="Largest font size">Bardzo duża</item>
+    </string-array>
 </resources>
