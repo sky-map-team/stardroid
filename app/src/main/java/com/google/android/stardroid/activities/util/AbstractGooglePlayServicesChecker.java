@@ -9,26 +9,27 @@ import androidx.core.app.ActivityCompat;
 import android.util.Log;
 
 import com.google.android.stardroid.activities.DynamicStarMapActivity;
-import com.google.android.stardroid.activities.dialogs.LocationPermissionDeniedDialogFragment;
+import com.google.android.stardroid.activities.dialogs.LocationPermissionRationaleFragment;
 import com.google.android.stardroid.util.MiscUtil;
 
 /**
  * Created by johntaylor on 4/2/16.
  */
-public abstract class AbstractGooglePlayServicesChecker {
+public abstract class AbstractGooglePlayServicesChecker implements LocationPermissionRationaleFragment.Callback {
   protected static final String TAG = MiscUtil.getTag(GooglePlayServicesChecker.class);
   protected final Activity parent;
   protected final SharedPreferences preferences;
-  private final LocationPermissionDeniedDialogFragment permissionDeniedDialog;
+  private final LocationPermissionRationaleFragment rationaleDialog;
   private final FragmentManager fragmentManager;
 
   AbstractGooglePlayServicesChecker(Activity parent, SharedPreferences preferences,
-                            LocationPermissionDeniedDialogFragment permissionDeniedDialog,
+                            LocationPermissionRationaleFragment rationaleDialog,
                             FragmentManager fragmentManager) {
     this.parent = parent;
     this.preferences = preferences;
-    this.permissionDeniedDialog = permissionDeniedDialog;
+    this.rationaleDialog = rationaleDialog;
     this.fragmentManager = fragmentManager;
+    rationaleDialog.setCallback(this);
   }
 
   /**
@@ -43,16 +44,17 @@ public abstract class AbstractGooglePlayServicesChecker {
   protected void checkLocationServicesEnabled() {
     if (ActivityCompat.checkSelfPermission(parent, Manifest.permission.ACCESS_COARSE_LOCATION)
         != PackageManager.PERMISSION_GRANTED) {
-      Log.d(TAG, "Location permission not enabled - requesting permission");
-      // Request permission normally - if denied, runAfterPermissionsCheck will show options
-      requestLocationPermission();
+      Log.d(TAG, "Location permission not enabled - maybe prompting user");
+      // Check Permissions now
+      if (ActivityCompat.shouldShowRequestPermissionRationale(
+          parent, Manifest.permission.ACCESS_COARSE_LOCATION)) {
+        rationaleDialog.show(fragmentManager, "Rationale Dialog");
+      } else {
+        requestLocationPermission();
+      }
     } else {
       Log.d(TAG, "Location permission is granted");
     }
-  }
-
-  private void showLocationPermissionDialog() {
-    permissionDeniedDialog.show(fragmentManager, "Location Permission Dialog");
   }
 
   private void requestLocationPermission() {
@@ -71,8 +73,8 @@ public abstract class AbstractGooglePlayServicesChecker {
         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
       Log.i(TAG, "User granted permission");
     } else {
-      Log.i(TAG, "User denied permission - showing options dialog");
-      showLocationPermissionDialog();
+      Log.i(TAG, "User denied permission");
+      // TODO(jontayler): Send them to the location dialog;
     }
   }
 
@@ -82,5 +84,10 @@ public abstract class AbstractGooglePlayServicesChecker {
   public void runAfterDialog() {
     // Just log for now.
     Log.d(TAG, "Play Services Dialog has been shown");
+  }
+
+  public void done() {
+    Log.d(TAG, "Location rationale Dialog has been shown");
+    requestLocationPermission();
   }
 }

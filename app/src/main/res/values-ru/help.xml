@@ -1,6 +1,6 @@
 <resources><string name="help_text" translation_description="Please do not change the &lt; and &gt; markup">&lt;big&gt;&lt;b&gt;Карта звездного неба для Android&lt;/b&gt;&lt;/big&gt;&lt;br/&gt;
 &lt;i&gt;Версия %s&lt;/i&gt;&lt;br/&gt;
-&lt;i&gt;&lt;a href="https://github.com/sky-map-team/stardroid"&gt;https://github.com/sky-map-team/stardroid&lt;/a&gt;&lt;/i&gt;&lt;br/&gt;&lt;br/&gt;
+&lt;i&gt;https://stardroid.app&lt;/i&gt;&lt;br/&gt;&lt;br/&gt;
 
 &lt;b&gt;Введение и руководство по началу работы&lt;/b&gt;&lt;br/&gt;Карта звездного неба превратит ваш мобильный телефон на платформе Android в окно, через которое можно наблюдать звездное небо. Направьте телефон вверх, и вы увидите карту самых ярких звезд, созвездий и планет этого участка неба.&lt;br/&gt;А когда вам подмигнет какая-нибудь яркая звезда, вы сможете узнать ее имя с помощью Карты звездного неба!&lt;br/&gt;
 
@@ -54,11 +54,6 @@
 &lt;i&gt;Карта не перемещается&lt;/i&gt;&lt;br/&gt;
 Проверьте, включен ли автоматический режим навигации. Если этот режим включен, то, возможно, не откалиброван компас. В пункте \"Не откалиброван компас\" выше даны инструкции, как это исправить.&lt;br/&gt;&lt;br/&gt;
 
-&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Support Development&lt;/b&gt;&lt;br/&gt;
-Sky Map is free, open source, and ad-free. If you enjoy using it, please
-consider supporting continued development at
-&lt;a href="https://github.com/sky-map-team/stardroid#support"&gt;our GitHub page&lt;/a&gt;.&lt;br/&gt;&lt;br/&gt;
-
 &lt;b&gt;Команда Карты звездного неба&lt;/b&gt;&lt;br/&gt;
 &lt;i&gt;Разработка и дизайн&lt;/i&gt;&lt;br/&gt;
 Брент Брайан, Доминик Уиддовс, Гектор Уилхет, Джеймс Пауэлл, Джон Тейлор, Кевин Серафини&lt;br/&gt;
@@ -78,14 +73,14 @@ consider supporting continued development at
 
 &lt;b&gt;Благодарности&lt;/b&gt;&lt;br/&gt;
 В Карте звездного неба использованы данные из следующих источников:&lt;br/&gt;
-Центр астрономических данных в Страсбурге (&lt;a href="https://cdsweb.u-strasbg.fr/"&gt;https://cdsweb.u-strasbg.fr/&lt;/a&gt;)&lt;br/&gt;
+Центр астрономических данных в Страсбурге (https://cdsweb.u-strasbg.fr/)&lt;br/&gt;
 Каталог ярких звезд, 5-е изд., испр. (Хоффлейт Д., Уоррен-мл. У. Г.)&lt;br/&gt;
-База данных HYG, HYG вер. 1.0. (&lt;a href="https://www.astronexus.com/"&gt;https://www.astronexus.com/&lt;/a&gt;)&lt;br/&gt;
+База данных HYG, HYG вер. 1.0. (https://www.astronexus.com/)&lt;br/&gt;
 История и расположение объектов NGC/IC (Гарольд Г. Корвин-мл.)&lt;br/&gt;
 Исправленный новый общий каталог незвездных астрономических объектов (Сулентик Дж. У., Тиффт У. Г.)&lt;br/&gt;
-Карта звездного неба SFA (&lt;a href="https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html"&gt;https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html&lt;/a&gt;)&lt;br/&gt;
-Расположение объектов Солнечной системы рассчитано на основе данных, предоставленных Военно-морской обсерваторией США (&lt;a href="https://www.usno.navy.mil/USNO/astronomical-applications"&gt;https://www.usno.navy.mil/USNO/astronomical-applications&lt;/a&gt;)&lt;br/&gt;
-Данные по сферическому охвату (&lt;a href="https://www2.research.att.com/~njas/coverings"&gt;https://www2.research.att.com/~njas/coverings&lt;/a&gt;)&lt;br/&gt;
-Фотографии Хаббл предоставлены Научным институтом космического телескопа НАСА (&lt;a href="https://hubblesite.org/"&gt;https://hubblesite.org/&lt;/a&gt;)&lt;br/&gt;
-M31 image Peter Kennett (&lt;a href="https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg"&gt;https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg&lt;/a&gt;)&lt;br/&gt;
+Карта звездного неба SFA (https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html)&lt;br/&gt;
+Расположение объектов Солнечной системы рассчитано на основе данных, предоставленных Военно-морской обсерваторией США (https://www.usno.navy.mil/USNO/astronomical-applications)&lt;br/&gt;
+Данные по сферическому охвату (https://www2.research.att.com/~njas/coverings)&lt;br/&gt;
+Фотографии Хаббл предоставлены Научным институтом космического телескопа НАСА (https://hubblesite.org/)&lt;br/&gt;
+M31 image Peter Kennett (https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg)&lt;br/&gt;
 </string></resources>
