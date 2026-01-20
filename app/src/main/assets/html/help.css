@@ -31,7 +31,7 @@ h2 {
     font-weight: bold;
 }
 
-/* Troubleshooting issue titles */
+/* Troubleshooting issue and Credits titles */
 h3 {
     font-size: 15px;
     color: #F67E81;
@@ -39,15 +39,6 @@ h3 {
     padding-left: 8px;
     border-left: 3px solid #F67E81;
     font-weight: bold;
-}
-
-/* Credits subsection headers */
-h4 {
-    font-size: 14px;
-    color: #888;
-    margin: 16px 0 4px 0;
-    font-weight: normal;
-    font-style: italic;
 }
 
 /* Paragraphs */
@@ -150,4 +141,20 @@ body.night-mode a {
 body.night-mode p.callout {
     background-color: #2a0000;
     border-left-color: #cc4444;
+}
+
+body.night-mode ol {
+    color: #cc6666;
+}
+
+body.night-mode ol li::marker {
+    color: #cc4444;
+}
+
+body.night-mode ul li::marker {
+    color: #cc4444;
+}
+
+body.night-mode ul.credits {
+    color: #995555;
 }

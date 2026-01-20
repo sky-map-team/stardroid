@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,8 +14,11 @@ import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import androidx.preference.PreferenceManager;
+
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.StardroidApplication;
+import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
 import com.google.android.stardroid.inject.HasComponent;
 import com.google.android.stardroid.util.MiscUtil;
 
@@ -51,10 +55,13 @@ public class HelpDialogFragment extends DialogFragment {
             }).create();
     String helpText = String.format(parentActivity.getString(R.string.help_text),
         application.getVersionName());
+    SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(parentActivity);
+    String lightMode = preferences.getString(ActivityLightLevelManager.LIGHT_MODE_KEY, "DAY");
+    String bodyClass = "NIGHT".equals(lightMode) ? " class=\"night-mode\"" : "";
     String html = "<!DOCTYPE html><html><head>" +
         "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">" +
         "<link rel=\"stylesheet\" href=\"html/help.css\">" +
-        "</head><body>" + helpText + "</body></html>";
+        "</head><body" + bodyClass + ">" + helpText + "</body></html>";
     WebView webView = view.findViewById(R.id.help_webview);
     webView.setWebViewClient(new WebViewClient() {
       @Override
