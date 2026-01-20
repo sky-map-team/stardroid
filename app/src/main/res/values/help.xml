@@ -92,27 +92,19 @@ Sky Map requires a data connection to determine your latitude and longitude from
 a place name.&lt;br/&gt;&lt;br/&gt;
 
 &lt;b&gt;Troubleshooting and Limitations&lt;/b&gt;&lt;br/&gt;
-&lt;i&gt;The map is inaccurate.&lt;/i&gt;&lt;br/&gt;
-If you find that the map does not accurately line up with the real sky there
-could be a number of reasons:&lt;br/&gt;
-1) Is your compass calibrated?  Try holding the phone and rotating your wrist in
-figures of eight to calibrate it.  You may need to repeat this at intervals
-- this is a feature of the phone, rather than Sky Map.&lt;br/&gt;
-2) Does the application have an accurate fix on your location?  Is your GPS or
-network location turned on?&lt;br/&gt;
-3) Do you have the correct time and timezone set?
-Sky Map needs to calculate Universal Time, and it needs your local time AND
-timezone to do this.  If your device has a SIM card then these will usually be
-set correctly. Open Sky Map\'s diagnostics page to check that time and location are correct. &lt;br/&gt;
-4) Do you have magnetic correction switched on?  In some parts of the world the
-difference between magnetic North and True North can be as much as 20 degrees.&lt;br/&gt;
+&lt;i&gt;The map is inaccurate&lt;/i&gt;&lt;br/&gt;
+If you find that the map does not accurately line up with the real sky there could be a number of reasons:
+&lt;ol&gt;
+&lt;li&gt;Is your compass calibrated? Try holding the phone and rotating your wrist in figures of eight to calibrate it. You may need to repeat this at intervals - this is a feature of the phone, rather than Sky Map.&lt;/li&gt;
+&lt;li&gt;Does the application have an accurate fix on your location? Is your GPS or network location turned on?&lt;/li&gt;
+&lt;li&gt;Do you have the correct time and timezone set? Sky Map needs to calculate Universal Time, and it needs your local time AND timezone to do this. If your device has a SIM card then these will usually be set correctly. Open Sky Map\'s diagnostics page to check that time and location are correct.&lt;/li&gt;
+&lt;li&gt;Do you have magnetic correction switched on? In some parts of the world the difference between magnetic North and True North can be as much as 20 degrees.&lt;/li&gt;
+&lt;/ol&gt;
 &lt;i&gt;The map does not move&lt;/i&gt;&lt;br/&gt;
-1) Are you in manual mode?  If not, this could be due to an uncalibrated compass.
-Follow the steps above to \'unstick\' it.&lt;br/&gt;
-2) Does your phone have all the necessary sensors? Not all phones do. It must have at least a
-compass and an accelerometer and ideally a gyroscope. Sky Map\'s Diagnostics page will show
-which sensors you have. If your phone does not have a gyro, try selecting
-\'Disable gyro\' in Settings/Sensor Settings(experts).&lt;br/&gt;
+&lt;ol&gt;
+&lt;li&gt;Are you in manual mode? If not, this could be due to an uncalibrated compass. Follow the steps above to \'unstick\' it.&lt;/li&gt;
+&lt;li&gt;Does your phone have all the necessary sensors? Not all phones do. It must have at least a compass and an accelerometer and ideally a gyroscope. Sky Map\'s Diagnostics page will show which sensors you have. If your phone does not have a gyro, try selecting \'Disable gyro\' in Settings/Sensor Settings(experts).&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;b&gt;If all else fails, send us an email (preferably with a screenshot of your Diagnostics page)
 and we\'ll help you figure it out.&lt;/b&gt; &lt;br/&gt;&lt;br/&gt;

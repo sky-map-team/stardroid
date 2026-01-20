@@ -4,14 +4,14 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
-import android.text.Html;
-import android.text.Spanned;
-import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.TextView;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.StardroidApplication;
@@ -51,10 +51,21 @@ public class HelpDialogFragment extends DialogFragment {
             }).create();
     String helpText = String.format(parentActivity.getString(R.string.help_text),
         application.getVersionName());
-    Spanned formattedHelpText = Html.fromHtml(helpText);
-    TextView helpTextView = (TextView) view.findViewById(R.id.help_box_text);
-    helpTextView.setText(formattedHelpText, TextView.BufferType.SPANNABLE);
-    helpTextView.setMovementMethod(LinkMovementMethod.getInstance());
+    String html = "<!DOCTYPE html><html><head>" +
+        "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">" +
+        "<link rel=\"stylesheet\" href=\"html/help.css\">" +
+        "</head><body>" + helpText + "</body></html>";
+    WebView webView = view.findViewById(R.id.help_webview);
+    webView.setWebViewClient(new WebViewClient() {
+      @Override
+      public boolean shouldOverrideUrlLoading(WebView view, String url) {
+        // Open links in external browser
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+        parentActivity.startActivity(intent);
+        return true;
+      }
+    });
+    webView.loadDataWithBaseURL("file:///android_asset/", html, "text/html", "UTF-8", null);
     return alertDialog;
   }
 }
