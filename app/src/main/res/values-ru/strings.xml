@@ -17,7 +17,6 @@
     <string name="location_long_pref">Долгота</string>
     <string name="degrees">Градусы</string>
     <string name="preferences">настройки</string>
-    <string name="location_no_auto">Телефон не поддерживает автоопределение местоположения. Его можно задать вручную в настройках.</string>
     <string name="location_offer_to_enable">Автоопределение местоположения откл. Включить?</string>
     <string name="location_offer_to_enable_gps_title">Автоопред. м/п откл.</string>
     <string name="location_set_auto">М/п изменено с %1$s на %2$s</string>
@@ -415,8 +414,6 @@
     </string>
     <string name="do_not_show_again">Не показывать это сообщение снова</string>
     <string name="title_activity_diagnostic">Диагностика</string>
-    <string name="location_rationale_title">Почему мы спрашиваем ваше местоположение?</string>
-    <string name="location_rationale_text">Звезды, которые вы видите, зависят от того, где вы находитесь на планете Земля. Без вашего местоположения мы не сможем показать вам точную карту. Если вы не хотите, чтобы ваш телефон сообщал нам ваше местоположение, вы можете указать его вручную в настройках. Вам нужно только предоставить ближайший город.</string>
     <string name="play_services_error">Предупреждение: Ошибка служб Google Play - автоматическое определение местоположения может не работать</string>
     <string name="sensor_absent">Отсутствует</string>
     <string name="sensor_accuracy_unknown">Точность: неизвестна</string>
