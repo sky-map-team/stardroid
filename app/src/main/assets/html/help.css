@@ -13,26 +13,65 @@ body {
 }
 
 /* Main title */
-big {
-    display: block;
-    margin-bottom: 8px;
-}
-
-big b {
+h1 {
     font-size: 22px;
     color: #56B0F5;
+    margin: 0 0 8px 0;
+    padding: 0;
+    font-weight: bold;
 }
 
-/* Version and URL line - keep inline */
-big + br + i,
-big + br + i + br + i {
-    display: inline;
+/* Section headers */
+h2 {
+    font-size: 17px;
+    color: #F5B056;
+    margin: 24px 0 12px 0;
+    padding-top: 16px;
+    border-top: 1px solid #333;
+    font-weight: bold;
+}
+
+/* Troubleshooting issue titles */
+h3 {
+    font-size: 15px;
+    color: #F67E81;
+    margin: 16px 0 8px 0;
+    padding-left: 8px;
+    border-left: 3px solid #F67E81;
+    font-weight: bold;
+}
+
+/* Credits subsection headers */
+h4 {
     font-size: 14px;
     color: #888;
-    font-style: normal;
+    margin: 16px 0 4px 0;
+    font-weight: normal;
+    font-style: italic;
 }
 
-/* Links - always inline and clickable */
+/* Paragraphs */
+p {
+    margin: 0 0 12px 0;
+}
+
+/* Version and URL */
+p.version, p.url {
+    font-size: 14px;
+    color: #888;
+    margin: 0 0 4px 0;
+}
+
+/* Callout box */
+p.callout {
+    background-color: #2a2a4e;
+    border-left: 3px solid #56B0F5;
+    padding: 12px;
+    margin: 16px 0;
+    font-style: italic;
+}
+
+/* Links */
 a {
     color: #56B0F5;
     text-decoration: underline;
@@ -43,62 +82,31 @@ a:active {
     color: #F5B056;
 }
 
-/* Section headers */
-b {
-    display: block;
-    font-size: 17px;
-    color: #F5B056;
-    margin-top: 24px;
-    margin-bottom: 12px;
-    padding-top: 16px;
-    border-top: 1px solid #333;
+/* Unordered lists */
+ul {
+    margin: 8px 0 16px 0;
+    padding-left: 24px;
 }
 
-/* First section header - no top border */
-body > big + br + i + br + i + br + br + b,
-body > big + br + br + b {
-    border-top: none;
-    padding-top: 0;
+ul li {
+    margin-bottom: 4px;
 }
 
-/* Troubleshooting issue titles (italic text like "The map is inaccurate.") */
-i {
-    display: block;
-    font-size: 15px;
-    color: #F67E81;
-    font-style: normal;
-    font-weight: bold;
-    margin-top: 16px;
-    margin-bottom: 8px;
-    padding-left: 8px;
-    border-left: 3px solid #F67E81;
-}
-
-/* But links inside italic should stay inline */
-i a {
-    display: inline;
-    font-weight: normal;
+ul li::marker {
     color: #56B0F5;
 }
 
-/* Credits section - italic names should be styled differently */
-b + i,
-br + br + i:not(:has(a)) {
-    color: #888;
-    font-style: italic;
-    font-weight: normal;
-    border-left: none;
-    padding-left: 0;
-    margin-top: 12px;
+/* Credits list - smaller */
+ul.credits {
+    font-size: 13px;
+    color: #aaa;
 }
 
-/* Bullet list items */
-span {
-    color: #56B0F5;
-    font-weight: bold;
+ul.credits li {
+    margin-bottom: 6px;
 }
 
-/* Ordered lists for troubleshooting */
+/* Ordered lists */
 ol {
     margin: 8px 0 16px 0;
     padding-left: 24px;
@@ -121,16 +129,25 @@ body.night-mode {
     color: #cc6666;
 }
 
-body.night-mode b {
+body.night-mode h1 {
+    color: #cc4444;
+}
+
+body.night-mode h2 {
     color: #cc4444;
     border-top-color: #441111;
+}
+
+body.night-mode h3 {
+    color: #aa5555;
+    border-left-color: #aa5555;
 }
 
 body.night-mode a {
     color: #cc6666;
 }
 
-body.night-mode i {
-    color: #aa5555;
-    border-left-color: #aa5555;
+body.night-mode p.callout {
+    background-color: #2a0000;
+    border-left-color: #cc4444;
 }
