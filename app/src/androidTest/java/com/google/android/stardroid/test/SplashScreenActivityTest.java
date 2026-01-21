@@ -59,7 +59,7 @@ public class SplashScreenActivityTest {
 
   @Test
   public void showsWhatsNewAfterTandCs_newUser() throws InterruptedException {
-    onView(withId(R.id.eula_box_text)).inRoot(isDialog()).check(matches(isDisplayed()));
+    onView(withId(R.id.eula_webview)).inRoot(isDialog()).check(matches(isDisplayed()));
     Thread.sleep(2000);
     onView(withId(android.R.id.button1)).inRoot(isDialog()).perform(click());
     // TODO: figure out how to dispense with crap like hand-tuned waiting times.
@@ -67,13 +67,13 @@ public class SplashScreenActivityTest {
     // Can't detect this since the UI is still changing.
     // TODO: figure out how we could.
     //onView(withId(R.id.splash)).check(matches(isDisplayed()));
-    onView(withId(R.id.whats_new_box_text)).check(matches(isDisplayed()));
+    onView(withId(R.id.whatsnew_webview)).check(matches(isDisplayed()));
   }
 
   @Test
   public void showNoAcceptTandCs() throws InterruptedException {
     Log.d("TESTTEST", "Doing test");
-    onView(withId(R.id.eula_box_text)).inRoot(isDialog()).check(matches(isDisplayed()));
+    onView(withId(R.id.eula_webview)).inRoot(isDialog()).check(matches(isDisplayed()));
     // Decline button
     onView(withId(android.R.id.button2)).inRoot(isDialog()).perform(click());
     // Sigh. There seems nothing better here.
