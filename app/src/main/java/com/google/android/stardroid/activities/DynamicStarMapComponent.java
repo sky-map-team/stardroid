@@ -3,6 +3,7 @@ package com.google.android.stardroid.activities;
 import com.google.android.stardroid.ApplicationComponent;
 import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
 import com.google.android.stardroid.activities.dialogs.HelpDialogFragment;
+import com.google.android.stardroid.activities.dialogs.LocationPermissionDeniedDialogFragment;
 import com.google.android.stardroid.activities.dialogs.MultipleSearchResultsDialogFragment;
 import com.google.android.stardroid.activities.dialogs.NoSearchResultsDialogFragment;
 import com.google.android.stardroid.activities.dialogs.NoSensorsDialogFragment;
@@ -22,6 +23,7 @@ public interface DynamicStarMapComponent extends EulaDialogFragment.ActivityComp
     NoSearchResultsDialogFragment.ActivityComponent,
     MultipleSearchResultsDialogFragment.ActivityComponent,
     NoSensorsDialogFragment.ActivityComponent,
+    LocationPermissionDeniedDialogFragment.ActivityComponent,
     ObjectInfoDialogFragment.ActivityComponent {
   void inject(DynamicStarMapActivity activity);
 }

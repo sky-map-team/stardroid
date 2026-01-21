@@ -17,7 +17,6 @@
     <string name="location_long_pref">Longitude</string>
     <string name="degrees">Graus</string>
     <string name="preferences">preferências</string>
-    <string name="location_no_auto">Seu telefone não tem suporte para localização automática. Defina o local manualmente nas preferências.</string>
     <string name="location_offer_to_enable">A localização automática está desativada. Deseja ativá-la?</string>
     <string name="location_offer_to_enable_gps_title">Local. autom. desativada</string>
     <string name="location_set_auto">Local definido de %1$s a %2$s</string>
@@ -139,8 +138,6 @@
         Para mostrar o céu na direção apontada pelo seu aparelho, o Sky Map precisa de uma bússola e um acelerômetro. O seu dispositivo indicou que não tem pelo menos um destes sensores. A boa notícia é que alguns dispositivos (como os smartphones Moto E) falsamente dizem que não têm estes sensores mas na verdade têm.        Se seu dispositivo realmente não tem estes sensores então o modo automático não irá funcionar. No entanto, você ainda poderá usar o Sky Map no modo manual, no qual você arrasta e rotaciona o mapa usando os seus dedos.</string>
     <string name="do_not_show_again">Não mostrar esta mensagem novamente</string>
     <string name="title_activity_diagnostic">Diagnósticos</string>
-    <string name="location_rationale_title">Por que nós solicitamos a sua localização?</string>
-    <string name="location_rationale_text">As estrelas que você vê dependem da sua localização no planeta Terra. Precisamos da sua localização para poder lhe mostrar o mapa correto. Caso você não queira que o seu telefone nos informe a sua localização, você pode providenciá-la manualmente nas configurações deste aplicativo. Só é preciso informar a cidade mais próxima.</string>
     <string name="play_services_error">Atenção: Erro do Google Play Services - A detecção automática da localização pode não funcionar</string>
     <string name="sensor_absent">Ausente</string>
     <string name="sensor_accuracy_unknown">Precisão: Desconhecida</string>

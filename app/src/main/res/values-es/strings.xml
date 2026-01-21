@@ -18,7 +18,6 @@
     <string name="location_long_pref">Longitud</string>
     <string name="degrees" translation_description="angular degrees">Grados</string>
     <string name="preferences">preferencias</string>
-    <string name="location_no_auto">El permiso de ubicación automática está desactivado en tu teléfono. Puedes ajustar la ubicación manualmente en las preferencias. Hasta entonces, el mapa será incorrecto.</string>
     <string name="location_offer_to_enable">Ubicación automática desactivada. ¿Te gustaría habilitarla?</string>
     <string name="location_offer_to_enable_gps_title">Ubicación automática desactivada</string>
     <string name="location_set_auto">Ubicación definida de %1$s a %2$s</string>
@@ -156,8 +155,6 @@
     </string>
     <string name="do_not_show_again">No mostrar este mensaje otra vez</string>
     <string name="title_activity_diagnostic">Diagnósticos</string>
-    <string name="location_rationale_title">¿Por qué pedimos tu ubicación?</string>
-    <string name="location_rationale_text">Las estrellas que puedes ver dependen del lugar en el que te encuentres. Sin tu ubicación, no podemos mostrarte un mapa preciso. Si no deseas que tu teléfono nos dé la ubicación, puedes proporcionarla manualmente en los ajustes. Solo necesitas proporcionar la ciudad más cercana.</string>
     <string name="play_services_error">Advertencia: error de Google Play Services - La ubicación automática puede no funcionar</string>
     <string name="sensor_absent">Ausente</string>
     <string name="sensor_accuracy_unknown">Exactitud: Desconocida</string>

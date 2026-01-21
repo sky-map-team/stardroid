@@ -18,7 +18,6 @@
     <string name="location_long_pref">Γεωγραφικό μήκος</string>
     <string name="degrees" translation_description="angular degrees">Μοίρες</string>
     <string name="preferences">προτιμήσεις</string>
-    <string name="location_no_auto">Το δικαίωμα αυτόματης τοποθεσίας είναι απενεργοποιημένο στη συσκευή σας.   Μπορείτε να ορίσετε την τοποθεσία χειροκίνητα στις ρυθμίσεις.  Μέχρι τότε ο χάρτης θα είναι λανθασμένος.</string>
     <string name="location_offer_to_enable">Η αυτόματη τοποθεσία είναι απενεργοποιημένη. Θέλετε να την ενεργοποιήσετε;</string>
     <string name="location_offer_to_enable_gps_title">Αυτόματη τοποθεσία απενεργοποιημένη</string>
     <string name="location_set_auto">Η τοποθεσία ορίστηκε από %1$s σε %2$s</string>
@@ -317,8 +316,6 @@
     </string>
     <string name="do_not_show_again">Να μην εμφανιστεί ξανά αυτό το μήνυμα</string>
     <string name="title_activity_diagnostic">Διαγνωστικά</string>
-    <string name="location_rationale_title">Γιατί ζητάμε την τοποθεσία σας;</string>
-    <string name="location_rationale_text">Το ποιά αστέρια μπορείτε να δείτε εξαρτάται από το σημείο της Γης στο οποίο βρίσκεστε. Χωρίς την τοποθεσία σας δεν μπορούμε να σας εμφανίσουμε ακριβή χάρτη. Εάν δεν επιθυμείτε να μας αποστέλλει η συσκευή σας την τοποθεσία σας, μπορείτε να το ορίσετε στις ρυθμίσεις.  Το μόνο που χρειάζεται είναι να ορίσετε την κοντινότερή σας πόλη.</string>
     <string name="play_services_error">Προειδοποίηση: Σφάλμα υπηρεσιών Google Play - η αυτόματη τοποθεσία μπορεί να μη λειτουργεί</string>
     <string name="sensor_absent">Απών</string>
     <string name="sensor_accuracy_unknown">Ακρίβεια: Άγνωστη</string>
@@ -375,8 +372,7 @@
     <string name="font_size_preference_description"
         translation_description="help to go along with the change font size preference">Απαιτεί επανεκκίνηση</string>
     <string name="appearance_prefs"
-        translation_description="Preferences title for section about app appearance">Εμφάνιση
+        translation_description="Preferences title for section about app appearance">Εμφάνιση</string>
     <string name="show_messier_images">Εμφάνιση εικόνων Μεσιέ</string>
     <string name="show_messier_images_summary">Εμφάνιση αντικειμένων Μεσιέ ως εικονίδια γαλαξιών αντί για κουκκίδες</string>
-    </string>
 </resources>

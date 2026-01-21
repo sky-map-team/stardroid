@@ -1,5 +1,5 @@
 plugins {
-    id 'com.android.application' version '8.7.3'
+    id 'com.android.application' version '8.13.2'
     id 'org.jetbrains.kotlin.android' version '2.0.20'
     id 'org.jetbrains.kotlin.kapt' version '2.0.20'
 }
@@ -50,8 +50,8 @@ android {
         applicationId 'com.google.android.stardroid'
         minSdk 26
         targetSdk 36
-        versionCode 1562
-        versionName "1.10.10"
+        versionCode 1571
+        versionName "1.10.11 Venus"
         buildConfigField 'String', 'GOOGLE_ANALYTICS_CODE', '""'
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

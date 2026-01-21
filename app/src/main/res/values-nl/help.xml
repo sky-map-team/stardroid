@@ -1,97 +1,97 @@
-<resources><string name="help_text" translation_description="Please do not change the &lt; and &gt; markup">&lt;big&gt;&lt;b&gt;Sky Map voor Android&lt;/b&gt;&lt;/big&gt;&lt;br/&gt;
-&lt;i&gt;Versie %s&lt;/i&gt;&lt;br/&gt;
+<resources>
+<string name="help_text" translation_description="Please do not change the &lt; and &gt; markup">
+&lt;h1&gt;Sky Map voor Android&lt;/h1&gt;
+&lt;p class="version"&gt;Versie %s&lt;/p&gt;
+&lt;p class="url"&gt;&lt;a href="https://stardroid.app"&gt;https://stardroid.app&lt;/a&gt;&lt;/p&gt;
 
-&lt;i&gt;https://github.com/sky-map-team/stardroid&lt;/i&gt;&lt;br/&gt;&lt;br/&gt;
+&lt;h2&gt;Inleiding en snelle startgids&lt;/h2&gt;
+&lt;p&gt;Sky Map maakt van uw Android-telefoon een venster op de sterrenhemel. Wanneer u uw telefoon omhoog richt, krijgt u een kaart te zien van de helderste sterren, sterrenbeelden en planeten in dat gedeelte van de sterrenhemel.&lt;/p&gt;
+&lt;p&gt;Als u nu een heldere ster ziet en wilt weten hoe deze heet, kunt u Sky Map gebruiken!&lt;/p&gt;
 
-&lt;b&gt;Inleiding en snelle startgids&lt;/b&gt;&lt;br/&gt;
-Sky Map maakt van uw Android-telefoon een venster op de sterrenhemel. Wanneer u uw telefoon omhoog richt, krijgt u een kaart te zien van de helderste sterren, sterrenbeelden en planeten in dat gedeelte van de sterrenhemel.&lt;br/&gt;Als u nu een heldere ster ziet en wilt weten hoe deze heet, kunt u Sky Map gebruiken!&lt;br/&gt;
+&lt;h2&gt;Zichtbare lagen&lt;/h2&gt;
+&lt;p&gt;Sky Map organiseert de objecten die u kunt bekijken in lagen. Elke laag kan worden in- of uitgeschakeld in het scherm. De lagen zijn:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Sterren&lt;/li&gt;
+&lt;li&gt;Sterrenbeelden&lt;/li&gt;
+&lt;li&gt;Messier-objecten&lt;/li&gt;
+&lt;li&gt;Planeten&lt;/li&gt;
+&lt;li&gt;Rechte klimming en declinatieraster&lt;/li&gt;
+&lt;li&gt;Horizon en windstreken&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;De helderste sterren en duidelijkste sterrenbeelden zijn gelabeld, evenals de planeten. De planeten worden groter weergegeven dan hun ware formaat. De horizon wordt weergegeven als een rechte lijn. Tenzij u ergens woont waar het landschap volledig vlak is en er geen gebouwen staan, ziet u in Sky Map waarschijnlijk objecten vlak boven de horizon die u in het echt niet kunt zien.&lt;/p&gt;
 
-&lt;b&gt;Zichtbare lagen&lt;/b&gt;&lt;br/&gt;
+&lt;h2&gt;Schermbediening&lt;/h2&gt;
+&lt;p&gt;Tik op het scherm om de schermbedieningselementen weer te geven. Aan de zijkant van het scherm kunt u de hierboven beschreven lagen in- en uitschakelen. De markering is oranje wanneer lagen zijn ingeschakeld en wit wanneer ze zijn uitgeschakeld.&lt;/p&gt;
+&lt;p&gt;Onder aan het scherm vindt u zoomopties en een schakelmogelijkheid voor de automatische en handmatige modus.&lt;/p&gt;
 
-Sky Map organiseert de objecten die u kunt bekijken in lagen. Elke laag kan worden in- of uitgeschakeld in het scherm. De lagen zijn:&lt;br/&gt;
-      Sterren&lt;br/&gt;
-      Sterrenbeelden&lt;br/&gt;
-      Messier-objecten&lt;br/&gt;
-      Planeten&lt;br/&gt;
-      Rechte klimming en declinatieraster&lt;br/&gt;
-      Horizon en windstreken&lt;br/&gt;&lt;br/&gt;
-De helderste sterren en duidelijkste sterrenbeelden zijn gelabeld, evenals de planeten. De planeten worden groter weergegeven dan hun ware formaat. De horizon wordt weergegeven als een rechte lijn. Tenzij u ergens woont waar het landschap volledig vlak is en er geen gebouwen staan, ziet u in Sky Map waarschijnlijk objecten vlak boven de horizon die u in het echt niet kunt zien.&lt;br/&gt;&lt;br/&gt;
+&lt;h2&gt;Navigatiemodussen&lt;/h2&gt;
+&lt;p&gt;Na het installeren bevindt Sky Map zich in de automatische modus en worden de sensoren van de telefoon gebruikt om een kaart weer te geven van de sterrenhemel in de richting waarin u uw telefoon heeft gericht. Wanneer u naar de handmatige modus overschakelt, kunt u de kaart met uw vinger verslepen om de sterrenhemel te verkennen. Verschuif de trackball of D-pad naar links en rechts om de kaart te draaien. Op multi-touch-telefoons kunt u de kaart ook draaien met twee vingers en een knijpbeweging maken om in of uit te zoomen.&lt;/p&gt;
 
-&lt;b&gt;Schermbediening&lt;/b&gt;&lt;br/&gt;
-Tik op het scherm om de schermbedieningselementen weer te geven. Aan de zijkant van het scherm kunt u de hierboven beschreven lagen in- en uitschakelen. De markering is oranje wanneer lagen zijn ingeschakeld en wit wanneer ze zijn uitgeschakeld.&lt;br/&gt;
+&lt;h2&gt;Zoeken&lt;/h2&gt;
+&lt;p&gt;Sky Map biedt u antwoord op de vraag: \'Welke ster is dat?\' U kunt ook antwoord krijgen op vragen zoals: \'Waar staat...?\' U kunt de zoekfunctie openen via de menuknop van uw telefoon of via het snelzoekvak op de startpagina. Begin de naam van een planeet, ster of sterrenbeeld te typen dat u wilt zoeken en Sky Map geeft een lijst met overeenkomende items weer. Selecteer een item en Sky Map geeft een doelcirkel en pijl weer zodat u kunt zien hoe u uw telefoon (en uzelf) moet draaien om het object te vinden. Naarmate u dichter bij het doel in de buurt komt, wordt de cirkel rood in plaats van blauw en uiteindelijk oranje wanneer het object zich in uw blikveld bevindt.&lt;/p&gt;
+&lt;p&gt;OPMERKING: Als u de handmatige modus heeft ingeschakeld, verplaatst Sky Map de kaart om het object weer te geven.&lt;/p&gt;
+&lt;p&gt;Als u de zoekmodus wilt sluiten, tikt u op het kruisje in de hoek van het scherm.&lt;/p&gt;
 
-Onder aan het scherm vindt u zoomopties en een schakelmogelijkheid voor de automatische en handmatige modus.&lt;br/&gt;&lt;br/&gt;
-&lt;b&gt;Navigatiemodussen&lt;/b&gt;&lt;br/&gt;
-Na het installeren bevindt Sky Map zich in de automatische modus en worden de sensoren van de telefoon gebruikt om een kaart weer te geven van de sterrenhemel in de richting waarin u uw telefoon heeft gericht. Wanneer u naar de handmatige modus overschakelt, kunt u de kaart met uw vinger verslepen om de sterrenhemel te verkennen. Verschuif de trackball of D-pad naar links en rechts om de kaart te draaien. Op multi-touch-telefoons kunt u de kaart ook draaien met twee vingers en een knijpbeweging maken om in of uit te zoomen.
-&lt;br/&gt;&lt;br/&gt;
+&lt;h2&gt;Tijdreizen&lt;/h2&gt;
+&lt;p&gt;In de tijdreismodus kunt u Sky Map gebruiken om de sterrenhemel op andere momenten dan het hier en nu te bekijken. Selecteer \'Tijdreizen\' in het hoofdmenu en selecteer vervolgens een van de populaire datums of kies uw eigen datum en tijd met de opties \'Datum wijzigen\' en \'Tijd wijzigen\'. U kunt een jaar kiezen tussen 1900 en 2100, omdat met name de aantrekkingskracht van Jupiter nauwkeurige berekeningen buiten deze periode moeilijk maakt. Druk wanneer u klaar bent op \'Ga!\' om door de tijd naar uw bestemming te reizen. Sky Map bevindt zich nu in de tijdreismodus en geeft de datum weer die u heeft ingesteld. U kunt vanaf hier de tijd vooruit of achteruit \'afspelen\'. Klik één keer op deze knoppen om langzaam door de tijd te reizen en meerdere keren om sneller en sneller te reizen.&lt;/p&gt;
+&lt;p&gt;Met de functie Tijdreizen kunt u verschillende vragen beantwoorden, zoals \'Wat kan ik vanavond vlak na zonsondergang zien?\', \'Wanneer zou ik Mercurius weer kunnen zien?\' en \'Wanneer zou ik volgens Hesiodos mijn druiven moeten oogsten?\'&lt;/p&gt;
 
-&lt;b&gt;Zoeken&lt;/b&gt;&lt;br/&gt;
-Sky Map biedt u antwoord op de vraag: \'Welke ster is dat?\' U kunt ook antwoord krijgen op vragen zoals: \'Waar staat...?\' U kunt de zoekfunctie openen via de menuknop van uw telefoon of via het snelzoekvak op de startpagina. Begin de naam van een planeet, ster of sterrenbeeld te typen dat u wilt zoeken en Sky Map geeft een lijst met overeenkomende items weer. Selecteer een item en Sky Map geeft een doelcirkel en pijl weer zodat u kunt zien hoe u uw telefoon (en uzelf) moet draaien om het object te vinden. Naarmate u dichter bij het doel in de buurt komt, wordt de cirkel rood in plaats van blauw en uiteindelijk oranje wanneer het object zich in uw blikveld bevindt.&lt;br/&gt;
-Als u de handmatige modus heeft ingeschakeld, verplaatst Sky Map de kaart om het object weer te geven.&lt;br/&gt;
-Als u de zoekmodus wilt sluiten, tikt u op het kruisje in de hoek van het scherm.&lt;br/&gt;&lt;br/&gt;
+&lt;h2&gt;Hubble-galerij&lt;/h2&gt;
+&lt;p&gt;Sky Map bevat een selectie van de beelden uit de Hubble-galerij. U kunt de galerij openen door deze in het menu te selecteren. In de galerij kunt u door de beschikbare beelden bladeren door met uw vinger te schuiven. Als u op een van de miniaturen tikt, geeft Sky Map het beeld op volledig formaat weer. Als u op de zoekknop tikt, schakelt Sky Map naar de zoekmodus om het object te zoeken dat in het beeld wordt weergegeven.&lt;/p&gt;
 
-&lt;b&gt;Tijdreizen (Nieuw!)&lt;/b&gt;&lt;br/&gt;
+&lt;h2&gt;Nachtweergavemodus&lt;/h2&gt;
+&lt;p&gt;De nachtweergavemodus is bedoeld om uw ogen te beschermen als deze aan het donker gewend zijn. Wanneer u de nachtweergavemodus opent, geeft Sky Map de kaart in roodtinten weer, wordt het scherm gedimd en wordt de achtergrondverlichting van knoppen uitgeschakeld. Selecteer de optie opnieuw om alles weer in normale kleuren weer te geven.&lt;/p&gt;
 
-In de tijdreismodus kunt u Sky Map gebruiken om de sterrenhemel op andere momenten dan het hier en nu te bekijken. Selecteer \'Tijdreizen\' in het hoofdmenu en selecteer vervolgens een van de populaire datums of kies uw eigen datum en tijd met de opties \'Datum wijzigen\' en \'Tijd wijzigen\'. U kunt een jaar kiezen tussen 1900 en 2100, omdat met name de aantrekkingskracht van Jupiter nauwkeurige berekeningen buiten deze periode moeilijk maakt. Druk wanneer u klaar bent op \'Ga!\' om door de tijd naar uw bestemming te reizen. Sky Map bevindt zich nu in de tijdreismodus en geeft de datum weer die u heeft ingesteld. U kunt vanaf hier de tijd vooruit of achteruit \'afspelen\'.
-Klik één keer op deze knoppen om langzaam door de tijd te reizen en meerdere keren om sneller en sneller te reizen.&lt;br/&gt;
+&lt;h2&gt;Uw locatie instellen&lt;/h2&gt;
+&lt;p&gt;Sky Map heeft uw geschatte locatie nodig om de juiste sterrenkaart te kunnen weergeven. Deze locatie wordt standaard gedetecteerd op basis van uw mobiele netwerk. Als u geen netwerkbereik heeft of netwerklocatiedetectie heeft uitgeschakeld, wordt de GPS-functie van uw telefoon gebruikt. U kunt uw locatie ook handmatig instellen via het instellingsmenu door een plaatsnaam op te geven of door een lengte- en breedtegraad op te geven (in graden). Sky Map heeft een gegevensverbinding nodig om uw lengte- en breedtegraad te kunnen bepalen aan de hand van een plaatsnaam.&lt;/p&gt;
 
-Met de functie Tijdreizen kunt u verschillende vragen beantwoorden, zoals \'Wat kan ik vanavond vlak na zonsondergang zien?\', \'Wanneer zou ik Mercurius weer kunnen zien?\' en \'Wanneer zou ik volgens Hesiodos mijn druiven moeten oogsten?\'&lt;br/&gt;&lt;br/&gt;
+&lt;h2&gt;Problemen oplossen en beperkingen&lt;/h2&gt;
 
-&lt;b&gt;Hubble-galerij&lt;/b&gt;&lt;br/&gt;
-Sky Map bevat een selectie van de beelden uit de Hubble-galerij. U kunt de galerij openen door deze in het menu te selecteren. In de galerij kunt u door de beschikbare beelden bladeren door met uw vinger te schuiven. Als u op een van de miniaturen tikt, geeft Sky Map het beeld op volledig formaat weer. Als u op de zoekknop tikt, schakelt Sky Map naar de zoekmodus om het object te zoeken dat in het beeld wordt weergegeven.&lt;br/&gt;&lt;br/&gt;
+&lt;h3&gt;De kaart klopt niet&lt;/h3&gt;
+&lt;p&gt;Als u merkt dat de kaart niet goed is uitgelijnd met de echte sterrenhemel, kan dit een aantal verschillende redenen hebben:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Is uw kompas gekalibreerd? Houd uw telefoon vast en draai achtjes met uw pols om de telefoon te kalibreren. Mogelijk moet u dit af en toe herhalen (dit is een functie van de telefoon, niet van Sky Map).&lt;/li&gt;
+&lt;li&gt;Heeft de toepassing uw locatie correct gedetecteerd? Is uw GPS- of netwerklocatiefunctie ingeschakeld?&lt;/li&gt;
+&lt;li&gt;Heeft u de juiste tijd en tijdzone ingesteld? Sky Map moet terugrekenen naar Universal Time en heeft uw tijd en tijdzone nodig om dit correct te doen. Als uw apparaat een SIM-kaart bevat, zijn tijd en tijdzone meestal correct ingesteld.&lt;/li&gt;
+&lt;li&gt;Heeft u de magnetische correctie ingeschakeld? In sommige delen van de wereld kan het verschil tussen het magnetische noorden en het ware noorden wel 20 graden zijn.&lt;/li&gt;
+&lt;/ol&gt;
 
-&lt;b&gt;Nachtweergavemodus&lt;/b&gt;&lt;br/&gt;
-De nachtweergavemodus is bedoeld om uw ogen te beschermen als deze aan het donker gewend zijn. Wanneer u de nachtweergavemodus opent, geeft Sky Map de kaart in roodtinten weer, wordt het scherm gedimd en wordt de achtergrondverlichting van knoppen uitgeschakeld. Selecteer de optie opnieuw om alles weer in normale kleuren weer te geven.&lt;br/&gt;&lt;br/&gt;
+&lt;h3&gt;De kaart verschuift niet&lt;/h3&gt;
+&lt;p&gt;Heeft u de handmatige modus ingeschakeld? Zo niet, dan kan dit probleem worden veroorzaakt door een niet-gekalibreerd kompas. Volg de bovenstaande stappen om het te kalibreren.&lt;/p&gt;
 
-&lt;b&gt;Uw locatie instellen&lt;/b&gt;&lt;br/&gt;
-Sky Map heeft uw geschatte locatie nodig om de juiste sterrenkaart te kunnen weergeven. Deze locatie wordt standaard gedetecteerd op basis van uw mobiele netwerk. Als u geen netwerkbereik heeft of netwerklocatiedetectie heeft uitgeschakeld, wordt de GPS-functie van uw telefoon gebruikt.
-U kunt uw locatie ook handmatig instellen via het instellingsmenu door een plaatsnaam op te geven of door een lengte- en breedtegraad op te geven (in graden). Sky Map heeft een gegevensverbinding nodig om uw lengte- en breedtegraad te kunnen bepalen aan de hand van een plaatsnaam.&lt;br/&gt;&lt;br/&gt;
+&lt;h2&gt;Steun de ontwikkeling&lt;/h2&gt;
+&lt;p&gt;Sky Map is gratis, open source en zonder advertenties. Als u het prettig vindt om te gebruiken, overweeg dan om de voortdurende ontwikkeling te steunen op &lt;a href="https://github.com/sky-map-team/stardroid#support"&gt;onze GitHub-pagina&lt;/a&gt;.&lt;/p&gt;
 
-&lt;b&gt;Problemen oplossen en beperkingen&lt;/b&gt;&lt;br/&gt;
-&lt;i&gt;De kaart klopt niet.&lt;/i&gt;&lt;br/&gt;
-Als u merkt dat de kaart niet goed is uitgelijnd met de echte sterrenhemel, kan dit een aantal verschillende redenen hebben:&lt;br/&gt;
-1) Is uw kompas gekalibreerd? Houd uw telefoon vast en draai achtjes met uw pols om de telefoon te kalibreren. Mogelijk moet u dit af en toe herhalen (dit is een functie van de telefoon, niet van Sky Map).&lt;br/&gt;
-2) Heeft de toepassing uw locatie correct gedetecteerd? Is uw GPS- of netwerklocatiefunctie ingeschakeld?&lt;br/&gt;
-3) Heeft u de juiste tijd en tijdzone ingesteld?
-Sky Map moet terugrekenen naar Universal Time en heeft uw tijd en tijdzone nodig om dit correct te doen. Als uw apparaat een SIM-kaart bevat, zijn tijd en tijdzone meestal correct ingesteld.&lt;br/&gt;
-4) Heeft u de magnetische correctie ingeschakeld? In sommige delen van de wereld kan het verschil tussen het magnetische noorden en het ware noorden wel 20 graden zijn.&lt;br/&gt;
-&lt;i&gt;De kaart verschuift niet&lt;/i&gt;&lt;br/&gt;
-Heeft u de handmatige modus ingeschakeld? Zo niet, dan kan dit probleem worden veroorzaakt door een niet-gekalibreerd kompas.
-Volg de bovenstaande stappen om het te kalibreren.&lt;br/&gt;&lt;br/&gt;
+&lt;h2&gt;Credits&lt;/h2&gt;
+&lt;h3&gt;Engineering en design&lt;/h3&gt;
+&lt;p&gt;Brent Bryan, Dominic Widdows, Hector Ouilhet, James Powell, John Taylor, Kevin Serafini&lt;/p&gt;
 
-&lt;b&gt;Credits&lt;/b&gt;&lt;br/&gt;
-&lt;i&gt;Engineering en design&lt;/i&gt;&lt;br/&gt;
-Brent Bryan, Dominic Widdows, Hector Ouilhet, James Powell, John Taylor,
-Kevin Serafini&lt;br/&gt;
+&lt;h3&gt;Productmanagement&lt;/h3&gt;
+&lt;p&gt;Lior Ron&lt;/p&gt;
 
-&lt;i&gt;Productmanagement&lt;/i&gt;&lt;br/&gt;
-Lior Ron&lt;br/&gt;
+&lt;h3&gt;Public Relations&lt;/h3&gt;
+&lt;p&gt;Aaron Stein, Erin Gleason&lt;/p&gt;
 
-&lt;i&gt;Public Relations&lt;/i&gt;&lt;br/&gt;
-Aaron Stein, Erin Gleason&lt;br/&gt;
+&lt;h3&gt;Productmarketing&lt;/h3&gt;
+&lt;p&gt;Effie Seiberg, Linda Tong&lt;/p&gt;
 
-&lt;i&gt;Productmarketing&lt;/i&gt;&lt;br/&gt;
-Effie Seiberg, Linda Tong&lt;br/&gt;
+&lt;h3&gt;Vertalingen&lt;/h3&gt;
+&lt;p&gt;Jelena Oertel&lt;/p&gt;
 
-&lt;i&gt;Vertalingen&lt;/i&gt;&lt;br/&gt;
-Jelena Oertel&lt;br/&gt;&lt;br/&gt;
-
-
-&lt;b&gt;Bronnen&lt;/b&gt;&lt;br/&gt;
-Sky Map is gebaseerd op gegevens van:&lt;br/&gt;
-Centre de Données astronomiques de Strasbourg (https://cdsweb.u-strasbg.fr/)&lt;br/&gt;
-De Bright Star Catalogue, 5th Revised Ed. (Hoffleit D., Warren Jr W.H.)&lt;br/&gt;
-De HYG Database, HYG v1.0. (https://www.astronexus.com/)&lt;br/&gt;
-History and Accurate Positions for the NGC/IC Objects (Harold G. Corwin Jr)&lt;br/&gt;
-Revised New General Catalogue of Nonstellar Astronomical Objects
-(Sulentic J.W., Tifft W.G.)&lt;br/&gt;
-SFA Star Charts
-(https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html)&lt;br/&gt;
-Posities van objecten in het zonnestelsel worden berekend op basis van gegevens van de USNO
-(https://www.usno.navy.mil/USNO/astronomical-applications)&lt;br/&gt;
-Gegevens voor panoramabeelden zijn afkomstig van
-(https://www2.research.att.com/~njas/coverings)&lt;br/&gt;
-Hubble-beelden zijn afkomstig van het Space Telescope Science Institute van de NASA
-(https://hubblesite.org/)&lt;br/&gt;
-M31 image Peter Kennett (https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg)&lt;br/&gt;
-</string></resources>
+&lt;h2&gt;Bronnen&lt;/h2&gt;
+&lt;p&gt;Sky Map is oorspronkelijk ontwikkeld als \"Google Sky Map\" door Google Inc. en in 2012 open source gemaakt.&lt;/p&gt;
+&lt;p&gt;Sky Map is gebaseerd op gegevens van:&lt;/p&gt;
+&lt;ul class="credits"&gt;
+&lt;li&gt;Centre de Données astronomiques de Strasbourg (&lt;a href="https://cdsweb.u-strasbg.fr/"&gt;https://cdsweb.u-strasbg.fr/&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;De Bright Star Catalogue, 5th Revised Ed. (Hoffleit D., Warren Jr W.H.)&lt;/li&gt;
+&lt;li&gt;De HYG Database, HYG v1.0. (&lt;a href="https://www.astronexus.com/"&gt;https://www.astronexus.com/&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;History and Accurate Positions for the NGC/IC Objects (Harold G. Corwin Jr)&lt;/li&gt;
+&lt;li&gt;Revised New General Catalogue of Nonstellar Astronomical Objects (Sulentic J.W., Tifft W.G.)&lt;/li&gt;
+&lt;li&gt;SFA Star Charts (&lt;a href="https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html"&gt;https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Posities van objecten in het zonnestelsel worden berekend op basis van gegevens van de USNO (&lt;a href="https://www.usno.navy.mil/USNO/astronomical-applications"&gt;https://www.usno.navy.mil/USNO/astronomical-applications&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Gegevens voor panoramabeelden zijn afkomstig van (&lt;a href="https://www2.research.att.com/~njas/coverings"&gt;https://www2.research.att.com/~njas/coverings&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Hubble-beelden zijn afkomstig van het Space Telescope Science Institute van de NASA (&lt;a href="https://hubblesite.org/"&gt;https://hubblesite.org/&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;M31 image Peter Kennett (&lt;a href="https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg"&gt;https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+</string>
+</resources>

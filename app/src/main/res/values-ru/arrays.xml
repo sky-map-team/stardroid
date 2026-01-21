@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="popular_date_examples">
-        <item>Зараз</item>
-        <item>Наступний захід Сонця</item>
-        <item>Наступний схід Сонця</item>
-        <item>Наступний повний місяць</item>
-        <item>Транзит Меркурія 9 травня 2016 р.</item>
-        <item>Сонячне затемнення 8 квітень 2024 р.</item>
-        <item>Посадка на Місяць Аполлона 11</item>
-        <item>З\'єднання Юпітер-Сатурн</item>
+        <item>Сейчас</item>
+        <item>Следующий заход Солнца</item>
+        <item>Следующий восход Солнца</item>
+        <item>Следующее полнолуние</item>
+        <item>Транзит Меркурия 9 мая 2016 г.</item>
+        <item>Солнечное затмение 8 aпрельское 2024 г.</item>
+        <item>Посадка на Луну Аполлона 11</item>
+        <item>Соединение Юпитер-Сатурн</item>
     </string-array>
     <string-array name="sensor_speed">
-        <item>Повільно</item>
-        <item>Звичайно</item>
-        <item>Швидко</item>
+        <item>Медленно</item>
+        <item>Обычно</item>
+        <item>Быстро</item>
     </string-array>
     <string-array name="sensor_damping">
-        <item>Стрибками</item>
-        <item>Середнє</item>
-        <item>Звичайне</item>
-        <item>Високе</item>
+        <item>Скачками</item>
+        <item>Среднее</item>
+        <item>Обычное</item>
+        <item>Высокое</item>
     </string-array>
 </resources>

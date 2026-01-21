@@ -4,15 +4,20 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
-import android.text.Html;
-import android.text.Spanned;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.TextView;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+
+import androidx.preference.PreferenceManager;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.StardroidApplication;
+import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
 import com.google.android.stardroid.inject.HasComponent;
 import com.google.android.stardroid.util.MiscUtil;
 
@@ -24,6 +29,7 @@ import javax.inject.Inject;
 public class WhatsNewDialogFragment extends DialogFragment {
   private static final String TAG = MiscUtil.getTag(WhatsNewDialogFragment.class);
   @Inject Activity parentActivity;
+  @Inject StardroidApplication application;
   private CloseListener closeListener;
 
   public interface CloseListener {
@@ -46,11 +52,6 @@ public class WhatsNewDialogFragment extends DialogFragment {
     LayoutInflater inflater = parentActivity.getLayoutInflater();
     View view = inflater.inflate(R.layout.whatsnew_view, null);
 
-    String whatsNewText = String.format(parentActivity.getString(R.string.whats_new_text), getVersionName());
-    Spanned formattedWhatsNewText = Html.fromHtml(whatsNewText);
-    TextView whatsNewTextView = (TextView) view.findViewById(R.id.whats_new_box_text);
-    whatsNewTextView.setText(formattedWhatsNewText, TextView.BufferType.SPANNABLE);
-
     AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(parentActivity)
         .setTitle(getString(R.string.whats_new_dialog_title))
         .setView(view)
@@ -60,6 +61,28 @@ public class WhatsNewDialogFragment extends DialogFragment {
                 endItNow(dialog);
               }
             });
+
+    String whatsNewText = String.format(parentActivity.getString(R.string.whats_new_text),
+        application.getVersionName());
+    SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(parentActivity);
+    String lightMode = preferences.getString(ActivityLightLevelManager.LIGHT_MODE_KEY, "DAY");
+    String bodyClass = "NIGHT".equals(lightMode) ? " class=\"night-mode\"" : "";
+    String html = "<!DOCTYPE html><html><head>" +
+        "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">" +
+        "<link rel=\"stylesheet\" href=\"html/help.css\">" +
+        "</head><body" + bodyClass + ">" + whatsNewText + "</body></html>";
+    WebView webView = view.findViewById(R.id.whatsnew_webview);
+    webView.setWebViewClient(new WebViewClient() {
+      @Override
+      public boolean shouldOverrideUrlLoading(WebView view, String url) {
+        // Open links in external browser
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+        parentActivity.startActivity(intent);
+        return true;
+      }
+    });
+    webView.loadDataWithBaseURL("file:///android_asset/", html, "text/html", "UTF-8", null);
+
     return dialogBuilder.create();
   }
 
@@ -73,9 +96,5 @@ public class WhatsNewDialogFragment extends DialogFragment {
   @Override
   public void onCancel(DialogInterface dialog) {
     endItNow(dialog);
-  }
-
-  private String getVersionName() {
-    return ((StardroidApplication) parentActivity.getApplication()).getVersionName();
   }
 }
