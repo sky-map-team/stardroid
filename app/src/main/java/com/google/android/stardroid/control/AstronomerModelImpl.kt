@@ -85,8 +85,8 @@ class AstronomerModelImpl(magneticDeclinationCalculator: MagneticDeclinationCalc
     private val pointing = Pointing()
 
     /** The sensor acceleration in the phone's coordinate system.  */
-    private val acceleration = ApplicationConstants.INITIAL_DOWN.copy()
-    private var upPhone = acceleration * -1f
+    private val acceleration = -ApplicationConstants.INITIAL_DOWN.copy()
+    private var upPhone = acceleration.copy()
 
     /** The sensor magnetic field in the phone's coordinate system.  */
     private val magneticField = ApplicationConstants.INITIAL_SOUTH.copy()
@@ -297,6 +297,8 @@ class AstronomerModelImpl(magneticDeclinationCalculator: MagneticDeclinationCalc
             magneticEastPhone = Vector3(rotationMatrix[0], rotationMatrix[1], rotationMatrix[2])
         } else {
             // TODO(johntaylor): we can reduce the number of vector copies done in here.
+            // Note that acceleration is in the *opposite* direction to the force
+            // of gravity.
             upPhone = acceleration.normalizedCopy()
             val magneticFieldToNorth = magneticField.normalizedCopy()
             // This is the vector to magnetic North *along the ground*.

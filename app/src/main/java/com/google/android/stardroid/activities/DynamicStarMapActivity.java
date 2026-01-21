@@ -133,7 +133,8 @@ public class DynamicStarMapActivity extends InjectableActivity
       rendererController.queueSetViewOrientation(directionX, directionY, directionZ, upX, upY, upZ);
 
       Vector3 up = model.getPhoneUpDirection();
-      rendererController.queueTextAngle(MathUtils.atan2(up.x, up.y));
+      float angleVertClockwiseFromYaxisInRadians = MathUtils.atan2(up.x, up.y);
+      rendererController.queueTextAngle(angleVertClockwiseFromYaxisInRadians);
       rendererController.queueViewerUpDirection(model.getZenith().copyForJ());
 
       float fieldOfView = model.getFieldOfView();
