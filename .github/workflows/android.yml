@@ -53,4 +53,12 @@ jobs:
           target: ${{ matrix.target }}
           arch: x86_64
           profile: Nexus 6
-          script: ./gradlew connectedGmsDebugAndroidTest -x lint --stacktrace
+          script: adb logcat Stardroid:I *:W & ./gradlew connectedGmsDebugAndroidTest -x lint --stacktrace
+
+      - run: ls
+      - run: ls app/build/reports/androidTests/connected/flavors/gms
+      - name: Grab logs
+        uses: actions/upload-artifact@v2
+        with:
+          name: output-log-file
+          path: app/build/reports/androidTests/connected/flavors/gms/index.html
