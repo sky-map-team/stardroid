@@ -1,0 +1,13 @@
+Sky Map è un planetario portatile per il tuo dispositivo Android. Utilizzalo per identificare stelle, pianeti, nebulose e altro ancora. Sviluppato originariamente come Google Sky Map, è stato ora donato e reso open source.
+
+<h1><b>Risoluzione dei problemi/FAQ</b></h1> <h3><i>La mappa non si muove/punta nella posizione sbagliata</i></h3>Assicurati di non essere passato alla modalità manuale. Il tuo telefono ha una bussola? In caso contrario, Sky Map non sarà in grado di determinare il tuo orientamento. Cercalo <a href=" http://www.gsmarena.com/ ">qui:</a> http://www.gsmarena.com/ <br /> Prova a calibrare la bussola muovendola con un movimento a forma di 8 o come descritto <a href="https://www.youtube.com/watch?v=k1EPbAapaeI">qui:</a> https://www.youtube.com/watch?v=k1EPbAapaeI. <br /> Ci sono magneti o metalli nelle vicinanze che potrebbero interferire con la bussola? <br /> Prova a disattivare la "correzione magnetica" (nelle impostazioni) e verifica se la precisione è maggiore.
+
+<h3><i>Perché la localizzazione automatica non è supportata sul mio telefono?</i></h3>In Android 6 il funzionamento delle autorizzazioni è cambiato. Devi abilitare l'impostazione dell'autorizzazione alla posizione per Sky Map come descritto <a href="https://support.google.com/googleplay/answer/6270602?p=app_permissons_m">qui:</a> https://support.google.com/googleplay/answer/6270602?p=app_permissons_m
+
+<h3><i>La mappa è tremolante</i></h3> Se hai un telefono privo di giroscopio, è normale che si verifichi un po' di tremolio. Prova a regolare la velocità e lo smorzamento del sensore (nelle impostazioni).
+
+<h3><i>Ho bisogno di una connessione Internet?<i></h3> No, ma alcune funzioni (come l'inserimento manuale della posizione) non funzioneranno senza. Sarà necessario utilizzare il GPS oppure inserire latitudine e longitudine.
+
+<h3><i>Posso aiutarti a testare le ultime funzionalità?</i></h3> Certo! Partecipa al nostro <a href="https://play.google.com/apps/testing/com.google.android.stardroid ">programma di beta testing</a> e ottieni l'ultima versione. https://play.google.com/apps/testing/com.google.android.stardroid
+
+<h1><b>Trovaci altrove:</b></h1>⭐ <a href="https://github.com/sky-map-team/stardroid">GitHub:</a> https://github.com/sky-map-team/stardroid ⭐ <a href="https://www.facebook.com/groups/113507592330/">Facebook:</a> https://www.facebook.com/groups/113507592330/ ⭐ <a href="http://twitter.com/skymapdevs">Twitter:</a> http://twitter.com/skymapdevs

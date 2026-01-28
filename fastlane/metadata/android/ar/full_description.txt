@@ -1,0 +1,13 @@
+Sky Map هو عبارة عن قبة فلكية محمولة لجهاز Android الخاص بك. استخدمه لتحديد النجوم والكواكب والسدم والمزيد. تم تطويره في الأصل كـ Google Sky Map، والآن تم التبرع به وأصبح مفتوح المصدر.
+
+<h1><b>استكشاف الأخطاء وإصلاحها/الأسئلة الشائعة</b></h1> <h3><i>الخريطة لا تتحرك/تشير إلى المكان الخطأ</i></h3>تأكد من عدم التبديل إلى الوضع اليدوي. هل هاتفك يحتوي على بوصلة؟ إذا لم يكن الأمر كذلك، فلن يتمكن Sky Map من تحديد اتجاهك. يمكنك البحث عن ذلك <a href=" http://www.gsmarena.com/ ">هنا:</a> http://www.gsmarena.com/ <br /> حاول معايرة البوصلة الخاصة بك عن طريق تحريكها في حركة على شكل رقم 8 أو كما هو موضح <a href="https://www.youtube.com/watch?v=k1EPbAapaeI">هنا:</a> https://www.youtube.com/watch?v=k1EPbAapaeI. <br />هل هناك أي مغناطيس أو معدن قريب قد يتداخل مع البوصلة؟ <br />حاول إيقاف تشغيل "التصحيح المغناطيسي" (في الإعدادات) وشاهد ما إذا كان ذلك أكثر دقة.
+
+<h3><i>لماذا لا يتم دعم تحديد الموقع التلقائي لهاتفي؟</i></h3>في Android 6، تغيرت طريقة عمل الأذونات. يجب عليك تمكين إعداد إذن الموقع لـ Sky Map كما هو موضح <a href="https://support.google.com/googleplay/answer/6270602?p=app_permissons_m">هنا:</a> https://support.google.com/googleplay/answer/6270602?p=app_permissons_m
+
+<h3><i>الخريطة متذبذبة</i></h3> إذا كان لديك هاتف لا يحتوي على جيروسكوب، فمن المتوقع أن يكون هناك بعض التذبذب. حاول ضبط سرعة المستشعر والتخميد (في الإعدادات).
+
+<h3><i>هل أحتاج إلى اتصال بالإنترنت؟<i></h3>لا، ولكن بعض الوظائف (مثل إدخال موقعك يدويًا) لن تعمل بدون اتصال بالإنترنت. سيتعين عليك استخدام نظام تحديد المواقع العالمي (GPS) أو إدخال خط العرض وخط الطول بدلاً من ذلك.
+
+<h3><i>هل يمكنني مساعدتك في اختبار أحدث الميزات؟</i></h3> بالتأكيد! انضم إلى <a href="https://play.google.com/apps/testing/com.google.android.stardroid ">برنامج الاختبار التجريبي</a> واحصل على الإصدار الأحدث. https://play.google.com/apps/testing/com.google.android.stardroid
+
+<h1><b>يمكنك العثور علينا في أماكن أخرى:</b></h1>⭐ <a href="https://github.com/sky-map-team/stardroid">GitHub:</a> https://github.com/sky-map-team/stardroid ⭐ <a href="https://www.facebook.com/groups/113507592330/">Facebook:</a> https://www.facebook.com/groups/113507592330/ ⭐ <a href="http://twitter.com/skymapdevs">Twitter:</a> http://twitter.com/skymapdevs
