@@ -1,5 +1,3 @@
-// Copyright 2008 Google Inc.
-//
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
@@ -58,5 +56,8 @@ object ApplicationConstants {
   const val SENSOR_DAMPING_STANDARD = "STANDARD"
   const val SENSOR_DAMPING_PREF_KEY = "sensor_damping"
   const val REVERSE_MAGNETIC_Z_PREFKEY = "reverse_magnetic_z"
-  const val VIEW_MODE_PREFKEY = "viewing_direction" // End Preference Keys
+  const val VIEW_MODE_PREFKEY = "viewing_direction"
+
+  // Educational info feature
+  const val SHOW_OBJECT_INFO_PREF_KEY = "show_object_info_on_tap"
 }

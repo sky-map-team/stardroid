@@ -17,6 +17,7 @@ import android.util.Log
 import android.view.GestureDetector.SimpleOnGestureListener
 import android.view.MotionEvent
 import com.google.android.stardroid.activities.util.FullscreenControlsManager
+import com.google.android.stardroid.education.ObjectInfoTapHandler
 import com.google.android.stardroid.util.MiscUtil.getTag
 
 /**
@@ -26,8 +27,19 @@ import com.google.android.stardroid.util.MiscUtil.getTag
  */
 class GestureInterpreter(
   private val fullscreenControlsManager: FullscreenControlsManager,
-  private val mapMover: MapMover
+  private val mapMover: MapMover,
+  private val objectInfoTapHandler: ObjectInfoTapHandler? = null,
+  private val screenDimensionsProvider: ScreenDimensionsProvider? = null
 ) : SimpleOnGestureListener() {
+
+  /**
+   * Interface to provide screen dimensions for hit testing.
+   */
+  interface ScreenDimensionsProvider {
+    val screenWidth: Int
+    val screenHeight: Int
+  }
+
   private val flinger = Flinger { distanceX: Float, distanceY: Float ->
     mapMover.onDrag(
       distanceX,
@@ -54,6 +66,22 @@ class GestureInterpreter(
 
   override fun onSingleTapUp(e: MotionEvent): Boolean {
     Log.d(TAG, "Tap up")
+    // Try to handle tap for object info first (if handler is available)
+    val dimensionsProvider = screenDimensionsProvider
+    val tapHandler = objectInfoTapHandler
+    if (tapHandler != null && dimensionsProvider != null) {
+      val consumed = tapHandler.handleTap(
+        e.x,
+        e.y,
+        dimensionsProvider.screenWidth,
+        dimensionsProvider.screenHeight
+      )
+      if (consumed) {
+        Log.d(TAG, "Tap consumed by object info handler")
+        return true
+      }
+    }
+    // If not consumed by object info handler, toggle fullscreen controls
     fullscreenControlsManager.toggleControls()
     return true
   }
