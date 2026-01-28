@@ -151,13 +151,13 @@ dependencies {
     testImplementation 'com.google.truth:truth:1.0.1'
     androidTestImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'org.easymock:easymock:2.5.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
-    androidTestImplementation 'androidx.test:runner:1.6.2'
-    androidTestImplementation 'androidx.test:rules:1.6.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.3.0'
+    androidTestImplementation 'androidx.test:runner:1.7.0'
+    androidTestImplementation 'androidx.test:rules:1.7.0'
     // Optional -- Hamcrest library
     androidTestImplementation 'org.hamcrest:hamcrest-library:1.3'
     // Optional -- UI testing with Espresso
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.7.0'
     // Optional -- UI testing with UI Automator
     // androidTestImplementation 'androidx.test.uiautomator:uiautomator:2.2.0'
 }
