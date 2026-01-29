@@ -1,0 +1,13 @@
+Sky Map adalah planetarium genggam untuk perangkat Android Anda. Gunakan untuk mengidentifikasi bintang, planet, nebula, dan banyak lagi. Awalnya dikembangkan sebagai Google Sky Map, sekarang telah disumbangkan dan dijadikan sumber terbuka.
+
+<h1><b>Pemecahan Masalah/FAQ</b></h1> <h3><i>Peta tidak bergerak/menunjuk ke tempat yang salah</i></h3>Pastikan Anda belum beralih ke mode manual. Apakah ponsel Anda memiliki kompas? Jika tidak, Sky Map tidak dapat memberi tahu orientasi Anda. Cari tahu <a href=" http://www.gsmarena.com/ ">di sini:</a> http://www.gsmarena.com/ <br /> Coba kalibrasi kompas Anda dengan menggerakkannya dalam gerakan angka 8 atau seperti yang dijelaskan <a href="https://www.youtube.com/watch?v=k1EPbAapaeI">di sini:</a> https://www.youtube.com/watch?v=k1EPbAapaeI. <br /> Apakah ada magnet atau logam di dekatnya yang dapat mengganggu kompas? <br /> Coba nonaktifkan "koreksi magnetik" (dalam pengaturan) dan lihat apakah itu lebih akurat.
+
+<h3><i>Mengapa lokasi otomatis tidak didukung untuk ponsel saya?</i></h3>Di Android 6, cara kerja izin telah berubah. Anda perlu mengaktifkan pengaturan izin lokasi untuk Sky Map seperti yang dijelaskan <a href="https://support.google.com/googleplay/answer/6270602?p=app_permissons_m">di sini:</a> https://support.google.com/googleplay/answer/6270602?p=app_permissons_m
+
+<h3><i>Peta bergetar</i></h3> Jika Anda mempunyai telepon yang tidak dilengkapi gyro maka getaran akan terjadi. Coba sesuaikan kecepatan dan peredaman sensor (dalam pengaturan).
+
+<h3><i>Apakah saya memerlukan koneksi internet?<i></h3> Tidak, tetapi beberapa fungsi (seperti memasukkan lokasi Anda secara manual) tidak akan berfungsi tanpa koneksi internet. Anda harus menggunakan GPS atau memasukkan lintang dan bujur sebagai gantinya.
+
+<h3><i>Bisakah saya membantu menguji fitur-fitur terbaru?</i></h3> Tentu! Bergabunglah dengan <a href="https://play.google.com/apps/testing/com.google.android.stardroid ">program pengujian beta</a> kami dan dapatkan versi terbaru. https://play.google.com/apps/testing/com.google.android.stardroid
+
+<h1><b>Temukan kami di tempat lain:</b></h1>⭐ <a href="https://github.com/sky-map-team/stardroid">GitHub:</a> https://github.com/sky-map-team/stardroid ⭐ <a href="https://www.facebook.com/groups/113507592330/">Facebook:</a> https://www.facebook.com/groups/113507592330/ ⭐ <a href="http://twitter.com/skymapdevs">Twitter:</a> http://twitter.com/skymapdevs
