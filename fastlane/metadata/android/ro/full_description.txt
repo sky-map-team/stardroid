@@ -1,0 +1,21 @@
+Sky Map este un planetariu portabil pentru dispozitivul tău Android. Folosește-l pentru a identifica stele, planete, nebuloase și multe altele. Dezvoltat inițial ca Google Sky Map, a fost acum donat și este disponibil ca software open source.
+
+<h1><b>Depanare/Întrebări frecvente</b></h1>
+<h3><i>Harta nu se mișcă/indică greșit</i></h3>Asigură-te că nu ai trecut în modul manual. Telefonul tău are busolă? Dacă nu, Sky Map nu poate determina orientarea ta. Poți verifica <a href=" http://www.gsmarena.com/ ">aici:</a> http://www.gsmarena.com/ <br />
+Încearcă să calibrezi busola mișcând telefonul într-o figură de 8 sau așa cum este descris <a href="https://www.youtube.com/watch?v=k1EPbAapaeI">aici:</a> https://www.youtube.com/watch?v=k1EPbAapaeI. <br />
+Există magneți sau obiecte metalice în apropiere care ar putea interfera cu busola? <br />
+Încearcă să dezactivezi "corecția magnetică" (din setări) și vezi dacă precizia se îmbunătățește.
+
+<h3><i>De ce nu este suportată localizarea automată pentru telefonul meu?</i></h3>În Android 6, modul în care funcționează permisiunile s-a schimbat. Trebuie să activezi permisiunea de localizare pentru Sky Map, așa cum este descris <a href="https://support.google.com/googleplay/answer/6270602?p=app_permissons_m">aici:</a> https://support.google.com/googleplay/answer/6270602?p=app_permissons_m
+
+<h3><i>Harta este instabilă/tremură</i></h3> Dacă telefonul tău nu are giroscop, este normal să apară o anumită instabilitate. Încearcă să ajustezi viteza și amortizarea senzorului (din setări).
+
+<h3><i>Am nevoie de conexiune la internet?<i></h3> Nu, dar unele funcții (cum ar fi introducerea manuală a locației) nu vor funcționa fără internet. Va trebui să folosești GPS-ul sau să introduci coordonatele (latitudine și longitudine) în schimb.
+
+<h3><i>Pot ajuta la testarea celor mai noi funcții?</i></h3> Sigur! Alătură-te <a href="https://play.google.com/apps/testing/com.google.android.stardroid ">programului nostru de testare beta</a> și vei primi cea mai recentă versiune. https://play.google.com/apps/testing/com.google.android.stardroid
+
+<h1><b>Găsește-ne și în alte părți:</b></h1>
+⭐ <a href="https://stardroid.app">stardroid.app</a>
+⭐ <a href="https://github.com/sky-map-team/stardroid">GitHub:</a> https://github.com/sky-map-team/stardroid
+⭐ <a href="https://www.facebook.com/groups/113507592330/">Facebook:</a> https://www.facebook.com/groups/113507592330/
+⭐ <a href="http://twitter.com/skymapdevs">Twitter:</a> http://twitter.com/skymapdevs

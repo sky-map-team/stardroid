@@ -1,0 +1,21 @@
+Sky Map je přenosné planetárium pro vaše zařízení s Androidem. Pomocí něj můžete identifikovat hvězdy, planety, mlhoviny a další objekty. Původně byl vyvinut jako Google Sky Map, nyní byl darován a je k dispozici jako open source.
+
+<h1><b>Řešení problémů/Často kladené dotazy</b></h1>
+<h3><i>Mapa se nepohybuje nebo ukazuje na špatné místo</i></h3>Ujistěte se, že jste nepřepnuli do manuálního režimu. Má váš telefon kompas? Pokud ne, Sky Map nemůže určit vaši orientaci. Zjistíte to <a href=" http://www.gsmarena.com/ ">zde:</a> http://www.gsmarena.com/ <br />
+Zkuste zkalibrovat kompas pohybem ve tvaru osmičky nebo podle popisu <a href="https://www.youtube.com/watch?v=k1EPbAapaeI">zde:</a> https://www.youtube.com/watch?v=k1EPbAapaeI. <br />
+Nejsou poblíž nějaké magnety nebo kovové předměty, které by mohly rušit kompas? <br />
+Zkuste v nastavení vypnout "magnetickou korekci" a zkontrolujte, zda je to přesnější.
+
+<h3><i>Proč můj telefon nepodporuje automatickou lokalizaci?</i></h3>V systému Android 6 se změnil způsob fungování oprávnění. Musíte pro aplikaci Sky Map povolit oprávnění k poloze, jak je popsáno <a href="https://support.google.com/googleplay/answer/6270602?p=app_permissons_m">zde:</a> https://support.google.com/googleplay/answer/6270602?p=app_permissons_m
+
+<h3><i>Mapa se třese</i></h3> Pokud váš telefon nemá gyroskop, je určité chvění očekávatelné. Zkuste v nastavení upravit rychlost senzoru a tlumení.
+
+<h3><i>Potřebuji připojení k internetu?<i></h3> Ne, ale některé funkce (například ruční zadání vaší polohy) bez něj nebudou fungovat. Místo toho budete muset použít GPS nebo zadat zeměpisnou šířku a délku.
+
+<h3><i>Mohu pomoci testovat nejnovější funkce?</i></h3> Jistě! Připojte se k našemu <a href="https://play.google.com/apps/testing/com.google.android.stardroid ">programu beta testování</a> a získejte nejnovější verzi. https://play.google.com/apps/testing/com.google.android.stardroid
+
+<h1><b>Najdete nás také zde:</b></h1>
+⭐ <a href="https://stardroid.app">stardroid.app</a>
+⭐ <a href="https://github.com/sky-map-team/stardroid">GitHub:</a> https://github.com/sky-map-team/stardroid
+⭐ <a href="https://www.facebook.com/groups/113507592330/">Facebook:</a> https://www.facebook.com/groups/113507592330/
+⭐ <a href="http://twitter.com/skymapdevs">Twitter:</a> http://twitter.com/skymapdevs
