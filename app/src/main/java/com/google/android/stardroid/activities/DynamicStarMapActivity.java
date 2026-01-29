@@ -792,6 +792,14 @@ public class DynamicStarMapActivity extends InjectableActivity
         R.id.time_player_play_forwards);
     final TextView timeTravelSpeedLabel = (TextView) findViewById(R.id.time_travel_speed_label);
 
+    // Push the time player below any bottom display cutout or navigation bar.
+    ViewCompat.setOnApplyWindowInsetsListener(timePlayerUI, (v, windowInsets) -> {
+      Insets insets = windowInsets.getInsets(
+          WindowInsetsCompat.Type.systemBars() | WindowInsetsCompat.Type.displayCutout());
+      v.setPadding(insets.left, v.getPaddingTop(), insets.right, insets.bottom);
+      return WindowInsetsCompat.CONSUMED;
+    });
+
     timePlayerCancelButton.setOnClickListener(new OnClickListener() {
       @Override
       public void onClick(View v) {
