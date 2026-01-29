@@ -3,6 +3,7 @@ package com.google.android.stardroid.activities;
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.content.Context;
+import android.content.res.AssetManager;
 import android.media.MediaPlayer;
 import android.os.Handler;
 import android.util.Log;
@@ -57,6 +58,12 @@ public class AbstractDynamicStarMapModule {
   @PerActivity
   Context provideActivityContext() {
     return activity;
+  }
+
+  @Provides
+  @PerActivity
+  AssetManager provideAssetManager() {
+    return activity.getAssets();
   }
 
   @Provides
