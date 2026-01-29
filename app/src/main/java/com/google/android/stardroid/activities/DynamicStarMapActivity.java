@@ -706,16 +706,20 @@ public class DynamicStarMapActivity extends InjectableActivity
     dragZoomRotateDetector = new DragRotateZoomGestureDetector(mapMover);
   }
 
-  private void applyWindowInsets(View view, boolean applyTop, boolean applyBottom) {
-      ViewCompat.setOnApplyWindowInsetsListener(view, (v, windowInsets) -> {
-          Insets insets = windowInsets.getInsets(
-                  WindowInsetsCompat.Type.systemBars() | WindowInsetsCompat.Type.displayCutout());
-          int paddingTop = applyTop ? insets.top : v.getPaddingTop();
-          int paddingBottom = applyBottom ? insets.bottom : v.getPaddingBottom();
-          v.setPadding(insets.left, paddingTop, insets.right, paddingBottom);
-          return WindowInsetsCompat.CONSUMED;
-      });
-  }
+    private void applyWindowInsets(View view, boolean applyTop, boolean applyBottom) {
+        final int initialPaddingLeft = view.getPaddingLeft();
+        final int initialPaddingTop = view.getPaddingTop();
+        final int initialPaddingRight = view.getPaddingRight();
+        final int initialPaddingBottom = view.getPaddingBottom();
+        ViewCompat.setOnApplyWindowInsetsListener(view, (v, windowInsets) -> {
+            Insets insets = windowInsets.getInsets(
+                    WindowInsetsCompat.Type.systemBars() | WindowInsetsCompat.Type.displayCutout());
+            int paddingTop = applyTop ? initialPaddingTop + insets.top : initialPaddingTop;
+            int paddingBottom = applyBottom ? initialPaddingBottom + insets.bottom : initialPaddingBottom;
+            v.setPadding(initialPaddingLeft + insets.left, paddingTop, initialPaddingRight + insets.right, paddingBottom);
+            return WindowInsetsCompat.CONSUMED;
+        });
+    }
 
   private void cancelSearch() {
     View searchControlBar = findViewById(R.id.search_control_bar);
