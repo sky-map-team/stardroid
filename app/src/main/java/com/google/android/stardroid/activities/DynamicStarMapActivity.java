@@ -679,12 +679,7 @@ public class DynamicStarMapActivity extends InjectableActivity
     // Push the search control bar below the status bar and any display cutout
     // so it doesn't overlap with camera notches on modern phones.
     View searchControlBar = findViewById(R.id.search_control_bar);
-    ViewCompat.setOnApplyWindowInsetsListener(searchControlBar, (v, windowInsets) -> {
-      Insets insets = windowInsets.getInsets(
-          WindowInsetsCompat.Type.systemBars() | WindowInsetsCompat.Type.displayCutout());
-      v.setPadding(insets.left, insets.top, insets.right, v.getPaddingBottom());
-      return WindowInsetsCompat.CONSUMED;
-    });
+    applyWindowInsets(searchControlBar, true, false);
 
     ButtonLayerView providerButtons = (ButtonLayerView) findViewById(R.id.layer_buttons_control);
 
@@ -709,6 +704,17 @@ public class DynamicStarMapActivity extends InjectableActivity
     gestureDetector = new GestureDetector(this, new GestureInterpreter(
         fullscreenControlsManager, mapMover));
     dragZoomRotateDetector = new DragRotateZoomGestureDetector(mapMover);
+  }
+
+  private void applyWindowInsets(View view, boolean applyTop, boolean applyBottom) {
+      ViewCompat.setOnApplyWindowInsetsListener(view, (v, windowInsets) -> {
+          Insets insets = windowInsets.getInsets(
+                  WindowInsetsCompat.Type.systemBars() | WindowInsetsCompat.Type.displayCutout());
+          int paddingTop = applyTop ? insets.top : v.getPaddingTop();
+          int paddingBottom = applyBottom ? insets.bottom : v.getPaddingBottom();
+          v.setPadding(insets.left, paddingTop, insets.right, paddingBottom);
+          return WindowInsetsCompat.CONSUMED;
+      });
   }
 
   private void cancelSearch() {
@@ -792,13 +798,8 @@ public class DynamicStarMapActivity extends InjectableActivity
         R.id.time_player_play_forwards);
     final TextView timeTravelSpeedLabel = (TextView) findViewById(R.id.time_travel_speed_label);
 
-    // Push the time player below any bottom display cutout or navigation bar.
-    ViewCompat.setOnApplyWindowInsetsListener(timePlayerUI, (v, windowInsets) -> {
-      Insets insets = windowInsets.getInsets(
-          WindowInsetsCompat.Type.systemBars() | WindowInsetsCompat.Type.displayCutout());
-      v.setPadding(insets.left, v.getPaddingTop(), insets.right, insets.bottom);
-      return WindowInsetsCompat.CONSUMED;
-    });
+    // Push the time player above any bottom display cutout or navigation bar.
+    applyWindowInsets(timePlayerUI, false, true);
 
     timePlayerCancelButton.setOnClickListener(new OnClickListener() {
       @Override
