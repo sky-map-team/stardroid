@@ -42,6 +42,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.core.content.ContextCompat;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.stardroid.ApplicationConstants;
 import com.google.android.stardroid.R;
@@ -666,12 +669,21 @@ public class DynamicStarMapActivity extends InjectableActivity
 
   private void wireUpScreenControls() {
     cancelSearchButton = (ImageButton) findViewById(R.id.cancel_search_button);
-    // TODO(johntaylor): move to set this in the XML once we don't support 1.5
     cancelSearchButton.setOnClickListener(new OnClickListener() {
       @Override
       public void onClick(View v) {
         cancelSearch();
       }
+    });
+
+    // Push the search control bar below the status bar and any display cutout
+    // so it doesn't overlap with camera notches on modern phones.
+    View searchControlBar = findViewById(R.id.search_control_bar);
+    ViewCompat.setOnApplyWindowInsetsListener(searchControlBar, (v, windowInsets) -> {
+      Insets insets = windowInsets.getInsets(
+          WindowInsetsCompat.Type.systemBars() | WindowInsetsCompat.Type.displayCutout());
+      v.setPadding(insets.left, insets.top, insets.right, v.getPaddingBottom());
+      return WindowInsetsCompat.CONSUMED;
     });
 
     ButtonLayerView providerButtons = (ButtonLayerView) findViewById(R.id.layer_buttons_control);

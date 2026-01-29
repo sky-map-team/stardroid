@@ -49,7 +49,8 @@
     android:layout_height="wrap_content"
     android:text="Fill in today's date ..."
     android:layout_below="@id/time_travel_status_label"
-    android:layout_marginLeft="34dip"
+    android:layout_toRightOf="@id/time_travel_icon"
+    android:paddingLeft="10dip"
     android:textAppearance="?android:attr/textAppearanceSmall"
     />
 
@@ -57,10 +58,13 @@
     android:id="@+id/time_player_close"
     android:background="@android:color/transparent"
     android:clickable="true"
-    android:layout_width="32dip"
-    android:layout_height="wrap_content"
+    android:layout_width="48dip"
+    android:layout_height="48dip"
+    android:padding="8dip"
+    android:scaleType="centerInside"
     android:src="@drawable/time_travel_close"
     android:layout_alignParentRight="true"
+    android:layout_marginRight="8dip"
     />
   </RelativeLayout>
 
