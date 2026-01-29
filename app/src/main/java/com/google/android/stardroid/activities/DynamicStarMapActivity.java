@@ -53,7 +53,10 @@ import com.google.android.stardroid.activities.dialogs.HelpDialogFragment;
 import com.google.android.stardroid.activities.dialogs.MultipleSearchResultsDialogFragment;
 import com.google.android.stardroid.activities.dialogs.NoSearchResultsDialogFragment;
 import com.google.android.stardroid.activities.dialogs.NoSensorsDialogFragment;
+import com.google.android.stardroid.activities.dialogs.ObjectInfoDialogFragment;
 import com.google.android.stardroid.activities.dialogs.TimeTravelDialogFragment;
+import com.google.android.stardroid.education.ObjectInfo;
+import com.google.android.stardroid.education.ObjectInfoTapHandler;
 import com.google.android.stardroid.activities.util.ActivityLightLevelChanger;
 import com.google.android.stardroid.activities.util.ActivityLightLevelChanger.NightModeable;
 import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
@@ -199,6 +202,7 @@ public class DynamicStarMapActivity extends InjectableActivity
   @Inject NoSearchResultsDialogFragment noSearchResultsDialogFragment;
   @Inject MultipleSearchResultsDialogFragment multipleSearchResultsDialogFragment;
   @Inject NoSensorsDialogFragment noSensorsDialogFragment;
+  @Inject ObjectInfoTapHandler objectInfoTapHandler;
   @Inject SensorAccuracyMonitor sensorAccuracyMonitor;
   // A list of runnables to post on the handler when we resume.
   private List<Runnable> onResumeRunnables = new ArrayList<>();
@@ -701,25 +705,56 @@ public class DynamicStarMapActivity extends InjectableActivity
 
     MapMover mapMover = new MapMover(model, controller, this);
 
+    // Set up the object info tap handler listener
+    objectInfoTapHandler.setObjectTapListener(new ObjectInfoTapHandler.ObjectTapListener() {
+      @Override
+      public void onObjectTapped(ObjectInfo objectInfo) {
+        showObjectInfoDialog(objectInfo);
+      }
+    });
+
+    // Create a screen dimensions provider using the skyView
+    GestureInterpreter.ScreenDimensionsProvider dimensionsProvider =
+        new GestureInterpreter.ScreenDimensionsProvider() {
+          @Override
+          public int getScreenWidth() {
+            return skyView.getWidth();
+          }
+
+          @Override
+          public int getScreenHeight() {
+            return skyView.getHeight();
+          }
+        };
+
     gestureDetector = new GestureDetector(this, new GestureInterpreter(
-        fullscreenControlsManager, mapMover));
+        fullscreenControlsManager, mapMover, objectInfoTapHandler, dimensionsProvider));
     dragZoomRotateDetector = new DragRotateZoomGestureDetector(mapMover);
   }
 
-    private void applyWindowInsets(View view, boolean applyTop, boolean applyBottom) {
-        final int initialPaddingLeft = view.getPaddingLeft();
-        final int initialPaddingTop = view.getPaddingTop();
-        final int initialPaddingRight = view.getPaddingRight();
-        final int initialPaddingBottom = view.getPaddingBottom();
-        ViewCompat.setOnApplyWindowInsetsListener(view, (v, windowInsets) -> {
-            Insets insets = windowInsets.getInsets(
-                    WindowInsetsCompat.Type.systemBars() | WindowInsetsCompat.Type.displayCutout());
-            int paddingTop = applyTop ? initialPaddingTop + insets.top : initialPaddingTop;
-            int paddingBottom = applyBottom ? initialPaddingBottom + insets.bottom : initialPaddingBottom;
-            v.setPadding(initialPaddingLeft + insets.left, paddingTop, initialPaddingRight + insets.right, paddingBottom);
-            return WindowInsetsCompat.CONSUMED;
-        });
-    }
+  private void applyWindowInsets(View view, boolean applyTop, boolean applyBottom) {
+    final int initialPaddingLeft = view.getPaddingLeft();
+    final int initialPaddingTop = view.getPaddingTop();
+    final int initialPaddingRight = view.getPaddingRight();
+    final int initialPaddingBottom = view.getPaddingBottom();
+    ViewCompat.setOnApplyWindowInsetsListener(view, (v, windowInsets) -> {
+        Insets insets = windowInsets.getInsets(
+                WindowInsetsCompat.Type.systemBars() | WindowInsetsCompat.Type.displayCutout());
+        int paddingTop = applyTop ? initialPaddingTop + insets.top : initialPaddingTop;
+        int paddingBottom = applyBottom ? initialPaddingBottom + insets.bottom : initialPaddingBottom;
+        v.setPadding(initialPaddingLeft + insets.left, paddingTop, initialPaddingRight + insets.right, paddingBottom);
+        return WindowInsetsCompat.CONSUMED;
+    });
+  }
+
+  /**
+   * Shows the object info dialog for the given celestial object.
+   */
+  private void showObjectInfoDialog(ObjectInfo objectInfo) {
+    Log.d(TAG, "Showing object info dialog for: " + objectInfo.getId());
+    ObjectInfoDialogFragment.newInstance(objectInfo).show(fragmentManager, "Object Info");
+  }
+>>>>>>> 6a5d31d8b4a0e01e6d6f8ae4bcdf3db252342172
 
   private void cancelSearch() {
     View searchControlBar = findViewById(R.id.search_control_bar);
