@@ -30,26 +30,7 @@ if [ "$QUICK" = false ]; then
 fi
 
 if [ "$FDROID" = true ]; then
-  # Create a backup to restore later
-  cp app/build.gradle app/build.gradle.bak
-
-  # These sed commands create app/build.gradle-e on macOS
-  sed -i -e '/gmsImplementation/d' app/build.gradle
-  sed -i -e '/com.google.gms.google-services/d' app/build.gradle
-
-  # Run build, ensuring we restore the backup even if it fails
-  set +e
   ./gradlew :app:assembleFdroid
-  BUILD_EXIT_CODE=$?
-  set -e
-
-  # Restore original file and remove the -e backups
-  mv app/build.gradle.bak app/build.gradle
-  rm -f app/build.gradle-e
-
-  if [ $BUILD_EXIT_CODE -ne 0 ]; then
-    exit $BUILD_EXIT_CODE
-  fi
 else
   ./gradlew :app:assembleGms
 fi
