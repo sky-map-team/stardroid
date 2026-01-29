@@ -18,7 +18,6 @@ import com.google.android.stardroid.activities.dialogs.LocationPermissionDeniedD
 import com.google.android.stardroid.activities.dialogs.MultipleSearchResultsDialogFragment;
 import com.google.android.stardroid.activities.dialogs.NoSearchResultsDialogFragment;
 import com.google.android.stardroid.activities.dialogs.NoSensorsDialogFragment;
-import com.google.android.stardroid.activities.dialogs.ObjectInfoDialogFragment;
 import com.google.android.stardroid.activities.dialogs.TimeTravelDialogFragment;
 import com.google.android.stardroid.activities.util.ActivityLightLevelChanger;
 import com.google.android.stardroid.inject.PerActivity;
@@ -151,11 +150,5 @@ public class AbstractDynamicStarMapModule {
   @PerActivity
   LocationPermissionDeniedDialogFragment provideLocationPermissionDeniedFragment() {
     return new LocationPermissionDeniedDialogFragment();
-  }
-
-  @Provides
-  @PerActivity
-  ObjectInfoDialogFragment provideObjectInfoDialogFragment() {
-    return new ObjectInfoDialogFragment();
   }
 }

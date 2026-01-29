@@ -14,6 +14,7 @@ package com.google.android.stardroid.activities.dialogs
 import android.app.Activity
 import android.app.AlertDialog
 import android.app.Dialog
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -27,13 +28,14 @@ import javax.inject.Inject
 /**
  * Dialog fragment that displays educational information about a celestial object.
  * Shows the object name, description, scientific data, and a fun fact.
+ *
+ * Use the [newInstance] factory method to create an instance with the required ObjectInfo.
+ * This ensures the data survives configuration changes (e.g., screen rotation).
  */
 class ObjectInfoDialogFragment : DialogFragment() {
 
     @Inject
     lateinit var parentActivity: Activity
-
-    private var objectInfo: ObjectInfo? = null
 
     /**
      * Interface that hosting activities must implement for dependency injection.
@@ -42,21 +44,21 @@ class ObjectInfoDialogFragment : DialogFragment() {
         fun inject(fragment: ObjectInfoDialogFragment)
     }
 
-    /**
-     * Sets the object info to display. Must be called before showing the dialog.
-     */
-    fun setObjectInfo(info: ObjectInfo) {
-        this.objectInfo = info
-    }
-
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         // Activities using this dialog MUST implement this interface
         @Suppress("UNCHECKED_CAST")
         (activity as HasComponent<ActivityComponent>).component.inject(this)
 
-        val info = objectInfo
+        // Retrieve ObjectInfo from arguments (survives configuration changes)
+        val info = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            arguments?.getParcelable(ARG_OBJECT_INFO, ObjectInfo::class.java)
+        } else {
+            @Suppress("DEPRECATION")
+            arguments?.getParcelable(ARG_OBJECT_INFO)
+        }
+
         if (info == null) {
-            Log.w(TAG, "ObjectInfo not set, dismissing dialog")
+            Log.w(TAG, "ObjectInfo not found in arguments, dismissing dialog")
             return AlertDialog.Builder(parentActivity)
                 .setMessage("No information available")
                 .setPositiveButton(android.R.string.ok) { dialog, _ -> dialog.dismiss() }
@@ -127,5 +129,22 @@ class ObjectInfoDialogFragment : DialogFragment() {
 
     companion object {
         private val TAG = MiscUtil.getTag(ObjectInfoDialogFragment::class.java)
+        private const val ARG_OBJECT_INFO = "object_info"
+
+        /**
+         * Creates a new instance of the dialog with the given object info.
+         * Using this factory method ensures the data survives configuration changes.
+         *
+         * @param info The ObjectInfo to display in the dialog
+         * @return A new ObjectInfoDialogFragment instance
+         */
+        @JvmStatic
+        fun newInstance(info: ObjectInfo): ObjectInfoDialogFragment {
+            return ObjectInfoDialogFragment().apply {
+                arguments = Bundle().apply {
+                    putParcelable(ARG_OBJECT_INFO, info)
+                }
+            }
+        }
     }
 }

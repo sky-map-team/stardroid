@@ -118,7 +118,10 @@ class ObjectInfoRegistry @Inject constructor(
             "galaxy" -> ObjectType.GALAXY
             "cluster" -> ObjectType.CLUSTER
             "constellation" -> ObjectType.CONSTELLATION
-            else -> ObjectType.STAR
+            else -> {
+                Log.w(TAG, "Unknown object type: $typeString, defaulting to STAR")
+                ObjectType.STAR
+            }
         }
     }
 
@@ -140,6 +143,7 @@ class ObjectInfoRegistry @Inject constructor(
 
         for (objectId in objects.keys()) {
             val obj = objects.getJSONObject(objectId)
+            @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
             result[objectId.lowercase()] = ObjectInfoEntry(
                 nameKey = obj.getString("nameKey"),
                 descriptionKey = obj.getString("descriptionKey"),

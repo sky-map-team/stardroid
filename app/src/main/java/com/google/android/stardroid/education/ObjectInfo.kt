@@ -11,6 +11,9 @@
 // limitations under the License.
 package com.google.android.stardroid.education
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
 /**
  * Types of celestial objects that can have educational info.
  */
@@ -27,6 +30,7 @@ enum class ObjectType {
 
 /**
  * Data class representing educational information about a celestial object.
+ * Implements Parcelable to survive configuration changes when passed to DialogFragment.
  *
  * @property id The unique identifier for the object (e.g., "mars", "sirius")
  * @property name The localized display name of the object
@@ -39,6 +43,7 @@ enum class ObjectType {
  * @property spectralClass The spectral classification for stars (e.g., "G2V", "M1.5Iab")
  * @property magnitude The apparent magnitude (e.g., "−1.46", "6.5")
  */
+@Parcelize
 data class ObjectInfo(
     val id: String,
     val name: String,
@@ -50,7 +55,7 @@ data class ObjectInfo(
     val mass: String? = null,
     val spectralClass: String? = null,
     val magnitude: String? = null
-)
+) : Parcelable
 
 /**
  * Internal data class for JSON deserialization of object info entries.

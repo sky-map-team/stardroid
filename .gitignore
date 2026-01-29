@@ -15,8 +15,5 @@ app/src/gms/google-services.json*
 app/gen/
 *.keystore
 
-# Robolectric cache
-app/${user.home}/
-
 # Bug reports
 bugreport-*.zip

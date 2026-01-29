@@ -199,7 +199,6 @@ public class DynamicStarMapActivity extends InjectableActivity
   @Inject NoSearchResultsDialogFragment noSearchResultsDialogFragment;
   @Inject MultipleSearchResultsDialogFragment multipleSearchResultsDialogFragment;
   @Inject NoSensorsDialogFragment noSensorsDialogFragment;
-  @Inject ObjectInfoDialogFragment objectInfoDialogFragment;
   @Inject ObjectInfoTapHandler objectInfoTapHandler;
   @Inject SensorAccuracyMonitor sensorAccuracyMonitor;
   // A list of runnables to post on the handler when we resume.
@@ -731,8 +730,7 @@ public class DynamicStarMapActivity extends InjectableActivity
    */
   private void showObjectInfoDialog(ObjectInfo objectInfo) {
     Log.d(TAG, "Showing object info dialog for: " + objectInfo.getId());
-    objectInfoDialogFragment.setObjectInfo(objectInfo);
-    objectInfoDialogFragment.show(fragmentManager, "Object Info");
+    ObjectInfoDialogFragment.newInstance(objectInfo).show(fragmentManager, "Object Info");
   }
 
   private void cancelSearch() {
