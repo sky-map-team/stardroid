@@ -1,0 +1,13 @@
+Sky Map は、Android デバイス用のハンドヘルド プラネタリウムです。星、惑星、星雲などを識別するために使用します。もともと Google Sky Map として開発されましたが、現在は寄付され、オープンソース化されています。
+
+<h1><b>トラブルシューティング/FAQ</b></h1> <h3><i>マップが動かない/間違った場所を指す</i></h3>手動モードに切り替えていないことを確認してください。あなたの携帯電話にはコンパスが付いていますか？そうでない場合、Sky Map は方向を判断できません。<a href=" http://www.gsmarena.com/ ">こちら</a> http://www.gsmarena.com/ で調べてください。<br /> コンパスを 8 の字に動かして調整するか、<a href="https://www.youtube.com/watch?v=k1EPbAapaeI">こちら</a> https://www.youtube.com/watch?v=k1EPbAapaeI の説明に従って調整してみてください。<br /> コンパスに干渉する可能性のある磁石や金属が近くにありますか? <br /> 「磁気補正」（設定）をオフにして、より正確になるかどうかを確認してください。
+
+<h3><i>なぜ私の携帯電話では自動位置情報がサポートされないのですか?</i></h3>Android 6 では、権限の動作方法が変更されました。Sky Map の位置情報許可設定を有効にする必要があります。手順については、<a href="https://support.google.com/googleplay/answer/6270602?p=app_permissons_m">こちら</a> をご覧ください。https://support.google.com/googleplay/answer/6270602?p=app_permissons_m
+
+<h3><i>マップが揺れる</i></h3> ジャイロ機能のない携帯電話を使用している場合は、多少の揺れが予想されます。センサーの速度と減衰を調整してみてください（設定で）。
+
+<h3><i>インターネット接続は必要ですか?<i></h3> いいえ。ただし、一部の機能 (位置情報の手動入力など) はインターネット接続がないと動作しません。GPS を使用するか、代わりに緯度と経度を入力する必要があります。
+
+<h3><i>最新機能のテストを手伝ってもいいですか?</i></h3> もちろんです! <a href="https://play.google.com/apps/testing/com.google.android.stardroid ">ベータ テスト プログラム</a> に参加して最新バージョンを入手してください。 https://play.google.com/apps/testing/com.google.android.stardroid
+
+<h1><b>他の場所でも見つけてください:</b></h1>⭐ <a href="https://github.com/sky-map-team/stardroid">GitHub:</a> https://github.com/sky-map-team/stardroid ⭐ <a href="https://www.facebook.com/groups/113507592330/">Facebook:</a> https://www.facebook.com/groups/113507592330/ ⭐ <a href="http://twitter.com/skymapdevs">Twitter:</a> http://twitter.com/skymapdevs

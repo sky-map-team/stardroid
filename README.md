@@ -72,23 +72,20 @@ Android Developer Studio can create this for you.  You can regenerate the data f
 rebuild everything with the `build_skymap.sh` script:
 
     ./build_skymap.sh
-    
-(or its f-droid equivalent).
 
-If you just want to quickly regenerate an apk please see the following instructions
-(note: assembleRelease won't work because the f-droid flavor needs some tweaking which
-is done by the shell script - so make sure you build the Gms flavor specifically).
+If you just want to quickly regenerate an apk without regenerating the data (danger!) 
+pass the flag `--quick` or see the following instructions to do it by hand.  Pass the flag
+`--fdroid` to build the FDroid variant.
 
 ### Building a debug apk
+If you want to build without the script then: from the root directory execute
 
-From the root directory execute
-
-    ./gradlew assembleGmsDebug
+    ./gradlew :app:assembleGmsDebug
 
 The apk can be found in `app/build/outputs/apk/`.
 
 ### Building a release apk
-(Sky Map team only)
+Note: Sky Map team only
 
 Create a file in the app directory called
 `no-checkin.properties` with appropriate values for the
@@ -99,13 +96,13 @@ keys
 
 and overwrite google-services.json with the correct file.
 
-From the root directory execute
+Either use the build script, or from the root directory execute
 
-    ./gradlew assembleGms
+    ./gradlew :app:assembleGms
 
 or
 
-    ./gradlew assembleGmsRelease
+    ./gradlew :app:assembleGmsRelease
 
 The apk can be found in `app/build/outputs/apk/`.
 
@@ -113,15 +110,25 @@ The apk can be found in `app/build/outputs/apk/`.
 ### Running tests
 Unit tests:
 
-    ./gradlew test
+    ./gradlew :app:test
 
 Connected device/emulator required tests:
 
-    ./gradlew app:connectedAndroidTest
+    ./gradlew :app:connectedAndroidTest
 
-### Deploying
+### Deploying to your phone or an emulator
 Plug your phone in and run the `deploy.sh` script.  Pass the `-d` flag if you built the debug version.  `undeploy.sh` does the reverse.
 
+### Deploying to the Google Play Store
+Note: Sky Map Team Only
+
+We use `fastlane` to manage updates to the Play Store.  If you have
+it installed, available commands can be seen either by typing
+
+```
+bundle exec fastlane
+```
+or by perusing [fastlane/README.md](fastlane/README.md).
 
 ### Coding Style
 
