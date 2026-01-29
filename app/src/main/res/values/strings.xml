@@ -264,7 +264,7 @@
 
     <string name="object_info_mercury_description" translation_description="Short description of Mercury">Mercury is the smallest planet and closest to the Sun. A year on Mercury lasts only 88 Earth days.</string>
     <string name="object_info_mercury_funfact" translation_description="Fun fact about Mercury">Despite being closest to the Sun, Mercury is not the hottest planet. Venus is hotter due to its thick atmosphere!</string>
-    <string name="object_info_mercury_distance">77 million km (average)</string>
+    <string name="object_info_mercury_distance">58 million km (from Sun)</string>
     <string name="object_info_mercury_size">4,880 km diameter</string>
     <string name="object_info_mercury_mass">3.3 × 10²³ kg</string>
 
@@ -275,7 +275,7 @@
     <string name="object_info_venus_mass">4.87 × 10²⁴ kg</string>
 
     <string name="object_info_mars_description" translation_description="Short description of Mars">Mars is the fourth planet from the Sun, known as the Red Planet due to iron oxide on its surface.</string>
-    <string name="object_info_mars_funfact" translation_description="Fun fact about Mars">Mars has the largest volcano in the solar system: Olympus Mons, which is 3 times taller than Mount Everest!</string>
+    <string name="object_info_mars_funfact" translation_description="Fun fact about Mars">Mars has the largest volcano in the solar system: Olympus Mons, which is about 2.5 times taller than Mount Everest!</string>
     <string name="object_info_mars_distance">228 million km (average)</string>
     <string name="object_info_mars_size">6,779 km diameter</string>
     <string name="object_info_mars_mass">6.39 × 10²³ kg</string>
@@ -318,7 +318,7 @@
     <string name="object_info_sirius_mass">2.1 solar masses</string>
 
     <string name="object_info_vega_description" translation_description="Short description of Vega">Vega is one of the brightest stars visible from Earth, located in the constellation Lyra (the Harp).</string>
-    <string name="object_info_vega_funfact" translation_description="Fun fact about Vega">Vega was the North Star about 12,000 years ago and will be again in about 13,700 years due to Earth\'s wobble!</string>
+    <string name="object_info_vega_funfact" translation_description="Fun fact about Vega">Vega was the North Star about 14,000 years ago and will be again in about 12,000 years due to Earth\'s wobble!</string>
     <string name="object_info_vega_distance">25 light-years</string>
     <string name="object_info_vega_size">2.4 solar radii</string>
     <string name="object_info_vega_mass">2.1 solar masses</string>
@@ -432,7 +432,7 @@
     <string name="object_info_pollux_mass">1.9 solar masses</string>
 
     <string name="object_info_fomalhaut_description">Fomalhaut is the brightest star in Piscis Austrinus and one of the brightest stars in the autumn sky.</string>
-    <string name="object_info_fomalhaut_funfact">Fomalhaut has a spectacular debris disk, and one of the first exoplanets to be directly photographed orbits this star!</string>
+    <string name="object_info_fomalhaut_funfact">Fomalhaut has a spectacular debris disk that was one of the first to be directly imaged around another star!</string>
     <string name="object_info_fomalhaut_distance">25 light-years</string>
     <string name="object_info_fomalhaut_size">1.8 solar radii</string>
     <string name="object_info_fomalhaut_mass">1.9 solar masses</string>
@@ -561,7 +561,7 @@
     <string name="object_info_m13_size">145 light-years across</string>
 
     <!-- M31 - Andromeda Galaxy -->
-    <string name="object_info_m31_description">The Andromeda Galaxy is the nearest large spiral galaxy to the Milky Way and the most distant object visible to the naked eye.</string>
+    <string name="object_info_m31_description">The Andromeda Galaxy is the nearest large spiral galaxy to the Milky Way and one of the most distant objects visible to the naked eye.</string>
     <string name="object_info_m31_funfact">The Andromeda Galaxy is approaching us at 110 km/s and will collide with the Milky Way in about 4.5 billion years!</string>
     <string name="object_info_m31_distance">2.5 million light-years</string>
     <string name="object_info_m31_size">220,000 light-years across</string>
@@ -635,7 +635,7 @@
 
     <!-- M27 - Dumbbell Nebula -->
     <string name="object_info_m27_description">The Dumbbell Nebula is a planetary nebula in Vulpecula, the first planetary nebula ever discovered.</string>
-    <string name="object_info_m27_funfact">The Dumbbell Nebula was discovered by Charles Messier in 1764, leading him to coin the term planetary nebula!</string>
+    <string name="object_info_m27_funfact">The Dumbbell Nebula was discovered by Charles Messier in 1764, making it the first planetary nebula ever discovered!</string>
     <string name="object_info_m27_distance">1,360 light-years</string>
     <string name="object_info_m27_size">2.5 light-years across</string>
 
@@ -923,7 +923,7 @@
 
     <!-- Cygnus -->
     <string name="object_info_cygnus_description">Cygnus the Swan flies along the Milky Way, containing the Northern Cross asterism and the bright star Deneb.</string>
-    <string name="object_info_cygnus_funfact">Cygnus X-1 in this constellation was the first widely accepted black hole discovered, found in 1964!</string>
+    <string name="object_info_cygnus_funfact">Cygnus X-1 in this constellation was the first widely accepted black hole, identified in the early 1970s!</string>
     <string name="object_info_cygnus_size">804 square degrees</string>
 
     <!-- Lyra -->
@@ -1013,7 +1013,7 @@
 
     <!-- Eridanus -->
     <string name="object_info_eridanus_description">Eridanus the River is the sixth largest constellation, winding from near Orion to the far southern sky.</string>
-    <string name="object_info_eridanus_funfact">Achernar at the end of Eridanus is the flattest star known, bulging 50% wider at its equator due to rapid rotation!</string>
+    <string name="object_info_eridanus_funfact">Achernar at the end of Eridanus is the flattest star known, bulging 56% wider at its equator due to rapid rotation!</string>
     <string name="object_info_eridanus_size">1,138 square degrees</string>
 
     <!-- Lepus -->
