@@ -45,7 +45,7 @@ Set a specific version name (e.g., fastlane bump_version name:"1.5.0")
 [bundle exec] fastlane android build
 ```
 
-Build release AAB
+Build release apk
 
 ### android internal
 

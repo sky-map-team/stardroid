@@ -20,12 +20,11 @@ platform :android do
     )
   end
 
-  desc "Build release AAB"
+  desc "Build release apk"
   lane :build do
     UI.message("***Make sure you have regenerated the data if necessary***")
     gradle(
-      task: "bundle",
-      build_type: "Release",
+      task: ":app:assembleGmsRelease",
       project_dir: "./"
     )
   end
@@ -36,11 +35,10 @@ platform :android do
     build
     upload_to_play_store(
       track: "internal",
-      aab: "app/build/outputs/bundle/release/app-release.aab",
+      apk: "app/build/outputs/apk/gms/release/app-gms-release.apk",
       skip_upload_metadata: true,
       skip_upload_images: true,
       skip_upload_screenshots: true,
-      skip_upload_apk: true,
       changes_not_sent_for_review: true
     )
   end
@@ -53,7 +51,6 @@ platform :android do
         skip_upload_metadata: true,
         skip_upload_images: true,
         skip_upload_screenshots: true,
-        skip_upload_apk: true,
         skip_upload_changelogs: true
       )
   end
@@ -83,7 +80,7 @@ platform :android do
     build
     upload_to_play_store(
       track: "alpha",
-      aab: "app/build/outputs/bundle/release/app-release.aab",
+      apk: "app/build/outputs/apk/gms/release/app-gms-release.apk",
       skip_upload_metadata: true,
       skip_upload_images: true,
       skip_upload_screenshots: true
@@ -96,7 +93,7 @@ platform :android do
     build
     upload_to_play_store(
       track: "beta",
-      aab: "app/build/outputs/bundle/release/app-release.aab",
+      apk: "app/build/outputs/apk/gms/release/app-gms-release.apk",
       skip_upload_metadata: true,
       skip_upload_images: true,
       skip_upload_screenshots: true
@@ -109,7 +106,7 @@ platform :android do
     build
     upload_to_play_store(
       track: "production",
-      aab: "app/build/outputs/bundle/release/app-release.aab",
+      apk: "app/build/outputs/apk/gms/release/app-gms-release.apk",
       skip_upload_metadata: true,
       skip_upload_images: true,
       skip_upload_screenshots: true
@@ -119,11 +116,11 @@ platform :android do
   desc "Capture screenshots for Play Store. Specify --device_type=sevenInch for a tablet."
   lane :screenshots do
     gradle(
-      task: "assembleDebug",
+      task: ":app:assembleGmsDebug",
       project_dir: "./"
     )
     gradle(
-      task: "assembleDebugAndroidTest",
+      task: ":app:assembleGmsDebugAndroidTest",
       project_dir: "./"
     )
     screengrab
