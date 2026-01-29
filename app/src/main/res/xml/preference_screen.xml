@@ -102,6 +102,11 @@
   <!-- General Settings -->
   <PreferenceCategory android:title="@string/other_prefs">
     <CheckBoxPreference
+        android:defaultValue="false"
+        android:title="@string/show_object_info_pref_title"
+        android:summary="@string/show_object_info_pref_summary"
+        android:key="show_object_info_on_tap"/>
+    <CheckBoxPreference
         android:defaultValue="true"
         android:title="@string/use_sound_effects"
         android:key="sound_effects"/>
