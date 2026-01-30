@@ -1,36 +1,17 @@
 <h1>Educational Info Cards</h1>
-  Tap on celestial objects in manual mode to see educational info cards with descriptions, scientific data (distance, size, magnitude, spectral class), and fun facts. Covers planets, bright stars, and Messier objects. Available in English,
-  Portuguese, and Spanish.
-
-<h1>Improved Location Permission Experience</h1>
-  When location permission isn't granted on first launch, you now see a clear dialog with options to grant permission, enter your location manually, or dismiss and use the default. Replaces the old truncated toast message that was easy to miss.
-
-<h1>Fix for Upside-Down Labels</h1>
-  Fixed a bug reported by some users where sky labels appeared upside down due to a sensor orientation issue.
-
-<h1>Night Mode for Help Pages</h1>
-  The in-app help pages now respect night mode, so they won't blind you when you're out stargazing.
-
-<h1>Refreshed Help Pages</h1>
-  Help content has been restyled and updated.
-
-<h1>Translation Updates</h1>
-  - Updated Polish translation
-  - Fixed Greek translation
-  - Added missing Portuguese translations for stars, constellations, and Messier objects
-
- <h1>Tag testing section</h1>
- Which html tags work in different situations? To be removed after confirming
- <h2>h2</h2>
- <h3>h3</h3>
- <b>bold</b>
- <i>italic</i>
- <u>underline</u>
- <br>break<br>break<br>
- <a href="http://stardroid.app">Link to website</a>
- <font color="#ff0000">red text</font>
- <ul>
- <li>item 1</li>
- <li>item 2</li>
- </ul>
- ✨ 🔭 📍 🧭 🌌 🪐 ☄️ 🌙 📸 🕒 📡 📱
+  Tap celestial objects in manual mode for info cards.
+  <h1>Tag testing section</h1>
+  Which html tags work in different situations? To be removed after confirming
+  <h2>h2</h2>
+  <h3>h3</h3>
+  <b>bold</b>
+  <i>italic</i>
+  <u>underline</u>
+  <br>break<br>break<br>
+  <a href="http://stardroid.app">Link to website</a>
+  <font color="#ff0000">red text</font>
+  <ul>
+  <li>item 1</li>
+  <li>item 2</li>
+  </ul>
+  ✨ 🔭 📍 🧭 🌌 🪐 ☄️ 🌙 📸 🕒 📡 📱
