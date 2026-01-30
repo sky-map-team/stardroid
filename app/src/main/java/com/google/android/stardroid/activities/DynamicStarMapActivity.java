@@ -19,6 +19,7 @@ import android.app.SearchManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
+import android.graphics.Rect;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.media.MediaPlayer;
@@ -733,17 +734,26 @@ public class DynamicStarMapActivity extends InjectableActivity
   }
 
   private void applyWindowInsets(View view, boolean applyTop, boolean applyBottom) {
-    final int initialPaddingLeft = view.getPaddingLeft();
-    final int initialPaddingTop = view.getPaddingTop();
-    final int initialPaddingRight = view.getPaddingRight();
-    final int initialPaddingBottom = view.getPaddingBottom();
+    // 1. Check if we've already saved the original padding to avoid cumulative growth
+    Rect initialPadding = (Rect) view.getTag(R.id.original_padding_tag);
+
+    if (initialPadding == null) {
+      initialPadding = new Rect(view.getPaddingLeft(), view.getPaddingTop(), view.getPaddingRight(), view.getPaddingBottom());
+      view.setTag(R.id.original_padding_tag, initialPadding);
+    }
+
+    // Capture the record for use inside the lambda
+    final Rect base = initialPadding;
+
     ViewCompat.setOnApplyWindowInsetsListener(view, (v, windowInsets) -> {
-        Insets insets = windowInsets.getInsets(
-                WindowInsetsCompat.Type.systemBars() | WindowInsetsCompat.Type.displayCutout());
-        int paddingTop = applyTop ? initialPaddingTop + insets.top : initialPaddingTop;
-        int paddingBottom = applyBottom ? initialPaddingBottom + insets.bottom : initialPaddingBottom;
-        v.setPadding(initialPaddingLeft + insets.left, paddingTop, initialPaddingRight + insets.right, paddingBottom);
-        return WindowInsetsCompat.CONSUMED;
+      Insets insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars() | WindowInsetsCompat.Type.displayCutout());
+
+      int paddingTop = applyTop ? base.top + insets.top : base.top;
+      int paddingBottom = applyBottom ? base.bottom + insets.bottom : base.bottom;
+
+      v.setPadding(base.left + insets.left, paddingTop, base.right + insets.right, paddingBottom);
+
+      return WindowInsetsCompat.CONSUMED;
     });
   }
 
@@ -754,7 +764,6 @@ public class DynamicStarMapActivity extends InjectableActivity
     Log.d(TAG, "Showing object info dialog for: " + objectInfo.getId());
     ObjectInfoDialogFragment.newInstance(objectInfo).show(fragmentManager, "Object Info");
   }
->>>>>>> 6a5d31d8b4a0e01e6d6f8ae4bcdf3db252342172
 
   private void cancelSearch() {
     View searchControlBar = findViewById(R.id.search_control_bar);
