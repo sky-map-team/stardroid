@@ -734,7 +734,7 @@ public class DynamicStarMapActivity extends InjectableActivity
   }
 
   private void applyWindowInsets(View view, boolean applyTop, boolean applyBottom) {
-    // 1. Check if we've already saved the original padding to avoid cumulative growth
+    // Check if we've already saved the original padding to avoid cumulative growth
     Rect initialPadding = (Rect) view.getTag(R.id.original_padding_tag);
 
     if (initialPadding == null) {
