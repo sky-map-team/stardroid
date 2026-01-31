@@ -1,0 +1,21 @@
+Sky Map er et håndholdt planetarium for Android-enheten din. Bruk den til å identifisere stjerner, planeter, tåker og mer. Appen ble opprinnelig utviklet som Google Sky Map, men er nå donert og gjort tilgjengelig som åpen kildekode.
+
+<h1><b>Feilsøking/FAQ</b></h1>
+<h3><i>Kartet beveger seg ikke/peker feil</i></h3>Sørg for at du ikke har byttet til manuell modus. Har telefonen din kompass? Hvis ikke, kan ikke Sky Map bestemme retningen din. Sjekk det <a href="http://www.gsmarena.com/">her:</a> <br />
+Prøv å kalibrere kompasset ved å bevege telefonen i et 8-tall eller som beskrevet <a href="https://www.youtube.com/watch?v=k1EPbAapaeI">her:</a>. <br />
+Er det magneter eller metall i nærheten som kan forstyrre kompasset? <br />
+Prøv å slå av "magnetisk korreksjon" (i innstillinger) og se om det gir mer nøyaktighet.
+
+<h3><i>Hvorfor støttes ikke automatisk posisjonering for telefonen min?</i></h3>I Android 6 ble måten tillatelser fungerer på endret. Du må aktivere posisjonstillatelsen for Sky Map som beskrevet <a href="https://support.google.com/googleplay/answer/6270602?p=app_permissons_m">her:</a>
+
+<h3><i>Kartet hakker</i></h3> Hvis telefonen din mangler gyroskop, er noe hakking forventet. Prøv å justere sensorhastigheten og dempingen (i innstillinger).
+
+<h3><i>Trenger jeg internettforbindelse?</i></h3> Nei, men enkelte funksjoner (som å angi posisjonen din manuelt) vil ikke fungere uten. Du må da bruke GPS eller angi bredde- og lengdegrad i stedet.
+
+<h3><i>Kan jeg bidra til å teste de nyeste funksjonene?</i></h3> Ja, selvsagt! Bli med i vårt <a href="https://play.google.com/apps/testing/com.google.android.stardroid">beta-testprogram</a> og få den nyeste versjonen.
+
+<h1><b>Finn oss andre steder:</b></h1>
+⭐ <a href="https://stardroid.app">stardroid.app</a>
+⭐ <a href="https://github.com/sky-map-team/stardroid">GitHub</a>
+⭐ <a href="https://www.facebook.com/groups/stardroidapp/">Facebook</a>
+⭐ <a href="http://x.com/skymapdevs">Twitter</a>
