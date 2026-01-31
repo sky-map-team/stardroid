@@ -19,6 +19,7 @@ import android.app.SearchManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
+import android.graphics.Rect;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.media.MediaPlayer;
@@ -42,6 +43,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.core.content.ContextCompat;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.stardroid.ApplicationConstants;
 import com.google.android.stardroid.R;
@@ -670,13 +674,17 @@ public class DynamicStarMapActivity extends InjectableActivity
 
   private void wireUpScreenControls() {
     cancelSearchButton = (ImageButton) findViewById(R.id.cancel_search_button);
-    // TODO(johntaylor): move to set this in the XML once we don't support 1.5
     cancelSearchButton.setOnClickListener(new OnClickListener() {
       @Override
       public void onClick(View v) {
         cancelSearch();
       }
     });
+
+    // Push the search control bar below the status bar and any display cutout
+    // so it doesn't overlap with camera notches on modern phones.
+    View searchControlBar = findViewById(R.id.search_control_bar);
+    applyWindowInsets(searchControlBar, true, false);
 
     ButtonLayerView providerButtons = (ButtonLayerView) findViewById(R.id.layer_buttons_control);
 
@@ -723,6 +731,30 @@ public class DynamicStarMapActivity extends InjectableActivity
     gestureDetector = new GestureDetector(this, new GestureInterpreter(
         fullscreenControlsManager, mapMover, objectInfoTapHandler, dimensionsProvider));
     dragZoomRotateDetector = new DragRotateZoomGestureDetector(mapMover);
+  }
+
+  private void applyWindowInsets(View view, boolean applyTop, boolean applyBottom) {
+    // 1. Check if we've already saved the original padding to avoid cumulative growth
+    Rect initialPadding = (Rect) view.getTag(R.id.original_padding_tag);
+
+    if (initialPadding == null) {
+      initialPadding = new Rect(view.getPaddingLeft(), view.getPaddingTop(), view.getPaddingRight(), view.getPaddingBottom());
+      view.setTag(R.id.original_padding_tag, initialPadding);
+    }
+
+    // Capture the record for use inside the lambda
+    final Rect base = initialPadding;
+
+    ViewCompat.setOnApplyWindowInsetsListener(view, (v, windowInsets) -> {
+      Insets insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars() | WindowInsetsCompat.Type.displayCutout());
+
+      int paddingTop = applyTop ? base.top + insets.top : base.top;
+      int paddingBottom = applyBottom ? base.bottom + insets.bottom : base.bottom;
+
+      v.setPadding(base.left + insets.left, paddingTop, base.right + insets.right, paddingBottom);
+
+      return WindowInsetsCompat.CONSUMED;
+    });
   }
 
   /**
@@ -813,6 +845,9 @@ public class DynamicStarMapActivity extends InjectableActivity
     ImageButton timePlayerForwardsButton = (ImageButton) findViewById(
         R.id.time_player_play_forwards);
     final TextView timeTravelSpeedLabel = (TextView) findViewById(R.id.time_travel_speed_label);
+
+    // Push the time player above any bottom display cutout or navigation bar.
+    applyWindowInsets(timePlayerUI, false, true);
 
     timePlayerCancelButton.setOnClickListener(new OnClickListener() {
       @Override
