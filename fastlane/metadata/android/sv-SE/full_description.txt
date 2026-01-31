@@ -1,21 +1,21 @@
 Sky Map är ett portabelt planetarium för din Android-enhet. Använd den för att identifiera stjärnor, planeter, nebulosor och mycket mer. Appen utvecklades ursprungligen som Google Sky Map, men har nu donerats och är öppen källkod.
 
 <h1><b>Felsökning/FAQ</b></h1>
-<h3><i>Kartan rör sig inte/pekar fel</i></h3>Kontrollera att du inte har växlat till manuellt läge. Har din telefon en kompass? Om inte, kan Sky Map inte avgöra din riktning. Slå upp det <a href=" http://www.gsmarena.com/ ">här:</a> http://www.gsmarena.com/ <br />
-Försök kalibrera kompassen genom att röra den i en åtta-formad rörelse eller enligt beskrivningen <a href="https://www.youtube.com/watch?v=k1EPbAapaeI">här:</a> https://www.youtube.com/watch?v=k1EPbAapaeI. <br />
+<h3><i>Kartan rör sig inte/pekar fel</i></h3>Kontrollera att du inte har växlat till manuellt läge. Har din telefon en kompass? Om inte, kan Sky Map inte avgöra din riktning. Slå upp det <a href="http://www.gsmarena.com/">här:</a> <br />
+Försök kalibrera kompassen genom att röra den i en åtta-formad rörelse eller enligt beskrivningen <a href="https://www.youtube.com/watch?v=k1EPbAapaeI">här:</a>. <br />
 Finns det några magneter eller metallföremål i närheten som kan störa kompassen? <br />
 Försök stänga av "magnetisk korrigering" (i inställningarna) och se om det ger bättre precision.
 
-<h3><i>Varför stöds inte automatisk platsbestämning för min telefon?</i></h3>I Android 6 ändrades hur behörigheter hanteras. Du måste aktivera platsbehörigheten för Sky Map enligt beskrivningen <a href="https://support.google.com/googleplay/answer/6270602?p=app_permissons_m">här:</a> https://support.google.com/googleplay/answer/6270602?p=app_permissons_m
+<h3><i>Varför stöds inte automatisk platsbestämning för min telefon?</i></h3>I Android 6 ändrades hur behörigheter hanteras. Du måste aktivera platsbehörigheten för Sky Map enligt beskrivningen <a href="https://support.google.com/googleplay/answer/6270602?p=app_permissons_m">här:</a>
 
 <h3><i>Kartan är ryckig</i></h3> Om din telefon saknar gyroskop är viss ryckighet att förvänta. Försök justera sensorhastigheten och dämpningen (i inställningarna).
 
-<h3><i>Behöver jag internetuppkoppling?<i></h3> Nej, men vissa funktioner (som att ange din plats manuellt) fungerar inte utan. Du får då använda GPS eller ange latitud och longitud istället.
+<h3><i>Behöver jag internetuppkoppling?</i></h3> Nej, men vissa funktioner (som att ange din plats manuellt) fungerar inte utan. Du får då använda GPS eller ange latitud och longitud istället.
 
-<h3><i>Kan jag hjälpa till att testa de senaste funktionerna?</i></h3> Absolut! Gå med i vårt <a href="https://play.google.com/apps/testing/com.google.android.stardroid ">beta-testprogram</a> och få tillgång till den senaste versionen. https://play.google.com/apps/testing/com.google.android.stardroid
+<h3><i>Kan jag hjälpa till att testa de senaste funktionerna?</i></h3> Absolut! Gå med i vårt <a href="https://play.google.com/apps/testing/com.google.android.stardroid">beta-testprogram</a> och få tillgång till den senaste versionen.
 
 <h1><b>Hitta oss på andra ställen:</b></h1>
 ⭐ <a href="https://stardroid.app">stardroid.app</a>
-⭐ <a href="https://github.com/sky-map-team/stardroid">GitHub:</a> https://github.com/sky-map-team/stardroid
-⭐ <a href="https://www.facebook.com/groups/113507592330/">Facebook:</a> https://www.facebook.com/groups/113507592330/
-⭐ <a href="http://twitter.com/skymapdevs">Twitter:</a> http://twitter.com/skymapdevs
+⭐ <a href="https://github.com/sky-map-team/stardroid">GitHub</a>
+⭐ <a href="https://www.facebook.com/groups/113507592330/">Facebook</a>
+⭐ <a href="http://twitter.com/skymapdevs">Twitter</a>

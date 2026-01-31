@@ -1,21 +1,21 @@
 Sky Map on Android-laitteesi kädessä pidettävä planetaario. Sen avulla voit tunnistaa tähtiä, planeettoja, sumuja ja paljon muuta. Alun perin Google Sky Mapina kehitetty sovellus on nyt lahjoitettu ja avoimen lähdekoodin.
 
 <h1><b>Vianmääritys ja usein kysytyt kysymykset</b></h1>
-<h3><i>Kartta ei liiku tai osoittaa väärään suuntaan</i></h3>Varmista, ettet ole vaihtanut manuaalitilaan. Onko puhelimessasi kompassia? Jos ei, Sky Map ei pysty määrittämään suuntaasi. Voit tarkistaa sen <a href=" http://www.gsmarena.com/ ">täältä:</a> http://www.gsmarena.com/ <br />
-Yritä kalibroida kompassi liikuttamalla puhelinta kahdeksikon muotoisesti tai kuten kuvattu <a href="https://www.youtube.com/watch?v=k1EPbAapaeI">täällä:</a> https://www.youtube.com/watch?v=k1EPbAapaeI. <br />
+<h3><i>Kartta ei liiku tai osoittaa väärään suuntaan</i></h3>Varmista, ettet ole vaihtanut manuaalitilaan. Onko puhelimessasi kompassia? Jos ei, Sky Map ei pysty määrittämään suuntaasi. Voit tarkistaa sen <a href="http://www.gsmarena.com/">täältä:</a> <br />
+Yritä kalibroida kompassi liikuttamalla puhelinta kahdeksikon muotoisesti tai kuten kuvattu <a href="https://www.youtube.com/watch?v=k1EPbAapaeI">täällä:</a>. <br />
 Onko lähellä magneetteja tai metallia, jotka voisivat häiritä kompassia? <br />
 Kokeile kytkeä pois päältä "magneettinen korjaus" (asetuksista) ja katso, onko se tarkempi.
 
-<h3><i>Miksi automaattinen sijainnin määritys ei toimi puhelimessani?</i></h3>Android 6:ssa lupien toimintatapa on muuttunut. Sinun on otettava käyttöön sijaintilupa Sky Mapille, kuten kuvattu <a href="https://support.google.com/googleplay/answer/6270602?p=app_permissons_m">täällä:</a> https://support.google.com/googleplay/answer/6270602?p=app_permissons_m
+<h3><i>Miksi automaattinen sijainnin määritys ei toimi puhelimessani?</i></h3>Android 6:ssa lupien toimintatapa on muuttunut. Sinun on otettava käyttöön sijaintilupa Sky Mapille, kuten kuvattu <a href="https://support.google.com/googleplay/answer/6270602?p=app_permissons_m">täällä:</a>
 
 <h3><i>Kartta on nykivä</i></h3> Jos puhelimessasi ei ole gyroskooppia, jonkin verran nykimistä on odotettavissa. Kokeile säätää anturin nopeutta ja vaimennusta (asetuksista).
 
-<h3><i>Tarvitsenko internet-yhteyden?<i></h3> Et, mutta jotkin toiminnot (kuten sijainnin syöttäminen manuaalisesti) eivät toimi ilman sitä. Sinun on käytettävä GPS:ää tai syötettävä leveys- ja pituusaste sen sijaan.
+<h3><i>Tarvitsenko internet-yhteyden?</i></h3> Et, mutta jotkin toiminnot (kuten sijainnin syöttäminen manuaalisesti) eivät toimi ilman sitä. Sinun on käytettävä GPS:ää tai syötettävä leveys- ja pituusaste sen sijaan.
 
-<h3><i>Voinko auttaa testaamaan uusimpia ominaisuuksia?</i></h3> Toki! Liity <a href="https://play.google.com/apps/testing/com.google.android.stardroid ">beta-testausohjelmaamme</a> ja saat uusimman version. https://play.google.com/apps/testing/com.google.android.stardroid
+<h3><i>Voinko auttaa testaamaan uusimpia ominaisuuksia?</i></h3> Toki! Liity <a href="https://play.google.com/apps/testing/com.google.android.stardroid">beta-testausohjelmaamme</a> ja saat uusimman version.
 
 <h1><b>Löydät meidät myös täältä:</b></h1>
 ⭐ <a href="https://stardroid.app">stardroid.app</a>
-⭐ <a href="https://github.com/sky-map-team/stardroid">GitHub:</a> https://github.com/sky-map-team/stardroid
-⭐ <a href="https://www.facebook.com/groups/113507592330/">Facebook:</a> https://www.facebook.com/groups/113507592330/
-⭐ <a href="http://twitter.com/skymapdevs">Twitter:</a> http://twitter.com/skymapdevs
+⭐ <a href="https://github.com/sky-map-team/stardroid">GitHub</a>
+⭐ <a href="https://www.facebook.com/groups/113507592330/">Facebook</a>
+⭐ <a href="http://twitter.com/skymapdevs">Twitter</a>

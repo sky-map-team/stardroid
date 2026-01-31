@@ -1,21 +1,21 @@
 Sky Map er et håndholdt planetarium til din Android-enhed. Brug appen til at identificere stjerner, planeter, tåger og meget mere. Oprindeligt udviklet som Google Sky Map, er den nu blevet doneret og gjort open source.
 
 <h1><b>Fejlfinding/Ofte stillede spørgsmål</b></h1>
-<h3><i>Kortet bevæger sig ikke eller peger forkert</i></h3>Sørg for, at du ikke er skiftet til manuel tilstand. Har din telefon et kompas? Hvis ikke, kan Sky Map ikke bestemme din retning. Du kan tjekke det <a href=" http://www.gsmarena.com/ ">her:</a> http://www.gsmarena.com/ <br />
-Prøv at kalibrere dit kompas ved at bevæge telefonen i et 8-tal eller som beskrevet <a href="https://www.youtube.com/watch?v=k1EPbAapaeI">her:</a> https://www.youtube.com/watch?v=k1EPbAapaeI. <br />
+<h3><i>Kortet bevæger sig ikke eller peger forkert</i></h3>Sørg for, at du ikke er skiftet til manuel tilstand. Har din telefon et kompas? Hvis ikke, kan Sky Map ikke bestemme din retning. Du kan tjekke det <a href="http://www.gsmarena.com/">her:</a> <br />
+Prøv at kalibrere dit kompas ved at bevæge telefonen i et 8-tal eller som beskrevet <a href="https://www.youtube.com/watch?v=k1EPbAapaeI">her:</a>. <br />
 Er der magneter eller metal i nærheden, der kan forstyrre kompasset? <br />
 Prøv at slå "magnetisk korrektion" fra (i indstillingerne) og se, om det giver en mere præcis visning.
 
-<h3><i>Hvorfor understøttes autolokalisering ikke på min telefon?</i></h3>I Android 6 er måden, tilladelser fungerer på, ændret. Du skal aktivere placeringstilladelsen for Sky Map som beskrevet <a href="https://support.google.com/googleplay/answer/6270602?p=app_permissons_m">her:</a> https://support.google.com/googleplay/answer/6270602?p=app_permissons_m
+<h3><i>Hvorfor understøttes autolokalisering ikke på min telefon?</i></h3>I Android 6 er måden, tilladelser fungerer på, ændret. Du skal aktivere placeringstilladelsen for Sky Map som beskrevet <a href="https://support.google.com/googleplay/answer/6270602?p=app_permissons_m">her:</a>
 
 <h3><i>Kortet ryster</i></h3> Hvis din telefon ikke har en gyroskop-sensor, må du forvente en vis rysten. Prøv at justere sensorhastigheden og dæmpningen (i indstillingerne).
 
-<h3><i>Skal jeg have internetforbindelse?<i></h3> Nej, men visse funktioner (som at indtaste din placering manuelt) kræver internet. Du kan i stedet bruge GPS'en eller indtaste bredde- og længdegrad manuelt.
+<h3><i>Skal jeg have internetforbindelse?</i></h3> Nej, men visse funktioner (som at indtaste din placering manuelt) kræver internet. Du kan i stedet bruge GPS'en eller indtaste bredde- og længdegrad manuelt.
 
-<h3><i>Kan jeg hjælpe med at teste de nyeste funktioner?</i></h3> Ja, selvfølgelig! Deltag i vores <a href="https://play.google.com/apps/testing/com.google.android.stardroid ">beta-testprogram</a> og få adgang til den nyeste version. https://play.google.com/apps/testing/com.google.android.stardroid
+<h3><i>Kan jeg hjælpe med at teste de nyeste funktioner?</i></h3> Ja, selvfølgelig! Deltag i vores <a href="https://play.google.com/apps/testing/com.google.android.stardroid">beta-testprogram</a> og få adgang til den nyeste version.
 
 <h1><b>Find os her:</b></h1>
 ⭐ <a href="https://stardroid.app">stardroid.app</a>
-⭐ <a href="https://github.com/sky-map-team/stardroid">GitHub:</a> https://github.com/sky-map-team/stardroid
-⭐ <a href="https://www.facebook.com/groups/113507592330/">Facebook:</a> https://www.facebook.com/groups/113507592330/
-⭐ <a href="http://twitter.com/skymapdevs">Twitter:</a> http://twitter.com/skymapdevs
+⭐ <a href="https://github.com/sky-map-team/stardroid">GitHub</a>
+⭐ <a href="https://www.facebook.com/groups/113507592330/">Facebook</a>
+⭐ <a href="http://twitter.com/skymapdevs">Twitter</a>

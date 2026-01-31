@@ -1,21 +1,21 @@
 A Sky Map egy hordozható planetárium Android készülékedhez. Segítségével azonosíthatsz csillagokat, bolygókat, ködöket és sok mást. Eredetileg Google Sky Map néven fejlesztették, most pedig adományként nyílt forráskódúvá vált.
 
 <h1><b>Hibaelhárítás/GYIK</b></h1>
-<h3><i>A térkép nem mozog/rossz irányba mutat</i></h3>Ellenőrizd, hogy nem váltottál-e át kézi módba. Van iránytű a telefonodban? Ha nincs, a Sky Map nem tudja érzékelni a tájolásodat. Ezt <a href=" http://www.gsmarena.com/ ">itt</a> nézheted meg:http://www.gsmarena.com/ <br />
-Próbáld meg kalibrálni az iránytűdet egy 8-as alakú mozdulattal, vagy ahogy <a href="https://www.youtube.com/watch?v=k1EPbAapaeI">itt</a> le van írva:https://www.youtube.com/watch?v=k1EPbAapaeI. <br />
+<h3><i>A térkép nem mozog/rossz irányba mutat</i></h3>Ellenőrizd, hogy nem váltottál-e át kézi módba. Van iránytű a telefonodban? Ha nincs, a Sky Map nem tudja érzékelni a tájolásodat. Ezt <a href="http://www.gsmarena.com/">itt</a> nézheted meg <br />
+Próbáld meg kalibrálni az iránytűdet egy 8-as alakú mozdulattal, vagy ahogy <a href="https://www.youtube.com/watch?v=k1EPbAapaeI">itt</a> le van írva. <br />
 Vannak a közelben mágnesek vagy fém tárgyak, amelyek zavarhatják az iránytűt? <br />
 Próbáld kikapcsolni a "mágneses korrekciót" (a beállításokban), és nézd meg, hogy így pontosabb-e.
 
-<h3><i>Miért nem támogatott az automatikus helymeghatározás a telefonomon?</i></h3>Az Android 6-ban megváltozott az engedélyek kezelése. Engedélyezned kell a helymeghatározási engedélyt a Sky Map számára, ahogy <a href="https://support.google.com/googleplay/answer/6270602?p=app_permissons_m">itt</a> le van írva:https://support.google.com/googleplay/answer/6270602?p=app_permissons_m
+<h3><i>Miért nem támogatott az automatikus helymeghatározás a telefonomon?</i></h3>Az Android 6-ban megváltozott az engedélyek kezelése. Engedélyezned kell a helymeghatározási engedélyt a Sky Map számára, ahogy <a href="https://support.google.com/googleplay/answer/6270602?p=app_permissons_m">itt</a> le van írva
 
 <h3><i>A térkép remeg</i></h3> Ha olyan telefonod van, amelyből hiányzik a giroszkóp, akkor némi remegés várható. Próbáld meg beállítani az érzékelő sebességét és a csillapítást (a beállításokban).
 
-<h3><i>Szükségem van internetkapcsolatra?<i></h3> Nem, de néhány funkció (például a helyzet manuális megadása) nem fog működni nélküle. Helyette a GPS-t kell használnod, vagy meg kell adnod a szélességi és hosszúsági fokot.
+<h3><i>Szükségem van internetkapcsolatra?</i></h3> Nem, de néhány funkció (például a helyzet manuális megadása) nem fog működni nélküle. Helyette a GPS-t kell használnod, vagy meg kell adnod a szélességi és hosszúsági fokot.
 
-<h3><i>Segíthetek tesztelni a legújabb funkciókat?</i></h3> Persze! Csatlakozz a <a href="https://play.google.com/apps/testing/com.google.android.stardroid ">béta tesztelő programunkhoz</a>, és szerezd meg a legújabb verziót. https://play.google.com/apps/testing/com.google.android.stardroid
+<h3><i>Segíthetek tesztelni a legújabb funkciókat?</i></h3> Persze! Csatlakozz a <a href="https://play.google.com/apps/testing/com.google.android.stardroid">béta tesztelő programunkhoz</a>, és szerezd meg a legújabb verziót.
 
 <h1><b>Találj meg minket máshol:</b></h1>
 ⭐ <a href="https://stardroid.app">stardroid.app</a>
-⭐ <a href="https://github.com/sky-map-team/stardroid">GitHub:</a> https://github.com/sky-map-team/stardroid
-⭐ <a href="https://www.facebook.com/groups/113507592330/">Facebook:</a> https://www.facebook.com/groups/113507592330/
-⭐ <a href="http://twitter.com/skymapdevs">Twitter:</a> http://twitter.com/skymapdevs
+⭐ <a href="https://github.com/sky-map-team/stardroid">GitHub</a>
+⭐ <a href="https://www.facebook.com/groups/113507592330/">Facebook</a>
+⭐ <a href="http://twitter.com/skymapdevs">Twitter</a>
