@@ -51,7 +51,7 @@ android {
         applicationId 'com.google.android.stardroid'
         minSdk 26
         targetSdk 36
-        versionCode 1571
+        versionCode 1572
         versionName "1.10.11 Venus"
         buildConfigField 'String', 'GOOGLE_ANALYTICS_CODE', '""'
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
