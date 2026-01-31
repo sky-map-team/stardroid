@@ -126,13 +126,20 @@ platform :android do
     screengrab
   end
 
-  desc "Just upload the store metadata."
+  desc "Upload store metadata. Options: whatsnew:true (include changelogs), imgs:true (include screenshots/images), all:true (everything), store:false (skip store metadata)."
   lane :upload_metadata do |options|
       v_code = options[:version_code]
+      include_all = options[:all]
+      include_whatsnew = include_all || options[:whatsnew]
+      include_imgs = include_all || options[:imgs]
+      include_store = options[:store] != false
       upload_to_play_store(
         skip_upload_apk: true,
         skip_upload_aab: true,
-        skip_upload_changelogs: false,
+        skip_upload_metadata: !include_store,
+        skip_upload_changelogs: !include_whatsnew,
+        skip_upload_images: !include_imgs,
+        skip_upload_screenshots: !include_imgs,
         changes_not_sent_for_review: false,
         version_code: v_code,
         track: 'internal'

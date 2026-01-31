@@ -56,17 +56,21 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/search_status_label"
-                android:layout_marginLeft="34dip"
+                android:layout_toRightOf="@id/search_icon"
+                android:paddingLeft="10dip"
                 android:text="@string/search_overlay_title"
                 android:textAppearance="?android:attr/textAppearanceSmall" />
 
             <ImageButton
                 android:id="@+id/cancel_search_button"
-                android:layout_width="32dip"
-                android:layout_height="wrap_content"
+                android:layout_width="48dip"
+                android:layout_height="48dip"
                 android:layout_alignParentRight="true"
+                android:layout_marginRight="8dip"
                 android:background="@android:color/transparent"
                 android:clickable="true"
+                android:padding="8dip"
+                android:scaleType="centerInside"
                 android:src="@drawable/time_travel_close" />
         </RelativeLayout>
 

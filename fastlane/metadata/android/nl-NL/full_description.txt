@@ -1,0 +1,21 @@
+Sky Map is een draagbaar planetarium voor je Android-apparaat. Gebruik het om sterren, planeten, nevels en meer te identificeren. Oorspronkelijk ontwikkeld als Google Sky Map, is het nu gedoneerd en open source gemaakt.
+
+<h1><b>Probleemoplossing/Veelgestelde vragen</b></h1>
+<h3><i>De kaart beweegt niet/wijst naar de verkeerde plek</i></h3>Zorg ervoor dat je niet bent overgeschakeld naar de handmatige modus. Heeft je telefoon een kompas? Zo niet, dan kan Sky Map je oriëntatie niet bepalen. Zoek het op <a href="http://www.gsmarena.com/">hier:</a> <br />
+Probeer je kompas te kalibreren door het in een 8-vormige beweging te bewegen of zoals beschreven <a href="https://www.youtube.com/watch?v=k1EPbAapaeI">hier:</a>. <br />
+Zijn er magneten of metaal in de buurt die het kompas kunnen storen? <br />
+Probeer "magnetische correctie" (in instellingen) uit te schakelen en kijk of dat nauwkeuriger is.
+
+<h3><i>Waarom wordt automatische locatie niet ondersteund voor mijn telefoon?</i></h3>In Android 6 is de manier waarop machtigingen werken veranderd. Je moet de locatie-machtiging voor Sky Map inschakelen zoals beschreven <a href="https://support.google.com/googleplay/answer/6270602?p=app_permissons_m">hier:</a>
+
+<h3><i>De kaart is schokkerig</i></h3> Als je een telefoon hebt zonder gyroscoop, is enige schokkerigheid te verwachten. Probeer de sensorsnelheid en demping (in instellingen) aan te passen.
+
+<h3><i>Heb ik een internetverbinding nodig?</i></h3> Nee, maar sommige functies (zoals het handmatig invoeren van je locatie) werken niet zonder. Je zult in plaats daarvan de GPS moeten gebruiken of een breedtegraad en lengtegraad moeten invoeren.
+
+<h3><i>Kan ik helpen met het testen van de nieuwste functies?</i></h3> Zeker! Word lid van ons <a href="https://play.google.com/apps/testing/com.google.android.stardroid">bètatestprogramma</a> en ontvang de nieuwste versie.
+
+<h1><b>Vind ons elders:</b></h1>
+⭐ <a href="https://stardroid.app">stardroid.app</a>
+⭐ <a href="https://github.com/sky-map-team/stardroid">GitHub</a>
+⭐ <a href="https://www.facebook.com/groups/stardroidapp/">Facebook</a>
+⭐ <a href="http://x.com/skymapdevs">Twitter</a>
