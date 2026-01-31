@@ -20,25 +20,11 @@
     Help content has been restyled and updated, including an updated acknowledgments section recognizing open source contributors.
 
 <h2>Translation Updates</h2>
-    - Updated Polish translation
-    - Fixed Greek translation
-    - Added missing Portuguese translations for stars, constellations, and Messier objects
-
-<h2>Tag testing section</h2>
-    Which html tags work in different situations? To be removed after confirming
-<h2>h2</h2>
-<h3>h3</h3>
-<b>bold</b>
-<i>italic</i>
-<u>underline</u>
-<br>break<br>break<br>
-    <a href="http://stardroid.app">Link to website</a>
-    <font color="#ff0000">red text</font>
-    <ul>
-        <li>item 1</li>
-        <li>item 2</li>
-    </ul>
-✨ 🔭 📍 🧭 🌌 🪐 ☄️ 🌙 📸 🕒 📡 📱
+<ul>
+  <li>Updated Polish translation</ul>
+  <li>Fixed Greek translation</ul>
+  <li>Added missing Portuguese translations</ul>
+</ul>
     ]]>
     </string>
 </resources>
