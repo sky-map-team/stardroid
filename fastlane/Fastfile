@@ -132,7 +132,8 @@ platform :android do
       upload_to_play_store(
         skip_upload_apk: true,
         skip_upload_aab: true,
-        changes_not_sent_for_review: true,  # Acknowledges the draft state
+        skip_upload_changelogs: false,
+        changes_not_sent_for_review: false,
         version_code: v_code,
         track: 'internal'
       )
