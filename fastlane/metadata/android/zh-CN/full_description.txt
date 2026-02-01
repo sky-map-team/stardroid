@@ -1,0 +1,13 @@
+Sky Map 是一款适用于 Android 设备的手持天文馆。用它来识别恒星、行星、星云等等。最初作为 Google Sky Map 开发，现已捐赠并开源。
+
+<h1><b>故障排除/常见问题解答</b></h1> <h3><i>地图不移动/指向错误的地方</i></h3>确保您没有切换到手动模式。你的手机有指南针吗？如果不是，Sky Map 就无法告知您的方向。查找<a href=" http://www.gsmarena.com/ ">此处</a>：</a> http://www.gsmarena.com/ <br /> 尝试通过以 8 字形运动移动指南针来校准指南针，或按照<a href="https://www.youtube.com/watch?v=k1EPbAapaeI">此处</a>：</a> https://www.youtube.com/watch?v=k1EPbAapaeI 的说明进行操作。<br /> 附近是否有磁铁或金属会干扰指南针？<br /> 尝试关闭“磁校正”（在设置中），看看是否更准确。
+
+<h3><i>为什么我的手机不支持自动定位？</i></h3>在 Android 6 中，权限的工作方式已经发生了变化。您需要按照 <a href="https://support.google.com/googleplay/answer/6270602?p=app_permissons_m">此处</a>所述启用 Sky Map 的位置权限设置：https://support.google.com/googleplay/answer/6270602?p=app_permissons_m
+
+<h3><i>地图抖动</i></h3> 如果您的手机没有陀螺仪，那么可能会出现一些抖动。尝试调整传感器速度和阻尼（在设置中）。
+
+<h3><i>我需要互联网连接吗？<i></h3>不需要，但是如果没有互联网连接，某些功能（例如手动输入您的位置）将无法运行。您必须使用 GPS 或输入纬度和经度。
+
+<h3><i>我可以帮忙测试最新功能吗？</i></h3>当然可以！加入我们的 <a href="https://play.google.com/apps/testing/com.google.android.stardroid ">beta 测试计划</a>并获取最新版本。https://play.google.com/apps/testing/com.google.android.stardroid
+
+<h1><b>在其他地方找到我们：</b></h1>⭐ <a href="https://github.com/sky-map-team/stardroid">GitHub：</a> https://github.com/sky-map-team/stardroid ⭐ <a href="https://www.facebook.com/groups/113507592330/">Facebook：</a> https://www.facebook.com/groups/113507592330/ ⭐ <a href="http://twitter.com/skymapdevs">Twitter：</a> http://twitter.com/skymapdevs

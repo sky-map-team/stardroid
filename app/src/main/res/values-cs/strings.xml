@@ -17,7 +17,6 @@
     <string name="location_long_pref">Zeměpisná délka</string>
     <string name="degrees">Stupně</string>
     <string name="preferences">předvolby</string>
-    <string name="location_no_auto">Váš telefon nepodporuje automatické určení polohy. Polohu můžete nastavit ručně v nastavení.</string>
     <string name="location_offer_to_enable">Automatické určení polohy je deaktivováno. Chce je aktivovat?</string>
     <string name="location_offer_to_enable_gps_title">Automatické určení polohy deaktivováno</string>
     <string name="location_set_auto">Poloha nastavena pomocí %1$s na %2$s</string>
@@ -390,7 +389,6 @@
     <string name="aquariids" translation_description="Meteor Shower">Éta Aquaridy</string>
     <string name="warning_dialog_title">Špatné správy</string>
     <string name="diagnostics_activity_universal_time">Univerzální čas</string>
-    <string name="location_rationale_title">Proč potřebujeme vaši lokaci?</string>
     <string name="diagnostics_activity_rotation_vector">Rotace</string>
     <string name="diagnostics_activity_location_and_time_heading">Lokace a čas</string>
     <string name="e_lyrae" translation_description="Name of the star ε Lyrae">Epsylon Lyrae</string>
@@ -419,7 +417,6 @@
     <string name="diagnostics_activity_light_level">Úroveň světla</string>
     <string name="disabled">Zakázat</string>
     <string name="enabled">Povolit</string>
-    <string name="location_rationale_text">Hvězdy které lze vidět jsou závislé na vaši lokaci. Bez lokace nelze zobrazit přesnou mapu. Pokud nechcete uvádět přesnou lokaci lze ji zadat ručně v nastavení.  Stačí napsat nejbližší město.</string>
     <string name="puppidvelids" translation_description="Meteor Shower">Pí Puppidy</string>
     <string name="menu_calibrate">Kalibrovat</string>
     <string name="enable_analytics_desc">Pomozte zlepšit Sky Map odesíláním anonimních dat do Google Analytics</string>

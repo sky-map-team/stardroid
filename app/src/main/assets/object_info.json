@@ -1,0 +1,1296 @@
+{
+  "version": 2,
+  "objects": {
+    "sun": {
+      "nameKey": "sun",
+      "descriptionKey": "object_info_sun_description",
+      "funFactKey": "object_info_sun_funfact",
+      "type": "star",
+      "distanceKey": "object_info_sun_distance",
+      "sizeKey": "object_info_sun_size",
+      "massKey": "object_info_sun_mass",
+      "spectralClass": "G2V",
+      "magnitude": "-26.74"
+    },
+    "moon": {
+      "nameKey": "moon",
+      "descriptionKey": "object_info_moon_description",
+      "funFactKey": "object_info_moon_funfact",
+      "type": "moon",
+      "distanceKey": "object_info_moon_distance",
+      "sizeKey": "object_info_moon_size",
+      "massKey": "object_info_moon_mass"
+    },
+    "mercury": {
+      "nameKey": "mercury",
+      "descriptionKey": "object_info_mercury_description",
+      "funFactKey": "object_info_mercury_funfact",
+      "type": "planet",
+      "distanceKey": "object_info_mercury_distance",
+      "sizeKey": "object_info_mercury_size",
+      "massKey": "object_info_mercury_mass"
+    },
+    "venus": {
+      "nameKey": "venus",
+      "descriptionKey": "object_info_venus_description",
+      "funFactKey": "object_info_venus_funfact",
+      "type": "planet",
+      "distanceKey": "object_info_venus_distance",
+      "sizeKey": "object_info_venus_size",
+      "massKey": "object_info_venus_mass"
+    },
+    "mars": {
+      "nameKey": "mars",
+      "descriptionKey": "object_info_mars_description",
+      "funFactKey": "object_info_mars_funfact",
+      "type": "planet",
+      "distanceKey": "object_info_mars_distance",
+      "sizeKey": "object_info_mars_size",
+      "massKey": "object_info_mars_mass"
+    },
+    "jupiter": {
+      "nameKey": "jupiter",
+      "descriptionKey": "object_info_jupiter_description",
+      "funFactKey": "object_info_jupiter_funfact",
+      "type": "planet",
+      "distanceKey": "object_info_jupiter_distance",
+      "sizeKey": "object_info_jupiter_size",
+      "massKey": "object_info_jupiter_mass"
+    },
+    "saturn": {
+      "nameKey": "saturn",
+      "descriptionKey": "object_info_saturn_description",
+      "funFactKey": "object_info_saturn_funfact",
+      "type": "planet",
+      "distanceKey": "object_info_saturn_distance",
+      "sizeKey": "object_info_saturn_size",
+      "massKey": "object_info_saturn_mass"
+    },
+    "uranus": {
+      "nameKey": "uranus",
+      "descriptionKey": "object_info_uranus_description",
+      "funFactKey": "object_info_uranus_funfact",
+      "type": "planet",
+      "distanceKey": "object_info_uranus_distance",
+      "sizeKey": "object_info_uranus_size",
+      "massKey": "object_info_uranus_mass"
+    },
+    "neptune": {
+      "nameKey": "neptune",
+      "descriptionKey": "object_info_neptune_description",
+      "funFactKey": "object_info_neptune_funfact",
+      "type": "planet",
+      "distanceKey": "object_info_neptune_distance",
+      "sizeKey": "object_info_neptune_size",
+      "massKey": "object_info_neptune_mass"
+    },
+    "pluto": {
+      "nameKey": "pluto",
+      "descriptionKey": "object_info_pluto_description",
+      "funFactKey": "object_info_pluto_funfact",
+      "type": "dwarf_planet",
+      "distanceKey": "object_info_pluto_distance",
+      "sizeKey": "object_info_pluto_size",
+      "massKey": "object_info_pluto_mass"
+    },
+    "sirius": {
+      "nameKey": "sirius",
+      "descriptionKey": "object_info_sirius_description",
+      "funFactKey": "object_info_sirius_funfact",
+      "type": "star",
+      "distanceKey": "object_info_sirius_distance",
+      "sizeKey": "object_info_sirius_size",
+      "massKey": "object_info_sirius_mass",
+      "spectralClass": "A1V",
+      "magnitude": "-1.46"
+    },
+    "vega": {
+      "nameKey": "vega",
+      "descriptionKey": "object_info_vega_description",
+      "funFactKey": "object_info_vega_funfact",
+      "type": "star",
+      "distanceKey": "object_info_vega_distance",
+      "sizeKey": "object_info_vega_size",
+      "massKey": "object_info_vega_mass",
+      "spectralClass": "A0V",
+      "magnitude": "0.03"
+    },
+    "betelgeuse": {
+      "nameKey": "betelgeuse",
+      "descriptionKey": "object_info_betelgeuse_description",
+      "funFactKey": "object_info_betelgeuse_funfact",
+      "type": "star",
+      "distanceKey": "object_info_betelgeuse_distance",
+      "sizeKey": "object_info_betelgeuse_size",
+      "massKey": "object_info_betelgeuse_mass",
+      "spectralClass": "M1-M2 Iab",
+      "magnitude": "0.42"
+    },
+    "rigel": {
+      "nameKey": "rigel",
+      "descriptionKey": "object_info_rigel_description",
+      "funFactKey": "object_info_rigel_funfact",
+      "type": "star",
+      "distanceKey": "object_info_rigel_distance",
+      "sizeKey": "object_info_rigel_size",
+      "massKey": "object_info_rigel_mass",
+      "spectralClass": "B8 Ia",
+      "magnitude": "0.13"
+    },
+    "procyon": {
+      "nameKey": "procyon",
+      "descriptionKey": "object_info_procyon_description",
+      "funFactKey": "object_info_procyon_funfact",
+      "type": "star",
+      "distanceKey": "object_info_procyon_distance",
+      "sizeKey": "object_info_procyon_size",
+      "massKey": "object_info_procyon_mass",
+      "spectralClass": "F5 IV-V",
+      "magnitude": "0.34"
+    },
+    "polaris": {
+      "nameKey": "polaris",
+      "descriptionKey": "object_info_polaris_description",
+      "funFactKey": "object_info_polaris_funfact",
+      "type": "star",
+      "distanceKey": "object_info_polaris_distance",
+      "sizeKey": "object_info_polaris_size",
+      "massKey": "object_info_polaris_mass",
+      "spectralClass": "F7 Ib",
+      "magnitude": "1.98"
+    },
+    "deneb": {
+      "nameKey": "deneb",
+      "descriptionKey": "object_info_deneb_description",
+      "funFactKey": "object_info_deneb_funfact",
+      "type": "star",
+      "distanceKey": "object_info_deneb_distance",
+      "sizeKey": "object_info_deneb_size",
+      "massKey": "object_info_deneb_mass",
+      "spectralClass": "A2 Ia",
+      "magnitude": "1.25"
+    },
+    "arcturus": {
+      "nameKey": "arcturus",
+      "descriptionKey": "object_info_arcturus_description",
+      "funFactKey": "object_info_arcturus_funfact",
+      "type": "star",
+      "distanceKey": "object_info_arcturus_distance",
+      "sizeKey": "object_info_arcturus_size",
+      "massKey": "object_info_arcturus_mass",
+      "spectralClass": "K1.5 III",
+      "magnitude": "-0.05"
+    },
+    "canopus": {
+      "nameKey": "canopus",
+      "descriptionKey": "object_info_canopus_description",
+      "funFactKey": "object_info_canopus_funfact",
+      "type": "star",
+      "distanceKey": "object_info_canopus_distance",
+      "sizeKey": "object_info_canopus_size",
+      "massKey": "object_info_canopus_mass",
+      "spectralClass": "A9 II",
+      "magnitude": "-0.74"
+    },
+    "aldebaran": {
+      "nameKey": "aldebaran",
+      "descriptionKey": "object_info_aldebaran_description",
+      "funFactKey": "object_info_aldebaran_funfact",
+      "type": "star",
+      "distanceKey": "object_info_aldebaran_distance",
+      "sizeKey": "object_info_aldebaran_size",
+      "massKey": "object_info_aldebaran_mass",
+      "spectralClass": "K5+ III",
+      "magnitude": "0.85"
+    },
+    "antares": {
+      "nameKey": "antares",
+      "descriptionKey": "object_info_antares_description",
+      "funFactKey": "object_info_antares_funfact",
+      "type": "star",
+      "distanceKey": "object_info_antares_distance",
+      "sizeKey": "object_info_antares_size",
+      "massKey": "object_info_antares_mass",
+      "spectralClass": "M1.5 Iab",
+      "magnitude": "0.96"
+    },
+    "capella": {
+      "nameKey": "capella",
+      "descriptionKey": "object_info_capella_description",
+      "funFactKey": "object_info_capella_funfact",
+      "type": "star",
+      "distanceKey": "object_info_capella_distance",
+      "sizeKey": "object_info_capella_size",
+      "massKey": "object_info_capella_mass",
+      "spectralClass": "G3 III + G0 III",
+      "magnitude": "0.08"
+    },
+    "altair": {
+      "nameKey": "altair",
+      "descriptionKey": "object_info_altair_description",
+      "funFactKey": "object_info_altair_funfact",
+      "type": "star",
+      "distanceKey": "object_info_altair_distance",
+      "sizeKey": "object_info_altair_size",
+      "massKey": "object_info_altair_mass",
+      "spectralClass": "A7 V",
+      "magnitude": "0.76"
+    },
+    "spica": {
+      "nameKey": "spica",
+      "descriptionKey": "object_info_spica_description",
+      "funFactKey": "object_info_spica_funfact",
+      "type": "star",
+      "distanceKey": "object_info_spica_distance",
+      "sizeKey": "object_info_spica_size",
+      "massKey": "object_info_spica_mass",
+      "spectralClass": "B1 III-IV",
+      "magnitude": "0.97"
+    },
+    "achernar": {
+      "nameKey": "achernar",
+      "descriptionKey": "object_info_achernar_description",
+      "funFactKey": "object_info_achernar_funfact",
+      "type": "star",
+      "distanceKey": "object_info_achernar_distance",
+      "sizeKey": "object_info_achernar_size",
+      "massKey": "object_info_achernar_mass",
+      "spectralClass": "B6 Vep",
+      "magnitude": "0.46"
+    },
+    "hadar": {
+      "nameKey": "hadar",
+      "descriptionKey": "object_info_hadar_description",
+      "funFactKey": "object_info_hadar_funfact",
+      "type": "star",
+      "distanceKey": "object_info_hadar_distance",
+      "sizeKey": "object_info_hadar_size",
+      "massKey": "object_info_hadar_mass",
+      "spectralClass": "B1 III",
+      "magnitude": "0.61"
+    },
+    "regulus": {
+      "nameKey": "regulus",
+      "descriptionKey": "object_info_regulus_description",
+      "funFactKey": "object_info_regulus_funfact",
+      "type": "star",
+      "distanceKey": "object_info_regulus_distance",
+      "sizeKey": "object_info_regulus_size",
+      "massKey": "object_info_regulus_mass",
+      "spectralClass": "B8 IVn",
+      "magnitude": "1.40"
+    },
+    "acrux": {
+      "nameKey": "acrux",
+      "descriptionKey": "object_info_acrux_description",
+      "funFactKey": "object_info_acrux_funfact",
+      "type": "star",
+      "distanceKey": "object_info_acrux_distance",
+      "sizeKey": "object_info_acrux_size",
+      "massKey": "object_info_acrux_mass",
+      "spectralClass": "B0.5 IV",
+      "magnitude": "0.76"
+    },
+    "castor": {
+      "nameKey": "castor",
+      "descriptionKey": "object_info_castor_description",
+      "funFactKey": "object_info_castor_funfact",
+      "type": "star",
+      "distanceKey": "object_info_castor_distance",
+      "sizeKey": "object_info_castor_size",
+      "massKey": "object_info_castor_mass",
+      "spectralClass": "A1 V",
+      "magnitude": "1.58"
+    },
+    "pollux": {
+      "nameKey": "pollux",
+      "descriptionKey": "object_info_pollux_description",
+      "funFactKey": "object_info_pollux_funfact",
+      "type": "star",
+      "distanceKey": "object_info_pollux_distance",
+      "sizeKey": "object_info_pollux_size",
+      "massKey": "object_info_pollux_mass",
+      "spectralClass": "K0 III",
+      "magnitude": "1.14"
+    },
+    "fomalhaut": {
+      "nameKey": "fomalhaut",
+      "descriptionKey": "object_info_fomalhaut_description",
+      "funFactKey": "object_info_fomalhaut_funfact",
+      "type": "star",
+      "distanceKey": "object_info_fomalhaut_distance",
+      "sizeKey": "object_info_fomalhaut_size",
+      "massKey": "object_info_fomalhaut_mass",
+      "spectralClass": "A3 V",
+      "magnitude": "1.16"
+    },
+    "adhara": {
+      "nameKey": "adhara",
+      "descriptionKey": "object_info_adhara_description",
+      "funFactKey": "object_info_adhara_funfact",
+      "type": "star",
+      "distanceKey": "object_info_adhara_distance",
+      "sizeKey": "object_info_adhara_size",
+      "massKey": "object_info_adhara_mass",
+      "spectralClass": "B2 II",
+      "magnitude": "1.50"
+    },
+    "shaula": {
+      "nameKey": "shaula",
+      "descriptionKey": "object_info_shaula_description",
+      "funFactKey": "object_info_shaula_funfact",
+      "type": "star",
+      "distanceKey": "object_info_shaula_distance",
+      "sizeKey": "object_info_shaula_size",
+      "massKey": "object_info_shaula_mass",
+      "spectralClass": "B2 IV",
+      "magnitude": "1.62"
+    },
+    "alnilam": {
+      "nameKey": "alnilam",
+      "descriptionKey": "object_info_alnilam_description",
+      "funFactKey": "object_info_alnilam_funfact",
+      "type": "star",
+      "distanceKey": "object_info_alnilam_distance",
+      "sizeKey": "object_info_alnilam_size",
+      "massKey": "object_info_alnilam_mass",
+      "spectralClass": "B0 Ia",
+      "magnitude": "1.69"
+    },
+    "alphard": {
+      "nameKey": "alphard",
+      "descriptionKey": "object_info_alphard_description",
+      "funFactKey": "object_info_alphard_funfact",
+      "type": "star",
+      "distanceKey": "object_info_alphard_distance",
+      "sizeKey": "object_info_alphard_size",
+      "massKey": "object_info_alphard_mass",
+      "spectralClass": "K3 II-III",
+      "magnitude": "2.00"
+    },
+    "mirach": {
+      "nameKey": "mirach",
+      "descriptionKey": "object_info_mirach_description",
+      "funFactKey": "object_info_mirach_funfact",
+      "type": "star",
+      "distanceKey": "object_info_mirach_distance",
+      "sizeKey": "object_info_mirach_size",
+      "massKey": "object_info_mirach_mass",
+      "spectralClass": "M0 III",
+      "magnitude": "2.05"
+    },
+    "algol": {
+      "nameKey": "algol",
+      "descriptionKey": "object_info_algol_description",
+      "funFactKey": "object_info_algol_funfact",
+      "type": "star",
+      "distanceKey": "object_info_algol_distance",
+      "sizeKey": "object_info_algol_size",
+      "massKey": "object_info_algol_mass",
+      "spectralClass": "B8 V",
+      "magnitude": "2.12"
+    },
+    "alpha_centauri": {
+      "nameKey": "alpha_centauri",
+      "descriptionKey": "object_info_alpha_centauri_description",
+      "funFactKey": "object_info_alpha_centauri_funfact",
+      "type": "star",
+      "distanceKey": "object_info_alpha_centauri_distance",
+      "sizeKey": "object_info_alpha_centauri_size",
+      "massKey": "object_info_alpha_centauri_mass",
+      "spectralClass": "G2 V + K1 V",
+      "magnitude": "-0.27"
+    },
+    "dubhe": {
+      "nameKey": "dubhe",
+      "descriptionKey": "object_info_dubhe_description",
+      "funFactKey": "object_info_dubhe_funfact",
+      "type": "star",
+      "distanceKey": "object_info_dubhe_distance",
+      "sizeKey": "object_info_dubhe_size",
+      "massKey": "object_info_dubhe_mass",
+      "spectralClass": "K0 III",
+      "magnitude": "1.79"
+    },
+    "alioth": {
+      "nameKey": "alioth",
+      "descriptionKey": "object_info_alioth_description",
+      "funFactKey": "object_info_alioth_funfact",
+      "type": "star",
+      "distanceKey": "object_info_alioth_distance",
+      "sizeKey": "object_info_alioth_size",
+      "massKey": "object_info_alioth_mass",
+      "spectralClass": "A1 III-IVp",
+      "magnitude": "1.77"
+    },
+    "hamal": {
+      "nameKey": "hamal",
+      "descriptionKey": "object_info_hamal_description",
+      "funFactKey": "object_info_hamal_funfact",
+      "type": "star",
+      "distanceKey": "object_info_hamal_distance",
+      "sizeKey": "object_info_hamal_size",
+      "massKey": "object_info_hamal_mass",
+      "spectralClass": "K2 III",
+      "magnitude": "2.00"
+    },
+    "rasalhague": {
+      "nameKey": "rasalhague",
+      "descriptionKey": "object_info_rasalhague_description",
+      "funFactKey": "object_info_rasalhague_funfact",
+      "type": "star",
+      "distanceKey": "object_info_rasalhague_distance",
+      "sizeKey": "object_info_rasalhague_size",
+      "massKey": "object_info_rasalhague_mass",
+      "spectralClass": "A5 III",
+      "magnitude": "2.07"
+    },
+    "denebola": {
+      "nameKey": "denebola",
+      "descriptionKey": "object_info_denebola_description",
+      "funFactKey": "object_info_denebola_funfact",
+      "type": "star",
+      "distanceKey": "object_info_denebola_distance",
+      "sizeKey": "object_info_denebola_size",
+      "massKey": "object_info_denebola_mass",
+      "spectralClass": "A3 V",
+      "magnitude": "2.14"
+    },
+    "alpheratz": {
+      "nameKey": "alpheratz",
+      "descriptionKey": "object_info_alpheratz_description",
+      "funFactKey": "object_info_alpheratz_funfact",
+      "type": "star",
+      "distanceKey": "object_info_alpheratz_distance",
+      "sizeKey": "object_info_alpheratz_size",
+      "massKey": "object_info_alpheratz_mass",
+      "spectralClass": "B8 IVp",
+      "magnitude": "2.06"
+    },
+    "markab": {
+      "nameKey": "markab",
+      "descriptionKey": "object_info_markab_description",
+      "funFactKey": "object_info_markab_funfact",
+      "type": "star",
+      "distanceKey": "object_info_markab_distance",
+      "sizeKey": "object_info_markab_size",
+      "massKey": "object_info_markab_mass",
+      "spectralClass": "B9 III",
+      "magnitude": "2.49"
+    },
+    "enif": {
+      "nameKey": "enif",
+      "descriptionKey": "object_info_enif_description",
+      "funFactKey": "object_info_enif_funfact",
+      "type": "star",
+      "distanceKey": "object_info_enif_distance",
+      "sizeKey": "object_info_enif_size",
+      "massKey": "object_info_enif_mass",
+      "spectralClass": "K2 Ib",
+      "magnitude": "2.39"
+    },
+    "scheat": {
+      "nameKey": "scheat",
+      "descriptionKey": "object_info_scheat_description",
+      "funFactKey": "object_info_scheat_funfact",
+      "type": "star",
+      "distanceKey": "object_info_scheat_distance",
+      "sizeKey": "object_info_scheat_size",
+      "massKey": "object_info_scheat_mass",
+      "spectralClass": "M2 II-III",
+      "magnitude": "2.42"
+    },
+    "nunki": {
+      "nameKey": "nunki",
+      "descriptionKey": "object_info_nunki_description",
+      "funFactKey": "object_info_nunki_funfact",
+      "type": "star",
+      "distanceKey": "object_info_nunki_distance",
+      "sizeKey": "object_info_nunki_size",
+      "massKey": "object_info_nunki_mass",
+      "spectralClass": "B2.5 V",
+      "magnitude": "2.05"
+    },
+    "diphda": {
+      "nameKey": "diphda",
+      "descriptionKey": "object_info_diphda_description",
+      "funFactKey": "object_info_diphda_funfact",
+      "type": "star",
+      "distanceKey": "object_info_diphda_distance",
+      "sizeKey": "object_info_diphda_size",
+      "massKey": "object_info_diphda_mass",
+      "spectralClass": "K0 III",
+      "magnitude": "2.02"
+    },
+    "m1": {
+      "nameKey": "m1",
+      "descriptionKey": "object_info_m1_description",
+      "funFactKey": "object_info_m1_funfact",
+      "type": "nebula",
+      "distanceKey": "object_info_m1_distance",
+      "sizeKey": "object_info_m1_size",
+      "magnitude": "8.4"
+    },
+    "m13": {
+      "nameKey": "m13",
+      "descriptionKey": "object_info_m13_description",
+      "funFactKey": "object_info_m13_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_m13_distance",
+      "sizeKey": "object_info_m13_size",
+      "magnitude": "5.8"
+    },
+    "m31": {
+      "nameKey": "m31",
+      "descriptionKey": "object_info_m31_description",
+      "funFactKey": "object_info_m31_funfact",
+      "type": "galaxy",
+      "distanceKey": "object_info_m31_distance",
+      "sizeKey": "object_info_m31_size",
+      "massKey": "object_info_m31_mass",
+      "magnitude": "3.4"
+    },
+    "m42": {
+      "nameKey": "m42",
+      "descriptionKey": "object_info_m42_description",
+      "funFactKey": "object_info_m42_funfact",
+      "type": "nebula",
+      "distanceKey": "object_info_m42_distance",
+      "sizeKey": "object_info_m42_size",
+      "magnitude": "4.0"
+    },
+    "m45": {
+      "nameKey": "m45",
+      "descriptionKey": "object_info_m45_description",
+      "funFactKey": "object_info_m45_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_m45_distance",
+      "sizeKey": "object_info_m45_size",
+      "magnitude": "1.6"
+    },
+    "m51": {
+      "nameKey": "m51",
+      "descriptionKey": "object_info_m51_description",
+      "funFactKey": "object_info_m51_funfact",
+      "type": "galaxy",
+      "distanceKey": "object_info_m51_distance",
+      "sizeKey": "object_info_m51_size",
+      "magnitude": "8.4"
+    },
+    "m57": {
+      "nameKey": "m57",
+      "descriptionKey": "object_info_m57_description",
+      "funFactKey": "object_info_m57_funfact",
+      "type": "nebula",
+      "distanceKey": "object_info_m57_distance",
+      "sizeKey": "object_info_m57_size",
+      "magnitude": "8.8"
+    },
+    "m81": {
+      "nameKey": "m81",
+      "descriptionKey": "object_info_m81_description",
+      "funFactKey": "object_info_m81_funfact",
+      "type": "galaxy",
+      "distanceKey": "object_info_m81_distance",
+      "sizeKey": "object_info_m81_size",
+      "magnitude": "6.9"
+    },
+    "m82": {
+      "nameKey": "m82",
+      "descriptionKey": "object_info_m82_description",
+      "funFactKey": "object_info_m82_funfact",
+      "type": "galaxy",
+      "distanceKey": "object_info_m82_distance",
+      "sizeKey": "object_info_m82_size",
+      "magnitude": "8.4"
+    },
+    "m101": {
+      "nameKey": "m101",
+      "descriptionKey": "object_info_m101_description",
+      "funFactKey": "object_info_m101_funfact",
+      "type": "galaxy",
+      "distanceKey": "object_info_m101_distance",
+      "sizeKey": "object_info_m101_size",
+      "magnitude": "7.9"
+    },
+    "m104": {
+      "nameKey": "m104",
+      "descriptionKey": "object_info_m104_description",
+      "funFactKey": "object_info_m104_funfact",
+      "type": "galaxy",
+      "distanceKey": "object_info_m104_distance",
+      "sizeKey": "object_info_m104_size",
+      "magnitude": "8.0"
+    },
+    "m8": {
+      "nameKey": "m8",
+      "descriptionKey": "object_info_m8_description",
+      "funFactKey": "object_info_m8_funfact",
+      "type": "nebula",
+      "distanceKey": "object_info_m8_distance",
+      "sizeKey": "object_info_m8_size",
+      "magnitude": "6.0"
+    },
+    "m17": {
+      "nameKey": "m17",
+      "descriptionKey": "object_info_m17_description",
+      "funFactKey": "object_info_m17_funfact",
+      "type": "nebula",
+      "distanceKey": "object_info_m17_distance",
+      "sizeKey": "object_info_m17_size",
+      "magnitude": "6.0"
+    },
+    "m20": {
+      "nameKey": "m20",
+      "descriptionKey": "object_info_m20_description",
+      "funFactKey": "object_info_m20_funfact",
+      "type": "nebula",
+      "distanceKey": "object_info_m20_distance",
+      "sizeKey": "object_info_m20_size",
+      "magnitude": "6.3"
+    },
+    "m27": {
+      "nameKey": "m27",
+      "descriptionKey": "object_info_m27_description",
+      "funFactKey": "object_info_m27_funfact",
+      "type": "nebula",
+      "distanceKey": "object_info_m27_distance",
+      "sizeKey": "object_info_m27_size",
+      "magnitude": "7.5"
+    },
+    "m33": {
+      "nameKey": "m33",
+      "descriptionKey": "object_info_m33_description",
+      "funFactKey": "object_info_m33_funfact",
+      "type": "galaxy",
+      "distanceKey": "object_info_m33_distance",
+      "sizeKey": "object_info_m33_size",
+      "magnitude": "5.7"
+    },
+    "m35": {
+      "nameKey": "m35",
+      "descriptionKey": "object_info_m35_description",
+      "funFactKey": "object_info_m35_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_m35_distance",
+      "sizeKey": "object_info_m35_size",
+      "magnitude": "5.3"
+    },
+    "m44": {
+      "nameKey": "m44",
+      "descriptionKey": "object_info_m44_description",
+      "funFactKey": "object_info_m44_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_m44_distance",
+      "sizeKey": "object_info_m44_size",
+      "magnitude": "3.7"
+    },
+    "m78": {
+      "nameKey": "m78",
+      "descriptionKey": "object_info_m78_description",
+      "funFactKey": "object_info_m78_funfact",
+      "type": "nebula",
+      "distanceKey": "object_info_m78_distance",
+      "sizeKey": "object_info_m78_size",
+      "magnitude": "8.3"
+    },
+    "m83": {
+      "nameKey": "m83",
+      "descriptionKey": "object_info_m83_description",
+      "funFactKey": "object_info_m83_funfact",
+      "type": "galaxy",
+      "distanceKey": "object_info_m83_distance",
+      "sizeKey": "object_info_m83_size",
+      "magnitude": "7.5"
+    },
+    "m3": {
+      "nameKey": "m3",
+      "descriptionKey": "object_info_m3_description",
+      "funFactKey": "object_info_m3_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_m3_distance",
+      "sizeKey": "object_info_m3_size",
+      "magnitude": "6.2"
+    },
+    "m5": {
+      "nameKey": "m5",
+      "descriptionKey": "object_info_m5_description",
+      "funFactKey": "object_info_m5_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_m5_distance",
+      "sizeKey": "object_info_m5_size",
+      "magnitude": "5.7"
+    },
+    "m15": {
+      "nameKey": "m15",
+      "descriptionKey": "object_info_m15_description",
+      "funFactKey": "object_info_m15_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_m15_distance",
+      "sizeKey": "object_info_m15_size",
+      "magnitude": "6.2"
+    },
+    "m22": {
+      "nameKey": "m22",
+      "descriptionKey": "object_info_m22_description",
+      "funFactKey": "object_info_m22_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_m22_distance",
+      "sizeKey": "object_info_m22_size",
+      "magnitude": "5.1"
+    },
+    "m4": {
+      "nameKey": "m4",
+      "descriptionKey": "object_info_m4_description",
+      "funFactKey": "object_info_m4_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_m4_distance",
+      "sizeKey": "object_info_m4_size",
+      "magnitude": "5.6"
+    },
+    "m7": {
+      "nameKey": "m7",
+      "descriptionKey": "object_info_m7_description",
+      "funFactKey": "object_info_m7_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_m7_distance",
+      "sizeKey": "object_info_m7_size",
+      "magnitude": "3.3"
+    },
+    "m6": {
+      "nameKey": "m6",
+      "descriptionKey": "object_info_m6_description",
+      "funFactKey": "object_info_m6_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_m6_distance",
+      "sizeKey": "object_info_m6_size",
+      "magnitude": "4.2"
+    },
+    "m11": {
+      "nameKey": "m11",
+      "descriptionKey": "object_info_m11_description",
+      "funFactKey": "object_info_m11_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_m11_distance",
+      "sizeKey": "object_info_m11_size",
+      "magnitude": "6.3"
+    },
+    "m16": {
+      "nameKey": "m16",
+      "descriptionKey": "object_info_m16_description",
+      "funFactKey": "object_info_m16_funfact",
+      "type": "nebula",
+      "distanceKey": "object_info_m16_distance",
+      "sizeKey": "object_info_m16_size",
+      "magnitude": "6.4"
+    },
+    "m2": {
+      "nameKey": "m2",
+      "descriptionKey": "object_info_m2_description",
+      "funFactKey": "object_info_m2_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_m2_distance",
+      "sizeKey": "object_info_m2_size",
+      "magnitude": "6.3"
+    },
+    "m10": {
+      "nameKey": "m10",
+      "descriptionKey": "object_info_m10_description",
+      "funFactKey": "object_info_m10_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_m10_distance",
+      "sizeKey": "object_info_m10_size",
+      "magnitude": "6.6"
+    },
+    "m12": {
+      "nameKey": "m12",
+      "descriptionKey": "object_info_m12_description",
+      "funFactKey": "object_info_m12_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_m12_distance",
+      "sizeKey": "object_info_m12_size",
+      "magnitude": "6.7"
+    },
+    "m14": {
+      "nameKey": "m14",
+      "descriptionKey": "object_info_m14_description",
+      "funFactKey": "object_info_m14_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_m14_distance",
+      "sizeKey": "object_info_m14_size",
+      "magnitude": "7.6"
+    },
+    "m53": {
+      "nameKey": "m53",
+      "descriptionKey": "object_info_m53_description",
+      "funFactKey": "object_info_m53_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_m53_distance",
+      "sizeKey": "object_info_m53_size",
+      "magnitude": "7.6"
+    },
+    "m64": {
+      "nameKey": "m64",
+      "descriptionKey": "object_info_m64_description",
+      "funFactKey": "object_info_m64_funfact",
+      "type": "galaxy",
+      "distanceKey": "object_info_m64_distance",
+      "sizeKey": "object_info_m64_size",
+      "magnitude": "8.5"
+    },
+    "m65": {
+      "nameKey": "m65",
+      "descriptionKey": "object_info_m65_description",
+      "funFactKey": "object_info_m65_funfact",
+      "type": "galaxy",
+      "distanceKey": "object_info_m65_distance",
+      "sizeKey": "object_info_m65_size",
+      "magnitude": "9.3"
+    },
+    "m66": {
+      "nameKey": "m66",
+      "descriptionKey": "object_info_m66_description",
+      "funFactKey": "object_info_m66_funfact",
+      "type": "galaxy",
+      "distanceKey": "object_info_m66_distance",
+      "sizeKey": "object_info_m66_size",
+      "magnitude": "8.9"
+    },
+    "m74": {
+      "nameKey": "m74",
+      "descriptionKey": "object_info_m74_description",
+      "funFactKey": "object_info_m74_funfact",
+      "type": "galaxy",
+      "distanceKey": "object_info_m74_distance",
+      "sizeKey": "object_info_m74_size",
+      "magnitude": "9.4"
+    },
+    "m77": {
+      "nameKey": "m77",
+      "descriptionKey": "object_info_m77_description",
+      "funFactKey": "object_info_m77_funfact",
+      "type": "galaxy",
+      "distanceKey": "object_info_m77_distance",
+      "sizeKey": "object_info_m77_size",
+      "magnitude": "8.9"
+    },
+    "m92": {
+      "nameKey": "m92",
+      "descriptionKey": "object_info_m92_description",
+      "funFactKey": "object_info_m92_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_m92_distance",
+      "sizeKey": "object_info_m92_size",
+      "magnitude": "6.4"
+    },
+    "m94": {
+      "nameKey": "m94",
+      "descriptionKey": "object_info_m94_description",
+      "funFactKey": "object_info_m94_funfact",
+      "type": "galaxy",
+      "distanceKey": "object_info_m94_distance",
+      "sizeKey": "object_info_m94_size",
+      "magnitude": "8.2"
+    },
+    "m97": {
+      "nameKey": "m97",
+      "descriptionKey": "object_info_m97_description",
+      "funFactKey": "object_info_m97_funfact",
+      "type": "nebula",
+      "distanceKey": "object_info_m97_distance",
+      "sizeKey": "object_info_m97_size",
+      "magnitude": "9.9"
+    },
+    "m106": {
+      "nameKey": "m106",
+      "descriptionKey": "object_info_m106_description",
+      "funFactKey": "object_info_m106_funfact",
+      "type": "galaxy",
+      "distanceKey": "object_info_m106_distance",
+      "sizeKey": "object_info_m106_size",
+      "magnitude": "8.4"
+    },
+    "m109": {
+      "nameKey": "m109",
+      "descriptionKey": "object_info_m109_description",
+      "funFactKey": "object_info_m109_funfact",
+      "type": "galaxy",
+      "distanceKey": "object_info_m109_distance",
+      "sizeKey": "object_info_m109_size",
+      "magnitude": "9.8"
+    },
+    "m110": {
+      "nameKey": "m110",
+      "descriptionKey": "object_info_m110_description",
+      "funFactKey": "object_info_m110_funfact",
+      "type": "galaxy",
+      "distanceKey": "object_info_m110_distance",
+      "sizeKey": "object_info_m110_size",
+      "magnitude": "8.5"
+    },
+    "m32": {
+      "nameKey": "m32",
+      "descriptionKey": "object_info_m32_description",
+      "funFactKey": "object_info_m32_funfact",
+      "type": "galaxy",
+      "distanceKey": "object_info_m32_distance",
+      "sizeKey": "object_info_m32_size",
+      "magnitude": "8.1"
+    },
+    "m49": {
+      "nameKey": "m49",
+      "descriptionKey": "object_info_m49_description",
+      "funFactKey": "object_info_m49_funfact",
+      "type": "galaxy",
+      "distanceKey": "object_info_m49_distance",
+      "sizeKey": "object_info_m49_size",
+      "magnitude": "8.4"
+    },
+    "m87": {
+      "nameKey": "m87",
+      "descriptionKey": "object_info_m87_description",
+      "funFactKey": "object_info_m87_funfact",
+      "type": "galaxy",
+      "distanceKey": "object_info_m87_distance",
+      "sizeKey": "object_info_m87_size",
+      "massKey": "object_info_m87_mass",
+      "magnitude": "8.6"
+    },
+    "orion": {
+      "nameKey": "orion",
+      "descriptionKey": "object_info_orion_description",
+      "funFactKey": "object_info_orion_funfact",
+      "type": "constellation",
+      "sizeKey": "object_info_orion_size"
+    },
+    "ursa_major": {
+      "nameKey": "ursa_major",
+      "descriptionKey": "object_info_ursa_major_description",
+      "funFactKey": "object_info_ursa_major_funfact",
+      "type": "constellation",
+      "sizeKey": "object_info_ursa_major_size"
+    },
+    "ursa_minor": {
+      "nameKey": "ursa_minor",
+      "descriptionKey": "object_info_ursa_minor_description",
+      "funFactKey": "object_info_ursa_minor_funfact",
+      "type": "constellation",
+      "sizeKey": "object_info_ursa_minor_size"
+    },
+    "cassiopeia": {
+      "nameKey": "cassiopeia",
+      "descriptionKey": "object_info_cassiopeia_description",
+      "funFactKey": "object_info_cassiopeia_funfact",
+      "type": "constellation",
+      "sizeKey": "object_info_cassiopeia_size"
+    },
+    "scorpius": {
+      "nameKey": "scorpius",
+      "descriptionKey": "object_info_scorpius_description",
+      "funFactKey": "object_info_scorpius_funfact",
+      "type": "constellation",
+      "sizeKey": "object_info_scorpius_size"
+    },
+    "leo": {
+      "nameKey": "leo",
+      "descriptionKey": "object_info_leo_description",
+      "funFactKey": "object_info_leo_funfact",
+      "type": "constellation",
+      "sizeKey": "object_info_leo_size"
+    },
+    "gemini": {
+      "nameKey": "gemini",
+      "descriptionKey": "object_info_gemini_description",
+      "funFactKey": "object_info_gemini_funfact",
+      "type": "constellation",
+      "sizeKey": "object_info_gemini_size"
+    },
+    "taurus": {
+      "nameKey": "taurus",
+      "descriptionKey": "object_info_taurus_description",
+      "funFactKey": "object_info_taurus_funfact",
+      "type": "constellation",
+      "sizeKey": "object_info_taurus_size"
+    },
+    "virgo": {
+      "nameKey": "virgo",
+      "descriptionKey": "object_info_virgo_description",
+      "funFactKey": "object_info_virgo_funfact",
+      "type": "constellation",
+      "sizeKey": "object_info_virgo_size"
+    },
+    "aquarius": {
+      "nameKey": "aquarius",
+      "descriptionKey": "object_info_aquarius_description",
+      "funFactKey": "object_info_aquarius_funfact",
+      "type": "constellation",
+      "sizeKey": "object_info_aquarius_size"
+    },
+    "pisces": {
+      "nameKey": "pisces",
+      "descriptionKey": "object_info_pisces_description",
+      "funFactKey": "object_info_pisces_funfact",
+      "type": "constellation",
+      "sizeKey": "object_info_pisces_size"
+    },
+    "aries": {
+      "nameKey": "aries",
+      "descriptionKey": "object_info_aries_description",
+      "funFactKey": "object_info_aries_funfact",
+      "type": "constellation",
+      "sizeKey": "object_info_aries_size"
+    },
+    "cancer": {
+      "nameKey": "cancer",
+      "descriptionKey": "object_info_cancer_description",
+      "funFactKey": "object_info_cancer_funfact",
+      "type": "constellation",
+      "sizeKey": "object_info_cancer_size"
+    },
+    "capricornus": {
+      "nameKey": "capricornus",
+      "descriptionKey": "object_info_capricornus_description",
+      "funFactKey": "object_info_capricornus_funfact",
+      "type": "constellation",
+      "sizeKey": "object_info_capricornus_size"
+    },
+    "sagittarius": {
+      "nameKey": "sagittarius",
+      "descriptionKey": "object_info_sagittarius_description",
+      "funFactKey": "object_info_sagittarius_funfact",
+      "type": "constellation",
+      "sizeKey": "object_info_sagittarius_size"
+    },
+    "libra": {
+      "nameKey": "libra",
+      "descriptionKey": "object_info_libra_description",
+      "funFactKey": "object_info_libra_funfact",
+      "type": "constellation",
+      "sizeKey": "object_info_libra_size"
+    },
+    "cygnus": {
+      "nameKey": "cygnus",
+      "descriptionKey": "object_info_cygnus_description",
+      "funFactKey": "object_info_cygnus_funfact",
+      "type": "constellation",
+      "sizeKey": "object_info_cygnus_size"
+    },
+    "lyra": {
+      "nameKey": "lyra",
+      "descriptionKey": "object_info_lyra_description",
+      "funFactKey": "object_info_lyra_funfact",
+      "type": "constellation",
+      "sizeKey": "object_info_lyra_size"
+    },
+    "aquila": {
+      "nameKey": "aquila",
+      "descriptionKey": "object_info_aquila_description",
+      "funFactKey": "object_info_aquila_funfact",
+      "type": "constellation",
+      "sizeKey": "object_info_aquila_size"
+    },
+    "pegasus": {
+      "nameKey": "pegasus",
+      "descriptionKey": "object_info_pegasus_description",
+      "funFactKey": "object_info_pegasus_funfact",
+      "type": "constellation",
+      "sizeKey": "object_info_pegasus_size"
+    },
+    "andromeda": {
+      "nameKey": "andromeda",
+      "descriptionKey": "object_info_andromeda_description",
+      "funFactKey": "object_info_andromeda_funfact",
+      "type": "constellation",
+      "sizeKey": "object_info_andromeda_size"
+    },
+    "perseus": {
+      "nameKey": "perseus",
+      "descriptionKey": "object_info_perseus_description",
+      "funFactKey": "object_info_perseus_funfact",
+      "type": "constellation",
+      "sizeKey": "object_info_perseus_size"
+    },
+    "centaurus": {
+      "nameKey": "centaurus",
+      "descriptionKey": "object_info_centaurus_description",
+      "funFactKey": "object_info_centaurus_funfact",
+      "type": "constellation",
+      "sizeKey": "object_info_centaurus_size"
+    },
+    "crux": {
+      "nameKey": "crux",
+      "descriptionKey": "object_info_crux_description",
+      "funFactKey": "object_info_crux_funfact",
+      "type": "constellation",
+      "sizeKey": "object_info_crux_size"
+    },
+    "canis_major": {
+      "nameKey": "canis_major",
+      "descriptionKey": "object_info_canis_major_description",
+      "funFactKey": "object_info_canis_major_funfact",
+      "type": "constellation",
+      "sizeKey": "object_info_canis_major_size"
+    },
+    "canis_minor": {
+      "nameKey": "canis_minor",
+      "descriptionKey": "object_info_canis_minor_description",
+      "funFactKey": "object_info_canis_minor_funfact",
+      "type": "constellation",
+      "sizeKey": "object_info_canis_minor_size"
+    },
+    "cepheus": {
+      "nameKey": "cepheus",
+      "descriptionKey": "object_info_cepheus_description",
+      "funFactKey": "object_info_cepheus_funfact",
+      "type": "constellation",
+      "sizeKey": "object_info_cepheus_size"
+    },
+    "draco": {
+      "nameKey": "draco",
+      "descriptionKey": "object_info_draco_description",
+      "funFactKey": "object_info_draco_funfact",
+      "type": "constellation",
+      "sizeKey": "object_info_draco_size"
+    },
+    "hercules": {
+      "nameKey": "hercules",
+      "descriptionKey": "object_info_hercules_description",
+      "funFactKey": "object_info_hercules_funfact",
+      "type": "constellation",
+      "sizeKey": "object_info_hercules_size"
+    },
+    "ophiuchus": {
+      "nameKey": "ophiuchus",
+      "descriptionKey": "object_info_ophiuchus_description",
+      "funFactKey": "object_info_ophiuchus_funfact",
+      "type": "constellation",
+      "sizeKey": "object_info_ophiuchus_size"
+    },
+    "bootes": {
+      "nameKey": "bootes",
+      "descriptionKey": "object_info_bootes_description",
+      "funFactKey": "object_info_bootes_funfact",
+      "type": "constellation",
+      "sizeKey": "object_info_bootes_size"
+    },
+    "corona_borealis": {
+      "nameKey": "corona_borealis",
+      "descriptionKey": "object_info_corona_borealis_description",
+      "funFactKey": "object_info_corona_borealis_funfact",
+      "type": "constellation",
+      "sizeKey": "object_info_corona_borealis_size"
+    },
+    "corvus": {
+      "nameKey": "corvus",
+      "descriptionKey": "object_info_corvus_description",
+      "funFactKey": "object_info_corvus_funfact",
+      "type": "constellation",
+      "sizeKey": "object_info_corvus_size"
+    },
+    "auriga": {
+      "nameKey": "auriga",
+      "descriptionKey": "object_info_auriga_description",
+      "funFactKey": "object_info_auriga_funfact",
+      "type": "constellation",
+      "sizeKey": "object_info_auriga_size"
+    },
+    "eridanus": {
+      "nameKey": "eridanus",
+      "descriptionKey": "object_info_eridanus_description",
+      "funFactKey": "object_info_eridanus_funfact",
+      "type": "constellation",
+      "sizeKey": "object_info_eridanus_size"
+    },
+    "lepus": {
+      "nameKey": "lepus",
+      "descriptionKey": "object_info_lepus_description",
+      "funFactKey": "object_info_lepus_funfact",
+      "type": "constellation",
+      "sizeKey": "object_info_lepus_size"
+    },
+    "monoceros": {
+      "nameKey": "monoceros",
+      "descriptionKey": "object_info_monoceros_description",
+      "funFactKey": "object_info_monoceros_funfact",
+      "type": "constellation",
+      "sizeKey": "object_info_monoceros_size"
+    },
+    "hydra": {
+      "nameKey": "hydra",
+      "descriptionKey": "object_info_hydra_description",
+      "funFactKey": "object_info_hydra_funfact",
+      "type": "constellation",
+      "sizeKey": "object_info_hydra_size"
+    },
+    "carina": {
+      "nameKey": "carina",
+      "descriptionKey": "object_info_carina_description",
+      "funFactKey": "object_info_carina_funfact",
+      "type": "constellation",
+      "sizeKey": "object_info_carina_size"
+    },
+    "vela": {
+      "nameKey": "vela",
+      "descriptionKey": "object_info_vela_description",
+      "funFactKey": "object_info_vela_funfact",
+      "type": "constellation",
+      "sizeKey": "object_info_vela_size"
+    },
+    "puppis": {
+      "nameKey": "puppis",
+      "descriptionKey": "object_info_puppis_description",
+      "funFactKey": "object_info_puppis_funfact",
+      "type": "constellation",
+      "sizeKey": "object_info_puppis_size"
+    },
+    "cetus": {
+      "nameKey": "cetus",
+      "descriptionKey": "object_info_cetus_description",
+      "funFactKey": "object_info_cetus_funfact",
+      "type": "constellation",
+      "sizeKey": "object_info_cetus_size"
+    },
+    "phoenix": {
+      "nameKey": "phoenix",
+      "descriptionKey": "object_info_phoenix_description",
+      "funFactKey": "object_info_phoenix_funfact",
+      "type": "constellation",
+      "sizeKey": "object_info_phoenix_size"
+    },
+    "grus": {
+      "nameKey": "grus",
+      "descriptionKey": "object_info_grus_description",
+      "funFactKey": "object_info_grus_funfact",
+      "type": "constellation",
+      "sizeKey": "object_info_grus_size"
+    },
+    "pavo": {
+      "nameKey": "pavo",
+      "descriptionKey": "object_info_pavo_description",
+      "funFactKey": "object_info_pavo_funfact",
+      "type": "constellation",
+      "sizeKey": "object_info_pavo_size"
+    },
+    "triangulum": {
+      "nameKey": "triangulum",
+      "descriptionKey": "object_info_triangulum_description",
+      "funFactKey": "object_info_triangulum_funfact",
+      "type": "constellation",
+      "sizeKey": "object_info_triangulum_size"
+    },
+    "delphinus": {
+      "nameKey": "delphinus",
+      "descriptionKey": "object_info_delphinus_description",
+      "funFactKey": "object_info_delphinus_funfact",
+      "type": "constellation",
+      "sizeKey": "object_info_delphinus_size"
+    },
+    "sagitta": {
+      "nameKey": "sagitta",
+      "descriptionKey": "object_info_sagitta_description",
+      "funFactKey": "object_info_sagitta_funfact",
+      "type": "constellation",
+      "sizeKey": "object_info_sagitta_size"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+Sky Map é um planetário portátil para seu dispositivo Android. Use-o para identificar estrelas, planetas, nebulosas e muito mais. Originalmente desenvolvido como Google Sky Map, agora foi doado e tornou-se de código aberto.
+
+<h1><b>Solução de problemas/Perguntas frequentes</b></h1> <h3><i>O mapa não se move/aponta para o lugar errado</i></h3>Verifique se você não mudou para o modo manual. Seu telefone tem bússola? Caso contrário, o Sky Map não poderá informar sua orientação. Procure <a href=" http://www.gsmarena.com/ ">aqui:</a> http://www.gsmarena.com/ <br /> Tente calibrar sua bússola movendo-a em um movimento de 8 ou conforme descrito <a href="https://www.youtube.com/watch?v=k1EPbAapaeI">aqui:</a> https://www.youtube.com/watch?v=k1EPbAapaeI. <br /> Há algum ímã ou metal por perto que possa interferir na bússola? <br /> Tente desativar a "correção magnética" (nas configurações) e veja se é mais precisa.
+
+<h3><i>Por que a localização automática não é compatível com meu telefone?</i></h3>No Android 6, a maneira como as permissões funcionam mudou. Você precisa habilitar a configuração de permissão de localização para o Sky Map conforme descrito <a href="https://support.google.com/googleplay/answer/6270602?p=app_permissons_m">aqui:</a> https://support.google.com/googleplay/answer/6270602?p=app_permissons_m
+
+<h3><i>O mapa está instável</i></h3> Se você tem um telefone que não tem giroscópio, é de se esperar alguma instabilidade. Tente ajustar a velocidade e o amortecimento do sensor (nas configurações).
+
+<h3><i>Preciso de uma conexão com a internet?<i></h3> Não, mas algumas funções (como inserir sua localização manualmente) não funcionarão sem uma. Você terá que usar o GPS ou inserir uma latitude e longitude.
+
+<h3><i>Posso ajudar a testar os recursos mais recentes?</i></h3> Claro! Participe do nosso <a href="https://play.google.com/apps/testing/com.google.android.stardroid ">programa de testes beta</a> e obtenha a versão mais recente. https://play.google.com/apps/testing/com.google.android.stardroid
+
+<h1><b>Encontre-nos em outro lugar:</b></h1>⭐ <a href="https://github.com/sky-map-team/stardroid">GitHub:</a> https://github.com/sky-map-team/stardroid ⭐ <a href="https://www.facebook.com/groups/113507592330/">Facebook:</a> https://www.facebook.com/groups/113507592330/ ⭐ <a href="http://twitter.com/skymapdevs">Twitter:</a> http://twitter.com/skymapdevs

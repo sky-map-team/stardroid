@@ -1,0 +1,13 @@
+Sky Map là một đài thiên văn cầm tay dành cho thiết bị Android của bạn. Sử dụng nó để xác định các ngôi sao, hành tinh, tinh vân và nhiều thứ khác. Ban đầu được phát triển với tên gọi Google Sky Map, hiện nay đã được tặng và mở mã nguồn.
+
+<h1><b>Khắc phục sự cố/Câu hỏi thường gặp</b></h1> <h3><i>Bản đồ không di chuyển/trỏ đến vị trí sai</i></h3>Đảm bảo bạn không chuyển sang chế độ thủ công. Điện thoại của bạn có la bàn không? Nếu không, Sky Map không thể xác định được phương hướng của bạn. Hãy tra cứu <a href=" http://www.gsmarena.com/ ">tại đây:</a> http://www.gsmarena.com/ <br /> Hãy thử hiệu chỉnh la bàn của bạn bằng cách di chuyển nó theo chuyển động hình số 8 hoặc như mô tả <a href="https://www.youtube.com/watch?v=k1EPbAapaeI">tại đây:</a> https://www.youtube.com/watch?v=k1EPbAapaeI. <br /> Có nam châm hoặc kim loại nào gần đó có thể gây nhiễu la bàn không? <br /> Hãy thử tắt "hiệu chỉnh từ tính" (trong cài đặt) và xem liệu điều đó có chính xác hơn không.
+
+<h3><i>Tại sao tính năng tự động định vị không được hỗ trợ trên điện thoại của tôi?</i></h3>Trong Android 6, cách thức hoạt động của quyền đã thay đổi. Bạn cần bật cài đặt quyền vị trí cho Sky Map như được mô tả <a href="https://support.google.com/googleplay/answer/6270602?p=app_permissons_m">tại đây:</a> https://support.google.com/googleplay/answer/6270602?p=app_permissons_m
+
+<h3><i>Bản đồ bị nhiễu</i></h3> Nếu bạn có điện thoại không có con quay hồi chuyển thì hiện tượng nhiễu sóng là điều dễ hiểu. Hãy thử điều chỉnh tốc độ cảm biến và độ giảm chấn (trong phần cài đặt).
+
+<h3><i>Tôi có cần kết nối Internet không?<i></h3> Không, nhưng một số chức năng (như nhập vị trí thủ công) sẽ không hoạt động nếu không có kết nối Internet. Bạn sẽ phải sử dụng GPS hoặc nhập vĩ độ và kinh độ.
+
+<h3><i>Tôi có thể giúp kiểm tra các tính năng mới nhất không?</i></h3> Chắc chắn rồi! Tham gia <a href="https://play.google.com/apps/testing/com.google.android.stardroid ">chương trình thử nghiệm beta</a> của chúng tôi và nhận phiên bản mới nhất. https://play.google.com/apps/testing/com.google.android.stardroid
+
+<h1><b>Tìm chúng tôi ở nơi khác:</b></h1>⭐ <a href="https://github.com/sky-map-team/stardroid">GitHub:</a> https://github.com/sky-map-team/stardroid ⭐ <a href="https://www.facebook.com/groups/113507592330/">Facebook:</a> https://www.facebook.com/groups/113507592330/ ⭐ <a href="http://twitter.com/skymapdevs">Twitter:</a> http://twitter.com/skymapdevs

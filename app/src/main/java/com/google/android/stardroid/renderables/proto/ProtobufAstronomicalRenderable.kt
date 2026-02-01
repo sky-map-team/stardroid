@@ -13,12 +13,14 @@
 // limitations under the License.
 package com.google.android.stardroid.renderables.proto
 
+import android.content.SharedPreferences
 import android.content.res.Resources
 import android.util.Log
 import com.google.android.stardroid.R
 import com.google.android.stardroid.math.Vector3
 import com.google.android.stardroid.math.getGeocentricCoords
 import com.google.android.stardroid.renderables.AbstractAstronomicalRenderable
+import com.google.android.stardroid.renderables.ImagePrimitive
 import com.google.android.stardroid.renderables.LinePrimitive
 import com.google.android.stardroid.renderables.PointPrimitive
 import com.google.android.stardroid.renderables.TextPrimitive
@@ -36,7 +38,8 @@ import java.util.*
  */
 class ProtobufAstronomicalRenderable(
     originalProto: SourceProto.AstronomicalSourceProto,
-    private val resources: Resources
+    private val resources: Resources,
+    private val preferences: SharedPreferences? = null
 ) : AbstractAstronomicalRenderable() {
     companion object {
         private val TAG = MiscUtil.getTag(ProtobufAstronomicalRenderable::class.java)
@@ -66,6 +69,10 @@ class ProtobufAstronomicalRenderable(
                 PointPrimitive.Shape.NEBULA
             shapeMap[SourceProto.Shape.HUBBLE_DEEP_FIELD] = PointPrimitive.Shape.HUBBLE_DEEP_FIELD
         }
+
+        private const val SHOW_MESSIER_IMAGES = "show_messier_images"
+        private const val IMAGE_SCALE = 0.01f  // Same as Mars/Venus/Mercury
+        private val UP = Vector3(0.0f, 1.0f, 0.0f)
     }
 
     private val proto: SourceProto.AstronomicalSourceProto
@@ -132,6 +139,13 @@ class ProtobufAstronomicalRenderable(
             if (proto.pointCount == 0) {
                 return emptyList<PointPrimitive>()
             }
+
+            // If showing Messier images, return empty (points shown as images instead)
+            val showMessierImages = preferences?.getBoolean(SHOW_MESSIER_IMAGES, true) ?: false
+            if (showMessierImages && isMessierObject()) {
+                return emptyList<PointPrimitive>()
+            }
+
             val points = ArrayList<PointPrimitive>(proto.pointCount)
             for (element in proto.pointList) {
                 points.add(
@@ -176,6 +190,49 @@ class ProtobufAstronomicalRenderable(
             }
             return points
         }
+
+    override val images: List<ImagePrimitive>
+        get() {
+            // Only create images for Messier objects when preference is enabled
+            val showMessierImages = preferences?.getBoolean(SHOW_MESSIER_IMAGES, true) ?: false
+            if (!showMessierImages || !isMessierObject() || proto.pointCount == 0) {
+                return emptyList<ImagePrimitive>()
+            }
+
+            val images = ArrayList<ImagePrimitive>(proto.pointCount)
+            for (element in proto.pointList) {
+                images.add(
+                    ImagePrimitive(
+                        getCoords(element.location),
+                        resources,
+                        R.drawable.messier,
+                        UP,
+                        IMAGE_SCALE
+                    )
+                )
+            }
+            return images
+        }
+
+    private fun isMessierObject(): Boolean {
+        // Messier objects are identified by their shape type
+        // Check if any points have a Messier-specific shape (galaxy, cluster, or nebula)
+        if (proto.pointCount == 0) return false
+
+        for (element in proto.pointList) {
+            val shape = shapeMap[element.shape]
+            if (shape == PointPrimitive.Shape.SPIRAL_GALAXY ||
+                shape == PointPrimitive.Shape.ELLIPTICAL_GALAXY ||
+                shape == PointPrimitive.Shape.IRREGULAR_GALAXY ||
+                shape == PointPrimitive.Shape.LENTICULAR_GALAXY ||
+                shape == PointPrimitive.Shape.GLOBULAR_CLUSTER ||
+                shape == PointPrimitive.Shape.OPEN_CLUSTER ||
+                shape == PointPrimitive.Shape.NEBULA) {
+                return true
+            }
+        }
+        return false
+    }
 
     init {
         // Not ideal to be doing this in the constructor. TODO(john): investigate which threads

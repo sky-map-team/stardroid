@@ -1,160 +1,98 @@
 <resources>
 <string name="help_text" translation_description="Please do not change the &lt; and &gt; markup">
-&lt;big&gt;&lt;b&gt;Android için Sky Map&lt;/b&gt;&lt;/big&gt;&lt;br/&gt;
-&lt;i&gt;Sürüm %s&lt;/i&gt;&lt;br/&gt;
-&lt;i&gt;https://github.com/sky-map-team/stardroid&lt;/i&gt;&lt;br/&gt;&lt;br/&gt;
+&lt;h1&gt;Android için Sky Map&lt;/h1&gt;
+&lt;p class="version"&gt;Sürüm %s&lt;/p&gt;
+&lt;p class="url"&gt;&lt;a href="https://stardroid.app"&gt;https://stardroid.app&lt;/a&gt;&lt;/p&gt;
 
-&lt;b&gt;Giriş ve Hızlı Başlangıç&lt;/b&gt;&lt;br/&gt;
-Sky Map, geceleri gökyüzünüzü keşfetmeniz için kullanabileceğiniz bir katalogdur. Android cihazınızı
-yukarı doğru yönlendirin ve o bölgedeki en parlak yıldızların, takımyıldızların ve gezegenlerin
-konumlarını göreceksiniz.&lt;br/&gt;
+&lt;h2&gt;Giriş ve Hızlı Başlangıç&lt;/h2&gt;
+&lt;p&gt;Sky Map, geceleri gökyüzünüzü keşfetmeniz için kullanabileceğiniz bir katalogdur. Android cihazınızı yukarı doğru yönlendirin ve o bölgedeki en parlak yıldızların, takımyıldızların ve gezegenlerin konumlarını göreceksiniz.&lt;/p&gt;
 
-&lt;b&gt;Görünür Katmanlar&lt;/b&gt;&lt;br/&gt;
-Sky Map, size gösterdiği nesneleri katmanlara ayırır. Her katman, ekran üzerindeki kontrolleri
-kullanarak açılıp kapatılabilir. Katmanlar şunlardır:&lt;br/&gt;
-        <span>&#8226;</span> Yıldızlar&lt;br/&gt;
-        <span>&#8226;</span> Takımyıldızlar&lt;br/&gt;
-        <span>&#8226;</span> Messier Nesneleri&lt;br/&gt;
-        <span>&#8226;</span> Gezegenler&lt;br/&gt;
-        <span>&#8226;</span> Meteor Yağmurları&lt;br/&gt;
-        <span>&#8226;</span> Sağ Yükselim ve Sıklık Izgarası&lt;br/&gt;
-        <span>&#8226;</span> Ufuk ve kardinal noktalar&lt;br/&gt;&lt;br/&gt;
+&lt;h2&gt;Görünür Katmanlar&lt;/h2&gt;
+&lt;p&gt;Sky Map, size gösterdiği nesneleri katmanlara ayırır. Her katman, ekran üzerindeki kontrolleri kullanarak açılıp kapatılabilir. Katmanlar şunlardır:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Yıldızlar&lt;/li&gt;
+&lt;li&gt;Takımyıldızlar&lt;/li&gt;
+&lt;li&gt;Messier Nesneleri&lt;/li&gt;
+&lt;li&gt;Gezegenler&lt;/li&gt;
+&lt;li&gt;Meteor Yağmurları&lt;/li&gt;
+&lt;li&gt;Sağ Yükselim ve Sıklık Izgarası&lt;/li&gt;
+&lt;li&gt;Ufuk ve kardinal noktalar&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Sky Map, en parlak yıldızları, takımyıldızlarını ve gezegenleri tanımlar ve etiketler. Gezegenler, gökyüzünde göründüklerinden daha büyük olarak gösterilir. Ayrıca, Sky Map, düz bir çizgi olarak temsil edilen ufuk çizgisinin üzerindeki nesneleri gösterebilir; ancak düz ve yapısız bir bölgede yaşamıyorsanız bu nesneleri göremeyebilirsiniz.&lt;/p&gt;
 
-Sky Map, en parlak yıldızları, takımyıldızlarını ve gezegenleri tanımlar ve etiketler. Gezegenler,
-gökyüzünde göründüklerinden daha büyük olarak gösterilir. Ayrıca, Sky Map, düz bir çizgi
-olarak temsil edilen ufuk çizgisinin üzerindeki nesneleri gösterebilir; ancak düz ve yapısız
-bir bölgede yaşamıyorsanız bu nesneleri göremeyebilirsiniz.&lt;br/&gt;&lt;br/&gt;
+&lt;h2&gt;Ekran ayarları&lt;/h2&gt;
+&lt;p&gt;Ekran üzerindeki kontrolleri görüntülemek için ekrana dokunabilirsiniz. Ekranın sol tarafında katmanların anahtarları bulunur. Katmanlar etkin olduğunda turuncu, etkisiz olduğunda beyazdır.&lt;/p&gt;
+&lt;p&gt;Ekranın diğer tarafında, otomatik ve manuel mod arasında geçiş yapmak için bir buton bulunur.&lt;/p&gt;
 
-&lt;b&gt;Ekran ayarları&lt;/b&gt;&lt;br/&gt;
-Ekran üzerindeki kontrolleri görüntülemek için ekrana dokunabilirsiniz. Ekranın sol tarafında
-katmanların anahtarları bulunur. Katmanlar etkin olduğunda turuncu, etkisiz olduğunda beyazdır.
-&lt;br/&gt;
+&lt;h2&gt;Navigasyon Modları&lt;/h2&gt;
+&lt;p&gt;Sky Map, başlangıçta Otomatik Mod\'da çalışır ve telefonunuzun sensörlerini kullanarak telefonun işaret ettiği yönde gökyüzünün haritasını görüntüler. Manuel Mod\'a geçiş yaparak haritayı parmağınızla sürükleyerek gökyüzünü keşfedebilirsiniz. Ayrıca haritayı iki parmakla döndürebilir ve yakınlaştırmak için parmaklarınızı birbirine yaklaştırma hareketini yapabilirsiniz.&lt;/p&gt;
 
-Ekranın diğer tarafında, otomatik ve manuel mod arasında geçiş yapmak için bir buton bulunur.
-&lt;br/&gt;&lt;br/&gt;
+&lt;h2&gt;Arama&lt;/h2&gt;
+&lt;p&gt;Sky Map, \'Bu yıldız nedir?\' veya \'Nerede …?\' gibi soruları yanıtlamak için size yardımcı olur. Arama işlevine cihazınızın menü düğmesi üzerinden veya ana ekranının üzerindeki Hızlı Arama Kutusu üzerinden erişebilirsiniz. Aramak istediğiniz yıldızın, takımyıldızın veya gezegenin adını girin ve Sky Map eşleşen arama sonuçlarını listeleyecektir. Birini seçtiğinizde, Sky Map, hedeflenen nesneyi bulmanıza yardımcı olmak için bir hedefleme dairesi ve yönü gösteren bir oku görüntüler. Daire, nesne görüş alanınıza geldiğinde mavi renkten kırmızıya, nihayetinde de turuncuya döner.&lt;/p&gt;
+&lt;p&gt;NOT: Manuel Mod\'da iseniz, Sky Map sadece nesneyi size göstermek için haritayı taşır.&lt;/p&gt;
+&lt;p&gt;Arama Modu\'ndan çıkmak için ekranın köşesindeki küçük çarpıyı dokunarak çıkabilirsiniz.&lt;/p&gt;
 
-&lt;b&gt;Navigasyon Modları&lt;/b&gt;&lt;br/&gt;
-Sky Map, başlangıçta Otomatik Mod\'da çalışır ve telefonunuzun sensörlerini kullanarak telefonun
-işaret ettiği yönde gökyüzünün haritasını görüntüler. Manuel Mod\'a geçiş yaparak haritayı
-parmağınızla sürükleyerek gökyüzünü keşfedebilirsiniz. Ayrıca haritayı iki parmakla döndürebilir
-ve yakınlaştırmak için parmaklarınızı birbirine yaklaştırma hareketini yapabilirsiniz.
-&lt;br/&gt;&lt;br/&gt;
+&lt;h2&gt;Zaman Yolculuğu&lt;/h2&gt;
+&lt;p&gt;Zaman Yolculuğu modu, Gökyüzü haritasını şu anki zamandan farklı zamanlarda gözlemlenmesine olanak tanır. Ana menüden \'Zaman Yolculuğu\'nu seçiniz, ardından \'Popüler Tarihlerden\' birini seçin veya kendi tarih ve saatinizi \'Tarihi Değiştir\' ve \'Saati Değiştir\' seçenekleriyle belirleyin. Bu seçenekler, genellikle Jüpiter\'in yerçekimi etkisi nedeniyle doğruluk sınırlamalarıyla 1900-2100 yılları arasında sınırlıdır. İşiniz bittiğinde, belirlediğiniz zaman dilimindeki gökyüzünü incelemek için \'Git!\' düğmesine tıklayabilirsiniz. Sky Map artık zaman yolculuğu modunda çalışır ve seçtiğiniz tarihi görüntüler. İleri ve geri gitmek için ileri ve geri butonlarına bir kez tıklanabilir ve hızlı ilerlemek içinse birkaç kez tıklanabilir.&lt;/p&gt;
+&lt;p&gt;Zaman Yolculuğu, çeşitli soruları yanıtlamak için kullanılabilir. Bunlar arasında \'Bu akşam güneş batışından hemen sonra ne görebilirim?\', \'Bir sonraki Merkür\'ü görmek için iyi bir şansım ne zaman olacak?\', ve \'Hesiod\'a göre üzüm hasadını ne zaman yapmalıyım?\' gibi soruları yanıtlamak için kullanılabilir.&lt;/p&gt;
 
-&lt;b&gt;Arama&lt;/b&gt;&lt;br/&gt;
-Sky Map, \'Bu yıldız nedir?\' veya \'Nerede …?\' gibi soruları yanıtlamak için size yardımcı olur.
-Arama işlevine cihazınızın menü düğmesi üzerinden veya ana ekranının üzerindeki Hızlı Arama Kutusu
-üzerinden erişebilirsiniz. Aramak istediğiniz yıldızın, takımyıldızın veya gezegenin adını girin ve
-Sky Map eşleşen arama sonuçlarını listeleyecektir. Birini seçtiğinizde, Sky Map, hedeflenen nesneyi
-bulmanıza yardımcı olmak için bir hedefleme dairesi ve yönü gösteren bir oku görüntüler. Daire,
-nesne görüş alanınıza geldiğinde mavi renkten kırmızıya, nihayetinde de turuncuya döner.&lt;br/&gt;
-NOT: Manuel Mod\'da iseniz, Sky Map sadece nesneyi size göstermek için haritayı taşır.&lt;br/&gt;
-Arama Modu\'ndan çıkmak için ekranın köşesindeki küçük çarpıyı dokunarak çıkabilirsiniz.&lt;br/&gt;&lt;br/&gt;
+&lt;h2&gt;Hubble Galerisi&lt;/h2&gt;
+&lt;p&gt;Sky Map, Hubble teleskobundan gelen görüntülerin bulunduğu bir galeri içerir. Galeri\'ye erişmek için menüdeki Galeri öğesini seçin. Galeri içinde, parmağınızla kaydırarak mevcut görüntüleri göz atabilirsiniz. Önizleme resimlerinden birine dokunursanız, Sky Map size tam boyutlu görüntüyü gösterir. Arama düğmesine dokunursanız, Sky Map, resimle eşleşen nesneyi bulmak için Arama moduna geçer.&lt;/p&gt;
 
-&lt;b&gt;Zaman Yolculuğu&lt;/b&gt;&lt;br/&gt;
+&lt;h2&gt;Gece Görüş Modu&lt;/h2&gt;
+&lt;p&gt;Gece Görüş Modu, gözlerinizin karanlıkta uyum sağlamasını sağlamak için tasarlanmıştır. Menüden Gece Görüş seçeneğini seçtiğinizde, Sky Map haritayı kırmızı renkte gösterecek, ekranı karartacak ve butonların ışıklarını kapatacaktır. Normal renklere geri dönmek için seçeneği tekrar seçin.&lt;/p&gt;
 
-Zaman Yolculuğu modu, Gökyüzü haritassını şu anki zamandan farklı zamanlarda gözlemlenmesine olanak
-tanır. Ana menüden \'Zaman Yolculuğu\'nu seçiniz, ardından \'Popüler Tarihlerden\'
-birini seçin veya kendi tarih ve saatinizi \'Tarihi Değiştir\' ve \'Saati Değiştir\' seçenekleriyle
-belirleyin. Bu seçenekler, genellikle Jüpiter\'in yerçekimi etkisi nedeniyle doğruluk
-sınırlamalarıyla 1900-2100 yılları arasında sınırlıdır. İşiniz bittiğinde, belirlediğiniz zaman
-dilimindeki gökyüzünü incelemek için \'Git!\' düğmesine tıklayabilirsiniz. Sky Map artık zaman
-yolculuğu modunda çalışır ve seçtiğiniz tarihi görüntüler. İleri ve geri gitmek için ileri ve geri
-butonlarına bir kez tıklanabilir ve hızlı ilerlemek içinse birkaç kez tıklanabilir.&lt;br/&gt;
+&lt;h2&gt;Konumunuzu Ayarlama&lt;/h2&gt;
+&lt;p&gt;Sky Map, doğru yıldız haritasını sunabilmek için yaklaşık konum bilgisine ihtiyaç duyar. Varsayılan olarak, bu konumu cihazınızın hücresel ağından alır. Eğer ağ dışında ya da ağ konumunu devre dışı bıraktıysanız, cihazınızın GPS\'ini kullanılır. Konumunuzu elle ayarlamak isterseniz, ayarlar menüsü üzerinden konumunuzu bir yer adı veya enlem ve boylam (derece cinsinden) girerek sağlayabilirsiniz. Unutmayın ki, Sky Map\'in yer adını kullanarak enlem ve boylamınızı belirlemek için veri bağlantısına ihtiyaç duyar.&lt;/p&gt;
 
-&lt;br/&gt;
+&lt;h2&gt;Sorun Giderme ve Sınırlamalar&lt;/h2&gt;
 
-Zaman Yolculuğu, çeşitli soruları yanıtlamak için kullanılabilir. Bunlar arasında \'Bu akşam güneş
-batışından hemen sonra ne görebilirim?\', \'Bir sonraki Merkür\'ü görmek için iyi bir şansım ne
-zaman olacak?\', ve \'Hesiod\'a göre üzüm hasadını ne zaman yapmalıyım?\' gibi soruları yanıtlamak
-için kullanılabilir.&lt;br/&gt;&lt;br/&gt;
+&lt;h3&gt;Harita doğru değil&lt;/h3&gt;
+&lt;p&gt;Haritanın gerçek gökyüzü ile doğru bir şekilde hizalanmadığını düşünüyorsanız, bunun birkaç olası nedeni olabilir:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Cihazınızın pusulası kalibre edilmiş mi? Pusulanızın kalibre edilip edilmediğini kontrol etmek için telefonunuzu tutun ve pusulanın düzgün çalışması için sekiz rakamı şeklinde hafifçe hareket ettirmeyi deneyin. Bu işlemi aralıklarla tekrarlayabilirsiniz. Unutmayın ki bu, cihazınızın özelliği olup, Sky Map\'ten ziyade telefonun pusula özelliği ile ilgilidir.&lt;/li&gt;
+&lt;li&gt;Uygulamanın konumunuzu doğru bir şekilde belirlemesi için GPS veya ağ konumu etkin mi?&lt;/li&gt;
+&lt;li&gt;Doğru saat ve saat dilimini mi ayarladınız? Sky Map, Evrensel Zaman\'ı hesaplayabilmesi için cihazınızdaki saat ve saat dilimi bilgilerine ihtiyaç duyar. Eğer cihazınızda bir SIM kartı bulunuyorsa, bu bilgiler genellikle otomatik olarak doğru şekilde ayarlanır. Saatinizin ve saat diliminizin doğru olduğunu kontrol etmek için Sky Map\'in kontrol sayfasını açabilirsiniz.&lt;/li&gt;
+&lt;li&gt;Manyetik düzeltmeyi etkinleştirdiniz mi? Dünyanın bazı bölgelerinde manyetik Kuzey ile Gerçek Kuzey arasındaki fark 20 dereceye kadar çıkabilir.&lt;/li&gt;
+&lt;/ol&gt;
 
-&lt;b&gt;Hubble Galerisi&lt;/b&gt;&lt;br/&gt;
-Sky Map, Hubble teleskobundan gelen görüntülerin bulunduğu bir galeri içerir. Galeri\'ye erişmek
-için menüdeki Galeri öğesini seçin. Galeri içinde, parmağınızla kaydırarak mevcut görüntüleri göz
-atabilirsiniz. Önizleme resimlerinden birine dokunursanız, Sky Map size tam boyutlu görüntüyü
-gösterir. Arama düğmesine dokunursanız, Sky Map, resimle eşleşen nesneyi bulmak için Arama moduna
-geçer.&lt;br/&gt;&lt;br/&gt;
+&lt;h3&gt;Harita hareket etmiyor&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Manuel modda mısınız? Değilseniz, bu kalibre edilmemiş bir pusula nedeni olabilir. Yukarıdaki adımları takip ederek onu \'sabit\' yapabilirsiniz.&lt;/li&gt;
+&lt;li&gt;Telefonunuz gerekli tüm sensörlere sahip mi? Tüm cihazlar için gerekli değildir. En azından bir pusula, ivmeölçer ve ideal olarak bir jiroskopa sahip olmalıdır. Sky Map\'in Kontrol sayfası sahip olduğunuz sensörleri gösterecektir. Telefonunuzun bir jiroskopu yoksa Ayarlar/Sensör Ayarları(uzman) içindeki \'Jiroskopu Devre Dışı Bırak\' seçeneğini seçmeyi deneyin.&lt;/li&gt;
+&lt;/ol&gt;
 
-&lt;b&gt;Gece Görüş Modu&lt;/b&gt;&lt;br/&gt;
-Gece Görüş Modu, gözlerinizin karanlıkta uyum sağlamasını sağlamak için tasarlanmıştır. Menüden
-Gece Görüş seçeneğini seçtiğinizde, Sky Map haritayı kırmızı renkte gösterecek, ekranı karartacak
-ve butonların ışıklarını kapatacaktır. Normal renklere geri dönmek için seçeneği tekrar seçin.
-&lt;br/&gt;&lt;br/&gt;
+&lt;p class="callout"&gt;Eğer tüm bu adımlara rağmen sorun devam ederse, lütfen bize bir e-posta gönderin ve size sorununuzu çözmek için nasıl yardımcı olabileceğimizi anlatalım (tercihen Kontrol sayfanızın ekran görüntüsü ile).&lt;/p&gt;
 
-&lt;b&gt;Konumunuzu Ayarlama&lt;/b&gt;&lt;br/&gt;
-Sky Map, doğru yıldız haritasını sunabilmek için yaklaşık konum bilgisine ihtiyaç duyar.
-Varsayılan olarak, bu konumu cihazınızın hücresel ağından alır. Eğer ağ dışında ya da ağ konumunu
-devre dışı bıraktıysanız, cihazınızın GPS\'ini kullanılır.Konumunuzu elle ayarlamak isterseniz,
-ayarlar menüsü üzerinden konumunuzu bir yer adı veya enlem ve boylam (derece cinsinden) girerek
-sağlayabilirsiniz. Unutmayın ki, Sky Map\'in yer adını kullanarak enlem ve boylamınızı belirlemek
-için veri bağlantısına ihtiyaç duyar.&lt;br/&gt;&lt;br/&gt;
+&lt;h2&gt;Teleskop Kullanıcıları&lt;/h2&gt;
+&lt;p&gt;Sky Map şu anda \'İşaretçi Modu\' adını verdiği bir prototip içeriyor. Bu mod, telefonunuzun ekranının önündeki görüntü yerine, uzun kenarı boyunca baktığınız yönde olanı gösterecektir. Bu özelliği etkinleştirmek için \'Ayarlar\' altında \'Sensör Ayarları\' sekmesini kullanabilirsiniz. Bu sayede telefonunuzu teleskop tüpünüze takabilir ve ekranı tüpün yönüne dik tutabilirsiniz.&lt;/p&gt;
 
-&lt;b&gt;Sorun Giderme ve Sınırlamalar&lt;/b&gt;&lt;br/&gt;
-&lt;i&gt;Harita doğru değil.&lt;/i&gt;&lt;br/&gt;
-Haritanın gerçek gökyüzü ile doğru bir şekilde hizalanmadığını düşünüyorsanız, bunun birkaç olası
-nedeni olabilir:&lt;br/&gt;
-1) Cihazınızın pusulası kalibre edilmiş mi? Pusulanızın kalibre edilip edilmediğini kontrol etmek
-için telefonunuzu tutun ve pusulanın düzgün çalışması için sekiz rakamı şeklinde hafifçe hareket
-ettirmeyi deneyin. Bu işlemi aralıklarla tekrarlayabilirsiniz. Unutmayın ki bu, cihazınızın özelliği
-olup, Sky Map\'ten ziyade telefonun pusula özelliği ile ilgilidir.&lt;br/&gt;
-2) Uygulamanın konumunuzu doğru bir şekilde belirlemesi için GPS veya ağ konumu etkin mi?&lt;br/&gt;
-3) Doğru saat ve saat dilimini mi ayarladınız?
-Sky Map, Evrensel Zaman\'ı hesaplayabilmesi için cihazınızdaki saat ve saat dilimi bilgilerine
-ihtiyaç duyar. Eğer cihazınızda bir SIM kartı bulunuyorsa, bu bilgiler genellikle otomatik olarak
-doğru şekilde ayarlanır. Saatinizin ve saat diliminizin doğru olduğunu kontrol etmek için Sky
-Map\'in kontrol sayfasını açabilirsiniz.&lt;br/&gt;
-4) Manyetik düzeltmeyi etkinleştirdiniz mi? Dünyanın bazı bölgelerinde manyetik Kuzey ile Gerçek
-Kuzey arasındaki fark 20 dereceye kadar çıkabilir.&lt;br/&gt;
-&lt;i&gt;Harita hareket etmiyor.&lt;/i&gt;&lt;br/&gt;
-1) Manuel modda mısınız? Değilseniz, bu kalibre edilmemiş bir pusula nedeni olabilir.
-Yukarıdaki adımları takip ederek onu \'sabit\' yapabilirsiniz.&lt;br/&gt;
-2) Telefonunuz gerekli tüm sensörlere sahip mi? Tüm cihazlar için gerekli değildir. En azından bir
-pusula, ivmeölçer ve ideal olarak bir jiroskopa sahip olmalıdır. Sky Map\'in Kontrol sayfası
-sahip olduğunuz sensörleri gösterecektir. Telefonunuzun bir jiroskopu yoksa
-Ayarlar//Sensör Ayarları(uzman) içindeki \'Jiroskopu Devre Dışı Bırak\' seçeneğini seçmeyi deneyin.
-&lt;br/&gt;
+&lt;h2&gt;Geliştirmeyi Destekleyin&lt;/h2&gt;
+&lt;p&gt;Sky Map ücretsiz, açık kaynak ve reklamsızdır. Kullanmaktan keyif alıyorsanız, lütfen &lt;a href="https://github.com/sky-map-team/stardroid#support"&gt;GitHub sayfamızda&lt;/a&gt; sürekli geliştirmeyi desteklemeyi düşünün.&lt;/p&gt;
 
-&lt;b&gt;Eğer tüm bu adımlara rağmen sorun devam ederse, lütfen bize bir e-posta gönderin ve size
-sorununuzu çözmek için nasıl yardımcı olabileceğimizi anlatalım (tercihen Kontrol sayfanızın ekran
-görüntüsü ile).&lt;/b&gt; &lt;br/&gt;&lt;br/&gt;
+&lt;h2&gt;Katkıda Bulunanlar&lt;/h2&gt;
+&lt;h3&gt;Mühendislik, Tasarım ve Ürün Yönetimi&lt;/h3&gt;
+&lt;p&gt;Brent Bryan, Dominic Widdows, Hector Ouilhet, James Powell, John Taylor, Kevin Serafini, Lior Ron&lt;/p&gt;
 
-&lt;b&gt;Teleskop Kullanıcıları&lt;/b&gt;&lt;br/&gt;
+&lt;h3&gt;Açık Kaynak Katkıda Bulunanlar&lt;/h3&gt;
+&lt;p&gt;Christopher Wilcox, PhD&lt;/p&gt;
 
-Sky Map şu anda \'İşaretçi Modu\' adını verdiği bir prototip içeriyor. Bu mod, telefonunuzun
-ekranının önündeki görüntü yerine, uzun kenarı boyunca baktığınız yönde olanı gösterecektir.
-Bu özelliği etkinleştirmek için \'Ayarlar\' altında \'Sensör Ayarları\' sekmesini kullanabilirsiniz.
-Bu sayede telefonunuzu teleskop tüpünüze takabilir ve ekranı tüpün yönüne dik tutabilirsiniz.
-
-&lt;b&gt;Katkıda Bulunanlar&lt;/b&gt;&lt;br/&gt;
-&lt;i&gt;Mühendislik, Tasarım ve Ürün Yönetimi&lt;/i&gt;&lt;br/&gt;
-Brent Bryan, Dominic Widdows, Hector Ouilhet, James Powell,
-John Taylor, Kevin Serafini, Lior Ron&lt;br/&gt;&lt;br/&gt;
-
-&lt;i&gt;Açık Kaynak Katkıda Bulunanlar&lt;/i&gt;&lt;br/&gt;
-Christopher Wilcox, PhD&lt;br/&gt;&lt;br/&gt;
-
-&lt;b&gt;Teşekkürler&lt;/b&gt;&lt;br/&gt;
-Sky Map, başlangıçta Google Inc. tarafından \"Google Sky Map\" olarak geliştirilmiş ve 2012 yılında
-açık kaynak olarak yayınlanmıştır.
-Sky Map, aşağıdaki kaynaklardan gelen verilerle haritalar oluşturur:&lt;br/&gt;
-Centre de Donnees astronomiques de Strasbourg (https://cdsweb.u-strasbg.fr/)&lt;br/&gt;
-The Bright Star Catalogue, 5th Revised Ed. (Hoffleit D., Warren Jr W.H.)&lt;br/&gt;
-The HYG Database, HYG v1.0. (https://www.astronexus.com/)&lt;br/&gt;
-History and Accurate Positions for the NGC/IC Objects (Harold G. Corwin Jr)&lt;br/&gt;
-Revised New General Catalogue of Nonstellar Astronomical Objects
-(Sulentic J.W., Tifft W.G.)&lt;br/&gt;
-SFA Star Charts
-(https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html)&lt;br/&gt;
-Güneş Sistemi Nesnelerinin Pozisyonları, USNO tarafından sağlanan verilere göre hesaplanır
-(https://www.usno.navy.mil/USNO/astronomical-applications)&lt;br/&gt;
-Küresel kapsama verileri
-(https://www2.research.att.com/~njas/coverings)&lt;br/&gt;
-Hubble Görüntüleri, NASA\'nın Uzay Teleskop Bilim Enstitüsü tarafından sağlanmıştır
-(https://hubblesite.org/)&lt;br/&gt;
-Meteor yağmuru verileri, Uluslararası Meteor Organizasyonu\'ndan
-(https://www.imo.net/data)&lt;br/&gt;
-M31 görüntüsü Peter Kennett tarafından (https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg)&lt;br/&gt;
-Kuyruklu Yıldız Leonard verileri: In-The-Sky.org&lt;br/&gt;
+&lt;h2&gt;Teşekkürler&lt;/h2&gt;
+&lt;p&gt;Sky Map, başlangıçta Google Inc. tarafından \"Google Sky Map\" olarak geliştirilmiş ve 2012 yılında açık kaynak olarak yayınlanmıştır.&lt;/p&gt;
+&lt;p&gt;Sky Map, aşağıdaki kaynaklardan gelen verilerle haritalar oluşturur:&lt;/p&gt;
+&lt;ul class="credits"&gt;
+&lt;li&gt;Centre de Donnees astronomiques de Strasbourg (&lt;a href="https://cdsweb.u-strasbg.fr/"&gt;https://cdsweb.u-strasbg.fr/&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;The Bright Star Catalogue, 5th Revised Ed. (Hoffleit D., Warren Jr W.H.)&lt;/li&gt;
+&lt;li&gt;The HYG Database, HYG v1.0. (&lt;a href="https://www.astronexus.com/"&gt;https://www.astronexus.com/&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;History and Accurate Positions for the NGC/IC Objects (Harold G. Corwin Jr)&lt;/li&gt;
+&lt;li&gt;Revised New General Catalogue of Nonstellar Astronomical Objects (Sulentic J.W., Tifft W.G.)&lt;/li&gt;
+&lt;li&gt;SFA Star Charts (&lt;a href="https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html"&gt;https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Güneş Sistemi Nesnelerinin Pozisyonları, USNO tarafından sağlanan verilere göre hesaplanır (&lt;a href="https://www.usno.navy.mil/USNO/astronomical-applications"&gt;https://www.usno.navy.mil/USNO/astronomical-applications&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Küresel kapsama verileri (&lt;a href="https://www2.research.att.com/~njas/coverings"&gt;https://www2.research.att.com/~njas/coverings&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Hubble Görüntüleri, NASA\'nın Uzay Teleskop Bilim Enstitüsü tarafından sağlanmıştır (&lt;a href="https://hubblesite.org/"&gt;https://hubblesite.org/&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Meteor yağmuru verileri, Uluslararası Meteor Organizasyonu\'ndan (&lt;a href="https://www.imo.net/data"&gt;https://www.imo.net/data&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;M31 görüntüsü Peter Kennett tarafından (&lt;a href="https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg"&gt;https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Kuyruklu Yıldız Leonard verileri: In-The-Sky.org&lt;/li&gt;
+&lt;/ul&gt;
 </string>
 </resources>
-

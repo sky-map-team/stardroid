@@ -1,15 +1,50 @@
+# --- Android / Gradle ---
 .gradle/
-local.properties
-# User-specific configurations
-.idea/
-*.iml
-.DS_Store
 build/
 captures/
+local.properties
+.externalNativeBuild
+.cxx
+cmake-build-debug/
+output.json
+*.apk
+*.ap_
+*.dex
+*.class
+bin/
+gen/
 
-tools/bin/
-app/no-checkin.properties
-app/src/gms/google-services.json
-app/src/gms/google-services.json*
-app/gen/
+# --- Android Studio / IntelliJ ---
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+.navigation/
+
+# --- Secrets and Sensitive Files (DO NOT COMMIT) ---
 *.keystore
+*.jks
+*.p12
+*credentials*
+google-services.json*
+*no-checkin*
+no-checkin.properties
+
+# --- OS Specific / Miscellaneous ---
+.DS_Store
+Thumbs.db
+*.log
+*.swp
+*~
+.claude
+.history/
+*.gradle-e
+
+# --- Project Specific ---
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/test_output
+
+# Bug reports
+bugreport-*.zip

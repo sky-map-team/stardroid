@@ -18,7 +18,6 @@
     <string name="location_long_pref">Hydred</string>
     <string name="degrees" translation_description="angular degrees">Graddau</string>
     <string name="preferences">dewisiadau</string>
-    <string name="location_no_auto">Nid yw caniatâd adnabod lleoliad ymlaen ar dy ddyfais. Gellir gosod y lleoliad dy hun yn y dewisiadau. Bydd y map yn anghywir nes bod lleoliad wedi\'i osod.</string>
     <string name="location_offer_to_enable">Dyw adnabod lleoliad heb ei alluogi. Wyt ti am ei alluogi?</string>
     <string name="location_offer_to_enable_gps_title">Adnabod lleoliad wedi\'i analluogi</string>
     <string name="location_set_auto">Lleoliad wedi\'i osod o %1$s i %2$s</string>
@@ -422,8 +421,6 @@
     </string>
     <string name="do_not_show_again">Peidio â dangos y neges hon eto</string>
     <string name="title_activity_diagnostic">Diagnosteg</string>
-    <string name="location_rationale_title">Pam ydym yn gofyn am dy leoliad?</string>
-    <string name="location_rationale_text">Mae pa sêr rwyt yn eu gweld yn dibynnu o ba ran o\'r blaned rwyt yn edrych. Heb wybod dy leoliad, ni allwn ddangos map cywir i ti. Os nad wyt am i dy ddyfais rhannu dy leoliad gyda ni, gellir gosod unrhyw leoliad o dy ddewis yn y gosodiadau.</string>
     <string name="play_services_error">Rhybudd: Gwall Google Play Services - Posib na fydd adnabod lleoliad yn gweithio</string>
     <string name="sensor_absent">Absennol</string>
     <string name="sensor_accuracy_unknown">Cywirdeb: Anhysbys</string>

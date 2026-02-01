@@ -18,7 +18,6 @@
     <string name="location_long_pref">Lengdegrad</string>
     <string name="degrees" translation_description="angular degrees">Grader</string>
     <string name="preferences">innstillinger</string>
-    <string name="location_no_auto">Tillatelse for auto-posisjonering er deaktivert på din telefon.   Du kan stille inn posisjonen manuelt under Stedsinnstillinger.  Inntil da vil kartet være uriktig.</string>
     <string name="location_offer_to_enable">Auto-posisjonering er deaktivert.  Aktivere?</string>
     <string name="location_offer_to_enable_gps_title">Auto-posisjonering deaktivert</string>
     <string name="location_set_auto">Sted bestemt fra %1$s til %2$s</string>
@@ -156,8 +155,6 @@
     </string>
     <string name="do_not_show_again">Ikke vis denne meldingen igjen</string>
     <string name="title_activity_diagnostic">Diagnostikk</string>
-    <string name="location_rationale_title">Why do we ask for your location?</string>
-    <string name="location_rationale_text">The stars you can see depend on where on planet earth you are.  Without your location we cannot show you an accurate map.  If you do not want your phone to give us your location you can provide it manually in the settings.  You need only provide the nearest city.</string>
     <string name="play_services_error">Warning: Google Play Services error - Automatic location might not work</string>
     <string name="sensor_absent">Fraværende</string>
     <string name="sensor_accuracy_unknown">Nøyaktighet: Ukjent</string>
