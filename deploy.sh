@@ -21,7 +21,7 @@ if [ ! -f "$APK_PATH" ]; then
 fi
 
 echo "Deploying ${BUILD_TYPE} build to device..."
-adb -d install -r "$APK_PATH"
+adb install -r "$APK_PATH"
 
 if [ $? -eq 0 ]; then
   echo "Successfully deployed ${BUILD_TYPE} build"
