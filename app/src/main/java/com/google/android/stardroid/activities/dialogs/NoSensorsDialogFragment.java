@@ -22,7 +22,7 @@ import javax.inject.Inject;
  * No sensors dialog fragment.
  * Created by johntaylor on 4/9/16.
  */
-public class NoSensorsDialogFragment extends com.google.android.stardroid.activities.dialogs.DialogFragment {
+public class NoSensorsDialogFragment extends DialogFragment {
   private static final String TAG = MiscUtil.getTag(NoSensorsDialogFragment.class);
   @Inject Activity parentActivity;
   @Inject SharedPreferences preferences;
