@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="google_app_id" translatable="false">1:1013100360622:android:8dd01fc8df295f5188ce3f</string>
+    <string name="gcm_defaultSenderId" translatable="false">1013100360622</string>
+    <string name="google_api_key" translatable="false">AIzaSyB9nWq8aRiuu4YDNwLdhV88py8P0BUgpIU</string>
+    <string name="project_id" translatable="false">sky-map-1286</string>
+    <string name="google_storage_bucket" translatable="false">sky-map-1286.firebasestorage.app</string>
+    <string name="firebase_database_url" translatable="false">https://sky-map-1286.firebaseio.com</string>
+</resources>

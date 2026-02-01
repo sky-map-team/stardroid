@@ -13,6 +13,7 @@ package com.google.android.stardroid.education
 
 import android.content.SharedPreferences
 import com.google.android.stardroid.ApplicationConstants
+import com.google.android.stardroid.util.AnalyticsInterface
 import com.google.common.truth.Truth.assertThat
 import org.junit.Before
 import org.junit.Test
@@ -41,6 +42,9 @@ class ObjectInfoTapHandlerTest {
     @Mock
     private lateinit var mockListener: ObjectInfoTapHandler.ObjectTapListener
 
+    @Mock
+    private lateinit var mockAnalytics: AnalyticsInterface
+
     private lateinit var tapHandler: ObjectInfoTapHandler
 
     private val testObjectInfo = ObjectInfo(
@@ -57,7 +61,7 @@ class ObjectInfoTapHandlerTest {
     @Before
     fun setUp() {
         MockitoAnnotations.openMocks(this)
-        tapHandler = ObjectInfoTapHandler(mockPreferences, mockHitTester)
+        tapHandler = ObjectInfoTapHandler(mockPreferences, mockHitTester, mockAnalytics)
         tapHandler.setObjectTapListener(mockListener)
     }
 

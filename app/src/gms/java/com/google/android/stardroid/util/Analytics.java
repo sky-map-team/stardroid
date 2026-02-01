@@ -17,7 +17,6 @@ package com.google.android.stardroid.util;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.tasks.Task;
 import com.google.android.stardroid.StardroidApplication;
 import com.google.firebase.analytics.FirebaseAnalytics;
@@ -31,10 +30,6 @@ import javax.inject.Inject;
  * @author John Taylor
  */
 public class Analytics implements AnalyticsInterface {
-  /**
-   * Analytics ID associated with http://stardroid-server.appspot.com
-   */
-  private final HitBuilders.EventBuilder eventBuilder = new HitBuilders.EventBuilder();
   private FirebaseAnalytics firebaseAnalytics;
   private static final String TAG = MiscUtil.getTag(Analytics.class);
 

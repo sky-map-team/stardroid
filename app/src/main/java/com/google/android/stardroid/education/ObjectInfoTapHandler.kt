@@ -12,8 +12,10 @@
 package com.google.android.stardroid.education
 
 import android.content.SharedPreferences
+import android.os.Bundle
 import android.util.Log
 import com.google.android.stardroid.ApplicationConstants
+import com.google.android.stardroid.util.AnalyticsInterface
 import com.google.android.stardroid.util.MiscUtil
 import javax.inject.Inject
 
@@ -25,7 +27,8 @@ import javax.inject.Inject
  */
 class ObjectInfoTapHandler @Inject constructor(
     private val sharedPreferences: SharedPreferences,
-    private val celestialHitTester: CelestialHitTester
+    private val celestialHitTester: CelestialHitTester,
+    private val analytics: AnalyticsInterface
 ) {
     /**
      * Listener interface for when an object is tapped.
@@ -79,6 +82,10 @@ class ObjectInfoTapHandler @Inject constructor(
 
         if (objectInfo != null) {
             Log.d(TAG, "Found object: ${objectInfo.id}")
+            val b = Bundle()
+            b.putString(AnalyticsInterface.OBJECT_INFO_ID, objectInfo.id)
+            b.putString(AnalyticsInterface.OBJECT_INFO_TYPE, objectInfo.type.name)
+            analytics.trackEvent(AnalyticsInterface.OBJECT_INFO_VIEWED_EVENT, b)
             objectTapListener?.onObjectTapped(objectInfo)
             return true
         }

@@ -16,8 +16,6 @@ package com.google.android.stardroid.util;
 
 import android.os.Bundle;
 
-import com.google.firebase.analytics.FirebaseAnalytics;
-
 /**
  * Encapsulates interactions with Firebase Analytics, allowing it to be
  * disabled etc.
@@ -57,8 +55,8 @@ public interface AnalyticsInterface {
   String GALLERY_OPENED_LABEL = "gallery_opened";
   String TOS_OPENED_LABEL = "TOS_opened";
   String DIAGNOSTICS_OPENED_LABEL = "diagnostics_opened";
-  String SEARCH_EVENT = FirebaseAnalytics.Event.SEARCH;
-  String SEARCH_TERM = FirebaseAnalytics.Param.SEARCH_TERM;
+  String SEARCH_EVENT = "search";
+  String SEARCH_TERM = "search_term";
   String SEARCH_SUCCESS = "search_success";
   String START_EVENT = "start_up_event_ev";
   String START_EVENT_HOUR = "hour";
@@ -66,12 +64,29 @@ public interface AnalyticsInterface {
   String SESSION_LENGTH_EVENT = "session_length_ev";
   String SESSION_LENGTH_TIME_VALUE = "session_length";
 
+  // Educational card views
+  String OBJECT_INFO_VIEWED_EVENT = "object_info_viewed_ev";
+  String OBJECT_INFO_ID = "object_id";
+  String OBJECT_INFO_TYPE = "object_type";
+
+  // Calibration auto-trigger
+  String CALIBRATION_AUTO_TRIGGERED_EVENT = "calibration_auto_triggered_ev";
+  String CALIBRATION_TOAST_SHOWN_EVENT = "calibration_toast_shown_ev";
+
+  // Missing sensors
+  String NO_SENSORS_WARNING_EVENT = "no_sensors_warning_ev";
+
+  // Layer toggles
+  String LAYER_TOGGLED_EVENT = "layer_toggled_ev";
+  String LAYER_TOGGLED_NAME = "layer_name";
+  String LAYER_TOGGLED_ENABLED = "layer_enabled";
+
   void setEnabled(boolean enabled);
 
   /**
    * Tracks an event.
    *
-   * @see com.google.firebase.analytics.FirebaseAnalytics
+   * @see AnalyticsInterface
    */
   void trackEvent(String event, Bundle params);
 
