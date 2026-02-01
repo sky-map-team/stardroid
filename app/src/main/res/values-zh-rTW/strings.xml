@@ -18,7 +18,6 @@
     <string name="location_long_pref">經度</string>
     <string name="degrees">度</string>
     <string name="preferences">偏好設定</string>
-    <string name="location_no_auto">您的手機不支援自動定位功能，您可以在偏好設定中手動設定位置。</string>
     <string name="location_offer_to_enable">自動定位功能已關閉，是否要予以啟用？</string>
     <string name="location_offer_to_enable_gps_title">已關閉自動定位</string>
     <string name="location_set_auto">已將地點設定由%1$s改為%2$s</string>
@@ -426,8 +425,6 @@
     </string>
     <string name="do_not_show_again">不要再顯示這個訊息</string>
     <string name="title_activity_diagnostic">診斷</string>
-    <string name="location_rationale_title">我們為何詢問您的位置？</string>
-    <string name="location_rationale_text">您所能看到的星空是由您所在的位置而定，沒有位置資訊我們無法顯示精確的星空圖，如果不願意提供您的位置，可以在設定選單裡手動設定您附近的城市。</string>
 
     <string name="play_services_error">提醒：Google Play 服務有問題 - 自動定位可能無法運作</string>
     <string name="sensor_absent">不存在</string>

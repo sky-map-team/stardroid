@@ -17,7 +17,6 @@
     <string name="location_long_pref">Zemepisná dĺžka</string>
     <string name="degrees">Stupne</string>
     <string name="preferences">predvoľby</string>
-    <string name="location_no_auto">Povolenie na automatické určenie polohy je v telefóne zakázané. Miesto môžete nastaviť manuálne v predvoľbách. Dovtedy bude mapa nesprávna.</string>
     <string name="location_offer_to_enable">Automatické určenie polohy je zakázané. Chcete ho povoliť?</string>
     <string name="location_offer_to_enable_gps_title">Automatické určenie polohy zakázané</string>
     <string name="location_set_auto">Poloha nastavená na %2$s</string>
@@ -157,8 +156,6 @@
         v manuálnom režime, kde mapu presúvate, otáčate a zväčšujete prstami.</string>
     <string name="do_not_show_again">Túto správu viac nezobrazovať</string>
     <string name="title_activity_diagnostic">Diagnostika</string>
-    <string name="location_rationale_title">Prečo sa pýtame na vašu polohu?</string>
-    <string name="location_rationale_text">Hviezdy, ktoré môžete vidieť, závisia od toho, kde sa na Zemi nachádzate. Bez vašej polohy vám nemôžeme zobraziť presnú mapu. Ak nechcete, aby nám telefón poskytoval vašu polohu, môžete ju zadať manuálne v nastaveniach. Stačí zadať najbližšie mesto.</string>
     <string name="play_services_error">Upozornenie: chyba služieb Google Play - Automatické určovanie polohy nemusí fungovať</string>
     <string name="sensor_absent">Chýba</string>
     <string name="sensor_accuracy_unknown">Presnosť: Neznáma</string>

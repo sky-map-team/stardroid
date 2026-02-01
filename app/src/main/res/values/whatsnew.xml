@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="whats_new_text" translation_description="Description of new features in this version in html">
-<![CDATA[
-    <h1>New in version %s</h1>
-    \t • Font size changes now take effect immediately. <br/>
-    \t • Messier objects now render as icons with optional toggle in settings. <br/>
-    \t • Improved translations. <br/>
-    \t • Bugfixes. <br/>
-]]>
+    <string name="whats_new_text" translation_description="Description of new features in this version in html. Please do not change the &lt; and &gt; markup">
+&lt;h1&gt;New in version %1$s&lt;/h1&gt;
+%2$s
+
+&lt;h1&gt;Support Sky Map&lt;/h1&gt;
+&lt;p&gt;Sky Map is free and open source. If you find it useful, please consider supporting development at &lt;a href="https://github.com/sky-map-team/stardroid/?tab=readme-ov-file#support-the-project"&gt;our GitHub page&lt;/a&gt;.&lt;/p&gt;
     </string>
 </resources>

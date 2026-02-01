@@ -118,8 +118,7 @@ public class LocationController extends AbstractController implements LocationLi
         String possiblelocationProvider = locationManager.getBestProvider(locationCriteria, false);
         if (possiblelocationProvider == null) {
           Log.i(TAG, "No location provider is even available");
-          // TODO(johntaylor): should we make this a dialog?
-          Toast.makeText(activity, R.string.location_no_auto, Toast.LENGTH_LONG).show();
+          // The permission dialog flow handles this case - just fall back to preferences
           setLocationFromPrefs();
           return;
         }

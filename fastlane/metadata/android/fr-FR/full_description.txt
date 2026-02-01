@@ -1,0 +1,13 @@
+Sky Map est un planétarium portable pour votre appareil Android. Utilisez-le pour identifier les étoiles, les planètes, les nébuleuses et plus encore. Développé à l'origine sous le nom de Google Sky Map, il a maintenant été donné et open source.
+
+<h1><b>Dépannage/FAQ</b></h1> <h3><i>La carte ne bouge pas/pointe au mauvais endroit</i></h3>Assurez-vous de ne pas être passé en mode manuel. Votre téléphone possède-t-il une boussole ? Sinon, Sky Map ne peut pas vous indiquer votre orientation. Recherchez-le <a href=" http://www.gsmarena.com/ ">ici:</a> http://www.gsmarena.com/ <br /> Essayez d'étalonner votre boussole en la déplaçant en forme de 8 ou comme décrit <a href="https://www.youtube.com/watch?v=k1EPbAapaeI">ici:</a> https://www.youtube.com/watch?v=k1EPbAapaeI. <br /> Y a-t-il des aimants ou du métal à proximité qui pourraient interférer avec la boussole ? <br /> Essayez de désactiver la « correction magnétique » (dans les paramètres) et voyez si cela est plus précis.
+
+<h3><i>Pourquoi la localisation automatique n'est-elle pas prise en charge sur mon téléphone ?</i></h3>Dans Android 6, le fonctionnement des autorisations a changé. Vous devez activer le paramètre d'autorisation de localisation pour Sky Map comme décrit <a href="https://support.google.com/googleplay/answer/6270602?p=app_permissons_m">ici:</a> https://support.google.com/googleplay/answer/6270602?p=app_permissons_m
+
+<h3><i>La carte est instable</i></h3> Si vous avez un téléphone dépourvu de gyroscope, vous devez vous attendre à des saccades. Essayez de régler la vitesse et l'amortissement du capteur (dans les paramètres).
+
+<h3><i>Ai-je besoin d'une connexion Internet ?<i></h3> Non, mais certaines fonctions (comme la saisie manuelle de votre position) ne fonctionneront pas sans une connexion Internet. Vous devrez utiliser le GPS ou entrer une latitude et une longitude à la place.
+
+<h3><i>Puis-je aider à tester les dernières fonctionnalités ?</i></h3> Bien sûr ! Rejoignez notre <a href="https://play.google.com/apps/testing/com.google.android.stardroid ">programme de test bêta</a> et obtenez la dernière version. https://play.google.com/apps/testing/com.google.android.stardroid
+
+<h1><b>Retrouvez-nous ailleurs:</b></h1>⭐ <a href="https://github.com/sky-map-team/stardroid">GitHub:</a> https://github.com/sky-map-team/stardroid ⭐ <a href="https://www.facebook.com/groups/113507592330/">Facebook:</a> https://www.facebook.com/groups/113507592330/ ⭐ <a href="http://twitter.com/skymapdevs">Twitter:</a> http://twitter.com/skymapdevs

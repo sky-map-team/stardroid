@@ -4,16 +4,21 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
-import android.text.Html;
-import android.text.Spanned;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.TextView;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+
+import androidx.preference.PreferenceManager;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.StardroidApplication;
+import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
 import com.google.android.stardroid.inject.HasComponent;
 import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.MiscUtil;
@@ -52,16 +57,6 @@ public class EulaDialogFragment extends DialogFragment {
     LayoutInflater inflater = parentActivity.getLayoutInflater();
     View view = inflater.inflate(R.layout.tos_view, null);
 
-    String apologyText = parentActivity.getString(R.string.language_apology_text);
-    Spanned formattedApologyText = Html.fromHtml(apologyText);
-    TextView apologyTextView = (TextView) view.findViewById(R.id.language_apology_box_text);
-    apologyTextView.setText(formattedApologyText, TextView.BufferType.SPANNABLE);
-
-    String eulaText = parentActivity.getString(R.string.eula_text);
-    Spanned formattedEulaText = Html.fromHtml(eulaText);
-    TextView eulaTextView = (TextView) view.findViewById(R.id.eula_box_text);
-    eulaTextView.setText(formattedEulaText, TextView.BufferType.SPANNABLE);
-
     AlertDialog.Builder tosDialogBuilder = new AlertDialog.Builder(parentActivity)
         .setTitle(R.string.menu_tos)
         .setView(view);
@@ -80,6 +75,38 @@ public class EulaDialogFragment extends DialogFragment {
                 }
               });
     }
+
+    // Build the HTML content
+    String apologyText = parentActivity.getString(R.string.language_apology_text);
+    String eulaText = parentActivity.getString(R.string.eula_text);
+
+    StringBuilder contentBuilder = new StringBuilder();
+    // Add apology text as a callout if it's not empty
+    if (apologyText != null && !apologyText.trim().isEmpty()) {
+      contentBuilder.append("<p class=\"callout\">").append(apologyText).append("</p>");
+    }
+    contentBuilder.append(eulaText);
+
+    SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(parentActivity);
+    String lightMode = preferences.getString(ActivityLightLevelManager.LIGHT_MODE_KEY, "DAY");
+    String bodyClass = "NIGHT".equals(lightMode) ? " class=\"night-mode\"" : "";
+    String html = "<!DOCTYPE html><html><head>" +
+        "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">" +
+        "<link rel=\"stylesheet\" href=\"html/help.css\">" +
+        "</head><body" + bodyClass + ">" + contentBuilder.toString() + "</body></html>";
+
+    WebView webView = view.findViewById(R.id.eula_webview);
+    webView.setWebViewClient(new WebViewClient() {
+      @Override
+      public boolean shouldOverrideUrlLoading(WebView view, String url) {
+        // Open links in external browser
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+        parentActivity.startActivity(intent);
+        return true;
+      }
+    });
+    webView.loadDataWithBaseURL("file:///android_asset/", html, "text/html", "UTF-8", null);
+
     return tosDialogBuilder.create();
   }
 
@@ -99,10 +126,6 @@ public class EulaDialogFragment extends DialogFragment {
     if (resultListener != null) {
       resultListener.eulaRejected();
     }
-  }
-
-  private String getVersionName() {
-    return ((StardroidApplication) parentActivity.getApplication()).getVersionName();
   }
 
   @Override

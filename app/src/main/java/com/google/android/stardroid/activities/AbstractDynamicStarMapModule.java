@@ -3,6 +3,7 @@ package com.google.android.stardroid.activities;
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.content.Context;
+import android.content.res.AssetManager;
 import android.media.MediaPlayer;
 import android.os.Handler;
 import android.util.Log;
@@ -13,7 +14,7 @@ import android.view.animation.AnimationUtils;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
 import com.google.android.stardroid.activities.dialogs.HelpDialogFragment;
-import com.google.android.stardroid.activities.dialogs.LocationPermissionRationaleFragment;
+import com.google.android.stardroid.activities.dialogs.LocationPermissionDeniedDialogFragment;
 import com.google.android.stardroid.activities.dialogs.MultipleSearchResultsDialogFragment;
 import com.google.android.stardroid.activities.dialogs.NoSearchResultsDialogFragment;
 import com.google.android.stardroid.activities.dialogs.NoSensorsDialogFragment;
@@ -57,6 +58,12 @@ public class AbstractDynamicStarMapModule {
   @PerActivity
   Context provideActivityContext() {
     return activity;
+  }
+
+  @Provides
+  @PerActivity
+  AssetManager provideAssetManager() {
+    return activity.getAssets();
   }
 
   @Provides
@@ -141,7 +148,7 @@ public class AbstractDynamicStarMapModule {
 
   @Provides
   @PerActivity
-  LocationPermissionRationaleFragment provideLocationFragment() {
-    return new LocationPermissionRationaleFragment();
+  LocationPermissionDeniedDialogFragment provideLocationPermissionDeniedFragment() {
+    return new LocationPermissionDeniedDialogFragment();
   }
 }

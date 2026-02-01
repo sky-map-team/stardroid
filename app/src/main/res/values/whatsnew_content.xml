@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
+    <string name="whats_new_content">
+<![CDATA[
+<h2>Educational Info Cards</h2>
+    Tap on celestial objects in manual mode to see educational info cards with descriptions, scientific data (distance, size, magnitude, spectral class), and fun facts. Covers planets, bright stars, and Messier objects. Available in English,
+    Portuguese, and Spanish.
+
+<h2>Improved Location Permission Experience</h2>
+    When location permission isn\'t granted on first launch, you now see a clear dialog with options to grant permission, enter your location manually, or dismiss and use the default. Replaces the old truncated toast message that was easy to miss.
+
+<h2>Fix for Upside-Down Labels</h2>
+    Fixed a bug reported by some users where sky labels appeared upside down due to a sensor orientation issue.
+
+<h2>Night Mode for Help Pages</h2>
+    The in-app help pages now respect night mode, so they won\'t blind you when you\'re out stargazing.
+
+<h2>Refreshed Help Pages</h2>
+    Help content has been restyled and updated, including an updated acknowledgments section recognizing open source contributors.
+
+<h2>Translation Updates</h2>
+<ul>
+  <li>Updated Polish translation</li>
+  <li>Fixed Greek translation</li>
+  <li>Added missing Portuguese translations</li>
+</ul>
+    ]]>
+    </string>
+</resources>
