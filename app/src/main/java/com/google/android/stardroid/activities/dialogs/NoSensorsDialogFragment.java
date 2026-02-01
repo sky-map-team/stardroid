@@ -3,7 +3,6 @@ package com.google.android.stardroid.activities.dialogs;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -23,7 +22,7 @@ import javax.inject.Inject;
  * No sensors dialog fragment.
  * Created by johntaylor on 4/9/16.
  */
-public class NoSensorsDialogFragment extends DialogFragment {
+public class NoSensorsDialogFragment extends com.google.android.stardroid.activities.dialogs.DialogFragment {
   private static final String TAG = MiscUtil.getTag(NoSensorsDialogFragment.class);
   @Inject Activity parentActivity;
   @Inject SharedPreferences preferences;

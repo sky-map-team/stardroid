@@ -1,7 +1,8 @@
 package com.google.android.stardroid.activities;
 
 import android.app.Activity;
-import android.app.FragmentManager;
+
+import androidx.fragment.app.FragmentManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
@@ -55,6 +56,6 @@ public class SplashScreenModule {
   @Provides
   @PerActivity
   FragmentManager provideFragmentManager() {
-    return activity.getFragmentManager();
+    return activity.getSupportFragmentManager();
   }
 }

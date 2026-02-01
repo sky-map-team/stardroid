@@ -14,7 +14,7 @@
 
 package com.google.android.stardroid.activities;
 
-import android.app.FragmentManager;
+import androidx.fragment.app.FragmentManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
