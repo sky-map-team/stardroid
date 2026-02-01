@@ -60,7 +60,11 @@ platform :android do
     upload_to_play_store(
       track: 'alpha',
       track_promote_to: 'beta',
-      rollout: '0.1' # Start with a 10% rollout
+      rollout: '0.1', # Start with a 10% rollout
+      skip_upload_metadata: true,
+      skip_upload_images: true,
+      skip_upload_screenshots: true,
+      skip_upload_changelogs: true
     )
   end
 
@@ -70,7 +74,11 @@ platform :android do
     upload_to_play_store(
       track: 'beta',
       track_promote_to: 'production',
-      rollout: '0.1' # Start with a 10% rollout
+      rollout: '0.1', # Start with a 10% rollout
+      skip_upload_metadata: true,
+      skip_upload_images: true,
+      skip_upload_screenshots: true,
+      skip_upload_changelogs: true
     )
   end
 
