@@ -117,7 +117,7 @@ Capture screenshots for Play Store. Specify --device_type=sevenInch for a tablet
 [bundle exec] fastlane android upload_metadata
 ```
 
-Just upload the store metadata.
+Upload store metadata. Options: whatsnew:true (include changelogs), imgs:true (include screenshots/images), all:true (everything), store:false (skip store metadata).
 
 ----
 
