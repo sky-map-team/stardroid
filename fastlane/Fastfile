@@ -1,6 +1,8 @@
 default_platform(:android)
 
 platform :android do
+  GRADLE_FILE = "app/build.gradle"
+
   desc "Run unit tests and linting"
   lane :test do
     gradle(task: "test")
@@ -9,14 +11,14 @@ platform :android do
 
   desc "Increment version code"
   lane :increment_version_code do
-    android_set_version_code(gradle_file: "app/build.gradle")
+    android_set_version_code(gradle_file: GRADLE_FILE)
   end
 
   desc "Set a specific version name (e.g., fastlane bump_version name:\"1.5.0\")"
   lane :bump_version do |options|
     android_set_version_name(
       version_name: options[:name],
-      gradle_file: "app/build.gradle"
+      gradle_file: GRADLE_FILE
     )
   end
 
@@ -33,13 +35,20 @@ platform :android do
   lane :internal do
     increment_version_code
     build
+    v_code = android_get_version_code(gradle_file: GRADLE_FILE)
+    v_name = android_get_version_name(gradle_file: GRADLE_FILE)
+    # This keeps your legacy APKs active for older devices
+    older_versions = [1115, 1202]
+
     upload_to_play_store(
       track: "internal",
       apk: "app/build/outputs/apk/gms/release/app-gms-release.apk",
       skip_upload_metadata: true,
       skip_upload_images: true,
       skip_upload_screenshots: true,
-      changes_not_sent_for_review: true
+      changes_not_sent_for_review: true,
+      version_name: "#{v_name} (#{v_code})",
+      version_codes_to_retain: older_versions,
     )
   end
 
