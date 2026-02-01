@@ -23,7 +23,12 @@ object ApplicationConstants {
   @JvmField
   val INITIAL_SOUTH = Vector3(0f, -1f, 0f)
 
-  /** Default value for 'down' in phone coords when the app starts  */
+  /** Default value for 'down' in phone coords when the app starts.
+   *
+   * Until we know any better assume the user is holding the phone
+   * portrait orientation at about 45 degrees between horizontal
+   * and vertical.
+   */
   @JvmField
   val INITIAL_DOWN = Vector3(0f, -4f, -4f)
 
