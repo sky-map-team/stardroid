@@ -90,10 +90,13 @@ public class SensorOrientationController extends AbstractController
 
     if (manager != null) {
       if (!sharedPreferences.getBoolean(ApplicationConstants.SHARED_PREFERENCE_DISABLE_GYRO,
-          false)) {
+          false) && rotationSensor != null) {
         Log.d(TAG, "Using rotation sensor");
         manager.registerListener(this, rotationSensor, SensorManager.SENSOR_DELAY_GAME);
       } else {
+        if (rotationSensor == null) {
+          Log.w(TAG, "Rotation sensor not available, falling back to classic sensors");
+        }
         // TODO(jontayler): remove this code once enough it's used in few enough phones.
         Log.d(TAG, "Using classic sensors");
         Log.d(TAG, "Exponentially weighted smoothers used");

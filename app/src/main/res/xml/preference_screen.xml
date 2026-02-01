@@ -1,67 +1,115 @@
 <PreferenceScreen
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:key="stardroid.preferences">
-  <PreferenceCategory>
-    <PreferenceScreen android:title="@string/location_prefs">
-      <PreferenceCategory>
-        <CheckBoxPreference
-            android:defaultValue="false"
-            android:title="@string/force_gps_pref"
-            android:summary="@string/force_gps_pref_hint"
-            android:key="force_gps"/>
-        <CheckBoxPreference
-            android:defaultValue="false"
-            android:title="@string/no_use_gps_pref"
-            android:summary="@string/no_use_gps_pref_hint"
-            android:key="no_auto_locate"/>
-        <!-- Set the default location to Galileo's birthplace -->
-        <EditTextPreference
-            android:key="location"
-            android:layout="?android:attr/preferenceLayoutChild"
-            android:title="@string/location_placename"
-            android:summary="@string/location_placename_hint"
-            android:dependency="no_auto_locate"
-            android:defaultValue="" />
-        <EditTextPreference
-            android:key="latitude"
-            android:layout="?android:attr/preferenceLayoutChild"
-            android:title="@string/location_lat_pref"
-            android:dependency="no_auto_locate"
-            android:summary="@string/degrees"
-            android:inputType="number|numberSigned|numberDecimal"
-            android:defaultValue="0"/>
-        <EditTextPreference
-            android:key="longitude"
-            android:layout="?android:attr/preferenceLayoutChild"
-            android:title="@string/location_long_pref"
-            android:dependency="no_auto_locate"
-            android:summary="@string/degrees"
-            android:inputType="number|numberSigned|numberDecimal"
-            android:defaultValue="0"/>
-        <CheckBoxPreference
-            android:defaultValue="true"
-            android:title="@string/use_magnetic_correction"
-            android:key="use_magnetic_correction"/>
-      </PreferenceCategory>
-    </PreferenceScreen>
+
+  <!-- Location Settings -->
+  <PreferenceCategory android:title="@string/location_prefs">
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:title="@string/force_gps_pref"
+        android:summary="@string/force_gps_pref_hint"
+        android:key="force_gps"/>
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:title="@string/no_use_gps_pref"
+        android:summary="@string/no_use_gps_pref_hint"
+        android:key="no_auto_locate"/>
+    <!-- Set the default location to Galileo's birthplace -->
+    <EditTextPreference
+        android:key="location"
+        android:layout="?android:attr/preferenceLayoutChild"
+        android:title="@string/location_placename"
+        android:summary="@string/location_placename_hint"
+        android:dependency="no_auto_locate"
+        android:defaultValue="" />
+    <EditTextPreference
+        android:key="latitude"
+        android:layout="?android:attr/preferenceLayoutChild"
+        android:title="@string/location_lat_pref"
+        android:dependency="no_auto_locate"
+        android:summary="@string/degrees"
+        android:inputType="number|numberSigned|numberDecimal"
+        android:defaultValue="0"/>
+    <EditTextPreference
+        android:key="longitude"
+        android:layout="?android:attr/preferenceLayoutChild"
+        android:title="@string/location_long_pref"
+        android:dependency="no_auto_locate"
+        android:summary="@string/degrees"
+        android:inputType="number|numberSigned|numberDecimal"
+        android:defaultValue="0"/>
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:title="@string/use_magnetic_correction"
+        android:key="use_magnetic_correction"/>
+  </PreferenceCategory>
+
+  <!-- Appearance Settings -->
+  <PreferenceCategory android:title="@string/appearance_prefs">
+    <ListPreference
+        android:key="auto_dimness"
+        android:title="@string/auto_dimness_preference"
+        android:entryValues="@array/auto_dim_enums"
+        android:entries="@array/auto_dim_texts"
+        android:defaultValue="SYSTEM" />
+    <ListPreference
+        android:key="font_size"
+        android:title="@string/font_size_preference"
+        android:summary="@string/font_size_preference_description"
+        android:entryValues="@array/font_size_enums"
+        android:entries="@array/font_size_texts"
+        android:defaultValue="MEDIUM" />
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:title="@string/show_messier_images"
+        android:summary="@string/show_messier_images_summary"
+        android:key="show_messier_images"/>
+  </PreferenceCategory>
+
+  <!-- Sensor Settings -->
+  <PreferenceCategory android:title="@string/sensor_prefs">
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:title="@string/disable_gyro_preference_title"
+        android:summary="@string/disable_gyro_preference_summary"
+        android:key="disable_gyro"/>
+    <ListPreference
+        android:key="sensor_speed"
+        android:title="@string/sensor_speed"
+        android:entryValues="@array/sensor_speed_values"
+        android:entries="@array/sensor_speed"
+        android:defaultValue="STANDARD" />
+    <ListPreference
+        android:key="sensor_damping"
+        android:title="@string/sensor_damping"
+        android:entryValues="@array/sensor_damping_values"
+        android:entries="@array/sensor_damping"
+        android:defaultValue="EXTRA HIGH" />
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:title="@string/sensor_reverse_preference_title"
+        android:summary="@string/sensor_reverse_preference_summary"
+        android:key="reverse_magnetic_z"/>
+    <ListPreference
+        android:key="viewing_direction"
+        android:title="@string/rotate_horizon_preference_title"
+        android:summary="@string/rotate_horizon_preference_summary"
+        android:entryValues="@array/viewing_direction_values"
+        android:entries="@array/viewing_direction"
+        android:defaultValue="STANDARD" />
+  </PreferenceCategory>
+
+  <!-- General Settings -->
+  <PreferenceCategory android:title="@string/other_prefs">
+      <CheckBoxPreference
+          android:defaultValue="true"
+          android:key="show_object_info_on_tap"
+          android:summary="@string/show_object_info_pref_summary"
+          android:title="@string/show_object_info_pref_title" />
     <CheckBoxPreference
         android:defaultValue="true"
         android:title="@string/use_sound_effects"
         android:key="sound_effects"/>
-    <PreferenceScreen android:key="appearance_prefs" android:title="@string/appearance_prefs">
-      <ListPreference
-            android:key="auto_dimness"
-            android:title="@string/auto_dimness_preference"
-            android:entryValues="@array/auto_dim_enums"
-            android:entries="@array/auto_dim_texts"
-            android:defaultValue="SYSTEM" />
-      <ListPreference
-          android:key="font_size"
-          android:title="@string/font_size_preference"
-          android:entryValues="@array/font_size_enums"
-          android:entries="@array/font_size_texts"
-          android:defaultValue="MEDIUM" />
-    </PreferenceScreen>
     <!-- Keep in sync with value in utils.Analytics -->
     <CheckBoxPreference
         android:defaultValue="@string/analytics_enabled"
@@ -69,37 +117,5 @@
         android:summary="@string/enable_analytics_desc"
         android:key="enable_analytics"/>
   </PreferenceCategory>
-  <PreferenceScreen android:key="sensor_prefs" android:title="@string/sensor_prefs">
-    <PreferenceCategory>
-      <CheckBoxPreference
-          android:defaultValue="false"
-          android:title="@string/disable_gyro_preference_title"
-          android:summary="@string/disable_gyro_preference_summary"
-          android:key="disable_gyro"/>
-      <ListPreference
-          android:key="sensor_speed"
-          android:title="@string/sensor_speed"
-          android:entryValues="@array/sensor_speed_values"
-          android:entries="@array/sensor_speed"
-          android:defaultValue="STANDARD" />
-      <ListPreference
-          android:key="sensor_damping"
-          android:title="@string/sensor_damping"
-          android:entryValues="@array/sensor_damping_values"
-          android:entries="@array/sensor_damping"
-          android:defaultValue="EXTRA HIGH" />
-      <CheckBoxPreference
-          android:defaultValue="false"
-          android:title="@string/sensor_reverse_preference_title"
-          android:summary="@string/sensor_reverse_preference_summary"
-          android:key="reverse_magnetic_z"/>
-      <ListPreference
-          android:key="viewing_direction"
-          android:title="@string/rotate_horizon_preference_title"
-          android:summary="@string/rotate_horizon_preference_summary"
-          android:entryValues="@array/viewing_direction_values"
-          android:entries="@array/viewing_direction"
-          android:defaultValue="STANDARD" />
-    </PreferenceCategory>
-  </PreferenceScreen>
+
 </PreferenceScreen>

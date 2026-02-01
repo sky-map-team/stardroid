@@ -1,0 +1,14 @@
+# The package name of your app
+app_package_name('com.google.android.stardroid')
+
+# The package name of your test suite
+tests_package_name('com.google.android.stardroid.test')
+
+# Crucial for modern Android projects
+test_instrumentation_runner('androidx.test.runner.AndroidJUnitRunner')
+
+# The locales you want to capture (matches your metadata folders)
+locales(['en-US', 'fr-FR', 'es-ES'])
+
+app_apk_path('app/build/outputs/apk/debug/app-debug.apk')
+tests_apk_path('app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk')

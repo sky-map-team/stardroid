@@ -18,7 +18,6 @@
     <string name="location_long_pref">طول جغرافیایی</string>
     <string name="degrees" translation_description="angular degrees">درجه</string>
     <string name="preferences">تنظیمات</string>
-    <string name="location_no_auto">دسترسی خودکار به موقعیت مکانی در گوشی‌تان غیرفعال شده است. شما می‌توانید مکان را به صورت دستی در تنظیمات وارد کنید. بدون تعیین موقعیت، نقشه آسمان درست نمایش داده نمی‌شود.</string>
     <string name="location_offer_to_enable">تشخیص خودکار مکان غیرفعال شده. می‌خواهید فعالش کنید؟</string>
     <string name="location_offer_to_enable_gps_title">تشخیص خودکار مکان، غیرفعال شده است</string>
     <string name="location_set_auto">مکان از %1$s به %2$s تنظیم شد</string>
@@ -425,8 +424,6 @@
     </string>
     <string name="do_not_show_again">دیگر این پیام را نمایش نده</string>
     <string name="title_activity_diagnostic">عیب یابی</string>
-    <string name="location_rationale_title">چرا مکان شما مهم است؟</string>
-    <string name="location_rationale_text">نمای ستاره‌هایی که می‌توانید ببینید، به مکان شما بستگی دارد. بدون موقعیت مکانی شما نمی‌توانیم نقشه دقیقی به شما نشان دهیم. اگر نمی‌خواهید تلفن شما موقعیت مکانی خود را به ما بدهد، می‌توانید آن را به صورت دستی در تنظیمات وارد کنید؛ شما کافی است نزدیک‌ترین شهر را درج کنید.</string>
     <string name="play_services_error">توجه: خطای خدمات گوگل پلی؛ موقعیت خودکار ممکن است درست کار نکند</string>
     <string name="sensor_absent">غایب</string>
     <string name="sensor_accuracy_unknown">دقت: نامعلوم</string>

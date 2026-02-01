@@ -40,8 +40,8 @@ abstract class AbstractFileBasedLayer(
     private val assetManager: AssetManager,
     resources: Resources,
     private val fileName: String,
-    preferences: SharedPreferences
-) : AbstractRenderablesLayer(resources, false, preferences) {
+    private val prefs: SharedPreferences
+) : AbstractRenderablesLayer(resources, false, prefs) {
     private val fileSources: MutableList<AstronomicalRenderable> = ArrayList()
     @Synchronized
     override fun initialize() {
@@ -57,6 +57,7 @@ abstract class AbstractFileBasedLayer(
 
     private fun readSourceFile(sourceFilename: String) {
         Log.d(TAG, "Loading Proto File: $sourceFilename...")
+        fileSources.clear()  // Clear old sources before re-reading
         var inputStream: InputStream? = null
         try {
             inputStream = assetManager.open(sourceFilename, AssetManager.ACCESS_BUFFER)
@@ -66,7 +67,8 @@ abstract class AbstractFileBasedLayer(
                 fileSources.add(
                     ProtobufAstronomicalRenderable(
                         proto,
-                        resources
+                        resources,
+                        prefs  // Pass preferences
                     )
                 )
             }

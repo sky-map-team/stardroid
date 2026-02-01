@@ -1,0 +1,13 @@
+Sky Map은 안드로이드 기기에 탑재된 휴대용 천문관입니다. 이를 사용하여 별, 행성, 성운 등을 식별하세요. 원래는 Google Sky Map으로 개발되었지만, 현재는 기부되어 오픈 소스로 공개되었습니다.
+
+<h1><b>문제 해결/FAQ</b></h1> <h3><i>지도가 움직이지 않거나 잘못된 위치를 가리키지 않습니다.</i></h3>수동 모드로 전환하지 않았는지 확인하세요. 당신의 휴대전화에 나침반이 있나요? 그렇지 않으면, 별지도에서 당신의 방향을 알 수 없습니다. <a href=" http://www.gsmarena.com/ ">여기</a> http://www.gsmarena.com/에서 확인하세요. <br /> 나침반을 8자 모양으로 움직이거나 <a href="https://www.youtube.com/watch?v=k1EPbAapaeI">여기</a> https://www.youtube.com/watch?v=k1EPbAapaeI에서 설명한 대로 움직여 나침반을 보정해보세요. <br /> 나침반에 영향을 줄 수 있는 자석이나 금속이 근처에 있나요? <br /> 설정에서 "자기 보정"을 끄고 정확도가 높아지는지 확인해보세요.
+
+<h3><i>내 휴대폰에서 자동 위치 기능이 지원되지 않는 이유는 무엇인가요?</i></h3>Android 6에서는 권한 작동 방식이 변경되었습니다. <a href="https://support.google.com/googleplay/answer/6270602?p=app_permissons_m">여기</a>에서 설명한 대로 Sky Map에 대한 위치 권한 설정을 활성화해야 합니다. https://support.google.com/googleplay/answer/6270602?p=app_permissons_m
+
+<h3><i>지도가 떨립니다.</i></h3> 자이로가 없는 휴대폰을 사용하는 경우 약간의 떨림은 예상할 수 있습니다. 센서 속도와 댐핑을 조정해보세요 (설정에서).
+
+<h3><i>인터넷 연결이 필요한가요?<i></h3> 아니요, 하지만 일부 기능 (예: 위치를 수동으로 입력하는 기능)은 인터넷 연결이 없으면 작동하지 않습니다. 대신 GPS를 사용하거나 위도와 경도를 입력해야 합니다.
+
+<h3><i>최신 기능 테스트에 도움을 드릴 수 있나요?</i></h3> 물론입니다! <a href="https://play.google.com/apps/testing/com.google.android.stardroid ">베타 테스트 프로그램</a>에 참여하여 최신 버전을 받아보세요. https://play.google.com/apps/testing/com.google.android.stardroid
+
+<h1><b>다른 곳에서 찾아보세요:</b></h1>⭐ <a href="https://github.com/sky-map-team/stardroid">GitHub:</a> https://github.com/sky-map-team/stardroid ⭐ <a href="https://www.facebook.com/groups/113507592330/">Facebook:</a> https://www.facebook.com/groups/113507592330/ ⭐ <a href="http://twitter.com/skymapdevs">Twitter:</a> http://twitter.com/skymapdevs
