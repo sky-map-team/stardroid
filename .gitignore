@@ -27,7 +27,7 @@ out/
 *.jks
 *.p12
 *credentials*
-google-services.json*
+*google-services.json*
 *no-checkin*
 no-checkin.properties
 

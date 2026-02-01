@@ -20,7 +20,8 @@ import javax.inject.Inject
 class SensorAccuracyMonitor @Inject internal constructor(
   sensorManager: SensorManager?, context: Context,
   sharedPreferences: SharedPreferences,
-  toaster: Toaster
+  toaster: Toaster,
+  private val analytics: AnalyticsInterface
 ) : SensorEventListener {
   private val sensorManager: SensorManager?
   private val compassSensor: Sensor?
@@ -80,8 +81,10 @@ class SensorAccuracyMonitor @Inject internal constructor(
       CompassCalibrationActivity.DONT_SHOW_CALIBRATION_DIALOG, false
     )
     if (dontShowDialog) {
+      analytics.trackEvent(AnalyticsInterface.CALIBRATION_TOAST_SHOWN_EVENT, null)
       toaster.toastLong("Inaccurate compass - please calibrate")
     } else {
+      analytics.trackEvent(AnalyticsInterface.CALIBRATION_AUTO_TRIGGERED_EVENT, null)
       val intent = Intent(context, CompassCalibrationActivity::class.java)
       intent.putExtra(CompassCalibrationActivity.HIDE_CHECKBOX, false)
       intent.putExtra(CompassCalibrationActivity.AUTO_DISMISSABLE, true)

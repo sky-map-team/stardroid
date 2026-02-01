@@ -293,6 +293,7 @@ public class DynamicStarMapActivity extends InjectableActivity
         if (!sharedPreferences
             .getBoolean(ApplicationConstants.NO_WARN_ABOUT_MISSING_SENSORS, false)) {
           Log.d(TAG, "showing no sensor dialog");
+          analytics.trackEvent(AnalyticsInterface.NO_SENSORS_WARNING_EVENT, null);
           noSensorsDialogFragment.show(fragmentManager, "No sensors dialog");
           // First time, force manual mode.
           sharedPreferences.edit().putBoolean(ApplicationConstants.AUTO_MODE_PREF_KEY, false)
@@ -578,7 +579,15 @@ public class DynamicStarMapActivity extends InjectableActivity
         break;
       case ApplicationConstants.VIEW_MODE_PREFKEY:
         updateViewDirectionMode(model, sharedPreferences);
+        break;
       default:
+        if (key.startsWith("source_provider.")) {
+          boolean enabled = sharedPreferences.getBoolean(key, true);
+          Bundle layerBundle = new Bundle();
+          layerBundle.putString(AnalyticsInterface.LAYER_TOGGLED_NAME, key);
+          layerBundle.putBoolean(AnalyticsInterface.LAYER_TOGGLED_ENABLED, enabled);
+          analytics.trackEvent(AnalyticsInterface.LAYER_TOGGLED_EVENT, layerBundle);
+        }
         return;
     }
   }
