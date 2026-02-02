@@ -697,6 +697,8 @@ public class DynamicStarMapActivity extends InjectableActivity
     applyWindowInsets(searchControlBar, true, false);
 
     ButtonLayerView providerButtons = (ButtonLayerView) findViewById(R.id.layer_buttons_control);
+    // Push the layer buttons below the status bar so they don't overlap on edge-to-edge devices.
+    //applyWindowInsets(providerButtons, true, true);
 
     int numChildren = providerButtons.getChildCount();
     List<View> buttonViews = new ArrayList<>();
