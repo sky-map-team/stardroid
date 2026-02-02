@@ -32,7 +32,7 @@ import javax.inject.Inject
  * Use the [newInstance] factory method to create an instance with the required ObjectInfo.
  * This ensures the data survives configuration changes (e.g., screen rotation).
  */
-class ObjectInfoDialogFragment : androidx.fragment.app.DialogFragment() {
+class ObjectInfoDialogFragment : DialogFragment() {
 
     @Inject
     lateinit var parentActivity: Activity
