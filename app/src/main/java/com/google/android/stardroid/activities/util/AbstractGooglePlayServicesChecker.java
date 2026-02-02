@@ -2,7 +2,7 @@ package com.google.android.stardroid.activities.util;
 
 import android.Manifest;
 import android.app.Activity;
-import android.app.FragmentManager;
+import androidx.fragment.app.FragmentManager;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import androidx.core.app.ActivityCompat;

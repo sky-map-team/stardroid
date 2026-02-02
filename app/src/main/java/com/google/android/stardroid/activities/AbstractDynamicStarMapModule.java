@@ -1,7 +1,8 @@
 package com.google.android.stardroid.activities;
 
 import android.app.Activity;
-import android.app.FragmentManager;
+
+import androidx.fragment.app.FragmentManager;
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.media.MediaPlayer;
@@ -143,7 +144,7 @@ public class AbstractDynamicStarMapModule {
   @Provides
   @PerActivity
   FragmentManager provideFragmentManager() {
-    return activity.getFragmentManager();
+    return activity.getSupportFragmentManager();
   }
 
   @Provides
