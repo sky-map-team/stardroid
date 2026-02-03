@@ -6,6 +6,7 @@ This section documents Sky Map's OpenGL ES 2.0 rendering pipeline.
 
 | Specification | Description |
 |--------------|-------------|
+| [Abstraction](abstraction.md) | **NEW:** Backend-agnostic renderer interface |
 | [Pipeline](pipeline.md) | Layer → Primitives → OpenGL flow |
 | [Primitives](primitives.md) | Points, lines, labels, images |
 | [Managers](managers.md) | Object managers and rendering |

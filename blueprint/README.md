@@ -15,9 +15,11 @@ The blueprint answers:
 | Spec | Purpose | Status |
 |------|---------|--------|
 | [core-domain.md](core-domain.md) | Astronomical calculations, coordinate systems, sensor fusion - the stable intellectual core | TODO |
-| [rendering-abstraction.md](rendering-abstraction.md) | Graphics abstraction layer - enables swapping OpenGL for Vulkan/AR | TODO |
+| [rendering-abstraction.md](rendering-abstraction.md) | Graphics abstraction layer - enables swapping OpenGL for Vulkan/AR | IN PROGRESS |
 | [ar-vulkan-target.md](ar-vulkan-target.md) | AR/Vulkan target architecture design | TODO |
 | [migration-roadmap.md](migration-roadmap.md) | Step-by-step migration from current to target | TODO |
+
+See also: [../rendering/abstraction.md](../rendering/abstraction.md) for implementation details.
 
 ## Key Principles
 
