@@ -156,10 +156,10 @@ Objects rendered back-to-front by depth:
 
 | File | Purpose |
 |------|---------|
-| `SkyRenderer.java` | Main OpenGL renderer |
-| `RendererController.java` | Update queue management |
-| `PointObjectManager.java` | Star/planet rendering |
-| `PolyLineObjectManager.java` | Line rendering |
-| `LabelObjectManager.java` | Text rendering |
-| `ImageObjectManager.java` | Image rendering |
-| `TextureManager.java` | Texture loading |
+| `SkyRenderer.kt` | Main OpenGL renderer |
+| `RendererController.kt` | Update queue management |
+| `PointObjectManager.kt` | Star/planet rendering |
+| `PolyLineObjectManager.kt` | Line rendering |
+| `LabelObjectManager.kt` | Text rendering |
+| `ImageObjectManager.kt` | Image rendering |
+| `TextureManager.kt` | Texture loading |

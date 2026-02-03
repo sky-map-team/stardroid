@@ -158,10 +158,10 @@ ApplicationComponent getApplicationComponent() {
 ## Module Structure
 
 ```
-com.google.android.stardroid.inject/
-├── HasComponent.java           # Component access interface
-├── PerActivity.java            # Activity scope annotation
+com.stardroid.awakening.inject/
+├── HasComponent.kt             # Component access interface
+├── PerActivity.kt              # Activity scope annotation
 └── modules/
-    ├── ApplicationModule.java   # App-wide providers
-    └── AbstractDynamicStarMapModule.java  # Star map providers
+    ├── ApplicationModule.kt     # App-wide providers
+    └── DynamicStarMapModule.kt  # Star map providers
 ```

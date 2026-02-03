@@ -13,17 +13,17 @@ This section documents Sky Map's build system and configuration.
 
 | Tool | Version | Purpose |
 |------|---------|---------|
-| Gradle | 8.x | Build automation |
-| Android Gradle Plugin | 8.x | Android build |
-| Kotlin | 1.9.x | Kotlin compilation |
+| Gradle | 8.11.x | Build automation |
+| Android Gradle Plugin | 8.7.x | Android build |
+| Kotlin | 2.1.x | Kotlin compilation |
 | FlatBuffers | 24.x | FlatBuffers code generation |
 
 ## Project Structure
 
 ```
-stardroid/
+stardroidawakening/
 ├── app/                    # Main Android application
-│   ├── build.gradle       # App build config
+│   ├── build.gradle.kts   # App build config (Kotlin DSL)
 │   └── src/
 │       ├── main/          # Common source
 │       ├── gms/           # Google Play Services flavor
@@ -31,13 +31,13 @@ stardroid/
 │       ├── test/          # Unit tests
 │       └── androidTest/   # Instrumented tests
 ├── datamodel/              # FlatBuffers data module
-│   └── build.gradle       # FlatBuffers build config
-├── tools/                  # Data generation
-│   ├── build.gradle       # Tools build config
-│   ├── generate.sh        # ASCII generation script
-│   └── binary.sh          # Binary conversion script
-├── build.gradle           # Root build config
-├── settings.gradle        # Module settings
+│   └── build.gradle.kts   # FlatBuffers build config
+├── tools/                  # Data generation (Kotlin)
+│   ├── build.gradle.kts   # Tools build config
+│   ├── generate.sh        # JSON generation script
+│   └── binary.sh          # FlatBuffers binary conversion
+├── build.gradle.kts       # Root build config
+├── settings.gradle.kts    # Module settings
 └── gradle.properties      # Build properties
 ```
 
@@ -98,14 +98,14 @@ stardroid/
 
 ## Build Configuration
 
-### Root build.gradle
+### Root build.gradle.kts
 
-```groovy
+```kotlin
 plugins {
-    id 'com.android.application' version '8.x' apply false
-    id 'com.android.library' version '8.x' apply false
-    id 'org.jetbrains.kotlin.android' version '1.9.x' apply false
-    }
+    id("com.android.application") version "8.x" apply false
+    id("com.android.library") version "8.x" apply false
+    id("org.jetbrains.kotlin.android") version "2.1.x" apply false
+}
 ```
 
 ### gradle.properties

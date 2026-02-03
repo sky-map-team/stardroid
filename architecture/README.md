@@ -116,7 +116,7 @@ Layers publish updates via `UpdateType`:
 | File | Purpose |
 |------|---------|
 | `StardroidApplication.kt` | App entry point, Dagger initialization |
-| `DynamicStarMapActivity.java` | Main star map UI |
-| `AstronomerModel.java` | Coordinate transformation |
-| `SkyRenderer.java` | OpenGL rendering |
+| `DynamicStarMapActivity.kt` | Main star map UI |
+| `AstronomerModel.kt` | Coordinate transformation |
+| `SkyRenderer.kt` | OpenGL rendering |
 | `LayerManager.kt` | Layer visibility management |

@@ -7,7 +7,7 @@ This document describes the complete rendering pipeline from astronomical data t
 ```
 ┌────────────────────────────────────────────────────────────────────┐
 │  1. DATA SOURCES                                                    │
-│     Binary protobuf files, ephemeris calculations, network data    │
+│     FlatBuffers binary files, ephemeris calculations, network data │
 └─────────────────────────────┬──────────────────────────────────────┘
                               │
                               ▼
@@ -57,43 +57,44 @@ This document describes the complete rendering pipeline from astronomical data t
 
 ### File-Based Data
 
-Binary protobuf files loaded from assets:
+FlatBuffers binary files loaded from assets (zero-copy):
 
-```java
-// Asset loading
-InputStream stream = assetManager.open("stars.binary");
-AstronomicalSourcesProto sources = AstronomicalSourcesProto.parseFrom(stream);
+```kotlin
+// Asset loading - zero-copy access
+val bytes = assetManager.open("stars.bin").use { it.readBytes() }
+val buffer = ByteBuffer.wrap(bytes)
+val sources = AstronomicalSources.getRootAsAstronomicalSources(buffer)
 ```
 
 ### Computed Data
 
 Ephemeris calculations for solar system:
 
-```java
+```kotlin
 // Planet position calculation
-double julianDate = TimeUtils.toJulianDate(currentTime);
-GeocentricCoordinates position = planet.calculatePosition(julianDate);
+val julianDate = TimeUtils.toJulianDate(currentTime)
+val position = planet.calculatePosition(julianDate)
 ```
 
 ### Network Data
 
 Real-time data from internet:
 
-```java
+```kotlin
 // ISS TLE fetch
-String tleData = httpClient.get("https://api.wheretheiss.at/...");
-OrbitalElements elements = TleParser.parse(tleData);
+val tleData = httpClient.get("https://api.wheretheiss.at/...")
+val elements = TleParser.parse(tleData)
 ```
 
 ## Stage 2: Layers
 
 Layers organize data into logical groups:
 
-```java
-public interface Layer {
-    void initialize();
-    void registerWithRenderer(RendererController controller);
-    List<? extends AstronomicalRenderable> getRenderables();
+```kotlin
+interface Layer {
+    fun initialize()
+    fun registerWithRenderer(controller: RendererController)
+    fun getRenderables(): List<AstronomicalRenderable>
 }
 ```
 
@@ -101,7 +102,7 @@ public interface Layer {
 
 | Type | Example | Data Source |
 |------|---------|-------------|
-| File-based | StarsLayer | Binary protobuf |
+| File-based | StarsLayer | FlatBuffers binary |
 | Computed | GridLayer | Mathematical generation |
 | Network | IssLayer | TLE orbital data |
 
@@ -109,31 +110,39 @@ public interface Layer {
 
 Each source represents a celestial object:
 
-```java
-public interface AstronomicalSource {
-    GeocentricCoordinates getSearchLocation();
-    List<String> getNames();
+```kotlin
+interface AstronomicalSource {
+    fun getSearchLocation(): GeocentricCoordinates
+    fun getNames(): List<String>
 
-    List<PointPrimitive> getPoints();
-    List<LinePrimitive> getLines();
-    List<TextPrimitive> getLabels();
-    List<ImagePrimitive> getImages();
+    fun getPoints(): List<PointPrimitive>
+    fun getLines(): List<LinePrimitive>
+    fun getLabels(): List<TextPrimitive>
+    fun getImages(): List<ImagePrimitive>
 }
 ```
 
-### ProtobufAstronomicalSource
+### FlatBufferAstronomicalSource
 
-Wraps protobuf data:
+Wraps FlatBuffers data (zero-copy access):
 
-```java
-public class ProtobufAstronomicalSource implements AstronomicalSource {
-    private final AstronomicalSourceProto proto;
+```kotlin
+class FlatBufferAstronomicalSource(
+    private val source: AstronomicalSource
+) : AstronomicalSourceInterface {
 
-    @Override
-    public List<PointPrimitive> getPoints() {
-        return proto.getPointList().stream()
-            .map(this::toPointPrimitive)
-            .collect(toList());
+    override fun getPoints(): List<PointPrimitive> {
+        return (0 until source.pointsLength).map { i ->
+            val p = source.points(i)!!
+            PointPrimitive(
+                GeocentricCoordinates(
+                    p.location().rightAscension(),
+                    p.location().declination()
+                ),
+                p.color().toInt(),
+                p.size()
+            )
+        }
     }
 }
 ```
@@ -144,66 +153,66 @@ Four primitive types represent visual elements:
 
 ### PointPrimitive
 
-```java
-public class PointPrimitive {
-    GeocentricCoordinates coordinates;  // Position on celestial sphere
-    int color;                          // ARGB color
-    int size;                           // Point size in pixels
-    Shape shape;                        // CIRCLE, STAR, etc.
-}
+```kotlin
+data class PointPrimitive(
+    val coordinates: GeocentricCoordinates,  // Position on celestial sphere
+    val color: Int,                          // ARGB color
+    val size: Int,                           // Point size in pixels
+    val shape: Shape = Shape.Circle          // CIRCLE, STAR, etc.
+)
 ```
 
 ### LinePrimitive
 
-```java
-public class LinePrimitive {
-    GeocentricCoordinates start;
-    GeocentricCoordinates end;
-    int color;
-    float lineWidth;
-}
+```kotlin
+data class LinePrimitive(
+    val start: GeocentricCoordinates,
+    val end: GeocentricCoordinates,
+    val color: Int,
+    val lineWidth: Float
+)
 ```
 
 ### TextPrimitive
 
-```java
-public class TextPrimitive {
-    String text;
-    GeocentricCoordinates coordinates;
-    int color;
-    int fontSize;
-    float offset;  // Offset from associated point
-}
+```kotlin
+data class TextPrimitive(
+    val text: String,
+    val coordinates: GeocentricCoordinates,
+    val color: Int,
+    val fontSize: Int,
+    val offset: Float  // Offset from associated point
+)
 ```
 
 ### ImagePrimitive
 
-```java
-public class ImagePrimitive {
-    GeocentricCoordinates coordinates;
-    int resourceId;          // Drawable resource
-    float scale;             // Display scale
-    float rotationAngle;     // Orientation
-}
+```kotlin
+data class ImagePrimitive(
+    val coordinates: GeocentricCoordinates,
+    val resourceId: Int,          // Drawable resource
+    val scale: Float,             // Display scale
+    val rotationAngle: Float      // Orientation
+)
 ```
 
 ## Stage 5: Renderer Controller
 
 Manages update queue and object managers:
 
-```java
-public class RendererController {
-    private final Queue<RenderUpdate> updateQueue;
-    private final Map<Class<?>, RendererObjectManager> managers;
+```kotlin
+class RendererController {
+    private val updateQueue: Queue<RenderUpdate> = LinkedList()
+    private val managers: Map<KClass<*>, RendererObjectManager> = mutableMapOf()
 
-    public void queueUpdate(UpdateType type, List<? extends Primitive> primitives) {
-        updateQueue.add(new RenderUpdate(type, primitives));
+    fun queueUpdate(type: UpdateType, primitives: List<Primitive>) {
+        updateQueue.add(RenderUpdate(type, primitives))
     }
 
-    public void processUpdates() {
-        while (!updateQueue.isEmpty()) {
-            RenderUpdate update = updateQueue.poll();
-            dispatchToManager(update);
+    fun processUpdates() {
+        while (updateQueue.isNotEmpty()) {
+            val update = updateQueue.poll()
+            dispatchToManager(update)
         }
     }
 }
@@ -211,8 +220,8 @@ public class RendererController {
 
 ### Update Types
 
-```java
-public enum UpdateType {
+```kotlin
+enum class UpdateType {
     Reset,           // Complete data reload
     UpdatePositions, // Recalculate positions only
     UpdateImages     // Reload textures only
@@ -223,14 +232,14 @@ public enum UpdateType {
 
 Convert primitives to OpenGL-ready data:
 
-```java
-public abstract class RendererObjectManager {
-    protected FloatBuffer vertexBuffer;
-    protected FloatBuffer colorBuffer;
-    protected int vertexCount;
+```kotlin
+abstract class RendererObjectManager {
+    protected var vertexBuffer: FloatBuffer? = null
+    protected var colorBuffer: FloatBuffer? = null
+    protected var vertexCount: Int = 0
 
-    public abstract void updateObjects(List<? extends Primitive> primitives);
-    public abstract void draw(GL10 gl);
+    abstract fun updateObjects(primitives: List<Primitive>)
+    abstract fun draw(gl: GL10)
 }
 ```
 
@@ -238,19 +247,19 @@ public abstract class RendererObjectManager {
 
 Renders stars and planets as point sprites:
 
-```java
-public class PointObjectManager extends RendererObjectManager {
-    @Override
-    public void updateObjects(List<PointPrimitive> points) {
-        vertexCount = points.size();
-        vertexBuffer = allocateBuffer(vertexCount * 3);  // x, y, z
-        colorBuffer = allocateBuffer(vertexCount * 4);   // r, g, b, a
-        sizeBuffer = allocateBuffer(vertexCount);        // point size
+```kotlin
+class PointObjectManager : RendererObjectManager() {
+    override fun updateObjects(primitives: List<Primitive>) {
+        val points = primitives.filterIsInstance<PointPrimitive>()
+        vertexCount = points.size
+        vertexBuffer = allocateBuffer(vertexCount * 3)  // x, y, z
+        colorBuffer = allocateBuffer(vertexCount * 4)   // r, g, b, a
+        sizeBuffer = allocateBuffer(vertexCount)        // point size
 
-        for (PointPrimitive p : points) {
-            vertexBuffer.put(p.coordinates.x);
-            vertexBuffer.put(p.coordinates.y);
-            vertexBuffer.put(p.coordinates.z);
+        for (p in points) {
+            vertexBuffer?.put(p.coordinates.x)
+            vertexBuffer?.put(p.coordinates.y)
+            vertexBuffer?.put(p.coordinates.z)
             // ... colors and sizes
         }
     }
@@ -261,23 +270,22 @@ public class PointObjectManager extends RendererObjectManager {
 
 Main OpenGL renderer:
 
-```java
-public class SkyRenderer implements GLSurfaceView.Renderer {
-    @Override
-    public void onDrawFrame(GL10 gl) {
+```kotlin
+class SkyRenderer : GLSurfaceView.Renderer {
+    override fun onDrawFrame(gl: GL10) {
         // Clear buffers
-        gl.glClear(GL10.GL_COLOR_BUFFER_BIT | GL10.GL_DEPTH_BUFFER_BIT);
+        gl.glClear(GL10.GL_COLOR_BUFFER_BIT.or(GL10.GL_DEPTH_BUFFER_BIT))
 
         // Apply view transformation
-        gl.glMatrixMode(GL10.GL_MODELVIEW);
-        gl.glLoadMatrixf(viewMatrix, 0);
+        gl.glMatrixMode(GL10.GL_MODELVIEW)
+        gl.glLoadMatrixf(viewMatrix, 0)
 
         // Process pending updates
-        rendererController.processUpdates();
+        rendererController.processUpdates()
 
         // Draw each manager in depth order
-        for (RendererObjectManager manager : sortedManagers) {
-            manager.draw(gl);
+        for (manager in sortedManagers) {
+            manager.draw(gl)
         }
     }
 }

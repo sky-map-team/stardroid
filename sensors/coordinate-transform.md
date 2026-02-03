@@ -302,7 +302,7 @@ Position changes with time:
 
 | File | Purpose |
 |------|---------|
-| `AstronomerModel.java` | Main transformation logic |
+| `AstronomerModel.kt` | Main transformation logic |
 | `designdocs/sensors.md` | Algorithm documentation |
-| `GeocentricCoordinates.java` | Coordinate representation |
-| `Matrix3x3.java` | Matrix operations |
+| `GeocentricCoordinates.kt` | Coordinate representation |
+| `Matrix3x3.kt` | Matrix operations |

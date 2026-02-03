@@ -73,9 +73,10 @@ OpenGL rendering system:
 | Metric | Count |
 |--------|-------|
 | Source files | 171+ |
-| Java files | ~140 |
-| Kotlin files | ~30 |
+| Kotlin files | ~170 |
 | Test files | 50+ |
+
+**Note:** This is a pure Kotlin codebase. No Java source files.
 
 ## datamodel/ - FlatBuffers
 
@@ -85,76 +86,77 @@ Defines the serialization format for astronomical objects.
 
 ```
 datamodel/
-└── src/main/proto/
-    └── source.fbs        # Protobuf schema
+└── src/main/fbs/
+    └── source.fbs        # FlatBuffers schema
 ```
 
-### Protocol Buffer Schema
+### FlatBuffers Schema
 
-Defines messages for astronomical data:
+Defines tables for astronomical data:
 
-```FlatBuffers
-message AstronomicalSourceProto {
-  repeated PointElementProto point = 1;
-  repeated LabelElementProto label = 2;
-  repeated LineElementProto line = 3;
-  optional string search_location = 4;
-  // ...
+```fbs
+table AstronomicalSource {
+    names: [string];
+    search_location: GeocentricCoordinates;
+    level: int32;
+    points: [PointElement];
+    labels: [LabelElement];
+    lines: [LineElement];
 }
 
-message PointElementProto {
-  required int32 color = 1;
-  required int32 size = 2;
-  required GeocentricCoordinatesProto location = 3;
-  optional Shape shape = 4;
+table PointElement {
+    color: uint32;
+    size: int32;
+    location: GeocentricCoordinates (required);
+    shape: Shape = Circle;
 }
 ```
 
 ### Shape Types
 
-```FlatBuffers
-enum Shape {
-  CIRCLE = 0;
-  STAR = 1;
-  ELLIPTICAL_GALAXY = 2;
-  SPIRAL_GALAXY = 3;
-  IRREGULAR_GALAXY = 4;
-  LENTICULAR_GALAXY = 5;
-  GLOBULAR_CLUSTER = 6;
-  OPEN_CLUSTER = 7;
-  NEBULA = 8;
-  HUBBLE_DEEP_FIELD = 9;
+```fbs
+enum Shape : byte {
+    Circle = 0,
+    Star = 1,
+    EllipticalGalaxy = 2,
+    SpiralGalaxy = 3,
+    IrregularGalaxy = 4,
+    LenticularGalaxy = 5,
+    GlobularCluster = 6,
+    OpenCluster = 7,
+    Nebula = 8,
+    HubbleDeepField = 9
 }
 ```
 
 ## tools/ - Data Generation
 
-Standalone utilities for converting astronomical catalogs to binary FlatBuffers format.
+Standalone utilities for converting astronomical catalogs to FlatBuffers binary format.
 
 ### Structure
 
 ```
 tools/
-├── build.gradle            # Tool build config
-├── generate.sh             # ASCII FlatBuffers generation
-├── binary.sh               # Binary conversion
-└── src/main/java/
-    └── com/google/android/stardroid/data/
-        ├── Main.java                    # Entry point
-        ├── StellarAsciiProtoWriter.java # Star catalog processor
-        ├── MessierAsciiProtoWriter.java # Messier catalog processor
-        └── AsciiToBinaryProtoWriter.java # Binary converter
+├── build.gradle.kts        # Tool build config
+├── generate.sh             # JSON intermediate generation
+├── binary.sh               # FlatBuffers binary conversion
+└── src/main/kotlin/
+    └── com/stardroid/awakening/tools/
+        ├── Main.kt                    # Entry point
+        ├── StellarCatalogConverter.kt # Star catalog processor
+        ├── MessierCatalogConverter.kt # Messier catalog processor
+        └── ConstellationConverter.kt  # Constellation processor
 ```
 
 ### Data Pipeline
 
 ```
-Raw Catalogs → tools/Main.java → ASCII Protobuf → Binary Protobuf
-                     │                  │               │
-           (StellarAsciiProtoWriter)    │    (AsciiToBinaryProtoWriter)
-           (MessierAsciiProtoWriter)    │               │
-                                        ▼               ▼
-                              tools/data/*.ascii    app/src/main/assets/*.binary
+Raw Catalogs → tools/Main.kt → JSON Intermediate → FlatBuffers Binary
+                     │                  │                   │
+           (StellarCatalogConverter)    │          (flatc compiler)
+           (MessierCatalogConverter)    │                   │
+                                        ▼                   ▼
+                              tools/data/*.json    app/src/main/assets/*.bin
 ```
 
 ### Generated Assets
@@ -179,37 +181,46 @@ Raw Catalogs → tools/Main.java → ASCII Protobuf → Binary Protobuf
 
 ## Build Configuration
 
-### app/build.gradle
-```groovy
+### app/build.gradle.kts
+```kotlin
 plugins {
-    id 'com.android.application'
-    id 'org.jetbrains.kotlin.android'
-    id 'kotlin-kapt'
+    id("com.android.application")
+    id("org.jetbrains.kotlin.android")
+    id("com.google.devtools.ksp")
 }
 
 dependencies {
-    implementation project(':datamodel')
-    kapt 'com.google.dagger:dagger-compiler:2.x'
-    // ...
+    implementation(project(":datamodel"))
+    implementation("com.google.flatbuffers:flatbuffers-java:24.3.25")
+    ksp("com.google.dagger:dagger-compiler:2.x")
 }
 ```
 
-### datamodel/build.gradle
-```groovy
+### datamodel/build.gradle.kts
+```kotlin
 plugins {
-    id 'java-library'
-    // FlatBuffers uses flatc compiler, configured via custom task
-}
-```
-
-### tools/build.gradle
-```groovy
-plugins {
-    id 'java'
-    id 'application'
+    id("java-library")
+    id("org.jetbrains.kotlin.jvm")
 }
 
 dependencies {
-    implementation project(':datamodel')
+    implementation("com.google.flatbuffers:flatbuffers-java:24.3.25")
+}
+
+// FlatBuffers code generation
+tasks.register<Exec>("generateFlatBuffers") {
+    commandLine("flatc", "--kotlin", "-o", "src/main/kotlin", "src/main/fbs/source.fbs")
+}
+```
+
+### tools/build.gradle.kts
+```kotlin
+plugins {
+    id("org.jetbrains.kotlin.jvm")
+    application
+}
+
+dependencies {
+    implementation(project(":datamodel"))
 }
 ```

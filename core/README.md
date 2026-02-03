@@ -11,7 +11,7 @@ The core domain is the **intellectual heart** of Stardroid - everything that mak
 | Spec | Purpose | Status |
 |------|---------|--------|
 | [algorithms.md](algorithms.md) | Mathematical algorithms, coordinate transforms, sensor fusion | TODO |
-| [data-models.md](data-models.md) | Celestial objects, catalogs, protobuf schema | TODO |
+| [data-models.md](data-models.md) | Celestial objects, catalogs, FlatBuffers schema | TODO |
 | [search-indexing.md](search-indexing.md) | Search functionality, data structures, algorithms | TODO |
 
 ## Core Domain Architecture

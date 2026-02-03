@@ -7,7 +7,7 @@ This document describes how data flows through Sky Map, from raw astronomical ca
 ```
 ┌──────────────────────────────────────────────────────────────────────────┐
 │                           BUILD TIME                                      │
-│  Raw Catalogs ─► ASCII Protobuf ─► Binary Protobuf ─► App Assets         │
+│  Raw Catalogs ─► JSON Intermediate ─► FlatBuffers Binary ─► App Assets   │
 └──────────────────────────────────────────────────────────────────────────┘
                                                               │
                                                               ▼
@@ -26,29 +26,27 @@ Source data in various formats:
 - **Stellarium Data**: Constellation lines and names
 - **Messier Catalog**: Deep-sky object positions and types
 
-### 2. ASCII Protobuf Generation
+### 2. JSON Intermediate Generation
 
 `tools/generate.sh` runs data converters:
 
 ```bash
-java -cp $CLASSPATH com.google.android.stardroid.data.Main \
-    --input stellar_catalog.csv \
-    --output stars.ascii
+./gradlew :tools:run --args="--input stellar_catalog.csv --output stars.json"
 ```
 
-**Converter Classes**:
-- `StellarAsciiProtoWriter` - Processes star catalogs
-- `MessierAsciiProtoWriter` - Processes Messier objects
-- `ConstellationProtoWriter` - Processes constellation data
+**Converter Classes (Kotlin)**:
+- `StellarCatalogConverter` - Processes star catalogs
+- `MessierCatalogConverter` - Processes Messier objects
+- `ConstellationConverter` - Processes constellation data
 
-### 3. Binary Conversion
+### 3. FlatBuffers Binary Conversion
 
-`tools/binary.sh` converts ASCII to binary format:
+`tools/binary.sh` converts JSON to FlatBuffers binary:
 
 ```bash
-java -cp $CLASSPATH com.google.android.stardroid.data.AsciiToBinaryProtoWriter \
-    --input stars.ascii \
-    --output stars.binary
+flatc --binary -o app/src/main/assets/ \
+    datamodel/src/main/fbs/source.fbs \
+    tools/data/stars.json
 ```
 
 **Output Location**: `app/src/main/assets/`
@@ -65,14 +63,16 @@ java -cp $CLASSPATH com.google.android.stardroid.data.AsciiToBinaryProtoWriter \
 
 ### 1. Asset Loading
 
-`AbstractFileBasedLayer` loads binary protobufs on first access:
+`AbstractFileBasedLayer` loads FlatBuffers on first access (zero-copy):
 
 ```kotlin
 override fun initialize() {
-    val proto = resources.openRawResource(assetId).use { stream ->
-        AstronomicalSourcesProto.parseFrom(stream)
+    val bytes = context.assets.open(assetFilename).use { it.readBytes() }
+    val buffer = ByteBuffer.wrap(bytes)
+    val data = AstronomicalSources.getRootAsAstronomicalSources(buffer)
+    sources = (0 until data.sourcesLength).map { i ->
+        FlatBufferAstronomicalSource(data.sources(i)!!)
     }
-    sources = proto.sourceList.map { ProtobufAstronomicalSource(it) }
 }
 ```
 
@@ -80,11 +80,10 @@ override fun initialize() {
 
 Layers register their sources with the renderer:
 
-```java
+```kotlin
 // In Layer implementation
-@Override
-public void registerWithRenderer(RendererController controller) {
-    controller.queueAddAll(getRenderables());
+override fun registerWithRenderer(controller: RendererController) {
+    controller.queueAddAll(getRenderables())
 }
 ```
 
@@ -92,12 +91,12 @@ public void registerWithRenderer(RendererController controller) {
 
 `AstronomicalSource` provides renderables:
 
-```java
+```kotlin
 interface AstronomicalSource {
-    List<PointPrimitive> getPoints();
-    List<LinePrimitive> getLines();
-    List<TextPrimitive> getLabels();
-    List<ImagePrimitive> getImages();
+    fun getPoints(): List<PointPrimitive>
+    fun getLines(): List<LinePrimitive>
+    fun getLabels(): List<TextPrimitive>
+    fun getImages(): List<ImagePrimitive>
 }
 ```
 
@@ -105,15 +104,15 @@ interface AstronomicalSource {
 
 `RendererController` manages update types:
 
-```java
-enum UpdateType {
+```kotlin
+enum class UpdateType {
     Reset,           // Complete data reload
     UpdatePositions, // Recompute coordinates
     UpdateImages     // Reload textures
 }
 
 // Queueing updates
-controller.queueUpdate(UpdateType.UpdatePositions);
+controller.queueUpdate(UpdateType.UpdatePositions)
 ```
 
 ### 5. Object Managers
@@ -131,15 +130,14 @@ Specialized managers handle each primitive type:
 
 `SkyRenderer` executes the rendering pipeline:
 
-```java
-@Override
-public void onDrawFrame(GL10 gl) {
+```kotlin
+override fun onDrawFrame(gl: GL10) {
     // Apply transformation matrix
-    Matrix.multiplyMM(mvpMatrix, transform, viewMatrix, projectionMatrix);
+    Matrix.multiplyMM(mvpMatrix, 0, viewMatrix, 0, projectionMatrix, 0)
 
     // Render each manager in depth order
-    for (RendererObjectManager manager : managers) {
-        manager.draw(gl);
+    for (manager in managers) {
+        manager.draw(gl)
     }
 }
 ```

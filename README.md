@@ -65,7 +65,7 @@ specs/
 │   ├── catalogs.md             # Star, constellation, Messier catalogs
 │   ├── ephemeris.md            # Solar system calculations
 │   ├── iss-tracking.md         # International Space Station
-│   └── protobuf-schema.md      # Protocol buffer definitions
+│   └── flatbuffers-schema.md   # FlatBuffers schema definitions
 │
 └── build/
     ├── README.md               # Build system overview
@@ -105,10 +105,10 @@ specs/
 
 - **Layers**: 12 switchable celestial layers
 - **Platform**: Android SDK 26-35
-- **Languages**: Java, Kotlin
+- **Language**: Kotlin (pure Kotlin codebase)
 - **Rendering**: OpenGL ES 2.0
-- **DI Framework**: Dagger 2
-- **Data Format**: Protocol Buffers
+- **DI Framework**: Dagger 2 / Hilt
+- **Data Format**: FlatBuffers (zero-copy deserialization)
 - **Testing**: JUnit 4, Robolectric, Mockito, Espresso
 
 ## Version Constraints

@@ -78,16 +78,16 @@ data class RaDec(
 **Binary Format:** FlatBuffers (`.bin` files)
 
 **Schema:** (`source.fbs`)
-```
-message Star {
-    required uint32 id = 1;
-    required string name = 2;
-    required float ra_j2000 = 3;      // RA (hours, J2000)
-    required float dec_j2000 = 4;     // Dec (degrees, J2000)
-    required float magnitude = 5;    // Apparent magnitude
-    required float color_index = 6;  // B-V color index
-    optional float proper_motion_ra = 7;   // arcsec/year
-    optional float proper_motion_dec = 8;  // arcsec/year
+```fbs
+table Star {
+    id: uint32;
+    name: string;
+    ra_j2000: float;      // RA (hours, J2000)
+    dec_j2000: float;     // Dec (degrees, J2000)
+    magnitude: float;     // Apparent magnitude
+    color_index: float;   // B-V color index
+    proper_motion_ra: float;   // arcsec/year (optional)
+    proper_motion_dec: float;  // arcsec/year (optional)
 }
 ```
 
@@ -97,11 +97,10 @@ message Star {
 
 **Loading:**
 ```kotlin
-val stars = ProtobufAstronomicalSource(
-    context,
-    "stars.bin",
-    Stars.getDefaultInstance()
-).createObjects()
+val buffer = context.assets.open("stars.bin").use { it.readBytes() }
+val byteBuffer = ByteBuffer.wrap(buffer)
+val sources = AstronomicalSources.getRootAsAstronomicalSources(byteBuffer)
+val stars = FlatBufferAstronomicalSource(sources).createObjects()
 ```
 
 ### Constellation Catalog
@@ -112,18 +111,18 @@ val stars = ProtobufAstronomicalSource(
 - **Names:** IAU constellation names
 
 **Schema:**
-```
-message Constellation {
-    required string id = 1;          // e.g., "ori"
-    required string name = 2;        // e.g., "Orion"
-    repeated float boundary = 3;     // Polygon vertices (ra1, dec1, ra2, dec2, ...)
-    repeated Line lines = 4;         // Connecting lines
-    repeated string stars = 5;       // Star IDs in constellation
+```fbs
+table Line {
+    start_star: string;  // Start star ID
+    end_star: string;    // End star ID
 }
 
-message Line {
-    required string start_star = 1;  // Start star ID
-    required string end_star = 2;    // End star ID
+table Constellation {
+    id: string;           // e.g., "ori"
+    name: string;         // e.g., "Orion"
+    boundary: [float];    // Polygon vertices (ra1, dec1, ra2, dec2, ...)
+    lines: [Line];        // Connecting lines
+    stars: [string];      // Star IDs in constellation
 }
 ```
 
@@ -132,16 +131,16 @@ message Line {
 **Data:** 110 deep-sky objects (nebulae, clusters, galaxies)
 
 **Schema:**
-```
-message MessierObject {
-    required uint32 number = 1;      // M1, M2, etc.
-    required string name = 2;        // Common name
-    required float ra = 3;           // J2000 RA
-    required float dec = 4;          // J2000 Dec
-    required float size = 5;         // Angular size (degrees)
-    required string type = 6;        // NEBULA, CLUSTER, etc.
-    required string constellation = 7; // Parent constellation
-    required uint32 image_id = 8;     // Android resource
+```fbs
+table MessierObject {
+    number: uint32;        // M1, M2, etc.
+    name: string;          // Common name
+    ra: float;             // J2000 RA
+    dec: float;            // J2000 Dec
+    size: float;           // Angular size (degrees)
+    type: string;          // NEBULA, CLUSTER, etc.
+    constellation: string; // Parent constellation
+    image_id: uint32;      // Android resource
 }
 ```
 
@@ -172,8 +171,8 @@ message MessierObject {
 ```
 LayerManager in memory:
 ├── StarsLayer
-│   └── ProtobufAstronomicalSource
-│       └── ~10MB star data
+│   └── FlatBufferAstronomicalSource
+│       └── ~2MB buffer (zero-copy access)
 ├── ConstellationsLayer
 │   ├── Boundary polygons (~50KB)
 │   └── Connecting lines (~100KB)
@@ -183,7 +182,7 @@ LayerManager in memory:
     └── Ephemeris calculator (~1KB code + data)
 ```
 
-**Total memory:** ~50MB for all layers
+**Total memory:** ~5MB for all layers (FlatBuffers zero-copy)
 
 ## Data Loading Pipeline
 
@@ -191,18 +190,18 @@ LayerManager in memory:
 
 **Source:** Text catalog files (Hipparcos, Tycho-2)
 
-**Tool:** `tools/Main.java`
+**Tool:** `tools/Main.kt`
 
 **Process:**
 1. Parse text catalog files
-2. Create protocol buffer messages
-3. Write `.ascii.bin` (human-readable)
-4. Convert to `.bin` (binary) for runtime efficiency
+2. Create FlatBuffer tables
+3. Write `.json` (human-readable intermediate)
+4. Convert to `.bin` (binary) using flatc compiler
 
 **Commands:**
 ```bash
 cd tools
-./generate.sh  # Creates ASCII FlatBufferss
+./generate.sh  # Creates JSON intermediate files
 ./binary.sh    # Converts to binary in app/src/main/assets/
 ```
 
@@ -217,18 +216,18 @@ abstract class AbstractFileBasedLayer(
     private val assetPath: String
 ) : AbstractLayer {
 
-    protected fun loadProtobuf(): List<CelestialObject> {
-        val inputStream = context.assets.open(assetPath)
-        val catalog = Stars.parseFrom(inputStream)
-        return catalog.createObjects()
+    protected fun loadFlatBuffer(): AstronomicalSources {
+        val bytes = context.assets.open(assetPath).use { it.readBytes() }
+        val buffer = ByteBuffer.wrap(bytes)
+        return AstronomicalSources.getRootAsAstronomicalSources(buffer)
     }
 }
 ```
 
 **Lazy Loading:**
 - Catalogs loaded on first use
-- Cached in memory for app lifetime
-- Memory usage: ~50MB (acceptable)
+- Buffer retained for zero-copy access
+- Memory usage: ~5MB (FlatBuffers efficient)
 
 ## Search-Optimized Data
 
@@ -250,14 +249,14 @@ Star: α Ursae Majoris (Sirius)
 **Storage:** Trie data structure for O(prefix length) lookup
 
 **Schema:**
-```
-message PrefixIndex {
-    repeated PrefixEntry entries = 1;
+```fbs
+table PrefixEntry {
+    prefix: string;           // e.g., "si"
+    star_ids: [uint32];       // Matching star IDs
 }
 
-message PrefixEntry {
-    string prefix = 1;           // e.g., "si"
-    repeated uint32 star_ids = 2;  // Matching star IDs
+table PrefixIndex {
+    entries: [PrefixEntry];
 }
 ```
 
@@ -293,7 +292,7 @@ data class SpatialIndex(
 
 ### Versioning
 
-**Catalog format version:** Protocol buffer schema versioning
+**Catalog format version:** FlatBuffers file_identifier ("STAR")
 
 **Compatibility:** Old catalogs work with new code (forward compatibility)
 
@@ -308,7 +307,7 @@ data class SpatialIndex(
 
 ### Loading Time
 
-**Binary FlatBuffers parsing:** ~100-200ms on app startup
+**FlatBuffers loading:** ~0ms (zero-copy, instant access)
 **Layer initialization:** ~50ms per layer
 **Total startup:** ~500ms for all layers (acceptable)
 
@@ -316,11 +315,11 @@ data class SpatialIndex(
 
 **Static:** ~50MB for all catalogs (fixed)
 **Dynamic:** ~5MB for rendering state
-**Peak:** ~60MB (acceptable for modern devices)
+**Peak:** ~10MB (efficient with FlatBuffers)
 
 ## Related Specifications
 
 - [README.md](README.md) - Core domain overview
 - [algorithms.md](algorithms.md) - Coordinate transforms
 - [../data/catalogs.md](../data/catalogs.md) - Catalog sources and formats
-- [../data/FlatBuffers-schema.md](../data/FlatBuffers-schema.md) - Protocol buffer schema details
+- [../data/flatbuffers-schema.md](../data/flatbuffers-schema.md) - FlatBuffers schema details

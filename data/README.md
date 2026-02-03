@@ -129,8 +129,8 @@ Renderables (points, lines, labels, images)
 | File | Purpose |
 |------|---------|
 | `source.fbs` | FlatBuffers schema |
-| `stars.binary` | Star catalog data |
-| `constellations.binary` | Constellation data |
-| `messier.binary` | Deep-sky object data |
-| `Planet.java` | Ephemeris calculations |
-| `IssLayer.java` | ISS tracking |
+| `stars.bin` | Star catalog data |
+| `constellations.bin` | Constellation data |
+| `messier.bin` | Deep-sky object data |
+| `Planet.kt` | Ephemeris calculations |
+| `IssLayer.kt` | ISS tracking |

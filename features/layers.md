@@ -72,7 +72,7 @@ interface Layer {
 
 ### File-Based Layers
 
-Load data from binary protobuf assets:
+Load data from FlatBuffers binary assets (zero-copy):
 
 ```kotlin
 abstract class AbstractFileBasedLayer(
@@ -81,10 +81,12 @@ abstract class AbstractFileBasedLayer(
 ) : AbstractRenderablesLayer() {
 
     override fun initialize() {
-        val proto = assetManager.open(assetFilename).use { stream ->
-            AstronomicalSourcesProto.parseFrom(stream)
+        val bytes = assetManager.open(assetFilename).use { it.readBytes() }
+        val buffer = ByteBuffer.wrap(bytes)
+        val data = AstronomicalSources.getRootAsAstronomicalSources(buffer)
+        sources = (0 until data.sourcesLength).map { i ->
+            FlatBufferAstronomicalSource(data.sources(i)!!)
         }
-        sources = proto.sourceList.map { ProtobufAstronomicalSource(it) }
     }
 }
 ```
@@ -258,6 +260,6 @@ Layers rendered in depth order (lower = background):
 |-------|----------------|
 | `Layer` | Interface for all layers |
 | `AbstractLayer` | Base implementation |
-| `AbstractFileBasedLayer` | Protobuf data loading |
+| `AbstractFileBasedLayer` | FlatBuffers data loading |
 | `LayerManager` | Visibility coordination |
 | `RendererController` | Rendering registration |

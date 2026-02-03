@@ -1,10 +1,10 @@
 # Data Generation
 
-This document describes how astronomical catalog data is converted to the binary format used by Sky Map.
+This document describes how astronomical catalog data is converted to the binary format used by Stardroid Awakening.
 
 ## Overview
 
-Raw astronomical catalogs are processed offline to create compact binary protocol buffer files bundled with the app.
+Raw astronomical catalogs are processed offline to create compact FlatBuffers binary files bundled with the app.
 
 ```
 Raw Catalogs (CSV, text)
@@ -13,16 +13,16 @@ Raw Catalogs (CSV, text)
     tools/generate.sh
          │
          ▼
-ASCII Protocol Buffers (human-readable)
+JSON Intermediate (human-readable)
          │
          ▼
-    tools/binary.sh
+    tools/binary.sh (flatc)
          │
          ▼
-Binary Protocol Buffers (compact)
+FlatBuffers Binary (zero-copy)
          │
          ▼
-app/src/main/assets/*.binary
+app/src/main/assets/*.bin
 ```
 
 ## Tools Module
@@ -31,37 +31,38 @@ app/src/main/assets/*.binary
 
 ```
 tools/
-├── build.gradle           # Gradle build config
-├── generate.sh            # ASCII generation script
-├── binary.sh              # Binary conversion script
+├── build.gradle.kts       # Gradle build config (Kotlin DSL)
+├── generate.sh            # JSON generation script
+├── binary.sh              # FlatBuffers binary conversion
 ├── data/                  # Raw source catalogs
 │   ├── stars.csv
 │   ├── constellations.txt
 │   └── messier.csv
-└── src/main/java/
-    └── com/google/android/stardroid/data/
-        ├── Main.java                    # Entry point
-        ├── StellarAsciiProtoWriter.java # Star processor
-        ├── MessierAsciiProtoWriter.java # Messier processor
-        └── AsciiToBinaryProtoWriter.java # Binary converter
+└── src/main/kotlin/
+    └── com/stardroid/awakening/tools/
+        ├── Main.kt                    # Entry point
+        ├── StellarCatalogConverter.kt # Star processor
+        ├── MessierCatalogConverter.kt # Messier processor
+        └── ConstellationConverter.kt  # Constellation processor
 ```
 
 ### Build Configuration
 
-```groovy
-// tools/build.gradle
+```kotlin
+// tools/build.gradle.kts
 plugins {
-    id 'java'
-    id 'application'
+    id("org.jetbrains.kotlin.jvm")
+    application
 }
 
 application {
-    mainClass = 'com.google.android.stardroid.data.Main'
+    mainClass.set("com.stardroid.awakening.tools.MainKt")
 }
 
 dependencies {
-    implementation project(':datamodel')
-    implementation 'com.google.protobuf:protobuf-java:3.24.0'
+    implementation(project(":datamodel"))
+    implementation("com.google.flatbuffers:flatbuffers-java:24.3.25")
+    implementation("com.google.code.gson:gson:2.10.1")
 }
 ```
 
@@ -69,52 +70,31 @@ dependencies {
 
 ### generate.sh
 
-Converts raw catalogs to ASCII protocol buffers:
+Converts raw catalogs to JSON intermediate format:
 
 ```bash
 #!/bin/bash
 
-# Set up classpath
-CLASSPATH="build/classes/java/main:../datamodel/build/classes/java/main"
-CLASSPATH="$CLASSPATH:$(find ~/.gradle -name 'protobuf-java*.jar' | head -1)"
-
-# Generate star catalog
-java -cp "$CLASSPATH" com.google.android.stardroid.data.Main \
-    --type stars \
-    --input data/stars.csv \
-    --output data/stars.ascii
-
-# Generate constellation catalog
-java -cp "$CLASSPATH" com.google.android.stardroid.data.Main \
-    --type constellations \
-    --input data/constellations.txt \
-    --output data/constellations.ascii
-
-# Generate Messier catalog
-java -cp "$CLASSPATH" com.google.android.stardroid.data.Main \
-    --type messier \
-    --input data/messier.csv \
-    --output data/messier.ascii
+# Generate JSON from raw catalogs
+./gradlew :tools:run --args="--type stars --input data/stars.csv --output data/stars.json"
+./gradlew :tools:run --args="--type constellations --input data/constellations.txt --output data/constellations.json"
+./gradlew :tools:run --args="--type messier --input data/messier.csv --output data/messier.json"
 ```
 
 ### binary.sh
 
-Converts ASCII to binary format:
+Converts JSON to FlatBuffers binary:
 
 ```bash
 #!/bin/bash
 
-CLASSPATH="build/classes/java/main:../datamodel/build/classes/java/main"
-CLASSPATH="$CLASSPATH:$(find ~/.gradle -name 'protobuf-java*.jar' | head -1)"
-
 OUTPUT_DIR="../app/src/main/assets"
+SCHEMA="../datamodel/src/main/fbs/source.fbs"
 
-# Convert each catalog
+# Convert each catalog using flatc
 for catalog in stars constellations messier; do
-    java -cp "$CLASSPATH" \
-        com.google.android.stardroid.data.AsciiToBinaryProtoWriter \
-        --input "data/${catalog}.ascii" \
-        --output "${OUTPUT_DIR}/${catalog}.binary"
+    flatc --binary -o "${OUTPUT_DIR}" "${SCHEMA}" "data/${catalog}.json"
+    mv "${OUTPUT_DIR}/data/${catalog}.bin" "${OUTPUT_DIR}/${catalog}.bin"
 done
 
 echo "Binary files written to $OUTPUT_DIR"
@@ -124,211 +104,156 @@ echo "Binary files written to $OUTPUT_DIR"
 
 ### Main Entry Point
 
-```java
-public class Main {
-    public static void main(String[] args) {
-        Options options = parseArgs(args);
+```kotlin
+fun main(args: Array<String>) {
+    val options = parseArgs(args)
 
-        switch (options.type) {
-            case "stars":
-                new StellarAsciiProtoWriter().process(
-                    options.input, options.output);
-                break;
-            case "messier":
-                new MessierAsciiProtoWriter().process(
-                    options.input, options.output);
-                break;
-            case "constellations":
-                new ConstellationProtoWriter().process(
-                    options.input, options.output);
-                break;
-        }
+    val converter = when (options.type) {
+        "stars" -> StellarCatalogConverter()
+        "messier" -> MessierCatalogConverter()
+        "constellations" -> ConstellationConverter()
+        else -> error("Unknown type: ${options.type}")
     }
+
+    converter.process(options.input, options.output)
 }
 ```
 
-### StellarAsciiProtoWriter
+### StellarCatalogConverter
 
-Processes star catalog CSV:
+Processes star catalog CSV to JSON:
 
-```java
-public class StellarAsciiProtoWriter {
-    public void process(String inputFile, String outputFile) throws IOException {
-        AstronomicalSourcesProto.Builder sources =
-            AstronomicalSourcesProto.newBuilder();
+```kotlin
+class StellarCatalogConverter {
+    fun process(inputFile: String, outputFile: String) {
+        val sources = mutableListOf<Map<String, Any>>()
 
-        try (BufferedReader reader = new BufferedReader(
-                new FileReader(inputFile))) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                if (line.startsWith("#")) continue;  // Skip comments
+        File(inputFile).useLines { lines ->
+            lines.filter { !it.startsWith("#") }
+                .forEach { line ->
+                    val star = parseStar(line.split(","))
+                    sources.add(star)
+                }
+        }
 
-                String[] fields = line.split(",");
-                AstronomicalSourceProto star = parseStar(fields);
-                sources.addSource(star);
+        val root = mapOf("sources" to sources)
+        File(outputFile).writeText(Gson().toJson(root))
+    }
+
+    private fun parseStar(fields: List<String>): Map<String, Any> {
+        val ra = fields[1].toFloat()
+        val dec = fields[2].toFloat()
+        val magnitude = fields[3].toFloat()
+        val name = fields[4]
+        val spectralType = fields[5]
+
+        return buildMap {
+            if (name.isNotEmpty()) {
+                put("names", listOf(name))
+            }
+            put("search_location", mapOf(
+                "right_ascension" to ra,
+                "declination" to dec
+            ))
+            put("points", listOf(mapOf(
+                "color" to spectralTypeToColor(spectralType),
+                "size" to magnitudeToSize(magnitude),
+                "location" to mapOf(
+                    "right_ascension" to ra,
+                    "declination" to dec
+                ),
+                "shape" to "Circle"
+            )))
+            if (name.isNotEmpty()) {
+                put("labels", listOf(mapOf(
+                    "text" to name,
+                    "location" to mapOf(
+                        "right_ascension" to ra,
+                        "declination" to dec
+                    )
+                )))
             }
         }
-
-        // Write ASCII protocol buffer
-        try (PrintWriter writer = new PrintWriter(outputFile)) {
-            TextFormat.print(sources.build(), writer);
-        }
     }
 
-    private AstronomicalSourceProto parseStar(String[] fields) {
-        // Fields: id, ra, dec, magnitude, name, spectral_type
-        float ra = Float.parseFloat(fields[1]);
-        float dec = Float.parseFloat(fields[2]);
-        float magnitude = Float.parseFloat(fields[3]);
-        String name = fields[4];
-        String spectralType = fields[5];
-
-        AstronomicalSourceProto.Builder builder =
-            AstronomicalSourceProto.newBuilder();
-
-        // Add name if present
-        if (!name.isEmpty()) {
-            builder.addNames(name);
-        }
-
-        // Add point element
-        builder.addPoint(PointElementProto.newBuilder()
-            .setColor(spectralTypeToColor(spectralType))
-            .setSize(magnitudeToSize(magnitude))
-            .setLocation(GeocentricCoordinatesProto.newBuilder()
-                .setRightAscension(ra)
-                .setDeclination(dec))
-            .setShape(Shape.CIRCLE));
-
-        // Add label if named star
-        if (!name.isEmpty()) {
-            builder.addLabel(LabelElementProto.newBuilder()
-                .setStringsStringsId(name)
-                .setLocation(GeocentricCoordinatesProto.newBuilder()
-                    .setRightAscension(ra)
-                    .setDeclination(dec)));
-        }
-
-        return builder.build();
+    private fun spectralTypeToColor(type: String): Long = when (type.firstOrNull()) {
+        'O', 'B' -> 0xFFAAAAFFL  // Blue-white
+        'A' -> 0xFFFFFFFFL      // White
+        'F' -> 0xFFFFFFAAL      // Yellow-white
+        'G' -> 0xFFFFFF00L      // Yellow
+        'K' -> 0xFFFFAA00L      // Orange
+        'M' -> 0xFFFF5500L      // Red
+        else -> 0xFFFFFFFFL
     }
 
-    private int spectralTypeToColor(String type) {
-        switch (type.charAt(0)) {
-            case 'O': case 'B': return 0xFFAAAAFF;  // Blue-white
-            case 'A': return 0xFFFFFFFF;           // White
-            case 'F': return 0xFFFFFFAA;           // Yellow-white
-            case 'G': return 0xFFFFFF00;           // Yellow
-            case 'K': return 0xFFFFAA00;           // Orange
-            case 'M': return 0xFFFF5500;           // Red
-            default: return 0xFFFFFFFF;
-        }
-    }
-
-    private int magnitudeToSize(float magnitude) {
-        // Brighter = larger
-        return Math.max(1, (int)(6 - magnitude));
-    }
+    private fun magnitudeToSize(magnitude: Float): Int =
+        maxOf(1, (6 - magnitude).toInt())
 }
 ```
 
-### MessierAsciiProtoWriter
+### MessierCatalogConverter
 
 Processes Messier catalog:
 
-```java
-public class MessierAsciiProtoWriter {
-    public void process(String inputFile, String outputFile) throws IOException {
-        AstronomicalSourcesProto.Builder sources =
-            AstronomicalSourcesProto.newBuilder();
+```kotlin
+class MessierCatalogConverter {
+    fun process(inputFile: String, outputFile: String) {
+        val sources = mutableListOf<Map<String, Any>>()
 
-        try (BufferedReader reader = new BufferedReader(
-                new FileReader(inputFile))) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                if (line.startsWith("#")) continue;
-
-                String[] fields = line.split(",");
-                AstronomicalSourceProto object = parseMessierObject(fields);
-                sources.addSource(object);
-            }
+        File(inputFile).useLines { lines ->
+            lines.filter { !it.startsWith("#") }
+                .forEach { line ->
+                    val obj = parseMessierObject(line.split(","))
+                    sources.add(obj)
+                }
         }
 
-        try (PrintWriter writer = new PrintWriter(outputFile)) {
-            TextFormat.print(sources.build(), writer);
-        }
+        val root = mapOf("sources" to sources)
+        File(outputFile).writeText(Gson().toJson(root))
     }
 
-    private AstronomicalSourceProto parseMessierObject(String[] fields) {
-        // Fields: messier_number, ra, dec, type, common_name
-        String messierNumber = fields[0];
-        float ra = Float.parseFloat(fields[1]);
-        float dec = Float.parseFloat(fields[2]);
-        String type = fields[3];
-        String commonName = fields[4];
+    private fun parseMessierObject(fields: List<String>): Map<String, Any> {
+        val messierNumber = fields[0]
+        val ra = fields[1].toFloat()
+        val dec = fields[2].toFloat()
+        val type = fields[3]
+        val commonName = fields[4]
 
-        AstronomicalSourceProto.Builder builder =
-            AstronomicalSourceProto.newBuilder();
+        val names = mutableListOf(messierNumber)
+        if (commonName.isNotEmpty()) names.add(commonName)
 
-        builder.addNames(messierNumber);
-        if (!commonName.isEmpty()) {
-            builder.addNames(commonName);
-        }
-
-        builder.addPoint(PointElementProto.newBuilder()
-            .setColor(0xFFAAFFAA)  // Light green
-            .setSize(3)
-            .setLocation(GeocentricCoordinatesProto.newBuilder()
-                .setRightAscension(ra)
-                .setDeclination(dec))
-            .setShape(typeToShape(type)));
-
-        builder.addLabel(LabelElementProto.newBuilder()
-            .setStringsStringsId(messierNumber)
-            .setLocation(GeocentricCoordinatesProto.newBuilder()
-                .setRightAscension(ra)
-                .setDeclination(dec)));
-
-        return builder.build();
+        return mapOf(
+            "names" to names,
+            "search_location" to mapOf(
+                "right_ascension" to ra,
+                "declination" to dec
+            ),
+            "points" to listOf(mapOf(
+                "color" to 0xFFAAFFAAL,  // Light green
+                "size" to 3,
+                "location" to mapOf(
+                    "right_ascension" to ra,
+                    "declination" to dec
+                ),
+                "shape" to typeToShape(type)
+            )),
+            "labels" to listOf(mapOf(
+                "text" to messierNumber,
+                "location" to mapOf(
+                    "right_ascension" to ra,
+                    "declination" to dec
+                )
+            ))
+        )
     }
 
-    private Shape typeToShape(String type) {
-        switch (type.toLowerCase()) {
-            case "spiral galaxy": return Shape.SPIRAL_GALAXY;
-            case "elliptical galaxy": return Shape.ELLIPTICAL_GALAXY;
-            case "globular cluster": return Shape.GLOBULAR_CLUSTER;
-            case "open cluster": return Shape.OPEN_CLUSTER;
-            case "nebula": return Shape.NEBULA;
-            default: return Shape.CIRCLE;
-        }
-    }
-}
-```
-
-### AsciiToBinaryProtoWriter
-
-Converts ASCII to binary:
-
-```java
-public class AsciiToBinaryProtoWriter {
-    public static void main(String[] args) throws IOException {
-        String inputFile = args[0];
-        String outputFile = args[1];
-
-        // Read ASCII format
-        AstronomicalSourcesProto.Builder builder =
-            AstronomicalSourcesProto.newBuilder();
-
-        try (FileReader reader = new FileReader(inputFile)) {
-            TextFormat.merge(reader, builder);
-        }
-
-        // Write binary format
-        try (FileOutputStream fos = new FileOutputStream(outputFile)) {
-            builder.build().writeTo(fos);
-        }
-
-        System.out.printf("Converted %s -> %s (%d sources)%n",
-            inputFile, outputFile, builder.getSourceCount());
+    private fun typeToShape(type: String): String = when (type.lowercase()) {
+        "spiral galaxy" -> "SpiralGalaxy"
+        "elliptical galaxy" -> "EllipticalGalaxy"
+        "globular cluster" -> "GlobularCluster"
+        "open cluster" -> "OpenCluster"
+        "nebula" -> "Nebula"
+        else -> "Circle"
     }
 }
 ```
@@ -355,16 +280,16 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
-# Build tools module
+# Build tools module and generate data
 if [ "$QUICK" = false ]; then
     echo "Building tools..."
     cd tools
     ../gradlew build
 
-    echo "Generating ASCII catalogs..."
+    echo "Generating JSON catalogs..."
     ./generate.sh
 
-    echo "Converting to binary..."
+    echo "Converting to FlatBuffers binary..."
     ./binary.sh
 
     cd ..
@@ -388,17 +313,18 @@ echo "Build complete!"
 
 ```bash
 # List assets
-ls -la app/src/main/assets/*.binary
+ls -la app/src/main/assets/*.bin
 
-# Check file sizes
-du -h app/src/main/assets/*.binary
+# Check file sizes (FlatBuffers are compact)
+du -h app/src/main/assets/*.bin
 ```
 
-### Validate Protocol Buffers
+### Validate FlatBuffers
 
 ```bash
-# Decode binary to verify content
-protoc --decode_raw < app/src/main/assets/stars.binary | head -50
+# Decode binary to JSON for verification
+flatc --json --raw-binary -o /tmp datamodel/src/main/fbs/source.fbs -- app/src/main/assets/stars.bin
+head -50 /tmp/stars.json
 ```
 
 ## Updating Catalogs

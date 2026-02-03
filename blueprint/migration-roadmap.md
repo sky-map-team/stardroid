@@ -160,8 +160,8 @@ object RendererFactory {
 
 **Key files:**
 - `res/layout/splash_material3.xml`
-- `com/google/android/stardroid/ui/StarfieldView.kt`
-- `SplashScreenActivity.java` - Add animation handling
+- `com/stardroid/awakening/ui/StarfieldView.kt`
+- `SplashScreenActivity.kt` - Add animation handling
 
 ### Step 2.3: Bottom Sheet Dialogs (1 week)
 
