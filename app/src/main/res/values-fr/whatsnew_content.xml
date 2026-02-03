@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
+    <string name="whats_new_content">
+<![CDATA[
+<h2>Fiches Informatives Éducatives</h2>
+    Appuyez sur les objets célestes en mode manuel pour afficher des fiches informatives éducatives avec des descriptions, des données scientifiques (distance, taille, magnitude, classe spectrale) et des anecdotes. Couvre les planètes, les étoiles brillantes et les objets Messier. Disponible en anglais,
+    portugais et espagnol.
+
+<h2>Expérience Améliorée pour les Autorisations de Localisation</h2>
+    Lorsque l\'autorisation de localisation n\'est pas accordée au premier lancement, une boîte de dialogue claire apparaît désormais avec des options pour accorder l\'autorisation, saisir votre position manuellement ou fermer et utiliser la position par défaut. Remplace l\'ancien message toast tronqué qui était facile à manquer.
+
+<h2>Correction des Étiquettes Inversées</h2>
+    Correction d\'un bug signalé par certains utilisateurs où les étiquettes du ciel apparaissaient à l\'envers en raison d\'un problème d\'orientation du capteur.
+
+<h2>Mode Nuit pour les Pages d\'Aide</h2>
+    Les pages d\'aide intégrées respectent désormais le mode nuit, afin de ne pas vous éblouir lorsque vous observez les étoiles.
+
+<h2>Pages d\'Aide Rafraîchies</h2>
+    Le contenu d\'aide a été redessiné et mis à jour, y compris une section de remerciements actualisée reconnaissant les contributeurs open source.
+
+<h2>Mises à Jour des Traductions</h2>
+<ul>
+  <li>Traduction polonaise mise à jour</li>
+  <li>Traduction grecque corrigée</li>
+  <li>Traductions portugaises manquantes ajoutées</li>
+</ul>
+    ]]>
+    </string>
+</resources>

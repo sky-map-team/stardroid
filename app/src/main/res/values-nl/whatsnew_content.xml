@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
+    <string name="whats_new_content">
+<![CDATA[
+<h2>Educatieve Informatiekaarten</h2>
+    Tik op hemellichamen in de handmatige modus om educatieve informatiekaarten te bekijken met beschrijvingen, wetenschappelijke gegevens (afstand, grootte, magnitude, spectraalklasse) en leuke weetjes. Omvat planeten, heldere sterren en Messier-objecten. Beschikbaar in het Engels,
+    Portugees en Spaans.
+
+<h2>Verbeterde Locatietoestemming</h2>
+    Wanneer de locatietoestemming niet wordt verleend bij de eerste keer starten, verschijnt er nu een duidelijk dialoogvenster met opties om toestemming te verlenen, je locatie handmatig in te voeren, of te sluiten en de standaardlocatie te gebruiken. Vervangt het oude afgekapte toast-bericht dat gemakkelijk te missen was.
+
+<h2>Correctie van Ondersteboven Labels</h2>
+    Een bug opgelost die door sommige gebruikers werd gemeld waarbij labels aan de hemel ondersteboven verschenen door een probleem met de sensororiëntatie.
+
+<h2>Nachtmodus voor Helppagina\'s</h2>
+    De helppagina\'s in de app respecteren nu de nachtmodus, zodat ze je niet verblinden wanneer je naar de sterren kijkt.
+
+<h2>Vernieuwde Helppagina\'s</h2>
+    De helpinhoud is opnieuw vormgegeven en bijgewerkt, inclusief een bijgewerkte erkenningssectie die open source-bijdragers erkent.
+
+<h2>Vertaalupdates</h2>
+<ul>
+  <li>Poolse vertaling bijgewerkt</li>
+  <li>Griekse vertaling gecorrigeerd</li>
+  <li>Ontbrekende Portugese vertalingen toegevoegd</li>
+</ul>
+    ]]>
+    </string>
+</resources>

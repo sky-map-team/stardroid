@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="whats_new_text" translation_description="Description of new features in this version in html. Please do not change the &lt; and &gt; markup">
+&lt;h1&gt;バージョン %1$s の新機能&lt;/h1&gt;
+%2$s
+
+&lt;h1&gt;Sky Mapを応援してください&lt;/h1&gt;
+&lt;p&gt;Sky Mapは無料のオープンソースアプリです。便利だと思われたら、&lt;a href="https://github.com/sky-map-team/stardroid/?tab=readme-ov-file#support-the-project"&gt;GitHubページ&lt;/a&gt;で開発を支援することをご検討ください。&lt;/p&gt;
+    </string>
+</resources>

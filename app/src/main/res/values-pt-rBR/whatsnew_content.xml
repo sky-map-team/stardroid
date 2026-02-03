@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
+    <string name="whats_new_content">
+<![CDATA[
+<h2>Cartões Informativos Educacionais</h2>
+    Toque nos objetos celestes no modo manual para ver cartões informativos educacionais com descrições, dados científicos (distância, tamanho, magnitude, classe espectral) e curiosidades. Inclui planetas, estrelas brilhantes e objetos Messier. Disponível em inglês,
+    português e espanhol.
+
+<h2>Experiência Aprimorada de Permissão de Localização</h2>
+    Quando a permissão de localização não é concedida na primeira inicialização, agora aparece um diálogo claro com opções para conceder a permissão, inserir sua localização manualmente ou dispensar e usar a localização padrão. Substitui a antiga mensagem toast truncada que era fácil de perder.
+
+<h2>Correção de Rótulos Invertidos</h2>
+    Corrigido um bug relatado por alguns usuários em que os rótulos do céu apareciam de cabeça para baixo devido a um problema de orientação do sensor.
+
+<h2>Modo Noturno para Páginas de Ajuda</h2>
+    As páginas de ajuda no aplicativo agora respeitam o modo noturno, para que não ofusquem sua visão quando você estiver observando as estrelas.
+
+<h2>Páginas de Ajuda Renovadas</h2>
+    O conteúdo de ajuda foi reformulado e atualizado, incluindo uma seção de agradecimentos atualizada que reconhece os contribuidores de código aberto.
+
+<h2>Atualizações de Tradução</h2>
+<ul>
+  <li>Tradução para polonês atualizada</li>
+  <li>Tradução para grego corrigida</li>
+  <li>Traduções para português faltantes adicionadas</li>
+</ul>
+    ]]>
+    </string>
+</resources>
