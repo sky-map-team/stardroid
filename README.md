@@ -110,3 +110,15 @@ specs/
 - **DI Framework**: Dagger 2
 - **Data Format**: Protocol Buffers
 - **Testing**: JUnit 4, Robolectric, Mockito, Espresso
+
+## Version Constraints
+
+| Dependency | Version | Notes |
+|------------|---------|-------|
+| Java | 17 or 23 | Java 25 has AGP compatibility issues |
+| AGP | 8.7.3 | Android Gradle Plugin |
+| Kotlin | 2.1.0 | |
+| Gradle | 8.11.1 | |
+| compileSdk | 35 | |
+| minSdk | 26 | Android 8.0+ |
+| NDK | Latest | For Vulkan native code |
