@@ -40,7 +40,6 @@ If you enjoy using Sky Map, there are several ways to help keep the project aliv
 * [Facebook @stardroidapp](https://www.facebook.com/groups/stardroidapp/)
 * [X @skymapdevs](http://x.com/skymapdevs)
 
-
 ---
 
 # Code and Language Contributions
@@ -48,7 +47,7 @@ Yes, we know that Sky Map's code and UX is very dated. It needs a big overhaul.
 
 In general, bug fix contributions are welcome, for example, simple one file fixes or dependency version upgrades.  We're particularly grateful for fixed or new translations since we've lost the 100% coverage of non-English languages that we once had.
 
-**However, please email us (or file a feature request) first before embarking on any major changes or feature additions. We may have a different vision for the direction of the app and it would be a pity to do work that we can't accept and would be wasted.**
+**However, please [email us](mailto:skymapdevs@gmail.com) (or file a feature request) first before embarking on any major changes or feature additions. We may have a different vision for the direction of the app and it would be a pity to do work that we can't accept and would be wasted.**
 
 ### A Note on Response Times
 It is likely we'll be slow to respond to emails and PR requests. Depending on what else is going on it might be days, it might be months. I do apologize for that - life is busy. Sometimes the reply might be simply to point you at this documentation, which will seem very ungrateful and unfriendly.
