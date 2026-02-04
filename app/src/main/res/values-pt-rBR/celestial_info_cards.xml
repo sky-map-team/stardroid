@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Educational Object Info Feature -->
+    <!-- Solar System Educational Content -->
     <string name="object_info_sun_description">O Sol é a estrela no centro do nosso sistema solar. Ele fornece a luz e o calor que tornam a vida na Terra possível.</string>
     <string name="object_info_sun_funfact">O Sol contém 99,86% de toda a massa do nosso sistema solar. Cerca de 1,3 milhão de Terras caberiam dentro dele!</string>
     <string name="object_info_moon_description">A Lua é o único satélite natural da Terra. Ela influencia nossas marés e foi visitada por 12 astronautas.</string>
@@ -9,7 +11,7 @@
     <string name="object_info_venus_description">Vênus é o segundo planeta a partir do Sol e o mais quente do nosso sistema solar. É frequentemente chamado de gêmeo da Terra devido ao tamanho similar.</string>
     <string name="object_info_venus_funfact">Um dia em Vênus é mais longo que seu ano! Leva 243 dias terrestres para girar uma vez, mas apenas 225 dias para orbitar o Sol.</string>
     <string name="object_info_mars_description">Marte é o quarto planeta a partir do Sol, conhecido como Planeta Vermelho devido ao óxido de ferro em sua superfície.</string>
-    <string name="object_info_mars_funfact">Marte tem o maior vulcão do sistema solar: Olympus Mons, que é 3 vezes mais alto que o Monte Everest!</string>
+    <string name="object_info_mars_funfact">Marte tem o maior vulcão do sistema solar: Olympus Mons, que é cerca de 2,5 vezes mais alto que o Monte Everest!</string>
     <string name="object_info_jupiter_description">Júpiter é o maior planeta do nosso sistema solar. É um gigante gasoso com uma famosa tempestade chamada Grande Mancha Vermelha.</string>
     <string name="object_info_jupiter_funfact">Júpiter tem pelo menos 95 luas conhecidas! Sua maior lua, Ganimedes, é maior que o planeta Mercúrio.</string>
     <string name="object_info_saturn_description">Saturno é o sexto planeta a partir do Sol, famoso por seu espetacular sistema de anéis feitos de gelo e rocha.</string>
@@ -20,10 +22,11 @@
     <string name="object_info_neptune_funfact">Netuno foi descoberto através da matemática! Cientistas previram sua localização antes de qualquer um vê-lo através de um telescópio.</string>
     <string name="object_info_pluto_description">Plutão é um planeta anão no Cinturão de Kuiper. Foi considerado o nono planeta até 2006.</string>
     <string name="object_info_pluto_funfact">Plutão tem uma geleira em forma de coração feita de gelo de nitrogênio, visível em imagens da missão New Horizons da NASA!</string>
+    <!-- Bright Stars Educational Content -->
     <string name="object_info_sirius_description">Sirius é a estrela mais brilhante do céu noturno, localizada na constelação de Cão Maior.</string>
     <string name="object_info_sirius_funfact">Sirius é na verdade um sistema estelar binário! Sirius B, sua companheira, é uma anã branca do tamanho da Terra mas quase tão massiva quanto o Sol.</string>
     <string name="object_info_vega_description">Vega é uma das estrelas mais brilhantes visíveis da Terra, localizada na constelação de Lira.</string>
-    <string name="object_info_vega_funfact">Vega foi a Estrela Polar há cerca de 12.000 anos e será novamente em cerca de 13.700 anos devido à oscilação da Terra!</string>
+    <string name="object_info_vega_funfact">Vega foi a Estrela Polar há cerca de 14.000 anos e será novamente em cerca de 12.000 anos devido à oscilação da Terra!</string>
     <string name="object_info_betelgeuse_description">Betelgeuse é uma estrela supergigante vermelha que marca o ombro de Órion. É uma das maiores estrelas visíveis a olho nu.</string>
     <string name="object_info_betelgeuse_funfact">Betelgeuse é tão grande que se fosse colocada na posição do nosso Sol, engoliria Mercúrio, Vênus, Terra, Marte e possivelmente Júpiter!</string>
     <string name="object_info_rigel_description">Rigel é uma estrela supergigante azul que marca o pé de Órion. Apesar de estar mais longe que Betelgeuse, parece igualmente brilhante.</string>
@@ -48,7 +51,7 @@
     <string name="object_info_moon_distance">384.400 km</string>
     <string name="object_info_moon_size">3.474 km de diâmetro</string>
     <string name="object_info_moon_mass">7,35 × 10²² kg</string>
-    <string name="object_info_mercury_distance">77 milhões de km (média)</string>
+    <string name="object_info_mercury_distance">58 milhões de km (do Sol)</string>
     <string name="object_info_mercury_size">4.880 km de diâmetro</string>
     <string name="object_info_mercury_mass">3,3 × 10²³ kg</string>
     <string name="object_info_venus_distance">108 milhões de km (média)</string>
@@ -151,7 +154,7 @@
     <string name="object_info_pollux_size">9,1 raios solares</string>
     <string name="object_info_pollux_mass">1,9 massas solares</string>
     <string name="object_info_fomalhaut_description">Fomalhaut é a estrela mais brilhante de Peixe Austral e uma das mais brilhantes do céu de outono.</string>
-    <string name="object_info_fomalhaut_funfact">Fomalhaut tem um espetacular disco de detritos, e um dos primeiros exoplanetas fotografados orbita esta estrela!</string>
+    <string name="object_info_fomalhaut_funfact">Fomalhaut tem um espetacular disco de detritos que foi um dos primeiros a ser fotografado diretamente ao redor de outra estrela!</string>
     <string name="object_info_fomalhaut_distance">25 anos-luz</string>
     <string name="object_info_fomalhaut_size">1,8 raios solares</string>
     <string name="object_info_fomalhaut_mass">1,9 massas solares</string>
@@ -213,7 +216,7 @@
     <string name="object_info_m20_distance">5.200 anos-luz</string>
     <string name="object_info_m20_size">20 anos-luz de diâmetro</string>
     <string name="object_info_m27_description">A Nebulosa do Haltere é uma nebulosa planetária em Vulpécula, a primeira nebulosa planetária já descoberta.</string>
-    <string name="object_info_m27_funfact">A Nebulosa do Haltere foi descoberta por Charles Messier em 1764, levando-o a cunhar o termo nebulosa planetária!</string>
+    <string name="object_info_m27_funfact">A Nebulosa do Haltere foi descoberta por Charles Messier em 1764, sendo a primeira nebulosa planetária já descoberta!</string>
     <string name="object_info_m27_distance">1.360 anos-luz</string>
     <string name="object_info_m27_size">2,5 anos-luz de diâmetro</string>
     <string name="object_info_m33_description">A Galáxia do Triângulo é o terceiro maior membro do Grupo Local, uma galáxia espiral visível na constelação do Triângulo.</string>
@@ -256,7 +259,7 @@
     <string name="object_info_sagittarius_funfact">Quando você olha para Sagitário, está olhando para Sagittarius A*, o buraco negro supermassivo no centro da nossa galáxia!</string>
     <string name="object_info_sagittarius_size">867 graus quadrados</string>
     <string name="object_info_cygnus_description">Cisne voa ao longo da Via Láctea, contendo o asterismo da Cruz do Norte e a estrela brilhante Deneb.</string>
-    <string name="object_info_cygnus_funfact">Cygnus X-1 nesta constelação foi o primeiro buraco negro amplamente aceito, descoberto em 1964!</string>
+    <string name="object_info_cygnus_funfact">Cygnus X-1 nesta constelação foi o primeiro buraco negro amplamente aceito, identificado no início da década de 1970!</string>
     <string name="object_info_cygnus_size">804 graus quadrados</string>
     <string name="object_info_lyra_description">Lira é uma constelação pequena mas proeminente contendo Vega, a quinta estrela mais brilhante do céu noturno.</string>
     <string name="object_info_lyra_funfact">Vega foi a Estrela do Norte por volta de 12.000 a.C. e será novamente em cerca de 12.000 anos devido à precessão da Terra!</string>
@@ -412,7 +415,7 @@
     <string name="object_info_draco_funfact">Thuban em Dragão era a Estrela do Norte quando as pirâmides egípcias foram construídas, há 5.000 anos!</string>
     <string name="object_info_draco_size">1.083 graus quadrados</string>
     <string name="object_info_eridanus_description">Eridano, o Rio, é a sexta maior constelação, serpenteando de perto de Órion até o extremo sul celeste.</string>
-    <string name="object_info_eridanus_funfact">Achernar no final de Eridano é a estrela mais achatada conhecida, com bojo 50% mais largo no equador devido à rotação rápida!</string>
+    <string name="object_info_eridanus_funfact">Achernar no final de Eridano é a estrela mais achatada conhecida, com o equador 56% mais largo que os polos devido à rotação rápida!</string>
     <string name="object_info_eridanus_size">1.138 graus quadrados</string>
     <string name="object_info_grus_description">Grou é uma constelação do sul introduzida no final do século 16 por navegadores europeus.</string>
     <string name="object_info_grus_funfact">Grou já foi conhecido como Phoenicopterus (o Flamingo) antes de ser mudado para representar um grou!</string>

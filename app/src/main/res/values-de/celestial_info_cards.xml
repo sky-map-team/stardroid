@@ -1,107 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="object_info_sun_description" translation_description="Short description of the Sun">Die Sonne ist der Stern im Zentrum unseres Sonnensystems. Sie liefert das Licht und die Waerme, die Leben auf der Erde moeglich machen.</string>
-    <string name="object_info_sun_funfact" translation_description="Fun fact about the Sun">Die Sonne enthaelt 99,86 % der gesamten Masse in unserem Sonnensystem. Etwa 1,3 Millionen Erden wuerden hineinpassen!</string>
+    <string name="object_info_sun_description" translation_description="Short description of the Sun">Die Sonne ist der Stern im Zentrum unseres Sonnensystems. Sie liefert das Licht und die Wärme, die Leben auf der Erde möglich machen.</string>
+    <string name="object_info_sun_funfact" translation_description="Fun fact about the Sun">Die Sonne enthält 99,86 % der gesamten Masse in unserem Sonnensystem. Etwa 1,3 Millionen Erden würden hineinpassen!</string>
     <string name="object_info_sun_distance">150 Millionen km</string>
     <string name="object_info_sun_size">1,4 Millionen km Durchmesser</string>
     <string name="object_info_sun_mass">1,989 x 10³⁰ kg</string>
-    <string name="object_info_moon_description" translation_description="Short description of the Moon">Der Mond ist der einzige natuerliche Satellit der Erde. Er beeinflusst unsere Gezeiten und wurde von 12 Astronauten besucht.</string>
-    <string name="object_info_moon_funfact" translation_description="Fun fact about the Moon">Der Mond entfernt sich langsam von der Erde - etwa 3,8 cm pro Jahr. Vor Milliarden von Jahren war er viel naeher!</string>
+    <string name="object_info_moon_description" translation_description="Short description of the Moon">Der Mond ist der einzige natürliche Satellit der Erde. Er beeinflusst unsere Gezeiten und wurde von 12 Astronauten besucht.</string>
+    <string name="object_info_moon_funfact" translation_description="Fun fact about the Moon">Der Mond entfernt sich langsam von der Erde - etwa 3,8 cm pro Jahr. Vor Milliarden von Jahren war er viel näher!</string>
     <string name="object_info_moon_distance">384.400 km</string>
     <string name="object_info_moon_size">3.474 km Durchmesser</string>
     <string name="object_info_moon_mass">7,35 x 10²² kg</string>
-    <string name="object_info_mercury_description" translation_description="Short description of Mercury">Merkur ist der kleinste Planet und der sonnenaechste. Ein Jahr auf Merkur dauert nur 88 Erdentage.</string>
-    <string name="object_info_mercury_funfact" translation_description="Fun fact about Mercury">Obwohl Merkur der Sonne am naechsten ist, ist er nicht der heisseste Planet. Die Venus ist heisser - wegen ihrer dichten Atmosphaere!</string>
+    <string name="object_info_mercury_description" translation_description="Short description of Mercury">Merkur ist der kleinste Planet und der sonnenächste. Ein Jahr auf Merkur dauert nur 88 Erdentage.</string>
+    <string name="object_info_mercury_funfact" translation_description="Fun fact about Mercury">Obwohl Merkur der Sonne am nächsten ist, ist er nicht der heißeste Planet. Die Venus ist heißer - wegen ihrer dichten Atmosphäre!</string>
     <string name="object_info_mercury_distance">58 Millionen km (von der Sonne)</string>
     <string name="object_info_mercury_size">4.880 km Durchmesser</string>
     <string name="object_info_mercury_mass">3,3 x 10²³ kg</string>
-    <string name="object_info_venus_description" translation_description="Short description of Venus">Die Venus ist der zweite Planet von der Sonne und der heisseste in unserem Sonnensystem. Sie wird wegen aehnlicher Groesse oft als Zwilling der Erde bezeichnet.</string>
-    <string name="object_info_venus_funfact" translation_description="Fun fact about Venus">Ein Tag auf der Venus ist laenger als ihr Jahr! Sie braucht 243 Erdentage fuer eine Drehung, aber nur 225 Tage fuer einen Umlauf um die Sonne.</string>
+    <string name="object_info_venus_description" translation_description="Short description of Venus">Die Venus ist der zweite Planet von der Sonne und der heißeste in unserem Sonnensystem. Sie wird wegen ähnlicher Größe oft als Zwilling der Erde bezeichnet.</string>
+    <string name="object_info_venus_funfact" translation_description="Fun fact about Venus">Ein Tag auf der Venus ist länger als ihr Jahr! Sie braucht 243 Erdentage für eine Drehung, aber nur 225 Tage für einen Umlauf um die Sonne.</string>
     <string name="object_info_venus_distance">108 Millionen km (Durchschnitt)</string>
     <string name="object_info_venus_size">12.104 km Durchmesser</string>
     <string name="object_info_venus_mass">4,87 x 10²⁴ kg</string>
-    <string name="object_info_mars_description" translation_description="Short description of Mars">Der Mars ist der vierte Planet von der Sonne und wird wegen des Eisenoxids auf seiner Oberflaeche als Roter Planet bezeichnet.</string>
-    <string name="object_info_mars_funfact" translation_description="Fun fact about Mars">Der Mars hat den groessten Vulkan im Sonnensystem: Olympus Mons ist etwa 2,5-mal hoeher als der Mount Everest!</string>
+    <string name="object_info_mars_description" translation_description="Short description of Mars">Der Mars ist der vierte Planet von der Sonne und wird wegen des Eisenoxids auf seiner Oberfläche als Roter Planet bezeichnet.</string>
+    <string name="object_info_mars_funfact" translation_description="Fun fact about Mars">Der Mars hat den größten Vulkan im Sonnensystem: Olympus Mons ist etwa 2,5-mal höher als der Mount Everest!</string>
     <string name="object_info_mars_distance">228 Millionen km (Durchschnitt)</string>
     <string name="object_info_mars_size">6.779 km Durchmesser</string>
     <string name="object_info_mars_mass">6,39 x 10²³ kg</string>
-    <string name="object_info_jupiter_description" translation_description="Short description of Jupiter">Jupiter ist der groesste Planet in unserem Sonnensystem. Er ist ein Gasriese mit dem beruehmten Grossen Roten Fleck.</string>
-    <string name="object_info_jupiter_funfact" translation_description="Fun fact about Jupiter">Jupiter hat mindestens 95 bekannte Monde! Sein groesster Mond, Ganymed, ist groesser als der Planet Merkur.</string>
+    <string name="object_info_jupiter_description" translation_description="Short description of Jupiter">Jupiter ist der größte Planet in unserem Sonnensystem. Er ist ein Gasriese mit dem berühmten Großen Roten Fleck.</string>
+    <string name="object_info_jupiter_funfact" translation_description="Fun fact about Jupiter">Jupiter hat mindestens 95 bekannte Monde! Sein größter Mond, Ganymed, ist größer als der Planet Merkur.</string>
     <string name="object_info_jupiter_distance">778 Millionen km (Durchschnitt)</string>
     <string name="object_info_jupiter_size">139.820 km Durchmesser</string>
     <string name="object_info_jupiter_mass">1,898 x 10²⁷ kg</string>
-    <string name="object_info_saturn_description" translation_description="Short description of Saturn">Saturn ist der sechste Planet von der Sonne, beruehmt fuer sein spektakulaeres Ringsystem aus Eis und Gestein.</string>
-    <string name="object_info_saturn_funfact" translation_description="Fun fact about Saturn">Saturn ist so leicht, dass er auf Wasser schwimmen wuerde! Seine Dichte ist geringer als die von Wasser - allerdings gibt es keine Badewanne, die gross genug waere.</string>
+    <string name="object_info_saturn_description" translation_description="Short description of Saturn">Saturn ist der sechste Planet von der Sonne, berühmt für sein spektakuläres Ringsystem aus Eis und Gestein.</string>
+    <string name="object_info_saturn_funfact" translation_description="Fun fact about Saturn">Saturn ist so leicht, dass er auf Wasser schwimmen würde! Seine Dichte ist geringer als die von Wasser - allerdings gibt es keine Badewanne, die gross genug wäre.</string>
     <string name="object_info_saturn_distance">1,4 Milliarden km (Durchschnitt)</string>
     <string name="object_info_saturn_size">116.460 km Durchmesser</string>
     <string name="object_info_saturn_mass">5,68 x 10²⁶ kg</string>
     <string name="object_info_uranus_description" translation_description="Short description of Uranus">Uranus ist ein Eisriese, der auf der Seite rotiert. Er war der erste Planet, der mit einem Teleskop entdeckt wurde.</string>
-    <string name="object_info_uranus_funfact" translation_description="Fun fact about Uranus">Uranus rotiert mit einer Neigung von 98 Grad auf der Seite - vermutlich durch eine Kollision mit einem erdgrossen Objekt vor langer Zeit!</string>
+    <string name="object_info_uranus_funfact" translation_description="Fun fact about Uranus">Uranus rotiert mit einer Neigung von 98 Grad auf der Seite - vermutlich durch eine Kollision mit einem erdgroßen Objekt vor langer Zeit!</string>
     <string name="object_info_uranus_distance">2,9 Milliarden km (Durchschnitt)</string>
     <string name="object_info_uranus_size">50.724 km Durchmesser</string>
     <string name="object_info_uranus_mass">8,68 x 10²⁵ kg</string>
-    <string name="object_info_neptune_description" translation_description="Short description of Neptune">Neptun ist der am weitesten entfernte Planet in unserem Sonnensystem. Er hat die staerksten Winde mit bis zu 2.100 km/h.</string>
+    <string name="object_info_neptune_description" translation_description="Short description of Neptune">Neptun ist der am weitesten entfernte Planet in unserem Sonnensystem. Er hat die stärksten Winde mit bis zu 2.100 km/h.</string>
     <string name="object_info_neptune_funfact" translation_description="Fun fact about Neptune">Neptun wurde durch Mathematik entdeckt! Wissenschaftler sagten seine Position voraus, bevor ihn jemand durch ein Teleskop sah.</string>
     <string name="object_info_neptune_distance">4,5 Milliarden km (Durchschnitt)</string>
     <string name="object_info_neptune_size">49.244 km Durchmesser</string>
     <string name="object_info_neptune_mass">1,024 x 10²⁶ kg</string>
-    <string name="object_info_pluto_description" translation_description="Short description of Pluto">Pluto ist ein Zwergplanet im Kuiperguertel. Bis 2006 galt er als neunter Planet.</string>
-    <string name="object_info_pluto_funfact" translation_description="Fun fact about Pluto">Pluto hat einen herzfoermigen Gletscher aus Stickstoffeis, der auf Bildern der NASA-Mission New Horizons zu sehen ist!</string>
+    <string name="object_info_pluto_description" translation_description="Short description of Pluto">Pluto ist ein Zwergplanet im Kuipergürtel. Bis 2006 galt er als neunter Planet.</string>
+    <string name="object_info_pluto_funfact" translation_description="Fun fact about Pluto">Pluto hat einen herzförmigen Gletscher aus Stickstoffeis, der auf Bildern der NASA-Mission New Horizons zu sehen ist!</string>
     <string name="object_info_pluto_distance">5,9 Milliarden km (Durchschnitt)</string>
     <string name="object_info_pluto_size">2.377 km Durchmesser</string>
     <string name="object_info_pluto_mass">1,3 x 10²² kg</string>
-    <string name="object_info_sirius_description" translation_description="Short description of Sirius">Sirius ist der hellste Stern am Nachthimmel und befindet sich im Sternbild Canis Major (Grosser Hund).</string>
-    <string name="object_info_sirius_funfact" translation_description="Fun fact about Sirius">Sirius ist eigentlich ein Doppelsternsystem! Sirius B, sein Begleiter, ist ein Weisser Zwerg etwa so gross wie die Erde, aber fast so massereich wie die Sonne.</string>
+    <string name="object_info_sirius_description" translation_description="Short description of Sirius">Sirius ist der hellste Stern am Nachthimmel und befindet sich im Sternbild Canis Major (Großer Hund).</string>
+    <string name="object_info_sirius_funfact" translation_description="Fun fact about Sirius">Sirius ist eigentlich ein Doppelsternsystem! Sirius B, sein Begleiter, ist ein Weißer Zwerg etwa so gross wie die Erde, aber fast so massereich wie die Sonne.</string>
     <string name="object_info_sirius_distance">8,6 Lichtjahre</string>
     <string name="object_info_sirius_size">1,7 Sonnenradien</string>
     <string name="object_info_sirius_mass">2,1 Sonnenmassen</string>
     <string name="object_info_vega_description" translation_description="Short description of Vega">Vega ist einer der hellsten Sterne, die von der Erde aus sichtbar sind, und befindet sich im Sternbild Lyra (die Leier).</string>
-    <string name="object_info_vega_funfact" translation_description="Fun fact about Vega">Vega war vor etwa 14.000 Jahren der Polarstern und wird es in etwa 12.000 Jahren wieder sein - wegen der Praezession der Erdachse!</string>
+    <string name="object_info_vega_funfact" translation_description="Fun fact about Vega">Vega war vor etwa 14.000 Jahren der Polarstern und wird es in etwa 12.000 Jahren wieder sein - wegen der Präzession der Erdachse!</string>
     <string name="object_info_vega_distance">25 Lichtjahre</string>
     <string name="object_info_vega_size">2,4 Sonnenradien</string>
     <string name="object_info_vega_mass">2,1 Sonnenmassen</string>
-    <string name="object_info_betelgeuse_description" translation_description="Short description of Betelgeuse">Betelgeuse ist ein Roter Ueberriese, der die Schulter des Orion markiert. Er ist einer der groessten mit blossem Auge sichtbaren Sterne.</string>
-    <string name="object_info_betelgeuse_funfact" translation_description="Fun fact about Betelgeuse">Betelgeuse ist so gross, dass er an der Position unserer Sonne Merkur, Venus, Erde, Mars und moeglicherweise sogar Jupiter verschlingen wuerde!</string>
+    <string name="object_info_betelgeuse_description" translation_description="Short description of Betelgeuse">Betelgeuse ist ein Roter Überriese, der die Schulter des Orion markiert. Er ist einer der größten mit bloßem Auge sichtbaren Sterne.</string>
+    <string name="object_info_betelgeuse_funfact" translation_description="Fun fact about Betelgeuse">Betelgeuse ist so gross, dass er an der Position unserer Sonne Merkur, Venus, Erde, Mars und möglicherweise sogar Jupiter verschlingen würde!</string>
     <string name="object_info_betelgeuse_distance">~700 Lichtjahre</string>
     <string name="object_info_betelgeuse_size">~900 Sonnenradien</string>
     <string name="object_info_betelgeuse_mass">~12 Sonnenmassen</string>
-    <string name="object_info_rigel_description" translation_description="Short description of Rigel">Rigel ist ein Blauer Ueberriese, der den Fuss des Orion markiert. Obwohl er weiter entfernt ist als Betelgeuse, erscheint er aehnlich hell.</string>
-    <string name="object_info_rigel_funfact" translation_description="Fun fact about Rigel">Rigel leuchtet mit der Kraft von etwa 120.000 Sonnen! Er ist einer der leuchtkraeftigsten Sterne in unserer Region der Milchstrasse.</string>
+    <string name="object_info_rigel_description" translation_description="Short description of Rigel">Rigel ist ein Blauer Überriese, der den Fuss des Orion markiert. Obwohl er weiter entfernt ist als Betelgeuse, erscheint er ähnlich hell.</string>
+    <string name="object_info_rigel_funfact" translation_description="Fun fact about Rigel">Rigel leuchtet mit der Kraft von etwa 120.000 Sonnen! Er ist einer der leuchtkräftigsten Sterne in unserer Region der Milchstraße.</string>
     <string name="object_info_rigel_distance">~860 Lichtjahre</string>
     <string name="object_info_rigel_size">~79 Sonnenradien</string>
     <string name="object_info_rigel_mass">~23 Sonnenmassen</string>
-    <string name="object_info_procyon_description" translation_description="Short description of Procyon">Procyon ist ein heller Stern im Sternbild Canis Minor (Kleiner Hund). Er ist einer unserer naechsten stellaren Nachbarn.</string>
+    <string name="object_info_procyon_description" translation_description="Short description of Procyon">Procyon ist ein heller Stern im Sternbild Canis Minor (Kleiner Hund). Er ist einer unserer nächsten stellaren Nachbarn.</string>
     <string name="object_info_procyon_funfact" translation_description="Fun fact about Procyon">Procyon bedeutet auf Griechisch \"vor dem Hund\", weil er kurz vor Sirius, dem Hundsstern, am Nachthimmel aufgeht!</string>
     <string name="object_info_procyon_distance">11,4 Lichtjahre</string>
     <string name="object_info_procyon_size">2,0 Sonnenradien</string>
     <string name="object_info_procyon_mass">1,5 Sonnenmassen</string>
-    <string name="object_info_polaris_description" translation_description="Short description of Polaris">Polaris, der Polarstern, erscheint fast bewegungslos am Himmel, waehrend sich andere Sterne die ganze Nacht um ihn drehen.</string>
-    <string name="object_info_polaris_funfact" translation_description="Fun fact about Polaris">Polaris ist eigentlich ein Dreifachsternsystem! Der Hauptstern ist ein Ueberriese, etwa 2.500 Mal heller als unsere Sonne.</string>
+    <string name="object_info_polaris_description" translation_description="Short description of Polaris">Polaris, der Polarstern, erscheint fast bewegungslos am Himmel, während sich andere Sterne die ganze Nacht um ihn drehen.</string>
+    <string name="object_info_polaris_funfact" translation_description="Fun fact about Polaris">Polaris ist eigentlich ein Dreifachsternsystem! Der Hauptstern ist ein Überriese, etwa 2.500 Mal heller als unsere Sonne.</string>
     <string name="object_info_polaris_distance">~430 Lichtjahre</string>
     <string name="object_info_polaris_size">~44 Sonnenradien</string>
     <string name="object_info_polaris_mass">~5,4 Sonnenmassen</string>
     <string name="object_info_deneb_description" translation_description="Short description of Deneb">Deneb markiert den Schwanz von Cygnus (dem Schwan). Er ist Teil des Sommerdreiecks zusammen mit Vega und Altair.</string>
-    <string name="object_info_deneb_funfact" translation_description="Fun fact about Deneb">Deneb ist einer der am weitesten entfernten mit blossem Auge sichtbaren Sterne - etwa 2.600 Lichtjahre entfernt!</string>
+    <string name="object_info_deneb_funfact" translation_description="Fun fact about Deneb">Deneb ist einer der am weitesten entfernten mit bloßem Auge sichtbaren Sterne - etwa 2.600 Lichtjahre entfernt!</string>
     <string name="object_info_deneb_distance">~2.600 Lichtjahre</string>
     <string name="object_info_deneb_size">~200 Sonnenradien</string>
     <string name="object_info_deneb_mass">~19 Sonnenmassen</string>
-    <string name="object_info_arcturus_description" translation_description="Short description of Arcturus">Arcturus ist der hellste Stern der noerdlichen Hemispaere, ein orangefarbener Riese im Sternbild Bootes (dem Baerenhuerter).</string>
-    <string name="object_info_arcturus_funfact" translation_description="Fun fact about Arcturus">Arcturus bewegt sich mit enormer Geschwindigkeit durch das All und wird in etwa 4.000 Jahren unserem Sonnensystem am naechsten kommen!</string>
+    <string name="object_info_arcturus_description" translation_description="Short description of Arcturus">Arcturus ist der hellste Stern der nördlichen Hemisphäre, ein orangefarbener Riese im Sternbild Bootes (dem Bärenhüter).</string>
+    <string name="object_info_arcturus_funfact" translation_description="Fun fact about Arcturus">Arcturus bewegt sich mit enormer Geschwindigkeit durch das All und wird in etwa 4.000 Jahren unserem Sonnensystem am nächsten kommen!</string>
     <string name="object_info_arcturus_distance">37 Lichtjahre</string>
     <string name="object_info_arcturus_size">26 Sonnenradien</string>
     <string name="object_info_arcturus_mass">1,1 Sonnenmassen</string>
-    <string name="object_info_canopus_description" translation_description="Short description of Canopus">Canopus ist der zweithellste Stern am Nachthimmel. Er ist hauptsaechlich von der Suedhalbkugel aus sichtbar.</string>
+    <string name="object_info_canopus_description" translation_description="Short description of Canopus">Canopus ist der zweithellste Stern am Nachthimmel. Er ist hauptsächlich von der Südhalbkugel aus sichtbar.</string>
     <string name="object_info_canopus_funfact" translation_description="Fun fact about Canopus">Canopus wird von Raumsonden zur Navigation verwendet, weil er sehr hell ist und weit von der Ekliptikebene entfernt liegt!</string>
     <string name="object_info_canopus_distance">310 Lichtjahre</string>
     <string name="object_info_canopus_size">72 Sonnenradien</string>
     <string name="object_info_canopus_mass">8,0 Sonnenmassen</string>
     <string name="object_info_aldebaran_description" translation_description="Short description of Aldebaran">Aldebaran ist ein orangefarbener Riesenstern, der das Auge des Stiers (Taurus) darstellt. Sein Name bedeutet auf Arabisch \"der Nachfolgende\".</string>
-    <string name="object_info_aldebaran_funfact" translation_description="Fun fact about Aldebaran">Aldebaran scheint zum Hyaden-Sternhaufen zu gehoeren, ist aber tatsaechlich nur halb so weit entfernt - eine kosmische optische Taeuschung!</string>
+    <string name="object_info_aldebaran_funfact" translation_description="Fun fact about Aldebaran">Aldebaran scheint zum Hyaden-Sternhaufen zu gehören, ist aber tatsächlich nur halb so weit entfernt - eine kosmische optische Täuschung!</string>
     <string name="object_info_aldebaran_distance">65 Lichtjahre</string>
     <string name="object_info_aldebaran_size">44 Sonnenradien</string>
     <string name="object_info_aldebaran_mass">1,2 Sonnenmassen</string>
-    <string name="object_info_antares_description" translation_description="Short description of Antares">Antares ist ein Roter Ueberriese, das Herz des Skorpions (Scorpius). Sein Name bedeutet \"Rivale des Mars\" wegen seiner roten Farbe.</string>
-    <string name="object_info_antares_funfact" translation_description="Fun fact about Antares">Antares ist so gross, dass seine Oberflaeche in unserem Sonnensystem ueber die Marsbahn hinausreichen wuerde!</string>
+    <string name="object_info_antares_description" translation_description="Short description of Antares">Antares ist ein Roter Überriese, das Herz des Skorpions (Scorpius). Sein Name bedeutet \"Rivale des Mars\" wegen seiner roten Farbe.</string>
+    <string name="object_info_antares_funfact" translation_description="Fun fact about Antares">Antares ist so gross, dass seine Oberfläche in unserem Sonnensystem über die Marsbahn hinausreichen würde!</string>
     <string name="object_info_antares_distance">~550 Lichtjahre</string>
     <string name="object_info_antares_size">~680 Sonnenradien</string>
     <string name="object_info_antares_mass">~12 Sonnenmassen</string>
@@ -110,7 +110,7 @@
     <string name="object_info_capella_distance">43 Lichtjahre</string>
     <string name="object_info_capella_size">12 Sonnenradien</string>
     <string name="object_info_capella_mass">2,6 Sonnenmassen</string>
-    <string name="object_info_altair_description">Altair ist der hellste Stern im Adler (Aquila) und einer der erdnaechsten mit blossem Auge sichtbaren Sterne.</string>
+    <string name="object_info_altair_description">Altair ist der hellste Stern im Adler (Aquila) und einer der erdnächsten mit bloßem Auge sichtbaren Sterne.</string>
     <string name="object_info_altair_funfact">Altair rotiert so schnell (einmal alle 9 Stunden), dass er an den Polen merklich abgeflacht ist - er ist 14 % breiter als hoch!</string>
     <string name="object_info_altair_distance">17 Lichtjahre</string>
     <string name="object_info_altair_size">1,8 Sonnenradien</string>
@@ -121,56 +121,56 @@
     <string name="object_info_spica_size">7,5 Sonnenradien</string>
     <string name="object_info_spica_mass">11 Sonnenmassen</string>
     <string name="object_info_achernar_description">Achernar ist der hellste Stern im Fluss Eridanus und der neunthellste Stern am Nachthimmel.</string>
-    <string name="object_info_achernar_funfact">Achernar ist der flachste bekannte Stern! Er rotiert so schnell, dass sein Aequatordurchmesser 56 % groesser ist als sein Poldurchmesser.</string>
+    <string name="object_info_achernar_funfact">Achernar ist der flachste bekannte Stern! Er rotiert so schnell, dass sein Äquatordurchmesser 56 % größer ist als sein Poldurchmesser.</string>
     <string name="object_info_achernar_distance">139 Lichtjahre</string>
     <string name="object_info_achernar_size">7,3 Sonnenradien</string>
     <string name="object_info_achernar_mass">6,7 Sonnenmassen</string>
     <string name="object_info_hadar_description">Hadar (Beta Centauri) ist der zweithellste Stern im Zentauren und der elfthellste am Nachthimmel.</string>
-    <string name="object_info_hadar_funfact">Hadar und Alpha Centauri sind als \"Suedliche Zeigersterne\" bekannt - sie zeigen auf das Sternbild Kreuz des Suedens!</string>
+    <string name="object_info_hadar_funfact">Hadar und Alpha Centauri sind als \"Südliche Zeigersterne\" bekannt - sie zeigen auf das Sternbild Kreuz des Südens!</string>
     <string name="object_info_hadar_distance">390 Lichtjahre</string>
     <string name="object_info_hadar_size">9 Sonnenradien</string>
     <string name="object_info_hadar_mass">12,8 Sonnenmassen</string>
-    <string name="object_info_regulus_description">Regulus ist der hellste Stern im Loewen (Leo) und stellt das Herz des Loewen dar. Es ist ein Mehrfachsternsystem.</string>
-    <string name="object_info_regulus_funfact">Regulus rotiert so schnell, dass er sich fast selbst zerreisst! Er vollendet eine Umdrehung in nur 16 Stunden.</string>
+    <string name="object_info_regulus_description">Regulus ist der hellste Stern im Löwen (Leo) und stellt das Herz des Löwen dar. Es ist ein Mehrfachsternsystem.</string>
+    <string name="object_info_regulus_funfact">Regulus rotiert so schnell, dass er sich fast selbst zerreißt! Er vollendet eine Umdrehung in nur 16 Stunden.</string>
     <string name="object_info_regulus_distance">79 Lichtjahre</string>
     <string name="object_info_regulus_size">4,4 Sonnenradien</string>
     <string name="object_info_regulus_mass">3,8 Sonnenmassen</string>
-    <string name="object_info_acrux_description">Acrux (Alpha Crucis) ist der hellste Stern im Kreuz des Suedens und der dreizehnthellste Stern am Himmel.</string>
+    <string name="object_info_acrux_description">Acrux (Alpha Crucis) ist der hellste Stern im Kreuz des Südens und der dreizehnthellste Stern am Himmel.</string>
     <string name="object_info_acrux_funfact">Acrux erscheint auf den Flaggen von Australien, Neuseeland, Brasilien, Papua-Neuguinea und Samoa!</string>
     <string name="object_info_acrux_distance">320 Lichtjahre</string>
     <string name="object_info_acrux_size">7,8 Sonnenradien</string>
     <string name="object_info_acrux_mass">18 Sonnenmassen</string>
-    <string name="object_info_castor_description">Castor ist einer der Zwillingssterne in den Zwillingen (Gemini). Obwohl er als ein Stern erscheint, ist er tatsaechlich ein System aus sechs Sternen!</string>
-    <string name="object_info_castor_funfact">Castor ist ein Sechsfachsternsystem - drei Paare von Doppelsternen, die alle umeinander kreisen. Es ist eines der komplexesten Sternsysteme in Erdnaehe!</string>
+    <string name="object_info_castor_description">Castor ist einer der Zwillingssterne in den Zwillingen (Gemini). Obwohl er als ein Stern erscheint, ist er tatsächlich ein System aus sechs Sternen!</string>
+    <string name="object_info_castor_funfact">Castor ist ein Sechsfachsternsystem - drei Paare von Doppelsternen, die alle umeinander kreisen. Es ist eines der komplexesten Sternsysteme in Erdnähe!</string>
     <string name="object_info_castor_distance">51 Lichtjahre</string>
     <string name="object_info_castor_size">2,4 Sonnenradien</string>
     <string name="object_info_castor_mass">2,8 Sonnenmassen</string>
     <string name="object_info_pollux_description">Pollux ist der hellere der Zwillingssterne in den Zwillingen. Im Gegensatz zu Castor ist er ein einzelner orangefarbener Riesenstern.</string>
-    <string name="object_info_pollux_funfact">Pollux hat einen bestaetigten Exoplaneten! Pollux b ist ein Gasriese mit mindestens der doppelten Masse von Jupiter.</string>
+    <string name="object_info_pollux_funfact">Pollux hat einen bestätigten Exoplaneten! Pollux b ist ein Gasriese mit mindestens der doppelten Masse von Jupiter.</string>
     <string name="object_info_pollux_distance">34 Lichtjahre</string>
     <string name="object_info_pollux_size">9,1 Sonnenradien</string>
     <string name="object_info_pollux_mass">1,9 Sonnenmassen</string>
-    <string name="object_info_fomalhaut_description">Fomalhaut ist der hellste Stern im Suedlichen Fisch (Piscis Austrinus) und einer der hellsten Sterne am Herbsthimmel.</string>
-    <string name="object_info_fomalhaut_funfact">Fomalhaut hat eine spektakulaere Truemmerscheibe, die eine der ersten war, die direkt um einen anderen Stern abgebildet wurde!</string>
+    <string name="object_info_fomalhaut_description">Fomalhaut ist der hellste Stern im Südlichen Fisch (Piscis Austrinus) und einer der hellsten Sterne am Herbsthimmel.</string>
+    <string name="object_info_fomalhaut_funfact">Fomalhaut hat eine spektakuläre Trümmerscheibe, die eine der ersten war, die direkt um einen anderen Stern abgebildet wurde!</string>
     <string name="object_info_fomalhaut_distance">25 Lichtjahre</string>
     <string name="object_info_fomalhaut_size">1,8 Sonnenradien</string>
     <string name="object_info_fomalhaut_mass">1,9 Sonnenmassen</string>
-    <string name="object_info_adhara_description">Adhara (Epsilon Canis Majoris) ist der zweithellste Stern im Grossen Hund, nach Sirius.</string>
+    <string name="object_info_adhara_description">Adhara (Epsilon Canis Majoris) ist der zweithellste Stern im Großen Hund, nach Sirius.</string>
     <string name="object_info_adhara_funfact">Vor etwa 4,7 Millionen Jahren war Adhara der hellste Stern am Nachthimmel - sogar heller als Sirius heute!</string>
     <string name="object_info_adhara_distance">430 Lichtjahre</string>
     <string name="object_info_adhara_size">14 Sonnenradien</string>
     <string name="object_info_adhara_mass">12,6 Sonnenmassen</string>
     <string name="object_info_shaula_description">Shaula ist der zweithellste Stern im Skorpion und markiert den Stachel am Schwanz des Skorpions.</string>
-    <string name="object_info_shaula_funfact">Shaula bedeutet auf Arabisch \"der erhobene Schwanz\". Es ist tatsaechlich ein Dreifachsternsystem mit eng beieinander liegenden Sternen!</string>
+    <string name="object_info_shaula_funfact">Shaula bedeutet auf Arabisch \"der erhobene Schwanz\". Es ist tatsächlich ein Dreifachsternsystem mit eng beieinander liegenden Sternen!</string>
     <string name="object_info_shaula_distance">570 Lichtjahre</string>
     <string name="object_info_shaula_size">8,8 Sonnenradien</string>
     <string name="object_info_shaula_mass">10,4 Sonnenmassen</string>
-    <string name="object_info_alnilam_description">Alnilam ist der mittlere Stern des Orionguertel und einer der leuchtkraeftigsten bekannten Sterne unserer Galaxie.</string>
+    <string name="object_info_alnilam_description">Alnilam ist der mittlere Stern des Oriongürtel und einer der leuchtkräftigsten bekannten Sterne unserer Galaxie.</string>
     <string name="object_info_alnilam_funfact">Alnilam verliert Masse 20 Millionen Mal schneller als unsere Sonne durch seinen kraftvollen Sternwind!</string>
     <string name="object_info_alnilam_distance">~2.000 Lichtjahre</string>
     <string name="object_info_alnilam_size">42 Sonnenradien</string>
     <string name="object_info_alnilam_mass">40 Sonnenmassen</string>
-    <string name="object_info_alphard_description">Alphard ist der hellste Stern in der Wasserschlange (Hydra), dem groessten Sternbild am Himmel.</string>
+    <string name="object_info_alphard_description">Alphard ist der hellste Stern in der Wasserschlange (Hydra), dem größten Sternbild am Himmel.</string>
     <string name="object_info_alphard_funfact">Alphard bedeutet auf Arabisch \"der Einsame\", weil er allein in einer ansonsten lichtschwachen Himmelsregion steht!</string>
     <string name="object_info_alphard_distance">177 Lichtjahre</string>
     <string name="object_info_alphard_size">50 Sonnenradien</string>
@@ -180,201 +180,201 @@
     <string name="object_info_mirach_distance">197 Lichtjahre</string>
     <string name="object_info_mirach_size">100 Sonnenradien</string>
     <string name="object_info_mirach_mass">3,5 Sonnenmassen</string>
-    <string name="object_info_algol_description">Algol ist ein beruehmter Bedeckungsveraenderlicher im Perseus, seit der Antike als \"Teufelsstern\" bekannt.</string>
+    <string name="object_info_algol_description">Algol ist ein berühmter Bedeckungsveränderlicher im Perseus, seit der Antike als \"Teufelsstern\" bekannt.</string>
     <string name="object_info_algol_funfact">Alle 2,87 Tage wird Algol merklich dunkler, wenn sein lichtschwacher Begleiter vorbeizieht - antike Astronomen fanden das unheimlich!</string>
     <string name="object_info_algol_distance">90 Lichtjahre</string>
     <string name="object_info_algol_size">2,7 Sonnenradien</string>
     <string name="object_info_algol_mass">3,2 Sonnenmassen</string>
-    <string name="object_info_alpha_centauri_description">Alpha Centauri ist das naechstgelegene Sternsystem zur Sonne und besteht aus drei Sternen, darunter Proxima Centauri.</string>
+    <string name="object_info_alpha_centauri_description">Alpha Centauri ist das nächstgelegene Sternsystem zur Sonne und besteht aus drei Sternen, darunter Proxima Centauri.</string>
     <string name="object_info_alpha_centauri_funfact">Proxima Centauri, Teil dieses Systems, hat einen potenziell bewohnbaren Planeten! Proxima b ist nur 4,2 Lichtjahre entfernt.</string>
     <string name="object_info_alpha_centauri_distance">4,37 Lichtjahre</string>
     <string name="object_info_alpha_centauri_size">1,2 Sonnenradien</string>
     <string name="object_info_alpha_centauri_mass">1,1 Sonnenmassen</string>
-    <string name="object_info_dubhe_description">Dubhe ist einer der beiden \"Zeigersterne\" im Grossen Wagen, die auf Polaris, den Polarstern, weisen.</string>
-    <string name="object_info_dubhe_funfact">Anders als die meisten Sterne des Grossen Wagens bewegen sich Dubhe und Alkaid in die entgegengesetzte Richtung - der Asterismus wird in 50.000 Jahren anders aussehen!</string>
+    <string name="object_info_dubhe_description">Dubhe ist einer der beiden \"Zeigersterne\" im Großen Wagen, die auf Polaris, den Polarstern, weisen.</string>
+    <string name="object_info_dubhe_funfact">Anders als die meisten Sterne des Großen Wagens bewegen sich Dubhe und Alkaid in die entgegengesetzte Richtung - der Asterismus wird in 50.000 Jahren anders aussehen!</string>
     <string name="object_info_dubhe_distance">123 Lichtjahre</string>
     <string name="object_info_dubhe_size">30 Sonnenradien</string>
     <string name="object_info_dubhe_mass">4,3 Sonnenmassen</string>
-    <string name="object_info_alioth_description">Alioth ist der hellste Stern im Grossen Baeren (Ursa Major) und der hellste Stern im Asterismus des Grossen Wagens.</string>
-    <string name="object_info_alioth_funfact">Alioth hat ein eigenartiges Magnetfeld, das dafuer sorgt, dass sich chemische Elemente in Flecken auf seiner Oberflaeche konzentrieren!</string>
+    <string name="object_info_alioth_description">Alioth ist der hellste Stern im Großen Bären (Ursa Major) und der hellste Stern im Asterismus des Großen Wagens.</string>
+    <string name="object_info_alioth_funfact">Alioth hat ein eigenartiges Magnetfeld, das dafür sorgt, dass sich chemische Elemente in Flecken auf seiner Oberfläche konzentrieren!</string>
     <string name="object_info_alioth_distance">83 Lichtjahre</string>
     <string name="object_info_alioth_size">4,1 Sonnenradien</string>
     <string name="object_info_alioth_mass">2,9 Sonnenmassen</string>
-    <string name="object_info_hamal_description">Hamal ist der hellste Stern im Widder (Aries) und markierte vor etwa 2.000 Jahren den Fruehlingspunkt.</string>
+    <string name="object_info_hamal_description">Hamal ist der hellste Stern im Widder (Aries) und markierte vor etwa 2.000 Jahren den Frühlingspunkt.</string>
     <string name="object_info_hamal_funfact">2011 wurde ein riesiger Exoplanet entdeckt, der Hamal umkreist - mit mindestens 1,8-facher Jupitermasse!</string>
     <string name="object_info_hamal_distance">66 Lichtjahre</string>
     <string name="object_info_hamal_size">15 Sonnenradien</string>
     <string name="object_info_hamal_mass">1,5 Sonnenmassen</string>
-    <string name="object_info_rasalhague_description">Rasalhague ist der hellste Stern im Schlangentraeger (Ophiuchus), einem Sternbild, das mit Heilung in Verbindung gebracht wird.</string>
+    <string name="object_info_rasalhague_description">Rasalhague ist der hellste Stern im Schlangenträger (Ophiuchus), einem Sternbild, das mit Heilung in Verbindung gebracht wird.</string>
     <string name="object_info_rasalhague_funfact">Rasalhague ist ein schneller Rotator - er dreht sich so schnell, dass er merklich abgeflacht ist und eine Umdrehung in nur 18 Stunden schafft!</string>
     <string name="object_info_rasalhague_distance">48,6 Lichtjahre</string>
     <string name="object_info_rasalhague_size">2,5 Sonnenradien</string>
     <string name="object_info_rasalhague_mass">2,4 Sonnenmassen</string>
-    <string name="object_info_denebola_description">Denebola markiert den Schwanz des Loewen (Leo). Sein Name bedeutet auf Arabisch woertlich \"Schwanz des Loewen\".</string>
-    <string name="object_info_denebola_funfact">Denebola hat eine staubige Truemmerscheibe, die darauf hindeuten koennte, dass Planeten entstehen oder Asteroiden kollidieren!</string>
+    <string name="object_info_denebola_description">Denebola markiert den Schwanz des Löwen (Leo). Sein Name bedeutet auf Arabisch wörtlich \"Schwanz des Löwen\".</string>
+    <string name="object_info_denebola_funfact">Denebola hat eine staubige Trümmerscheibe, die darauf hindeuten könnte, dass Planeten entstehen oder Asteroiden kollidieren!</string>
     <string name="object_info_denebola_distance">36 Lichtjahre</string>
     <string name="object_info_denebola_size">1,7 Sonnenradien</string>
     <string name="object_info_denebola_mass">1,8 Sonnenmassen</string>
     <string name="object_info_alpheratz_description">Alpheratz ist der hellste Stern in der Andromeda, obwohl er einst als Teil des Pegasus betrachtet wurde.</string>
-    <string name="object_info_alpheratz_funfact">Alpheratz hat eine aeusserst ungewoehnliche chemische Zusammensetzung mit hohen Konzentrationen von Quecksilber und Mangan in seiner Atmosphaere!</string>
+    <string name="object_info_alpheratz_funfact">Alpheratz hat eine äußerst ungewöhnliche chemische Zusammensetzung mit hohen Konzentrationen von Quecksilber und Mangan in seiner Atmosphäre!</string>
     <string name="object_info_alpheratz_distance">97 Lichtjahre</string>
     <string name="object_info_alpheratz_size">2,7 Sonnenradien</string>
     <string name="object_info_alpheratz_mass">3,6 Sonnenmassen</string>
     <string name="object_info_markab_description">Markab ist einer der vier Sterne, die das Grosse Quadrat des Pegasus bilden, einen leicht erkennbaren Asterismus.</string>
-    <string name="object_info_markab_funfact">Markab ist ein \"spaeter B-Typ\"-Stern, der gerade sein Hauptreihenleben beendet und bald zu einem Roten Riesen wird!</string>
+    <string name="object_info_markab_funfact">Markab ist ein \"später B-Typ\"-Stern, der gerade sein Hauptreihenleben beendet und bald zu einem Roten Riesen wird!</string>
     <string name="object_info_markab_distance">133 Lichtjahre</string>
     <string name="object_info_markab_size">4,6 Sonnenradien</string>
     <string name="object_info_markab_mass">3,5 Sonnenmassen</string>
     <string name="object_info_enif_description">Enif ist der hellste Stern im Pegasus und markiert die Nase des fliegenden Pferdes im Sternbild.</string>
-    <string name="object_info_enif_funfact">1972 erlebte Enif einen dramatischen Helligkeitsausbruch und wurde kurzzeitig fuenfmal heller!</string>
+    <string name="object_info_enif_funfact">1972 erlebte Enif einen dramatischen Helligkeitsausbruch und wurde kurzzeitig fünfmal heller!</string>
     <string name="object_info_enif_distance">670 Lichtjahre</string>
     <string name="object_info_enif_size">185 Sonnenradien</string>
     <string name="object_info_enif_mass">10,7 Sonnenmassen</string>
-    <string name="object_info_scheat_description">Scheat ist ein Roter Riese im Grossen Quadrat des Pegasus, auffaellig durch seine tief orange-rote Farbe.</string>
-    <string name="object_info_scheat_funfact">Scheat ist ein halbregelmässiger veraenderlicher Stern, dessen Helligkeit sich ueber Zeitraeume von Wochen bis Monaten aendert!</string>
+    <string name="object_info_scheat_description">Scheat ist ein Roter Riese im Großen Quadrat des Pegasus, auffällig durch seine tief orange-rote Farbe.</string>
+    <string name="object_info_scheat_funfact">Scheat ist ein halbregelmäßiger veränderlicher Stern, dessen Helligkeit sich über Zeiträume von Wochen bis Monaten ändert!</string>
     <string name="object_info_scheat_distance">196 Lichtjahre</string>
     <string name="object_info_scheat_size">110 Sonnenradien</string>
     <string name="object_info_scheat_mass">2,1 Sonnenmassen</string>
-    <string name="object_info_nunki_description">Nunki ist der zweithellste Stern im Schuetzen (Sagittarius) und traegt den aeltesten noch gebraeuchlichen Sternnamen.</string>
-    <string name="object_info_nunki_funfact">Der Name Nunki stammt aus dem alten Babylon, wo er die Stadt Eridu auf der Himmelssphaere repraesentierte!</string>
+    <string name="object_info_nunki_description">Nunki ist der zweithellste Stern im Schützen (Sagittarius) und trägt den ältesten noch gebräuchlichen Sternnamen.</string>
+    <string name="object_info_nunki_funfact">Der Name Nunki stammt aus dem alten Babylon, wo er die Stadt Eridu auf der Himmelssphäre repräsentierte!</string>
     <string name="object_info_nunki_distance">228 Lichtjahre</string>
     <string name="object_info_nunki_size">4,5 Sonnenradien</string>
     <string name="object_info_nunki_mass">7,8 Sonnenmassen</string>
     <string name="object_info_diphda_description">Diphda (Beta Ceti) ist der hellste Stern im Walfisch (Cetus) und ein markanter Herbststern.</string>
-    <string name="object_info_diphda_funfact">Diphda steht isoliert in einer eher kahlen Himmelsregion, was ihn trotz maessiger Helligkeit fuer Seefahrer nuetzlich machte!</string>
+    <string name="object_info_diphda_funfact">Diphda steht isoliert in einer eher kahlen Himmelsregion, was ihn trotz mäßiger Helligkeit für Seefahrer nützlich machte!</string>
     <string name="object_info_diphda_distance">96 Lichtjahre</string>
     <string name="object_info_diphda_size">18 Sonnenradien</string>
     <string name="object_info_diphda_mass">2,8 Sonnenmassen</string>
-    <string name="object_info_m1_description">Der Krebsnebel ist ein Supernovaueberrest im Stier, das Ergebnis einer Sternexplosion, die chinesische Astronomen im Jahr 1054 aufzeichneten.</string>
-    <string name="object_info_m1_funfact">Der Krebsnebel enthaelt einen Pulsar, der sich 30 Mal pro Sekunde dreht - der kollabierte Kern des explodierten Sterns!</string>
+    <string name="object_info_m1_description">Der Krebsnebel ist ein Supernovaüberrest im Stier, das Ergebnis einer Sternexplosion, die chinesische Astronomen im Jahr 1054 aufzeichneten.</string>
+    <string name="object_info_m1_funfact">Der Krebsnebel enthält einen Pulsar, der sich 30 Mal pro Sekunde dreht - der kollabierte Kern des explodierten Sterns!</string>
     <string name="object_info_m1_distance">6.500 Lichtjahre</string>
     <string name="object_info_m1_size">11 Lichtjahre Durchmesser</string>
-    <string name="object_info_m13_description">M13 ist ein spektakulaerer Kugelsternhaufen im Herkules mit etwa 300.000 Sternen, einer der hellsten am noerdlichen Himmel.</string>
+    <string name="object_info_m13_description">M13 ist ein spektakulärer Kugelsternhaufen im Herkules mit etwa 300.000 Sternen, einer der hellsten am nördlichen Himmel.</string>
     <string name="object_info_m13_funfact">1974 wurde die Arecibo-Botschaft in Richtung M13 gesendet - ein Versuch, ausserirdische Intelligenz zu kontaktieren!</string>
     <string name="object_info_m13_distance">22.200 Lichtjahre</string>
     <string name="object_info_m13_size">145 Lichtjahre Durchmesser</string>
-    <string name="object_info_m31_description">Die Andromedagalaxie ist die naechste grosse Spiralgalaxie zur Milchstrasse und eines der am weitesten entfernten mit blossem Auge sichtbaren Objekte.</string>
-    <string name="object_info_m31_funfact">Die Andromedagalaxie naehert sich uns mit 110 km/s und wird in etwa 4,5 Milliarden Jahren mit der Milchstrasse kollidieren!</string>
+    <string name="object_info_m31_description">Die Andromedagalaxie ist die nächste große Spiralgalaxie zur Milchstraße und eines der am weitesten entfernten mit bloßem Auge sichtbaren Objekte.</string>
+    <string name="object_info_m31_funfact">Die Andromedagalaxie nähert sich uns mit 110 km/s und wird in etwa 4,5 Milliarden Jahren mit der Milchstraße kollidieren!</string>
     <string name="object_info_m31_distance">2,5 Millionen Lichtjahre</string>
     <string name="object_info_m31_size">220.000 Lichtjahre Durchmesser</string>
     <string name="object_info_m31_mass">1,5 Billionen Sonnenmassen</string>
-    <string name="object_info_m42_description">Der Orionnebel ist ein diffuser Emissionsnebel, der mit blossem Auge sichtbar ist - eines der meistfotografierten Objekte am Nachthimmel.</string>
-    <string name="object_info_m42_funfact">Der Orionnebel ist eine Sternkinderstube, in der gerade jetzt neue Sterne geboren werden. Ueber 700 Sterne entstehen darin!</string>
+    <string name="object_info_m42_description">Der Orionnebel ist ein diffuser Emissionsnebel, der mit bloßem Auge sichtbar ist - eines der meistfotografierten Objekte am Nachthimmel.</string>
+    <string name="object_info_m42_funfact">Der Orionnebel ist eine Sternkinderstube, in der gerade jetzt neue Sterne geboren werden. Über 700 Sterne entstehen darin!</string>
     <string name="object_info_m42_distance">1.344 Lichtjahre</string>
     <string name="object_info_m42_size">24 Lichtjahre Durchmesser</string>
-    <string name="object_info_m45_description">Die Plejaden sind ein offener Sternhaufen im Stier, auch als Siebengestirn bekannt, seit der Antike mit blossem Auge sichtbar.</string>
-    <string name="object_info_m45_funfact">Die Plejaden gehoeren zu den erdnaechsten Sternhaufen und wurden von praktisch jeder antiken Zivilisation erkannt!</string>
+    <string name="object_info_m45_description">Die Plejaden sind ein offener Sternhaufen im Stier, auch als Siebengestirn bekannt, seit der Antike mit bloßem Auge sichtbar.</string>
+    <string name="object_info_m45_funfact">Die Plejaden gehören zu den erdnächsten Sternhaufen und wurden von praktisch jeder antiken Zivilisation erkannt!</string>
     <string name="object_info_m45_distance">444 Lichtjahre</string>
     <string name="object_info_m45_size">17 Lichtjahre Durchmesser</string>
-    <string name="object_info_m51_description">Die Strudelgalaxie ist eine Spiralgalaxie mit ausgepraegtier Struktur in den Jagdhunden, beruehmt fuer ihre eindrucksvollen Spiralarme und Begleitgalaxie.</string>
+    <string name="object_info_m51_description">Die Strudelgalaxie ist eine Spiralgalaxie mit ausgeprägter Struktur in den Jagdhunden, berühmt für ihre eindrucksvollen Spiralarme und Begleitgalaxie.</string>
     <string name="object_info_m51_funfact">Die Strudelgalaxie war die erste Galaxie, bei der eine Spiralstruktur erkannt wurde, entdeckt von Lord Rosse im Jahr 1845!</string>
     <string name="object_info_m51_distance">23 Millionen Lichtjahre</string>
     <string name="object_info_m51_size">76.000 Lichtjahre Durchmesser</string>
-    <string name="object_info_m57_description">Der Ringnebel ist ein planetarischer Nebel in der Leier - eine leuchtende Gashuelle, die von einem sterbenden sonnenaehnlichen Stern abgestossen wurde.</string>
-    <string name="object_info_m57_funfact">Der Ringnebel dehnt sich mit etwa 20 km/s aus und wird sich in den naechsten 10.000 Jahren im Weltraum aufloesen!</string>
+    <string name="object_info_m57_description">Der Ringnebel ist ein planetarischer Nebel in der Leier - eine leuchtende Gashülle, die von einem sterbenden sonnenähnlichen Stern abgestoßen wurde.</string>
+    <string name="object_info_m57_funfact">Der Ringnebel dehnt sich mit etwa 20 km/s aus und wird sich in den nächsten 10.000 Jahren im Weltraum auflösen!</string>
     <string name="object_info_m57_distance">2.300 Lichtjahre</string>
     <string name="object_info_m57_size">1,3 Lichtjahre Durchmesser</string>
-    <string name="object_info_m81_description">M81 ist eine Spiralgalaxie mit ausgepraegtier Struktur im Grossen Baeren, eine der hellsten von der Erde aus sichtbaren Galaxien.</string>
-    <string name="object_info_m81_funfact">M81 interagiert gravitativ mit der Nachbargalaxie M82 und loest dort intensive Sternentstehung aus!</string>
+    <string name="object_info_m81_description">M81 ist eine Spiralgalaxie mit ausgeprägter Struktur im Großen Bären, eine der hellsten von der Erde aus sichtbaren Galaxien.</string>
+    <string name="object_info_m81_funfact">M81 interagiert gravitativ mit der Nachbargalaxie M82 und löst dort intensive Sternentstehung aus!</string>
     <string name="object_info_m81_distance">12 Millionen Lichtjahre</string>
     <string name="object_info_m81_size">90.000 Lichtjahre Durchmesser</string>
-    <string name="object_info_m82_description">Die Zigarrengalaxie ist eine Starburst-Galaxie im Grossen Baeren, bekannt fuer ihre Kantenlage und intensive Sternentstehung.</string>
-    <string name="object_info_m82_funfact">M82 bildet zehnmal schneller Sterne als unsere Milchstrasse - aufgrund der gravitativen Wechselwirkung mit der benachbarten M81!</string>
+    <string name="object_info_m82_description">Die Zigarrengalaxie ist eine Starburst-Galaxie im Großen Bären, bekannt für ihre Kantenlage und intensive Sternentstehung.</string>
+    <string name="object_info_m82_funfact">M82 bildet zehnmal schneller Sterne als unsere Milchstraße - aufgrund der gravitativen Wechselwirkung mit der benachbarten M81!</string>
     <string name="object_info_m82_distance">12 Millionen Lichtjahre</string>
     <string name="object_info_m82_size">37.000 Lichtjahre Durchmesser</string>
-    <string name="object_info_m101_description">Die Feuerradgalaxie ist eine von vorne sichtbare Spiralgalaxie im Grossen Baeren, eine der groessten bekannten Spiralgalaxien.</string>
-    <string name="object_info_m101_funfact">Die Feuerradgalaxie enthaelt ueber eine Billion Sterne und hat asymmetrische Spiralarme aufgrund vergangener Galaxienwechselwirkungen!</string>
+    <string name="object_info_m101_description">Die Feuerradgalaxie ist eine von vorne sichtbare Spiralgalaxie im Großen Bären, eine der größten bekannten Spiralgalaxien.</string>
+    <string name="object_info_m101_funfact">Die Feuerradgalaxie enthält über eine Billion Sterne und hat asymmetrische Spiralarme aufgrund vergangener Galaxienwechselwirkungen!</string>
     <string name="object_info_m101_distance">21 Millionen Lichtjahre</string>
     <string name="object_info_m101_size">170.000 Lichtjahre Durchmesser</string>
-    <string name="object_info_m104_description">Die Sombrerogalaxie ist eine Spiralgalaxie in der Jungfrau, beruehmt fuer ihren hellen Kern und die grosse zentrale Auswoelbung mit dunklem Staubband.</string>
-    <string name="object_info_m104_funfact">Die Sombrerogalaxie hat ein supermassives Schwarzes Loch in ihrem Zentrum mit geschaetzten 1 Milliarde Sonnenmassen!</string>
+    <string name="object_info_m104_description">Die Sombrerogalaxie ist eine Spiralgalaxie in der Jungfrau, berühmt für ihren hellen Kern und die große zentrale Auswölbung mit dunklem Staubband.</string>
+    <string name="object_info_m104_funfact">Die Sombrerogalaxie hat ein supermassives Schwarzes Loch in ihrem Zentrum mit geschätzten 1 Milliarde Sonnenmassen!</string>
     <string name="object_info_m104_distance">31 Millionen Lichtjahre</string>
     <string name="object_info_m104_size">50.000 Lichtjahre Durchmesser</string>
-    <string name="object_info_m8_description">Der Lagunennebel ist eine riesige interstellare Wolke im Schuetzen, einer der schoensten und hellsten Nebel am Sommerhimmel.</string>
-    <string name="object_info_m8_funfact">Der Lagunennebel enthaelt Herschel 36, einen der massereichsten und leuchtkraeftigsten bekannten Sterne!</string>
+    <string name="object_info_m8_description">Der Lagunennebel ist eine riesige interstellare Wolke im Schützen, einer der schönsten und hellsten Nebel am Sommerhimmel.</string>
+    <string name="object_info_m8_funfact">Der Lagunennebel enthält Herschel 36, einen der massereichsten und leuchtkräftigsten bekannten Sterne!</string>
     <string name="object_info_m8_distance">4.100 Lichtjahre</string>
     <string name="object_info_m8_size">55 Lichtjahre Durchmesser</string>
-    <string name="object_info_m17_description">Der Omeganebel (auch Schwanennebel) ist ein Sternentstehungsgebiet im Schuetzen, einer der hellsten Emissionsnebel.</string>
-    <string name="object_info_m17_funfact">Der Omeganebel enthaelt einen offenen Sternhaufen mit etwa 800 jungen Sternen, die in seinem Gas und Staub verborgen sind!</string>
+    <string name="object_info_m17_description">Der Omeganebel (auch Schwanennebel) ist ein Sternentstehungsgebiet im Schützen, einer der hellsten Emissionsnebel.</string>
+    <string name="object_info_m17_funfact">Der Omeganebel enthält einen offenen Sternhaufen mit etwa 800 jungen Sternen, die in seinem Gas und Staub verborgen sind!</string>
     <string name="object_info_m17_distance">5.500 Lichtjahre</string>
     <string name="object_info_m17_size">15 Lichtjahre Durchmesser</string>
-    <string name="object_info_m20_description">Der Trifidnebel ist eine Kombination aus Emissions-, Reflexions- und Dunkelnebel im Schuetzen, durch dunkle Staubbahnen unterteilt.</string>
+    <string name="object_info_m20_description">Der Trifidnebel ist eine Kombination aus Emissions-, Reflexions- und Dunkelnebel im Schützen, durch dunkle Staubbahnen unterteilt.</string>
     <string name="object_info_m20_funfact">Der Trifidnebel zeigt drei verschiedene Nebeltypen in einem Objekt: rote Emission, blaue Reflexion und dunkle Absorption!</string>
     <string name="object_info_m20_distance">5.200 Lichtjahre</string>
     <string name="object_info_m20_size">20 Lichtjahre Durchmesser</string>
-    <string name="object_info_m27_description">Der Hantelnebel ist ein planetarischer Nebel im Fuechschen (Vulpecula), der erste jemals entdeckte planetarische Nebel.</string>
+    <string name="object_info_m27_description">Der Hantelnebel ist ein planetarischer Nebel im Füchschen (Vulpecula), der erste jemals entdeckte planetarische Nebel.</string>
     <string name="object_info_m27_funfact">Der Hantelnebel wurde 1764 von Charles Messier entdeckt und war damit der erste jemals entdeckte planetarische Nebel!</string>
     <string name="object_info_m27_distance">1.360 Lichtjahre</string>
     <string name="object_info_m27_size">2,5 Lichtjahre Durchmesser</string>
-    <string name="object_info_m33_description">Die Dreiecksgalaxie ist das drittgroesste Mitglied der Lokalen Gruppe, eine Spiralgalaxie im Sternbild Dreieck.</string>
-    <string name="object_info_m33_funfact">Die Dreiecksgalaxie koennte gravitativ an die Andromedagalaxie gebunden sein - als entfernter Satellit!</string>
+    <string name="object_info_m33_description">Die Dreiecksgalaxie ist das drittgrößte Mitglied der Lokalen Gruppe, eine Spiralgalaxie im Sternbild Dreieck.</string>
+    <string name="object_info_m33_funfact">Die Dreiecksgalaxie könnte gravitativ an die Andromedagalaxie gebunden sein - als entfernter Satellit!</string>
     <string name="object_info_m33_distance">2,7 Millionen Lichtjahre</string>
     <string name="object_info_m33_size">60.000 Lichtjahre Durchmesser</string>
-    <string name="object_info_m35_description">M35 ist ein grosser offener Sternhaufen in den Zwillingen, unter guten Bedingungen mit blossem Auge sichtbar.</string>
-    <string name="object_info_m35_funfact">M35 enthaelt etwa 200 Sterne und erscheint neben dem viel aelteren Sternhaufen NGC 2158 im selben Gesichtsfeld!</string>
+    <string name="object_info_m35_description">M35 ist ein großer offener Sternhaufen in den Zwillingen, unter guten Bedingungen mit bloßem Auge sichtbar.</string>
+    <string name="object_info_m35_funfact">M35 enthält etwa 200 Sterne und erscheint neben dem viel älteren Sternhaufen NGC 2158 im selben Gesichtsfeld!</string>
     <string name="object_info_m35_distance">2.800 Lichtjahre</string>
     <string name="object_info_m35_size">24 Lichtjahre Durchmesser</string>
-    <string name="object_info_m44_description">Der Bienenkorbhaufen (Praesepe) ist ein offener Sternhaufen im Krebs, seit der Antike bekannt und mit blossem Auge sichtbar.</string>
+    <string name="object_info_m44_description">Der Bienenkorbhaufen (Praesepe) ist ein offener Sternhaufen im Krebs, seit der Antike bekannt und mit bloßem Auge sichtbar.</string>
     <string name="object_info_m44_funfact">Antike Astronomen nutzten die Sichtbarkeit des Bienenkorbhaufens zur Wettervorhersage - war er unsichtbar, kam Regen!</string>
     <string name="object_info_m44_distance">577 Lichtjahre</string>
     <string name="object_info_m44_size">15 Lichtjahre Durchmesser</string>
-    <string name="object_info_m78_description">M78 ist der hellste diffuse Reflexionsnebel am Himmel, im Orion nahe der beruehmten Guertelsterne gelegen.</string>
-    <string name="object_info_m78_funfact">M78 enthaelt etwa 45 junge T-Tauri-Veraenderliche, sehr junge Sterne, die sich noch zur Hauptreihe zusammenziehen!</string>
+    <string name="object_info_m78_description">M78 ist der hellste diffuse Reflexionsnebel am Himmel, im Orion nahe der berühmten Gürtelsterne gelegen.</string>
+    <string name="object_info_m78_funfact">M78 enthält etwa 45 junge T-Tauri-Veränderliche, sehr junge Sterne, die sich noch zur Hauptreihe zusammenziehen!</string>
     <string name="object_info_m78_distance">1.600 Lichtjahre</string>
     <string name="object_info_m78_size">4 Lichtjahre Durchmesser</string>
-    <string name="object_info_m83_description">Das Suedliche Feuerrad ist eine Balkenspiralgalaxie in der Wasserschlange, eine der naechsten und hellsten Balkenspiralen an unserem Himmel.</string>
-    <string name="object_info_m83_funfact">In M83 wurden sechs Supernovae beobachtet, mehr als in jeder anderen Galaxie - ein Rekord fuer Supernova-Produktion!</string>
+    <string name="object_info_m83_description">Das Südliche Feuerrad ist eine Balkenspiralgalaxie in der Wasserschlange, eine der nächsten und hellsten Balkenspiralen an unserem Himmel.</string>
+    <string name="object_info_m83_funfact">In M83 wurden sechs Supernovae beobachtet, mehr als in jeder anderen Galaxie - ein Rekord für Supernova-Produktion!</string>
     <string name="object_info_m83_distance">15 Millionen Lichtjahre</string>
     <string name="object_info_m83_size">55.000 Lichtjahre Durchmesser</string>
-    <string name="object_info_m3_description">M3 ist einer der groessten und hellsten Kugelsternhaufen am Himmel, gelegen in den Jagdhunden (Canes Venatici).</string>
-    <string name="object_info_m3_funfact">M3 enthaelt etwa 500.000 Sterne und ist schaetzungsweise 11,4 Milliarden Jahre alt!</string>
+    <string name="object_info_m3_description">M3 ist einer der größten und hellsten Kugelsternhaufen am Himmel, gelegen in den Jagdhunden (Canes Venatici).</string>
+    <string name="object_info_m3_funfact">M3 enthält etwa 500.000 Sterne und ist schätzungsweise 11,4 Milliarden Jahre alt!</string>
     <string name="object_info_m3_distance">33.900 Lichtjahre</string>
     <string name="object_info_m3_size">180 Lichtjahre Durchmesser</string>
-    <string name="object_info_m5_description">M5 ist ein Kugelsternhaufen in der Schlange (Serpens), einer der aeltesten mit etwa 13 Milliarden Jahren.</string>
-    <string name="object_info_m5_funfact">M5 enthaelt ueber 100.000 Sterne und hat eine der hoechsten Zahlen bekannter veraenderlicher Sterne aller Kugelsternhaufen!</string>
+    <string name="object_info_m5_description">M5 ist ein Kugelsternhaufen in der Schlange (Serpens), einer der ältesten mit etwa 13 Milliarden Jahren.</string>
+    <string name="object_info_m5_funfact">M5 enthält über 100.000 Sterne und hat eine der höchsten Zahlen bekannter veränderlicher Sterne aller Kugelsternhaufen!</string>
     <string name="object_info_m5_distance">24.500 Lichtjahre</string>
     <string name="object_info_m5_size">165 Lichtjahre Durchmesser</string>
-    <string name="object_info_m15_description">M15 ist ein dichter Kugelsternhaufen im Pegasus, bemerkenswert fuer einen planetarischen Nebel in seinem Kern - sehr selten fuer Kugelsternhaufen.</string>
-    <string name="object_info_m15_funfact">M15 koennte ein zentrales Schwarzes Loch von etwa 4.000 Sonnenmassen enthalten, was allerdings noch umstritten ist!</string>
+    <string name="object_info_m15_description">M15 ist ein dichter Kugelsternhaufen im Pegasus, bemerkenswert für einen planetarischen Nebel in seinem Kern - sehr selten für Kugelsternhaufen.</string>
+    <string name="object_info_m15_funfact">M15 könnte ein zentrales Schwarzes Loch von etwa 4.000 Sonnenmassen enthalten, was allerdings noch umstritten ist!</string>
     <string name="object_info_m15_distance">33.600 Lichtjahre</string>
     <string name="object_info_m15_size">175 Lichtjahre Durchmesser</string>
-    <string name="object_info_m22_description">M22 ist einer der erdnaechsten und hellsten Kugelsternhaufen, im Schuetzen nahe dem galaktischen Zentrum gelegen.</string>
+    <string name="object_info_m22_description">M22 ist einer der erdnächsten und hellsten Kugelsternhaufen, im Schützen nahe dem galaktischen Zentrum gelegen.</string>
     <string name="object_info_m22_funfact">M22 war einer der ersten entdeckten Kugelsternhaufen, gefunden von Abraham Ihle im Jahr 1665!</string>
     <string name="object_info_m22_distance">10.600 Lichtjahre</string>
     <string name="object_info_m22_size">70 Lichtjahre Durchmesser</string>
-    <string name="object_info_m4_description">M4 ist einer der erdnaechsten Kugelsternhaufen und einer der am leichtesten auffindbaren, nahe Antares im Skorpion gelegen.</string>
-    <string name="object_info_m4_funfact">M4 enthaelt einen Weissen Zwerg, der auf 13 Milliarden Jahre geschaetzt wird - einer der aeltesten bekannten Sterne der Milchstrasse!</string>
+    <string name="object_info_m4_description">M4 ist einer der erdnächsten Kugelsternhaufen und einer der am leichtesten auffindbaren, nahe Antares im Skorpion gelegen.</string>
+    <string name="object_info_m4_funfact">M4 enthält einen Weißen Zwerg, der auf 13 Milliarden Jahre geschätzt wird - einer der ältesten bekannten Sterne der Milchstraße!</string>
     <string name="object_info_m4_distance">7.200 Lichtjahre</string>
     <string name="object_info_m4_size">75 Lichtjahre Durchmesser</string>
-    <string name="object_info_m7_description">Der Ptolemaeushaufen ist ein heller offener Sternhaufen im Skorpion, einer der markantesten mit blossem Auge sichtbaren Haufen.</string>
+    <string name="object_info_m7_description">Der Ptolemaeushaufen ist ein heller offener Sternhaufen im Skorpion, einer der markantesten mit bloßem Auge sichtbaren Haufen.</string>
     <string name="object_info_m7_funfact">M7 wurde erstmals von Ptolemaeus im Jahr 130 n. Chr. aufgezeichnet und wird seit fast 2.000 Jahren beobachtet!</string>
     <string name="object_info_m7_distance">980 Lichtjahre</string>
     <string name="object_info_m7_size">25 Lichtjahre Durchmesser</string>
     <string name="object_info_m6_description">Der Schmetterlingshaufen ist ein offener Sternhaufen im Skorpion, benannt nach der schmetterlingsartigen Anordnung seiner hellsten Sterne.</string>
-    <string name="object_info_m6_funfact">M6 ist etwa 100 Millionen Jahre alt und enthaelt ueber 300 Sterne, darunter den orangefarbenen Riesen BM Scorpii!</string>
+    <string name="object_info_m6_funfact">M6 ist etwa 100 Millionen Jahre alt und enthält über 300 Sterne, darunter den orangefarbenen Riesen BM Scorpii!</string>
     <string name="object_info_m6_distance">1.600 Lichtjahre</string>
     <string name="object_info_m6_size">25 Lichtjahre Durchmesser</string>
     <string name="object_info_m11_description">Der Wildentenhaufen ist ein reicher offener Sternhaufen im Schild (Scutum), einer der kompaktesten bekannten offenen Haufen.</string>
-    <string name="object_info_m11_funfact">M11 enthaelt fast 3.000 Sterne auf engem Raum und bietet einen spektakulaeren Anblick durch Teleskope!</string>
+    <string name="object_info_m11_funfact">M11 enthält fast 3.000 Sterne auf engem Raum und bietet einen spektakulären Anblick durch Teleskope!</string>
     <string name="object_info_m11_distance">6.200 Lichtjahre</string>
     <string name="object_info_m11_size">20 Lichtjahre Durchmesser</string>
-    <string name="object_info_m16_description">Der Adlernebel ist ein Sternentstehungsnebel in der Schlange, beruehmt fuer die vom Hubble-Teleskop aufgenommenen Saeulen der Schoepfung.</string>
-    <string name="object_info_m16_funfact">Die Saeulen der Schoepfung in M16 sind etwa 5 Lichtjahre hoch und werden langsam durch Strahlung naher Sterne erodiert!</string>
+    <string name="object_info_m16_description">Der Adlernebel ist ein Sternentstehungsnebel in der Schlange, berühmt für die vom Hubble-Teleskop aufgenommenen Säulen der Schöpfung.</string>
+    <string name="object_info_m16_funfact">Die Säulen der Schöpfung in M16 sind etwa 5 Lichtjahre hoch und werden langsam durch Strahlung naher Sterne erodiert!</string>
     <string name="object_info_m16_distance">7.000 Lichtjahre</string>
     <string name="object_info_m16_size">70 Lichtjahre Durchmesser</string>
-    <string name="object_info_m2_description">M2 ist einer der groessten und reichsten bekannten Kugelsternhaufen, im Wassermann (Aquarius) gelegen.</string>
-    <string name="object_info_m2_funfact">M2 enthaelt etwa 150.000 Sterne und hat einen Durchmesser von 175 Lichtjahren - einer der groessten Kugelsternhaufen!</string>
+    <string name="object_info_m2_description">M2 ist einer der größten und reichsten bekannten Kugelsternhaufen, im Wassermann (Aquarius) gelegen.</string>
+    <string name="object_info_m2_funfact">M2 enthält etwa 150.000 Sterne und hat einen Durchmesser von 175 Lichtjahren - einer der größten Kugelsternhaufen!</string>
     <string name="object_info_m2_distance">37.500 Lichtjahre</string>
     <string name="object_info_m2_size">175 Lichtjahre Durchmesser</string>
-    <string name="object_info_m10_description">M10 ist ein heller Kugelsternhaufen im Schlangentraeger, einer der naeher gelegenen Kugelsternhaufen zu unserem Sonnensystem.</string>
-    <string name="object_info_m10_funfact">M10 naehert sich uns mit ueber 70 km/s und hat eine ungewoehnlich niedrige Sternkonzentration in seinem Kern!</string>
+    <string name="object_info_m10_description">M10 ist ein heller Kugelsternhaufen im Schlangenträger, einer der näher gelegenen Kugelsternhaufen zu unserem Sonnensystem.</string>
+    <string name="object_info_m10_funfact">M10 nähert sich uns mit über 70 km/s und hat eine ungewöhnlich niedrige Sternkonzentration in seinem Kern!</string>
     <string name="object_info_m10_distance">14.300 Lichtjahre</string>
     <string name="object_info_m10_size">83 Lichtjahre Durchmesser</string>
-    <string name="object_info_m12_description">M12 ist ein Kugelsternhaufen im Schlangentraeger, bemerkenswert fuer seine relativ lockere zentrale Konzentration.</string>
-    <string name="object_info_m12_funfact">M12 hat ueber Milliarden von Jahren viele seiner massearmen Sterne durch die Anziehungskraft der Milchstrasse verloren!</string>
+    <string name="object_info_m12_description">M12 ist ein Kugelsternhaufen im Schlangenträger, bemerkenswert für seine relativ lockere zentrale Konzentration.</string>
+    <string name="object_info_m12_funfact">M12 hat über Milliarden von Jahren viele seiner massearmen Sterne durch die Anziehungskraft der Milchstraße verloren!</string>
     <string name="object_info_m12_distance">15.700 Lichtjahre</string>
     <string name="object_info_m12_size">75 Lichtjahre Durchmesser</string>
-    <string name="object_info_m14_description">M14 ist ein Kugelsternhaufen im Schlangentraeger mit mehreren Hunderttausend Sternen.</string>
+    <string name="object_info_m14_description">M14 ist ein Kugelsternhaufen im Schlangenträger mit mehreren Hunderttausend Sternen.</string>
     <string name="object_info_m14_funfact">1938 erschien eine Nova in M14, die aber erst 1964 entdeckt wurde, als alte Fotoplatten untersucht wurden!</string>
     <string name="object_info_m14_distance">30.300 Lichtjahre</string>
     <string name="object_info_m14_size">100 Lichtjahre Durchmesser</string>
@@ -382,56 +382,56 @@
     <string name="object_info_m53_funfact">M53 ist einer der am weitesten vom galaktischen Zentrum entfernten Kugelsternhaufen - 60.000 Lichtjahre davon entfernt!</string>
     <string name="object_info_m53_distance">58.000 Lichtjahre</string>
     <string name="object_info_m53_size">220 Lichtjahre Durchmesser</string>
-    <string name="object_info_m64_description">Die Schwarzaugengalaxie ist eine Spiralgalaxie im Haar der Berenike, beruehmt fuer das dunkle Band aus absorbierendem Staub um ihren Kern.</string>
-    <string name="object_info_m64_funfact">Die aeusseren Regionen von M64 rotieren in die entgegengesetzte Richtung wie die inneren - wahrscheinlich von einer frueheren Galaxienverschmelzung!</string>
+    <string name="object_info_m64_description">Die Schwarzaugengalaxie ist eine Spiralgalaxie im Haar der Berenike, berühmt für das dunkle Band aus absorbierendem Staub um ihren Kern.</string>
+    <string name="object_info_m64_funfact">Die äußeren Regionen von M64 rotieren in die entgegengesetzte Richtung wie die inneren - wahrscheinlich von einer früheren Galaxienverschmelzung!</string>
     <string name="object_info_m64_distance">17 Millionen Lichtjahre</string>
     <string name="object_info_m64_size">70.000 Lichtjahre Durchmesser</string>
-    <string name="object_info_m65_description">M65 ist eine Spiralgalaxie im Loewen, Teil des beruehmten Leo-Tripletts zusammen mit M66 und NGC 3628.</string>
+    <string name="object_info_m65_description">M65 ist eine Spiralgalaxie im Löwen, Teil des berühmten Leo-Tripletts zusammen mit M66 und NGC 3628.</string>
     <string name="object_info_m65_funfact">Die Galaxien des Leo-Tripletts interagieren gravitativ, was Gezeitenschweife und verzerrte Strukturen verursacht!</string>
     <string name="object_info_m65_distance">35 Millionen Lichtjahre</string>
     <string name="object_info_m65_size">90.000 Lichtjahre Durchmesser</string>
-    <string name="object_info_m66_description">M66 ist das groesste Mitglied des Leo-Tripletts, eine Spiralgalaxie mit asymmetrischen Spiralarmen.</string>
+    <string name="object_info_m66_description">M66 ist das größte Mitglied des Leo-Tripletts, eine Spiralgalaxie mit asymmetrischen Spiralarmen.</string>
     <string name="object_info_m66_funfact">M66s asymmetrisches Erscheinungsbild wird durch gravitative Wechselwirkungen mit den Nachbarn M65 und NGC 3628 verursacht!</string>
     <string name="object_info_m66_distance">36 Millionen Lichtjahre</string>
     <string name="object_info_m66_size">95.000 Lichtjahre Durchmesser</string>
-    <string name="object_info_m74_description">Die Phantomgalaxie ist eine von vorne sichtbare Spiralgalaxie in den Fischen, bekannt fuer ihre perfekte Spiralstruktur.</string>
-    <string name="object_info_m74_funfact">M74 wird Phantomgalaxie genannt, weil ihre sehr niedrige Oberflaechenheligkeit sie schwer beobachtbar macht!</string>
+    <string name="object_info_m74_description">Die Phantomgalaxie ist eine von vorne sichtbare Spiralgalaxie in den Fischen, bekannt für ihre perfekte Spiralstruktur.</string>
+    <string name="object_info_m74_funfact">M74 wird Phantomgalaxie genannt, weil ihre sehr niedrige Oberflächenheligkeit sie schwer beobachtbar macht!</string>
     <string name="object_info_m74_distance">32 Millionen Lichtjahre</string>
     <string name="object_info_m74_size">95.000 Lichtjahre Durchmesser</string>
     <string name="object_info_m77_description">M77 ist eine Balkenspiralgalaxie im Walfisch mit einem aktiven galaktischen Kern, der von einem supermassiven Schwarzen Loch angetrieben wird.</string>
     <string name="object_info_m77_funfact">M77 beherbergt einen aktiven galaktischen Kern mit einem Schwarzen Loch von 15 Millionen Sonnenmassen!</string>
     <string name="object_info_m77_distance">47 Millionen Lichtjahre</string>
     <string name="object_info_m77_size">120.000 Lichtjahre Durchmesser</string>
-    <string name="object_info_m92_description">M92 ist ein heller Kugelsternhaufen im Herkules, der oft uebersehen wird, weil er neben dem beruehmteren M13 liegt.</string>
-    <string name="object_info_m92_funfact">M92 ist einer der aeltesten Kugelsternhaufen mit etwa 14,2 Milliarden Jahren - fast so alt wie das Universum!</string>
+    <string name="object_info_m92_description">M92 ist ein heller Kugelsternhaufen im Herkules, der oft übersehen wird, weil er neben dem berühmteren M13 liegt.</string>
+    <string name="object_info_m92_funfact">M92 ist einer der ältesten Kugelsternhaufen mit etwa 14,2 Milliarden Jahren - fast so alt wie das Universum!</string>
     <string name="object_info_m92_distance">26.700 Lichtjahre</string>
     <string name="object_info_m92_size">109 Lichtjahre Durchmesser</string>
     <string name="object_info_m94_description">M94 ist eine Spiralgalaxie in den Jagdhunden mit einem hellen inneren Ring, in dem aktive Sternentstehung stattfindet.</string>
     <string name="object_info_m94_funfact">M94s innerer Ring ist ein Starburst-Ring, in dem neue Sterne mit sehr hoher Rate entstehen!</string>
     <string name="object_info_m94_distance">16 Millionen Lichtjahre</string>
     <string name="object_info_m94_size">50.000 Lichtjahre Durchmesser</string>
-    <string name="object_info_m97_description">Der Eulennebel ist ein planetarischer Nebel im Grossen Baeren, benannt nach seinem eulenartigen Aussehen mit zwei dunklen Flecken.</string>
-    <string name="object_info_m97_funfact">Die dunklen Eulenaugen in M97 sind dreidimensionale Hohlraeume im Nebel, die auf unsere Sichtlinie ausgerichtet sind!</string>
+    <string name="object_info_m97_description">Der Eulennebel ist ein planetarischer Nebel im Großen Bären, benannt nach seinem eulenartigen Aussehen mit zwei dunklen Flecken.</string>
+    <string name="object_info_m97_funfact">Die dunklen Eulenaugen in M97 sind dreidimensionale Hohlräume im Nebel, die auf unsere Sichtlinie ausgerichtet sind!</string>
     <string name="object_info_m97_distance">2.030 Lichtjahre</string>
     <string name="object_info_m97_size">2 Lichtjahre Durchmesser</string>
-    <string name="object_info_m106_description">M106 ist eine Spiralgalaxie in den Jagdhunden mit ungewoehnlichen Spiralarmen, die durch Jets von ihrem zentralen Schwarzen Loch verursacht werden.</string>
-    <string name="object_info_m106_funfact">M106 hat Wasser-Maser in seinem Kern, die es Astronomen ermoeglichen, seine Entfernung praezise zu messen!</string>
+    <string name="object_info_m106_description">M106 ist eine Spiralgalaxie in den Jagdhunden mit ungewöhnlichen Spiralarmen, die durch Jets von ihrem zentralen Schwarzen Loch verursacht werden.</string>
+    <string name="object_info_m106_funfact">M106 hat Wasser-Maser in seinem Kern, die es Astronomen ermöglichen, seine Entfernung präzise zu messen!</string>
     <string name="object_info_m106_distance">23,5 Millionen Lichtjahre</string>
     <string name="object_info_m106_size">135.000 Lichtjahre Durchmesser</string>
-    <string name="object_info_m109_description">M109 ist eine Balkenspiralgalaxie im Grossen Baeren, das hellste Mitglied einer nach ihr benannten Galaxiengruppe.</string>
-    <string name="object_info_m109_funfact">M109 liegt sehr nah am Stern Phekda im Grossen Wagen, was sie leicht auffindbar macht!</string>
+    <string name="object_info_m109_description">M109 ist eine Balkenspiralgalaxie im Großen Bären, das hellste Mitglied einer nach ihr benannten Galaxiengruppe.</string>
+    <string name="object_info_m109_funfact">M109 liegt sehr nah am Stern Phekda im Großen Wagen, was sie leicht auffindbar macht!</string>
     <string name="object_info_m109_distance">83 Millionen Lichtjahre</string>
     <string name="object_info_m109_size">180.000 Lichtjahre Durchmesser</string>
-    <string name="object_info_m110_description">M110 ist eine elliptische Zwerggalaxie und Satellit der Andromedagalaxie, das letzte Objekt, das dem Messier-Katalog hinzugefuegt wurde.</string>
+    <string name="object_info_m110_description">M110 ist eine elliptische Zwerggalaxie und Satellit der Andromedagalaxie, das letzte Objekt, das dem Messier-Katalog hinzugefügt wurde.</string>
     <string name="object_info_m110_funfact">M110 wurde bereits 1773 von Messier beobachtet, aber erst 1966 in seinen Katalog aufgenommen!</string>
     <string name="object_info_m110_distance">2,7 Millionen Lichtjahre</string>
     <string name="object_info_m110_size">17.000 Lichtjahre Durchmesser</string>
     <string name="object_info_m32_description">M32 ist eine kompakte elliptische Zwerggalaxie und enger Satellit der Andromedagalaxie.</string>
-    <string name="object_info_m32_funfact">M32 war die erste jemals entdeckte elliptische Galaxie und war moeglicherweise einst eine groessere Spiralgalaxie, die von Andromeda ihrer Sterne beraubt wurde!</string>
+    <string name="object_info_m32_funfact">M32 war die erste jemals entdeckte elliptische Galaxie und war möglicherweise einst eine größere Spiralgalaxie, die von Andromeda ihrer Sterne beraubt wurde!</string>
     <string name="object_info_m32_distance">2,5 Millionen Lichtjahre</string>
     <string name="object_info_m32_size">6.500 Lichtjahre Durchmesser</string>
     <string name="object_info_m49_description">M49 ist eine riesige elliptische Galaxie in der Jungfrau, das hellste Mitglied des Virgo-Haufens.</string>
-    <string name="object_info_m49_funfact">M49 war das erste entdeckte Mitglied des Virgo-Haufens und enthaelt etwa 6.000 Kugelsternhaufen!</string>
+    <string name="object_info_m49_funfact">M49 war das erste entdeckte Mitglied des Virgo-Haufens und enthält etwa 6.000 Kugelsternhaufen!</string>
     <string name="object_info_m49_distance">55 Millionen Lichtjahre</string>
     <string name="object_info_m49_size">160.000 Lichtjahre Durchmesser</string>
     <string name="object_info_m87_description">M87 ist eine riesige elliptische Galaxie in der Jungfrau, eine der massereichsten Galaxien im lokalen Universum.</string>
@@ -439,148 +439,148 @@
     <string name="object_info_m87_distance">53 Millionen Lichtjahre</string>
     <string name="object_info_m87_size">240.000 Lichtjahre Durchmesser</string>
     <string name="object_info_m87_mass">2,4 Billionen Sonnenmassen</string>
-    <string name="object_info_orion_description">Orion, der Jaeger, ist eines der bekanntesten Sternbilder, von beiden Hemispaeren aus sichtbar, mit seinem markanten Guertel aus drei Sternen.</string>
-    <string name="object_info_orion_funfact">Der Orionguertel zeigt in eine Richtung auf Sirius (den hellsten Stern) und in die andere auf Aldebaran (im Stier)!</string>
+    <string name="object_info_orion_description">Orion, der Jäger, ist eines der bekanntesten Sternbilder, von beiden Hemisphären aus sichtbar, mit seinem markanten Gürtel aus drei Sternen.</string>
+    <string name="object_info_orion_funfact">Der Oriongürtel zeigt in eine Richtung auf Sirius (den hellsten Stern) und in die andere auf Aldebaran (im Stier)!</string>
     <string name="object_info_orion_size">594 Quadratgrad</string>
-    <string name="object_info_ursa_major_description">Der Grosse Baer (Ursa Major) enthaelt den Asterismus des Grossen Wagens, eines der bekanntesten Sternmuster am noerdlichen Himmel.</string>
-    <string name="object_info_ursa_major_funfact">Fuenf der Sterne des Grossen Wagens sind physisch miteinander verbunden und bewegen sich gemeinsam als Ursa-Major-Bewegungsgruppe durch den Raum!</string>
+    <string name="object_info_ursa_major_description">Der Große Bär (Ursa Major) enthält den Asterismus des Großen Wagens, eines der bekanntesten Sternmuster am nördlichen Himmel.</string>
+    <string name="object_info_ursa_major_funfact">Fünf der Sterne des Großen Wagens sind physisch miteinander verbunden und bewegen sich gemeinsam als Ursa-Major-Bewegungsgruppe durch den Raum!</string>
     <string name="object_info_ursa_major_size">1.280 Quadratgrad</string>
-    <string name="object_info_ursa_minor_description">Der Kleine Baer (Ursa Minor) enthaelt den Kleinen Wagen und Polaris, den aktuellen Polarstern am himmlischen Nordpol der Erde.</string>
-    <string name="object_info_ursa_minor_funfact">Wegen der Praezession wird Polaris nicht immer der Polarstern sein - in 14.000 Jahren wird Vega seinen Platz einnehmen!</string>
+    <string name="object_info_ursa_minor_description">Der Kleine Bär (Ursa Minor) enthält den Kleinen Wagen und Polaris, den aktuellen Polarstern am himmlischen Nordpol der Erde.</string>
+    <string name="object_info_ursa_minor_funfact">Wegen der Präzession wird Polaris nicht immer der Polarstern sein - in 14.000 Jahren wird Vega seinen Platz einnehmen!</string>
     <string name="object_info_ursa_minor_size">256 Quadratgrad</string>
-    <string name="object_info_cassiopeia_description">Cassiopeia ist ein markantes W-foermiges Sternbild am noerdlichen Himmel, benannt nach einer eitlen Koenigin der griechischen Mythologie.</string>
-    <string name="object_info_cassiopeia_funfact">Tycho Brahes Supernova von 1572 erschien in Cassiopeia und half zu beweisen, dass sich der Himmel veraendern kann!</string>
+    <string name="object_info_cassiopeia_description">Cassiopeia ist ein markantes W-förmiges Sternbild am nördlichen Himmel, benannt nach einer eitlen Königin der griechischen Mythologie.</string>
+    <string name="object_info_cassiopeia_funfact">Tycho Brahes Supernova von 1572 erschien in Cassiopeia und half zu beweisen, dass sich der Himmel verändern kann!</string>
     <string name="object_info_cassiopeia_size">598 Quadratgrad</string>
-    <string name="object_info_scorpius_description">Der Skorpion (Scorpius) ist ein markantes Tierkreissternbild mit einem unverwechselbaren gebogenen Schwanz, dominiert vom Roten Ueberriesen Antares.</string>
-    <string name="object_info_scorpius_funfact">In der Mythologie wurde der Skorpion am Himmel gegenueber von Orion platziert, damit der Jaeger nie wieder gestochen werden wuerde!</string>
+    <string name="object_info_scorpius_description">Der Skorpion (Scorpius) ist ein markantes Tierkreissternbild mit einem unverwechselbaren gebogenen Schwanz, dominiert vom Roten Überriesen Antares.</string>
+    <string name="object_info_scorpius_funfact">In der Mythologie wurde der Skorpion am Himmel gegenüber von Orion platziert, damit der Jäger nie wieder gestochen werden würde!</string>
     <string name="object_info_scorpius_size">497 Quadratgrad</string>
-    <string name="object_info_leo_description">Der Loewe (Leo) ist ein Tierkreissternbild mit Regulus im Herzen des Loewen und dem markanten Sichel-Asterismus.</string>
-    <string name="object_info_leo_funfact">Der Leoniden-Meteorschauer im November scheint aus dem Loewen auszustrahlen und kann spektakulaere Schauer erzeugen!</string>
+    <string name="object_info_leo_description">Der Löwe (Leo) ist ein Tierkreissternbild mit Regulus im Herzen des Löwen und dem markanten Sichel-Asterismus.</string>
+    <string name="object_info_leo_funfact">Der Leoniden-Meteorschauer im November scheint aus dem Löwen auszustrahlen und kann spektakuläre Schauer erzeugen!</string>
     <string name="object_info_leo_size">947 Quadratgrad</string>
-    <string name="object_info_gemini_description">Die Zwillinge (Gemini) zeigen die hellen Sterne Castor und Pollux, die die Zwillingsbrueder der griechischen Mythologie darstellen.</string>
-    <string name="object_info_gemini_funfact">Obwohl sie Zwillinge heissen, ist Castor eigentlich sechs Sterne und Pollux ein orangefarbener Riese - sie sehen voellig verschieden aus!</string>
+    <string name="object_info_gemini_description">Die Zwillinge (Gemini) zeigen die hellen Sterne Castor und Pollux, die die Zwillingsbrüder der griechischen Mythologie darstellen.</string>
+    <string name="object_info_gemini_funfact">Obwohl sie Zwillinge heißen, ist Castor eigentlich sechs Sterne und Pollux ein orangefarbener Riese - sie sehen völlig verschieden aus!</string>
     <string name="object_info_gemini_size">514 Quadratgrad</string>
     <string name="object_info_taurus_description">Der Stier (Taurus) ist ein Tierkreissternbild mit den Plejaden und Hyaden-Sternhaufen und dem hellen Stern Aldebaran.</string>
-    <string name="object_info_taurus_funfact">Der Krebsnebel im Stier ist der Ueberrest einer Supernova, die chinesische Astronomen im Jahr 1054 beobachteten und aufzeichneten!</string>
+    <string name="object_info_taurus_funfact">Der Krebsnebel im Stier ist der Überrest einer Supernova, die chinesische Astronomen im Jahr 1054 beobachteten und aufzeichneten!</string>
     <string name="object_info_taurus_size">797 Quadratgrad</string>
-    <string name="object_info_virgo_description">Die Jungfrau (Virgo) ist das zweitgroesste Sternbild und ein Tierkreiszeichen, das den Virgo-Haufen mit ueber 2.000 Galaxien enthaelt.</string>
-    <string name="object_info_virgo_funfact">Der Virgo-Haufen ist das Herz des Virgo-Superhaufens, zu dem auch unsere eigene Milchstrasse gehoert!</string>
+    <string name="object_info_virgo_description">Die Jungfrau (Virgo) ist das zweitgrößte Sternbild und ein Tierkreiszeichen, das den Virgo-Haufen mit über 2.000 Galaxien enthält.</string>
+    <string name="object_info_virgo_funfact">Der Virgo-Haufen ist das Herz des Virgo-Superhaufens, zu dem auch unsere eigene Milchstraße gehört!</string>
     <string name="object_info_virgo_size">1.294 Quadratgrad</string>
     <string name="object_info_aquarius_description">Der Wassermann (Aquarius) ist ein Tierkreissternbild in einem Himmelsbereich, der oft als \"das Meer\" bezeichnet wird, umgeben von wasserbezogenen Sternbildern.</string>
-    <string name="object_info_aquarius_funfact">Der Wassermann enthaelt den Helixnebel, einen der erdnaechsten planetarischen Nebel in nur 700 Lichtjahren Entfernung!</string>
+    <string name="object_info_aquarius_funfact">Der Wassermann enthält den Helixnebel, einen der erdnächsten planetarischen Nebel in nur 700 Lichtjahren Entfernung!</string>
     <string name="object_info_aquarius_size">980 Quadratgrad</string>
-    <string name="object_info_pisces_description">Die Fische (Pisces) sind ein grosses Tierkreissternbild, das zwei zusammengebundene Fische darstellt und den Fruehlingspunkt markiert.</string>
-    <string name="object_info_pisces_funfact">Der Fruehlingspunkt (erster Fruehlingstag) liegt derzeit in den Fischen und wandert seit 2.000 Jahren langsam hindurch!</string>
+    <string name="object_info_pisces_description">Die Fische (Pisces) sind ein großes Tierkreissternbild, das zwei zusammengebundene Fische darstellt und den Frühlingspunkt markiert.</string>
+    <string name="object_info_pisces_funfact">Der Frühlingspunkt (erster Frühlingstag) liegt derzeit in den Fischen und wandert seit 2.000 Jahren langsam hindurch!</string>
     <string name="object_info_pisces_size">889 Quadratgrad</string>
-    <string name="object_info_aries_description">Der Widder (Aries) ist ein Tierkreissternbild, das einst den Fruehlingspunkt beherbergte, weshalb wir vom \"Fruehlingspunkt im Widder\" sprechen.</string>
-    <string name="object_info_aries_funfact">Obwohl der Fruehlingspunkt vor etwa 2.000 Jahren in die Fische wanderte, nennt man ihn immer noch den Widderpunkt!</string>
+    <string name="object_info_aries_description">Der Widder (Aries) ist ein Tierkreissternbild, das einst den Frühlingspunkt beherbergte, weshalb wir vom \"Frühlingspunkt im Widder\" sprechen.</string>
+    <string name="object_info_aries_funfact">Obwohl der Frühlingspunkt vor etwa 2.000 Jahren in die Fische wanderte, nennt man ihn immer noch den Widderpunkt!</string>
     <string name="object_info_aries_size">441 Quadratgrad</string>
-    <string name="object_info_cancer_description">Der Krebs (Cancer) ist das lichtschwache Tierkreissternbild, enthaelt aber den beruehmten Bienenkorbhaufen (M44), der mit blossem Auge sichtbar ist.</string>
+    <string name="object_info_cancer_description">Der Krebs (Cancer) ist das lichtschwache Tierkreissternbild, enthält aber den berühmten Bienenkorbhaufen (M44), der mit bloßem Auge sichtbar ist.</string>
     <string name="object_info_cancer_funfact">Der Wendekreis des Krebses wurde benannt, als die Sonne zur Sommersonnenwende im Krebs stand - jetzt steht sie aber im Stier!</string>
     <string name="object_info_cancer_size">506 Quadratgrad</string>
     <string name="object_info_capricornus_description">Der Steinbock (Capricornus) ist ein uraltes Tierkreissternbild, das ein Fabelwesen darstellt - halb Ziege, halb Fisch.</string>
-    <string name="object_info_capricornus_funfact">Der Steinbock ist eines der aeltesten anerkannten Sternbilder und erscheint in babylonischen Sternkatalogen von vor ueber 3.000 Jahren!</string>
+    <string name="object_info_capricornus_funfact">Der Steinbock ist eines der ältesten anerkannten Sternbilder und erscheint in babylonischen Sternkatalogen von vor über 3.000 Jahren!</string>
     <string name="object_info_capricornus_size">414 Quadratgrad</string>
-    <string name="object_info_sagittarius_description">Der Schuetze (Sagittarius) zeigt in Richtung des Zentrums unserer Milchstrasse, weshalb er reich an Nebeln und Sternhaufen ist.</string>
-    <string name="object_info_sagittarius_funfact">Wenn du in Richtung Schuetze schaust, blickst du auf Sagittarius A*, das supermassive Schwarze Loch im Zentrum unserer Galaxie!</string>
+    <string name="object_info_sagittarius_description">Der Schütze (Sagittarius) zeigt in Richtung des Zentrums unserer Milchstraße, weshalb er reich an Nebeln und Sternhaufen ist.</string>
+    <string name="object_info_sagittarius_funfact">Wenn du in Richtung Schütze schaust, blickst du auf Sagittarius A*, das supermassive Schwarze Loch im Zentrum unserer Galaxie!</string>
     <string name="object_info_sagittarius_size">867 Quadratgrad</string>
     <string name="object_info_libra_description">Die Waage (Libra) ist das einzige Tierkreissternbild, das einen unbelebten Gegenstand darstellt. Sie wurde einst als Teil des Skorpions angesehen.</string>
     <string name="object_info_libra_funfact">Die Hauptsterne der Waage waren einst als Scheren des Skorpions bekannt, bevor sie zur Waage der Gerechtigkeit wurden!</string>
     <string name="object_info_libra_size">538 Quadratgrad</string>
-    <string name="object_info_cygnus_description">Der Schwan (Cygnus) fliegt entlang der Milchstrasse, enthaelt den Asterismus des Noerdlichen Kreuzes und den hellen Stern Deneb.</string>
-    <string name="object_info_cygnus_funfact">Cygnus X-1 in diesem Sternbild war das erste weithin akzeptierte Schwarze Loch, identifiziert in den fruehen 1970er Jahren!</string>
+    <string name="object_info_cygnus_description">Der Schwan (Cygnus) fliegt entlang der Milchstraße, enthält den Asterismus des Nördlichen Kreuzes und den hellen Stern Deneb.</string>
+    <string name="object_info_cygnus_funfact">Cygnus X-1 in diesem Sternbild war das erste weithin akzeptierte Schwarze Loch, identifiziert in den frühen 1970er Jahren!</string>
     <string name="object_info_cygnus_size">804 Quadratgrad</string>
-    <string name="object_info_lyra_description">Die Leier (Lyra) ist ein kleines, aber markantes Sternbild mit Vega, dem fuenfthellsten Stern am Nachthimmel.</string>
-    <string name="object_info_lyra_funfact">Vega war um 12.000 v. Chr. der Polarstern und wird es in etwa 12.000 Jahren wieder sein - wegen der Praezession der Erde!</string>
+    <string name="object_info_lyra_description">Die Leier (Lyra) ist ein kleines, aber markantes Sternbild mit Vega, dem fünfthellsten Stern am Nachthimmel.</string>
+    <string name="object_info_lyra_funfact">Vega war um 12.000 v. Chr. der Polarstern und wird es in etwa 12.000 Jahren wieder sein - wegen der Präzession der Erde!</string>
     <string name="object_info_lyra_size">286 Quadratgrad</string>
-    <string name="object_info_aquila_description">Der Adler (Aquila) ist ein Sternbild am Himmelsaequator mit dem hellen Stern Altair in seiner Mitte.</string>
-    <string name="object_info_aquila_funfact">Altair im Adler ist einer der am schnellsten rotierenden bekannten Sterne - er dreht sich so schnell, dass er am Aequator ausbeult!</string>
+    <string name="object_info_aquila_description">Der Adler (Aquila) ist ein Sternbild am Himmelsäquator mit dem hellen Stern Altair in seiner Mitte.</string>
+    <string name="object_info_aquila_funfact">Altair im Adler ist einer der am schnellsten rotierenden bekannten Sterne - er dreht sich so schnell, dass er am Äquator ausbeult!</string>
     <string name="object_info_aquila_size">652 Quadratgrad</string>
-    <string name="object_info_pegasus_description">Pegasus, das gefliegelte Pferd, ist ein grosses Sternbild mit dem Grossen Quadrat des Pegasus, einem markanten Herbst-Asterismus.</string>
-    <string name="object_info_pegasus_funfact">51 Pegasi b, 1995 in diesem Sternbild entdeckt, war der erste Exoplanet, der um einen sonnenaehnlichen Stern gefunden wurde!</string>
+    <string name="object_info_pegasus_description">Pegasus, das gefliegelte Pferd, ist ein großes Sternbild mit dem Großen Quadrat des Pegasus, einem markanten Herbst-Asterismus.</string>
+    <string name="object_info_pegasus_funfact">51 Pegasi b, 1995 in diesem Sternbild entdeckt, war der erste Exoplanet, der um einen sonnenähnlichen Stern gefunden wurde!</string>
     <string name="object_info_pegasus_size">1.121 Quadratgrad</string>
-    <string name="object_info_andromeda_description">Die Andromeda (Prinzessin) enthaelt die Andromedagalaxie (M31), die naechste grosse Spiralgalaxie zu unserer Milchstrasse.</string>
-    <string name="object_info_andromeda_funfact">Die Andromedagalaxie naehert sich uns mit 110 km/s und wird in etwa 4,5 Milliarden Jahren mit der Milchstrasse verschmelzen!</string>
+    <string name="object_info_andromeda_description">Die Andromeda (Prinzessin) enthält die Andromedagalaxie (M31), die nächste große Spiralgalaxie zu unserer Milchstraße.</string>
+    <string name="object_info_andromeda_funfact">Die Andromedagalaxie nähert sich uns mit 110 km/s und wird in etwa 4,5 Milliarden Jahren mit der Milchstraße verschmelzen!</string>
     <string name="object_info_andromeda_size">722 Quadratgrad</string>
-    <string name="object_info_perseus_description">Perseus, der Held, beherbergt den beruehmten veraenderlichen Stern Algol und den Doppelhaufen, ein beeindruckendes Paar offener Sternhaufen.</string>
-    <string name="object_info_perseus_funfact">Algol (der Teufelsstern) galt in der Antike als boese, weil er alle 2,87 Tage auf mysterioese Weise dunkler wird!</string>
+    <string name="object_info_perseus_description">Perseus, der Held, beherbergt den berühmten veränderlichen Stern Algol und den Doppelhaufen, ein beeindruckendes Paar offener Sternhaufen.</string>
+    <string name="object_info_perseus_funfact">Algol (der Teufelsstern) galt in der Antike als böse, weil er alle 2,87 Tage auf mysteriöse Weise dunkler wird!</string>
     <string name="object_info_perseus_size">615 Quadratgrad</string>
-    <string name="object_info_centaurus_description">Der Zentaur (Centaurus) ist ein grosses suedliches Sternbild mit Alpha Centauri, dem naechsten Sternsystem zu unserer Sonne.</string>
-    <string name="object_info_centaurus_funfact">Proxima Centauri im Zentauren ist nur 4,24 Lichtjahre entfernt und damit der naechste Stern zu unserem Sonnensystem!</string>
+    <string name="object_info_centaurus_description">Der Zentaur (Centaurus) ist ein großes südliches Sternbild mit Alpha Centauri, dem nächsten Sternsystem zu unserer Sonne.</string>
+    <string name="object_info_centaurus_funfact">Proxima Centauri im Zentauren ist nur 4,24 Lichtjahre entfernt und damit der nächste Stern zu unserem Sonnensystem!</string>
     <string name="object_info_centaurus_size">1.060 Quadratgrad</string>
-    <string name="object_info_crux_description">Das Kreuz des Suedens (Crux) ist das kleinste Sternbild, aber eines der markantesten, und wird auf der Suedhalbkugel zur Navigation verwendet.</string>
-    <string name="object_info_crux_funfact">Obwohl es das kleinste Sternbild ist, hat Crux mehr helle Sterne pro Flaecheneinheit als jedes andere Sternbild!</string>
+    <string name="object_info_crux_description">Das Kreuz des Südens (Crux) ist das kleinste Sternbild, aber eines der markantesten, und wird auf der Südhalbkugel zur Navigation verwendet.</string>
+    <string name="object_info_crux_funfact">Obwohl es das kleinste Sternbild ist, hat Crux mehr helle Sterne pro Flächeneinheit als jedes andere Sternbild!</string>
     <string name="object_info_crux_size">68 Quadratgrad</string>
-    <string name="object_info_canis_major_description">Der Grosse Hund (Canis Major) folgt Orion ueber den Himmel und enthaelt Sirius, den hellsten von der Erde aus sichtbaren Stern.</string>
-    <string name="object_info_canis_major_funfact">Die alten Aegypter richteten ihren Kalender nach dem heliakischen Aufgang von Sirius aus, der mit der jaehrlichen Nilflut zusammenfiel!</string>
+    <string name="object_info_canis_major_description">Der Grosse Hund (Canis Major) folgt Orion über den Himmel und enthält Sirius, den hellsten von der Erde aus sichtbaren Stern.</string>
+    <string name="object_info_canis_major_funfact">Die alten Ägypter richteten ihren Kalender nach dem heliakischen Aufgang von Sirius aus, der mit der jaehrlichen Nilflut zusammenfiel!</string>
     <string name="object_info_canis_major_size">380 Quadratgrad</string>
-    <string name="object_info_canis_minor_description">Der Kleine Hund (Canis Minor) ist ein kleines Sternbild, bemerkenswert fuer Procyon, den achthellsten Stern am Himmel.</string>
+    <string name="object_info_canis_minor_description">Der Kleine Hund (Canis Minor) ist ein kleines Sternbild, bemerkenswert für Procyon, den achthellsten Stern am Himmel.</string>
     <string name="object_info_canis_minor_funfact">Procyon bedeutet auf Griechisch \"vor dem Hund\", weil er jede Nacht kurz vor Sirius (dem Hundsstern) aufgeht!</string>
     <string name="object_info_canis_minor_size">183 Quadratgrad</string>
-    <string name="object_info_cepheus_description">Kepheus (Cepheus) ist ein noerdliches Sternbild, dessen Sterne Delta Cephei einschliessen, den Prototyp der Cepheiden-Veraenderlichen.</string>
+    <string name="object_info_cepheus_description">Kepheus (Cepheus) ist ein nördliches Sternbild, dessen Sterne Delta Cephei einschliessen, den Prototyp der Cepheiden-Veränderlichen.</string>
     <string name="object_info_cepheus_funfact">Die von Henrietta Leavitt entdeckten Cepheiden revolutionierten die Astronomie, indem sie die Messung kosmischer Entfernungen ermoeglichten!</string>
     <string name="object_info_cepheus_size">588 Quadratgrad</string>
-    <string name="object_info_draco_description">Der Drache (Draco) ist ein langes, gewundenes Sternbild, das sich am weit noerdlichen Himmel um den Kleinen Baeren windet.</string>
+    <string name="object_info_draco_description">Der Drache (Draco) ist ein langes, gewundenes Sternbild, das sich am weit nördlichen Himmel um den Kleinen Bären windet.</string>
     <string name="object_info_draco_funfact">Thuban im Drachen war der Polarstern, als die aegyptischen Pyramiden gebaut wurden, vor 5.000 Jahren!</string>
     <string name="object_info_draco_size">1.083 Quadratgrad</string>
-    <string name="object_info_hercules_description">Herkules (Hercules) ist ein grosses Sternbild, das den griechischen Helden darstellt, und enthaelt den grossen Kugelsternhaufen M13.</string>
+    <string name="object_info_hercules_description">Herkules (Hercules) ist ein großes Sternbild, das den griechischen Helden darstellt, und enthält den großen Kugelsternhaufen M13.</string>
     <string name="object_info_hercules_funfact">Unser Sonnensystem bewegt sich auf einen Punkt im Herkules zu, den sogenannten Sonnenapex, mit etwa 20 km/s!</string>
     <string name="object_info_hercules_size">1.225 Quadratgrad</string>
-    <string name="object_info_ophiuchus_description">Der Schlangentraeger (Ophiuchus) liegt entlang der Ekliptik, ist aber kein Tierkreiszeichen, geteilt durch die Schlange, die er haelt.</string>
-    <string name="object_info_ophiuchus_funfact">Die Sonne verbringt mehr Zeit im Schlangentraeger als im Skorpion, und doch gilt er nicht als Tierkreiszeichen!</string>
+    <string name="object_info_ophiuchus_description">Der Schlangenträger (Ophiuchus) liegt entlang der Ekliptik, ist aber kein Tierkreiszeichen, geteilt durch die Schlange, die er haelt.</string>
+    <string name="object_info_ophiuchus_funfact">Die Sonne verbringt mehr Zeit im Schlangenträger als im Skorpion, und doch gilt er nicht als Tierkreiszeichen!</string>
     <string name="object_info_ophiuchus_size">948 Quadratgrad</string>
-    <string name="object_info_bootes_description">Der Baerenhuerter (Bootes) ist ein Sternbild mit Arcturus, dem vierthellsten Stern am Nachthimmel.</string>
-    <string name="object_info_bootes_funfact">Folge dem Bogen der Deichsel des Grossen Wagens, um \"dem Bogen zu Arcturus zu folgen\" - einer der beruehmtesten Navigationstipps!</string>
+    <string name="object_info_bootes_description">Der Bärenhüter (Bootes) ist ein Sternbild mit Arcturus, dem vierthellsten Stern am Nachthimmel.</string>
+    <string name="object_info_bootes_funfact">Folge dem Bogen der Deichsel des Großen Wagens, um \"dem Bogen zu Arcturus zu folgen\" - einer der berühmtesten Navigationstipps!</string>
     <string name="object_info_bootes_size">907 Quadratgrad</string>
-    <string name="object_info_corona_borealis_description">Die Noerdliche Krone (Corona Borealis) ist ein kleines halbkreisfoermiges Sternbild, das Ariadnes Krone aus der griechischen Mythologie darstellt.</string>
-    <string name="object_info_corona_borealis_funfact">T Coronae Borealis ist eine wiederkehrende Nova, die etwa alle 80 Jahre ausbricht - ein weiterer Ausbruch koennte bald bevorstehen!</string>
+    <string name="object_info_corona_borealis_description">Die Nördliche Krone (Corona Borealis) ist ein kleines halbkreisfoermiges Sternbild, das Ariadnes Krone aus der griechischen Mythologie darstellt.</string>
+    <string name="object_info_corona_borealis_funfact">T Coronae Borealis ist eine wiederkehrende Nova, die etwa alle 80 Jahre ausbricht - ein weiterer Ausbruch könnte bald bevorstehen!</string>
     <string name="object_info_corona_borealis_size">179 Quadratgrad</string>
     <string name="object_info_corvus_description">Der Rabe (Corvus) ist ein kleines viereckiges Sternbild suedlich der Jungfrau, das Apollos heiligen Vogel darstellt.</string>
-    <string name="object_info_corvus_funfact">Die vier Hauptsterne des Raben bilden eine markante Segelform, die am Fruehlingshimmel leicht zu erkennen ist!</string>
+    <string name="object_info_corvus_funfact">Die vier Hauptsterne des Raben bilden eine markante Segelform, die am Frühlingshimmel leicht zu erkennen ist!</string>
     <string name="object_info_corvus_size">184 Quadratgrad</string>
-    <string name="object_info_auriga_description">Der Fuhrmann (Auriga) ist ein noerdliches Sternbild mit Capella, dem sechsthellsten Stern, und mehreren offenen Sternhaufen.</string>
-    <string name="object_info_auriga_funfact">Epsilon Aurigae ist einer der raetselhaftesten Sterne - er wird alle 27 Jahre fuer zwei Jahre dunkler, durch eine mysterioese dunkle Scheibe!</string>
+    <string name="object_info_auriga_description">Der Fuhrmann (Auriga) ist ein nördliches Sternbild mit Capella, dem sechsthellsten Stern, und mehreren offenen Sternhaufen.</string>
+    <string name="object_info_auriga_funfact">Epsilon Aurigae ist einer der raetselhaftesten Sterne - er wird alle 27 Jahre für zwei Jahre dunkler, durch eine mysteriöse dunkle Scheibe!</string>
     <string name="object_info_auriga_size">657 Quadratgrad</string>
-    <string name="object_info_eridanus_description">Der Fluss Eridanus ist das sechstgroesste Sternbild und windet sich von nahe Orion bis zum weit suedlichen Himmel.</string>
-    <string name="object_info_eridanus_funfact">Achernar am Ende des Eridanus ist der flachste bekannte Stern - er woelbt sich am Aequator 56 % breiter durch schnelle Rotation!</string>
+    <string name="object_info_eridanus_description">Der Fluss Eridanus ist das sechstgrößte Sternbild und windet sich von nahe Orion bis zum weit südlichen Himmel.</string>
+    <string name="object_info_eridanus_funfact">Achernar am Ende des Eridanus ist der flachste bekannte Stern - er woelbt sich am Äquator 56 % breiter durch schnelle Rotation!</string>
     <string name="object_info_eridanus_size">1.138 Quadratgrad</string>
     <string name="object_info_lepus_description">Der Hase (Lepus) kauert unter Orions Fuessen, ein kleines, aber markantes Sternbild mit reicher Mythologie.</string>
     <string name="object_info_lepus_funfact">In der Mythologie soll Orion die Hasenjagd geliebt haben, also wurde ihm ein Hase unter die Fuesse am Himmel gesetzt!</string>
     <string name="object_info_lepus_size">290 Quadratgrad</string>
-    <string name="object_info_monoceros_description">Das Einhorn (Monoceros) ist ein lichtschwaches Sternbild in der winterlichen Milchstrasse, reich an Nebeln und Sternhaufen.</string>
+    <string name="object_info_monoceros_description">Das Einhorn (Monoceros) ist ein lichtschwaches Sternbild in der winterlichen Milchstraße, reich an Nebeln und Sternhaufen.</string>
     <string name="object_info_monoceros_funfact">Der Rosettennebel im Einhorn ist ein gewaltiges Sternentstehungsgebiet, das einer himmlischen Rose aehnelt!</string>
     <string name="object_info_monoceros_size">482 Quadratgrad</string>
-    <string name="object_info_hydra_description">Die Wasserschlange (Hydra) ist das groesste Sternbild am Himmel und stellt die Wasserschlange der griechischen Mythologie dar.</string>
-    <string name="object_info_hydra_funfact">Hydra erstreckt sich ueber 100 Grad am Himmel - mehr als ein Viertel des Weges um die gesamte Himmelssphaere!</string>
+    <string name="object_info_hydra_description">Die Wasserschlange (Hydra) ist das größte Sternbild am Himmel und stellt die Wasserschlange der griechischen Mythologie dar.</string>
+    <string name="object_info_hydra_funfact">Hydra erstreckt sich über 100 Grad am Himmel - mehr als ein Viertel des Weges um die gesamte Himmelssphäre!</string>
     <string name="object_info_hydra_size">1.303 Quadratgrad</string>
-    <string name="object_info_carina_description">Der Kiel (Carina) war Teil des riesigen Sternbilds Argo Navis und enthaelt den brillanten Stern Canopus.</string>
-    <string name="object_info_carina_funfact">Eta Carinae im Kiel ist einer der leuchtkraeftigsten bekannten Sterne und koennte zu unseren Lebzeiten als Supernova explodieren!</string>
+    <string name="object_info_carina_description">Der Kiel (Carina) war Teil des riesigen Sternbilds Argo Navis und enthält den brillanten Stern Canopus.</string>
+    <string name="object_info_carina_funfact">Eta Carinae im Kiel ist einer der leuchtkräftigsten bekannten Sterne und könnte zu unseren Lebzeiten als Supernova explodieren!</string>
     <string name="object_info_carina_size">494 Quadratgrad</string>
-    <string name="object_info_vela_description">Die Segel (Vela) waren einst Teil des grossen Schiffs Argo Navis, gelegen in einer reichen Region der Milchstrasse.</string>
-    <string name="object_info_vela_funfact">Der Vela-Pulsar ist der hellste Pulsar am Himmel und der Ueberrest einer Supernova, die vor 11.000 Jahren explodierte!</string>
+    <string name="object_info_vela_description">Die Segel (Vela) waren einst Teil des großen Schiffs Argo Navis, gelegen in einer reichen Region der Milchstraße.</string>
+    <string name="object_info_vela_funfact">Der Vela-Pulsar ist der hellste Pulsar am Himmel und der Überrest einer Supernova, die vor 11.000 Jahren explodierte!</string>
     <string name="object_info_vela_size">500 Quadratgrad</string>
-    <string name="object_info_puppis_description">Das Achterdeck (Puppis) stellt das Heck des Schiffs Argo Navis dar, reich an offenen Sternhaufen entlang der Milchstrasse.</string>
-    <string name="object_info_puppis_funfact">Puppis enthaelt M47, einen mit blossem Auge sichtbaren offenen Sternhaufen, der wegen eines Katalogfehlers ueber 200 Jahre \"verloren\" war!</string>
+    <string name="object_info_puppis_description">Das Achterdeck (Puppis) stellt das Heck des Schiffs Argo Navis dar, reich an offenen Sternhaufen entlang der Milchstraße.</string>
+    <string name="object_info_puppis_funfact">Puppis enthält M47, einen mit bloßem Auge sichtbaren offenen Sternhaufen, der wegen eines Katalogfehlers über 200 Jahre \"verloren\" war!</string>
     <string name="object_info_puppis_size">673 Quadratgrad</string>
-    <string name="object_info_cetus_description">Der Walfisch (Cetus) ist ein grosses Sternbild mit Mira, dem ersten jemals entdeckten veraenderlichen Stern.</string>
-    <string name="object_info_cetus_funfact">Mira im Walfisch schwankt ueber 11 Monate von sichtbar zu unsichtbar und hat einen 13 Lichtjahre langen Gasschweif!</string>
+    <string name="object_info_cetus_description">Der Walfisch (Cetus) ist ein großes Sternbild mit Mira, dem ersten jemals entdeckten veränderlichen Stern.</string>
+    <string name="object_info_cetus_funfact">Mira im Walfisch schwankt über 11 Monate von sichtbar zu unsichtbar und hat einen 13 Lichtjahre langen Gasschweif!</string>
     <string name="object_info_cetus_size">1.231 Quadratgrad</string>
-    <string name="object_info_phoenix_description">Der Phoenix ist ein suedliches Sternbild, das den mythischen Vogel darstellt, der aus seiner eigenen Asche emporsteigt.</string>
-    <string name="object_info_phoenix_funfact">Phoenix war eines von 12 Sternbildern, die hollaendische Entdecker im spaeten 16. Jahrhundert aus unkartierten suedlichen Sternen schufen!</string>
+    <string name="object_info_phoenix_description">Der Phoenix ist ein südliches Sternbild, das den mythischen Vogel darstellt, der aus seiner eigenen Asche emporsteigt.</string>
+    <string name="object_info_phoenix_funfact">Phoenix war eines von 12 Sternbildern, die hollaendische Entdecker im spaeten 16. Jahrhundert aus unkartierten südlichen Sternen schufen!</string>
     <string name="object_info_phoenix_size">469 Quadratgrad</string>
-    <string name="object_info_grus_description">Der Kranich (Grus) ist ein suedliches Sternbild, das im spaeten 16. Jahrhundert von europaeischen Seefahrern eingefuehrt wurde.</string>
+    <string name="object_info_grus_description">Der Kranich (Grus) ist ein südliches Sternbild, das im spaeten 16. Jahrhundert von europaeischen Seefahrern eingefuehrt wurde.</string>
     <string name="object_info_grus_funfact">Grus war einst als Phoenicopterus (der Flamingo) bekannt, bevor es in einen Kranich umbenannt wurde!</string>
     <string name="object_info_grus_size">366 Quadratgrad</string>
-    <string name="object_info_pavo_description">Der Pfau (Pavo) ist ein suedliches Sternbild mit dem hellen Stern Peacock und mehreren interessanten Galaxien.</string>
+    <string name="object_info_pavo_description">Der Pfau (Pavo) ist ein südliches Sternbild mit dem hellen Stern Peacock und mehreren interessanten Galaxien.</string>
     <string name="object_info_pavo_funfact">Der Stern Peacock (Alpha Pavonis) ist der zweithelligste Stern innerhalb von 200 Lichtjahren um unsere Sonne!</string>
     <string name="object_info_pavo_size">378 Quadratgrad</string>
-    <string name="object_info_triangulum_description">Das Dreieck (Triangulum) ist ein kleines noerdliches Sternbild mit der Dreiecksgalaxie (M33), der drittgroessten in der Lokalen Gruppe.</string>
-    <string name="object_info_triangulum_funfact">Die Dreiecksgalaxie ist das am weitesten entfernte Objekt, das unter idealen Bedingungen mit blossem Auge gesehen werden kann!</string>
+    <string name="object_info_triangulum_description">Das Dreieck (Triangulum) ist ein kleines nördliches Sternbild mit der Dreiecksgalaxie (M33), der drittgrößten in der Lokalen Gruppe.</string>
+    <string name="object_info_triangulum_funfact">Die Dreiecksgalaxie ist das am weitesten entfernte Objekt, das unter idealen Bedingungen mit bloßem Auge gesehen werden kann!</string>
     <string name="object_info_triangulum_size">132 Quadratgrad</string>
     <string name="object_info_delphinus_description">Der Delphin (Delphinus) ist ein kleines, aber markantes Sternbild, dessen Sterne die Form eines springenden Delphins bilden.</string>
-    <string name="object_info_delphinus_funfact">Zwei Sterne des Delphins heissen Sualocin und Rotanev - \"Nicolaus Venator\" rueckwaerts buchstabiert, der Astronom, der sie benannte!</string>
+    <string name="object_info_delphinus_funfact">Zwei Sterne des Delphins heißen Sualocin und Rotanev - \"Nicolaus Venator\" rueckwaerts buchstabiert, der Astronom, der sie benannte!</string>
     <string name="object_info_delphinus_size">189 Quadratgrad</string>
     <string name="object_info_sagitta_description">Der Pfeil (Sagitta) ist das drittkleinste Sternbild und stellt verschiedene mythologische Pfeile aus griechischen Legenden dar.</string>
-    <string name="object_info_sagitta_funfact">Trotz seiner winzigen Groesse enthaelt Sagitta M71, einen Kugelsternhaufen, der jahrhundertelang fuer einen offenen Sternhaufen gehalten wurde!</string>
+    <string name="object_info_sagitta_funfact">Trotz seiner winzigen Größe enthält Sagitta M71, einen Kugelsternhaufen, der jahrhundertelang für einen offenen Sternhaufen gehalten wurde!</string>
     <string name="object_info_sagitta_size">80 Quadratgrad</string>
 </resources>

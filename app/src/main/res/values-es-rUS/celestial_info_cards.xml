@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Educational Object Info Feature -->
+    <!-- Solar System Educational Content -->
     <string name="object_info_sun_description">El Sol es la estrella en el centro de nuestro sistema solar. Proporciona la luz y el calor que hacen posible la vida en la Tierra.</string>
     <string name="object_info_sun_funfact">El Sol contiene el 99,86% de toda la masa de nuestro sistema solar. ¡Aproximadamente 1,3 millones de Tierras cabrían dentro de él!</string>
     <string name="object_info_moon_description">La Luna es el único satélite natural de la Tierra. Influye en nuestras mareas y ha sido visitada por 12 astronautas.</string>
@@ -9,7 +11,7 @@
     <string name="object_info_venus_description">Venus es el segundo planeta desde el Sol y el más caliente de nuestro sistema solar. A menudo se le llama el gemelo de la Tierra debido a su tamaño similar.</string>
     <string name="object_info_venus_funfact">¡Un día en Venus es más largo que su año! Tarda 243 días terrestres en girar una vez, pero solo 225 días en orbitar el Sol.</string>
     <string name="object_info_mars_description">Marte es el cuarto planeta desde el Sol, conocido como el Planeta Rojo debido al óxido de hierro en su superficie.</string>
-    <string name="object_info_mars_funfact">Marte tiene el volcán más grande del sistema solar: Olympus Mons, ¡que es 3 veces más alto que el Monte Everest!</string>
+    <string name="object_info_mars_funfact">Marte tiene el volcán más grande del sistema solar: Olympus Mons, ¡que es aproximadamente 2,5 veces más alto que el Monte Everest!</string>
     <string name="object_info_jupiter_description">Júpiter es el planeta más grande de nuestro sistema solar. Es un gigante gaseoso con una famosa tormenta llamada la Gran Mancha Roja.</string>
     <string name="object_info_jupiter_funfact">¡Júpiter tiene al menos 95 lunas conocidas! Su luna más grande, Ganímedes, es más grande que el planeta Mercurio.</string>
     <string name="object_info_saturn_description">Saturno es el sexto planeta desde el Sol, famoso por su espectacular sistema de anillos hechos de hielo y roca.</string>
@@ -20,10 +22,11 @@
     <string name="object_info_neptune_funfact">¡Neptuno fue descubierto a través de las matemáticas! Los científicos predijeron su ubicación antes de que nadie lo viera a través de un telescopio.</string>
     <string name="object_info_pluto_description">Plutón es un planeta enano en el Cinturón de Kuiper. Fue considerado el noveno planeta hasta 2006.</string>
     <string name="object_info_pluto_funfact">Plutón tiene un glaciar en forma de corazón hecho de hielo de nitrógeno, ¡visible en imágenes de la misión New Horizons de la NASA!</string>
+    <!-- Bright Stars Educational Content -->
     <string name="object_info_sirius_description">Sirio es la estrella más brillante del cielo nocturno, ubicada en la constelación del Can Mayor.</string>
     <string name="object_info_sirius_funfact">¡Sirio es en realidad un sistema estelar binario! Sirio B, su compañera, es una enana blanca del tamaño de la Tierra pero casi tan masiva como el Sol.</string>
     <string name="object_info_vega_description">Vega es una de las estrellas más brillantes visibles desde la Tierra, ubicada en la constelación de Lira.</string>
-    <string name="object_info_vega_funfact">Vega fue la Estrella Polar hace unos 12.000 años y lo será de nuevo en unos 13.700 años ¡debido al bamboleo de la Tierra!</string>
+    <string name="object_info_vega_funfact">Vega fue la Estrella Polar hace unos 14.000 años y lo será de nuevo en unos 12.000 años ¡debido al bamboleo de la Tierra!</string>
     <string name="object_info_betelgeuse_description">Betelgeuse es una estrella supergigante roja que marca el hombro de Orión. Es una de las estrellas más grandes visibles a simple vista.</string>
     <string name="object_info_betelgeuse_funfact">Betelgeuse es tan grande que si se colocara en la posición de nuestro Sol, ¡engulliría a Mercurio, Venus, la Tierra, Marte y posiblemente Júpiter!</string>
     <string name="object_info_rigel_description">Rigel es una estrella supergigante azul que marca el pie de Orión. A pesar de estar más lejos que Betelgeuse, aparece igualmente brillante.</string>
@@ -48,7 +51,7 @@
     <string name="object_info_moon_distance">384.400 km</string>
     <string name="object_info_moon_size">3.474 km de diámetro</string>
     <string name="object_info_moon_mass">7,35 × 10²² kg</string>
-    <string name="object_info_mercury_distance">77 millones de km (promedio)</string>
+    <string name="object_info_mercury_distance">58 millones de km (del Sol)</string>
     <string name="object_info_mercury_size">4.880 km de diámetro</string>
     <string name="object_info_mercury_mass">3,3 × 10²³ kg</string>
     <string name="object_info_venus_distance">108 millones de km (promedio)</string>
@@ -200,7 +203,7 @@
     <string name="object_info_sagittarius_funfact">¡Cuando miras a Sagitario, estás mirando hacia Sagitario A*, el agujero negro supermasivo en el centro de nuestra galaxia!</string>
     <string name="object_info_sagittarius_size">867 grados cuadrados</string>
     <string name="object_info_cygnus_description">Cisne vuela a lo largo de la Vía Láctea, conteniendo el asterismo de la Cruz del Norte y la brillante estrella Deneb.</string>
-    <string name="object_info_cygnus_funfact">¡Cygnus X-1 en esta constelación fue el primer agujero negro ampliamente aceptado, descubierto en 1964!</string>
+    <string name="object_info_cygnus_funfact">¡Cygnus X-1 en esta constelación fue el primer agujero negro ampliamente aceptado, identificado a principios de la década de 1970!</string>
     <string name="object_info_cygnus_size">804 grados cuadrados</string>
     <string name="object_info_lyra_description">Lira es una constelación pequeña pero prominente que contiene a Vega, la quinta estrella más brillante del cielo nocturno.</string>
     <string name="object_info_lyra_funfact">¡Vega fue la Estrella del Norte alrededor del 12.000 a.C. y lo será nuevamente en unos 12.000 años debido a la precesión de la Tierra!</string>
@@ -376,7 +379,7 @@
     <string name="object_info_draco_funfact">¡Thuban en Dragón era la Estrella del Norte cuando se construyeron las pirámides egipcias, hace 5.000 años!</string>
     <string name="object_info_draco_size">1.083 grados cuadrados</string>
     <string name="object_info_eridanus_description">Eridano el Río es la sexta constelación más grande, serpenteando desde cerca de Orión hasta el lejano cielo sur.</string>
-    <string name="object_info_eridanus_funfact">¡Achernar al final de Eridano es la estrella más aplanada conocida, abultándose un 50% más ancha en el ecuador debido a la rápida rotación!</string>
+    <string name="object_info_eridanus_funfact">¡Achernar al final de Eridano es la estrella más aplanada conocida, con un ecuador un 56% más ancho que sus polos debido a la rápida rotación!</string>
     <string name="object_info_eridanus_size">1.138 grados cuadrados</string>
     <string name="object_info_grus_description">Grulla es una constelación del sur introducida a finales del siglo XVI por navegantes europeos.</string>
     <string name="object_info_grus_funfact">¡Grulla una vez se conoció como Phoenicopterus (el Flamenco) antes de cambiar para representar una grulla!</string>
@@ -576,7 +579,7 @@
     <string name="object_info_m20_distance">5.200 años luz</string>
     <string name="object_info_m20_size">20 años luz de diámetro</string>
     <string name="object_info_m27_description">La Nebulosa Dumbbell es una nebulosa planetaria en Vulpecula, la primera nebulosa planetaria jamás descubierta.</string>
-    <string name="object_info_m27_funfact">¡La Nebulosa Dumbbell fue descubierta por Charles Messier en 1764, llevándolo a acuñar el término nebulosa planetaria!</string>
+    <string name="object_info_m27_funfact">¡La Nebulosa Dumbbell fue descubierta por Charles Messier en 1764, siendo la primera nebulosa planetaria jamás descubierta!</string>
     <string name="object_info_m27_distance">1.360 años luz</string>
     <string name="object_info_m27_size">2,5 años luz de diámetro</string>
     <string name="object_info_m33_description">La Galaxia del Triángulo es el tercer miembro más grande del Grupo Local, una galaxia espiral visible en la constelación del Triángulo.</string>
