@@ -103,7 +103,7 @@
   <PreferenceCategory android:title="@string/other_prefs">
       <CheckBoxPreference
           android:defaultValue="true"
-          android:key="show_object_info_on_tap"
+          android:key="show_object_info_on_tap2"
           android:summary="@string/show_object_info_pref_summary"
           android:title="@string/show_object_info_pref_title" />
     <CheckBoxPreference
