@@ -4,8 +4,7 @@
     <string name="whats_new_content">
 <![CDATA[
 <h2>Educational Info Cards</h2>
-    Tap on celestial objects in manual mode to see educational info cards with descriptions, scientific data (distance, size, magnitude, spectral class), and fun facts. Covers planets, bright stars, and Messier objects. Available in English,
-    Portuguese, and Spanish.
+    Tap on celestial objects in manual mode to see educational info cards with descriptions, scientific data (distance, size, magnitude, spectral class), and fun facts. Covers planets, bright stars, and Messier objects.
 
 <h2>Improved Location Permission Experience</h2>
     When location permission isn\'t granted on first launch, you now see a clear dialog with options to grant permission, enter your location manually, or dismiss and use the default. Replaces the old truncated toast message that was easy to miss.
