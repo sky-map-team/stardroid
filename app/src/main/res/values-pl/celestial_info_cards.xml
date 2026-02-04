@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="object_info_funfact_label" translation_description="Label before the fun fact in info card">Ciekawostka:</string>
-    <string name="object_info_distance_label" translation_description="Label for distance field">Odległość:</string>
-    <string name="object_info_size_label" translation_description="Label for size field">Rozmiar:</string>
-    <string name="object_info_mass_label" translation_description="Label for mass field">Masa:</string>
-    <string name="object_info_spectral_label" translation_description="Label for spectral class">Typ widmowy:</string>
-    <string name="object_info_magnitude_label" translation_description="Label for apparent magnitude">Jasność:</string>
     <string name="object_info_sun_description" translation_description="Short description of the Sun">Słońce to gwiazda znajdująca się w centrum naszego Układu Słonecznego. Dostarcza światło i ciepło, które umożliwiają życie na Ziemi.</string>
     <string name="object_info_sun_funfact" translation_description="Fun fact about the Sun">Słońce zawiera 99,86% całej masy naszego Układu Słonecznego. Zmieściłoby się w nim około 1,3 miliona Ziem!</string>
     <string name="object_info_sun_distance">150 milionów km</string>

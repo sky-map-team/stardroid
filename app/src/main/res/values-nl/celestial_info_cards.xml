@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="object_info_funfact_label" translation_description="Label before the fun fact in info card">Leuk weetje:</string>
-    <string name="object_info_distance_label" translation_description="Label for distance field">Afstand:</string>
-    <string name="object_info_size_label" translation_description="Label for size field">Grootte:</string>
-    <string name="object_info_mass_label" translation_description="Label for mass field">Massa:</string>
-    <string name="object_info_spectral_label" translation_description="Label for spectral class">Spectraalklasse:</string>
-    <string name="object_info_magnitude_label" translation_description="Label for apparent magnitude">Magnitude:</string>
     <string name="object_info_sun_description" translation_description="Short description of the Sun">De Zon is de ster in het centrum van ons zonnestelsel. Ze levert het licht en de warmte die leven op aarde mogelijk maken.</string>
     <string name="object_info_sun_funfact" translation_description="Fun fact about the Sun">De Zon bevat 99,86% van alle massa in ons zonnestelsel. Er zouden ongeveer 1,3 miljoen aardes in passen!</string>
     <string name="object_info_sun_distance">150 miljoen km</string>
