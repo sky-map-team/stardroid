@@ -1,0 +1,14 @@
+# Description
+This swapped out the 'feature' graphic to include a screenshot from the app
+side by size with a photograph of the corresponding sky. The base is
+the old picture of a nebula with "Sky Map" on it.
+
+
+## Result
+After 6 days the CI still included 'no effect'
+
+-21.9%
++11.3%
+
+...but it didn't look like it was going to end positively.  Since we can only
+run one experiment at a time, stop this one and potentially revisit later.
