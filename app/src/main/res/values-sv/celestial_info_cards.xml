@@ -247,6 +247,7 @@
     <string name="object_info_diphda_distance">96 ljusår</string>
     <string name="object_info_diphda_size">18 solradier</string>
     <string name="object_info_diphda_mass">2,8 solmassor</string>
+    <!-- ==================== MESSIER OBJECTS ==================== -->
     <string name="object_info_m1_description">Krabbnebulan är en supernovarest i Oxen, resultatet av en stjärnexplosion som kinesiska astronomer dokumenterade år 1054.</string>
     <string name="object_info_m1_funfact">Krabbnebulan innehåller en pulsar som snurrar 30 gånger per sekund, den kollapsade kärnan av den exploderade stjärnan!</string>
     <string name="object_info_m1_distance">6 500 ljusår</string>
@@ -441,6 +442,7 @@
     <string name="object_info_m87_distance">53 miljoner ljusår</string>
     <string name="object_info_m87_size">240 000 ljusår tvärsöver</string>
     <string name="object_info_m87_mass">2,4 biljoner solmassor</string>
+    <!-- ==================== CONSTELLATIONS ==================== -->
     <string name="object_info_orion_description">Orion Jägaren är en av de mest igenkännliga stjärnbilderna, synlig från båda halvkloten med sitt distinkta Bälte av tre stjärnor.</string>
     <string name="object_info_orion_funfact">Orions bälte pekar mot Sirius (den ljusaste stjärnan) i en riktning och Aldebaran (i Oxen) i den andra!</string>
     <string name="object_info_orion_size">594 kvadratgrader</string>

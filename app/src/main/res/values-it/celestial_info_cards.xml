@@ -245,6 +245,7 @@
     <string name="object_info_diphda_distance">96 anni luce</string>
     <string name="object_info_diphda_size">18 raggi solari</string>
     <string name="object_info_diphda_mass">2,8 masse solari</string>
+    <!-- ==================== MESSIER OBJECTS ==================== -->
     <string name="object_info_m1_description">La Nebulosa del Granchio è un residuo di supernova nel Toro, il risultato di un\'esplosione stellare registrata dagli astronomi cinesi nel 1054 d.C.</string>
     <string name="object_info_m1_funfact">La Nebulosa del Granchio contiene una pulsar che ruota 30 volte al secondo, il nucleo collassato della stella esplosa!</string>
     <string name="object_info_m1_distance">6.500 anni luce</string>
@@ -439,6 +440,7 @@
     <string name="object_info_m87_distance">53 milioni di anni luce</string>
     <string name="object_info_m87_size">240.000 anni luce di diametro</string>
     <string name="object_info_m87_mass">2,4 bilioni di masse solari</string>
+    <!-- ==================== CONSTELLATIONS ==================== -->
     <string name="object_info_orion_description">Orione il Cacciatore è una delle costellazioni più riconoscibili, visibile da entrambi gli emisferi con la sua caratteristica Cintura di tre stelle.</string>
     <string name="object_info_orion_funfact">La Cintura di Orione punta verso Sirius (la stella più luminosa) in una direzione e verso Aldebaran (nel Toro) nell\'altra!</string>
     <string name="object_info_orion_size">594 gradi quadrati</string>
