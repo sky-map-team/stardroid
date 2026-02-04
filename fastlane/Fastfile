@@ -78,8 +78,8 @@ platform :android do
     )
   end
 
-  desc "Deploy beta to Production @10%"
-  lane :deploy do
+  desc "Promote Beta to Production @10%"
+  lane :promote_to_production do
     # This lane assumes you've already tested the build in Beta
     upload_to_play_store(
       track: 'beta',

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
+    <string name="whats_new_content">
+<![CDATA[
+<h2>Schede Informative Educative</h2>
+    Tocca gli oggetti celesti in modalità manuale per visualizzare schede informative educative con descrizioni, dati scientifici (distanza, dimensione, magnitudine, classe spettrale) e curiosità. Include pianeti, stelle luminose e oggetti Messier.
+
+<h2>Esperienza Migliorata per i Permessi di Posizione</h2>
+    Quando il permesso di posizione non viene concesso al primo avvio, ora appare una finestra di dialogo chiara con opzioni per concedere il permesso, inserire la posizione manualmente o chiudere e usare quella predefinita. Sostituisce il vecchio messaggio toast troncato che era facile da ignorare.
+
+<h2>Correzione delle Etichette Capovolte</h2>
+    Risolto un bug segnalato da alcuni utenti in cui le etichette del cielo apparivano capovolte a causa di un problema di orientamento del sensore.
+
+<h2>Modalità Notturna per le Pagine di Aiuto</h2>
+    Le pagine di aiuto nell\'app ora rispettano la modalità notturna, così non ti abbaglieranno quando stai osservando le stelle.
+
+<h2>Pagine di Aiuto Rinnovate</h2>
+    Il contenuto delle pagine di aiuto è stato ridisegnato e aggiornato, inclusa una sezione di riconoscimenti aggiornata che riconosce i contributori open source.
+
+<h2>Aggiornamenti delle Traduzioni</h2>
+<ul>
+  <li>Traduzione polacca aggiornata</li>
+  <li>Traduzione greca corretta</li>
+  <li>Traduzioni portoghesi mancanti aggiunte</li>
+</ul>
+    ]]>
+    </string>
+</resources>
