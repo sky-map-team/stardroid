@@ -31,7 +31,7 @@
     <string name="object_info_jupiter_size">139.820 km Durchmesser</string>
     <string name="object_info_jupiter_mass">1,898 x 10²⁷ kg</string>
     <string name="object_info_saturn_description" translation_description="Short description of Saturn">Saturn ist der sechste Planet von der Sonne, berühmt für sein spektakuläres Ringsystem aus Eis und Gestein.</string>
-    <string name="object_info_saturn_funfact" translation_description="Fun fact about Saturn">Saturn ist so leicht, dass er auf Wasser schwimmen würde! Seine Dichte ist geringer als die von Wasser - allerdings gibt es keine Badewanne, die gross genug wäre.</string>
+    <string name="object_info_saturn_funfact" translation_description="Fun fact about Saturn">Saturn ist so leicht, dass er auf Wasser schwimmen würde! Seine Dichte ist geringer als die von Wasser - allerdings gibt es keine Badewanne, die groß genug wäre.</string>
     <string name="object_info_saturn_distance">1,4 Milliarden km (Durchschnitt)</string>
     <string name="object_info_saturn_size">116.460 km Durchmesser</string>
     <string name="object_info_saturn_mass">5,68 x 10²⁶ kg</string>
@@ -51,7 +51,7 @@
     <string name="object_info_pluto_size">2.377 km Durchmesser</string>
     <string name="object_info_pluto_mass">1,3 x 10²² kg</string>
     <string name="object_info_sirius_description" translation_description="Short description of Sirius">Sirius ist der hellste Stern am Nachthimmel und befindet sich im Sternbild Canis Major (Großer Hund).</string>
-    <string name="object_info_sirius_funfact" translation_description="Fun fact about Sirius">Sirius ist eigentlich ein Doppelsternsystem! Sirius B, sein Begleiter, ist ein Weißer Zwerg etwa so gross wie die Erde, aber fast so massereich wie die Sonne.</string>
+    <string name="object_info_sirius_funfact" translation_description="Fun fact about Sirius">Sirius ist eigentlich ein Doppelsternsystem! Sirius B, sein Begleiter, ist ein Weißer Zwerg etwa so groß wie die Erde, aber fast so massereich wie die Sonne.</string>
     <string name="object_info_sirius_distance">8,6 Lichtjahre</string>
     <string name="object_info_sirius_size">1,7 Sonnenradien</string>
     <string name="object_info_sirius_mass">2,1 Sonnenmassen</string>
@@ -61,11 +61,11 @@
     <string name="object_info_vega_size">2,4 Sonnenradien</string>
     <string name="object_info_vega_mass">2,1 Sonnenmassen</string>
     <string name="object_info_betelgeuse_description" translation_description="Short description of Betelgeuse">Betelgeuse ist ein Roter Überriese, der die Schulter des Orion markiert. Er ist einer der größten mit bloßem Auge sichtbaren Sterne.</string>
-    <string name="object_info_betelgeuse_funfact" translation_description="Fun fact about Betelgeuse">Betelgeuse ist so gross, dass er an der Position unserer Sonne Merkur, Venus, Erde, Mars und möglicherweise sogar Jupiter verschlingen würde!</string>
+    <string name="object_info_betelgeuse_funfact" translation_description="Fun fact about Betelgeuse">Betelgeuse ist so groß, dass er an der Position unserer Sonne Merkur, Venus, Erde, Mars und möglicherweise sogar Jupiter verschlingen würde!</string>
     <string name="object_info_betelgeuse_distance">~700 Lichtjahre</string>
     <string name="object_info_betelgeuse_size">~900 Sonnenradien</string>
     <string name="object_info_betelgeuse_mass">~12 Sonnenmassen</string>
-    <string name="object_info_rigel_description" translation_description="Short description of Rigel">Rigel ist ein Blauer Überriese, der den Fuss des Orion markiert. Obwohl er weiter entfernt ist als Betelgeuse, erscheint er ähnlich hell.</string>
+    <string name="object_info_rigel_description" translation_description="Short description of Rigel">Rigel ist ein Blauer Überriese, der den Fuß des Orion markiert. Obwohl er weiter entfernt ist als Betelgeuse, erscheint er ähnlich hell.</string>
     <string name="object_info_rigel_funfact" translation_description="Fun fact about Rigel">Rigel leuchtet mit der Kraft von etwa 120.000 Sonnen! Er ist einer der leuchtkräftigsten Sterne in unserer Region der Milchstraße.</string>
     <string name="object_info_rigel_distance">~860 Lichtjahre</string>
     <string name="object_info_rigel_size">~79 Sonnenradien</string>
@@ -101,7 +101,7 @@
     <string name="object_info_aldebaran_size">44 Sonnenradien</string>
     <string name="object_info_aldebaran_mass">1,2 Sonnenmassen</string>
     <string name="object_info_antares_description" translation_description="Short description of Antares">Antares ist ein Roter Überriese, das Herz des Skorpions (Scorpius). Sein Name bedeutet \"Rivale des Mars\" wegen seiner roten Farbe.</string>
-    <string name="object_info_antares_funfact" translation_description="Fun fact about Antares">Antares ist so gross, dass seine Oberfläche in unserem Sonnensystem über die Marsbahn hinausreichen würde!</string>
+    <string name="object_info_antares_funfact" translation_description="Fun fact about Antares">Antares ist so groß, dass seine Oberfläche in unserem Sonnensystem über die Marsbahn hinausreichen würde!</string>
     <string name="object_info_antares_distance">~550 Lichtjahre</string>
     <string name="object_info_antares_size">~680 Sonnenradien</string>
     <string name="object_info_antares_mass">~12 Sonnenmassen</string>
@@ -220,7 +220,7 @@
     <string name="object_info_alpheratz_distance">97 Lichtjahre</string>
     <string name="object_info_alpheratz_size">2,7 Sonnenradien</string>
     <string name="object_info_alpheratz_mass">3,6 Sonnenmassen</string>
-    <string name="object_info_markab_description">Markab ist einer der vier Sterne, die das Grosse Quadrat des Pegasus bilden, einen leicht erkennbaren Asterismus.</string>
+    <string name="object_info_markab_description">Markab ist einer der vier Sterne, die das Große Quadrat des Pegasus bilden, einen leicht erkennbaren Asterismus.</string>
     <string name="object_info_markab_funfact">Markab ist ein \"später B-Typ\"-Stern, der gerade sein Hauptreihenleben beendet und bald zu einem Roten Riesen wird!</string>
     <string name="object_info_markab_distance">133 Lichtjahre</string>
     <string name="object_info_markab_size">4,6 Sonnenradien</string>
@@ -250,7 +250,7 @@
     <string name="object_info_m1_distance">6.500 Lichtjahre</string>
     <string name="object_info_m1_size">11 Lichtjahre Durchmesser</string>
     <string name="object_info_m13_description">M13 ist ein spektakulärer Kugelsternhaufen im Herkules mit etwa 300.000 Sternen, einer der hellsten am nördlichen Himmel.</string>
-    <string name="object_info_m13_funfact">1974 wurde die Arecibo-Botschaft in Richtung M13 gesendet - ein Versuch, ausserirdische Intelligenz zu kontaktieren!</string>
+    <string name="object_info_m13_funfact">1974 wurde die Arecibo-Botschaft in Richtung M13 gesendet - ein Versuch, außerirdische Intelligenz zu kontaktieren!</string>
     <string name="object_info_m13_distance">22.200 Lichtjahre</string>
     <string name="object_info_m13_size">145 Lichtjahre Durchmesser</string>
     <string name="object_info_m31_description">Die Andromedagalaxie ist die nächste große Spiralgalaxie zur Milchstraße und eines der am weitesten entfernten mit bloßem Auge sichtbaren Objekte.</string>
@@ -378,7 +378,7 @@
     <string name="object_info_m14_funfact">1938 erschien eine Nova in M14, die aber erst 1964 entdeckt wurde, als alte Fotoplatten untersucht wurden!</string>
     <string name="object_info_m14_distance">30.300 Lichtjahre</string>
     <string name="object_info_m14_size">100 Lichtjahre Durchmesser</string>
-    <string name="object_info_m53_description">M53 ist ein Kugelsternhaufen im Haar der Berenike (Coma Berenices), einer der weiter aussen liegenden Kugelsternhaufen unserer Galaxie.</string>
+    <string name="object_info_m53_description">M53 ist ein Kugelsternhaufen im Haar der Berenike (Coma Berenices), einer der weiter außen liegenden Kugelsternhaufen unserer Galaxie.</string>
     <string name="object_info_m53_funfact">M53 ist einer der am weitesten vom galaktischen Zentrum entfernten Kugelsternhaufen - 60.000 Lichtjahre davon entfernt!</string>
     <string name="object_info_m53_distance">58.000 Lichtjahre</string>
     <string name="object_info_m53_size">220 Lichtjahre Durchmesser</string>
@@ -511,44 +511,44 @@
     <string name="object_info_crux_description">Das Kreuz des Südens (Crux) ist das kleinste Sternbild, aber eines der markantesten, und wird auf der Südhalbkugel zur Navigation verwendet.</string>
     <string name="object_info_crux_funfact">Obwohl es das kleinste Sternbild ist, hat Crux mehr helle Sterne pro Flächeneinheit als jedes andere Sternbild!</string>
     <string name="object_info_crux_size">68 Quadratgrad</string>
-    <string name="object_info_canis_major_description">Der Grosse Hund (Canis Major) folgt Orion über den Himmel und enthält Sirius, den hellsten von der Erde aus sichtbaren Stern.</string>
-    <string name="object_info_canis_major_funfact">Die alten Ägypter richteten ihren Kalender nach dem heliakischen Aufgang von Sirius aus, der mit der jaehrlichen Nilflut zusammenfiel!</string>
+    <string name="object_info_canis_major_description">Der Große Hund (Canis Major) folgt Orion über den Himmel und enthält Sirius, den hellsten von der Erde aus sichtbaren Stern.</string>
+    <string name="object_info_canis_major_funfact">Die alten Ägypter richteten ihren Kalender nach dem heliakischen Aufgang von Sirius aus, der mit der jährlichen Nilflut zusammenfiel!</string>
     <string name="object_info_canis_major_size">380 Quadratgrad</string>
     <string name="object_info_canis_minor_description">Der Kleine Hund (Canis Minor) ist ein kleines Sternbild, bemerkenswert für Procyon, den achthellsten Stern am Himmel.</string>
     <string name="object_info_canis_minor_funfact">Procyon bedeutet auf Griechisch \"vor dem Hund\", weil er jede Nacht kurz vor Sirius (dem Hundsstern) aufgeht!</string>
     <string name="object_info_canis_minor_size">183 Quadratgrad</string>
-    <string name="object_info_cepheus_description">Kepheus (Cepheus) ist ein nördliches Sternbild, dessen Sterne Delta Cephei einschliessen, den Prototyp der Cepheiden-Veränderlichen.</string>
-    <string name="object_info_cepheus_funfact">Die von Henrietta Leavitt entdeckten Cepheiden revolutionierten die Astronomie, indem sie die Messung kosmischer Entfernungen ermoeglichten!</string>
+    <string name="object_info_cepheus_description">Kepheus (Cepheus) ist ein nördliches Sternbild, dessen Sterne Delta Cephei einschließen, den Prototyp der Cepheiden-Veränderlichen.</string>
+    <string name="object_info_cepheus_funfact">Die von Henrietta Leavitt entdeckten Cepheiden revolutionierten die Astronomie, indem sie die Messung kosmischer Entfernungen ermöglichten!</string>
     <string name="object_info_cepheus_size">588 Quadratgrad</string>
     <string name="object_info_draco_description">Der Drache (Draco) ist ein langes, gewundenes Sternbild, das sich am weit nördlichen Himmel um den Kleinen Bären windet.</string>
-    <string name="object_info_draco_funfact">Thuban im Drachen war der Polarstern, als die aegyptischen Pyramiden gebaut wurden, vor 5.000 Jahren!</string>
+    <string name="object_info_draco_funfact">Thuban im Drachen war der Polarstern, als die ägyptischen Pyramiden gebaut wurden, vor 5.000 Jahren!</string>
     <string name="object_info_draco_size">1.083 Quadratgrad</string>
     <string name="object_info_hercules_description">Herkules (Hercules) ist ein großes Sternbild, das den griechischen Helden darstellt, und enthält den großen Kugelsternhaufen M13.</string>
     <string name="object_info_hercules_funfact">Unser Sonnensystem bewegt sich auf einen Punkt im Herkules zu, den sogenannten Sonnenapex, mit etwa 20 km/s!</string>
     <string name="object_info_hercules_size">1.225 Quadratgrad</string>
-    <string name="object_info_ophiuchus_description">Der Schlangenträger (Ophiuchus) liegt entlang der Ekliptik, ist aber kein Tierkreiszeichen, geteilt durch die Schlange, die er haelt.</string>
+    <string name="object_info_ophiuchus_description">Der Schlangenträger (Ophiuchus) liegt entlang der Ekliptik, ist aber kein Tierkreiszeichen, geteilt durch die Schlange, die er hält.</string>
     <string name="object_info_ophiuchus_funfact">Die Sonne verbringt mehr Zeit im Schlangenträger als im Skorpion, und doch gilt er nicht als Tierkreiszeichen!</string>
     <string name="object_info_ophiuchus_size">948 Quadratgrad</string>
     <string name="object_info_bootes_description">Der Bärenhüter (Bootes) ist ein Sternbild mit Arcturus, dem vierthellsten Stern am Nachthimmel.</string>
     <string name="object_info_bootes_funfact">Folge dem Bogen der Deichsel des Großen Wagens, um \"dem Bogen zu Arcturus zu folgen\" - einer der berühmtesten Navigationstipps!</string>
     <string name="object_info_bootes_size">907 Quadratgrad</string>
-    <string name="object_info_corona_borealis_description">Die Nördliche Krone (Corona Borealis) ist ein kleines halbkreisfoermiges Sternbild, das Ariadnes Krone aus der griechischen Mythologie darstellt.</string>
+    <string name="object_info_corona_borealis_description">Die Nördliche Krone (Corona Borealis) ist ein kleines halbkreisförmiges Sternbild, das Ariadnes Krone aus der griechischen Mythologie darstellt.</string>
     <string name="object_info_corona_borealis_funfact">T Coronae Borealis ist eine wiederkehrende Nova, die etwa alle 80 Jahre ausbricht - ein weiterer Ausbruch könnte bald bevorstehen!</string>
     <string name="object_info_corona_borealis_size">179 Quadratgrad</string>
-    <string name="object_info_corvus_description">Der Rabe (Corvus) ist ein kleines viereckiges Sternbild suedlich der Jungfrau, das Apollos heiligen Vogel darstellt.</string>
+    <string name="object_info_corvus_description">Der Rabe (Corvus) ist ein kleines viereckiges Sternbild südlich der Jungfrau, das Apollos heiligen Vogel darstellt.</string>
     <string name="object_info_corvus_funfact">Die vier Hauptsterne des Raben bilden eine markante Segelform, die am Frühlingshimmel leicht zu erkennen ist!</string>
     <string name="object_info_corvus_size">184 Quadratgrad</string>
     <string name="object_info_auriga_description">Der Fuhrmann (Auriga) ist ein nördliches Sternbild mit Capella, dem sechsthellsten Stern, und mehreren offenen Sternhaufen.</string>
-    <string name="object_info_auriga_funfact">Epsilon Aurigae ist einer der raetselhaftesten Sterne - er wird alle 27 Jahre für zwei Jahre dunkler, durch eine mysteriöse dunkle Scheibe!</string>
+    <string name="object_info_auriga_funfact">Epsilon Aurigae ist einer der rätselhaftesten Sterne - er wird alle 27 Jahre für zwei Jahre dunkler, durch eine mysteriöse dunkle Scheibe!</string>
     <string name="object_info_auriga_size">657 Quadratgrad</string>
     <string name="object_info_eridanus_description">Der Fluss Eridanus ist das sechstgrößte Sternbild und windet sich von nahe Orion bis zum weit südlichen Himmel.</string>
-    <string name="object_info_eridanus_funfact">Achernar am Ende des Eridanus ist der flachste bekannte Stern - er woelbt sich am Äquator 56 % breiter durch schnelle Rotation!</string>
+    <string name="object_info_eridanus_funfact">Achernar am Ende des Eridanus ist der flachste bekannte Stern - er wölbt sich am Äquator 56 % breiter durch schnelle Rotation!</string>
     <string name="object_info_eridanus_size">1.138 Quadratgrad</string>
-    <string name="object_info_lepus_description">Der Hase (Lepus) kauert unter Orions Fuessen, ein kleines, aber markantes Sternbild mit reicher Mythologie.</string>
-    <string name="object_info_lepus_funfact">In der Mythologie soll Orion die Hasenjagd geliebt haben, also wurde ihm ein Hase unter die Fuesse am Himmel gesetzt!</string>
+    <string name="object_info_lepus_description">Der Hase (Lepus) kauert unter Orions Füßen, ein kleines, aber markantes Sternbild mit reicher Mythologie.</string>
+    <string name="object_info_lepus_funfact">In der Mythologie soll Orion die Hasenjagd geliebt haben, also wurde ihm ein Hase unter die Füße am Himmel gesetzt!</string>
     <string name="object_info_lepus_size">290 Quadratgrad</string>
     <string name="object_info_monoceros_description">Das Einhorn (Monoceros) ist ein lichtschwaches Sternbild in der winterlichen Milchstraße, reich an Nebeln und Sternhaufen.</string>
-    <string name="object_info_monoceros_funfact">Der Rosettennebel im Einhorn ist ein gewaltiges Sternentstehungsgebiet, das einer himmlischen Rose aehnelt!</string>
+    <string name="object_info_monoceros_funfact">Der Rosettennebel im Einhorn ist ein gewaltiges Sternentstehungsgebiet, das einer himmlischen Rose ähnelt!</string>
     <string name="object_info_monoceros_size">482 Quadratgrad</string>
     <string name="object_info_hydra_description">Die Wasserschlange (Hydra) ist das größte Sternbild am Himmel und stellt die Wasserschlange der griechischen Mythologie dar.</string>
     <string name="object_info_hydra_funfact">Hydra erstreckt sich über 100 Grad am Himmel - mehr als ein Viertel des Weges um die gesamte Himmelssphäre!</string>
@@ -566,9 +566,9 @@
     <string name="object_info_cetus_funfact">Mira im Walfisch schwankt über 11 Monate von sichtbar zu unsichtbar und hat einen 13 Lichtjahre langen Gasschweif!</string>
     <string name="object_info_cetus_size">1.231 Quadratgrad</string>
     <string name="object_info_phoenix_description">Der Phoenix ist ein südliches Sternbild, das den mythischen Vogel darstellt, der aus seiner eigenen Asche emporsteigt.</string>
-    <string name="object_info_phoenix_funfact">Phoenix war eines von 12 Sternbildern, die hollaendische Entdecker im spaeten 16. Jahrhundert aus unkartierten südlichen Sternen schufen!</string>
+    <string name="object_info_phoenix_funfact">Phoenix war eines von 12 Sternbildern, die holländische Entdecker im späten 16. Jahrhundert aus unkartierten südlichen Sternen schufen!</string>
     <string name="object_info_phoenix_size">469 Quadratgrad</string>
-    <string name="object_info_grus_description">Der Kranich (Grus) ist ein südliches Sternbild, das im spaeten 16. Jahrhundert von europaeischen Seefahrern eingefuehrt wurde.</string>
+    <string name="object_info_grus_description">Der Kranich (Grus) ist ein südliches Sternbild, das im späten 16. Jahrhundert von europäischen Seefahrern eingeführt wurde.</string>
     <string name="object_info_grus_funfact">Grus war einst als Phoenicopterus (der Flamingo) bekannt, bevor es in einen Kranich umbenannt wurde!</string>
     <string name="object_info_grus_size">366 Quadratgrad</string>
     <string name="object_info_pavo_description">Der Pfau (Pavo) ist ein südliches Sternbild mit dem hellen Stern Peacock und mehreren interessanten Galaxien.</string>
@@ -578,7 +578,7 @@
     <string name="object_info_triangulum_funfact">Die Dreiecksgalaxie ist das am weitesten entfernte Objekt, das unter idealen Bedingungen mit bloßem Auge gesehen werden kann!</string>
     <string name="object_info_triangulum_size">132 Quadratgrad</string>
     <string name="object_info_delphinus_description">Der Delphin (Delphinus) ist ein kleines, aber markantes Sternbild, dessen Sterne die Form eines springenden Delphins bilden.</string>
-    <string name="object_info_delphinus_funfact">Zwei Sterne des Delphins heißen Sualocin und Rotanev - \"Nicolaus Venator\" rueckwaerts buchstabiert, der Astronom, der sie benannte!</string>
+    <string name="object_info_delphinus_funfact">Zwei Sterne des Delphins heißen Sualocin und Rotanev - \"Nicolaus Venator\" rückwärts buchstabiert, der Astronom, der sie benannte!</string>
     <string name="object_info_delphinus_size">189 Quadratgrad</string>
     <string name="object_info_sagitta_description">Der Pfeil (Sagitta) ist das drittkleinste Sternbild und stellt verschiedene mythologische Pfeile aus griechischen Legenden dar.</string>
     <string name="object_info_sagitta_funfact">Trotz seiner winzigen Größe enthält Sagitta M71, einen Kugelsternhaufen, der jahrhundertelang für einen offenen Sternhaufen gehalten wurde!</string>
