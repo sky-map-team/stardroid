@@ -64,5 +64,5 @@ object ApplicationConstants {
   const val VIEW_MODE_PREFKEY = "viewing_direction"
 
   // Educational info feature
-  const val SHOW_OBJECT_INFO_PREF_KEY = "show_object_info_on_tap"
+  const val SHOW_OBJECT_INFO_PREF_KEY = "show_object_info_on_tap2"
 }

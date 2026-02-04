@@ -100,7 +100,7 @@ class ObjectInfoTapHandler @Inject constructor(
     fun isFeatureEnabled(): Boolean {
         return sharedPreferences.getBoolean(
             ApplicationConstants.SHOW_OBJECT_INFO_PREF_KEY,
-            false
+            true
         )
     }
 

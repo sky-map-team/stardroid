@@ -18,10 +18,12 @@ import com.google.common.truth.Truth.assertThat
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
+import org.mockito.ArgumentMatchers.anyBoolean
+import org.mockito.ArgumentMatchers.eq
 import org.mockito.Mock
-import org.mockito.Mockito.`when`
 import org.mockito.Mockito.never
 import org.mockito.Mockito.verify
+import org.mockito.Mockito.`when`
 import org.mockito.MockitoAnnotations
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
@@ -68,7 +70,8 @@ class ObjectInfoTapHandlerTest {
     @Test
     fun testHandleTap_featureDisabled_returnsFalse() {
         `when`(mockPreferences.getBoolean(
-            ApplicationConstants.SHOW_OBJECT_INFO_PREF_KEY, false))
+            eq(ApplicationConstants.SHOW_OBJECT_INFO_PREF_KEY),
+            anyBoolean()))
             .thenReturn(false)
 
         val result = tapHandler.handleTap(100f, 200f, 1080, 1920)
@@ -81,8 +84,8 @@ class ObjectInfoTapHandlerTest {
     @Test
     fun testHandleTap_autoMode_returnsFalse() {
         `when`(mockPreferences.getBoolean(
-            ApplicationConstants.SHOW_OBJECT_INFO_PREF_KEY, false))
-            .thenReturn(true)
+            eq(ApplicationConstants.SHOW_OBJECT_INFO_PREF_KEY),
+            anyBoolean()))            .thenReturn(true)
         `when`(mockPreferences.getBoolean(
             ApplicationConstants.AUTO_MODE_PREF_KEY, true))
             .thenReturn(true)
@@ -97,8 +100,8 @@ class ObjectInfoTapHandlerTest {
     @Test
     fun testHandleTap_manualMode_objectFound_returnsTrue() {
         `when`(mockPreferences.getBoolean(
-            ApplicationConstants.SHOW_OBJECT_INFO_PREF_KEY, false))
-            .thenReturn(true)
+            eq(ApplicationConstants.SHOW_OBJECT_INFO_PREF_KEY),
+            anyBoolean()))            .thenReturn(true)
         `when`(mockPreferences.getBoolean(
             ApplicationConstants.AUTO_MODE_PREF_KEY, true))
             .thenReturn(false)
@@ -114,8 +117,8 @@ class ObjectInfoTapHandlerTest {
     @Test
     fun testHandleTap_manualMode_noObjectFound_returnsFalse() {
         `when`(mockPreferences.getBoolean(
-            ApplicationConstants.SHOW_OBJECT_INFO_PREF_KEY, false))
-            .thenReturn(true)
+            eq(ApplicationConstants.SHOW_OBJECT_INFO_PREF_KEY),
+            anyBoolean()))            .thenReturn(true)
         `when`(mockPreferences.getBoolean(
             ApplicationConstants.AUTO_MODE_PREF_KEY, true))
             .thenReturn(false)
@@ -131,7 +134,8 @@ class ObjectInfoTapHandlerTest {
     @Test
     fun testIsFeatureEnabled_enabled() {
         `when`(mockPreferences.getBoolean(
-            ApplicationConstants.SHOW_OBJECT_INFO_PREF_KEY, false))
+            eq(ApplicationConstants.SHOW_OBJECT_INFO_PREF_KEY),
+            anyBoolean()))
             .thenReturn(true)
 
         assertThat(tapHandler.isFeatureEnabled()).isTrue()
@@ -140,7 +144,8 @@ class ObjectInfoTapHandlerTest {
     @Test
     fun testIsFeatureEnabled_disabled() {
         `when`(mockPreferences.getBoolean(
-            ApplicationConstants.SHOW_OBJECT_INFO_PREF_KEY, false))
+            eq(ApplicationConstants.SHOW_OBJECT_INFO_PREF_KEY),
+            anyBoolean()))
             .thenReturn(false)
 
         assertThat(tapHandler.isFeatureEnabled()).isFalse()
@@ -150,7 +155,8 @@ class ObjectInfoTapHandlerTest {
     fun testHandleTap_noListener_doesNotCrash() {
         tapHandler.setObjectTapListener(null)
         `when`(mockPreferences.getBoolean(
-            ApplicationConstants.SHOW_OBJECT_INFO_PREF_KEY, false))
+            eq(ApplicationConstants.SHOW_OBJECT_INFO_PREF_KEY),
+            anyBoolean()))
             .thenReturn(true)
         `when`(mockPreferences.getBoolean(
             ApplicationConstants.AUTO_MODE_PREF_KEY, true))
