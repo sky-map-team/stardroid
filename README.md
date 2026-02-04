@@ -36,6 +36,11 @@ If you enjoy using Sky Map, there are several ways to help keep the project aliv
 * **Star the Repo:** It costs nothing and helps others find the project.
 * **Contribute:** Submit a Pull Request or [report an issue](https://github.com/sky-map-team/stardroid/issues/).
 
+### Find us elsewhere
+* [Facebook @stardroidapp](https://www.facebook.com/groups/stardroidapp/)
+* [X @skymapdevs](http://x.com/skymapdevs)
+
+
 ---
 
 # Code and Language Contributions
