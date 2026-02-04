@@ -71,13 +71,13 @@ Promote Internal to Alpha (Closed Testing)
 
 Promote Alpha to Beta (Open Testing @10%)
 
-### android deploy
+### android promote_to_production
 
 ```sh
-[bundle exec] fastlane android deploy
+[bundle exec] fastlane android promote_to_production
 ```
 
-Deploy beta to Production @10%
+Promote beta to Production @10%
 
 ### android alpha
 
