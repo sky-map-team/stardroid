@@ -218,4 +218,6 @@
     <string name="rotate_horizon_preference_summary">Roter horisont 90 grader (for enheter
         med påtvunget landskapsorientering) eller bruk pekemodus for at skjermen skal vise
         hva toppen av telefonen peker på (se hjelpetekst).</string>
+    <string name="show_object_info_auto_mode_title">Infokort i automatisk modus</string>
+    <string name="show_object_info_auto_mode_summary">Vis også infokort når du trykker på objekter i automatisk (sensor) modus</string>
 </resources>

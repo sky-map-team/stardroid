@@ -6,4 +6,6 @@
     <string name="object_info_mass_label">Tömeg:</string>
     <string name="object_info_spectral_label">Spektrál:</string>
     <string name="object_info_magnitude_label">Magnitúdó:</string>
+    <string name="show_object_info_auto_mode_title">Infókártyák automatikus módban</string>
+    <string name="show_object_info_auto_mode_summary">Infókártyák megjelenítése automatikus (szenzor) módban is az objektumok megérintésekor</string>
 </resources>

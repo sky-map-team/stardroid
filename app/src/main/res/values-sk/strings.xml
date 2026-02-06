@@ -210,4 +210,6 @@
     <string name="disable_gyro_preference_summary">Nie všetky zariadenia majú gyroskop – ak ho to vaše má, potom dosiahnete lepšie výsledky, ak bude povolený a toto políčko nebude začiarknuté. Na druhej strane, ak vaše zariadenie nemá gyroskop, potom Sky Map pravdepodobne nebude fungovať, ak zrušíte začiarknutie tohto políčka.</string>
     <string name="rotate_horizon_preference_title">Zobraziť smer</string>
     <string name="rotate_horizon_preference_summary">Otočte horizont o 90 stupňov (pre zariadenia s vynúteným zobrazením na šírku) alebo použite Režim ukazovateľa na obrazovke, aby ste ukázali, na čo ukazuje horná časť telefónu (pozri Pomoc).</string> 
+    <string name="show_object_info_auto_mode_title">Info karty v automatickom režime</string>
+    <string name="show_object_info_auto_mode_summary">Zobraziť info karty aj pri klepnutí na objekty v automatickom (senzorový) režime</string>
 </resources>

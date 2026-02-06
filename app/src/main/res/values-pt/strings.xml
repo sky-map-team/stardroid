@@ -456,7 +456,9 @@
     <string name="space_shuttle" translation_description="Name of the Space Shuttle">Ônibus espacial</string>
 
     <string name="show_object_info_pref_title">Mostrar informações ao tocar</string>
-    <string name="show_object_info_pref_summary">Toque em objetos celestes no modo manual para aprender sobre eles</string>
+    <string name="show_object_info_pref_summary">Toque em objetos celestes para aprender sobre eles</string>
+    <string name="show_object_info_auto_mode_title">Info cards no modo automático</string>
+    <string name="show_object_info_auto_mode_summary">Também mostrar info cards ao tocar objetos no modo automático (sensores)</string>
     <string name="object_info_funfact_label">Curiosidade:</string>
     <string name="object_info_distance_label">Distância:</string>
     <string name="object_info_size_label">Tamanho:</string>

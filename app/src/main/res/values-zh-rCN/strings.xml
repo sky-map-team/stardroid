@@ -400,6 +400,8 @@
     <string name="orionids" translation_description="Meteor Shower">猎户座流星雨</string>
     <string name="puppidvelids" translation_description="Meteor Shower">船尾/船帆座流星雨</string>
     <string name="ursids" translation_description="Meteor Shower">小熊座流星雨</string>
+    <string name="show_object_info_auto_mode_title">自动模式下的信息卡</string>
+    <string name="show_object_info_auto_mode_summary">在自动（传感器）模式下点击天体时也显示信息卡</string>
 </resources>
 
 

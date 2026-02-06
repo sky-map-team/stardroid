@@ -473,4 +473,6 @@
     <string name="disable_gyro_preference_summary">不是所有裝置都有陀螺儀 - 如果您的裝置具備陀螺儀，清除這個核取方塊以啟用它，可以得到更好的效果。反之，如果您的裝置沒有陀螺儀卻取消停用，Sky Map 可能無法運作。</string>
     <string name="rotate_horizon_preference_title">地平線旋轉</string>
     <string name="rotate_horizon_preference_summary">地平線旋轉九十度（給橫幅式螢幕裝置，例如智慧眼鏡）</string>
+    <string name="show_object_info_auto_mode_title">自動模式下的資訊卡</string>
+    <string name="show_object_info_auto_mode_summary">在自動（感測器）模式下點擊天體時也顯示資訊卡</string>
 </resources>

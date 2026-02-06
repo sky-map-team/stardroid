@@ -375,4 +375,6 @@
     <string name="kml_load_error">Kan KML-bestand niet laden</string>
     <string name="load_kml_dialog_title">KML laden</string>
     <string name="load_kml_file">Laden</string>
+    <string name="show_object_info_auto_mode_title">Infokaarten in automatische modus</string>
+    <string name="show_object_info_auto_mode_summary">Toon ook infokaarten bij het tikken op objecten in automatische (sensor) modus</string>
 </resources>

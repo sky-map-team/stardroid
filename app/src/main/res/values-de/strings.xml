@@ -420,5 +420,7 @@
     <string name="warning_dialog_title">Warnung!</string>
     <string name="wifi">" (WLAN)"</string>
     <string name="diagnostics_activity_pointing_ra_dec">Letzte Blickrichtung (RA, D)</string>
+    <string name="show_object_info_auto_mode_title">Info-Karten im Automatikmodus</string>
+    <string name="show_object_info_auto_mode_summary">Info-Karten auch beim Antippen von Objekten im automatischen (Sensor-)Modus anzeigen</string>
 </resources>
 

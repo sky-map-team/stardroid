@@ -22,8 +22,9 @@ import javax.inject.Inject
 /**
  * Handles tap events and coordinates the flow for showing educational info cards.
  *
- * This handler checks if the feature is enabled and the app is in manual mode
- * before attempting to find and display information about celestial objects.
+ * This handler checks if the feature is enabled before attempting to find and display
+ * information about celestial objects. In auto mode, info cards are only shown if the
+ * user has explicitly enabled the "show_object_info_auto_mode" preference.
  */
 class ObjectInfoTapHandler @Inject constructor(
     private val sharedPreferences: SharedPreferences,
@@ -67,12 +68,15 @@ class ObjectInfoTapHandler @Inject constructor(
             return false
         }
 
-        // Check if we're in manual mode (not auto/sensor mode)
-        // We use SharedPreferences directly since ControllerGroup isn't a singleton
+        // In auto mode, only show info cards if the user has enabled the option
         val isAutoMode = sharedPreferences.getBoolean(ApplicationConstants.AUTO_MODE_PREF_KEY, true)
         if (isAutoMode) {
-            Log.d(TAG, "In auto mode, ignoring tap for object info")
-            return false
+            val allowInAutoMode = sharedPreferences.getBoolean(
+                ApplicationConstants.SHOW_OBJECT_INFO_AUTO_MODE_PREF_KEY, false)
+            if (!allowInAutoMode) {
+                Log.d(TAG, "In auto mode, ignoring tap for object info")
+                return false
+            }
         }
 
         // Try to find an object at the tap location

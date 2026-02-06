@@ -468,4 +468,6 @@
     <string name="disable_gyro_preference_summary">Nid oes gan bob dyfais geirosgop. Os oes un gan dy ddyfais di, bydd gwell canlyniadau os yw wedi\'i alluogi a\'r blwch hwn heb ei ddewis. Ar y llaw arall, os nad oes gan dy ddyfais geirosgop, mae\'n debyg na fydd Sky Map yn gweithio os yw\'r blwch hwn wedi\'i ddewis.</string>
     <string name="rotate_horizon_preference_title">Cylchdroi wrth y gorwel</string>
     <string name="rotate_horizon_preference_summary">Cylchdroi 90 gradd wrth y gorwel (ar gyfer sgriniau ble nad yw gorweddiad darlun yn bosib, e.e. sbectol glyfar)</string>
+    <string name="show_object_info_auto_mode_title">Cardiau gwybodaeth yn y modd awtomatig</string>
+    <string name="show_object_info_auto_mode_summary">Dangos cardiau gwybodaeth hefyd wrth dapio gwrthrychau yn y modd awtomatig (synhwyrydd)</string>
 </resources>

@@ -239,7 +239,9 @@
         what the top of the phone is pointing at (see help text).</string>
 
     <string name="show_object_info_pref_title" translation_description="Preference title for showing info cards when tapping objects">Show info on tap</string>
-    <string name="show_object_info_pref_summary" translation_description="Preference summary for the tap info feature">Tap celestial objects in manual mode to learn about them</string>
+    <string name="show_object_info_pref_summary" translation_description="Preference summary for the tap info feature">Tap celestial objects to learn about them</string>
+    <string name="show_object_info_auto_mode_title" translation_description="Preference title for enabling info cards in auto/sensor mode">Info cards in auto mode</string>
+    <string name="show_object_info_auto_mode_summary" translation_description="Preference summary for auto mode info cards">Also show info cards when tapping objects in automatic (sensor) mode</string>
     <string name="object_info_funfact_label" translation_description="Label before the fun fact in info card">Fun fact:</string>
     <string name="object_info_distance_label" translation_description="Label for distance field">Distance:</string>
     <string name="object_info_size_label" translation_description="Label for size field">Size:</string>
