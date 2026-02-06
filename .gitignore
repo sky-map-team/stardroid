@@ -41,6 +41,10 @@ Thumbs.db
 .history/
 *.gradle-e
 
+# --- Maven/Robolectric cache ---
+.m2/
+${user.home}/
+
 # --- Project Specific ---
 fastlane/report.xml
 fastlane/Preview.html
