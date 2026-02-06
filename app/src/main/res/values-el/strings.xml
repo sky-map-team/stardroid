@@ -374,7 +374,7 @@
     <string name="disable_gyro_preference_summary">Δεν έχουν όλες οι συκευές γυροσκόπιο. Αν η δική σας έχει, θα έχετε καλύτερα αποτελέσματα αν το έχετε ενεργό και αυτή τη ρύθμιση ανενεργή. Από την άλλη, αν η συσκευή σας δεν έχει γυροσκόπιο, το Sky Map μάλλον δε θα λειτουργήσει αν απενεργοποιήσετε αυτή τη ρύθμιση.</string>
     <string name="rotate_horizon_preference_title">Περιστροφή ορίζοντα</string>
     <string name="rotate_horizon_preference_summary">Περιστροφή του ορίζοντα κατά 90 μοίρες (για οθόνες με εξαναγκασμένη λειτουργία landscape, όπως smartglasses)</string>
-    <string name="show_object_info_pref_title" translation_description="Preference title for showing info cards when tapping objects">Show info on tap</string>
+    <string name="show_object_info_pref_title" translation_description="Preference title for showing info cards when tapping objects">Εμφάνιση πληροφοριών με πάτημα</string>
     <string name="show_object_info_pref_summary" translation_description="Preference summary for the tap info feature">Πατήστε τα ουράνια αντικείμενα στην χειροκίνητη λειτουργία για να μάθετε περισσότερα για αυτά</string>
     <string name="object_info_funfact_label" translation_description="Label before the fun fact in info card">Ενδιαφέρον γεγονός:</string>
     <string name="object_info_distance_label" translation_description="Label for distance field">Απόσταση:</string>
