@@ -63,7 +63,6 @@ public class SplashScreenActivityTest {
     Thread.sleep(2000);
     onView(withId(android.R.id.button1)).inRoot(isDialog()).perform(click());
     // TODO: figure out how to dispense with crap like hand-tuned waiting times.
-    // The fadeout animation takes 3000ms, so we need to wait longer than that.
     Thread.sleep(4000);
     // Can't detect this since the UI is still changing.
     // TODO: figure out how we could.
