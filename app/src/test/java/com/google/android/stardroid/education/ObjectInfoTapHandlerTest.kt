@@ -82,19 +82,62 @@ class ObjectInfoTapHandlerTest {
     }
 
     @Test
-    fun testHandleTap_autoMode_returnsFalse() {
+    fun testHandleTap_autoMode_autoModeInfoDisabled_returnsFalse() {
         `when`(mockPreferences.getBoolean(
             eq(ApplicationConstants.SHOW_OBJECT_INFO_PREF_KEY),
             anyBoolean()))            .thenReturn(true)
         `when`(mockPreferences.getBoolean(
             ApplicationConstants.AUTO_MODE_PREF_KEY, true))
             .thenReturn(true)
+        `when`(mockPreferences.getBoolean(
+            ApplicationConstants.SHOW_OBJECT_INFO_AUTO_MODE_PREF_KEY, false))
+            .thenReturn(false)
 
         val result = tapHandler.handleTap(100f, 200f, 1080, 1920)
 
         assertThat(result).isFalse()
         verify(mockHitTester, never()).findObjectAtScreenPosition(
             100f, 200f, 1080, 1920)
+    }
+
+    @Test
+    fun testHandleTap_autoMode_autoModeInfoEnabled_objectFound_returnsTrue() {
+        `when`(mockPreferences.getBoolean(
+            eq(ApplicationConstants.SHOW_OBJECT_INFO_PREF_KEY),
+            anyBoolean()))            .thenReturn(true)
+        `when`(mockPreferences.getBoolean(
+            ApplicationConstants.AUTO_MODE_PREF_KEY, true))
+            .thenReturn(true)
+        `when`(mockPreferences.getBoolean(
+            ApplicationConstants.SHOW_OBJECT_INFO_AUTO_MODE_PREF_KEY, false))
+            .thenReturn(true)
+        `when`(mockHitTester.findObjectAtScreenPosition(100f, 200f, 1080, 1920))
+            .thenReturn(testObjectInfo)
+
+        val result = tapHandler.handleTap(100f, 200f, 1080, 1920)
+
+        assertThat(result).isTrue()
+        verify(mockListener).onObjectTapped(testObjectInfo)
+    }
+
+    @Test
+    fun testHandleTap_autoMode_autoModeInfoEnabled_noObjectFound_returnsFalse() {
+        `when`(mockPreferences.getBoolean(
+            eq(ApplicationConstants.SHOW_OBJECT_INFO_PREF_KEY),
+            anyBoolean()))            .thenReturn(true)
+        `when`(mockPreferences.getBoolean(
+            ApplicationConstants.AUTO_MODE_PREF_KEY, true))
+            .thenReturn(true)
+        `when`(mockPreferences.getBoolean(
+            ApplicationConstants.SHOW_OBJECT_INFO_AUTO_MODE_PREF_KEY, false))
+            .thenReturn(true)
+        `when`(mockHitTester.findObjectAtScreenPosition(100f, 200f, 1080, 1920))
+            .thenReturn(null)
+
+        val result = tapHandler.handleTap(100f, 200f, 1080, 1920)
+
+        assertThat(result).isFalse()
+        verify(mockListener, never()).onObjectTapped(testObjectInfo)
     }
 
     @Test

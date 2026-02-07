@@ -218,4 +218,6 @@
     <string name="rotate_horizon_preference_summary">Gira el horizonte 90 grados (para dispositivos
         con paisajes forzados) o use el modo de puntero para que la pantalla muestre
         hacia dónde apunta la parte superior del teléfono (ver texto de ayuda).</string>
+    <string name="show_object_info_auto_mode_title">Info cards en modo automático</string>
+    <string name="show_object_info_auto_mode_summary">También mostrar info cards al tocar objetos en modo automático (sensores)</string>
 </resources>

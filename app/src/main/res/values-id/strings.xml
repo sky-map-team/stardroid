@@ -6,4 +6,6 @@
     <string name="object_info_mass_label">Massa:</string>
     <string name="object_info_spectral_label">Spektral:</string>
     <string name="object_info_magnitude_label">Magnitudo:</string>
+    <string name="show_object_info_auto_mode_title">Kartu info dalam mode otomatis</string>
+    <string name="show_object_info_auto_mode_summary">Tampilkan juga kartu info saat mengetuk objek dalam mode otomatis (sensor)</string>
 </resources>

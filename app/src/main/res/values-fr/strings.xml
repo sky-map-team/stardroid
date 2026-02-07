@@ -375,4 +375,6 @@
     <string name="kml_load_error">Échec du chargement du fichier KML</string>
     <string name="load_kml_dialog_title">Charger un fichier KML</string>
     <string name="load_kml_file">Charger</string>
+    <string name="show_object_info_auto_mode_title">Fiches info en mode automatique</string>
+    <string name="show_object_info_auto_mode_summary">Afficher aussi les fiches info en touchant les objets en mode automatique (capteurs)</string>
 </resources>

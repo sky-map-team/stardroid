@@ -6,4 +6,6 @@
     <string name="object_info_mass_label">Masse:</string>
     <string name="object_info_spectral_label">Spektral:</string>
     <string name="object_info_magnitude_label">Magnitude:</string>
+    <string name="show_object_info_auto_mode_title">Infokort i automatisk tilstand</string>
+    <string name="show_object_info_auto_mode_summary">Vis også infokort ved tryk på objekter i automatisk (sensor) tilstand</string>
 </resources>

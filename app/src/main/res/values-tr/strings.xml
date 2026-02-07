@@ -205,4 +205,6 @@
 
     <string name="rotate_horizon_preference_summary">Yatay konum zorunlu olan cihazlar için yatayda 90 derece döndürün veya ekranın üstünün nereyi işaret ettiğini göstermek için işaretçi modunu kullanın (yardım metnini görün).</string>
 
+    <string name="show_object_info_auto_mode_title">Otomatik modda bilgi kartları</string>
+    <string name="show_object_info_auto_mode_summary">Otomatik (sensör) modda nesnelere dokunurken de bilgi kartlarını göster</string>
 </resources>

@@ -216,4 +216,6 @@
     <string name="rotate_horizon_preference_summary">水平線を90°回転
         (横画面固定のデバイス用) またはデバイスの上部分が何を指して
         いるかを表示するためのポインターモード(ヘルプ参照)。</string>
+    <string name="show_object_info_auto_mode_title">自動モードでの情報カード</string>
+    <string name="show_object_info_auto_mode_summary">自動（センサー）モードでもオブジェクトをタップして情報カードを表示</string>
 </resources>

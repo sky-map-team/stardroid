@@ -106,6 +106,12 @@
           android:key="show_object_info_on_tap2"
           android:summary="@string/show_object_info_pref_summary"
           android:title="@string/show_object_info_pref_title" />
+      <CheckBoxPreference
+          android:defaultValue="false"
+          android:key="show_object_info_auto_mode"
+          android:dependency="show_object_info_on_tap2"
+          android:summary="@string/show_object_info_auto_mode_summary"
+          android:title="@string/show_object_info_auto_mode_title" />
     <CheckBoxPreference
         android:defaultValue="true"
         android:title="@string/use_sound_effects"
