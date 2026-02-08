@@ -42,8 +42,8 @@ public class EdgeToEdgeFixer {
   }
 
   /**
-   * Apply top padding to a view to account for status bar and action bar.
-   * Call this in onStart() to ensure the view hierarchy is fully initialized.
+   * Apply top and bottom padding to a view to account for status bar, action bar, and
+   * navigation bar. Call this in onStart() to ensure the view hierarchy is fully initialized.
    *
    * @param activity The activity context
    * @param contentView The root content view to apply padding to
@@ -68,19 +68,28 @@ public class EdgeToEdgeFixer {
 
     // Get status bar height
     int statusBarHeight = 0;
-    int resourceId = activity.getResources().getIdentifier(
+    int statusBarResourceId = activity.getResources().getIdentifier(
         "status_bar_height", "dimen", "android");
-    if (resourceId > 0) {
-      statusBarHeight = activity.getResources().getDimensionPixelSize(resourceId);
+    if (statusBarResourceId > 0) {
+      statusBarHeight = activity.getResources().getDimensionPixelSize(statusBarResourceId);
+    }
+
+    // Get navigation bar height
+    int navigationBarHeight = 0;
+    int navBarResourceId = activity.getResources().getIdentifier(
+        "navigation_bar_height", "dimen", "android");
+    if (navBarResourceId > 0) {
+      navigationBarHeight = activity.getResources().getDimensionPixelSize(navBarResourceId);
     }
 
     // Apply top padding equal to action bar height + status bar height
+    // Apply bottom padding equal to navigation bar height
     int topPadding = actionBarHeight + statusBarHeight;
     contentView.setPadding(
         contentView.getPaddingLeft(),
         topPadding,
         contentView.getPaddingRight(),
-        contentView.getPaddingBottom());
+        navigationBarHeight);
 
     // For scrollable content (like ListView in PreferenceFragment), disable clip to padding
     // so content scrolls under the padding area
