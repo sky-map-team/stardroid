@@ -19,6 +19,7 @@ import android.graphics.Color
 import com.google.android.stardroid.base.Lists
 import com.google.android.stardroid.control.AstronomerModel
 import com.google.android.stardroid.math.Vector3
+import com.google.android.stardroid.math.convertToEquatorialCoordinates
 import com.google.android.stardroid.math.heliocentricCoordinatesFromOrbitalElements
 import com.google.android.stardroid.math.updateFromRaDec
 import com.google.android.stardroid.renderables.*
@@ -57,13 +58,18 @@ class SolarSystemRenderable(
 
     private fun updateCoords(time: Date) {
         lastUpdateTimeMs = time.time
-        // TODO(johntaylor): figure out why we do this - presumably to make sure the images
-        // are orientated correctly taking into account the Earth's orbital plane.
-        // I'm not sure we're doing this right though.
         earthCoords = heliocentricCoordinatesFromOrbitalElements(SolarSystemBody.Earth.getOrbitalElements(time))
         currentCoords.updateFromRaDec(universe.getRaDec(solarSystemBody, time))
-        for (imagePrimitives in imagePrimitives) {
-            imagePrimitives.setUpVector(earthCoords)
+        // For the Moon, convert earthCoords from ecliptic to equatorial coordinates
+        // to match the Moon's position coordinate system. This ensures the illuminated
+        // side of the moon image faces toward the sun.
+        val upVector = if (solarSystemBody === SolarSystemBody.Moon) {
+            convertToEquatorialCoordinates(earthCoords)
+        } else {
+            earthCoords
+        }
+        for (imagePrimitive in imagePrimitives) {
+            imagePrimitive.setUpVector(upVector)
         }
     }
 
@@ -74,7 +80,7 @@ class SolarSystemRenderable(
         if (solarSystemBody === SolarSystemBody.Moon) {
             imagePrimitives.add(
                 ImagePrimitive(
-                    currentCoords, resources, imageId, earthCoords,
+                    currentCoords, resources, imageId, convertToEquatorialCoordinates(earthCoords),
                     solarSystemObject.getPlanetaryImageSize()
                 )
             )
@@ -105,9 +111,6 @@ class SolarSystemRenderable(
 
             // For moon only:
             if (solarSystemBody === SolarSystemBody.Moon && !imagePrimitives.isEmpty()) {
-                // Update up vector.
-                imagePrimitives[0].setUpVector(earthCoords)
-
                 // update image:
                 val newImageId = solarSystemObject.getImageResourceId(modelTime)
                 if (newImageId != imageId) {
