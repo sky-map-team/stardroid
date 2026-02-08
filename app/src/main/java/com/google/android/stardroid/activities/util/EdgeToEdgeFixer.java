@@ -12,9 +12,12 @@
 package com.google.android.stardroid.activities.util;
 
 import android.app.Activity;
+import android.graphics.Rect;
 import android.os.Build;
 import android.util.TypedValue;
 import android.view.View;
+
+import com.google.android.stardroid.R;
 
 /**
  * Utility to fix Android 15+ edge-to-edge display issues for activities with action bars.
@@ -42,8 +45,8 @@ public class EdgeToEdgeFixer {
   }
 
   /**
-   * Apply top padding to a view to account for status bar and action bar.
-   * Call this in onStart() to ensure the view hierarchy is fully initialized.
+   * Apply top and bottom padding to a view to account for status bar, action bar, and
+   * navigation bar. Call this in onStart() to ensure the view hierarchy is fully initialized.
    *
    * @param activity The activity context
    * @param contentView The root content view to apply padding to
@@ -58,6 +61,17 @@ public class EdgeToEdgeFixer {
       return;
     }
 
+    // Save original padding on first call to ensure idempotency and preserve any pre-existing padding
+    Rect originalPadding = (Rect) contentView.getTag(R.id.original_padding_tag);
+    if (originalPadding == null) {
+      originalPadding = new Rect(
+          contentView.getPaddingLeft(),
+          contentView.getPaddingTop(),
+          contentView.getPaddingRight(),
+          contentView.getPaddingBottom());
+      contentView.setTag(R.id.original_padding_tag, originalPadding);
+    }
+
     // Get action bar height
     TypedValue tv = new TypedValue();
     int actionBarHeight = 0;
@@ -68,19 +82,26 @@ public class EdgeToEdgeFixer {
 
     // Get status bar height
     int statusBarHeight = 0;
-    int resourceId = activity.getResources().getIdentifier(
+    int statusBarResourceId = activity.getResources().getIdentifier(
         "status_bar_height", "dimen", "android");
-    if (resourceId > 0) {
-      statusBarHeight = activity.getResources().getDimensionPixelSize(resourceId);
+    if (statusBarResourceId > 0) {
+      statusBarHeight = activity.getResources().getDimensionPixelSize(statusBarResourceId);
     }
 
-    // Apply top padding equal to action bar height + status bar height
-    int topPadding = actionBarHeight + statusBarHeight;
+    // Get navigation bar height
+    int navigationBarHeight = 0;
+    int navBarResourceId = activity.getResources().getIdentifier(
+        "navigation_bar_height", "dimen", "android");
+    if (navBarResourceId > 0) {
+      navigationBarHeight = activity.getResources().getDimensionPixelSize(navBarResourceId);
+    }
+
+    // Add system bar heights to original padding (preserves any pre-existing padding)
     contentView.setPadding(
-        contentView.getPaddingLeft(),
-        topPadding,
-        contentView.getPaddingRight(),
-        contentView.getPaddingBottom());
+        originalPadding.left,
+        originalPadding.top + actionBarHeight + statusBarHeight,
+        originalPadding.right,
+        originalPadding.bottom + navigationBarHeight);
 
     // For scrollable content (like ListView in PreferenceFragment), disable clip to padding
     // so content scrolls under the padding area
