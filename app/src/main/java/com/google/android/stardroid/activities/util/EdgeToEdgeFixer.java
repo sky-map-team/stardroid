@@ -12,9 +12,12 @@
 package com.google.android.stardroid.activities.util;
 
 import android.app.Activity;
+import android.graphics.Rect;
 import android.os.Build;
 import android.util.TypedValue;
 import android.view.View;
+
+import com.google.android.stardroid.R;
 
 /**
  * Utility to fix Android 15+ edge-to-edge display issues for activities with action bars.
@@ -58,6 +61,17 @@ public class EdgeToEdgeFixer {
       return;
     }
 
+    // Save original padding on first call to ensure idempotency and preserve any pre-existing padding
+    Rect originalPadding = (Rect) contentView.getTag(R.id.original_padding_tag);
+    if (originalPadding == null) {
+      originalPadding = new Rect(
+          contentView.getPaddingLeft(),
+          contentView.getPaddingTop(),
+          contentView.getPaddingRight(),
+          contentView.getPaddingBottom());
+      contentView.setTag(R.id.original_padding_tag, originalPadding);
+    }
+
     // Get action bar height
     TypedValue tv = new TypedValue();
     int actionBarHeight = 0;
@@ -82,14 +96,12 @@ public class EdgeToEdgeFixer {
       navigationBarHeight = activity.getResources().getDimensionPixelSize(navBarResourceId);
     }
 
-    // Apply top padding equal to action bar height + status bar height
-    // Apply bottom padding equal to navigation bar height
-    int topPadding = actionBarHeight + statusBarHeight;
+    // Add system bar heights to original padding (preserves any pre-existing padding)
     contentView.setPadding(
-        contentView.getPaddingLeft(),
-        topPadding,
-        contentView.getPaddingRight(),
-        navigationBarHeight);
+        originalPadding.left,
+        originalPadding.top + actionBarHeight + statusBarHeight,
+        originalPadding.right,
+        originalPadding.bottom + navigationBarHeight);
 
     // For scrollable content (like ListView in PreferenceFragment), disable clip to padding
     // so content scrolls under the padding area
