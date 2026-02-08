@@ -60,16 +60,19 @@ class SolarSystemRenderable(
         lastUpdateTimeMs = time.time
         earthCoords = heliocentricCoordinatesFromOrbitalElements(SolarSystemBody.Earth.getOrbitalElements(time))
         currentCoords.updateFromRaDec(universe.getRaDec(solarSystemBody, time))
-        // For the Moon, convert earthCoords from ecliptic to equatorial coordinates
-        // to match the Moon's position coordinate system. This ensures the illuminated
-        // side of the moon image faces toward the sun.
-        val upVector = if (solarSystemBody === SolarSystemBody.Moon) {
+        for (imagePrimitive in imagePrimitives) {
+            imagePrimitive.setUpVector(getUpVectorForImage())
+        }
+    }
+
+    // For the Moon, convert earthCoords from ecliptic to equatorial coordinates
+    // to match the Moon's position coordinate system. This ensures the illuminated
+    // side of the moon image faces toward the sun.
+    private fun getUpVectorForImage(): Vector3 {
+        return if (solarSystemBody === SolarSystemBody.Moon) {
             convertToEquatorialCoordinates(earthCoords)
         } else {
             earthCoords
-        }
-        for (imagePrimitive in imagePrimitives) {
-            imagePrimitive.setUpVector(upVector)
         }
     }
 
@@ -80,7 +83,7 @@ class SolarSystemRenderable(
         if (solarSystemBody === SolarSystemBody.Moon) {
             imagePrimitives.add(
                 ImagePrimitive(
-                    currentCoords, resources, imageId, convertToEquatorialCoordinates(earthCoords),
+                    currentCoords, resources, imageId, getUpVectorForImage(),
                     solarSystemObject.getPlanetaryImageSize()
                 )
             )
