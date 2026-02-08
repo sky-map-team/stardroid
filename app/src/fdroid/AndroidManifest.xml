@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools">
-    <!-- F-Droid flavor doesn't need network permissions since Analytics is a no-op
-         and ISS tracking is disabled -->
-    <uses-permission android:name="android.permission.INTERNET" tools:node="remove"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" tools:node="remove"/>
-</manifest>
