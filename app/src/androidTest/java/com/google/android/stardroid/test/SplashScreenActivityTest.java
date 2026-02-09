@@ -72,6 +72,8 @@ public class SplashScreenActivityTest {
     Assume.assumeTrue("Skipping on Android 15+ due to edge-to-edge dialog focus issues",
         Build.VERSION.SDK_INT < Build.VERSION_CODES.VANILLA_ICE_CREAM);
 
+    // Wait for the WebView to finish loading and layout (it starts with height=0)
+    Thread.sleep(2000);
     onView(withId(R.id.eula_webview)).inRoot(isDialog()).check(matches(isDisplayed()));
     Thread.sleep(2000);
     onView(withId(android.R.id.button1)).inRoot(isDialog()).perform(click());
@@ -93,6 +95,8 @@ public class SplashScreenActivityTest {
         Build.VERSION.SDK_INT < Build.VERSION_CODES.VANILLA_ICE_CREAM);
 
     Log.d("TESTTEST", "Doing test");
+    // Wait for the WebView to finish loading and layout (it starts with height=0)
+    Thread.sleep(2000);
     onView(withId(R.id.eula_webview)).inRoot(isDialog()).check(matches(isDisplayed()));
     // Decline button
     onView(withId(android.R.id.button2)).inRoot(isDialog()).perform(click());
