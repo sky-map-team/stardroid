@@ -4,15 +4,19 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.util.Log;
+import android.view.View;
 
 import androidx.lifecycle.Lifecycle;
 import androidx.preference.PreferenceManager;
+import androidx.test.espresso.UiController;
+import androidx.test.espresso.ViewAction;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.platform.app.InstrumentationRegistry;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.SplashScreenActivity;
 
+import org.hamcrest.Matcher;
 import org.junit.Assume;
 import org.junit.Rule;
 import org.junit.Test;
@@ -60,6 +64,35 @@ public class SplashScreenActivityTest {
   public RuleChain chain = RuleChain.outerRule(preferenceCleanerRule).around(testRule);
 
   /**
+   * ViewAction that waits for a view to be laid out with non-zero height.
+   * This replaces Thread.sleep() with a polling approach that integrates with Espresso's
+   * main thread looping.
+   */
+  private static ViewAction waitForLayout() {
+    return new ViewAction() {
+      @Override
+      public Matcher<View> getConstraints() {
+        // Use any View - we'll wait for it to be laid out
+        return org.hamcrest.Matchers.any(View.class);
+      }
+
+      @Override
+      public String getDescription() {
+        return "wait for view to be laid out with non-zero height";
+      }
+
+      @Override
+      public void perform(UiController uiController, View view) {
+        // Poll until the view has a non-zero height (max ~5 seconds)
+        int maxAttempts = 100;
+        for (int i = 0; i < maxAttempts && view.getHeight() == 0; i++) {
+          uiController.loopMainThreadForAtLeast(50);
+        }
+      }
+    };
+  }
+
+  /**
    * Tests that accepting T&Cs shows the What's New dialog.
    *
    * Note: This test is skipped on Android 15+ (API 35+) due to a known issue with
@@ -72,12 +105,11 @@ public class SplashScreenActivityTest {
     Assume.assumeTrue("Skipping on Android 15+ due to edge-to-edge dialog focus issues",
         Build.VERSION.SDK_INT < Build.VERSION_CODES.VANILLA_ICE_CREAM);
 
-    // Wait for the WebView to finish loading and layout (it starts with height=0)
-    Thread.sleep(2000);
+    // Wait for the WebView to be laid out (it starts with height=0)
+    onView(withId(R.id.eula_webview)).inRoot(isDialog()).perform(waitForLayout());
     onView(withId(R.id.eula_webview)).inRoot(isDialog()).check(matches(isDisplayed()));
-    Thread.sleep(2000);
     onView(withId(android.R.id.button1)).inRoot(isDialog()).perform(click());
-    // The fadeout animation takes 3000ms, so we need to wait longer than that.
+    // Wait for fadeout animation (3000ms) to complete before checking for What's New dialog
     Thread.sleep(4000);
     onView(withId(R.id.whatsnew_webview)).inRoot(isDialog()).check(matches(isDisplayed()));
   }
@@ -95,12 +127,12 @@ public class SplashScreenActivityTest {
         Build.VERSION.SDK_INT < Build.VERSION_CODES.VANILLA_ICE_CREAM);
 
     Log.d("TESTTEST", "Doing test");
-    // Wait for the WebView to finish loading and layout (it starts with height=0)
-    Thread.sleep(2000);
+    // Wait for the WebView to be laid out (it starts with height=0)
+    onView(withId(R.id.eula_webview)).inRoot(isDialog()).perform(waitForLayout());
     onView(withId(R.id.eula_webview)).inRoot(isDialog()).check(matches(isDisplayed()));
     // Decline button
     onView(withId(android.R.id.button2)).inRoot(isDialog()).perform(click());
-    // Sigh. There seems nothing better here.
+    // Wait for activity to finish
     Thread.sleep(5000);
     assertThat(testRule.getScenario().getState(), equalTo(Lifecycle.State.DESTROYED));
   }
