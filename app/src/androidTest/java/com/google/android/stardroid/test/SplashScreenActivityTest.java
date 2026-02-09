@@ -97,7 +97,7 @@ public class SplashScreenActivityTest {
    *
    * Note: This test is skipped on Android 15+ (API 35+) due to a known issue with
    * edge-to-edge enforcement that prevents Espresso from getting window focus on dialogs.
-   * See: https://issuetracker.google.com/issues/... (Android edge-to-edge dialog focus issue)
+   * See: https://github.com/sky-map-team/stardroid/issues/605. (Android edge-to-edge dialog focus issue)
    */
   @Test
   public void showsWhatsNewAfterTandCs_newUser() throws InterruptedException {
