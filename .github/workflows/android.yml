@@ -29,7 +29,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        api-level: [ 34, 36 ]
+        api-level: [ 34, 36 ] # Keep 34 as it pre-dates edge to edge.
         target: [ default ]
     steps:
       - name: checkout
