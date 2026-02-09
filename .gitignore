@@ -41,6 +41,9 @@ Thumbs.db
 .history/
 *.gradle-e
 
+# --- Gradle misc ---
+app/${user.home}/
+
 # --- Project Specific ---
 fastlane/report.xml
 fastlane/Preview.html

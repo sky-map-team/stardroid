@@ -115,7 +115,7 @@ The algorithm calculates North, Up, and East vectors in both coordinate systems:
 
 3. **Transformation**: Matrix `M` constructed from these vectors transforms phone pointing direction to RA/Dec coordinates
 
-See `designdocs/sensors.md` for detailed mathematical explanation.
+See `docs/design/sensors.md` for detailed mathematical explanation.
 
 ### Data Flow
 
