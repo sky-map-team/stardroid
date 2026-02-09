@@ -471,4 +471,6 @@
     <string name="disable_gyro_preference_summary">همه دستگاه‌ها دارای ژیروسکوپ نیستند - اگر گوشی شما دارد، با فعال کردن آن و علامت زدن این کادر، نتایج بهتری خواهید گرفت. اگر دستگاه شما دارای ژیروسکوپ نباشد، اگر علامت این کادر را بردارید، برنامه کار نمی‌کند.</string>
     <string name="rotate_horizon_preference_title">چرخش افق</string>
     <string name="rotate_horizon_preference_summary">چرخش با افق 90 درجه (برای صفحه هایی با چشم انداز اجباری ، مانند عینک های هوشمند)</string>
+    <string name="show_object_info_auto_mode_title">کارت‌های اطلاعاتی در حالت خودکار</string>
+    <string name="show_object_info_auto_mode_summary">نمایش کارت‌های اطلاعاتی هنگام لمس اجرام در حالت خودکار (حسگرها)</string>
 </resources>

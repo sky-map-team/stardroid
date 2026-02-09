@@ -461,5 +461,7 @@
     <string name="disable_gyro_preference_summary">Не на всех устройствах есть гироскоп - если у вас есть, то вы получите лучшие результаты, если он включен, а этот флажок снят. С другой стороны, если ваше устройство не имеет гироскопа, Sky Map, вероятно, не будет работать, если вы снимите этот флажок.</string>
     <string name="rotate_horizon_preference_title">Повернуть горизонтально</string>
     <string name="rotate_horizon_preference_summary">Поворот на 90 градусов по горизонтали (для экранов с альбомной ориентацией, таких как умные очки)</string>
+    <string name="show_object_info_auto_mode_title">Карточки в автоматическом режиме</string>
+    <string name="show_object_info_auto_mode_summary">Показывать информационные карточки при нажатии на объекты в автоматическом (сенсорном) режиме</string>
 </resources>
 

@@ -6,4 +6,6 @@
     <string name="object_info_mass_label">Massa:</string>
     <string name="object_info_spectral_label">Espectral:</string>
     <string name="object_info_magnitude_label">Magnitud:</string>
+    <string name="show_object_info_auto_mode_title">Fitxes d\'informació en mode automàtic</string>
+    <string name="show_object_info_auto_mode_summary">Mostra també fitxes d\'informació en tocar objectes en mode automàtic (sensors)</string>
 </resources>

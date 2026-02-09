@@ -220,7 +220,9 @@
         hacia dónde apunta la parte superior del teléfono (ver texto de ayuda).</string>
 
     <string name="show_object_info_pref_title">Mostrar info al tocar</string>
-    <string name="show_object_info_pref_summary">Toca objetos celestes en modo manual para aprender sobre ellos</string>
+    <string name="show_object_info_pref_summary">Toca objetos celestes para aprender sobre ellos</string>
+    <string name="show_object_info_auto_mode_title">Info cards en modo automático</string>
+    <string name="show_object_info_auto_mode_summary">También mostrar info cards al tocar objetos en modo automático (sensores)</string>
     <string name="object_info_funfact_label">Dato curioso:</string>
     <string name="object_info_distance_label">Distancia:</string>
     <string name="object_info_size_label">Tamaño:</string>

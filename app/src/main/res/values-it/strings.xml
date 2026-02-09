@@ -375,4 +375,6 @@
     <string name="kml_load_error">Caricamento file KML non riuscito</string>
     <string name="load_kml_dialog_title">Carica KML</string>
     <string name="load_kml_file">Carica</string>
+    <string name="show_object_info_auto_mode_title">Schede info in modalità automatica</string>
+    <string name="show_object_info_auto_mode_summary">Mostra le schede info anche toccando gli oggetti in modalità automatica (sensori)</string>
 </resources>

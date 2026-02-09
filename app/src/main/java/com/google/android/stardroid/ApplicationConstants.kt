@@ -65,4 +65,5 @@ object ApplicationConstants {
 
   // Educational info feature
   const val SHOW_OBJECT_INFO_PREF_KEY = "show_object_info_on_tap2"
+  const val SHOW_OBJECT_INFO_AUTO_MODE_PREF_KEY = "show_object_info_auto_mode"
 }

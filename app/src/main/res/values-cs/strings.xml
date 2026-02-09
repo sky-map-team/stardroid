@@ -456,4 +456,6 @@
     <string name="diagnostics_activity_pointing_ra_dec">Ukazující/ilustrační snapshot</string>
     <string name="connected">Připojeno</string>
     <string name="sensor_accuracy_unknown">Přesnost: Neznámá</string>
+    <string name="show_object_info_auto_mode_title">Info karty v automatickém režimu</string>
+    <string name="show_object_info_auto_mode_summary">Zobrazit info karty i při klepnutí na objekty v automatickém (senzorový) režimu</string>
 </resources>
