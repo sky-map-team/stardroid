@@ -45,7 +45,7 @@ jobs:
     timeout-minutes: 30
     strategy:
       matrix:
-        api-level: [ 29 ]
+        api-level: [ 34, 36 ] # Keep 34 as it pre-dates edge to edge.
         target: [ default ]
 
     steps:
@@ -86,6 +86,7 @@ jobs:
           force-avd-creation: false
           emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
           disable-animations: false
+          profile: Nexus 6
           script: echo "Generated AVD snapshot for caching."
 
       - name: Run connected tests
@@ -101,9 +102,6 @@ jobs:
           profile: Nexus 6
           script: |
             adb wait-for-device
-            adb shell settings put global window_animation_scale 0
-            adb shell settings put global transition_animation_scale 0
-            adb shell settings put global animator_duration_scale 0
             ./gradlew connectedGmsDebugAndroidTest -x lint --stacktrace
 
       - name: Upload connected test results
