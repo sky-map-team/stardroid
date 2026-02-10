@@ -1,8 +1,27 @@
-Please make sure these boxes are checked before submitting your pull request - thanks!
+## Description
 
-- [ ] Run the unit tests with `gradlew app:connectedGmsDebugAndroidTest` to make sure you didn't break anything (with an emulator running or phone connected)
+<!-- What does this PR do? Why is it needed? -->
 
-- [ ] If you have multiple commits please combine them into one commit by squashing them.
+## Type of Change
 
-*Note* you may see the Cirrus CI system failing on your PR. It's pretty flaky right now so don't
-be alarmed.
+- [ ] Bug fix
+- [ ] New feature
+- [ ] Translation (new or updated)
+- [ ] Documentation
+- [ ] Refactoring / code cleanup
+- [ ] Dependency upgrade
+
+## Checklist
+
+- [ ] I've read the [contributing guidelines](../CONTRIBUTING.md)
+- [ ] For major changes, I've emailed skymapdevs@gmail.com first
+- [ ] I've run the unit tests with `./gradlew :app:test`
+- [ ] I've tested on a device/emulator if applicable
+- [ ] If I have multiple commits, I've squashed them into one
+- [ ] Added an entry to `[Unreleased]` in CHANGELOG.md (if applicable)
+
+## Notes for Reviewers
+
+<!-- Anything reviewers should know? -->
+
+*Note:* The Cirrus CI system may show failures on your PR. It's pretty flaky right now so don't be alarmed.

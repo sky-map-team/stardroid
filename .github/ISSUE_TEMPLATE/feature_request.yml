@@ -1,0 +1,45 @@
+name: Feature Request
+description: Suggest an idea for Sky Map
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the suggestion! Before you start, please note:
+
+        **For major features, please [email us](mailto:skymapdevs@gmail.com) first.** We may have a different vision for the direction of the app and want to make sure your effort isn't wasted.
+
+        Bug fixes, translations, and small improvements are always welcome.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What problem does this feature solve? Is it related to a frustration?
+      placeholder: "I'm always frustrated when..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: Describe the solution you'd like to see.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Have you considered any alternative solutions or workarounds?
+    validations:
+      required: false
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional Context
+      description: Any other context, screenshots, or examples.
+    validations:
+      required: false

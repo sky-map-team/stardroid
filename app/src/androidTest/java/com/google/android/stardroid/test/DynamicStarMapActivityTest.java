@@ -1,5 +1,6 @@
 package com.google.android.stardroid.test;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -65,7 +66,7 @@ public class DynamicStarMapActivityTest {
   // https://alexzh.com/ui-testing-of-android-runtime-permissions/
   @Rule
   public androidx.test.rule.GrantPermissionRule permissionRule = GrantPermissionRule.grant(
-      android.Manifest.permission.ACCESS_FINE_LOCATION
+      Manifest.permission.ACCESS_COARSE_LOCATION
   );
 
   @Before
