@@ -15,6 +15,7 @@ package com.google.android.stardroid.renderables
 import android.graphics.Color
 import com.google.android.stardroid.math.Vector3
 import com.google.common.truth.Truth.assertThat
+import org.junit.Assert.assertThrows
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
@@ -84,12 +85,10 @@ class LinePrimitiveTest {
         val result = line.getVertices()
 
         // Attempting to modify the result should throw
-        try {
-            (result as MutableList).add(Vector3(4f, 5f, 6f))
-            assertThat(false).isTrue() // Should not reach here
-        } catch (e: UnsupportedOperationException) {
-            // Expected
+        assertThrows(UnsupportedOperationException::class.java) {
+            result.add(Vector3(4f, 5f, 6f))
         }
+
     }
 
     @Test

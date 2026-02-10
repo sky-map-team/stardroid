@@ -52,5 +52,7 @@ jobs:
           api-level: ${{ matrix.api-level }}
           target: ${{ matrix.target }}
           arch: x86_64
+          emulator-boot-timeout: 900 # Increase to 15 minutes
+          emulator-options: -no-window -gpu swiftshader_indirect -no-audio -no-boot-anim -memory 3072
           profile: Nexus 6
           script: ./gradlew connectedGmsDebugAndroidTest -x lint --stacktrace
