@@ -107,6 +107,11 @@ class ActivityNavigationTest {
         // Recreate the activity (simulates configuration change)
         activityRule.scenario.recreate()
 
+        // Force the test to wait until the NEW instance is ready
+        activityRule.scenario.onActivity {
+            // Just being here means the new activity has reached a stable state
+        }
+
         // Verify the activity is still in RESUMED state
         assertThat(
             activityRule.scenario.state,
