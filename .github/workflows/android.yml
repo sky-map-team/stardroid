@@ -7,33 +7,51 @@ on:
     branches: [ master ]
   workflow_dispatch:
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build_and_unit_test:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
 
     steps:
     - uses: actions/checkout@v4
-    - name: set up JDK
+    - name: Set up JDK
       uses: actions/setup-java@v4
       with:
-        distribution: 'zulu' # See 'Supported distributions' for available options
+        distribution: 'zulu'
         java-version: '17'
+    - name: Gradle cache
+      uses: gradle/actions/setup-gradle@v3
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
-    - name: Build with Gradle
-      run: ./gradlew build testGmsDebugUnitTest
+    - name: Build and test
+      run: ./gradlew assembleGmsDebug testGmsDebugUnitTest
+    - name: Upload test results
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: unit-test-results
+        path: '**/build/reports/tests/'
     - name: Android Test Report
       uses: asadmansr/android-test-report-action@v1.2.0
-      if: ${{ always() }} # IMPORTANT: run Android Test Report regardless
+      if: always()
+
   connected_test:
+    needs: build_and_unit_test
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     strategy:
       matrix:
         api-level: [ 29 ]
         target: [ default ]
+
     steps:
-      - name: checkout
+      - name: Checkout
         uses: actions/checkout@v4
+
       - name: Enable KVM
         run: |
           echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
@@ -43,7 +61,7 @@ jobs:
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
-          distribution: 'zulu' # See 'Supported distributions' for available options
+          distribution: 'zulu'
           java-version: '17'
 
       - name: Gradle cache
@@ -56,7 +74,7 @@ jobs:
           path: |
             ~/.android/avd/*
             ~/.android/adb*
-          key: avd-${{ matrix.api-level }}
+          key: avd-${{ matrix.api-level }}-${{ matrix.target }}-x86_64
 
       - name: Create AVD and generate snapshot for caching
         if: steps.avd-cache.outputs.cache-hit != 'true'
@@ -70,7 +88,7 @@ jobs:
           disable-animations: false
           script: echo "Generated AVD snapshot for caching."
 
-      - name: run tests
+      - name: Run connected tests
         uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: ${{ matrix.api-level }}
@@ -87,3 +105,10 @@ jobs:
             adb shell settings put global transition_animation_scale 0
             adb shell settings put global animator_duration_scale 0
             ./gradlew connectedGmsDebugAndroidTest -x lint --stacktrace
+
+      - name: Upload connected test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: connected-test-results-${{ matrix.api-level }}
+          path: '**/build/reports/androidTests/'
