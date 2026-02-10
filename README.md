@@ -137,3 +137,14 @@ or by perusing [fastlane/README.md](fastlane/README.md).
 ### Coding Style
 
 We follow the [Google style guide](https://google.github.io/styleguide/javaguide.html) (or try to).  We wrap at 100 chars and we do not use the common Android style of prefixing member variables with a 'm'. 
+
+# Fun
+## Sky Map Prototype (2009)
+
+![Sky Map Prototype (2009)](./assets/SkyMap_prototype.png)
+
+## Star Chart
+Appropriately, for a star chart app, here's a star chart:
+[![Star History Chart](https://app.repohistory.com/api/svg?repo=sky-map-team/stardroid&type=Timeline&background=0D1117&color=f88d62)](https://app.repohistory.com/star-history)
+
+
