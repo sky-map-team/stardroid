@@ -54,7 +54,7 @@ public class MessierAsciiProtoWriter extends AbstractAsciiProtoWriter {
       case "Other":
         return Shape.OTHER;
       default:
-        return Shape.CIRCLE;  // Fallback for unknowns
+        return Shape.OTHER;  // Fallback for unknowns
     }
   }
 
