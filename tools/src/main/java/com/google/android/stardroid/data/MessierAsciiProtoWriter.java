@@ -54,6 +54,7 @@ public class MessierAsciiProtoWriter extends AbstractAsciiProtoWriter {
       case "Other":
         return Shape.OTHER;
       default:
+        System.out.println("WARNING! Unknown messier type: " + type);
         return Shape.OTHER;  // Fallback for unknowns
     }
   }
