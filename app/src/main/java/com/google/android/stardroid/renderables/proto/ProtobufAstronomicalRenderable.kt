@@ -24,7 +24,6 @@ import com.google.android.stardroid.renderables.ImagePrimitive
 import com.google.android.stardroid.renderables.LinePrimitive
 import com.google.android.stardroid.renderables.PointPrimitive
 import com.google.android.stardroid.renderables.TextPrimitive
-import com.google.android.stardroid.source.*
 import com.google.android.stardroid.source.proto.SourceProto
 import com.google.android.stardroid.util.MiscUtil
 import java.util.*
@@ -70,14 +69,14 @@ class ProtobufAstronomicalRenderable(
         // extended to use different resources per shape type
         private fun getDrawableForShape(shape: PointPrimitive.Shape?): Int {
             return when (shape) {
-                PointPrimitive.Shape.OPEN_CLUSTER -> R.drawable.messier
-                PointPrimitive.Shape.GLOBULAR_CLUSTER -> R.drawable.messier
-                PointPrimitive.Shape.DIFFUSE_NEBULA -> R.drawable.messier
-                PointPrimitive.Shape.PLANETARY_NEBULA -> R.drawable.messier
-                PointPrimitive.Shape.SUPERNOVA_REMNANT -> R.drawable.messier
-                PointPrimitive.Shape.GALAXY -> R.drawable.messier
-                PointPrimitive.Shape.OTHER -> R.drawable.messier
-                else -> R.drawable.messier
+                PointPrimitive.Shape.OPEN_CLUSTER -> R.drawable.open_cluster
+                PointPrimitive.Shape.GLOBULAR_CLUSTER -> R.drawable.globular_cluster
+                PointPrimitive.Shape.DIFFUSE_NEBULA -> R.drawable.diffuse_nebula
+                PointPrimitive.Shape.PLANETARY_NEBULA -> R.drawable.planetary_nebula
+                PointPrimitive.Shape.SUPERNOVA_REMNANT -> R.drawable.supernova_remnant
+                PointPrimitive.Shape.GALAXY -> R.drawable.galaxy
+                PointPrimitive.Shape.OTHER -> R.drawable.other
+                else -> R.drawable.galaxy
             }
         }
 
@@ -230,6 +229,7 @@ class ProtobufAstronomicalRenderable(
     private fun isMessierObject(): Boolean {
         // Messier objects are identified by their shape type
         // Check if any points have a Messier-specific shape
+        // (This is obviously a terrible way to do it).
         if (proto.pointCount == 0) return false
 
         for (element in proto.pointList) {
