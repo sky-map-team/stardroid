@@ -29,7 +29,7 @@ android {
      * The app's namespace. Used primarily to access app resources.
      */
 
-    namespace 'com.google.android.stardroid'
+    namespace = 'com.google.android.stardroid'
 
     /**
      * compileSdk specifies the Android API level Gradle should use to
@@ -75,7 +75,7 @@ android {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard.cfg'
             if (file('no-checkin.properties').exists()) {
-                signingConfig signingConfigs.release
+                signingConfig = signingConfigs.release
             }
         }
     }
@@ -97,7 +97,7 @@ android {
 
     lintOptions {
         // TODO: fix the lint errors
-        abortOnError false
+        abortOnError = false
     }
 }
 
@@ -157,4 +157,4 @@ dependencies {
     androidTestImplementation 'androidx.test.uiautomator:uiautomator:2.3.0'
 }
 
-android.buildFeatures.buildConfig true
+android.buildFeatures.buildConfig = true
