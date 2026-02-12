@@ -37,7 +37,7 @@ Increment version code
 [bundle exec] fastlane android bump_version
 ```
 
-Set a specific version name (e.g., fastlane bump_version name:"1.5.0")
+Set a specific version name (e.g., fastlane bump_version name:"1.5.0") The name must have no spaces.
 
 ### android build
 
@@ -77,7 +77,7 @@ Promote Alpha to Beta (Open Testing @10%)
 [bundle exec] fastlane android promote_to_production
 ```
 
-Promote beta to Production @10%
+Promote Beta to Production @10%
 
 ### android alpha
 

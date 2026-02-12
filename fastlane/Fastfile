@@ -14,7 +14,7 @@ platform :android do
     android_set_version_code(gradle_file: GRADLE_FILE)
   end
 
-  desc "Set a specific version name (e.g., fastlane bump_version name:\"1.5.0\")"
+  desc "Set a specific version name (e.g., fastlane bump_version name:\"1.5.0:Mars\") The name must have no spaces."
   lane :bump_version do |options|
     android_set_version_name(
       version_name: options[:name],
