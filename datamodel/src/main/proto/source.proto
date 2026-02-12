@@ -25,17 +25,18 @@ option java_package = "com.google.android.stardroid.source.proto";
 option java_outer_classname = "SourceProto";
 
 // Enumeration over shapes which can be drawn in the renderer.
+// These represent broad categories of deep sky objects based on Wikipedia's
+// Messier object color legend.
 enum Shape {
-  CIRCLE = 0;
-  STAR = 1;
-  ELLIPTICAL_GALAXY = 2;
-  SPIRAL_GALAXY = 3;
-  IRREGULAR_GALAXY = 4;
-  LENTICULAR_GALAXY = 5;
-  GLOBULAR_CLUSTER = 6;
-  OPEN_CLUSTER = 7;
-  NEBULA = 8;
-  HUBBLE_DEEP_FIELD = 9;
+  CIRCLE = 0;          // Default shape for generic points
+  STAR = 1;            // Stars
+  OPEN_CLUSTER = 2;
+  GLOBULAR_CLUSTER = 3;
+  DIFFUSE_NEBULA = 4;
+  PLANETARY_NEBULA = 5;
+  SUPERNOVA_REMNANT = 6;
+  GALAXY = 7;
+  OTHER = 8;           // Other objects (asterisms, double stars, star clouds)
 }
 
 // Protocol buffer representation of the GeocentricCoordinates domain object.

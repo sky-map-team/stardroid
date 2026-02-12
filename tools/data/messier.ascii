@@ -10,7 +10,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: NEBULA
+    shape: SUPERNOVA_REMNANT
   }
   label {
     location {
@@ -181,7 +181,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: NEBULA
+    shape: DIFFUSE_NEBULA
   }
   label {
     location {
@@ -374,7 +374,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: OPEN_CLUSTER
+    shape: DIFFUSE_NEBULA
   }
   label {
     location {
@@ -399,7 +399,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: NEBULA
+    shape: DIFFUSE_NEBULA
   }
   label {
     location {
@@ -471,7 +471,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: NEBULA
+    shape: DIFFUSE_NEBULA
   }
   label {
     location {
@@ -567,7 +567,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: CIRCLE
+    shape: OTHER
   }
   label {
     location {
@@ -639,7 +639,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: NEBULA
+    shape: PLANETARY_NEBULA
   }
   label {
     location {
@@ -735,7 +735,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: SPIRAL_GALAXY
+    shape: GALAXY
   }
   label {
     location {
@@ -760,7 +760,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: ELLIPTICAL_GALAXY
+    shape: GALAXY
   }
   label {
     location {
@@ -784,7 +784,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: SPIRAL_GALAXY
+    shape: GALAXY
   }
   label {
     location {
@@ -952,7 +952,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: CIRCLE
+    shape: OTHER
   }
   label {
     location {
@@ -1000,7 +1000,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: NEBULA
+    shape: DIFFUSE_NEBULA
   }
   label {
     location {
@@ -1024,7 +1024,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: NEBULA
+    shape: DIFFUSE_NEBULA
   }
   label {
     location {
@@ -1172,7 +1172,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: ELLIPTICAL_GALAXY
+    shape: GALAXY
   }
   label {
     location {
@@ -1220,7 +1220,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: SPIRAL_GALAXY
+    shape: GALAXY
   }
   label {
     location {
@@ -1365,7 +1365,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: NEBULA
+    shape: PLANETARY_NEBULA
   }
   label {
     location {
@@ -1390,7 +1390,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: SPIRAL_GALAXY
+    shape: GALAXY
   }
   label {
     location {
@@ -1414,7 +1414,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: ELLIPTICAL_GALAXY
+    shape: GALAXY
   }
   label {
     location {
@@ -1438,7 +1438,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: ELLIPTICAL_GALAXY
+    shape: GALAXY
   }
   label {
     location {
@@ -1462,7 +1462,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: SPIRAL_GALAXY
+    shape: GALAXY
   }
   label {
     location {
@@ -1510,7 +1510,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: SPIRAL_GALAXY
+    shape: GALAXY
   }
   label {
     location {
@@ -1534,7 +1534,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: SPIRAL_GALAXY
+    shape: GALAXY
   }
   label {
     location {
@@ -1558,7 +1558,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: SPIRAL_GALAXY
+    shape: GALAXY
   }
   label {
     location {
@@ -1582,7 +1582,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: SPIRAL_GALAXY
+    shape: GALAXY
   }
   label {
     location {
@@ -1750,7 +1750,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: CIRCLE
+    shape: OTHER
   }
   label {
     location {
@@ -1774,7 +1774,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: SPIRAL_GALAXY
+    shape: GALAXY
   }
   label {
     location {
@@ -1822,7 +1822,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: NEBULA
+    shape: PLANETARY_NEBULA
   }
   label {
     location {
@@ -1846,7 +1846,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: SPIRAL_GALAXY
+    shape: GALAXY
   }
   label {
     location {
@@ -1870,7 +1870,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: NEBULA
+    shape: DIFFUSE_NEBULA
   }
   label {
     location {
@@ -1942,7 +1942,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: SPIRAL_GALAXY
+    shape: GALAXY
   }
   label {
     location {
@@ -1966,7 +1966,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: IRREGULAR_GALAXY
+    shape: GALAXY
   }
   label {
     location {
@@ -1990,7 +1990,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: SPIRAL_GALAXY
+    shape: GALAXY
   }
   label {
     location {
@@ -2014,7 +2014,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: LENTICULAR_GALAXY
+    shape: GALAXY
   }
   label {
     location {
@@ -2038,7 +2038,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: LENTICULAR_GALAXY
+    shape: GALAXY
   }
   label {
     location {
@@ -2062,7 +2062,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: LENTICULAR_GALAXY
+    shape: GALAXY
   }
   label {
     location {
@@ -2086,7 +2086,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: ELLIPTICAL_GALAXY
+    shape: GALAXY
   }
   label {
     location {
@@ -2110,7 +2110,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: SPIRAL_GALAXY
+    shape: GALAXY
   }
   label {
     location {
@@ -2134,7 +2134,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: ELLIPTICAL_GALAXY
+    shape: GALAXY
   }
   label {
     location {
@@ -2158,7 +2158,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: SPIRAL_GALAXY
+    shape: GALAXY
   }
   label {
     location {
@@ -2182,7 +2182,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: SPIRAL_GALAXY
+    shape: GALAXY
   }
   label {
     location {
@@ -2254,7 +2254,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: SPIRAL_GALAXY
+    shape: GALAXY
   }
   label {
     location {
@@ -2278,7 +2278,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: SPIRAL_GALAXY
+    shape: GALAXY
   }
   label {
     location {
@@ -2302,7 +2302,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: SPIRAL_GALAXY
+    shape: GALAXY
   }
   label {
     location {
@@ -2326,7 +2326,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: NEBULA
+    shape: PLANETARY_NEBULA
   }
   label {
     location {
@@ -2350,7 +2350,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: SPIRAL_GALAXY
+    shape: GALAXY
   }
   label {
     location {
@@ -2374,7 +2374,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: SPIRAL_GALAXY
+    shape: GALAXY
   }
   label {
     location {
@@ -2398,7 +2398,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: SPIRAL_GALAXY
+    shape: GALAXY
   }
   label {
     location {
@@ -2422,7 +2422,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: SPIRAL_GALAXY
+    shape: GALAXY
   }
   label {
     location {
@@ -2437,22 +2437,22 @@ source {
 }
 source {
   search_location {
-    right_ascension: 210.79996
-    declination: 54.35
+    right_ascension: 226.62494
+    declination: 55.76667
   }
   point {
     location {
-      right_ascension: 210.79996
-      declination: 54.35
+      right_ascension: 226.62494
+      declination: 55.76667
     }
     color: 4761665
     size: 3
-    shape: SPIRAL_GALAXY
+    shape: GALAXY
   }
   label {
     location {
-      right_ascension: 210.79996
-      declination: 54.35
+      right_ascension: 226.62494
+      declination: 55.76667
     }
     color: 4761665
     strings_str_id: "m102"
@@ -2495,7 +2495,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: SPIRAL_GALAXY
+    shape: GALAXY
   }
   label {
     location {
@@ -2520,7 +2520,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: ELLIPTICAL_GALAXY
+    shape: GALAXY
   }
   label {
     location {
@@ -2544,7 +2544,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: SPIRAL_GALAXY
+    shape: GALAXY
   }
   label {
     location {
@@ -2592,7 +2592,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: SPIRAL_GALAXY
+    shape: GALAXY
   }
   label {
     location {
@@ -2616,7 +2616,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: SPIRAL_GALAXY
+    shape: GALAXY
   }
   label {
     location {
@@ -2640,7 +2640,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: ELLIPTICAL_GALAXY
+    shape: GALAXY
   }
   label {
     location {
@@ -2664,7 +2664,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: NEBULA
+    shape: PLANETARY_NEBULA
   }
   label {
     location {
@@ -2714,7 +2714,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: CIRCLE
+    shape: OTHER
   }
   label {
     location {
@@ -2738,7 +2738,7 @@ source {
     }
     color: 4761665
     size: 3
-    shape: CIRCLE
+    shape: OTHER
   }
   label {
     location {

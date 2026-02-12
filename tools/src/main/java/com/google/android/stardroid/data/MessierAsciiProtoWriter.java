@@ -36,25 +36,23 @@ public class MessierAsciiProtoWriter extends AbstractAsciiProtoWriter {
   private static final int POINT_COLOR = 0x48a841; // abgr (!)
   private static final int POINT_SIZE = 3;
 
-  // Map CSV "Detailed Type" to Shape enum
-  private static Shape getShapeFromType(String detailedType) {
-    switch (detailedType.trim()) {
-      case "Spiral Galaxy":
-        return Shape.SPIRAL_GALAXY;
-      case "Elliptical Galaxy":
-        return Shape.ELLIPTICAL_GALAXY;
-      case "Irregular Galaxy":
-        return Shape.IRREGULAR_GALAXY;
-      case "Lenticular Galaxy":
-        return Shape.LENTICULAR_GALAXY;
-      case "Globular Cluster":
-        return Shape.GLOBULAR_CLUSTER;
+  // Map CSV "Type" column (Wikipedia color legend categories) to Shape enum
+  private static Shape getShapeFromType(String type) {
+    switch (type.trim()) {
       case "Open Cluster":
         return Shape.OPEN_CLUSTER;
+      case "Globular Cluster":
+        return Shape.GLOBULAR_CLUSTER;
       case "Diffuse Nebula":
+        return Shape.DIFFUSE_NEBULA;
       case "Planetary Nebula":
+        return Shape.PLANETARY_NEBULA;
       case "Supernova Remnant":
-        return Shape.NEBULA;
+        return Shape.SUPERNOVA_REMNANT;
+      case "Galaxy":
+        return Shape.GALAXY;
+      case "Other":
+        return Shape.OTHER;
       default:
         return Shape.CIRCLE;  // Fallback for unknowns
     }
@@ -90,9 +88,9 @@ public class MessierAsciiProtoWriter extends AbstractAsciiProtoWriter {
     }
     sourceBuilder.addLabel(labelBuilder);
 
-    // Parse detailed type from column 8
-    String detailedType = tokens.length > 8 ? tokens[8] : "";
-    Shape shape = getShapeFromType(detailedType);
+    // Parse type from column 1 (broad category)
+    String type = tokens.length > 1 ? tokens[1] : "";
+    Shape shape = getShapeFromType(type);
 
     PointElementProto.Builder pointBuilder = PointElementProto.newBuilder();
     pointBuilder.setColor(POINT_COLOR);
