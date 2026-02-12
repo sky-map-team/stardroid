@@ -118,7 +118,7 @@ abstract class AbstractRenderablesLayer(resources: Resources, private val should
   }
 
   override fun searchByObjectName(name: String): List<SearchResult> {
-    Log.d(TAG, "Search planets layer for $name")
+    Log.d(TAG, "Search $layerName layer for $name")
     val matches = ArrayList<SearchResult>()
     val searchResult = searchIndex[name.lowercase()]
     if (searchResult != null && searchResult.renderable.isVisible) {
@@ -129,7 +129,7 @@ abstract class AbstractRenderablesLayer(resources: Resources, private val should
   }
 
   override fun getObjectNamesMatchingPrefix(prefix: String): Set<String> {
-    Log.d(TAG, "Searching planets layer for prefix $prefix")
+    Log.d(TAG, "Searching $layerName layer for prefix $prefix")
     val results = prefixStore.queryByPrefix(prefix)
     Log.d(TAG, "Got " + results.size + " results for prefix " + prefix + " in " + layerName)
     return results
