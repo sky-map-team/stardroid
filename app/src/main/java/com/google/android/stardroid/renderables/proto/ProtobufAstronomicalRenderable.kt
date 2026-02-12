@@ -64,9 +64,7 @@ class ProtobufAstronomicalRenderable(
             shapeMap[SourceProto.Shape.OTHER] = PointPrimitive.Shape.OTHER
         }
 
-        // Map shape types to drawable resources
-        // For now, all Messier shapes use R.drawable.messier, but this can be
-        // extended to use different resources per shape type
+        // Map shape types to drawable resources.
         private fun getDrawableForShape(shape: PointPrimitive.Shape?): Int {
             return when (shape) {
                 PointPrimitive.Shape.OPEN_CLUSTER -> R.drawable.open_cluster
@@ -76,7 +74,7 @@ class ProtobufAstronomicalRenderable(
                 PointPrimitive.Shape.SUPERNOVA_REMNANT -> R.drawable.supernova_remnant
                 PointPrimitive.Shape.GALAXY -> R.drawable.galaxy
                 PointPrimitive.Shape.OTHER -> R.drawable.other
-                else -> R.drawable.galaxy
+                else -> R.drawable.other
             }
         }
 
