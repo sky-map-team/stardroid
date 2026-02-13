@@ -65,7 +65,9 @@ class ObjectInfoRegistryTest {
               "type": "planet",
               "distanceKey": "object_info_mars_distance",
               "sizeKey": "object_info_mars_size",
-              "massKey": "object_info_mars_mass"
+              "massKey": "object_info_mars_mass",
+              "imageKey": "planets/hubble_mars.jpg",
+              "imageCredit": "NASA/ESA/Hubble"
             },
             "m42": {
               "nameKey": "m42",
@@ -197,6 +199,8 @@ class ObjectInfoRegistryTest {
         assertThat(info.mass).isEqualTo("1.989 × 10³⁰ kg")
         assertThat(info.spectralClass).isEqualTo("G2V")
         assertThat(info.magnitude).isEqualTo("-26.74")
+        assertThat(info.imagePath).isNull()
+        assertThat(info.imageCredit).isNull()
     }
 
     @Test
@@ -210,6 +214,8 @@ class ObjectInfoRegistryTest {
         assertThat(info.mass).isEqualTo("6.39 × 10²³ kg")
         assertThat(info.spectralClass).isNull()
         assertThat(info.magnitude).isNull()
+        assertThat(info.imagePath).isEqualTo("celestial_images/planets/hubble_mars.jpg")
+        assertThat(info.imageCredit).isEqualTo("NASA/ESA/Hubble")
     }
 
     @Test
