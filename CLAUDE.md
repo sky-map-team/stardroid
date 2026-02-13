@@ -18,8 +18,11 @@ Sky Map is an Android planetarium app that displays the night sky in real-time u
 ./gradlew assembleFdroidDebug
 
 # Full rebuild including data generation
-./build_skymap.sh  # or ./build_skymap_fdroid.sh for F-Droid
+./build_skymap.sh  # or ./build_skymap.sh --fdroid for F-Droid
 ```
+
+When creating new files DO NOT include a Google Copyright notice even though this exists in older
+code.
 
 ### Testing
 
