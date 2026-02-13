@@ -33,8 +33,8 @@
       "distanceKey": "object_info_mercury_distance",
       "sizeKey": "object_info_mercury_size",
       "massKey": "object_info_mercury_mass",
-      "imageKey": "planets/messenger_11_07_39.jpg",
-      "imageCredit": "NASA/JHU-APL/CIW"
+      "imageKey": "planets/nasa_mercury.jpg",
+      "imageCredit": "NASA/GSFC"
     },
     "venus": {
       "nameKey": "venus",
@@ -44,8 +44,8 @@
       "distanceKey": "object_info_venus_distance",
       "sizeKey": "object_info_venus_size",
       "massKey": "object_info_venus_mass",
-      "imageKey": "planets/hubble_venus_clouds_tops.jpg",
-      "imageCredit": "NASA/ESA/Hubble"
+      "imageKey": "planets/nasa_venus.jpg",
+      "imageCredit": "NASA/JPL"
     },
     "mars": {
       "nameKey": "mars",
