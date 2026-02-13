@@ -84,5 +84,5 @@ rm -rf "$TEMP_DIR"
 echo ""
 echo "=== All done! ==="
 echo "Images saved to: $OUTPUT_DIR"
-ls -la "$OUTPUT_DIR"/*.jpg | wc -l
+ls "$OUTPUT_DIR"/*.jpg | wc -l
 echo " total JPEG files in messier directory"
