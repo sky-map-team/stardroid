@@ -18,6 +18,7 @@ import android.app.SearchManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -34,6 +35,7 @@ import com.google.android.stardroid.activities.util.EdgeToEdgeFixer;
 import com.google.android.stardroid.gallery.GalleryFactory;
 import com.google.android.stardroid.gallery.GalleryImage;
 import com.google.android.stardroid.util.Analytics;
+import com.google.android.stardroid.util.AssetImageLoader;
 import com.google.android.stardroid.util.MiscUtil;
 
 import java.util.List;
@@ -74,7 +76,14 @@ public class ImageDisplayActivity extends InjectableActivity {
     List<GalleryImage> galleryImages = GalleryFactory.getGallery(getResources()).getGalleryImages();
     selectedImage = galleryImages.get(position);
     ImageView imageView = (ImageView) findViewById(R.id.gallery_image);
-    imageView.setImageResource(selectedImage.getImageId());
+    if (selectedImage.getAssetPath() != null) {
+      Bitmap bmp = AssetImageLoader.INSTANCE.loadBitmap(getAssets(), selectedImage.getAssetPath());
+      if (bmp != null) {
+        imageView.setImageBitmap(bmp);
+      }
+    } else {
+      imageView.setImageResource(selectedImage.getImageId());
+    }
     TextView label = (TextView) findViewById(R.id.gallery_image_title);
     label.setText(selectedImage.getName());
     Button backButton = (Button) findViewById(R.id.gallery_image_back_btn);

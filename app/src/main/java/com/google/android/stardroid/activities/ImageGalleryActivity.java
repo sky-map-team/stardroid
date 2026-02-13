@@ -15,6 +15,7 @@
 package com.google.android.stardroid.activities;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -35,6 +36,7 @@ import com.google.android.stardroid.activities.util.EdgeToEdgeFixer;
 import com.google.android.stardroid.gallery.GalleryFactory;
 import com.google.android.stardroid.gallery.GalleryImage;
 import com.google.android.stardroid.util.Analytics;
+import com.google.android.stardroid.util.AssetImageLoader;
 import com.google.android.stardroid.util.MiscUtil;
 
 import java.util.List;
@@ -85,7 +87,14 @@ public class ImageGalleryActivity extends InjectableActivity {
       }
       GalleryImage galleryImage = galleryImages.get(position);
       ImageView imageView = (ImageView) imagePanel.findViewById(R.id.image_gallery_image);
-      imageView.setImageResource(galleryImage.getImageId());
+      if (galleryImage.getAssetPath() != null) {
+        Bitmap bmp = AssetImageLoader.INSTANCE.loadBitmap(getAssets(), galleryImage.getAssetPath());
+        if (bmp != null) {
+          imageView.setImageBitmap(bmp);
+        }
+      } else {
+        imageView.setImageResource(galleryImage.getImageId());
+      }
       TextView imageLabel = (TextView) imagePanel.findViewById(R.id.image_gallery_title);
       imageLabel.setText(galleryImage.getName());
       return imagePanel;

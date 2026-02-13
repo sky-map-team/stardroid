@@ -18,10 +18,12 @@ import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.ImageView
 import android.widget.TextView
 import com.google.android.stardroid.R
 import com.google.android.stardroid.education.ObjectInfo
 import com.google.android.stardroid.inject.HasComponent
+import com.google.android.stardroid.util.AssetImageLoader
 import com.google.android.stardroid.util.MiscUtil
 import javax.inject.Inject
 
@@ -70,6 +72,29 @@ class ObjectInfoDialogFragment : DialogFragment() {
 
         // Populate the view with object information
         view.findViewById<TextView>(R.id.object_info_name).text = info.name
+
+        // Display celestial image if available
+        val imageContainer = view.findViewById<View>(R.id.object_info_image_container)
+        val imageView = view.findViewById<ImageView>(R.id.object_info_image)
+        if (info.imagePath != null) {
+            val bitmap = AssetImageLoader.loadBitmap(parentActivity.assets, info.imagePath)
+            if (bitmap != null) {
+                imageView.setImageBitmap(bitmap)
+                imageContainer.visibility = View.VISIBLE
+                imageContainer.setOnClickListener {
+                    ImageExpandDialogFragment.newInstance(info.imagePath, info.imageCredit)
+                        .show(parentFragmentManager, "ExpandedImage")
+                }
+            }
+        }
+
+        // Display image credit if available
+        val imageCreditView = view.findViewById<TextView>(R.id.object_info_image_credit)
+        if (info.imageCredit != null && info.imagePath != null) {
+            imageCreditView.text = info.imageCredit
+            imageCreditView.visibility = View.VISIBLE
+        }
+
         view.findViewById<TextView>(R.id.object_info_description).text = info.description
         view.findViewById<TextView>(R.id.object_info_funfact).text = info.funFact
 
