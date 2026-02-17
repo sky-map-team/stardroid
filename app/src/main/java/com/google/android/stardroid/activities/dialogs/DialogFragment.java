@@ -11,6 +11,7 @@ public abstract class DialogFragment extends androidx.fragment.app.DialogFragmen
   @Override
   public void show(FragmentManager fragmentManager, String tag) {
     if (this.isAdded()) return;
+    if (fragmentManager.isStateSaved()) return;
     super.show(fragmentManager, tag);
   }
 }
