@@ -61,10 +61,14 @@ public class MultipleSearchResultsDialogFragment extends DialogFragment {
   }
 
   public void clearResults() {
-    multipleSearchResultsAdaptor.clear();
+    if (multipleSearchResultsAdaptor != null) {
+      multipleSearchResultsAdaptor.clear();
+    }
   }
 
   public void add(SearchResult result) {
-    multipleSearchResultsAdaptor.add(result);
+    if (multipleSearchResultsAdaptor != null) {
+      multipleSearchResultsAdaptor.add(result);
+    }
   }
 }
