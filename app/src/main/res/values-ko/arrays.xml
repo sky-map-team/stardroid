@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="popular_date_examples">
+        <item>지금</item>
+        <item>다음 일몰</item>
+        <item>다음 일출</item>
+        <item>다음 보름</item>
+        <item>Mercury transit of 2016-05-09</item>
+        <item>2024 4월 8일 일식</item>
+        <item>아폴로 11호 달 착륙</item>
+        <item>목성-토성 결합</item>
+    </string-array>
+    <string-array name="sensor_speed">
+        <item>느림</item>
+        <item>표준</item>
+        <item>빠름</item>
+    </string-array>
+    <string-array name="sensor_damping">
+        <item>Jumpy</item>
+        <item>Medium</item>
+        <item>표준</item>
+        <item>높음</item>
+    </string-array>
+</resources>
