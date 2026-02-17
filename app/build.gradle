@@ -51,21 +51,34 @@ android {
         applicationId 'com.google.android.stardroid'
         minSdk 26
         targetSdk 36
-        versionCode 1587
-        versionName "1.11.1:Venus"
+        versionCode 1589
+        versionName "1.11.1:VenusInternal2"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     signingConfigs {
-        release {
+        // Sky Map devs should create the no-checkin.properties file with the signing passwords
+        // Google Play Store now uses the upload key, but some other distribution orgs
+        // require the legacy key.
+        releasebundle {
             if (project.file('no-checkin.properties').exists()) {
                 Properties properties = new Properties()
                 // Sky Map devs should create this file with the signing passwords
                 properties.load(project.file('no-checkin.properties').newDataInputStream())
-                storeFile file("stardroid-release-key.keystore")
-                storePassword properties.getProperty('store-pwd')
-                keyPassword properties.getProperty('key-pwd')
-                keyAlias "stardroid"
+                storeFile file(properties.getProperty('upload.keystore.path'))
+                storePassword properties.getProperty('upload.store-pwd')
+                keyPassword properties.getProperty('upload.key-pwd')
+                keyAlias properties.getProperty('upload.keystore.alias')
+            }
+        }
+        releaseapk {
+            if (project.file('no-checkin.properties').exists()) {
+                Properties properties = new Properties()
+                properties.load(project.file('no-checkin.properties').newDataInputStream())
+                storeFile file(properties.getProperty('apk.keystore.path'))
+                storePassword properties.getProperty('apk.store-pwd')
+                keyPassword properties.getProperty('apk.key-pwd')
+                keyAlias properties.getProperty('apk.keystore.alias')
             }
         }
     }
@@ -74,8 +87,13 @@ android {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard.cfg'
+            def isBundleTask = gradle.startParameter.taskNames.any { it.contains("bundle") }
             if (file('no-checkin.properties').exists()) {
-                signingConfig signingConfigs.release
+                if (isBundleTask) {
+                    signingConfig signingConfigs.releasebundle
+                } else {
+                    signingConfig signingConfigs.releaseapk
+                }
             }
         }
     }

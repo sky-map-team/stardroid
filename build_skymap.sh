@@ -27,6 +27,7 @@ if [ "$QUICK" = false ]; then
   rm -f build/install/datagen/bin/datagen-e
   ./generate.sh
   ./binary.sh)
+  ./gradlew :app:bundleGmsRelease
 fi
 
 if [ "$FDROID" = true ]; then

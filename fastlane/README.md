@@ -37,7 +37,7 @@ Increment version code
 [bundle exec] fastlane android bump_version
 ```
 
-Set a specific version name (e.g., fastlane bump_version name:"1.5.0") The name must have no spaces.
+Set a specific version name (e.g., fastlane bump_version name:"1.5.0:Mars") The name must have no spaces.
 
 ### android build
 
@@ -45,7 +45,7 @@ Set a specific version name (e.g., fastlane bump_version name:"1.5.0") The name 
 [bundle exec] fastlane android build
 ```
 
-Build release apk
+Build release bundle
 
 ### android internal
 

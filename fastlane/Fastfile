@@ -22,11 +22,11 @@ platform :android do
     )
   end
 
-  desc "Build release apk"
+  desc "Build release bundle"
   lane :build do
     UI.message("***Make sure you have regenerated the data if necessary***")
     gradle(
-      task: ":app:assembleGmsRelease",
+      task: ":app:bundleGmsRelease",
       project_dir: "./"
     )
   end
@@ -42,10 +42,11 @@ platform :android do
 
     upload_to_play_store(
       track: "internal",
-      apk: "app/build/outputs/apk/gms/release/app-gms-release.apk",
+      aab: "app/build/outputs/bundle/gmsRelease/app-gms-release.aab",
       skip_upload_metadata: true,
       skip_upload_images: true,
       skip_upload_screenshots: true,
+      skip_upload_apk: true,
       changes_not_sent_for_review: true,
       version_name: "#{v_name} (#{v_code})",
       version_codes_to_retain: older_versions,

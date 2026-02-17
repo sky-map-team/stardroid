@@ -110,6 +110,17 @@ or
 
 The apk can be found in `app/build/outputs/apk/`.
 
+> New! Android Bundles
+
+Going forward Google Play Store will handle the apk signing so instead
+we need to build and upload bundle files.  The command for this is
+
+    ./gradlew :app:bundleGmsRelease
+
+and the resulting file is in `app/build/outputs/bundle/`.
+
+
+
 
 ### Running tests
 Unit tests:
