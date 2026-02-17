@@ -95,7 +95,7 @@ Create a file in the app directory called
 `no-checkin.properties` with appropriate values for the
 keys
 
-```agsl
+```
 # These values are for the bundle to upload to the Play Store
 upload.store-pwd=
 upload.key-pwd=
