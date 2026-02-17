@@ -43,10 +43,10 @@ platform :android do
     upload_to_play_store(
       track: "internal",
       aab: "app/build/outputs/bundle/gmsRelease/app-gms-release.aab",
+      skip_upload_apk: true,
       skip_upload_metadata: true,
       skip_upload_images: true,
       skip_upload_screenshots: true,
-      skip_upload_apk: true,
       changes_not_sent_for_review: true,
       version_name: "#{v_name} (#{v_code})",
       version_codes_to_retain: older_versions,
@@ -93,39 +93,45 @@ platform :android do
     )
   end
 
+  # Typically these lanes aren't needed - we upload to internal and promote from there
+  # rather than uploading directly to the other tracks.
+
   desc "Deploy to alpha track"
   lane :alpha do
     increment_version_code
     build
     upload_to_play_store(
       track: "alpha",
-      apk: "app/build/outputs/apk/gms/release/app-gms-release.apk",
+      aab: "app/build/outputs/bundle/gmsRelease/app-gms-release.aab",
+      skip_upload_apk: true,
       skip_upload_metadata: true,
       skip_upload_images: true,
       skip_upload_screenshots: true
     )
   end
 
-  desc "Deploy to beta track"
-  lane :beta do
+  desc "Deploy to beta track - shouldn't you deploy to internal first?"
+  lane :beta_yes_im_sure do
     increment_version_code
     build
     upload_to_play_store(
       track: "beta",
-      apk: "app/build/outputs/apk/gms/release/app-gms-release.apk",
+      aab: "app/build/outputs/bundle/gmsRelease/app-gms-release.aab",
+      skip_upload_apk: true,
       skip_upload_metadata: true,
       skip_upload_images: true,
       skip_upload_screenshots: true
     )
   end
 
-  desc "Deploy to production"
-  lane :production do
+  desc "Deploy to production - shouldn't you deploy to internal first?"
+  lane :production_yes_im_sure do
     increment_version_code
     build
     upload_to_play_store(
       track: "production",
-      apk: "app/build/outputs/apk/gms/release/app-gms-release.apk",
+      aab: "app/build/outputs/bundle/gmsRelease/app-gms-release.aab",
+      skip_upload_apk: true,
       skip_upload_metadata: true,
       skip_upload_images: true,
       skip_upload_screenshots: true

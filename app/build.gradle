@@ -60,25 +60,25 @@ android {
         // Sky Map devs should create the no-checkin.properties file with the signing passwords
         // Google Play Store now uses the upload key, but some other distribution orgs
         // require the legacy key.
+        def signingProperties = new Properties()
+        if (project.file('no-checkin.properties').exists()) {
+            // Sky Map devs should create this file with the signing passwords
+            signingProperties.load(project.file('no-checkin.properties').newDataInputStream())
+        }
         releasebundle {
-            if (project.file('no-checkin.properties').exists()) {
-                Properties properties = new Properties()
-                // Sky Map devs should create this file with the signing passwords
-                properties.load(project.file('no-checkin.properties').newDataInputStream())
-                storeFile file(properties.getProperty('upload.keystore.path'))
-                storePassword properties.getProperty('upload.store-pwd')
-                keyPassword properties.getProperty('upload.key-pwd')
-                keyAlias properties.getProperty('upload.keystore.alias')
+            if (!signingProperties.isEmpty()) {
+                storeFile file(signingProperties.getProperty('upload.keystore.path'))
+                storePassword signingProperties.getProperty('upload.store-pwd')
+                keyPassword signingProperties.getProperty('upload.key-pwd')
+                keyAlias signingProperties.getProperty('upload.keystore.alias')
             }
         }
         releaseapk {
-            if (project.file('no-checkin.properties').exists()) {
-                Properties properties = new Properties()
-                properties.load(project.file('no-checkin.properties').newDataInputStream())
-                storeFile file(properties.getProperty('apk.keystore.path'))
-                storePassword properties.getProperty('apk.store-pwd')
-                keyPassword properties.getProperty('apk.key-pwd')
-                keyAlias properties.getProperty('apk.keystore.alias')
+            if (!signingProperties.isEmpty()) {
+                storeFile file(signingProperties.getProperty('apk.keystore.path'))
+                storePassword signingProperties.getProperty('apk.store-pwd')
+                keyPassword signingProperties.getProperty('apk.key-pwd')
+                keyAlias signingProperties.getProperty('apk.keystore.alias')
             }
         }
     }
