@@ -88,15 +88,26 @@ If you want to build without the script then: from the root directory execute
 
 The apk can be found in `app/build/outputs/apk/`.
 
-### Building a release apk
+### Building a release apk or bundle
 Note: Sky Map team only
 
 Create a file in the app directory called
 `no-checkin.properties` with appropriate values for the
 keys
-    store-pwd=
-    key-pwd=
-    analytics-key=
+
+```agsl
+# These values are for the bundle to upload to the Play Store
+upload.store-pwd=
+upload.key-pwd=
+upload.keystore.path=
+upload.keystore.alias=
+# These values are for a standalone apk
+apk.store-pwd=
+apk.key-pwd=
+apk.keystore.path=
+apk.keystore.alias=
+analytics-key=
+```
 
 and overwrite google-services.json with the correct file.
 
@@ -110,7 +121,7 @@ or
 
 The apk can be found in `app/build/outputs/apk/`.
 
-> New! Android Bundles
+> New!
 
 Going forward Google Play Store will handle the apk signing so instead
 we need to build and upload bundle files.  The command for this is
@@ -118,9 +129,6 @@ we need to build and upload bundle files.  The command for this is
     ./gradlew :app:bundleGmsRelease
 
 and the resulting file is in `app/build/outputs/bundle/`.
-
-
-
 
 ### Running tests
 Unit tests:

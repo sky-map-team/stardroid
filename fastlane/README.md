@@ -87,21 +87,21 @@ Promote Beta to Production @10%
 
 Deploy to alpha track
 
-### android beta
+### android beta_yes_im_sure
 
 ```sh
-[bundle exec] fastlane android beta
+[bundle exec] fastlane android beta_yes_im_sure
 ```
 
-Deploy to beta track
+Deploy to beta track - shouldn't you deploy to internal first?
 
-### android production
+### android production_yes_im_sure
 
 ```sh
-[bundle exec] fastlane android production
+[bundle exec] fastlane android production_yes_im_sure
 ```
 
-Deploy to production
+Deploy to production - shouldn't you deploy to internal first?
 
 ### android screenshots
 

@@ -62,7 +62,6 @@ android {
         // require the legacy key.
         def signingProperties = new Properties()
         if (project.file('no-checkin.properties').exists()) {
-            // Sky Map devs should create this file with the signing passwords
             signingProperties.load(project.file('no-checkin.properties').newDataInputStream())
         }
         releasebundle {
@@ -88,12 +87,11 @@ android {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard.cfg'
             def isBundleTask = gradle.startParameter.taskNames.any { it.contains("bundle") }
-            if (file('no-checkin.properties').exists()) {
-                if (isBundleTask) {
-                    signingConfig signingConfigs.releasebundle
-                } else {
-                    signingConfig signingConfigs.releaseapk
-                }
+            if (isBundleTask) {
+                signingConfig signingConfigs.releasebundle
+            } else {
+                signingConfig signingConfigs.releaseapk
+
             }
         }
     }
