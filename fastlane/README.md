@@ -37,7 +37,7 @@ Increment version code
 [bundle exec] fastlane android bump_version
 ```
 
-Set a specific version name (e.g., fastlane bump_version name:"1.5.0")
+Set a specific version name (e.g., fastlane bump_version name:"1.5.0:Mars") The name must have no spaces.
 
 ### android build
 
@@ -45,7 +45,7 @@ Set a specific version name (e.g., fastlane bump_version name:"1.5.0")
 [bundle exec] fastlane android build
 ```
 
-Build release apk
+Build release bundle
 
 ### android internal
 
@@ -77,7 +77,7 @@ Promote Alpha to Beta (Open Testing @10%)
 [bundle exec] fastlane android promote_to_production
 ```
 
-Promote beta to Production @10%
+Promote Beta to Production @10%
 
 ### android alpha
 
@@ -87,21 +87,21 @@ Promote beta to Production @10%
 
 Deploy to alpha track
 
-### android beta
+### android beta_yes_im_sure
 
 ```sh
-[bundle exec] fastlane android beta
+[bundle exec] fastlane android beta_yes_im_sure
 ```
 
-Deploy to beta track
+Deploy to beta track - shouldn't you deploy to internal first?
 
-### android production
+### android production_yes_im_sure
 
 ```sh
-[bundle exec] fastlane android production
+[bundle exec] fastlane android production_yes_im_sure
 ```
 
-Deploy to production
+Deploy to production - shouldn't you deploy to internal first?
 
 ### android screenshots
 

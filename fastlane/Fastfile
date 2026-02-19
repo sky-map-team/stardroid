@@ -14,7 +14,7 @@ platform :android do
     android_set_version_code(gradle_file: GRADLE_FILE)
   end
 
-  desc "Set a specific version name (e.g., fastlane bump_version name:\"1.5.0\")"
+  desc "Set a specific version name (e.g., fastlane bump_version name:\"1.5.0:Mars\") The name must have no spaces."
   lane :bump_version do |options|
     android_set_version_name(
       version_name: options[:name],
@@ -22,11 +22,11 @@ platform :android do
     )
   end
 
-  desc "Build release apk"
+  desc "Build release bundle"
   lane :build do
     UI.message("***Make sure you have regenerated the data if necessary***")
     gradle(
-      task: ":app:assembleGmsRelease",
+      task: ":app:bundleGmsRelease",
       project_dir: "./"
     )
   end
@@ -42,7 +42,8 @@ platform :android do
 
     upload_to_play_store(
       track: "internal",
-      apk: "app/build/outputs/apk/gms/release/app-gms-release.apk",
+      aab: "app/build/outputs/bundle/gmsRelease/app-gms-release.aab",
+      skip_upload_apk: true,
       skip_upload_metadata: true,
       skip_upload_images: true,
       skip_upload_screenshots: true,
@@ -92,39 +93,45 @@ platform :android do
     )
   end
 
+  # Typically these lanes aren't needed - we upload to internal and promote from there
+  # rather than uploading directly to the other tracks.
+
   desc "Deploy to alpha track"
   lane :alpha do
     increment_version_code
     build
     upload_to_play_store(
       track: "alpha",
-      apk: "app/build/outputs/apk/gms/release/app-gms-release.apk",
+      aab: "app/build/outputs/bundle/gmsRelease/app-gms-release.aab",
+      skip_upload_apk: true,
       skip_upload_metadata: true,
       skip_upload_images: true,
       skip_upload_screenshots: true
     )
   end
 
-  desc "Deploy to beta track"
-  lane :beta do
+  desc "Deploy to beta track - shouldn't you deploy to internal first?"
+  lane :beta_yes_im_sure do
     increment_version_code
     build
     upload_to_play_store(
       track: "beta",
-      apk: "app/build/outputs/apk/gms/release/app-gms-release.apk",
+      aab: "app/build/outputs/bundle/gmsRelease/app-gms-release.aab",
+      skip_upload_apk: true,
       skip_upload_metadata: true,
       skip_upload_images: true,
       skip_upload_screenshots: true
     )
   end
 
-  desc "Deploy to production"
-  lane :production do
+  desc "Deploy to production - shouldn't you deploy to internal first?"
+  lane :production_yes_im_sure do
     increment_version_code
     build
     upload_to_play_store(
       track: "production",
-      apk: "app/build/outputs/apk/gms/release/app-gms-release.apk",
+      aab: "app/build/outputs/bundle/gmsRelease/app-gms-release.aab",
+      skip_upload_apk: true,
       skip_upload_metadata: true,
       skip_upload_images: true,
       skip_upload_screenshots: true
