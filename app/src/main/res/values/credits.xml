@@ -1,0 +1,42 @@
+<resources>
+    <!-- The folks who made Sky Map Happen -->
+<string name="credits_text" translation_description="Please do not change the &lt; and &gt; markup">
+    &lt;h2&gt;Support Development&lt;/h2&gt;
+&lt;p&gt;Sky Map is free, open source, and ad-free. If you enjoy using it, please consider supporting continued development at &lt;a href="https://github.com/sky-map-team/stardroid?tab=readme-ov-file#support-the-project"&gt;our GitHub page&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;Thank you to these folks who have recently donated!&lt;/h3&gt;
+    %1$s
+
+&lt;h2&gt;Credits&lt;/h2&gt;
+&lt;h3&gt;Original Engineering, Design and Product Management at Google&lt;/h3&gt;
+&lt;p&gt;Brent Bryan, Dominic Widdows, Hector Ouilhet, James Powell, John Taylor, Kevin Serafini, Lior Ron&lt;/p&gt;
+
+&lt;h3&gt;Engineering post-Google&lt;/h3&gt;
+&lt;p&gt;John Taylor, Kevin Serafini&lt;/p&gt;
+
+&lt;h3&gt;Open Source Contributors&lt;/h3&gt;
+&lt;p&gt;Thank you to our open source contributors!
+    %2$s
+&lt;/p&gt;
+&lt;p&gt;See the latest contributors on &lt;a href="https://github.com/sky-map-team/stardroid/graphs/contributors"&gt;GitHub&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;h2&gt;Acknowledgments&lt;/h2&gt;
+&lt;p&gt;Sky Map was originally developed as "Google Sky Map" by Google Inc. and open sourced in 2012.&lt;/p&gt;
+&lt;p&gt;Sky Map uses maps derived from data from:&lt;/p&gt;
+&lt;ul class="credits"&gt;
+&lt;li&gt;Centre de Donnees astronomiques de Strasbourg (&lt;a href="https://cdsweb.u-strasbg.fr/"&gt;https://cdsweb.u-strasbg.fr/&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;The Bright Star Catalogue, 5th Revised Ed. (Hoffleit D., Warren Jr W.H.)&lt;/li&gt;
+&lt;li&gt;The HYG Database, HYG v1.0. (&lt;a href="https://www.astronexus.com/"&gt;https://www.astronexus.com/&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;History and Accurate Positions for the NGC/IC Objects (Harold G. Corwin Jr)&lt;/li&gt;
+&lt;li&gt;Revised New General Catalogue of Nonstellar Astronomical Objects (Sulentic J.W., Tifft W.G.)&lt;/li&gt;
+&lt;li&gt;SFA Star Charts (&lt;a href="https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html"&gt;https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Positions of Solar System Objects are calculated from data provided by the USNO (&lt;a href="https://www.usno.navy.mil/USNO/astronomical-applications"&gt;https://www.usno.navy.mil/USNO/astronomical-applications&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Spherical coverage data obtained from (&lt;a href="https://www2.research.att.com/~njas/coverings"&gt;https://www2.research.att.com/~njas/coverings&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Hubble Images provided by NASA\'s Space Telescope Science Institute (&lt;a href="https://hubblesite.org/"&gt;https://hubblesite.org/&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;2024 Eclipse Map courtesy of NASA\'s Scientific Visualization Studio.&lt;/li&gt;
+&lt;li&gt;Meteor shower data from the International Meteor Organization (&lt;a href="https://www.imo.net/data"&gt;https://www.imo.net/data&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;M31 image by Peter Kennett (&lt;a href="https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg"&gt;https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Comet Leonard data: In-The-Sky.org&lt;/li&gt;
+&lt;/ul&gt;
+</string>
+</resources>

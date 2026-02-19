@@ -53,8 +53,12 @@ public class HelpDialogFragment extends DialogFragment {
                 dialog.dismiss();
               }
             }).create();
+    String creditsText = String.format(parentActivity.getString(R.string.credits_text),
+        parentActivity.getString(R.string.sponsors_text),
+        parentActivity.getString(R.string.contributors_text));
+
     String helpText = String.format(parentActivity.getString(R.string.help_text),
-        application.getVersionName());
+        application.getVersionName(), creditsText);
     SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(parentActivity);
     String lightMode = preferences.getString(ActivityLightLevelManager.LIGHT_MODE_KEY, "DAY");
     String bodyClass = "NIGHT".equals(lightMode) ? " class=\"night-mode\"" : "";
