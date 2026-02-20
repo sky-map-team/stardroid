@@ -48,7 +48,7 @@ def fetch_all_sponsors():
 
 def update_xml(sponsors):
     # Join into comma-separated string
-    sponsors_str = ", ".join(sponsors)
+    sponsors_str = ", ".join(sponsors).replace("'", "\\'")
 
     # Create the XML structure
     resources = ET.Element("resources")
