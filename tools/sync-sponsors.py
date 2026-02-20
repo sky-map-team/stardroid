@@ -40,7 +40,7 @@ def fetch_all_sponsors():
                 break
 
             current_page += 1
-        except Exception as e:
+        except requests.exceptions.RequestException as e:
             print(f"Failed to fetch page {current_page}: {e}")
             break
 
