@@ -6,7 +6,8 @@ import sys
 
 # Configuration
 ACCESS_TOKEN = os.getenv("BMC_TOKEN")
-OUTPUT_PATH = "../app/src/main/res/values/notranslate-sponsors.xml"
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+OUTPUT_PATH = os.path.join(SCRIPT_DIR, "../app/src/main/res/values/notranslate-sponsors.xml")
 API_URL = "https://developers.buymeacoffee.com/api/v1/supporters"
 
 def fetch_all_sponsors():

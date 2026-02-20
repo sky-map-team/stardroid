@@ -39,7 +39,8 @@ Thumbs.db
 *.log
 *.swp
 *~
-.claude
+.claude/
+!.claude/skills/
 .history/
 *.gradle-e
 
