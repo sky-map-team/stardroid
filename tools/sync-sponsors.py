@@ -24,7 +24,7 @@ def fetch_all_sponsors():
     while True:
         try:
             # Append the page parameter to the request
-            response = requests.get(f"{API_URL}?page={current_page}", headers=headers)
+            response = requests.get(API_URL, headers=headers, params={'page': current_page})
             response.raise_for_status()
             res_data = response.json()
 
