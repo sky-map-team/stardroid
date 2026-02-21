@@ -65,6 +65,7 @@ public class VertexBuffer {
   }
 
   public void addPoint(float x, float y, float z) {
+    if (mPositionBuffer == null) return;
     mPositionBuffer.put(FixedPoint.floatToFixedPoint(x));
     mPositionBuffer.put(FixedPoint.floatToFixedPoint(y));
     mPositionBuffer.put(FixedPoint.floatToFixedPoint(z));
