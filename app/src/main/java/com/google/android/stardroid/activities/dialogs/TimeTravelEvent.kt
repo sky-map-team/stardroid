@@ -57,13 +57,16 @@ object TimeTravelEvents {
     TimeTravelEvent(R.string.time_travel_next_sunrise,  Type.NEXT_SUNRISE,   searchTargetRes = R.string.sun),
     TimeTravelEvent(R.string.time_travel_next_fullmoon, Type.NEXT_FULL_MOON, searchTargetRes = R.string.moon),
 
-    // 2026 events
+    // 2026 events (chronological)
     TimeTravelEvent(R.string.time_travel_six_planet_parade_2026,   Type.FIXED, 1772321400000L,  R.string.saturn),
     TimeTravelEvent(R.string.time_travel_lunar_eclipse_2026,       Type.FIXED, 1772537400000L,  R.string.moon),
+    TimeTravelEvent(R.string.time_travel_lyrids_2026,              Type.FIXED, 1776816000000L,  R.string.lyrids),
     TimeTravelEvent(R.string.time_travel_venus_jupiter_2026,       Type.FIXED, 1781035200000L,  R.string.venus),
     TimeTravelEvent(R.string.time_travel_mars_uranus_2026,         Type.FIXED, 1783206000000L,  R.string.mars),
     TimeTravelEvent(R.string.time_travel_solar_eclipse_2026,       Type.FIXED, 1786558200000L,  R.string.sun),
+    TimeTravelEvent(R.string.time_travel_perseids_2026,            Type.FIXED, 1786579200000L,  R.string.perseids),
     TimeTravelEvent(R.string.time_travel_jupiter_occultation_2026, Type.FIXED, 1791293400000L,  R.string.jupiter),
+    TimeTravelEvent(R.string.time_travel_geminids_2026,            Type.FIXED, 1797206400000L,  R.string.geminids),
     TimeTravelEvent(R.string.time_travel_supermoon_2026,           Type.FIXED, 1798149000000L,  R.string.moon),
 
     // Fixed historical events
