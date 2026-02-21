@@ -55,19 +55,19 @@ object TimeTravelEvents {
     TimeTravelEvent(R.string.time_travel_next_sunrise,  Type.NEXT_SUNRISE,   searchTarget = "Sun"),
     TimeTravelEvent(R.string.time_travel_next_fullmoon, Type.NEXT_FULL_MOON, searchTarget = "Moon"),
 
-    // Fixed historical / upcoming events
-    TimeTravelEvent(R.string.time_travel_mercury_transit_2016,     Type.FIXED, 1462805846000L,  "Mercury"),
-    TimeTravelEvent(R.string.time_travel_solar_eclipse_2024,       Type.FIXED, 1712604000000L,  "Sun"),
-    TimeTravelEvent(R.string.time_travel_apollo_11,                Type.FIXED, -14182953622L,   "Moon"),
-    TimeTravelEvent(R.string.time_travel_jupiter_saturn_2020,      Type.FIXED, 1608574800000L,  "Jupiter"),
-
     // 2026 events
-    TimeTravelEvent(R.string.time_travel_six_planet_parade_2026,   Type.FIXED, 1772321400000L,  null),
+    TimeTravelEvent(R.string.time_travel_six_planet_parade_2026,   Type.FIXED, 1772321400000L,  "Saturn"),
     TimeTravelEvent(R.string.time_travel_lunar_eclipse_2026,       Type.FIXED, 1772537400000L,  "Moon"),
     TimeTravelEvent(R.string.time_travel_venus_jupiter_2026,       Type.FIXED, 1781035200000L,  "Venus"),
     TimeTravelEvent(R.string.time_travel_mars_uranus_2026,         Type.FIXED, 1783206000000L,  "Mars"),
     TimeTravelEvent(R.string.time_travel_solar_eclipse_2026,       Type.FIXED, 1786558200000L,  "Sun"),
     TimeTravelEvent(R.string.time_travel_jupiter_occultation_2026, Type.FIXED, 1791293400000L,  "Jupiter"),
     TimeTravelEvent(R.string.time_travel_supermoon_2026,           Type.FIXED, 1798149000000L,  "Moon"),
+
+    // Fixed historical / upcoming events
+    TimeTravelEvent(R.string.time_travel_mercury_transit_2016,     Type.FIXED, 1462805846000L,  "Mercury"),
+    TimeTravelEvent(R.string.time_travel_solar_eclipse_2024,       Type.FIXED, 1712604000000L,  "Sun"),
+    TimeTravelEvent(R.string.time_travel_apollo_11,                Type.FIXED, -14182953622L,   "Moon"),
+    TimeTravelEvent(R.string.time_travel_jupiter_saturn_2020,      Type.FIXED, 1608574800000L,  "Jupiter"),
   )
 }
