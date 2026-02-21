@@ -1,15 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="popular_date_examples">
-        <item translation_description="The user's current time">Τώρα</item>
-        <item>Επόμενο ηλιοβασίλεμα</item>
-        <item>Επόμενη ανατολή ηλίου</item>
-        <item>Επόμενη πανσέληνος</item>
-        <item>Διάβαση του Ερμή στις 9 Μαϊ 2016</item>
-        <item>Ηλιακή έκλειψη στις 8 Απρίλιος 2024</item>
-        <item>Προσελήνωση του Apollo 11</item>
-        <item>Σύζευξη Δία-Κρόνου το 2020</item>
-    </string-array>
     <string-array name="sensor_speed">
         <item translation_description="Slow sensor speed">Αργή</item>
         <item translation_description="Normal sensor speed">Μέτρια</item>

@@ -15,6 +15,7 @@
 package com.google.android.stardroid.activities.dialogs;
 
 import static com.google.android.stardroid.math.AstronomyKt.getNextFullMoon;
+import static com.google.android.stardroid.math.AstronomyKt.getNextNewMoon;
 import static com.google.android.stardroid.math.TimeUtilsKt.normalizeHours;
 
 import android.app.DatePickerDialog;
@@ -22,10 +23,13 @@ import android.app.DatePickerDialog.OnDateSetListener;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
 import android.app.TimePickerDialog.OnTimeSetListener;
+import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -34,6 +38,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.DynamicStarMapActivity;
@@ -46,6 +53,7 @@ import com.google.android.stardroid.util.MiscUtil;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Implementation of the time travel dialog.
@@ -64,6 +72,7 @@ public class TimeTravelDialog extends Dialog {
   private Calendar calendar = Calendar.getInstance();
   private AstronomerModel model;
   private long lastClickTime = 0;
+  private int currentSearchTargetRes = 0;  // 0 = no search target
 
   public TimeTravelDialog(final DynamicStarMapActivity parentActivity,
                           final AstronomerModel model) {
@@ -85,6 +94,9 @@ public class TimeTravelDialog extends Dialog {
         public void onClick(View v) {
           if (SystemClock.elapsedRealtime() - lastClickTime < MIN_CLICK_TIME) return;
           lastClickTime = SystemClock.elapsedRealtime();
+          // Snap spinner back to hint so it's clear the custom date overrides any event.
+          popularDatesMenu.setSelection(0);
+          currentSearchTargetRes = 0;
           createDatePicker().show();
         }
       });
@@ -94,6 +106,9 @@ public class TimeTravelDialog extends Dialog {
         public void onClick(View v) {
           if (SystemClock.elapsedRealtime() - lastClickTime < MIN_CLICK_TIME) return;
           lastClickTime = SystemClock.elapsedRealtime();
+          // Snap spinner back to hint so it's clear the custom time overrides any event.
+          popularDatesMenu.setSelection(0);
+          currentSearchTargetRes = 0;
           createTimePicker().show();
         }
       });
@@ -101,7 +116,7 @@ public class TimeTravelDialog extends Dialog {
     Button goButton = (Button) findViewById(R.id.timeTravelGo);
     goButton.setOnClickListener(new View.OnClickListener() {
         public void onClick(View v) {
-          parentActivity.setTimeTravelMode(calendar.getTime());
+          parentActivity.setTimeTravelMode(calendar.getTime(), currentSearchTargetRes);
           dismiss();
         }
       });
@@ -114,20 +129,18 @@ public class TimeTravelDialog extends Dialog {
       });
 
     popularDatesMenu = (Spinner) findViewById(R.id.popular_dates_spinner);
-    ArrayAdapter<?> adapter = ArrayAdapter.createFromResource(
-        this.getContext(), R.array.popular_date_examples, android.R.layout.simple_spinner_item);
-    adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
-    popularDatesMenu.setAdapter(adapter);
-    popularDatesMenu.setSelection(1);
+    popularDatesMenu.setAdapter(buildEventAdapter(getContext()));
+    popularDatesMenu.setSelection(0);
     popularDatesMenu.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-      // The callback received when the user selects a menu item.
       @Override
-      public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-        setPopularDate(popularDatesMenu.getSelectedItemPosition());
+      public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        if (position > 0) {
+          applyPopularEvent(position);
+        }
       }
       @Override
-      public void onNothingSelected(AdapterView<?> arg0) {
-        // Do nothing in this case.
+      public void onNothingSelected(AdapterView<?> parent) {
+        // Do nothing.
       }
     });
     // Start by initializing ourselves to 'now'.  Note that this is the value
@@ -135,6 +148,40 @@ public class TimeTravelDialog extends Dialog {
     // last value set.
     calendar.setTime(new Date());
     updateDisplay();
+  }
+
+  /**
+   * Builds an adapter for the popular-events spinner. Position 0 is a non-selectable hint item
+   * displayed in a greyed, italic style.
+   */
+  private ArrayAdapter<String> buildEventAdapter(Context context) {
+    List<TimeTravelEvent> events = TimeTravelEvents.ALL;
+    String[] labels = new String[events.size()];
+    for (int i = 0; i < events.size(); i++) {
+      labels[i] = context.getString(events.get(i).getDisplayNameRes());
+    }
+    ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+        context, android.R.layout.simple_spinner_item, labels) {
+
+      @Override
+      public boolean isEnabled(int position) {
+        return position != 0;
+      }
+
+      @Override
+      public View getDropDownView(int position, @Nullable View convertView,
+          @NonNull ViewGroup parent) {
+        View view = super.getDropDownView(position, convertView, parent);
+        // Always set color to handle recycled views correctly.
+        // spinner_dropdown_item.xml has a dark background with white text; use GRAY for the hint.
+        if (view instanceof TextView) {
+          ((TextView) view).setTextColor(position == 0 ? Color.GRAY : Color.WHITE);
+        }
+        return view;
+      }
+    };
+    adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
+    return adapter;
   }
 
   private Dialog createTimePicker() {
@@ -213,49 +260,35 @@ public class TimeTravelDialog extends Dialog {
       setDate(riseset.getTime());
     }
   }
-  
+
   /**
-   * Associates time settings with the options in the popular dates menu.
-   * It HAS to be kept in sync with res/values/arrays.xml.
-   *
-   * @param popularDateIndex The index into the popular dates array.
+   * Applies the time travel event at the given index in {@link TimeTravelEvents#ALL}.
    */
-  private void setPopularDate(int popularDateIndex) {
-    String s = (String) popularDatesMenu.getSelectedItem();
-    Log.d(TAG, "Popular date " + popularDatesMenu.getSelectedItemPosition() + "  " + s);
-    Calendar c = Calendar.getInstance();
-    c.setTime(model.getTime());
-    switch (popularDateIndex) {
-      case 0:  // Now
+  private void applyPopularEvent(int index) {
+    TimeTravelEvent event = TimeTravelEvents.ALL.get(index);
+    Log.d(TAG, "Popular event " + index + ": " + getContext().getString(event.getDisplayNameRes()));
+    currentSearchTargetRes = event.getSearchTargetRes();
+    switch (event.getType()) {
+      case NOW:
         calendar.setTime(new Date());
         break;
-      case 1:  // Next sunset
+      case NEXT_SUNSET:
         setToNextSunRiseOrSet(CelestialObject.RiseSetIndicator.SET);
         break;
-      case 2:  // Next sunrise
+      case NEXT_SUNRISE:
         setToNextSunRiseOrSet(CelestialObject.RiseSetIndicator.RISE);
         break;
-      case 3:  // Next full moon
-        Date nextFullMoon = getNextFullMoon(calendar.getTime());
-        setDate(nextFullMoon);
+      case NEXT_FULL_MOON:
+        setDate(getNextFullMoon(calendar.getTime()));
         break;
-      case 4: // Mercury transit 2016.
-        // Source: http://eclipsewise.com/oh/tm2016.html
-        // http://mainfacts.com/timestamp-date-converter-calculator
-        setDate(new Date(1462805846000L));
+      case NEXT_NEW_MOON:
+        setDate(getNextNewMoon(calendar.getTime()));
         break;
-      case 5: // Solar Eclipse 2024 North America.
-        // Source: http://mainfacts.com/timestamp-date-converter-calculator
-        setDate(new Date(1712604000000L));
-        break;
-      case 6:  // Moon Landing 1969.
-        setDate(new Date(-14182953622L));
-        break;
-      case 7:  // 2020 Saturn/Jupiter conjunction
-        setDate(new Date(1608574800000L));
+      case FIXED:
+        setDate(new Date(event.getTimestampMs()));
         break;
       default:
-        Log.d(TAG, "Incorrect popular date index!");
+        Log.e(TAG, "Unknown event type: " + event.getType());
     }
     updateDisplay();
   }

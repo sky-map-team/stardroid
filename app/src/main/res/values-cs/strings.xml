@@ -458,4 +458,11 @@
     <string name="sensor_accuracy_unknown">Přesnost: Neznámá</string>
     <string name="show_object_info_auto_mode_title">Info karty v automatickém režimu</string>
     <string name="show_object_info_auto_mode_summary">Zobrazit info karty i při klepnutí na objekty v automatickém (senzorový) režimu</string>
+    <string name="time_travel_next_sunset">Další západ slunce</string>
+    <string name="time_travel_next_sunrise">Další východ slunce</string>
+    <string name="time_travel_next_fullmoon">Další úplněk</string>
+    <string name="time_travel_mercury_transit_2016">Tranzit Merkuru 09 Května 2016</string>
+    <string name="time_travel_solar_eclipse_2024">Zatmění slunce 8 Duben 2024</string>
+    <string name="time_travel_apollo_11">Přistání lodi Apollo 11 na Měsíci</string>
+    <string name="time_travel_jupiter_saturn_2020">Konjunkce Jupiter-Saturn 2020</string>
 </resources>

@@ -1,15 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="popular_date_examples">
-        <item translation_description="The user's current time">Ahora</item>
-        <item>Próxima puesta del Sol</item><!-- 1 -->
-        <item>Próximo amanecer</item><!-- 2 -->
-        <item>Siguiente luna llena</item><!-- 3 -->
-        <item>Tránsito de Mercurio del 09 may, 2016</item><!-- 4 -->
-        <item>Eclipse solar del 8 abr, 2024</item><!-- 5 -->
-        <item>Alunizaje del Apolo 11</item><!-- 6 -->
-        <item>Conjunción Júpiter-Saturno de 2020</item><!-- 7 -->
-    </string-array>
     <string-array name="sensor_speed">
         <item translation_description="Slow sensor speed">Lento</item>
         <item translation_description="Normal sensor speed">Medio</item>

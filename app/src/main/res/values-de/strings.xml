@@ -422,5 +422,11 @@
     <string name="diagnostics_activity_pointing_ra_dec">Letzte Blickrichtung (RA, D)</string>
     <string name="show_object_info_auto_mode_title">Info-Karten im Automatikmodus</string>
     <string name="show_object_info_auto_mode_summary">Info-Karten auch beim Antippen von Objekten im automatischen (Sensor-)Modus anzeigen</string>
+    <string name="time_travel_next_sunset">Sonnenuntergang am nächsten Abend</string>
+    <string name="time_travel_next_sunrise">Sonnenaufgang am nächsten Morgen</string>
+    <string name="time_travel_next_fullmoon">Nächster Vollmond</string>
+    <string name="time_travel_mercury_transit_2016">Mercury transit of May 09, 2024</string>
+    <string name="time_travel_solar_eclipse_2024">Sonnenfinsternis am April 08, 2024</string>
+    <string name="time_travel_apollo_11">Apollo 11-Mondlandung</string>
 </resources>
 

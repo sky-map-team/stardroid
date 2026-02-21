@@ -17,7 +17,6 @@
     <string name="location_long_pref">경도</string>
     <string name="degrees">도(°)</string>
     <string name="preferences">환경설정</string>
-    <string name="location_no_auto">자동 위치설정이 지원되지 않습니다. 환경설정에서 위치를 수동으로 설정할 수 있습니다.</string>
     <string name="location_offer_to_enable">자동 위치설정이 중지되었습니다. 사용하도록 설정하시겠습니까?</string>
     <string name="location_offer_to_enable_gps_title">자동 위치설정 사용중지</string>
     <string name="location_set_auto">%1$s에서 %2$s(으)로 위치 설정</string>
@@ -376,5 +375,12 @@
     <string name="kml_load_error">KML 파일 로드 실패</string>
     <string name="load_kml_dialog_title">KML 로드</string>
     <string name="load_kml_file">로드</string>
+    <string name="time_travel_next_sunset">다음 일몰</string>
+    <string name="time_travel_next_sunrise">다음 일출</string>
+    <string name="time_travel_next_fullmoon">다음 보름</string>
+    <string name="time_travel_mercury_transit_2016">Mercury transit of 2016-05-09</string>
+    <string name="time_travel_solar_eclipse_2024">2024 4월 8일 일식</string>
+    <string name="time_travel_apollo_11">아폴로 11호 달 착륙</string>
+    <string name="time_travel_jupiter_saturn_2020">목성-토성 결합</string>
 </resources>
 

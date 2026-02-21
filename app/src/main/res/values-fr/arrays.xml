@@ -1,15 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="popular_date_examples">
-        <item>Maintenant</item>
-        <item>Prochain coucher de soleil</item>
-        <item>Prochain lever de soleil</item>
-        <item>Prochaine pleine lune</item>
-        <item>Mercure transit du 9 mai 2016</item>
-        <item>Éclipse solaire du 8 avril 2024</item>
-        <item>Alunissage d\'Apollo 11</item>
-        <item>Conjonction Jupiter-Saturne de 2020</item><!-- 7 -->
-    </string-array>
     <string-array name="sensor_speed">
         <item>Lent</item>
         <item>Standard</item>

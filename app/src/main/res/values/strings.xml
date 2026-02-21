@@ -104,12 +104,12 @@
     <string name="time_travel_close_message">Back to the present ...</string>
     <!--  -->
     <string name="popular_dates_prompt" translation_description="Label for a list of dates the user can choose from">Popular dates</string>
-    <string name="custom_date_prompt" translation_description="Label telling the user to manually specify a date">Or select your own date:</string>
+    <string name="custom_date_prompt" translation_description="Label telling the user to manually specify a date">Or pick your own date and time:</string>
     <string name="change_date_prompt">Change the date</string>
     <string name="change_time_prompt">Change the time</string>
     <string name="now_visiting"
-            translation_description="used in time travel dialog to tell the user what time they are visiting, time formatted as yyyy.mm.dd at hh.mm.ss + timezone">
-        Now visiting: %s</string>
+            translation_description="used in time travel dialog to show the destination date/time the user has selected, time formatted as yyyy.mm.dd at hh.mm.ss + timezone">
+        Destination: %s</string>
     <string name="time_travel_label_past" translation_description="Label showing that we are in the past">Time Travel: Past</string>
     <string name="time_travel_label_future" translation_description="Label showing that we are in the future">Time Travel: Future</string>
     <string name="time_travel_stopped" translation_description="Label showing rate of travel through time">Time travel frozen</string>
@@ -125,6 +125,28 @@
     <string name="time_travel_hour_speed_back" translation_description="Label showing rate of travel through time">Traveling &lt; @ 1 hour/sec</string>
     <string name="time_travel_day_speed_back" translation_description="Label showing rate of travel through time">Traveling &lt; @ 1 day/sec</string>
     <string name="time_travel_week_speed_back" translation_description="Label showing rate of travel through time">Traveling &lt; @ 1 week/sec</string>
+
+    <!-- Time Travel dialog event display names -->
+    <string name="time_travel_select_hint">-- Select a popular event --</string>
+    <string name="time_travel_next_sunset">Next evening sunset</string>
+    <string name="time_travel_next_sunrise">Next morning sunrise</string>
+    <string name="time_travel_next_fullmoon">Next full moon</string>
+    <string name="time_travel_next_newmoon">Next new moon</string>
+    <string name="time_travel_mercury_transit_2016">Mercury transit of May 09, 2016</string>
+    <string name="time_travel_solar_eclipse_2024">North American Solar Eclipse of Apr 8, 2024</string>
+    <string name="time_travel_apollo_11">Apollo 11 Moon Landing</string>
+    <string name="time_travel_jupiter_saturn_2020">Jupiter-Saturn Conjunction of 2020</string>
+    <string name="time_travel_six_planet_parade_2026">Six-Planet Parade, Feb 28, 2026</string>
+    <string name="time_travel_lunar_eclipse_2026">Total Lunar Eclipse, Mar 3, 2026</string>
+    <string name="time_travel_lyrids_2026">Lyrids Meteor Shower, Apr 22, 2026</string>
+    <string name="time_travel_venus_jupiter_2026">Venus-Jupiter Conjunction, Jun 9, 2026</string>
+    <string name="time_travel_mars_uranus_2026">Mars-Uranus Close Approach, Jul 4, 2026</string>
+    <string name="time_travel_solar_eclipse_2026">Total Solar Eclipse, Aug 12, 2026</string>
+    <string name="time_travel_perseids_2026">Perseids Meteor Shower, Aug 12-13, 2026</string>
+    <string name="time_travel_jupiter_occultation_2026">Lunar Occultation of Jupiter, Oct 6, 2026</string>
+    <string name="time_travel_geminids_2026">Geminids Meteor Shower, Dec 13-14, 2026</string>
+    <string name="time_travel_supermoon_2026">Christmas Eve Supermoon, Dec 24, 2026</string>
+
     <string name="use_sound_effects" translation_description="A preferences menu label">Enable sound</string>
 
     <string name="enable_layer_toast">Enabling %s layer</string>

@@ -1,15 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="popular_date_examples">
-        <item>Nyní</item>
-        <item>Další západ slunce</item>
-        <item>Další východ slunce</item>
-        <item>Další úplněk</item>
-        <item>Tranzit Merkuru 09 Května 2016</item>
-        <item>Zatmění slunce 8 Duben 2024</item>
-        <item>Přistání lodi Apollo 11 na Měsíci</item>
-        <item>Konjunkce Jupiter-Saturn 2020</item><!-- 7 -->
-    </string-array>
     <string-array name="sensor_speed">
         <item>Pomalé</item>
         <item>Standardní</item>

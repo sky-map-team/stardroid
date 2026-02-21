@@ -42,6 +42,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.StringRes;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -68,6 +69,7 @@ import com.google.android.stardroid.control.AstronomerModel;
 import com.google.android.stardroid.control.AstronomerModel.Pointing;
 import com.google.android.stardroid.control.ControllerGroup;
 import com.google.android.stardroid.control.MagneticDeclinationCalculatorSwitcher;
+import com.google.android.stardroid.control.TransitioningCompositeClock;
 import com.google.android.stardroid.inject.HasComponent;
 import com.google.android.stardroid.layers.LayerManager;
 import com.google.android.stardroid.math.CoordinateManipulationsKt;
@@ -101,6 +103,8 @@ public class DynamicStarMapActivity extends InjectableActivity
     implements OnSharedPreferenceChangeListener, NightModeable,
     HasComponent<DynamicStarMapComponent> {
   private static final int TIME_DISPLAY_DELAY_MILLIS = 1000;
+  // Extra delay after the clock transition settles before querying solar-system positions.
+  private static final long SEARCH_POST_TRANSITION_DELAY_MS = 500;
   private FullscreenControlsManager fullscreenControlsManager;
 
   @Override
@@ -485,6 +489,10 @@ public class DynamicStarMapActivity extends InjectableActivity
   }
 
   public void setTimeTravelMode(Date newTime) {
+    setTimeTravelMode(newTime, 0);
+  }
+
+  public void setTimeTravelMode(Date newTime, @StringRes int searchObjectNameRes) {
     SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy.MM.dd G  HH:mm:ss z");
     Toast.makeText(this,
                    String.format(getString(R.string.time_travel_start_message_alt),
@@ -504,6 +512,20 @@ public class DynamicStarMapActivity extends InjectableActivity
     timePlayerUI.requestFocus();
     flashTheScreen();
     controller.goTimeTravel(newTime);
+
+    if (searchObjectNameRes != 0) {
+      // Delay until after the clock transition completes (TransitioningCompositeClock uses
+      // 2500 ms) so that solar-system positions have been updated to the new time.
+      handler.postDelayed(() -> {
+        List<SearchResult> results = layerManager.searchByObjectName(getString(searchObjectNameRes));
+        if (!results.isEmpty()) {
+          SearchResult r = results.get(0);
+          activateSearchTarget(r.coords(), r.getCapitalizedName());
+        } else {
+          Log.w(TAG, "Time travel search target not found: " + getString(searchObjectNameRes));
+        }
+      }, TransitioningCompositeClock.TRANSITION_TIME_MILLIS + SEARCH_POST_TRANSITION_DELAY_MS);
+    }
   }
 
   public void setNormalTimeModel() {

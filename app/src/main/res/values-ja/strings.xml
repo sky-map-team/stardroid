@@ -218,4 +218,11 @@
         いるかを表示するためのポインターモード(ヘルプ参照)。</string>
     <string name="show_object_info_auto_mode_title">自動モードでの情報カード</string>
     <string name="show_object_info_auto_mode_summary">自動（センサー）モードでもオブジェクトをタップして情報カードを表示</string>
+    <string name="time_travel_next_sunset">次の日没</string>
+    <string name="time_travel_next_sunrise">次の日の出</string>
+    <string name="time_travel_next_fullmoon">次の満月</string>
+    <string name="time_travel_mercury_transit_2016">2016年5月9日の水星太陽面通過</string>
+    <string name="time_travel_solar_eclipse_2024">2024年4月8日の日食</string>
+    <string name="time_travel_apollo_11">アポロ11号の月面着陸</string>
+    <string name="time_travel_jupiter_saturn_2020">木星と土星の結合</string>
 </resources>

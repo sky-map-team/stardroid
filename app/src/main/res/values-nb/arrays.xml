@@ -1,15 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="popular_date_examples">
-        <item translation_description="The user's current time">Nå</item>
-        <item>Neste solnedgang</item><!-- 1 -->
-        <item>Neste soloppgang</item><!-- 2 -->
-        <item>Neste fullmåne</item><!-- 3 -->
-        <item>Merkurpassasje 9. mai 2016</item><!-- 4 -->
-        <item>Nord-Amerikansk solformørkelse 8. apr 2024</item><!-- 5 -->
-        <item>Apollo 11 månelanding</item><!-- 6 -->
-        <item>Jupiter-Saturn-konjunksjon i 2020</item><!-- 7 -->
-    </string-array>
     <string-array name="sensor_speed">
         <item translation_description="Slow sensor speed">Treg</item>
         <item translation_description="Normal sensor speed">Middels</item>

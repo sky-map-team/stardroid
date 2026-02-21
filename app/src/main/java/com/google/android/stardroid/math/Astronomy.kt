@@ -47,6 +47,22 @@ fun getNextFullMoon(now: Date): Date {
 }
 
 /**
+ * Return the date of the next new moon after now.
+ *
+ * The new moon occurs at phase angle 360° (≡ 0°). Whether the moon is currently
+ * waxing or waning, the remaining arc to the next new moon is always (360 - phase),
+ * so a single formula suffices.
+ */
+fun getNextNewMoon(now: Date): Date {
+    val universe = Universe()
+    val moon = universe.solarSystemObjectFor(SolarSystemBody.Moon)
+    val phase: Float = moon.calculatePhaseAngle(now)
+    val LUNAR_CYCLE = 29.53f // In days.
+    val numDays = (360.0f - phase) / 360.0f * LUNAR_CYCLE
+    return Date(now.time + (numDays * 24.0 * 3600.0 * 1000.0).toLong())
+}
+
+/**
  * Return the date of the next full moon after today.
  * Slow incremental version, only correct to within an hour.
  */
