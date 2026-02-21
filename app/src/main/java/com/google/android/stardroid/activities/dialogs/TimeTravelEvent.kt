@@ -59,6 +59,8 @@ object TimeTravelEvents {
     TimeTravelEvent(R.string.time_travel_next_newmoon,  Type.NEXT_NEW_MOON,  searchTargetRes = R.string.moon),
 
     // 2026 events (chronological)
+    // Use the constellation names rather than the radiants for meteor showers as they're always
+    // visible.
     TimeTravelEvent(R.string.time_travel_six_planet_parade_2026,   Type.FIXED, 1772321400000L,  R.string.saturn),
     TimeTravelEvent(R.string.time_travel_lunar_eclipse_2026,       Type.FIXED, 1772537400000L,  R.string.moon),
     TimeTravelEvent(R.string.time_travel_lyrids_2026,              Type.FIXED, 1776816000000L,  R.string.lyra),
