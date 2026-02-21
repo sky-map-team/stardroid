@@ -173,6 +173,7 @@ public class TimeTravelDialog extends Dialog {
           @NonNull ViewGroup parent) {
         View view = super.getDropDownView(position, convertView, parent);
         // Always set color to handle recycled views correctly.
+        // spinner_dropdown_item.xml has a dark background with white text; use GRAY for the hint.
         if (view instanceof TextView) {
           ((TextView) view).setTextColor(position == 0 ? Color.GRAY : Color.WHITE);
         }

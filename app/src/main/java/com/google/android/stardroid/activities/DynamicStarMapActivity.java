@@ -103,6 +103,8 @@ public class DynamicStarMapActivity extends InjectableActivity
     implements OnSharedPreferenceChangeListener, NightModeable,
     HasComponent<DynamicStarMapComponent> {
   private static final int TIME_DISPLAY_DELAY_MILLIS = 1000;
+  // Extra delay after the clock transition settles before querying solar-system positions.
+  private static final long SEARCH_POST_TRANSITION_DELAY_MS = 500;
   private FullscreenControlsManager fullscreenControlsManager;
 
   @Override
@@ -512,16 +514,17 @@ public class DynamicStarMapActivity extends InjectableActivity
     controller.goTimeTravel(newTime);
 
     if (searchObjectNameRes != 0) {
-      final String targetName = getString(searchObjectNameRes);
       // Delay until after the clock transition completes (TransitioningCompositeClock uses
       // 2500 ms) so that solar-system positions have been updated to the new time.
       handler.postDelayed(() -> {
-        List<SearchResult> results = layerManager.searchByObjectName(targetName);
+        List<SearchResult> results = layerManager.searchByObjectName(getString(searchObjectNameRes));
         if (!results.isEmpty()) {
           SearchResult r = results.get(0);
           activateSearchTarget(r.coords(), r.getCapitalizedName());
+        } else {
+          Log.w(TAG, "Time travel search target not found: " + getString(searchObjectNameRes));
         }
-      }, TransitioningCompositeClock.TRANSITION_TIME_MILLIS + 500);
+      }, TransitioningCompositeClock.TRANSITION_TIME_MILLIS + SEARCH_POST_TRANSITION_DELAY_MS);
     }
   }
 
