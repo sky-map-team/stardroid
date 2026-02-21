@@ -15,6 +15,7 @@
 package com.google.android.stardroid.activities.dialogs;
 
 import static com.google.android.stardroid.math.AstronomyKt.getNextFullMoon;
+import static com.google.android.stardroid.math.AstronomyKt.getNextNewMoon;
 import static com.google.android.stardroid.math.TimeUtilsKt.normalizeHours;
 
 import android.app.DatePickerDialog;
@@ -278,6 +279,9 @@ public class TimeTravelDialog extends Dialog {
         break;
       case NEXT_FULL_MOON:
         setDate(getNextFullMoon(calendar.getTime()));
+        break;
+      case NEXT_NEW_MOON:
+        setDate(getNextNewMoon(calendar.getTime()));
         break;
       case FIXED:
         setDate(new Date(event.getTimestampMs()));
