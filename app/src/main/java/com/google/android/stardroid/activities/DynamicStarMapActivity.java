@@ -42,6 +42,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -68,6 +69,7 @@ import com.google.android.stardroid.control.AstronomerModel;
 import com.google.android.stardroid.control.AstronomerModel.Pointing;
 import com.google.android.stardroid.control.ControllerGroup;
 import com.google.android.stardroid.control.MagneticDeclinationCalculatorSwitcher;
+import com.google.android.stardroid.control.TransitioningCompositeClock;
 import com.google.android.stardroid.inject.HasComponent;
 import com.google.android.stardroid.layers.LayerManager;
 import com.google.android.stardroid.math.CoordinateManipulationsKt;
@@ -485,6 +487,10 @@ public class DynamicStarMapActivity extends InjectableActivity
   }
 
   public void setTimeTravelMode(Date newTime) {
+    setTimeTravelMode(newTime, null);
+  }
+
+  public void setTimeTravelMode(Date newTime, @Nullable String searchObjectName) {
     SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy.MM.dd G  HH:mm:ss z");
     Toast.makeText(this,
                    String.format(getString(R.string.time_travel_start_message_alt),
@@ -504,6 +510,19 @@ public class DynamicStarMapActivity extends InjectableActivity
     timePlayerUI.requestFocus();
     flashTheScreen();
     controller.goTimeTravel(newTime);
+
+    if (searchObjectName != null) {
+      final String targetName = searchObjectName;
+      // Delay until after the clock transition completes (TransitioningCompositeClock uses
+      // 2500 ms) so that solar-system positions have been updated to the new time.
+      handler.postDelayed(() -> {
+        List<SearchResult> results = layerManager.searchByObjectName(targetName);
+        if (!results.isEmpty()) {
+          SearchResult r = results.get(0);
+          activateSearchTarget(r.coords(), r.getCapitalizedName());
+        }
+      }, TransitioningCompositeClock.TRANSITION_TIME_MILLIS + 500);
+    }
   }
 
   public void setNormalTimeModel() {

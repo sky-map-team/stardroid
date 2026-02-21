@@ -463,5 +463,12 @@
     <string name="rotate_horizon_preference_summary">Поворот на 90 градусов по горизонтали (для экранов с альбомной ориентацией, таких как умные очки)</string>
     <string name="show_object_info_auto_mode_title">Карточки в автоматическом режиме</string>
     <string name="show_object_info_auto_mode_summary">Показывать информационные карточки при нажатии на объекты в автоматическом (сенсорном) режиме</string>
+    <string name="time_travel_next_sunset">Следующий заход Солнца</string>
+    <string name="time_travel_next_sunrise">Следующий восход Солнца</string>
+    <string name="time_travel_next_fullmoon">Следующее полнолуние</string>
+    <string name="time_travel_mercury_transit_2016">Транзит Меркурия 9 мая 2016 г.</string>
+    <string name="time_travel_solar_eclipse_2024">Солнечное затмение 8 aпрельское 2024 г.</string>
+    <string name="time_travel_apollo_11">Посадка на Луну Аполлона 11</string>
+    <string name="time_travel_jupiter_saturn_2020">Соединение Юпитер-Сатурн</string>
 </resources>
 

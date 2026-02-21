@@ -377,4 +377,11 @@
     <string name="load_kml_file">Charger</string>
     <string name="show_object_info_auto_mode_title">Fiches info en mode automatique</string>
     <string name="show_object_info_auto_mode_summary">Afficher aussi les fiches info en touchant les objets en mode automatique (capteurs)</string>
+    <string name="time_travel_next_sunset">Prochain coucher de soleil</string>
+    <string name="time_travel_next_sunrise">Prochain lever de soleil</string>
+    <string name="time_travel_next_fullmoon">Prochaine pleine lune</string>
+    <string name="time_travel_mercury_transit_2016">Mercure transit du 9 mai 2016</string>
+    <string name="time_travel_solar_eclipse_2024">Éclipse solaire du 8 avril 2024</string>
+    <string name="time_travel_apollo_11">Alunissage d\'Apollo 11</string>
+    <string name="time_travel_jupiter_saturn_2020">Conjonction Jupiter-Saturne de 2020</string>
 </resources>

@@ -1,15 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="popular_date_examples">
-        <item>Сейчас</item>
-        <item>Следующий заход Солнца</item>
-        <item>Следующий восход Солнца</item>
-        <item>Следующее полнолуние</item>
-        <item>Транзит Меркурия 9 мая 2016 г.</item>
-        <item>Солнечное затмение 8 aпрельское 2024 г.</item>
-        <item>Посадка на Луну Аполлона 11</item>
-        <item>Соединение Юпитер-Сатурн</item>
-    </string-array>
     <string-array name="sensor_speed">
         <item>Медленно</item>
         <item>Обычно</item>

@@ -376,5 +376,12 @@
     <string name="kml_load_error">KML 파일 로드 실패</string>
     <string name="load_kml_dialog_title">KML 로드</string>
     <string name="load_kml_file">로드</string>
+    <string name="time_travel_next_sunset">다음 일몰</string>
+    <string name="time_travel_next_sunrise">다음 일출</string>
+    <string name="time_travel_next_fullmoon">다음 보름</string>
+    <string name="time_travel_mercury_transit_2016">Mercury transit of 2016-05-09</string>
+    <string name="time_travel_solar_eclipse_2024">2024 4월 8일 일식</string>
+    <string name="time_travel_apollo_11">아폴로 11호 달 착륙</string>
+    <string name="time_travel_jupiter_saturn_2020">목성-토성 결합</string>
 </resources>
 

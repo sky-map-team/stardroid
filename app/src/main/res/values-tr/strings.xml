@@ -207,4 +207,11 @@
 
     <string name="show_object_info_auto_mode_title">Otomatik modda bilgi kartları</string>
     <string name="show_object_info_auto_mode_summary">Otomatik (sensör) modda nesnelere dokunurken de bilgi kartlarını göster</string>
+    <string name="time_travel_next_sunset">Sonraki akşam günbatımı</string>
+    <string name="time_travel_next_sunrise">Sonraki sabah gün doğumu</string>
+    <string name="time_travel_next_fullmoon">Sonraki dolunay</string>
+    <string name="time_travel_mercury_transit_2016">09 Mayıs 2016 Merkür Geçişi</string>
+    <string name="time_travel_solar_eclipse_2024">8 Nisan 2024 Güneş Tutulması</string>
+    <string name="time_travel_apollo_11">Apollo 11 Ay İnişi</string>
+    <string name="time_travel_jupiter_saturn_2020">2020 Jüpiter-Satürn Kavuşumu</string>
 </resources>

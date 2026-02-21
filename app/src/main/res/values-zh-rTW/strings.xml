@@ -475,4 +475,11 @@
     <string name="rotate_horizon_preference_summary">地平線旋轉九十度（給橫幅式螢幕裝置，例如智慧眼鏡）</string>
     <string name="show_object_info_auto_mode_title">自動模式下的資訊卡</string>
     <string name="show_object_info_auto_mode_summary">在自動（感測器）模式下點擊天體時也顯示資訊卡</string>
+    <string name="time_travel_next_sunset">下次傍晚日落</string>
+    <string name="time_travel_next_sunrise">次日日出</string>
+    <string name="time_travel_next_fullmoon">下次月圓</string>
+    <string name="time_travel_mercury_transit_2016">2016 年 5 月 9 日的水星凌日</string>
+    <string name="time_travel_solar_eclipse_2024">2024 年 4 月 8 日的日食</string>
+    <string name="time_travel_apollo_11">阿波羅 11 號登月</string>
+    <string name="time_travel_jupiter_saturn_2020">2020 年木星土星合</string>
 </resources>

@@ -1,15 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="popular_date_examples">
-        <item>Adesso</item>
-        <item>Prossimo tramonto</item>
-        <item>Prossima alba</item>
-        <item>Prossima luna piena</item>
-        <item>Mercury transit of May 09, 2016</item>
-        <item>Eclissi solare del Apr 8, 2024</item>
-        <item>Allunaggio dell\'Apollo 11</item>
-        <item>Congiunzione Giove-Saturno</item>
-    </string-array>
     <string-array name="sensor_speed">
         <item>Lento</item>
         <item>Standard</item>
