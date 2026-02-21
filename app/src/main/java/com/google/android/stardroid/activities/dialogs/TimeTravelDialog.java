@@ -71,7 +71,7 @@ public class TimeTravelDialog extends Dialog {
   private Calendar calendar = Calendar.getInstance();
   private AstronomerModel model;
   private long lastClickTime = 0;
-  @Nullable private String currentSearchTarget = null;
+  private int currentSearchTargetRes = 0;  // 0 = no search target
 
   public TimeTravelDialog(final DynamicStarMapActivity parentActivity,
                           final AstronomerModel model) {
@@ -95,7 +95,7 @@ public class TimeTravelDialog extends Dialog {
           lastClickTime = SystemClock.elapsedRealtime();
           // Snap spinner back to hint so it's clear the custom date overrides any event.
           popularDatesMenu.setSelection(0);
-          currentSearchTarget = null;
+          currentSearchTargetRes = 0;
           createDatePicker().show();
         }
       });
@@ -107,7 +107,7 @@ public class TimeTravelDialog extends Dialog {
           lastClickTime = SystemClock.elapsedRealtime();
           // Snap spinner back to hint so it's clear the custom time overrides any event.
           popularDatesMenu.setSelection(0);
-          currentSearchTarget = null;
+          currentSearchTargetRes = 0;
           createTimePicker().show();
         }
       });
@@ -115,7 +115,7 @@ public class TimeTravelDialog extends Dialog {
     Button goButton = (Button) findViewById(R.id.timeTravelGo);
     goButton.setOnClickListener(new View.OnClickListener() {
         public void onClick(View v) {
-          parentActivity.setTimeTravelMode(calendar.getTime(), currentSearchTarget);
+          parentActivity.setTimeTravelMode(calendar.getTime(), currentSearchTargetRes);
           dismiss();
         }
       });
@@ -265,7 +265,7 @@ public class TimeTravelDialog extends Dialog {
   private void applyPopularEvent(int index) {
     TimeTravelEvent event = TimeTravelEvents.ALL.get(index);
     Log.d(TAG, "Popular event " + index + ": " + getContext().getString(event.getDisplayNameRes()));
-    currentSearchTarget = event.getSearchTarget();
+    currentSearchTargetRes = event.getSearchTargetRes();
     switch (event.getType()) {
       case NOW:
         calendar.setTime(new Date());

@@ -24,13 +24,15 @@ import com.google.android.stardroid.activities.dialogs.TimeTravelEvent.Type
  * @param displayNameRes String resource ID for the event's display name.
  * @param type How to compute the target time (computed dynamically or fixed epoch ms).
  * @param timestampMs Epoch milliseconds for FIXED events; ignored for computed types.
- * @param searchTarget Celestial object name to search for after time travel, or null.
+ * @param searchTargetRes String resource ID of the celestial object to search for after time
+ *   travel (e.g. R.string.sun), or 0 for none. Using a resource ID ensures the search matches
+ *   the localized name that the layer indexed itself under.
  */
 data class TimeTravelEvent(
   @StringRes val displayNameRes: Int,
   val type: Type,
   val timestampMs: Long = 0L,
-  val searchTarget: String? = null
+  @StringRes val searchTargetRes: Int = 0
 ) {
   enum class Type { NOW, NEXT_SUNSET, NEXT_SUNRISE, NEXT_FULL_MOON, FIXED }
 }
@@ -51,23 +53,23 @@ object TimeTravelEvents {
     TimeTravelEvent(R.string.time_travel_select_hint, Type.NOW),
 
     // Dynamically computed events
-    TimeTravelEvent(R.string.time_travel_next_sunset,   Type.NEXT_SUNSET,    searchTarget = "Sun"),
-    TimeTravelEvent(R.string.time_travel_next_sunrise,  Type.NEXT_SUNRISE,   searchTarget = "Sun"),
-    TimeTravelEvent(R.string.time_travel_next_fullmoon, Type.NEXT_FULL_MOON, searchTarget = "Moon"),
+    TimeTravelEvent(R.string.time_travel_next_sunset,   Type.NEXT_SUNSET,    searchTargetRes = R.string.sun),
+    TimeTravelEvent(R.string.time_travel_next_sunrise,  Type.NEXT_SUNRISE,   searchTargetRes = R.string.sun),
+    TimeTravelEvent(R.string.time_travel_next_fullmoon, Type.NEXT_FULL_MOON, searchTargetRes = R.string.moon),
 
     // 2026 events
-    TimeTravelEvent(R.string.time_travel_six_planet_parade_2026,   Type.FIXED, 1772321400000L,  "Saturn"),
-    TimeTravelEvent(R.string.time_travel_lunar_eclipse_2026,       Type.FIXED, 1772537400000L,  "Moon"),
-    TimeTravelEvent(R.string.time_travel_venus_jupiter_2026,       Type.FIXED, 1781035200000L,  "Venus"),
-    TimeTravelEvent(R.string.time_travel_mars_uranus_2026,         Type.FIXED, 1783206000000L,  "Mars"),
-    TimeTravelEvent(R.string.time_travel_solar_eclipse_2026,       Type.FIXED, 1786558200000L,  "Sun"),
-    TimeTravelEvent(R.string.time_travel_jupiter_occultation_2026, Type.FIXED, 1791293400000L,  "Jupiter"),
-    TimeTravelEvent(R.string.time_travel_supermoon_2026,           Type.FIXED, 1798149000000L,  "Moon"),
+    TimeTravelEvent(R.string.time_travel_six_planet_parade_2026,   Type.FIXED, 1772321400000L,  R.string.saturn),
+    TimeTravelEvent(R.string.time_travel_lunar_eclipse_2026,       Type.FIXED, 1772537400000L,  R.string.moon),
+    TimeTravelEvent(R.string.time_travel_venus_jupiter_2026,       Type.FIXED, 1781035200000L,  R.string.venus),
+    TimeTravelEvent(R.string.time_travel_mars_uranus_2026,         Type.FIXED, 1783206000000L,  R.string.mars),
+    TimeTravelEvent(R.string.time_travel_solar_eclipse_2026,       Type.FIXED, 1786558200000L,  R.string.sun),
+    TimeTravelEvent(R.string.time_travel_jupiter_occultation_2026, Type.FIXED, 1791293400000L,  R.string.jupiter),
+    TimeTravelEvent(R.string.time_travel_supermoon_2026,           Type.FIXED, 1798149000000L,  R.string.moon),
 
-    // Fixed historical / upcoming events
-    TimeTravelEvent(R.string.time_travel_mercury_transit_2016,     Type.FIXED, 1462805846000L,  "Mercury"),
-    TimeTravelEvent(R.string.time_travel_solar_eclipse_2024,       Type.FIXED, 1712604000000L,  "Sun"),
-    TimeTravelEvent(R.string.time_travel_apollo_11,                Type.FIXED, -14182953622L,   "Moon"),
-    TimeTravelEvent(R.string.time_travel_jupiter_saturn_2020,      Type.FIXED, 1608574800000L,  "Jupiter"),
+    // Fixed historical events
+    TimeTravelEvent(R.string.time_travel_mercury_transit_2016,     Type.FIXED, 1462805846000L,  R.string.mercury),
+    TimeTravelEvent(R.string.time_travel_solar_eclipse_2024,       Type.FIXED, 1712604000000L,  R.string.sun),
+    TimeTravelEvent(R.string.time_travel_apollo_11,                Type.FIXED, -14182953622L,   R.string.moon),
+    TimeTravelEvent(R.string.time_travel_jupiter_saturn_2020,      Type.FIXED, 1608574800000L,  R.string.jupiter),
   )
 }

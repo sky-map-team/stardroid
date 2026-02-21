@@ -42,7 +42,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.Nullable;
+import androidx.annotation.StringRes;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -487,10 +487,10 @@ public class DynamicStarMapActivity extends InjectableActivity
   }
 
   public void setTimeTravelMode(Date newTime) {
-    setTimeTravelMode(newTime, null);
+    setTimeTravelMode(newTime, 0);
   }
 
-  public void setTimeTravelMode(Date newTime, @Nullable String searchObjectName) {
+  public void setTimeTravelMode(Date newTime, @StringRes int searchObjectNameRes) {
     SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy.MM.dd G  HH:mm:ss z");
     Toast.makeText(this,
                    String.format(getString(R.string.time_travel_start_message_alt),
@@ -511,8 +511,8 @@ public class DynamicStarMapActivity extends InjectableActivity
     flashTheScreen();
     controller.goTimeTravel(newTime);
 
-    if (searchObjectName != null) {
-      final String targetName = searchObjectName;
+    if (searchObjectNameRes != 0) {
+      final String targetName = getString(searchObjectNameRes);
       // Delay until after the clock transition completes (TransitioningCompositeClock uses
       // 2500 ms) so that solar-system positions have been updated to the new time.
       handler.postDelayed(() -> {
