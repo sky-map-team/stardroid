@@ -58,6 +58,8 @@ class ObjectInfoRegistry @Inject constructor(
         val size = getOptionalString(entry.sizeKey)
         val mass = getOptionalString(entry.massKey)
 
+        val imagePath = entry.imageKey?.let { "celestial_images/$it" }
+
         return ObjectInfo(
             id = objectId,
             name = resources.getString(nameResId),
@@ -68,7 +70,9 @@ class ObjectInfoRegistry @Inject constructor(
             size = size,
             mass = mass,
             spectralClass = entry.spectralClass,
-            magnitude = entry.magnitude
+            magnitude = entry.magnitude,
+            imagePath = imagePath,
+            imageCredit = entry.imageCredit
         )
     }
 
@@ -153,7 +157,9 @@ class ObjectInfoRegistry @Inject constructor(
                 sizeKey = obj.optString("sizeKey", null),
                 massKey = obj.optString("massKey", null),
                 spectralClass = obj.optString("spectralClass", null),
-                magnitude = obj.optString("magnitude", null)
+                magnitude = obj.optString("magnitude", null),
+                imageKey = obj.optString("imageKey", null),
+                imageCredit = obj.optString("imageCredit", null)
             )
         }
 

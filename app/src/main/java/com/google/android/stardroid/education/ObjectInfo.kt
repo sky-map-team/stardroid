@@ -54,7 +54,9 @@ data class ObjectInfo(
     val size: String? = null,
     val mass: String? = null,
     val spectralClass: String? = null,
-    val magnitude: String? = null
+    val magnitude: String? = null,
+    val imagePath: String? = null,
+    val imageCredit: String? = null
 ) : Parcelable
 
 /**
@@ -70,5 +72,7 @@ internal data class ObjectInfoEntry(
     val sizeKey: String? = null,
     val massKey: String? = null,
     val spectralClass: String? = null,
-    val magnitude: String? = null
+    val magnitude: String? = null,
+    val imageKey: String? = null,
+    val imageCredit: String? = null
 )

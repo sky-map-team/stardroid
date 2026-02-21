@@ -18,6 +18,46 @@
             android:textStyle="bold"
             android:textColor="?android:attr/textColorPrimary" />
 
+        <FrameLayout
+            android:id="@+id/object_info_image_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/object_info_image"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/object_info_image_content_description"
+                android:clipToOutline="true"
+                android:background="@drawable/object_info_image_background" />
+
+            <TextView
+                android:id="@+id/object_info_tap_hint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="8dp"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="4dp"
+                android:background="#99000000"
+                android:text="@string/object_info_tap_to_expand"
+                android:textColor="#FFFFFF"
+                android:textSize="11sp" />
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/object_info_image_credit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textSize="10sp"
+            android:textColor="?android:attr/textColorTertiary"
+            android:visibility="gone" />
+
         <TextView
             android:id="@+id/object_info_description"
             android:layout_width="match_parent"
