@@ -70,7 +70,7 @@ public class MagneticDeclinationCalculatorSwitcher implements OnSharedPreference
   private float readOffsetPreference(SharedPreferences preferences) {
     String raw = preferences.getString(
         ApplicationConstants.MANUAL_COMPASS_ADJUSTMENT_PREF_KEY, "0");
-    if (raw == null || raw.trim().isEmpty()) return 0f;
+    if (raw.trim().isEmpty()) return 0f;
     try {
       float value = Float.parseFloat(raw.trim());
       if (Float.isNaN(value) || Float.isInfinite(value)) return 0f;
