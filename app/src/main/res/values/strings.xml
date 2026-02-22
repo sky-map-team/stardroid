@@ -235,20 +235,18 @@
     <string name="menu_calibrate">Calibrate</string>
     <string name="compass_calibration_activity_heading_compass">Compass -</string>
     <string name="compass_calibration_activity_do_not_show_this_again">Do not show this again</string>
-    <string name="compass_calibration_activity_warning">Your compass may need to be
-        calibrated</string>
+    <string name="compass_calibration_activity_warning">Hardware Calibration Required</string>
+    <string name="compass_calibration_activity_user_heading">Improve Your Alignment</string>
     <string name="compass_calib_what_to_do"
-        translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL">Your phone is reporting to Sky
-        Map that its internal compass is uncalibrated.
-    This is not a Sky Map issue but we can help you try to fix it. To calibrate the compass try moving your phone in a figure of eight
-        motion as demonstrated in this video %s until the accuracy reads \'high\'.</string>
+        translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL"><![CDATA[
+Sky Map relies on your phone\'s built-in compass sensor. If the accuracy shown above is low, the sensor needs to be \"reset\" by moving the phone in a figure-8 motion: %s.<br/><br/>
+    <b>Important:</b> Calibration is a hardware process handled by your device. While it improves the sensor\'s reliability, external magnetic interference can still cause a \"bias\" or slight drift. This is a physical limitation of mobile compasses and not an error within the app. See <i>Troubleshooting</i> in <i>Help</i> for other things to try.
+    ]]></string>
     <string name="compass_calib_what_to_do_user"
-        transation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL">Your phone\'s
-        compass
-        accuracy is shown above.
-    If it is not \'high\' then the compass may need calibrating. This is not a Sky Map issue, but
-    a property of your phone. To calibrate the compass try moving your phone in a figure of eight
-        motion as demonstrated in this video %s.</string>
+        transation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[
+        Your phone\'s reports its compass accuracy as shown above. To improve this, please perform a figure-8 motion with your device (%s).<br/><br/>
+        <b>Note on Accuracy:</b> Calibration is a hardware-level requirement of your phone, not a Sky Map setting. Even when calibrated, local magnetic fields (like car dashboards or magnets) may cause a slight bias in direction.  See <i>Troubleshooting</i> in <i>Help</i> for other things to try.
+    ]]></string>
     <string name="sensor_reverse_preference_title">Reverse Magnetic Z</string>
     <string name="sensor_reverse_preference_summary">Fix for phones with incorrectly implemented sensors - requires restart</string>
     <string name="whats_new_dialog_title">What\'s new</string>
