@@ -1,15 +1,28 @@
 #!/bin/bash
 
 # Deploy Sky Map APK to connected device
-# Usage: ./deploy.sh [-d]
+# Usage: ./deploy.sh [-d] [-p]
 #   -d: Deploy debug build (default: release)
+#   -p: Deploy to phone (USB device)
 
 BUILD_TYPE="release"
+ADB_FLAGS=""
 
 # Parse command line arguments
-if [ "$1" = "-d" ]; then
-  BUILD_TYPE="debug"
-fi
+while getopts "dp" opt; do
+  case $opt in
+    d)
+      BUILD_TYPE="debug"
+      ;;
+    p)
+      ADB_FLAGS="-d"
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG" >&2
+      exit 1
+      ;;
+  esac
+done
 
 APK_PATH="app/build/outputs/apk/gms/${BUILD_TYPE}/app-gms-${BUILD_TYPE}.apk"
 
@@ -21,7 +34,7 @@ if [ ! -f "$APK_PATH" ]; then
 fi
 
 echo "Deploying ${BUILD_TYPE} build to device..."
-adb install -r "$APK_PATH"
+adb $ADB_FLAGS install -r "$APK_PATH"
 
 if [ $? -eq 0 ]; then
   echo "Successfully deployed ${BUILD_TYPE} build"
