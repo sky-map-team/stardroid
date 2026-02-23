@@ -43,7 +43,7 @@ public class HelpDialogFragment extends DialogFragment {
     ((HasComponent<ActivityComponent>) getActivity()).getComponent().inject(this);
 
     LayoutInflater inflater = parentActivity.getLayoutInflater();
-    View view = inflater.inflate(R.layout.help, null);
+    View view = inflater.inflate(R.layout.webview_dialog, null);
     AlertDialog alertDialog = new AlertDialog.Builder(parentActivity)
         .setTitle(R.string.help_dialog_title)
         .setView(view).setNegativeButton(android.R.string.ok,
@@ -66,7 +66,7 @@ public class HelpDialogFragment extends DialogFragment {
         "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">" +
         "<link rel=\"stylesheet\" href=\"html/help.css\">" +
         "</head><body" + bodyClass + ">" + helpText + "</body></html>";
-    WebView webView = view.findViewById(R.id.help_webview);
+    WebView webView = view.findViewById(R.id.webview);
     webView.setWebViewClient(new WebViewClient() {
       @Override
       public boolean shouldOverrideUrlLoading(WebView view, String url) {
