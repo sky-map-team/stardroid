@@ -4,45 +4,42 @@ import os
 import json
 import urllib.request
 
-# Configuration for Sky Map
 REPO = "sky-map-team/stardroid"
 
-def get_git_log(base_ref, head_ref="HEAD"):
+def get_release_data(base_tag):
+    """Gathers date, logs, and issues in a single structured response."""
     try:
-        cmd = ["git", "log", f"{base_ref}..{head_ref}", "--oneline"]
-        return subprocess.check_output(cmd, stderr=subprocess.STDOUT).decode("utf-8")
-    except Exception as e:
-        return f"Error fetching git log: {str(e)}"
+        # 1. Get the date of the base tag
+        date_cmd = ["git", "log", "-1", "--format=%ai", base_tag]
+        tag_date_raw = subprocess.check_output(date_cmd, stderr=subprocess.STDOUT).decode("utf-8")
+        tag_date = tag_date_raw.split(" ")[0]
 
-def get_closed_issues(since_date):
-    """Fetches titles of issues closed since a specific date via GitHub API."""
-    # Token is optional, but we might get throttled if we don't use one.
-    token = os.environ.get("GITHUB_TOKEN")
-    url = f"https://api.github.com/repos/{REPO}/issues?state=closed&since={since_date}"
+        # 2. Get the git log
+        log_cmd = ["git", "log", f"{base_tag}..HEAD", "--oneline"]
+        git_log = subprocess.check_output(log_cmd, stderr=subprocess.STDOUT).decode("utf-8")
 
-    req = urllib.request.Request(url)
-    if token:
-        req.add_header("Authorization", f"token {token}")
-    req.add_header("Accept", "application/vnd.github.v3+json")
+        # 3. Get the closed issues from GitHub
+        # Token is optional but we might get throttled without it.
+        token = os.environ.get("GITHUB_TOKEN")
+        url = f"https://api.github.com/repos/{REPO}/issues?state=closed&since={tag_date}T00:00:00Z"
+        req = urllib.request.Request(url)
+        if token: req.add_header("Authorization", f"token {token}")
+        req.add_header("User-Agent", "Claude-Skill-Assistant")
 
-    try:
         with urllib.request.urlopen(req) as response:
-            issues = json.loads(response.read().decode())
-            # We only want actual issues, not Pull Requests (GitHub API treats PRs as issues)
-            titles = [f"#{i['number']}: {i['title']}" for i in issues if 'pull_request' not in i]
-            return "\n".join(titles) if titles else "No issues found."
+            issues_json = json.loads(response.read().decode())
+            issues = [f"#{i['number']}: {i['title']}" for i in issues_json if 'pull_request' not in i]
+
+        return {
+            "base_tag": base_tag,
+            "release_date": tag_date,
+            "commits": git_log.strip().split('\n'),
+            "closed_issues": issues
+        }
     except Exception as e:
-        return f"API Error: {str(e)}"
+        return {"error": str(e)}
 
 if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        print("Usage: python3 generate_changelog.py [log|issues] [arg]")
-        sys.exit(1)
-
-    cmd = sys.argv[1]
-    if cmd == "log":
-        ref = sys.argv[2] if len(sys.argv) > 2 else "HEAD"
-        print(get_git_log(ref))
-    elif cmd == "issues":
-        date = sys.argv[2] # Expects YYYY-MM-DD
-        print(get_closed_issues(date))
+    if len(sys.argv) > 1:
+        # If the skill provides a tag, get everything
+        print(json.dumps(get_release_data(sys.argv[1]), indent=2))
