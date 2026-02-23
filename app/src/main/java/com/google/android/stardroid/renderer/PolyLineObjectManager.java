@@ -53,11 +53,15 @@ public class PolyLineObjectManager extends RendererObjectManager {
     }
     // Create a defensive copy to avoid ConcurrentModificationException if the
     // source list is modified by another thread during iteration.
+    // NOTE: This isn't a true fix - this copy is itself not threadsafe.
     List<LinePrimitive> safeLines = new ArrayList<>(lines);
     int numLineSegments = 0;
     for (LinePrimitive l : safeLines) {
       numLineSegments += l.getVertices().size() - 1;
     }
+    // Just in case there's only a single line segment and somehow it mysteriously only has one
+    // vertex.
+    numLineSegments = Math.max(0, numLineSegments);
     
     // To render everything in one call, we render everything as a line list
     // rather than a series of line strips.
