@@ -52,7 +52,7 @@ android {
         minSdk 26
         targetSdk 36
         versionCode 1594
-        versionName "1.11.1:Venus"
+        versionName "1.12.0:Earth"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
