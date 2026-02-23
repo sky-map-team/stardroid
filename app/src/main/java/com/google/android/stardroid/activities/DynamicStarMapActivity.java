@@ -382,6 +382,7 @@ public class DynamicStarMapActivity extends InjectableActivity
       startActivity(new Intent(this, EditSettingsActivity.class));
     } else if (itemId == R.id.menu_item_credits) {
       Log.d(TAG, "Credits");
+      menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.CREDITS_OPENED_LABEL);
       creditsDialogFragment.show(fragmentManager, "Credits Dialog");
     } else if (itemId == R.id.menu_item_help) {
       Log.d(TAG, "Help");

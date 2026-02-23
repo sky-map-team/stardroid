@@ -49,6 +49,7 @@ public interface AnalyticsInterface {
   String TOGGLED_NIGHT_MODE_LABEL = "night_mode";
   String SEARCH_REQUESTED_LABEL = "search_requested";
   String SETTINGS_OPENED_LABEL = "settings_opened";
+  String CREDITS_OPENED_LABEL = "credits_opened";
   String HELP_OPENED_LABEL = "help_opened";
   String CALIBRATION_OPENED_LABEL = "calibration_opened";
   String TIME_TRAVEL_OPENED_LABEL = "time_travel_opened";
