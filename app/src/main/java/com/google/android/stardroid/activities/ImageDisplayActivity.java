@@ -77,10 +77,11 @@ public class ImageDisplayActivity extends InjectableActivity {
     selectedImage = galleryImages.get(position);
     ImageView imageView = (ImageView) findViewById(R.id.gallery_image);
     if (selectedImage.getAssetPath() != null) {
-      Bitmap bmp = AssetImageLoader.INSTANCE.loadBitmap(getAssets(), selectedImage.getAssetPath());
-      if (bmp != null) {
-        imageView.setImageBitmap(bmp);
-      }
+      AssetImageLoader.INSTANCE.loadBitmapAsync(getAssets(), selectedImage.getAssetPath(), bitmap -> {
+        if (bitmap != null) {
+          imageView.setImageBitmap(bitmap);
+        }
+      });
     } else {
       imageView.setImageResource(selectedImage.getImageId());
     }

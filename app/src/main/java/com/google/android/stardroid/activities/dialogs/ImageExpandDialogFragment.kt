@@ -41,9 +41,10 @@ class ImageExpandDialogFragment : DialogFragment() {
 
         val imagePath = arguments?.getString(ARG_IMAGE_PATH)
         if (imagePath != null) {
-            val bitmap = AssetImageLoader.loadBitmap(requireContext().assets, imagePath)
-            if (bitmap != null) {
-                imageView.setImageBitmap(bitmap)
+            AssetImageLoader.loadBitmapAsync(requireContext().assets, imagePath) { bitmap ->
+                if (bitmap != null && isAdded) {
+                    imageView.setImageBitmap(bitmap)
+                }
             }
         }
 

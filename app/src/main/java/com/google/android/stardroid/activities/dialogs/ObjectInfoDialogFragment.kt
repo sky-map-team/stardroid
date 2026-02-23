@@ -77,13 +77,14 @@ class ObjectInfoDialogFragment : DialogFragment() {
         val imageContainer = view.findViewById<View>(R.id.object_info_image_container)
         val imageView = view.findViewById<ImageView>(R.id.object_info_image)
         if (info.imagePath != null) {
-            val bitmap = AssetImageLoader.loadBitmap(parentActivity.assets, info.imagePath)
-            if (bitmap != null) {
-                imageView.setImageBitmap(bitmap)
-                imageContainer.visibility = View.VISIBLE
-                imageContainer.setOnClickListener {
-                    ImageExpandDialogFragment.newInstance(info.imagePath, info.imageCredit)
-                        .show(parentFragmentManager, "ExpandedImage")
+            AssetImageLoader.loadBitmapAsync(parentActivity.assets, info.imagePath) { bitmap ->
+                if (bitmap != null && isAdded) {
+                    imageView.setImageBitmap(bitmap)
+                    imageContainer.visibility = View.VISIBLE
+                    imageContainer.setOnClickListener {
+                        ImageExpandDialogFragment.newInstance(info.imagePath, info.imageCredit)
+                            .show(parentFragmentManager, "ExpandedImage")
+                    }
                 }
             }
         }

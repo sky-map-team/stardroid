@@ -87,11 +87,17 @@ public class ImageGalleryActivity extends InjectableActivity {
       }
       GalleryImage galleryImage = galleryImages.get(position);
       ImageView imageView = (ImageView) imagePanel.findViewById(R.id.image_gallery_image);
+      // Tag the view with position to handle recycling correctly
+      imageView.setTag(position);
+      // Clear previous image while loading
+      imageView.setImageResource(android.R.color.transparent);
       if (galleryImage.getAssetPath() != null) {
-        Bitmap bmp = AssetImageLoader.INSTANCE.loadBitmap(getAssets(), galleryImage.getAssetPath());
-        if (bmp != null) {
-          imageView.setImageBitmap(bmp);
-        }
+        AssetImageLoader.INSTANCE.loadBitmapAsync(getAssets(), galleryImage.getAssetPath(), bitmap -> {
+          // Only set if this view hasn't been recycled for a different position
+          if (imageView.getTag() != null && (int) imageView.getTag() == position && bitmap != null) {
+            imageView.setImageBitmap(bitmap);
+          }
+        });
       } else {
         imageView.setImageResource(galleryImage.getImageId());
       }

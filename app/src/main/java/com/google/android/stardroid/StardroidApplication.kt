@@ -28,6 +28,7 @@ import androidx.core.content.pm.PackageInfoCompat
 import androidx.preference.PreferenceManager
 import com.google.android.stardroid.layers.LayerManager
 import com.google.android.stardroid.util.AnalyticsInterface
+import com.google.android.stardroid.util.AssetImageLoader
 import com.google.android.stardroid.util.MiscUtil.getTag
 import com.google.android.stardroid.util.PreferenceChangeAnalyticsTracker
 import com.google.android.stardroid.views.PreferencesButton
@@ -120,7 +121,14 @@ class StardroidApplication : Application() {
   override fun onTerminate() {
     super.onTerminate()
     analytics.setEnabled(false)
-  }// TODO(jontayler): update to use the info created by gradle.
+  }
+
+  override fun onTrimMemory(level: Int) {
+    super.onTrimMemory(level)
+    AssetImageLoader.onTrimMemory(level)
+  }
+
+  // TODO(jontayler): update to use the info created by gradle.
 
   /**
    * Returns the version string for Sky Map.
