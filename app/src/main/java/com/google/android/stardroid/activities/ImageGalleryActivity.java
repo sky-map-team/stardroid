@@ -98,7 +98,7 @@ public class ImageGalleryActivity extends InjectableActivity {
       if (galleryImage.getAssetPath() != null) {
         ImageLoadHandle handle = AssetImageLoader.INSTANCE.loadBitmapAsync(getAssets(), galleryImage.getAssetPath(), bitmap -> {
           // Only set if this view hasn't been recycled for a different position
-          if (imageView.getTag() != null && (int) imageView.getTag() == position && bitmap != null) {
+          if (!isFinishing() && imageView.getTag() != null && (int) imageView.getTag() == position && bitmap != null) {
             imageView.setImageBitmap(bitmap);
           }
         });
