@@ -273,5 +273,8 @@ Sky Map relies on your phone\'s built-in compass sensor. If the accuracy shown a
     <string name="object_info_mass_label" translation_description="Label for mass field">Mass:</string>
     <string name="object_info_spectral_label" translation_description="Label for spectral class">Spectral:</string>
     <string name="object_info_magnitude_label" translation_description="Label for apparent magnitude">Magnitude:</string>
+    <string name="object_info_image_content_description" translation_description="Accessibility description for celestial object photo">Photo of celestial object</string>
+    <string name="object_info_tap_to_expand" translation_description="Hint shown on image to tap to expand">Tap to expand</string>
+    <string name="object_info_tap_to_close" translation_description="Hint shown on expanded image to tap to close">Tap to close</string>
 
 </resources>

@@ -15,6 +15,7 @@
 package com.google.android.stardroid.activities;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -35,8 +36,11 @@ import com.google.android.stardroid.activities.util.EdgeToEdgeFixer;
 import com.google.android.stardroid.gallery.GalleryFactory;
 import com.google.android.stardroid.gallery.GalleryImage;
 import com.google.android.stardroid.util.Analytics;
+import com.google.android.stardroid.util.AssetImageLoader;
+import com.google.android.stardroid.util.ImageLoadHandle;
 import com.google.android.stardroid.util.MiscUtil;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -58,6 +62,8 @@ public class ImageGalleryActivity extends InjectableActivity {
   ActivityLightLevelManager activityLightLevelManager;
   @Inject
   Analytics analytics;
+
+  private final List<ImageLoadHandle> pendingImageLoads = new ArrayList<>();
 
   private class ImageAdapter extends BaseAdapter {
     public int getCount() {
@@ -85,7 +91,26 @@ public class ImageGalleryActivity extends InjectableActivity {
       }
       GalleryImage galleryImage = galleryImages.get(position);
       ImageView imageView = (ImageView) imagePanel.findViewById(R.id.image_gallery_image);
-      imageView.setImageResource(galleryImage.getImageId());
+      // Tag the view with position to handle recycling correctly
+      imageView.setTag(position);
+      // Clear previous image while loading
+      imageView.setImageResource(android.R.color.transparent);
+      if (galleryImage.getAssetPath() != null) {
+        ImageLoadHandle handle = AssetImageLoader.INSTANCE.loadBitmapAsync(getAssets(), galleryImage.getAssetPath(), bitmap -> {
+          // Only set if this view hasn't been recycled for a different position
+          if (!isFinishing() && imageView.getTag() != null && (int) imageView.getTag() == position && bitmap != null) {
+            imageView.setImageBitmap(bitmap);
+          }
+        });
+        // isPending() is false for synchronous cache hits (already delivered), so skip tracking.
+        // For in-flight requests, track the handle and remove it once complete.
+        if (handle.isPending()) {
+          pendingImageLoads.add(handle);
+          handle.setOnComplete(() -> pendingImageLoads.remove(handle));
+        }
+      } else {
+        imageView.setImageResource(galleryImage.getImageId());
+      }
       TextView imageLabel = (TextView) imagePanel.findViewById(R.id.image_gallery_title);
       imageLabel.setText(galleryImage.getName());
       return imagePanel;
@@ -121,6 +146,15 @@ public class ImageGalleryActivity extends InjectableActivity {
   public void onPause() {
     super.onPause();
     activityLightLevelManager.onPause();
+  }
+
+  @Override
+  protected void onDestroy() {
+    super.onDestroy();
+    for (ImageLoadHandle handle : pendingImageLoads) {
+      handle.cancel();
+    }
+    pendingImageLoads.clear();
   }
 
   private void addImagesToGallery() {

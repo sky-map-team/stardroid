@@ -36,6 +36,8 @@ class ObjectInfoTest {
         assertThat(info.distance).isNull()
         assertThat(info.size).isNull()
         assertThat(info.mass).isNull()
+        assertThat(info.imagePath).isNull()
+        assertThat(info.imageCredit).isNull()
     }
 
     @Test
@@ -84,6 +86,22 @@ class ObjectInfoTest {
         assertThat(copy.description).isEqualTo(original.description)
         assertThat(copy.type).isEqualTo(ObjectType.PLANET)
         assertThat(copy.distance).isEqualTo("108M km")
+    }
+
+    @Test
+    fun testObjectInfoWithImageCredit() {
+        val info = ObjectInfo(
+            id = "jupiter",
+            name = "Jupiter",
+            description = "Gas giant",
+            funFact = "Has a Great Red Spot",
+            type = ObjectType.PLANET,
+            imagePath = "celestial_images/planets/hubble_jupiter.jpg",
+            imageCredit = "NASA/ESA/Hubble"
+        )
+
+        assertThat(info.imagePath).isEqualTo("celestial_images/planets/hubble_jupiter.jpg")
+        assertThat(info.imageCredit).isEqualTo("NASA/ESA/Hubble")
     }
 
     @Test

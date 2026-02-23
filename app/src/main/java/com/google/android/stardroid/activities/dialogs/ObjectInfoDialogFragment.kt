@@ -18,10 +18,13 @@ import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.ImageView
 import android.widget.TextView
 import com.google.android.stardroid.R
 import com.google.android.stardroid.education.ObjectInfo
 import com.google.android.stardroid.inject.HasComponent
+import com.google.android.stardroid.util.AssetImageLoader
+import com.google.android.stardroid.util.ImageLoadHandle
 import com.google.android.stardroid.util.MiscUtil
 import javax.inject.Inject
 
@@ -36,6 +39,8 @@ class ObjectInfoDialogFragment : DialogFragment() {
 
     @Inject
     lateinit var parentActivity: Activity
+
+    private var imageLoadHandle: ImageLoadHandle? = null
 
     /**
      * Interface that hosting activities must implement for dependency injection.
@@ -70,6 +75,30 @@ class ObjectInfoDialogFragment : DialogFragment() {
 
         // Populate the view with object information
         view.findViewById<TextView>(R.id.object_info_name).text = info.name
+
+        // Display celestial image if available
+        val imageContainer = view.findViewById<View>(R.id.object_info_image_container)
+        val imageView = view.findViewById<ImageView>(R.id.object_info_image)
+        if (info.imagePath != null) {
+            imageLoadHandle = AssetImageLoader.loadBitmapAsync(parentActivity.assets, info.imagePath) { bitmap ->
+                if (bitmap != null && isAdded) {
+                    imageView.setImageBitmap(bitmap)
+                    imageContainer.visibility = View.VISIBLE
+                    imageContainer.setOnClickListener {
+                        ImageExpandDialogFragment.newInstance(info.imagePath, info.imageCredit)
+                            .show(parentFragmentManager, "ExpandedImage")
+                    }
+                }
+            }
+        }
+
+        // Display image credit if available
+        val imageCreditView = view.findViewById<TextView>(R.id.object_info_image_credit)
+        if (info.imageCredit != null && info.imagePath != null) {
+            imageCreditView.text = info.imageCredit
+            imageCreditView.visibility = View.VISIBLE
+        }
+
         view.findViewById<TextView>(R.id.object_info_description).text = info.description
         view.findViewById<TextView>(R.id.object_info_funfact).text = info.funFact
 
@@ -125,6 +154,12 @@ class ObjectInfoDialogFragment : DialogFragment() {
             return true
         }
         return false
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        imageLoadHandle?.cancel()
+        imageLoadHandle = null
     }
 
     companion object {

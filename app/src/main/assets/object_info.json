@@ -10,7 +10,9 @@
       "sizeKey": "object_info_sun_size",
       "massKey": "object_info_sun_mass",
       "spectralClass": "G2V",
-      "magnitude": "-26.74"
+      "magnitude": "-26.74",
+      "imageKey": "stars/nasa_sun.jpg",
+      "imageCredit": "NASA/SDO"
     },
     "moon": {
       "nameKey": "moon",
@@ -19,7 +21,9 @@
       "type": "moon",
       "distanceKey": "object_info_moon_distance",
       "sizeKey": "object_info_moon_size",
-      "massKey": "object_info_moon_mass"
+      "massKey": "object_info_moon_mass",
+      "imageKey": "stars/nasa_moon.jpg",
+      "imageCredit": "NASA/GSFC/ASU"
     },
     "mercury": {
       "nameKey": "mercury",
@@ -28,7 +32,9 @@
       "type": "planet",
       "distanceKey": "object_info_mercury_distance",
       "sizeKey": "object_info_mercury_size",
-      "massKey": "object_info_mercury_mass"
+      "massKey": "object_info_mercury_mass",
+      "imageKey": "planets/nasa_mercury.jpg",
+      "imageCredit": "NASA/GSFC"
     },
     "venus": {
       "nameKey": "venus",
@@ -37,7 +43,9 @@
       "type": "planet",
       "distanceKey": "object_info_venus_distance",
       "sizeKey": "object_info_venus_size",
-      "massKey": "object_info_venus_mass"
+      "massKey": "object_info_venus_mass",
+      "imageKey": "planets/nasa_venus.jpg",
+      "imageCredit": "NASA/JPL"
     },
     "mars": {
       "nameKey": "mars",
@@ -46,7 +54,9 @@
       "type": "planet",
       "distanceKey": "object_info_mars_distance",
       "sizeKey": "object_info_mars_size",
-      "massKey": "object_info_mars_mass"
+      "massKey": "object_info_mars_mass",
+      "imageKey": "planets/hubble_mars.jpg",
+      "imageCredit": "NASA/ESA/Hubble"
     },
     "jupiter": {
       "nameKey": "jupiter",
@@ -55,7 +65,9 @@
       "type": "planet",
       "distanceKey": "object_info_jupiter_distance",
       "sizeKey": "object_info_jupiter_size",
-      "massKey": "object_info_jupiter_mass"
+      "massKey": "object_info_jupiter_mass",
+      "imageKey": "planets/hubble_jupiter.jpg",
+      "imageCredit": "NASA/ESA/Hubble"
     },
     "saturn": {
       "nameKey": "saturn",
@@ -64,7 +76,9 @@
       "type": "planet",
       "distanceKey": "object_info_saturn_distance",
       "sizeKey": "object_info_saturn_size",
-      "massKey": "object_info_saturn_mass"
+      "massKey": "object_info_saturn_mass",
+      "imageKey": "planets/hubble_saturn.jpg",
+      "imageCredit": "NASA/ESA/Hubble"
     },
     "uranus": {
       "nameKey": "uranus",
@@ -73,7 +87,9 @@
       "type": "planet",
       "distanceKey": "object_info_uranus_distance",
       "sizeKey": "object_info_uranus_size",
-      "massKey": "object_info_uranus_mass"
+      "massKey": "object_info_uranus_mass",
+      "imageKey": "planets/hubble_uranus.jpg",
+      "imageCredit": "NASA/ESA/Hubble"
     },
     "neptune": {
       "nameKey": "neptune",
@@ -82,7 +98,9 @@
       "type": "planet",
       "distanceKey": "object_info_neptune_distance",
       "sizeKey": "object_info_neptune_size",
-      "massKey": "object_info_neptune_mass"
+      "massKey": "object_info_neptune_mass",
+      "imageKey": "planets/hubble_neptune.jpg",
+      "imageCredit": "NASA/ESA/Hubble"
     },
     "pluto": {
       "nameKey": "pluto",
@@ -91,7 +109,9 @@
       "type": "dwarf_planet",
       "distanceKey": "object_info_pluto_distance",
       "sizeKey": "object_info_pluto_size",
-      "massKey": "object_info_pluto_mass"
+      "massKey": "object_info_pluto_mass",
+      "imageKey": "planets/nh_pluto_in_false_color.jpg",
+      "imageCredit": "NASA/JHUAPL/SwRI"
     },
     "sirius": {
       "nameKey": "sirius",
@@ -102,7 +122,9 @@
       "sizeKey": "object_info_sirius_size",
       "massKey": "object_info_sirius_mass",
       "spectralClass": "A1V",
-      "magnitude": "-1.46"
+      "magnitude": "-1.46",
+      "imageKey": "stars/eso_sirius.jpg",
+      "imageCredit": "NASA/ESA/Hubble"
     },
     "vega": {
       "nameKey": "vega",
@@ -113,7 +135,9 @@
       "sizeKey": "object_info_vega_size",
       "massKey": "object_info_vega_mass",
       "spectralClass": "A0V",
-      "magnitude": "0.03"
+      "magnitude": "0.03",
+      "imageKey": "stars/eso_vega.jpg",
+      "imageCredit": "Stephen Rahn (CC0)"
     },
     "betelgeuse": {
       "nameKey": "betelgeuse",
@@ -124,7 +148,9 @@
       "sizeKey": "object_info_betelgeuse_size",
       "massKey": "object_info_betelgeuse_mass",
       "spectralClass": "M1-M2 Iab",
-      "magnitude": "0.42"
+      "magnitude": "0.42",
+      "imageKey": "stars/eso_betelgeuse.jpg",
+      "imageCredit": "ALMA (ESO/NAOJ/NRAO)/E. O'Gorman/P. Kervella"
     },
     "rigel": {
       "nameKey": "rigel",
@@ -135,7 +161,9 @@
       "sizeKey": "object_info_rigel_size",
       "massKey": "object_info_rigel_mass",
       "spectralClass": "B8 Ia",
-      "magnitude": "0.13"
+      "magnitude": "0.13",
+      "imageKey": "stars/eso_rigel.jpg",
+      "imageCredit": "ESO/Digitized Sky Survey 2"
     },
     "procyon": {
       "nameKey": "procyon",
@@ -146,7 +174,9 @@
       "sizeKey": "object_info_procyon_size",
       "massKey": "object_info_procyon_mass",
       "spectralClass": "F5 IV-V",
-      "magnitude": "0.34"
+      "magnitude": "0.34",
+      "imageKey": "stars/eso_procyon.jpg",
+      "imageCredit": "ESO/Digitized Sky Survey 2"
     },
     "polaris": {
       "nameKey": "polaris",
@@ -157,7 +187,9 @@
       "sizeKey": "object_info_polaris_size",
       "massKey": "object_info_polaris_mass",
       "spectralClass": "F7 Ib",
-      "magnitude": "1.98"
+      "magnitude": "1.98",
+      "imageKey": "stars/hubble_polaris.jpg",
+      "imageCredit": "NASA/ESA/Hubble"
     },
     "deneb": {
       "nameKey": "deneb",
@@ -168,7 +200,9 @@
       "sizeKey": "object_info_deneb_size",
       "massKey": "object_info_deneb_mass",
       "spectralClass": "A2 Ia",
-      "magnitude": "1.25"
+      "magnitude": "1.25",
+      "imageKey": "stars/eso_deneb.jpg",
+      "imageCredit": "ESO/Digitized Sky Survey 2"
     },
     "arcturus": {
       "nameKey": "arcturus",
@@ -179,7 +213,9 @@
       "sizeKey": "object_info_arcturus_size",
       "massKey": "object_info_arcturus_mass",
       "spectralClass": "K1.5 III",
-      "magnitude": "-0.05"
+      "magnitude": "-0.05",
+      "imageKey": "stars/eso_arcturus.jpg",
+      "imageCredit": "ESO"
     },
     "canopus": {
       "nameKey": "canopus",
@@ -190,7 +226,9 @@
       "sizeKey": "object_info_canopus_size",
       "massKey": "object_info_canopus_mass",
       "spectralClass": "A9 II",
-      "magnitude": "-0.74"
+      "magnitude": "-0.74",
+      "imageKey": "stars/iss_canopus.jpg",
+      "imageCredit": "ESO"
     },
     "aldebaran": {
       "nameKey": "aldebaran",
@@ -201,7 +239,9 @@
       "sizeKey": "object_info_aldebaran_size",
       "massKey": "object_info_aldebaran_mass",
       "spectralClass": "K5+ III",
-      "magnitude": "0.85"
+      "magnitude": "0.85",
+      "imageKey": "stars/eso_aldebaran.jpg",
+      "imageCredit": "ESO"
     },
     "antares": {
       "nameKey": "antares",
@@ -212,7 +252,9 @@
       "sizeKey": "object_info_antares_size",
       "massKey": "object_info_antares_mass",
       "spectralClass": "M1.5 Iab",
-      "magnitude": "0.96"
+      "magnitude": "0.96",
+      "imageKey": "stars/eso_antares.jpg",
+      "imageCredit": "ESO/K. Ohnaka"
     },
     "capella": {
       "nameKey": "capella",
@@ -223,7 +265,9 @@
       "sizeKey": "object_info_capella_size",
       "massKey": "object_info_capella_mass",
       "spectralClass": "G3 III + G0 III",
-      "magnitude": "0.08"
+      "magnitude": "0.08",
+      "imageKey": "stars/eso_capella.jpg",
+      "imageCredit": "ESO/Digitized Sky Survey 2"
     },
     "altair": {
       "nameKey": "altair",
@@ -234,7 +278,9 @@
       "sizeKey": "object_info_altair_size",
       "massKey": "object_info_altair_mass",
       "spectralClass": "A7 V",
-      "magnitude": "0.76"
+      "magnitude": "0.76",
+      "imageKey": "stars/eso_altair.jpg",
+      "imageCredit": "ESO/Digitized Sky Survey 2"
     },
     "spica": {
       "nameKey": "spica",
@@ -245,7 +291,9 @@
       "sizeKey": "object_info_spica_size",
       "massKey": "object_info_spica_mass",
       "spectralClass": "B1 III-IV",
-      "magnitude": "0.97"
+      "magnitude": "0.97",
+      "imageKey": "stars/eso_spica.jpg",
+      "imageCredit": "ESO/Digitized Sky Survey 2"
     },
     "achernar": {
       "nameKey": "achernar",
@@ -256,7 +304,9 @@
       "sizeKey": "object_info_achernar_size",
       "massKey": "object_info_achernar_mass",
       "spectralClass": "B6 Vep",
-      "magnitude": "0.46"
+      "magnitude": "0.46",
+      "imageKey": "stars/eso_achernar.jpg",
+      "imageCredit": "ESO/Digitized Sky Survey 2"
     },
     "hadar": {
       "nameKey": "hadar",
@@ -267,7 +317,9 @@
       "sizeKey": "object_info_hadar_size",
       "massKey": "object_info_hadar_mass",
       "spectralClass": "B1 III",
-      "magnitude": "0.61"
+      "magnitude": "0.61",
+      "imageKey": "stars/eso_hadar.jpg",
+      "imageCredit": "ESO/Digitized Sky Survey 2"
     },
     "regulus": {
       "nameKey": "regulus",
@@ -278,7 +330,9 @@
       "sizeKey": "object_info_regulus_size",
       "massKey": "object_info_regulus_mass",
       "spectralClass": "B8 IVn",
-      "magnitude": "1.40"
+      "magnitude": "1.40",
+      "imageKey": "stars/eso_regulus.jpg",
+      "imageCredit": "ESO/Digitized Sky Survey 2"
     },
     "acrux": {
       "nameKey": "acrux",
@@ -289,7 +343,9 @@
       "sizeKey": "object_info_acrux_size",
       "massKey": "object_info_acrux_mass",
       "spectralClass": "B0.5 IV",
-      "magnitude": "0.76"
+      "magnitude": "0.76",
+      "imageKey": "stars/eso_acrux.jpg",
+      "imageCredit": "ESO/Digitized Sky Survey 2"
     },
     "castor": {
       "nameKey": "castor",
@@ -300,7 +356,9 @@
       "sizeKey": "object_info_castor_size",
       "massKey": "object_info_castor_mass",
       "spectralClass": "A1 V",
-      "magnitude": "1.58"
+      "magnitude": "1.58",
+      "imageKey": "stars/eso_castor.jpg",
+      "imageCredit": "ESO/Digitized Sky Survey 2"
     },
     "pollux": {
       "nameKey": "pollux",
@@ -311,7 +369,9 @@
       "sizeKey": "object_info_pollux_size",
       "massKey": "object_info_pollux_mass",
       "spectralClass": "K0 III",
-      "magnitude": "1.14"
+      "magnitude": "1.14",
+      "imageKey": "stars/eso_pollux.jpg",
+      "imageCredit": "ESO/Digitized Sky Survey 2"
     },
     "fomalhaut": {
       "nameKey": "fomalhaut",
@@ -322,7 +382,9 @@
       "sizeKey": "object_info_fomalhaut_size",
       "massKey": "object_info_fomalhaut_mass",
       "spectralClass": "A3 V",
-      "magnitude": "1.16"
+      "magnitude": "1.16",
+      "imageKey": "stars/eso_fomalhaut.jpg",
+      "imageCredit": "ESO/Digitized Sky Survey 2"
     },
     "adhara": {
       "nameKey": "adhara",
@@ -333,7 +395,9 @@
       "sizeKey": "object_info_adhara_size",
       "massKey": "object_info_adhara_mass",
       "spectralClass": "B2 II",
-      "magnitude": "1.50"
+      "magnitude": "1.50",
+      "imageKey": "stars/eso_adhara.jpg",
+      "imageCredit": "ESO/Digitized Sky Survey 2"
     },
     "shaula": {
       "nameKey": "shaula",
@@ -344,7 +408,9 @@
       "sizeKey": "object_info_shaula_size",
       "massKey": "object_info_shaula_mass",
       "spectralClass": "B2 IV",
-      "magnitude": "1.62"
+      "magnitude": "1.62",
+      "imageKey": "stars/eso_shaula.jpg",
+      "imageCredit": "ESO/Digitized Sky Survey 2"
     },
     "alnilam": {
       "nameKey": "alnilam",
@@ -355,7 +421,9 @@
       "sizeKey": "object_info_alnilam_size",
       "massKey": "object_info_alnilam_mass",
       "spectralClass": "B0 Ia",
-      "magnitude": "1.69"
+      "magnitude": "1.69",
+      "imageKey": "stars/eso_alnilam.jpg",
+      "imageCredit": "ESO/Digitized Sky Survey 2"
     },
     "alphard": {
       "nameKey": "alphard",
@@ -366,7 +434,9 @@
       "sizeKey": "object_info_alphard_size",
       "massKey": "object_info_alphard_mass",
       "spectralClass": "K3 II-III",
-      "magnitude": "2.00"
+      "magnitude": "2.00",
+      "imageKey": "stars/eso_alphard.jpg",
+      "imageCredit": "ESO/Digitized Sky Survey 2"
     },
     "mirach": {
       "nameKey": "mirach",
@@ -377,7 +447,9 @@
       "sizeKey": "object_info_mirach_size",
       "massKey": "object_info_mirach_mass",
       "spectralClass": "M0 III",
-      "magnitude": "2.05"
+      "magnitude": "2.05",
+      "imageKey": "stars/eso_mirach.jpg",
+      "imageCredit": "ESO/Digitized Sky Survey 2"
     },
     "algol": {
       "nameKey": "algol",
@@ -388,7 +460,9 @@
       "sizeKey": "object_info_algol_size",
       "massKey": "object_info_algol_mass",
       "spectralClass": "B8 V",
-      "magnitude": "2.12"
+      "magnitude": "2.12",
+      "imageKey": "stars/eso_algol.jpg",
+      "imageCredit": "ESO/Digitized Sky Survey 2"
     },
     "alpha_centauri": {
       "nameKey": "alpha_centauri",
@@ -399,7 +473,9 @@
       "sizeKey": "object_info_alpha_centauri_size",
       "massKey": "object_info_alpha_centauri_mass",
       "spectralClass": "G2 V + K1 V",
-      "magnitude": "-0.27"
+      "magnitude": "-0.27",
+      "imageKey": "stars/eso_alpha_centauri.jpg",
+      "imageCredit": "ESO/Digitized Sky Survey 2/Davide De Martin"
     },
     "dubhe": {
       "nameKey": "dubhe",
@@ -410,7 +486,9 @@
       "sizeKey": "object_info_dubhe_size",
       "massKey": "object_info_dubhe_mass",
       "spectralClass": "K0 III",
-      "magnitude": "1.79"
+      "magnitude": "1.79",
+      "imageKey": "stars/eso_dubhe.jpg",
+      "imageCredit": "ESO/Digitized Sky Survey 2"
     },
     "alioth": {
       "nameKey": "alioth",
@@ -421,7 +499,9 @@
       "sizeKey": "object_info_alioth_size",
       "massKey": "object_info_alioth_mass",
       "spectralClass": "A1 III-IVp",
-      "magnitude": "1.77"
+      "magnitude": "1.77",
+      "imageKey": "stars/eso_alioth.jpg",
+      "imageCredit": "ESO/Digitized Sky Survey 2"
     },
     "hamal": {
       "nameKey": "hamal",
@@ -432,7 +512,9 @@
       "sizeKey": "object_info_hamal_size",
       "massKey": "object_info_hamal_mass",
       "spectralClass": "K2 III",
-      "magnitude": "2.00"
+      "magnitude": "2.00",
+      "imageKey": "stars/eso_hamal.jpg",
+      "imageCredit": "ESO/Digitized Sky Survey 2"
     },
     "rasalhague": {
       "nameKey": "rasalhague",
@@ -443,7 +525,9 @@
       "sizeKey": "object_info_rasalhague_size",
       "massKey": "object_info_rasalhague_mass",
       "spectralClass": "A5 III",
-      "magnitude": "2.07"
+      "magnitude": "2.07",
+      "imageKey": "stars/eso_rasalhague.jpg",
+      "imageCredit": "ESO/Digitized Sky Survey 2"
     },
     "denebola": {
       "nameKey": "denebola",
@@ -454,7 +538,9 @@
       "sizeKey": "object_info_denebola_size",
       "massKey": "object_info_denebola_mass",
       "spectralClass": "A3 V",
-      "magnitude": "2.14"
+      "magnitude": "2.14",
+      "imageKey": "stars/eso_denebola.jpg",
+      "imageCredit": "ESO/Digitized Sky Survey 2"
     },
     "alpheratz": {
       "nameKey": "alpheratz",
@@ -465,7 +551,9 @@
       "sizeKey": "object_info_alpheratz_size",
       "massKey": "object_info_alpheratz_mass",
       "spectralClass": "B8 IVp",
-      "magnitude": "2.06"
+      "magnitude": "2.06",
+      "imageKey": "stars/eso_alpheratz.jpg",
+      "imageCredit": "ESO/Digitized Sky Survey 2"
     },
     "markab": {
       "nameKey": "markab",
@@ -476,7 +564,9 @@
       "sizeKey": "object_info_markab_size",
       "massKey": "object_info_markab_mass",
       "spectralClass": "B9 III",
-      "magnitude": "2.49"
+      "magnitude": "2.49",
+      "imageKey": "stars/eso_markab.jpg",
+      "imageCredit": "ESO/Digitized Sky Survey 2"
     },
     "enif": {
       "nameKey": "enif",
@@ -487,7 +577,9 @@
       "sizeKey": "object_info_enif_size",
       "massKey": "object_info_enif_mass",
       "spectralClass": "K2 Ib",
-      "magnitude": "2.39"
+      "magnitude": "2.39",
+      "imageKey": "stars/eso_enif.jpg",
+      "imageCredit": "ESO/Digitized Sky Survey 2"
     },
     "scheat": {
       "nameKey": "scheat",
@@ -498,7 +590,9 @@
       "sizeKey": "object_info_scheat_size",
       "massKey": "object_info_scheat_mass",
       "spectralClass": "M2 II-III",
-      "magnitude": "2.42"
+      "magnitude": "2.42",
+      "imageKey": "stars/eso_scheat.jpg",
+      "imageCredit": "ESO/Digitized Sky Survey 2"
     },
     "nunki": {
       "nameKey": "nunki",
@@ -509,7 +603,9 @@
       "sizeKey": "object_info_nunki_size",
       "massKey": "object_info_nunki_mass",
       "spectralClass": "B2.5 V",
-      "magnitude": "2.05"
+      "magnitude": "2.05",
+      "imageKey": "stars/eso_nunki.jpg",
+      "imageCredit": "ESO/Digitized Sky Survey 2"
     },
     "diphda": {
       "nameKey": "diphda",
@@ -520,7 +616,9 @@
       "sizeKey": "object_info_diphda_size",
       "massKey": "object_info_diphda_mass",
       "spectralClass": "K0 III",
-      "magnitude": "2.02"
+      "magnitude": "2.02",
+      "imageKey": "stars/eso_diphda.jpg",
+      "imageCredit": "ESO/Digitized Sky Survey 2"
     },
     "m1": {
       "nameKey": "m1",
@@ -529,7 +627,9 @@
       "type": "nebula",
       "distanceKey": "object_info_m1_distance",
       "sizeKey": "object_info_m1_size",
-      "magnitude": "8.4"
+      "magnitude": "8.4",
+      "imageKey": "messier/hubble_m1.jpg",
+      "imageCredit": "NASA/ESA/Hubble"
     },
     "m13": {
       "nameKey": "m13",
@@ -538,7 +638,9 @@
       "type": "cluster",
       "distanceKey": "object_info_m13_distance",
       "sizeKey": "object_info_m13_size",
-      "magnitude": "5.8"
+      "magnitude": "5.8",
+      "imageKey": "messier/hubble_m13.jpg",
+      "imageCredit": "NASA/ESA/Hubble"
     },
     "m31": {
       "nameKey": "m31",
@@ -548,7 +650,9 @@
       "distanceKey": "object_info_m31_distance",
       "sizeKey": "object_info_m31_size",
       "massKey": "object_info_m31_mass",
-      "magnitude": "3.4"
+      "magnitude": "3.4",
+      "imageKey": "messier/kennett_m31.jpg",
+      "imageCredit": "Adam Kennett/Wikimedia Commons"
     },
     "m42": {
       "nameKey": "m42",
@@ -557,7 +661,9 @@
       "type": "nebula",
       "distanceKey": "object_info_m42_distance",
       "sizeKey": "object_info_m42_size",
-      "magnitude": "4.0"
+      "magnitude": "4.0",
+      "imageKey": "messier/hubble_orion.jpg",
+      "imageCredit": "NASA/ESA/Hubble"
     },
     "m45": {
       "nameKey": "m45",
@@ -566,7 +672,9 @@
       "type": "cluster",
       "distanceKey": "object_info_m45_distance",
       "sizeKey": "object_info_m45_size",
-      "magnitude": "1.6"
+      "magnitude": "1.6",
+      "imageKey": "messier/hubble_m45.jpg",
+      "imageCredit": "NASA/ESA/Hubble"
     },
     "m51": {
       "nameKey": "m51",
@@ -575,7 +683,9 @@
       "type": "galaxy",
       "distanceKey": "object_info_m51_distance",
       "sizeKey": "object_info_m51_size",
-      "magnitude": "8.4"
+      "magnitude": "8.4",
+      "imageKey": "messier/hubble_m51a.jpg",
+      "imageCredit": "NASA/ESA/Hubble"
     },
     "m57": {
       "nameKey": "m57",
@@ -584,7 +694,9 @@
       "type": "nebula",
       "distanceKey": "object_info_m57_distance",
       "sizeKey": "object_info_m57_size",
-      "magnitude": "8.8"
+      "magnitude": "8.8",
+      "imageKey": "messier/hubble_m57.jpg",
+      "imageCredit": "NASA/ESA/Hubble"
     },
     "m81": {
       "nameKey": "m81",
@@ -593,7 +705,9 @@
       "type": "galaxy",
       "distanceKey": "object_info_m81_distance",
       "sizeKey": "object_info_m81_size",
-      "magnitude": "6.9"
+      "magnitude": "6.9",
+      "imageKey": "messier/hubble_m81.jpg",
+      "imageCredit": "NASA/ESA/Hubble"
     },
     "m82": {
       "nameKey": "m82",
@@ -602,7 +716,9 @@
       "type": "galaxy",
       "distanceKey": "object_info_m82_distance",
       "sizeKey": "object_info_m82_size",
-      "magnitude": "8.4"
+      "magnitude": "8.4",
+      "imageKey": "messier/hubble_m82.jpg",
+      "imageCredit": "NASA/ESA/Hubble"
     },
     "m101": {
       "nameKey": "m101",
@@ -611,7 +727,9 @@
       "type": "galaxy",
       "distanceKey": "object_info_m101_distance",
       "sizeKey": "object_info_m101_size",
-      "magnitude": "7.9"
+      "magnitude": "7.9",
+      "imageKey": "messier/hubble_m101.jpg",
+      "imageCredit": "NASA/ESA/Hubble"
     },
     "m104": {
       "nameKey": "m104",
@@ -620,7 +738,9 @@
       "type": "galaxy",
       "distanceKey": "object_info_m104_distance",
       "sizeKey": "object_info_m104_size",
-      "magnitude": "8.0"
+      "magnitude": "8.0",
+      "imageKey": "messier/hubble_m104.jpg",
+      "imageCredit": "NASA/ESA/Hubble"
     },
     "m8": {
       "nameKey": "m8",
@@ -629,7 +749,9 @@
       "type": "nebula",
       "distanceKey": "object_info_m8_distance",
       "sizeKey": "object_info_m8_size",
-      "magnitude": "6.0"
+      "magnitude": "6.0",
+      "imageKey": "messier/hubble_m8.jpg",
+      "imageCredit": "NASA/ESA/Hubble"
     },
     "m17": {
       "nameKey": "m17",
@@ -638,7 +760,9 @@
       "type": "nebula",
       "distanceKey": "object_info_m17_distance",
       "sizeKey": "object_info_m17_size",
-      "magnitude": "6.0"
+      "magnitude": "6.0",
+      "imageKey": "messier/hubble_m17.jpg",
+      "imageCredit": "NASA/ESA/Hubble"
     },
     "m20": {
       "nameKey": "m20",
@@ -647,7 +771,9 @@
       "type": "nebula",
       "distanceKey": "object_info_m20_distance",
       "sizeKey": "object_info_m20_size",
-      "magnitude": "6.3"
+      "magnitude": "6.3",
+      "imageKey": "messier/hubble_m20.jpg",
+      "imageCredit": "NASA/ESA/Hubble"
     },
     "m27": {
       "nameKey": "m27",
@@ -656,7 +782,9 @@
       "type": "nebula",
       "distanceKey": "object_info_m27_distance",
       "sizeKey": "object_info_m27_size",
-      "magnitude": "7.5"
+      "magnitude": "7.5",
+      "imageKey": "messier/hubble_m27.jpg",
+      "imageCredit": "NASA/ESA/Hubble"
     },
     "m33": {
       "nameKey": "m33",
@@ -665,7 +793,9 @@
       "type": "galaxy",
       "distanceKey": "object_info_m33_distance",
       "sizeKey": "object_info_m33_size",
-      "magnitude": "5.7"
+      "magnitude": "5.7",
+      "imageKey": "messier/hubble_m33.jpg",
+      "imageCredit": "NASA/ESA/Hubble"
     },
     "m35": {
       "nameKey": "m35",
@@ -674,7 +804,9 @@
       "type": "cluster",
       "distanceKey": "object_info_m35_distance",
       "sizeKey": "object_info_m35_size",
-      "magnitude": "5.3"
+      "magnitude": "5.3",
+      "imageKey": "messier/hubble_m35.jpg",
+      "imageCredit": "NASA/ESA/Hubble"
     },
     "m44": {
       "nameKey": "m44",
@@ -683,7 +815,9 @@
       "type": "cluster",
       "distanceKey": "object_info_m44_distance",
       "sizeKey": "object_info_m44_size",
-      "magnitude": "3.7"
+      "magnitude": "3.7",
+      "imageKey": "messier/hubble_m44.jpg",
+      "imageCredit": "NASA/ESA/Hubble"
     },
     "m78": {
       "nameKey": "m78",
@@ -692,7 +826,9 @@
       "type": "nebula",
       "distanceKey": "object_info_m78_distance",
       "sizeKey": "object_info_m78_size",
-      "magnitude": "8.3"
+      "magnitude": "8.3",
+      "imageKey": "messier/hubble_m78.jpg",
+      "imageCredit": "NASA/ESA/Hubble"
     },
     "m83": {
       "nameKey": "m83",
@@ -701,7 +837,9 @@
       "type": "galaxy",
       "distanceKey": "object_info_m83_distance",
       "sizeKey": "object_info_m83_size",
-      "magnitude": "7.5"
+      "magnitude": "7.5",
+      "imageKey": "messier/hubble_m83.jpg",
+      "imageCredit": "NASA/ESA/Hubble"
     },
     "m3": {
       "nameKey": "m3",
@@ -710,7 +848,9 @@
       "type": "cluster",
       "distanceKey": "object_info_m3_distance",
       "sizeKey": "object_info_m3_size",
-      "magnitude": "6.2"
+      "magnitude": "6.2",
+      "imageKey": "messier/hubble_m3.jpg",
+      "imageCredit": "NASA/ESA/Hubble"
     },
     "m5": {
       "nameKey": "m5",
@@ -719,7 +859,9 @@
       "type": "cluster",
       "distanceKey": "object_info_m5_distance",
       "sizeKey": "object_info_m5_size",
-      "magnitude": "5.7"
+      "magnitude": "5.7",
+      "imageKey": "messier/hubble_m5.jpg",
+      "imageCredit": "NASA/ESA/Hubble"
     },
     "m15": {
       "nameKey": "m15",
@@ -728,7 +870,9 @@
       "type": "cluster",
       "distanceKey": "object_info_m15_distance",
       "sizeKey": "object_info_m15_size",
-      "magnitude": "6.2"
+      "magnitude": "6.2",
+      "imageKey": "messier/hubble_m15.jpg",
+      "imageCredit": "NASA/ESA/Hubble"
     },
     "m22": {
       "nameKey": "m22",
@@ -737,7 +881,9 @@
       "type": "cluster",
       "distanceKey": "object_info_m22_distance",
       "sizeKey": "object_info_m22_size",
-      "magnitude": "5.1"
+      "magnitude": "5.1",
+      "imageKey": "messier/hubble_m22.jpg",
+      "imageCredit": "NASA/ESA/Hubble"
     },
     "m4": {
       "nameKey": "m4",
@@ -746,7 +892,9 @@
       "type": "cluster",
       "distanceKey": "object_info_m4_distance",
       "sizeKey": "object_info_m4_size",
-      "magnitude": "5.6"
+      "magnitude": "5.6",
+      "imageKey": "messier/hubble_m4.jpg",
+      "imageCredit": "NASA/ESA/Hubble"
     },
     "m7": {
       "nameKey": "m7",
@@ -755,7 +903,9 @@
       "type": "cluster",
       "distanceKey": "object_info_m7_distance",
       "sizeKey": "object_info_m7_size",
-      "magnitude": "3.3"
+      "magnitude": "3.3",
+      "imageKey": "messier/hubble_m7.jpg",
+      "imageCredit": "NASA/ESA/Hubble"
     },
     "m6": {
       "nameKey": "m6",
@@ -764,7 +914,9 @@
       "type": "cluster",
       "distanceKey": "object_info_m6_distance",
       "sizeKey": "object_info_m6_size",
-      "magnitude": "4.2"
+      "magnitude": "4.2",
+      "imageKey": "messier/noao_m6.jpg",
+      "imageCredit": "NOAO/AURA/NSF"
     },
     "m11": {
       "nameKey": "m11",
@@ -773,7 +925,9 @@
       "type": "cluster",
       "distanceKey": "object_info_m11_distance",
       "sizeKey": "object_info_m11_size",
-      "magnitude": "6.3"
+      "magnitude": "6.3",
+      "imageKey": "messier/hubble_m11.jpg",
+      "imageCredit": "NASA/ESA/Hubble"
     },
     "m16": {
       "nameKey": "m16",
@@ -782,7 +936,9 @@
       "type": "nebula",
       "distanceKey": "object_info_m16_distance",
       "sizeKey": "object_info_m16_size",
-      "magnitude": "6.4"
+      "magnitude": "6.4",
+      "imageKey": "messier/hubble_m16.jpg",
+      "imageCredit": "NASA/ESA/Hubble"
     },
     "m2": {
       "nameKey": "m2",
@@ -791,7 +947,9 @@
       "type": "cluster",
       "distanceKey": "object_info_m2_distance",
       "sizeKey": "object_info_m2_size",
-      "magnitude": "6.3"
+      "magnitude": "6.3",
+      "imageKey": "messier/hubble_m2.jpg",
+      "imageCredit": "NASA/ESA/Hubble"
     },
     "m10": {
       "nameKey": "m10",
@@ -800,7 +958,9 @@
       "type": "cluster",
       "distanceKey": "object_info_m10_distance",
       "sizeKey": "object_info_m10_size",
-      "magnitude": "6.6"
+      "magnitude": "6.6",
+      "imageKey": "messier/hubble_m10.jpg",
+      "imageCredit": "NASA/ESA/Hubble"
     },
     "m12": {
       "nameKey": "m12",
@@ -809,7 +969,9 @@
       "type": "cluster",
       "distanceKey": "object_info_m12_distance",
       "sizeKey": "object_info_m12_size",
-      "magnitude": "6.7"
+      "magnitude": "6.7",
+      "imageKey": "messier/hubble_m12.jpg",
+      "imageCredit": "NASA/ESA/Hubble"
     },
     "m14": {
       "nameKey": "m14",
@@ -818,7 +980,9 @@
       "type": "cluster",
       "distanceKey": "object_info_m14_distance",
       "sizeKey": "object_info_m14_size",
-      "magnitude": "7.6"
+      "magnitude": "7.6",
+      "imageKey": "messier/hubble_m14.jpg",
+      "imageCredit": "NASA/ESA/Hubble"
     },
     "m53": {
       "nameKey": "m53",
@@ -827,7 +991,9 @@
       "type": "cluster",
       "distanceKey": "object_info_m53_distance",
       "sizeKey": "object_info_m53_size",
-      "magnitude": "7.6"
+      "magnitude": "7.6",
+      "imageKey": "messier/hubble_m53.jpg",
+      "imageCredit": "NASA/ESA/Hubble"
     },
     "m64": {
       "nameKey": "m64",
@@ -836,7 +1002,9 @@
       "type": "galaxy",
       "distanceKey": "object_info_m64_distance",
       "sizeKey": "object_info_m64_size",
-      "magnitude": "8.5"
+      "magnitude": "8.5",
+      "imageKey": "messier/hubble_m64.jpg",
+      "imageCredit": "NASA/ESA/Hubble"
     },
     "m65": {
       "nameKey": "m65",
@@ -845,7 +1013,9 @@
       "type": "galaxy",
       "distanceKey": "object_info_m65_distance",
       "sizeKey": "object_info_m65_size",
-      "magnitude": "9.3"
+      "magnitude": "9.3",
+      "imageKey": "messier/hubble_m65.jpg",
+      "imageCredit": "NASA/ESA/Hubble"
     },
     "m66": {
       "nameKey": "m66",
@@ -854,7 +1024,9 @@
       "type": "galaxy",
       "distanceKey": "object_info_m66_distance",
       "sizeKey": "object_info_m66_size",
-      "magnitude": "8.9"
+      "magnitude": "8.9",
+      "imageKey": "messier/hubble_m66.jpg",
+      "imageCredit": "NASA/ESA/Hubble"
     },
     "m74": {
       "nameKey": "m74",
@@ -863,7 +1035,9 @@
       "type": "galaxy",
       "distanceKey": "object_info_m74_distance",
       "sizeKey": "object_info_m74_size",
-      "magnitude": "9.4"
+      "magnitude": "9.4",
+      "imageKey": "messier/hubble_m74.jpg",
+      "imageCredit": "NASA/ESA/Hubble"
     },
     "m77": {
       "nameKey": "m77",
@@ -872,7 +1046,9 @@
       "type": "galaxy",
       "distanceKey": "object_info_m77_distance",
       "sizeKey": "object_info_m77_size",
-      "magnitude": "8.9"
+      "magnitude": "8.9",
+      "imageKey": "messier/hubble_m77.jpg",
+      "imageCredit": "NASA/ESA/Hubble"
     },
     "m92": {
       "nameKey": "m92",
@@ -881,7 +1057,9 @@
       "type": "cluster",
       "distanceKey": "object_info_m92_distance",
       "sizeKey": "object_info_m92_size",
-      "magnitude": "6.4"
+      "magnitude": "6.4",
+      "imageKey": "messier/hubble_m92.jpg",
+      "imageCredit": "NASA/ESA/Hubble"
     },
     "m94": {
       "nameKey": "m94",
@@ -890,7 +1068,9 @@
       "type": "galaxy",
       "distanceKey": "object_info_m94_distance",
       "sizeKey": "object_info_m94_size",
-      "magnitude": "8.2"
+      "magnitude": "8.2",
+      "imageKey": "messier/hubble_m94.jpg",
+      "imageCredit": "NASA/ESA/Hubble"
     },
     "m97": {
       "nameKey": "m97",
@@ -899,7 +1079,9 @@
       "type": "nebula",
       "distanceKey": "object_info_m97_distance",
       "sizeKey": "object_info_m97_size",
-      "magnitude": "9.9"
+      "magnitude": "9.9",
+      "imageKey": "messier/gemini_m97.jpg",
+      "imageCredit": "Gemini Observatory/NOIRLab/NSF/AURA"
     },
     "m106": {
       "nameKey": "m106",
@@ -908,7 +1090,9 @@
       "type": "galaxy",
       "distanceKey": "object_info_m106_distance",
       "sizeKey": "object_info_m106_size",
-      "magnitude": "8.4"
+      "magnitude": "8.4",
+      "imageKey": "messier/hubble_m106.jpg",
+      "imageCredit": "NASA/ESA/Hubble"
     },
     "m109": {
       "nameKey": "m109",
@@ -917,7 +1101,9 @@
       "type": "galaxy",
       "distanceKey": "object_info_m109_distance",
       "sizeKey": "object_info_m109_size",
-      "magnitude": "9.8"
+      "magnitude": "9.8",
+      "imageKey": "messier/hubble_m109.jpg",
+      "imageCredit": "NASA/ESA/Hubble"
     },
     "m110": {
       "nameKey": "m110",
@@ -926,7 +1112,9 @@
       "type": "galaxy",
       "distanceKey": "object_info_m110_distance",
       "sizeKey": "object_info_m110_size",
-      "magnitude": "8.5"
+      "magnitude": "8.5",
+      "imageKey": "messier/hubble_m110.jpg",
+      "imageCredit": "NASA/ESA/Hubble"
     },
     "m32": {
       "nameKey": "m32",
@@ -935,7 +1123,9 @@
       "type": "galaxy",
       "distanceKey": "object_info_m32_distance",
       "sizeKey": "object_info_m32_size",
-      "magnitude": "8.1"
+      "magnitude": "8.1",
+      "imageKey": "messier/hubble_m32.jpg",
+      "imageCredit": "NASA/ESA/Hubble"
     },
     "m49": {
       "nameKey": "m49",
@@ -944,7 +1134,9 @@
       "type": "galaxy",
       "distanceKey": "object_info_m49_distance",
       "sizeKey": "object_info_m49_size",
-      "magnitude": "8.4"
+      "magnitude": "8.4",
+      "imageKey": "messier/hubble_m49.jpg",
+      "imageCredit": "NASA/ESA/Hubble"
     },
     "m87": {
       "nameKey": "m87",
@@ -954,343 +1146,441 @@
       "distanceKey": "object_info_m87_distance",
       "sizeKey": "object_info_m87_size",
       "massKey": "object_info_m87_mass",
-      "magnitude": "8.6"
+      "magnitude": "8.6",
+      "imageKey": "messier/hubble_m87.jpg",
+      "imageCredit": "NASA/ESA/Hubble"
     },
     "orion": {
       "nameKey": "orion",
       "descriptionKey": "object_info_orion_description",
       "funFactKey": "object_info_orion_funfact",
       "type": "constellation",
-      "sizeKey": "object_info_orion_size"
+      "sizeKey": "object_info_orion_size",
+      "imageKey": "constellations/iau_orion.jpg",
+      "imageCredit": "IAU/Sky & Telescope"
     },
     "ursa_major": {
       "nameKey": "ursa_major",
       "descriptionKey": "object_info_ursa_major_description",
       "funFactKey": "object_info_ursa_major_funfact",
       "type": "constellation",
-      "sizeKey": "object_info_ursa_major_size"
+      "sizeKey": "object_info_ursa_major_size",
+      "imageKey": "constellations/iau_ursa_major.jpg",
+      "imageCredit": "IAU/Sky & Telescope"
     },
     "ursa_minor": {
       "nameKey": "ursa_minor",
       "descriptionKey": "object_info_ursa_minor_description",
       "funFactKey": "object_info_ursa_minor_funfact",
       "type": "constellation",
-      "sizeKey": "object_info_ursa_minor_size"
+      "sizeKey": "object_info_ursa_minor_size",
+      "imageKey": "constellations/iau_ursa_minor.jpg",
+      "imageCredit": "IAU/Sky & Telescope"
     },
     "cassiopeia": {
       "nameKey": "cassiopeia",
       "descriptionKey": "object_info_cassiopeia_description",
       "funFactKey": "object_info_cassiopeia_funfact",
       "type": "constellation",
-      "sizeKey": "object_info_cassiopeia_size"
+      "sizeKey": "object_info_cassiopeia_size",
+      "imageKey": "constellations/iau_cassiopeia.jpg",
+      "imageCredit": "IAU/Sky & Telescope"
     },
     "scorpius": {
       "nameKey": "scorpius",
       "descriptionKey": "object_info_scorpius_description",
       "funFactKey": "object_info_scorpius_funfact",
       "type": "constellation",
-      "sizeKey": "object_info_scorpius_size"
+      "sizeKey": "object_info_scorpius_size",
+      "imageKey": "constellations/iau_scorpius.jpg",
+      "imageCredit": "IAU/Sky & Telescope"
     },
     "leo": {
       "nameKey": "leo",
       "descriptionKey": "object_info_leo_description",
       "funFactKey": "object_info_leo_funfact",
       "type": "constellation",
-      "sizeKey": "object_info_leo_size"
+      "sizeKey": "object_info_leo_size",
+      "imageKey": "constellations/iau_leo.jpg",
+      "imageCredit": "IAU/Sky & Telescope"
     },
     "gemini": {
       "nameKey": "gemini",
       "descriptionKey": "object_info_gemini_description",
       "funFactKey": "object_info_gemini_funfact",
       "type": "constellation",
-      "sizeKey": "object_info_gemini_size"
+      "sizeKey": "object_info_gemini_size",
+      "imageKey": "constellations/iau_gemini.jpg",
+      "imageCredit": "IAU/Sky & Telescope"
     },
     "taurus": {
       "nameKey": "taurus",
       "descriptionKey": "object_info_taurus_description",
       "funFactKey": "object_info_taurus_funfact",
       "type": "constellation",
-      "sizeKey": "object_info_taurus_size"
+      "sizeKey": "object_info_taurus_size",
+      "imageKey": "constellations/iau_taurus.jpg",
+      "imageCredit": "IAU/Sky & Telescope"
     },
     "virgo": {
       "nameKey": "virgo",
       "descriptionKey": "object_info_virgo_description",
       "funFactKey": "object_info_virgo_funfact",
       "type": "constellation",
-      "sizeKey": "object_info_virgo_size"
+      "sizeKey": "object_info_virgo_size",
+      "imageKey": "constellations/iau_virgo.jpg",
+      "imageCredit": "IAU/Sky & Telescope"
     },
     "aquarius": {
       "nameKey": "aquarius",
       "descriptionKey": "object_info_aquarius_description",
       "funFactKey": "object_info_aquarius_funfact",
       "type": "constellation",
-      "sizeKey": "object_info_aquarius_size"
+      "sizeKey": "object_info_aquarius_size",
+      "imageKey": "constellations/iau_aquarius.jpg",
+      "imageCredit": "IAU/Sky & Telescope"
     },
     "pisces": {
       "nameKey": "pisces",
       "descriptionKey": "object_info_pisces_description",
       "funFactKey": "object_info_pisces_funfact",
       "type": "constellation",
-      "sizeKey": "object_info_pisces_size"
+      "sizeKey": "object_info_pisces_size",
+      "imageKey": "constellations/iau_pisces.jpg",
+      "imageCredit": "IAU/Sky & Telescope"
     },
     "aries": {
       "nameKey": "aries",
       "descriptionKey": "object_info_aries_description",
       "funFactKey": "object_info_aries_funfact",
       "type": "constellation",
-      "sizeKey": "object_info_aries_size"
+      "sizeKey": "object_info_aries_size",
+      "imageKey": "constellations/iau_aries.jpg",
+      "imageCredit": "IAU/Sky & Telescope"
     },
     "cancer": {
       "nameKey": "cancer",
       "descriptionKey": "object_info_cancer_description",
       "funFactKey": "object_info_cancer_funfact",
       "type": "constellation",
-      "sizeKey": "object_info_cancer_size"
+      "sizeKey": "object_info_cancer_size",
+      "imageKey": "constellations/iau_cancer.jpg",
+      "imageCredit": "IAU/Sky & Telescope"
     },
     "capricornus": {
       "nameKey": "capricornus",
       "descriptionKey": "object_info_capricornus_description",
       "funFactKey": "object_info_capricornus_funfact",
       "type": "constellation",
-      "sizeKey": "object_info_capricornus_size"
+      "sizeKey": "object_info_capricornus_size",
+      "imageKey": "constellations/iau_capricornus.jpg",
+      "imageCredit": "IAU/Sky & Telescope"
     },
     "sagittarius": {
       "nameKey": "sagittarius",
       "descriptionKey": "object_info_sagittarius_description",
       "funFactKey": "object_info_sagittarius_funfact",
       "type": "constellation",
-      "sizeKey": "object_info_sagittarius_size"
+      "sizeKey": "object_info_sagittarius_size",
+      "imageKey": "constellations/iau_sagittarius.jpg",
+      "imageCredit": "IAU/Sky & Telescope"
     },
     "libra": {
       "nameKey": "libra",
       "descriptionKey": "object_info_libra_description",
       "funFactKey": "object_info_libra_funfact",
       "type": "constellation",
-      "sizeKey": "object_info_libra_size"
+      "sizeKey": "object_info_libra_size",
+      "imageKey": "constellations/iau_libra.jpg",
+      "imageCredit": "IAU/Sky & Telescope"
     },
     "cygnus": {
       "nameKey": "cygnus",
       "descriptionKey": "object_info_cygnus_description",
       "funFactKey": "object_info_cygnus_funfact",
       "type": "constellation",
-      "sizeKey": "object_info_cygnus_size"
+      "sizeKey": "object_info_cygnus_size",
+      "imageKey": "constellations/iau_cygnus.jpg",
+      "imageCredit": "IAU/Sky & Telescope"
     },
     "lyra": {
       "nameKey": "lyra",
       "descriptionKey": "object_info_lyra_description",
       "funFactKey": "object_info_lyra_funfact",
       "type": "constellation",
-      "sizeKey": "object_info_lyra_size"
+      "sizeKey": "object_info_lyra_size",
+      "imageKey": "constellations/iau_lyra.jpg",
+      "imageCredit": "IAU/Sky & Telescope"
     },
     "aquila": {
       "nameKey": "aquila",
       "descriptionKey": "object_info_aquila_description",
       "funFactKey": "object_info_aquila_funfact",
       "type": "constellation",
-      "sizeKey": "object_info_aquila_size"
+      "sizeKey": "object_info_aquila_size",
+      "imageKey": "constellations/iau_aquila.jpg",
+      "imageCredit": "IAU/Sky & Telescope"
     },
     "pegasus": {
       "nameKey": "pegasus",
       "descriptionKey": "object_info_pegasus_description",
       "funFactKey": "object_info_pegasus_funfact",
       "type": "constellation",
-      "sizeKey": "object_info_pegasus_size"
+      "sizeKey": "object_info_pegasus_size",
+      "imageKey": "constellations/iau_pegasus.jpg",
+      "imageCredit": "IAU/Sky & Telescope"
     },
     "andromeda": {
       "nameKey": "andromeda",
       "descriptionKey": "object_info_andromeda_description",
       "funFactKey": "object_info_andromeda_funfact",
       "type": "constellation",
-      "sizeKey": "object_info_andromeda_size"
+      "sizeKey": "object_info_andromeda_size",
+      "imageKey": "constellations/iau_andromeda.jpg",
+      "imageCredit": "IAU/Sky & Telescope"
     },
     "perseus": {
       "nameKey": "perseus",
       "descriptionKey": "object_info_perseus_description",
       "funFactKey": "object_info_perseus_funfact",
       "type": "constellation",
-      "sizeKey": "object_info_perseus_size"
+      "sizeKey": "object_info_perseus_size",
+      "imageKey": "constellations/iau_perseus.jpg",
+      "imageCredit": "IAU/Sky & Telescope"
     },
     "centaurus": {
       "nameKey": "centaurus",
       "descriptionKey": "object_info_centaurus_description",
       "funFactKey": "object_info_centaurus_funfact",
       "type": "constellation",
-      "sizeKey": "object_info_centaurus_size"
+      "sizeKey": "object_info_centaurus_size",
+      "imageKey": "constellations/iau_centaurus.jpg",
+      "imageCredit": "IAU/Sky & Telescope"
     },
     "crux": {
       "nameKey": "crux",
       "descriptionKey": "object_info_crux_description",
       "funFactKey": "object_info_crux_funfact",
       "type": "constellation",
-      "sizeKey": "object_info_crux_size"
+      "sizeKey": "object_info_crux_size",
+      "imageKey": "constellations/iau_crux.jpg",
+      "imageCredit": "IAU/Sky & Telescope"
     },
     "canis_major": {
       "nameKey": "canis_major",
       "descriptionKey": "object_info_canis_major_description",
       "funFactKey": "object_info_canis_major_funfact",
       "type": "constellation",
-      "sizeKey": "object_info_canis_major_size"
+      "sizeKey": "object_info_canis_major_size",
+      "imageKey": "constellations/iau_canis_major.jpg",
+      "imageCredit": "IAU/Sky & Telescope"
     },
     "canis_minor": {
       "nameKey": "canis_minor",
       "descriptionKey": "object_info_canis_minor_description",
       "funFactKey": "object_info_canis_minor_funfact",
       "type": "constellation",
-      "sizeKey": "object_info_canis_minor_size"
+      "sizeKey": "object_info_canis_minor_size",
+      "imageKey": "constellations/iau_canis_minor.jpg",
+      "imageCredit": "IAU/Sky & Telescope"
     },
     "cepheus": {
       "nameKey": "cepheus",
       "descriptionKey": "object_info_cepheus_description",
       "funFactKey": "object_info_cepheus_funfact",
       "type": "constellation",
-      "sizeKey": "object_info_cepheus_size"
+      "sizeKey": "object_info_cepheus_size",
+      "imageKey": "constellations/iau_cepheus.jpg",
+      "imageCredit": "IAU/Sky & Telescope"
     },
     "draco": {
       "nameKey": "draco",
       "descriptionKey": "object_info_draco_description",
       "funFactKey": "object_info_draco_funfact",
       "type": "constellation",
-      "sizeKey": "object_info_draco_size"
+      "sizeKey": "object_info_draco_size",
+      "imageKey": "constellations/iau_draco.jpg",
+      "imageCredit": "IAU/Sky & Telescope"
     },
     "hercules": {
       "nameKey": "hercules",
       "descriptionKey": "object_info_hercules_description",
       "funFactKey": "object_info_hercules_funfact",
       "type": "constellation",
-      "sizeKey": "object_info_hercules_size"
+      "sizeKey": "object_info_hercules_size",
+      "imageKey": "constellations/iau_hercules.jpg",
+      "imageCredit": "IAU/Sky & Telescope"
     },
     "ophiuchus": {
       "nameKey": "ophiuchus",
       "descriptionKey": "object_info_ophiuchus_description",
       "funFactKey": "object_info_ophiuchus_funfact",
       "type": "constellation",
-      "sizeKey": "object_info_ophiuchus_size"
+      "sizeKey": "object_info_ophiuchus_size",
+      "imageKey": "constellations/iau_ophiuchus.jpg",
+      "imageCredit": "IAU/Sky & Telescope"
     },
     "bootes": {
       "nameKey": "bootes",
       "descriptionKey": "object_info_bootes_description",
       "funFactKey": "object_info_bootes_funfact",
       "type": "constellation",
-      "sizeKey": "object_info_bootes_size"
+      "sizeKey": "object_info_bootes_size",
+      "imageKey": "constellations/iau_bootes.jpg",
+      "imageCredit": "IAU/Sky & Telescope"
     },
     "corona_borealis": {
       "nameKey": "corona_borealis",
       "descriptionKey": "object_info_corona_borealis_description",
       "funFactKey": "object_info_corona_borealis_funfact",
       "type": "constellation",
-      "sizeKey": "object_info_corona_borealis_size"
+      "sizeKey": "object_info_corona_borealis_size",
+      "imageKey": "constellations/iau_corona_borealis.jpg",
+      "imageCredit": "IAU/Sky & Telescope"
     },
     "corvus": {
       "nameKey": "corvus",
       "descriptionKey": "object_info_corvus_description",
       "funFactKey": "object_info_corvus_funfact",
       "type": "constellation",
-      "sizeKey": "object_info_corvus_size"
+      "sizeKey": "object_info_corvus_size",
+      "imageKey": "constellations/iau_corvus.jpg",
+      "imageCredit": "IAU/Sky & Telescope"
     },
     "auriga": {
       "nameKey": "auriga",
       "descriptionKey": "object_info_auriga_description",
       "funFactKey": "object_info_auriga_funfact",
       "type": "constellation",
-      "sizeKey": "object_info_auriga_size"
+      "sizeKey": "object_info_auriga_size",
+      "imageKey": "constellations/iau_auriga.jpg",
+      "imageCredit": "IAU/Sky & Telescope"
     },
     "eridanus": {
       "nameKey": "eridanus",
       "descriptionKey": "object_info_eridanus_description",
       "funFactKey": "object_info_eridanus_funfact",
       "type": "constellation",
-      "sizeKey": "object_info_eridanus_size"
+      "sizeKey": "object_info_eridanus_size",
+      "imageKey": "constellations/iau_eridanus.jpg",
+      "imageCredit": "IAU/Sky & Telescope"
     },
     "lepus": {
       "nameKey": "lepus",
       "descriptionKey": "object_info_lepus_description",
       "funFactKey": "object_info_lepus_funfact",
       "type": "constellation",
-      "sizeKey": "object_info_lepus_size"
+      "sizeKey": "object_info_lepus_size",
+      "imageKey": "constellations/iau_lepus.jpg",
+      "imageCredit": "IAU/Sky & Telescope"
     },
     "monoceros": {
       "nameKey": "monoceros",
       "descriptionKey": "object_info_monoceros_description",
       "funFactKey": "object_info_monoceros_funfact",
       "type": "constellation",
-      "sizeKey": "object_info_monoceros_size"
+      "sizeKey": "object_info_monoceros_size",
+      "imageKey": "constellations/iau_monoceros.jpg",
+      "imageCredit": "IAU/Sky & Telescope"
     },
     "hydra": {
       "nameKey": "hydra",
       "descriptionKey": "object_info_hydra_description",
       "funFactKey": "object_info_hydra_funfact",
       "type": "constellation",
-      "sizeKey": "object_info_hydra_size"
+      "sizeKey": "object_info_hydra_size",
+      "imageKey": "constellations/iau_hydra.jpg",
+      "imageCredit": "IAU/Sky & Telescope"
     },
     "carina": {
       "nameKey": "carina",
       "descriptionKey": "object_info_carina_description",
       "funFactKey": "object_info_carina_funfact",
       "type": "constellation",
-      "sizeKey": "object_info_carina_size"
+      "sizeKey": "object_info_carina_size",
+      "imageKey": "constellations/iau_carina.jpg",
+      "imageCredit": "IAU/Sky & Telescope"
     },
     "vela": {
       "nameKey": "vela",
       "descriptionKey": "object_info_vela_description",
       "funFactKey": "object_info_vela_funfact",
       "type": "constellation",
-      "sizeKey": "object_info_vela_size"
+      "sizeKey": "object_info_vela_size",
+      "imageKey": "constellations/iau_vela.jpg",
+      "imageCredit": "IAU/Sky & Telescope"
     },
     "puppis": {
       "nameKey": "puppis",
       "descriptionKey": "object_info_puppis_description",
       "funFactKey": "object_info_puppis_funfact",
       "type": "constellation",
-      "sizeKey": "object_info_puppis_size"
+      "sizeKey": "object_info_puppis_size",
+      "imageKey": "constellations/iau_puppis.jpg",
+      "imageCredit": "IAU/Sky & Telescope"
     },
     "cetus": {
       "nameKey": "cetus",
       "descriptionKey": "object_info_cetus_description",
       "funFactKey": "object_info_cetus_funfact",
       "type": "constellation",
-      "sizeKey": "object_info_cetus_size"
+      "sizeKey": "object_info_cetus_size",
+      "imageKey": "constellations/iau_cetus.jpg",
+      "imageCredit": "IAU/Sky & Telescope"
     },
     "phoenix": {
       "nameKey": "phoenix",
       "descriptionKey": "object_info_phoenix_description",
       "funFactKey": "object_info_phoenix_funfact",
       "type": "constellation",
-      "sizeKey": "object_info_phoenix_size"
+      "sizeKey": "object_info_phoenix_size",
+      "imageKey": "constellations/iau_phoenix.jpg",
+      "imageCredit": "IAU/Sky & Telescope"
     },
     "grus": {
       "nameKey": "grus",
       "descriptionKey": "object_info_grus_description",
       "funFactKey": "object_info_grus_funfact",
       "type": "constellation",
-      "sizeKey": "object_info_grus_size"
+      "sizeKey": "object_info_grus_size",
+      "imageKey": "constellations/iau_grus.jpg",
+      "imageCredit": "IAU/Sky & Telescope"
     },
     "pavo": {
       "nameKey": "pavo",
       "descriptionKey": "object_info_pavo_description",
       "funFactKey": "object_info_pavo_funfact",
       "type": "constellation",
-      "sizeKey": "object_info_pavo_size"
+      "sizeKey": "object_info_pavo_size",
+      "imageKey": "constellations/iau_pavo.jpg",
+      "imageCredit": "IAU/Sky & Telescope"
     },
     "triangulum": {
       "nameKey": "triangulum",
       "descriptionKey": "object_info_triangulum_description",
       "funFactKey": "object_info_triangulum_funfact",
       "type": "constellation",
-      "sizeKey": "object_info_triangulum_size"
+      "sizeKey": "object_info_triangulum_size",
+      "imageKey": "constellations/iau_triangulum.jpg",
+      "imageCredit": "IAU/Sky & Telescope"
     },
     "delphinus": {
       "nameKey": "delphinus",
       "descriptionKey": "object_info_delphinus_description",
       "funFactKey": "object_info_delphinus_funfact",
       "type": "constellation",
-      "sizeKey": "object_info_delphinus_size"
+      "sizeKey": "object_info_delphinus_size",
+      "imageKey": "constellations/iau_delphinus.jpg",
+      "imageCredit": "IAU/Sky & Telescope"
     },
     "sagitta": {
       "nameKey": "sagitta",
       "descriptionKey": "object_info_sagitta_description",
       "funFactKey": "object_info_sagitta_funfact",
       "type": "constellation",
-      "sizeKey": "object_info_sagitta_size"
+      "sizeKey": "object_info_sagitta_size",
+      "imageKey": "constellations/iau_sagitta.jpg",
+      "imageCredit": "IAU/Sky & Telescope"
     }
   }
 }
