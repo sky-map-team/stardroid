@@ -62,7 +62,31 @@
 &lt;li&gt;Does your phone have all the necessary sensors? Not all phones do. It must have at least a compass and an accelerometer and ideally a gyroscope. Sky Map\'s Diagnostics page will show which sensors you have. If your phone does not have a gyro, try selecting \'Disable gyro\' in Settings/Sensor Settings(experts).&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p class="callout"&gt;If all else fails, send us an email (preferably with a screenshot of your Diagnostics page) and we\'ll help you figure it out.&lt;/p&gt;
+&lt;h3&gt;Why is my compass \"Low Accuracy\"?&lt;/h3&gt;
+&lt;p&gt;Sky Map doesn\'t \"calculate\" your orientation from scratch; it simply reads the data provided by your phone\'s built-in magnetometer. If your phone reports that its sensor is uncalibrated, Sky Map will show an accuracy warning.&lt;/p&gt;
+
+&lt;h4&gt;What Calibration Actually Does&lt;/h4&gt;
+&lt;p&gt;Calibration is a hardware-level process that helps the sensor account for \"Hard Iron\" and \"Soft Iron\" distortions caused by the components inside the phone itself.&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;The Goal:&lt;/b&gt; To ensure the sensor sees a \"circle\" of magnetic data as you rotate it.&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;The Reality:&lt;/b&gt; Calibration makes the sensor internally consistent, but it does not guarantee it is pointing to True North.&lt;/p&gt;
+
+&lt;h4&gt;Why it might still be \"Off\" (The Bias)&lt;/h4&gt;
+&lt;p&gt;Even a perfectly calibrated sensor can suffer from Magnetic Bias. Because your phone is measuring a relatively weak signal (the Earth\'s magnetic field), it is easily \"distracted\" by:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;Local Interference:&lt;/b&gt; Metal structures, car dashboards, or magnets in phone cases.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;The Offset:&lt;/b&gt; A calibrated phone knows how to read its own sensor, but it doesn\'t know if you\'re standing next to a refrigerator. This creates a constant \"bias\" where the star map might be shifted a few degrees to the left or right regardless of calibration status.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;A \"bad\" phone:&lt;/b&gt; Some phones just have bad sensors. If your phone has a consistent bias of a few degrees try the manual offset fix below.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;How to Fix It&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;Clear the Area:&lt;/b&gt; Move away from large metal objects or magnets.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;The Figure-8:&lt;/b&gt; Wave your phone in a large, smooth figure-8 motion (&lt;a href=\"https://www.youtube.com/watch?v=-Uq7AmSAjt8\"&gt;see video&lt;/a&gt;). This forces the sensor to sample the magnetic field from multiple angles, allowing the hardware to filter out its own internal noise.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Manual offset:&lt;/b&gt; As a last resort go to settings and manually enter an estimate of the offset (near the magnetic correction setting). This might take some trial and error to get right.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;b&gt;Note:&lt;/b&gt; This is a physical property of mobile hardware. If the map remains slightly shifted, your environment is likely causing a magnetic bias that the software cannot \"code away.\"&lt;/p&gt;
+
+&lt;p class="callout"&gt;If all else fails, send us an email (preferably with a screenshot of your Diagnostics page) to skymapdevs@gmail.com and we\'ll help you figure it out.&lt;/p&gt;
 
 &lt;h2&gt;Telescope Users&lt;/h2&gt;
 &lt;p&gt;Sky Map now includes a prototype \'Pointer Mode\' where the screen will show not what is in front of the phone, but what you would see if you sighted along the long edge of it. The purpose is so that you can attach your phone to your telescope tube and have the screen perpendicular to the direction of the tube. You can enable this in \'settings\' under \'sensor settings\'.&lt;/p&gt;
