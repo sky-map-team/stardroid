@@ -42,6 +42,14 @@
         android:defaultValue="true"
         android:title="@string/use_magnetic_correction"
         android:key="use_magnetic_correction"/>
+    <EditTextPreference
+        android:key="manual_compass_adjustment"
+        android:layout="?android:attr/preferenceLayoutChild"
+        android:title="@string/manual_compass_adjustment_title"
+        android:summary="@string/manual_compass_adjustment_summary"
+        android:hint="@string/manual_compass_adjustment_summary"
+        android:inputType="numberSigned|numberDecimal"
+        android:defaultValue="0"/>
   </PreferenceCategory>
 
   <!-- Appearance Settings -->

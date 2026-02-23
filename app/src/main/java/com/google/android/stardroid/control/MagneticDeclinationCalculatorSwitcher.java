@@ -18,6 +18,7 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.util.Log;
 
+import com.google.android.stardroid.ApplicationConstants;
 import com.google.android.stardroid.util.MiscUtil;
 
 import javax.inject.Inject;
@@ -61,10 +62,22 @@ public class MagneticDeclinationCalculatorSwitcher implements OnSharedPreference
 
   private void setTheModelsCalculator(SharedPreferences preferences) {
     boolean useRealCalculator = preferences.getBoolean(KEY, true);
-    if (useRealCalculator) {
-      model.setMagneticDeclinationCalculator(realCalculator);
-    } else {
-      model.setMagneticDeclinationCalculator(zeroCalculator);
+    MagneticDeclinationCalculator base = useRealCalculator ? realCalculator : zeroCalculator;
+    float offset = readOffsetPreference(preferences);
+    model.setMagneticDeclinationCalculator(new OffsetMagneticDeclinationCalculator(base, offset));
+  }
+
+  private float readOffsetPreference(SharedPreferences preferences) {
+    String raw = preferences.getString(
+        ApplicationConstants.MANUAL_COMPASS_ADJUSTMENT_PREF_KEY, "0");
+    if (raw.trim().isEmpty()) return 0f;
+    try {
+      float value = Float.parseFloat(raw.trim());
+      if (Float.isNaN(value) || Float.isInfinite(value)) return 0f;
+      return Math.max(-360f, Math.min(360f, value));
+    } catch (NumberFormatException e) {
+      Log.w(TAG, "Could not parse manual compass offset: " + raw);
+      return 0f;
     }
   }
 
@@ -72,10 +85,33 @@ public class MagneticDeclinationCalculatorSwitcher implements OnSharedPreference
   public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
     // TODO(johntaylor): investigate the preferences API - currently we have too
     // many classes all hanging off SharedPreferences.
-    if (KEY.equals(key)) {
-      Log.i(TAG, "Magnetic declination preference changed");
+    if (KEY.equals(key) ||
+        ApplicationConstants.MANUAL_COMPASS_ADJUSTMENT_PREF_KEY.equals(key)) {
+      Log.i(TAG, "Magnetic declination or offset preference changed");
       setTheModelsCalculator(sharedPreferences);
     }
+  }
 
+  private static final class OffsetMagneticDeclinationCalculator
+      implements MagneticDeclinationCalculator {
+    private final MagneticDeclinationCalculator delegate;
+    private final float offsetDegrees;
+
+    OffsetMagneticDeclinationCalculator(
+        MagneticDeclinationCalculator delegate, float offsetDegrees) {
+      this.delegate = delegate;
+      this.offsetDegrees = offsetDegrees;
+    }
+
+    @Override
+    public float getDeclination() {
+      return delegate.getDeclination() + offsetDegrees;
+    }
+
+    @Override
+    public void setLocationAndTime(com.google.android.stardroid.math.LatLong location,
+        long timeInMillis) {
+      delegate.setLocationAndTime(location, timeInMillis);
+    }
   }
 }
