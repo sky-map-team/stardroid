@@ -57,8 +57,13 @@
           android:title="@string/menu_diagnostics"
           android:showAsAction="never"/>
 
-    <item android:id="@+id/menu_item_help"
+    <item android:id="@+id/menu_item_credits"
           android:orderInCategory="9"
+          android:title="@string/menu_credits"
+          android:showAsAction="never"/>
+
+    <item android:id="@+id/menu_item_help"
+          android:orderInCategory="10"
           android:title="@string/menu_help"
           android:showAsAction="never"
           android:icon="@android:drawable/ic_menu_info_details"/>
