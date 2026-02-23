@@ -6,8 +6,18 @@ import urllib.request
 
 REPO = "sky-map-team/stardroid"
 
+def first_paragraph(text, max_chars=300):
+    """Extract the first non-empty paragraph from text, up to max_chars."""
+    if not text:
+        return ""
+    for para in text.split('\n\n'):
+        para = para.strip()
+        if para:
+            return para[:max_chars]
+    return text.strip()[:max_chars]
+
 def get_release_data(base_tag):
-    """Gathers date, logs, and issues in a single structured response."""
+    """Gathers date, logs, issues, and merged PRs in a single structured response."""
     try:
         # 1. Get the date of the base tag
         date_cmd = ["git", "log", "-1", "--format=%ai", base_tag]
@@ -18,7 +28,7 @@ def get_release_data(base_tag):
         log_cmd = ["git", "log", f"{base_tag}..HEAD", "--oneline"]
         git_log = subprocess.check_output(log_cmd, stderr=subprocess.STDOUT).decode("utf-8")
 
-        # 3. Get the closed issues from GitHub
+        # 3. Get closed issues and merged PRs from GitHub.
         # Token is optional but we might get throttled without it.
         token = os.environ.get("GITHUB_TOKEN")
         url = f"https://api.github.com/repos/{REPO}/issues?state=closed&since={tag_date}T00:00:00Z"
@@ -27,14 +37,28 @@ def get_release_data(base_tag):
         req.add_header("User-Agent", "Claude-Skill-Assistant")
 
         with urllib.request.urlopen(req) as response:
-            issues_json = json.loads(response.read().decode())
-            issues = [f"#{i['number']}: {i['title']}" for i in issues_json if 'pull_request' not in i]
+            items = json.loads(response.read().decode())
+
+            issues = [f"#{i['number']}: {i['title']}" for i in items if 'pull_request' not in i]
+
+            # Include merged PRs with their descriptions for richer changelog context.
+            # pull_request.merged_at is non-null only for merged (not just closed) PRs.
+            merged_prs = [
+                {
+                    "number": i['number'],
+                    "title": i['title'],
+                    "body": first_paragraph(i.get('body') or '')
+                }
+                for i in items
+                if 'pull_request' in i and i['pull_request'].get('merged_at')
+            ]
 
         return {
             "base_tag": base_tag,
             "release_date": tag_date,
             "commits": git_log.strip().split('\n'),
-            "closed_issues": issues
+            "closed_issues": issues,
+            "merged_prs": merged_prs
         }
     except Exception as e:
         return {"error": str(e)}
