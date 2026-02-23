@@ -31,7 +31,7 @@ def get_release_data(base_tag):
         # 3. Get closed issues and merged PRs from GitHub.
         # Token is optional but we might get throttled without it.
         token = os.environ.get("GITHUB_TOKEN")
-        url = f"https://api.github.com/repos/{REPO}/issues?state=closed&since={tag_date}T00:00:00Z"
+        url = f"https://api.github.com/repos/{REPO}/issues?state=closed&since={tag_date}T00:00:00Z&per_page=100"
         req = urllib.request.Request(url)
         if token: req.add_header("Authorization", f"token {token}")
         req.add_header("User-Agent", "Claude-Skill-Assistant")
