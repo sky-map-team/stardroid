@@ -6,6 +6,7 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.CheckBox;
@@ -52,23 +53,22 @@ public class CompassCalibrationActivity extends InjectableActivity implements Se
     web.loadUrl("file:///android_asset/html/animated_gif_wrapper.html");
 
     checkBoxView = findViewById(R.id.compass_calib_activity_donotshow);
-    boolean hideCheckbox = getIntent().getBooleanExtra(HIDE_CHECKBOX, false);
+    boolean dialogUserInitiated = getIntent().getBooleanExtra(HIDE_CHECKBOX, false);
     String whatToDoText;
-    if (hideCheckbox) {
-      // Dialog was user-initiated.
+    String videoUrl = "https://www.youtube.com/watch?v=-Uq7AmSAjt8";
+    if (dialogUserInitiated) {
       checkBoxView.setVisibility(View.GONE);
-      View reasonText = findViewById(R.id.compass_calib_activity_explain_why);
-      reasonText.setVisibility(View.GONE);
-      whatToDoText = getString(R.string.compass_calib_what_to_do_user);
+      TextView reasonText = findViewById(R.id.compass_calib_activity_explain_why);
+      reasonText.setText(R.string.compass_calibration_activity_user_heading);
+      whatToDoText = getString(R.string.compass_calib_what_to_do_user, videoUrl);
     } else {
       checkBoxView.setVisibility(View.VISIBLE);
-      View reasonText = findViewById(R.id.compass_calib_activity_explain_why);
-      reasonText.setVisibility(View.VISIBLE);
-      whatToDoText = getString(R.string.compass_calib_what_to_do);
+      TextView reasonText = findViewById(R.id.compass_calib_activity_explain_why);
+      reasonText.setText(R.string.compass_calibration_activity_warning);
+      whatToDoText = getString(R.string.compass_calib_what_to_do, videoUrl);
     }
     TextView explanationText = findViewById(R.id.compass_calib_what_to_do);
-    explanationText.setText(String.format(whatToDoText,
-        "https://www.youtube.com/watch?v=-Uq7AmSAjt8"));
+    explanationText.setText(Html.fromHtml(whatToDoText, Html.FROM_HTML_MODE_LEGACY));
 
     if (sensorManager != null) {
       magneticSensor = sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
