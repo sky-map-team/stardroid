@@ -14,6 +14,7 @@ import android.view.animation.AnimationUtils;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
+import com.google.android.stardroid.activities.dialogs.CreditsDialogFragment;
 import com.google.android.stardroid.activities.dialogs.HelpDialogFragment;
 import com.google.android.stardroid.activities.dialogs.LocationPermissionDeniedDialogFragment;
 import com.google.android.stardroid.activities.dialogs.MultipleSearchResultsDialogFragment;
@@ -89,6 +90,12 @@ public class AbstractDynamicStarMapModule {
   @PerActivity
   TimeTravelDialogFragment provideTimeTravelDialogFragment() {
     return new TimeTravelDialogFragment();
+  }
+
+  @Provides
+  @PerActivity
+  CreditsDialogFragment provideCreditsDialogFragment() {
+    return new CreditsDialogFragment();
   }
 
   @Provides

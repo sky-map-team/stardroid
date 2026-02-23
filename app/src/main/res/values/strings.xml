@@ -71,6 +71,8 @@
     <string name="dialog_accept" translation_description="accepting the licence agreement">Accept</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">No Thanks</string>
     <string name="dialog_ok_button">OK</string>
+    <string name="menu_credits" translation_description="menu item to show \'Credits\' box">Credits</string>
+    <string name="credits_dialog_title">Credits</string>
     <string name="menu_help" translation_description="menu item to show \'Help\' box">Help</string>
     <string name="help_dialog_title">Help for Sky Map</string>
     <string name="eula_dialog_title">End User License Agreement</string>

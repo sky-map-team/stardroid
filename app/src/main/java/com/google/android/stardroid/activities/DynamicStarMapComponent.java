@@ -2,6 +2,7 @@ package com.google.android.stardroid.activities;
 
 import com.google.android.stardroid.ApplicationComponent;
 import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
+import com.google.android.stardroid.activities.dialogs.CreditsDialogFragment;
 import com.google.android.stardroid.activities.dialogs.HelpDialogFragment;
 import com.google.android.stardroid.activities.dialogs.LocationPermissionDeniedDialogFragment;
 import com.google.android.stardroid.activities.dialogs.MultipleSearchResultsDialogFragment;
@@ -20,6 +21,7 @@ import dagger.Component;
 @Component(modules = DynamicStarMapModule.class, dependencies = ApplicationComponent.class)
 public interface DynamicStarMapComponent extends EulaDialogFragment.ActivityComponent,
     TimeTravelDialogFragment.ActivityComponent, HelpDialogFragment.ActivityComponent,
+    CreditsDialogFragment.ActivityComponent,
     NoSearchResultsDialogFragment.ActivityComponent,
     MultipleSearchResultsDialogFragment.ActivityComponent,
     NoSensorsDialogFragment.ActivityComponent,

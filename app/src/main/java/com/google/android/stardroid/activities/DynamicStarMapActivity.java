@@ -51,6 +51,7 @@ import androidx.core.view.WindowInsetsCompat;
 import com.google.android.stardroid.ApplicationConstants;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
+import com.google.android.stardroid.activities.dialogs.CreditsDialogFragment;
 import com.google.android.stardroid.activities.dialogs.HelpDialogFragment;
 import com.google.android.stardroid.activities.dialogs.MultipleSearchResultsDialogFragment;
 import com.google.android.stardroid.activities.dialogs.NoSearchResultsDialogFragment;
@@ -204,6 +205,7 @@ public class DynamicStarMapActivity extends InjectableActivity
   @Inject FragmentManager fragmentManager;
   @Inject EulaDialogFragment eulaDialogFragmentNoButtons;
   @Inject TimeTravelDialogFragment timeTravelDialogFragment;
+  @Inject CreditsDialogFragment creditsDialogFragment;
   @Inject HelpDialogFragment helpDialogFragment;
   @Inject NoSearchResultsDialogFragment noSearchResultsDialogFragment;
   @Inject MultipleSearchResultsDialogFragment multipleSearchResultsDialogFragment;
@@ -378,6 +380,10 @@ public class DynamicStarMapActivity extends InjectableActivity
       Log.d(TAG, "Settings");
       menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.SETTINGS_OPENED_LABEL);
       startActivity(new Intent(this, EditSettingsActivity.class));
+    } else if (itemId == R.id.menu_item_credits) {
+      Log.d(TAG, "Credits");
+      menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.CREDITS_OPENED_LABEL);
+      creditsDialogFragment.show(fragmentManager, CreditsDialogFragment.class.getSimpleName());
     } else if (itemId == R.id.menu_item_help) {
       Log.d(TAG, "Help");
       menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.HELP_OPENED_LABEL);
