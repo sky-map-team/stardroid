@@ -36,14 +36,26 @@ fun interface BitmapCallback {
 class ImageLoadHandle internal constructor(callback: BitmapCallback) {
     private val callbackRef = AtomicReference<BitmapCallback?>(callback)
 
+    /** True if the load has not yet been delivered or cancelled. */
+    val isPending: Boolean get() = callbackRef.get() != null
+
+    /**
+     * Optional runnable invoked on the main thread after [deliver] completes
+     * (whether or not the bitmap callback actually fired). Use this to remove
+     * the handle from a tracking list once the load is no longer in-flight.
+     */
+    var onComplete: Runnable? = null
+
     /** Clears the callback reference so the caller can be garbage-collected. */
     fun cancel() {
         callbackRef.set(null)
     }
 
-    /** Delivers the result once, then clears the reference. */
+    /** Delivers the result once, then clears the reference and fires [onComplete]. */
     internal fun deliver(bitmap: Bitmap?) {
         callbackRef.getAndSet(null)?.onBitmapLoaded(bitmap)
+        onComplete?.run()
+        onComplete = null
     }
 }
 

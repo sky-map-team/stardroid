@@ -102,7 +102,12 @@ public class ImageGalleryActivity extends InjectableActivity {
             imageView.setImageBitmap(bitmap);
           }
         });
-        pendingImageLoads.add(handle);
+        // isPending() is false for synchronous cache hits (already delivered), so skip tracking.
+        // For in-flight requests, track the handle and remove it once complete.
+        if (handle.isPending()) {
+          pendingImageLoads.add(handle);
+          handle.setOnComplete(() -> pendingImageLoads.remove(handle));
+        }
       } else {
         imageView.setImageResource(galleryImage.getImageId());
       }
