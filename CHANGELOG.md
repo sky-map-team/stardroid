@@ -5,9 +5,27 @@ All notable changes to Sky Map are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [Unreleased]
+## [1.11.1] - 2026-02-23
 
 ### Added
+- **Credits dialog** — new entry in the main menu lists sponsors and contributors, rendered in the
+  same WebView as Help with full night-mode support
+- **Manual compass offset** — a new setting lets users nudge the compass heading by a fixed number
+  of degrees, providing a workaround when a device's magnetometer is consistently biased
+  (addresses [#632](https://github.com/sky-map-team/stardroid/issues/632))
+- **New Time Travel events** — Perseids, Leonids, Geminids, New Moon, and other notable 2026
+  celestial events added to the quick-pick list
+  (addresses [#274](https://github.com/sky-map-team/stardroid/issues/274))
+- Time Travel events can now automatically set the search target to the event's sky location
+- **Dynamic Time Travel button** — shows "Start from Now" when the dialog opens (making it obvious
+  you're about to start time travel from the current moment), and switches to "Go!" once a specific
+  time or event is selected
+- **Info cards in automatic mode** — an optional preference now allows the educational info cards
+  to appear in automatic (sensor) mode, not just manual mode
+  (addresses [#594](https://github.com/sky-map-team/stardroid/issues/594))
+- **Compass accuracy troubleshooting** section added to the help text, explaining hard/soft iron
+  distortions, what the figure-8 calibration actually does, and why a calibrated compass can still
+  drift
 - CONTRIBUTING.md with build instructions, coding style, and submission workflow
 - SECURITY.md with vulnerability reporting policy
 - CHANGELOG.md following Keep a Changelog format
@@ -17,6 +35,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - Changelog update instructions in CONTRIBUTING.md and PR template
 
 ### Changed
+- Menu items reordered to better reflect typical usage frequency; Time Travel icon promoted to the
+  action bar so it's always one tap away
+- Calibration dialog text rewritten for clearer guidance on when and how to calibrate
+- Korean translations restored
+- Play Store builds now upload AAB bundles instead of APKs, enabling Play Asset Delivery
+  (addresses [#618](https://github.com/sky-map-team/stardroid/issues/618))
+- Unnecessary permissions removed from the F-Droid variant; incomplete ISS tracking layer disabled
+  pending a full implementation
+  (addresses [#602](https://github.com/sky-map-team/stardroid/issues/602),
+  [#535](https://github.com/sky-map-team/stardroid/issues/535))
+- CI configuration overhauled: Gradle dependency caching added, emulator tests run on a supported
+  API level, and flaky retry logic improved
 - Migrated design documents from `designdocs/` to `docs/design/`
 - Enhanced tools/README.md with module overview
 - Modernized PR template with type-of-change checklist
@@ -24,6 +54,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ### Removed
 - Old single-file `.github/ISSUE_TEMPLATE.md` (replaced by YAML forms)
+
+### Fixed
+- `NullPointerException` crash in `VertexBuffer.addPoint`
+- `IllegalStateException` when a dialog was shown after the activity had already saved its state
+- `ConcurrentModificationException` in `PolyLineObjectManager` during concurrent rendering updates
+- Moon angle calculation now correctly accounts for the Earth's axial tilt, so the lit side of the
+  Moon is shown at the right angle
+  (fixes [#569](https://github.com/sky-map-team/stardroid/issues/569))
+- Several Messier catalog entries were misclassified, causing objects such as open clusters to
+  render as featureless points; catalog data and fallback type logic corrected
+- Navigation buttons overlapping layer controls on Android 15+ devices using three-button
+  navigation, caused by the new mandatory edge-to-edge rendering
+  (fixes [#595](https://github.com/sky-map-team/stardroid/issues/595))
 
 ## [1.11.0] - 2026-02-04
 

@@ -42,6 +42,11 @@ output from previous runs — preserve all existing items and only add changes n
 - Select the most impactful 2-3 changes from the full set since the tag.
 - Provide the character count at the end.
 
+#### Target C: Markdown for a release on GitHub.
+-- The output should be prepended to the CHANGELOG.md file and use GitHub markup.
+-- The release notes here can be more thorough and detailed that targets A and B.
+-- The target audience is users who are developers themselves or who are comfortable installing the app from other other sources than the Google Play Store.
+
 ## Instructions
 - Always perform the Python tool call first before drafting.
 - Always read existing output files before writing (see Pre-flight above).
