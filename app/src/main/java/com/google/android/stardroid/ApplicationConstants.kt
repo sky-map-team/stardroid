@@ -61,6 +61,7 @@ object ApplicationConstants {
   const val SENSOR_DAMPING_STANDARD = "STANDARD"
   const val SENSOR_DAMPING_PREF_KEY = "sensor_damping"
   const val REVERSE_MAGNETIC_Z_PREFKEY = "reverse_magnetic_z"
+  const val MANUAL_COMPASS_ADJUSTMENT_PREF_KEY = "manual_compass_adjustment"
   const val VIEW_MODE_PREFKEY = "viewing_direction"
 
   // Educational info feature

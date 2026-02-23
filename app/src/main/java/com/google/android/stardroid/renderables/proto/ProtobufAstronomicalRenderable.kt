@@ -24,7 +24,6 @@ import com.google.android.stardroid.renderables.ImagePrimitive
 import com.google.android.stardroid.renderables.LinePrimitive
 import com.google.android.stardroid.renderables.PointPrimitive
 import com.google.android.stardroid.renderables.TextPrimitive
-import com.google.android.stardroid.source.*
 import com.google.android.stardroid.source.proto.SourceProto
 import com.google.android.stardroid.util.MiscUtil
 import java.util.*
@@ -55,19 +54,28 @@ class ProtobufAstronomicalRenderable(
 
         init {
             shapeMap[SourceProto.Shape.CIRCLE] = PointPrimitive.Shape.CIRCLE
-            shapeMap[SourceProto.Shape.STAR] = PointPrimitive.Shape.CIRCLE
-            shapeMap[SourceProto.Shape.ELLIPTICAL_GALAXY] =
-                PointPrimitive.Shape.ELLIPTICAL_GALAXY
-            shapeMap[SourceProto.Shape.SPIRAL_GALAXY] = PointPrimitive.Shape.SPIRAL_GALAXY
-            shapeMap[SourceProto.Shape.IRREGULAR_GALAXY] = PointPrimitive.Shape.IRREGULAR_GALAXY
-            shapeMap[SourceProto.Shape.LENTICULAR_GALAXY] =
-                PointPrimitive.Shape.LENTICULAR_GALAXY
+            shapeMap[SourceProto.Shape.STAR] = PointPrimitive.Shape.STAR
+            shapeMap[SourceProto.Shape.OPEN_CLUSTER] = PointPrimitive.Shape.OPEN_CLUSTER
             shapeMap[SourceProto.Shape.GLOBULAR_CLUSTER] = PointPrimitive.Shape.GLOBULAR_CLUSTER
-            shapeMap[SourceProto.Shape.OPEN_CLUSTER] =
-                PointPrimitive.Shape.OPEN_CLUSTER
-            shapeMap[SourceProto.Shape.NEBULA] =
-                PointPrimitive.Shape.NEBULA
-            shapeMap[SourceProto.Shape.HUBBLE_DEEP_FIELD] = PointPrimitive.Shape.HUBBLE_DEEP_FIELD
+            shapeMap[SourceProto.Shape.DIFFUSE_NEBULA] = PointPrimitive.Shape.DIFFUSE_NEBULA
+            shapeMap[SourceProto.Shape.PLANETARY_NEBULA] = PointPrimitive.Shape.PLANETARY_NEBULA
+            shapeMap[SourceProto.Shape.SUPERNOVA_REMNANT] = PointPrimitive.Shape.SUPERNOVA_REMNANT
+            shapeMap[SourceProto.Shape.GALAXY] = PointPrimitive.Shape.GALAXY
+            shapeMap[SourceProto.Shape.OTHER] = PointPrimitive.Shape.OTHER
+        }
+
+        // Map shape types to drawable resources.
+        private fun getDrawableForShape(shape: PointPrimitive.Shape?): Int {
+            return when (shape) {
+                PointPrimitive.Shape.OPEN_CLUSTER -> R.drawable.open_cluster
+                PointPrimitive.Shape.GLOBULAR_CLUSTER -> R.drawable.globular_cluster
+                PointPrimitive.Shape.DIFFUSE_NEBULA -> R.drawable.diffuse_nebula
+                PointPrimitive.Shape.PLANETARY_NEBULA -> R.drawable.planetary_nebula
+                PointPrimitive.Shape.SUPERNOVA_REMNANT -> R.drawable.supernova_remnant
+                PointPrimitive.Shape.GALAXY -> R.drawable.galaxy
+                PointPrimitive.Shape.OTHER -> R.drawable.other
+                else -> R.drawable.other
+            }
         }
 
         private const val SHOW_MESSIER_IMAGES = "show_messier_images"
@@ -201,11 +209,13 @@ class ProtobufAstronomicalRenderable(
 
             val images = ArrayList<ImagePrimitive>(proto.pointCount)
             for (element in proto.pointList) {
+                val shape = shapeMap[element.shape]
+                val drawableId = getDrawableForShape(shape)
                 images.add(
                     ImagePrimitive(
                         getCoords(element.location),
                         resources,
-                        R.drawable.messier,
+                        drawableId,
                         UP,
                         IMAGE_SCALE
                     )
@@ -216,18 +226,19 @@ class ProtobufAstronomicalRenderable(
 
     private fun isMessierObject(): Boolean {
         // Messier objects are identified by their shape type
-        // Check if any points have a Messier-specific shape (galaxy, cluster, or nebula)
+        // Check if any points have a Messier-specific shape
+        // (This is obviously a terrible way to do it).
         if (proto.pointCount == 0) return false
 
         for (element in proto.pointList) {
             val shape = shapeMap[element.shape]
-            if (shape == PointPrimitive.Shape.SPIRAL_GALAXY ||
-                shape == PointPrimitive.Shape.ELLIPTICAL_GALAXY ||
-                shape == PointPrimitive.Shape.IRREGULAR_GALAXY ||
-                shape == PointPrimitive.Shape.LENTICULAR_GALAXY ||
+            if (shape == PointPrimitive.Shape.OPEN_CLUSTER ||
                 shape == PointPrimitive.Shape.GLOBULAR_CLUSTER ||
-                shape == PointPrimitive.Shape.OPEN_CLUSTER ||
-                shape == PointPrimitive.Shape.NEBULA) {
+                shape == PointPrimitive.Shape.DIFFUSE_NEBULA ||
+                shape == PointPrimitive.Shape.PLANETARY_NEBULA ||
+                shape == PointPrimitive.Shape.SUPERNOVA_REMNANT ||
+                shape == PointPrimitive.Shape.GALAXY ||
+                shape == PointPrimitive.Shape.OTHER) {
                 return true
             }
         }

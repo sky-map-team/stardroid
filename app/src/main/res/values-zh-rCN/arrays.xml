@@ -1,15 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="popular_date_examples">
-        <item>现在</item>
-        <item>第二天傍晚日落</item>
-        <item>第二天日出</item>
-        <item>下一次满月</item>
-        <item>Mercury transit of May 09, 2016</item>
-        <item>2024 年 4 月 8 日的日食</item>
-        <item>阿波罗 11 号登月</item>
-        <item>2020 年木星土星合</item>
-    </string-array>
     <string-array name="sensor_speed">
         <item>慢</item>
         <item>标准</item>

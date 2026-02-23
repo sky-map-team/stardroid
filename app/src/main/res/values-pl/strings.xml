@@ -217,4 +217,11 @@
     <string name="rotate_horizon_preference_summary">Obracaj horyzont o 90° (dla ekranów z wymuszoną poziomą orientacją ekranu) lub używaj trybu wskaźnika, aby ekran pokazywał, na co wskazuje góra telefonu (zobacz tekst pomocy)</string>
     <string name="show_object_info_auto_mode_title">Karty informacyjne w trybie automatycznym</string>
     <string name="show_object_info_auto_mode_summary">Wyświetlaj karty informacyjne również po dotknięciu obiektów w trybie automatycznym (czujniki)</string>
+    <string name="time_travel_next_sunset">Zachód Słońca następnego wieczoru</string>
+    <string name="time_travel_next_sunrise">Wschód Słońca następnego ranka</string>
+    <string name="time_travel_next_fullmoon">Kolejna pełnia</string>
+    <string name="time_travel_mercury_transit_2016">Tranzyt Merkurego z 9 maja 2016 r.</string>
+    <string name="time_travel_solar_eclipse_2024">Północnoamerykańskie zaćmienie Słońca z 8 kwietnia 2024 r.</string>
+    <string name="time_travel_apollo_11">Lądowanie Apollo 11 na Księżycu</string>
+    <string name="time_travel_jupiter_saturn_2020">Koniunkcja Jowisza i Saturna z 2020 r.</string>
 </resources>

@@ -1,15 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="popular_date_examples">
-        <item>Nu</item>
-        <item>Volgende zonsondergang</item>
-        <item>Volgende zonsopgang</item>
-        <item>Volgende volle maan</item>
-        <item>Mercury transit of May 09, 2016</item>
-        <item>Zonsverduistering van Apr 8, 2024</item>
-        <item>Maanlanding van de Apollo 11</item>
-        <item>Conjunctie Jupiter-Saturnus</item>
-    </string-array>
     <string-array name="sensor_speed">
         <item>Langzaam</item>
         <item>Standaard</item>

@@ -50,16 +50,15 @@ public class PointPrimitive extends AbstractPrimitive {
   }
 
   public enum Shape {
-    CIRCLE(0),
-    STAR(1),
-    ELLIPTICAL_GALAXY(2),
-    SPIRAL_GALAXY(3),
-    IRREGULAR_GALAXY(4),
-    LENTICULAR_GALAXY(3),
-    GLOBULAR_CLUSTER(5),
-    OPEN_CLUSTER(6),
-    NEBULA(7),
-    HUBBLE_DEEP_FIELD(8);
+    CIRCLE(0),          // Default shape for generic points
+    STAR(1),            // Stars
+    OPEN_CLUSTER(2),
+    GLOBULAR_CLUSTER(3),
+    DIFFUSE_NEBULA(4),
+    PLANETARY_NEBULA(5),
+    SUPERNOVA_REMNANT(6),
+    GALAXY(7),
+    OTHER(8);           // Other objects (asterisms, double stars, star clouds)
 
     private final int imageIndex;
 
@@ -68,8 +67,7 @@ public class PointPrimitive extends AbstractPrimitive {
     }
 
     public int getImageIndex() {
-      // return imageIndex;
-      return 0;
+      return imageIndex;
     }
   }
 }

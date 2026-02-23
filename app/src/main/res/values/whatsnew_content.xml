@@ -3,27 +3,28 @@
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
     <string name="whats_new_content">
 <![CDATA[
-<h2>Educational Info Cards</h2>
-    Tap on celestial objects in manual mode to see educational info cards with descriptions, scientific data (distance, size, magnitude, spectral class), and fun facts. Covers planets, bright stars, and Messier objects.
+<h2>New Messier Object Icons</h2>
+    Deep sky objects now display distinct icons based on their type: galaxies, open clusters, globular clusters, diffuse nebulae, planetary nebulae, and supernova remnants.
 
-<h2>Improved Location Permission Experience</h2>
-    When location permission isn\'t granted on first launch, you now see a clear dialog with options to grant permission, enter your location manually, or dismiss and use the default. Replaces the old truncated toast message that was easy to miss.
+<h2>Info Cards in Automatic Mode</h2>
+    You can now optionally enable info cards while using sensor-based pointing. Look for the new setting in Preferences to turn this on.
 
-<h2>Fix for Upside-Down Labels</h2>
-    Fixed a bug reported by some users where sky labels appeared upside down due to a sensor orientation issue.
+<h2>Messier Catalog Improvements</h2>
+    Corrected data for several Messier objects and improved how object types are categorized.
 
-<h2>Night Mode for Help Pages</h2>
-    The in-app help pages now respect night mode, so they won\'t blind you when you\'re out stargazing.
+<h2>Compass Calibration Help</h2>
+    A new troubleshooting guide explains why compasses go wrong and how to fix them. You can also set a manual compass offset if needed.
 
-<h2>Refreshed Help Pages</h2>
-    Help content has been restyled and updated, including an updated acknowledgments section recognizing open source contributors.
+<h2>Time Travel Events</h2>
+    The Time Travel dialog now includes meteor showers and new moon events, and will automatically search for those with a visible target in the sky.
 
-<h2>Translation Updates</h2>
-<ul>
-  <li>Updated Polish translation</li>
-  <li>Fixed Greek translation</li>
-  <li>Added missing Portuguese translations</li>
-</ul>
+<h2>Bug Fixes</h2>
+    The Moon\'s illuminated crescent now renders at the correct angle by properly accounting for Earth\'s axial tilt.
+    Fixed an issue where content could be obscured by navigation bars on devices not using gesture navigation.
+
+<h2>Credits</h2>
+    A Credits screen is now accessible from the main menu, recognizing the contributors and supporters of Sky Map.
+
     ]]>
     </string>
 </resources>

@@ -1,15 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="popular_date_examples">
-        <item translation_description="Kullanıcının mevcut zamanı">Şimdi</item>
-        <item>Sonraki akşam günbatımı</item><!-- 1 -->
-        <item>Sonraki sabah gün doğumu</item><!-- 2 -->
-        <item>Sonraki dolunay</item><!-- 3 -->
-        <item>09 Mayıs 2016 Merkür Geçişi</item><!-- 4 -->
-        <item>8 Nisan 2024 Güneş Tutulması</item><!-- 5 -->
-        <item>Apollo 11 Ay İnişi</item><!-- 8 -->
-        <item>2020 Jüpiter-Satürn Kavuşumu</item><!-- 9 -->
-    </string-array>
     <string-array name="sensor_speed">
         <item translation_description="Yavaş sensör hızı">Yavaş</item>
         <item translation_description="Normal sensör hızı">Orta</item>

@@ -1,7 +1,7 @@
 <resources>
 <string name="help_text" translation_description="Please do not change the &lt; and &gt; markup">
 &lt;h1&gt;Sky Map for Android&lt;/h1&gt;
-&lt;p class="version"&gt;Version %s&lt;/p&gt;
+&lt;p class="version"&gt;Version %1$s&lt;/p&gt;
 &lt;p class="url"&gt;&lt;a href="https://stardroid.app"&gt;https://stardroid.app&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2&gt;Introduction and Quick Start&lt;/h2&gt;
@@ -62,49 +62,36 @@
 &lt;li&gt;Does your phone have all the necessary sensors? Not all phones do. It must have at least a compass and an accelerometer and ideally a gyroscope. Sky Map\'s Diagnostics page will show which sensors you have. If your phone does not have a gyro, try selecting \'Disable gyro\' in Settings/Sensor Settings(experts).&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p class="callout"&gt;If all else fails, send us an email (preferably with a screenshot of your Diagnostics page) and we\'ll help you figure it out.&lt;/p&gt;
+&lt;h3&gt;Why is my compass \"Low Accuracy\"?&lt;/h3&gt;
+&lt;p&gt;Sky Map doesn\'t \"calculate\" your orientation from scratch; it simply reads the data provided by your phone\'s built-in magnetometer. If your phone reports that its sensor is uncalibrated, Sky Map will show an accuracy warning.&lt;/p&gt;
+
+&lt;h4&gt;What Calibration Actually Does&lt;/h4&gt;
+&lt;p&gt;Calibration is a hardware-level process that helps the sensor account for \"Hard Iron\" and \"Soft Iron\" distortions caused by the components inside the phone itself.&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;The Goal:&lt;/b&gt; To ensure the sensor sees a \"circle\" of magnetic data as you rotate it.&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;The Reality:&lt;/b&gt; Calibration makes the sensor internally consistent, but it does not guarantee it is pointing to True North.&lt;/p&gt;
+
+&lt;h4&gt;Why it might still be \"Off\" (The Bias)&lt;/h4&gt;
+&lt;p&gt;Even a perfectly calibrated sensor can suffer from Magnetic Bias. Because your phone is measuring a relatively weak signal (the Earth\'s magnetic field), it is easily \"distracted\" by:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;Local Interference:&lt;/b&gt; Metal structures, car dashboards, or magnets in phone cases.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;The Offset:&lt;/b&gt; A calibrated phone knows how to read its own sensor, but it doesn\'t know if you\'re standing next to a refrigerator. This creates a constant \"bias\" where the star map might be shifted a few degrees to the left or right regardless of calibration status.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;A \"bad\" phone:&lt;/b&gt; Some phones just have bad sensors. If your phone has a consistent bias of a few degrees try the manual offset fix below.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;How to Fix It&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;Clear the Area:&lt;/b&gt; Move away from large metal objects or magnets.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;The Figure-8:&lt;/b&gt; Wave your phone in a large, smooth figure-8 motion (&lt;a href=\"https://www.youtube.com/watch?v=-Uq7AmSAjt8\"&gt;see video&lt;/a&gt;). This forces the sensor to sample the magnetic field from multiple angles, allowing the hardware to filter out its own internal noise.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Manual offset:&lt;/b&gt; As a last resort go to settings and manually enter an estimate of the offset (near the magnetic correction setting). This might take some trial and error to get right.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;b&gt;Note:&lt;/b&gt; This is a physical property of mobile hardware. If the map remains slightly shifted, your environment is likely causing a magnetic bias that the software cannot \"code away.\"&lt;/p&gt;
+
+&lt;p class="callout"&gt;If all else fails, send us an email (preferably with a screenshot of your Diagnostics page) to skymapdevs@gmail.com and we\'ll help you figure it out.&lt;/p&gt;
 
 &lt;h2&gt;Telescope Users&lt;/h2&gt;
 &lt;p&gt;Sky Map now includes a prototype \'Pointer Mode\' where the screen will show not what is in front of the phone, but what you would see if you sighted along the long edge of it. The purpose is so that you can attach your phone to your telescope tube and have the screen perpendicular to the direction of the tube. You can enable this in \'settings\' under \'sensor settings\'.&lt;/p&gt;
 
-&lt;h2&gt;Support Development&lt;/h2&gt;
-&lt;p&gt;Sky Map is free, open source, and ad-free. If you enjoy using it, please consider supporting continued development at &lt;a href="https://github.com/sky-map-team/stardroid?tab=readme-ov-file#support-the-project"&gt;our GitHub page&lt;/a&gt;.&lt;/p&gt;
-
-                    
-&lt;h2&gt;Credits&lt;/h2&gt;
-&lt;h3&gt;Original Engineering, Design and Product Management at Google&lt;/h3&gt;
-&lt;p&gt;Brent Bryan, Dominic Widdows, Hector Ouilhet, James Powell, John Taylor, Kevin Serafini, Lior Ron&lt;/p&gt;
-
-&lt;h3&gt;Engineering post-Google&lt;/h3&gt;
-&lt;p&gt;John Taylor, Kevin Serafini&lt;/p&gt;
-
-&lt;h3&gt;Open Source Contributors&lt;/h3&gt;
-&lt;p&gt;Thank you to our open source contributors!
-    JayDeeTay, Caio Vinicius F. Cunha, Sean Barbeau, Vasilis, VegaDark, FTno, Agnieszka C, Fotis Tsamis, MilanSL,
-    Taco, Utkarsh, Bi-Ruei, Chiu, Jaideep Prasad, KevinSerafini, AlexLitvino,
-    Cymrodor, Aayush Singla, Jochen Sprickerhof, Johannes Westphal, Pepa, Tri Cao, VasilisKos,
-    4JS, Arnaud Aliès, Aulddays, Emre SARAC,
-    Hugo Musso Gualandi, Lukyanov03851, Makhanov Madiyar, Marcin Zajączkowski, Mark Wiggans,
-    Quentin de Metz, SHIRAKATA Kentaro, Shivam Arora, Vikas Kumar, Xavier RENE-CORAIL, auntyellow,
-    flippinger, ultrapre.  See the latest contributors on &lt;a href="https://github.com/sky-map-team/stardroid/graphs/contributors"&gt;GitHub&lt;/a&gt;.
-&lt;/p&gt;
-
-&lt;h2&gt;Acknowledgments&lt;/h2&gt;
-&lt;p&gt;Sky Map was originally developed as "Google Sky Map" by Google Inc. and open sourced in 2012.&lt;/p&gt;
-&lt;p&gt;Sky Map uses maps derived from data from:&lt;/p&gt;
-&lt;ul class="credits"&gt;
-&lt;li&gt;Centre de Donnees astronomiques de Strasbourg (&lt;a href="https://cdsweb.u-strasbg.fr/"&gt;https://cdsweb.u-strasbg.fr/&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;The Bright Star Catalogue, 5th Revised Ed. (Hoffleit D., Warren Jr W.H.)&lt;/li&gt;
-&lt;li&gt;The HYG Database, HYG v1.0. (&lt;a href="https://www.astronexus.com/"&gt;https://www.astronexus.com/&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;History and Accurate Positions for the NGC/IC Objects (Harold G. Corwin Jr)&lt;/li&gt;
-&lt;li&gt;Revised New General Catalogue of Nonstellar Astronomical Objects (Sulentic J.W., Tifft W.G.)&lt;/li&gt;
-&lt;li&gt;SFA Star Charts (&lt;a href="https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html"&gt;https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;Positions of Solar System Objects are calculated from data provided by the USNO (&lt;a href="https://www.usno.navy.mil/USNO/astronomical-applications"&gt;https://www.usno.navy.mil/USNO/astronomical-applications&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;Spherical coverage data obtained from (&lt;a href="https://www2.research.att.com/~njas/coverings"&gt;https://www2.research.att.com/~njas/coverings&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;2024 Eclipse Map courtesy of NASA\'s Scientific Visualization Studio.&lt;/li&gt;
-&lt;li&gt;Meteor shower data from the International Meteor Organization (&lt;a href="https://www.imo.net/data"&gt;https://www.imo.net/data&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;Comet Leonard data: In-The-Sky.org&lt;/li&gt;
-&lt;/ul&gt;
+TODO MOVE THE IMAGE CREDITS
 
 &lt;h3&gt;Image Credits&lt;/h3&gt;
 &lt;p&gt;Celestial images in this app are provided courtesy of the following sources:&lt;/p&gt;
@@ -117,5 +104,9 @@
 &lt;li&gt;Additional Messier images: Gemini Observatory/NOIRLab/NSF/AURA (&lt;a href="https://noirlab.edu/"&gt;noirlab.edu&lt;/a&gt;)&lt;/li&gt;
 &lt;li&gt;M31 image: Peter Kennett (&lt;a href="https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg"&gt;Wikimedia Commons&lt;/a&gt;)&lt;/li&gt;
 &lt;/ul&gt;
+
+END TODO  
+  
+%2$s
 </string>
 </resources>

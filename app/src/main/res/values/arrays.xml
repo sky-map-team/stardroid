@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="popular_date_examples">
-        <item translation_description="The user's current time">Now</item>
-        <item>Next evening sunset</item><!-- 1 -->
-        <item>Next morning sunrise</item><!-- 2 -->
-        <item>Next full moon</item><!-- 3 -->
-        <item>Mercury transit of May 09, 2016</item><!-- 4 -->
-        <item>North American Solar eclipse of Apr 8, 2024</item><!-- 5 -->
-        <item>Apollo 11 moon landing</item><!-- 6 -->
-        <item>Jupiter-Saturn Conjunction of 2020</item><!-- 7 -->
-    </string-array>
-    <string-array name="sensor_speed">
+<string-array name="sensor_speed">
         <item translation_description="Slow sensor speed">Slow</item>
         <item translation_description="Normal sensor speed">Medium</item>
         <item translation_description="Fast sensor speed">Fast</item>

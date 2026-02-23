@@ -1,15 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="popular_date_examples">
-        <item translation_description="The user's current time">Teraz</item>
-        <item>Ďalší západ Slnka</item><!-- 1 -->
-        <item>Ďalší východ Slnka</item><!-- 2 -->
-        <item>Ďalší spln</item><!-- 3 -->
-        <item>Prechod Merkúru 9. mája 2016</item><!-- 4 -->
-        <item>Zatmenie Slnka 8. apríla 2024</item><!-- 5 -->
-        <item>Pristátie lode Apollo 11 na Mesiaci</item><!-- 6 -->
-        <item>Konjunkcia Jupiter - Saturn v roku 2020</item><!-- 7 -->
-    </string-array>
     <string-array name="sensor_speed">
         <item translation_description="Slow sensor speed">Pomalá</item>
         <item translation_description="Normal sensor speed">Stredná</item>

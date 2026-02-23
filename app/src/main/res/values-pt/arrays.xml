@@ -1,15 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="popular_date_examples">
-        <item>Agora</item>
-        <item>Próximo pôr do sol</item>
-        <item>Próximo nascer do sol</item>
-        <item>Próxima lua cheia</item>
-        <item>Mercury transit of May 09, 2016</item>
-        <item>Eclipse solar em Abr 8, 2024</item>
-        <item>Pouso da Apollo 11 na lua</item>
-        <item>Conjunção Júpiter-Saturno</item>
-    </string-array>
     <string-array name="sensor_speed">
         <item>Lenta</item>
         <item>Padrão</item>

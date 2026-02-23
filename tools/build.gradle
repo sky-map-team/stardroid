@@ -33,8 +33,10 @@ dependencies {
 // Gradle fail.  Creating multiple distributions in a distributions {} does not generate
 // multiple executable distributions with the application plugin.
 // So instead we create one monster that can do it all.
-applicationName = "datagen"
-mainClassName = "com.google.android.stardroid.data.Main"
+application {
+    applicationName = "datagen"
+    mainClass = "com.google.android.stardroid.data.Main"
+}
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8

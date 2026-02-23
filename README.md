@@ -88,15 +88,26 @@ If you want to build without the script then: from the root directory execute
 
 The apk can be found in `app/build/outputs/apk/`.
 
-### Building a release apk
+### Building a release apk or bundle
 Note: Sky Map team only
 
 Create a file in the app directory called
 `no-checkin.properties` with appropriate values for the
 keys
-    store-pwd=
-    key-pwd=
-    analytics-key=
+
+```
+# These values are for the bundle to upload to the Play Store
+upload.store-pwd=
+upload.key-pwd=
+upload.keystore.path=
+upload.keystore.alias=
+# These values are for a standalone apk
+apk.store-pwd=
+apk.key-pwd=
+apk.keystore.path=
+apk.keystore.alias=
+analytics-key=
+```
 
 and overwrite google-services.json with the correct file.
 
@@ -110,6 +121,14 @@ or
 
 The apk can be found in `app/build/outputs/apk/`.
 
+> New!
+
+Going forward Google Play Store will handle the apk signing so instead
+we need to build and upload bundle files.  The command for this is
+
+    ./gradlew :app:bundleGmsRelease
+
+and the resulting file is in `app/build/outputs/bundle/`.
 
 ### Running tests
 Unit tests:
@@ -137,3 +156,14 @@ or by perusing [fastlane/README.md](fastlane/README.md).
 ### Coding Style
 
 We follow the [Google style guide](https://google.github.io/styleguide/javaguide.html) (or try to).  We wrap at 100 chars and we do not use the common Android style of prefixing member variables with a 'm'. 
+
+# Fun
+## Sky Map Prototype (2009)
+
+![Sky Map Prototype (2009)](./assets/SkyMap_prototype.png)
+
+## Star Chart
+Appropriately, for a star chart app, here's a star chart:
+[![Star History Chart](https://app.repohistory.com/api/svg?repo=sky-map-team/stardroid&type=Timeline&background=0D1117&color=f88d62)](https://app.repohistory.com/star-history)
+
+

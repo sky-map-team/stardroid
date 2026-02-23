@@ -7,6 +7,7 @@
     <string name="cancel">Cancel</string>
     <string name="set" translation_description="Button label. Set the date to the given value">Set</string>
     <string name="go">Go!</string>
+    <string name="start_from_now">Start from Now</string>
     <string name="other_prefs">Other</string>
     <string name="location_prefs">Location Settings</string>
     <string name="force_gps_pref">Always use GPS</string>
@@ -34,6 +35,8 @@
     <string name="location_place_found">Place found.  Setting latitude %1$f and longitude %2$f</string>
     <string name="use_magnetic_correction">Use magnetic correction</string>
     <string name="use_magnetic_correction_hint">Use knowledge of your location to correct orientation from magnetic north to true north</string>
+    <string name="manual_compass_adjustment_title">Additional compass adjustment</string>
+    <string name="manual_compass_adjustment_summary">Extra offset in degrees (+ or −) added to compass reading</string>
     <!-- This string is too long and currently unused -->
     <string name="provider_prefs" translation_description="Dialog box title for a preferences dialog">Show...</string>
     <string name="show_stars_pref">Stars</string>
@@ -69,6 +72,8 @@
     <string name="dialog_accept" translation_description="accepting the licence agreement">Accept</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">No Thanks</string>
     <string name="dialog_ok_button">OK</string>
+    <string name="menu_credits" translation_description="menu item to show \'Credits\' box">Credits</string>
+    <string name="credits_dialog_title">Credits</string>
     <string name="menu_help" translation_description="menu item to show \'Help\' box">Help</string>
     <string name="help_dialog_title">Help for Sky Map</string>
     <string name="eula_dialog_title">End User License Agreement</string>
@@ -104,12 +109,12 @@
     <string name="time_travel_close_message">Back to the present ...</string>
     <!--  -->
     <string name="popular_dates_prompt" translation_description="Label for a list of dates the user can choose from">Popular dates</string>
-    <string name="custom_date_prompt" translation_description="Label telling the user to manually specify a date">Or select your own date:</string>
+    <string name="custom_date_prompt" translation_description="Label telling the user to manually specify a date">Or pick your own date and time:</string>
     <string name="change_date_prompt">Change the date</string>
     <string name="change_time_prompt">Change the time</string>
     <string name="now_visiting"
-            translation_description="used in time travel dialog to tell the user what time they are visiting, time formatted as yyyy.mm.dd at hh.mm.ss + timezone">
-        Now visiting: %s</string>
+            translation_description="used in time travel dialog to show the destination date/time the user has selected, time formatted as yyyy.mm.dd at hh.mm.ss + timezone">
+        Destination: %s</string>
     <string name="time_travel_label_past" translation_description="Label showing that we are in the past">Time Travel: Past</string>
     <string name="time_travel_label_future" translation_description="Label showing that we are in the future">Time Travel: Future</string>
     <string name="time_travel_stopped" translation_description="Label showing rate of travel through time">Time travel frozen</string>
@@ -125,6 +130,28 @@
     <string name="time_travel_hour_speed_back" translation_description="Label showing rate of travel through time">Traveling &lt; @ 1 hour/sec</string>
     <string name="time_travel_day_speed_back" translation_description="Label showing rate of travel through time">Traveling &lt; @ 1 day/sec</string>
     <string name="time_travel_week_speed_back" translation_description="Label showing rate of travel through time">Traveling &lt; @ 1 week/sec</string>
+
+    <!-- Time Travel dialog event display names -->
+    <string name="time_travel_select_hint">-- Select a popular event --</string>
+    <string name="time_travel_next_sunset">Next evening sunset</string>
+    <string name="time_travel_next_sunrise">Next morning sunrise</string>
+    <string name="time_travel_next_fullmoon">Next full moon</string>
+    <string name="time_travel_next_newmoon">Next new moon</string>
+    <string name="time_travel_mercury_transit_2016">Mercury transit of May 09, 2016</string>
+    <string name="time_travel_solar_eclipse_2024">North American Solar Eclipse of Apr 8, 2024</string>
+    <string name="time_travel_apollo_11">Apollo 11 Moon Landing</string>
+    <string name="time_travel_jupiter_saturn_2020">Jupiter-Saturn Conjunction of 2020</string>
+    <string name="time_travel_six_planet_parade_2026">Six-Planet Parade, Feb 28, 2026</string>
+    <string name="time_travel_lunar_eclipse_2026">Total Lunar Eclipse, Mar 3, 2026</string>
+    <string name="time_travel_lyrids_2026">Lyrids Meteor Shower, Apr 22, 2026</string>
+    <string name="time_travel_venus_jupiter_2026">Venus-Jupiter Conjunction, Jun 9, 2026</string>
+    <string name="time_travel_mars_uranus_2026">Mars-Uranus Close Approach, Jul 4, 2026</string>
+    <string name="time_travel_solar_eclipse_2026">Total Solar Eclipse, Aug 12, 2026</string>
+    <string name="time_travel_perseids_2026">Perseids Meteor Shower, Aug 12-13, 2026</string>
+    <string name="time_travel_jupiter_occultation_2026">Lunar Occultation of Jupiter, Oct 6, 2026</string>
+    <string name="time_travel_geminids_2026">Geminids Meteor Shower, Dec 13-14, 2026</string>
+    <string name="time_travel_supermoon_2026">Christmas Eve Supermoon, Dec 24, 2026</string>
+
     <string name="use_sound_effects" translation_description="A preferences menu label">Enable sound</string>
 
     <string name="enable_layer_toast">Enabling %s layer</string>
@@ -213,20 +240,18 @@
     <string name="menu_calibrate">Calibrate</string>
     <string name="compass_calibration_activity_heading_compass">Compass -</string>
     <string name="compass_calibration_activity_do_not_show_this_again">Do not show this again</string>
-    <string name="compass_calibration_activity_warning">Your compass may need to be
-        calibrated</string>
+    <string name="compass_calibration_activity_warning">Hardware Calibration Required</string>
+    <string name="compass_calibration_activity_user_heading">Improve Your Alignment</string>
     <string name="compass_calib_what_to_do"
-        translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL">Your phone is reporting to Sky
-        Map that its internal compass is uncalibrated.
-    This is not a Sky Map issue but we can help you try to fix it. To calibrate the compass try moving your phone in a figure of eight
-        motion as demonstrated in this video %s until the accuracy reads \'high\'.</string>
+        translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL"><![CDATA[
+Sky Map relies on your phone\'s built-in compass sensor. If the accuracy shown above is low, the sensor needs to be \"reset\" by moving the phone in a figure-8 motion: %s.<br/><br/>
+    <b>Important:</b> Calibration is a hardware process handled by your device. While it improves the sensor\'s reliability, external magnetic interference can still cause a \"bias\" or slight drift. This is a physical limitation of mobile compasses and not an error within the app. See <i>Troubleshooting</i> in <i>Help</i> for other things to try.
+    ]]></string>
     <string name="compass_calib_what_to_do_user"
-        transation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL">Your phone\'s
-        compass
-        accuracy is shown above.
-    If it is not \'high\' then the compass may need calibrating. This is not a Sky Map issue, but
-    a property of your phone. To calibrate the compass try moving your phone in a figure of eight
-        motion as demonstrated in this video %s.</string>
+        transation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[
+        Your phone\'s reports its compass accuracy as shown above. To improve this, please perform a figure-8 motion with your device (%s).<br/><br/>
+        <b>Note on Accuracy:</b> Calibration is a hardware-level requirement of your phone, not a Sky Map setting. Even when calibrated, local magnetic fields (like car dashboards or magnets) may cause a slight bias in direction.  See <i>Troubleshooting</i> in <i>Help</i> for other things to try.
+    ]]></string>
     <string name="sensor_reverse_preference_title">Reverse Magnetic Z</string>
     <string name="sensor_reverse_preference_summary">Fix for phones with incorrectly implemented sensors - requires restart</string>
     <string name="whats_new_dialog_title">What\'s new</string>

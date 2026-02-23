@@ -1,0 +1,28 @@
+name: Task
+description: For tracking tasks that should be done which are not necessarily changes to the codebase to add features or fix bugs.
+labels: ["task"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### Task Details
+        Please provide a clear description of what needs to be accomplished.
+  - type: textarea
+    id: description
+    attributes:
+      label: Task Description
+      description: What needs to be done?
+      placeholder: e.g., Update the contributor license agreement or refresh the store screenshots.
+    validations:
+      required: true
+  - type: textarea
+    id: definition_of_done
+    attributes:
+      label: Definition of Done
+      description: List the specific steps required to consider this task complete.
+      value: |
+        - [ ] 
+        - [ ]
+    validations:
+      required: false
+  
