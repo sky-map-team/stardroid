@@ -56,7 +56,7 @@ def get_release_data(base_tag):
         return {
             "base_tag": base_tag,
             "release_date": tag_date,
-            "commits": git_log.strip().split('\n'),
+            "commits": git_log.splitlines(),
             "closed_issues": issues,
             "merged_prs": merged_prs
         }
