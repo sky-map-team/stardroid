@@ -73,6 +73,8 @@ public class TimeTravelDialog extends Dialog {
   private AstronomerModel model;
   private long lastClickTime = 0;
   private int currentSearchTargetRes = 0;  // 0 = no search target
+  private boolean userHasModifiedTime = false;
+  private Button goButton;
 
   public TimeTravelDialog(final DynamicStarMapActivity parentActivity,
                           final AstronomerModel model) {
@@ -113,7 +115,8 @@ public class TimeTravelDialog extends Dialog {
         }
       });
 
-    Button goButton = (Button) findViewById(R.id.timeTravelGo);
+    goButton = (Button) findViewById(R.id.timeTravelGo);
+    goButton.setText(R.string.start_from_now);
     goButton.setOnClickListener(new View.OnClickListener() {
         public void onClick(View v) {
           parentActivity.setTimeTravelMode(calendar.getTime(), currentSearchTargetRes);
@@ -147,6 +150,18 @@ public class TimeTravelDialog extends Dialog {
     // the first time the dialog is shown.  Thereafter it will remember the
     // last value set.
     calendar.setTime(new Date());
+    updateDisplay();
+  }
+
+  @Override
+  protected void onStart() {
+    super.onStart();
+    // Reset state each time the dialog is shown.
+    userHasModifiedTime = false;
+    currentSearchTargetRes = 0;
+    popularDatesMenu.setSelection(0);
+    calendar.setTime(new Date());
+    updateGoButtonText();
     updateDisplay();
   }
 
@@ -221,6 +236,8 @@ public class TimeTravelDialog extends Dialog {
    */
   private void setDate(int year, int month, int day) {
     calendar.set(year, month, day);
+    userHasModifiedTime = true;
+    updateGoButtonText();
     updateDisplay();
   }
 
@@ -230,6 +247,8 @@ public class TimeTravelDialog extends Dialog {
   private void setTime(int hour, int minute) {
     calendar.set(Calendar.HOUR_OF_DAY, hour);
     calendar.set(Calendar.MINUTE, minute);
+    userHasModifiedTime = true;
+    updateGoButtonText();
     updateDisplay();
   }
 
@@ -245,6 +264,14 @@ public class TimeTravelDialog extends Dialog {
     Date date = calendar.getTime();
     dateTimeReadout.setText(parentActivity.getString(R.string.now_visiting,
                                                                    dateFormat.format(date)));
+  }
+
+  private void updateGoButtonText() {
+    if (userHasModifiedTime) {
+      goButton.setText(R.string.go);
+    } else {
+      goButton.setText(R.string.start_from_now);
+    }
   }
 
   private Universe universe = new Universe();
@@ -268,6 +295,8 @@ public class TimeTravelDialog extends Dialog {
     TimeTravelEvent event = TimeTravelEvents.ALL.get(index);
     Log.d(TAG, "Popular event " + index + ": " + getContext().getString(event.getDisplayNameRes()));
     currentSearchTargetRes = event.getSearchTargetRes();
+    userHasModifiedTime = true;
+    updateGoButtonText();
     switch (event.getType()) {
       case NOW:
         calendar.setTime(new Date());
