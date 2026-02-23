@@ -19,12 +19,32 @@ import android.os.Looper
 import android.util.Log
 import android.util.LruCache
 import java.util.concurrent.Executors
+import java.util.concurrent.atomic.AtomicReference
 
 /**
  * Callback interface for async image loading (Java-compatible).
  */
 fun interface BitmapCallback {
     fun onBitmapLoaded(bitmap: Bitmap?)
+}
+
+/**
+ * A handle to a pending async image load. Call [cancel] when the recipient
+ * (Activity/Fragment/View) is destroyed to break the reference chain and
+ * prevent a memory leak.
+ */
+class ImageLoadHandle internal constructor(callback: BitmapCallback) {
+    private val callbackRef = AtomicReference<BitmapCallback?>(callback)
+
+    /** Clears the callback reference so the caller can be garbage-collected. */
+    fun cancel() {
+        callbackRef.set(null)
+    }
+
+    /** Delivers the result once, then clears the reference. */
+    internal fun deliver(bitmap: Bitmap?) {
+        callbackRef.getAndSet(null)?.onBitmapLoaded(bitmap)
+    }
 }
 
 /**
@@ -71,19 +91,26 @@ object AssetImageLoader {
     /**
      * Loads a Bitmap asynchronously off the UI thread.
      *
+     * Returns an [ImageLoadHandle] that the caller **must** cancel (via [ImageLoadHandle.cancel])
+     * when its host Activity/Fragment/View is destroyed. This prevents the callback from
+     * holding a strong reference to a destroyed context while the task waits in the queue.
+     *
      * @param assetManager The AssetManager to load from
      * @param path The path relative to assets/
      * @param callback Called on the main thread with the loaded bitmap (or null on failure)
+     * @return A handle that can be cancelled to release the callback reference early
      */
-    fun loadBitmapAsync(assetManager: AssetManager, path: String, callback: BitmapCallback) {
+    fun loadBitmapAsync(assetManager: AssetManager, path: String, callback: BitmapCallback): ImageLoadHandle {
+        val handle = ImageLoadHandle(callback)
         cache.get(path)?.let {
-            callback.onBitmapLoaded(it)
-            return
+            handle.deliver(it)
+            return handle
         }
         executor.execute {
             val bitmap = loadBitmap(assetManager, path)
-            mainHandler.post { callback.onBitmapLoaded(bitmap) }
+            mainHandler.post { handle.deliver(bitmap) }
         }
+        return handle
     }
 
     /**

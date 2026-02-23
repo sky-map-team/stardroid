@@ -19,12 +19,15 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.google.android.stardroid.R
 import com.google.android.stardroid.util.AssetImageLoader
+import com.google.android.stardroid.util.ImageLoadHandle
 
 /**
  * Fullscreen dialog that displays an expanded celestial image.
  * Tapping the image or pressing back closes the dialog.
  */
 class ImageExpandDialogFragment : DialogFragment() {
+
+    private var imageLoadHandle: ImageLoadHandle? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,7 +44,7 @@ class ImageExpandDialogFragment : DialogFragment() {
 
         val imagePath = arguments?.getString(ARG_IMAGE_PATH)
         if (imagePath != null) {
-            AssetImageLoader.loadBitmapAsync(requireContext().assets, imagePath) { bitmap ->
+            imageLoadHandle = AssetImageLoader.loadBitmapAsync(requireContext().assets, imagePath) { bitmap ->
                 if (bitmap != null && isAdded) {
                     imageView.setImageBitmap(bitmap)
                 }
@@ -62,6 +65,12 @@ class ImageExpandDialogFragment : DialogFragment() {
         view.setOnClickListener { dismiss() }
 
         return view
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        imageLoadHandle?.cancel()
+        imageLoadHandle = null
     }
 
     companion object {

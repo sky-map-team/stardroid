@@ -24,6 +24,7 @@ import com.google.android.stardroid.R
 import com.google.android.stardroid.education.ObjectInfo
 import com.google.android.stardroid.inject.HasComponent
 import com.google.android.stardroid.util.AssetImageLoader
+import com.google.android.stardroid.util.ImageLoadHandle
 import com.google.android.stardroid.util.MiscUtil
 import javax.inject.Inject
 
@@ -38,6 +39,8 @@ class ObjectInfoDialogFragment : DialogFragment() {
 
     @Inject
     lateinit var parentActivity: Activity
+
+    private var imageLoadHandle: ImageLoadHandle? = null
 
     /**
      * Interface that hosting activities must implement for dependency injection.
@@ -77,7 +80,7 @@ class ObjectInfoDialogFragment : DialogFragment() {
         val imageContainer = view.findViewById<View>(R.id.object_info_image_container)
         val imageView = view.findViewById<ImageView>(R.id.object_info_image)
         if (info.imagePath != null) {
-            AssetImageLoader.loadBitmapAsync(parentActivity.assets, info.imagePath) { bitmap ->
+            imageLoadHandle = AssetImageLoader.loadBitmapAsync(parentActivity.assets, info.imagePath) { bitmap ->
                 if (bitmap != null && isAdded) {
                     imageView.setImageBitmap(bitmap)
                     imageContainer.visibility = View.VISIBLE
@@ -151,6 +154,12 @@ class ObjectInfoDialogFragment : DialogFragment() {
             return true
         }
         return false
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        imageLoadHandle?.cancel()
+        imageLoadHandle = null
     }
 
     companion object {

@@ -37,8 +37,10 @@ import com.google.android.stardroid.gallery.GalleryFactory;
 import com.google.android.stardroid.gallery.GalleryImage;
 import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.AssetImageLoader;
+import com.google.android.stardroid.util.ImageLoadHandle;
 import com.google.android.stardroid.util.MiscUtil;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -60,6 +62,8 @@ public class ImageGalleryActivity extends InjectableActivity {
   ActivityLightLevelManager activityLightLevelManager;
   @Inject
   Analytics analytics;
+
+  private final List<ImageLoadHandle> pendingImageLoads = new ArrayList<>();
 
   private class ImageAdapter extends BaseAdapter {
     public int getCount() {
@@ -92,12 +96,13 @@ public class ImageGalleryActivity extends InjectableActivity {
       // Clear previous image while loading
       imageView.setImageResource(android.R.color.transparent);
       if (galleryImage.getAssetPath() != null) {
-        AssetImageLoader.INSTANCE.loadBitmapAsync(getAssets(), galleryImage.getAssetPath(), bitmap -> {
+        ImageLoadHandle handle = AssetImageLoader.INSTANCE.loadBitmapAsync(getAssets(), galleryImage.getAssetPath(), bitmap -> {
           // Only set if this view hasn't been recycled for a different position
           if (imageView.getTag() != null && (int) imageView.getTag() == position && bitmap != null) {
             imageView.setImageBitmap(bitmap);
           }
         });
+        pendingImageLoads.add(handle);
       } else {
         imageView.setImageResource(galleryImage.getImageId());
       }
@@ -136,6 +141,15 @@ public class ImageGalleryActivity extends InjectableActivity {
   public void onPause() {
     super.onPause();
     activityLightLevelManager.onPause();
+  }
+
+  @Override
+  protected void onDestroy() {
+    super.onDestroy();
+    for (ImageLoadHandle handle : pendingImageLoads) {
+      handle.cancel();
+    }
+    pendingImageLoads.clear();
   }
 
   private void addImagesToGallery() {

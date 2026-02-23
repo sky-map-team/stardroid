@@ -36,6 +36,7 @@ import com.google.android.stardroid.gallery.GalleryFactory;
 import com.google.android.stardroid.gallery.GalleryImage;
 import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.AssetImageLoader;
+import com.google.android.stardroid.util.ImageLoadHandle;
 import com.google.android.stardroid.util.MiscUtil;
 
 import java.util.List;
@@ -52,6 +53,7 @@ public class ImageDisplayActivity extends InjectableActivity {
   private static final String TAG = MiscUtil.getTag(ImageDisplayActivity.class);
   private static final int ERROR_MAGIC_NUMBER = -1;
   private GalleryImage selectedImage;
+  private ImageLoadHandle imageLoadHandle;
   @Inject
   ActivityLightLevelManager activityLightLevelManager;
   @Inject
@@ -77,7 +79,7 @@ public class ImageDisplayActivity extends InjectableActivity {
     selectedImage = galleryImages.get(position);
     ImageView imageView = (ImageView) findViewById(R.id.gallery_image);
     if (selectedImage.getAssetPath() != null) {
-      AssetImageLoader.INSTANCE.loadBitmapAsync(getAssets(), selectedImage.getAssetPath(), bitmap -> {
+      imageLoadHandle = AssetImageLoader.INSTANCE.loadBitmapAsync(getAssets(), selectedImage.getAssetPath(), bitmap -> {
         if (bitmap != null) {
           imageView.setImageBitmap(bitmap);
         }
@@ -111,6 +113,15 @@ public class ImageDisplayActivity extends InjectableActivity {
   public void onPause() {
     super.onPause();
     activityLightLevelManager.onPause();
+  }
+
+  @Override
+  protected void onDestroy() {
+    super.onDestroy();
+    if (imageLoadHandle != null) {
+      imageLoadHandle.cancel();
+      imageLoadHandle = null;
+    }
   }
 
   public void doSearch(View source) {
