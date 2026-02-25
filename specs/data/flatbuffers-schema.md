@@ -87,7 +87,7 @@ Raw catalogs → tools/Main.java → ASCII protobuf text → binary protobuf →
 
 ## Planned Future State: FlatBuffers
 
-The rest of this document describes a proposed migration to FlatBuffers. FlatBuffers would provide zero-copy deserialization, meaning data could be accessed directly from the binary buffer without parsing overhead.
+The rest of this document describes a proposed migration to FlatBuffers.
 
 ### Why FlatBuffers? (Proposed rationale)
 

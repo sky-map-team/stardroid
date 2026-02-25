@@ -110,7 +110,7 @@ Key injection points:
 
 **Layer → AstronomicalSource → Primitives → OpenGL**
 
-1. **Layers** (`layers/` package) - 13 switchable layers (stars, constellations, planets, ISS, etc.)
+1. **Layers** (`layers/` package) - 12 switchable layers (stars, constellations, planets, ISS, etc.)
    - Data-driven layers extend `AbstractFileBasedLayer` (loads protobuf data)
    - Simple layers like `HorizonLayer` contain their own `AbstractAstronomicalSource` subclass
 
