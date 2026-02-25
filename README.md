@@ -34,7 +34,7 @@ If you enjoy using Sky Map, there are several ways to help keep the project aliv
 * **Donations:** [Buy Me a Coffee](https://www.buymeacoffee.com/skymapdevs) — Every coffee helps keep the servers running and the code flowing!
 * **Join the beta and give us feedback!** Visit the [Play Store](https://play.google.com/store/apps/details?id=com.google.android.stardroid) on your phone.
 * **Star the Repo:** It costs nothing and helps others find the project.
-* **Contribute:** Submit a Pull Request or [report an issue](https://github.com/sky-map-team/stardroid/issues/).
+* **Contribute:** See the [Contributing guide](CONTRIBUTING.md) or [report an issue](https://github.com/sky-map-team/stardroid/issues/).
 
 ### Find us elsewhere
 * [Facebook @stardroidapp](https://www.facebook.com/groups/stardroidapp/)
@@ -42,120 +42,11 @@ If you enjoy using Sky Map, there are several ways to help keep the project aliv
 
 ---
 
-# Code and Language Contributions
-Yes, we know that Sky Map's code and UX is very dated. It needs a big overhaul.
+# Contributing
 
-In general, bug fix contributions are welcome, for example, simple one file fixes or dependency version upgrades.  We're particularly grateful for fixed or new translations since we've lost the 100% coverage of non-English languages that we once had.
+Bug fixes, dependency upgrades, and translations are always welcome. For major changes or new features, **please [email us](mailto:skymapdevs@gmail.com) first** — we may have a different vision and it would be a shame for your work to go to waste.
 
-**However, please [email us](mailto:skymapdevs@gmail.com) (or file a feature request) first before embarking on any major changes or feature additions. We may have a different vision for the direction of the app and it would be a pity to do work that we can't accept and would be wasted.**
-
-### A Note on Response Times
-It is likely we'll be slow to respond to emails and PR requests. Depending on what else is going on it might be days, it might be months. I do apologize for that - life is busy. Sometimes the reply might be simply to point you at this documentation, which will seem very ungrateful and unfriendly.
-
-*Pro-tip:* Small, focused PRs to fix bugs or upgrade dependencies etc are very easy for us to approve. If your PR does too much it might get stalled because even if 90% of it is welcome there might be 10% that we're not happy with. So keep them small if you can. Plus, we'll be able to review them faster.
-
-Thanks for your contributions! They're definitely appreciated even if our slowness to respond might make it seem otherwise.
-
----
-
-## Technical Instructions
-### Building the project
-
-You should see the following
-two directories:
- * app: Application source
- * tools: Source for generating binary data used by the app.
-
-To build SkyMap, you can use Android Developer Studio or Gradle.  Begin by
-creating a `local.properties` file containing the location of your
-Android installation:
-
-    sdk.dir=<path to your SDK>
-
-Android Developer Studio can create this for you.  You can regenerate the data files and
-rebuild everything with the `build_skymap.sh` script:
-
-    ./build_skymap.sh
-
-If you just want to quickly regenerate an apk without regenerating the data (danger!) 
-pass the flag `--quick` or see the following instructions to do it by hand.  Pass the flag
-`--fdroid` to build the FDroid variant.
-
-### Building a debug apk
-If you want to build without the script then: from the root directory execute
-
-    ./gradlew :app:assembleGmsDebug
-
-The apk can be found in `app/build/outputs/apk/`.
-
-### Building a release apk or bundle
-Note: Sky Map team only
-
-Create a file in the app directory called
-`no-checkin.properties` with appropriate values for the
-keys
-
-```
-# These values are for the bundle to upload to the Play Store
-upload.store-pwd=
-upload.key-pwd=
-upload.keystore.path=
-upload.keystore.alias=
-# These values are for a standalone apk
-apk.store-pwd=
-apk.key-pwd=
-apk.keystore.path=
-apk.keystore.alias=
-analytics-key=
-```
-
-and overwrite google-services.json with the correct file.
-
-Either use the build script, or from the root directory execute
-
-    ./gradlew :app:assembleGms
-
-or
-
-    ./gradlew :app:assembleGmsRelease
-
-The apk can be found in `app/build/outputs/apk/`.
-
-> New!
-
-Going forward Google Play Store will handle the apk signing so instead
-we need to build and upload bundle files.  The command for this is
-
-    ./gradlew :app:bundleGmsRelease
-
-and the resulting file is in `app/build/outputs/bundle/`.
-
-### Running tests
-Unit tests:
-
-    ./gradlew :app:test
-
-Connected device/emulator required tests:
-
-    ./gradlew :app:connectedAndroidTest
-
-### Deploying to your phone or an emulator
-Plug your phone in and run the `deploy.sh` script.  Pass the `-d` flag if you built the debug version.  `undeploy.sh` does the reverse.
-
-### Deploying to the Google Play Store
-Note: Sky Map Team Only
-
-We use `fastlane` to manage updates to the Play Store.  If you have
-it installed, available commands can be seen either by typing
-
-```
-bundle exec fastlane
-```
-or by perusing [fastlane/README.md](fastlane/README.md).
-
-### Coding Style
-
-We follow the [Google style guide](https://google.github.io/styleguide/javaguide.html) (or try to).  We wrap at 100 chars and we do not use the common Android style of prefixing member variables with a 'm'. 
+See [CONTRIBUTING.md](CONTRIBUTING.md) for full details on build instructions, coding style, and how to submit a PR.
 
 # Fun
 ## Sky Map Prototype (2009)
