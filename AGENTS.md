@@ -8,7 +8,7 @@ Sky Map is an open-source Android planetarium app that displays the night sky in
 
 The app uses the device's sensors (accelerometer, magnetometer, gyroscope) and GPS to determine orientation and location, then renders the appropriate sky view using OpenGL.
 
-The codebase is written in Java and Kotlin, targeting Android SDK 26–35.
+The codebase is written in Java and Kotlin, targeting Android SDK 26–36.
 
 ## Module Structure
 
