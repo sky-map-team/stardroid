@@ -1,0 +1,2692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WebP Conversion Quality Check — Sky Map</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: system-ui, sans-serif; background: #111; color: #eee; }
+  header { background: #1a1a2e; padding: 16px 24px; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #333; }
+  header h1 { font-size: 1.2rem; margin-bottom: 8px; color: #7ec8e3; }
+  nav { display: flex; flex-wrap: wrap; gap: 8px; }
+  nav a { color: #aaa; text-decoration: none; font-size: 0.75rem; background: #2a2a3e; padding: 4px 10px; border-radius: 12px; white-space: nowrap; }
+  nav a:hover { color: #fff; background: #3a3a5e; }
+  section { padding: 24px; max-width: 100%; }
+  h2 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.1em; color: #7ec8e3; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid #333; }
+  .grid { display: flex; flex-direction: column; gap: 32px; }
+  .pair { background: #1a1a1a; border-radius: 8px; padding: 16px; }
+  .label { font-size: 0.85rem; color: #888; margin-bottom: 12px; font-family: monospace; }
+  .images { display: flex; gap: 16px; flex-wrap: wrap; }
+  .img-wrap { flex: 1; min-width: 300px; position: relative; background: #0a0a0a; border-radius: 6px; overflow: hidden; display: flex; flex-direction: column; }
+  .tag { font-size: 0.7rem; padding: 4px 8px; font-weight: bold; letter-spacing: 0.05em; }
+  .before-tag { background: #2a1a00; color: #f0a030; }
+  .after-tag { background: #001a0a; color: #30c070; }
+  .smaller { color: #30c070; }
+  .larger { color: #f05030; }
+  img { width: 100%; height: auto; display: block; }
+  /* Phone-size mode */
+  body.phone-mode .img-wrap { flex: none; width: 412px; min-width: unset; }
+  body.phone-mode .images { flex-wrap: wrap; }
+  #phone-btn { margin-left: auto; font-size: 0.75rem; padding: 5px 12px; border-radius: 12px; border: 1px solid #555; background: #2a2a3e; color: #aaa; cursor: pointer; white-space: nowrap; }
+  #phone-btn:hover { background: #3a3a5e; color: #fff; }
+  #phone-btn.active { background: #1a3a5e; border-color: #7ec8e3; color: #7ec8e3; }
+  .header-top { display: flex; align-items: center; margin-bottom: 8px; }
+</style>
+</head>
+<body>
+<header>
+  <div class="header-top">
+    <h1>WebP Conversion Quality Check — Sky Map (198 images)</h1>
+    <button id="phone-btn" onclick="togglePhone()">📱 Phone size (412px)</button>
+  </div>
+  <nav>
+<a href="#celestial-constellations">Celestial: constellations (48)</a>
+<a href="#celestial-messier">Celestial: messier (32)</a>
+<a href="#celestial-planets">Celestial: planets (9)</a>
+<a href="#celestial-stars">Celestial: stars (41)</a>
+<a href="#drawable">drawable (63)</a>
+<a href="#drawable-hdpi">drawable-hdpi (1)</a>
+<a href="#drawable-mdpi">drawable-mdpi (1)</a>
+<a href="#drawable-xhdpi">drawable-xhdpi (1)</a>
+<a href="#drawable-xxhdpi">drawable-xxhdpi (1)</a>
+<a href="#drawable-xxxhdpi">drawable-xxxhdpi (1)</a>
+  </nav>
+</header>
+<section id="celestial-constellations">
+<h2>Celestial: constellations</h2>
+<div class="grid">
+<div class="pair">
+  <div class="label">iau_andromeda</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 40.7 KB</div>
+      <img src="assets/preshrunk/celestial_images/constellations/iau_andromeda.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 30.5 KB <span class="smaller">(-25.0%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/constellations/iau_andromeda.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">iau_aquarius</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 43.5 KB</div>
+      <img src="assets/preshrunk/celestial_images/constellations/iau_aquarius.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 33.3 KB <span class="smaller">(-23.3%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/constellations/iau_aquarius.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">iau_aquila</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 36.5 KB</div>
+      <img src="assets/preshrunk/celestial_images/constellations/iau_aquila.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 25.8 KB <span class="smaller">(-29.1%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/constellations/iau_aquila.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">iau_aries</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 34.9 KB</div>
+      <img src="assets/preshrunk/celestial_images/constellations/iau_aries.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 25.2 KB <span class="smaller">(-27.6%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/constellations/iau_aries.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">iau_auriga</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 38.6 KB</div>
+      <img src="assets/preshrunk/celestial_images/constellations/iau_auriga.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 28.5 KB <span class="smaller">(-26.0%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/constellations/iau_auriga.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">iau_bootes</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 40.2 KB</div>
+      <img src="assets/preshrunk/celestial_images/constellations/iau_bootes.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 31.1 KB <span class="smaller">(-22.8%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/constellations/iau_bootes.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">iau_cancer</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 36.4 KB</div>
+      <img src="assets/preshrunk/celestial_images/constellations/iau_cancer.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 27.3 KB <span class="smaller">(-25.0%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/constellations/iau_cancer.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">iau_canis_major</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 42.2 KB</div>
+      <img src="assets/preshrunk/celestial_images/constellations/iau_canis_major.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 31.7 KB <span class="smaller">(-24.9%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/constellations/iau_canis_major.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">iau_canis_minor</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 29.0 KB</div>
+      <img src="assets/preshrunk/celestial_images/constellations/iau_canis_minor.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 19.6 KB <span class="smaller">(-32.2%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/constellations/iau_canis_minor.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">iau_capricornus</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 37.2 KB</div>
+      <img src="assets/preshrunk/celestial_images/constellations/iau_capricornus.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 27.5 KB <span class="smaller">(-26.0%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/constellations/iau_capricornus.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">iau_carina</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 50.3 KB</div>
+      <img src="assets/preshrunk/celestial_images/constellations/iau_carina.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 39.7 KB <span class="smaller">(-21.1%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/constellations/iau_carina.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">iau_cassiopeia</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 44.8 KB</div>
+      <img src="assets/preshrunk/celestial_images/constellations/iau_cassiopeia.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 34.0 KB <span class="smaller">(-24.0%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/constellations/iau_cassiopeia.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">iau_centaurus</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 53.0 KB</div>
+      <img src="assets/preshrunk/celestial_images/constellations/iau_centaurus.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 42.0 KB <span class="smaller">(-20.7%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/constellations/iau_centaurus.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">iau_cepheus</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 53.3 KB</div>
+      <img src="assets/preshrunk/celestial_images/constellations/iau_cepheus.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 42.9 KB <span class="smaller">(-19.5%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/constellations/iau_cepheus.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">iau_cetus</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 37.2 KB</div>
+      <img src="assets/preshrunk/celestial_images/constellations/iau_cetus.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 27.5 KB <span class="smaller">(-26.1%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/constellations/iau_cetus.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">iau_corona_borealis</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 29.3 KB</div>
+      <img src="assets/preshrunk/celestial_images/constellations/iau_corona_borealis.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 20.4 KB <span class="smaller">(-30.4%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/constellations/iau_corona_borealis.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">iau_corvus</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 22.9 KB</div>
+      <img src="assets/preshrunk/celestial_images/constellations/iau_corvus.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 15.3 KB <span class="smaller">(-33.2%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/constellations/iau_corvus.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">iau_crux</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 39.1 KB</div>
+      <img src="assets/preshrunk/celestial_images/constellations/iau_crux.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 29.3 KB <span class="smaller">(-25.0%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/constellations/iau_crux.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">iau_cygnus</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 49.7 KB</div>
+      <img src="assets/preshrunk/celestial_images/constellations/iau_cygnus.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 39.4 KB <span class="smaller">(-20.7%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/constellations/iau_cygnus.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">iau_delphinus</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 27.7 KB</div>
+      <img src="assets/preshrunk/celestial_images/constellations/iau_delphinus.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 18.8 KB <span class="smaller">(-32.0%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/constellations/iau_delphinus.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">iau_draco</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 52.1 KB</div>
+      <img src="assets/preshrunk/celestial_images/constellations/iau_draco.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 40.5 KB <span class="smaller">(-22.2%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/constellations/iau_draco.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">iau_eridanus</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 49.7 KB</div>
+      <img src="assets/preshrunk/celestial_images/constellations/iau_eridanus.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 39.9 KB <span class="smaller">(-19.8%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/constellations/iau_eridanus.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">iau_gemini</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 39.6 KB</div>
+      <img src="assets/preshrunk/celestial_images/constellations/iau_gemini.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 29.3 KB <span class="smaller">(-26.0%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/constellations/iau_gemini.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">iau_grus</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 37.1 KB</div>
+      <img src="assets/preshrunk/celestial_images/constellations/iau_grus.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 28.1 KB <span class="smaller">(-24.3%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/constellations/iau_grus.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">iau_hercules</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 40.7 KB</div>
+      <img src="assets/preshrunk/celestial_images/constellations/iau_hercules.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 30.4 KB <span class="smaller">(-25.3%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/constellations/iau_hercules.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">iau_hydra</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 43.2 KB</div>
+      <img src="assets/preshrunk/celestial_images/constellations/iau_hydra.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 32.0 KB <span class="smaller">(-26.0%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/constellations/iau_hydra.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">iau_leo</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 38.7 KB</div>
+      <img src="assets/preshrunk/celestial_images/constellations/iau_leo.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 28.2 KB <span class="smaller">(-27.1%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/constellations/iau_leo.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">iau_lepus</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 31.7 KB</div>
+      <img src="assets/preshrunk/celestial_images/constellations/iau_lepus.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 22.2 KB <span class="smaller">(-30.1%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/constellations/iau_lepus.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">iau_libra</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 37.6 KB</div>
+      <img src="assets/preshrunk/celestial_images/constellations/iau_libra.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 28.2 KB <span class="smaller">(-25.0%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/constellations/iau_libra.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">iau_lyra</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 30.3 KB</div>
+      <img src="assets/preshrunk/celestial_images/constellations/iau_lyra.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 21.0 KB <span class="smaller">(-30.9%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/constellations/iau_lyra.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">iau_monoceros</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 37.1 KB</div>
+      <img src="assets/preshrunk/celestial_images/constellations/iau_monoceros.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 26.4 KB <span class="smaller">(-28.8%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/constellations/iau_monoceros.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">iau_ophiuchus</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 45.0 KB</div>
+      <img src="assets/preshrunk/celestial_images/constellations/iau_ophiuchus.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 34.5 KB <span class="smaller">(-23.3%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/constellations/iau_ophiuchus.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">iau_orion</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 49.2 KB</div>
+      <img src="assets/preshrunk/celestial_images/constellations/iau_orion.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 37.1 KB <span class="smaller">(-24.6%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/constellations/iau_orion.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">iau_pavo</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 43.8 KB</div>
+      <img src="assets/preshrunk/celestial_images/constellations/iau_pavo.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 34.7 KB <span class="smaller">(-20.8%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/constellations/iau_pavo.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">iau_pegasus</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 43.2 KB</div>
+      <img src="assets/preshrunk/celestial_images/constellations/iau_pegasus.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 33.0 KB <span class="smaller">(-23.5%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/constellations/iau_pegasus.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">iau_perseus</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 40.9 KB</div>
+      <img src="assets/preshrunk/celestial_images/constellations/iau_perseus.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 31.6 KB <span class="smaller">(-22.5%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/constellations/iau_perseus.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">iau_phoenix</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 36.7 KB</div>
+      <img src="assets/preshrunk/celestial_images/constellations/iau_phoenix.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 27.3 KB <span class="smaller">(-25.7%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/constellations/iau_phoenix.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">iau_pisces</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 42.8 KB</div>
+      <img src="assets/preshrunk/celestial_images/constellations/iau_pisces.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 32.3 KB <span class="smaller">(-24.4%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/constellations/iau_pisces.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">iau_puppis</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 47.9 KB</div>
+      <img src="assets/preshrunk/celestial_images/constellations/iau_puppis.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 37.0 KB <span class="smaller">(-22.8%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/constellations/iau_puppis.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">iau_sagitta</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 30.2 KB</div>
+      <img src="assets/preshrunk/celestial_images/constellations/iau_sagitta.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 21.3 KB <span class="smaller">(-29.6%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/constellations/iau_sagitta.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">iau_sagittarius</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 49.8 KB</div>
+      <img src="assets/preshrunk/celestial_images/constellations/iau_sagittarius.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 40.0 KB <span class="smaller">(-19.7%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/constellations/iau_sagittarius.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">iau_scorpius</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 48.9 KB</div>
+      <img src="assets/preshrunk/celestial_images/constellations/iau_scorpius.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 39.1 KB <span class="smaller">(-20.2%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/constellations/iau_scorpius.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">iau_taurus</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 39.9 KB</div>
+      <img src="assets/preshrunk/celestial_images/constellations/iau_taurus.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 29.3 KB <span class="smaller">(-26.4%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/constellations/iau_taurus.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">iau_triangulum</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 28.6 KB</div>
+      <img src="assets/preshrunk/celestial_images/constellations/iau_triangulum.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 19.7 KB <span class="smaller">(-31.3%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/constellations/iau_triangulum.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">iau_ursa_major</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 50.6 KB</div>
+      <img src="assets/preshrunk/celestial_images/constellations/iau_ursa_major.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 39.8 KB <span class="smaller">(-21.2%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/constellations/iau_ursa_major.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">iau_ursa_minor</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 43.1 KB</div>
+      <img src="assets/preshrunk/celestial_images/constellations/iau_ursa_minor.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 33.1 KB <span class="smaller">(-23.1%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/constellations/iau_ursa_minor.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">iau_vela</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 43.5 KB</div>
+      <img src="assets/preshrunk/celestial_images/constellations/iau_vela.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 32.6 KB <span class="smaller">(-25.0%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/constellations/iau_vela.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">iau_virgo</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 36.3 KB</div>
+      <img src="assets/preshrunk/celestial_images/constellations/iau_virgo.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 25.4 KB <span class="smaller">(-30.1%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/constellations/iau_virgo.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+</div>
+</section>
+<section id="celestial-messier">
+<h2>Celestial: messier</h2>
+<div class="grid">
+<div class="pair">
+  <div class="label">gemini_m97</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 40.3 KB</div>
+      <img src="assets/preshrunk/celestial_images/messier/gemini_m97.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 14.9 KB <span class="smaller">(-63.0%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/messier/gemini_m97.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">hubble_catseyenebula</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 16.4 KB</div>
+      <img src="assets/preshrunk/celestial_images/messier/hubble_catseyenebula.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 11.7 KB <span class="smaller">(-28.3%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/messier/hubble_catseyenebula.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">hubble_m101</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 45.2 KB</div>
+      <img src="assets/preshrunk/celestial_images/messier/hubble_m101.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 43.6 KB <span class="smaller">(-3.6%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/messier/hubble_m101.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">hubble_m104</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 21.9 KB</div>
+      <img src="assets/preshrunk/celestial_images/messier/hubble_m104.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 17.4 KB <span class="smaller">(-20.3%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/messier/hubble_m104.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">hubble_m106</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 43.5 KB</div>
+      <img src="assets/preshrunk/celestial_images/messier/hubble_m106.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 38.5 KB <span class="smaller">(-11.4%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/messier/hubble_m106.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">hubble_m109</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 33.2 KB</div>
+      <img src="assets/preshrunk/celestial_images/messier/hubble_m109.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 23.1 KB <span class="smaller">(-30.4%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/messier/hubble_m109.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">hubble_m11</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 62.0 KB</div>
+      <img src="assets/preshrunk/celestial_images/messier/hubble_m11.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 55.7 KB <span class="smaller">(-10.3%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/messier/hubble_m11.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">hubble_m16</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 20.8 KB</div>
+      <img src="assets/preshrunk/celestial_images/messier/hubble_m16.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 14.8 KB <span class="smaller">(-28.5%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/messier/hubble_m16.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">hubble_m17</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 99.0 KB</div>
+      <img src="assets/preshrunk/celestial_images/messier/hubble_m17.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 63.9 KB <span class="smaller">(-35.4%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/messier/hubble_m17.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">hubble_m20</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 32.0 KB</div>
+      <img src="assets/preshrunk/celestial_images/messier/hubble_m20.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 20.5 KB <span class="smaller">(-35.9%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/messier/hubble_m20.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">hubble_m27</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 20.0 KB</div>
+      <img src="assets/preshrunk/celestial_images/messier/hubble_m27.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 12.4 KB <span class="smaller">(-37.9%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/messier/hubble_m27.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">hubble_m35</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 20.2 KB</div>
+      <img src="assets/preshrunk/celestial_images/messier/hubble_m35.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 12.9 KB <span class="smaller">(-36.3%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/messier/hubble_m35.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">hubble_m44</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 37.8 KB</div>
+      <img src="assets/preshrunk/celestial_images/messier/hubble_m44.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 13.9 KB <span class="smaller">(-63.1%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/messier/hubble_m44.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">hubble_m45</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 32.9 KB</div>
+      <img src="assets/preshrunk/celestial_images/messier/hubble_m45.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 29.6 KB <span class="smaller">(-10.0%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/messier/hubble_m45.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">hubble_m49</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 13.6 KB</div>
+      <img src="assets/preshrunk/celestial_images/messier/hubble_m49.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 6.3 KB <span class="smaller">(-53.5%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/messier/hubble_m49.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">hubble_m51a</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 38.4 KB</div>
+      <img src="assets/preshrunk/celestial_images/messier/hubble_m51a.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 35.8 KB <span class="smaller">(-6.9%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/messier/hubble_m51a.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">hubble_m57</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 18.6 KB</div>
+      <img src="assets/preshrunk/celestial_images/messier/hubble_m57.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 13.3 KB <span class="smaller">(-28.7%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/messier/hubble_m57.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">hubble_m64</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 38.8 KB</div>
+      <img src="assets/preshrunk/celestial_images/messier/hubble_m64.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 28.1 KB <span class="smaller">(-27.7%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/messier/hubble_m64.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">hubble_m65</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 23.6 KB</div>
+      <img src="assets/preshrunk/celestial_images/messier/hubble_m65.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 14.0 KB <span class="smaller">(-40.6%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/messier/hubble_m65.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">hubble_m66</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 57.5 KB</div>
+      <img src="assets/preshrunk/celestial_images/messier/hubble_m66.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 51.3 KB <span class="smaller">(-10.7%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/messier/hubble_m66.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">hubble_m7</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 87.7 KB</div>
+      <img src="assets/preshrunk/celestial_images/messier/hubble_m7.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 82.5 KB <span class="smaller">(-5.9%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/messier/hubble_m7.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">hubble_m77</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 53.1 KB</div>
+      <img src="assets/preshrunk/celestial_images/messier/hubble_m77.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 46.8 KB <span class="smaller">(-11.9%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/messier/hubble_m77.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">hubble_m78</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 14.1 KB</div>
+      <img src="assets/preshrunk/celestial_images/messier/hubble_m78.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 8.3 KB <span class="smaller">(-41.4%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/messier/hubble_m78.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">hubble_m8</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 25.5 KB</div>
+      <img src="assets/preshrunk/celestial_images/messier/hubble_m8.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 15.5 KB <span class="smaller">(-39.4%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/messier/hubble_m8.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">hubble_m81</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 32.9 KB</div>
+      <img src="assets/preshrunk/celestial_images/messier/hubble_m81.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 23.7 KB <span class="smaller">(-28.2%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/messier/hubble_m81.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">hubble_m82</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 46.9 KB</div>
+      <img src="assets/preshrunk/celestial_images/messier/hubble_m82.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 38.9 KB <span class="smaller">(-16.9%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/messier/hubble_m82.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">hubble_m87</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 14.9 KB</div>
+      <img src="assets/preshrunk/celestial_images/messier/hubble_m87.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 9.2 KB <span class="smaller">(-38.5%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/messier/hubble_m87.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">hubble_orion</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 31.1 KB</div>
+      <img src="assets/preshrunk/celestial_images/messier/hubble_orion.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 27.1 KB <span class="smaller">(-12.7%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/messier/hubble_orion.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">hubble_ultra_deep_field</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 36.7 KB</div>
+      <img src="assets/preshrunk/celestial_images/messier/hubble_ultra_deep_field.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 31.8 KB <span class="smaller">(-13.4%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/messier/hubble_ultra_deep_field.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">hubble_v838</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 43.2 KB</div>
+      <img src="assets/preshrunk/celestial_images/messier/hubble_v838.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 40.3 KB <span class="smaller">(-6.8%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/messier/hubble_v838.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">kennett_m31</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 196.4 KB</div>
+      <img src="assets/preshrunk/celestial_images/messier/kennett_m31.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 71.0 KB <span class="smaller">(-63.9%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/messier/kennett_m31.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">noao_m6</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 88.8 KB</div>
+      <img src="assets/preshrunk/celestial_images/messier/noao_m6.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 55.3 KB <span class="smaller">(-37.7%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/messier/noao_m6.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+</div>
+</section>
+<section id="celestial-planets">
+<h2>Celestial: planets</h2>
+<div class="grid">
+<div class="pair">
+  <div class="label">hubble_jupiter</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 18.2 KB</div>
+      <img src="assets/preshrunk/celestial_images/planets/hubble_jupiter.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 12.5 KB <span class="smaller">(-31.4%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/planets/hubble_jupiter.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">hubble_mars</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 14.7 KB</div>
+      <img src="assets/preshrunk/celestial_images/planets/hubble_mars.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 10.2 KB <span class="smaller">(-30.5%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/planets/hubble_mars.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">hubble_neptune</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 11.9 KB</div>
+      <img src="assets/preshrunk/celestial_images/planets/hubble_neptune.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 8.3 KB <span class="smaller">(-29.9%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/planets/hubble_neptune.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">hubble_saturn</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 25.3 KB</div>
+      <img src="assets/preshrunk/celestial_images/planets/hubble_saturn.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 16.4 KB <span class="smaller">(-35.0%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/planets/hubble_saturn.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">hubble_uranus</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 14.8 KB</div>
+      <img src="assets/preshrunk/celestial_images/planets/hubble_uranus.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 9.7 KB <span class="smaller">(-34.0%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/planets/hubble_uranus.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">hubble_venus_clouds_tops</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 4.5 KB</div>
+      <img src="assets/preshrunk/celestial_images/planets/hubble_venus_clouds_tops.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 2.0 KB <span class="smaller">(-56.5%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/planets/hubble_venus_clouds_tops.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">nasa_mercury</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 19.9 KB</div>
+      <img src="assets/preshrunk/celestial_images/planets/nasa_mercury.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 13.4 KB <span class="smaller">(-32.7%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/planets/nasa_mercury.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">nasa_venus</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 41.0 KB</div>
+      <img src="assets/preshrunk/celestial_images/planets/nasa_venus.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 34.8 KB <span class="smaller">(-15.2%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/planets/nasa_venus.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">nh_pluto_in_false_color</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 81.6 KB</div>
+      <img src="assets/preshrunk/celestial_images/planets/nh_pluto_in_false_color.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 56.4 KB <span class="smaller">(-30.9%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/planets/nh_pluto_in_false_color.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+</div>
+</section>
+<section id="celestial-stars">
+<h2>Celestial: stars</h2>
+<div class="grid">
+<div class="pair">
+  <div class="label">eso_achernar</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 38.4 KB</div>
+      <img src="assets/preshrunk/celestial_images/stars/eso_achernar.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 26.1 KB <span class="smaller">(-32.1%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/stars/eso_achernar.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">eso_acrux</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 74.9 KB</div>
+      <img src="assets/preshrunk/celestial_images/stars/eso_acrux.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 68.3 KB <span class="smaller">(-8.9%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/stars/eso_acrux.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">eso_adhara</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 56.9 KB</div>
+      <img src="assets/preshrunk/celestial_images/stars/eso_adhara.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 44.9 KB <span class="smaller">(-21.1%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/stars/eso_adhara.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">eso_aldebaran</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 37.2 KB</div>
+      <img src="assets/preshrunk/celestial_images/stars/eso_aldebaran.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 16.6 KB <span class="smaller">(-55.4%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/stars/eso_aldebaran.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">eso_algol</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 42.9 KB</div>
+      <img src="assets/preshrunk/celestial_images/stars/eso_algol.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 29.0 KB <span class="smaller">(-32.4%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/stars/eso_algol.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">eso_alioth</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 29.5 KB</div>
+      <img src="assets/preshrunk/celestial_images/stars/eso_alioth.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 17.2 KB <span class="smaller">(-41.7%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/stars/eso_alioth.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">eso_alnilam</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 53.6 KB</div>
+      <img src="assets/preshrunk/celestial_images/stars/eso_alnilam.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 40.9 KB <span class="smaller">(-23.7%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/stars/eso_alnilam.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">eso_alphard</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 42.8 KB</div>
+      <img src="assets/preshrunk/celestial_images/stars/eso_alphard.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 31.4 KB <span class="smaller">(-26.6%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/stars/eso_alphard.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">eso_alpheratz</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 37.3 KB</div>
+      <img src="assets/preshrunk/celestial_images/stars/eso_alpheratz.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 23.9 KB <span class="smaller">(-35.8%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/stars/eso_alpheratz.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">eso_altair</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 69.2 KB</div>
+      <img src="assets/preshrunk/celestial_images/stars/eso_altair.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 60.5 KB <span class="smaller">(-12.6%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/stars/eso_altair.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">eso_antares</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 23.8 KB</div>
+      <img src="assets/preshrunk/celestial_images/stars/eso_antares.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 7.5 KB <span class="smaller">(-68.4%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/stars/eso_antares.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">eso_arcturus</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 84.3 KB</div>
+      <img src="assets/preshrunk/celestial_images/stars/eso_arcturus.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 64.8 KB <span class="smaller">(-23.1%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/stars/eso_arcturus.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">eso_betelgeuse</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 26.7 KB</div>
+      <img src="assets/preshrunk/celestial_images/stars/eso_betelgeuse.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 5.7 KB <span class="smaller">(-78.7%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/stars/eso_betelgeuse.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">eso_capella</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 43.1 KB</div>
+      <img src="assets/preshrunk/celestial_images/stars/eso_capella.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 31.0 KB <span class="smaller">(-28.0%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/stars/eso_capella.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">eso_castor</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 39.9 KB</div>
+      <img src="assets/preshrunk/celestial_images/stars/eso_castor.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 26.5 KB <span class="smaller">(-33.6%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/stars/eso_castor.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">eso_deneb</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 54.3 KB</div>
+      <img src="assets/preshrunk/celestial_images/stars/eso_deneb.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 40.4 KB <span class="smaller">(-25.6%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/stars/eso_deneb.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">eso_denebola</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 43.9 KB</div>
+      <img src="assets/preshrunk/celestial_images/stars/eso_denebola.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 33.6 KB <span class="smaller">(-23.4%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/stars/eso_denebola.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">eso_diphda</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 43.1 KB</div>
+      <img src="assets/preshrunk/celestial_images/stars/eso_diphda.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 31.7 KB <span class="smaller">(-26.4%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/stars/eso_diphda.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">eso_dubhe</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 33.8 KB</div>
+      <img src="assets/preshrunk/celestial_images/stars/eso_dubhe.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 20.9 KB <span class="smaller">(-38.0%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/stars/eso_dubhe.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">eso_enif</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 35.1 KB</div>
+      <img src="assets/preshrunk/celestial_images/stars/eso_enif.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 21.3 KB <span class="smaller">(-39.4%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/stars/eso_enif.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">eso_fomalhaut</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 27.7 KB</div>
+      <img src="assets/preshrunk/celestial_images/stars/eso_fomalhaut.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 15.3 KB <span class="smaller">(-44.6%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/stars/eso_fomalhaut.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">eso_hadar</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 65.9 KB</div>
+      <img src="assets/preshrunk/celestial_images/stars/eso_hadar.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 56.1 KB <span class="smaller">(-14.9%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/stars/eso_hadar.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">eso_hamal</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 29.4 KB</div>
+      <img src="assets/preshrunk/celestial_images/stars/eso_hamal.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 16.7 KB <span class="smaller">(-43.3%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/stars/eso_hamal.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">eso_markab</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 31.4 KB</div>
+      <img src="assets/preshrunk/celestial_images/stars/eso_markab.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 18.2 KB <span class="smaller">(-41.8%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/stars/eso_markab.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">eso_mirach</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 31.3 KB</div>
+      <img src="assets/preshrunk/celestial_images/stars/eso_mirach.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 17.8 KB <span class="smaller">(-43.1%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/stars/eso_mirach.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">eso_nunki</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 81.9 KB</div>
+      <img src="assets/preshrunk/celestial_images/stars/eso_nunki.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 75.3 KB <span class="smaller">(-8.0%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/stars/eso_nunki.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">eso_pollux</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 39.4 KB</div>
+      <img src="assets/preshrunk/celestial_images/stars/eso_pollux.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 26.2 KB <span class="smaller">(-33.6%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/stars/eso_pollux.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">eso_procyon</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 56.6 KB</div>
+      <img src="assets/preshrunk/celestial_images/stars/eso_procyon.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 50.2 KB <span class="smaller">(-11.4%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/stars/eso_procyon.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">eso_rasalhague</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 45.2 KB</div>
+      <img src="assets/preshrunk/celestial_images/stars/eso_rasalhague.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 31.5 KB <span class="smaller">(-30.4%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/stars/eso_rasalhague.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">eso_regulus</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 32.6 KB</div>
+      <img src="assets/preshrunk/celestial_images/stars/eso_regulus.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 19.5 KB <span class="smaller">(-40.1%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/stars/eso_regulus.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">eso_rigel</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 67.1 KB</div>
+      <img src="assets/preshrunk/celestial_images/stars/eso_rigel.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 41.6 KB <span class="smaller">(-38.1%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/stars/eso_rigel.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">eso_scheat</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 36.0 KB</div>
+      <img src="assets/preshrunk/celestial_images/stars/eso_scheat.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 22.9 KB <span class="smaller">(-36.6%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/stars/eso_scheat.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">eso_shaula</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 87.1 KB</div>
+      <img src="assets/preshrunk/celestial_images/stars/eso_shaula.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 85.3 KB <span class="smaller">(-2.1%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/stars/eso_shaula.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">eso_sirius</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 53.0 KB</div>
+      <img src="assets/preshrunk/celestial_images/stars/eso_sirius.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 21.1 KB <span class="smaller">(-60.2%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/stars/eso_sirius.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">eso_spica</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 48.0 KB</div>
+      <img src="assets/preshrunk/celestial_images/stars/eso_spica.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 39.1 KB <span class="smaller">(-18.6%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/stars/eso_spica.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">eso_vega</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 67.6 KB</div>
+      <img src="assets/preshrunk/celestial_images/stars/eso_vega.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 28.5 KB <span class="smaller">(-57.8%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/stars/eso_vega.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">hubble_polaris</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 15.8 KB</div>
+      <img src="assets/preshrunk/celestial_images/stars/hubble_polaris.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 7.4 KB <span class="smaller">(-53.1%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/stars/hubble_polaris.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">iss_canopus</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 53.0 KB</div>
+      <img src="assets/preshrunk/celestial_images/stars/iss_canopus.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 28.1 KB <span class="smaller">(-47.0%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/stars/iss_canopus.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">nasa_moon</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 68.1 KB</div>
+      <img src="assets/preshrunk/celestial_images/stars/nasa_moon.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 48.8 KB <span class="smaller">(-28.3%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/stars/nasa_moon.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">nasa_sun</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 51.5 KB</div>
+      <img src="assets/preshrunk/celestial_images/stars/nasa_sun.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 39.5 KB <span class="smaller">(-23.2%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/stars/nasa_sun.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">nasa_vega</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (JPG) &bull; 60.9 KB</div>
+      <img src="assets/preshrunk/celestial_images/stars/nasa_vega.jpg" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 44.4 KB <span class="smaller">(-27.1%)</span></div>
+      <img src="../../app/src/main/assets/celestial_images/stars/nasa_vega.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+</div>
+</section>
+<section id="drawable">
+<h2>drawable</h2>
+<div class="grid">
+<div class="pair">
+  <div class="label">arrow</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 839 B</div>
+      <img src="assets/preshrunk/drawable/arrow.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 444 B <span class="smaller">(-47.1%)</span></div>
+      <img src="../../app/src/main/res/drawable/arrow.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">arrowcircle</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 7.9 KB</div>
+      <img src="assets/preshrunk/drawable/arrowcircle.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 3.4 KB <span class="smaller">(-57.6%)</span></div>
+      <img src="../../app/src/main/res/drawable/arrowcircle.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">automaticmode</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 3.1 KB</div>
+      <img src="assets/preshrunk/drawable/automaticmode.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 2.4 KB <span class="smaller">(-23.3%)</span></div>
+      <img src="../../app/src/main/res/drawable/automaticmode.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">b_meteor_off</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 1.7 KB</div>
+      <img src="assets/preshrunk/drawable/b_meteor_off.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 1.6 KB <span class="smaller">(-9.7%)</span></div>
+      <img src="../../app/src/main/res/drawable/b_meteor_off.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">b_meteor_on</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 2.9 KB</div>
+      <img src="assets/preshrunk/drawable/b_meteor_on.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 2.6 KB <span class="smaller">(-10.5%)</span></div>
+      <img src="../../app/src/main/res/drawable/b_meteor_on.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">backwards_play</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 402 B</div>
+      <img src="assets/preshrunk/drawable/backwards_play.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 316 B <span class="smaller">(-21.4%)</span></div>
+      <img src="../../app/src/main/res/drawable/backwards_play.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">backwards_play_pressed</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 388 B</div>
+      <img src="assets/preshrunk/drawable/backwards_play_pressed.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 364 B <span class="smaller">(-6.2%)</span></div>
+      <img src="../../app/src/main/res/drawable/backwards_play_pressed.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">blank</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 68 B</div>
+      <img src="assets/preshrunk/drawable/blank.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 38 B <span class="smaller">(-44.1%)</span></div>
+      <img src="../../app/src/main/res/drawable/blank.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">comet</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 3.3 KB</div>
+      <img src="assets/preshrunk/drawable/comet.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 1.5 KB <span class="smaller">(-53.7%)</span></div>
+      <img src="../../app/src/main/res/drawable/comet.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">crosshair</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 288 B</div>
+      <img src="assets/preshrunk/drawable/crosshair.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 210 B <span class="smaller">(-27.1%)</span></div>
+      <img src="../../app/src/main/res/drawable/crosshair.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">diffuse_nebula</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 1.1 KB</div>
+      <img src="assets/preshrunk/drawable/diffuse_nebula.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 730 B <span class="smaller">(-33.9%)</span></div>
+      <img src="../../app/src/main/res/drawable/diffuse_nebula.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">earth</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 20.4 KB</div>
+      <img src="assets/preshrunk/drawable/earth.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 12.5 KB <span class="smaller">(-38.9%)</span></div>
+      <img src="../../app/src/main/res/drawable/earth.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">forward_play</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 399 B</div>
+      <img src="assets/preshrunk/drawable/forward_play.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 340 B <span class="smaller">(-14.8%)</span></div>
+      <img src="../../app/src/main/res/drawable/forward_play.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">forward_play_pressed</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 405 B</div>
+      <img src="assets/preshrunk/drawable/forward_play_pressed.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 320 B <span class="smaller">(-21.0%)</span></div>
+      <img src="../../app/src/main/res/drawable/forward_play_pressed.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">galaxy</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 2.8 KB</div>
+      <img src="assets/preshrunk/drawable/galaxy.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 2.3 KB <span class="smaller">(-17.0%)</span></div>
+      <img src="../../app/src/main/res/drawable/galaxy.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">globular_cluster</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 2.0 KB</div>
+      <img src="assets/preshrunk/drawable/globular_cluster.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 1.4 KB <span class="smaller">(-31.0%)</span></div>
+      <img src="../../app/src/main/res/drawable/globular_cluster.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">grid_off</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 1.2 KB</div>
+      <img src="assets/preshrunk/drawable/grid_off.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 1.1 KB <span class="smaller">(-11.3%)</span></div>
+      <img src="../../app/src/main/res/drawable/grid_off.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">grid_on</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 1.8 KB</div>
+      <img src="assets/preshrunk/drawable/grid_on.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 1.7 KB <span class="smaller">(-7.3%)</span></div>
+      <img src="../../app/src/main/res/drawable/grid_on.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">horizon_off</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 1004 B</div>
+      <img src="assets/preshrunk/drawable/horizon_off.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 898 B <span class="smaller">(-10.6%)</span></div>
+      <img src="../../app/src/main/res/drawable/horizon_off.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">horizon_on</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 1.5 KB</div>
+      <img src="assets/preshrunk/drawable/horizon_on.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 1.4 KB <span class="smaller">(-8.5%)</span></div>
+      <img src="../../app/src/main/res/drawable/horizon_on.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">jupiter</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 2.4 KB</div>
+      <img src="assets/preshrunk/drawable/jupiter.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 1.6 KB <span class="smaller">(-34.1%)</span></div>
+      <img src="../../app/src/main/res/drawable/jupiter.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">line</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 142 B</div>
+      <img src="assets/preshrunk/drawable/line.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 110 B <span class="smaller">(-22.5%)</span></div>
+      <img src="../../app/src/main/res/drawable/line.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">manualmode</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 3.0 KB</div>
+      <img src="assets/preshrunk/drawable/manualmode.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 2.3 KB <span class="smaller">(-25.0%)</span></div>
+      <img src="../../app/src/main/res/drawable/manualmode.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">mars</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 2.2 KB</div>
+      <img src="assets/preshrunk/drawable/mars.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 1.7 KB <span class="smaller">(-22.4%)</span></div>
+      <img src="../../app/src/main/res/drawable/mars.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">mercury</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 815 B</div>
+      <img src="assets/preshrunk/drawable/mercury.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 704 B <span class="smaller">(-13.6%)</span></div>
+      <img src="../../app/src/main/res/drawable/mercury.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">messier_off</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 2.6 KB</div>
+      <img src="assets/preshrunk/drawable/messier_off.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 2.0 KB <span class="smaller">(-23.2%)</span></div>
+      <img src="../../app/src/main/res/drawable/messier_off.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">messier_on</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 2.8 KB</div>
+      <img src="assets/preshrunk/drawable/messier_on.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 2.5 KB <span class="smaller">(-11.4%)</span></div>
+      <img src="../../app/src/main/res/drawable/messier_on.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">meteor1_screen</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 1.6 KB</div>
+      <img src="assets/preshrunk/drawable/meteor1_screen.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 1.1 KB <span class="smaller">(-28.9%)</span></div>
+      <img src="../../app/src/main/res/drawable/meteor1_screen.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">meteor2_screen</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 763 B</div>
+      <img src="assets/preshrunk/drawable/meteor2_screen.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 626 B <span class="smaller">(-18.0%)</span></div>
+      <img src="../../app/src/main/res/drawable/meteor2_screen.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">moon0</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 1.4 KB</div>
+      <img src="assets/preshrunk/drawable/moon0.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 1.1 KB <span class="smaller">(-25.6%)</span></div>
+      <img src="../../app/src/main/res/drawable/moon0.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">moon1</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 2.8 KB</div>
+      <img src="assets/preshrunk/drawable/moon1.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 1.7 KB <span class="smaller">(-37.5%)</span></div>
+      <img src="../../app/src/main/res/drawable/moon1.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">moon2</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 3.2 KB</div>
+      <img src="assets/preshrunk/drawable/moon2.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 1.9 KB <span class="smaller">(-40.4%)</span></div>
+      <img src="../../app/src/main/res/drawable/moon2.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">moon3</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 2.9 KB</div>
+      <img src="assets/preshrunk/drawable/moon3.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 2.1 KB <span class="smaller">(-25.3%)</span></div>
+      <img src="../../app/src/main/res/drawable/moon3.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">moon4</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 5.5 KB</div>
+      <img src="assets/preshrunk/drawable/moon4.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 3.4 KB <span class="smaller">(-37.1%)</span></div>
+      <img src="../../app/src/main/res/drawable/moon4.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">moon5</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 2.9 KB</div>
+      <img src="assets/preshrunk/drawable/moon5.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 2.1 KB <span class="smaller">(-25.3%)</span></div>
+      <img src="../../app/src/main/res/drawable/moon5.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">moon6</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 2.5 KB</div>
+      <img src="assets/preshrunk/drawable/moon6.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 1.9 KB <span class="smaller">(-24.9%)</span></div>
+      <img src="../../app/src/main/res/drawable/moon6.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">moon7</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 1.8 KB</div>
+      <img src="assets/preshrunk/drawable/moon7.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 1.4 KB <span class="smaller">(-22.4%)</span></div>
+      <img src="../../app/src/main/res/drawable/moon7.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">neptune</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 2.1 KB</div>
+      <img src="assets/preshrunk/drawable/neptune.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 1.6 KB <span class="smaller">(-24.8%)</span></div>
+      <img src="../../app/src/main/res/drawable/neptune.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">open_cluster</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 1.1 KB</div>
+      <img src="assets/preshrunk/drawable/open_cluster.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 458 B <span class="smaller">(-57.7%)</span></div>
+      <img src="../../app/src/main/res/drawable/open_cluster.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">other</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 979 B</div>
+      <img src="assets/preshrunk/drawable/other.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 496 B <span class="smaller">(-49.3%)</span></div>
+      <img src="../../app/src/main/res/drawable/other.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">planet_off</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 1.0 KB</div>
+      <img src="assets/preshrunk/drawable/planet_off.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 898 B <span class="smaller">(-15.3%)</span></div>
+      <img src="../../app/src/main/res/drawable/planet_off.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">planet_on</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 1.6 KB</div>
+      <img src="assets/preshrunk/drawable/planet_on.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 1.4 KB <span class="smaller">(-14.9%)</span></div>
+      <img src="../../app/src/main/res/drawable/planet_on.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">planetary_nebula</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 2.2 KB</div>
+      <img src="assets/preshrunk/drawable/planetary_nebula.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 1.3 KB <span class="smaller">(-38.7%)</span></div>
+      <img src="../../app/src/main/res/drawable/planetary_nebula.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">pluto</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 869 B</div>
+      <img src="assets/preshrunk/drawable/pluto.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 848 B <span class="smaller">(-2.4%)</span></div>
+      <img src="../../app/src/main/res/drawable/pluto.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">saturn</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 1.4 KB</div>
+      <img src="assets/preshrunk/drawable/saturn.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 1.2 KB <span class="smaller">(-15.8%)</span></div>
+      <img src="../../app/src/main/res/drawable/saturn.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">search_lens_very_small</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 322 B</div>
+      <img src="assets/preshrunk/drawable/search_lens_very_small.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 200 B <span class="smaller">(-37.9%)</span></div>
+      <img src="../../app/src/main/res/drawable/search_lens_very_small.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">sidebarnoelements</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 2.8 KB</div>
+      <img src="assets/preshrunk/drawable/sidebarnoelements.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 2.0 KB <span class="smaller">(-29.3%)</span></div>
+      <img src="../../app/src/main/res/drawable/sidebarnoelements.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">star_off</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 1.4 KB</div>
+      <img src="assets/preshrunk/drawable/star_off.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 1022 B <span class="smaller">(-29.3%)</span></div>
+      <img src="../../app/src/main/res/drawable/star_off.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">star_on</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 1.4 KB</div>
+      <img src="assets/preshrunk/drawable/star_on.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 1.3 KB <span class="smaller">(-9.5%)</span></div>
+      <img src="../../app/src/main/res/drawable/star_on.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">stardroid_big_image</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 67.7 KB</div>
+      <img src="assets/preshrunk/drawable/stardroid_big_image.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 57.0 KB <span class="smaller">(-15.9%)</span></div>
+      <img src="../../app/src/main/res/drawable/stardroid_big_image.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">stars_off</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 1.1 KB</div>
+      <img src="assets/preshrunk/drawable/stars_off.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 938 B <span class="smaller">(-16.2%)</span></div>
+      <img src="../../app/src/main/res/drawable/stars_off.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">stars_on</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 1.6 KB</div>
+      <img src="assets/preshrunk/drawable/stars_on.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 1.4 KB <span class="smaller">(-10.4%)</span></div>
+      <img src="../../app/src/main/res/drawable/stars_on.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">stars_texture</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 922 B</div>
+      <img src="assets/preshrunk/drawable/stars_texture.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 670 B <span class="smaller">(-27.3%)</span></div>
+      <img src="../../app/src/main/res/drawable/stars_texture.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">stop_time_travel</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 272 B</div>
+      <img src="assets/preshrunk/drawable/stop_time_travel.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 190 B <span class="smaller">(-30.1%)</span></div>
+      <img src="../../app/src/main/res/drawable/stop_time_travel.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">stop_time_travel_pressed</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 275 B</div>
+      <img src="assets/preshrunk/drawable/stop_time_travel_pressed.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 188 B <span class="smaller">(-31.6%)</span></div>
+      <img src="../../app/src/main/res/drawable/stop_time_travel_pressed.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">sun</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 2.0 KB</div>
+      <img src="assets/preshrunk/drawable/sun.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 1.5 KB <span class="smaller">(-24.0%)</span></div>
+      <img src="../../app/src/main/res/drawable/sun.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">supernova_remnant</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 2.4 KB</div>
+      <img src="assets/preshrunk/drawable/supernova_remnant.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 986 B <span class="smaller">(-59.3%)</span></div>
+      <img src="../../app/src/main/res/drawable/supernova_remnant.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">time_travel_bar</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 3.3 KB</div>
+      <img src="assets/preshrunk/drawable/time_travel_bar.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 2.5 KB <span class="smaller">(-22.7%)</span></div>
+      <img src="../../app/src/main/res/drawable/time_travel_bar.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">time_travel_close</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 948 B</div>
+      <img src="assets/preshrunk/drawable/time_travel_close.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 694 B <span class="smaller">(-26.8%)</span></div>
+      <img src="../../app/src/main/res/drawable/time_travel_close.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">time_travel_icon</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 2.4 KB</div>
+      <img src="assets/preshrunk/drawable/time_travel_icon.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 2.1 KB <span class="smaller">(-13.3%)</span></div>
+      <img src="../../app/src/main/res/drawable/time_travel_icon.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">time_travel_small_icon</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 686 B</div>
+      <img src="assets/preshrunk/drawable/time_travel_small_icon.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 530 B <span class="smaller">(-22.7%)</span></div>
+      <img src="../../app/src/main/res/drawable/time_travel_small_icon.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">uranus</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 2.0 KB</div>
+      <img src="assets/preshrunk/drawable/uranus.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 1.5 KB <span class="smaller">(-27.7%)</span></div>
+      <img src="../../app/src/main/res/drawable/uranus.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+<div class="pair">
+  <div class="label">venus</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 2.4 KB</div>
+      <img src="assets/preshrunk/drawable/venus.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 1.8 KB <span class="smaller">(-26.5%)</span></div>
+      <img src="../../app/src/main/res/drawable/venus.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+</div>
+</section>
+<section id="drawable-hdpi">
+<h2>drawable-hdpi</h2>
+<div class="grid">
+<div class="pair">
+  <div class="label">skymap_logo</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 9.1 KB</div>
+      <img src="assets/preshrunk/drawable-hdpi/skymap_logo.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 7.0 KB <span class="smaller">(-23.1%)</span></div>
+      <img src="../../app/src/main/res/drawable-hdpi/skymap_logo.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+</div>
+</section>
+<section id="drawable-mdpi">
+<h2>drawable-mdpi</h2>
+<div class="grid">
+<div class="pair">
+  <div class="label">skymap_logo</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 4.8 KB</div>
+      <img src="assets/preshrunk/drawable-mdpi/skymap_logo.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 4.1 KB <span class="smaller">(-15.0%)</span></div>
+      <img src="../../app/src/main/res/drawable-mdpi/skymap_logo.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+</div>
+</section>
+<section id="drawable-xhdpi">
+<h2>drawable-xhdpi</h2>
+<div class="grid">
+<div class="pair">
+  <div class="label">skymap_logo</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 12.5 KB</div>
+      <img src="assets/preshrunk/drawable-xhdpi/skymap_logo.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 9.0 KB <span class="smaller">(-27.8%)</span></div>
+      <img src="../../app/src/main/res/drawable-xhdpi/skymap_logo.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+</div>
+</section>
+<section id="drawable-xxhdpi">
+<h2>drawable-xxhdpi</h2>
+<div class="grid">
+<div class="pair">
+  <div class="label">skymap_logo</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 24.0 KB</div>
+      <img src="assets/preshrunk/drawable-xxhdpi/skymap_logo.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 17.2 KB <span class="smaller">(-28.5%)</span></div>
+      <img src="../../app/src/main/res/drawable-xxhdpi/skymap_logo.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+</div>
+</section>
+<section id="drawable-xxxhdpi">
+<h2>drawable-xxxhdpi</h2>
+<div class="grid">
+<div class="pair">
+  <div class="label">skymap_logo</div>
+  <div class="images">
+    <div class="img-wrap">
+      <div class="tag before-tag">BEFORE (PNG) &bull; 39.2 KB</div>
+      <img src="assets/preshrunk/drawable-xxxhdpi/skymap_logo.png" loading="lazy" />
+    </div>
+    <div class="img-wrap">
+      <div class="tag after-tag">AFTER (WEBP) &bull; 27.3 KB <span class="smaller">(-30.3%)</span></div>
+      <img src="../../app/src/main/res/drawable-xxxhdpi/skymap_logo.webp" loading="lazy" />
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+<script>
+  function togglePhone() {
+    const btn = document.getElementById('phone-btn');
+    document.body.classList.toggle('phone-mode');
+    btn.classList.toggle('active');
+    btn.textContent = document.body.classList.contains('phone-mode')
+      ? '🖥️ Full size'
+      : '📱 Phone size (412px)';
+  }
+</script>
+</body>
+</html>
