@@ -7,7 +7,7 @@ alive. However...
 > We are not accepting *most* PRs at the moment.
 
 __Why?__ We're in the midst of a major rewrite and adding more features will just move the goalposts!
-When this is completely we'll gladly accept help.
+When this is complete we'll gladly accept help.
 
 ## Before You Start
 
@@ -139,23 +139,7 @@ Plug your phone in and run:
 2. Make your changes, keeping commits focused and atomic.
 3. Run the unit tests to make sure you didn't break anything.
 4. If you have multiple commits, please combine them into one by squashing.
-5. Add an entry to the `[Unreleased]` section of [CHANGELOG.md](CHANGELOG.md) (see below).
-6. Open a Pull Request with a clear description of what you changed and why.
-
-## Changelog
-
-We use the [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) format. When submitting a PR, add an entry to the `[Unreleased]` section of `CHANGELOG.md` under the appropriate category:
-
-- **Added** — new features or capabilities
-- **Changed** — changes to existing functionality
-- **Deprecated** — features that will be removed in a future release
-- **Removed** — features that were removed
-- **Fixed** — bug fixes
-- **Security** — vulnerability fixes
-
-Skip this for trivial changes (typos, CI config, internal refactoring with no user impact). When in doubt, add an entry — it's easier to remove than to reconstruct later.
-
-The maintainers will move `[Unreleased]` entries into a versioned section when cutting a release.
+5. Open a Pull Request with a clear description of what you changed and why.
 
 ## Coding Style
 
@@ -180,3 +164,7 @@ bundle exec fastlane
 ```
 
 or by reading [fastlane/README.md](fastlane/README.md).
+
+Before deploying a new release you will most likely want to update the `whatsnew` text and the
+list of contributors. Both these tasks can be done by Claude - see the Claude skills under
+`.claude/`.
