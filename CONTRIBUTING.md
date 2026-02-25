@@ -1,10 +1,19 @@
 # Contributing to Sky Map
 
-First off, thank you for considering contributing to Sky Map! It's a labor of love maintained in our spare time by a couple of ex-Googlers here in Pittsburgh, and community contributions help keep it alive.
+First off, thank you for considering contributing to Sky Map! It's a labor of love maintained in our
+spare time by a couple of ex-Googlers here in Pittsburgh, and community contributions help keep it
+alive. However...
+
+> We are not accepting *most* PRs at the moment.
+
+__Why?__ We're in the midst of a major rewrite and adding more features will just move the goalposts!
+When this is completely we'll gladly accept help.
 
 ## Before You Start
 
-**Please [email us](mailto:skymapdevs@gmail.com) (or file a feature request) before embarking on any major changes or feature additions.** We may have a different vision for the direction of the app and it would be a pity to do work that we can't accept and would be wasted.
+**Please [email us](mailto:skymapdevs@gmail.com) (or file a feature request) before embarking on any major changes or
+feature additions.** We may have a different vision for the direction of the app and it would be a
+pity to do work that we can't accept and would be wasted.
 
 Bug fixes, dependency upgrades, and translation contributions are generally welcome without prior discussion.
 
@@ -16,15 +25,19 @@ Thanks for your contributions! They're definitely appreciated even if our slowne
 
 ## Types of Contributions
 
-Here's what we're looking for:
+Despite the temporary moratorium on new features, we're always grateful for:
 
-- **Bug fixes** — Simple, focused fixes are very easy for us to approve.
+- **Bug fixes** — Simple, focused, few line fixes are very easy for us to approve.
 - **Dependency upgrades** — Keeping things up to date is always welcome.
-- **Translations** — We're particularly grateful for fixed or new translations since we've lost the 100% coverage of non-English languages that we once had.
+- **Translations** — We're particularly grateful for fixed or new translations since we've lost the
+100% coverage of non-English languages that we once had.
 - **Documentation** — Improvements to docs, README, comments, etc.
 - **Feature additions** — Please email us first (see above).
 
-**Pro-tip:** Small, focused PRs are very easy for us to approve. If your PR does too much it might get stalled because even if 90% of it is welcome there might be 10% that we're not happy with. So keep them small if you can. Plus, we'll be able to review them faster.
+**Pro-tip:** Small, focused PRs are easier for us to approve!
+If your PR does too much it might get stalled because even if 90% of it is welcome there might
+be 10% that we're not happy with. So keep them small if you can.
+Plus, we'll be able to review them faster.
 
 ## Development Setup
 
