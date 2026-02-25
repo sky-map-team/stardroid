@@ -5,7 +5,11 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to report a bug! Please fill out the form below so we can understand and reproduce the issue.
+        Thanks for taking the time to report a bug! The best bug reports follow the structure
+        below, but we value your time and appreciate *any* feedback. We can always follow up if
+        we need to.
+        
+        So if you can, please fill out the form below so we can understand and reproduce the issue.
 
   - type: textarea
     id: summary
@@ -26,7 +30,7 @@ body:
         2. Point the phone at...
         3. Tap on...
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: expected
@@ -34,7 +38,7 @@ body:
       label: Expected Behavior
       description: What did you expect the app to do?
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: observed
@@ -42,7 +46,7 @@ body:
       label: Observed Behavior
       description: What did you see instead?
     validations:
-      required: true
+      required: false
 
   - type: input
     id: device
@@ -51,7 +55,7 @@ body:
       description: What make and model device are you using?
       placeholder: "e.g. Samsung Galaxy S24, Google Pixel 8"
     validations:
-      required: true
+      required: false
 
   - type: input
     id: android-version
@@ -60,16 +64,16 @@ body:
       description: What Android version are you running? Stock or custom ROM?
       placeholder: "e.g. Android 14 (stock)"
     validations:
-      required: true
+      required: false
 
   - type: input
     id: app-version
     attributes:
       label: Sky Map Version
-      description: Which version of Sky Map? (Check Settings > About)
-      placeholder: "e.g. 1.11.0"
+      description: Which version of Sky Map? (Check Diagnostics > Sky Map version)
+      placeholder: "e.g. 1.11.0:Venus (1999)"
     validations:
-      required: false
+      required: true
 
   - type: textarea
     id: screenshots
