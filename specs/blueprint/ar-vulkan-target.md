@@ -1,8 +1,10 @@
 # AR/Vulkan Target Architecture
 
+> **FUTURE STATE SPECIFICATION** — This document describes a _possible planned_ architecture that has not been implemented. The current codebase uses OpenGL ES and does not include Vulkan or AR mode. See `specs/architecture/README.md` for the current architecture.
+
 ## Purpose
 
-Defines the **target architecture** for AR mode and Vulkan rendering, the modern, high-performance future state of Stardroid's rendering pipeline.
+Defines the **target architecture** for AR mode and Vulkan rendering, a potential future direction for the rendering pipeline.
 
 ## Vision Statement
 

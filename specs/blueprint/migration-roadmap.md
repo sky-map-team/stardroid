@@ -1,8 +1,10 @@
 # Migration Roadmap - Current to Target Architecture
 
+> **FUTURE STATE SPECIFICATION** — This is a planning document for a potential future migration to Vulkan/AR rendering. It does not reflect the current state of the codebase. Phases 1–4 described here have not been implemented.
+
 ## Purpose
 
-Provides a **step-by-step migration path** from the current OpenGL implementation to the target AR/Vulkan-capable architecture, while maintaining backward compatibility and minimizing disruption.
+Provides a **proposed step-by-step migration path** from the current OpenGL implementation to a target AR/Vulkan-capable architecture, while maintaining backward compatibility and minimizing disruption.
 
 ## Migration Philosophy
 

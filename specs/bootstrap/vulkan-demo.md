@@ -1,8 +1,10 @@
 # Vulkan Demo Bootstrap Specification
 
+> **FUTURE STATE SPECIFICATION** — This document describes a planned Vulkan bootstrap app that has not been built. The current codebase uses OpenGL ES for rendering. This spec would apply to a future migration phase.
+
 ## Purpose
 
-Defines the minimal Android Vulkan application that serves as the foundation for the Stardroid Awakening project. This is the "hello world" that proves Vulkan works on target devices before investing in the full rendering pipeline.
+Defines the minimal Android Vulkan application that would serve as a foundation for Vulkan rendering. This would be the "hello world" step to validate Vulkan on target devices before investing in a full Vulkan rendering pipeline.
 
 ## Goal
 

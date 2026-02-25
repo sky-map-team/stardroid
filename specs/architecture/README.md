@@ -94,7 +94,7 @@ Two-level component hierarchy:
 See [Dependency Injection](dependency-injection.md) for details.
 
 ### Layer Pattern
-Celestial objects organized into 12 independent, toggleable layers:
+Celestial objects organized into 12 independent, toggleable layers (Stars, Constellations, SolarSystem, Grid, Horizon, Messier, MeteorShower, ISS, Ecliptic, SkyGradient, Comets, StarOfBethlehem):
 - Each layer implements the `Layer` interface
 - Layers register with `RendererController`
 - Visibility controlled via SharedPreferences
@@ -111,12 +111,37 @@ Layers publish updates via `UpdateType`:
 - `UpdatePositions` - Recompute coordinates
 - `UpdateImages` - Reload textures
 
-## Key Files
+## Coordinate Transformation
 
-| File | Purpose |
-|------|---------|
-| `StardroidApplication.kt` | App entry point, Dagger initialization |
-| `DynamicStarMapActivity.kt` | Main star map UI |
-| `AstronomerModel.kt` | Coordinate transformation |
-| `SkyRenderer.kt` | OpenGL rendering |
-| `LayerManager.kt` | Layer visibility management |
+The core challenge is transforming device orientation into celestial coordinates:
+
+```
+Phone Coordinates → Transformation Matrix → Celestial Coordinates
+```
+
+Key class: `AstronomerModel.java` in the `control/` package.
+
+The algorithm calculates North, Up, and East vectors in both coordinate systems:
+
+1. **Phone coordinates** — Two paths:
+   - *Modern:* Uses Android's rotation sensor (fused accelerometer + magnetometer + gyroscope)
+   - *Legacy:* Calculates from raw accelerometer and magnetometer readings
+
+2. **Celestial coordinates:**
+   - Up vector: Zenith based on user's latitude and local sidereal time
+   - North vector: Projection of Earth's axis along the ground
+   - East vector: Cross product of North × Up
+
+3. **Transformation:** Matrix `M` constructed from these vectors transforms phone pointing direction to RA/Dec coordinates.
+
+See [sensors/orientation.md](../sensors/orientation.md) and [sensors/coordinate-transform.md](../sensors/coordinate-transform.md) for the detailed mathematical explanation. For the original design documents, see [docs/design/sensors.md](../../docs/design/sensors.md) and [docs/design/sensor_dataflow.md](../../docs/design/sensor_dataflow.md).
+
+## Key Entry Points
+
+| File | Role |
+|------|------|
+| `app/src/main/java/com/google/android/stardroid/StardroidApplication.kt` | Application entry point, Dagger initialization, sensor detection |
+| `app/src/main/java/com/google/android/stardroid/activities/DynamicStarMapActivity.java` | Main interactive star map |
+| `app/src/main/java/com/google/android/stardroid/control/AstronomerModel.java` | Coordinate transformation logic |
+| `app/src/main/java/com/google/android/stardroid/renderer/SkyRenderer.java` | OpenGL rendering |
+| `datamodel/src/main/proto/source.proto` | Protocol buffer schema for astronomical objects |

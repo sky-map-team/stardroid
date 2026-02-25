@@ -40,132 +40,128 @@ com.google.android.stardroid/
 ### Key Packages
 
 #### activities/
-Android Activities and DialogFragments:
-- `DynamicStarMapActivity` - Main star map
-- `SplashScreenActivity` - App launch
-- `EditSettingsActivity` - Preferences
-- `ImageGalleryActivity` - Image browser
-- `DiagnosticActivity` - Debug info
+Android Activities and DialogFragments (mostly Java):
+- `DynamicStarMapActivity.java` - Main star map
+- `SplashScreenActivity.java` - App launch
+- `EditSettingsActivity.java` - Preferences
+- `ImageGalleryActivity.java` - Image browser
+- `DiagnosticActivity.java` - Debug info
 
 #### control/
-Model and controller classes:
-- `AstronomerModel` - Core coordinate transformation
-- `ControllerGroup` - Input controller management
-- `TimeTravelClock` - Time travel feature
-- `LocationController` - Location management
+Model and controller classes (mostly Java):
+- `AstronomerModel.java` - Core coordinate transformation
+- `ControllerGroup.java` - Input controller management
+- `TimeTravelClock.java` - Time travel feature
+- `LocationController.java` - Location management
 
 #### layers/
-Celestial object display layers:
-- `AbstractLayer` - Base layer class
-- `StarsLayer`, `ConstellationsLayer` - File-based layers
-- `SolarSystemLayer`, `GridLayer` - Computed layers
-- `LayerManager` - Layer visibility control
+Celestial object display layers (Kotlin):
+- `AbstractLayer.kt` - Base layer class
+- `StarsLayer.kt`, `ConstellationsLayer.kt` - File-based layers
+- `SolarSystemLayer.kt`, `GridLayer.kt` - Computed layers
+- `LayerManager.kt` - Layer visibility control
 
 #### renderer/
-OpenGL rendering system:
-- `SkyRenderer` - Main renderer
-- `RendererController` - Update queue
-- `*ObjectManager` - Point/Line/Label/Image managers
-- `TextureManager` - Texture loading
+OpenGL rendering system (mostly Java):
+- `SkyRenderer.java` - Main renderer
+- `RendererController.java` - Update queue
+- `*ObjectManager.java` - Point/Line/Label/Image managers
+- `TextureManager.java` - Texture loading
 
 ### Source Statistics
 
 | Metric | Count |
 |--------|-------|
 | Source files | 171+ |
-| Kotlin files | ~170 |
 | Test files | 50+ |
 
-**Note:** This is a pure Kotlin codebase. No Java source files.
+**Note:** The codebase is mixed Java and Kotlin. The `layers/` package is Kotlin; `activities/`, `control/`, and `renderer/` packages are predominantly Java.
 
-## datamodel/ - FlatBuffers
+## datamodel/ - Protocol Buffers
 
-Defines the serialization format for astronomical objects.
+Defines the serialization format for astronomical objects using Protocol Buffers (proto2).
 
 ### Structure
 
 ```
 datamodel/
-└── src/main/fbs/
-    └── source.fbs        # FlatBuffers schema
+└── src/main/proto/
+    └── source.proto      # Protocol buffer schema
 ```
 
-### FlatBuffers Schema
+### Protobuf Schema
 
-Defines tables for astronomical data:
+Defines messages for astronomical data (see `specs/data/flatbuffers-schema.md` for full schema):
 
-```fbs
-table AstronomicalSource {
-    names: [string];
-    search_location: GeocentricCoordinates;
-    level: int32;
-    points: [PointElement];
-    labels: [LabelElement];
-    lines: [LineElement];
+```proto
+message AstronomicalSourceProto {
+  repeated string name_str_ids = 8;
+  optional GeocentricCoordinatesProto search_location = 2;
+  optional float level = 4;
+  repeated PointElementProto point = 5;
+  repeated LabelElementProto label = 6;
+  repeated LineElementProto line = 7;
 }
 
-table PointElement {
-    color: uint32;
-    size: int32;
-    location: GeocentricCoordinates (required);
-    shape: Shape = Circle;
+message PointElementProto {
+  optional GeocentricCoordinatesProto location = 1;
+  optional uint32 color = 2 [default = 0xFFFFFFFF];
+  optional int32 size = 3 [default = 3];
+  optional Shape shape = 4 [default = CIRCLE];
 }
 ```
 
 ### Shape Types
 
-```fbs
-enum Shape : byte {
-    Circle = 0,
-    Star = 1,
-    EllipticalGalaxy = 2,
-    SpiralGalaxy = 3,
-    IrregularGalaxy = 4,
-    LenticularGalaxy = 5,
-    GlobularCluster = 6,
-    OpenCluster = 7,
-    Nebula = 8,
-    HubbleDeepField = 9
+```proto
+enum Shape {
+  CIRCLE = 0;
+  STAR = 1;
+  OPEN_CLUSTER = 2;
+  GLOBULAR_CLUSTER = 3;
+  DIFFUSE_NEBULA = 4;
+  PLANETARY_NEBULA = 5;
+  SUPERNOVA_REMNANT = 6;
+  GALAXY = 7;
+  OTHER = 8;
 }
 ```
 
 ## tools/ - Data Generation
 
-Standalone utilities for converting astronomical catalogs to FlatBuffers binary format.
+Standalone Java utilities for converting astronomical catalogs to binary protobuf format.
 
 ### Structure
 
 ```
 tools/
-├── build.gradle.kts        # Tool build config
-├── generate.sh             # JSON intermediate generation
-├── binary.sh               # FlatBuffers binary conversion
-└── src/main/kotlin/
-    └── com/stardroid/awakening/tools/
-        ├── Main.kt                    # Entry point
-        ├── StellarCatalogConverter.kt # Star catalog processor
-        ├── MessierCatalogConverter.kt # Messier catalog processor
-        └── ConstellationConverter.kt  # Constellation processor
+├── build.gradle            # Tool build config
+└── src/main/java/
+    └── com/google/android/stardroid/data/
+        ├── Main.java                   # Entry point
+        ├── StellarAsciiProtoWriter.java # Star catalog → ASCII protobuf
+        ├── MessierAsciiProtoWriter.java # Messier catalog → ASCII protobuf
+        └── AsciiToBinaryProtoWriter.java # ASCII protobuf → binary protobuf
 ```
 
 ### Data Pipeline
 
 ```
-Raw Catalogs → tools/Main.kt → JSON Intermediate → FlatBuffers Binary
-                     │                  │                   │
-           (StellarCatalogConverter)    │          (flatc compiler)
-           (MessierCatalogConverter)    │                   │
-                                        ▼                   ▼
-                              tools/data/*.json    app/src/main/assets/*.bin
+Raw Catalogs → tools/Main.java → ASCII Protobuf Text → Binary Protobuf
+                     │                                        │
+           (StellarAsciiProtoWriter)               (AsciiToBinaryProtoWriter)
+           (MessierAsciiProtoWriter)                          │
+                                                              ▼
+                                               app/src/main/assets/*.binary
 ```
 
 ### Generated Assets
 
 | File | Source | Content |
 |------|--------|---------|
-| `stars.binary` | Hipparcos catalog | ~100k stars |
-| `constellations.binary` | Stellarium data | 88 constellations |
-| `messier.binary` | Messier catalog | ~110 deep-sky objects |
+| `stars.binary` | Hipparcos catalog | Star positions, magnitudes, colors |
+| `constellations.binary` | Stellarium data | Constellation lines and labels |
+| `messier.binary` | Messier catalog | Deep-sky objects |
 
 ## Dependencies Between Modules
 
@@ -186,38 +182,24 @@ Raw Catalogs → tools/Main.kt → JSON Intermediate → FlatBuffers Binary
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    id("com.google.devtools.ksp")
+    id("com.google.dagger.hilt.android")  // or Dagger 2 kapt
 }
 
 dependencies {
     implementation(project(":datamodel"))
-    implementation("com.google.flatbuffers:flatbuffers-java:24.3.25")
-    ksp("com.google.dagger:dagger-compiler:2.x")
+    // Protocol Buffers runtime (for deserializing binary assets)
+    implementation("com.google.protobuf:protobuf-java:3.x")
 }
 ```
 
-### datamodel/build.gradle.kts
-```kotlin
+### datamodel/build.gradle
+The `datamodel` module uses the protobuf Gradle plugin to compile `source.proto` into Java classes.
+
+### tools/build.gradle
+```groovy
 plugins {
-    id("java-library")
-    id("org.jetbrains.kotlin.jvm")
-}
-
-dependencies {
-    implementation("com.google.flatbuffers:flatbuffers-java:24.3.25")
-}
-
-// FlatBuffers code generation
-tasks.register<Exec>("generateFlatBuffers") {
-    commandLine("flatc", "--kotlin", "-o", "src/main/kotlin", "src/main/fbs/source.fbs")
-}
-```
-
-### tools/build.gradle.kts
-```kotlin
-plugins {
-    id("org.jetbrains.kotlin.jvm")
-    application
+    id("java")
+    id("application")
 }
 
 dependencies {

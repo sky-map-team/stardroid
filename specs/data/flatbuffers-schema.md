@@ -1,6 +1,105 @@
-# FlatBuffers Schema
+# Data Serialization Schema
 
-Sky Map uses FlatBuffers for efficient serialization of astronomical data. FlatBuffers provides zero-copy deserialization, meaning data can be accessed directly from the binary buffer without parsing overhead.
+> **NOTE — FUTURE vs CURRENT STATE**
+>
+> The body of this document describes a _possible planned_ migration to **FlatBuffers** serialization that has not been implemented. The current codebase uses **Protocol Buffers** (protobuf2), not FlatBuffers.
+>
+> See the **Current Implementation** section below for the real schema.
+
+---
+
+## Current Implementation: Protocol Buffers
+
+Sky Map uses Protocol Buffers (proto2) for serializing astronomical data. The schema is defined in `datamodel/src/main/proto/source.proto` and the generated Java classes live in the `com.google.android.stardroid.source.proto` package.
+
+### Current Schema (`source.proto`)
+
+```proto
+syntax = "proto2";
+package stardroid_source;
+option java_package = "com.google.android.stardroid.source.proto";
+option java_outer_classname = "SourceProto";
+
+enum Shape {
+  CIRCLE = 0;
+  STAR = 1;
+  OPEN_CLUSTER = 2;
+  GLOBULAR_CLUSTER = 3;
+  DIFFUSE_NEBULA = 4;
+  PLANETARY_NEBULA = 5;
+  SUPERNOVA_REMNANT = 6;
+  GALAXY = 7;
+  OTHER = 8;
+}
+
+message GeocentricCoordinatesProto {
+  optional float right_ascension = 1;
+  optional float declination = 2;
+}
+
+message PointElementProto {
+  optional GeocentricCoordinatesProto location = 1;
+  optional uint32 color = 2 [default = 0xFFFFFFFF];
+  optional int32 size = 3 [default = 3];
+  optional Shape shape = 4 [default = CIRCLE];
+}
+
+message LabelElementProto {
+  optional GeocentricCoordinatesProto location = 1;
+  optional uint32 color = 2 [default = 0xFFFFFFFF];
+  optional int32 strings_int_id = 3;
+  optional string strings_str_id = 6;
+  optional int32 font_size = 4 [default = 15];
+  optional float offset = 5 [default = 0.02];
+}
+
+message LineElementProto {
+  optional uint32 color = 1 [default = 0xFFFFFFFF];
+  optional float line_width = 2 [default = 1.5];
+  repeated GeocentricCoordinatesProto vertex = 3;
+}
+
+message AstronomicalSourceProto {
+  repeated uint32 name_int_ids = 1;
+  repeated string name_str_ids = 8;
+  optional GeocentricCoordinatesProto search_location = 2;
+  optional float search_level = 3 [default = 0.0];
+  optional float level = 4 [default = 0.0];
+  repeated PointElementProto point = 5;
+  repeated LabelElementProto label = 6;
+  repeated LineElementProto line = 7;
+}
+
+message AstronomicalSourcesProto {
+  repeated AstronomicalSourceProto source = 1;
+}
+```
+
+### Data Generation Pipeline
+
+```
+Raw catalogs → tools/Main.java → ASCII protobuf text → binary protobuf → app/src/main/assets/
+                (StellarAsciiProtoWriter)               (AsciiToBinaryProtoWriter)
+                (MessierAsciiProtoWriter)
+```
+
+---
+
+## Planned Future State: FlatBuffers
+
+The rest of this document describes a proposed migration to FlatBuffers. FlatBuffers would provide zero-copy deserialization, meaning data could be accessed directly from the binary buffer without parsing overhead.
+
+### Why FlatBuffers? (Proposed rationale)
+
+| Feature | FlatBuffers | Protocol Buffers |
+|---------|-------------|------------------|
+| Deserialization | Zero-copy (instant) | Requires parsing |
+| Memory | Direct access to buffer | Creates new objects |
+| Speed | O(1) field access | O(n) parsing |
+| Mutability | Read-only by default | Mutable objects |
+| Streaming | Random access | Sequential |
+
+**Key motivation:** For 100k+ stars, FlatBuffers allows instant access without allocating memory for each star object.
 
 ## Why FlatBuffers?
 

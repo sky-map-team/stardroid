@@ -7,7 +7,7 @@ This document describes how data flows through Sky Map, from raw astronomical ca
 ```
 ┌──────────────────────────────────────────────────────────────────────────┐
 │                           BUILD TIME                                      │
-│  Raw Catalogs ─► JSON Intermediate ─► FlatBuffers Binary ─► App Assets   │
+│  Raw Catalogs ─► ASCII Protobuf Text ─► Binary Protobuf ─► App Assets    │
 └──────────────────────────────────────────────────────────────────────────┘
                                                               │
                                                               ▼
@@ -26,53 +26,40 @@ Source data in various formats:
 - **Stellarium Data**: Constellation lines and names
 - **Messier Catalog**: Deep-sky object positions and types
 
-### 2. JSON Intermediate Generation
+### 2. ASCII Protobuf Text Generation
 
-`tools/generate.sh` runs data converters:
+`tools/src/main/java/com/google/android/stardroid/data/Main.java` is the entry point. It runs the converter classes to produce ASCII-format protobuf text files:
 
-```bash
-./gradlew :tools:run --args="--input stellar_catalog.csv --output stars.json"
-```
+**Converter Classes (Java)**:
+- `StellarAsciiProtoWriter` - Processes star catalogs
+- `MessierAsciiProtoWriter` - Processes Messier objects
+- `AsciiToBinaryProtoWriter` - Converts ASCII protobuf to binary
 
-**Converter Classes (Kotlin)**:
-- `StellarCatalogConverter` - Processes star catalogs
-- `MessierCatalogConverter` - Processes Messier objects
-- `ConstellationConverter` - Processes constellation data
+### 3. Binary Protobuf Conversion
 
-### 3. FlatBuffers Binary Conversion
-
-`tools/binary.sh` converts JSON to FlatBuffers binary:
-
-```bash
-flatc --binary -o app/src/main/assets/ \
-    datamodel/src/main/fbs/source.fbs \
-    tools/data/stars.json
-```
+`AsciiToBinaryProtoWriter` converts ASCII protobuf to binary format using the `AstronomicalSourcesProto` message type defined in `datamodel/src/main/proto/source.proto`.
 
 **Output Location**: `app/src/main/assets/`
 
 ### 4. Final Assets
 
-| Asset File | Size | Contents |
-|------------|------|----------|
-| `stars.binary` | ~2MB | Star positions, colors, magnitudes |
-| `constellations.binary` | ~50KB | Lines and labels |
-| `messier.binary` | ~20KB | Deep-sky objects |
+| Asset File | Contents |
+|------------|----------|
+| `stars.binary` | Star positions, colors, magnitudes |
+| `constellations.binary` | Lines and labels |
+| `messier.binary` | Deep-sky objects |
 
 ## Runtime Data Flow
 
 ### 1. Asset Loading
 
-`AbstractFileBasedLayer` loads FlatBuffers on first access (zero-copy):
+`AbstractFileBasedLayer` loads binary protobuf assets and wraps them in `ProtobufAstronomicalSource` objects:
 
 ```kotlin
 override fun initialize() {
-    val bytes = context.assets.open(assetFilename).use { it.readBytes() }
-    val buffer = ByteBuffer.wrap(bytes)
-    val data = AstronomicalSources.getRootAsAstronomicalSources(buffer)
-    sources = (0 until data.sourcesLength).map { i ->
-        FlatBufferAstronomicalSource(data.sources(i)!!)
-    }
+    val assetStream = context.assets.open(assetFilename)
+    val sources = AstronomicalSourcesProto.parseFrom(assetStream)
+    // Each source wrapped in ProtobufAstronomicalSource
 }
 ```
 

@@ -1,6 +1,8 @@
 # Rendering Abstraction Layer
 
-This document specifies the graphics abstraction layer that separates domain logic from rendering implementation, enabling multiple backends (Vulkan, OpenGL, AR).
+> **FUTURE STATE SPECIFICATION** — This document specifies a possible planned `RendererInterface` abstraction that does not yet exist. The current code uses OpenGL ES directly via `SkyRenderer`. This spec describes the first step toward a pluggable renderer architecture.
+
+This document specifies the graphics abstraction layer that would separate domain logic from rendering implementation, enabling multiple backends (Vulkan, OpenGL, AR).
 
 ## Purpose
 
