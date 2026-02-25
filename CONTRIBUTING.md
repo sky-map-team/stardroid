@@ -7,7 +7,7 @@ alive. However...
 > We are not accepting *most* PRs at the moment.
 
 __Why?__ We're in the midst of a major rewrite and adding more features will just move the goalposts!
-When this is completely we'll gladly accept help.
+When this is complete we'll gladly accept help.
 
 ## Before You Start
 
