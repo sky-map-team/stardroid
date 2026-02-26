@@ -30,14 +30,15 @@ The codebase is written in Java and Kotlin, targeting Android SDK 26–36.
 
 ```bash
 # Build debug APK (GMS flavor with Google Analytics)
-./gradlew assembleGmsDebug
+./gradlew :app:assembleGmsDebug
 
 # Build F-Droid flavor (no analytics/Google services)
-./gradlew assembleFdroidDebug
+./gradlew :app:assembleFdroidDebug
 
 # Full rebuild including data generation
 ./build_skymap.sh          # GMS
-./build_skymap_fdroid.sh   # F-Droid
+./build_skymap.sh --fdroid   # F-Droid
+./build_skymap --quick # Don't regenerate the data
 
 # Build a release bundle
 ./gradlew :app:bundleGmsRelease
@@ -78,6 +79,7 @@ cd tools
 
 ```bash
 ./deploy.sh       # Deploy to a connected device or emulator
+./deploy.sh -p # Deploy to a physical device
 ./deploy.sh -d    # Deploy a debug build
 ./undeploy.sh     # Uninstall the app
 ```
