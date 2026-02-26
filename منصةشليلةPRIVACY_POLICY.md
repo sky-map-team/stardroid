@@ -1,4 +1,4 @@
-# Privacy Policy
+منصةشليلة# Privacy Policy
     
 This App uses Google Analytics to help analyse how people use it.
     
