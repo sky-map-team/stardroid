@@ -53,6 +53,10 @@ public class CompassCalibrationActivity extends InjectableActivity implements Se
     setContentView(R.layout.activity_compass_calibration);
     EdgeToEdgeFixer.applyEdgeToEdgeFixForActionBarActivity(this);
     webView = findViewById(R.id.compass_calib_activity_webview);
+    android.webkit.WebSettings webSettings = webView.getSettings();
+    webSettings.setJavaScriptEnabled(true);
+    // Required to load the gif from the html file.
+    webSettings.setAllowFileAccessFromFileURLs(true);
     webView.setWebViewClient(new WebViewClient() {
       @Override
       public void onPageFinished(WebView view, String url) {
