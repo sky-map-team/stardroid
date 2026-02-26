@@ -24,6 +24,7 @@ import android.app.Dialog;
 import android.app.TimePickerDialog;
 import android.app.TimePickerDialog.OnTimeSetListener;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.SystemClock;
@@ -41,9 +42,11 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.preference.PreferenceManager;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.DynamicStarMapActivity;
+import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
 import com.google.android.stardroid.control.AstronomerModel;
 import com.google.android.stardroid.ephemeris.SolarSystemBody;
 import com.google.android.stardroid.space.CelestialObject;
@@ -64,6 +67,7 @@ import java.util.List;
 public class TimeTravelDialog extends Dialog {
   private static final String TAG = MiscUtil.getTag(TimeTravelDialog.class);
   private static final int MIN_CLICK_TIME = 1000;
+  private static final int NIGHT_TEXT_COLOR = 0xFFCC4444;
   private Spinner popularDatesMenu;
   private TextView dateTimeReadout;
   private DynamicStarMapActivity parentActivity;
@@ -163,6 +167,34 @@ public class TimeTravelDialog extends Dialog {
     calendar.setTime(new Date());
     updateGoButtonText();
     updateDisplay();
+    applyNightMode();
+  }
+
+  private void applyNightMode() {
+    SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getContext());
+    boolean isNight = "NIGHT".equals(prefs.getString(ActivityLightLevelManager.LIGHT_MODE_KEY, "DAY"));
+    int textColor = isNight ? NIGHT_TEXT_COLOR : Color.WHITE;
+    if (getWindow() != null && getWindow().getDecorView() instanceof ViewGroup) {
+      tintTextViews((ViewGroup) getWindow().getDecorView(), textColor);
+    }
+    if (getWindow() != null) {
+      int dividerId = getContext().getResources().getIdentifier("titleDivider", "id", "android");
+      if (dividerId != 0) {
+        View divider = getWindow().getDecorView().findViewById(dividerId);
+        if (divider != null) divider.setBackgroundColor(isNight ? NIGHT_TEXT_COLOR : 0xFF444444);
+      }
+    }
+  }
+
+  private static void tintTextViews(ViewGroup root, int color) {
+    for (int i = 0; i < root.getChildCount(); i++) {
+      View child = root.getChildAt(i);
+      if (child instanceof TextView) {
+        ((TextView) child).setTextColor(color);
+      } else if (child instanceof ViewGroup) {
+        tintTextViews((ViewGroup) child, color);
+      }
+    }
   }
 
   /**

@@ -16,6 +16,7 @@ package com.google.android.stardroid.activities;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -51,11 +52,17 @@ import javax.inject.Inject;
  *
  * @author John Taylor
  */
-public class ImageGalleryActivity extends InjectableActivity {
+public class ImageGalleryActivity extends InjectableActivity
+    implements ActivityLightLevelChanger.NightModeable {
   /** The index of the image id Intent extra.*/
   public static final String IMAGE_ID = "image_id";
 
   private static final String TAG = MiscUtil.getTag(ImageGalleryActivity.class);
+
+  private static final int NIGHT_RED_OVERLAY = 0x66220000;
+  private static final int DAY_OVERLAY       = 0x66000000;
+
+  private boolean nightMode = false;
   private List<GalleryImage> galleryImages;
 
   @Inject
@@ -146,6 +153,19 @@ public class ImageGalleryActivity extends InjectableActivity {
   public void onPause() {
     super.onPause();
     activityLightLevelManager.onPause();
+  }
+
+  @Override
+  public void setNightMode(boolean nightMode) {
+    this.nightMode = nightMode;
+    applyNightMode();
+  }
+
+  private void applyNightMode() {
+    android.app.ActionBar actionBar = getActionBar();
+    if (actionBar != null) {
+      actionBar.setBackgroundDrawable(new ColorDrawable(nightMode ? NIGHT_RED_OVERLAY : DAY_OVERLAY));
+    }
   }
 
   @Override

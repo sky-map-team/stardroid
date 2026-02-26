@@ -19,7 +19,11 @@ import android.app.SearchManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.graphics.Rect;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.media.MediaPlayer;
@@ -35,12 +39,17 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
 
 import androidx.annotation.StringRes;
 import androidx.core.content.ContextCompat;
@@ -177,6 +186,13 @@ public class DynamicStarMapActivity extends InjectableActivity
   private static final float ROTATION_SPEED = 10;
   private static final String TAG = MiscUtil.getTag(DynamicStarMapActivity.class);
 
+  // Night mode UI colours
+  private static final int NIGHT_TEXT_COLOR  = 0xFFCC4444;
+  private static final int NIGHT_RED_OVERLAY = 0x66220000;  // action bar in night mode
+  private static final int DAY_OVERLAY       = 0x66000000;  // action bar in day mode (#black_overlay)
+  private static final int NIGHT_BAR_BG      = 0x20990000;  // time-travel bar red tint
+  private static final int DAY_BAR_BG        = 0x20990099;  // time-travel bar purple
+
   private ImageButton cancelSearchButton;
   @Inject ControllerGroup controller;
   private GestureDetector gestureDetector;
@@ -275,7 +291,126 @@ public class DynamicStarMapActivity extends InjectableActivity
 
   @Override
   public void setNightMode(boolean mode) {
+    nightMode = mode;
     rendererController.queueNightVisionMode(mode);
+    applyNightModeToUi();
+  }
+
+  private void applyNightModeToUi() {
+    int textColor = nightMode ? NIGHT_TEXT_COLOR : Color.WHITE;
+
+    // Action bar background and title text
+    android.app.ActionBar actionBar = getActionBar();
+    if (actionBar != null) {
+      actionBar.setBackgroundDrawable(new ColorDrawable(nightMode ? NIGHT_RED_OVERLAY : DAY_OVERLAY));
+      CharSequence title = getTitle();
+      if (title != null) {
+        SpannableString styledTitle = new SpannableString(title.toString());
+        styledTitle.setSpan(new ForegroundColorSpan(textColor), 0, styledTitle.length(), 0);
+        actionBar.setTitle(styledTitle);
+      }
+    }
+
+    // Menu icons (triggers onPrepareOptionsMenu which applies color filters)
+    invalidateOptionsMenu();
+
+    // Layer icon sidebar background tint
+    ButtonLayerView providerButtons = (ButtonLayerView) findViewById(R.id.layer_buttons_control);
+    if (providerButtons != null && providerButtons.getBackground() != null) {
+      providerButtons.getBackground().mutate().setColorFilter(
+          nightMode ? 0xFF660000 : 0xFFFFFFFF, PorterDuff.Mode.MULTIPLY);
+    }
+
+    // Layer icon buttons — use MULTIPLY so fully-opaque drawables are tinted, not replaced
+    if (providerButtons != null) {
+      for (int i = 0; i < providerButtons.getChildCount(); i++) {
+        View child = providerButtons.getChildAt(i);
+        if (child instanceof ImageButton) {
+          if (nightMode) {
+            ((ImageButton) child).setColorFilter(NIGHT_TEXT_COLOR, PorterDuff.Mode.MULTIPLY);
+          } else {
+            ((ImageButton) child).clearColorFilter();
+          }
+        }
+      }
+    }
+
+    // Manual/auto toggle — webp image, must use MULTIPLY not SRC_ATOP
+    View manualAutoToggle = findViewById(R.id.manual_auto_toggle);
+    if (manualAutoToggle instanceof ImageButton) {
+      if (nightMode) {
+        ((ImageButton) manualAutoToggle).setColorFilter(NIGHT_TEXT_COLOR, PorterDuff.Mode.MULTIPLY);
+      } else {
+        ((ImageButton) manualAutoToggle).clearColorFilter();
+      }
+    }
+
+    // Search control bar
+    View searchControlBar = findViewById(R.id.search_control_bar);
+    if (searchControlBar != null) {
+      searchControlBar.setBackgroundColor(nightMode ? NIGHT_BAR_BG : DAY_BAR_BG);
+      int[] searchTextIds = {R.id.search_status_label, R.id.search_prompt};
+      for (int id : searchTextIds) {
+        TextView tv = (TextView) findViewById(id);
+        if (tv != null) tv.setTextColor(textColor);
+      }
+      ImageButton cancelBtn = (ImageButton) findViewById(R.id.cancel_search_button);
+      if (cancelBtn != null) {
+        if (nightMode) cancelBtn.setColorFilter(NIGHT_TEXT_COLOR, PorterDuff.Mode.MULTIPLY);
+        else cancelBtn.clearColorFilter();
+      }
+    }
+
+    // Time player bar
+    if (timePlayerUI != null) {
+      timePlayerUI.setBackgroundColor(nightMode ? NIGHT_BAR_BG : DAY_BAR_BG);
+      if (timePlayerUI instanceof ViewGroup) {
+        ViewGroup group = (ViewGroup) timePlayerUI;
+        for (int i = 0; i < group.getChildCount(); i++) {
+          View child = group.getChildAt(i);
+          if (child instanceof android.widget.RelativeLayout) {
+            child.setBackgroundColor(nightMode ? NIGHT_BAR_BG : DAY_BAR_BG);
+          }
+        }
+      }
+      int[] textViewIds = {
+          R.id.time_travel_status_label,
+          R.id.time_travel_time_readout,
+          R.id.time_travel_speed_label
+      };
+      for (int id : textViewIds) {
+        TextView tv = (TextView) findViewById(id);
+        if (tv != null) tv.setTextColor(textColor);
+      }
+      // Time player icon and control buttons
+      int[] iconIds = {
+          R.id.time_travel_icon,
+          R.id.time_player_close,
+          R.id.time_player_play_backwards,
+          R.id.time_player_play_stop,
+          R.id.time_player_play_forwards
+      };
+      for (int id : iconIds) {
+        ImageView iv = (ImageView) findViewById(id);
+        if (iv != null) {
+          if (nightMode) iv.setColorFilter(NIGHT_TEXT_COLOR, PorterDuff.Mode.MULTIPLY);
+          else iv.clearColorFilter();
+        }
+      }
+    }
+  }
+
+  @Override
+  public boolean onPrepareOptionsMenu(Menu menu) {
+    boolean result = super.onPrepareOptionsMenu(menu);
+    for (int i = 0; i < menu.size(); i++) {
+      Drawable icon = menu.getItem(i).getIcon();
+      if (icon != null) {
+        icon.mutate().setColorFilter(
+            nightMode ? NIGHT_TEXT_COLOR : Color.WHITE, PorterDuff.Mode.MULTIPLY);
+      }
+    }
+    return result;
   }
 
   private void checkForSensorsAndMaybeWarn() {

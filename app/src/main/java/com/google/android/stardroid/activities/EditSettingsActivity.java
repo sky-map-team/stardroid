@@ -15,6 +15,7 @@ package com.google.android.stardroid.activities;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.graphics.drawable.ColorDrawable;
 import android.content.DialogInterface.OnClickListener;
 import android.content.SharedPreferences;
 import android.location.Address;
@@ -47,7 +48,8 @@ import javax.inject.Inject;
 /**
  * Edit the user's preferences.
  */
-public class EditSettingsActivity extends PreferenceActivity {
+public class EditSettingsActivity extends PreferenceActivity
+    implements ActivityLightLevelChanger.NightModeable {
   private MyPreferenceFragment preferenceFragment;
 
   public static class MyPreferenceFragment extends PreferenceFragment {
@@ -70,6 +72,11 @@ public class EditSettingsActivity extends PreferenceActivity {
   private static final String LATITUDE = "latitude";
   private static final String LOCATION = "location";
   private static final String TAG = MiscUtil.getTag(EditSettingsActivity.class);
+
+  private static final int NIGHT_RED_OVERLAY = 0x66220000;
+  private static final int DAY_OVERLAY       = 0x66000000;
+
+  private boolean nightMode = false;
   private Geocoder geocoder;
   @Inject ActivityLightLevelManager activityLightLevelManager;
   @Inject Analytics analytics;
@@ -176,6 +183,19 @@ public class EditSettingsActivity extends PreferenceActivity {
   private void updatePreferences() {
     Log.d(TAG, "Updating preferences");
     analytics.setEnabled(preferenceFragment.findPreference(Analytics.PREF_KEY).isEnabled());
+  }
+
+  @Override
+  public void setNightMode(boolean nightMode) {
+    this.nightMode = nightMode;
+    applyNightMode();
+  }
+
+  private void applyNightMode() {
+    android.app.ActionBar actionBar = getActionBar();
+    if (actionBar != null) {
+      actionBar.setBackgroundDrawable(new ColorDrawable(nightMode ? NIGHT_RED_OVERLAY : DAY_OVERLAY));
+    }
   }
 
   protected boolean setLatLongFromPlace(String place) {

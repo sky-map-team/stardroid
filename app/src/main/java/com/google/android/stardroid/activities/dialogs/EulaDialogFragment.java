@@ -107,7 +107,27 @@ public class EulaDialogFragment extends DialogFragment {
     });
     webView.loadDataWithBaseURL("file:///android_asset/", html, "text/html", "UTF-8", null);
 
-    return tosDialogBuilder.create();
+    AlertDialog tosDialog = tosDialogBuilder.create();
+    if ("NIGHT".equals(lightMode)) {
+      tosDialog.setOnShowListener(dialog -> {
+        AlertDialog d = (AlertDialog) dialog;
+        int titleId = d.getContext().getResources().getIdentifier("alertTitle", "id", "android");
+        if (titleId != 0) {
+          android.widget.TextView titleView = d.findViewById(titleId);
+          if (titleView != null) titleView.setTextColor(0xFFCC4444);
+        }
+        int dividerId = d.getContext().getResources().getIdentifier("titleDivider", "id", "android");
+        if (dividerId != 0) {
+          View divider = d.findViewById(dividerId);
+          if (divider != null) divider.setBackgroundColor(0xFFCC4444);
+        }
+        android.widget.Button posBtn = d.getButton(AlertDialog.BUTTON_POSITIVE);
+        if (posBtn != null) posBtn.setTextColor(0xFFCC4444);
+        android.widget.Button negBtn = d.getButton(AlertDialog.BUTTON_NEGATIVE);
+        if (negBtn != null) negBtn.setTextColor(0xFFCC4444);
+      });
+    }
+    return tosDialog;
   }
 
   private void acceptEula(DialogInterface dialog) {

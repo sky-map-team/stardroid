@@ -6,213 +6,237 @@ Defines all **Activity classes** in Stardroid, their responsibilities, lifecycle
 
 ## Activity Overview
 
-| Activity | Purpose | Launch Mode | UI Pattern |
-|----------|---------|-------------|-----------|
-| `DynamicStarMapActivity` | Main star map | SingleTask | Fullscreen OpenGL |
-| `SplashScreenActivity` | Onboarding | SingleTop | Animated splash + dialogs |
-| `EditSettingsActivity` | Preferences | SingleTask | PreferenceScreen |
-| `ImageGalleryActivity` | Image browsing | Standard | RecyclerView grid |
-| `CompassCalibrationActivity` | Sensor calibration | Standard | Visual feedback |
-| `DiagnosticActivity` | Debug info | Standard | Lists and metrics |
+| Activity | Purpose | Launch Mode | Theme |
+|----------|---------|-------------|-------|
+| `DynamicStarMapActivity` | Main star map | SingleTask | `FullscreenTheme` (overlay action bar) |
+| `SplashScreenActivity` | Onboarding | SingleTop | `AppTheme` |
+| `EditSettingsActivity` | Preferences | Standard | `AppTheme` |
+| `ImageGalleryActivity` | Image browsing | Standard | `AppTheme` |
+| `CompassCalibrationActivity` | Sensor calibration | Standard | `AppTheme` |
+| `DiagnosticActivity` | Debug info | Standard | `AppTheme` |
 
 ## DynamicStarMapActivity
 
 ### Purpose
-Main interactive star map - shows the night sky in real-time based on device orientation.
+Main interactive star map — shows the night sky in real-time based on device orientation.
 
 ### Key Responsibilities
-- **OpenGL Rendering:** Manages GLSurfaceView with SkyRenderer
-- **Sensor Input:** Listens to rotation sensor, updates camera position
-- **User Input:** Handles touch gestures (drag, pinch, tap)
-- **Menu System:** Options, search, time travel, layers
-- **Overlays:** Compass, time travel controls, search results
+- **OpenGL Rendering:** Manages `GLSurfaceView` with `SkyRenderer`
+- **Sensor Input:** Uses `ControllerGroup` to handle rotation sensor / manual drag
+- **User Input:** Touch gestures (drag, pinch, tap) via `GestureInterpreter`
+- **Menu System:** Options, search, time travel, layers, credits, help, ToS, calibration, diagnostics
+- **Overlays:** Layer icon sidebar, manual/auto toggle, time travel player bar, search bar
 
-### Lifecycle
-```kotlin
-onCreate()
-  → Initialize OpenGL surface
-  → Inject dependencies (Hilt)
-  → Setup sensor listeners
-  → Check for permissions (location)
+### Injection
 
-onResume()
-  → Register sensor listeners
-  → Start sensor fusion
-  → Enable OpenGL rendering
+Uses Dagger 2 via `DaggerDynamicStarMapComponent`:
 
-onPause()
-  → Unregister sensors
-  → Disable OpenGL rendering
-  → Save current state
+```java
+daggerComponent = DaggerDynamicStarMapComponent.builder()
+    .applicationComponent(getApplicationComponent())
+    .dynamicStarMapModule(new DynamicStarMapModule(this)).build();
+daggerComponent.inject(this);
 ```
 
-### UI Layout
-- **Main:** GLSurfaceView (full screen)
-- **Overlays:**
-  - Compass (top center) - Shows cardinal directions
-  - Time travel controls (bottom) - Slider, play/pause
-  - Menu button (top right)
-  - Layer toggles (side drawer or menu)
-  - Search results (bottom sheet)
+### Night Mode
 
-### User Interactions
-- **Drag:** Rotate sky view manually
-- **Pinch:** Zoom in/out
-- **Tap:** Identify celestial object
-- **Long press:** Enable manual navigation mode
-- **Menu button:** Open options menu
+Implements `ActivityLightLevelChanger.NightModeable`. `setNightMode(boolean)` is called by `ActivityLightLevelManager` when the preference changes or on resume.
 
-### Permissions
-- **ACCESS_FINE_LOCATION:** For compass accuracy
-- **CAMERA:** (Future) For AR mode
+```java
+@Override
+public void setNightMode(boolean mode) {
+    nightMode = mode;
+    rendererController.queueNightVisionMode(mode);  // OpenGL renderer
+    applyNightModeToUi();                            // Action bar, sidebar, icons, time bar
+}
+```
+
+`applyNightModeToUi()` updates:
+1. **Action bar** — `getActionBar().setBackgroundDrawable(new ColorDrawable(...))`
+2. **Layer sidebar** — `getBackground().mutate().setColorFilter(0xFF660000 or 0xFFFFFFFF, MULTIPLY)`
+3. **Layer icon buttons** — `setColorFilter(NIGHT_TEXT_COLOR, SRC_ATOP)` / `clearColorFilter()`
+4. **Manual/auto toggle button** — same color filter approach
+5. **Time-player bar** — background colour + text colour on labels
+
+The `nightMode` field is persisted via `onSaveInstanceState` / `onRestoreInstanceState`.
+
+### Dialogs hosted
+
+All dialogs are `DialogFragment`s injected via Dagger and shown with `fragment.show(fragmentManager, tag)`:
+- `EulaDialogFragment` (ToS, no buttons variant)
+- `CreditsDialogFragment`
+- `HelpDialogFragment`
+- `TimeTravelDialogFragment` (wraps `TimeTravelDialog extends Dialog`)
+- `NoSearchResultsDialogFragment`
+- `MultipleSearchResultsDialogFragment`
+- `NoSensorsDialogFragment`
+- `ObjectInfoDialogFragment`
+
+---
 
 ## SplashScreenActivity
 
 ### Purpose
-Initial app experience - shows splash screen, EULA (if needed), What's New (if needed).
+Initial app experience — shows splash, checks EULA, shows What's New, then launches `DynamicStarMapActivity`.
 
 ### Key Responsibilities
 - **EULA Check:** Has user accepted current version?
-- **Splash Animation:** Show starfield animation
-- **Dialog Management:** EULA and What's New bottom sheets
-- **Transition:** Launch DynamicStarMapActivity when done
-
-### Lifecycle
-```kotlin
-onCreate()
-  → Set splash theme
-  → Check EULA status
-  → Start splash animation
-
-onResume()
-  → If EULA not accepted → Show EulaBottomSheet
-  → Else → Start animation → Show What's New if needed
-  → After 3 seconds → Launch DynamicStarMapActivity
-```
+- **Splash delay** before launching star map
+- **Dialog Management:** `EulaDialogFragment`, `WhatsNewDialogFragment`
 
 ### UI Layout
-- **Main:** StarfieldView (animated stars)
-- **Center:** App logo
-- **Bottom:** Tagline ("Explore the Universe")
+- `R.layout.splash` — static image layout, no animated starfield in current code
+- No `StarfieldView` class exists in the codebase
 
-### User Interactions
-- **None** - Fully automated
+---
 
 ## EditSettingsActivity
 
 ### Purpose
-User preferences and settings management.
+User preferences — extends `PreferenceActivity` (deprecated but still in use).
 
 ### Key Responsibilities
-- **Preference Categories:** Display, Sensor, Location, Data
-- **Theme Selection:** Light/Dark (not user-changeable for astronomy, but can select accent)
-- **Layer Toggles:** Enable/disable celestial object layers
-- **Night Mode:** Enable red tint for night vision
+- **Location:** Manual lat/long entry; geocoding from place name
+- **Layer Toggles:** Enable/disable celestial object layers (via preferences)
+- **Sensor options:** Gyro enable/disable, sensor speed/damping
 
-### UI Pattern
-- **Parent:** PreferenceActivity (deprecated) → migrate to Jetpack Preference library
-- **Structure:** Categorized preferences with headers
-- **Components:**
-  - SwitchPreference: Boolean toggles (layers, night mode)
-  - ListPreference: Multi-choice (accent color, location provider)
-  - PreferenceCategory: Section headers
+### Night Mode
+
+Implements `NightModeable`. Only the action bar background is changed (preference items cannot be re-coloured without major refactoring):
+
+```java
+@Override
+public void setNightMode(boolean nightMode) {
+    this.nightMode = nightMode;
+    applyNightMode();  // sets action bar background
+}
+```
+
+---
 
 ## ImageGalleryActivity
 
 ### Purpose
-Browse astronomical images (Messier objects, planets, etc.).
+Browse astronomical images; tap to view full-screen.
 
 ### Key Responsibilities
-- **Image Loading:** Load images from assets/internet
-- **Grid Display:** Show thumbnails in RecyclerView
-- **Full Screen:** Tap to view full image
-- **Zoom:** Pinch-to-zoom on full image
+- Loads images from assets asynchronously via `AssetImageLoader`
+- Displays thumbnails in a `Gallery` widget with `ImageAdapter`
+- Starts `ImageDisplayActivity` with the selected position
 
-### UI Pattern
-- **Main:** RecyclerView with GridLayoutManager
-- **Item:** CardView with ImageView + TextView
-- **Detail:** Full-screen image view with zoom
+### Night Mode
+
+Same as `EditSettingsActivity` — action bar background only.
+
+---
 
 ## CompassCalibrationActivity
 
 ### Purpose
-Help users calibrate their device's magnetometer for accurate compass.
-
-### Key Responsibilities
-- **Visual Feedback:** Show compass reading in real-time
-- **Instructions:** Guide user through calibration process
-- **Progress:** Show calibration quality metrics
+Help users calibrate their device's magnetometer.
 
 ### UI Pattern
-- **Main:** Large compass visualization
-- **Instructions:** TextView with step-by-step guide
-- **Progress:** ProgressBar or circular indicator
+- **WebView** (`R.id.compass_calib_activity_webview`) — shows animated calibration GIF
+- **CheckBox** (`R.id.compass_calib_activity_donotshow`) — "Don't show again"
+- **TextViews** — heading, explanation text (with HTML link), sensor accuracy reading
+
+### Night Mode
+
+Implements `NightModeable`:
+- Toggles `night-mode` CSS class on WebView `<body>` via `evaluateJavascript`
+- Sets `textColor` on all `TextView` IDs to `NIGHT_TEXT_COLOR` / `Color.WHITE`
+- Sets link text colour on the explanation TextView
+- Uses `sensorAccuracyDecoder.getNightColorForAccuracy()` for the accuracy reading
+
+Pattern:
+```java
+@Override
+public void setNightMode(boolean nightMode) {
+    this.nightMode = nightMode;
+    applyNightMode();
+}
+```
+
+---
 
 ## DiagnosticActivity
 
 ### Purpose
-Display debug information for troubleshooting.
+Display debug information for troubleshooting — sensor readings, GPS, network, model state.
 
 ### Key Responsibilities
-- **System Info:** Android version, device model, sensors
-- **Sensor Data:** Accelerometer, magnetometer readings
-- **Performance:** Frame rate, memory usage
-- **Location:** GPS coordinates, accuracy
+- Registers for all available sensors and updates TextViews at 500ms
+- Shows location, model pointing, UTC/local time, network status
+- Colors sensor value TextViews by accuracy using `SensorAccuracyDecoder`
 
-### UI Pattern
-- **Main:** ScrollView with multiple sections
-- **Format:** Key-value pairs (Label: Value)
-- **Copy:** Long-press to copy values to clipboard
+### Night Mode
 
-## Activity Communication
+Implements `NightModeable`:
+- Action bar background tinted red
+- Sensor accuracy colors use `sensorAccuracyDecoder.getNightColorForAccuracy()` when night mode is on
 
-### Intents
-
-**Launching DynamicStarMapActivity:**
-```kotlin
-val intent = Intent(this, DynamicStarMapActivity::class.java)
-// Optional: Set specific time
-intent.putExtra(DynamicStarMapActivity.EXTRA_TIME_MILLIS, timeInMillis)
-startActivity(intent)
-```
-
-**Returning from activities:**
-```kotlin
-// From EditSettingsActivity
-setResult(RESULT_OK)
-finish()
-```
+---
 
 ## Common Patterns
 
-### Permission Handling
+### Dagger 2 Injection
 
-```kotlin
-private fun checkLocationPermission() {
-    if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
-        != PackageManager.PERMISSION_GRANTED) {
-        requestPermissions(arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
-                      LOCATION_PERMISSION_REQUEST_CODE)
-    } else {
-        // Permission granted
-    }
-}
+All activities (except `SplashScreenActivity`) use Dagger 2 components:
+
+```java
+// In onCreate():
+DaggerXyzActivityComponent.builder()
+    .applicationComponent(getApplicationComponent())
+    .xyzActivityModule(new XyzActivityModule(this))
+    .build().inject(this);
 ```
+
+Each module provides:
+- `Activity`, `Context`, `Handler`, `Window`
+- `ActivityLightLevelChanger.NightModeable` — return `null` to disable custom night mode, or `activity` if the activity implements `NightModeable`
 
 ### Night Mode Management
 
-```kotlin
-// All activities support night mode (red tint)
-@Inject lateinit var nightModeManager: ActivityLightLevelManager
+All activities that support night mode follow this pattern:
 
-override fun onResume() {
-    super.onResume()
-    nightModeManager.apply(this)
+```java
+// Activity implements NightModeable:
+public class MyActivity extends InjectableActivity
+    implements ActivityLightLevelChanger.NightModeable {
+
+    private boolean nightMode = false;
+
+    @Inject ActivityLightLevelManager activityLightLevelManager;
+
+    @Override public void onResume() {
+        super.onResume();
+        activityLightLevelManager.onResume();  // triggers setNightMode() call
+    }
+
+    @Override public void onPause() {
+        super.onPause();
+        activityLightLevelManager.onPause();
+    }
+
+    @Override
+    public void setNightMode(boolean nightMode) {
+        this.nightMode = nightMode;
+        applyNightMode();
+    }
+
+    private void applyNightMode() {
+        // e.g. action bar background, text colours, etc.
+    }
+}
+
+// Module:
+@Provides @PerActivity
+ActivityLightLevelChanger.NightModeable provideNightModeable() {
+    return activity;  // NOT null
 }
 ```
 
 ## Related Specifications
 
-- [dialogs.md](dialogs.md) - Dialog fragments used by activities
-- [material-3.md](material-3.md) - Theme system
-- [../features/star-map.md](../features/star-map.md) - Star map feature details
+- [dialogs.md](dialogs.md) — Dialog fragments used by activities
+- [material-3.md](material-3.md) — Theme system and night mode colours

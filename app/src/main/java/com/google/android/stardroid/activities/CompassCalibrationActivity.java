@@ -2,6 +2,9 @@ package com.google.android.stardroid.activities;
 
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -150,8 +153,21 @@ public class CompassCalibrationActivity extends InjectableActivity implements Se
   private static final int NIGHT_TEXT_COLOR = 0xFFCC4444;
   private static final int NIGHT_LINK_COLOR = 0xFFCC6666;
   private static final int DAY_LINK_COLOR = 0xFF33B5E5;  // Holo default link color
+  private static final int NIGHT_RED_OVERLAY = 0x66220000;
+  private static final int DAY_OVERLAY = 0x66000000;
 
   private void applyNightMode() {
+    android.app.ActionBar actionBar = getActionBar();
+    if (actionBar != null) {
+      actionBar.setBackgroundDrawable(new ColorDrawable(nightMode ? NIGHT_RED_OVERLAY : DAY_OVERLAY));
+      CharSequence title = getTitle();
+      if (title != null) {
+        SpannableString styledTitle = new SpannableString(title.toString());
+        int titleColor = nightMode ? NIGHT_TEXT_COLOR : Color.WHITE;
+        styledTitle.setSpan(new ForegroundColorSpan(titleColor), 0, styledTitle.length(), 0);
+        actionBar.setTitle(styledTitle);
+      }
+    }
     if (webView == null) return;
     if (nightMode) {
       webView.evaluateJavascript("document.body.classList.add('night-mode')", null);
