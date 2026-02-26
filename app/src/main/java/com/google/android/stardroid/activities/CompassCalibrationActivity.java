@@ -159,22 +159,21 @@ public class CompassCalibrationActivity extends InjectableActivity implements Se
       webView.evaluateJavascript("document.body.classList.remove('night-mode')", null);
     }
     int textColor = nightMode ? NIGHT_TEXT_COLOR : Color.WHITE;
-    int[] textViewIds = {
+    int[] viewIdsToColor = {
         R.id.compass_calib_activity_explain_why,
         R.id.compass_calib_activity_heading_label,
         R.id.compass_calib_activity_donotshow,
+        R.id.compass_calib_what_to_do,
+        R.id.compass_calib_activity_ok_button
     };
-    for (int id : textViewIds) {
+    for (int id : viewIdsToColor) {
       TextView tv = findViewById(id);
       if (tv != null) tv.setTextColor(textColor);
     }
     TextView whatToDo = findViewById(R.id.compass_calib_what_to_do);
     if (whatToDo != null) {
-      whatToDo.setTextColor(textColor);
       whatToDo.setLinkTextColor(nightMode ? NIGHT_LINK_COLOR : DAY_LINK_COLOR);
     }
-    Button okButton = findViewById(R.id.compass_calib_activity_ok_button);
-    if (okButton != null) okButton.setTextColor(textColor);
     if (lastAccuracy != -1) {
       int accuracyColor = nightMode ? accuracyDecoder.getNightColorForAccuracy(lastAccuracy)
                                     : accuracyDecoder.getColorForAccuracy(lastAccuracy);
