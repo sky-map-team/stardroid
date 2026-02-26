@@ -8,10 +8,12 @@ import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
 import com.google.android.stardroid.R;
+import com.google.android.stardroid.activities.util.ActivityLightLevelChanger;
 import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
 import com.google.android.stardroid.activities.util.EdgeToEdgeFixer;
 import com.google.android.stardroid.activities.util.SensorAccuracyDecoder;
@@ -22,13 +24,15 @@ import com.google.android.stardroid.util.Toaster;
 import javax.annotation.Nullable;
 import javax.inject.Inject;
 
-public class CompassCalibrationActivity extends InjectableActivity implements SensorEventListener {
+public class CompassCalibrationActivity extends InjectableActivity implements SensorEventListener, ActivityLightLevelChanger.NightModeable {
   public static final String HIDE_CHECKBOX = "hide checkbox";
   public static final String DONT_SHOW_CALIBRATION_DIALOG = "no calibration dialog";
   public static final String AUTO_DISMISSABLE = "auto dismissable";
   private static final String TAG = MiscUtil.getTag(CompassCalibrationActivity.class);
   private Sensor magneticSensor;
   private CheckBox checkBoxView;
+  private WebView webView;
+  private boolean nightMode = false;
 
   @Inject @Nullable SensorManager sensorManager;
   @Inject SensorAccuracyDecoder accuracyDecoder;
@@ -48,8 +52,14 @@ public class CompassCalibrationActivity extends InjectableActivity implements Se
 
     setContentView(R.layout.activity_compass_calibration);
     EdgeToEdgeFixer.applyEdgeToEdgeFixForActionBarActivity(this);
-    WebView web = findViewById(R.id.compass_calib_activity_webview);
-    web.loadUrl("file:///android_asset/html/animated_gif_wrapper.html");
+    webView = findViewById(R.id.compass_calib_activity_webview);
+    webView.setWebViewClient(new WebViewClient() {
+      @Override
+      public void onPageFinished(WebView view, String url) {
+        applyNightMode();
+      }
+    });
+    webView.loadUrl("file:///android_asset/html/animated_gif_wrapper.html");
 
     checkBoxView = findViewById(R.id.compass_calib_activity_donotshow);
     boolean hideCheckbox = getIntent().getBooleanExtra(HIDE_CHECKBOX, false);
@@ -120,6 +130,21 @@ public class CompassCalibrationActivity extends InjectableActivity implements Se
         && getIntent().getBooleanExtra(AUTO_DISMISSABLE, false)) {
       toaster.toastLong(R.string.sensor_accuracy_high);
       this.finish();
+    }
+  }
+
+  @Override
+  public void setNightMode(boolean nightMode) {
+    this.nightMode = nightMode;
+    applyNightMode();
+  }
+
+  private void applyNightMode() {
+    if (webView == null) return;
+    if (nightMode) {
+      webView.evaluateJavascript("document.body.classList.add('night-mode')", null);
+    } else {
+      webView.evaluateJavascript("document.body.classList.remove('night-mode')", null);
     }
   }
 

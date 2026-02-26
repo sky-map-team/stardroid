@@ -37,6 +37,6 @@ public class CompassCalibrationModule {
   @PerActivity
   @Nullable
   ActivityLightLevelChanger.NightModeable provideNightModeable() {
-    return null;
+    return activity;
   }
 }
