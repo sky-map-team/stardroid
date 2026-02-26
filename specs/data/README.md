@@ -9,7 +9,7 @@ This section documents the astronomical data used by Sky Map.
 | [Catalogs](catalogs.md) | Star, constellation, and Messier catalogs |
 | [Ephemeris](ephemeris.md) | Solar system position calculations |
 | [ISS Tracking](iss-tracking.md) | International Space Station real-time tracking |
-| [FlatBuffers Schema](flatbuffers-schema.md) | FlatBuffers data definitions |
+| [Protocol Buffers Schema](protobuf-schema.md) | Protocol Buffers schema and data pipeline |
 
 ## Data Source Overview
 
@@ -19,7 +19,7 @@ This section documents the astronomical data used by Sky Map.
 │  ┌─────────────────────────────────────────────────────────┐   │
 │  │  stars.binary        ~2MB    ~100k stars               │   │
 │  │  constellations.binary ~50KB  88 constellations         │   │
-│  │  messier.binary      ~20KB   ~110 deep-sky objects      │   │
+│  │  messier.binary      ~20KB   ~116 deep-sky objects      │   │
 │  └─────────────────────────────────────────────────────────┘   │
 └─────────────────────────────────────────────────────────────────┘
 
@@ -47,13 +47,13 @@ This section documents the astronomical data used by Sky Map.
 ### Build Time
 
 ```
-Raw Catalogs (CSV, text)
+Raw Catalogs (CSV / hand-authored ASCII)
        │
        ▼
 ┌─────────────────┐
 │  tools/         │
-│  generate.sh    │  ──► JSON intermediate format
-│  binary.sh      │  ──► FlatBuffers binary
+│  generate.sh    │  ──► ASCII proto text (*.ascii)
+│  binary.sh      │  ──► Protocol Buffers binary (*.binary)
 └─────────────────┘
        │
        ▼
@@ -63,16 +63,16 @@ app/src/main/assets/*.binary
 ### Runtime
 
 ```
-Binary Assets
+Binary Assets (*.binary)
        │
        ▼
 AbstractFileBasedLayer.initialize()
        │
        ▼
-AstronomicalSources.getRootAsAstronomicalSources()
+AstronomicalSourcesProto.parseFrom(bytes)
        │
        ▼
-List<AstronomicalSource>
+List<ProtobufAstronomicalSource>
        │
        ▼
 Renderables (points, lines, labels, images)
@@ -128,9 +128,9 @@ Renderables (points, lines, labels, images)
 
 | File | Purpose |
 |------|---------|
-| `source.fbs` | FlatBuffers schema |
-| `stars.bin` | Star catalog data |
-| `constellations.bin` | Constellation data |
-| `messier.bin` | Deep-sky object data |
+| `datamodel/src/main/proto/source.proto` | Protocol Buffers schema |
+| `app/src/main/assets/stars.binary` | Compiled star catalog |
+| `app/src/main/assets/constellations.binary` | Compiled constellation data |
+| `app/src/main/assets/messier.binary` | Compiled deep-sky object data |
 | `Planet.kt` | Ephemeris calculations |
 | `IssLayer.kt` | ISS tracking |
