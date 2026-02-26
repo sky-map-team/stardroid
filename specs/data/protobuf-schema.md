@@ -88,10 +88,12 @@ The intermediate `.ascii` files are proto text-format representations that can b
 Binary assets are loaded in `AbstractFileBasedLayer`:
 
 ```kotlin
-val bytes = context.assets.open(assetFilename).readBytes()
-val sources = AstronomicalSourcesProto.parseFrom(bytes)
-for (i in 0 until sources.sourceCount) {
-    addRenderable(ProtobufAstronomicalSource(sources.getSource(i)))
+val stream = context.assets.open(assetFilename)
+val sources = AstronomicalSourcesProto.parseFrom(stream)
+stream.close()
+
+for (source in sources.sourceList) {
+    addRenderable(ProtobufAstronomicalSource(source))
 }
 ```
 
