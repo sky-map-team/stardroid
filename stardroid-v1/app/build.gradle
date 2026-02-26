@@ -189,6 +189,7 @@ dependencies {
     kaptAndroidTest "com.google.dagger:hilt-android-compiler:$dagger_version"
     testImplementation "com.google.dagger:hilt-android-testing:$dagger_version"
     kaptTest "com.google.dagger:hilt-android-compiler:$dagger_version"
+    // Fastlane screengrab for capturing screenshots
     androidTestImplementation 'tools.fastlane:screengrab:2.1.1'
 }
 

@@ -65,6 +65,19 @@ Each worktree already contains the build-critical files excluded from version co
 `stardroid-v1/app/no-checkin.properties`, keystores, `stardroid-v1/fastlane/play-store-credentials.json`). If you add a new worktree, copy
 these files from the main worktree (`stardroid-v1/app/`) before building.
 
+### Deploying
+
+Sky Map is hosted on the Google Play Store and FDroid.
+To deploy to the Google Play Store use fastlane.  For example to build and deploy a new internal release:
+
+```
+bundle exec fastlane internal
+```
+
+Other commands may be found at fastlane/README.md
+
+### Data Generation
+
 `.worktrees/` is listed in `.gitignore` so worktree directories are never accidentally committed.
 
 ## Build Flavors

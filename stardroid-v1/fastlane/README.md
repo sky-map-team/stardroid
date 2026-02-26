@@ -109,7 +109,7 @@ Deploy to production - shouldn't you deploy to internal first?
 [bundle exec] fastlane android screenshots
 ```
 
-Capture screenshots for Play Store. Specify --device_type=sevenInch for a tablet.
+Capture screenshots for Play Store. Specify device_type:sevenInch for a tablet.
 
 ### android upload_metadata
 

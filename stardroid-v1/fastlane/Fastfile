@@ -138,8 +138,8 @@ platform :android do
     )
   end
 
-  desc "Capture screenshots for Play Store. Specify --device_type=sevenInch for a tablet."
-  lane :screenshots do
+  desc "Capture screenshots for Play Store. Specify device_type:sevenInch for a tablet."
+  lane :screenshots do |options|
     gradle(
       task: ":app:assembleGmsDebug",
       project_dir: "./"
@@ -148,7 +148,14 @@ platform :android do
       task: ":app:assembleGmsDebugAndroidTest",
       project_dir: "./"
     )
-    screengrab
+    screengrab(
+      app_apk_path: 'app/build/outputs/apk/gms/debug/app-gms-debug.apk',
+      tests_apk_path: 'app/build/outputs/apk/androidTest/gms/debug/app-gms-debug-androidTest.apk',
+      device_type: options[:device_type] || 'phone',
+      use_tests_in_classes: options[:test_class] ? [options[:test_class]] : ['com.google.android.stardroid.test.ScreenshotTest'],
+      reinstall_app: true,
+      use_adb_root: true
+    )
   end
 
   desc "Upload metadata. Options (defaults after the colon): whatsnew:true (include changelogs), imgs:true (include screenshots/images), all:false (everything), store:false (skip store metadata)."
