@@ -37,7 +37,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/compass_calibration_activity_heading_compass"
-                />
+                android:id="@+id/compass_calib_activity_heading_label"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -67,6 +67,7 @@
             android:id="@+id/compass_calib_activity_donotshow"/>
 
         <Button
+            android:id="@+id/compass_calib_activity_ok_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@android:string/ok"

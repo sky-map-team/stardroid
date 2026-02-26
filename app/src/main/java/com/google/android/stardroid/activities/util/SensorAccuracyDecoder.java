@@ -64,4 +64,20 @@ public class SensorAccuracyDecoder {
     }
     return accuracyColor;
   }
+
+  /** Red-shifted accuracy colors for night mode, preserving the good/bad brightness hierarchy. */
+  public int getNightColorForAccuracy(int accuracy) {
+    switch (accuracy) {
+      case SensorManager.SENSOR_STATUS_ACCURACY_HIGH:
+        return 0xFFDD6666;  // brightest red = good
+      case SensorManager.SENSOR_STATUS_ACCURACY_MEDIUM:
+        return 0xFFAA4444;
+      case SensorManager.SENSOR_STATUS_ACCURACY_LOW:
+        return 0xFF883333;
+      case SensorManager.SENSOR_STATUS_UNRELIABLE:
+      case SensorManager.SENSOR_STATUS_NO_CONTACT:
+      default:
+        return 0xFF662222;  // darkest red = bad
+    }
+  }
 }
