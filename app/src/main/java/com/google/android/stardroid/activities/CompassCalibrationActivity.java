@@ -1,6 +1,7 @@
 package com.google.android.stardroid.activities;
 
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -10,6 +11,7 @@ import android.text.Html;
 import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
@@ -34,6 +36,7 @@ public class CompassCalibrationActivity extends InjectableActivity implements Se
   private CheckBox checkBoxView;
   private WebView webView;
   private boolean nightMode = false;
+  private int lastAccuracy = -1;
 
   @Inject @Nullable SensorManager sensorManager;
   @Inject SensorAccuracyDecoder accuracyDecoder;
@@ -124,10 +127,13 @@ public class CompassCalibrationActivity extends InjectableActivity implements Se
   @Override
   public void onAccuracyChanged(Sensor sensor, int accuracy) {
     accuracyReceived = true;
+    lastAccuracy = accuracy;
     TextView accuracyTextView = findViewById(R.id.compass_calib_activity_compass_accuracy);
     String accuracyText = accuracyDecoder.getTextForAccuracy(accuracy);
     accuracyTextView.setText(accuracyText);
-    accuracyTextView.setTextColor(accuracyDecoder.getColorForAccuracy(accuracy));
+    int color = nightMode ? accuracyDecoder.getNightColorForAccuracy(accuracy)
+                          : accuracyDecoder.getColorForAccuracy(accuracy);
+    accuracyTextView.setTextColor(color);
     if (accuracy == SensorManager.SENSOR_STATUS_ACCURACY_HIGH
         && getIntent().getBooleanExtra(AUTO_DISMISSABLE, false)) {
       toaster.toastLong(R.string.sensor_accuracy_high);
@@ -141,12 +147,39 @@ public class CompassCalibrationActivity extends InjectableActivity implements Se
     applyNightMode();
   }
 
+  private static final int NIGHT_TEXT_COLOR = 0xFFCC4444;
+  private static final int NIGHT_LINK_COLOR = 0xFFCC6666;
+  private static final int DAY_LINK_COLOR = 0xFF33B5E5;  // Holo default link color
+
   private void applyNightMode() {
     if (webView == null) return;
     if (nightMode) {
       webView.evaluateJavascript("document.body.classList.add('night-mode')", null);
     } else {
       webView.evaluateJavascript("document.body.classList.remove('night-mode')", null);
+    }
+    int textColor = nightMode ? NIGHT_TEXT_COLOR : Color.WHITE;
+    int[] textViewIds = {
+        R.id.compass_calib_activity_explain_why,
+        R.id.compass_calib_activity_heading_label,
+        R.id.compass_calib_activity_donotshow,
+    };
+    for (int id : textViewIds) {
+      TextView tv = findViewById(id);
+      if (tv != null) tv.setTextColor(textColor);
+    }
+    TextView whatToDo = findViewById(R.id.compass_calib_what_to_do);
+    if (whatToDo != null) {
+      whatToDo.setTextColor(textColor);
+      whatToDo.setLinkTextColor(nightMode ? NIGHT_LINK_COLOR : DAY_LINK_COLOR);
+    }
+    Button okButton = findViewById(R.id.compass_calib_activity_ok_button);
+    if (okButton != null) okButton.setTextColor(textColor);
+    if (lastAccuracy != -1) {
+      int accuracyColor = nightMode ? accuracyDecoder.getNightColorForAccuracy(lastAccuracy)
+                                    : accuracyDecoder.getColorForAccuracy(lastAccuracy);
+      TextView accuracyTextView = findViewById(R.id.compass_calib_activity_compass_accuracy);
+      if (accuracyTextView != null) accuracyTextView.setTextColor(accuracyColor);
     }
   }
 
