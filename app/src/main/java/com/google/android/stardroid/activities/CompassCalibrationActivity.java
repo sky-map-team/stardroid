@@ -55,8 +55,6 @@ public class CompassCalibrationActivity extends InjectableActivity implements Se
     webView = findViewById(R.id.compass_calib_activity_webview);
     android.webkit.WebSettings webSettings = webView.getSettings();
     webSettings.setJavaScriptEnabled(true);
-    // Required to load the gif from the html file.
-    webSettings.setAllowFileAccessFromFileURLs(true);
     webView.setWebViewClient(new WebViewClient() {
       @Override
       public void onPageFinished(WebView view, String url) {
