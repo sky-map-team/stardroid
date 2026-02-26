@@ -2751,3 +2751,55 @@ source {
   name_str_ids: "hdf"
   name_str_ids: "hubble_deep_field"
 }
+source {
+  search_location {
+    right_ascension: 239.87505
+    declination: 25.9202
+  }
+  point {
+    location {
+      right_ascension: 239.87505
+      declination: 25.9202
+    }
+    color: 4761665
+    size: 3
+    shape: OTHER
+  }
+  label {
+    location {
+      right_ascension: 239.87505
+      declination: 25.9202
+    }
+    color: 4761665
+    strings_str_id: "t_crb"
+  }
+  name_str_ids: "t_crb"
+  name_str_ids: "blaze_star"
+  name_str_ids: "t_coronae_borealis"
+}
+source {
+  search_location {
+    right_ascension: 161.28601
+    declination: -59.8678
+  }
+  point {
+    location {
+      right_ascension: 161.28601
+      declination: -59.8678
+    }
+    color: 4761665
+    size: 3
+    shape: DIFFUSE_NEBULA
+  }
+  label {
+    location {
+      right_ascension: 161.28601
+      declination: -59.8678
+    }
+    color: 4761665
+    strings_str_id: "eta_carinae_nebula"
+  }
+  name_str_ids: "eta_carinae_nebula"
+  name_str_ids: "carina_nebula"
+  name_str_ids: "ngc3372"
+}

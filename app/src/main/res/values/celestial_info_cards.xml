@@ -492,6 +492,16 @@
     <string name="object_info_m87_distance">53 million light-years</string>
     <string name="object_info_m87_size">240,000 light-years across</string>
     <string name="object_info_m87_mass">2.4 trillion solar masses</string>
+    <!-- T CrB - T Coronae Borealis (Recurrent Nova) -->
+    <string name="object_info_t_crb_description">T Coronae Borealis (T CrB) is a recurrent nova in Corona Borealis — a binary system of a red giant and a white dwarf. The white dwarf periodically accumulates enough hydrogen from its companion to trigger a thermonuclear explosion.</string>
+    <string name="object_info_t_crb_funfact">T CrB last erupted in 1946, briefly reaching magnitude 2.0 and becoming visible to the naked eye. Astronomers predict that another eruption is imminent — keep watching!</string>
+    <string name="object_info_t_crb_distance">3,000 light-years</string>
+    <string name="object_info_t_crb_size">0.2 AU orbital separation</string>
+    <!-- Eta Carinae Nebula (NGC 3372) -->
+    <string name="object_info_eta_carinae_nebula_description">The Eta Carinae Nebula (NGC 3372) is one of the largest and brightest nebulae in the sky, spanning over 300 light-years. At its heart sits Eta Carinae, one of the most massive and luminous stars known, weighing over 100 solar masses.</string>
+    <string name="object_info_eta_carinae_nebula_funfact">In 1843 Eta Carinae erupted and briefly became the second-brightest star in the sky, yet somehow it survived — it may be on the verge of going supernova!</string>
+    <string name="object_info_eta_carinae_nebula_distance">7,500 light-years</string>
+    <string name="object_info_eta_carinae_nebula_size">300 light-years across</string>
     <!-- ==================== CONSTELLATIONS ==================== -->
     <!-- Note: Constellation names are defined in celestial_objects.xml -->
     <!-- Orion -->

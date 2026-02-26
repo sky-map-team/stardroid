@@ -1581,6 +1581,24 @@
       "sizeKey": "object_info_sagitta_size",
       "imageKey": "constellations/iau_sagitta.webp",
       "imageCredit": "IAU/Sky & Telescope"
+    },
+    "t_crb": {
+      "nameKey": "t_coronae_borealis",
+      "descriptionKey": "object_info_t_crb_description",
+      "funFactKey": "object_info_t_crb_funfact",
+      "type": "star",
+      "distanceKey": "object_info_t_crb_distance",
+      "sizeKey": "object_info_t_crb_size",
+      "magnitude": "10.8"
+    },
+    "eta_carinae_nebula": {
+      "nameKey": "eta_carinae_nebula",
+      "descriptionKey": "object_info_eta_carinae_nebula_description",
+      "funFactKey": "object_info_eta_carinae_nebula_funfact",
+      "type": "nebula",
+      "distanceKey": "object_info_eta_carinae_nebula_distance",
+      "sizeKey": "object_info_eta_carinae_nebula_size",
+      "magnitude": "1.0"
     }
   }
 }
