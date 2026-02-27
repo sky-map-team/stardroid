@@ -64,6 +64,9 @@ object ApplicationConstants {
   const val MANUAL_COMPASS_ADJUSTMENT_PREF_KEY = "manual_compass_adjustment"
   const val VIEW_MODE_PREFKEY = "viewing_direction"
 
+  // Night mode preference values (must match ActivityLightLevelManager.LightMode enum names)
+  const val NIGHT_MODE_VALUE = "NIGHT"
+
   // Educational info feature
   const val SHOW_OBJECT_INFO_PREF_KEY = "show_object_info_on_tap2"
   const val SHOW_OBJECT_INFO_AUTO_MODE_PREF_KEY = "show_object_info_auto_mode"

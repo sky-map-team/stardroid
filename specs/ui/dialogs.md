@@ -2,250 +2,164 @@
 
 ## Purpose
 
-Defines all **dialog fragments** in Stardroid, their purpose, UI patterns, and user interactions.
+Defines all **dialog fragments and dialogs** in Stardroid, their purpose, UI patterns, and user interactions.
 
 ## Dialog Overview
 
-| Dialog | Purpose | Type | Parent | Trigger |
-|--------|---------|------|--------|--------|
-| `EulaBottomSheetFragment` | Terms of Service | Bottom Sheet | SplashScreenActivity | First launch or EULA update |
-| `WhatsNewBottomSheetFragment` | Release notes | Bottom Sheet | SplashScreenActivity | App update |
-| `TimeTravelDialogFragment` | Time travel | Modal | DynamicStarMapActivity | Menu/button |
-| `NoSearchResultsDialogFragment` | No results | Modal | DynamicStarMapActivity | Search failed |
-| `MultipleSearchResultsDialogFragment` | Multiple results | Modal | DynamicStarMapActivity | Search ambiguity |
-| `ObjectInfoDialogFragment` | Object details | Modal | DynamicStarMapActivity | Tap on object |
-| `NoSensorsDialogFragment` | No sensors warning | Modal | DynamicStarMapActivity | Sensor missing |
-| `HelpDialogFragment` | Help content | Modal | DynamicStarMapActivity | Menu |
-| `LocationPermissionDeniedDialogFragment` | Permission denied | Modal | DynamicStarMapActivity | Location refused |
+| Dialog | Type | Parent Activity | Trigger |
+|--------|------|-----------------|---------|
+| `EulaDialogFragment` | `DialogFragment` + `AlertDialog` | `SplashScreenActivity`, `DynamicStarMapActivity` | First launch / ToS menu item |
+| `WhatsNewDialogFragment` | `DialogFragment` + `AlertDialog` | `SplashScreenActivity` | App update |
+| `HelpDialogFragment` | `DialogFragment` + `AlertDialog` (WebView) | `DynamicStarMapActivity` | Menu |
+| `CreditsDialogFragment` | `DialogFragment` + `AlertDialog` (WebView) | `DynamicStarMapActivity` | Menu |
+| `TimeTravelDialogFragment` | `DialogFragment` wrapping `TimeTravelDialog` | `DynamicStarMapActivity` | Menu |
+| `NoSearchResultsDialogFragment` | `DialogFragment` + `AlertDialog` | `DynamicStarMapActivity` | Search failed |
+| `MultipleSearchResultsDialogFragment` | `DialogFragment` + `AlertDialog` | `DynamicStarMapActivity` | Search ambiguity |
+| `ObjectInfoDialogFragment` | `DialogFragment` + `AlertDialog` | `DynamicStarMapActivity` | Tap on object |
+| `NoSensorsDialogFragment` | `DialogFragment` + `AlertDialog` | `DynamicStarMapActivity` | Sensor missing |
 
-## Bottom Sheet Dialogs
+---
 
-### EulaBottomSheetFragment
+## Fragment Architecture
 
-**Purpose:** Display Terms of Service on first launch or when updated.
+### All dialogs use `DialogFragment`, NOT BottomSheet
 
-**UI Structure:**
-```
-┌──────────────────────────────────────────┐
-│ Terms of Service             ← × to close │
-├──────────────────────────────────────────┤
-│ [Scrollable Content]                     │
-│                                           │
-│ Introduction...                          │
-│                                           │
-│ [Callout] Language Apology...           │
-│                                           │
-│ Terms of Service...                       │
-│ [Scroll indicator]                        │
-├──────────────────────────────────────────┤
-│ [Decline]                    [Accept]     │
-└──────────────────────────────────────────┘
-```
+All dialogs extend `androidx.fragment.app.DialogFragment` and create their dialog in `onCreateDialog()` using `AlertDialog.Builder.create()` (or wrap a custom `Dialog` subclass).
 
-**Content Source:** Converted from HTML to native views.
+There are **no** `BottomSheetDialogFragment` or `MaterialBottomSheetDialogFragment` classes in the current codebase.
 
-**User Actions:**
-- **Accept:** Sets preference, dismisses, continues to app
-- **Decline:** Closes app (cannot use without accepting)
-- **Drag down:** Dismisses (but can't continue)
+### Dagger 2 Injection Pattern
 
-**Listener Pattern:**
-```kotlin
-interface EulaAcceptanceListener {
-    fun eulaAccepted()
-    fun eulaRejected()
-}
-```
+Each dialog has an inner `ActivityComponent` interface. The parent activity implements `HasComponent<ActivityComponent>`:
 
-### WhatsNewBottomSheetFragment
+```java
+// In DynamicStarMapActivity:
+public class DynamicStarMapActivity extends InjectableActivity
+    implements HasComponent<DynamicStarMapComponent> { ... }
 
-**Purpose:** Show release notes when app is updated.
+// DynamicStarMapComponent extends each dialog's ActivityComponent:
+@Component(...)
+public interface DynamicStarMapComponent extends
+    HelpDialogFragment.ActivityComponent,
+    CreditsDialogFragment.ActivityComponent,
+    TimeTravelDialogFragment.ActivityComponent,
+    ... { }
 
-**UI Structure:**
-```
-┌──────────────────────────────────────────┐
-│ What's New                ← × to close    │
-├──────────────────────────────────────────┤
-│ [Scrollable Release Notes]                │
-│                                           │
-│ Version 1.10.11                            │
-│ - Added Material 3 theme                  │
-│ - Improved AR mode                        │
-│ - Bug fixes                                │
-│                                           │
-├──────────────────────────────────────────┤
-│ [OK]                                     │
-└──────────────────────────────────────────┘
-```
-
-**User Actions:**
-- **OK:** Marks as read, dismisses, continues to app
-
-**Listener Pattern:**
-```kotlin
-interface CloseListener {
-    fun dialogClosed()
-}
-```
-
-## Modal Dialogs
-
-### TimeTravelDialogFragment
-
-**Purpose:** Control time travel - view sky at different dates/times.
-
-**UI Pattern:** Custom time dial UI with slider.
-
-**User Actions:**
-- **Slider:** Move through time
-- **Play/Pause:** Animate through time
-- **Now:** Return to current time
-- **Sound Effects:** Time travel whoosh
-
-### Search Result Dialogs
-
-**NoSearchResultsDialogFragment:**
-- Message: "No objects found"
-- Action: OK button
-
-**MultipleSearchResultsDialogFragment:**
-- List of matching objects
-- User selects one → Navigate to it
-
-### ObjectInfoDialogFragment
-
-**Purpose:** Show information about a celestial object.
-
-**UI Structure:**
-```
-┌──────────────────────────────────────────┐
-│ [Object Name]              ← × to close  │
-├──────────────────────────────────────────┤
-│ [Image if available]                      │
-│                                           │
-│ Description...                            │
-│                                           │
-│ Scientific Data:                          │
-│ • Distance: ...                            │
-│ • Magnitude: ...                          │
-│ • Size: ...                                │
-│                                           │
-│ Fun fact: ...                             │
-├──────────────────────────────────────────┤
-│ [OK]                                     │
-└──────────────────────────────────────────┘
-```
-
-**Data Source:** `ObjectInfo` from domain layer.
-
-## Common Dialog Patterns
-
-### Fragment-Based Architecture
-
-**All dialogs extend:** `androidx.fragment.app.DialogFragment` (or MaterialBottomSheetDialogFragment)
-
-**Hilt Integration:**
-```kotlin
-@AndroidEntryPoint
-class EulaBottomSheetFragment : MaterialBottomSheetDialogFragment() {
-    @Inject lateinit var analytics: Analytics
-    @Inject lateinit var activity: Activity
-
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        // Inject dependencies work here
+// In the dialog:
+public class HelpDialogFragment extends DialogFragment {
+    public interface ActivityComponent {
+        void inject(HelpDialogFragment fragment);
+    }
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        ((HasComponent<ActivityComponent>) getActivity())
+            .getComponent().inject(this);
     }
 }
 ```
 
-### Listener Interfaces
+The activity injects dialog instances directly:
+```java
+@Inject HelpDialogFragment helpDialogFragment;
+```
 
-**Pattern:** Callbacks to parent activity/fragment
+---
 
-```kotlin
-// Define listener
-interface EulaAcceptanceListener {
-    fun eulaAccepted()
-    fun eulaRejected()
-}
+## WebView Dialogs (Help, Credits, EULA)
 
-// Parent activity implements listener
-class SplashScreenActivity : AppCompatActivity(), EulaAcceptanceListener {
-    override fun eulaAccepted() { /* ... */ }
-    override fun eulaRejected() { /* ... */ }
-}
+`HelpDialogFragment`, `CreditsDialogFragment`, and `EulaDialogFragment` all inflate a layout containing a `WebView` that loads a local HTML asset.
 
-// Fragment calls listener
-private var listener: EulaAcceptanceListener? = null
+### Night Mode
 
-fun setEulaAcceptanceListener(listener: EulaAcceptanceListener) {
-    this.listener = listener
-}
+These dialogs read the `lightmode` preference at dialog-creation time and inject a CSS class:
 
-override fun onAcceptClick() {
-    listener?.eulaAccepted()
-    dismiss()
+```java
+SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getContext());
+boolean isNight = "NIGHT".equals(prefs.getString(ActivityLightLevelManager.LIGHT_MODE_KEY, "DAY"));
+String nightClass = isNight ? " class=\"night-mode\"" : "";
+webView.loadDataWithBaseURL(baseUrl,
+    "<html><body" + nightClass + ">...</body></html>", ...);
+```
+
+The `help.css` asset defines `.night-mode` styles: red-tinted `h1`, `h2`, `h3`, links, and callout boxes.
+
+---
+
+## TimeTravelDialogFragment / TimeTravelDialog
+
+`TimeTravelDialogFragment` is a `DialogFragment` that wraps `TimeTravelDialog`, which extends `android.app.Dialog` directly (not `AlertDialog`).
+
+`TimeTravelDialog` inflates `R.layout.time_dialog` in its own `onCreate()`.
+
+### Views in `time_dialog.xml`
+
+| ID | Widget | Purpose |
+|----|--------|---------|
+| `R.id.dateDisplay` | `TextView` | Shows currently selected date/time |
+| `R.id.popular_dates_spinner` | `Spinner` | Pre-set astronomical events |
+| `R.id.pickDate` | `Button` | Opens date picker |
+| `R.id.pickTime` | `Button` | Opens time picker |
+| `R.id.timeTravelGo` | `Button` | Starts time travel |
+| `R.id.timeTravelCancel` | `Button` | Cancels |
+
+### Night Mode
+
+`TimeTravelDialog.onStart()` reads the preference and applies `NIGHT_TEXT_COLOR` (`0xFFCC4444`) to the main readout and button text colours:
+
+```java
+private void applyNightMode() {
+    SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getContext());
+    boolean isNight = "NIGHT".equals(prefs.getString(ActivityLightLevelManager.LIGHT_MODE_KEY, "DAY"));
+    int textColor = isNight ? NIGHT_TEXT_COLOR : Color.WHITE;
+    dateTimeReadout.setTextColor(textColor);
+    // ... buttons
 }
 ```
 
-### Dialog State Management
+---
 
-**Survive configuration changes:** Use fragment arguments
+## Search Result Dialogs
 
-```kotlin
-companion object {
-    private const val ARG_EULA_VERSION = "eula_version"
+**`NoSearchResultsDialogFragment`:**
+- Message: localised "no objects found" string
+- Single "OK" button
 
-    fun newInstance(version: Int): EulaBottomSheetFragment {
-        return EulaBottomSheetFragment().apply {
-            arguments = Bundle().apply {
-                putInt(ARG_EULA_VERSION, version)
-            }
-        }
-    }
-}
+**`MultipleSearchResultsDialogFragment`:**
+- `AlertDialog` with a list adapter showing matching object names
+- Selecting an item calls `activateSearchTarget()` on the parent activity
 
-override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-    // Retrieve arguments
-    val eulaVersion = requireArguments().getInt(ARG_EULA_VERSION)
-    // ...
-}
+---
+
+## ObjectInfoDialogFragment
+
+Shows information about a tapped celestial object.
+
+- Inflates `R.layout.object_info_card`
+- Loaded with `ObjectInfoDialogFragment.newInstance(ObjectInfo objectInfo)`
+- Displays: name, image (if available), description, fun fact, distance, size
+- Image loaded asynchronously from assets
+
+---
+
+## Common Dialog Behaviour
+
+### Showing a dialog
+
+```java
+// In DynamicStarMapActivity (injected via Dagger):
+@Inject HelpDialogFragment helpDialogFragment;
+
+helpDialogFragment.show(fragmentManager, "Help Dialog");
 ```
 
-## Bottom Sheet Behavior
+### Cancellation
 
-### Peeking and Expanding
+All `AlertDialog`-based dialogs are cancellable (tap outside or back button) unless the dialog logic explicitly disables it (e.g. EULA on first launch sets `setCancelable(false)`).
 
-**Peek Height:** 250dp (shows title + first paragraph)
-
-**Full Expansion:**
-- User drags up
-- User clicks "Accept" or "Decline" (auto-expands first)
-- Keyboard appears (auto-expands)
-
-**Corner Radius:** 16dp at top, 0dp at bottom
-
-### Dismissal
-
-**Methods:**
-- Drag down past threshold
-- Tap outside (if cancelable = true)
-- Tap X button
-- Programmatic: `dismiss()`
-
-## Modal Dialog Behavior
-
-**Standard Material 3 behavior:**
-- Centered on screen
-- Width: `match_parent` with 16dp margins
-- Corner radius: 28dp (Material 3 default)
-- Background: Dark surface (#1E1E1E)
-
-**Button Layout:**
-- Horizontal: Buttons side-by-side
-- Vertical: Buttons stacked (mobile)
+---
 
 ## Related Specifications
 
-- [activities.md](activities.md) - Activities that use dialogs
-- [material-3.md](material-3.md) - Dialog styling
-- [../features/search.md](../features/search.md) - Search dialog usage
+- [activities.md](activities.md) — Activities that host these dialogs
+- [material-3.md](material-3.md) — Night mode colours and theme system

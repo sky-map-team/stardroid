@@ -24,6 +24,7 @@ import android.app.Dialog;
 import android.app.TimePickerDialog;
 import android.app.TimePickerDialog.OnTimeSetListener;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.SystemClock;
@@ -41,9 +42,12 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.preference.PreferenceManager;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.DynamicStarMapActivity;
+import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
+import com.google.android.stardroid.activities.util.NightModeHelper;
 import com.google.android.stardroid.control.AstronomerModel;
 import com.google.android.stardroid.ephemeris.SolarSystemBody;
 import com.google.android.stardroid.space.CelestialObject;
@@ -64,7 +68,9 @@ import java.util.List;
 public class TimeTravelDialog extends Dialog {
   private static final String TAG = MiscUtil.getTag(TimeTravelDialog.class);
   private static final int MIN_CLICK_TIME = 1000;
+  private boolean isNight = false;
   private Spinner popularDatesMenu;
+  private ArrayAdapter<String> popularDatesAdapter;
   private TextView dateTimeReadout;
   private DynamicStarMapActivity parentActivity;
   private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy.MM.dd G 'at' HH:mm:ss z");
@@ -119,7 +125,11 @@ public class TimeTravelDialog extends Dialog {
     goButton.setText(R.string.start_from_now);
     goButton.setOnClickListener(new View.OnClickListener() {
         public void onClick(View v) {
-          parentActivity.setTimeTravelMode(calendar.getTime(), currentSearchTargetRes);
+          if (userHasModifiedTime) {
+            parentActivity.setTimeTravelMode(calendar.getTime(), currentSearchTargetRes);
+          } else {
+            parentActivity.setTimeTravelModeFromNow();
+          }
           dismiss();
         }
       });
@@ -132,7 +142,8 @@ public class TimeTravelDialog extends Dialog {
       });
 
     popularDatesMenu = (Spinner) findViewById(R.id.popular_dates_spinner);
-    popularDatesMenu.setAdapter(buildEventAdapter(getContext()));
+    popularDatesAdapter = buildEventAdapter(getContext());
+    popularDatesMenu.setAdapter(popularDatesAdapter);
     popularDatesMenu.setSelection(0);
     popularDatesMenu.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
       @Override
@@ -163,6 +174,27 @@ public class TimeTravelDialog extends Dialog {
     calendar.setTime(new Date());
     updateGoButtonText();
     updateDisplay();
+    applyNightMode();
+  }
+
+  private void applyNightMode() {
+    SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getContext());
+    isNight = ActivityLightLevelManager.isNightMode(prefs);
+    int textColor = isNight ? getContext().getColor(R.color.night_text_color) : Color.WHITE;
+    if (getWindow() != null && getWindow().getDecorView() instanceof ViewGroup) {
+      NightModeHelper.tintTextViews((ViewGroup) getWindow().getDecorView(), textColor);
+    }
+    if (getWindow() != null) {
+      int dividerId = getContext().getResources().getIdentifier("titleDivider", "id", "android");
+      if (dividerId != 0) {
+        View divider = getWindow().getDecorView().findViewById(dividerId);
+        if (divider != null) divider.setBackgroundColor(isNight ? textColor : getContext().getColor(R.color.day_divider_color));
+      }
+    }
+    // Refresh spinner dropdown so it picks up the updated isNight state
+    if (popularDatesAdapter != null) {
+      popularDatesAdapter.notifyDataSetChanged();
+    }
   }
 
   /**
@@ -184,13 +216,26 @@ public class TimeTravelDialog extends Dialog {
       }
 
       @Override
+      public View getView(int position, @Nullable View convertView,
+          @NonNull ViewGroup parent) {
+        View view = super.getView(position, convertView, parent);
+        // Colors the collapsed spinner face (the currently selected item shown when closed).
+        if (view instanceof TextView) {
+          int activeColor = isNight ? context.getColor(R.color.night_text_color) : Color.WHITE;
+          ((TextView) view).setTextColor(position == 0 ? Color.GRAY : activeColor);
+        }
+        return view;
+      }
+
+      @Override
       public View getDropDownView(int position, @Nullable View convertView,
           @NonNull ViewGroup parent) {
         View view = super.getDropDownView(position, convertView, parent);
         // Always set color to handle recycled views correctly.
-        // spinner_dropdown_item.xml has a dark background with white text; use GRAY for the hint.
+        // spinner_dropdown_item.xml has a dark background; use GRAY for the hint row.
         if (view instanceof TextView) {
-          ((TextView) view).setTextColor(position == 0 ? Color.GRAY : Color.WHITE);
+          int activeColor = isNight ? context.getColor(R.color.night_text_color) : Color.WHITE;
+          ((TextView) view).setTextColor(position == 0 ? Color.GRAY : activeColor);
         }
         return view;
       }

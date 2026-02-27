@@ -19,6 +19,8 @@ import android.app.SearchManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.graphics.Rect;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
@@ -35,10 +37,12 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -50,6 +54,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.stardroid.ApplicationConstants;
 import com.google.android.stardroid.R;
+import com.google.android.stardroid.activities.util.NightModeHelper;
 import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
 import com.google.android.stardroid.activities.dialogs.CreditsDialogFragment;
 import com.google.android.stardroid.activities.dialogs.HelpDialogFragment;
@@ -87,6 +92,7 @@ import com.google.android.stardroid.util.AnalyticsInterface;
 import com.google.android.stardroid.util.MiscUtil;
 import com.google.android.stardroid.util.SensorAccuracyMonitor;
 import com.google.android.stardroid.views.ButtonLayerView;
+import com.google.android.stardroid.views.PreferencesButton;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -275,7 +281,113 @@ public class DynamicStarMapActivity extends InjectableActivity
 
   @Override
   public void setNightMode(boolean mode) {
+    nightMode = mode;
     rendererController.queueNightVisionMode(mode);
+    applyNightModeToUi();
+  }
+
+  private void applyNightModeToUi() {
+    int textColor = nightMode ? getColor(R.color.night_text_color) : Color.WHITE;
+
+    // Action bar background, title text, and logo tint
+    NightModeHelper.applyActionBarNightMode(getActionBar(), this, nightMode);
+
+    // Menu icons (triggers onPrepareOptionsMenu which applies color filters)
+    invalidateOptionsMenu();
+
+    // Layer icon sidebar background tint
+    ButtonLayerView providerButtons = (ButtonLayerView) findViewById(R.id.layer_buttons_control);
+    if (providerButtons != null && providerButtons.getBackground() != null) {
+      providerButtons.getBackground().mutate().setColorFilter(
+          nightMode ? getColor(R.color.night_sidebar_bg) : Color.WHITE, PorterDuff.Mode.MULTIPLY);
+    }
+
+    // Layer icon buttons: PreferencesButton handles its own on/off tinting in night mode.
+    if (providerButtons != null) {
+      for (int i = 0; i < providerButtons.getChildCount(); i++) {
+        View child = providerButtons.getChildAt(i);
+        if (child instanceof PreferencesButton) {
+          ((PreferencesButton) child).setNightMode(nightMode);
+        } else if (child instanceof ImageButton) {
+          if (nightMode) {
+            ((ImageButton) child).setColorFilter(getColor(R.color.night_text_color), PorterDuff.Mode.MULTIPLY);
+          } else {
+            ((ImageButton) child).clearColorFilter();
+          }
+        }
+      }
+    }
+
+    // Manual/auto toggle — webp image, must use MULTIPLY not SRC_ATOP
+    View manualAutoToggle = findViewById(R.id.manual_auto_toggle);
+    if (manualAutoToggle instanceof ImageButton) {
+      if (nightMode) {
+        ((ImageButton) manualAutoToggle).setColorFilter(getColor(R.color.night_text_color), PorterDuff.Mode.MULTIPLY);
+      } else {
+        ((ImageButton) manualAutoToggle).clearColorFilter();
+      }
+    }
+
+    // Search control bar
+    View searchControlBar = findViewById(R.id.search_control_bar);
+    if (searchControlBar != null) {
+      searchControlBar.setBackgroundColor(nightMode ? getColor(R.color.night_bar_bg) : getColor(R.color.day_bar_bg));
+      int[] searchTextIds = {R.id.search_status_label, R.id.search_prompt};
+      for (int id : searchTextIds) {
+        TextView tv = (TextView) findViewById(id);
+        if (tv != null) tv.setTextColor(textColor);
+      }
+      ImageButton cancelBtn = (ImageButton) findViewById(R.id.cancel_search_button);
+      if (cancelBtn != null) {
+        if (nightMode) cancelBtn.setColorFilter(getColor(R.color.night_text_color), PorterDuff.Mode.MULTIPLY);
+        else cancelBtn.clearColorFilter();
+      }
+    }
+
+    // Time player bar
+    if (timePlayerUI != null) {
+      timePlayerUI.setBackgroundColor(nightMode ? getColor(R.color.night_bar_bg) : getColor(R.color.day_bar_bg));
+      if (timePlayerUI instanceof ViewGroup) {
+        ViewGroup group = (ViewGroup) timePlayerUI;
+        for (int i = 0; i < group.getChildCount(); i++) {
+          View child = group.getChildAt(i);
+          if (child instanceof android.widget.RelativeLayout) {
+            child.setBackgroundColor(nightMode ? getColor(R.color.night_bar_bg) : getColor(R.color.day_bar_bg));
+          }
+        }
+      }
+      int[] textViewIds = {
+          R.id.time_travel_status_label,
+          R.id.time_travel_time_readout,
+          R.id.time_travel_speed_label
+      };
+      for (int id : textViewIds) {
+        TextView tv = (TextView) findViewById(id);
+        if (tv != null) tv.setTextColor(textColor);
+      }
+      // Time player icon and control buttons
+      int[] iconIds = {
+          R.id.time_travel_icon,
+          R.id.time_player_close,
+          R.id.time_player_play_backwards,
+          R.id.time_player_play_stop,
+          R.id.time_player_play_forwards
+      };
+      for (int id : iconIds) {
+        ImageView iv = (ImageView) findViewById(id);
+        if (iv != null) {
+          if (nightMode) iv.setColorFilter(getColor(R.color.night_text_color), PorterDuff.Mode.MULTIPLY);
+          else iv.clearColorFilter();
+        }
+      }
+    }
+  }
+
+  @Override
+  public boolean onPrepareOptionsMenu(Menu menu) {
+    boolean result = super.onPrepareOptionsMenu(menu);
+    NightModeHelper.tintMenuIcons(menu, nightMode, this);
+    return result;
   }
 
   private void checkForSensorsAndMaybeWarn() {
@@ -532,6 +644,14 @@ public class DynamicStarMapActivity extends InjectableActivity
         }
       }, TransitioningCompositeClock.TRANSITION_TIME_MILLIS + SEARCH_POST_TRANSITION_DELAY_MS);
     }
+  }
+
+  public void setTimeTravelModeFromNow() {
+    Log.d(TAG, "Showing TimePlayer UI (from now, no effects).");
+    timePlayerUI.setVisibility(View.VISIBLE);
+    timePlayerUI.requestFocus();
+    controller.goTimeTravel(new Date());
+    controller.accelerateTimeTravel();
   }
 
   public void setNormalTimeModel() {

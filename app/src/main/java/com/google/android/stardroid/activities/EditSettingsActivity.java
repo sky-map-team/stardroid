@@ -34,6 +34,7 @@ import com.google.android.stardroid.ApplicationConstants;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.StardroidApplication;
 import com.google.android.stardroid.activities.util.ActivityLightLevelChanger;
+import com.google.android.stardroid.activities.util.NightModeHelper;
 import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
 import com.google.android.stardroid.activities.util.EdgeToEdgeFixer;
 import com.google.android.stardroid.util.Analytics;
@@ -47,7 +48,8 @@ import javax.inject.Inject;
 /**
  * Edit the user's preferences.
  */
-public class EditSettingsActivity extends PreferenceActivity {
+public class EditSettingsActivity extends PreferenceActivity
+    implements ActivityLightLevelChanger.NightModeable {
   private MyPreferenceFragment preferenceFragment;
 
   public static class MyPreferenceFragment extends PreferenceFragment {
@@ -70,6 +72,8 @@ public class EditSettingsActivity extends PreferenceActivity {
   private static final String LATITUDE = "latitude";
   private static final String LOCATION = "location";
   private static final String TAG = MiscUtil.getTag(EditSettingsActivity.class);
+
+  private boolean nightMode = false;
   private Geocoder geocoder;
   @Inject ActivityLightLevelManager activityLightLevelManager;
   @Inject Analytics analytics;
@@ -176,6 +180,21 @@ public class EditSettingsActivity extends PreferenceActivity {
   private void updatePreferences() {
     Log.d(TAG, "Updating preferences");
     analytics.setEnabled(preferenceFragment.findPreference(Analytics.PREF_KEY).isEnabled());
+  }
+
+  @Override
+  public void setNightMode(boolean nightMode) {
+    this.nightMode = nightMode;
+    applyNightMode();
+  }
+
+  private void applyNightMode() {
+    // applyActionBarNightMode sets the background colour, title text colour, and logo tint —
+    // the same three changes made by DynamicStarMapActivity and DiagnosticActivity.
+    // No content-area tinting is attempted here because PreferenceFragment renders its own
+    // rows using system-managed views that cannot be reliably recoloured without a full
+    // custom preference renderer.
+    NightModeHelper.applyActionBarNightMode(getActionBar(), this, nightMode);
   }
 
   protected boolean setLatLongFromPlace(String place) {

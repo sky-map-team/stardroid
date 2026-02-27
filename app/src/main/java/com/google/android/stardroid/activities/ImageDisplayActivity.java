@@ -19,9 +19,12 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -31,6 +34,7 @@ import androidx.preference.PreferenceManager;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.util.ActivityLightLevelChanger;
 import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
+import com.google.android.stardroid.activities.util.NightModeHelper;
 import com.google.android.stardroid.activities.util.EdgeToEdgeFixer;
 import com.google.android.stardroid.gallery.GalleryFactory;
 import com.google.android.stardroid.gallery.GalleryImage;
@@ -49,11 +53,13 @@ import javax.inject.Inject;
  * @author John Taylor
  *
  */
-public class ImageDisplayActivity extends InjectableActivity {
+public class ImageDisplayActivity extends InjectableActivity
+    implements ActivityLightLevelChanger.NightModeable {
   private static final String TAG = MiscUtil.getTag(ImageDisplayActivity.class);
   private static final int ERROR_MAGIC_NUMBER = -1;
   private GalleryImage selectedImage;
   private ImageLoadHandle imageLoadHandle;
+  private boolean nightMode = false;
   @Inject
   ActivityLightLevelManager activityLightLevelManager;
   @Inject
@@ -121,6 +127,29 @@ public class ImageDisplayActivity extends InjectableActivity {
     if (imageLoadHandle != null) {
       imageLoadHandle.cancel();
       imageLoadHandle = null;
+    }
+  }
+
+  @Override
+  public void setNightMode(boolean nightMode) {
+    this.nightMode = nightMode;
+    applyNightMode();
+  }
+
+  private void applyNightMode() {
+    NightModeHelper.applyActionBarNightMode(getActionBar(), this, nightMode);
+    int textColor = nightMode ? getColor(R.color.night_text_color) : Color.WHITE;
+    View contentView = findViewById(android.R.id.content);
+    if (contentView instanceof ViewGroup) {
+      NightModeHelper.tintTextViews((ViewGroup) contentView, textColor);
+    }
+    ImageView imageView = (ImageView) findViewById(R.id.gallery_image);
+    if (imageView != null) {
+      if (nightMode) {
+        imageView.setColorFilter(getColor(R.color.night_text_color), PorterDuff.Mode.MULTIPLY);
+      } else {
+        imageView.clearColorFilter();
+      }
     }
   }
 

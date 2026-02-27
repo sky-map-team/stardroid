@@ -4,6 +4,8 @@ import static com.google.android.stardroid.math.CoordinateManipulationsKt.getDec
 import static com.google.android.stardroid.math.CoordinateManipulationsKt.getRaOfUnitGeocentricVector;
 
 import android.app.Activity;
+import android.graphics.Color;
+import com.google.android.stardroid.activities.util.NightModeHelper;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -16,10 +18,13 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.StardroidApplication;
+import com.google.android.stardroid.activities.util.ActivityLightLevelChanger;
 import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
 import com.google.android.stardroid.activities.util.EdgeToEdgeFixer;
 import com.google.android.stardroid.activities.util.SensorAccuracyDecoder;
@@ -40,9 +45,13 @@ import java.util.TimeZone;
 import javax.annotation.Nullable;
 import javax.inject.Inject;
 
-public class DiagnosticActivity extends InjectableActivity implements SensorEventListener {
+public class DiagnosticActivity extends InjectableActivity
+    implements SensorEventListener, ActivityLightLevelChanger.NightModeable {
   private static final String TAG = MiscUtil.getTag(DiagnosticActivity.class);
   private static final int UPDATE_PERIOD_MILLIS = 500;
+
+
+  private boolean nightMode = false;
 
   @Inject Analytics analytics;
   @Inject StardroidApplication app;
@@ -210,7 +219,9 @@ public class DiagnosticActivity extends InjectableActivity implements SensorEven
       Log.e(TAG, "Receiving accuracy change for unknown sensor " + sensor);
       return;
     }
-    setColor(sensorViewId, sensorAccuracyDecoder.getColorForAccuracy(accuracy));
+    int color = nightMode ? sensorAccuracyDecoder.getNightColorForAccuracy(accuracy)
+                           : sensorAccuracyDecoder.getColorForAccuracy(accuracy);
+    setColor(sensorViewId, color);
   }
 
   private Set<Sensor> knownSensorAccuracies = new HashSet<>();
@@ -285,6 +296,21 @@ public class DiagnosticActivity extends InjectableActivity implements SensorEven
       }
     }
     setText(R.id.diagnose_network_status_txt, message);
+  }
+
+  @Override
+  public void setNightMode(boolean nightMode) {
+    this.nightMode = nightMode;
+    applyNightMode();
+  }
+
+  private void applyNightMode() {
+    NightModeHelper.applyActionBarNightMode(getActionBar(), this, nightMode);
+    int textColor = nightMode ? getColor(R.color.night_text_color) : Color.WHITE;
+    View contentView = findViewById(android.R.id.content);
+    if (contentView instanceof ViewGroup) {
+      NightModeHelper.tintTextViews((ViewGroup) contentView, textColor);
+    }
   }
 
   private void setText(int viewId, String text) {
