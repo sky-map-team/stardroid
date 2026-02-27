@@ -650,6 +650,14 @@ public class DynamicStarMapActivity extends InjectableActivity
     }
   }
 
+  public void setTimeTravelModeFromNow() {
+    Log.d(TAG, "Showing TimePlayer UI (from now, no effects).");
+    timePlayerUI.setVisibility(View.VISIBLE);
+    timePlayerUI.requestFocus();
+    controller.goTimeTravel(new Date());
+    controller.accelerateTimeTravel();
+  }
+
   public void setNormalTimeModel() {
     if (sharedPreferences.getBoolean(ApplicationConstants.SOUND_EFFECTS, true)) {
       try {

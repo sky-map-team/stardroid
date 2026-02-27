@@ -125,7 +125,11 @@ public class TimeTravelDialog extends Dialog {
     goButton.setText(R.string.start_from_now);
     goButton.setOnClickListener(new View.OnClickListener() {
         public void onClick(View v) {
-          parentActivity.setTimeTravelMode(calendar.getTime(), currentSearchTargetRes);
+          if (userHasModifiedTime) {
+            parentActivity.setTimeTravelMode(calendar.getTime(), currentSearchTargetRes);
+          } else {
+            parentActivity.setTimeTravelModeFromNow();
+          }
           dismiss();
         }
       });
@@ -209,6 +213,18 @@ public class TimeTravelDialog extends Dialog {
       @Override
       public boolean isEnabled(int position) {
         return position != 0;
+      }
+
+      @Override
+      public View getView(int position, @Nullable View convertView,
+          @NonNull ViewGroup parent) {
+        View view = super.getView(position, convertView, parent);
+        // Colors the collapsed spinner face (the currently selected item shown when closed).
+        if (view instanceof TextView) {
+          int activeColor = isNight ? context.getColor(R.color.night_text_color) : Color.WHITE;
+          ((TextView) view).setTextColor(position == 0 ? Color.GRAY : activeColor);
+        }
+        return view;
       }
 
       @Override
