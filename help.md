@@ -257,5 +257,7 @@ location, and the current time. If the map looks wrong, one of these is likely o
 
 ---
 
+For full troubleshooting details see the [online troubleshooting guide](https://github.com/sky-map-team/stardroid/blob/master/troubleshooting.md).
+
 If you're still stuck, email us at **skymapdevs@gmail.com** — a screenshot of your Diagnostics
 page is very helpful.
