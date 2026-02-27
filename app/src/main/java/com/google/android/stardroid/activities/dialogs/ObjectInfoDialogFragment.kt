@@ -153,9 +153,7 @@ class ObjectInfoDialogFragment : DialogFragment() {
                 dialog.dismiss()
             }
             .create()
-        if (isNight) {
-            alertDialog.setOnShowListener { NightModeHelper.applyAlertDialogNightMode(alertDialog, true) }
-        }
+        alertDialog.setOnShowListener { NightModeHelper.applyAlertDialogNightMode(alertDialog, isNight) }
         return alertDialog
     }
 
