@@ -74,6 +74,13 @@ public class EulaDialogFragment extends DialogFragment {
                   rejectEula(dialog);
                 }
               });
+    } else {
+      tosDialogBuilder.setNeutralButton(android.R.string.ok,
+          new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+              dialog.dismiss();
+            }
+          });
     }
 
     // Build the HTML content
@@ -130,6 +137,8 @@ public class EulaDialogFragment extends DialogFragment {
 
   @Override
   public void onCancel(DialogInterface dialog) {
-    rejectEula(dialog);
+    if (resultListener != null) {
+      rejectEula(dialog);
+    }
   }
 }
