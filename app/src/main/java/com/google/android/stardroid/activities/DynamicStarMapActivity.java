@@ -318,7 +318,8 @@ public class DynamicStarMapActivity extends InjectableActivity
       }
     }
 
-    // Manual/auto toggle — webp image, must use MULTIPLY not SRC_ATOP
+    // Manual/auto toggle — webp image, must use MULTIPLY not SRC_ATOP.
+    // Uses uniform tint (not on/off dimming) since both states are equally active.
     View manualAutoToggle = findViewById(R.id.manual_auto_toggle);
     if (manualAutoToggle instanceof ImageButton) {
       if (nightMode) {
@@ -852,7 +853,19 @@ public class DynamicStarMapActivity extends InjectableActivity
       ImageButton button = (ImageButton) providerButtons.getChildAt(i);
       buttonViews.add(button);
     }
-    buttonViews.add(findViewById(R.id.manual_auto_toggle));
+    PreferencesButton manualAutoToggle = (PreferencesButton) findViewById(R.id.manual_auto_toggle);
+    buttonViews.add(manualAutoToggle);
+    // Re-apply uniform night tint after each click, since PreferencesButton.setVisuallyOnOrOff()
+    // would otherwise dim the button via the on/off tint logic (fix for issue #661).
+    if (manualAutoToggle != null) {
+      manualAutoToggle.setOnClickListener(v -> {
+        if (nightMode) {
+          manualAutoToggle.setColorFilter(getColor(R.color.night_text_color), PorterDuff.Mode.MULTIPLY);
+        } else {
+          manualAutoToggle.clearColorFilter();
+        }
+      });
+    }
     ButtonLayerView manualButtonLayer = (ButtonLayerView) findViewById(
         R.id.layer_manual_auto_toggle);
 
