@@ -12,7 +12,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
@@ -131,16 +130,20 @@ public class CompassCalibrationActivity extends InjectableActivity implements Se
     accuracyReceived = true;
     lastAccuracy = accuracy;
     TextView accuracyTextView = findViewById(R.id.compass_calib_activity_compass_accuracy);
-    String accuracyText = accuracyDecoder.getTextForAccuracy(accuracy);
-    accuracyTextView.setText(accuracyText);
-    int color = nightMode ? accuracyDecoder.getNightColorForAccuracy(accuracy)
-                          : accuracyDecoder.getColorForAccuracy(accuracy);
-    accuracyTextView.setTextColor(color);
+    accuracyTextView.setText(accuracyDecoder.getTextForAccuracy(accuracy));
+    updateAccuracyColor(accuracyTextView);
     if (accuracy == SensorManager.SENSOR_STATUS_ACCURACY_HIGH
         && getIntent().getBooleanExtra(AUTO_DISMISSABLE, false)) {
       toaster.toastLong(R.string.sensor_accuracy_high);
       this.finish();
     }
+  }
+
+  private void updateAccuracyColor(TextView accuracyTextView) {
+    if (accuracyTextView == null || lastAccuracy == -1) return;
+    int color = nightMode ? accuracyDecoder.getNightColorForAccuracy(lastAccuracy)
+                          : accuracyDecoder.getColorForAccuracy(lastAccuracy);
+    accuracyTextView.setTextColor(color);
   }
 
   @Override
@@ -152,24 +155,15 @@ public class CompassCalibrationActivity extends InjectableActivity implements Se
 
   private void applyNightMode() {
     NightModeHelper.applyActionBarNightMode(getActionBar(), this, nightMode);
+    NightModeHelper.applyWebViewNightMode(webView, nightMode);
     if (webView == null) return;
-    if (nightMode) {
-      webView.evaluateJavascript("document.body.classList.add('night-mode')", null);
-    } else {
-      webView.evaluateJavascript("document.body.classList.remove('night-mode')", null);
-    }
     int textColor = nightMode ? getColor(R.color.night_text_color) : Color.WHITE;
     int linkColor = nightMode ? getColor(R.color.night_link_color) : getColor(R.color.day_link_color);
     View root = findViewById(android.R.id.content);
     if (root instanceof ViewGroup) {
       NightModeHelper.tintTextViews((ViewGroup) root, textColor, linkColor);
     }
-    if (lastAccuracy != -1) {
-      int accuracyColor = nightMode ? accuracyDecoder.getNightColorForAccuracy(lastAccuracy)
-                                    : accuracyDecoder.getColorForAccuracy(lastAccuracy);
-      TextView accuracyTextView = findViewById(R.id.compass_calib_activity_compass_accuracy);
-      if (accuracyTextView != null) accuracyTextView.setTextColor(accuracyColor);
-    }
+    updateAccuracyColor(findViewById(R.id.compass_calib_activity_compass_accuracy));
   }
 
   public void onOkClicked(View unused) {

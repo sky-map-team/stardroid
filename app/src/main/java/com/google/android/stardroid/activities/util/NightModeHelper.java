@@ -13,6 +13,7 @@ import android.text.style.ForegroundColorSpan;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -82,6 +83,17 @@ public class NightModeHelper {
         tintTextViews((ViewGroup) child, textColor, linkColor);
       }
     }
+  }
+
+  /**
+   * Toggles the {@code night-mode} CSS class on a {@link WebView}'s {@code <body>} element.
+   * Requires JavaScript to be enabled on the WebView. Safe to call if {@code webView} is null.
+   */
+  public static void applyWebViewNightMode(WebView webView, boolean nightMode) {
+    if (webView == null) return;
+    String js = nightMode ? "document.body.classList.add('night-mode')"
+                          : "document.body.classList.remove('night-mode')";
+    webView.evaluateJavascript(js, null);
   }
 
   /**

@@ -189,6 +189,11 @@ public class EditSettingsActivity extends PreferenceActivity
   }
 
   private void applyNightMode() {
+    // applyActionBarNightMode sets the background colour, title text colour, and logo tint —
+    // the same three changes made by DynamicStarMapActivity and DiagnosticActivity.
+    // No content-area tinting is attempted here because PreferenceFragment renders its own
+    // rows using system-managed views that cannot be reliably recoloured without a full
+    // custom preference renderer.
     NightModeHelper.applyActionBarNightMode(getActionBar(), this, nightMode);
   }
 
