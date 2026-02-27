@@ -188,7 +188,7 @@ public class TimeTravelDialog extends Dialog {
       int dividerId = getContext().getResources().getIdentifier("titleDivider", "id", "android");
       if (dividerId != 0) {
         View divider = getWindow().getDecorView().findViewById(dividerId);
-        if (divider != null) divider.setBackgroundColor(isNight ? textColor : 0xFF444444);
+        if (divider != null) divider.setBackgroundColor(isNight ? textColor : getContext().getColor(R.color.day_divider_color));
       }
     }
     // Refresh spinner dropdown so it picks up the updated isNight state

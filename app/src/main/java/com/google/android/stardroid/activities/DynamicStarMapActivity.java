@@ -22,7 +22,6 @@ import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.media.MediaPlayer;
@@ -93,6 +92,7 @@ import com.google.android.stardroid.util.AnalyticsInterface;
 import com.google.android.stardroid.util.MiscUtil;
 import com.google.android.stardroid.util.SensorAccuracyMonitor;
 import com.google.android.stardroid.views.ButtonLayerView;
+import com.google.android.stardroid.views.PreferencesButton;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -299,14 +299,16 @@ public class DynamicStarMapActivity extends InjectableActivity
     ButtonLayerView providerButtons = (ButtonLayerView) findViewById(R.id.layer_buttons_control);
     if (providerButtons != null && providerButtons.getBackground() != null) {
       providerButtons.getBackground().mutate().setColorFilter(
-          nightMode ? 0xFF660000 : 0xFFFFFFFF, PorterDuff.Mode.MULTIPLY);
+          nightMode ? getColor(R.color.night_sidebar_bg) : Color.WHITE, PorterDuff.Mode.MULTIPLY);
     }
 
-    // Layer icon buttons — use MULTIPLY so fully-opaque drawables are tinted, not replaced
+    // Layer icon buttons: PreferencesButton handles its own on/off tinting in night mode.
     if (providerButtons != null) {
       for (int i = 0; i < providerButtons.getChildCount(); i++) {
         View child = providerButtons.getChildAt(i);
-        if (child instanceof ImageButton) {
+        if (child instanceof PreferencesButton) {
+          ((PreferencesButton) child).setNightMode(nightMode);
+        } else if (child instanceof ImageButton) {
           if (nightMode) {
             ((ImageButton) child).setColorFilter(getColor(R.color.night_text_color), PorterDuff.Mode.MULTIPLY);
           } else {
@@ -384,13 +386,7 @@ public class DynamicStarMapActivity extends InjectableActivity
   @Override
   public boolean onPrepareOptionsMenu(Menu menu) {
     boolean result = super.onPrepareOptionsMenu(menu);
-    for (int i = 0; i < menu.size(); i++) {
-      Drawable icon = menu.getItem(i).getIcon();
-      if (icon != null) {
-        icon.mutate().setColorFilter(
-            nightMode ? getColor(R.color.night_text_color) : Color.WHITE, PorterDuff.Mode.MULTIPLY);
-      }
-    }
+    NightModeHelper.tintMenuIcons(menu, nightMode, this);
     return result;
   }
 

@@ -18,6 +18,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.content.res.TypedArray;
+import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.AttributeSet;
@@ -46,6 +47,7 @@ public class PreferencesButton extends ImageButton
   private Drawable imageOn;
   private Drawable imageOff;
   private boolean isOn;
+  private boolean nightMode = false;
   private String prefKey;
   private SharedPreferences preferences;
   private boolean defaultValue;
@@ -98,8 +100,34 @@ public class PreferencesButton extends ImageButton
     setVisuallyOnOrOff();
   }
 
+  public boolean isOn() {
+    return isOn;
+  }
+
+  /**
+   * Applies or removes night mode colour tinting. Must be called whenever the activity enters
+   * or exits night mode. The tint is re-applied automatically on each toggle so the on/off
+   * distinction stays correct throughout the session.
+   */
+  public void setNightMode(boolean nightMode) {
+    this.nightMode = nightMode;
+    applyNightModeTint();
+  }
+
+  private void applyNightModeTint() {
+    setAlpha(1.0f);  // reset any stale alpha from a previous approach
+    if (nightMode) {
+      int tintColor = getContext().getColor(isOn ? R.color.night_button_on_tint
+                                                 : R.color.night_button_off_tint);
+      setColorFilter(tintColor, PorterDuff.Mode.MULTIPLY);
+    } else {
+      clearColorFilter();
+    }
+  }
+
   private void setVisuallyOnOrOff() {
     setImageDrawable(isOn ? imageOn : imageOff);
+    applyNightModeTint();
   }
   
   private void setPreference() {

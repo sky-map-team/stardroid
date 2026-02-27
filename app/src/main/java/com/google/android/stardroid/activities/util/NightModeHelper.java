@@ -3,12 +3,14 @@ package com.google.android.stardroid.activities.util;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
+import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -55,16 +57,43 @@ public class NightModeHelper {
   }
 
   /**
-   * Recursively sets the text colour on every {@link TextView} (including {@link Button}s)
-   * in a view hierarchy.
+   * Recursively sets the text and link colour on every {@link TextView} (including
+   * {@link Button}s) in a view hierarchy. Equivalent to calling
+   * {@link #tintTextViews(ViewGroup, int, int)} with the same colour for both.
    */
   public static void tintTextViews(ViewGroup root, int color) {
+    tintTextViews(root, color, color);
+  }
+
+  /**
+   * Recursively sets the text colour and link colour independently on every
+   * {@link TextView} (including {@link Button}s) in a view hierarchy.
+   *
+   * <p>Use this overload when the link colour should differ from the text colour, e.g. in
+   * night mode where links use {@code R.color.night_link_color}.
+   */
+  public static void tintTextViews(ViewGroup root, int textColor, int linkColor) {
     for (int i = 0; i < root.getChildCount(); i++) {
       View child = root.getChildAt(i);
       if (child instanceof TextView) {
-        ((TextView) child).setTextColor(color);
+        ((TextView) child).setTextColor(textColor);
+        ((TextView) child).setLinkTextColor(linkColor);
       } else if (child instanceof ViewGroup) {
-        tintTextViews((ViewGroup) child, color);
+        tintTextViews((ViewGroup) child, textColor, linkColor);
+      }
+    }
+  }
+
+  /**
+   * Applies a night mode colour filter to all icons in an options {@link Menu}.
+   * Uses {@link PorterDuff.Mode#MULTIPLY} so icon detail is preserved.
+   */
+  public static void tintMenuIcons(Menu menu, boolean nightMode, Context context) {
+    int color = nightMode ? context.getColor(R.color.night_text_color) : Color.WHITE;
+    for (int i = 0; i < menu.size(); i++) {
+      Drawable icon = menu.getItem(i).getIcon();
+      if (icon != null) {
+        icon.mutate().setColorFilter(color, PorterDuff.Mode.MULTIPLY);
       }
     }
   }

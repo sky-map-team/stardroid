@@ -14,4 +14,10 @@
     <color name="day_overlay">#66000000</color>
     <color name="night_bar_bg">#20990000</color>
     <color name="day_bar_bg">#20990099</color>
+    <color name="night_sidebar_bg">#FF660000</color>
+    <color name="day_divider_color">#FF444444</color>
+    <!-- Bright red MULTIPLY tint for enabled layer buttons in night mode -->
+    <color name="night_button_on_tint">#FFCC4444</color>
+    <!-- Near-black MULTIPLY tint for disabled layer buttons in night mode -->
+    <color name="night_button_off_tint">#FF2A0000</color>
 </resources>

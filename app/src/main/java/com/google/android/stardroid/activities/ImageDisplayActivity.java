@@ -24,6 +24,7 @@ import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -138,12 +139,10 @@ public class ImageDisplayActivity extends InjectableActivity
   private void applyNightMode() {
     NightModeHelper.applyActionBarNightMode(getActionBar(), this, nightMode);
     int textColor = nightMode ? getColor(R.color.night_text_color) : Color.WHITE;
-    TextView title = (TextView) findViewById(R.id.gallery_image_title);
-    if (title != null) title.setTextColor(textColor);
-    Button backBtn = (Button) findViewById(R.id.gallery_image_back_btn);
-    if (backBtn != null) backBtn.setTextColor(textColor);
-    Button searchBtn = (Button) findViewById(R.id.gallery_image_search_btn);
-    if (searchBtn != null) searchBtn.setTextColor(textColor);
+    View contentView = findViewById(android.R.id.content);
+    if (contentView instanceof ViewGroup) {
+      NightModeHelper.tintTextViews((ViewGroup) contentView, textColor);
+    }
     ImageView imageView = (ImageView) findViewById(R.id.gallery_image);
     if (imageView != null) {
       if (nightMode) {

@@ -9,6 +9,7 @@ import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
+import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
@@ -158,20 +159,10 @@ public class CompassCalibrationActivity extends InjectableActivity implements Se
       webView.evaluateJavascript("document.body.classList.remove('night-mode')", null);
     }
     int textColor = nightMode ? getColor(R.color.night_text_color) : Color.WHITE;
-    int[] viewIdsToColor = {
-        R.id.compass_calib_activity_explain_why,
-        R.id.compass_calib_activity_heading_label,
-        R.id.compass_calib_activity_donotshow,
-        R.id.compass_calib_what_to_do,
-        R.id.compass_calib_activity_ok_button
-    };
-    for (int id : viewIdsToColor) {
-      TextView tv = findViewById(id);
-      if (tv != null) tv.setTextColor(textColor);
-    }
-    TextView whatToDo = findViewById(R.id.compass_calib_what_to_do);
-    if (whatToDo != null) {
-      whatToDo.setLinkTextColor(nightMode ? getColor(R.color.night_link_color) : getColor(R.color.day_link_color));
+    int linkColor = nightMode ? getColor(R.color.night_link_color) : getColor(R.color.day_link_color);
+    View root = findViewById(android.R.id.content);
+    if (root instanceof ViewGroup) {
+      NightModeHelper.tintTextViews((ViewGroup) root, textColor, linkColor);
     }
     if (lastAccuracy != -1) {
       int accuracyColor = nightMode ? accuracyDecoder.getNightColorForAccuracy(lastAccuracy)
