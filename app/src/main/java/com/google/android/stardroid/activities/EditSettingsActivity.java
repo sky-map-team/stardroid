@@ -15,7 +15,6 @@ package com.google.android.stardroid.activities;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.graphics.drawable.ColorDrawable;
 import android.content.DialogInterface.OnClickListener;
 import android.content.SharedPreferences;
 import android.location.Address;
@@ -35,6 +34,7 @@ import com.google.android.stardroid.ApplicationConstants;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.StardroidApplication;
 import com.google.android.stardroid.activities.util.ActivityLightLevelChanger;
+import com.google.android.stardroid.activities.util.NightModeHelper;
 import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
 import com.google.android.stardroid.activities.util.EdgeToEdgeFixer;
 import com.google.android.stardroid.util.Analytics;
@@ -72,9 +72,6 @@ public class EditSettingsActivity extends PreferenceActivity
   private static final String LATITUDE = "latitude";
   private static final String LOCATION = "location";
   private static final String TAG = MiscUtil.getTag(EditSettingsActivity.class);
-
-  private static final int NIGHT_RED_OVERLAY = 0x66220000;
-  private static final int DAY_OVERLAY       = 0x66000000;
 
   private boolean nightMode = false;
   private Geocoder geocoder;
@@ -192,10 +189,7 @@ public class EditSettingsActivity extends PreferenceActivity
   }
 
   private void applyNightMode() {
-    android.app.ActionBar actionBar = getActionBar();
-    if (actionBar != null) {
-      actionBar.setBackgroundDrawable(new ColorDrawable(nightMode ? NIGHT_RED_OVERLAY : DAY_OVERLAY));
-    }
+    NightModeHelper.applyActionBarNightMode(getActionBar(), this, nightMode);
   }
 
   protected boolean setLatLongFromPlace(String place) {

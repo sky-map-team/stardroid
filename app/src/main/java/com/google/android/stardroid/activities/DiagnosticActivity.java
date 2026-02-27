@@ -5,7 +5,7 @@ import static com.google.android.stardroid.math.CoordinateManipulationsKt.getRaO
 
 import android.app.Activity;
 import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
+import com.google.android.stardroid.activities.util.NightModeHelper;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -17,8 +17,6 @@ import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.text.SpannableString;
-import android.text.style.ForegroundColorSpan;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -52,9 +50,6 @@ public class DiagnosticActivity extends InjectableActivity
   private static final String TAG = MiscUtil.getTag(DiagnosticActivity.class);
   private static final int UPDATE_PERIOD_MILLIS = 500;
 
-  private static final int NIGHT_RED_OVERLAY = 0x66220000;
-  private static final int DAY_OVERLAY       = 0x66000000;
-  private static final int NIGHT_TEXT_COLOR  = 0xFFCC4444;
 
   private boolean nightMode = false;
 
@@ -310,31 +305,11 @@ public class DiagnosticActivity extends InjectableActivity
   }
 
   private void applyNightMode() {
-    int textColor = nightMode ? NIGHT_TEXT_COLOR : Color.WHITE;
-    android.app.ActionBar actionBar = getActionBar();
-    if (actionBar != null) {
-      actionBar.setBackgroundDrawable(new ColorDrawable(nightMode ? NIGHT_RED_OVERLAY : DAY_OVERLAY));
-      CharSequence title = getTitle();
-      if (title != null) {
-        SpannableString styledTitle = new SpannableString(title.toString());
-        styledTitle.setSpan(new ForegroundColorSpan(textColor), 0, styledTitle.length(), 0);
-        actionBar.setTitle(styledTitle);
-      }
-    }
+    NightModeHelper.applyActionBarNightMode(getActionBar(), this, nightMode);
+    int textColor = nightMode ? getColor(R.color.night_text_color) : Color.WHITE;
     View contentView = findViewById(android.R.id.content);
     if (contentView instanceof ViewGroup) {
-      tintTextViews((ViewGroup) contentView, textColor);
-    }
-  }
-
-  private static void tintTextViews(ViewGroup root, int color) {
-    for (int i = 0; i < root.getChildCount(); i++) {
-      View child = root.getChildAt(i);
-      if (child instanceof TextView) {
-        ((TextView) child).setTextColor(color);
-      } else if (child instanceof ViewGroup) {
-        tintTextViews((ViewGroup) child, color);
-      }
+      NightModeHelper.tintTextViews((ViewGroup) contentView, textColor);
     }
   }
 

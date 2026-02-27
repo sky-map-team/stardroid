@@ -16,7 +16,8 @@ package com.google.android.stardroid.activities;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.drawable.ColorDrawable;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -32,6 +33,7 @@ import androidx.preference.PreferenceManager;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.util.ActivityLightLevelChanger;
+import com.google.android.stardroid.activities.util.NightModeHelper;
 import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
 import com.google.android.stardroid.activities.util.EdgeToEdgeFixer;
 import com.google.android.stardroid.gallery.GalleryFactory;
@@ -59,11 +61,9 @@ public class ImageGalleryActivity extends InjectableActivity
 
   private static final String TAG = MiscUtil.getTag(ImageGalleryActivity.class);
 
-  private static final int NIGHT_RED_OVERLAY = 0x66220000;
-  private static final int DAY_OVERLAY       = 0x66000000;
-
   private boolean nightMode = false;
   private List<GalleryImage> galleryImages;
+  private ImageAdapter imageAdapter;
 
   @Inject
   ActivityLightLevelManager activityLightLevelManager;
@@ -98,6 +98,11 @@ public class ImageGalleryActivity extends InjectableActivity
       }
       GalleryImage galleryImage = galleryImages.get(position);
       ImageView imageView = (ImageView) imagePanel.findViewById(R.id.image_gallery_image);
+      if (nightMode) {
+        imageView.setColorFilter(getColor(R.color.night_text_color), PorterDuff.Mode.MULTIPLY);
+      } else {
+        imageView.clearColorFilter();
+      }
       // Tag the view with position to handle recycling correctly
       imageView.setTag(position);
       // Clear previous image while loading
@@ -120,6 +125,7 @@ public class ImageGalleryActivity extends InjectableActivity
       }
       TextView imageLabel = (TextView) imagePanel.findViewById(R.id.image_gallery_title);
       imageLabel.setText(galleryImage.getName());
+      imageLabel.setTextColor(nightMode ? getColor(R.color.night_text_color) : Color.WHITE);
       return imagePanel;
     }
   }
@@ -162,9 +168,16 @@ public class ImageGalleryActivity extends InjectableActivity
   }
 
   private void applyNightMode() {
-    android.app.ActionBar actionBar = getActionBar();
-    if (actionBar != null) {
-      actionBar.setBackgroundDrawable(new ColorDrawable(nightMode ? NIGHT_RED_OVERLAY : DAY_OVERLAY));
+    NightModeHelper.applyActionBarNightMode(getActionBar(), this, nightMode);
+    // Tint the gallery heading title (has no ID in the layout XML)
+    int textColor = nightMode ? getColor(R.color.night_text_color) : Color.WHITE;
+    View contentView = findViewById(android.R.id.content);
+    if (contentView instanceof ViewGroup) {
+      NightModeHelper.tintTextViews((ViewGroup) contentView, textColor);
+    }
+    // Refresh adapter so image thumbnails and labels pick up the new night mode state
+    if (imageAdapter != null) {
+      imageAdapter.notifyDataSetChanged();
     }
   }
 
@@ -179,7 +192,7 @@ public class ImageGalleryActivity extends InjectableActivity
 
   private void addImagesToGallery() {
     Gallery gallery = (Gallery) findViewById(R.id.image_gallery);
-    ImageAdapter imageAdapter = new ImageAdapter();
+    imageAdapter = new ImageAdapter();
     gallery.setAdapter(imageAdapter);
     gallery.setOnItemClickListener(new OnItemClickListener() {
       @Override

@@ -30,6 +30,11 @@ public class ActivityLightLevelManager implements OnSharedPreferenceChangeListen
   private final SharedPreferences sharedPreferences;
   private enum LightMode {DAY, NIGHT, AUTO}
   public static final String LIGHT_MODE_KEY = "lightmode";
+
+  /** Returns true if the night mode preference is currently set to NIGHT. */
+  public static boolean isNightMode(SharedPreferences prefs) {
+    return LightMode.NIGHT.name().equals(prefs.getString(LIGHT_MODE_KEY, LightMode.DAY.name()));
+  }
   @Inject
   public ActivityLightLevelManager(ActivityLightLevelChanger lightLevelChanger,
                                    SharedPreferences sharedPreferences) {

@@ -19,6 +19,7 @@ import androidx.preference.PreferenceManager;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.StardroidApplication;
 import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
+import com.google.android.stardroid.activities.util.NightModeHelper;
 import com.google.android.stardroid.inject.HasComponent;
 import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.MiscUtil;
@@ -88,8 +89,8 @@ public class EulaDialogFragment extends DialogFragment {
     contentBuilder.append(eulaText);
 
     SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(parentActivity);
-    String lightMode = preferences.getString(ActivityLightLevelManager.LIGHT_MODE_KEY, "DAY");
-    String bodyClass = "NIGHT".equals(lightMode) ? " class=\"night-mode\"" : "";
+    boolean isNight = ActivityLightLevelManager.isNightMode(preferences);
+    String bodyClass = isNight ? " class=\"night-mode\"" : "";
     String html = "<!DOCTYPE html><html><head>" +
         "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">" +
         "<link rel=\"stylesheet\" href=\"html/help.css\">" +
@@ -108,24 +109,9 @@ public class EulaDialogFragment extends DialogFragment {
     webView.loadDataWithBaseURL("file:///android_asset/", html, "text/html", "UTF-8", null);
 
     AlertDialog tosDialog = tosDialogBuilder.create();
-    if ("NIGHT".equals(lightMode)) {
-      tosDialog.setOnShowListener(dialog -> {
-        AlertDialog d = (AlertDialog) dialog;
-        int titleId = d.getContext().getResources().getIdentifier("alertTitle", "id", "android");
-        if (titleId != 0) {
-          android.widget.TextView titleView = d.findViewById(titleId);
-          if (titleView != null) titleView.setTextColor(0xFFCC4444);
-        }
-        int dividerId = d.getContext().getResources().getIdentifier("titleDivider", "id", "android");
-        if (dividerId != 0) {
-          View divider = d.findViewById(dividerId);
-          if (divider != null) divider.setBackgroundColor(0xFFCC4444);
-        }
-        android.widget.Button posBtn = d.getButton(AlertDialog.BUTTON_POSITIVE);
-        if (posBtn != null) posBtn.setTextColor(0xFFCC4444);
-        android.widget.Button negBtn = d.getButton(AlertDialog.BUTTON_NEGATIVE);
-        if (negBtn != null) negBtn.setTextColor(0xFFCC4444);
-      });
+    if (isNight) {
+      tosDialog.setOnShowListener(
+          dialog -> NightModeHelper.applyAlertDialogNightMode((AlertDialog) dialog, true));
     }
     return tosDialog;
   }

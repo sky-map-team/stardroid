@@ -22,7 +22,6 @@ import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.Rect;
-import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
@@ -48,9 +47,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import android.text.SpannableString;
-import android.text.style.ForegroundColorSpan;
-
 import androidx.annotation.StringRes;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
@@ -59,6 +55,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.stardroid.ApplicationConstants;
 import com.google.android.stardroid.R;
+import com.google.android.stardroid.activities.util.NightModeHelper;
 import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
 import com.google.android.stardroid.activities.dialogs.CreditsDialogFragment;
 import com.google.android.stardroid.activities.dialogs.HelpDialogFragment;
@@ -186,13 +183,6 @@ public class DynamicStarMapActivity extends InjectableActivity
   private static final float ROTATION_SPEED = 10;
   private static final String TAG = MiscUtil.getTag(DynamicStarMapActivity.class);
 
-  // Night mode UI colours
-  private static final int NIGHT_TEXT_COLOR  = 0xFFCC4444;
-  private static final int NIGHT_RED_OVERLAY = 0x66220000;  // action bar in night mode
-  private static final int DAY_OVERLAY       = 0x66000000;  // action bar in day mode (#black_overlay)
-  private static final int NIGHT_BAR_BG      = 0x20990000;  // time-travel bar red tint
-  private static final int DAY_BAR_BG        = 0x20990099;  // time-travel bar purple
-
   private ImageButton cancelSearchButton;
   @Inject ControllerGroup controller;
   private GestureDetector gestureDetector;
@@ -297,19 +287,10 @@ public class DynamicStarMapActivity extends InjectableActivity
   }
 
   private void applyNightModeToUi() {
-    int textColor = nightMode ? NIGHT_TEXT_COLOR : Color.WHITE;
+    int textColor = nightMode ? getColor(R.color.night_text_color) : Color.WHITE;
 
-    // Action bar background and title text
-    android.app.ActionBar actionBar = getActionBar();
-    if (actionBar != null) {
-      actionBar.setBackgroundDrawable(new ColorDrawable(nightMode ? NIGHT_RED_OVERLAY : DAY_OVERLAY));
-      CharSequence title = getTitle();
-      if (title != null) {
-        SpannableString styledTitle = new SpannableString(title.toString());
-        styledTitle.setSpan(new ForegroundColorSpan(textColor), 0, styledTitle.length(), 0);
-        actionBar.setTitle(styledTitle);
-      }
-    }
+    // Action bar background, title text, and logo tint
+    NightModeHelper.applyActionBarNightMode(getActionBar(), this, nightMode);
 
     // Menu icons (triggers onPrepareOptionsMenu which applies color filters)
     invalidateOptionsMenu();
@@ -327,7 +308,7 @@ public class DynamicStarMapActivity extends InjectableActivity
         View child = providerButtons.getChildAt(i);
         if (child instanceof ImageButton) {
           if (nightMode) {
-            ((ImageButton) child).setColorFilter(NIGHT_TEXT_COLOR, PorterDuff.Mode.MULTIPLY);
+            ((ImageButton) child).setColorFilter(getColor(R.color.night_text_color), PorterDuff.Mode.MULTIPLY);
           } else {
             ((ImageButton) child).clearColorFilter();
           }
@@ -339,7 +320,7 @@ public class DynamicStarMapActivity extends InjectableActivity
     View manualAutoToggle = findViewById(R.id.manual_auto_toggle);
     if (manualAutoToggle instanceof ImageButton) {
       if (nightMode) {
-        ((ImageButton) manualAutoToggle).setColorFilter(NIGHT_TEXT_COLOR, PorterDuff.Mode.MULTIPLY);
+        ((ImageButton) manualAutoToggle).setColorFilter(getColor(R.color.night_text_color), PorterDuff.Mode.MULTIPLY);
       } else {
         ((ImageButton) manualAutoToggle).clearColorFilter();
       }
@@ -348,7 +329,7 @@ public class DynamicStarMapActivity extends InjectableActivity
     // Search control bar
     View searchControlBar = findViewById(R.id.search_control_bar);
     if (searchControlBar != null) {
-      searchControlBar.setBackgroundColor(nightMode ? NIGHT_BAR_BG : DAY_BAR_BG);
+      searchControlBar.setBackgroundColor(nightMode ? getColor(R.color.night_bar_bg) : getColor(R.color.day_bar_bg));
       int[] searchTextIds = {R.id.search_status_label, R.id.search_prompt};
       for (int id : searchTextIds) {
         TextView tv = (TextView) findViewById(id);
@@ -356,20 +337,20 @@ public class DynamicStarMapActivity extends InjectableActivity
       }
       ImageButton cancelBtn = (ImageButton) findViewById(R.id.cancel_search_button);
       if (cancelBtn != null) {
-        if (nightMode) cancelBtn.setColorFilter(NIGHT_TEXT_COLOR, PorterDuff.Mode.MULTIPLY);
+        if (nightMode) cancelBtn.setColorFilter(getColor(R.color.night_text_color), PorterDuff.Mode.MULTIPLY);
         else cancelBtn.clearColorFilter();
       }
     }
 
     // Time player bar
     if (timePlayerUI != null) {
-      timePlayerUI.setBackgroundColor(nightMode ? NIGHT_BAR_BG : DAY_BAR_BG);
+      timePlayerUI.setBackgroundColor(nightMode ? getColor(R.color.night_bar_bg) : getColor(R.color.day_bar_bg));
       if (timePlayerUI instanceof ViewGroup) {
         ViewGroup group = (ViewGroup) timePlayerUI;
         for (int i = 0; i < group.getChildCount(); i++) {
           View child = group.getChildAt(i);
           if (child instanceof android.widget.RelativeLayout) {
-            child.setBackgroundColor(nightMode ? NIGHT_BAR_BG : DAY_BAR_BG);
+            child.setBackgroundColor(nightMode ? getColor(R.color.night_bar_bg) : getColor(R.color.day_bar_bg));
           }
         }
       }
@@ -393,7 +374,7 @@ public class DynamicStarMapActivity extends InjectableActivity
       for (int id : iconIds) {
         ImageView iv = (ImageView) findViewById(id);
         if (iv != null) {
-          if (nightMode) iv.setColorFilter(NIGHT_TEXT_COLOR, PorterDuff.Mode.MULTIPLY);
+          if (nightMode) iv.setColorFilter(getColor(R.color.night_text_color), PorterDuff.Mode.MULTIPLY);
           else iv.clearColorFilter();
         }
       }
@@ -407,7 +388,7 @@ public class DynamicStarMapActivity extends InjectableActivity
       Drawable icon = menu.getItem(i).getIcon();
       if (icon != null) {
         icon.mutate().setColorFilter(
-            nightMode ? NIGHT_TEXT_COLOR : Color.WHITE, PorterDuff.Mode.MULTIPLY);
+            nightMode ? getColor(R.color.night_text_color) : Color.WHITE, PorterDuff.Mode.MULTIPLY);
       }
     }
     return result;

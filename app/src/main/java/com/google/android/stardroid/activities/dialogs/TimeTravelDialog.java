@@ -47,6 +47,7 @@ import androidx.preference.PreferenceManager;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.DynamicStarMapActivity;
 import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
+import com.google.android.stardroid.activities.util.NightModeHelper;
 import com.google.android.stardroid.control.AstronomerModel;
 import com.google.android.stardroid.ephemeris.SolarSystemBody;
 import com.google.android.stardroid.space.CelestialObject;
@@ -67,8 +68,9 @@ import java.util.List;
 public class TimeTravelDialog extends Dialog {
   private static final String TAG = MiscUtil.getTag(TimeTravelDialog.class);
   private static final int MIN_CLICK_TIME = 1000;
-  private static final int NIGHT_TEXT_COLOR = 0xFFCC4444;
+  private boolean isNight = false;
   private Spinner popularDatesMenu;
+  private ArrayAdapter<String> popularDatesAdapter;
   private TextView dateTimeReadout;
   private DynamicStarMapActivity parentActivity;
   private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy.MM.dd G 'at' HH:mm:ss z");
@@ -136,7 +138,8 @@ public class TimeTravelDialog extends Dialog {
       });
 
     popularDatesMenu = (Spinner) findViewById(R.id.popular_dates_spinner);
-    popularDatesMenu.setAdapter(buildEventAdapter(getContext()));
+    popularDatesAdapter = buildEventAdapter(getContext());
+    popularDatesMenu.setAdapter(popularDatesAdapter);
     popularDatesMenu.setSelection(0);
     popularDatesMenu.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
       @Override
@@ -172,28 +175,21 @@ public class TimeTravelDialog extends Dialog {
 
   private void applyNightMode() {
     SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getContext());
-    boolean isNight = "NIGHT".equals(prefs.getString(ActivityLightLevelManager.LIGHT_MODE_KEY, "DAY"));
-    int textColor = isNight ? NIGHT_TEXT_COLOR : Color.WHITE;
+    isNight = ActivityLightLevelManager.isNightMode(prefs);
+    int textColor = isNight ? getContext().getColor(R.color.night_text_color) : Color.WHITE;
     if (getWindow() != null && getWindow().getDecorView() instanceof ViewGroup) {
-      tintTextViews((ViewGroup) getWindow().getDecorView(), textColor);
+      NightModeHelper.tintTextViews((ViewGroup) getWindow().getDecorView(), textColor);
     }
     if (getWindow() != null) {
       int dividerId = getContext().getResources().getIdentifier("titleDivider", "id", "android");
       if (dividerId != 0) {
         View divider = getWindow().getDecorView().findViewById(dividerId);
-        if (divider != null) divider.setBackgroundColor(isNight ? NIGHT_TEXT_COLOR : 0xFF444444);
+        if (divider != null) divider.setBackgroundColor(isNight ? textColor : 0xFF444444);
       }
     }
-  }
-
-  private static void tintTextViews(ViewGroup root, int color) {
-    for (int i = 0; i < root.getChildCount(); i++) {
-      View child = root.getChildAt(i);
-      if (child instanceof TextView) {
-        ((TextView) child).setTextColor(color);
-      } else if (child instanceof ViewGroup) {
-        tintTextViews((ViewGroup) child, color);
-      }
+    // Refresh spinner dropdown so it picks up the updated isNight state
+    if (popularDatesAdapter != null) {
+      popularDatesAdapter.notifyDataSetChanged();
     }
   }
 
@@ -220,9 +216,10 @@ public class TimeTravelDialog extends Dialog {
           @NonNull ViewGroup parent) {
         View view = super.getDropDownView(position, convertView, parent);
         // Always set color to handle recycled views correctly.
-        // spinner_dropdown_item.xml has a dark background with white text; use GRAY for the hint.
+        // spinner_dropdown_item.xml has a dark background; use GRAY for the hint row.
         if (view instanceof TextView) {
-          ((TextView) view).setTextColor(position == 0 ? Color.GRAY : Color.WHITE);
+          int activeColor = isNight ? context.getColor(R.color.night_text_color) : Color.WHITE;
+          ((TextView) view).setTextColor(position == 0 ? Color.GRAY : activeColor);
         }
         return view;
       }

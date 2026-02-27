@@ -5,4 +5,13 @@
     <color name="low_accuracy">#FF9800</color>
     <color name="bad_sensor">#E91E63</color>
     <color name="absent_sensor">#ffa0a0a0</color>
+
+    <!-- Night mode UI colours -->
+    <color name="night_text_color">#FFCC4444</color>
+    <color name="night_link_color">#FFCC6666</color>
+    <color name="day_link_color">#FF33B5E5</color>
+    <color name="night_red_overlay">#66220000</color>
+    <color name="day_overlay">#66000000</color>
+    <color name="night_bar_bg">#20990000</color>
+    <color name="day_bar_bg">#20990099</color>
 </resources>

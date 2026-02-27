@@ -2,9 +2,6 @@ package com.google.android.stardroid.activities;
 
 import android.content.SharedPreferences;
 import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.text.SpannableString;
-import android.text.style.ForegroundColorSpan;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -20,6 +17,7 @@ import android.widget.TextView;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.util.ActivityLightLevelChanger;
+import com.google.android.stardroid.activities.util.NightModeHelper;
 import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
 import com.google.android.stardroid.activities.util.EdgeToEdgeFixer;
 import com.google.android.stardroid.activities.util.SensorAccuracyDecoder;
@@ -150,31 +148,16 @@ public class CompassCalibrationActivity extends InjectableActivity implements Se
     applyNightMode();
   }
 
-  private static final int NIGHT_TEXT_COLOR = 0xFFCC4444;
-  private static final int NIGHT_LINK_COLOR = 0xFFCC6666;
-  private static final int DAY_LINK_COLOR = 0xFF33B5E5;  // Holo default link color
-  private static final int NIGHT_RED_OVERLAY = 0x66220000;
-  private static final int DAY_OVERLAY = 0x66000000;
 
   private void applyNightMode() {
-    android.app.ActionBar actionBar = getActionBar();
-    if (actionBar != null) {
-      actionBar.setBackgroundDrawable(new ColorDrawable(nightMode ? NIGHT_RED_OVERLAY : DAY_OVERLAY));
-      CharSequence title = getTitle();
-      if (title != null) {
-        SpannableString styledTitle = new SpannableString(title.toString());
-        int titleColor = nightMode ? NIGHT_TEXT_COLOR : Color.WHITE;
-        styledTitle.setSpan(new ForegroundColorSpan(titleColor), 0, styledTitle.length(), 0);
-        actionBar.setTitle(styledTitle);
-      }
-    }
+    NightModeHelper.applyActionBarNightMode(getActionBar(), this, nightMode);
     if (webView == null) return;
     if (nightMode) {
       webView.evaluateJavascript("document.body.classList.add('night-mode')", null);
     } else {
       webView.evaluateJavascript("document.body.classList.remove('night-mode')", null);
     }
-    int textColor = nightMode ? NIGHT_TEXT_COLOR : Color.WHITE;
+    int textColor = nightMode ? getColor(R.color.night_text_color) : Color.WHITE;
     int[] viewIdsToColor = {
         R.id.compass_calib_activity_explain_why,
         R.id.compass_calib_activity_heading_label,
@@ -188,7 +171,7 @@ public class CompassCalibrationActivity extends InjectableActivity implements Se
     }
     TextView whatToDo = findViewById(R.id.compass_calib_what_to_do);
     if (whatToDo != null) {
-      whatToDo.setLinkTextColor(nightMode ? NIGHT_LINK_COLOR : DAY_LINK_COLOR);
+      whatToDo.setLinkTextColor(nightMode ? getColor(R.color.night_link_color) : getColor(R.color.day_link_color));
     }
     if (lastAccuracy != -1) {
       int accuracyColor = nightMode ? accuracyDecoder.getNightColorForAccuracy(lastAccuracy)
