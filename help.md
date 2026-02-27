@@ -45,15 +45,15 @@ Sky Map organizes what it shows into layers, each of which can be toggled on or 
 Tap the screen to reveal the layer controls on the side — they glow orange when a layer is on
 and appear dim when off.
 
-| Layer           | What it shows                                                                                    |
-|-----------------|--------------------------------------------------------------------------------------------------|
-| Stars           | The brightest stars, with labels for notable ones                                                |
-| Constellations  | Constellation outlines and names                                                                 |
-| Messier Objects | Deep-sky objects: galaxies, nebulae, and star clusters                                           |
-| Planets         | The planets of our solar system, displayed as images                                             |
-| Meteor Showers  | Active and upcoming meteor shower radiant points                                                 |
-| Ecliptic & RA/Dec Grid  | The Sun's apparent annual path through the sky & Right Ascension and Declination coordinate grid |
-| Horizon         | The horizon line and cardinal direction labels (N, S, E, W)                                      |
+| Layer           | What it shows                                                                                                   |
+|-----------------|-----------------------------------------------------------------------------------------------------------------|
+| Stars           | The brightest stars, with labels for notable ones                                                               |
+| Constellations  | Constellation outlines and names                                                                                |
+| Messier Objects | Deep-sky objects: galaxies, nebulae, and star clusters                                                          |
+| Planets         | The planets of our solar system, displayed as images                                                            |
+| Meteor Showers  | Active and upcoming meteor shower radiant points                                                                |
+| Ecliptic & RA/Dec Grid  | The Ecliptic is the Sun's annual path through the sky |
+| Horizon         | The horizon line and cardinal direction labels (N, S, E, W)                                                     |
 
 > **Worth knowing:** Sky Map shows the geometric horizon — a perfectly flat, unobstructed view.
 > Objects just above it may still be hidden by buildings, hills, or trees in practice.

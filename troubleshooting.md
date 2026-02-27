@@ -50,7 +50,7 @@ To fix:
 - Open the **Diagnostics** page (overflow menu) and confirm that the latitude and longitude shown
   there look correct for where you are.
 
-See also: [Google's guide to app permissions](https://support.google.com/googleplay/answer/6270602?p=app_permissons_m)
+See also: [Google's guide to app permissions](https://support.google.com/googleplay/answer/6270602?p=app_permissions_m)
 
 ### Time
 
