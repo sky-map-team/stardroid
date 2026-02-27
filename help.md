@@ -12,7 +12,7 @@ accelerometer, and gyroscope to track where you're pointing and update the map i
 
 > Not all phones are capable of running Sky Map!
 > 
-> See the requirements section below.
+> [See the requirements section below.](#hardware-requirements)
 
 If this is your first time:
 1. Allow location access when prompted — Sky Map needs your approximate location to draw the
@@ -111,6 +111,25 @@ Jupiter.
 
 ---
 
+## Info Cards
+
+Tap any labeled celestial object on the sky map to bring up an info card — a panel with a photo and
+details about that object. Info cards are available for 150+ objects including stars, planets, the
+Moon, Messier deep-sky objects, and constellations.
+
+Each card shows:
+- A photograph or chart of the object
+- A short description and a fun fact
+- Scientific data such as distance, size, and object type
+
+Tap the image inside the card to view it fullscreen. Dismiss the card by tapping outside it or
+pressing **Back**.
+
+**Enabling info cards:** By default they only appear when you are in Manual Mode; go to settings
+to enable them while in Automatic (sensor-driven) Mode.
+
+---
+
 ## Gallery
 
 The Gallery contains a collection of images from the Hubble Space Telescope and other sources.
@@ -182,29 +201,55 @@ to the tube while the map still tracks what the telescope is aimed at.
 
 ---
 
+## Hardware requirements
+Not all devices can fully support Sky Map! At the very least you need
+a phone with
+- A magnetic field sensor (aka a Compass) - to tell which direction you're
+facing.
+- An accelerometer - to tell how high up in the sky you're looking
+
+Ideally:
+- A gyroscope - this will smooth out the motion and make it less
+jerky.
+
+> Phone compasses are notoriously troublesome. If Sky Map is not showing the sky accurately it's
+> almost always a hardware issue with the compass, not an issue with Sky Map. See the
+> troubleshooting section for some things that might help.
+
+### How do I know which sensors my phone has?
+If you open Sky Map's diagnostics page any sensors that you 
+don't have will show up as "--,--,--".
+
+### What if my devices is missing required sensors?
+Sky Map will fall back into 'manual mode'. You can still explore
+the sky, but without the sensors there is no way any app can show
+you your direction.
+
+---
+
 ## Troubleshooting
 
-See [troubleshooting.md](troubleshooting.md) for detailed troubleshooting — especially for compass
-accuracy issues. Here's a quick reference:
+See [troubleshooting.md](troubleshooting.md) for full details. Here's a quick reference:
 
 ### The map doesn't move
 - Check you're in Automatic Mode (not Manual)
+- Check the Diagnostics page to confirm your device has a compass and accelerometer
 - Try the figure-8 calibration gesture: wave your phone slowly in a large, smooth figure-8 shape
-  to help the compass resample the magnetic field
-- Check the Diagnostics page to confirm your device has the required sensors (compass and
-  accelerometer are essential; gyroscope is recommended)
 
-### The map is pointing the wrong way
-- Perform the figure-8 calibration gesture
-- Toggle **Magnetic Correction** in Settings (try on if it's off, or off if it's on)
-- Move away from metal objects, car dashboards, or magnetic phone cases
-- See [troubleshooting.md](troubleshooting.md) for advanced options including a manual compass
-  offset
+### The map is pointing the wrong way or is inaccurate
 
-### Location isn't working
-- Make sure Sky Map has location permission in your device's **App Settings**
-- If GPS is slow to acquire, allow network-based location as a fallback, or enter your location
-  manually in Settings
+Sky Map needs three things to show the correct sky: the direction your phone is facing, your
+location, and the current time. If the map looks wrong, one of these is likely off.
+
+- **Compass:** The most common cause — a hardware issue, not a Sky Map bug. Try calibrating
+  (figure-8 gesture), move away from metal objects, and toggle **Magnetic Correction** in
+  **Settings → Location**. A manual compass offset is available under
+  **Settings → Sensor Settings (Experts)** for compasses with a consistent error.
+- **Location:** Grant location permission via **App Settings → Permissions**. Check the Diagnostics
+  page to confirm your coordinates. A telltale symptom of missing location is Polaris appearing
+  near the horizon.
+- **Time:** Less common, but an incorrect time zone shifts the whole sky. Check the Diagnostics
+  page to confirm your device's time and time zone are correct.
 
 ### The map is jittery
 - Adjust **Sensor Speed** and **Sensor Damping** under **Settings → Sensor Settings (Experts)**
