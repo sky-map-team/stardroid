@@ -72,7 +72,7 @@ Tap the magnifying glass icon to search for anything in the sky. You can search 
 
 **In Automatic Mode:** after selecting a result, Sky Map shows a targeting circle and a directional arrow. Follow the arrow by rotating your phone — the circle changes from blue to red, then orange when the object is within your field of view. Tap the **✕** to exit search.
 
-**In Manual Mode:** the map simply jumps to centre on the object.
+**In Manual Mode:** the map simply jumps to center on the object.
 
 ---
 
