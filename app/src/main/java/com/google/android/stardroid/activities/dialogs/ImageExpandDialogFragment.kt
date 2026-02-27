@@ -11,13 +11,16 @@
 // limitations under the License.
 package com.google.android.stardroid.activities.dialogs
 
+import android.graphics.PorterDuff
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.preference.PreferenceManager
 import com.google.android.stardroid.R
+import com.google.android.stardroid.activities.util.ActivityLightLevelManager
 import com.google.android.stardroid.util.AssetImageLoader
 import com.google.android.stardroid.util.ImageLoadHandle
 
@@ -39,6 +42,10 @@ class ImageExpandDialogFragment : DialogFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        val prefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
+        val isNight = ActivityLightLevelManager.isNightMode(prefs)
+        val nightTextColor = requireContext().getColor(R.color.night_text_color)
+
         val view = inflater.inflate(R.layout.dialog_image_expand, container, false)
         val imageView = view.findViewById<ImageView>(R.id.expanded_image)
 
@@ -47,6 +54,9 @@ class ImageExpandDialogFragment : DialogFragment() {
             imageLoadHandle = AssetImageLoader.loadBitmapAsync(requireContext().assets, imagePath) { bitmap ->
                 if (bitmap != null && isAdded) {
                     imageView.setImageBitmap(bitmap)
+                    if (isNight) {
+                        imageView.setColorFilter(nightTextColor, PorterDuff.Mode.MULTIPLY)
+                    }
                 }
             }
         }
@@ -58,8 +68,10 @@ class ImageExpandDialogFragment : DialogFragment() {
             creditView.text = imageCredit
             creditView.visibility = View.VISIBLE
         }
+        if (isNight) creditView.setTextColor(nightTextColor)
 
         val tapHint = view.findViewById<TextView>(R.id.expanded_image_tap_hint)
+        if (isNight) tapHint.setTextColor(nightTextColor)
         tapHint.animate().alpha(0f).setStartDelay(2000).setDuration(500).start()
 
         view.setOnClickListener { dismiss() }

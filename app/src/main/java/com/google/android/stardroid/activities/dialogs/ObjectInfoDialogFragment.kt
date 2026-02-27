@@ -14,13 +14,18 @@ package com.google.android.stardroid.activities.dialogs
 import android.app.Activity
 import android.app.AlertDialog
 import android.app.Dialog
+import android.graphics.PorterDuff
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.preference.PreferenceManager
 import com.google.android.stardroid.R
+import com.google.android.stardroid.activities.util.ActivityLightLevelManager
+import com.google.android.stardroid.activities.util.NightModeHelper
 import com.google.android.stardroid.education.ObjectInfo
 import com.google.android.stardroid.inject.HasComponent
 import com.google.android.stardroid.util.AssetImageLoader
@@ -70,8 +75,17 @@ class ObjectInfoDialogFragment : DialogFragment() {
                 .create()
         }
 
+        val prefs = PreferenceManager.getDefaultSharedPreferences(parentActivity)
+        val isNight = ActivityLightLevelManager.isNightMode(prefs)
+        val nightTextColor = parentActivity.getColor(R.color.night_text_color)
+
         val inflater = parentActivity.layoutInflater
         val view = inflater.inflate(R.layout.object_info_card, null)
+
+        // Apply night mode text tinting to all text in the card
+        if (isNight) {
+            (view as? ViewGroup)?.let { NightModeHelper.tintTextViews(it, nightTextColor) }
+        }
 
         // Populate the view with object information
         view.findViewById<TextView>(R.id.object_info_name).text = info.name
@@ -83,6 +97,9 @@ class ObjectInfoDialogFragment : DialogFragment() {
             imageLoadHandle = AssetImageLoader.loadBitmapAsync(parentActivity.assets, info.imagePath) { bitmap ->
                 if (bitmap != null && isAdded) {
                     imageView.setImageBitmap(bitmap)
+                    if (isNight) {
+                        imageView.setColorFilter(nightTextColor, PorterDuff.Mode.MULTIPLY)
+                    }
                     imageContainer.visibility = View.VISIBLE
                     imageContainer.setOnClickListener {
                         ImageExpandDialogFragment.newInstance(info.imagePath, info.imageCredit)
@@ -129,13 +146,17 @@ class ObjectInfoDialogFragment : DialogFragment() {
         val dataSection = view.findViewById<View>(R.id.object_info_data_section)
         dataSection.visibility = if (hasAnyScientificData) View.VISIBLE else View.GONE
 
-        return AlertDialog.Builder(parentActivity)
+        val alertDialog = AlertDialog.Builder(parentActivity)
             .setView(view)
             .setPositiveButton(android.R.string.ok) { dialog, _ ->
                 Log.d(TAG, "Object info dialog closed for: ${info.id}")
                 dialog.dismiss()
             }
             .create()
+        if (isNight) {
+            alertDialog.setOnShowListener { NightModeHelper.applyAlertDialogNightMode(alertDialog, true) }
+        }
+        return alertDialog
     }
 
     /**
