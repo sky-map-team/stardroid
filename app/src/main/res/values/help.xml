@@ -5,91 +5,158 @@
 &lt;p class="url"&gt;&lt;a href="https://stardroid.app"&gt;https://stardroid.app&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2&gt;Introduction and Quick Start&lt;/h2&gt;
-&lt;p&gt;Sky Map is your catalog of the night sky! Point your Android-powered device up, and you will see a map of the brightest stars, constellations, and planets in that part of the sky.&lt;/p&gt;
+&lt;p&gt;Hold your phone up and look through it like a window into space. Sky Map uses your phone\'s compass, accelerometer, and gyroscope to track where you\'re pointing and update the map in real time.&lt;/p&gt;
+&lt;p class="callout"&gt;Not all phones are capable of running Sky Map! See the hardware requirements section below.&lt;/p&gt;
+&lt;p&gt;If this is your first time:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Allow location access when prompted — Sky Map needs your approximate location to draw the right sky for where you are&lt;/li&gt;
+&lt;li&gt;Point your phone at the sky in any direction&lt;/li&gt;
+&lt;li&gt;The map will move to match where you\'re pointing&lt;/li&gt;
+&lt;li&gt;Tap anywhere on the screen to show the controls&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;Navigating the Sky&lt;/h2&gt;
+&lt;h3&gt;Automatic Mode&lt;/h3&gt;
+&lt;p&gt;In Automatic Mode (the default), Sky Map uses your phone\'s sensors to show whatever is in the direction your phone is pointing. Just move your phone around and the map follows.&lt;/p&gt;
+&lt;h3&gt;Manual Mode&lt;/h3&gt;
+&lt;p&gt;Tap the sensor/compass icon in the controls to switch to Manual Mode. In this mode you can:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Drag the map with one finger to pan around&lt;/li&gt;
+&lt;li&gt;Pinch to zoom in or out&lt;/li&gt;
+&lt;li&gt;Rotate with two fingers to change orientation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Manual mode is handy when you want to explore the sky without holding your phone up.&lt;/p&gt;
 
 &lt;h2&gt;Visible Layers&lt;/h2&gt;
-&lt;p&gt;Sky Map organizes the objects it shows you into layers. Each layer can be toggled using the on-screen controls. The layers are:&lt;/p&gt;
+&lt;p&gt;Sky Map organizes what it shows into layers, each of which can be toggled on or off independently. Tap the screen to reveal the layer controls on the side — they glow orange when a layer is on and appear dim when off.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Stars&lt;/li&gt;
-&lt;li&gt;Constellations&lt;/li&gt;
-&lt;li&gt;Messier Objects&lt;/li&gt;
-&lt;li&gt;Planets&lt;/li&gt;
-&lt;li&gt;Meteor Showers&lt;/li&gt;
-&lt;li&gt;Right Ascension and Declination Grid&lt;/li&gt;
-&lt;li&gt;Horizon and cardinal points&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Stars:&lt;/b&gt; The brightest stars, with labels for notable ones&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Constellations:&lt;/b&gt; Constellation outlines and names&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Messier Objects:&lt;/b&gt; Deep-sky objects: galaxies, nebulae, and star clusters&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Planets:&lt;/b&gt; The planets of our solar system, displayed as images&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Meteor Showers:&lt;/b&gt; Active and upcoming meteor shower radiant points&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Ecliptic &amp;amp; RA/Dec Grid:&lt;/b&gt; The Ecliptic is the Sun\'s annual path through the sky&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Horizon:&lt;/b&gt; The horizon line and cardinal direction labels (N, S, E, W)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;The brightest stars, constellations, and planets are labeled. Planets display as images that are larger than they will appear in the sky. Sky Map may show objects that are above the horizon line (represented as a straight line) that you may not be able to see, unless you live in an area that is flat and without buildings.&lt;/p&gt;
+&lt;p class="callout"&gt;&lt;b&gt;Worth knowing:&lt;/b&gt; Sky Map shows the geometric horizon — a perfectly flat, unobstructed view. Objects just above it may still be hidden by buildings, hills, or trees in practice.&lt;/p&gt;
 
-&lt;h2&gt;On-screen Controls&lt;/h2&gt;
-&lt;p&gt;Tap on the screen to show the on-screen controls. On one side of the screen are the toggles for the layers described above. They are orange when the layers are enabled and white when disabled.&lt;/p&gt;
-&lt;p&gt;The other side of the screen has a toggle to switch between automatic and manual mode.&lt;/p&gt;
-
-&lt;h2&gt;Navigation Modes&lt;/h2&gt;
-&lt;p&gt;When first installed Sky Map will be in Automatic Mode and will use the phone\'s sensors to display a map of the sky in the direction your phone is pointing. By switching into Manual Mode, you can drag the map with your finger to explore the sky. You can also rotate the map with two fingers and use a pinch gesture to zoom in and out.&lt;/p&gt;
+&lt;h2&gt;On-Screen Controls&lt;/h2&gt;
+&lt;p&gt;Tap anywhere on the screen to show or hide the controls. On one side you\'ll find the layer toggles described above. On the other side is the button to switch between Automatic and Manual modes.&lt;/p&gt;
+&lt;p&gt;The controls fade out automatically after a few seconds to keep the view clear.&lt;/p&gt;
 
 &lt;h2&gt;Search&lt;/h2&gt;
-&lt;p&gt;Sky Map helps answer the question \'What star is that?\' or \'Where is ...?\' Access the search function through the phone\'s menu button or through the Quick Search Box directly on the Desktop. Enter the name of the star, constellation, or planet you wish to find, and Sky Map will list the matching search items. Select one and Sky Map will display a targeting circle and an arrow prompting you where to point the phone to find the object. The circle will change from blue to red, finally turning orange when the object is within your field of view.&lt;/p&gt;
-&lt;p&gt;NOTE: If you are in Manual Mode, Sky Map will simply move the map to show you the object.&lt;/p&gt;
-&lt;p&gt;To exit Search Mode, tap the small cross in the corner of the screen.&lt;/p&gt;
+&lt;p&gt;Tap the magnifying glass icon to search for anything in the sky. You can search for:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;Stars&lt;/b&gt; — by name, e.g. \"Sirius\", \"Betelgeuse\", \"Polaris\"&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Planets&lt;/b&gt; — e.g. \"Mars\", \"Saturn\"&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Constellations&lt;/b&gt; — e.g. \"Orion\", \"Cassiopeia\"&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Messier objects&lt;/b&gt; — e.g. \"M31\", \"Andromeda Galaxy\", \"Pleiades\"&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Comets and meteor showers&lt;/b&gt; — by name&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;b&gt;In Automatic Mode:&lt;/b&gt; after selecting a result, Sky Map shows a targeting circle and a directional arrow. Follow the arrow by rotating your phone — the circle changes from blue to red, then orange when the object is within your field of view. Tap the ✕ to exit search.&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;In Manual Mode:&lt;/b&gt; the map simply jumps to center on the object.&lt;/p&gt;
 
 &lt;h2&gt;Time Travel&lt;/h2&gt;
-&lt;p&gt;Time Travel mode enables you to use Sky Map to see the sky at times other than the present. Select \'Time Travel\' from the main menu, and then select one of the Popular Dates or choose your own date and time using the \'Change the Date\' and \'Change the Time\' dialogs. Selections are restricted to the years 1900-2100 due to limitations on accuracy caused mainly by the gravitational influence of Jupiter. When you\'re done, press \'Go!\' to fly through time to your destination. Your Sky Map is now in time travel mode, displaying the date you\'re visiting, with controls for \'playing\' time forwards and backwards from here. Click these buttons once to start moving slowly through time, and several times to travel faster and faster.&lt;/p&gt;
-&lt;p&gt;Time Travel can be used to answer a variety of questions, including \'What will I be able to see just after sunset this evening?\', \'When will I next have a good chance of seeing Mercury?\', and \'According to Hesiod, when should I harvest my grapes?\'&lt;/p&gt;
+&lt;p&gt;Time Travel lets you see the sky at any moment from the year 1900 to 2100. Select the swirly circles &lt;b&gt;Time Travel&lt;/b&gt; icon from the action bar.&lt;/p&gt;
+&lt;p&gt;You can choose a preset date (solstices, eclipses, famous celestial events, historical moments) or enter your own date and time. Tap &lt;b&gt;Go!&lt;/b&gt; to fly there.&lt;/p&gt;
+&lt;p&gt;Once in Time Travel mode, the date is shown on screen and playback controls let you move through time:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Tap the forward or backward play buttons to start moving&lt;/li&gt;
+&lt;li&gt;Tap them again to go faster&lt;/li&gt;
+&lt;li&gt;Tap the stop button to pause&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Some things you can use it for:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;i&gt;What can I see just after sunset tonight?&lt;/i&gt;&lt;/li&gt;
+&lt;li&gt;&lt;i&gt;When is the next good chance to spot Mercury?&lt;/i&gt;&lt;/li&gt;
+&lt;li&gt;&lt;i&gt;What did the sky look like the night I was born?&lt;/i&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Accuracy decreases for dates far from the present, mainly due to the gravitational influence of Jupiter.&lt;/p&gt;
 
-&lt;h2&gt;Hubble Gallery&lt;/h2&gt;
-&lt;p&gt;Sky Map contains a gallery of images from the Hubble telescope. Access the Gallery by selecting the Gallery item in the menu. Once inside the Gallery, you can browse the available images by scrolling with your finger. If you tap one of the thumbnail images, Sky Map shows you the full size image. If you tap the Search button, Sky Map will switch to Search mode to find the object matching the image.&lt;/p&gt;
+&lt;h2&gt;Info Cards&lt;/h2&gt;
+&lt;p&gt;Tap any labeled celestial object on the sky map to bring up an info card — a panel with a photo and details about that object. Info cards are available for 150+ objects including stars, planets, the Moon, Messier deep-sky objects, and constellations.&lt;/p&gt;
+&lt;p&gt;Each card shows:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A photograph or chart of the object&lt;/li&gt;
+&lt;li&gt;A short description and a fun fact&lt;/li&gt;
+&lt;li&gt;Scientific data such as distance, size, and object type&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Tap the image inside the card to view it fullscreen. Dismiss the card by tapping outside it or pressing &lt;b&gt;Back&lt;/b&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;Enabling info cards:&lt;/b&gt; By default they only appear when you are in Manual Mode; go to settings to enable them while in Automatic (sensor-driven) Mode.&lt;/p&gt;
+
+&lt;h2&gt;Gallery&lt;/h2&gt;
+&lt;p&gt;The Gallery contains a collection of images from the Hubble Space Telescope and other sources. Open it from the main menu.&lt;/p&gt;
+&lt;p&gt;Browse thumbnails by scrolling, and tap one to see the full image. Use the &lt;b&gt;Find in sky&lt;/b&gt; button to jump to Search mode and locate that object in your current sky map.&lt;/p&gt;
 
 &lt;h2&gt;Night Vision Mode&lt;/h2&gt;
-&lt;p&gt;Night Vision Mode is designed to protect your dark-adapted eyes. When you select the Night Vision menu option, Sky Map will display the map in a red color, dim the screen and switch off the button backlights. Select the option again to revert to normal colors.&lt;/p&gt;
+&lt;p&gt;If you\'re outside doing real observing, Night Vision mode helps preserve your dark-adapted eyesight. Toggle it from the action bar by tapping the eye-shaped &lt;b&gt;Night Vision&lt;/b&gt; icon.&lt;/p&gt;
+&lt;p&gt;In Night Vision mode, Sky Map:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Switches the display to deep red tones&lt;/li&gt;
+&lt;li&gt;Significantly dims the screen&lt;/li&gt;
+&lt;li&gt;Reduces button backlights&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Toggle it again to return to normal. The &lt;b&gt;Screen Dimming&lt;/b&gt; option under &lt;b&gt;Settings → Appearance&lt;/b&gt; gives you additional control over how dark the screen gets.&lt;/p&gt;
 
 &lt;h2&gt;Setting Your Location&lt;/h2&gt;
-&lt;p&gt;Sky Map needs your approximate location in order to show you the correct star map. By default, it will determine this from your cellular network. If you are out of range, or have network location disabled it will use your phone\'s GPS. You can also set your location manually via the settings menu, either by supplying a place name or as a latitude and longitude (in degrees.) Note that Sky Map requires a data connection to determine your latitude and longitude from a place name.&lt;/p&gt;
-
-&lt;h2&gt;Troubleshooting and Limitations&lt;/h2&gt;
-
-&lt;h3&gt;The map is inaccurate&lt;/h3&gt;
-&lt;p&gt;If you find that the map does not accurately line up with the real sky there could be a number of reasons:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Is your compass calibrated? Try holding the phone and rotating your wrist in figures of eight to calibrate it. You may need to repeat this at intervals - this is a feature of the phone, rather than Sky Map.&lt;/li&gt;
-&lt;li&gt;Does the application have an accurate fix on your location? Is your GPS or network location turned on?&lt;/li&gt;
-&lt;li&gt;Do you have the correct time and timezone set? Sky Map needs to calculate Universal Time, and it needs your local time AND timezone to do this. If your device has a SIM card then these will usually be set correctly. Open Sky Map\'s diagnostics page to check that time and location are correct.&lt;/li&gt;
-&lt;li&gt;Do you have magnetic correction switched on? In some parts of the world the difference between magnetic North and True North can be as much as 20 degrees.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3&gt;The map does not move&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;Are you in manual mode? If not, this could be due to an uncalibrated compass. Follow the steps above to \'unstick\' it.&lt;/li&gt;
-&lt;li&gt;Does your phone have all the necessary sensors? Not all phones do. It must have at least a compass and an accelerometer and ideally a gyroscope. Sky Map\'s Diagnostics page will show which sensors you have. If your phone does not have a gyro, try selecting \'Disable gyro\' in Settings/Sensor Settings(experts).&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3&gt;Why is my compass \"Low Accuracy\"?&lt;/h3&gt;
-&lt;p&gt;Sky Map doesn\'t \"calculate\" your orientation from scratch; it simply reads the data provided by your phone\'s built-in magnetometer. If your phone reports that its sensor is uncalibrated, Sky Map will show an accuracy warning.&lt;/p&gt;
-
-&lt;h4&gt;What Calibration Actually Does&lt;/h4&gt;
-&lt;p&gt;Calibration is a hardware-level process that helps the sensor account for \"Hard Iron\" and \"Soft Iron\" distortions caused by the components inside the phone itself.&lt;/p&gt;
-&lt;p&gt;&lt;b&gt;The Goal:&lt;/b&gt; To ensure the sensor sees a \"circle\" of magnetic data as you rotate it.&lt;/p&gt;
-&lt;p&gt;&lt;b&gt;The Reality:&lt;/b&gt; Calibration makes the sensor internally consistent, but it does not guarantee it is pointing to True North.&lt;/p&gt;
-
-&lt;h4&gt;Why it might still be \"Off\" (The Bias)&lt;/h4&gt;
-&lt;p&gt;Even a perfectly calibrated sensor can suffer from Magnetic Bias. Because your phone is measuring a relatively weak signal (the Earth\'s magnetic field), it is easily \"distracted\" by:&lt;/p&gt;
+&lt;p&gt;Sky Map needs your approximate location to draw the correct sky. By default it uses your device\'s location services (mobile network or GPS). If you don\'t grant it access, Sky Map will place you at (0, 0) — a point in the middle of the ocean!&lt;/p&gt;
+&lt;p&gt;If location access is unavailable or you\'d rather set it manually, go to &lt;b&gt;Settings → Location&lt;/b&gt; and either:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;b&gt;Local Interference:&lt;/b&gt; Metal structures, car dashboards, or magnets in phone cases.&lt;/li&gt;
-&lt;li&gt;&lt;b&gt;The Offset:&lt;/b&gt; A calibrated phone knows how to read its own sensor, but it doesn\'t know if you\'re standing next to a refrigerator. This creates a constant \"bias\" where the star map might be shifted a few degrees to the left or right regardless of calibration status.&lt;/li&gt;
-&lt;li&gt;&lt;b&gt;A \"bad\" phone:&lt;/b&gt; Some phones just have bad sensors. If your phone has a consistent bias of a few degrees try the manual offset fix below.&lt;/li&gt;
+&lt;li&gt;Enter a &lt;b&gt;place name&lt;/b&gt; (requires an internet connection to look up the coordinates), or&lt;/li&gt;
+&lt;li&gt;Enter a &lt;b&gt;latitude and longitude&lt;/b&gt; directly in degrees (no internet needed)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you\'ve previously denied Sky Map location permission, you may need to re-enable it in your device\'s &lt;b&gt;App Settings → Permissions&lt;/b&gt;.&lt;/p&gt;
+
+&lt;h2&gt;Telescope Users — Pointer Mode&lt;/h2&gt;
+&lt;p&gt;Under &lt;b&gt;Settings → Sensor Settings&lt;/b&gt;, change the &lt;b&gt;View Direction&lt;/b&gt; to &lt;b&gt;Pointer Mode&lt;/b&gt;. In this mode, Sky Map shows what the &lt;i&gt;long edge&lt;/i&gt; of the phone is pointing at, rather than what the screen is facing.&lt;/p&gt;
+&lt;p&gt;This lets you mount your phone along the side of a telescope tube so the screen is perpendicular to the tube while the map still tracks what the telescope is aimed at.&lt;/p&gt;
+
+&lt;h2&gt;Tips and Settings Worth Knowing&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;Diagnostics:&lt;/b&gt; If something looks wrong, open the overflow menu and tap &lt;b&gt;Diagnostics&lt;/b&gt;. This page shows your current location, time, sensor status, and accuracy readings — very useful if you need to report a problem.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Messier images:&lt;/b&gt; Under &lt;b&gt;Settings → Appearance&lt;/b&gt;, you can choose whether Messier objects appear as realistic thumbnail images or simple dots.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Font size:&lt;/b&gt; Adjust label size under &lt;b&gt;Settings → Appearance&lt;/b&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Jittery map:&lt;/b&gt; Experiment with &lt;b&gt;Sensor Speed&lt;/b&gt; and &lt;b&gt;Sensor Damping&lt;/b&gt; under &lt;b&gt;Settings → Sensor Settings (Experts)&lt;/b&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;No gyroscope?&lt;/b&gt; If your phone lacks a gyroscope, enable &lt;b&gt;Disable Gyro&lt;/b&gt; in Sensor Settings to use an alternative sensor mode.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Magnetic correction:&lt;/b&gt; Sky Map can apply a magnetic declination correction so the map aligns with True North rather than Magnetic North. Toggle this under &lt;b&gt;Settings → Location&lt;/b&gt;. In some parts of the world the difference can be 20 degrees or more. You can manually adjust this further if your phone\'s compass is wonky.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4&gt;How to Fix It&lt;/h4&gt;
+&lt;h2&gt;Hardware Requirements&lt;/h2&gt;
+&lt;p&gt;Not all devices can fully support Sky Map! At the very least you need a phone with:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;b&gt;Clear the Area:&lt;/b&gt; Move away from large metal objects or magnets.&lt;/li&gt;
-&lt;li&gt;&lt;b&gt;The Figure-8:&lt;/b&gt; Wave your phone in a large, smooth figure-8 motion (&lt;a href=\"https://www.youtube.com/watch?v=-Uq7AmSAjt8\"&gt;see video&lt;/a&gt;). This forces the sensor to sample the magnetic field from multiple angles, allowing the hardware to filter out its own internal noise.&lt;/li&gt;
-&lt;li&gt;&lt;b&gt;Manual offset:&lt;/b&gt; As a last resort go to settings and manually enter an estimate of the offset (near the magnetic correction setting). This might take some trial and error to get right.&lt;/li&gt;
+&lt;li&gt;A magnetic field sensor (aka a Compass) — to tell which direction you\'re facing&lt;/li&gt;
+&lt;li&gt;An accelerometer — to tell how high up in the sky you\'re looking&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;b&gt;Note:&lt;/b&gt; This is a physical property of mobile hardware. If the map remains slightly shifted, your environment is likely causing a magnetic bias that the software cannot \"code away.\"&lt;/p&gt;
+&lt;p&gt;Ideally also:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A gyroscope — this will smooth out the motion and make it less jerky&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p class="callout"&gt;Phone compasses are notoriously troublesome. If Sky Map is not showing the sky accurately it\'s almost always a hardware issue with the compass, not an issue with Sky Map. See the troubleshooting section for some things that might help.&lt;/p&gt;
+&lt;h3&gt;How do I know which sensors my phone has?&lt;/h3&gt;
+&lt;p&gt;Open Sky Map\'s Diagnostics page — any sensors your phone doesn\'t have will show up as \"--,--,--\".&lt;/p&gt;
+&lt;h3&gt;What if my device is missing required sensors?&lt;/h3&gt;
+&lt;p&gt;Sky Map will fall back into manual mode. You can still explore the sky, but without the sensors there is no way any app can show you your direction.&lt;/p&gt;
 
-&lt;p class="callout"&gt;If all else fails, send us an email (preferably with a screenshot of your Diagnostics page) to skymapdevs@gmail.com and we\'ll help you figure it out.&lt;/p&gt;
-
-&lt;h2&gt;Telescope Users&lt;/h2&gt;
-&lt;p&gt;Sky Map now includes a prototype \'Pointer Mode\' where the screen will show not what is in front of the phone, but what you would see if you sighted along the long edge of it. The purpose is so that you can attach your phone to your telescope tube and have the screen perpendicular to the direction of the tube. You can enable this in \'settings\' under \'sensor settings\'.&lt;/p&gt;
+&lt;h2&gt;Troubleshooting&lt;/h2&gt;
+&lt;h3&gt;The map doesn\'t move&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Check you\'re in Automatic Mode (not Manual)&lt;/li&gt;
+&lt;li&gt;Check the Diagnostics page to confirm your device has a compass and accelerometer&lt;/li&gt;
+&lt;li&gt;Try the figure-8 calibration gesture: wave your phone slowly in a large, smooth figure-8 shape&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;The map is pointing the wrong way or is inaccurate&lt;/h3&gt;
+&lt;p&gt;Sky Map needs three things to show the correct sky: the direction your phone is facing, your location, and the current time. If the map looks wrong, one of these is likely off.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;Compass:&lt;/b&gt; The most common cause — a hardware issue, not a Sky Map bug. Try calibrating (figure-8 gesture), move away from metal objects, and toggle &lt;b&gt;Magnetic Correction&lt;/b&gt; in &lt;b&gt;Settings → Location&lt;/b&gt;. A manual compass offset is available under &lt;b&gt;Settings → Sensor Settings (Experts)&lt;/b&gt; for compasses with a consistent error.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Location:&lt;/b&gt; Grant location permission via &lt;b&gt;App Settings → Permissions&lt;/b&gt;. Check the Diagnostics page to confirm your coordinates. A telltale symptom of missing location is Polaris appearing near the horizon.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Time:&lt;/b&gt; Less common, but an incorrect time zone shifts the whole sky. Check the Diagnostics page to confirm your device\'s time and time zone are correct.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;The map is jittery&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Adjust &lt;b&gt;Sensor Speed&lt;/b&gt; and &lt;b&gt;Sensor Damping&lt;/b&gt; under &lt;b&gt;Settings → Sensor Settings (Experts)&lt;/b&gt;&lt;/li&gt;
+&lt;li&gt;If your phone has no gyroscope, enable &lt;b&gt;Disable Gyro&lt;/b&gt; in sensor settings&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p class="callout"&gt;If you\'re still stuck, email us at skymapdevs@gmail.com — a screenshot of your Diagnostics page is very helpful.&lt;/p&gt;
 
 %2$s
 </string>
