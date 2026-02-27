@@ -70,10 +70,8 @@ public class CreditsDialogFragment extends DialogFragment {
       }
     });
     webView.loadDataWithBaseURL("file:///android_asset/", html, "text/html", "UTF-8", null);
-    if (isNight) {
-      alertDialog.setOnShowListener(
-          dialog -> NightModeHelper.applyAlertDialogNightMode((AlertDialog) dialog, true));
-    }
+    alertDialog.setOnShowListener(
+        dialog -> NightModeHelper.applyAlertDialogNightMode((AlertDialog) dialog, isNight));
     return alertDialog;
   }
 }

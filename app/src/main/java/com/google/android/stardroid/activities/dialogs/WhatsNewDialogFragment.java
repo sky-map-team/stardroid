@@ -86,10 +86,8 @@ public class WhatsNewDialogFragment extends DialogFragment {
     webView.loadDataWithBaseURL("file:///android_asset/", html, "text/html", "UTF-8", null);
 
     AlertDialog alertDialog = dialogBuilder.create();
-    if (isNight) {
-      alertDialog.setOnShowListener(
-          dialog -> NightModeHelper.applyAlertDialogNightMode((AlertDialog) dialog, true));
-    }
+    alertDialog.setOnShowListener(
+        dialog -> NightModeHelper.applyAlertDialogNightMode((AlertDialog) dialog, isNight));
     return alertDialog;
   }
 

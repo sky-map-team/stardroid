@@ -116,10 +116,8 @@ public class EulaDialogFragment extends DialogFragment {
     webView.loadDataWithBaseURL("file:///android_asset/", html, "text/html", "UTF-8", null);
 
     AlertDialog tosDialog = tosDialogBuilder.create();
-    if (isNight) {
-      tosDialog.setOnShowListener(
-          dialog -> NightModeHelper.applyAlertDialogNightMode((AlertDialog) dialog, true));
-    }
+    tosDialog.setOnShowListener(
+        dialog -> NightModeHelper.applyAlertDialogNightMode((AlertDialog) dialog, isNight));
     return tosDialog;
   }
 
