@@ -73,7 +73,7 @@ No. Sky Map works fully offline. An internet connection is only needed to:
 
 ## Can I help test the latest features?
 
-Yes! Join the [beta testing programme](https://play.google.com/apps/testing/com.google.android.stardroid) on Google Play to get the latest version before it goes public.
+Yes! Join the [beta testing program](https://play.google.com/apps/testing/com.google.android.stardroid) on Google Play to get the latest version before it goes public.
 
 ---
 
