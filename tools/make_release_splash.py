@@ -101,11 +101,11 @@ def get_font(size: int) -> ImageFont.FreeTypeFont | ImageFont.ImageFont:
 
 
 def make_splash(
-    input_path: str,
+    input_path: Path,
     label: str,
-    output_path: str,
+    output_path: Path,
     crop: tuple[int, int, int, int] | None = None,
-    splash_path: str | None = None,
+    splash_path: Path | None = None,
     strip_height_frac: float = 0.13,
     opacity: float = 1.0,
     bottom_margin_frac: float = 0.07,
@@ -162,7 +162,7 @@ def make_splash(
     draw.text((tx, ty), label, font=font, fill=_TEXT_COLOR)
 
     # Infer format from extension; quality param is ignored for lossless formats
-    suffix = Path(output_path).suffix.lower()
+    suffix = output_path.suffix.lower()
     fmt = {".jpg": "JPEG", ".jpeg": "JPEG", ".webp": "WEBP"}.get(suffix)
     if fmt is None:
         sys.exit(f"Unsupported output format '{suffix}'. Use .jpg or .webp.")
@@ -171,25 +171,31 @@ def make_splash(
 
 
 def parse_crop(s: str) -> tuple[int, int, int, int]:
-    parts = [int(v) for v in s.split(",")]
+    try:
+        parts = [int(v) for v in s.split(",")]
+    except ValueError:
+        raise argparse.ArgumentTypeError(f"--crop values must be integers, got: {s!r}")
     if len(parts) != 4:
-        raise argparse.ArgumentTypeError("--crop must be x1,y1,x2,y2")
+        raise argparse.ArgumentTypeError(f"--crop requires exactly 4 values (x1,y1,x2,y2), got {len(parts)}")
     return tuple(parts)
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--input", required=True, help="Path to portrait/source image")
+    parser.add_argument("--input", type=Path, required=True, help="Path to portrait/source image")
     parser.add_argument("--label", default="Venus", help="Release label text (default: Venus)")
-    parser.add_argument("--output", required=True, help="Output image path (.jpg or .webp); format inferred from extension")
+    parser.add_argument("--output", type=Path, required=True,
+                        help="Output image path (.jpg or .webp); format inferred from extension")
     parser.add_argument("--crop", type=parse_crop, metavar="x1,y1,x2,y2",
                         help="Pixel crop of input image before compositing")
-    parser.add_argument("--splash", help="Override splash screen path")
+    parser.add_argument("--splash", type=Path, help="Override splash screen path")
     parser.add_argument("--strip-height", type=float, default=0.13, metavar="FRAC",
+                        dest="strip_height_frac",
                         help="Strip height as fraction of splash height (default 0.13)")
     parser.add_argument("--opacity", type=float, default=1.0,
                         help="Portrait circle opacity 0.0–1.0 (default 1.0)")
     parser.add_argument("--bottom-margin", type=float, default=0.07, metavar="FRAC",
+                        dest="bottom_margin_frac",
                         help="Gap below strip as fraction of splash height, to clear nav bar (default 0.07)")
     parser.add_argument("--scale", type=int, default=3,
                         help="Upscale factor for output image to reduce pixelation on high-density screens (default 3)")
@@ -201,9 +207,9 @@ def main() -> None:
         output_path=args.output,
         crop=args.crop,
         splash_path=args.splash,
-        strip_height_frac=args.strip_height,
+        strip_height_frac=args.strip_height_frac,
         opacity=args.opacity,
-        bottom_margin_frac=args.bottom_margin,
+        bottom_margin_frac=args.bottom_margin_frac,
         scale=args.scale,
     )
 
