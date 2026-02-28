@@ -146,10 +146,8 @@ public class AbstractDynamicStarMapModule {
   @Nullable
   private MediaPlayer prepareMediaPlayerAsync(int rawResId) {
     MediaPlayer mp = new MediaPlayer();
-    try {
-      AssetFileDescriptor afd = activity.getResources().openRawResourceFd(rawResId);
+    try (AssetFileDescriptor afd = activity.getResources().openRawResourceFd(rawResId)) {
       mp.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
-      afd.close();
       mp.prepareAsync();
       return mp;
     } catch (Exception e) {
