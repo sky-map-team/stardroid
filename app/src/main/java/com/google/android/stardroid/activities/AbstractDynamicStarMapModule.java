@@ -1,11 +1,13 @@
 package com.google.android.stardroid.activities;
 
 import android.app.Activity;
+import android.content.res.AssetFileDescriptor;
+import android.media.MediaPlayer;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.FragmentManager;
 import android.content.Context;
 import android.content.res.AssetManager;
-import android.media.MediaPlayer;
 import android.os.Handler;
 import android.util.Log;
 import android.view.Window;
@@ -122,18 +124,37 @@ public class AbstractDynamicStarMapModule {
     return new NoSensorsDialogFragment();
   }
 
+  // Not @PerActivity scoped: onPause() releases the player, so each resume needs a fresh instance.
   @Provides
-  @PerActivity
   @Named("timetravel")
+  @Nullable
   MediaPlayer provideTimeTravelNoise() {
-    return MediaPlayer.create(activity, R.raw.timetravel);
+    return prepareMediaPlayerAsync(R.raw.timetravel);
   }
 
   @Provides
-  @PerActivity
   @Named("timetravelback")
+  @Nullable
   MediaPlayer provideTimeTravelBackNoise() {
-    return MediaPlayer.create(activity, R.raw.timetravelback);
+    return prepareMediaPlayerAsync(R.raw.timetravelback);
+  }
+
+  /**
+   * Creates a MediaPlayer using prepareAsync() so the caller's thread (typically the main thread)
+   * is never blocked. Returns null if the resource cannot be opened.
+   */
+  @Nullable
+  private MediaPlayer prepareMediaPlayerAsync(int rawResId) {
+    MediaPlayer mp = new MediaPlayer();
+    try (AssetFileDescriptor afd = activity.getResources().openRawResourceFd(rawResId)) {
+      mp.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
+      mp.prepareAsync();
+      return mp;
+    } catch (Exception e) {
+      Log.e(TAG, "Could not initialize media player for resource " + rawResId, e);
+      mp.release();
+      return null;
+    }
   }
 
   @Provides

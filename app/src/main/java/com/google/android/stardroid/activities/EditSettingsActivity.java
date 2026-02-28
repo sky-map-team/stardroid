@@ -198,21 +198,26 @@ public class EditSettingsActivity extends PreferenceActivity
   }
 
   protected boolean setLatLongFromPlace(String place) {
-    List<Address> addresses;
-    try {
-      addresses = geocoder.getFromLocationName(place, 1);
-    } catch (IOException e) {
-      Toast.makeText(this, getString(R.string.location_unable_to_geocode), Toast.LENGTH_SHORT).show();
-      return false;
-    }
-    if (addresses.isEmpty()) {
-      showNotFoundDialog(place);
-      return false;
-    }
-    // TODO(johntaylor) let the user choose, but for now just pick the first.
-    Address first = addresses.get(0);
-    setLatLong(first.getLatitude(), first.getLongitude());
-    return true;
+    // Geocoding is a blocking network call - run it off the main thread.
+    new Thread(() -> {
+      List<Address> addresses;
+      try {
+        addresses = geocoder.getFromLocationName(place, 1);
+      } catch (IOException e) {
+        runOnUiThread(() -> { if (!isFinishing()) Toast.makeText(this,
+            getString(R.string.location_unable_to_geocode), Toast.LENGTH_SHORT).show(); });
+        return;
+      }
+      if (addresses == null || addresses.isEmpty()) {
+        runOnUiThread(() -> { if (!isFinishing()) showNotFoundDialog(place); });
+        return;
+      }
+      // TODO(johntaylor) let the user choose, but for now just pick the first.
+      Address first = addresses.get(0);
+      runOnUiThread(() -> { if (!isFinishing()) setLatLong(first.getLatitude(), first.getLongitude()); });
+    }).start();
+    // Return false: the place-name field itself is not persisted; setLatLong() saves lat/long.
+    return false;
   }
 
   private void setLatLong(double latitude, double longitude) {
