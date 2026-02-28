@@ -24,7 +24,7 @@ Usage:
 Options:
     --input PATH          Portrait/source image (required)
     --label TEXT          Release label, e.g. "Venus" (default: Venus)
-    --output PATH         Output image path (.jpg or .webp)
+    --output PATH         Output image path (.jpg or .webp); format is inferred from extension
     --crop x1,y1,x2,y2   Pixel crop of input before compositing.
                           Use a square region centred on the face to avoid distortion.
     --splash PATH         Override base splash (default: res/drawable/stardroid_big_image.webp)
@@ -57,6 +57,19 @@ except ImportError:
 
 # Point at the backup originals, not the live res files (which may already be branded)
 DEFAULT_SPLASH = Path(__file__).parent.parent / "assets/splashscreens/stardroid_big_image.webp"
+
+# Layout proportions (as fractions of strip height)
+_CIRCLE_SIZE_FRAC = 0.80
+_MARGIN_FRAC = 0.10
+_FONT_SIZE_FRAC = 0.48
+
+# Strip overlay colour and text colours
+_STRIP_COLOR = (0, 0, 0, 120)       # semi-transparent black (~47% opacity)
+_TEXT_COLOR = (255, 220, 120, 255)  # gold
+_TEXT_SHADOW_COLOR = (0, 0, 0, 180) # dark drop shadow
+
+# Output quality for lossy formats
+_SAVE_QUALITY = 92
 
 
 def circular_crop(img: Image.Image, size: int) -> Image.Image:
@@ -110,13 +123,13 @@ def make_splash(
 
     sw, sh = splash.size
     strip_h = int(sh * strip_height_frac)
-    circle_size = int(strip_h * 0.80)
-    margin = int(strip_h * 0.10)
+    circle_size = int(strip_h * _CIRCLE_SIZE_FRAC)
+    margin = int(strip_h * _MARGIN_FRAC)
     # Offset from bottom to keep strip clear of the device navigation bar
     bottom_offset = int(sh * bottom_margin_frac)
 
-    # Semi-transparent strip — alpha 120/255 (~47%) so the nebula shows through
-    strip = Image.new("RGBA", (sw, strip_h), (0, 0, 0, 120))
+    # Semi-transparent strip so the nebula shows through
+    strip = Image.new("RGBA", (sw, strip_h), _STRIP_COLOR)
     splash.paste(strip, (0, sh - strip_h - bottom_offset), strip)
 
     # Circular portrait
@@ -130,7 +143,7 @@ def make_splash(
     # This ensures content stays visible regardless of how centerCrop clips the sides
     # on tall-screen devices.
     draw = ImageDraw.Draw(splash)
-    font = get_font(int(strip_h * 0.48))
+    font = get_font(int(strip_h * _FONT_SIZE_FRAC))
     bbox = draw.textbbox((0, 0), label, font=font)
     text_w = bbox[2] - bbox[0]
     text_h = bbox[3] - bbox[1]
@@ -145,10 +158,15 @@ def make_splash(
     tx = x_start + circle_size + margin
     ty = strip_top + (strip_h - text_h) // 2
 
-    draw.text((tx + 2, ty + 2), label, font=font, fill=(0, 0, 0, 180))
-    draw.text((tx, ty), label, font=font, fill=(255, 220, 120, 255))
+    draw.text((tx + 2, ty + 2), label, font=font, fill=_TEXT_SHADOW_COLOR)
+    draw.text((tx, ty), label, font=font, fill=_TEXT_COLOR)
 
-    splash.convert("RGB").save(output_path, quality=92)
+    # Infer format from extension; quality param is ignored for lossless formats
+    suffix = Path(output_path).suffix.lower()
+    fmt = {".jpg": "JPEG", ".jpeg": "JPEG", ".webp": "WEBP"}.get(suffix)
+    if fmt is None:
+        sys.exit(f"Unsupported output format '{suffix}'. Use .jpg or .webp.")
+    splash.convert("RGB").save(output_path, fmt, quality=_SAVE_QUALITY)
     print(f"Saved: {output_path}")
 
 
@@ -163,7 +181,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--input", required=True, help="Path to portrait/source image")
     parser.add_argument("--label", default="Venus", help="Release label text (default: Venus)")
-    parser.add_argument("--output", required=True, help="Output image path (.jpg or .png)")
+    parser.add_argument("--output", required=True, help="Output image path (.jpg or .webp); format inferred from extension")
     parser.add_argument("--crop", type=parse_crop, metavar="x1,y1,x2,y2",
                         help="Pixel crop of input image before compositing")
     parser.add_argument("--splash", help="Override splash screen path")
