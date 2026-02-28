@@ -89,10 +89,12 @@ public class ImagePrimitive extends AbstractPrimitive {
     Options opts = new Options();
     opts.inScaled = false;
 
-    this.image = BitmapFactory.decodeResource(resources, imageId, opts);
-    if (image == null) {
-      throw new RuntimeException("Coud not decode image " + imageId);
+    Bitmap newImage = BitmapFactory.decodeResource(resources, imageId, opts);
+    if (newImage == null) {
+      android.util.Log.e("ImagePrimitive", "Could not decode image " + imageId);
+      return;
     }
+    this.image = newImage;
   }
 
   public Bitmap getImage() {
