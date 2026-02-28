@@ -19,6 +19,7 @@ import static com.google.android.stardroid.math.MathUtilsKt.RADIANS_TO_DEGREES;
 
 import android.graphics.Paint;
 import android.graphics.Typeface;
+import android.util.Log;
 
 import com.google.android.stardroid.math.MathUtils;
 import com.google.android.stardroid.math.Matrix4x4;
@@ -30,6 +31,7 @@ import com.google.android.stardroid.renderer.util.TextureManager;
 import com.google.android.stardroid.renderer.util.TextureReference;
 import com.google.android.stardroid.renderables.TextPrimitive;
 import com.google.android.stardroid.util.FixedPoint;
+import com.google.android.stardroid.util.MiscUtil;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -122,14 +124,21 @@ public class LabelObjectManager extends RendererObjectManager {
                                       textureManager());
   }
 
+  private static final String TAG = MiscUtil.getTag(LabelObjectManager.class);
+
   public void updateObjects(List<TextPrimitive> labels, EnumSet<UpdateType> updateType) {
     if (updateType.contains(UpdateType.Reset)) {
       // Protect against labels being changed mid-iteration.
       List<TextPrimitive> safeLabels = new ArrayList<>(labels);
-      mLabels = new Label[safeLabels.size()];
-      for (int i = 0; i < safeLabels.size(); i++) {
-        mLabels[i] = new Label(safeLabels.get(i), fontSizeScale);
+      List<Label> validLabels = new ArrayList<>(safeLabels.size());
+      for (TextPrimitive ts : safeLabels) {
+        if (ts == null || ts.getLocation() == null || ts.getText() == null || ts.getText().isEmpty()) {
+          Log.e(TAG, "Skipping invalid label: " + ts);
+          continue;
+        }
+        validLabels.add(new Label(ts, fontSizeScale));
       }
+      mLabels = validLabels.toArray(new Label[0]);
       queueForReload(false);
     } else if (updateType.contains(UpdateType.UpdatePositions)) {
       if (labels.size() != mLabels.length) {
@@ -141,6 +150,10 @@ public class LabelObjectManager extends RendererObjectManager {
       // on the label objects.
       for (int i = 0; i < mLabels.length; i++) {
         Vector3 pos = labels.get(i).getLocation();
+        if (pos == null) {
+          Log.e(TAG, "Skipping label with null location at index " + i);
+          continue;
+        }
         mLabels[i].x = pos.x;
         mLabels[i].y = pos.y;
         mLabels[i].z = pos.z;
@@ -260,13 +273,11 @@ public class LabelObjectManager extends RendererObjectManager {
   private static class Label extends LabelMaker.LabelData {
     public Label(TextPrimitive ts, double fontSizeScale) {
       super(ts.getText(), 0xffffffff, (int)(fontSizeScale * ts.getFontSize()));
-      if (ts.getText() == null || ts.getText().isEmpty()) {
-        throw new RuntimeException("Bad Label: " + ts.getClass());
-      }
-      
-      x = ts.getLocation().x;
-      y = ts.getLocation().y;
-      z = ts.getLocation().z;
+
+      Vector3 location = ts.getLocation();
+      x = location.x;
+      y = location.y;
+      z = location.z;
       
       offset = ts.getOffset();
       

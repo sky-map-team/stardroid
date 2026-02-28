@@ -589,6 +589,8 @@ public class DynamicStarMapActivity extends InjectableActivity
     Log.d(TAG, "onResume at " + System.currentTimeMillis());
     super.onResume();
     Log.i(TAG, "Resuming");
+    // Provider is unscoped so each call returns a fresh instance (not a cached released one).
+    // prepareAsync() inside the provider means this never blocks the main thread.
     timeTravelNoise = timeTravelNoiseProvider.get();
     timeTravelBackNoise = timeTravelBackNoiseProvider.get();
 
