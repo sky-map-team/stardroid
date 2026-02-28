@@ -72,7 +72,7 @@ def circular_crop(img: Image.Image, size: int) -> Image.Image:
     return result
 
 
-def get_font(size: int) -> ImageFont.FreeTypeFont:
+def get_font(size: int) -> ImageFont.FreeTypeFont | ImageFont.ImageFont:
     candidates = [
         "/System/Library/Fonts/Helvetica.ttc",
         "/System/Library/Fonts/Arial.ttf",
