@@ -55,7 +55,8 @@ try:
 except ImportError:
     sys.exit("Pillow is required: pip install Pillow")
 
-DEFAULT_SPLASH = Path(__file__).parent.parent / "app/src/main/res/drawable/stardroid_big_image.webp"
+# Point at the backup originals, not the live res files (which may already be branded)
+DEFAULT_SPLASH = Path(__file__).parent.parent / "assets/splashscreens/stardroid_big_image.webp"
 
 
 def circular_crop(img: Image.Image, size: int) -> Image.Image:
@@ -94,8 +95,14 @@ def make_splash(
     splash_path: str | None = None,
     strip_height_frac: float = 0.13,
     opacity: float = 1.0,
+    bottom_margin_frac: float = 0.07,
+    scale: int = 3,
 ) -> None:
     splash = Image.open(splash_path or DEFAULT_SPLASH).convert("RGBA")
+    # Upscale the splash so the overlaid circle has enough pixels to look smooth
+    # on high-density phone screens (avoids heavy pixelation from centerCrop upscaling).
+    if scale > 1:
+        splash = splash.resize((splash.width * scale, splash.height * scale), Image.LANCZOS)
     portrait = Image.open(input_path).convert("RGBA")
 
     if crop:
@@ -105,10 +112,12 @@ def make_splash(
     strip_h = int(sh * strip_height_frac)
     circle_size = int(strip_h * 0.80)
     margin = int(strip_h * 0.10)
+    # Offset from bottom to keep strip clear of the device navigation bar
+    bottom_offset = int(sh * bottom_margin_frac)
 
-    # Dark strip
-    strip = Image.new("RGBA", (sw, strip_h), (0, 0, 0, 180))
-    splash.paste(strip, (0, sh - strip_h), strip)
+    # Semi-transparent strip — alpha 120/255 (~47%) so the nebula shows through
+    strip = Image.new("RGBA", (sw, strip_h), (0, 0, 0, 120))
+    splash.paste(strip, (0, sh - strip_h - bottom_offset), strip)
 
     # Circular portrait
     vc = circular_crop(portrait, circle_size)
@@ -116,16 +125,25 @@ def make_splash(
         r, g, b, a = vc.split()
         a = a.point(lambda x: int(x * opacity))
         vc.putalpha(a)
-    cy = sh - strip_h + (strip_h - circle_size) // 2
-    splash.paste(vc, (margin, cy), vc)
 
-    # Label text
+    # Measure text so we can center the [circle + gap + text] group horizontally.
+    # This ensures content stays visible regardless of how centerCrop clips the sides
+    # on tall-screen devices.
     draw = ImageDraw.Draw(splash)
     font = get_font(int(strip_h * 0.48))
-    tx = margin + circle_size + margin
     bbox = draw.textbbox((0, 0), label, font=font)
+    text_w = bbox[2] - bbox[0]
     text_h = bbox[3] - bbox[1]
-    ty = sh - strip_h + (strip_h - text_h) // 2
+
+    total_w = circle_size + margin + text_w
+    x_start = (sw - total_w) // 2
+
+    strip_top = sh - strip_h - bottom_offset
+    cy = strip_top + (strip_h - circle_size) // 2
+    splash.paste(vc, (x_start, cy), vc)
+
+    tx = x_start + circle_size + margin
+    ty = strip_top + (strip_h - text_h) // 2
 
     draw.text((tx + 2, ty + 2), label, font=font, fill=(0, 0, 0, 180))
     draw.text((tx, ty), label, font=font, fill=(255, 220, 120, 255))
@@ -153,6 +171,10 @@ def main() -> None:
                         help="Strip height as fraction of splash height (default 0.13)")
     parser.add_argument("--opacity", type=float, default=1.0,
                         help="Portrait circle opacity 0.0–1.0 (default 1.0)")
+    parser.add_argument("--bottom-margin", type=float, default=0.07, metavar="FRAC",
+                        help="Gap below strip as fraction of splash height, to clear nav bar (default 0.07)")
+    parser.add_argument("--scale", type=int, default=3,
+                        help="Upscale factor for output image to reduce pixelation on high-density screens (default 3)")
     args = parser.parse_args()
 
     make_splash(
@@ -163,6 +185,8 @@ def main() -> None:
         splash_path=args.splash,
         strip_height_frac=args.strip_height,
         opacity=args.opacity,
+        bottom_margin_frac=args.bottom_margin,
+        scale=args.scale,
     )
 
 
