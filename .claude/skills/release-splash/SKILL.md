@@ -78,7 +78,7 @@ Confirm to the user:
 - Source saved as: `assets/splashscreens/<name>.png`
 - Main splash updated: `app/src/main/res/drawable/stardroid_big_image.webp`
 - Large splash updated: `app/src/main/res/drawable-large/stardroid_big_image.jpg`
-- Suggest committing: `git add assets/splashscreens/<name>.png app/src/main/res/drawable/ app/src/main/res/drawable-large/ && git commit -m "Add <ReleaseName> release splash screen branding"`
+- Suggest committing: `git add assets/splashscreens/<name>.png app/src/main/res/drawable/stardroid_big_image.webp app/src/main/res/drawable-large/stardroid_big_image.jpg && git commit -m "Add <ReleaseName> release splash screen branding"`
 
 ## Reference: Base Splash Assets
 
