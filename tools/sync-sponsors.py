@@ -70,13 +70,7 @@ def update_xml(sponsors):
     print(f"Successfully wrote {len(sponsors)} total sponsors to {OUTPUT_PATH}")
 
 def dedupe(names):
-    seen = set()
-    result = []
-    for name in names:
-        if name not in seen:
-            seen.add(name)
-            result.append(name)
-    return result
+    return list(dict.fromkeys(names))
 
 if __name__ == "__main__":
     all_names = dedupe(fetch_all_sponsors())
