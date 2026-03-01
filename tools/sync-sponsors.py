@@ -31,9 +31,13 @@ def fetch_all_sponsors():
 
             # Extract names from current page
             page_data = res_data.get('data', [])
-            names = [clean_name(s.get('payer_name')) for s in page_data
-                     if s.get('payer_name') and s.get('payer_name').strip() != 'Someone']
-            names = [n for n in names if n]  # drop any that cleaned to empty
+            names = []
+            for s in page_data:
+                raw_name = s.get('payer_name')
+                if raw_name:
+                    cleaned_name = clean_name(raw_name)
+                    if cleaned_name and cleaned_name != 'Someone':
+                        names.append(cleaned_name)
             all_sponsors.extend(names)
 
             # Check if there are more pages
