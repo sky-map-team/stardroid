@@ -1,4 +1,5 @@
 import os
+import re
 import requests
 import xml.etree.ElementTree as ET
 from xml.dom import minidom
@@ -30,8 +31,9 @@ def fetch_all_sponsors():
 
             # Extract names from current page
             page_data = res_data.get('data', [])
-            names = [s.get('payer_name').strip() for s in page_data
+            names = [clean_name(s.get('payer_name')) for s in page_data
                      if s.get('payer_name') and s.get('payer_name').strip() != 'Someone']
+            names = [n for n in names if n]  # drop any that cleaned to empty
             all_sponsors.extend(names)
 
             # Check if there are more pages
@@ -45,6 +47,13 @@ def fetch_all_sponsors():
             break
 
     return all_sponsors
+
+def clean_name(name):
+    # Strip URL prefixes, keeping only the path (e.g. https://www.facebook.com/joe -> joe)
+    name = re.sub(r'^https?://(?:www\.)?\S+?/', '', name)
+    # Strip email domain suffix, allowing spaces around @ (e.g. joe@hotmail.com or joe @ aol.com -> joe)
+    name = re.sub(r'\s*@\s*\S+\.\S+$', '', name)
+    return name.strip()
 
 def escape_for_android(name):
     name = name.replace('\\', '\\\\')
