@@ -1,4 +1,5 @@
 import os
+import re
 import requests
 import xml.etree.ElementTree as ET
 from xml.dom import minidom
@@ -30,8 +31,13 @@ def fetch_all_sponsors():
 
             # Extract names from current page
             page_data = res_data.get('data', [])
-            names = [s.get('payer_name').strip() for s in page_data
-                     if s.get('payer_name') and s.get('payer_name').strip() != 'Someone']
+            names = []
+            for s in page_data:
+                raw_name = s.get('payer_name')
+                if raw_name:
+                    cleaned_name = clean_name(raw_name)
+                    if cleaned_name and cleaned_name != 'Someone':
+                        names.append(cleaned_name)
             all_sponsors.extend(names)
 
             # Check if there are more pages
@@ -46,9 +52,23 @@ def fetch_all_sponsors():
 
     return all_sponsors
 
+def clean_name(name):
+    # Strip URL prefixes, keeping only the path (e.g. https://www.facebook.com/joe -> joe)
+    name = re.sub(r'^https?://(?:www\.)?\S+?/', '', name)
+    # Strip email domain suffix, allowing spaces around @ (e.g. joe@hotmail.com or joe @ aol.com -> joe)
+    name = re.sub(r'\s*@\s*\S+\.\S+$', '', name)
+    return name.strip()
+
+def escape_for_android(name):
+    name = name.replace('\\', '\\\\')
+    name = name.replace("'", "\\'")
+    if name.startswith(('@', '?')):
+        name = '\\' + name
+    return name
+
 def update_xml(sponsors):
-    # Join into comma-separated string
-    sponsors_str = ", ".join(sponsors).replace("'", "\\'")
+    # Join into comma-separated string, escaping each name for Android XML
+    sponsors_str = ", ".join(escape_for_android(s) for s in sponsors)
 
     # Create the XML structure
     resources = ET.Element("resources")
@@ -69,8 +89,11 @@ def update_xml(sponsors):
 
     print(f"Successfully wrote {len(sponsors)} total sponsors to {OUTPUT_PATH}")
 
+def dedupe(names):
+    return list(dict.fromkeys(names))
+
 if __name__ == "__main__":
-    all_names = fetch_all_sponsors()
+    all_names = dedupe(fetch_all_sponsors())
     if all_names:
         update_xml(all_names)
     else:
