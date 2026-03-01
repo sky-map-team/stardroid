@@ -46,9 +46,16 @@ def fetch_all_sponsors():
 
     return all_sponsors
 
+def escape_for_android(name):
+    name = name.replace('\\', '\\\\')
+    name = name.replace("'", "\\'")
+    if name.startswith(('@', '?')):
+        name = '\\' + name
+    return name
+
 def update_xml(sponsors):
-    # Join into comma-separated string
-    sponsors_str = ", ".join(sponsors).replace("'", "\\'")
+    # Join into comma-separated string, escaping each name for Android XML
+    sponsors_str = ", ".join(escape_for_android(s) for s in sponsors)
 
     # Create the XML structure
     resources = ET.Element("resources")
