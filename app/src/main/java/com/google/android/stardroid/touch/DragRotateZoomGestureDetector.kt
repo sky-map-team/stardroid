@@ -47,6 +47,9 @@ class DragRotateZoomGestureDetector(private val listener: DragRotateZoomGestureD
   private var last1Y = 0f
   private var last2X = 0f
   private var last2Y = 0f
+  // True if the current gesture involved a second finger (rotation/zoom).
+  // onGestureEnd() is only fired for single-finger gestures.
+  private var hadTwoFingers = false
   fun onTouchEvent(ev: MotionEvent): Boolean {
     // The state changes are as follows.
     // READY -> DRAGGING -> DRAGGING2 -> READY
@@ -74,6 +77,7 @@ class DragRotateZoomGestureDetector(private val listener: DragRotateZoomGestureD
     val actionCode = ev.action and MotionEvent.ACTION_MASK
     // Log.d(TAG, "Action: " + actionCode + ", current state " + currentState);
     if (actionCode == MotionEvent.ACTION_DOWN || currentState == State.READY) {
+      if (actionCode == MotionEvent.ACTION_DOWN) hadTwoFingers = false
       currentState = State.DRAGGING
       last1X = ev.x
       last1Y = ev.y
@@ -151,7 +155,9 @@ class DragRotateZoomGestureDetector(private val listener: DragRotateZoomGestureD
       // Log.d(TAG, "Up");
       val wasActive = currentState != State.READY
       currentState = State.READY
-      listener.onGestureEnd()
+      val hadTwo = hadTwoFingers
+      hadTwoFingers = false
+      if (!hadTwo) listener.onGestureEnd()
       return wasActive
     }
     if (actionCode == MotionEvent.ACTION_POINTER_DOWN && currentState == State.DRAGGING) {
@@ -161,6 +167,7 @@ class DragRotateZoomGestureDetector(private val listener: DragRotateZoomGestureD
         Log.w(TAG, "Expected exactly two pointers but got $pointerCount")
         return false
       }
+      hadTwoFingers = true
       currentState = State.DRAGGING2
       last1X = ev.getX(0)
       last1Y = ev.getY(0)

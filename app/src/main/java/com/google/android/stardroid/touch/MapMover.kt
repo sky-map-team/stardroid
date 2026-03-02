@@ -39,7 +39,6 @@ class MapMover(
   private val horizonLeveler = HorizonLeveler(model) { deg -> controllerGroup.rotate(deg) }
 
   override fun onDrag(xPixels: Float, yPixels: Float): Boolean {
-    horizonLeveler.stop()
     // Log.d(TAG, "Dragging by " + xPixels + ", " + yPixels);
     val pixelsToRadians = model.fieldOfView / sizeTimesRadiansToDegrees
     controllerGroup.changeUpDown(-yPixels * pixelsToRadians)

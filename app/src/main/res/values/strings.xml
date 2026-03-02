@@ -10,6 +10,7 @@
     <string name="start_from_now">Start from Now</string>
     <string name="other_prefs">Other</string>
     <string name="location_prefs">Location Settings</string>
+    <string name="controls_prefs">Controls</string>
     <string name="force_gps_pref">Always use GPS</string>
     <string name="force_gps_pref_hint" translation_description="this string continues from \'Always use GPS\'">if enabled, even if network location is available</string>
     <string name="no_use_gps_pref">Set location manually</string>

@@ -52,6 +52,26 @@
         android:defaultValue="0"/>
   </PreferenceCategory>
 
+  <!-- Controls Settings -->
+  <PreferenceCategory android:title="@string/controls_prefs">
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="show_object_info_on_tap2"
+        android:summary="@string/show_object_info_pref_summary"
+        android:title="@string/show_object_info_pref_title" />
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="show_object_info_auto_mode"
+        android:dependency="show_object_info_on_tap2"
+        android:summary="@string/show_object_info_auto_mode_summary"
+        android:title="@string/show_object_info_auto_mode_title" />
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:title="@string/auto_level_horizon_preference_title"
+        android:summary="@string/auto_level_horizon_preference_summary"
+        android:key="auto_level_horizon"/>
+  </PreferenceCategory>
+
   <!-- Appearance Settings -->
   <PreferenceCategory android:title="@string/appearance_prefs">
     <ListPreference
@@ -105,26 +125,10 @@
         android:entryValues="@array/viewing_direction_values"
         android:entries="@array/viewing_direction"
         android:defaultValue="STANDARD" />
-    <CheckBoxPreference
-        android:defaultValue="true"
-        android:title="@string/auto_level_horizon_preference_title"
-        android:summary="@string/auto_level_horizon_preference_summary"
-        android:key="auto_level_horizon"/>
   </PreferenceCategory>
 
   <!-- General Settings -->
   <PreferenceCategory android:title="@string/other_prefs">
-      <CheckBoxPreference
-          android:defaultValue="true"
-          android:key="show_object_info_on_tap2"
-          android:summary="@string/show_object_info_pref_summary"
-          android:title="@string/show_object_info_pref_title" />
-      <CheckBoxPreference
-          android:defaultValue="false"
-          android:key="show_object_info_auto_mode"
-          android:dependency="show_object_info_on_tap2"
-          android:summary="@string/show_object_info_auto_mode_summary"
-          android:title="@string/show_object_info_auto_mode_title" />
     <CheckBoxPreference
         android:defaultValue="true"
         android:title="@string/use_sound_effects"

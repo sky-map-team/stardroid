@@ -57,7 +57,10 @@ class HorizonLeveler(
             stop()
             return
         }
-        val delta = angle * springFactor
+        // Negate: calculateRotationMatrix uses a transposed (CW) convention, so a positive
+        // angle here would rotate *away* from the target.  The sign flip mirrors what
+        // MapMover.onRotate already does when forwarding gesture rotations.
+        val delta = -angle * springFactor
         rotationCallback(delta)
     }
 
@@ -82,9 +85,12 @@ class HorizonLeveler(
         }
         zenithProj.normalize()
 
-        // The target perpendicular is the projection of the zenith onto the screen.
-        // No phone roll correction is needed as we are in manual mode.
-        val targetPerp = zenithProj
+        // Snap the phone's roll to the nearest 90° so the horizon aligns with a
+        // physical edge of the phone (portrait or landscape, normal or reversed).
+        val upPhone = model.phoneUpDirection
+        val rawRollDeg = kotlin.math.atan2(upPhone.x, upPhone.y) * RADIANS_TO_DEGREES
+        val snappedRollDeg = kotlin.math.round(rawRollDeg / 90f) * 90f
+        val targetPerp = calculateRotationMatrix(snappedRollDeg.toFloat(), lineOfSight) * zenithProj
 
         // Signed angle from currentPerp to targetPerp around lineOfSight.
         val cross = currentPerp * targetPerp          // cross product
