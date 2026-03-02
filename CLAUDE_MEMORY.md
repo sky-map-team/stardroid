@@ -1,14 +1,10 @@
 # Sky Map Project Memory
 
-## Build Setup
-- Always run `export JAVA_HOME=$(/usr/libexec/java_home -v 17)` before building
-- Always set `ANDROID_HOME=~/Library/Android/sdk` when running gradlew
-- Use `assembleGmsDebug` not `assembleDebug` for the GMS flavor
-
-## Architecture Patterns
-- Dialog fragments follow the pattern in `AbstractDynamicStarMapModule` — add a `@Provides @PerActivity` method returning `new XyzDialogFragment()`
-- Add `XyzDialogFragment.ActivityComponent` to `DynamicStarMapComponent` interface
-- Inject the fragment in `DynamicStarMapActivity` and handle in `onOptionsItemSelected`
+## Build Gotchas
+- Always set `JAVA_HOME=$(/usr/libexec/java_home -v 17)` before building — Gradle will silently use the wrong JDK otherwise
+- Use `assembleGmsDebug` not `assembleDebug` (no plain flavor exists)
+- If `installGmsDebug` fails with `INSTALL_FAILED_UPDATE_INCOMPATIBLE`, uninstall the Play Store version first: `adb uninstall com.google.android.stardroid`
+- If device shows as offline: `adb kill-server && adb start-server`
 
 ## Adding Catalog Objects (Messier/Special)
 
@@ -18,19 +14,15 @@
 3. `app/src/main/res/values/celestial_info_cards.xml` — keys: `object_info_<key>_{description,funfact,distance,size}`
 4. `app/src/main/assets/object_info.json` — JSON entry keyed by primary name key
 
-### Rebuild pipeline (from project root)
-```bash
-export JAVA_HOME=$(/usr/libexec/java_home -v 17)
-./gradlew clean :tools:installDist
-# build_skymap.sh fixes classpath automatically; if running manually:
-sed -i -e 's#CLASSPATH=#CLASSPATH=$APP_HOME/lib/:#g' tools/build/install/datagen/bin/datagen
-cd tools && ./generate.sh && ./binary.sh
-```
-
 ### CSV name format
 - Use natural names with spaces, pipe-separated: `T CrB|Blaze Star|T Coronae Borealis`
 - `AbstractAsciiProtoWriter.rKeysFromName()` converts spaces→underscores and lowercases to make resource IDs
 - Primary label and object_info.json key = first name converted (e.g. `t_crb`)
+
+### Coordinate precision
+- For extended nebulae use the **nebula centre**, not the embedded star
+- Eta Carinae Nebula (NGC 3372): RA 10h 45m 08.5s / Dec −59° 52' 04" (centre)
+  vs. Eta Carinae star: Dec −59° 41' — these differ by ~11 arcmin
 
 ## Release Splash Screens
 
@@ -46,17 +38,12 @@ cd tools && ./generate.sh && ./binary.sh
 | Venus   | `venus.png` | `808,0,2016,1200` |
 | Earth   | `earth.png` | none (2048×2048 square) |
 
-### Coordinate precision
-- For extended nebulae use the **nebula centre**, not the embedded star
-- Eta Carinae Nebula (NGC 3372): RA 10h 45m 08.5s / Dec −59° 52' 04" (centre)
-  vs. Eta Carinae star: Dec −59° 41' — these differ by ~11 arcmin
-
 ## Auto-Level Horizon (manual mode)
 
-Branch: `feature/auto-level-horizon` (merged/pushed 2026-03-01)
+Branch: `feature/auto-level-horizon` (pushed 2026-03-01)
 
 ### How it works
-- `HorizonLeveler.kt` — runs at 20 fps via `ScheduledExecutorService`; each frame computes signed misalignment angle between `currentPerp` and the roll-corrected zenith projection, springs 20% of the way per frame (~1–2 s return). Stops at <0.1°.
+- `HorizonLeveler.kt` — runs at 20 fps via `ScheduledExecutorService`; each frame computes signed misalignment angle between `currentPerp` and the zenith projection, springs 20% of the way per frame (~1–2 s return). Stops at <0.1°.
 - `DragRotateZoomGestureDetector` — `onGestureEnd()` added to listener interface (default no-op); `ACTION_UP` always fires it.
 - `MapMover` — accepts `SharedPreferences`; starts leveler on `onGestureEnd()` if pref on; stops it on any drag/rotate/stretch.
 - `GestureInterpreter.onDown` — calls `mapMover.stopLeveling()` alongside `flinger.stop()`.
@@ -65,6 +52,5 @@ Branch: `feature/auto-level-horizon` (merged/pushed 2026-03-01)
 
 ### Key math
 1. Project zenith onto view plane: `zenithProj = zenith − (zenith·los)×los`; if `|zenithProj|² < 0.001` skip (looking straight at zenith).
-2. Roll correction: `rollDeg = atan2(phoneUp.x, phoneUp.y) * R2D`; rotate zenithProj by rollDeg around los → `targetPerp`.
-3. Signed angle: `cross = currentPerp × targetPerp`; `angle = atan2(cross·los, currentPerp·targetPerp) * R2D`.
-4. Callback calls `controllerGroup.rotate(delta)` directly (not via `mapMover.onRotate` which has sign flip).
+2. Signed angle: `cross = currentPerp × targetPerp`; `angle = atan2(cross·los, currentPerp·targetPerp) * R2D`.
+3. Callback calls `controllerGroup.rotate(delta)` directly (not via `mapMover.onRotate` which has a sign flip).
