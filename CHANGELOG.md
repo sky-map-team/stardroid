@@ -5,6 +5,37 @@ All notable changes to Sky Map are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.12.0] - 2026-03-01
+
+_Earth release._
+
+### Added
+- **Celestial images in info cards** — all 145 objects (planets, stars, constellations, and Messier
+  objects) now display a photograph in their info card; images were compressed to webp to keep the
+  app bundle size modest
+  (implements [#325](https://github.com/sky-map-team/stardroid/issues/325))
+- **T Coronae Borealis** ("the Blaze Star") and the **Eta Carinae Nebula** added to the star catalog
+  (addresses [#499](https://github.com/sky-map-team/stardroid/issues/499),
+  [#125](https://github.com/sky-map-team/stardroid/issues/125))
+- **Image gallery** — swipe through multiple images for an object in the info card viewer
+- Inline link to online troubleshooting guide from the in-app Help screen
+
+### Changed
+- **Night mode** is now applied consistently across nearly all UI elements: all dialog windows,
+  the compass calibration activity, mode buttons, and the What's New screen are now rendered
+  with red-on-dark styling — no more blinding white dialogs
+  (fixes [#661](https://github.com/sky-map-team/stardroid/issues/661),
+  [#643](https://github.com/sky-map-team/stardroid/issues/643),
+  [#652](https://github.com/sky-map-team/stardroid/issues/652),
+  [#349](https://github.com/sky-map-team/stardroid/issues/349))
+- Help text rewritten and reorganized; compass accuracy section expanded
+
+### Fixed
+- OK button now appears in the Terms of Service dialog when opened from the menu
+- Resolved production crashes and ANRs reported via Play Console: `AssetFileDescriptor` leak and
+  UI updates attempted after the activity was destroyed
+  ([#667](https://github.com/sky-map-team/stardroid/issues/667))
+
 ## [1.11.1] - 2026-02-23
 
 ### Added
