@@ -165,6 +165,9 @@ Runtime: Binary files loaded by `AbstractFileBasedLayer`, deserialized into `Pro
 
 ## Code Style
 
+Do **not** add a Google copyright header to new files. This project is community-maintained;
+new files should have no copyright header at all.
+
 Follow the [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html):
 - 100 character line wrap
 - Do **not** prefix member variables with `m` (unlike common Android convention)
