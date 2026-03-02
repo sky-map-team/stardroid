@@ -50,6 +50,7 @@ class GestureInterpreter(
   override fun onDown(unused: MotionEvent): Boolean {
     Log.d(TAG, "Tap down")
     flinger.stop()
+    mapMover.stopLeveling()
     return true
   }
 

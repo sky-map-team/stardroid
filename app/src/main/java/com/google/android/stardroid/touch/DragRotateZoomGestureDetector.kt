@@ -35,6 +35,7 @@ class DragRotateZoomGestureDetector(private val listener: DragRotateZoomGestureD
     fun onDrag(xPixels: Float, yPixels: Float): Boolean
     fun onStretch(ratio: Float): Boolean
     fun onRotate(degrees: Float): Boolean
+    fun onGestureEnd() {}
   }
 
   private enum class State {
@@ -146,10 +147,12 @@ class DragRotateZoomGestureDetector(private val listener: DragRotateZoomGestureD
       last2Y = current2Y
       return true
     }
-    if (actionCode == MotionEvent.ACTION_UP && currentState != State.READY) {
+    if (actionCode == MotionEvent.ACTION_UP) {
       // Log.d(TAG, "Up");
+      val wasActive = currentState != State.READY
       currentState = State.READY
-      return true
+      listener.onGestureEnd()
+      return wasActive
     }
     if (actionCode == MotionEvent.ACTION_POINTER_DOWN && currentState == State.DRAGGING) {
       //Log.d(TAG, "Non primary pointer down " + pointer);

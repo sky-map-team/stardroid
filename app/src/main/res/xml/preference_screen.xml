@@ -105,6 +105,11 @@
         android:entryValues="@array/viewing_direction_values"
         android:entries="@array/viewing_direction"
         android:defaultValue="STANDARD" />
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:title="@string/auto_level_horizon_preference_title"
+        android:summary="@string/auto_level_horizon_preference_summary"
+        android:key="auto_level_horizon"/>
   </PreferenceCategory>
 
   <!-- General Settings -->

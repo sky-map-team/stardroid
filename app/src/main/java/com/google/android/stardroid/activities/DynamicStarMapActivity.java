@@ -877,7 +877,7 @@ public class DynamicStarMapActivity extends InjectableActivity
         Lists.<View>asList(manualButtonLayer, providerButtons),
         buttonViews);
 
-    MapMover mapMover = new MapMover(model, controller, this);
+    MapMover mapMover = new MapMover(model, controller, this, sharedPreferences);
 
     // Set up the object info tap handler listener
     objectInfoTapHandler.setObjectTapListener(new ObjectInfoTapHandler.ObjectTapListener() {
