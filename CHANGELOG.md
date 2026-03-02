@@ -28,7 +28,7 @@ _Earth release._
   [#643](https://github.com/sky-map-team/stardroid/issues/643),
   [#652](https://github.com/sky-map-team/stardroid/issues/652),
   [#349](https://github.com/sky-map-team/stardroid/issues/349))
-- Help text rewritten and reorganised; compass accuracy section expanded
+- Help text rewritten and reorganized; compass accuracy section expanded
 
 ### Fixed
 - OK button now appears in the Terms of Service dialog when opened from the menu
