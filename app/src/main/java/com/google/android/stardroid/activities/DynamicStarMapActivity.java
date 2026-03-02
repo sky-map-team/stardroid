@@ -186,6 +186,7 @@ public class DynamicStarMapActivity extends InjectableActivity
   private ImageButton cancelSearchButton;
   @Inject ControllerGroup controller;
   private GestureDetector gestureDetector;
+  private GestureInterpreter gestureInterpreter;
   @Inject AstronomerModel model;
   private RendererController rendererController;
   private boolean nightMode = false;
@@ -450,6 +451,7 @@ public class DynamicStarMapActivity extends InjectableActivity
   @Override
   public void onDestroy() {
     Log.d(TAG, "DynamicStarMap onDestroy");
+    if (gestureInterpreter != null) gestureInterpreter.destroy();
     super.onDestroy();
   }
 
@@ -901,8 +903,9 @@ public class DynamicStarMapActivity extends InjectableActivity
           }
         };
 
-    gestureDetector = new GestureDetector(this, new GestureInterpreter(
-        fullscreenControlsManager, mapMover, objectInfoTapHandler, dimensionsProvider));
+    gestureInterpreter = new GestureInterpreter(
+        fullscreenControlsManager, mapMover, objectInfoTapHandler, dimensionsProvider);
+    gestureDetector = new GestureDetector(this, gestureInterpreter);
     dragZoomRotateDetector = new DragRotateZoomGestureDetector(mapMover);
   }
 

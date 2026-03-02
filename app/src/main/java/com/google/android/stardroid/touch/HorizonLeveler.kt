@@ -37,6 +37,14 @@ class HorizonLeveler(
         levelTask = null
     }
 
+    /**
+     * Shuts down the executor. Call from the owning component's destroy/cleanup.
+     */
+    fun shutdown() {
+        stop()
+        executor.shutdown()
+    }
+
     private fun step() {
         val angle = computeMisalignmentDegrees()
         if (kotlin.math.abs(angle) < 0.1f) {

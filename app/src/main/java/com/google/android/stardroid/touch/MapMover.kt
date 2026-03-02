@@ -68,6 +68,10 @@ class MapMover(
     horizonLeveler.stop()
   }
 
+  fun destroy() {
+    horizonLeveler.shutdown()
+  }
+
   companion object {
     private val TAG = getTag(MapMover::class.java)
   }

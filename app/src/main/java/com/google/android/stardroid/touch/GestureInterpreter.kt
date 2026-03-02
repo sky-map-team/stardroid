@@ -97,6 +97,11 @@ class GestureInterpreter(
     return false
   }
 
+  fun destroy() {
+    flinger.shutdown()
+    mapMover.destroy()
+  }
+
   companion object {
     private val TAG = getTag(GestureInterpreter::class.java)
   }
