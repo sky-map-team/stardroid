@@ -11,26 +11,6 @@
 
 <h2>Night Mode</h2>
     Red night mode now covers nearly all UI elements, including all dialogs and the compass calibration screen — no more blinding white flashes in the dark.
-
-<h2>New Messier Object Icons</h2>
-    Deep sky objects now display distinct icons based on their type: galaxies, open clusters, globular clusters, diffuse nebulae, planetary nebulae, and supernova remnants.
-
-<h2>Info Cards in Automatic Mode</h2>
-    You can now optionally enable info cards while using sensor-based pointing. Look for the new setting in Preferences to turn this on.
-
-<h2>Compass Calibration Help</h2>
-    A new troubleshooting guide explains why compasses go wrong and how to fix them. You can also set a manual compass offset if needed.
-
-<h2>Time Travel Events</h2>
-    The Time Travel dialog now includes meteor showers and new moon events, and will automatically search for those with a visible target in the sky.
-
-<h2>Bug Fixes</h2>
-    The Moon\'s illuminated crescent now renders at the correct angle by properly accounting for Earth\'s axial tilt.
-    Fixed an issue where content could be obscured by navigation bars on devices not using gesture navigation.
-
-<h2>Credits</h2>
-    A Credits screen is now accessible from the main menu, recognizing the contributors and <a href="https://buymeacoffee.com/skymapdevs">supporters</a> of Sky Map.
-
-    ]]>
+]]>
     </string>
 </resources>
