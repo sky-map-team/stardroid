@@ -11,7 +11,7 @@ import java.util.concurrent.ScheduledFuture
 import java.util.concurrent.TimeUnit
 
 /**
- * After a two-finger rotation gesture, gently springs the horizon back to
+ * After a one-finger drag gesture, gently springs the horizon back to
  * horizontal over roughly 1–2 seconds, modelled on [Flinger].
  */
 class HorizonLeveler(
