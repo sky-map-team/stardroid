@@ -16,6 +16,8 @@ The codebase is written in Java and Kotlin, targeting Android SDK 26–36.
 - **datamodel/** - Protocol buffer definitions for astronomical objects
 - **tools/** - Standalone utilities for converting star catalogs to binary protobuf format
 
+Read the specs before undertaking any complex investigations.
+
 ## Build Commands
 
 ### Prerequisites
