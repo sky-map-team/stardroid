@@ -3,14 +3,20 @@
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
     <string name="whats_new_content">
 <![CDATA[
+<h2>Celestial Images</h2>
+    Info cards now include photographs for all 145 objects — planets, stars, constellations, and Messier objects. Tap any object to explore it visually.
+
+<h2>New Catalog Objects</h2>
+    T Coronae Borealis (the "Blaze Star") and the Eta Carinae Nebula are now in the catalog.
+
+<h2>Night Mode</h2>
+    Red night mode now covers nearly all UI elements, including all dialogs and the compass calibration screen — no more blinding white flashes in the dark.
+
 <h2>New Messier Object Icons</h2>
     Deep sky objects now display distinct icons based on their type: galaxies, open clusters, globular clusters, diffuse nebulae, planetary nebulae, and supernova remnants.
 
 <h2>Info Cards in Automatic Mode</h2>
     You can now optionally enable info cards while using sensor-based pointing. Look for the new setting in Preferences to turn this on.
-
-<h2>Messier Catalog Improvements</h2>
-    Corrected data for several Messier objects and improved how object types are categorized.
 
 <h2>Compass Calibration Help</h2>
     A new troubleshooting guide explains why compasses go wrong and how to fix them. You can also set a manual compass offset if needed.
