@@ -82,12 +82,9 @@ class HorizonLeveler(
         }
         zenithProj.normalize()
 
-        // Phone roll correction: same formula as queueTextAngle in the renderer.
-        val upPhone = model.phoneUpDirection
-        val rollDeg = kotlin.math.atan2(upPhone.x, upPhone.y) * RADIANS_TO_DEGREES
-
-        // Rotate zenithProj by rollDeg around lineOfSight to get the target perpendicular.
-        val targetPerp = calculateRotationMatrix(rollDeg, lineOfSight) * zenithProj
+        // The target perpendicular is the projection of the zenith onto the screen.
+        // No phone roll correction is needed as we are in manual mode.
+        val targetPerp = zenithProj
 
         // Signed angle from currentPerp to targetPerp around lineOfSight.
         val cross = currentPerp * targetPerp          // cross product
