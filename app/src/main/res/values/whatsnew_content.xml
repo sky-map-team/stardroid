@@ -14,6 +14,12 @@
 ]]>
     </string>
     <string name="beta_user_help_text">
-How can you help?
+<![CDATA[
+<h2>Beta users!</h2>
+<h3>How you can help</h3>
+In this release when you use manual mode and give the map a swipe, the horizon will return
+to level so the top of the map will always show the stars above you. Previously the map just
+moved in a straight line so you could end up upside down. What do you think? Is this better?
+]]>
     </string>
 </resources>
