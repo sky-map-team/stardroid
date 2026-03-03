@@ -27,6 +27,8 @@
     <string name="location_permission_grant">Nadaj uprawnienie</string>
     <string name="location_permission_enter_manually">Wprowadź ręcznie</string>
     <string name="location_permission_later">Później</string>
+    <string name="location_warning_permission">Lokalizacja niedostępna — nie przyznano uprawnienia</string>
+    <string name="location_warning_manual">Lokalizacja nieustawiona — skonfiguruj w Ustawieniach</string>
     <string name="location_set_auto">Lokalizacja ustawiona na %2$s</string>
     <string name="location_unable_to_geocode">Nie można rozpoznać Twojej lokalizacji – może Twoja sieć jest niedostępna?</string>
     <string name="location_not_found_title" translation_description="dialog box title when location not found">Przepraszamy</string>
@@ -204,6 +206,9 @@
     <string name="diagnostics_activity_gyroscope">Żyroskop</string>
     <string name="diagnostics_activity_light_level">Poziom światła</string>
     <string name="diagnostics_activity_location_and_time_heading">Lokalizacja i czas</string>
+    <string name="diagnostics_activity_location_permission">Uprawnienie do lokalizacji</string>
+    <string name="diagnostics_activity_location_permission_granted">Przyznano</string>
+    <string name="diagnostics_activity_location_permission_denied">Odmówiono</string>
     <string name="diagnostics_activity_gps">GPS</string>
     <string name="diagnostics_activity_location">Lokalizacja (szer., dł.)</string>
     <string name="diagnostics_activity_pointing_ra_dec">Migawka wskaźnika</string>
