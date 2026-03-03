@@ -44,11 +44,13 @@ public class ControllerGroup implements Controller {
   private TeleportingController teleportingController;
   private boolean usingAutoMode = true;
   private AstronomerModel model;
+  private LocationController locationController;
 
   // TODO(jontayler): inject everything else.
   @Inject
   ControllerGroup(Context context, SensorOrientationController sensorOrientationController,
                   LocationController locationController) {
+    this.locationController = locationController;
     addController(locationController);
     this.sensorOrientationController = sensorOrientationController;
     addController(sensorOrientationController);
@@ -131,6 +133,10 @@ public class ControllerGroup implements Controller {
    */
   public boolean isAutoMode() {
     return usingAutoMode;
+  }
+
+  public LocationController getLocationController() {
+    return locationController;
   }
 
   /**
