@@ -16,6 +16,8 @@ The codebase is written in Java and Kotlin, targeting Android SDK 26–36.
 - **datamodel/** - Protocol buffer definitions for astronomical objects
 - **tools/** - Standalone utilities for converting star catalogs to binary protobuf format
 
+Read the specs before undertaking any complex investigations.
+
 ## Build Commands
 
 ### Prerequisites
@@ -108,6 +110,12 @@ Key injection points:
 - `StardroidApplication.onCreate()` - Initializes `DaggerApplicationComponent`
 - Activity components inject via `inject(activity)` method
 
+#### ⚠️ Scoping and resource lifecycle pitfall
+
+Do **not** use `@PerActivity` scope for resources that must be released and re-created across `onPause()`/`onResume()` cycles (e.g. `MediaPlayer`, file handles, camera resources). The Dagger component is built once in `onCreate()` and lives for the entire activity instance. If a `@PerActivity`-scoped `@Provides` method returns such a resource, Dagger caches the first instance permanently. After `onPause()` releases it, the next `onResume()` call to `Provider.get()` returns the same dead/released object — leading to silent failures or `IllegalStateException`.
+
+**Rule:** Resources with a `onResume`/`onPause` lifecycle must use an **unscoped** `@Provides` method so that `Provider.get()` creates a fresh instance on every call. Also prefer non-blocking initialisation (e.g. `MediaPlayer.prepareAsync()` rather than `MediaPlayer.create()` which calls blocking `prepare()`) to avoid ANRs when the `@Provides` method is called on the main thread.
+
 ### Rendering Pipeline
 
 **Layer → AstronomicalSource → Primitives → OpenGL**
@@ -161,6 +169,22 @@ Follow the [Google Java Style Guide](https://google.github.io/styleguide/javagui
 - 100 character line wrap
 - Do **not** prefix member variables with `m` (unlike common Android convention)
 - Use Java 17 toolchain features
+
+### Colors
+
+Never hardcode color integers in Java/Kotlin. Always declare a named `<color>` in
+`app/src/main/res/values/colors.xml` and reference it via `R.color.*`.
+
+Status/severity colors follow a two-tier naming scheme:
+| Resource | Day-mode meaning | Night-mode pair |
+|---|---|---|
+| `status_good` | Green — everything OK | `night_status_good` |
+| `status_ok` | Yellow — acceptable | `night_status_ok` |
+| `status_warning` | Orange — degraded | `night_status_warning` |
+| `status_bad` | Red — error/missing | `night_status_bad` |
+| `status_absent` | Grey — hardware absent | `night_status_absent` |
+
+Night-mode variants are red-shifted; brighter = better (mirrors day-mode meaning).
 
 ## Key Files
 

@@ -44,40 +44,33 @@ public class SensorAccuracyDecoder {
   }
 
   public int getColorForAccuracy(int accuracy) {
-    int accuracyColor = resources.getColor(R.color.bad_sensor);
     switch (accuracy) {
-      case SensorManager.SENSOR_STATUS_UNRELIABLE:
-        accuracyColor = resources.getColor(R.color.bad_sensor);
-        break;
       case SensorManager.SENSOR_STATUS_ACCURACY_LOW:
-        accuracyColor = resources.getColor(R.color.low_accuracy);
-        break;
+        return resources.getColor(R.color.status_warning);
       case SensorManager.SENSOR_STATUS_ACCURACY_MEDIUM:
-        accuracyColor = resources.getColor(R.color.medium_accuracy);
-        break;
+        return resources.getColor(R.color.status_ok);
       case SensorManager.SENSOR_STATUS_ACCURACY_HIGH:
-        accuracyColor = resources.getColor(R.color.high_accuracy);
-        break;
+        return resources.getColor(R.color.status_good);
+      case SensorManager.SENSOR_STATUS_UNRELIABLE:
       case SensorManager.SENSOR_STATUS_NO_CONTACT:
-        accuracyColor = resources.getColor(R.color.bad_sensor);
-        break;
+      default:
+        return resources.getColor(R.color.status_bad);
     }
-    return accuracyColor;
   }
 
   /** Red-shifted accuracy colors for night mode, preserving the good/bad brightness hierarchy. */
   public int getNightColorForAccuracy(int accuracy) {
     switch (accuracy) {
       case SensorManager.SENSOR_STATUS_ACCURACY_HIGH:
-        return 0xFFDD6666;  // brightest red = good
+        return resources.getColor(R.color.night_status_good);
       case SensorManager.SENSOR_STATUS_ACCURACY_MEDIUM:
-        return 0xFFAA4444;
+        return resources.getColor(R.color.night_status_ok);
       case SensorManager.SENSOR_STATUS_ACCURACY_LOW:
-        return 0xFF883333;
+        return resources.getColor(R.color.night_status_warning);
       case SensorManager.SENSOR_STATUS_UNRELIABLE:
       case SensorManager.SENSOR_STATUS_NO_CONTACT:
       default:
-        return 0xFF662222;  // darkest red = bad
+        return resources.getColor(R.color.night_status_bad);
     }
   }
 }

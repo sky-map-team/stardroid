@@ -27,6 +27,8 @@
     <string name="location_permission_grant">Grant Permission</string>
     <string name="location_permission_enter_manually">Enter Manually</string>
     <string name="location_permission_later">Later</string>
+    <string name="location_warning_permission">Location unavailable — permission not granted.</string>
+    <string name="location_warning_manual">Location not set — please configure in Settings.</string>
     <string name="location_set_auto">Location set to %2$s</string>
     <string name="location_unable_to_geocode">Unable to decode your location - perhaps your network isn\'t available?</string>
     <string name="location_not_found_title" translation_description="dialog box title when location not found">Sorry</string>
@@ -220,6 +222,9 @@
     <string name="diagnostics_activity_gyroscope">Gyroscope</string>
     <string name="diagnostics_activity_light_level">Light level</string>
     <string name="diagnostics_activity_location_and_time_heading">Location and Time</string>
+    <string name="diagnostics_activity_location_permission">Location Permission</string>
+    <string name="diagnostics_activity_location_permission_granted">Granted</string>
+    <string name="diagnostics_activity_location_permission_denied">Denied</string>
     <string name="diagnostics_activity_gps">GPS</string>
     <string name="diagnostics_activity_location">Location (lat, long)</string>
     <string name="diagnostics_activity_pointing_ra_dec">Pointing snapshot</string>

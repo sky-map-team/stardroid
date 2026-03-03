@@ -53,25 +53,25 @@ public class TransitioningCompositeClock implements Clock {
     this.realClock = realClock;
   }
 
-  public void goTimeTravel(Date targetDate) {
+  public synchronized void goTimeTravel(Date targetDate) {
     startTime = getTimeInMillisSinceEpoch();
     endTime = targetDate.getTime();
     timeTravelClock.setTimeTravelDate(targetDate);
-    mode = Mode.TRANSITION;
     transitionTo = Mode.TIME_TRAVEL;
+    mode = Mode.TRANSITION;
     startTransitionWallTime = realClock.getTimeInMillisSinceEpoch();
   }
 
-  public void returnToRealTime() {
+  public synchronized void returnToRealTime() {
     startTime = getTimeInMillisSinceEpoch();
     endTime = realClock.getTimeInMillisSinceEpoch() + TRANSITION_TIME_MILLIS;
-    mode = Mode.TRANSITION;
     transitionTo = Mode.REAL_TIME;
+    mode = Mode.TRANSITION;
     startTransitionWallTime = realClock.getTimeInMillisSinceEpoch();
   }
 
   @Override
-  public long getTimeInMillisSinceEpoch() {
+  public synchronized long getTimeInMillisSinceEpoch() {
     if (mode == Mode.TRANSITION) {
       long elapsedTimeMillis = realClock.getTimeInMillisSinceEpoch() - startTransitionWallTime;
       if (elapsedTimeMillis > TRANSITION_TIME_MILLIS) {

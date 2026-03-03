@@ -56,11 +56,19 @@ public class EulaDialogFragment extends DialogFragment {
     ((HasComponent<ActivityComponent>) getActivity()).getComponent().inject(this);
 
     LayoutInflater inflater = parentActivity.getLayoutInflater();
-    View view = inflater.inflate(R.layout.tos_view, null);
+    View view;
+    try {
+      view = inflater.inflate(R.layout.tos_view, null);
+    } catch (Exception e) {
+      Log.e(TAG, "Could not inflate EULA view (WebView unavailable?)", e);
+      view = null;
+    }
 
     AlertDialog.Builder tosDialogBuilder = new AlertDialog.Builder(parentActivity)
-        .setTitle(R.string.menu_tos)
-        .setView(view);
+        .setTitle(R.string.menu_tos);
+    if (view != null) {
+      tosDialogBuilder.setView(view);
+    }
     if (resultListener != null) {
       tosDialogBuilder
           .setPositiveButton(R.string.dialog_accept,
@@ -103,17 +111,19 @@ public class EulaDialogFragment extends DialogFragment {
         "<link rel=\"stylesheet\" href=\"html/help.css\">" +
         "</head><body" + bodyClass + ">" + contentBuilder.toString() + "</body></html>";
 
-    WebView webView = view.findViewById(R.id.eula_webview);
-    webView.setWebViewClient(new WebViewClient() {
-      @Override
-      public boolean shouldOverrideUrlLoading(WebView view, String url) {
-        // Open links in external browser
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-        parentActivity.startActivity(intent);
-        return true;
-      }
-    });
-    webView.loadDataWithBaseURL("file:///android_asset/", html, "text/html", "UTF-8", null);
+    if (view != null) {
+      WebView webView = view.findViewById(R.id.eula_webview);
+      webView.setWebViewClient(new WebViewClient() {
+        @Override
+        public boolean shouldOverrideUrlLoading(WebView view, String url) {
+          // Open links in external browser
+          Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+          parentActivity.startActivity(intent);
+          return true;
+        }
+      });
+      webView.loadDataWithBaseURL("file:///android_asset/", html, "text/html", "UTF-8", null);
+    }
 
     AlertDialog tosDialog = tosDialogBuilder.create();
     tosDialog.setOnShowListener(
