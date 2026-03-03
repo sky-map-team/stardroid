@@ -11,6 +11,8 @@
 // limitations under the License.
 package com.google.android.stardroid.education
 
+import com.google.android.stardroid.util.processImage
+
 import android.content.Context
 import android.content.res.AssetManager
 import android.util.Log
@@ -58,7 +60,8 @@ class ObjectInfoRegistry @Inject constructor(
         val size = getOptionalString(entry.sizeKey)
         val mass = getOptionalString(entry.massKey)
 
-        val imagePath = entry.imageKey?.let { "celestial_images/$it" }
+        val imagePath = processImage(
+            objectId, entry.imageKey?.let { "celestial_images/$it" })
 
         return ObjectInfo(
             id = objectId,
