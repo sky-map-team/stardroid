@@ -54,3 +54,17 @@ Branch: `feature/auto-level-horizon` (pushed 2026-03-01)
 1. Project zenith onto view plane: `zenithProj = zenith − (zenith·los)×los`; if `|zenithProj|² < 0.001` skip (looking straight at zenith).
 2. Signed angle: `cross = currentPerp × targetPerp`; `angle = atan2(cross·los, currentPerp·targetPerp) * R2D`.
 3. Callback calls `controllerGroup.rotate(delta)` directly (not via `mapMover.onRotate` which has a sign flip).
+## Location UX Fix
+
+Branch: `fix/location-ux` (created 2026-03-03 from master)
+
+### What was fixed
+- `LocationController` tracks `LocationStatus` enum (OK / PERMISSION_DENIED / NO_PROVIDER / MANUAL_NO_COORDS)
+- `lastStatus` reset to OK at start of each `start()` call; set in each failure path
+- Zero-coord detection uses parsed `float` values, not raw pref strings (avoids "0" vs "0.0" mismatch)
+- `ControllerGroup` stores `locationController` field and exposes `getLocationController()` — prevents two-instance bug where activity injection gets a different (never-started) instance than ControllerGroup
+- `DynamicStarMapActivity.maybeShowLocationWarning()` calls `controller.getLocationController()` and shows a `Toast` after `controller.start()` when location is unset; for PERMISSION_DENIED also shows `LocationPermissionDeniedDialogFragment`
+- **No Snackbar / no Material dependency** — Material `Snackbar` crashes on the app's AppCompat-only `FullscreenTheme` (missing `?attr/colorOnSurface`); `Toast` is used instead
+- `DiagnosticActivity`: "Location Permission" row added (first in Location & Time section); green/red colours that respect night mode
+- Status colours renamed from sensor-specific names to generic `status_good/ok/warning/bad/absent` with `night_status_*` night-mode variants; no hardcoded hex in Java
+- Spec file: `specs/features/location.md`
