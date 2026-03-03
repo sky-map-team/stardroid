@@ -112,9 +112,9 @@ public class DiagnosticActivity extends InjectableActivity
     onResumeSensors();
     activityLightLevelManager.onResume();
     continueUpdates = true;
+    updateLocationPermission();
     handler.post(new Runnable() {
       public void run() {
-        updateLocationPermission();
         updateLocation();
         updateModel();
         updateNetwork();
@@ -127,7 +127,7 @@ public class DiagnosticActivity extends InjectableActivity
 
   private void onResumeSensors() {
     accelSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-    int absentSensorColor = getResources().getColor(R.color.status_absent);
+    int absentSensorColor = getColor(R.color.status_absent);
     if (accelSensor == null) {
       setColor(R.id.diagnose_accelerometer_values_txt, absentSensorColor);
     } else {
@@ -166,17 +166,9 @@ public class DiagnosticActivity extends InjectableActivity
         ? getString(R.string.diagnostics_activity_location_permission_granted)
         : getString(R.string.diagnostics_activity_location_permission_denied);
     setText(R.id.diagnose_location_permission_txt, text);
-    int color;
-    if (nightMode) {
-      color = granted
-          ? getResources().getColor(R.color.night_status_good)
-          : getResources().getColor(R.color.night_status_bad);
-    } else {
-      color = granted
-          ? getResources().getColor(R.color.status_good)
-          : getResources().getColor(R.color.status_bad);
-    }
-    setColor(R.id.diagnose_location_permission_txt, color);
+    int colorRes = nightMode ? R.color.night_status_good : R.color.status_good;
+    int badColorRes = nightMode ? R.color.night_status_bad : R.color.status_bad;
+    setColor(R.id.diagnose_location_permission_txt, getColor(granted ? colorRes : badColorRes));
   }
 
   private void updateLocation() {
