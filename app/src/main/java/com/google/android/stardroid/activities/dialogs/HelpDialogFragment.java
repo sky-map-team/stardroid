@@ -58,8 +58,10 @@ public class HelpDialogFragment extends DialogFragment {
         parentActivity.getString(R.string.sponsors_text),
         parentActivity.getString(R.string.contributors_text));
 
+    String whatsNewContentText = parentActivity.getString(R.string.whats_new_content);
+
     String helpText = String.format(parentActivity.getString(R.string.help_text),
-        application.getVersionName(), creditsText);
+        application.getVersionName(), creditsText, whatsNewContentText);
     SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(parentActivity);
     boolean isNight = ActivityLightLevelManager.isNightMode(preferences);
     String bodyClass = isNight ? " class=\"night-mode\"" : "";
