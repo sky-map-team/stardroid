@@ -170,6 +170,22 @@ Follow the [Google Java Style Guide](https://google.github.io/styleguide/javagui
 - Do **not** prefix member variables with `m` (unlike common Android convention)
 - Use Java 17 toolchain features
 
+### Colors
+
+Never hardcode color integers in Java/Kotlin. Always declare a named `<color>` in
+`app/src/main/res/values/colors.xml` and reference it via `R.color.*`.
+
+Status/severity colors follow a two-tier naming scheme:
+| Resource | Day-mode meaning | Night-mode pair |
+|---|---|---|
+| `status_good` | Green — everything OK | `night_status_good` |
+| `status_ok` | Yellow — acceptable | `night_status_ok` |
+| `status_warning` | Orange — degraded | `night_status_warning` |
+| `status_bad` | Red — error/missing | `night_status_bad` |
+| `status_absent` | Grey — hardware absent | `night_status_absent` |
+
+Night-mode variants are red-shifted; brighter = better (mirrors day-mode meaning).
+
 ## Key Files
 
 - [`StardroidApplication.kt`](app/src/main/java/com/google/android/stardroid/StardroidApplication.kt) - Application entry point, Dagger initialization, sensor detection

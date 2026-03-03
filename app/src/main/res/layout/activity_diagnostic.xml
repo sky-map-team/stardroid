@@ -252,6 +252,24 @@
                     style="@style/TableRow_RowHeading"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="@string/diagnostics_activity_location_permission"/>
+
+                <TextView
+                    android:id="@+id/diagnose_location_permission_txt"
+                    style="@style/TableRow_Element"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(waiting)"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    style="@style/TableRow_RowHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="@string/diagnostics_activity_gps"/>
 
                 <TextView

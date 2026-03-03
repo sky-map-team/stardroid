@@ -51,7 +51,6 @@ import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-import com.google.android.material.snackbar.Snackbar;
 
 import com.google.android.stardroid.ApplicationConstants;
 import com.google.android.stardroid.R;
@@ -219,7 +218,6 @@ public class DynamicStarMapActivity extends InjectableActivity
   @Inject NoSearchResultsDialogFragment noSearchResultsDialogFragment;
   @Inject MultipleSearchResultsDialogFragment multipleSearchResultsDialogFragment;
   @Inject NoSensorsDialogFragment noSensorsDialogFragment;
-  @Inject LocationController locationController;
   @Inject LocationPermissionDeniedDialogFragment locationPermissionDeniedDialogFragment;
   @Inject ObjectInfoTapHandler objectInfoTapHandler;
   @Inject SensorAccuracyMonitor sensorAccuracyMonitor;
@@ -616,27 +614,23 @@ public class DynamicStarMapActivity extends InjectableActivity
   }
 
   private void maybeShowLocationWarning() {
+    LocationController locationController = controller.getLocationController();
     if (!locationController.isLocationUnset()) return;
 
     LocationController.LocationStatus status = locationController.getLastStatus();
     String message;
-    View.OnClickListener action;
 
     if (status == LocationController.LocationStatus.PERMISSION_DENIED) {
       message = getString(R.string.location_warning_permission);
-      action = v -> locationPermissionDeniedDialogFragment.show(
+      locationPermissionDeniedDialogFragment.show(
           getSupportFragmentManager(), "Location Warning");
     } else if (status == LocationController.LocationStatus.MANUAL_NO_COORDS) {
       message = getString(R.string.location_warning_manual);
-      action = v -> startActivity(new Intent(this, EditSettingsActivity.class));
     } else {
       return;
     }
 
-    View root = findViewById(R.id.main_sky_view_root);
-    Snackbar.make(root, message, Snackbar.LENGTH_LONG)
-        .setAction(R.string.location_warning_fix, action)
-        .show();
+    Toast.makeText(this, message, Toast.LENGTH_LONG).show();
   }
 
   public void setTimeTravelMode(Date newTime) {

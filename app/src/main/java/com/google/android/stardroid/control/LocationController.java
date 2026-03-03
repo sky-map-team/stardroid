@@ -214,10 +214,6 @@ public class LocationController extends AbstractController implements LocationLi
     String latitude_s = PreferenceManager.getDefaultSharedPreferences(activity)
                                          .getString("latitude", "0");
 
-    if ("0".equals(latitude_s) && "0".equals(longitude_s)) {
-      lastStatus = LocationStatus.MANUAL_NO_COORDS;
-    }
-
     float longitude = 0, latitude = 0;
     try {
       longitude = Float.parseFloat(longitude_s);
@@ -225,6 +221,10 @@ public class LocationController extends AbstractController implements LocationLi
     } catch (NumberFormatException nfe) {
       Log.e(TAG, "Error parsing latitude or longitude preference");
       Toast.makeText(activity, R.string.malformed_loc_error, Toast.LENGTH_SHORT).show();
+    }
+
+    if (latitude == 0.0f && longitude == 0.0f) {
+      lastStatus = LocationStatus.MANUAL_NO_COORDS;
     }
 
     Location location = new Location(activity.getString(R.string.preferences));
