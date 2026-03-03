@@ -51,6 +51,7 @@ import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import com.google.android.material.snackbar.Snackbar;
 
 import com.google.android.stardroid.ApplicationConstants;
 import com.google.android.stardroid.R;
@@ -58,6 +59,7 @@ import com.google.android.stardroid.activities.util.NightModeHelper;
 import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
 import com.google.android.stardroid.activities.dialogs.CreditsDialogFragment;
 import com.google.android.stardroid.activities.dialogs.HelpDialogFragment;
+import com.google.android.stardroid.activities.dialogs.LocationPermissionDeniedDialogFragment;
 import com.google.android.stardroid.activities.dialogs.MultipleSearchResultsDialogFragment;
 import com.google.android.stardroid.activities.dialogs.NoSearchResultsDialogFragment;
 import com.google.android.stardroid.activities.dialogs.NoSensorsDialogFragment;
@@ -74,6 +76,7 @@ import com.google.android.stardroid.base.Lists;
 import com.google.android.stardroid.control.AstronomerModel;
 import com.google.android.stardroid.control.AstronomerModel.Pointing;
 import com.google.android.stardroid.control.ControllerGroup;
+import com.google.android.stardroid.control.LocationController;
 import com.google.android.stardroid.control.MagneticDeclinationCalculatorSwitcher;
 import com.google.android.stardroid.control.TransitioningCompositeClock;
 import com.google.android.stardroid.inject.HasComponent;
@@ -216,6 +219,8 @@ public class DynamicStarMapActivity extends InjectableActivity
   @Inject NoSearchResultsDialogFragment noSearchResultsDialogFragment;
   @Inject MultipleSearchResultsDialogFragment multipleSearchResultsDialogFragment;
   @Inject NoSensorsDialogFragment noSensorsDialogFragment;
+  @Inject LocationController locationController;
+  @Inject LocationPermissionDeniedDialogFragment locationPermissionDeniedDialogFragment;
   @Inject ObjectInfoTapHandler objectInfoTapHandler;
   @Inject SensorAccuracyMonitor sensorAccuracyMonitor;
   // A list of runnables to post on the handler when we resume.
@@ -599,6 +604,7 @@ public class DynamicStarMapActivity extends InjectableActivity
     skyView.onResume();
     Log.i(TAG, "Starting controller");
     controller.start();
+    maybeShowLocationWarning();
     activityLightLevelManager.onResume();
     if (controller.isAutoMode()) {
       sensorAccuracyMonitor.start();
@@ -607,6 +613,30 @@ public class DynamicStarMapActivity extends InjectableActivity
       handler.post(runnable);
     }
     Log.d(TAG, "-onResume at " + System.currentTimeMillis());
+  }
+
+  private void maybeShowLocationWarning() {
+    if (!locationController.isLocationUnset()) return;
+
+    LocationController.LocationStatus status = locationController.getLastStatus();
+    String message;
+    View.OnClickListener action;
+
+    if (status == LocationController.LocationStatus.PERMISSION_DENIED) {
+      message = getString(R.string.location_warning_permission);
+      action = v -> locationPermissionDeniedDialogFragment.show(
+          getSupportFragmentManager(), "Location Warning");
+    } else if (status == LocationController.LocationStatus.MANUAL_NO_COORDS) {
+      message = getString(R.string.location_warning_manual);
+      action = v -> startActivity(new Intent(this, EditSettingsActivity.class));
+    } else {
+      return;
+    }
+
+    View root = findViewById(R.id.main_sky_view_root);
+    Snackbar.make(root, message, Snackbar.LENGTH_LONG)
+        .setAction(R.string.location_warning_fix, action)
+        .show();
   }
 
   public void setTimeTravelMode(Date newTime) {

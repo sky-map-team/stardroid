@@ -59,6 +59,9 @@ public class LocationController extends AbstractController implements LocationLi
   public static final String NO_AUTO_LOCATE = "no_auto_locate";
   // Must match the key in the preferences file.
   private static final String FORCE_GPS = "force_gps";
+
+  public enum LocationStatus { OK, PERMISSION_DENIED, NO_PROVIDER, MANUAL_NO_COORDS }
+  private LocationStatus lastStatus = LocationStatus.OK;
   private static final int MINIMUM_DISTANCE_BEFORE_UPDATE_METRES = 2000;
   private static final int LOCATION_UPDATE_TIME_MILLISECONDS = 600000;
   private static final String TAG = MiscUtil.getTag(LocationController.class);
@@ -81,6 +84,7 @@ public class LocationController extends AbstractController implements LocationLi
   @Override
   public void start() {
     Log.d(TAG, "LocationController start");
+    lastStatus = LocationStatus.OK;
     boolean noAutoLocate = PreferenceManager.getDefaultSharedPreferences(activity).getBoolean(
         NO_AUTO_LOCATE, false);
 
@@ -143,6 +147,7 @@ public class LocationController extends AbstractController implements LocationLi
     } catch (SecurityException securityException) {
       Log.d(TAG, "Caught " + securityException);
       Log.d(TAG, "Most likely user has not enabled this permission");
+      lastStatus = LocationStatus.PERMISSION_DENIED;
     }
 
     Log.d(TAG, "LocationController -start");
@@ -167,6 +172,15 @@ public class LocationController extends AbstractController implements LocationLi
 
   public LatLong getCurrentLocation() {
     return model.getLocation();
+  }
+
+  public boolean isLocationUnset() {
+    LatLong loc = model.getLocation();
+    return loc.getLatitude() == 0.0 && loc.getLongitude() == 0.0;
+  }
+
+  public LocationStatus getLastStatus() {
+    return lastStatus;
   }
 
   private Builder getSwitchOnGPSDialog() {
@@ -199,6 +213,10 @@ public class LocationController extends AbstractController implements LocationLi
                                           .getString("longitude", "0");
     String latitude_s = PreferenceManager.getDefaultSharedPreferences(activity)
                                          .getString("latitude", "0");
+
+    if ("0".equals(latitude_s) && "0".equals(longitude_s)) {
+      lastStatus = LocationStatus.MANUAL_NO_COORDS;
+    }
 
     float longitude = 0, latitude = 0;
     try {

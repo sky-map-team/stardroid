@@ -1,0 +1,52 @@
+# Sky Map Project Memory
+
+## Build Gotchas
+- Always set `JAVA_HOME=$(/usr/libexec/java_home -v 17)` before building — Gradle will silently use the wrong JDK otherwise
+- Use `assembleGmsDebug` not `assembleDebug` (no plain flavor exists)
+- If `installGmsDebug` fails with `INSTALL_FAILED_UPDATE_INCOMPATIBLE`, uninstall the Play Store version first: `adb uninstall com.google.android.stardroid`
+- If device shows as offline: `adb kill-server && adb start-server`
+
+## Adding Catalog Objects (Messier/Special)
+
+### Files to touch (in order)
+1. `tools/data/messier.csv` — source of truth; RA in decimal hours, Dec in decimal degrees
+2. `app/src/main/res/values/celestial_objects.xml` — one `<string>` per name/alias
+3. `app/src/main/res/values/celestial_info_cards.xml` — keys: `object_info_<key>_{description,funfact,distance,size}`
+4. `app/src/main/assets/object_info.json` — JSON entry keyed by primary name key
+
+### CSV name format
+- Use natural names with spaces, pipe-separated: `T CrB|Blaze Star|T Coronae Borealis`
+- `AbstractAsciiProtoWriter.rKeysFromName()` converts spaces→underscores and lowercases to make resource IDs
+- Primary label and object_info.json key = first name converted (e.g. `t_crb`)
+
+### Coordinate precision
+- For extended nebulae use the **nebula centre**, not the embedded star
+- Eta Carinae Nebula (NGC 3372): RA 10h 45m 08.5s / Dec −59° 52' 04" (centre)
+  vs. Eta Carinae star: Dec −59° 41' — these differ by ~11 arcmin
+
+## Release Splash Screens
+
+- Tool: `tools/make_release_splash.py` — composites a portrait + gold label onto the base splash
+- Source images stored in: `assets/splashscreens/<name>.png` (e.g. `venus.png`, `earth.png`)
+- Base splashes (unbranded originals): `assets/splashscreens/stardroid_big_image.webp` / `stardroid_big_image_large.jpg`
+- Deployed to: `app/src/main/res/drawable/stardroid_big_image.webp` (phones) and `drawable-large/stardroid_big_image.jpg` (tablets)
+- Skill: `/release-splash <Label> <path/to/source.png> [crop x1,y1,x2,y2]`
+- New skills must be force-added: `git add --force .claude/skills/<name>/SKILL.md` (parent `.claude/` is gitignored but skills are tracked)
+
+| Release | Source | Crop |
+|---------|--------|------|
+| Venus   | `venus.png` | `808,0,2016,1200` |
+| Earth   | `earth.png` | none (2048×2048 square) |
+
+## Location UX Fix
+
+Branch: `fix/location-ux` (created 2026-03-03 from master)
+
+### What was fixed
+- `LocationController` now tracks `LocationStatus` enum (OK / PERMISSION_DENIED / NO_PROVIDER / MANUAL_NO_COORDS)
+- `lastStatus` reset to OK at start of each `start()` call; set in failure paths
+- `isLocationUnset()` returns true when model location is (0.0, 0.0)
+- `DynamicStarMapActivity.maybeShowLocationWarning()` shows a Snackbar after `controller.start()` when location is unset
+- Snackbar "Fix" → `LocationPermissionDeniedDialogFragment` (permission case) or `EditSettingsActivity` (manual mode case)
+- Material library added to `app/build.gradle`: `com.google.android.material:material:1.12.0`
+- Spec file: `specs/features/location.md`

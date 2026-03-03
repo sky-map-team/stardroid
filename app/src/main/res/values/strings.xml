@@ -27,6 +27,9 @@
     <string name="location_permission_grant">Grant Permission</string>
     <string name="location_permission_enter_manually">Enter Manually</string>
     <string name="location_permission_later">Later</string>
+    <string name="location_warning_permission">Location unavailable — permission not granted.</string>
+    <string name="location_warning_manual">Location not set — tap to configure.</string>
+    <string name="location_warning_fix">Fix</string>
     <string name="location_set_auto">Location set to %2$s</string>
     <string name="location_unable_to_geocode">Unable to decode your location - perhaps your network isn\'t available?</string>
     <string name="location_not_found_title" translation_description="dialog box title when location not found">Sorry</string>
