@@ -10,47 +10,49 @@ Sky Map needs the user's geographic location to show the correct night sky. This
 DynamicStarMapActivity.onResume()
   └─ controller.start()
        └─ LocationController.start()
+            ├─ lastStatus = OK  (reset every call)
             ├─ noAutoLocate == true?
             │    └─ setLocationFromPrefs()
-            │         ├─ prefs "latitude"/"longitude" both "0" → MANUAL_NO_COORDS
+            │         ├─ parsed lat == 0.0 && lon == 0.0 → lastStatus = MANUAL_NO_COORDS
             │         └─ else → parse and set location
             ├─ locationManager == null → setLocationFromPrefs()
             ├─ getBestProvider(enabled=true) == null?
             │    ├─ getBestProvider(enabled=false) == null → setLocationFromPrefs()
             │    └─ else → show "Enable GPS" dialog
             ├─ requestLocationUpdates + getLastKnownLocation → setLocationInModel
-            └─ SecurityException → PERMISSION_DENIED
+            └─ SecurityException → lastStatus = PERMISSION_DENIED
+  └─ maybeShowLocationWarning()
 ```
 
 ## Failure Modes
 
 ### 1. Permission denied
-**Trigger**: `SecurityException` thrown in `LocationController.start()` (line ~143), or permission not granted before `start()` runs.
+**Trigger**: `SecurityException` in `LocationController.start()`.
 
-**Existing handling**: `LocationPermissionDeniedDialogFragment` is shown the first time (via `GooglePlayServicesChecker`), offering Grant / Enter Manually / Later. If "Later" is chosen, no follow-up.
+**Existing handling**: `LocationPermissionDeniedDialogFragment` is shown the first time (via `GooglePlayServicesChecker`), offering Grant / Enter Manually / Later.
 
-**New handling** (this PR): After `controller.start()`, `DynamicStarMapActivity` calls `maybeShowLocationWarning()`. If `locationController.isLocationUnset()` and `lastStatus == PERMISSION_DENIED`, a Snackbar is shown with a "Fix" button that re-opens `LocationPermissionDeniedDialogFragment`.
+**Current handling**: `maybeShowLocationWarning()` shows a `Toast` and re-opens `LocationPermissionDeniedDialogFragment` on every `onResume()` where location is still unset.
 
 ### 2. Location provider disabled (location off in system settings)
 **Trigger**: `getBestProvider(criteria, true)` returns null but `getBestProvider(criteria, false)` is non-null.
 
-**Existing handling**: `getSwitchOnGPSDialog()` is shown, offering to open Location Settings. If cancelled, `NO_AUTO_LOCATE` is set to true and `setLocationFromPrefs()` is called.
+**Existing handling**: `getSwitchOnGPSDialog()` shown, offering to open Location Settings. If cancelled, `NO_AUTO_LOCATE` is set to true and `setLocationFromPrefs()` is called.
 
-**New handling**: No additional Snackbar — the existing dialog is sufficient. `NO_PROVIDER` status is not checked in `maybeShowLocationWarning()` (the dialog already handles it).
+**Current handling**: No additional Toast — the existing dialog is sufficient.
 
 ### 3. Manual mode with default coordinates
-**Trigger**: User enables "Set location manually" (`NO_AUTO_LOCATE = true`) in Settings without ever entering coordinates. SharedPreferences default value for "latitude"/"longitude" is the string `"0"`.
+**Trigger**: User enables "Set location manually" (`NO_AUTO_LOCATE = true`) in Settings without entering coordinates. Parsed lat/lon both equal `0.0f`.
 
-**Existing handling**: None — completely silent, map defaults to Null Island (0°N, 0°E).
+**Existing handling**: None — completely silent, map shows Null Island (0°N, 0°E).
 
-**New handling** (this PR): `setLocationFromPrefs()` detects `"0"/"0"` prefs and sets `lastStatus = MANUAL_NO_COORDS`. Snackbar shown with "Fix" button that opens `EditSettingsActivity`.
+**Current handling**: `setLocationFromPrefs()` detects parsed `0.0f`/`0.0f` and sets `lastStatus = MANUAL_NO_COORDS`. `maybeShowLocationWarning()` shows a Toast telling the user to configure in Settings.
 
 ### 4. No location provider available at all
 **Trigger**: Both `getBestProvider(criteria, true)` and `getBestProvider(criteria, false)` return null.
 
 **Existing handling**: Falls through to `setLocationFromPrefs()` silently.
 
-**New handling**: This case is rare (device has no location hardware) and is not addressed in this PR.
+**Current handling**: Not addressed (rare — device has no location hardware).
 
 ## LocationStatus Enum
 
@@ -58,23 +60,34 @@ DynamicStarMapActivity.onResume()
 
 | Value | Meaning |
 |-------|---------|
-| `OK` | Location acquired successfully (or `start()` hasn't finished yet — default) |
+| `OK` | Location acquired (or `start()` not yet called — default) |
 | `PERMISSION_DENIED` | `SecurityException` in `start()` |
-| `NO_PROVIDER` | Not currently used for Snackbar (existing dialog handles it) |
-| `MANUAL_NO_COORDS` | Manual mode, prefs are both `"0"` |
+| `NO_PROVIDER` | Not currently used for Toast (existing dialog handles it) |
+| `MANUAL_NO_COORDS` | Manual mode, parsed lat == 0.0 && lon == 0.0 |
 
-`lastStatus` is reset to `OK` at the start of each `start()` call, so it always reflects the most recent attempt.
+`lastStatus` is reset to `OK` at the start of each `start()` call.
 
-## Snackbar Behaviour
+## Toast Warning Behaviour
 
-`DynamicStarMapActivity.maybeShowLocationWarning()` is called from `onResume()` after `controller.start()`. It shows a Snackbar only if:
+`DynamicStarMapActivity.maybeShowLocationWarning()` is called from `onResume()` after
+`controller.start()`. Uses `controller.getLocationController()` to read the same instance
+that `ControllerGroup` started (direct injection creates a separate never-started instance).
 
-1. `locationController.isLocationUnset()` — model location is still (0.0, 0.0), AND
+Shows a Toast only if:
+1. `locationController.isLocationUnset()` — model location is (0.0, 0.0), AND
 2. `lastStatus` is `PERMISSION_DENIED` or `MANUAL_NO_COORDS`
 
-The Snackbar has a "Fix" action button:
-- Permission denied → shows `LocationPermissionDeniedDialogFragment`
-- Manual no coords → opens `EditSettingsActivity`
+For `PERMISSION_DENIED`, also re-shows `LocationPermissionDeniedDialogFragment`.
+
+**Note**: `Snackbar` (Material) was tried and rejected — it crashes on the app's AppCompat-only
+`FullscreenTheme` because Material layouts reference `?attr/colorOnSurface` which isn't defined
+in `ThemeOverlay.AppCompat.Dark`.
+
+## Diagnostics
+
+`DiagnosticActivity` shows a "Location Permission" row (first row in the Location & Time section):
+- **Granted** — `R.color.status_good` (day) / `R.color.night_status_good` (night)
+- **Denied** — `R.color.status_bad` (day) / `R.color.night_status_bad` (night)
 
 ## Key Constants and Files
 
@@ -82,9 +95,9 @@ The Snackbar has a "Fix" action button:
 |------|----------|
 | `NO_AUTO_LOCATE` pref key | `LocationController.NO_AUTO_LOCATE = "no_auto_locate"` |
 | Manual lat/long pref keys | `"latitude"`, `"longitude"` (default `"0"`) |
-| Root view for Snackbar | `R.id.main_sky_view_root` in `skyrenderer.xml` |
 | Permission dialog | `LocationPermissionDeniedDialogFragment` |
 | Settings entry point | `EditSettingsActivity` |
+| Status colours | `R.color.status_good/bad`, `R.color.night_status_good/bad` |
 
 ## Out of Scope
 

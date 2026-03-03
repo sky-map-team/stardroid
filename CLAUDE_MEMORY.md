@@ -43,10 +43,12 @@
 Branch: `fix/location-ux` (created 2026-03-03 from master)
 
 ### What was fixed
-- `LocationController` now tracks `LocationStatus` enum (OK / PERMISSION_DENIED / NO_PROVIDER / MANUAL_NO_COORDS)
-- `lastStatus` reset to OK at start of each `start()` call; set in failure paths
-- `isLocationUnset()` returns true when model location is (0.0, 0.0)
-- `DynamicStarMapActivity.maybeShowLocationWarning()` shows a Snackbar after `controller.start()` when location is unset
-- Snackbar "Fix" → `LocationPermissionDeniedDialogFragment` (permission case) or `EditSettingsActivity` (manual mode case)
-- Material library added to `app/build.gradle`: `com.google.android.material:material:1.12.0`
+- `LocationController` tracks `LocationStatus` enum (OK / PERMISSION_DENIED / NO_PROVIDER / MANUAL_NO_COORDS)
+- `lastStatus` reset to OK at start of each `start()` call; set in each failure path
+- Zero-coord detection uses parsed `float` values, not raw pref strings (avoids "0" vs "0.0" mismatch)
+- `ControllerGroup` stores `locationController` field and exposes `getLocationController()` — prevents two-instance bug where activity injection gets a different (never-started) instance than ControllerGroup
+- `DynamicStarMapActivity.maybeShowLocationWarning()` calls `controller.getLocationController()` and shows a `Toast` after `controller.start()` when location is unset; for PERMISSION_DENIED also shows `LocationPermissionDeniedDialogFragment`
+- **No Snackbar / no Material dependency** — Material `Snackbar` crashes on the app's AppCompat-only `FullscreenTheme` (missing `?attr/colorOnSurface`); `Toast` is used instead
+- `DiagnosticActivity`: "Location Permission" row added (first in Location & Time section); green/red colours that respect night mode
+- Status colours renamed from sensor-specific names to generic `status_good/ok/warning/bad/absent` with `night_status_*` night-mode variants; no hardcoded hex in Java
 - Spec file: `specs/features/location.md`
