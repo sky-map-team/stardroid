@@ -3,10 +3,14 @@ package com.google.android.stardroid.activities;
 import static com.google.android.stardroid.math.CoordinateManipulationsKt.getDecOfUnitGeocentricVector;
 import static com.google.android.stardroid.math.CoordinateManipulationsKt.getRaOfUnitGeocentricVector;
 
+import android.Manifest;
 import android.app.Activity;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import com.google.android.stardroid.activities.util.NightModeHelper;
 import android.hardware.Sensor;
+
+import androidx.core.app.ActivityCompat;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
@@ -108,6 +112,7 @@ public class DiagnosticActivity extends InjectableActivity
     onResumeSensors();
     activityLightLevelManager.onResume();
     continueUpdates = true;
+    updateLocationPermission();
     handler.post(new Runnable() {
       public void run() {
         updateLocation();
@@ -122,7 +127,7 @@ public class DiagnosticActivity extends InjectableActivity
 
   private void onResumeSensors() {
     accelSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-    int absentSensorColor = getResources().getColor(R.color.absent_sensor);
+    int absentSensorColor = getColor(R.color.status_absent);
     if (accelSensor == null) {
       setColor(R.id.diagnose_accelerometer_values_txt, absentSensorColor);
     } else {
@@ -152,6 +157,22 @@ public class DiagnosticActivity extends InjectableActivity
     } else {
       sensorManager.registerListener(this, lightSensor, SensorManager.SENSOR_DELAY_UI);
     }
+  }
+
+  private void updateLocationPermission() {
+    boolean granted = ActivityCompat.checkSelfPermission(this,
+        Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED;
+    String text = granted
+        ? getString(R.string.diagnostics_activity_location_permission_granted)
+        : getString(R.string.diagnostics_activity_location_permission_denied);
+    setText(R.id.diagnose_location_permission_txt, text);
+    int colorResId;
+    if (granted) {
+      colorResId = nightMode ? R.color.night_status_good : R.color.status_good;
+    } else {
+      colorResId = nightMode ? R.color.night_status_bad : R.color.status_bad;
+    }
+    setColor(R.id.diagnose_location_permission_txt, getColor(colorResId));
   }
 
   private void updateLocation() {
