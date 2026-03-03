@@ -64,8 +64,9 @@ public class WhatsNewDialogFragment extends DialogFragment {
             });
 
     String whatsNewContent = parentActivity.getString(R.string.whats_new_content);
+    String betaUserHelpText = parentActivity.getString(R.string.beta_user_help_text);
     String whatsNewText = String.format(parentActivity.getString(R.string.whats_new_text),
-        application.getVersionName(), whatsNewContent);
+        application.getVersionName(), whatsNewContent, betaUserHelpText);
     SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(parentActivity);
     boolean isNight = ActivityLightLevelManager.isNightMode(preferences);
     String bodyClass = isNight ? " class=\"night-mode\"" : "";
