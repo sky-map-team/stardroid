@@ -61,6 +61,14 @@ class Flinger(private val listener: (Float, Float) -> Unit) {
     Log.d(TAG, "Fling stopped")
   }
 
+  /**
+   * Shuts down the executor. Call from the owning component's destroy/cleanup.
+   */
+  fun shutdown() {
+    stop()
+    executor.shutdown()
+  }
+
   companion object {
     private val TAG = getTag(Flinger::class.java)
   }

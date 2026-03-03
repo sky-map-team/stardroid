@@ -14,7 +14,9 @@
 package com.google.android.stardroid.touch
 
 import android.content.Context
+import android.content.SharedPreferences
 import android.util.Log
+import com.google.android.stardroid.ApplicationConstants
 import com.google.android.stardroid.control.AstronomerModel
 import com.google.android.stardroid.control.ControllerGroup
 import com.google.android.stardroid.math.RADIANS_TO_DEGREES
@@ -30,9 +32,12 @@ import com.google.android.stardroid.util.MiscUtil.getTag
 class MapMover(
   private val model: AstronomerModel,
   private val controllerGroup: ControllerGroup,
-  context: Context
+  context: Context,
+  private val sharedPreferences: SharedPreferences
 ) : DragRotateZoomGestureDetectorListener {
   private val sizeTimesRadiansToDegrees: Float
+  private val horizonLeveler = HorizonLeveler(model) { deg -> controllerGroup.rotate(deg) }
+
   override fun onDrag(xPixels: Float, yPixels: Float): Boolean {
     // Log.d(TAG, "Dragging by " + xPixels + ", " + yPixels);
     val pixelsToRadians = model.fieldOfView / sizeTimesRadiansToDegrees
@@ -42,13 +47,29 @@ class MapMover(
   }
 
   override fun onRotate(degrees: Float): Boolean {
+    horizonLeveler.stop()
     controllerGroup.rotate(-degrees)
     return true
   }
 
   override fun onStretch(ratio: Float): Boolean {
+    horizonLeveler.stop()
     controllerGroup.zoomBy(1.0f / ratio)
     return true
+  }
+
+  override fun onGestureEnd() {
+    if (sharedPreferences.getBoolean(ApplicationConstants.AUTO_LEVEL_HORIZON_PREF_KEY, true)) {
+      horizonLeveler.start()
+    }
+  }
+
+  fun stopLeveling() {
+    horizonLeveler.stop()
+  }
+
+  fun destroy() {
+    horizonLeveler.shutdown()
   }
 
   companion object {

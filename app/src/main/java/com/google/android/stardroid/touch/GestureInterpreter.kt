@@ -50,6 +50,7 @@ class GestureInterpreter(
   override fun onDown(unused: MotionEvent): Boolean {
     Log.d(TAG, "Tap down")
     flinger.stop()
+    mapMover.stopLeveling()
     return true
   }
 
@@ -94,6 +95,11 @@ class GestureInterpreter(
   override fun onSingleTapConfirmed(e: MotionEvent): Boolean {
     Log.d(TAG, "Confirmed single tap")
     return false
+  }
+
+  fun destroy() {
+    flinger.shutdown()
+    mapMover.destroy()
   }
 
   companion object {

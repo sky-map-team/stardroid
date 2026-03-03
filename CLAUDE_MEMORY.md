@@ -38,6 +38,22 @@
 | Venus   | `venus.png` | `808,0,2016,1200` |
 | Earth   | `earth.png` | none (2048×2048 square) |
 
+## Auto-Level Horizon (manual mode)
+
+Branch: `feature/auto-level-horizon` (pushed 2026-03-01)
+
+### How it works
+- `HorizonLeveler.kt` — runs at 20 fps via `ScheduledExecutorService`; each frame computes signed misalignment angle between `currentPerp` and the zenith projection, springs 20% of the way per frame (~1–2 s return). Stops at <0.1°.
+- `DragRotateZoomGestureDetector` — `onGestureEnd()` added to listener interface (default no-op); `ACTION_UP` always fires it.
+- `MapMover` — accepts `SharedPreferences`; starts leveler on `onGestureEnd()` if pref on; stops it on any drag/rotate/stretch.
+- `GestureInterpreter.onDown` — calls `mapMover.stopLeveling()` alongside `flinger.stop()`.
+- Pref key: `ApplicationConstants.AUTO_LEVEL_HORIZON_PREF_KEY = "auto_level_horizon"` (default true).
+- Setting lives in Sensor Settings category of `preference_screen.xml`.
+
+### Key math
+1. Project zenith onto view plane: `zenithProj = zenith − (zenith·los)×los`; if `|zenithProj|² < 0.001` skip (looking straight at zenith).
+2. Signed angle: `cross = currentPerp × targetPerp`; `angle = atan2(cross·los, currentPerp·targetPerp) * R2D`.
+3. Callback calls `controllerGroup.rotate(delta)` directly (not via `mapMover.onRotate` which has a sign flip).
 ## Location UX Fix
 
 Branch: `fix/location-ux` (created 2026-03-03 from master)
