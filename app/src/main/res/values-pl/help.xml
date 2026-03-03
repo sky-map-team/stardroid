@@ -18,7 +18,7 @@
 &lt;h2&gt;Poruszanie się po niebie&lt;/h2&gt;
 &lt;h3&gt;Tryb automatyczny&lt;/h3&gt;
 &lt;p&gt;W trybie automatycznym (domyślnym) Sky Map używa czujników Twojego telefonu, aby wyświetlać wszystko, co znajduje się w kierunku, który wskazujesz swoim telefonem. Po prostu poruszaj swoim telefonem, a mapa podąży za nim.&lt;/p&gt;
-&lt;h3&gt;Tryb manualny&lt;/h3&gt;
+&lt;h3&gt;Tryb ręczny&lt;/h3&gt;
 &lt;p&gt;Naciśnij ikonę czujnika/kompasu w panelu sterowania, aby przełączyć się na tryb ręczny. W tym trybie możesz:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;przeciągnąć mapę jednym palcem, aby ją przesunąć,&lt;/li&gt;
@@ -96,7 +96,7 @@
 &lt;li&gt;znacznie przyciemnia ekran,&lt;/li&gt;
 &lt;li&gt;zmniejsza podświetlenie przycisków.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Przełącz ponownie, aby powrócić do normalnego trybu. Opcja &lt;b&gt;Automatyczne przyciemnianie ekranu&lt;/b&gt; w &lt;b&gt;Ustawienia → Wygląd&lt;/b&gt; daje Ci dodatkową kontrolę nad tym, jak bardzo ekran staje się ciemny.&lt;/p&gt;
+&lt;p&gt;Przełącz ponownie, aby powrócić do normalnego trybu. Opcja &lt;b&gt;Autoprzyciemnianie ekranu&lt;/b&gt; w &lt;b&gt;Ustawienia → Wygląd&lt;/b&gt; daje Ci dodatkową kontrolę nad tym, jak bardzo ekran staje się ciemny.&lt;/p&gt;
 
 &lt;h2&gt;Ustawianie swojej lokalizacji&lt;/h2&gt;
 &lt;p&gt;Sky Map potrzebuje Twojej przybliżonej lokalizacji, aby wyświetlać prawidłowy obraz nieba. Domyślnie korzysta z usług lokalizacyjnych Twojego urządzenia (sieć komórkowa lub GPS). Jeśli nie udzielisz dostępu, Sky Map umieści Cię w punkcie (0, 0) — czyli na środku oceanu!&lt;/p&gt;

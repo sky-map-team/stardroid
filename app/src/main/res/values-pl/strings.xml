@@ -10,6 +10,7 @@
     <string name="start_from_now">Rozpocznij od teraz</string>
     <string name="other_prefs">Inne</string>
     <string name="location_prefs">Ustawienia lokalizacji</string>
+    <string name="controls_prefs">Panel sterowania</string>
     <string name="force_gps_pref">Zawsze używaj GPS-u</string>
     <string name="force_gps_pref_hint" translation_description="this string continues from \'Always use GPS\'">nawet jeśli lokalizacja sieciowa jest dostępna</string>
     <string name="no_use_gps_pref">Ustaw lokalizację ręcznie</string>
@@ -57,7 +58,7 @@
     <string name="sensor_speed" translation_description="Old, non gyro sensors only: How quickly the sensor should send us data">Prędkość czujnika</string>
     <string name="sensor_damping" translation_description="Old, non gyro sensors only: The amount of smoothing applied to the sensor outputs.">Tłumienie</string>
     <string name="appearance_prefs" translation_description="Preferences title for section about app appearance">Wygląd</string>
-    <string name="auto_dimness_preference" translation_description="Mode for automatically dimming the screen when night mode is selected">Automatyczne przyciemnianie ekranu</string>
+    <string name="auto_dimness_preference" translation_description="Mode for automatically dimming the screen when night mode is selected">Autoprzyciemnianie ekranu</string>
     <string name="font_size_preference" translation_description="Change the font size">Rozmiar czcionki</string>
     <string name="font_size_preference_description" translation_description="help to go along with the change font size preference">Dostosuj rozmiar tekstu etykiety</string>
     <string name="ecliptic">Ekliptyka</string>
@@ -248,6 +249,8 @@ Sky Map polega na czujniku kompasu wbudowanym w Twój telefon. Jeśli dokładno�
     <string name="disable_gyro_preference_summary">Nie wszystkie urządzenia mają żyroskop – jeśli Twoje posiada, uzyskasz lepsze wyniki z włączonym żyroskopem i odznaczeniem tego pola. Z drugiej strony, jeśli Twoje urządzenie nie ma żyroskopu, Sky Map prawdopodobnie nie będzie działać, jeśli odznaczysz to pole</string>
     <string name="rotate_horizon_preference_title">Kierunek widzenia</string>
     <string name="rotate_horizon_preference_summary">Obracaj horyzont o 90° (dla ekranów z wymuszoną poziomą orientacją ekranu) lub używaj trybu wskaźnika, aby ekran pokazywał, na co wskazuje góra telefonu (zobacz tekst pomocy)</string>
+    <string name="auto_level_horizon_preference_title">Autowyrównywanie horyzontu</string>
+    <string name="auto_level_horizon_preference_summary">W trybie ręcznym horyzont stopniowo wraca do pozycji poziomej po podniesieniu palców</string>
 
     <string name="show_object_info_pref_title" translation_description="Preference title for showing info cards when tapping objects">Pokazuj informacje przy naciśnięciu</string>
     <string name="show_object_info_pref_summary" translation_description="Preference summary for the tap info feature">Naciskaj ciała niebieskie, aby dowiedzieć się o nich więcej</string>
