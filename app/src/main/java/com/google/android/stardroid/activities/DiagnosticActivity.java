@@ -166,13 +166,13 @@ public class DiagnosticActivity extends InjectableActivity
         ? getString(R.string.diagnostics_activity_location_permission_granted)
         : getString(R.string.diagnostics_activity_location_permission_denied);
     setText(R.id.diagnose_location_permission_txt, text);
-int colorResId;
-if (granted) {
-  colorResId = nightMode ? R.color.night_status_good : R.color.status_good;
-} else {
-  colorResId = nightMode ? R.color.night_status_bad : R.color.status_bad;
-}
-setColor(R.id.diagnose_location_permission_txt, getColor(colorResId));
+    int colorResId;
+    if (granted) {
+      colorResId = nightMode ? R.color.night_status_good : R.color.status_good;
+    } else {
+      colorResId = nightMode ? R.color.night_status_bad : R.color.status_bad;
+    }
+    setColor(R.id.diagnose_location_permission_txt, getColor(colorResId));
   }
 
   private void updateLocation() {
