@@ -8,41 +8,18 @@
     <string name="go">انطلق!</string>
     <string name="location_prefs">إعدادات الموقع</string>
     <string name="force_gps_pref">استخدم الموقع دائما</string>
-    <string name="force_gps_pref_hint" translation_description="this string continues from \'Always use GPS\'">if enabled, even if network location is available</string>
     <string name="no_use_gps_pref">تحديد يدوي للموقع</string>
-    <string name="no_use_gps_pref_hint">Enter a place or a lat/long below</string>
     <string name="location_placename">اسم المكان</string>
-    <string name="location_placename_hint" translation_description="An example address.  Translators: please pick an address suitable for your country.  If it has an astronomical connection (e.g. the address of an observatory or famous astronomer) then that would be even better.">e.g. 1400 West Mars Hill Road, Flagstaff, AZ.</string>
     <string name="location_lat_pref">خط العرض</string>
     <string name="location_long_pref">خط الطول</string>
     <string name="degrees" translation_description="angular degrees">الدرجة</string>
     <string name="preferences">التفضيلات</string>
-    <string name="location_offer_to_enable">Auto-location is disabled.  Would you like to enable it?</string>
-    <string name="location_offer_to_enable_gps_title">Auto-location disabled</string>
-    <string name="location_set_auto">Location set from %1$s to %2$s</string>
-    <string name="location_unable_to_geocode">Unable to decode your location - perhaps your network isn\'t available?</string>
-    <string name="location_not_found_title" translation_description="dialog box title when location not found">Sorry</string>
-    <string name="location_not_found" translation_description="dialog message when placename not found">%s not found.</string>
-    <string name="location_long_lat">Longitude:%1$s, Latitude:%2$s</string>
-    <string name="location_place_found">Place found.  Setting latitude %1$f and longitude %2$f</string>
-    <string name="use_magnetic_correction">Use magnetic correction</string>
     <string name="show_stars_pref">النجوم</string>
     <string name="show_constellations_pref">المجموعات النجمية</string>
-    <string name="show_messier_objects_pref" translation_description="The celestial objects catalogued by Charles Messier">Messier Objects</string>
     <string name="show_planets_pref">الكواكب</string>
-    <string name="show_grid_pref">RA/Dec Grid</string>
-    <string name="show_horizon_pref">Horizon</string>
-    <string name="show_sky_gradient" translation_description="This is a shading of the color of the sky used for effect">Sky Gradient</string>
-    <string name="show_meteors_pref">Meteor Showers</string>
-    <string name="sensor_prefs">Sensor Settings</string>
-    <string name="sensor_speed" translation_description="How quickly the sensor should send us data">Sensor Speed</string>
-    <string name="sensor_damping" translation_description="The amount of smoothing applied to the sensor outputs.">Damping</string>
-    <string name="ecliptic">Ecliptic</string>
-    <string name="malformed_loc_error">Latitude or longitude setting isn\'t a number.</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">موافق</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">لا شكرًا</string>
     <string name="menu_help" translation_description="menu item to show \'Help\' box">مساعدة</string>
-    <string name="help_dialog_title">Help for Sky Map</string>
     <string name="set_manual">التحويل إلى الوضع اليدوي</string>
     <string name="set_auto">التحويل إلى الوضع التلقائي</string>
     <string name="menu_toggle_dim">تفعيل الوضع الليلي</string>
@@ -56,45 +33,17 @@
     <string name="search_hint" translation_description="an example search target">مثال: زحل</string>
     <string name="no_search_title">لا توجد بيانات</string>
     <string name="many_search_results_title">هل تقصد</string>
-    <string name="other" translation_description="A preference category (ie preferences that don't belong in any other category)">Other</string>
     <string name="menu_time">السفر عبر الزمن</string>
-    <string name="time_travel_start_message_alt">Traveling through time to %s ...</string>
-    <string name="time_travel_close_message">Back to the present ...</string>
     <string name="popular_dates_prompt" translation_description="Label for a list of dates the user can choose from">تواريخ مشهورة</string>
     <string name="custom_date_prompt" translation_description="Label telling the user to manually specify a date">أو حدد تاريخك</string>
     <string name="change_date_prompt">غير التاريخ</string>
     <string name="change_time_prompt">غير الوقت</string>
-    <string name="now_visiting" translation_description="used in time travel dialog to tell the user what time they are visiting, time formatted as yyyy.mm.dd at hh.mm.ss + timezone">
-        Now visiting: %s</string>
-    <string name="time_travel_label_past" translation_description="Label showing that we are in the past">Time Travel: Past</string>
-    <string name="time_travel_label_future" translation_description="Label showing that we are in the future">Time Travel: Future</string>
-    <string name="time_travel_stopped" translation_description="Label showing rate of travel through time">Time travel frozen</string>
-    <string name="time_travel_second_speed" translation_description="Label showing rate of travel through time.  The symbol means greater than.">Traveling &gt; @ 1 sec/sec</string>
-    <string name="time_travel_minute_speed" translation_description="Label showing rate of travel through time">Traveling &gt; @ 1 min/sec</string>
-    <string name="time_travel_10minute_speed" translation_description="Label showing rate of travel through time">Traveling &gt; @ 10 min/sec</string>
-    <string name="time_travel_hour_speed" translation_description="Label showing rate of travel through time">Traveling &gt; @ 1 hour/sec</string>
-    <string name="time_travel_day_speed" translation_description="Label showing rate of travel through time">Traveling &gt; @ 1 day/sec</string>
-    <string name="time_travel_week_speed" translation_description="Label showing rate of travel through time">Traveling &gt; @ 1 week/sec</string>
-    <string name="time_travel_second_speed_back" translation_description="Label showing rate of travel through time">Traveling &lt; @ 1 sec/sec</string>
-    <string name="time_travel_minute_speed_back" translation_description="Label showing rate of travel through time">Traveling &lt; @ 1 min/sec</string>
-    <string name="time_travel_10minute_speed_back" translation_description="Label showing rate of travel through time">Traveling &lt; @ 10 min/sec</string>
-    <string name="time_travel_hour_speed_back" translation_description="Label showing rate of travel through time">Traveling &lt; @ 1 hour/sec</string>
-    <string name="time_travel_day_speed_back" translation_description="Label showing rate of travel through time">Traveling &lt; @ 1 day/sec</string>
-    <string name="time_travel_week_speed_back" translation_description="Label showing rate of travel through time">Traveling &lt; @ 1 week/sec</string>
     <string name="use_sound_effects" translation_description="A preferences menu label">تفعيل الصوت</string>
     <string name="menu_gallery">المعرض</string>
     <string name="gallery_image_search_btn">ابحث في السماء</string>
     <string name="gallery_image_back_btn">الرجوع إلى المعرض</string>
-    <string name="hubble_image_gallery_title">Sky Map Hubble Gallery</string>
     <string name="hubble_image">صور هابل</string>
-    <string name="search_overlay_title" translation_description="title for search overlay">Point your phone toward the arrow</string>
-    <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">Looking for:</string>
-    <string name="sun_wont_set_message">The sun will not set during the next 24 hours at your current location.</string>
-    <string name="menu_tos">Terms of Service</string>
-    <string name="north_pole">NP</string>
-    <string name="south_pole">SP</string>
     <string name="enable_analytics">أرسل احصائيات الإستخدام</string>
-    <string name="enable_analytics_desc">Make Sky Map better by sending anonymous data to Google Analytics</string>
     <string name="show_object_info_auto_mode_title">بطاقات المعلومات في الوضع التلقائي</string>
     <string name="show_object_info_auto_mode_summary">إظهار بطاقات المعلومات أيضًا عند النقر على الأجرام في الوضع التلقائي (المستشعرات)</string>
 </resources>

@@ -194,11 +194,11 @@
     <string name="compass_calibration_activity_user_heading">Popraw swoje ustawienie</string>
     <string name="compass_calib_what_to_do" translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL">
 Sky Map polega na czujniku kompasu wbudowanym w Twój telefon. Jeśli dokładność pokazana powyżej jest niska, czujnik wymaga „resetu” przez poruszanie telefonem na kształt ósemki: %s.&lt;br/&gt;&lt;br/&gt;
-    &lt;b&gt;Ważne:&lt;/b&gt; Kalibracja jest procesem sprzętowym obsługiwanym przez Twoje urządzenie. Chociaż poprawia niezawodność czujnika, zewnętrzne zakłócenia magnetyczne mogą nadal powodować „odchylenie” lub niewielkie dryfowanie. Jest to fizyczne ograniczenie kompasów mobilnych, a nie błąd w aplikacji. Zobacz &lt;i&gt;Rozwiązywanie problemów&lt;/i&gt; w &lt;i&gt;Pomoc&lt;/i&gt; dla innych rozwiązań wartych wypróbowania.
+&lt;b&gt;Ważne:&lt;/b&gt; Kalibracja jest procesem sprzętowym obsługiwanym przez Twoje urządzenie. Chociaż poprawia niezawodność czujnika, zewnętrzne zakłócenia magnetyczne mogą nadal powodować „odchylenie” lub niewielkie dryfowanie. Jest to fizyczne ograniczenie kompasów mobilnych, a nie błąd w aplikacji. Zobacz &lt;i&gt;Rozwiązywanie problemów&lt;/i&gt; w &lt;i&gt;Pomoc&lt;/i&gt; dla innych rozwiązań wartych wypróbowania.
     </string>
     <string name="compass_calib_what_to_do_user" transation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL">
-        Twój telefon zgłasza dokładność kompasu jak pokazano powyżej. Aby ją poprawić, wykonaj ruchy swoim urządzeniem na kształt ósemki (%s).&lt;br/&gt;&lt;br/&gt;
-        &lt;b&gt;Uwaga dotycząca dokładności:&lt;/b&gt; Kalibracja jest wymaganiem na poziomie sprzętowym Twojego telefonu, a nie ustawieniem Sky Map. Nawet po kalibracji lokalne pola magnetyczne (jak deska rozdzielcza samochodu lub magnesy) mogą powodować niewielkie odchylenia w kierunku.  Zobacz &lt;i&gt;Rozwiązywanie problemów&lt;/i&gt; w &lt;i&gt;Pomoc&lt;/i&gt; dla innych rozwiązań wartych wypróbowania.
+Twój telefon zgłasza dokładność kompasu jak pokazano powyżej. Aby ją poprawić, wykonaj ruchy swoim urządzeniem na kształt ósemki (%s).&lt;br/&gt;&lt;br/&gt;
+&lt;b&gt;Uwaga dotycząca dokładności:&lt;/b&gt; Kalibracja jest wymaganiem na poziomie sprzętowym Twojego telefonu, a nie ustawieniem Sky Map. Nawet po kalibracji lokalne pola magnetyczne (jak deska rozdzielcza samochodu lub magnesy) mogą powodować niewielkie odchylenia w kierunku.  Zobacz &lt;i&gt;Rozwiązywanie problemów&lt;/i&gt; w &lt;i&gt;Pomoc&lt;/i&gt; dla innych rozwiązań wartych wypróbowania.
     </string>
     <string name="sensor_reverse_preference_title">Odwróć oś Z magnetometru</string>
     <string name="sensor_reverse_preference_summary">Poprawka dla telefonów z nieprawidłowo zaimplementowanymi czujnikami – wymaga ponownego uruchomienia</string>
