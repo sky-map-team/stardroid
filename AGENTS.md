@@ -4,11 +4,12 @@ This file provides project context for AI coding assistants working in this repo
 
 ## Project Overview
 
-Sky Map is an open-source Android planetarium app that displays the night sky in real-time using device sensors and OpenGL rendering. It was originally created by Google as "Google Sky Map" and open-sourced in 2011. The project is now community-maintained. The original internal codename "Stardroid" is still present in package names and the codebase.
+Sky Map is an open-source Android planetarium app that displays the night sky in real-time using
+device sensors and OpenGL rendering. Originally "Google Sky Map" (open-sourced 2011), now
+community-maintained. The internal codename "Stardroid" remains in package names.
 
-The app uses the device's sensors (accelerometer, magnetometer, gyroscope) and GPS to determine orientation and location, then renders the appropriate sky view using OpenGL.
-
-The codebase is written in Java and Kotlin, targeting Android SDK 26–36.
+Codebase: Java and Kotlin, targeting Android SDK 26–36.
+github: https://github.com/sky-map-team/stardroid
 
 ## Module Structure
 
@@ -16,169 +17,83 @@ The codebase is written in Java and Kotlin, targeting Android SDK 26–36.
 - **datamodel/** - Protocol buffer definitions for astronomical objects
 - **tools/** - Standalone utilities for converting star catalogs to binary protobuf format
 
-Read the specs before undertaking any complex investigations.
-
-## Build Commands
-
-### Prerequisites
-
-- Android SDK installed
-- `local.properties` in the root directory:
-  ```
-  sdk.dir=<path to your Android SDK>
-  ```
-
-### Standard Development
-
-```bash
-# Build debug APK (GMS flavor with Google Analytics)
-./gradlew :app:assembleGmsDebug
-
-# Build F-Droid flavor (no analytics/Google services)
-./gradlew :app:assembleFdroidDebug
-
-# Full rebuild including data generation
-./build_skymap.sh          # GMS
-./build_skymap.sh --fdroid   # F-Droid
-./build_skymap --quick # Don't regenerate the data
-
-# Build a release bundle
-./gradlew :app:bundleGmsRelease
-```
-
-Note: The build script has to fix Gradle's generated classpath — see `build_skymap.sh` for details.
-
-### Testing
-
-```bash
-# Run all unit tests
-./gradlew test
-
-# Run unit tests for the app module only
-./gradlew app:test
-
-# Run instrumented tests (requires connected device/emulator)
-./gradlew app:connectedAndroidTest
-```
-
-### Linting
-
-```bash
-./gradlew lint
-```
-
-### Data Generation
-
-When modifying star catalogs or astronomical data:
-
-```bash
-cd tools
-./generate.sh  # Creates ASCII protocol buffers
-./binary.sh    # Converts to binary format in app/src/main/assets/
-```
-
-### Deployment
-
-```bash
-./deploy.sh       # Deploy to a connected device or emulator
-./deploy.sh -p # Deploy to a physical device
-./deploy.sh -d    # Deploy a debug build
-./undeploy.sh     # Uninstall the app
-```
+Read specs in `specs/` before undertaking complex investigations, starting with the overview.md file
+to know which specs to read.
 
 ## Build Flavors
 
-- **gms** - Includes Google Play Services (Analytics, Location). Requires `no-checkin.properties` for release builds.
+- **gms** - Includes Google Play Services (Analytics, Location). Requires `no-checkin.properties`
+  for release builds.
 - **fdroid** - Pure open source, no Google dependencies.
 
-Always specify the flavor when building: use `assembleGmsDebug`, not `assembleDebug`.
+Always specify the flavor: use `assembleGmsDebug`, not `assembleDebug`. See the `/build` skill for
+all build, test, deploy, and data-generation commands.
 
 ## Architecture
 
-See `docs/ARCHITECTURE.md` for a full architectural overview. Key patterns are summarized below.
+See `docs/ARCHITECTURE.md` for a full overview.
 
 ### Dependency Injection (Dagger 2)
 
-The app uses a two-level Dagger 2 component hierarchy (not Hilt):
+Two-level hierarchy (not Hilt):
 
-1. **ApplicationComponent** - Singleton, app-level dependencies (created in `StardroidApplication`)
-2. **Activity Components** - Per-activity scoped components (e.g., `DynamicStarMapComponent`)
+1. **ApplicationComponent** - Singleton, created in `StardroidApplication`
+2. **Activity Components** - Per-activity scoped (e.g. `DynamicStarMapComponent`)
 
-Each activity defines its own Dagger component that depends on `ApplicationComponent`. Activities annotated with `@PerActivity` scope receive activity-specific instances.
+#### ⚠️ Scoping pitfall
 
-Key injection points:
-- `StardroidApplication.onCreate()` - Initializes `DaggerApplicationComponent`
-- Activity components inject via `inject(activity)` method
+Do **not** use `@PerActivity` scope for resources released/re-created across `onPause()`/
+`onResume()` (e.g. `MediaPlayer`, file handles). Dagger caches the first instance permanently —
+after `onPause()` releases it, the next `onResume()` gets the dead object.
 
-#### ⚠️ Scoping and resource lifecycle pitfall
-
-Do **not** use `@PerActivity` scope for resources that must be released and re-created across `onPause()`/`onResume()` cycles (e.g. `MediaPlayer`, file handles, camera resources). The Dagger component is built once in `onCreate()` and lives for the entire activity instance. If a `@PerActivity`-scoped `@Provides` method returns such a resource, Dagger caches the first instance permanently. After `onPause()` releases it, the next `onResume()` call to `Provider.get()` returns the same dead/released object — leading to silent failures or `IllegalStateException`.
-
-**Rule:** Resources with a `onResume`/`onPause` lifecycle must use an **unscoped** `@Provides` method so that `Provider.get()` creates a fresh instance on every call. Also prefer non-blocking initialisation (e.g. `MediaPlayer.prepareAsync()` rather than `MediaPlayer.create()` which calls blocking `prepare()`) to avoid ANRs when the `@Provides` method is called on the main thread.
+**Rule:** Resources with an `onResume`/`onPause` lifecycle must use **unscoped** `@Provides` so
+`Provider.get()` creates a fresh instance each call. Prefer `MediaPlayer.prepareAsync()` over
+blocking `MediaPlayer.create()` to avoid ANRs.
 
 ### Rendering Pipeline
 
-**Layer → AstronomicalSource → Primitives → OpenGL**
-
-1. **Layers** (`layers/` package) - 12 switchable layers (stars, constellations, planets, ISS, etc.)
-   - Data-driven layers extend `AbstractFileBasedLayer` (loads protobuf data)
-   - Simple layers like `HorizonLayer` contain their own `AbstractAstronomicalSource` subclass
-
-2. **Sources** - Astronomical objects implement `AstronomicalSource` interface
-   - `ProtobufAstronomicalSource` - Objects loaded from binary data
-   - `PlanetSource` - Solar system objects with calculated positions
-
-3. **Primitives** - Four types rendered by OpenGL:
-   - `PointPrimitive` - Stars, planets (`PointObjectManager`)
-   - `LinePrimitive` - Constellation lines, grids (`LineObjectManager`)
-   - `TextPrimitive` - Labels (`LabelObjectManager`)
-   - `ImagePrimitive` - Images (`ImageObjectManager`)
-
-4. **Renderer** - `RendererController` manages `RendererObjectManager`s
-   - Layers register with `RendererController`
-   - Updates queued as `RendererObjectManager.UpdateType`
-   - OpenGL rendering in `SkyRenderer`
+Layers → AstronomicalSource → Primitives (Point/Line/Text/Image) → OpenGL via `RendererController` /
+`SkyRenderer`. See `docs/ARCHITECTURE.md` for full detail.
 
 ### Coordinate Transformation
 
-The core challenge is transforming device orientation into celestial coordinates:
-
-**Phone Coordinates → Transformation Matrix → Celestial Coordinates**
-
-Key class: `AstronomerModel` (`control/` package)
-
-1. **Phone coordinates** (`_p` suffix) — from rotation sensor (fused accelerometer + magnetometer + gyroscope) or legacy raw sensors
-2. **Celestial coordinates** (`_c` suffix) — Up = zenith from latitude/sidereal time; North = Earth's axis projected to ground; East = North × Up
-3. **Transformation**: Matrix `M` from these vectors maps phone pointing direction to RA/Dec
-
-See `docs/design/sensors.md` for the full mathematical explanation.
+`AstronomerModel` maps phone sensor coordinates to celestial RA/Dec via a transformation matrix
+derived from zenith and North vectors. See `docs/design/sensors.md` for the math.
 
 ### Data Flow
 
 ```
 Raw catalogs → tools/Main.java → ASCII protobuf → binary protobuf → app/src/main/assets/
                 (StellarAsciiProtoWriter)  (AsciiToBinaryProtoWriter)
-                (MessierAsciiProtoWriter)
 ```
 
-Runtime: Binary files loaded by `AbstractFileBasedLayer`, deserialized into `ProtobufAstronomicalSource` objects.
+Runtime: Binary files loaded by `AbstractFileBasedLayer`, deserialized into
+`ProtobufAstronomicalSource`.
+
+### Adding Dialog Fragments
+
+Follow the pattern in `AbstractDynamicStarMapModule`:
+
+1. Add a `@Provides @PerActivity` method returning `new XyzDialogFragment()`
+2. Add `XyzDialogFragment.ActivityComponent` to `DynamicStarMapComponent` interface
+3. Inject the fragment in `DynamicStarMapActivity` and handle in `onOptionsItemSelected`
 
 ## Code Style
 
-Do **not** add a Google copyright header to new files. This project is community-maintained;
-new files should have no copyright header at all.
+No copyright header on new files.
 
 Follow the [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html):
+
 - 100 character line wrap
 - Do **not** prefix member variables with `m` (unlike common Android convention)
 - Use Java 17 toolchain features
 
 ### Colors
 
-Never hardcode color integers in Java/Kotlin. Always declare a named `<color>` in
-`app/src/main/res/values/colors.xml` and reference it via `R.color.*`.
+Never hardcode color integers in Java/Kotlin. Declare in `app/src/main/res/values/colors.xml` and
+reference via `R.color.*`.
 
-Status/severity colors follow a two-tier naming scheme:
+Status colors follow a two-tier naming scheme:
 | Resource | Day-mode meaning | Night-mode pair |
 |---|---|---|
 | `status_good` | Green — everything OK | `night_status_good` |
@@ -192,13 +107,18 @@ Night-mode variants are red-shifted; brighter = better (mirrors day-mode meaning
 ## Key Files
 
 - [`StardroidApplication.kt`](app/src/main/java/com/google/android/stardroid/StardroidApplication.kt) - Application entry point, Dagger initialization, sensor detection
-- [`DynamicStarMapActivity.java`](app/src/main/java/com/google/android/stardroid/activities/DynamicStarMapActivity.java) - Main interactive star map activity
-- [`AstronomerModel.java`](app/src/main/java/com/google/android/stardroid/control/AstronomerModel.java) - Coordinate transformation logic
-- [`SkyRenderer.java`](app/src/main/java/com/google/android/stardroid/renderer/SkyRenderer.java) - OpenGL rendering
-- [`source.proto`](datamodel/src/main/proto/source.proto) - Protocol buffer schema for astronomical objects
+- [
+  `DynamicStarMapActivity.java`](app/src/main/java/com/google/android/stardroid/activities/DynamicStarMapActivity.java) -
+  Main interactive star map activity
+- [
+  `AstronomerModel.java`](app/src/main/java/com/google/android/stardroid/control/AstronomerModel.java) -
+  Coordinate transformation logic
+- [`SkyRenderer.java`](app/src/main/java/com/google/android/stardroid/renderer/SkyRenderer.java) -
+  OpenGL rendering
+- [`source.proto`](datamodel/src/main/proto/source.proto) - Protocol buffer schema for astronomical
+  objects
 
 ## Testing
 
-- Unit tests use JUnit 4, Robolectric, Mockito, and Truth
-- Instrumented tests use Espresso
-- Test structure mirrors main source: `app/src/test/` and `app/src/androidTest/`
+Unit tests: JUnit 4, Robolectric, Mockito, Truth. Instrumented: Espresso.
+Structure mirrors main source: `app/src/test/` and `app/src/androidTest/`.
