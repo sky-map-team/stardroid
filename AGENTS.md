@@ -27,6 +27,29 @@ Read the specs before undertaking any complex investigations.
   ```
   sdk.dir=<path to your Android SDK>
   ```
+### Build Environment
+
+Always set the correct Java version before building:
+
+```bash
+export JAVA_HOME=$(/usr/libexec/java_home -v 17)
+export ANDROID_HOME=~/Library/Android/sdk
+```
+
+### Adding Dialog Fragments
+
+Follow the pattern in `AbstractDynamicStarMapModule`:
+1. Add a `@Provides @PerActivity` method returning `new XyzDialogFragment()`
+2. Add `XyzDialogFragment.ActivityComponent` to `DynamicStarMapComponent` interface
+3. Inject the fragment in `DynamicStarMapActivity` and handle in `onOptionsItemSelected`
+
+## Build Flavors
+
+- **gms** - Includes Google Play Services (Analytics, Location). Requires `no-checkin.properties` for release builds.
+- **fdroid** - Pure open source, no Google dependencies.
+
+Always specify the flavor when building: use `assembleGmsDebug`, not `assembleDebug`.
+
 
 ### Standard Development
 
