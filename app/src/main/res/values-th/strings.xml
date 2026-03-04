@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Educational Content Labels -->
-
+    <string name="show_object_info_auto_mode_title">การ์ดข้อมูลในโหมดอัตโนมัติ</string>
+    <string name="show_object_info_auto_mode_summary">แสดงการ์ดข้อมูลเมื่อแตะวัตถุในโหมดอัตโนมัติ (เซ็นเซอร์) ด้วย</string>
     <string name="object_info_funfact_label">เกร็ดน่ารู้:</string>
     <string name="object_info_distance_label">ระยะทาง:</string>
     <string name="object_info_size_label">ขนาด:</string>
     <string name="object_info_mass_label">มวล:</string>
     <string name="object_info_spectral_label">สเปกตรัม:</string>
     <string name="object_info_magnitude_label">โชติมาตร:</string>
-    <string name="show_object_info_auto_mode_title">การ์ดข้อมูลในโหมดอัตโนมัติ</string>
-    <string name="show_object_info_auto_mode_summary">แสดงการ์ดข้อมูลเมื่อแตะวัตถุในโหมดอัตโนมัติ (เซ็นเซอร์) ด้วย</string>
 </resources>

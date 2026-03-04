@@ -100,17 +100,17 @@
     <string name="vulpecula" translation_description="Name of the Vulpecula constellation">Vulpecula</string>
 
     <!-- Major solar system objects -->
-    <string name="sun">Sun</string>
-    <string name="moon">Moon</string>
-    <string name="mercury">Mercury</string>
-    <string name="venus">Venus</string>
-    <string name="earth">Earth</string>
-    <string name="mars">Mars</string>
-    <string name="jupiter">Jupiter</string>
-    <string name="saturn">Saturn</string>
-    <string name="uranus">Uranus</string>
-    <string name="neptune">Neptune</string>
-    <string name="pluto">Pluto</string>
+    <string name="sun" translation_description="Name of the Sun">Sun</string>
+    <string name="moon" translation_description="Name of the Earth's Moon">Moon</string>
+    <string name="mercury" translation_description="Name of the planet Mercury">Mercury</string>
+    <string name="venus" translation_description="Name of the planet Venus">Venus</string>
+    <string name="earth" translation_description="Name of the planet Earth">Earth</string>
+    <string name="mars" translation_description="Name of the planet Mars">Mars</string>
+    <string name="jupiter" translation_description="Name of the planet Jupiter">Jupiter</string>
+    <string name="saturn" translation_description="Name of the planet Saturn">Saturn</string>
+    <string name="uranus" translation_description="Name of the planet Uranus">Uranus</string>
+    <string name="neptune" translation_description="Name of the planet Neptune">Neptune</string>
+    <string name="pluto" translation_description="Name of the dwarf planet Pluto">Pluto</string>
 
     <!-- Gallery objects -->
     <string name="crab_nebula" translation_description="hubble object">Crab Nebula</string>
@@ -348,9 +348,9 @@
     <string name="ursids" translation_description="Meteor Shower">Ursids</string>
 
     <!-- Comets -->
-    <string name="comet_leonard">Comet Leonard</string>
+    <string name="comet_leonard" translation_description="Name of Comet Leonard (C/2021 A1) as shown on the sky map">Comet Leonard</string>
     <!-- TODO: no need for these alt names once our search is less lousy -->
-    <string name="comet_leonard_alt">Leonard (Comet)</string>
-    <string name="comet_neowise">Comet Neowise</string>
-    <string name="comet_neowise_alt">Neowise (Comet)</string>
+    <string name="comet_leonard_alt" translation_description="Alternate searchable name for Comet Leonard, surname first">Leonard (Comet)</string>
+    <string name="comet_neowise" translation_description="Name of Comet NEOWISE (C/2020 F3) as shown on the sky map">Comet Neowise</string>
+    <string name="comet_neowise_alt" translation_description="Alternate searchable name for Comet NEOWISE, surname first">Neowise (Comet)</string>
 </resources>

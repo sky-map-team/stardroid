@@ -1,5 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="andromeda" translation_description="Name of the Andromeda constellation">仙女座</string>
+    <string name="aquarius" translation_description="Name of the Aquarius constellation">寶瓶座</string>
+    <string name="aquila" translation_description="Name of the Aquila constellation">天鷹座</string>
+    <string name="aries" translation_description="Name of the Aries constellation">白羊座</string>
+    <string name="auriga" translation_description="Name of the Auriga constellation">御夫座</string>
+    <string name="bootes" translation_description="Name of the Bootes constellation">牧夫座</string>
+    <string name="cancer" translation_description="Name of the Cancer constellation">巨蟹座</string>
+    <string name="canis_major" translation_description="Name of the Canis Major constellation">大犬座</string>
+    <string name="capricornus" translation_description="Name of the Capricornus constellation">摩羯座</string>
+    <string name="carina" translation_description="Name of the Carina constellation">船底座</string>
+    <string name="cassiopeia" translation_description="Name of the Cassiopeia constellation">仙后座</string>
+    <string name="centaurus" translation_description="Name of the Centaurus constellation">半人馬座</string>
+    <string name="cetus" translation_description="Name of the Cetus constellation">鯨魚座</string>
+    <string name="crux" translation_description="Name of the Crux constellation">南十字座</string>
+    <string name="cygnus" translation_description="Name of the Cygnus constellation">天鵝座</string>
+    <string name="draco" translation_description="Name of the Draco constellation">天龍座</string>
+    <string name="eridanus" translation_description="Name of the Eridanus constellation">波江座</string>
+    <string name="gemini" translation_description="Name of the Gemini constellation">雙子座</string>
+    <string name="grus" translation_description="Name of the Grus constellation">天鶴座</string>
+    <string name="hercules" translation_description="Name of the Hercules constellation">武仙座</string>
+    <string name="hydrus" translation_description="Name of the Hydrus constellation">水蛇座</string>
+    <string name="leo" translation_description="Name of the Leo constellation">獅子座</string>
+    <string name="libra" translation_description="Name of the Libra constellation">天秤座</string>
+    <string name="lupus" translation_description="Name of the Lupus constellation">豺狼座</string>
+    <string name="lyra" translation_description="Name of the Lyra constellation">天琴座</string>
+    <string name="ophiuchus" translation_description="Name of the Ophiuchus constellation">蛇夫座</string>
+    <string name="orion" translation_description="Name of the Orion constellation">獵戶座</string>
+    <string name="pavo" translation_description="Name of the Pavo constellation">孔雀座</string>
+    <string name="pegasus" translation_description="Name of the Pegasus constellation">飛馬座</string>
+    <string name="perseus" translation_description="Name of the Perseus constellation">英仙座</string>
+    <string name="phoenix" translation_description="Name of the Phoenix constellation">鳳凰座</string>
+    <string name="pisces" translation_description="Name of the Pisces constellation">雙魚座</string>
+    <string name="piscis_austrinus" translation_description="Name of the Piscis Austrinus constellation">南魚座</string>
+    <string name="puppis" translation_description="Name of the Puppis constellation">船尾座</string>
+    <string name="sagittarius" translation_description="Name of the Sagittarius constellation">人馬座</string>
+    <string name="scorpius" translation_description="Name of the Scorpius constellation">天蠍座</string>
+    <string name="taurus" translation_description="Name of the Taurus constellation">金牛座</string>
+    <string name="tucana" translation_description="Name of the Tucana constellation">杜鵑座</string>
+    <string name="ursa_major" translation_description="Name of the Ursa Major constellation">大熊座</string>
+    <string name="ursa_minor" translation_description="Name of the Ursa Minor constellation">小熊座</string>
+    <string name="vela" translation_description="Name of the Vela constellation">船帆座</string>
+    <string name="virgo" translation_description="Name of the Virgo constellation">處女座</string>
+    <string name="capricorn" translation_description="Name of the Capricorn constellation">摩羯座</string>
+    <string name="southern_cross" translation_description="Name of the Southern Cross constellation">南十字星</string>
+    <string name="scorpio" translation_description="Name of the Scorpio constellation">天蠍座</string>
+    <string name="little_dipper" translation_description="Name of the Little Dipper constellation">小北斗七星</string>
+    <string name="little_bear" translation_description="Name of the Little Bear constellation">小熊座</string>
+    <string name="big_dipper" translation_description="Name of the Big Dipper constellation">北斗七星</string>
+    <string name="great_bear" translation_description="Name of the Great Bear constellation">大熊座</string>
+    <string name="plough" translation_description="Name of the Plough constellation">北斗七星</string>
     <string name="antlia" translation_description="Name of the Antlia constellation">唧筒座</string>
     <string name="apus" translation_description="Name of the Apus constellation">天燕座</string>
     <string name="ara" translation_description="Name of the Ara constellation">天壇座</string>
@@ -47,4 +97,233 @@
     <string name="triangulum_australe" translation_description="Name of the Triangulum Australe constellation">南三角座</string>
     <string name="volans" translation_description="Name of the Volans constellation">飛魚座</string>
     <string name="vulpecula" translation_description="Name of the Vulpecula constellation">狐狸座</string>
+    <string name="sun">太陽</string>
+    <string name="moon">月球</string>
+    <string name="mercury">水星</string>
+    <string name="venus">金星</string>
+    <string name="earth">地球</string>
+    <string name="mars">火星</string>
+    <string name="jupiter">木星</string>
+    <string name="saturn">土星</string>
+    <string name="uranus">天王星</string>
+    <string name="neptune">海王星</string>
+    <string name="pluto">冥王星</string>
+    <string name="crab_nebula" translation_description="hubble object">蟹狀星雲</string>
+    <string name="eagle_nebula" translation_description="hubble object">天鷹星雲</string>
+    <string name="andromeda_galaxy" translation_description="hubble object">仙女星系</string>
+    <string name="orion_nebula" translation_description="hubble object">獵戶座星雲</string>
+    <string name="whirlpool_galaxy" translation_description="hubble object">渦狀星系</string>
+    <string name="ring_nebula" translation_description="hubble object">環狀星雲</string>
+    <string name="pinwheel_galaxy" translation_description="hubble object">風車星系</string>
+    <string name="sombrero_galaxy" translation_description="hubble object">墨西哥帽星系</string>
+    <string name="hercules_gc" translation_description="hubble object">武仙座球狀星團</string>
+    <string name="pleiades" translation_description="hubble object">昴宿星團</string>
+    <string name="cats_eye_nebula" translation_description="hubble object">貓眼星雲</string>
+    <string name="omega_centauri" translation_description="hubble object">半人馬座球狀星團</string>
+    <string name="v838_mon" translation_description="hubble object">麒麟座 V838 變星</string>
+    <string name="sn1987a" translation_description="hubble object">超新星 1987a</string>
+    <string name="hubble_deep_field" translation_description="hubble object">哈伯深場影像</string>
+    <string name="hdf" translation_description="hubble object">哈伯深場影像</string>
+    <string name="rho_oph" translation_description="hubble object">心宿增四星</string>
+    <string name="sirius" translation_description="Name of the Star Sirius">天狼星</string>
+    <string name="canopus" translation_description="Name of the Star Canopus">老人星</string>
+    <string name="arcturus" translation_description="Name of the Star Arcturus">大角星</string>
+    <string name="rigel_kentaurus_a" translation_description="Name of the Star Rigel Kentaurus A">南門二</string>
+    <string name="rigil_kentaurus_a" translation_description="Name of the Star Rigil Kentaurus A">南門二</string>
+    <string name="vega" translation_description="Name of the Star Vega">織女星</string>
+    <string name="rigel" translation_description="Name of the Star Rigel">參宿七</string>
+    <string name="procyon" translation_description="Name of the Star Procyon">南河三</string>
+    <string name="betelgeuse" translation_description="Name of the Star Betelgeuse">參宿四</string>
+    <string name="achernar" translation_description="Name of the Star Achernar">水委一</string>
+    <string name="hadar" translation_description="Name of the Star Hadar">馬腹一</string>
+    <string name="capella" translation_description="Name of the Star Capella">五車二</string>
+    <string name="altair" translation_description="Name of the Star Altair">牛郎星</string>
+    <string name="acrux" translation_description="Name of the Star Acrux">十字架二</string>
+    <string name="aldebaran" translation_description="Name of the Star Aldebaran">畢宿五</string>
+    <string name="spica" translation_description="Name of the Star Spica">角宿一</string>
+    <string name="antares" translation_description="Name of the Star Antares">心宿二</string>
+    <string name="pollux" translation_description="Name of the Star Pollux">北河三</string>
+    <string name="fomalhaut" translation_description="Name of the Star Fomalhaut">北落師門</string>
+    <string name="deneb" translation_description="Name of the Star Deneb">天津四</string>
+    <string name="regulus" translation_description="Name of the Star Regulus">軒轅十四</string>
+    <string name="adhara" translation_description="Name of the Star Adhara">弧矢七</string>
+    <string name="shaula" translation_description="Name of the Star Shaula">尾宿八</string>
+    <string name="alnath" translation_description="Name of the Star Alnath">五車五</string>
+    <string name="alnilam" translation_description="Name of the Star Alnilam">參宿二</string>
+    <string name="alnair" translation_description="Name of the Star Alnair">鶴一</string>
+    <string name="alioth" translation_description="Name of the Star Alioth">玉衡</string>
+    <string name="mirphak" translation_description="Name of the Star Mirphak">天船三</string>
+    <string name="kaus_australis" translation_description="Name of the Star Kaus Australis">箕宿三</string>
+    <string name="dubhe" translation_description="Name of the Star Dubhe">天樞</string>
+    <string name="alkaid" translation_description="Name of the Star Alkaid">搖光</string>
+    <string name="alhena" translation_description="Name of the Star Alhena">井宿三</string>
+    <string name="castor" translation_description="Name of the Star Castor">北河二</string>
+    <string name="polaris" translation_description="Name of the Star Polaris">勾陳一</string>
+    <string name="alphard" translation_description="Name of the Star Alphard">星宿一</string>
+    <string name="hamal" translation_description="Name of the Star Hamal">婁宿三</string>
+    <string name="algieba" translation_description="Name of the Star Algieba">軒轅十二</string>
+    <string name="diphda" translation_description="Name of the Star Diphda">土司空</string>
+    <string name="nunki" translation_description="Name of the Star Nunki">斗宿四</string>
+    <string name="mirach" translation_description="Name of the Star Mirach">奎宿九</string>
+    <string name="alpheratz" translation_description="Name of the Star Alpheratz">壁宿二</string>
+    <string name="saiph" translation_description="Name of the Star Saiph">參宿六</string>
+    <string name="kochab" translation_description="Name of the Star Kochab">北極二</string>
+    <string name="rasalhague" translation_description="Name of the Star Rasalhague">候星</string>
+    <string name="algol" translation_description="Name of the Star Algol">大陵五</string>
+    <string name="denebola" translation_description="Name of the Star Denebola">五帝座一</string>
+    <string name="alphekka" translation_description="Name of the Star Alphekka">貫索四</string>
+    <string name="etamin" translation_description="Name of the Star Etamin">天棓四</string>
+    <string name="kaus" translation_description="Name of the Star Kaus">箕宿三</string>
+    <string name="shedir" translation_description="Name of the Star Shedir">王良四</string>
+    <string name="caph" translation_description="Name of the Star Caph">王良一</string>
+    <string name="izar" translation_description="Name of the Star Izar">梗河一</string>
+    <string name="merak" translation_description="Name of the Star Merak">天璇</string>
+    <string name="enif" translation_description="Name of the Star Enif">危宿三</string>
+    <string name="ankaa" translation_description="Name of the Star Ankaa">火鳥六</string>
+    <string name="phad" translation_description="Name of the Star Phad">天璣</string>
+    <string name="alderamin" translation_description="Name of the Star Alderamin">天鉤五</string>
+    <string name="scheat" translation_description="Name of the Star Scheat">室宿二</string>
+    <string name="markab" translation_description="Name of the Star Markab">室宿一</string>
+    <string name="menkar" translation_description="Name of the Star Menkar">天囷一</string>
+    <string name="arneb" translation_description="Name of the Star Arneb">廁一</string>
+    <string name="unukalhai" translation_description="Name of the Star Unukalhai">天市右垣七</string>
+    <string name="algenib" translation_description="Name of the Star Algenib">壁宿一</string>
+    <string name="vindemiatrix" translation_description="Name of the Star Vindemiatrix">太微左垣四</string>
+    <string name="alcyone" translation_description="Name of the Star Alcyone">昂宿六</string>
+    <string name="dog_star" translation_description="Name of the Dog Star (Sirius)">天狼星</string>
+    <string name="north_star" translation_description="Name of the North Star">北極星</string>
+    <string name="pole_star" translation_description="Name of the (North) Pole Star">極星</string>
+    <string name="alpha_centauri" translation_description="Name of the star Alpha Centauri">南門二</string>
+    <string name="rigil_kent" translation_description="Name of the star Rigil Kent">南門二</string>
+    <string name="e_lyrae" translation_description="Name of the star ε Lyrae">織女二</string>
+    <string name="m1" translation_description="Name of the Messier object M1">M1 蟹狀星雲</string>
+    <string name="m2" translation_description="Name of the Messier object M2">M2</string>
+    <string name="m3" translation_description="Name of the Messier object M3">M3</string>
+    <string name="m4" translation_description="Name of the Messier object M4">M4</string>
+    <string name="m5" translation_description="Name of the Messier object M5">M5</string>
+    <string name="m6" translation_description="Name of the Messier object M6">M6 蝴蝶星團</string>
+    <string name="m7" translation_description="Name of the Messier object M7">M7 托勒密星團</string>
+    <string name="m8" translation_description="Name of the Messier object M8">M8 礁湖星雲</string>
+    <string name="m9" translation_description="Name of the Messier object M9">M9</string>
+    <string name="m10" translation_description="Name of the Messier object M10">M10</string>
+    <string name="m11" translation_description="Name of the Messier object M11">M11 野鴨星團</string>
+    <string name="m12" translation_description="Name of the Messier object M12">M12</string>
+    <string name="m13" translation_description="Name of the Messier object M13">M13 武仙座球狀星團</string>
+    <string name="m14" translation_description="Name of the Messier object M14">M14</string>
+    <string name="m15" translation_description="Name of the Messier object M15">M15</string>
+    <string name="m16" translation_description="Name of the Messier object M16">M16 鷹星雲</string>
+    <string name="m17" translation_description="Name of the Messier object M17">M17 天鵝星雲</string>
+    <string name="m18" translation_description="Name of the Messier object M18">M18</string>
+    <string name="m19" translation_description="Name of the Messier object M19">M19</string>
+    <string name="m20" translation_description="Name of the Messier object M20">M20 三裂星雲</string>
+    <string name="m21" translation_description="Name of the Messier object M21">M21</string>
+    <string name="m22" translation_description="Name of the Messier object M22">M22 人馬座星團</string>
+    <string name="m23" translation_description="Name of the Messier object M23">M23</string>
+    <string name="m24" translation_description="Name of the Messier object M24">M24 人馬座恆星雲</string>
+    <string name="m25" translation_description="Name of the Messier object M25">M25</string>
+    <string name="m26" translation_description="Name of the Messier object M26">M26</string>
+    <string name="m27" translation_description="Name of the Messier object M27">M27 啞鈴星雲</string>
+    <string name="m28" translation_description="Name of the Messier object M28">M28</string>
+    <string name="m29" translation_description="Name of the Messier object M29">M29</string>
+    <string name="m30" translation_description="Name of the Messier object M30">M30</string>
+    <string name="m31" translation_description="Name of the Messier object M31">M31 仙女座星系</string>
+    <string name="m32" translation_description="Name of the Messier object M32">M32</string>
+    <string name="m33" translation_description="Name of the Messier object M33">M33 三角座星系</string>
+    <string name="m34" translation_description="Name of the Messier object M34">M34</string>
+    <string name="m35" translation_description="Name of the Messier object M35">M35</string>
+    <string name="m36" translation_description="Name of the Messier object M36">M36</string>
+    <string name="m37" translation_description="Name of the Messier object M37">M37</string>
+    <string name="m38" translation_description="Name of the Messier object M38">M38</string>
+    <string name="m39" translation_description="Name of the Messier object M39">M39</string>
+    <string name="m40" translation_description="Name of the Messier object M40">M40</string>
+    <string name="m41" translation_description="Name of the Messier object M41">M41</string>
+    <string name="m42" translation_description="Name of the Messier object M42">M42 獵戶座星雲</string>
+    <string name="m43" translation_description="Name of the Messier object M43">M43 迪馬倫的星雲</string>
+    <string name="m44" translation_description="Name of the Messier object M44">M44 蜂巢星團</string>
+    <string name="m45" translation_description="Name of the Messier object M45">M45 昴宿星團</string>
+    <string name="m46" translation_description="Name of the Messier object M46">M46</string>
+    <string name="m47" translation_description="Name of the Messier object M47">M47</string>
+    <string name="m48" translation_description="Name of the Messier object M48">M48</string>
+    <string name="m49" translation_description="Name of the Messier object M49">M49</string>
+    <string name="m50" translation_description="Name of the Messier object M50">M50</string>
+    <string name="m51" translation_description="Name of the Messier object M51">M51 渦狀星系</string>
+    <string name="m52" translation_description="Name of the Messier object M52">M52</string>
+    <string name="m53" translation_description="Name of the Messier object M53">M53</string>
+    <string name="m54" translation_description="Name of the Messier object M54">M54</string>
+    <string name="m55" translation_description="Name of the Messier object M55">M55</string>
+    <string name="m56" translation_description="Name of the Messier object M56">M56</string>
+    <string name="m57" translation_description="Name of the Messier object M57">M57 環狀星雲</string>
+    <string name="m58" translation_description="Name of the Messier object M58">M58</string>
+    <string name="m59" translation_description="Name of the Messier object M59">M59</string>
+    <string name="m60" translation_description="Name of the Messier object M60">M60</string>
+    <string name="m61" translation_description="Name of the Messier object M61">M61</string>
+    <string name="m62" translation_description="Name of the Messier object M62">M62</string>
+    <string name="m63" translation_description="Name of the Messier object M63">M63 向日葵星系</string>
+    <string name="m64" translation_description="Name of the Messier object M64">M64 黑眼星系</string>
+    <string name="m65" translation_description="Name of the Messier object M65">M65</string>
+    <string name="m66" translation_description="Name of the Messier object M66">M66</string>
+    <string name="m67" translation_description="Name of the Messier object M67">M67</string>
+    <string name="m68" translation_description="Name of the Messier object M68">M68</string>
+    <string name="m69" translation_description="Name of the Messier object M69">M69</string>
+    <string name="m70" translation_description="Name of the Messier object M70">M70</string>
+    <string name="m71" translation_description="Name of the Messier object M71">M71</string>
+    <string name="m72" translation_description="Name of the Messier object M72">M72</string>
+    <string name="m73" translation_description="Name of the Messier object M73">M73</string>
+    <string name="m74" translation_description="Name of the Messier object M74">M74</string>
+    <string name="m75" translation_description="Name of the Messier object M75">M75</string>
+    <string name="m76" translation_description="Name of the Messier object M76">M76 小啞鈴星雲</string>
+    <string name="m77" translation_description="Name of the Messier object M77">M77 鯨魚A星系</string>
+    <string name="m78" translation_description="Name of the Messier object M78">M78</string>
+    <string name="m79" translation_description="Name of the Messier object M79">M79</string>
+    <string name="m80" translation_description="Name of the Messier object M80">M80</string>
+    <string name="m81" translation_description="Name of the Messier object M81">M81 波德星系</string>
+    <string name="m82" translation_description="Name of the Messier object M82">M82 雪茄星系</string>
+    <string name="m83" translation_description="Name of the Messier object M83">M83 南風車星系</string>
+    <string name="m84" translation_description="Name of the Messier object M84">M84</string>
+    <string name="m85" translation_description="Name of the Messier object M85">M85</string>
+    <string name="m86" translation_description="Name of the Messier object M86">M86</string>
+    <string name="m87" translation_description="Name of the Messier object M87">M87 室女A星系</string>
+    <string name="m88" translation_description="Name of the Messier object M88">M88</string>
+    <string name="m89" translation_description="Name of the Messier object M89">M89</string>
+    <string name="m90" translation_description="Name of the Messier object M90">M90</string>
+    <string name="m91" translation_description="Name of the Messier object M91">M91</string>
+    <string name="m92" translation_description="Name of the Messier object M92">M92</string>
+    <string name="m93" translation_description="Name of the Messier object M93">M93</string>
+    <string name="m94" translation_description="Name of the Messier object M94">M94</string>
+    <string name="m95" translation_description="Name of the Messier object M95">M95</string>
+    <string name="m96" translation_description="Name of the Messier object M96">M96</string>
+    <string name="m97" translation_description="Name of the Messier object M97">M97 貓頭鷹星雲</string>
+    <string name="m98" translation_description="Name of the Messier object M98">M98</string>
+    <string name="m99" translation_description="Name of the Messier object M99">M99</string>
+    <string name="m100" translation_description="Name of the Messier object M100">M100</string>
+    <string name="m101" translation_description="Name of the Messier object M101">M101 風車星系</string>
+    <string name="m102" translation_description="Name of the Messier object M102">M102</string>
+    <string name="m103" translation_description="Name of the Messier object M103">M103</string>
+    <string name="m104" translation_description="Name of the Messier object M104">M104 墨西哥帽星系</string>
+    <string name="m105" translation_description="Name of the Messier object M105">M105</string>
+    <string name="m106" translation_description="Name of the Messier object M106">M106</string>
+    <string name="m107" translation_description="Name of the Messier object M107">M107</string>
+    <string name="m108" translation_description="Name of the Messier object M108">M108</string>
+    <string name="m109" translation_description="Name of the Messier object M109">M109</string>
+    <string name="m110" translation_description="Name of the Messier object M110">M110</string>
+    <string name="ngc6543" translation_description="Name of the Messier object NGC6543">NGC 6543</string>
+    <string name="ngc5139" translation_description="Name of the Messier object NGC5139">NGC 5139</string>
+    <string name="butterfly_cluster" translation_description="Name of the Messier object Butterfly Cluster">蝴蝶星團</string>
+    <string name="scorpions_tail" translation_description="Name of the Messier object Scorpion\'s Tail">托勒密星團</string>
+    <string name="winnecke_4" translation_description="Name of the Messier object Winnecke 4">梅西爾 40</string>
+    <string name="beehive_cluster" translation_description="Name of the Messier object Beehive Cluster">蜂巢星團</string>
+    <string name="praesepe" translation_description="Name of the Messier object Praesepe">鬼宿星團</string>
+    <string name="seven_sisters" translation_description="Name of the Messier object Seven Sisters">七姊妹星團</string>
+    <string name="space_station" translation_description="Name of the Internation Space Station">國際太空站</string>
+    <string name="space_shuttle" translation_description="Name of the Space Shuttle">太空梭</string>
+    <string name="leonids" translation_description="Meteor Shower">獅子座流星雨</string>
+    <string name="geminids" translation_description="Meteor Shower">雙子座流星雨</string>
+    <string name="quadrantids" translation_description="Meteor Shower">象限儀座流星雨</string>
+    <string name="lyrids" translation_description="Meteor Shower">天琴座流星雨</string>
+    <string name="aquariids" translation_description="Meteor Shower">寶瓶座η流星雨</string>
+    <string name="deltaaquariids" translation_description="Meteor Shower">寶瓶座δ南流星雨</string>
+    <string name="perseids" translation_description="Meteor Shower">英仙座流星雨</string>
+    <string name="orionids" translation_description="Meteor Shower">獵戶座流星雨</string>
+    <string name="puppidvelids" translation_description="Meteor Shower">船尾/船帆座流星雨</string>
+    <string name="ursids" translation_description="Meteor Shower">小熊座流星雨</string>
 </resources>

@@ -26,8 +26,6 @@
     <string name="location_long_lat">Zemepisná dĺžka:%1$.2f, Zemepisná šírka:%2$.2f</string>
     <string name="location_place_found">Miesto nájdené. Nastavenie šírky %1$f a dĺžky %2$f</string>
     <string name="use_magnetic_correction">Použiť magnetickú korekciu</string>
-    <string name="use_magnetic_correction_hint">Použije znalosť vašej polohy k oprave orientácie z magnetického pólu na skutočný zemepisný pól</string>
-    <string name="provider_prefs" translation_description="Dialog box title for a preferences dialog">Zobraziť...</string>
     <string name="show_stars_pref">Hviezdy</string>
     <string name="show_constellations_pref">Súhvezdia</string>
     <string name="show_messier_objects_pref" translation_description="The celestial objects catalogued by Charles Messier">Messierove objekty</string>
@@ -38,36 +36,24 @@
     <string name="show_meteors_pref">Meteorické roje</string>
     <string name="show_comet_layer_pref">Kométy</string>
     <string name="show_satellite_layer_pref" translation_description="The layer for satellites">Satelity</string>
-    <!-- Just in case we decide to have such a layer for the 4/24 launch -->
-    <string name="show_hubble_layer_pref">Snímky z Hubblovho teleskopu</string>
     <string name="sensor_prefs">Nastavenie senzorov (pre expertov)</string>
-    <string name="sensor_speed" translation_description="Old, non gyro sensors only: How quickly the sensor should send us data">Rýchlosť senzorov</string>
-    <string name="sensor_damping" translation_description="Old, non gyro sensors only: The amount of smoothing applied to the sensor outputs.">Korekcia senzorov</string>
-    <string name="appearance_prefs"
-        translation_description="Preferences title for section about app appearance">Vzhľad
+    <string name="appearance_prefs" translation_description="Preferences title for section about app appearance">Vzhľad
     </string>
-    <string name="auto_dimness_preference"
-        translation_description="Mode for automatically dimming the screen when night mode is selected">
+    <string name="auto_dimness_preference" translation_description="Mode for automatically dimming the screen when night mode is selected">
         Autom. stmievanie</string>
-    <string name="font_size_preference"
-        translation_description="Change the font size">
+    <string name="font_size_preference" translation_description="Change the font size">
         Veľkosť písma</string>
-    <string name="font_size_preference_description"
-        translation_description="help to go along with the change font size preference">Vyžaduje reštart aplikácie
-    </string>    
+    <string name="font_size_preference_description" translation_description="help to go along with the change font size preference">Vyžaduje reštart aplikácie
+    </string>
     <string name="ecliptic">Ekliptika</string>
-    <string name="eclipse24">Cesta zatmenia 8.4.2024</string>
     <string name="malformed_loc_error">Nastavená šírka alebo dĺžka nie je číslo.</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Prijať</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">Odmietnuť</string>
     <string name="dialog_ok_button">OK</string>
     <string name="menu_help" translation_description="menu item to show \'Help\' box">Pomoc</string>
     <string name="help_dialog_title">Pomoc pre Sky Map</string>
-    <string name="eula_dialog_title">Licenčná zmluva s koncovým používateľom</string>
     <string name="set_manual">Prepínanie na manuálny režim</string>
     <string name="set_auto">Prepínanie na automatický režim</string>
-    <string name="menu_zoom_in">Priblížiť</string>
-    <string name="menu_zoom_out">Oddialiť</string>
     <string name="menu_toggle_dim">Prepnúť nočný režim</string>
     <string name="zenith">ZENIT</string>
     <string name="nadir">NADIR</string>
@@ -78,26 +64,18 @@
     <string name="search_label">Hľadať na nebi</string>
     <string name="search_hint" translation_description="an example search target">napr. Mars</string>
     <string name="no_search_title">Nič sa nenašlo</string>
-    <string name="no_search_results_text">Nenašli sa žiadne výsledky.</string>
-    <!-- Hopefully this is a temporary measure until we can fix the search engine -->
     <string name="no_search_results_text2">Nenašli sa žiadne výsledky. Objekt možno nie je teraz viditeľný.</string>
     <string name="many_search_results_title">Mysleli ste?</string>
-    <string name="many_search_results_text">Vyberte si jeden</string>
-    <string name="searching_for_text">Hľadanie %s...</string>
-    <string name="found_target_text">Nájdené: %s.</string>
     <string name="other" translation_description="A preference category (ie preferences that don't belong in any other category)">Iné</string>
-    <string name="planetary_images">Zobraziť obrázky planét</string>
     <string name="menu_time">Cestovanie v čase</string>
-    <string name="time_travel_start_message">Cestovanie v čase...</string>
     <string name="time_travel_start_message_alt">Cestovanie v čase do %s...</string>
     <string name="time_travel_close_message">Späť do súčasnosti...</string>
-    <!--  -->    
     <string name="popular_dates_prompt" translation_description="label for a list of dates the user can choose from">Obľúbené dátumy</string>
     <string name="custom_date_prompt" translation_description="label telling the user to manually specify a data">Alebo si zvoľte vlastný dátum</string>
     <string name="change_date_prompt">Zmeniť dátum</string>
     <string name="change_time_prompt">Zmeniť čas</string>
     <string name="now_visiting" translation_description="used in time travel dialog to tell the user what time they are visiting, time formatted as yyyy.mm.dd at hh.mm.ss + timezone">
-        Teraz ste v čase: %s</string>    
+        Teraz ste v čase: %s</string>
     <string name="time_travel_label_past" translation_description="label showing that we are in the past">Cestovanie v čase: Minulosť</string>
     <string name="time_travel_label_future" translation_description="label showing that we are in the future">Cestovanie v čase: Budúcnosť</string>
     <string name="time_travel_stopped" translation_description="label showing rate of travel through time">Cestovanie v čase zastavené</string>
@@ -113,38 +91,29 @@
     <string name="time_travel_hour_speed_back" translation_description="label showing rate of travel through time">Rýchlosť cestovania &lt; 1 hod/s</string>
     <string name="time_travel_day_speed_back" translation_description="label showing rate of travel through time">Rýchlosť cestovania &lt; 1 deň/s</string>
     <string name="time_travel_week_speed_back" translation_description="label showing rate of travel through time">Rýchlosť cestovania &lt; 1 týždeň/s</string>
+    <string name="time_travel_next_sunset">Ďalší západ Slnka</string>
+    <string name="time_travel_next_sunrise">Ďalší východ Slnka</string>
+    <string name="time_travel_next_fullmoon">Ďalší spln</string>
+    <string name="time_travel_mercury_transit_2016">Prechod Merkúru 9. mája 2016</string>
+    <string name="time_travel_solar_eclipse_2024">Zatmenie Slnka 8. apríla 2024</string>
+    <string name="time_travel_apollo_11">Pristátie lode Apollo 11 na Mesiaci</string>
+    <string name="time_travel_jupiter_saturn_2020">Konjunkcia Jupiter - Saturn v roku 2020</string>
     <string name="use_sound_effects" translation_description="A preferences menu label">Povoliť zvuk</string>
-    
-    <string name="enable_layer_toast">Aktivácia vrstvy %s</string>
-    <string name="disable_layer_toast">Deaktivácia vrstvy %s</string>
     <string name="menu_gallery">Galéria</string>
     <string name="gallery_image_search_btn">Nájsť na oblohe</string>
     <string name="gallery_image_back_btn">Späť do galérie</string>
     <string name="hubble_image_gallery_title">Galéria v Sky Map</string>
     <string name="hubble_image">Snímok z Hubblovho teleskopu</string>
-    
-    <string name="search_target_found_message" translation_description="displayed when a search target has been located">Našli ste:</string>
     <string name="search_overlay_title" translation_description="title for search overlay">Nasmerujte telefón podľa šípky</string>
     <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">Hľadám:</string>
     <string name="sun_wont_set_message">Na vašej aktuálnej polohe nezapadne Slnko počas nasledujúcich 24 hodín.</string>
-    <string name="sun_wont_rise_message">Na vašej aktuálnej polohe nevyjde Slnko počas nasledujúcich 24 hodín.</string>
-
     <string name="missing_label" translation_description="Used to indicate to the developer that they've added a resource with no translation.">MISSING_LBL</string>
-
     <string name="menu_tos">Podmienky služby</string>
     <string name="menu_diagnostics">Diagnostika</string>
-    <!-- TODO(johntaylor): the following might be deleted in favor of an icon -->
-    <string name="control_panel_btn" translation_description="Label for the control panel button">Ovládací panel</string>
-
     <string name="north_pole">SP</string>
     <string name="south_pole">JP</string>
-    
-    <string name="kml_load_error">Nepodarilo sa načítať KML súbor</string>
-    <string name="load_kml_dialog_title">Načítať KML súbor</string>
-    <string name="load_kml_file">Načítať</string>
     <string name="enable_analytics">Posielať štatistiky používania</string>
     <string name="enable_analytics_desc">Vylepšite Sky Map odosielaním anonymných údajov do služby Google Analytics</string>
-
     <string name="no_sensor_warning">Vášmu zariadeniu môžu chýbať senzory orientácie – automatický režim nemusí fungovať</string>
     <string name="warning_dialog_title">Zlé správy!</string>
     <string name="missing_sensor_dialog_text">\n
@@ -196,11 +165,9 @@
     <string name="compass_calibration_activity_heading_compass">Kompas -</string>
     <string name="compass_calibration_activity_do_not_show_this_again">Toto znovu nezobrazovať</string>
     <string name="compass_calibration_activity_warning">Váš kompas bude možno potrebné skalibrovať</string>
-    <string name="compass_calib_what_to_do"
-        translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL">Váš telefón hlási aplikácii Sky Map, že jeho interný kompas nie je skalibrovaný.
+    <string name="compass_calib_what_to_do" translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL">Váš telefón hlási aplikácii Sky Map, že jeho interný kompas nie je skalibrovaný.
     Toto nie je problém s aplikáciou Sky Map, ale môžeme vám pomôcť to vyriešiť. Ak chcete skalibrovať kompas, skúste pohybovať telefónom v tvare osmičky tak, ako je to ukázané v tomto videu %s, kým sa nezobrazí presnosť \'vysoká\'.</string>
-    <string name="compass_calib_what_to_do_user"
-        transation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL">Presnosť kompasu vášho telefónu je zobrazená vyššie.
+    <string name="compass_calib_what_to_do_user" transation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL">Presnosť kompasu vášho telefónu je zobrazená vyššie.
     Ak nie je \'vysoká\' potom je potrebné kompas skalibrovať. Toto nie je problém s apliáciou Sky Map, ale vlastnosť vášho telefónu. 
     a property of your phone. Ak chcete skalibrovať kompas, skúste pohybovať telefónom v tvare osmičky tak, ako je to ukázané v tomto videu %s.</string>
     <string name="sensor_reverse_preference_title">Obrátiť magnetické pole v ose Z</string>
@@ -209,14 +176,7 @@
     <string name="disable_gyro_preference_title">Zakázať gyroskop</string>
     <string name="disable_gyro_preference_summary">Nie všetky zariadenia majú gyroskop – ak ho to vaše má, potom dosiahnete lepšie výsledky, ak bude povolený a toto políčko nebude začiarknuté. Na druhej strane, ak vaše zariadenie nemá gyroskop, potom Sky Map pravdepodobne nebude fungovať, ak zrušíte začiarknutie tohto políčka.</string>
     <string name="rotate_horizon_preference_title">Zobraziť smer</string>
-    <string name="rotate_horizon_preference_summary">Otočte horizont o 90 stupňov (pre zariadenia s vynúteným zobrazením na šírku) alebo použite Režim ukazovateľa na obrazovke, aby ste ukázali, na čo ukazuje horná časť telefónu (pozri Pomoc).</string> 
+    <string name="rotate_horizon_preference_summary">Otočte horizont o 90 stupňov (pre zariadenia s vynúteným zobrazením na šírku) alebo použite Režim ukazovateľa na obrazovke, aby ste ukázali, na čo ukazuje horná časť telefónu (pozri Pomoc).</string>
     <string name="show_object_info_auto_mode_title">Info karty v automatickom režime</string>
     <string name="show_object_info_auto_mode_summary">Zobraziť info karty aj pri klepnutí na objekty v automatickom (senzorový) režime</string>
-    <string name="time_travel_next_sunset">Ďalší západ Slnka</string>
-    <string name="time_travel_next_sunrise">Ďalší východ Slnka</string>
-    <string name="time_travel_next_fullmoon">Ďalší spln</string>
-    <string name="time_travel_mercury_transit_2016">Prechod Merkúru 9. mája 2016</string>
-    <string name="time_travel_solar_eclipse_2024">Zatmenie Slnka 8. apríla 2024</string>
-    <string name="time_travel_apollo_11">Pristátie lode Apollo 11 na Mesiaci</string>
-    <string name="time_travel_jupiter_saturn_2020">Konjunkcia Jupiter - Saturn v roku 2020</string>
 </resources>

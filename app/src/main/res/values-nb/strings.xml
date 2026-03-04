@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Please add  translation_description="" attributes to Strings to assist the translators. -->
 <resources>
     <string name="app_name" translation_description="Application Title">Sky Map</string>
     <string name="menu_settings">Innstillinger</string>
@@ -27,9 +26,6 @@
     <string name="location_long_lat">Lengdegrad:%1$s, breddegrad:%2$s</string>
     <string name="location_place_found">Sted funnet. Breddegrad %1$f og lengdegrad %2$f</string>
     <string name="use_magnetic_correction">Bruk magnetisk korrigering</string>
-    <string name="use_magnetic_correction_hint">Bruk kjennskap om posisjonen din for å korrigere retning fra magnetisk nord til geografisk nord</string>
-    <!-- This string is too long and currently unused -->
-    <string name="provider_prefs" translation_description="Dialog box title for a preferences dialog">Vis...</string>
     <string name="show_stars_pref">Stjerner</string>
     <string name="show_constellations_pref">Stjernebilder</string>
     <string name="show_messier_objects_pref" translation_description="The celestial objects catalogued by Charles Messier">Messier-objekter</string>
@@ -40,24 +36,16 @@
     <string name="show_meteors_pref">Meteorsvermer</string>
     <string name="show_comet_layer_pref">Kometer</string>
     <string name="show_satellite_layer_pref" translation_description="The layer for satellites">Satellitter</string>
-    <!-- Just in case we decide to have such a layer for the 4/24 launch -->
-    <string name="show_hubble_layer_pref">Hubble-bilder</string>
     <string name="sensor_prefs">Sensorinnstillinger (eksperter)</string>
-    <string name="sensor_speed" translation_description="Old, non gyro sensors only: How quickly the sensor should send us data">Sensorhastighet</string>
-    <string name="sensor_damping" translation_description="Old, non gyro sensors only: The amount of smoothing applied to the sensor outputs.">Demping</string>
     <string name="ecliptic">Ekliptikken</string>
-    <string name="eclipse24">Eklipsebane 2024-04-08</string>
     <string name="malformed_loc_error">Bredde- eller lengdegradinnstilling er ikke et tall.</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Aksepter</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">Nei takk</string>
     <string name="dialog_ok_button">OK</string>
     <string name="menu_help" translation_description="menu item to show \'Help\' box">Hjelp</string>
     <string name="help_dialog_title">Hjelp for Sky Map</string>
-    <string name="eula_dialog_title">End User License Agreement</string>
     <string name="set_manual">Skifter til manuell modus</string>
     <string name="set_auto">Skifter til automatisk modus</string>
-    <string name="menu_zoom_in">Zoom inn</string>
-    <string name="menu_zoom_out">Zoom ut</string>
     <string name="menu_toggle_dim">Nattmodus av/på</string>
     <string name="zenith">SENIT</string>
     <string name="nadir">NADIR</string>
@@ -68,27 +56,18 @@
     <string name="search_label">Søk</string>
     <string name="search_hint" translation_description="an example search target">f.eks. Mars</string>
     <string name="no_search_title">Ingen resultater</string>
-    <string name="no_search_results_text">Ingen resultater funnet.</string>
-    <!-- Hopefully this is a temporary measure until we can fix the search engine -->
     <string name="no_search_results_text2">Ingen resultater funnet. Kanskje er objektet ikke
         synlig på denne tiden.</string>
     <string name="many_search_results_title">Mente du?</string>
-    <string name="many_search_results_text">Velg en</string>
-    <string name="searching_for_text">Søker etter %s...</string>
-    <string name="found_target_text">Funnet %s.</string>
     <string name="other" translation_description="A preference category (ie preferences that don't belong in any other category)">Andre</string>
-    <string name="planetary_images">Vis planetbilder</string>
     <string name="menu_time">Tidsreise</string>
-    <string name="time_travel_start_message">Reiser gjennom tid...</string>
     <string name="time_travel_start_message_alt">Reiser gjennom tid til %s...</string>
     <string name="time_travel_close_message">Tilbake til nåtiden...</string>
-    <!--  -->
     <string name="popular_dates_prompt" translation_description="Label for a list of dates the user can choose from">Populære datoer</string>
     <string name="custom_date_prompt" translation_description="Label telling the user to manually specify a date">Eller velg din egen dato:</string>
     <string name="change_date_prompt">Endre dato</string>
     <string name="change_time_prompt">Endre klokkeslett</string>
-    <string name="now_visiting"
-            translation_description="used in time travel dialog to tell the user what time they are visiting, time formatted as yyyy.mm.dd at hh.mm.ss + timezone">
+    <string name="now_visiting" translation_description="used in time travel dialog to tell the user what time they are visiting, time formatted as yyyy.mm.dd at hh.mm.ss + timezone">
         Besøker nå: %s</string>
     <string name="time_travel_label_past" translation_description="Label showing that we are in the past">Tidsreise: Fortid</string>
     <string name="time_travel_label_future" translation_description="Label showing that we are in the future">Tidsreise: Framtid</string>
@@ -105,40 +84,29 @@
     <string name="time_travel_hour_speed_back" translation_description="Label showing rate of travel through time">Reiser &lt; @ 1 time/sek</string>
     <string name="time_travel_day_speed_back" translation_description="Label showing rate of travel through time">Reiser &lt; @ 1 døgn/sek</string>
     <string name="time_travel_week_speed_back" translation_description="Label showing rate of travel through time">Reiser &lt; @ 1 uke/sek</string>
+    <string name="time_travel_next_sunset">Neste solnedgang</string>
+    <string name="time_travel_next_sunrise">Neste soloppgang</string>
+    <string name="time_travel_next_fullmoon">Neste fullmåne</string>
+    <string name="time_travel_mercury_transit_2016">Merkurpassasje 9. mai 2016</string>
+    <string name="time_travel_solar_eclipse_2024">Nord-Amerikansk solformørkelse 8. apr 2024</string>
+    <string name="time_travel_apollo_11">Apollo 11 månelanding</string>
+    <string name="time_travel_jupiter_saturn_2020">Jupiter-Saturn-konjunksjon i 2020</string>
     <string name="use_sound_effects" translation_description="A preferences menu label">Aktiver lyd</string>
-
-    <string name="enable_layer_toast">Aktiverer %s lag</string>
-    <string name="disable_layer_toast">Deaktiverer %s lag</string>
     <string name="menu_gallery">Galleri</string>
     <string name="gallery_image_search_btn">Finn på himmelen</string>
     <string name="gallery_image_back_btn">Tilbake til galleri</string>
     <string name="hubble_image_gallery_title">Sky Map Galleri</string>
     <string name="hubble_image">Hubble-bilde</string>
-    <!--  TODO(johntaylor): currently unused -->
-
-    <string name="search_target_found_message" translation_description="displayed when a search target has been located">Du fant:</string>
     <string name="search_overlay_title" translation_description="title for search overlay">Beveg telefonen din i pilretning</string>
     <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">Ser etter:</string>
     <string name="sun_wont_set_message">Solen går ikke ned i løpet av de neste 24 timene på ditt nåværende sted.</string>
-    <string name="sun_wont_rise_message">Solen står ikke opp i løpet av de neste 24 timene på ditt nåværende sted.</string>
-
     <string name="missing_label" translation_description="Used to indicate to the developer that they've added a resource with no translation.">MISSING_LBL</string>
-
-
     <string name="menu_tos">Vilkår for bruk</string>
     <string name="menu_diagnostics">Diagnostikk</string>
-    <!-- TODO(johntaylor): the following might be deleted in favor of an icon -->
-    <string name="control_panel_btn" translation_description="Label for the control panel button">Kontrollpanel</string>
-
     <string name="north_pole">NP</string>
     <string name="south_pole">SP</string>
-
-    <string name="kml_load_error">Feilet i å laste KML-fil</string>
-    <string name="load_kml_dialog_title">Last KML</string>
-    <string name="load_kml_file">Last</string>
     <string name="enable_analytics">Send bruksstatistikk</string>
     <string name="enable_analytics_desc">Gjør Sky Map bedre ved å sende anonyme data til Google Analytics</string>
-
     <string name="no_sensor_warning">Enheten din kan mangle orienteringssensorer - auto-modus fungerer kanskje ikke</string>
     <string name="warning_dialog_title">Dårlig nytt!</string>
     <string name="missing_sensor_dialog_text">\n
@@ -196,13 +164,11 @@
     <string name="compass_calibration_activity_do_not_show_this_again">Ikke vis dette igjen</string>
     <string name="compass_calibration_activity_warning">Kompasset ditt kan ha behov for å bli
         kalibrert</string>
-    <string name="compass_calib_what_to_do"
-        translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL">Telefonen din rapporterer til Sky
+    <string name="compass_calib_what_to_do" translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL">Telefonen din rapporterer til Sky
         Map at det interne kompasset ikke er kalibrert.
     Dette er ikke et Sky Map-problem, men vi kan hjelpe deg med å prøve å løse det. For å kalibrere kompasset prøv å bevege telefonen i en åttetallsbevegelse
         som demonstrert i denne videoen %s til nøyaktigheten viser \'høy\'.</string>
-    <string name="compass_calib_what_to_do_user"
-        transation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL">Din telefons
+    <string name="compass_calib_what_to_do_user" transation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL">Din telefons
         kompassnøyaktighet
         vises over.
     Hvis den ikke er \'høy\' kan det hende kompasset må kalibreres. Dette er ikke et Sky Map-problem, men
@@ -214,17 +180,9 @@
     <string name="disable_gyro_preference_title">Deaktiver gyroskop</string>
     <string name="disable_gyro_preference_summary">Ikke alle enheter har gyroskop - hvis din har det vil du få bedre resultater med gyroskop aktivert og denne boksen ikke krysset av.  På den annen side hvis enheten ikke har gyroskop så vil Sky Map sannsynligvis ikke fungere hvis du fjerner avkryssingen av denne boksen.</string>
     <string name="rotate_horizon_preference_title">Visningsretning</string>
-
     <string name="rotate_horizon_preference_summary">Roter horisont 90 grader (for enheter
         med påtvunget landskapsorientering) eller bruk pekemodus for at skjermen skal vise
         hva toppen av telefonen peker på (se hjelpetekst).</string>
     <string name="show_object_info_auto_mode_title">Infokort i automatisk modus</string>
     <string name="show_object_info_auto_mode_summary">Vis også infokort når du trykker på objekter i automatisk (sensor) modus</string>
-    <string name="time_travel_next_sunset">Neste solnedgang</string>
-    <string name="time_travel_next_sunrise">Neste soloppgang</string>
-    <string name="time_travel_next_fullmoon">Neste fullmåne</string>
-    <string name="time_travel_mercury_transit_2016">Merkurpassasje 9. mai 2016</string>
-    <string name="time_travel_solar_eclipse_2024">Nord-Amerikansk solformørkelse 8. apr 2024</string>
-    <string name="time_travel_apollo_11">Apollo 11 månelanding</string>
-    <string name="time_travel_jupiter_saturn_2020">Jupiter-Saturn-konjunksjon i 2020</string>
 </resources>

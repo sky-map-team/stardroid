@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Constelaciones -->
     <string name="andromeda" translation_description="Name of the Andromeda constellation">Andrómeda</string>
     <string name="aquarius" translation_description="Name of the Aquarius constellation">Acuario</string>
     <string name="aquila" translation_description="Name of the Aquila constellation">Águila</string>
@@ -98,8 +97,6 @@
     <string name="triangulum_australe" translation_description="Name of the Triangulum Australe constellation">Triángulo Austral</string>
     <string name="volans" translation_description="Name of the Volans constellation">Pez Volador</string>
     <string name="vulpecula" translation_description="Name of the Vulpecula constellation">Zorrilla</string>
-
-    <!-- Objetos mayores del Sistema Solar -->
     <string name="sun">Sol</string>
     <string name="moon">Luna</string>
     <string name="mercury">Mercurio</string>
@@ -111,8 +108,6 @@
     <string name="uranus">Urano</string>
     <string name="neptune">Neptuno</string>
     <string name="pluto">Plutón</string>
-
-    <!-- Objetos de galería -->
     <string name="crab_nebula" translation_description="hubble object">Nebulosa del Cangrejo</string>
     <string name="eagle_nebula" translation_description="hubble object">Nebulosa del Águila</string>
     <string name="andromeda_galaxy" translation_description="hubble object">Galaxia de Andrómeda</string>
@@ -130,9 +125,6 @@
     <string name="hubble_deep_field" translation_description="hubble object">Campo Profundo del Hubble</string>
     <string name="hdf" translation_description="hubble object">Campo Profundo del Hubble</string>
     <string name="rho_oph" translation_description="hubble object">Rho Ophiuchus</string>
-
-
-    <!-- Estrellas -->
     <string name="sirius" translation_description="Name of the Star Sirius">Sirio</string>
     <string name="canopus" translation_description="Name of the Star Canopus">Canopo</string>
     <string name="arcturus" translation_description="Name of the Star Arcturus">Arturo</string>
@@ -204,8 +196,6 @@
     <string name="alpha_centauri" translation_description="Name of the star Alpha Centauri">Alfa Centauri</string>
     <string name="rigil_kent" translation_description="Name of the star Rigil Kent">Rigil Kent</string>
     <string name="e_lyrae" translation_description="Name of the star ε Lyrae">ε Lyrae</string>
-
-    <!-- Objetos Messier etc -->
     <string name="m1" translation_description="Name of the Messier object M1">M1</string>
     <string name="m2" translation_description="Name of the Messier object M2">M2</string>
     <string name="m3" translation_description="Name of the Messier object M3">M3</string>
@@ -324,12 +314,8 @@
     <string name="beehive_cluster" translation_description="Name of the Messier object Beehive Cluster">Cúmulo El Pesebre</string>
     <string name="praesepe" translation_description="Name of the Messier object Praesepe">Praesepe</string>
     <string name="seven_sisters" translation_description="Name of the Messier object Seven Sisters">Siete Hermanas</string>
-	
-    <!-- Objetos humanos -->
     <string name="space_station" translation_description="Name of the Internation Space Station">Estación Espacial Internacional</string>
     <string name="space_shuttle" translation_description="Name of the Space Shuttle">Transbordador Espacial</string>
-
-    <!-- Lluvias de meteoros -->
     <string name="leonids" translation_description="Meteor Shower">Leónidas</string>
     <string name="geminids" translation_description="Meteor Shower">Gemínidas</string>
     <string name="quadrantids" translation_description="Meteor Shower">Cuadrántidas</string>
@@ -340,10 +326,7 @@
     <string name="orionids" translation_description="Meteor Shower">Oriónidas</string>
     <string name="puppidvelids" translation_description="Meteor Shower">Púpidas-Vélidas</string>
     <string name="ursids" translation_description="Meteor Shower">Úrsidas</string>
-
-    <!-- Cometas -->
     <string name="comet_leonard">Cometa Leonard</string>
-    <!-- TODO: no need for these alt names once our search is less lousy -->
     <string name="comet_leonard_alt">Leonard (Cometa)</string>
     <string name="comet_neowise">Cometa Neowise</string>
     <string name="comet_neowise_alt">Neowise (Cometa)</string>

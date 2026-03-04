@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Solar System Educational Content -->
     <string name="object_info_sun_description">सूर्य हमारे सौरमंडल के केंद्र में स्थित तारा है। यह पृथ्वी पर जीवन को संभव बनाने वाली रोशनी और गर्मी प्रदान करता है।</string>
     <string name="object_info_sun_funfact">सूर्य में हमारे सौरमंडल के कुल द्रव्यमान का 99.86% है। लगभग 13 लाख पृथ्वियाँ इसके अंदर समा सकती हैं!</string>
     <string name="object_info_sun_distance">150 मिलियन किमी</string>
@@ -51,7 +50,6 @@
     <string name="object_info_pluto_distance">5.9 बिलियन किमी (औसत)</string>
     <string name="object_info_pluto_size">2,377 किमी व्यास</string>
     <string name="object_info_pluto_mass">1.3 × 10²² किग्रा</string>
-    <!-- Bright Stars Educational Content -->
     <string name="object_info_sirius_description">सिरियस रात के आकाश का सबसे चमकीला तारा है, जो कैनिस मेजर (बड़ा कुत्ता) तारामंडल में स्थित है।</string>
     <string name="object_info_sirius_funfact">सिरियस वास्तव में एक द्विआधारी तारा प्रणाली है! सिरियस B, इसका साथी, पृथ्वी के आकार का एक श्वेत वामन है लेकिन लगभग सूर्य जितना विशाल है।</string>
     <string name="object_info_sirius_distance">8.6 प्रकाश-वर्ष</string>
@@ -247,439 +245,341 @@
     <string name="object_info_diphda_distance">96 प्रकाश-वर्ष</string>
     <string name="object_info_diphda_size">18 सौर त्रिज्या</string>
     <string name="object_info_diphda_mass">2.8 सौर द्रव्यमान</string>
-    <!-- ==================== MESSIER OBJECTS ==================== -->
-    <!-- M1 - Crab Nebula -->
     <string name="object_info_m1_description">क्रैब नेबुला वृषभ में एक सुपरनोवा अवशेष है, 1054 ईस्वी में चीनी खगोलविदों द्वारा दर्ज तारकीय विस्फोट का परिणाम।</string>
     <string name="object_info_m1_funfact">क्रैब नेबुला में प्रति सेकंड 30 बार घूमने वाला एक पल्सर है, जो विस्फोटित तारे का संकुचित कोर है!</string>
     <string name="object_info_m1_distance">6,500 प्रकाश-वर्ष</string>
     <string name="object_info_m1_size">11 प्रकाश-वर्ष व्यास</string>
-    <!-- M13 - Hercules Cluster -->
     <string name="object_info_m13_description">M13 हरक्यूलिस में एक शानदार गोलाकार समूह है जिसमें लगभग 300,000 तारे हैं, उत्तरी आकाश में सबसे चमकीले में से एक।</string>
     <string name="object_info_m13_funfact">1974 में, अरेसिबो संदेश M13 की ओर बाह्य-ग्रहीय बुद्धिमत्ता से संपर्क करने के प्रयास के रूप में भेजा गया था!</string>
     <string name="object_info_m13_distance">22,200 प्रकाश-वर्ष</string>
     <string name="object_info_m13_size">145 प्रकाश-वर्ष व्यास</string>
-    <!-- M31 - Andromeda Galaxy -->
     <string name="object_info_m31_description">एंड्रोमेडा आकाशगंगा मिल्की वे के सबसे निकटतम बड़ी सर्पिल आकाशगंगा है और नग्न आंखों से दिखाई देने वाली सबसे दूर की वस्तुओं में से एक है।</string>
     <string name="object_info_m31_funfact">एंड्रोमेडा आकाशगंगा 110 किमी/सेकंड की गति से हमारी ओर आ रही है और लगभग 4.5 अरब वर्षों में मिल्की वे से टकराएगी!</string>
     <string name="object_info_m31_distance">2.5 मिलियन प्रकाश-वर्ष</string>
     <string name="object_info_m31_size">220,000 प्रकाश-वर्ष व्यास</string>
     <string name="object_info_m31_mass">1.5 ट्रिलियन सौर द्रव्यमान</string>
-    <!-- M42 - Orion Nebula -->
     <string name="object_info_m42_description">ओरायन नेबुला नग्न आंखों से दिखाई देने वाला एक विसरित उत्सर्जन नीहारिका है, रात के आकाश में सबसे अधिक फोटो खींची जाने वाली वस्तुओं में से एक।</string>
     <string name="object_info_m42_funfact">ओरायन नेबुला एक तारकीय नर्सरी है जहां अभी नए तारे बन रहे हैं। 700 से अधिक तारे इसके अंदर बन रहे हैं!</string>
     <string name="object_info_m42_distance">1,344 प्रकाश-वर्ष</string>
     <string name="object_info_m42_size">24 प्रकाश-वर्ष व्यास</string>
-    <!-- M45 - Pleiades -->
     <string name="object_info_m45_description">प्लीएड्स वृषभ में एक खुला तारा समूह है, जिसे सप्त ऋषि के नाम से भी जाना जाता है, प्राचीन काल से नग्न आंखों से दिखाई देता है।</string>
     <string name="object_info_m45_funfact">प्लीएड्स पृथ्वी के निकटतम तारा समूहों में से एक है और लगभग हर प्राचीन सभ्यता द्वारा पहचाना गया है!</string>
     <string name="object_info_m45_distance">444 प्रकाश-वर्ष</string>
     <string name="object_info_m45_size">17 प्रकाश-वर्ष व्यास</string>
-    <!-- M51 - Whirlpool Galaxy -->
     <string name="object_info_m51_description">व्हर्लपूल आकाशगंगा केन्स वेनाटिसी में एक भव्य-डिज़ाइन सर्पिल आकाशगंगा है, जो अपनी आकर्षक सर्पिल भुजाओं और साथी आकाशगंगा के लिए प्रसिद्ध है।</string>
     <string name="object_info_m51_funfact">व्हर्लपूल पहली आकाशगंगा थी जिसे सर्पिल संरचना वाली के रूप में पहचाना गया था, जिसे लॉर्ड रॉस ने 1845 में खोजा था!</string>
     <string name="object_info_m51_distance">23 मिलियन प्रकाश-वर्ष</string>
     <string name="object_info_m51_size">76,000 प्रकाश-वर्ष व्यास</string>
-    <!-- M57 - Ring Nebula -->
     <string name="object_info_m57_description">रिंग नेबुला लायरा में एक ग्रहीय नीहारिका है, मरते हुए सूर्य जैसे तारे द्वारा निष्कासित गैस का चमकता हुआ आवरण।</string>
     <string name="object_info_m57_funfact">रिंग नेबुला लगभग 20 किमी/सेकंड की गति से फैल रहा है और अगले 10,000 वर्षों में अंततः अंतरिक्ष में बिखर जाएगा!</string>
     <string name="object_info_m57_distance">2,300 प्रकाश-वर्ष</string>
     <string name="object_info_m57_size">1.3 प्रकाश-वर्ष व्यास</string>
-    <!-- M81 - Bode\'s Galaxy -->
     <string name="object_info_m81_description">M81 उर्सा मेजर में एक भव्य-डिज़ाइन सर्पिल आकाशगंगा है, पृथ्वी से दिखाई देने वाली सबसे चमकीली आकाशगंगाओं में से एक।</string>
     <string name="object_info_m81_funfact">M81 पड़ोसी आकाशगंगा M82 के साथ गुरुत्वाकर्षण से परस्पर क्रिया कर रही है, जो M82 में तीव्र तारा निर्माण को ट्रिगर कर रही है!</string>
     <string name="object_info_m81_distance">12 मिलियन प्रकाश-वर्ष</string>
     <string name="object_info_m81_size">90,000 प्रकाश-वर्ष व्यास</string>
-    <!-- M82 - Cigar Galaxy -->
     <string name="object_info_m82_description">सिगार आकाशगंगा उर्सा मेजर में एक स्टारबर्स्ट आकाशगंगा है, जो अपने किनारे के उन्मुखीकरण और तीव्र तारा निर्माण के लिए जानी जाती है।</string>
     <string name="object_info_m82_funfact">M82 पड़ोसी M81 के साथ गुरुत्वाकर्षण परस्पर क्रिया के कारण हमारी मिल्की वे की तुलना में 10 गुना तेजी से तारे बना रही है!</string>
     <string name="object_info_m82_distance">12 मिलियन प्रकाश-वर्ष</string>
     <string name="object_info_m82_size">37,000 प्रकाश-वर्ष व्यास</string>
-    <!-- M101 - Pinwheel Galaxy -->
     <string name="object_info_m101_description">पिनव्हील आकाशगंगा उर्सा मेजर में एक आमने-सामने सर्पिल आकाशगंगा है, सबसे बड़ी ज्ञात सर्पिल आकाशगंगाओं में से एक।</string>
     <string name="object_info_m101_funfact">पिनव्हील आकाशगंगा में एक ट्रिलियन से अधिक तारे हैं और पिछले आकाशगंगा परस्पर क्रियाओं के कारण असममित सर्पिल भुजाएं हैं!</string>
     <string name="object_info_m101_distance">21 मिलियन प्रकाश-वर्ष</string>
     <string name="object_info_m101_size">170,000 प्रकाश-वर्ष व्यास</string>
-    <!-- M104 - Sombrero Galaxy -->
     <string name="object_info_m104_description">सोम्ब्रेरो आकाशगंगा कन्या में एक सर्पिल आकाशगंगा है, जो अपने चमकीले केंद्रक और अंधेरी धूल पट्टी वाले बड़े केंद्रीय उभार के लिए प्रसिद्ध है।</string>
     <string name="object_info_m104_funfact">सोम्ब्रेरो आकाशगंगा के केंद्र में एक अति-विशाल ब्लैक होल है जिसका अनुमानित द्रव्यमान 1 अरब सौर द्रव्यमान है!</string>
     <string name="object_info_m104_distance">31 मिलियन प्रकाश-वर्ष</string>
     <string name="object_info_m104_size">50,000 प्रकाश-वर्ष व्यास</string>
-    <!-- M8 - Lagoon Nebula -->
     <string name="object_info_m8_description">लैगून नेबुला धनु में एक विशाल अंतरतारकीय बादल है, ग्रीष्मकालीन आकाश में सबसे बेहतरीन और चमकीले नीहारिकाओं में से एक।</string>
     <string name="object_info_m8_funfact">लैगून नेबुला में हर्शेल 36 है, जो ज्ञात सबसे विशाल और चमकीले तारों में से एक है!</string>
     <string name="object_info_m8_distance">4,100 प्रकाश-वर्ष</string>
     <string name="object_info_m8_size">55 प्रकाश-वर्ष व्यास</string>
-    <!-- M17 - Omega Nebula -->
     <string name="object_info_m17_description">ओमेगा नेबुला (स्वान नेबुला भी) धनु में एक तारा-निर्माण क्षेत्र है, सबसे चमकीले उत्सर्जन नीहारिकाओं में से एक।</string>
     <string name="object_info_m17_funfact">ओमेगा नेबुला में लगभग 800 युवा तारों का एक खुला समूह है जो इसकी गैस और धूल में छिपा है!</string>
     <string name="object_info_m17_distance">5,500 प्रकाश-वर्ष</string>
     <string name="object_info_m17_size">15 प्रकाश-वर्ष व्यास</string>
-    <!-- M20 - Trifid Nebula -->
     <string name="object_info_m20_description">ट्राइफिड नेबुला धनु में उत्सर्जन, परावर्तन और अंधेरी नीहारिकाओं का संयोजन है, जो अंधेरी धूल की पट्टियों द्वारा विभाजित है।</string>
     <string name="object_info_m20_funfact">ट्राइफिड एक वस्तु में तीन अलग-अलग प्रकार की नीहारिकाएं दिखाती है: लाल उत्सर्जन, नीला परावर्तन और अंधेरा अवशोषण!</string>
     <string name="object_info_m20_distance">5,200 प्रकाश-वर्ष</string>
     <string name="object_info_m20_size">20 प्रकाश-वर्ष व्यास</string>
-    <!-- M27 - Dumbbell Nebula -->
     <string name="object_info_m27_description">डंबेल नेबुला वुल्पेकुला में एक ग्रहीय नीहारिका है, जो पहली खोजी गई ग्रहीय नीहारिका है।</string>
     <string name="object_info_m27_funfact">डंबेल नेबुला की खोज 1764 में चार्ल्स मेसियर ने की थी, जिससे यह पहली खोजी गई ग्रहीय नीहारिका बन गई!</string>
     <string name="object_info_m27_distance">1,360 प्रकाश-वर्ष</string>
     <string name="object_info_m27_size">2.5 प्रकाश-वर्ष व्यास</string>
-    <!-- M33 - Triangulum Galaxy -->
     <string name="object_info_m33_description">त्रिकोणम आकाशगंगा स्थानीय समूह का तीसरा सबसे बड़ा सदस्य है, त्रिकोणम तारामंडल में दिखाई देने वाली एक सर्पिल आकाशगंगा।</string>
     <string name="object_info_m33_funfact">त्रिकोणम आकाशगंगा एक दूरस्थ उपग्रह के रूप में एंड्रोमेडा आकाशगंगा से गुरुत्वाकर्षण से बंधी हो सकती है!</string>
     <string name="object_info_m33_distance">2.7 मिलियन प्रकाश-वर्ष</string>
     <string name="object_info_m33_size">60,000 प्रकाश-वर्ष व्यास</string>
-    <!-- M35 - Open Cluster in Gemini -->
     <string name="object_info_m35_description">M35 मिथुन में एक बड़ा खुला तारा समूह है, अच्छी परिस्थितियों में नग्न आंखों से दिखाई देता है।</string>
     <string name="object_info_m35_funfact">M35 में लगभग 200 तारे हैं और समान दृश्य क्षेत्र में एक बहुत पुराने समूह NGC 2158 के पास दिखाई देता है!</string>
     <string name="object_info_m35_distance">2,800 प्रकाश-वर्ष</string>
     <string name="object_info_m35_size">24 प्रकाश-वर्ष व्यास</string>
-    <!-- M44 - Beehive Cluster -->
     <string name="object_info_m44_description">बीहाइव क्लस्टर (प्रेसेपी) कर्क में एक खुला समूह है, प्राचीन काल से जाना जाता है और नग्न आंखों से दिखाई देता है।</string>
     <string name="object_info_m44_funfact">प्राचीन खगोलविदों ने बीहाइव क्लस्टर की दृश्यता का उपयोग मौसम की भविष्यवाणी के लिए किया - अगर अदृश्य था, तो बारिश आ रही थी!</string>
     <string name="object_info_m44_distance">577 प्रकाश-वर्ष</string>
     <string name="object_info_m44_size">15 प्रकाश-वर्ष व्यास</string>
-    <!-- M78 - Reflection Nebula -->
     <string name="object_info_m78_description">M78 आकाश में सबसे चमकीला विसरित परावर्तन नीहारिका है, प्रसिद्ध बेल्ट तारों के पास ओरायन में स्थित है।</string>
     <string name="object_info_m78_funfact">M78 में लगभग 45 युवा T टॉरी परिवर्तनशील तारे हैं, बहुत युवा तारे जो अभी भी मुख्य अनुक्रम की ओर संकुचित हो रहे हैं!</string>
     <string name="object_info_m78_distance">1,600 प्रकाश-वर्ष</string>
     <string name="object_info_m78_size">4 प्रकाश-वर्ष व्यास</string>
-    <!-- M83 - Southern Pinwheel Galaxy -->
     <string name="object_info_m83_description">दक्षिणी पिनव्हील हाइड्रा में एक वर्जित सर्पिल आकाशगंगा है, हमारे आकाश में निकटतम और सबसे चमकीली वर्जित सर्पिल आकाशगंगाओं में से एक।</string>
     <string name="object_info_m83_funfact">M83 में छह देखे गए सुपरनोवा हुए हैं, किसी भी आकाशगंगा से अधिक - सुपरनोवा उत्पादन के लिए एक रिकॉर्ड!</string>
     <string name="object_info_m83_distance">15 मिलियन प्रकाश-वर्ष</string>
     <string name="object_info_m83_size">55,000 प्रकाश-वर्ष व्यास</string>
-    <!-- M3 - Globular Cluster -->
     <string name="object_info_m3_description">M3 आकाश में सबसे बड़े और सबसे चमकीले गोलाकार समूहों में से एक है, जो केन्स वेनाटिसी में स्थित है।</string>
     <string name="object_info_m3_funfact">M3 में लगभग 500,000 तारे हैं और इसकी आयु लगभग 11.4 अरब वर्ष अनुमानित है!</string>
     <string name="object_info_m3_distance">33,900 प्रकाश-वर्ष</string>
     <string name="object_info_m3_size">180 प्रकाश-वर्ष व्यास</string>
-    <!-- M5 - Globular Cluster -->
     <string name="object_info_m5_description">M5 सर्पेंस में एक गोलाकार समूह है, लगभग 13 अरब वर्ष पुराना सबसे पुराने गोलाकार समूहों में से एक।</string>
     <string name="object_info_m5_funfact">M5 में 100,000 से अधिक तारे हैं और किसी भी गोलाकार समूह में ज्ञात परिवर्तनशील तारों की सबसे अधिक संख्या में से एक है!</string>
     <string name="object_info_m5_distance">24,500 प्रकाश-वर्ष</string>
     <string name="object_info_m5_size">165 प्रकाश-वर्ष व्यास</string>
-    <!-- M15 - Globular Cluster -->
     <string name="object_info_m15_description">M15 पेगासस में एक घना गोलाकार समूह है, जो अपने कोर में एक ग्रहीय नीहारिका रखने के लिए उल्लेखनीय है - गोलाकार समूहों के लिए बहुत दुर्लभ।</string>
     <string name="object_info_m15_funfact">M15 में लगभग 4,000 सौर द्रव्यमान का एक केंद्रीय ब्लैक होल हो सकता है, हालांकि यह अभी भी विवादित है!</string>
     <string name="object_info_m15_distance">33,600 प्रकाश-वर्ष</string>
     <string name="object_info_m15_size">175 प्रकाश-वर्ष व्यास</string>
-    <!-- M22 - Globular Cluster -->
     <string name="object_info_m22_description">M22 पृथ्वी के निकटतम और सबसे चमकीले गोलाकार समूहों में से एक है, आकाशगंगा केंद्र के पास धनु में स्थित है।</string>
     <string name="object_info_m22_funfact">M22 पहले खोजे गए गोलाकार समूहों में से एक था, जिसे 1665 में अब्राहम इहले ने खोजा था!</string>
     <string name="object_info_m22_distance">10,600 प्रकाश-वर्ष</string>
     <string name="object_info_m22_size">70 प्रकाश-वर्ष व्यास</string>
-    <!-- M4 - Globular Cluster -->
     <string name="object_info_m4_description">M4 पृथ्वी के निकटतम गोलाकार समूहों में से एक है और सबसे आसानी से खोजे जाने वालों में से एक, वृश्चिक में एंटारेस के पास स्थित है।</string>
     <string name="object_info_m4_funfact">M4 में एक श्वेत वामन है जिसकी आयु लगभग 13 अरब वर्ष अनुमानित है - मिल्की वे में सबसे पुराने ज्ञात तारों में से एक!</string>
     <string name="object_info_m4_distance">7,200 प्रकाश-वर्ष</string>
     <string name="object_info_m4_size">75 प्रकाश-वर्ष व्यास</string>
-    <!-- M7 - Ptolemy Cluster -->
     <string name="object_info_m7_description">टॉलेमी क्लस्टर वृश्चिक में एक चमकीला खुला समूह है, नग्न आंखों से दिखाई देने वाले सबसे प्रमुख समूहों में से एक।</string>
     <string name="object_info_m7_funfact">M7 को पहली बार टॉलेमी ने 130 ईस्वी में दर्ज किया था और लगभग 2,000 वर्षों से देखा जा रहा है!</string>
     <string name="object_info_m7_distance">980 प्रकाश-वर्ष</string>
     <string name="object_info_m7_size">25 प्रकाश-वर्ष व्यास</string>
-    <!-- M6 - Butterfly Cluster -->
     <string name="object_info_m6_description">बटरफ्लाई क्लस्टर वृश्चिक में एक खुला समूह है, जिसका नाम इसके सबसे चमकीले तारों की तितली जैसी व्यवस्था के लिए रखा गया है।</string>
     <string name="object_info_m6_funfact">M6 लगभग 100 मिलियन वर्ष पुराना है और इसमें नारंगी दानव BM स्कॉर्पी सहित 300 से अधिक तारे हैं!</string>
     <string name="object_info_m6_distance">1,600 प्रकाश-वर्ष</string>
     <string name="object_info_m6_size">25 प्रकाश-वर्ष व्यास</string>
-    <!-- M11 - Wild Duck Cluster -->
     <string name="object_info_m11_description">वाइल्ड डक क्लस्टर स्कूटम में एक समृद्ध खुला समूह है, सबसे संकुचित ज्ञात खुले समूहों में से एक।</string>
     <string name="object_info_m11_funfact">M11 में लगभग 3,000 तारे एक छोटे क्षेत्र में भरे हुए हैं, जो दूरबीनों के माध्यम से एक शानदार दृश्य बनाते हैं!</string>
     <string name="object_info_m11_distance">6,200 प्रकाश-वर्ष</string>
     <string name="object_info_m11_size">20 प्रकाश-वर्ष व्यास</string>
-    <!-- M16 - Eagle Nebula -->
     <string name="object_info_m16_description">ईगल नेबुला सर्पेंस में एक तारा-निर्माण नीहारिका है, जो हबल द्वारा चित्रित सृष्टि के स्तंभों के लिए प्रसिद्ध है।</string>
     <string name="object_info_m16_funfact">M16 में सृष्टि के स्तंभ लगभग 5 प्रकाश-वर्ष लंबे हैं और पास के तारों के विकिरण द्वारा धीरे-धीरे नष्ट हो रहे हैं!</string>
     <string name="object_info_m16_distance">7,000 प्रकाश-वर्ष</string>
     <string name="object_info_m16_size">70 प्रकाश-वर्ष व्यास</string>
-    <!-- M2 - Globular Cluster -->
     <string name="object_info_m2_description">M2 सबसे बड़े और सबसे समृद्ध ज्ञात गोलाकार समूहों में से एक है, जो कुंभ में स्थित है।</string>
     <string name="object_info_m2_funfact">M2 में लगभग 150,000 तारे हैं और 175 प्रकाश-वर्ष का व्यास है, जो इसे सबसे बड़े गोलाकारों में से एक बनाता है!</string>
     <string name="object_info_m2_distance">37,500 प्रकाश-वर्ष</string>
     <string name="object_info_m2_size">175 प्रकाश-वर्ष व्यास</string>
-    <!-- M10 - Globular Cluster -->
     <string name="object_info_m10_description">M10 ओफियुकस में एक चमकीला गोलाकार समूह है, हमारे सौरमंडल के निकट गोलाकार समूहों में से एक।</string>
     <string name="object_info_m10_funfact">M10 70 किमी/सेकंड से अधिक की गति से हमारी ओर आ रहा है और इसके कोर में असामान्य रूप से कम तारों की सांद्रता है!</string>
     <string name="object_info_m10_distance">14,300 प्रकाश-वर्ष</string>
     <string name="object_info_m10_size">83 प्रकाश-वर्ष व्यास</string>
-    <!-- M12 - Globular Cluster -->
     <string name="object_info_m12_description">M12 ओफियुकस में एक गोलाकार समूह है, जो अपेक्षाकृत ढीली केंद्रीय सांद्रता के लिए उल्लेखनीय है।</string>
     <string name="object_info_m12_funfact">M12 ने अरबों वर्षों में मिल्की वे के गुरुत्वाकर्षण खिंचाव के कारण अपने कई कम-द्रव्यमान तारों को खो दिया है!</string>
     <string name="object_info_m12_distance">15,700 प्रकाश-वर्ष</string>
     <string name="object_info_m12_size">75 प्रकाश-वर्ष व्यास</string>
-    <!-- M14 - Globular Cluster -->
     <string name="object_info_m14_description">M14 ओफियुकस में एक गोलाकार समूह है जिसमें कई लाख तारे हैं।</string>
     <string name="object_info_m14_funfact">1938 में, M14 में एक नोवा दिखाई दिया लेकिन 1964 तक खोजा नहीं गया जब पुरानी फोटोग्राफिक प्लेटों की जांच की गई!</string>
     <string name="object_info_m14_distance">30,300 प्रकाश-वर्ष</string>
     <string name="object_info_m14_size">100 प्रकाश-वर्ष व्यास</string>
-    <!-- M53 - Globular Cluster -->
     <string name="object_info_m53_description">M53 कोमा बेरेनिसेस में एक गोलाकार समूह है, हमारी आकाशगंगा में अधिक बाहरी गोलाकार समूहों में से एक।</string>
     <string name="object_info_m53_funfact">M53 आकाशगंगा केंद्र से सबसे दूर के गोलाकार समूहों में से एक है, इससे 60,000 प्रकाश-वर्ष दूर!</string>
     <string name="object_info_m53_distance">58,000 प्रकाश-वर्ष</string>
     <string name="object_info_m53_size">220 प्रकाश-वर्ष व्यास</string>
-    <!-- M64 - Black Eye Galaxy -->
     <string name="object_info_m64_description">ब्लैक आई गैलेक्सी कोमा बेरेनिसेस में एक सर्पिल आकाशगंगा है, जो अपने केंद्रक के चारों ओर अवशोषित धूल की अंधेरी पट्टी के लिए प्रसिद्ध है।</string>
     <string name="object_info_m64_funfact">M64 के बाहरी क्षेत्र इसके आंतरिक क्षेत्रों से विपरीत दिशा में घूमते हैं, संभवतः पिछले आकाशगंगा विलय से!</string>
     <string name="object_info_m64_distance">17 मिलियन प्रकाश-वर्ष</string>
     <string name="object_info_m64_size">70,000 प्रकाश-वर्ष व्यास</string>
-    <!-- M65 - Galaxy in Leo -->
     <string name="object_info_m65_description">M65 सिंह में एक सर्पिल आकाशगंगा है, M66 और NGC 3628 के साथ प्रसिद्ध लियो ट्रिपलेट का हिस्सा।</string>
     <string name="object_info_m65_funfact">लियो ट्रिपलेट आकाशगंगाएं गुरुत्वाकर्षण से परस्पर क्रिया कर रही हैं, जिससे ज्वारीय पूंछ और विकृत संरचनाएं बन रही हैं!</string>
     <string name="object_info_m65_distance">35 मिलियन प्रकाश-वर्ष</string>
     <string name="object_info_m65_size">90,000 प्रकाश-वर्ष व्यास</string>
-    <!-- M66 - Galaxy in Leo -->
     <string name="object_info_m66_description">M66 लियो ट्रिपलेट का सबसे बड़ा सदस्य है, असममित सर्पिल भुजाओं वाली एक सर्पिल आकाशगंगा।</string>
     <string name="object_info_m66_funfact">M66 की असममित उपस्थिति इसके पड़ोसियों M65 और NGC 3628 के साथ गुरुत्वाकर्षण परस्पर क्रियाओं के कारण है!</string>
     <string name="object_info_m66_distance">36 मिलियन प्रकाश-वर्ष</string>
     <string name="object_info_m66_size">95,000 प्रकाश-वर्ष व्यास</string>
-    <!-- M74 - Phantom Galaxy -->
     <string name="object_info_m74_description">फैंटम गैलेक्सी मीन में एक आमने-सामने सर्पिल आकाशगंगा है, जो अपनी परिपूर्ण भव्य-डिज़ाइन सर्पिल संरचना के लिए जानी जाती है।</string>
     <string name="object_info_m74_funfact">M74 को फैंटम गैलेक्सी उपनाम दिया गया है क्योंकि इसकी बहुत कम सतह चमक है, जो इसे देखने में चुनौतीपूर्ण बनाती है!</string>
     <string name="object_info_m74_distance">32 मिलियन प्रकाश-वर्ष</string>
     <string name="object_info_m74_size">95,000 प्रकाश-वर्ष व्यास</string>
-    <!-- M77 - Cetus A -->
     <string name="object_info_m77_description">M77 सेटस में एक वर्जित सर्पिल आकाशगंगा है जिसमें एक सक्रिय आकाशगंगीय केंद्रक है जो एक अति-विशाल ब्लैक होल द्वारा संचालित है।</string>
     <string name="object_info_m77_funfact">M77 में एक सक्रिय आकाशगंगीय केंद्रक है जिसमें हमारे सूर्य के द्रव्यमान का 15 मिलियन गुना ब्लैक होल है!</string>
     <string name="object_info_m77_distance">47 मिलियन प्रकाश-वर्ष</string>
     <string name="object_info_m77_size">120,000 प्रकाश-वर्ष व्यास</string>
-    <!-- M92 - Globular Cluster -->
     <string name="object_info_m92_description">M92 हरक्यूलिस में एक चमकीला गोलाकार समूह है, जिसे अक्सर अधिक प्रसिद्ध M13 से निकटता के कारण अनदेखा किया जाता है।</string>
     <string name="object_info_m92_funfact">M92 लगभग 14.2 अरब वर्ष पुराने सबसे पुराने गोलाकार समूहों में से एक है - लगभग ब्रह्मांड जितना पुराना!</string>
     <string name="object_info_m92_distance">26,700 प्रकाश-वर्ष</string>
     <string name="object_info_m92_size">109 प्रकाश-वर्ष व्यास</string>
-    <!-- M94 - Cat\'s Eye Galaxy -->
     <string name="object_info_m94_description">M94 केन्स वेनाटिसी में एक सर्पिल आकाशगंगा है जिसमें एक चमकीला आंतरिक वलय है जहां सक्रिय तारा निर्माण हो रहा है।</string>
     <string name="object_info_m94_funfact">M94 का आंतरिक वलय एक स्टारबर्स्ट वलय है जहां बहुत उच्च दर पर नए तारे बन रहे हैं!</string>
     <string name="object_info_m94_distance">16 मिलियन प्रकाश-वर्ष</string>
     <string name="object_info_m94_size">50,000 प्रकाश-वर्ष व्यास</string>
-    <!-- M97 - Owl Nebula -->
     <string name="object_info_m97_description">उल्लू नीहारिका उर्सा मेजर में एक ग्रहीय नीहारिका है, जिसका नाम दो अंधेरे धब्बों वाली उल्लू जैसी उपस्थिति के लिए रखा गया है।</string>
     <string name="object_info_m97_funfact">M97 में अंधेरी उल्लू आंखें नीहारिका में त्रि-आयामी गुहाएं हैं, जो हमारी दृष्टि रेखा के साथ संरेखित हैं!</string>
     <string name="object_info_m97_distance">2,030 प्रकाश-वर्ष</string>
     <string name="object_info_m97_size">2 प्रकाश-वर्ष व्यास</string>
-    <!-- M106 - Galaxy in Canes Venatici -->
     <string name="object_info_m106_description">M106 केन्स वेनाटिसी में एक सर्पिल आकाशगंगा है जिसमें इसके केंद्रीय ब्लैक होल से जेट के कारण विसंगत सर्पिल भुजाएं हैं।</string>
     <string name="object_info_m106_funfact">M106 के केंद्रक में जल मेजर हैं, जो खगोलविदों को इसकी दूरी को सटीक रूप से मापने की अनुमति देते हैं!</string>
     <string name="object_info_m106_distance">23.5 मिलियन प्रकाश-वर्ष</string>
     <string name="object_info_m106_size">135,000 प्रकाश-वर्ष व्यास</string>
-    <!-- M109 - Barred Spiral Galaxy -->
     <string name="object_info_m109_description">M109 उर्सा मेजर में एक वर्जित सर्पिल आकाशगंगा है, इसके नाम वाले आकाशगंगा समूह का सबसे चमकीला सदस्य।</string>
     <string name="object_info_m109_funfact">M109 बिग डिपर में तारे फेकदा के बहुत करीब स्थित है, जिससे इसे खोजना आसान हो जाता है!</string>
     <string name="object_info_m109_distance">83 मिलियन प्रकाश-वर्ष</string>
     <string name="object_info_m109_size">180,000 प्रकाश-वर्ष व्यास</string>
-    <!-- M110 - Satellite of Andromeda -->
     <string name="object_info_m110_description">M110 एक बौनी दीर्घवृत्ताकार आकाशगंगा और एंड्रोमेडा आकाशगंगा का उपग्रह है, मेसियर कैटलॉग में जोड़ी गई अंतिम वस्तु।</string>
     <string name="object_info_m110_funfact">M110 को वास्तव में मेसियर ने 1773 में देखा था लेकिन 1966 तक उनकी सूची में नहीं जोड़ा गया!</string>
     <string name="object_info_m110_distance">2.7 मिलियन प्रकाश-वर्ष</string>
     <string name="object_info_m110_size">17,000 प्रकाश-वर्ष व्यास</string>
-    <!-- M32 - Satellite of Andromeda -->
     <string name="object_info_m32_description">M32 एक संकुचित बौनी दीर्घवृत्ताकार आकाशगंगा और एंड्रोमेडा आकाशगंगा का निकट उपग्रह है।</string>
     <string name="object_info_m32_funfact">M32 पहली खोजी गई दीर्घवृत्ताकार आकाशगंगा थी और कभी एक बड़ी सर्पिल आकाशगंगा रही होगी जो एंड्रोमेडा द्वारा छीन ली गई!</string>
     <string name="object_info_m32_distance">2.5 मिलियन प्रकाश-वर्ष</string>
     <string name="object_info_m32_size">6,500 प्रकाश-वर्ष व्यास</string>
-    <!-- M49 - Elliptical Galaxy -->
     <string name="object_info_m49_description">M49 कन्या में एक विशाल दीर्घवृत्ताकार आकाशगंगा है, कन्या क्लस्टर का सबसे चमकीला सदस्य।</string>
     <string name="object_info_m49_funfact">M49 कन्या क्लस्टर का पहला खोजा गया सदस्य था और इसमें लगभग 6,000 गोलाकार समूह हैं!</string>
     <string name="object_info_m49_distance">55 मिलियन प्रकाश-वर्ष</string>
     <string name="object_info_m49_size">160,000 प्रकाश-वर्ष व्यास</string>
-    <!-- M87 - Virgo A -->
     <string name="object_info_m87_description">M87 कन्या में एक सुपरजाइंट दीर्घवृत्ताकार आकाशगंगा है, स्थानीय ब्रह्मांड में सबसे विशाल आकाशगंगाओं में से एक।</string>
     <string name="object_info_m87_funfact">M87 का केंद्रीय ब्लैक होल 2019 में इवेंट होराइजन टेलीस्कोप द्वारा चित्रित पहला था - इसका द्रव्यमान 6.5 अरब सौर द्रव्यमान है!</string>
     <string name="object_info_m87_distance">53 मिलियन प्रकाश-वर्ष</string>
     <string name="object_info_m87_size">240,000 प्रकाश-वर्ष व्यास</string>
     <string name="object_info_m87_mass">2.4 ट्रिलियन सौर द्रव्यमान</string>
-    <!-- ==================== CONSTELLATIONS ==================== -->
-    <!-- Orion -->
     <string name="object_info_orion_description">ओरायन शिकारी सबसे पहचानने योग्य तारामंडलों में से एक है, जो अपनी विशिष्ट तीन तारों की बेल्ट के साथ दोनों गोलार्धों से दिखाई देता है।</string>
     <string name="object_info_orion_funfact">ओरायन की बेल्ट एक दिशा में सिरियस (सबसे चमकीला तारा) और दूसरी दिशा में एल्डेबरान (वृषभ में) की ओर इशारा करती है!</string>
     <string name="object_info_orion_size">594 वर्ग डिग्री</string>
-    <!-- Ursa Major -->
     <string name="object_info_ursa_major_description">उर्सा मेजर (बड़ा भालू) में बिग डिपर तारामंडल है, उत्तरी आकाश में सबसे पहचाने जाने वाले तारा पैटर्न में से एक।</string>
     <string name="object_info_ursa_major_funfact">बिग डिपर के पांच तारे भौतिक रूप से संबंधित हैं, जो उर्सा मेजर मूविंग ग्रुप के रूप में एक साथ अंतरिक्ष में चल रहे हैं!</string>
     <string name="object_info_ursa_major_size">1,280 वर्ग डिग्री</string>
-    <!-- Ursa Minor -->
     <string name="object_info_ursa_minor_description">उर्सा माइनर (छोटा भालू) में लिटिल डिपर और पोलारिस है, वर्तमान उत्तर तारा जो पृथ्वी के खगोलीय उत्तरी ध्रुव को चिह्नित करता है।</string>
     <string name="object_info_ursa_minor_funfact">पुरस्सरण के कारण, पोलारिस हमेशा उत्तर तारा नहीं रहेगा - 14,000 वर्षों में, वेगा इसकी जगह लेगा!</string>
     <string name="object_info_ursa_minor_size">256 वर्ग डिग्री</string>
-    <!-- Cassiopeia -->
     <string name="object_info_cassiopeia_description">कैसिओपिया उत्तरी आकाश में एक विशिष्ट W-आकार का तारामंडल है, जिसका नाम ग्रीक पौराणिक कथाओं की एक घमंडी रानी के नाम पर रखा गया है।</string>
     <string name="object_info_cassiopeia_funfact">1572 का टाइको ब्राहे का सुपरनोवा कैसिओपिया में दिखाई दिया था, जिससे यह साबित हुआ कि आकाश बदल सकता है!</string>
     <string name="object_info_cassiopeia_size">598 वर्ग डिग्री</string>
-    <!-- Scorpius -->
     <string name="object_info_scorpius_description">वृश्चिक एक प्रमुख राशि तारामंडल है जिसमें एक विशिष्ट घुमावदार पूंछ है, जो लाल महादानव एंटारेस द्वारा प्रभुत्व है।</string>
     <string name="object_info_scorpius_funfact">पौराणिक कथाओं में, वृश्चिक को ओरायन के विपरीत आकाश में रखा गया था ताकि शिकारी फिर कभी डंक न खाए!</string>
     <string name="object_info_scorpius_size">497 वर्ग डिग्री</string>
-    <!-- Leo -->
     <string name="object_info_leo_description">सिंह राशि तारामंडल में शेर के दिल में रेगुलस और विशिष्ट सिकल तारामंडल है।</string>
     <string name="object_info_leo_funfact">नवंबर में लियोनिड उल्का वर्षा सिंह से निकलती प्रतीत होती है और शानदार तूफान पैदा कर सकती है!</string>
     <string name="object_info_leo_size">947 वर्ग डिग्री</string>
-    <!-- Gemini -->
     <string name="object_info_gemini_description">मिथुन जुड़वां में चमकीले तारे कैस्टर और पोलक्स हैं, जो ग्रीक पौराणिक कथाओं के जुड़वां भाइयों का प्रतिनिधित्व करते हैं।</string>
     <string name="object_info_gemini_funfact">जुड़वां कहलाने के बावजूद, कैस्टर वास्तव में छह तारे हैं और पोलक्स एक नारंगी दानव है - वे बिल्कुल भी एक जैसे नहीं दिखते!</string>
     <string name="object_info_gemini_size">514 वर्ग डिग्री</string>
-    <!-- Taurus -->
     <string name="object_info_taurus_description">वृषभ एक राशि तारामंडल है जिसमें प्लीएड्स और हायड्स तारा समूह हैं, और चमकीला तारा एल्डेबरान।</string>
     <string name="object_info_taurus_funfact">वृषभ में क्रैब नेबुला 1054 ईस्वी में चीनी खगोलविदों द्वारा देखे और दर्ज किए गए सुपरनोवा का अवशेष है!</string>
     <string name="object_info_taurus_size">797 वर्ग डिग्री</string>
-    <!-- Virgo -->
     <string name="object_info_virgo_description">कन्या दूसरा सबसे बड़ा तारामंडल और एक राशि चिन्ह है, जिसमें 2,000 से अधिक आकाशगंगाओं का कन्या क्लस्टर है।</string>
     <string name="object_info_virgo_funfact">कन्या क्लस्टर कन्या सुपरक्लस्टर का केंद्र है, जिसमें हमारी अपनी मिल्की वे आकाशगंगा है!</string>
     <string name="object_info_virgo_size">1,294 वर्ग डिग्री</string>
-    <!-- Aquarius -->
     <string name="object_info_aquarius_description">कुंभ जलवाहक आकाश के एक क्षेत्र में एक राशि तारामंडल है जिसे अक्सर समुद्र कहा जाता है, जो जल-संबंधित तारामंडलों से घिरा है।</string>
     <string name="object_info_aquarius_funfact">कुंभ में हेलिक्स नेबुला है, पृथ्वी के सबसे निकटतम ग्रहीय नीहारिकाओं में से एक जो केवल 700 प्रकाश-वर्ष दूर है!</string>
     <string name="object_info_aquarius_size">980 वर्ग डिग्री</string>
-    <!-- Pisces -->
     <string name="object_info_pisces_description">मीन मछलियाँ एक बड़ा राशि तारामंडल है जो एक साथ बंधी दो मछलियों का प्रतिनिधित्व करता है, वसंत विषुव बिंदु को चिह्नित करता है।</string>
     <string name="object_info_pisces_funfact">वसंत विषुव (वसंत का पहला दिन) वर्तमान में मीन में स्थित है और 2,000 वर्षों से धीरे-धीरे इसमें से गुजर रहा है!</string>
     <string name="object_info_pisces_size">889 वर्ग डिग्री</string>
-    <!-- Aries -->
     <string name="object_info_aries_description">मेष राशि तारामंडल कभी वसंत विषुव का घर था, जिसने हमें \"मेष का प्रथम बिंदु\" वाक्यांश दिया।</string>
     <string name="object_info_aries_funfact">हालांकि वसंत विषुव लगभग 2,000 साल पहले मीन में चला गया, हम अभी भी इसे मेष का प्रथम बिंदु कहते हैं!</string>
     <string name="object_info_aries_size">441 वर्ग डिग्री</string>
-    <!-- Cancer -->
     <string name="object_info_cancer_description">कर्क केकड़ा सबसे धुंधला राशि तारामंडल है लेकिन इसमें नग्न आंखों से दिखाई देने वाला प्रसिद्ध बीहाइव क्लस्टर (M44) है।</string>
     <string name="object_info_cancer_funfact">कर्क रेखा का नाम तब रखा गया जब ग्रीष्म संक्रांति पर सूर्य कर्क में था, हालांकि अब यह वृषभ में है!</string>
     <string name="object_info_cancer_size">506 वर्ग डिग्री</string>
-    <!-- Capricornus -->
     <string name="object_info_capricornus_description">मकर समुद्री-बकरी एक प्राचीन राशि तारामंडल है जो आधी बकरी, आधी मछली वाले पौराणिक प्राणी को दर्शाती है।</string>
     <string name="object_info_capricornus_funfact">मकर सबसे पुराने पहचाने गए तारामंडलों में से एक है, जो 3,000 से अधिक वर्ष पुरानी बेबीलोनियाई तारा सूचियों में दिखाई देता है!</string>
     <string name="object_info_capricornus_size">414 वर्ग डिग्री</string>
-    <!-- Sagittarius -->
     <string name="object_info_sagittarius_description">धनु तीरंदाज हमारी मिल्की वे आकाशगंगा के केंद्र की ओर इशारा करता है, जिससे यह नीहारिकाओं और तारा समूहों से समृद्ध है।</string>
     <string name="object_info_sagittarius_funfact">जब आप धनु को देखते हैं, तो आप सैजिटेरियस A* की ओर देख रहे हैं, हमारी आकाशगंगा के केंद्र में अति-विशाल ब्लैक होल!</string>
     <string name="object_info_sagittarius_size">867 वर्ग डिग्री</string>
-    <!-- Libra -->
     <string name="object_info_libra_description">तुला तराजू एकमात्र राशि तारामंडल है जो एक निर्जीव वस्तु का प्रतिनिधित्व करता है, जिसे कभी वृश्चिक का हिस्सा माना जाता था।</string>
     <string name="object_info_libra_funfact">तुला के मुख्य तारे कभी बिच्छू के पंजे के रूप में जाने जाते थे इससे पहले कि वे न्याय के तराजू बन गए!</string>
     <string name="object_info_libra_size">538 वर्ग डिग्री</string>
-    <!-- Cygnus -->
     <string name="object_info_cygnus_description">सिग्नस हंस मिल्की वे के साथ उड़ता है, जिसमें उत्तरी क्रॉस तारामंडल और चमकीला तारा डेनेब है।</string>
     <string name="object_info_cygnus_funfact">इस तारामंडल में सिग्नस X-1 पहला व्यापक रूप से स्वीकृत ब्लैक होल था, जिसे 1970 के दशक की शुरुआत में पहचाना गया!</string>
     <string name="object_info_cygnus_size">804 वर्ग डिग्री</string>
-    <!-- Lyra -->
     <string name="object_info_lyra_description">लायरा वीणा एक छोटा लेकिन प्रमुख तारामंडल है जिसमें वेगा है, रात के आकाश का पांचवां सबसे चमकीला तारा।</string>
     <string name="object_info_lyra_funfact">वेगा लगभग 12,000 ईसा पूर्व उत्तर तारा था और पृथ्वी के पुरस्सरण के कारण लगभग 12,000 वर्षों में फिर से होगा!</string>
     <string name="object_info_lyra_size">286 वर्ग डिग्री</string>
-    <!-- Aquila -->
     <string name="object_info_aquila_description">एक्विला गरुड़ खगोलीय भूमध्य रेखा पर एक तारामंडल है, जिसके केंद्र में चमकीला तारा अल्टेयर है।</string>
     <string name="object_info_aquila_funfact">एक्विला में अल्टेयर सबसे तेज घूमने वाले ज्ञात तारों में से एक है, जो इतनी तेजी से घूमता है कि यह अपने भूमध्य रेखा पर उभर जाता है!</string>
     <string name="object_info_aquila_size">652 वर्ग डिग्री</string>
-    <!-- Pegasus -->
     <string name="object_info_pegasus_description">पेगासस पंखों वाला घोड़ा एक बड़ा तारामंडल है जिसमें पेगासस का महान वर्ग है, एक प्रमुख शरद ऋतु का तारामंडल।</string>
     <string name="object_info_pegasus_funfact">1995 में इस तारामंडल में खोजा गया 51 पेगासी b सूर्य जैसे तारे की परिक्रमा करने वाला पहला बहिर्ग्रह था!</string>
     <string name="object_info_pegasus_size">1,121 वर्ग डिग्री</string>
-    <!-- Andromeda -->
     <string name="object_info_andromeda_description">एंड्रोमेडा राजकुमारी में एंड्रोमेडा आकाशगंगा (M31) है, हमारी मिल्की वे के सबसे निकट बड़ी सर्पिल आकाशगंगा।</string>
     <string name="object_info_andromeda_funfact">एंड्रोमेडा आकाशगंगा 110 किमी/सेकंड की गति से हमारी ओर आ रही है और लगभग 4.5 अरब वर्षों में मिल्की वे के साथ विलीन हो जाएगी!</string>
     <string name="object_info_andromeda_size">722 वर्ग डिग्री</string>
-    <!-- Perseus -->
     <string name="object_info_perseus_description">पर्सियस नायक प्रसिद्ध परिवर्तनशील तारे अल्गोल और डबल क्लस्टर का घर है, खुले समूहों की एक शानदार जोड़ी।</string>
     <string name="object_info_perseus_funfact">अल्गोल (दानव तारा) को प्राचीन काल में बुरा माना जाता था क्योंकि यह हर 2.87 दिनों में रहस्यमय ढंग से मंद हो जाता है!</string>
     <string name="object_info_perseus_size">615 वर्ग डिग्री</string>
-    <!-- Centaurus -->
     <string name="object_info_centaurus_description">सेंटॉरस एक बड़ा दक्षिणी तारामंडल है जिसमें अल्फा सेंटॉरी है, हमारे सूर्य के सबसे निकट तारा प्रणाली।</string>
     <string name="object_info_centaurus_funfact">सेंटॉरस में प्रॉक्सिमा सेंटॉरी केवल 4.24 प्रकाश-वर्ष दूर है, जो इसे हमारे सौरमंडल का सबसे निकट तारा बनाता है!</string>
     <string name="object_info_centaurus_size">1,060 वर्ग डिग्री</string>
-    <!-- Crux -->
     <string name="object_info_crux_description">क्रक्स (दक्षिणी क्रॉस) सबसे छोटा तारामंडल है लेकिन सबसे विशिष्ट में से एक है, जिसका उपयोग दक्षिणी गोलार्ध में नेविगेशन के लिए किया जाता है।</string>
     <string name="object_info_crux_funfact">सबसे छोटा तारामंडल होने के बावजूद, क्रक्स में प्रति इकाई क्षेत्र किसी भी अन्य तारामंडल की तुलना में अधिक चमकीले तारे हैं!</string>
     <string name="object_info_crux_size">68 वर्ग डिग्री</string>
-    <!-- Canis Major -->
     <string name="object_info_canis_major_description">कैनिस मेजर (बड़ा कुत्ता) आकाश में ओरायन का अनुसरण करता है और इसमें सिरियस है, पृथ्वी से दिखाई देने वाला सबसे चमकीला तारा।</string>
     <string name="object_info_canis_major_funfact">प्राचीन मिस्रवासियों ने अपना कैलेंडर सिरियस के सूर्योदय पूर्व उदय पर आधारित किया, जो नील नदी की वार्षिक बाढ़ के साथ मेल खाता था!</string>
     <string name="object_info_canis_major_size">380 वर्ग डिग्री</string>
-    <!-- Canis Minor -->
     <string name="object_info_canis_minor_description">कैनिस माइनर (छोटा कुत्ता) एक छोटा तारामंडल है जो प्रोसियॉन के लिए उल्लेखनीय है, आकाश का आठवां सबसे चमकीला तारा।</string>
     <string name="object_info_canis_minor_funfact">प्रोसियॉन का अर्थ ग्रीक में \"कुत्ते से पहले\" है क्योंकि यह हर रात सिरियस (डॉग स्टार) से ठीक पहले उगता है!</string>
     <string name="object_info_canis_minor_size">183 वर्ग डिग्री</string>
-    <!-- Cepheus -->
     <string name="object_info_cepheus_description">सेफियस राजा एक उत्तरी तारामंडल है जिसके तारों में डेल्टा सेफी है, सेफीड परिवर्तनशील तारों का प्रोटोटाइप।</string>
     <string name="object_info_cepheus_funfact">हेनरीटा लीविट द्वारा खोजे गए सेफीड परिवर्तनशील तारों ने हमें ब्रह्मांडीय दूरियां मापने की अनुमति देकर खगोल विज्ञान में क्रांति ला दी!</string>
     <string name="object_info_cepheus_size">588 वर्ग डिग्री</string>
-    <!-- Draco -->
     <string name="object_info_draco_description">ड्रेको ड्रैगन एक लंबा, घुमावदार तारामंडल है जो सुदूर उत्तरी आकाश में उर्सा माइनर के चारों ओर घूमता है।</string>
     <string name="object_info_draco_funfact">ड्रेको में थुबान 5,000 साल पहले जब मिस्र के पिरामिड बनाए गए थे तब उत्तर तारा था!</string>
     <string name="object_info_draco_size">1,083 वर्ग डिग्री</string>
-    <!-- Hercules -->
     <string name="object_info_hercules_description">हरक्यूलिस ग्रीक नायक का प्रतिनिधित्व करने वाला एक बड़ा तारामंडल है, जिसमें महान गोलाकार समूह M13 है।</string>
     <string name="object_info_hercules_funfact">हमारा सौरमंडल हरक्यूलिस में सौर शीर्ष नामक एक बिंदु की ओर लगभग 20 किमी/सेकंड की गति से बढ़ रहा है!</string>
     <string name="object_info_hercules_size">1,225 वर्ग डिग्री</string>
-    <!-- Ophiuchus -->
     <string name="object_info_ophiuchus_description">ओफियुकस सर्प धारक क्रांतिवृत्त के साथ स्थित है लेकिन एक राशि चिन्ह नहीं है, जो उसके द्वारा धारण किए गए सर्प द्वारा विभाजित है।</string>
     <string name="object_info_ophiuchus_funfact">सूर्य वृश्चिक की तुलना में ओफियुकस में अधिक समय बिताता है, फिर भी ओफियुकस को राशि चिन्ह नहीं माना जाता!</string>
     <string name="object_info_ophiuchus_size">948 वर्ग डिग्री</string>
-    <!-- Bootes -->
     <string name="object_info_bootes_description">बूट्स चरवाहा एक तारामंडल है जिसमें आर्कटुरस है, रात के आकाश का चौथा सबसे चमकीला तारा।</string>
     <string name="object_info_bootes_funfact">बिग डिपर के हैंडल के चाप का अनुसरण करें \"आर्क टू आर्कटुरस\" - सबसे प्रसिद्ध नेविगेशन युक्तियों में से एक!</string>
     <string name="object_info_bootes_size">907 वर्ग डिग्री</string>
-    <!-- Corona Borealis -->
     <string name="object_info_corona_borealis_description">कोरोना बोरेलिस (उत्तरी मुकुट) ग्रीक पौराणिक कथाओं के एरियाडने के मुकुट का प्रतिनिधित्व करने वाला एक छोटा अर्धवृत्ताकार तारामंडल है।</string>
     <string name="object_info_corona_borealis_funfact">T कोरोनी बोरेलिस एक आवर्ती नोवा है जो लगभग हर 80 वर्षों में विस्फोट करता है - एक और विस्फोट जल्द ही हो सकता है!</string>
     <string name="object_info_corona_borealis_size">179 वर्ग डिग्री</string>
-    <!-- Corvus -->
     <string name="object_info_corvus_description">कोर्वस कौआ कन्या के दक्षिण में एक छोटा चतुर्भुज तारामंडल है, जो अपोलो के पवित्र पक्षी का प्रतिनिधित्व करता है।</string>
     <string name="object_info_corvus_funfact">कोर्वस के चार मुख्य तारे एक विशिष्ट पाल आकार बनाते हैं जो वसंत आकाश में आसानी से दिखाई देता है!</string>
     <string name="object_info_corvus_size">184 वर्ग डिग्री</string>
-    <!-- Auriga -->
     <string name="object_info_auriga_description">ऑरिगा सारथी एक उत्तरी तारामंडल है जिसमें कैपेला, छठा सबसे चमकीला तारा, और कई खुले समूह हैं।</string>
     <string name="object_info_auriga_funfact">एप्सिलॉन ऑरिगी सबसे अजीब ज्ञात तारों में से एक है, जो एक रहस्यमय अंधेरी डिस्क के कारण हर 27 वर्षों में दो वर्षों के लिए मंद हो जाता है!</string>
     <string name="object_info_auriga_size">657 वर्ग डिग्री</string>
-    <!-- Eridanus -->
     <string name="object_info_eridanus_description">एरिडेनस नदी छठा सबसे बड़ा तारामंडल है, जो ओरायन के पास से सुदूर दक्षिणी आकाश तक फैला है।</string>
     <string name="object_info_eridanus_funfact">एरिडेनस के अंत में एकरनार सबसे चपटा ज्ञात तारा है, जो तेज घूर्णन के कारण अपने भूमध्य रेखा पर 56% अधिक चौड़ा उभरा है!</string>
     <string name="object_info_eridanus_size">1,138 वर्ग डिग्री</string>
-    <!-- Lepus -->
     <string name="object_info_lepus_description">लेपस खरगोश ओरायन के पैरों के नीचे बैठा है, एक समृद्ध पौराणिक कथाओं वाला छोटा लेकिन विशिष्ट तारामंडल।</string>
     <string name="object_info_lepus_funfact">पौराणिक कथाओं में, कहा जाता था कि ओरायन को खरगोशों का शिकार करना पसंद था, इसलिए एक को आकाश में उसके पैरों के नीचे रखा गया!</string>
     <string name="object_info_lepus_size">290 वर्ग डिग्री</string>
-    <!-- Monoceros -->
     <string name="object_info_monoceros_description">मोनोसेरोस यूनिकॉर्न शीतकालीन मिल्की वे में एक धुंधला तारामंडल है, जो नीहारिकाओं और तारा समूहों से समृद्ध है।</string>
     <string name="object_info_monoceros_funfact">मोनोसेरोस में रोज़ेट नेबुला एक विशाल तारा-निर्माण क्षेत्र है जो एक खगोलीय गुलाब जैसा दिखता है!</string>
     <string name="object_info_monoceros_size">482 वर्ग डिग्री</string>
-    <!-- Hydra -->
     <string name="object_info_hydra_description">हाइड्रा आकाश का सबसे बड़ा तारामंडल है, जो ग्रीक पौराणिक कथाओं के जल सर्प का प्रतिनिधित्व करता है।</string>
     <string name="object_info_hydra_funfact">हाइड्रा आकाश के 100 डिग्री से अधिक में फैला है - संपूर्ण खगोलीय गोले के एक चौथाई से अधिक!</string>
     <string name="object_info_hydra_size">1,303 वर्ग डिग्री</string>
-    <!-- Carina -->
     <string name="object_info_carina_description">कैरिना उलटना विशाल आर्गो नेविस तारामंडल का हिस्सा था, जिसमें शानदार तारा कैनोपस है।</string>
     <string name="object_info_carina_funfact">कैरिना में एटा कैरिनी सबसे चमकीले ज्ञात तारों में से एक है और हमारे जीवनकाल में सुपरनोवा के रूप में विस्फोट कर सकता है!</string>
     <string name="object_info_carina_size">494 वर्ग डिग्री</string>
-    <!-- Vela -->
     <string name="object_info_vela_description">वेला पाल कभी महान जहाज आर्गो नेविस का हिस्सा था, जो मिल्की वे के एक समृद्ध क्षेत्र में स्थित है।</string>
     <string name="object_info_vela_funfact">वेला पल्सर आकाश का सबसे चमकीला पल्सर है और 11,000 साल पहले विस्फोट हुए सुपरनोवा का अवशेष है!</string>
     <string name="object_info_vela_size">500 वर्ग डिग्री</string>
-    <!-- Puppis -->
     <string name="object_info_puppis_description">पप्पिस पिछला डेक जहाज आर्गो नेविस के पिछले हिस्से का प्रतिनिधित्व करता है, मिल्की वे के साथ खुले समूहों से समृद्ध।</string>
     <string name="object_info_puppis_funfact">पप्पिस में M47 है, नग्न आंखों से दिखाई देने वाला एक खुला समूह जो कैटलॉगिंग त्रुटि के कारण 200 से अधिक वर्षों तक \"खोया\" रहा!</string>
     <string name="object_info_puppis_size">673 वर्ग डिग्री</string>
-    <!-- Cetus -->
     <string name="object_info_cetus_description">सेटस समुद्री राक्षस एक बड़ा तारामंडल है जिसमें मीरा है, पहला खोजा गया परिवर्तनशील तारा।</string>
     <string name="object_info_cetus_funfact">सेटस में मीरा 11 महीनों में दृश्य से अदृश्य तक बदलता है और इसमें 13 प्रकाश-वर्ष लंबी गैस की पूंछ है!</string>
     <string name="object_info_cetus_size">1,231 वर्ग डिग्री</string>
-    <!-- Phoenix -->
     <string name="object_info_phoenix_description">फीनिक्स एक दक्षिणी तारामंडल है जो पौराणिक पक्षी का प्रतिनिधित्व करता है जो अपनी ही राख से उठता है।</string>
     <string name="object_info_phoenix_funfact">फीनिक्स 16वीं सदी के अंत में डच खोजकर्ताओं द्वारा अज्ञात दक्षिणी तारों से बनाए गए 12 तारामंडलों में से एक था!</string>
     <string name="object_info_phoenix_size">469 वर्ग डिग्री</string>
-    <!-- Grus -->
     <string name="object_info_grus_description">ग्रस सारस एक दक्षिणी तारामंडल है जिसे 16वीं सदी के अंत में यूरोपीय नाविकों द्वारा पेश किया गया था।</string>
     <string name="object_info_grus_funfact">ग्रस को कभी फोनिकोप्टेरस (फ्लेमिंगो) के नाम से जाना जाता था इससे पहले कि इसे बदलकर सारस का प्रतिनिधित्व करने के लिए किया गया!</string>
     <string name="object_info_grus_size">366 वर्ग डिग्री</string>
-    <!-- Pavo -->
     <string name="object_info_pavo_description">पावो मोर एक दक्षिणी तारामंडल है जिसमें चमकीला तारा पीकॉक और कई दिलचस्प आकाशगंगाएं हैं।</string>
     <string name="object_info_pavo_funfact">तारा पीकॉक (अल्फा पावोनिस) हमारे सूर्य से 200 प्रकाश-वर्ष के भीतर दूसरा सबसे चमकीला तारा है!</string>
     <string name="object_info_pavo_size">378 वर्ग डिग्री</string>
-    <!-- Triangulum -->
     <string name="object_info_triangulum_description">त्रिकोणम एक छोटा उत्तरी तारामंडल है जिसमें त्रिकोणम आकाशगंगा (M33) है, स्थानीय समूह में तीसरी सबसे बड़ी।</string>
     <string name="object_info_triangulum_funfact">त्रिकोणम आकाशगंगा आदर्श परिस्थितियों में नग्न आंखों से देखी जा सकने वाली सबसे दूर की वस्तु है!</string>
     <string name="object_info_triangulum_size">132 वर्ग डिग्री</string>
-    <!-- Delphinus -->
     <string name="object_info_delphinus_description">डेल्फिनस डॉल्फिन एक छोटा लेकिन विशिष्ट तारामंडल है जिसके तारे कूदती डॉल्फिन का आकार बनाते हैं।</string>
     <string name="object_info_delphinus_funfact">डेल्फिनस के दो तारों का नाम सुअलोसिन और रोटानेव है - \"निकोलस वेनाटोर\" उल्टा लिखा हुआ, वह खगोलविद जिसने उन्हें नाम दिया!</string>
     <string name="object_info_delphinus_size">189 वर्ग डिग्री</string>
-    <!-- Sagitta -->
     <string name="object_info_sagitta_description">सैजिटा तीर तीसरा सबसे छोटा तारामंडल है, जो ग्रीक किंवदंतियों के विभिन्न पौराणिक तीरों का प्रतिनिधित्व करता है।</string>
     <string name="object_info_sagitta_funfact">छोटा होने के बावजूद, सैजिटा में M71 है, एक गोलाकार समूह जिसे सदियों तक खुला समूह समझा गया!</string>
     <string name="object_info_sagitta_size">80 वर्ग डिग्री</string>

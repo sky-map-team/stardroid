@@ -14,8 +14,7 @@
     <string-array name="viewing_direction">
         <item translation_description="Normal viewing">Normal</item>
         <item translation_description="Rotates the screen by 90 degrees">Rotert horisont</item>
-        <item
-            translation_description="Shows the sky as pointed at by the long edge of the phone">Pekemodus
+        <item translation_description="Shows the sky as pointed at by the long edge of the phone">Pekemodus
         </item>
     </string-array>
 </resources>
