@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="show_object_info_auto_mode_title">Infokort i automatiskt läge</string>
+    <string name="show_object_info_auto_mode_summary">Visa även infokort vid tryck på objekt i automatiskt (sensor) läge</string>
     <string name="object_info_funfact_label">Visste du:</string>
     <string name="object_info_distance_label">Avstånd:</string>
     <string name="object_info_size_label">Storlek:</string>
     <string name="object_info_mass_label">Massa:</string>
     <string name="object_info_spectral_label">Spektral:</string>
     <string name="object_info_magnitude_label">Magnitud:</string>
-    <string name="show_object_info_auto_mode_title">Infokort i automatiskt läge</string>
-    <string name="show_object_info_auto_mode_summary">Visa även infokort vid tryck på objekt i automatiskt (sensor) läge</string>
 </resources>

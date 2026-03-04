@@ -26,9 +26,6 @@
     <string name="location_long_lat">経度: %1$s、緯度: %2$s</string>
     <string name="location_place_found">場所が見つかりました。緯度: %1$f、経度: %2$f</string>
     <string name="use_magnetic_correction">磁気補正機能を使用</string>
-    <string name="use_magnetic_correction_hint">現在地情報を使って向きを磁北ではなく真北に修正します</string>
-    <!-- This string is too long and currently unused -->
-    <string name="provider_prefs" translation_description="Dialog box title for a preferences dialog">表示...</string>
     <string name="show_stars_pref">恒星</string>
     <string name="show_constellations_pref">星座</string>
     <string name="show_messier_objects_pref" translation_description="The celestial objects catalogued by Charles Messier">メシエ天体</string>
@@ -39,11 +36,18 @@
     <string name="show_meteors_pref">流星群</string>
     <string name="show_comet_layer_pref">彗星</string>
     <string name="show_satellite_layer_pref" translation_description="The layer for satellites">衛星</string>
-    <!-- Just in case we decide to have such a layer for the 4/24 launch -->
-    <string name="show_hubble_layer_pref">ハッブル画像</string>
     <string name="sensor_prefs">センサー設定</string>
-    <string name="sensor_speed" translation_description="Old, non gyro sensors only: How quickly the sensor should send us data">センサー速度</string>
-    <string name="sensor_damping" translation_description="The amount of       smoothing applied to the sensor outputs.">ダンピング</string>
+    <string-array name="sensor_speed">
+        <item>低速</item>
+        <item>標準</item>
+        <item>高速</item>
+    </string-array>
+    <string-array name="sensor_damping">
+        <item>飛び飛び</item>
+        <item>中</item>
+        <item>標準</item>
+        <item>高</item>
+    </string-array>
     <string name="ecliptic">黄道</string>
     <string name="malformed_loc_error">緯度や経度には数値を設定してください。</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">同意する</string>
@@ -51,11 +55,8 @@
     <string name="dialog_ok_button">OK</string>
     <string name="menu_help" translation_description="menu item to show \'Help\' box">ヘルプ</string>
     <string name="help_dialog_title">Skyマップのヘルプ</string>
-    <string name="eula_dialog_title">エンドユーザー使用許諾契約</string>
     <string name="set_manual">手動モードに切り替え中</string>
     <string name="set_auto">自動モードに切り替え中</string>
-    <string name="menu_zoom_in">ズームイン</string>
-    <string name="menu_zoom_out">ズームアウト</string>
     <string name="menu_toggle_dim">夜間モードの切り替え</string>
     <string name="zenith">天頂</string>
     <string name="nadir">天底</string>
@@ -66,27 +67,18 @@
     <string name="search_label">天体を検索</string>
     <string name="search_hint" translation_description="an example search target">例: 火星</string>
     <string name="no_search_title">結果なし</string>
-    <string name="no_search_results_text">検索結果が見つかりません。</string>
-    <!-- Hopefully this is a temporary measure until we can fix the search engine -->
     <string name="no_search_results_text2">検索結果が見つかりません。おそらくそれは現在見えないのでしょう。
         </string>
     <string name="many_search_results_title">もしかして</string>
-    <string name="many_search_results_text">1つ選択してください</string>
-    <string name="searching_for_text">%sを検索中...</string>
-    <string name="found_target_text">%sが見つかりました</string>
     <string name="other" translation_description="A preference category (ie preferences that don't belong in any other category)">その他</string>
-    <string name="planetary_images">惑星の画像を表示</string>
     <string name="menu_time">タイムトラベル</string>
-    <string name="time_travel_start_message">タイムトラベル中...</string>
     <string name="time_travel_start_message_alt">%sにタイムトラベル中...</string>
     <string name="time_travel_close_message">現在へ...</string>
-    <!--  -->
     <string name="popular_dates_prompt" translation_description="Label for a list of dates the user can choose from">人気の日付</string>
     <string name="custom_date_prompt" translation_description="Label telling the user to manually specify a data">または表示する日付を手動で選択</string>
     <string name="change_date_prompt">日付の変更</string>
     <string name="change_time_prompt">時刻の変更</string>
-    <string name="now_visiting"
-      translation_description="used in time travel dialog to tell the user what time they are visiting, time formatted as yyyy.mm.dd at hh.mm.ss + timezone">
+    <string name="now_visiting" translation_description="used in time travel dialog to tell the user what time they are visiting, time formatted as yyyy.mm.dd at hh.mm.ss + timezone">
       現在表示中: %s</string>
     <string name="time_travel_label_past" translation_description="Label showing that we are in the past">タイムトラベル: 過去</string>
     <string name="time_travel_label_future" translation_description="Label showing that we are in the future">タイムトラベル: 未来</string>
@@ -103,40 +95,29 @@
     <string name="time_travel_hour_speed_back" translation_description="Label showing rate of travel through time">1時間/秒で時間逆行中</string>
     <string name="time_travel_day_speed_back" translation_description="Label showing rate of travel through time">1日/秒で時間逆行中</string>
     <string name="time_travel_week_speed_back" translation_description="Label showing rate of travel through time">1週/秒で時間逆行中</string>
+    <string name="time_travel_next_sunset">次の日没</string>
+    <string name="time_travel_next_sunrise">次の日の出</string>
+    <string name="time_travel_next_fullmoon">次の満月</string>
+    <string name="time_travel_mercury_transit_2016">2016年5月9日の水星太陽面通過</string>
+    <string name="time_travel_solar_eclipse_2024">2024年4月8日の日食</string>
+    <string name="time_travel_apollo_11">アポロ11号の月面着陸</string>
+    <string name="time_travel_jupiter_saturn_2020">木星と土星の結合</string>
     <string name="use_sound_effects" translation_description="A preferences menu label">音をONにする</string>
-
-    <string name="enable_layer_toast">%sレイヤを有効にしています</string>
-    <string name="disable_layer_toast">%sレイヤを無効にしています</string>
     <string name="menu_gallery">ギャラリー</string>
     <string name="gallery_image_search_btn">Skyで検索</string>
     <string name="gallery_image_back_btn">ギャラリーに戻る</string>
     <string name="hubble_image_gallery_title">Skyマップのハッブルギャラリー</string>
     <string name="hubble_image">ハッブル画像</string>
-    <!--  TODO(johntaylor): currently unused -->
-
-    <string name="search_target_found_message" translation_description="displayed when a search target has been located">見つかりました:</string>
     <string name="search_overlay_title" translation_description="title for search overlay">携帯を矢印の方に向けます</string>
     <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">探しています:</string>
     <string name="sun_wont_set_message">この場所では今後24時間以内に太陽が沈むことはありません。</string>
-    <string name="sun_wont_rise_message">この場所では今後24時間以内に太陽が昇ることはありません。</string>
-
     <string name="missing_label" translation_description="Used to indicate to the developer that they've added a resource with no translation.">MISSING_LBL</string>
-
-
     <string name="menu_tos">利用規約</string>
     <string name="menu_diagnostics">診断</string>
-    <!-- TODO(johntaylor): the following might be deleted in favor of an icon -->
-    <string name="control_panel_btn" translation_description="Label for the control panel button">コントロールパネル</string>
-
     <string name="north_pole">北極点</string>
     <string name="south_pole">南極点</string>
-
-    <string name="kml_load_error">KMLファイルを読み込めませんでした</string>
-    <string name="load_kml_dialog_title">KMLの読み込み</string>
-    <string name="load_kml_file">読み込み</string>
     <string name="enable_analytics">利用統計の送信</string>
     <string name="enable_analytics_desc">Google Analyticsに匿名データを送信することでSkyマップの改良に協力する</string>
-
     <string name="no_sensor_warning">このデバイスは位置センサーが不足しています - 自動モードは動作しないかもしれません</string>
     <string name="warning_dialog_title">悪いニュース！</string>
     <string name="missing_sensor_dialog_text">\n
@@ -194,13 +175,11 @@
     <string name="compass_calibration_activity_do_not_show_this_again">これを再び表示しない</string>
     <string name="compass_calibration_activity_warning">コンパスはキャリブレーションが
         必要かもしれません</string>
-    <string name="compass_calib_what_to_do"
-        translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL">このデバイスは、
+    <string name="compass_calib_what_to_do" translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL">このデバイスは、
         内部コンパスがキャリブレーションされていないとSkyマップに報告しています。
     これはSkyマップの問題ではないですが、修正を助けることは出来ます。コンパスをキャリブレーションするには、この動画%sで示しているように、精度が「高」になるまで
         デバイスを8の字に動かしてください。</string>
-    <string name="compass_calib_what_to_do_user"
-        transation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL">このデバイスの
+    <string name="compass_calib_what_to_do_user" transation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL">このデバイスの
         コンパスの精度は上に
         表示しています。
     表示が「高」でない場合、コンパスはキャリブレーションが必要かもしれません。これはSkyマップの問題ではなく、デバイスの
@@ -212,17 +191,9 @@
     <string name="disable_gyro_preference_title">ジャイロスコープを無効にする</string>
     <string name="disable_gyro_preference_summary">ジャイロのないデバイスもあります - あるデバイスの場合はそれを有効にしてチェックを外すことでより良い結果が得られます。一方、デバイスにジャイロがない場合は、このチェックを外すとおそらくSkyマップは動作しないでしょう。</string>
     <string name="rotate_horizon_preference_title">方向を見る</string>
-
     <string name="rotate_horizon_preference_summary">水平線を90°回転
         (横画面固定のデバイス用) またはデバイスの上部分が何を指して
         いるかを表示するためのポインターモード(ヘルプ参照)。</string>
     <string name="show_object_info_auto_mode_title">自動モードでの情報カード</string>
     <string name="show_object_info_auto_mode_summary">自動（センサー）モードでもオブジェクトをタップして情報カードを表示</string>
-    <string name="time_travel_next_sunset">次の日没</string>
-    <string name="time_travel_next_sunrise">次の日の出</string>
-    <string name="time_travel_next_fullmoon">次の満月</string>
-    <string name="time_travel_mercury_transit_2016">2016年5月9日の水星太陽面通過</string>
-    <string name="time_travel_solar_eclipse_2024">2024年4月8日の日食</string>
-    <string name="time_travel_apollo_11">アポロ11号の月面着陸</string>
-    <string name="time_travel_jupiter_saturn_2020">木星と土星の結合</string>
 </resources>

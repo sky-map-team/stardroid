@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><!-- Please add  translation_description="" attributes to Strings to assist the translators. -->
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name" translation_description="Application Title">Sky Map</string>
     <string name="menu_settings">Ayarlar</string>
@@ -26,9 +26,6 @@
     <string name="location_long_lat">Boylam: %1$s, Enlem: %2$s</string>
     <string name="location_place_found">Yer bulundu. Enlem değeri %1$f ve boylam değeri %2$f olarak ayarlanıyor.</string>
     <string name="use_magnetic_correction">Manyetik düzeltmeyi uygulayın</string>
-    <string name="use_magnetic_correction_hint">Konum bilgisini kullanarak manyetik kuzeyden gerçek kuzeye yönelimi düzeltmek için bilgiyi kullanın.</string>
-    <!-- This string is too long and currently unused -->
-    <string name="provider_prefs" translation_description="Dialog box title for a preferences dialog">Göster…</string>
     <string name="show_stars_pref">Yıldızlar</string>
     <string name="show_constellations_pref">Takımyıldızları</string>
     <string name="show_messier_objects_pref" translation_description="The celestial objects catalogued by Charles Messier">Messier Nesneleri</string>
@@ -39,11 +36,18 @@
     <string name="show_meteors_pref">Meteor Yağmurları</string>
     <string name="show_comet_layer_pref">Kuyruklu Yıldızlar</string>
     <string name="show_satellite_layer_pref" translation_description="The layer for satellites">Uydular</string>
-    <!-- Just in case we decide to have such a layer for the 4/24 launch -->
-    <string name="show_hubble_layer_pref">Hubble Görselleri</string>
     <string name="sensor_prefs">Sensör Ayarları (Uzman)</string>
-    <string name="sensor_speed" translation_description="Old, non gyro sensors only: How quickly the sensor should send us data">Sensör Hızı</string>
-    <string name="sensor_damping" translation_description="Old, non gyro sensors only: The amount of smoothing applied to the sensor outputs.">Sönümleme</string>
+    <string-array name="sensor_speed">
+        <item translation_description="Yavaş sensör hızı">Yavaş</item>
+        <item translation_description="Normal sensör hızı">Orta</item>
+        <item translation_description="Hızlı sensör hızı">Hızlı</item>
+    </string-array>
+    <string-array name="sensor_damping">
+        <item translation_description="Düşük sensör sönüm faktörü">Titrek</item>
+        <item translation_description="Orta sensör sönüm faktörü">Orta</item>
+        <item translation_description="Ekstra Yüksek sensör sönüm faktörü">Uygun</item>
+        <item translation_description="Gerçekten Yüksek sensör sönüm faktörü">Gecikmeli</item>
+    </string-array>
     <string name="ecliptic">Ekliptik</string>
     <string name="malformed_loc_error">Enlem veya boylam değeri bir sayı olmalıdır.</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Kabul et</string>
@@ -51,11 +55,8 @@
     <string name="dialog_ok_button">Tamam</string>
     <string name="menu_help" translation_description="menu item to show \'Help\' box">Yardım</string>
     <string name="help_dialog_title">Sky Map Yardımı</string>
-    <string name="eula_dialog_title">Son kullanıcı Lisans Anlaşması</string>
     <string name="set_manual">Manuel moda geçiliyor</string>
     <string name="set_auto">Otomatik moda geçiliyor</string>
-    <string name="menu_zoom_in">Yakınlaştır</string>
-    <string name="menu_zoom_out">Uzaklaştır</string>
     <string name="menu_toggle_dim">Gece modunu aç/kapat</string>
     <string name="zenith">Başucu</string>
     <string name="nadir">Ayakucu</string>
@@ -66,20 +67,12 @@
     <string name="search_label">Gökyüzünde Ara</string>
     <string name="search_hint" translation_description="an example search target">ör. Mars</string>
     <string name="no_search_title">Sonuç Bulunamadı</string>
-    <string name="no_search_results_text">Sonuç bulunamadı.</string>
-    <!-- Umarım bu geçici bir önlemdir ve arama motorunu düzeltebiliriz -->
     <string name="no_search_results_text2">Sonuç bulunamadı. Muhtemelen nesne şu anda görünmüyor.</string>
     <string name="many_search_results_title">Şunu mu demek istediniz?</string>
-    <string name="many_search_results_text">Lütfen birini seçin</string>
-    <string name="searching_for_text">%s aranıyor…</string>
-    <string name="found_target_text">%s bulundu.</string>
     <string name="other" translation_description="Diğer bir tercih kategorisi (örneğin diğer kategorilere uymayan tercihler için)">Diğer</string>
-    <string name="planetary_images">Gezegen Görsellerini Göster</string>
     <string name="menu_time">Zaman Yolculuğu</string>
-    <string name="time_travel_start_message">Zaman içinde yolculuk yapılıyor…</string>
     <string name="time_travel_start_message_alt">%s tarihine yolculuk yapılıyor…</string>
     <string name="time_travel_close_message">Şimdiye geri dönülüyor…</string>
-    <!--  -->
     <string name="popular_dates_prompt" translation_description="Kullanıcının seçebileceği tarihler listesi için etiket">Popüler tarihler</string>
     <string name="custom_date_prompt" translation_description="Kullanıcıya manuel olarak bir tarih belirtmesini söyleyen etiket">Veya kendi tarihinizi seçin:</string>
     <string name="change_date_prompt">Tarihi değiştir</string>
@@ -101,41 +94,29 @@
     <string name="time_travel_hour_speed_back" translation_description="Zaman içinde yolculuk hızını gösteren etiket">Yolculuk &lt; @ 1 saat/sn</string>
     <string name="time_travel_day_speed_back" translation_description="Zaman içinde yolculuk hızını gösteren etiket">Yolculuk &lt; @ 1 gün/sn</string>
     <string name="time_travel_week_speed_back" translation_description="Zaman içinde yolculuk hızını gösteren etiket">Yolculuk &lt; @ 1 hafta/sn</string>
+    <string name="time_travel_next_sunset">Sonraki akşam günbatımı</string>
+    <string name="time_travel_next_sunrise">Sonraki sabah gün doğumu</string>
+    <string name="time_travel_next_fullmoon">Sonraki dolunay</string>
+    <string name="time_travel_mercury_transit_2016">09 Mayıs 2016 Merkür Geçişi</string>
+    <string name="time_travel_solar_eclipse_2024">8 Nisan 2024 Güneş Tutulması</string>
+    <string name="time_travel_apollo_11">Apollo 11 Ay İnişi</string>
+    <string name="time_travel_jupiter_saturn_2020">2020 Jüpiter-Satürn Kavuşumu</string>
     <string name="use_sound_effects" translation_description="Tercihler menüsü etiketi">Ses efektlerini etkinleştir</string>
-
-
-    <string name="enable_layer_toast">%s katmanı etkinleştiriliyor</string>
-    <string name="disable_layer_toast">%s katmanı devre dışı bırakılıyor</string>
     <string name="menu_gallery">Galeri</string>
     <string name="gallery_image_search_btn">Gökyüzünde bul</string>
     <string name="gallery_image_back_btn">Galeriye dön</string>
     <string name="hubble_image_gallery_title">Sky Map Galerisi</string>
     <string name="hubble_image">Hubble Görüntüsü</string>
-    <!--  TODO(johntaylor): currently unused -->
-
-    <string name="search_target_found_message" translation_description="Arama hedefi bulunduğunda görüntülenir">Bulundu:</string>
     <string name="search_overlay_title" translation_description="Arama üstbilgisi için başlık">Telefonunuzu ok yönüne çevirin</string>
     <string name="search_target_looking_message" translation_description="Arama hedefi aranırken görüntülenir">Aranıyor:</string>
     <string name="sun_wont_set_message">24 saat boyunca güneş, mevcut konumunuzda batmayacak.</string>
-    <string name="sun_wont_rise_message">24 saat boyunca güneş, mevcut konumunuzda doğmayacak.</string>
-
     <string name="missing_label" translation_description="Geliştiriciye eklenmiş bir çeviri olmadığını belirtmek için kullanılır.">ÇEVİRİ_YOK_ETİKETİ</string>
-
-
     <string name="menu_tos">Kullanım Şartları</string>
     <string name="menu_diagnostics">Kontrol</string>
-    <!-- TODO (johntaylor): aşağıdaki simge tercih edilebilir ve bu metin silinebilir -->
-    <string name="control_panel_btn" translation_description="Kontrol paneli düğmesi için etiket">Kontrol Paneli</string>
-
     <string name="north_pole">KK</string>
     <string name="south_pole">GK</string>
-
-    <string name="kml_load_error">KML dosyası yüklenemedi</string>
-    <string name="load_kml_dialog_title">KML Yükle</string>
-    <string name="load_kml_file">Yükle</string>
     <string name="enable_analytics">Kullanım istatistikleri gönder</string>
     <string name="enable_analytics_desc">Google Analytics\'e anonim veri göndererek Sky Map\'i daha iyi hale getirin</string>
-
     <string name="no_sensor_warning">Cihazınızın yönlendirme sensörleri eksik olabilir - otomatik mod çalışmayabilir</string>
     <string name="warning_dialog_title">Üzgünüz!</string>
     <string name="missing_sensor_dialog_text">\n
@@ -191,8 +172,7 @@
     <string name="compass_calibration_activity_heading_compass">Pusula -</string>
     <string name="compass_calibration_activity_do_not_show_this_again">Bu mesajı tekrar gösterme</string>
     <string name="compass_calibration_activity_warning">Pusula kalibrasyonu gerekebilir</string>
-    <string name="compass_calib_what_to_do" translation_description="Otomatik olarak açılan pencerede pusulanın nasıl kalibre edileceği
-        hakkında kullanıcı bilgilendirmesi. Yer tutucu video URL'dir">Cihazınız, iç pusulasının kalibre edilmesi gerektiğinini Sky Map uygulamasına bildiriyor.
+    <string name="compass_calib_what_to_do" translation_description="Otomatik olarak açılan pencerede pusulanın nasıl kalibre edileceği         hakkında kullanıcı bilgilendirmesi. Yer tutucu video URL'dir">Cihazınız, iç pusulasının kalibre edilmesi gerektiğinini Sky Map uygulamasına bildiriyor.
     Bu, Sky Map uygulamasından kaynaklanmayan bir sorundur, ancak sizlere yardımcı olabiliriz. Pusulayı kalibre etmek için telefonunuzu bu videoda gösterildiği gibi sekiz rakamı şeklinde hareket ettirmeyi deneyin %s doğruluk "yüksek" okuyana kadar.</string>
     <string name="compass_calib_what_to_do_user" transation_description="Kullanıcı kalibrasyon penceresini çağırdığında pusulanın nasıl kalibre edileceği hakkında kullanıcı bilgilendirmesi. Yer tutucu video URL'dir">Telefonunuzun pusula doğruluğu yukarıda gösteriliyor.
     Eğer "yüksek" değilse, pusulanın kalibre edilmesi gerekebilir. Bu bir Sky Map sorunu değil, telefonunuzun bir özelliğidir. Pusulanın doğru bir şekilde kalibre edilmesi için telefonunuzu aşağıdaki videoda gösterilen şekilde sekiz rakamı çizer gibi hareket ettirmeyi deneyin. Bu işlemi doğruluk seviyesine ulaşana kadar tekrarlayın. %s.</string>
@@ -202,16 +182,7 @@
     <string name="disable_gyro_preference_title">Jiroskopu Devre Dışı Bırak</string>
     <string name="disable_gyro_preference_summary">Tüm cihazlar bir jiroskopa sahip değil - sizin cihazınızda varsa ve bu kutuyu işaretlemezseniz daha iyi sonuçlar alırsınız. Öte yandan, cihazınızda bir jiroskop yoksa bu kutunun işaretini kaldırırsanız, Sky Map muhtemelen çalışmayabilir.</string>
     <string name="rotate_horizon_preference_title">Görünüm Yönü</string>
-
     <string name="rotate_horizon_preference_summary">Yatay konum zorunlu olan cihazlar için yatayda 90 derece döndürün veya ekranın üstünün nereyi işaret ettiğini göstermek için işaretçi modunu kullanın (yardım metnini görün).</string>
-
     <string name="show_object_info_auto_mode_title">Otomatik modda bilgi kartları</string>
     <string name="show_object_info_auto_mode_summary">Otomatik (sensör) modda nesnelere dokunurken de bilgi kartlarını göster</string>
-    <string name="time_travel_next_sunset">Sonraki akşam günbatımı</string>
-    <string name="time_travel_next_sunrise">Sonraki sabah gün doğumu</string>
-    <string name="time_travel_next_fullmoon">Sonraki dolunay</string>
-    <string name="time_travel_mercury_transit_2016">09 Mayıs 2016 Merkür Geçişi</string>
-    <string name="time_travel_solar_eclipse_2024">8 Nisan 2024 Güneş Tutulması</string>
-    <string name="time_travel_apollo_11">Apollo 11 Ay İnişi</string>
-    <string name="time_travel_jupiter_saturn_2020">2020 Jüpiter-Satürn Kavuşumu</string>
 </resources>

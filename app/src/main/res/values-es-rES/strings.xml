@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Please add  translation_description="" attributes to Strings to assist the translators. -->
 <resources>
     <string name="app_name" translation_description="Application Title">Sky Map</string>
     <string name="menu_settings">Ajustes</string>
@@ -27,9 +26,6 @@
     <string name="location_long_lat">Longitude:%1$s, Latitude:%2$s</string>
     <string name="location_place_found">Lugar encontrado. Ajustando latitud %1$f y longitud %2$f</string>
     <string name="use_magnetic_correction">Usar corrección magnética</string>
-    <string name="use_magnetic_correction_hint">Usa el conocimiento de tu ubicación y corrige la orientación del norte magnético al verdadero</string>
-    <!-- This string is too long and currently unused -->
-    <string name="provider_prefs" translation_description="Dialog box title for a preferences dialog">Mostrar...</string>
     <string name="show_stars_pref">Estrellas</string>
     <string name="show_constellations_pref">Constelaciones</string>
     <string name="show_messier_objects_pref" translation_description="The celestial objects catalogued by Charles Messier">Objetos Messier</string>
@@ -40,24 +36,27 @@
     <string name="show_meteors_pref">Lluvias de meteoros</string>
     <string name="show_comet_layer_pref">Cometas</string>
     <string name="show_satellite_layer_pref" translation_description="The layer for satellites">Satélites</string>
-    <!-- Just in case we decide to have such a layer for the 4/24 launch -->
-    <string name="show_hubble_layer_pref">Imágenes del Hubble</string>
     <string name="sensor_prefs">Ajustes del sensor</string>
-    <string name="sensor_speed" translation_description="Old, non gyro sensors only: How quickly the sensor should send us data">Velocidad del sensor</string>
-    <string name="sensor_damping" translation_description="Old, non gyro sensors only: The amount of smoothing applied to the sensor outputs.">Humedad</string>
+    <string-array name="sensor_speed">
+        <item translation_description="Slow sensor speed">Lento</item>
+        <item translation_description="Normal sensor speed">Medio</item>
+        <item translation_description="Fast sensor speed">Rápido</item>
+    </string-array>
+    <string-array name="sensor_damping">
+        <item translation_description="Low sensor damping factor">Baja</item>
+        <item translation_description="Medium sensor damping factor">Media</item>
+        <item translation_description="Extra High sensor damping factor">Estándar</item>
+        <item translation_description="Really High sensor damping factor">Alta</item>
+    </string-array>
     <string name="ecliptic">Eclíptica</string>
-    <string name="eclipse24">Ruta del eclipse 08-04-2024</string>
     <string name="malformed_loc_error">El ajuste de lat/long no es un número.</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Acepto</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">No, gracias</string>
     <string name="dialog_ok_button">OK</string>
     <string name="menu_help" translation_description="menu item to show \'Help\' box">Ayuda</string>
     <string name="help_dialog_title">Ayuda de Sky Map</string>
-    <string name="eula_dialog_title">Acuerdo de licencia del usuario final</string>
     <string name="set_manual">Cambiando al modo manual</string>
     <string name="set_auto">Cambiando al modo automático</string>
-    <string name="menu_zoom_in">Acercar</string>
-    <string name="menu_zoom_out">Alejar</string>
     <string name="menu_toggle_dim">Alternar visión nocturna</string>
     <string name="zenith">CENIT</string>
     <string name="nadir">NADIR</string>
@@ -68,27 +67,18 @@
     <string name="search_label">Buscar</string>
     <string name="search_hint" translation_description="an example search target">p.ej. Marte</string>
     <string name="no_search_title">Sin resultados</string>
-    <string name="no_search_results_text">Sin resultados.</string>
-    <!-- Hopefully this is a temporary measure until we can fix the search engine -->
     <string name="no_search_results_text2">No hubo resultados. Quizás el objeto no es
         visible en este momento.</string>
     <string name="many_search_results_title">¿Quisiste decir...?</string>
-    <string name="many_search_results_text">Selecciona uno</string>
-    <string name="searching_for_text">Buscando %s...</string>
-    <string name="found_target_text">%s encontrado.</string>
     <string name="other" translation_description="A preference category (ie preferences that don't belong in any other category)">Otros</string>
-    <string name="planetary_images">Mostrar imágenes del planeta</string>
     <string name="menu_time">Viaje en el tiempo</string>
-    <string name="time_travel_start_message">Viajando en el tiempo...</string>
     <string name="time_travel_start_message_alt">Viajando en el tiempo a %s...</string>
     <string name="time_travel_close_message">Volver al presente...</string>
-    <!--  -->
     <string name="popular_dates_prompt" translation_description="Label for a list of dates the user can choose from">Fechas populares</string>
     <string name="custom_date_prompt" translation_description="Label telling the user to manually specify a date">O elige tu propia fecha:</string>
     <string name="change_date_prompt">Cambiar fecha</string>
     <string name="change_time_prompt">Cambiar hora</string>
-    <string name="now_visiting"
-            translation_description="used in time travel dialog to tell the user what time they are visiting, time formatted as yyyy.mm.dd at hh.mm.ss + timezone">
+    <string name="now_visiting" translation_description="used in time travel dialog to tell the user what time they are visiting, time formatted as yyyy.mm.dd at hh.mm.ss + timezone">
         Visitando: %s</string>
     <string name="time_travel_label_past" translation_description="Label showing that we are in the past">Viaje en el tiempo: Pasado</string>
     <string name="time_travel_label_future" translation_description="Label showing that we are in the future">Viaje en el tiempo: Futuro</string>
@@ -105,40 +95,29 @@
     <string name="time_travel_hour_speed_back" translation_description="Label showing rate of travel through time">Viajando a &lt; @ 1 hora/seg</string>
     <string name="time_travel_day_speed_back" translation_description="Label showing rate of travel through time">Viajando a &lt; @ 1 día/seg</string>
     <string name="time_travel_week_speed_back" translation_description="Label showing rate of travel through time">Viajando a &lt; @ 1 semana/seg</string>
+    <string name="time_travel_next_sunset">Próxima puesta del Sol</string>
+    <string name="time_travel_next_sunrise">Próximo amanecer</string>
+    <string name="time_travel_next_fullmoon">Siguiente luna llena</string>
+    <string name="time_travel_mercury_transit_2016">Tránsito de Mercurio del 09 may, 2016</string>
+    <string name="time_travel_solar_eclipse_2024">Eclipse solar del 8 abr, 2024</string>
+    <string name="time_travel_apollo_11">Alunizaje del Apolo 11</string>
+    <string name="time_travel_jupiter_saturn_2020">Conjunción Júpiter-Saturno de 2020</string>
     <string name="use_sound_effects" translation_description="A preferences menu label">Activar sonido</string>
-
-    <string name="enable_layer_toast">Activando capa %s</string>
-    <string name="disable_layer_toast">Desactivando capa %s</string>
     <string name="menu_gallery">Galería</string>
     <string name="gallery_image_search_btn">Buscar en el cielo</string>
     <string name="gallery_image_back_btn">Volver a la galería</string>
     <string name="hubble_image_gallery_title">Galería de Sky Map</string>
     <string name="hubble_image">Imagen del Hubble</string>
-    <!--  TODO(johntaylor): currently unused -->
-
-    <string name="search_target_found_message" translation_description="displayed when a search target has been located">Encontraste:</string>
     <string name="search_overlay_title" translation_description="title for search overlay">Apunta tu teléfono hacia la flecha</string>
     <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">Buscando:</string>
     <string name="sun_wont_set_message">El sol no se pondrá durante las próximas 24 horas en tu ubicación actual.</string>
-    <string name="sun_wont_rise_message">El sol no saldrá durante las próximas 24 horas en tu ubicación actual.</string>
-
     <string name="missing_label" translation_description="Used to indicate to the developer that they've added a resource with no translation.">MISSING_LBL</string>
-
-    
     <string name="menu_tos">Términos del Servicio</string>
     <string name="menu_diagnostics">Diagnósticos</string>
-    <!-- TODO(johntaylor): the following might be deleted in favor of an icon -->
-    <string name="control_panel_btn" translation_description="Label for the control panel button">Panel de control</string>
-
     <string name="north_pole">PN</string>
     <string name="south_pole">PS</string>
-    
-    <string name="kml_load_error">Error al cargar el archivo KML</string>
-    <string name="load_kml_dialog_title">Cargar KML</string>
-    <string name="load_kml_file">Cargar</string>
     <string name="enable_analytics">Enviar estadísticas de uso</string>
     <string name="enable_analytics_desc">Mejorar Sky Map enviando datos anónimos a Google Analytics</string>
-
     <string name="no_sensor_warning">Es posible que tu dispositivo no tenga sensores de orientación; el modo auto no funcionará</string>
     <string name="warning_dialog_title">¡Malas noticias!</string>
     <string name="missing_sensor_dialog_text">\n
@@ -196,13 +175,11 @@
     <string name="compass_calibration_activity_do_not_show_this_again">No mostrar esto otra vez</string>
     <string name="compass_calibration_activity_warning">Tu brújula debe ser
         calibrada</string>
-    <string name="compass_calib_what_to_do"
-        translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL">Tu teléfono reporta a Sky
+    <string name="compass_calib_what_to_do" translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL">Tu teléfono reporta a Sky
         Map que su brújula interna no está calibrada.
     Este no es un problema de Sky Map, pero podemos ayudarte a intentar solucionarlo. Para calibrar la brújula intenta mover tu teléfono en forma de ocho
         como se demuestra en este video %s hasta que la precisión sea \'alta\'.</string>
-    <string name="compass_calib_what_to_do_user"
-        transation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL">La precisión
+    <string name="compass_calib_what_to_do_user" transation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL">La precisión
         de la brújula
         de tu teléfono se muestra arriba.
     Si no es \'alta\' entonces es posible que sea necesario calibrar la brújula. Esto no es un problema de Sky Map, pero
@@ -214,17 +191,9 @@
     <string name="disable_gyro_preference_title">Deshabilitar giroscopio</string>
     <string name="disable_gyro_preference_summary">No todos los dispositivos tienen giroscopio. Si el tuyo lo tiene, obtendrás mejores resultados con él activado y esta casilla desactivada. Por otro lado si tu teléfono no tiene giroscopio, entonces Sky Map podría no funcionar si no activas esta casilla.</string>
     <string name="rotate_horizon_preference_title">Dirección de la vista</string>
-
     <string name="rotate_horizon_preference_summary">Gira el horizonte 90 grados (para dispositivos
         con paisajes forzados) o use el modo de puntero para que la pantalla muestre
         hacia dónde apunta la parte superior del teléfono (ver texto de ayuda).</string>
     <string name="show_object_info_auto_mode_title">Info cards en modo automático</string>
     <string name="show_object_info_auto_mode_summary">También mostrar info cards al tocar objetos en modo automático (sensores)</string>
-    <string name="time_travel_next_sunset">Próxima puesta del Sol</string>
-    <string name="time_travel_next_sunrise">Próximo amanecer</string>
-    <string name="time_travel_next_fullmoon">Siguiente luna llena</string>
-    <string name="time_travel_mercury_transit_2016">Tránsito de Mercurio del 09 may, 2016</string>
-    <string name="time_travel_solar_eclipse_2024">Eclipse solar del 8 abr, 2024</string>
-    <string name="time_travel_apollo_11">Alunizaje del Apolo 11</string>
-    <string name="time_travel_jupiter_saturn_2020">Conjunción Júpiter-Saturno de 2020</string>
 </resources>

@@ -1,5 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-<string name="eula_text" translation_description="Privacy policy and EULA in html. Please do not change the &lt; and &gt; markup">
+    <string name="eula_text" translation_description="Privacy policy and EULA in html. Please do not change the &lt; and &gt; markup">
 &lt;h1&gt;Acuerdo de licencia del usuario final&lt;/h1&gt;
 &lt;p&gt;Al usar Sky Map, aceptas estos términos. Por favor, léelos con atención.
 \"Nosotros\" y \"Sky Map Devs\" se refieren a los autores y colaboradores del código base de Sky Map.

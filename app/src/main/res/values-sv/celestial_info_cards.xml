@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Solar System Educational Content -->
     <string name="object_info_sun_description">Solen är stjärnan i centrum av vårt solsystem. Den ger ljus och värme som gör livet på jorden möjligt.</string>
     <string name="object_info_sun_funfact">Solen innehåller 99,86% av all massa i vårt solsystem. Ungefär 1,3 miljoner jordklot skulle få plats inuti den!</string>
     <string name="object_info_sun_distance">150 miljoner km</string>
@@ -51,7 +50,6 @@
     <string name="object_info_pluto_distance">5,9 miljarder km (genomsnitt)</string>
     <string name="object_info_pluto_size">2 377 km diameter</string>
     <string name="object_info_pluto_mass">1,3 × 10²² kg</string>
-    <!-- Bright Stars Educational Content -->
     <string name="object_info_sirius_description">Sirius är den ljusaste stjärnan på natthimlen, belägen i stjärnbilden Stora hunden (Canis Major).</string>
     <string name="object_info_sirius_funfact">Sirius är faktiskt ett dubbelstjärnsystem! Sirius B, dess följeslagare, är en vit dvärg ungefär lika stor som jorden men nästan lika massiv som solen.</string>
     <string name="object_info_sirius_distance">8,6 ljusår</string>
@@ -247,7 +245,6 @@
     <string name="object_info_diphda_distance">96 ljusår</string>
     <string name="object_info_diphda_size">18 solradier</string>
     <string name="object_info_diphda_mass">2,8 solmassor</string>
-    <!-- ==================== MESSIER OBJECTS ==================== -->
     <string name="object_info_m1_description">Krabbnebulan är en supernovarest i Oxen, resultatet av en stjärnexplosion som kinesiska astronomer dokumenterade år 1054.</string>
     <string name="object_info_m1_funfact">Krabbnebulan innehåller en pulsar som snurrar 30 gånger per sekund, den kollapsade kärnan av den exploderade stjärnan!</string>
     <string name="object_info_m1_distance">6 500 ljusår</string>
@@ -442,7 +439,6 @@
     <string name="object_info_m87_distance">53 miljoner ljusår</string>
     <string name="object_info_m87_size">240 000 ljusår tvärsöver</string>
     <string name="object_info_m87_mass">2,4 biljoner solmassor</string>
-    <!-- ==================== CONSTELLATIONS ==================== -->
     <string name="object_info_orion_description">Orion Jägaren är en av de mest igenkännliga stjärnbilderna, synlig från båda halvkloten med sitt distinkta Bälte av tre stjärnor.</string>
     <string name="object_info_orion_funfact">Orions bälte pekar mot Sirius (den ljusaste stjärnan) i en riktning och Aldebaran (i Oxen) i den andra!</string>
     <string name="object_info_orion_size">594 kvadratgrader</string>

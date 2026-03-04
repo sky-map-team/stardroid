@@ -1,4 +1,6 @@
-<resources><string name="help_text" translation_description="Please do not change the &lt; and &gt; markup">&lt;h1&gt;Sky Map für Android&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help_text" translation_description="Please do not change the &lt; and &gt; markup">&lt;h1&gt;Sky Map für Android&lt;/h1&gt;
 &lt;p class="version"&gt;Version %s&lt;/p&gt;
 
 &lt;p class="url"&gt;&lt;a href="https://stardroid.app"&gt;https://stardroid.app&lt;/a&gt;&lt;/p&gt;
@@ -100,4 +102,5 @@ Kevin Serafini&lt;/p&gt;
 (&lt;a href="https://hubblesite.org/"&gt;https://hubblesite.org/&lt;/a&gt;).&lt;/li&gt;
 &lt;li&gt;M31 image Peter Kennett (&lt;a href="https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg"&gt;https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg&lt;/a&gt;)&lt;/li&gt;
 &lt;/ul&gt;
-</string></resources>
+</string>
+</resources>

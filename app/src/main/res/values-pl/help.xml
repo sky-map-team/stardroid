@@ -1,5 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-<string name="help_text" translation_description="Please do not change the &lt; and &gt; markup">
+    <string name="help_text" translation_description="Please do not change the &lt; and &gt; markup">
 &lt;h1&gt;Sky Map na Androida&lt;/h1&gt;
 &lt;p class="version"&gt;Wersja %1$s&lt;/p&gt;
 &lt;p class="url"&gt;&lt;a href="https://stardroid.app"&gt;https://stardroid.app&lt;/a&gt;&lt;/p&gt;
@@ -108,7 +109,7 @@
 &lt;p&gt;Jeśli wcześniej odmówiłeś(-aś) Sky Map uprawnienia do lokalizacji, może być konieczne ponowne włączenie go na Twoim urządzeniu w &lt;b&gt;Ustawienia aplikacji → Uprawnienia&lt;/b&gt;.&lt;/p&gt;
 
 &lt;h2&gt;Użytkownicy teleskopu — tryb wskaźnika&lt;/h2&gt;
-&lt;p&gt;W &lt;b&gt;Ustawienia → Ustawienia czujnika&lt;/b&gt; zmień &lt;b>Kierunek widzenia&lt;/b> na &lt;b>Tryb wskaźnika&lt;/b>. W tym trybie Sky Map pokazuje to, na co wskazuje &lt;i&gt;dłuższa krawędź&lt;/i&gt; telefonu, a nie to, na co skierowany jest ekran.&lt;/p&gt;
+&lt;p&gt;W &lt;b&gt;Ustawienia → Ustawienia czujnika&lt;/b&gt; zmień &lt;b&gt;Kierunek widzenia&lt;/b&gt; na &lt;b&gt;Tryb wskaźnika&lt;/b&gt;. W tym trybie Sky Map pokazuje to, na co wskazuje &lt;i&gt;dłuższa krawędź&lt;/i&gt; telefonu, a nie to, na co skierowany jest ekran.&lt;/p&gt;
 &lt;p&gt;Pozwala Ci to zamontować Twój telefon wzdłuż bocznej części tubusu teleskopu tak, że ekran jest prostopadły do tubusu, podczas gdy mapa nadal śledzi to, na co skierowany jest teleskop.&lt;/p&gt;
 
 &lt;h2&gt;Wskazówki i ustawienia warte poznania&lt;/h2&gt;

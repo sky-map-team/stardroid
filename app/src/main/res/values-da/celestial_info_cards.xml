@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Solar System Educational Content -->
     <string name="object_info_sun_description">Solen er stjernen i centrum af vores solsystem. Den giver lys og varme, der gør liv på Jorden muligt.</string>
     <string name="object_info_sun_funfact">Solen indeholder 99,86% af al masse i vores solsystem. Omkring 1,3 millioner jordkloder kunne være indeni den!</string>
     <string name="object_info_sun_distance">150 millioner km</string>
@@ -51,7 +50,6 @@
     <string name="object_info_pluto_distance">5,9 milliarder km (gennemsnit)</string>
     <string name="object_info_pluto_size">2.377 km diameter</string>
     <string name="object_info_pluto_mass">1,3 × 10²² kg</string>
-    <!-- Bright Stars Educational Content -->
     <string name="object_info_sirius_description">Sirius er den lyseste stjerne på nattehimlen, beliggende i stjernebilledet Store Hund (Canis Major).</string>
     <string name="object_info_sirius_funfact">Sirius er faktisk et dobbeltstjernesystem! Sirius B, dens ledsager, er en hvid dværg på størrelse med Jorden men næsten lige så massiv som Solen.</string>
     <string name="object_info_sirius_distance">8,6 lysår</string>
@@ -247,7 +245,6 @@
     <string name="object_info_diphda_distance">96 lysår</string>
     <string name="object_info_diphda_size">18 solradier</string>
     <string name="object_info_diphda_mass">2,8 solmasser</string>
-    <!-- ==================== MESSIER OBJECTS ==================== -->
     <string name="object_info_m1_description">Krabbetågen er en supernovaremnant i Tyren, resultatet af en stjerneeksplosion optaget af kinesiske astronomer i 1054.</string>
     <string name="object_info_m1_funfact">Krabbetågen indeholder en pulsar, der spinner 30 gange i sekundet, den kollapsede kerne af den eksploderede stjerne!</string>
     <string name="object_info_m1_distance">6.500 lysår</string>
@@ -442,7 +439,6 @@
     <string name="object_info_m87_distance">53 millioner lysår</string>
     <string name="object_info_m87_size">240.000 lysår på tværs</string>
     <string name="object_info_m87_mass">2,4 billioner solmasser</string>
-    <!-- ==================== CONSTELLATIONS ==================== -->
     <string name="object_info_orion_description">Orion Jægeren er et af de mest genkendelige stjernebilleder, synligt fra begge halvkugler med sit karakteristiske Bælte af tre stjerner.</string>
     <string name="object_info_orion_funfact">Orions Bælte peger mod Sirius (den lyseste stjerne) i én retning og Aldebaran (i Tyren) i den anden!</string>
     <string name="object_info_orion_size">594 kvadratgrader</string>

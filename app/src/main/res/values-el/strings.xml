@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Please add  translation_description="" attributes to Strings to assist the translators. -->
 <resources>
     <string name="app_name" translation_description="Application Title">Sky Map</string>
     <string name="menu_settings">Ρυθμίσεις</string>
@@ -20,7 +19,7 @@
     <string name="preferences">προτιμήσεις</string>
     <string name="location_offer_to_enable">Η αυτόματη τοποθεσία είναι απενεργοποιημένη. Θέλετε να την ενεργοποιήσετε;</string>
     <string name="location_offer_to_enable_gps_title">Αυτόματη τοποθεσία απενεργοποιημένη</string>
-     <string name="location_permission_dialog_title">Απαιτείται η τοποθεσία</string>
+    <string name="location_permission_dialog_title">Απαιτείται η τοποθεσία</string>
     <string name="location_permission_dialog_message">Το Sky Map χρειάζεται την κατά προσέγγιση τοποθεσία σας για να εμφανίσει τον σωστό νυχτερινό ουρανό. Μπορείτε να παραχωρήσετε άδεια, να εισάγετε την τοποθεσία σας χειροκίνητα ή να αποφασίσετε αργότερα. Εάν αποφασίσετε αργότερα, ο χάρτης δεν θα είναι ακριβής μέχρι να οριστεί η τοποθεσία σας.</string>
     <string name="location_permission_grant">Χορήγηση Άδειας</string>
     <string name="location_permission_enter_manually">Χειροκίνητη Εισαγωγή</string>
@@ -32,9 +31,6 @@
     <string name="location_long_lat">Γεωγ. μήκος:%1$s, Γεωγ. πλάτος:%2$s</string>
     <string name="location_place_found">Η τοποθεσία βρέθηκε.  Ορίστηκε γεωγ. πλάτος %1$f και γεωγ. μήκος %2$f</string>
     <string name="use_magnetic_correction">Χρήση μαγνητικής διόρθωσης</string>
-    <string name="use_magnetic_correction_hint">Χρησιμοποίηση της γνώσης της τοποθεσίας σας για τη διόρθωση του προσανατολισμού από τον μαγνητικό βορρά στον αληθή βορρά</string>
-    <!-- This string is too long and currently unused -->
-    <string name="provider_prefs" translation_description="Dialog box title for a preferences dialog">Να εμφανίζονται...</string>
     <string name="show_stars_pref">Αστέρια</string>
     <string name="show_constellations_pref">Αστερισμοί</string>
     <string name="show_messier_objects_pref" translation_description="The celestial objects catalogued by Charles Messier">Αντικείμενα Μεσιέ</string>
@@ -44,11 +40,24 @@
     <string name="show_sky_gradient" translation_description="This is a shading of the color of the sky used for effect">Απόχρωση ουρανού</string>
     <string name="show_meteors_pref">Βροχές διαττόντων</string>
     <string name="show_satellite_layer_pref" translation_description="The layer for satellites">Δορυφόροι</string>
-    <!-- Just in case we decide to have such a layer for the 4/24 launch -->
-    <string name="show_hubble_layer_pref">Εικόνες από Hubble</string>
     <string name="sensor_prefs">Ρυθμίσεις αισθητήρα</string>
-    <string name="sensor_speed" translation_description="How quickly the sensor should send us data">Ταχύτητα αισθητήρα</string>
-    <string name="sensor_damping" translation_description="The amount of smoothing applied to the sensor outputs.">Εξομάλυνση</string>
+    <string-array name="sensor_speed">
+        <item translation_description="Slow sensor speed">Αργή</item>
+        <item translation_description="Normal sensor speed">Μέτρια</item>
+        <item translation_description="Fast sensor speed">Γρήγορη</item>
+    </string-array>
+    <string-array name="sensor_damping">
+        <item translation_description="Low sensor damping factor">Χαμηλή</item>
+        <item translation_description="Medium sensor damping factor">Μέτρια</item>
+        <item translation_description="Extra High sensor damping factor">Υψηλή</item>
+        <item translation_description="Really High sensor damping factor">Πολύ υψηλή</item>
+    </string-array>
+    <string name="appearance_prefs" translation_description="Preferences title for section about app appearance">Εμφάνιση</string>
+    <string name="auto_dimness_preference" translation_description="Mode for automatically dimming the screen when night mode is selected">
+        Αυτόματος φωτισμός οθόνης</string>
+    <string name="font_size_preference" translation_description="Change the font size">
+        Μέγεθος γραμματοσειράς</string>
+    <string name="font_size_preference_description" translation_description="help to go along with the change font size preference">Απαιτεί επανεκκίνηση</string>
     <string name="ecliptic">Εκλειπτική</string>
     <string name="malformed_loc_error">Το γεωγραφικό μήκος ή πλάτος πρέπει να είναι αριθμός.</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Αποδοχή</string>
@@ -56,11 +65,8 @@
     <string name="dialog_ok_button">OK</string>
     <string name="menu_help" translation_description="menu item to show \'Help\' box">Βοήθεια</string>
     <string name="help_dialog_title">Βοήθεια για το Sky Map</string>
-    <string name="eula_dialog_title">Άδεια χρήσης τελικού χρήστη</string>
     <string name="set_manual">Αλλαγή σε χειροκίνητη λειτουργία</string>
     <string name="set_auto">Αλλαγή σε αυτόματη λειτουργία</string>
-    <string name="menu_zoom_in">Μεγέθυνση</string>
-    <string name="menu_zoom_out">Σμίκρυνση</string>
     <string name="menu_toggle_dim">Εναλλαγή λειτουργίας νύχτας</string>
     <string name="zenith">ΖΕΝΙΘ</string>
     <string name="nadir">ΝΑΔΙΡ</string>
@@ -71,24 +77,18 @@
     <string name="search_label">Αναζήτηση</string>
     <string name="search_hint" translation_description="an example search target">π.χ. Άρης</string>
     <string name="no_search_title">Χωρίς αποτελέσματα</string>
-    <string name="no_search_results_text">Δεν βρέθηκαν αποτελέσματα.</string>
     <string name="many_search_results_title">Μήπως εννοούσατε;</string>
-    <string name="many_search_results_text">Παρακαλούμε επιλέξτε ένα</string>
-    <string name="searching_for_text">Αναζήτηση για %s...</string>
-    <string name="found_target_text">Βρέθηκε %s.</string>
     <string name="other" translation_description="A preference category (ie preferences that don't belong in any other category)">Άλλο</string>
-    <string name="planetary_images">Εμφάνιση εικόνων πλανητών</string>
+    <string name="show_messier_images">Εμφάνιση εικόνων Μεσιέ</string>
+    <string name="show_messier_images_summary">Εμφάνιση αντικειμένων Μεσιέ ως εικονίδια γαλαξιών αντί για κουκκίδες</string>
     <string name="menu_time">Ταξίδι στο χρόνο</string>
-    <string name="time_travel_start_message">Ταξίδι στο χρόνο ...</string>
     <string name="time_travel_start_message_alt">Ταξίδι στο χρόνο σε %s ...</string>
     <string name="time_travel_close_message">Πίσω στο παρόν ...</string>
-    <!--  -->
     <string name="popular_dates_prompt" translation_description="Label for a list of dates the user can choose from">Συχνές ημερομηνίες</string>
     <string name="custom_date_prompt" translation_description="Label telling the user to manually specify a date">Ή επιλέξτε ημερομηνία:</string>
     <string name="change_date_prompt">Αλλαγή ημερομηνίας</string>
     <string name="change_time_prompt">Αλλαγή ώρας</string>
-    <string name="now_visiting"
-            translation_description="used in time travel dialog to tell the user what time they are visiting, time formatted as yyyy.mm.dd at hh.mm.ss + timezone">
+    <string name="now_visiting" translation_description="used in time travel dialog to tell the user what time they are visiting, time formatted as yyyy.mm.dd at hh.mm.ss + timezone">
         Μεταφορά σε: %s</string>
     <string name="time_travel_label_past" translation_description="Label showing that we are in the past">Ταξίδι στο χρόνο: Παρελθόν</string>
     <string name="time_travel_label_future" translation_description="Label showing that we are in the future">Ταξίδι στο χρόνο: Μέλλον</string>
@@ -105,206 +105,29 @@
     <string name="time_travel_hour_speed_back" translation_description="Label showing rate of travel through time">Ταξίδι &lt; @ 1 ώρα/δευτ</string>
     <string name="time_travel_day_speed_back" translation_description="Label showing rate of travel through time">Ταξίδι &lt; @ 1 ημέρα/δευτ</string>
     <string name="time_travel_week_speed_back" translation_description="Label showing rate of travel through time">Ταξίδι &lt; @ 1 εβδομάδα/δευτ</string>
+    <string name="time_travel_next_sunset">Επόμενο ηλιοβασίλεμα</string>
+    <string name="time_travel_next_sunrise">Επόμενη ανατολή ηλίου</string>
+    <string name="time_travel_next_fullmoon">Επόμενη πανσέληνος</string>
+    <string name="time_travel_mercury_transit_2016">Διάβαση του Ερμή στις 9 Μαϊ 2016</string>
+    <string name="time_travel_solar_eclipse_2024">Ηλιακή έκλειψη στις 8 Απρίλιος 2024</string>
+    <string name="time_travel_apollo_11">Προσελήνωση του Apollo 11</string>
+    <string name="time_travel_jupiter_saturn_2020">Σύζευξη Δία-Κρόνου το 2020</string>
     <string name="use_sound_effects" translation_description="A preferences menu label">Ενεργοποίηση ήχου</string>
-
-    <string name="enable_layer_toast">Ενεργοποίηση του επιπέδου %s</string>
-    <string name="disable_layer_toast">Απενεργοποίηση του επιπέδου %s</string>
     <string name="menu_gallery">Συλλογή</string>
     <string name="gallery_image_search_btn">Εντοπισμός στον ουρανό</string>
     <string name="gallery_image_back_btn">Πίσω</string>
     <string name="hubble_image_gallery_title">Συλλογή του Sky Map</string>
     <string name="hubble_image">Εικόνα του Hubble</string>
-    <!--  TODO(johntaylor): currently unused -->
-
-    <string name="search_target_found_message" translation_description="displayed when a search target has been located">Βρήκατε:</string>
     <string name="search_overlay_title" translation_description="title for search overlay">Μετακινήστε τη συσκευή σας προς το βέλος</string>
     <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">Αναζήτηση για:</string>
     <string name="sun_wont_set_message">Ο ήλιος δε θα δύσει μέσα στις επόμενες 24 ώρες στην τρέχουσα τοποθεσία σας.</string>
-    <string name="sun_wont_rise_message">Ο ήλιος δε θα ανατείλει μέσα στις επόμενες 24 ώρες στην τρέχουσα τοποθεσία σας.</string>
-
     <string name="missing_label" translation_description="Used to indicate to the developer that they've added a resource with no translation.">MISSING_LBL</string>
-
-    <string name="sun">Ήλιος</string>
-    <string name="moon">Σελήνη</string>
-    <string name="mercury">Ερμής</string>
-    <string name="venus">Αφροδίτη</string>
-    <string name="earth">Γη</string>
-    <string name="mars">Άρης</string>
-    <string name="jupiter">Δίας</string>
-    <string name="saturn">Κρόνος</string>
-    <string name="uranus">Ουρανός</string>
-    <string name="neptune">Ποσειδώνας</string>
-    <string name="pluto">Πλούτωνας</string>
-    <string name="crab_nebula" translation_description="hubble object">Νεφέλωμα Καρκίνου</string>
-    <string name="eagle_nebula" translation_description="hubble object">Νεφέλωμα Αετού</string>
-    <string name="andromeda_galaxy" translation_description="hubble object">Γαλαξίας της Ανδρομέδας</string>
-    <string name="orion_nebula" translation_description="hubble object">Νεφέλωμα Ωρίωνα</string>
-    <string name="whirlpool_galaxy" translation_description="hubble object">Γαλαξίας της Δίνης</string>
-    <string name="ring_nebula" translation_description="hubble object">Δακτυλιοειδές Νεφέλωμα</string>
-    <string name="pinwheel_galaxy" translation_description="hubble object">Γαλαξίας Ανεμόμυλος</string>
-    <string name="sombrero_galaxy" translation_description="hubble object">Γαλαξίας Σομπρέρο</string>
-    <string name="hercules_gc" translation_description="hubble object">Σφαιρωτό Σμήνος Ηρακλή</string>
-    <string name="pleiades" translation_description="hubble object">Πλειάδες</string>
-    <string name="cats_eye_nebula" translation_description="hubble object">Νεφέλωμα Μάτι της Γάτας</string>
-    <string name="omega_centauri" translation_description="hubble object">Σφαιρωτό Σμήνος Ωμέγα Κενταύρου</string>
-    <string name="v838_mon" translation_description="hubble object">V838 Monocerotis</string>
-    <string name="sn1987a" translation_description="hubble object">Υπερκαινοφανής 1987a</string>
-    <string name="hubble_deep_field" translation_description="hubble object">Βαθύ Πεδίο Hubble</string>
-    <string name="hdf" translation_description="hubble object">Βαθύ Πεδίο Hubble</string>
-    <string name="rho_oph" translation_description="hubble object">ρ Οφιούχου</string>
     <string name="menu_tos">Όροι χρήσης</string>
     <string name="menu_diagnostics">Διαγνωστικά</string>
-    <!-- TODO(johntaylor): the following might be deleted in favor of an icon -->
-    <string name="control_panel_btn" translation_description="Label for the control panel button">Πίνακας ελέγχου</string>
-
     <string name="north_pole">ΒΠ</string>
     <string name="south_pole">ΝΠ</string>
-
-    <string name="andromeda" translation_description="Name of the Andromeda constellation">Ανδρομέδα</string>
-    <string name="aquarius" translation_description="Name of the Aquarius constellation">Υδροχόος</string>
-    <string name="aquila" translation_description="Name of the Aquila constellation">Αετός</string>
-    <string name="aries" translation_description="Name of the Aries constellation">Κριός</string>
-    <string name="auriga" translation_description="Name of the Auriga constellation">Ηνίοχος</string>
-    <string name="bootes" translation_description="Name of the Bootes constellation">Βοώτης</string>
-    <string name="cancer" translation_description="Name of the Cancer constellation">Καρκίνος</string>
-    <string name="canis_major" translation_description="Name of the Canis Major constellation">Μέγας Κύων</string>
-    <string name="capricornus" translation_description="Name of the Capricornus constellation">Αιγόκερως</string>
-    <string name="carina" translation_description="Name of the Carina constellation">Τρόπις</string>
-    <string name="cassiopeia" translation_description="Name of the Cassiopeia constellation">Κασσιόπη</string>
-    <string name="centaurus" translation_description="Name of the Centaurus constellation">Κένταυρος</string>
-    <string name="cetus" translation_description="Name of the Cetus constellation">Κήτος</string>
-    <string name="crux" translation_description="Name of the Crux constellation">Νότιος Σταυρός</string>
-    <string name="cygnus" translation_description="Name of the Cygnus constellation">Κύκνος</string>
-    <string name="draco" translation_description="Name of the Draco constellation">Δράκων</string>
-    <string name="eridanus" translation_description="Name of the Eridanus constellation">Ηριδανός</string>
-    <string name="gemini" translation_description="Name of the Gemini constellation">Δίδυμοι</string>
-    <string name="grus" translation_description="Name of the Grus constellation">Γερανός</string>
-    <string name="hercules" translation_description="Name of the Hercules constellation">Ηρακλής</string>
-    <string name="hydrus" translation_description="Name of the Hydrus constellation">Ύδρος</string>
-    <string name="leo" translation_description="Name of the Leo constellation">Λέων</string>
-    <string name="libra" translation_description="Name of the Libra constellation">Ζυγός</string>
-    <string name="lupus" translation_description="Name of the Lupus constellation">Λύκος</string>
-    <string name="lyra" translation_description="Name of the Lyra constellation">Λύρα</string>
-    <string name="ophiuchus" translation_description="Name of the Ophiuchus constellation">Οφιούχος</string>
-    <string name="orion" translation_description="Name of the Orion constellation">Ωρίων</string>
-    <string name="pavo" translation_description="Name of the Pavo constellation">Ταώς</string>
-    <string name="pegasus" translation_description="Name of the Pegasus constellation">Πήγασος</string>
-    <string name="perseus" translation_description="Name of the Perseus constellation">Περσεύς</string>
-    <string name="phoenix" translation_description="Name of the Phoenix constellation">Φοίνιξ</string>
-    <string name="pisces" translation_description="Name of the Pisces constellation">Ιχθύες</string>
-    <string name="piscis_austrinus" translation_description="Name of the Piscis Austrinus constellation">Νότιος Ιχθύς</string>
-    <string name="puppis" translation_description="Name of the Puppis constellation">Πρύμνη</string>
-    <string name="sagittarius" translation_description="Name of the Sagittarius constellation">Τοξότης</string>
-    <string name="scorpius" translation_description="Name of the Scorpius constellation">Σκορπιός</string>
-    <string name="taurus" translation_description="Name of the Taurus constellation">Ταύρος</string>
-    <string name="tucana" translation_description="Name of the Tucana constellation">Τουκάνα</string>
-    <string name="ursa_major" translation_description="Name of the Ursa Major constellation">Μεγάλη Άρκτος</string>
-    <string name="ursa_minor" translation_description="Name of the Ursa Minor constellation">Μικρή Άρκτος</string>
-    <string name="vela" translation_description="Name of the Vela constellation">Ιστία</string>
-    <string name="virgo" translation_description="Name of the Virgo constellation">Παρθένος</string>
-    <string name="capricorn" translation_description="Name of the Capricorn constellation">Αιγόκερως</string>
-    <string name="southern_cross" translation_description="Name of the Southern Cross constellation">Νότιος Σταυρός</string>
-    <string name="scorpio" translation_description="Name of the Scorpio constellation">Σκορπιός</string>
-    <string name="little_dipper" translation_description="Name of the Little Dipper constellation">Μικρή Άρκτος</string>
-    <string name="little_bear" translation_description="Name of the Little Bear constellation">Μικρή Άρκτος</string>
-    <string name="big_dipper" translation_description="Name of the Big Dipper constellation">Μεγάλη Άρκτος</string>
-    <string name="great_bear" translation_description="Name of the Great Bear constellation">Μεγάλη Άρκτος</string>
-    <string name="plough" translation_description="Name of the Plough constellation">Μεγάλη Άρκτος</string>
-
-    <string name="sirius" translation_description="Name of the Star Sirius">Σείριος</string>
-    <string name="canopus" translation_description="Name of the Star Canopus">Κάνωπος</string>
-    <string name="arcturus" translation_description="Name of the Star Arcturus">Αρκτούρος</string>
-    <string name="rigel_kentaurus_a" translation_description="Name of the Star Rigel Kentaurus A">Άλφα Κενταύρου</string>
-    <string name="rigil_kentaurus_a" translation_description="Name of the Star Rigil Kentaurus A">Άλφα Κενταύρου</string>
-    <string name="vega" translation_description="Name of the Star Vega">Βέγας</string>
-    <string name="rigel" translation_description="Name of the Star Rigel">Ρίγκελ</string>
-    <string name="procyon" translation_description="Name of the Star Procyon">Προκύων</string>
-    <string name="betelgeuse" translation_description="Name of the Star Betelgeuse">Μπετελγκέζ</string>
-    <string name="achernar" translation_description="Name of the Star Achernar">Αχερνάρ</string>
-    <string name="hadar" translation_description="Name of the Star Hadar">Χαντάρ</string>
-    <string name="capella" translation_description="Name of the Star Capella">Αίγα</string>
-    <string name="altair" translation_description="Name of the Star Altair">Αλτάιρ</string>
-    <string name="acrux" translation_description="Name of the Star Acrux">Άλφα Νοτίου Σταυρού</string>
-    <string name="aldebaran" translation_description="Name of the Star Aldebaran">Αλντεμπαράν</string>
-    <string name="spica" translation_description="Name of the Star Spica">Στάχυς</string>
-    <string name="antares" translation_description="Name of the Star Antares">Αντάρης</string>
-    <string name="pollux" translation_description="Name of the Star Pollux">Πολυδεύκης</string>
-    <string name="fomalhaut" translation_description="Name of the Star Fomalhaut">Φομαλχώ</string>
-    <string name="deneb" translation_description="Name of the Star Deneb">Ντενέμπ</string>
-    <string name="regulus" translation_description="Name of the Star Regulus">Βασιλίσκος</string>
-    <string name="adhara" translation_description="Name of the Star Adhara">Αντχάρα</string>
-    <string name="shaula" translation_description="Name of the Star Shaula">Σάουλα</string>
-    <string name="alnath" translation_description="Name of the Star Alnath">Ελ Ναθ</string>
-    <string name="alnilam" translation_description="Name of the Star Alnilam">Αλνιλάμ</string>
-    <string name="alnair" translation_description="Name of the Star Alnair">Alnair</string> <!-- TODO: No sources -->
-    <string name="alioth" translation_description="Name of the Star Alioth">Άλιοθ</string>
-    <string name="mirphak" translation_description="Name of the Star Mirphak">Μιρφάκ</string>
-    <string name="kaus_australis" translation_description="Name of the Star Kaus Australis">Κάους Αουστράλις</string>
-    <string name="dubhe" translation_description="Name of the Star Dubhe">Ντουμπέ</string>
-    <string name="alkaid" translation_description="Name of the Star Alkaid">Αλκάιντ</string>
-    <string name="alhena" translation_description="Name of the Star Alhena">Αλένα</string>
-    <string name="castor" translation_description="Name of the Star Castor">Κάστορας</string>
-    <string name="polaris" translation_description="Name of the Star Polaris">Πολικός Αστέρας</string>
-    <string name="alphard" translation_description="Name of the Star Alphard">Αλφάρντ</string>
-    <string name="hamal" translation_description="Name of the Star Hamal">Χαμάλ</string>
-    <string name="algieba" translation_description="Name of the Star Algieba">Αλτζήμπα</string>
-    <string name="diphda" translation_description="Name of the Star Diphda">Ντίφντα</string>
-    <string name="nunki" translation_description="Name of the Star Nunki">Νούνκι</string>
-    <string name="mirach" translation_description="Name of the Star Mirach">Μιράχ</string>
-    <string name="alpheratz" translation_description="Name of the Star Alpheratz">Αλφεράτζ</string>
-    <string name="saiph" translation_description="Name of the Star Saiph">Σάιφ</string>
-    <string name="kochab" translation_description="Name of the Star Kochab">Κοτσάμπ</string>
-    <string name="rasalhague" translation_description="Name of the Star Rasalhague">Ρας Αλχάγκ</string>
-    <string name="algol" translation_description="Name of the Star Algol">Αλγκόλ</string>
-    <string name="denebola" translation_description="Name of the Star Denebola">Ντενέμπολα</string>
-    <string name="alphekka" translation_description="Name of the Star Alphekka">Αλφέκκα</string>
-    <string name="etamin" translation_description="Name of the Star Etamin">Ελτανίν</string>
-    <string name="kaus" translation_description="Name of the Star Kaus">Κάους</string>
-    <string name="shedir" translation_description="Name of the Star Shedir">Σεντίρ</string>
-    <string name="caph" translation_description="Name of the Star Caph">Καφ</string>
-    <string name="izar" translation_description="Name of the Star Izar">Ιζάρ</string>
-    <string name="merak" translation_description="Name of the Star Merak">Μεράκ</string>
-    <string name="enif" translation_description="Name of the Star Enif">Ενίφ</string>
-    <string name="ankaa" translation_description="Name of the Star Ankaa">Ανκάα</string>
-    <string name="phad" translation_description="Name of the Star Phad">Φέκντα</string>
-    <string name="alderamin" translation_description="Name of the Star Alderamin">Αλντεραμίν</string>
-    <string name="scheat" translation_description="Name of the Star Scheat">Σχεάτ</string>
-    <string name="markab" translation_description="Name of the Star Markab">Μαρκάμπ</string>
-    <string name="menkar" translation_description="Name of the Star Menkar">Μενκάρ</string>
-    <string name="arneb" translation_description="Name of the Star Arneb">Αρνέμπ</string>
-    <string name="unukalhai" translation_description="Name of the Star Unukalhai">Ουνουκαλχάι</string>
-    <string name="algenib" translation_description="Name of the Star Algenib">Αλτζενίμπ</string>
-    <string name="vindemiatrix" translation_description="Name of the Star Vindemiatrix">Προτρυγετήρ</string>
-    <string name="alcyone" translation_description="Name of the Star Alcyone">Αλκυόνη</string>
-    <string name="dog_star" translation_description="Name of the Dog Star (Sirius)">Σείριος</string>
-    <string name="north_star" translation_description="Name of the North Star">Αστέρι του Βορρά</string>
-    <string name="pole_star" translation_description="Name of the (North) Pole Star">Πολικός Αστέρας</string>
-    <string name="alpha_centauri" translation_description="Name of the star Alpha Centauri">Άλφα Κενταύρου</string>
-    <string name="rigil_kent" translation_description="Name of the star Rigil Kent">Ρίγκιλ</string>
-    <string name="e_lyrae" translation_description="Name of the star ε Lyrae">ε Λύρας</string>
-    <string name="butterfly_cluster" translation_description="Name of the Messier object Butterfly Cluster">Σμήνος Πεταλούδα</string>
-    <string name="scorpions_tail" translation_description="Name of the Messier object Scorpion\'s Tail">Σμήνος Πτολεμαίου</string>
-    <string name="beehive_cluster" translation_description="Name of the Messier object Beehive Cluster">Σμήνος Κυψέλη</string>
-    <string name="praesepe" translation_description="Name of the Messier object Praesepe">Φάτνη</string>
-    <string name="seven_sisters" translation_description="Name of the Messier object Seven Sisters">Πούλια</string>
-    <string name="space_station" translation_description="Name of the Internation Space Station">Διεθνής Διαστημικός Σταθμός</string>
-    <string name="space_shuttle" translation_description="Name of the Space Shuttle">Διαστημικό Λεωφορείο</string>
-    <string name="kml_load_error">Αποτυχία φόρτωσης του αρχείου KML</string>
-    <string name="load_kml_dialog_title">Φόρτωση KML</string>
-    <string name="load_kml_file">Φόρτωση</string>
     <string name="enable_analytics">Αποστολή στατιστικών χρήσης</string>
     <string name="enable_analytics_desc">Βελτιώστε το Sky Map στέλνοντας ανώνυμα δεδομένα στο Google Analytics</string>
-    <string name="leonids" translation_description="Meteor Shower">Λεοντίδες</string>
-    <string name="geminids" translation_description="Meteor Shower">Διδυμίδες</string>
-    <string name="quadrantids" translation_description="Meteor Shower">Τεταρτίδες</string>
-    <string name="lyrids" translation_description="Meteor Shower">Λυρίδες</string>
-    <string name="aquariids" translation_description="Meteor Shower">ήτα Υδροχοΐδες</string>
-    <string name="deltaaquariids" translation_description="Meteor Shower">δέλτα Υδροχοΐδες</string>
-    <string name="perseids" translation_description="Meteor Shower">Περσείδες</string>
-    <string name="orionids" translation_description="Meteor Shower">Ωριωνίδες</string>
-    <string name="puppidvelids" translation_description="Meteor Shower">Πρυμνίδες-Ιστιίδες</string>
-    <string name="ursids" translation_description="Meteor Shower">Αρκτίδες</string>
-
     <string name="no_sensor_warning">Η συσκευή σας πιθανόν δεν έχει αισθητήρες προσανατολισμού - η αυτόματη λειτουργία μπορεί να μη λειτουργεί</string>
     <string name="warning_dialog_title">Άσχημα νέα!</string>
     <string name="missing_sensor_dialog_text">\n
@@ -361,11 +184,9 @@
     <string name="compass_calibration_activity_heading_compass">Πυξίδα -</string>
     <string name="compass_calibration_activity_do_not_show_this_again">Να μην εμφανιστεί ξανά</string>
     <string name="compass_calibration_activity_warning">Η πυξίδα σας χρειάζεται βαθμονόμηση</string>
-     <string name="compass_calib_what_to_do"
-        translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL">Το τηλέφωνό σας αναφέρει στο Sky Map ότι η εσωτερική του πυξίδα δεν έχει βαθμονομηθεί.
+    <string name="compass_calib_what_to_do" translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL">Το τηλέφωνό σας αναφέρει στο Sky Map ότι η εσωτερική του πυξίδα δεν έχει βαθμονομηθεί.
 Αυτό δεν είναι πρόβλημα του Sky Map, αλλά μπορούμε να σας βοηθήσουμε να το διορθώσετε. Για να βαθμονομήσετε την πυξίδα, δοκιμάστε να κινήσετε το τηλέφωνό σας σε σχήμα οκτώ, όπως φαίνεται σε αυτό το βίντεο %s, μέχρι η ακρίβεια να είναι \'υψηλή\'.</string>
-    <string name="compass_calib_what_to_do_user"
-        translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL">Η ακρίβεια της πυξίδας του τηλεφώνου σας φαίνεται παραπάνω.
+    <string name="compass_calib_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL">Η ακρίβεια της πυξίδας του τηλεφώνου σας φαίνεται παραπάνω.
 Εάν δεν είναι \'υψηλή\', τότε η πυξίδα ενδέχεται να χρειάζεται βαθμονόμηση. Αυτό δεν είναι πρόβλημα του Sky Map, αλλά μια ιδιότητα του τηλεφώνου σας. Για να βαθμονομήσετε την πυξίδα, δοκιμάστε να κινήσετε το τηλέφωνό σας σε σχήμα οκτώ όπως φαίνεται σε αυτό το βίντεο %s.</string>
     <string name="sensor_reverse_preference_title">Αντιστροφή του μαγνητικού Ζ</string>
     <string name="sensor_reverse_preference_summary">Για συσκευές με εσφαλμένη υλοποίηση του αισθητήρα - απαιτεί επανεκκίνηση</string>
@@ -376,31 +197,12 @@
     <string name="rotate_horizon_preference_summary">Περιστροφή του ορίζοντα κατά 90 μοίρες (για οθόνες με εξαναγκασμένη λειτουργία landscape, όπως smartglasses)</string>
     <string name="show_object_info_pref_title" translation_description="Preference title for showing info cards when tapping objects">Εμφάνιση πληροφοριών με πάτημα</string>
     <string name="show_object_info_pref_summary" translation_description="Preference summary for the tap info feature">Πατήστε τα ουράνια αντικείμενα στην χειροκίνητη λειτουργία για να μάθετε περισσότερα για αυτά</string>
+    <string name="show_object_info_auto_mode_title">Κάρτες πληροφοριών σε αυτόματη λειτουργία</string>
+    <string name="show_object_info_auto_mode_summary">Εμφάνιση καρτών πληροφοριών και κατά το πάτημα αντικειμένων σε αυτόματη (αισθητήρες) λειτουργία</string>
     <string name="object_info_funfact_label" translation_description="Label before the fun fact in info card">Ενδιαφέρον γεγονός:</string>
     <string name="object_info_distance_label" translation_description="Label for distance field">Απόσταση:</string>
     <string name="object_info_size_label" translation_description="Label for size field">Μέγεθος:</string>
     <string name="object_info_mass_label" translation_description="Label for mass field">Μάζα:</string>
     <string name="object_info_spectral_label" translation_description="Label for spectral class">Φασματική κατηγορία:</string>
     <string name="object_info_magnitude_label" translation_description="Label for apparent magnitude">Φαινόμενο μέγεθος:</string>
-    <string name="auto_dimness_preference"
-        translation_description="Mode for automatically dimming the screen when night mode is selected">
-        Αυτόματος φωτισμός οθόνης</string>
-    <string name="font_size_preference"
-        translation_description="Change the font size">
-        Μέγεθος γραμματοσειράς</string>
-    <string name="font_size_preference_description"
-        translation_description="help to go along with the change font size preference">Απαιτεί επανεκκίνηση</string>
-    <string name="appearance_prefs"
-        translation_description="Preferences title for section about app appearance">Εμφάνιση</string>
-    <string name="show_messier_images">Εμφάνιση εικόνων Μεσιέ</string>
-    <string name="show_messier_images_summary">Εμφάνιση αντικειμένων Μεσιέ ως εικονίδια γαλαξιών αντί για κουκκίδες</string>
-    <string name="show_object_info_auto_mode_title">Κάρτες πληροφοριών σε αυτόματη λειτουργία</string>
-    <string name="show_object_info_auto_mode_summary">Εμφάνιση καρτών πληροφοριών και κατά το πάτημα αντικειμένων σε αυτόματη (αισθητήρες) λειτουργία</string>
-    <string name="time_travel_next_sunset">Επόμενο ηλιοβασίλεμα</string>
-    <string name="time_travel_next_sunrise">Επόμενη ανατολή ηλίου</string>
-    <string name="time_travel_next_fullmoon">Επόμενη πανσέληνος</string>
-    <string name="time_travel_mercury_transit_2016">Διάβαση του Ερμή στις 9 Μαϊ 2016</string>
-    <string name="time_travel_solar_eclipse_2024">Ηλιακή έκλειψη στις 8 Απρίλιος 2024</string>
-    <string name="time_travel_apollo_11">Προσελήνωση του Apollo 11</string>
-    <string name="time_travel_jupiter_saturn_2020">Σύζευξη Δία-Κρόνου το 2020</string>
 </resources>
