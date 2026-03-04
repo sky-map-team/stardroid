@@ -168,7 +168,7 @@
         Map que su brújula interna no está calibrada.
     Este no es un problema de Sky Map, pero podemos ayudarte a intentar solucionarlo. Para calibrar la brújula intenta mover tu teléfono en forma de ocho
         como se demuestra en este video %s hasta que la precisión sea \'alta\'.</string>
-    <string name="compass_calib_what_to_do_user" transation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL">La precisión
+    <string name="compass_calib_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL">La precisión
         de la brújula
         de tu teléfono se muestra arriba.
     Si no es \'alta\' entonces es posible que sea necesario calibrar la brújula. Esto no es un problema de Sky Map, pero

@@ -168,7 +168,7 @@
         Map at det interne kompasset ikke er kalibrert.
     Dette er ikke et Sky Map-problem, men vi kan hjelpe deg med å prøve å løse det. For å kalibrere kompasset prøv å bevege telefonen i en åttetallsbevegelse
         som demonstrert i denne videoen %s til nøyaktigheten viser \'høy\'.</string>
-    <string name="compass_calib_what_to_do_user" transation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL">Din telefons
+    <string name="compass_calib_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL">Din telefons
         kompassnøyaktighet
         vises over.
     Hvis den ikke er \'høy\' kan det hende kompasset må kalibreres. Dette er ikke et Sky Map-problem, men
