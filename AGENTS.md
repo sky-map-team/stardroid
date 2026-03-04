@@ -106,9 +106,7 @@ Night-mode variants are red-shifted; brighter = better (mirrors day-mode meaning
 
 ## Key Files
 
-- [
-  `StardroidApplication.kt`](app/src/main/java/com/google/android/stardroid/StardroidApplication.kt) -
-  Application entry point, Dagger initialization, sensor detection
+- [`StardroidApplication.kt`](app/src/main/java/com/google/android/stardroid/StardroidApplication.kt) - Application entry point, Dagger initialization, sensor detection
 - [
   `DynamicStarMapActivity.java`](app/src/main/java/com/google/android/stardroid/activities/DynamicStarMapActivity.java) -
   Main interactive star map activity
