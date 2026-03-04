@@ -20,7 +20,7 @@
     <string name="location_lat_pref" translation_description="Label for the latitude input field in manual location settings">Latitude</string>
     <string name="location_long_pref" translation_description="Label for the longitude input field in manual location settings">Longitude</string>
     <string name="degrees" translation_description="angular degrees - used for latitude and longitude">Degrees</string>
-    <string name="preferences_where_is_this_used" translation_description="Provider-name label used internally when a location is set from preferences (not shown directly to the user as a UI label)">preferences</string>
+    <string name="preferences" translation_description="Provider-name label used internally when a location is set from preferences (not shown directly to the user as a UI label - does not require a translation)">preferences</string>
     <string name="location_offer_to_enable" translation_description="Dialog message asking whether to enable automatic location">Auto-location is disabled.  Would you like to enable it?</string>
     <string name="location_offer_to_enable_gps_title" translation_description="Title of dialog shown when automatic location is disabled">Auto-location disabled</string>
     <string name="location_permission_dialog_title" translation_description="Title of the dialog that requests location permission from the user">Location Required</string>
@@ -43,17 +43,16 @@
     <string name="manual_compass_adjustment_summary" translation_description="Summary for the manual compass adjustment preference">Extra offset in degrees (+ or −) added to compass reading</string>
     <!-- This string is too long and currently unused -->
     <string name="provider_prefs" translation_description="Dialog box title for a preferences dialog">Show...</string>
-    <string name="show_stars_pref_isused" translation_description="Preference toggle label for the stars layer on the sky map">Stars</string>
-    <string name="show_constellations_pref_isused" translation_description="Preference toggle label for the constellation lines and labels layer">Constellations</string>
-    <string name="show_messier_objects_pref_isused" translation_description="The celestial objects catalogued by Charles Messier">Messier Objects</string>
-    <string name="show_planets_pref_isused" translation_description="Preference toggle label for the solar system layer (planets, sun, moon)">Solar System</string>
-    <string name="show_grid_pref_isused" translation_description="Preference toggle label for the Right Ascension / Declination grid overlay">RA/Dec Grid</string>
-    <string name="show_horizon_pref_isused" translation_description="Preference toggle label for the horizon line layer">Horizon</string>
-    <string name="show_sky_gradient_isused" translation_description="This is a shading of the color of the sky used for effect">Sky Gradient</string>
-    <string name="show_meteors_pref_isused" translation_description="Preference toggle label for the meteor shower layer">Meteor Showers</string>
-    <string name="show_comet_layer_pref_isused" translation_description="Preference toggle label for the comets layer">Comets</string>
-    <string name="show_satellite_layer_pref_isused" translation_description="The layer for satellites">Satellites</string>
-    <string name="show_hubble_layer_pref_isused" translation_description="Preference toggle label for the Hubble Space Telescope images layer">Hubble Images</string>
+    <string name="show_stars_pref" translation_description="Label for the stars layer on the sky map (shows in the search results)">Stars</string>
+    <string name="show_constellations_pref" translation_description="Label for the constellation lines and labels layer (shows in the search results)">Constellations</string>
+    <string name="show_messier_objects_pref" translation_description="The celestial objects catalogued by Charles Messier (shows in the search results)">Messier Objects</string>
+    <string name="show_planets_pref" translation_description="Label for the solar system layer (planets, sun, moon)  (shows in the search results)">Solar System</string>
+    <string name="show_grid_pref" translation_description="Label for the Right Ascension / Declination grid overlay  (shows in the search results)">RA/Dec Grid</string>
+    <string name="show_horizon_pref" translation_description="Preference toggle label for the horizon line layer">Horizon</string>
+    <string name="show_sky_gradient" translation_description="This is a shading of the color of the sky used for effect">Sky Gradient</string>
+    <string name="show_meteors_pref" translation_description="Label for the meteor shower layer (shows in the search results)">Meteor Showers</string>
+    <string name="show_comet_layer_pref" translation_description="Preference toggle label for the comets layer">Comets</string>
+    <string name="show_satellite_layer_pref" translation_description="The layer for satellites">Satellites</string>
     <string name="sensor_prefs" translation_description="Preferences category heading for sensor settings, intended for advanced/expert users">Sensor Settings (experts)</string>
     <string name="sensor_speed" translation_description="Old, non gyro sensors only: How quickly the sensor should send us data">Sensor Speed</string>
     <string name="sensor_damping" translation_description="Old, non gyro sensors only: The amount of smoothing applied to the sensor outputs.">Damping</string>
@@ -69,8 +68,7 @@
     <string name="font_size_preference_description"
         translation_description="help to go along with the change font size preference">Adjust
         label text size</string>
-    <string name="ecliptic_isused" translation_description="Label for the ecliptic layer — the apparent annual path of the Sun across the sky">Ecliptic</string>
-    <string name="eclipse24_isused" translation_description="Label for the 2024 North American total solar eclipse path layer shown on the sky map">Eclipse path 2024-04-08</string>
+    <string name="ecliptic" translation_description="Label for the ecliptic layer — the apparent annual path of the Sun across the sky">Ecliptic</string>
     <string name="malformed_loc_error" translation_description="Error message when a non-numeric value is entered for latitude or longitude">Latitude or longitude setting isn\'t a number.</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Accept</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">No Thanks</string>
@@ -82,8 +80,6 @@
     <string name="eula_dialog_title" translation_description="Title of the End User License Agreement dialog shown on first launch">End User License Agreement</string>
     <string name="set_manual" translation_description="Toast message shown when the user switches to manual (touch-drag) mode">Switching to manual mode</string>
     <string name="set_auto" translation_description="Toast message shown when the user switches to automatic (sensor/gyroscope) mode">Switching to automatic mode</string>
-    <string name="menu_zoom_in_isused" translation_description="Menu item or button label to zoom in on the sky map">Zoom in</string>
-    <string name="menu_zoom_out_isused" translation_description="Menu item or button label to zoom out on the sky map">Zoom out</string>
     <string name="menu_toggle_dim" translation_description="Menu item to toggle night mode (red tint that preserves night vision)">Toggle night mode</string>
     <string name="zenith" translation_description="Label for the zenith point (directly overhead) shown on the sky map. Displayed in capitals.">ZENITH</string>
     <string name="nadir" translation_description="Label for the nadir point (directly below) shown on the sky map. Displayed in capitals.">NADIR</string>
@@ -103,7 +99,6 @@
     <string name="searching_for_text" translation_description="Status message displayed while a search is in progress. %s is the search query">Searching for %s...</string>
     <string name="found_target_text" translation_description="Status message displayed when the search target has been located. %s is the object name">Found %s.</string>
     <string name="other" translation_description="A preference category (ie preferences that don't belong in any other category)">Other</string>
-    <string name="planetary_images_isused" translation_description="Preference toggle label for showing photographic images of planets on the sky map">Show Planet Images</string>
     <string name="show_messier_images" translation_description="Preference toggle label for showing galaxy/nebula icons for Messier objects">Show Messier Images</string>
     <string name="show_messier_images_summary" translation_description="Summary description for the Show Messier Images preference">Display Messier objects as galaxy icons instead of dots</string>
     <string name="menu_time" translation_description="Menu item label to open the time travel feature">Time Travel</string>
@@ -157,8 +152,6 @@
 
     <string name="use_sound_effects" translation_description="A preferences menu label for enabling sound effects">Enable sound</string>
 
-    <string name="enable_layer_toast_isused" translation_description="Toast message when a sky map layer is switched on. %s is the layer name (e.g. Stars, Planets)">Enabling %s layer</string>
-    <string name="disable_layer_toast_isused" translation_description="Toast message when a sky map layer is switched off. %s is the layer name (e.g. Stars, Planets)">Disabling %s layer</string>
     <string name="menu_gallery" translation_description="Menu item label to open the image gallery">Gallery</string>
     <string name="gallery_image_search_btn" translation_description="Button in the gallery to locate the displayed object on the sky map">Find in sky</string>
     <string name="gallery_image_back_btn" translation_description="Button to return to the gallery from a single image view">Back to gallery</string>
@@ -182,9 +175,6 @@
     <string name="north_pole" translation_description="Short abbreviation for the North Celestial Pole, displayed as a label on the sky map grid. Translators: use the standard abbreviation in your language (e.g. NP in English, PN in French).">NP</string>
     <string name="south_pole" translation_description="Short abbreviation for the South Celestial Pole, displayed as a label on the sky map grid. Translators: use the standard abbreviation in your language (e.g. SP in English, PS in French).">SP</string>
 
-    <string name="kml_load_error_isused" translation_description="Error message shown when a KML overlay file fails to load">Failed to load KML file</string>
-    <string name="load_kml_dialog_title_isused" translation_description="Title of the dialog for loading a KML (Keyhole Markup Language) geographic overlay file">Load KML</string>
-    <string name="load_kml_file_isused" translation_description="Button to confirm loading a KML file">Load</string>
     <string name="enable_analytics" translation_description="Preference label to opt in to sending anonymous usage statistics">Send usage statistics</string>
     <string name="enable_analytics_desc" translation_description="Description/summary for the usage statistics preference">Make Sky Map better by sending anonymous data to Google Analytics</string>
 
