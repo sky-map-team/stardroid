@@ -122,30 +122,19 @@ interface AstronomicalSource {
 }
 ```
 
-### FlatBufferAstronomicalSource
+### ProtobufAstronomicalRenderable
 
-Wraps FlatBuffers data (zero-copy access):
+Wraps a deserialized Protocol Buffer message and implements the `AstronomicalSource` interface:
 
-```kotlin
-class FlatBufferAstronomicalSource(
-    private val source: AstronomicalSource
-) : AstronomicalSourceInterface {
-
-    override fun getPoints(): List<PointPrimitive> {
-        return (0 until source.pointsLength).map { i ->
-            val p = source.points(i)!!
-            PointPrimitive(
-                GeocentricCoordinates(
-                    p.location().rightAscension(),
-                    p.location().declination()
-                ),
-                p.color().toInt(),
-                p.size()
-            )
-        }
-    }
-}
+```java
+// ProtobufAstronomicalRenderable.java
+// Reads from AstronomicalSourceProto (generated from source.proto)
+// and produces PointPrimitive/LinePrimitive/TextPrimitive/ImagePrimitive lists
+// consumed by the renderer object managers.
 ```
+
+The actual deserialization uses the Protocol Buffers generated class
+`SourceProto.AstronomicalSourcesProto` (from `datamodel/src/main/proto/source.proto`).
 
 ## Stage 4: Primitives
 

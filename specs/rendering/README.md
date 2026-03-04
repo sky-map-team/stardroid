@@ -1,6 +1,6 @@
 # Rendering System Overview
 
-This section documents Sky Map's OpenGL ES 2.0 rendering pipeline.
+This section documents Sky Map's OpenGL ES 1.x rendering pipeline.
 
 ## Contents
 
@@ -57,7 +57,7 @@ This section documents Sky Map's OpenGL ES 2.0 rendering pipeline.
 │                              ▼                                   │
 │              ┌───────────────────────────────┐                  │
 │              │         SkyRenderer           │                  │
-│              │      (OpenGL ES 2.0)          │                  │
+│              │      (OpenGL ES 1.x)          │                  │
 │              └───────────────────────────────┘                  │
 └─────────────────────────────────────────────────────────────────┘
 ```
@@ -157,10 +157,10 @@ Objects rendered back-to-front by depth:
 
 | File | Purpose |
 |------|---------|
-| `SkyRenderer.kt` | Main OpenGL renderer |
-| `RendererController.kt` | Update queue management |
-| `PointObjectManager.kt` | Star/planet rendering |
-| `PolyLineObjectManager.kt` | Line rendering |
-| `LabelObjectManager.kt` | Text rendering |
-| `ImageObjectManager.kt` | Image rendering |
-| `TextureManager.kt` | Texture loading |
+| `SkyRenderer.java` | Main OpenGL renderer |
+| `RendererController.java` | Update queue management |
+| `PointObjectManager.java` | Star/planet rendering |
+| `PolyLineObjectManager.java` | Line rendering |
+| `LabelObjectManager.java` | Text rendering |
+| `ImageObjectManager.java` | Image rendering |
+| `TextureManager.java` | Texture loading |
