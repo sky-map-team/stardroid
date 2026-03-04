@@ -1,6 +1,8 @@
 # Stardroid Blueprint - Target Architecture
 
-This directory contains the **target architecture specification** for Stardroid, defining the modern, AR/Vulkan-capable future state of the application.
+This directory contains a **target architecture specification** for Stardroid, defining the 
+modern, AR/Vulkan-capable future state of the application. This was
+developed by nnunley@ for his fork.
 
 ## Purpose
 
