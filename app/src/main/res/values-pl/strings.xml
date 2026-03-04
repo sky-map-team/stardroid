@@ -49,17 +49,6 @@
     <string name="show_comet_layer_pref">Komety</string>
     <string name="show_satellite_layer_pref" translation_description="The layer for satellites">Satelity</string>
     <string name="sensor_prefs">Ustawienia czujnika (zaawansowane)</string>
-    <string-array name="sensor_speed">
-        <item translation_description="Slow sensor speed">Niska</item>
-        <item translation_description="Normal sensor speed">Normalna</item>
-        <item translation_description="Fast sensor speed">Wysoka</item>
-    </string-array>
-    <string-array name="sensor_damping">
-        <item translation_description="Low sensor damping factor">Skokowe</item>
-        <item translation_description="Medium sensor damping factor">Średnie</item>
-        <item translation_description="Extra High sensor damping factor">W sam raz</item>
-        <item translation_description="Really High sensor damping factor">Opóźniające</item>
-    </string-array>
     <string name="appearance_prefs" translation_description="Preferences title for section about app appearance">Wygląd</string>
     <string name="auto_dimness_preference" translation_description="Mode for automatically dimming the screen when night mode is selected">Autoprzyciemnianie ekranu</string>
     <string name="font_size_preference" translation_description="Change the font size">Rozmiar czcionki</string>

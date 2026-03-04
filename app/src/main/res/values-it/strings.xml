@@ -35,17 +35,6 @@
     <string name="show_horizon_pref">Orizzonte</string>
     <string name="show_sky_gradient">Gradiente cielo</string>
     <string name="sensor_prefs">Impostazioni sensori</string>
-    <string-array name="sensor_speed">
-        <item>Lento</item>
-        <item>Standard</item>
-        <item>Veloce</item>
-    </string-array>
-    <string-array name="sensor_damping">
-        <item>Jumpy</item>
-        <item>Medium</item>
-        <item>Standard</item>
-        <item>Alto</item>
-    </string-array>
     <string name="ecliptic">Eclittica</string>
     <string name="malformed_loc_error">Il valore di lat./long. non è un numero.</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Accetta</string>

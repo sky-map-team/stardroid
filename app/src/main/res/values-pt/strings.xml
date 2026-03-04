@@ -37,17 +37,6 @@
     <string name="show_comet_layer_pref">Cometas</string>
     <string name="show_satellite_layer_pref" translation_description="The layer for satellites">Satélites</string>
     <string name="sensor_prefs">Configurações do sensor</string>
-    <string-array name="sensor_speed">
-        <item>Lenta</item>
-        <item>Padrão</item>
-        <item>Rápida</item>
-    </string-array>
-    <string-array name="sensor_damping">
-        <item>Jumpy</item>
-        <item>Medium</item>
-        <item>Padrão</item>
-        <item>Alta</item>
-    </string-array>
     <string name="appearance_prefs" translation_description="Preferences title for section about app appearance">Aparência
     </string>
     <string name="auto_dimness_preference" translation_description="Mode for automatically dimming the screen when night mode is selected">

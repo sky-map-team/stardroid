@@ -34,17 +34,6 @@
     <string name="show_horizon_pref">Horizon</string>
     <string name="show_sky_gradient">Hemelgradiënt</string>
     <string name="sensor_prefs">Sensorinstellingen</string>
-    <string-array name="sensor_speed">
-        <item>Langzaam</item>
-        <item>Standaard</item>
-        <item>Snel</item>
-    </string-array>
-    <string-array name="sensor_damping">
-        <item>Jumpy</item>
-        <item>Medium</item>
-        <item>Standaard</item>
-        <item>Hoog</item>
-    </string-array>
     <string name="ecliptic">Ecliptica</string>
     <string name="malformed_loc_error">De ingestelde breedte- of lengtegraad is geen getal.</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Accepteren</string>

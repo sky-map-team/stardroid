@@ -35,17 +35,6 @@
     <string name="show_sky_gradient">Градиент неба</string>
     <string name="show_meteors_pref">Метеоритные дожди</string>
     <string name="sensor_prefs">Настройки матрицы</string>
-    <string-array name="sensor_speed">
-        <item>Медленно</item>
-        <item>Обычно</item>
-        <item>Быстро</item>
-    </string-array>
-    <string-array name="sensor_damping">
-        <item>Скачками</item>
-        <item>Среднее</item>
-        <item>Обычное</item>
-        <item>Высокое</item>
-    </string-array>
     <string name="ecliptic">эклиптика</string>
     <string name="malformed_loc_error">Значение широты или долготы не явл. числом.</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Принять</string>

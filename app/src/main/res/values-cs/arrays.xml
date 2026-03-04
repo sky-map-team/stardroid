@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sensor_speed">
+        <item>Pomalé</item>
+        <item>Standardní</item>
+        <item>Rychlé</item>
+    </string-array>
+    <string-array name="sensor_damping">
+        <item>Žádné</item>
+        <item>Lehké</item>
+        <item>Standardní</item>
+        <item>Vysoké</item>
+    </string-array>
+</resources>

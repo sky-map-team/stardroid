@@ -35,17 +35,6 @@
     <string name="show_sky_gradient">Gradient oblohy</string>
     <string name="show_meteors_pref">Meteorické roje</string>
     <string name="sensor_prefs">Nastavení čidel</string>
-    <string-array name="sensor_speed">
-        <item>Pomalé</item>
-        <item>Standardní</item>
-        <item>Rychlé</item>
-    </string-array>
-    <string-array name="sensor_damping">
-        <item>Žádné</item>
-        <item>Lehké</item>
-        <item>Standardní</item>
-        <item>Vysoké</item>
-    </string-array>
     <string name="ecliptic">Ekliptika</string>
     <string name="malformed_loc_error">Nastavená šířka nebo délka není číslo.</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Přijmout</string>

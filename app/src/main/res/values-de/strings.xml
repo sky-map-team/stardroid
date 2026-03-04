@@ -34,17 +34,6 @@
     <string name="show_horizon_pref">Horizont</string>
     <string name="show_sky_gradient">Himmelsverlauf</string>
     <string name="sensor_prefs">Sensoreinstellungen</string>
-    <string-array name="sensor_speed">
-        <item>Langsam</item>
-        <item>Standard</item>
-        <item>Schnell</item>
-    </string-array>
-    <string-array name="sensor_damping">
-        <item>Jumpy</item>
-        <item>Medium</item>
-        <item>Standard</item>
-        <item>Hoch</item>
-    </string-array>
     <string name="ecliptic">Ekliptik</string>
     <string name="malformed_loc_error">Längen- oder Breitengrad ist keine Zahl.</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Akzeptieren</string>

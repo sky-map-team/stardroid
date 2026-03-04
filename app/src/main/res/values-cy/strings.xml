@@ -35,17 +35,6 @@
     <string name="show_sky_gradient" translation_description="This is a shading of the color of the sky used for effect">Graddfa Awyr</string>
     <string name="show_meteors_pref">Sêr gwib</string>
     <string name="sensor_prefs">Gosodiadau Synhwyrydd (arbenigwyr)</string>
-    <string-array name="sensor_speed">
-        <item translation_description="Slow sensor speed">Araf</item>
-        <item translation_description="Normal sensor speed">Arferol</item>
-        <item translation_description="Fast sensor speed">Cyflym</item>
-    </string-array>
-    <string-array name="sensor_damping">
-        <item translation_description="Low sensor damping factor">Yn neidio</item>
-        <item translation_description="Medium sensor damping factor">Canolradd</item>
-        <item translation_description="Extra High sensor damping factor">Cyffredinol gywir</item>
-        <item translation_description="Really High sensor damping factor">Yn araf</item>
-    </string-array>
     <string name="ecliptic">Ecliptig</string>
     <string name="malformed_loc_error">Nid yw gosodiad lledred na hydred yn rif.</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Derbyn</string>

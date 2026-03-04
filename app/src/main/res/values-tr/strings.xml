@@ -37,17 +37,6 @@
     <string name="show_comet_layer_pref">Kuyruklu Yıldızlar</string>
     <string name="show_satellite_layer_pref" translation_description="The layer for satellites">Uydular</string>
     <string name="sensor_prefs">Sensör Ayarları (Uzman)</string>
-    <string-array name="sensor_speed">
-        <item translation_description="Yavaş sensör hızı">Yavaş</item>
-        <item translation_description="Normal sensör hızı">Orta</item>
-        <item translation_description="Hızlı sensör hızı">Hızlı</item>
-    </string-array>
-    <string-array name="sensor_damping">
-        <item translation_description="Düşük sensör sönüm faktörü">Titrek</item>
-        <item translation_description="Orta sensör sönüm faktörü">Orta</item>
-        <item translation_description="Ekstra Yüksek sensör sönüm faktörü">Uygun</item>
-        <item translation_description="Gerçekten Yüksek sensör sönüm faktörü">Gecikmeli</item>
-    </string-array>
     <string name="ecliptic">Ekliptik</string>
     <string name="malformed_loc_error">Enlem veya boylam değeri bir sayı olmalıdır.</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Kabul et</string>

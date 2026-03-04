@@ -34,17 +34,6 @@
     <string name="show_horizon_pref">지평선</string>
     <string name="show_sky_gradient">스카이 그라데이션</string>
     <string name="sensor_prefs">센서 설정</string>
-    <string-array name="sensor_speed">
-        <item>느림</item>
-        <item>표준</item>
-        <item>빠름</item>
-    </string-array>
-    <string-array name="sensor_damping">
-        <item>Jumpy</item>
-        <item>Medium</item>
-        <item>표준</item>
-        <item>높음</item>
-    </string-array>
     <string name="ecliptic">단주기 혜성</string>
     <string name="malformed_loc_error">위도 또는 경도 설정은 숫자가 아닙니다.</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">동의</string>

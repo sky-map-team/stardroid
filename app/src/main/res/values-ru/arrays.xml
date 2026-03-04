@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sensor_speed">
+        <item>Медленно</item>
+        <item>Обычно</item>
+        <item>Быстро</item>
+    </string-array>
+    <string-array name="sensor_damping">
+        <item>Скачками</item>
+        <item>Среднее</item>
+        <item>Обычное</item>
+        <item>Высокое</item>
+    </string-array>
+</resources>

@@ -37,17 +37,6 @@
     <string name="show_comet_layer_pref">彗星</string>
     <string name="show_satellite_layer_pref" translation_description="The layer for satellites">衛星</string>
     <string name="sensor_prefs">センサー設定</string>
-    <string-array name="sensor_speed">
-        <item>低速</item>
-        <item>標準</item>
-        <item>高速</item>
-    </string-array>
-    <string-array name="sensor_damping">
-        <item>飛び飛び</item>
-        <item>中</item>
-        <item>標準</item>
-        <item>高</item>
-    </string-array>
     <string name="ecliptic">黄道</string>
     <string name="malformed_loc_error">緯度や経度には数値を設定してください。</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">同意する</string>

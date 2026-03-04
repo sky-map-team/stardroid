@@ -37,17 +37,6 @@
     <string name="show_comet_layer_pref">Kométy</string>
     <string name="show_satellite_layer_pref" translation_description="The layer for satellites">Satelity</string>
     <string name="sensor_prefs">Nastavenie senzorov (pre expertov)</string>
-    <string-array name="sensor_speed">
-        <item translation_description="Slow sensor speed">Pomalá</item>
-        <item translation_description="Normal sensor speed">Stredná</item>
-        <item translation_description="Fast sensor speed">Rýchla</item>
-    </string-array>
-    <string-array name="sensor_damping">
-        <item translation_description="Low sensor damping factor">Nízke</item>
-        <item translation_description="Medium sensor damping factor">Stredné</item>
-        <item translation_description="Extra High sensor damping factor">Vysoké</item>
-        <item translation_description="Really High sensor damping factor">Veľmi vysoké</item>
-    </string-array>
     <string name="appearance_prefs" translation_description="Preferences title for section about app appearance">Vzhľad
     </string>
     <string name="auto_dimness_preference" translation_description="Mode for automatically dimming the screen when night mode is selected">

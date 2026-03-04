@@ -37,17 +37,6 @@
     <string name="show_comet_layer_pref">Cometas</string>
     <string name="show_satellite_layer_pref" translation_description="The layer for satellites">Satélites</string>
     <string name="sensor_prefs">Ajustes del sensor</string>
-    <string-array name="sensor_speed">
-        <item translation_description="Slow sensor speed">Lento</item>
-        <item translation_description="Normal sensor speed">Medio</item>
-        <item translation_description="Fast sensor speed">Rápido</item>
-    </string-array>
-    <string-array name="sensor_damping">
-        <item translation_description="Low sensor damping factor">Baja</item>
-        <item translation_description="Medium sensor damping factor">Media</item>
-        <item translation_description="Extra High sensor damping factor">Estándar</item>
-        <item translation_description="Really High sensor damping factor">Alta</item>
-    </string-array>
     <string name="ecliptic">Eclíptica</string>
     <string name="malformed_loc_error">El ajuste de lat/long no es un número.</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Acepto</string>

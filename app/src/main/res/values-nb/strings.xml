@@ -37,17 +37,6 @@
     <string name="show_comet_layer_pref">Kometer</string>
     <string name="show_satellite_layer_pref" translation_description="The layer for satellites">Satellitter</string>
     <string name="sensor_prefs">Sensorinnstillinger (eksperter)</string>
-    <string-array name="sensor_speed">
-        <item translation_description="Slow sensor speed">Treg</item>
-        <item translation_description="Normal sensor speed">Middels</item>
-        <item translation_description="Fast sensor speed">Rask</item>
-    </string-array>
-    <string-array name="sensor_damping">
-        <item translation_description="Low sensor damping factor">Jumpy</item>
-        <item translation_description="Medium sensor damping factor">Medium</item>
-        <item translation_description="Extra High sensor damping factor">About right</item>
-        <item translation_description="Really High sensor damping factor">Laggy</item>
-    </string-array>
     <string name="ecliptic">Ekliptikken</string>
     <string name="malformed_loc_error">Bredde- eller lengdegradinnstilling er ikke et tall.</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Aksepter</string>

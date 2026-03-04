@@ -36,17 +36,6 @@
     <string name="show_meteors_pref">流星雨</string>
     <string name="show_satellite_layer_pref" translation_description="The layer for satellites">人造卫星</string>
     <string name="sensor_prefs">传感器设置</string>
-    <string-array name="sensor_speed">
-        <item>慢</item>
-        <item>标准</item>
-        <item>快</item>
-    </string-array>
-    <string-array name="sensor_damping">
-        <item>Jumpy</item>
-        <item>Medium</item>
-        <item>标准</item>
-        <item>高</item>
-    </string-array>
     <string name="ecliptic">黄道</string>
     <string name="malformed_loc_error">纬度或经度设置不是数字。</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">接受</string>

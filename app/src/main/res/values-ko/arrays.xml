@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sensor_speed">
+        <item>느림</item>
+        <item>표준</item>
+        <item>빠름</item>
+    </string-array>
+    <string-array name="sensor_damping">
+        <item>Jumpy</item>
+        <item>Medium</item>
+        <item>표준</item>
+        <item>높음</item>
+    </string-array>
+</resources>
