@@ -34,7 +34,7 @@
     <string name="location_unable_to_geocode" translation_description="Error message when converting a place name to coordinates (geocoding) fails, possibly due to no network">Impossible de déterminer votre position. Votre réseau est-il accessible ?</string>
     <string name="location_not_found_title" translation_description="dialog box title when location not found">Désolé</string>
     <string name="location_not_found" translation_description="dialog message when placename not found">%s introuvable</string>
-    <string name="location_long_lat" translation_description="Formatted display of longitude and latitude. %1$.2f is longitude, %2$.2f is latitude">Longitude : %1$s, latitude : %2$s</string>
+    <string name="location_long_lat" translation_description="Formatted display of longitude and latitude. %1$.2f is longitude, %2$.2f is latitude">Longitude: %1$.2f, latitude: %2$.2f</string>
     <string name="location_place_found" translation_description="Status message when a place name was successfully looked up. %1$f is latitude, %2$f is longitude">Lieu trouvé. Définir latitude %1$f et longitude %2$f</string>
     <string name="use_magnetic_correction" translation_description="Preference label: apply magnetic declination correction so the compass points to true north instead of magnetic north">Correction magnétique</string>
     <string name="manual_compass_adjustment_title" translation_description="Preference title: lets the user add a manual degree offset to the compass reading">Ajustement supplémentaire de la boussole</string>
