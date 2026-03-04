@@ -15,6 +15,8 @@ export ANDROID_HOME=~/Library/Android/sdk
 ```
 
 `local.properties` must exist in the repo root with `sdk.dir=<path to Android SDK>`.
+You will also need a `no-checkin.properties` in the `app` folder. If using a new
+git worktree you should attempt to copy these files out of the current main folder.
 
 ## Build Flavors
 
@@ -24,22 +26,23 @@ export ANDROID_HOME=~/Library/Android/sdk
 Always specify the flavor. Never use bare `assembleDebug`.
 
 ## Build Commands
-
+Prefer to use the shell scripts:
+```bash
+# Full rebuild including data generation
+./build_skymap.sh             # GMS including data generation
+./build_skymap.sh --fdroid    # F-Droid
+./build_skymap.sh --quick     # Skip data regeneration
+```
+but you can also use gradlew directly:
 ```bash
 # Debug APK
 ./gradlew :app:assembleGmsDebug
 ./gradlew :app:assembleFdroidDebug
 
-# Full rebuild including data generation
-./build_skymap.sh             # GMS
-./build_skymap.sh --fdroid    # F-Droid
-./build_skymap.sh --quick     # Skip data regeneration
-
 # Release bundle
 ./gradlew :app:bundleGmsRelease
 ```
-
-Note: `build_skymap.sh` patches Gradle's generated classpath — prefer it over raw `gradlew` for full builds.
+Prefer the --quick option unless you are adding/removing strings.
 
 ## Testing
 
@@ -70,7 +73,7 @@ cd tools
 ./binary.sh     # Converts to binary in app/src/main/assets/
 ```
 
-## Deployment
+## Deployment to a phone
 
 ```bash
 ./deploy.sh       # Deploy to connected device or emulator
