@@ -77,7 +77,7 @@ This section documents the architectural patterns and system design of Sky Map.
 │                                  ▼                               │
 │  ┌────────────────────────────────────────────────────────────┐ │
 │  │                     SkyRenderer                             │ │
-│  │  • OpenGL ES 2.0 rendering                                  │ │
+│  │  • OpenGL ES 1.x rendering (GL10 API)                       │ │
 │  │  • Coordinate transformation                                │ │
 │  │  • Texture management                                       │ │
 │  └────────────────────────────────────────────────────────────┘ │

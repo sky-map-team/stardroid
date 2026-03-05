@@ -4,6 +4,12 @@ This directory contains a **target architecture specification** for Stardroid, d
 modern, AR/Vulkan-capable future state of the application. This was
 developed by nnunley@ for his fork.
 
+> **FUTURE DESIGN — NOT IMPLEMENTED.** None of the designs in this directory reflect the current
+> codebase. They are proposals for a future modernisation (AR, Vulkan, Hilt, Compose). The current
+> system uses OpenGL ES 1.x, Dagger 2, Protocol Buffers, and mixed Java/Kotlin.
+
+This directory contains the **target architecture specification** for Stardroid, defining the modern, AR/Vulkan-capable future state of the application.
+
 ## Purpose
 
 The blueprint answers:
@@ -20,6 +26,7 @@ The blueprint answers:
 | [rendering-abstraction.md](rendering-abstraction.md) | Graphics abstraction layer - enables swapping OpenGL for Vulkan/AR | IN PROGRESS |
 | [ar-vulkan-target.md](ar-vulkan-target.md) | AR/Vulkan target architecture design | TODO |
 | [migration-roadmap.md](migration-roadmap.md) | Step-by-step migration from current to target | TODO |
+| [future-data-generation.md](future-data-generation.md) | Proposed FlatBuffers data pipeline (replaces current protobuf pipeline) | TODO |
 
 See also: [../rendering/abstraction.md](../rendering/abstraction.md) for implementation details.
 

@@ -7,7 +7,7 @@ Sky Map is organized into three Gradle modules with distinct responsibilities.
 ```
 stardroid/
 ├── app/                 # Main Android application
-├── datamodel/           # FlatBuffers definitions
+├── datamodel/           # Protocol Buffer definitions (source.proto)
 └── tools/               # Data generation utilities
 ```
 
@@ -91,7 +91,7 @@ datamodel/
 
 ### Protobuf Schema
 
-Defines messages for astronomical data (see `specs/data/flatbuffers-schema.md` for full schema):
+Defines messages for astronomical data (see `specs/data/protobuf-schema.md` for full schema):
 
 ```proto
 message AstronomicalSourceProto {
@@ -169,26 +169,27 @@ Raw Catalogs → tools/Main.java → ASCII Protobuf Text → Binary Protobuf
      app/
       │
       ├── depends on ─► datamodel/
-      │                    (FlatBuffers classes)
+      │                    (Protocol Buffer generated classes)
       │
       └── uses output from ─► tools/
-                                (binary assets)
+                                (binary protobuf assets)
 ```
 
 ## Build Configuration
 
-### app/build.gradle.kts
-```kotlin
+### app/build.gradle (Groovy DSL)
+```groovy
 plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
-    id("com.google.dagger.hilt.android")  // or Dagger 2 kapt
+    id 'com.android.application' version '8.13.2'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'  // for Dagger 2 annotation processing
 }
 
 dependencies {
-    implementation(project(":datamodel"))
-    // Protocol Buffers runtime (for deserializing binary assets)
-    implementation("com.google.protobuf:protobuf-java:3.x")
+    implementation project(':datamodel')
+    implementation 'com.google.protobuf:protobuf-javalite:3.13.0'
+    implementation 'com.google.dagger:dagger:2.48'
+    kapt 'com.google.dagger:dagger-compiler:2.48'
 }
 ```
 

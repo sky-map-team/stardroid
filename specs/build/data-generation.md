@@ -1,28 +1,34 @@
 # Data Generation
 
-This document describes how astronomical catalog data is converted to the binary format used by Stardroid Awakening.
+This document describes how astronomical catalog data is converted to the binary format used by
+Sky Map.
 
 ## Overview
 
-Raw astronomical catalogs are processed offline to create compact FlatBuffers binary files bundled with the app.
+Raw astronomical catalogs are processed offline using Java tools to create compact Protocol Buffer
+binary files bundled with the app.
 
 ```
 Raw Catalogs (CSV, text)
          │
          ▼
-    tools/generate.sh
+    tools/Main.java
+         │
+         ├── StellarAsciiProtoWriter.java   (stars)
+         ├── MessierAsciiProtoWriter.java   (Messier objects)
+         └── (constellation data)
          │
          ▼
-JSON Intermediate (human-readable)
+ASCII Protobuf Text (intermediate, human-readable)
          │
          ▼
-    tools/binary.sh (flatc)
+    AsciiToBinaryProtoWriter.java
          │
          ▼
-FlatBuffers Binary (zero-copy)
+Binary Protobuf (*.binary)
          │
          ▼
-app/src/main/assets/*.bin
+app/src/main/assets/*.binary
 ```
 
 ## Tools Module
@@ -31,306 +37,79 @@ app/src/main/assets/*.bin
 
 ```
 tools/
-├── build.gradle.kts       # Gradle build config (Kotlin DSL)
-├── generate.sh            # JSON generation script
-├── binary.sh              # FlatBuffers binary conversion
-├── data/                  # Raw source catalogs
-│   ├── stars.csv
-│   ├── constellations.txt
-│   └── messier.csv
-└── src/main/kotlin/
-    └── com/stardroid/awakening/tools/
-        ├── Main.kt                    # Entry point
-        ├── StellarCatalogConverter.kt # Star processor
-        ├── MessierCatalogConverter.kt # Messier processor
-        └── ConstellationConverter.kt  # Constellation processor
+├── build.gradle                        # Gradle build config (Groovy DSL)
+├── data/                               # Raw source catalogs
+│   ├── stars.csv                       # Hipparcos star data
+│   ├── constellations.txt              # Stellarium constellation lines
+│   └── messier.csv                     # Messier deep-sky objects
+└── src/main/java/
+    └── com/google/android/stardroid/data/
+        ├── Main.java                         # Entry point
+        ├── StellarAsciiProtoWriter.java      # Star catalog → ASCII protobuf
+        ├── MessierAsciiProtoWriter.java      # Messier catalog → ASCII protobuf
+        └── AsciiToBinaryProtoWriter.java     # ASCII protobuf → binary protobuf
 ```
 
 ### Build Configuration
 
-```kotlin
-// tools/build.gradle.kts
+```groovy
+// tools/build.gradle
 plugins {
-    id("org.jetbrains.kotlin.jvm")
-    application
-}
-
-application {
-    mainClass.set("com.stardroid.awakening.tools.MainKt")
+    id 'java'
+    id 'application'
 }
 
 dependencies {
-    implementation(project(":datamodel"))
-    implementation("com.google.flatbuffers:flatbuffers-java:24.3.25")
-    implementation("com.google.code.gson:gson:2.10.1")
+    implementation project(':datamodel')
 }
 ```
 
-## Generation Scripts
+## Schema
 
-### generate.sh
+The binary format is defined in `datamodel/src/main/proto/source.proto` (Protocol Buffers proto2).
+See [`specs/data/protobuf-schema.md`](../data/protobuf-schema.md) for the full schema.
 
-Converts raw catalogs to JSON intermediate format:
+Key message types:
+- `AstronomicalSourceProto` — top-level object (star, planet, deep-sky object)
+- `PointElementProto` — renderable point with location, color, size, and shape
+- `LabelElementProto` — text label with location
+- `LineElementProto` — line connecting two points
+- `GeocentricCoordinatesProto` — 3D unit vector on celestial sphere
 
-```bash
-#!/bin/bash
+## Generated Assets
 
-# Generate JSON from raw catalogs
-./gradlew :tools:run --args="--type stars --input data/stars.csv --output data/stars.json"
-./gradlew :tools:run --args="--type constellations --input data/constellations.txt --output data/constellations.json"
-./gradlew :tools:run --args="--type messier --input data/messier.csv --output data/messier.json"
-```
+| File | Source | Content |
+|------|--------|---------|
+| `stars.binary` | Hipparcos catalog | Star positions, magnitudes, colors |
+| `constellations.binary` | Stellarium data | Constellation lines and labels |
+| `messier.binary` | Messier catalog | Deep-sky objects |
 
-### binary.sh
+These files live in `app/src/main/assets/` and are loaded at runtime by `AbstractFileBasedLayer`
+and deserialized into `ProtobufAstronomicalSource` instances.
 
-Converts JSON to FlatBuffers binary:
+## Running Data Generation
 
-```bash
-#!/bin/bash
-
-OUTPUT_DIR="../app/src/main/assets"
-SCHEMA="../datamodel/src/main/fbs/source.fbs"
-
-# Convert each catalog using flatc
-for catalog in stars constellations messier; do
-    flatc --binary -o "${OUTPUT_DIR}" "${SCHEMA}" "data/${catalog}.json"
-    mv "${OUTPUT_DIR}/data/${catalog}.bin" "${OUTPUT_DIR}/${catalog}.bin"
-done
-
-echo "Binary files written to $OUTPUT_DIR"
-```
-
-## Converter Classes
-
-### Main Entry Point
-
-```kotlin
-fun main(args: Array<String>) {
-    val options = parseArgs(args)
-
-    val converter = when (options.type) {
-        "stars" -> StellarCatalogConverter()
-        "messier" -> MessierCatalogConverter()
-        "constellations" -> ConstellationConverter()
-        else -> error("Unknown type: ${options.type}")
-    }
-
-    converter.process(options.input, options.output)
-}
-```
-
-### StellarCatalogConverter
-
-Processes star catalog CSV to JSON:
-
-```kotlin
-class StellarCatalogConverter {
-    fun process(inputFile: String, outputFile: String) {
-        val sources = mutableListOf<Map<String, Any>>()
-
-        File(inputFile).useLines { lines ->
-            lines.filter { !it.startsWith("#") }
-                .forEach { line ->
-                    val star = parseStar(line.split(","))
-                    sources.add(star)
-                }
-        }
-
-        val root = mapOf("sources" to sources)
-        File(outputFile).writeText(Gson().toJson(root))
-    }
-
-    private fun parseStar(fields: List<String>): Map<String, Any> {
-        val ra = fields[1].toFloat()
-        val dec = fields[2].toFloat()
-        val magnitude = fields[3].toFloat()
-        val name = fields[4]
-        val spectralType = fields[5]
-
-        return buildMap {
-            if (name.isNotEmpty()) {
-                put("names", listOf(name))
-            }
-            put("search_location", mapOf(
-                "right_ascension" to ra,
-                "declination" to dec
-            ))
-            put("points", listOf(mapOf(
-                "color" to spectralTypeToColor(spectralType),
-                "size" to magnitudeToSize(magnitude),
-                "location" to mapOf(
-                    "right_ascension" to ra,
-                    "declination" to dec
-                ),
-                "shape" to "Circle"
-            )))
-            if (name.isNotEmpty()) {
-                put("labels", listOf(mapOf(
-                    "text" to name,
-                    "location" to mapOf(
-                        "right_ascension" to ra,
-                        "declination" to dec
-                    )
-                )))
-            }
-        }
-    }
-
-    private fun spectralTypeToColor(type: String): Long = when (type.firstOrNull()) {
-        'O', 'B' -> 0xFFAAAAFFL  // Blue-white
-        'A' -> 0xFFFFFFFFL      // White
-        'F' -> 0xFFFFFFAAL      // Yellow-white
-        'G' -> 0xFFFFFF00L      // Yellow
-        'K' -> 0xFFFFAA00L      // Orange
-        'M' -> 0xFFFF5500L      // Red
-        else -> 0xFFFFFFFFL
-    }
-
-    private fun magnitudeToSize(magnitude: Float): Int =
-        maxOf(1, (6 - magnitude).toInt())
-}
-```
-
-### MessierCatalogConverter
-
-Processes Messier catalog:
-
-```kotlin
-class MessierCatalogConverter {
-    fun process(inputFile: String, outputFile: String) {
-        val sources = mutableListOf<Map<String, Any>>()
-
-        File(inputFile).useLines { lines ->
-            lines.filter { !it.startsWith("#") }
-                .forEach { line ->
-                    val obj = parseMessierObject(line.split(","))
-                    sources.add(obj)
-                }
-        }
-
-        val root = mapOf("sources" to sources)
-        File(outputFile).writeText(Gson().toJson(root))
-    }
-
-    private fun parseMessierObject(fields: List<String>): Map<String, Any> {
-        val messierNumber = fields[0]
-        val ra = fields[1].toFloat()
-        val dec = fields[2].toFloat()
-        val type = fields[3]
-        val commonName = fields[4]
-
-        val names = mutableListOf(messierNumber)
-        if (commonName.isNotEmpty()) names.add(commonName)
-
-        return mapOf(
-            "names" to names,
-            "search_location" to mapOf(
-                "right_ascension" to ra,
-                "declination" to dec
-            ),
-            "points" to listOf(mapOf(
-                "color" to 0xFFAAFFAAL,  // Light green
-                "size" to 3,
-                "location" to mapOf(
-                    "right_ascension" to ra,
-                    "declination" to dec
-                ),
-                "shape" to typeToShape(type)
-            )),
-            "labels" to listOf(mapOf(
-                "text" to messierNumber,
-                "location" to mapOf(
-                    "right_ascension" to ra,
-                    "declination" to dec
-                )
-            ))
-        )
-    }
-
-    private fun typeToShape(type: String): String = when (type.lowercase()) {
-        "spiral galaxy" -> "SpiralGalaxy"
-        "elliptical galaxy" -> "EllipticalGalaxy"
-        "globular cluster" -> "GlobularCluster"
-        "open cluster" -> "OpenCluster"
-        "nebula" -> "Nebula"
-        else -> "Circle"
-    }
-}
-```
-
-## Full Build Process
-
-### build_skymap.sh
-
-Complete build script:
+Data generation is a prerequisite for building the app when catalog data changes. In practice,
+the committed `*.binary` assets are rarely regenerated — only when catalog data or the protobuf
+schema changes.
 
 ```bash
-#!/bin/bash
+# Build the tools module
+./gradlew :tools:build
 
-set -e
-
-FDROID=false
-QUICK=false
-
-while [[ $# -gt 0 ]]; do
-    case $1 in
-        --fdroid) FDROID=true; shift ;;
-        --quick) QUICK=true; shift ;;
-        *) echo "Unknown option: $1"; exit 1 ;;
-    esac
-done
-
-# Build tools module and generate data
-if [ "$QUICK" = false ]; then
-    echo "Building tools..."
-    cd tools
-    ../gradlew build
-
-    echo "Generating JSON catalogs..."
-    ./generate.sh
-
-    echo "Converting to FlatBuffers binary..."
-    ./binary.sh
-
-    cd ..
-fi
-
-# Build app
-if [ "$FDROID" = true ]; then
-    echo "Building F-Droid APK..."
-    ./gradlew assembleFdroidDebug
-else
-    echo "Building GMS APK..."
-    ./gradlew assembleGmsDebug
-fi
-
-echo "Build complete!"
-```
-
-## Verification
-
-### Check Binary Files
-
-```bash
-# List assets
-ls -la app/src/main/assets/*.bin
-
-# Check file sizes (FlatBuffers are compact)
-du -h app/src/main/assets/*.bin
-```
-
-### Validate FlatBuffers
-
-```bash
-# Decode binary to JSON for verification
-flatc --json --raw-binary -o /tmp datamodel/src/main/fbs/source.fbs -- app/src/main/assets/stars.bin
-head -50 /tmp/stars.json
+# Run Main.java to regenerate data (see Main.java for exact arguments)
+./gradlew :tools:run
 ```
 
 ## Updating Catalogs
 
 1. Update raw data files in `tools/data/`
-2. Run `./build_skymap.sh` (without `--quick`)
+2. Regenerate binary files using the tools module
 3. Verify output in `app/src/main/assets/`
 4. Test app with new data
-5. Commit changes
+5. Commit both the updated source data and the new binary assets
+
+## Future Direction
+
+A proposed migration to FlatBuffers (for zero-copy deserialization) is documented in
+[`specs/blueprint/future-data-generation.md`](../blueprint/future-data-generation.md).

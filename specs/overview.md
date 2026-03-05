@@ -44,7 +44,7 @@ Sky Map is an Android planetarium application that transforms your phone into a 
 ## Platform Requirements
 
 - Android SDK 26+ (Android 8.0 Oreo)
-- Target SDK 35
+- Target SDK 36
 - Device sensors: accelerometer, magnetometer (gyroscope optional but recommended)
 - GPS or network location (optional, can use manual coordinates)
 

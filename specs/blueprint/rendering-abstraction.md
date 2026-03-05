@@ -95,8 +95,8 @@ data class CameraView(
 
 ```kotlin
 class OpenGLRenderer : RendererInterface {
-    // Uses OpenGL ES 2.0
-    // Fixed function pipeline (for compatibility)
+    // Uses OpenGL ES 1.x (GL10 API via GLSurfaceView.Renderer)
+    // Fixed function pipeline
     // Point sprites for stars
     // Line strips for constellations
     // Textures for labels, images
