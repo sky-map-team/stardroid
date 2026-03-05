@@ -1,5 +1,11 @@
 # Data Models - Celestial Objects & Catalogs
 
+> **NOTE:** The schemas and loading code in this file describe **proposed future data models** and
+> are not the current implementation. The current system uses Protocol Buffers (source.proto) and
+> `ProtobufAstronomicalRenderable`; see [`specs/data/protobuf-schema.md`](../data/protobuf-schema.md)
+> for the actual schema, and [`specs/blueprint/future-data-generation.md`](../blueprint/future-data-generation.md)
+> for the proposed FlatBuffers migration.
+
 ## Purpose
 
 Defines **data structures and schemas** for celestial objects (stars, planets, constellations) and catalog formats.

@@ -72,7 +72,7 @@ interface Layer {
 
 ### File-Based Layers
 
-Load data from FlatBuffers binary assets (zero-copy):
+Load data from binary Protocol Buffer assets:
 
 ```kotlin
 abstract class AbstractFileBasedLayer(
@@ -81,11 +81,10 @@ abstract class AbstractFileBasedLayer(
 ) : AbstractRenderablesLayer() {
 
     override fun initialize() {
-        val bytes = assetManager.open(assetFilename).use { it.readBytes() }
-        val buffer = ByteBuffer.wrap(bytes)
-        val data = AstronomicalSources.getRootAsAstronomicalSources(buffer)
-        sources = (0 until data.sourcesLength).map { i ->
-            FlatBufferAstronomicalSource(data.sources(i)!!)
+        val inputStream = assetManager.open(assetFilename)
+        val sources = SourceProto.AstronomicalSourcesProto.parser().parseFrom(inputStream)
+        renderables = sources.sourceList.map { proto ->
+            ProtobufAstronomicalRenderable(proto, resources)
         }
     }
 }
