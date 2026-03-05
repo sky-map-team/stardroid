@@ -70,8 +70,7 @@
     <string name="custom_date_prompt" translation_description="Label telling the user to manually specify a date">Eller velg din egen dato:</string>
     <string name="change_date_prompt" translation_description="Button label to open the date picker in the time travel dialog">Endre dato</string>
     <string name="change_time_prompt" translation_description="Button label to open the time picker in the time travel dialog">Endre klokkeslett</string>
-    <string name="now_visiting" translation_description="used in time travel dialog to show the destination date/time the user has selected, time formatted as yyyy.mm.dd at hh.mm.ss + timezone">
-        Besøker nå: %s</string>
+    <string name="now_visiting" translation_description="used in time travel dialog to show the destination date/time the user has selected, time formatted as yyyy.mm.dd at hh.mm.ss + timezone">Besøker nå: %s</string>
     <string name="time_travel_label_past" translation_description="Label showing that we are in the past">Tidsreise: Fortid</string>
     <string name="time_travel_label_future" translation_description="Label showing that we are in the future">Tidsreise: Framtid</string>
     <string name="time_travel_stopped" translation_description="Label showing rate of travel through time">Tidsreise fryst</string>

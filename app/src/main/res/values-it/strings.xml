@@ -9,8 +9,7 @@
     <string name="location_prefs" translation_description="Preferences category heading for location-related settings">Impostazioni località</string>
     <string name="force_gps_pref" translation_description="Preference label: force GPS use even when network location is available">Usa sempre GPS</string>
     <string name="force_gps_pref_hint" translation_description="this string continues from \'Always use GPS\'">Se abilitato, anche se è disponibile la posizione di rete</string>
-    <string name="no_use_gps_pref" translation_description="Preference label: choose to enter location by hand instead of using GPS or phone location">Imposta località manual.
-</string>
+    <string name="no_use_gps_pref" translation_description="Preference label: choose to enter location by hand instead of using GPS or phone location">Imposta località manual.</string>
     <string name="no_use_gps_pref_hint" translation_description="Hint text beneath the \'Set location manually\' preference">Inserisci un luogo o lat/long sotto</string>
     <string name="location_placename" translation_description="Label for the place-name text field in manual location settings">Nome luogo</string>
     <string name="location_placename_hint" translation_description="An example address.  Translators: please pick an address suitable for your country.  If it has an astronomical connection (e.g. the address of an observatory or famous astronomer) then that would be even better.">ad es. 1400 West Mars Hill Road, Flagstaff, AZ.</string>

@@ -66,8 +66,7 @@
     <string name="custom_date_prompt" translation_description="Label telling the user to manually specify a date">或是自行選取日期</string>
     <string name="change_date_prompt" translation_description="Button label to open the date picker in the time travel dialog">變更日期</string>
     <string name="change_time_prompt" translation_description="Button label to open the time picker in the time travel dialog">變更時間</string>
-    <string name="now_visiting" translation_description="used in time travel dialog to show the destination date/time the user has selected, time formatted as yyyy.mm.dd at hh.mm.ss + timezone">
-        時間切換到：%s</string>
+    <string name="now_visiting" translation_description="used in time travel dialog to show the destination date/time the user has selected, time formatted as yyyy.mm.dd at hh.mm.ss + timezone">時間切換到：%s</string>
     <string name="time_travel_label_past" translation_description="Label showing that we are in the past">時光旅行：過去</string>
     <string name="time_travel_label_future" translation_description="Label showing that we are in the future">時光旅行：未來</string>
     <string name="time_travel_stopped" translation_description="Label showing rate of travel through time">時光旅行停滯</string>
