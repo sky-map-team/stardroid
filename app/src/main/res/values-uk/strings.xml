@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!-- Please add  translation_description="" attributes to Strings to assist the translators. --><resources>
-    <string name="app_name" translation_description="Application Title">Sky Map</string>
     <string name="menu_settings" translation_description="Settings menu item in the options menu">Налаштування</string>
     <string name="menu_search" translation_description="Search menu item in the options menu">Пошук</string>
     <string name="cancel" translation_description="Generic cancel button label used in dialogs">Відміна</string>
@@ -142,7 +141,6 @@
     <string name="diagnostics_activity_gyroscope" translation_description="Row label in the Diagnostics screen for the gyroscope sensor">Гіроскоп</string>
     <string name="diagnostics_activity_light_level" translation_description="Row label in the Diagnostics screen for the ambient light sensor reading">Рівень освітленості</string>
     <string name="diagnostics_activity_location_and_time_heading" translation_description="Section heading in the Diagnostics screen for location and time information">Місце та час</string>
-    <string name="diagnostics_activity_gps" translation_description="Row label in the Diagnostics screen for the GPS provider status">GPS</string>
     <string name="diagnostics_activity_location" translation_description="Row label in the Diagnostics screen showing the current latitude and longitude">Розташування (ш., д.)</string>
     <string name="diagnostics_activity_pointing_ra_dec" translation_description="Row label in the Diagnostics screen showing a snapshot of where the phone is currently pointing in the sky (Right Ascension and Declination)">Вказівник</string>
     <string name="diagnostics_activity_magnetic_correction" translation_description="Row label in the Diagnostics screen showing whether magnetic declination correction is applied">Mag корекція</string>
@@ -150,14 +148,12 @@
     <string name="diagnostics_activity_universal_time" translation_description="Row label in the Diagnostics screen for the UTC/universal date and time">Універсальний час</string>
     <string name="diagnostics_activity_network_heading" translation_description="Section heading in the Diagnostics screen for network connectivity information">Мережа</string>
     <string name="diagnostics_activity_connection" translation_description="Row label in the Diagnostics screen for the current network connection status">З\'єднання</string>
-    <string name="diagnostics_activity_rotation_matrix" translation_description="Row label in the Diagnostics screen showing the raw device rotation matrix used for orientation">Rot Matrix</string>
     <string name="enabled" translation_description="Generic status value meaning a feature or sensor is enabled/active">Ввімкнено</string>
     <string name="disabled" translation_description="Generic status value meaning a feature or sensor is disabled/inactive">Вимкнено</string>
     <string name="permission_disabled" translation_description="Status value shown when a feature is unavailable because its permission was not granted">Дозвіл не надано</string>
     <string name="no_gps" translation_description="Status value shown in diagnostics when no GPS provider is available">Немає GPS</string>
     <string name="connected" translation_description="Network status value shown when the device has an active network connection">З\'єднано</string>
     <string name="disconnected" translation_description="Network status value shown when the device has no network connection">Роз\'єднано</string>
-    <string name="wifi" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (wifi)\'). Note the leading space.">" (wifi)"</string>
     <string name="cell_network" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (cell)\'). Note the leading space.">" (виклик)"</string>
     <string name="menu_calibrate" translation_description="Menu item label to open the compass calibration screen">Калібрувати</string>
     <string name="compass_calibration_activity_heading_compass" translation_description="Static label in the compass calibration screen placed inline to the left of the live compass accuracy value (e.g. displayed as \'Compass - Accuracy: High\')">Компас -</string>

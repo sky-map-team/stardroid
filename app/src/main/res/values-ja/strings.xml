@@ -5,7 +5,6 @@
     <string name="menu_search" translation_description="Search menu item in the options menu">検索</string>
     <string name="cancel" translation_description="Generic cancel button label used in dialogs">キャンセル</string>
     <string name="set" translation_description="Button label. Set the date to the given value">設定</string>
-    <string name="go" translation_description="Button to start navigating the sky map toward a searched object">Go!</string>
     <string name="location_prefs" translation_description="Preferences category heading for location-related settings">位置の設定</string>
     <string name="force_gps_pref" translation_description="Preference label: force GPS use even when network location is available">常にGPSを使用</string>
     <string name="force_gps_pref_hint" translation_description="this string continues from \'Always use GPS\'">ネットワーク位置情報の設定よりも優先</string>
@@ -42,7 +41,6 @@
     <string name="malformed_loc_error" translation_description="Error message when a non-numeric value is entered for latitude or longitude">緯度や経度には数値を設定してください。</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">同意する</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">同意しない</string>
-    <string name="dialog_ok_button" translation_description="Generic OK/confirm button label for dialogs">OK</string>
     <string name="menu_help" translation_description="menu item to show \'Help\' box">ヘルプ</string>
     <string name="help_dialog_title" translation_description="Title of the help dialog">Skyマップのヘルプ</string>
     <string name="set_manual" translation_description="Toast message shown when the user switches to manual (touch-drag) mode">手動モードに切り替え中</string>
@@ -106,8 +104,6 @@
     <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">探しています:</string>
     <string name="sun_wont_set_message" translation_description="Message shown when the sun will not set during the next 24 hours (polar day / midnight sun)">この場所では今後24時間以内に太陽が沈むことはありません。</string>
 
-    <string name="missing_label" translation_description="Used to indicate to the developer that they've added a resource with no translation.">MISSING_LBL</string>
-
     <string name="menu_tos" translation_description="Menu item label to view the Terms of Service">利用規約</string>
     <string name="menu_diagnostics" translation_description="Menu item label to open the technical diagnostics screen">診断</string>
 
@@ -134,7 +130,6 @@
     <string name="do_not_show_again" translation_description="Checkbox or button label to suppress future display of a warning dialog">このメッセージを再び表示しない</string>
     <string name="title_activity_diagnostic" translation_description="Title bar text for the Diagnostics activity/screen">診断</string>
     <string name="play_services_error" translation_description="Warning shown in the diagnostics screen when Google Play Services has an error that may affect automatic location">警告: Google Play Services エラー - 自動位置判定は動作しないかもしれません</string>
-    <string name="sensor_absent" translation_description="Sensor status shown in diagnostics when the sensor is not present on the device">Absent</string>
     <string name="sensor_accuracy_unknown" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">精度: 不明</string>
     <string name="sensor_accuracy_unreliable" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">精度: 信頼できない</string>
     <string name="sensor_accuracy_low" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">精度: 低</string>
@@ -152,7 +147,6 @@
     <string name="diagnostics_activity_gyroscope" translation_description="Row label in the Diagnostics screen for the gyroscope sensor">ジャイロスコープ</string>
     <string name="diagnostics_activity_light_level" translation_description="Row label in the Diagnostics screen for the ambient light sensor reading">明るさレベル</string>
     <string name="diagnostics_activity_location_and_time_heading" translation_description="Section heading in the Diagnostics screen for location and time information">位置と時刻</string>
-    <string name="diagnostics_activity_gps" translation_description="Row label in the Diagnostics screen for the GPS provider status">GPS</string>
     <string name="diagnostics_activity_location" translation_description="Row label in the Diagnostics screen showing the current latitude and longitude">位置(緯度,軽度)</string>
     <string name="diagnostics_activity_pointing_ra_dec" translation_description="Row label in the Diagnostics screen showing a snapshot of where the phone is currently pointing in the sky (Right Ascension and Declination)">位置スナップ</string>
     <string name="diagnostics_activity_magnetic_correction" translation_description="Row label in the Diagnostics screen showing whether magnetic declination correction is applied">磁北修正</string>

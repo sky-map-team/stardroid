@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!-- Please add  translation_description="" attributes to Strings to assist the translators. --><resources>
-    <string name="app_name" translation_description="Application Title">Sky Map</string>
     <string name="menu_settings" translation_description="Settings menu item in the options menu">Instellingen</string>
     <string name="menu_search" translation_description="Search menu item in the options menu">Zoeken</string>
     <string name="cancel" translation_description="Generic cancel button label used in dialogs">Annuleren</string>
@@ -22,7 +21,6 @@
     <!-- TODO: many translations require two placeholders. Once all translations brought up to date we can clean this up -->
     <string name="location_set_auto" translation_description="Toast message when automatic location is acquired. %1$s is the provider name (e.g. GPS), %2$s is the place name or coordinates">Locatie ingesteld van %1$s naar %2$s</string>
     <string name="location_unable_to_geocode" translation_description="Error message when converting a place name to coordinates (geocoding) fails, possibly due to no network">Kan uw locatie niet decoderen - misschien is uw netwerk niet beschikbaar?</string>
-    <string name="location_not_found_title" translation_description="dialog box title when location not found">Sorry</string>
     <string name="location_not_found" translation_description="dialog message when placename not found">%s niet gevonden.</string>
     <string name="location_long_lat" translation_description="Formatted display of longitude and latitude. %1$.2f is longitude, %2$.2f is latitude">Lengtegraad:%1$s, breedtegraad:%2$s</string>
     <string name="location_place_found" translation_description="Status message when a place name was successfully looked up. %1$f is latitude, %2$f is longitude">Plaats gevonden. Breedtegraad %1$f en lengtegraad %2$f worden ingesteld</string>
@@ -32,23 +30,19 @@
     <string name="show_messier_objects_pref" translation_description="The celestial objects catalogued by Charles Messier (shows in the search results)">Messier-objecten</string>
     <string name="show_planets_pref" translation_description="Label for the solar system layer (planets, sun, moon)  (shows in the search results)">Planeten</string>
     <string name="show_grid_pref" translation_description="Label for the Right Ascension / Declination grid overlay  (shows in the search results)">RK/declinatieraster</string>
-    <string name="show_horizon_pref" translation_description="Preference toggle label for the horizon line layer">Horizon</string>
     <string name="show_sky_gradient" translation_description="This is a shading of the color of the sky used for effect">Hemelgradiënt</string>
     <string name="sensor_prefs" translation_description="Preferences category heading for sensor settings, intended for advanced/expert users">Sensorinstellingen</string>
     <string name="ecliptic" translation_description="Label for the ecliptic layer — the apparent annual path of the Sun across the sky">Ecliptica</string>
     <string name="malformed_loc_error" translation_description="Error message when a non-numeric value is entered for latitude or longitude">De ingestelde breedte- of lengtegraad is geen getal.</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Accepteren</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">Nee, bedankt</string>
-    <string name="menu_help" translation_description="menu item to show \'Help\' box">Help</string>
     <string name="help_dialog_title" translation_description="Title of the help dialog">Help voor Sky Map</string>
     <string name="set_manual" translation_description="Toast message shown when the user switches to manual (touch-drag) mode">Schakelen naar handmatige modus</string>
     <string name="set_auto" translation_description="Toast message shown when the user switches to automatic (sensor/gyroscope) mode">Schakelen naar automatische modus</string>
     <string name="menu_toggle_dim" translation_description="Menu item to toggle night mode (red tint that preserves night vision)">Nachtmodus schakelen</string>
     <string name="zenith" translation_description="Label for the zenith point (directly overhead) shown on the sky map. Displayed in capitals.">ZENIT</string>
-    <string name="nadir" translation_description="Label for the nadir point (directly below) shown on the sky map. Displayed in capitals.">NADIR</string>
     <string name="north" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">NOORD</string>
     <string name="east" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">OOST</string>
-    <string name="west" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">WEST</string>
     <string name="south" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">ZUID</string>
     <string name="search_label" translation_description="Hint/label for the search bar in the search activity">Sterrenhemel doorzoeken</string>
     <string name="search_hint" translation_description="an example search target">bijvoorbeeld: Mars</string>
@@ -98,7 +92,6 @@
     <string name="sun_wont_set_message" translation_description="Message shown when the sun will not set during the next 24 hours (polar day / midnight sun)">De zon gaat op uw huidige locatie niet onder in de komende 24 uur.</string>
 
     <string name="menu_tos" translation_description="Menu item label to view the Terms of Service">Servicevoorwaarden</string>
-    <string name="north_pole" translation_description="Short abbreviation for the North Celestial Pole, displayed as a label on the sky map grid. Translators: use the standard abbreviation in your language (e.g. NP in English, PN in French).">NP</string>
     <string name="south_pole" translation_description="Short abbreviation for the South Celestial Pole, displayed as a label on the sky map grid. Translators: use the standard abbreviation in your language (e.g. SP in English, PS in French).">ZP</string>
 
     <string name="show_object_info_auto_mode_title" translation_description="Preference title for enabling info cards in auto/sensor mode">Infokaarten in automatische modus</string>

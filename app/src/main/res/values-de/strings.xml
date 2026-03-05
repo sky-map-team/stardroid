@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!-- Please add  translation_description="" attributes to Strings to assist the translators. --><resources>
-    <string name="app_name" translation_description="Application Title">Sky Map</string>
     <string name="menu_settings" translation_description="Settings menu item in the options menu">Einstellungen</string>
     <string name="menu_search" translation_description="Search menu item in the options menu">Suche</string>
     <string name="cancel" translation_description="Generic cancel button label used in dialogs">Abbrechen</string>
@@ -22,7 +21,6 @@
     <!-- TODO: many translations require two placeholders. Once all translations brought up to date we can clean this up -->
     <string name="location_set_auto" translation_description="Toast message when automatic location is acquired. %1$s is the provider name (e.g. GPS), %2$s is the place name or coordinates">Ort von %1$s auf %2$s festgelegt</string>
     <string name="location_unable_to_geocode" translation_description="Error message when converting a place name to coordinates (geocoding) fails, possibly due to no network">Ihr Standort konnte nicht ermittelt werden. Sind Sie mit einem Mobilfunknetz verbunden?</string>
-    <string name="location_not_found_title" translation_description="dialog box title when location not found">Sorry</string>
     <string name="location_not_found" translation_description="dialog message when placename not found">%s nicht gefunden</string>
     <string name="location_long_lat" translation_description="Formatted display of longitude and latitude. %1$.2f is longitude, %2$.2f is latitude">Längengrad:%1$s, Breitengrad:%2$s</string>
     <string name="location_place_found" translation_description="Status message when a place name was successfully looked up. %1$f is latitude, %2$f is longitude">Ort gefunden. Breitengrad %1$f und Längengrad %2$f</string>
@@ -45,7 +43,6 @@
     <string name="set_auto" translation_description="Toast message shown when the user switches to automatic (sensor/gyroscope) mode">Wechsel in automatischen Modus</string>
     <string name="menu_toggle_dim" translation_description="Menu item to toggle night mode (red tint that preserves night vision)">Nachtmodus ein/aus</string>
     <string name="zenith" translation_description="Label for the zenith point (directly overhead) shown on the sky map. Displayed in capitals.">ZENIT</string>
-    <string name="nadir" translation_description="Label for the nadir point (directly below) shown on the sky map. Displayed in capitals.">NADIR</string>
     <string name="north" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">NORDEN</string>
     <string name="east" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">OSTEN</string>
     <string name="west" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">WESTEN</string>
@@ -83,7 +80,6 @@
     <string name="time_travel_next_sunset" translation_description="Name of a popular astronomical event in the time travel picker">Sonnenuntergang am nächsten Abend</string>
     <string name="time_travel_next_sunrise" translation_description="Name of a popular astronomical event in the time travel picker">Sonnenaufgang am nächsten Morgen</string>
     <string name="time_travel_next_fullmoon" translation_description="Name of a popular astronomical event in the time travel picker">Nächster Vollmond</string>
-    <string name="time_travel_mercury_transit_2016" translation_description="Name of an astronomical event in the time travel picker. A Mercury transit is when Mercury passes across the face of the Sun as seen from Earth. Keep the date format suitable for your locale.">Mercury transit of May 09, 2016</string>
     <string name="time_travel_solar_eclipse_2024" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">Sonnenfinsternis am April 08, 2024</string>
     <string name="time_travel_apollo_11" translation_description="Name of an astronomical event in the time travel picker: the first crewed Moon landing in 1969">Apollo 11-Mondlandung</string>
     <string name="use_sound_effects" translation_description="A preferences menu label for enabling sound effects">Ton aktivieren</string>
@@ -99,9 +95,6 @@
 
     <string name="menu_tos" translation_description="Menu item label to view the Terms of Service">Nutzungsbedingungen</string>
     <string name="menu_diagnostics" translation_description="Menu item label to open the technical diagnostics screen">Diagnose</string>
-
-    <string name="north_pole" translation_description="Short abbreviation for the North Celestial Pole, displayed as a label on the sky map grid. Translators: use the standard abbreviation in your language (e.g. NP in English, PN in French).">NP</string>
-    <string name="south_pole" translation_description="Short abbreviation for the South Celestial Pole, displayed as a label on the sky map grid. Translators: use the standard abbreviation in your language (e.g. SP in English, PS in French).">SP</string>
 
     <string name="enable_analytics" translation_description="Preference label to opt in to sending anonymous usage statistics">Nutzungsstatistiken senden</string>
     <string name="enable_analytics_desc" translation_description="Description/summary for the usage statistics preference">Sky Map durch das Übermitteln anonymer Daten an Google Analytics verbessern</string>
