@@ -1,99 +1,105 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Please add  translation_description="" attributes to Strings to assist the translators. --><resources>
     <string name="app_name" translation_description="Application Title">별지도</string>
-    <string name="menu_settings">설정</string>
-    <string name="menu_search">검색</string>
-    <string name="cancel">취소</string>
-    <string name="set">세트</string>
-    <string name="go">이동!</string>
-    <string name="location_prefs">위치 설정</string>
-    <string name="force_gps_pref">항상 GPS 사용</string>
+    <string name="menu_settings" translation_description="Settings menu item in the options menu">설정</string>
+    <string name="menu_search" translation_description="Search menu item in the options menu">검색</string>
+    <string name="cancel" translation_description="Generic cancel button label used in dialogs">취소</string>
+    <string name="set" translation_description="Button label. Set the date to the given value">세트</string>
+    <string name="go" translation_description="Button to start navigating the sky map toward a searched object">이동!</string>
+    <string name="location_prefs" translation_description="Preferences category heading for location-related settings">위치 설정</string>
+    <string name="force_gps_pref" translation_description="Preference label: force GPS use even when network location is available">항상 GPS 사용</string>
     <string name="force_gps_pref_hint" translation_description="this string continues from \'Always use GPS\'">네트워크 위치 사용여부에 상관 없이</string>
-    <string name="no_use_gps_pref">위치 직접 설정</string>
-    <string name="no_use_gps_pref_hint">아래에 위치 또는 위/경도 입력</string>
-    <string name="location_placename">장소 이름</string>
+    <string name="no_use_gps_pref" translation_description="Preference label: choose to enter location by hand instead of using GPS or phone location">위치 직접 설정</string>
+    <string name="no_use_gps_pref_hint" translation_description="Hint text beneath the \'Set location manually\' preference">아래에 위치 또는 위/경도 입력</string>
+    <string name="location_placename" translation_description="Label for the place-name text field in manual location settings">장소 이름</string>
     <string name="location_placename_hint" translation_description="An example address.  Translators: please pick an address suitable for your country.  If it has an astronomical connection (e.g. the address of an observatory or famous astronomer) then that would be even better.">예: 경기도 양평군 옥천면 신복3리 117-1</string>
-    <string name="location_lat_pref">위도</string>
-    <string name="location_long_pref">경도</string>
-    <string name="degrees">도(°)</string>
-    <string name="preferences">환경설정</string>
-    <string name="location_offer_to_enable">자동 위치설정이 중지되었습니다. 사용하도록 설정하시겠습니까?</string>
-    <string name="location_offer_to_enable_gps_title">자동 위치설정 사용중지</string>
-    <string name="location_set_auto">%1$s에서 %2$s(으)로 위치 설정</string>
-    <string name="location_unable_to_geocode">위치를 디코딩할 수 없습니다. 네트워크를 사용할 수 없는 것 같습니다.</string>
+    <string name="location_lat_pref" translation_description="Label for the latitude input field in manual location settings">위도</string>
+    <string name="location_long_pref" translation_description="Label for the longitude input field in manual location settings">경도</string>
+    <string name="degrees" translation_description="angular degrees - used for latitude and longitude">도(°)</string>
+    <string name="preferences" translation_description="Provider-name label used internally when a location is set from preferences (not shown directly to the user as a UI label - does not require a translation)">환경설정</string>
+    <string name="location_offer_to_enable" translation_description="Dialog message asking whether to enable automatic location">자동 위치설정이 중지되었습니다. 사용하도록 설정하시겠습니까?</string>
+    <string name="location_offer_to_enable_gps_title" translation_description="Title of dialog shown when automatic location is disabled">자동 위치설정 사용중지</string>
+    <!-- TODO: many translations require two placeholders. Once all translations brought up to date we can clean this up -->
+    <string name="location_set_auto" translation_description="Toast message when automatic location is acquired. %1$s is the provider name (e.g. GPS), %2$s is the place name or coordinates">%1$s에서 %2$s(으)로 위치 설정</string>
+    <string name="location_unable_to_geocode" translation_description="Error message when converting a place name to coordinates (geocoding) fails, possibly due to no network">위치를 디코딩할 수 없습니다. 네트워크를 사용할 수 없는 것 같습니다.</string>
     <string name="location_not_found_title" translation_description="dialog box title when location not found">죄송합니다.</string>
     <string name="location_not_found" translation_description="dialog message when placename not found">%s: 찾을 수 없음</string>
-    <string name="location_long_lat">경도:%1$s, 위도:%2$s</string>
-    <string name="location_place_found">위치를 찾았습니다. 위도(%1$f)와 경도(%2$f)를 설정합니다.</string>
-    <string name="use_magnetic_correction">자기 수정 사용</string>
-    <string name="show_stars_pref">별</string>
-    <string name="show_constellations_pref">별자리</string>
-    <string name="show_messier_objects_pref" translation_description="The celestial objects catalogued by Charles Messier">메시에 천체 목록</string>
-    <string name="show_planets_pref">행성</string>
-    <string name="show_grid_pref">적경/적위 그리드</string>
-    <string name="show_horizon_pref">지평선</string>
-    <string name="show_sky_gradient">스카이 그라데이션</string>
-    <string name="sensor_prefs">센서 설정</string>
-    <string name="ecliptic">단주기 혜성</string>
-    <string name="malformed_loc_error">위도 또는 경도 설정은 숫자가 아닙니다.</string>
+    <string name="location_long_lat" translation_description="Formatted display of longitude and latitude. %1$.2f is longitude, %2$.2f is latitude">경도:%1$s, 위도:%2$s</string>
+    <string name="location_place_found" translation_description="Status message when a place name was successfully looked up. %1$f is latitude, %2$f is longitude">위치를 찾았습니다. 위도(%1$f)와 경도(%2$f)를 설정합니다.</string>
+    <string name="use_magnetic_correction" translation_description="Preference label: apply magnetic declination correction so the compass points to true north instead of magnetic north">자기 수정 사용</string>
+    <string name="show_stars_pref" translation_description="Label for the stars layer on the sky map (shows in the search results)">별</string>
+    <string name="show_constellations_pref" translation_description="Label for the constellation lines and labels layer (shows in the search results)">별자리</string>
+    <string name="show_messier_objects_pref" translation_description="The celestial objects catalogued by Charles Messier (shows in the search results)">메시에 천체 목록</string>
+    <string name="show_planets_pref" translation_description="Label for the solar system layer (planets, sun, moon)  (shows in the search results)">행성</string>
+    <string name="show_grid_pref" translation_description="Label for the Right Ascension / Declination grid overlay  (shows in the search results)">적경/적위 그리드</string>
+    <string name="show_horizon_pref" translation_description="Preference toggle label for the horizon line layer">지평선</string>
+    <string name="show_sky_gradient" translation_description="This is a shading of the color of the sky used for effect">스카이 그라데이션</string>
+    <string name="sensor_prefs" translation_description="Preferences category heading for sensor settings, intended for advanced/expert users">센서 설정</string>
+    <string name="ecliptic" translation_description="Label for the ecliptic layer — the apparent annual path of the Sun across the sky">단주기 혜성</string>
+    <string name="malformed_loc_error" translation_description="Error message when a non-numeric value is entered for latitude or longitude">위도 또는 경도 설정은 숫자가 아닙니다.</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">동의</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">아니요</string>
     <string name="menu_help" translation_description="menu item to show \'Help\' box">도움말</string>
-    <string name="help_dialog_title">별지도 도움말</string>
-    <string name="set_manual">수동 모드로 전환</string>
-    <string name="set_auto">자동 모드로 전환</string>
-    <string name="menu_toggle_dim">야간 모드 전환</string>
-    <string name="zenith">천정</string>
-    <string name="nadir">NADIR</string>
-    <string name="north">북쪽</string>
-    <string name="east">동쪽</string>
-    <string name="west">서쪽</string>
-    <string name="south">남쪽</string>
-    <string name="search_label">스카이 검색</string>
+    <string name="help_dialog_title" translation_description="Title of the help dialog">별지도 도움말</string>
+    <string name="set_manual" translation_description="Toast message shown when the user switches to manual (touch-drag) mode">수동 모드로 전환</string>
+    <string name="set_auto" translation_description="Toast message shown when the user switches to automatic (sensor/gyroscope) mode">자동 모드로 전환</string>
+    <string name="menu_toggle_dim" translation_description="Menu item to toggle night mode (red tint that preserves night vision)">야간 모드 전환</string>
+    <string name="zenith" translation_description="Label for the zenith point (directly overhead) shown on the sky map. Displayed in capitals.">천정</string>
+    <string name="nadir" translation_description="Label for the nadir point (directly below) shown on the sky map. Displayed in capitals.">NADIR</string>
+    <string name="north" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">북쪽</string>
+    <string name="east" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">동쪽</string>
+    <string name="west" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">서쪽</string>
+    <string name="south" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">남쪽</string>
+    <string name="search_label" translation_description="Hint/label for the search bar in the search activity">스카이 검색</string>
     <string name="search_hint" translation_description="an example search target">예: 화성</string>
-    <string name="no_search_title">검색결과 없음</string>
-    <string name="many_search_results_title">이것을 찾으셨나요?</string>
-    <string name="other">기타</string>
-    <string name="menu_time">시간 여행</string>
-    <string name="time_travel_start_message_alt">%s(으)로 시간 여행을 떠납니다...</string>
-    <string name="time_travel_close_message">현재로 돌아오기...</string>
-    <string name="popular_dates_prompt" translation_description="label for a list of dates the user can choose from">인기있는 날짜</string>
-    <string name="custom_date_prompt" translation_description="label telling the user to manually specify a data">또는 날짜를 직접 선택</string>
-    <string name="change_date_prompt">날짜 변경</string>
-    <string name="change_time_prompt">시간 변경</string>
-    <string name="now_visiting" translation_description="tells the user what time they are visiting">현재 방문 시각: %s</string>
-    <string name="time_travel_label_past" translation_description="label showing that we are in the past">시간 여행: 과거</string>
-    <string name="time_travel_label_future" translation_description="label showing that we are in the future">시간 여행: 미래</string>
-    <string name="time_travel_stopped" translation_description="label showing rate of travel through time">시간 여행 고정</string>
-    <string name="time_travel_second_speed" translation_description="label showing rate of travel through time">여행 &gt; @ 1 초/초</string>
-    <string name="time_travel_minute_speed" translation_description="label showing rate of travel through time">여행 &gt; @ 1 분/초</string>
-    <string name="time_travel_10minute_speed" translation_description="label showing rate of travel through time">여행 &gt; @ 10분/초</string>
-    <string name="time_travel_hour_speed" translation_description="label showing rate of travel through time">여행 &gt; @ 1시간/초</string>
-    <string name="time_travel_day_speed" translation_description="label showing rate of travel through time">여행 &gt; @ 1일/초</string>
-    <string name="time_travel_week_speed" translation_description="label showing rate of travel through time">여행 &gt; @ 1주/초</string>
-    <string name="time_travel_second_speed_back" translation_description="label showing rate of travel through time">여행 &lt; @ 1초/초</string>
-    <string name="time_travel_minute_speed_back" translation_description="label showing rate of travel through time">여행 &lt; @ 1분/초</string>
-    <string name="time_travel_10minute_speed_back" translation_description="label showing rate of travel through time">여행 &lt; @10분/초</string>
-    <string name="time_travel_hour_speed_back" translation_description="label showing rate of travel through time">여행 &lt; @ 1시간/초</string>
-    <string name="time_travel_day_speed_back" translation_description="label showing rate of travel through time">여행 &lt; @ 1일/초</string>
-    <string name="time_travel_week_speed_back" translation_description="label showing rate of travel through time">여행 &lt; @ 1주/초</string>
-    <string name="time_travel_next_sunset">다음 일몰</string>
-    <string name="time_travel_next_sunrise">다음 일출</string>
-    <string name="time_travel_next_fullmoon">다음 보름</string>
-    <string name="time_travel_mercury_transit_2016">Mercury transit of 2016-05-09</string>
-    <string name="time_travel_solar_eclipse_2024">2024 4월 8일 일식</string>
-    <string name="time_travel_apollo_11">아폴로 11호 달 착륙</string>
-    <string name="time_travel_jupiter_saturn_2020">목성-토성 결합</string>
-    <string name="use_sound_effects" translation_description="A preferences menu label">사운드 사용</string>
-    <string name="menu_gallery">갤러리</string>
-    <string name="gallery_image_search_btn">하늘에서 찾기</string>
-    <string name="gallery_image_back_btn">갤러리로 돌아가기</string>
-    <string name="hubble_image_gallery_title">별지도 허블 갤러리</string>
-    <string name="hubble_image">허블 이미지</string>
+    <string name="no_search_title" translation_description="Dialog title shown when a sky search returns no results">검색결과 없음</string>
+    <string name="many_search_results_title" translation_description="Dialog title shown when a search returns multiple possible matches">이것을 찾으셨나요?</string>
+    <string name="other" translation_description="A preference category (ie preferences that don't belong in any other category)">기타</string>
+    <string name="menu_time" translation_description="Menu item label to open the time travel feature">시간 여행</string>
+    <string name="time_travel_start_message_alt" translation_description="Toast message when time travel starts toward a named destination. %s is the event or destination name">%s(으)로 시간 여행을 떠납니다...</string>
+    <string name="time_travel_close_message" translation_description="Toast message shown when the user exits time travel and returns to the present">현재로 돌아오기...</string>
+    <!--  -->
+    <string name="popular_dates_prompt" translation_description="Label for a list of dates the user can choose from">인기있는 날짜</string>
+    <string name="custom_date_prompt" translation_description="Label telling the user to manually specify a date">또는 날짜를 직접 선택</string>
+    <string name="change_date_prompt" translation_description="Button label to open the date picker in the time travel dialog">날짜 변경</string>
+    <string name="change_time_prompt" translation_description="Button label to open the time picker in the time travel dialog">시간 변경</string>
+    <string name="now_visiting" translation_description="used in time travel dialog to show the destination date/time the user has selected, time formatted as yyyy.mm.dd at hh.mm.ss + timezone">현재 방문 시각: %s</string>
+    <string name="time_travel_label_past" translation_description="Label showing that we are in the past">시간 여행: 과거</string>
+    <string name="time_travel_label_future" translation_description="Label showing that we are in the future">시간 여행: 미래</string>
+    <string name="time_travel_stopped" translation_description="Label showing rate of travel through time">시간 여행 고정</string>
+    <string name="time_travel_second_speed" translation_description="Label showing rate of travel through time.  The symbol means greater than.">여행 &gt; @ 1 초/초</string>
+    <string name="time_travel_minute_speed" translation_description="Label showing rate of travel through time">여행 &gt; @ 1 분/초</string>
+    <string name="time_travel_10minute_speed" translation_description="Label showing rate of travel through time">여행 &gt; @ 10분/초</string>
+    <string name="time_travel_hour_speed" translation_description="Label showing rate of travel through time">여행 &gt; @ 1시간/초</string>
+    <string name="time_travel_day_speed" translation_description="Label showing rate of travel through time">여행 &gt; @ 1일/초</string>
+    <string name="time_travel_week_speed" translation_description="Label showing rate of travel through time">여행 &gt; @ 1주/초</string>
+    <string name="time_travel_second_speed_back" translation_description="Label showing rate of travel through time">여행 &lt; @ 1초/초</string>
+    <string name="time_travel_minute_speed_back" translation_description="Label showing rate of travel through time">여행 &lt; @ 1분/초</string>
+    <string name="time_travel_10minute_speed_back" translation_description="Label showing rate of travel through time">여행 &lt; @10분/초</string>
+    <string name="time_travel_hour_speed_back" translation_description="Label showing rate of travel through time">여행 &lt; @ 1시간/초</string>
+    <string name="time_travel_day_speed_back" translation_description="Label showing rate of travel through time">여행 &lt; @ 1일/초</string>
+    <string name="time_travel_week_speed_back" translation_description="Label showing rate of travel through time">여행 &lt; @ 1주/초</string>
+
+    <string name="time_travel_next_sunset" translation_description="Name of a popular astronomical event in the time travel picker">다음 일몰</string>
+    <string name="time_travel_next_sunrise" translation_description="Name of a popular astronomical event in the time travel picker">다음 일출</string>
+    <string name="time_travel_next_fullmoon" translation_description="Name of a popular astronomical event in the time travel picker">다음 보름</string>
+    <string name="time_travel_mercury_transit_2016" translation_description="Name of an astronomical event in the time travel picker. A Mercury transit is when Mercury passes across the face of the Sun as seen from Earth. Keep the date format suitable for your locale.">Mercury transit of 2016-05-09</string>
+    <string name="time_travel_solar_eclipse_2024" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">2024 4월 8일 일식</string>
+    <string name="time_travel_apollo_11" translation_description="Name of an astronomical event in the time travel picker: the first crewed Moon landing in 1969">아폴로 11호 달 착륙</string>
+    <string name="time_travel_jupiter_saturn_2020" translation_description="Name of an astronomical event in the time travel picker. A conjunction is when two planets appear very close together in the sky.">목성-토성 결합</string>
+    <string name="use_sound_effects" translation_description="A preferences menu label for enabling sound effects">사운드 사용</string>
+
+    <string name="menu_gallery" translation_description="Menu item label to open the image gallery">갤러리</string>
+    <string name="gallery_image_search_btn" translation_description="Button in the gallery to locate the displayed object on the sky map">하늘에서 찾기</string>
+    <string name="gallery_image_back_btn" translation_description="Button to return to the gallery from a single image view">갤러리로 돌아가기</string>
+    <string name="hubble_image_gallery_title" translation_description="Title of the image gallery screen">별지도 허블 갤러리</string>
+    <string name="hubble_image" translation_description="Label or caption for a Hubble Space Telescope image in the gallery">허블 이미지</string>
     <string name="search_overlay_title" translation_description="title for search overlay">휴대전화로 화살표 방향 가리키기</string>
     <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">찾는 중:</string>
-    <string name="sun_wont_set_message">현재 위치에서 다음 24시간 동안 태양이 지지 않습니다.</string>
-    <string name="menu_tos">서비스 약관</string>
-    <string name="north_pole">북극</string>
-    <string name="south_pole">남극</string>
-</resources>
+    <string name="sun_wont_set_message" translation_description="Message shown when the sun will not set during the next 24 hours (polar day / midnight sun)">현재 위치에서 다음 24시간 동안 태양이 지지 않습니다.</string>
+
+    <string name="menu_tos" translation_description="Menu item label to view the Terms of Service">서비스 약관</string>
+    <string name="north_pole" translation_description="Short abbreviation for the North Celestial Pole, displayed as a label on the sky map grid. Translators: use the standard abbreviation in your language (e.g. NP in English, PN in French).">북극</string>
+    <string name="south_pole" translation_description="Short abbreviation for the South Celestial Pole, displayed as a label on the sky map grid. Translators: use the standard abbreviation in your language (e.g. SP in English, PS in French).">남극</string>
+
+    </resources>

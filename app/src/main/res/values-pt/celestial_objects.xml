@@ -1,5 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <resources>
+    <!-- Constellations -->
     <string name="andromeda" translation_description="Name of the Andromeda constellation">Andrômeda</string>
     <string name="aquarius" translation_description="Name of the Aquarius constellation">Aquário</string>
     <string name="aquila" translation_description="Name of the Aquila constellation">Águia</string>
@@ -50,17 +51,20 @@
     <string name="big_dipper" translation_description="Name of the Big Dipper constellation">Ursa Maior</string>
     <string name="great_bear" translation_description="Name of the Great Bear constellation">Ursa Maior</string>
     <string name="plough" translation_description="Name of the Plough constellation">Arado</string>
-    <string name="sun">Sol</string>
-    <string name="moon">Lua</string>
-    <string name="mercury">Mercúrio</string>
-    <string name="venus">Vênus</string>
-    <string name="earth">Terra</string>
-    <string name="mars">Marte</string>
-    <string name="jupiter">Júpiter</string>
-    <string name="saturn">Saturno</string>
-    <string name="uranus">Urano</string>
-    <string name="neptune">Netuno</string>
-    <string name="pluto">Plutão</string>
+    <!-- Major solar system objects -->
+    <string name="sun" translation_description="Name of the Sun">Sol</string>
+    <string name="moon" translation_description="Name of the Earth's Moon">Lua</string>
+    <string name="mercury" translation_description="Name of the planet Mercury">Mercúrio</string>
+    <string name="venus" translation_description="Name of the planet Venus">Vênus</string>
+    <string name="earth" translation_description="Name of the planet Earth">Terra</string>
+    <string name="mars" translation_description="Name of the planet Mars">Marte</string>
+    <string name="jupiter" translation_description="Name of the planet Jupiter">Júpiter</string>
+    <string name="saturn" translation_description="Name of the planet Saturn">Saturno</string>
+    <string name="uranus" translation_description="Name of the planet Uranus">Urano</string>
+    <string name="neptune" translation_description="Name of the planet Neptune">Netuno</string>
+    <string name="pluto" translation_description="Name of the dwarf planet Pluto">Plutão</string>
+
+    <!-- Gallery objects -->
     <string name="crab_nebula" translation_description="hubble object">Nebulosa do Caranguejo</string>
     <string name="eagle_nebula" translation_description="hubble object">Nebulosa da Águia</string>
     <string name="andromeda_galaxy" translation_description="hubble object">Galáxia de Andrômeda</string>
@@ -77,6 +81,9 @@
     <string name="sn1987a" translation_description="hubble object">Supernova 1987a</string>
     <string name="hubble_deep_field" translation_description="hubble object">Campo Profundo do Hubble</string>
     <string name="rho_oph" translation_description="hubble object">Rho Ofiúco</string>
+
+
+    <!-- Stars -->
     <string name="sirius" translation_description="Name of the Star Sirius">Sirius</string>
     <string name="canopus" translation_description="Name of the Star Canopus">Canopus</string>
     <string name="arcturus" translation_description="Name of the Star Arcturus">Arcturus</string>
@@ -144,6 +151,7 @@
     <string name="dog_star" translation_description="Name of the Dog Star (Sirius)">Estrela Sirius</string>
     <string name="north_star" translation_description="Name of the North Star">Estrela Polar</string>
     <string name="pole_star" translation_description="Name of the (North) Pole Star">Estrela Polar</string>
+    <!-- Messier objects etc -->
     <string name="m1" translation_description="Name of the Messier object M1">M1</string>
     <string name="m2" translation_description="Name of the Messier object M2">M2</string>
     <string name="m3" translation_description="Name of the Messier object M3">M3</string>
@@ -262,6 +270,9 @@
     <string name="beehive_cluster" translation_description="Name of the Messier object Beehive Cluster">Aglomerado da Colmeia</string>
     <string name="praesepe" translation_description="Name of the Messier object Praesepe">Praesepe</string>
     <string name="seven_sisters" translation_description="Name of the Messier object Seven Sisters">Sete Irmãs</string>
+
+    <!-- Manmade objects -->
     <string name="space_station" translation_description="Name of the Internation Space Station">Estação Espacial Internacional</string>
     <string name="space_shuttle" translation_description="Name of the Space Shuttle">Ônibus espacial</string>
-</resources>
+
+    </resources>

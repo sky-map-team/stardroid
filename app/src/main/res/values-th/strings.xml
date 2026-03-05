@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="show_object_info_auto_mode_title">การ์ดข้อมูลในโหมดอัตโนมัติ</string>
-    <string name="show_object_info_auto_mode_summary">แสดงการ์ดข้อมูลเมื่อแตะวัตถุในโหมดอัตโนมัติ (เซ็นเซอร์) ด้วย</string>
-    <string name="object_info_funfact_label">เกร็ดน่ารู้:</string>
-    <string name="object_info_distance_label">ระยะทาง:</string>
-    <string name="object_info_size_label">ขนาด:</string>
-    <string name="object_info_mass_label">มวล:</string>
-    <string name="object_info_spectral_label">สเปกตรัม:</string>
-    <string name="object_info_magnitude_label">โชติมาตร:</string>
-</resources>
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Please add  translation_description="" attributes to Strings to assist the translators. --><resources>
+    <string name="show_object_info_auto_mode_title" translation_description="Preference title for enabling info cards in auto/sensor mode">การ์ดข้อมูลในโหมดอัตโนมัติ</string>
+    <string name="show_object_info_auto_mode_summary" translation_description="Preference summary for auto mode info cards">แสดงการ์ดข้อมูลเมื่อแตะวัตถุในโหมดอัตโนมัติ (เซ็นเซอร์) ด้วย</string>
+    <string name="object_info_funfact_label" translation_description="Label before the fun fact in info card">เกร็ดน่ารู้:</string>
+    <string name="object_info_distance_label" translation_description="Label for distance field">ระยะทาง:</string>
+    <string name="object_info_size_label" translation_description="Label for size field">ขนาด:</string>
+    <string name="object_info_mass_label" translation_description="Label for mass field">มวล:</string>
+    <string name="object_info_spectral_label" translation_description="Label for spectral class">สเปกตรัม:</string>
+    <string name="object_info_magnitude_label" translation_description="Label for apparent magnitude">โชติมาตร:</string>
+    </resources>

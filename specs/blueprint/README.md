@@ -1,5 +1,9 @@
 # Stardroid Blueprint - Target Architecture
 
+This directory contains a **target architecture specification** for Stardroid, defining the 
+modern, AR/Vulkan-capable future state of the application. This was
+developed by nnunley@ for his fork.
+
 > **FUTURE DESIGN — NOT IMPLEMENTED.** None of the designs in this directory reflect the current
 > codebase. They are proposals for a future modernisation (AR, Vulkan, Hilt, Compose). The current
 > system uses OpenGL ES 1.x, Dagger 2, Protocol Buffers, and mixed Java/Kotlin.

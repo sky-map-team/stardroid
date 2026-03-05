@@ -1,586 +1,689 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <resources>
+    <!-- Educational Object Info Feature -->
+    <!-- Solar System Educational Content -->
     <string name="object_info_sun_description" translation_description="Short description of the Sun">太陽は私たちの太陽系の中心にある恒星です。地球上の生命を可能にする光と熱を提供しています。</string>
     <string name="object_info_sun_funfact" translation_description="Fun fact about the Sun">太陽は太陽系全体の質量の99.86%を占めています。約130万個の地球が太陽の中に入ってしまうほどの大きさです！</string>
-    <string name="object_info_sun_distance">1億5000万km</string>
-    <string name="object_info_sun_size">140万km（直径）</string>
-    <string name="object_info_sun_mass">1.989 × 10³⁰ kg</string>
+    <string name="object_info_sun_distance" translation_description="Distance to Sun shown in the info card. Translate units if appropriate for your locale.">1億5000万km</string>
+    <string name="object_info_sun_size" translation_description="Physical size of Sun shown in the info card. Translate units if appropriate for your locale.">140万km（直径）</string>
+    <string name="object_info_sun_mass" translation_description="Mass of Sun in scientific notation — no translation needed.">1.989 × 10³⁰ kg</string>
     <string name="object_info_moon_description" translation_description="Short description of the Moon">月は地球で唯一の天然衛星です。潮の満ち引きに影響を与え、これまでに12人の宇宙飛行士が訪れました。</string>
     <string name="object_info_moon_funfact" translation_description="Fun fact about the Moon">月は毎年約3.8cmずつ地球から遠ざかっています。数十億年前はもっとずっと近くにあったのです！</string>
-    <string name="object_info_moon_distance">384,400 km</string>
-    <string name="object_info_moon_size">3,474 km（直径）</string>
-    <string name="object_info_moon_mass">7.35 × 10²² kg</string>
+    <string name="object_info_moon_distance" translation_description="Distance to Moon shown in the info card. Translate units if appropriate for your locale.">384,400 km</string>
+    <string name="object_info_moon_size" translation_description="Physical size of Moon shown in the info card. Translate units if appropriate for your locale.">3,474 km（直径）</string>
+    <string name="object_info_moon_mass" translation_description="Mass of Moon in scientific notation — no translation needed.">7.35 × 10²² kg</string>
     <string name="object_info_mercury_description" translation_description="Short description of Mercury">水星は最も小さい惑星で、太陽に最も近い惑星です。水星の1年はわずか地球の88日しかありません。</string>
     <string name="object_info_mercury_funfact" translation_description="Fun fact about Mercury">太陽に最も近いにもかかわらず、水星は最も暑い惑星ではありません。金星の方が厚い大気のおかげでずっと暑いのです！</string>
-    <string name="object_info_mercury_distance">5800万km（太陽から）</string>
-    <string name="object_info_mercury_size">4,880 km（直径）</string>
-    <string name="object_info_mercury_mass">3.3 × 10²³ kg</string>
+    <string name="object_info_mercury_distance" translation_description="Distance to Mercury shown in the info card. Translate units if appropriate for your locale.">5800万km（太陽から）</string>
+    <string name="object_info_mercury_size" translation_description="Physical size of Mercury shown in the info card. Translate units if appropriate for your locale.">4,880 km（直径）</string>
+    <string name="object_info_mercury_mass" translation_description="Mass of Mercury in scientific notation — no translation needed.">3.3 × 10²³ kg</string>
     <string name="object_info_venus_description" translation_description="Short description of Venus">金星は太陽から2番目の惑星で、太陽系で最も暑い惑星です。大きさが似ていることから地球の双子とも呼ばれます。</string>
     <string name="object_info_venus_funfact" translation_description="Fun fact about Venus">金星の1日は1年よりも長いのです！自転に地球の243日かかりますが、公転はわずか225日で完了します。</string>
-    <string name="object_info_venus_distance">1億800万km（平均）</string>
-    <string name="object_info_venus_size">12,104 km（直径）</string>
-    <string name="object_info_venus_mass">4.87 × 10²⁴ kg</string>
+    <string name="object_info_venus_distance" translation_description="Distance to Venus shown in the info card. Translate units if appropriate for your locale.">1億800万km（平均）</string>
+    <string name="object_info_venus_size" translation_description="Physical size of Venus shown in the info card. Translate units if appropriate for your locale.">12,104 km（直径）</string>
+    <string name="object_info_venus_mass" translation_description="Mass of Venus in scientific notation — no translation needed.">4.87 × 10²⁴ kg</string>
     <string name="object_info_mars_description" translation_description="Short description of Mars">火星は太陽から4番目の惑星で、表面の酸化鉄により赤い惑星として知られています。</string>
     <string name="object_info_mars_funfact" translation_description="Fun fact about Mars">火星には太陽系最大の火山、オリンポス山があります。エベレスト山の約2.5倍の高さです！</string>
-    <string name="object_info_mars_distance">2億2800万km（平均）</string>
-    <string name="object_info_mars_size">6,779 km（直径）</string>
-    <string name="object_info_mars_mass">6.39 × 10²³ kg</string>
+    <string name="object_info_mars_distance" translation_description="Distance to Mars shown in the info card. Translate units if appropriate for your locale.">2億2800万km（平均）</string>
+    <string name="object_info_mars_size" translation_description="Physical size of Mars shown in the info card. Translate units if appropriate for your locale.">6,779 km（直径）</string>
+    <string name="object_info_mars_mass" translation_description="Mass of Mars in scientific notation — no translation needed.">6.39 × 10²³ kg</string>
     <string name="object_info_jupiter_description" translation_description="Short description of Jupiter">木星は太陽系最大の惑星です。巨大なガス惑星で、有名な大赤斑という嵐があります。</string>
     <string name="object_info_jupiter_funfact" translation_description="Fun fact about Jupiter">木星には少なくとも95個の衛星が確認されています！最大の衛星ガニメデは、惑星の水星よりも大きいのです。</string>
-    <string name="object_info_jupiter_distance">7億7800万km（平均）</string>
-    <string name="object_info_jupiter_size">139,820 km（直径）</string>
-    <string name="object_info_jupiter_mass">1.898 × 10²⁷ kg</string>
+    <string name="object_info_jupiter_distance" translation_description="Distance to Jupiter shown in the info card. Translate units if appropriate for your locale.">7億7800万km（平均）</string>
+    <string name="object_info_jupiter_size" translation_description="Physical size of Jupiter shown in the info card. Translate units if appropriate for your locale.">139,820 km（直径）</string>
+    <string name="object_info_jupiter_mass" translation_description="Mass of Jupiter in scientific notation — no translation needed.">1.898 × 10²⁷ kg</string>
     <string name="object_info_saturn_description" translation_description="Short description of Saturn">土星は太陽から6番目の惑星で、氷と岩石でできた壮大な環で有名です。</string>
     <string name="object_info_saturn_funfact" translation_description="Fun fact about Saturn">土星は水に浮くほど軽いのです！密度が水より小さいのですが、残念ながらそれを試せるほど大きなバスタブはありません。</string>
-    <string name="object_info_saturn_distance">14億km（平均）</string>
-    <string name="object_info_saturn_size">116,460 km（直径）</string>
-    <string name="object_info_saturn_mass">5.68 × 10²⁶ kg</string>
+    <string name="object_info_saturn_distance" translation_description="Distance to Saturn shown in the info card. Translate units if appropriate for your locale.">14億km（平均）</string>
+    <string name="object_info_saturn_size" translation_description="Physical size of Saturn shown in the info card. Translate units if appropriate for your locale.">116,460 km（直径）</string>
+    <string name="object_info_saturn_mass" translation_description="Mass of Saturn in scientific notation — no translation needed.">5.68 × 10²⁶ kg</string>
     <string name="object_info_uranus_description" translation_description="Short description of Uranus">天王星は横倒しに自転する氷の巨大惑星です。望遠鏡で発見された最初の惑星でもあります。</string>
     <string name="object_info_uranus_funfact" translation_description="Fun fact about Uranus">天王星は98度も傾いて横倒しに自転しています。大昔に地球サイズの天体と衝突したためかもしれません！</string>
-    <string name="object_info_uranus_distance">29億km（平均）</string>
-    <string name="object_info_uranus_size">50,724 km（直径）</string>
-    <string name="object_info_uranus_mass">8.68 × 10²⁵ kg</string>
+    <string name="object_info_uranus_distance" translation_description="Distance to Uranus shown in the info card. Translate units if appropriate for your locale.">29億km（平均）</string>
+    <string name="object_info_uranus_size" translation_description="Physical size of Uranus shown in the info card. Translate units if appropriate for your locale.">50,724 km（直径）</string>
+    <string name="object_info_uranus_mass" translation_description="Mass of Uranus in scientific notation — no translation needed.">8.68 × 10²⁵ kg</string>
     <string name="object_info_neptune_description" translation_description="Short description of Neptune">海王星は太陽系で最も遠い惑星です。最大風速2,100 km/hという太陽系最強の風が吹いています。</string>
     <string name="object_info_neptune_funfact" translation_description="Fun fact about Neptune">海王星は数学によって発見されました！科学者たちは望遠鏡で確認する前に、計算でその位置を予測していたのです。</string>
-    <string name="object_info_neptune_distance">45億km（平均）</string>
-    <string name="object_info_neptune_size">49,244 km（直径）</string>
-    <string name="object_info_neptune_mass">1.024 × 10²⁶ kg</string>
+    <string name="object_info_neptune_distance" translation_description="Distance to Neptune shown in the info card. Translate units if appropriate for your locale.">45億km（平均）</string>
+    <string name="object_info_neptune_size" translation_description="Physical size of Neptune shown in the info card. Translate units if appropriate for your locale.">49,244 km（直径）</string>
+    <string name="object_info_neptune_mass" translation_description="Mass of Neptune in scientific notation — no translation needed.">1.024 × 10²⁶ kg</string>
     <string name="object_info_pluto_description" translation_description="Short description of Pluto">冥王星はカイパーベルトにある矮小惑星です。2006年まで第9惑星とされていました。</string>
     <string name="object_info_pluto_funfact" translation_description="Fun fact about Pluto">冥王星には窒素の氷でできたハート型の氷河があり、NASAのニュー・ホライズンズ探査機の画像で確認できます！</string>
-    <string name="object_info_pluto_distance">59億km（平均）</string>
-    <string name="object_info_pluto_size">2,377 km（直径）</string>
-    <string name="object_info_pluto_mass">1.3 × 10²² kg</string>
+    <string name="object_info_pluto_distance" translation_description="Distance to Pluto shown in the info card. Translate units if appropriate for your locale.">59億km（平均）</string>
+    <string name="object_info_pluto_size" translation_description="Physical size of Pluto shown in the info card. Translate units if appropriate for your locale.">2,377 km（直径）</string>
+    <string name="object_info_pluto_mass" translation_description="Mass of Pluto in scientific notation — no translation needed.">1.3 × 10²² kg</string>
+    <!-- Bright Stars Educational Content -->
     <string name="object_info_sirius_description" translation_description="Short description of Sirius">シリウスは夜空で最も明るい恒星で、おおいぬ座にあります。</string>
     <string name="object_info_sirius_funfact" translation_description="Fun fact about Sirius">シリウスは実は連星系です！伴星のシリウスBは地球ほどの大きさの白色矮星ですが、質量は太陽とほぼ同じです。</string>
-    <string name="object_info_sirius_distance">8.6光年</string>
-    <string name="object_info_sirius_size">1.7太陽半径</string>
-    <string name="object_info_sirius_mass">2.1太陽質量</string>
+    <string name="object_info_sirius_distance" translation_description="Distance to Sirius shown in the info card. Translate units if appropriate for your locale.">8.6光年</string>
+    <string name="object_info_sirius_size" translation_description="Physical size of Sirius shown in the info card. Translate units if appropriate for your locale.">1.7太陽半径</string>
+    <string name="object_info_sirius_mass" translation_description="Mass of Sirius in scientific notation — no translation needed.">2.1太陽質量</string>
     <string name="object_info_vega_description" translation_description="Short description of Vega">ベガは地球から見える最も明るい恒星の一つで、こと座にあります。</string>
     <string name="object_info_vega_funfact" translation_description="Fun fact about Vega">ベガは約1万4000年前には北極星でした。地球の歳差運動により、約1万2000年後に再び北極星になります！</string>
-    <string name="object_info_vega_distance">25光年</string>
-    <string name="object_info_vega_size">2.4太陽半径</string>
-    <string name="object_info_vega_mass">2.1太陽質量</string>
+    <string name="object_info_vega_distance" translation_description="Distance to Vega shown in the info card. Translate units if appropriate for your locale.">25光年</string>
+    <string name="object_info_vega_size" translation_description="Physical size of Vega shown in the info card. Translate units if appropriate for your locale.">2.4太陽半径</string>
+    <string name="object_info_vega_mass" translation_description="Mass of Vega in scientific notation — no translation needed.">2.1太陽質量</string>
     <string name="object_info_betelgeuse_description" translation_description="Short description of Betelgeuse">ベテルギウスはオリオンの肩に位置する赤色超巨星です。肉眼で見える最大級の恒星の一つです。</string>
     <string name="object_info_betelgeuse_funfact" translation_description="Fun fact about Betelgeuse">ベテルギウスは非常に巨大で、もし太陽の位置に置いたら、水星、金星、地球、火星、そしておそらく木星まで飲み込んでしまいます！</string>
-    <string name="object_info_betelgeuse_distance">約700光年</string>
-    <string name="object_info_betelgeuse_size">約900太陽半径</string>
-    <string name="object_info_betelgeuse_mass">約12太陽質量</string>
+    <string name="object_info_betelgeuse_distance" translation_description="Distance to Betelgeuse shown in the info card. Translate units if appropriate for your locale.">約700光年</string>
+    <string name="object_info_betelgeuse_size" translation_description="Physical size of Betelgeuse shown in the info card. Translate units if appropriate for your locale.">約900太陽半径</string>
+    <string name="object_info_betelgeuse_mass" translation_description="Mass of Betelgeuse in scientific notation — no translation needed.">約12太陽質量</string>
     <string name="object_info_rigel_description" translation_description="Short description of Rigel">リゲルはオリオンの足元に位置する青色超巨星です。ベテルギウスより遠いにもかかわらず、同程度の明るさに見えます。</string>
     <string name="object_info_rigel_funfact" translation_description="Fun fact about Rigel">リゲルは太陽の約12万倍もの光を放っています！天の川銀河の周辺で最も明るい恒星の一つです。</string>
-    <string name="object_info_rigel_distance">約860光年</string>
-    <string name="object_info_rigel_size">約79太陽半径</string>
-    <string name="object_info_rigel_mass">約23太陽質量</string>
+    <string name="object_info_rigel_distance" translation_description="Distance to Rigel shown in the info card. Translate units if appropriate for your locale.">約860光年</string>
+    <string name="object_info_rigel_size" translation_description="Physical size of Rigel shown in the info card. Translate units if appropriate for your locale.">約79太陽半径</string>
+    <string name="object_info_rigel_mass" translation_description="Mass of Rigel in scientific notation — no translation needed.">約23太陽質量</string>
     <string name="object_info_procyon_description" translation_description="Short description of Procyon">プロキオンはこいぬ座にある明るい恒星で、太陽に近い恒星の一つです。</string>
     <string name="object_info_procyon_funfact" translation_description="Fun fact about Procyon">プロキオンはギリシャ語で「犬の前」を意味します。夜空でシリウス（犬の星）の直前に昇るからです！</string>
-    <string name="object_info_procyon_distance">11.4光年</string>
-    <string name="object_info_procyon_size">2.0太陽半径</string>
-    <string name="object_info_procyon_mass">1.5太陽質量</string>
+    <string name="object_info_procyon_distance" translation_description="Distance to Procyon shown in the info card. Translate units if appropriate for your locale.">11.4光年</string>
+    <string name="object_info_procyon_size" translation_description="Physical size of Procyon shown in the info card. Translate units if appropriate for your locale.">2.0太陽半径</string>
+    <string name="object_info_procyon_mass" translation_description="Mass of Procyon in scientific notation — no translation needed.">1.5太陽質量</string>
     <string name="object_info_polaris_description" translation_description="Short description of Polaris">ポラリス（北極星）は夜空でほぼ動かず、他の星が一晩かけてその周りを回って見えます。</string>
     <string name="object_info_polaris_funfact" translation_description="Fun fact about Polaris">ポラリスは実は三重連星系です！主星は太陽の約2,500倍も明るい超巨星です。</string>
-    <string name="object_info_polaris_distance">約430光年</string>
-    <string name="object_info_polaris_size">約44太陽半径</string>
-    <string name="object_info_polaris_mass">約5.4太陽質量</string>
+    <string name="object_info_polaris_distance" translation_description="Distance to Polaris shown in the info card. Translate units if appropriate for your locale.">約430光年</string>
+    <string name="object_info_polaris_size" translation_description="Physical size of Polaris shown in the info card. Translate units if appropriate for your locale.">約44太陽半径</string>
+    <string name="object_info_polaris_mass" translation_description="Mass of Polaris in scientific notation — no translation needed.">約5.4太陽質量</string>
     <string name="object_info_deneb_description" translation_description="Short description of Deneb">デネブははくちょう座の尾を示す恒星です。ベガとアルタイルとともに夏の大三角を構成しています。</string>
     <string name="object_info_deneb_funfact" translation_description="Fun fact about Deneb">デネブは肉眼で見える最も遠い恒星の一つで、約2,600光年も離れています！</string>
-    <string name="object_info_deneb_distance">約2,600光年</string>
-    <string name="object_info_deneb_size">約200太陽半径</string>
-    <string name="object_info_deneb_mass">約19太陽質量</string>
+    <string name="object_info_deneb_distance" translation_description="Distance to Deneb shown in the info card. Translate units if appropriate for your locale.">約2,600光年</string>
+    <string name="object_info_deneb_size" translation_description="Physical size of Deneb shown in the info card. Translate units if appropriate for your locale.">約200太陽半径</string>
+    <string name="object_info_deneb_mass" translation_description="Mass of Deneb in scientific notation — no translation needed.">約19太陽質量</string>
     <string name="object_info_arcturus_description" translation_description="Short description of Arcturus">アークトゥルスは北半球で最も明るい恒星で、うしかい座にあるオレンジ色の巨星です。</string>
     <string name="object_info_arcturus_funfact" translation_description="Fun fact about Arcturus">アークトゥルスは宇宙空間をものすごい速度で移動しており、約4,000年後に太陽系に最接近します！</string>
-    <string name="object_info_arcturus_distance">37光年</string>
-    <string name="object_info_arcturus_size">26太陽半径</string>
-    <string name="object_info_arcturus_mass">1.1太陽質量</string>
+    <string name="object_info_arcturus_distance" translation_description="Distance to Arcturus shown in the info card. Translate units if appropriate for your locale.">37光年</string>
+    <string name="object_info_arcturus_size" translation_description="Physical size of Arcturus shown in the info card. Translate units if appropriate for your locale.">26太陽半径</string>
+    <string name="object_info_arcturus_mass" translation_description="Mass of Arcturus in scientific notation — no translation needed.">1.1太陽質量</string>
     <string name="object_info_canopus_description" translation_description="Short description of Canopus">カノープスは夜空で2番目に明るい恒星です。主に南半球から見ることができます。</string>
     <string name="object_info_canopus_funfact" translation_description="Fun fact about Canopus">カノープスは非常に明るく、黄道面から離れているため、宇宙探査機の航法に利用されています！</string>
-    <string name="object_info_canopus_distance">310光年</string>
-    <string name="object_info_canopus_size">72太陽半径</string>
-    <string name="object_info_canopus_mass">8.0太陽質量</string>
+    <string name="object_info_canopus_distance" translation_description="Distance to Canopus shown in the info card. Translate units if appropriate for your locale.">310光年</string>
+    <string name="object_info_canopus_size" translation_description="Physical size of Canopus shown in the info card. Translate units if appropriate for your locale.">72太陽半径</string>
+    <string name="object_info_canopus_mass" translation_description="Mass of Canopus in scientific notation — no translation needed.">8.0太陽質量</string>
     <string name="object_info_aldebaran_description" translation_description="Short description of Aldebaran">アルデバランはおうし座の目を表すオレンジ色の巨星です。名前はアラビア語で「後に続くもの」を意味します。</string>
     <string name="object_info_aldebaran_funfact" translation_description="Fun fact about Aldebaran">アルデバランはヒアデス星団の一部のように見えますが、実際には星団までの半分の距離にあります。宇宙の目の錯覚です！</string>
-    <string name="object_info_aldebaran_distance">65光年</string>
-    <string name="object_info_aldebaran_size">44太陽半径</string>
-    <string name="object_info_aldebaran_mass">1.2太陽質量</string>
+    <string name="object_info_aldebaran_distance" translation_description="Distance to Aldebaran shown in the info card. Translate units if appropriate for your locale.">65光年</string>
+    <string name="object_info_aldebaran_size" translation_description="Physical size of Aldebaran shown in the info card. Translate units if appropriate for your locale.">44太陽半径</string>
+    <string name="object_info_aldebaran_mass" translation_description="Mass of Aldebaran in scientific notation — no translation needed.">1.2太陽質量</string>
     <string name="object_info_antares_description" translation_description="Short description of Antares">アンタレスはさそり座の心臓にあたる赤色超巨星です。名前は赤い色から「火星の対抗者」を意味します。</string>
     <string name="object_info_antares_funfact" translation_description="Fun fact about Antares">アンタレスは非常に巨大で、もし太陽系に置いたら、その表面は火星の軌道を超えてしまいます！</string>
-    <string name="object_info_antares_distance">約550光年</string>
-    <string name="object_info_antares_size">約680太陽半径</string>
-    <string name="object_info_antares_mass">約12太陽質量</string>
-    <string name="object_info_capella_description">カペラはぎょしゃ座で最も明るい恒星で、夜空で6番目に明るい星です。実は4つの恒星からなる星系です。</string>
-    <string name="object_info_capella_funfact">カペラはラテン語で「小さな雌山羊」を意味します。古代の人々は、御者座の肩に乗った山羊として見ていました！</string>
-    <string name="object_info_capella_distance">43光年</string>
-    <string name="object_info_capella_size">12太陽半径</string>
-    <string name="object_info_capella_mass">2.6太陽質量</string>
-    <string name="object_info_altair_description">アルタイルはわし座で最も明るい恒星で、肉眼で見える最も近い恒星の一つです。</string>
-    <string name="object_info_altair_funfact">アルタイルは非常に高速で自転しており（約9時間で1回転）、極がつぶれて赤道方向に14%も広がっています！</string>
-    <string name="object_info_altair_distance">17光年</string>
-    <string name="object_info_altair_size">1.8太陽半径</string>
-    <string name="object_info_altair_mass">1.8太陽質量</string>
-    <string name="object_info_spica_description">スピカはおとめ座で最も明るい恒星で、夜空で最も明るい20星の一つです。連星系でもあります。</string>
-    <string name="object_info_spica_funfact">スピカは黄道に非常に近いため、月に隠されることがあります。名前はラテン語で「麦の穂」を意味します！</string>
-    <string name="object_info_spica_distance">250光年</string>
-    <string name="object_info_spica_size">7.5太陽半径</string>
-    <string name="object_info_spica_mass">11太陽質量</string>
-    <string name="object_info_achernar_description">アケルナルはエリダヌス座で最も明るい恒星で、夜空で9番目に明るい星です。</string>
-    <string name="object_info_achernar_funfact">アケルナルは知られている中で最も扁平な恒星です！自転が速すぎて、赤道の直径が極の直径より56%も大きいのです。</string>
-    <string name="object_info_achernar_distance">139光年</string>
-    <string name="object_info_achernar_size">7.3太陽半径</string>
-    <string name="object_info_achernar_mass">6.7太陽質量</string>
-    <string name="object_info_hadar_description">ハダル（ケンタウルス座ベータ星）はケンタウルス座で2番目に明るい恒星で、夜空で11番目に明るい星です。</string>
-    <string name="object_info_hadar_funfact">ハダルとアルファ・ケンタウリは「南の指極星」として知られ、南十字星を指し示しています！</string>
-    <string name="object_info_hadar_distance">390光年</string>
-    <string name="object_info_hadar_size">9太陽半径</string>
-    <string name="object_info_hadar_mass">12.8太陽質量</string>
-    <string name="object_info_regulus_description">レグルスはしし座で最も明るい恒星で、獅子の心臓を表しています。多重連星系です。</string>
-    <string name="object_info_regulus_funfact">レグルスは自転速度が非常に速く、ほとんどバラバラになりそうなほどです！わずか16時間で1回転します。</string>
-    <string name="object_info_regulus_distance">79光年</string>
-    <string name="object_info_regulus_size">4.4太陽半径</string>
-    <string name="object_info_regulus_mass">3.8太陽質量</string>
-    <string name="object_info_acrux_description">アクルックス（みなみじゅうじ座アルファ星）は南十字星で最も明るい恒星で、全天で13番目に明るい星です。</string>
-    <string name="object_info_acrux_funfact">アクルックスはオーストラリア、ニュージーランド、ブラジル、パプアニューギニア、サモアの国旗に描かれています！</string>
-    <string name="object_info_acrux_distance">320光年</string>
-    <string name="object_info_acrux_size">7.8太陽半径</string>
-    <string name="object_info_acrux_mass">18太陽質量</string>
-    <string name="object_info_castor_description">カストルはふたご座の双子の一方の星です。一つの星に見えますが、実は6つの恒星からなる星系です！</string>
-    <string name="object_info_castor_funfact">カストルは六重連星系で、3組の連星が互いに公転しています。地球の近くで最も複雑な恒星系の一つです！</string>
-    <string name="object_info_castor_distance">51光年</string>
-    <string name="object_info_castor_size">2.4太陽半径</string>
-    <string name="object_info_castor_mass">2.8太陽質量</string>
-    <string name="object_info_pollux_description">ポルックスはふたご座の双子のうちの明るい方の星です。カストルとは異なり、単独のオレンジ色の巨星です。</string>
-    <string name="object_info_pollux_funfact">ポルックスには太陽系外惑星が確認されています！ポルックスbは木星の少なくとも2倍の質量を持つガス巨大惑星です。</string>
-    <string name="object_info_pollux_distance">34光年</string>
-    <string name="object_info_pollux_size">9.1太陽半径</string>
-    <string name="object_info_pollux_mass">1.9太陽質量</string>
-    <string name="object_info_fomalhaut_description">フォーマルハウトはみなみのうお座で最も明るい恒星で、秋の夜空で最も明るい星の一つです。</string>
-    <string name="object_info_fomalhaut_funfact">フォーマルハウトには壮大なデブリ円盤があり、他の恒星の周りで初めて直接撮影されたデブリ円盤の一つです！</string>
-    <string name="object_info_fomalhaut_distance">25光年</string>
-    <string name="object_info_fomalhaut_size">1.8太陽半径</string>
-    <string name="object_info_fomalhaut_mass">1.9太陽質量</string>
-    <string name="object_info_adhara_description">アダーラ（おおいぬ座イプシロン星）はおおいぬ座でシリウスに次いで2番目に明るい恒星です。</string>
-    <string name="object_info_adhara_funfact">約470万年前、アダーラは夜空で最も明るい恒星でした。現在のシリウスよりも明るかったのです！</string>
-    <string name="object_info_adhara_distance">430光年</string>
-    <string name="object_info_adhara_size">14太陽半径</string>
-    <string name="object_info_adhara_mass">12.6太陽質量</string>
-    <string name="object_info_shaula_description">シャウラはさそり座で2番目に明るい恒星で、さそりの尾の毒針を示しています。</string>
-    <string name="object_info_shaula_funfact">シャウラはアラビア語で「上がった尾」を意味します。実は3つの恒星が非常に近い距離にある三重連星系です！</string>
-    <string name="object_info_shaula_distance">570光年</string>
-    <string name="object_info_shaula_size">8.8太陽半径</string>
-    <string name="object_info_shaula_mass">10.4太陽質量</string>
-    <string name="object_info_alnilam_description">アルニラムはオリオンの三つ星の中央の星で、銀河系で最も明るい恒星の一つです。</string>
-    <string name="object_info_alnilam_funfact">アルニラムは強力な恒星風により、太陽の2000万倍もの速さで質量を失っています！</string>
-    <string name="object_info_alnilam_distance">約2,000光年</string>
-    <string name="object_info_alnilam_size">42太陽半径</string>
-    <string name="object_info_alnilam_mass">40太陽質量</string>
-    <string name="object_info_alphard_description">アルファルドはうみへび座で最も明るい恒星で、全天最大の星座にあります。</string>
-    <string name="object_info_alphard_funfact">アルファルドはアラビア語で「孤独な者」を意味します。周囲に明るい星がない寂しい領域にぽつんと輝いているからです！</string>
-    <string name="object_info_alphard_distance">177光年</string>
-    <string name="object_info_alphard_size">50太陽半径</string>
-    <string name="object_info_alphard_mass">3太陽質量</string>
-    <string name="object_info_mirach_description">ミラクはアンドロメダ座にある赤色巨星で、アンドロメダ銀河を見つけるためのガイドとしてよく使われます。</string>
-    <string name="object_info_mirach_funfact">ミラクの幽霊と呼ばれる小さな銀河（NGC 404）がミラクのすぐ近くに見えます。何世紀もの間、ミラクの光に隠されていました！</string>
-    <string name="object_info_mirach_distance">197光年</string>
-    <string name="object_info_mirach_size">100太陽半径</string>
-    <string name="object_info_mirach_mass">3.5太陽質量</string>
-    <string name="object_info_algol_description">アルゴルはペルセウス座にある有名な食連星で、古くから「悪魔の星」として知られています。</string>
-    <string name="object_info_algol_funfact">2.87日ごとにアルゴルは明らかに暗くなります。暗い伴星が前を通過するためで、古代の天文学者たちはこれを不気味に感じていました！</string>
-    <string name="object_info_algol_distance">90光年</string>
-    <string name="object_info_algol_size">2.7太陽半径</string>
-    <string name="object_info_algol_mass">3.2太陽質量</string>
-    <string name="object_info_alpha_centauri_description">アルファ・ケンタウリは太陽に最も近い恒星系で、プロキシマ・ケンタウリを含む3つの恒星からなります。</string>
-    <string name="object_info_alpha_centauri_funfact">この星系のプロキシマ・ケンタウリには、居住可能な惑星があるかもしれません！プロキシマbはわずか4.2光年の距離にあります。</string>
-    <string name="object_info_alpha_centauri_distance">4.37光年</string>
-    <string name="object_info_alpha_centauri_size">1.2太陽半径</string>
-    <string name="object_info_alpha_centauri_mass">1.1太陽質量</string>
-    <string name="object_info_dubhe_description">ドゥーベは北斗七星の「指極星」の一つで、ポラリス（北極星）を指し示しています。</string>
-    <string name="object_info_dubhe_funfact">北斗七星の他の星と違い、ドゥーベとアルカイドは反対方向に動いています。5万年後には北斗七星の形が変わってしまいます！</string>
-    <string name="object_info_dubhe_distance">123光年</string>
-    <string name="object_info_dubhe_size">30太陽半径</string>
-    <string name="object_info_dubhe_mass">4.3太陽質量</string>
-    <string name="object_info_alioth_description">アリオトはおおぐま座で最も明るい恒星であり、北斗七星で最も明るい星です。</string>
-    <string name="object_info_alioth_funfact">アリオトは特異な磁場を持ち、表面に化学元素が集中するスポットができています！</string>
-    <string name="object_info_alioth_distance">83光年</string>
-    <string name="object_info_alioth_size">4.1太陽半径</string>
-    <string name="object_info_alioth_mass">2.9太陽質量</string>
-    <string name="object_info_hamal_description">ハマルはおひつじ座で最も明るい恒星で、約2,000年前には春分点の目印として使われていました。</string>
-    <string name="object_info_hamal_funfact">2011年にハマルの周りを回る巨大な太陽系外惑星が発見されました。木星の少なくとも1.8倍の質量があります！</string>
-    <string name="object_info_hamal_distance">66光年</string>
-    <string name="object_info_hamal_size">15太陽半径</string>
-    <string name="object_info_hamal_mass">1.5太陽質量</string>
-    <string name="object_info_rasalhague_description">ラス・アルハゲはへびつかい座で最も明るい恒星で、医療と関連付けられる星座に位置しています。</string>
-    <string name="object_info_rasalhague_funfact">ラス・アルハゲは非常に高速で自転しており、わずか18時間で1回転するため、目に見えて扁平になっています！</string>
-    <string name="object_info_rasalhague_distance">48.6光年</string>
-    <string name="object_info_rasalhague_size">2.5太陽半径</string>
-    <string name="object_info_rasalhague_mass">2.4太陽質量</string>
-    <string name="object_info_denebola_description">デネボラはしし座の尾を示す恒星です。名前はアラビア語で文字通り「獅子の尾」を意味します。</string>
-    <string name="object_info_denebola_funfact">デネボラの周りにはダストの残骸円盤があり、惑星が形成中か小惑星が衝突している可能性を示しています！</string>
-    <string name="object_info_denebola_distance">36光年</string>
-    <string name="object_info_denebola_size">1.7太陽半径</string>
-    <string name="object_info_denebola_mass">1.8太陽質量</string>
-    <string name="object_info_alpheratz_description">アルフェラッツはアンドロメダ座で最も明るい恒星ですが、かつてはペガスス座の一部と考えられていました。</string>
-    <string name="object_info_alpheratz_funfact">アルフェラッツは非常に珍しい化学組成を持ち、大気中に高濃度の水銀とマンガンが含まれています！</string>
-    <string name="object_info_alpheratz_distance">97光年</string>
-    <string name="object_info_alpheratz_size">2.7太陽半径</string>
-    <string name="object_info_alpheratz_mass">3.6太陽質量</string>
-    <string name="object_info_markab_description">マルカブはペガススの四辺形を構成する4つの恒星の一つで、見つけやすいアステリズムです。</string>
-    <string name="object_info_markab_funfact">マルカブは「後期B型」の恒星で、主系列星としての寿命を終えつつあり、まもなく赤色巨星になります！</string>
-    <string name="object_info_markab_distance">133光年</string>
-    <string name="object_info_markab_size">4.6太陽半径</string>
-    <string name="object_info_markab_mass">3.5太陽質量</string>
-    <string name="object_info_enif_description">エニフはペガスス座で最も明るい恒星で、翼のある馬の鼻を示しています。</string>
-    <string name="object_info_enif_funfact">1972年、エニフは劇的なフレア現象を起こし、一時的に明るさが5倍になりました！</string>
-    <string name="object_info_enif_distance">670光年</string>
-    <string name="object_info_enif_size">185太陽半径</string>
-    <string name="object_info_enif_mass">10.7太陽質量</string>
-    <string name="object_info_scheat_description">シェアトはペガススの四辺形にある赤色巨星で、深いオレンジ赤色が特徴です。</string>
-    <string name="object_info_scheat_funfact">シェアトは半規則型変光星で、数週間から数ヶ月の周期で明るさが変化します！</string>
-    <string name="object_info_scheat_distance">196光年</string>
-    <string name="object_info_scheat_size">110太陽半径</string>
-    <string name="object_info_scheat_mass">2.1太陽質量</string>
-    <string name="object_info_nunki_description">ヌンキはいて座で2番目に明るい恒星で、現在も使われている最古の恒星名です。</string>
-    <string name="object_info_nunki_funfact">ヌンキという名前は古代バビロニアに由来し、天球上でエリドゥの都市を表していました！</string>
-    <string name="object_info_nunki_distance">228光年</string>
-    <string name="object_info_nunki_size">4.5太陽半径</string>
-    <string name="object_info_nunki_mass">7.8太陽質量</string>
-    <string name="object_info_diphda_description">ディフダ（くじら座ベータ星）はくじら座で最も明るい恒星で、秋を代表する星です。</string>
-    <string name="object_info_diphda_funfact">ディフダは空の比較的星の少ない領域に孤立して見えるため、非常に明るくはないものの航海者にとって有用でした！</string>
-    <string name="object_info_diphda_distance">96光年</string>
-    <string name="object_info_diphda_size">18太陽半径</string>
-    <string name="object_info_diphda_mass">2.8太陽質量</string>
-    <string name="object_info_m1_description">かに星雲はおうし座にある超新星残骸で、1054年に中国の天文学者が記録した恒星の爆発の結果です。</string>
-    <string name="object_info_m1_funfact">かに星雲の中心には毎秒30回回転するパルサーがあります。爆発した恒星の潰れた核です！</string>
-    <string name="object_info_m1_distance">6,500光年</string>
-    <string name="object_info_m1_size">11光年（直径）</string>
-    <string name="object_info_m13_description">M13はヘルクレス座にある壮大な球状星団で、約30万個の恒星を含み、北天で最も明るい球状星団の一つです。</string>
-    <string name="object_info_m13_funfact">1974年、地球外知的生命体へのメッセージとしてアレシボ・メッセージがM13に向けて送信されました！</string>
-    <string name="object_info_m13_distance">22,200光年</string>
-    <string name="object_info_m13_size">145光年（直径）</string>
-    <string name="object_info_m31_description">アンドロメダ銀河は天の川銀河に最も近い大型渦巻銀河で、肉眼で見える最も遠い天体の一つです。</string>
-    <string name="object_info_m31_funfact">アンドロメダ銀河は秒速110kmで私たちに近づいており、約45億年後に天の川銀河と衝突します！</string>
-    <string name="object_info_m31_distance">250万光年</string>
-    <string name="object_info_m31_size">22万光年（直径）</string>
-    <string name="object_info_m31_mass">1.5兆太陽質量</string>
-    <string name="object_info_m42_description">オリオン大星雲は肉眼で見える散光星雲で、夜空で最も多く撮影される天体の一つです。</string>
-    <string name="object_info_m42_funfact">オリオン大星雲はまさに今、新しい恒星が誕生している星の揺りかごです。700個以上の恒星が内部で形成中です！</string>
-    <string name="object_info_m42_distance">1,344光年</string>
-    <string name="object_info_m42_size">24光年（直径）</string>
-    <string name="object_info_m45_description">プレアデス星団はおうし座にある散開星団で、七姉妹とも呼ばれ、古来より肉眼で観察されてきました。</string>
-    <string name="object_info_m45_funfact">プレアデス星団は地球に最も近い星団の一つで、ほぼすべての古代文明で認識されていました！</string>
-    <string name="object_info_m45_distance">444光年</string>
-    <string name="object_info_m45_size">17光年（直径）</string>
-    <string name="object_info_m51_description">子持ち銀河はりょうけん座にあるグランドデザイン渦巻銀河で、見事な渦状腕と伴銀河で有名です。</string>
-    <string name="object_info_m51_funfact">子持ち銀河は渦巻構造が初めて認識された銀河で、1845年にロス卿によって発見されました！</string>
-    <string name="object_info_m51_distance">2,300万光年</string>
-    <string name="object_info_m51_size">76,000光年（直径）</string>
-    <string name="object_info_m57_description">環状星雲はこと座にある惑星状星雲で、太陽のような恒星が死ぬ際に放出されたガスの輝く殻です。</string>
-    <string name="object_info_m57_funfact">環状星雲は秒速約20kmで膨張しており、今後1万年かけて宇宙空間に拡散していきます！</string>
-    <string name="object_info_m57_distance">2,300光年</string>
-    <string name="object_info_m57_size">1.3光年（直径）</string>
-    <string name="object_info_m81_description">M81はおおぐま座にあるグランドデザイン渦巻銀河で、地球から見える最も明るい銀河の一つです。</string>
-    <string name="object_info_m81_funfact">M81は隣の銀河M82と重力的に相互作用しており、M82で激しい星形成活動を引き起こしています！</string>
-    <string name="object_info_m81_distance">1,200万光年</string>
-    <string name="object_info_m81_size">9万光年（直径）</string>
-    <string name="object_info_m82_description">葉巻銀河はおおぐま座にあるスターバースト銀河で、横から見た姿と激しい星形成活動で知られています。</string>
-    <string name="object_info_m82_funfact">M82は天の川銀河の10倍の速さで恒星を形成しています。隣のM81との重力相互作用が原因です！</string>
-    <string name="object_info_m82_distance">1,200万光年</string>
-    <string name="object_info_m82_size">37,000光年（直径）</string>
-    <string name="object_info_m101_description">回転花火銀河はおおぐま座にある正面向きの渦巻銀河で、最大級の渦巻銀河の一つです。</string>
-    <string name="object_info_m101_funfact">回転花火銀河には1兆個以上の恒星があり、過去の銀河同士の相互作用により非対称な渦状腕を持っています！</string>
-    <string name="object_info_m101_distance">2,100万光年</string>
-    <string name="object_info_m101_size">17万光年（直径）</string>
-    <string name="object_info_m104_description">ソンブレロ銀河はおとめ座にある渦巻銀河で、明るい核と暗いダストレーンを持つ大きな中心バルジが特徴です。</string>
-    <string name="object_info_m104_funfact">ソンブレロ銀河の中心には、太陽の10億倍の質量を持つ超大質量ブラックホールがあると推定されています！</string>
-    <string name="object_info_m104_distance">3,100万光年</string>
-    <string name="object_info_m104_size">5万光年（直径）</string>
-    <string name="object_info_m8_description">干潟星雲はいて座にある巨大な星間雲で、夏の空で最も美しく明るい星雲の一つです。</string>
-    <string name="object_info_m8_funfact">干潟星雲にはハーシェル36という、最も大質量で明るい恒星の一つが含まれています！</string>
-    <string name="object_info_m8_distance">4,100光年</string>
-    <string name="object_info_m8_size">55光年（直径）</string>
-    <string name="object_info_m17_description">オメガ星雲（白鳥星雲とも）はいて座にある星形成領域で、最も明るい輝線星雲の一つです。</string>
-    <string name="object_info_m17_funfact">オメガ星雲のガスとダストの中には、約800個の若い恒星からなる散開星団が隠されています！</string>
-    <string name="object_info_m17_distance">5,500光年</string>
-    <string name="object_info_m17_size">15光年（直径）</string>
-    <string name="object_info_m20_description">三裂星雲はいて座にある輝線星雲、反射星雲、暗黒星雲が組み合わさった天体で、暗いダストレーンによって分割されています。</string>
-    <string name="object_info_m20_funfact">三裂星雲は一つの天体の中に3種類の星雲を示しています：赤い輝線星雲、青い反射星雲、そして暗い吸収星雲です！</string>
-    <string name="object_info_m20_distance">5,200光年</string>
-    <string name="object_info_m20_size">20光年（直径）</string>
-    <string name="object_info_m27_description">亜鈴状星雲はこぎつね座にある惑星状星雲で、史上初めて発見された惑星状星雲です。</string>
-    <string name="object_info_m27_funfact">亜鈴状星雲は1764年にシャルル・メシエによって発見され、史上初めて発見された惑星状星雲となりました！</string>
-    <string name="object_info_m27_distance">1,360光年</string>
-    <string name="object_info_m27_size">2.5光年（直径）</string>
-    <string name="object_info_m33_description">さんかく座銀河は局部銀河群で3番目に大きな銀河で、さんかく座に見える渦巻銀河です。</string>
-    <string name="object_info_m33_funfact">さんかく座銀河は遠い衛星銀河としてアンドロメダ銀河に重力的に束縛されている可能性があります！</string>
-    <string name="object_info_m33_distance">270万光年</string>
-    <string name="object_info_m33_size">6万光年（直径）</string>
-    <string name="object_info_m35_description">M35はふたご座にある大きな散開星団で、条件がよければ肉眼でも見えます。</string>
-    <string name="object_info_m35_funfact">M35は約200個の恒星を含み、同じ視野内にはるかに古い星団NGC 2158が近くに見えます！</string>
-    <string name="object_info_m35_distance">2,800光年</string>
-    <string name="object_info_m35_size">24光年（直径）</string>
-    <string name="object_info_m44_description">プレセペ星団（ビーハイブ星団）はかに座にある散開星団で、古代から知られ肉眼で見ることができます。</string>
-    <string name="object_info_m44_funfact">古代の天文学者はプレセペ星団の見え方で天気を予測していました。見えなくなると雨が近いとされていたのです！</string>
-    <string name="object_info_m44_distance">577光年</string>
-    <string name="object_info_m44_size">15光年（直径）</string>
-    <string name="object_info_m78_description">M78はオリオン座のベルトの近くにある、全天で最も明るい散光反射星雲です。</string>
-    <string name="object_info_m78_funfact">M78には約45個の若いおうし座T型変光星があります。まだ主系列に向かって収縮中のとても若い恒星です！</string>
-    <string name="object_info_m78_distance">1,600光年</string>
-    <string name="object_info_m78_size">4光年（直径）</string>
-    <string name="object_info_m83_description">南の回転花火銀河はうみへび座にある棒渦巻銀河で、最も近くて明るい棒渦巻銀河の一つです。</string>
-    <string name="object_info_m83_funfact">M83では6個の超新星が観測されており、超新星の発生数で銀河の中の記録を持っています！</string>
-    <string name="object_info_m83_distance">1,500万光年</string>
-    <string name="object_info_m83_size">55,000光年（直径）</string>
-    <string name="object_info_m3_description">M3は全天で最大かつ最も明るい球状星団の一つで、りょうけん座にあります。</string>
-    <string name="object_info_m3_funfact">M3は約50万個の恒星を含み、推定年齢は114億歳です！</string>
-    <string name="object_info_m3_distance">33,900光年</string>
-    <string name="object_info_m3_size">180光年（直径）</string>
-    <string name="object_info_m5_description">M5はへび座にある球状星団で、約130億歳と最古級の球状星団の一つです。</string>
-    <string name="object_info_m5_funfact">M5は10万個以上の恒星を含み、球状星団の中で最も多くの変光星が知られています！</string>
-    <string name="object_info_m5_distance">24,500光年</string>
-    <string name="object_info_m5_size">165光年（直径）</string>
-    <string name="object_info_m15_description">M15はペガスス座にある高密度の球状星団で、球状星団としては珍しく中心部に惑星状星雲を持っています。</string>
-    <string name="object_info_m15_funfact">M15の中心には太陽の約4,000倍の質量を持つブラックホールがあるかもしれません。ただし、まだ議論中です！</string>
-    <string name="object_info_m15_distance">33,600光年</string>
-    <string name="object_info_m15_size">175光年（直径）</string>
-    <string name="object_info_m22_description">M22は地球に最も近く明るい球状星団の一つで、いて座の銀河中心付近にあります。</string>
-    <string name="object_info_m22_funfact">M22は最も早く発見された球状星団の一つで、1665年にアブラハム・イーレによって発見されました！</string>
-    <string name="object_info_m22_distance">10,600光年</string>
-    <string name="object_info_m22_size">70光年（直径）</string>
-    <string name="object_info_m4_description">M4は地球に最も近い球状星団の一つで、さそり座のアンタレスの近くにあり見つけやすいです。</string>
-    <string name="object_info_m4_funfact">M4には推定130億歳の白色矮星があり、天の川銀河で最も古い恒星の一つです！</string>
-    <string name="object_info_m4_distance">7,200光年</string>
-    <string name="object_info_m4_size">75光年（直径）</string>
-    <string name="object_info_m7_description">プトレマイオスの星団はさそり座にある明るい散開星団で、肉眼で見える最も目立つ星団の一つです。</string>
-    <string name="object_info_m7_funfact">M7は紀元130年にプトレマイオスによって初めて記録され、約2,000年にわたって観測されてきました！</string>
-    <string name="object_info_m7_distance">980光年</string>
-    <string name="object_info_m7_size">25光年（直径）</string>
-    <string name="object_info_m6_description">バタフライ星団はさそり座にある散開星団で、最も明るい恒星が蝶のような配置をしていることから名付けられました。</string>
-    <string name="object_info_m6_funfact">M6は約1億年前に形成され、300個以上の恒星を含み、オレンジ巨星のBMさそり座星もあります！</string>
-    <string name="object_info_m6_distance">1,600光年</string>
-    <string name="object_info_m6_size">25光年（直径）</string>
-    <string name="object_info_m11_description">野鴨星団はたて座にある豊富な散開星団で、最もコンパクトな散開星団の一つです。</string>
-    <string name="object_info_m11_funfact">M11は約3,000個の恒星が小さな領域に密集しており、望遠鏡で見ると壮観です！</string>
-    <string name="object_info_m11_distance">6,200光年</string>
-    <string name="object_info_m11_size">20光年（直径）</string>
-    <string name="object_info_m16_description">わし星雲はへび座にある星形成領域で、ハッブル宇宙望遠鏡が撮影した「創造の柱」で有名です。</string>
-    <string name="object_info_m16_funfact">M16の「創造の柱」は約5光年の高さがあり、近くの恒星からの放射によってゆっくり侵食されています！</string>
-    <string name="object_info_m16_distance">7,000光年</string>
-    <string name="object_info_m16_size">70光年（直径）</string>
-    <string name="object_info_m2_description">M2はみずがめ座にある、最大かつ最も星が密集した球状星団の一つです。</string>
-    <string name="object_info_m2_funfact">M2は約15万個の恒星を含み、直径175光年という最大級の球状星団です！</string>
-    <string name="object_info_m2_distance">37,500光年</string>
-    <string name="object_info_m2_size">175光年（直径）</string>
-    <string name="object_info_m10_description">M10はへびつかい座にある明るい球状星団で、太陽系に比較的近い球状星団の一つです。</string>
-    <string name="object_info_m10_funfact">M10は秒速70km以上で私たちに接近しており、核の星の集中度が異常に低いです！</string>
-    <string name="object_info_m10_distance">14,300光年</string>
-    <string name="object_info_m10_size">83光年（直径）</string>
-    <string name="object_info_m12_description">M12はへびつかい座にある球状星団で、中心部の星の集中度が比較的低いのが特徴です。</string>
-    <string name="object_info_m12_funfact">M12は何十億年にもわたる天の川銀河の重力により、多くの軽い恒星を失ってしまいました！</string>
-    <string name="object_info_m12_distance">15,700光年</string>
-    <string name="object_info_m12_size">75光年（直径）</string>
-    <string name="object_info_m14_description">M14はへびつかい座にある球状星団で、数十万個の恒星を含んでいます。</string>
-    <string name="object_info_m14_funfact">1938年にM14で新星が出現しましたが、古い写真乾板が調べられた1964年まで発見されませんでした！</string>
-    <string name="object_info_m14_distance">30,300光年</string>
-    <string name="object_info_m14_size">100光年（直径）</string>
-    <string name="object_info_m53_description">M53はかみのけ座にある球状星団で、銀河の外縁部にある球状星団の一つです。</string>
-    <string name="object_info_m53_funfact">M53は銀河中心から6万光年も離れており、最も遠い球状星団の一つです！</string>
-    <string name="object_info_m53_distance">58,000光年</string>
-    <string name="object_info_m53_size">220光年（直径）</string>
-    <string name="object_info_m64_description">黒眼銀河はかみのけ座にある渦巻銀河で、核の周りに暗いダストの帯があることで有名です。</string>
-    <string name="object_info_m64_funfact">M64の外側の領域は内側と反対方向に回転しています。過去に銀河同士が合体した結果と考えられています！</string>
-    <string name="object_info_m64_distance">1,700万光年</string>
-    <string name="object_info_m64_size">7万光年（直径）</string>
-    <string name="object_info_m65_description">M65はしし座にある渦巻銀河で、M66、NGC 3628とともに有名なしし座のトリプレットを構成しています。</string>
-    <string name="object_info_m65_funfact">しし座のトリプレットの銀河は重力的に相互作用しており、潮汐尾やゆがんだ構造を生み出しています！</string>
-    <string name="object_info_m65_distance">3,500万光年</string>
-    <string name="object_info_m65_size">9万光年（直径）</string>
-    <string name="object_info_m66_description">M66はしし座のトリプレットで最大の銀河で、非対称な渦状腕を持つ渦巻銀河です。</string>
-    <string name="object_info_m66_funfact">M66の非対称な外観は、隣のM65とNGC 3628との重力相互作用によるものです！</string>
-    <string name="object_info_m66_distance">3,600万光年</string>
-    <string name="object_info_m66_size">95,000光年（直径）</string>
-    <string name="object_info_m74_description">幽霊銀河はうお座にある正面向きの渦巻銀河で、完璧なグランドデザイン渦巻構造で知られています。</string>
-    <string name="object_info_m74_funfact">M74は表面輝度が非常に低いため幽霊銀河と呼ばれ、観測が難しい天体です！</string>
-    <string name="object_info_m74_distance">3,200万光年</string>
-    <string name="object_info_m74_size">95,000光年（直径）</string>
-    <string name="object_info_m77_description">M77はくじら座にある棒渦巻銀河で、超大質量ブラックホールによる活動銀河核を持っています。</string>
-    <string name="object_info_m77_funfact">M77には太陽の1500万倍の質量を持つブラックホールを含む活動銀河核があります！</string>
-    <string name="object_info_m77_distance">4,700万光年</string>
-    <string name="object_info_m77_size">12万光年（直径）</string>
-    <string name="object_info_m92_description">M92はヘルクレス座にある明るい球状星団ですが、近くにある有名なM13の影に隠れがちです。</string>
-    <string name="object_info_m92_funfact">M92は約142億歳と最古級の球状星団で、宇宙の年齢とほぼ同じです！</string>
-    <string name="object_info_m92_distance">26,700光年</string>
-    <string name="object_info_m92_size">109光年（直径）</string>
-    <string name="object_info_m94_description">M94はりょうけん座にある渦巻銀河で、活発な星形成が起きている明るい内側のリングがあります。</string>
-    <string name="object_info_m94_funfact">M94の内側のリングはスターバーストリングで、非常に高い速度で新しい恒星が誕生しています！</string>
-    <string name="object_info_m94_distance">1,600万光年</string>
-    <string name="object_info_m94_size">5万光年（直径）</string>
-    <string name="object_info_m97_description">ふくろう星雲はおおぐま座にある惑星状星雲で、2つの暗い斑点がふくろうの顔に見えることから名付けられました。</string>
-    <string name="object_info_m97_funfact">M97のふくろうの目のような暗い部分は、私たちの視線方向に沿った星雲内の三次元的な空洞です！</string>
-    <string name="object_info_m97_distance">2,030光年</string>
-    <string name="object_info_m97_size">2光年（直径）</string>
-    <string name="object_info_m106_description">M106はりょうけん座にある渦巻銀河で、中心のブラックホールからのジェットによる異常な渦状腕を持っています。</string>
-    <string name="object_info_m106_funfact">M106の核にはウォーターメーザーがあり、天文学者はそれを使って正確な距離を測定しています！</string>
-    <string name="object_info_m106_distance">2,350万光年</string>
-    <string name="object_info_m106_size">13万5,000光年（直径）</string>
-    <string name="object_info_m109_description">M109はおおぐま座にある棒渦巻銀河で、その名を冠する銀河群の中で最も明るいメンバーです。</string>
-    <string name="object_info_m109_funfact">M109は北斗七星のフェクダの近くにあるため、見つけやすい銀河です！</string>
-    <string name="object_info_m109_distance">8,300万光年</string>
-    <string name="object_info_m109_size">18万光年（直径）</string>
-    <string name="object_info_m110_description">M110はアンドロメダ銀河の衛星銀河である矮小楕円銀河で、メシエカタログに最後に追加された天体です。</string>
-    <string name="object_info_m110_funfact">M110は1773年にメシエによって観測されていましたが、カタログに追加されたのは1966年になってからでした！</string>
-    <string name="object_info_m110_distance">270万光年</string>
-    <string name="object_info_m110_size">17,000光年（直径）</string>
-    <string name="object_info_m32_description">M32はアンドロメダ銀河の近い衛星銀河である、コンパクトな矮小楕円銀河です。</string>
-    <string name="object_info_m32_funfact">M32は史上初めて発見された楕円銀河で、かつてはアンドロメダ銀河に剥ぎ取られる前はもっと大きな渦巻銀河だったかもしれません！</string>
-    <string name="object_info_m32_distance">250万光年</string>
-    <string name="object_info_m32_size">6,500光年（直径）</string>
-    <string name="object_info_m49_description">M49はおとめ座にある巨大楕円銀河で、おとめ座銀河団で最も明るいメンバーです。</string>
-    <string name="object_info_m49_funfact">M49はおとめ座銀河団で最初に発見された銀河で、約6,000個の球状星団を持っています！</string>
-    <string name="object_info_m49_distance">5,500万光年</string>
-    <string name="object_info_m49_size">16万光年（直径）</string>
-    <string name="object_info_m87_description">M87はおとめ座にある超巨大楕円銀河で、近傍宇宙で最も質量の大きい銀河の一つです。</string>
-    <string name="object_info_m87_funfact">M87の中心ブラックホールは2019年にイベント・ホライズン・テレスコープで初めて撮影されました。質量は太陽の65億倍です！</string>
-    <string name="object_info_m87_distance">5,300万光年</string>
-    <string name="object_info_m87_size">24万光年（直径）</string>
-    <string name="object_info_m87_mass">2.4兆太陽質量</string>
-    <string name="object_info_orion_description">オリオン座は両半球から見える最も有名な星座の一つで、3つの星からなる特徴的なベルトがあります。</string>
-    <string name="object_info_orion_funfact">オリオンのベルトは一方の方向でシリウス（最も明るい星）を、もう一方でアルデバラン（おうし座）を指しています！</string>
-    <string name="object_info_orion_size">594平方度</string>
-    <string name="object_info_ursa_major_description">おおぐま座は北斗七星のアステリズムを含み、北天で最もよく知られた星のパターンの一つです。</string>
-    <string name="object_info_ursa_major_funfact">北斗七星の5つの星は物理的に関連があり、おおぐま座運動星団として宇宙空間を一緒に移動しています！</string>
-    <string name="object_info_ursa_major_size">1,280平方度</string>
-    <string name="object_info_ursa_minor_description">こぐま座は小北斗とポラリス（北極星）を含み、地球の天の北極を示しています。</string>
-    <string name="object_info_ursa_minor_funfact">歳差運動により、ポラリスは永遠に北極星であり続けるわけではありません。1万4000年後にはベガがその役割を担います！</string>
-    <string name="object_info_ursa_minor_size">256平方度</string>
-    <string name="object_info_cassiopeia_description">カシオペヤ座は北天にあるW字型が特徴的な星座で、ギリシャ神話の虚栄心の強い女王にちなんで名付けられました。</string>
-    <string name="object_info_cassiopeia_funfact">1572年のティコ・ブラーエの超新星はカシオペヤ座に出現し、天が変化しうることを証明する助けとなりました！</string>
-    <string name="object_info_cassiopeia_size">598平方度</string>
-    <string name="object_info_scorpius_description">さそり座は赤色超巨星アンタレスが支配する、特徴的な曲がった尾を持つ目立つ黄道星座です。</string>
-    <string name="object_info_scorpius_funfact">神話では、さそり座は狩人オリオンが二度と刺されないように、空の反対側に置かれたとされています！</string>
-    <string name="object_info_scorpius_size">497平方度</string>
-    <string name="object_info_leo_description">しし座はレグルスを獅子の心臓に持ち、特徴的な「ししの大鎌」アステリズムがある黄道星座です。</string>
-    <string name="object_info_leo_funfact">11月のしし座流星群はしし座から放射するように見え、時に壮大な流星雨を見せることがあります！</string>
-    <string name="object_info_leo_size">947平方度</string>
-    <string name="object_info_gemini_description">ふたご座はギリシャ神話の双子の兄弟を表す、カストルとポルックスという明るい恒星が特徴です。</string>
-    <string name="object_info_gemini_funfact">双子と呼ばれていますが、カストルは実は6つの恒星で、ポルックスはオレンジ巨星です。全く似ていません！</string>
-    <string name="object_info_gemini_size">514平方度</string>
-    <string name="object_info_taurus_description">おうし座はプレアデスとヒアデスの星団、そして明るい恒星アルデバランを含む黄道星座です。</string>
-    <string name="object_info_taurus_funfact">おうし座のかに星雲は、1054年に中国の天文学者が目撃・記録した超新星の残骸です！</string>
-    <string name="object_info_taurus_size">797平方度</string>
-    <string name="object_info_virgo_description">おとめ座は全天で2番目に大きい星座で、2,000以上の銀河からなるおとめ座銀河団を含む黄道星座です。</string>
-    <string name="object_info_virgo_funfact">おとめ座銀河団はおとめ座超銀河団の中心であり、私たちの天の川銀河もその一部です！</string>
-    <string name="object_info_virgo_size">1,294平方度</string>
-    <string name="object_info_aquarius_description">みずがめ座は「海」と呼ばれる空の領域にある黄道星座で、水に関連する星座に囲まれています。</string>
-    <string name="object_info_aquarius_funfact">みずがめ座にはらせん星雲があります。わずか700光年と地球に最も近い惑星状星雲の一つです！</string>
-    <string name="object_info_aquarius_size">980平方度</string>
-    <string name="object_info_pisces_description">うお座は紐で結ばれた2匹の魚を表す大きな黄道星座で、春分点の位置を示しています。</string>
-    <string name="object_info_pisces_funfact">春分点は現在うお座にあり、過去2,000年間ゆっくりとうお座の中を移動してきました！</string>
-    <string name="object_info_pisces_size">889平方度</string>
-    <string name="object_info_aries_description">おひつじ座はかつて春分点があった黄道星座で、「春分点（白羊宮）」という言葉の由来です。</string>
-    <string name="object_info_aries_funfact">春分点は約2,000年前にうお座に移動しましたが、今でも「白羊宮」と呼ばれています！</string>
-    <string name="object_info_aries_size">441平方度</string>
-    <string name="object_info_cancer_description">かに座は黄道星座の中で最も暗い星座ですが、肉眼で見えるプレセペ星団（M44）を含んでいます。</string>
-    <string name="object_info_cancer_funfact">北回帰線は夏至に太陽がかに座にあった時代に名付けられましたが、現在はおうし座にあります！</string>
-    <string name="object_info_cancer_size">506平方度</string>
-    <string name="object_info_capricornus_description">やぎ座は半分が山羊、半分が魚という神話上の生き物を描いた古い黄道星座です。</string>
-    <string name="object_info_capricornus_funfact">やぎ座は最も古くから認識されている星座の一つで、3,000年以上前のバビロニアの星表に登場しています！</string>
-    <string name="object_info_capricornus_size">414平方度</string>
-    <string name="object_info_sagittarius_description">いて座は天の川銀河の中心方向を指しており、星雲や星団が豊富にあります。</string>
-    <string name="object_info_sagittarius_funfact">いて座の方向を見ると、私たちの銀河の中心にある超大質量ブラックホール、いて座A*の方を見ていることになります！</string>
-    <string name="object_info_sagittarius_size">867平方度</string>
-    <string name="object_info_libra_description">てんびん座は黄道星座の中で唯一、無生物を表す星座で、かつてはさそり座の一部と考えられていました。</string>
-    <string name="object_info_libra_funfact">てんびん座の主要な星は、かつて「さそりのはさみ」として知られていましたが、後に「正義の天秤」となりました！</string>
-    <string name="object_info_libra_size">538平方度</string>
-    <string name="object_info_cygnus_description">はくちょう座は天の川に沿って飛ぶ白鳥の姿をしており、北十字のアステリズムと明るい恒星デネブを含みます。</string>
-    <string name="object_info_cygnus_funfact">はくちょう座にあるはくちょう座X-1は、1970年代初頭に最初に広く認められたブラックホールです！</string>
-    <string name="object_info_cygnus_size">804平方度</string>
-    <string name="object_info_lyra_description">こと座は小さいながらも目立つ星座で、夜空で5番目に明るい恒星ベガを含んでいます。</string>
-    <string name="object_info_lyra_funfact">ベガは紀元前約12,000年頃に北極星でしたが、地球の歳差運動により約1万2000年後に再び北極星になります！</string>
-    <string name="object_info_lyra_size">286平方度</string>
-    <string name="object_info_aquila_description">わし座は天の赤道上にある星座で、中心に明るい恒星アルタイルがあります。</string>
-    <string name="object_info_aquila_funfact">わし座のアルタイルは最も高速で自転する恒星の一つで、赤道で膨らむほど速く回転しています！</string>
-    <string name="object_info_aquila_size">652平方度</string>
-    <string name="object_info_pegasus_description">ペガスス座は翼のある馬を表す大きな星座で、秋の代表的なアステリズム「ペガススの四辺形」があります。</string>
-    <string name="object_info_pegasus_funfact">1995年にこの星座で発見されたペガスス座51番星bは、太陽型恒星の周りで初めて発見された太陽系外惑星です！</string>
-    <string name="object_info_pegasus_size">1,121平方度</string>
-    <string name="object_info_andromeda_description">アンドロメダ座には天の川銀河に最も近い大型渦巻銀河であるアンドロメダ銀河（M31）があります。</string>
-    <string name="object_info_andromeda_funfact">アンドロメダ銀河は秒速110kmで私たちに接近しており、約45億年後に天の川銀河と合体します！</string>
-    <string name="object_info_andromeda_size">722平方度</string>
-    <string name="object_info_perseus_description">ペルセウス座には有名な変光星アルゴルと、美しい二重星団があります。</string>
-    <string name="object_info_perseus_funfact">アルゴル（悪魔の星）は2.87日ごとに不思議に暗くなるため、古代では不吉とされていました！</string>
-    <string name="object_info_perseus_size">615平方度</string>
-    <string name="object_info_centaurus_description">ケンタウルス座は南天の大きな星座で、太陽に最も近い恒星系であるアルファ・ケンタウリを含んでいます。</string>
-    <string name="object_info_centaurus_funfact">ケンタウルス座のプロキシマ・ケンタウリはわずか4.24光年の距離にあり、太陽系に最も近い恒星です！</string>
-    <string name="object_info_centaurus_size">1,060平方度</string>
-    <string name="object_info_crux_description">みなみじゅうじ座は全天で最小の星座ですが、最も特徴的な星座の一つで、南半球での航海に使われてきました。</string>
-    <string name="object_info_crux_funfact">最小の星座でありながら、みなみじゅうじ座は面積あたりの明るい恒星の数が最も多い星座です！</string>
-    <string name="object_info_crux_size">68平方度</string>
-    <string name="object_info_canis_major_description">おおいぬ座はオリオンに従って空を横切り、地球から見える最も明るい恒星シリウスを含んでいます。</string>
-    <string name="object_info_canis_major_funfact">古代エジプト人はシリウスのヘリアカル・ライジング（夜明け前の東天出現）を暦の基準にしていました。これはナイル川の年次氾濫と一致していたのです！</string>
-    <string name="object_info_canis_major_size">380平方度</string>
-    <string name="object_info_canis_minor_description">こいぬ座は全天で8番目に明るい恒星プロキオンで知られる小さな星座です。</string>
-    <string name="object_info_canis_minor_funfact">プロキオンはギリシャ語で「犬の前」を意味します。毎晩シリウス（犬の星）の直前に昇るからです！</string>
-    <string name="object_info_canis_minor_size">183平方度</string>
-    <string name="object_info_cepheus_description">ケフェウス座は北天の星座で、ケフェイド変光星の原型であるケフェウス座デルタ星を含んでいます。</string>
-    <string name="object_info_cepheus_funfact">ヘンリエッタ・リーヴィットが発見したケフェイド変光星は、宇宙の距離を測る方法として天文学に革命をもたらしました！</string>
-    <string name="object_info_cepheus_size">588平方度</string>
-    <string name="object_info_draco_description">りゅう座は北の空でこぐま座を取り囲むように蛇行する長い星座です。</string>
-    <string name="object_info_draco_funfact">りゅう座のトゥバンは、エジプトのピラミッドが建設された5,000年前には北極星でした！</string>
-    <string name="object_info_draco_size">1,083平方度</string>
-    <string name="object_info_hercules_description">ヘルクレス座はギリシャの英雄を表す大きな星座で、壮大な球状星団M13を含んでいます。</string>
-    <string name="object_info_hercules_funfact">太陽系はヘルクレス座の方向にある太陽向点に向かって秒速約20kmで移動しています！</string>
-    <string name="object_info_hercules_size">1,225平方度</string>
-    <string name="object_info_ophiuchus_description">へびつかい座は黄道に沿って位置していますが黄道十二星座ではなく、蛇を持つ人の姿を表しています。</string>
-    <string name="object_info_ophiuchus_funfact">太陽はさそり座よりもへびつかい座に長い時間滞在するにもかかわらず、へびつかい座は黄道十二星座とされていません！</string>
-    <string name="object_info_ophiuchus_size">948平方度</string>
-    <string name="object_info_bootes_description">うしかい座はアークトゥルス（夜空で4番目に明るい恒星）を含む星座です。</string>
-    <string name="object_info_bootes_funfact">北斗七星の柄のカーブを延長すると「アークトゥルスへ弧を描く」ことができます。最も有名な星の見つけ方の一つです！</string>
-    <string name="object_info_bootes_size">907平方度</string>
-    <string name="object_info_corona_borealis_description">かんむり座はギリシャ神話のアリアドネの冠を表す、半円形の小さな星座です。</string>
-    <string name="object_info_corona_borealis_funfact">かんむり座T星は約80年ごとに爆発する回帰新星で、次の爆発がまもなく起きるかもしれません！</string>
-    <string name="object_info_corona_borealis_size">179平方度</string>
-    <string name="object_info_corvus_description">からす座はおとめ座の南にある、アポロンの神聖な鳥を表す小さな四辺形の星座です。</string>
-    <string name="object_info_corvus_funfact">からす座の4つの主要な星は、春の空で見つけやすい帆の形を作っています！</string>
-    <string name="object_info_corvus_size">184平方度</string>
-    <string name="object_info_auriga_description">ぎょしゃ座は6番目に明るい恒星カペラといくつかの散開星団を含む北天の星座です。</string>
-    <string name="object_info_auriga_funfact">ぎょしゃ座イプシロン星は最も不思議な恒星の一つで、謎の暗い円盤により27年ごとに2年間暗くなります！</string>
-    <string name="object_info_auriga_size">657平方度</string>
-    <string name="object_info_eridanus_description">エリダヌス座は全天で6番目に大きな星座で、オリオン座の近くから南天の遠くまで蛇行しています。</string>
-    <string name="object_info_eridanus_funfact">エリダヌス座の端にあるアケルナルは、高速自転により赤道方向に56%膨らんだ、最も扁平な恒星です！</string>
-    <string name="object_info_eridanus_size">1,138平方度</string>
-    <string name="object_info_lepus_description">うさぎ座はオリオンの足元にうずくまる、小さいながらも特徴的な星座です。</string>
-    <string name="object_info_lepus_funfact">神話では、オリオンは野うさぎ狩りが好きだったため、空でも彼の足元に野うさぎが置かれたと言われています！</string>
-    <string name="object_info_lepus_size">290平方度</string>
-    <string name="object_info_monoceros_description">いっかくじゅう座は冬の天の川の中にある淡い星座で、星雲や星団が豊富です。</string>
-    <string name="object_info_monoceros_funfact">いっかくじゅう座のばら星雲は、天上のバラのように見える巨大な星形成領域です！</string>
-    <string name="object_info_monoceros_size">482平方度</string>
-    <string name="object_info_hydra_description">うみへび座はギリシャ神話の水蛇を表す、全天で最大の星座です。</string>
-    <string name="object_info_hydra_funfact">うみへび座は空を100度以上にわたって広がっています。天球全体の4分の1以上に相当します！</string>
-    <string name="object_info_hydra_size">1,303平方度</string>
-    <string name="object_info_carina_description">りゅうこつ座はかつての巨大な星座アルゴ座の一部で、輝かしい恒星カノープスを含んでいます。</string>
-    <string name="object_info_carina_funfact">りゅうこつ座のイータ・カリーナは最も光度の高い恒星の一つで、私たちが生きている間に超新星爆発する可能性があります！</string>
-    <string name="object_info_carina_size">494平方度</string>
-    <string name="object_info_vela_description">ほ座はかつて大きな船アルゴ座の一部で、天の川の豊かな領域にあります。</string>
-    <string name="object_info_vela_funfact">ほ座パルサーは全天で最も明るいパルサーで、1万1000年前に爆発した超新星の残骸です！</string>
-    <string name="object_info_vela_size">500平方度</string>
-    <string name="object_info_puppis_description">とも座は船アルゴ座の船尾を表し、天の川に沿って散開星団が豊富にあります。</string>
-    <string name="object_info_puppis_funfact">とも座にはM47という肉眼で見える散開星団がありますが、カタログの誤りにより200年以上「行方不明」になっていました！</string>
-    <string name="object_info_puppis_size">673平方度</string>
-    <string name="object_info_cetus_description">くじら座は史上初めて発見された変光星ミラを含む大きな星座です。</string>
-    <string name="object_info_cetus_funfact">くじら座のミラは11ヶ月の周期で見えたり見えなくなったりし、13光年もの長さのガスの尾を持っています！</string>
-    <string name="object_info_cetus_size">1,231平方度</string>
-    <string name="object_info_phoenix_description">ほうおう座は自らの灰から蘇る神話上の鳥を表す、南天の星座です。</string>
-    <string name="object_info_phoenix_funfact">ほうおう座は16世紀後半にオランダの探検家によって、それまで地図になかった南天の星から作られた12の星座の一つです！</string>
-    <string name="object_info_phoenix_size">469平方度</string>
-    <string name="object_info_grus_description">つる座は16世紀後半にヨーロッパの航海者によって導入された南天の星座です。</string>
-    <string name="object_info_grus_funfact">つる座はかつてフラミンゴ座として知られていましたが、後につる座に変更されました！</string>
-    <string name="object_info_grus_size">366平方度</string>
-    <string name="object_info_pavo_description">くじゃく座は明るい恒星ピーコックといくつかの興味深い銀河を含む南天の星座です。</string>
-    <string name="object_info_pavo_funfact">ピーコック星（くじゃく座アルファ星）は太陽から200光年以内で2番目に光度の高い恒星です！</string>
-    <string name="object_info_pavo_size">378平方度</string>
-    <string name="object_info_triangulum_description">さんかく座は局部銀河群で3番目に大きいさんかく座銀河（M33）を含む、小さな北天の星座です。</string>
-    <string name="object_info_triangulum_funfact">さんかく座銀河は理想的な条件下で肉眼で見える最も遠い天体です！</string>
-    <string name="object_info_triangulum_size">132平方度</string>
-    <string name="object_info_delphinus_description">いるか座は星の並びが跳ねるイルカの姿を形作る、小さくても特徴的な星座です。</string>
-    <string name="object_info_delphinus_funfact">いるか座の2つの星はスアロキンとロタネヴと名付けられています。これは命名した天文学者「Nicolaus Venator」の逆読みです！</string>
-    <string name="object_info_delphinus_size">189平方度</string>
-    <string name="object_info_sagitta_description">や座は全天で3番目に小さい星座で、ギリシャ神話のさまざまな矢を表しています。</string>
-    <string name="object_info_sagitta_funfact">小さな星座ですが、や座にはM71という球状星団があり、何世紀もの間、散開星団と間違えられていました！</string>
-    <string name="object_info_sagitta_size">80平方度</string>
+    <string name="object_info_antares_distance" translation_description="Distance to Antares shown in the info card. Translate units if appropriate for your locale.">約550光年</string>
+    <string name="object_info_antares_size" translation_description="Physical size of Antares shown in the info card. Translate units if appropriate for your locale.">約680太陽半径</string>
+    <string name="object_info_antares_mass" translation_description="Mass of Antares in scientific notation — no translation needed.">約12太陽質量</string>
+    <string name="object_info_capella_description" translation_description="Description of Capella shown in the info card. Translate this text.">カペラはぎょしゃ座で最も明るい恒星で、夜空で6番目に明るい星です。実は4つの恒星からなる星系です。</string>
+    <string name="object_info_capella_funfact" translation_description="Fun fact about Capella shown in the info card. Translate this text.">カペラはラテン語で「小さな雌山羊」を意味します。古代の人々は、御者座の肩に乗った山羊として見ていました！</string>
+    <string name="object_info_capella_distance" translation_description="Distance to Capella shown in the info card. Translate units if appropriate for your locale.">43光年</string>
+    <string name="object_info_capella_size" translation_description="Physical size of Capella shown in the info card. Translate units if appropriate for your locale.">12太陽半径</string>
+    <string name="object_info_capella_mass" translation_description="Mass of Capella in scientific notation — no translation needed.">2.6太陽質量</string>
+    <string name="object_info_altair_description" translation_description="Description of Altair shown in the info card. Translate this text.">アルタイルはわし座で最も明るい恒星で、肉眼で見える最も近い恒星の一つです。</string>
+    <string name="object_info_altair_funfact" translation_description="Fun fact about Altair shown in the info card. Translate this text.">アルタイルは非常に高速で自転しており（約9時間で1回転）、極がつぶれて赤道方向に14%も広がっています！</string>
+    <string name="object_info_altair_distance" translation_description="Distance to Altair shown in the info card. Translate units if appropriate for your locale.">17光年</string>
+    <string name="object_info_altair_size" translation_description="Physical size of Altair shown in the info card. Translate units if appropriate for your locale.">1.8太陽半径</string>
+    <string name="object_info_altair_mass" translation_description="Mass of Altair in scientific notation — no translation needed.">1.8太陽質量</string>
+    <string name="object_info_spica_description" translation_description="Description of Spica shown in the info card. Translate this text.">スピカはおとめ座で最も明るい恒星で、夜空で最も明るい20星の一つです。連星系でもあります。</string>
+    <string name="object_info_spica_funfact" translation_description="Fun fact about Spica shown in the info card. Translate this text.">スピカは黄道に非常に近いため、月に隠されることがあります。名前はラテン語で「麦の穂」を意味します！</string>
+    <string name="object_info_spica_distance" translation_description="Distance to Spica shown in the info card. Translate units if appropriate for your locale.">250光年</string>
+    <string name="object_info_spica_size" translation_description="Physical size of Spica shown in the info card. Translate units if appropriate for your locale.">7.5太陽半径</string>
+    <string name="object_info_spica_mass" translation_description="Mass of Spica in scientific notation — no translation needed.">11太陽質量</string>
+    <string name="object_info_achernar_description" translation_description="Description of Achernar shown in the info card. Translate this text.">アケルナルはエリダヌス座で最も明るい恒星で、夜空で9番目に明るい星です。</string>
+    <string name="object_info_achernar_funfact" translation_description="Fun fact about Achernar shown in the info card. Translate this text.">アケルナルは知られている中で最も扁平な恒星です！自転が速すぎて、赤道の直径が極の直径より56%も大きいのです。</string>
+    <string name="object_info_achernar_distance" translation_description="Distance to Achernar shown in the info card. Translate units if appropriate for your locale.">139光年</string>
+    <string name="object_info_achernar_size" translation_description="Physical size of Achernar shown in the info card. Translate units if appropriate for your locale.">7.3太陽半径</string>
+    <string name="object_info_achernar_mass" translation_description="Mass of Achernar in scientific notation — no translation needed.">6.7太陽質量</string>
+    <string name="object_info_hadar_description" translation_description="Description of Hadar shown in the info card. Translate this text.">ハダル（ケンタウルス座ベータ星）はケンタウルス座で2番目に明るい恒星で、夜空で11番目に明るい星です。</string>
+    <string name="object_info_hadar_funfact" translation_description="Fun fact about Hadar shown in the info card. Translate this text.">ハダルとアルファ・ケンタウリは「南の指極星」として知られ、南十字星を指し示しています！</string>
+    <string name="object_info_hadar_distance" translation_description="Distance to Hadar shown in the info card. Translate units if appropriate for your locale.">390光年</string>
+    <string name="object_info_hadar_size" translation_description="Physical size of Hadar shown in the info card. Translate units if appropriate for your locale.">9太陽半径</string>
+    <string name="object_info_hadar_mass" translation_description="Mass of Hadar in scientific notation — no translation needed.">12.8太陽質量</string>
+    <string name="object_info_regulus_description" translation_description="Description of Regulus shown in the info card. Translate this text.">レグルスはしし座で最も明るい恒星で、獅子の心臓を表しています。多重連星系です。</string>
+    <string name="object_info_regulus_funfact" translation_description="Fun fact about Regulus shown in the info card. Translate this text.">レグルスは自転速度が非常に速く、ほとんどバラバラになりそうなほどです！わずか16時間で1回転します。</string>
+    <string name="object_info_regulus_distance" translation_description="Distance to Regulus shown in the info card. Translate units if appropriate for your locale.">79光年</string>
+    <string name="object_info_regulus_size" translation_description="Physical size of Regulus shown in the info card. Translate units if appropriate for your locale.">4.4太陽半径</string>
+    <string name="object_info_regulus_mass" translation_description="Mass of Regulus in scientific notation — no translation needed.">3.8太陽質量</string>
+    <string name="object_info_acrux_description" translation_description="Description of Acrux shown in the info card. Translate this text.">アクルックス（みなみじゅうじ座アルファ星）は南十字星で最も明るい恒星で、全天で13番目に明るい星です。</string>
+    <string name="object_info_acrux_funfact" translation_description="Fun fact about Acrux shown in the info card. Translate this text.">アクルックスはオーストラリア、ニュージーランド、ブラジル、パプアニューギニア、サモアの国旗に描かれています！</string>
+    <string name="object_info_acrux_distance" translation_description="Distance to Acrux shown in the info card. Translate units if appropriate for your locale.">320光年</string>
+    <string name="object_info_acrux_size" translation_description="Physical size of Acrux shown in the info card. Translate units if appropriate for your locale.">7.8太陽半径</string>
+    <string name="object_info_acrux_mass" translation_description="Mass of Acrux in scientific notation — no translation needed.">18太陽質量</string>
+    <string name="object_info_castor_description" translation_description="Description of Castor shown in the info card. Translate this text.">カストルはふたご座の双子の一方の星です。一つの星に見えますが、実は6つの恒星からなる星系です！</string>
+    <string name="object_info_castor_funfact" translation_description="Fun fact about Castor shown in the info card. Translate this text.">カストルは六重連星系で、3組の連星が互いに公転しています。地球の近くで最も複雑な恒星系の一つです！</string>
+    <string name="object_info_castor_distance" translation_description="Distance to Castor shown in the info card. Translate units if appropriate for your locale.">51光年</string>
+    <string name="object_info_castor_size" translation_description="Physical size of Castor shown in the info card. Translate units if appropriate for your locale.">2.4太陽半径</string>
+    <string name="object_info_castor_mass" translation_description="Mass of Castor in scientific notation — no translation needed.">2.8太陽質量</string>
+    <string name="object_info_pollux_description" translation_description="Description of Pollux shown in the info card. Translate this text.">ポルックスはふたご座の双子のうちの明るい方の星です。カストルとは異なり、単独のオレンジ色の巨星です。</string>
+    <string name="object_info_pollux_funfact" translation_description="Fun fact about Pollux shown in the info card. Translate this text.">ポルックスには太陽系外惑星が確認されています！ポルックスbは木星の少なくとも2倍の質量を持つガス巨大惑星です。</string>
+    <string name="object_info_pollux_distance" translation_description="Distance to Pollux shown in the info card. Translate units if appropriate for your locale.">34光年</string>
+    <string name="object_info_pollux_size" translation_description="Physical size of Pollux shown in the info card. Translate units if appropriate for your locale.">9.1太陽半径</string>
+    <string name="object_info_pollux_mass" translation_description="Mass of Pollux in scientific notation — no translation needed.">1.9太陽質量</string>
+    <string name="object_info_fomalhaut_description" translation_description="Description of Fomalhaut shown in the info card. Translate this text.">フォーマルハウトはみなみのうお座で最も明るい恒星で、秋の夜空で最も明るい星の一つです。</string>
+    <string name="object_info_fomalhaut_funfact" translation_description="Fun fact about Fomalhaut shown in the info card. Translate this text.">フォーマルハウトには壮大なデブリ円盤があり、他の恒星の周りで初めて直接撮影されたデブリ円盤の一つです！</string>
+    <string name="object_info_fomalhaut_distance" translation_description="Distance to Fomalhaut shown in the info card. Translate units if appropriate for your locale.">25光年</string>
+    <string name="object_info_fomalhaut_size" translation_description="Physical size of Fomalhaut shown in the info card. Translate units if appropriate for your locale.">1.8太陽半径</string>
+    <string name="object_info_fomalhaut_mass" translation_description="Mass of Fomalhaut in scientific notation — no translation needed.">1.9太陽質量</string>
+    <string name="object_info_adhara_description" translation_description="Description of Adhara shown in the info card. Translate this text.">アダーラ（おおいぬ座イプシロン星）はおおいぬ座でシリウスに次いで2番目に明るい恒星です。</string>
+    <string name="object_info_adhara_funfact" translation_description="Fun fact about Adhara shown in the info card. Translate this text.">約470万年前、アダーラは夜空で最も明るい恒星でした。現在のシリウスよりも明るかったのです！</string>
+    <string name="object_info_adhara_distance" translation_description="Distance to Adhara shown in the info card. Translate units if appropriate for your locale.">430光年</string>
+    <string name="object_info_adhara_size" translation_description="Physical size of Adhara shown in the info card. Translate units if appropriate for your locale.">14太陽半径</string>
+    <string name="object_info_adhara_mass" translation_description="Mass of Adhara in scientific notation — no translation needed.">12.6太陽質量</string>
+    <string name="object_info_shaula_description" translation_description="Description of Shaula shown in the info card. Translate this text.">シャウラはさそり座で2番目に明るい恒星で、さそりの尾の毒針を示しています。</string>
+    <string name="object_info_shaula_funfact" translation_description="Fun fact about Shaula shown in the info card. Translate this text.">シャウラはアラビア語で「上がった尾」を意味します。実は3つの恒星が非常に近い距離にある三重連星系です！</string>
+    <string name="object_info_shaula_distance" translation_description="Distance to Shaula shown in the info card. Translate units if appropriate for your locale.">570光年</string>
+    <string name="object_info_shaula_size" translation_description="Physical size of Shaula shown in the info card. Translate units if appropriate for your locale.">8.8太陽半径</string>
+    <string name="object_info_shaula_mass" translation_description="Mass of Shaula in scientific notation — no translation needed.">10.4太陽質量</string>
+    <string name="object_info_alnilam_description" translation_description="Description of Alnilam shown in the info card. Translate this text.">アルニラムはオリオンの三つ星の中央の星で、銀河系で最も明るい恒星の一つです。</string>
+    <string name="object_info_alnilam_funfact" translation_description="Fun fact about Alnilam shown in the info card. Translate this text.">アルニラムは強力な恒星風により、太陽の2000万倍もの速さで質量を失っています！</string>
+    <string name="object_info_alnilam_distance" translation_description="Distance to Alnilam shown in the info card. Translate units if appropriate for your locale.">約2,000光年</string>
+    <string name="object_info_alnilam_size" translation_description="Physical size of Alnilam shown in the info card. Translate units if appropriate for your locale.">42太陽半径</string>
+    <string name="object_info_alnilam_mass" translation_description="Mass of Alnilam in scientific notation — no translation needed.">40太陽質量</string>
+    <string name="object_info_alphard_description" translation_description="Description of Alphard shown in the info card. Translate this text.">アルファルドはうみへび座で最も明るい恒星で、全天最大の星座にあります。</string>
+    <string name="object_info_alphard_funfact" translation_description="Fun fact about Alphard shown in the info card. Translate this text.">アルファルドはアラビア語で「孤独な者」を意味します。周囲に明るい星がない寂しい領域にぽつんと輝いているからです！</string>
+    <string name="object_info_alphard_distance" translation_description="Distance to Alphard shown in the info card. Translate units if appropriate for your locale.">177光年</string>
+    <string name="object_info_alphard_size" translation_description="Physical size of Alphard shown in the info card. Translate units if appropriate for your locale.">50太陽半径</string>
+    <string name="object_info_alphard_mass" translation_description="Mass of Alphard in scientific notation — no translation needed.">3太陽質量</string>
+    <string name="object_info_mirach_description" translation_description="Description of Mirach shown in the info card. Translate this text.">ミラクはアンドロメダ座にある赤色巨星で、アンドロメダ銀河を見つけるためのガイドとしてよく使われます。</string>
+    <string name="object_info_mirach_funfact" translation_description="Fun fact about Mirach shown in the info card. Translate this text.">ミラクの幽霊と呼ばれる小さな銀河（NGC 404）がミラクのすぐ近くに見えます。何世紀もの間、ミラクの光に隠されていました！</string>
+    <string name="object_info_mirach_distance" translation_description="Distance to Mirach shown in the info card. Translate units if appropriate for your locale.">197光年</string>
+    <string name="object_info_mirach_size" translation_description="Physical size of Mirach shown in the info card. Translate units if appropriate for your locale.">100太陽半径</string>
+    <string name="object_info_mirach_mass" translation_description="Mass of Mirach in scientific notation — no translation needed.">3.5太陽質量</string>
+    <string name="object_info_algol_description" translation_description="Description of Algol shown in the info card. Translate this text.">アルゴルはペルセウス座にある有名な食連星で、古くから「悪魔の星」として知られています。</string>
+    <string name="object_info_algol_funfact" translation_description="Fun fact about Algol shown in the info card. Translate this text.">2.87日ごとにアルゴルは明らかに暗くなります。暗い伴星が前を通過するためで、古代の天文学者たちはこれを不気味に感じていました！</string>
+    <string name="object_info_algol_distance" translation_description="Distance to Algol shown in the info card. Translate units if appropriate for your locale.">90光年</string>
+    <string name="object_info_algol_size" translation_description="Physical size of Algol shown in the info card. Translate units if appropriate for your locale.">2.7太陽半径</string>
+    <string name="object_info_algol_mass" translation_description="Mass of Algol in scientific notation — no translation needed.">3.2太陽質量</string>
+    <string name="object_info_alpha_centauri_description" translation_description="Description of Alpha Centauri shown in the info card. Translate this text.">アルファ・ケンタウリは太陽に最も近い恒星系で、プロキシマ・ケンタウリを含む3つの恒星からなります。</string>
+    <string name="object_info_alpha_centauri_funfact" translation_description="Fun fact about Alpha Centauri shown in the info card. Translate this text.">この星系のプロキシマ・ケンタウリには、居住可能な惑星があるかもしれません！プロキシマbはわずか4.2光年の距離にあります。</string>
+    <string name="object_info_alpha_centauri_distance" translation_description="Distance to Alpha Centauri shown in the info card. Translate units if appropriate for your locale.">4.37光年</string>
+    <string name="object_info_alpha_centauri_size" translation_description="Physical size of Alpha Centauri shown in the info card. Translate units if appropriate for your locale.">1.2太陽半径</string>
+    <string name="object_info_alpha_centauri_mass" translation_description="Mass of Alpha Centauri in scientific notation — no translation needed.">1.1太陽質量</string>
+    <string name="object_info_dubhe_description" translation_description="Description of Dubhe shown in the info card. Translate this text.">ドゥーベは北斗七星の「指極星」の一つで、ポラリス（北極星）を指し示しています。</string>
+    <string name="object_info_dubhe_funfact" translation_description="Fun fact about Dubhe shown in the info card. Translate this text.">北斗七星の他の星と違い、ドゥーベとアルカイドは反対方向に動いています。5万年後には北斗七星の形が変わってしまいます！</string>
+    <string name="object_info_dubhe_distance" translation_description="Distance to Dubhe shown in the info card. Translate units if appropriate for your locale.">123光年</string>
+    <string name="object_info_dubhe_size" translation_description="Physical size of Dubhe shown in the info card. Translate units if appropriate for your locale.">30太陽半径</string>
+    <string name="object_info_dubhe_mass" translation_description="Mass of Dubhe in scientific notation — no translation needed.">4.3太陽質量</string>
+    <string name="object_info_alioth_description" translation_description="Description of Alioth shown in the info card. Translate this text.">アリオトはおおぐま座で最も明るい恒星であり、北斗七星で最も明るい星です。</string>
+    <string name="object_info_alioth_funfact" translation_description="Fun fact about Alioth shown in the info card. Translate this text.">アリオトは特異な磁場を持ち、表面に化学元素が集中するスポットができています！</string>
+    <string name="object_info_alioth_distance" translation_description="Distance to Alioth shown in the info card. Translate units if appropriate for your locale.">83光年</string>
+    <string name="object_info_alioth_size" translation_description="Physical size of Alioth shown in the info card. Translate units if appropriate for your locale.">4.1太陽半径</string>
+    <string name="object_info_alioth_mass" translation_description="Mass of Alioth in scientific notation — no translation needed.">2.9太陽質量</string>
+    <string name="object_info_hamal_description" translation_description="Description of Hamal shown in the info card. Translate this text.">ハマルはおひつじ座で最も明るい恒星で、約2,000年前には春分点の目印として使われていました。</string>
+    <string name="object_info_hamal_funfact" translation_description="Fun fact about Hamal shown in the info card. Translate this text.">2011年にハマルの周りを回る巨大な太陽系外惑星が発見されました。木星の少なくとも1.8倍の質量があります！</string>
+    <string name="object_info_hamal_distance" translation_description="Distance to Hamal shown in the info card. Translate units if appropriate for your locale.">66光年</string>
+    <string name="object_info_hamal_size" translation_description="Physical size of Hamal shown in the info card. Translate units if appropriate for your locale.">15太陽半径</string>
+    <string name="object_info_hamal_mass" translation_description="Mass of Hamal in scientific notation — no translation needed.">1.5太陽質量</string>
+    <string name="object_info_rasalhague_description" translation_description="Description of Rasalhague shown in the info card. Translate this text.">ラス・アルハゲはへびつかい座で最も明るい恒星で、医療と関連付けられる星座に位置しています。</string>
+    <string name="object_info_rasalhague_funfact" translation_description="Fun fact about Rasalhague shown in the info card. Translate this text.">ラス・アルハゲは非常に高速で自転しており、わずか18時間で1回転するため、目に見えて扁平になっています！</string>
+    <string name="object_info_rasalhague_distance" translation_description="Distance to Rasalhague shown in the info card. Translate units if appropriate for your locale.">48.6光年</string>
+    <string name="object_info_rasalhague_size" translation_description="Physical size of Rasalhague shown in the info card. Translate units if appropriate for your locale.">2.5太陽半径</string>
+    <string name="object_info_rasalhague_mass" translation_description="Mass of Rasalhague in scientific notation — no translation needed.">2.4太陽質量</string>
+    <string name="object_info_denebola_description" translation_description="Description of Denebola shown in the info card. Translate this text.">デネボラはしし座の尾を示す恒星です。名前はアラビア語で文字通り「獅子の尾」を意味します。</string>
+    <string name="object_info_denebola_funfact" translation_description="Fun fact about Denebola shown in the info card. Translate this text.">デネボラの周りにはダストの残骸円盤があり、惑星が形成中か小惑星が衝突している可能性を示しています！</string>
+    <string name="object_info_denebola_distance" translation_description="Distance to Denebola shown in the info card. Translate units if appropriate for your locale.">36光年</string>
+    <string name="object_info_denebola_size" translation_description="Physical size of Denebola shown in the info card. Translate units if appropriate for your locale.">1.7太陽半径</string>
+    <string name="object_info_denebola_mass" translation_description="Mass of Denebola in scientific notation — no translation needed.">1.8太陽質量</string>
+    <string name="object_info_alpheratz_description" translation_description="Description of Alpheratz shown in the info card. Translate this text.">アルフェラッツはアンドロメダ座で最も明るい恒星ですが、かつてはペガスス座の一部と考えられていました。</string>
+    <string name="object_info_alpheratz_funfact" translation_description="Fun fact about Alpheratz shown in the info card. Translate this text.">アルフェラッツは非常に珍しい化学組成を持ち、大気中に高濃度の水銀とマンガンが含まれています！</string>
+    <string name="object_info_alpheratz_distance" translation_description="Distance to Alpheratz shown in the info card. Translate units if appropriate for your locale.">97光年</string>
+    <string name="object_info_alpheratz_size" translation_description="Physical size of Alpheratz shown in the info card. Translate units if appropriate for your locale.">2.7太陽半径</string>
+    <string name="object_info_alpheratz_mass" translation_description="Mass of Alpheratz in scientific notation — no translation needed.">3.6太陽質量</string>
+    <string name="object_info_markab_description" translation_description="Description of Markab shown in the info card. Translate this text.">マルカブはペガススの四辺形を構成する4つの恒星の一つで、見つけやすいアステリズムです。</string>
+    <string name="object_info_markab_funfact" translation_description="Fun fact about Markab shown in the info card. Translate this text.">マルカブは「後期B型」の恒星で、主系列星としての寿命を終えつつあり、まもなく赤色巨星になります！</string>
+    <string name="object_info_markab_distance" translation_description="Distance to Markab shown in the info card. Translate units if appropriate for your locale.">133光年</string>
+    <string name="object_info_markab_size" translation_description="Physical size of Markab shown in the info card. Translate units if appropriate for your locale.">4.6太陽半径</string>
+    <string name="object_info_markab_mass" translation_description="Mass of Markab in scientific notation — no translation needed.">3.5太陽質量</string>
+    <string name="object_info_enif_description" translation_description="Description of Enif shown in the info card. Translate this text.">エニフはペガスス座で最も明るい恒星で、翼のある馬の鼻を示しています。</string>
+    <string name="object_info_enif_funfact" translation_description="Fun fact about Enif shown in the info card. Translate this text.">1972年、エニフは劇的なフレア現象を起こし、一時的に明るさが5倍になりました！</string>
+    <string name="object_info_enif_distance" translation_description="Distance to Enif shown in the info card. Translate units if appropriate for your locale.">670光年</string>
+    <string name="object_info_enif_size" translation_description="Physical size of Enif shown in the info card. Translate units if appropriate for your locale.">185太陽半径</string>
+    <string name="object_info_enif_mass" translation_description="Mass of Enif in scientific notation — no translation needed.">10.7太陽質量</string>
+    <string name="object_info_scheat_description" translation_description="Description of Scheat shown in the info card. Translate this text.">シェアトはペガススの四辺形にある赤色巨星で、深いオレンジ赤色が特徴です。</string>
+    <string name="object_info_scheat_funfact" translation_description="Fun fact about Scheat shown in the info card. Translate this text.">シェアトは半規則型変光星で、数週間から数ヶ月の周期で明るさが変化します！</string>
+    <string name="object_info_scheat_distance" translation_description="Distance to Scheat shown in the info card. Translate units if appropriate for your locale.">196光年</string>
+    <string name="object_info_scheat_size" translation_description="Physical size of Scheat shown in the info card. Translate units if appropriate for your locale.">110太陽半径</string>
+    <string name="object_info_scheat_mass" translation_description="Mass of Scheat in scientific notation — no translation needed.">2.1太陽質量</string>
+    <string name="object_info_nunki_description" translation_description="Description of Nunki shown in the info card. Translate this text.">ヌンキはいて座で2番目に明るい恒星で、現在も使われている最古の恒星名です。</string>
+    <string name="object_info_nunki_funfact" translation_description="Fun fact about Nunki shown in the info card. Translate this text.">ヌンキという名前は古代バビロニアに由来し、天球上でエリドゥの都市を表していました！</string>
+    <string name="object_info_nunki_distance" translation_description="Distance to Nunki shown in the info card. Translate units if appropriate for your locale.">228光年</string>
+    <string name="object_info_nunki_size" translation_description="Physical size of Nunki shown in the info card. Translate units if appropriate for your locale.">4.5太陽半径</string>
+    <string name="object_info_nunki_mass" translation_description="Mass of Nunki in scientific notation — no translation needed.">7.8太陽質量</string>
+    <string name="object_info_diphda_description" translation_description="Description of Diphda shown in the info card. Translate this text.">ディフダ（くじら座ベータ星）はくじら座で最も明るい恒星で、秋を代表する星です。</string>
+    <string name="object_info_diphda_funfact" translation_description="Fun fact about Diphda shown in the info card. Translate this text.">ディフダは空の比較的星の少ない領域に孤立して見えるため、非常に明るくはないものの航海者にとって有用でした！</string>
+    <string name="object_info_diphda_distance" translation_description="Distance to Diphda shown in the info card. Translate units if appropriate for your locale.">96光年</string>
+    <string name="object_info_diphda_size" translation_description="Physical size of Diphda shown in the info card. Translate units if appropriate for your locale.">18太陽半径</string>
+    <string name="object_info_diphda_mass" translation_description="Mass of Diphda in scientific notation — no translation needed.">2.8太陽質量</string>
+    <!-- ==================== MESSIER OBJECTS ==================== -->
+    <!-- Note: Object names (m1, m13, etc.) are defined in celestial_objects.xml -->
+    <!-- M1 - Crab Nebula -->
+    <string name="object_info_m1_description" translation_description="Description of M1 shown in the info card. Translate this text.">かに星雲はおうし座にある超新星残骸で、1054年に中国の天文学者が記録した恒星の爆発の結果です。</string>
+    <string name="object_info_m1_funfact" translation_description="Fun fact about M1 shown in the info card. Translate this text.">かに星雲の中心には毎秒30回回転するパルサーがあります。爆発した恒星の潰れた核です！</string>
+    <string name="object_info_m1_distance" translation_description="Distance to M1 shown in the info card. Translate units if appropriate for your locale.">6,500光年</string>
+    <string name="object_info_m1_size" translation_description="Physical size of M1 shown in the info card. Translate units if appropriate for your locale.">11光年（直径）</string>
+    <!-- M13 - Hercules Cluster -->
+    <string name="object_info_m13_description" translation_description="Description of M13 shown in the info card. Translate this text.">M13はヘルクレス座にある壮大な球状星団で、約30万個の恒星を含み、北天で最も明るい球状星団の一つです。</string>
+    <string name="object_info_m13_funfact" translation_description="Fun fact about M13 shown in the info card. Translate this text.">1974年、地球外知的生命体へのメッセージとしてアレシボ・メッセージがM13に向けて送信されました！</string>
+    <string name="object_info_m13_distance" translation_description="Distance to M13 shown in the info card. Translate units if appropriate for your locale.">22,200光年</string>
+    <string name="object_info_m13_size" translation_description="Physical size of M13 shown in the info card. Translate units if appropriate for your locale.">145光年（直径）</string>
+    <!-- M31 - Andromeda Galaxy -->
+    <string name="object_info_m31_description" translation_description="Description of M31 shown in the info card. Translate this text.">アンドロメダ銀河は天の川銀河に最も近い大型渦巻銀河で、肉眼で見える最も遠い天体の一つです。</string>
+    <string name="object_info_m31_funfact" translation_description="Fun fact about M31 shown in the info card. Translate this text.">アンドロメダ銀河は秒速110kmで私たちに近づいており、約45億年後に天の川銀河と衝突します！</string>
+    <string name="object_info_m31_distance" translation_description="Distance to M31 shown in the info card. Translate units if appropriate for your locale.">250万光年</string>
+    <string name="object_info_m31_size" translation_description="Physical size of M31 shown in the info card. Translate units if appropriate for your locale.">22万光年（直径）</string>
+    <string name="object_info_m31_mass" translation_description="Mass of M31 in scientific notation — no translation needed.">1.5兆太陽質量</string>
+    <!-- M42 - Orion Nebula -->
+    <string name="object_info_m42_description" translation_description="Description of M42 shown in the info card. Translate this text.">オリオン大星雲は肉眼で見える散光星雲で、夜空で最も多く撮影される天体の一つです。</string>
+    <string name="object_info_m42_funfact" translation_description="Fun fact about M42 shown in the info card. Translate this text.">オリオン大星雲はまさに今、新しい恒星が誕生している星の揺りかごです。700個以上の恒星が内部で形成中です！</string>
+    <string name="object_info_m42_distance" translation_description="Distance to M42 shown in the info card. Translate units if appropriate for your locale.">1,344光年</string>
+    <string name="object_info_m42_size" translation_description="Physical size of M42 shown in the info card. Translate units if appropriate for your locale.">24光年（直径）</string>
+    <!-- M45 - Pleiades -->
+    <string name="object_info_m45_description" translation_description="Description of M45 shown in the info card. Translate this text.">プレアデス星団はおうし座にある散開星団で、七姉妹とも呼ばれ、古来より肉眼で観察されてきました。</string>
+    <string name="object_info_m45_funfact" translation_description="Fun fact about M45 shown in the info card. Translate this text.">プレアデス星団は地球に最も近い星団の一つで、ほぼすべての古代文明で認識されていました！</string>
+    <string name="object_info_m45_distance" translation_description="Distance to M45 shown in the info card. Translate units if appropriate for your locale.">444光年</string>
+    <string name="object_info_m45_size" translation_description="Physical size of M45 shown in the info card. Translate units if appropriate for your locale.">17光年（直径）</string>
+    <!-- M51 - Whirlpool Galaxy -->
+    <string name="object_info_m51_description" translation_description="Description of M51 shown in the info card. Translate this text.">子持ち銀河はりょうけん座にあるグランドデザイン渦巻銀河で、見事な渦状腕と伴銀河で有名です。</string>
+    <string name="object_info_m51_funfact" translation_description="Fun fact about M51 shown in the info card. Translate this text.">子持ち銀河は渦巻構造が初めて認識された銀河で、1845年にロス卿によって発見されました！</string>
+    <string name="object_info_m51_distance" translation_description="Distance to M51 shown in the info card. Translate units if appropriate for your locale.">2,300万光年</string>
+    <string name="object_info_m51_size" translation_description="Physical size of M51 shown in the info card. Translate units if appropriate for your locale.">76,000光年（直径）</string>
+    <!-- M57 - Ring Nebula -->
+    <string name="object_info_m57_description" translation_description="Description of M57 shown in the info card. Translate this text.">環状星雲はこと座にある惑星状星雲で、太陽のような恒星が死ぬ際に放出されたガスの輝く殻です。</string>
+    <string name="object_info_m57_funfact" translation_description="Fun fact about M57 shown in the info card. Translate this text.">環状星雲は秒速約20kmで膨張しており、今後1万年かけて宇宙空間に拡散していきます！</string>
+    <string name="object_info_m57_distance" translation_description="Distance to M57 shown in the info card. Translate units if appropriate for your locale.">2,300光年</string>
+    <string name="object_info_m57_size" translation_description="Physical size of M57 shown in the info card. Translate units if appropriate for your locale.">1.3光年（直径）</string>
+    <!-- M81 - Bode\'s Galaxy -->
+    <string name="object_info_m81_description" translation_description="Description of M81 shown in the info card. Translate this text.">M81はおおぐま座にあるグランドデザイン渦巻銀河で、地球から見える最も明るい銀河の一つです。</string>
+    <string name="object_info_m81_funfact" translation_description="Fun fact about M81 shown in the info card. Translate this text.">M81は隣の銀河M82と重力的に相互作用しており、M82で激しい星形成活動を引き起こしています！</string>
+    <string name="object_info_m81_distance" translation_description="Distance to M81 shown in the info card. Translate units if appropriate for your locale.">1,200万光年</string>
+    <string name="object_info_m81_size" translation_description="Physical size of M81 shown in the info card. Translate units if appropriate for your locale.">9万光年（直径）</string>
+    <!-- M82 - Cigar Galaxy -->
+    <string name="object_info_m82_description" translation_description="Description of M82 shown in the info card. Translate this text.">葉巻銀河はおおぐま座にあるスターバースト銀河で、横から見た姿と激しい星形成活動で知られています。</string>
+    <string name="object_info_m82_funfact" translation_description="Fun fact about M82 shown in the info card. Translate this text.">M82は天の川銀河の10倍の速さで恒星を形成しています。隣のM81との重力相互作用が原因です！</string>
+    <string name="object_info_m82_distance" translation_description="Distance to M82 shown in the info card. Translate units if appropriate for your locale.">1,200万光年</string>
+    <string name="object_info_m82_size" translation_description="Physical size of M82 shown in the info card. Translate units if appropriate for your locale.">37,000光年（直径）</string>
+    <!-- M101 - Pinwheel Galaxy -->
+    <string name="object_info_m101_description" translation_description="Description of M101 shown in the info card. Translate this text.">回転花火銀河はおおぐま座にある正面向きの渦巻銀河で、最大級の渦巻銀河の一つです。</string>
+    <string name="object_info_m101_funfact" translation_description="Fun fact about M101 shown in the info card. Translate this text.">回転花火銀河には1兆個以上の恒星があり、過去の銀河同士の相互作用により非対称な渦状腕を持っています！</string>
+    <string name="object_info_m101_distance" translation_description="Distance to M101 shown in the info card. Translate units if appropriate for your locale.">2,100万光年</string>
+    <string name="object_info_m101_size" translation_description="Physical size of M101 shown in the info card. Translate units if appropriate for your locale.">17万光年（直径）</string>
+    <!-- M104 - Sombrero Galaxy -->
+    <string name="object_info_m104_description" translation_description="Description of M104 shown in the info card. Translate this text.">ソンブレロ銀河はおとめ座にある渦巻銀河で、明るい核と暗いダストレーンを持つ大きな中心バルジが特徴です。</string>
+    <string name="object_info_m104_funfact" translation_description="Fun fact about M104 shown in the info card. Translate this text.">ソンブレロ銀河の中心には、太陽の10億倍の質量を持つ超大質量ブラックホールがあると推定されています！</string>
+    <string name="object_info_m104_distance" translation_description="Distance to M104 shown in the info card. Translate units if appropriate for your locale.">3,100万光年</string>
+    <string name="object_info_m104_size" translation_description="Physical size of M104 shown in the info card. Translate units if appropriate for your locale.">5万光年（直径）</string>
+    <!-- M8 - Lagoon Nebula -->
+    <string name="object_info_m8_description" translation_description="Description of M8 shown in the info card. Translate this text.">干潟星雲はいて座にある巨大な星間雲で、夏の空で最も美しく明るい星雲の一つです。</string>
+    <string name="object_info_m8_funfact" translation_description="Fun fact about M8 shown in the info card. Translate this text.">干潟星雲にはハーシェル36という、最も大質量で明るい恒星の一つが含まれています！</string>
+    <string name="object_info_m8_distance" translation_description="Distance to M8 shown in the info card. Translate units if appropriate for your locale.">4,100光年</string>
+    <string name="object_info_m8_size" translation_description="Physical size of M8 shown in the info card. Translate units if appropriate for your locale.">55光年（直径）</string>
+    <!-- M17 - Omega Nebula -->
+    <string name="object_info_m17_description" translation_description="Description of M17 shown in the info card. Translate this text.">オメガ星雲（白鳥星雲とも）はいて座にある星形成領域で、最も明るい輝線星雲の一つです。</string>
+    <string name="object_info_m17_funfact" translation_description="Fun fact about M17 shown in the info card. Translate this text.">オメガ星雲のガスとダストの中には、約800個の若い恒星からなる散開星団が隠されています！</string>
+    <string name="object_info_m17_distance" translation_description="Distance to M17 shown in the info card. Translate units if appropriate for your locale.">5,500光年</string>
+    <string name="object_info_m17_size" translation_description="Physical size of M17 shown in the info card. Translate units if appropriate for your locale.">15光年（直径）</string>
+    <!-- M20 - Trifid Nebula -->
+    <string name="object_info_m20_description" translation_description="Description of M20 shown in the info card. Translate this text.">三裂星雲はいて座にある輝線星雲、反射星雲、暗黒星雲が組み合わさった天体で、暗いダストレーンによって分割されています。</string>
+    <string name="object_info_m20_funfact" translation_description="Fun fact about M20 shown in the info card. Translate this text.">三裂星雲は一つの天体の中に3種類の星雲を示しています：赤い輝線星雲、青い反射星雲、そして暗い吸収星雲です！</string>
+    <string name="object_info_m20_distance" translation_description="Distance to M20 shown in the info card. Translate units if appropriate for your locale.">5,200光年</string>
+    <string name="object_info_m20_size" translation_description="Physical size of M20 shown in the info card. Translate units if appropriate for your locale.">20光年（直径）</string>
+    <!-- M27 - Dumbbell Nebula -->
+    <string name="object_info_m27_description" translation_description="Description of M27 shown in the info card. Translate this text.">亜鈴状星雲はこぎつね座にある惑星状星雲で、史上初めて発見された惑星状星雲です。</string>
+    <string name="object_info_m27_funfact" translation_description="Fun fact about M27 shown in the info card. Translate this text.">亜鈴状星雲は1764年にシャルル・メシエによって発見され、史上初めて発見された惑星状星雲となりました！</string>
+    <string name="object_info_m27_distance" translation_description="Distance to M27 shown in the info card. Translate units if appropriate for your locale.">1,360光年</string>
+    <string name="object_info_m27_size" translation_description="Physical size of M27 shown in the info card. Translate units if appropriate for your locale.">2.5光年（直径）</string>
+    <!-- M33 - Triangulum Galaxy -->
+    <string name="object_info_m33_description" translation_description="Description of M33 shown in the info card. Translate this text.">さんかく座銀河は局部銀河群で3番目に大きな銀河で、さんかく座に見える渦巻銀河です。</string>
+    <string name="object_info_m33_funfact" translation_description="Fun fact about M33 shown in the info card. Translate this text.">さんかく座銀河は遠い衛星銀河としてアンドロメダ銀河に重力的に束縛されている可能性があります！</string>
+    <string name="object_info_m33_distance" translation_description="Distance to M33 shown in the info card. Translate units if appropriate for your locale.">270万光年</string>
+    <string name="object_info_m33_size" translation_description="Physical size of M33 shown in the info card. Translate units if appropriate for your locale.">6万光年（直径）</string>
+    <!-- M35 - Open Cluster in Gemini -->
+    <string name="object_info_m35_description" translation_description="Description of M35 shown in the info card. Translate this text.">M35はふたご座にある大きな散開星団で、条件がよければ肉眼でも見えます。</string>
+    <string name="object_info_m35_funfact" translation_description="Fun fact about M35 shown in the info card. Translate this text.">M35は約200個の恒星を含み、同じ視野内にはるかに古い星団NGC 2158が近くに見えます！</string>
+    <string name="object_info_m35_distance" translation_description="Distance to M35 shown in the info card. Translate units if appropriate for your locale.">2,800光年</string>
+    <string name="object_info_m35_size" translation_description="Physical size of M35 shown in the info card. Translate units if appropriate for your locale.">24光年（直径）</string>
+    <!-- M44 - Beehive Cluster -->
+    <string name="object_info_m44_description" translation_description="Description of M44 shown in the info card. Translate this text.">プレセペ星団（ビーハイブ星団）はかに座にある散開星団で、古代から知られ肉眼で見ることができます。</string>
+    <string name="object_info_m44_funfact" translation_description="Fun fact about M44 shown in the info card. Translate this text.">古代の天文学者はプレセペ星団の見え方で天気を予測していました。見えなくなると雨が近いとされていたのです！</string>
+    <string name="object_info_m44_distance" translation_description="Distance to M44 shown in the info card. Translate units if appropriate for your locale.">577光年</string>
+    <string name="object_info_m44_size" translation_description="Physical size of M44 shown in the info card. Translate units if appropriate for your locale.">15光年（直径）</string>
+    <!-- M78 - Reflection Nebula -->
+    <string name="object_info_m78_description" translation_description="Description of M78 shown in the info card. Translate this text.">M78はオリオン座のベルトの近くにある、全天で最も明るい散光反射星雲です。</string>
+    <string name="object_info_m78_funfact" translation_description="Fun fact about M78 shown in the info card. Translate this text.">M78には約45個の若いおうし座T型変光星があります。まだ主系列に向かって収縮中のとても若い恒星です！</string>
+    <string name="object_info_m78_distance" translation_description="Distance to M78 shown in the info card. Translate units if appropriate for your locale.">1,600光年</string>
+    <string name="object_info_m78_size" translation_description="Physical size of M78 shown in the info card. Translate units if appropriate for your locale.">4光年（直径）</string>
+    <!-- M83 - Southern Pinwheel Galaxy -->
+    <string name="object_info_m83_description" translation_description="Description of M83 shown in the info card. Translate this text.">南の回転花火銀河はうみへび座にある棒渦巻銀河で、最も近くて明るい棒渦巻銀河の一つです。</string>
+    <string name="object_info_m83_funfact" translation_description="Fun fact about M83 shown in the info card. Translate this text.">M83では6個の超新星が観測されており、超新星の発生数で銀河の中の記録を持っています！</string>
+    <string name="object_info_m83_distance" translation_description="Distance to M83 shown in the info card. Translate units if appropriate for your locale.">1,500万光年</string>
+    <string name="object_info_m83_size" translation_description="Physical size of M83 shown in the info card. Translate units if appropriate for your locale.">55,000光年（直径）</string>
+    <!-- M3 - Globular Cluster -->
+    <string name="object_info_m3_description" translation_description="Description of M3 shown in the info card. Translate this text.">M3は全天で最大かつ最も明るい球状星団の一つで、りょうけん座にあります。</string>
+    <string name="object_info_m3_funfact" translation_description="Fun fact about M3 shown in the info card. Translate this text.">M3は約50万個の恒星を含み、推定年齢は114億歳です！</string>
+    <string name="object_info_m3_distance" translation_description="Distance to M3 shown in the info card. Translate units if appropriate for your locale.">33,900光年</string>
+    <string name="object_info_m3_size" translation_description="Physical size of M3 shown in the info card. Translate units if appropriate for your locale.">180光年（直径）</string>
+    <!-- M5 - Globular Cluster -->
+    <string name="object_info_m5_description" translation_description="Description of M5 shown in the info card. Translate this text.">M5はへび座にある球状星団で、約130億歳と最古級の球状星団の一つです。</string>
+    <string name="object_info_m5_funfact" translation_description="Fun fact about M5 shown in the info card. Translate this text.">M5は10万個以上の恒星を含み、球状星団の中で最も多くの変光星が知られています！</string>
+    <string name="object_info_m5_distance" translation_description="Distance to M5 shown in the info card. Translate units if appropriate for your locale.">24,500光年</string>
+    <string name="object_info_m5_size" translation_description="Physical size of M5 shown in the info card. Translate units if appropriate for your locale.">165光年（直径）</string>
+    <!-- M15 - Globular Cluster -->
+    <string name="object_info_m15_description" translation_description="Description of M15 shown in the info card. Translate this text.">M15はペガスス座にある高密度の球状星団で、球状星団としては珍しく中心部に惑星状星雲を持っています。</string>
+    <string name="object_info_m15_funfact" translation_description="Fun fact about M15 shown in the info card. Translate this text.">M15の中心には太陽の約4,000倍の質量を持つブラックホールがあるかもしれません。ただし、まだ議論中です！</string>
+    <string name="object_info_m15_distance" translation_description="Distance to M15 shown in the info card. Translate units if appropriate for your locale.">33,600光年</string>
+    <string name="object_info_m15_size" translation_description="Physical size of M15 shown in the info card. Translate units if appropriate for your locale.">175光年（直径）</string>
+    <!-- M22 - Globular Cluster -->
+    <string name="object_info_m22_description" translation_description="Description of M22 shown in the info card. Translate this text.">M22は地球に最も近く明るい球状星団の一つで、いて座の銀河中心付近にあります。</string>
+    <string name="object_info_m22_funfact" translation_description="Fun fact about M22 shown in the info card. Translate this text.">M22は最も早く発見された球状星団の一つで、1665年にアブラハム・イーレによって発見されました！</string>
+    <string name="object_info_m22_distance" translation_description="Distance to M22 shown in the info card. Translate units if appropriate for your locale.">10,600光年</string>
+    <string name="object_info_m22_size" translation_description="Physical size of M22 shown in the info card. Translate units if appropriate for your locale.">70光年（直径）</string>
+    <!-- M4 - Globular Cluster -->
+    <string name="object_info_m4_description" translation_description="Description of M4 shown in the info card. Translate this text.">M4は地球に最も近い球状星団の一つで、さそり座のアンタレスの近くにあり見つけやすいです。</string>
+    <string name="object_info_m4_funfact" translation_description="Fun fact about M4 shown in the info card. Translate this text.">M4には推定130億歳の白色矮星があり、天の川銀河で最も古い恒星の一つです！</string>
+    <string name="object_info_m4_distance" translation_description="Distance to M4 shown in the info card. Translate units if appropriate for your locale.">7,200光年</string>
+    <string name="object_info_m4_size" translation_description="Physical size of M4 shown in the info card. Translate units if appropriate for your locale.">75光年（直径）</string>
+    <!-- M7 - Ptolemy Cluster -->
+    <string name="object_info_m7_description" translation_description="Description of M7 shown in the info card. Translate this text.">プトレマイオスの星団はさそり座にある明るい散開星団で、肉眼で見える最も目立つ星団の一つです。</string>
+    <string name="object_info_m7_funfact" translation_description="Fun fact about M7 shown in the info card. Translate this text.">M7は紀元130年にプトレマイオスによって初めて記録され、約2,000年にわたって観測されてきました！</string>
+    <string name="object_info_m7_distance" translation_description="Distance to M7 shown in the info card. Translate units if appropriate for your locale.">980光年</string>
+    <string name="object_info_m7_size" translation_description="Physical size of M7 shown in the info card. Translate units if appropriate for your locale.">25光年（直径）</string>
+    <!-- M6 - Butterfly Cluster -->
+    <string name="object_info_m6_description" translation_description="Description of M6 shown in the info card. Translate this text.">バタフライ星団はさそり座にある散開星団で、最も明るい恒星が蝶のような配置をしていることから名付けられました。</string>
+    <string name="object_info_m6_funfact" translation_description="Fun fact about M6 shown in the info card. Translate this text.">M6は約1億年前に形成され、300個以上の恒星を含み、オレンジ巨星のBMさそり座星もあります！</string>
+    <string name="object_info_m6_distance" translation_description="Distance to M6 shown in the info card. Translate units if appropriate for your locale.">1,600光年</string>
+    <string name="object_info_m6_size" translation_description="Physical size of M6 shown in the info card. Translate units if appropriate for your locale.">25光年（直径）</string>
+    <!-- M11 - Wild Duck Cluster -->
+    <string name="object_info_m11_description" translation_description="Description of M11 shown in the info card. Translate this text.">野鴨星団はたて座にある豊富な散開星団で、最もコンパクトな散開星団の一つです。</string>
+    <string name="object_info_m11_funfact" translation_description="Fun fact about M11 shown in the info card. Translate this text.">M11は約3,000個の恒星が小さな領域に密集しており、望遠鏡で見ると壮観です！</string>
+    <string name="object_info_m11_distance" translation_description="Distance to M11 shown in the info card. Translate units if appropriate for your locale.">6,200光年</string>
+    <string name="object_info_m11_size" translation_description="Physical size of M11 shown in the info card. Translate units if appropriate for your locale.">20光年（直径）</string>
+    <!-- M16 - Eagle Nebula -->
+    <string name="object_info_m16_description" translation_description="Description of M16 shown in the info card. Translate this text.">わし星雲はへび座にある星形成領域で、ハッブル宇宙望遠鏡が撮影した「創造の柱」で有名です。</string>
+    <string name="object_info_m16_funfact" translation_description="Fun fact about M16 shown in the info card. Translate this text.">M16の「創造の柱」は約5光年の高さがあり、近くの恒星からの放射によってゆっくり侵食されています！</string>
+    <string name="object_info_m16_distance" translation_description="Distance to M16 shown in the info card. Translate units if appropriate for your locale.">7,000光年</string>
+    <string name="object_info_m16_size" translation_description="Physical size of M16 shown in the info card. Translate units if appropriate for your locale.">70光年（直径）</string>
+    <!-- M2 - Globular Cluster -->
+    <string name="object_info_m2_description" translation_description="Description of M2 shown in the info card. Translate this text.">M2はみずがめ座にある、最大かつ最も星が密集した球状星団の一つです。</string>
+    <string name="object_info_m2_funfact" translation_description="Fun fact about M2 shown in the info card. Translate this text.">M2は約15万個の恒星を含み、直径175光年という最大級の球状星団です！</string>
+    <string name="object_info_m2_distance" translation_description="Distance to M2 shown in the info card. Translate units if appropriate for your locale.">37,500光年</string>
+    <string name="object_info_m2_size" translation_description="Physical size of M2 shown in the info card. Translate units if appropriate for your locale.">175光年（直径）</string>
+    <!-- M10 - Globular Cluster -->
+    <string name="object_info_m10_description" translation_description="Description of M10 shown in the info card. Translate this text.">M10はへびつかい座にある明るい球状星団で、太陽系に比較的近い球状星団の一つです。</string>
+    <string name="object_info_m10_funfact" translation_description="Fun fact about M10 shown in the info card. Translate this text.">M10は秒速70km以上で私たちに接近しており、核の星の集中度が異常に低いです！</string>
+    <string name="object_info_m10_distance" translation_description="Distance to M10 shown in the info card. Translate units if appropriate for your locale.">14,300光年</string>
+    <string name="object_info_m10_size" translation_description="Physical size of M10 shown in the info card. Translate units if appropriate for your locale.">83光年（直径）</string>
+    <!-- M12 - Globular Cluster -->
+    <string name="object_info_m12_description" translation_description="Description of M12 shown in the info card. Translate this text.">M12はへびつかい座にある球状星団で、中心部の星の集中度が比較的低いのが特徴です。</string>
+    <string name="object_info_m12_funfact" translation_description="Fun fact about M12 shown in the info card. Translate this text.">M12は何十億年にもわたる天の川銀河の重力により、多くの軽い恒星を失ってしまいました！</string>
+    <string name="object_info_m12_distance" translation_description="Distance to M12 shown in the info card. Translate units if appropriate for your locale.">15,700光年</string>
+    <string name="object_info_m12_size" translation_description="Physical size of M12 shown in the info card. Translate units if appropriate for your locale.">75光年（直径）</string>
+    <!-- M14 - Globular Cluster -->
+    <string name="object_info_m14_description" translation_description="Description of M14 shown in the info card. Translate this text.">M14はへびつかい座にある球状星団で、数十万個の恒星を含んでいます。</string>
+    <string name="object_info_m14_funfact" translation_description="Fun fact about M14 shown in the info card. Translate this text.">1938年にM14で新星が出現しましたが、古い写真乾板が調べられた1964年まで発見されませんでした！</string>
+    <string name="object_info_m14_distance" translation_description="Distance to M14 shown in the info card. Translate units if appropriate for your locale.">30,300光年</string>
+    <string name="object_info_m14_size" translation_description="Physical size of M14 shown in the info card. Translate units if appropriate for your locale.">100光年（直径）</string>
+    <!-- M53 - Globular Cluster -->
+    <string name="object_info_m53_description" translation_description="Description of M53 shown in the info card. Translate this text.">M53はかみのけ座にある球状星団で、銀河の外縁部にある球状星団の一つです。</string>
+    <string name="object_info_m53_funfact" translation_description="Fun fact about M53 shown in the info card. Translate this text.">M53は銀河中心から6万光年も離れており、最も遠い球状星団の一つです！</string>
+    <string name="object_info_m53_distance" translation_description="Distance to M53 shown in the info card. Translate units if appropriate for your locale.">58,000光年</string>
+    <string name="object_info_m53_size" translation_description="Physical size of M53 shown in the info card. Translate units if appropriate for your locale.">220光年（直径）</string>
+    <!-- M64 - Black Eye Galaxy -->
+    <string name="object_info_m64_description" translation_description="Description of M64 shown in the info card. Translate this text.">黒眼銀河はかみのけ座にある渦巻銀河で、核の周りに暗いダストの帯があることで有名です。</string>
+    <string name="object_info_m64_funfact" translation_description="Fun fact about M64 shown in the info card. Translate this text.">M64の外側の領域は内側と反対方向に回転しています。過去に銀河同士が合体した結果と考えられています！</string>
+    <string name="object_info_m64_distance" translation_description="Distance to M64 shown in the info card. Translate units if appropriate for your locale.">1,700万光年</string>
+    <string name="object_info_m64_size" translation_description="Physical size of M64 shown in the info card. Translate units if appropriate for your locale.">7万光年（直径）</string>
+    <!-- M65 - Galaxy in Leo -->
+    <string name="object_info_m65_description" translation_description="Description of M65 shown in the info card. Translate this text.">M65はしし座にある渦巻銀河で、M66、NGC 3628とともに有名なしし座のトリプレットを構成しています。</string>
+    <string name="object_info_m65_funfact" translation_description="Fun fact about M65 shown in the info card. Translate this text.">しし座のトリプレットの銀河は重力的に相互作用しており、潮汐尾やゆがんだ構造を生み出しています！</string>
+    <string name="object_info_m65_distance" translation_description="Distance to M65 shown in the info card. Translate units if appropriate for your locale.">3,500万光年</string>
+    <string name="object_info_m65_size" translation_description="Physical size of M65 shown in the info card. Translate units if appropriate for your locale.">9万光年（直径）</string>
+    <!-- M66 - Galaxy in Leo -->
+    <string name="object_info_m66_description" translation_description="Description of M66 shown in the info card. Translate this text.">M66はしし座のトリプレットで最大の銀河で、非対称な渦状腕を持つ渦巻銀河です。</string>
+    <string name="object_info_m66_funfact" translation_description="Fun fact about M66 shown in the info card. Translate this text.">M66の非対称な外観は、隣のM65とNGC 3628との重力相互作用によるものです！</string>
+    <string name="object_info_m66_distance" translation_description="Distance to M66 shown in the info card. Translate units if appropriate for your locale.">3,600万光年</string>
+    <string name="object_info_m66_size" translation_description="Physical size of M66 shown in the info card. Translate units if appropriate for your locale.">95,000光年（直径）</string>
+    <!-- M74 - Phantom Galaxy -->
+    <string name="object_info_m74_description" translation_description="Description of M74 shown in the info card. Translate this text.">幽霊銀河はうお座にある正面向きの渦巻銀河で、完璧なグランドデザイン渦巻構造で知られています。</string>
+    <string name="object_info_m74_funfact" translation_description="Fun fact about M74 shown in the info card. Translate this text.">M74は表面輝度が非常に低いため幽霊銀河と呼ばれ、観測が難しい天体です！</string>
+    <string name="object_info_m74_distance" translation_description="Distance to M74 shown in the info card. Translate units if appropriate for your locale.">3,200万光年</string>
+    <string name="object_info_m74_size" translation_description="Physical size of M74 shown in the info card. Translate units if appropriate for your locale.">95,000光年（直径）</string>
+    <!-- M77 - Cetus A -->
+    <string name="object_info_m77_description" translation_description="Description of M77 shown in the info card. Translate this text.">M77はくじら座にある棒渦巻銀河で、超大質量ブラックホールによる活動銀河核を持っています。</string>
+    <string name="object_info_m77_funfact" translation_description="Fun fact about M77 shown in the info card. Translate this text.">M77には太陽の1500万倍の質量を持つブラックホールを含む活動銀河核があります！</string>
+    <string name="object_info_m77_distance" translation_description="Distance to M77 shown in the info card. Translate units if appropriate for your locale.">4,700万光年</string>
+    <string name="object_info_m77_size" translation_description="Physical size of M77 shown in the info card. Translate units if appropriate for your locale.">12万光年（直径）</string>
+    <!-- M92 - Globular Cluster -->
+    <string name="object_info_m92_description" translation_description="Description of M92 shown in the info card. Translate this text.">M92はヘルクレス座にある明るい球状星団ですが、近くにある有名なM13の影に隠れがちです。</string>
+    <string name="object_info_m92_funfact" translation_description="Fun fact about M92 shown in the info card. Translate this text.">M92は約142億歳と最古級の球状星団で、宇宙の年齢とほぼ同じです！</string>
+    <string name="object_info_m92_distance" translation_description="Distance to M92 shown in the info card. Translate units if appropriate for your locale.">26,700光年</string>
+    <string name="object_info_m92_size" translation_description="Physical size of M92 shown in the info card. Translate units if appropriate for your locale.">109光年（直径）</string>
+    <!-- M94 - Cat\'s Eye Galaxy -->
+    <string name="object_info_m94_description" translation_description="Description of M94 shown in the info card. Translate this text.">M94はりょうけん座にある渦巻銀河で、活発な星形成が起きている明るい内側のリングがあります。</string>
+    <string name="object_info_m94_funfact" translation_description="Fun fact about M94 shown in the info card. Translate this text.">M94の内側のリングはスターバーストリングで、非常に高い速度で新しい恒星が誕生しています！</string>
+    <string name="object_info_m94_distance" translation_description="Distance to M94 shown in the info card. Translate units if appropriate for your locale.">1,600万光年</string>
+    <string name="object_info_m94_size" translation_description="Physical size of M94 shown in the info card. Translate units if appropriate for your locale.">5万光年（直径）</string>
+    <!-- M97 - Owl Nebula -->
+    <string name="object_info_m97_description" translation_description="Description of M97 shown in the info card. Translate this text.">ふくろう星雲はおおぐま座にある惑星状星雲で、2つの暗い斑点がふくろうの顔に見えることから名付けられました。</string>
+    <string name="object_info_m97_funfact" translation_description="Fun fact about M97 shown in the info card. Translate this text.">M97のふくろうの目のような暗い部分は、私たちの視線方向に沿った星雲内の三次元的な空洞です！</string>
+    <string name="object_info_m97_distance" translation_description="Distance to M97 shown in the info card. Translate units if appropriate for your locale.">2,030光年</string>
+    <string name="object_info_m97_size" translation_description="Physical size of M97 shown in the info card. Translate units if appropriate for your locale.">2光年（直径）</string>
+    <!-- M106 - Galaxy in Canes Venatici -->
+    <string name="object_info_m106_description" translation_description="Description of M106 shown in the info card. Translate this text.">M106はりょうけん座にある渦巻銀河で、中心のブラックホールからのジェットによる異常な渦状腕を持っています。</string>
+    <string name="object_info_m106_funfact" translation_description="Fun fact about M106 shown in the info card. Translate this text.">M106の核にはウォーターメーザーがあり、天文学者はそれを使って正確な距離を測定しています！</string>
+    <string name="object_info_m106_distance" translation_description="Distance to M106 shown in the info card. Translate units if appropriate for your locale.">2,350万光年</string>
+    <string name="object_info_m106_size" translation_description="Physical size of M106 shown in the info card. Translate units if appropriate for your locale.">13万5,000光年（直径）</string>
+    <!-- M109 - Barred Spiral Galaxy -->
+    <string name="object_info_m109_description" translation_description="Description of M109 shown in the info card. Translate this text.">M109はおおぐま座にある棒渦巻銀河で、その名を冠する銀河群の中で最も明るいメンバーです。</string>
+    <string name="object_info_m109_funfact" translation_description="Fun fact about M109 shown in the info card. Translate this text.">M109は北斗七星のフェクダの近くにあるため、見つけやすい銀河です！</string>
+    <string name="object_info_m109_distance" translation_description="Distance to M109 shown in the info card. Translate units if appropriate for your locale.">8,300万光年</string>
+    <string name="object_info_m109_size" translation_description="Physical size of M109 shown in the info card. Translate units if appropriate for your locale.">18万光年（直径）</string>
+    <!-- M110 - Satellite of Andromeda -->
+    <string name="object_info_m110_description" translation_description="Description of M110 shown in the info card. Translate this text.">M110はアンドロメダ銀河の衛星銀河である矮小楕円銀河で、メシエカタログに最後に追加された天体です。</string>
+    <string name="object_info_m110_funfact" translation_description="Fun fact about M110 shown in the info card. Translate this text.">M110は1773年にメシエによって観測されていましたが、カタログに追加されたのは1966年になってからでした！</string>
+    <string name="object_info_m110_distance" translation_description="Distance to M110 shown in the info card. Translate units if appropriate for your locale.">270万光年</string>
+    <string name="object_info_m110_size" translation_description="Physical size of M110 shown in the info card. Translate units if appropriate for your locale.">17,000光年（直径）</string>
+    <!-- M32 - Satellite of Andromeda -->
+    <string name="object_info_m32_description" translation_description="Description of M32 shown in the info card. Translate this text.">M32はアンドロメダ銀河の近い衛星銀河である、コンパクトな矮小楕円銀河です。</string>
+    <string name="object_info_m32_funfact" translation_description="Fun fact about M32 shown in the info card. Translate this text.">M32は史上初めて発見された楕円銀河で、かつてはアンドロメダ銀河に剥ぎ取られる前はもっと大きな渦巻銀河だったかもしれません！</string>
+    <string name="object_info_m32_distance" translation_description="Distance to M32 shown in the info card. Translate units if appropriate for your locale.">250万光年</string>
+    <string name="object_info_m32_size" translation_description="Physical size of M32 shown in the info card. Translate units if appropriate for your locale.">6,500光年（直径）</string>
+    <!-- M49 - Elliptical Galaxy -->
+    <string name="object_info_m49_description" translation_description="Description of M49 shown in the info card. Translate this text.">M49はおとめ座にある巨大楕円銀河で、おとめ座銀河団で最も明るいメンバーです。</string>
+    <string name="object_info_m49_funfact" translation_description="Fun fact about M49 shown in the info card. Translate this text.">M49はおとめ座銀河団で最初に発見された銀河で、約6,000個の球状星団を持っています！</string>
+    <string name="object_info_m49_distance" translation_description="Distance to M49 shown in the info card. Translate units if appropriate for your locale.">5,500万光年</string>
+    <string name="object_info_m49_size" translation_description="Physical size of M49 shown in the info card. Translate units if appropriate for your locale.">16万光年（直径）</string>
+    <!-- M87 - Virgo A -->
+    <string name="object_info_m87_description" translation_description="Description of M87 shown in the info card. Translate this text.">M87はおとめ座にある超巨大楕円銀河で、近傍宇宙で最も質量の大きい銀河の一つです。</string>
+    <string name="object_info_m87_funfact" translation_description="Fun fact about M87 shown in the info card. Translate this text.">M87の中心ブラックホールは2019年にイベント・ホライズン・テレスコープで初めて撮影されました。質量は太陽の65億倍です！</string>
+    <string name="object_info_m87_distance" translation_description="Distance to M87 shown in the info card. Translate units if appropriate for your locale.">5,300万光年</string>
+    <string name="object_info_m87_size" translation_description="Physical size of M87 shown in the info card. Translate units if appropriate for your locale.">24万光年（直径）</string>
+    <string name="object_info_m87_mass" translation_description="Mass of M87 in scientific notation — no translation needed.">2.4兆太陽質量</string>
+    <!-- ==================== CONSTELLATIONS ==================== -->
+    <!-- Note: Constellation names are defined in celestial_objects.xml -->
+    <!-- Orion -->
+    <string name="object_info_orion_description" translation_description="Description of Orion shown in the info card. Translate this text.">オリオン座は両半球から見える最も有名な星座の一つで、3つの星からなる特徴的なベルトがあります。</string>
+    <string name="object_info_orion_funfact" translation_description="Fun fact about Orion shown in the info card. Translate this text.">オリオンのベルトは一方の方向でシリウス（最も明るい星）を、もう一方でアルデバラン（おうし座）を指しています！</string>
+    <string name="object_info_orion_size" translation_description="Physical size of Orion shown in the info card. Translate units if appropriate for your locale.">594平方度</string>
+    <!-- Ursa Major -->
+    <string name="object_info_ursa_major_description" translation_description="Description of Ursa Major shown in the info card. Translate this text.">おおぐま座は北斗七星のアステリズムを含み、北天で最もよく知られた星のパターンの一つです。</string>
+    <string name="object_info_ursa_major_funfact" translation_description="Fun fact about Ursa Major shown in the info card. Translate this text.">北斗七星の5つの星は物理的に関連があり、おおぐま座運動星団として宇宙空間を一緒に移動しています！</string>
+    <string name="object_info_ursa_major_size" translation_description="Physical size of Ursa Major shown in the info card. Translate units if appropriate for your locale.">1,280平方度</string>
+    <!-- Ursa Minor -->
+    <string name="object_info_ursa_minor_description" translation_description="Description of Ursa Minor shown in the info card. Translate this text.">こぐま座は小北斗とポラリス（北極星）を含み、地球の天の北極を示しています。</string>
+    <string name="object_info_ursa_minor_funfact" translation_description="Fun fact about Ursa Minor shown in the info card. Translate this text.">歳差運動により、ポラリスは永遠に北極星であり続けるわけではありません。1万4000年後にはベガがその役割を担います！</string>
+    <string name="object_info_ursa_minor_size" translation_description="Physical size of Ursa Minor shown in the info card. Translate units if appropriate for your locale.">256平方度</string>
+    <!-- Cassiopeia -->
+    <string name="object_info_cassiopeia_description" translation_description="Description of Cassiopeia shown in the info card. Translate this text.">カシオペヤ座は北天にあるW字型が特徴的な星座で、ギリシャ神話の虚栄心の強い女王にちなんで名付けられました。</string>
+    <string name="object_info_cassiopeia_funfact" translation_description="Fun fact about Cassiopeia shown in the info card. Translate this text.">1572年のティコ・ブラーエの超新星はカシオペヤ座に出現し、天が変化しうることを証明する助けとなりました！</string>
+    <string name="object_info_cassiopeia_size" translation_description="Physical size of Cassiopeia shown in the info card. Translate units if appropriate for your locale.">598平方度</string>
+    <!-- Scorpius -->
+    <string name="object_info_scorpius_description" translation_description="Description of Scorpius shown in the info card. Translate this text.">さそり座は赤色超巨星アンタレスが支配する、特徴的な曲がった尾を持つ目立つ黄道星座です。</string>
+    <string name="object_info_scorpius_funfact" translation_description="Fun fact about Scorpius shown in the info card. Translate this text.">神話では、さそり座は狩人オリオンが二度と刺されないように、空の反対側に置かれたとされています！</string>
+    <string name="object_info_scorpius_size" translation_description="Physical size of Scorpius shown in the info card. Translate units if appropriate for your locale.">497平方度</string>
+    <!-- Leo -->
+    <string name="object_info_leo_description" translation_description="Description of Leo shown in the info card. Translate this text.">しし座はレグルスを獅子の心臓に持ち、特徴的な「ししの大鎌」アステリズムがある黄道星座です。</string>
+    <string name="object_info_leo_funfact" translation_description="Fun fact about Leo shown in the info card. Translate this text.">11月のしし座流星群はしし座から放射するように見え、時に壮大な流星雨を見せることがあります！</string>
+    <string name="object_info_leo_size" translation_description="Physical size of Leo shown in the info card. Translate units if appropriate for your locale.">947平方度</string>
+    <!-- Gemini -->
+    <string name="object_info_gemini_description" translation_description="Description of Gemini shown in the info card. Translate this text.">ふたご座はギリシャ神話の双子の兄弟を表す、カストルとポルックスという明るい恒星が特徴です。</string>
+    <string name="object_info_gemini_funfact" translation_description="Fun fact about Gemini shown in the info card. Translate this text.">双子と呼ばれていますが、カストルは実は6つの恒星で、ポルックスはオレンジ巨星です。全く似ていません！</string>
+    <string name="object_info_gemini_size" translation_description="Physical size of Gemini shown in the info card. Translate units if appropriate for your locale.">514平方度</string>
+    <!-- Taurus -->
+    <string name="object_info_taurus_description" translation_description="Description of Taurus shown in the info card. Translate this text.">おうし座はプレアデスとヒアデスの星団、そして明るい恒星アルデバランを含む黄道星座です。</string>
+    <string name="object_info_taurus_funfact" translation_description="Fun fact about Taurus shown in the info card. Translate this text.">おうし座のかに星雲は、1054年に中国の天文学者が目撃・記録した超新星の残骸です！</string>
+    <string name="object_info_taurus_size" translation_description="Physical size of Taurus shown in the info card. Translate units if appropriate for your locale.">797平方度</string>
+    <!-- Virgo -->
+    <string name="object_info_virgo_description" translation_description="Description of Virgo shown in the info card. Translate this text.">おとめ座は全天で2番目に大きい星座で、2,000以上の銀河からなるおとめ座銀河団を含む黄道星座です。</string>
+    <string name="object_info_virgo_funfact" translation_description="Fun fact about Virgo shown in the info card. Translate this text.">おとめ座銀河団はおとめ座超銀河団の中心であり、私たちの天の川銀河もその一部です！</string>
+    <string name="object_info_virgo_size" translation_description="Physical size of Virgo shown in the info card. Translate units if appropriate for your locale.">1,294平方度</string>
+    <!-- Aquarius -->
+    <string name="object_info_aquarius_description" translation_description="Description of Aquarius shown in the info card. Translate this text.">みずがめ座は「海」と呼ばれる空の領域にある黄道星座で、水に関連する星座に囲まれています。</string>
+    <string name="object_info_aquarius_funfact" translation_description="Fun fact about Aquarius shown in the info card. Translate this text.">みずがめ座にはらせん星雲があります。わずか700光年と地球に最も近い惑星状星雲の一つです！</string>
+    <string name="object_info_aquarius_size" translation_description="Physical size of Aquarius shown in the info card. Translate units if appropriate for your locale.">980平方度</string>
+    <!-- Pisces -->
+    <string name="object_info_pisces_description" translation_description="Description of Pisces shown in the info card. Translate this text.">うお座は紐で結ばれた2匹の魚を表す大きな黄道星座で、春分点の位置を示しています。</string>
+    <string name="object_info_pisces_funfact" translation_description="Fun fact about Pisces shown in the info card. Translate this text.">春分点は現在うお座にあり、過去2,000年間ゆっくりとうお座の中を移動してきました！</string>
+    <string name="object_info_pisces_size" translation_description="Physical size of Pisces shown in the info card. Translate units if appropriate for your locale.">889平方度</string>
+    <!-- Aries -->
+    <string name="object_info_aries_description" translation_description="Description of Aries shown in the info card. Translate this text.">おひつじ座はかつて春分点があった黄道星座で、「春分点（白羊宮）」という言葉の由来です。</string>
+    <string name="object_info_aries_funfact" translation_description="Fun fact about Aries shown in the info card. Translate this text.">春分点は約2,000年前にうお座に移動しましたが、今でも「白羊宮」と呼ばれています！</string>
+    <string name="object_info_aries_size" translation_description="Physical size of Aries shown in the info card. Translate units if appropriate for your locale.">441平方度</string>
+    <!-- Cancer -->
+    <string name="object_info_cancer_description" translation_description="Description of Cancer shown in the info card. Translate this text.">かに座は黄道星座の中で最も暗い星座ですが、肉眼で見えるプレセペ星団（M44）を含んでいます。</string>
+    <string name="object_info_cancer_funfact" translation_description="Fun fact about Cancer shown in the info card. Translate this text.">北回帰線は夏至に太陽がかに座にあった時代に名付けられましたが、現在はおうし座にあります！</string>
+    <string name="object_info_cancer_size" translation_description="Physical size of Cancer shown in the info card. Translate units if appropriate for your locale.">506平方度</string>
+    <!-- Capricornus -->
+    <string name="object_info_capricornus_description" translation_description="Description of Capricornus shown in the info card. Translate this text.">やぎ座は半分が山羊、半分が魚という神話上の生き物を描いた古い黄道星座です。</string>
+    <string name="object_info_capricornus_funfact" translation_description="Fun fact about Capricornus shown in the info card. Translate this text.">やぎ座は最も古くから認識されている星座の一つで、3,000年以上前のバビロニアの星表に登場しています！</string>
+    <string name="object_info_capricornus_size" translation_description="Physical size of Capricornus shown in the info card. Translate units if appropriate for your locale.">414平方度</string>
+    <!-- Sagittarius -->
+    <string name="object_info_sagittarius_description" translation_description="Description of Sagittarius shown in the info card. Translate this text.">いて座は天の川銀河の中心方向を指しており、星雲や星団が豊富にあります。</string>
+    <string name="object_info_sagittarius_funfact" translation_description="Fun fact about Sagittarius shown in the info card. Translate this text.">いて座の方向を見ると、私たちの銀河の中心にある超大質量ブラックホール、いて座A*の方を見ていることになります！</string>
+    <string name="object_info_sagittarius_size" translation_description="Physical size of Sagittarius shown in the info card. Translate units if appropriate for your locale.">867平方度</string>
+    <!-- Libra -->
+    <string name="object_info_libra_description" translation_description="Description of Libra shown in the info card. Translate this text.">てんびん座は黄道星座の中で唯一、無生物を表す星座で、かつてはさそり座の一部と考えられていました。</string>
+    <string name="object_info_libra_funfact" translation_description="Fun fact about Libra shown in the info card. Translate this text.">てんびん座の主要な星は、かつて「さそりのはさみ」として知られていましたが、後に「正義の天秤」となりました！</string>
+    <string name="object_info_libra_size" translation_description="Physical size of Libra shown in the info card. Translate units if appropriate for your locale.">538平方度</string>
+    <!-- Cygnus -->
+    <string name="object_info_cygnus_description" translation_description="Description of Cygnus shown in the info card. Translate this text.">はくちょう座は天の川に沿って飛ぶ白鳥の姿をしており、北十字のアステリズムと明るい恒星デネブを含みます。</string>
+    <string name="object_info_cygnus_funfact" translation_description="Fun fact about Cygnus shown in the info card. Translate this text.">はくちょう座にあるはくちょう座X-1は、1970年代初頭に最初に広く認められたブラックホールです！</string>
+    <string name="object_info_cygnus_size" translation_description="Physical size of Cygnus shown in the info card. Translate units if appropriate for your locale.">804平方度</string>
+    <!-- Lyra -->
+    <string name="object_info_lyra_description" translation_description="Description of Lyra shown in the info card. Translate this text.">こと座は小さいながらも目立つ星座で、夜空で5番目に明るい恒星ベガを含んでいます。</string>
+    <string name="object_info_lyra_funfact" translation_description="Fun fact about Lyra shown in the info card. Translate this text.">ベガは紀元前約12,000年頃に北極星でしたが、地球の歳差運動により約1万2000年後に再び北極星になります！</string>
+    <string name="object_info_lyra_size" translation_description="Physical size of Lyra shown in the info card. Translate units if appropriate for your locale.">286平方度</string>
+    <!-- Aquila -->
+    <string name="object_info_aquila_description" translation_description="Description of Aquila shown in the info card. Translate this text.">わし座は天の赤道上にある星座で、中心に明るい恒星アルタイルがあります。</string>
+    <string name="object_info_aquila_funfact" translation_description="Fun fact about Aquila shown in the info card. Translate this text.">わし座のアルタイルは最も高速で自転する恒星の一つで、赤道で膨らむほど速く回転しています！</string>
+    <string name="object_info_aquila_size" translation_description="Physical size of Aquila shown in the info card. Translate units if appropriate for your locale.">652平方度</string>
+    <!-- Pegasus -->
+    <string name="object_info_pegasus_description" translation_description="Description of Pegasus shown in the info card. Translate this text.">ペガスス座は翼のある馬を表す大きな星座で、秋の代表的なアステリズム「ペガススの四辺形」があります。</string>
+    <string name="object_info_pegasus_funfact" translation_description="Fun fact about Pegasus shown in the info card. Translate this text.">1995年にこの星座で発見されたペガスス座51番星bは、太陽型恒星の周りで初めて発見された太陽系外惑星です！</string>
+    <string name="object_info_pegasus_size" translation_description="Physical size of Pegasus shown in the info card. Translate units if appropriate for your locale.">1,121平方度</string>
+    <!-- Andromeda -->
+    <string name="object_info_andromeda_description" translation_description="Description of Andromeda shown in the info card. Translate this text.">アンドロメダ座には天の川銀河に最も近い大型渦巻銀河であるアンドロメダ銀河（M31）があります。</string>
+    <string name="object_info_andromeda_funfact" translation_description="Fun fact about Andromeda shown in the info card. Translate this text.">アンドロメダ銀河は秒速110kmで私たちに接近しており、約45億年後に天の川銀河と合体します！</string>
+    <string name="object_info_andromeda_size" translation_description="Physical size of Andromeda shown in the info card. Translate units if appropriate for your locale.">722平方度</string>
+    <!-- Perseus -->
+    <string name="object_info_perseus_description" translation_description="Description of Perseus shown in the info card. Translate this text.">ペルセウス座には有名な変光星アルゴルと、美しい二重星団があります。</string>
+    <string name="object_info_perseus_funfact" translation_description="Fun fact about Perseus shown in the info card. Translate this text.">アルゴル（悪魔の星）は2.87日ごとに不思議に暗くなるため、古代では不吉とされていました！</string>
+    <string name="object_info_perseus_size" translation_description="Physical size of Perseus shown in the info card. Translate units if appropriate for your locale.">615平方度</string>
+    <!-- Centaurus -->
+    <string name="object_info_centaurus_description" translation_description="Description of Centaurus shown in the info card. Translate this text.">ケンタウルス座は南天の大きな星座で、太陽に最も近い恒星系であるアルファ・ケンタウリを含んでいます。</string>
+    <string name="object_info_centaurus_funfact" translation_description="Fun fact about Centaurus shown in the info card. Translate this text.">ケンタウルス座のプロキシマ・ケンタウリはわずか4.24光年の距離にあり、太陽系に最も近い恒星です！</string>
+    <string name="object_info_centaurus_size" translation_description="Physical size of Centaurus shown in the info card. Translate units if appropriate for your locale.">1,060平方度</string>
+    <!-- Crux -->
+    <string name="object_info_crux_description" translation_description="Description of Crux shown in the info card. Translate this text.">みなみじゅうじ座は全天で最小の星座ですが、最も特徴的な星座の一つで、南半球での航海に使われてきました。</string>
+    <string name="object_info_crux_funfact" translation_description="Fun fact about Crux shown in the info card. Translate this text.">最小の星座でありながら、みなみじゅうじ座は面積あたりの明るい恒星の数が最も多い星座です！</string>
+    <string name="object_info_crux_size" translation_description="Physical size of Crux shown in the info card. Translate units if appropriate for your locale.">68平方度</string>
+    <!-- Canis Major -->
+    <string name="object_info_canis_major_description" translation_description="Description of Canis Major shown in the info card. Translate this text.">おおいぬ座はオリオンに従って空を横切り、地球から見える最も明るい恒星シリウスを含んでいます。</string>
+    <string name="object_info_canis_major_funfact" translation_description="Fun fact about Canis Major shown in the info card. Translate this text.">古代エジプト人はシリウスのヘリアカル・ライジング（夜明け前の東天出現）を暦の基準にしていました。これはナイル川の年次氾濫と一致していたのです！</string>
+    <string name="object_info_canis_major_size" translation_description="Physical size of Canis Major shown in the info card. Translate units if appropriate for your locale.">380平方度</string>
+    <!-- Canis Minor -->
+    <string name="object_info_canis_minor_description" translation_description="Description of Canis Minor shown in the info card. Translate this text.">こいぬ座は全天で8番目に明るい恒星プロキオンで知られる小さな星座です。</string>
+    <string name="object_info_canis_minor_funfact" translation_description="Fun fact about Canis Minor shown in the info card. Translate this text.">プロキオンはギリシャ語で「犬の前」を意味します。毎晩シリウス（犬の星）の直前に昇るからです！</string>
+    <string name="object_info_canis_minor_size" translation_description="Physical size of Canis Minor shown in the info card. Translate units if appropriate for your locale.">183平方度</string>
+    <!-- Cepheus -->
+    <string name="object_info_cepheus_description" translation_description="Description of Cepheus shown in the info card. Translate this text.">ケフェウス座は北天の星座で、ケフェイド変光星の原型であるケフェウス座デルタ星を含んでいます。</string>
+    <string name="object_info_cepheus_funfact" translation_description="Fun fact about Cepheus shown in the info card. Translate this text.">ヘンリエッタ・リーヴィットが発見したケフェイド変光星は、宇宙の距離を測る方法として天文学に革命をもたらしました！</string>
+    <string name="object_info_cepheus_size" translation_description="Physical size of Cepheus shown in the info card. Translate units if appropriate for your locale.">588平方度</string>
+    <!-- Draco -->
+    <string name="object_info_draco_description" translation_description="Description of Draco shown in the info card. Translate this text.">りゅう座は北の空でこぐま座を取り囲むように蛇行する長い星座です。</string>
+    <string name="object_info_draco_funfact" translation_description="Fun fact about Draco shown in the info card. Translate this text.">りゅう座のトゥバンは、エジプトのピラミッドが建設された5,000年前には北極星でした！</string>
+    <string name="object_info_draco_size" translation_description="Physical size of Draco shown in the info card. Translate units if appropriate for your locale.">1,083平方度</string>
+    <!-- Hercules -->
+    <string name="object_info_hercules_description" translation_description="Description of Hercules shown in the info card. Translate this text.">ヘルクレス座はギリシャの英雄を表す大きな星座で、壮大な球状星団M13を含んでいます。</string>
+    <string name="object_info_hercules_funfact" translation_description="Fun fact about Hercules shown in the info card. Translate this text.">太陽系はヘルクレス座の方向にある太陽向点に向かって秒速約20kmで移動しています！</string>
+    <string name="object_info_hercules_size" translation_description="Physical size of Hercules shown in the info card. Translate units if appropriate for your locale.">1,225平方度</string>
+    <!-- Ophiuchus -->
+    <string name="object_info_ophiuchus_description" translation_description="Description of Ophiuchus shown in the info card. Translate this text.">へびつかい座は黄道に沿って位置していますが黄道十二星座ではなく、蛇を持つ人の姿を表しています。</string>
+    <string name="object_info_ophiuchus_funfact" translation_description="Fun fact about Ophiuchus shown in the info card. Translate this text.">太陽はさそり座よりもへびつかい座に長い時間滞在するにもかかわらず、へびつかい座は黄道十二星座とされていません！</string>
+    <string name="object_info_ophiuchus_size" translation_description="Physical size of Ophiuchus shown in the info card. Translate units if appropriate for your locale.">948平方度</string>
+    <!-- Bootes -->
+    <string name="object_info_bootes_description" translation_description="Description of Bootes shown in the info card. Translate this text.">うしかい座はアークトゥルス（夜空で4番目に明るい恒星）を含む星座です。</string>
+    <string name="object_info_bootes_funfact" translation_description="Fun fact about Bootes shown in the info card. Translate this text.">北斗七星の柄のカーブを延長すると「アークトゥルスへ弧を描く」ことができます。最も有名な星の見つけ方の一つです！</string>
+    <string name="object_info_bootes_size" translation_description="Physical size of Bootes shown in the info card. Translate units if appropriate for your locale.">907平方度</string>
+    <!-- Corona Borealis -->
+    <string name="object_info_corona_borealis_description" translation_description="Description of Corona Borealis shown in the info card. Translate this text.">かんむり座はギリシャ神話のアリアドネの冠を表す、半円形の小さな星座です。</string>
+    <string name="object_info_corona_borealis_funfact" translation_description="Fun fact about Corona Borealis shown in the info card. Translate this text.">かんむり座T星は約80年ごとに爆発する回帰新星で、次の爆発がまもなく起きるかもしれません！</string>
+    <string name="object_info_corona_borealis_size" translation_description="Physical size of Corona Borealis shown in the info card. Translate units if appropriate for your locale.">179平方度</string>
+    <!-- Corvus -->
+    <string name="object_info_corvus_description" translation_description="Description of Corvus shown in the info card. Translate this text.">からす座はおとめ座の南にある、アポロンの神聖な鳥を表す小さな四辺形の星座です。</string>
+    <string name="object_info_corvus_funfact" translation_description="Fun fact about Corvus shown in the info card. Translate this text.">からす座の4つの主要な星は、春の空で見つけやすい帆の形を作っています！</string>
+    <string name="object_info_corvus_size" translation_description="Physical size of Corvus shown in the info card. Translate units if appropriate for your locale.">184平方度</string>
+    <!-- Auriga -->
+    <string name="object_info_auriga_description" translation_description="Description of Auriga shown in the info card. Translate this text.">ぎょしゃ座は6番目に明るい恒星カペラといくつかの散開星団を含む北天の星座です。</string>
+    <string name="object_info_auriga_funfact" translation_description="Fun fact about Auriga shown in the info card. Translate this text.">ぎょしゃ座イプシロン星は最も不思議な恒星の一つで、謎の暗い円盤により27年ごとに2年間暗くなります！</string>
+    <string name="object_info_auriga_size" translation_description="Physical size of Auriga shown in the info card. Translate units if appropriate for your locale.">657平方度</string>
+    <!-- Eridanus -->
+    <string name="object_info_eridanus_description" translation_description="Description of Eridanus shown in the info card. Translate this text.">エリダヌス座は全天で6番目に大きな星座で、オリオン座の近くから南天の遠くまで蛇行しています。</string>
+    <string name="object_info_eridanus_funfact" translation_description="Fun fact about Eridanus shown in the info card. Translate this text.">エリダヌス座の端にあるアケルナルは、高速自転により赤道方向に56%膨らんだ、最も扁平な恒星です！</string>
+    <string name="object_info_eridanus_size" translation_description="Physical size of Eridanus shown in the info card. Translate units if appropriate for your locale.">1,138平方度</string>
+    <!-- Lepus -->
+    <string name="object_info_lepus_description" translation_description="Description of Lepus shown in the info card. Translate this text.">うさぎ座はオリオンの足元にうずくまる、小さいながらも特徴的な星座です。</string>
+    <string name="object_info_lepus_funfact" translation_description="Fun fact about Lepus shown in the info card. Translate this text.">神話では、オリオンは野うさぎ狩りが好きだったため、空でも彼の足元に野うさぎが置かれたと言われています！</string>
+    <string name="object_info_lepus_size" translation_description="Physical size of Lepus shown in the info card. Translate units if appropriate for your locale.">290平方度</string>
+    <!-- Monoceros -->
+    <string name="object_info_monoceros_description" translation_description="Description of Monoceros shown in the info card. Translate this text.">いっかくじゅう座は冬の天の川の中にある淡い星座で、星雲や星団が豊富です。</string>
+    <string name="object_info_monoceros_funfact" translation_description="Fun fact about Monoceros shown in the info card. Translate this text.">いっかくじゅう座のばら星雲は、天上のバラのように見える巨大な星形成領域です！</string>
+    <string name="object_info_monoceros_size" translation_description="Physical size of Monoceros shown in the info card. Translate units if appropriate for your locale.">482平方度</string>
+    <!-- Hydra -->
+    <string name="object_info_hydra_description" translation_description="Description of Hydra shown in the info card. Translate this text.">うみへび座はギリシャ神話の水蛇を表す、全天で最大の星座です。</string>
+    <string name="object_info_hydra_funfact" translation_description="Fun fact about Hydra shown in the info card. Translate this text.">うみへび座は空を100度以上にわたって広がっています。天球全体の4分の1以上に相当します！</string>
+    <string name="object_info_hydra_size" translation_description="Physical size of Hydra shown in the info card. Translate units if appropriate for your locale.">1,303平方度</string>
+    <!-- Carina -->
+    <string name="object_info_carina_description" translation_description="Description of Carina shown in the info card. Translate this text.">りゅうこつ座はかつての巨大な星座アルゴ座の一部で、輝かしい恒星カノープスを含んでいます。</string>
+    <string name="object_info_carina_funfact" translation_description="Fun fact about Carina shown in the info card. Translate this text.">りゅうこつ座のイータ・カリーナは最も光度の高い恒星の一つで、私たちが生きている間に超新星爆発する可能性があります！</string>
+    <string name="object_info_carina_size" translation_description="Physical size of Carina shown in the info card. Translate units if appropriate for your locale.">494平方度</string>
+    <!-- Vela -->
+    <string name="object_info_vela_description" translation_description="Description of Vela shown in the info card. Translate this text.">ほ座はかつて大きな船アルゴ座の一部で、天の川の豊かな領域にあります。</string>
+    <string name="object_info_vela_funfact" translation_description="Fun fact about Vela shown in the info card. Translate this text.">ほ座パルサーは全天で最も明るいパルサーで、1万1000年前に爆発した超新星の残骸です！</string>
+    <string name="object_info_vela_size" translation_description="Physical size of Vela shown in the info card. Translate units if appropriate for your locale.">500平方度</string>
+    <!-- Puppis -->
+    <string name="object_info_puppis_description" translation_description="Description of Puppis shown in the info card. Translate this text.">とも座は船アルゴ座の船尾を表し、天の川に沿って散開星団が豊富にあります。</string>
+    <string name="object_info_puppis_funfact" translation_description="Fun fact about Puppis shown in the info card. Translate this text.">とも座にはM47という肉眼で見える散開星団がありますが、カタログの誤りにより200年以上「行方不明」になっていました！</string>
+    <string name="object_info_puppis_size" translation_description="Physical size of Puppis shown in the info card. Translate units if appropriate for your locale.">673平方度</string>
+    <!-- Cetus -->
+    <string name="object_info_cetus_description" translation_description="Description of Cetus shown in the info card. Translate this text.">くじら座は史上初めて発見された変光星ミラを含む大きな星座です。</string>
+    <string name="object_info_cetus_funfact" translation_description="Fun fact about Cetus shown in the info card. Translate this text.">くじら座のミラは11ヶ月の周期で見えたり見えなくなったりし、13光年もの長さのガスの尾を持っています！</string>
+    <string name="object_info_cetus_size" translation_description="Physical size of Cetus shown in the info card. Translate units if appropriate for your locale.">1,231平方度</string>
+    <!-- Phoenix -->
+    <string name="object_info_phoenix_description" translation_description="Description of Phoenix shown in the info card. Translate this text.">ほうおう座は自らの灰から蘇る神話上の鳥を表す、南天の星座です。</string>
+    <string name="object_info_phoenix_funfact" translation_description="Fun fact about Phoenix shown in the info card. Translate this text.">ほうおう座は16世紀後半にオランダの探検家によって、それまで地図になかった南天の星から作られた12の星座の一つです！</string>
+    <string name="object_info_phoenix_size" translation_description="Physical size of Phoenix shown in the info card. Translate units if appropriate for your locale.">469平方度</string>
+    <!-- Grus -->
+    <string name="object_info_grus_description" translation_description="Description of Grus shown in the info card. Translate this text.">つる座は16世紀後半にヨーロッパの航海者によって導入された南天の星座です。</string>
+    <string name="object_info_grus_funfact" translation_description="Fun fact about Grus shown in the info card. Translate this text.">つる座はかつてフラミンゴ座として知られていましたが、後につる座に変更されました！</string>
+    <string name="object_info_grus_size" translation_description="Physical size of Grus shown in the info card. Translate units if appropriate for your locale.">366平方度</string>
+    <!-- Pavo -->
+    <string name="object_info_pavo_description" translation_description="Description of Pavo shown in the info card. Translate this text.">くじゃく座は明るい恒星ピーコックといくつかの興味深い銀河を含む南天の星座です。</string>
+    <string name="object_info_pavo_funfact" translation_description="Fun fact about Pavo shown in the info card. Translate this text.">ピーコック星（くじゃく座アルファ星）は太陽から200光年以内で2番目に光度の高い恒星です！</string>
+    <string name="object_info_pavo_size" translation_description="Physical size of Pavo shown in the info card. Translate units if appropriate for your locale.">378平方度</string>
+    <!-- Triangulum -->
+    <string name="object_info_triangulum_description" translation_description="Description of Triangulum shown in the info card. Translate this text.">さんかく座は局部銀河群で3番目に大きいさんかく座銀河（M33）を含む、小さな北天の星座です。</string>
+    <string name="object_info_triangulum_funfact" translation_description="Fun fact about Triangulum shown in the info card. Translate this text.">さんかく座銀河は理想的な条件下で肉眼で見える最も遠い天体です！</string>
+    <string name="object_info_triangulum_size" translation_description="Physical size of Triangulum shown in the info card. Translate units if appropriate for your locale.">132平方度</string>
+    <!-- Delphinus -->
+    <string name="object_info_delphinus_description" translation_description="Description of Delphinus shown in the info card. Translate this text.">いるか座は星の並びが跳ねるイルカの姿を形作る、小さくても特徴的な星座です。</string>
+    <string name="object_info_delphinus_funfact" translation_description="Fun fact about Delphinus shown in the info card. Translate this text.">いるか座の2つの星はスアロキンとロタネヴと名付けられています。これは命名した天文学者「Nicolaus Venator」の逆読みです！</string>
+    <string name="object_info_delphinus_size" translation_description="Physical size of Delphinus shown in the info card. Translate units if appropriate for your locale.">189平方度</string>
+    <!-- Sagitta -->
+    <string name="object_info_sagitta_description" translation_description="Description of Sagitta shown in the info card. Translate this text.">や座は全天で3番目に小さい星座で、ギリシャ神話のさまざまな矢を表しています。</string>
+    <string name="object_info_sagitta_funfact" translation_description="Fun fact about Sagitta shown in the info card. Translate this text.">小さな星座ですが、や座にはM71という球状星団があり、何世紀もの間、散開星団と間違えられていました！</string>
+    <string name="object_info_sagitta_size" translation_description="Physical size of Sagitta shown in the info card. Translate units if appropriate for your locale.">80平方度</string>
 </resources>

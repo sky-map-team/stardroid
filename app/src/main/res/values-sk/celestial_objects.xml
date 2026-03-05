@@ -1,5 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <resources>
+    <!-- Constellations -->
     <string name="andromeda" translation_description="Name of the Andromeda constellation">Andromeda</string>
     <string name="aquarius" translation_description="Name of the Aquarius constellation">Vodnár</string>
     <string name="aquila" translation_description="Name of the Aquila constellation">Orol</string>
@@ -97,17 +98,21 @@
     <string name="triangulum_australe" translation_description="Name of the Triangulum Australe constellation">Južný trojuholník</string>
     <string name="volans" translation_description="Name of the Volans constellation">Lietajúca ryba</string>
     <string name="vulpecula" translation_description="Name of the Vulpecula constellation">Líška</string>
-    <string name="sun">Slnko</string>
-    <string name="moon">Mesiac</string>
-    <string name="mercury">Merkúr</string>
-    <string name="venus">Venuša</string>
-    <string name="earth">Zem</string>
-    <string name="mars">Mars</string>
-    <string name="jupiter">Jupiter</string>
-    <string name="saturn">Saturn</string>
-    <string name="uranus">Urán</string>
-    <string name="neptune">Neptún</string>
-    <string name="pluto">Pluto</string>
+
+    <!-- Major solar system objects -->
+    <string name="sun" translation_description="Name of the Sun">Slnko</string>
+    <string name="moon" translation_description="Name of the Earth's Moon">Mesiac</string>
+    <string name="mercury" translation_description="Name of the planet Mercury">Merkúr</string>
+    <string name="venus" translation_description="Name of the planet Venus">Venuša</string>
+    <string name="earth" translation_description="Name of the planet Earth">Zem</string>
+    <string name="mars" translation_description="Name of the planet Mars">Mars</string>
+    <string name="jupiter" translation_description="Name of the planet Jupiter">Jupiter</string>
+    <string name="saturn" translation_description="Name of the planet Saturn">Saturn</string>
+    <string name="uranus" translation_description="Name of the planet Uranus">Urán</string>
+    <string name="neptune" translation_description="Name of the planet Neptune">Neptún</string>
+    <string name="pluto" translation_description="Name of the dwarf planet Pluto">Pluto</string>
+
+    <!-- Gallery objects -->
     <string name="crab_nebula" translation_description="hubble object">Krabia hmlovina</string>
     <string name="eagle_nebula" translation_description="hubble object">Orlia hmlovina</string>
     <string name="andromeda_galaxy" translation_description="hubble object">Galaxia Andromeda</string>
@@ -125,6 +130,9 @@
     <string name="hubble_deep_field" translation_description="hubble object">Hubblovo hlboké pole</string>
     <string name="hdf" translation_description="hubble object">Hubblovo hlboké pole</string>
     <string name="rho_oph" translation_description="hubble object">Ró Ophiuchi</string>
+
+
+    <!-- Stars -->
     <string name="sirius" translation_description="Name of the Star Sirius">Sírius</string>
     <string name="canopus" translation_description="Name of the Star Canopus">Canopus</string>
     <string name="arcturus" translation_description="Name of the Star Arcturus">Arktúr</string>
@@ -196,6 +204,8 @@
     <string name="alpha_centauri" translation_description="Name of the star Alpha Centauri">Alfa Centauri</string>
     <string name="rigil_kent" translation_description="Name of the star Rigil Kent">Rigil Kent</string>
     <string name="e_lyrae" translation_description="Name of the star ε Lyrae">Epsilon Lyrae</string>
+
+    <!-- Messier objects etc -->
     <string name="m1" translation_description="Name of the Messier object M1">M1</string>
     <string name="m2" translation_description="Name of the Messier object M2">M2</string>
     <string name="m3" translation_description="Name of the Messier object M3">M3</string>
@@ -314,8 +324,12 @@
     <string name="beehive_cluster" translation_description="Name of the Messier object Beehive Cluster">Jasličky (hviezdokopa)</string>
     <string name="praesepe" translation_description="Name of the Messier object Praesepe">Praesepe</string>
     <string name="seven_sisters" translation_description="Name of the Messier object Seven Sisters">Sedem sestier</string>
+
+    <!-- Manmade objects -->
     <string name="space_station" translation_description="Name of the Internation Space Station">Medzinárodná vesmírna stanica</string>
     <string name="space_shuttle" translation_description="Name of the Space Shuttle">Raketoplán</string>
+
+    <!-- Meteors -->
     <string name="leonids" translation_description="Meteor Shower">Leonidy</string>
     <string name="geminids" translation_description="Meteor Shower">Geminidy</string>
     <string name="quadrantids" translation_description="Meteor Shower">Kvadrantídy</string>
@@ -326,8 +340,11 @@
     <string name="orionids" translation_description="Meteor Shower">Orionidy</string>
     <string name="puppidvelids" translation_description="Meteor Shower">Puppid-Velidy</string>
     <string name="ursids" translation_description="Meteor Shower">Ursidy</string>
-    <string name="comet_leonard">Leonardova kométa</string>
-    <string name="comet_leonard_alt">Leonard (kométa)</string>
-    <string name="comet_neowise">Neowise kométa</string>
-    <string name="comet_neowise_alt">Neowise (kométa)</string>
+
+    <!-- Comets -->
+    <string name="comet_leonard" translation_description="Name of Comet Leonard (C/2021 A1) as shown on the sky map">Leonardova kométa</string>
+    <!-- TODO: no need for these alt names once our search is less lousy -->
+    <string name="comet_leonard_alt" translation_description="Alternate searchable name for Comet Leonard, surname first">Leonard (kométa)</string>
+    <string name="comet_neowise" translation_description="Name of Comet NEOWISE (C/2020 F3) as shown on the sky map">Neowise kométa</string>
+    <string name="comet_neowise_alt" translation_description="Alternate searchable name for Comet NEOWISE, surname first">Neowise (kométa)</string>
 </resources>

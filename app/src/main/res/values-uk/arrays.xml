@@ -1,14 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <string-array name="sensor_speed">
-        <item>Повільно</item>
-        <item>Звичайно</item>
-        <item>Швидко</item>
+        <item translation_description="Slow sensor speed">Повільно</item>
+        <item translation_description="Normal sensor speed">Звичайно</item>
+        <item translation_description="Fast sensor speed">Швидко</item>
     </string-array>
     <string-array name="sensor_damping">
-        <item>Стрибками</item>
-        <item>Середнє</item>
-        <item>Звичайне</item>
-        <item>Високе</item>
+        <item translation_description="Low sensor damping factor">Стрибками</item>
+        <item translation_description="Medium sensor damping factor">Середнє</item>
+        <item translation_description="Extra High sensor damping factor">Звичайне</item>
+        <item translation_description="Really High sensor damping factor">Високе</item>
     </string-array>
-</resources>
+    </resources>

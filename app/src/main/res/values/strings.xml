@@ -102,8 +102,7 @@
     <string name="change_date_prompt" translation_description="Button label to open the date picker in the time travel dialog">Change the date</string>
     <string name="change_time_prompt" translation_description="Button label to open the time picker in the time travel dialog">Change the time</string>
     <string name="now_visiting"
-            translation_description="used in time travel dialog to show the destination date/time the user has selected, time formatted as yyyy.mm.dd at hh.mm.ss + timezone">
-        Destination: %s</string>
+            translation_description="used in time travel dialog to show the destination date/time the user has selected, time formatted as yyyy.mm.dd at hh.mm.ss + timezone">Destination: %s</string>
     <string name="time_travel_label_past" translation_description="Label showing that we are in the past">Time Travel: Past</string>
     <string name="time_travel_label_future" translation_description="Label showing that we are in the future">Time Travel: Future</string>
     <string name="time_travel_stopped" translation_description="Label showing rate of travel through time">Time travel frozen</string>
@@ -229,7 +228,7 @@ Sky Map relies on your phone\'s built-in compass sensor. If the accuracy shown a
     <b>Important:</b> Calibration is a hardware process handled by your device. While it improves the sensor\'s reliability, external magnetic interference can still cause a \"bias\" or slight drift. This is a physical limitation of mobile compasses and not an error within the app. See <i>Troubleshooting</i> in <i>Help</i> for other things to try.
     ]]></string>
     <string name="compass_calib_what_to_do_user"
-        transation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[
+        translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[
         Your phone\'s reports its compass accuracy as shown above. To improve this, please perform a figure-8 motion with your device (%s).<br/><br/>
         <b>Note on Accuracy:</b> Calibration is a hardware-level requirement of your phone, not a Sky Map setting. Even when calibrated, local magnetic fields (like car dashboards or magnets) may cause a slight bias in direction.  See <i>Troubleshooting</i> in <i>Help</i> for other things to try.
     ]]></string>

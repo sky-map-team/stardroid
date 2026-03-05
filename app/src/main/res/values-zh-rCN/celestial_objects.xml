@@ -1,5 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <resources>
+    <!-- Constellations -->
     <string name="andromeda" translation_description="Name of the Andromeda constellation">仙女座</string>
     <string name="aquarius" translation_description="Name of the Aquarius constellation">水瓶座</string>
     <string name="aquila" translation_description="Name of the Aquila constellation">天鹰座</string>
@@ -97,17 +98,21 @@
     <string name="triangulum_australe" translation_description="Name of the Triangulum Australe constellation">南三角座</string>
     <string name="volans" translation_description="Name of the Volans constellation">飞鱼座</string>
     <string name="vulpecula" translation_description="Name of the Vulpecula constellation">狐狸座</string>
-    <string name="sun">太阳</string>
-    <string name="moon">月球</string>
-    <string name="mercury">水星</string>
-    <string name="venus">金星</string>
-    <string name="earth">地球</string>
-    <string name="mars">火星</string>
-    <string name="jupiter">木星</string>
-    <string name="saturn">土星</string>
-    <string name="uranus">天王星</string>
-    <string name="neptune">海王星</string>
-    <string name="pluto">冥王星</string>
+
+    <!-- Major solar system objects -->
+    <string name="sun" translation_description="Name of the Sun">太阳</string>
+    <string name="moon" translation_description="Name of the Earth's Moon">月球</string>
+    <string name="mercury" translation_description="Name of the planet Mercury">水星</string>
+    <string name="venus" translation_description="Name of the planet Venus">金星</string>
+    <string name="earth" translation_description="Name of the planet Earth">地球</string>
+    <string name="mars" translation_description="Name of the planet Mars">火星</string>
+    <string name="jupiter" translation_description="Name of the planet Jupiter">木星</string>
+    <string name="saturn" translation_description="Name of the planet Saturn">土星</string>
+    <string name="uranus" translation_description="Name of the planet Uranus">天王星</string>
+    <string name="neptune" translation_description="Name of the planet Neptune">海王星</string>
+    <string name="pluto" translation_description="Name of the dwarf planet Pluto">冥王星</string>
+
+    <!-- Gallery objects -->
     <string name="crab_nebula" translation_description="hubble object">蟹状星云</string>
     <string name="eagle_nebula" translation_description="hubble object">鹰状星云</string>
     <string name="andromeda_galaxy" translation_description="hubble object">仙女座星系</string>
@@ -125,11 +130,14 @@
     <string name="hubble_deep_field" translation_description="hubble object">哈勃深空</string>
     <string name="hdf" translation_description="hubble object">哈勃深空</string>
     <string name="rho_oph" translation_description="hubble object">蛇夫座 ρ</string>
+
+
+    <!-- Stars -->
     <string name="sirius" translation_description="Name of the Star Sirius">天狼星（大犬座 α）</string>
     <string name="canopus" translation_description="Name of the Star Canopus">老人星（船底座 α）</string>
     <string name="arcturus" translation_description="Name of the Star Arcturus">大角星（牧夫座 α）</string>
     <string name="rigel_kentaurus_a" translation_description="Name of the Star Rigel Kentaurus A">南門二（半人马座 α）</string>
-    <string name="rigil_kentaurus_a" translation_description="Name of the Star Rigel Kentaurus A">南門二（半人马座 α）</string>
+    <string name="rigil_kentaurus_a" translation_description="Name of the Star Rigil Kentaurus A">南門二（半人马座 α）</string>
     <string name="vega" translation_description="Name of the Star Vega">织女一（天鹰座 α）</string>
     <string name="rigel" translation_description="Name of the Star Rigel">参宿七（猎户座 β）</string>
     <string name="procyon" translation_description="Name of the Star Procyon">南河三（小犬座 α）</string>
@@ -196,6 +204,8 @@
     <string name="alpha_centauri" translation_description="Name of the star Alpha Centauri">南門二</string>
     <string name="rigil_kent" translation_description="Name of the star Rigil Kent">南門二</string>
     <string name="e_lyrae" translation_description="Name of the star ε Lyrae">织女二</string>
+
+    <!-- Messier objects etc -->
     <string name="m1" translation_description="Name of the Messier object M1">M1 蟹状星云</string>
     <string name="m2" translation_description="Name of the Messier object M2">M2</string>
     <string name="m3" translation_description="Name of the Messier object M3">M3</string>
@@ -314,8 +324,12 @@
     <string name="beehive_cluster" translation_description="Name of the Messier object Beehive Cluster">鬼宿星团</string>
     <string name="praesepe" translation_description="Name of the Messier object Praesepe">鬼宿星团</string>
     <string name="seven_sisters" translation_description="Name of the Messier object Seven Sisters">昴宿星团</string>
+
+    <!-- Manmade objects -->
     <string name="space_station" translation_description="Name of the Internation Space Station">国际空间站</string>
     <string name="space_shuttle" translation_description="Name of the Space Shuttle">航天飞机</string>
+
+    <!-- Meteors -->
     <string name="leonids" translation_description="Meteor Shower">狮子座流星雨</string>
     <string name="geminids" translation_description="Meteor Shower">双子座流星雨</string>
     <string name="quadrantids" translation_description="Meteor Shower">象限仪座流星雨</string>
@@ -326,4 +340,5 @@
     <string name="orionids" translation_description="Meteor Shower">猎户座流星雨</string>
     <string name="puppidvelids" translation_description="Meteor Shower">船尾/船帆座流星雨</string>
     <string name="ursids" translation_description="Meteor Shower">小熊座流星雨</string>
-</resources>
+
+    </resources>

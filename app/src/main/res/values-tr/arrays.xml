@@ -1,19 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <string-array name="sensor_speed">
-        <item translation_description="Yavaş sensör hızı">Yavaş</item>
-        <item translation_description="Normal sensör hızı">Orta</item>
-        <item translation_description="Hızlı sensör hızı">Hızlı</item>
+        <item translation_description="Slow sensor speed">Yavaş</item>
+        <item translation_description="Normal sensor speed">Orta</item>
+        <item translation_description="Fast sensor speed">Hızlı</item>
     </string-array>
     <string-array name="sensor_damping">
-        <item translation_description="Düşük sensör sönüm faktörü">Titrek</item>
-        <item translation_description="Orta sensör sönüm faktörü">Orta</item>
-        <item translation_description="Ekstra Yüksek sensör sönüm faktörü">Uygun</item>
-        <item translation_description="Gerçekten Yüksek sensör sönüm faktörü">Gecikmeli</item>
+        <item translation_description="Low sensor damping factor">Titrek</item>
+        <item translation_description="Medium sensor damping factor">Orta</item>
+        <item translation_description="Extra High sensor damping factor">Uygun</item>
+        <item translation_description="Really High sensor damping factor">Gecikmeli</item>
     </string-array>
     <string-array name="viewing_direction">
-        <item translation_description="Normal görüntüleme">Normal</item>
-        <item translation_description="Ekranı 90 derece döndürür">Döndürülmüş yatay</item>
-        <item translation_description="Telefonun uzun kenarının işaret ettiği gökyüzünü gösterir">İşaretçi modu</item>
+        <item translation_description="Normal viewing">Normal</item>
+        <item translation_description="Rotates the screen by 90 degrees">Döndürülmüş yatay</item>
+        <item translation_description="Shows the sky as pointed at by the long edge of the phone">İşaretçi modu</item>
     </string-array>
-</resources>
+    </resources>

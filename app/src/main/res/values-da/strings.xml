@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="show_object_info_auto_mode_title">Infokort i automatisk tilstand</string>
-    <string name="show_object_info_auto_mode_summary">Vis også infokort ved tryk på objekter i automatisk (sensor) tilstand</string>
-    <string name="object_info_funfact_label">Vidste du:</string>
-    <string name="object_info_distance_label">Afstand:</string>
-    <string name="object_info_size_label">Størrelse:</string>
-    <string name="object_info_mass_label">Masse:</string>
-    <string name="object_info_spectral_label">Spektral:</string>
-    <string name="object_info_magnitude_label">Magnitude:</string>
-</resources>
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Please add  translation_description="" attributes to Strings to assist the translators. --><resources>
+    <string name="show_object_info_auto_mode_title" translation_description="Preference title for enabling info cards in auto/sensor mode">Infokort i automatisk tilstand</string>
+    <string name="show_object_info_auto_mode_summary" translation_description="Preference summary for auto mode info cards">Vis også infokort ved tryk på objekter i automatisk (sensor) tilstand</string>
+    <string name="object_info_funfact_label" translation_description="Label before the fun fact in info card">Vidste du:</string>
+    <string name="object_info_distance_label" translation_description="Label for distance field">Afstand:</string>
+    <string name="object_info_size_label" translation_description="Label for size field">Størrelse:</string>
+    <string name="object_info_mass_label" translation_description="Label for mass field">Masse:</string>
+    <string name="object_info_spectral_label" translation_description="Label for spectral class">Spektral:</string>
+    <string name="object_info_magnitude_label" translation_description="Label for apparent magnitude">Magnitude:</string>
+    </resources>

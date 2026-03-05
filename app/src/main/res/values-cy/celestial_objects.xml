@@ -1,5 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <resources>
+    <!-- Constellations -->
     <string name="andromeda" translation_description="Name of the Andromeda constellation">Andromeda</string>
     <string name="aquarius" translation_description="Name of the Aquarius constellation">Aquarius</string>
     <string name="aquila" translation_description="Name of the Aquila constellation">Aquila</string>
@@ -50,17 +51,20 @@
     <string name="big_dipper" translation_description="Name of the Big Dipper constellation">Big Dipper</string>
     <string name="great_bear" translation_description="Name of the Great Bear constellation">Arth Fawr</string>
     <string name="plough" translation_description="Name of the Plough constellation">Aradr</string>
-    <string name="sun">Haul</string>
-    <string name="moon">Lleuad</string>
-    <string name="mercury">Mercher</string>
-    <string name="venus">Gwener</string>
-    <string name="earth">Daear</string>
-    <string name="mars">Mawrth</string>
-    <string name="jupiter">Iau</string>
-    <string name="saturn">Sadwrn</string>
-    <string name="uranus">Wranws</string>
-    <string name="neptune">Neifion</string>
-    <string name="pluto">Plwton</string>
+    <!-- Major solar system objects -->
+    <string name="sun" translation_description="Name of the Sun">Haul</string>
+    <string name="moon" translation_description="Name of the Earth's Moon">Lleuad</string>
+    <string name="mercury" translation_description="Name of the planet Mercury">Mercher</string>
+    <string name="venus" translation_description="Name of the planet Venus">Gwener</string>
+    <string name="earth" translation_description="Name of the planet Earth">Daear</string>
+    <string name="mars" translation_description="Name of the planet Mars">Mawrth</string>
+    <string name="jupiter" translation_description="Name of the planet Jupiter">Iau</string>
+    <string name="saturn" translation_description="Name of the planet Saturn">Sadwrn</string>
+    <string name="uranus" translation_description="Name of the planet Uranus">Wranws</string>
+    <string name="neptune" translation_description="Name of the planet Neptune">Neifion</string>
+    <string name="pluto" translation_description="Name of the dwarf planet Pluto">Plwton</string>
+
+    <!-- Gallery objects -->
     <string name="crab_nebula" translation_description="hubble object">Nifwl Cranc</string>
     <string name="eagle_nebula" translation_description="hubble object">Nifwl Eryr</string>
     <string name="andromeda_galaxy" translation_description="hubble object">Galaeth Andromeda</string>
@@ -78,6 +82,9 @@
     <string name="hubble_deep_field" translation_description="hubble object">Maes Dwfn Hubble</string>
     <string name="hdf" translation_description="hubble object">Maes Dwfn Hubble</string>
     <string name="rho_oph" translation_description="hubble object">Rho Ophiuchus</string>
+
+
+    <!-- Stars -->
     <string name="sirius" translation_description="Name of the Star Sirius">Sirius</string>
     <string name="canopus" translation_description="Name of the Star Canopus">Canopus</string>
     <string name="arcturus" translation_description="Name of the Star Arcturus">Arcturus</string>
@@ -149,6 +156,8 @@
     <string name="alpha_centauri" translation_description="Name of the star Alpha Centauri">Alpha Centauri</string>
     <string name="rigil_kent" translation_description="Name of the star Rigil Kent">Rigil Kent</string>
     <string name="e_lyrae" translation_description="Name of the star ε Lyrae">ε Lyrae</string>
+
+    <!-- Messier objects etc -->
     <string name="m1" translation_description="Name of the Messier object M1">M1</string>
     <string name="m2" translation_description="Name of the Messier object M2">M2</string>
     <string name="m3" translation_description="Name of the Messier object M3">M3</string>
@@ -267,8 +276,12 @@
     <string name="beehive_cluster" translation_description="Name of the Messier object Beehive Cluster">Clwstwr Cwch Gwenyn</string>
     <string name="praesepe" translation_description="Name of the Messier object Praesepe">Praesepe</string>
     <string name="seven_sisters" translation_description="Name of the Messier object Seven Sisters">Saith Chwaer</string>
+
+    <!-- Manmade objects -->
     <string name="space_station" translation_description="Name of the Internation Space Station">Gorsaf Ofod Rhyngwladol</string>
     <string name="space_shuttle" translation_description="Name of the Space Shuttle">Gwennol Ofod</string>
+
+    <!-- Meteors -->
     <string name="leonids" translation_description="Meteor Shower">Leonids</string>
     <string name="geminids" translation_description="Meteor Shower">Geminids</string>
     <string name="quadrantids" translation_description="Meteor Shower">Quadrantids</string>
@@ -279,4 +292,5 @@
     <string name="orionids" translation_description="Meteor Shower">Orionids</string>
     <string name="puppidvelids" translation_description="Meteor Shower">Puppid-Velids</string>
     <string name="ursids" translation_description="Meteor Shower">Ursids</string>
-</resources>
+
+    </resources>

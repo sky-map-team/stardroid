@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="show_object_info_auto_mode_title">Fitxes d\'informació en mode automàtic</string>
-    <string name="show_object_info_auto_mode_summary">Mostra també fitxes d\'informació en tocar objectes en mode automàtic (sensors)</string>
-    <string name="object_info_funfact_label">Sabies que:</string>
-    <string name="object_info_distance_label">Distància:</string>
-    <string name="object_info_size_label">Mida:</string>
-    <string name="object_info_mass_label">Massa:</string>
-    <string name="object_info_spectral_label">Espectral:</string>
-    <string name="object_info_magnitude_label">Magnitud:</string>
-</resources>
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Please add  translation_description="" attributes to Strings to assist the translators. --><resources>
+    <string name="show_object_info_auto_mode_title" translation_description="Preference title for enabling info cards in auto/sensor mode">Fitxes d\'informació en mode automàtic</string>
+    <string name="show_object_info_auto_mode_summary" translation_description="Preference summary for auto mode info cards">Mostra també fitxes d\'informació en tocar objectes en mode automàtic (sensors)</string>
+    <string name="object_info_funfact_label" translation_description="Label before the fun fact in info card">Sabies que:</string>
+    <string name="object_info_distance_label" translation_description="Label for distance field">Distància:</string>
+    <string name="object_info_size_label" translation_description="Label for size field">Mida:</string>
+    <string name="object_info_mass_label" translation_description="Label for mass field">Massa:</string>
+    <string name="object_info_spectral_label" translation_description="Label for spectral class">Espectral:</string>
+    <string name="object_info_magnitude_label" translation_description="Label for apparent magnitude">Magnitud:</string>
+    </resources>

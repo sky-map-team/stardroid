@@ -1,14 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <string-array name="sensor_speed">
-        <item>Pomalé</item>
-        <item>Standardní</item>
-        <item>Rychlé</item>
+        <item translation_description="Slow sensor speed">Pomalé</item>
+        <item translation_description="Normal sensor speed">Standardní</item>
+        <item translation_description="Fast sensor speed">Rychlé</item>
     </string-array>
     <string-array name="sensor_damping">
-        <item>Žádné</item>
-        <item>Lehké</item>
-        <item>Standardní</item>
-        <item>Vysoké</item>
+        <item translation_description="Low sensor damping factor">Žádné</item>
+        <item translation_description="Medium sensor damping factor">Lehké</item>
+        <item translation_description="Extra High sensor damping factor">Standardní</item>
+        <item translation_description="Really High sensor damping factor">Vysoké</item>
     </string-array>
-</resources>
+    </resources>
