@@ -1,70 +1,69 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="app_name" translation_description="Application Title">Sky Map</string>
-    <string name="menu_settings">Gosodiadau</string>
-    <string name="menu_search">Chwilio</string>
-    <string name="cancel">Diddymu</string>
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Please add  translation_description="" attributes to Strings to assist the translators. --><resources>
+    <string name="menu_settings" translation_description="Settings menu item in the options menu">Gosodiadau</string>
+    <string name="menu_search" translation_description="Search menu item in the options menu">Chwilio</string>
+    <string name="cancel" translation_description="Generic cancel button label used in dialogs">Diddymu</string>
     <string name="set" translation_description="Button label. Set the date to the given value">Gosod</string>
-    <string name="go">Mynd!</string>
-    <string name="location_prefs">Gosodiadau Lleoliad</string>
-    <string name="force_gps_pref">Defnyddio GPS o hyd</string>
+    <string name="go" translation_description="Button to start navigating the sky map toward a searched object">Mynd!</string>
+    <string name="location_prefs" translation_description="Preferences category heading for location-related settings">Gosodiadau Lleoliad</string>
+    <string name="force_gps_pref" translation_description="Preference label: force GPS use even when network location is available">Defnyddio GPS o hyd</string>
     <string name="force_gps_pref_hint" translation_description="this string continues from \'Always use GPS\'">os alluogir, hyd yn oed pan mae lleoliad rhwydwaith ar gael</string>
-    <string name="no_use_gps_pref">Gosod lleoliad dy hun</string>
-    <string name="no_use_gps_pref_hint">Rho enw lle neu leoliad lledred/hydred</string>
-    <string name="location_placename">Enw lle</string>
+    <string name="no_use_gps_pref" translation_description="Preference label: choose to enter location by hand instead of using GPS or phone location">Gosod lleoliad dy hun</string>
+    <string name="no_use_gps_pref_hint" translation_description="Hint text beneath the \'Set location manually\' preference">Rho enw lle neu leoliad lledred/hydred</string>
+    <string name="location_placename" translation_description="Label for the place-name text field in manual location settings">Enw lle</string>
     <string name="location_placename_hint" translation_description="An example address.  Translators: please pick an address suitable for your country.  If it has an astronomical connection (e.g. the address of an observatory or famous astronomer) then that would be even better.">e.e. 43 Ffordd Glyndŵr, Pen-y-cae, Wrecsam.</string>
-    <string name="location_lat_pref">Lledred</string>
-    <string name="location_long_pref">Hydred</string>
-    <string name="degrees" translation_description="angular degrees">Graddau</string>
-    <string name="preferences">dewisiadau</string>
-    <string name="location_offer_to_enable">Dyw adnabod lleoliad heb ei alluogi. Wyt ti am ei alluogi?</string>
-    <string name="location_offer_to_enable_gps_title">Adnabod lleoliad wedi\'i analluogi</string>
-    <string name="location_set_auto">Lleoliad wedi\'i osod o %1$s i %2$s</string>
-    <string name="location_unable_to_geocode">Methu ag adnabod dy leoliad. Efallai nad yw dy rwydwaith ar gael?</string>
+    <string name="location_lat_pref" translation_description="Label for the latitude input field in manual location settings">Lledred</string>
+    <string name="location_long_pref" translation_description="Label for the longitude input field in manual location settings">Hydred</string>
+    <string name="degrees" translation_description="angular degrees - used for latitude and longitude">Graddau</string>
+    <string name="preferences" translation_description="Provider-name label used internally when a location is set from preferences (not shown directly to the user as a UI label - does not require a translation)">dewisiadau</string>
+    <string name="location_offer_to_enable" translation_description="Dialog message asking whether to enable automatic location">Dyw adnabod lleoliad heb ei alluogi. Wyt ti am ei alluogi?</string>
+    <string name="location_offer_to_enable_gps_title" translation_description="Title of dialog shown when automatic location is disabled">Adnabod lleoliad wedi\'i analluogi</string>
+    <!-- TODO: many translations require two placeholders. Once all translations brought up to date we can clean this up -->
+    <string name="location_set_auto" translation_description="Toast message when automatic location is acquired. %1$s is the provider name (e.g. GPS), %2$s is the place name or coordinates">Lleoliad wedi\'i osod o %1$s i %2$s</string>
+    <string name="location_unable_to_geocode" translation_description="Error message when converting a place name to coordinates (geocoding) fails, possibly due to no network">Methu ag adnabod dy leoliad. Efallai nad yw dy rwydwaith ar gael?</string>
     <string name="location_not_found_title" translation_description="dialog box title when location not found">Ymddiheuriadau</string>
     <string name="location_not_found" translation_description="dialog message when placename not found">%s heb ei ganfod.</string>
-    <string name="location_long_lat">Hydred:%1$s, Ledred:%2$s</string>
-    <string name="location_place_found">Wedi canfod lleoliad. Yn gosod lledred %1$f a hydred %2$f</string>
-    <string name="use_magnetic_correction">Defnyddio cywiriad magnetig</string>
-    <string name="show_stars_pref">Sêr</string>
-    <string name="show_constellations_pref">Cytser</string>
-    <string name="show_messier_objects_pref" translation_description="The celestial objects catalogued by Charles Messier">Gwrthrychau Messier</string>
-    <string name="show_planets_pref">Cysawd yr Haul</string>
-    <string name="show_grid_pref">Grid RA/Dec</string>
-    <string name="show_horizon_pref">Gorwel</string>
+    <string name="location_long_lat" translation_description="Formatted display of longitude and latitude. %1$.2f is longitude, %2$.2f is latitude">Hydred:%1$s, Ledred:%2$s</string>
+    <string name="location_place_found" translation_description="Status message when a place name was successfully looked up. %1$f is latitude, %2$f is longitude">Wedi canfod lleoliad. Yn gosod lledred %1$f a hydred %2$f</string>
+    <string name="use_magnetic_correction" translation_description="Preference label: apply magnetic declination correction so the compass points to true north instead of magnetic north">Defnyddio cywiriad magnetig</string>
+    <string name="show_stars_pref" translation_description="Label for the stars layer on the sky map (shows in the search results)">Sêr</string>
+    <string name="show_constellations_pref" translation_description="Label for the constellation lines and labels layer (shows in the search results)">Cytser</string>
+    <string name="show_messier_objects_pref" translation_description="The celestial objects catalogued by Charles Messier (shows in the search results)">Gwrthrychau Messier</string>
+    <string name="show_planets_pref" translation_description="Label for the solar system layer (planets, sun, moon)  (shows in the search results)">Cysawd yr Haul</string>
+    <string name="show_grid_pref" translation_description="Label for the Right Ascension / Declination grid overlay  (shows in the search results)">Grid RA/Dec</string>
+    <string name="show_horizon_pref" translation_description="Preference toggle label for the horizon line layer">Gorwel</string>
     <string name="show_sky_gradient" translation_description="This is a shading of the color of the sky used for effect">Graddfa Awyr</string>
-    <string name="show_meteors_pref">Sêr gwib</string>
-    <string name="sensor_prefs">Gosodiadau Synhwyrydd (arbenigwyr)</string>
-    <string name="ecliptic">Ecliptig</string>
-    <string name="malformed_loc_error">Nid yw gosodiad lledred na hydred yn rif.</string>
+    <string name="show_meteors_pref" translation_description="Label for the meteor shower layer (shows in the search results)">Sêr gwib</string>
+    <string name="sensor_prefs" translation_description="Preferences category heading for sensor settings, intended for advanced/expert users">Gosodiadau Synhwyrydd (arbenigwyr)</string>
+    <string name="ecliptic" translation_description="Label for the ecliptic layer — the apparent annual path of the Sun across the sky">Ecliptig</string>
+    <string name="malformed_loc_error" translation_description="Error message when a non-numeric value is entered for latitude or longitude">Nid yw gosodiad lledred na hydred yn rif.</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Derbyn</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">Dim diolch</string>
-    <string name="dialog_ok_button">Iawn</string>
+    <string name="dialog_ok_button" translation_description="Generic OK/confirm button label for dialogs">Iawn</string>
     <string name="menu_help" translation_description="menu item to show \'Help\' box">Cymorth</string>
-    <string name="help_dialog_title">Cymorth defnyddio Sky Map</string>
-    <string name="set_manual">Yn newid i\'r modd llaw</string>
-    <string name="set_auto">Yn newid i\'r modd awtomatig</string>
-    <string name="menu_toggle_dim">Toglo modd nos</string>
-    <string name="zenith">ANTERTH</string>
-    <string name="nadir">NADIR</string>
-    <string name="north">GOGLEDD</string>
-    <string name="east">DWYRAIN</string>
-    <string name="west">GORLLEWIN</string>
-    <string name="south">DE</string>
-    <string name="search_label">Chwilio\'r Awyr</string>
+    <string name="help_dialog_title" translation_description="Title of the help dialog">Cymorth defnyddio Sky Map</string>
+    <string name="set_manual" translation_description="Toast message shown when the user switches to manual (touch-drag) mode">Yn newid i\'r modd llaw</string>
+    <string name="set_auto" translation_description="Toast message shown when the user switches to automatic (sensor/gyroscope) mode">Yn newid i\'r modd awtomatig</string>
+    <string name="menu_toggle_dim" translation_description="Menu item to toggle night mode (red tint that preserves night vision)">Toglo modd nos</string>
+    <string name="zenith" translation_description="Label for the zenith point (directly overhead) shown on the sky map. Displayed in capitals.">ANTERTH</string>
+    <string name="north" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">GOGLEDD</string>
+    <string name="east" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">DWYRAIN</string>
+    <string name="west" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">GORLLEWIN</string>
+    <string name="south" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">DE</string>
+    <string name="search_label" translation_description="Hint/label for the search bar in the search activity">Chwilio\'r Awyr</string>
     <string name="search_hint" translation_description="an example search target">e.e. Mawrth</string>
-    <string name="no_search_title">Dim canlyniadau</string>
-    <string name="many_search_results_title">A oeddet yn meddwl?</string>
+    <string name="no_search_title" translation_description="Dialog title shown when a sky search returns no results">Dim canlyniadau</string>
+    <string name="many_search_results_title" translation_description="Dialog title shown when a search returns multiple possible matches">A oeddet yn meddwl?</string>
     <string name="other" translation_description="A preference category (ie preferences that don't belong in any other category)">Arall</string>
-    <string name="menu_time">Teithio mewn Amser</string>
-    <string name="time_travel_start_message_alt">Yn teithio trwy amser i %s ...</string>
-    <string name="time_travel_close_message">Nôl i\'r presennol ...</string>
+    <string name="menu_time" translation_description="Menu item label to open the time travel feature">Teithio mewn Amser</string>
+    <string name="time_travel_start_message_alt" translation_description="Toast message when time travel starts toward a named destination. %s is the event or destination name">Yn teithio trwy amser i %s ...</string>
+    <string name="time_travel_close_message" translation_description="Toast message shown when the user exits time travel and returns to the present">Nôl i\'r presennol ...</string>
+    <!--  -->
     <string name="popular_dates_prompt" translation_description="Label for a list of dates the user can choose from">Dyddiadau poblogaidd</string>
     <string name="custom_date_prompt" translation_description="Label telling the user to manually specify a date">Neu ddewis dy ddyddiad dy hun:</string>
-    <string name="change_date_prompt">Newid y dyddiad</string>
-    <string name="change_time_prompt">Newid yr amser</string>
-    <string name="now_visiting" translation_description="used in time travel dialog to tell the user what time they are visiting, time formatted as yyyy.mm.dd at hh.mm.ss + timezone">
-        Nawr yn ymweld â: %s</string>
+    <string name="change_date_prompt" translation_description="Button label to open the date picker in the time travel dialog">Newid y dyddiad</string>
+    <string name="change_time_prompt" translation_description="Button label to open the time picker in the time travel dialog">Newid yr amser</string>
+    <string name="now_visiting" translation_description="used in time travel dialog to show the destination date/time the user has selected, time formatted as yyyy.mm.dd at hh.mm.ss + timezone">Nawr yn ymweld â: %s</string>
     <string name="time_travel_label_past" translation_description="Label showing that we are in the past">Teithio Amser: Gorffennol</string>
     <string name="time_travel_label_future" translation_description="Label showing that we are in the future">Teithio Amser: Dyfodol</string>
     <string name="time_travel_stopped" translation_description="Label showing rate of travel through time">Teithio amser wedi rhewi</string>
@@ -80,84 +79,85 @@
     <string name="time_travel_hour_speed_back" translation_description="Label showing rate of travel through time">Yn teithio &lt; 1 awr/eil</string>
     <string name="time_travel_day_speed_back" translation_description="Label showing rate of travel through time">Yn teithio &lt; 1 diwrnod/eil</string>
     <string name="time_travel_week_speed_back" translation_description="Label showing rate of travel through time">Yn teithio &lt; 1 wythnos/eil</string>
-    <string name="time_travel_next_sunset">Machlud haul y noswaith nesaf</string>
-    <string name="time_travel_next_sunrise">Gwawr y bore nesaf</string>
-    <string name="time_travel_next_fullmoon">Lleuad llawn nesaf</string>
-    <string name="time_travel_mercury_transit_2016">Croesiad Mercher 9 Mai 2016</string>
-    <string name="time_travel_solar_eclipse_2024">Diffyg ar yr haul 8 Ebrill 2024</string>
-    <string name="time_travel_apollo_11">Glanio Apollo 11 ar y lleuad</string>
-    <string name="use_sound_effects" translation_description="A preferences menu label">Galluogi sain</string>
-    <string name="menu_gallery">Oriel</string>
-    <string name="gallery_image_search_btn">Canfod yn yr awyr</string>
-    <string name="gallery_image_back_btn">Nôl i\'r oriel</string>
-    <string name="hubble_image_gallery_title">Oriel Sky Map</string>
-    <string name="hubble_image">Delwedd Hubble</string>
+
+    <string name="time_travel_next_sunset" translation_description="Name of a popular astronomical event in the time travel picker">Machlud haul y noswaith nesaf</string>
+    <string name="time_travel_next_sunrise" translation_description="Name of a popular astronomical event in the time travel picker">Gwawr y bore nesaf</string>
+    <string name="time_travel_next_fullmoon" translation_description="Name of a popular astronomical event in the time travel picker">Lleuad llawn nesaf</string>
+    <string name="time_travel_mercury_transit_2016" translation_description="Name of an astronomical event in the time travel picker. A Mercury transit is when Mercury passes across the face of the Sun as seen from Earth. Keep the date format suitable for your locale.">Croesiad Mercher 9 Mai 2016</string>
+    <string name="time_travel_solar_eclipse_2024" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">Diffyg ar yr haul 8 Ebrill 2024</string>
+    <string name="time_travel_apollo_11" translation_description="Name of an astronomical event in the time travel picker: the first crewed Moon landing in 1969">Glanio Apollo 11 ar y lleuad</string>
+    <string name="use_sound_effects" translation_description="A preferences menu label for enabling sound effects">Galluogi sain</string>
+
+    <string name="menu_gallery" translation_description="Menu item label to open the image gallery">Oriel</string>
+    <string name="gallery_image_search_btn" translation_description="Button in the gallery to locate the displayed object on the sky map">Canfod yn yr awyr</string>
+    <string name="gallery_image_back_btn" translation_description="Button to return to the gallery from a single image view">Nôl i\'r oriel</string>
+    <string name="hubble_image_gallery_title" translation_description="Title of the image gallery screen">Oriel Sky Map</string>
+    <string name="hubble_image" translation_description="Label or caption for a Hubble Space Telescope image in the gallery">Delwedd Hubble</string>
     <string name="search_overlay_title" translation_description="title for search overlay">Pwyntia dy ddyfais tua\'r saeth</string>
     <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">Yn chwilio am:</string>
-    <string name="sun_wont_set_message">Dyw\'r haul ddim yn machlud o fewn y 24 awr nesaf yn dy leoliad cyfredol.</string>
-    <string name="menu_tos">Telerau Gwasanaeth</string>
-    <string name="menu_diagnostics">Diagnosteg</string>
-    <string name="north_pole">PyG</string>
-    <string name="south_pole">PyD</string>
-    <string name="enable_analytics">Anfon ystadegau defnydd</string>
-    <string name="enable_analytics_desc">Helpa wella Sky Map wrth anfon data anhysbys</string>
-    <string name="no_sensor_warning">Mae\'n bosib nad oes gan dy ddyfais synwyryddion cyfeiriad i\'r modd awtomatig gweithio.</string>
-    <string name="warning_dialog_title">Newyddion drwg!</string>
-    <string name="missing_sensor_dialog_text">\n
+    <string name="sun_wont_set_message" translation_description="Message shown when the sun will not set during the next 24 hours (polar day / midnight sun)">Dyw\'r haul ddim yn machlud o fewn y 24 awr nesaf yn dy leoliad cyfredol.</string>
+
+    <string name="menu_tos" translation_description="Menu item label to view the Terms of Service">Telerau Gwasanaeth</string>
+    <string name="menu_diagnostics" translation_description="Menu item label to open the technical diagnostics screen">Diagnosteg</string>
+
+    <string name="north_pole" translation_description="Short abbreviation for the North Celestial Pole, displayed as a label on the sky map grid. Translators: use the standard abbreviation in your language (e.g. NP in English, PN in French).">PyG</string>
+    <string name="south_pole" translation_description="Short abbreviation for the South Celestial Pole, displayed as a label on the sky map grid. Translators: use the standard abbreviation in your language (e.g. SP in English, PS in French).">PyD</string>
+
+    <string name="enable_analytics" translation_description="Preference label to opt in to sending anonymous usage statistics">Anfon ystadegau defnydd</string>
+    <string name="enable_analytics_desc" translation_description="Description/summary for the usage statistics preference">Helpa wella Sky Map wrth anfon data anhysbys</string>
+
+    <string name="no_sensor_warning" translation_description="Warning shown when required orientation sensors are not detected on the device">Mae\'n bosib nad oes gan dy ddyfais synwyryddion cyfeiriad i\'r modd awtomatig gweithio.</string>
+    <string name="warning_dialog_title" translation_description="Title of a warning dialog shown when something is wrong, e.g. a missing sensor">Newyddion drwg!</string>
+    <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">\n
         Yn anffodus, mae\'n bosib nad oes gan dy ddyfais un o\'r synwyryddion sydd ei angen ar Sky Map.\n\n
         Er mwyn dangos yr awyr yn y cyfeiriad mae dy ddyfais yn pwyntio mae ar Sky Map angen cwmpawd a mesurydd cyflymiad. Mae dy ddyfais yn adrodd bod un ohonynt ar goll. Mae rhai dyfeisiau (e.e. Moto E) yn honni yn anghywir nad oes ynddynt gwmpawd.\n\n
 
         Os oes wir synhwyrydd ar goll o dy ddyfais, ni fydd modd awto-synhwyro yn gweithio. Fodd bynnag, gellir dal i ddefnyddio Sky Map ar y ddyfais hon ym modd llaw, a llusgo, troi a chwyddo\'r map gyda dy fysedd.
     </string>
-    <string name="do_not_show_again">Peidio â dangos y neges hon eto</string>
-    <string name="title_activity_diagnostic">Diagnosteg</string>
-    <string name="play_services_error">Rhybudd: Gwall Google Play Services - Posib na fydd adnabod lleoliad yn gweithio</string>
-    <string name="sensor_absent">Absennol</string>
-    <string name="sensor_accuracy_unknown">Cywirdeb: Anhysbys</string>
-    <string name="sensor_accuracy_unreliable">Cywirdeb: Annibynadwy</string>
-    <string name="sensor_accuracy_low">Cywirdeb: Isel</string>
-    <string name="sensor_accuracy_medium">Cywirdeb: Canolig</string>
-    <string name="sensor_accuracy_high">Cywirdeb: Uchel</string>
-    <string name="sensor_accuracy_nocontact">Cywirdeb: Dim cyswllt</string>
-    <string name="diagnostics_activity_general_heading">Cyffredinol</string>
-    <string name="diagnostics_activity_phone">Dyfais</string>
-    <string name="diagnostics_activity_android_version">Fersiwn Android</string>
-    <string name="diagnostics_activity_sky_map_version">Fersiwn Sky Map</string>
-    <string name="diagnostics_activity_sensors_heading">Synwyryddion</string>
-    <string name="diagnostics_activity_compass">Cwmpawd</string>
-    <string name="diagnostics_activity_accelerometer">Mesurydd Cyflymiad</string>
-    <string name="diagnostics_activity_rotation_vector">Cylchdro</string>
-    <string name="diagnostics_activity_gyroscope">Geirosgop</string>
-    <string name="diagnostics_activity_light_level">Lefel golau</string>
-    <string name="diagnostics_activity_location_and_time_heading">Lleoliad ac amser</string>
-    <string name="diagnostics_activity_gps">GPS</string>
-    <string name="diagnostics_activity_location">Lleoliad (lled., hyd.)</string>
-    <string name="diagnostics_activity_pointing_ra_dec">Pointing snapshot</string>
-    <string name="diagnostics_activity_magnetic_correction">Mag correction</string>
-    <string name="diagnostics_activity_local_datetime">Local datetime</string>
-    <string name="diagnostics_activity_universal_time">Universal datetime</string>
-    <string name="diagnostics_activity_network_heading">Rhwydwaith</string>
-    <string name="diagnostics_activity_connection">Cysylltiad</string>
-    <string name="diagnostics_activity_rotation_matrix">Rot Matrix</string>
-    <string name="enabled">Galluogwyd</string>
-    <string name="disabled">Analluogwyd</string>
-    <string name="permission_disabled">Caniatâd heb ei roi</string>
-    <string name="no_gps">Dim GPS</string>
-    <string name="connected">Wedi cysylltu</string>
-    <string name="disconnected">Heb gysylltu</string>
-    <string name="wifi">" (Wi-Fi)"</string>
-    <string name="cell_network">" (symudol)"</string>
-    <string name="menu_calibrate">Calibro</string>
-    <string name="compass_calibration_activity_heading_compass">Cwmpawd -</string>
-    <string name="compass_calibration_activity_do_not_show_this_again">Peidio â dangos hyn eto</string>
-    <string name="compass_calibration_activity_warning">Mae angen calibro dy gwmpawd</string>
-    <string name="sensor_reverse_preference_title">Gwrthdroi Z Magnetig</string>
-    <string name="sensor_reverse_preference_summary">Dull cywiro ar gyfer dyfeisiau â synwyryddion wedi\'u rhoi ar waith yn anghywir; angen ailgychwyn</string>
-    <string name="whats_new_dialog_title">Yn newydd</string>
-    <string name="disable_gyro_preference_title">Analluogi geirosgop</string>
-    <string name="disable_gyro_preference_summary">Nid oes gan bob dyfais geirosgop. Os oes un gan dy ddyfais di, bydd gwell canlyniadau os yw wedi\'i alluogi a\'r blwch hwn heb ei ddewis. Ar y llaw arall, os nad oes gan dy ddyfais geirosgop, mae\'n debyg na fydd Sky Map yn gweithio os yw\'r blwch hwn wedi\'i ddewis.</string>
-    <string name="rotate_horizon_preference_title">Cylchdroi wrth y gorwel</string>
-    <string name="rotate_horizon_preference_summary">Cylchdroi 90 gradd wrth y gorwel (ar gyfer sgriniau ble nad yw gorweddiad darlun yn bosib, e.e. sbectol glyfar)</string>
-    <string name="show_object_info_auto_mode_title">Cardiau gwybodaeth yn y modd awtomatig</string>
-    <string name="show_object_info_auto_mode_summary">Dangos cardiau gwybodaeth hefyd wrth dapio gwrthrychau yn y modd awtomatig (synhwyrydd)</string>
-</resources>
+    <string name="do_not_show_again" translation_description="Checkbox or button label to suppress future display of a warning dialog">Peidio â dangos y neges hon eto</string>
+    <string name="title_activity_diagnostic" translation_description="Title bar text for the Diagnostics activity/screen">Diagnosteg</string>
+    <string name="play_services_error" translation_description="Warning shown in the diagnostics screen when Google Play Services has an error that may affect automatic location">Rhybudd: Gwall Google Play Services - Posib na fydd adnabod lleoliad yn gweithio</string>
+    <string name="sensor_absent" translation_description="Sensor status shown in diagnostics when the sensor is not present on the device">Absennol</string>
+    <string name="sensor_accuracy_unknown" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">Cywirdeb: Anhysbys</string>
+    <string name="sensor_accuracy_unreliable" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">Cywirdeb: Annibynadwy</string>
+    <string name="sensor_accuracy_low" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">Cywirdeb: Isel</string>
+    <string name="sensor_accuracy_medium" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">Cywirdeb: Canolig</string>
+    <string name="sensor_accuracy_high" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">Cywirdeb: Uchel</string>
+    <string name="sensor_accuracy_nocontact" translation_description="Sensor accuracy level shown when the sensor has no contact (e.g. heart-rate sensor lifted from skin) — unlikely to appear in Sky Map but included for completeness">Cywirdeb: Dim cyswllt</string>
+    <string name="diagnostics_activity_general_heading" translation_description="Section heading in the Diagnostics screen for general device information">Cyffredinol</string>
+    <string name="diagnostics_activity_phone" translation_description="Row label in the Diagnostics screen for the device model name">Dyfais</string>
+    <string name="diagnostics_activity_android_version" translation_description="Row label in the Diagnostics screen for the Android OS version">Fersiwn Android</string>
+    <string name="diagnostics_activity_sky_map_version" translation_description="Row label in the Diagnostics screen for the Sky Map app version">Fersiwn Sky Map</string>
+    <string name="diagnostics_activity_sensors_heading" translation_description="Section heading in the Diagnostics screen for sensor readings">Synwyryddion</string>
+    <string name="diagnostics_activity_compass" translation_description="Row label in the Diagnostics screen for the compass (magnetic field) sensor">Cwmpawd</string>
+    <string name="diagnostics_activity_accelerometer" translation_description="Row label in the Diagnostics screen for the accelerometer sensor">Mesurydd Cyflymiad</string>
+    <string name="diagnostics_activity_rotation_vector" translation_description="Row label in the Diagnostics screen for the rotation vector (combined orientation) sensor">Cylchdro</string>
+    <string name="diagnostics_activity_gyroscope" translation_description="Row label in the Diagnostics screen for the gyroscope sensor">Geirosgop</string>
+    <string name="diagnostics_activity_light_level" translation_description="Row label in the Diagnostics screen for the ambient light sensor reading">Lefel golau</string>
+    <string name="diagnostics_activity_location_and_time_heading" translation_description="Section heading in the Diagnostics screen for location and time information">Lleoliad ac amser</string>
+    <string name="diagnostics_activity_location" translation_description="Row label in the Diagnostics screen showing the current latitude and longitude">Lleoliad (lled., hyd.)</string>
+    <string name="diagnostics_activity_network_heading" translation_description="Section heading in the Diagnostics screen for network connectivity information">Rhwydwaith</string>
+    <string name="diagnostics_activity_connection" translation_description="Row label in the Diagnostics screen for the current network connection status">Cysylltiad</string>
+    <string name="enabled" translation_description="Generic status value meaning a feature or sensor is enabled/active">Galluogwyd</string>
+    <string name="disabled" translation_description="Generic status value meaning a feature or sensor is disabled/inactive">Analluogwyd</string>
+    <string name="permission_disabled" translation_description="Status value shown when a feature is unavailable because its permission was not granted">Caniatâd heb ei roi</string>
+    <string name="no_gps" translation_description="Status value shown in diagnostics when no GPS provider is available">Dim GPS</string>
+    <string name="connected" translation_description="Network status value shown when the device has an active network connection">Wedi cysylltu</string>
+    <string name="disconnected" translation_description="Network status value shown when the device has no network connection">Heb gysylltu</string>
+    <string name="wifi" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (wifi)\'). Note the leading space.">" (Wi-Fi)"</string>
+    <string name="cell_network" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (cell)\'). Note the leading space.">" (symudol)"</string>
+    <string name="menu_calibrate" translation_description="Menu item label to open the compass calibration screen">Calibro</string>
+    <string name="compass_calibration_activity_heading_compass" translation_description="Static label in the compass calibration screen placed inline to the left of the live compass accuracy value (e.g. displayed as \'Compass - Accuracy: High\')">Cwmpawd -</string>
+    <string name="compass_calibration_activity_do_not_show_this_again" translation_description="Checkbox label in the compass calibration dialog to suppress future automatic appearances">Peidio â dangos hyn eto</string>
+    <string name="compass_calibration_activity_warning" translation_description="Heading/reason text shown in the compass calibration dialog when it opens automatically due to low accuracy">Mae angen calibro dy gwmpawd</string>
+    <string name="sensor_reverse_preference_title" translation_description="Preference title for reversing the magnetic Z-axis sensor reading, a fix for certain phones with incorrectly implemented sensors">Gwrthdroi Z Magnetig</string>
+    <string name="sensor_reverse_preference_summary" translation_description="Summary for the Reverse Magnetic Z preference">Dull cywiro ar gyfer dyfeisiau â synwyryddion wedi\'u rhoi ar waith yn anghywir; angen ailgychwyn</string>
+    <string name="whats_new_dialog_title" translation_description="Title of the dialog shown on first launch after an update, listing new features">Yn newydd</string>
+    <string name="disable_gyro_preference_title" translation_description="Preference title for disabling the gyroscope sensor">Analluogi geirosgop</string>
+    <string name="disable_gyro_preference_summary" translation_description="Explanation of the disable gyroscope preference and when to use it">Nid oes gan bob dyfais geirosgop. Os oes un gan dy ddyfais di, bydd gwell canlyniadau os yw wedi\'i alluogi a\'r blwch hwn heb ei ddewis. Ar y llaw arall, os nad oes gan dy ddyfais geirosgop, mae\'n debyg na fydd Sky Map yn gweithio os yw\'r blwch hwn wedi\'i ddewis.</string>
+    <string name="rotate_horizon_preference_title" translation_description="Preference title for choosing the view/pointing direction mode">Cylchdroi wrth y gorwel</string>
+    <string name="rotate_horizon_preference_summary" translation_description="Explanation of the view direction preference, covering both landscape rotation and pointer modes">Cylchdroi 90 gradd wrth y gorwel (ar gyfer sgriniau ble nad yw gorweddiad darlun yn bosib, e.e. sbectol glyfar)</string>
+
+    <string name="show_object_info_auto_mode_title" translation_description="Preference title for enabling info cards in auto/sensor mode">Cardiau gwybodaeth yn y modd awtomatig</string>
+    <string name="show_object_info_auto_mode_summary" translation_description="Preference summary for auto mode info cards">Dangos cardiau gwybodaeth hefyd wrth dapio gwrthrychau yn y modd awtomatig (synhwyrydd)</string>
+    </resources>

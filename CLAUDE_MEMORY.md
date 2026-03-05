@@ -3,8 +3,7 @@
 ## Build Gotchas
 - Always set `JAVA_HOME=$(/usr/libexec/java_home -v 17)` before building — Gradle will silently use the wrong JDK otherwise
 - Use `assembleGmsDebug` not `assembleDebug` (no plain flavor exists)
-- If `installGmsDebug` fails with `INSTALL_FAILED_UPDATE_INCOMPATIBLE`, uninstall the Play Store version first: `adb uninstall com.google.android.stardroid`
-- If device shows as offline: `adb kill-server && adb start-server`
+- Full build/test/deploy commands are in the `/build` skill (`.claude/skills/build/SKILL.md`)
 
 ## Adding Catalog Objects (Messier/Special)
 

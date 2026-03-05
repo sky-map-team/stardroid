@@ -13,16 +13,17 @@ specs/
 ├── README.md                    # This file - Navigation hub
 ├── overview.md                  # High-level app overview
 │
-├── blueprint/                   # NEW: Target architecture & migration
+├── blueprint/                   # FUTURE DESIGN (not implemented) — AR/Vulkan/Hilt/Compose target
 │   ├── README.md                # Blueprint overview and navigation
 │   ├── core-domain.md          # Astronomical core (algorithms, math, sensors)
 │   ├── rendering-abstraction.md # Graphics abstraction layer
 │   ├── ar-vulkan-target.md     # AR/Vulkan target architecture
-│   └── migration-roadmap.md    # Migration path from current to target
+│   ├── migration-roadmap.md    # Migration path from current to target
+│   └── future-data-generation.md # Proposed FlatBuffers data pipeline
 │
 ├── architecture/                # Current architecture documentation
 │   ├── README.md               # Architecture overview
-│   ├── dependency-injection.md # Hilt component hierarchy
+│   ├── dependency-injection.md # Dagger 2 component hierarchy
 │   ├── module-structure.md     # app/, datamodel/, tools/ modules
 │   └── data-flow.md            # Data pipeline from catalogs to rendering
 │
@@ -65,7 +66,7 @@ specs/
 │   ├── catalogs.md             # Star, constellation, Messier catalogs
 │   ├── ephemeris.md            # Solar system calculations
 │   ├── iss-tracking.md         # International Space Station
-│   └── flatbuffers-schema.md   # FlatBuffers schema definitions
+│   └── protobuf-schema.md      # Protocol Buffers schema definitions
 │
 └── build/
     ├── README.md               # Build system overview
@@ -104,21 +105,20 @@ specs/
 ## Key Technologies
 
 - **Layers**: 12 switchable celestial layers
-- **Platform**: Android SDK 26-35
-- **Language**: Kotlin (pure Kotlin codebase)
-- **Rendering**: OpenGL ES 2.0
-- **DI Framework**: Dagger 2 / Hilt
-- **Data Format**: FlatBuffers (zero-copy deserialization)
+- **Platform**: Android SDK 26+ (minSdk 26, compileSdk 35, targetSdk 36)
+- **Language**: Mixed Java and Kotlin (layers/ is Kotlin; activities/, control/, renderer/ are predominantly Java)
+- **Rendering**: OpenGL ES 1.x (GL10 API via `GLSurfaceView.Renderer`)
+- **DI Framework**: Dagger 2 (not Hilt)
+- **Data Format**: Protocol Buffers proto2 (binary assets in `app/src/main/assets/*.binary`)
 - **Testing**: JUnit 4, Robolectric, Mockito, Espresso
 
 ## Version Constraints
 
 | Dependency | Version | Notes |
 |------------|---------|-------|
-| Java | 17 or 23 | Java 25 has AGP compatibility issues |
-| AGP | 8.7.3 | Android Gradle Plugin |
-| Kotlin | 2.1.0 | |
-| Gradle | 8.11.1 | |
+| Java | 17 | jvmToolchain(17) in build.gradle |
+| AGP | 8.13.2 | Android Gradle Plugin |
+| Kotlin | 2.0.20 | |
+| Gradle | 8.13 | |
 | compileSdk | 35 | |
 | minSdk | 26 | Android 8.0+ |
-| NDK | Latest | For Vulkan native code |

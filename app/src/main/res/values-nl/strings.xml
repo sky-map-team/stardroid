@@ -1,100 +1,99 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="app_name" translation_description="Application Title">Sky Map</string>
-    <string name="menu_settings">Instellingen</string>
-    <string name="menu_search">Zoeken</string>
-    <string name="cancel">Annuleren</string>
-    <string name="set">Instellen</string>
-    <string name="go">Ga!</string>
-    <string name="location_prefs">Locatie-instellingen</string>
-    <string name="force_gps_pref">Altijd GPS gebruiken</string>
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Please add  translation_description="" attributes to Strings to assist the translators. --><resources>
+    <string name="menu_settings" translation_description="Settings menu item in the options menu">Instellingen</string>
+    <string name="menu_search" translation_description="Search menu item in the options menu">Zoeken</string>
+    <string name="cancel" translation_description="Generic cancel button label used in dialogs">Annuleren</string>
+    <string name="set" translation_description="Button label. Set the date to the given value">Instellen</string>
+    <string name="go" translation_description="Button to start navigating the sky map toward a searched object">Ga!</string>
+    <string name="location_prefs" translation_description="Preferences category heading for location-related settings">Locatie-instellingen</string>
+    <string name="force_gps_pref" translation_description="Preference label: force GPS use even when network location is available">Altijd GPS gebruiken</string>
     <string name="force_gps_pref_hint" translation_description="this string continues from \'Always use GPS\'">indien ingeschakeld, zelfs als een netwerklocatie beschikbaar is</string>
-    <string name="no_use_gps_pref">Locatie handmatig instellen</string>
-    <string name="no_use_gps_pref_hint">Geef hieronder een plaats of lengte-/breedtegraad op</string>
-    <string name="location_placename">Plaatsnaam</string>
+    <string name="no_use_gps_pref" translation_description="Preference label: choose to enter location by hand instead of using GPS or phone location">Locatie handmatig instellen</string>
+    <string name="no_use_gps_pref_hint" translation_description="Hint text beneath the \'Set location manually\' preference">Geef hieronder een plaats of lengte-/breedtegraad op</string>
+    <string name="location_placename" translation_description="Label for the place-name text field in manual location settings">Plaatsnaam</string>
     <string name="location_placename_hint" translation_description="An example address.  Translators: please pick an address suitable for your country.  If it has an astronomical connection (e.g. the address of an observatory or famous astronomer) then that would be even better.">Bijvoorbeeld: Oude Hoogeveensedijk 4, Dwingeloo.</string>
-    <string name="location_lat_pref">Breedtegraad</string>
-    <string name="location_long_pref">Geografische lengte</string>
-    <string name="degrees">Graden</string>
-    <string name="preferences">voorkeuren</string>
-    <string name="location_offer_to_enable">Automatische locatiedetectie is uitgeschakeld. Wilt u deze functie inschakelen?</string>
-    <string name="location_offer_to_enable_gps_title">Automatische locatiedetectie uitgeschakeld</string>
-    <string name="location_set_auto">Locatie ingesteld van %1$s naar %2$s</string>
-    <string name="location_unable_to_geocode">Kan uw locatie niet decoderen - misschien is uw netwerk niet beschikbaar?</string>
-    <string name="location_not_found_title" translation_description="dialog box title when location not found">Sorry</string>
+    <string name="location_lat_pref" translation_description="Label for the latitude input field in manual location settings">Breedtegraad</string>
+    <string name="location_long_pref" translation_description="Label for the longitude input field in manual location settings">Geografische lengte</string>
+    <string name="degrees" translation_description="angular degrees - used for latitude and longitude">Graden</string>
+    <string name="preferences" translation_description="Provider-name label used internally when a location is set from preferences (not shown directly to the user as a UI label - does not require a translation)">voorkeuren</string>
+    <string name="location_offer_to_enable" translation_description="Dialog message asking whether to enable automatic location">Automatische locatiedetectie is uitgeschakeld. Wilt u deze functie inschakelen?</string>
+    <string name="location_offer_to_enable_gps_title" translation_description="Title of dialog shown when automatic location is disabled">Automatische locatiedetectie uitgeschakeld</string>
+    <!-- TODO: many translations require two placeholders. Once all translations brought up to date we can clean this up -->
+    <string name="location_set_auto" translation_description="Toast message when automatic location is acquired. %1$s is the provider name (e.g. GPS), %2$s is the place name or coordinates">Locatie ingesteld van %1$s naar %2$s</string>
+    <string name="location_unable_to_geocode" translation_description="Error message when converting a place name to coordinates (geocoding) fails, possibly due to no network">Kan uw locatie niet decoderen - misschien is uw netwerk niet beschikbaar?</string>
     <string name="location_not_found" translation_description="dialog message when placename not found">%s niet gevonden.</string>
-    <string name="location_long_lat">Lengtegraad:%1$s, breedtegraad:%2$s</string>
-    <string name="location_place_found">Plaats gevonden. Breedtegraad %1$f en lengtegraad %2$f worden ingesteld</string>
-    <string name="use_magnetic_correction">Magnetische correctie gebruiken</string>
-    <string name="show_stars_pref">Sterren</string>
-    <string name="show_constellations_pref">Sterrenbeelden</string>
-    <string name="show_messier_objects_pref" translation_description="The celestial objects catalogued by Charles Messier">Messier-objecten</string>
-    <string name="show_planets_pref">Planeten</string>
-    <string name="show_grid_pref">RK/declinatieraster</string>
-    <string name="show_horizon_pref">Horizon</string>
-    <string name="show_sky_gradient">Hemelgradiënt</string>
-    <string name="sensor_prefs">Sensorinstellingen</string>
-    <string name="ecliptic">Ecliptica</string>
-    <string name="malformed_loc_error">De ingestelde breedte- of lengtegraad is geen getal.</string>
+    <string name="location_long_lat" translation_description="Formatted display of longitude and latitude. %1$.2f is longitude, %2$.2f is latitude">Lengtegraad:%1$s, breedtegraad:%2$s</string>
+    <string name="location_place_found" translation_description="Status message when a place name was successfully looked up. %1$f is latitude, %2$f is longitude">Plaats gevonden. Breedtegraad %1$f en lengtegraad %2$f worden ingesteld</string>
+    <string name="use_magnetic_correction" translation_description="Preference label: apply magnetic declination correction so the compass points to true north instead of magnetic north">Magnetische correctie gebruiken</string>
+    <string name="show_stars_pref" translation_description="Label for the stars layer on the sky map (shows in the search results)">Sterren</string>
+    <string name="show_constellations_pref" translation_description="Label for the constellation lines and labels layer (shows in the search results)">Sterrenbeelden</string>
+    <string name="show_messier_objects_pref" translation_description="The celestial objects catalogued by Charles Messier (shows in the search results)">Messier-objecten</string>
+    <string name="show_planets_pref" translation_description="Label for the solar system layer (planets, sun, moon)  (shows in the search results)">Planeten</string>
+    <string name="show_grid_pref" translation_description="Label for the Right Ascension / Declination grid overlay  (shows in the search results)">RK/declinatieraster</string>
+    <string name="show_sky_gradient" translation_description="This is a shading of the color of the sky used for effect">Hemelgradiënt</string>
+    <string name="sensor_prefs" translation_description="Preferences category heading for sensor settings, intended for advanced/expert users">Sensorinstellingen</string>
+    <string name="ecliptic" translation_description="Label for the ecliptic layer — the apparent annual path of the Sun across the sky">Ecliptica</string>
+    <string name="malformed_loc_error" translation_description="Error message when a non-numeric value is entered for latitude or longitude">De ingestelde breedte- of lengtegraad is geen getal.</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Accepteren</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">Nee, bedankt</string>
-    <string name="menu_help" translation_description="menu item to show \'Help\' box">Help</string>
-    <string name="help_dialog_title">Help voor Sky Map</string>
-    <string name="set_manual">Schakelen naar handmatige modus</string>
-    <string name="set_auto">Schakelen naar automatische modus</string>
-    <string name="menu_toggle_dim">Nachtmodus schakelen</string>
-    <string name="zenith">ZENIT</string>
-    <string name="nadir">NADIR</string>
-    <string name="north">NOORD</string>
-    <string name="east">OOST</string>
-    <string name="west">WEST</string>
-    <string name="south">ZUID</string>
-    <string name="search_label">Sterrenhemel doorzoeken</string>
+    <string name="help_dialog_title" translation_description="Title of the help dialog">Help voor Sky Map</string>
+    <string name="set_manual" translation_description="Toast message shown when the user switches to manual (touch-drag) mode">Schakelen naar handmatige modus</string>
+    <string name="set_auto" translation_description="Toast message shown when the user switches to automatic (sensor/gyroscope) mode">Schakelen naar automatische modus</string>
+    <string name="menu_toggle_dim" translation_description="Menu item to toggle night mode (red tint that preserves night vision)">Nachtmodus schakelen</string>
+    <string name="zenith" translation_description="Label for the zenith point (directly overhead) shown on the sky map. Displayed in capitals.">ZENIT</string>
+    <string name="north" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">NOORD</string>
+    <string name="east" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">OOST</string>
+    <string name="south" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">ZUID</string>
+    <string name="search_label" translation_description="Hint/label for the search bar in the search activity">Sterrenhemel doorzoeken</string>
     <string name="search_hint" translation_description="an example search target">bijvoorbeeld: Mars</string>
-    <string name="no_search_title">Geen resultaten</string>
-    <string name="many_search_results_title">Bedoelde u?</string>
-    <string name="other">Overige</string>
-    <string name="menu_time">Tijdreizen</string>
-    <string name="time_travel_start_message_alt">We reizen door de tijd naar %s ...</string>
-    <string name="time_travel_close_message">Terug naar het heden ...</string>
-    <string name="popular_dates_prompt" translation_description="label for a list of dates the user can choose from">Populaire datums</string>
-    <string name="custom_date_prompt" translation_description="label telling the user to manually specify a data">Of selecteer uw eigen datum</string>
-    <string name="change_date_prompt">Datum wijzigen</string>
-    <string name="change_time_prompt">Tijd wijzigen</string>
-    <string name="now_visiting" translation_description="tells the user what time they are visiting">U bent nu in: %s</string>
-    <string name="time_travel_label_past" translation_description="label showing that we are in the past">Tijdreizen: verleden</string>
-    <string name="time_travel_label_future" translation_description="label showing that we are in the future">Tijdreizen: toekomst</string>
-    <string name="time_travel_stopped" translation_description="label showing rate of travel through time">Tijdreizen stopgezet</string>
-    <string name="time_travel_second_speed" translation_description="label showing rate of travel through time">Beweegt &gt; @ 1 sec/sec</string>
-    <string name="time_travel_minute_speed" translation_description="label showing rate of travel through time">Beweegt &gt; @ 1 min/sec</string>
-    <string name="time_travel_10minute_speed" translation_description="label showing rate of travel through time">Beweegt &gt; @ 10 min/sec</string>
-    <string name="time_travel_hour_speed" translation_description="label showing rate of travel through time">Beweegt &gt; @ 1 uur/sec</string>
-    <string name="time_travel_day_speed" translation_description="label showing rate of travel through time">Beweegt &gt; @ 1 dag/sec</string>
-    <string name="time_travel_week_speed" translation_description="label showing rate of travel through time">Beweegt &gt; @ 1 week/sec</string>
-    <string name="time_travel_second_speed_back" translation_description="label showing rate of travel through time">Beweegt &lt; @ 1 sec/sec</string>
-    <string name="time_travel_minute_speed_back" translation_description="label showing rate of travel through time">Beweegt &lt; @ 1 min/sec</string>
-    <string name="time_travel_10minute_speed_back" translation_description="label showing rate of travel through time">Beweegt &lt; @ 10 min/sec</string>
-    <string name="time_travel_hour_speed_back" translation_description="label showing rate of travel through time">Beweegt &lt; @ 1 uur/sec</string>
-    <string name="time_travel_day_speed_back" translation_description="label showing rate of travel through time">Beweegt &lt; @ 1 dag/sec</string>
-    <string name="time_travel_week_speed_back" translation_description="label showing rate of travel through time">Beweegt &lt; @ 1 week/sec</string>
-    <string name="time_travel_next_sunset">Volgende zonsondergang</string>
-    <string name="time_travel_next_sunrise">Volgende zonsopgang</string>
-    <string name="time_travel_next_fullmoon">Volgende volle maan</string>
-    <string name="time_travel_solar_eclipse_2024">Zonsverduistering van Apr 8, 2024</string>
-    <string name="time_travel_apollo_11">Maanlanding van de Apollo 11</string>
-    <string name="time_travel_jupiter_saturn_2020">Conjunctie Jupiter-Saturnus</string>
-    <string name="use_sound_effects" translation_description="A preferences menu label">Geluid inschakelen</string>
-    <string name="menu_gallery">Galerij</string>
-    <string name="gallery_image_search_btn">Vinden in de sterrenhemel</string>
-    <string name="gallery_image_back_btn">Terug naar galerij</string>
-    <string name="hubble_image_gallery_title">Hubble-galerij met sterrenkaarten</string>
-    <string name="hubble_image">Hubble-beeld</string>
+    <string name="no_search_title" translation_description="Dialog title shown when a sky search returns no results">Geen resultaten</string>
+    <string name="many_search_results_title" translation_description="Dialog title shown when a search returns multiple possible matches">Bedoelde u?</string>
+    <string name="other" translation_description="A preference category (ie preferences that don't belong in any other category)">Overige</string>
+    <string name="menu_time" translation_description="Menu item label to open the time travel feature">Tijdreizen</string>
+    <string name="time_travel_start_message_alt" translation_description="Toast message when time travel starts toward a named destination. %s is the event or destination name">We reizen door de tijd naar %s ...</string>
+    <string name="time_travel_close_message" translation_description="Toast message shown when the user exits time travel and returns to the present">Terug naar het heden ...</string>
+    <!--  -->
+    <string name="popular_dates_prompt" translation_description="Label for a list of dates the user can choose from">Populaire datums</string>
+    <string name="custom_date_prompt" translation_description="Label telling the user to manually specify a date">Of selecteer uw eigen datum</string>
+    <string name="change_date_prompt" translation_description="Button label to open the date picker in the time travel dialog">Datum wijzigen</string>
+    <string name="change_time_prompt" translation_description="Button label to open the time picker in the time travel dialog">Tijd wijzigen</string>
+    <string name="now_visiting" translation_description="used in time travel dialog to show the destination date/time the user has selected, time formatted as yyyy.mm.dd at hh.mm.ss + timezone">U bent nu in: %s</string>
+    <string name="time_travel_label_past" translation_description="Label showing that we are in the past">Tijdreizen: verleden</string>
+    <string name="time_travel_label_future" translation_description="Label showing that we are in the future">Tijdreizen: toekomst</string>
+    <string name="time_travel_stopped" translation_description="Label showing rate of travel through time">Tijdreizen stopgezet</string>
+    <string name="time_travel_second_speed" translation_description="Label showing rate of travel through time.  The symbol means greater than.">Beweegt &gt; @ 1 sec/sec</string>
+    <string name="time_travel_minute_speed" translation_description="Label showing rate of travel through time">Beweegt &gt; @ 1 min/sec</string>
+    <string name="time_travel_10minute_speed" translation_description="Label showing rate of travel through time">Beweegt &gt; @ 10 min/sec</string>
+    <string name="time_travel_hour_speed" translation_description="Label showing rate of travel through time">Beweegt &gt; @ 1 uur/sec</string>
+    <string name="time_travel_day_speed" translation_description="Label showing rate of travel through time">Beweegt &gt; @ 1 dag/sec</string>
+    <string name="time_travel_week_speed" translation_description="Label showing rate of travel through time">Beweegt &gt; @ 1 week/sec</string>
+    <string name="time_travel_second_speed_back" translation_description="Label showing rate of travel through time">Beweegt &lt; @ 1 sec/sec</string>
+    <string name="time_travel_minute_speed_back" translation_description="Label showing rate of travel through time">Beweegt &lt; @ 1 min/sec</string>
+    <string name="time_travel_10minute_speed_back" translation_description="Label showing rate of travel through time">Beweegt &lt; @ 10 min/sec</string>
+    <string name="time_travel_hour_speed_back" translation_description="Label showing rate of travel through time">Beweegt &lt; @ 1 uur/sec</string>
+    <string name="time_travel_day_speed_back" translation_description="Label showing rate of travel through time">Beweegt &lt; @ 1 dag/sec</string>
+    <string name="time_travel_week_speed_back" translation_description="Label showing rate of travel through time">Beweegt &lt; @ 1 week/sec</string>
+
+    <string name="time_travel_next_sunset" translation_description="Name of a popular astronomical event in the time travel picker">Volgende zonsondergang</string>
+    <string name="time_travel_next_sunrise" translation_description="Name of a popular astronomical event in the time travel picker">Volgende zonsopgang</string>
+    <string name="time_travel_next_fullmoon" translation_description="Name of a popular astronomical event in the time travel picker">Volgende volle maan</string>
+    <string name="time_travel_solar_eclipse_2024" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">Zonsverduistering van Apr 8, 2024</string>
+    <string name="time_travel_apollo_11" translation_description="Name of an astronomical event in the time travel picker: the first crewed Moon landing in 1969">Maanlanding van de Apollo 11</string>
+    <string name="time_travel_jupiter_saturn_2020" translation_description="Name of an astronomical event in the time travel picker. A conjunction is when two planets appear very close together in the sky.">Conjunctie Jupiter-Saturnus</string>
+    <string name="use_sound_effects" translation_description="A preferences menu label for enabling sound effects">Geluid inschakelen</string>
+
+    <string name="menu_gallery" translation_description="Menu item label to open the image gallery">Galerij</string>
+    <string name="gallery_image_search_btn" translation_description="Button in the gallery to locate the displayed object on the sky map">Vinden in de sterrenhemel</string>
+    <string name="gallery_image_back_btn" translation_description="Button to return to the gallery from a single image view">Terug naar galerij</string>
+    <string name="hubble_image_gallery_title" translation_description="Title of the image gallery screen">Hubble-galerij met sterrenkaarten</string>
+    <string name="hubble_image" translation_description="Label or caption for a Hubble Space Telescope image in the gallery">Hubble-beeld</string>
     <string name="search_overlay_title" translation_description="title for search overlay">Richt uw telefoon in de richting van de pijl</string>
     <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">Zoeken naar:</string>
-    <string name="sun_wont_set_message">De zon gaat op uw huidige locatie niet onder in de komende 24 uur.</string>
-    <string name="menu_tos">Servicevoorwaarden</string>
-    <string name="north_pole">NP</string>
-    <string name="south_pole">ZP</string>
-    <string name="show_object_info_auto_mode_title">Infokaarten in automatische modus</string>
-    <string name="show_object_info_auto_mode_summary">Toon ook infokaarten bij het tikken op objecten in automatische (sensor) modus</string>
-</resources>
+    <string name="sun_wont_set_message" translation_description="Message shown when the sun will not set during the next 24 hours (polar day / midnight sun)">De zon gaat op uw huidige locatie niet onder in de komende 24 uur.</string>
+
+    <string name="menu_tos" translation_description="Menu item label to view the Terms of Service">Servicevoorwaarden</string>
+    <string name="south_pole" translation_description="Short abbreviation for the South Celestial Pole, displayed as a label on the sky map grid. Translators: use the standard abbreviation in your language (e.g. SP in English, PS in French).">ZP</string>
+
+    <string name="show_object_info_auto_mode_title" translation_description="Preference title for enabling info cards in auto/sensor mode">Infokaarten in automatische modus</string>
+    <string name="show_object_info_auto_mode_summary" translation_description="Preference summary for auto mode info cards">Toon ook infokaarten bij het tikken op objecten in automatische (sensor) modus</string>
+    </resources>

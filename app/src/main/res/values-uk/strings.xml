@@ -1,107 +1,114 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="app_name" translation_description="Application Title">Sky Map</string>
-    <string name="menu_settings">Налаштування</string>
-    <string name="menu_search">Пошук</string>
-    <string name="cancel">Відміна</string>
-    <string name="set">Налаштувати</string>
-    <string name="go">Вперед!</string>
-    <string name="location_prefs">Параметри розташування</string>
-    <string name="force_gps_pref">Завжди викор. GPS</string>
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Please add  translation_description="" attributes to Strings to assist the translators. --><resources>
+    <string name="menu_settings" translation_description="Settings menu item in the options menu">Налаштування</string>
+    <string name="menu_search" translation_description="Search menu item in the options menu">Пошук</string>
+    <string name="cancel" translation_description="Generic cancel button label used in dialogs">Відміна</string>
+    <string name="set" translation_description="Button label. Set the date to the given value">Налаштувати</string>
+    <string name="go" translation_description="Button to start navigating the sky map toward a searched object">Вперед!</string>
+    <string name="location_prefs" translation_description="Preferences category heading for location-related settings">Параметри розташування</string>
+    <string name="force_gps_pref" translation_description="Preference label: force GPS use even when network location is available">Завжди викор. GPS</string>
     <string name="force_gps_pref_hint" translation_description="this string continues from \'Always use GPS\'">якщо ввімк., навіть якщо доступне знаходження місця розташування через інтернет мережу</string>
-    <string name="no_use_gps_pref">Задати м/р вручну</string>
-    <string name="no_use_gps_pref_hint">Введіть назву або шир./дов.</string>
-    <string name="location_placename">Назва місця</string>
+    <string name="no_use_gps_pref" translation_description="Preference label: choose to enter location by hand instead of using GPS or phone location">Задати м/р вручну</string>
+    <string name="no_use_gps_pref_hint" translation_description="Hint text beneath the \'Set location manually\' preference">Введіть назву або шир./дов.</string>
+    <string name="location_placename" translation_description="Label for the place-name text field in manual location settings">Назва місця</string>
     <string name="location_placename_hint" translation_description="An example address.  Translators: please pick an address suitable for your country.  If it has an astronomical connection (e.g. the address of an observatory or famous astronomer) then that would be even better.">наприклад Україна, Київ, вул. Грушевського, б. 5/3</string>
-    <string name="location_lat_pref">Широта</string>
-    <string name="location_long_pref">Довгота</string>
-    <string name="degrees">Градуси</string>
-    <string name="preferences">налаштування</string>
-    <string name="location_offer_to_enable">Автовизначення місця розташування вимкнене. Хочете ввімкнути?</string>
-    <string name="location_offer_to_enable_gps_title">Автовизн. м/р вимкн.</string>
-    <string name="location_set_auto">М/р змінено з %1$s на %2$s</string>
-    <string name="location_unable_to_geocode">Неможливо визначити місце розташування – ймовірно, недоступна мережа.</string>
+    <string name="location_lat_pref" translation_description="Label for the latitude input field in manual location settings">Широта</string>
+    <string name="location_long_pref" translation_description="Label for the longitude input field in manual location settings">Довгота</string>
+    <string name="degrees" translation_description="angular degrees - used for latitude and longitude">Градуси</string>
+    <string name="preferences" translation_description="Provider-name label used internally when a location is set from preferences (not shown directly to the user as a UI label - does not require a translation)">налаштування</string>
+    <string name="location_offer_to_enable" translation_description="Dialog message asking whether to enable automatic location">Автовизначення місця розташування вимкнене. Хочете ввімкнути?</string>
+    <string name="location_offer_to_enable_gps_title" translation_description="Title of dialog shown when automatic location is disabled">Автовизн. м/р вимкн.</string>
+    <!-- TODO: many translations require two placeholders. Once all translations brought up to date we can clean this up -->
+    <string name="location_set_auto" translation_description="Toast message when automatic location is acquired. %1$s is the provider name (e.g. GPS), %2$s is the place name or coordinates">М/р змінено з %1$s на %2$s</string>
+    <string name="location_unable_to_geocode" translation_description="Error message when converting a place name to coordinates (geocoding) fails, possibly due to no network">Неможливо визначити місце розташування – ймовірно, недоступна мережа.</string>
     <string name="location_not_found_title" translation_description="dialog box title when location not found">Вибачте</string>
     <string name="location_not_found" translation_description="dialog message when placename not found">Не знайдено: %s.</string>
-    <string name="location_long_lat">Довгота:%1$s, широта:%2$s</string>
-    <string name="location_place_found">Місце знайдене. Встан. широта %1$f і довгота %2$f</string>
-    <string name="use_magnetic_correction">Викор. магнітну корекцію</string>
-    <string name="show_stars_pref">Зірки</string>
-    <string name="show_constellations_pref">Сузір\'я</string>
-    <string name="show_messier_objects_pref" translation_description="The celestial objects catalogued by Charles Messier">Об\'єкти Мессьє</string>
-    <string name="show_planets_pref">Планети</string>
-    <string name="show_grid_pref">RA/Dec сітка</string>
-    <string name="show_horizon_pref">Горизонт</string>
-    <string name="show_sky_gradient">Градієнт неба</string>
-    <string name="sensor_prefs">Налаштування матриці</string>
-    <string name="ecliptic">Екліптика</string>
-    <string name="malformed_loc_error">Значення широти або довготи не є числом.</string>
+    <string name="location_long_lat" translation_description="Formatted display of longitude and latitude. %1$.2f is longitude, %2$.2f is latitude">Довгота:%1$s, широта:%2$s</string>
+    <string name="location_place_found" translation_description="Status message when a place name was successfully looked up. %1$f is latitude, %2$f is longitude">Місце знайдене. Встан. широта %1$f і довгота %2$f</string>
+    <string name="use_magnetic_correction" translation_description="Preference label: apply magnetic declination correction so the compass points to true north instead of magnetic north">Викор. магнітну корекцію</string>
+    <string name="show_stars_pref" translation_description="Label for the stars layer on the sky map (shows in the search results)">Зірки</string>
+    <string name="show_constellations_pref" translation_description="Label for the constellation lines and labels layer (shows in the search results)">Сузір\'я</string>
+    <string name="show_messier_objects_pref" translation_description="The celestial objects catalogued by Charles Messier (shows in the search results)">Об\'єкти Мессьє</string>
+    <string name="show_planets_pref" translation_description="Label for the solar system layer (planets, sun, moon)  (shows in the search results)">Планети</string>
+    <string name="show_grid_pref" translation_description="Label for the Right Ascension / Declination grid overlay  (shows in the search results)">RA/Dec сітка</string>
+    <string name="show_horizon_pref" translation_description="Preference toggle label for the horizon line layer">Горизонт</string>
+    <string name="show_sky_gradient" translation_description="This is a shading of the color of the sky used for effect">Градієнт неба</string>
+    <string name="sensor_prefs" translation_description="Preferences category heading for sensor settings, intended for advanced/expert users">Налаштування матриці</string>
+    <string name="ecliptic" translation_description="Label for the ecliptic layer — the apparent annual path of the Sun across the sky">Екліптика</string>
+    <string name="malformed_loc_error" translation_description="Error message when a non-numeric value is entered for latitude or longitude">Значення широти або довготи не є числом.</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Прийняти</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">Ні, дякую</string>
     <string name="menu_help" translation_description="menu item to show \'Help\' box">Довідка</string>
-    <string name="help_dialog_title">Довідка Sky Map</string>
-    <string name="set_manual">Перехід в ручний режим</string>
-    <string name="set_auto">Перехід в авт. режим</string>
-    <string name="menu_toggle_dim">Нічний режим ввімкн./вимкн.</string>
-    <string name="zenith">ЗЕНІТ</string>
-    <string name="nadir">НАДІР</string>
-    <string name="north">ПІВНІЧ</string>
-    <string name="east">СХІД</string>
-    <string name="west">ЗАХІД</string>
-    <string name="south">ПІВДЕНЬ</string>
-    <string name="search_label">Пошук на небі</string>
+    <string name="help_dialog_title" translation_description="Title of the help dialog">Довідка Sky Map</string>
+    <string name="set_manual" translation_description="Toast message shown when the user switches to manual (touch-drag) mode">Перехід в ручний режим</string>
+    <string name="set_auto" translation_description="Toast message shown when the user switches to automatic (sensor/gyroscope) mode">Перехід в авт. режим</string>
+    <string name="menu_toggle_dim" translation_description="Menu item to toggle night mode (red tint that preserves night vision)">Нічний режим ввімкн./вимкн.</string>
+    <string name="zenith" translation_description="Label for the zenith point (directly overhead) shown on the sky map. Displayed in capitals.">ЗЕНІТ</string>
+    <string name="nadir" translation_description="Label for the nadir point (directly below) shown on the sky map. Displayed in capitals.">НАДІР</string>
+    <string name="north" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">ПІВНІЧ</string>
+    <string name="east" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">СХІД</string>
+    <string name="west" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">ЗАХІД</string>
+    <string name="south" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">ПІВДЕНЬ</string>
+    <string name="search_label" translation_description="Hint/label for the search bar in the search activity">Пошук на небі</string>
     <string name="search_hint" translation_description="an example search target">наприклад Марс</string>
-    <string name="no_search_title">Немає результатів</string>
-    <string name="many_search_results_title">Можливо, ви мали на увазі:</string>
-    <string name="other">Інше</string>
-    <string name="menu_time">Подорож у часі</string>
-    <string name="time_travel_start_message_alt">Подорож у часі до об\'єкта %s...</string>
-    <string name="time_travel_close_message">Назад в сьогодення...</string>
-    <string name="popular_dates_prompt" translation_description="label for a list of dates the user can choose from">Популярні дати</string>
-    <string name="custom_date_prompt" translation_description="label telling the user to manually specify a data">Або виберіть іншу дату</string>
-    <string name="change_date_prompt">Змінити дату</string>
-    <string name="change_time_prompt">Змінити час</string>
-    <string name="now_visiting" translation_description="tells the user what time they are visiting">Перегляд: %s</string>
-    <string name="time_travel_label_past" translation_description="label showing that we are in the past">Подорож у часі: минуле</string>
-    <string name="time_travel_label_future" translation_description="label showing that we are in the future">Подорож у часі: майбутнє</string>
-    <string name="time_travel_stopped" translation_description="label showing rate of travel through time">Подорож у часі зупинено</string>
-    <string name="time_travel_second_speed" translation_description="label showing rate of travel through time">Подорож зі швидкістю &gt; @ 1 с/с</string>
-    <string name="time_travel_minute_speed" translation_description="label showing rate of travel through time">Подорож зі швидкістю &gt; @ 1 хв/с</string>
-    <string name="time_travel_10minute_speed" translation_description="label showing rate of travel through time">Подорож зі швидкістю &gt; @ 10 хв/с</string>
-    <string name="time_travel_hour_speed" translation_description="label showing rate of travel through time">Подорож зі швидкістю &gt; @ 1 год/с</string>
-    <string name="time_travel_day_speed" translation_description="label showing rate of travel through time">Подорож зі швидкістю &gt; @ 1 дн/с</string>
-    <string name="time_travel_week_speed" translation_description="label showing rate of travel through time">Подорож зі швидкістю &gt; @ 1 тжд/с</string>
-    <string name="time_travel_second_speed_back" translation_description="label showing rate of travel through time">Подорож зі швидкістю &lt; @ 1 с/с</string>
-    <string name="time_travel_minute_speed_back" translation_description="label showing rate of travel through time">Подорож зі швидкістю &lt; @ 1 хв/с</string>
-    <string name="time_travel_10minute_speed_back" translation_description="label showing rate of travel through time">Подорож зі швидкістю &lt; @ 10 хв/с</string>
-    <string name="time_travel_hour_speed_back" translation_description="label showing rate of travel through time">Подорож зі швидкістю &lt; @ 1 год/с</string>
-    <string name="time_travel_day_speed_back" translation_description="label showing rate of travel through time">Подорож зі швидкістю &lt; @ 1 дн/с</string>
-    <string name="time_travel_week_speed_back" translation_description="label showing rate of travel through time">Подорож зі швидкістю &lt; @ 1 тжд/с</string>
-    <string name="time_travel_next_sunset">Наступний захід Сонця</string>
-    <string name="time_travel_next_sunrise">Наступний схід Сонця</string>
-    <string name="time_travel_next_fullmoon">Наступний повний місяць</string>
-    <string name="time_travel_mercury_transit_2016">Транзит Меркурія 9 травня 2016 р.</string>
-    <string name="time_travel_solar_eclipse_2024">Сонячне затемнення 8 квітень 2024 р.</string>
-    <string name="time_travel_apollo_11">Посадка на Місяць Аполлона 11</string>
-    <string name="time_travel_jupiter_saturn_2020">З\'єднання Юпітер-Сатурн</string>
-    <string name="use_sound_effects" translation_description="A preferences menu label">Ввімкнути звук</string>
-    <string name="menu_gallery">Галерея</string>
-    <string name="gallery_image_search_btn">Знайти на небі</string>
-    <string name="gallery_image_back_btn">Назад в галерею</string>
-    <string name="hubble_image_gallery_title">Галерея Хаббл для Sky Map</string>
-    <string name="hubble_image">Фотографія, відзнята телескопом Хаббл</string>
+    <string name="no_search_title" translation_description="Dialog title shown when a sky search returns no results">Немає результатів</string>
+    <string name="many_search_results_title" translation_description="Dialog title shown when a search returns multiple possible matches">Можливо, ви мали на увазі:</string>
+    <string name="other" translation_description="A preference category (ie preferences that don't belong in any other category)">Інше</string>
+    <string name="menu_time" translation_description="Menu item label to open the time travel feature">Подорож у часі</string>
+    <string name="time_travel_start_message_alt" translation_description="Toast message when time travel starts toward a named destination. %s is the event or destination name">Подорож у часі до об\'єкта %s...</string>
+    <string name="time_travel_close_message" translation_description="Toast message shown when the user exits time travel and returns to the present">Назад в сьогодення...</string>
+    <!--  -->
+    <string name="popular_dates_prompt" translation_description="Label for a list of dates the user can choose from">Популярні дати</string>
+    <string name="custom_date_prompt" translation_description="Label telling the user to manually specify a date">Або виберіть іншу дату</string>
+    <string name="change_date_prompt" translation_description="Button label to open the date picker in the time travel dialog">Змінити дату</string>
+    <string name="change_time_prompt" translation_description="Button label to open the time picker in the time travel dialog">Змінити час</string>
+    <string name="now_visiting" translation_description="used in time travel dialog to show the destination date/time the user has selected, time formatted as yyyy.mm.dd at hh.mm.ss + timezone">Перегляд: %s</string>
+    <string name="time_travel_label_past" translation_description="Label showing that we are in the past">Подорож у часі: минуле</string>
+    <string name="time_travel_label_future" translation_description="Label showing that we are in the future">Подорож у часі: майбутнє</string>
+    <string name="time_travel_stopped" translation_description="Label showing rate of travel through time">Подорож у часі зупинено</string>
+    <string name="time_travel_second_speed" translation_description="Label showing rate of travel through time.  The symbol means greater than.">Подорож зі швидкістю &gt; @ 1 с/с</string>
+    <string name="time_travel_minute_speed" translation_description="Label showing rate of travel through time">Подорож зі швидкістю &gt; @ 1 хв/с</string>
+    <string name="time_travel_10minute_speed" translation_description="Label showing rate of travel through time">Подорож зі швидкістю &gt; @ 10 хв/с</string>
+    <string name="time_travel_hour_speed" translation_description="Label showing rate of travel through time">Подорож зі швидкістю &gt; @ 1 год/с</string>
+    <string name="time_travel_day_speed" translation_description="Label showing rate of travel through time">Подорож зі швидкістю &gt; @ 1 дн/с</string>
+    <string name="time_travel_week_speed" translation_description="Label showing rate of travel through time">Подорож зі швидкістю &gt; @ 1 тжд/с</string>
+    <string name="time_travel_second_speed_back" translation_description="Label showing rate of travel through time">Подорож зі швидкістю &lt; @ 1 с/с</string>
+    <string name="time_travel_minute_speed_back" translation_description="Label showing rate of travel through time">Подорож зі швидкістю &lt; @ 1 хв/с</string>
+    <string name="time_travel_10minute_speed_back" translation_description="Label showing rate of travel through time">Подорож зі швидкістю &lt; @ 10 хв/с</string>
+    <string name="time_travel_hour_speed_back" translation_description="Label showing rate of travel through time">Подорож зі швидкістю &lt; @ 1 год/с</string>
+    <string name="time_travel_day_speed_back" translation_description="Label showing rate of travel through time">Подорож зі швидкістю &lt; @ 1 дн/с</string>
+    <string name="time_travel_week_speed_back" translation_description="Label showing rate of travel through time">Подорож зі швидкістю &lt; @ 1 тжд/с</string>
+
+    <string name="time_travel_next_sunset" translation_description="Name of a popular astronomical event in the time travel picker">Наступний захід Сонця</string>
+    <string name="time_travel_next_sunrise" translation_description="Name of a popular astronomical event in the time travel picker">Наступний схід Сонця</string>
+    <string name="time_travel_next_fullmoon" translation_description="Name of a popular astronomical event in the time travel picker">Наступний повний місяць</string>
+    <string name="time_travel_mercury_transit_2016" translation_description="Name of an astronomical event in the time travel picker. A Mercury transit is when Mercury passes across the face of the Sun as seen from Earth. Keep the date format suitable for your locale.">Транзит Меркурія 9 травня 2016 р.</string>
+    <string name="time_travel_solar_eclipse_2024" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">Сонячне затемнення 8 квітень 2024 р.</string>
+    <string name="time_travel_apollo_11" translation_description="Name of an astronomical event in the time travel picker: the first crewed Moon landing in 1969">Посадка на Місяць Аполлона 11</string>
+    <string name="time_travel_jupiter_saturn_2020" translation_description="Name of an astronomical event in the time travel picker. A conjunction is when two planets appear very close together in the sky.">З\'єднання Юпітер-Сатурн</string>
+    <string name="use_sound_effects" translation_description="A preferences menu label for enabling sound effects">Ввімкнути звук</string>
+
+    <string name="menu_gallery" translation_description="Menu item label to open the image gallery">Галерея</string>
+    <string name="gallery_image_search_btn" translation_description="Button in the gallery to locate the displayed object on the sky map">Знайти на небі</string>
+    <string name="gallery_image_back_btn" translation_description="Button to return to the gallery from a single image view">Назад в галерею</string>
+    <string name="hubble_image_gallery_title" translation_description="Title of the image gallery screen">Галерея Хаббл для Sky Map</string>
+    <string name="hubble_image" translation_description="Label or caption for a Hubble Space Telescope image in the gallery">Фотографія, відзнята телескопом Хаббл</string>
     <string name="search_overlay_title" translation_description="title for search overlay">Поверніть телефон в напрямку стрілки</string>
     <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">Пошук:</string>
-    <string name="sun_wont_set_message">Протягом найближчих 24 годин заходу Сонця в вашому місці розташування не буде.</string>
-    <string name="menu_tos">Умови надання послуг</string>
-    <string name="menu_diagnostics">Діагностика</string>
-    <string name="north_pole">Пн.П</string>
-    <string name="south_pole">Пд.П</string>
-    <string name="enable_analytics">Надсилати статистику використання</string>
-    <string name="enable_analytics_desc">Зробіть Sky Map кращою, відправивши анонімні дані в Google Analytics</string>
-    <string name="no_sensor_warning">У вашому пристрої недостатньо орієнтаційних датчиків - автоналаштування може не працювати</string>
-    <string name="warning_dialog_title">Погані новини!</string>
-    <string name="missing_sensor_dialog_text">\n
+    <string name="sun_wont_set_message" translation_description="Message shown when the sun will not set during the next 24 hours (polar day / midnight sun)">Протягом найближчих 24 годин заходу Сонця в вашому місці розташування не буде.</string>
+
+    <string name="menu_tos" translation_description="Menu item label to view the Terms of Service">Умови надання послуг</string>
+    <string name="menu_diagnostics" translation_description="Menu item label to open the technical diagnostics screen">Діагностика</string>
+
+    <string name="north_pole" translation_description="Short abbreviation for the North Celestial Pole, displayed as a label on the sky map grid. Translators: use the standard abbreviation in your language (e.g. NP in English, PN in French).">Пн.П</string>
+    <string name="south_pole" translation_description="Short abbreviation for the South Celestial Pole, displayed as a label on the sky map grid. Translators: use the standard abbreviation in your language (e.g. SP in English, PS in French).">Пд.П</string>
+
+    <string name="enable_analytics" translation_description="Preference label to opt in to sending anonymous usage statistics">Надсилати статистику використання</string>
+    <string name="enable_analytics_desc" translation_description="Description/summary for the usage statistics preference">Зробіть Sky Map кращою, відправивши анонімні дані в Google Analytics</string>
+
+    <string name="no_sensor_warning" translation_description="Warning shown when required orientation sensors are not detected on the device">У вашому пристрої недостатньо орієнтаційних датчиків - автоналаштування може не працювати</string>
+    <string name="warning_dialog_title" translation_description="Title of a warning dialog shown when something is wrong, e.g. a missing sensor">Погані новини!</string>
+    <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">\n
         На жаль, у вашого пристрою може не бути одного з тих
      датчиків, які потребує Sky Map.\n\n
         Щоб показати вам частину неба, на яку вказує телефон, Sky Map
@@ -113,55 +120,53 @@
          все ж можна використовувати Sky Map на цьому пристрої в ручному режимі, де ви перетягуєте, повертаєте та розтягуєте
          карту пальцями.
     </string>
-    <string name="do_not_show_again">Більше не показувати це повідомлення</string>
-    <string name="title_activity_diagnostic">Діагностика</string>
-    <string name="play_services_error">Попередження: помилка служби Google Play - автоматичне місце розташування може не працювати</string>
-    <string name="sensor_absent">Відсутня</string>
-    <string name="sensor_accuracy_unknown">Точність: невідомо</string>
-    <string name="sensor_accuracy_unreliable">Точність: ненадійна</string>
-    <string name="sensor_accuracy_low">Точність: Низька</string>
-    <string name="sensor_accuracy_medium">Точність: Середня</string>
-    <string name="sensor_accuracy_high">Точність: Висока</string>
-    <string name="sensor_accuracy_nocontact">Точність: Немає зв\'язку</string>
-    <string name="diagnostics_activity_general_heading">Загальний</string>
-    <string name="diagnostics_activity_phone">Пристрій</string>
-    <string name="diagnostics_activity_android_version">Версія Android</string>
-    <string name="diagnostics_activity_sky_map_version">Версія Sky Map</string>
-    <string name="diagnostics_activity_sensors_heading">Сенсори</string>
-    <string name="diagnostics_activity_compass">Компас</string>
-    <string name="diagnostics_activity_accelerometer">Акселерометр</string>
-    <string name="diagnostics_activity_rotation_vector">Обертання</string>
-    <string name="diagnostics_activity_gyroscope">Гіроскоп</string>
-    <string name="diagnostics_activity_light_level">Рівень освітленості</string>
-    <string name="diagnostics_activity_location_and_time_heading">Місце та час</string>
-    <string name="diagnostics_activity_gps">GPS</string>
-    <string name="diagnostics_activity_location">Розташування (ш., д.)</string>
-    <string name="diagnostics_activity_pointing_ra_dec">Вказівник</string>
-    <string name="diagnostics_activity_magnetic_correction">Mag корекція</string>
-    <string name="diagnostics_activity_local_datetime">Місцевий час</string>
-    <string name="diagnostics_activity_universal_time">Універсальний час</string>
-    <string name="diagnostics_activity_network_heading">Мережа</string>
-    <string name="diagnostics_activity_connection">З\'єднання</string>
-    <string name="diagnostics_activity_rotation_matrix">Rot Matrix</string>
-    <string name="enabled">Ввімкнено</string>
-    <string name="disabled">Вимкнено</string>
-    <string name="permission_disabled">Дозвіл не надано</string>
-    <string name="no_gps">Немає GPS</string>
-    <string name="connected">З\'єднано</string>
-    <string name="disconnected">Роз\'єднано</string>
-    <string name="wifi">" (wifi)"</string>
-    <string name="cell_network">" (виклик)"</string>
-    <string name="menu_calibrate">Калібрувати</string>
-    <string name="compass_calibration_activity_heading_compass">Компас -</string>
-    <string name="compass_calibration_activity_do_not_show_this_again">Більше не показувати</string>
-    <string name="compass_calibration_activity_warning">Ваш компас потрібно відкалібрувати</string>
-    <string name="sensor_reverse_preference_title">Зворотне магнітне Z</string>
-    <string name="sensor_reverse_preference_summary">Налагодження для телефонів з неправильно впровадженими датчиками - вимагає перезавантаження</string>
-    <string name="whats_new_dialog_title">Що нового</string>
-    <string name="disable_gyro_preference_title">Вимкнути гіроскоп</string>
-    <string name="disable_gyro_preference_summary">Не всі пристрої мають гіроскоп - якщо у вас є, то ви отримаєте кращі результати, якщо він буде активованим, і цей поле не буде позначеним. З іншого боку, якщо ваш пристрій не має гіроскопа, Sky Map, ймовірно, не буде працювати, якщо ви знімете позначку з цього поля.</string>
-    <string name="rotate_horizon_preference_title">Обертати по горизонту</string>
-    <string name="rotate_horizon_preference_summary">Поворот на горизонті 90 градусів (для екранів з примусовим ландшафтом, такими як smartglasses)</string>
-    <string name="show_object_info_auto_mode_title">Картки інформації в автоматичному режимі</string>
-    <string name="show_object_info_auto_mode_summary">Також показувати картки інформації при натисканні на об\'єкти в автоматичному (сенсорному) режимі</string>
-</resources>
+    <string name="do_not_show_again" translation_description="Checkbox or button label to suppress future display of a warning dialog">Більше не показувати це повідомлення</string>
+    <string name="title_activity_diagnostic" translation_description="Title bar text for the Diagnostics activity/screen">Діагностика</string>
+    <string name="play_services_error" translation_description="Warning shown in the diagnostics screen when Google Play Services has an error that may affect automatic location">Попередження: помилка служби Google Play - автоматичне місце розташування може не працювати</string>
+    <string name="sensor_absent" translation_description="Sensor status shown in diagnostics when the sensor is not present on the device">Відсутня</string>
+    <string name="sensor_accuracy_unknown" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">Точність: невідомо</string>
+    <string name="sensor_accuracy_unreliable" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">Точність: ненадійна</string>
+    <string name="sensor_accuracy_low" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">Точність: Низька</string>
+    <string name="sensor_accuracy_medium" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">Точність: Середня</string>
+    <string name="sensor_accuracy_high" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">Точність: Висока</string>
+    <string name="sensor_accuracy_nocontact" translation_description="Sensor accuracy level shown when the sensor has no contact (e.g. heart-rate sensor lifted from skin) — unlikely to appear in Sky Map but included for completeness">Точність: Немає зв\'язку</string>
+    <string name="diagnostics_activity_general_heading" translation_description="Section heading in the Diagnostics screen for general device information">Загальний</string>
+    <string name="diagnostics_activity_phone" translation_description="Row label in the Diagnostics screen for the device model name">Пристрій</string>
+    <string name="diagnostics_activity_android_version" translation_description="Row label in the Diagnostics screen for the Android OS version">Версія Android</string>
+    <string name="diagnostics_activity_sky_map_version" translation_description="Row label in the Diagnostics screen for the Sky Map app version">Версія Sky Map</string>
+    <string name="diagnostics_activity_sensors_heading" translation_description="Section heading in the Diagnostics screen for sensor readings">Сенсори</string>
+    <string name="diagnostics_activity_compass" translation_description="Row label in the Diagnostics screen for the compass (magnetic field) sensor">Компас</string>
+    <string name="diagnostics_activity_accelerometer" translation_description="Row label in the Diagnostics screen for the accelerometer sensor">Акселерометр</string>
+    <string name="diagnostics_activity_rotation_vector" translation_description="Row label in the Diagnostics screen for the rotation vector (combined orientation) sensor">Обертання</string>
+    <string name="diagnostics_activity_gyroscope" translation_description="Row label in the Diagnostics screen for the gyroscope sensor">Гіроскоп</string>
+    <string name="diagnostics_activity_light_level" translation_description="Row label in the Diagnostics screen for the ambient light sensor reading">Рівень освітленості</string>
+    <string name="diagnostics_activity_location_and_time_heading" translation_description="Section heading in the Diagnostics screen for location and time information">Місце та час</string>
+    <string name="diagnostics_activity_location" translation_description="Row label in the Diagnostics screen showing the current latitude and longitude">Розташування (ш., д.)</string>
+    <string name="diagnostics_activity_pointing_ra_dec" translation_description="Row label in the Diagnostics screen showing a snapshot of where the phone is currently pointing in the sky (Right Ascension and Declination)">Вказівник</string>
+    <string name="diagnostics_activity_magnetic_correction" translation_description="Row label in the Diagnostics screen showing whether magnetic declination correction is applied">Mag корекція</string>
+    <string name="diagnostics_activity_local_datetime" translation_description="Row label in the Diagnostics screen for the local date and time">Місцевий час</string>
+    <string name="diagnostics_activity_universal_time" translation_description="Row label in the Diagnostics screen for the UTC/universal date and time">Універсальний час</string>
+    <string name="diagnostics_activity_network_heading" translation_description="Section heading in the Diagnostics screen for network connectivity information">Мережа</string>
+    <string name="diagnostics_activity_connection" translation_description="Row label in the Diagnostics screen for the current network connection status">З\'єднання</string>
+    <string name="enabled" translation_description="Generic status value meaning a feature or sensor is enabled/active">Ввімкнено</string>
+    <string name="disabled" translation_description="Generic status value meaning a feature or sensor is disabled/inactive">Вимкнено</string>
+    <string name="permission_disabled" translation_description="Status value shown when a feature is unavailable because its permission was not granted">Дозвіл не надано</string>
+    <string name="no_gps" translation_description="Status value shown in diagnostics when no GPS provider is available">Немає GPS</string>
+    <string name="connected" translation_description="Network status value shown when the device has an active network connection">З\'єднано</string>
+    <string name="disconnected" translation_description="Network status value shown when the device has no network connection">Роз\'єднано</string>
+    <string name="cell_network" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (cell)\'). Note the leading space.">" (виклик)"</string>
+    <string name="menu_calibrate" translation_description="Menu item label to open the compass calibration screen">Калібрувати</string>
+    <string name="compass_calibration_activity_heading_compass" translation_description="Static label in the compass calibration screen placed inline to the left of the live compass accuracy value (e.g. displayed as \'Compass - Accuracy: High\')">Компас -</string>
+    <string name="compass_calibration_activity_do_not_show_this_again" translation_description="Checkbox label in the compass calibration dialog to suppress future automatic appearances">Більше не показувати</string>
+    <string name="compass_calibration_activity_warning" translation_description="Heading/reason text shown in the compass calibration dialog when it opens automatically due to low accuracy">Ваш компас потрібно відкалібрувати</string>
+    <string name="sensor_reverse_preference_title" translation_description="Preference title for reversing the magnetic Z-axis sensor reading, a fix for certain phones with incorrectly implemented sensors">Зворотне магнітне Z</string>
+    <string name="sensor_reverse_preference_summary" translation_description="Summary for the Reverse Magnetic Z preference">Налагодження для телефонів з неправильно впровадженими датчиками - вимагає перезавантаження</string>
+    <string name="whats_new_dialog_title" translation_description="Title of the dialog shown on first launch after an update, listing new features">Що нового</string>
+    <string name="disable_gyro_preference_title" translation_description="Preference title for disabling the gyroscope sensor">Вимкнути гіроскоп</string>
+    <string name="disable_gyro_preference_summary" translation_description="Explanation of the disable gyroscope preference and when to use it">Не всі пристрої мають гіроскоп - якщо у вас є, то ви отримаєте кращі результати, якщо він буде активованим, і цей поле не буде позначеним. З іншого боку, якщо ваш пристрій не має гіроскопа, Sky Map, ймовірно, не буде працювати, якщо ви знімете позначку з цього поля.</string>
+    <string name="rotate_horizon_preference_title" translation_description="Preference title for choosing the view/pointing direction mode">Обертати по горизонту</string>
+    <string name="rotate_horizon_preference_summary" translation_description="Explanation of the view direction preference, covering both landscape rotation and pointer modes">Поворот на горизонті 90 градусів (для екранів з примусовим ландшафтом, такими як smartglasses)</string>
+
+    <string name="show_object_info_auto_mode_title" translation_description="Preference title for enabling info cards in auto/sensor mode">Картки інформації в автоматичному режимі</string>
+    <string name="show_object_info_auto_mode_summary" translation_description="Preference summary for auto mode info cards">Також показувати картки інформації при натисканні на об\'єкти в автоматичному (сенсорному) режимі</string>
+    </resources>

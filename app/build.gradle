@@ -51,9 +51,10 @@ android {
         applicationId 'com.google.android.stardroid'
         minSdk 26
         targetSdk 36
-        versionCode 1606
+        versionCode 1610
         versionName "1.12.1:Earth"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        resConfigs "en", "b+en+GB", "es", "de", "it", "fr", "pt", "pl", "ru", "b+zh+Hans", "b+zh+Hant", "ja", "ko", "ar", "hi", "tr", "th", "id", "fa", "uk", "ca", "cs", "da", "nl", "hu", "nb", "sk", "sv", "el", "cy"
     }
 
     signingConfigs {

@@ -51,7 +51,7 @@ public enum Shape {
 Points rendered as OpenGL point sprites:
 
 ```java
-// OpenGL ES 2.0 point rendering
+// OpenGL ES 1.x point sprite rendering
 gl.glEnable(GL10.GL_POINT_SPRITE_OES);
 gl.glTexEnvi(GL10.GL_POINT_SPRITE_OES,
              GL10.GL_COORD_REPLACE_OES, GL10.GL_TRUE);

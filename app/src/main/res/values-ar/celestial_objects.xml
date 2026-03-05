@@ -1,5 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <resources>
+    <!-- Constellations -->
     <string name="andromeda" translation_description="Name of the Andromeda constellation">المرأة المسلسلة</string>
     <string name="aquarius" translation_description="Name of the Aquarius constellation">الدلو</string>
     <string name="aquila" translation_description="Name of the Aquila constellation">العقاب</string>
@@ -43,44 +44,34 @@
     <string name="vela" translation_description="Name of the Vela constellation">الشراع</string>
     <string name="virgo" translation_description="Name of the Virgo constellation">العذراء</string>
     <string name="capricorn" translation_description="Name of the Capricorn constellation">الجدي</string>
-    <string name="southern_cross" translation_description="Name of the Southern Cross constellation">Southern Cross</string>
-    <string name="scorpio" translation_description="Name of the Scorpio constellation">Scorpio</string>
-    <string name="little_dipper" translation_description="Name of the Little Dipper constellation">Little Dipper</string>
     <string name="little_bear" translation_description="Name of the Little Bear constellation">الدب الأصغر</string>
-    <string name="big_dipper" translation_description="Name of the Big Dipper constellation">Big Dipper</string>
     <string name="great_bear" translation_description="Name of the Great Bear constellation">الدب الأكبر</string>
-    <string name="plough" translation_description="Name of the Plough constellation">Plough</string>
-    <string name="sun">الشمس</string>
-    <string name="moon">القمر</string>
-    <string name="mercury">عطارد</string>
-    <string name="venus">الزهرة</string>
-    <string name="earth">الأرض</string>
-    <string name="mars">المريخ</string>
-    <string name="jupiter">المشتري</string>
-    <string name="saturn">زحل</string>
-    <string name="uranus">اورانوس</string>
-    <string name="neptune">نبتون</string>
-    <string name="pluto">بلوتو</string>
+    <!-- Major solar system objects -->
+    <string name="sun" translation_description="Name of the Sun">الشمس</string>
+    <string name="moon" translation_description="Name of the Earth's Moon">القمر</string>
+    <string name="mercury" translation_description="Name of the planet Mercury">عطارد</string>
+    <string name="venus" translation_description="Name of the planet Venus">الزهرة</string>
+    <string name="earth" translation_description="Name of the planet Earth">الأرض</string>
+    <string name="mars" translation_description="Name of the planet Mars">المريخ</string>
+    <string name="jupiter" translation_description="Name of the planet Jupiter">المشتري</string>
+    <string name="saturn" translation_description="Name of the planet Saturn">زحل</string>
+    <string name="uranus" translation_description="Name of the planet Uranus">اورانوس</string>
+    <string name="neptune" translation_description="Name of the planet Neptune">نبتون</string>
+    <string name="pluto" translation_description="Name of the dwarf planet Pluto">بلوتو</string>
+
+    <!-- Gallery objects -->
     <string name="crab_nebula" translation_description="hubble object">سديم السرطان</string>
     <string name="eagle_nebula" translation_description="hubble object">سديم النسر</string>
     <string name="andromeda_galaxy" translation_description="hubble object">مجرة أندروميدا</string>
-    <string name="orion_nebula" translation_description="hubble object">Orion Nebula</string>
     <string name="whirlpool_galaxy" translation_description="hubble object">مجرة الدوامة</string>
     <string name="ring_nebula" translation_description="hubble object">سديم الحلقة</string>
     <string name="pinwheel_galaxy" translation_description="hubble object">مجرة المروحة</string>
     <string name="sombrero_galaxy" translation_description="hubble object">مجرة القبعة المكسيكية</string>
-    <string name="hercules_gc" translation_description="hubble object">Hercules Globular Cluster</string>
     <string name="pleiades" translation_description="hubble object">الثريا</string>
-    <string name="cats_eye_nebula" translation_description="hubble object">Cat\'s Eye Nebula</string>
-    <string name="omega_centauri" translation_description="hubble object">Omega Centauri Globular Cluster</string>
-    <string name="v838_mon" translation_description="hubble object">V838 Monocerotis</string>
-    <string name="sn1987a" translation_description="hubble object">Supernova 1987a</string>
-    <string name="hubble_deep_field" translation_description="hubble object">Hubble Deep Field</string>
-    <string name="rho_oph" translation_description="hubble object">Rho Ophiuchus</string>
+    <!-- Stars -->
     <string name="sirius" translation_description="Name of the Star Sirius">الشعرى</string>
     <string name="canopus" translation_description="Name of the Star Canopus">سهيل</string>
     <string name="arcturus" translation_description="Name of the Star Arcturus">السماك الرامح</string>
-    <string name="rigel_kentaurus_a" translation_description="Name of the Star Rigel Kentaurus A">Rigel Kentaurus A</string>
     <string name="vega" translation_description="Name of the Star Vega">النسر الواقع</string>
     <string name="rigel" translation_description="Name of the Star Rigel">رجل الجوزاء</string>
     <string name="procyon" translation_description="Name of the Star Procyon">الشعرى الشامية الغميصاء</string>
@@ -141,9 +132,7 @@
     <string name="algenib" translation_description="Name of the Star Algenib">جناح الفرس</string>
     <string name="vindemiatrix" translation_description="Name of the Star Vindemiatrix">مقدم القطاف</string>
     <string name="alcyone" translation_description="Name of the Star Alcyone">السيون</string>
-    <string name="dog_star" translation_description="Name of the Dog Star (Sirius)">Dog Star</string>
-    <string name="north_star" translation_description="Name of the North Star">North Star</string>
-    <string name="pole_star" translation_description="Name of the (North) Pole Star">Pole Star</string>
+    <!-- Messier objects etc -->
     <string name="m1" translation_description="Name of the Messier object M1">م١</string>
     <string name="m2" translation_description="Name of the Messier object M2">م٢</string>
     <string name="m3" translation_description="Name of the Messier object M3">م٣</string>
@@ -254,24 +243,14 @@
     <string name="m108" translation_description="Name of the Messier object M108">م١٠٨</string>
     <string name="m109" translation_description="Name of the Messier object M109">م١٠٩</string>
     <string name="m110" translation_description="Name of the Messier object M110">م١١٠</string>
-    <string name="ngc6543" translation_description="Name of the Messier object NGC6543">NGC6543</string>
-    <string name="ngc5139" translation_description="Name of the Messier object NGC5139">NGC5139</string>
     <string name="butterfly_cluster" translation_description="Name of the Messier object Butterfly Cluster">حشد الفراشة</string>
     <string name="scorpions_tail" translation_description="Name of the Messier object Scorpion\'s Tail">ذيل العقرب</string>
-    <string name="winnecke_4" translation_description="Name of the Messier object Winnecke 4">Winnecke 4</string>
     <string name="beehive_cluster" translation_description="Name of the Messier object Beehive Cluster">حشد خلية النحل</string>
     <string name="praesepe" translation_description="Name of the Messier object Praesepe">النثرة</string>
     <string name="seven_sisters" translation_description="Name of the Messier object Seven Sisters">سبع بنات صغيرات</string>
+
+    <!-- Manmade objects -->
     <string name="space_station" translation_description="Name of the Internation Space Station">محطة الفضاء الدولية</string>
     <string name="space_shuttle" translation_description="Name of the Space Shuttle">مكوك فضائي</string>
-    <string name="leonids" translation_description="Meteor Shower">Leonids</string>
-    <string name="geminids" translation_description="Meteor Shower">Geminids</string>
-    <string name="quadrantids" translation_description="Meteor Shower">Quadrantids</string>
-    <string name="lyrids" translation_description="Meteor Shower">Lyrids</string>
-    <string name="aquariids" translation_description="Meteor Shower">Eta Aquariids</string>
-    <string name="deltaaquariids" translation_description="Meteor Shower">Delta Aquariids</string>
-    <string name="perseids" translation_description="Meteor Shower">Perseids</string>
-    <string name="orionids" translation_description="Meteor Shower">Orionids</string>
-    <string name="puppidvelids" translation_description="Meteor Shower">Puppid-Velids</string>
-    <string name="ursids" translation_description="Meteor Shower">Ursids</string>
-</resources>
+
+    </resources>
