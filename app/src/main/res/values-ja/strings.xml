@@ -178,7 +178,7 @@
         内部コンパスがキャリブレーションされていないとSkyマップに報告しています。
     これはSkyマップの問題ではないですが、修正を助けることは出来ます。コンパスをキャリブレーションするには、この動画%sで示しているように、精度が「高」になるまで
         デバイスを8の字に動かしてください。]]></string>
-    <string name="compass_calib_what_to_do_user" transation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[このデバイスの
+    <string name="compass_calib_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[このデバイスの
         コンパスの精度は上に
         表示しています。
     表示が「高」でない場合、コンパスはキャリブレーションが必要かもしれません。これはSkyマップの問題ではなく、デバイスの
