@@ -2,13 +2,29 @@
 <resources>
     <string-array name="sensor_speed">
         <item translation_description="Slow sensor speed">Lent</item>
-        <item translation_description="Normal sensor speed">Standard</item>
+        <item translation_description="Normal sensor speed">Moyen</item>
         <item translation_description="Fast sensor speed">Rapide</item>
     </string-array>
     <string-array name="sensor_damping">
-        <item translation_description="Low sensor damping factor">Jumpy</item>
-        <item translation_description="Medium sensor damping factor">Medium</item>
-        <item translation_description="Extra High sensor damping factor">Standard</item>
-        <item translation_description="Really High sensor damping factor">Haut</item>
+        <item translation_description="Low sensor damping factor">Saccadé</item>
+        <item translation_description="Medium sensor damping factor">Moyen</item>
+        <item translation_description="Extra High sensor damping factor">Juste ce qu\'il faut</item>
+        <!--item translation_description="Really High sensor damping factor">Lent</item-->
     </string-array>
-    </resources>
+    <string-array name="viewing_direction">
+        <item translation_description="Normal viewing">Normal</item>
+        <item translation_description="Rotates the screen by 90 degrees">Horizon pivoté</item>
+        <item translation_description="Shows the sky as pointed at by the long edge of the phone">Mode pointeur</item>
+    </string-array>
+    <string-array name="auto_dim_texts">
+        <item translation_description="Dimmest screen setting">Très faible</item>
+        <item translation_description="Leave it on the system setting">Par défaut du système</item>
+        <item translation_description="The setting used for the last 15 years">Classique</item>
+    </string-array>
+    <string-array name="font_size_texts">
+        <item translation_description="Smallest font size">Petite</item>
+        <item translation_description="Normal font size">Moyenne</item>
+        <item translation_description="Large font size">Grande</item>
+        <item translation_description="Largest font size">Très grande</item>
+    </string-array>
+</resources>
