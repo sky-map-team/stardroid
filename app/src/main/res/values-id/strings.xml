@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="show_object_info_auto_mode_title">Kartu info dalam mode otomatis</string>
-    <string name="show_object_info_auto_mode_summary">Tampilkan juga kartu info saat mengetuk objek dalam mode otomatis (sensor)</string>
-    <string name="object_info_funfact_label">Tahukah Anda:</string>
-    <string name="object_info_distance_label">Jarak:</string>
-    <string name="object_info_size_label">Ukuran:</string>
-    <string name="object_info_mass_label">Massa:</string>
-    <string name="object_info_spectral_label">Spektral:</string>
-    <string name="object_info_magnitude_label">Magnitudo:</string>
-</resources>
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Please add  translation_description="" attributes to Strings to assist the translators. --><resources>
+    <string name="show_object_info_auto_mode_title" translation_description="Preference title for enabling info cards in auto/sensor mode">Kartu info dalam mode otomatis</string>
+    <string name="show_object_info_auto_mode_summary" translation_description="Preference summary for auto mode info cards">Tampilkan juga kartu info saat mengetuk objek dalam mode otomatis (sensor)</string>
+    <string name="object_info_funfact_label" translation_description="Label before the fun fact in info card">Tahukah Anda:</string>
+    <string name="object_info_distance_label" translation_description="Label for distance field">Jarak:</string>
+    <string name="object_info_size_label" translation_description="Label for size field">Ukuran:</string>
+    <string name="object_info_mass_label" translation_description="Label for mass field">Massa:</string>
+    <string name="object_info_spectral_label" translation_description="Label for spectral class">Spektral:</string>
+    <string name="object_info_magnitude_label" translation_description="Label for apparent magnitude">Magnitudo:</string>
+    </resources>

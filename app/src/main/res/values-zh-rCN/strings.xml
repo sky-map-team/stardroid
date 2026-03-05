@@ -1,105 +1,113 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Please add  translation_description="" attributes to Strings to assist the translators. --><resources>
     <string name="app_name" translation_description="Application Title">星空地图</string>
-    <string name="menu_settings">设置</string>
-    <string name="menu_search">搜索</string>
-    <string name="cancel">取消</string>
-    <string name="set">设置</string>
-    <string name="go">开始！</string>
-    <string name="location_prefs">位置设置</string>
-    <string name="force_gps_pref">一律使用 GPS</string>
+    <string name="menu_settings" translation_description="Settings menu item in the options menu">设置</string>
+    <string name="menu_search" translation_description="Search menu item in the options menu">搜索</string>
+    <string name="cancel" translation_description="Generic cancel button label used in dialogs">取消</string>
+    <string name="set" translation_description="Button label. Set the date to the given value">设置</string>
+    <string name="go" translation_description="Button to start navigating the sky map toward a searched object">开始！</string>
+    <string name="location_prefs" translation_description="Preferences category heading for location-related settings">位置设置</string>
+    <string name="force_gps_pref" translation_description="Preference label: force GPS use even when network location is available">一律使用 GPS</string>
     <string name="force_gps_pref_hint" translation_description="this string continues from \'Always use GPS\'">启用后（即使提供网络位置功能）</string>
-    <string name="no_use_gps_pref">手动设置位置</string>
-    <string name="no_use_gps_pref_hint">在下面输入地点或纬度/经度</string>
-    <string name="location_placename">地名</string>
+    <string name="no_use_gps_pref" translation_description="Preference label: choose to enter location by hand instead of using GPS or phone location">手动设置位置</string>
+    <string name="no_use_gps_pref_hint" translation_description="Hint text beneath the \'Set location manually\' preference">在下面输入地点或纬度/经度</string>
+    <string name="location_placename" translation_description="Label for the place-name text field in manual location settings">地名</string>
     <string name="location_placename_hint" translation_description="An example address.  Translators: please pick an address suitable for your country.  If it has an astronomical connection (e.g. the address of an observatory or famous astronomer) then that would be even better.">例如，江苏省南京市北京西路 2 号</string>
-    <string name="location_lat_pref">纬度</string>
-    <string name="location_long_pref">经度</string>
-    <string name="degrees">度数</string>
-    <string name="preferences">偏好设置</string>
-    <string name="location_offer_to_enable">已停用自动定位。是否要启用它？</string>
-    <string name="location_offer_to_enable_gps_title">已停用自动定位</string>
-    <string name="location_set_auto">从“%1$s”到“%2$s”的位置集合</string>
-    <string name="location_unable_to_geocode">系统不能对您的位置进行解码，可能是您的网络无法使用？</string>
+    <string name="location_lat_pref" translation_description="Label for the latitude input field in manual location settings">纬度</string>
+    <string name="location_long_pref" translation_description="Label for the longitude input field in manual location settings">经度</string>
+    <string name="degrees" translation_description="angular degrees - used for latitude and longitude">度数</string>
+    <string name="preferences" translation_description="Provider-name label used internally when a location is set from preferences (not shown directly to the user as a UI label - does not require a translation)">偏好设置</string>
+    <string name="location_offer_to_enable" translation_description="Dialog message asking whether to enable automatic location">已停用自动定位。是否要启用它？</string>
+    <string name="location_offer_to_enable_gps_title" translation_description="Title of dialog shown when automatic location is disabled">已停用自动定位</string>
+    <!-- TODO: many translations require two placeholders. Once all translations brought up to date we can clean this up -->
+    <string name="location_set_auto" translation_description="Toast message when automatic location is acquired. %1$s is the provider name (e.g. GPS), %2$s is the place name or coordinates">从“%1$s”到“%2$s”的位置集合</string>
+    <string name="location_unable_to_geocode" translation_description="Error message when converting a place name to coordinates (geocoding) fails, possibly due to no network">系统不能对您的位置进行解码，可能是您的网络无法使用？</string>
     <string name="location_not_found_title" translation_description="dialog box title when location not found">抱歉</string>
     <string name="location_not_found" translation_description="dialog message when placename not found">找不到“%s”。</string>
-    <string name="location_long_lat">经度：%1$s，纬度：%2$s</string>
-    <string name="location_place_found">地点已找到。正在设置纬度 %1$f 和经度 %2$f</string>
-    <string name="use_magnetic_correction">使用磁力修正</string>
-    <string name="show_stars_pref">恒星</string>
-    <string name="show_constellations_pref">星座</string>
-    <string name="show_messier_objects_pref" translation_description="The celestial objects catalogued by Charles Messier">梅西耶天体</string>
-    <string name="show_planets_pref">行星</string>
-    <string name="show_grid_pref">赤经赤纬网格</string>
-    <string name="show_horizon_pref">水平线</string>
-    <string name="show_sky_gradient">天空梯度</string>
-    <string name="show_meteors_pref">流星雨</string>
+    <string name="location_long_lat" translation_description="Formatted display of longitude and latitude. %1$.2f is longitude, %2$.2f is latitude">经度：%1$s，纬度：%2$s</string>
+    <string name="location_place_found" translation_description="Status message when a place name was successfully looked up. %1$f is latitude, %2$f is longitude">地点已找到。正在设置纬度 %1$f 和经度 %2$f</string>
+    <string name="use_magnetic_correction" translation_description="Preference label: apply magnetic declination correction so the compass points to true north instead of magnetic north">使用磁力修正</string>
+    <string name="show_stars_pref" translation_description="Label for the stars layer on the sky map (shows in the search results)">恒星</string>
+    <string name="show_constellations_pref" translation_description="Label for the constellation lines and labels layer (shows in the search results)">星座</string>
+    <string name="show_messier_objects_pref" translation_description="The celestial objects catalogued by Charles Messier (shows in the search results)">梅西耶天体</string>
+    <string name="show_planets_pref" translation_description="Label for the solar system layer (planets, sun, moon)  (shows in the search results)">行星</string>
+    <string name="show_grid_pref" translation_description="Label for the Right Ascension / Declination grid overlay  (shows in the search results)">赤经赤纬网格</string>
+    <string name="show_horizon_pref" translation_description="Preference toggle label for the horizon line layer">水平线</string>
+    <string name="show_sky_gradient" translation_description="This is a shading of the color of the sky used for effect">天空梯度</string>
+    <string name="show_meteors_pref" translation_description="Label for the meteor shower layer (shows in the search results)">流星雨</string>
     <string name="show_satellite_layer_pref" translation_description="The layer for satellites">人造卫星</string>
-    <string name="sensor_prefs">传感器设置</string>
-    <string name="ecliptic">黄道</string>
-    <string name="malformed_loc_error">纬度或经度设置不是数字。</string>
+    <string name="sensor_prefs" translation_description="Preferences category heading for sensor settings, intended for advanced/expert users">传感器设置</string>
+    <string name="ecliptic" translation_description="Label for the ecliptic layer — the apparent annual path of the Sun across the sky">黄道</string>
+    <string name="malformed_loc_error" translation_description="Error message when a non-numeric value is entered for latitude or longitude">纬度或经度设置不是数字。</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">接受</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">否</string>
     <string name="menu_help" translation_description="menu item to show \'Help\' box">帮助</string>
-    <string name="help_dialog_title">星空地图帮助</string>
-    <string name="set_manual">切换到手动模式</string>
-    <string name="set_auto">切换到自动模式</string>
-    <string name="menu_toggle_dim">切换夜间模式</string>
-    <string name="zenith">天顶</string>
-    <string name="nadir">天底</string>
-    <string name="north">北</string>
-    <string name="east">东</string>
-    <string name="west">西</string>
-    <string name="south">南</string>
-    <string name="search_label">搜索星空</string>
+    <string name="help_dialog_title" translation_description="Title of the help dialog">星空地图帮助</string>
+    <string name="set_manual" translation_description="Toast message shown when the user switches to manual (touch-drag) mode">切换到手动模式</string>
+    <string name="set_auto" translation_description="Toast message shown when the user switches to automatic (sensor/gyroscope) mode">切换到自动模式</string>
+    <string name="menu_toggle_dim" translation_description="Menu item to toggle night mode (red tint that preserves night vision)">切换夜间模式</string>
+    <string name="zenith" translation_description="Label for the zenith point (directly overhead) shown on the sky map. Displayed in capitals.">天顶</string>
+    <string name="nadir" translation_description="Label for the nadir point (directly below) shown on the sky map. Displayed in capitals.">天底</string>
+    <string name="north" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">北</string>
+    <string name="east" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">东</string>
+    <string name="west" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">西</string>
+    <string name="south" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">南</string>
+    <string name="search_label" translation_description="Hint/label for the search bar in the search activity">搜索星空</string>
     <string name="search_hint" translation_description="an example search target">例如，火星</string>
-    <string name="no_search_title">无结果</string>
-    <string name="many_search_results_title">您是不是要找？</string>
-    <string name="other">其他</string>
-    <string name="menu_time">时间旅行</string>
-    <string name="time_travel_start_message_alt">正在进行时光穿梭到达“%s”...</string>
-    <string name="time_travel_close_message">回到现在...</string>
-    <string name="popular_dates_prompt" translation_description="label for a list of dates the user can choose from">热门日期</string>
-    <string name="custom_date_prompt" translation_description="label telling the user to manually specify a data">或选择您自己的日期</string>
-    <string name="change_date_prompt">更改日期</string>
-    <string name="change_time_prompt">更改时间</string>
-    <string name="now_visiting" translation_description="tells the user what time they are visiting">目前正在访问：%s</string>
-    <string name="time_travel_label_past" translation_description="label showing that we are in the past">时间旅行：过去</string>
-    <string name="time_travel_label_future" translation_description="label showing that we are in the future">时间旅行：未来</string>
-    <string name="time_travel_stopped" translation_description="label showing rate of travel through time">已冻结时间旅行</string>
-    <string name="time_travel_second_speed" translation_description="label showing rate of travel through time">穿梭速率 &gt; 1 秒/秒</string>
-    <string name="time_travel_minute_speed" translation_description="label showing rate of travel through time">穿梭速率 &gt; 1 分钟/秒</string>
-    <string name="time_travel_10minute_speed" translation_description="label showing rate of travel through time">穿梭速率 &gt; 10 分钟/秒</string>
-    <string name="time_travel_hour_speed" translation_description="label showing rate of travel through time">穿梭速率 &gt; 1 小时/秒</string>
-    <string name="time_travel_day_speed" translation_description="label showing rate of travel through time">穿梭速率 &gt; 1 天/秒</string>
-    <string name="time_travel_week_speed" translation_description="label showing rate of travel through time">穿梭速率 &gt; 1 周/秒</string>
-    <string name="time_travel_second_speed_back" translation_description="label showing rate of travel through time">穿梭速率 &lt; 1 秒/秒</string>
-    <string name="time_travel_minute_speed_back" translation_description="label showing rate of travel through time">穿梭速率 &lt; 1 分钟/秒</string>
-    <string name="time_travel_10minute_speed_back" translation_description="label showing rate of travel through time">穿梭速率 &lt; 10 分钟/秒</string>
-    <string name="time_travel_hour_speed_back" translation_description="label showing rate of travel through time">穿梭速率 &lt; 1 小时/秒</string>
-    <string name="time_travel_day_speed_back" translation_description="label showing rate of travel through time">穿梭速率 &lt; 1 天/秒</string>
-    <string name="time_travel_week_speed_back" translation_description="label showing rate of travel through time">穿梭速率 &lt; 1 周/秒</string>
-    <string name="time_travel_next_sunset">第二天傍晚日落</string>
-    <string name="time_travel_next_sunrise">第二天日出</string>
-    <string name="time_travel_next_fullmoon">下一次满月</string>
-    <string name="time_travel_solar_eclipse_2024">2024 年 4 月 8 日的日食</string>
-    <string name="time_travel_apollo_11">阿波罗 11 号登月</string>
-    <string name="time_travel_jupiter_saturn_2020">2020 年木星土星合</string>
-    <string name="use_sound_effects" translation_description="A preferences menu label">启用声音</string>
-    <string name="menu_gallery">图片库</string>
-    <string name="gallery_image_search_btn">在星空中查找</string>
-    <string name="gallery_image_back_btn">返回图片库</string>
-    <string name="hubble_image_gallery_title">星空地图哈勃图片库</string>
-    <string name="hubble_image">哈勃图片</string>
+    <string name="no_search_title" translation_description="Dialog title shown when a sky search returns no results">无结果</string>
+    <string name="many_search_results_title" translation_description="Dialog title shown when a search returns multiple possible matches">您是不是要找？</string>
+    <string name="other" translation_description="A preference category (ie preferences that don't belong in any other category)">其他</string>
+    <string name="menu_time" translation_description="Menu item label to open the time travel feature">时间旅行</string>
+    <string name="time_travel_start_message_alt" translation_description="Toast message when time travel starts toward a named destination. %s is the event or destination name">正在进行时光穿梭到达“%s”...</string>
+    <string name="time_travel_close_message" translation_description="Toast message shown when the user exits time travel and returns to the present">回到现在...</string>
+    <!--  -->
+    <string name="popular_dates_prompt" translation_description="Label for a list of dates the user can choose from">热门日期</string>
+    <string name="custom_date_prompt" translation_description="Label telling the user to manually specify a date">或选择您自己的日期</string>
+    <string name="change_date_prompt" translation_description="Button label to open the date picker in the time travel dialog">更改日期</string>
+    <string name="change_time_prompt" translation_description="Button label to open the time picker in the time travel dialog">更改时间</string>
+    <string name="now_visiting" translation_description="used in time travel dialog to show the destination date/time the user has selected, time formatted as yyyy.mm.dd at hh.mm.ss + timezone">目前正在访问：%s</string>
+    <string name="time_travel_label_past" translation_description="Label showing that we are in the past">时间旅行：过去</string>
+    <string name="time_travel_label_future" translation_description="Label showing that we are in the future">时间旅行：未来</string>
+    <string name="time_travel_stopped" translation_description="Label showing rate of travel through time">已冻结时间旅行</string>
+    <string name="time_travel_second_speed" translation_description="Label showing rate of travel through time.  The symbol means greater than.">穿梭速率 &gt; 1 秒/秒</string>
+    <string name="time_travel_minute_speed" translation_description="Label showing rate of travel through time">穿梭速率 &gt; 1 分钟/秒</string>
+    <string name="time_travel_10minute_speed" translation_description="Label showing rate of travel through time">穿梭速率 &gt; 10 分钟/秒</string>
+    <string name="time_travel_hour_speed" translation_description="Label showing rate of travel through time">穿梭速率 &gt; 1 小时/秒</string>
+    <string name="time_travel_day_speed" translation_description="Label showing rate of travel through time">穿梭速率 &gt; 1 天/秒</string>
+    <string name="time_travel_week_speed" translation_description="Label showing rate of travel through time">穿梭速率 &gt; 1 周/秒</string>
+    <string name="time_travel_second_speed_back" translation_description="Label showing rate of travel through time">穿梭速率 &lt; 1 秒/秒</string>
+    <string name="time_travel_minute_speed_back" translation_description="Label showing rate of travel through time">穿梭速率 &lt; 1 分钟/秒</string>
+    <string name="time_travel_10minute_speed_back" translation_description="Label showing rate of travel through time">穿梭速率 &lt; 10 分钟/秒</string>
+    <string name="time_travel_hour_speed_back" translation_description="Label showing rate of travel through time">穿梭速率 &lt; 1 小时/秒</string>
+    <string name="time_travel_day_speed_back" translation_description="Label showing rate of travel through time">穿梭速率 &lt; 1 天/秒</string>
+    <string name="time_travel_week_speed_back" translation_description="Label showing rate of travel through time">穿梭速率 &lt; 1 周/秒</string>
+
+    <string name="time_travel_next_sunset" translation_description="Name of a popular astronomical event in the time travel picker">第二天傍晚日落</string>
+    <string name="time_travel_next_sunrise" translation_description="Name of a popular astronomical event in the time travel picker">第二天日出</string>
+    <string name="time_travel_next_fullmoon" translation_description="Name of a popular astronomical event in the time travel picker">下一次满月</string>
+    <string name="time_travel_solar_eclipse_2024" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">2024 年 4 月 8 日的日食</string>
+    <string name="time_travel_apollo_11" translation_description="Name of an astronomical event in the time travel picker: the first crewed Moon landing in 1969">阿波罗 11 号登月</string>
+    <string name="time_travel_jupiter_saturn_2020" translation_description="Name of an astronomical event in the time travel picker. A conjunction is when two planets appear very close together in the sky.">2020 年木星土星合</string>
+    <string name="use_sound_effects" translation_description="A preferences menu label for enabling sound effects">启用声音</string>
+
+    <string name="menu_gallery" translation_description="Menu item label to open the image gallery">图片库</string>
+    <string name="gallery_image_search_btn" translation_description="Button in the gallery to locate the displayed object on the sky map">在星空中查找</string>
+    <string name="gallery_image_back_btn" translation_description="Button to return to the gallery from a single image view">返回图片库</string>
+    <string name="hubble_image_gallery_title" translation_description="Title of the image gallery screen">星空地图哈勃图片库</string>
+    <string name="hubble_image" translation_description="Label or caption for a Hubble Space Telescope image in the gallery">哈勃图片</string>
     <string name="search_overlay_title" translation_description="title for search overlay">将手机朝向箭头所指的方向</string>
     <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">查找内容：</string>
-    <string name="sun_wont_set_message">在未来 24 小时内太阳不会在您当前所在的位置落下。</string>
+    <string name="sun_wont_set_message" translation_description="Message shown when the sun will not set during the next 24 hours (polar day / midnight sun)">在未来 24 小时内太阳不会在您当前所在的位置落下。</string>
+
     <string name="missing_label" translation_description="Used to indicate to the developer that they've added a resource with no translation.">等待翻译</string>
-    <string name="menu_tos">服务条款</string>
-    <string name="north_pole">北极</string>
-    <string name="south_pole">南极</string>
-    <string name="enable_analytics">传送使用统计资料</string>
-    <string name="enable_analytics_desc">传送匿名资料给Google Analytics 以改善天象图</string>
-    <string name="show_object_info_auto_mode_title">自动模式下的信息卡</string>
-    <string name="show_object_info_auto_mode_summary">在自动（传感器）模式下点击天体时也显示信息卡</string>
-</resources>
+
+    <string name="menu_tos" translation_description="Menu item label to view the Terms of Service">服务条款</string>
+    <string name="north_pole" translation_description="Short abbreviation for the North Celestial Pole, displayed as a label on the sky map grid. Translators: use the standard abbreviation in your language (e.g. NP in English, PN in French).">北极</string>
+    <string name="south_pole" translation_description="Short abbreviation for the South Celestial Pole, displayed as a label on the sky map grid. Translators: use the standard abbreviation in your language (e.g. SP in English, PS in French).">南极</string>
+
+    <string name="enable_analytics" translation_description="Preference label to opt in to sending anonymous usage statistics">传送使用统计资料</string>
+    <string name="enable_analytics_desc" translation_description="Description/summary for the usage statistics preference">传送匿名资料给Google Analytics 以改善天象图</string>
+
+    <string name="show_object_info_auto_mode_title" translation_description="Preference title for enabling info cards in auto/sensor mode">自动模式下的信息卡</string>
+    <string name="show_object_info_auto_mode_summary" translation_description="Preference summary for auto mode info cards">在自动（传感器）模式下点击天体时也显示信息卡</string>
+    </resources>

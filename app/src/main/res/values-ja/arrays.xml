@@ -1,14 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <string-array name="sensor_speed">
-        <item>低速</item>
-        <item>標準</item>
-        <item>高速</item>
+        <item translation_description="Slow sensor speed">低速</item>
+        <item translation_description="Normal sensor speed">標準</item>
+        <item translation_description="Fast sensor speed">高速</item>
     </string-array>
     <string-array name="sensor_damping">
-        <item>飛び飛び</item>
-        <item>中</item>
-        <item>標準</item>
-        <item>高</item>
+        <item translation_description="Low sensor damping factor">飛び飛び</item>
+        <item translation_description="Medium sensor damping factor">中</item>
+        <item translation_description="Extra High sensor damping factor">標準</item>
+        <item translation_description="Really High sensor damping factor">高</item>
     </string-array>
-</resources>
+    </resources>

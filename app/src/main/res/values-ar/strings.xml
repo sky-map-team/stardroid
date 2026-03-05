@@ -1,49 +1,51 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Please add  translation_description="" attributes to Strings to assist the translators. --><resources>
     <string name="app_name" translation_description="Application Title">Sky Map</string>
-    <string name="menu_settings">الإعدادات</string>
-    <string name="menu_search">بحث</string>
-    <string name="cancel">إلغاء</string>
+    <string name="menu_settings" translation_description="Settings menu item in the options menu">الإعدادات</string>
+    <string name="menu_search" translation_description="Search menu item in the options menu">بحث</string>
+    <string name="cancel" translation_description="Generic cancel button label used in dialogs">إلغاء</string>
     <string name="set" translation_description="Button label. Set the date to the given value">حدد</string>
-    <string name="go">انطلق!</string>
-    <string name="location_prefs">إعدادات الموقع</string>
-    <string name="force_gps_pref">استخدم الموقع دائما</string>
-    <string name="no_use_gps_pref">تحديد يدوي للموقع</string>
-    <string name="location_placename">اسم المكان</string>
-    <string name="location_lat_pref">خط العرض</string>
-    <string name="location_long_pref">خط الطول</string>
-    <string name="degrees" translation_description="angular degrees">الدرجة</string>
-    <string name="preferences">التفضيلات</string>
-    <string name="show_stars_pref">النجوم</string>
-    <string name="show_constellations_pref">المجموعات النجمية</string>
-    <string name="show_planets_pref">الكواكب</string>
+    <string name="go" translation_description="Button to start navigating the sky map toward a searched object">انطلق!</string>
+    <string name="location_prefs" translation_description="Preferences category heading for location-related settings">إعدادات الموقع</string>
+    <string name="force_gps_pref" translation_description="Preference label: force GPS use even when network location is available">استخدم الموقع دائما</string>
+    <string name="no_use_gps_pref" translation_description="Preference label: choose to enter location by hand instead of using GPS or phone location">تحديد يدوي للموقع</string>
+    <string name="location_placename" translation_description="Label for the place-name text field in manual location settings">اسم المكان</string>
+    <string name="location_lat_pref" translation_description="Label for the latitude input field in manual location settings">خط العرض</string>
+    <string name="location_long_pref" translation_description="Label for the longitude input field in manual location settings">خط الطول</string>
+    <string name="degrees" translation_description="angular degrees - used for latitude and longitude">الدرجة</string>
+    <string name="preferences" translation_description="Provider-name label used internally when a location is set from preferences (not shown directly to the user as a UI label - does not require a translation)">التفضيلات</string>
+    <string name="show_stars_pref" translation_description="Label for the stars layer on the sky map (shows in the search results)">النجوم</string>
+    <string name="show_constellations_pref" translation_description="Label for the constellation lines and labels layer (shows in the search results)">المجموعات النجمية</string>
+    <string name="show_planets_pref" translation_description="Label for the solar system layer (planets, sun, moon)  (shows in the search results)">الكواكب</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">موافق</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">لا شكرًا</string>
     <string name="menu_help" translation_description="menu item to show \'Help\' box">مساعدة</string>
-    <string name="set_manual">التحويل إلى الوضع اليدوي</string>
-    <string name="set_auto">التحويل إلى الوضع التلقائي</string>
-    <string name="menu_toggle_dim">تفعيل الوضع الليلي</string>
-    <string name="zenith">سمت الرأس</string>
-    <string name="nadir">النظير</string>
-    <string name="north">شمال</string>
-    <string name="east">شرق</string>
-    <string name="west">غرب</string>
-    <string name="south">جنوب</string>
-    <string name="search_label">ابحث في الفضاء</string>
+    <string name="set_manual" translation_description="Toast message shown when the user switches to manual (touch-drag) mode">التحويل إلى الوضع اليدوي</string>
+    <string name="set_auto" translation_description="Toast message shown when the user switches to automatic (sensor/gyroscope) mode">التحويل إلى الوضع التلقائي</string>
+    <string name="menu_toggle_dim" translation_description="Menu item to toggle night mode (red tint that preserves night vision)">تفعيل الوضع الليلي</string>
+    <string name="zenith" translation_description="Label for the zenith point (directly overhead) shown on the sky map. Displayed in capitals.">سمت الرأس</string>
+    <string name="nadir" translation_description="Label for the nadir point (directly below) shown on the sky map. Displayed in capitals.">النظير</string>
+    <string name="north" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">شمال</string>
+    <string name="east" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">شرق</string>
+    <string name="west" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">غرب</string>
+    <string name="south" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">جنوب</string>
+    <string name="search_label" translation_description="Hint/label for the search bar in the search activity">ابحث في الفضاء</string>
     <string name="search_hint" translation_description="an example search target">مثال: زحل</string>
-    <string name="no_search_title">لا توجد بيانات</string>
-    <string name="many_search_results_title">هل تقصد</string>
-    <string name="menu_time">السفر عبر الزمن</string>
+    <string name="no_search_title" translation_description="Dialog title shown when a sky search returns no results">لا توجد بيانات</string>
+    <string name="many_search_results_title" translation_description="Dialog title shown when a search returns multiple possible matches">هل تقصد</string>
+    <string name="menu_time" translation_description="Menu item label to open the time travel feature">السفر عبر الزمن</string>
+    <!--  -->
     <string name="popular_dates_prompt" translation_description="Label for a list of dates the user can choose from">تواريخ مشهورة</string>
     <string name="custom_date_prompt" translation_description="Label telling the user to manually specify a date">أو حدد تاريخك</string>
-    <string name="change_date_prompt">غير التاريخ</string>
-    <string name="change_time_prompt">غير الوقت</string>
-    <string name="use_sound_effects" translation_description="A preferences menu label">تفعيل الصوت</string>
-    <string name="menu_gallery">المعرض</string>
-    <string name="gallery_image_search_btn">ابحث في السماء</string>
-    <string name="gallery_image_back_btn">الرجوع إلى المعرض</string>
-    <string name="hubble_image">صور هابل</string>
-    <string name="enable_analytics">أرسل احصائيات الإستخدام</string>
-    <string name="show_object_info_auto_mode_title">بطاقات المعلومات في الوضع التلقائي</string>
-    <string name="show_object_info_auto_mode_summary">إظهار بطاقات المعلومات أيضًا عند النقر على الأجرام في الوضع التلقائي (المستشعرات)</string>
-</resources>
+    <string name="change_date_prompt" translation_description="Button label to open the date picker in the time travel dialog">غير التاريخ</string>
+    <string name="change_time_prompt" translation_description="Button label to open the time picker in the time travel dialog">غير الوقت</string>
+    <string name="use_sound_effects" translation_description="A preferences menu label for enabling sound effects">تفعيل الصوت</string>
+
+    <string name="menu_gallery" translation_description="Menu item label to open the image gallery">المعرض</string>
+    <string name="gallery_image_search_btn" translation_description="Button in the gallery to locate the displayed object on the sky map">ابحث في السماء</string>
+    <string name="gallery_image_back_btn" translation_description="Button to return to the gallery from a single image view">الرجوع إلى المعرض</string>
+    <string name="hubble_image" translation_description="Label or caption for a Hubble Space Telescope image in the gallery">صور هابل</string>
+    <string name="enable_analytics" translation_description="Preference label to opt in to sending anonymous usage statistics">أرسل احصائيات الإستخدام</string>
+    <string name="show_object_info_auto_mode_title" translation_description="Preference title for enabling info cards in auto/sensor mode">بطاقات المعلومات في الوضع التلقائي</string>
+    <string name="show_object_info_auto_mode_summary" translation_description="Preference summary for auto mode info cards">إظهار بطاقات المعلومات أيضًا عند النقر على الأجرام في الوضع التلقائي (المستشعرات)</string>
+    </resources>

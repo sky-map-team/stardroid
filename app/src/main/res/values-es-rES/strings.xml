@@ -1,73 +1,76 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Please add  translation_description="" attributes to Strings to assist the translators. --><resources>
     <string name="app_name" translation_description="Application Title">Sky Map</string>
-    <string name="menu_settings">Ajustes</string>
-    <string name="menu_search">Buscar</string>
-    <string name="cancel">Cancelar</string>
+    <string name="menu_settings" translation_description="Settings menu item in the options menu">Ajustes</string>
+    <string name="menu_search" translation_description="Search menu item in the options menu">Buscar</string>
+    <string name="cancel" translation_description="Generic cancel button label used in dialogs">Cancelar</string>
     <string name="set" translation_description="Button label. Set the date to the given value">Establecer</string>
-    <string name="go">Ir</string>
-    <string name="location_prefs">Ajustes de ubicación</string>
-    <string name="force_gps_pref">Usar GPS siempre</string>
+    <string name="go" translation_description="Button to start navigating the sky map toward a searched object">Ir</string>
+    <string name="location_prefs" translation_description="Preferences category heading for location-related settings">Ajustes de ubicación</string>
+    <string name="force_gps_pref" translation_description="Preference label: force GPS use even when network location is available">Usar GPS siempre</string>
     <string name="force_gps_pref_hint" translation_description="this string continues from \'Always use GPS\'">si está activado, incluso si la ubicación de red está disponible</string>
-    <string name="no_use_gps_pref">Definir ubicación manual</string>
-    <string name="no_use_gps_pref_hint">Ingresa el lugar o la lat/long abajo</string>
-    <string name="location_placename">Nombre del lugar</string>
+    <string name="no_use_gps_pref" translation_description="Preference label: choose to enter location by hand instead of using GPS or phone location">Definir ubicación manual</string>
+    <string name="no_use_gps_pref_hint" translation_description="Hint text beneath the \'Set location manually\' preference">Ingresa el lugar o la lat/long abajo</string>
+    <string name="location_placename" translation_description="Label for the place-name text field in manual location settings">Nombre del lugar</string>
     <string name="location_placename_hint" translation_description="An example address.  Translators: please pick an address suitable for your country.  If it has an astronomical connection (e.g. the address of an observatory or famous astronomer) then that would be even better.">p.ej. 1400 West Mars Hill Road, Flagstaff, AZ.</string>
-    <string name="location_lat_pref">Latitud</string>
-    <string name="location_long_pref">Longitud</string>
-    <string name="degrees" translation_description="angular degrees">Grados</string>
-    <string name="preferences">preferencias</string>
-    <string name="location_offer_to_enable">Ubicación automática desactivada. ¿Te gustaría habilitarla?</string>
-    <string name="location_offer_to_enable_gps_title">Ubicación automática desactivada</string>
-    <string name="location_set_auto">Ubicación definida de %1$s a %2$s</string>
-    <string name="location_unable_to_geocode">No se puede decodificar tu ubicación, ¿quizás tu red no está disponible?</string>
+    <string name="location_lat_pref" translation_description="Label for the latitude input field in manual location settings">Latitud</string>
+    <string name="location_long_pref" translation_description="Label for the longitude input field in manual location settings">Longitud</string>
+    <string name="degrees" translation_description="angular degrees - used for latitude and longitude">Grados</string>
+    <string name="preferences" translation_description="Provider-name label used internally when a location is set from preferences (not shown directly to the user as a UI label - does not require a translation)">preferencias</string>
+    <string name="location_offer_to_enable" translation_description="Dialog message asking whether to enable automatic location">Ubicación automática desactivada. ¿Te gustaría habilitarla?</string>
+    <string name="location_offer_to_enable_gps_title" translation_description="Title of dialog shown when automatic location is disabled">Ubicación automática desactivada</string>
+    <!-- TODO: many translations require two placeholders. Once all translations brought up to date we can clean this up -->
+    <string name="location_set_auto" translation_description="Toast message when automatic location is acquired. %1$s is the provider name (e.g. GPS), %2$s is the place name or coordinates">Ubicación definida de %1$s a %2$s</string>
+    <string name="location_unable_to_geocode" translation_description="Error message when converting a place name to coordinates (geocoding) fails, possibly due to no network">No se puede decodificar tu ubicación, ¿quizás tu red no está disponible?</string>
     <string name="location_not_found_title" translation_description="dialog box title when location not found">Lo sentimos</string>
     <string name="location_not_found" translation_description="dialog message when placename not found">%s no fue encontrado.</string>
-    <string name="location_long_lat">Longitude:%1$s, Latitude:%2$s</string>
-    <string name="location_place_found">Lugar encontrado. Ajustando latitud %1$f y longitud %2$f</string>
-    <string name="use_magnetic_correction">Usar corrección magnética</string>
-    <string name="show_stars_pref">Estrellas</string>
-    <string name="show_constellations_pref">Constelaciones</string>
-    <string name="show_messier_objects_pref" translation_description="The celestial objects catalogued by Charles Messier">Objetos Messier</string>
-    <string name="show_planets_pref">Sistema Solar</string>
-    <string name="show_grid_pref">Cuadrícula AR/Dec</string>
-    <string name="show_horizon_pref">Horizonte</string>
+    <string name="location_long_lat" translation_description="Formatted display of longitude and latitude. %1$.2f is longitude, %2$.2f is latitude">Longitude:%1$s, Latitude:%2$s</string>
+    <string name="location_place_found" translation_description="Status message when a place name was successfully looked up. %1$f is latitude, %2$f is longitude">Lugar encontrado. Ajustando latitud %1$f y longitud %2$f</string>
+    <string name="use_magnetic_correction" translation_description="Preference label: apply magnetic declination correction so the compass points to true north instead of magnetic north">Usar corrección magnética</string>
+    <string name="show_stars_pref" translation_description="Label for the stars layer on the sky map (shows in the search results)">Estrellas</string>
+    <string name="show_constellations_pref" translation_description="Label for the constellation lines and labels layer (shows in the search results)">Constelaciones</string>
+    <string name="show_messier_objects_pref" translation_description="The celestial objects catalogued by Charles Messier (shows in the search results)">Objetos Messier</string>
+    <string name="show_planets_pref" translation_description="Label for the solar system layer (planets, sun, moon)  (shows in the search results)">Sistema Solar</string>
+    <string name="show_grid_pref" translation_description="Label for the Right Ascension / Declination grid overlay  (shows in the search results)">Cuadrícula AR/Dec</string>
+    <string name="show_horizon_pref" translation_description="Preference toggle label for the horizon line layer">Horizonte</string>
     <string name="show_sky_gradient" translation_description="This is a shading of the color of the sky used for effect">Gradiente del cielo</string>
-    <string name="show_meteors_pref">Lluvias de meteoros</string>
-    <string name="show_comet_layer_pref">Cometas</string>
+    <string name="show_meteors_pref" translation_description="Label for the meteor shower layer (shows in the search results)">Lluvias de meteoros</string>
+    <string name="show_comet_layer_pref" translation_description="Preference toggle label for the comets layer">Cometas</string>
     <string name="show_satellite_layer_pref" translation_description="The layer for satellites">Satélites</string>
-    <string name="sensor_prefs">Ajustes del sensor</string>
-    <string name="ecliptic">Eclíptica</string>
-    <string name="malformed_loc_error">El ajuste de lat/long no es un número.</string>
+    <string name="sensor_prefs" translation_description="Preferences category heading for sensor settings, intended for advanced/expert users">Ajustes del sensor</string>
+    <string name="ecliptic" translation_description="Label for the ecliptic layer — the apparent annual path of the Sun across the sky">Eclíptica</string>
+    <string name="malformed_loc_error" translation_description="Error message when a non-numeric value is entered for latitude or longitude">El ajuste de lat/long no es un número.</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Acepto</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">No, gracias</string>
-    <string name="dialog_ok_button">OK</string>
+    <string name="dialog_ok_button" translation_description="Generic OK/confirm button label for dialogs">OK</string>
     <string name="menu_help" translation_description="menu item to show \'Help\' box">Ayuda</string>
-    <string name="help_dialog_title">Ayuda de Sky Map</string>
-    <string name="set_manual">Cambiando al modo manual</string>
-    <string name="set_auto">Cambiando al modo automático</string>
-    <string name="menu_toggle_dim">Alternar visión nocturna</string>
-    <string name="zenith">CENIT</string>
-    <string name="nadir">NADIR</string>
-    <string name="north">NORTE</string>
-    <string name="east">ESTE</string>
-    <string name="west">OESTE</string>
-    <string name="south">SUR</string>
-    <string name="search_label">Buscar</string>
+    <string name="help_dialog_title" translation_description="Title of the help dialog">Ayuda de Sky Map</string>
+    <string name="set_manual" translation_description="Toast message shown when the user switches to manual (touch-drag) mode">Cambiando al modo manual</string>
+    <string name="set_auto" translation_description="Toast message shown when the user switches to automatic (sensor/gyroscope) mode">Cambiando al modo automático</string>
+    <string name="menu_toggle_dim" translation_description="Menu item to toggle night mode (red tint that preserves night vision)">Alternar visión nocturna</string>
+    <string name="zenith" translation_description="Label for the zenith point (directly overhead) shown on the sky map. Displayed in capitals.">CENIT</string>
+    <string name="nadir" translation_description="Label for the nadir point (directly below) shown on the sky map. Displayed in capitals.">NADIR</string>
+    <string name="north" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">NORTE</string>
+    <string name="east" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">ESTE</string>
+    <string name="west" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">OESTE</string>
+    <string name="south" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">SUR</string>
+    <string name="search_label" translation_description="Hint/label for the search bar in the search activity">Buscar</string>
     <string name="search_hint" translation_description="an example search target">p.ej. Marte</string>
-    <string name="no_search_title">Sin resultados</string>
-    <string name="no_search_results_text2">No hubo resultados. Quizás el objeto no es
+    <string name="no_search_title" translation_description="Dialog title shown when a sky search returns no results">Sin resultados</string>
+    <!-- Hopefully this is a temporary measure until we can fix the search engine -->
+    <string name="no_search_results_text2" translation_description="Alternative message shown when a search returns no results, suggesting the object may not currently be visible">No hubo resultados. Quizás el objeto no es
         visible en este momento.</string>
-    <string name="many_search_results_title">¿Quisiste decir...?</string>
+    <string name="many_search_results_title" translation_description="Dialog title shown when a search returns multiple possible matches">¿Quisiste decir...?</string>
     <string name="other" translation_description="A preference category (ie preferences that don't belong in any other category)">Otros</string>
-    <string name="menu_time">Viaje en el tiempo</string>
-    <string name="time_travel_start_message_alt">Viajando en el tiempo a %s...</string>
-    <string name="time_travel_close_message">Volver al presente...</string>
+    <string name="menu_time" translation_description="Menu item label to open the time travel feature">Viaje en el tiempo</string>
+    <string name="time_travel_start_message_alt" translation_description="Toast message when time travel starts toward a named destination. %s is the event or destination name">Viajando en el tiempo a %s...</string>
+    <string name="time_travel_close_message" translation_description="Toast message shown when the user exits time travel and returns to the present">Volver al presente...</string>
+    <!--  -->
     <string name="popular_dates_prompt" translation_description="Label for a list of dates the user can choose from">Fechas populares</string>
     <string name="custom_date_prompt" translation_description="Label telling the user to manually specify a date">O elige tu propia fecha:</string>
-    <string name="change_date_prompt">Cambiar fecha</string>
-    <string name="change_time_prompt">Cambiar hora</string>
-    <string name="now_visiting" translation_description="used in time travel dialog to tell the user what time they are visiting, time formatted as yyyy.mm.dd at hh.mm.ss + timezone">
+    <string name="change_date_prompt" translation_description="Button label to open the date picker in the time travel dialog">Cambiar fecha</string>
+    <string name="change_time_prompt" translation_description="Button label to open the time picker in the time travel dialog">Cambiar hora</string>
+    <string name="now_visiting" translation_description="used in time travel dialog to show the destination date/time the user has selected, time formatted as yyyy.mm.dd at hh.mm.ss + timezone">
         Visitando: %s</string>
     <string name="time_travel_label_past" translation_description="Label showing that we are in the past">Viaje en el tiempo: Pasado</string>
     <string name="time_travel_label_future" translation_description="Label showing that we are in the future">Viaje en el tiempo: Futuro</string>
@@ -84,32 +87,39 @@
     <string name="time_travel_hour_speed_back" translation_description="Label showing rate of travel through time">Viajando a &lt; @ 1 hora/seg</string>
     <string name="time_travel_day_speed_back" translation_description="Label showing rate of travel through time">Viajando a &lt; @ 1 día/seg</string>
     <string name="time_travel_week_speed_back" translation_description="Label showing rate of travel through time">Viajando a &lt; @ 1 semana/seg</string>
-    <string name="time_travel_next_sunset">Próxima puesta del Sol</string>
-    <string name="time_travel_next_sunrise">Próximo amanecer</string>
-    <string name="time_travel_next_fullmoon">Siguiente luna llena</string>
-    <string name="time_travel_mercury_transit_2016">Tránsito de Mercurio del 09 may, 2016</string>
-    <string name="time_travel_solar_eclipse_2024">Eclipse solar del 8 abr, 2024</string>
-    <string name="time_travel_apollo_11">Alunizaje del Apolo 11</string>
-    <string name="time_travel_jupiter_saturn_2020">Conjunción Júpiter-Saturno de 2020</string>
-    <string name="use_sound_effects" translation_description="A preferences menu label">Activar sonido</string>
-    <string name="menu_gallery">Galería</string>
-    <string name="gallery_image_search_btn">Buscar en el cielo</string>
-    <string name="gallery_image_back_btn">Volver a la galería</string>
-    <string name="hubble_image_gallery_title">Galería de Sky Map</string>
-    <string name="hubble_image">Imagen del Hubble</string>
+
+    <string name="time_travel_next_sunset" translation_description="Name of a popular astronomical event in the time travel picker">Próxima puesta del Sol</string>
+    <string name="time_travel_next_sunrise" translation_description="Name of a popular astronomical event in the time travel picker">Próximo amanecer</string>
+    <string name="time_travel_next_fullmoon" translation_description="Name of a popular astronomical event in the time travel picker">Siguiente luna llena</string>
+    <string name="time_travel_mercury_transit_2016" translation_description="Name of an astronomical event in the time travel picker. A Mercury transit is when Mercury passes across the face of the Sun as seen from Earth. Keep the date format suitable for your locale.">Tránsito de Mercurio del 09 may, 2016</string>
+    <string name="time_travel_solar_eclipse_2024" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">Eclipse solar del 8 abr, 2024</string>
+    <string name="time_travel_apollo_11" translation_description="Name of an astronomical event in the time travel picker: the first crewed Moon landing in 1969">Alunizaje del Apolo 11</string>
+    <string name="time_travel_jupiter_saturn_2020" translation_description="Name of an astronomical event in the time travel picker. A conjunction is when two planets appear very close together in the sky.">Conjunción Júpiter-Saturno de 2020</string>
+    <string name="use_sound_effects" translation_description="A preferences menu label for enabling sound effects">Activar sonido</string>
+
+    <string name="menu_gallery" translation_description="Menu item label to open the image gallery">Galería</string>
+    <string name="gallery_image_search_btn" translation_description="Button in the gallery to locate the displayed object on the sky map">Buscar en el cielo</string>
+    <string name="gallery_image_back_btn" translation_description="Button to return to the gallery from a single image view">Volver a la galería</string>
+    <string name="hubble_image_gallery_title" translation_description="Title of the image gallery screen">Galería de Sky Map</string>
+    <string name="hubble_image" translation_description="Label or caption for a Hubble Space Telescope image in the gallery">Imagen del Hubble</string>
     <string name="search_overlay_title" translation_description="title for search overlay">Apunta tu teléfono hacia la flecha</string>
     <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">Buscando:</string>
-    <string name="sun_wont_set_message">El sol no se pondrá durante las próximas 24 horas en tu ubicación actual.</string>
+    <string name="sun_wont_set_message" translation_description="Message shown when the sun will not set during the next 24 hours (polar day / midnight sun)">El sol no se pondrá durante las próximas 24 horas en tu ubicación actual.</string>
+
     <string name="missing_label" translation_description="Used to indicate to the developer that they've added a resource with no translation.">MISSING_LBL</string>
-    <string name="menu_tos">Términos del Servicio</string>
-    <string name="menu_diagnostics">Diagnósticos</string>
-    <string name="north_pole">PN</string>
-    <string name="south_pole">PS</string>
-    <string name="enable_analytics">Enviar estadísticas de uso</string>
-    <string name="enable_analytics_desc">Mejorar Sky Map enviando datos anónimos a Google Analytics</string>
-    <string name="no_sensor_warning">Es posible que tu dispositivo no tenga sensores de orientación; el modo auto no funcionará</string>
-    <string name="warning_dialog_title">¡Malas noticias!</string>
-    <string name="missing_sensor_dialog_text">\n
+
+    <string name="menu_tos" translation_description="Menu item label to view the Terms of Service">Términos del Servicio</string>
+    <string name="menu_diagnostics" translation_description="Menu item label to open the technical diagnostics screen">Diagnósticos</string>
+
+    <string name="north_pole" translation_description="Short abbreviation for the North Celestial Pole, displayed as a label on the sky map grid. Translators: use the standard abbreviation in your language (e.g. NP in English, PN in French).">PN</string>
+    <string name="south_pole" translation_description="Short abbreviation for the South Celestial Pole, displayed as a label on the sky map grid. Translators: use the standard abbreviation in your language (e.g. SP in English, PS in French).">PS</string>
+
+    <string name="enable_analytics" translation_description="Preference label to opt in to sending anonymous usage statistics">Enviar estadísticas de uso</string>
+    <string name="enable_analytics_desc" translation_description="Description/summary for the usage statistics preference">Mejorar Sky Map enviando datos anónimos a Google Analytics</string>
+
+    <string name="no_sensor_warning" translation_description="Warning shown when required orientation sensors are not detected on the device">Es posible que tu dispositivo no tenga sensores de orientación; el modo auto no funcionará</string>
+    <string name="warning_dialog_title" translation_description="Title of a warning dialog shown when something is wrong, e.g. a missing sensor">¡Malas noticias!</string>
+    <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">\n
         Lamentablemente, es posible que tu dispositivo no tenga uno de los
     sensores que Sky Map necesita.\n\n
         Para mostrarte el cielo en la dirección en la que apunta tu teléfono Sky Map
@@ -121,68 +131,69 @@
         puedes usar Sky Map en este dispositivo en modo manual donde puedes arrastrar, girar y estirar el
         mapa con tus dedos.
     </string>
-    <string name="do_not_show_again">No mostrar este mensaje otra vez</string>
-    <string name="title_activity_diagnostic">Diagnósticos</string>
-    <string name="play_services_error">Advertencia: error de Google Play Services - La ubicación automática puede no funcionar</string>
-    <string name="sensor_absent">Ausente</string>
-    <string name="sensor_accuracy_unknown">Exactitud: Desconocida</string>
-    <string name="sensor_accuracy_unreliable">Exactitud: No confiable</string>
-    <string name="sensor_accuracy_low">Exactitud: Baja</string>
-    <string name="sensor_accuracy_medium">Exactitud: Media</string>
-    <string name="sensor_accuracy_high">Exactitud: Alta</string>
-    <string name="sensor_accuracy_nocontact">Exactitud: Sin contacto</string>
-    <string name="diagnostics_activity_general_heading">General</string>
-    <string name="diagnostics_activity_phone">Dispositivo</string>
-    <string name="diagnostics_activity_android_version">Versión de Android</string>
-    <string name="diagnostics_activity_sky_map_version">Versión de Sky Map</string>
-    <string name="diagnostics_activity_sensors_heading">Sensores</string>
-    <string name="diagnostics_activity_compass">Brújula</string>
-    <string name="diagnostics_activity_accelerometer">Acelerómetro</string>
-    <string name="diagnostics_activity_rotation_vector">Rotación</string>
-    <string name="diagnostics_activity_gyroscope">Giroscopio</string>
-    <string name="diagnostics_activity_light_level">Nivel de luz</string>
-    <string name="diagnostics_activity_location_and_time_heading">Ubicación y hora</string>
-    <string name="diagnostics_activity_gps">GPS</string>
-    <string name="diagnostics_activity_location">Ubicación (lat, long)</string>
-    <string name="diagnostics_activity_pointing_ra_dec">Apunte inst.</string>
-    <string name="diagnostics_activity_magnetic_correction">Corrección magnética</string>
-    <string name="diagnostics_activity_local_datetime">Fecha local</string>
-    <string name="diagnostics_activity_universal_time">Fecha universal</string>
-    <string name="diagnostics_activity_network_heading">Red</string>
-    <string name="diagnostics_activity_connection">Conexión</string>
-    <string name="diagnostics_activity_rotation_matrix">Matriz de rot.</string>
-    <string name="enabled">Activado</string>
-    <string name="disabled">Desactivado</string>
-    <string name="permission_disabled">Permiso desactivado</string>
-    <string name="no_gps">Sin GPS</string>
-    <string name="connected">Conectado</string>
-    <string name="disconnected">Desconectado</string>
-    <string name="wifi">" (wifi)"</string>
-    <string name="cell_network">" (móvil)"</string>
-    <string name="menu_calibrate">Calibrar</string>
-    <string name="compass_calibration_activity_heading_compass">Brújula -</string>
-    <string name="compass_calibration_activity_do_not_show_this_again">No mostrar esto otra vez</string>
-    <string name="compass_calibration_activity_warning">Tu brújula debe ser
+    <string name="do_not_show_again" translation_description="Checkbox or button label to suppress future display of a warning dialog">No mostrar este mensaje otra vez</string>
+    <string name="title_activity_diagnostic" translation_description="Title bar text for the Diagnostics activity/screen">Diagnósticos</string>
+    <string name="play_services_error" translation_description="Warning shown in the diagnostics screen when Google Play Services has an error that may affect automatic location">Advertencia: error de Google Play Services - La ubicación automática puede no funcionar</string>
+    <string name="sensor_absent" translation_description="Sensor status shown in diagnostics when the sensor is not present on the device">Ausente</string>
+    <string name="sensor_accuracy_unknown" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">Exactitud: Desconocida</string>
+    <string name="sensor_accuracy_unreliable" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">Exactitud: No confiable</string>
+    <string name="sensor_accuracy_low" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">Exactitud: Baja</string>
+    <string name="sensor_accuracy_medium" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">Exactitud: Media</string>
+    <string name="sensor_accuracy_high" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">Exactitud: Alta</string>
+    <string name="sensor_accuracy_nocontact" translation_description="Sensor accuracy level shown when the sensor has no contact (e.g. heart-rate sensor lifted from skin) — unlikely to appear in Sky Map but included for completeness">Exactitud: Sin contacto</string>
+    <string name="diagnostics_activity_general_heading" translation_description="Section heading in the Diagnostics screen for general device information">General</string>
+    <string name="diagnostics_activity_phone" translation_description="Row label in the Diagnostics screen for the device model name">Dispositivo</string>
+    <string name="diagnostics_activity_android_version" translation_description="Row label in the Diagnostics screen for the Android OS version">Versión de Android</string>
+    <string name="diagnostics_activity_sky_map_version" translation_description="Row label in the Diagnostics screen for the Sky Map app version">Versión de Sky Map</string>
+    <string name="diagnostics_activity_sensors_heading" translation_description="Section heading in the Diagnostics screen for sensor readings">Sensores</string>
+    <string name="diagnostics_activity_compass" translation_description="Row label in the Diagnostics screen for the compass (magnetic field) sensor">Brújula</string>
+    <string name="diagnostics_activity_accelerometer" translation_description="Row label in the Diagnostics screen for the accelerometer sensor">Acelerómetro</string>
+    <string name="diagnostics_activity_rotation_vector" translation_description="Row label in the Diagnostics screen for the rotation vector (combined orientation) sensor">Rotación</string>
+    <string name="diagnostics_activity_gyroscope" translation_description="Row label in the Diagnostics screen for the gyroscope sensor">Giroscopio</string>
+    <string name="diagnostics_activity_light_level" translation_description="Row label in the Diagnostics screen for the ambient light sensor reading">Nivel de luz</string>
+    <string name="diagnostics_activity_location_and_time_heading" translation_description="Section heading in the Diagnostics screen for location and time information">Ubicación y hora</string>
+    <string name="diagnostics_activity_gps" translation_description="Row label in the Diagnostics screen for the GPS provider status">GPS</string>
+    <string name="diagnostics_activity_location" translation_description="Row label in the Diagnostics screen showing the current latitude and longitude">Ubicación (lat, long)</string>
+    <string name="diagnostics_activity_pointing_ra_dec" translation_description="Row label in the Diagnostics screen showing a snapshot of where the phone is currently pointing in the sky (Right Ascension and Declination)">Apunte inst.</string>
+    <string name="diagnostics_activity_magnetic_correction" translation_description="Row label in the Diagnostics screen showing whether magnetic declination correction is applied">Corrección magnética</string>
+    <string name="diagnostics_activity_local_datetime" translation_description="Row label in the Diagnostics screen for the local date and time">Fecha local</string>
+    <string name="diagnostics_activity_universal_time" translation_description="Row label in the Diagnostics screen for the UTC/universal date and time">Fecha universal</string>
+    <string name="diagnostics_activity_network_heading" translation_description="Section heading in the Diagnostics screen for network connectivity information">Red</string>
+    <string name="diagnostics_activity_connection" translation_description="Row label in the Diagnostics screen for the current network connection status">Conexión</string>
+    <string name="diagnostics_activity_rotation_matrix" translation_description="Row label in the Diagnostics screen showing the raw device rotation matrix used for orientation">Matriz de rot.</string>
+    <string name="enabled" translation_description="Generic status value meaning a feature or sensor is enabled/active">Activado</string>
+    <string name="disabled" translation_description="Generic status value meaning a feature or sensor is disabled/inactive">Desactivado</string>
+    <string name="permission_disabled" translation_description="Status value shown when a feature is unavailable because its permission was not granted">Permiso desactivado</string>
+    <string name="no_gps" translation_description="Status value shown in diagnostics when no GPS provider is available">Sin GPS</string>
+    <string name="connected" translation_description="Network status value shown when the device has an active network connection">Conectado</string>
+    <string name="disconnected" translation_description="Network status value shown when the device has no network connection">Desconectado</string>
+    <string name="wifi" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (wifi)\'). Note the leading space.">" (wifi)"</string>
+    <string name="cell_network" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (cell)\'). Note the leading space.">" (móvil)"</string>
+    <string name="menu_calibrate" translation_description="Menu item label to open the compass calibration screen">Calibrar</string>
+    <string name="compass_calibration_activity_heading_compass" translation_description="Static label in the compass calibration screen placed inline to the left of the live compass accuracy value (e.g. displayed as \'Compass - Accuracy: High\')">Brújula -</string>
+    <string name="compass_calibration_activity_do_not_show_this_again" translation_description="Checkbox label in the compass calibration dialog to suppress future automatic appearances">No mostrar esto otra vez</string>
+    <string name="compass_calibration_activity_warning" translation_description="Heading/reason text shown in the compass calibration dialog when it opens automatically due to low accuracy">Tu brújula debe ser
         calibrada</string>
-    <string name="compass_calib_what_to_do" translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL">Tu teléfono reporta a Sky
+    <string name="compass_calib_what_to_do" translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL"><![CDATA[Tu teléfono reporta a Sky
         Map que su brújula interna no está calibrada.
     Este no es un problema de Sky Map, pero podemos ayudarte a intentar solucionarlo. Para calibrar la brújula intenta mover tu teléfono en forma de ocho
-        como se demuestra en este video %s hasta que la precisión sea \'alta\'.</string>
-    <string name="compass_calib_what_to_do_user" transation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL">La precisión
+        como se demuestra en este video %s hasta que la precisión sea \'alta\'.]]></string>
+    <string name="compass_calib_what_to_do_user" transation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[La precisión
         de la brújula
         de tu teléfono se muestra arriba.
     Si no es \'alta\' entonces es posible que sea necesario calibrar la brújula. Esto no es un problema de Sky Map, pero
     una propiedad de tu teléfono. Para calibrar la brújula intenta mover tu teléfono en forma de ocho
-        como se demuestra en este video %s.</string>
-    <string name="sensor_reverse_preference_title">Z magnética inverso</string>
-    <string name="sensor_reverse_preference_summary">Solución para teléfonos con sensores implementados incorrectamente: requiere reiniciar</string>
-    <string name="whats_new_dialog_title">Novedades</string>
-    <string name="disable_gyro_preference_title">Deshabilitar giroscopio</string>
-    <string name="disable_gyro_preference_summary">No todos los dispositivos tienen giroscopio. Si el tuyo lo tiene, obtendrás mejores resultados con él activado y esta casilla desactivada. Por otro lado si tu teléfono no tiene giroscopio, entonces Sky Map podría no funcionar si no activas esta casilla.</string>
-    <string name="rotate_horizon_preference_title">Dirección de la vista</string>
-    <string name="rotate_horizon_preference_summary">Gira el horizonte 90 grados (para dispositivos
+        como se demuestra en este video %s.]]></string>
+    <string name="sensor_reverse_preference_title" translation_description="Preference title for reversing the magnetic Z-axis sensor reading, a fix for certain phones with incorrectly implemented sensors">Z magnética inverso</string>
+    <string name="sensor_reverse_preference_summary" translation_description="Summary for the Reverse Magnetic Z preference">Solución para teléfonos con sensores implementados incorrectamente: requiere reiniciar</string>
+    <string name="whats_new_dialog_title" translation_description="Title of the dialog shown on first launch after an update, listing new features">Novedades</string>
+    <string name="disable_gyro_preference_title" translation_description="Preference title for disabling the gyroscope sensor">Deshabilitar giroscopio</string>
+    <string name="disable_gyro_preference_summary" translation_description="Explanation of the disable gyroscope preference and when to use it">No todos los dispositivos tienen giroscopio. Si el tuyo lo tiene, obtendrás mejores resultados con él activado y esta casilla desactivada. Por otro lado si tu teléfono no tiene giroscopio, entonces Sky Map podría no funcionar si no activas esta casilla.</string>
+    <string name="rotate_horizon_preference_title" translation_description="Preference title for choosing the view/pointing direction mode">Dirección de la vista</string>
+    <string name="rotate_horizon_preference_summary" translation_description="Explanation of the view direction preference, covering both landscape rotation and pointer modes">Gira el horizonte 90 grados (para dispositivos
         con paisajes forzados) o use el modo de puntero para que la pantalla muestre
         hacia dónde apunta la parte superior del teléfono (ver texto de ayuda).</string>
-    <string name="show_object_info_auto_mode_title">Info cards en modo automático</string>
-    <string name="show_object_info_auto_mode_summary">También mostrar info cards al tocar objetos en modo automático (sensores)</string>
-</resources>
+
+    <string name="show_object_info_auto_mode_title" translation_description="Preference title for enabling info cards in auto/sensor mode">Info cards en modo automático</string>
+    <string name="show_object_info_auto_mode_summary" translation_description="Preference summary for auto mode info cards">También mostrar info cards al tocar objetos en modo automático (sensores)</string>
+    </resources>

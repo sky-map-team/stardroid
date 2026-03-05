@@ -1,5 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <resources>
+    <!-- Constellations -->
     <string name="andromeda" translation_description="Name of the Andromeda constellation">안드로메다자리</string>
     <string name="aquarius" translation_description="Name of the Aquarius constellation">물병자리</string>
     <string name="aquila" translation_description="Name of the Aquila constellation">독수리자리</string>
@@ -50,17 +51,20 @@
     <string name="big_dipper" translation_description="Name of the Big Dipper constellation">북두칠성</string>
     <string name="great_bear" translation_description="Name of the Great Bear constellation">큰곰자리</string>
     <string name="plough" translation_description="Name of the Plough constellation">북두칠성</string>
-    <string name="sun">태양</string>
-    <string name="moon">달</string>
-    <string name="mercury">수성</string>
-    <string name="venus">금성</string>
-    <string name="earth">지구</string>
-    <string name="mars">화성</string>
-    <string name="jupiter">목성</string>
-    <string name="saturn">토성</string>
-    <string name="uranus">천왕성</string>
-    <string name="neptune">해왕성</string>
-    <string name="pluto">명왕성</string>
+    <!-- Major solar system objects -->
+    <string name="sun" translation_description="Name of the Sun">태양</string>
+    <string name="moon" translation_description="Name of the Earth's Moon">달</string>
+    <string name="mercury" translation_description="Name of the planet Mercury">수성</string>
+    <string name="venus" translation_description="Name of the planet Venus">금성</string>
+    <string name="earth" translation_description="Name of the planet Earth">지구</string>
+    <string name="mars" translation_description="Name of the planet Mars">화성</string>
+    <string name="jupiter" translation_description="Name of the planet Jupiter">목성</string>
+    <string name="saturn" translation_description="Name of the planet Saturn">토성</string>
+    <string name="uranus" translation_description="Name of the planet Uranus">천왕성</string>
+    <string name="neptune" translation_description="Name of the planet Neptune">해왕성</string>
+    <string name="pluto" translation_description="Name of the dwarf planet Pluto">명왕성</string>
+
+    <!-- Gallery objects -->
     <string name="crab_nebula" translation_description="hubble object">게 성운</string>
     <string name="eagle_nebula" translation_description="hubble object">독수리 성운</string>
     <string name="andromeda_galaxy" translation_description="hubble object">안드로메다 은하</string>
@@ -77,6 +81,9 @@
     <string name="sn1987a" translation_description="hubble object">초신성 1987A</string>
     <string name="hubble_deep_field" translation_description="hubble object">허블 딥 필드</string>
     <string name="rho_oph" translation_description="hubble object">뱀주인자리 로(Rho) 별</string>
+
+
+    <!-- Stars -->
     <string name="sirius" translation_description="Name of the Star Sirius">시리우스</string>
     <string name="canopus" translation_description="Name of the Star Canopus">카노푸스</string>
     <string name="arcturus" translation_description="Name of the Star Arcturus">아르크투르스</string>
@@ -144,6 +151,7 @@
     <string name="dog_star" translation_description="Name of the Dog Star (Sirius)">시리우스</string>
     <string name="north_star" translation_description="Name of the North Star">북극성</string>
     <string name="pole_star" translation_description="Name of the (North) Pole Star">북극성</string>
+    <!-- Messier objects etc -->
     <string name="m1" translation_description="Name of the Messier object M1">M1</string>
     <string name="m2" translation_description="Name of the Messier object M2">M2</string>
     <string name="m3" translation_description="Name of the Messier object M3">M3</string>
@@ -262,6 +270,9 @@
     <string name="beehive_cluster" translation_description="Name of the Messier object Beehive Cluster">벌집 성단</string>
     <string name="praesepe" translation_description="Name of the Messier object Praesepe">프레세페</string>
     <string name="seven_sisters" translation_description="Name of the Messier object Seven Sisters">일곱 자매</string>
+
+    <!-- Manmade objects -->
     <string name="space_station" translation_description="Name of the Internation Space Station">국제 우주 정거장</string>
     <string name="space_shuttle" translation_description="Name of the Space Shuttle">우주왕복선</string>
-</resources>
+
+    </resources>

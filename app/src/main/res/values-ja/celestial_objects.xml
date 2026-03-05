@@ -1,5 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <resources>
+    <!-- Constellations -->
     <string name="andromeda" translation_description="Name of the Andromeda constellation">アンドロメダ座</string>
     <string name="aquarius" translation_description="Name of the Aquarius constellation">みずがめ座</string>
     <string name="aquila" translation_description="Name of the Aquila constellation">わし座</string>
@@ -97,17 +98,21 @@
     <string name="triangulum_australe" translation_description="Name of the Triangulum Australe constellation">みなみのさんかく座</string>
     <string name="volans" translation_description="Name of the Volans constellation">とびうお座</string>
     <string name="vulpecula" translation_description="Name of the Vulpecula constellation">こぎつね座</string>
-    <string name="sun">太陽</string>
-    <string name="moon">月</string>
-    <string name="mercury">水星</string>
-    <string name="venus">金星</string>
-    <string name="earth">地球</string>
-    <string name="mars">火星</string>
-    <string name="jupiter">木星</string>
-    <string name="saturn">土星</string>
-    <string name="uranus">天王星</string>
-    <string name="neptune">海王星</string>
-    <string name="pluto">冥王星</string>
+
+    <!-- Major solar system objects -->
+    <string name="sun" translation_description="Name of the Sun">太陽</string>
+    <string name="moon" translation_description="Name of the Earth's Moon">月</string>
+    <string name="mercury" translation_description="Name of the planet Mercury">水星</string>
+    <string name="venus" translation_description="Name of the planet Venus">金星</string>
+    <string name="earth" translation_description="Name of the planet Earth">地球</string>
+    <string name="mars" translation_description="Name of the planet Mars">火星</string>
+    <string name="jupiter" translation_description="Name of the planet Jupiter">木星</string>
+    <string name="saturn" translation_description="Name of the planet Saturn">土星</string>
+    <string name="uranus" translation_description="Name of the planet Uranus">天王星</string>
+    <string name="neptune" translation_description="Name of the planet Neptune">海王星</string>
+    <string name="pluto" translation_description="Name of the dwarf planet Pluto">冥王星</string>
+
+    <!-- Gallery objects -->
     <string name="crab_nebula" translation_description="hubble object">カニ星雲</string>
     <string name="eagle_nebula" translation_description="hubble object">ワシ星雲</string>
     <string name="andromeda_galaxy" translation_description="hubble object">アンドロメダ銀河</string>
@@ -125,6 +130,9 @@
     <string name="hubble_deep_field" translation_description="hubble object">ハッブル深宇宙</string>
     <string name="hdf" translation_description="hubble object">ハッブル深宇宙</string>
     <string name="rho_oph" translation_description="hubble object">へびつかい座ロウ星</string>
+
+
+    <!-- Stars -->
     <string name="sirius" translation_description="Name of the Star Sirius">シリウス</string>
     <string name="canopus" translation_description="Name of the Star Canopus">カノープス</string>
     <string name="arcturus" translation_description="Name of the Star Arcturus">アルクトゥルス</string>
@@ -196,6 +204,8 @@
     <string name="alpha_centauri" translation_description="Name of the star Alpha Centauri">アルファケンタウリ</string>
     <string name="rigil_kent" translation_description="Name of the star Rigil Kent">リギルケント</string>
     <string name="e_lyrae" translation_description="Name of the star ε Lyrae">こと座イプシロン星</string>
+
+    <!-- Messier objects etc -->
     <string name="m1" translation_description="Name of the Messier object M1">M1</string>
     <string name="m2" translation_description="Name of the Messier object M2">M2</string>
     <string name="m3" translation_description="Name of the Messier object M3">M3</string>
@@ -314,8 +324,12 @@
     <string name="beehive_cluster" translation_description="Name of the Messier object Beehive Cluster">蜂の巣星団</string>
     <string name="praesepe" translation_description="Name of the Messier object Praesepe">プレセペ星団</string>
     <string name="seven_sisters" translation_description="Name of the Messier object Seven Sisters">すばる</string>
+
+    <!-- Manmade objects -->
     <string name="space_station" translation_description="Name of the Internation Space Station">国際宇宙ステーション</string>
     <string name="space_shuttle" translation_description="Name of the Space Shuttle">スペースシャトル</string>
+
+    <!-- Meteors -->
     <string name="leonids" translation_description="Meteor Shower">しし座流星群</string>
     <string name="geminids" translation_description="Meteor Shower">ふたご座流星群</string>
     <string name="quadrantids" translation_description="Meteor Shower">しぶんぎ座流星群</string>
@@ -326,8 +340,11 @@
     <string name="orionids" translation_description="Meteor Shower">オリオン座流星群</string>
     <string name="puppidvelids" translation_description="Meteor Shower">Puppid-Velids流星群</string>
     <string name="ursids" translation_description="Meteor Shower">こぐま座流星群</string>
-    <string name="comet_leonard">レナード彗星</string>
-    <string name="comet_leonard_alt">レナード (彗星)</string>
-    <string name="comet_neowise">ネオワイズ彗星</string>
-    <string name="comet_neowise_alt">ネオワイズ (彗星)</string>
+
+    <!-- Comets -->
+    <string name="comet_leonard" translation_description="Name of Comet Leonard (C/2021 A1) as shown on the sky map">レナード彗星</string>
+    <!-- TODO: no need for these alt names once our search is less lousy -->
+    <string name="comet_leonard_alt" translation_description="Alternate searchable name for Comet Leonard, surname first">レナード (彗星)</string>
+    <string name="comet_neowise" translation_description="Name of Comet NEOWISE (C/2020 F3) as shown on the sky map">ネオワイズ彗星</string>
+    <string name="comet_neowise_alt" translation_description="Alternate searchable name for Comet NEOWISE, surname first">ネオワイズ (彗星)</string>
 </resources>

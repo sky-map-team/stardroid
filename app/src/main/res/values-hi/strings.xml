@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="show_object_info_auto_mode_title">ऑटो मोड में जानकारी कार्ड</string>
-    <string name="show_object_info_auto_mode_summary">स्वचालित (सेंसर) मोड में ऑब्जेक्ट पर टैप करने पर भी जानकारी कार्ड दिखाएं</string>
-    <string name="object_info_funfact_label">रोचक तथ्य:</string>
-    <string name="object_info_distance_label">दूरी:</string>
-    <string name="object_info_size_label">आकार:</string>
-    <string name="object_info_mass_label">द्रव्यमान:</string>
-    <string name="object_info_spectral_label">वर्णक्रमीय:</string>
-    <string name="object_info_magnitude_label">कांतिमान:</string>
-</resources>
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Please add  translation_description="" attributes to Strings to assist the translators. --><resources>
+    <string name="show_object_info_auto_mode_title" translation_description="Preference title for enabling info cards in auto/sensor mode">ऑटो मोड में जानकारी कार्ड</string>
+    <string name="show_object_info_auto_mode_summary" translation_description="Preference summary for auto mode info cards">स्वचालित (सेंसर) मोड में ऑब्जेक्ट पर टैप करने पर भी जानकारी कार्ड दिखाएं</string>
+    <string name="object_info_funfact_label" translation_description="Label before the fun fact in info card">रोचक तथ्य:</string>
+    <string name="object_info_distance_label" translation_description="Label for distance field">दूरी:</string>
+    <string name="object_info_size_label" translation_description="Label for size field">आकार:</string>
+    <string name="object_info_mass_label" translation_description="Label for mass field">द्रव्यमान:</string>
+    <string name="object_info_spectral_label" translation_description="Label for spectral class">वर्णक्रमीय:</string>
+    <string name="object_info_magnitude_label" translation_description="Label for apparent magnitude">कांतिमान:</string>
+    </resources>
