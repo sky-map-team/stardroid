@@ -1,6 +1,6 @@
 # Architecture Overview
 
-Sky Map is an Android planetarium app that displays the night sky in real-time using device sensors and OpenGL rendering. The codebase is written in Java and Kotlin, targeting Android SDK 26–35.
+Sky Map is an Android planetarium app that displays the night sky in real-time using device sensors and OpenGL rendering. The codebase is written in Java and Kotlin (minSdk 26, compileSdk 35, targetSdk 36).
 
 > **Detailed architecture documentation lives in [`specs/architecture/`](../specs/architecture/README.md).** This file provides a high-level summary and diagram; follow the links below for specifics.
 
