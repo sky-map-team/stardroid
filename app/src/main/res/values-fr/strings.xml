@@ -13,6 +13,8 @@
     <string name="no_use_gps_pref_hint" translation_description="Hint text beneath the \'Set location manually\' preference">Précisez un lieu ou une lat/long.</string>
     <string name="location_placename" translation_description="Label for the place-name text field in manual location settings">Nom de lieu</string>
     <string name="location_placename_hint" translation_description="An example address.  Translators: please pick an address suitable for your country.  If it has an astronomical connection (e.g. the address of an observatory or famous astronomer) then that would be even better.">Exemple : 11 rue de l\'Université, Strasbourg</string>
+    <string name="location_lat_pref" translation_description="Label for the latitude input field in manual location settings">Latitude</string>
+    <string name="location_long_pref" translation_description="Label for the longitude input field in manual location settings">Longitude</string>
     <string name="degrees" translation_description="angular degrees - used for latitude and longitude">Degrés</string>
     <string name="preferences" translation_description="Provider-name label used internally when a location is set from preferences (not shown directly to the user as a UI label - does not require a translation)">préférences</string>
     <string name="location_offer_to_enable" translation_description="Dialog message asking whether to enable automatic location">Position auto désactivée. Voulez-vous l\'activer ?</string>
@@ -26,9 +28,11 @@
     <string name="location_place_found" translation_description="Status message when a place name was successfully looked up. %1$f is latitude, %2$f is longitude">Lieu trouvé. Définir latitude %1$f et longitude %2$f</string>
     <string name="use_magnetic_correction" translation_description="Preference label: apply magnetic declination correction so the compass points to true north instead of magnetic north">Correction magnétique</string>
     <string name="show_stars_pref" translation_description="Label for the stars layer on the sky map (shows in the search results)">Étoiles</string>
+    <string name="show_constellations_pref" translation_description="Label for the constellation lines and labels layer (shows in the search results)">Constellations</string>
     <string name="show_messier_objects_pref" translation_description="The celestial objects catalogued by Charles Messier (shows in the search results)">Objets de Messier</string>
     <string name="show_planets_pref" translation_description="Label for the solar system layer (planets, sun, moon)  (shows in the search results)">Planètes</string>
     <string name="show_grid_pref" translation_description="Label for the Right Ascension / Declination grid overlay  (shows in the search results)">Grille RA/Dec</string>
+    <string name="show_horizon_pref" translation_description="Preference toggle label for the horizon line layer">Horizon</string>
     <string name="show_sky_gradient" translation_description="This is a shading of the color of the sky used for effect">Couleurs du ciel</string>
     <string name="sensor_prefs" translation_description="Preferences category heading for sensor settings, intended for advanced/expert users">Paramètres du capteur</string>
     <string name="ecliptic" translation_description="Label for the ecliptic layer — the apparent annual path of the Sun across the sky">Écliptique</string>
@@ -41,6 +45,7 @@
     <string name="set_auto" translation_description="Toast message shown when the user switches to automatic (sensor/gyroscope) mode">Activation du mode automatique</string>
     <string name="menu_toggle_dim" translation_description="Menu item to toggle night mode (red tint that preserves night vision)">Activer/Dés. mode nuit</string>
     <string name="zenith" translation_description="Label for the zenith point (directly overhead) shown on the sky map. Displayed in capitals.">ZÉNITH</string>
+    <string name="nadir" translation_description="Label for the nadir point (directly below) shown on the sky map. Displayed in capitals.">NADIR</string>
     <string name="north" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">NORD</string>
     <string name="east" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">EST</string>
     <string name="west" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">OUEST</string>

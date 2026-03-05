@@ -45,6 +45,7 @@
     <string name="set_auto" translation_description="Toast message shown when the user switches to automatic (sensor/gyroscope) mode">자동 모드로 전환</string>
     <string name="menu_toggle_dim" translation_description="Menu item to toggle night mode (red tint that preserves night vision)">야간 모드 전환</string>
     <string name="zenith" translation_description="Label for the zenith point (directly overhead) shown on the sky map. Displayed in capitals.">천정</string>
+    <string name="nadir" translation_description="Label for the nadir point (directly below) shown on the sky map. Displayed in capitals.">NADIR</string>
     <string name="north" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">북쪽</string>
     <string name="east" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">동쪽</string>
     <string name="west" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">서쪽</string>

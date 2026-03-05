@@ -6,41 +6,52 @@
     <string name="object_info_sun_funfact" translation_description="Fun fact about the Sun">太陽は太陽系全体の質量の99.86%を占めています。約130万個の地球が太陽の中に入ってしまうほどの大きさです！</string>
     <string name="object_info_sun_distance" translation_description="Distance to Sun shown in the info card. Translate units if appropriate for your locale.">1億5000万km</string>
     <string name="object_info_sun_size" translation_description="Physical size of Sun shown in the info card. Translate units if appropriate for your locale.">140万km（直径）</string>
+    <string name="object_info_sun_mass" translation_description="Mass of Sun in scientific notation — no translation needed.">1.989 × 10³⁰ kg</string>
     <string name="object_info_moon_description" translation_description="Short description of the Moon">月は地球で唯一の天然衛星です。潮の満ち引きに影響を与え、これまでに12人の宇宙飛行士が訪れました。</string>
     <string name="object_info_moon_funfact" translation_description="Fun fact about the Moon">月は毎年約3.8cmずつ地球から遠ざかっています。数十億年前はもっとずっと近くにあったのです！</string>
+    <string name="object_info_moon_distance" translation_description="Distance to Moon shown in the info card. Translate units if appropriate for your locale.">384,400 km</string>
     <string name="object_info_moon_size" translation_description="Physical size of Moon shown in the info card. Translate units if appropriate for your locale.">3,474 km（直径）</string>
+    <string name="object_info_moon_mass" translation_description="Mass of Moon in scientific notation — no translation needed.">7.35 × 10²² kg</string>
     <string name="object_info_mercury_description" translation_description="Short description of Mercury">水星は最も小さい惑星で、太陽に最も近い惑星です。水星の1年はわずか地球の88日しかありません。</string>
     <string name="object_info_mercury_funfact" translation_description="Fun fact about Mercury">太陽に最も近いにもかかわらず、水星は最も暑い惑星ではありません。金星の方が厚い大気のおかげでずっと暑いのです！</string>
     <string name="object_info_mercury_distance" translation_description="Distance to Mercury shown in the info card. Translate units if appropriate for your locale.">5800万km（太陽から）</string>
     <string name="object_info_mercury_size" translation_description="Physical size of Mercury shown in the info card. Translate units if appropriate for your locale.">4,880 km（直径）</string>
+    <string name="object_info_mercury_mass" translation_description="Mass of Mercury in scientific notation — no translation needed.">3.3 × 10²³ kg</string>
     <string name="object_info_venus_description" translation_description="Short description of Venus">金星は太陽から2番目の惑星で、太陽系で最も暑い惑星です。大きさが似ていることから地球の双子とも呼ばれます。</string>
     <string name="object_info_venus_funfact" translation_description="Fun fact about Venus">金星の1日は1年よりも長いのです！自転に地球の243日かかりますが、公転はわずか225日で完了します。</string>
     <string name="object_info_venus_distance" translation_description="Distance to Venus shown in the info card. Translate units if appropriate for your locale.">1億800万km（平均）</string>
     <string name="object_info_venus_size" translation_description="Physical size of Venus shown in the info card. Translate units if appropriate for your locale.">12,104 km（直径）</string>
+    <string name="object_info_venus_mass" translation_description="Mass of Venus in scientific notation — no translation needed.">4.87 × 10²⁴ kg</string>
     <string name="object_info_mars_description" translation_description="Short description of Mars">火星は太陽から4番目の惑星で、表面の酸化鉄により赤い惑星として知られています。</string>
     <string name="object_info_mars_funfact" translation_description="Fun fact about Mars">火星には太陽系最大の火山、オリンポス山があります。エベレスト山の約2.5倍の高さです！</string>
     <string name="object_info_mars_distance" translation_description="Distance to Mars shown in the info card. Translate units if appropriate for your locale.">2億2800万km（平均）</string>
     <string name="object_info_mars_size" translation_description="Physical size of Mars shown in the info card. Translate units if appropriate for your locale.">6,779 km（直径）</string>
+    <string name="object_info_mars_mass" translation_description="Mass of Mars in scientific notation — no translation needed.">6.39 × 10²³ kg</string>
     <string name="object_info_jupiter_description" translation_description="Short description of Jupiter">木星は太陽系最大の惑星です。巨大なガス惑星で、有名な大赤斑という嵐があります。</string>
     <string name="object_info_jupiter_funfact" translation_description="Fun fact about Jupiter">木星には少なくとも95個の衛星が確認されています！最大の衛星ガニメデは、惑星の水星よりも大きいのです。</string>
     <string name="object_info_jupiter_distance" translation_description="Distance to Jupiter shown in the info card. Translate units if appropriate for your locale.">7億7800万km（平均）</string>
     <string name="object_info_jupiter_size" translation_description="Physical size of Jupiter shown in the info card. Translate units if appropriate for your locale.">139,820 km（直径）</string>
+    <string name="object_info_jupiter_mass" translation_description="Mass of Jupiter in scientific notation — no translation needed.">1.898 × 10²⁷ kg</string>
     <string name="object_info_saturn_description" translation_description="Short description of Saturn">土星は太陽から6番目の惑星で、氷と岩石でできた壮大な環で有名です。</string>
     <string name="object_info_saturn_funfact" translation_description="Fun fact about Saturn">土星は水に浮くほど軽いのです！密度が水より小さいのですが、残念ながらそれを試せるほど大きなバスタブはありません。</string>
     <string name="object_info_saturn_distance" translation_description="Distance to Saturn shown in the info card. Translate units if appropriate for your locale.">14億km（平均）</string>
     <string name="object_info_saturn_size" translation_description="Physical size of Saturn shown in the info card. Translate units if appropriate for your locale.">116,460 km（直径）</string>
+    <string name="object_info_saturn_mass" translation_description="Mass of Saturn in scientific notation — no translation needed.">5.68 × 10²⁶ kg</string>
     <string name="object_info_uranus_description" translation_description="Short description of Uranus">天王星は横倒しに自転する氷の巨大惑星です。望遠鏡で発見された最初の惑星でもあります。</string>
     <string name="object_info_uranus_funfact" translation_description="Fun fact about Uranus">天王星は98度も傾いて横倒しに自転しています。大昔に地球サイズの天体と衝突したためかもしれません！</string>
     <string name="object_info_uranus_distance" translation_description="Distance to Uranus shown in the info card. Translate units if appropriate for your locale.">29億km（平均）</string>
     <string name="object_info_uranus_size" translation_description="Physical size of Uranus shown in the info card. Translate units if appropriate for your locale.">50,724 km（直径）</string>
+    <string name="object_info_uranus_mass" translation_description="Mass of Uranus in scientific notation — no translation needed.">8.68 × 10²⁵ kg</string>
     <string name="object_info_neptune_description" translation_description="Short description of Neptune">海王星は太陽系で最も遠い惑星です。最大風速2,100 km/hという太陽系最強の風が吹いています。</string>
     <string name="object_info_neptune_funfact" translation_description="Fun fact about Neptune">海王星は数学によって発見されました！科学者たちは望遠鏡で確認する前に、計算でその位置を予測していたのです。</string>
     <string name="object_info_neptune_distance" translation_description="Distance to Neptune shown in the info card. Translate units if appropriate for your locale.">45億km（平均）</string>
     <string name="object_info_neptune_size" translation_description="Physical size of Neptune shown in the info card. Translate units if appropriate for your locale.">49,244 km（直径）</string>
+    <string name="object_info_neptune_mass" translation_description="Mass of Neptune in scientific notation — no translation needed.">1.024 × 10²⁶ kg</string>
     <string name="object_info_pluto_description" translation_description="Short description of Pluto">冥王星はカイパーベルトにある矮小惑星です。2006年まで第9惑星とされていました。</string>
     <string name="object_info_pluto_funfact" translation_description="Fun fact about Pluto">冥王星には窒素の氷でできたハート型の氷河があり、NASAのニュー・ホライズンズ探査機の画像で確認できます！</string>
     <string name="object_info_pluto_distance" translation_description="Distance to Pluto shown in the info card. Translate units if appropriate for your locale.">59億km（平均）</string>
     <string name="object_info_pluto_size" translation_description="Physical size of Pluto shown in the info card. Translate units if appropriate for your locale.">2,377 km（直径）</string>
+    <string name="object_info_pluto_mass" translation_description="Mass of Pluto in scientific notation — no translation needed.">1.3 × 10²² kg</string>
     <!-- Bright Stars Educational Content -->
     <string name="object_info_sirius_description" translation_description="Short description of Sirius">シリウスは夜空で最も明るい恒星で、おおいぬ座にあります。</string>
     <string name="object_info_sirius_funfact" translation_description="Fun fact about Sirius">シリウスは実は連星系です！伴星のシリウスBは地球ほどの大きさの白色矮星ですが、質量は太陽とほぼ同じです。</string>

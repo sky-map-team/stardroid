@@ -5,6 +5,18 @@
         <item translation_description="Normal sensor speed">Padrão</item>
         <item translation_description="Fast sensor speed">Rápida</item>
     </string-array>
+    <string-array name="sensor_damping">
+        <item translation_description="Low sensor damping factor">Jumpy</item>
+        <item translation_description="Medium sensor damping factor">Medium</item>
+        <item translation_description="Extra High sensor damping factor">Padrão</item>
+        <item translation_description="Really High sensor damping factor">Alta</item>
+    </string-array>
+    <string-array name="viewing_direction">
+        <item translation_description="Normal viewing">Normal</item>
+        <item translation_description="Rotates the screen by 90 degrees">Rotacionar Horizonte</item>
+        <item translation_description="Shows the sky as pointed at by the long edge of the phone">Modo Apontar
+        </item>
+    </string-array>
     <string-array name="auto_dim_texts">
         <item translation_description="Dimmest screen setting">Muito escuro</item>
         <item translation_description="Leave it on the system setting">Padrão do sistema</item>

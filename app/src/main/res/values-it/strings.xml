@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!-- Please add  translation_description="" attributes to Strings to assist the translators. --><resources>
+    <string name="app_name" translation_description="Application Title">Sky Map</string>
     <string name="menu_settings" translation_description="Settings menu item in the options menu">Impostazioni</string>
     <string name="menu_search" translation_description="Search menu item in the options menu">Cerca</string>
     <string name="cancel" translation_description="Generic cancel button label used in dialogs">Annulla</string>
@@ -44,6 +45,7 @@
     <string name="set_auto" translation_description="Toast message shown when the user switches to automatic (sensor/gyroscope) mode">Passaggio a modalità automatica</string>
     <string name="menu_toggle_dim" translation_description="Menu item to toggle night mode (red tint that preserves night vision)">Modalità notturna</string>
     <string name="zenith" translation_description="Label for the zenith point (directly overhead) shown on the sky map. Displayed in capitals.">ZENIT</string>
+    <string name="nadir" translation_description="Label for the nadir point (directly below) shown on the sky map. Displayed in capitals.">NADIR</string>
     <string name="north" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">NORD</string>
     <string name="east" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">EST</string>
     <string name="west" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">OVEST</string>

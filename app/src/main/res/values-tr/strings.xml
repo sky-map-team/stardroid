@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!-- Please add  translation_description="" attributes to Strings to assist the translators. --><resources>
+    <string name="app_name" translation_description="Application Title">Sky Map</string>
     <string name="menu_settings" translation_description="Settings menu item in the options menu">Ayarlar</string>
     <string name="menu_search" translation_description="Search menu item in the options menu">Ara</string>
     <string name="cancel" translation_description="Generic cancel button label used in dialogs">İptal</string>
@@ -148,6 +149,7 @@
     <string name="diagnostics_activity_gyroscope" translation_description="Row label in the Diagnostics screen for the gyroscope sensor">Jiroskop</string>
     <string name="diagnostics_activity_light_level" translation_description="Row label in the Diagnostics screen for the ambient light sensor reading">Işık düzeyi</string>
     <string name="diagnostics_activity_location_and_time_heading" translation_description="Section heading in the Diagnostics screen for location and time information">Konum ve Zaman</string>
+    <string name="diagnostics_activity_gps" translation_description="Row label in the Diagnostics screen for the GPS provider status">GPS</string>
     <string name="diagnostics_activity_location" translation_description="Row label in the Diagnostics screen showing the current latitude and longitude">Konum (enlem, boylam)</string>
     <string name="diagnostics_activity_pointing_ra_dec" translation_description="Row label in the Diagnostics screen showing a snapshot of where the phone is currently pointing in the sky (Right Ascension and Declination)">Yönlendirme anı</string>
     <string name="diagnostics_activity_magnetic_correction" translation_description="Row label in the Diagnostics screen showing whether magnetic declination correction is applied">Manyetik düzeltme</string>

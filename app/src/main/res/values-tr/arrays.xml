@@ -11,4 +11,9 @@
         <item translation_description="Extra High sensor damping factor">Uygun</item>
         <item translation_description="Really High sensor damping factor">Gecikmeli</item>
     </string-array>
+    <string-array name="viewing_direction">
+        <item translation_description="Normal viewing">Normal</item>
+        <item translation_description="Rotates the screen by 90 degrees">Döndürülmüş yatay</item>
+        <item translation_description="Shows the sky as pointed at by the long edge of the phone">İşaretçi modu</item>
+    </string-array>
     </resources>

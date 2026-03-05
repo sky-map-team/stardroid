@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!-- Please add  translation_description="" attributes to Strings to assist the translators. --><resources>
+    <string name="app_name" translation_description="Application Title">Sky Map</string>
     <string name="menu_settings" translation_description="Settings menu item in the options menu">Ρυθμίσεις</string>
     <string name="menu_search" translation_description="Search menu item in the options menu">Αναζήτηση</string>
     <string name="cancel" translation_description="Generic cancel button label used in dialogs">Ακύρωση</string>
@@ -51,6 +52,7 @@
     <string name="malformed_loc_error" translation_description="Error message when a non-numeric value is entered for latitude or longitude">Το γεωγραφικό μήκος ή πλάτος πρέπει να είναι αριθμός.</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Αποδοχή</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">Όχι, ευχαριστώ</string>
+    <string name="dialog_ok_button" translation_description="Generic OK/confirm button label for dialogs">OK</string>
     <string name="menu_help" translation_description="menu item to show \'Help\' box">Βοήθεια</string>
     <string name="help_dialog_title" translation_description="Title of the help dialog">Βοήθεια για το Sky Map</string>
     <string name="set_manual" translation_description="Toast message shown when the user switches to manual (touch-drag) mode">Αλλαγή σε χειροκίνητη λειτουργία</string>
@@ -113,6 +115,8 @@
     <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">Αναζήτηση για:</string>
     <string name="sun_wont_set_message" translation_description="Message shown when the sun will not set during the next 24 hours (polar day / midnight sun)">Ο ήλιος δε θα δύσει μέσα στις επόμενες 24 ώρες στην τρέχουσα τοποθεσία σας.</string>
 
+    <string name="missing_label" translation_description="Used to indicate to the developer that they've added a resource with no translation.">MISSING_LBL</string>
+
     <string name="menu_tos" translation_description="Menu item label to view the Terms of Service">Όροι χρήσης</string>
     <string name="menu_diagnostics" translation_description="Menu item label to open the technical diagnostics screen">Διαγνωστικά</string>
 
@@ -157,6 +161,7 @@
     <string name="diagnostics_activity_gyroscope" translation_description="Row label in the Diagnostics screen for the gyroscope sensor">Γυροσκόπιο</string>
     <string name="diagnostics_activity_light_level" translation_description="Row label in the Diagnostics screen for the ambient light sensor reading">Επίπεδο φωτός</string>
     <string name="diagnostics_activity_location_and_time_heading" translation_description="Section heading in the Diagnostics screen for location and time information">Τοποθεσία και ώρα</string>
+    <string name="diagnostics_activity_gps" translation_description="Row label in the Diagnostics screen for the GPS provider status">GPS</string>
     <string name="diagnostics_activity_location" translation_description="Row label in the Diagnostics screen showing the current latitude and longitude">Τοποθεσία (πλάτος, μήκος)</string>
     <string name="diagnostics_activity_pointing_ra_dec" translation_description="Row label in the Diagnostics screen showing a snapshot of where the phone is currently pointing in the sky (Right Ascension and Declination)">Στιγμιότυπο στόχευσης</string>
     <string name="diagnostics_activity_magnetic_correction" translation_description="Row label in the Diagnostics screen showing whether magnetic declination correction is applied">Μαγνητική διόρθωση</string>
@@ -164,12 +169,14 @@
     <string name="diagnostics_activity_universal_time" translation_description="Row label in the Diagnostics screen for the UTC/universal date and time">Διεθνής ώρα</string>
     <string name="diagnostics_activity_network_heading" translation_description="Section heading in the Diagnostics screen for network connectivity information">Δίκτυο</string>
     <string name="diagnostics_activity_connection" translation_description="Row label in the Diagnostics screen for the current network connection status">Σύνδεση</string>
+    <string name="diagnostics_activity_rotation_matrix" translation_description="Row label in the Diagnostics screen showing the raw device rotation matrix used for orientation">Rot Matrix</string>
     <string name="enabled" translation_description="Generic status value meaning a feature or sensor is enabled/active">Ενεργή</string>
     <string name="disabled" translation_description="Generic status value meaning a feature or sensor is disabled/inactive">Ανενεργή</string>
     <string name="permission_disabled" translation_description="Status value shown when a feature is unavailable because its permission was not granted">Ανενεργή άδεια</string>
     <string name="no_gps" translation_description="Status value shown in diagnostics when no GPS provider is available">Απουσία GPS</string>
     <string name="connected" translation_description="Network status value shown when the device has an active network connection">Συνδεδεμένο</string>
     <string name="disconnected" translation_description="Network status value shown when the device has no network connection">Αποσυνδεδεμένο</string>
+    <string name="wifi" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (wifi)\'). Note the leading space.">" (wifi)"</string>
     <string name="cell_network" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (cell)\'). Note the leading space.">" (δεδομένα)"</string>
     <string name="menu_calibrate" translation_description="Menu item label to open the compass calibration screen">Βαθμονόμηση</string>
     <string name="compass_calibration_activity_heading_compass" translation_description="Static label in the compass calibration screen placed inline to the left of the live compass accuracy value (e.g. displayed as \'Compass - Accuracy: High\')">Πυξίδα -</string>

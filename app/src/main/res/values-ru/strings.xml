@@ -143,6 +143,7 @@
     <string name="diagnostics_activity_gyroscope" translation_description="Row label in the Diagnostics screen for the gyroscope sensor">Гироскоп</string>
     <string name="diagnostics_activity_light_level" translation_description="Row label in the Diagnostics screen for the ambient light sensor reading">Уровень освещенности</string>
     <string name="diagnostics_activity_location_and_time_heading" translation_description="Section heading in the Diagnostics screen for location and time information">Местоположение и время</string>
+    <string name="diagnostics_activity_gps" translation_description="Row label in the Diagnostics screen for the GPS provider status">GPS</string>
     <string name="diagnostics_activity_location" translation_description="Row label in the Diagnostics screen showing the current latitude and longitude">Местоположение (ш, д)</string>
     <string name="diagnostics_activity_pointing_ra_dec" translation_description="Row label in the Diagnostics screen showing a snapshot of where the phone is currently pointing in the sky (Right Ascension and Declination)">Указывающий снимок</string>
     <string name="diagnostics_activity_magnetic_correction" translation_description="Row label in the Diagnostics screen showing whether magnetic declination correction is applied">Магнитная коррекция</string>
@@ -157,6 +158,7 @@
     <string name="no_gps" translation_description="Status value shown in diagnostics when no GPS provider is available">Нет GPS</string>
     <string name="connected" translation_description="Network status value shown when the device has an active network connection">Соединено</string>
     <string name="disconnected" translation_description="Network status value shown when the device has no network connection">Не соединено</string>
+    <string name="wifi" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (wifi)\'). Note the leading space.">" (wifi)"</string>
     <string name="cell_network" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (cell)\'). Note the leading space.">" (мобильный)"</string>
     <string name="menu_calibrate" translation_description="Menu item label to open the compass calibration screen">Калибровка</string>
     <string name="compass_calibration_activity_heading_compass" translation_description="Static label in the compass calibration screen placed inline to the left of the live compass accuracy value (e.g. displayed as \'Compass - Accuracy: High\')">Компас -</string>

@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!-- Please add  translation_description="" attributes to Strings to assist the translators. --><resources>
+    <string name="app_name" translation_description="Application Title">Sky Map</string>
     <string name="menu_settings" translation_description="Settings menu item in the options menu">Gosodiadau</string>
     <string name="menu_search" translation_description="Search menu item in the options menu">Chwilio</string>
     <string name="cancel" translation_description="Generic cancel button label used in dialogs">Diddymu</string>
@@ -46,6 +47,7 @@
     <string name="set_auto" translation_description="Toast message shown when the user switches to automatic (sensor/gyroscope) mode">Yn newid i\'r modd awtomatig</string>
     <string name="menu_toggle_dim" translation_description="Menu item to toggle night mode (red tint that preserves night vision)">Toglo modd nos</string>
     <string name="zenith" translation_description="Label for the zenith point (directly overhead) shown on the sky map. Displayed in capitals.">ANTERTH</string>
+    <string name="nadir" translation_description="Label for the nadir point (directly below) shown on the sky map. Displayed in capitals.">NADIR</string>
     <string name="north" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">GOGLEDD</string>
     <string name="east" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">DWYRAIN</string>
     <string name="west" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">GORLLEWIN</string>
@@ -135,9 +137,15 @@
     <string name="diagnostics_activity_gyroscope" translation_description="Row label in the Diagnostics screen for the gyroscope sensor">Geirosgop</string>
     <string name="diagnostics_activity_light_level" translation_description="Row label in the Diagnostics screen for the ambient light sensor reading">Lefel golau</string>
     <string name="diagnostics_activity_location_and_time_heading" translation_description="Section heading in the Diagnostics screen for location and time information">Lleoliad ac amser</string>
+    <string name="diagnostics_activity_gps" translation_description="Row label in the Diagnostics screen for the GPS provider status">GPS</string>
     <string name="diagnostics_activity_location" translation_description="Row label in the Diagnostics screen showing the current latitude and longitude">Lleoliad (lled., hyd.)</string>
+    <string name="diagnostics_activity_pointing_ra_dec" translation_description="Row label in the Diagnostics screen showing a snapshot of where the phone is currently pointing in the sky (Right Ascension and Declination)">Pointing snapshot</string>
+    <string name="diagnostics_activity_magnetic_correction" translation_description="Row label in the Diagnostics screen showing whether magnetic declination correction is applied">Mag correction</string>
+    <string name="diagnostics_activity_local_datetime" translation_description="Row label in the Diagnostics screen for the local date and time">Local datetime</string>
+    <string name="diagnostics_activity_universal_time" translation_description="Row label in the Diagnostics screen for the UTC/universal date and time">Universal datetime</string>
     <string name="diagnostics_activity_network_heading" translation_description="Section heading in the Diagnostics screen for network connectivity information">Rhwydwaith</string>
     <string name="diagnostics_activity_connection" translation_description="Row label in the Diagnostics screen for the current network connection status">Cysylltiad</string>
+    <string name="diagnostics_activity_rotation_matrix" translation_description="Row label in the Diagnostics screen showing the raw device rotation matrix used for orientation">Rot Matrix</string>
     <string name="enabled" translation_description="Generic status value meaning a feature or sensor is enabled/active">Galluogwyd</string>
     <string name="disabled" translation_description="Generic status value meaning a feature or sensor is disabled/inactive">Analluogwyd</string>
     <string name="permission_disabled" translation_description="Status value shown when a feature is unavailable because its permission was not granted">Caniatâd heb ei roi</string>
