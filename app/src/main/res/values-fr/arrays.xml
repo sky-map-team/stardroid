@@ -9,7 +9,7 @@
         <item translation_description="Low sensor damping factor">Saccadé</item>
         <item translation_description="Medium sensor damping factor">Moyen</item>
         <item translation_description="Extra High sensor damping factor">Juste ce qu\'il faut</item>
-        <!--item translation_description="Really High sensor damping factor">Lent</item-->
+        <item translation_description="Really High sensor damping factor">Lent</item>
     </string-array>
     <string-array name="viewing_direction">
         <item translation_description="Normal viewing">Normal</item>
