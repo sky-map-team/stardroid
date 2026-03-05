@@ -45,17 +45,17 @@
 &lt;p&gt;O Sky Map precisa saber seu local aproximado para conseguir mostrar a você o mapa correto das estrelas. Por padrão, essa informação é determinada a partir da rede do seu celular ou GPS.&lt;/p&gt;
 
 &lt;h2&gt;Telescópio e modo ponteiro&lt;/h2&gt;
-&lt;p&gt;Em &lt;b&gt;Configurações &rarr; Configurações do sensor&lt;/b&gt;, altere a &lt;b&gt;Direção da vista&lt;/b&gt; para o &lt;b&gt;Modo ponteiro&lt;/b&gt;. Nesse modo, o Sky Map mostra para onde a &lt;i&gt;borda longa&lt;/i&gt; do telefone está apontando, em vez de para onde a tela está voltada.&lt;/p&gt;
+&lt;p&gt;Em &lt;b&gt;Configurações → Configurações do sensor&lt;/b&gt;, altere a &lt;b&gt;Direção da vista&lt;/b&gt; para o &lt;b&gt;Modo ponteiro&lt;/b&gt;. Nesse modo, o Sky Map mostra para onde a &lt;i&gt;borda longa&lt;/i&gt; do telefone está apontando, em vez de para onde a tela está voltada.&lt;/p&gt;
 &lt;p&gt;Isso permite que você monte seu telefone ao longo do tubo de um telescópio para que a tela fique perpendicular ao tubo enquanto o mapa ainda rastreia para onde o telescópio está apontado.&lt;/p&gt;
 
 &lt;h2&gt;Dicas e configurações úteis&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;b&gt;Diagnóstico:&lt;/b&gt; Se algo parecer errado, abra o menu e toque em &lt;b&gt;Diagnóstico&lt;/b&gt;. Esta página mostra sua localização atual, hora, status do sensor e leituras de precisão.&lt;/li&gt;
-&lt;li&gt;&lt;b&gt;Imagens Messier:&lt;/b&gt; Em &lt;b&gt;Configurações &rarr; Aparência&lt;/b&gt;, você pode escolher se os objetos Messier aparecem como imagens realistas ou simples pontos.&lt;/li&gt;
-&lt;li&gt;&lt;b&gt;Tamanho da fonte:&lt;/b&gt; Ajuste o tamanho do rótulo em &lt;b&gt;Configurações &rarr; Aparência&lt;/b&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;b&gt;Mapa instável:&lt;/b&gt; Experimente a &lt;b&gt;Velocidade do sensor&lt;/b&gt; e o &lt;b&gt;Amortecimento do sensor&lt;/b&gt; em &lt;b&gt;Configurações &rarr; Configurações do sensor (Especialistas)&lt;/b&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Imagens Messier:&lt;/b&gt; Em &lt;b&gt;Configurações → Aparência&lt;/b&gt;, você pode escolher se os objetos Messier aparecem como imagens realistas ou simples pontos.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Tamanho da fonte:&lt;/b&gt; Ajuste o tamanho do rótulo em &lt;b&gt;Configurações → Aparência&lt;/b&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Mapa instável:&lt;/b&gt; Experimente a &lt;b&gt;Velocidade do sensor&lt;/b&gt; e o &lt;b&gt;Amortecimento do sensor&lt;/b&gt; em &lt;b&gt;Configurações → Configurações do sensor (Especialistas)&lt;/b&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;b&gt;Sem giroscópio?&lt;/b&gt; Se o seu telefone não tiver um giroscópio, ative &lt;b&gt;Desativar giroscopio&lt;/b&gt; nas configurações do sensor.&lt;/li&gt;
-&lt;li&gt;&lt;b&gt;Correção magnética:&lt;/b&gt; O Sky Map pode aplicar uma correção de declinação magnética para que o mapa se alinhe com o Norte Verdadeiro em vez do Norte Magnético. Alterne isso em &lt;b&gt;Configurações &rarr; Localização&lt;/b&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Correção magnética:&lt;/b&gt; O Sky Map pode aplicar uma correção de declinação magnética para que o mapa se alinhe com o Norte Verdadeiro em vez do Norte Magnético. Alterne isso em &lt;b&gt;Configurações → Localização&lt;/b&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2&gt;Requisitos de hardware&lt;/h2&gt;
@@ -72,7 +72,7 @@
 &lt;h3&gt;O mapa está apontando para o lado errado ou é impreciso&lt;/h3&gt;
 &lt;p&gt;Se o mapa estiver errado, provavelmente a bússola, a localização ou a hora estão incorretas.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;b&gt;Bússola:&lt;/b&gt; Tente calibrar, afaste-se de objetos metálicos e ative a &lt;b&gt;Correção magnética&lt;/b&gt; em &lt;b&gt;Configurações &rarr; Localização&lt;/b&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Bússola:&lt;/b&gt; Tente calibrar, afaste-se de objetos metálicos e ative a &lt;b&gt;Correção magnética&lt;/b&gt; em &lt;b&gt;Configurações → Localização&lt;/b&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;b&gt;Localização:&lt;/b&gt; Verifique suas coordenadas na página de Diagnóstico.&lt;/li&gt;
 &lt;li&gt;&lt;b&gt;Hora:&lt;/b&gt; Verifique sua hora e fuso horário em Diagnóstico.&lt;/li&gt;
 &lt;/ul&gt;
