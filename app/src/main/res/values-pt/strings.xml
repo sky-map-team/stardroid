@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!-- Please add  translation_description="" attributes to Strings to assist the translators. --><resources>
-    <string name="app_name" translation_description="Application Title">Sky Map</string>
     <string name="menu_settings" translation_description="Settings menu item in the options menu">Configurações</string>
     <string name="menu_search" translation_description="Search menu item in the options menu">Pesquisar</string>
     <string name="cancel" translation_description="Generic cancel button label used in dialogs">Cancelar</string>
@@ -13,8 +12,6 @@
     <string name="no_use_gps_pref_hint" translation_description="Hint text beneath the \'Set location manually\' preference">Insira um lugar ou lat/long abaixo.</string>
     <string name="location_placename" translation_description="Label for the place-name text field in manual location settings">Nome do lugar</string>
     <string name="location_placename_hint" translation_description="An example address.  Translators: please pick an address suitable for your country.  If it has an astronomical connection (e.g. the address of an observatory or famous astronomer) then that would be even better.">Por exemplo, 1400 West Mars Hill Road, Flagstaff, AZ.</string>
-    <string name="location_lat_pref" translation_description="Label for the latitude input field in manual location settings">Latitude</string>
-    <string name="location_long_pref" translation_description="Label for the longitude input field in manual location settings">Longitude</string>
     <string name="degrees" translation_description="angular degrees - used for latitude and longitude">Graus</string>
     <string name="preferences" translation_description="Provider-name label used internally when a location is set from preferences (not shown directly to the user as a UI label - does not require a translation)">preferências</string>
     <string name="location_offer_to_enable" translation_description="Dialog message asking whether to enable automatic location">A localização automática está desativada. Deseja ativá-la?</string>
@@ -39,7 +36,7 @@
     <string name="show_satellite_layer_pref" translation_description="The layer for satellites">Satélites</string>
     <string name="sensor_prefs" translation_description="Preferences category heading for sensor settings, intended for advanced/expert users">Configurações do sensor</string>
     <string name="sensor_speed" translation_description="Old, non gyro sensors only: How quickly the sensor should send us data">Velocidade do sensor</string>
-    <string name="sensor_damping" translation_description="Preference title for sensor damping">Amortecimento do sensor</string>
+    <string name="sensor_damping" translation_description="Old, non gyro sensors only: The amount of smoothing applied to the sensor outputs.">Amortecimento do sensor</string>
     <string name="appearance_prefs" translation_description="Preferences title for section about app appearance">Aparência
     </string>
     <string name="auto_dimness_preference" translation_description="Mode for automatically dimming the screen when night mode is selected">
@@ -57,7 +54,6 @@
     <string name="set_auto" translation_description="Toast message shown when the user switches to automatic (sensor/gyroscope) mode">Alternando p/ modo automático</string>
     <string name="menu_toggle_dim" translation_description="Menu item to toggle night mode (red tint that preserves night vision)">Modo noturno</string>
     <string name="zenith" translation_description="Label for the zenith point (directly overhead) shown on the sky map. Displayed in capitals.">ZÊNITE</string>
-    <string name="nadir" translation_description="Label for the nadir point (directly below) shown on the sky map. Displayed in capitals.">NADIR</string>
     <string name="north" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">NORTE</string>
     <string name="east" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">LESTE</string>
     <string name="west" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">OESTE</string>
@@ -114,9 +110,6 @@
     <string name="menu_tos" translation_description="Menu item label to view the Terms of Service">Termos de Uso</string>
     <string name="menu_diagnostics" translation_description="Menu item label to open the technical diagnostics screen">Diagnósticos</string>
 
-    <string name="north_pole" translation_description="Short abbreviation for the North Celestial Pole, displayed as a label on the sky map grid. Translators: use the standard abbreviation in your language (e.g. NP in English, PN in French).">NP</string>
-    <string name="south_pole" translation_description="Short abbreviation for the South Celestial Pole, displayed as a label on the sky map grid. Translators: use the standard abbreviation in your language (e.g. SP in English, PS in French).">SP</string>
-
     <string name="enable_analytics" translation_description="Preference label to opt in to sending anonymous usage statistics">Enviar estatísticas de uso</string>
     <string name="enable_analytics_desc" translation_description="Description/summary for the usage statistics preference">Ajude a melhorar o Sky Map, enviando dados anônimos para o Google Analytics</string>
 
@@ -146,7 +139,6 @@
     <string name="diagnostics_activity_gyroscope" translation_description="Row label in the Diagnostics screen for the gyroscope sensor">Giroscópioe</string>
     <string name="diagnostics_activity_light_level" translation_description="Row label in the Diagnostics screen for the ambient light sensor reading">Nível da luz</string>
     <string name="diagnostics_activity_location_and_time_heading" translation_description="Section heading in the Diagnostics screen for location and time information">Hora e local</string>
-    <string name="diagnostics_activity_gps" translation_description="Row label in the Diagnostics screen for the GPS provider status">GPS</string>
     <string name="diagnostics_activity_location" translation_description="Row label in the Diagnostics screen showing the current latitude and longitude">Localização (lat, long)</string>
     <string name="diagnostics_activity_magnetic_correction" translation_description="Row label in the Diagnostics screen showing whether magnetic declination correction is applied">Correção mag.</string>
     <string name="diagnostics_activity_local_datetime" translation_description="Row label in the Diagnostics screen for the local date and time">Hora local</string>
@@ -160,7 +152,6 @@
     <string name="no_gps" translation_description="Status value shown in diagnostics when no GPS provider is available">Sem GPS</string>
     <string name="connected" translation_description="Network status value shown when the device has an active network connection">Conectado</string>
     <string name="disconnected" translation_description="Network status value shown when the device has no network connection">Disconectado</string>
-    <string name="wifi" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (wifi)\'). Note the leading space.">" (wifi)"</string>
     <string name="cell_network" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (cell)\'). Note the leading space.">" (celular)"</string>
     <string name="menu_calibrate" translation_description="Menu item label to open the compass calibration screen">Calibrar</string>
     <string name="compass_calibration_activity_heading_compass" translation_description="Static label in the compass calibration screen placed inline to the left of the live compass accuracy value (e.g. displayed as \'Compass - Accuracy: High\')">Bússola -</string>
@@ -185,7 +176,6 @@
     <string name="object_info_size_label" translation_description="Label for size field">Tamanho:</string>
     <string name="object_info_mass_label" translation_description="Label for mass field">Massa:</string>
     <string name="object_info_spectral_label" translation_description="Label for spectral class">Espectral:</string>
-    <string name="object_info_magnitude_label" translation_description="Label for apparent magnitude">Magnitude:</string>
     <string name="object_info_tap_to_expand" translation_description="Hint shown on image to tap to expand">Toque para expandir</string>
     <string name="object_info_tap_to_close" translation_description="Hint shown on expanded image to tap to close">Toque para fechar</string>
 

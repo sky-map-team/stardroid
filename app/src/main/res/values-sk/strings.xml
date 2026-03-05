@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!-- Please add  translation_description="" attributes to Strings to assist the translators. --><resources>
-    <string name="app_name" translation_description="Application Title">Sky Map</string>
     <string name="menu_settings" translation_description="Settings menu item in the options menu">Nastavenia</string>
     <string name="menu_search" translation_description="Search menu item in the options menu">Hľadať</string>
     <string name="cancel" translation_description="Generic cancel button label used in dialogs">Zrušiť</string>
@@ -50,14 +49,12 @@
     <string name="malformed_loc_error" translation_description="Error message when a non-numeric value is entered for latitude or longitude">Nastavená šírka alebo dĺžka nie je číslo.</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Prijať</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">Odmietnuť</string>
-    <string name="dialog_ok_button" translation_description="Generic OK/confirm button label for dialogs">OK</string>
     <string name="menu_help" translation_description="menu item to show \'Help\' box">Pomoc</string>
     <string name="help_dialog_title" translation_description="Title of the help dialog">Pomoc pre Sky Map</string>
     <string name="set_manual" translation_description="Toast message shown when the user switches to manual (touch-drag) mode">Prepínanie na manuálny režim</string>
     <string name="set_auto" translation_description="Toast message shown when the user switches to automatic (sensor/gyroscope) mode">Prepínanie na automatický režim</string>
     <string name="menu_toggle_dim" translation_description="Menu item to toggle night mode (red tint that preserves night vision)">Prepnúť nočný režim</string>
     <string name="zenith" translation_description="Label for the zenith point (directly overhead) shown on the sky map. Displayed in capitals.">ZENIT</string>
-    <string name="nadir" translation_description="Label for the nadir point (directly below) shown on the sky map. Displayed in capitals.">NADIR</string>
     <string name="north" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">SEVER</string>
     <string name="east" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">VÝCHOD</string>
     <string name="west" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">ZÁPAD</string>
@@ -112,8 +109,6 @@
     <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">Hľadám:</string>
     <string name="sun_wont_set_message" translation_description="Message shown when the sun will not set during the next 24 hours (polar day / midnight sun)">Na vašej aktuálnej polohe nezapadne Slnko počas nasledujúcich 24 hodín.</string>
 
-    <string name="missing_label" translation_description="Used to indicate to the developer that they've added a resource with no translation.">MISSING_LBL</string>
-
     <string name="menu_tos" translation_description="Menu item label to view the Terms of Service">Podmienky služby</string>
     <string name="menu_diagnostics" translation_description="Menu item label to open the technical diagnostics screen">Diagnostika</string>
 
@@ -153,7 +148,6 @@
     <string name="diagnostics_activity_gyroscope" translation_description="Row label in the Diagnostics screen for the gyroscope sensor">Gyroskop</string>
     <string name="diagnostics_activity_light_level" translation_description="Row label in the Diagnostics screen for the ambient light sensor reading">Úroveň svetla</string>
     <string name="diagnostics_activity_location_and_time_heading" translation_description="Section heading in the Diagnostics screen for location and time information">Poloha a čas</string>
-    <string name="diagnostics_activity_gps" translation_description="Row label in the Diagnostics screen for the GPS provider status">GPS</string>
     <string name="diagnostics_activity_location" translation_description="Row label in the Diagnostics screen showing the current latitude and longitude">Poloha (šírka, dĺžka)</string>
     <string name="diagnostics_activity_pointing_ra_dec" translation_description="Row label in the Diagnostics screen showing a snapshot of where the phone is currently pointing in the sky (Right Ascension and Declination)">Zobrazená snímka</string>
     <string name="diagnostics_activity_magnetic_correction" translation_description="Row label in the Diagnostics screen showing whether magnetic declination correction is applied">Magnetická korekcia</string>
@@ -168,7 +162,6 @@
     <string name="no_gps" translation_description="Status value shown in diagnostics when no GPS provider is available">Bez GPS</string>
     <string name="connected" translation_description="Network status value shown when the device has an active network connection">Pripojené</string>
     <string name="disconnected" translation_description="Network status value shown when the device has no network connection">Odpojené</string>
-    <string name="wifi" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (wifi)\'). Note the leading space.">" (wifi)"</string>
     <string name="cell_network" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (cell)\'). Note the leading space.">" (mobilná sieť)"</string>
     <string name="menu_calibrate" translation_description="Menu item label to open the compass calibration screen">Kalibrovať</string>
     <string name="compass_calibration_activity_heading_compass" translation_description="Static label in the compass calibration screen placed inline to the left of the live compass accuracy value (e.g. displayed as \'Compass - Accuracy: High\')">Kompas -</string>
