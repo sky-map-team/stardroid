@@ -2,7 +2,7 @@
 <resources>
 <string name="help_text" translation_description="Please do not change the &lt; and &gt; markup">
 &lt;h1&gt;Sky Map para Android&lt;/h1&gt;
-&lt;p class="version"&gt;Versión %s&lt;/p&gt;
+&lt;p class="version"&gt;Versión %1$s&lt;/p&gt;
 &lt;p class="url"&gt;&lt;a href="https://stardroid.app"&gt;https://stardroid.app&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2&gt;Introducción e inicio rápido&lt;/h2&gt;
@@ -33,7 +33,7 @@ activadas y blancos cuando están desactivadas.&lt;/p&gt;
 &lt;p&gt;El otro lado de la pantalla tiene una opción para cambiar entre
 el modo automático o manual.&lt;/p&gt;
 
-&lt;h2&gt;Modos de navigacións&lt;/h2&gt;
+&lt;h2&gt;Modos de navegación&lt;/h2&gt;
 &lt;p&gt;Cuando se instale por primera vez, Sky Map estará en modo automático y usará los sensores del teléfono
 para mostrar un mapa del cielo en la dirección que apunta tu teléfono. Al
 cambiar al modo manual, puedes arrastrar el mapa con el dedo para explorar el
@@ -59,7 +59,7 @@ está limitada a los años 1900-2100 debido a limitaciones de precisión
 causada principalmente por la influencia gravitacional de Júpiter. Cuando estés
 listo, presiona \'Ir\' para viajar en el tiempo hacia tu destino. Sky
 Map estará ahora en modo viaje en el tiempo, mostrando la fecha que estás visitando,
-con contrroles para \'mover\' la hora hacia adelante y hacia atrás.
+con controles para \'mover\' la hora hacia adelante y hacia atrás.
 Haz clic en estos botones una vez para comenzar a moverte lentamente a través del tiempo y
 varias veces para moverte más rápido.&lt;/p&gt;
 &lt;p&gt;El viaje en el tiempo se puede usar para responder una variedad de preguntas, que incluyen
@@ -72,99 +72,74 @@ Hesíodo, ¿cuándo debo cosechar mis uvas?\'&lt;/p&gt;
 seleccionando Galería en el menú. Una vez en la galería, puedes
 examinar las imágenes disponibles desplazándote con el dedo. Si tocas
 una de las imágenes en miniatura, Sky Map te muestra la imagen a tamaño completo. Si
-tocas el boton de búsqueda, Sky Map cambiará al modo de búsqueda para encontrar el objeto
+tocas el botón de búsqueda, Sky Map cambiará al modo de búsqueda para encontrar el objeto
 de la imagen.&lt;/p&gt;
 
 &lt;h2&gt;Modo visión nocturna&lt;/h2&gt;
 &lt;p&gt;El modo de visión nocturna está diseñado para proteger tus ojos adaptados a la oscuridad. Cuando
 seleccionas la opción visión nocturna en el menú, Sky Map mostrará el mapa en color rojo,
-atenua la pantalla y apaga la luz de fondo de los botones.
+atenúa la pantalla y apaga la luz de fondo de los botones.
 Selecciona la opción nuevamente para volver a los colores normales.&lt;/p&gt;
 
 &lt;h2&gt;Estableciendo tu ubicación&lt;/h2&gt;
 &lt;p&gt;Sky Map necesita tu ubicación aproximada para mostrarte el mapa estelar
-correcto. De forma predeterminada, lo determinará desde tu red celular. Si estás
-fuera de cobertura, o tienes la ubicación de red desactivada, usará el GPS de tu teléfono.
-También puedes configurar tu ubicación manualmente a través del menú de ajustes, ya sea
-proporcionando el nombre del lugar, o como latitud y longitud (en grados). Ten en cuenta que
-Sky Map requiere una conexión de datos para determinar tu latitud y longitud desde el
-nombre del lugar.&lt;/p&gt;
+correcto. De forma predeterminada, lo determinará desde tu red celular o GPS.
+También puedes configurar tu ubicación manualmente a través de &lt;b&gt;Ajustes &rarr; Ubicación&lt;/b&gt;.&lt;/p&gt;
 
-&lt;h2&gt;Solución de problemas y limitaciones&lt;/h2&gt;
-&lt;h3&gt;El mapa es inexacto.&lt;/h3&gt;
-&lt;p&gt;Si encuentras que el mapa no se alinea con precisión con el cielo real,
-pueden ser varias razones:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;¿La brújula está calibrada? Intenta sostener el teléfono y dibuja una
-figura de ocho en el aire para calibrarla. Es posible que debas repetir esto a intervalos.
-Esta es una característica del teléfono, en lugar de Sky Map.&lt;/li&gt;
-&lt;li&gt;¿La aplicación tiene una corrección precisa de tu ubicación? ¿Está activado el GPS o
-o la ubicación de red?&lt;/li&gt;
-&lt;li&gt;¿Tienes configurada la hora y la zona horaria correctas?
-Sky Map necesita calcular la hora universal, y necesita tu hora local y
-la zona horaria. Si tu dispositivo tiene una tarjeta SIM, generalmente se
-establece correctamente. Abre la página de diagnósticos de Sky Map y verifica que la hora y ubicación sean correctas.&lt;/li&gt;
-&lt;li&gt;¿Tienes la corrección magnética activada? En algunas partes del mundo la
-diferencia entre el norte magnético y el norte verdadero puede ser de hasta 20 grados.&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h2&gt;Telescopio y modo puntero&lt;/h2&gt;
+&lt;p&gt;En &lt;b&gt;Ajustes &rarr; Ajustes del sensor&lt;/b&gt;, cambia la &lt;b&gt;Dirección de la vista&lt;/b&gt; al &lt;b&gt;Modo puntero&lt;/b&gt;. En este modo, Sky Map muestra hacia dónde apunta el &lt;i&gt;borde largo&lt;/i&gt; del teléfono, en lugar de hacia dónde apunta la pantalla.&lt;/p&gt;
+&lt;p&gt;Esto te permite montar tu teléfono a lo largo del tubo de un telescopio para que la pantalla quede perpendicular al tubo mientras el mapa sigue rastreando hacia dónde apunta el telescopio.&lt;/p&gt;
 
+&lt;h2&gt;Consejos y ajustes útiles&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;Diagnóstico:&lt;/b&gt; Si algo parece estar mal, abre el menú y toca &lt;b&gt;Diagnóstico&lt;/b&gt;. Esta página muestra tu ubicación actual, hora, estado de los sensores y lecturas de precisión; es muy útil si necesitas informar de un problema.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Imágenes Messier:&lt;/b&gt; En &lt;b&gt;Ajustes &rarr; Apariencia&lt;/b&gt;, puedes elegir si los objetos Messier aparecen como imágenes realistas o como puntos simples.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Tamaño de fuente:&lt;/b&gt; Ajusta el tamaño de las etiquetas en &lt;b&gt;Ajustes &rarr; Apariencia&lt;/b&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Mapa inestable:&lt;/b&gt; Experimenta con la &lt;b&gt;Velocidad del sensor&lt;/b&gt; y la &lt;b&gt;Amortiguación del sensor&lt;/b&gt; en &lt;b&gt;Ajustes &rarr; Ajustes del sensor (Expertos)&lt;/b&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;¿Sin giroscopio?&lt;/b&gt; Si tu teléfono no tiene giroscopio, activa &lt;b&gt;Desactivar giroscopio&lt;/b&gt; en Ajustes del sensor para usar un modo de sensor alternativo.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Corrección magnética:&lt;/b&gt; Sky Map puede aplicar una corrección de declinación magnética para que el mapa se alinee con el Norte Verdadero en lugar del Norte Magnético. Cambia esto en &lt;b&gt;Ajustes &rarr; Ubicación&lt;/b&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Requisitos de hardware&lt;/h2&gt;
+&lt;p&gt;¡No todos los dispositivos son totalmente compatibles con Sky Map! Como mínimo necesitas un teléfono con un sensor de campo magnético (Brújula) y un acelerómetro.&lt;/p&gt;
+&lt;p&gt;Idealmente también un giroscopio para suavizar el movimiento.&lt;/p&gt;
+
+&lt;h2&gt;Solución de problemas&lt;/h2&gt;
 &lt;h3&gt;El mapa no se mueve&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;¿Estás en modo manual? Si no, puede deberse a la brújula sin calibrar.
-Sigue los pasos de arriba para desmarcarlo.&lt;/li&gt;
-&lt;li&gt;¿Tu teléfono tiene todos los sensores necesarios? No todos los teléfonos los tienen. Debe tener al menos una
-brújula y un acelerómetro e idealmente un giroscopio. La página de diagnósticos de Sky Map mostrará
-cuáles sensores tienes. Si tu teléfono no tiene giroscopio, intenta seleccionar
-\'Desactivar giroscopio\' en Ajustes/Ajustes del sensor.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;b&gt;Si todo lo demás falla, envíanos un correo (con una captura de pantalla de Diagnósticos)
-y te ayudaremos a resolverlo.&lt;/b&gt;&lt;/p&gt;
-
-&lt;h2&gt;Usuarios de telescopio&lt;/h2&gt;
-&lt;p&gt;Sky Map ahora incluye un prototipo de \'Modo puntero\' donde la pantalla no mostrará lo que hay en
-frente al teléfono, pero lo que verías si miraras a lo largo del borde largo del mismo. El
-propósito es que puedas conectar tu teléfono al tubo del telescopio y tener la pantalla
-perpendicular a la dirección del tubo. Puedes habilitar esto en \'Ajustes\' y
-\'Ajustes del sensor\'.&lt;/p&gt;
-
-&lt;h2&gt;Support Development&lt;/h2&gt;
-&lt;p&gt;Sky Map is free, open source, and ad-free. If you enjoy using it, please
-consider supporting continued development at
-&lt;a href="https://github.com/sky-map-team/stardroid#support"&gt;our GitHub page&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2&gt;Créditos&lt;/h2&gt;
-&lt;h3&gt;Ingeniería, diseño y gestión de productos&lt;/h3&gt;
-&lt;p&gt;Brent Bryan, Dominic Widdows, Hector Ouilhet, James Powell,
-John Taylor, Kevin Serafini, Lior Ron&lt;/p&gt;
-
-&lt;h3&gt;Colaboradores de código abierto&lt;/h3&gt;
-&lt;p&gt;Christopher Wilcox, PhD&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Verifica que estés en modo Automático (no Manual).&lt;/li&gt;
+&lt;li&gt;Consulta la página de Diagnóstico para confirmar que tu dispositivo tiene brújula y acelerómetro.&lt;/li&gt;
+&lt;li&gt;Prueba el gesto de calibración en forma de ocho: mueve tu teléfono lentamente dibujando un ocho grande en el aire.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;El mapa apunta hacia el lado equivocado o es inexacto&lt;/h3&gt;
+&lt;p&gt;Si el mapa se ve mal, es probable que la brújula, la ubicación o la hora sean incorrectas.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;Brújula:&lt;/b&gt; La causa más común. Intenta calibrar, aléjate de objetos metálicos y activa la &lt;b&gt;Corrección magnética&lt;/b&gt; en &lt;b&gt;Ajustes &rarr; Ubicación&lt;/b&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Ubicación:&lt;/b&gt; Verifica tus coordenadas en la página de Diagnóstico.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Hora:&lt;/b&gt; Una zona horaria incorrecta desplaza todo el cielo. Verifica tu hora y zona horaria en Diagnóstico.&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h2&gt;Agradecimientos&lt;/h2&gt;
-&lt;p&gt;Sky Map fue desarrollado originalmente como "Google Sky Map" por Google Inc. y de código abierto
-en 2012.
-Sky Map usa mapas derivados de datos de:&lt;/p&gt;
+&lt;p&gt;Sky Map usa mapas derivados de datos de:&lt;/p&gt;
 &lt;ul class="credits"&gt;
 &lt;li&gt;Centre de Donnees astronomiques de Strasbourg (&lt;a href="https://cdsweb.u-strasbg.fr/"&gt;https://cdsweb.u-strasbg.fr/&lt;/a&gt;)&lt;/li&gt;
 &lt;li&gt;The Bright Star Catalogue, 5th Revised Ed. (Hoffleit D., Warren Jr W.H.)&lt;/li&gt;
 &lt;li&gt;The HYG Database, HYG v1.0. (&lt;a href="https://www.astronexus.com/"&gt;https://www.astronexus.com/&lt;/a&gt;)&lt;/li&gt;
 &lt;li&gt;History and Accurate Positions for the NGC/IC Objects (Harold G. Corwin Jr)&lt;/li&gt;
-&lt;li&gt;Revised New General Catalogue of Nonstellar Astronomical Objects
-(Sulentic J.W., Tifft W.G.)&lt;/li&gt;
-&lt;li&gt;Gráficos de estrellas de la SFA
-(&lt;a href="https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html"&gt;https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;Posiciones de los objetos del sistema solar calculados a partir de datos proporcionados por el USNO.
-(&lt;a href="https://www.usno.navy.mil/USNO/astronomical-applications"&gt;https://www.usno.navy.mil/USNO/astronomical-applications&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;Datos de cobertura esférica obtenidos de
-(&lt;a href="https://www2.research.att.com/~njas/coverings"&gt;https://www2.research.att.com/~njas/coverings&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;Imágenes del Hubble proporcionadas por el Instituto de Ciencias del Telescopio Espacial de la NASA
-(&lt;a href="https://hubblesite.org/"&gt;https://hubblesite.org/&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Revised New General Catalogue of Nonstellar Astronomical Objects (Sulentic J.W., Tifft W.G.)&lt;/li&gt;
+&lt;li&gt;Gráficos de estrellas de la SFA (&lt;a href="https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html"&gt;https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Posiciones de los objetos del sistema solar calculados a partir de datos proporcionados por el USNO (&lt;a href="https://www.usno.navy.mil/USNO/astronomical-applications"&gt;https://www.usno.navy.mil/USNO/astronomical-applications&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Imágenes del Hubble proporcionadas por el Instituto de Ciencias del Telescopio Espacial de la NASA (&lt;a href="https://hubblesite.org/"&gt;https://hubblesite.org/&lt;/a&gt;)&lt;/li&gt;
 &lt;li&gt;Mapa del eclipse de 2024 cortesía del Estudio de Visualización Científico de la NASA.&lt;/li&gt;
-&lt;li&gt;Datos de lluvia de meteoros de la Organización Internacional de Meteoros
-(&lt;a href="https://www.imo.net/data"&gt;https://www.imo.net/data&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Datos de lluvia de meteoros de la Organización Internacional de Meteoros (&lt;a href="https://www.imo.net/data"&gt;https://www.imo.net/data&lt;/a&gt;)&lt;/li&gt;
 &lt;li&gt;Imagen de M31 por Peter Kennett (&lt;a href="https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg"&gt;https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg&lt;/a&gt;)&lt;/li&gt;
 &lt;li&gt;Datos del cometa Leonard: In-The-Sky.org&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h1&gt;¿Qué hay de nuevo en Sky Map?&lt;/h1&gt;
+
+%3$s
+
+%2$s
 </string>
 </resources>
