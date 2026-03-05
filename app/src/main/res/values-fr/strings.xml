@@ -16,8 +16,7 @@
     <string name="no_use_gps_pref_hint" translation_description="Hint text beneath the \'Set location manually\' preference">Précisez un lieu ou une lat/long.</string>
     <string name="location_placename" translation_description="Label for the place-name text field in manual location settings">Nom de lieu</string>
     <string name="location_placename_hint" translation_description="An example address.  Translators: please pick an address suitable for your country.  If it has an astronomical connection (e.g. the address of an observatory or famous astronomer) then that would be even better.">Exemple : 11 rue de l\'Université, Strasbourg</string>
-    <string name="location_lat_pref" translation_description="Label for the latitude input field in manual location settings">Latitude</string>
-    <string name="location_long_pref" translation_description="Label for the longitude input field in manual location settings">Longitude</string>
+    <!-- tm:omitted name="location_long_pref" reason="identical_to_source" -->
     <string name="degrees" translation_description="angular degrees - used for latitude and longitude">Degrés</string>
     <string name="preferences" translation_description="Provider-name label used internally when a location is set from preferences (not shown directly to the user as a UI label - does not require a translation)">préférences</string>
     <string name="location_offer_to_enable" translation_description="Dialog message asking whether to enable automatic location">Position auto désactivée. Voulez-vous l\'activer ?</string>
@@ -40,15 +39,15 @@
     <string name="manual_compass_adjustment_title" translation_description="Preference title: lets the user add a manual degree offset to the compass reading">Ajustement supplémentaire de la boussole</string>
     <string name="manual_compass_adjustment_summary" translation_description="Summary for the manual compass adjustment preference">Décalage supplémentaire en degrés (+ ou −) appliqué à la lecture de la boussole</string>
     <string name="show_stars_pref" translation_description="Label for the stars layer on the sky map (shows in the search results)">Étoiles</string>
-    <string name="show_constellations_pref" translation_description="Label for the constellation lines and labels layer (shows in the search results)">Constellations</string>
+    <!-- tm:omitted name="show_constellations_pref" reason="identical_to_source" -->
     <string name="show_messier_objects_pref" translation_description="The celestial objects catalogued by Charles Messier (shows in the search results)">Objets de Messier</string>
     <string name="show_planets_pref" translation_description="Label for the solar system layer (planets, sun, moon)  (shows in the search results)">Planètes</string>
     <string name="show_grid_pref" translation_description="Label for the Right Ascension / Declination grid overlay  (shows in the search results)">Grille RA/Dec</string>
-    <string name="show_horizon_pref" translation_description="Preference toggle label for the horizon line layer">Horizon</string>
+    <!-- tm:omitted name="show_horizon_pref" reason="identical_to_source" -->
     <string name="show_sky_gradient" translation_description="This is a shading of the color of the sky used for effect">Couleurs du ciel</string>
     <string name="show_meteors_pref" translation_description="Label for the meteor shower layer (shows in the search results)">Pluies de météores</string>
     <string name="show_comet_layer_pref" translation_description="Preference toggle label for the comets layer">Comètes</string>
-    <string name="show_satellite_layer_pref" translation_description="The layer for satellites">Satellites</string>
+    <!-- tm:omitted name="show_satellite_layer_pref" reason="identical_to_source" -->
     <string name="sensor_prefs" translation_description="Preferences category heading for sensor settings, intended for advanced/expert users">Paramètres du capteur</string>
     <string name="sensor_speed" translation_description="Old, non gyro sensors only: How quickly the sensor should send us data">Vitesse du capteur</string>
     <string name="sensor_damping" translation_description="Old, non gyro sensors only: The amount of smoothing applied to the sensor outputs.">Amortissement</string>
@@ -60,7 +59,7 @@
     <string name="malformed_loc_error" translation_description="Error message when a non-numeric value is entered for latitude or longitude">Indiquez un nombre pour la latitude/longitude.</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Accepter</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">Non, merci</string>
-    <string name="dialog_ok_button" translation_description="Generic OK/confirm button label for dialogs">OK</string>
+    <!-- tm:omitted name="dialog_ok_button" reason="identical_to_source" -->
     <string name="menu_credits" translation_description="menu item to show \'Credits\' box">Crédits</string>
     <string name="credits_dialog_title" translation_description="Title of the credits dialog showing acknowledgements and contributors">Crédits</string>
     <string name="menu_help" translation_description="menu item to show \'Help\' box">Aide</string>
@@ -69,7 +68,7 @@
     <string name="set_auto" translation_description="Toast message shown when the user switches to automatic (sensor/gyroscope) mode">Activation du mode automatique</string>
     <string name="menu_toggle_dim" translation_description="Menu item to toggle night mode (red tint that preserves night vision)">Activer/Dés. mode nuit</string>
     <string name="zenith" translation_description="Label for the zenith point (directly overhead) shown on the sky map. Displayed in capitals.">ZÉNITH</string>
-    <string name="nadir" translation_description="Label for the nadir point (directly below) shown on the sky map. Displayed in capitals.">NADIR</string>
+    <!-- tm:omitted name="nadir" reason="identical_to_source" -->
     <string name="north" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">NORD</string>
     <string name="east" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">EST</string>
     <string name="west" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">OUEST</string>
@@ -143,8 +142,7 @@
     <string name="missing_label" translation_description="Used to indicate to the developer that they've added a resource with no translation.">Libellé manquant</string>
 
     <string name="menu_tos" translation_description="Menu item label to view the Terms of Service">Conditions d\'utilisation</string>
-    <string name="menu_diagnostics" translation_description="Menu item label to open the technical diagnostics screen">Diagnostics</string>
-
+    <!-- tm:omitted name="menu_diagnostics" reason="identical_to_source" -->
     <string name="north_pole" translation_description="Short abbreviation for the North Celestial Pole, displayed as a label on the sky map grid. Translators: use the standard abbreviation in your language (e.g. NP in English, PN in French).">PN</string>
     <string name="south_pole" translation_description="Short abbreviation for the South Celestial Pole, displayed as a label on the sky map grid. Translators: use the standard abbreviation in your language (e.g. SP in English, PS in French).">PS</string>
 
@@ -155,9 +153,9 @@
     <string name="warning_dialog_title" translation_description="Title of a warning dialog shown when something is wrong, e.g. a missing sensor">Mauvaise nouvelle !</string>
     <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">\n Malheureusement, votre appareil pourrait ne pas avoir l\'un des capteurs dont Sky Map a besoin.\n\n Pour vous montrer le ciel dans la direction où pointe votre téléphone, Sky Map a besoin à la fois d\'une boussole intégrée et d\'un accéléromètre. Votre appareil signale qu\'il lui en manque un. La bonne nouvelle est que certains appareils (par exemple, certains téléphones Moto E) affirment à tort ne pas avoir de boussole, mais en ont en réalité une.\n\n Si votre appareil manque réellement d\'un capteur, alors le mode automatique ne fonctionnera pas. Cependant, vous pouvez toujours utiliser Sky Map sur cet appareil en mode manuel, où vous faites glisser, pivoter et étirer la carte avec vos doigts.</string>
     <string name="do_not_show_again" translation_description="Checkbox or button label to suppress future display of a warning dialog">Ne plus afficher ce message</string>
-    <string name="title_activity_diagnostic" translation_description="Title bar text for the Diagnostics activity/screen">Diagnostics</string>
+    <!-- tm:omitted name="title_activity_diagnostic" reason="identical_to_source" -->
     <string name="play_services_error" translation_description="Warning shown in the diagnostics screen when Google Play Services has an error that may affect automatic location">Avertissement : Erreur des services Google Play - La localisation automatique pourrait ne pas fonctionner</string>
-    <string name="sensor_absent" translation_description="Sensor status shown in diagnostics when the sensor is not present on the device">Absent</string>
+    <!-- tm:omitted name="sensor_absent" reason="identical_to_source" -->
     <string name="sensor_accuracy_unknown" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">Précision : Inconnue</string>
     <string name="sensor_accuracy_unreliable" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">Précision : Peu fiable</string>
     <string name="sensor_accuracy_low" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">Précision : Faible</string>
@@ -171,14 +169,13 @@
     <string name="diagnostics_activity_sensors_heading" translation_description="Section heading in the Diagnostics screen for sensor readings">Capteurs</string>
     <string name="diagnostics_activity_compass" translation_description="Row label in the Diagnostics screen for the compass (magnetic field) sensor">Boussole</string>
     <string name="diagnostics_activity_accelerometer" translation_description="Row label in the Diagnostics screen for the accelerometer sensor">Accéléromètre</string>
-    <string name="diagnostics_activity_rotation_vector" translation_description="Row label in the Diagnostics screen for the rotation vector (combined orientation) sensor">Rotation</string>
-    <string name="diagnostics_activity_gyroscope" translation_description="Row label in the Diagnostics screen for the gyroscope sensor">Gyroscope</string>
+    <!-- tm:omitted name="diagnostics_activity_gyroscope" reason="identical_to_source" -->
     <string name="diagnostics_activity_light_level" translation_description="Row label in the Diagnostics screen for the ambient light sensor reading">Niveau de lumière</string>
     <string name="diagnostics_activity_location_and_time_heading" translation_description="Section heading in the Diagnostics screen for location and time information">Position et heure</string>
     <string name="diagnostics_activity_location_permission" translation_description="Row label in the Diagnostics screen showing whether location permission has been granted">Autorisation de localisation</string>
     <string name="diagnostics_activity_location_permission_granted" translation_description="Status value shown when location permission has been granted">Accordée</string>
     <string name="diagnostics_activity_location_permission_denied" translation_description="Status value shown when location permission has been denied">Refusée</string>
-    <string name="diagnostics_activity_gps" translation_description="Row label in the Diagnostics screen for the GPS provider status">GPS</string>
+    <!-- tm:omitted name="diagnostics_activity_gps" reason="identical_to_source" -->
     <string name="diagnostics_activity_location" translation_description="Row label in the Diagnostics screen showing the current latitude and longitude">Position (lat, long)</string>
     <string name="diagnostics_activity_pointing_ra_dec" translation_description="Row label in the Diagnostics screen showing a snapshot of where the phone is currently pointing in the sky (Right Ascension and Declination)">Instantané de pointage</string>
     <string name="diagnostics_activity_magnetic_correction" translation_description="Row label in the Diagnostics screen showing whether magnetic declination correction is applied">Correction mag.</string>
@@ -201,7 +198,7 @@
     <string name="compass_calibration_activity_warning" translation_description="Heading/reason text shown in the compass calibration dialog when it opens automatically due to low accuracy">Étalonnage matériel requis</string>
     <string name="compass_calibration_activity_user_heading" translation_description="Heading shown in the compass calibration dialog when the user opens it manually from the menu">Améliorez votre alignement</string>
     <string name="compass_calib_what_to_do" translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL"><![CDATA[Sky Map s\'appuie sur le capteur de boussole intégré de votre téléphone. Si la précision affichée ci-dessus est faible, le capteur doit être "réinitialisé" en déplaçant le téléphone en forme de 8 : %s.<br/><br/>
-    <b>Important :</b> L\'étalonnage est un processus matériel géré par votre appareil. Bien qu\'il améliore la fiabilité du capteur, les interférences magnétiques externes peuvent toujours provoquer un "biais" ou une légère dérive. Il s\'agit d\'une limitation physique des boussoles mobiles et non d\'une erreur de l\'application. Consultez <i>Dépannage</i> dans <i>Aide</i> pour d\'autres solutions.]]></string>
+<b>Important :</b> L\'étalonnage est un processus matériel géré par votre appareil. Bien qu\'il améliore la fiabilité du capteur, les interférences magnétiques externes peuvent toujours provoquer un "biais" ou une légère dérive. Il s\'agit d\'une limitation physique des boussoles mobiles et non d\'une erreur de l\'application. Consultez <i>Dépannage</i> dans <i>Aide</i> pour d\'autres solutions.]]></string>
     <string name="compass_calib_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[Votre téléphone signale la précision de sa boussole comme indiqué ci-dessus. Pour l\'améliorer, veuillez effectuer un mouvement en forme de 8 avec votre appareil (%s).<br/><br/><b>Remarque sur la précision :</b> L\'étalonnage est une exigence matérielle de votre téléphone, et non un réglage de Sky Map. Même une fois étalonné, les champs magnétiques locaux (comme les tableaux de bord de voiture ou les aimants) peuvent provoquer un léger décalage dans la direction. Consultez <i>Dépannage</i> dans <i>Aide</i> pour d\'autres solutions.]]></string>
     <string name="sensor_reverse_preference_title" translation_description="Preference title for reversing the magnetic Z-axis sensor reading, a fix for certain phones with incorrectly implemented sensors">Inverser l\'axe Z magnétique</string>
     <string name="sensor_reverse_preference_summary" translation_description="Summary for the Reverse Magnetic Z preference">Correction pour les téléphones avec des capteurs mal implémentés - nécessite un redémarrage</string>
