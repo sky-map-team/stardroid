@@ -1,72 +1,74 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Please add  translation_description="" attributes to Strings to assist the translators. --><resources>
     <string name="app_name" translation_description="Application Title">نقشه‌ی آسمان</string>
-    <string name="menu_settings">تنظیمات</string>
-    <string name="menu_search">جستجو</string>
-    <string name="cancel">لغو</string>
+    <string name="menu_settings" translation_description="Settings menu item in the options menu">تنظیمات</string>
+    <string name="menu_search" translation_description="Search menu item in the options menu">جستجو</string>
+    <string name="cancel" translation_description="Generic cancel button label used in dialogs">لغو</string>
     <string name="set" translation_description="Button label. Set the date to the given value">اعمال</string>
-    <string name="go">برو!</string>
-    <string name="location_prefs">تنظیمات مکان</string>
-    <string name="force_gps_pref">همیشه از سنسور مکان استفاده کن</string>
+    <string name="go" translation_description="Button to start navigating the sky map toward a searched object">برو!</string>
+    <string name="location_prefs" translation_description="Preferences category heading for location-related settings">تنظیمات مکان</string>
+    <string name="force_gps_pref" translation_description="Preference label: force GPS use even when network location is available">همیشه از سنسور مکان استفاده کن</string>
     <string name="force_gps_pref_hint" translation_description="this string continues from \'Always use GPS\'">حتی اگر شبکه در دسترس باشد</string>
-    <string name="no_use_gps_pref">تنظیم دستی مکان</string>
-    <string name="no_use_gps_pref_hint">نام مکان یا طول/عرض جغرافیایی را وارد کنید</string>
-    <string name="location_placename">نام مکان</string>
+    <string name="no_use_gps_pref" translation_description="Preference label: choose to enter location by hand instead of using GPS or phone location">تنظیم دستی مکان</string>
+    <string name="no_use_gps_pref_hint" translation_description="Hint text beneath the \'Set location manually\' preference">نام مکان یا طول/عرض جغرافیایی را وارد کنید</string>
+    <string name="location_placename" translation_description="Label for the place-name text field in manual location settings">نام مکان</string>
     <string name="location_placename_hint" translation_description="An example address.  Translators: please pick an address suitable for your country.  If it has an astronomical connection (e.g. the address of an observatory or famous astronomer) then that would be even better.">مثلا: تهران</string>
-    <string name="location_lat_pref">عرض جغرافیایی</string>
-    <string name="location_long_pref">طول جغرافیایی</string>
-    <string name="degrees" translation_description="angular degrees">درجه</string>
-    <string name="preferences">تنظیمات</string>
-    <string name="location_offer_to_enable">تشخیص خودکار مکان غیرفعال شده. می‌خواهید فعالش کنید؟</string>
-    <string name="location_offer_to_enable_gps_title">تشخیص خودکار مکان، غیرفعال شده است</string>
-    <string name="location_set_auto">مکان از %1$s به %2$s تنظیم شد</string>
-    <string name="location_unable_to_geocode">مکان تشخیص داده نشد. شاید شبکه شما در دسترس نباشد؟</string>
+    <string name="location_lat_pref" translation_description="Label for the latitude input field in manual location settings">عرض جغرافیایی</string>
+    <string name="location_long_pref" translation_description="Label for the longitude input field in manual location settings">طول جغرافیایی</string>
+    <string name="degrees" translation_description="angular degrees - used for latitude and longitude">درجه</string>
+    <string name="preferences" translation_description="Provider-name label used internally when a location is set from preferences (not shown directly to the user as a UI label - does not require a translation)">تنظیمات</string>
+    <string name="location_offer_to_enable" translation_description="Dialog message asking whether to enable automatic location">تشخیص خودکار مکان غیرفعال شده. می‌خواهید فعالش کنید؟</string>
+    <string name="location_offer_to_enable_gps_title" translation_description="Title of dialog shown when automatic location is disabled">تشخیص خودکار مکان، غیرفعال شده است</string>
+    <!-- TODO: many translations require two placeholders. Once all translations brought up to date we can clean this up -->
+    <string name="location_set_auto" translation_description="Toast message when automatic location is acquired. %1$s is the provider name (e.g. GPS), %2$s is the place name or coordinates">مکان از %1$s به %2$s تنظیم شد</string>
+    <string name="location_unable_to_geocode" translation_description="Error message when converting a place name to coordinates (geocoding) fails, possibly due to no network">مکان تشخیص داده نشد. شاید شبکه شما در دسترس نباشد؟</string>
     <string name="location_not_found_title" translation_description="dialog box title when location not found">نامشخص</string>
     <string name="location_not_found" translation_description="dialog message when placename not found">%s یافت نشد.</string>
-    <string name="location_long_lat">طول جغرافیایی:%1$s, عرض جغرافیایی:%2$s</string>
-    <string name="location_place_found">مکان پیدا شد. عرض جغرافیایی %1$f و طول جغرافیایی %2$f</string>
-    <string name="use_magnetic_correction">اصلاح با جهت‌نمای مغناطیسی</string>
-    <string name="show_stars_pref">ستاره‌ها</string>
-    <string name="show_constellations_pref">صورت‌های فلکی</string>
-    <string name="show_messier_objects_pref" translation_description="The celestial objects catalogued by Charles Messier">اجرام مسیه</string>
-    <string name="show_planets_pref">منظومه شمسی</string>
-    <string name="show_grid_pref">مختصات RA/Dec</string>
-    <string name="show_horizon_pref">افق</string>
+    <string name="location_long_lat" translation_description="Formatted display of longitude and latitude. %1$.2f is longitude, %2$.2f is latitude">طول جغرافیایی:%1$s, عرض جغرافیایی:%2$s</string>
+    <string name="location_place_found" translation_description="Status message when a place name was successfully looked up. %1$f is latitude, %2$f is longitude">مکان پیدا شد. عرض جغرافیایی %1$f و طول جغرافیایی %2$f</string>
+    <string name="use_magnetic_correction" translation_description="Preference label: apply magnetic declination correction so the compass points to true north instead of magnetic north">اصلاح با جهت‌نمای مغناطیسی</string>
+    <string name="show_stars_pref" translation_description="Label for the stars layer on the sky map (shows in the search results)">ستاره‌ها</string>
+    <string name="show_constellations_pref" translation_description="Label for the constellation lines and labels layer (shows in the search results)">صورت‌های فلکی</string>
+    <string name="show_messier_objects_pref" translation_description="The celestial objects catalogued by Charles Messier (shows in the search results)">اجرام مسیه</string>
+    <string name="show_planets_pref" translation_description="Label for the solar system layer (planets, sun, moon)  (shows in the search results)">منظومه شمسی</string>
+    <string name="show_grid_pref" translation_description="Label for the Right Ascension / Declination grid overlay  (shows in the search results)">مختصات RA/Dec</string>
+    <string name="show_horizon_pref" translation_description="Preference toggle label for the horizon line layer">افق</string>
     <string name="show_sky_gradient" translation_description="This is a shading of the color of the sky used for effect">گرادیان آسمان</string>
-    <string name="show_meteors_pref">بارش شهابی</string>
+    <string name="show_meteors_pref" translation_description="Label for the meteor shower layer (shows in the search results)">بارش شهابی</string>
     <string name="show_satellite_layer_pref" translation_description="The layer for satellites">ماهواره‌ها</string>
-    <string name="sensor_prefs">تنظیمات حسگرها (پیشرفته)</string>
+    <string name="sensor_prefs" translation_description="Preferences category heading for sensor settings, intended for advanced/expert users">تنظیمات حسگرها (پیشرفته)</string>
     <string name="sensor_speed" translation_description="Old, non gyro sensors only: How quickly the sensor should send us data">سرعت حسگر</string>
     <string name="sensor_damping" translation_description="Old, non gyro sensors only: The amount of smoothing applied to the sensor outputs.">میرایی</string>
-    <string name="ecliptic">دایرة البروج</string>
-    <string name="malformed_loc_error">طول و عرض جغرافیایی باید عدد (با ارقام انگلیسی) باشند</string>
+    <string name="ecliptic" translation_description="Label for the ecliptic layer — the apparent annual path of the Sun across the sky">دایرة البروج</string>
+    <string name="malformed_loc_error" translation_description="Error message when a non-numeric value is entered for latitude or longitude">طول و عرض جغرافیایی باید عدد (با ارقام انگلیسی) باشند</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">قبول</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">خیر. متشکرم</string>
-    <string name="dialog_ok_button">باشه</string>
+    <string name="dialog_ok_button" translation_description="Generic OK/confirm button label for dialogs">باشه</string>
     <string name="menu_help" translation_description="menu item to show \'Help\' box">راهنما</string>
-    <string name="help_dialog_title">راهنمای برنامه</string>
-    <string name="set_manual">رفتن به حالت دستی</string>
-    <string name="set_auto">رفتن به حالت خودکار</string>
-    <string name="menu_toggle_dim">تغییر حالت شب</string>
-    <string name="zenith">سمت الرأس</string>
-    <string name="nadir">پاسو</string>
-    <string name="north">شماسل</string>
-    <string name="east">شرق</string>
-    <string name="west">غرب</string>
-    <string name="south">جنوب</string>
-    <string name="search_label">جستجو در آسمان</string>
+    <string name="help_dialog_title" translation_description="Title of the help dialog">راهنمای برنامه</string>
+    <string name="set_manual" translation_description="Toast message shown when the user switches to manual (touch-drag) mode">رفتن به حالت دستی</string>
+    <string name="set_auto" translation_description="Toast message shown when the user switches to automatic (sensor/gyroscope) mode">رفتن به حالت خودکار</string>
+    <string name="menu_toggle_dim" translation_description="Menu item to toggle night mode (red tint that preserves night vision)">تغییر حالت شب</string>
+    <string name="zenith" translation_description="Label for the zenith point (directly overhead) shown on the sky map. Displayed in capitals.">سمت الرأس</string>
+    <string name="nadir" translation_description="Label for the nadir point (directly below) shown on the sky map. Displayed in capitals.">پاسو</string>
+    <string name="north" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">شماسل</string>
+    <string name="east" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">شرق</string>
+    <string name="west" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">غرب</string>
+    <string name="south" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">جنوب</string>
+    <string name="search_label" translation_description="Hint/label for the search bar in the search activity">جستجو در آسمان</string>
     <string name="search_hint" translation_description="an example search target">مثلا: مریخ</string>
-    <string name="no_search_title">فاقد نتیجه</string>
-    <string name="many_search_results_title">آیا منظورتان این است؟</string>
+    <string name="no_search_title" translation_description="Dialog title shown when a sky search returns no results">فاقد نتیجه</string>
+    <string name="many_search_results_title" translation_description="Dialog title shown when a search returns multiple possible matches">آیا منظورتان این است؟</string>
     <string name="other" translation_description="A preference category (ie preferences that don't belong in any other category)">سایر موارد</string>
-    <string name="menu_time">سفر زمانی</string>
-    <string name="time_travel_start_message_alt">سفر در زمان تا %s ...</string>
-    <string name="time_travel_close_message">بازگشت به زمان حال...</string>
+    <string name="menu_time" translation_description="Menu item label to open the time travel feature">سفر زمانی</string>
+    <string name="time_travel_start_message_alt" translation_description="Toast message when time travel starts toward a named destination. %s is the event or destination name">سفر در زمان تا %s ...</string>
+    <string name="time_travel_close_message" translation_description="Toast message shown when the user exits time travel and returns to the present">بازگشت به زمان حال...</string>
+    <!--  -->
     <string name="popular_dates_prompt" translation_description="Label for a list of dates the user can choose from">تاریخ‌های مشهور</string>
     <string name="custom_date_prompt" translation_description="Label telling the user to manually specify a date">یا انتخاب تاریخ دلخواه:</string>
-    <string name="change_date_prompt">تغییر تاریخ</string>
-    <string name="change_time_prompt">تغییر ساعت</string>
-    <string name="now_visiting" translation_description="used in time travel dialog to tell the user what time they are visiting, time formatted as yyyy.mm.dd at hh.mm.ss + timezone">
+    <string name="change_date_prompt" translation_description="Button label to open the date picker in the time travel dialog">تغییر تاریخ</string>
+    <string name="change_time_prompt" translation_description="Button label to open the time picker in the time travel dialog">تغییر ساعت</string>
+    <string name="now_visiting" translation_description="used in time travel dialog to show the destination date/time the user has selected, time formatted as yyyy.mm.dd at hh.mm.ss + timezone">
         در حال تماشای تاریخ: %s</string>
     <string name="time_travel_label_past" translation_description="Label showing that we are in the past">سفر زمانی به: گذشته</string>
     <string name="time_travel_label_future" translation_description="Label showing that we are in the future">سفر زمانی به: آینده</string>
@@ -83,79 +85,87 @@
     <string name="time_travel_hour_speed_back" translation_description="Label showing rate of travel through time">سفر با سرعت &lt; @ 1 hour/sec</string>
     <string name="time_travel_day_speed_back" translation_description="Label showing rate of travel through time">سفر با سرعت &lt; @ 1 day/sec</string>
     <string name="time_travel_week_speed_back" translation_description="Label showing rate of travel through time">سفر با سرعت &lt; @ 1 week/sec</string>
-    <string name="use_sound_effects" translation_description="A preferences menu label">فعال کردن صدا</string>
-    <string name="menu_gallery">آلبوم</string>
-    <string name="gallery_image_search_btn">جستجو در آسمان</string>
-    <string name="gallery_image_back_btn">بازگشت به آلبوم</string>
-    <string name="hubble_image_gallery_title">آلبوم برنامه</string>
-    <string name="hubble_image">تصاویر (تلسکوپ) هابل</string>
+
+    <string name="use_sound_effects" translation_description="A preferences menu label for enabling sound effects">فعال کردن صدا</string>
+
+    <string name="menu_gallery" translation_description="Menu item label to open the image gallery">آلبوم</string>
+    <string name="gallery_image_search_btn" translation_description="Button in the gallery to locate the displayed object on the sky map">جستجو در آسمان</string>
+    <string name="gallery_image_back_btn" translation_description="Button to return to the gallery from a single image view">بازگشت به آلبوم</string>
+    <string name="hubble_image_gallery_title" translation_description="Title of the image gallery screen">آلبوم برنامه</string>
+    <string name="hubble_image" translation_description="Label or caption for a Hubble Space Telescope image in the gallery">تصاویر (تلسکوپ) هابل</string>
     <string name="search_overlay_title" translation_description="title for search overlay">تلفن خود را به سمت فلش قرار دهید</string>
     <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">جستجو برای:</string>
-    <string name="sun_wont_set_message">در مکان انتخابی شما، خورشید تا ۲۴ ساعت آینده غروب نمی‌کند.</string>
+    <string name="sun_wont_set_message" translation_description="Message shown when the sun will not set during the next 24 hours (polar day / midnight sun)">در مکان انتخابی شما، خورشید تا ۲۴ ساعت آینده غروب نمی‌کند.</string>
+
     <string name="missing_label" translation_description="Used to indicate to the developer that they've added a resource with no translation.">MISSING_LBL</string>
-    <string name="menu_tos">شرایط استفاده</string>
-    <string name="menu_diagnostics">عیب یابی</string>
-    <string name="north_pole">شمال</string>
-    <string name="south_pole">جنوب</string>
-    <string name="enable_analytics">ارسال آمار استفاده</string>
-    <string name="enable_analytics_desc">بهبود برنامه با ارسال ناشناس آمار استفاده</string>
-    <string name="no_sensor_warning">دستگاه شما ممکن است فاقد سنسورهای جهت‌گیری باشد - ممکن است خودکار عمل نکند</string>
-    <string name="warning_dialog_title">یه خبر بد!</string>
-    <string name="missing_sensor_dialog_text">\n
+
+    <string name="menu_tos" translation_description="Menu item label to view the Terms of Service">شرایط استفاده</string>
+    <string name="menu_diagnostics" translation_description="Menu item label to open the technical diagnostics screen">عیب یابی</string>
+
+    <string name="north_pole" translation_description="Short abbreviation for the North Celestial Pole, displayed as a label on the sky map grid. Translators: use the standard abbreviation in your language (e.g. NP in English, PN in French).">شمال</string>
+    <string name="south_pole" translation_description="Short abbreviation for the South Celestial Pole, displayed as a label on the sky map grid. Translators: use the standard abbreviation in your language (e.g. SP in English, PS in French).">جنوب</string>
+
+    <string name="enable_analytics" translation_description="Preference label to opt in to sending anonymous usage statistics">ارسال آمار استفاده</string>
+    <string name="enable_analytics_desc" translation_description="Description/summary for the usage statistics preference">بهبود برنامه با ارسال ناشناس آمار استفاده</string>
+
+    <string name="no_sensor_warning" translation_description="Warning shown when required orientation sensors are not detected on the device">دستگاه شما ممکن است فاقد سنسورهای جهت‌گیری باشد - ممکن است خودکار عمل نکند</string>
+    <string name="warning_dialog_title" translation_description="Title of a warning dialog shown when something is wrong, e.g. a missing sensor">یه خبر بد!</string>
+    <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">\n
         متأسفانه دستگاه شما فاقد یکی از حسگرهای لازم برای برنامه است.\n\n
 		برای نمایش آسمان در افقی که گوشی شما به آن سمت گرفته شده؛ برنامه نیاز به قطب‌نما و شتاب‌سنج دارد که ظاهر گوشی شما فاقد یکی از آنهاست.
 		(هرچند برخی گوشی‌ها مثل سری E موتورولا ممکن است اشتباها فاقد حسگرها فوق تشخیص داده شود).\n\n
 		در گوشی‌های فاقد، حالت «خودکار» کار نمی‌کند و شما لازم است از حالت دستی استفاده کنید و با انگشتان‌تان، صفحه را به سمتی که می‌خواهید، حرکت دهید یا بچرخانید یا بزرگنمایی کنید.
     </string>
-    <string name="do_not_show_again">دیگر این پیام را نمایش نده</string>
-    <string name="title_activity_diagnostic">عیب یابی</string>
-    <string name="play_services_error">توجه: خطای خدمات گوگل پلی؛ موقعیت خودکار ممکن است درست کار نکند</string>
-    <string name="sensor_absent">غایب</string>
-    <string name="sensor_accuracy_unknown">دقت: نامعلوم</string>
-    <string name="sensor_accuracy_unreliable">دقت: غیرقابل اعتماد</string>
-    <string name="sensor_accuracy_low">دقت: پایین</string>
-    <string name="sensor_accuracy_medium">دقت: متوسط</string>
-    <string name="sensor_accuracy_high">دقت: بالا</string>
-    <string name="sensor_accuracy_nocontact">دقت: بدون اتصال</string>
-    <string name="diagnostics_activity_general_heading">عمومی</string>
-    <string name="diagnostics_activity_phone">وسیله</string>
-    <string name="diagnostics_activity_android_version">نسخه اندروید</string>
-    <string name="diagnostics_activity_sky_map_version">نسخه‌ی برنامه</string>
-    <string name="diagnostics_activity_sensors_heading">حسگرها</string>
-    <string name="diagnostics_activity_compass">قطب‌نما</string>
-    <string name="diagnostics_activity_accelerometer">شتاب‌سنج</string>
-    <string name="diagnostics_activity_rotation_vector">چرخش</string>
-    <string name="diagnostics_activity_gyroscope">ژیروسکوپ</string>
-    <string name="diagnostics_activity_light_level">سطح نور</string>
-    <string name="diagnostics_activity_location_and_time_heading">مکان و زمان</string>
-    <string name="diagnostics_activity_gps">جی پی اس</string>
-    <string name="diagnostics_activity_location">طول و عرض جغرافیایی</string>
-    <string name="diagnostics_activity_pointing_ra_dec">عکس نما</string>
-    <string name="diagnostics_activity_magnetic_correction">تصحیح مغناطیسی</string>
-    <string name="diagnostics_activity_local_datetime">زمان محلی</string>
-    <string name="diagnostics_activity_universal_time">زمان جهانی</string>
-    <string name="diagnostics_activity_network_heading">شبکه</string>
-    <string name="diagnostics_activity_connection">اتصال</string>
-    <string name="diagnostics_activity_rotation_matrix">ماتریس چرخش</string>
-    <string name="enabled">فعال</string>
-    <string name="disabled">غیرفعال</string>
-    <string name="permission_disabled">دسترسی غیرفعال شده</string>
-    <string name="no_gps">فاقد جی پی اس</string>
-    <string name="connected">متصل</string>
-    <string name="disconnected">قطع</string>
-    <string name="wifi">" (وایفای)"</string>
-    <string name="cell_network">" (دیتا)"</string>
-    <string name="menu_calibrate">کالیبره</string>
-    <string name="compass_calibration_activity_heading_compass">قطب‌نما -</string>
-    <string name="compass_calibration_activity_do_not_show_this_again">دوباره این را نمایش نده</string>
-    <string name="compass_calibration_activity_warning">گوشی شما نیاز به کالیبره‌شدن دارد</string>
-    <string name="sensor_reverse_preference_title">معکوس کردن حسگر مغناطیسی</string>
-    <string name="sensor_reverse_preference_summary">رفع اشکال تلفن‌هایی که حسگرهایشان درست عمل نمی‌کند (نیازمند راه‌اندازی مجدد)</string>
-    <string name="whats_new_dialog_title">تغییرات جدید برنامه</string>
-    <string name="disable_gyro_preference_title">غیرفعال کردن ژیروسکوپ</string>
-    <string name="disable_gyro_preference_summary">همه دستگاه‌ها دارای ژیروسکوپ نیستند - اگر گوشی شما دارد، با فعال کردن آن و علامت زدن این کادر، نتایج بهتری خواهید گرفت. اگر دستگاه شما دارای ژیروسکوپ نباشد، اگر علامت این کادر را بردارید، برنامه کار نمی‌کند.</string>
-    <string name="rotate_horizon_preference_title">چرخش افق</string>
-    <string name="rotate_horizon_preference_summary">چرخش با افق 90 درجه (برای صفحه هایی با چشم انداز اجباری ، مانند عینک های هوشمند)</string>
-    <string name="show_object_info_auto_mode_title">کارت‌های اطلاعاتی در حالت خودکار</string>
-    <string name="show_object_info_auto_mode_summary">نمایش کارت‌های اطلاعاتی هنگام لمس اجرام در حالت خودکار (حسگرها)</string>
-</resources>
+    <string name="do_not_show_again" translation_description="Checkbox or button label to suppress future display of a warning dialog">دیگر این پیام را نمایش نده</string>
+    <string name="title_activity_diagnostic" translation_description="Title bar text for the Diagnostics activity/screen">عیب یابی</string>
+    <string name="play_services_error" translation_description="Warning shown in the diagnostics screen when Google Play Services has an error that may affect automatic location">توجه: خطای خدمات گوگل پلی؛ موقعیت خودکار ممکن است درست کار نکند</string>
+    <string name="sensor_absent" translation_description="Sensor status shown in diagnostics when the sensor is not present on the device">غایب</string>
+    <string name="sensor_accuracy_unknown" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">دقت: نامعلوم</string>
+    <string name="sensor_accuracy_unreliable" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">دقت: غیرقابل اعتماد</string>
+    <string name="sensor_accuracy_low" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">دقت: پایین</string>
+    <string name="sensor_accuracy_medium" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">دقت: متوسط</string>
+    <string name="sensor_accuracy_high" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">دقت: بالا</string>
+    <string name="sensor_accuracy_nocontact" translation_description="Sensor accuracy level shown when the sensor has no contact (e.g. heart-rate sensor lifted from skin) — unlikely to appear in Sky Map but included for completeness">دقت: بدون اتصال</string>
+    <string name="diagnostics_activity_general_heading" translation_description="Section heading in the Diagnostics screen for general device information">عمومی</string>
+    <string name="diagnostics_activity_phone" translation_description="Row label in the Diagnostics screen for the device model name">وسیله</string>
+    <string name="diagnostics_activity_android_version" translation_description="Row label in the Diagnostics screen for the Android OS version">نسخه اندروید</string>
+    <string name="diagnostics_activity_sky_map_version" translation_description="Row label in the Diagnostics screen for the Sky Map app version">نسخه‌ی برنامه</string>
+    <string name="diagnostics_activity_sensors_heading" translation_description="Section heading in the Diagnostics screen for sensor readings">حسگرها</string>
+    <string name="diagnostics_activity_compass" translation_description="Row label in the Diagnostics screen for the compass (magnetic field) sensor">قطب‌نما</string>
+    <string name="diagnostics_activity_accelerometer" translation_description="Row label in the Diagnostics screen for the accelerometer sensor">شتاب‌سنج</string>
+    <string name="diagnostics_activity_rotation_vector" translation_description="Row label in the Diagnostics screen for the rotation vector (combined orientation) sensor">چرخش</string>
+    <string name="diagnostics_activity_gyroscope" translation_description="Row label in the Diagnostics screen for the gyroscope sensor">ژیروسکوپ</string>
+    <string name="diagnostics_activity_light_level" translation_description="Row label in the Diagnostics screen for the ambient light sensor reading">سطح نور</string>
+    <string name="diagnostics_activity_location_and_time_heading" translation_description="Section heading in the Diagnostics screen for location and time information">مکان و زمان</string>
+    <string name="diagnostics_activity_gps" translation_description="Row label in the Diagnostics screen for the GPS provider status">جی پی اس</string>
+    <string name="diagnostics_activity_location" translation_description="Row label in the Diagnostics screen showing the current latitude and longitude">طول و عرض جغرافیایی</string>
+    <string name="diagnostics_activity_pointing_ra_dec" translation_description="Row label in the Diagnostics screen showing a snapshot of where the phone is currently pointing in the sky (Right Ascension and Declination)">عکس نما</string>
+    <string name="diagnostics_activity_magnetic_correction" translation_description="Row label in the Diagnostics screen showing whether magnetic declination correction is applied">تصحیح مغناطیسی</string>
+    <string name="diagnostics_activity_local_datetime" translation_description="Row label in the Diagnostics screen for the local date and time">زمان محلی</string>
+    <string name="diagnostics_activity_universal_time" translation_description="Row label in the Diagnostics screen for the UTC/universal date and time">زمان جهانی</string>
+    <string name="diagnostics_activity_network_heading" translation_description="Section heading in the Diagnostics screen for network connectivity information">شبکه</string>
+    <string name="diagnostics_activity_connection" translation_description="Row label in the Diagnostics screen for the current network connection status">اتصال</string>
+    <string name="diagnostics_activity_rotation_matrix" translation_description="Row label in the Diagnostics screen showing the raw device rotation matrix used for orientation">ماتریس چرخش</string>
+    <string name="enabled" translation_description="Generic status value meaning a feature or sensor is enabled/active">فعال</string>
+    <string name="disabled" translation_description="Generic status value meaning a feature or sensor is disabled/inactive">غیرفعال</string>
+    <string name="permission_disabled" translation_description="Status value shown when a feature is unavailable because its permission was not granted">دسترسی غیرفعال شده</string>
+    <string name="no_gps" translation_description="Status value shown in diagnostics when no GPS provider is available">فاقد جی پی اس</string>
+    <string name="connected" translation_description="Network status value shown when the device has an active network connection">متصل</string>
+    <string name="disconnected" translation_description="Network status value shown when the device has no network connection">قطع</string>
+    <string name="wifi" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (wifi)\'). Note the leading space.">" (وایفای)"</string>
+    <string name="cell_network" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (cell)\'). Note the leading space.">" (دیتا)"</string>
+    <string name="menu_calibrate" translation_description="Menu item label to open the compass calibration screen">کالیبره</string>
+    <string name="compass_calibration_activity_heading_compass" translation_description="Static label in the compass calibration screen placed inline to the left of the live compass accuracy value (e.g. displayed as \'Compass - Accuracy: High\')">قطب‌نما -</string>
+    <string name="compass_calibration_activity_do_not_show_this_again" translation_description="Checkbox label in the compass calibration dialog to suppress future automatic appearances">دوباره این را نمایش نده</string>
+    <string name="compass_calibration_activity_warning" translation_description="Heading/reason text shown in the compass calibration dialog when it opens automatically due to low accuracy">گوشی شما نیاز به کالیبره‌شدن دارد</string>
+    <string name="sensor_reverse_preference_title" translation_description="Preference title for reversing the magnetic Z-axis sensor reading, a fix for certain phones with incorrectly implemented sensors">معکوس کردن حسگر مغناطیسی</string>
+    <string name="sensor_reverse_preference_summary" translation_description="Summary for the Reverse Magnetic Z preference">رفع اشکال تلفن‌هایی که حسگرهایشان درست عمل نمی‌کند (نیازمند راه‌اندازی مجدد)</string>
+    <string name="whats_new_dialog_title" translation_description="Title of the dialog shown on first launch after an update, listing new features">تغییرات جدید برنامه</string>
+    <string name="disable_gyro_preference_title" translation_description="Preference title for disabling the gyroscope sensor">غیرفعال کردن ژیروسکوپ</string>
+    <string name="disable_gyro_preference_summary" translation_description="Explanation of the disable gyroscope preference and when to use it">همه دستگاه‌ها دارای ژیروسکوپ نیستند - اگر گوشی شما دارد، با فعال کردن آن و علامت زدن این کادر، نتایج بهتری خواهید گرفت. اگر دستگاه شما دارای ژیروسکوپ نباشد، اگر علامت این کادر را بردارید، برنامه کار نمی‌کند.</string>
+    <string name="rotate_horizon_preference_title" translation_description="Preference title for choosing the view/pointing direction mode">چرخش افق</string>
+    <string name="rotate_horizon_preference_summary" translation_description="Explanation of the view direction preference, covering both landscape rotation and pointer modes">چرخش با افق 90 درجه (برای صفحه هایی با چشم انداز اجباری ، مانند عینک های هوشمند)</string>
+
+    <string name="show_object_info_auto_mode_title" translation_description="Preference title for enabling info cards in auto/sensor mode">کارت‌های اطلاعاتی در حالت خودکار</string>
+    <string name="show_object_info_auto_mode_summary" translation_description="Preference summary for auto mode info cards">نمایش کارت‌های اطلاعاتی هنگام لمس اجرام در حالت خودکار (حسگرها)</string>
+    </resources>

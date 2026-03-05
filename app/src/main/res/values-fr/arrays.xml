@@ -1,14 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <string-array name="sensor_speed">
-        <item>Lent</item>
-        <item>Standard</item>
-        <item>Rapide</item>
+        <item translation_description="Slow sensor speed">Lent</item>
+        <item translation_description="Normal sensor speed">Standard</item>
+        <item translation_description="Fast sensor speed">Rapide</item>
     </string-array>
     <string-array name="sensor_damping">
-        <item>Jumpy</item>
-        <item>Medium</item>
-        <item>Standard</item>
-        <item>Haut</item>
+        <item translation_description="Low sensor damping factor">Jumpy</item>
+        <item translation_description="Medium sensor damping factor">Medium</item>
+        <item translation_description="Extra High sensor damping factor">Standard</item>
+        <item translation_description="Really High sensor damping factor">Haut</item>
     </string-array>
-</resources>
+    </resources>

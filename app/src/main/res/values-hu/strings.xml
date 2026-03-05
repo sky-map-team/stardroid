@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="show_object_info_auto_mode_title">Infókártyák automatikus módban</string>
-    <string name="show_object_info_auto_mode_summary">Infókártyák megjelenítése automatikus (szenzor) módban is az objektumok megérintésekor</string>
-    <string name="object_info_funfact_label">Tudtad?</string>
-    <string name="object_info_distance_label">Távolság:</string>
-    <string name="object_info_size_label">Méret:</string>
-    <string name="object_info_mass_label">Tömeg:</string>
-    <string name="object_info_spectral_label">Spektrál:</string>
-    <string name="object_info_magnitude_label">Magnitúdó:</string>
-</resources>
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Please add  translation_description="" attributes to Strings to assist the translators. --><resources>
+    <string name="show_object_info_auto_mode_title" translation_description="Preference title for enabling info cards in auto/sensor mode">Infókártyák automatikus módban</string>
+    <string name="show_object_info_auto_mode_summary" translation_description="Preference summary for auto mode info cards">Infókártyák megjelenítése automatikus (szenzor) módban is az objektumok megérintésekor</string>
+    <string name="object_info_funfact_label" translation_description="Label before the fun fact in info card">Tudtad?</string>
+    <string name="object_info_distance_label" translation_description="Label for distance field">Távolság:</string>
+    <string name="object_info_size_label" translation_description="Label for size field">Méret:</string>
+    <string name="object_info_mass_label" translation_description="Label for mass field">Tömeg:</string>
+    <string name="object_info_spectral_label" translation_description="Label for spectral class">Spektrál:</string>
+    <string name="object_info_magnitude_label" translation_description="Label for apparent magnitude">Magnitúdó:</string>
+    </resources>

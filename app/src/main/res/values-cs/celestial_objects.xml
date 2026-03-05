@@ -1,5 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <resources>
+    <!-- Constellations -->
     <string name="andromeda" translation_description="Name of the Andromeda constellation">Andromeda</string>
     <string name="aquarius" translation_description="Name of the Aquarius constellation">Vodnář</string>
     <string name="aquila" translation_description="Name of the Aquila constellation">Orel</string>
@@ -97,17 +98,21 @@
     <string name="triangulum_australe" translation_description="Name of the Triangulum Australe constellation">Jižní trojúhelník</string>
     <string name="volans" translation_description="Name of the Volans constellation">Létající ryba</string>
     <string name="vulpecula" translation_description="Name of the Vulpecula constellation">Lištička</string>
-    <string name="sun">Slunce</string>
-    <string name="moon">Měsíc</string>
-    <string name="mercury">Merkur</string>
-    <string name="venus">Venuše</string>
-    <string name="earth">Země</string>
-    <string name="mars">Mars</string>
-    <string name="jupiter">Jupiter</string>
-    <string name="saturn">Saturn</string>
-    <string name="uranus">Uran</string>
-    <string name="neptune">Neptun</string>
-    <string name="pluto">Pluto</string>
+
+    <!-- Major solar system objects -->
+    <string name="sun" translation_description="Name of the Sun">Slunce</string>
+    <string name="moon" translation_description="Name of the Earth's Moon">Měsíc</string>
+    <string name="mercury" translation_description="Name of the planet Mercury">Merkur</string>
+    <string name="venus" translation_description="Name of the planet Venus">Venuše</string>
+    <string name="earth" translation_description="Name of the planet Earth">Země</string>
+    <string name="mars" translation_description="Name of the planet Mars">Mars</string>
+    <string name="jupiter" translation_description="Name of the planet Jupiter">Jupiter</string>
+    <string name="saturn" translation_description="Name of the planet Saturn">Saturn</string>
+    <string name="uranus" translation_description="Name of the planet Uranus">Uran</string>
+    <string name="neptune" translation_description="Name of the planet Neptune">Neptun</string>
+    <string name="pluto" translation_description="Name of the dwarf planet Pluto">Pluto</string>
+
+    <!-- Gallery objects -->
     <string name="crab_nebula" translation_description="hubble object">Krabí mlhovina</string>
     <string name="eagle_nebula" translation_description="hubble object">Orlí mlhovina</string>
     <string name="andromeda_galaxy" translation_description="hubble object">Galaxie Andromeda</string>
@@ -125,6 +130,9 @@
     <string name="hubble_deep_field" translation_description="hubble object">Hubbleovo hluboké pole</string>
     <string name="hdf" translation_description="hubble object">Hubbleovo hluboké pole</string>
     <string name="rho_oph" translation_description="hubble object">Rho Ophiuchus</string>
+
+
+    <!-- Stars -->
     <string name="sirius" translation_description="Name of the Star Sirius">Sírius</string>
     <string name="canopus" translation_description="Name of the Star Canopus">Canopus</string>
     <string name="arcturus" translation_description="Name of the Star Arcturus">Arktur</string>
@@ -196,6 +204,8 @@
     <string name="alpha_centauri" translation_description="Name of the star Alpha Centauri">Alfa Centauri</string>
     <string name="rigil_kent" translation_description="Name of the star Rigil Kent">Rigil Kent</string>
     <string name="e_lyrae" translation_description="Name of the star ε Lyrae">Epsylon Lyrae</string>
+
+    <!-- Messier objects etc -->
     <string name="m1" translation_description="Name of the Messier object M1">M1</string>
     <string name="m2" translation_description="Name of the Messier object M2">M2</string>
     <string name="m3" translation_description="Name of the Messier object M3">M3</string>
@@ -314,8 +324,12 @@
     <string name="beehive_cluster" translation_description="Name of the Messier object Beehive Cluster">Hvězdokupa Včelí úl</string>
     <string name="praesepe" translation_description="Name of the Messier object Praesepe">Jesličky</string>
     <string name="seven_sisters" translation_description="Name of the Messier object Seven Sisters">Sedm sester</string>
+
+    <!-- Manmade objects -->
     <string name="space_station" translation_description="Name of the Internation Space Station">Mezinárodní vesmírná stanice</string>
     <string name="space_shuttle" translation_description="Name of the Space Shuttle">Raketoplán</string>
+
+    <!-- Meteors -->
     <string name="leonids" translation_description="Meteor Shower">Leonidy</string>
     <string name="geminids" translation_description="Meteor Shower">Geminidy</string>
     <string name="quadrantids" translation_description="Meteor Shower">Kvadrantidy</string>
@@ -326,4 +340,5 @@
     <string name="orionids" translation_description="Meteor Shower">Orionidy</string>
     <string name="puppidvelids" translation_description="Meteor Shower">Pí Puppidy</string>
     <string name="ursids" translation_description="Meteor Shower">Ursidy</string>
-</resources>
+
+    </resources>

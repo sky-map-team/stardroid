@@ -1,31 +1,31 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <string-array name="sensor_speed">
-        <item>Lenta</item>
-        <item>Padrão</item>
-        <item>Rápida</item>
+        <item translation_description="Slow sensor speed">Lenta</item>
+        <item translation_description="Normal sensor speed">Padrão</item>
+        <item translation_description="Fast sensor speed">Rápida</item>
     </string-array>
     <string-array name="sensor_damping">
-        <item>Jumpy</item>
-        <item>Medium</item>
-        <item>Padrão</item>
-        <item>Alta</item>
+        <item translation_description="Low sensor damping factor">Jumpy</item>
+        <item translation_description="Medium sensor damping factor">Medium</item>
+        <item translation_description="Extra High sensor damping factor">Padrão</item>
+        <item translation_description="Really High sensor damping factor">Alta</item>
     </string-array>
     <string-array name="viewing_direction">
-        <item>Normal</item>
-        <item>Rotacionar Horizonte</item>
-        <item>Modo Apontar
+        <item translation_description="Normal viewing">Normal</item>
+        <item translation_description="Rotates the screen by 90 degrees">Rotacionar Horizonte</item>
+        <item translation_description="Shows the sky as pointed at by the long edge of the phone">Modo Apontar
         </item>
     </string-array>
     <string-array name="auto_dim_texts">
-        <item>Muito escuro</item>
-        <item>Padrão do sistema</item>
-        <item>Clássico</item>
+        <item translation_description="Dimmest screen setting">Muito escuro</item>
+        <item translation_description="Leave it on the system setting">Padrão do sistema</item>
+        <item translation_description="The setting used for the last 15 years">Clássico</item>
     </string-array>
     <string-array name="font_size_texts">
-        <item>Pequeno</item>
-        <item>Médio</item>
-        <item>Grande</item>
-        <item>Bem grande</item>
+        <item translation_description="Smallest font size">Pequeno</item>
+        <item translation_description="Normal font size">Médio</item>
+        <item translation_description="Large font size">Grande</item>
+        <item translation_description="Largest font size">Bem grande</item>
     </string-array>
 </resources>

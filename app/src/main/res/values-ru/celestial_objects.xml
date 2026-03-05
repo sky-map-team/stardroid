@@ -1,5 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <resources>
+    <!-- Constellations -->
     <string name="andromeda" translation_description="Name of the Andromeda constellation">Андромеда</string>
     <string name="aquarius" translation_description="Name of the Aquarius constellation">Водолей</string>
     <string name="aquila" translation_description="Name of the Aquila constellation">Орел</string>
@@ -50,17 +51,20 @@
     <string name="big_dipper" translation_description="Name of the Big Dipper constellation">Большая Медведица</string>
     <string name="great_bear" translation_description="Name of the Great Bear constellation">Большая Медведица</string>
     <string name="plough" translation_description="Name of the Plough constellation">Большая Медведица</string>
-    <string name="sun">Солнце</string>
-    <string name="moon">Луна</string>
-    <string name="mercury">Меркурий</string>
-    <string name="venus">Венера</string>
-    <string name="earth">Земля</string>
-    <string name="mars">Марс</string>
-    <string name="jupiter">Юпитер</string>
-    <string name="saturn">Сатурн</string>
-    <string name="uranus">Уран</string>
-    <string name="neptune">Нептун</string>
-    <string name="pluto">Плутон</string>
+    <!-- Major solar system objects -->
+    <string name="sun" translation_description="Name of the Sun">Солнце</string>
+    <string name="moon" translation_description="Name of the Earth's Moon">Луна</string>
+    <string name="mercury" translation_description="Name of the planet Mercury">Меркурий</string>
+    <string name="venus" translation_description="Name of the planet Venus">Венера</string>
+    <string name="earth" translation_description="Name of the planet Earth">Земля</string>
+    <string name="mars" translation_description="Name of the planet Mars">Марс</string>
+    <string name="jupiter" translation_description="Name of the planet Jupiter">Юпитер</string>
+    <string name="saturn" translation_description="Name of the planet Saturn">Сатурн</string>
+    <string name="uranus" translation_description="Name of the planet Uranus">Уран</string>
+    <string name="neptune" translation_description="Name of the planet Neptune">Нептун</string>
+    <string name="pluto" translation_description="Name of the dwarf planet Pluto">Плутон</string>
+
+    <!-- Gallery objects -->
     <string name="crab_nebula" translation_description="hubble object">Крабовидная туманность</string>
     <string name="eagle_nebula" translation_description="hubble object">Туманность Орла</string>
     <string name="andromeda_galaxy" translation_description="hubble object">Туманность Андромеды</string>
@@ -78,6 +82,9 @@
     <string name="hubble_deep_field" translation_description="hubble object">Область глубокого обзора Хаббла</string>
     <string name="hdf" translation_description="hubble object">Область глубокого обзора Хаббла</string>
     <string name="rho_oph" translation_description="hubble object">Ро Змееносца</string>
+
+
+    <!-- Stars -->
     <string name="sirius" translation_description="Name of the Star Sirius">Сириус</string>
     <string name="canopus" translation_description="Name of the Star Canopus">Канопус</string>
     <string name="arcturus" translation_description="Name of the Star Arcturus">Арктур</string>
@@ -149,6 +156,8 @@
     <string name="alpha_centauri" translation_description="Name of the star Alpha Centauri">Альфа Центавра</string>
     <string name="rigil_kent" translation_description="Name of the star Rigil Kent">Ригель Кентаурус</string>
     <string name="e_lyrae" translation_description="Name of the star ε Lyrae">ε Лиры</string>
+
+    <!-- Messier objects etc -->
     <string name="m1" translation_description="Name of the Messier object M1">M1</string>
     <string name="m2" translation_description="Name of the Messier object M2">M2</string>
     <string name="m3" translation_description="Name of the Messier object M3">M3</string>
@@ -267,8 +276,12 @@
     <string name="beehive_cluster" translation_description="Name of the Messier object Beehive Cluster">Скопление Улей</string>
     <string name="praesepe" translation_description="Name of the Messier object Praesepe">Ясли</string>
     <string name="seven_sisters" translation_description="Name of the Messier object Seven Sisters">Семь сестер</string>
+
+    <!-- Manmade objects -->
     <string name="space_station" translation_description="Name of the Internation Space Station">Международная орбитальная станция</string>
     <string name="space_shuttle" translation_description="Name of the Space Shuttle">Space Shuttle</string>
+
+    <!-- Meteors -->
     <string name="leonids" translation_description="Meteor Shower">Леониды</string>
     <string name="geminids" translation_description="Meteor Shower">Геминиды</string>
     <string name="quadrantids" translation_description="Meteor Shower">Квадрантиды</string>
@@ -279,4 +292,5 @@
     <string name="orionids" translation_description="Meteor Shower">Ориониды</string>
     <string name="puppidvelids" translation_description="Meteor Shower">Пуппиды-Велиды</string>
     <string name="ursids" translation_description="Meteor Shower">Урсиды</string>
-</resources>
+
+    </resources>

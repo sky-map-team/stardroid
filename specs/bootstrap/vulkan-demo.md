@@ -67,8 +67,8 @@ stardroidawakening/
 
 ```toml
 [versions]
-agp = "8.7.3"
-kotlin = "2.1.0"
+agp = "8.13.2"
+kotlin = "2.0.20"
 coreKtx = "1.15.0"
 appcompat = "1.7.0"
 material = "1.12.0"
@@ -130,7 +130,7 @@ android {
     defaultConfig {
         applicationId = "com.stardroid.awakening"
         minSdk = 26
-        targetSdk = 35
+        targetSdk = 36
         versionCode = 1
         versionName = "0.1.0"
 

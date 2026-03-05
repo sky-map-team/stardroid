@@ -1,5 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <resources>
+    <!-- Constellations -->
     <string name="andromeda" translation_description="Name of the Andromeda constellation">Ανδρομέδα</string>
     <string name="aquarius" translation_description="Name of the Aquarius constellation">Υδροχόος</string>
     <string name="aquila" translation_description="Name of the Aquila constellation">Αετός</string>
@@ -97,17 +98,21 @@
     <string name="triangulum_australe" translation_description="Name of the Triangulum Australe constellation">Τρίγωνον Νότιον</string>
     <string name="volans" translation_description="Name of the Volans constellation">Ιχθύς Ιπτάμενος</string>
     <string name="vulpecula" translation_description="Name of the Vulpecula constellation">Αλώπηξ</string>
-    <string name="sun">Ήλιος</string>
-    <string name="moon">Σελήνη</string>
-    <string name="mercury">Ερμής</string>
-    <string name="venus">Αφροδίτη</string>
-    <string name="earth">Γη</string>
-    <string name="mars">Άρης</string>
-    <string name="jupiter">Δίας</string>
-    <string name="saturn">Κρόνος</string>
-    <string name="uranus">Ουρανός</string>
-    <string name="neptune">Ποσειδώνας</string>
-    <string name="pluto">Πλούτωνας</string>
+
+    <!-- Major solar system objects -->
+    <string name="sun" translation_description="Name of the Sun">Ήλιος</string>
+    <string name="moon" translation_description="Name of the Earth's Moon">Σελήνη</string>
+    <string name="mercury" translation_description="Name of the planet Mercury">Ερμής</string>
+    <string name="venus" translation_description="Name of the planet Venus">Αφροδίτη</string>
+    <string name="earth" translation_description="Name of the planet Earth">Γη</string>
+    <string name="mars" translation_description="Name of the planet Mars">Άρης</string>
+    <string name="jupiter" translation_description="Name of the planet Jupiter">Δίας</string>
+    <string name="saturn" translation_description="Name of the planet Saturn">Κρόνος</string>
+    <string name="uranus" translation_description="Name of the planet Uranus">Ουρανός</string>
+    <string name="neptune" translation_description="Name of the planet Neptune">Ποσειδώνας</string>
+    <string name="pluto" translation_description="Name of the dwarf planet Pluto">Πλούτωνας</string>
+
+    <!-- Gallery objects -->
     <string name="crab_nebula" translation_description="hubble object">Νεφέλωμα Καρκίνου</string>
     <string name="eagle_nebula" translation_description="hubble object">Νεφέλωμα Αετού</string>
     <string name="andromeda_galaxy" translation_description="hubble object">Γαλαξίας της Ανδρομέδας</string>
@@ -125,6 +130,9 @@
     <string name="hubble_deep_field" translation_description="hubble object">Βαθύ Πεδίο Hubble</string>
     <string name="hdf" translation_description="hubble object">Βαθύ Πεδίο Hubble</string>
     <string name="rho_oph" translation_description="hubble object">ρ Οφιούχου</string>
+
+
+    <!-- Stars -->
     <string name="sirius" translation_description="Name of the Star Sirius">Σείριος</string>
     <string name="canopus" translation_description="Name of the Star Canopus">Κάνωπος</string>
     <string name="arcturus" translation_description="Name of the Star Arcturus">Αρκτούρος</string>
@@ -196,13 +204,18 @@
     <string name="alpha_centauri" translation_description="Name of the star Alpha Centauri">Άλφα Κενταύρου</string>
     <string name="rigil_kent" translation_description="Name of the star Rigil Kent">Ρίγκιλ</string>
     <string name="e_lyrae" translation_description="Name of the star ε Lyrae">ε Λύρας</string>
+
     <string name="butterfly_cluster" translation_description="Name of the Messier object Butterfly Cluster">Σμήνος Πεταλούδα</string>
     <string name="scorpions_tail" translation_description="Name of the Messier object Scorpion\'s Tail">Σμήνος Πτολεμαίου</string>
     <string name="beehive_cluster" translation_description="Name of the Messier object Beehive Cluster">Σμήνος Κυψέλη</string>
     <string name="praesepe" translation_description="Name of the Messier object Praesepe">Φάτνη</string>
     <string name="seven_sisters" translation_description="Name of the Messier object Seven Sisters">Πούλια</string>
+
+    <!-- Manmade objects -->
     <string name="space_station" translation_description="Name of the Internation Space Station">Διεθνής Διαστημικός Σταθμός</string>
     <string name="space_shuttle" translation_description="Name of the Space Shuttle">Διαστημικό Λεωφορείο</string>
+
+    <!-- Meteors -->
     <string name="leonids" translation_description="Meteor Shower">Λεοντίδες</string>
     <string name="geminids" translation_description="Meteor Shower">Διδυμίδες</string>
     <string name="quadrantids" translation_description="Meteor Shower">Τεταρτίδες</string>
@@ -213,4 +226,5 @@
     <string name="orionids" translation_description="Meteor Shower">Ωριωνίδες</string>
     <string name="puppidvelids" translation_description="Meteor Shower">Πρυμνίδες-Ιστιίδες</string>
     <string name="ursids" translation_description="Meteor Shower">Αρκτίδες</string>
-</resources>
+
+    </resources>

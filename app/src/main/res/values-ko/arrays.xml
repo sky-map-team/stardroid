@@ -1,14 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <string-array name="sensor_speed">
-        <item>느림</item>
-        <item>표준</item>
-        <item>빠름</item>
+        <item translation_description="Slow sensor speed">느림</item>
+        <item translation_description="Normal sensor speed">표준</item>
+        <item translation_description="Fast sensor speed">빠름</item>
     </string-array>
     <string-array name="sensor_damping">
-        <item>Jumpy</item>
-        <item>Medium</item>
-        <item>표준</item>
-        <item>높음</item>
+        <item translation_description="Low sensor damping factor">Jumpy</item>
+        <item translation_description="Medium sensor damping factor">Medium</item>
+        <item translation_description="Extra High sensor damping factor">표준</item>
+        <item translation_description="Really High sensor damping factor">높음</item>
     </string-array>
-</resources>
+    </resources>

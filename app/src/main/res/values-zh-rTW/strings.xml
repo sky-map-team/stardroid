@@ -1,75 +1,76 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Please add  translation_description="" attributes to Strings to assist the translators. --><resources>
     <string name="app_name" translation_description="Application Title">星空圖</string>
-    <string name="menu_settings">設定</string>
-    <string name="menu_search">搜尋</string>
-    <string name="cancel">取消</string>
-    <string name="set">設定</string>
-    <string name="go">前往！</string>
-    <string name="location_prefs">位置設定</string>
-    <string name="force_gps_pref">永遠使用 GPS</string>
+    <string name="menu_settings" translation_description="Settings menu item in the options menu">設定</string>
+    <string name="menu_search" translation_description="Search menu item in the options menu">搜尋</string>
+    <string name="cancel" translation_description="Generic cancel button label used in dialogs">取消</string>
+    <string name="set" translation_description="Button label. Set the date to the given value">設定</string>
+    <string name="go" translation_description="Button to start navigating the sky map toward a searched object">前往！</string>
+    <string name="location_prefs" translation_description="Preferences category heading for location-related settings">位置設定</string>
+    <string name="force_gps_pref" translation_description="Preference label: force GPS use even when network location is available">永遠使用 GPS</string>
     <string name="force_gps_pref_hint" translation_description="this string continues from \'Always use GPS\'">啟用時一律使用 GPS (即使系統可提供網路位置資訊)</string>
-    <string name="no_use_gps_pref">手動設定位置</string>
-    <string name="no_use_gps_pref_hint">請在下方輸入地點或經緯度</string>
-    <string name="location_placename">地點名稱</string>
+    <string name="no_use_gps_pref" translation_description="Preference label: choose to enter location by hand instead of using GPS or phone location">手動設定位置</string>
+    <string name="no_use_gps_pref_hint" translation_description="Hint text beneath the \'Set location manually\' preference">請在下方輸入地點或經緯度</string>
+    <string name="location_placename" translation_description="Label for the place-name text field in manual location settings">地點名稱</string>
     <string name="location_placename_hint" translation_description="An example address.  Translators: please pick an address suitable for your country.  If it has an astronomical connection (e.g. the address of an observatory or famous astronomer) then that would be even better.">例如，台北市信義區信義路 5 段 7 號</string>
-    <string name="location_lat_pref">緯度</string>
-    <string name="location_long_pref">經度</string>
-    <string name="degrees">度</string>
-    <string name="preferences">偏好設定</string>
-    <string name="location_offer_to_enable">自動定位功能已關閉，是否要予以啟用？</string>
-    <string name="location_offer_to_enable_gps_title">已關閉自動定位</string>
-    <string name="location_set_auto">已將地點設定由%1$s改為%2$s</string>
-    <string name="location_unable_to_geocode">無法解譯您的位置資訊，您的網路系統目前的連線狀態是否正常？</string>
+    <string name="location_lat_pref" translation_description="Label for the latitude input field in manual location settings">緯度</string>
+    <string name="location_long_pref" translation_description="Label for the longitude input field in manual location settings">經度</string>
+    <string name="degrees" translation_description="angular degrees - used for latitude and longitude">度</string>
+    <string name="preferences" translation_description="Provider-name label used internally when a location is set from preferences (not shown directly to the user as a UI label - does not require a translation)">偏好設定</string>
+    <string name="location_offer_to_enable" translation_description="Dialog message asking whether to enable automatic location">自動定位功能已關閉，是否要予以啟用？</string>
+    <string name="location_offer_to_enable_gps_title" translation_description="Title of dialog shown when automatic location is disabled">已關閉自動定位</string>
+    <!-- TODO: many translations require two placeholders. Once all translations brought up to date we can clean this up -->
+    <string name="location_set_auto" translation_description="Toast message when automatic location is acquired. %1$s is the provider name (e.g. GPS), %2$s is the place name or coordinates">已將地點設定由%1$s改為%2$s</string>
+    <string name="location_unable_to_geocode" translation_description="Error message when converting a place name to coordinates (geocoding) fails, possibly due to no network">無法解譯您的位置資訊，您的網路系統目前的連線狀態是否正常？</string>
     <string name="location_not_found_title" translation_description="dialog box title when location not found">抱歉</string>
     <string name="location_not_found" translation_description="dialog message when placename not found">找不到%s。</string>
-    <string name="location_long_lat">經度：%1$s，緯度：%2$s</string>
-    <string name="location_place_found">已找到地點，正在設定緯度%1$f與經度%2$f</string>
-    <string name="use_magnetic_correction">使用地磁校正</string>
-    <string name="show_stars_pref">星體</string>
-    <string name="show_constellations_pref">星座</string>
-    <string name="show_messier_objects_pref" translation_description="The celestial objects catalogued by Charles Messier">梅西耶天體</string>
-    <string name="show_planets_pref">行星</string>
-    <string name="show_grid_pref">赤道座標線</string>
-    <string name="show_horizon_pref">地平線</string>
+    <string name="location_long_lat" translation_description="Formatted display of longitude and latitude. %1$.2f is longitude, %2$.2f is latitude">經度：%1$s，緯度：%2$s</string>
+    <string name="location_place_found" translation_description="Status message when a place name was successfully looked up. %1$f is latitude, %2$f is longitude">已找到地點，正在設定緯度%1$f與經度%2$f</string>
+    <string name="use_magnetic_correction" translation_description="Preference label: apply magnetic declination correction so the compass points to true north instead of magnetic north">使用地磁校正</string>
+    <string name="show_stars_pref" translation_description="Label for the stars layer on the sky map (shows in the search results)">星體</string>
+    <string name="show_constellations_pref" translation_description="Label for the constellation lines and labels layer (shows in the search results)">星座</string>
+    <string name="show_messier_objects_pref" translation_description="The celestial objects catalogued by Charles Messier (shows in the search results)">梅西耶天體</string>
+    <string name="show_planets_pref" translation_description="Label for the solar system layer (planets, sun, moon)  (shows in the search results)">行星</string>
+    <string name="show_grid_pref" translation_description="Label for the Right Ascension / Declination grid overlay  (shows in the search results)">赤道座標線</string>
+    <string name="show_horizon_pref" translation_description="Preference toggle label for the horizon line layer">地平線</string>
     <string name="show_sky_gradient" translation_description="This is a shading of the color of the sky used for effect">星空漸層色</string>
-    <string name="show_meteors_pref">流星雨</string>
+    <string name="show_meteors_pref" translation_description="Label for the meteor shower layer (shows in the search results)">流星雨</string>
     <string name="show_satellite_layer_pref" translation_description="The layer for satellites">人造衛星</string>
-    <string name="sensor_prefs">感應器設定</string>
-    <string name="ecliptic">黃道</string>
-    <string name="malformed_loc_error">經緯度設定值並非數字。</string>
+    <string name="sensor_prefs" translation_description="Preferences category heading for sensor settings, intended for advanced/expert users">感應器設定</string>
+    <string name="ecliptic" translation_description="Label for the ecliptic layer — the apparent annual path of the Sun across the sky">黃道</string>
+    <string name="malformed_loc_error" translation_description="Error message when a non-numeric value is entered for latitude or longitude">經緯度設定值並非數字。</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">接受</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">不，謝謝</string>
-    <string name="dialog_ok_button">OK</string>
+    <string name="dialog_ok_button" translation_description="Generic OK/confirm button label for dialogs">OK</string>
     <string name="menu_help" translation_description="menu item to show \'Help\' box">說明</string>
-    <string name="help_dialog_title">星空圖說明</string>
-    <string name="set_manual">正在切換至手動模式</string>
-    <string name="set_auto">正在切換至自動模式</string>
-    <string name="menu_toggle_dim">切換至夜間模式</string>
-    <string name="zenith">天頂</string>
-    <string name="nadir">天底</string>
-    <string name="north">北</string>
-    <string name="east">東</string>
-    <string name="west">西</string>
-    <string name="south">南</string>
-    <string name="search_label">搜尋星空</string>
+    <string name="help_dialog_title" translation_description="Title of the help dialog">星空圖說明</string>
+    <string name="set_manual" translation_description="Toast message shown when the user switches to manual (touch-drag) mode">正在切換至手動模式</string>
+    <string name="set_auto" translation_description="Toast message shown when the user switches to automatic (sensor/gyroscope) mode">正在切換至自動模式</string>
+    <string name="menu_toggle_dim" translation_description="Menu item to toggle night mode (red tint that preserves night vision)">切換至夜間模式</string>
+    <string name="zenith" translation_description="Label for the zenith point (directly overhead) shown on the sky map. Displayed in capitals.">天頂</string>
+    <string name="nadir" translation_description="Label for the nadir point (directly below) shown on the sky map. Displayed in capitals.">天底</string>
+    <string name="north" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">北</string>
+    <string name="east" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">東</string>
+    <string name="west" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">西</string>
+    <string name="south" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">南</string>
+    <string name="search_label" translation_description="Hint/label for the search bar in the search activity">搜尋星空</string>
     <string name="search_hint" translation_description="an example search target">例如：火星</string>
-    <string name="no_search_title">沒有相符的結果</string>
-    <string name="many_search_results_title">您是不是要查：</string>
+    <string name="no_search_title" translation_description="Dialog title shown when a sky search returns no results">沒有相符的結果</string>
+    <string name="many_search_results_title" translation_description="Dialog title shown when a search returns multiple possible matches">您是不是要查：</string>
     <string name="other" translation_description="A preference category (ie preferences that don't belong in any other category)">其他</string>
-    <string name="menu_time">時光旅行</string>
-    <string name="time_travel_start_message_alt">時光轉移到 %s...</string>
-    <string name="time_travel_close_message">回到現在...</string>
+    <string name="menu_time" translation_description="Menu item label to open the time travel feature">時光旅行</string>
+    <string name="time_travel_start_message_alt" translation_description="Toast message when time travel starts toward a named destination. %s is the event or destination name">時光轉移到 %s...</string>
+    <string name="time_travel_close_message" translation_description="Toast message shown when the user exits time travel and returns to the present">回到現在...</string>
+    <!--  -->
     <string name="popular_dates_prompt" translation_description="Label for a list of dates the user can choose from">熱門日期</string>
     <string name="custom_date_prompt" translation_description="Label telling the user to manually specify a date">或是自行選取日期</string>
-    <string name="change_date_prompt">變更日期</string>
-    <string name="change_time_prompt">變更時間</string>
-    <string name="now_visiting" translation_description="used in time travel dialog to tell the user what time they are visiting, time formatted as yyyy.mm.dd at hh.mm.ss + timezone">
-        時間切換到：%s</string>
+    <string name="change_date_prompt" translation_description="Button label to open the date picker in the time travel dialog">變更日期</string>
+    <string name="change_time_prompt" translation_description="Button label to open the time picker in the time travel dialog">變更時間</string>
+    <string name="now_visiting" translation_description="used in time travel dialog to show the destination date/time the user has selected, time formatted as yyyy.mm.dd at hh.mm.ss + timezone">時間切換到：%s</string>
     <string name="time_travel_label_past" translation_description="Label showing that we are in the past">時光旅行：過去</string>
     <string name="time_travel_label_future" translation_description="Label showing that we are in the future">時光旅行：未來</string>
     <string name="time_travel_stopped" translation_description="Label showing rate of travel through time">時光旅行停滯</string>
-    <string name="time_travel_second_speed" translation_description="Label showing rate of travel through time">時光快轉，速度：1 秒/秒</string>
+    <string name="time_travel_second_speed" translation_description="Label showing rate of travel through time.  The symbol means greater than.">時光快轉，速度：1 秒/秒</string>
     <string name="time_travel_minute_speed" translation_description="Label showing rate of travel through time">時光快轉，速度：1 分鐘/秒</string>
     <string name="time_travel_10minute_speed" translation_description="Label showing rate of travel through time">時光快轉，速度：10 分鐘/秒</string>
     <string name="time_travel_hour_speed" translation_description="Label showing rate of travel through time">時光快轉，速度：1 小時/秒</string>
@@ -81,87 +82,95 @@
     <string name="time_travel_hour_speed_back" translation_description="Label showing rate of travel through time">時光倒轉，速度：1 小時/秒</string>
     <string name="time_travel_day_speed_back" translation_description="Label showing rate of travel through time">時光倒轉，速度：1 天/秒</string>
     <string name="time_travel_week_speed_back" translation_description="Label showing rate of travel through time">時光倒轉，速度：1 週/秒</string>
-    <string name="time_travel_next_sunset">下次傍晚日落</string>
-    <string name="time_travel_next_sunrise">次日日出</string>
-    <string name="time_travel_next_fullmoon">下次月圓</string>
-    <string name="time_travel_mercury_transit_2016">2016 年 5 月 9 日的水星凌日</string>
-    <string name="time_travel_solar_eclipse_2024">2024 年 4 月 8 日的日食</string>
-    <string name="time_travel_apollo_11">阿波羅 11 號登月</string>
-    <string name="time_travel_jupiter_saturn_2020">2020 年木星土星合</string>
-    <string name="use_sound_effects" translation_description="A preferences menu label">啟用音效</string>
-    <string name="menu_gallery">圖庫</string>
-    <string name="gallery_image_search_btn">搜尋星空</string>
-    <string name="gallery_image_back_btn">返回圖庫</string>
-    <string name="hubble_image_gallery_title">星空圖哈伯望遠鏡圖庫</string>
-    <string name="hubble_image">哈伯望遠鏡影像</string>
+
+    <string name="time_travel_next_sunset" translation_description="Name of a popular astronomical event in the time travel picker">下次傍晚日落</string>
+    <string name="time_travel_next_sunrise" translation_description="Name of a popular astronomical event in the time travel picker">次日日出</string>
+    <string name="time_travel_next_fullmoon" translation_description="Name of a popular astronomical event in the time travel picker">下次月圓</string>
+    <string name="time_travel_mercury_transit_2016" translation_description="Name of an astronomical event in the time travel picker. A Mercury transit is when Mercury passes across the face of the Sun as seen from Earth. Keep the date format suitable for your locale.">2016 年 5 月 9 日的水星凌日</string>
+    <string name="time_travel_solar_eclipse_2024" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">2024 年 4 月 8 日的日食</string>
+    <string name="time_travel_apollo_11" translation_description="Name of an astronomical event in the time travel picker: the first crewed Moon landing in 1969">阿波羅 11 號登月</string>
+    <string name="time_travel_jupiter_saturn_2020" translation_description="Name of an astronomical event in the time travel picker. A conjunction is when two planets appear very close together in the sky.">2020 年木星土星合</string>
+    <string name="use_sound_effects" translation_description="A preferences menu label for enabling sound effects">啟用音效</string>
+
+    <string name="menu_gallery" translation_description="Menu item label to open the image gallery">圖庫</string>
+    <string name="gallery_image_search_btn" translation_description="Button in the gallery to locate the displayed object on the sky map">搜尋星空</string>
+    <string name="gallery_image_back_btn" translation_description="Button to return to the gallery from a single image view">返回圖庫</string>
+    <string name="hubble_image_gallery_title" translation_description="Title of the image gallery screen">星空圖哈伯望遠鏡圖庫</string>
+    <string name="hubble_image" translation_description="Label or caption for a Hubble Space Telescope image in the gallery">哈伯望遠鏡影像</string>
     <string name="search_overlay_title" translation_description="title for search overlay">將手機指向箭頭方向</string>
     <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">正在尋找：</string>
-    <string name="sun_wont_set_message">您目前的位置未來 24 小時之內看不到日落。</string>
+    <string name="sun_wont_set_message" translation_description="Message shown when the sun will not set during the next 24 hours (polar day / midnight sun)">您目前的位置未來 24 小時之內看不到日落。</string>
+
     <string name="missing_label" translation_description="Used to indicate to the developer that they've added a resource with no translation.">待翻譯</string>
-    <string name="menu_tos">服務條款</string>
-    <string name="menu_diagnostics">診斷</string>
-    <string name="north_pole">北極</string>
-    <string name="south_pole">南極</string>
-    <string name="enable_analytics">傳送使用統計資料</string>
-    <string name="enable_analytics_desc">傳送匿名資料給 Google Analytics 以改善星空圖</string>
-    <string name="no_sensor_warning">你的裝置沒有方位感應器 - 自動模式可能無法運作</string>
-    <string name="warning_dialog_title">壞消息！</string>
-    <string name="missing_sensor_dialog_text">\n
+
+    <string name="menu_tos" translation_description="Menu item label to view the Terms of Service">服務條款</string>
+    <string name="menu_diagnostics" translation_description="Menu item label to open the technical diagnostics screen">診斷</string>
+
+    <string name="north_pole" translation_description="Short abbreviation for the North Celestial Pole, displayed as a label on the sky map grid. Translators: use the standard abbreviation in your language (e.g. NP in English, PN in French).">北極</string>
+    <string name="south_pole" translation_description="Short abbreviation for the South Celestial Pole, displayed as a label on the sky map grid. Translators: use the standard abbreviation in your language (e.g. SP in English, PS in French).">南極</string>
+
+    <string name="enable_analytics" translation_description="Preference label to opt in to sending anonymous usage statistics">傳送使用統計資料</string>
+    <string name="enable_analytics_desc" translation_description="Description/summary for the usage statistics preference">傳送匿名資料給 Google Analytics 以改善星空圖</string>
+
+    <string name="no_sensor_warning" translation_description="Warning shown when required orientation sensors are not detected on the device">你的裝置沒有方位感應器 - 自動模式可能無法運作</string>
+    <string name="warning_dialog_title" translation_description="Title of a warning dialog shown when something is wrong, e.g. a missing sensor">壞消息！</string>
+    <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">\n
         您的裝置可能不具備 Sky Map 所需的感應器之一。\n\n
         Sky Map 需要內建羅盤與加速計才能自動顯示裝置所指向的星空。您的裝置回報其中一個感應器不存在。
         好消息是有些裝置的回報不完全正確，例如某些 Moto E 型號手機，其實具備羅盤功能卻回報沒有。\n\n
 
         缺少需要的感應器，自動模式將無法運作。但您仍然可以使用手指在手動模式下拖曳、旋轉、縮放星空圖。
     </string>
-    <string name="do_not_show_again">不要再顯示這個訊息</string>
-    <string name="title_activity_diagnostic">診斷</string>
-    <string name="play_services_error">提醒：Google Play 服務有問題 - 自動定位可能無法運作</string>
-    <string name="sensor_absent">不存在</string>
-    <string name="sensor_accuracy_unknown">精確度：未知</string>
-    <string name="sensor_accuracy_unreliable">精確度：不可靠</string>
-    <string name="sensor_accuracy_low">精確度：低</string>
-    <string name="sensor_accuracy_medium">精確度：中</string>
-    <string name="sensor_accuracy_high">精確度：高</string>
-    <string name="sensor_accuracy_nocontact">精確度：未接觸</string>
-    <string name="diagnostics_activity_general_heading">一般</string>
-    <string name="diagnostics_activity_phone">裝置</string>
-    <string name="diagnostics_activity_android_version">Android 版本</string>
-    <string name="diagnostics_activity_sky_map_version">Sky Map 版本</string>
-    <string name="diagnostics_activity_sensors_heading">感應器</string>
-    <string name="diagnostics_activity_compass">羅盤</string>
-    <string name="diagnostics_activity_accelerometer">加速計</string>
-    <string name="diagnostics_activity_rotation_vector">旋轉</string>
-    <string name="diagnostics_activity_gyroscope">陀螺儀</string>
-    <string name="diagnostics_activity_light_level">光度</string>
-    <string name="diagnostics_activity_location_and_time_heading">位置與時間</string>
-    <string name="diagnostics_activity_gps">GPS</string>
-    <string name="diagnostics_activity_location">位置 (緯度, 經度)</string>
-    <string name="diagnostics_activity_pointing_ra_dec">指向快照</string>
-    <string name="diagnostics_activity_magnetic_correction">地磁修正</string>
-    <string name="diagnostics_activity_local_datetime">本地時間</string>
-    <string name="diagnostics_activity_universal_time">全球標準時間</string>
-    <string name="diagnostics_activity_network_heading">網路</string>
-    <string name="diagnostics_activity_connection">連線</string>
-    <string name="diagnostics_activity_rotation_matrix">旋轉矩陣</string>
-    <string name="enabled">已啟用</string>
-    <string name="disabled">已停用</string>
-    <string name="permission_disabled">權限已停用</string>
-    <string name="no_gps">無 GPS</string>
-    <string name="connected">已連線</string>
-    <string name="disconnected">已斷線</string>
-    <string name="wifi">" (無線網路)"</string>
-    <string name="cell_network">" (電信網路)"</string>
-    <string name="menu_calibrate">校正</string>
-    <string name="compass_calibration_activity_heading_compass">羅盤 -</string>
-    <string name="compass_calibration_activity_do_not_show_this_again">不要再顯示這個訊息</string>
-    <string name="compass_calibration_activity_warning">您的羅盤需要校正</string>
-    <string name="sensor_reverse_preference_title">磁場反向</string>
-    <string name="sensor_reverse_preference_summary">修正手機感應器錯誤 - 需重新開機</string>
-    <string name="whats_new_dialog_title">最新消息</string>
-    <string name="disable_gyro_preference_title">停用陀螺儀</string>
-    <string name="disable_gyro_preference_summary">不是所有裝置都有陀螺儀 - 如果您的裝置具備陀螺儀，清除這個核取方塊以啟用它，可以得到更好的效果。反之，如果您的裝置沒有陀螺儀卻取消停用，Sky Map 可能無法運作。</string>
-    <string name="rotate_horizon_preference_title">地平線旋轉</string>
-    <string name="rotate_horizon_preference_summary">地平線旋轉九十度（給橫幅式螢幕裝置，例如智慧眼鏡）</string>
-    <string name="show_object_info_auto_mode_title">自動模式下的資訊卡</string>
-    <string name="show_object_info_auto_mode_summary">在自動（感測器）模式下點擊天體時也顯示資訊卡</string>
-</resources>
+    <string name="do_not_show_again" translation_description="Checkbox or button label to suppress future display of a warning dialog">不要再顯示這個訊息</string>
+    <string name="title_activity_diagnostic" translation_description="Title bar text for the Diagnostics activity/screen">診斷</string>
+    <string name="play_services_error" translation_description="Warning shown in the diagnostics screen when Google Play Services has an error that may affect automatic location">提醒：Google Play 服務有問題 - 自動定位可能無法運作</string>
+    <string name="sensor_absent" translation_description="Sensor status shown in diagnostics when the sensor is not present on the device">不存在</string>
+    <string name="sensor_accuracy_unknown" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">精確度：未知</string>
+    <string name="sensor_accuracy_unreliable" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">精確度：不可靠</string>
+    <string name="sensor_accuracy_low" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">精確度：低</string>
+    <string name="sensor_accuracy_medium" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">精確度：中</string>
+    <string name="sensor_accuracy_high" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">精確度：高</string>
+    <string name="sensor_accuracy_nocontact" translation_description="Sensor accuracy level shown when the sensor has no contact (e.g. heart-rate sensor lifted from skin) — unlikely to appear in Sky Map but included for completeness">精確度：未接觸</string>
+    <string name="diagnostics_activity_general_heading" translation_description="Section heading in the Diagnostics screen for general device information">一般</string>
+    <string name="diagnostics_activity_phone" translation_description="Row label in the Diagnostics screen for the device model name">裝置</string>
+    <string name="diagnostics_activity_android_version" translation_description="Row label in the Diagnostics screen for the Android OS version">Android 版本</string>
+    <string name="diagnostics_activity_sky_map_version" translation_description="Row label in the Diagnostics screen for the Sky Map app version">Sky Map 版本</string>
+    <string name="diagnostics_activity_sensors_heading" translation_description="Section heading in the Diagnostics screen for sensor readings">感應器</string>
+    <string name="diagnostics_activity_compass" translation_description="Row label in the Diagnostics screen for the compass (magnetic field) sensor">羅盤</string>
+    <string name="diagnostics_activity_accelerometer" translation_description="Row label in the Diagnostics screen for the accelerometer sensor">加速計</string>
+    <string name="diagnostics_activity_rotation_vector" translation_description="Row label in the Diagnostics screen for the rotation vector (combined orientation) sensor">旋轉</string>
+    <string name="diagnostics_activity_gyroscope" translation_description="Row label in the Diagnostics screen for the gyroscope sensor">陀螺儀</string>
+    <string name="diagnostics_activity_light_level" translation_description="Row label in the Diagnostics screen for the ambient light sensor reading">光度</string>
+    <string name="diagnostics_activity_location_and_time_heading" translation_description="Section heading in the Diagnostics screen for location and time information">位置與時間</string>
+    <string name="diagnostics_activity_gps" translation_description="Row label in the Diagnostics screen for the GPS provider status">GPS</string>
+    <string name="diagnostics_activity_location" translation_description="Row label in the Diagnostics screen showing the current latitude and longitude">位置 (緯度, 經度)</string>
+    <string name="diagnostics_activity_pointing_ra_dec" translation_description="Row label in the Diagnostics screen showing a snapshot of where the phone is currently pointing in the sky (Right Ascension and Declination)">指向快照</string>
+    <string name="diagnostics_activity_magnetic_correction" translation_description="Row label in the Diagnostics screen showing whether magnetic declination correction is applied">地磁修正</string>
+    <string name="diagnostics_activity_local_datetime" translation_description="Row label in the Diagnostics screen for the local date and time">本地時間</string>
+    <string name="diagnostics_activity_universal_time" translation_description="Row label in the Diagnostics screen for the UTC/universal date and time">全球標準時間</string>
+    <string name="diagnostics_activity_network_heading" translation_description="Section heading in the Diagnostics screen for network connectivity information">網路</string>
+    <string name="diagnostics_activity_connection" translation_description="Row label in the Diagnostics screen for the current network connection status">連線</string>
+    <string name="diagnostics_activity_rotation_matrix" translation_description="Row label in the Diagnostics screen showing the raw device rotation matrix used for orientation">旋轉矩陣</string>
+    <string name="enabled" translation_description="Generic status value meaning a feature or sensor is enabled/active">已啟用</string>
+    <string name="disabled" translation_description="Generic status value meaning a feature or sensor is disabled/inactive">已停用</string>
+    <string name="permission_disabled" translation_description="Status value shown when a feature is unavailable because its permission was not granted">權限已停用</string>
+    <string name="no_gps" translation_description="Status value shown in diagnostics when no GPS provider is available">無 GPS</string>
+    <string name="connected" translation_description="Network status value shown when the device has an active network connection">已連線</string>
+    <string name="disconnected" translation_description="Network status value shown when the device has no network connection">已斷線</string>
+    <string name="wifi" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (wifi)\'). Note the leading space.">" (無線網路)"</string>
+    <string name="cell_network" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (cell)\'). Note the leading space.">" (電信網路)"</string>
+    <string name="menu_calibrate" translation_description="Menu item label to open the compass calibration screen">校正</string>
+    <string name="compass_calibration_activity_heading_compass" translation_description="Static label in the compass calibration screen placed inline to the left of the live compass accuracy value (e.g. displayed as \'Compass - Accuracy: High\')">羅盤 -</string>
+    <string name="compass_calibration_activity_do_not_show_this_again" translation_description="Checkbox label in the compass calibration dialog to suppress future automatic appearances">不要再顯示這個訊息</string>
+    <string name="compass_calibration_activity_warning" translation_description="Heading/reason text shown in the compass calibration dialog when it opens automatically due to low accuracy">您的羅盤需要校正</string>
+    <string name="sensor_reverse_preference_title" translation_description="Preference title for reversing the magnetic Z-axis sensor reading, a fix for certain phones with incorrectly implemented sensors">磁場反向</string>
+    <string name="sensor_reverse_preference_summary" translation_description="Summary for the Reverse Magnetic Z preference">修正手機感應器錯誤 - 需重新開機</string>
+    <string name="whats_new_dialog_title" translation_description="Title of the dialog shown on first launch after an update, listing new features">最新消息</string>
+    <string name="disable_gyro_preference_title" translation_description="Preference title for disabling the gyroscope sensor">停用陀螺儀</string>
+    <string name="disable_gyro_preference_summary" translation_description="Explanation of the disable gyroscope preference and when to use it">不是所有裝置都有陀螺儀 - 如果您的裝置具備陀螺儀，清除這個核取方塊以啟用它，可以得到更好的效果。反之，如果您的裝置沒有陀螺儀卻取消停用，Sky Map 可能無法運作。</string>
+    <string name="rotate_horizon_preference_title" translation_description="Preference title for choosing the view/pointing direction mode">地平線旋轉</string>
+    <string name="rotate_horizon_preference_summary" translation_description="Explanation of the view direction preference, covering both landscape rotation and pointer modes">地平線旋轉九十度（給橫幅式螢幕裝置，例如智慧眼鏡）</string>
+
+    <string name="show_object_info_auto_mode_title" translation_description="Preference title for enabling info cards in auto/sensor mode">自動模式下的資訊卡</string>
+    <string name="show_object_info_auto_mode_summary" translation_description="Preference summary for auto mode info cards">在自動（感測器）模式下點擊天體時也顯示資訊卡</string>
+    </resources>

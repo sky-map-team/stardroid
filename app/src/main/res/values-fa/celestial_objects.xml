@@ -1,5 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <resources>
+    <!-- Constellations -->
     <string name="andromeda" translation_description="Name of the Andromeda constellation">زن زنجیر شده</string>
     <string name="aquarius" translation_description="Name of the Aquarius constellation">دلو</string>
     <string name="aquila" translation_description="Name of the Aquila constellation">عقاب</string>
@@ -97,17 +98,21 @@
     <string name="triangulum_australe" translation_description="Name of the Triangulum Australe constellation">مثلث جنوبی</string>
     <string name="volans" translation_description="Name of the Volans constellation">ماهی پرنده</string>
     <string name="vulpecula" translation_description="Name of the Vulpecula constellation">روباهک</string>
-    <string name="sun">خورشید</string>
-    <string name="moon">ماه</string>
-    <string name="mercury">عطارد</string>
-    <string name="venus">زهره</string>
-    <string name="earth">زمین</string>
-    <string name="mars">مریخ</string>
-    <string name="jupiter">مشتری</string>
-    <string name="saturn">زحل</string>
-    <string name="uranus">اورانوس</string>
-    <string name="neptune">نپتون</string>
-    <string name="pluto">پلوتون</string>
+
+    <!-- Major solar system objects -->
+    <string name="sun" translation_description="Name of the Sun">خورشید</string>
+    <string name="moon" translation_description="Name of the Earth's Moon">ماه</string>
+    <string name="mercury" translation_description="Name of the planet Mercury">عطارد</string>
+    <string name="venus" translation_description="Name of the planet Venus">زهره</string>
+    <string name="earth" translation_description="Name of the planet Earth">زمین</string>
+    <string name="mars" translation_description="Name of the planet Mars">مریخ</string>
+    <string name="jupiter" translation_description="Name of the planet Jupiter">مشتری</string>
+    <string name="saturn" translation_description="Name of the planet Saturn">زحل</string>
+    <string name="uranus" translation_description="Name of the planet Uranus">اورانوس</string>
+    <string name="neptune" translation_description="Name of the planet Neptune">نپتون</string>
+    <string name="pluto" translation_description="Name of the dwarf planet Pluto">پلوتون</string>
+
+    <!-- Gallery objects -->
     <string name="crab_nebula" translation_description="hubble object">سحابی خرچنگ</string>
     <string name="eagle_nebula" translation_description="hubble object">سحابی عقاب</string>
     <string name="andromeda_galaxy" translation_description="hubble object">کهکشان آندرومدا</string>
@@ -125,6 +130,9 @@
     <string name="hubble_deep_field" translation_description="hubble object">زمینه ژرف هابل</string>
     <string name="hdf" translation_description="hubble object">زمینه ژرف هابل</string>
     <string name="rho_oph" translation_description="hubble object">رو مارافسای</string>
+
+
+    <!-- Stars -->
     <string name="sirius" translation_description="Name of the Star Sirius">شعرا</string>
     <string name="canopus" translation_description="Name of the Star Canopus">سهیل</string>
     <string name="arcturus" translation_description="Name of the Star Arcturus">ژوبین‌دار</string>
@@ -196,6 +204,8 @@
     <string name="alpha_centauri" translation_description="Name of the star Alpha Centauri">آلفا قنطورس</string>
     <string name="rigil_kent" translation_description="Name of the star Rigil Kent">آلفا قنطورس</string>
     <string name="e_lyrae" translation_description="Name of the star ε Lyrae">اپسیلون شلیاق</string>
+
+    <!-- Messier objects etc -->
     <string name="m1" translation_description="Name of the Messier object M1">M1</string>
     <string name="m2" translation_description="Name of the Messier object M2">M2</string>
     <string name="m3" translation_description="Name of the Messier object M3">M3</string>
@@ -314,8 +324,12 @@
     <string name="beehive_cluster" translation_description="Name of the Messier object Beehive Cluster">خوشه کندوی عسل</string>
     <string name="praesepe" translation_description="Name of the Messier object Praesepe">خوشه کندوی عسل</string>
     <string name="seven_sisters" translation_description="Name of the Messier object Seven Sisters">خوشه پروین (ثریا)</string>
+
+    <!-- Manmade objects -->
     <string name="space_station" translation_description="Name of the Internation Space Station">ایستگاه فضایی بین‌المللی</string>
     <string name="space_shuttle" translation_description="Name of the Space Shuttle">شاتل فضایی</string>
+
+    <!-- Meteors -->
     <string name="leonids" translation_description="Meteor Shower">بارش شهابی اسدی</string>
     <string name="geminids" translation_description="Meteor Shower">بارش شهابی جوزایی</string>
     <string name="quadrantids" translation_description="Meteor Shower">بارش شهابی ربعی</string>
@@ -326,4 +340,5 @@
     <string name="orionids" translation_description="Meteor Shower">بارش شهابی جباری</string>
     <string name="puppidvelids" translation_description="Meteor Shower">بارش شهابی پی‌کشتیدمی</string>
     <string name="ursids" translation_description="Meteor Shower">بارش شهابی دبی</string>
-</resources>
+
+    </resources>

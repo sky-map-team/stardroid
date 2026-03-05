@@ -1,78 +1,81 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Please add  translation_description="" attributes to Strings to assist the translators. --><resources>
     <string name="app_name" translation_description="Application Title">Skyマップ</string>
-    <string name="menu_settings">設定</string>
-    <string name="menu_search">検索</string>
-    <string name="cancel">キャンセル</string>
+    <string name="menu_settings" translation_description="Settings menu item in the options menu">設定</string>
+    <string name="menu_search" translation_description="Search menu item in the options menu">検索</string>
+    <string name="cancel" translation_description="Generic cancel button label used in dialogs">キャンセル</string>
     <string name="set" translation_description="Button label. Set the date to the given value">設定</string>
-    <string name="go">Go!</string>
-    <string name="location_prefs">位置の設定</string>
-    <string name="force_gps_pref">常にGPSを使用</string>
+    <string name="go" translation_description="Button to start navigating the sky map toward a searched object">Go!</string>
+    <string name="location_prefs" translation_description="Preferences category heading for location-related settings">位置の設定</string>
+    <string name="force_gps_pref" translation_description="Preference label: force GPS use even when network location is available">常にGPSを使用</string>
     <string name="force_gps_pref_hint" translation_description="this string continues from \'Always use GPS\'">ネットワーク位置情報の設定よりも優先</string>
-    <string name="no_use_gps_pref">手動で位置を設定</string>
-    <string name="no_use_gps_pref_hint">地名か緯度/経度で入力</string>
-    <string name="location_placename">地名</string>
+    <string name="no_use_gps_pref" translation_description="Preference label: choose to enter location by hand instead of using GPS or phone location">手動で位置を設定</string>
+    <string name="no_use_gps_pref_hint" translation_description="Hint text beneath the \'Set location manually\' preference">地名か緯度/経度で入力</string>
+    <string name="location_placename" translation_description="Label for the place-name text field in manual location settings">地名</string>
     <string name="location_placename_hint" translation_description="An example address.  Translators: please pick an address suitable for your country.  If it has an astronomical connection (e.g. the address of an observatory or famous astronomer) then that would be even better.">例: 東京都三鷹市大沢</string>
-    <string name="location_lat_pref">緯度</string>
-    <string name="location_long_pref">経度</string>
-    <string name="degrees" translation_description="angular degrees">度数</string>
-    <string name="preferences">設定</string>
-    <string name="location_offer_to_enable">自動位置機能が無効です。有効にしますか？</string>
-    <string name="location_offer_to_enable_gps_title">自動位置機能が無効です</string>
-    <string name="location_set_auto">位置を%1$sから%2$sに設定</string>
-    <string name="location_unable_to_geocode">現在地がわかりません。ネットワークが利用できない可能性があります。</string>
+    <string name="location_lat_pref" translation_description="Label for the latitude input field in manual location settings">緯度</string>
+    <string name="location_long_pref" translation_description="Label for the longitude input field in manual location settings">経度</string>
+    <string name="degrees" translation_description="angular degrees - used for latitude and longitude">度数</string>
+    <string name="preferences" translation_description="Provider-name label used internally when a location is set from preferences (not shown directly to the user as a UI label - does not require a translation)">設定</string>
+    <string name="location_offer_to_enable" translation_description="Dialog message asking whether to enable automatic location">自動位置機能が無効です。有効にしますか？</string>
+    <string name="location_offer_to_enable_gps_title" translation_description="Title of dialog shown when automatic location is disabled">自動位置機能が無効です</string>
+    <!-- TODO: many translations require two placeholders. Once all translations brought up to date we can clean this up -->
+    <string name="location_set_auto" translation_description="Toast message when automatic location is acquired. %1$s is the provider name (e.g. GPS), %2$s is the place name or coordinates">位置を%1$sから%2$sに設定</string>
+    <string name="location_unable_to_geocode" translation_description="Error message when converting a place name to coordinates (geocoding) fails, possibly due to no network">現在地がわかりません。ネットワークが利用できない可能性があります。</string>
     <string name="location_not_found_title" translation_description="dialog box title when location not found">検索結果</string>
     <string name="location_not_found" translation_description="dialog message when placename not found">%sが見つかりません</string>
-    <string name="location_long_lat">経度: %1$s、緯度: %2$s</string>
-    <string name="location_place_found">場所が見つかりました。緯度: %1$f、経度: %2$f</string>
-    <string name="use_magnetic_correction">磁気補正機能を使用</string>
-    <string name="show_stars_pref">恒星</string>
-    <string name="show_constellations_pref">星座</string>
-    <string name="show_messier_objects_pref" translation_description="The celestial objects catalogued by Charles Messier">メシエ天体</string>
-    <string name="show_planets_pref">惑星</string>
-    <string name="show_grid_pref">赤経/赤緯グリッド</string>
-    <string name="show_horizon_pref">地平線</string>
+    <string name="location_long_lat" translation_description="Formatted display of longitude and latitude. %1$.2f is longitude, %2$.2f is latitude">経度: %1$s、緯度: %2$s</string>
+    <string name="location_place_found" translation_description="Status message when a place name was successfully looked up. %1$f is latitude, %2$f is longitude">場所が見つかりました。緯度: %1$f、経度: %2$f</string>
+    <string name="use_magnetic_correction" translation_description="Preference label: apply magnetic declination correction so the compass points to true north instead of magnetic north">磁気補正機能を使用</string>
+    <string name="show_stars_pref" translation_description="Label for the stars layer on the sky map (shows in the search results)">恒星</string>
+    <string name="show_constellations_pref" translation_description="Label for the constellation lines and labels layer (shows in the search results)">星座</string>
+    <string name="show_messier_objects_pref" translation_description="The celestial objects catalogued by Charles Messier (shows in the search results)">メシエ天体</string>
+    <string name="show_planets_pref" translation_description="Label for the solar system layer (planets, sun, moon)  (shows in the search results)">惑星</string>
+    <string name="show_grid_pref" translation_description="Label for the Right Ascension / Declination grid overlay  (shows in the search results)">赤経/赤緯グリッド</string>
+    <string name="show_horizon_pref" translation_description="Preference toggle label for the horizon line layer">地平線</string>
     <string name="show_sky_gradient" translation_description="This is a shading of the color of the sky used for effect">空のグラデーション</string>
-    <string name="show_meteors_pref">流星群</string>
-    <string name="show_comet_layer_pref">彗星</string>
+    <string name="show_meteors_pref" translation_description="Label for the meteor shower layer (shows in the search results)">流星群</string>
+    <string name="show_comet_layer_pref" translation_description="Preference toggle label for the comets layer">彗星</string>
     <string name="show_satellite_layer_pref" translation_description="The layer for satellites">衛星</string>
-    <string name="sensor_prefs">センサー設定</string>
-    <string name="ecliptic">黄道</string>
-    <string name="malformed_loc_error">緯度や経度には数値を設定してください。</string>
+    <string name="sensor_prefs" translation_description="Preferences category heading for sensor settings, intended for advanced/expert users">センサー設定</string>
+    <string name="ecliptic" translation_description="Label for the ecliptic layer — the apparent annual path of the Sun across the sky">黄道</string>
+    <string name="malformed_loc_error" translation_description="Error message when a non-numeric value is entered for latitude or longitude">緯度や経度には数値を設定してください。</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">同意する</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">同意しない</string>
-    <string name="dialog_ok_button">OK</string>
+    <string name="dialog_ok_button" translation_description="Generic OK/confirm button label for dialogs">OK</string>
     <string name="menu_help" translation_description="menu item to show \'Help\' box">ヘルプ</string>
-    <string name="help_dialog_title">Skyマップのヘルプ</string>
-    <string name="set_manual">手動モードに切り替え中</string>
-    <string name="set_auto">自動モードに切り替え中</string>
-    <string name="menu_toggle_dim">夜間モードの切り替え</string>
-    <string name="zenith">天頂</string>
-    <string name="nadir">天底</string>
-    <string name="north">北</string>
-    <string name="east">東</string>
-    <string name="west">西</string>
-    <string name="south">南</string>
-    <string name="search_label">天体を検索</string>
+    <string name="help_dialog_title" translation_description="Title of the help dialog">Skyマップのヘルプ</string>
+    <string name="set_manual" translation_description="Toast message shown when the user switches to manual (touch-drag) mode">手動モードに切り替え中</string>
+    <string name="set_auto" translation_description="Toast message shown when the user switches to automatic (sensor/gyroscope) mode">自動モードに切り替え中</string>
+    <string name="menu_toggle_dim" translation_description="Menu item to toggle night mode (red tint that preserves night vision)">夜間モードの切り替え</string>
+    <string name="zenith" translation_description="Label for the zenith point (directly overhead) shown on the sky map. Displayed in capitals.">天頂</string>
+    <string name="nadir" translation_description="Label for the nadir point (directly below) shown on the sky map. Displayed in capitals.">天底</string>
+    <string name="north" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">北</string>
+    <string name="east" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">東</string>
+    <string name="west" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">西</string>
+    <string name="south" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">南</string>
+    <string name="search_label" translation_description="Hint/label for the search bar in the search activity">天体を検索</string>
     <string name="search_hint" translation_description="an example search target">例: 火星</string>
-    <string name="no_search_title">結果なし</string>
-    <string name="no_search_results_text2">検索結果が見つかりません。おそらくそれは現在見えないのでしょう。
+    <string name="no_search_title" translation_description="Dialog title shown when a sky search returns no results">結果なし</string>
+    <!-- Hopefully this is a temporary measure until we can fix the search engine -->
+    <string name="no_search_results_text2" translation_description="Alternative message shown when a search returns no results, suggesting the object may not currently be visible">検索結果が見つかりません。おそらくそれは現在見えないのでしょう。
         </string>
-    <string name="many_search_results_title">もしかして</string>
+    <string name="many_search_results_title" translation_description="Dialog title shown when a search returns multiple possible matches">もしかして</string>
     <string name="other" translation_description="A preference category (ie preferences that don't belong in any other category)">その他</string>
-    <string name="menu_time">タイムトラベル</string>
-    <string name="time_travel_start_message_alt">%sにタイムトラベル中...</string>
-    <string name="time_travel_close_message">現在へ...</string>
+    <string name="menu_time" translation_description="Menu item label to open the time travel feature">タイムトラベル</string>
+    <string name="time_travel_start_message_alt" translation_description="Toast message when time travel starts toward a named destination. %s is the event or destination name">%sにタイムトラベル中...</string>
+    <string name="time_travel_close_message" translation_description="Toast message shown when the user exits time travel and returns to the present">現在へ...</string>
+    <!--  -->
     <string name="popular_dates_prompt" translation_description="Label for a list of dates the user can choose from">人気の日付</string>
-    <string name="custom_date_prompt" translation_description="Label telling the user to manually specify a data">または表示する日付を手動で選択</string>
-    <string name="change_date_prompt">日付の変更</string>
-    <string name="change_time_prompt">時刻の変更</string>
-    <string name="now_visiting" translation_description="used in time travel dialog to tell the user what time they are visiting, time formatted as yyyy.mm.dd at hh.mm.ss + timezone">
+    <string name="custom_date_prompt" translation_description="Label telling the user to manually specify a date">または表示する日付を手動で選択</string>
+    <string name="change_date_prompt" translation_description="Button label to open the date picker in the time travel dialog">日付の変更</string>
+    <string name="change_time_prompt" translation_description="Button label to open the time picker in the time travel dialog">時刻の変更</string>
+    <string name="now_visiting" translation_description="used in time travel dialog to show the destination date/time the user has selected, time formatted as yyyy.mm.dd at hh.mm.ss + timezone">
       現在表示中: %s</string>
     <string name="time_travel_label_past" translation_description="Label showing that we are in the past">タイムトラベル: 過去</string>
     <string name="time_travel_label_future" translation_description="Label showing that we are in the future">タイムトラベル: 未来</string>
     <string name="time_travel_stopped" translation_description="Label showing rate of travel through time">タイムトラベル停止中</string>
-    <string name="time_travel_second_speed" translation_description="Label showing rate of travel through time">1秒/秒で時間進行中</string>
+    <string name="time_travel_second_speed" translation_description="Label showing rate of travel through time.  The symbol means greater than.">1秒/秒で時間進行中</string>
     <string name="time_travel_minute_speed" translation_description="Label showing rate of travel through time">1分/秒で時間進行中</string>
     <string name="time_travel_10minute_speed" translation_description="Label showing rate of travel through time">10分/秒で時間進行中</string>
     <string name="time_travel_hour_speed" translation_description="Label showing rate of travel through time">1時間/秒で時間進行中</string>
@@ -84,32 +87,39 @@
     <string name="time_travel_hour_speed_back" translation_description="Label showing rate of travel through time">1時間/秒で時間逆行中</string>
     <string name="time_travel_day_speed_back" translation_description="Label showing rate of travel through time">1日/秒で時間逆行中</string>
     <string name="time_travel_week_speed_back" translation_description="Label showing rate of travel through time">1週/秒で時間逆行中</string>
-    <string name="time_travel_next_sunset">次の日没</string>
-    <string name="time_travel_next_sunrise">次の日の出</string>
-    <string name="time_travel_next_fullmoon">次の満月</string>
-    <string name="time_travel_mercury_transit_2016">2016年5月9日の水星太陽面通過</string>
-    <string name="time_travel_solar_eclipse_2024">2024年4月8日の日食</string>
-    <string name="time_travel_apollo_11">アポロ11号の月面着陸</string>
-    <string name="time_travel_jupiter_saturn_2020">木星と土星の結合</string>
-    <string name="use_sound_effects" translation_description="A preferences menu label">音をONにする</string>
-    <string name="menu_gallery">ギャラリー</string>
-    <string name="gallery_image_search_btn">Skyで検索</string>
-    <string name="gallery_image_back_btn">ギャラリーに戻る</string>
-    <string name="hubble_image_gallery_title">Skyマップのハッブルギャラリー</string>
-    <string name="hubble_image">ハッブル画像</string>
+
+    <string name="time_travel_next_sunset" translation_description="Name of a popular astronomical event in the time travel picker">次の日没</string>
+    <string name="time_travel_next_sunrise" translation_description="Name of a popular astronomical event in the time travel picker">次の日の出</string>
+    <string name="time_travel_next_fullmoon" translation_description="Name of a popular astronomical event in the time travel picker">次の満月</string>
+    <string name="time_travel_mercury_transit_2016" translation_description="Name of an astronomical event in the time travel picker. A Mercury transit is when Mercury passes across the face of the Sun as seen from Earth. Keep the date format suitable for your locale.">2016年5月9日の水星太陽面通過</string>
+    <string name="time_travel_solar_eclipse_2024" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">2024年4月8日の日食</string>
+    <string name="time_travel_apollo_11" translation_description="Name of an astronomical event in the time travel picker: the first crewed Moon landing in 1969">アポロ11号の月面着陸</string>
+    <string name="time_travel_jupiter_saturn_2020" translation_description="Name of an astronomical event in the time travel picker. A conjunction is when two planets appear very close together in the sky.">木星と土星の結合</string>
+    <string name="use_sound_effects" translation_description="A preferences menu label for enabling sound effects">音をONにする</string>
+
+    <string name="menu_gallery" translation_description="Menu item label to open the image gallery">ギャラリー</string>
+    <string name="gallery_image_search_btn" translation_description="Button in the gallery to locate the displayed object on the sky map">Skyで検索</string>
+    <string name="gallery_image_back_btn" translation_description="Button to return to the gallery from a single image view">ギャラリーに戻る</string>
+    <string name="hubble_image_gallery_title" translation_description="Title of the image gallery screen">Skyマップのハッブルギャラリー</string>
+    <string name="hubble_image" translation_description="Label or caption for a Hubble Space Telescope image in the gallery">ハッブル画像</string>
     <string name="search_overlay_title" translation_description="title for search overlay">携帯を矢印の方に向けます</string>
     <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">探しています:</string>
-    <string name="sun_wont_set_message">この場所では今後24時間以内に太陽が沈むことはありません。</string>
+    <string name="sun_wont_set_message" translation_description="Message shown when the sun will not set during the next 24 hours (polar day / midnight sun)">この場所では今後24時間以内に太陽が沈むことはありません。</string>
+
     <string name="missing_label" translation_description="Used to indicate to the developer that they've added a resource with no translation.">MISSING_LBL</string>
-    <string name="menu_tos">利用規約</string>
-    <string name="menu_diagnostics">診断</string>
-    <string name="north_pole">北極点</string>
-    <string name="south_pole">南極点</string>
-    <string name="enable_analytics">利用統計の送信</string>
-    <string name="enable_analytics_desc">Google Analyticsに匿名データを送信することでSkyマップの改良に協力する</string>
-    <string name="no_sensor_warning">このデバイスは位置センサーが不足しています - 自動モードは動作しないかもしれません</string>
-    <string name="warning_dialog_title">悪いニュース！</string>
-    <string name="missing_sensor_dialog_text">\n
+
+    <string name="menu_tos" translation_description="Menu item label to view the Terms of Service">利用規約</string>
+    <string name="menu_diagnostics" translation_description="Menu item label to open the technical diagnostics screen">診断</string>
+
+    <string name="north_pole" translation_description="Short abbreviation for the North Celestial Pole, displayed as a label on the sky map grid. Translators: use the standard abbreviation in your language (e.g. NP in English, PN in French).">北極点</string>
+    <string name="south_pole" translation_description="Short abbreviation for the South Celestial Pole, displayed as a label on the sky map grid. Translators: use the standard abbreviation in your language (e.g. SP in English, PS in French).">南極点</string>
+
+    <string name="enable_analytics" translation_description="Preference label to opt in to sending anonymous usage statistics">利用統計の送信</string>
+    <string name="enable_analytics_desc" translation_description="Description/summary for the usage statistics preference">Google Analyticsに匿名データを送信することでSkyマップの改良に協力する</string>
+
+    <string name="no_sensor_warning" translation_description="Warning shown when required orientation sensors are not detected on the device">このデバイスは位置センサーが不足しています - 自動モードは動作しないかもしれません</string>
+    <string name="warning_dialog_title" translation_description="Title of a warning dialog shown when something is wrong, e.g. a missing sensor">悪いニュース！</string>
+    <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">\n
         残念ながらこのデバイスはSkyマップが必要としているセンサーの一つを
     持っていないようです。\n\n
         スマートフォンを向けた方向の空を表示するためには、
@@ -121,68 +131,69 @@
         しかし、それでも指で地図をドラッグ、回転、ピンチする手動モードでSkyマップを使うことは
         できます。
     </string>
-    <string name="do_not_show_again">このメッセージを再び表示しない</string>
-    <string name="title_activity_diagnostic">診断</string>
-    <string name="play_services_error">警告: Google Play Services エラー - 自動位置判定は動作しないかもしれません</string>
-    <string name="sensor_absent">Absent</string>
-    <string name="sensor_accuracy_unknown">精度: 不明</string>
-    <string name="sensor_accuracy_unreliable">精度: 信頼できない</string>
-    <string name="sensor_accuracy_low">精度: 低</string>
-    <string name="sensor_accuracy_medium">精度: 中</string>
-    <string name="sensor_accuracy_high">精度: 高</string>
-    <string name="sensor_accuracy_nocontact">精度: 接触なし</string>
-    <string name="diagnostics_activity_general_heading">一般</string>
-    <string name="diagnostics_activity_phone">デバイス</string>
-    <string name="diagnostics_activity_android_version">Androidバージョン</string>
-    <string name="diagnostics_activity_sky_map_version">Skyマップバージョン</string>
-    <string name="diagnostics_activity_sensors_heading">センサー</string>
-    <string name="diagnostics_activity_compass">コンパス</string>
-    <string name="diagnostics_activity_accelerometer">加速度計</string>
-    <string name="diagnostics_activity_rotation_vector">回転</string>
-    <string name="diagnostics_activity_gyroscope">ジャイロスコープ</string>
-    <string name="diagnostics_activity_light_level">明るさレベル</string>
-    <string name="diagnostics_activity_location_and_time_heading">位置と時刻</string>
-    <string name="diagnostics_activity_gps">GPS</string>
-    <string name="diagnostics_activity_location">位置(緯度,軽度)</string>
-    <string name="diagnostics_activity_pointing_ra_dec">位置スナップ</string>
-    <string name="diagnostics_activity_magnetic_correction">磁北修正</string>
-    <string name="diagnostics_activity_local_datetime">地方時</string>
-    <string name="diagnostics_activity_universal_time">世界時</string>
-    <string name="diagnostics_activity_network_heading">ネットワーク</string>
-    <string name="diagnostics_activity_connection">接続</string>
-    <string name="diagnostics_activity_rotation_matrix">回転マトリックス</string>
-    <string name="enabled">有効</string>
-    <string name="disabled">無効</string>
-    <string name="permission_disabled">権限がありません</string>
-    <string name="no_gps">GPSがありません</string>
-    <string name="connected">接続中</string>
-    <string name="disconnected">切断中</string>
-    <string name="wifi">" (WiFi)"</string>
-    <string name="cell_network">" (モバイル)"</string>
-    <string name="menu_calibrate">キャリブレーション</string>
-    <string name="compass_calibration_activity_heading_compass">コンパス -</string>
-    <string name="compass_calibration_activity_do_not_show_this_again">これを再び表示しない</string>
-    <string name="compass_calibration_activity_warning">コンパスはキャリブレーションが
+    <string name="do_not_show_again" translation_description="Checkbox or button label to suppress future display of a warning dialog">このメッセージを再び表示しない</string>
+    <string name="title_activity_diagnostic" translation_description="Title bar text for the Diagnostics activity/screen">診断</string>
+    <string name="play_services_error" translation_description="Warning shown in the diagnostics screen when Google Play Services has an error that may affect automatic location">警告: Google Play Services エラー - 自動位置判定は動作しないかもしれません</string>
+    <string name="sensor_absent" translation_description="Sensor status shown in diagnostics when the sensor is not present on the device">Absent</string>
+    <string name="sensor_accuracy_unknown" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">精度: 不明</string>
+    <string name="sensor_accuracy_unreliable" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">精度: 信頼できない</string>
+    <string name="sensor_accuracy_low" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">精度: 低</string>
+    <string name="sensor_accuracy_medium" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">精度: 中</string>
+    <string name="sensor_accuracy_high" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">精度: 高</string>
+    <string name="sensor_accuracy_nocontact" translation_description="Sensor accuracy level shown when the sensor has no contact (e.g. heart-rate sensor lifted from skin) — unlikely to appear in Sky Map but included for completeness">精度: 接触なし</string>
+    <string name="diagnostics_activity_general_heading" translation_description="Section heading in the Diagnostics screen for general device information">一般</string>
+    <string name="diagnostics_activity_phone" translation_description="Row label in the Diagnostics screen for the device model name">デバイス</string>
+    <string name="diagnostics_activity_android_version" translation_description="Row label in the Diagnostics screen for the Android OS version">Androidバージョン</string>
+    <string name="diagnostics_activity_sky_map_version" translation_description="Row label in the Diagnostics screen for the Sky Map app version">Skyマップバージョン</string>
+    <string name="diagnostics_activity_sensors_heading" translation_description="Section heading in the Diagnostics screen for sensor readings">センサー</string>
+    <string name="diagnostics_activity_compass" translation_description="Row label in the Diagnostics screen for the compass (magnetic field) sensor">コンパス</string>
+    <string name="diagnostics_activity_accelerometer" translation_description="Row label in the Diagnostics screen for the accelerometer sensor">加速度計</string>
+    <string name="diagnostics_activity_rotation_vector" translation_description="Row label in the Diagnostics screen for the rotation vector (combined orientation) sensor">回転</string>
+    <string name="diagnostics_activity_gyroscope" translation_description="Row label in the Diagnostics screen for the gyroscope sensor">ジャイロスコープ</string>
+    <string name="diagnostics_activity_light_level" translation_description="Row label in the Diagnostics screen for the ambient light sensor reading">明るさレベル</string>
+    <string name="diagnostics_activity_location_and_time_heading" translation_description="Section heading in the Diagnostics screen for location and time information">位置と時刻</string>
+    <string name="diagnostics_activity_gps" translation_description="Row label in the Diagnostics screen for the GPS provider status">GPS</string>
+    <string name="diagnostics_activity_location" translation_description="Row label in the Diagnostics screen showing the current latitude and longitude">位置(緯度,軽度)</string>
+    <string name="diagnostics_activity_pointing_ra_dec" translation_description="Row label in the Diagnostics screen showing a snapshot of where the phone is currently pointing in the sky (Right Ascension and Declination)">位置スナップ</string>
+    <string name="diagnostics_activity_magnetic_correction" translation_description="Row label in the Diagnostics screen showing whether magnetic declination correction is applied">磁北修正</string>
+    <string name="diagnostics_activity_local_datetime" translation_description="Row label in the Diagnostics screen for the local date and time">地方時</string>
+    <string name="diagnostics_activity_universal_time" translation_description="Row label in the Diagnostics screen for the UTC/universal date and time">世界時</string>
+    <string name="diagnostics_activity_network_heading" translation_description="Section heading in the Diagnostics screen for network connectivity information">ネットワーク</string>
+    <string name="diagnostics_activity_connection" translation_description="Row label in the Diagnostics screen for the current network connection status">接続</string>
+    <string name="diagnostics_activity_rotation_matrix" translation_description="Row label in the Diagnostics screen showing the raw device rotation matrix used for orientation">回転マトリックス</string>
+    <string name="enabled" translation_description="Generic status value meaning a feature or sensor is enabled/active">有効</string>
+    <string name="disabled" translation_description="Generic status value meaning a feature or sensor is disabled/inactive">無効</string>
+    <string name="permission_disabled" translation_description="Status value shown when a feature is unavailable because its permission was not granted">権限がありません</string>
+    <string name="no_gps" translation_description="Status value shown in diagnostics when no GPS provider is available">GPSがありません</string>
+    <string name="connected" translation_description="Network status value shown when the device has an active network connection">接続中</string>
+    <string name="disconnected" translation_description="Network status value shown when the device has no network connection">切断中</string>
+    <string name="wifi" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (wifi)\'). Note the leading space.">" (WiFi)"</string>
+    <string name="cell_network" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (cell)\'). Note the leading space.">" (モバイル)"</string>
+    <string name="menu_calibrate" translation_description="Menu item label to open the compass calibration screen">キャリブレーション</string>
+    <string name="compass_calibration_activity_heading_compass" translation_description="Static label in the compass calibration screen placed inline to the left of the live compass accuracy value (e.g. displayed as \'Compass - Accuracy: High\')">コンパス -</string>
+    <string name="compass_calibration_activity_do_not_show_this_again" translation_description="Checkbox label in the compass calibration dialog to suppress future automatic appearances">これを再び表示しない</string>
+    <string name="compass_calibration_activity_warning" translation_description="Heading/reason text shown in the compass calibration dialog when it opens automatically due to low accuracy">コンパスはキャリブレーションが
         必要かもしれません</string>
-    <string name="compass_calib_what_to_do" translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL">このデバイスは、
+    <string name="compass_calib_what_to_do" translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL"><![CDATA[このデバイスは、
         内部コンパスがキャリブレーションされていないとSkyマップに報告しています。
     これはSkyマップの問題ではないですが、修正を助けることは出来ます。コンパスをキャリブレーションするには、この動画%sで示しているように、精度が「高」になるまで
-        デバイスを8の字に動かしてください。</string>
-    <string name="compass_calib_what_to_do_user" transation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL">このデバイスの
+        デバイスを8の字に動かしてください。]]></string>
+    <string name="compass_calib_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[このデバイスの
         コンパスの精度は上に
         表示しています。
     表示が「高」でない場合、コンパスはキャリブレーションが必要かもしれません。これはSkyマップの問題ではなく、デバイスの
     機能です。コンパスをキャリブレーションするには、この動画%sで示しているように、
-        デバイスを8の字に動かしてください。</string>
-    <string name="sensor_reverse_preference_title">磁気センサーのZ軸を反転</string>
-    <string name="sensor_reverse_preference_summary">センサーの実装が不適切なデバイス用に修正する - 再起動が必要</string>
-    <string name="whats_new_dialog_title">更新情報</string>
-    <string name="disable_gyro_preference_title">ジャイロスコープを無効にする</string>
-    <string name="disable_gyro_preference_summary">ジャイロのないデバイスもあります - あるデバイスの場合はそれを有効にしてチェックを外すことでより良い結果が得られます。一方、デバイスにジャイロがない場合は、このチェックを外すとおそらくSkyマップは動作しないでしょう。</string>
-    <string name="rotate_horizon_preference_title">方向を見る</string>
-    <string name="rotate_horizon_preference_summary">水平線を90°回転
+        デバイスを8の字に動かしてください。]]></string>
+    <string name="sensor_reverse_preference_title" translation_description="Preference title for reversing the magnetic Z-axis sensor reading, a fix for certain phones with incorrectly implemented sensors">磁気センサーのZ軸を反転</string>
+    <string name="sensor_reverse_preference_summary" translation_description="Summary for the Reverse Magnetic Z preference">センサーの実装が不適切なデバイス用に修正する - 再起動が必要</string>
+    <string name="whats_new_dialog_title" translation_description="Title of the dialog shown on first launch after an update, listing new features">更新情報</string>
+    <string name="disable_gyro_preference_title" translation_description="Preference title for disabling the gyroscope sensor">ジャイロスコープを無効にする</string>
+    <string name="disable_gyro_preference_summary" translation_description="Explanation of the disable gyroscope preference and when to use it">ジャイロのないデバイスもあります - あるデバイスの場合はそれを有効にしてチェックを外すことでより良い結果が得られます。一方、デバイスにジャイロがない場合は、このチェックを外すとおそらくSkyマップは動作しないでしょう。</string>
+    <string name="rotate_horizon_preference_title" translation_description="Preference title for choosing the view/pointing direction mode">方向を見る</string>
+    <string name="rotate_horizon_preference_summary" translation_description="Explanation of the view direction preference, covering both landscape rotation and pointer modes">水平線を90°回転
         (横画面固定のデバイス用) またはデバイスの上部分が何を指して
         いるかを表示するためのポインターモード(ヘルプ参照)。</string>
-    <string name="show_object_info_auto_mode_title">自動モードでの情報カード</string>
-    <string name="show_object_info_auto_mode_summary">自動（センサー）モードでもオブジェクトをタップして情報カードを表示</string>
-</resources>
+
+    <string name="show_object_info_auto_mode_title" translation_description="Preference title for enabling info cards in auto/sensor mode">自動モードでの情報カード</string>
+    <string name="show_object_info_auto_mode_summary" translation_description="Preference summary for auto mode info cards">自動（センサー）モードでもオブジェクトをタップして情報カードを表示</string>
+    </resources>

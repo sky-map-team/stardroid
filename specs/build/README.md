@@ -13,31 +13,29 @@ This section documents Sky Map's build system and configuration.
 
 | Tool | Version | Purpose |
 |------|---------|---------|
-| Gradle | 8.11.x | Build automation |
-| Android Gradle Plugin | 8.7.x | Android build |
-| Kotlin | 2.1.x | Kotlin compilation |
-| FlatBuffers | 24.x | FlatBuffers code generation |
+| Gradle | 8.13 | Build automation |
+| Android Gradle Plugin | 8.13.2 | Android build |
+| Kotlin | 2.0.20 | Kotlin compilation |
+| Protocol Buffers | 3.13.0 | Data serialization |
 
 ## Project Structure
 
 ```
-stardroidawakening/
+stardroid/
 ├── app/                    # Main Android application
-│   ├── build.gradle.kts   # App build config (Kotlin DSL)
+│   ├── build.gradle       # App build config (Groovy DSL)
 │   └── src/
 │       ├── main/          # Common source
 │       ├── gms/           # Google Play Services flavor
 │       ├── fdroid/        # F-Droid flavor
 │       ├── test/          # Unit tests
 │       └── androidTest/   # Instrumented tests
-├── datamodel/              # FlatBuffers data module
-│   └── build.gradle.kts   # FlatBuffers build config
-├── tools/                  # Data generation (Kotlin)
-│   ├── build.gradle.kts   # Tools build config
-│   ├── generate.sh        # JSON generation script
-│   └── binary.sh          # FlatBuffers binary conversion
-├── build.gradle.kts       # Root build config
-├── settings.gradle.kts    # Module settings
+├── datamodel/              # Protocol Buffer definitions
+│   └── build.gradle       # Protobuf plugin config
+├── tools/                  # Data generation (Java)
+│   └── build.gradle       # Tools build config
+├── build.gradle           # Root build config (Groovy DSL)
+├── settings.gradle        # Module settings
 └── gradle.properties      # Build properties
 ```
 
@@ -98,13 +96,11 @@ stardroidawakening/
 
 ## Build Configuration
 
-### Root build.gradle.kts
+### Root build.gradle (Groovy DSL)
 
-```kotlin
-plugins {
-    id("com.android.application") version "8.x" apply false
-    id("com.android.library") version "8.x" apply false
-    id("org.jetbrains.kotlin.android") version "2.1.x" apply false
+```groovy
+buildscript {
+    ext.kotlin_version = '2.0.20'
 }
 ```
 
@@ -129,7 +125,7 @@ kotlin.code.style=official
 | Requirement | Version |
 |-------------|---------|
 | Min SDK | 26 (Android 8.0) |
-| Target SDK | 35 |
+| Target SDK | 36 |
 | Compile SDK | 35 |
 | Java | 17 |
 
@@ -141,8 +137,8 @@ kotlin.code.style=official
 |------------|---------|
 | AndroidX AppCompat | Compatibility |
 | Material Components | UI components |
-| Dagger | Dependency injection |
-| FlatBuffers | Data serialization (zero-copy) |
+| Dagger 2 | Dependency injection |
+| Protocol Buffers (protobuf-javalite) | Data serialization |
 
 ### Testing
 
