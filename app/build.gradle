@@ -54,6 +54,7 @@ android {
         versionCode 1609
         versionName "1.12.1:Earth"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        resConfigs "en", "en-rGB", "es", "de", "it", "fr", "pt", "pl", "ru", "zh-rCN", "zh-rTW", "ja", "ko", "ar", "hi", "tr", "th", "id", "fa", "uk", "ca", "cs", "da", "nl", "hu", "nb", "sk", "sv", "el", "cy"
     }
 
     signingConfigs {
