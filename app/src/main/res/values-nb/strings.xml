@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!-- Please add  translation_description="" attributes to Strings to assist the translators. --><resources>
-    <string name="app_name" translation_description="Application Title">Sky Map</string>
     <string name="menu_settings" translation_description="Settings menu item in the options menu">Innstillinger</string>
     <string name="menu_search" translation_description="Search menu item in the options menu">Søk</string>
     <string name="cancel" translation_description="Generic cancel button label used in dialogs">Avbryt</string>
@@ -42,14 +41,12 @@
     <string name="malformed_loc_error" translation_description="Error message when a non-numeric value is entered for latitude or longitude">Bredde- eller lengdegradinnstilling er ikke et tall.</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Aksepter</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">Nei takk</string>
-    <string name="dialog_ok_button" translation_description="Generic OK/confirm button label for dialogs">OK</string>
     <string name="menu_help" translation_description="menu item to show \'Help\' box">Hjelp</string>
     <string name="help_dialog_title" translation_description="Title of the help dialog">Hjelp for Sky Map</string>
     <string name="set_manual" translation_description="Toast message shown when the user switches to manual (touch-drag) mode">Skifter til manuell modus</string>
     <string name="set_auto" translation_description="Toast message shown when the user switches to automatic (sensor/gyroscope) mode">Skifter til automatisk modus</string>
     <string name="menu_toggle_dim" translation_description="Menu item to toggle night mode (red tint that preserves night vision)">Nattmodus av/på</string>
     <string name="zenith" translation_description="Label for the zenith point (directly overhead) shown on the sky map. Displayed in capitals.">SENIT</string>
-    <string name="nadir" translation_description="Label for the nadir point (directly below) shown on the sky map. Displayed in capitals.">NADIR</string>
     <string name="north" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">NORD</string>
     <string name="east" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">ØST</string>
     <string name="west" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">VEST</string>
@@ -105,13 +102,8 @@
     <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">Ser etter:</string>
     <string name="sun_wont_set_message" translation_description="Message shown when the sun will not set during the next 24 hours (polar day / midnight sun)">Solen går ikke ned i løpet av de neste 24 timene på ditt nåværende sted.</string>
 
-    <string name="missing_label" translation_description="Used to indicate to the developer that they've added a resource with no translation.">MISSING_LBL</string>
-
     <string name="menu_tos" translation_description="Menu item label to view the Terms of Service">Vilkår for bruk</string>
     <string name="menu_diagnostics" translation_description="Menu item label to open the technical diagnostics screen">Diagnostikk</string>
-
-    <string name="north_pole" translation_description="Short abbreviation for the North Celestial Pole, displayed as a label on the sky map grid. Translators: use the standard abbreviation in your language (e.g. NP in English, PN in French).">NP</string>
-    <string name="south_pole" translation_description="Short abbreviation for the South Celestial Pole, displayed as a label on the sky map grid. Translators: use the standard abbreviation in your language (e.g. SP in English, PS in French).">SP</string>
 
     <string name="enable_analytics" translation_description="Preference label to opt in to sending anonymous usage statistics">Send bruksstatistikk</string>
     <string name="enable_analytics_desc" translation_description="Description/summary for the usage statistics preference">Gjør Sky Map bedre ved å sende anonyme data til Google Analytics</string>
@@ -132,7 +124,6 @@
     </string>
     <string name="do_not_show_again" translation_description="Checkbox or button label to suppress future display of a warning dialog">Ikke vis denne meldingen igjen</string>
     <string name="title_activity_diagnostic" translation_description="Title bar text for the Diagnostics activity/screen">Diagnostikk</string>
-    <string name="play_services_error" translation_description="Warning shown in the diagnostics screen when Google Play Services has an error that may affect automatic location">Warning: Google Play Services error - Automatic location might not work</string>
     <string name="sensor_absent" translation_description="Sensor status shown in diagnostics when the sensor is not present on the device">Fraværende</string>
     <string name="sensor_accuracy_unknown" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">Nøyaktighet: Ukjent</string>
     <string name="sensor_accuracy_unreliable" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">Nøyaktighet: Upålitelig</string>
@@ -151,7 +142,6 @@
     <string name="diagnostics_activity_gyroscope" translation_description="Row label in the Diagnostics screen for the gyroscope sensor">Gyroskop</string>
     <string name="diagnostics_activity_light_level" translation_description="Row label in the Diagnostics screen for the ambient light sensor reading">Lysnivå</string>
     <string name="diagnostics_activity_location_and_time_heading" translation_description="Section heading in the Diagnostics screen for location and time information">Sted og tid</string>
-    <string name="diagnostics_activity_gps" translation_description="Row label in the Diagnostics screen for the GPS provider status">GPS</string>
     <string name="diagnostics_activity_location" translation_description="Row label in the Diagnostics screen showing the current latitude and longitude">Posisjon (br., le.)</string>
     <string name="diagnostics_activity_pointing_ra_dec" translation_description="Row label in the Diagnostics screen showing a snapshot of where the phone is currently pointing in the sky (Right Ascension and Declination)">Peke-øyeblikksbilde</string>
     <string name="diagnostics_activity_magnetic_correction" translation_description="Row label in the Diagnostics screen showing whether magnetic declination correction is applied">Magnetisk korreksjon</string>
@@ -166,7 +156,6 @@
     <string name="no_gps" translation_description="Status value shown in diagnostics when no GPS provider is available">Ingen GPS</string>
     <string name="connected" translation_description="Network status value shown when the device has an active network connection">Tilkoblet</string>
     <string name="disconnected" translation_description="Network status value shown when the device has no network connection">Frakoblet</string>
-    <string name="wifi" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (wifi)\'). Note the leading space.">" (wifi)"</string>
     <string name="cell_network" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (cell)\'). Note the leading space.">" (mobilnett)"</string>
     <string name="menu_calibrate" translation_description="Menu item label to open the compass calibration screen">Kalibrer</string>
     <string name="compass_calibration_activity_heading_compass" translation_description="Static label in the compass calibration screen placed inline to the left of the live compass accuracy value (e.g. displayed as \'Compass - Accuracy: High\')">Kompass -</string>

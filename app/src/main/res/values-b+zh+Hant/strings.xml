@@ -41,7 +41,6 @@
     <string name="malformed_loc_error" translation_description="Error message when a non-numeric value is entered for latitude or longitude">經緯度設定值並非數字。</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">接受</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">不，謝謝</string>
-    <string name="dialog_ok_button" translation_description="Generic OK/confirm button label for dialogs">OK</string>
     <string name="menu_help" translation_description="menu item to show \'Help\' box">說明</string>
     <string name="help_dialog_title" translation_description="Title of the help dialog">星空圖說明</string>
     <string name="set_manual" translation_description="Toast message shown when the user switches to manual (touch-drag) mode">正在切換至手動模式</string>
@@ -142,7 +141,6 @@
     <string name="diagnostics_activity_gyroscope" translation_description="Row label in the Diagnostics screen for the gyroscope sensor">陀螺儀</string>
     <string name="diagnostics_activity_light_level" translation_description="Row label in the Diagnostics screen for the ambient light sensor reading">光度</string>
     <string name="diagnostics_activity_location_and_time_heading" translation_description="Section heading in the Diagnostics screen for location and time information">位置與時間</string>
-    <string name="diagnostics_activity_gps" translation_description="Row label in the Diagnostics screen for the GPS provider status">GPS</string>
     <string name="diagnostics_activity_location" translation_description="Row label in the Diagnostics screen showing the current latitude and longitude">位置 (緯度, 經度)</string>
     <string name="diagnostics_activity_pointing_ra_dec" translation_description="Row label in the Diagnostics screen showing a snapshot of where the phone is currently pointing in the sky (Right Ascension and Declination)">指向快照</string>
     <string name="diagnostics_activity_magnetic_correction" translation_description="Row label in the Diagnostics screen showing whether magnetic declination correction is applied">地磁修正</string>
