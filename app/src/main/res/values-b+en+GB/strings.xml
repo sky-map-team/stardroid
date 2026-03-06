@@ -52,6 +52,9 @@
     <!-- tm:omitted name="sensor_speed" reason="identical_to_source" -->
     <!-- tm:omitted name="sensor_damping" reason="identical_to_source" -->
     <string name="appearance_prefs" translation_description="Preferences title for section about app appearance">Appearance</string>
+    <!-- tm:omitted name="auto_dimness_preference" reason="identical_to_source" -->
+    <!-- tm:omitted name="font_size_preference" reason="identical_to_source" -->
+    <!-- tm:omitted name="font_size_preference_description" reason="identical_to_source" -->
     <!-- tm:omitted name="ecliptic" reason="identical_to_source" -->
     <!-- tm:omitted name="malformed_loc_error" reason="identical_to_source" -->
     <!-- tm:omitted name="dialog_accept" reason="identical_to_source" -->
@@ -73,6 +76,7 @@
     <!-- tm:omitted name="search_label" reason="identical_to_source" -->
     <!-- tm:omitted name="search_hint" reason="identical_to_source" -->
     <!-- tm:omitted name="no_search_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="no_search_results_text2" reason="identical_to_source" -->
     <!-- tm:omitted name="many_search_results_title" reason="identical_to_source" -->
     <!-- tm:omitted name="other" reason="identical_to_source" -->
     <!-- tm:omitted name="show_messier_images" reason="identical_to_source" -->
@@ -214,6 +218,8 @@
     <!-- tm:omitted name="rotate_horizon_preference_title" reason="identical_to_source" -->
     <!-- tm:omitted name="auto_level_horizon_preference_title" reason="identical_to_source" -->
     <!-- tm:omitted name="auto_level_horizon_preference_summary" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="rotate_horizon_preference_summary" reason="identical_to_source" -->
 
     <!-- tm:omitted name="show_object_info_pref_title" reason="identical_to_source" -->
     <!-- tm:omitted name="show_object_info_pref_summary" reason="identical_to_source" -->
