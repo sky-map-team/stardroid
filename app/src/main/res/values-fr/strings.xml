@@ -30,7 +30,7 @@
     <string name="location_warning_permission" translation_description="Warning message shown when location is unavailable because permission was not granted">Localisation indisponible — autorisation non accordée.</string>
     <string name="location_warning_manual" translation_description="Warning message shown when manual location mode is selected but no coordinates have been entered">Localisation non définie — veuillez configurer dans les paramètres.</string>
 <!-- TODO: many translations require two placeholders. Once all translations brought up to date we can clean this up -->
-    <string name="location_set_auto" translation_description="Toast message when automatic location is acquired. %1$s is the provider name (e.g. GPS), %2$s is the place name or coordinates">Position %1$s remplacée par %2$s</string>
+    <string name="location_set_auto" translation_description="Toast message when automatic location is acquired. %1$s is the provider name (e.g. GPS), %2$s is the place name or coordinates">Localisation définie sur %2$s</string>
     <string name="location_unable_to_geocode" translation_description="Error message when converting a place name to coordinates (geocoding) fails, possibly due to no network">Impossible de déterminer votre position. Votre réseau est-il accessible ?</string>
     <string name="location_not_found_title" translation_description="dialog box title when location not found">Désolé</string>
     <string name="location_not_found" translation_description="dialog message when placename not found">%s introuvable</string>
@@ -42,14 +42,14 @@
     <string name="show_stars_pref" translation_description="Label for the stars layer on the sky map (shows in the search results)">Étoiles</string>
     <!-- tm:omitted name="show_constellations_pref" reason="identical_to_source" -->
     <string name="show_messier_objects_pref" translation_description="The celestial objects catalogued by Charles Messier (shows in the search results)">Objets de Messier</string>
-    <string name="show_planets_pref" translation_description="Label for the solar system layer (planets, sun, moon)  (shows in the search results)">Planètes</string>
+    <string name="show_planets_pref" translation_description="Label for the solar system layer (planets, sun, moon)  (shows in the search results)">Système solaire</string>
     <string name="show_grid_pref" translation_description="Label for the Right Ascension / Declination grid overlay  (shows in the search results)">Grille RA/Dec</string>
     <!-- tm:omitted name="show_horizon_pref" reason="identical_to_source" -->
     <string name="show_sky_gradient" translation_description="This is a shading of the color of the sky used for effect">Couleurs du ciel</string>
     <string name="show_meteors_pref" translation_description="Label for the meteor shower layer (shows in the search results)">Pluies de météores</string>
     <string name="show_comet_layer_pref" translation_description="Preference toggle label for the comets layer">Comètes</string>
     <!-- tm:omitted name="show_satellite_layer_pref" reason="identical_to_source" -->
-    <string name="sensor_prefs" translation_description="Preferences category heading for sensor settings, intended for advanced/expert users">Paramètres du capteur</string>
+    <string name="sensor_prefs" translation_description="Preferences category heading for sensor settings, intended for advanced/expert users">Paramètres des capteurs (experts)</string>
     <string name="sensor_speed" translation_description="Old, non gyro sensors only: How quickly the sensor should send us data">Vitesse du capteur</string>
     <string name="sensor_damping" translation_description="Old, non gyro sensors only: The amount of smoothing applied to the sensor outputs.">Amortissement</string>
     <string name="appearance_prefs" translation_description="Preferences title for section about app appearance">Apparence</string>
@@ -134,13 +134,13 @@
     <string name="menu_gallery" translation_description="Menu item label to open the image gallery">Galerie</string>
     <string name="gallery_image_search_btn" translation_description="Button in the gallery to locate the displayed object on the sky map">Rechercher dans Sky Map</string>
     <string name="gallery_image_back_btn" translation_description="Button to return to the gallery from a single image view">Retour à la galerie</string>
-    <string name="hubble_image_gallery_title" translation_description="Title of the image gallery screen">Galerie Hubble</string>
+    <string name="hubble_image_gallery_title" translation_description="Title of the image gallery screen">Galerie Sky Map</string>
     <string name="hubble_image" translation_description="Label or caption for a Hubble Space Telescope image in the gallery">Image Hubble</string>
     <string name="search_overlay_title" translation_description="title for search overlay">Dirigez votre téléphone vers la flèche</string>
     <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">Vous recherchez :</string>
     <string name="sun_wont_set_message" translation_description="Message shown when the sun will not set during the next 24 hours (polar day / midnight sun)">À votre position actuelle, le soleil ne se couchera pas au cours des prochaines 24 heures.</string>
 
-    <string name="missing_label" translation_description="Used to indicate to the developer that they've added a resource with no translation.">Libellé manquant</string>
+    <!-- tm:omitted name="missing_label" reason="identical_to_source" -->
 
     <string name="menu_tos" translation_description="Menu item label to view the Terms of Service">Conditions d\'utilisation</string>
     <!-- tm:omitted name="menu_diagnostics" reason="identical_to_source" -->
