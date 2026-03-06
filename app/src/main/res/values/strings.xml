@@ -21,7 +21,7 @@
     <string name="location_long_pref" translation_description="Label for the longitude input field in manual location settings">Longitude</string>
     <string name="degrees" translation_description="angular degrees - used for latitude and longitude">Degrees</string>
     <string name="preferences" translation_description="Provider-name label used internally when a location is set from preferences (not shown directly to the user as a UI label - does not require a translation)">preferences</string>
-    <string name="location_offer_to_enable" translation_description="Dialog message asking whether to enable automatic location">Auto-location is disabled.  Would you like to enable it?</string>
+    <string name="location_offer_to_enable" translation_description="Dialog message asking whether to enable automatic location">Auto-location is disabled. Would you like to enable it?</string>
     <string name="location_offer_to_enable_gps_title" translation_description="Title of dialog shown when automatic location is disabled">Auto-location disabled</string>
     <string name="location_permission_dialog_title" translation_description="Title of the dialog that requests location permission from the user">Location Required</string>
     <string name="location_permission_dialog_message" translation_description="Body text of the dialog requesting location permission, explaining why the app needs it and what happens without it">Sky Map needs your approximate location to show the correct night sky. You can grant permission, enter your location manually, or decide later. If you decide later, the map will not be accurate until your location has been set.</string>
@@ -36,7 +36,7 @@
     <string name="location_not_found_title" translation_description="dialog box title when location not found">Sorry</string>
     <string name="location_not_found" translation_description="dialog message when placename not found">%s not found.</string>
     <string name="location_long_lat" translation_description="Formatted display of longitude and latitude. %1$.2f is longitude, %2$.2f is latitude">Longitude:%1$.2f, Latitude:%2$.2f</string>
-    <string name="location_place_found" translation_description="Status message when a place name was successfully looked up. %1$f is latitude, %2$f is longitude">Place found.  Setting latitude %1$f and longitude %2$f</string>
+    <string name="location_place_found" translation_description="Status message when a place name was successfully looked up. %1$f is latitude, %2$f is longitude">Place found. Setting latitude %1$f and longitude %2$f</string>
     <string name="use_magnetic_correction" translation_description="Preference label: apply magnetic declination correction so the compass points to true north instead of magnetic north">Use magnetic correction</string>
     <string name="manual_compass_adjustment_title" translation_description="Preference title: lets the user add a manual degree offset to the compass reading">Additional compass adjustment</string>
     <string name="manual_compass_adjustment_summary" translation_description="Summary for the manual compass adjustment preference">Extra offset in degrees (+ or −) added to compass reading</string>
@@ -168,11 +168,11 @@
         Unfortunately your device might not have one of the
     sensors that Sky Map needs.\n\n
         To show you the sky in the direction your phone is pointing Sky Map
-    needs both a built-in compass and an accelerometer.  Your device reports that it is missing
-        one of them.  The good news is that some devices (for example some Moto E phones) falsely claim
+    needs both a built-in compass and an accelerometer. Your device reports that it is missing
+        one of them. The good news is that some devices (for example some Moto E phones) falsely claim
         not to have a compass but actually do.\n\n
 
-        If your device really is missing a sensor then auto-mode will not work.  However, you
+        If your device really is missing a sensor then auto-mode will not work. However, you
         can still use Sky Map on this device in manual mode where you drag, rotate and stretch the
         map with your fingers.
     </string>
@@ -230,13 +230,13 @@ Sky Map relies on your phone\'s built-in compass sensor. If the accuracy shown a
     <string name="compass_calib_what_to_do_user"
         translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[
         Your phone\'s reports its compass accuracy as shown above. To improve this, please perform a figure-8 motion with your device (%s).<br/><br/>
-        <b>Note on Accuracy:</b> Calibration is a hardware-level requirement of your phone, not a Sky Map setting. Even when calibrated, local magnetic fields (like car dashboards or magnets) may cause a slight bias in direction.  See <i>Troubleshooting</i> in <i>Help</i> for other things to try.
+        <b>Note on Accuracy:</b> Calibration is a hardware-level requirement of your phone, not a Sky Map setting. Even when calibrated, local magnetic fields (like car dashboards or magnets) may cause a slight bias in direction. See <i>Troubleshooting</i> in <i>Help</i> for other things to try.
     ]]></string>
     <string name="sensor_reverse_preference_title" translation_description="Preference title for reversing the magnetic Z-axis sensor reading, a fix for certain phones with incorrectly implemented sensors">Reverse Magnetic Z</string>
     <string name="sensor_reverse_preference_summary" translation_description="Summary for the Reverse Magnetic Z preference">Fix for phones with incorrectly implemented sensors - requires restart</string>
     <string name="whats_new_dialog_title" translation_description="Title of the dialog shown on first launch after an update, listing new features">What\'s new</string>
     <string name="disable_gyro_preference_title" translation_description="Preference title for disabling the gyroscope sensor">Disable gyroscope</string>
-    <string name="disable_gyro_preference_summary" translation_description="Explanation of the disable gyroscope preference and when to use it">Not all devices have a gyro - if yours does then you\'ll get better results with it enabled and this box unchecked.  On the other hand if your device does not have a gyro then Sky Map will probably not work if you uncheck this box.</string>
+    <string name="disable_gyro_preference_summary" translation_description="Explanation of the disable gyroscope preference and when to use it">Not all devices have a gyro - if yours does then you\'ll get better results with it enabled and this box unchecked. On the other hand if your device does not have a gyro then Sky Map will probably not work if you uncheck this box.</string>
     <string name="rotate_horizon_preference_title" translation_description="Preference title for choosing the view/pointing direction mode">View direction</string>
     <string name="auto_level_horizon_preference_title" translation_description="Preference title for the auto-level horizon feature in manual mode">Auto-level horizon</string>
     <string name="auto_level_horizon_preference_summary" translation_description="Summary for the auto-level horizon preference">In manual mode, the horizon gradually returns to horizontal after you lift your fingers</string>
