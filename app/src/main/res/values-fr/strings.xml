@@ -16,6 +16,7 @@
     <string name="no_use_gps_pref_hint" translation_description="Hint text beneath the \'Set location manually\' preference">Précisez un lieu ou une lat/long.</string>
     <string name="location_placename" translation_description="Label for the place-name text field in manual location settings">Nom de lieu</string>
     <string name="location_placename_hint" translation_description="An example address.  Translators: please pick an address suitable for your country.  If it has an astronomical connection (e.g. the address of an observatory or famous astronomer) then that would be even better.">Exemple : 11 rue de l\'Université, Strasbourg</string>
+    <!-- tm:omitted name="location_lat_pref" reason="identical_to_source" -->
     <!-- tm:omitted name="location_long_pref" reason="identical_to_source" -->
     <string name="degrees" translation_description="angular degrees - used for latitude and longitude">Degrés</string>
     <string name="preferences" translation_description="Provider-name label used internally when a location is set from preferences (not shown directly to the user as a UI label - does not require a translation)">préférences</string>
@@ -143,6 +144,7 @@
 
     <string name="menu_tos" translation_description="Menu item label to view the Terms of Service">Conditions d\'utilisation</string>
     <!-- tm:omitted name="menu_diagnostics" reason="identical_to_source" -->
+
     <string name="north_pole" translation_description="Short abbreviation for the North Celestial Pole, displayed as a label on the sky map grid. Translators: use the standard abbreviation in your language (e.g. NP in English, PN in French).">PN</string>
     <string name="south_pole" translation_description="Short abbreviation for the South Celestial Pole, displayed as a label on the sky map grid. Translators: use the standard abbreviation in your language (e.g. SP in English, PS in French).">PS</string>
 
@@ -169,6 +171,7 @@
     <string name="diagnostics_activity_sensors_heading" translation_description="Section heading in the Diagnostics screen for sensor readings">Capteurs</string>
     <string name="diagnostics_activity_compass" translation_description="Row label in the Diagnostics screen for the compass (magnetic field) sensor">Boussole</string>
     <string name="diagnostics_activity_accelerometer" translation_description="Row label in the Diagnostics screen for the accelerometer sensor">Accéléromètre</string>
+    <!-- tm:omitted name="diagnostics_activity_rotation_vector" reason="identical_to_source" -->
     <!-- tm:omitted name="diagnostics_activity_gyroscope" reason="identical_to_source" -->
     <string name="diagnostics_activity_light_level" translation_description="Row label in the Diagnostics screen for the ambient light sensor reading">Niveau de lumière</string>
     <string name="diagnostics_activity_location_and_time_heading" translation_description="Section heading in the Diagnostics screen for location and time information">Position et heure</string>
