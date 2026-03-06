@@ -46,18 +46,18 @@
     <string name="capricorn" translation_description="Name of the Capricorn constellation">Capricorne</string>
     <string name="southern_cross" translation_description="Name of the Southern Cross constellation">Croix du Sud</string>
     <string name="scorpio" translation_description="Name of the Scorpio constellation">Scorpion</string>
-    <string name="little_dipper" translation_description="Name of the Little Dipper constellation">Petite Ourse</string>
+    <string name="little_dipper" translation_description="Name of the Little Dipper constellation">Petite Casserole</string>
     <string name="little_bear" translation_description="Name of the Little Bear constellation">Petite Ourse</string>
-    <string name="big_dipper" translation_description="Name of the Big Dipper constellation">Grande Ourse</string>
+    <string name="big_dipper" translation_description="Name of the Big Dipper constellation">Grande Casserole</string>
     <string name="great_bear" translation_description="Name of the Great Bear constellation">Grande Ourse</string>
-    <string name="plough" translation_description="Name of the Plough constellation">Grande Ourse</string>
-    <!-- tm:omitted name="antlia" reason="identical_to_source" -->
-    <!-- tm:omitted name="apus" reason="identical_to_source" -->
-    <!-- tm:omitted name="ara" reason="identical_to_source" -->
-    <!-- tm:omitted name="caelum" reason="identical_to_source" -->
-    <!-- tm:omitted name="camelopardalis" reason="identical_to_source" -->
+    <string name="plough" translation_description="Name of the Plough constellation">Grande Casserole</string>
+    <string name="antlia" translation_description="Name of the Antlia constellation">Machine pneumatique</string>
+    <string name="apus" translation_description="Name of the Apus constellation">Oiseau de paradis</string>
+    <string name="ara" translation_description="Name of the Ara constellation">Autel</string>
+    <string name="caelum" translation_description="Name of the Caelum constellation">Burin</string>
+    <string name="camelopardalis" translation_description="Name of the Camelopardalis constellation">Girafe</string>
     <string name="canes_venatici" translation_description="Name of the Canes Venatici constellation">Chiens de Chasse</string>
-    <!-- tm:omitted name="canis_minor" reason="identical_to_source" -->
+    <string name="canis_minor" translation_description="Name of the Canis Minor constellation">Petit Chien</string>
     <string name="cepheus" translation_description="Name of the Cepheus constellation">Céphée</string>
     <string name="chamaeleon" translation_description="Name of the Chamaeleon constellation">Caméléon</string>
     <string name="circinus" translation_description="Name of the Circinus constellation">Compas</string>
@@ -79,25 +79,25 @@
     <string name="lepus" translation_description="Name of the Lepus constellation">Lièvre</string>
     <!-- tm:omitted name="lynx" reason="identical_to_source" -->
     <string name="mensa" translation_description="Name of the Mensa constellation">Table</string>
-    <!-- tm:omitted name="microscopium" reason="identical_to_source" -->
+    <string name="microscopium" translation_description="Name of the Microscopium constellation">Microscope</string>
     <string name="monoceros" translation_description="Name of the Monoceros constellation">Monocéros</string>
     <string name="musca" translation_description="Name of the Musca constellation">Mouche</string>
-    <!-- tm:omitted name="norma" reason="identical_to_source" -->
-    <!-- tm:omitted name="octans" reason="identical_to_source" -->
-    <!-- tm:omitted name="pictor" reason="identical_to_source" -->
+    <string name="norma" translation_description="Name of the Norma constellation">Règle</string>
+    <string name="octans" translation_description="Name of the Octans constellation">Octant</string>
+    <string name="pictor" translation_description="Name of the Pictor constellation">Peintre</string>
     <string name="pyxis" translation_description="Name of the Pyxis constellation">Boussole</string>
     <string name="reticulum" translation_description="Name of the Reticulum constellation">Réticule</string>
     <string name="sagitta" translation_description="Name of the Sagitta constellation">Flèche</string>
     <string name="sculptor" translation_description="Name of the Sculptor constellation">Sculpteur</string>
     <string name="scutum" translation_description="Name of the Scutum constellation">Écu</string>
-    <!-- tm:omitted name="serpens_caput" reason="identical_to_source" -->
-    <!-- tm:omitted name="serpens_cauda" reason="identical_to_source" -->
+    <string name="serpens_caput" translation_description="Name of the Serpens Caput constellation">Tête du Serpent</string>
+    <string name="serpens_cauda" translation_description="Name of the Serpens Cauda constellation">Queue du Serpent</string>
     <string name="sextans" translation_description="Name of the Sextans constellation">Sextant</string>
     <string name="telescopium" translation_description="Name of the Telescopium constellation">Télescope</string>
-    <!-- tm:omitted name="triangulum" reason="identical_to_source" -->
-    <!-- tm:omitted name="triangulum_australe" reason="identical_to_source" -->
-    <!-- tm:omitted name="volans" reason="identical_to_source" -->
-    <!-- tm:omitted name="vulpecula" reason="identical_to_source" -->
+    <string name="triangulum" translation_description="Name of the Triangulum constellation">Triangle</string>
+    <string name="triangulum_australe" translation_description="Name of the Triangulum Australe constellation">Triangle austral</string>
+    <string name="volans" translation_description="Name of the Volans constellation">Poisson volant</string>
+    <string name="vulpecula" translation_description="Name of the Vulpecula constellation">Petit Renard</string>
 
     <!-- Major solar system objects -->
     <string name="sun" translation_description="Name of the Sun">Soleil</string>
@@ -200,8 +200,8 @@
     <string name="dog_star" translation_description="Name of the Dog Star (Sirius)">Étoile du Chien</string>
     <string name="north_star" translation_description="Name of the North Star">Étoile du Nord</string>
     <string name="pole_star" translation_description="Name of the (North) Pole Star">Étoile polaire</string>
-    <!-- tm:omitted name="alpha_centauri" reason="identical_to_source" -->
-    <!-- tm:omitted name="rigil_kent" reason="identical_to_source" -->
+    <string name="alpha_centauri" translation_description="Name of the star Alpha Centauri">Alpha du Centaure</string>
+    <string name="rigil_kent" translation_description="Name of the star Rigil Kent">Rigil Kentaurus</string>
     <!-- tm:omitted name="e_lyrae" reason="identical_to_source" -->
 
     <!-- tm:omitted name="m1" reason="identical_to_source" -->
