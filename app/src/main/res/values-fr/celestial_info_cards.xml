@@ -492,6 +492,16 @@
     <string name="object_info_m87_distance" translation_description="Distance to M87 shown in the info card. Translate units if appropriate for your locale.">53 millions d\'années-lumière</string>
     <string name="object_info_m87_size" translation_description="Physical size of M87 shown in the info card. Translate units if appropriate for your locale.">240 000 années-lumière de diamètre</string>
     <string name="object_info_m87_mass" translation_description="Mass of M87 in scientific notation — no translation needed.">2 400 milliards de masses solaires</string>
+    <!-- T CrB - T Coronae Borealis (Recurrent Nova) -->
+    <string name="object_info_t_crb_description" translation_description="Description of T Crb shown in the info card. Translate this text.">T Coronae Borealis (T CrB) est une nova récurrente dans la Couronne Boréale — un système binaire composé d\'une géante rouge et d\'une naine blanche. La naine blanche accumule périodiquement assez d\'hydrogène de son compagnon pour déclencher une explosion thermonucléaire.</string>
+    <string name="object_info_t_crb_funfact" translation_description="Fun fact about T Crb shown in the info card. Translate this text.">T CrB a connu sa dernière éruption en 1946, atteignant brièvement la magnitude 2,0 et devenant visible à l\'œil nu. Les astronomes prédisent qu\'une autre éruption est imminente — continuez à observer !</string>
+    <string name="object_info_t_crb_distance" translation_description="Distance to T Crb shown in the info card. Translate units if appropriate for your locale.">3 000 années-lumière</string>
+    <string name="object_info_t_crb_size" translation_description="Physical size of T Crb shown in the info card. Translate units if appropriate for your locale.">0,2 UA de séparation orbitale</string>
+    <!-- Eta Carinae Nebula (NGC 3372) -->
+    <string name="object_info_eta_carinae_nebula_description" translation_description="Description of Eta Carinae Nebula shown in the info card. Translate this text.">La Nébuleuse d\'Eta Carinae (NGC 3372) est l\'une des plus grandes et des plus brillantes nébuleuses du ciel, s\'étendant sur plus de 300 années-lumière. En son cœur se trouve Eta Carinae, l\'une des étoiles les plus massives et les plus lumineuses connues, pesant plus de 100 masses solaires.</string>
+    <string name="object_info_eta_carinae_nebula_funfact" translation_description="Fun fact about Eta Carinae Nebula shown in the info card. Translate this text.">En 1843, Eta Carinae a éclaté et est brièvement devenue la deuxième étoile la plus brillante du ciel, mais elle a miraculeusement survécu — elle pourrait être au bord d\'une supernova !</string>
+    <string name="object_info_eta_carinae_nebula_distance" translation_description="Distance to Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">7 500 années-lumière</string>
+    <string name="object_info_eta_carinae_nebula_size" translation_description="Physical size of Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">300 années-lumière de diamètre</string>
     <!-- ==================== CONSTELLATIONS ==================== -->
     <!-- Note: Constellation names are defined in celestial_objects.xml -->
     <!-- Orion -->
@@ -622,6 +632,9 @@
     <string name="object_info_corona_borealis_description" translation_description="Description of Corona Borealis shown in the info card. Translate this text.">La Couronne boréale est une petite constellation semi-circulaire représentant la couronne d\'Ariane dans la mythologie grecque.</string>
     <string name="object_info_corona_borealis_funfact" translation_description="Fun fact about Corona Borealis shown in the info card. Translate this text.">T Coronae Borealis est une nova récurrente qui entre en éruption environ tous les 80 ans - une autre éruption pourrait bientôt avoir lieu !</string>
     <string name="object_info_corona_borealis_size" translation_description="Physical size of Corona Borealis shown in the info card. Translate units if appropriate for your locale.">179 degrés carrés</string>
+    <!-- Corvus -->
+    <string name="object_info_corvus_description" translation_description="Description of Corvus shown in the info card. Translate this text.">Corvus le Corbeau est une petite constellation quadrilatérale au sud de la Vierge, représentant l\'oiseau sacré d\'Apollon.</string>
+    <string name="object_info_corvus_funfact" translation_description="Fun fact about Corvus shown in the info card. Translate this text.">Les quatre étoiles principales du Corbeau forment une forme de voile distinctive qui\'s facile à repérer dans le ciel printanier !</string>
     <string name="object_info_corvus_size" translation_description="Physical size of Corvus shown in the info card. Translate units if appropriate for your locale.">184 degrés carrés</string>
     <!-- Auriga -->
     <string name="object_info_auriga_description" translation_description="Description of Auriga shown in the info card. Translate this text.">Le Cocher est une constellation boréale présentant Capella, la sixième étoile la plus brillante, et plusieurs amas ouverts.</string>
