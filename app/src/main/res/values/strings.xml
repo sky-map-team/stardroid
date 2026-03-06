@@ -57,14 +57,11 @@
         translation_description="Preferences title for section about app appearance">Appearance
     </string>
     <string name="auto_dimness_preference"
-        translation_description="Mode for automatically dimming the screen when night mode is selected">
-        Auto screen dimming</string>
+        translation_description="Mode for automatically dimming the screen when night mode is selected">Auto screen dimming</string>
     <string name="font_size_preference"
-        translation_description="Change the font size">
-        Font size</string>
+        translation_description="Change the font size">Font size</string>
     <string name="font_size_preference_description"
-        translation_description="help to go along with the change font size preference">Adjust
-        label text size</string>
+        translation_description="help to go along with the change font size preference">Adjust label text size</string>
     <string name="ecliptic" translation_description="Label for the ecliptic layer — the apparent annual path of the Sun across the sky">Ecliptic</string>
     <string name="malformed_loc_error" translation_description="Error message when a non-numeric value is entered for latitude or longitude">Latitude or longitude setting isn\'t a number.</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Accept</string>
@@ -87,8 +84,7 @@
     <string name="search_hint" translation_description="an example search target">e.g. Mars</string>
     <string name="no_search_title" translation_description="Dialog title shown when a sky search returns no results">No results</string>
     <!-- Hopefully this is a temporary measure until we can fix the search engine -->
-    <string name="no_search_results_text2" translation_description="Alternative message shown when a search returns no results, suggesting the object may not currently be visible">No results were found. Perhaps the object is not
-        visible at this time.</string>
+    <string name="no_search_results_text2" translation_description="Alternative message shown when a search returns no results, suggesting the object may not currently be visible">No results were found. Perhaps the object is not visible at this time.</string>
     <string name="many_search_results_title" translation_description="Dialog title shown when a search returns multiple possible matches">Did you mean?</string>
     <string name="other" translation_description="A preference category (ie preferences that don't belong in any other category)">Other</string>
     <string name="show_messier_images" translation_description="Preference toggle label for showing galaxy/nebula icons for Messier objects">Show Messier Images</string>
@@ -164,17 +160,7 @@
 
     <string name="no_sensor_warning" translation_description="Warning shown when required orientation sensors are not detected on the device">Your device may lack orientation sensors - automode may not work</string>
     <string name="warning_dialog_title" translation_description="Title of a warning dialog shown when something is wrong, e.g. a missing sensor">Bad news!</string>
-    <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">\n
-        Unfortunately your device might not have one of the
-    sensors that Sky Map needs.\n\n
-        To show you the sky in the direction your phone is pointing Sky Map
-    needs both a built-in compass and an accelerometer. Your device reports that it is missing
-        one of them. The good news is that some devices (for example some Moto E phones) falsely claim
-        not to have a compass but actually do.\n\n
-
-        If your device really is missing a sensor then auto-mode will not work. However, you
-        can still use Sky Map on this device in manual mode where you drag, rotate and stretch the
-        map with your fingers.
+    <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">\nUnfortunately your device might not have one of the sensors that Sky Map needs.\n\nTo show you the sky in the direction your phone is pointing Sky Map needs both a built-in compass and an accelerometer. Your device reports that it is missing one of them. The good news is that some devices (for example some Moto E phones) falsely claim not to have a compass but actually do.\n\nIf your device really is missing a sensor then auto-mode will not work. However, you can still use Sky Map on this device in manual mode where you drag, rotate and stretch the map with your fingers.
     </string>
     <string name="do_not_show_again" translation_description="Checkbox or button label to suppress future display of a warning dialog">Do not show this message again</string>
     <string name="title_activity_diagnostic" translation_description="Title bar text for the Diagnostics activity/screen">Diagnostics</string>
@@ -225,12 +211,12 @@
     <string name="compass_calib_what_to_do"
         translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL"><![CDATA[
 Sky Map relies on your phone\'s built-in compass sensor. If the accuracy shown above is low, the sensor needs to be \"reset\" by moving the phone in a figure-8 motion: %s.<br/><br/>
-    <b>Important:</b> Calibration is a hardware process handled by your device. While it improves the sensor\'s reliability, external magnetic interference can still cause a \"bias\" or slight drift. This is a physical limitation of mobile compasses and not an error within the app. See <i>Troubleshooting</i> in <i>Help</i> for other things to try.
+<b>Important:</b> Calibration is a hardware process handled by your device. While it improves the sensor\'s reliability, external magnetic interference can still cause a \"bias\" or slight drift. This is a physical limitation of mobile compasses and not an error within the app. See <i>Troubleshooting</i> in <i>Help</i> for other things to try.
     ]]></string>
     <string name="compass_calib_what_to_do_user"
         translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[
-        Your phone\'s reports its compass accuracy as shown above. To improve this, please perform a figure-8 motion with your device (%s).<br/><br/>
-        <b>Note on Accuracy:</b> Calibration is a hardware-level requirement of your phone, not a Sky Map setting. Even when calibrated, local magnetic fields (like car dashboards or magnets) may cause a slight bias in direction. See <i>Troubleshooting</i> in <i>Help</i> for other things to try.
+Your phone\'s reports its compass accuracy as shown above. To improve this, please perform a figure-8 motion with your device (%s).<br/><br/>
+<b>Note on Accuracy:</b> Calibration is a hardware-level requirement of your phone, not a Sky Map setting. Even when calibrated, local magnetic fields (like car dashboards or magnets) may cause a slight bias in direction. See <i>Troubleshooting</i> in <i>Help</i> for other things to try.
     ]]></string>
     <string name="sensor_reverse_preference_title" translation_description="Preference title for reversing the magnetic Z-axis sensor reading, a fix for certain phones with incorrectly implemented sensors">Reverse Magnetic Z</string>
     <string name="sensor_reverse_preference_summary" translation_description="Summary for the Reverse Magnetic Z preference">Fix for phones with incorrectly implemented sensors - requires restart</string>
@@ -241,9 +227,7 @@ Sky Map relies on your phone\'s built-in compass sensor. If the accuracy shown a
     <string name="auto_level_horizon_preference_title" translation_description="Preference title for the auto-level horizon feature in manual mode">Auto-level horizon</string>
     <string name="auto_level_horizon_preference_summary" translation_description="Summary for the auto-level horizon preference">In manual mode, the horizon gradually returns to horizontal after you lift your fingers</string>
 
-    <string name="rotate_horizon_preference_summary" translation_description="Explanation of the view direction preference, covering both landscape rotation and pointer modes">Rotate horizon by 90 degrees (for devices
-        with forced landscape) or use pointer mode for the screen to show
-        what the top of the phone is pointing at (see help text).</string>
+    <string name="rotate_horizon_preference_summary" translation_description="Explanation of the view direction preference, covering both landscape rotation and pointer modes">Rotate horizon by 90 degrees (for devices with forced landscape) or use pointer mode for the screen to show what the top of the phone is pointing at (see help text).</string>
 
     <string name="show_object_info_pref_title" translation_description="Preference title for showing info cards when tapping objects">Show info on tap</string>
     <string name="show_object_info_pref_summary" translation_description="Preference summary for the tap info feature">Tap celestial objects to learn about them</string>
