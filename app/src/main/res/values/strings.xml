@@ -151,7 +151,7 @@
     <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">Looking for:</string>
     <string name="sun_wont_set_message" translation_description="Message shown when the sun will not set during the next 24 hours (polar day / midnight sun)">The sun will not set during the next 24 hours at your current location.</string>
 
-    <string name="missing_label" translation_description="Used to indicate to the developer that they've added a resource with no translation.">MISSING_LBL</string>
+    <string name="missing_label" translation_description="Do not translate this" translatable="false">MISSING_LBL</string>
 
     <string name="menu_tos" translation_description="Menu item label to view the Terms of Service">Terms of Service</string>
     <string name="menu_diagnostics" translation_description="Menu item label to open the technical diagnostics screen">Diagnostics</string>
