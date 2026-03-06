@@ -52,9 +52,6 @@
     <!-- tm:omitted name="sensor_speed" reason="identical_to_source" -->
     <!-- tm:omitted name="sensor_damping" reason="identical_to_source" -->
     <string name="appearance_prefs" translation_description="Preferences title for section about app appearance">Appearance</string>
-    <string name="auto_dimness_preference" translation_description="Mode for automatically dimming the screen when night mode is selected">Auto screen dimming</string>
-    <string name="font_size_preference" translation_description="Change the font size">Font size</string>
-    <string name="font_size_preference_description" translation_description="help to go along with the change font size preference">Adjust label text size</string>
     <!-- tm:omitted name="ecliptic" reason="identical_to_source" -->
     <!-- tm:omitted name="malformed_loc_error" reason="identical_to_source" -->
     <!-- tm:omitted name="dialog_accept" reason="identical_to_source" -->
@@ -76,8 +73,6 @@
     <!-- tm:omitted name="search_label" reason="identical_to_source" -->
     <!-- tm:omitted name="search_hint" reason="identical_to_source" -->
     <!-- tm:omitted name="no_search_title" reason="identical_to_source" -->
-    <!-- Hopefully this is a temporary measure until we can fix the search engine -->
-    <string name="no_search_results_text2" translation_description="Alternative message shown when a search returns no results, suggesting the object may not currently be visible">No results were found. Perhaps the object is not visible at this time.</string>
     <!-- tm:omitted name="many_search_results_title" reason="identical_to_source" -->
     <!-- tm:omitted name="other" reason="identical_to_source" -->
     <!-- tm:omitted name="show_messier_images" reason="identical_to_source" -->
@@ -219,8 +214,6 @@
     <!-- tm:omitted name="rotate_horizon_preference_title" reason="identical_to_source" -->
     <!-- tm:omitted name="auto_level_horizon_preference_title" reason="identical_to_source" -->
     <!-- tm:omitted name="auto_level_horizon_preference_summary" reason="identical_to_source" -->
-
-    <string name="rotate_horizon_preference_summary" translation_description="Explanation of the view direction preference, covering both landscape rotation and pointer modes">Rotate horizon by 90 degrees (for devices with forced landscape) or use pointer mode for the screen to show what the top of the phone is pointing at (see help text).</string>
 
     <!-- tm:omitted name="show_object_info_pref_title" reason="identical_to_source" -->
     <!-- tm:omitted name="show_object_info_pref_summary" reason="identical_to_source" -->
