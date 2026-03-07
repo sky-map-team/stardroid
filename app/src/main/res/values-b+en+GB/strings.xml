@@ -1,4 +1,238 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!-- Please add  translation_description="" attributes to Strings to assist the translators. --><resources>
+    <!-- tm:omitted name="app_name" reason="identical_to_source" -->
+    <!-- tm:omitted name="menu_settings" reason="identical_to_source" -->
+    <!-- tm:omitted name="menu_search" reason="identical_to_source" -->
+    <!-- tm:omitted name="cancel" reason="identical_to_source" -->
+    <!-- tm:omitted name="set" reason="identical_to_source" -->
+    <!-- tm:omitted name="go" reason="identical_to_source" -->
+    <!-- tm:omitted name="start_from_now" reason="identical_to_source" -->
+    <!-- tm:omitted name="other_prefs" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_prefs" reason="identical_to_source" -->
+    <!-- tm:omitted name="controls_prefs" reason="identical_to_source" -->
+    <!-- tm:omitted name="force_gps_pref" reason="identical_to_source" -->
+    <!-- tm:omitted name="force_gps_pref_hint" reason="identical_to_source" -->
+    <!-- tm:omitted name="no_use_gps_pref" reason="identical_to_source" -->
+    <!-- tm:omitted name="no_use_gps_pref_hint" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_placename" reason="identical_to_source" -->
     <string name="location_placename_hint" translation_description="An example address.  Translators: please pick an address suitable for your country.  If it has an astronomical connection (e.g. the address of an observatory or famous astronomer) then that would be even better.">e.g. The Royal Observatory of Edinburgh</string>
-    </resources>
+    <!-- tm:omitted name="location_lat_pref" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_long_pref" reason="identical_to_source" -->
+    <!-- tm:omitted name="degrees" reason="identical_to_source" -->
+    <!-- tm:omitted name="preferences" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_offer_to_enable" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_offer_to_enable_gps_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_permission_dialog_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_permission_dialog_message" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_permission_grant" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_permission_enter_manually" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_permission_later" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_warning_permission" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_warning_manual" reason="identical_to_source" -->
+<!-- tm:omitted name="location_set_auto" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_unable_to_geocode" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_not_found_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_not_found" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_long_lat" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_place_found" reason="identical_to_source" -->
+    <!-- tm:omitted name="use_magnetic_correction" reason="identical_to_source" -->
+    <!-- tm:omitted name="manual_compass_adjustment_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="manual_compass_adjustment_summary" reason="identical_to_source" -->
+    <!-- tm:omitted name="show_stars_pref" reason="identical_to_source" -->
+    <!-- tm:omitted name="show_constellations_pref" reason="identical_to_source" -->
+    <!-- tm:omitted name="show_messier_objects_pref" reason="identical_to_source" -->
+    <!-- tm:omitted name="show_planets_pref" reason="identical_to_source" -->
+    <!-- tm:omitted name="show_grid_pref" reason="identical_to_source" -->
+    <!-- tm:omitted name="show_horizon_pref" reason="identical_to_source" -->
+    <!-- tm:omitted name="show_sky_gradient" reason="identical_to_source" -->
+    <!-- tm:omitted name="show_meteors_pref" reason="identical_to_source" -->
+    <!-- tm:omitted name="show_comet_layer_pref" reason="identical_to_source" -->
+    <!-- tm:omitted name="show_satellite_layer_pref" reason="identical_to_source" -->
+    <!-- tm:omitted name="sensor_prefs" reason="identical_to_source" -->
+    <!-- tm:omitted name="sensor_speed" reason="identical_to_source" -->
+    <!-- tm:omitted name="sensor_damping" reason="identical_to_source" -->
+    <string name="appearance_prefs" translation_description="Preferences title for section about app appearance">Appearance</string>
+    <!-- tm:omitted name="auto_dimness_preference" reason="identical_to_source" -->
+    <!-- tm:omitted name="font_size_preference" reason="identical_to_source" -->
+    <!-- tm:omitted name="font_size_preference_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="ecliptic" reason="identical_to_source" -->
+    <!-- tm:omitted name="malformed_loc_error" reason="identical_to_source" -->
+    <!-- tm:omitted name="dialog_accept" reason="identical_to_source" -->
+    <!-- tm:omitted name="dialog_decline" reason="identical_to_source" -->
+    <!-- tm:omitted name="dialog_ok_button" reason="identical_to_source" -->
+    <!-- tm:omitted name="menu_credits" reason="identical_to_source" -->
+    <!-- tm:omitted name="credits_dialog_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="menu_help" reason="identical_to_source" -->
+    <!-- tm:omitted name="help_dialog_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="set_manual" reason="identical_to_source" -->
+    <!-- tm:omitted name="set_auto" reason="identical_to_source" -->
+    <!-- tm:omitted name="menu_toggle_dim" reason="identical_to_source" -->
+    <!-- tm:omitted name="zenith" reason="identical_to_source" -->
+    <!-- tm:omitted name="nadir" reason="identical_to_source" -->
+    <!-- tm:omitted name="north" reason="identical_to_source" -->
+    <!-- tm:omitted name="east" reason="identical_to_source" -->
+    <!-- tm:omitted name="west" reason="identical_to_source" -->
+    <!-- tm:omitted name="south" reason="identical_to_source" -->
+    <!-- tm:omitted name="search_label" reason="identical_to_source" -->
+    <!-- tm:omitted name="search_hint" reason="identical_to_source" -->
+    <!-- tm:omitted name="no_search_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="no_search_results_text2" reason="identical_to_source" -->
+    <!-- tm:omitted name="many_search_results_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="other" reason="identical_to_source" -->
+    <!-- tm:omitted name="show_messier_images" reason="identical_to_source" -->
+    <!-- tm:omitted name="show_messier_images_summary" reason="identical_to_source" -->
+    <!-- tm:omitted name="menu_time" reason="identical_to_source" -->
+    <string name="time_travel_start_message_alt" translation_description="Toast message when time travel starts toward a named destination. %s is the event or destination name">Travelling through time to %s ...</string>
+    <!-- tm:omitted name="time_travel_close_message" reason="identical_to_source" -->
+    <!-- tm:omitted name="popular_dates_prompt" reason="identical_to_source" -->
+    <!-- tm:omitted name="custom_date_prompt" reason="identical_to_source" -->
+    <!-- tm:omitted name="change_date_prompt" reason="identical_to_source" -->
+    <!-- tm:omitted name="change_time_prompt" reason="identical_to_source" -->
+    <!-- tm:omitted name="now_visiting" reason="identical_to_source" -->
+    <!-- tm:omitted name="time_travel_label_past" reason="identical_to_source" -->
+    <!-- tm:omitted name="time_travel_label_future" reason="identical_to_source" -->
+    <!-- tm:omitted name="time_travel_stopped" reason="identical_to_source" -->
+    <string name="time_travel_second_speed" translation_description="Label showing rate of travel through time.  The symbol means greater than.">Travelling &gt; @ 1 sec/sec</string>
+    <string name="time_travel_minute_speed" translation_description="Label showing rate of travel through time">Travelling &gt; @ 1 min/sec</string>
+    <string name="time_travel_10minute_speed" translation_description="Label showing rate of travel through time">Travelling &gt; @ 10 min/sec</string>
+    <string name="time_travel_hour_speed" translation_description="Label showing rate of travel through time">Travelling &gt; @ 1 hour/sec</string>
+    <string name="time_travel_day_speed" translation_description="Label showing rate of travel through time">Travelling &gt; @ 1 day/sec</string>
+    <string name="time_travel_week_speed" translation_description="Label showing rate of travel through time">Travelling &gt; @ 1 week/sec</string>
+    <string name="time_travel_second_speed_back" translation_description="Label showing rate of travel through time">Travelling &lt; @ 1 sec/sec</string>
+    <string name="time_travel_minute_speed_back" translation_description="Label showing rate of travel through time">Travelling &lt; @ 1 min/sec</string>
+    <string name="time_travel_10minute_speed_back" translation_description="Label showing rate of travel through time">Travelling &lt; @ 10 min/sec</string>
+    <string name="time_travel_hour_speed_back" translation_description="Label showing rate of travel through time">Travelling &lt; @ 1 hour/sec</string>
+    <string name="time_travel_day_speed_back" translation_description="Label showing rate of travel through time">Travelling &lt; @ 1 day/sec</string>
+    <string name="time_travel_week_speed_back" translation_description="Label showing rate of travel through time">Travelling &lt; @ 1 week/sec</string>
+
+    <!-- tm:omitted name="time_travel_select_hint" reason="identical_to_source" -->
+    <!-- tm:omitted name="time_travel_next_sunset" reason="identical_to_source" -->
+    <!-- tm:omitted name="time_travel_next_sunrise" reason="identical_to_source" -->
+    <!-- tm:omitted name="time_travel_next_fullmoon" reason="identical_to_source" -->
+    <!-- tm:omitted name="time_travel_next_newmoon" reason="identical_to_source" -->
+    <string name="time_travel_mercury_transit_2016" translation_description="Name of an astronomical event in the time travel picker. A Mercury transit is when Mercury passes across the face of the Sun as seen from Earth. Keep the date format suitable for your locale.">Mercury transit of 9 May 2016</string>
+    <string name="time_travel_solar_eclipse_2024" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">North American Solar Eclipse of 8 Apr 2024</string>
+    <!-- tm:omitted name="time_travel_apollo_11" reason="identical_to_source" -->
+    <!-- tm:omitted name="time_travel_jupiter_saturn_2020" reason="identical_to_source" -->
+    <string name="time_travel_six_planet_parade_2026" translation_description="Name of an astronomical event in the time travel picker. A planet parade is when several planets are visible at once. Keep the date format suitable for your locale.">Six-Planet Parade, 28 Feb 2026</string>
+    <string name="time_travel_lunar_eclipse_2026" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">Total Lunar Eclipse, 3 Mar 2026</string>
+    <string name="time_travel_lyrids_2026" translation_description="Name of an astronomical event in the time travel picker. The Lyrids are an annual meteor shower. Keep the date format suitable for your locale.">Lyrids Meteor Shower, 22 Apr 2026</string>
+    <string name="time_travel_venus_jupiter_2026" translation_description="Name of an astronomical event in the time travel picker. A conjunction is when two planets appear very close together in the sky. Keep the date format suitable for your locale.">Venus-Jupiter Conjunction, 9 Jun 2026</string>
+    <string name="time_travel_mars_uranus_2026" translation_description="Name of an astronomical event in the time travel picker. A close approach is when two objects appear near each other in the sky. Keep the date format suitable for your locale.">Mars-Uranus Close Approach, 4 Jul 2026</string>
+    <string name="time_travel_solar_eclipse_2026" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">Total Solar Eclipse, 12 Aug 2026</string>
+    <string name="time_travel_perseids_2026" translation_description="Name of an astronomical event in the time travel picker. The Perseids are an annual meteor shower. Keep the date format suitable for your locale.">Perseids Meteor Shower, 12-13 Aug 2026</string>
+    <string name="time_travel_jupiter_occultation_2026" translation_description="Name of an astronomical event in the time travel picker. A lunar occultation is when the Moon passes in front of a planet, briefly hiding it. Keep the date format suitable for your locale.">Lunar Occultation of Jupiter, 6 Oct 2026</string>
+    <string name="time_travel_geminids_2026" translation_description="Name of an astronomical event in the time travel picker. The Geminids are an annual meteor shower. Keep the date format suitable for your locale.">Geminids Meteor Shower, 13-14 Dec 2026</string>
+    <string name="time_travel_supermoon_2026" translation_description="Name of an astronomical event in the time travel picker. A supermoon is a full moon that occurs near the Moon\'s closest approach to Earth. Keep the date format suitable for your locale.">Christmas Eve Supermoon, 24 Dec 2026</string>
+
+    <!-- tm:omitted name="use_sound_effects" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="menu_gallery" reason="identical_to_source" -->
+    <!-- tm:omitted name="gallery_image_search_btn" reason="identical_to_source" -->
+    <!-- tm:omitted name="gallery_image_back_btn" reason="identical_to_source" -->
+    <!-- tm:omitted name="hubble_image_gallery_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="hubble_image" reason="identical_to_source" -->
+    <string name="search_overlay_title" translation_description="title for search overlay">Point your phone towards the arrow</string>
+    <!-- tm:omitted name="search_target_looking_message" reason="identical_to_source" -->
+    <!-- tm:omitted name="sun_wont_set_message" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="missing_label" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="menu_tos" reason="identical_to_source" -->
+    <!-- tm:omitted name="menu_diagnostics" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="north_pole" reason="identical_to_source" -->
+    <!-- tm:omitted name="south_pole" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="enable_analytics" reason="identical_to_source" -->
+    <!-- tm:omitted name="enable_analytics_desc" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="no_sensor_warning" reason="identical_to_source" -->
+    <!-- tm:omitted name="warning_dialog_title" reason="identical_to_source" -->
+    <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">\n
+        Unfortunately your device might not have one of the
+    sensors that Sky Map needs.\n\n
+        To show you the sky in the direction your phone is pointing Sky Map
+    needs both a built-in compass and an accelerometer.  Your device reports that it is missing
+        one of them.  The good news is that some devices (for example some Moto E phones) falsely claim
+        not to have a compass but actually do.\n\n
+
+        If your device really is missing a sensor then auto-mode will not work.  However, you
+        can still use Sky Map on this device in manual mode where you drag, rotate and stretch the
+        map with your fingers.</string>
+    <!-- tm:omitted name="do_not_show_again" reason="identical_to_source" -->
+    <!-- tm:omitted name="title_activity_diagnostic" reason="identical_to_source" -->
+    <!-- tm:omitted name="play_services_error" reason="identical_to_source" -->
+    <!-- tm:omitted name="sensor_absent" reason="identical_to_source" -->
+    <!-- tm:omitted name="sensor_accuracy_unknown" reason="identical_to_source" -->
+    <!-- tm:omitted name="sensor_accuracy_unreliable" reason="identical_to_source" -->
+    <!-- tm:omitted name="sensor_accuracy_low" reason="identical_to_source" -->
+    <!-- tm:omitted name="sensor_accuracy_medium" reason="identical_to_source" -->
+    <!-- tm:omitted name="sensor_accuracy_high" reason="identical_to_source" -->
+    <!-- tm:omitted name="sensor_accuracy_nocontact" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_activity_general_heading" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_activity_phone" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_activity_android_version" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_activity_sky_map_version" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_activity_sensors_heading" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_activity_compass" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_activity_accelerometer" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_activity_rotation_vector" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_activity_gyroscope" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_activity_light_level" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_activity_location_and_time_heading" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_activity_location_permission" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_activity_location_permission_granted" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_activity_location_permission_denied" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_activity_gps" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_activity_location" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_activity_pointing_ra_dec" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_activity_magnetic_correction" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_activity_local_datetime" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_activity_universal_time" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_activity_network_heading" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_activity_connection" reason="identical_to_source" -->
+    <!-- tm:omitted name="diagnostics_activity_rotation_matrix" reason="identical_to_source" -->
+    <!-- tm:omitted name="enabled" reason="identical_to_source" -->
+    <!-- tm:omitted name="disabled" reason="identical_to_source" -->
+    <!-- tm:omitted name="permission_disabled" reason="identical_to_source" -->
+    <!-- tm:omitted name="no_gps" reason="identical_to_source" -->
+    <!-- tm:omitted name="connected" reason="identical_to_source" -->
+    <!-- tm:omitted name="disconnected" reason="identical_to_source" -->
+    <!-- tm:omitted name="wifi" reason="identical_to_source" -->
+    <!-- tm:omitted name="cell_network" reason="identical_to_source" -->
+    <!-- tm:omitted name="menu_calibrate" reason="identical_to_source" -->
+    <!-- tm:omitted name="compass_calibration_activity_heading_compass" reason="identical_to_source" -->
+    <!-- tm:omitted name="compass_calibration_activity_do_not_show_this_again" reason="identical_to_source" -->
+    <!-- tm:omitted name="compass_calibration_activity_warning" reason="identical_to_source" -->
+    <!-- tm:omitted name="compass_calibration_activity_user_heading" reason="identical_to_source" -->
+    <string name="compass_calib_what_to_do" translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL"><![CDATA[Sky Map relies on your phone\'s built-in compass sensor. If the accuracy shown above is low, the sensor needs to be \"reset\" by moving the phone in a figure-8 motion: %s.<br/><br/>
+    <b>Important:</b> Calibration is a hardware process handled by your device. Whilst it improves the sensor\'s reliability, external magnetic interference can still cause a \"bias\" or slight drift. This is a physical limitation of mobile compasses and not an error within the app. See <i>Troubleshooting</i> in <i>Help</i> for other things to try.]]></string>
+    <string name="compass_calib_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[Your phone reports its compass accuracy as shown above. To improve this, please perform a figure-8 motion with your device (%s).<br/><br/>
+        <b>Note on Accuracy:</b> Calibration is a hardware-level requirement of your phone, not a Sky Map setting. Even when calibrated, local magnetic fields (like car dashboards or magnets) may cause a slight bias in direction.  See <i>Troubleshooting</i> in <i>Help</i> for other things to try.]]></string>
+    <!-- tm:omitted name="sensor_reverse_preference_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="sensor_reverse_preference_summary" reason="identical_to_source" -->
+    <!-- tm:omitted name="whats_new_dialog_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="disable_gyro_preference_title" reason="identical_to_source" -->
+    <string name="disable_gyro_preference_summary" translation_description="Explanation of the disable gyroscope preference and when to use it">Not all devices have a gyroscope - if yours does then you\'ll get better results with it enabled and this box unchecked. On the other hand if your device does not have a gyroscope then Sky Map will probably not work if you uncheck this box.</string>
+    <!-- tm:omitted name="rotate_horizon_preference_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="auto_level_horizon_preference_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="auto_level_horizon_preference_summary" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="rotate_horizon_preference_summary" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="show_object_info_pref_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="show_object_info_pref_summary" reason="identical_to_source" -->
+    <!-- tm:omitted name="show_object_info_auto_mode_title" reason="identical_to_source" -->
+    <!-- tm:omitted name="show_object_info_auto_mode_summary" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_funfact_label" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_distance_label" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_size_label" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_mass_label" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_spectral_label" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_magnitude_label" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_image_content_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_tap_to_expand" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_tap_to_close" reason="identical_to_source" -->
+
+</resources>
