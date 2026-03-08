@@ -99,8 +99,6 @@
     <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">查找内容：</string>
     <string name="sun_wont_set_message" translation_description="Message shown when the sun will not set during the next 24 hours (polar day / midnight sun)">在未来 24 小时内太阳不会在您当前所在的位置落下。</string>
 
-    <string name="missing_label" translation_description="Used to indicate to the developer that they've added a resource with no translation.">等待翻译</string>
-
     <string name="menu_tos" translation_description="Menu item label to view the Terms of Service">服务条款</string>
     <string name="north_pole" translation_description="Short abbreviation for the North Celestial Pole, displayed as a label on the sky map grid. Translators: use the standard abbreviation in your language (e.g. NP in English, PN in French).">北极</string>
     <string name="south_pole" translation_description="Short abbreviation for the South Celestial Pole, displayed as a label on the sky map grid. Translators: use the standard abbreviation in your language (e.g. SP in English, PS in French).">南极</string>
