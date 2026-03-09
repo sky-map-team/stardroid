@@ -18,6 +18,7 @@ android = [
     "arrays.xml",
     "help.xml",
     "eula.xml",
+    "language_apology.xml",
     "whatsnew.xml",
     "whatsnew_content.xml",
 ]
@@ -25,7 +26,6 @@ android_skip = [
     "notranslate-arrays.xml",
     "notranslate-contributors.xml",
     "notranslate-sponsors.xml",
-    "language_apology.xml",
 ]
 fastlane = [
     "title.txt",
