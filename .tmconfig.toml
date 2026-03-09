@@ -1,0 +1,38 @@
+# .tmconfig.toml — Sky Map (stardroid)
+
+[app]
+name = "Sky Map"
+description = "a mobile astronomy/planetarium application for Android"
+
+[android]
+res_path = "app/src/main/res"
+
+[fastlane]
+metadata_path = "fastlane/metadata/android"
+
+[files]
+android = [
+    "strings.xml",
+    "celestial_objects.xml",
+    "celestial_info_cards.xml",
+    "arrays.xml",
+    "help.xml",
+    "eula.xml",
+    "whatsnew.xml",
+    "whatsnew_content.xml",
+]
+android_skip = [
+    "notranslate-arrays.xml",
+    "notranslate-contributors.xml",
+    "notranslate-sponsors.xml",
+    "language_apology.xml",
+]
+fastlane = [
+    "title.txt",
+    "short_description.txt",
+    "full_description.txt",
+    "changelogs/default.txt",
+]
+
+[discovery]
+resource_qualifier_excludes = ["w820dp"]
