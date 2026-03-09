@@ -100,8 +100,6 @@
     <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">正在尋找：</string>
     <string name="sun_wont_set_message" translation_description="Message shown when the sun will not set during the next 24 hours (polar day / midnight sun)">您目前的位置未來 24 小時之內看不到日落。</string>
 
-    <string name="missing_label" translation_description="Used to indicate to the developer that they've added a resource with no translation.">待翻譯</string>
-
     <string name="menu_tos" translation_description="Menu item label to view the Terms of Service">服務條款</string>
     <string name="menu_diagnostics" translation_description="Menu item label to open the technical diagnostics screen">診斷</string>
 
