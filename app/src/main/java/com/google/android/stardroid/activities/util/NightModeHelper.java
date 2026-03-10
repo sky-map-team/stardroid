@@ -45,7 +45,8 @@ public class NightModeHelper {
       actionBar.setTitle(styledTitle);
     }
     // Tint the Sky Map logo shown in the action bar
-    Drawable icon = activity.getResources().getDrawable(R.drawable.skymap_logo, activity.getTheme());
+    Drawable icon = activity.getResources().getDrawable(
+            R.mipmap.skymap_logo_new, activity.getTheme());
     if (icon != null) {
       icon = icon.mutate();
       if (nightMode) {
