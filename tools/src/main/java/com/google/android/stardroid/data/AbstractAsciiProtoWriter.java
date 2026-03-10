@@ -50,7 +50,11 @@ public abstract class AbstractAsciiProtoWriter {
   protected List<String> rKeysFromName(String names) {
     List<String> rNames = new ArrayList<>();
     for (String name : names.split(NAME_DELIMITER)) {
-      rNames.add(name.replaceAll(" ", "_").toLowerCase());
+      String key = name.replaceAll(" ", "_").toLowerCase();
+      if (!key.isEmpty() && Character.isDigit(key.charAt(0))) {
+        key = "n" + key;
+      }
+      rNames.add(key);
     }
     return rNames;
   }
