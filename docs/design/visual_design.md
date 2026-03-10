@@ -7,7 +7,7 @@ Some notes on the visual design.
 
 ## Colors
 
-These are the man colors in the logo:
+These are the main colors in the logo:
 
 | Role | Color | Hex Code | Preview | Purpose |
 |------|-------|----------|---------|---------|
