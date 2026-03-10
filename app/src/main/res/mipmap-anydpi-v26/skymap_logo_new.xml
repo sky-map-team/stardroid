@@ -2,5 +2,5 @@
 <adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
     <background android:drawable="@color/skymap_logo_new_background"/>
     <foreground android:drawable="@mipmap/skymap_logo_new_foreground"/>
-    <monochrome android:drawable="@mipmap/skymap_logo_new_monochrome"/>
+    <monochrome android:drawable="@drawable/skymap_logo_new_monochrome"/>
 </adaptive-icon>
