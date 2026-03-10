@@ -44,12 +44,11 @@
 
     <application
         android:name=".StardroidApplication"
-        android:icon="@drawable/skymap_logo"
+        android:icon="@mipmap/skymap_logo_new"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
             android:name=".activities.SplashScreenActivity"
-            android:label="@string/app_name"
             android:screenOrientation="nosensor"
             android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"
             android:exported="true">
@@ -61,7 +60,6 @@
         <activity
             android:name=".activities.DynamicStarMapActivity"
             android:configChanges="keyboardHidden|orientation"
-            android:label="@string/app_name"
             android:launchMode="singleTask"
             android:screenOrientation="nosensor"
             android:theme="@style/FullscreenTheme"

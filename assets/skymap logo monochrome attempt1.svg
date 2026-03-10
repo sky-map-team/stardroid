@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<svg width="800" height="800" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ <g class="layer" display="inline">
+  <title>Layer 1</title>
+  <path d="m60,60q340,100 680,0q-100,340 0,680q-340,-100 -680,0q100,-340 0,-680z" fill="#000000" fill-opacity="0" id="svg_1" stroke="black" stroke-linejoin="round" stroke-width="24" transform="matrix(1 0 0 1 0 0)"/>
+  <g fill-opacity="0" id="svg_6" stroke="lightblue" transform="matrix(1.10032 -0.18115 0.18115 1.10032 -148.745 -6.63341)">
+   <circle cx="400" cy="400" fill="#000000" id="svg_7" r="160" stroke="#7ec8e3" stroke-width="50"/>
+   <line fill="#000000" id="svg_8" stroke="#7ec8e3" stroke-linecap="round" stroke-width="90" transform="matrix(0.757638 0 0 0.757638 180.442 152.738)" x1="500" x2="700" y1="500" y2="700"/>
+  </g>
+  <polygon fill="#ffc107" id="svg_2" points="0,-100 22,-31 95,-31 36,12 59,81 0,38 -59,81 -36,12 -95,-31 -22,-31" transform="matrix(1 0 0 1 0 0) matrix(0.588535 0.24394 -0.24214 0.592912 180.216 106.462)"/>
+  <circle cx="630" cy="220" fill="#e05c34" id="svg_3" r="45" transform="matrix(1 0 0 1 -15 -30)"/>
+  <circle cx="200" cy="620" fill="#4db848" id="svg_4" r="50" transform="matrix(1 0 0 1 -19 -23)"/>
+  <polygon fill="#ffc107" id="svg_5" points="358.5,220.18199348449707 392.8699383735657,314.6416087150574 506.91564297676086,314.6416087150574 414.741717338562,373.50774574279785 450.67392563819885,467.96736097335815 358.5,409.1012239456177 266.32607436180115,467.96736097335815 302.258282661438,373.50774574279785 210.08435702323914,314.6416087150574 324.1300616264343,314.6416087150574" transform="matrix(1.08422 0 0 1.08422 -33.6939 -39.4136)"/>
+ </g>
+</svg>
