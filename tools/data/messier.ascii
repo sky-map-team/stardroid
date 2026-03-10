@@ -2803,3 +2803,81 @@ source {
   name_str_ids: "carina_nebula"
   name_str_ids: "ngc3372"
 }
+source {
+  search_location {
+    right_ascension: 84.6765
+    declination: -69.1003
+  }
+  point {
+    location {
+      right_ascension: 84.6765
+      declination: -69.1003
+    }
+    color: 4761665
+    size: 3
+    shape: DIFFUSE_NEBULA
+  }
+  label {
+    location {
+      right_ascension: 84.6765
+      declination: -69.1003
+    }
+    color: 4761665
+    strings_str_id: "tarantula_nebula"
+  }
+  name_str_ids: "tarantula_nebula"
+  name_str_ids: "n30_doradus"
+  name_str_ids: "ngc2070"
+}
+source {
+  search_location {
+    right_ascension: 80.892
+    declination: -69.7561
+  }
+  point {
+    location {
+      right_ascension: 80.892
+      declination: -69.7561
+    }
+    color: 4761665
+    size: 3
+    shape: GALAXY
+  }
+  label {
+    location {
+      right_ascension: 80.892
+      declination: -69.7561
+    }
+    color: 4761665
+    strings_str_id: "lmc"
+  }
+  name_str_ids: "lmc"
+  name_str_ids: "large_magellanic_cloud"
+  name_str_ids: "nubecula_major"
+}
+source {
+  search_location {
+    right_ascension: 13.186501
+    declination: -72.8286
+  }
+  point {
+    location {
+      right_ascension: 13.186501
+      declination: -72.8286
+    }
+    color: 4761665
+    size: 3
+    shape: GALAXY
+  }
+  label {
+    location {
+      right_ascension: 13.186501
+      declination: -72.8286
+    }
+    color: 4761665
+    strings_str_id: "smc"
+  }
+  name_str_ids: "smc"
+  name_str_ids: "small_magellanic_cloud"
+  name_str_ids: "nubecula_minor"
+}

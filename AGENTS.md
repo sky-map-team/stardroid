@@ -88,6 +88,10 @@ Follow the [Google Java Style Guide](https://google.github.io/styleguide/javagui
 - Do **not** prefix member variables with `m` (unlike common Android convention)
 - Use Java 17 toolchain features
 
+### Strings
+Remember to properly escape any text added as Android resource strings (e.g. ' must be escaped
+with a single backslash as \')
+
 ### Colors
 
 Never hardcode color integers in Java/Kotlin. Declare in `app/src/main/res/values/colors.xml` and

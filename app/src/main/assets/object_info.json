@@ -1599,6 +1599,39 @@
       "distanceKey": "object_info_eta_carinae_nebula_distance",
       "sizeKey": "object_info_eta_carinae_nebula_size",
       "magnitude": "1.0"
+    },
+    "tarantula_nebula": {
+      "nameKey": "tarantula_nebula",
+      "descriptionKey": "object_info_tarantula_nebula_description",
+      "funFactKey": "object_info_tarantula_nebula_funfact",
+      "type": "nebula",
+      "distanceKey": "object_info_tarantula_nebula_distance",
+      "sizeKey": "object_info_tarantula_nebula_size",
+      "magnitude": "8.0",
+      "imageKey": "messier/eso_tarantula.webp",
+      "imageCredit": "ESO/R. Fosbury/ST-ECF"
+    },
+    "lmc": {
+      "nameKey": "lmc",
+      "descriptionKey": "object_info_lmc_description",
+      "funFactKey": "object_info_lmc_funfact",
+      "type": "galaxy",
+      "distanceKey": "object_info_lmc_distance",
+      "sizeKey": "object_info_lmc_size",
+      "magnitude": "0.9",
+      "imageKey": "messier/lmc.webp",
+      "imageCredit": "ESO/C. Bardon"
+    },
+    "smc": {
+      "nameKey": "smc",
+      "descriptionKey": "object_info_smc_description",
+      "funFactKey": "object_info_smc_funfact",
+      "type": "galaxy",
+      "distanceKey": "object_info_smc_distance",
+      "sizeKey": "object_info_smc_size",
+      "magnitude": "2.7",
+      "imageKey": "messier/smc.webp",
+      "imageCredit": "ESO/VISTA VMC"
     }
   }
 }
