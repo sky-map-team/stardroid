@@ -7,7 +7,7 @@ Some notes on the visual design.
 
 ## Colors
 
-Gemini picked out the following colors:
+These are the man colors in the logo:
 
 | Role | Color | Hex Code | Preview | Purpose |
 |------|-------|----------|---------|---------|
