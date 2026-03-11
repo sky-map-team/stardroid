@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="sensor_speed">
         <item translation_description="Slow sensor speed">Lento</item>
@@ -14,7 +14,18 @@
     <string-array name="viewing_direction">
         <item translation_description="Normal viewing">Normal</item>
         <item translation_description="Rotates the screen by 90 degrees">Horizonte girado</item>
-        <item translation_description="Shows the sky as pointed at by the long edge of the phone">Modo del puntero
-        </item>
+        <item
+            translation_description="Shows the sky as pointed at by the long edge of the phone">Modo puntero</item>
     </string-array>
-    </resources>
+    <string-array name="auto_dim_texts">
+        <item translation_description="Dimmest screen setting">Muy tenue</item>
+        <item translation_description="Leave it on the system setting">Predeterminado del sistema</item>
+        <item translation_description="The setting used for the last 15 years">Clásico</item>
+    </string-array>
+    <string-array name="font_size_texts">
+        <item translation_description="Smallest font size">Pequeña</item>
+        <item translation_description="Normal font size">Mediana</item>
+        <item translation_description="Large font size">Grande</item>
+        <item translation_description="Largest font size">Extra grande</item>
+    </string-array>
+</resources>
