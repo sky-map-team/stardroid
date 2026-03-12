@@ -15,7 +15,6 @@ package com.google.android.stardroid.layers
 
 import android.content.SharedPreferences
 import android.content.res.Resources
-import android.graphics.Color
 import com.google.android.stardroid.R
 import com.google.android.stardroid.math.Vector3
 import com.google.android.stardroid.math.getGeocentricCoords
@@ -48,13 +47,13 @@ class EclipticLayer(resources: Resources, preferences: SharedPreferences) : Abst
 
         companion object {
             private const val EARTHS_ANGULAR_TILT = 23.439281f
-            private val LINE_COLOR = Color.argb(20, 248, 239, 188)
         }
 
         init {
+            val lineColor = resources.getColor(R.color.grid_line, null)
             val title = resources.getString(R.string.ecliptic)
-            labels.add(TextPrimitive(90.0f, EARTHS_ANGULAR_TILT, title, LINE_COLOR))
-            labels.add(TextPrimitive(270f, -EARTHS_ANGULAR_TILT, title, LINE_COLOR))
+            labels.add(TextPrimitive(90.0f, EARTHS_ANGULAR_TILT, title, lineColor))
+            labels.add(TextPrimitive(270f, -EARTHS_ANGULAR_TILT, title, lineColor))
 
             // Create line source.
             val ra = floatArrayOf(0f, 90f, 180f, 270f, 0f)
@@ -63,7 +62,7 @@ class EclipticLayer(resources: Resources, preferences: SharedPreferences) : Abst
             for (i in ra.indices) {
                 vertices.add(getGeocentricCoords(ra[i], dec[i]))
             }
-            lines.add(LinePrimitive(LINE_COLOR, vertices, 1.5f))
+            lines.add(LinePrimitive(lineColor, vertices, 1.5f))
         }
     }
 }

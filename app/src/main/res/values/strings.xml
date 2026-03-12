@@ -101,7 +101,7 @@
             translation_description="used in time travel dialog to show the destination date/time the user has selected, time formatted as yyyy.mm.dd at hh.mm.ss + timezone">Destination: %s</string>
     <string name="time_travel_label_past" translation_description="Label showing that we are in the past">Time Travel: Past</string>
     <string name="time_travel_label_future" translation_description="Label showing that we are in the future">Time Travel: Future</string>
-    <string name="time_travel_stopped" translation_description="Label showing rate of travel through time">Time travel frozen</string>
+    <string name="time_travel_stopped" translation_description="Label showing rate of travel through time">Time travel paused</string>
     <string name="time_travel_second_speed" translation_description="Label showing rate of travel through time.  The symbol means greater than.">Traveling &gt; @ 1 sec/sec</string>
     <string name="time_travel_minute_speed" translation_description="Label showing rate of travel through time">Traveling &gt; @ 1 min/sec</string>
     <string name="time_travel_10minute_speed" translation_description="Label showing rate of travel through time">Traveling &gt; @ 10 min/sec</string>

@@ -15,7 +15,7 @@ package com.google.android.stardroid.ephemeris
 
 import android.content.SharedPreferences
 import android.content.res.Resources
-import android.graphics.Color
+import com.google.android.stardroid.R
 import com.google.android.stardroid.base.Lists
 import com.google.android.stardroid.control.AstronomerModel
 import com.google.android.stardroid.math.Vector3
@@ -97,10 +97,10 @@ class SolarSystemRenderable(
                     )
                 )
             } else {
-                pointPrimitives.add(PointPrimitive(currentCoords, PLANET_COLOR, PLANET_SIZE))
+                pointPrimitives.add(PointPrimitive(currentCoords, resources.getColor(R.color.planet_body, null), PLANET_SIZE))
             }
         }
-        labelPrimitives.add(TextPrimitive(currentCoords, name, PLANET_LABEL_COLOR))
+        labelPrimitives.add(TextPrimitive(currentCoords, name, resources.getColor(R.color.sky_label, null)))
         return this
     }
 
@@ -135,8 +135,6 @@ class SolarSystemRenderable(
 
     companion object {
         private const val PLANET_SIZE = 3
-        private val PLANET_COLOR = Color.argb(20, 129, 126, 246)
-        private const val PLANET_LABEL_COLOR = 0xf67e81
         private const val SHOW_PLANETARY_IMAGES = "show_planetary_images"
         private val UP = Vector3(0.0f, 1.0f, 0.0f)
     }

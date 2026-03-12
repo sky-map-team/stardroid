@@ -15,7 +15,6 @@ package com.google.android.stardroid.layers
 
 import android.content.SharedPreferences
 import android.content.res.Resources
-import android.graphics.Color
 import com.google.android.stardroid.R
 import com.google.android.stardroid.base.Lists
 import com.google.android.stardroid.base.TimeConstants
@@ -91,20 +90,20 @@ class HorizonLayer(private val model: AstronomerModel, resources: Resources, pre
         companion object {
             // Due to a bug in the G1 rendering code text and lines render in different
             // colors.
-            private val LINE_COLOR = Color.argb(120, 86, 176, 245)
-            private val LABEL_COLOR = Color.argb(120, 245, 176, 86)
             private const val UPDATE_FREQ_MS = 1L * TimeConstants.MILLISECONDS_PER_SECOND
         }
 
         init {
+            val lineColor = resources.getColor(R.color.horizon_line, null)
+            val labelColor = resources.getColor(R.color.horizon_label, null)
             val vertices = Lists.asList(north, east, south, west, north)
-            lines.add(LinePrimitive(LINE_COLOR, vertices, 1.5f))
-            labels.add(TextPrimitive(zenith, resources.getString(R.string.zenith), LABEL_COLOR))
-            labels.add(TextPrimitive(nadir, resources.getString(R.string.nadir), LABEL_COLOR))
-            labels.add(TextPrimitive(north, resources.getString(R.string.north), LABEL_COLOR))
-            labels.add(TextPrimitive(south, resources.getString(R.string.south), LABEL_COLOR))
-            labels.add(TextPrimitive(east, resources.getString(R.string.east), LABEL_COLOR))
-            labels.add(TextPrimitive(west, resources.getString(R.string.west), LABEL_COLOR))
+            lines.add(LinePrimitive(lineColor, vertices, 1.5f))
+            labels.add(TextPrimitive(zenith, resources.getString(R.string.zenith), labelColor))
+            labels.add(TextPrimitive(nadir, resources.getString(R.string.nadir), labelColor))
+            labels.add(TextPrimitive(north, resources.getString(R.string.north), labelColor))
+            labels.add(TextPrimitive(south, resources.getString(R.string.south), labelColor))
+            labels.add(TextPrimitive(east, resources.getString(R.string.east), labelColor))
+            labels.add(TextPrimitive(west, resources.getString(R.string.west), labelColor))
         }
     }
 }

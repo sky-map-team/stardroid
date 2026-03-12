@@ -221,7 +221,6 @@ class MeteorShowerLayer(private val model: AstronomerModel, resources: Resources
     }
 
     companion object {
-      private const val LABEL_COLOR = 0xf67e81
       private val UP = Vector3(0.0f, 1.0f, 0.0f)
       private const val UPDATE_FREQ_MS = 1L * TimeConstants.MILLISECONDS_PER_DAY
       private const val SCALE_FACTOR = 0.03f
@@ -241,7 +240,7 @@ class MeteorShowerLayer(private val model: AstronomerModel, resources: Resources
       // TODO(johntaylor): fix the bug and remove this blank image
       theImage = ImagePrimitive(shower.radiant, resources, R.drawable.blank, UP, SCALE_FACTOR)
       images.add(theImage)
-      label = TextPrimitive(shower.radiant, name, LABEL_COLOR)
+      label = TextPrimitive(shower.radiant, name, resources.getColor(R.color.sky_label, null))
       labels.add(label)
     }
   }

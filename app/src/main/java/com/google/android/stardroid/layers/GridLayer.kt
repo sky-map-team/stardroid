@@ -15,7 +15,6 @@ package com.google.android.stardroid.layers
 
 import android.content.SharedPreferences
 import android.content.res.Resources
-import android.graphics.Color
 import com.google.android.stardroid.R
 import com.google.android.stardroid.math.RaDec
 import com.google.android.stardroid.math.getGeocentricCoords
@@ -63,13 +62,14 @@ class GridLayer
         AbstractAstronomicalRenderable() {
         override val labels: MutableList<TextPrimitive> = ArrayList()
         override val lines: MutableList<LinePrimitive> = ArrayList()
+        private val lineColor = resources.getColor(R.color.grid_line, null)
 
         /**
          * Constructs a single longitude line. These lines run from the north pole to
          * the south pole at fixed Right Ascensions.
          */
         private fun createRaLine(index: Int, numRaSources: Int): LinePrimitive {
-            val line = LinePrimitive(LINE_COLOR)
+            val line = LinePrimitive(lineColor)
             val ra = index * 360.0f / numRaSources
             for (i in 0 until NUM_DEC_VERTICES - 1) {
                 val dec = 90.0f - i * 180.0f / (NUM_DEC_VERTICES - 1)
@@ -84,7 +84,7 @@ class GridLayer
         }
 
         private fun createDecLine(dec: Float): LinePrimitive {
-            val line = LinePrimitive(LINE_COLOR)
+            val line = LinePrimitive(lineColor)
             for (i in 0 until NUM_RA_VERTICES) {
                 val ra = i * 360.0f / NUM_RA_VERTICES
                 val raDec = RaDec(ra, dec)
@@ -98,8 +98,6 @@ class GridLayer
         }
 
         companion object {
-            private val LINE_COLOR = Color.argb(20, 248, 239, 188)
-
             /** These are great (semi)circles, so only need 3 points.  */
             private const val NUM_DEC_VERTICES = 3
 
@@ -117,7 +115,7 @@ class GridLayer
                     0f,
                     90f,
                     resources.getString(R.string.north_pole),
-                    LINE_COLOR
+                    lineColor
                 )
             )
             labels.add(
@@ -125,13 +123,13 @@ class GridLayer
                     0f,
                     -90f,
                     resources.getString(R.string.south_pole),
-                    LINE_COLOR
+                    lineColor
                 )
             )
             for (index in 0..11) {
                 val ra = index * 30.0f
                 val title = String.format("%dh", 2 * index)
-                labels.add(TextPrimitive(ra, 0.0f, title, LINE_COLOR))
+                labels.add(TextPrimitive(ra, 0.0f, title, lineColor))
             }
             lines.add(createDecLine(0f)) // Equator
             // Note that we don't create lines at the poles.
@@ -143,7 +141,7 @@ class GridLayer
                         0f,
                         dec,
                         String.format("%d°", dec.toInt()),
-                        LINE_COLOR
+                        lineColor
                     )
                 )
                 lines.add(createDecLine(-dec))
@@ -152,7 +150,7 @@ class GridLayer
                         0f,
                         -dec,
                         String.format("%d°", -dec.toInt()),
-                        LINE_COLOR
+                        lineColor
                     )
                 )
             }
