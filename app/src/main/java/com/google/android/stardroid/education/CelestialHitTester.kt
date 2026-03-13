@@ -60,9 +60,14 @@ class CelestialHitTester @Inject constructor(
             fieldOfView
         )
 
+        // Scale tap threshold with zoom level: at max zoom out (90°) use full threshold,
+        // at high zoom use proportionally smaller threshold for precise selection.
+        val scaledThreshold = (TAP_THRESHOLD_DEGREES * fieldOfView / MAX_FOV)
+            .coerceAtLeast(MIN_TAP_THRESHOLD_DEGREES)
+
         // Find the nearest supported object to this direction
         var bestMatch: ObjectInfo? = null
-        var bestAngularDistance = TAP_THRESHOLD_DEGREES
+        var bestAngularDistance = scaledThreshold
 
         for (objectId in objectInfoRegistry.supportedObjectIds) {
             // Get the localized search name (e.g., "Sol" in Portuguese for "sun")
@@ -174,9 +179,11 @@ class CelestialHitTester @Inject constructor(
         private const val TAG = "CelestialHitTester"
 
         /**
-         * Maximum angular distance in degrees for a tap to register as hitting an object.
-         * This is generous to account for touch imprecision and varying zoom levels.
+         * Maximum angular distance in degrees for a tap to register as hitting an object
+         * at the widest field of view (MAX_FOV). Scales down proportionally when zoomed in.
          */
         private const val TAP_THRESHOLD_DEGREES = 5f
+        private const val MAX_FOV = 90f
+        private const val MIN_TAP_THRESHOLD_DEGREES = 0.5f
     }
 }
