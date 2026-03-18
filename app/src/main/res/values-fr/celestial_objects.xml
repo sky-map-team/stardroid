@@ -322,6 +322,15 @@
     <string name="eta_carinae_nebula" translation_description="Name of the Eta Carinae Nebula (NGC 3372)">Nébuleuse d\'Eta Carinae</string>
     <string name="carina_nebula" translation_description="Common name for the Eta Carinae Nebula">Nébuleuse de la Carène</string>
     <!-- tm:omitted name="ngc3372" reason="identical_to_source" -->
+    <string name="tarantula_nebula" translation_description="Name of the Tarantula Nebula (NGC 2070) in the Large Magellanic Cloud">Nébuleuse de la Tarentule</string>
+    <!-- tm:omitted name="n30_doradus" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc2070" reason="identical_to_source" -->
+    <!-- tm:omitted name="lmc" reason="identical_to_source" -->
+    <string name="large_magellanic_cloud" translation_description="Full name of the Large Magellanic Cloud galaxy">Grand Nuage de Magellan</string>
+    <!-- tm:omitted name="nubecula_major" reason="identical_to_source" -->
+    <!-- tm:omitted name="smc" reason="identical_to_source" -->
+    <string name="small_magellanic_cloud" translation_description="Full name of the Small Magellanic Cloud galaxy">Petit Nuage de Magellan</string>
+    <!-- tm:omitted name="nubecula_minor" reason="identical_to_source" -->
     <string name="butterfly_cluster" translation_description="Name of the Messier object Butterfly Cluster">Amas du Papillon</string>
     <string name="scorpions_tail" translation_description="Name of the Messier object Scorpion\'s Tail">Queue du Scorpion</string>
     <string name="winnecke_4" translation_description="Name of the Messier object Winnecke 4">Winnecke 4</string>
