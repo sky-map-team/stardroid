@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-    <!-- Constellations -->
+    <!-- Constelaciones -->
     <string name="andromeda" translation_description="Name of the Andromeda constellation">Andrómeda</string>
     <string name="aquarius" translation_description="Name of the Aquarius constellation">Acuario</string>
     <string name="aquila" translation_description="Name of the Aquila constellation">Águila</string>
@@ -99,7 +99,7 @@
     <string name="volans" translation_description="Name of the Volans constellation">Pez Volador</string>
     <string name="vulpecula" translation_description="Name of the Vulpecula constellation">Zorrilla</string>
 
-    <!-- Major solar system objects -->
+    <!-- Objetos mayores del Sistema Solar -->
     <string name="sun" translation_description="Name of the Sun">Sol</string>
     <string name="moon" translation_description="Name of the Earth's Moon">Luna</string>
     <string name="mercury" translation_description="Name of the planet Mercury">Mercurio</string>
@@ -112,7 +112,7 @@
     <string name="neptune" translation_description="Name of the planet Neptune">Neptuno</string>
     <string name="pluto" translation_description="Name of the dwarf planet Pluto">Plutón</string>
 
-    <!-- Gallery objects -->
+    <!-- Objetos de galería -->
     <string name="crab_nebula" translation_description="hubble object">Nebulosa del Cangrejo</string>
     <string name="eagle_nebula" translation_description="hubble object">Nebulosa del Águila</string>
     <string name="andromeda_galaxy" translation_description="hubble object">Galaxia de Andrómeda</string>
@@ -132,7 +132,7 @@
     <!-- tm:omitted name="rho_oph" reason="identical_to_source" -->
 
 
-    <!-- Stars -->
+    <!-- Estrellas -->
     <string name="sirius" translation_description="Name of the Star Sirius">Sirio</string>
     <string name="canopus" translation_description="Name of the Star Canopus">Canopo</string>
     <string name="arcturus" translation_description="Name of the Star Arcturus">Arturo</string>
