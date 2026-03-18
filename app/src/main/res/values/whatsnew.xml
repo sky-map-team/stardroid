@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="whats_new_text" translation_description="HTML structure for a page describing new features in this version of Sky Map. Please do not change the &lt; and &gt; markup">
-%3$s
+    <string name="whats_new_text" translation_description="HTML structure for a page describing new features in this version of Sky Map. Please do not change the &lt; and &gt; markup">%3$s
 &lt;h1&gt;New in version %1$s&lt;/h1&gt;
 %2$s
 
