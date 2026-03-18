@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <!-- The folks who made Sky Map Happen -->
+<string name="credits_text" translation_description="This page credits the people and organizations who support and maintain the app Sky Map. Please do not change the &lt; and &gt; markup">&lt;h1&gt;開発をサポート&lt;/h1&gt;
+&lt;p&gt;Sky Mapは無料でオープンソース、広告なしです。このアプリをお気に召しましたら、&lt;a href="https://buymeacoffee.com/skymapdevs"&gt;サポート&lt;/a&gt;をご検討ください。&lt;a href="https://github.com/sky-map-team/stardroid?tab=readme-ov-file#support-the-project"&gt;GitHubページ&lt;/a&gt;で継続的な開発をサポートできます。&lt;/p&gt;
+&lt;h2&gt;最近&lt;a href="https://buymeacoffee.com/skymapdevs"&gt;寄付&lt;/a&gt;してくださった皆様へ、ありがとうございます！&lt;/h2&gt;
+
+&lt;p&gt;%1$s&lt;/p&gt;
+
+&lt;h1&gt;クレジット&lt;/h1&gt;
+&lt;h2&gt;エンジニアリング&lt;/h2&gt;
+&lt;p&gt;John Taylor、Kevin Serafini&lt;/p&gt;
+
+&lt;h2&gt;オープンソース貢献者&lt;/h2&gt;
+&lt;p&gt;
+    %2$s
+&lt;/p&gt;
+&lt;p&gt;ありがとうございます！最新の貢献者は&lt;a href="https://github.com/sky-map-team/stardroid/graphs/contributors"&gt;GitHub&lt;/a&gt;でご確認ください。
+&lt;/p&gt;
+
+&lt;h2&gt;Googleでのオリジナルエンジニアリング、デザイン、プロダクトマネジメント&lt;/h2&gt;
+&lt;p&gt;Brent Bryan、Dominic Widdows、Hector Ouilhet、James Powell、John Taylor、Kevin Serafini、
+Lior Ron。&lt;/p&gt;
+
+&lt;h1&gt;謝辞&lt;/h1&gt;
+&lt;p&gt;Sky Mapはもともと「Google Sky Map」としてGoogle Inc.により開発され、2012年にオープンソース化されました。&lt;/p&gt;
+&lt;p&gt;G1携帯電話コンペティションでこのアイデアを提案してくれたPat Stephenson、およびGoogleからオープンソースへの移行を支援してくれたChris DiBona、Michael Weiss-Malikに特に感謝します。&lt;/p&gt;
+
+&lt;h2&gt;データ&lt;/h2&gt;
+&lt;p&gt;Sky Mapは以下のデータから派生したマップを使用しています：&lt;/p&gt;
+&lt;ul class="credits"&gt;
+&lt;li&gt;Centre de Donnees astronomiques de Strasbourg (&lt;a href="https://cdsweb.u-strasbg.fr/"&gt;https://cdsweb.u-strasbg.fr/&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;The Bright Star Catalogue、5th Revised Ed. (Hoffleit D.、Warren Jr W.H.)&lt;/li&gt;
+&lt;li&gt;The HYG Database、HYG v1.0. (&lt;a href="https://www.astronexus.com/"&gt;https://www.astronexus.com/&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;History and Accurate Positions for the NGC/IC Objects (Harold G. Corwin Jr)&lt;/li&gt;
+&lt;li&gt;Revised New General Catalogue of Nonstellar Astronomical Objects (Sulentic J.W.、Tifft W.G.)&lt;/li&gt;
+&lt;li&gt;SFA Star Charts (&lt;a href="https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html"&gt;https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;太陽系天体の位置はUSNO (&lt;a href="https://www.usno.navy.mil/USNO/astronomical-applications"&gt;https://www.usno.navy.mil/USNO/astronomical-applications&lt;/a&gt;)から提供されたデータから計算されています&lt;/li&gt;
+&lt;li&gt;球面カバレッジデータは(&lt;a href="https://www2.research.att.com/~njas/coverings"&gt;https://www2.research.att.com/~njas/coverings&lt;/a&gt;)から取得されました&lt;/li&gt;
+&lt;li&gt;2024年日食マップはNASAの科学可視化スタジオの提供です。&lt;/li&gt;
+&lt;li&gt;流星群データは国際流星機構(&lt;a href="https://www.imo.net/data"&gt;https://www.imo.net/data&lt;/a&gt;)から提供されています&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;画像クレジット&lt;/h2&gt;
+&lt;p&gt;このアプリの天体画像は以下のソースから提供されています：&lt;/p&gt;
+&lt;ul class="credits"&gt;
+&lt;li&gt;ハッブル宇宙望遠鏡画像：NASA、ESA、およびSpace Telescope Science Institute (&lt;a href="https://hubblesite.org/"&gt;hubblesite.org&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;惑星画像：NASA/JPL-Caltech、NASA/Johns Hopkins APL/Carnegie (MESSENGER)、NASA/Johns Hopkins APL/SwRI (New Horizons)&lt;/li&gt;
+&lt;li&gt;月画像：NASA/GSFC/Arizona State University (Lunar Reconnaissance Orbiter)&lt;/li&gt;
+&lt;li&gt;星野画像：ESO Digitized Sky Survey 2 (&lt;a href="https://archive.eso.org/dss/dss"&gt;archive.eso.org/dss&lt;/a&gt;)、CC BY 4.0&lt;/li&gt;
+&lt;li&gt;星座図：IAUおよびSky &amp;amp; Telescope (Roger Sinnott &amp;amp; Rick Fienberg)、CC BY 4.0&lt;/li&gt;
+&lt;li&gt;追加のメシエ画像：Gemini Observatory/NOIRLab/NSF/AURA (&lt;a href="https://noirlab.edu/"&gt;noirlab.edu&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;M31画像：Peter Kennett (&lt;a href="https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg"&gt;Wikimedia Commons&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;</string>
+</resources>
