@@ -50,7 +50,7 @@
     <string name="show_comet_layer_pref" translation_description="Preference toggle label for the comets layer">Komety</string>
     <string name="show_satellite_layer_pref" translation_description="The layer for satellites">Satelity</string>
     <string name="sensor_prefs" translation_description="Preferences category heading for sensor settings, intended for advanced/expert users">Ustawienia czujnika (zaawansowane)</string>
-    <string name="sensor_speed" translation_description="Old, non gyro sensors only: How quickly the sensor should send us data">Szybkość czujnika</string>
+    <string name="sensor_speed" translation_description="Old, non gyro sensors only: How quickly the sensor should send us data">Prędkość czujnika</string>
     <string name="sensor_damping" translation_description="Old, non gyro sensors only: The amount of smoothing applied to the sensor outputs.">Tłumienie</string>
     <string name="appearance_prefs" translation_description="Preferences title for section about app appearance">Wygląd</string>
     <string name="auto_dimness_preference" translation_description="Mode for automatically dimming the screen when night mode is selected">Autoprzyciemnianie ekranu</string>
