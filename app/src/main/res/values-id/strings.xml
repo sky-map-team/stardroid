@@ -15,7 +15,7 @@
     <string name="no_use_gps_pref" translation_description="Preference label: choose to enter location by hand instead of using GPS or phone location">Atur lokasi secara manual</string>
     <string name="no_use_gps_pref_hint" translation_description="Hint text beneath the \'Set location manually\' preference">Masukkan tempat atau lat/long di bawah</string>
     <string name="location_placename" translation_description="Label for the place-name text field in manual location settings">Nama tempat</string>
-    <string name="location_placename_hint" translation_description="An example address.  Translators: please pick an address suitable for your country.  If it has an astronomical connection (e.g. the address of an observatory or famous astronomer) then that would be even better.">mis. 1400 Jalan Mars Hill Barat, Flagstaff, AZ.</string>
+    <string name="location_placename_hint" translation_description="An example address.  Translators: please pick an address suitable for your country.  If it has an astronomical connection (e.g. the address of an observatory or famous astronomer) then that would be even better.">mis. Jakarta, Indonesia</string>
     <string name="location_lat_pref" translation_description="Label for the latitude input field in manual location settings">Lintang</string>
     <string name="location_long_pref" translation_description="Label for the longitude input field in manual location settings">Bujur</string>
     <string name="degrees" translation_description="angular degrees - used for latitude and longitude">Derajat</string>
@@ -197,8 +197,8 @@ Jika perangkat Anda benar-benar kehilangan sensor, mode otomatis tidak akan berf
     <string name="no_gps" translation_description="Status value shown in diagnostics when no GPS provider is available">Tidak ada GPS</string>
     <string name="connected" translation_description="Network status value shown when the device has an active network connection">Terhubung</string>
     <string name="disconnected" translation_description="Network status value shown when the device has no network connection">Terputus</string>
-    <string name="wifi" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (wifi)\'). Note the leading space.">(wifi)</string>
-    <string name="cell_network" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (cell)\'). Note the leading space.">(seluler)</string>
+    <string name="wifi" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (wifi)\'). Note the leading space."> (wifi)</string>
+    <string name="cell_network" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (cell)\'). Note the leading space."> (seluler)</string>
     <string name="menu_calibrate" translation_description="Menu item label to open the compass calibration screen">Kalibrasi</string>
     <string name="compass_calibration_activity_heading_compass" translation_description="Static label in the compass calibration screen placed inline to the left of the live compass accuracy value (e.g. displayed as \'Compass - Accuracy: High\')">Kompas -</string>
     <string name="compass_calibration_activity_do_not_show_this_again" translation_description="Checkbox label in the compass calibration dialog to suppress future automatic appearances">Jangan tampilkan lagi</string>

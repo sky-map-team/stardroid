@@ -8,8 +8,8 @@
     <string-array name="sensor_damping">
         <item translation_description="Low sensor damping factor">Tersentak</item>
         <item translation_description="Medium sensor damping factor">Sedang</item>
-        <item translation_description="Extra High sensor damping factor">Pas</item>
-        <item translation_description="Really High sensor damping factor">Lambat</item>
+        <item translation_description="Extra High sensor damping factor">Redaman Ekstra Tinggi</item>
+        <item translation_description="Really High sensor damping factor">Redaman Sangat Tinggi</item>
     </string-array>
     <string-array name="viewing_direction">
         <item translation_description="Normal viewing">Normal</item>
