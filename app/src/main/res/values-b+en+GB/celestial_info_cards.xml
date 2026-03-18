@@ -617,4 +617,344 @@
     <!-- tm:omitted name="object_info_sagitta_description" reason="identical_to_source" -->
     <!-- tm:omitted name="object_info_sagitta_funfact" reason="identical_to_source" -->
     <!-- tm:omitted name="object_info_sagitta_size" reason="identical_to_source" -->
+
+    <!-- ============================================ -->
+    <!-- New Stars (24) — Phase 1 of issue #645 -->
+    <!-- ============================================ -->
+
+    <!-- tm:omitted name="object_info_alcyone_description" reason="identical_to_source" -->
+    <string name="object_info_alcyone_funfact" translation_description="Fun fact about Alcyone">Alcyone is actually a multiple star system with at least three companions! It also spins so fast that it has a disc of gas around its equator.</string>
+    <!-- tm:omitted name="object_info_alcyone_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_alcyone_size" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_alcyone_mass" reason="identical_to_source" -->
+
+    <!-- Alderamin -->
+    <string name="object_info_alderamin_description" translation_description="Short description of Alderamin">Alderamin is the brightest star in Cepheus (the King). Its name comes from Arabic meaning "the right arm."</string>
+    <!-- tm:omitted name="object_info_alderamin_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_alderamin_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_alderamin_size" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_alderamin_mass" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_algenib_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_algenib_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_algenib_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_algenib_size" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_algenib_mass" reason="identical_to_source" -->
+
+    <!-- Algieba -->
+    <string name="object_info_algieba_description" translation_description="Short description of Algieba">Algieba is a beautiful double star in Leo (the Lion), forming the mane of the celestial lion. Its name means "the forehead" in Arabic.</string>
+    <!-- tm:omitted name="object_info_algieba_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_algieba_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_algieba_size" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_algieba_mass" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_alhena_description" reason="identical_to_source" -->
+    <string name="object_info_alhena_funfact" translation_description="Fun fact about Alhena">Alhena\'s name comes from Arabic meaning "the brand mark" — ancient Arabs saw this star as a brand on the neck of a camel!</string>
+    <!-- tm:omitted name="object_info_alhena_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_alhena_size" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_alhena_mass" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_alkaid_description" reason="identical_to_source" -->
+    <string name="object_info_alkaid_funfact" translation_description="Fun fact about Alkaid">Unlike most Big Dipper stars, Alkaid is not part of the Ursa Major Moving Group — it\'s travelling through space in a different direction, so the Big Dipper\'s shape will slowly change over thousands of years!</string>
+    <!-- tm:omitted name="object_info_alkaid_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_alkaid_size" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_alkaid_mass" reason="identical_to_source" -->
+
+    <!-- Alnair -->
+    <string name="object_info_alnair_description" translation_description="Short description of Alnair">Alnair is the brightest star in Grus (the Crane). Its name means "the bright one" in Arabic.</string>
+    <!-- tm:omitted name="object_info_alnair_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_alnair_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_alnair_size" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_alnair_mass" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_alnath_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_alnath_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_alnath_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_alnath_size" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_alnath_mass" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_alphekka_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_alphekka_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_alphekka_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_alphekka_size" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_alphekka_mass" reason="identical_to_source" -->
+
+    <!-- Ankaa -->
+    <string name="object_info_ankaa_description" translation_description="Short description of Ankaa">Ankaa is the brightest star in Phoenix, a constellation best seen from the Southern Hemisphere. Its name comes from the Arabic word for "the phoenix."</string>
+    <!-- tm:omitted name="object_info_ankaa_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_ankaa_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_ankaa_size" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_ankaa_mass" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_arneb_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_arneb_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_arneb_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_arneb_size" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_arneb_mass" reason="identical_to_source" -->
+
+    <!-- Caph -->
+    <string name="object_info_caph_description" translation_description="Short description of Caph">Caph is the second-brightest star in Cassiopeia, forming the rightmost point of the iconic W-shape. Its name means "the palm" in Arabic.</string>
+    <!-- tm:omitted name="object_info_caph_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_caph_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_caph_size" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_caph_mass" reason="identical_to_source" -->
+
+    <!-- Etamin -->
+    <string name="object_info_etamin_description" translation_description="Short description of Etamin">Etamin (also Eltanin) is the brightest star in Draco (the Dragon). It represents the dragon\'s head, and its name means "the great serpent" in Arabic.</string>
+    <!-- tm:omitted name="object_info_etamin_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_etamin_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_etamin_size" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_etamin_mass" reason="identical_to_source" -->
+
+    <!-- Izar -->
+    <string name="object_info_izar_description" translation_description="Short description of Izar">Izar is a beautiful double star in Boötes (the Herdsman). Its name means "the girdle" or "veil" in Arabic.</string>
+    <string name="object_info_izar_funfact" translation_description="Fun fact about Izar">The 19th-century astronomer Friedrich Georg Wilhelm von Struve called Izar "Pulcherrima" (Latin for "most beautiful") because of the stunning colour contrast between its orange and blue-white components!</string>
+    <!-- tm:omitted name="object_info_izar_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_izar_size" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_izar_mass" reason="identical_to_source" -->
+
+    <!-- Kaus Australis -->
+    <string name="object_info_kaus_australis_description" translation_description="Short description of Kaus Australis">Kaus Australis is the brightest star in Sagittarius (the Archer). Its name means "the southern bow" in a mix of Arabic and Latin.</string>
+    <string name="object_info_kaus_australis_funfact" translation_description="Fun fact about Kaus Australis">Kaus Australis lies near the direction of the centre of our Milky Way galaxy! When you look at this star, you\'re gazing toward the densest part of the galactic plane.</string>
+    <!-- tm:omitted name="object_info_kaus_australis_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_kaus_australis_size" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_kaus_australis_mass" reason="identical_to_source" -->
+
+    <!-- Kochab -->
+    <string name="object_info_kochab_description" translation_description="Short description of Kochab">Kochab is the second-brightest star in Ursa Minor (the Little Bear). Together with Pherkad, it forms the "Guardians of the Pole."</string>
+    <string name="object_info_kochab_funfact" translation_description="Fun fact about Kochab">Around 1500 BC, Kochab was the closest bright star to the north celestial pole, making it the "Pole Star" for ancient Egyptians and Phoenician sailors!</string>
+    <!-- tm:omitted name="object_info_kochab_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_kochab_size" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_kochab_mass" reason="identical_to_source" -->
+
+    <!-- Merak -->
+    <string name="object_info_merak_description" translation_description="Short description of Merak">Merak is one of the two "Pointer Stars" in the Big Dipper that point the way to Polaris, the North Star. It lies in Ursa Major.</string>
+    <!-- tm:omitted name="object_info_merak_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_merak_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_merak_size" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_merak_mass" reason="identical_to_source" -->
+
+    <!-- Menkar -->
+    <string name="object_info_menkar_description" translation_description="Short description of Menkar">Menkar is a red giant star that marks the nose of Cetus (the Sea Monster). Its name means "the nostril" in Arabic.</string>
+    <string name="object_info_menkar_funfact" translation_description="Fun fact about Menkar">Menkar is nearing the end of its stellar life. This ageing red giant is fusing helium in its core and will eventually shed its outer layers to become a planetary nebula!</string>
+    <!-- tm:omitted name="object_info_menkar_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_menkar_size" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_menkar_mass" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_mirphak_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_mirphak_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_mirphak_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_mirphak_size" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_mirphak_mass" reason="identical_to_source" -->
+
+    <!-- Phad -->
+    <string name="object_info_phad_description" translation_description="Short description of Phad">Phad (also Phecda) is one of the stars forming the bowl of the Big Dipper in Ursa Major. Its name means "the thigh" in Arabic.</string>
+    <!-- tm:omitted name="object_info_phad_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_phad_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_phad_size" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_phad_mass" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_saiph_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_saiph_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_saiph_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_saiph_size" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_saiph_mass" reason="identical_to_source" -->
+
+    <!-- Shedir -->
+    <string name="object_info_shedir_description" translation_description="Short description of Shedir">Shedir (also Schedar) is the brightest star in Cassiopeia, an orange giant at the base of the famous W pattern. Its name means "the breast" in Arabic.</string>
+    <!-- tm:omitted name="object_info_shedir_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_shedir_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_shedir_size" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_shedir_mass" reason="identical_to_source" -->
+
+    <!-- Unukalhai -->
+    <string name="object_info_unukalhai_description" translation_description="Short description of Unukalhai">Unukalhai is the brightest star in Serpens Caput (the Serpent\'s Head). Its name means "the neck of the serpent" in Arabic.</string>
+    <!-- tm:omitted name="object_info_unukalhai_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_unukalhai_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_unukalhai_size" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_unukalhai_mass" reason="identical_to_source" -->
+
+    <!-- Vindemiatrix -->
+    <string name="object_info_vindemiatrix_description" translation_description="Short description of Vindemiatrix">Vindemiatrix is the third-brightest star in Virgo (the Maiden). Its name means "the grape gatherer" in Latin.</string>
+    <!-- tm:omitted name="object_info_vindemiatrix_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_vindemiatrix_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_vindemiatrix_size" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_vindemiatrix_mass" reason="identical_to_source" -->
+
+    <!-- ============================================ -->
+    <!-- New Constellations (41) — Phase 1 of issue #645 -->
+    <!-- ============================================ -->
+
+    <!-- Antlia -->
+    <string name="object_info_antlia_description" translation_description="Description of Antlia shown in the info card. Translate this text.">Antlia (the Air Pump) is a faint southern constellation created by Nicolas-Louis de Lacaille in the 18th century to honour the air pump invented by Robert Boyle.</string>
+    <!-- tm:omitted name="object_info_antlia_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_antlia_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_apus_description" reason="identical_to_source" -->
+    <string name="object_info_apus_funfact" translation_description="Fun fact about Apus shown in the info card. Translate this text.">Apus was named after the birds of paradise of the East Indies, which early European explorers believed had no feet — hence the Latin name meaning "footless."</string>
+    <!-- tm:omitted name="object_info_apus_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_ara_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_ara_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_ara_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_caelum_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_caelum_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_caelum_size" reason="identical_to_source" -->
+
+    <!-- Camelopardalis -->
+    <string name="object_info_camelopardalis_description" translation_description="Description of Camelopardalis shown in the info card. Translate this text.">Camelopardalis (the Giraffe) is a large but faint northern constellation. Its name comes from the Greek for "camel-leopard," an early description of the giraffe.</string>
+    <!-- tm:omitted name="object_info_camelopardalis_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_camelopardalis_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_canes_venatici_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_canes_venatici_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_canes_venatici_size" reason="identical_to_source" -->
+
+    <!-- Chamaeleon -->
+    <string name="object_info_chamaeleon_description" translation_description="Description of Chamaeleon shown in the info card. Translate this text.">Chamaeleon is a small southern constellation introduced by Dutch navigators in the late 16th century, representing the colour-changing lizard.</string>
+    <!-- tm:omitted name="object_info_chamaeleon_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_chamaeleon_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_circinus_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_circinus_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_circinus_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_columba_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_columba_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_columba_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_coma_berenices_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_coma_berenices_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_coma_berenices_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_corona_australis_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_corona_australis_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_corona_australis_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_crater_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_crater_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_crater_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_dorado_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_dorado_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_dorado_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_equuleus_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_equuleus_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_equuleus_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_fornax_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_fornax_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_fornax_size" reason="identical_to_source" -->
+
+    <!-- Horologium -->
+    <string name="object_info_horologium_description" translation_description="Description of Horologium shown in the info card. Translate this text.">Horologium (the Pendulum Clock) was created by Lacaille to honour Christiaan Huygens\' invention of the pendulum clock in 1656.</string>
+    <!-- tm:omitted name="object_info_horologium_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_horologium_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_hydrus_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_hydrus_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_hydrus_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_indus_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_indus_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_indus_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_lacerta_description" reason="identical_to_source" -->
+    <string name="object_info_lacerta_funfact" translation_description="Fun fact about Lacerta shown in the info card. Translate this text.">Lacerta contains BL Lacertae, the prototype of a class of active galaxies called "blazars" — galaxies with supermassive black holes shooting jets of matter directly toward Earth!</string>
+    <!-- tm:omitted name="object_info_lacerta_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_leo_minor_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_leo_minor_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_leo_minor_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_lupus_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_lupus_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_lupus_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_lynx_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_lynx_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_lynx_size" reason="identical_to_source" -->
+
+    <!-- Mensa -->
+    <string name="object_info_mensa_description" translation_description="Description of Mensa shown in the info card. Translate this text.">Mensa (Table Mountain) was created by Lacaille to honour Table Mountain in Cape Town, South Africa, where he made his observations of the southern sky.</string>
+    <!-- tm:omitted name="object_info_mensa_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_mensa_size" reason="identical_to_source" -->
+
+    <!-- Microscopium -->
+    <string name="object_info_microscopium_description" translation_description="Description of Microscopium shown in the info card. Translate this text.">Microscopium (the Microscope) was created by Lacaille to honour the compound microscope. It\'s one of the faintest constellations in the sky.</string>
+    <string name="object_info_microscopium_funfact" translation_description="Fun fact about Microscopium shown in the info card. Translate this text.">Microscopium\'s brightest star, Gamma Microscopii, was once part of neighbouring Sagittarius — it was reassigned when constellation boundaries were standardised in 1930!</string>
+    <!-- tm:omitted name="object_info_microscopium_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_musca_description" reason="identical_to_source" -->
+    <string name="object_info_musca_funfact" translation_description="Fun fact about Musca shown in the info card. Translate this text.">Musca was originally called "Apis" (the Bee) by its creators. It\'s the only constellation representing an insect — and it\'s right next to Chamaeleon, which eats them!</string>
+    <!-- tm:omitted name="object_info_musca_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_norma_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_norma_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_norma_size" reason="identical_to_source" -->
+
+    <!-- Octans -->
+    <string name="object_info_octans_description" translation_description="Description of Octans shown in the info card. Translate this text.">Octans (the Octant) was created by Lacaille to honour the navigational instrument. It contains the south celestial pole.</string>
+    <string name="object_info_octans_funfact" translation_description="Fun fact about Octans shown in the info card. Translate this text.">Octans contains the south celestial pole, but unlike the North Pole with Polaris, there\'s no bright star marking the southern pole — Sigma Octantis (mag 5.4) is the faint "South Star."</string>
+    <!-- tm:omitted name="object_info_octans_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_pictor_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_pictor_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_pictor_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_piscis_austrinus_description" reason="identical_to_source" -->
+    <string name="object_info_piscis_austrinus_funfact" translation_description="Fun fact about Piscis Austrinus shown in the info card. Translate this text.">Fomalhaut, the brightest star in Piscis Austrinus, was one of the first stars to have an exoplanet directly photographed by Hubble — though the "planet" may actually be a dust cloud!</string>
+    <!-- tm:omitted name="object_info_piscis_austrinus_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_pyxis_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_pyxis_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_pyxis_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_reticulum_description" reason="identical_to_source" -->
+    <string name="object_info_reticulum_funfact" translation_description="Fun fact about Reticulum shown in the info card. Translate this text.">Reticulum is famous in UFO lore — the "Zeta Reticuli incident" of 1961 claimed alien visitors came from a star system in this constellation!</string>
+    <!-- tm:omitted name="object_info_reticulum_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_sculptor_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_sculptor_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_sculptor_size" reason="identical_to_source" -->
+
+    <!-- Scutum -->
+    <string name="object_info_scutum_description" translation_description="Description of Scutum shown in the info card. Translate this text.">Scutum (the Shield) was created by Hevelius in 1684 to honour King John III Sobieski of Poland. It is one of the few constellations named for a non-mythological historical figure.</string>
+    <!-- tm:omitted name="object_info_scutum_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_scutum_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_serpens_caput_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_serpens_caput_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_serpens_caput_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_serpens_cauda_description" reason="identical_to_source" -->
+    <string name="object_info_serpens_cauda_funfact" translation_description="Fun fact about Serpens Cauda shown in the info card. Translate this text.">Serpens Cauda contains the Eagle Nebula (M16) and its famous "Pillars of Creation" — towering columns of gas and dust where new stars are being born!</string>
+    <!-- tm:omitted name="object_info_serpens_cauda_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_sextans_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_sextans_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_sextans_size" reason="identical_to_source" -->
+
+    <!-- Telescopium -->
+    <string name="object_info_telescopium_description" translation_description="Description of Telescopium shown in the info card. Translate this text.">Telescopium (the Telescope) was created by Lacaille to honour the invention of the refracting telescope. It lies south of Sagittarius and Corona Australis.</string>
+    <!-- tm:omitted name="object_info_telescopium_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_telescopium_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_triangulum_australe_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_triangulum_australe_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_triangulum_australe_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_tucana_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_tucana_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_tucana_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_volans_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_volans_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_volans_size" reason="identical_to_source" -->
+
+    <!-- tm:omitted name="object_info_vulpecula_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_vulpecula_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_vulpecula_size" reason="identical_to_source" -->
 </resources>

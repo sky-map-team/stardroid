@@ -517,7 +517,6 @@
     <string name="object_info_eta_carinae_nebula_funfact" translation_description="Fun fact about Eta Carinae Nebula shown in the info card. Translate this text.">1843年、イータ・カリーナが爆発し、一時的に空で2番目に明るい星になりましたが、奇跡的に生き残りました。超新星爆発の寸前かもしれません!</string>
     <string name="object_info_eta_carinae_nebula_distance" translation_description="Distance to Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">7,500光年</string>
     <string name="object_info_eta_carinae_nebula_size" translation_description="Physical size of Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">300光年の広さ</string>
-    <string name="object_info_m87_mass" translation_description="Mass of M87 in scientific notation .  Translate units if appropriate for your locale.">2.4兆太陽質量</string>
     <!-- ==================== CONSTELLATIONS ==================== -->
     <!-- Note: Constellation names are defined in celestial_objects.xml -->
     <!-- Orion -->
@@ -712,4 +711,385 @@
     <string name="object_info_sagitta_description" translation_description="Description of Sagitta shown in the info card. Translate this text.">や座は全天で3番目に小さい星座で、ギリシャ神話のさまざまな矢を表しています。</string>
     <string name="object_info_sagitta_funfact" translation_description="Fun fact about Sagitta shown in the info card. Translate this text.">小さな星座ですが、や座にはM71という球状星団があり、何世紀もの間、散開星団と間違えられていました！</string>
     <string name="object_info_sagitta_size" translation_description="Physical size of Sagitta shown in the info card. Translate units if appropriate for your locale.">80平方度</string>
+
+    <!-- ============================================ -->
+    <!-- New Stars (24) — Phase 1 of issue #645 -->
+    <!-- ============================================ -->
+
+    <!-- Alcyone -->
+    <string name="object_info_alcyone_description" translation_description="Short description of Alcyone">アルキオネはおうし座のプレアデス星団（M45）で最も明るい星です。青白色の巨星です。</string>
+    <string name="object_info_alcyone_funfact" translation_description="Fun fact about Alcyone">アルキオネは実は少なくとも3つの伴星を持つ多重星系です！また、非常に高速で自転しているため、赤道の周りにガスの円盤を持っています。</string>
+    <string name="object_info_alcyone_distance" translation_description="Distance to Alcyone shown in the info card. Translate units if appropriate for your locale.">~440光年</string>
+    <string name="object_info_alcyone_size" translation_description="Physical size of Alcyone shown in the info card. Translate units if appropriate for your locale.">~10太陽半径</string>
+    <string name="object_info_alcyone_mass" translation_description="Mass of Alcyone in scientific notation — no translation needed.">~6.0太陽質量</string>
+
+    <!-- Alderamin -->
+    <string name="object_info_alderamin_description" translation_description="Short description of Alderamin">アルデラミンはケフェウス座（王）で最も明るい星です。その名前はアラビア語で「右腕」を意味します。</string>
+    <string name="object_info_alderamin_funfact" translation_description="Fun fact about Alderamin">地球の歳差運動により、アルデラミンは西暦7500年頃に北極星になります！</string>
+    <string name="object_info_alderamin_distance" translation_description="Distance to Alderamin shown in the info card. Translate units if appropriate for your locale.">49光年</string>
+    <string name="object_info_alderamin_size" translation_description="Physical size of Alderamin shown in the info card. Translate units if appropriate for your locale.">2.5太陽半径</string>
+    <string name="object_info_alderamin_mass" translation_description="Mass of Alderamin in scientific notation — no translation needed.">1.9太陽質量</string>
+
+    <!-- Algenib -->
+    <string name="object_info_algenib_description" translation_description="Short description of Algenib">アルゲニブはペガスス座の大四角形の一角を示しています。熱い青色準巨星であり、ケフェウス座ベータ型変光星です。</string>
+    <string name="object_info_algenib_funfact" translation_description="Fun fact about Algenib">アルゲニブは脈動し、3.6時間ごとにわずかに明るさが変わります！また、肉眼で見える目立つ星群を形成する最も遠い星の1つでもあります。</string>
+    <string name="object_info_algenib_distance" translation_description="Distance to Algenib shown in the info card. Translate units if appropriate for your locale.">~390光年</string>
+    <string name="object_info_algenib_size" translation_description="Physical size of Algenib shown in the info card. Translate units if appropriate for your locale.">4.8太陽半径</string>
+    <string name="object_info_algenib_mass" translation_description="Mass of Algenib in scientific notation — no translation needed.">~8.9太陽質量</string>
+
+    <!-- Algieba -->
+    <string name="object_info_algieba_description" translation_description="Short description of Algieba">アルギエバはしし座（ライオン）の美しい二重星で、天の獅子のたてがみを形成しています。その名前はアラビア語で「額」を意味します。</string>
+    <string name="object_info_algieba_funfact" translation_description="Fun fact about Algieba">望遠鏡を通して見ると、アルギエバは黄金色と黄橙色の巨星の見事なペアに分かれます。これは空で最も美しい二重星の1つです！2009年に主星を周回する惑星が発見されました。</string>
+    <string name="object_info_algieba_distance" translation_description="Distance to Algieba shown in the info card. Translate units if appropriate for your locale.">~130光年</string>
+    <string name="object_info_algieba_size" translation_description="Physical size of Algieba shown in the info card. Translate units if appropriate for your locale.">~23太陽半径</string>
+    <string name="object_info_algieba_mass" translation_description="Mass of Algieba in scientific notation — no translation needed.">~1.2太陽質量</string>
+
+    <!-- Alhena -->
+    <string name="object_info_alhena_description" translation_description="Short description of Alhena">Alhenaはふたご座の双子の一人ポルックスの足を示しています。明るい白色準巨星で、ふたご座で最も目立つ星の一つです。</string>
+    <string name="object_info_alhena_funfact" translation_description="Fun fact about Alhena">アルヘナの名前はアラビア語の「焼き印」という意味に由来しています。古代アラブ人はこの星をラクダの首の焼き印として見ていました！</string>
+    <string name="object_info_alhena_distance" translation_description="Distance to Alhena shown in the info card. Translate units if appropriate for your locale.">109光年</string>
+    <string name="object_info_alhena_size" translation_description="Physical size of Alhena shown in the info card. Translate units if appropriate for your locale.">3.3太陽半径</string>
+    <string name="object_info_alhena_mass" translation_description="Mass of Alhena in scientific notation — no translation needed.">2.8太陽質量</string>
+
+    <!-- Alkaid -->
+    <string name="object_info_alkaid_description" translation_description="Short description of Alkaid">アルカイドは大熊座の北斗七星の柄の先端にある星です。大熊座で3番目に明るい星です。</string>
+    <string name="object_info_alkaid_funfact" translation_description="Fun fact about Alkaid">ほとんどの北斗七星の星と異なり、アルカイドは大熊星群の一部ではありません。異なる方向に宇宙を移動しているため、北斗七星の形は数千年かけてゆっくり変わります！</string>
+    <string name="object_info_alkaid_distance" translation_description="Distance to Alkaid shown in the info card. Translate units if appropriate for your locale.">104光年</string>
+    <string name="object_info_alkaid_size" translation_description="Physical size of Alkaid shown in the info card. Translate units if appropriate for your locale.">3.4太陽半径</string>
+    <string name="object_info_alkaid_mass" translation_description="Mass of Alkaid in scientific notation — no translation needed.">6.1太陽質量</string>
+
+    <!-- Alnair -->
+    <string name="object_info_alnair_description" translation_description="Short description of Alnair">アルナイルはツル座（鶴）で最も明るい星です。その名前はアラビア語で「明るいもの」を意味します。</string>
+    <string name="object_info_alnair_funfact" translation_description="Fun fact about Alnair">アルナイルは非常に急速に自転しており、赤道では少なくとも時速215 km/sで回転しています。この速度は非常に速いため、星は著しく扁平になり、中央部が膨らんでいます!</string>
+    <string name="object_info_alnair_distance" translation_description="Distance to Alnair shown in the info card. Translate units if appropriate for your locale.">101光年</string>
+    <string name="object_info_alnair_size" translation_description="Physical size of Alnair shown in the info card. Translate units if appropriate for your locale.">3.4太陽半径</string>
+    <string name="object_info_alnair_mass" translation_description="Mass of Alnair in scientific notation — no translation needed.">4.0太陽質量</string>
+
+    <!-- Alnath -->
+    <string name="object_info_alnath_description" translation_description="Short description of Alnath">アルナトは牡牛座で2番目に明るい星で、牡牛の北の角の先端を示しています。それはおうし座とぎゃくしゃ座の境界線上に位置しています。</string>
+    <string name="object_info_alnath_funfact" translation_description="Fun fact about Alnath">アルナトは、かつて2つの星座で共有されていました！1930年にIAUが正式にそれをおうし座に割り当てる前に、おうし座のベータ星とぎゃしゃ座のガンマ星の両方として指定されていました。</string>
+    <string name="object_info_alnath_distance" translation_description="Distance to Alnath shown in the info card. Translate units if appropriate for your locale.">134光年</string>
+    <string name="object_info_alnath_size" translation_description="Physical size of Alnath shown in the info card. Translate units if appropriate for your locale.">4.2太陽半径</string>
+    <string name="object_info_alnath_mass" translation_description="Mass of Alnath in scientific notation — no translation needed.">5.0太陽質量</string>
+
+    <!-- Alphekka -->
+    <string name="object_info_alphekka_description" translation_description="Short description of Alphekka">アルフェッカ（ジェンマとも呼ばれる）は、北冠（きたかんむり）で最も明るい星です。この小さな星の輪の宝石です。</string>
+    <string name="object_info_alphekka_funfact" translation_description="Fun fact about Alphekka">アルフェッカは食連星です。その暗い伴星が17.4日ごとに手前を通過し、機器なしではほぼ見えない小さな明るさの低下を引き起こします！</string>
+    <string name="object_info_alphekka_distance" translation_description="Distance to Alphekka shown in the info card. Translate units if appropriate for your locale.">75光年</string>
+    <string name="object_info_alphekka_size" translation_description="Physical size of Alphekka shown in the info card. Translate units if appropriate for your locale.">2.9太陽半径</string>
+    <string name="object_info_alphekka_mass" translation_description="Mass of Alphekka in scientific notation — no translation needed.">2.6太陽質量</string>
+
+    <!-- Ankaa -->
+    <string name="object_info_ankaa_description" translation_description="Short description of Ankaa">アンカは、南半球から最もよく見える星座フェニックスの最も明るい星です。その名前はアラビア語で「不死鳥」を意味する言葉に由来しています。</string>
+    <string name="object_info_ankaa_funfact" translation_description="Fun fact about Ankaa">アンカーは分光連星で、その伴星が非常に近いため、2つの星は光のスペクトルのシフトによってのみ検出でき、10.2年ごとに互いの周りを公転しています!</string>
+    <string name="object_info_ankaa_distance" translation_description="Distance to Ankaa shown in the info card. Translate units if appropriate for your locale.">85光年</string>
+    <string name="object_info_ankaa_size" translation_description="Physical size of Ankaa shown in the info card. Translate units if appropriate for your locale.">15太陽半径</string>
+    <string name="object_info_ankaa_mass" translation_description="Mass of Ankaa in scientific notation — no translation needed.">1.3太陽質量</string>
+
+    <!-- Arneb -->
+    <string name="object_info_arneb_description" translation_description="Short description of Arneb">アルネブはオリオンの足の下に身をかがめている星座ウサギ座(Lepus)で最も明るい星です。珍しい白色超巨星です。</string>
+    <string name="object_info_arneb_funfact" translation_description="Fun fact about Arneb">アルネブは、すでにコア水素をすべて融合させた可能性が高い衰退中の星です。今後数百万年以内に超新星として終焉を迎える可能性があります！</string>
+    <string name="object_info_arneb_distance" translation_description="Distance to Arneb shown in the info card. Translate units if appropriate for your locale.">約2,200光年</string>
+    <string name="object_info_arneb_size" translation_description="Physical size of Arneb shown in the info card. Translate units if appropriate for your locale.">約75太陽半径</string>
+    <string name="object_info_arneb_mass" translation_description="Mass of Arneb in scientific notation — no translation needed.">約14太陽質量</string>
+
+    <!-- Caph -->
+    <string name="object_info_caph_description" translation_description="Short description of Caph">カフは、カシオペア座で2番目に明るい星で、象徴的なW字形の最も右の点を形成しています。その名前はアラビア語で「手のひら」を意味します。</string>
+    <string name="object_info_caph_funfact" translation_description="Fun fact about Caph">Caphはデルタ・スクーティ型変光星です。複数の周波数で同時に脈動し、約2.5時間ごとにわずかに明るさが変わります！</string>
+    <string name="object_info_caph_distance" translation_description="Distance to Caph shown in the info card. Translate units if appropriate for your locale.">54光年</string>
+    <string name="object_info_caph_size" translation_description="Physical size of Caph shown in the info card. Translate units if appropriate for your locale.">3.5太陽半径</string>
+    <string name="object_info_caph_mass" translation_description="Mass of Caph in scientific notation — no translation needed.">1.9太陽質量</string>
+
+    <!-- Etamin -->
+    <string name="object_info_etamin_description" translation_description="Short description of Etamin">エタミン（エルタニンとも呼ばれる）は、竜座（ドラゴン）で最も明るい星です。竜の頭を表し、その名前はアラビア語で「大蛇」を意味します。</string>
+    <string name="object_info_etamin_funfact" translation_description="Fun fact about Etamin">1728年にジェームス・ブラッドリーがエタミンを観測したことにより、光の収差が発見されました。これは地球が宇宙空間を移動していることの最初の直接的な証拠の1つです！</string>
+    <string name="object_info_etamin_distance" translation_description="Distance to Etamin shown in the info card. Translate units if appropriate for your locale.">148光年</string>
+    <string name="object_info_etamin_size" translation_description="Physical size of Etamin shown in the info card. Translate units if appropriate for your locale.">48太陽半径</string>
+    <string name="object_info_etamin_mass" translation_description="Mass of Etamin in scientific notation — no translation needed.">1.7太陽質量</string>
+
+    <!-- Izar -->
+    <string name="object_info_izar_description" translation_description="Short description of Izar">イザルはボーテス座（牧夫）の美しい二重星です。その名前はアラビア語で「帯」または「ベール」を意味します。</string>
+    <string name="object_info_izar_funfact" translation_description="Fun fact about Izar">19世紀の天文学者フリードリヒ・ゲオルク・ヴィルヘルム・フォン・シュトルーヴェはイザルを「プルケッリマ」(ラテン語で「最も美しい」という意味)と呼びました。これはオレンジ色と青白い成分の間の素晴らしい色のコントラストが理由です!</string>
+    <string name="object_info_izar_distance" translation_description="Distance to Izar shown in the info card. Translate units if appropriate for your locale.">202光年</string>
+    <string name="object_info_izar_size" translation_description="Physical size of Izar shown in the info card. Translate units if appropriate for your locale.">33太陽半径</string>
+    <string name="object_info_izar_mass" translation_description="Mass of Izar in scientific notation — no translation needed.">約4.6太陽質量</string>
+
+    <!-- Kaus Australis -->
+    <string name="object_info_kaus_australis_description" translation_description="Short description of Kaus Australis">カウス・アウストラリスは射手座で最も明るい星です。その名前はアラビア語とラテン語の混合で「南の弓」を意味します。</string>
+    <string name="object_info_kaus_australis_funfact" translation_description="Fun fact about Kaus Australis">カウス・アウストラリスは私たちの銀河系の中心方向の近くにあります！この星を見るとき、あなたは銀河面の最も密集した部分に向かって見つめています。</string>
+    <string name="object_info_kaus_australis_distance" translation_description="Distance to Kaus Australis shown in the info card. Translate units if appropriate for your locale.">143光年</string>
+    <string name="object_info_kaus_australis_size" translation_description="Physical size of Kaus Australis shown in the info card. Translate units if appropriate for your locale.">6.8太陽半径</string>
+    <string name="object_info_kaus_australis_mass" translation_description="Mass of Kaus Australis in scientific notation — no translation needed.">3.5太陽質量</string>
+
+    <!-- Kochab -->
+    <string name="object_info_kochab_description" translation_description="Short description of Kochab">コクハブは小熊座（こぐまざ）で2番目に明るい星です。フェルカドとともに「極の守護者」を形成しています。</string>
+    <string name="object_info_kochab_funfact" translation_description="Fun fact about Kochab">紀元前1500年頃、コハブは北天極に最も近い明るい星であり、古代エジプト人とフェニキア人の船乗りにとって「北極星」でした！</string>
+    <string name="object_info_kochab_distance" translation_description="Distance to Kochab shown in the info card. Translate units if appropriate for your locale.">131光年</string>
+    <string name="object_info_kochab_size" translation_description="Physical size of Kochab shown in the info card. Translate units if appropriate for your locale.">42太陽半径</string>
+    <string name="object_info_kochab_mass" translation_description="Mass of Kochab in scientific notation — no translation needed.">1.3太陽質量</string>
+
+    <!-- Merak -->
+    <string name="object_info_merak_description" translation_description="Short description of Merak">メラクは、北極星であるポラリスへの道を示す北斗七星の2つの「指針星」の1つです。おおぐま座に位置しています。</string>
+    <string name="object_info_merak_funfact" translation_description="Fun fact about Merak">メラクは赤外線超過を持っており、これは恒星周円盤を持っていることを示唆しています。これは私たちの小惑星帯に似たダストと岩石物質のリングの可能性があります！</string>
+    <string name="object_info_merak_distance" translation_description="Distance to Merak shown in the info card. Translate units if appropriate for your locale.">80光年</string>
+    <string name="object_info_merak_size" translation_description="Physical size of Merak shown in the info card. Translate units if appropriate for your locale.">3.0太陽半径</string>
+    <string name="object_info_merak_mass" translation_description="Mass of Merak in scientific notation — no translation needed.">2.7太陽質量</string>
+
+    <!-- Menkar -->
+    <string name="object_info_menkar_description" translation_description="Short description of Menkar">メンカルは、クジラ座（海の怪物）の鼻を示す赤色巨星です。その名前はアラビア語で「鼻孔」を意味します。</string>
+    <string name="object_info_menkar_funfact" translation_description="Fun fact about Menkar">メンカルは恒星の人生の終わりに近づいています。この老化した赤色巨星はコアでヘリウムを融合させており、やがて外層を放出して惑星状星雲になるでしょう！</string>
+    <string name="object_info_menkar_distance" translation_description="Distance to Menkar shown in the info card. Translate units if appropriate for your locale.">249光年</string>
+    <string name="object_info_menkar_size" translation_description="Physical size of Menkar shown in the info card. Translate units if appropriate for your locale.">約89太陽半径</string>
+    <string name="object_info_menkar_mass" translation_description="Mass of Menkar in scientific notation — no translation needed.">約2.3太陽質量</string>
+
+    <!-- Mirphak -->
+    <string name="object_info_mirphak_description" translation_description="Short description of Mirphak">ミルファク（別名ミルファク）はペルセウス座で最も明るい星で、アルファペルセイ星団の中心にある黄白色の超巨星です。</string>
+    <string name="object_info_mirphak_funfact" translation_description="Fun fact about Mirphak">ミルファクは美しい散開星団（メロッテ20）に囲まれており、双眼鏡で最もよく見えます。若い青白い星が宇宙空間を一緒に移動する散在した星々です！</string>
+    <string name="object_info_mirphak_distance" translation_description="Distance to Mirphak shown in the info card. Translate units if appropriate for your locale.">約590光年</string>
+    <string name="object_info_mirphak_size" translation_description="Physical size of Mirphak shown in the info card. Translate units if appropriate for your locale.">約68太陽半径</string>
+    <string name="object_info_mirphak_mass" translation_description="Mass of Mirphak in scientific notation — no translation needed.">約8.5太陽質量</string>
+
+    <!-- Phad -->
+    <string name="object_info_phad_description" translation_description="Short description of Phad">Phad（別名Phecda）は、おおぐま座の北斗七星の杓の部分を形成する星の1つです。その名前はアラビア語で「太もも」を意味します。</string>
+    <string name="object_info_phad_funfact" translation_description="Fun fact about Phad">Phadは大熊座ムービンググループのメンバーです。これは一緒に生まれ、北斗七星のほとんどを含む疎な星団として宇宙を移動する星のセットです！</string>
+    <string name="object_info_phad_distance" translation_description="Distance to Phad shown in the info card. Translate units if appropriate for your locale.">84光年</string>
+    <string name="object_info_phad_size" translation_description="Physical size of Phad shown in the info card. Translate units if appropriate for your locale.">3.0太陽半径</string>
+    <string name="object_info_phad_mass" translation_description="Mass of Phad in scientific notation — no translation needed.">2.9太陽質量</string>
+
+    <!-- Saiph -->
+    <string name="object_info_saiph_description" translation_description="Short description of Saiph">Saiphはオリオンの右下の膝を示しています。リゲルより暗く見えますが、実は非常に高温で明るい青色超巨星です。</string>
+    <string name="object_info_saiph_funfact" translation_description="Fun fact about Saiph">サイフは、そのエネルギーの大部分が紫外線として放射されるため、その温度が示唆するよりも暗く見えます。紫外線は私たちの目には見えません。実は、空で最も熱い明るい星の1つです。</string>
+    <string name="object_info_saiph_distance" translation_description="Distance to Saiph shown in the info card. Translate units if appropriate for your locale.">~650光年</string>
+    <string name="object_info_saiph_size" translation_description="Physical size of Saiph shown in the info card. Translate units if appropriate for your locale.">~22太陽半径</string>
+    <string name="object_info_saiph_mass" translation_description="Mass of Saiph in scientific notation — no translation needed.">~15.5太陽質量</string>
+
+    <!-- Shedir -->
+    <string name="object_info_shedir_description" translation_description="Short description of Shedir">Shedir（Schedarとも呼ばれる）はカシオペア座で最も明るい星で、有名なW字パターンの底部にあるオレンジ色の巨星です。その名前はアラビア語で「乳房」を意味します。</string>
+    <string name="object_info_shedir_funfact" translation_description="Fun fact about Shedir">シェディルはかつて変光星だと考えられていましたが、現代の測定によると、その明るさは非常に安定しています。以前の変光性の報告は、原始的な機器が原因だった可能性が高いです！</string>
+    <string name="object_info_shedir_distance" translation_description="Distance to Shedir shown in the info card. Translate units if appropriate for your locale.">228光年</string>
+    <string name="object_info_shedir_size" translation_description="Physical size of Shedir shown in the info card. Translate units if appropriate for your locale.">45太陽半径</string>
+    <string name="object_info_shedir_mass" translation_description="Mass of Shedir in scientific notation — no translation needed.">~4.0太陽質量</string>
+
+    <!-- Unukalhai -->
+    <string name="object_info_unukalhai_description" translation_description="Short description of Unukalhai">ウヌカルハイはへび座の頭（Serpens Caput）で最も明るい星です。その名前はアラビア語で「蛇の首」を意味します。</string>
+    <string name="object_info_unukalhai_funfact" translation_description="Fun fact about Unukalhai">Serpensは唯一、2つの独立した部分に分かれている星座です。Serpens Caput（頭）とSerpens Cauda（尾）はOphiuchusによって分けられており、Unukalhai（ウヌカルハイ）は頭の部分で最も明るい星です！</string>
+    <string name="object_info_unukalhai_distance" translation_description="Distance to Unukalhai shown in the info card. Translate units if appropriate for your locale.">74光年</string>
+    <string name="object_info_unukalhai_size" translation_description="Physical size of Unukalhai shown in the info card. Translate units if appropriate for your locale.">12太陽半径</string>
+    <string name="object_info_unukalhai_mass" translation_description="Mass of Unukalhai in scientific notation — no translation needed.">~2.1太陽質量</string>
+
+    <!-- Vindemiatrix -->
+    <string name="object_info_vindemiatrix_description" translation_description="Short description of Vindemiatrix">ヴィンデミアトリクスは乙女座（おとめざ）で3番目に明るい星です。その名前はラテン語で「ぶどう摘み人」を意味します。</string>
+    <string name="object_info_vindemiatrix_funfact" translation_description="Fun fact about Vindemiatrix">ヴィンデミアトリックスという名前は、その明け方の初出現（ヘリアカル・ライジング）がかつて地中海地域のブドウ収穫の季節と一致していたことに由来します。つまり、ワイン製造者の星だったのです！</string>
+    <string name="object_info_vindemiatrix_distance" translation_description="Distance to Vindemiatrix shown in the info card. Translate units if appropriate for your locale.">109光年</string>
+    <string name="object_info_vindemiatrix_size" translation_description="Physical size of Vindemiatrix shown in the info card. Translate units if appropriate for your locale.">11太陽半径</string>
+    <string name="object_info_vindemiatrix_mass" translation_description="Mass of Vindemiatrix in scientific notation — no translation needed.">2.6太陽質量</string>
+
+    <!-- ============================================ -->
+    <!-- New Constellations (41) — Phase 1 of issue #645 -->
+    <!-- ============================================ -->
+
+    <!-- Antlia -->
+    <string name="object_info_antlia_description" translation_description="Description of Antlia shown in the info card. Translate this text.">Antlia（空気ポンプ）は、18世紀にニコラ・ルイ・ド・ラカイユによって作られた南天の淡い星座で、ロバート・ボイルが発明した空気ポンプを称えるために創設されました。</string>
+    <string name="object_info_antlia_funfact" translation_description="Fun fact about Antlia shown in the info card. Translate this text.">Antlia には、天の川から約430万光年離れた最も近い銀河の1つであるAntlia矮小銀河が含まれています!</string>
+    <string name="object_info_antlia_size" translation_description="Physical size of Antlia shown in the info card. Translate units if appropriate for your locale.">239平方度</string>
+
+    <!-- Apus -->
+    <string name="object_info_apus_description" translation_description="Description of Apus shown in the info card. Translate this text.">Apus（極楽鳥）は、16世紀後期にオランダの航海者KeyserとDe Houtmanによって導入された、南天の淡い星座です。</string>
+    <string name="object_info_apus_funfact" translation_description="Fun fact about Apus shown in the info card. Translate this text.">Apusは東インド諸島の極楽鳥にちなんで名付けられました。初期のヨーロッパ探検家たちはこれらの鳥に足がないと信じていたため、ラテン語の名前は「足のない」という意味です。</string>
+    <string name="object_info_apus_size" translation_description="Physical size of Apus shown in the info card. Translate units if appropriate for your locale.">206平方度</string>
+
+    <!-- Ara -->
+    <string name="object_info_ara_description" translation_description="Description of Ara shown in the info card. Translate this text.">Ara（祭壇）は古代から知られている南天の星座です。ギリシャ神話では、神々がタイタンとの戦いの前に誓いを立てた祭壇を表しています。</string>
+    <string name="object_info_ara_funfact" translation_description="Fun fact about Ara shown in the info card. Translate this text.">Araは、1980年代にのみ形成が観測された最も若い既知の惑星状星雲であるスティングレイ星雲を含んでいます。これは宇宙的な出来事がリアルタイムで捉えられました！</string>
+    <string name="object_info_ara_size" translation_description="Physical size of Ara shown in the info card. Translate units if appropriate for your locale.">237平方度</string>
+
+    <!-- Caelum -->
+    <string name="object_info_caelum_description" translation_description="Description of Caelum shown in the info card. Translate this text.">Caelum（彫刻刀）は空で最も暗い星座の1つで、18世紀にLacailleによって彫刻工具を表すために作られました。</string>
+    <string name="object_info_caelum_funfact" translation_description="Fun fact about Caelum shown in the info card. Translate this text.">Caelumは8番目に小さい星座で、等級4.5より明るい星を含んでいません。非常に暗い空と鋭い目が必要です!</string>
+    <string name="object_info_caelum_size" translation_description="Physical size of Caelum shown in the info card. Translate units if appropriate for your locale.">125平方度</string>
+
+    <!-- Camelopardalis -->
+    <string name="object_info_camelopardalis_description" translation_description="Description of Camelopardalis shown in the info card. Translate this text.">Camelopardalis（キリン）は、大きいが薄暗い北天の星座です。その名前はギリシャ語の「ラクダ-ヒョウ」に由来し、キリンの初期の説明です。</string>
+    <string name="object_info_camelopardalis_funfact" translation_description="Fun fact about Camelopardalis shown in the info card. Translate this text.">Camelopardalisは18番目に大きい星座であるにもかかわらず、等級4.0より明るい星がなく、北極星の近くの広大で一見空っぽに見える空の領域を占めています!</string>
+    <string name="object_info_camelopardalis_size" translation_description="Physical size of Camelopardalis shown in the info card. Translate units if appropriate for your locale.">757平方度</string>
+
+    <!-- Canes Venatici -->
+    <string name="object_info_canes_venatici_description" translation_description="Description of Canes Venatici shown in the info card. Translate this text.">Canes Venatici（狩猟犬）はBoötes（牧夫）が持つ2匹の犬を表しています。1687年にJohannes Heveliusによって導入されました。</string>
+    <string name="object_info_canes_venatici_funfact" translation_description="Fun fact about Canes Venatici shown in the info card. Translate this text.">Canes Venatici は M51（渦巻銀河）を含んでいます。これは渦巻き構造が発見された最初の銀河で、1845年にロス卿によってスケッチされました！</string>
+    <string name="object_info_canes_venatici_size" translation_description="Physical size of Canes Venatici shown in the info card. Translate units if appropriate for your locale.">465平方度</string>
+
+    <!-- Chamaeleon -->
+    <string name="object_info_chamaeleon_description" translation_description="Description of Chamaeleon shown in the info card. Translate this text.">カメレオン座は、16世紀後期にオランダの航海者によって導入された小さな南天の星座で、色が変わるトカゲを表しています。</string>
+    <string name="object_info_chamaeleon_funfact" translation_description="Fun fact about Chamaeleon shown in the info card. Translate this text.">Chamaeleonは大規模な分子雲複合体を含んでおり、そこでは新しい星が活発に形成されています。地球から500光年という距離にある最も近い星形成領域の1つです!</string>
+    <string name="object_info_chamaeleon_size" translation_description="Physical size of Chamaeleon shown in the info card. Translate units if appropriate for your locale.">132平方度</string>
+
+    <!-- Circinus -->
+    <string name="object_info_circinus_description" translation_description="Description of Circinus shown in the info card. Translate this text.">コンパス座（Circinus）は最も小さい星座の一つで、円を描くために使用される製図用コンパスを表すためにラカイユによって作られました。</string>
+    <string name="object_info_circinus_funfact" translation_description="Fun fact about Circinus shown in the info card. Translate this text.">ケンタウルス座銀河は、私たちに最も近いセイファート銀河の1つです。超大質量ブラックホールを持つ活動銀河で、明るい物質ジェットを放出しています！</string>
+    <string name="object_info_circinus_size" translation_description="Physical size of Circinus shown in the info card. Translate units if appropriate for your locale.">93平方度</string>
+
+    <!-- Columba -->
+    <string name="object_info_columba_description" translation_description="Description of Columba shown in the info card. Translate this text.">Columba（鳩）はノアが方舟から乾いた土地を探すために送った鳩を表しています。Lepus（ウサギ座）とCanis Major（おおいぬ座）の南に位置しています。</string>
+    <string name="object_info_columba_funfact" translation_description="Fun fact about Columba shown in the info card. Translate this text.">逃亡星ムー・コロンバエはおよそ250万年前にオリオン星雲から放出され、現在コロンバ座を時速100 km/s以上で移動しています！</string>
+    <string name="object_info_columba_size" translation_description="Physical size of Columba shown in the info card. Translate units if appropriate for your locale.">270平方度</string>
+
+    <!-- Coma Berenices -->
+    <string name="object_info_coma_berenices_description" translation_description="Description of Coma Berenices shown in the info card. Translate this text.">Coma Berenices（ベレニケの髪）はエジプト女王ベレニケ2世の髪を表しており、彼女は神々に捧げました。歴史上の人物にちなんで名付けられた数少ない星座の1つです。</string>
+    <string name="object_info_coma_berenices_funfact" translation_description="Fun fact about Coma Berenices shown in the info card. Translate this text.">かみのけ座は銀河系の円盤に垂直な方向である北銀河極を含んでいます。そのため、銀河塵が邪魔にならず、多くの可視銀河が豊富に見えるのです!</string>
+    <string name="object_info_coma_berenices_size" translation_description="Physical size of Coma Berenices shown in the info card. Translate units if appropriate for your locale.">386平方度</string>
+
+    <!-- Corona Australis -->
+    <string name="object_info_corona_australis_description" translation_description="Description of Corona Australis shown in the info card. Translate this text.">Corona Australis（南の冠）はプトレマイオスが列挙した48個の星座の1つです。射手座の足元に置かれた花輪または冠を表しています。</string>
+    <string name="object_info_corona_australis_funfact" translation_description="Fun fact about Corona Australis shown in the info card. Translate this text.">コロナ・オーストラリス（南冠）には、最も近い活発な星形成領域の1つ——コロネット星団が含まれており、ここでは現在、数十個の若い星が誕生しています！</string>
+    <string name="object_info_corona_australis_size" translation_description="Physical size of Corona Australis shown in the info card. Translate units if appropriate for your locale.">128平方度</string>
+
+    <!-- Crater -->
+    <string name="object_info_crater_description" translation_description="Description of Crater shown in the info card. Translate this text.">Crater（杯）はギリシャ神話におけるアポロンの杯を表しています。水蛇ヒドラの背中に座り、カラスのコルウスの隣にあります。</string>
+    <string name="object_info_crater_funfact" translation_description="Fun fact about Crater shown in the info card. Translate this text.">ギリシャ神話では、アポロンはカラスにこのカップで水を汲んでくるよう命じましたが、カラスはいちじくを食べて遅れてしまいました。そこでアポロンは3つすべてを空に置いて罰としました！</string>
+    <string name="object_info_crater_size" translation_description="Physical size of Crater shown in the info card. Translate units if appropriate for your locale.">282平方度</string>
+
+    <!-- Dorado -->
+    <string name="object_info_dorado_description" translation_description="Description of Dorado shown in the info card. Translate this text.">ドラド（剣魚またはシイラ）は、オランダの航海者によって作られた南天の星座です。大マゼラン雲の大部分を含んでいます。</string>
+    <string name="object_info_dorado_funfact" translation_description="Fun fact about Dorado shown in the info card. Translate this text.">ドラド座はタランチュラ星雲（30ドラド）を含んでいます。これは局所銀河群で最も明るい星形成領域です。もしオリオン星雲と同じ距離にあれば、地球に影を落とすほどの明るさです！</string>
+    <string name="object_info_dorado_size" translation_description="Physical size of Dorado shown in the info card. Translate units if appropriate for your locale.">179平方度</string>
+
+    <!-- Equuleus -->
+    <string name="object_info_equuleus_description" translation_description="Description of Equuleus shown in the info card. Translate this text.">Equuleus（小さな馬）は2番目に小さい星座です。ギリシャ神話では、ペガサスの兄弟または子馬であるケレリスを表しています。</string>
+    <string name="object_info_equuleus_funfact" translation_description="Fun fact about Equuleus shown in the info card. Translate this text.">エクウレウス座は88個の星座の中で2番目に小さい星座です（クルックス座だけがより小さい）が、約2,000年前にプトレマイオスが列挙した元々の48個の星座の1つでした！</string>
+    <string name="object_info_equuleus_size" translation_description="Physical size of Equuleus shown in the info card. Translate units if appropriate for your locale.">72平方度</string>
+
+    <!-- Fornax -->
+    <string name="object_info_fornax_description" translation_description="Description of Fornax shown in the info card. Translate this text.">フォーマルハウト座（炉）はラカイユによって化学炉を表すために作られました。くじら座とエリダヌス座の間にある淡い南天星座です。</string>
+    <string name="object_info_fornax_funfact" translation_description="Fun fact about Fornax shown in the info card. Translate this text.">ハッブル・ウルトラ・ディープ・フィールド — 宇宙で最も深い画像の1つで、130億光年離れた銀河を明らかにした — はフォーマルハウト座で撮影されました!</string>
+    <string name="object_info_fornax_size" translation_description="Physical size of Fornax shown in the info card. Translate units if appropriate for your locale.">398平方度</string>
+
+    <!-- Horologium -->
+    <string name="object_info_horologium_description" translation_description="Description of Horologium shown in the info card. Translate this text.">Horologium（振り子時計）はLacailleによって、1656年のChristiaan Huygens\'による振り子時計の発明を記念して作られました。</string>
+    <string name="object_info_horologium_funfact" translation_description="Fun fact about Horologium shown in the info card. Translate this text.">Horологium（時計座）には、Horologium-Reticulum Supercluster（ホロロジウム・レティクルム超銀河団）と呼ばれる巨大な超銀河団が含まれており、これは近傍宇宙で最大級の構造の1つです！</string>
+    <string name="object_info_horologium_size" translation_description="Physical size of Horologium shown in the info card. Translate units if appropriate for your locale.">249平方度</string>
+
+    <!-- Hydrus -->
+    <string name="object_info_hydrus_description" translation_description="Description of Hydrus shown in the info card. Translate this text.">ハイドルス（小さい水蛇）は、南天極の近くにある小さな南天の星座です。より大きな水蛇であるヒドラと混同しないでください。</string>
+    <string name="object_info_hydrus_funfact" translation_description="Fun fact about Hydrus shown in the info card. Translate this text.">ハイドルス（みずへび座）は大マゼラン雲と小マゼラン雲の間に位置しており、天の川の衛星銀河であるこれら2つの銀河を見つけるための便利な目印になります！</string>
+    <string name="object_info_hydrus_size" translation_description="Physical size of Hydrus shown in the info card. Translate units if appropriate for your locale.">243平方度</string>
+
+    <!-- Indus -->
+    <string name="object_info_indus_description" translation_description="Description of Indus shown in the info card. Translate this text.">インディアン（インド人）は、オランダの航海者によって作成された南天の星座で、もともと東インド諸島またはマダガスカルの先住民を表していました。</string>
+    <string name="object_info_indus_funfact" translation_description="Fun fact about Indus shown in the info card. Translate this text.">インドス座にある太陽のような恒星の中で最も近い星の1つであるエプシロン・インディは、わずか12光年離れた場所にあり、褐色矮星の伴星系を持っています!</string>
+    <string name="object_info_indus_size" translation_description="Physical size of Indus shown in the info card. Translate units if appropriate for your locale.">294平方度</string>
+
+    <!-- Lacerta -->
+    <string name="object_info_lacerta_description" translation_description="Description of Lacerta shown in the info card. Translate this text.">ラケルタ（トカゲ座）は、1687年にヘベリウスによって導入された小さな北天の星座です。白鳥座とアンドロメダ座の間に位置しています。</string>
+    <string name="object_info_lacerta_funfact" translation_description="Fun fact about Lacerta shown in the info card. Translate this text.">Lacertaはブレーザーと呼ばれる活動銀河のプロトタイプであるBL Lacertaeを含んでいます。これは超大質量ブラックホールを持つ銀河で、物質のジェットを地球に向かって直接放射しています！</string>
+    <string name="object_info_lacerta_size" translation_description="Physical size of Lacerta shown in the info card. Translate units if appropriate for your locale.">201平方度</string>
+
+    <!-- Leo Minor -->
+    <string name="object_info_leo_minor_description" translation_description="Description of Leo Minor shown in the info card. Translate this text.">小獅子座（小さなライオン）は、1687年にヘベリウスによって導入された、獅子座と大熊座の間にある淡い星座です。</string>
+    <string name="object_info_leo_minor_funfact" translation_description="Fun fact about Leo Minor shown in the info card. Translate this text.">しし座小は、最も明るい星がアルファ等級を持たない数少ない星座の1つです。ヘベリウスがラベル付けを忘れたため、最も明るい星は46 Leonis Minoris（ベータ）です！</string>
+    <string name="object_info_leo_minor_size" translation_description="Physical size of Leo Minor shown in the info card. Translate units if appropriate for your locale.">232平方度</string>
+
+    <!-- Lupus -->
+    <string name="object_info_lupus_description" translation_description="Description of Lupus shown in the info card. Translate this text.">ルプス（オオカミ）は古代の南天星座です。ギリシャ人とローマ人は、ケンタウルス座が持つ槍に刺された野生動物として見ていました。</string>
+    <string name="object_info_lupus_funfact" translation_description="Fun fact about Lupus shown in the info card. Translate this text.">1006年に、人類が記録した最も明るい超新星がオオカミ座に出現しました。SN 1006は昼間に見ることができ、等級−7.5に達した可能性があります!</string>
+    <string name="object_info_lupus_size" translation_description="Physical size of Lupus shown in the info card. Translate units if appropriate for your locale.">334平方度</string>
+
+    <!-- Lynx -->
+    <string name="object_info_lynx_description" translation_description="Description of Lynx shown in the info card. Translate this text.">オオヤマネコ座は、1687年にヘベリウスによって作られた大きいが薄暗い北の星座です。彼は、それを見るにはオオヤマネコの目が必要だと言いました！</string>
+    <string name="object_info_lynx_funfact" translation_description="Fun fact about Lynx shown in the info card. Translate this text.">Lynx（リンクス）には銀河間の放浪者（NGC 2419）が含まれています。これは30万光年も離れた球状星団で、かつては天の川銀河の外側を公転していると考えられていました！</string>
+    <string name="object_info_lynx_size" translation_description="Physical size of Lynx shown in the info card. Translate units if appropriate for your locale.">545平方度</string>
+
+    <!-- Mensa -->
+    <string name="object_info_mensa_description" translation_description="Description of Mensa shown in the info card. Translate this text.">メンサ（テーブルマウンテン）は、ラカイユが南アフリカのケープタウンにあるテーブルマウンテンを記念して創設した星座で、彼はここで南天の観測を行いました。</string>
+    <string name="object_info_mensa_funfact" translation_description="Fun fact about Mensa shown in the info card. Translate this text.">メンサは地球上の特定の地理的特徴にちなんで名付けられた唯一の星座です。大マゼラン雲の一部が山の上の雲のようにそこまで広がっています！</string>
+    <string name="object_info_mensa_size" translation_description="Physical size of Mensa shown in the info card. Translate units if appropriate for your locale.">153平方度</string>
+
+    <!-- Microscopium -->
+    <string name="object_info_microscopium_description" translation_description="Description of Microscopium shown in the info card. Translate this text.">Microscopium（顕微鏡）はLacailleが複合顕微鏡を称えるために作成した星座です。空の中で最も暗い星座の1つです。</string>
+    <string name="object_info_microscopium_funfact" translation_description="Fun fact about Microscopium shown in the info card. Translate this text.">Microscopium\'s最も明るい星であるGamma Microscopiiは、かつて隣接するSagittariusの一部でした。1930年に星座の境界が標準化された際に再割り当てされました!</string>
+    <string name="object_info_microscopium_size" translation_description="Physical size of Microscopium shown in the info card. Translate units if appropriate for your locale.">210平方度</string>
+
+    <!-- Musca -->
+    <string name="object_info_musca_description" translation_description="Description of Musca shown in the info card. Translate this text.">ハエ座（Musca）は南十字星の近くにある小さな南天の星座です。空の中で唯一の昆虫の星座です。</string>
+    <string name="object_info_musca_funfact" translation_description="Fun fact about Musca shown in the info card. Translate this text.">Muscaはその創造者によって元々「Apis」（ミツバチ）と呼ばれていました。昆虫を表す唯一の星座です。そしてそれらを食べるChamaeleonのすぐ隣にあります！</string>
+    <string name="object_info_musca_size" translation_description="Physical size of Musca shown in the info card. Translate units if appropriate for your locale.">138平方度</string>
+
+    <!-- Norma -->
+    <string name="object_info_norma_description" translation_description="Description of Norma shown in the info card. Translate this text.">Norma（大工の定規）はLacailleによって水準器と直角定規を表すために作られました。スコルピウスとルプスの間の豊かな天の川に位置しています。</string>
+    <string name="object_info_norma_funfact" translation_description="Fun fact about Norma shown in the info card. Translate this text.">ノルマ座の方向を見ると、銀河系の渦巻き腕の1つに沿って見ることになります。この星座にちなんで名付けられたノルマ腕は、星団と星雲に満ちています!</string>
+    <string name="object_info_norma_size" translation_description="Physical size of Norma shown in the info card. Translate units if appropriate for your locale.">165平方度</string>
+
+    <!-- Octans -->
+    <string name="object_info_octans_description" translation_description="Description of Octans shown in the info card. Translate this text.">オクタンス（八分儀）はラカイユによって航海計器を記念して作られました。南天の極を含んでいます。</string>
+    <string name="object_info_octans_funfact" translation_description="Fun fact about Octans shown in the info card. Translate this text.">オクタンス座は南天の極を含んでいますが、北極のポラリスとは異なり、南極を示す明るい星がありません。シグマ・オクタンティス（等級5.4）が薄暗い「南極星」です。</string>
+    <string name="object_info_octans_size" translation_description="Physical size of Octans shown in the info card. Translate units if appropriate for your locale.">291平方度</string>
+
+    <!-- Pictor -->
+    <string name="object_info_pictor_description" translation_description="Description of Pictor shown in the info card. Translate this text.">Pictor（画家のイーゼル）は、ラカイユによって作成された南天の淡い星座で、もともと画家のイーゼルにちなんで名付けられました。</string>
+    <string name="object_info_pictor_funfact" translation_description="Fun fact about Pictor shown in the info card. Translate this text.">この星座のベータ・ピクトリスは、目に見える塵の円盤を持つことが最初に発見された星の1つであり、その中を周回する2つの確認された系外惑星を持っています！</string>
+    <string name="object_info_pictor_size" translation_description="Physical size of Pictor shown in the info card. Translate units if appropriate for your locale.">247平方度</string>
+
+    <!-- Piscis Austrinus -->
+    <string name="object_info_piscis_austrinus_description" translation_description="Description of Piscis Austrinus shown in the info card. Translate this text.">Piscis Austrinus（南の魚）は古い星座です。双魚宮の2匹の魚の親であり、水瓶宮によって注がれた水を飲んでいると言われています。</string>
+    <string name="object_info_piscis_austrinus_funfact" translation_description="Fun fact about Piscis Austrinus shown in the info card. Translate this text.">フォーマルハウト（南の魚座で最も明るい星）は、ハッブル宇宙望遠鏡によって直接撮影された系外惑星を持つ最初の星の1つでした。ただし、その「惑星」は実は塵の雲かもしれません！</string>
+    <string name="object_info_piscis_austrinus_size" translation_description="Physical size of Piscis Austrinus shown in the info card. Translate units if appropriate for your locale.">245平方度</string>
+
+    <!-- Pyxis -->
+    <string name="object_info_pyxis_description" translation_description="Description of Pyxis shown in the info card. Translate this text.">Pyxis（羅針盤）は船乗りの羅針盤を表しています。ラカイユは古代の星座アルゴー船（Argo Navis）の一部だった星々からこれを作成しました。</string>
+    <string name="object_info_pyxis_funfact" translation_description="Fun fact about Pyxis shown in the info card. Translate this text.">Pyxisはt Pyxidisを含んでおり、これは1890年以来少なくとも6回爆発した反復新星です。空の中で最も詳しく研究されている新星の1つです!</string>
+    <string name="object_info_pyxis_size" translation_description="Physical size of Pyxis shown in the info card. Translate units if appropriate for your locale.">221平方度</string>
+
+    <!-- Reticulum -->
+    <string name="object_info_reticulum_description" translation_description="Description of Reticulum shown in the info card. Translate this text.">レティクルム（網目星雲）はラカイユによって作成され、南天の観測中に使用した望遠鏡の十字線アイピースを表しています。</string>
+    <string name="object_info_reticulum_funfact" translation_description="Fun fact about Reticulum shown in the info card. Translate this text.">レティクルム座は UFO の伝説で有名です。1961 年の「ゼータ・レティクリ事件」では、宇宙人の訪問者がこの星座の恒星系から来たと主張されました！</string>
+    <string name="object_info_reticulum_size" translation_description="Physical size of Reticulum shown in the info card. Translate units if appropriate for your locale.">114平方度</string>
+
+    <!-- Sculptor -->
+    <string name="object_info_sculptor_description" translation_description="Description of Sculptor shown in the info card. Translate this text.">彫刻家（彫刻家座）はラカイユによって作成され、元々は彫刻家のスタジオを表していました。南銀河極を含んでいます。</string>
+    <string name="object_info_sculptor_funfact" translation_description="Fun fact about Sculptor shown in the info card. Translate this text.">彫刻家座は南銀河極を含み、また彫刻家座矮小銀河を含んでいます。これは天の川の最も近い衛星銀河の1つで、わずか26万光年離れています!</string>
+    <string name="object_info_sculptor_size" translation_description="Physical size of Sculptor shown in the info card. Translate units if appropriate for your locale.">475平方度</string>
+
+    <!-- Scutum -->
+    <string name="object_info_scutum_description" translation_description="Description of Scutum shown in the info card. Translate this text.">Scutum（盾）は、ポーランドの国王ジョン3世ソビエスキを称えるためにヘベリウスが1684年に創設しました。神話に登場しない歴史上の人物を名前の由来とする数少ない星座の1つです。</string>
+    <string name="object_info_scutum_funfact" translation_description="Fun fact about Scutum shown in the info card. Translate this text.">Scutum（盾座）には、肉眼で見える天の川の中で最も明るく密集した領域の1つであるScutum Star Cloud（盾座星雲）が含まれています。それは銀河の内側の渦巻き腕への窓です！</string>
+    <string name="object_info_scutum_size" translation_description="Physical size of Scutum shown in the info card. Translate units if appropriate for your locale.">109平方度</string>
+
+    <!-- Serpens Caput -->
+    <string name="object_info_serpens_caput_description" translation_description="Description of Serpens Caput shown in the info card. Translate this text.">Serpens Caput（蛇の頭）はSerpens（蛇）の西半分であり、Ophiuchus（へびつかい座）によって2つの非隣接部分に分割された唯一の星座です。</string>
+    <string name="object_info_serpens_caput_funfact" translation_description="Fun fact about Serpens Caput shown in the info card. Translate this text.">Serpens Caput には M5 が含まれており、これは既知の最も古く最大級の球状星団の 1 つです。樹齢は 130 億年で、10 万個以上の星を含んでいます!</string>
+    <string name="object_info_serpens_caput_size" translation_description="Physical size of Serpens Caput shown in the info card. Translate units if appropriate for your locale.">428平方度（両部分）</string>
+
+    <!-- Serpens Cauda -->
+    <string name="object_info_serpens_cauda_description" translation_description="Description of Serpens Cauda shown in the info card. Translate this text.">Serpens Cauda（蛇の尾）はSerpens（蛇）の東半分で、Ophiuchus（へびつかい座）によって頭部から分離されています。</string>
+    <string name="object_info_serpens_cauda_funfact" translation_description="Fun fact about Serpens Cauda shown in the info card. Translate this text.">Serpens Cauda（へびの尾）はワシ星雲（M16）とその有名な「創造の柱」を含んでいます。これは新しい星が誕生している、そびえ立つガスと塵の柱です！</string>
+    <string name="object_info_serpens_cauda_size" translation_description="Physical size of Serpens Cauda shown in the info card. Translate units if appropriate for your locale.">428平方度（両部分）</string>
+
+    <!-- Sextans -->
+    <string name="object_info_sextans_description" translation_description="Description of Sextans shown in the info card. Translate this text.">Sextans（六分儀）はヘベリウスが天文観測用の六分儀を記念して創設した星座で、この六分儀は1679年の火災で破壊されました。</string>
+    <string name="object_info_sextans_funfact" translation_description="Fun fact about Sextans shown in the info card. Translate this text.">Sextans（六分儀座）には、局部銀河群で最も孤立した銀河の1つであるSextans A矮小銀河が含まれており、430万光年離れています！</string>
+    <string name="object_info_sextans_size" translation_description="Physical size of Sextans shown in the info card. Translate units if appropriate for your locale.">314平方度</string>
+
+    <!-- Telescopium -->
+    <string name="object_info_telescopium_description" translation_description="Description of Telescopium shown in the info card. Translate this text.">Telescopium（望遠鏡）はLacailleによって屈折望遠鏡の発明を記念して作られました。射手座と南の冠の南に位置しています。</string>
+    <string name="object_info_telescopium_funfact" translation_description="Fun fact about Telescopium shown in the info card. Translate this text.">Telescopium は元々もっと大きかった — Lacaille が最初に描いたとき、現在は Sagittarius と Ophiuchus の一部に拡がっていた!</string>
+    <string name="object_info_telescopium_size" translation_description="Physical size of Telescopium shown in the info card. Translate units if appropriate for your locale.">252平方度</string>
+
+    <!-- Triangulum Australe -->
+    <string name="object_info_triangulum_australe_description" translation_description="Description of Triangulum Australe shown in the info card. Translate this text.">Triangulum Australe（南の三角形）は、小さいながらも特徴的な南天の星座です。その3つの最も明るい星がほぼ正三角形を形成しています。</string>
+    <string name="object_info_triangulum_australe_funfact" translation_description="Fun fact about Triangulum Australe shown in the info card. Translate this text.">Triangulum Australe（南三角形）はNGC 6025を含んでおり、これは双眼鏡で簡単に見える美しい散開星団で、ブラジルとパプアニューギニアの国旗に描かれています！</string>
+    <string name="object_info_triangulum_australe_size" translation_description="Physical size of Triangulum Australe shown in the info card. Translate units if appropriate for your locale.">110平方度</string>
+
+    <!-- Tucana -->
+    <string name="object_info_tucana_description" translation_description="Description of Tucana shown in the info card. Translate this text.">トゥカーナ（オオハシ）は、オランダの航海者によって作られた南天の星座で、巨大なくちばしを持つ熱帯の鳥を表しています。</string>
+    <string name="object_info_tucana_funfact" translation_description="Fun fact about Tucana shown in the info card. Translate this text.">トゥカーナ座は、47トゥカーナ（NGC 104）を含んでいます。これは空で2番目に明るい球状星団で、数百万個の星と複数のミリ秒パルサーの故郷です！</string>
+    <string name="object_info_tucana_size" translation_description="Physical size of Tucana shown in the info card. Translate units if appropriate for your locale.">295平方度</string>
+
+    <!-- Volans -->
+    <string name="object_info_volans_description" translation_description="Description of Volans shown in the info card. Translate this text.">Volans（飛魚）は、オランダの航海者によって導入された南天の淡い星座で、水から飛び出して滑空することができる熱帯魚を表しています。</string>
+    <string name="object_info_volans_funfact" translation_description="Fun fact about Volans shown in the info card. Translate this text.">ボランスは大マゼラン雲の近くにあり、これまで観測された中で最も完璧なリング銀河の1つであるリンゼイ・シャプレー・リングを含んでいます!</string>
+    <string name="object_info_volans_size" translation_description="Physical size of Volans shown in the info card. Translate units if appropriate for your locale.">141平方度</string>
+
+    <!-- Vulpecula -->
+    <string name="object_info_vulpecula_description" translation_description="Description of Vulpecula shown in the info card. Translate this text.">Vulpecula（小狐座）は、1687年にヘベリウスによって作られた薄い北の星座です。白鳥座とや矢座の間の天の川の中心に位置しています。</string>
+    <string name="object_info_vulpecula_funfact" translation_description="Fun fact about Vulpecula shown in the info card. Translate this text.">こぎつね座はダンベル星雲（M27）を含んでおり、これは史上初めて発見された惑星状星雲（1764年にシャルル・メシエにより発見）であり、双眼鏡での美しい観測対象です！</string>
+    <string name="object_info_vulpecula_size" translation_description="Physical size of Vulpecula shown in the info card. Translate units if appropriate for your locale.">268平方度</string>
 </resources>
