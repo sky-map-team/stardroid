@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!-- Please add  translation_description="" attributes to Strings to assist the translators. --><resources>
+    <!-- tm:omitted name="app_name" reason="identical_to_source" -->
     <string name="menu_settings" translation_description="Settings menu item in the options menu">Ustawienia</string>
     <string name="menu_search" translation_description="Search menu item in the options menu">Szukaj</string>
     <string name="cancel" translation_description="Generic cancel button label used in dialogs">Anuluj</string>
@@ -49,6 +50,8 @@
     <string name="show_comet_layer_pref" translation_description="Preference toggle label for the comets layer">Komety</string>
     <string name="show_satellite_layer_pref" translation_description="The layer for satellites">Satelity</string>
     <string name="sensor_prefs" translation_description="Preferences category heading for sensor settings, intended for advanced/expert users">Ustawienia czujnika (zaawansowane)</string>
+    <string name="sensor_speed" translation_description="Old, non gyro sensors only: How quickly the sensor should send us data">Szybkość czujnika</string>
+    <string name="sensor_damping" translation_description="Old, non gyro sensors only: The amount of smoothing applied to the sensor outputs.">Tłumienie</string>
     <string name="appearance_prefs" translation_description="Preferences title for section about app appearance">Wygląd</string>
     <string name="auto_dimness_preference" translation_description="Mode for automatically dimming the screen when night mode is selected">Autoprzyciemnianie ekranu</string>
     <string name="font_size_preference" translation_description="Change the font size">Rozmiar czcionki</string>
@@ -57,6 +60,7 @@
     <string name="malformed_loc_error" translation_description="Error message when a non-numeric value is entered for latitude or longitude">Szerokość lub długość geograficzna nie jest liczbą.</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Akceptuj</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">Nie, dziękuję</string>
+    <!-- tm:omitted name="dialog_ok_button" reason="identical_to_source" -->
     <string name="menu_credits" translation_description="menu item to show \'Credits\' box">Autorzy</string>
     <string name="credits_dialog_title" translation_description="Title of the credits dialog showing acknowledgements and contributors">Autorzy</string>
     <string name="menu_help" translation_description="menu item to show \'Help\' box">Pomoc</string>
@@ -65,6 +69,7 @@
     <string name="set_auto" translation_description="Toast message shown when the user switches to automatic (sensor/gyroscope) mode">Przełączanie na tryb automatyczny</string>
     <string name="menu_toggle_dim" translation_description="Menu item to toggle night mode (red tint that preserves night vision)">Przełącz tryb nocny</string>
     <string name="zenith" translation_description="Label for the zenith point (directly overhead) shown on the sky map. Displayed in capitals.">ZENIT</string>
+    <!-- tm:omitted name="nadir" reason="identical_to_source" -->
     <string name="north" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">PÓŁNOC</string>
     <string name="east" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">WSCHÓD</string>
     <string name="west" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">ZACHÓD</string>
@@ -135,6 +140,8 @@
     <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">Wyszukiwanie:</string>
     <string name="sun_wont_set_message" translation_description="Message shown when the sun will not set during the next 24 hours (polar day / midnight sun)">W Twojej bieżącej lokalizacji Słońce nie zejdzie w ciągu następnych 24 godzin.</string>
 
+    <!-- tm:omitted name="missing_label" reason="identical_to_source" -->
+
     <string name="menu_tos" translation_description="Menu item label to view the Terms of Service">Warunki korzystania z usługi</string>
     <string name="menu_diagnostics" translation_description="Menu item label to open the technical diagnostics screen">Diagnostyka</string>
 
@@ -177,6 +184,7 @@
     <string name="diagnostics_activity_location_permission" translation_description="Row label in the Diagnostics screen showing whether location permission has been granted">Uprawnienie do lokalizacji</string>
     <string name="diagnostics_activity_location_permission_granted" translation_description="Status value shown when location permission has been granted">Przyznano</string>
     <string name="diagnostics_activity_location_permission_denied" translation_description="Status value shown when location permission has been denied">Odmówiono</string>
+    <!-- tm:omitted name="diagnostics_activity_gps" reason="identical_to_source" -->
     <string name="diagnostics_activity_location" translation_description="Row label in the Diagnostics screen showing the current latitude and longitude">Lokalizacja (szer., dł.)</string>
     <string name="diagnostics_activity_pointing_ra_dec" translation_description="Row label in the Diagnostics screen showing a snapshot of where the phone is currently pointing in the sky (Right Ascension and Declination)">Migawka wskaźnika</string>
     <string name="diagnostics_activity_magnetic_correction" translation_description="Row label in the Diagnostics screen showing whether magnetic declination correction is applied">Korekcja magnetyczna</string>
