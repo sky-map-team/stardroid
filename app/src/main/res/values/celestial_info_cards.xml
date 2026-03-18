@@ -711,4 +711,385 @@
     <string name="object_info_sagitta_description" translation_description="Description of Sagitta shown in the info card. Translate this text.">Sagitta the Arrow is the third smallest constellation, representing various mythological arrows from Greek legends.</string>
     <string name="object_info_sagitta_funfact" translation_description="Fun fact about Sagitta shown in the info card. Translate this text.">Despite being tiny, Sagitta contains M71, a globular cluster that was mistaken for an open cluster for centuries!</string>
     <string name="object_info_sagitta_size" translation_description="Physical size of Sagitta shown in the info card. Translate units if appropriate for your locale.">80 square degrees</string>
+
+    <!-- ============================================ -->
+    <!-- New Stars (24) — Phase 1 of issue #645 -->
+    <!-- ============================================ -->
+
+    <!-- Alcyone -->
+    <string name="object_info_alcyone_description" translation_description="Short description of Alcyone">Alcyone is the brightest star in the Pleiades cluster (M45) in the constellation Taurus. It\'s a blue-white giant star.</string>
+    <string name="object_info_alcyone_funfact" translation_description="Fun fact about Alcyone">Alcyone is actually a multiple star system with at least three companions! It also spins so fast that it has a disk of gas around its equator.</string>
+    <string name="object_info_alcyone_distance" translation_description="Distance to Alcyone shown in the info card. Translate units if appropriate for your locale.">~440 light-years</string>
+    <string name="object_info_alcyone_size" translation_description="Physical size of Alcyone shown in the info card. Translate units if appropriate for your locale.">~10 solar radii</string>
+    <string name="object_info_alcyone_mass" translation_description="Mass of Alcyone in scientific notation — no translation needed.">~6.0 solar masses</string>
+
+    <!-- Alderamin -->
+    <string name="object_info_alderamin_description" translation_description="Short description of Alderamin">Alderamin is the brightest star in Cepheus (the King). Its name comes from Arabic meaning \"the right arm.\"</string>
+    <string name="object_info_alderamin_funfact" translation_description="Fun fact about Alderamin">Due to Earth\'s axial precession, Alderamin will become the North Pole Star around the year 7500 AD!</string>
+    <string name="object_info_alderamin_distance" translation_description="Distance to Alderamin shown in the info card. Translate units if appropriate for your locale.">49 light-years</string>
+    <string name="object_info_alderamin_size" translation_description="Physical size of Alderamin shown in the info card. Translate units if appropriate for your locale.">2.5 solar radii</string>
+    <string name="object_info_alderamin_mass" translation_description="Mass of Alderamin in scientific notation — no translation needed.">1.9 solar masses</string>
+
+    <!-- Algenib -->
+    <string name="object_info_algenib_description" translation_description="Short description of Algenib">Algenib marks a corner of the Great Square of Pegasus. It\'s a hot blue subgiant star and a Beta Cephei variable.</string>
+    <string name="object_info_algenib_funfact" translation_description="Fun fact about Algenib">Algenib pulsates, changing its brightness slightly every 3.6 hours! It\'s also one of the most distant stars that form a prominent asterism visible to the naked eye.</string>
+    <string name="object_info_algenib_distance" translation_description="Distance to Algenib shown in the info card. Translate units if appropriate for your locale.">~390 light-years</string>
+    <string name="object_info_algenib_size" translation_description="Physical size of Algenib shown in the info card. Translate units if appropriate for your locale.">4.8 solar radii</string>
+    <string name="object_info_algenib_mass" translation_description="Mass of Algenib in scientific notation — no translation needed.">~8.9 solar masses</string>
+
+    <!-- Algieba -->
+    <string name="object_info_algieba_description" translation_description="Short description of Algieba">Algieba is a beautiful double star in Leo (the Lion), forming the mane of the celestial lion. Its name means \"the forehead\" in Arabic.</string>
+    <string name="object_info_algieba_funfact" translation_description="Fun fact about Algieba">Through a telescope, Algieba splits into a stunning pair of golden and yellow-orange giant stars — one of the finest double stars in the sky! A planet was discovered orbiting the primary star in 2009.</string>
+    <string name="object_info_algieba_distance" translation_description="Distance to Algieba shown in the info card. Translate units if appropriate for your locale.">~130 light-years</string>
+    <string name="object_info_algieba_size" translation_description="Physical size of Algieba shown in the info card. Translate units if appropriate for your locale.">~23 solar radii</string>
+    <string name="object_info_algieba_mass" translation_description="Mass of Algieba in scientific notation — no translation needed.">~1.2 solar masses</string>
+
+    <!-- Alhena -->
+    <string name="object_info_alhena_description" translation_description="Short description of Alhena">Alhena marks the foot of Pollux, one of the twins in Gemini. It\'s a bright white subgiant star and one of Gemini\'s most prominent stars.</string>
+    <string name="object_info_alhena_funfact" translation_description="Fun fact about Alhena">Alhena\'s name comes from Arabic meaning \"the brand mark\" — ancient Arabs saw this star as a brand on the neck of a camel!</string>
+    <string name="object_info_alhena_distance" translation_description="Distance to Alhena shown in the info card. Translate units if appropriate for your locale.">109 light-years</string>
+    <string name="object_info_alhena_size" translation_description="Physical size of Alhena shown in the info card. Translate units if appropriate for your locale.">3.3 solar radii</string>
+    <string name="object_info_alhena_mass" translation_description="Mass of Alhena in scientific notation — no translation needed.">2.8 solar masses</string>
+
+    <!-- Alkaid -->
+    <string name="object_info_alkaid_description" translation_description="Short description of Alkaid">Alkaid is the star at the tip of the Big Dipper\'s handle in Ursa Major. It\'s the third-brightest star in Ursa Major.</string>
+    <string name="object_info_alkaid_funfact" translation_description="Fun fact about Alkaid">Unlike most Big Dipper stars, Alkaid is not part of the Ursa Major Moving Group — it\'s traveling through space in a different direction, so the Big Dipper\'s shape will slowly change over thousands of years!</string>
+    <string name="object_info_alkaid_distance" translation_description="Distance to Alkaid shown in the info card. Translate units if appropriate for your locale.">104 light-years</string>
+    <string name="object_info_alkaid_size" translation_description="Physical size of Alkaid shown in the info card. Translate units if appropriate for your locale.">3.4 solar radii</string>
+    <string name="object_info_alkaid_mass" translation_description="Mass of Alkaid in scientific notation — no translation needed.">6.1 solar masses</string>
+
+    <!-- Alnair -->
+    <string name="object_info_alnair_description" translation_description="Short description of Alnair">Alnair is the brightest star in Grus (the Crane). Its name means \"the bright one\" in Arabic.</string>
+    <string name="object_info_alnair_funfact" translation_description="Fun fact about Alnair">Alnair spins extremely rapidly — at least 215 km/s at its equator — which is so fast that the star is noticeably oblate, bulging at its middle!</string>
+    <string name="object_info_alnair_distance" translation_description="Distance to Alnair shown in the info card. Translate units if appropriate for your locale.">101 light-years</string>
+    <string name="object_info_alnair_size" translation_description="Physical size of Alnair shown in the info card. Translate units if appropriate for your locale.">3.4 solar radii</string>
+    <string name="object_info_alnair_mass" translation_description="Mass of Alnair in scientific notation — no translation needed.">4.0 solar masses</string>
+
+    <!-- Alnath -->
+    <string name="object_info_alnath_description" translation_description="Short description of Alnath">Alnath is the second-brightest star in Taurus, marking the tip of the bull\'s northern horn. It lies right on the Taurus-Auriga border.</string>
+    <string name="object_info_alnath_funfact" translation_description="Fun fact about Alnath">Alnath was once shared between two constellations! It was designated both Beta Tauri and Gamma Aurigae before the IAU officially assigned it to Taurus in 1930.</string>
+    <string name="object_info_alnath_distance" translation_description="Distance to Alnath shown in the info card. Translate units if appropriate for your locale.">134 light-years</string>
+    <string name="object_info_alnath_size" translation_description="Physical size of Alnath shown in the info card. Translate units if appropriate for your locale.">4.2 solar radii</string>
+    <string name="object_info_alnath_mass" translation_description="Mass of Alnath in scientific notation — no translation needed.">5.0 solar masses</string>
+
+    <!-- Alphekka -->
+    <string name="object_info_alphekka_description" translation_description="Short description of Alphekka">Alphekka (also called Gemma) is the brightest star in Corona Borealis (the Northern Crown). It\'s the jewel of this small circlet of stars.</string>
+    <string name="object_info_alphekka_funfact" translation_description="Fun fact about Alphekka">Alphekka is an eclipsing binary — its faint companion passes in front of it every 17.4 days, causing a tiny dip in brightness that\'s nearly impossible to see without instruments!</string>
+    <string name="object_info_alphekka_distance" translation_description="Distance to Alphekka shown in the info card. Translate units if appropriate for your locale.">75 light-years</string>
+    <string name="object_info_alphekka_size" translation_description="Physical size of Alphekka shown in the info card. Translate units if appropriate for your locale.">2.9 solar radii</string>
+    <string name="object_info_alphekka_mass" translation_description="Mass of Alphekka in scientific notation — no translation needed.">2.6 solar masses</string>
+
+    <!-- Ankaa -->
+    <string name="object_info_ankaa_description" translation_description="Short description of Ankaa">Ankaa is the brightest star in Phoenix, a constellation best seen from the Southern Hemisphere. Its name comes from the Arabic word for \"the phoenix.\"</string>
+    <string name="object_info_ankaa_funfact" translation_description="Fun fact about Ankaa">Ankaa is a spectroscopic binary star, meaning its companion is so close that the two can only be detected by shifts in their light spectrum — they orbit each other every 10.2 years!</string>
+    <string name="object_info_ankaa_distance" translation_description="Distance to Ankaa shown in the info card. Translate units if appropriate for your locale.">85 light-years</string>
+    <string name="object_info_ankaa_size" translation_description="Physical size of Ankaa shown in the info card. Translate units if appropriate for your locale.">15 solar radii</string>
+    <string name="object_info_ankaa_mass" translation_description="Mass of Ankaa in scientific notation — no translation needed.">1.3 solar masses</string>
+
+    <!-- Arneb -->
+    <string name="object_info_arneb_description" translation_description="Short description of Arneb">Arneb is the brightest star in Lepus (the Hare), the constellation crouching beneath Orion\'s feet. It\'s a rare white supergiant.</string>
+    <string name="object_info_arneb_funfact" translation_description="Fun fact about Arneb">Arneb is a dying star that has likely already fused all its core hydrogen. It may end its life as a supernova within the next few million years!</string>
+    <string name="object_info_arneb_distance" translation_description="Distance to Arneb shown in the info card. Translate units if appropriate for your locale.">~2,200 light-years</string>
+    <string name="object_info_arneb_size" translation_description="Physical size of Arneb shown in the info card. Translate units if appropriate for your locale.">~75 solar radii</string>
+    <string name="object_info_arneb_mass" translation_description="Mass of Arneb in scientific notation — no translation needed.">~14 solar masses</string>
+
+    <!-- Caph -->
+    <string name="object_info_caph_description" translation_description="Short description of Caph">Caph is the second-brightest star in Cassiopeia, forming the rightmost point of the iconic W-shape. Its name means \"the palm\" in Arabic.</string>
+    <string name="object_info_caph_funfact" translation_description="Fun fact about Caph">Caph is a Delta Scuti variable — it pulsates with multiple frequencies simultaneously, changing brightness slightly every 2.5 hours!</string>
+    <string name="object_info_caph_distance" translation_description="Distance to Caph shown in the info card. Translate units if appropriate for your locale.">54 light-years</string>
+    <string name="object_info_caph_size" translation_description="Physical size of Caph shown in the info card. Translate units if appropriate for your locale.">3.5 solar radii</string>
+    <string name="object_info_caph_mass" translation_description="Mass of Caph in scientific notation — no translation needed.">1.9 solar masses</string>
+
+    <!-- Etamin -->
+    <string name="object_info_etamin_description" translation_description="Short description of Etamin">Etamin (also Eltanin) is the brightest star in Draco (the Dragon). It represents the dragon\'s head, and its name means \"the great serpent\" in Arabic.</string>
+    <string name="object_info_etamin_funfact" translation_description="Fun fact about Etamin">Observations of Etamin in 1728 by James Bradley led to the discovery of the aberration of light — one of the first direct proofs that Earth moves through space!</string>
+    <string name="object_info_etamin_distance" translation_description="Distance to Etamin shown in the info card. Translate units if appropriate for your locale.">148 light-years</string>
+    <string name="object_info_etamin_size" translation_description="Physical size of Etamin shown in the info card. Translate units if appropriate for your locale.">48 solar radii</string>
+    <string name="object_info_etamin_mass" translation_description="Mass of Etamin in scientific notation — no translation needed.">1.7 solar masses</string>
+
+    <!-- Izar -->
+    <string name="object_info_izar_description" translation_description="Short description of Izar">Izar is a beautiful double star in Boötes (the Herdsman). Its name means \"the girdle\" or \"veil\" in Arabic.</string>
+    <string name="object_info_izar_funfact" translation_description="Fun fact about Izar">The 19th-century astronomer Friedrich Georg Wilhelm von Struve called Izar \"Pulcherrima\" (Latin for \"most beautiful\") because of the stunning color contrast between its orange and blue-white components!</string>
+    <string name="object_info_izar_distance" translation_description="Distance to Izar shown in the info card. Translate units if appropriate for your locale.">202 light-years</string>
+    <string name="object_info_izar_size" translation_description="Physical size of Izar shown in the info card. Translate units if appropriate for your locale.">33 solar radii</string>
+    <string name="object_info_izar_mass" translation_description="Mass of Izar in scientific notation — no translation needed.">~4.6 solar masses</string>
+
+    <!-- Kaus Australis -->
+    <string name="object_info_kaus_australis_description" translation_description="Short description of Kaus Australis">Kaus Australis is the brightest star in Sagittarius (the Archer). Its name means \"the southern bow\" in a mix of Arabic and Latin.</string>
+    <string name="object_info_kaus_australis_funfact" translation_description="Fun fact about Kaus Australis">Kaus Australis lies near the direction of the center of our Milky Way galaxy! When you look at this star, you\'re gazing toward the densest part of the galactic plane.</string>
+    <string name="object_info_kaus_australis_distance" translation_description="Distance to Kaus Australis shown in the info card. Translate units if appropriate for your locale.">143 light-years</string>
+    <string name="object_info_kaus_australis_size" translation_description="Physical size of Kaus Australis shown in the info card. Translate units if appropriate for your locale.">6.8 solar radii</string>
+    <string name="object_info_kaus_australis_mass" translation_description="Mass of Kaus Australis in scientific notation — no translation needed.">3.5 solar masses</string>
+
+    <!-- Kochab -->
+    <string name="object_info_kochab_description" translation_description="Short description of Kochab">Kochab is the second-brightest star in Ursa Minor (the Little Bear). Together with Pherkad, it forms the \"Guardians of the Pole.\"</string>
+    <string name="object_info_kochab_funfact" translation_description="Fun fact about Kochab">Around 1500 BC, Kochab was the closest bright star to the north celestial pole, making it the \"Pole Star\" for ancient Egyptians and Phoenician sailors!</string>
+    <string name="object_info_kochab_distance" translation_description="Distance to Kochab shown in the info card. Translate units if appropriate for your locale.">131 light-years</string>
+    <string name="object_info_kochab_size" translation_description="Physical size of Kochab shown in the info card. Translate units if appropriate for your locale.">42 solar radii</string>
+    <string name="object_info_kochab_mass" translation_description="Mass of Kochab in scientific notation — no translation needed.">1.3 solar masses</string>
+
+    <!-- Merak -->
+    <string name="object_info_merak_description" translation_description="Short description of Merak">Merak is one of the two \"Pointer Stars\" in the Big Dipper that point the way to Polaris, the North Star. It lies in Ursa Major.</string>
+    <string name="object_info_merak_funfact" translation_description="Fun fact about Merak">Merak has an infrared excess that suggests it has a circumstellar debris disk — possibly a ring of dust and rocky material similar to our asteroid belt!</string>
+    <string name="object_info_merak_distance" translation_description="Distance to Merak shown in the info card. Translate units if appropriate for your locale.">80 light-years</string>
+    <string name="object_info_merak_size" translation_description="Physical size of Merak shown in the info card. Translate units if appropriate for your locale.">3.0 solar radii</string>
+    <string name="object_info_merak_mass" translation_description="Mass of Merak in scientific notation — no translation needed.">2.7 solar masses</string>
+
+    <!-- Menkar -->
+    <string name="object_info_menkar_description" translation_description="Short description of Menkar">Menkar is a red giant star that marks the nose of Cetus (the Sea Monster). Its name means \"the nostril\" in Arabic.</string>
+    <string name="object_info_menkar_funfact" translation_description="Fun fact about Menkar">Menkar is nearing the end of its stellar life. This aging red giant is fusing helium in its core and will eventually shed its outer layers to become a planetary nebula!</string>
+    <string name="object_info_menkar_distance" translation_description="Distance to Menkar shown in the info card. Translate units if appropriate for your locale.">249 light-years</string>
+    <string name="object_info_menkar_size" translation_description="Physical size of Menkar shown in the info card. Translate units if appropriate for your locale.">~89 solar radii</string>
+    <string name="object_info_menkar_mass" translation_description="Mass of Menkar in scientific notation — no translation needed.">~2.3 solar masses</string>
+
+    <!-- Mirphak -->
+    <string name="object_info_mirphak_description" translation_description="Short description of Mirphak">Mirphak (also Mirfak) is the brightest star in Perseus, a yellow-white supergiant at the heart of the Alpha Persei Cluster.</string>
+    <string name="object_info_mirphak_funfact" translation_description="Fun fact about Mirphak">Mirphak is surrounded by a beautiful open star cluster (Melotte 20) that\'s best seen with binoculars — a scattering of young, blue-white stars that move together through space!</string>
+    <string name="object_info_mirphak_distance" translation_description="Distance to Mirphak shown in the info card. Translate units if appropriate for your locale.">~590 light-years</string>
+    <string name="object_info_mirphak_size" translation_description="Physical size of Mirphak shown in the info card. Translate units if appropriate for your locale.">~68 solar radii</string>
+    <string name="object_info_mirphak_mass" translation_description="Mass of Mirphak in scientific notation — no translation needed.">~8.5 solar masses</string>
+
+    <!-- Phad -->
+    <string name="object_info_phad_description" translation_description="Short description of Phad">Phad (also Phecda) is one of the stars forming the bowl of the Big Dipper in Ursa Major. Its name means \"the thigh\" in Arabic.</string>
+    <string name="object_info_phad_funfact" translation_description="Fun fact about Phad">Phad is a member of the Ursa Major Moving Group — a set of stars that were born together and travel through space as a loose cluster, including most Big Dipper stars!</string>
+    <string name="object_info_phad_distance" translation_description="Distance to Phad shown in the info card. Translate units if appropriate for your locale.">84 light-years</string>
+    <string name="object_info_phad_size" translation_description="Physical size of Phad shown in the info card. Translate units if appropriate for your locale.">3.0 solar radii</string>
+    <string name="object_info_phad_mass" translation_description="Mass of Phad in scientific notation — no translation needed.">2.9 solar masses</string>
+
+    <!-- Saiph -->
+    <string name="object_info_saiph_description" translation_description="Short description of Saiph">Saiph marks the lower-right knee of Orion. Despite appearing dimmer than Rigel, it\'s actually a very hot and luminous blue supergiant.</string>
+    <string name="object_info_saiph_funfact" translation_description="Fun fact about Saiph">Saiph appears fainter than its temperature would suggest because most of its energy is radiated as ultraviolet light, invisible to our eyes! It\'s actually one of the hottest bright stars in the sky.</string>
+    <string name="object_info_saiph_distance" translation_description="Distance to Saiph shown in the info card. Translate units if appropriate for your locale.">~650 light-years</string>
+    <string name="object_info_saiph_size" translation_description="Physical size of Saiph shown in the info card. Translate units if appropriate for your locale.">~22 solar radii</string>
+    <string name="object_info_saiph_mass" translation_description="Mass of Saiph in scientific notation — no translation needed.">~15.5 solar masses</string>
+
+    <!-- Shedir -->
+    <string name="object_info_shedir_description" translation_description="Short description of Shedir">Shedir (also Schedar) is the brightest star in Cassiopeia, an orange giant at the base of the famous W pattern. Its name means \"the breast\" in Arabic.</string>
+    <string name="object_info_shedir_funfact" translation_description="Fun fact about Shedir">Shedir was once thought to be a variable star, but modern measurements show its brightness is remarkably steady — earlier reports of variability were likely due to primitive equipment!</string>
+    <string name="object_info_shedir_distance" translation_description="Distance to Shedir shown in the info card. Translate units if appropriate for your locale.">228 light-years</string>
+    <string name="object_info_shedir_size" translation_description="Physical size of Shedir shown in the info card. Translate units if appropriate for your locale.">45 solar radii</string>
+    <string name="object_info_shedir_mass" translation_description="Mass of Shedir in scientific notation — no translation needed.">~4.0 solar masses</string>
+
+    <!-- Unukalhai -->
+    <string name="object_info_unukalhai_description" translation_description="Short description of Unukalhai">Unukalhai is the brightest star in Serpens Caput (the Serpent\'s Head). Its name means \"the neck of the serpent\" in Arabic.</string>
+    <string name="object_info_unukalhai_funfact" translation_description="Fun fact about Unukalhai">Serpens is the only constellation split into two separate parts — Serpens Caput (head) and Serpens Cauda (tail) — divided by Ophiuchus, and Unukalhai is the brightest star in the head half!</string>
+    <string name="object_info_unukalhai_distance" translation_description="Distance to Unukalhai shown in the info card. Translate units if appropriate for your locale.">74 light-years</string>
+    <string name="object_info_unukalhai_size" translation_description="Physical size of Unukalhai shown in the info card. Translate units if appropriate for your locale.">12 solar radii</string>
+    <string name="object_info_unukalhai_mass" translation_description="Mass of Unukalhai in scientific notation — no translation needed.">~2.1 solar masses</string>
+
+    <!-- Vindemiatrix -->
+    <string name="object_info_vindemiatrix_description" translation_description="Short description of Vindemiatrix">Vindemiatrix is the third-brightest star in Virgo (the Maiden). Its name means \"the grape gatherer\" in Latin.</string>
+    <string name="object_info_vindemiatrix_funfact" translation_description="Fun fact about Vindemiatrix">Vindemiatrix got its name because its heliacal rising (first appearance at dawn) once coincided with the grape harvest season in the Mediterranean — it was the vintner\'s star!</string>
+    <string name="object_info_vindemiatrix_distance" translation_description="Distance to Vindemiatrix shown in the info card. Translate units if appropriate for your locale.">109 light-years</string>
+    <string name="object_info_vindemiatrix_size" translation_description="Physical size of Vindemiatrix shown in the info card. Translate units if appropriate for your locale.">11 solar radii</string>
+    <string name="object_info_vindemiatrix_mass" translation_description="Mass of Vindemiatrix in scientific notation — no translation needed.">2.6 solar masses</string>
+
+    <!-- ============================================ -->
+    <!-- New Constellations (41) — Phase 1 of issue #645 -->
+    <!-- ============================================ -->
+
+    <!-- Antlia -->
+    <string name="object_info_antlia_description" translation_description="Description of Antlia shown in the info card. Translate this text.">Antlia (the Air Pump) is a faint southern constellation created by Nicolas-Louis de Lacaille in the 18th century to honor the air pump invented by Robert Boyle.</string>
+    <string name="object_info_antlia_funfact" translation_description="Fun fact about Antlia shown in the info card. Translate this text.">Antlia contains the Antlia Dwarf Galaxy, one of the nearest galaxies to the Milky Way at just 4.3 million light-years away!</string>
+    <string name="object_info_antlia_size" translation_description="Physical size of Antlia shown in the info card. Translate units if appropriate for your locale.">239 square degrees</string>
+
+    <!-- Apus -->
+    <string name="object_info_apus_description" translation_description="Description of Apus shown in the info card. Translate this text.">Apus (the Bird of Paradise) is a faint southern constellation introduced by Dutch navigators Keyser and de Houtman in the late 16th century.</string>
+    <string name="object_info_apus_funfact" translation_description="Fun fact about Apus shown in the info card. Translate this text.">Apus was named after the birds of paradise of the East Indies, which early European explorers believed had no feet — hence the Latin name meaning \"footless.\"</string>
+    <string name="object_info_apus_size" translation_description="Physical size of Apus shown in the info card. Translate units if appropriate for your locale.">206 square degrees</string>
+
+    <!-- Ara -->
+    <string name="object_info_ara_description" translation_description="Description of Ara shown in the info card. Translate this text.">Ara (the Altar) is a southern constellation known since antiquity. In Greek mythology, it represents the altar on which the gods swore an oath before battling the Titans.</string>
+    <string name="object_info_ara_funfact" translation_description="Fun fact about Ara shown in the info card. Translate this text.">Ara contains the Stingray Nebula, the youngest known planetary nebula, which was only seen to form in the 1980s — a cosmic event captured in real time!</string>
+    <string name="object_info_ara_size" translation_description="Physical size of Ara shown in the info card. Translate units if appropriate for your locale.">237 square degrees</string>
+
+    <!-- Caelum -->
+    <string name="object_info_caelum_description" translation_description="Description of Caelum shown in the info card. Translate this text.">Caelum (the Chisel) is one of the faintest constellations in the sky, created by Lacaille in the 18th century to represent an engraving tool.</string>
+    <string name="object_info_caelum_funfact" translation_description="Fun fact about Caelum shown in the info card. Translate this text.">Caelum is the eighth-smallest constellation and contains no stars brighter than magnitude 4.5 — you need very dark skies and sharp eyes to spot it!</string>
+    <string name="object_info_caelum_size" translation_description="Physical size of Caelum shown in the info card. Translate units if appropriate for your locale.">125 square degrees</string>
+
+    <!-- Camelopardalis -->
+    <string name="object_info_camelopardalis_description" translation_description="Description of Camelopardalis shown in the info card. Translate this text.">Camelopardalis (the Giraffe) is a large but faint northern constellation. Its name comes from the Greek for \"camel-leopard,\" an early description of the giraffe.</string>
+    <string name="object_info_camelopardalis_funfact" translation_description="Fun fact about Camelopardalis shown in the info card. Translate this text.">Despite being the 18th-largest constellation, Camelopardalis has no star brighter than magnitude 4.0 — it occupies a vast, seemingly empty patch of sky near Polaris!</string>
+    <string name="object_info_camelopardalis_size" translation_description="Physical size of Camelopardalis shown in the info card. Translate units if appropriate for your locale.">757 square degrees</string>
+
+    <!-- Canes Venatici -->
+    <string name="object_info_canes_venatici_description" translation_description="Description of Canes Venatici shown in the info card. Translate this text.">Canes Venatici (the Hunting Dogs) represents the two dogs held by Boötes the Herdsman. It was introduced by Johannes Hevelius in 1687.</string>
+    <string name="object_info_canes_venatici_funfact" translation_description="Fun fact about Canes Venatici shown in the info card. Translate this text.">Canes Venatici contains M51, the Whirlpool Galaxy — the first galaxy whose spiral structure was discovered, sketched by Lord Rosse in 1845!</string>
+    <string name="object_info_canes_venatici_size" translation_description="Physical size of Canes Venatici shown in the info card. Translate units if appropriate for your locale.">465 square degrees</string>
+
+    <!-- Chamaeleon -->
+    <string name="object_info_chamaeleon_description" translation_description="Description of Chamaeleon shown in the info card. Translate this text.">Chamaeleon is a small southern constellation introduced by Dutch navigators in the late 16th century, representing the color-changing lizard.</string>
+    <string name="object_info_chamaeleon_funfact" translation_description="Fun fact about Chamaeleon shown in the info card. Translate this text.">Chamaeleon contains a large molecular cloud complex where new stars are actively forming — it\'s one of the nearest star-forming regions to Earth at only 500 light-years away!</string>
+    <string name="object_info_chamaeleon_size" translation_description="Physical size of Chamaeleon shown in the info card. Translate units if appropriate for your locale.">132 square degrees</string>
+
+    <!-- Circinus -->
+    <string name="object_info_circinus_description" translation_description="Description of Circinus shown in the info card. Translate this text.">Circinus (the Compass) is one of the smallest constellations, created by Lacaille to represent a drafting compass used for drawing circles.</string>
+    <string name="object_info_circinus_funfact" translation_description="Fun fact about Circinus shown in the info card. Translate this text.">The Circinus Galaxy is one of the closest Seyfert galaxies to us — an active galaxy with a supermassive black hole that powers bright jets of material!</string>
+    <string name="object_info_circinus_size" translation_description="Physical size of Circinus shown in the info card. Translate units if appropriate for your locale.">93 square degrees</string>
+
+    <!-- Columba -->
+    <string name="object_info_columba_description" translation_description="Description of Columba shown in the info card. Translate this text.">Columba (the Dove) represents the dove sent by Noah from the Ark to find dry land. It lies south of Lepus and Canis Major.</string>
+    <string name="object_info_columba_funfact" translation_description="Fun fact about Columba shown in the info card. Translate this text.">The runaway star Mu Columbae was ejected from the Orion Nebula about 2.5 million years ago and is now speeding through Columba at over 100 km/s!</string>
+    <string name="object_info_columba_size" translation_description="Physical size of Columba shown in the info card. Translate units if appropriate for your locale.">270 square degrees</string>
+
+    <!-- Coma Berenices -->
+    <string name="object_info_coma_berenices_description" translation_description="Description of Coma Berenices shown in the info card. Translate this text.">Coma Berenices (Berenice\'s Hair) represents the hair of the Egyptian queen Berenice II, who offered it to the gods. It\'s one of few constellations named after a historical person.</string>
+    <string name="object_info_coma_berenices_funfact" translation_description="Fun fact about Coma Berenices shown in the info card. Translate this text.">Coma Berenices contains the north galactic pole — the direction perpendicular to the Milky Way\'s disk — which is why it\'s rich in visible galaxies with no galactic dust in the way!</string>
+    <string name="object_info_coma_berenices_size" translation_description="Physical size of Coma Berenices shown in the info card. Translate units if appropriate for your locale.">386 square degrees</string>
+
+    <!-- Corona Australis -->
+    <string name="object_info_corona_australis_description" translation_description="Description of Corona Australis shown in the info card. Translate this text.">Corona Australis (the Southern Crown) is one of the 48 constellations listed by Ptolemy. It represents a wreath or crown placed at the feet of Sagittarius.</string>
+    <string name="object_info_corona_australis_funfact" translation_description="Fun fact about Corona Australis shown in the info card. Translate this text.">Corona Australis contains one of the nearest and most active star-forming regions — the Coronet Cluster, where dozens of young stars are being born right now!</string>
+    <string name="object_info_corona_australis_size" translation_description="Physical size of Corona Australis shown in the info card. Translate units if appropriate for your locale.">128 square degrees</string>
+
+    <!-- Crater -->
+    <string name="object_info_crater_description" translation_description="Description of Crater shown in the info card. Translate this text.">Crater (the Cup) represents the goblet of Apollo in Greek mythology. It sits on the back of Hydra, the water snake, next to Corvus the Crow.</string>
+    <string name="object_info_crater_funfact" translation_description="Fun fact about Crater shown in the info card. Translate this text.">In Greek myth, Apollo sent the Crow to fetch water in this Cup, but the Crow delayed by eating figs — so Apollo placed all three in the sky as punishment!</string>
+    <string name="object_info_crater_size" translation_description="Physical size of Crater shown in the info card. Translate units if appropriate for your locale.">282 square degrees</string>
+
+    <!-- Dorado -->
+    <string name="object_info_dorado_description" translation_description="Description of Dorado shown in the info card. Translate this text.">Dorado (the Swordfish or Dolphinfish) is a southern constellation created by Dutch navigators. It contains most of the Large Magellanic Cloud.</string>
+    <string name="object_info_dorado_funfact" translation_description="Fun fact about Dorado shown in the info card. Translate this text.">Dorado hosts the Tarantula Nebula (30 Doradus), the most luminous star-forming region in the Local Group — if it were as close as the Orion Nebula, it would cast shadows on Earth!</string>
+    <string name="object_info_dorado_size" translation_description="Physical size of Dorado shown in the info card. Translate units if appropriate for your locale.">179 square degrees</string>
+
+    <!-- Equuleus -->
+    <string name="object_info_equuleus_description" translation_description="Description of Equuleus shown in the info card. Translate this text.">Equuleus (the Little Horse) is the second-smallest constellation. In Greek mythology, it represents Celeris, the brother or foal of Pegasus.</string>
+    <string name="object_info_equuleus_funfact" translation_description="Fun fact about Equuleus shown in the info card. Translate this text.">Equuleus is the second-smallest of all 88 constellations (only Crux is smaller), yet it was one of the original 48 listed by Ptolemy nearly 2,000 years ago!</string>
+    <string name="object_info_equuleus_size" translation_description="Physical size of Equuleus shown in the info card. Translate units if appropriate for your locale.">72 square degrees</string>
+
+    <!-- Fornax -->
+    <string name="object_info_fornax_description" translation_description="Description of Fornax shown in the info card. Translate this text.">Fornax (the Furnace) was created by Lacaille to represent a chemical furnace. It\'s a faint southern constellation between Cetus and Eridanus.</string>
+    <string name="object_info_fornax_funfact" translation_description="Fun fact about Fornax shown in the info card. Translate this text.">The Hubble Ultra Deep Field — one of the deepest images of the universe ever taken, revealing galaxies 13 billion light-years away — was photographed in Fornax!</string>
+    <string name="object_info_fornax_size" translation_description="Physical size of Fornax shown in the info card. Translate units if appropriate for your locale.">398 square degrees</string>
+
+    <!-- Horologium -->
+    <string name="object_info_horologium_description" translation_description="Description of Horologium shown in the info card. Translate this text.">Horologium (the Pendulum Clock) was created by Lacaille to honor Christiaan Huygens\' invention of the pendulum clock in 1656.</string>
+    <string name="object_info_horologium_funfact" translation_description="Fun fact about Horologium shown in the info card. Translate this text.">Horologium contains a massive supercluster of galaxies called the Horologium-Reticulum Supercluster, one of the largest structures in the nearby universe!</string>
+    <string name="object_info_horologium_size" translation_description="Physical size of Horologium shown in the info card. Translate units if appropriate for your locale.">249 square degrees</string>
+
+    <!-- Hydrus -->
+    <string name="object_info_hydrus_description" translation_description="Description of Hydrus shown in the info card. Translate this text.">Hydrus (the Lesser Water Snake) is a small southern constellation near the south celestial pole. Not to be confused with Hydra, the much larger water snake.</string>
+    <string name="object_info_hydrus_funfact" translation_description="Fun fact about Hydrus shown in the info card. Translate this text.">Hydrus lies between the Large and Small Magellanic Clouds, making it a useful signpost for finding these two satellite galaxies of the Milky Way!</string>
+    <string name="object_info_hydrus_size" translation_description="Physical size of Hydrus shown in the info card. Translate units if appropriate for your locale.">243 square degrees</string>
+
+    <!-- Indus -->
+    <string name="object_info_indus_description" translation_description="Description of Indus shown in the info card. Translate this text.">Indus (the Indian) is a southern constellation created by Dutch navigators, originally representing a native of the East Indies or Madagascar.</string>
+    <string name="object_info_indus_funfact" translation_description="Fun fact about Indus shown in the info card. Translate this text.">Epsilon Indi, one of the nearest sun-like stars at just 12 light-years away, lies in Indus — and it has a brown dwarf companion system!</string>
+    <string name="object_info_indus_size" translation_description="Physical size of Indus shown in the info card. Translate units if appropriate for your locale.">294 square degrees</string>
+
+    <!-- Lacerta -->
+    <string name="object_info_lacerta_description" translation_description="Description of Lacerta shown in the info card. Translate this text.">Lacerta (the Lizard) is a small northern constellation introduced by Hevelius in 1687. It lies between Cygnus and Andromeda.</string>
+    <string name="object_info_lacerta_funfact" translation_description="Fun fact about Lacerta shown in the info card. Translate this text.">Lacerta contains BL Lacertae, the prototype of a class of active galaxies called \"blazars\" — galaxies with supermassive black holes shooting jets of matter directly toward Earth!</string>
+    <string name="object_info_lacerta_size" translation_description="Physical size of Lacerta shown in the info card. Translate units if appropriate for your locale.">201 square degrees</string>
+
+    <!-- Leo Minor -->
+    <string name="object_info_leo_minor_description" translation_description="Description of Leo Minor shown in the info card. Translate this text.">Leo Minor (the Lesser Lion) is a faint constellation between Leo and Ursa Major, introduced by Hevelius in 1687.</string>
+    <string name="object_info_leo_minor_funfact" translation_description="Fun fact about Leo Minor shown in the info card. Translate this text.">Leo Minor is one of the few constellations whose brightest star has no Alpha designation — Hevelius forgot to label it, so its brightest star is 46 Leonis Minoris (Beta)!</string>
+    <string name="object_info_leo_minor_size" translation_description="Physical size of Leo Minor shown in the info card. Translate units if appropriate for your locale.">232 square degrees</string>
+
+    <!-- Lupus -->
+    <string name="object_info_lupus_description" translation_description="Description of Lupus shown in the info card. Translate this text.">Lupus (the Wolf) is an ancient southern constellation. The Greeks and Romans saw it as a wild animal impaled on a pole held by Centaurus.</string>
+    <string name="object_info_lupus_funfact" translation_description="Fun fact about Lupus shown in the info card. Translate this text.">In 1006 AD, the brightest supernova ever recorded by humans appeared in Lupus — SN 1006 was visible in daylight and may have reached magnitude −7.5!</string>
+    <string name="object_info_lupus_size" translation_description="Physical size of Lupus shown in the info card. Translate units if appropriate for your locale.">334 square degrees</string>
+
+    <!-- Lynx -->
+    <string name="object_info_lynx_description" translation_description="Description of Lynx shown in the info card. Translate this text.">Lynx is a large but faint northern constellation created by Hevelius in 1687. He said you\'d need the eyes of a lynx to see it!</string>
+    <string name="object_info_lynx_funfact" translation_description="Fun fact about Lynx shown in the info card. Translate this text.">Lynx contains the Intergalactic Wanderer (NGC 2419), a globular cluster so distant at 300,000 light-years that it was once thought to orbit outside the Milky Way!</string>
+    <string name="object_info_lynx_size" translation_description="Physical size of Lynx shown in the info card. Translate units if appropriate for your locale.">545 square degrees</string>
+
+    <!-- Mensa -->
+    <string name="object_info_mensa_description" translation_description="Description of Mensa shown in the info card. Translate this text.">Mensa (Table Mountain) was created by Lacaille to honor Table Mountain in Cape Town, South Africa, where he made his observations of the southern sky.</string>
+    <string name="object_info_mensa_funfact" translation_description="Fun fact about Mensa shown in the info card. Translate this text.">Mensa is the only constellation named after a specific geographic feature on Earth. Part of the Large Magellanic Cloud extends into it, like a cloud over the mountain!</string>
+    <string name="object_info_mensa_size" translation_description="Physical size of Mensa shown in the info card. Translate units if appropriate for your locale.">153 square degrees</string>
+
+    <!-- Microscopium -->
+    <string name="object_info_microscopium_description" translation_description="Description of Microscopium shown in the info card. Translate this text.">Microscopium (the Microscope) was created by Lacaille to honor the compound microscope. It\'s one of the faintest constellations in the sky.</string>
+    <string name="object_info_microscopium_funfact" translation_description="Fun fact about Microscopium shown in the info card. Translate this text.">Microscopium\'s brightest star, Gamma Microscopii, was once part of neighboring Sagittarius — it was reassigned when constellation boundaries were standardized in 1930!</string>
+    <string name="object_info_microscopium_size" translation_description="Physical size of Microscopium shown in the info card. Translate units if appropriate for your locale.">210 square degrees</string>
+
+    <!-- Musca -->
+    <string name="object_info_musca_description" translation_description="Description of Musca shown in the info card. Translate this text.">Musca (the Fly) is a small southern constellation near the Southern Cross. It\'s the only insect constellation in the sky.</string>
+    <string name="object_info_musca_funfact" translation_description="Fun fact about Musca shown in the info card. Translate this text.">Musca was originally called \"Apis\" (the Bee) by its creators. It\'s the only constellation representing an insect — and it\'s right next to Chamaeleon, which eats them!</string>
+    <string name="object_info_musca_size" translation_description="Physical size of Musca shown in the info card. Translate units if appropriate for your locale.">138 square degrees</string>
+
+    <!-- Norma -->
+    <string name="object_info_norma_description" translation_description="Description of Norma shown in the info card. Translate this text.">Norma (the Carpenter\'s Square) was created by Lacaille to represent a level and set square. It lies in the rich Milky Way between Scorpius and Lupus.</string>
+    <string name="object_info_norma_funfact" translation_description="Fun fact about Norma shown in the info card. Translate this text.">Looking toward Norma, you\'re gazing along one of the Milky Way\'s spiral arms — the Norma Arm, named after this constellation, is full of star clusters and nebulae!</string>
+    <string name="object_info_norma_size" translation_description="Physical size of Norma shown in the info card. Translate units if appropriate for your locale.">165 square degrees</string>
+
+    <!-- Octans -->
+    <string name="object_info_octans_description" translation_description="Description of Octans shown in the info card. Translate this text.">Octans (the Octant) was created by Lacaille to honor the navigational instrument. It contains the south celestial pole.</string>
+    <string name="object_info_octans_funfact" translation_description="Fun fact about Octans shown in the info card. Translate this text.">Octans contains the south celestial pole, but unlike the North Pole with Polaris, there\'s no bright star marking the southern pole — Sigma Octantis (mag 5.4) is the faint \"South Star.\"</string>
+    <string name="object_info_octans_size" translation_description="Physical size of Octans shown in the info card. Translate units if appropriate for your locale.">291 square degrees</string>
+
+    <!-- Pictor -->
+    <string name="object_info_pictor_description" translation_description="Description of Pictor shown in the info card. Translate this text.">Pictor (the Painter\'s Easel) is a faint southern constellation created by Lacaille, originally named for the artist\'s easel.</string>
+    <string name="object_info_pictor_funfact" translation_description="Fun fact about Pictor shown in the info card. Translate this text.">Beta Pictoris in this constellation was one of the first stars found to have a visible debris disk — and it has two confirmed exoplanets orbiting within it!</string>
+    <string name="object_info_pictor_size" translation_description="Physical size of Pictor shown in the info card. Translate units if appropriate for your locale.">247 square degrees</string>
+
+    <!-- Piscis Austrinus -->
+    <string name="object_info_piscis_austrinus_description" translation_description="Description of Piscis Austrinus shown in the info card. Translate this text.">Piscis Austrinus (the Southern Fish) is an ancient constellation. It\'s said to be the parent of the two fish of Pisces, drinking water poured by Aquarius.</string>
+    <string name="object_info_piscis_austrinus_funfact" translation_description="Fun fact about Piscis Austrinus shown in the info card. Translate this text.">Fomalhaut, the brightest star in Piscis Austrinus, was one of the first stars to have an exoplanet directly photographed by Hubble — though the \"planet\" may actually be a dust cloud!</string>
+    <string name="object_info_piscis_austrinus_size" translation_description="Physical size of Piscis Austrinus shown in the info card. Translate units if appropriate for your locale.">245 square degrees</string>
+
+    <!-- Pyxis -->
+    <string name="object_info_pyxis_description" translation_description="Description of Pyxis shown in the info card. Translate this text.">Pyxis (the Compass) represents a mariner\'s compass. Lacaille created it from stars that were once part of the ancient constellation Argo Navis (the Ship).</string>
+    <string name="object_info_pyxis_funfact" translation_description="Fun fact about Pyxis shown in the info card. Translate this text.">Pyxis contains T Pyxidis, a recurrent nova that has erupted at least six times since 1890 — it\'s one of the best-studied novae in the sky!</string>
+    <string name="object_info_pyxis_size" translation_description="Physical size of Pyxis shown in the info card. Translate units if appropriate for your locale.">221 square degrees</string>
+
+    <!-- Reticulum -->
+    <string name="object_info_reticulum_description" translation_description="Description of Reticulum shown in the info card. Translate this text.">Reticulum (the Reticle) was created by Lacaille to represent the crosshair eyepiece in his telescope, used during his survey of the southern sky.</string>
+    <string name="object_info_reticulum_funfact" translation_description="Fun fact about Reticulum shown in the info card. Translate this text.">Reticulum is famous in UFO lore — the \"Zeta Reticuli incident\" of 1961 claimed alien visitors came from a star system in this constellation!</string>
+    <string name="object_info_reticulum_size" translation_description="Physical size of Reticulum shown in the info card. Translate units if appropriate for your locale.">114 square degrees</string>
+
+    <!-- Sculptor -->
+    <string name="object_info_sculptor_description" translation_description="Description of Sculptor shown in the info card. Translate this text.">Sculptor (the Sculptor) was created by Lacaille, originally representing a sculptor\'s studio. It contains the south galactic pole.</string>
+    <string name="object_info_sculptor_funfact" translation_description="Fun fact about Sculptor shown in the info card. Translate this text.">Sculptor contains the south galactic pole and the Sculptor Dwarf Galaxy, one of the Milky Way\'s closest satellite galaxies at just 260,000 light-years away!</string>
+    <string name="object_info_sculptor_size" translation_description="Physical size of Sculptor shown in the info card. Translate units if appropriate for your locale.">475 square degrees</string>
+
+    <!-- Scutum -->
+    <string name="object_info_scutum_description" translation_description="Description of Scutum shown in the info card. Translate this text.">Scutum (the Shield) was created by Hevelius in 1684 to honor King John III Sobieski of Poland. It is one of the few constellations named for a non-mythological historical figure.</string>
+    <string name="object_info_scutum_funfact" translation_description="Fun fact about Scutum shown in the info card. Translate this text.">Scutum contains the Scutum Star Cloud, one of the brightest and densest patches of the Milky Way visible to the naked eye — it\'s a window into our galaxy\'s inner spiral arm!</string>
+    <string name="object_info_scutum_size" translation_description="Physical size of Scutum shown in the info card. Translate units if appropriate for your locale.">109 square degrees</string>
+
+    <!-- Serpens Caput -->
+    <string name="object_info_serpens_caput_description" translation_description="Description of Serpens Caput shown in the info card. Translate this text.">Serpens Caput (the Serpent\'s Head) is the western half of Serpens, the only constellation divided into two non-contiguous parts by Ophiuchus.</string>
+    <string name="object_info_serpens_caput_funfact" translation_description="Fun fact about Serpens Caput shown in the info card. Translate this text.">Serpens Caput contains M5, one of the oldest and largest globular clusters known — it\'s 13 billion years old and contains over 100,000 stars!</string>
+    <string name="object_info_serpens_caput_size" translation_description="Physical size of Serpens Caput shown in the info card. Translate units if appropriate for your locale.">428 square degrees (both parts)</string>
+
+    <!-- Serpens Cauda -->
+    <string name="object_info_serpens_cauda_description" translation_description="Description of Serpens Cauda shown in the info card. Translate this text.">Serpens Cauda (the Serpent\'s Tail) is the eastern half of Serpens, separated from the head by the constellation Ophiuchus.</string>
+    <string name="object_info_serpens_cauda_funfact" translation_description="Fun fact about Serpens Cauda shown in the info card. Translate this text.">Serpens Cauda contains the Eagle Nebula (M16) and its famous \"Pillars of Creation\" — towering columns of gas and dust where new stars are being born!</string>
+    <string name="object_info_serpens_cauda_size" translation_description="Physical size of Serpens Cauda shown in the info card. Translate units if appropriate for your locale.">428 square degrees (both parts)</string>
+
+    <!-- Sextans -->
+    <string name="object_info_sextans_description" translation_description="Description of Sextans shown in the info card. Translate this text.">Sextans (the Sextant) was created by Hevelius to commemorate his astronomical sextant, which was destroyed in a fire in 1679.</string>
+    <string name="object_info_sextans_funfact" translation_description="Fun fact about Sextans shown in the info card. Translate this text.">Sextans contains the Sextans A dwarf galaxy, one of the most isolated galaxies in the Local Group at 4.3 million light-years away!</string>
+    <string name="object_info_sextans_size" translation_description="Physical size of Sextans shown in the info card. Translate units if appropriate for your locale.">314 square degrees</string>
+
+    <!-- Telescopium -->
+    <string name="object_info_telescopium_description" translation_description="Description of Telescopium shown in the info card. Translate this text.">Telescopium (the Telescope) was created by Lacaille to honor the invention of the refracting telescope. It lies south of Sagittarius and Corona Australis.</string>
+    <string name="object_info_telescopium_funfact" translation_description="Fun fact about Telescopium shown in the info card. Translate this text.">Telescopium was originally much larger — when Lacaille first drew it, it extended into what are now parts of Sagittarius and Ophiuchus!</string>
+    <string name="object_info_telescopium_size" translation_description="Physical size of Telescopium shown in the info card. Translate units if appropriate for your locale.">252 square degrees</string>
+
+    <!-- Triangulum Australe -->
+    <string name="object_info_triangulum_australe_description" translation_description="Description of Triangulum Australe shown in the info card. Translate this text.">Triangulum Australe (the Southern Triangle) is a small but distinctive southern constellation. Its three brightest stars form a nearly equilateral triangle.</string>
+    <string name="object_info_triangulum_australe_funfact" translation_description="Fun fact about Triangulum Australe shown in the info card. Translate this text.">Triangulum Australe contains NGC 6025, a beautiful open cluster easily visible with binoculars, and it appears on the flags of Brazil and Papua New Guinea!</string>
+    <string name="object_info_triangulum_australe_size" translation_description="Physical size of Triangulum Australe shown in the info card. Translate units if appropriate for your locale.">110 square degrees</string>
+
+    <!-- Tucana -->
+    <string name="object_info_tucana_description" translation_description="Description of Tucana shown in the info card. Translate this text.">Tucana (the Toucan) is a southern constellation created by Dutch navigators, representing the tropical bird with its enormous beak.</string>
+    <string name="object_info_tucana_funfact" translation_description="Fun fact about Tucana shown in the info card. Translate this text.">Tucana contains 47 Tucanae (NGC 104), the second-brightest globular cluster in the sky, home to millions of stars and several millisecond pulsars!</string>
+    <string name="object_info_tucana_size" translation_description="Physical size of Tucana shown in the info card. Translate units if appropriate for your locale.">295 square degrees</string>
+
+    <!-- Volans -->
+    <string name="object_info_volans_description" translation_description="Description of Volans shown in the info card. Translate this text.">Volans (the Flying Fish) is a faint southern constellation introduced by Dutch navigators, representing the tropical fish that can leap out of the water and glide.</string>
+    <string name="object_info_volans_funfact" translation_description="Fun fact about Volans shown in the info card. Translate this text.">Volans lies near the Large Magellanic Cloud and contains the Lindsay-Shapley Ring, one of the most perfect ring galaxies ever observed!</string>
+    <string name="object_info_volans_size" translation_description="Physical size of Volans shown in the info card. Translate units if appropriate for your locale.">141 square degrees</string>
+
+    <!-- Vulpecula -->
+    <string name="object_info_vulpecula_description" translation_description="Description of Vulpecula shown in the info card. Translate this text.">Vulpecula (the Little Fox) is a faint northern constellation created by Hevelius in 1687. It lies in the heart of the Milky Way between Cygnus and Sagitta.</string>
+    <string name="object_info_vulpecula_funfact" translation_description="Fun fact about Vulpecula shown in the info card. Translate this text.">Vulpecula contains the Dumbbell Nebula (M27), the first planetary nebula ever discovered (by Charles Messier in 1764), and a beautiful binocular target!</string>
+    <string name="object_info_vulpecula_size" translation_description="Physical size of Vulpecula shown in the info card. Translate units if appropriate for your locale.">268 square degrees</string>
 </resources>
