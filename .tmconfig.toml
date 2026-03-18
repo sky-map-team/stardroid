@@ -2,7 +2,7 @@
 
 [app]
 name = "Sky Map"
-description = "a mobile astronomy/planetarium application for Android"
+description = "a mobile astronomy/planetarium application for Android. Use your astronomy expertise to ensure that astronomical terms like constellation names are correct in the new locale."
 
 [android]
 res_path = "app/src/main/res"
