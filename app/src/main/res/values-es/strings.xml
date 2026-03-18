@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Please add  translation_description="" attributes to Strings to assist the translators. -->
-<resources>
-    <string name="app_name" translation_description="Application Title">Sky Map</string>
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Please add  translation_description="" attributes to Strings to assist the translators. --><resources>
+    <!-- tm:omitted name="app_name" reason="identical_to_source" -->
     <string name="menu_settings" translation_description="Settings menu item in the options menu">Ajustes</string>
     <string name="menu_search" translation_description="Search menu item in the options menu">Buscar</string>
     <string name="cancel" translation_description="Generic cancel button label used in dialogs">Cancelar</string>
@@ -53,15 +52,11 @@
     <string name="sensor_prefs" translation_description="Preferences category heading for sensor settings, intended for advanced/expert users">Ajustes del sensor (expertos)</string>
     <string name="sensor_speed" translation_description="Old, non gyro sensors only: How quickly the sensor should send us data">Velocidad del sensor</string>
     <string name="sensor_damping" translation_description="Old, non gyro sensors only: The amount of smoothing applied to the sensor outputs.">Amortiguación</string>
-    <string name="appearance_prefs"
-        translation_description="Preferences title for section about app appearance">Apariencia
+    <string name="appearance_prefs" translation_description="Preferences title for section about app appearance">Apariencia
     </string>
-    <string name="auto_dimness_preference"
-        translation_description="Mode for automatically dimming the screen when night mode is selected">Atenuación automática</string>
-    <string name="font_size_preference"
-        translation_description="Change the font size">Tamaño de fuente</string>
-    <string name="font_size_preference_description"
-        translation_description="help to go along with the change font size preference">Ajusta el tamaño del texto de la etiqueta</string>
+    <string name="auto_dimness_preference" translation_description="Mode for automatically dimming the screen when night mode is selected">Atenuación automática</string>
+    <string name="font_size_preference" translation_description="Change the font size">Tamaño de fuente</string>
+    <string name="font_size_preference_description" translation_description="help to go along with the change font size preference">Ajusta el tamaño del texto de la etiqueta</string>
     <string name="ecliptic" translation_description="Label for the ecliptic layer — the apparent annual path of the Sun across the sky">Eclíptica</string>
     <string name="malformed_loc_error" translation_description="Error message when a non-numeric value is entered for latitude or longitude">El ajuste de lat/long no es un número.</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Aceptar</string>
@@ -75,7 +70,7 @@
     <string name="set_auto" translation_description="Toast message shown when the user switches to automatic (sensor/gyroscope) mode">Cambiando al modo automático</string>
     <string name="menu_toggle_dim" translation_description="Menu item to toggle night mode (red tint that preserves night vision)">Alternar visión nocturna</string>
     <string name="zenith" translation_description="Label for the zenith point (directly overhead) shown on the sky map. Displayed in capitals.">CENIT</string>
-    <string name="nadir" translation_description="Label for the nadir point (directly below) shown on the sky map. Displayed in capitals.">NADIR</string>
+    <!-- tm:omitted name="nadir" reason="identical_to_source" -->
     <string name="north" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">NORTE</string>
     <string name="east" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">ESTE</string>
     <string name="west" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">OESTE</string>
@@ -97,8 +92,7 @@
     <string name="custom_date_prompt" translation_description="Label telling the user to manually specify a date">O elige tu propia fecha y hora:</string>
     <string name="change_date_prompt" translation_description="Button label to open the date picker in the time travel dialog">Cambiar fecha</string>
     <string name="change_time_prompt" translation_description="Button label to open the time picker in the time travel dialog">Cambiar hora</string>
-    <string name="now_visiting"
-            translation_description="used in time travel dialog to show the destination date/time the user has selected, time formatted as yyyy.mm.dd at hh.mm.ss + timezone">Destino: %s</string>
+    <string name="now_visiting" translation_description="used in time travel dialog to show the destination date/time the user has selected, time formatted as yyyy.mm.dd at hh.mm.ss + timezone">Destino: %s</string>
     <string name="time_travel_label_past" translation_description="Label showing that we are in the past">Viaje en el tiempo: Pasado</string>
     <string name="time_travel_label_future" translation_description="Label showing that we are in the future">Viaje en el tiempo: Futuro</string>
     <string name="time_travel_stopped" translation_description="Label showing rate of travel through time">Viaje en el tiempo congelado</string>
@@ -147,7 +141,7 @@
     <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">Buscando:</string>
     <string name="sun_wont_set_message" translation_description="Message shown when the sun will not set during the next 24 hours (polar day / midnight sun)">El Sol no se pondrá durante las próximas 24 horas en tu ubicación actual.</string>
 
-    <string name="missing_label" translation_description="Do not translate this" translatable="false">MISSING_LBL</string>
+    <!-- tm:omitted name="missing_label" reason="identical_to_source" -->
 
     <string name="menu_tos" translation_description="Menu item label to view the Terms of Service">Términos del Servicio</string>
     <string name="menu_diagnostics" translation_description="Menu item label to open the technical diagnostics screen">Diagnósticos</string>
@@ -172,7 +166,7 @@
     <string name="sensor_accuracy_medium" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">Exactitud: media</string>
     <string name="sensor_accuracy_high" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">Exactitud: alta</string>
     <string name="sensor_accuracy_nocontact" translation_description="Sensor accuracy level shown when the sensor has no contact (e.g. heart-rate sensor lifted from skin) — unlikely to appear in Sky Map but included for completeness">Exactitud: sin contacto</string>
-    <string name="diagnostics_activity_general_heading" translation_description="Section heading in the Diagnostics screen for general device information">General</string>
+    <!-- tm:omitted name="diagnostics_activity_general_heading" reason="identical_to_source" -->
     <string name="diagnostics_activity_phone" translation_description="Row label in the Diagnostics screen for the device model name">Dispositivo</string>
     <string name="diagnostics_activity_android_version" translation_description="Row label in the Diagnostics screen for the Android OS version">Versión de Android</string>
     <string name="diagnostics_activity_sky_map_version" translation_description="Row label in the Diagnostics screen for the Sky Map app version">Versión de Sky Map</string>
@@ -186,7 +180,7 @@
     <string name="diagnostics_activity_location_permission" translation_description="Row label in the Diagnostics screen showing whether location permission has been granted">Permiso de ubicación</string>
     <string name="diagnostics_activity_location_permission_granted" translation_description="Status value shown when location permission has been granted">Otorgado</string>
     <string name="diagnostics_activity_location_permission_denied" translation_description="Status value shown when location permission has been denied">Denegado</string>
-    <string name="diagnostics_activity_gps" translation_description="Row label in the Diagnostics screen for the GPS provider status">GPS</string>
+    <!-- tm:omitted name="diagnostics_activity_gps" reason="identical_to_source" -->
     <string name="diagnostics_activity_location" translation_description="Row label in the Diagnostics screen showing the current latitude and longitude">Ubicación (lat, long)</string>
     <string name="diagnostics_activity_pointing_ra_dec" translation_description="Row label in the Diagnostics screen showing a snapshot of where the phone is currently pointing in the sky (Right Ascension and Declination)">Apunte instantáneo</string>
     <string name="diagnostics_activity_magnetic_correction" translation_description="Row label in the Diagnostics screen showing whether magnetic declination correction is applied">Corrección magnética</string>
@@ -208,13 +202,11 @@
     <string name="compass_calibration_activity_do_not_show_this_again" translation_description="Checkbox label in the compass calibration dialog to suppress future automatic appearances">No volver a mostrar</string>
     <string name="compass_calibration_activity_warning" translation_description="Heading/reason text shown in the compass calibration dialog when it opens automatically due to low accuracy">Se requiere calibrar el hardware</string>
     <string name="compass_calibration_activity_user_heading" translation_description="Heading shown in the compass calibration dialog when the user opens it manually from the menu">Mejora tu alineación</string>
-    <string name="compass_calib_what_to_do"
-        translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL"><![CDATA[
+    <string name="compass_calib_what_to_do" translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL"><![CDATA[
 Sky Map se basa en el sensor de brújula integrado de tu teléfono. Si la precisión mostrada arriba es baja, es necesario \"reiniciar\" el sensor moviendo el teléfono en un movimiento en forma de 8: %s.<br/><br/>
 <b>Importante:</b> La calibración es un proceso de hardware manejado por tu dispositivo. Si bien mejora la confiabilidad del sensor, la interferencia magnética externa aún puede causar un \"sesgo\" o una ligera desviación. Esta es una limitación física de las brújulas móviles y no un error dentro de la aplicación. Mira en <i>Solución de problemas</i> en <i>Ayuda</i> para intentar otras cosas.
     ]]></string>
-    <string name="compass_calib_what_to_do_user"
-        translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[
+    <string name="compass_calib_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[
 Tu teléfono informa la precisión de la brújula como se muestra arriba. Para mejorarla, realiza un movimiento en forma de 8 con tu dispositivo. (%s).<br/><br/>
 <b>Nota en la exactitud:</b> La calibración es un requisito a nivel de hardware de su teléfono, no un ajuste de Sky Map. Incluso cuando están calibrados, los campos magnéticos locales (como los tableros de instrumentos de los automóviles o los imanes) pueden causar un ligero sesgo en la dirección. Mira en <i>Solución de problemas</i> en <i>Ayuda</i> para intentar otras cosas.
     ]]></string>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Función de información sobre objetos educativos -->
     <!-- Contenido educativo sobre el Sistema Solar -->
@@ -57,197 +57,197 @@
     <string name="object_info_sirius_funfact" translation_description="Fun fact about Sirius">¡Sirio es en realidad un sistema estelar binario! Sirio B, su compañera, es una enana blanca del tamaño de la Tierra pero casi tan masiva como el Sol.</string>
     <string name="object_info_sirius_distance" translation_description="Distance to Sirius shown in the info card. Translate units if appropriate for your locale.">8,6 años luz</string>
     <string name="object_info_sirius_size" translation_description="Physical size of Sirius shown in the info card. Translate units if appropriate for your locale.">1,7 radios solares</string>
-    <string name="object_info_sirius_mass" translation_description="Mass of Sirius in scientific notation — no translation needed.">2,1 masas solares</string>
+    <string name="object_info_sirius_mass" translation_description="Mass of Sirius in scientific notation .  Translate units if appropriate for your locale.">2,1 masas solares</string>
     <string name="object_info_vega_description" translation_description="Short description of Vega">Vega es una de las estrellas más brillantes visibles desde la Tierra, ubicada en la constelación de Lira.</string>
     <string name="object_info_vega_funfact" translation_description="Fun fact about Vega">Vega fue la Estrella Polar hace unos 14.000 años y lo será de nuevo en unos 12.000 años ¡debido al bamboleo de la Tierra!</string>
     <string name="object_info_vega_distance" translation_description="Distance to Vega shown in the info card. Translate units if appropriate for your locale.">25 años luz</string>
     <string name="object_info_vega_size" translation_description="Physical size of Vega shown in the info card. Translate units if appropriate for your locale.">2,4 radios solares</string>
-    <string name="object_info_vega_mass" translation_description="Mass of Vega in scientific notation — no translation needed.">2,1 masas solares</string>
+    <string name="object_info_vega_mass" translation_description="Mass of Vega in scientific notation .  Translate units if appropriate for your locale.">2,1 masas solares</string>
     <string name="object_info_betelgeuse_description" translation_description="Short description of Betelgeuse">Betelgeuse es una estrella supergigante roja que marca el hombro de Orión. Es una de las estrellas más grandes visibles a simple vista.</string>
     <string name="object_info_betelgeuse_funfact" translation_description="Fun fact about Betelgeuse">Betelgeuse es tan grande que si se colocara en la posición de nuestro Sol, ¡engulliría a Mercurio, Venus, la Tierra, Marte y posiblemente Júpiter!</string>
     <string name="object_info_betelgeuse_distance" translation_description="Distance to Betelgeuse shown in the info card. Translate units if appropriate for your locale.">~700 años luz</string>
     <string name="object_info_betelgeuse_size" translation_description="Physical size of Betelgeuse shown in the info card. Translate units if appropriate for your locale.">~900 radios solares</string>
-    <string name="object_info_betelgeuse_mass" translation_description="Mass of Betelgeuse in scientific notation — no translation needed.">~12 masas solares</string>
+    <string name="object_info_betelgeuse_mass" translation_description="Mass of Betelgeuse in scientific notation .  Translate units if appropriate for your locale.">~12 masas solares</string>
     <string name="object_info_rigel_description" translation_description="Short description of Rigel">Rigel es una estrella supergigante azul que marca el pie de Orión. A pesar de estar más lejos que Betelgeuse, aparece igualmente brillante.</string>
     <string name="object_info_rigel_funfact" translation_description="Fun fact about Rigel">¡Rigel brilla con la luz de unos 120.000 Soles! Es una de las estrellas más luminosas de nuestra región de la Vía Láctea.</string>
     <string name="object_info_rigel_distance" translation_description="Distance to Rigel shown in the info card. Translate units if appropriate for your locale.">~860 años luz</string>
     <string name="object_info_rigel_size" translation_description="Physical size of Rigel shown in the info card. Translate units if appropriate for your locale.">~79 radios solares</string>
-    <string name="object_info_rigel_mass" translation_description="Mass of Rigel in scientific notation — no translation needed.">~23 masas solares</string>
+    <string name="object_info_rigel_mass" translation_description="Mass of Rigel in scientific notation .  Translate units if appropriate for your locale.">~23 masas solares</string>
     <string name="object_info_procyon_description" translation_description="Short description of Procyon">Proción es una estrella brillante en la constelación del Can Menor. Es una de nuestras vecinas estelares más cercanas.</string>
     <string name="object_info_procyon_funfact" translation_description="Fun fact about Procyon">Proción significa \"antes del perro\" en griego porque sale justo antes de Sirio, la Estrella del Perro, ¡en el cielo nocturno!</string>
     <string name="object_info_procyon_distance" translation_description="Distance to Procyon shown in the info card. Translate units if appropriate for your locale.">11,4 años luz</string>
     <string name="object_info_procyon_size" translation_description="Physical size of Procyon shown in the info card. Translate units if appropriate for your locale.">2,0 radios solares</string>
-    <string name="object_info_procyon_mass" translation_description="Mass of Procyon in scientific notation — no translation needed.">1,5 masas solares</string>
+    <string name="object_info_procyon_mass" translation_description="Mass of Procyon in scientific notation .  Translate units if appropriate for your locale.">1,5 masas solares</string>
     <string name="object_info_polaris_description" translation_description="Short description of Polaris">Polaris, la Estrella del Norte, parece casi inmóvil en el cielo mientras otras estrellas giran a su alrededor durante la noche.</string>
     <string name="object_info_polaris_funfact" translation_description="Fun fact about Polaris">¡Polaris es en realidad un sistema de tres estrellas! La estrella principal es una supergigante unas 2.500 veces más brillante que nuestro Sol.</string>
     <string name="object_info_polaris_distance" translation_description="Distance to Polaris shown in the info card. Translate units if appropriate for your locale.">~430 años luz</string>
     <string name="object_info_polaris_size" translation_description="Physical size of Polaris shown in the info card. Translate units if appropriate for your locale.">~44 radios solares</string>
-    <string name="object_info_polaris_mass" translation_description="Mass of Polaris in scientific notation — no translation needed.">~5,4 masas solares</string>
+    <string name="object_info_polaris_mass" translation_description="Mass of Polaris in scientific notation .  Translate units if appropriate for your locale.">~5,4 masas solares</string>
     <string name="object_info_deneb_description" translation_description="Short description of Deneb">Deneb marca la cola del Cisne. Es parte del asterismo del Triángulo de Verano junto con Vega y Altair.</string>
     <string name="object_info_deneb_funfact" translation_description="Fun fact about Deneb">Deneb es una de las estrellas más distantes visibles a simple vista, ¡ubicada a unos 2.600 años luz de distancia!</string>
     <string name="object_info_deneb_distance" translation_description="Distance to Deneb shown in the info card. Translate units if appropriate for your locale.">~2.600 años luz</string>
     <string name="object_info_deneb_size" translation_description="Physical size of Deneb shown in the info card. Translate units if appropriate for your locale.">~200 radios solares</string>
-    <string name="object_info_deneb_mass" translation_description="Mass of Deneb in scientific notation — no translation needed.">~19 masas solares</string>
+    <string name="object_info_deneb_mass" translation_description="Mass of Deneb in scientific notation .  Translate units if appropriate for your locale.">~19 masas solares</string>
     <string name="object_info_arcturus_description" translation_description="Short description of Arcturus">Arturo es la estrella más brillante del hemisferio norte, una gigante naranja en la constelación del Boyero.</string>
     <string name="object_info_arcturus_funfact" translation_description="Fun fact about Arcturus">Arturo viaja por el espacio a una velocidad tremenda y ¡pasará más cerca de nuestro sistema solar en unos 4.000 años!</string>
     <string name="object_info_arcturus_distance" translation_description="Distance to Arcturus shown in the info card. Translate units if appropriate for your locale.">37 años luz</string>
     <string name="object_info_arcturus_size" translation_description="Physical size of Arcturus shown in the info card. Translate units if appropriate for your locale.">26 radios solares</string>
-    <string name="object_info_arcturus_mass" translation_description="Mass of Arcturus in scientific notation — no translation needed.">1,1 masas solares</string>
+    <string name="object_info_arcturus_mass" translation_description="Mass of Arcturus in scientific notation .  Translate units if appropriate for your locale.">1,1 masas solares</string>
     <string name="object_info_canopus_description" translation_description="Short description of Canopus">Canopo es la segunda estrella más brillante del cielo nocturno. Es visible principalmente desde el Hemisferio Sur.</string>
     <string name="object_info_canopus_funfact" translation_description="Fun fact about Canopus">Canopo es utilizada por las naves espaciales para navegación porque es muy brillante y está lejos del plano de la eclíptica.</string>
     <string name="object_info_canopus_distance" translation_description="Distance to Canopus shown in the info card. Translate units if appropriate for your locale.">310 años luz</string>
     <string name="object_info_canopus_size" translation_description="Physical size of Canopus shown in the info card. Translate units if appropriate for your locale.">72 radios solares</string>
-    <string name="object_info_canopus_mass" translation_description="Mass of Canopus in scientific notation — no translation needed.">8,0 masas solares</string>
+    <string name="object_info_canopus_mass" translation_description="Mass of Canopus in scientific notation .  Translate units if appropriate for your locale.">8,0 masas solares</string>
     <string name="object_info_aldebaran_description" translation_description="Short description of Aldebaran">Aldebarán es una estrella gigante naranja que representa el ojo de Tauro. Su nombre significa \"el seguidor\" en árabe.</string>
     <string name="object_info_aldebaran_funfact" translation_description="Fun fact about Aldebaran">Aldebarán parece formar parte del cúmulo estelar de las Híades, pero en realidad está solo a la mitad de la distancia de nosotros: ¡una ilusión óptica cósmica!</string>
     <string name="object_info_aldebaran_distance" translation_description="Distance to Aldebaran shown in the info card. Translate units if appropriate for your locale.">65 años luz</string>
     <string name="object_info_aldebaran_size" translation_description="Physical size of Aldebaran shown in the info card. Translate units if appropriate for your locale.">44 radios solares</string>
-    <string name="object_info_aldebaran_mass" translation_description="Mass of Aldebaran in scientific notation — no translation needed.">1,2 masas solares</string>
+    <string name="object_info_aldebaran_mass" translation_description="Mass of Aldebaran in scientific notation .  Translate units if appropriate for your locale.">1,2 masas solares</string>
     <string name="object_info_antares_description" translation_description="Short description of Antares">Antares es una estrella supergigante roja, el corazón de Escorpio. Su nombre significa \"rival de Marte\" debido a su color rojo.</string>
     <string name="object_info_antares_funfact" translation_description="Fun fact about Antares">Antares es tan grande que si se colocara en nuestro sistema solar, ¡su superficie se extendería más allá de la órbita de Marte!</string>
     <string name="object_info_antares_distance" translation_description="Distance to Antares shown in the info card. Translate units if appropriate for your locale.">~550 años luz</string>
     <string name="object_info_antares_size" translation_description="Physical size of Antares shown in the info card. Translate units if appropriate for your locale.">~680 radios solares</string>
-    <string name="object_info_antares_mass" translation_description="Mass of Antares in scientific notation — no translation needed.">~12 masas solares</string>
+    <string name="object_info_antares_mass" translation_description="Mass of Antares in scientific notation .  Translate units if appropriate for your locale.">~12 masas solares</string>
     <string name="object_info_capella_description" translation_description="Description of Capella shown in the info card. Translate this text.">Capella es la estrella más brillante de Auriga y la sexta más brillante del cielo nocturno. En realidad es un sistema de cuatro estrellas.</string>
     <string name="object_info_capella_funfact" translation_description="Fun fact about Capella shown in the info card. Translate this text.">Capella significa \"cabrita\" en latín. ¡Las culturas antiguas la veían como una cabra cargada en el hombro del Cochero!</string>
     <string name="object_info_capella_distance" translation_description="Distance to Capella shown in the info card. Translate units if appropriate for your locale.">43 años luz</string>
     <string name="object_info_capella_size" translation_description="Physical size of Capella shown in the info card. Translate units if appropriate for your locale.">12 radios solares</string>
-    <string name="object_info_capella_mass" translation_description="Mass of Capella in scientific notation — no translation needed.">2,6 masas solares</string>
+    <string name="object_info_capella_mass" translation_description="Mass of Capella in scientific notation .  Translate units if appropriate for your locale.">2,6 masas solares</string>
     <string name="object_info_altair_description" translation_description="Description of Altair shown in the info card. Translate this text.">Altair es la estrella más brillante del Águila y una de las más cercanas visibles a simple vista.</string>
     <string name="object_info_altair_funfact" translation_description="Fun fact about Altair shown in the info card. Translate this text.">¡Altair gira tan rápido (una vez cada 9 horas) que está visiblemente achatada en los polos - es 14% más ancha que alta!</string>
     <string name="object_info_altair_distance" translation_description="Distance to Altair shown in the info card. Translate units if appropriate for your locale.">17 años luz</string>
     <string name="object_info_altair_size" translation_description="Physical size of Altair shown in the info card. Translate units if appropriate for your locale.">1,8 radios solares</string>
-    <string name="object_info_altair_mass" translation_description="Mass of Altair in scientific notation — no translation needed.">1,8 masas solares</string>
+    <string name="object_info_altair_mass" translation_description="Mass of Altair in scientific notation .  Translate units if appropriate for your locale.">1,8 masas solares</string>
     <string name="object_info_spica_description" translation_description="Description of Spica shown in the info card. Translate this text.">Spica es la estrella más brillante de Virgo y una de las 20 más brillantes del cielo nocturno. Es un sistema binario.</string>
     <string name="object_info_spica_funfact" translation_description="Fun fact about Spica shown in the info card. Translate this text.">¡Spica está tan cerca de la eclíptica que puede ser ocultada por la Luna. El nombre significa \"espiga de trigo\" en latín!</string>
     <string name="object_info_spica_distance" translation_description="Distance to Spica shown in the info card. Translate units if appropriate for your locale.">250 años luz</string>
     <string name="object_info_spica_size" translation_description="Physical size of Spica shown in the info card. Translate units if appropriate for your locale.">7,5 radios solares</string>
-    <string name="object_info_spica_mass" translation_description="Mass of Spica in scientific notation — no translation needed.">11 masas solares</string>
+    <string name="object_info_spica_mass" translation_description="Mass of Spica in scientific notation .  Translate units if appropriate for your locale.">11 masas solares</string>
     <string name="object_info_achernar_description" translation_description="Description of Achernar shown in the info card. Translate this text.">Achernar es la estrella más brillante de Eridano y la novena más brillante del cielo nocturno.</string>
     <string name="object_info_achernar_funfact" translation_description="Fun fact about Achernar shown in the info card. Translate this text.">¡Achernar es la estrella más aplanada conocida! Gira tan rápido que su diámetro ecuatorial es 56% mayor que el polar.</string>
     <string name="object_info_achernar_distance" translation_description="Distance to Achernar shown in the info card. Translate units if appropriate for your locale.">139 años luz</string>
     <string name="object_info_achernar_size" translation_description="Physical size of Achernar shown in the info card. Translate units if appropriate for your locale.">7,3 radios solares</string>
-    <string name="object_info_achernar_mass" translation_description="Mass of Achernar in scientific notation — no translation needed.">6,7 masas solares</string>
+    <string name="object_info_achernar_mass" translation_description="Mass of Achernar in scientific notation .  Translate units if appropriate for your locale.">6,7 masas solares</string>
     <string name="object_info_hadar_description" translation_description="Description of Hadar shown in the info card. Translate this text.">Hadar (Beta Centauri) es la segunda estrella más brillante de Centauro y la 11ª más brillante del cielo.</string>
     <string name="object_info_hadar_funfact" translation_description="Fun fact about Hadar shown in the info card. Translate this text.">¡Hadar y Alfa Centauri son conocidas como las \"Estrellas Apuntadoras del Sur\" - señalan hacia la constelación de la Cruz del Sur!</string>
     <string name="object_info_hadar_distance" translation_description="Distance to Hadar shown in the info card. Translate units if appropriate for your locale.">390 años luz</string>
     <string name="object_info_hadar_size" translation_description="Physical size of Hadar shown in the info card. Translate units if appropriate for your locale.">9 radios solares</string>
-    <string name="object_info_hadar_mass" translation_description="Mass of Hadar in scientific notation — no translation needed.">12,8 masas solares</string>
+    <string name="object_info_hadar_mass" translation_description="Mass of Hadar in scientific notation .  Translate units if appropriate for your locale.">12,8 masas solares</string>
     <string name="object_info_regulus_description" translation_description="Description of Regulus shown in the info card. Translate this text.">Régulo es la estrella más brillante de Leo y representa el corazón del león. Es un sistema estelar múltiple.</string>
     <string name="object_info_regulus_funfact" translation_description="Fun fact about Regulus shown in the info card. Translate this text.">¡Régulo gira tan rápido que casi se está desgarrando! Completa una rotación en solo 16 horas.</string>
     <string name="object_info_regulus_distance" translation_description="Distance to Regulus shown in the info card. Translate units if appropriate for your locale.">79 años luz</string>
     <string name="object_info_regulus_size" translation_description="Physical size of Regulus shown in the info card. Translate units if appropriate for your locale.">4,4 radios solares</string>
-    <string name="object_info_regulus_mass" translation_description="Mass of Regulus in scientific notation — no translation needed.">3,8 masas solares</string>
+    <string name="object_info_regulus_mass" translation_description="Mass of Regulus in scientific notation .  Translate units if appropriate for your locale.">3,8 masas solares</string>
     <string name="object_info_acrux_description" translation_description="Description of Acrux shown in the info card. Translate this text.">Acrux (Alfa Crucis) es la estrella más brillante de la Cruz del Sur y la 13ª más brillante del cielo.</string>
     <string name="object_info_acrux_funfact" translation_description="Fun fact about Acrux shown in the info card. Translate this text.">¡Acrux aparece en las banderas de Australia, Nueva Zelanda, Brasil, Papúa Nueva Guinea y Samoa!</string>
     <string name="object_info_acrux_distance" translation_description="Distance to Acrux shown in the info card. Translate units if appropriate for your locale.">320 años luz</string>
     <string name="object_info_acrux_size" translation_description="Physical size of Acrux shown in the info card. Translate units if appropriate for your locale.">7,8 radios solares</string>
-    <string name="object_info_acrux_mass" translation_description="Mass of Acrux in scientific notation — no translation needed.">18 masas solares</string>
+    <string name="object_info_acrux_mass" translation_description="Mass of Acrux in scientific notation .  Translate units if appropriate for your locale.">18 masas solares</string>
     <string name="object_info_castor_description" translation_description="Description of Castor shown in the info card. Translate this text.">Cástor es una de las estrellas gemelas en Géminis. Aunque parece una estrella, ¡en realidad es un sistema de seis estrellas!</string>
     <string name="object_info_castor_funfact" translation_description="Fun fact about Castor shown in the info card. Translate this text.">¡Cástor es un sistema séxtuple - tres pares de estrellas binarias orbitando entre sí. Es uno de los sistemas más complejos cerca de la Tierra!</string>
     <string name="object_info_castor_distance" translation_description="Distance to Castor shown in the info card. Translate units if appropriate for your locale.">51 años luz</string>
     <string name="object_info_castor_size" translation_description="Physical size of Castor shown in the info card. Translate units if appropriate for your locale.">2,4 radios solares</string>
-    <string name="object_info_castor_mass" translation_description="Mass of Castor in scientific notation — no translation needed.">2,8 masas solares</string>
+    <string name="object_info_castor_mass" translation_description="Mass of Castor in scientific notation .  Translate units if appropriate for your locale.">2,8 masas solares</string>
     <string name="object_info_pollux_description" translation_description="Description of Pollux shown in the info card. Translate this text.">Pólux es la más brillante de las estrellas gemelas en Géminis. A diferencia de Cástor, es una sola gigante naranja.</string>
     <string name="object_info_pollux_funfact" translation_description="Fun fact about Pollux shown in the info card. Translate this text.">¡Pólux tiene un exoplaneta confirmado! Pollux b es un gigante gaseoso con al menos el doble de la masa de Júpiter.</string>
     <string name="object_info_pollux_distance" translation_description="Distance to Pollux shown in the info card. Translate units if appropriate for your locale.">34 años luz</string>
     <string name="object_info_pollux_size" translation_description="Physical size of Pollux shown in the info card. Translate units if appropriate for your locale.">9,1 radios solares</string>
-    <string name="object_info_pollux_mass" translation_description="Mass of Pollux in scientific notation — no translation needed.">1,9 masas solares</string>
+    <string name="object_info_pollux_mass" translation_description="Mass of Pollux in scientific notation .  Translate units if appropriate for your locale.">1,9 masas solares</string>
     <string name="object_info_fomalhaut_description" translation_description="Description of Fomalhaut shown in the info card. Translate this text.">Fomalhaut es la estrella más brillante de Pez Austral y una de las más brillantes del cielo otoñal.</string>
     <string name="object_info_fomalhaut_funfact" translation_description="Fun fact about Fomalhaut shown in the info card. Translate this text.">¡Fomalhaut tiene un espectacular disco de escombros, y uno de los primeros exoplanetas fotografiados orbita esta estrella!</string>
     <string name="object_info_fomalhaut_distance" translation_description="Distance to Fomalhaut shown in the info card. Translate units if appropriate for your locale.">25 años luz</string>
     <string name="object_info_fomalhaut_size" translation_description="Physical size of Fomalhaut shown in the info card. Translate units if appropriate for your locale.">1,8 radios solares</string>
-    <string name="object_info_fomalhaut_mass" translation_description="Mass of Fomalhaut in scientific notation — no translation needed.">1,9 masas solares</string>
+    <string name="object_info_fomalhaut_mass" translation_description="Mass of Fomalhaut in scientific notation .  Translate units if appropriate for your locale.">1,9 masas solares</string>
     <string name="object_info_adhara_description" translation_description="Description of Adhara shown in the info card. Translate this text.">Adhara (Epsilon Canis Majoris) es la segunda estrella más brillante del Can Mayor, después de Sirio.</string>
     <string name="object_info_adhara_funfact" translation_description="Fun fact about Adhara shown in the info card. Translate this text.">¡Hace unos 4,7 millones de años, Adhara era la estrella más brillante del cielo nocturno, incluso más brillante que Sirio hoy!</string>
     <string name="object_info_adhara_distance" translation_description="Distance to Adhara shown in the info card. Translate units if appropriate for your locale.">430 años luz</string>
     <string name="object_info_adhara_size" translation_description="Physical size of Adhara shown in the info card. Translate units if appropriate for your locale.">14 radios solares</string>
-    <string name="object_info_adhara_mass" translation_description="Mass of Adhara in scientific notation — no translation needed.">12,6 masas solares</string>
+    <string name="object_info_adhara_mass" translation_description="Mass of Adhara in scientific notation .  Translate units if appropriate for your locale.">12,6 masas solares</string>
     <string name="object_info_shaula_description" translation_description="Description of Shaula shown in the info card. Translate this text.">Shaula es la segunda estrella más brillante de Escorpio y marca el aguijón del escorpión en la cola.</string>
     <string name="object_info_shaula_funfact" translation_description="Fun fact about Shaula shown in the info card. Translate this text.">¡Shaula significa \"la cola levantada\" en árabe. Es en realidad un sistema estelar triple con las estrellas muy juntas!</string>
     <string name="object_info_shaula_distance" translation_description="Distance to Shaula shown in the info card. Translate units if appropriate for your locale.">570 años luz</string>
     <string name="object_info_shaula_size" translation_description="Physical size of Shaula shown in the info card. Translate units if appropriate for your locale.">8,8 radios solares</string>
-    <string name="object_info_shaula_mass" translation_description="Mass of Shaula in scientific notation — no translation needed.">10,4 masas solares</string>
+    <string name="object_info_shaula_mass" translation_description="Mass of Shaula in scientific notation .  Translate units if appropriate for your locale.">10,4 masas solares</string>
     <string name="object_info_alnilam_description" translation_description="Description of Alnilam shown in the info card. Translate this text.">Alnilam es la estrella central del Cinturón de Orión y una de las estrellas más luminosas conocidas en nuestra galaxia.</string>
     <string name="object_info_alnilam_funfact" translation_description="Fun fact about Alnilam shown in the info card. Translate this text.">¡Alnilam está perdiendo masa a una tasa 20 millones de veces más rápida que nuestro Sol a través de su poderoso viento estelar!</string>
     <string name="object_info_alnilam_distance" translation_description="Distance to Alnilam shown in the info card. Translate units if appropriate for your locale.">~2.000 años luz</string>
     <string name="object_info_alnilam_size" translation_description="Physical size of Alnilam shown in the info card. Translate units if appropriate for your locale.">42 radios solares</string>
-    <string name="object_info_alnilam_mass" translation_description="Mass of Alnilam in scientific notation — no translation needed.">40 masas solares</string>
+    <string name="object_info_alnilam_mass" translation_description="Mass of Alnilam in scientific notation .  Translate units if appropriate for your locale.">40 masas solares</string>
     <string name="object_info_alphard_description" translation_description="Description of Alphard shown in the info card. Translate this text.">Alphard es la estrella más brillante de Hidra (la Serpiente de Agua), la constelación más grande del cielo.</string>
     <string name="object_info_alphard_funfact" translation_description="Fun fact about Alphard shown in the info card. Translate this text.">¡Alphard significa \"la solitaria\" en árabe porque se encuentra sola en una región del cielo por lo demás poco luminosa!</string>
     <string name="object_info_alphard_distance" translation_description="Distance to Alphard shown in the info card. Translate units if appropriate for your locale.">177 años luz</string>
     <string name="object_info_alphard_size" translation_description="Physical size of Alphard shown in the info card. Translate units if appropriate for your locale.">50 radios solares</string>
-    <string name="object_info_alphard_mass" translation_description="Mass of Alphard in scientific notation — no translation needed.">3 masas solares</string>
+    <string name="object_info_alphard_mass" translation_description="Mass of Alphard in scientific notation .  Translate units if appropriate for your locale.">3 masas solares</string>
     <string name="object_info_mirach_description" translation_description="Description of Mirach shown in the info card. Translate this text.">Mirach es una estrella gigante roja en Andrómeda, a menudo usada como guía para encontrar la Galaxia de Andrómeda.</string>
     <string name="object_info_mirach_funfact" translation_description="Fun fact about Mirach shown in the info card. Translate this text.">¡El Fantasma de Mirach es una pequeña galaxia (NGC 404) que aparece muy cerca de Mirach - estuvo oculta por el brillo de la estrella durante siglos!</string>
     <string name="object_info_mirach_distance" translation_description="Distance to Mirach shown in the info card. Translate units if appropriate for your locale.">197 años luz</string>
     <string name="object_info_mirach_size" translation_description="Physical size of Mirach shown in the info card. Translate units if appropriate for your locale.">100 radios solares</string>
-    <string name="object_info_mirach_mass" translation_description="Mass of Mirach in scientific notation — no translation needed.">3,5 masas solares</string>
+    <string name="object_info_mirach_mass" translation_description="Mass of Mirach in scientific notation .  Translate units if appropriate for your locale.">3,5 masas solares</string>
     <string name="object_info_algol_description" translation_description="Description of Algol shown in the info card. Translate this text.">Algol es una famosa estrella binaria eclipsante en Perseo, conocida como la \"Estrella del Demonio\" desde la antigüedad.</string>
     <string name="object_info_algol_funfact" translation_description="Fun fact about Algol shown in the info card. Translate this text.">¡Cada 2,87 días, Algol se oscurece notablemente cuando su compañera más tenue pasa por delante - los astrónomos antiguos encontraban esto espeluznante!</string>
     <string name="object_info_algol_distance" translation_description="Distance to Algol shown in the info card. Translate units if appropriate for your locale.">90 años luz</string>
     <string name="object_info_algol_size" translation_description="Physical size of Algol shown in the info card. Translate units if appropriate for your locale.">2,7 radios solares</string>
-    <string name="object_info_algol_mass" translation_description="Mass of Algol in scientific notation — no translation needed.">3,2 masas solares</string>
+    <string name="object_info_algol_mass" translation_description="Mass of Algol in scientific notation .  Translate units if appropriate for your locale.">3,2 masas solares</string>
     <string name="object_info_alpha_centauri_description" translation_description="Description of Alpha Centauri shown in the info card. Translate this text.">Alfa Centauri es el sistema estelar más cercano al Sol, que consiste en tres estrellas incluyendo Próxima Centauri.</string>
     <string name="object_info_alpha_centauri_funfact" translation_description="Fun fact about Alpha Centauri shown in the info card. Translate this text.">¡Próxima Centauri, parte de este sistema, tiene un planeta potencialmente habitable! Próxima b está a solo 4,2 años luz de distancia.</string>
     <string name="object_info_alpha_centauri_distance" translation_description="Distance to Alpha Centauri shown in the info card. Translate units if appropriate for your locale.">4,37 años luz</string>
     <string name="object_info_alpha_centauri_size" translation_description="Physical size of Alpha Centauri shown in the info card. Translate units if appropriate for your locale.">1,2 radios solares</string>
-    <string name="object_info_alpha_centauri_mass" translation_description="Mass of Alpha Centauri in scientific notation — no translation needed.">1,1 masas solares</string>
+    <string name="object_info_alpha_centauri_mass" translation_description="Mass of Alpha Centauri in scientific notation .  Translate units if appropriate for your locale.">1,1 masas solares</string>
     <string name="object_info_dubhe_description" translation_description="Description of Dubhe shown in the info card. Translate this text.">Dubhe es una de las dos \"estrellas apuntadoras\" en el Carro Mayor que señalan a Polaris, la Estrella del Norte.</string>
     <string name="object_info_dubhe_funfact" translation_description="Fun fact about Dubhe shown in the info card. Translate this text.">¡A diferencia de la mayoría de las estrellas del Carro Mayor, Dubhe y Alkaid se mueven en dirección opuesta - el asterismo se verá diferente en 50.000 años!</string>
     <string name="object_info_dubhe_distance" translation_description="Distance to Dubhe shown in the info card. Translate units if appropriate for your locale.">123 años luz</string>
     <string name="object_info_dubhe_size" translation_description="Physical size of Dubhe shown in the info card. Translate units if appropriate for your locale.">30 radios solares</string>
-    <string name="object_info_dubhe_mass" translation_description="Mass of Dubhe in scientific notation — no translation needed.">4,3 masas solares</string>
+    <string name="object_info_dubhe_mass" translation_description="Mass of Dubhe in scientific notation .  Translate units if appropriate for your locale.">4,3 masas solares</string>
     <string name="object_info_alioth_description" translation_description="Description of Alioth shown in the info card. Translate this text.">Alioth es la estrella más brillante de la Osa Mayor y la más brillante del asterismo del Carro Mayor.</string>
     <string name="object_info_alioth_funfact" translation_description="Fun fact about Alioth shown in the info card. Translate this text.">¡Alioth tiene un campo magnético peculiar que hace que los elementos químicos se concentren en manchas en su superficie!</string>
     <string name="object_info_alioth_distance" translation_description="Distance to Alioth shown in the info card. Translate units if appropriate for your locale.">83 años luz</string>
     <string name="object_info_alioth_size" translation_description="Physical size of Alioth shown in the info card. Translate units if appropriate for your locale.">4,1 radios solares</string>
-    <string name="object_info_alioth_mass" translation_description="Mass of Alioth in scientific notation — no translation needed.">2,9 masas solares</string>
+    <string name="object_info_alioth_mass" translation_description="Mass of Alioth in scientific notation .  Translate units if appropriate for your locale.">2,9 masas solares</string>
     <string name="object_info_hamal_description" translation_description="Description of Hamal shown in the info card. Translate this text.">Hamal es la estrella más brillante de Aries y una vez se usó para marcar el equinoccio vernal hace unos 2.000 años.</string>
     <string name="object_info_hamal_funfact" translation_description="Fun fact about Hamal shown in the info card. Translate this text.">¡Un exoplaneta gigante fue descubierto orbitando Hamal en 2011, con al menos 1,8 veces la masa de Júpiter!</string>
     <string name="object_info_hamal_distance" translation_description="Distance to Hamal shown in the info card. Translate units if appropriate for your locale.">66 años luz</string>
     <string name="object_info_hamal_size" translation_description="Physical size of Hamal shown in the info card. Translate units if appropriate for your locale.">15 radios solares</string>
-    <string name="object_info_hamal_mass" translation_description="Mass of Hamal in scientific notation — no translation needed.">1,5 masas solares</string>
+    <string name="object_info_hamal_mass" translation_description="Mass of Hamal in scientific notation .  Translate units if appropriate for your locale.">1,5 masas solares</string>
     <string name="object_info_rasalhague_description" translation_description="Description of Rasalhague shown in the info card. Translate this text.">Rasalhague es la estrella más brillante de Ofiuco (el Portador de la Serpiente), una constelación asociada con la curación.</string>
     <string name="object_info_rasalhague_funfact" translation_description="Fun fact about Rasalhague shown in the info card. Translate this text.">¡Rasalhague es una rotadora rápida - gira tan rápido que está notablemente aplanada, completando una rotación en solo 18 horas!</string>
     <string name="object_info_rasalhague_distance" translation_description="Distance to Rasalhague shown in the info card. Translate units if appropriate for your locale.">48,6 años luz</string>
     <string name="object_info_rasalhague_size" translation_description="Physical size of Rasalhague shown in the info card. Translate units if appropriate for your locale.">2,5 radios solares</string>
-    <string name="object_info_rasalhague_mass" translation_description="Mass of Rasalhague in scientific notation — no translation needed.">2,4 masas solares</string>
+    <string name="object_info_rasalhague_mass" translation_description="Mass of Rasalhague in scientific notation .  Translate units if appropriate for your locale.">2,4 masas solares</string>
     <string name="object_info_denebola_description" translation_description="Description of Denebola shown in the info card. Translate this text.">Denebola marca la cola de Leo. Su nombre significa literalmente \"cola del león\" en árabe.</string>
     <string name="object_info_denebola_funfact" translation_description="Fun fact about Denebola shown in the info card. Translate this text.">¡Denebola tiene un disco de escombros polvorientos que puede indicar que se están formando planetas o que asteroides están colisionando a su alrededor!</string>
     <string name="object_info_denebola_distance" translation_description="Distance to Denebola shown in the info card. Translate units if appropriate for your locale.">36 años luz</string>
     <string name="object_info_denebola_size" translation_description="Physical size of Denebola shown in the info card. Translate units if appropriate for your locale.">1,7 radios solares</string>
-    <string name="object_info_denebola_mass" translation_description="Mass of Denebola in scientific notation — no translation needed.">1,8 masas solares</string>
+    <string name="object_info_denebola_mass" translation_description="Mass of Denebola in scientific notation .  Translate units if appropriate for your locale.">1,8 masas solares</string>
     <string name="object_info_alpheratz_description" translation_description="Description of Alpheratz shown in the info card. Translate this text.">Alpheratz es la estrella más brillante de Andrómeda, aunque una vez se consideró parte de Pegaso.</string>
     <string name="object_info_alpheratz_funfact" translation_description="Fun fact about Alpheratz shown in the info card. Translate this text.">¡Alpheratz tiene una composición química extremadamente inusual con altas concentraciones de mercurio y manganeso en su atmósfera!</string>
     <string name="object_info_alpheratz_distance" translation_description="Distance to Alpheratz shown in the info card. Translate units if appropriate for your locale.">97 años luz</string>
     <string name="object_info_alpheratz_size" translation_description="Physical size of Alpheratz shown in the info card. Translate units if appropriate for your locale.">2,7 radios solares</string>
-    <string name="object_info_alpheratz_mass" translation_description="Mass of Alpheratz in scientific notation — no translation needed.">3,6 masas solares</string>
+    <string name="object_info_alpheratz_mass" translation_description="Mass of Alpheratz in scientific notation .  Translate units if appropriate for your locale.">3,6 masas solares</string>
     <string name="object_info_markab_description" translation_description="Description of Markab shown in the info card. Translate this text.">Markab es una de las cuatro estrellas que forman el Gran Cuadrado de Pegaso, un asterismo fácilmente reconocible.</string>
     <string name="object_info_markab_funfact" translation_description="Fun fact about Markab shown in the info card. Translate this text.">¡Markab es una estrella de \"tipo B tardío\" que está terminando su vida en la secuencia principal y pronto se convertirá en una gigante roja!</string>
     <string name="object_info_markab_distance" translation_description="Distance to Markab shown in the info card. Translate units if appropriate for your locale.">133 años luz</string>
     <string name="object_info_markab_size" translation_description="Physical size of Markab shown in the info card. Translate units if appropriate for your locale.">4,6 radios solares</string>
-    <string name="object_info_markab_mass" translation_description="Mass of Markab in scientific notation — no translation needed.">3,5 masas solares</string>
+    <string name="object_info_markab_mass" translation_description="Mass of Markab in scientific notation .  Translate units if appropriate for your locale.">3,5 masas solares</string>
     <string name="object_info_enif_description" translation_description="Description of Enif shown in the info card. Translate this text.">Enif es la estrella más brillante de Pegaso y marca la nariz del caballo alado en la constelación.</string>
     <string name="object_info_enif_funfact" translation_description="Fun fact about Enif shown in the info card. Translate this text.">¡En 1972, Enif experimentó un evento dramático de fulguración, aumentando brevemente su brillo por un factor de cinco!</string>
     <string name="object_info_enif_distance" translation_description="Distance to Enif shown in the info card. Translate units if appropriate for your locale.">670 años luz</string>
     <string name="object_info_enif_size" translation_description="Physical size of Enif shown in the info card. Translate units if appropriate for your locale.">185 radios solares</string>
-    <string name="object_info_enif_mass" translation_description="Mass of Enif in scientific notation — no translation needed.">10,7 masas solares</string>
+    <string name="object_info_enif_mass" translation_description="Mass of Enif in scientific notation .  Translate units if appropriate for your locale.">10,7 masas solares</string>
     <string name="object_info_scheat_description" translation_description="Description of Scheat shown in the info card. Translate this text.">Scheat es una estrella gigante roja en el Gran Cuadrado de Pegaso, notable por su profundo color naranja-rojizo.</string>
     <string name="object_info_scheat_funfact" translation_description="Fun fact about Scheat shown in the info card. Translate this text.">¡Scheat es una estrella variable semi-regular, cambiando de brillo durante períodos que van de semanas a meses!</string>
     <string name="object_info_scheat_distance" translation_description="Distance to Scheat shown in the info card. Translate units if appropriate for your locale.">196 años luz</string>
     <string name="object_info_scheat_size" translation_description="Physical size of Scheat shown in the info card. Translate units if appropriate for your locale.">110 radios solares</string>
-    <string name="object_info_scheat_mass" translation_description="Mass of Scheat in scientific notation — no translation needed.">2,1 masas solares</string>
+    <string name="object_info_scheat_mass" translation_description="Mass of Scheat in scientific notation .  Translate units if appropriate for your locale.">2,1 masas solares</string>
     <string name="object_info_nunki_description" translation_description="Description of Nunki shown in the info card. Translate this text.">Nunki es la segunda estrella más brillante de Sagitario y el nombre de estrella más antiguo aún en uso común.</string>
     <string name="object_info_nunki_funfact" translation_description="Fun fact about Nunki shown in the info card. Translate this text.">¡El nombre Nunki proviene de la antigua Babilonia, donde representaba la ciudad de Eridu en la esfera celeste!</string>
     <string name="object_info_nunki_distance" translation_description="Distance to Nunki shown in the info card. Translate units if appropriate for your locale.">228 años luz</string>
     <string name="object_info_nunki_size" translation_description="Physical size of Nunki shown in the info card. Translate units if appropriate for your locale.">4,5 radios solares</string>
-    <string name="object_info_nunki_mass" translation_description="Mass of Nunki in scientific notation — no translation needed.">7,8 masas solares</string>
+    <string name="object_info_nunki_mass" translation_description="Mass of Nunki in scientific notation .  Translate units if appropriate for your locale.">7,8 masas solares</string>
     <string name="object_info_diphda_description" translation_description="Description of Diphda shown in the info card. Translate this text.">Diphda (Beta Ceti) es la estrella más brillante de Cetus (el Monstruo Marino) y una estrella prominente del otoño.</string>
     <string name="object_info_diphda_funfact" translation_description="Fun fact about Diphda shown in the info card. Translate this text.">¡Diphda aparece aislada en una región bastante vacía del cielo, haciéndola útil para navegantes a pesar de no ser extremadamente brillante!</string>
     <string name="object_info_diphda_distance" translation_description="Distance to Diphda shown in the info card. Translate units if appropriate for your locale.">96 años luz</string>
     <string name="object_info_diphda_size" translation_description="Physical size of Diphda shown in the info card. Translate units if appropriate for your locale.">18 radios solares</string>
-    <string name="object_info_diphda_mass" translation_description="Mass of Diphda in scientific notation — no translation needed.">2,8 masas solares</string>
+    <string name="object_info_diphda_mass" translation_description="Mass of Diphda in scientific notation .  Translate units if appropriate for your locale.">2,8 masas solares</string>
     <!-- ==================== OBJETOS MESSIER ==================== -->
     <!-- Nota: Nombres de objetos (m1, m13, etc.) son definidos en celestial_objects.xml -->
     <!-- M1 - Nebulosa del Cangrejo -->
@@ -265,7 +265,7 @@
     <string name="object_info_m31_funfact" translation_description="Fun fact about M31 shown in the info card. Translate this text.">¡La Galaxia de Andrómeda se acerca a 110 km/s y colisionará con la Vía Láctea en unos 4.500 millones de años!</string>
     <string name="object_info_m31_distance" translation_description="Distance to M31 shown in the info card. Translate units if appropriate for your locale.">2,5 millones de años luz</string>
     <string name="object_info_m31_size" translation_description="Physical size of M31 shown in the info card. Translate units if appropriate for your locale.">220.000 años luz de diámetro</string>
-    <string name="object_info_m31_mass" translation_description="Mass of M31 in scientific notation — no translation needed.">1,5 billones de masas solares</string>
+    <string name="object_info_m31_mass" translation_description="Mass of M31 in scientific notation .  Translate units if appropriate for your locale.">1,5 billones de masas solares</string>
     <!-- M42 - Nebulosa de Orión -->
     <string name="object_info_m42_description" translation_description="Description of M42 shown in the info card. Translate this text.">La Nebulosa de Orión es una nebulosa de emisión difusa visible a simple vista, uno de los objetos más fotografiados del cielo nocturno.</string>
     <string name="object_info_m42_funfact" translation_description="Fun fact about M42 shown in the info card. Translate this text.">¡La Nebulosa de Orión es un vivero estelar donde nuevas estrellas están naciendo ahora mismo. Más de 700 estrellas se están formando dentro!</string>
@@ -491,17 +491,12 @@
     <string name="object_info_m87_funfact" translation_description="Fun fact about M87 shown in the info card. Translate this text.">¡El agujero negro central de M87 fue el primero en ser fotografiado por el Telescopio del Horizonte de Eventos en 2019 - tiene 6.500 millones de masas solares!</string>
     <string name="object_info_m87_distance" translation_description="Distance to M87 shown in the info card. Translate units if appropriate for your locale.">53 millones de años luz</string>
     <string name="object_info_m87_size" translation_description="Physical size of M87 shown in the info card. Translate units if appropriate for your locale.">240.000 años luz de diámetro</string>
-    <string name="object_info_m87_mass" translation_description="Mass of M87 in scientific notation — no translation needed.">2,4 billones de masas solares</string>
+    <string name="object_info_m87_mass" translation_description="Mass of M87 in scientific notation .  Translate units if appropriate for your locale.">2,4 billones de masas solares</string>
     <!-- T CrB - T Coronae Borealis (Nova recurrente) -->
     <string name="object_info_t_crb_description" translation_description="Description of T Crb shown in the info card. Translate this text.">T Coronae Borealis (T CrB) es una nova recurrente en Corona Borealis, un sistema binario formado por una gigante roja y una enana blanca. La enana blanca acumula periódicamente suficiente hidrógeno de su compañera como para provocar una explosión termonuclear.</string>
     <string name="object_info_t_crb_funfact" translation_description="Fun fact about T Crb shown in the info card. Translate this text.">El T CrB entró en erupción por última vez en 1946, alcanzando brevemente una magnitud de 2.0 y haciéndose visible a simple vista. Los astrónomos predicen que otra erupción es inminente. ¡Sigue atento!</string>
     <string name="object_info_t_crb_distance" translation_description="Distance to T Crb shown in the info card. Translate units if appropriate for your locale.">3.000 años luz</string>
     <string name="object_info_t_crb_size" translation_description="Physical size of T Crb shown in the info card. Translate units if appropriate for your locale.">0,2 UA de separación orbital</string>
-    <!-- Nebulosa de Eta Carinae (NGC 3372) -->
-    <string name="object_info_eta_carinae_nebula_description" translation_description="Description of Eta Carinae Nebula shown in the info card. Translate this text.">La nebulosa Eta Carinae (NGC 3372) es una de las nebulosas más grandes y brillantes del cielo, con una extensión de más de 300 años luz. En su centro se encuentra Eta Carinae, una de las estrellas más masivas y luminosas conocidas, con un peso superior a 100 masas solares.</string>
-    <string name="object_info_eta_carinae_nebula_funfact" translation_description="Fun fact about Eta Carinae Nebula shown in the info card. Translate this text.">En 1843, Eta Carinae entró en erupción y se convirtió brevemente en la segunda estrella más brillante del cielo, pero de alguna manera sobrevivió: ¡puede que esté al borde de convertirse en supernova!</string>
-    <string name="object_info_eta_carinae_nebula_distance" translation_description="Distance to Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">7.500 años luz</string>
-    <string name="object_info_eta_carinae_nebula_size" translation_description="Physical size of Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">300 años luz de diámetro</string>
     <!-- Nebulosa de la Tarántula - NGC 2070 -->
     <string name="object_info_tarantula_nebula_description" translation_description="Description of the Tarantula Nebula shown in the info card. Translate this text.">La Nebulosa de la Tarántula es la región de formación estelar más grande y luminosa del Grupo Local, una vasta nebulosa de emisión enclavada en la Gran Nube de Magallanes que se extiende unos 600 años luz. A pesar de estar a 163.000 años luz de distancia, es lo suficientemente brillante como para ser visible a simple vista.</string>
     <string name="object_info_tarantula_nebula_funfact" translation_description="Fun fact about the Tarantula Nebula shown in the info card. Translate this text.">¡Si la Nebulosa de la Tarántula estuviera tan cerca como la Nebulosa de Orión, sería lo suficientemente brillante como para proyectar sombras por la noche y abarcaría la mitad del cielo visible!</string>
@@ -517,6 +512,11 @@
     <string name="object_info_smc_funfact" translation_description="Fun fact about the Small Magellanic Cloud shown in the info card. Translate this text.">Al estudiar las estrellas variables cefeidas en la Pequeña Nube de Magallanes entre 1908 y 1912, Henrietta Swan Leavitt descubrió la ley de período-luminosidad: ¡el avance que permitió a los astrónomos medir distancias a través del universo!</string>
     <string name="object_info_smc_distance" translation_description="Distance to the Small Magellanic Cloud shown in the info card. Translate units if appropriate for your locale.">200.000 años luz</string>
     <string name="object_info_smc_size" translation_description="Physical size of the Small Magellanic Cloud shown in the info card. Translate units if appropriate for your locale.">7.000 años luz de diámetro</string>
+    <!-- Nebulosa de Eta Carinae (NGC 3372) -->
+    <string name="object_info_eta_carinae_nebula_description" translation_description="Description of Eta Carinae Nebula shown in the info card. Translate this text.">La nebulosa Eta Carinae (NGC 3372) es una de las nebulosas más grandes y brillantes del cielo, con una extensión de más de 300 años luz. En su centro se encuentra Eta Carinae, una de las estrellas más masivas y luminosas conocidas, con un peso superior a 100 masas solares.</string>
+    <string name="object_info_eta_carinae_nebula_funfact" translation_description="Fun fact about Eta Carinae Nebula shown in the info card. Translate this text.">En 1843, Eta Carinae entró en erupción y se convirtió brevemente en la segunda estrella más brillante del cielo, pero de alguna manera sobrevivió: ¡puede que esté al borde de convertirse en supernova!</string>
+    <string name="object_info_eta_carinae_nebula_distance" translation_description="Distance to Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">7.500 años luz</string>
+    <string name="object_info_eta_carinae_nebula_size" translation_description="Physical size of Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">300 años luz de diámetro</string>
     <!-- ==================== CONSTELACIONES ==================== -->
     <!-- Nota: Los nombres de las constelaciones son definidos en celestial_objects.xml -->
     <!-- Orión -->
@@ -643,7 +643,7 @@
     <string name="object_info_bootes_description" translation_description="Description of Bootes shown in the info card. Translate this text.">Boyero es una constelación que contiene a Arturo, la cuarta estrella más brillante del cielo nocturno.</string>
     <string name="object_info_bootes_funfact" translation_description="Fun fact about Bootes shown in the info card. Translate this text.">¡Sigue el arco del mango del Carro Mayor para \"arcar hacia Arturo\" - uno de los consejos de navegación más famosos!</string>
     <string name="object_info_bootes_size" translation_description="Physical size of Bootes shown in the info card. Translate units if appropriate for your locale.">907 grados cuadrados</string>
-    <!-- Corona Borealis -->
+    <!-- Corona Boreal -->
     <string name="object_info_corona_borealis_description" translation_description="Description of Corona Borealis shown in the info card. Translate this text.">Corona Boreal (la Corona del Norte) es una pequeña constelación semicircular que representa la corona de Ariadna de la mitología griega.</string>
     <string name="object_info_corona_borealis_funfact" translation_description="Fun fact about Corona Borealis shown in the info card. Translate this text.">¡T Coronae Borealis es una nova recurrente que entra en erupción aproximadamente cada 80 años - otra erupción podría ocurrir pronto!</string>
     <string name="object_info_corona_borealis_size" translation_description="Physical size of Corona Borealis shown in the info card. Translate units if appropriate for your locale.">179 grados cuadrados</string>
@@ -659,11 +659,11 @@
     <string name="object_info_eridanus_description" translation_description="Description of Eridanus shown in the info card. Translate this text.">Eridano el Río es la sexta constelación más grande, serpenteando desde cerca de Orión hasta el lejano cielo sur.</string>
     <string name="object_info_eridanus_funfact" translation_description="Fun fact about Eridanus shown in the info card. Translate this text.">¡Achernar al final de Eridano es la estrella más aplanada conocida, con un ecuador un 56% más ancho que sus polos debido a la rápida rotación!</string>
     <string name="object_info_eridanus_size" translation_description="Physical size of Eridanus shown in the info card. Translate units if appropriate for your locale.">1.138 grados cuadrados</string>
-    <!-- Lepus -->
+    <!-- Liebre -->
     <string name="object_info_lepus_description" translation_description="Description of Lepus shown in the info card. Translate this text.">Lepus la Liebre se agazapa bajo los pies de Orión, una constelación pequeña pero distintiva con una rica mitología.</string>
     <string name="object_info_lepus_funfact" translation_description="Fun fact about Lepus shown in the info card. Translate this text.">¡En la mitología, se decía que Orión amaba cazar liebres, así que una fue colocada bajo sus pies en el cielo!</string>
     <string name="object_info_lepus_size" translation_description="Physical size of Lepus shown in the info card. Translate units if appropriate for your locale.">290 grados cuadrados</string>
-    <!-- Monoceros -->
+    <!-- Unicornio -->
     <string name="object_info_monoceros_description" translation_description="Description of Monoceros shown in the info card. Translate this text.">Unicornio es una constelación tenue en la Vía Láctea de invierno, rica en nebulosas y cúmulos estelares.</string>
     <string name="object_info_monoceros_funfact" translation_description="Fun fact about Monoceros shown in the info card. Translate this text.">¡La Nebulosa Roseta en Unicornio es una región masiva de formación estelar que se asemeja a una rosa celestial!</string>
     <string name="object_info_monoceros_size" translation_description="Physical size of Monoceros shown in the info card. Translate units if appropriate for your locale.">482 grados cuadrados</string>
@@ -671,11 +671,11 @@
     <string name="object_info_hydra_description" translation_description="Description of Hydra shown in the info card. Translate this text.">Hidra es la constelación más grande del cielo, representando la serpiente de agua de la mitología griega.</string>
     <string name="object_info_hydra_funfact" translation_description="Fun fact about Hydra shown in the info card. Translate this text.">¡Hidra se extiende por más de 100 grados del cielo - más de una cuarta parte del camino alrededor de toda la esfera celeste!</string>
     <string name="object_info_hydra_size" translation_description="Physical size of Hydra shown in the info card. Translate units if appropriate for your locale.">1.303 grados cuadrados</string>
-    <!-- Carina -->
+    <!-- Quilla -->
     <string name="object_info_carina_description" translation_description="Description of Carina shown in the info card. Translate this text.">Carina la Quilla era parte de la enorme constelación Argo Navis, conteniendo la brillante estrella Canopo.</string>
     <string name="object_info_carina_funfact" translation_description="Fun fact about Carina shown in the info card. Translate this text.">¡Eta Carinae en Carina es una de las estrellas más luminosas conocidas y podría explotar como supernova durante nuestra vida!</string>
     <string name="object_info_carina_size" translation_description="Physical size of Carina shown in the info card. Translate units if appropriate for your locale.">494 grados cuadrados</string>
-    <!-- Vela -->
+    <!-- Velas -->
     <string name="object_info_vela_description" translation_description="Description of Vela shown in the info card. Translate this text.">Vela una vez fue parte del gran barco Argo Navis, ubicada en una región rica de la Vía Láctea.</string>
     <string name="object_info_vela_funfact" translation_description="Fun fact about Vela shown in the info card. Translate this text.">¡El Púlsar de Vela es el púlsar más brillante del cielo y el remanente de una supernova que explotó hace 11.000 años!</string>
     <string name="object_info_vela_size" translation_description="Physical size of Vela shown in the info card. Translate units if appropriate for your locale.">500 grados cuadrados</string>
