@@ -449,6 +449,19 @@
     <!-- tm:omitted name="object_info_t_crb_funfact" reason="identical_to_source" -->
     <!-- tm:omitted name="object_info_t_crb_distance" reason="identical_to_source" -->
     <!-- tm:omitted name="object_info_t_crb_size" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_tarantula_nebula_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_tarantula_nebula_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_tarantula_nebula_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_tarantula_nebula_size" reason="identical_to_source" -->
+    <!-- LMC - Large Magellanic Cloud -->
+    <string name="object_info_lmc_description" translation_description="Description of the Large Magellanic Cloud shown in the info card. Translate this text.">The Large Magellanic Cloud is an irregular satellite galaxy of the Milky Way, visible to the naked eye as a detached, glowing patch of sky. It is one of our closest galactic neighbours and one of the most active star-forming galaxies in the Local Group.</string>
+    <!-- tm:omitted name="object_info_lmc_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_lmc_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_lmc_size" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_smc_description" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_smc_funfact" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_smc_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_smc_size" reason="identical_to_source" -->
     <!-- tm:omitted name="object_info_eta_carinae_nebula_description" reason="identical_to_source" -->
     <!-- tm:omitted name="object_info_eta_carinae_nebula_funfact" reason="identical_to_source" -->
     <!-- tm:omitted name="object_info_eta_carinae_nebula_distance" reason="identical_to_source" -->
