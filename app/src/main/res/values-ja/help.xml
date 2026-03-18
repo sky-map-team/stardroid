@@ -1,99 +1,169 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-<string name="help_text" translation_description="Please do not change the &lt; and &gt; markup">
-&lt;h1&gt;Android版Skyマップ&lt;/h1&gt;
-&lt;p class="version"&gt;バージョン%s&lt;/p&gt;
+<string name="help_text" translation_description="This is the help text for the app Google Sky Map. It includes placeholders where other text is inserted. Please do not change the &lt; and &gt; markup">&lt;h1&gt;Sky Map for Android&lt;/h1&gt;
+&lt;p class="version"&gt;バージョン %1$s&lt;/p&gt;
 &lt;p class="url"&gt;&lt;a href="https://stardroid.app"&gt;https://stardroid.app&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2&gt;クイックスタートガイド&lt;/h2&gt;
-&lt;p&gt;Skyマップを使うと、Android搭載携帯で天体観測ができます。端末を空にかざすと、その方向にあるひときわ明るい星や星座を示す地図が表示されます。輝く星を見てその名前を知りたくなったら、Skyマップで調べることができます。&lt;/p&gt;
+%4$s
 
-&lt;h2&gt;表示可能なレイヤ&lt;/h2&gt;
-&lt;p&gt;Skyマップでは表示項目別のレイヤが用意されています。各レイヤは、画面上のコントロールを使用してON/OFFを切り替えることができます。レイヤには以下のものがあります:&lt;/p&gt;
+&lt;h2&gt;はじめに・クイックスタート&lt;/h2&gt;
+&lt;p&gt;スマートフォンを空に向けて、窓から宇宙を覗くように見てください。Sky Mapはスマートフォンのコンパス、加速度計、ジャイロスコープを使用して、あなたが指している方向を追跡し、地図をリアルタイムで更新します。&lt;/p&gt;
+&lt;p class="callout"&gt;すべてのスマートフォンがSky Mapの実行に対応しているわけではありません。以下のハードウェア要件セクションを参照してください。&lt;/p&gt;
+&lt;p&gt;初めての場合:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;プロンプトが表示されたら位置情報へのアクセスを許可してください。Sky Mapはあなたがいる場所の正確な空を描画するために、おおよその位置情報が必要です&lt;/li&gt;
+&lt;li&gt;スマートフォンを任意の方向に空に向けてください&lt;/li&gt;
+&lt;li&gt;地図があなたが指している方向に移動します&lt;/li&gt;
+&lt;li&gt;画面の任意の場所をタップしてコントロールを表示してください&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;空をナビゲートする&lt;/h2&gt;
+&lt;h3&gt;自動モード&lt;/h3&gt;
+&lt;p&gt;自動モード(デフォルト)では、Sky Mapはスマートフォンのセンサーを使用して、スマートフォンが指している方向にあるものを表示します。スマートフォンを動かすだけで、地図が追従します。&lt;/p&gt;
+&lt;h3&gt;マニュアルモード&lt;/h3&gt;
+&lt;p&gt;コントロール内のセンサー/コンパスアイコンをタップして、マニュアルモードに切り替えてください。このモードでは以下のことができます:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;恒星&lt;/li&gt;
-&lt;li&gt;星座&lt;/li&gt;
-&lt;li&gt;メシエ天体&lt;/li&gt;
-&lt;li&gt;惑星&lt;/li&gt;
-&lt;li&gt;流星雨&lt;/li&gt;
-&lt;li&gt;赤経と赤緯のグリッド&lt;/li&gt;
-&lt;li&gt;地平線と基本方位&lt;/li&gt;
+&lt;li&gt;1本の指で地図をドラッグしてパンします&lt;/li&gt;
+&lt;li&gt;ピンチしてズームイン/アウトします&lt;/li&gt;
+&lt;li&gt;2本の指で回転させて向きを変えます&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;ひときわ明るい恒星と有名な星座のほか、惑星についても名前が表示されます。惑星は実際に見えるより大きい画像で表示され、地平線は直線で表示されます。起伏や建物がある場所では見られないような地平線のすぐ近くの天体も、Skyマップでは表示できます。&lt;/p&gt;
+&lt;p&gt;マニュアルモードは、スマートフォンを持ち上げずに空を探索したい場合に便利です。&lt;/p&gt;
+
+&lt;h2&gt;表示レイヤー&lt;/h2&gt;
+&lt;p&gt;Sky Mapは表示内容をレイヤーに整理し、各レイヤーは独立してオン/オフを切り替えることができます。画面をタップしてサイドのレイヤーコントロールを表示してください。レイヤーがオンの場合はオレンジ色に光り、オフの場合は薄く表示されます。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;星:&lt;/b&gt; 最も明るい星と、注目すべき星のラベル&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;星座:&lt;/b&gt; 星座の輪郭と名前&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;メシエ天体:&lt;/b&gt; 深宇宙天体:銀河、星雲、星団&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;惑星:&lt;/b&gt; 太陽系の惑星を画像として表示&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;流星群:&lt;/b&gt; 活動中および今後の流星群の放射点&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;黄道&amp;amp;赤経/赤緯グリッド:&lt;/b&gt; 黄道は太陽の年間の空での経路です&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;地平線:&lt;/b&gt; 地平線と方角ラベル(N、S、E、W)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p class="callout"&gt;&lt;b&gt;知っておくと便利:&lt;/b&gt; Sky Mapは幾何学的地平線を表示します。完全に平坦で、遮るものがない眺めです。その直上の天体は、実際には建物、丘、または木に隠れている可能性があります。&lt;/p&gt;
 
 &lt;h2&gt;画面上のコントロール&lt;/h2&gt;
-&lt;p&gt;画面上のコントロールを表示するには画面をタップします。画面の片側に表示されるアイコンで、上記のレイヤを切り替えることができます。有効になっているレイヤはオレンジで、無効になっているレイヤは白で表示されます。&lt;/p&gt;
-&lt;p&gt;画面の下部にはズームコントロールと、自動と手動のモードを切り替えるコントロールが表示されます。&lt;/p&gt;
-
-&lt;h2&gt;ナビゲーションモード&lt;/h2&gt;
-&lt;p&gt;Skyマップを初めてインストールした時点では自動モードになっており、端末をかざした方向の天体地図が内蔵センサーに基づいて表示されます。手動モードに切り替えると、指で地図をドラッグして天空を移動できます。地図を回転するには、トラックボールやD-padを左右に動かします。マルチタッチ対応の携帯の場合は、2本の指でマップを回転させたり、ピンチ操作で拡大/縮小したりできます。&lt;/p&gt;
+&lt;p&gt;画面の任意の場所をタップしてコントロールを表示または非表示にしてください。一方の側には上記のレイヤートグルがあります。もう一方の側には、自動モードとマニュアルモードを切り替えるボタンがあります。&lt;/p&gt;
+&lt;p&gt;コントロールは数秒後に自動的にフェードアウトして、ビューをクリアに保ちます。&lt;/p&gt;
 
 &lt;h2&gt;検索&lt;/h2&gt;
-&lt;p&gt;Skyマップでは、見えている星の名前を知るだけでなく、目的の星の位置を探すこともできます。端末のMENUキー、またはデスクトップのクイック検索ボックスから直接検索機能を使用して、探したい惑星、恒星、星座の名前を入力していくと、入力中でも一致する天体の一覧が表示されます。天体を1つ選択すると、それを見つけるためのガイドとなる円と矢印がSkyマップに表示され、端末をどの方向に向けると天体が見つかるかがわかります。端末がその天体の方向に近づくと青で表示されていた円が赤になり、最終的にその天体が表示範囲に入ると円がオレンジになります。&lt;/p&gt;
-&lt;p&gt;手動モードで検索すると、天体地図が動いて直接その天体が表示されます。&lt;/p&gt;
-&lt;p&gt;検索モードを終了するには、画面の隅の小さい十字をタップします。&lt;/p&gt;
+&lt;p&gt;虫眼鏡アイコンをタップして、空の何かを検索してください。以下を検索できます:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;星&lt;/b&gt; — 名前で、例えば「シリウス」、「ベテルギウス」、「ポラリス」&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;惑星&lt;/b&gt; — 例えば「火星」、「土星」&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;星座&lt;/b&gt; — 例えば「オリオン」、「カシオペア」&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;メシエ天体&lt;/b&gt; — 例えば「M31」、「アンドロメダ銀河」、「プレアデス」&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;彗星と流星群&lt;/b&gt; — 名前で&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;b&gt;自動モード:&lt;/b&gt; 結果を選択した後、Sky Mapはターゲットサークルと方向矢印を表示します。スマートフォンを回転させて矢印に従ってください。サークルは青から赤に変わり、天体があなたの視野内にあるときはオレンジ色になります。✕をタップして検索を終了してください。&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;マニュアルモード:&lt;/b&gt; 地図は単に天体を中心に移動します。&lt;/p&gt;
 
 &lt;h2&gt;タイムトラベル&lt;/h2&gt;
-&lt;p&gt;Skyマップのタイムトラベルモードを使うと過去や未来の夜空を見ることができます。メインメニューから[タイムトラベル]を選択し、[人気の日付]から日付を選ぶか[日付の変更]および[時刻の変更]ダイアログで日付を変更します。指定できる範囲は1900～2100年に限定されています。これは主に、木星の重力の影響によって誤差が生じるためです。設定が完了したら、[Go!]をタップして時間旅行に飛び立ちましょう。Skyマップがタイムトラベルモードに切り替わり、指定した日付の空が表示されます。コントロールを使って時間を巻き戻したり先に進めたりできます。ボタンを1回タップすると時間がゆっくり移り変わり始め、続けてタップすると時間の移り変わりがだんだん速くなります。&lt;/p&gt;
-&lt;p&gt;「今夜の日没後には何が見えるだろう」、「次に水星がきれいに見えるのはいつだろう」、「ヘシオドスによれば、いつぶどうを収穫するべきだろう」このような疑問はタイムトラベルで解消できます。&lt;/p&gt;
-
-&lt;h2&gt;ハッブルギャラリー&lt;/h2&gt;
-&lt;p&gt;Skyマップには、Skyのハッブルギャラリーから厳選された画像が含まれています。ギャラリーにアクセスするにはメニューから[ギャラリー]を選択します。ギャラリーに入ったら画面をスクロールしながら画像を閲覧できます。サムネイル画像をタップするとフルサイズの画像が表示されます。[検索]ボタンをタップすると検索モードに切り替わり、その画像に写っている天体を検索できます。&lt;/p&gt;
-
-&lt;h2&gt;夜間モード&lt;/h2&gt;
-&lt;p&gt;夜間モードは、暗い所に慣れた目を保護するためのモードです。メニューから[夜間]オプションを選択すると、Skyマップがすべて赤で表示されて画面が少し暗くなり、ボタンのバックライトがOFFになります。元の色に戻すには、[夜間]をもう一度選択します。&lt;/p&gt;
-
-&lt;h2&gt;現在地の設定&lt;/h2&gt;
-&lt;p&gt;天体地図を正しく表示するためには、おおよその現在地情報が必要になります。初期設定では、端末のネットワーク位置情報から現在地が判断されます。圏外にいる場合や、ネットワーク位置情報を無効にしている場合、端末のGPSが使用されます。手動で現在地を設定することも可能で、[設定]メニューから地名または緯度と経度を指定します。Skyマップで地名から現在地の緯度と経度を調べるにはデータ接続が必要です。&lt;/p&gt;
-
-&lt;h2&gt;トラブルシューティングと制約&lt;/h2&gt;
-
-&lt;h3&gt;マップが不正確&lt;/h3&gt;
-&lt;p&gt;マップと実際の空が正確に一致しない場合、次のような原因が考えられます:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;コンパスがずれている。コンパスを調整するには、端末を持って手首を8の字に回します。これを、間隔をおいて繰り返すことが必要な場合があります。これはSkyマップの機能ではなく、端末の機能です。&lt;/li&gt;
-&lt;li&gt;Skyマップで現在地を正確に把握できていない。GPSまたはネットワーク位置情報が有効になっていない。&lt;/li&gt;
-&lt;li&gt;正しい時刻とタイムゾーンを設定していない。Skyマップでは世界時を計算する必要があり、そのために現地時間とタイムゾーンの両方が必要になります。端末にSIMカードが装着されている場合、通常これは正しく設定されています。&lt;/li&gt;
-&lt;li&gt;磁気補正をONにしていない。地域によっては、磁北と真北の差は20度にもなります。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3&gt;地図が動かない&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;手動モードになっていませんか。手動モードではない場合、コンパスがずれていることが原因の可能性があります。上記の方法で調整してください。&lt;/li&gt;
-&lt;li&gt;必要な全てのセンサーがスマホについていますか?そうでないスマホもあります。少なくともコンパスと加速度計と、理想的にはジャイロスコープを持っていなければなりません。Skyマップの診断ページには、どのセンサーがあるかを表示しています。スマホにジャイロがない場合、設定/センサー設定で「ジャイロを無効」を選択してみてください。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p class="callout"&gt;これらのどれでもない場合、(できれば診断ページのスクリーンショットと共に)私たちにメールしてください。私たちはあなたの見つけた問題の手助けをします。&lt;/p&gt;
-
-&lt;h2&gt;望遠鏡ユーザー&lt;/h2&gt;
-&lt;p&gt;Skyマップには、デバイスの正面方向ではなく、長辺越しに見えるものを表示する、実験的な「ポインターモード」があります。この目的は、デバイスを望遠鏡の鏡胴に取り付けて、画面を鏡胴に垂直にすることです。「センサー設定」の「設定」でこれを有効にできます。&lt;/p&gt;
-
-&lt;h2&gt;開発を支援する&lt;/h2&gt;
-&lt;p&gt;Skyマップは無料でオープンソース、広告もありません。ご利用いただけましたら、&lt;a href="https://github.com/sky-map-team/stardroid#support"&gt;GitHubページ&lt;/a&gt;での継続的な開発へのサポートをご検討ください。&lt;/p&gt;
-
-&lt;h2&gt;クレジット&lt;/h2&gt;
-&lt;h3&gt;エンジニアリング、設計、プロダクト管理&lt;/h3&gt;
-&lt;p&gt;Brent Bryan, Dominic Widdows, Hector Ouilhet, James Powell, John Taylor, Kevin Serafini, Lior Ron&lt;/p&gt;
-
-&lt;h3&gt;オープンソース貢献者&lt;/h3&gt;
-&lt;p&gt;Christopher Wilcox, PhD&lt;/p&gt;
-
-&lt;h2&gt;謝辞&lt;/h2&gt;
-&lt;p&gt;Skyマップは当初Google Inc.によって\"Google Sky Map\"として開発され、2012年にオープンソースになりました。&lt;/p&gt;
-&lt;p&gt;Skyマップは下記のデータに基づいて作成しています:&lt;/p&gt;
-&lt;ul class="credits"&gt;
-&lt;li&gt;Centre de Donnees astronomiques de Strasbourg (&lt;a href="https://cdsweb.u-strasbg.fr/"&gt;https://cdsweb.u-strasbg.fr/&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;The Bright Star Catalogue, 5th Revised Ed. (Hoffleit D., Warren Jr W.H.)&lt;/li&gt;
-&lt;li&gt;The HYG Database, HYG v1.0. (&lt;a href="https://www.astronexus.com/"&gt;https://www.astronexus.com/&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;History and Accurate Positions for the NGC/IC Objects (Harold G. Corwin Jr)&lt;/li&gt;
-&lt;li&gt;Revised New General Catalogue of Nonstellar Astronomical Objects (Sulentic J.W., Tifft W.G.)&lt;/li&gt;
-&lt;li&gt;SFA Star Charts (&lt;a href="https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html"&gt;https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;太陽系の天体の位置は、USNO (&lt;a href="https://www.usno.navy.mil/USNO/astronomical-applications"&gt;https://www.usno.navy.mil/USNO/astronomical-applications&lt;/a&gt;) が提供するデータに基づいて計算しています。&lt;/li&gt;
-&lt;li&gt;球面カバレッジのデータは (&lt;a href="https://www2.research.att.com/~njas/coverings"&gt;https://www2.research.att.com/~njas/coverings&lt;/a&gt;) に掲載されているものです。&lt;/li&gt;
-&lt;li&gt;ハッブルの画像は、NASAの宇宙望遠鏡科学研究所 (&lt;a href="https://hubblesite.org/"&gt;https://hubblesite.org/&lt;/a&gt;) から提供されたものです。&lt;/li&gt;
-&lt;li&gt;流星雨のデータは the International Meteor Organization (&lt;a href="https://www.imo.net/data"&gt;https://www.imo.net/data&lt;/a&gt;) によるものです。&lt;/li&gt;
-&lt;li&gt;M31 image by Peter Kennett (&lt;a href="https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg"&gt;https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;Comet Leonard data: In-The-Sky.org&lt;/li&gt;
+&lt;p&gt;タイムトラベルを使用すると、1900年から2100年までの任意の時点での空を見ることができます。アクションバーから渦巻き&lt;b&gt;タイムトラベル&lt;/b&gt;アイコンを選択してください。&lt;/p&gt;
+&lt;p&gt;プリセット日付(至点、日食、有名な天文現象、歴史的瞬間)を選択するか、独自の日付と時刻を入力できます。&lt;b&gt;Go!&lt;/b&gt;をタップしてそこに飛んでください。&lt;/p&gt;
+&lt;p&gt;タイムトラベルモードに入ると、日付が画面に表示され、再生コントロールで時間を移動できます:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;前方または後方の再生ボタンをタップして移動を開始してください&lt;/li&gt;
+&lt;li&gt;もう一度タップしてさらに速く移動してください&lt;/li&gt;
+&lt;li&gt;停止ボタンをタップして一時停止してください&lt;/li&gt;
 &lt;/ul&gt;
-</string>
+&lt;p&gt;これを使用できることの例:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;i&gt;今夜の日没直後に何が見えますか?&lt;/i&gt;&lt;/li&gt;
+&lt;li&gt;&lt;i&gt;次に水星を見つけるチャンスはいつですか?&lt;/i&gt;&lt;/li&gt;
+&lt;li&gt;&lt;i&gt;私が生まれた夜、空はどのように見えましたか?&lt;/i&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;現在から遠い日付の精度は低下します。主に木星の重力の影響によるものです。&lt;/p&gt;
+
+&lt;h2&gt;情報カード&lt;/h2&gt;
+&lt;p&gt;空の地図上のラベル付き天体をタップして、情報カードを表示してください。情報カードは、写真と天体の詳細が表示されるパネルです。情報カードは150以上の天体(星、惑星、月、メシエ深宇宙天体、星座など)で利用できます。&lt;/p&gt;
+&lt;p&gt;各カードには以下が表示されます:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;天体の写真またはチャート&lt;/li&gt;
+&lt;li&gt;簡潔な説明と楽しい事実&lt;/li&gt;
+&lt;li&gt;距離、サイズ、天体タイプなどの科学データ&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;カード内の画像をタップしてフルスクリーンで表示してください。カードの外側をタップするか、&lt;b&gt;戻る&lt;/b&gt;を押してカードを閉じてください。&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;情報カードを有効にする:&lt;/b&gt; デフォルトでは、マニュアルモード時のみ表示されます。設定に移動して、自動(センサー駆動)モード時に表示を有効にしてください。&lt;/p&gt;
+
+&lt;h2&gt;ギャラリー&lt;/h2&gt;
+&lt;p&gt;ギャラリーには、ハッブル宇宙望遠鏡およびその他のソースからの画像コレクションが含まれています。メインメニューから開いてください。&lt;/p&gt;
+&lt;p&gt;スクロールしてサムネイルを参照し、1つをタップしてフル画像を表示してください。&lt;b&gt;空で検索&lt;/b&gt;ボタンを使用して、検索モードにジャンプし、現在の空の地図でその天体を見つけてください。&lt;/p&gt;
+
+&lt;h2&gt;ナイトビジョンモード&lt;/h2&gt;
+&lt;p&gt;実際に外で観測している場合、ナイトビジョンモードは暗順応した視力を保つのに役立ちます。アクションバーから目の形をした&lt;b&gt;ナイトビジョン&lt;/b&gt;アイコンをタップして切り替えてください。&lt;/p&gt;
+&lt;p&gt;ナイトビジョンモードでは、Sky Mapは以下を行います:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ディスプレイを深い赤色に切り替えます&lt;/li&gt;
+&lt;li&gt;画面を大幅に暗くします&lt;/li&gt;
+&lt;li&gt;ボタンのバックライトを減らします&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;もう一度切り替えて通常に戻してください。&lt;b&gt;設定 → 外観&lt;/b&gt;の&lt;b&gt;画面の明るさ&lt;/b&gt;オプションで、画面がどの程度暗くなるかについて追加の制御ができます。&lt;/p&gt;
+
+&lt;h2&gt;位置情報を設定する&lt;/h2&gt;
+&lt;p&gt;Sky Mapは正確な空を描画するために、おおよその位置情報が必要です。デフォルトでは、デバイスの位置情報サービス(モバイルネットワークまたはGPS)を使用します。アクセスを許可しない場合、Sky Mapはあなたを(0、0)に配置します。これは海の真ん中の地点です!&lt;/p&gt;
+&lt;p&gt;位置情報へのアクセスが利用できない場合、または手動で設定したい場合は、&lt;b&gt;設定 → 位置情報&lt;/b&gt;に移動して、以下のいずれかを実行してください:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;場所の名前&lt;/b&gt;を入力してください(座標を検索するにはインターネット接続が必要です)。または&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;緯度と経度&lt;/b&gt;を度単位で直接入力してください(インターネットは不要です)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;以前にSky Mapの位置情報許可を拒否した場合は、デバイスの&lt;b&gt;アプリ設定 → 権限&lt;/b&gt;で再度有効にする必要があります。&lt;/p&gt;
+
+&lt;h2&gt;望遠鏡ユーザー — ポインターモード&lt;/h2&gt;
+&lt;p&gt;&lt;b&gt;設定 → センサー設定&lt;/b&gt;で、&lt;b&gt;ビュー方向&lt;/b&gt;を&lt;b&gt;ポインターモード&lt;/b&gt;に変更してください。このモードでは、Sky Mapは画面が向いている方向ではなく、スマートフォンの&lt;i&gt;長辺&lt;/i&gt;が指している方向を表示します。&lt;/p&gt;
+&lt;p&gt;これにより、スマートフォンを望遠鏡チューブの側面に取り付けることができます。画面はチューブに垂直になり、地図は望遠鏡が照準を合わせている方向を追跡します。&lt;/p&gt;
+
+&lt;h2&gt;知っておくと便利なヒントと設定&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;診断:&lt;/b&gt; 何か問題があるように見える場合は、オーバーフローメニューを開いて&lt;b&gt;診断&lt;/b&gt;をタップしてください。このページには、現在の位置情報、時刻、センサーステータス、精度の読み取り値が表示されます。問題を報告する必要がある場合に非常に役立ちます。&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;メシエ画像:&lt;/b&gt; &lt;b&gt;設定 → 外観&lt;/b&gt;で、メシエ天体をリアルなサムネイル画像として表示するか、単純なドットとして表示するかを選択できます。&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;フォントサイズ:&lt;/b&gt; &lt;b&gt;設定 → 外観&lt;/b&gt;でラベルサイズを調整してください。&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;ジッターのある地図:&lt;/b&gt; &lt;b&gt;設定 → センサー設定(エキスパート)&lt;/b&gt;で&lt;b&gt;センサー速度&lt;/b&gt;と&lt;b&gt;センサーダンピング&lt;/b&gt;を試してください。&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;ジャイロスコープがない?&lt;/b&gt; スマートフォンにジャイロスコープがない場合は、センサー設定で&lt;b&gt;ジャイロを無効にする&lt;/b&gt;を有効にして、代替センサーモードを使用してください。&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;磁気補正:&lt;/b&gt; Sky Mapは磁気偏角補正を適用して、地図が磁北ではなく真北に合わせることができます。&lt;b&gt;設定 → 位置情報&lt;/b&gt;で切り替えてください。世界の一部の地域では、差が20度以上になる可能性があります。スマートフォンのコンパスが不安定な場合は、さらに手動で調整できます。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;ハードウェア要件&lt;/h2&gt;
+&lt;p&gt;すべてのデバイスがSky Mapを完全にサポートできるわけではありません!最低限、以下を備えたスマートフォンが必要です:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;磁場センサー(別名コンパス) — あなたが向いている方向を知るため&lt;/li&gt;
+&lt;li&gt;加速度計 — 空のどの高さを見ているかを知るため&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;理想的には以下も:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ジャイロスコープ — これにより動きがスムーズになり、ぎくしゃくしなくなります&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p class="callout"&gt;スマートフォンのコンパスは非常にトラブルが多いです。Sky Mapが空を正確に表示していない場合、ほぼ常にコンパスのハードウェア問題であり、Sky Mapの問題ではありません。トラブルシューティングセクションで役立つかもしれないことを参照してください。&lt;/p&gt;
+&lt;h3&gt;スマートフォンにどのセンサーがあるかを知るにはどうすればよいですか?&lt;/h3&gt;
+&lt;p&gt;Sky Mapの診断ページを開いてください。スマートフォンにないセンサーは「--,--,--」と表示されます。&lt;/p&gt;
+&lt;h3&gt;デバイスに必要なセンサーがない場合はどうなりますか?&lt;/h3&gt;
+&lt;p&gt;Sky Mapはマニュアルモードにフォールバックします。空を探索することはできますが、センサーがないため、どのアプリも方向を表示することはできません。&lt;/p&gt;
+
+&lt;h2&gt;トラブルシューティング&lt;/h2&gt;
+&lt;h3&gt;地図が動かない&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;自動モード(マニュアルではない)にいることを確認してください&lt;/li&gt;
+&lt;li&gt;診断ページで、デバイスにコンパスと加速度計があることを確認してください&lt;/li&gt;
+&lt;li&gt;図8キャリブレーションジェスチャーを試してください。スマートフォンをゆっくり大きく滑らかな図8の形で振ってください&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;地図が間違った方向を指しているか、不正確です&lt;/h3&gt;
+&lt;p&gt;Sky Mapが正確な空を表示するには3つのことが必要です。スマートフォンが向いている方向、あなたの位置情報、現在の時刻です。地図が間違って見える場合、これらのいずれかが間違っている可能性があります。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;コンパス:&lt;/b&gt; 最も一般的な原因 — Sky Mapのバグではなく、ハードウェアの問題です。キャリブレーション(図8ジェスチャー)を試し、金属製の物体から離れ、&lt;b&gt;設定 → 位置情報&lt;/b&gt;で&lt;b&gt;磁気補正&lt;/b&gt;を切り替えてください。一貫したエラーのあるコンパスの場合、&lt;b&gt;設定 → センサー設定(エキスパート)&lt;/b&gt;で手動コンパスオフセットが利用できます。&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;位置情報:&lt;/b&gt; &lt;b&gt;アプリ設定 → 権限&lt;/b&gt;で位置情報許可を付与してください。診断ページで座標を確認してください。位置情報がない場合の特徴的な症状は、ポラリスが地平線の近くに表示されることです。&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;時刻:&lt;/b&gt; より一般的ではありませんが、不正確な時刻は空全体をシフトさせます。診断ページでデバイスの時刻とタイムゾーンが正しいことを確認してください。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;地図がジッターしている&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;設定 → センサー設定(エキスパート)&lt;/b&gt;で&lt;b&gt;センサー速度&lt;/b&gt;と&lt;b&gt;センサーダンピング&lt;/b&gt;を調整してください&lt;/li&gt;
+&lt;li&gt;スマートフォンにジャイロスコープがない場合は、センサー設定で&lt;b&gt;ジャイロを無効にする&lt;/b&gt;を有効にしてください&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;完全なトラブルシューティングの詳細については、オンライン&lt;a href="https://github.com/sky-map-team/stardroid/blob/master/troubleshooting.md"&gt;トラブルシューティング&lt;/a&gt;ガイドを参照してください。&lt;/p&gt;
+&lt;p class="callout"&gt;まだ問題がある場合は、skymapdevs@gmail.comにメールしてください。診断ページのスクリーンショットが非常に役立ちます。&lt;/p&gt;
+
+&lt;h1&gt;Sky Mapの新機能&lt;/h1&gt;
+
+%3$s
+
+%2$s</string>
 </resources>

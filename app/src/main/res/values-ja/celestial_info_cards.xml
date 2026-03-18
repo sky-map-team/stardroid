@@ -6,41 +6,52 @@
     <string name="object_info_sun_funfact" translation_description="Fun fact about the Sun">太陽は太陽系全体の質量の99.86%を占めています。約130万個の地球が太陽の中に入ってしまうほどの大きさです！</string>
     <string name="object_info_sun_distance" translation_description="Distance to Sun shown in the info card. Translate units if appropriate for your locale.">1億5000万km</string>
     <string name="object_info_sun_size" translation_description="Physical size of Sun shown in the info card. Translate units if appropriate for your locale.">140万km（直径）</string>
+    <!-- tm:omitted name="object_info_sun_mass" reason="identical_to_source" -->
     <string name="object_info_moon_description" translation_description="Short description of the Moon">月は地球で唯一の天然衛星です。潮の満ち引きに影響を与え、これまでに12人の宇宙飛行士が訪れました。</string>
     <string name="object_info_moon_funfact" translation_description="Fun fact about the Moon">月は毎年約3.8cmずつ地球から遠ざかっています。数十億年前はもっとずっと近くにあったのです！</string>
+    <!-- tm:omitted name="object_info_moon_distance" reason="identical_to_source" -->
     <string name="object_info_moon_size" translation_description="Physical size of Moon shown in the info card. Translate units if appropriate for your locale.">3,474 km（直径）</string>
+    <!-- tm:omitted name="object_info_moon_mass" reason="identical_to_source" -->
     <string name="object_info_mercury_description" translation_description="Short description of Mercury">水星は最も小さい惑星で、太陽に最も近い惑星です。水星の1年はわずか地球の88日しかありません。</string>
     <string name="object_info_mercury_funfact" translation_description="Fun fact about Mercury">太陽に最も近いにもかかわらず、水星は最も暑い惑星ではありません。金星の方が厚い大気のおかげでずっと暑いのです！</string>
     <string name="object_info_mercury_distance" translation_description="Distance to Mercury shown in the info card. Translate units if appropriate for your locale.">5800万km（太陽から）</string>
     <string name="object_info_mercury_size" translation_description="Physical size of Mercury shown in the info card. Translate units if appropriate for your locale.">4,880 km（直径）</string>
+    <!-- tm:omitted name="object_info_mercury_mass" reason="identical_to_source" -->
     <string name="object_info_venus_description" translation_description="Short description of Venus">金星は太陽から2番目の惑星で、太陽系で最も暑い惑星です。大きさが似ていることから地球の双子とも呼ばれます。</string>
     <string name="object_info_venus_funfact" translation_description="Fun fact about Venus">金星の1日は1年よりも長いのです！自転に地球の243日かかりますが、公転はわずか225日で完了します。</string>
     <string name="object_info_venus_distance" translation_description="Distance to Venus shown in the info card. Translate units if appropriate for your locale.">1億800万km（平均）</string>
     <string name="object_info_venus_size" translation_description="Physical size of Venus shown in the info card. Translate units if appropriate for your locale.">12,104 km（直径）</string>
+    <!-- tm:omitted name="object_info_venus_mass" reason="identical_to_source" -->
     <string name="object_info_mars_description" translation_description="Short description of Mars">火星は太陽から4番目の惑星で、表面の酸化鉄により赤い惑星として知られています。</string>
     <string name="object_info_mars_funfact" translation_description="Fun fact about Mars">火星には太陽系最大の火山、オリンポス山があります。エベレスト山の約2.5倍の高さです！</string>
     <string name="object_info_mars_distance" translation_description="Distance to Mars shown in the info card. Translate units if appropriate for your locale.">2億2800万km（平均）</string>
     <string name="object_info_mars_size" translation_description="Physical size of Mars shown in the info card. Translate units if appropriate for your locale.">6,779 km（直径）</string>
+    <!-- tm:omitted name="object_info_mars_mass" reason="identical_to_source" -->
     <string name="object_info_jupiter_description" translation_description="Short description of Jupiter">木星は太陽系最大の惑星です。巨大なガス惑星で、有名な大赤斑という嵐があります。</string>
     <string name="object_info_jupiter_funfact" translation_description="Fun fact about Jupiter">木星には少なくとも95個の衛星が確認されています！最大の衛星ガニメデは、惑星の水星よりも大きいのです。</string>
     <string name="object_info_jupiter_distance" translation_description="Distance to Jupiter shown in the info card. Translate units if appropriate for your locale.">7億7800万km（平均）</string>
     <string name="object_info_jupiter_size" translation_description="Physical size of Jupiter shown in the info card. Translate units if appropriate for your locale.">139,820 km（直径）</string>
+    <!-- tm:omitted name="object_info_jupiter_mass" reason="identical_to_source" -->
     <string name="object_info_saturn_description" translation_description="Short description of Saturn">土星は太陽から6番目の惑星で、氷と岩石でできた壮大な環で有名です。</string>
     <string name="object_info_saturn_funfact" translation_description="Fun fact about Saturn">土星は水に浮くほど軽いのです！密度が水より小さいのですが、残念ながらそれを試せるほど大きなバスタブはありません。</string>
     <string name="object_info_saturn_distance" translation_description="Distance to Saturn shown in the info card. Translate units if appropriate for your locale.">14億km（平均）</string>
     <string name="object_info_saturn_size" translation_description="Physical size of Saturn shown in the info card. Translate units if appropriate for your locale.">116,460 km（直径）</string>
+    <!-- tm:omitted name="object_info_saturn_mass" reason="identical_to_source" -->
     <string name="object_info_uranus_description" translation_description="Short description of Uranus">天王星は横倒しに自転する氷の巨大惑星です。望遠鏡で発見された最初の惑星でもあります。</string>
     <string name="object_info_uranus_funfact" translation_description="Fun fact about Uranus">天王星は98度も傾いて横倒しに自転しています。大昔に地球サイズの天体と衝突したためかもしれません！</string>
     <string name="object_info_uranus_distance" translation_description="Distance to Uranus shown in the info card. Translate units if appropriate for your locale.">29億km（平均）</string>
     <string name="object_info_uranus_size" translation_description="Physical size of Uranus shown in the info card. Translate units if appropriate for your locale.">50,724 km（直径）</string>
+    <!-- tm:omitted name="object_info_uranus_mass" reason="identical_to_source" -->
     <string name="object_info_neptune_description" translation_description="Short description of Neptune">海王星は太陽系で最も遠い惑星です。最大風速2,100 km/hという太陽系最強の風が吹いています。</string>
     <string name="object_info_neptune_funfact" translation_description="Fun fact about Neptune">海王星は数学によって発見されました！科学者たちは望遠鏡で確認する前に、計算でその位置を予測していたのです。</string>
     <string name="object_info_neptune_distance" translation_description="Distance to Neptune shown in the info card. Translate units if appropriate for your locale.">45億km（平均）</string>
     <string name="object_info_neptune_size" translation_description="Physical size of Neptune shown in the info card. Translate units if appropriate for your locale.">49,244 km（直径）</string>
+    <!-- tm:omitted name="object_info_neptune_mass" reason="identical_to_source" -->
     <string name="object_info_pluto_description" translation_description="Short description of Pluto">冥王星はカイパーベルトにある矮小惑星です。2006年まで第9惑星とされていました。</string>
     <string name="object_info_pluto_funfact" translation_description="Fun fact about Pluto">冥王星には窒素の氷でできたハート型の氷河があり、NASAのニュー・ホライズンズ探査機の画像で確認できます！</string>
     <string name="object_info_pluto_distance" translation_description="Distance to Pluto shown in the info card. Translate units if appropriate for your locale.">59億km（平均）</string>
     <string name="object_info_pluto_size" translation_description="Physical size of Pluto shown in the info card. Translate units if appropriate for your locale.">2,377 km（直径）</string>
+    <!-- tm:omitted name="object_info_pluto_mass" reason="identical_to_source" -->
     <!-- Bright Stars Educational Content -->
     <string name="object_info_sirius_description" translation_description="Short description of Sirius">シリウスは夜空で最も明るい恒星で、おおいぬ座にあります。</string>
     <string name="object_info_sirius_funfact" translation_description="Fun fact about Sirius">シリウスは実は連星系です！伴星のシリウスBは地球ほどの大きさの白色矮星ですが、質量は太陽とほぼ同じです。</string>
@@ -480,7 +491,32 @@
     <string name="object_info_m87_funfact" translation_description="Fun fact about M87 shown in the info card. Translate this text.">M87の中心ブラックホールは2019年にイベント・ホライズン・テレスコープで初めて撮影されました。質量は太陽の65億倍です！</string>
     <string name="object_info_m87_distance" translation_description="Distance to M87 shown in the info card. Translate units if appropriate for your locale.">5,300万光年</string>
     <string name="object_info_m87_size" translation_description="Physical size of M87 shown in the info card. Translate units if appropriate for your locale.">24万光年（直径）</string>
-    <string name="object_info_m87_mass" translation_description="Mass of M87 in scientific notation — no translation needed.">2.4兆太陽質量</string>
+    <string name="object_info_m87_mass" translation_description="Mass of M87 in scientific notation .  Translate units if appropriate for your locale.">2.4兆太陽質量</string>
+    <!-- T CrB - T Coronae Borealis (Recurrent Nova) -->
+    <string name="object_info_t_crb_description" translation_description="Description of T Crb shown in the info card. Translate this text.">T Coronae Borealis (T CrB) は、北冠座にある反復新星で、赤色巨星と白色矮星の連星系です。白色矮星は伴星から周期的に十分な水素を集積し、熱核爆発を引き起こします。</string>
+    <string name="object_info_t_crb_funfact" translation_description="Fun fact about T Crb shown in the info card. Translate this text.">T CrB は 1946 年に最後に爆発し、一時的に 2.0 等級に達して肉眼で見えるようになりました。天文学者は別の爆発が差し迫っていると予測しています。観察を続けてください!</string>
+    <string name="object_info_t_crb_distance" translation_description="Distance to T Crb shown in the info card. Translate units if appropriate for your locale.">3,000光年</string>
+    <string name="object_info_t_crb_size" translation_description="Physical size of T Crb shown in the info card. Translate units if appropriate for your locale.">0.2 AU軌道分離</string>
+    <!-- Tarantula Nebula - NGC 2070 -->
+    <string name="object_info_tarantula_nebula_description" translation_description="Description of the Tarantula Nebula shown in the info card. Translate this text.">タランチュラ星雲は局部銀河群で最大かつ最も明るい星形成領域であり、大マゼラン雲に埋め込まれた広大な放射星雲で、約600光年にわたっています。163,000光年離れているにもかかわらず、肉眼で見えるほど十分に明るいです。</string>
+    <string name="object_info_tarantula_nebula_funfact" translation_description="Fun fact about the Tarantula Nebula shown in the info card. Translate this text.">タランチュラ星雲がオリオン星雲と同じくらい近かったら、夜間に影を落とすほど明るく、見える空の半分を占めるほどの大きさになるでしょう!</string>
+    <string name="object_info_tarantula_nebula_distance" translation_description="Distance to the Tarantula Nebula shown in the info card. Translate units if appropriate for your locale.">163,000光年</string>
+    <string name="object_info_tarantula_nebula_size" translation_description="Physical size of the Tarantula Nebula shown in the info card. Translate units if appropriate for your locale.">600光年の広さ</string>
+    <!-- LMC - Large Magellanic Cloud -->
+    <string name="object_info_lmc_description" translation_description="Description of the Large Magellanic Cloud shown in the info card. Translate this text.">大マゼラン雲は天の川の不規則な衛星銀河で、肉眼で見える分離した輝く空のパッチとして見えます。それは私たちの最も近い銀河近傍の1つであり、局所銀河群で最も活発な星形成銀河の1つです。</string>
+    <string name="object_info_lmc_funfact" translation_description="Fun fact about the Large Magellanic Cloud shown in the info card. Translate this text.">1987年、LMC内の星が超新星1987Aとして爆発しました。これは1604年以来初めて肉眼で観測された超新星です。爆発からのニュートリノは光より3時間早く地球に到達し、恒星の中核崩壊に関する私たちのモデルを確認しました。</string>
+    <string name="object_info_lmc_distance" translation_description="Distance to the Large Magellanic Cloud shown in the info card. Translate units if appropriate for your locale.">160,000光年</string>
+    <string name="object_info_lmc_size" translation_description="Physical size of the Large Magellanic Cloud shown in the info card. Translate units if appropriate for your locale.">14,000光年の広さ</string>
+    <!-- SMC - Small Magellanic Cloud -->
+    <string name="object_info_smc_description" translation_description="Description of the Small Magellanic Cloud shown in the info card. Translate this text.">小マゼラン雲は天の川の矮小不規則衛星銀河であり、より大きな兄弟銀河のLMC（大マゼラン雲）と対になっています。この2つの銀河は天の川の重力によってゆっくりと引き裂かれており、広大なガスの流れが空全体に広がっています。</string>
+    <string name="object_info_smc_funfact" translation_description="Fun fact about the Small Magellanic Cloud shown in the info card. Translate this text.">1908～12年にSMC内のケフェイド変光星を研究することで、ヘンリエッタ・スワン・リービットは周期光度関係を発見しました。これは天文学者が宇宙全体の距離を測定することを初めて可能にした革新的な発見です！</string>
+    <string name="object_info_smc_distance" translation_description="Distance to the Small Magellanic Cloud shown in the info card. Translate units if appropriate for your locale.">200,000光年</string>
+    <string name="object_info_smc_size" translation_description="Physical size of the Small Magellanic Cloud shown in the info card. Translate units if appropriate for your locale.">7,000光年の広さ</string>
+    <!-- Eta Carinae Nebula (NGC 3372) -->
+    <string name="object_info_eta_carinae_nebula_description" translation_description="Description of Eta Carinae Nebula shown in the info card. Translate this text.">エータ・カリーナ星雲（NGC 3372）は、空の中で最も大きく最も明るい星雲の1つで、300光年以上に広がっています。その中心には、既知の最も巨大で最も光度の高い星の1つであるエータ・カリーナがあり、太陽質量の100倍以上の質量を持っています。</string>
+    <string name="object_info_eta_carinae_nebula_funfact" translation_description="Fun fact about Eta Carinae Nebula shown in the info card. Translate this text.">1843年、イータ・カリーナが爆発し、一時的に空で2番目に明るい星になりましたが、奇跡的に生き残りました。超新星爆発の寸前かもしれません!</string>
+    <string name="object_info_eta_carinae_nebula_distance" translation_description="Distance to Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">7,500光年</string>
+    <string name="object_info_eta_carinae_nebula_size" translation_description="Physical size of Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">300光年の広さ</string>
     <!-- ==================== CONSTELLATIONS ==================== -->
     <!-- Note: Constellation names are defined in celestial_objects.xml -->
     <!-- Orion -->
