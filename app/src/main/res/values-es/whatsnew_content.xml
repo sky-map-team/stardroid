@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup.">
-<![CDATA[
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[
 <h2>Imágenes espaciales</h2>
     Las tarjetas informativas ahora incluyen fotografías de los 145 objetos: planetas, estrellas, constelaciones y objetos Messier. Toca cualquier objeto para explorarlo visualmente.
 
@@ -11,15 +10,12 @@
 
 <h2>Modo nocturno</h2>
     El modo nocturno rojo ahora cubre casi todos los elementos de la interfaz de usuario, incluidos todos los cuadros de diálogo y la pantalla de calibración de la brújula: no más destellos blancos cegadores en la oscuridad.
-]]>
-    </string>
-    <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup.">
-<![CDATA[
+]]></string>
+    <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[
 <h2>¡Usuario beta!</h2>
 <h3>Cómo ayudar</h3>
 En esta versión, al usar el modo manual y deslizar el mapa, el horizonte volverá a nivelarse,
 por lo que la parte superior siempre mostrará las estrellas. Anteriormente el mapa solo se
 movía en línea recta, por lo que podías quedar boca abajo. ¿Qué opinas? ¿Es mejor?
-]]>
-    </string>
+]]></string>
 </resources>
