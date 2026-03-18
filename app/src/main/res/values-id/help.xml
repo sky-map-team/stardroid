@@ -1,0 +1,169 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+<string name="help_text" translation_description="This is the help text for the app Google Sky Map. It includes placeholders where other text is inserted. Please do not change the &lt; and &gt; markup">&lt;h1&gt;Sky Map untuk Android&lt;/h1&gt;
+&lt;p class="version"&gt;Versi %1$s&lt;/p&gt;
+&lt;p class="url"&gt;&lt;a href="https://stardroid.app"&gt;https://stardroid.app&lt;/a&gt;&lt;/p&gt;
+
+%4$s
+
+&lt;h2&gt;Pengenalan dan Panduan Cepat&lt;/h2&gt;
+&lt;p&gt;Pegang ponsel Anda dan lihat melaluinya seperti jendela ke luar angkasa. Sky Map menggunakan kompas, akselerometer, dan giroskop ponsel Anda untuk melacak arah yang Anda tunjuk dan memperbarui peta secara real-time.&lt;/p&gt;
+&lt;p class="callout"&gt;Tidak semua ponsel mampu menjalankan Sky Map! Lihat bagian persyaratan perangkat keras di bawah.&lt;/p&gt;
+&lt;p&gt;Jika ini pertama kali Anda:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Izinkan akses lokasi saat diminta — Sky Map memerlukan lokasi perkiraan Anda untuk menggambar langit yang tepat untuk tempat Anda berada&lt;/li&gt;
+&lt;li&gt;Arahkan ponsel Anda ke langit ke arah mana pun&lt;/li&gt;
+&lt;li&gt;Peta akan bergerak sesuai dengan arah yang Anda tunjuk&lt;/li&gt;
+&lt;li&gt;Ketuk di mana saja di layar untuk menampilkan kontrol&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;Menavigasi Langit&lt;/h2&gt;
+&lt;h3&gt;Mode Otomatis&lt;/h3&gt;
+&lt;p&gt;Dalam Mode Otomatis (default), Sky Map menggunakan sensor ponsel Anda untuk menampilkan apa pun yang ada di arah yang ditunjuk ponsel Anda. Cukup gerakkan ponsel Anda dan peta akan mengikuti.&lt;/p&gt;
+&lt;h3&gt;Mode Manual&lt;/h3&gt;
+&lt;p&gt;Ketuk ikon sensor/kompas di kontrol untuk beralih ke Mode Manual. Dalam mode ini Anda dapat:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Seret peta dengan satu jari untuk menggeser&lt;/li&gt;
+&lt;li&gt;Cubit untuk memperbesar atau memperkecil&lt;/li&gt;
+&lt;li&gt;Putar dengan dua jari untuk mengubah orientasi&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Mode manual berguna ketika Anda ingin menjelajahi langit tanpa memegang ponsel Anda.&lt;/p&gt;
+
+&lt;h2&gt;Lapisan Terlihat&lt;/h2&gt;
+&lt;p&gt;Sky Map mengorganisir apa yang ditampilkannya ke dalam lapisan, masing-masing dapat diaktifkan atau dinonaktifkan secara independen. Ketuk layar untuk mengungkapkan kontrol lapisan di samping — mereka bersinar oranye ketika lapisan aktif dan tampak redup ketika mati.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;Bintang:&lt;/b&gt; Bintang-bintang paling terang, dengan label untuk yang terkenal&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Konstelasi:&lt;/b&gt; Garis besar dan nama konstelasi&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Objek Messier:&lt;/b&gt; Objek langit dalam: galaksi, nebula, dan gugus bintang&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Planet:&lt;/b&gt; Planet-planet sistem tata surya kami, ditampilkan sebagai gambar&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Hujan Meteor:&lt;/b&gt; Titik radiant hujan meteor yang aktif dan akan datang&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Ekliptika &amp;amp; Kisi RA/Des:&lt;/b&gt; Ekliptika adalah jalur tahunan Matahari melalui langit&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Cakrawala:&lt;/b&gt; Garis cakrawala dan label arah kardinal (U, S, T, B)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p class="callout"&gt;&lt;b&gt;Patut diketahui:&lt;/b&gt; Sky Map menampilkan cakrawala geometris — pandangan yang sempurna datar dan tidak terhalang. Objek tepat di atasnya mungkin masih tersembunyi oleh bangunan, bukit, atau pohon dalam praktiknya.&lt;/p&gt;
+
+&lt;h2&gt;Kontrol di Layar&lt;/h2&gt;
+&lt;p&gt;Ketuk di mana saja di layar untuk menampilkan atau menyembunyikan kontrol. Di satu sisi Anda akan menemukan toggle lapisan yang dijelaskan di atas. Di sisi lain adalah tombol untuk beralih antara mode Otomatis dan Manual.&lt;/p&gt;
+&lt;p&gt;Kontrol memudar secara otomatis setelah beberapa detik untuk menjaga tampilan tetap jelas.&lt;/p&gt;
+
+&lt;h2&gt;Pencarian&lt;/h2&gt;
+&lt;p&gt;Ketuk ikon kaca pembesar untuk mencari apa pun di langit. Anda dapat mencari:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;Bintang&lt;/b&gt; — berdasarkan nama, misalnya "Sirius", "Betelgeuse", "Polaris"&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Planet&lt;/b&gt; — misalnya "Mars", "Saturnus"&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Konstelasi&lt;/b&gt; — misalnya "Orion", "Cassiopeia"&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Objek Messier&lt;/b&gt; — misalnya "M31", "Galaksi Andromeda", "Pleiades"&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Komet dan hujan meteor&lt;/b&gt; — berdasarkan nama&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;b&gt;Dalam Mode Otomatis:&lt;/b&gt; setelah memilih hasil, Sky Map menampilkan lingkaran penargetan dan panah arah. Ikuti panah dengan memutar ponsel Anda — lingkaran berubah dari biru menjadi merah, kemudian oranye ketika objek berada dalam bidang pandang Anda. Ketuk ✕ untuk keluar dari pencarian.&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;Dalam Mode Manual:&lt;/b&gt; peta cukup melompat untuk berpusat pada objek.&lt;/p&gt;
+
+&lt;h2&gt;Perjalanan Waktu&lt;/h2&gt;
+&lt;p&gt;Perjalanan Waktu memungkinkan Anda melihat langit pada saat apa pun dari tahun 1900 hingga 2100. Pilih ikon &lt;b&gt;Perjalanan Waktu&lt;/b&gt; lingkaran berputar dari bilah tindakan.&lt;/p&gt;
+&lt;p&gt;Anda dapat memilih tanggal preset (solstis, gerhana, peristiwa langit terkenal, momen bersejarah) atau memasukkan tanggal dan waktu Anda sendiri. Ketuk &lt;b&gt;Lanjutkan!&lt;/b&gt; untuk terbang ke sana.&lt;/p&gt;
+&lt;p&gt;Setelah masuk ke mode Perjalanan Waktu, tanggal ditampilkan di layar dan kontrol pemutaran memungkinkan Anda bergerak melalui waktu:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ketuk tombol putar maju atau mundur untuk mulai bergerak&lt;/li&gt;
+&lt;li&gt;Ketuk lagi untuk bergerak lebih cepat&lt;/li&gt;
+&lt;li&gt;Ketuk tombol berhenti untuk menjeda&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Beberapa hal yang dapat Anda gunakannya untuk:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;i&gt;Apa yang bisa saya lihat segera setelah matahari terbenam malam ini?&lt;/i&gt;&lt;/li&gt;
+&lt;li&gt;&lt;i&gt;Kapan kesempatan bagus berikutnya untuk melihat Merkurius?&lt;/i&gt;&lt;/li&gt;
+&lt;li&gt;&lt;i&gt;Seperti apa langit pada malam saya lahir?&lt;/i&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Akurasi berkurang untuk tanggal jauh dari sekarang, terutama karena pengaruh gravitasi Jupiter.&lt;/p&gt;
+
+&lt;h2&gt;Kartu Info&lt;/h2&gt;
+&lt;p&gt;Ketuk objek langit berlabel apa pun di peta langit untuk membuka kartu info — panel dengan foto dan detail tentang objek tersebut. Kartu info tersedia untuk 150+ objek termasuk bintang, planet, Bulan, objek langit dalam Messier, dan konstelasi.&lt;/p&gt;
+&lt;p&gt;Setiap kartu menampilkan:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Foto atau bagan objek&lt;/li&gt;
+&lt;li&gt;Deskripsi singkat dan fakta menarik&lt;/li&gt;
+&lt;li&gt;Data ilmiah seperti jarak, ukuran, dan jenis objek&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ketuk gambar di dalam kartu untuk melihatnya layar penuh. Tutup kartu dengan mengetuk di luarnya atau menekan &lt;b&gt;Kembali&lt;/b&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;Mengaktifkan kartu info:&lt;/b&gt; Secara default mereka hanya muncul ketika Anda berada dalam Mode Manual; buka pengaturan untuk mengaktifkannya saat dalam Mode Otomatis (berbasis sensor).&lt;/p&gt;
+
+&lt;h2&gt;Galeri&lt;/h2&gt;
+&lt;p&gt;Galeri berisi koleksi gambar dari Teleskop Luar Angkasa Hubble dan sumber lainnya. Buka dari menu utama.&lt;/p&gt;
+&lt;p&gt;Telusuri thumbnail dengan menggulir, dan ketuk satu untuk melihat gambar lengkap. Gunakan tombol &lt;b&gt;Temukan di langit&lt;/b&gt; untuk melompat ke mode Pencarian dan menemukan objek tersebut di peta langit Anda saat ini.&lt;/p&gt;
+
+&lt;h2&gt;Mode Visi Malam&lt;/h2&gt;
+&lt;p&gt;Jika Anda berada di luar melakukan pengamatan nyata, mode Visi Malam membantu menjaga penglihatan Anda yang beradaptasi gelap. Alihkan dari bilah tindakan dengan mengetuk ikon &lt;b&gt;Visi Malam&lt;/b&gt; berbentuk mata.&lt;/p&gt;
+&lt;p&gt;Dalam mode Visi Malam, Sky Map:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Mengalihkan tampilan ke nada merah dalam&lt;/li&gt;
+&lt;li&gt;Secara signifikan meredam layar&lt;/li&gt;
+&lt;li&gt;Mengurangi lampu latar tombol&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Alihkan lagi untuk kembali ke normal. Opsi &lt;b&gt;Penggelapan Layar&lt;/b&gt; di bawah &lt;b&gt;Pengaturan → Penampilan&lt;/b&gt; memberi Anda kontrol tambahan atas seberapa gelap layarnya.&lt;/p&gt;
+
+&lt;h2&gt;Mengatur Lokasi Anda&lt;/h2&gt;
+&lt;p&gt;Sky Map memerlukan lokasi perkiraan Anda untuk menggambar langit yang benar. Secara default menggunakan layanan lokasi perangkat Anda (jaringan seluler atau GPS). Jika Anda tidak memberikan akses, Sky Map akan menempatkan Anda di (0, 0) — titik di tengah lautan!&lt;/p&gt;
+&lt;p&gt;Jika akses lokasi tidak tersedia atau Anda lebih suka mengaturnya secara manual, buka &lt;b&gt;Pengaturan → Lokasi&lt;/b&gt; dan salah satu:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Masukkan &lt;b&gt;nama tempat&lt;/b&gt; (memerlukan koneksi internet untuk mencari koordinat), atau&lt;/li&gt;
+&lt;li&gt;Masukkan &lt;b&gt;lintang dan bujur&lt;/b&gt; langsung dalam derajat (tidak perlu internet)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Jika Anda sebelumnya menolak izin lokasi Sky Map, Anda mungkin perlu mengaktifkannya kembali di &lt;b&gt;Pengaturan Aplikasi → Izin&lt;/b&gt; perangkat Anda.&lt;/p&gt;
+
+&lt;h2&gt;Pengguna Teleskop — Mode Penunjuk&lt;/h2&gt;
+&lt;p&gt;Di bawah &lt;b&gt;Pengaturan → Pengaturan Sensor&lt;/b&gt;, ubah &lt;b&gt;Arah Tampilan&lt;/b&gt; menjadi &lt;b&gt;Mode Penunjuk&lt;/b&gt;. Dalam mode ini, Sky Map menampilkan apa yang ditunjuk &lt;i&gt;tepi panjang&lt;/i&gt; ponsel, bukan apa yang dihadapi layar.&lt;/p&gt;
+&lt;p&gt;Ini memungkinkan Anda memasang ponsel Anda di sepanjang sisi tabung teleskop sehingga layar tegak lurus dengan tabung sementara peta masih melacak apa yang ditunjuk teleskop.&lt;/p&gt;
+
+&lt;h2&gt;Tips dan Pengaturan yang Patut Diketahui&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;Diagnostik:&lt;/b&gt; Jika ada yang terlihat salah, buka menu overflow dan ketuk &lt;b&gt;Diagnostik&lt;/b&gt;. Halaman ini menampilkan lokasi Anda saat ini, waktu, status sensor, dan pembacaan akurasi — sangat berguna jika Anda perlu melaporkan masalah.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Gambar Messier:&lt;/b&gt; Di bawah &lt;b&gt;Pengaturan → Penampilan&lt;/b&gt;, Anda dapat memilih apakah objek Messier muncul sebagai gambar thumbnail realistis atau titik sederhana.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Ukuran font:&lt;/b&gt; Sesuaikan ukuran label di bawah &lt;b&gt;Pengaturan → Penampilan&lt;/b&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Peta bergetar:&lt;/b&gt; Bereksperimen dengan &lt;b&gt;Kecepatan Sensor&lt;/b&gt; dan &lt;b&gt;Peredam Sensor&lt;/b&gt; di bawah &lt;b&gt;Pengaturan → Pengaturan Sensor (Ahli)&lt;/b&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Tidak ada giroskop?&lt;/b&gt; Jika ponsel Anda tidak memiliki giroskop, aktifkan &lt;b&gt;Nonaktifkan Gyro&lt;/b&gt; di Pengaturan Sensor untuk menggunakan mode sensor alternatif.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Koreksi magnetik:&lt;/b&gt; Sky Map dapat menerapkan koreksi deklinasi magnetik sehingga peta selaras dengan Utara Sejati daripada Utara Magnetik. Alihkan ini di bawah &lt;b&gt;Pengaturan → Lokasi&lt;/b&gt;. Di beberapa bagian dunia perbedaannya bisa 20 derajat atau lebih. Anda dapat menyesuaikan ini lebih lanjut secara manual jika kompas ponsel Anda tidak stabil.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Persyaratan Perangkat Keras&lt;/h2&gt;
+&lt;p&gt;Tidak semua perangkat dapat sepenuhnya mendukung Sky Map! Paling tidak Anda memerlukan ponsel dengan:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Sensor medan magnet (alias Kompas) — untuk mengetahui arah yang Anda hadapi&lt;/li&gt;
+&lt;li&gt;Akselerometer — untuk mengetahui seberapa tinggi di langit Anda melihat&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Idealnya juga:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Giroskop — ini akan memuluskan gerakan dan membuatnya kurang tersentak-sentak&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p class="callout"&gt;Kompas ponsel sangat bermasalah. Jika Sky Map tidak menampilkan langit dengan akurat, hampir selalu merupakan masalah perangkat keras dengan kompas, bukan masalah dengan Sky Map. Lihat bagian pemecahan masalah untuk beberapa hal yang mungkin membantu.&lt;/p&gt;
+&lt;h3&gt;Bagaimana cara mengetahui sensor apa yang dimiliki ponsel saya?&lt;/h3&gt;
+&lt;p&gt;Buka halaman Diagnostik Sky Map — sensor apa pun yang tidak dimiliki ponsel Anda akan ditampilkan sebagai "--,--,--".&lt;/p&gt;
+&lt;h3&gt;Bagaimana jika perangkat saya kehilangan sensor yang diperlukan?&lt;/h3&gt;
+&lt;p&gt;Sky Map akan kembali ke mode manual. Anda masih dapat menjelajahi langit, tetapi tanpa sensor tidak ada cara aplikasi apa pun dapat menunjukkan arah Anda.&lt;/p&gt;
+
+&lt;h2&gt;Pemecahan Masalah&lt;/h2&gt;
+&lt;h3&gt;Peta tidak bergerak&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Periksa Anda berada dalam Mode Otomatis (bukan Manual)&lt;/li&gt;
+&lt;li&gt;Periksa halaman Diagnostik untuk mengonfirmasi perangkat Anda memiliki kompas dan akselerometer&lt;/li&gt;
+&lt;li&gt;Coba gerakan kalibrasi angka-8: lambaikan ponsel Anda perlahan dalam bentuk angka-8 yang besar dan halus&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Peta menunjuk ke arah yang salah atau tidak akurat&lt;/h3&gt;
+&lt;p&gt;Sky Map memerlukan tiga hal untuk menampilkan langit yang benar: arah yang ditunjuk ponsel Anda, lokasi Anda, dan waktu saat ini. Jika peta terlihat salah, salah satu dari ini mungkin tidak benar.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;Kompas:&lt;/b&gt; Penyebab paling umum — masalah perangkat keras, bukan bug Sky Map. Coba kalibrasi (gerakan angka-8), menjauh dari benda logam, dan alihkan &lt;b&gt;Koreksi Magnetik&lt;/b&gt; di &lt;b&gt;Pengaturan → Lokasi&lt;/b&gt;. Offset kompas manual tersedia di bawah &lt;b&gt;Pengaturan → Pengaturan Sensor (Ahli)&lt;/b&gt; untuk kompas dengan kesalahan yang konsisten.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Lokasi:&lt;/b&gt; Berikan izin lokasi melalui &lt;b&gt;Pengaturan Aplikasi → Izin&lt;/b&gt;. Periksa halaman Diagnostik untuk mengonfirmasi koordinat Anda. Gejala khas lokasi yang hilang adalah Polaris muncul di dekat cakrawala.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Waktu:&lt;/b&gt; Kurang umum, tetapi zona waktu yang salah menggeser seluruh langit. Periksa halaman Diagnostik untuk mengonfirmasi waktu dan zona waktu perangkat Anda benar.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Peta bergetar&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Sesuaikan &lt;b&gt;Kecepatan Sensor&lt;/b&gt; dan &lt;b&gt;Peredam Sensor&lt;/b&gt; di bawah &lt;b&gt;Pengaturan → Pengaturan Sensor (Ahli)&lt;/b&gt;&lt;/li&gt;
+&lt;li&gt;Jika ponsel Anda tidak memiliki giroskop, aktifkan &lt;b&gt;Nonaktifkan Gyro&lt;/b&gt; di pengaturan sensor&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Untuk detail pemecahan masalah lengkap, lihat panduan &lt;a href="https://github.com/sky-map-team/stardroid/blob/master/troubleshooting.md"&gt;pemecahan masalah&lt;/a&gt; online.&lt;/p&gt;
+&lt;p class="callout"&gt;Jika Anda masih terjebak, kirim email kepada kami di skymapdevs@gmail.com — tangkapan layar halaman Diagnostik Anda sangat membantu.&lt;/p&gt;
+
+&lt;h1&gt;Apa yang baru di Sky Map?&lt;/h1&gt;
+
+%3$s
+
+%2$s</string>
+</resources>
