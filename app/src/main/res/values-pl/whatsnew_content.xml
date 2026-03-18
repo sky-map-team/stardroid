@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Obrazy nieba</h2>
+    Karty informacyjne zawierają teraz fotografie dla wszystkich 145 obiektów — planet, gwiazd, konstelacji i obiektów Messiera. Dotknij dowolny obiekt, aby go zbadać wizualnie.
+
+<h2>Nowe obiekty katalogowe</h2>
+    T Coronae Borealis ("Gwiazda Błysku") i Mgławica Eta Carinae są teraz w katalogu.
+
+<h2>Tryb nocny</h2>
+    Czerwony tryb nocny obejmuje teraz prawie wszystkie elementy interfejsu, w tym wszystkie okna dialogowe i ekran kalibracji kompasu — bez więcej oślepiających białych błysków w ciemności.]]></string>
+    <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Użytkownicy beta!</h2>
+<h3>Jak możesz nam pomóc</h3>
+W tej wersji, gdy używasz trybu ręcznego i przesuniesz mapę, horyzont powróci
+do poziomu, aby górna część mapy zawsze pokazywała gwiazdy nad tobą. Wcześniej mapa poruszała się
+w linii prostej, więc mogłeś skończyć do góry nogami. Co o tym myślisz? Czy to jest lepsze?
+ Daj nam znać <a href="https://forms.gle/JkrMw7Zc4ynp45J79">tutaj.</a><br/>
+Otwórz menu pomocy, aby zobaczyć te informacje ponownie.]]></string>
+</resources>
