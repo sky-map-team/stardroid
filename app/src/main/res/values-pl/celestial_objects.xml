@@ -123,7 +123,7 @@
     <string name="hercules_gc" translation_description="hubble object">Gromada Herkulesa</string>
     <string name="pleiades" translation_description="hubble object">Plejady</string>
     <string name="cats_eye_nebula" translation_description="hubble object">Mgławica Kocie Oko</string>
-    <string name="omega_centauri" translation_description="hubble object">Omega Centauri</string>
+    <string name="omega_centauri" translation_description="hubble object">Omega Centauri Gromada Kulista</string>
     <!-- tm:omitted name="v838_mon" reason="identical_to_source" -->
     <string name="sn1987a" translation_description="hubble object">Supernowa 1987a</string>
     <string name="hubble_deep_field" translation_description="hubble object">Głębokie pole Hubble’a</string>
@@ -332,7 +332,7 @@
     <string name="small_magellanic_cloud" translation_description="Full name of the Small Magellanic Cloud galaxy">Mały Obłok Magellana</string>
     <!-- tm:omitted name="nubecula_minor" reason="identical_to_source" -->
     <string name="butterfly_cluster" translation_description="Name of the Messier object Butterfly Cluster">Gromada Motyl</string>
-    <string name="scorpions_tail" translation_description="Name of the Messier object Scorpion\'s Tail">Gromada Ptolemeusza</string>
+    <string name="scorpions_tail" translation_description="Name of the Messier object Scorpion\'s Tail">Ogon Skorpiona</string>
     <!-- tm:omitted name="winnecke_4" reason="identical_to_source" -->
     <string name="beehive_cluster" translation_description="Name of the Messier object Beehive Cluster">Gromada Ul</string>
     <string name="praesepe" translation_description="Name of the Messier object Praesepe">Gromada Żłóbek</string>
@@ -351,7 +351,7 @@
     <string name="deltaaquariids" translation_description="Meteor Shower">Południowe delta Akwarydy</string>
     <string name="perseids" translation_description="Meteor Shower">Perseidy</string>
     <string name="orionids" translation_description="Meteor Shower">Orionidy</string>
-    <string name="puppidvelids" translation_description="Meteor Shower">Pi Puppidy</string>
+    <!-- tm:omitted name="puppidvelids" reason="identical_to_source" -->
     <string name="ursids" translation_description="Meteor Shower">Ursydy</string>
 
     <!-- Comets -->
