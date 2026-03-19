@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <!-- The folks who made Sky Map Happen -->
+<string name="credits_text" translation_description="This page credits the people and organizations who support and maintain the app Sky Map. Please do not change the &lt; and &gt; markup">&lt;h1&gt;دعم التطوير&lt;/h1&gt;
+&lt;p&gt;Sky Map مجاني وذو مصدر مفتوح وخالي من الإعلانات. إذا كنت تستمتع باستخدامه، يرجى التفكير في &lt;a href="https://buymeacoffee.com/skymapdevs"&gt;دعم&lt;/a&gt; التطوير المستمر على &lt;a href="https://github.com/sky-map-team/stardroid?tab=readme-ov-file#support-the-project"&gt;صفحة GitHub الخاصة بنا&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;شكراً لهؤلاء الأشخاص الذين &lt;a href="https://buymeacoffee.com/skymapdevs"&gt;تبرعوا مؤخراً!&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;%1$s&lt;/p&gt;
+
+&lt;h1&gt;الاعترافات&lt;/h1&gt;
+&lt;h2&gt;الهندسة&lt;/h2&gt;
+&lt;p&gt;John Taylor, Kevin Serafini&lt;/p&gt;
+
+&lt;h2&gt;المساهمون في المصدر المفتوح&lt;/h2&gt;
+&lt;p&gt;
+    %2$s
+&lt;/p&gt;
+&lt;p&gt;شكراً لكم! انظر أحدث المساهمين على &lt;a href="https://github.com/sky-map-team/stardroid/graphs/contributors"&gt;GitHub&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;h2&gt;الهندسة والتصميم وإدارة المنتج الأصلية في Google&lt;/h2&gt;
+&lt;p&gt;Brent Bryan, Dominic Widdows, Hector Ouilhet, James Powell, John Taylor, Kevin Serafini,
+Lior Ron.&lt;/p&gt;
+
+&lt;h1&gt;الشكر والتقدير&lt;/h1&gt;
+&lt;p&gt;تم تطوير Sky Map في الأصل باسم "Google Sky Map" بواسطة Google Inc. وتم فتح مصدره في عام 2012.&lt;/p&gt;
+&lt;p&gt;شكر خاص لـ Pat Stephenson لإلهامه الفكرة من خلال مسابقة هاتفه G1
+    وشكر لـ Chris DiBona و Michael Weiss-Malik لمساعدتهما في الانتقال
+    من Google إلى المصدر المفتوح.&lt;/p&gt;
+
+&lt;h2&gt;البيانات&lt;/h2&gt;
+&lt;p&gt;يستخدم Sky Map خرائط مشتقة من البيانات من:&lt;/p&gt;
+&lt;ul class="credits"&gt;
+&lt;li&gt;Centre de Donnees astronomiques de Strasbourg (&lt;a href="https://cdsweb.u-strasbg.fr/"&gt;https://cdsweb.u-strasbg.fr/&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;The Bright Star Catalogue, 5th Revised Ed. (Hoffleit D., Warren Jr W.H.)&lt;/li&gt;
+&lt;li&gt;The HYG Database, HYG v1.0. (&lt;a href="https://www.astronexus.com/"&gt;https://www.astronexus.com/&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;History and Accurate Positions for the NGC/IC Objects (Harold G. Corwin Jr)&lt;/li&gt;
+&lt;li&gt;Revised New General Catalogue of Nonstellar Astronomical Objects (Sulentic J.W., Tifft W.G.)&lt;/li&gt;
+&lt;li&gt;SFA Star Charts (&lt;a href="https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html"&gt;https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;يتم حساب مواضع أجسام النظام الشمسي من البيانات المقدمة من USNO (&lt;a href="https://www.usno.navy.mil/USNO/astronomical-applications"&gt;https://www.usno.navy.mil/USNO/astronomical-applications&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;تم الحصول على بيانات التغطية الكروية من (&lt;a href="https://www2.research.att.com/~njas/coverings"&gt;https://www2.research.att.com/~njas/coverings&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;خريطة الكسوف 2024 بمجاملة من استوديو NASA للتصور العلمي.&lt;/li&gt;
+&lt;li&gt;بيانات زخات النيازك من المنظمة الدولية للنيازك (&lt;a href="https://www.imo.net/data"&gt;https://www.imo.net/data&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;اعتمادات الصور&lt;/h2&gt;
+&lt;p&gt;يتم توفير الصور السماوية في هذا التطبيق بمجاملة من المصادر التالية:&lt;/p&gt;
+&lt;ul class="credits"&gt;
+&lt;li&gt;صور تلسكوب هابل الفضائي: NASA و ESA ومعهد Space Telescope Science Institute (&lt;a href="https://hubblesite.org/"&gt;hubblesite.org&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;صور الكواكب: NASA/JPL-Caltech و NASA/Johns Hopkins APL/Carnegie (MESSENGER) و NASA/Johns Hopkins APL/SwRI (New Horizons)&lt;/li&gt;
+&lt;li&gt;صورة القمر: NASA/GSFC/Arizona State University (Lunar Reconnaissance Orbiter)&lt;/li&gt;
+&lt;li&gt;صور حقل النجوم: ESO Digitized Sky Survey 2 (&lt;a href="https://archive.eso.org/dss/dss"&gt;archive.eso.org/dss&lt;/a&gt;), CC BY 4.0&lt;/li&gt;
+&lt;li&gt;خرائط الأبراج: IAU و Sky &amp;amp; Telescope (Roger Sinnott &amp;amp; Rick Fienberg), CC BY 4.0&lt;/li&gt;
+&lt;li&gt;صور Messier الإضافية: Gemini Observatory/NOIRLab/NSF/AURA (&lt;a href="https://noirlab.edu/"&gt;noirlab.edu&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;صورة M31: Peter Kennett (&lt;a href="https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg"&gt;Wikimedia Commons&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;</string>
+</resources>

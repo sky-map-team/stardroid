@@ -44,8 +44,61 @@
     <string name="vela" translation_description="Name of the Vela constellation">الشراع</string>
     <string name="virgo" translation_description="Name of the Virgo constellation">العذراء</string>
     <string name="capricorn" translation_description="Name of the Capricorn constellation">الجدي</string>
+    <string name="southern_cross" translation_description="Name of the Southern Cross constellation">الصليب الجنوبي</string>
+    <string name="scorpio" translation_description="Name of the Scorpio constellation">العقرب</string>
+    <string name="little_dipper" translation_description="Name of the Little Dipper constellation">الدب الأصغر</string>
     <string name="little_bear" translation_description="Name of the Little Bear constellation">الدب الأصغر</string>
+    <string name="big_dipper" translation_description="Name of the Big Dipper constellation">الدب الأكبر</string>
     <string name="great_bear" translation_description="Name of the Great Bear constellation">الدب الأكبر</string>
+    <string name="plough" translation_description="Name of the Plough constellation">المحراث</string>
+    <string name="antlia" translation_description="Name of the Antlia constellation">أنتليا</string>
+    <string name="apus" translation_description="Name of the Apus constellation">أبوس</string>
+    <string name="ara" translation_description="Name of the Ara constellation">آرا</string>
+    <string name="caelum" translation_description="Name of the Caelum constellation">كايلوم</string>
+    <string name="camelopardalis" translation_description="Name of the Camelopardalis constellation">كاميلوباردالس</string>
+    <string name="canes_venatici" translation_description="Name of the Canes Venatici constellation">كلاب الصيد</string>
+    <string name="canis_minor" translation_description="Name of the Canis Minor constellation">الكلب الأصغر</string>
+    <string name="cepheus" translation_description="Name of the Cepheus constellation">قيفاوس</string>
+    <string name="chamaeleon" translation_description="Name of the Chamaeleon constellation">الحرباء</string>
+    <string name="circinus" translation_description="Name of the Circinus constellation">الفرجار</string>
+    <string name="columba" translation_description="Name of the Columba constellation">الحمامة</string>
+    <string name="coma_berenices" translation_description="Name of the Coma Berenices constellation">شعر برنيقة</string>
+    <string name="corona_australis" translation_description="Name of the Corona Australis constellation">التاج الجنوبي</string>
+    <string name="corona_borealis" translation_description="Name of the Corona Borealis constellation">التاج الشمالي</string>
+    <string name="corvus" translation_description="Name of the Corvus constellation">الغراب</string>
+    <string name="crater" translation_description="Name of the Crater constellation">الكأس</string>
+    <string name="delphinus" translation_description="Name of the Delphinus constellation">الدلفين</string>
+    <string name="dorado" translation_description="Name of the Dorado constellation">السمك الذهبي</string>
+    <string name="equuleus" translation_description="Name of the Equuleus constellation">الحصان الصغير</string>
+    <string name="fornax" translation_description="Name of the Fornax constellation">الفرن</string>
+    <string name="horologium" translation_description="Name of the Horologium constellation">الساعة</string>
+    <string name="hydra" translation_description="Name of the Hydra constellation">الحية</string>
+    <string name="indus" translation_description="Name of the Indus constellation">الهندي</string>
+    <string name="lacerta" translation_description="Name of the Lacerta constellation">السحلية</string>
+    <string name="leo_minor" translation_description="Name of the Leo Minor constellation">الأسد الأصغر</string>
+    <string name="lepus" translation_description="Name of the Lepus constellation">الأرنب</string>
+    <string name="lynx" translation_description="Name of the Lynx constellation">الوشق</string>
+    <string name="mensa" translation_description="Name of the Mensa constellation">الطاولة</string>
+    <string name="microscopium" translation_description="Name of the Microscopium constellation">المجهر</string>
+    <string name="monoceros" translation_description="Name of the Monoceros constellation">وحيد القرن</string>
+    <string name="musca" translation_description="Name of the Musca constellation">الذبابة</string>
+    <string name="norma" translation_description="Name of the Norma constellation">المسطرة</string>
+    <string name="octans" translation_description="Name of the Octans constellation">الثمان</string>
+    <string name="pictor" translation_description="Name of the Pictor constellation">الرسام</string>
+    <string name="pyxis" translation_description="Name of the Pyxis constellation">البوصلة</string>
+    <string name="reticulum" translation_description="Name of the Reticulum constellation">الشبكة</string>
+    <string name="sagitta" translation_description="Name of the Sagitta constellation">السهم</string>
+    <string name="sculptor" translation_description="Name of the Sculptor constellation">النحات</string>
+    <string name="scutum" translation_description="Name of the Scutum constellation">الدرع</string>
+    <string name="serpens_caput" translation_description="Name of the Serpens Caput constellation">رأس الحية</string>
+    <string name="serpens_cauda" translation_description="Name of the Serpens Cauda constellation">ذيل الحية</string>
+    <string name="sextans" translation_description="Name of the Sextans constellation">السدس</string>
+    <string name="telescopium" translation_description="Name of the Telescopium constellation">التلسكوب</string>
+    <string name="triangulum" translation_description="Name of the Triangulum constellation">المثلث</string>
+    <string name="triangulum_australe" translation_description="Name of the Triangulum Australe constellation">المثلث الجنوبي</string>
+    <string name="volans" translation_description="Name of the Volans constellation">الطائر</string>
+    <string name="vulpecula" translation_description="Name of the Vulpecula constellation">الثعلب الصغير</string>
+
     <!-- Major solar system objects -->
     <string name="sun" translation_description="Name of the Sun">الشمس</string>
     <string name="moon" translation_description="Name of the Earth's Moon">القمر</string>
@@ -63,15 +116,28 @@
     <string name="crab_nebula" translation_description="hubble object">سديم السرطان</string>
     <string name="eagle_nebula" translation_description="hubble object">سديم النسر</string>
     <string name="andromeda_galaxy" translation_description="hubble object">مجرة أندروميدا</string>
+    <string name="orion_nebula" translation_description="hubble object">سديم الجبار</string>
     <string name="whirlpool_galaxy" translation_description="hubble object">مجرة الدوامة</string>
     <string name="ring_nebula" translation_description="hubble object">سديم الحلقة</string>
     <string name="pinwheel_galaxy" translation_description="hubble object">مجرة المروحة</string>
     <string name="sombrero_galaxy" translation_description="hubble object">مجرة القبعة المكسيكية</string>
+    <string name="hercules_gc" translation_description="hubble object">مجموعة هرقل الكروية</string>
     <string name="pleiades" translation_description="hubble object">الثريا</string>
+    <string name="cats_eye_nebula" translation_description="hubble object">سديم عين القطة</string>
+    <string name="omega_centauri" translation_description="hubble object">مجموعة أوميجا سنتاوري الكروية</string>
+    <!-- tm:omitted name="v838_mon" reason="identical_to_source" -->
+    <string name="sn1987a" translation_description="hubble object">المستعر الأعظم 1987a</string>
+    <string name="hubble_deep_field" translation_description="hubble object">حقل هابل العميق</string>
+    <string name="hdf" translation_description="hubble object">حقل هابل العميق</string>
+    <!-- tm:omitted name="rho_oph" reason="identical_to_source" -->
+
+
     <!-- Stars -->
     <string name="sirius" translation_description="Name of the Star Sirius">الشعرى</string>
     <string name="canopus" translation_description="Name of the Star Canopus">سهيل</string>
     <string name="arcturus" translation_description="Name of the Star Arcturus">السماك الرامح</string>
+    <!-- tm:omitted name="rigel_kentaurus_a" reason="identical_to_source" -->
+    <!-- tm:omitted name="rigil_kentaurus_a" reason="identical_to_source" -->
     <string name="vega" translation_description="Name of the Star Vega">النسر الواقع</string>
     <string name="rigel" translation_description="Name of the Star Rigel">رجل الجوزاء</string>
     <string name="procyon" translation_description="Name of the Star Procyon">الشعرى الشامية الغميصاء</string>
@@ -132,6 +198,13 @@
     <string name="algenib" translation_description="Name of the Star Algenib">جناح الفرس</string>
     <string name="vindemiatrix" translation_description="Name of the Star Vindemiatrix">مقدم القطاف</string>
     <string name="alcyone" translation_description="Name of the Star Alcyone">السيون</string>
+    <string name="dog_star" translation_description="Name of the Dog Star (Sirius)">نجم الكلب</string>
+    <string name="north_star" translation_description="Name of the North Star">نجم الشمال</string>
+    <string name="pole_star" translation_description="Name of the (North) Pole Star">نجم القطب</string>
+    <!-- tm:omitted name="alpha_centauri" reason="identical_to_source" -->
+    <!-- tm:omitted name="rigil_kent" reason="identical_to_source" -->
+    <!-- tm:omitted name="e_lyrae" reason="identical_to_source" -->
+
     <!-- Messier objects etc -->
     <string name="m1" translation_description="Name of the Messier object M1">م١</string>
     <string name="m2" translation_description="Name of the Messier object M2">م٢</string>
@@ -243,8 +316,26 @@
     <string name="m108" translation_description="Name of the Messier object M108">م١٠٨</string>
     <string name="m109" translation_description="Name of the Messier object M109">م١٠٩</string>
     <string name="m110" translation_description="Name of the Messier object M110">م١١٠</string>
+    <!-- tm:omitted name="ngc6543" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc5139" reason="identical_to_source" -->
+    <!-- tm:omitted name="t_crb" reason="identical_to_source" -->
+    <string name="blaze_star" translation_description="Nickname for the recurrent nova T Coronae Borealis">نجم اللهب</string>
+    <!-- tm:omitted name="t_coronae_borealis" reason="identical_to_source" -->
+    <string name="eta_carinae_nebula" translation_description="Name of the Eta Carinae Nebula (NGC 3372)">سديم إيتا كارينا</string>
+    <string name="carina_nebula" translation_description="Common name for the Eta Carinae Nebula">سديم كارينا</string>
+    <!-- tm:omitted name="ngc3372" reason="identical_to_source" -->
+    <string name="tarantula_nebula" translation_description="Name of the Tarantula Nebula (NGC 2070) in the Large Magellanic Cloud">سديم العنكبوت</string>
+    <!-- tm:omitted name="n30_doradus" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc2070" reason="identical_to_source" -->
+    <!-- tm:omitted name="lmc" reason="identical_to_source" -->
+    <string name="large_magellanic_cloud" translation_description="Full name of the Large Magellanic Cloud galaxy">السحابة الماجلانية الكبرى</string>
+    <!-- tm:omitted name="nubecula_major" reason="identical_to_source" -->
+    <!-- tm:omitted name="smc" reason="identical_to_source" -->
+    <string name="small_magellanic_cloud" translation_description="Full name of the Small Magellanic Cloud galaxy">السحابة الماجلانية الصغرى</string>
+    <string name="nubecula_minor" translation_description="Latin name for the Small Magellanic Cloud">السحابة الصغيرة</string>
     <string name="butterfly_cluster" translation_description="Name of the Messier object Butterfly Cluster">حشد الفراشة</string>
     <string name="scorpions_tail" translation_description="Name of the Messier object Scorpion\'s Tail">ذيل العقرب</string>
+    <!-- tm:omitted name="winnecke_4" reason="identical_to_source" -->
     <string name="beehive_cluster" translation_description="Name of the Messier object Beehive Cluster">حشد خلية النحل</string>
     <string name="praesepe" translation_description="Name of the Messier object Praesepe">النثرة</string>
     <string name="seven_sisters" translation_description="Name of the Messier object Seven Sisters">سبع بنات صغيرات</string>
@@ -253,4 +344,22 @@
     <string name="space_station" translation_description="Name of the Internation Space Station">محطة الفضاء الدولية</string>
     <string name="space_shuttle" translation_description="Name of the Space Shuttle">مكوك فضائي</string>
 
-    </resources>
+    <!-- Meteors -->
+    <string name="leonids" translation_description="Meteor Shower">الليونيات</string>
+    <string name="geminids" translation_description="Meteor Shower">التوأميات</string>
+    <string name="quadrantids" translation_description="Meteor Shower">الرباعيات</string>
+    <string name="lyrids" translation_description="Meteor Shower">الليريات</string>
+    <string name="aquariids" translation_description="Meteor Shower">إيتا الدلويات</string>
+    <string name="deltaaquariids" translation_description="Meteor Shower">دلتا الدلويات</string>
+    <string name="perseids" translation_description="Meteor Shower">الفرسيات</string>
+    <string name="orionids" translation_description="Meteor Shower">الأوريونيات</string>
+    <string name="puppidvelids" translation_description="Meteor Shower">بوبيد-فيليدز</string>
+    <string name="ursids" translation_description="Meteor Shower">الدبيات</string>
+
+    <!-- Comets -->
+    <string name="comet_leonard" translation_description="Name of Comet Leonard (C/2021 A1) as shown on the sky map">مذنب ليونارد</string>
+    <!-- TODO: no need for these alt names once our search is less lousy -->
+    <string name="comet_leonard_alt" translation_description="Alternate searchable name for Comet Leonard, surname first">ليونارد (مذنب)</string>
+    <string name="comet_neowise" translation_description="Name of Comet NEOWISE (C/2020 F3) as shown on the sky map">مذنب نيوويز</string>
+    <string name="comet_neowise_alt" translation_description="Alternate searchable name for Comet NEOWISE, surname first">نيوويز (مذنب)</string>
+</resources>
