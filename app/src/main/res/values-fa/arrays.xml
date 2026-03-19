@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string-array name="sensor_speed">
+        <item translation_description="Slow sensor speed">آهسته</item>
+        <item translation_description="Normal sensor speed">متوسط</item>
+        <item translation_description="Fast sensor speed">سریع</item>
+    </string-array>
+    <string-array name="sensor_damping">
+        <item translation_description="Low sensor damping factor - this will make the app jittery">لرزان</item>
+        <item translation_description="Medium sensor damping factor - this will make the app slightly jittery">متوسط</item>
+        <item translation_description="Extra High sensor damping factor">تقریباً درست</item>
+        <item translation_description="Really High sensor damping factor - this will make the app sluggish">کند</item>
+    </string-array>
+    <string-array name="viewing_direction">
+        <item translation_description="Normal viewing">عادی</item>
+        <item translation_description="Rotates the screen by 90 degrees">افق چرخیده</item>
+        <item translation_description="Shows the sky as pointed at by the long edge of the phone">حالت اشاره‌گر</item>
+    </string-array>
+    <string-array name="auto_dim_texts">
+        <item translation_description="Dimmest screen setting">بسیار تاریک</item>
+        <item translation_description="Leave it on the system setting">تنظیم سیستم</item>
+        <item translation_description="The setting used for the last 15 years">کلاسیک</item>
+    </string-array>
+    <string-array name="font_size_texts">
+        <item translation_description="Smallest font size">کوچک</item>
+        <item translation_description="Normal font size">متوسط</item>
+        <item translation_description="Large font size">بزرگ</item>
+        <item translation_description="Largest font size">بسیار بزرگ</item>
+    </string-array>
+</resources>
