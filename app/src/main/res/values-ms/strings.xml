@@ -1,0 +1,250 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Please add  translation_description="" attributes to Strings to assist the translators. --><resources>
+    <!-- tm:omitted name="app_name" reason="identical_to_source" -->
+    <string name="menu_settings" translation_description="Settings menu item in the options menu">Tetapan</string>
+    <string name="menu_search" translation_description="Search menu item in the options menu">Cari</string>
+    <string name="cancel" translation_description="Generic cancel button label used in dialogs">Batal</string>
+    <string name="set" translation_description="Button label. Set the date to the given value">Tetapkan</string>
+    <string name="go" translation_description="Button to start navigating the sky map toward a searched object">Pergi!</string>
+    <string name="start_from_now" translation_description="Button in the time travel dialog to start time travelling from the current time">Mulai dari Sekarang</string>
+    <string name="other_prefs" translation_description="Preferences category heading for miscellaneous settings">Lain-lain</string>
+    <string name="location_prefs" translation_description="Preferences category heading for location-related settings">Tetapan Lokasi</string>
+    <string name="controls_prefs" translation_description="Preferences category heading for touch control settings">Kawalan</string>
+    <string name="force_gps_pref" translation_description="Preference label: force GPS use even when network location is available">Sentiasa gunakan GPS</string>
+    <string name="force_gps_pref_hint" translation_description="this string continues from \'Always use GPS\'">jika didayakan, walaupun lokasi rangkaian tersedia</string>
+    <string name="no_use_gps_pref" translation_description="Preference label: choose to enter location by hand instead of using GPS or phone location">Tetapkan lokasi secara manual</string>
+    <string name="no_use_gps_pref_hint" translation_description="Hint text beneath the \'Set location manually\' preference">Masukkan tempat atau lat/panjang di bawah</string>
+    <string name="location_placename" translation_description="Label for the place-name text field in manual location settings">Nama tempat</string>
+    <string name="location_placename_hint" translation_description="An example address.  Translators: please pick an address suitable for your country.  If it has an astronomical connection (e.g. the address of an observatory or famous astronomer) then that would be even better.">cth. 1400 West Mars Hill Road, Flagstaff, AZ.</string>
+    <string name="location_lat_pref" translation_description="Label for the latitude input field in manual location settings">Latitud</string>
+    <string name="location_long_pref" translation_description="Label for the longitude input field in manual location settings">Longitud</string>
+    <string name="degrees" translation_description="angular degrees - used for latitude and longitude">Darjah</string>
+    <!-- tm:omitted name="preferences" reason="identical_to_source" -->
+    <string name="location_offer_to_enable" translation_description="Dialog message asking whether to enable automatic location">Lokasi auto dilumpuhkan. Adakah anda ingin mengaktifkannya?</string>
+    <string name="location_offer_to_enable_gps_title" translation_description="Title of dialog shown when automatic location is disabled">Lokasi auto dilumpuhkan</string>
+    <string name="location_permission_dialog_title" translation_description="Title of the dialog that requests location permission from the user">Lokasi Diperlukan</string>
+    <string name="location_permission_dialog_message" translation_description="Body text of the dialog requesting location permission, explaining why the app needs it and what happens without it">
+    Sky Map memerlukan lokasi anggaran Anda untuk menunjukkan langit malam yang benar. Anda dapat memberikan izin, memasukkan lokasi Anda secara manual, atau memutuskan nanti. Jika Anda memutuskan nanti, peta tidak akan akurat sampai lokasi Anda telah ditetapkan.
+    </string>
+    <string name="location_permission_grant" translation_description="Button in the location permission dialog to grant location access">Berikan Kebenaran</string>
+    <string name="location_permission_enter_manually" translation_description="Button in the location permission dialog to enter location by hand instead of granting permission">Masukkan Secara Manual</string>
+    <string name="location_permission_later" translation_description="Button in the location permission dialog to defer the decision">Kemudian</string>
+    <string name="location_warning_permission" translation_description="Warning message shown when location is unavailable because permission was not granted">Lokasi tidak tersedia — kebenaran tidak diberikan.</string>
+    <string name="location_warning_manual" translation_description="Warning message shown when manual location mode is selected but no coordinates have been entered">Lokasi tidak ditetapkan — sila konfigurasi dalam Tetapan.</string>
+<!-- TODO: many translations require two placeholders. Once all translations brought up to date we can clean this up -->
+    <string name="location_set_auto" translation_description="Toast message when automatic location is acquired. %1$s is the provider name (e.g. GPS), %2$s is the place name or coordinates">Lokasi ditetapkan ke %2$s</string>
+    <string name="location_unable_to_geocode" translation_description="Error message when converting a place name to coordinates (geocoding) fails, possibly due to no network">Tidak dapat menyahkan lokasi anda - mungkin rangkaian anda tidak tersedia?</string>
+    <string name="location_not_found_title" translation_description="dialog box title when location not found">Maaf</string>
+    <string name="location_not_found" translation_description="dialog message when placename not found">%s tidak ditemukan.</string>
+    <string name="location_long_lat" translation_description="Formatted display of longitude and latitude. %1$.2f is longitude, %2$.2f is latitude">Longitud:%1$.2f, Latitud:%2$.2f</string>
+    <string name="location_place_found" translation_description="Status message when a place name was successfully looked up. %1$f is latitude, %2$f is longitude">Tempat ditemukan. Menetapkan latitud %1$f dan longitud %2$f</string>
+    <string name="use_magnetic_correction" translation_description="Preference label: apply magnetic declination correction so the compass points to true north instead of magnetic north">Gunakan pembetulan magnetik</string>
+    <string name="manual_compass_adjustment_title" translation_description="Preference title: lets the user add a manual degree offset to the compass reading">Pelarasan kompas tambahan</string>
+    <string name="manual_compass_adjustment_summary" translation_description="Summary for the manual compass adjustment preference">Offset tambahan dalam darjah (+ atau −) ditambahkan pada bacaan kompas</string>
+    <string name="show_stars_pref" translation_description="Label for the stars layer on the sky map (shows in the search results)">Bintang</string>
+    <string name="show_constellations_pref" translation_description="Label for the constellation lines and labels layer (shows in the search results)">Konstelasi</string>
+    <string name="show_messier_objects_pref" translation_description="The celestial objects catalogued by Charles Messier (shows in the search results)">Objek Messier</string>
+    <string name="show_planets_pref" translation_description="Label for the solar system layer (planets, sun, moon)  (shows in the search results)">Sistem Suria</string>
+    <string name="show_grid_pref" translation_description="Label for the Right Ascension / Declination grid overlay  (shows in the search results)">Grid RA/Dek</string>
+    <string name="show_horizon_pref" translation_description="Preference toggle label for the horizon line layer">Ufuk</string>
+    <string name="show_sky_gradient" translation_description="This is a shading of the color of the sky used for effect">Kecerunan Langit</string>
+    <string name="show_meteors_pref" translation_description="Label for the meteor shower layer (shows in the search results)">Hujan Meteor</string>
+    <string name="show_comet_layer_pref" translation_description="Preference toggle label for the comets layer">Komet</string>
+    <string name="show_satellite_layer_pref" translation_description="The layer for satellites">Satelit</string>
+    <string name="sensor_prefs" translation_description="Preferences category heading for sensor settings, intended for advanced/expert users">Tetapan Sensor (pakar)</string>
+    <string name="sensor_speed" translation_description="Old, non gyro sensors only: How quickly the sensor should send us data">Kecepatan Sensor</string>
+    <string name="sensor_damping" translation_description="Old, non gyro sensors only: The amount of smoothing applied to the sensor outputs.">Pelembapan</string>
+    <string name="appearance_prefs" translation_description="Preferences title for section about app appearance">Penampilan</string>
+    <string name="auto_dimness_preference" translation_description="Mode for automatically dimming the screen when night mode is selected">Pengurangan kecerahan layar otomatis</string>
+    <string name="font_size_preference" translation_description="Change the font size">Ukuran font</string>
+    <string name="font_size_preference_description" translation_description="help to go along with the change font size preference">Sesuaikan ukuran teks label</string>
+    <string name="ecliptic" translation_description="Label for the ecliptic layer — the apparent annual path of the Sun across the sky">Ekliptika</string>
+    <string name="malformed_loc_error" translation_description="Error message when a non-numeric value is entered for latitude or longitude">Pengaturan lintang atau bujur bukan angka.</string>
+    <string name="dialog_accept" translation_description="accepting the licence agreement">Terima</string>
+    <string name="dialog_decline" translation_description="declining the licence agreement">Tidak, Terima Kasih</string>
+    <!-- tm:omitted name="dialog_ok_button" reason="identical_to_source" -->
+    <string name="menu_credits" translation_description="menu item to show \'Credits\' box">Kredit</string>
+    <string name="credits_dialog_title" translation_description="Title of the credits dialog showing acknowledgements and contributors">Kredit</string>
+    <string name="menu_help" translation_description="menu item to show \'Help\' box">Bantuan</string>
+    <string name="help_dialog_title" translation_description="Title of the help dialog">Bantuan untuk Sky Map</string>
+    <string name="set_manual" translation_description="Toast message shown when the user switches to manual (touch-drag) mode">Beralih ke mode manual</string>
+    <string name="set_auto" translation_description="Toast message shown when the user switches to automatic (sensor/gyroscope) mode">Beralih ke mod automatik</string>
+    <string name="menu_toggle_dim" translation_description="Menu item to toggle night mode (red tint that preserves night vision)">Togol mod malam</string>
+    <string name="zenith" translation_description="Label for the zenith point (directly overhead) shown on the sky map. Displayed in capitals.">ZENIT</string>
+    <!-- tm:omitted name="nadir" reason="identical_to_source" -->
+    <string name="north" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">UTARA</string>
+    <string name="east" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">TIMUR</string>
+    <string name="west" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">BARAT</string>
+    <string name="south" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">SELATAN</string>
+    <string name="search_label" translation_description="Hint/label for the search bar in the search activity">Cari Langit</string>
+    <string name="search_hint" translation_description="an example search target">cth. Marikh</string>
+    <string name="no_search_title" translation_description="Dialog title shown when a sky search returns no results">Tiada hasil</string>
+    <!-- Hopefully this is a temporary measure until we can fix the search engine -->
+    <string name="no_search_results_text2" translation_description="Alternative message shown when a search returns no results, suggesting the object may not currently be visible">Tiada hasil ditemui. Mungkin objek tidak kelihatan pada masa ini.</string>
+    <string name="many_search_results_title" translation_description="Dialog title shown when a search returns multiple possible matches">Adakah anda maksudkan?</string>
+    <string name="other" translation_description="A preference category (ie preferences that don't belong in any other category)">Lain-lain</string>
+    <string name="show_messier_images" translation_description="Preference toggle label for showing galaxy/nebula icons for Messier objects">Tunjukkan Imej Messier</string>
+    <string name="show_messier_images_summary" translation_description="Summary description for the Show Messier Images preference">Paparkan objek Messier sebagai ikon galaksi dan bukannya titik</string>
+    <string name="menu_time" translation_description="Menu item label to open the time travel feature">Perjalanan Masa</string>
+    <string name="time_travel_start_message_alt" translation_description="Toast message when time travel starts toward a named destination. %s is the event or destination name">Melancong melalui masa ke %s ...</string>
+    <string name="time_travel_close_message" translation_description="Toast message shown when the user exits time travel and returns to the present">Kembali ke masa kini ...</string>
+    <!--  -->
+    <string name="popular_dates_prompt" translation_description="Label for a list of dates the user can choose from">Tarikh popular</string>
+    <string name="custom_date_prompt" translation_description="Label telling the user to manually specify a date">Atau pilih tarikh dan masa anda sendiri:</string>
+    <string name="change_date_prompt" translation_description="Button label to open the date picker in the time travel dialog">Ubah tarikh</string>
+    <string name="change_time_prompt" translation_description="Button label to open the time picker in the time travel dialog">Ubah masa</string>
+    <string name="now_visiting" translation_description="used in time travel dialog to show the destination date/time the user has selected, time formatted as yyyy.mm.dd at hh.mm.ss + timezone">Destinasi: %s</string>
+    <string name="time_travel_label_past" translation_description="Label showing that we are in the past">Perjalanan Masa: Masa Lalu</string>
+    <string name="time_travel_label_future" translation_description="Label showing that we are in the future">Perjalanan Masa: Masa Depan</string>
+    <string name="time_travel_stopped" translation_description="Label showing rate of travel through time">Perjalanan masa beku</string>
+    <string name="time_travel_second_speed" translation_description="Label showing rate of travel through time.  The symbol means greater than.">Perjalanan &gt; @ 1 saat/saat</string>
+    <string name="time_travel_minute_speed" translation_description="Label showing rate of travel through time">Perjalanan &gt; @ 1 min/saat</string>
+    <string name="time_travel_10minute_speed" translation_description="Label showing rate of travel through time">Perjalanan &gt; @ 10 min/saat</string>
+    <string name="time_travel_hour_speed" translation_description="Label showing rate of travel through time">Perjalanan &gt; @ 1 jam/saat</string>
+    <string name="time_travel_day_speed" translation_description="Label showing rate of travel through time">Perjalanan &gt; @ 1 hari/saat</string>
+    <string name="time_travel_week_speed" translation_description="Label showing rate of travel through time">Perjalanan &gt; @ 1 minggu/saat</string>
+    <string name="time_travel_second_speed_back" translation_description="Label showing rate of travel through time">Perjalanan &lt; @ 1 saat/saat</string>
+    <string name="time_travel_minute_speed_back" translation_description="Label showing rate of travel through time">Perjalanan &lt; @ 1 min/saat</string>
+    <string name="time_travel_10minute_speed_back" translation_description="Label showing rate of travel through time">Perjalanan &lt; @ 10 min/saat</string>
+    <string name="time_travel_hour_speed_back" translation_description="Label showing rate of travel through time">Perjalanan &lt; @ 1 jam/saat</string>
+    <string name="time_travel_day_speed_back" translation_description="Label showing rate of travel through time">Perjalanan &lt; @ 1 hari/saat</string>
+    <string name="time_travel_week_speed_back" translation_description="Label showing rate of travel through time">Perjalanan &lt; @ 1 minggu/saat</string>
+
+    <!-- Time Travel dialog event display names -->
+    <string name="time_travel_select_hint" translation_description="Placeholder hint text for the dropdown list of popular astronomical events in the time travel dialog">-- Pilih acara popular --</string>
+    <string name="time_travel_next_sunset" translation_description="Name of a popular astronomical event in the time travel picker">Matahari terbenam petang seterusnya</string>
+    <string name="time_travel_next_sunrise" translation_description="Name of a popular astronomical event in the time travel picker">Matahari terbit pagi seterusnya</string>
+    <string name="time_travel_next_fullmoon" translation_description="Name of a popular astronomical event in the time travel picker">Bulan purnama seterusnya</string>
+    <string name="time_travel_next_newmoon" translation_description="Name of a popular astronomical event in the time travel picker">Bulan baru seterusnya</string>
+    <string name="time_travel_mercury_transit_2016" translation_description="Name of an astronomical event in the time travel picker. A Mercury transit is when Mercury passes across the face of the Sun as seen from Earth. Keep the date format suitable for your locale.">Transit Merkuri 09 Mei 2016</string>
+    <string name="time_travel_solar_eclipse_2024" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">Gerhana Matahari Amerika Utara 8 Apr 2024</string>
+    <string name="time_travel_apollo_11" translation_description="Name of an astronomical event in the time travel picker: the first crewed Moon landing in 1969">Pendaratan Bulan Apollo 11</string>
+    <string name="time_travel_jupiter_saturn_2020" translation_description="Name of an astronomical event in the time travel picker. A conjunction is when two planets appear very close together in the sky.">Konjungsi Jupiter-Saturnus 2020</string>
+    <string name="time_travel_six_planet_parade_2026" translation_description="Name of an astronomical event in the time travel picker. A planet parade is when several planets are visible at once. Keep the date format suitable for your locale.">Parade Enam Planet, 28 Feb 2026</string>
+    <string name="time_travel_lunar_eclipse_2026" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">Gerhana Bulan Total, 3 Mar 2026</string>
+    <string name="time_travel_lyrids_2026" translation_description="Name of an astronomical event in the time travel picker. The Lyrids are an annual meteor shower. Keep the date format suitable for your locale.">Hujan Meteor Lyrids, 22 Apr 2026</string>
+    <string name="time_travel_venus_jupiter_2026" translation_description="Name of an astronomical event in the time travel picker. A conjunction is when two planets appear very close together in the sky. Keep the date format suitable for your locale.">Konjungsi Venus-Jupiter, 9 Jun 2026</string>
+    <string name="time_travel_mars_uranus_2026" translation_description="Name of an astronomical event in the time travel picker. A close approach is when two objects appear near each other in the sky. Keep the date format suitable for your locale.">Pendekatan Dekat Mars-Uranus, 4 Jul 2026</string>
+    <string name="time_travel_solar_eclipse_2026" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">Gerhana Matahari Total, 12 Agu 2026</string>
+    <string name="time_travel_perseids_2026" translation_description="Name of an astronomical event in the time travel picker. The Perseids are an annual meteor shower. Keep the date format suitable for your locale.">Hujan Meteor Perseids, 12-13 Agu 2026</string>
+    <string name="time_travel_jupiter_occultation_2026" translation_description="Name of an astronomical event in the time travel picker. A lunar occultation is when the Moon passes in front of a planet, briefly hiding it. Keep the date format suitable for your locale.">Okultasi Bulan Jupiter, 6 Okt 2026</string>
+    <string name="time_travel_geminids_2026" translation_description="Name of an astronomical event in the time travel picker. The Geminids are an annual meteor shower. Keep the date format suitable for your locale.">Hujan Meteor Geminids, 13-14 Des 2026</string>
+    <string name="time_travel_supermoon_2026" translation_description="Name of an astronomical event in the time travel picker. A supermoon is a full moon that occurs near the Moon\'s closest approach to Earth. Keep the date format suitable for your locale.">Supermoon Malam Natal, 24 Des 2026</string>
+
+    <string name="use_sound_effects" translation_description="A preferences menu label for enabling sound effects">Aktifkan suara</string>
+
+    <string name="menu_gallery" translation_description="Menu item label to open the image gallery">Galeri</string>
+    <string name="gallery_image_search_btn" translation_description="Button in the gallery to locate the displayed object on the sky map">Cari di langit</string>
+    <string name="gallery_image_back_btn" translation_description="Button to return to the gallery from a single image view">Kembali ke galeri</string>
+    <string name="hubble_image_gallery_title" translation_description="Title of the image gallery screen">Galeri Sky Map</string>
+    <string name="hubble_image" translation_description="Label or caption for a Hubble Space Telescope image in the gallery">Imej Hubble</string>
+    <string name="search_overlay_title" translation_description="title for search overlay">Arahkan telefon anda ke arah anak panah</string>
+    <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">Mencari:</string>
+    <string name="sun_wont_set_message" translation_description="Message shown when the sun will not set during the next 24 hours (polar day / midnight sun)">Matahari tidak akan terbenam dalam 24 jam ke depan di lokasi semasa anda.</string>
+
+    <!-- tm:omitted name="missing_label" reason="identical_to_source" -->
+
+    <string name="menu_tos" translation_description="Menu item label to view the Terms of Service">Syarat Perkhidmatan</string>
+    <string name="menu_diagnostics" translation_description="Menu item label to open the technical diagnostics screen">Diagnostik</string>
+
+    <string name="north_pole" translation_description="Short abbreviation for the North Celestial Pole, displayed as a label on the sky map grid. Translators: use the standard abbreviation in your language (e.g. NP in English, PN in French).">KU</string>
+    <string name="south_pole" translation_description="Short abbreviation for the South Celestial Pole, displayed as a label on the sky map grid. Translators: use the standard abbreviation in your language (e.g. SP in English, PS in French).">KS</string>
+
+    <string name="enable_analytics" translation_description="Preference label to opt in to sending anonymous usage statistics">Hantar statistik penggunaan</string>
+    <string name="enable_analytics_desc" translation_description="Description/summary for the usage statistics preference">Tingkatkan Sky Map dengan menghantar data tanpa nama kepada Google Analytics</string>
+
+    <string name="no_sensor_warning" translation_description="Warning shown when required orientation sensors are not detected on the device">
+    Peranti anda mungkin tidak mempunyai sensor orientasi - mod auto mungkin tidak berfungsi
+    </string>
+    <string name="warning_dialog_title" translation_description="Title of a warning dialog shown when something is wrong, e.g. a missing sensor">Berita buruk!</string>
+    <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">
+    Sayangnya peranti anda mungkin tidak mempunyai salah satu sensor yang diperlukan oleh Sky Map.
+
+Untuk menunjukkan langit dalam arah yang ditunjuk oleh telefon anda, Sky Map memerlukan kedua-dua kompas terbina dan akselerometer. Peranti anda melaporkan bahawa ia tidak mempunyai salah satu daripadanya. Berita baiknya ialah beberapa peranti (contohnya beberapa telefon Moto E) secara palsu mendakwa tidak mempunyai kompas tetapi sebenarnya ada.
+
+Jika peranti anda benar-benar tidak mempunyai sensor, maka mod auto tidak akan berfungsi. Walau bagaimanapun, anda masih boleh menggunakan Sky Map pada peranti ini dalam mod manual di mana anda menyeret, memutar dan meregangkan peta dengan jari anda.
+    </string>
+    <string name="do_not_show_again" translation_description="Checkbox or button label to suppress future display of a warning dialog">Jangan tunjukkan mesej ini lagi</string>
+    <string name="title_activity_diagnostic" translation_description="Title bar text for the Diagnostics activity/screen">Diagnostik</string>
+    <string name="play_services_error" translation_description="Warning shown in the diagnostics screen when Google Play Services has an error that may affect automatic location">Amaran: Ralat Google Play Services - Lokasi automatik mungkin tidak berfungsi</string>
+    <string name="sensor_absent" translation_description="Sensor status shown in diagnostics when the sensor is not present on the device">Tidak ada</string>
+    <string name="sensor_accuracy_unknown" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">Ketepatan: Tidak diketahui</string>
+    <string name="sensor_accuracy_unreliable" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">Ketepatan: Tidak boleh dipercayai</string>
+    <string name="sensor_accuracy_low" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">Ketepatan: Rendah</string>
+    <string name="sensor_accuracy_medium" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">Ketepatan: Sederhana</string>
+    <string name="sensor_accuracy_high" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">Ketepatan: Tinggi</string>
+    <string name="sensor_accuracy_nocontact" translation_description="Sensor accuracy level shown when the sensor has no contact (e.g. heart-rate sensor lifted from skin) — unlikely to appear in Sky Map but included for completeness">Ketepatan: Tiada sentuhan</string>
+    <string name="diagnostics_activity_general_heading" translation_description="Section heading in the Diagnostics screen for general device information">Umum</string>
+    <string name="diagnostics_activity_phone" translation_description="Row label in the Diagnostics screen for the device model name">Peranti</string>
+    <string name="diagnostics_activity_android_version" translation_description="Row label in the Diagnostics screen for the Android OS version">Versi Android</string>
+    <string name="diagnostics_activity_sky_map_version" translation_description="Row label in the Diagnostics screen for the Sky Map app version">Versi Sky Map</string>
+    <string name="diagnostics_activity_sensors_heading" translation_description="Section heading in the Diagnostics screen for sensor readings">Sensor</string>
+    <string name="diagnostics_activity_compass" translation_description="Row label in the Diagnostics screen for the compass (magnetic field) sensor">Kompas</string>
+    <!-- tm:omitted name="diagnostics_activity_accelerometer" reason="identical_to_source" -->
+    <string name="diagnostics_activity_rotation_vector" translation_description="Row label in the Diagnostics screen for the rotation vector (combined orientation) sensor">Putaran</string>
+    <string name="diagnostics_activity_gyroscope" translation_description="Row label in the Diagnostics screen for the gyroscope sensor">Giroskop</string>
+    <string name="diagnostics_activity_light_level" translation_description="Row label in the Diagnostics screen for the ambient light sensor reading">Tahap cahaya</string>
+    <string name="diagnostics_activity_location_and_time_heading" translation_description="Section heading in the Diagnostics screen for location and time information">Lokasi dan Masa</string>
+    <string name="diagnostics_activity_location_permission" translation_description="Row label in the Diagnostics screen showing whether location permission has been granted">Kebenaran Lokasi</string>
+    <string name="diagnostics_activity_location_permission_granted" translation_description="Status value shown when location permission has been granted">Diberikan</string>
+    <string name="diagnostics_activity_location_permission_denied" translation_description="Status value shown when location permission has been denied">Ditolak</string>
+    <!-- tm:omitted name="diagnostics_activity_gps" reason="identical_to_source" -->
+    <string name="diagnostics_activity_location" translation_description="Row label in the Diagnostics screen showing the current latitude and longitude">Lokasi (lat, long)</string>
+    <string name="diagnostics_activity_pointing_ra_dec" translation_description="Row label in the Diagnostics screen showing a snapshot of where the phone is currently pointing in the sky (Right Ascension and Declination)">Tangkapan arah</string>
+    <string name="diagnostics_activity_magnetic_correction" translation_description="Row label in the Diagnostics screen showing whether magnetic declination correction is applied">Pembetulan mag</string>
+    <string name="diagnostics_activity_local_datetime" translation_description="Row label in the Diagnostics screen for the local date and time">Tarikh dan masa tempatan</string>
+    <string name="diagnostics_activity_universal_time" translation_description="Row label in the Diagnostics screen for the UTC/universal date and time">Tarikh dan masa sejagat</string>
+    <string name="diagnostics_activity_network_heading" translation_description="Section heading in the Diagnostics screen for network connectivity information">Rangkaian</string>
+    <string name="diagnostics_activity_connection" translation_description="Row label in the Diagnostics screen for the current network connection status">Sambungan</string>
+    <string name="diagnostics_activity_rotation_matrix" translation_description="Row label in the Diagnostics screen showing the raw device rotation matrix used for orientation">Matriks Putaran</string>
+    <string name="enabled" translation_description="Generic status value meaning a feature or sensor is enabled/active">Didayakan</string>
+    <string name="disabled" translation_description="Generic status value meaning a feature or sensor is disabled/inactive">Dilumpuhkan</string>
+    <string name="permission_disabled" translation_description="Status value shown when a feature is unavailable because its permission was not granted">Kebenaran dilumpuhkan</string>
+    <string name="no_gps" translation_description="Status value shown in diagnostics when no GPS provider is available">Tiada GPS</string>
+    <string name="connected" translation_description="Network status value shown when the device has an active network connection">Bersambung</string>
+    <string name="disconnected" translation_description="Network status value shown when the device has no network connection">Terputus</string>
+    <string name="wifi" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (wifi)\'). Note the leading space.">(wifi)</string>
+    <string name="cell_network" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (cell)\'). Note the leading space.">(sel)</string>
+    <string name="menu_calibrate" translation_description="Menu item label to open the compass calibration screen">Kalibrasi</string>
+    <string name="compass_calibration_activity_heading_compass" translation_description="Static label in the compass calibration screen placed inline to the left of the live compass accuracy value (e.g. displayed as \'Compass - Accuracy: High\')">Kompas -</string>
+    <string name="compass_calibration_activity_do_not_show_this_again" translation_description="Checkbox label in the compass calibration dialog to suppress future automatic appearances">Jangan tunjukkan lagi</string>
+    <string name="compass_calibration_activity_warning" translation_description="Heading/reason text shown in the compass calibration dialog when it opens automatically due to low accuracy">Kalibrasi Perkakasan Diperlukan</string>
+    <string name="compass_calibration_activity_user_heading" translation_description="Heading shown in the compass calibration dialog when the user opens it manually from the menu">Tingkatkan Penjajaran Anda</string>
+    <string name="compass_calib_what_to_do" translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL"><![CDATA[Sky Map bergantung pada sensor kompas bawaan telefon anda. Jika ketepatan yang ditunjukkan di atas rendah, sensor perlu "direset" dengan menggerakkan telefon dalam gerakan angka-8: %s.<br/><br/>
+<b>Penting:</b> Penentukuran adalah proses perkakasan yang ditangani oleh peranti anda. Walaupun ia meningkatkan keandalan sensor, gangguan magnet luaran masih boleh menyebabkan "bias" atau hanyutan kecil. Ini adalah batasan fizikal kompas mudah alih dan bukan ralat dalam aplikasi. Lihat <i>Penyelesaian Masalah</i> dalam <i>Bantuan</i> untuk perkara lain yang boleh dicuba.]]></string>
+    <string name="compass_calib_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[Telefon anda melaporkan ketepatan kompas seperti yang ditunjukkan di atas. Untuk meningkatkannya, sila lakukan gerakan angka-8 dengan peranti anda (%s).<br/><br/>
+<b>Nota tentang Ketepatan:</b> Penentukuran adalah keperluan peringkat perkakasan telefon anda, bukan tetapan Sky Map. Walaupun sudah ditentukur, medan magnet tempatan (seperti papan pemuka kereta atau magnet) mungkin menyebabkan bias kecil dalam arah. Lihat <i>Penyelesaian Masalah</i> dalam <i>Bantuan</i> untuk perkara lain yang boleh dicuba.]]></string>
+    <string name="sensor_reverse_preference_title" translation_description="Preference title for reversing the magnetic Z-axis sensor reading, a fix for certain phones with incorrectly implemented sensors">Balikkan Magnet Z</string>
+    <string name="sensor_reverse_preference_summary" translation_description="Summary for the Reverse Magnetic Z preference">
+    Pembaikan untuk telefon dengan sensor yang dilaksanakan secara tidak betul - memerlukan permulaan semula
+    </string>
+    <string name="whats_new_dialog_title" translation_description="Title of the dialog shown on first launch after an update, listing new features">Apa yang baru</string>
+    <string name="disable_gyro_preference_title" translation_description="Preference title for disabling the gyroscope sensor">Nyahdayakan giroskop</string>
+    <string name="disable_gyro_preference_summary" translation_description="Explanation of the disable gyroscope preference and when to use it">
+    Bukan semua peranti mempunyai giroskop - jika peranti anda mempunyainya maka anda akan mendapatkan hasil yang lebih baik dengan ia diaktifkan dan kotak ini tidak ditandai. Sebaliknya jika peranti anda tidak mempunyai giroskop maka Sky Map mungkin tidak akan berfungsi jika anda tidak menandai kotak ini.
+    </string>
+    <string name="rotate_horizon_preference_title" translation_description="Preference title for choosing the view/pointing direction mode">Arah pandangan</string>
+    <string name="auto_level_horizon_preference_title" translation_description="Preference title for the auto-level horizon feature in manual mode">Ufuk peringkat automatik</string>
+    <string name="auto_level_horizon_preference_summary" translation_description="Summary for the auto-level horizon preference">
+    Dalam mod manual, ufuk secara beransur-ansur kembali ke mendatar selepas anda mengangkat jari anda
+    </string>
+
+    <string name="rotate_horizon_preference_summary" translation_description="Explanation of the view direction preference, covering both landscape rotation and pointer modes">
+    Putar ufuk sebesar 90 darjah (untuk peranti dengan landskap paksa) atau gunakan mod penunjuk untuk skrin menunjukkan apa yang bahagian atas telefon menunjuk (lihat teks bantuan).
+    </string>
+
+    <string name="show_object_info_pref_title" translation_description="Preference title for showing info cards when tapping objects">Tunjukkan maklumat semasa mengetik</string>
+    <string name="show_object_info_pref_summary" translation_description="Preference summary for the tap info feature">Ketik objek cakerawala untuk mengetahui tentang mereka</string>
+    <string name="show_object_info_auto_mode_title" translation_description="Preference title for enabling info cards in auto/sensor mode">Kad maklumat dalam mod automatik</string>
+    <string name="show_object_info_auto_mode_summary" translation_description="Preference summary for auto mode info cards">Juga tunjukkan kad maklumat semasa mengetik objek dalam mod automatik (sensor)</string>
+    <string name="object_info_funfact_label" translation_description="Label before the fun fact in info card">Fakta menarik:</string>
+    <string name="object_info_distance_label" translation_description="Label for distance field">Jarak:</string>
+    <string name="object_info_size_label" translation_description="Label for size field">Saiz:</string>
+    <string name="object_info_mass_label" translation_description="Label for mass field">Jisim:</string>
+    <string name="object_info_spectral_label" translation_description="Label for spectral class">Spektral:</string>
+    <string name="object_info_magnitude_label" translation_description="Label for apparent magnitude">Magnitud:</string>
+    <string name="object_info_image_content_description" translation_description="Accessibility description for celestial object photo">Foto objek langit</string>
+    <string name="object_info_tap_to_expand" translation_description="Hint shown on image to tap to expand">Ketik untuk mengembangkan</string>
+    <string name="object_info_tap_to_close" translation_description="Hint shown on expanded image to tap to close">Ketik untuk menutup</string>
+
+</resources>
