@@ -5,6 +5,8 @@
 &lt;p class="version"&gt;Wersja %1$s&lt;/p&gt;
 &lt;p class="url"&gt;&lt;a href="https://stardroid.app"&gt;https://stardroid.app&lt;/a&gt;&lt;/p&gt;
 
+%4$s
+
 &lt;h2&gt;Wprowadzenie i szybki start&lt;/h2&gt;
 &lt;p&gt;Podnieś swój telefon i spójrz przez niego jak przez okno na kosmos. Sky Map używa Twojego kompasu, akcelerometru i żyroskopu telefonu, aby śledzić kierunek, w którym wskazujesz, i aktualizować mapę w czasie rzeczywistym.&lt;/p&gt;
 &lt;p class="callout"&gt;Nie wszystkie telefony są w stanie obsługiwać Sky Map! Zobacz sekcję dotyczącą wymagań sprzętowych poniżej.&lt;/p&gt;
@@ -157,8 +159,12 @@
 &lt;li&gt;Dostosuj &lt;b&gt;Prędkość czujnika&lt;/b&gt; i &lt;b&gt;Tłumienie&lt;/b&gt; w &lt;b&gt;Ustawienia → Ustawienia czujnika.&lt;/b&gt;&lt;/li&gt;
 &lt;li&gt;Jeśli Twój telefon nie posiada żyroskopu, włącz &lt;b&gt;Wyłącz żyroskop&lt;/b&gt; w ustawieniach czujnika.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Po więcej szczegółów w temacie rozwiązywania problemów odwiedź &lt;a href="https://github.com/sky-map-team/stardroid/blob/master/troubleshooting.md"&gt;internetowy poradnik rozwiązywania problemów&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Po więcej szczegółów w temacie rozwiązywania problemów odwiedź internetowy poradnik &lt;a href="https://github.com/sky-map-team/stardroid/blob/master/troubleshooting.md"&gt;rozwiązywania problemów&lt;/a&gt;.&lt;/p&gt;
 &lt;p class="callout"&gt;Jeśli nadal masz problem, napisz do nas e-maila na skymapdevs@gmail.com — bardzo pomocny będzie zrzut ekranu diagnostyki.&lt;/p&gt;
+
+&lt;h1&gt;Co nowego w Sky Map?&lt;/h1&gt;
+
+%3$s
 
 %2$s
 </string>
