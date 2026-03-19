@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <!-- The folks who made Sky Map Happen -->
+<string name="credits_text" translation_description="This page credits the people and organizations who support and maintain the app Sky Map. Please do not change the &lt; and &gt; markup">&lt;h1&gt;支持開發&lt;/h1&gt;
+&lt;p&gt;Sky Map 是免費、開源且無廣告的。如果您喜歡使用它，請考慮在&lt;a href="https://github.com/sky-map-team/stardroid?tab=readme-ov-file#support-the-project"&gt;我們的 GitHub 頁面&lt;/a&gt;&lt;a href="https://buymeacoffee.com/skymapdevs"&gt;支持&lt;/a&gt;持續開發。&lt;/p&gt;
+&lt;h2&gt;感謝最近&lt;a href="https://buymeacoffee.com/skymapdevs"&gt;捐贈&lt;/a&gt;的這些人！&lt;/h2&gt;
+
+&lt;p&gt;%1$s&lt;/p&gt;
+
+&lt;h1&gt;致謝&lt;/h1&gt;
+&lt;h2&gt;工程&lt;/h2&gt;
+&lt;p&gt;John Taylor、Kevin Serafini&lt;/p&gt;
+
+&lt;h2&gt;開源貢獻者&lt;/h2&gt;
+&lt;p&gt;
+    %2$s
+&lt;/p&gt;
+&lt;p&gt;感謝您！請在&lt;a href="https://github.com/sky-map-team/stardroid/graphs/contributors"&gt;GitHub&lt;/a&gt;上查看最新的貢獻者。
+&lt;/p&gt;
+
+&lt;h2&gt;Google 原始工程、設計和產品管理&lt;/h2&gt;
+&lt;p&gt;Brent Bryan、Dominic Widdows、Hector Ouilhet、James Powell、John Taylor、Kevin Serafini、Lior Ron。&lt;/p&gt;
+
+&lt;h1&gt;致謝&lt;/h1&gt;
+&lt;p&gt;Sky Map 最初由 Google Inc. 開發為「Google Sky Map」，並於 2012 年開源。&lt;/p&gt;
+&lt;p&gt;特別感謝 Pat Stephenson 用他的 G1 手機競賽激發了這個想法，以及 Chris DiBona 和 Michael Weiss-Malik 幫助從 Google 過渡到開源。&lt;/p&gt;
+
+&lt;h2&gt;數據&lt;/h2&gt;
+&lt;p&gt;Sky Map 使用來自以下數據的地圖：&lt;/p&gt;
+&lt;ul class="credits"&gt;
+&lt;li&gt;Strasbourg 天文數據中心（&lt;a href="https://cdsweb.u-strasbg.fr/"&gt;https://cdsweb.u-strasbg.fr/&lt;/a&gt;）&lt;/li&gt;
+&lt;li&gt;The Bright Star Catalogue，第 5 版修訂版（Hoffleit D.、Warren Jr W.H.）&lt;/li&gt;
+&lt;li&gt;HYG 數據庫，HYG v1.0.（&lt;a href="https://www.astronexus.com/"&gt;https://www.astronexus.com/&lt;/a&gt;）&lt;/li&gt;
+&lt;li&gt;NGC/IC 天體的歷史和精確位置（Harold G. Corwin Jr）&lt;/li&gt;
+&lt;li&gt;修訂的非恆星天文天體新通用星表（Sulentic J.W.、Tifft W.G.）&lt;/li&gt;
+&lt;li&gt;SFA 星圖（&lt;a href="https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html"&gt;https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html&lt;/a&gt;）&lt;/li&gt;
+&lt;li&gt;太陽系天體的位置由美國海軍天文台（USNO）提供的數據計算（&lt;a href="https://www.usno.navy.mil/USNO/astronomical-applications"&gt;https://www.usno.navy.mil/USNO/astronomical-applications&lt;/a&gt;）&lt;/li&gt;
+&lt;li&gt;球面覆蓋數據來自（&lt;a href="https://www2.research.att.com/~njas/coverings"&gt;https://www2.research.att.com/~njas/coverings&lt;/a&gt;）&lt;/li&gt;
+&lt;li&gt;2024 年日食地圖由 NASA 科學可視化工作室提供。&lt;/li&gt;
+&lt;li&gt;流星雨數據來自國際流星組織（&lt;a href="https://www.imo.net/data"&gt;https://www.imo.net/data&lt;/a&gt;）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;圖像致謝&lt;/h2&gt;
+&lt;p&gt;此應用中的天體圖像由以下來源提供：&lt;/p&gt;
+&lt;ul class="credits"&gt;
+&lt;li&gt;哈勃太空望遠鏡圖像：NASA、ESA 和太空望遠鏡科學研究所（&lt;a href="https://hubblesite.org/"&gt;hubblesite.org&lt;/a&gt;）&lt;/li&gt;
+&lt;li&gt;行星圖像：NASA/JPL-Caltech、NASA/Johns Hopkins APL/Carnegie（MESSENGER）、NASA/Johns Hopkins APL/SwRI（New Horizons）&lt;/li&gt;
+&lt;li&gt;月球圖像：NASA/GSFC/Arizona State University（月球勘測軌道器）&lt;/li&gt;
+&lt;li&gt;星場圖像：ESO 數字化天空巡測 2（&lt;a href="https://archive.eso.org/dss/dss"&gt;archive.eso.org/dss&lt;/a&gt;）、CC BY 4.0&lt;/li&gt;
+&lt;li&gt;星座圖：IAU 和 Sky &amp;amp; Telescope（Roger Sinnott &amp;amp; Rick Fienberg）、CC BY 4.0&lt;/li&gt;
+&lt;li&gt;額外的梅西耶圖像：Gemini Observatory/NOIRLab/NSF/AURA（&lt;a href="https://noirlab.edu/"&gt;noirlab.edu&lt;/a&gt;）&lt;/li&gt;
+&lt;li&gt;M31 圖像：Peter Kennett（&lt;a href="https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg"&gt;Wikimedia Commons&lt;/a&gt;）&lt;/li&gt;
+&lt;/ul&gt;</string>
+</resources>
