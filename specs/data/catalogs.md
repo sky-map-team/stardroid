@@ -125,7 +125,7 @@ Deep-sky objects cataloged by Charles Messier, plus a small number of additional
 
 | Property | Value |
 |----------|-------|
-| Objects | ~116 (110 Messier + 6 extras) |
+| Objects | ~120 (110 Messier + 10 extras) |
 | Types | Galaxies, nebulae, clusters, and other notable objects |
 | Magnitude range | 1.0 to 20+ |
 
@@ -140,7 +140,11 @@ These objects are appended at the end of `tools/data/messier.csv` and processed 
 | V838 Mon | V838 Monocerotis | Other | Variable star/nova |
 | HDF | Hubble Deep Field | Other | |
 | T CrB | T Coronae Borealis / Blaze Star | Other | Recurrent nova, added for issue #499 |
-| Eta Carinae Nebula | Carina Nebula / NGC3372 | Diffuse Nebula | Added for issue #125 |
+| Eta Carinae Nebula | Carina Nebula / NGC3372 | Diffuse Nebula | |
+| Tarantula Nebula | 30 Doradus / NGC2070 | Diffuse Nebula | In the LMC |
+| LMC | Large Magellanic Cloud | Galaxy | Irregular satellite galaxy of the Milky Way |
+| SMC | Small Magellanic Cloud | Galaxy | Irregular satellite galaxy of the Milky Way |
+| Willman 1 | Beth Willman Galaxy | Galaxy | Ultra-faint dwarf satellite; one of the most dark-matter-dominated galaxies known |
 
 ### Messier Data Fields
 
@@ -190,8 +194,9 @@ Column order: `Object,Type,RA (h),DEC (deg),Magnitude,Size (arcminutes),NGC#,Con
 1. Append a row to `tools/data/messier.csv`.
 2. Add all name/alias string resources to `app/src/main/res/values/celestial_objects.xml`.
 3. Add info-card strings to `app/src/main/res/values/celestial_info_cards.xml` (keys: `object_info_<key>_description`, `_funfact`, `_distance`, `_size`).
-4. Add a JSON entry to `app/src/main/assets/object_info.json`.
-5. Rebuild: from the project root run `./gradlew clean :tools:installDist`, then from `tools/` run `./generate.sh && ./binary.sh`.
+4. Add a JSON entry to `app/src/main/assets/object_info.json` (type, nameKey, distanceKey, sizeKey, descriptionKey, funFactKey, magnitude; add `imageKey`/`imageCredit` if an image is available).
+5. *(Optional)* Add an info card image using the `/celestial-image` skill. Images go in `app/src/main/assets/celestial_images/messier/<name>.webp` (480×800, WebP). If no freely-licensed image exists you may omit this step — or add a 480×800 black WebP as a placeholder (the object is probably very faint anyway).
+6. Rebuild: from the project root run `./gradlew clean :tools:installDist`, then from `tools/` run `./generate.sh && ./binary.sh`.
    - The `installDist` step generates `tools/build/install/datagen/bin/datagen` with a broken classpath; `build_skymap.sh` fixes it automatically with `sed`.
 
 ### Notable Messier Objects
