@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Ουράνιες Εικόνες</h2>
+    Οι κάρτες πληροφοριών περιλαμβάνουν τώρα φωτογραφίες για όλα τα 145 αντικείμενα — πλανήτες, αστέρια, αστερισμούς και αντικείμενα Messier. Πατήστε οποιοδήποτε αντικείμενο για να το εξερευνήσετε οπτικά.
+
+<h2>Νέα Αντικείμενα Καταλόγου</h2>
+    Το T Coronae Borealis (ο "Blaze Star") και το Eta Carinae Nebula είναι τώρα στον κατάλογο.
+
+<h2>Λειτουργία Νύχτας</h2>
+    Η κόκκινη λειτουργία νύχτας καλύπτει τώρα σχεδόν όλα τα στοιχεία διεπαφής, συμπεριλαμβανομένων όλων των διαλόγων και της οθόνης βαθμονόμησης πυξίδας — χωρίς άλλα εκθαμβωτικά λευκά φλας στο σκοτάδι.]]></string>
+    <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Χρήστες beta!</h2>
+<h3>Πώς μπορείτε να βοηθήσετε</h3>
+Σε αυτή την έκδοση, όταν χρησιμοποιείτε τη λειτουργία χειροκίνητης λειτουργίας και σύρετε τον χάρτη, ο ορίζοντας θα επιστρέψει
+στο επίπεδο, ώστε το πάνω μέρος του χάρτη να δείχνει πάντα τα αστέρια πάνω από εσάς. Προηγουμένως ο χάρτης απλώς
+κινούνταν σε ευθεία γραμμή, ώστε να μπορούσατε να καταλήξετε ανάποδα. Τι λέτε; Είναι καλύτερο;
+ Ενημερώστε μας <a href="https://forms.gle/JkrMw7Zc4ynp45J79">εδώ.</a><br/>
+Ανοίξτε το μενού βοήθειας για να δείτε αυτές τις πληροφορίες ξανά.]]></string>
+</resources>
