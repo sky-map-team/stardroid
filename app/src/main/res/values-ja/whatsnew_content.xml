@@ -2,7 +2,7 @@
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
     <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>天体画像</h2>
-    情報カードには、惑星、恒星、星座、メシエ天体など、すべての145個の天体の写真が含まれるようになりました。任意の天体をタップして、視覚的に探索できます。
+    情報カードには、惑星、恒星、星座、メシエ天体など、すべてのラベル付き天体の写真が含まれるようになりました。任意の天体をタップして、視覚的に探索できます。
 
 <h2>新しいカタログ天体</h2>
     北冠座T星（「炎の星」）とイータ・カリーナ星雲がカタログに追加されました。

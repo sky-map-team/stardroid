@@ -2,7 +2,7 @@
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
     <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Gambar Langit</h2>
-    Kartu info kini menyertakan foto untuk semua 145 objek — planet, bintang, konstelasi, dan objek Messier. Ketuk objek apa pun untuk menjelajahinya secara visual.
+    Kartu info kini menyertakan foto untuk semua objek berlabel — planet, bintang, konstelasi, dan objek Messier. Ketuk objek apa pun untuk menjelajahinya secara visual.
 
 <h2>Objek Katalog Baru</h2>
     T Coronae Borealis ("Bintang Kilau") dan Nebula Eta Carinae kini ada di katalog.
