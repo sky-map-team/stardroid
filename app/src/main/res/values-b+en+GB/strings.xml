@@ -51,7 +51,7 @@
     <!-- tm:omitted name="sensor_prefs" reason="identical_to_source" -->
     <!-- tm:omitted name="sensor_speed" reason="identical_to_source" -->
     <!-- tm:omitted name="sensor_damping" reason="identical_to_source" -->
-    <string name="appearance_prefs" translation_description="Preferences title for section about app appearance">Appearance</string>
+    <!-- tm:omitted name="appearance_prefs" reason="identical_to_source" -->
     <!-- tm:omitted name="auto_dimness_preference" reason="identical_to_source" -->
     <!-- tm:omitted name="font_size_preference" reason="identical_to_source" -->
     <!-- tm:omitted name="font_size_preference_description" reason="identical_to_source" -->
@@ -149,7 +149,8 @@
 
     <!-- tm:omitted name="no_sensor_warning" reason="identical_to_source" -->
     <!-- tm:omitted name="warning_dialog_title" reason="identical_to_source" -->
-    <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">\n
+    <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">
+    \n
         Unfortunately your device might not have one of the
     sensors that Sky Map needs.\n\n
         To show you the sky in the direction your phone is pointing Sky Map
@@ -159,7 +160,8 @@
 
         If your device really is missing a sensor then auto-mode will not work.  However, you
         can still use Sky Map on this device in manual mode where you drag, rotate and stretch the
-        map with your fingers.</string>
+        map with your fingers.
+    </string>
     <!-- tm:omitted name="do_not_show_again" reason="identical_to_source" -->
     <!-- tm:omitted name="title_activity_diagnostic" reason="identical_to_source" -->
     <!-- tm:omitted name="play_services_error" reason="identical_to_source" -->
@@ -214,7 +216,9 @@
     <!-- tm:omitted name="sensor_reverse_preference_summary" reason="identical_to_source" -->
     <!-- tm:omitted name="whats_new_dialog_title" reason="identical_to_source" -->
     <!-- tm:omitted name="disable_gyro_preference_title" reason="identical_to_source" -->
-    <string name="disable_gyro_preference_summary" translation_description="Explanation of the disable gyroscope preference and when to use it">Not all devices have a gyroscope - if yours does then you\'ll get better results with it enabled and this box unchecked. On the other hand if your device does not have a gyroscope then Sky Map will probably not work if you uncheck this box.</string>
+    <string name="disable_gyro_preference_summary" translation_description="Explanation of the disable gyroscope preference and when to use it">
+    Not all devices have a gyroscope - if yours does then you\'ll get better results with it enabled and this box unchecked. On the other hand if your device does not have a gyroscope then Sky Map will probably not work if you uncheck this box.
+    </string>
     <!-- tm:omitted name="rotate_horizon_preference_title" reason="identical_to_source" -->
     <!-- tm:omitted name="auto_level_horizon_preference_title" reason="identical_to_source" -->
     <!-- tm:omitted name="auto_level_horizon_preference_summary" reason="identical_to_source" -->
