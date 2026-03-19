@@ -57,197 +57,197 @@
     <string name="object_info_sirius_funfact" translation_description="Fun fact about Sirius">ซิริอุสเป็นระบบดาวคู่! ซิริอุส B คู่หูของมัน เป็นดาวแคระขาวขนาดเท่าโลกแต่มีมวลเกือบเท่าดวงอาทิตย์</string>
     <string name="object_info_sirius_distance" translation_description="Distance to Sirius shown in the info card. Translate units if appropriate for your locale.">8.6 ปีแสง</string>
     <string name="object_info_sirius_size" translation_description="Physical size of Sirius shown in the info card. Translate units if appropriate for your locale.">1.7 เท่าของรัศมีดวงอาทิตย์</string>
-    <string name="object_info_sirius_mass" translation_description="Mass of Sirius in scientific notation — no translation needed.">2.1 เท่าของมวลดวงอาทิตย์</string>
+    <string name="object_info_sirius_mass" translation_description="Mass of Sirius in scientific notation .  Translate units if appropriate for your locale.">2.1 เท่าของมวลดวงอาทิตย์</string>
     <string name="object_info_vega_description" translation_description="Short description of Vega">เวกาเป็นหนึ่งในดาวที่สว่างที่สุดที่มองเห็นได้จากโลก ตั้งอยู่ในกลุ่มดาวพิณ</string>
     <string name="object_info_vega_funfact" translation_description="Fun fact about Vega">เวกาเคยเป็นดาวเหนือเมื่อประมาณ 14,000 ปีก่อน และจะเป็นอีกครั้งในอีกประมาณ 12,000 ปีเนื่องจากการส่ายของโลก!</string>
     <string name="object_info_vega_distance" translation_description="Distance to Vega shown in the info card. Translate units if appropriate for your locale.">25 ปีแสง</string>
     <string name="object_info_vega_size" translation_description="Physical size of Vega shown in the info card. Translate units if appropriate for your locale.">2.4 เท่าของรัศมีดวงอาทิตย์</string>
-    <string name="object_info_vega_mass" translation_description="Mass of Vega in scientific notation — no translation needed.">2.1 เท่าของมวลดวงอาทิตย์</string>
+    <string name="object_info_vega_mass" translation_description="Mass of Vega in scientific notation .  Translate units if appropriate for your locale.">2.1 เท่าของมวลดวงอาทิตย์</string>
     <string name="object_info_betelgeuse_description" translation_description="Short description of Betelgeuse">บีเทลจูสเป็นดาวยักษ์แดงที่เป็นไหล่ของกลุ่มดาวนายพราน เป็นหนึ่งในดาวที่ใหญ่ที่สุดที่มองเห็นได้ด้วยตาเปล่า</string>
     <string name="object_info_betelgeuse_funfact" translation_description="Fun fact about Betelgeuse">บีเทลจูสใหญ่มากจนถ้าวางไว้ที่ตำแหน่งดวงอาทิตย์ มันจะกลืนกินดาวพุธ ดาวศุกร์ โลก ดาวอังคาร และอาจรวมถึงดาวพฤหัสบดี!</string>
     <string name="object_info_betelgeuse_distance" translation_description="Distance to Betelgeuse shown in the info card. Translate units if appropriate for your locale.">~700 ปีแสง</string>
     <string name="object_info_betelgeuse_size" translation_description="Physical size of Betelgeuse shown in the info card. Translate units if appropriate for your locale.">~900 เท่าของรัศมีดวงอาทิตย์</string>
-    <string name="object_info_betelgeuse_mass" translation_description="Mass of Betelgeuse in scientific notation — no translation needed.">~12 เท่าของมวลดวงอาทิตย์</string>
+    <string name="object_info_betelgeuse_mass" translation_description="Mass of Betelgeuse in scientific notation .  Translate units if appropriate for your locale.">~12 เท่าของมวลดวงอาทิตย์</string>
     <string name="object_info_rigel_description" translation_description="Short description of Rigel">ไรเจลเป็นดาวยักษ์น้ำเงินที่เป็นเท้าของกลุ่มดาวนายพราน แม้จะอยู่ไกลกว่าบีเทลจูส แต่ดูสว่างใกล้เคียงกัน</string>
     <string name="object_info_rigel_funfact" translation_description="Fun fact about Rigel">ไรเจลส่องสว่างด้วยแสงของดวงอาทิตย์ประมาณ 120,000 ดวง! เป็นหนึ่งในดาวที่ส่องสว่างที่สุดในบริเวณของเราในทางช้างเผือก</string>
     <string name="object_info_rigel_distance" translation_description="Distance to Rigel shown in the info card. Translate units if appropriate for your locale.">~860 ปีแสง</string>
     <string name="object_info_rigel_size" translation_description="Physical size of Rigel shown in the info card. Translate units if appropriate for your locale.">~79 เท่าของรัศมีดวงอาทิตย์</string>
-    <string name="object_info_rigel_mass" translation_description="Mass of Rigel in scientific notation — no translation needed.">~23 เท่าของมวลดวงอาทิตย์</string>
+    <string name="object_info_rigel_mass" translation_description="Mass of Rigel in scientific notation .  Translate units if appropriate for your locale.">~23 เท่าของมวลดวงอาทิตย์</string>
     <string name="object_info_procyon_description" translation_description="Short description of Procyon">โพรซิออนเป็นดาวสว่างในกลุ่มดาวสุนัขเล็ก เป็นหนึ่งในเพื่อนบ้านดาวที่ใกล้เราที่สุด</string>
     <string name="object_info_procyon_funfact" translation_description="Fun fact about Procyon">โพรซิออนหมายถึง \"ก่อนสุนัข\" ในภาษากรีก เพราะมันขึ้นก่อนซิริอุส ดาวสุนัข ในท้องฟ้ากลางคืน!</string>
     <string name="object_info_procyon_distance" translation_description="Distance to Procyon shown in the info card. Translate units if appropriate for your locale.">11.4 ปีแสง</string>
     <string name="object_info_procyon_size" translation_description="Physical size of Procyon shown in the info card. Translate units if appropriate for your locale.">2.0 เท่าของรัศมีดวงอาทิตย์</string>
-    <string name="object_info_procyon_mass" translation_description="Mass of Procyon in scientific notation — no translation needed.">1.5 เท่าของมวลดวงอาทิตย์</string>
+    <string name="object_info_procyon_mass" translation_description="Mass of Procyon in scientific notation .  Translate units if appropriate for your locale.">1.5 เท่าของมวลดวงอาทิตย์</string>
     <string name="object_info_polaris_description" translation_description="Short description of Polaris">โพลาริส ดาวเหนือ ดูเกือบนิ่งบนท้องฟ้าในขณะที่ดาวอื่นๆ หมุนรอบมันตลอดทั้งคืน</string>
     <string name="object_info_polaris_funfact" translation_description="Fun fact about Polaris">โพลาริสเป็นระบบดาวสามดวง! ดาวหลักเป็นดาวยักษ์ใหญ่ที่สว่างกว่าดวงอาทิตย์ของเราประมาณ 2,500 เท่า</string>
     <string name="object_info_polaris_distance" translation_description="Distance to Polaris shown in the info card. Translate units if appropriate for your locale.">~430 ปีแสง</string>
     <string name="object_info_polaris_size" translation_description="Physical size of Polaris shown in the info card. Translate units if appropriate for your locale.">~44 เท่าของรัศมีดวงอาทิตย์</string>
-    <string name="object_info_polaris_mass" translation_description="Mass of Polaris in scientific notation — no translation needed.">~5.4 เท่าของมวลดวงอาทิตย์</string>
+    <string name="object_info_polaris_mass" translation_description="Mass of Polaris in scientific notation .  Translate units if appropriate for your locale.">~5.4 เท่าของมวลดวงอาทิตย์</string>
     <string name="object_info_deneb_description" translation_description="Short description of Deneb">เดเนบเป็นหางของกลุ่มดาวหงส์ เป็นส่วนหนึ่งของสามเหลี่ยมฤดูร้อนร่วมกับเวกาและอัลแตร์</string>
     <string name="object_info_deneb_funfact" translation_description="Fun fact about Deneb">เดเนบเป็นหนึ่งในดาวที่ไกลที่สุดที่มองเห็นได้ด้วยตาเปล่า อยู่ห่างประมาณ 2,600 ปีแสง!</string>
     <string name="object_info_deneb_distance" translation_description="Distance to Deneb shown in the info card. Translate units if appropriate for your locale.">~2,600 ปีแสง</string>
     <string name="object_info_deneb_size" translation_description="Physical size of Deneb shown in the info card. Translate units if appropriate for your locale.">~200 เท่าของรัศมีดวงอาทิตย์</string>
-    <string name="object_info_deneb_mass" translation_description="Mass of Deneb in scientific notation — no translation needed.">~19 เท่าของมวลดวงอาทิตย์</string>
+    <string name="object_info_deneb_mass" translation_description="Mass of Deneb in scientific notation .  Translate units if appropriate for your locale.">~19 เท่าของมวลดวงอาทิตย์</string>
     <string name="object_info_arcturus_description" translation_description="Short description of Arcturus">อาร์คทูรัสเป็นดาวที่สว่างที่สุดในซีกโลกเหนือ เป็นดาวยักษ์สีส้มในกลุ่มดาวคนเลี้ยงสัตว์</string>
     <string name="object_info_arcturus_funfact" translation_description="Fun fact about Arcturus">อาร์คทูรัสกำลังเดินทางผ่านอวกาศด้วยความเร็วมหาศาลและจะผ่านใกล้ระบบสุริยะของเรามากที่สุดในอีกประมาณ 4,000 ปี!</string>
     <string name="object_info_arcturus_distance" translation_description="Distance to Arcturus shown in the info card. Translate units if appropriate for your locale.">37 ปีแสง</string>
     <string name="object_info_arcturus_size" translation_description="Physical size of Arcturus shown in the info card. Translate units if appropriate for your locale.">26 เท่าของรัศมีดวงอาทิตย์</string>
-    <string name="object_info_arcturus_mass" translation_description="Mass of Arcturus in scientific notation — no translation needed.">1.1 เท่าของมวลดวงอาทิตย์</string>
+    <string name="object_info_arcturus_mass" translation_description="Mass of Arcturus in scientific notation .  Translate units if appropriate for your locale.">1.1 เท่าของมวลดวงอาทิตย์</string>
     <string name="object_info_canopus_description" translation_description="Short description of Canopus">คาโนปัสเป็นดาวที่สว่างที่สุดอันดับสองในท้องฟ้ากลางคืน มองเห็นได้ส่วนใหญ่จากซีกโลกใต้</string>
     <string name="object_info_canopus_funfact" translation_description="Fun fact about Canopus">คาโนปัสถูกใช้โดยยานอวกาศสำหรับการนำทางเพราะมันสว่างมากและอยู่ห่างจากระนาบสุริยวิถี!</string>
     <string name="object_info_canopus_distance" translation_description="Distance to Canopus shown in the info card. Translate units if appropriate for your locale.">310 ปีแสง</string>
     <string name="object_info_canopus_size" translation_description="Physical size of Canopus shown in the info card. Translate units if appropriate for your locale.">72 เท่าของรัศมีดวงอาทิตย์</string>
-    <string name="object_info_canopus_mass" translation_description="Mass of Canopus in scientific notation — no translation needed.">8.0 เท่าของมวลดวงอาทิตย์</string>
+    <string name="object_info_canopus_mass" translation_description="Mass of Canopus in scientific notation .  Translate units if appropriate for your locale.">8.0 เท่าของมวลดวงอาทิตย์</string>
     <string name="object_info_aldebaran_description" translation_description="Short description of Aldebaran">อัลเดบารันเป็นดาวยักษ์สีส้มที่เป็นตาของกลุ่มดาววัว ชื่อของมันหมายถึง \"ผู้ตาม\" ในภาษาอาหรับ</string>
     <string name="object_info_aldebaran_funfact" translation_description="Fun fact about Aldebaran">อัลเดบารันดูเหมือนเป็นส่วนหนึ่งของกระจุกดาวไฮอาดีส แต่จริงๆ แล้วอยู่ห่างจากเราเพียงครึ่งหนึ่ง - ภาพลวงตาจากจักรวาล!</string>
     <string name="object_info_aldebaran_distance" translation_description="Distance to Aldebaran shown in the info card. Translate units if appropriate for your locale.">65 ปีแสง</string>
     <string name="object_info_aldebaran_size" translation_description="Physical size of Aldebaran shown in the info card. Translate units if appropriate for your locale.">44 เท่าของรัศมีดวงอาทิตย์</string>
-    <string name="object_info_aldebaran_mass" translation_description="Mass of Aldebaran in scientific notation — no translation needed.">1.2 เท่าของมวลดวงอาทิตย์</string>
+    <string name="object_info_aldebaran_mass" translation_description="Mass of Aldebaran in scientific notation .  Translate units if appropriate for your locale.">1.2 เท่าของมวลดวงอาทิตย์</string>
     <string name="object_info_antares_description" translation_description="Short description of Antares">แอนทาเรสเป็นดาวยักษ์แดง หัวใจของกลุ่มดาวแมงป่อง ชื่อของมันหมายถึง \"คู่แข่งของดาวอังคาร\" เนื่องจากสีแดง</string>
     <string name="object_info_antares_funfact" translation_description="Fun fact about Antares">แอนทาเรสใหญ่มากจนถ้าวางไว้ในระบบสุริยะของเรา พื้นผิวของมันจะขยายไปไกลกว่าวงโคจรของดาวอังคาร!</string>
     <string name="object_info_antares_distance" translation_description="Distance to Antares shown in the info card. Translate units if appropriate for your locale.">~550 ปีแสง</string>
     <string name="object_info_antares_size" translation_description="Physical size of Antares shown in the info card. Translate units if appropriate for your locale.">~680 เท่าของรัศมีดวงอาทิตย์</string>
-    <string name="object_info_antares_mass" translation_description="Mass of Antares in scientific notation — no translation needed.">~12 เท่าของมวลดวงอาทิตย์</string>
+    <string name="object_info_antares_mass" translation_description="Mass of Antares in scientific notation .  Translate units if appropriate for your locale.">~12 เท่าของมวลดวงอาทิตย์</string>
     <string name="object_info_capella_description" translation_description="Description of Capella shown in the info card. Translate this text.">คาเปลลาเป็นดาวที่สว่างที่สุดในกลุ่มดาวสารถีและสว่างที่สุดอันดับหกในท้องฟ้ากลางคืน จริงๆ แล้วเป็นระบบสี่ดาว</string>
     <string name="object_info_capella_funfact" translation_description="Fun fact about Capella shown in the info card. Translate this text.">คาเปลลาหมายถึง \"แพะน้อย\" ในภาษาละติน วัฒนธรรมโบราณมองว่ามันเป็นแพะที่ถูกแบกบนไหล่ของสารถี!</string>
     <string name="object_info_capella_distance" translation_description="Distance to Capella shown in the info card. Translate units if appropriate for your locale.">43 ปีแสง</string>
     <string name="object_info_capella_size" translation_description="Physical size of Capella shown in the info card. Translate units if appropriate for your locale.">12 เท่าของรัศมีดวงอาทิตย์</string>
-    <string name="object_info_capella_mass" translation_description="Mass of Capella in scientific notation — no translation needed.">2.6 เท่าของมวลดวงอาทิตย์</string>
+    <string name="object_info_capella_mass" translation_description="Mass of Capella in scientific notation .  Translate units if appropriate for your locale.">2.6 เท่าของมวลดวงอาทิตย์</string>
     <string name="object_info_altair_description" translation_description="Description of Altair shown in the info card. Translate this text.">อัลแตร์เป็นดาวที่สว่างที่สุดในกลุ่มดาวนกอินทรีและเป็นหนึ่งในดาวที่ใกล้ที่สุดที่มองเห็นได้ด้วยตาเปล่า</string>
     <string name="object_info_altair_funfact" translation_description="Fun fact about Altair shown in the info card. Translate this text.">อัลแตร์หมุนเร็วมาก (ทุก 9 ชั่วโมง) จนมันแบนอย่างเห็นได้ชัดที่ขั้ว - มันกว้างกว่าสูง 14%!</string>
     <string name="object_info_altair_distance" translation_description="Distance to Altair shown in the info card. Translate units if appropriate for your locale.">17 ปีแสง</string>
     <string name="object_info_altair_size" translation_description="Physical size of Altair shown in the info card. Translate units if appropriate for your locale.">1.8 เท่าของรัศมีดวงอาทิตย์</string>
-    <string name="object_info_altair_mass" translation_description="Mass of Altair in scientific notation — no translation needed.">1.8 เท่าของมวลดวงอาทิตย์</string>
+    <string name="object_info_altair_mass" translation_description="Mass of Altair in scientific notation .  Translate units if appropriate for your locale.">1.8 เท่าของมวลดวงอาทิตย์</string>
     <string name="object_info_spica_description" translation_description="Description of Spica shown in the info card. Translate this text.">สไปกาเป็นดาวที่สว่างที่สุดในกลุ่มดาวหญิงสาวและเป็นหนึ่งใน 20 ดาวที่สว่างที่สุดในท้องฟ้ากลางคืน เป็นระบบดาวคู่</string>
     <string name="object_info_spica_funfact" translation_description="Fun fact about Spica shown in the info card. Translate this text.">สไปกาอยู่ใกล้สุริยวิถีมากจนสามารถถูกดวงจันทร์บดบังได้ ชื่อหมายถึง \"รวงข้าวสาลี\" ในภาษาละติน!</string>
     <string name="object_info_spica_distance" translation_description="Distance to Spica shown in the info card. Translate units if appropriate for your locale.">250 ปีแสง</string>
     <string name="object_info_spica_size" translation_description="Physical size of Spica shown in the info card. Translate units if appropriate for your locale.">7.5 เท่าของรัศมีดวงอาทิตย์</string>
-    <string name="object_info_spica_mass" translation_description="Mass of Spica in scientific notation — no translation needed.">11 เท่าของมวลดวงอาทิตย์</string>
+    <string name="object_info_spica_mass" translation_description="Mass of Spica in scientific notation .  Translate units if appropriate for your locale.">11 เท่าของมวลดวงอาทิตย์</string>
     <string name="object_info_achernar_description" translation_description="Description of Achernar shown in the info card. Translate this text.">อาเคอร์นาร์เป็นดาวที่สว่างที่สุดในกลุ่มดาวแม่น้ำและสว่างที่สุดอันดับเก้าในท้องฟ้ากลางคืน</string>
     <string name="object_info_achernar_funfact" translation_description="Fun fact about Achernar shown in the info card. Translate this text.">อาเคอร์นาร์เป็นดาวที่แบนที่สุดที่รู้จัก! มันหมุนเร็วมากจนเส้นผ่านศูนย์กลางเส้นศูนย์สูตรใหญ่กว่าเส้นผ่านศูนย์กลางขั้วโลก 56%</string>
     <string name="object_info_achernar_distance" translation_description="Distance to Achernar shown in the info card. Translate units if appropriate for your locale.">139 ปีแสง</string>
     <string name="object_info_achernar_size" translation_description="Physical size of Achernar shown in the info card. Translate units if appropriate for your locale.">7.3 เท่าของรัศมีดวงอาทิตย์</string>
-    <string name="object_info_achernar_mass" translation_description="Mass of Achernar in scientific notation — no translation needed.">6.7 เท่าของมวลดวงอาทิตย์</string>
+    <string name="object_info_achernar_mass" translation_description="Mass of Achernar in scientific notation .  Translate units if appropriate for your locale.">6.7 เท่าของมวลดวงอาทิตย์</string>
     <string name="object_info_hadar_description" translation_description="Description of Hadar shown in the info card. Translate this text.">ฮาดาร์ (เบตาเซนทอรี) เป็นดาวที่สว่างที่สุดอันดับสองในกลุ่มดาวเซนทอร์และสว่างที่สุดอันดับ 11 ในท้องฟ้า</string>
     <string name="object_info_hadar_funfact" translation_description="Fun fact about Hadar shown in the info card. Translate this text.">ฮาดาร์และอัลฟาเซนทอรีรู้จักกันในชื่อ \"ดาวชี้ทิศใต้\" - พวกมันชี้ไปยังกลุ่มดาวกางเขนใต้!</string>
     <string name="object_info_hadar_distance" translation_description="Distance to Hadar shown in the info card. Translate units if appropriate for your locale.">390 ปีแสง</string>
     <string name="object_info_hadar_size" translation_description="Physical size of Hadar shown in the info card. Translate units if appropriate for your locale.">9 เท่าของรัศมีดวงอาทิตย์</string>
-    <string name="object_info_hadar_mass" translation_description="Mass of Hadar in scientific notation — no translation needed.">12.8 เท่าของมวลดวงอาทิตย์</string>
+    <string name="object_info_hadar_mass" translation_description="Mass of Hadar in scientific notation .  Translate units if appropriate for your locale.">12.8 เท่าของมวลดวงอาทิตย์</string>
     <string name="object_info_regulus_description" translation_description="Description of Regulus shown in the info card. Translate this text.">เรกูลัสเป็นดาวที่สว่างที่สุดในกลุ่มดาวสิงโตและเป็นหัวใจของสิงโต เป็นระบบดาวหลายดวง</string>
     <string name="object_info_regulus_funfact" translation_description="Fun fact about Regulus shown in the info card. Translate this text.">เรกูลัสหมุนเร็วมากจนเกือบจะฉีกตัวเอง! มันหมุนครบรอบในเวลาเพียง 16 ชั่วโมง</string>
     <string name="object_info_regulus_distance" translation_description="Distance to Regulus shown in the info card. Translate units if appropriate for your locale.">79 ปีแสง</string>
     <string name="object_info_regulus_size" translation_description="Physical size of Regulus shown in the info card. Translate units if appropriate for your locale.">4.4 เท่าของรัศมีดวงอาทิตย์</string>
-    <string name="object_info_regulus_mass" translation_description="Mass of Regulus in scientific notation — no translation needed.">3.8 เท่าของมวลดวงอาทิตย์</string>
+    <string name="object_info_regulus_mass" translation_description="Mass of Regulus in scientific notation .  Translate units if appropriate for your locale.">3.8 เท่าของมวลดวงอาทิตย์</string>
     <string name="object_info_acrux_description" translation_description="Description of Acrux shown in the info card. Translate this text.">อาครักซ์ (อัลฟาครูซิส) เป็นดาวที่สว่างที่สุดในกางเขนใต้และสว่างที่สุดอันดับ 13 ในท้องฟ้า</string>
     <string name="object_info_acrux_funfact" translation_description="Fun fact about Acrux shown in the info card. Translate this text.">อาครักซ์ปรากฏบนธงของออสเตรเลีย นิวซีแลนด์ บราซิล ปาปัวนิวกินี และซามัว!</string>
     <string name="object_info_acrux_distance" translation_description="Distance to Acrux shown in the info card. Translate units if appropriate for your locale.">320 ปีแสง</string>
     <string name="object_info_acrux_size" translation_description="Physical size of Acrux shown in the info card. Translate units if appropriate for your locale.">7.8 เท่าของรัศมีดวงอาทิตย์</string>
-    <string name="object_info_acrux_mass" translation_description="Mass of Acrux in scientific notation — no translation needed.">18 เท่าของมวลดวงอาทิตย์</string>
+    <string name="object_info_acrux_mass" translation_description="Mass of Acrux in scientific notation .  Translate units if appropriate for your locale.">18 เท่าของมวลดวงอาทิตย์</string>
     <string name="object_info_castor_description" translation_description="Description of Castor shown in the info card. Translate this text.">คาสเตอร์เป็นหนึ่งในดาวฝาแฝดในกลุ่มดาวคนคู่ แม้จะดูเป็นดาวเดียว แต่จริงๆ แล้วเป็นระบบหกดาว!</string>
     <string name="object_info_castor_funfact" translation_description="Fun fact about Castor shown in the info card. Translate this text.">คาสเตอร์เป็นระบบหกดาว - สามคู่ของดาวคู่ทั้งหมดโคจรรอบกัน เป็นหนึ่งในระบบดาวที่ซับซ้อนที่สุดใกล้โลก!</string>
     <string name="object_info_castor_distance" translation_description="Distance to Castor shown in the info card. Translate units if appropriate for your locale.">51 ปีแสง</string>
     <string name="object_info_castor_size" translation_description="Physical size of Castor shown in the info card. Translate units if appropriate for your locale.">2.4 เท่าของรัศมีดวงอาทิตย์</string>
-    <string name="object_info_castor_mass" translation_description="Mass of Castor in scientific notation — no translation needed.">2.8 เท่าของมวลดวงอาทิตย์</string>
+    <string name="object_info_castor_mass" translation_description="Mass of Castor in scientific notation .  Translate units if appropriate for your locale.">2.8 เท่าของมวลดวงอาทิตย์</string>
     <string name="object_info_pollux_description" translation_description="Description of Pollux shown in the info card. Translate this text.">พอลลักซ์เป็นดาวที่สว่างกว่าในดาวฝาแฝดในกลุ่มดาวคนคู่ ต่างจากคาสเตอร์ มันเป็นดาวยักษ์สีส้มเพียงดวงเดียว</string>
     <string name="object_info_pollux_funfact" translation_description="Fun fact about Pollux shown in the info card. Translate this text.">พอลลักซ์มีดาวเคราะห์นอกระบบที่ยืนยันแล้ว! พอลลักซ์ b เป็นดาวก๊าซยักษ์ที่มีมวลอย่างน้อยสองเท่าของดาวพฤหัสบดี</string>
     <string name="object_info_pollux_distance" translation_description="Distance to Pollux shown in the info card. Translate units if appropriate for your locale.">34 ปีแสง</string>
     <string name="object_info_pollux_size" translation_description="Physical size of Pollux shown in the info card. Translate units if appropriate for your locale.">9.1 เท่าของรัศมีดวงอาทิตย์</string>
-    <string name="object_info_pollux_mass" translation_description="Mass of Pollux in scientific notation — no translation needed.">1.9 เท่าของมวลดวงอาทิตย์</string>
+    <string name="object_info_pollux_mass" translation_description="Mass of Pollux in scientific notation .  Translate units if appropriate for your locale.">1.9 เท่าของมวลดวงอาทิตย์</string>
     <string name="object_info_fomalhaut_description" translation_description="Description of Fomalhaut shown in the info card. Translate this text.">โฟมาลฮอต์เป็นดาวที่สว่างที่สุดในกลุ่มดาวปลาใต้และเป็นหนึ่งในดาวที่สว่างที่สุดในท้องฟ้าฤดูใบไม้ร่วง</string>
     <string name="object_info_fomalhaut_funfact" translation_description="Fun fact about Fomalhaut shown in the info card. Translate this text.">โฟมาลฮอต์มีจานเศษซากอันน่าทึ่งซึ่งเป็นหนึ่งในจานแรกๆ ที่ถูกถ่ายภาพโดยตรงรอบดาวดวงอื่น!</string>
     <string name="object_info_fomalhaut_distance" translation_description="Distance to Fomalhaut shown in the info card. Translate units if appropriate for your locale.">25 ปีแสง</string>
     <string name="object_info_fomalhaut_size" translation_description="Physical size of Fomalhaut shown in the info card. Translate units if appropriate for your locale.">1.8 เท่าของรัศมีดวงอาทิตย์</string>
-    <string name="object_info_fomalhaut_mass" translation_description="Mass of Fomalhaut in scientific notation — no translation needed.">1.9 เท่าของมวลดวงอาทิตย์</string>
+    <string name="object_info_fomalhaut_mass" translation_description="Mass of Fomalhaut in scientific notation .  Translate units if appropriate for your locale.">1.9 เท่าของมวลดวงอาทิตย์</string>
     <string name="object_info_adhara_description" translation_description="Description of Adhara shown in the info card. Translate this text.">อาดาราเป็นดาวที่สว่างที่สุดอันดับสองในกลุ่มดาวสุนัขใหญ่ รองจากซิริอุส</string>
     <string name="object_info_adhara_funfact" translation_description="Fun fact about Adhara shown in the info card. Translate this text.">เมื่อประมาณ 4.7 ล้านปีก่อน อาดาราเป็นดาวที่สว่างที่สุดในท้องฟ้ากลางคืน สว่างกว่าซิริอุสในปัจจุบัน!</string>
     <string name="object_info_adhara_distance" translation_description="Distance to Adhara shown in the info card. Translate units if appropriate for your locale.">430 ปีแสง</string>
     <string name="object_info_adhara_size" translation_description="Physical size of Adhara shown in the info card. Translate units if appropriate for your locale.">14 เท่าของรัศมีดวงอาทิตย์</string>
-    <string name="object_info_adhara_mass" translation_description="Mass of Adhara in scientific notation — no translation needed.">12.6 เท่าของมวลดวงอาทิตย์</string>
+    <string name="object_info_adhara_mass" translation_description="Mass of Adhara in scientific notation .  Translate units if appropriate for your locale.">12.6 เท่าของมวลดวงอาทิตย์</string>
     <string name="object_info_shaula_description" translation_description="Description of Shaula shown in the info card. Translate this text.">ชอลาเป็นดาวที่สว่างที่สุดอันดับสองในกลุ่มดาวแมงป่องและเป็นเหล็กในของแมงป่องที่หาง</string>
     <string name="object_info_shaula_funfact" translation_description="Fun fact about Shaula shown in the info card. Translate this text.">ชอลาหมายถึง \"หางที่ยกขึ้น\" ในภาษาอาหรับ จริงๆ แล้วเป็นระบบดาวสามดวงที่อยู่ใกล้กันมาก!</string>
     <string name="object_info_shaula_distance" translation_description="Distance to Shaula shown in the info card. Translate units if appropriate for your locale.">570 ปีแสง</string>
     <string name="object_info_shaula_size" translation_description="Physical size of Shaula shown in the info card. Translate units if appropriate for your locale.">8.8 เท่าของรัศมีดวงอาทิตย์</string>
-    <string name="object_info_shaula_mass" translation_description="Mass of Shaula in scientific notation — no translation needed.">10.4 เท่าของมวลดวงอาทิตย์</string>
+    <string name="object_info_shaula_mass" translation_description="Mass of Shaula in scientific notation .  Translate units if appropriate for your locale.">10.4 เท่าของมวลดวงอาทิตย์</string>
     <string name="object_info_alnilam_description" translation_description="Description of Alnilam shown in the info card. Translate this text.">อัลนิแลมเป็นดาวตรงกลางของเข็มขัดนายพรานและเป็นหนึ่งในดาวที่ส่องสว่างที่สุดที่รู้จักในกาแล็กซีของเรา</string>
     <string name="object_info_alnilam_funfact" translation_description="Fun fact about Alnilam shown in the info card. Translate this text.">อัลนิแลมกำลังสูญเสียมวลในอัตราเร็วกว่าดวงอาทิตย์ของเรา 20 ล้านเท่าผ่านลมดาวอันทรงพลัง!</string>
     <string name="object_info_alnilam_distance" translation_description="Distance to Alnilam shown in the info card. Translate units if appropriate for your locale.">~2,000 ปีแสง</string>
     <string name="object_info_alnilam_size" translation_description="Physical size of Alnilam shown in the info card. Translate units if appropriate for your locale.">42 เท่าของรัศมีดวงอาทิตย์</string>
-    <string name="object_info_alnilam_mass" translation_description="Mass of Alnilam in scientific notation — no translation needed.">40 เท่าของมวลดวงอาทิตย์</string>
+    <string name="object_info_alnilam_mass" translation_description="Mass of Alnilam in scientific notation .  Translate units if appropriate for your locale.">40 เท่าของมวลดวงอาทิตย์</string>
     <string name="object_info_alphard_description" translation_description="Description of Alphard shown in the info card. Translate this text.">อัลฟาร์ดเป็นดาวที่สว่างที่สุดในกลุ่มดาวงูน้ำ ซึ่งเป็นกลุ่มดาวที่ใหญ่ที่สุดในท้องฟ้า</string>
     <string name="object_info_alphard_funfact" translation_description="Fun fact about Alphard shown in the info card. Translate this text.">อัลฟาร์ดหมายถึง \"ผู้โดดเดี่ยว\" ในภาษาอาหรับ เพราะมันนั่งอยู่คนเดียวในบริเวณท้องฟ้าที่มืดสลัว!</string>
     <string name="object_info_alphard_distance" translation_description="Distance to Alphard shown in the info card. Translate units if appropriate for your locale.">177 ปีแสง</string>
     <string name="object_info_alphard_size" translation_description="Physical size of Alphard shown in the info card. Translate units if appropriate for your locale.">50 เท่าของรัศมีดวงอาทิตย์</string>
-    <string name="object_info_alphard_mass" translation_description="Mass of Alphard in scientific notation — no translation needed.">3 เท่าของมวลดวงอาทิตย์</string>
+    <string name="object_info_alphard_mass" translation_description="Mass of Alphard in scientific notation .  Translate units if appropriate for your locale.">3 เท่าของมวลดวงอาทิตย์</string>
     <string name="object_info_mirach_description" translation_description="Description of Mirach shown in the info card. Translate this text.">ไมรัคเป็นดาวยักษ์แดงในกลุ่มดาวแอนโดรเมดา มักใช้เป็นตัวนำทางเพื่อหาดาราจักรแอนโดรเมดา</string>
     <string name="object_info_mirach_funfact" translation_description="Fun fact about Mirach shown in the info card. Translate this text.">ผีของไมรัคเป็นกาแล็กซีขนาดเล็ก (NGC 404) ที่ปรากฏใกล้ไมรัคมาก - มันถูกซ่อนโดยแสงจ้าของดาวเป็นเวลาหลายศตวรรษ!</string>
     <string name="object_info_mirach_distance" translation_description="Distance to Mirach shown in the info card. Translate units if appropriate for your locale.">197 ปีแสง</string>
     <string name="object_info_mirach_size" translation_description="Physical size of Mirach shown in the info card. Translate units if appropriate for your locale.">100 เท่าของรัศมีดวงอาทิตย์</string>
-    <string name="object_info_mirach_mass" translation_description="Mass of Mirach in scientific notation — no translation needed.">3.5 เท่าของมวลดวงอาทิตย์</string>
+    <string name="object_info_mirach_mass" translation_description="Mass of Mirach in scientific notation .  Translate units if appropriate for your locale.">3.5 เท่าของมวลดวงอาทิตย์</string>
     <string name="object_info_algol_description" translation_description="Description of Algol shown in the info card. Translate this text.">อัลกอลเป็นดาวคู่อุปราคาที่มีชื่อเสียงในกลุ่มดาวเพอร์ซิอัส รู้จักกันในชื่อ \"ดาวปีศาจ\" ตั้งแต่สมัยโบราณ</string>
     <string name="object_info_algol_funfact" translation_description="Fun fact about Algol shown in the info card. Translate this text.">ทุก 2.87 วัน อัลกอลจะหรี่ลงอย่างเห็นได้ชัดเมื่อคู่หูที่มืดกว่าผ่านหน้า - นักดาราศาสตร์โบราณพบว่านี่น่ากลัว!</string>
     <string name="object_info_algol_distance" translation_description="Distance to Algol shown in the info card. Translate units if appropriate for your locale.">90 ปีแสง</string>
     <string name="object_info_algol_size" translation_description="Physical size of Algol shown in the info card. Translate units if appropriate for your locale.">2.7 เท่าของรัศมีดวงอาทิตย์</string>
-    <string name="object_info_algol_mass" translation_description="Mass of Algol in scientific notation — no translation needed.">3.2 เท่าของมวลดวงอาทิตย์</string>
+    <string name="object_info_algol_mass" translation_description="Mass of Algol in scientific notation .  Translate units if appropriate for your locale.">3.2 เท่าของมวลดวงอาทิตย์</string>
     <string name="object_info_alpha_centauri_description" translation_description="Description of Alpha Centauri shown in the info card. Translate this text.">อัลฟาเซนทอรีเป็นระบบดาวที่ใกล้ดวงอาทิตย์ที่สุด ประกอบด้วยดาวสามดวงรวมถึงพรอกซิมาเซนทอรี</string>
     <string name="object_info_alpha_centauri_funfact" translation_description="Fun fact about Alpha Centauri shown in the info card. Translate this text.">พรอกซิมาเซนทอรี ส่วนหนึ่งของระบบนี้ มีดาวเคราะห์ที่อาจอยู่อาศัยได้! พรอกซิมา b อยู่ห่างเพียง 4.2 ปีแสง</string>
     <string name="object_info_alpha_centauri_distance" translation_description="Distance to Alpha Centauri shown in the info card. Translate units if appropriate for your locale.">4.37 ปีแสง</string>
     <string name="object_info_alpha_centauri_size" translation_description="Physical size of Alpha Centauri shown in the info card. Translate units if appropriate for your locale.">1.2 เท่าของรัศมีดวงอาทิตย์</string>
-    <string name="object_info_alpha_centauri_mass" translation_description="Mass of Alpha Centauri in scientific notation — no translation needed.">1.1 เท่าของมวลดวงอาทิตย์</string>
+    <string name="object_info_alpha_centauri_mass" translation_description="Mass of Alpha Centauri in scientific notation .  Translate units if appropriate for your locale.">1.1 เท่าของมวลดวงอาทิตย์</string>
     <string name="object_info_dubhe_description" translation_description="Description of Dubhe shown in the info card. Translate this text.">ดูเบเป็นหนึ่งในสอง \"ดาวชี้\" ในกลุ่มดาวจระเข้ใหญ่ที่ชี้ไปยังโพลาริส ดาวเหนือ</string>
     <string name="object_info_dubhe_funfact" translation_description="Fun fact about Dubhe shown in the info card. Translate this text.">ต่างจากดาวส่วนใหญ่ในกลุ่มดาวจระเข้ใหญ่ ดูเบและอัลไคด์กำลังเคลื่อนที่ไปในทิศทางตรงกันข้าม - กลุ่มดาวจะดูต่างออกไปใน 50,000 ปี!</string>
     <string name="object_info_dubhe_distance" translation_description="Distance to Dubhe shown in the info card. Translate units if appropriate for your locale.">123 ปีแสง</string>
     <string name="object_info_dubhe_size" translation_description="Physical size of Dubhe shown in the info card. Translate units if appropriate for your locale.">30 เท่าของรัศมีดวงอาทิตย์</string>
-    <string name="object_info_dubhe_mass" translation_description="Mass of Dubhe in scientific notation — no translation needed.">4.3 เท่าของมวลดวงอาทิตย์</string>
+    <string name="object_info_dubhe_mass" translation_description="Mass of Dubhe in scientific notation .  Translate units if appropriate for your locale.">4.3 เท่าของมวลดวงอาทิตย์</string>
     <string name="object_info_alioth_description" translation_description="Description of Alioth shown in the info card. Translate this text.">อาลีออธเป็นดาวที่สว่างที่สุดในกลุ่มดาวหมีใหญ่และเป็นดาวที่สว่างที่สุดในกลุ่มดาวจระเข้ใหญ่</string>
     <string name="object_info_alioth_funfact" translation_description="Fun fact about Alioth shown in the info card. Translate this text.">อาลีออธมีสนามแม่เหล็กที่แปลกประหลาดซึ่งทำให้ธาตุเคมีรวมตัวกันเป็นจุดบนพื้นผิว!</string>
     <string name="object_info_alioth_distance" translation_description="Distance to Alioth shown in the info card. Translate units if appropriate for your locale.">83 ปีแสง</string>
     <string name="object_info_alioth_size" translation_description="Physical size of Alioth shown in the info card. Translate units if appropriate for your locale.">4.1 เท่าของรัศมีดวงอาทิตย์</string>
-    <string name="object_info_alioth_mass" translation_description="Mass of Alioth in scientific notation — no translation needed.">2.9 เท่าของมวลดวงอาทิตย์</string>
+    <string name="object_info_alioth_mass" translation_description="Mass of Alioth in scientific notation .  Translate units if appropriate for your locale.">2.9 เท่าของมวลดวงอาทิตย์</string>
     <string name="object_info_hamal_description" translation_description="Description of Hamal shown in the info card. Translate this text.">ฮามาลเป็นดาวที่สว่างที่สุดในกลุ่มดาวแกะและเคยใช้เพื่อทำเครื่องหมายจุดวสันตวิษุวัตเมื่อประมาณ 2,000 ปีก่อน</string>
     <string name="object_info_hamal_funfact" translation_description="Fun fact about Hamal shown in the info card. Translate this text.">ดาวเคราะห์นอกระบบขนาดยักษ์ถูกค้นพบโคจรรอบฮามาลในปี 2011 มีมวลอย่างน้อย 1.8 เท่าของดาวพฤหัสบดี!</string>
     <string name="object_info_hamal_distance" translation_description="Distance to Hamal shown in the info card. Translate units if appropriate for your locale.">66 ปีแสง</string>
     <string name="object_info_hamal_size" translation_description="Physical size of Hamal shown in the info card. Translate units if appropriate for your locale.">15 เท่าของรัศมีดวงอาทิตย์</string>
-    <string name="object_info_hamal_mass" translation_description="Mass of Hamal in scientific notation — no translation needed.">1.5 เท่าของมวลดวงอาทิตย์</string>
+    <string name="object_info_hamal_mass" translation_description="Mass of Hamal in scientific notation .  Translate units if appropriate for your locale.">1.5 เท่าของมวลดวงอาทิตย์</string>
     <string name="object_info_rasalhague_description" translation_description="Description of Rasalhague shown in the info card. Translate this text.">ราซัลฮากูเป็นดาวที่สว่างที่สุดในกลุ่มดาวคนแบกงู ซึ่งเป็นกลุ่มดาวที่เกี่ยวข้องกับการรักษา</string>
     <string name="object_info_rasalhague_funfact" translation_description="Fun fact about Rasalhague shown in the info card. Translate this text.">ราซัลฮากูเป็นดาวที่หมุนเร็ว - มันหมุนเร็วมากจนแบนอย่างเห็นได้ชัด หมุนครบรอบในเวลาเพียง 18 ชั่วโมง!</string>
     <string name="object_info_rasalhague_distance" translation_description="Distance to Rasalhague shown in the info card. Translate units if appropriate for your locale.">48.6 ปีแสง</string>
     <string name="object_info_rasalhague_size" translation_description="Physical size of Rasalhague shown in the info card. Translate units if appropriate for your locale.">2.5 เท่าของรัศมีดวงอาทิตย์</string>
-    <string name="object_info_rasalhague_mass" translation_description="Mass of Rasalhague in scientific notation — no translation needed.">2.4 เท่าของมวลดวงอาทิตย์</string>
+    <string name="object_info_rasalhague_mass" translation_description="Mass of Rasalhague in scientific notation .  Translate units if appropriate for your locale.">2.4 เท่าของมวลดวงอาทิตย์</string>
     <string name="object_info_denebola_description" translation_description="Description of Denebola shown in the info card. Translate this text.">เดเนโบลาเป็นหางของกลุ่มดาวสิงโต ชื่อของมันแปลว่า \"หางของสิงโต\" ในภาษาอาหรับ</string>
     <string name="object_info_denebola_funfact" translation_description="Fun fact about Denebola shown in the info card. Translate this text.">เดเนโบลามีจานเศษซากฝุ่นที่อาจบ่งบอกว่าดาวเคราะห์กำลังก่อตัวหรือดาวเคราะห์น้อยกำลังชนกันรอบมัน!</string>
     <string name="object_info_denebola_distance" translation_description="Distance to Denebola shown in the info card. Translate units if appropriate for your locale.">36 ปีแสง</string>
     <string name="object_info_denebola_size" translation_description="Physical size of Denebola shown in the info card. Translate units if appropriate for your locale.">1.7 เท่าของรัศมีดวงอาทิตย์</string>
-    <string name="object_info_denebola_mass" translation_description="Mass of Denebola in scientific notation — no translation needed.">1.8 เท่าของมวลดวงอาทิตย์</string>
+    <string name="object_info_denebola_mass" translation_description="Mass of Denebola in scientific notation .  Translate units if appropriate for your locale.">1.8 เท่าของมวลดวงอาทิตย์</string>
     <string name="object_info_alpheratz_description" translation_description="Description of Alpheratz shown in the info card. Translate this text.">อัลเฟรัตซ์เป็นดาวที่สว่างที่สุดในกลุ่มดาวแอนโดรเมดา แม้ว่าเคยถูกพิจารณาว่าเป็นส่วนหนึ่งของเพกาซัส</string>
     <string name="object_info_alpheratz_funfact" translation_description="Fun fact about Alpheratz shown in the info card. Translate this text.">อัลเฟรัตซ์มีองค์ประกอบทางเคมีที่ผิดปกติมากโดยมีความเข้มข้นสูงของปรอทและแมงกานีสในชั้นบรรยากาศ!</string>
     <string name="object_info_alpheratz_distance" translation_description="Distance to Alpheratz shown in the info card. Translate units if appropriate for your locale.">97 ปีแสง</string>
     <string name="object_info_alpheratz_size" translation_description="Physical size of Alpheratz shown in the info card. Translate units if appropriate for your locale.">2.7 เท่าของรัศมีดวงอาทิตย์</string>
-    <string name="object_info_alpheratz_mass" translation_description="Mass of Alpheratz in scientific notation — no translation needed.">3.6 เท่าของมวลดวงอาทิตย์</string>
+    <string name="object_info_alpheratz_mass" translation_description="Mass of Alpheratz in scientific notation .  Translate units if appropriate for your locale.">3.6 เท่าของมวลดวงอาทิตย์</string>
     <string name="object_info_markab_description" translation_description="Description of Markab shown in the info card. Translate this text.">มาร์คาบเป็นหนึ่งในสี่ดาวที่ก่อตัวเป็นจัตุรัสใหญ่ของเพกาซัส ซึ่งเป็นกลุ่มดาวที่จดจำได้ง่าย</string>
     <string name="object_info_markab_funfact" translation_description="Fun fact about Markab shown in the info card. Translate this text.">มาร์คาบเป็นดาว \"ปลาย B-type\" ที่กำลังจะสิ้นสุดชีวิตในลำดับหลักและจะกลายเป็นดาวยักษ์แดงเร็วๆ นี้!</string>
     <string name="object_info_markab_distance" translation_description="Distance to Markab shown in the info card. Translate units if appropriate for your locale.">133 ปีแสง</string>
     <string name="object_info_markab_size" translation_description="Physical size of Markab shown in the info card. Translate units if appropriate for your locale.">4.6 เท่าของรัศมีดวงอาทิตย์</string>
-    <string name="object_info_markab_mass" translation_description="Mass of Markab in scientific notation — no translation needed.">3.5 เท่าของมวลดวงอาทิตย์</string>
+    <string name="object_info_markab_mass" translation_description="Mass of Markab in scientific notation .  Translate units if appropriate for your locale.">3.5 เท่าของมวลดวงอาทิตย์</string>
     <string name="object_info_enif_description" translation_description="Description of Enif shown in the info card. Translate this text.">เอนิฟเป็นดาวที่สว่างที่สุดในเพกาซัสและเป็นจมูกของม้าบินในกลุ่มดาว</string>
     <string name="object_info_enif_funfact" translation_description="Fun fact about Enif shown in the info card. Translate this text.">ในปี 1972 เอนิฟมีเหตุการณ์ลุกจ้าอย่างน่าตื่นเต้น ทำให้ความสว่างเพิ่มขึ้นชั่วคราวถึงห้าเท่า!</string>
     <string name="object_info_enif_distance" translation_description="Distance to Enif shown in the info card. Translate units if appropriate for your locale.">670 ปีแสง</string>
     <string name="object_info_enif_size" translation_description="Physical size of Enif shown in the info card. Translate units if appropriate for your locale.">185 เท่าของรัศมีดวงอาทิตย์</string>
-    <string name="object_info_enif_mass" translation_description="Mass of Enif in scientific notation — no translation needed.">10.7 เท่าของมวลดวงอาทิตย์</string>
+    <string name="object_info_enif_mass" translation_description="Mass of Enif in scientific notation .  Translate units if appropriate for your locale.">10.7 เท่าของมวลดวงอาทิตย์</string>
     <string name="object_info_scheat_description" translation_description="Description of Scheat shown in the info card. Translate this text.">เชอาตเป็นดาวยักษ์แดงในจัตุรัสใหญ่ของเพกาซัส โดดเด่นด้วยสีส้มแดงเข้ม</string>
     <string name="object_info_scheat_funfact" translation_description="Fun fact about Scheat shown in the info card. Translate this text.">เชอาตเป็นดาวแปรแสงกึ่งสม่ำเสมอ เปลี่ยนความสว่างในช่วงเวลาตั้งแต่สัปดาห์ถึงเดือน!</string>
     <string name="object_info_scheat_distance" translation_description="Distance to Scheat shown in the info card. Translate units if appropriate for your locale.">196 ปีแสง</string>
     <string name="object_info_scheat_size" translation_description="Physical size of Scheat shown in the info card. Translate units if appropriate for your locale.">110 เท่าของรัศมีดวงอาทิตย์</string>
-    <string name="object_info_scheat_mass" translation_description="Mass of Scheat in scientific notation — no translation needed.">2.1 เท่าของมวลดวงอาทิตย์</string>
+    <string name="object_info_scheat_mass" translation_description="Mass of Scheat in scientific notation .  Translate units if appropriate for your locale.">2.1 เท่าของมวลดวงอาทิตย์</string>
     <string name="object_info_nunki_description" translation_description="Description of Nunki shown in the info card. Translate this text.">นุนกีเป็นดาวที่สว่างที่สุดอันดับสองในกลุ่มดาวคนยิงธนูและเป็นชื่อดาวที่เก่าแก่ที่สุดที่ยังใช้กันอยู่</string>
     <string name="object_info_nunki_funfact" translation_description="Fun fact about Nunki shown in the info card. Translate this text.">ชื่อนุนกีมาจากบาบิโลนโบราณซึ่งมันเป็นตัวแทนของเมืองเอริดูบนทรงกลมฟ้า!</string>
     <string name="object_info_nunki_distance" translation_description="Distance to Nunki shown in the info card. Translate units if appropriate for your locale.">228 ปีแสง</string>
     <string name="object_info_nunki_size" translation_description="Physical size of Nunki shown in the info card. Translate units if appropriate for your locale.">4.5 เท่าของรัศมีดวงอาทิตย์</string>
-    <string name="object_info_nunki_mass" translation_description="Mass of Nunki in scientific notation — no translation needed.">7.8 เท่าของมวลดวงอาทิตย์</string>
+    <string name="object_info_nunki_mass" translation_description="Mass of Nunki in scientific notation .  Translate units if appropriate for your locale.">7.8 เท่าของมวลดวงอาทิตย์</string>
     <string name="object_info_diphda_description" translation_description="Description of Diphda shown in the info card. Translate this text.">ดิฟดา (เบตาซีติ) เป็นดาวที่สว่างที่สุดในกลุ่มดาวปลาวาฬและเป็นดาวฤดูใบไม้ร่วงที่โดดเด่น</string>
     <string name="object_info_diphda_funfact" translation_description="Fun fact about Diphda shown in the info card. Translate this text.">ดิฟดาปรากฏโดดเดี่ยวในบริเวณท้องฟ้าที่ค่อนข้างรกร้าง ทำให้มีประโยชน์สำหรับนักเดินเรือแม้จะไม่สว่างมาก!</string>
     <string name="object_info_diphda_distance" translation_description="Distance to Diphda shown in the info card. Translate units if appropriate for your locale.">96 ปีแสง</string>
     <string name="object_info_diphda_size" translation_description="Physical size of Diphda shown in the info card. Translate units if appropriate for your locale.">18 เท่าของรัศมีดวงอาทิตย์</string>
-    <string name="object_info_diphda_mass" translation_description="Mass of Diphda in scientific notation — no translation needed.">2.8 เท่าของมวลดวงอาทิตย์</string>
+    <string name="object_info_diphda_mass" translation_description="Mass of Diphda in scientific notation .  Translate units if appropriate for your locale.">2.8 เท่าของมวลดวงอาทิตย์</string>
     <!-- ==================== MESSIER OBJECTS ==================== -->
     <!-- Note: Object names (m1, m13, etc.) are defined in celestial_objects.xml -->
     <!-- M1 - Crab Nebula -->
@@ -265,7 +265,7 @@
     <string name="object_info_m31_funfact" translation_description="Fun fact about M31 shown in the info card. Translate this text.">ดาราจักรแอนโดรเมดากำลังเข้าใกล้เราด้วยความเร็ว 110 กม./วินาที และจะชนกับทางช้างเผือกในอีกประมาณ 4.5 พันล้านปี!</string>
     <string name="object_info_m31_distance" translation_description="Distance to M31 shown in the info card. Translate units if appropriate for your locale.">2.5 ล้านปีแสง</string>
     <string name="object_info_m31_size" translation_description="Physical size of M31 shown in the info card. Translate units if appropriate for your locale.">กว้าง 220,000 ปีแสง</string>
-    <string name="object_info_m31_mass" translation_description="Mass of M31 in scientific notation — no translation needed.">1.5 ล้านล้านเท่าของมวลดวงอาทิตย์</string>
+    <string name="object_info_m31_mass" translation_description="Mass of M31 in scientific notation .  Translate units if appropriate for your locale.">1.5 ล้านล้านเท่าของมวลดวงอาทิตย์</string>
     <!-- M42 - Orion Nebula -->
     <string name="object_info_m42_description" translation_description="Description of M42 shown in the info card. Translate this text.">เนบิวลานายพรานเป็นเนบิวลาเปล่งแสงแบบกระจายที่มองเห็นได้ด้วยตาเปล่า เป็นหนึ่งในวัตถุที่ถูกถ่ายภาพมากที่สุดในท้องฟ้ากลางคืน</string>
     <string name="object_info_m42_funfact" translation_description="Fun fact about M42 shown in the info card. Translate this text.">เนบิวลานายพรานเป็นโรงงานผลิตดาวที่ดาวใหม่กำลังเกิดขึ้นตอนนี้ มีดาวกว่า 700 ดวงกำลังก่อตัวข้างใน!</string>
@@ -491,7 +491,32 @@
     <string name="object_info_m87_funfact" translation_description="Fun fact about M87 shown in the info card. Translate this text.">หลุมดำกลางของ M87 เป็นหลุมแรกที่ถูกถ่ายภาพโดยกล้องโทรทรรศน์ขอบฟ้าเหตุการณ์ในปี 2019 - มีมวล 6.5 พันล้านเท่าของดวงอาทิตย์!</string>
     <string name="object_info_m87_distance" translation_description="Distance to M87 shown in the info card. Translate units if appropriate for your locale.">53 ล้านปีแสง</string>
     <string name="object_info_m87_size" translation_description="Physical size of M87 shown in the info card. Translate units if appropriate for your locale.">กว้าง 240,000 ปีแสง</string>
-    <string name="object_info_m87_mass" translation_description="Mass of M87 in scientific notation — no translation needed.">2.4 ล้านล้านเท่าของมวลดวงอาทิตย์</string>
+    <string name="object_info_m87_mass" translation_description="Mass of M87 in scientific notation .  Translate units if appropriate for your locale.">2.4 ล้านล้านเท่าของมวลดวงอาทิตย์</string>
+    <!-- T CrB - T Coronae Borealis (Recurrent Nova) -->
+    <string name="object_info_t_crb_description" translation_description="Description of T Crb shown in the info card. Translate this text.">T Coronae Borealis (T CrB) เป็นโนวาซ้ำในกลุ่มดาว Corona Borealis ซึ่งเป็นระบบดาวคู่ที่ประกอบด้วยดาวยักษ์แดงและดาวแคระขาว ดาวแคระขาวสะสมไฮโดรเจนจากดาวคู่ของมันเป็นระยะ ๆ จนกว่าจะเพียงพอที่จะทำให้เกิดการระเบิดทางเทอร์โมนิวเคลียร์</string>
+    <string name="object_info_t_crb_funfact" translation_description="Fun fact about T Crb shown in the info card. Translate this text.">T CrB ระเบิดครั้งสุดท้ายในปี 1946 โดยสั้น ๆ ถึงขนาด 2.0 และมองเห็นได้ด้วยตาเปล่า นักดาราศาสตร์คาดการณ์ว่าการระเบิดครั้งต่อไปจะเกิดขึ้นในเร็ว ๆ นี้ — ติดตามต่อไป!</string>
+    <string name="object_info_t_crb_distance" translation_description="Distance to T Crb shown in the info card. Translate units if appropriate for your locale.">3,000 ปีแสง</string>
+    <string name="object_info_t_crb_size" translation_description="Physical size of T Crb shown in the info card. Translate units if appropriate for your locale.">0.2 AU การแยกวงโคจร</string>
+    <!-- Tarantula Nebula - NGC 2070 -->
+    <string name="object_info_tarantula_nebula_description" translation_description="Description of the Tarantula Nebula shown in the info card. Translate this text.">เนบิวลาแทรนทูลา (Tarantula Nebula) เป็นบริเวณการก่อตัวของดาวที่ใหญ่ที่สุดและส่องสว่างที่สุดในกลุ่มท้องถิ่น ซึ่งเป็นเนบิวลาการปล่อยแสงขนาดใหญ่ที่ฝังตัวอยู่ในเมฆแมเจลแลนิกขนาดใหญ่ และขยายออกไปประมาณ 600 ปีแสง แม้ว่าจะอยู่ห่างออกไป 163,000 ปีแสง แต่ก็สว่างพอที่จะมองเห็นได้ด้วยตาเปล่า</string>
+    <string name="object_info_tarantula_nebula_funfact" translation_description="Fun fact about the Tarantula Nebula shown in the info card. Translate this text.">หากเนบิวลาแทรนทูลาอยู่ใกล้เท่ากับเนบิวลาโอไรออน มันจะสว่างพอที่จะทำให้เกิดเงาในเวลากลางคืน และจะขยายไปครึ่งหนึ่งของท้องฟ้าที่มองเห็นได้!</string>
+    <string name="object_info_tarantula_nebula_distance" translation_description="Distance to the Tarantula Nebula shown in the info card. Translate units if appropriate for your locale.">163,000 ปีแสง</string>
+    <string name="object_info_tarantula_nebula_size" translation_description="Physical size of the Tarantula Nebula shown in the info card. Translate units if appropriate for your locale.">600 ปีแสง</string>
+    <!-- LMC - Large Magellanic Cloud -->
+    <string name="object_info_lmc_description" translation_description="Description of the Large Magellanic Cloud shown in the info card. Translate this text.">เมฆแมเจลแลนิกขนาดใหญ่เป็นแกแล็กซี่ดาวเทียมที่มีรูปร่างไม่สม่ำเสมอของทางช้างเผือก มองเห็นได้ด้วยตาเปล่าเป็นแพตช์ของท้องฟ้าที่เรืองแสงและแยกออกมา เป็นหนึ่งในเพื่อนบ้านแกแล็กซี่ที่ใกล้ที่สุดของเรา และเป็นหนึ่งในแกแล็กซี่ที่มีการก่อตัวของดาวที่ใช้งานมากที่สุดในกลุ่มท้องถิ่น</string>
+    <string name="object_info_lmc_funfact" translation_description="Fun fact about the Large Magellanic Cloud shown in the info card. Translate this text.">ในปี 1987 ดาวในแมจเจลแลนิกเมฆขนาดใหญ่ระเบิดเป็นซูเปอร์โนวา 1987A — ซูเปอร์โนวาที่มองเห็นได้ด้วยตาเปล่าดวงแรกนับตั้งแต่ปี 1604 นิวตริโนจากการระเบิดถึงโลกสามชั่วโมงก่อนแสง ซึ่งยืนยันแบบจำลองของเราเกี่ยวกับการยุบตัวของแกนดาว</string>
+    <string name="object_info_lmc_distance" translation_description="Distance to the Large Magellanic Cloud shown in the info card. Translate units if appropriate for your locale.">160,000 ปีแสง</string>
+    <string name="object_info_lmc_size" translation_description="Physical size of the Large Magellanic Cloud shown in the info card. Translate units if appropriate for your locale.">14,000 ปีแสง</string>
+    <!-- SMC - Small Magellanic Cloud -->
+    <string name="object_info_smc_description" translation_description="Description of the Small Magellanic Cloud shown in the info card. Translate this text.">Small Magellanic Cloud เป็นแกแล็กซี่ดาวเทียมแบบไม่สม่ำเสมอขนาดเล็กของทางช้างเผือก จับคู่กับพี่ชายที่ใหญ่กว่า LMC ร่วมกันพวกมันกำลังถูกฉีกออกจากกันอย่างช้าๆ โดยแรงโน้มถ่วงของทางช้างเผือก ทิ้งกระแสแก๊สขนาดใหญ่ไว้ข้ามท้องฟ้า</string>
+    <string name="object_info_smc_funfact" translation_description="Fun fact about the Small Magellanic Cloud shown in the info card. Translate this text.">โดยการศึกษาดาวแปรแปรแบบ Cepheid ในเมฆ Magellanic เล็ก ในปี 1908–12 Henrietta Swan Leavitt ได้ค้นพบกฎความสัมพันธ์ระหว่างคาบและความส่องสว่าง — ความก้าวหน้าครั้งสำคัญที่ทำให้นักดาราศาสตร์สามารถวัดระยะห่างข้ามจักรวาลได้เป็นครั้งแรก!</string>
+    <string name="object_info_smc_distance" translation_description="Distance to the Small Magellanic Cloud shown in the info card. Translate units if appropriate for your locale.">200,000 ปีแสง</string>
+    <string name="object_info_smc_size" translation_description="Physical size of the Small Magellanic Cloud shown in the info card. Translate units if appropriate for your locale.">7,000 ปีแสง</string>
+    <!-- Eta Carinae Nebula (NGC 3372) -->
+    <string name="object_info_eta_carinae_nebula_description" translation_description="Description of Eta Carinae Nebula shown in the info card. Translate this text.">เนบิวลาเอตา คารินา (NGC 3372) เป็นหนึ่งในเนบิวลาที่ใหญ่ที่สุดและสว่างที่สุดในท้องฟ้า ขยายออกไปกว่า 300 ปีแสง ที่ใจกลางของมันคือเอตา คารินา ซึ่งเป็นหนึ่งในดาวฤกษ์ที่มีมวลมากที่สุดและส่องสว่างที่สุดที่รู้จัก มีน้ำหนักกว่า 100 เท่าของมวลดวงอาทิตย์</string>
+    <string name="object_info_eta_carinae_nebula_funfact" translation_description="Fun fact about Eta Carinae Nebula shown in the info card. Translate this text.">ในปี ค.ศ. 1843 ดาวเอตา คารินาระเบิดและกลายเป็นดาวที่สว่างเป็นอันดับสองในท้องฟ้าเพียงชั่วครู่ แต่ไม่ทราบว่าเหตุใดมันจึงรอดชีวิต — มันอาจจะอยู่ในขอบเขตของการระเบิดเป็นซูเปอร์โนวา!</string>
+    <string name="object_info_eta_carinae_nebula_distance" translation_description="Distance to Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">7,500 ปีแสง</string>
+    <string name="object_info_eta_carinae_nebula_size" translation_description="Physical size of Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">300 ปีแสง</string>
     <!-- ==================== CONSTELLATIONS ==================== -->
     <!-- Note: Constellation names are defined in celestial_objects.xml -->
     <!-- Orion -->
@@ -686,4 +711,385 @@
     <string name="object_info_sagitta_description" translation_description="Description of Sagitta shown in the info card. Translate this text.">ลูกศรเป็นกลุ่มดาวที่เล็กที่สุดอันดับสาม เป็นตัวแทนของลูกศรในตำนานกรีกต่างๆ</string>
     <string name="object_info_sagitta_funfact" translation_description="Fun fact about Sagitta shown in the info card. Translate this text.">แม้จะเล็ก ลูกศรมี M71 กระจุกดาวทรงกลมที่ถูกเข้าใจผิดว่าเป็นกระจุกดาวเปิดมาหลายศตวรรษ!</string>
     <string name="object_info_sagitta_size" translation_description="Physical size of Sagitta shown in the info card. Translate units if appropriate for your locale.">80 ตารางองศา</string>
+
+    <!-- ============================================ -->
+    <!-- New Stars (24) — Phase 1 of issue #645 -->
+    <!-- ============================================ -->
+
+    <!-- Alcyone -->
+    <string name="object_info_alcyone_description" translation_description="Short description of Alcyone">Alcyone เป็นดาวที่สว่างที่สุดในกระจุกดาว Pleiades (M45) ในกลุ่มดาว Taurus มันเป็นดาวยักษ์สีน้ำเงินขาว</string>
+    <string name="object_info_alcyone_funfact" translation_description="Fun fact about Alcyone">Alcyone เป็นระบบดาวคู่ที่มีดาวสหายอย่างน้อยสามดวง นอกจากนี้ มันหมุนเร็วมากจนมีจานแก๊สรอบเส้นศูนย์สูตร</string>
+    <string name="object_info_alcyone_distance" translation_description="Distance to Alcyone shown in the info card. Translate units if appropriate for your locale.">~440 ปีแสง</string>
+    <string name="object_info_alcyone_size" translation_description="Physical size of Alcyone shown in the info card. Translate units if appropriate for your locale.">~10 รัศมีสุริยะ</string>
+    <!-- tm:omitted name="object_info_alcyone_mass" reason="identical_to_source" -->
+
+    <!-- Alderamin -->
+    <string name="object_info_alderamin_description" translation_description="Short description of Alderamin">Alderamin เป็นดาวที่สว่างที่สุดในกลุ่มดาว Cepheus (พระมหากษัตริย์) ชื่อของมันมาจากภาษาอาหรับ ซึ่งหมายความว่า "แขนขวา"</string>
+    <string name="object_info_alderamin_funfact" translation_description="Fun fact about Alderamin">เนื่องจากการเคลื่อนตัวของแกนโลก อัลเดรามินจะกลายเป็นดาวเหนือในปีค.ศ. 7500!</string>
+    <string name="object_info_alderamin_distance" translation_description="Distance to Alderamin shown in the info card. Translate units if appropriate for your locale.">49 ปีแสง</string>
+    <string name="object_info_alderamin_size" translation_description="Physical size of Alderamin shown in the info card. Translate units if appropriate for your locale.">2.5 รัศมีสุริยะ</string>
+    <!-- tm:omitted name="object_info_alderamin_mass" reason="identical_to_source" -->
+
+    <!-- Algenib -->
+    <string name="object_info_algenib_description" translation_description="Short description of Algenib">Algenib ทำเครื่องหมายมุมหนึ่งของ Great Square of Pegasus มันเป็นดาวสีน้ำเงินร้อนชนิด subgiant และเป็นตัวแปร Beta Cephei</string>
+    <string name="object_info_algenib_funfact" translation_description="Fun fact about Algenib">Algenib เป็นดาวที่เต้นตัวสั่น เปลี่ยนความสว่างเล็กน้อยทุก 3.6 ชั่วโมง! นอกจากนี้ยังเป็นหนึ่งในดาวที่ห่างไกลที่สุดที่สร้างรูปแบบดาวที่มองเห็นได้ด้วยตาเปล่า</string>
+    <string name="object_info_algenib_distance" translation_description="Distance to Algenib shown in the info card. Translate units if appropriate for your locale.">~390 ปีแสง</string>
+    <string name="object_info_algenib_size" translation_description="Physical size of Algenib shown in the info card. Translate units if appropriate for your locale.">4.8 รัศมีสุริยะ</string>
+    <!-- tm:omitted name="object_info_algenib_mass" reason="identical_to_source" -->
+
+    <!-- Algieba -->
+    <string name="object_info_algieba_description" translation_description="Short description of Algieba">Algieba เป็นดาวคู่ที่สวยงามในกลุ่มดาว Leo (สิงห์) ซึ่งประกอบเป็นแผ่นขนของสิงห์บนท้องฟ้า ชื่อของมันหมายถึง "หน้าผาก" ในภาษาอาหรับ</string>
+    <string name="object_info_algieba_funfact" translation_description="Fun fact about Algieba">ผ่านกล้องโทรทรรศน์ Algieba แยกออกเป็นคู่ดาวยักษ์สีทองและสีส้มเหลืองที่สวยงาม — เป็นหนึ่งในดาวคู่ที่สวยงามที่สุดในท้องฟ้า! ดาวเคราะห์ถูกค้นพบที่โคจรรอบดาวหลักในปี 2009</string>
+    <string name="object_info_algieba_distance" translation_description="Distance to Algieba shown in the info card. Translate units if appropriate for your locale.">~130 ปีแสง</string>
+    <string name="object_info_algieba_size" translation_description="Physical size of Algieba shown in the info card. Translate units if appropriate for your locale.">~23 รัศมีสุริยะ</string>
+    <!-- tm:omitted name="object_info_algieba_mass" reason="identical_to_source" -->
+
+    <!-- Alhena -->
+    <string name="object_info_alhena_description" translation_description="Short description of Alhena">Alhena ทำเครื่องหมายที่เท้าของ Pollux ซึ่งเป็นหนึ่งในฝาแฝดใน Gemini มันเป็นดาวสีขาวสว่างชนิด subgiant และเป็นหนึ่งในดาวที่โดดเด่นที่สุดของ Gemini</string>
+    <string name="object_info_alhena_funfact" translation_description="Fun fact about Alhena">ชื่อ Alhena มาจากภาษาอาหรับที่แปลว่า "เครื่องหมายตราแบรนด์" — ชาวอาหรับโบราณมองเห็นดาวดวงนี้เป็นตราแบรนด์บนคอของอูฐ!</string>
+    <string name="object_info_alhena_distance" translation_description="Distance to Alhena shown in the info card. Translate units if appropriate for your locale.">109 ปีแสง</string>
+    <string name="object_info_alhena_size" translation_description="Physical size of Alhena shown in the info card. Translate units if appropriate for your locale.">3.3 รัศมีสุริยะ</string>
+    <!-- tm:omitted name="object_info_alhena_mass" reason="identical_to_source" -->
+
+    <!-- Alkaid -->
+    <string name="object_info_alkaid_description" translation_description="Short description of Alkaid">Alkaid เป็นดาวที่ปลายด้ามของ Big Dipper ในกลุ่มดาว Ursa Major ดาวนี้เป็นดาวที่สว่างเป็นอันดับสามใน Ursa Major</string>
+    <string name="object_info_alkaid_funfact" translation_description="Fun fact about Alkaid">ต่างจากดาวส่วนใหญ่ของ Big Dipper นั้น Alkaid ไม่ได้เป็นส่วนหนึ่งของ Ursa Major Moving Group — มันกำลังเดินทางผ่านอวกาศในทิศทางที่แตกต่างออกไป ดังนั้นรูปร่างของ Big Dipper จะเปลี่ยนแปลงไปช้า ๆ ในอีกหลายพันปีข้างหน้า!</string>
+    <string name="object_info_alkaid_distance" translation_description="Distance to Alkaid shown in the info card. Translate units if appropriate for your locale.">104 ปีแสง</string>
+    <string name="object_info_alkaid_size" translation_description="Physical size of Alkaid shown in the info card. Translate units if appropriate for your locale.">3.4 รัศมีสุริยะ</string>
+    <!-- tm:omitted name="object_info_alkaid_mass" reason="identical_to_source" -->
+
+    <!-- Alnair -->
+    <string name="object_info_alnair_description" translation_description="Short description of Alnair">Alnair เป็นดาวที่สว่างที่สุดในกลุ่มดาว Grus (นกกระเรียว) ชื่อของมันหมายถึง "ดาวที่สว่าง" ในภาษาอาหรับ</string>
+    <string name="object_info_alnair_funfact" translation_description="Fun fact about Alnair">Alnair หมุนอย่างรวดเร็วมาก — อย่างน้อย 215 กม./วินาที ที่เส้นศูนย์สูตร — ซึ่งเร็วมากจนดาวฤกษ์มีรูปร่างเป็นทรงรี โป่งพองออกมาตรงกลาง!</string>
+    <string name="object_info_alnair_distance" translation_description="Distance to Alnair shown in the info card. Translate units if appropriate for your locale.">101 ปีแสง</string>
+    <string name="object_info_alnair_size" translation_description="Physical size of Alnair shown in the info card. Translate units if appropriate for your locale.">3.4 รัศมีสุริยะ</string>
+    <!-- tm:omitted name="object_info_alnair_mass" reason="identical_to_source" -->
+
+    <!-- Alnath -->
+    <string name="object_info_alnath_description" translation_description="Short description of Alnath">Alnath เป็นดาวที่สว่างเป็นอันดับสองในกลุ่มดาวพฤษภ ทำเครื่องหมายปลายเขาเหนือของวัว มันตั้งอยู่บนเส้นแบ่งระหว่างกลุ่มดาวพฤษภและกลุ่มดาวเกวียน</string>
+    <string name="object_info_alnath_funfact" translation_description="Fun fact about Alnath">Alnath เคยเป็นดาวที่ใช้ร่วมกันระหว่างสองกลุ่มดาว! มันถูกกำหนดให้เป็นทั้ง Beta Tauri และ Gamma Aurigae ก่อนที่ IAU จะกำหนดให้เป็นของ Taurus อย่างเป็นทางการในปี 1930</string>
+    <string name="object_info_alnath_distance" translation_description="Distance to Alnath shown in the info card. Translate units if appropriate for your locale.">134 ปีแสง</string>
+    <string name="object_info_alnath_size" translation_description="Physical size of Alnath shown in the info card. Translate units if appropriate for your locale.">4.2 รัศมีสุริยะ</string>
+    <string name="object_info_alnath_mass" translation_description="Mass of Alnath in scientific notation — no translation needed.">5.0 มวลสุริยะ</string>
+
+    <!-- Alphekka -->
+    <string name="object_info_alphekka_description" translation_description="Short description of Alphekka">Alphekka (เรียกอีกชื่อว่า Gemma) เป็นดาวที่สว่างที่สุดในกลุ่มดาว Corona Borealis (มงกุฎเหนือ) มันคือเพชรพลอยของวงกลมดาวเล็ก ๆ นี้</string>
+    <string name="object_info_alphekka_funfact" translation_description="Fun fact about Alphekka">Alphekka เป็นดาวคู่แบบสุริยุปราคา — ดาวสหายที่มีความสว่างน้อยของมันผ่านหน้าของมันทุก 17.4 วัน ทำให้เกิดการลดลงของความสว่างเพียงเล็กน้อยที่เกือบจะเป็นไปไม่ได้ที่จะมองเห็นได้โดยไม่มีเครื่องมือ!</string>
+    <string name="object_info_alphekka_distance" translation_description="Distance to Alphekka shown in the info card. Translate units if appropriate for your locale.">75 ปีแสง</string>
+    <string name="object_info_alphekka_size" translation_description="Physical size of Alphekka shown in the info card. Translate units if appropriate for your locale.">2.9 รัศมีสุริยะ</string>
+    <string name="object_info_alphekka_mass" translation_description="Mass of Alphekka in scientific notation — no translation needed.">2.6 มวลสุริยะ</string>
+
+    <!-- Ankaa -->
+    <string name="object_info_ankaa_description" translation_description="Short description of Ankaa">Ankaa เป็นดาวที่สว่างที่สุดในกลุ่มดาว Phoenix ซึ่งมองเห็นได้ดีที่สุดจากซีกโลกใต้ ชื่อของมันมาจากคำภาษาอาหรับที่แปลว่า "นกฟีนิกซ์"</string>
+    <string name="object_info_ankaa_funfact" translation_description="Fun fact about Ankaa">Ankaa เป็นดาวแบบไบนารีสเปกโทรสโคปิก ซึ่งหมายความว่าดาวคู่ของมันอยู่ใกล้มากจนสามารถตรวจจับได้เฉพาะจากการเปลี่ยนแปลงในสเปกตรัมแสงของพวกมัน — พวกมันโคจรรอบกันทุก 10.2 ปี!</string>
+    <string name="object_info_ankaa_distance" translation_description="Distance to Ankaa shown in the info card. Translate units if appropriate for your locale.">85 ปีแสง</string>
+    <string name="object_info_ankaa_size" translation_description="Physical size of Ankaa shown in the info card. Translate units if appropriate for your locale.">15 รัศมีสุริยะ</string>
+    <string name="object_info_ankaa_mass" translation_description="Mass of Ankaa in scientific notation — no translation needed.">1.3 มวลสุริยะ</string>
+
+    <!-- Arneb -->
+    <string name="object_info_arneb_description" translation_description="Short description of Arneb">Arneb เป็นดาวที่สว่างที่สุดในกลุ่มดาว Lepus (กระต่าย) ซึ่งเป็นกลุ่มดาวที่คุกเข่าอยู่ใต้เท้าของ Orion มันเป็นดาวยักษ์สีขาวที่หายากมาก</string>
+    <string name="object_info_arneb_funfact" translation_description="Fun fact about Arneb">Arneb เป็นดาวที่กำลังจะตายซึ่งอาจจะหมดไฮโดรเจนในแกนกลางแล้ว มันอาจจะสิ้นสุดชีวิตด้วยการระเบิดซูเปอร์โนวาในอีกไม่กี่ล้านปีข้างหน้า!</string>
+    <string name="object_info_arneb_distance" translation_description="Distance to Arneb shown in the info card. Translate units if appropriate for your locale.">~2,200 ปีแสง</string>
+    <string name="object_info_arneb_size" translation_description="Physical size of Arneb shown in the info card. Translate units if appropriate for your locale.">~75 รัศมีสุริยะ</string>
+    <string name="object_info_arneb_mass" translation_description="Mass of Arneb in scientific notation — no translation needed.">~14 มวลสุริยะ</string>
+
+    <!-- Caph -->
+    <string name="object_info_caph_description" translation_description="Short description of Caph">Caph เป็นดาวที่สว่างเป็นอันดับสองในกลุ่มดาว Cassiopeia ซึ่งเป็นจุดขวาสุดของรูปตัว W ที่มีชื่อเสียง ชื่อของมันหมายถึง "ฝ่ามือ" ในภาษาอาหรับ</string>
+    <string name="object_info_caph_funfact" translation_description="Fun fact about Caph">Caph เป็นดาวแปรผันชนิด Delta Scuti — มันสั่นไหวด้วยความถี่หลายความถี่พร้อมกัน ทำให้ความสว่างเปลี่ยนแปลงเล็กน้อยทุก 2.5 ชั่วโมง!</string>
+    <string name="object_info_caph_distance" translation_description="Distance to Caph shown in the info card. Translate units if appropriate for your locale.">54 ปีแสง</string>
+    <string name="object_info_caph_size" translation_description="Physical size of Caph shown in the info card. Translate units if appropriate for your locale.">3.5 รัศมีสุริยะ</string>
+    <string name="object_info_caph_mass" translation_description="Mass of Caph in scientific notation — no translation needed.">1.9 มวลสุริยะ</string>
+
+    <!-- Etamin -->
+    <string name="object_info_etamin_description" translation_description="Short description of Etamin">Etamin (หรือ Eltanin) เป็นดาวที่สว่างที่สุดในกลุ่มดาว Draco (มังกร) มันแทนหัวของมังกร และชื่อของมันหมายถึง "งูใหญ่" ในภาษาอาหรับ</string>
+    <string name="object_info_etamin_funfact" translation_description="Fun fact about Etamin">การสังเกตการณ์ Etamin ในปี 1728 โดย James Bradley นำไปสู่การค้นพบความคลาดเคลื่อนของแสง — หนึ่งในการพิสูจน์โดยตรงครั้งแรกว่าโลกเคลื่อนที่ผ่านอวกาศ!</string>
+    <string name="object_info_etamin_distance" translation_description="Distance to Etamin shown in the info card. Translate units if appropriate for your locale.">148 ปีแสง</string>
+    <string name="object_info_etamin_size" translation_description="Physical size of Etamin shown in the info card. Translate units if appropriate for your locale.">48 รัศมีสุริยะ</string>
+    <!-- tm:omitted name="object_info_etamin_mass" reason="identical_to_source" -->
+
+    <!-- Izar -->
+    <string name="object_info_izar_description" translation_description="Short description of Izar">Izar เป็นดาวคู่ที่สวยงามในกลุ่มดาว Boötes (ผู้เลี้ยงสัตว์) ชื่อของมันหมายถึง "เข็มขัด" หรือ "ผ้าคลุม" ในภาษาอาหรับ</string>
+    <string name="object_info_izar_funfact" translation_description="Fun fact about Izar">นักดาราศาสตร์ในศตวรรษที่ 19 ชื่อ Friedrich Georg Wilhelm von Struve เรียก Izar ว่า "Pulcherrima" (ภาษาละตินแปลว่า "สวยงามที่สุด") เพราะความเปรียบต่างของสีที่น่าทึ่งระหว่างส่วนประกอบสีส้มและสีน้ำเงินขาวของมัน!</string>
+    <string name="object_info_izar_distance" translation_description="Distance to Izar shown in the info card. Translate units if appropriate for your locale.">202 ปีแสง</string>
+    <string name="object_info_izar_size" translation_description="Physical size of Izar shown in the info card. Translate units if appropriate for your locale.">33 รัศมีสุริยะ</string>
+    <!-- tm:omitted name="object_info_izar_mass" reason="identical_to_source" -->
+
+    <!-- Kaus Australis -->
+    <string name="object_info_kaus_australis_description" translation_description="Short description of Kaus Australis">Kaus Australis เป็นดาวที่สว่างที่สุดในกลุ่มดาว Sagittarius (ธนูชน) ชื่อของมันหมายถึง "ธนูทางใต้" ในภาษาอาหรับและละตินผสมกัน</string>
+    <string name="object_info_kaus_australis_funfact" translation_description="Fun fact about Kaus Australis">Kaus Australis อยู่ใกล้ทิศทางของศูนย์กลางของกาแล็กซี่ทางช้างเผือกของเรา! เมื่อคุณมองดาวดวงนี้ คุณกำลังมองไปยังส่วนที่หนาแน่นที่สุดของระนาบกาแล็กซี่</string>
+    <string name="object_info_kaus_australis_distance" translation_description="Distance to Kaus Australis shown in the info card. Translate units if appropriate for your locale.">143 ปีแสง</string>
+    <string name="object_info_kaus_australis_size" translation_description="Physical size of Kaus Australis shown in the info card. Translate units if appropriate for your locale.">6.8 รัศมีสุริยะ</string>
+    <!-- tm:omitted name="object_info_kaus_australis_mass" reason="identical_to_source" -->
+
+    <!-- Kochab -->
+    <string name="object_info_kochab_description" translation_description="Short description of Kochab">โคคาบ (Kochab) เป็นดาวที่สว่างเป็นอันดับสองในกลุ่มดาว หมีน้อย (Ursa Minor) ร่วมกับเฟอร์คาด (Pherkad) มันสร้างเป็น "ผู้พิทักษ์ของขั้วโลก"</string>
+    <string name="object_info_kochab_funfact" translation_description="Fun fact about Kochab">ประมาณ 1500 ปีก่อนคริสตศักราช โคคาบเป็นดาวสว่างที่อยู่ใกล้ขั้วฟ้าเหนือมากที่สุด ทำให้มันเป็น "ดาวเหนือ" สำหรับชาวอียิปต์โบราณและนักเดินเรือชาวฟินิเชีย!</string>
+    <string name="object_info_kochab_distance" translation_description="Distance to Kochab shown in the info card. Translate units if appropriate for your locale.">131 ปีแสง</string>
+    <string name="object_info_kochab_size" translation_description="Physical size of Kochab shown in the info card. Translate units if appropriate for your locale.">42 รัศมีสุริยะ</string>
+    <!-- tm:omitted name="object_info_kochab_mass" reason="identical_to_source" -->
+
+    <!-- Merak -->
+    <string name="object_info_merak_description" translation_description="Short description of Merak">Merak เป็นหนึ่งในสองดาว "Pointer Stars" ในหมู่ Big Dipper ที่ชี้ไปยัง Polaris ดาวเหนือ มันตั้งอยู่ใน Ursa Major</string>
+    <string name="object_info_merak_funfact" translation_description="Fun fact about Merak">เมรักมีความเกินของอินฟราเรดที่บ่งชี้ว่ามีดิสก์ซากดาวรอบดาว — อาจเป็นวงแหวนของฝุ่นและวัสดุหินที่คล้ายกับแถบดาวเคราะห์น้อยของเรา!</string>
+    <string name="object_info_merak_distance" translation_description="Distance to Merak shown in the info card. Translate units if appropriate for your locale.">80 ปีแสง</string>
+    <string name="object_info_merak_size" translation_description="Physical size of Merak shown in the info card. Translate units if appropriate for your locale.">3.0 รัศมีสุริยะ</string>
+    <!-- tm:omitted name="object_info_merak_mass" reason="identical_to_source" -->
+
+    <!-- Menkar -->
+    <string name="object_info_menkar_description" translation_description="Short description of Menkar">เมนการ์ คือ ดาวยักษ์แดงที่ทำเครื่องหมายจมูกของเซตุส (สัตว์ทะเลประหลาด) ชื่อของมันหมายถึง "รูจมูก" ในภาษาอาหรับ</string>
+    <string name="object_info_menkar_funfact" translation_description="Fun fact about Menkar">เมนการ์กำลังเข้าใกล้สิ้นสุดของชีวิตดาวของมัน ดาวยักษ์แดงที่แก่เก่านี้กำลังหลอมรวมฮีเลียมในแกนกลางของมัน และในที่สุดจะคลายชั้นนอกของมันออกเพื่อกลายเป็นเนบิวลาดาวเคราะห์!</string>
+    <string name="object_info_menkar_distance" translation_description="Distance to Menkar shown in the info card. Translate units if appropriate for your locale.">249 ปีแสง</string>
+    <string name="object_info_menkar_size" translation_description="Physical size of Menkar shown in the info card. Translate units if appropriate for your locale.">~89 รัศมีสุริยะ</string>
+    <string name="object_info_menkar_mass" translation_description="Mass of Menkar in scientific notation — no translation needed.">~2.3 มวลสุริยะ</string>
+
+    <!-- Mirphak -->
+    <string name="object_info_mirphak_description" translation_description="Short description of Mirphak">Mirphak (หรือ Mirfak) เป็นดาวที่สว่างที่สุดในกลุ่มดาว Perseus ซึ่งเป็นดาวยักษ์สีเหลืองขาวที่ตั้งอยู่ในใจกลางของกระจุกดาว Alpha Persei</string>
+    <string name="object_info_mirphak_funfact" translation_description="Fun fact about Mirphak">Mirphak ถูกล้อมรอบด้วยกระจุกดาวเปิดที่สวยงาม (Melotte 20) ซึ่งมองเห็นได้ดีที่สุดด้วยกล้องส่องทางไกล — การกระจายตัวของดาวสีน้ำเงินขาวอ่อนที่เคลื่อนไหวไปด้วยกันในอวกาศ!</string>
+    <string name="object_info_mirphak_distance" translation_description="Distance to Mirphak shown in the info card. Translate units if appropriate for your locale.">~590 ปีแสง</string>
+    <string name="object_info_mirphak_size" translation_description="Physical size of Mirphak shown in the info card. Translate units if appropriate for your locale.">~68 รัศมีสุริยะ</string>
+    <string name="object_info_mirphak_mass" translation_description="Mass of Mirphak in scientific notation — no translation needed.">~8.5 มวลสุริยะ</string>
+
+    <!-- Phad -->
+    <string name="object_info_phad_description" translation_description="Short description of Phad">Phad (หรือเรียกว่า Phecda) เป็นหนึ่งในดาวที่ประกอบเป็นชามของ Big Dipper ในกลุ่มดาว Ursa Major ชื่อของมันมีความหมายว่า "ต้นขา" ในภาษาอาหรับ</string>
+    <string name="object_info_phad_funfact" translation_description="Fun fact about Phad">Phad เป็นสมาชิกของกลุ่มดาวเคลื่อนที่ Ursa Major — ชุดดาวที่เกิดมาพร้อมกันและเดินทางผ่านอวกาศเป็นกระจุกหลวม รวมถึงดาวส่วนใหญ่ของ Big Dipper!</string>
+    <string name="object_info_phad_distance" translation_description="Distance to Phad shown in the info card. Translate units if appropriate for your locale.">84 ปีแสง</string>
+    <string name="object_info_phad_size" translation_description="Physical size of Phad shown in the info card. Translate units if appropriate for your locale.">3.0 รัศมีสุริยะ</string>
+    <string name="object_info_phad_mass" translation_description="Mass of Phad in scientific notation — no translation needed.">2.9 มวลสุริยะ</string>
+
+    <!-- Saiph -->
+    <string name="object_info_saiph_description" translation_description="Short description of Saiph">Saiph ทำเครื่องหมายที่เข่าด้านล่างขวาของ Orion แม้ว่าจะดูมืดกว่า Rigel แต่มันเป็นดาวยักษ์สีน้ำเงินที่ร้อนและส่องสว่างมากจริง ๆ</string>
+    <string name="object_info_saiph_funfact" translation_description="Fun fact about Saiph">ไซฟ์ดูเบลกว่าที่อุณหภูมิของมันควรจะเป็น เพราะว่าพลังงานส่วนใหญ่ของมันถูกแผ่ออกมาเป็นแสงอัลตราไวโอเลต ซึ่งมองไม่เห็นด้วยตาของเรา! มันเป็นหนึ่งในดาวฤกษ์ที่สว่างและร้อนที่สุดในท้องฟ้าจริงๆ</string>
+    <string name="object_info_saiph_distance" translation_description="Distance to Saiph shown in the info card. Translate units if appropriate for your locale.">~650 ปีแสง</string>
+    <string name="object_info_saiph_size" translation_description="Physical size of Saiph shown in the info card. Translate units if appropriate for your locale.">~22 รัศมีสุริยะ</string>
+    <string name="object_info_saiph_mass" translation_description="Mass of Saiph in scientific notation — no translation needed.">~15.5 มวลสุริยะ</string>
+
+    <!-- Shedir -->
+    <string name="object_info_shedir_description" translation_description="Short description of Shedir">Shedir (หรือ Schedar) เป็นดาวที่สว่างที่สุดในกลุ่มดาว Cassiopeia ซึ่งเป็นดาวยักษ์สีส้มที่ฐานของรูปแบบ W ที่มีชื่อเสียง ชื่อของมันหมายถึง "เต้านม" ในภาษาอาหรับ</string>
+    <string name="object_info_shedir_funfact" translation_description="Fun fact about Shedir">เดิมทีเชื่อกันว่า Shedir เป็นดาวแปรแสง แต่การวัดสมัยใหม่แสดงให้เห็นว่าความสว่างของมันมีเสถียรภาพที่น่าทึ่ง — รายงานความแปรปรวนในอดีตอาจเกิดจากอุปกรณ์ที่ยังไม่พัฒนา!</string>
+    <string name="object_info_shedir_distance" translation_description="Distance to Shedir shown in the info card. Translate units if appropriate for your locale.">228 ปีแสง</string>
+    <string name="object_info_shedir_size" translation_description="Physical size of Shedir shown in the info card. Translate units if appropriate for your locale.">45 รัศมีสุริยะ</string>
+    <string name="object_info_shedir_mass" translation_description="Mass of Shedir in scientific notation — no translation needed.">~4.0 มวลสุริยะ</string>
+
+    <!-- Unukalhai -->
+    <string name="object_info_unukalhai_description" translation_description="Short description of Unukalhai">Unukalhai เป็นดาวที่สว่างที่สุดในกลุ่มดาว Serpens Caput (หัวของงู) ชื่อของมันหมายถึง "คอของงู" ในภาษาอาหรับ</string>
+    <string name="object_info_unukalhai_funfact" translation_description="Fun fact about Unukalhai">Serpens เป็นกลุ่มดาวเพียงกลุ่มเดียวที่แบ่งออกเป็นสองส่วนแยกกัน — Serpens Caput (หัว) และ Serpens Cauda (หาง) — คั่นด้วย Ophiuchus และ Unukalhai เป็นดาวที่สว่างที่สุดในส่วนหัว!</string>
+    <string name="object_info_unukalhai_distance" translation_description="Distance to Unukalhai shown in the info card. Translate units if appropriate for your locale.">74 ปีแสง</string>
+    <string name="object_info_unukalhai_size" translation_description="Physical size of Unukalhai shown in the info card. Translate units if appropriate for your locale.">12 รัศมีสุริยะ</string>
+    <string name="object_info_unukalhai_mass" translation_description="Mass of Unukalhai in scientific notation — no translation needed.">~2.1 มวลสุริยะ</string>
+
+    <!-- Vindemiatrix -->
+    <string name="object_info_vindemiatrix_description" translation_description="Short description of Vindemiatrix">Vindemiatrix เป็นดาวที่สว่างเป็นอันดับสามในกลุ่มดาว Virgo (หญิงสาว) ชื่อของมันมีความหมายว่า "ผู้เก็บเกี่ยวองุ่น" ในภาษาละติน</string>
+    <string name="object_info_vindemiatrix_funfact" translation_description="Fun fact about Vindemiatrix">Vindemiatrix ได้ชื่อมาเพราะการขึ้นของมันในเวลาเช้า (ปรากฏตัวครั้งแรกในเวลาเช้า) เคยตรงกับฤดูเก็บเกี่ยวองุ่นในทะเลเมดิเตอร์เรเนียน — มันคือดาวของช่างทำไวน์!</string>
+    <string name="object_info_vindemiatrix_distance" translation_description="Distance to Vindemiatrix shown in the info card. Translate units if appropriate for your locale.">109 ปีแสง</string>
+    <string name="object_info_vindemiatrix_size" translation_description="Physical size of Vindemiatrix shown in the info card. Translate units if appropriate for your locale.">11 รัศมีสุริยะ</string>
+    <string name="object_info_vindemiatrix_mass" translation_description="Mass of Vindemiatrix in scientific notation — no translation needed.">2.6 มวลสุริยะ</string>
+
+    <!-- ============================================ -->
+    <!-- New Constellations (41) — Phase 1 of issue #645 -->
+    <!-- ============================================ -->
+
+    <!-- Antlia -->
+    <string name="object_info_antlia_description" translation_description="Description of Antlia shown in the info card. Translate this text.">Antlia (ปั๊มลม) เป็นกลุ่มดาวทางใต้ที่มีความสว่างน้อย ซึ่งสร้างขึ้นโดย Nicolas-Louis de Lacaille ในศตวรรษที่ 18 เพื่อเป็นเกียรติแก่ปั๊มลมที่ Robert Boyle คิดค้นขึ้น</string>
+    <string name="object_info_antlia_funfact" translation_description="Fun fact about Antlia shown in the info card. Translate this text.">Antlia มีกาแล็กซี่แคระ Antlia ซึ่งเป็นหนึ่งในกาแล็กซี่ที่ใกล้ที่สุดกับทางช้างเผือก ห่างออกไปเพียง 4.3 ล้านปีแสง!</string>
+    <string name="object_info_antlia_size" translation_description="Physical size of Antlia shown in the info card. Translate units if appropriate for your locale.">239 ตารางองศา</string>
+
+    <!-- Apus -->
+    <string name="object_info_apus_description" translation_description="Description of Apus shown in the info card. Translate this text.">Apus (นกสวรรค์) เป็นกลุ่มดาวทางใต้ที่มีความสว่างน้อย ซึ่งนำเสนอโดยนักเดินเรือชาวดัตช์ Keyser และ de Houtman ในปลายศตวรรษที่ 16</string>
+    <string name="object_info_apus_funfact" translation_description="Fun fact about Apus shown in the info card. Translate this text.">Apus ตั้งชื่อตามนกสวรรค์ของหมู่เกาะอินเดียตะวันออก ซึ่งนักสำรวจยุโรปยุคแรกเชื่อว่าไม่มีเท้า — ดังนั้นชื่อภาษาละตินจึงมีความหมายว่า "ไม่มีเท้า"</string>
+    <string name="object_info_apus_size" translation_description="Physical size of Apus shown in the info card. Translate units if appropriate for your locale.">206 ตารางองศา</string>
+
+    <!-- Ara -->
+    <string name="object_info_ara_description" translation_description="Description of Ara shown in the info card. Translate this text.">Ara (แท่นบูชา) เป็นกลุ่มดาวทางใต้ที่เป็นที่รู้จักมาตั้งแต่สมัยโบราณ ในตำนานกรีก มันแสดงถึงแท่นบูชาที่เทพเจ้าสาบานสัญญาก่อนที่จะสู้รบกับไททัน</string>
+    <string name="object_info_ara_funfact" translation_description="Fun fact about Ara shown in the info card. Translate this text.">Ara มีเนบิวลาStingray ซึ่งเป็นเนบิวลาดาวเคราะห์ที่อ่อนที่สุดที่รู้จัก ซึ่งเห็นการเกิดตัวเพียงในช่วงทศวรรษ 1980 — เหตุการณ์จักรวาลที่ถูกจับภาพในเวลาจริง!</string>
+    <string name="object_info_ara_size" translation_description="Physical size of Ara shown in the info card. Translate units if appropriate for your locale.">237 ตารางองศา</string>
+
+    <!-- Caelum -->
+    <string name="object_info_caelum_description" translation_description="Description of Caelum shown in the info card. Translate this text.">Caelum (ลูกแกะ) เป็นหนึ่งในกลุ่มดาวที่มีความสว่างน้อยที่สุดในท้องฟ้า สร้างขึ้นโดย Lacaille ในศตวรรษที่ 18 เพื่อแทนเครื่องมือแกะสลัก</string>
+    <string name="object_info_caelum_funfact" translation_description="Fun fact about Caelum shown in the info card. Translate this text.">Caelum เป็นกลุ่มดาวที่เล็กเป็นอันดับแปดและไม่มีดาวที่สว่างกว่าขนาด 4.5 — คุณต้องมีท้องฟ้าที่มืดมากและสายตาที่คมชาดเพื่อจะมองเห็นมัน!</string>
+    <string name="object_info_caelum_size" translation_description="Physical size of Caelum shown in the info card. Translate units if appropriate for your locale.">125 ตารางองศา</string>
+
+    <!-- Camelopardalis -->
+    <string name="object_info_camelopardalis_description" translation_description="Description of Camelopardalis shown in the info card. Translate this text.">Camelopardalis (ยีราฟ) เป็นกลุ่มดาวเหนือที่มีขนาดใหญ่แต่มีแสงสลัว ชื่อของมันมาจากภาษากรีกแปลว่า "อูฐ-เสือดาว" ซึ่งเป็นคำอธิบายในยุคแรกของยีราฟ</string>
+    <string name="object_info_camelopardalis_funfact" translation_description="Fun fact about Camelopardalis shown in the info card. Translate this text.">แม้ว่า Camelopardalis เป็นกลุ่มดาวที่ใหญ่เป็นอันดับ 18 แต่ไม่มีดาวใดที่สว่างกว่าขนาด 4.0 — มันครอบครองพื้นที่ท้องฟ้าที่กว้างใหญ่และดูเหมือนว่างเปล่าใกล้กับ Polaris!</string>
+    <string name="object_info_camelopardalis_size" translation_description="Physical size of Camelopardalis shown in the info card. Translate units if appropriate for your locale.">757 ตารางองศา</string>
+
+    <!-- Canes Venatici -->
+    <string name="object_info_canes_venatici_description" translation_description="Description of Canes Venatici shown in the info card. Translate this text.">Canes Venatici (สุนัขล่าสัตว์) แทนสุนัขสองตัวที่ถูกจับโดย Boötes ผู้เลี้ยงสัตว์ มันถูกนำเสนอโดย Johannes Hevelius ในปี 1687</string>
+    <string name="object_info_canes_venatici_funfact" translation_description="Fun fact about Canes Venatici shown in the info card. Translate this text.">Canes Venatici มีดาราจักร M51 หรือ Whirlpool Galaxy ซึ่งเป็นดาราจักรแรกที่มีการค้นพบโครงสร้างเกลียว ซึ่งวาดภาพโดย Lord Rosse ในปี 1845!</string>
+    <string name="object_info_canes_venatici_size" translation_description="Physical size of Canes Venatici shown in the info card. Translate units if appropriate for your locale.">465 ตารางองศา</string>
+
+    <!-- Chamaeleon -->
+    <string name="object_info_chamaeleon_description" translation_description="Description of Chamaeleon shown in the info card. Translate this text.">Chamaeleon เป็นกลุ่มดาวขนาดเล็กในซีกโลกใต้ที่นักเดินเรือชาวดัตช์นำเสนอในปลายศตวรรษที่ 16 แทนจิงโจ้ที่เปลี่ยนสีได้</string>
+    <string name="object_info_chamaeleon_funfact" translation_description="Fun fact about Chamaeleon shown in the info card. Translate this text.">Chamaeleon มีเนบิวลาโมเลกุลขนาดใหญ่ที่มีดาวใหม่กำลังเกิดขึ้นอย่างต่อเนื่อง — เป็นหนึ่งในบริเวณการเกิดดาวที่ใกล้ที่สุดกับโลกที่ระยะเพียง 500 ปีแสงเท่านั้น!</string>
+    <string name="object_info_chamaeleon_size" translation_description="Physical size of Chamaeleon shown in the info card. Translate units if appropriate for your locale.">132 ตารางองศา</string>
+
+    <!-- Circinus -->
+    <string name="object_info_circinus_description" translation_description="Description of Circinus shown in the info card. Translate this text.">Circinus (เข็มทิศ) เป็นหนึ่งในกลุ่มดาวที่เล็กที่สุด สร้างขึ้นโดย Lacaille เพื่อแทนเข็มทิศวาดรูปที่ใช้สำหรับวาดวงกลม</string>
+    <string name="object_info_circinus_funfact" translation_description="Fun fact about Circinus shown in the info card. Translate this text.">กาแล็กซี่เซอร์คินัส (Circinus Galaxy) เป็นหนึ่งในกาแล็กซี่เซเยิร์ตที่อยู่ใกล้เคียงกับเราที่สุด — กาแล็กซี่ที่มีกิจกรรมพร้อมหลุมดำมหาศาล ซึ่งขับเคลื่อนลำแสงสว่างของสสารออกมา!</string>
+    <string name="object_info_circinus_size" translation_description="Physical size of Circinus shown in the info card. Translate units if appropriate for your locale.">93 ตารางองศา</string>
+
+    <!-- Columba -->
+    <string name="object_info_columba_description" translation_description="Description of Columba shown in the info card. Translate this text.">Columba (นกเขา) แทนนกเขาที่โนอาห์ส่งจากหีบโนอาห์เพื่อหาแผ่นดินแห้ง มันตั้งอยู่ทางใต้ของ Lepus และ Canis Major</string>
+    <string name="object_info_columba_funfact" translation_description="Fun fact about Columba shown in the info card. Translate this text.">ดาวหนีไป Mu Columbae ถูกขับออกจากเนบิวลาของ Orion เมื่อประมาณ 2.5 ล้านปีที่แล้ว และตอนนี้กำลังเคลื่อนที่ผ่าน Columba ด้วยความเร็วกว่า 100 กม./วินาที!</string>
+    <string name="object_info_columba_size" translation_description="Physical size of Columba shown in the info card. Translate units if appropriate for your locale.">270 ตารางองศา</string>
+
+    <!-- Coma Berenices -->
+    <string name="object_info_coma_berenices_description" translation_description="Description of Coma Berenices shown in the info card. Translate this text.">Coma Berenices (ผมของเบเรนิเซ) แสดงถึงผมของราชินีอียิปต์เบเรนิเซที่ 2 ผู้ที่ถวายผมให้แก่พระเจ้า เป็นหนึ่งในกลุ่มดาวไม่กี่กลุ่มที่ตั้งชื่อตามบุคคลในประวัติศาสตร์</string>
+    <string name="object_info_coma_berenices_funfact" translation_description="Fun fact about Coma Berenices shown in the info card. Translate this text.">Coma Berenices มีขั้วแกแลกติกเหนือ — ทิศทางที่ตั้งฉากกับดิสก์ของทางช้างเผือก — ซึ่งเป็นเหตุผลว่าทำไมจึงมีกาแลกซีที่มองเห็นได้มากมายโดยไม่มีฝุ่นแกแลกติกขวางทาง!</string>
+    <string name="object_info_coma_berenices_size" translation_description="Physical size of Coma Berenices shown in the info card. Translate units if appropriate for your locale.">386 ตารางองศา</string>
+
+    <!-- Corona Australis -->
+    <string name="object_info_corona_australis_description" translation_description="Description of Corona Australis shown in the info card. Translate this text.">Corona Australis (มงกุฎใต้) เป็นหนึ่งในกลุ่มดาว 48 กลุ่มที่ Ptolemy ได้บันทึกไว้ มันแสดงถึงพวงมาลัยหรือมงกุฎที่วางไว้ที่เท้าของ Sagittarius</string>
+    <string name="object_info_corona_australis_funfact" translation_description="Fun fact about Corona Australis shown in the info card. Translate this text.">Corona Australis มีหนึ่งในภูมิภาคการก่อตัวของดาวที่ใกล้ที่สุดและมีความเคลื่อนไหวมากที่สุด — Coronet Cluster ซึ่งมีดาวหนุ่มสิบกว่าดวงกำลังเกิดขึ้นในขณะนี้!</string>
+    <string name="object_info_corona_australis_size" translation_description="Physical size of Corona Australis shown in the info card. Translate units if appropriate for your locale.">128 ตารางองศา</string>
+
+    <!-- Crater -->
+    <string name="object_info_crater_description" translation_description="Description of Crater shown in the info card. Translate this text.">Crater (the Cup) แทนถ้วยของ Apollo ในตำนานกรีก มันวางอยู่บนหลังของ Hydra งูน้ำ ข้างๆ Corvus อีกาตัวนั้น</string>
+    <string name="object_info_crater_funfact" translation_description="Fun fact about Crater shown in the info card. Translate this text.">ในตำนานกรีก อพอลโลส่งกาเหว่าไปเอาน้ำในถ้วยนี้ แต่กาเหว่าล่าช้าเพราะกินมะเดื่อ จึงอพอลโลจึงวางทั้งสามตัวไว้ในท้องฟ้าเป็นการลงโทษ!</string>
+    <string name="object_info_crater_size" translation_description="Physical size of Crater shown in the info card. Translate units if appropriate for your locale.">282 ตารางองศา</string>
+
+    <!-- Dorado -->
+    <string name="object_info_dorado_description" translation_description="Description of Dorado shown in the info card. Translate this text.">ดอราโด (ปลาดาบหรือปลาโลมา) เป็นกลุ่มดาวทางใต้ที่สร้างสรรค์โดยนักเดินเรือชาวดัตช์ ประกอบด้วยส่วนใหญ่ของเมฆแมเจลแลนิกขนาดใหญ่</string>
+    <string name="object_info_dorado_funfact" translation_description="Fun fact about Dorado shown in the info card. Translate this text.">ดอราโด้เป็นบ้านของเนบิวลาแทรนทูลา (30 Doradus) ซึ่งเป็นบริเวณการก่อตัวของดาวที่สว่างที่สุดในกลุ่มท้องถิ่น — หากมันอยู่ใกล้เท่ากับเนบิวลาโอไรออน มันจะสร้างเงาบนโลก!</string>
+    <string name="object_info_dorado_size" translation_description="Physical size of Dorado shown in the info card. Translate units if appropriate for your locale.">179 ตารางองศา</string>
+
+    <!-- Equuleus -->
+    <string name="object_info_equuleus_description" translation_description="Description of Equuleus shown in the info card. Translate this text.">Equuleus (ม้าน้อย) เป็นกลุ่มดาวที่เล็กเป็นอันดับสอง ในตำนานกรีก มันแสดงถึง Celeris พี่น้องหรือลูกม้าของ Pegasus</string>
+    <string name="object_info_equuleus_funfact" translation_description="Fun fact about Equuleus shown in the info card. Translate this text.">Equuleus เป็นกลุ่มดาวที่เล็กเป็นอันดับสองของทั้งหมด 88 กลุ่มดาว (มีเพียง Crux เท่านั้นที่เล็กกว่า) แต่มันเป็นหนึ่งในกลุ่มดาว 48 ดั้งเดิมที่ปโตเลมีระบุไว้เมื่อเกือบ 2,000 ปีที่แล้ว!</string>
+    <string name="object_info_equuleus_size" translation_description="Physical size of Equuleus shown in the info card. Translate units if appropriate for your locale.">72 ตารางองศา</string>
+
+    <!-- Fornax -->
+    <string name="object_info_fornax_description" translation_description="Description of Fornax shown in the info card. Translate this text.">Fornax (เตาเผา) ถูกสร้างขึ้นโดย Lacaille เพื่อแทนเตาเผาเคมี มันเป็นกลุ่มดาวทางใต้ที่มีแสงสลัวอยู่ระหว่าง Cetus และ Eridanus</string>
+    <string name="object_info_fornax_funfact" translation_description="Fun fact about Fornax shown in the info card. Translate this text.">Hubble Ultra Deep Field — ภาพลึกที่สุดของจักรวาลที่เคยถ่ายมา ซึ่งเปิดเผยกาแล็กซี่ที่อยู่ห่างออกไป 13 พันล้านปีแสง — ถูกถ่ายในกลุ่มดาว Fornax!</string>
+    <string name="object_info_fornax_size" translation_description="Physical size of Fornax shown in the info card. Translate units if appropriate for your locale.">398 ตารางองศา</string>
+
+    <!-- Horologium -->
+    <string name="object_info_horologium_description" translation_description="Description of Horologium shown in the info card. Translate this text.">Horologium (นาฬิกาลูกตุ้ม) ถูกสร้างขึ้นโดย Lacaille เพื่อเป็นเกียรติแก่การประดิษฐ์นาฬิกาลูกตุ้มของ Christiaan Huygens ในปี ค.ศ. 1656</string>
+    <string name="object_info_horologium_funfact" translation_description="Fun fact about Horologium shown in the info card. Translate this text.">Horologium มีกระจุมกระจิมกาแล็กซี่ขนาดมหาศาลที่เรียกว่า Horologium-Reticulum Supercluster ซึ่งเป็นหนึ่งในโครงสร้างที่ใหญ่ที่สุดในจักรวาลใกล้เคียง!</string>
+    <string name="object_info_horologium_size" translation_description="Physical size of Horologium shown in the info card. Translate units if appropriate for your locale.">249 ตารางองศา</string>
+
+    <!-- Hydrus -->
+    <string name="object_info_hydrus_description" translation_description="Description of Hydrus shown in the info card. Translate this text.">Hydrus (งูน้ำตัวเล็ก) เป็นกลุ่มดาวเล็กทางใต้ที่อยู่ใกล้ขั้วฟ้าใต้ อย่าสับสนกับ Hydra ซึ่งเป็นงูน้ำตัวใหญ่มาก</string>
+    <string name="object_info_hydrus_funfact" translation_description="Fun fact about Hydrus shown in the info card. Translate this text.">Hydrus ตั้งอยู่ระหว่าง Large Magellanic Cloud และ Small Magellanic Cloud ทำให้มันเป็นจุดสังเกตที่มีประโยชน์สำหรับการค้นหาแกแลกซี่ดาวเทียมทั้งสองของทางช้างเผือก!</string>
+    <string name="object_info_hydrus_size" translation_description="Physical size of Hydrus shown in the info card. Translate units if appropriate for your locale.">243 ตารางองศา</string>
+
+    <!-- Indus -->
+    <string name="object_info_indus_description" translation_description="Description of Indus shown in the info card. Translate this text.">Indus (ชาวอินเดีย) เป็นกลุ่มดาวทางใต้ที่สร้างสรรค์โดยนักเดินเรือชาวดัตช์ แทนชาวพื้นเมืองของหมู่เกาะอินเดียตะวันออกหรือมาดากัสการ์</string>
+    <string name="object_info_indus_funfact" translation_description="Fun fact about Indus shown in the info card. Translate this text.">Epsilon Indi ซึ่งเป็นดาวคล้ายดวงอาทิตย์ที่อยู่ใกล้ที่สุดดวงหนึ่งห่างออกไปเพียง 12 ปีแสง อยู่ในกลุ่มดาว Indus — และมีระบบดาวแคระน้ำตาลเป็นดาวประจำตัว!</string>
+    <string name="object_info_indus_size" translation_description="Physical size of Indus shown in the info card. Translate units if appropriate for your locale.">294 ตารางองศา</string>
+
+    <!-- Lacerta -->
+    <string name="object_info_lacerta_description" translation_description="Description of Lacerta shown in the info card. Translate this text.">Lacerta (จิ้งจก) เป็นกลุ่มดาวเหนือขนาดเล็กที่ Hevelius แนะนำในปี 1687 ตั้งอยู่ระหว่าง Cygnus และ Andromeda</string>
+    <string name="object_info_lacerta_funfact" translation_description="Fun fact about Lacerta shown in the info card. Translate this text.">Lacerta มีดาวแบบ BL Lacertae ซึ่งเป็นต้นแบบของกาแล็กซี่ที่ใช้งานอยู่ชั้นหนึ่งที่เรียกว่า "blazars" — กาแล็กซี่ที่มีหลุมดำมหาศาล ยิงลำของสสารไปยังโลกโดยตรง!</string>
+    <string name="object_info_lacerta_size" translation_description="Physical size of Lacerta shown in the info card. Translate units if appropriate for your locale.">201 ตารางองศา</string>
+
+    <!-- Leo Minor -->
+    <string name="object_info_leo_minor_description" translation_description="Description of Leo Minor shown in the info card. Translate this text.">Leo Minor (สิงโตน้อย) เป็นกลุ่มดาวที่มีความสว่างน้อยซึ่งตั้งอยู่ระหว่าง Leo และ Ursa Major ซึ่งนำเสนอโดย Hevelius ในปี 1687</string>
+    <string name="object_info_leo_minor_funfact" translation_description="Fun fact about Leo Minor shown in the info card. Translate this text.">Leo Minor เป็นหนึ่งในกลุ่มดาวที่หายากที่ดาวที่สว่างที่สุดไม่มีการกำหนด Alpha — Hevelius ลืมติดป้ายกำกับ ดังนั้นดาวที่สว่างที่สุดของมันคือ 46 Leonis Minoris (Beta)!</string>
+    <string name="object_info_leo_minor_size" translation_description="Physical size of Leo Minor shown in the info card. Translate units if appropriate for your locale.">232 ตารางองศา</string>
+
+    <!-- Lupus -->
+    <string name="object_info_lupus_description" translation_description="Description of Lupus shown in the info card. Translate this text.">Lupus (หมาป่า) เป็นกลุ่มดาวทางใต้ที่มีมาตั้งแต่สมัยโบราณ ชาวกรีกและโรมันมองเห็นมันเป็นสัตว์ป่าที่ถูกแทงด้วยหลักที่ถือโดย Centaurus</string>
+    <string name="object_info_lupus_funfact" translation_description="Fun fact about Lupus shown in the info card. Translate this text.">ในปี ค.ศ. 1006 ซูเปอร์โนวาที่สว่างที่สุดที่เคยบันทึกไว้โดยมนุษย์ปรากฏในกลุ่มดาว Lupus — SN 1006 มองเห็นได้ในเวลากลางวันและอาจถึงขนาด −7.5!</string>
+    <string name="object_info_lupus_size" translation_description="Physical size of Lupus shown in the info card. Translate units if appropriate for your locale.">334 ตารางองศา</string>
+
+    <!-- Lynx -->
+    <string name="object_info_lynx_description" translation_description="Description of Lynx shown in the info card. Translate this text.">Lynx เป็นกลุ่มดาวเหนือที่มีขนาดใหญ่แต่มีความสว่างน้อยซึ่งสร้างขึ้นโดย Hevelius ในปี 1687 เขากล่าวว่าคุณจะต้องมีดวงตาของ lynx เพื่อมองเห็นมัน!</string>
+    <string name="object_info_lynx_funfact" translation_description="Fun fact about Lynx shown in the info card. Translate this text.">กลุ่มดาว Lynx มีดาวเคราะห์ Intergalactic Wanderer (NGC 2419) ซึ่งเป็นกระจุกดาวทรงกลมที่อยู่ห่างไกลถึง 300,000 ปีแสง จนเคยคิดว่ามันโคจรอยู่นอกทางช้างเผือก!</string>
+    <string name="object_info_lynx_size" translation_description="Physical size of Lynx shown in the info card. Translate units if appropriate for your locale.">545 ตารางองศา</string>
+
+    <!-- Mensa -->
+    <string name="object_info_mensa_description" translation_description="Description of Mensa shown in the info card. Translate this text.">Mensa (Table Mountain) ถูกสร้างขึ้นโดย Lacaille เพื่อเป็นเกียรติแก่ Table Mountain ในเคปทาวน์ ประเทศแอฟริกาใต้ ซึ่งเป็นสถานที่ที่เขาทำการสังเกตการณ์ท้องฟ้าทางใต้</string>
+    <string name="object_info_mensa_funfact" translation_description="Fun fact about Mensa shown in the info card. Translate this text.">Mensa เป็นกลุ่มดาวเพียงกลุ่มเดียวที่ตั้งชื่อตามลักษณะภูมิศาสตร์เฉพาะบนโลก ส่วนหนึ่งของ Large Magellanic Cloud ขยายเข้าไปในนั้น เหมือนเมฆลอยเหนือภูเขา!</string>
+    <string name="object_info_mensa_size" translation_description="Physical size of Mensa shown in the info card. Translate units if appropriate for your locale.">153 ตารางองศา</string>
+
+    <!-- Microscopium -->
+    <string name="object_info_microscopium_description" translation_description="Description of Microscopium shown in the info card. Translate this text.">Microscopium (กล้องจุลทรรศน์) ถูกสร้างขึ้นโดย Lacaille เพื่อเป็นเกียรติแก่กล้องจุลทรรศน์แบบประกอบ มันเป็นหนึ่งในกลุ่มดาวที่มีความสว่างน้อยที่สุดในท้องฟ้า</string>
+    <string name="object_info_microscopium_funfact" translation_description="Fun fact about Microscopium shown in the info card. Translate this text.">ดาวที่สว่างที่สุดของ Microscopium คือ Gamma Microscopii ซึ่งเคยเป็นส่วนหนึ่งของ Sagittarius ที่อยู่ข้างเคียง — ดาวนี้ถูกจัดสรรใหม่เมื่อมีการกำหนดมาตรฐานขอบเขตของกลุ่มดาวในปี 1930!</string>
+    <string name="object_info_microscopium_size" translation_description="Physical size of Microscopium shown in the info card. Translate units if appropriate for your locale.">210 ตารางองศา</string>
+
+    <!-- Musca -->
+    <string name="object_info_musca_description" translation_description="Description of Musca shown in the info card. Translate this text.">Musca (แมลงวัน) เป็นกลุ่มดาวเล็กน้อยในซีกฟ้าใต้ที่อยู่ใกล้กับกลุ่มดาวเซาเทิร์นครอส มันเป็นกลุ่มดาวแมลงเพียงกลุ่มเดียวในท้องฟ้า</string>
+    <string name="object_info_musca_funfact" translation_description="Fun fact about Musca shown in the info card. Translate this text.">Musca เดิมชื่อ "Apis" (ผึ้ง) ตั้งโดยผู้สร้าง มันเป็นกลุ่มดาวเพียงกลุ่มเดียวที่แทนแมลง — และมันอยู่ติดกับ Chamaeleon ซึ่งกินมันเลย!</string>
+    <string name="object_info_musca_size" translation_description="Physical size of Musca shown in the info card. Translate units if appropriate for your locale.">138 ตารางองศา</string>
+
+    <!-- Norma -->
+    <string name="object_info_norma_description" translation_description="Description of Norma shown in the info card. Translate this text.">Norma (สี่เหลี่ยมจัตุรัสของช่างไม้) ถูกสร้างสรรค์โดย Lacaille เพื่อแทนระดับน้ำและสี่เหลี่ยมจัตุรัส มันตั้งอยู่ในทางช้างเผือกที่อุดมสมบูรณ์ระหว่าง Scorpius และ Lupus</string>
+    <string name="object_info_norma_funfact" translation_description="Fun fact about Norma shown in the info card. Translate this text.">เมื่อมองไปยัง Norma คุณกำลังมองไปตามแขนเกลียวของทางช้างเผือก — แขน Norma ซึ่งตั้งชื่อตามกลุ่มดาวนี้ เต็มไปด้วยกระจุกดาวและเนบิวลา!</string>
+    <string name="object_info_norma_size" translation_description="Physical size of Norma shown in the info card. Translate units if appropriate for your locale.">165 ตารางองศา</string>
+
+    <!-- Octans -->
+    <string name="object_info_octans_description" translation_description="Description of Octans shown in the info card. Translate this text.">Octans (ออกแตนต์) ถูกสร้างขึ้นโดย Lacaille เพื่อเป็นเกียรติแก่เครื่องมือนำทาง มันมีขั้วท้องฟ้าใต้อยู่ในนั้น</string>
+    <string name="object_info_octans_funfact" translation_description="Fun fact about Octans shown in the info card. Translate this text.">Octans มีขั้วท้องฟ้าใต้ แต่ต่างจากขั้วเหนือที่มี Polaris ไม่มีดาวสว่างที่ทำเครื่องหมายขั้วใต้ — Sigma Octantis (mag 5.4) เป็น "South Star" ที่มีแสงอ่อน</string>
+    <string name="object_info_octans_size" translation_description="Physical size of Octans shown in the info card. Translate units if appropriate for your locale.">291 ตารางองศา</string>
+
+    <!-- Pictor -->
+    <string name="object_info_pictor_description" translation_description="Description of Pictor shown in the info card. Translate this text.">Pictor (ขาตั้งจิตรกร) เป็นกลุ่มดาวทางใต้ที่มีแสงสลัว สร้างสรรค์โดย Lacaille ตั้งชื่อตามขาตั้งจิตรกรเดิม</string>
+    <string name="object_info_pictor_funfact" translation_description="Fun fact about Pictor shown in the info card. Translate this text.">Beta Pictoris ในกลุ่มดาวนี้เป็นหนึ่งในดาวแรกๆ ที่พบว่ามีจานเศษซากที่มองเห็นได้ — และมีดาวเคราะห์นอกระบบที่ยืนยันแล้ว 2 ดวงโคจรอยู่ภายในนั้น!</string>
+    <string name="object_info_pictor_size" translation_description="Physical size of Pictor shown in the info card. Translate units if appropriate for your locale.">247 ตารางองศา</string>
+
+    <!-- Piscis Austrinus -->
+    <string name="object_info_piscis_austrinus_description" translation_description="Description of Piscis Austrinus shown in the info card. Translate this text.">Piscis Austrinus (ปลาใต้) เป็นกลุ่มดาวโบราณ กล่าวกันว่าเป็นพ่อแม่ของปลาสองตัวในกลุ่มดาว Pisces ที่กำลังดื่มน้ำที่ Aquarius เทลงมา</string>
+    <string name="object_info_piscis_austrinus_funfact" translation_description="Fun fact about Piscis Austrinus shown in the info card. Translate this text.">ฟอมัลฮาวต์ ดาวที่สว่างที่สุดในกลุ่มดาวปลาทะเลใต้ เป็นหนึ่งในดาวแรกๆ ที่มีดาวเคราะห์นอกระบบถูกถ่ายภาพโดยตรงด้วยกล้องโทรทรรศน์ฮับเบิล แม้ว่า "ดาวเคราะห์" อาจเป็นเพียงเมฆฝุ่นก็ตาม!</string>
+    <string name="object_info_piscis_austrinus_size" translation_description="Physical size of Piscis Austrinus shown in the info card. Translate units if appropriate for your locale.">245 ตารางองศา</string>
+
+    <!-- Pyxis -->
+    <string name="object_info_pyxis_description" translation_description="Description of Pyxis shown in the info card. Translate this text.">Pyxis (เข็มทิศ) แทนเข็มทิศของนักเดินเรือ Lacaille สร้างมันจากดาวที่เคยเป็นส่วนหนึ่งของกลุ่มดาวโบราณ Argo Navis (เรือ)</string>
+    <string name="object_info_pyxis_funfact" translation_description="Fun fact about Pyxis shown in the info card. Translate this text.">Pyxis มีดาว T Pyxidis ซึ่งเป็นโนวาที่เกิดซ้ำแล้วซ้ำเล่า ปะทุอย่างน้อย 6 ครั้งตั้งแต่ปี 1890 — มันเป็นหนึ่งในโนวาที่ได้รับการศึกษามากที่สุดในท้องฟ้า!</string>
+    <string name="object_info_pyxis_size" translation_description="Physical size of Pyxis shown in the info card. Translate units if appropriate for your locale.">221 ตารางองศา</string>
+
+    <!-- Reticulum -->
+    <string name="object_info_reticulum_description" translation_description="Description of Reticulum shown in the info card. Translate this text.">Reticulum (เครื่องหมายตาข่าย) ถูกสร้างขึ้นโดย Lacaille เพื่อแทนลักษณ์ของเส้นไขว้ในเลนส์ของกล้องโทรทรรศน์ของเขา ซึ่งใช้ในการสำรวจท้องฟ้าทางใต้</string>
+    <string name="object_info_reticulum_funfact" translation_description="Fun fact about Reticulum shown in the info card. Translate this text.">Reticulum มีชื่อเสียงในตำนานเรื่อง UFO — "เหตุการณ์ Zeta Reticuli" ปี 1961 อ้างว่าผู้มาเยือนจากอวกาศมาจากระบบดาวในกลุ่มดาวนี้!</string>
+    <string name="object_info_reticulum_size" translation_description="Physical size of Reticulum shown in the info card. Translate units if appropriate for your locale.">114 ตารางองศา</string>
+
+    <!-- Sculptor -->
+    <string name="object_info_sculptor_description" translation_description="Description of Sculptor shown in the info card. Translate this text.">Sculptor (ประติมากร) ถูกสร้างขึ้นโดย Lacaille โดยแสดงถึงสตูดิโอของประติมากรในตอนแรก มันมีขั้วแกแลกติกใต้อยู่ด้านใน</string>
+    <string name="object_info_sculptor_funfact" translation_description="Fun fact about Sculptor shown in the info card. Translate this text.">กลุ่มดาว Sculptor มีขั้วแกแลกติกใต้และ Sculptor Dwarf Galaxy ซึ่งเป็นหนึ่งในแกแลกซีดาวเทียมที่ใกล้ที่สุดของทางช้างเผือก อยู่ห่างออกไปเพียง 260,000 ปีแสงเท่านั้น!</string>
+    <string name="object_info_sculptor_size" translation_description="Physical size of Sculptor shown in the info card. Translate units if appropriate for your locale.">475 ตารางองศา</string>
+
+    <!-- Scutum -->
+    <string name="object_info_scutum_description" translation_description="Description of Scutum shown in the info card. Translate this text.">Scutum (โล่) ถูกสร้างขึ้นโดย Hevelius ในปี ค.ศ. 1684 เพื่อเป็นเกียรติแก่พระเจ้าจอห์น III โซเบสกี้ของโปแลนด์ เป็นหนึ่งในกลุ่มดาวไม่กี่ดวงที่ตั้งชื่อตามบุคคลประวัติศาสตร์ที่ไม่ใช่จากตำนาน</string>
+    <string name="object_info_scutum_funfact" translation_description="Fun fact about Scutum shown in the info card. Translate this text.">กลุ่มดาว Scutum มีเมฆดาว Scutum Star Cloud ซึ่งเป็นหนึ่งในแพทช์ที่สว่างและหนาแน่นที่สุดของทางช้างเผือกที่มองเห็นได้ด้วยตาเปล่า — มันเป็นหน้าต่างสู่แขนเกลียวด้านในของกาแลคซี่ของเรา!</string>
+    <string name="object_info_scutum_size" translation_description="Physical size of Scutum shown in the info card. Translate units if appropriate for your locale.">109 ตารางองศา</string>
+
+    <!-- Serpens Caput -->
+    <string name="object_info_serpens_caput_description" translation_description="Description of Serpens Caput shown in the info card. Translate this text.">Serpens Caput (หัวงู) เป็นส่วนตะวันตกของ Serpens ซึ่งเป็นกลุ่มดาวเพียงกลุ่มเดียวที่แบ่งออกเป็นสองส่วนที่ไม่ติดต่อกันโดย Ophiuchus</string>
+    <string name="object_info_serpens_caput_funfact" translation_description="Fun fact about Serpens Caput shown in the info card. Translate this text.">Serpens Caput มีกระจุกดาวทรงกลม M5 ซึ่งเป็นหนึ่งในกระจุกดาวที่เก่าแก่ที่สุดและใหญ่ที่สุดที่รู้จัก — มีอายุ 13 พันล้านปีและมีดาวกว่า 100,000 ดวง!</string>
+    <string name="object_info_serpens_caput_size" translation_description="Physical size of Serpens Caput shown in the info card. Translate units if appropriate for your locale.">428 ตารางองศา (ทั้งสองส่วน)</string>
+
+    <!-- Serpens Cauda -->
+    <string name="object_info_serpens_cauda_description" translation_description="Description of Serpens Cauda shown in the info card. Translate this text.">Serpens Cauda (หางของงู) เป็นครึ่งตะวันออกของ Serpens แยกจากหัวโดยกลุ่มดาว Ophiuchus</string>
+    <string name="object_info_serpens_cauda_funfact" translation_description="Fun fact about Serpens Cauda shown in the info card. Translate this text.">Serpens Cauda มีเนบิวลาอินทรีย์ (M16) และ "Pillars of Creation" ที่มีชื่อเสียง — เสาแก๊สและฝุ่นสูงชันที่มีดาวใหม่กำลังเกิดขึ้น!</string>
+    <string name="object_info_serpens_cauda_size" translation_description="Physical size of Serpens Cauda shown in the info card. Translate units if appropriate for your locale.">428 ตารางองศา (ทั้งสองส่วน)</string>
+
+    <!-- Sextans -->
+    <string name="object_info_sextans_description" translation_description="Description of Sextans shown in the info card. Translate this text.">Sextans (เครื่องวัดมุม) ถูกสร้างขึ้นโดย Hevelius เพื่อเป็นอนุสรณ์ของเครื่องวัดมุมทางดาราศาสตร์ของเขา ซึ่งถูกทำลายในไฟไหม้เมื่อปี ค.ศ. 1679</string>
+    <string name="object_info_sextans_funfact" translation_description="Fun fact about Sextans shown in the info card. Translate this text.">Sextans มีดาราจักรแคระ Sextans A ซึ่งเป็นหนึ่งในดาราจักรที่โดดเดี่ยวที่สุดในกลุ่มท้องถิ่นที่ห่างออกไป 4.3 ล้านปีแสง!</string>
+    <string name="object_info_sextans_size" translation_description="Physical size of Sextans shown in the info card. Translate units if appropriate for your locale.">314 ตารางองศา</string>
+
+    <!-- Telescopium -->
+    <string name="object_info_telescopium_description" translation_description="Description of Telescopium shown in the info card. Translate this text.">Telescopium (กล้องโทรทรรศน์) ถูกสร้างขึ้นโดย Lacaille เพื่อเป็นเกียรติแก่การประดิษฐ์กล้องโทรทรรศน์แบบหักเหแสง มันตั้งอยู่ทางใต้ของ Sagittarius และ Corona Australis</string>
+    <string name="object_info_telescopium_funfact" translation_description="Fun fact about Telescopium shown in the info card. Translate this text.">Telescopium เดิมมีขนาดใหญ่กว่ามาก — เมื่อ Lacaille วาดมันครั้งแรก มันขยายไปยังส่วนต่างๆ ของ Sagittarius และ Ophiuchus ในปัจจุบัน!</string>
+    <string name="object_info_telescopium_size" translation_description="Physical size of Telescopium shown in the info card. Translate units if appropriate for your locale.">252 ตารางองศา</string>
+
+    <!-- Triangulum Australe -->
+    <string name="object_info_triangulum_australe_description" translation_description="Description of Triangulum Australe shown in the info card. Translate this text.">Triangulum Australe (สามเหลี่ยมใต้) เป็นกลุ่มดาวทางใต้ที่เล็กแต่โดดเด่น ดาวสามดวงที่สว่างที่สุดของมันสร้างรูปสามเหลี่ยมที่เกือบเท่ากันหมด</string>
+    <string name="object_info_triangulum_australe_funfact" translation_description="Fun fact about Triangulum Australe shown in the info card. Translate this text.">Triangulum Australe มีกระจุกดาวเปิด NGC 6025 ที่สวยงามและมองเห็นได้ง่ายด้วยกล้องส่องทางไกล และมันปรากฏบนธงของบราซิลและปาปัวนิวกินี!</string>
+    <string name="object_info_triangulum_australe_size" translation_description="Physical size of Triangulum Australe shown in the info card. Translate units if appropriate for your locale.">110 ตารางองศา</string>
+
+    <!-- Tucana -->
+    <string name="object_info_tucana_description" translation_description="Description of Tucana shown in the info card. Translate this text.">Tucana (นกกระตั้ว) เป็นกลุ่มดาวในซีกโลกใต้ที่สร้างสรรค์โดยนักเดินเรือชาวดัตช์ แสดงถึงนกเขตร้อนที่มีจงอยปากใหญ่โตมหาศาล</string>
+    <string name="object_info_tucana_funfact" translation_description="Fun fact about Tucana shown in the info card. Translate this text.">Tucana มีดาว 47 Tucanae (NGC 104) ซึ่งเป็นกระจุกทรงกลมที่สว่างเป็นอันดับสองในท้องฟ้า บ้านของดาวนับล้านดวงและพัลซาร์มิลลิวินาทีหลายดวง!</string>
+    <string name="object_info_tucana_size" translation_description="Physical size of Tucana shown in the info card. Translate units if appropriate for your locale.">295 ตารางองศา</string>
+
+    <!-- Volans -->
+    <string name="object_info_volans_description" translation_description="Description of Volans shown in the info card. Translate this text.">Volans (ปลาบินใต้ท้องฟ้า) เป็นกลุ่มดาวทางใต้ที่มีความสว่างน้อย ซึ่งนำเข้ามาโดยนักเดินเรือชาวดัตช์ แสดงถึงปลาเขตร้อนที่สามารถกระโดดออกจากน้ำและเคลื่อนตัวไปในอากาศได้</string>
+    <string name="object_info_volans_funfact" translation_description="Fun fact about Volans shown in the info card. Translate this text.">Volans อยู่ใกล้กับ Large Magellanic Cloud และมี Lindsay-Shapley Ring ซึ่งเป็นหนึ่งในแกแลกซี่วงแหวนที่สมบูรณ์ที่สุดที่เคยสังเกตมา!</string>
+    <string name="object_info_volans_size" translation_description="Physical size of Volans shown in the info card. Translate units if appropriate for your locale.">141 ตารางองศา</string>
+
+    <!-- Vulpecula -->
+    <string name="object_info_vulpecula_description" translation_description="Description of Vulpecula shown in the info card. Translate this text.">Vulpecula (จิ้งจอกน้อย) เป็นกลุ่มดาวเหนือที่มีแสงสลัวซึ่งสร้างขึ้นโดย Hevelius ในปี 1687 ตั้งอยู่ในหัวใจของทางช้างเผือกระหว่าง Cygnus และ Sagitta</string>
+    <string name="object_info_vulpecula_funfact" translation_description="Fun fact about Vulpecula shown in the info card. Translate this text.">Vulpecula มีเนบิวลาดัมเบลล์ (M27) ซึ่งเป็นเนบิวลาดาวเคราะห์ดวงแรกที่ค้นพบ (โดย Charles Messier ในปี 1764) และเป็นเป้าหมายที่สวยงามสำหรับการสังเกตการณ์ด้วยกล้องส่องทางไกลสองตา!</string>
+    <string name="object_info_vulpecula_size" translation_description="Physical size of Vulpecula shown in the info card. Translate units if appropriate for your locale.">268 ตารางองศา</string>
 </resources>
