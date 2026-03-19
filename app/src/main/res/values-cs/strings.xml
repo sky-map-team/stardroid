@@ -22,6 +22,9 @@
     <string name="preferences" translation_description="Provider-name label used internally when a location is set from preferences (not shown directly to the user as a UI label - does not require a translation)">předvolby</string>
     <string name="location_offer_to_enable" translation_description="Dialog message asking whether to enable automatic location">Automatické určení polohy je deaktivováno. Chce je aktivovat?</string>
     <string name="location_offer_to_enable_gps_title" translation_description="Title of dialog shown when automatic location is disabled">Automatické určení polohy deaktivováno</string>
+<<<<<<< cleanupoldfusionplaceholder
+    <!-- TODO: many translations require two placeholders. Once all translations brought up to date we can clean this up -->
+=======
     <string name="location_permission_dialog_title" translation_description="Title of the dialog that requests location permission from the user">Vyžaduje se poloha</string>
     <string name="location_permission_dialog_message" translation_description="Body text of the dialog requesting location permission, explaining why the app needs it and what happens without it">
     Sky Map potřebuje vaši přibližnou polohu, aby zobrazil správnou noční oblohu. Můžete udělit oprávnění, zadat svou polohu ručně nebo se rozhodnout později. Pokud se rozhodnete později, mapa nebude přesná, dokud nebude nastavena vaše poloha.
@@ -33,6 +36,7 @@
     <string name="location_warning_manual" translation_description="Warning message shown when manual location mode is selected but no coordinates have been entered">Poloha není nastavena — nakonfigurujte ji v Nastavení.</string>
 <!-- TODO: many translations require two placeholders. Once all translations brought up to date we can clean this up -->
     <string name="location_set_auto" translation_description="Toast message when automatic location is acquired. %1$s is the provider name (e.g. GPS), %2$s is the place name or coordinates">Poloha nastavena pomocí %1$s na %2$s</string>
+>>>>>>> master
     <string name="location_unable_to_geocode" translation_description="Error message when converting a place name to coordinates (geocoding) fails, possibly due to no network">Nelze najít vaši polohu, možná je síť nedostupná?</string>
     <string name="location_not_found_title" translation_description="dialog box title when location not found">Nenalezeno</string>
     <string name="location_not_found" translation_description="dialog message when placename not found">Nelze nalézt „%s“</string>

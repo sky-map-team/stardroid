@@ -20,7 +20,6 @@
     <string name="location_offer_to_enable" translation_description="Dialog message asking whether to enable automatic location">자동 위치설정이 중지되었습니다. 사용하도록 설정하시겠습니까?</string>
     <string name="location_offer_to_enable_gps_title" translation_description="Title of dialog shown when automatic location is disabled">자동 위치설정 사용중지</string>
     <!-- TODO: many translations require two placeholders. Once all translations brought up to date we can clean this up -->
-    <string name="location_set_auto" translation_description="Toast message when automatic location is acquired. %1$s is the provider name (e.g. GPS), %2$s is the place name or coordinates">%1$s에서 %2$s(으)로 위치 설정</string>
     <string name="location_unable_to_geocode" translation_description="Error message when converting a place name to coordinates (geocoding) fails, possibly due to no network">위치를 디코딩할 수 없습니다. 네트워크를 사용할 수 없는 것 같습니다.</string>
     <string name="location_not_found_title" translation_description="dialog box title when location not found">죄송합니다.</string>
     <string name="location_not_found" translation_description="dialog message when placename not found">%s: 찾을 수 없음</string>

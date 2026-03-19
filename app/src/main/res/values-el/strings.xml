@@ -30,7 +30,6 @@
     <string name="location_warning_permission" translation_description="Warning message shown when location is unavailable because permission was not granted">Τοποθεσία μη διαθέσιμη — δεν χορηγήθηκε άδεια.</string>
     <string name="location_warning_manual" translation_description="Warning message shown when manual location mode is selected but no coordinates have been entered">Τοποθεσία δεν έχει οριστεί — παρακαλώ ρυθμίστε στις Ρυθμίσεις.</string>
 <!-- TODO: many translations require two placeholders. Once all translations brought up to date we can clean this up -->
-    <string name="location_set_auto" translation_description="Toast message when automatic location is acquired. %1$s is the provider name (e.g. GPS), %2$s is the place name or coordinates">Η τοποθεσία ορίστηκε από %1$s σε %2$s</string>
     <string name="location_unable_to_geocode" translation_description="Error message when converting a place name to coordinates (geocoding) fails, possibly due to no network">Αδυναμία εντοπισμού της τοποθεσίας σας - ίσως το δίκτυό σας δεν είναι διαθέσιμο;</string>
     <string name="location_not_found_title" translation_description="dialog box title when location not found">Συγγνώμη</string>
     <string name="location_not_found" translation_description="dialog message when placename not found">Το %s δε βρέθηκε.</string>

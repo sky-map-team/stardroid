@@ -282,7 +282,7 @@ public class LocationController extends AbstractController implements LocationLi
 
         activity.runOnUiThread(() -> {
         String messageTemplate = activity.getString(R.string.location_set_auto);
-        String message = String.format(messageTemplate, provider, place);
+        String message = String.format(messageTemplate, place);
         Toast.makeText(activity, message, Toast.LENGTH_LONG).show();
       });
     }).start();
