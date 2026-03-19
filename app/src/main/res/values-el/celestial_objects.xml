@@ -125,6 +125,7 @@
     <string name="pleiades" translation_description="hubble object">Πλειάδες</string>
     <string name="cats_eye_nebula" translation_description="hubble object">Νεφέλωμα Μάτι της Γάτας</string>
     <string name="omega_centauri" translation_description="hubble object">Σφαιρωτό Σμήνος Ωμέγα Κενταύρου</string>
+    <!-- tm:omitted name="v838_mon" reason="identical_to_source" -->
     <string name="sn1987a" translation_description="hubble object">Υπερκαινοφανής 1987a</string>
     <string name="hubble_deep_field" translation_description="hubble object">Βαθύ Πεδίο Hubble</string>
     <string name="hdf" translation_description="hubble object">Βαθύ Πεδίο Hubble</string>
@@ -157,6 +158,7 @@
     <string name="shaula" translation_description="Name of the Star Shaula">Σάουλα</string>
     <string name="alnath" translation_description="Name of the Star Alnath">Ελ Ναθ</string>
     <string name="alnilam" translation_description="Name of the Star Alnilam">Αλνιλάμ</string>
+    <!-- tm:omitted name="alnair" reason="identical_to_source" -->
     <string name="alioth" translation_description="Name of the Star Alioth">Άλιοθ</string>
     <string name="mirphak" translation_description="Name of the Star Mirphak">Μιρφάκ</string>
     <string name="kaus_australis" translation_description="Name of the Star Kaus Australis">Κάους Αουστράλις</string>
@@ -203,8 +205,136 @@
     <string name="rigil_kent" translation_description="Name of the star Rigil Kent">Ρίγκιλ</string>
     <string name="e_lyrae" translation_description="Name of the star ε Lyrae">ε Λύρας</string>
 
+    <!-- tm:omitted name="m1" reason="identical_to_source" -->
+    <!-- tm:omitted name="m2" reason="identical_to_source" -->
+    <!-- tm:omitted name="m3" reason="identical_to_source" -->
+    <!-- tm:omitted name="m4" reason="identical_to_source" -->
+    <!-- tm:omitted name="m5" reason="identical_to_source" -->
+    <!-- tm:omitted name="m6" reason="identical_to_source" -->
+    <!-- tm:omitted name="m7" reason="identical_to_source" -->
+    <!-- tm:omitted name="m8" reason="identical_to_source" -->
+    <!-- tm:omitted name="m9" reason="identical_to_source" -->
+    <!-- tm:omitted name="m10" reason="identical_to_source" -->
+    <!-- tm:omitted name="m11" reason="identical_to_source" -->
+    <!-- tm:omitted name="m12" reason="identical_to_source" -->
+    <!-- tm:omitted name="m13" reason="identical_to_source" -->
+    <!-- tm:omitted name="m14" reason="identical_to_source" -->
+    <!-- tm:omitted name="m15" reason="identical_to_source" -->
+    <!-- tm:omitted name="m16" reason="identical_to_source" -->
+    <!-- tm:omitted name="m17" reason="identical_to_source" -->
+    <!-- tm:omitted name="m18" reason="identical_to_source" -->
+    <!-- tm:omitted name="m19" reason="identical_to_source" -->
+    <!-- tm:omitted name="m20" reason="identical_to_source" -->
+    <!-- tm:omitted name="m21" reason="identical_to_source" -->
+    <!-- tm:omitted name="m22" reason="identical_to_source" -->
+    <!-- tm:omitted name="m23" reason="identical_to_source" -->
+    <!-- tm:omitted name="m24" reason="identical_to_source" -->
+    <!-- tm:omitted name="m25" reason="identical_to_source" -->
+    <!-- tm:omitted name="m26" reason="identical_to_source" -->
+    <!-- tm:omitted name="m27" reason="identical_to_source" -->
+    <!-- tm:omitted name="m28" reason="identical_to_source" -->
+    <!-- tm:omitted name="m29" reason="identical_to_source" -->
+    <!-- tm:omitted name="m30" reason="identical_to_source" -->
+    <!-- tm:omitted name="m31" reason="identical_to_source" -->
+    <!-- tm:omitted name="m32" reason="identical_to_source" -->
+    <!-- tm:omitted name="m33" reason="identical_to_source" -->
+    <!-- tm:omitted name="m34" reason="identical_to_source" -->
+    <!-- tm:omitted name="m35" reason="identical_to_source" -->
+    <!-- tm:omitted name="m36" reason="identical_to_source" -->
+    <!-- tm:omitted name="m37" reason="identical_to_source" -->
+    <!-- tm:omitted name="m38" reason="identical_to_source" -->
+    <!-- tm:omitted name="m39" reason="identical_to_source" -->
+    <!-- tm:omitted name="m40" reason="identical_to_source" -->
+    <!-- tm:omitted name="m41" reason="identical_to_source" -->
+    <!-- tm:omitted name="m42" reason="identical_to_source" -->
+    <!-- tm:omitted name="m43" reason="identical_to_source" -->
+    <!-- tm:omitted name="m44" reason="identical_to_source" -->
+    <!-- tm:omitted name="m45" reason="identical_to_source" -->
+    <!-- tm:omitted name="m46" reason="identical_to_source" -->
+    <!-- tm:omitted name="m47" reason="identical_to_source" -->
+    <!-- tm:omitted name="m48" reason="identical_to_source" -->
+    <!-- tm:omitted name="m49" reason="identical_to_source" -->
+    <!-- tm:omitted name="m50" reason="identical_to_source" -->
+    <!-- tm:omitted name="m51" reason="identical_to_source" -->
+    <!-- tm:omitted name="m52" reason="identical_to_source" -->
+    <!-- tm:omitted name="m53" reason="identical_to_source" -->
+    <!-- tm:omitted name="m54" reason="identical_to_source" -->
+    <!-- tm:omitted name="m55" reason="identical_to_source" -->
+    <!-- tm:omitted name="m56" reason="identical_to_source" -->
+    <!-- tm:omitted name="m57" reason="identical_to_source" -->
+    <!-- tm:omitted name="m58" reason="identical_to_source" -->
+    <!-- tm:omitted name="m59" reason="identical_to_source" -->
+    <!-- tm:omitted name="m60" reason="identical_to_source" -->
+    <!-- tm:omitted name="m61" reason="identical_to_source" -->
+    <!-- tm:omitted name="m62" reason="identical_to_source" -->
+    <!-- tm:omitted name="m63" reason="identical_to_source" -->
+    <!-- tm:omitted name="m64" reason="identical_to_source" -->
+    <!-- tm:omitted name="m65" reason="identical_to_source" -->
+    <!-- tm:omitted name="m66" reason="identical_to_source" -->
+    <!-- tm:omitted name="m67" reason="identical_to_source" -->
+    <!-- tm:omitted name="m68" reason="identical_to_source" -->
+    <!-- tm:omitted name="m69" reason="identical_to_source" -->
+    <!-- tm:omitted name="m70" reason="identical_to_source" -->
+    <!-- tm:omitted name="m71" reason="identical_to_source" -->
+    <!-- tm:omitted name="m72" reason="identical_to_source" -->
+    <!-- tm:omitted name="m73" reason="identical_to_source" -->
+    <!-- tm:omitted name="m74" reason="identical_to_source" -->
+    <!-- tm:omitted name="m75" reason="identical_to_source" -->
+    <!-- tm:omitted name="m76" reason="identical_to_source" -->
+    <!-- tm:omitted name="m77" reason="identical_to_source" -->
+    <!-- tm:omitted name="m78" reason="identical_to_source" -->
+    <!-- tm:omitted name="m79" reason="identical_to_source" -->
+    <!-- tm:omitted name="m80" reason="identical_to_source" -->
+    <!-- tm:omitted name="m81" reason="identical_to_source" -->
+    <!-- tm:omitted name="m82" reason="identical_to_source" -->
+    <!-- tm:omitted name="m83" reason="identical_to_source" -->
+    <!-- tm:omitted name="m84" reason="identical_to_source" -->
+    <!-- tm:omitted name="m85" reason="identical_to_source" -->
+    <!-- tm:omitted name="m86" reason="identical_to_source" -->
+    <!-- tm:omitted name="m87" reason="identical_to_source" -->
+    <!-- tm:omitted name="m88" reason="identical_to_source" -->
+    <!-- tm:omitted name="m89" reason="identical_to_source" -->
+    <!-- tm:omitted name="m90" reason="identical_to_source" -->
+    <!-- tm:omitted name="m91" reason="identical_to_source" -->
+    <!-- tm:omitted name="m92" reason="identical_to_source" -->
+    <!-- tm:omitted name="m93" reason="identical_to_source" -->
+    <!-- tm:omitted name="m94" reason="identical_to_source" -->
+    <!-- tm:omitted name="m95" reason="identical_to_source" -->
+    <!-- tm:omitted name="m96" reason="identical_to_source" -->
+    <!-- tm:omitted name="m97" reason="identical_to_source" -->
+    <!-- tm:omitted name="m98" reason="identical_to_source" -->
+    <!-- tm:omitted name="m99" reason="identical_to_source" -->
+    <!-- tm:omitted name="m100" reason="identical_to_source" -->
+    <!-- tm:omitted name="m101" reason="identical_to_source" -->
+    <!-- tm:omitted name="m102" reason="identical_to_source" -->
+    <!-- tm:omitted name="m103" reason="identical_to_source" -->
+    <!-- tm:omitted name="m104" reason="identical_to_source" -->
+    <!-- tm:omitted name="m105" reason="identical_to_source" -->
+    <!-- tm:omitted name="m106" reason="identical_to_source" -->
+    <!-- tm:omitted name="m107" reason="identical_to_source" -->
+    <!-- tm:omitted name="m108" reason="identical_to_source" -->
+    <!-- tm:omitted name="m109" reason="identical_to_source" -->
+    <!-- tm:omitted name="m110" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc6543" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc5139" reason="identical_to_source" -->
+    <!-- tm:omitted name="t_crb" reason="identical_to_source" -->
+    <!-- tm:omitted name="blaze_star" reason="identical_to_source" -->
+    <!-- tm:omitted name="t_coronae_borealis" reason="identical_to_source" -->
+    <string name="eta_carinae_nebula" translation_description="Name of the Eta Carinae Nebula (NGC 3372)">Νεφέλωμα Eta Carinae</string>
+    <string name="carina_nebula" translation_description="Common name for the Eta Carinae Nebula">Νεφέλωμα Carina</string>
+    <!-- tm:omitted name="ngc3372" reason="identical_to_source" -->
+    <string name="tarantula_nebula" translation_description="Name of the Tarantula Nebula (NGC 2070) in the Large Magellanic Cloud">Νεφέλωμα Tarantula</string>
+    <!-- tm:omitted name="n30_doradus" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc2070" reason="identical_to_source" -->
+    <!-- tm:omitted name="lmc" reason="identical_to_source" -->
+    <string name="large_magellanic_cloud" translation_description="Full name of the Large Magellanic Cloud galaxy">Μεγάλο Νέφος του Μαγγελάνου</string>
+    <string name="nubecula_major" translation_description="Latin name for the Large Magellanic Cloud">Νεφέλωμα Μέγα</string>
+    <!-- tm:omitted name="smc" reason="identical_to_source" -->
+    <string name="small_magellanic_cloud" translation_description="Full name of the Small Magellanic Cloud galaxy">Νεφέλωμα Μικρό Magellan</string>
+    <string name="nubecula_minor" translation_description="Latin name for the Small Magellanic Cloud">Νεφέλωμα Μικρό</string>
     <string name="butterfly_cluster" translation_description="Name of the Messier object Butterfly Cluster">Σμήνος Πεταλούδα</string>
     <string name="scorpions_tail" translation_description="Name of the Messier object Scorpion\'s Tail">Σμήνος Πτολεμαίου</string>
+    <!-- tm:omitted name="winnecke_4" reason="identical_to_source" -->
     <string name="beehive_cluster" translation_description="Name of the Messier object Beehive Cluster">Σμήνος Κυψέλη</string>
     <string name="praesepe" translation_description="Name of the Messier object Praesepe">Φάτνη</string>
     <string name="seven_sisters" translation_description="Name of the Messier object Seven Sisters">Πούλια</string>
@@ -225,4 +355,10 @@
     <string name="puppidvelids" translation_description="Meteor Shower">Πρυμνίδες-Ιστιίδες</string>
     <string name="ursids" translation_description="Meteor Shower">Αρκτίδες</string>
 
-    </resources>
+    <!-- Comets -->
+    <string name="comet_leonard" translation_description="Name of Comet Leonard (C/2021 A1) as shown on the sky map">Κομήτης Leonard</string>
+    <!-- TODO: no need for these alt names once our search is less lousy -->
+    <string name="comet_leonard_alt" translation_description="Alternate searchable name for Comet Leonard, surname first">Leonard (Κομήτης)</string>
+    <string name="comet_neowise" translation_description="Name of Comet NEOWISE (C/2020 F3) as shown on the sky map">Κομήτης Neowise</string>
+    <string name="comet_neowise_alt" translation_description="Alternate searchable name for Comet NEOWISE, surname first">Neowise (Κομήτης)</string>
+</resources>
