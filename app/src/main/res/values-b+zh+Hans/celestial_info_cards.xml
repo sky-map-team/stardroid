@@ -1,0 +1,1063 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <!-- Educational Object Info Feature -->
+    <!-- Solar System Educational Content -->
+    <string name="object_info_sun_description" translation_description="Short description of the Sun">太阳是我们太阳系中心的恒星。它提供了使地球上的生命成为可能的光和热。</string>
+    <string name="object_info_sun_funfact" translation_description="Fun fact about the Sun">太阳包含了我们太阳系中99.86%的质量。大约130万个地球可以装进它里面！</string>
+    <string name="object_info_sun_distance" translation_description="Distance to Sun shown in the info card. Translate units if appropriate for your locale.">1.5亿公里</string>
+    <string name="object_info_sun_size" translation_description="Physical size of Sun shown in the info card. Translate units if appropriate for your locale.">直径140万公里</string>
+    <!-- tm:omitted name="object_info_sun_mass" reason="identical_to_source" -->
+    <string name="object_info_moon_description" translation_description="Short description of the Moon">月球是地球唯一的天然卫星。它影响我们的潮汐，已被12名宇航员访问过。</string>
+    <string name="object_info_moon_funfact" translation_description="Fun fact about the Moon">月球以每年约3.8厘米的速度缓慢远离地球。数十亿年前，它离地球要近得多！</string>
+    <string name="object_info_moon_distance" translation_description="Distance to Moon shown in the info card. Translate units if appropriate for your locale.">384,400公里</string>
+    <string name="object_info_moon_size" translation_description="Physical size of Moon shown in the info card. Translate units if appropriate for your locale.">直径 3,474 公里</string>
+    <!-- tm:omitted name="object_info_moon_mass" reason="identical_to_source" -->
+    <string name="object_info_mercury_description" translation_description="Short description of Mercury">水星是最小的行星，也是离太阳最近的行星。水星上的一年只有 88 个地球日。</string>
+    <string name="object_info_mercury_funfact" translation_description="Fun fact about Mercury">尽管水星离太阳最近，但它并不是最热的行星。金星因其厚密的大气而更热！</string>
+    <string name="object_info_mercury_distance" translation_description="Distance to Mercury shown in the info card. Translate units if appropriate for your locale.">5,800 万公里（距太阳）</string>
+    <string name="object_info_mercury_size" translation_description="Physical size of Mercury shown in the info card. Translate units if appropriate for your locale.">直径 4,880 公里</string>
+    <!-- tm:omitted name="object_info_mercury_mass" reason="identical_to_source" -->
+    <string name="object_info_venus_description" translation_description="Short description of Venus">金星是距离太阳第二近的行星，也是我们太阳系中最热的行星。由于大小相似，它常被称为地球的孪生星球。</string>
+    <string name="object_info_venus_funfact" translation_description="Fun fact about Venus">金星上的一天比它的一年还长！金星自转一周需要243个地球日，但绕太阳公转只需225天。</string>
+    <string name="object_info_venus_distance" translation_description="Distance to Venus shown in the info card. Translate units if appropriate for your locale.">1.08 亿公里（平均）</string>
+    <string name="object_info_venus_size" translation_description="Physical size of Venus shown in the info card. Translate units if appropriate for your locale.">直径 12,104 公里</string>
+    <!-- tm:omitted name="object_info_venus_mass" reason="identical_to_source" -->
+    <string name="object_info_mars_description" translation_description="Short description of Mars">火星是离太阳第四近的行星，因其表面的氧化铁而被称为红色星球。</string>
+    <string name="object_info_mars_funfact" translation_description="Fun fact about Mars">火星拥有太阳系中最大的火山：奥林匹斯山，其高度约为珠穆朗玛峰的2.5倍！</string>
+    <string name="object_info_mars_distance" translation_description="Distance to Mars shown in the info card. Translate units if appropriate for your locale.">2.28 亿公里（平均）</string>
+    <string name="object_info_mars_size" translation_description="Physical size of Mars shown in the info card. Translate units if appropriate for your locale.">直径 6,779 公里</string>
+    <!-- tm:omitted name="object_info_mars_mass" reason="identical_to_source" -->
+    <string name="object_info_jupiter_description" translation_description="Short description of Jupiter">木星是我们太阳系中最大的行星。它是一颗气态巨行星，以著名的大红斑风暴而闻名。</string>
+    <string name="object_info_jupiter_funfact" translation_description="Fun fact about Jupiter">木星至少有 95 颗已知卫星！其最大的卫星木卫三比水星还要大。</string>
+    <string name="object_info_jupiter_distance" translation_description="Distance to Jupiter shown in the info card. Translate units if appropriate for your locale.">7.78 亿公里（平均）</string>
+    <string name="object_info_jupiter_size" translation_description="Physical size of Jupiter shown in the info card. Translate units if appropriate for your locale.">139,820 千米直径</string>
+    <!-- tm:omitted name="object_info_jupiter_mass" reason="identical_to_source" -->
+    <string name="object_info_saturn_description" translation_description="Short description of Saturn">土星是距离太阳第六颗行星，以其由冰和岩石组成的壮观光环系统而闻名。</string>
+    <string name="object_info_saturn_funfact" translation_description="Fun fact about Saturn">土星非常轻，它会在水中漂浮！它的密度小于水，尽管没有足够大的浴缸来测试这一点。</string>
+    <string name="object_info_saturn_distance" translation_description="Distance to Saturn shown in the info card. Translate units if appropriate for your locale.">14亿千米（平均）</string>
+    <string name="object_info_saturn_size" translation_description="Physical size of Saturn shown in the info card. Translate units if appropriate for your locale.">116,460 千米直径</string>
+    <!-- tm:omitted name="object_info_saturn_mass" reason="identical_to_source" -->
+    <string name="object_info_uranus_description" translation_description="Short description of Uranus">天王星是一颗冰巨星，它侧身旋转。它是第一颗用望远镜发现的行星。</string>
+    <string name="object_info_uranus_funfact" translation_description="Fun fact about Uranus">天王星以98度的倾角侧向旋转，可能是由于很久以前与一个地球大小的物体碰撞所致！</string>
+    <string name="object_info_uranus_distance" translation_description="Distance to Uranus shown in the info card. Translate units if appropriate for your locale.">29亿千米（平均）</string>
+    <string name="object_info_uranus_size" translation_description="Physical size of Uranus shown in the info card. Translate units if appropriate for your locale.">50,724 千米直径</string>
+    <!-- tm:omitted name="object_info_uranus_mass" reason="identical_to_source" -->
+    <string name="object_info_neptune_description" translation_description="Short description of Neptune">海王星是我们太阳系中距离最远的行星。它拥有最强的风，速度达到2,100公里/小时。</string>
+    <string name="object_info_neptune_funfact" translation_description="Fun fact about Neptune">海王星是通过数学发现的！科学家在任何人通过望远镜看到它之前就预测了它的位置。</string>
+    <string name="object_info_neptune_distance" translation_description="Distance to Neptune shown in the info card. Translate units if appropriate for your locale.">45亿千米（平均）</string>
+    <string name="object_info_neptune_size" translation_description="Physical size of Neptune shown in the info card. Translate units if appropriate for your locale.">49,244 千米直径</string>
+    <!-- tm:omitted name="object_info_neptune_mass" reason="identical_to_source" -->
+    <string name="object_info_pluto_description" translation_description="Short description of Pluto">冥王星是柯伊伯带中的矮行星。它在2006年之前被认为是第九颗行星。</string>
+    <string name="object_info_pluto_funfact" translation_description="Fun fact about Pluto">冥王星有一个由氮冰组成的心形冰川，在NASA新视野号任务的图像中可见！</string>
+    <string name="object_info_pluto_distance" translation_description="Distance to Pluto shown in the info card. Translate units if appropriate for your locale.">59亿千米（平均）</string>
+    <string name="object_info_pluto_size" translation_description="Physical size of Pluto shown in the info card. Translate units if appropriate for your locale.">2,377 千米直径</string>
+    <!-- tm:omitted name="object_info_pluto_mass" reason="identical_to_source" -->
+    <!-- Bright Stars Educational Content -->
+    <string name="object_info_sirius_description" translation_description="Short description of Sirius">天狼星是夜空中最亮的恒星，位于大犬座（大狗）。</string>
+    <string name="object_info_sirius_funfact" translation_description="Fun fact about Sirius">天狼星实际上是一个双星系统！它的伴星天狼星B是一颗白矮星，大小约为地球大小，但质量几乎与太阳相当。</string>
+    <string name="object_info_sirius_distance" translation_description="Distance to Sirius shown in the info card. Translate units if appropriate for your locale.">8.6 光年</string>
+    <string name="object_info_sirius_size" translation_description="Physical size of Sirius shown in the info card. Translate units if appropriate for your locale.">1.7 太阳半径</string>
+    <string name="object_info_sirius_mass" translation_description="Mass of Sirius in scientific notation .  Translate units if appropriate for your locale.">2.1 太阳质量</string>
+    <string name="object_info_vega_description" translation_description="Short description of Vega">织女星是从地球上可见的最亮的恒星之一，位于天琴座（竖琴）。</string>
+    <string name="object_info_vega_funfact" translation_description="Fun fact about Vega">由于地球的摆动，织女星在约14,000年前是北极星，在约12,000年后将再次成为北极星！</string>
+    <string name="object_info_vega_distance" translation_description="Distance to Vega shown in the info card. Translate units if appropriate for your locale.">25 光年</string>
+    <string name="object_info_vega_size" translation_description="Physical size of Vega shown in the info card. Translate units if appropriate for your locale.">2.4 太阳半径</string>
+    <string name="object_info_vega_mass" translation_description="Mass of Vega in scientific notation .  Translate units if appropriate for your locale.">2.1 太阳质量</string>
+    <string name="object_info_betelgeuse_description" translation_description="Short description of Betelgeuse">参宿四是一颗红超巨星，标志着猎户座的肩膀。它是肉眼可见的最大恒星之一。</string>
+    <string name="object_info_betelgeuse_funfact" translation_description="Fun fact about Betelgeuse">参宿四是如此巨大，如果将其放在我们太阳的位置，它将吞没水星、金星、地球、火星，甚至可能还有木星！</string>
+    <string name="object_info_betelgeuse_distance" translation_description="Distance to Betelgeuse shown in the info card. Translate units if appropriate for your locale.">~700 光年</string>
+    <string name="object_info_betelgeuse_size" translation_description="Physical size of Betelgeuse shown in the info card. Translate units if appropriate for your locale.">~900 太阳半径</string>
+    <string name="object_info_betelgeuse_mass" translation_description="Mass of Betelgeuse in scientific notation .  Translate units if appropriate for your locale.">~12 太阳质量</string>
+    <string name="object_info_rigel_description" translation_description="Short description of Rigel">参宿七是一颗蓝色超巨星，标志着猎户座的脚。尽管比参宿四更远，但它的亮度看起来相似。</string>
+    <string name="object_info_rigel_funfact" translation_description="Fun fact about Rigel">参宿七的光芒相当于约12万个太阳！它是我们银河系这一区域最明亮的恒星之一。</string>
+    <string name="object_info_rigel_distance" translation_description="Distance to Rigel shown in the info card. Translate units if appropriate for your locale.">~860 光年</string>
+    <string name="object_info_rigel_size" translation_description="Physical size of Rigel shown in the info card. Translate units if appropriate for your locale.">~79 太阳半径</string>
+    <string name="object_info_rigel_mass" translation_description="Mass of Rigel in scientific notation .  Translate units if appropriate for your locale.">~23 太阳质量</string>
+    <string name="object_info_procyon_description" translation_description="Short description of Procyon">南河三是小犬座中的一颗明亮的恒星（小犬）。它是我们最近的恒星邻居之一。</string>
+    <string name="object_info_procyon_funfact" translation_description="Fun fact about Procyon">Procyon在希腊语中意为"狗之前"，因为它在夜空中比天狼星（犬星）更早升起！</string>
+    <string name="object_info_procyon_distance" translation_description="Distance to Procyon shown in the info card. Translate units if appropriate for your locale.">11.4 光年</string>
+    <string name="object_info_procyon_size" translation_description="Physical size of Procyon shown in the info card. Translate units if appropriate for your locale.">2.0 太阳半径</string>
+    <string name="object_info_procyon_mass" translation_description="Mass of Procyon in scientific notation .  Translate units if appropriate for your locale.">1.5 太阳质量</string>
+    <string name="object_info_polaris_description" translation_description="Short description of Polaris">北极星（北星）在夜空中几乎保持不动，而其他星星在整个夜晚绕它旋转。</string>
+    <string name="object_info_polaris_funfact" translation_description="Fun fact about Polaris">北极星实际上是一个三星系统！主星是一颗超巨星，亮度约为我们太阳的2,500倍。</string>
+    <string name="object_info_polaris_distance" translation_description="Distance to Polaris shown in the info card. Translate units if appropriate for your locale.">约 430 光年</string>
+    <string name="object_info_polaris_size" translation_description="Physical size of Polaris shown in the info card. Translate units if appropriate for your locale.">约 44 太阳半径</string>
+    <string name="object_info_polaris_mass" translation_description="Mass of Polaris in scientific notation .  Translate units if appropriate for your locale.">约 5.4 太阳质量</string>
+    <string name="object_info_deneb_description" translation_description="Short description of Deneb">天津四标记了天鹅座（天鹅）的尾部。它与织女星和牛郎星一起构成夏季大三角星群。</string>
+    <string name="object_info_deneb_funfact" translation_description="Fun fact about Deneb">天津四是肉眼可见的最遥远的恒星之一，距离地球约2,600光年！</string>
+    <string name="object_info_deneb_distance" translation_description="Distance to Deneb shown in the info card. Translate units if appropriate for your locale.">约 2,600 光年</string>
+    <string name="object_info_deneb_size" translation_description="Physical size of Deneb shown in the info card. Translate units if appropriate for your locale.">约 200 太阳半径</string>
+    <string name="object_info_deneb_mass" translation_description="Mass of Deneb in scientific notation .  Translate units if appropriate for your locale.">约 19 太阳质量</string>
+    <string name="object_info_arcturus_description" translation_description="Short description of Arcturus">大角星是北半球最亮的恒星，位于牧夫座（牧人）中的一颗橙色巨星。</string>
+    <string name="object_info_arcturus_funfact" translation_description="Fun fact about Arcturus">大角星正以惊人的速度穿过太空，将在约4000年后最接近我们的太阳系！</string>
+    <string name="object_info_arcturus_distance" translation_description="Distance to Arcturus shown in the info card. Translate units if appropriate for your locale.">37 光年</string>
+    <string name="object_info_arcturus_size" translation_description="Physical size of Arcturus shown in the info card. Translate units if appropriate for your locale.">26 太阳半径</string>
+    <string name="object_info_arcturus_mass" translation_description="Mass of Arcturus in scientific notation .  Translate units if appropriate for your locale.">1.1 太阳质量</string>
+    <string name="object_info_canopus_description" translation_description="Short description of Canopus">南极老人星是夜空中第二亮的恒星。它主要在南半球可见。</string>
+    <string name="object_info_canopus_funfact" translation_description="Fun fact about Canopus">船舶用老人星进行导航，因为它非常明亮且远离黄道平面！</string>
+    <string name="object_info_canopus_distance" translation_description="Distance to Canopus shown in the info card. Translate units if appropriate for your locale.">310 光年</string>
+    <string name="object_info_canopus_size" translation_description="Physical size of Canopus shown in the info card. Translate units if appropriate for your locale.">72 太阳半径</string>
+    <string name="object_info_canopus_mass" translation_description="Mass of Canopus in scientific notation .  Translate units if appropriate for your locale.">8.0 太阳质量</string>
+    <string name="object_info_aldebaran_funfact" translation_description="Fun fact about Aldebaran">毕宿五看起来像是毕宿星团的一部分，但实际上它到我们的距离只有星团的一半——这是一个宇宙光学幻觉！</string>
+    <string name="object_info_aldebaran_distance" translation_description="Distance to Aldebaran shown in the info card. Translate units if appropriate for your locale.">65 光年</string>
+    <string name="object_info_aldebaran_size" translation_description="Physical size of Aldebaran shown in the info card. Translate units if appropriate for your locale.">44 太阳半径</string>
+    <string name="object_info_aldebaran_mass" translation_description="Mass of Aldebaran in scientific notation .  Translate units if appropriate for your locale.">1.2 太阳质量</string>
+    <string name="object_info_antares_funfact" translation_description="Fun fact about Antares">心宿二是如此巨大，如果放在我们的太阳系中，它的表面会延伸到火星轨道之外！</string>
+    <string name="object_info_antares_distance" translation_description="Distance to Antares shown in the info card. Translate units if appropriate for your locale.">约550光年</string>
+    <string name="object_info_antares_size" translation_description="Physical size of Antares shown in the info card. Translate units if appropriate for your locale.">约680太阳半径</string>
+    <string name="object_info_antares_mass" translation_description="Mass of Antares in scientific notation .  Translate units if appropriate for your locale.">约12太阳质量</string>
+    <string name="object_info_capella_description" translation_description="Description of Capella shown in the info card. Translate this text.">五车二是御夫座中最亮的恒星，也是夜空中第六亮的恒星。它实际上是一个由四颗恒星组成的系统。</string>
+    <string name="object_info_capella_funfact" translation_description="Fun fact about Capella shown in the info card. Translate this text.">Capella在拉丁文中意为"小山羊"。古代文化将其视为御夫座车夫肩上携带的山羊！</string>
+    <string name="object_info_capella_distance" translation_description="Distance to Capella shown in the info card. Translate units if appropriate for your locale.">43光年</string>
+    <string name="object_info_capella_size" translation_description="Physical size of Capella shown in the info card. Translate units if appropriate for your locale.">12太阳半径</string>
+    <string name="object_info_capella_mass" translation_description="Mass of Capella in scientific notation .  Translate units if appropriate for your locale.">2.6太阳质量</string>
+    <string name="object_info_altair_description" translation_description="Description of Altair shown in the info card. Translate this text.">牛郎星是天鹰座中最亮的恒星，也是肉眼可见的最近的恒星之一。</string>
+    <string name="object_info_altair_funfact" translation_description="Fun fact about Altair shown in the info card. Translate this text.">牛郎星自转极快（每9小时自转一次），导致其在两极明显扁平——它的宽度比高度宽14%！</string>
+    <string name="object_info_altair_distance" translation_description="Distance to Altair shown in the info card. Translate units if appropriate for your locale.">17光年</string>
+    <string name="object_info_altair_size" translation_description="Physical size of Altair shown in the info card. Translate units if appropriate for your locale.">1.8太阳半径</string>
+    <string name="object_info_altair_mass" translation_description="Mass of Altair in scientific notation .  Translate units if appropriate for your locale.">1.8太阳质量</string>
+    <string name="object_info_spica_description" translation_description="Description of Spica shown in the info card. Translate this text.">Spica是室女座中最亮的恒星，也是夜空中最亮的20颗恒星之一。它是一个双星系统。</string>
+    <string name="object_info_spica_funfact" translation_description="Fun fact about Spica shown in the info card. Translate this text.">轨道离黄道如此之近，以至于它可以被月球遮挡。这个名字在拉丁文中意为"麦穗"！</string>
+    <string name="object_info_spica_distance" translation_description="Distance to Spica shown in the info card. Translate units if appropriate for your locale.">250光年</string>
+    <string name="object_info_spica_size" translation_description="Physical size of Spica shown in the info card. Translate units if appropriate for your locale.">7.5太阳半径</string>
+    <string name="object_info_spica_mass" translation_description="Mass of Spica in scientific notation .  Translate units if appropriate for your locale.">11太阳质量</string>
+    <string name="object_info_achernar_description" translation_description="Description of Achernar shown in the info card. Translate this text.">北落师门是波江座中最亮的恒星，也是夜空中第九亮的恒星。</string>
+    <string name="object_info_achernar_funfact" translation_description="Fun fact about Achernar shown in the info card. Translate this text.">北落师门是已知最扁平的恒星！它旋转速度极快，赤道直径比极地直径大56%。</string>
+    <string name="object_info_achernar_distance" translation_description="Distance to Achernar shown in the info card. Translate units if appropriate for your locale.">139光年</string>
+    <string name="object_info_achernar_size" translation_description="Physical size of Achernar shown in the info card. Translate units if appropriate for your locale.">7.3太阳半径</string>
+    <string name="object_info_achernar_mass" translation_description="Mass of Achernar in scientific notation .  Translate units if appropriate for your locale.">6.7 太阳质量</string>
+    <string name="object_info_hadar_description" translation_description="Description of Hadar shown in the info card. Translate this text.">Hadar（南门二/Beta Centauri）是半人马座中第二亮的恒星，也是夜空中第11亮的恒星。</string>
+    <string name="object_info_hadar_funfact" translation_description="Fun fact about Hadar shown in the info card. Translate this text.">Hadar 和南门二（Alpha Centauri）被称为"南方指针" - 它们指向南十字座！</string>
+    <string name="object_info_hadar_distance" translation_description="Distance to Hadar shown in the info card. Translate units if appropriate for your locale.">390 光年</string>
+    <string name="object_info_hadar_size" translation_description="Physical size of Hadar shown in the info card. Translate units if appropriate for your locale.">9 太阳半径</string>
+    <string name="object_info_hadar_mass" translation_description="Mass of Hadar in scientific notation .  Translate units if appropriate for your locale.">12.8 太阳质量</string>
+    <string name="object_info_regulus_description" translation_description="Description of Regulus shown in the info card. Translate this text.">轩辕十四是狮子座（狮子）中最亮的恒星，代表狮子的心脏。它是一个多星系统。</string>
+    <string name="object_info_regulus_funfact" translation_description="Fun fact about Regulus shown in the info card. Translate this text.">轩辕十四自转速度极快，几乎要将自己撕裂！它仅需16小时就能完成一次自转。</string>
+    <string name="object_info_regulus_distance" translation_description="Distance to Regulus shown in the info card. Translate units if appropriate for your locale.">79 光年</string>
+    <string name="object_info_regulus_size" translation_description="Physical size of Regulus shown in the info card. Translate units if appropriate for your locale.">4.4 太阳半径</string>
+    <string name="object_info_regulus_mass" translation_description="Mass of Regulus in scientific notation .  Translate units if appropriate for your locale.">3.8 太阳质量</string>
+    <string name="object_info_acrux_description" translation_description="Description of Acrux shown in the info card. Translate this text.">Acrux（南十字星α）是南十字星座中最亮的星，也是天空中第13亮的星。</string>
+    <string name="object_info_acrux_funfact" translation_description="Fun fact about Acrux shown in the info card. Translate this text.">南十字星出现在澳大利亚、新西兰、巴西、巴布亚新几内亚和萨摩亚的国旗上！</string>
+    <string name="object_info_acrux_distance" translation_description="Distance to Acrux shown in the info card. Translate units if appropriate for your locale.">320 光年</string>
+    <string name="object_info_acrux_size" translation_description="Physical size of Acrux shown in the info card. Translate units if appropriate for your locale.">7.8 太阳半径</string>
+    <string name="object_info_acrux_mass" translation_description="Mass of Acrux in scientific notation .  Translate units if appropriate for your locale.">18 太阳质量</string>
+    <string name="object_info_castor_description" translation_description="Description of Castor shown in the info card. Translate this text.">北河三是双子座的孪生星之一。虽然看起来像一颗星，但它实际上是一个由六颗星组成的系统！</string>
+    <string name="object_info_castor_funfact" translation_description="Fun fact about Castor shown in the info card. Translate this text.">北河三是一个六重星系统——三对双星相互围绕彼此运行。它是地球附近最复杂的星系之一！</string>
+    <string name="object_info_castor_distance" translation_description="Distance to Castor shown in the info card. Translate units if appropriate for your locale.">51 光年</string>
+    <string name="object_info_castor_size" translation_description="Physical size of Castor shown in the info card. Translate units if appropriate for your locale.">2.4 太阳半径</string>
+    <string name="object_info_castor_mass" translation_description="Mass of Castor in scientific notation .  Translate units if appropriate for your locale.">2.8 太阳质量</string>
+    <string name="object_info_pollux_description" translation_description="Description of Pollux shown in the info card. Translate this text.">北河三是双子座中较亮的双星之一。与北河二不同，它是一颗单独的橙色巨星。</string>
+    <string name="object_info_pollux_funfact" translation_description="Fun fact about Pollux shown in the info card. Translate this text.">北河三有一颗已确认的系外行星！北河三b是一颗气态巨行星，质量至少是木星的两倍。</string>
+    <string name="object_info_pollux_distance" translation_description="Distance to Pollux shown in the info card. Translate units if appropriate for your locale.">34光年</string>
+    <string name="object_info_pollux_size" translation_description="Physical size of Pollux shown in the info card. Translate units if appropriate for your locale.">9.1太阳半径</string>
+    <string name="object_info_pollux_mass" translation_description="Mass of Pollux in scientific notation .  Translate units if appropriate for your locale.">1.9太阳质量</string>
+    <string name="object_info_fomalhaut_description" translation_description="Description of Fomalhaut shown in the info card. Translate this text.">北落师门是南鱼座最亮的恒星，也是秋季天空中最亮的恒星之一。</string>
+    <string name="object_info_fomalhaut_funfact" translation_description="Fun fact about Fomalhaut shown in the info card. Translate this text.">Fomalhaut拥有一个壮观的碎屑盘，是最早被直接成像的环绕其他恒星的碎屑盘之一！</string>
+    <string name="object_info_fomalhaut_distance" translation_description="Distance to Fomalhaut shown in the info card. Translate units if appropriate for your locale.">25光年</string>
+    <string name="object_info_fomalhaut_size" translation_description="Physical size of Fomalhaut shown in the info card. Translate units if appropriate for your locale.">1.8太阳半径</string>
+    <string name="object_info_fomalhaut_mass" translation_description="Mass of Fomalhaut in scientific notation .  Translate units if appropriate for your locale.">1.9太阳质量</string>
+    <string name="object_info_adhara_description" translation_description="Description of Adhara shown in the info card. Translate this text.">天狼星增一（大犬座ε）是大犬座中仅次于天狼星的第二亮星。</string>
+    <string name="object_info_adhara_funfact" translation_description="Fun fact about Adhara shown in the info card. Translate this text.">大约470万年前，天狼星伴星是夜空中最亮的星星，甚至比今天的天狼星还要亮！</string>
+    <string name="object_info_adhara_distance" translation_description="Distance to Adhara shown in the info card. Translate units if appropriate for your locale.">430光年</string>
+    <string name="object_info_adhara_size" translation_description="Physical size of Adhara shown in the info card. Translate units if appropriate for your locale.">14太阳半径</string>
+    <string name="object_info_adhara_mass" translation_description="Mass of Adhara in scientific notation .  Translate units if appropriate for your locale.">12.6太阳质量</string>
+    <string name="object_info_shaula_description" translation_description="Description of Shaula shown in the info card. Translate this text.">尾宿八是天蝎座中第二亮的星，标志着蝎子尾部的刺。</string>
+    <string name="object_info_shaula_funfact" translation_description="Fun fact about Shaula shown in the info card. Translate this text.">Shaula在阿拉伯语中意为"竖起的尾巴"。它实际上是一个三星系统，三颗恒星彼此非常接近！</string>
+    <string name="object_info_shaula_distance" translation_description="Distance to Shaula shown in the info card. Translate units if appropriate for your locale.">570光年</string>
+    <string name="object_info_shaula_size" translation_description="Physical size of Shaula shown in the info card. Translate units if appropriate for your locale.">8.8太阳半径</string>
+    <string name="object_info_shaula_mass" translation_description="Mass of Shaula in scientific notation .  Translate units if appropriate for your locale.">10.4 太阳质量</string>
+    <string name="object_info_alnilam_description" translation_description="Description of Alnilam shown in the info card. Translate this text.">Alnilam 是猎户座腰带中间的星，也是我们银河系中已知最亮的星之一。</string>
+    <string name="object_info_alnilam_funfact" translation_description="Fun fact about Alnilam shown in the info card. Translate this text.">Alnilam 通过其强大的恒星风以每年2000万倍于太阳的速度失去质量！</string>
+    <string name="object_info_alnilam_distance" translation_description="Distance to Alnilam shown in the info card. Translate units if appropriate for your locale.">~2,000光年</string>
+    <string name="object_info_alnilam_size" translation_description="Physical size of Alnilam shown in the info card. Translate units if appropriate for your locale.">42 太阳半径</string>
+    <string name="object_info_alnilam_mass" translation_description="Mass of Alnilam in scientific notation .  Translate units if appropriate for your locale.">40 太阳质量</string>
+    <string name="object_info_alphard_description" translation_description="Description of Alphard shown in the info card. Translate this text.">轩辕十四是长蛇座（水蛇）中最亮的恒星，也是天空中最大的星座。</string>
+    <string name="object_info_alphard_funfact" translation_description="Fun fact about Alphard shown in the info card. Translate this text.">Alphard 在阿拉伯语中意为"孤独的那个"，因为它独自坐落在一个昏暗的天空区域中！</string>
+    <string name="object_info_alphard_distance" translation_description="Distance to Alphard shown in the info card. Translate units if appropriate for your locale.">177光年</string>
+    <string name="object_info_alphard_size" translation_description="Physical size of Alphard shown in the info card. Translate units if appropriate for your locale.">50 太阳半径</string>
+    <string name="object_info_alphard_mass" translation_description="Mass of Alphard in scientific notation .  Translate units if appropriate for your locale.">3 太阳质量</string>
+    <string name="object_info_mirach_description" translation_description="Description of Mirach shown in the info card. Translate this text.">Mirach是仙女座中的一颗红巨星，常被用作寻找仙女座星系的指引。</string>
+    <string name="object_info_mirach_funfact" translation_description="Fun fact about Mirach shown in the info card. Translate this text.">Mirach 的幽灵是一个小星系（NGC 404），它看起来非常接近 Mirach——几个世纪以来一直被这颗恒星的光芒所隐藏！</string>
+    <string name="object_info_mirach_distance" translation_description="Distance to Mirach shown in the info card. Translate units if appropriate for your locale.">197光年</string>
+    <string name="object_info_mirach_size" translation_description="Physical size of Mirach shown in the info card. Translate units if appropriate for your locale.">100 太阳半径</string>
+    <string name="object_info_mirach_mass" translation_description="Mass of Mirach in scientific notation .  Translate units if appropriate for your locale.">3.5 太阳质量</string>
+    <string name="object_info_algol_description" translation_description="Description of Algol shown in the info card. Translate this text.">Algol是英仙座中著名的食双星，自古以来被称为"恶魔星"。</string>
+    <string name="object_info_algol_funfact" translation_description="Fun fact about Algol shown in the info card. Translate this text.">每2.87天，当较暗的伴星经过其前方时，Algol会明显变暗——古代天文学家发现这很诡异！</string>
+    <string name="object_info_algol_distance" translation_description="Distance to Algol shown in the info card. Translate units if appropriate for your locale.">90光年</string>
+    <string name="object_info_algol_size" translation_description="Physical size of Algol shown in the info card. Translate units if appropriate for your locale.">2.7 太阳半径</string>
+    <string name="object_info_algol_mass" translation_description="Mass of Algol in scientific notation .  Translate units if appropriate for your locale.">3.2 太阳质量</string>
+    <string name="object_info_alpha_centauri_description" translation_description="Description of Alpha Centauri shown in the info card. Translate this text.">半人马座α星是距离太阳最近的恒星系统，由包括比邻星在内的三颗恒星组成。</string>
+    <string name="object_info_alpha_centauri_funfact" translation_description="Fun fact about Alpha Centauri shown in the info card. Translate this text.">南门二系统中的比邻星拥有一颗可能宜居的行星！比邻星b距离我们仅4.2光年。</string>
+    <string name="object_info_alpha_centauri_distance" translation_description="Distance to Alpha Centauri shown in the info card. Translate units if appropriate for your locale.">4.37 光年</string>
+    <string name="object_info_alpha_centauri_size" translation_description="Physical size of Alpha Centauri shown in the info card. Translate units if appropriate for your locale.">1.2 太阳半径</string>
+    <string name="object_info_alpha_centauri_mass" translation_description="Mass of Alpha Centauri in scientific notation .  Translate units if appropriate for your locale.">1.1 太阳质量</string>
+    <string name="object_info_dubhe_funfact" translation_description="Fun fact about Dubhe shown in the info card. Translate this text.">与大多数北斗七星不同，杜比和阿尔凯德正朝相反方向运动——这个星群在50,000年后将看起来完全不同！</string>
+    <string name="object_info_dubhe_distance" translation_description="Distance to Dubhe shown in the info card. Translate units if appropriate for your locale.">123 光年</string>
+    <string name="object_info_dubhe_size" translation_description="Physical size of Dubhe shown in the info card. Translate units if appropriate for your locale.">30 太阳半径</string>
+    <string name="object_info_dubhe_mass" translation_description="Mass of Dubhe in scientific notation .  Translate units if appropriate for your locale.">4.3 太阳质量</string>
+    <string name="object_info_alioth_description" translation_description="Description of Alioth shown in the info card. Translate this text.">天阿是大熊星座中最亮的恒星，也是北斗七星星群中最亮的恒星。</string>
+    <string name="object_info_alioth_funfact" translation_description="Fun fact about Alioth shown in the info card. Translate this text.">天权星拥有独特的磁场，导致化学元素在其表面的某些区域集中！</string>
+    <string name="object_info_alioth_distance" translation_description="Distance to Alioth shown in the info card. Translate units if appropriate for your locale.">83光年</string>
+    <string name="object_info_alioth_size" translation_description="Physical size of Alioth shown in the info card. Translate units if appropriate for your locale.">4.1 太阳半径</string>
+    <string name="object_info_alioth_mass" translation_description="Mass of Alioth in scientific notation .  Translate units if appropriate for your locale.">2.9 太阳质量</string>
+    <string name="object_info_hamal_description" translation_description="Description of Hamal shown in the info card. Translate this text.">哈玛尔是白羊座中最亮的恒星，约2000年前曾被用来标记春分点。</string>
+    <string name="object_info_hamal_funfact" translation_description="Fun fact about Hamal shown in the info card. Translate this text.">一颗巨大的系外行星在2011年被发现绕哈玛尔运行，质量至少是木星的1.8倍！</string>
+    <string name="object_info_hamal_distance" translation_description="Distance to Hamal shown in the info card. Translate units if appropriate for your locale.">66光年</string>
+    <string name="object_info_hamal_size" translation_description="Physical size of Hamal shown in the info card. Translate units if appropriate for your locale.">15 太阳半径</string>
+    <string name="object_info_hamal_mass" translation_description="Mass of Hamal in scientific notation .  Translate units if appropriate for your locale.">1.5 太阳质量</string>
+    <string name="object_info_rasalhague_description" translation_description="Description of Rasalhague shown in the info card. Translate this text.">Rasalhague 是蛇夫座（蛇夫）中最亮的恒星，这个星座与治疗有关。</string>
+    <string name="object_info_rasalhague_funfact" translation_description="Fun fact about Rasalhague shown in the info card. Translate this text.">Rasalhague是一个快速旋转的恒星——它旋转得非常快，以至于明显扁平，仅需18小时就能完成一次自转！</string>
+    <string name="object_info_rasalhague_distance" translation_description="Distance to Rasalhague shown in the info card. Translate units if appropriate for your locale.">48.6光年</string>
+    <string name="object_info_rasalhague_size" translation_description="Physical size of Rasalhague shown in the info card. Translate units if appropriate for your locale.">2.5 太阳半径</string>
+    <string name="object_info_rasalhague_mass" translation_description="Mass of Rasalhague in scientific notation .  Translate units if appropriate for your locale.">2.4 太阳质量</string>
+    <string name="object_info_denebola_funfact" translation_description="Fun fact about Denebola shown in the info card. Translate this text.">天邪星拥有一个尘埃碎屑盘，可能表明行星正在其周围形成或小行星正在碰撞！</string>
+    <string name="object_info_denebola_distance" translation_description="Distance to Denebola shown in the info card. Translate units if appropriate for your locale.">36光年</string>
+    <string name="object_info_denebola_size" translation_description="Physical size of Denebola shown in the info card. Translate units if appropriate for your locale.">1.7 太阳半径</string>
+    <string name="object_info_denebola_mass" translation_description="Mass of Denebola in scientific notation .  Translate units if appropriate for your locale.">1.8 太阳质量</string>
+    <string name="object_info_alpheratz_description" translation_description="Description of Alpheratz shown in the info card. Translate this text.">Alpheratz是仙女座中最亮的恒星，尽管它曾经被认为是飞马座的一部分。</string>
+    <string name="object_info_alpheratz_funfact" translation_description="Fun fact about Alpheratz shown in the info card. Translate this text.">北落师门具有极其不寻常的化学成分，其大气中汞和锰的浓度很高！</string>
+    <string name="object_info_alpheratz_distance" translation_description="Distance to Alpheratz shown in the info card. Translate units if appropriate for your locale.">97光年</string>
+    <string name="object_info_alpheratz_size" translation_description="Physical size of Alpheratz shown in the info card. Translate units if appropriate for your locale.">2.7 太阳半径</string>
+    <string name="object_info_alpheratz_mass" translation_description="Mass of Alpheratz in scientific notation .  Translate units if appropriate for your locale.">3.6 太阳质量</string>
+    <string name="object_info_markab_description" translation_description="Description of Markab shown in the info card. Translate this text.">Markab是构成飞马座大四边形的四颗恒星之一，这是一个容易识别的星群。</string>
+    <string name="object_info_markab_funfact" translation_description="Fun fact about Markab shown in the info card. Translate this text.">Markab是一颗"晚期B型"恒星，即将完成其主序星生命，不久将成为红巨星！</string>
+    <string name="object_info_markab_distance" translation_description="Distance to Markab shown in the info card. Translate units if appropriate for your locale.">133光年</string>
+    <string name="object_info_markab_size" translation_description="Physical size of Markab shown in the info card. Translate units if appropriate for your locale.">4.6 太阳半径</string>
+    <string name="object_info_markab_mass" translation_description="Mass of Markab in scientific notation .  Translate units if appropriate for your locale.">3.5 太阳质量</string>
+    <string name="object_info_enif_description" translation_description="Description of Enif shown in the info card. Translate this text.">Enif 是飞马座最亮的恒星，在星座中标记着飞马的鼻子。</string>
+    <string name="object_info_enif_funfact" translation_description="Fun fact about Enif shown in the info card. Translate this text.">1972年，天津四经历了一次剧烈的耀斑事件，其亮度短暂增加了五倍！</string>
+    <string name="object_info_enif_distance" translation_description="Distance to Enif shown in the info card. Translate units if appropriate for your locale.">670 光年</string>
+    <string name="object_info_enif_size" translation_description="Physical size of Enif shown in the info card. Translate units if appropriate for your locale.">185 太阳半径</string>
+    <string name="object_info_enif_mass" translation_description="Mass of Enif in scientific notation .  Translate units if appropriate for your locale.">10.7 太阳质量</string>
+    <string name="object_info_scheat_description" translation_description="Description of Scheat shown in the info card. Translate this text.">Scheat 是飞马座大四边形中的红巨星，以其深橙红色而闻名。</string>
+    <string name="object_info_scheat_funfact" translation_description="Fun fact about Scheat shown in the info card. Translate this text.">舍亚特是一颗半规则变星，其亮度在数周至数月的周期内变化！</string>
+    <string name="object_info_scheat_distance" translation_description="Distance to Scheat shown in the info card. Translate units if appropriate for your locale.">196 光年</string>
+    <string name="object_info_scheat_size" translation_description="Physical size of Scheat shown in the info card. Translate units if appropriate for your locale.">110 太阳半径</string>
+    <string name="object_info_scheat_mass" translation_description="Mass of Scheat in scientific notation .  Translate units if appropriate for your locale.">2.1 太阳质量</string>
+    <string name="object_info_nunki_description" translation_description="Description of Nunki shown in the info card. Translate this text.">Nunki 是人马座第二亮的恒星，也是仍在常用的最古老的恒星名称。</string>
+    <string name="object_info_nunki_funfact" translation_description="Fun fact about Nunki shown in the info card. Translate this text.">Nunki这个名字来自古巴比伦，在天球上代表了埃里都城市！</string>
+    <string name="object_info_nunki_distance" translation_description="Distance to Nunki shown in the info card. Translate units if appropriate for your locale.">228 光年</string>
+    <string name="object_info_nunki_size" translation_description="Physical size of Nunki shown in the info card. Translate units if appropriate for your locale.">4.5 太阳半径</string>
+    <string name="object_info_nunki_mass" translation_description="Mass of Nunki in scientific notation .  Translate units if appropriate for your locale.">7.8 太阳质量</string>
+    <string name="object_info_diphda_description" translation_description="Description of Diphda shown in the info card. Translate this text.">Diphda（鲸鱼座β）是鲸鱼座（海怪）最亮的恒星，也是著名的秋季恒星。</string>
+    <string name="object_info_diphda_funfact" translation_description="Fun fact about Diphda shown in the info card. Translate this text.">Diphda 出现在天空中一个相当荒芜的区域，尽管亮度不是特别高，但这使它对导航者很有用！</string>
+    <string name="object_info_diphda_distance" translation_description="Distance to Diphda shown in the info card. Translate units if appropriate for your locale.">96光年</string>
+    <string name="object_info_diphda_size" translation_description="Physical size of Diphda shown in the info card. Translate units if appropriate for your locale.">18个太阳半径</string>
+    <string name="object_info_diphda_mass" translation_description="Mass of Diphda in scientific notation .  Translate units if appropriate for your locale.">2.8个太阳质量</string>
+    <!-- ==================== MESSIER OBJECTS ==================== -->
+    <!-- Note: Object names (m1, m13, etc.) are defined in celestial_objects.xml -->
+    <!-- M1 - Crab Nebula -->
+    <string name="object_info_m1_description" translation_description="Description of M1 shown in the info card. Translate this text.">蟹状星云是金牛座中的一个超新星遗迹，是1054年中国天文学家记录的一次恒星爆炸的结果。</string>
+    <string name="object_info_m1_funfact" translation_description="Fun fact about M1 shown in the info card. Translate this text.">蟹状星云包含一个每秒旋转30次的脉冲星，这是爆炸恒星的坍缩核心！</string>
+    <string name="object_info_m1_distance" translation_description="Distance to M1 shown in the info card. Translate units if appropriate for your locale.">6,500光年</string>
+    <string name="object_info_m1_size" translation_description="Physical size of M1 shown in the info card. Translate units if appropriate for your locale.">11光年宽</string>
+    <!-- M13 - Hercules Cluster -->
+    <string name="object_info_m13_description" translation_description="Description of M13 shown in the info card. Translate this text.">M13是位于武仙座的一个壮观的球状星团，包含约30万颗恒星，是北方天空中最明亮的星团之一。</string>
+    <string name="object_info_m13_funfact" translation_description="Fun fact about M13 shown in the info card. Translate this text.">1974年，阿雷西博信息被发送到M13，试图与外星智慧生命联系！</string>
+    <string name="object_info_m13_distance" translation_description="Distance to M13 shown in the info card. Translate units if appropriate for your locale.">22,200光年</string>
+    <string name="object_info_m13_size" translation_description="Physical size of M13 shown in the info card. Translate units if appropriate for your locale.">145光年宽</string>
+    <!-- M31 - Andromeda Galaxy -->
+    <string name="object_info_m31_description" translation_description="Description of M31 shown in the info card. Translate this text.">仙女座星系是离银河系最近的大型螺旋星系，也是肉眼可见的最遥远天体之一。</string>
+    <string name="object_info_m31_funfact" translation_description="Fun fact about M31 shown in the info card. Translate this text.">仙女座星系正以110公里/秒的速度向我们靠近，将在约45亿年后与银河系碰撞！</string>
+    <string name="object_info_m31_distance" translation_description="Distance to M31 shown in the info card. Translate units if appropriate for your locale.">250万光年</string>
+    <string name="object_info_m31_size" translation_description="Physical size of M31 shown in the info card. Translate units if appropriate for your locale.">22万光年宽</string>
+    <string name="object_info_m31_mass" translation_description="Mass of M31 in scientific notation .  Translate units if appropriate for your locale.">1.5万亿个太阳质量</string>
+    <!-- M42 - Orion Nebula -->
+    <string name="object_info_m42_description" translation_description="Description of M42 shown in the info card. Translate this text.">猎户座星云是一个肉眼可见的弥漫发射星云，是夜空中最常被拍摄的天体之一。</string>
+    <string name="object_info_m42_funfact" translation_description="Fun fact about M42 shown in the info card. Translate this text.">猎户座星云是一个恒星托儿所，新星正在那里诞生。超过700颗恒星正在其内部形成！</string>
+    <string name="object_info_m42_distance" translation_description="Distance to M42 shown in the info card. Translate units if appropriate for your locale.">1,344光年</string>
+    <string name="object_info_m42_size" translation_description="Physical size of M42 shown in the info card. Translate units if appropriate for your locale.">24光年宽</string>
+    <!-- M45 - Pleiades -->
+    <string name="object_info_m45_description" translation_description="Description of M45 shown in the info card. Translate this text.">昴星团是金牛座中的一个疏散星团，也被称为七姐妹星团，自古以来就可以用肉眼看到。</string>
+    <string name="object_info_m45_funfact" translation_description="Fun fact about M45 shown in the info card. Translate this text.">昴星团是离地球最近的星团之一，几乎被所有古代文明所认识！</string>
+    <string name="object_info_m45_distance" translation_description="Distance to M45 shown in the info card. Translate units if appropriate for your locale.">444光年</string>
+    <string name="object_info_m45_size" translation_description="Physical size of M45 shown in the info card. Translate units if appropriate for your locale.">17光年宽</string>
+    <!-- M51 - Whirlpool Galaxy -->
+    <string name="object_info_m51_description" translation_description="Description of M51 shown in the info card. Translate this text.">涡状星系是猎犬座中的一个大设计旋涡星系，以其引人注目的旋臂和伴星系而闻名。</string>
+    <string name="object_info_m51_funfact" translation_description="Fun fact about M51 shown in the info card. Translate this text.">漩涡星系是第一个被认可具有螺旋结构的星系，由罗塞勋爵在1845年发现！</string>
+    <string name="object_info_m51_distance" translation_description="Distance to M51 shown in the info card. Translate units if appropriate for your locale.">2,300万光年</string>
+    <string name="object_info_m51_size" translation_description="Physical size of M51 shown in the info card. Translate units if appropriate for your locale.">76,000光年宽</string>
+    <!-- M57 - Ring Nebula -->
+    <string name="object_info_m57_description" translation_description="Description of M57 shown in the info card. Translate this text.">环状星云是天琴座中的一个行星状星云，是一个垂死的类太阳恒星喷出的发光气壳。</string>
+    <string name="object_info_m57_funfact" translation_description="Fun fact about M57 shown in the info card. Translate this text.">环状星云以约20公里/秒的速度膨胀，在未来10,000年内最终将散开到太空中！</string>
+    <string name="object_info_m57_distance" translation_description="Distance to M57 shown in the info card. Translate units if appropriate for your locale.">2,300光年</string>
+    <string name="object_info_m57_size" translation_description="Physical size of M57 shown in the info card. Translate units if appropriate for your locale.">1.3光年宽</string>
+    <!-- M81 - Bode\'s Galaxy -->
+    <string name="object_info_m81_description" translation_description="Description of M81 shown in the info card. Translate this text.">M81是大熊座中的一个大设计旋涡星系，是从地球上可见的最亮的星系之一。</string>
+    <string name="object_info_m81_funfact" translation_description="Fun fact about M81 shown in the info card. Translate this text.">M81与邻近星系M82发生引力相互作用，引发M82中的剧烈恒星形成！</string>
+    <string name="object_info_m81_distance" translation_description="Distance to M81 shown in the info card. Translate units if appropriate for your locale.">1,200万光年</string>
+    <string name="object_info_m81_size" translation_description="Physical size of M81 shown in the info card. Translate units if appropriate for your locale.">90,000光年宽</string>
+    <!-- M82 - Cigar Galaxy -->
+    <string name="object_info_m82_description" translation_description="Description of M82 shown in the info card. Translate this text.">雪茄星系是大熊座中的一个星爆星系，以其侧向取向和强烈的恒星形成而闻名。</string>
+    <string name="object_info_m82_funfact" translation_description="Fun fact about M82 shown in the info card. Translate this text.">M82由于与邻近的M81的引力相互作用，形成恒星的速度比我们的银河系快10倍！</string>
+    <string name="object_info_m82_distance" translation_description="Distance to M82 shown in the info card. Translate units if appropriate for your locale.">1,200万光年</string>
+    <string name="object_info_m82_size" translation_description="Physical size of M82 shown in the info card. Translate units if appropriate for your locale.">37,000光年宽</string>
+    <!-- M101 - Pinwheel Galaxy -->
+    <string name="object_info_m101_description" translation_description="Description of M101 shown in the info card. Translate this text.">风车星系是大熊座中一个正面朝向的螺旋星系，是已知最大的螺旋星系之一。</string>
+    <string name="object_info_m101_funfact" translation_description="Fun fact about M101 shown in the info card. Translate this text.">风车星系包含超过一万亿颗恒星，由于过去的星系相互作用，其旋臂呈不对称分布！</string>
+    <string name="object_info_m101_distance" translation_description="Distance to M101 shown in the info card. Translate units if appropriate for your locale.">2,100万光年</string>
+    <string name="object_info_m101_size" translation_description="Physical size of M101 shown in the info card. Translate units if appropriate for your locale.">170,000光年宽</string>
+    <!-- M104 - Sombrero Galaxy -->
+    <string name="object_info_m104_description" translation_description="Description of M104 shown in the info card. Translate this text.">草帽星系是位于室女座的一个螺旋星系，以其明亮的核心和具有暗尘埃带的大型中心核球而闻名。</string>
+    <string name="object_info_m104_funfact" translation_description="Fun fact about M104 shown in the info card. Translate this text.">阔边帽星系的中心有一个超大质量黑洞，估计质量为10亿个太阳质量！</string>
+    <string name="object_info_m104_distance" translation_description="Distance to M104 shown in the info card. Translate units if appropriate for your locale.">3,100万光年</string>
+    <string name="object_info_m104_size" translation_description="Physical size of M104 shown in the info card. Translate units if appropriate for your locale.">50,000光年宽</string>
+    <!-- M8 - Lagoon Nebula -->
+    <string name="object_info_m8_description" translation_description="Description of M8 shown in the info card. Translate this text.">礁湖星云是位于人马座的一个巨大星际云，是夏季天空中最美丽、最明亮的星云之一。</string>
+    <string name="object_info_m8_funfact" translation_description="Fun fact about M8 shown in the info card. Translate this text.">礁湖星云包含赫歇尔36，这是已知最大质量和最亮的恒星之一！</string>
+    <string name="object_info_m8_distance" translation_description="Distance to M8 shown in the info card. Translate units if appropriate for your locale.">4,100光年</string>
+    <string name="object_info_m8_size" translation_description="Physical size of M8 shown in the info card. Translate units if appropriate for your locale.">55光年宽</string>
+    <!-- M17 - Omega Nebula -->
+    <string name="object_info_m17_description" translation_description="Description of M17 shown in the info card. Translate this text.">Omega星云（也称天鹅星云）是人马座中的一个恒星形成区，是最亮的发射星云之一。</string>
+    <string name="object_info_m17_funfact" translation_description="Fun fact about M17 shown in the info card. Translate this text.">欧米茄星云内隐藏着约800颗年轻恒星组成的疏散星团，这些恒星被气体和尘埃包围！</string>
+    <string name="object_info_m17_distance" translation_description="Distance to M17 shown in the info card. Translate units if appropriate for your locale.">5,500光年</string>
+    <string name="object_info_m17_size" translation_description="Physical size of M17 shown in the info card. Translate units if appropriate for your locale.">直径15光年</string>
+    <!-- M20 - Trifid Nebula -->
+    <string name="object_info_m20_description" translation_description="Description of M20 shown in the info card. Translate this text.">三裂星云是位于人马座的发射星云、反射星云和暗星云的组合，由暗尘埃带分割。</string>
+    <string name="object_info_m20_funfact" translation_description="Fun fact about M20 shown in the info card. Translate this text.">三裂星云在一个天体中展示了三种不同类型的星云：红色发射星云、蓝色反射星云和暗黑吸收星云！</string>
+    <string name="object_info_m20_distance" translation_description="Distance to M20 shown in the info card. Translate units if appropriate for your locale.">5,200光年</string>
+    <string name="object_info_m20_size" translation_description="Physical size of M20 shown in the info card. Translate units if appropriate for your locale.">直径20光年</string>
+    <!-- M27 - Dumbbell Nebula -->
+    <string name="object_info_m27_description" translation_description="Description of M27 shown in the info card. Translate this text.">哑铃星云是狐狸座中的一个行星状星云，是有史以来发现的第一个行星状星云。</string>
+    <string name="object_info_m27_funfact" translation_description="Fun fact about M27 shown in the info card. Translate this text.">哑铃星云由查尔斯·梅西耶在1764年发现，是有史以来发现的第一个行星状星云！</string>
+    <string name="object_info_m27_distance" translation_description="Distance to M27 shown in the info card. Translate units if appropriate for your locale.">1,360光年</string>
+    <string name="object_info_m27_size" translation_description="Physical size of M27 shown in the info card. Translate units if appropriate for your locale.">直径2.5光年</string>
+    <!-- M33 - Triangulum Galaxy -->
+    <string name="object_info_m33_description" translation_description="Description of M33 shown in the info card. Translate this text.">三角星系是本星系群中第三大的成员，是一个位于三角座中可见的螺旋星系。</string>
+    <string name="object_info_m33_funfact" translation_description="Fun fact about M33 shown in the info card. Translate this text.">三角星系可能在引力作用下与仙女星系相互束缚，成为其遥远的卫星！</string>
+    <string name="object_info_m33_distance" translation_description="Distance to M33 shown in the info card. Translate units if appropriate for your locale.">270万光年</string>
+    <string name="object_info_m33_size" translation_description="Physical size of M33 shown in the info card. Translate units if appropriate for your locale.">直径6万光年</string>
+    <!-- M35 - Open Cluster in Gemini -->
+    <string name="object_info_m35_description" translation_description="Description of M35 shown in the info card. Translate this text.">M35是双子座中的一个大型疏散星团，在良好的观测条件下肉眼可见。</string>
+    <string name="object_info_m35_funfact" translation_description="Fun fact about M35 shown in the info card. Translate this text.">M35包含约200颗恒星，在同一视场中与年代久远得多的星团NGC 2158相邻！</string>
+    <string name="object_info_m35_distance" translation_description="Distance to M35 shown in the info card. Translate units if appropriate for your locale.">2,800光年</string>
+    <string name="object_info_m35_size" translation_description="Physical size of M35 shown in the info card. Translate units if appropriate for your locale.">直径24光年</string>
+    <!-- M44 - Beehive Cluster -->
+    <string name="object_info_m44_description" translation_description="Description of M44 shown in the info card. Translate this text.">蜂巢星团（Praesepe）是巨蟹座中的一个疏散星团，自古以来就为人所知，肉眼可见。</string>
+    <string name="object_info_m44_funfact" translation_description="Fun fact about M44 shown in the info card. Translate this text.">古代天文学家利用蜂巢星团的可见性来预测天气——如果看不见，就意味着要下雨了！</string>
+    <string name="object_info_m44_distance" translation_description="Distance to M44 shown in the info card. Translate units if appropriate for your locale.">577光年</string>
+    <string name="object_info_m44_size" translation_description="Physical size of M44 shown in the info card. Translate units if appropriate for your locale.">直径15光年</string>
+    <!-- M78 - Reflection Nebula -->
+    <string name="object_info_m78_description" translation_description="Description of M78 shown in the info card. Translate this text.">M78是天空中最亮的漫反射星云，位于猎户座靠近著名的猎户腰带星的地方。</string>
+    <string name="object_info_m78_funfact" translation_description="Fun fact about M78 shown in the info card. Translate this text.">M78 包含约 45 颗年轻的 T Tauri 变星，这些是仍在向主序收缩的非常年轻的恒星！</string>
+    <string name="object_info_m78_distance" translation_description="Distance to M78 shown in the info card. Translate units if appropriate for your locale.">1,600光年</string>
+    <string name="object_info_m78_size" translation_description="Physical size of M78 shown in the info card. Translate units if appropriate for your locale.">直径4光年</string>
+    <!-- M83 - Southern Pinwheel Galaxy -->
+    <string name="object_info_m83_description" translation_description="Description of M83 shown in the info card. Translate this text.">南风车星系是位于长蛇座的棒旋星系，是我们天空中最近和最亮的棒旋星系之一。</string>
+    <string name="object_info_m83_funfact" translation_description="Fun fact about M83 shown in the info card. Translate this text.">M83已产生六颗观测到的超新星，超过任何其他星系——超新星产生数量的记录！</string>
+    <string name="object_info_m83_distance" translation_description="Distance to M83 shown in the info card. Translate units if appropriate for your locale.">1,500万光年</string>
+    <string name="object_info_m83_size" translation_description="Physical size of M83 shown in the info card. Translate units if appropriate for your locale.">直径55,000光年</string>
+    <!-- M3 - Globular Cluster -->
+    <string name="object_info_m3_description" translation_description="Description of M3 shown in the info card. Translate this text.">M3是天空中最大最亮的球状星团之一，位于猎犬座。</string>
+    <string name="object_info_m3_funfact" translation_description="Fun fact about M3 shown in the info card. Translate this text.">M3包含约500,000颗恒星，估计年龄为114亿年！</string>
+    <string name="object_info_m3_distance" translation_description="Distance to M3 shown in the info card. Translate units if appropriate for your locale.">33,900光年</string>
+    <string name="object_info_m3_size" translation_description="Physical size of M3 shown in the info card. Translate units if appropriate for your locale.">直径180光年</string>
+    <!-- M5 - Globular Cluster -->
+    <string name="object_info_m5_description" translation_description="Description of M5 shown in the info card. Translate this text.">M5是蛇夫座中的一个球状星团，是最古老的球状星团之一，距今约130亿年。</string>
+    <string name="object_info_m5_funfact" translation_description="Fun fact about M5 shown in the info card. Translate this text.">M5包含超过100,000颗恒星，拥有任何球状星团中已知变星数量最多的之一！</string>
+    <string name="object_info_m5_distance" translation_description="Distance to M5 shown in the info card. Translate units if appropriate for your locale.">24,500光年</string>
+    <string name="object_info_m5_size" translation_description="Physical size of M5 shown in the info card. Translate units if appropriate for your locale.">直径165光年</string>
+    <!-- M15 - Globular Cluster -->
+    <string name="object_info_m15_description" translation_description="Description of M15 shown in the info card. Translate this text.">M15是飞马座中一个密集的球状星团，其核心有一个行星状星云，这对球状星团来说非常罕见。</string>
+    <string name="object_info_m15_funfact" translation_description="Fun fact about M15 shown in the info card. Translate this text.">M15的中心可能存在约4,000太阳质量的黑洞，但这仍有争议！</string>
+    <string name="object_info_m15_distance" translation_description="Distance to M15 shown in the info card. Translate units if appropriate for your locale.">33,600光年</string>
+    <string name="object_info_m15_size" translation_description="Physical size of M15 shown in the info card. Translate units if appropriate for your locale.">直径175光年</string>
+    <!-- M22 - Globular Cluster -->
+    <string name="object_info_m22_description" translation_description="Description of M22 shown in the info card. Translate this text.">M22是距离地球最近、最亮的球状星团之一，位于人马座靠近银河中心的地方。</string>
+    <string name="object_info_m22_funfact" translation_description="Fun fact about M22 shown in the info card. Translate this text.">M22是最早被发现的球状星团之一，由亚伯拉罕·伊赫勒在1665年发现！</string>
+    <string name="object_info_m22_distance" translation_description="Distance to M22 shown in the info card. Translate units if appropriate for your locale.">10,600光年</string>
+    <string name="object_info_m22_size" translation_description="Physical size of M22 shown in the info card. Translate units if appropriate for your locale.">70光年宽</string>
+    <!-- M4 - Globular Cluster -->
+    <string name="object_info_m4_description" translation_description="Description of M4 shown in the info card. Translate this text.">M4是离地球最近的球状星团之一，也是最容易找到的球状星团之一，位于天蝎座的心宿二附近。</string>
+    <string name="object_info_m4_funfact" translation_description="Fun fact about M4 shown in the info card. Translate this text.">M4包含一颗估计有130亿年历史的白矮星——是银河系中已知最古老的恒星之一！</string>
+    <string name="object_info_m4_distance" translation_description="Distance to M4 shown in the info card. Translate units if appropriate for your locale.">7,200光年</string>
+    <string name="object_info_m4_size" translation_description="Physical size of M4 shown in the info card. Translate units if appropriate for your locale.">75光年宽</string>
+    <!-- M7 - Ptolemy Cluster -->
+    <string name="object_info_m7_description" translation_description="Description of M7 shown in the info card. Translate this text.">托勒密星团是天蝎座中一个明亮的疏散星团，是肉眼可见最突出的星团之一。</string>
+    <string name="object_info_m7_funfact" translation_description="Fun fact about M7 shown in the info card. Translate this text.">M7在公元130年首次被托勒密记录，已被观测近2,000年！</string>
+    <string name="object_info_m7_distance" translation_description="Distance to M7 shown in the info card. Translate units if appropriate for your locale.">980光年</string>
+    <string name="object_info_m7_size" translation_description="Physical size of M7 shown in the info card. Translate units if appropriate for your locale.">25光年宽</string>
+    <!-- M6 - Butterfly Cluster -->
+    <string name="object_info_m6_description" translation_description="Description of M6 shown in the info card. Translate this text.">蝴蝶星团是天蝎座中的一个疏散星团，因其最亮的恒星呈蝴蝶状排列而得名。</string>
+    <string name="object_info_m6_funfact" translation_description="Fun fact about M6 shown in the info card. Translate this text.">M6大约有1亿年的历史，包含超过300颗恒星，其中包括橙色巨星BM天蝎座!=</string>
+    <string name="object_info_m6_distance" translation_description="Distance to M6 shown in the info card. Translate units if appropriate for your locale.">1,600光年</string>
+    <string name="object_info_m6_size" translation_description="Physical size of M6 shown in the info card. Translate units if appropriate for your locale.">25光年宽</string>
+    <!-- M11 - Wild Duck Cluster -->
+    <string name="object_info_m11_description" translation_description="Description of M11 shown in the info card. Translate this text.">野鸭星团是盾牌座中一个富集的疏散星团，是已知最紧凑的疏散星团之一。</string>
+    <string name="object_info_m11_funfact" translation_description="Fun fact about M11 shown in the info card. Translate this text.">M11 在一个小区域内包含近 3,000 颗恒星，通过望远镜观看时呈现出壮观的景象！</string>
+    <string name="object_info_m11_distance" translation_description="Distance to M11 shown in the info card. Translate units if appropriate for your locale.">6,200光年</string>
+    <string name="object_info_m11_size" translation_description="Physical size of M11 shown in the info card. Translate units if appropriate for your locale.">20光年宽</string>
+    <!-- M16 - Eagle Nebula -->
+    <string name="object_info_m16_description" translation_description="Description of M16 shown in the info card. Translate this text.">鹰星云是位于巨蛇座的一个恒星形成星云，以哈勃太空望远镜拍摄的创造之柱而闻名。</string>
+    <string name="object_info_m16_funfact" translation_description="Fun fact about M16 shown in the info card. Translate this text.">M16中的创造之柱大约有5光年高，正在被附近恒星的辐射缓慢侵蚀！</string>
+    <string name="object_info_m16_distance" translation_description="Distance to M16 shown in the info card. Translate units if appropriate for your locale.">7,000光年</string>
+    <string name="object_info_m16_size" translation_description="Physical size of M16 shown in the info card. Translate units if appropriate for your locale.">70光年宽</string>
+    <!-- M2 - Globular Cluster -->
+    <string name="object_info_m2_description" translation_description="Description of M2 shown in the info card. Translate this text.">M2是已知最大和最富集的球状星团之一，位于宝瓶座。</string>
+    <string name="object_info_m2_funfact" translation_description="Fun fact about M2 shown in the info card. Translate this text.">M2 包含约 150,000 颗恒星，直径为 175 光年，是最大的球状星团之一！</string>
+    <string name="object_info_m2_distance" translation_description="Distance to M2 shown in the info card. Translate units if appropriate for your locale.">37,500光年</string>
+    <string name="object_info_m2_size" translation_description="Physical size of M2 shown in the info card. Translate units if appropriate for your locale.">直径175光年</string>
+    <!-- M10 - Globular Cluster -->
+    <string name="object_info_m10_description" translation_description="Description of M10 shown in the info card. Translate this text.">M10是蛇夫座中一个明亮的球状星团，是离我们太阳系较近的球状星团之一。</string>
+    <string name="object_info_m10_funfact" translation_description="Fun fact about M10 shown in the info card. Translate this text.">M10正以超过70公里/秒的速度向我们靠近，其核心的星星浓度异常低！</string>
+    <string name="object_info_m10_distance" translation_description="Distance to M10 shown in the info card. Translate units if appropriate for your locale.">14,300光年</string>
+    <string name="object_info_m10_size" translation_description="Physical size of M10 shown in the info card. Translate units if appropriate for your locale.">直径83光年</string>
+    <!-- M12 - Globular Cluster -->
+    <string name="object_info_m12_description" translation_description="Description of M12 shown in the info card. Translate this text.">M12是蛇夫座中的一个球状星团，其中心浓度相对较低。</string>
+    <string name="object_info_m12_funfact" translation_description="Fun fact about M12 shown in the info card. Translate this text.">M12由于数十亿年来银河系的引力作用，已经失去了许多低质量恒星！</string>
+    <string name="object_info_m12_distance" translation_description="Distance to M12 shown in the info card. Translate units if appropriate for your locale.">15,700光年</string>
+    <string name="object_info_m12_size" translation_description="Physical size of M12 shown in the info card. Translate units if appropriate for your locale.">直径75光年</string>
+    <!-- M14 - Globular Cluster -->
+    <string name="object_info_m14_description" translation_description="Description of M14 shown in the info card. Translate this text.">M14是蛇夫座中的一个球状星团，包含数十万颗恒星。</string>
+    <string name="object_info_m14_funfact" translation_description="Fun fact about M14 shown in the info card. Translate this text.">1938年，M14中出现了一颗新星，但直到1964年检查旧的摄影底片时才被发现！</string>
+    <string name="object_info_m14_distance" translation_description="Distance to M14 shown in the info card. Translate units if appropriate for your locale.">30,300光年</string>
+    <string name="object_info_m14_size" translation_description="Physical size of M14 shown in the info card. Translate units if appropriate for your locale.">直径100光年</string>
+    <!-- M53 - Globular Cluster -->
+    <string name="object_info_m53_description" translation_description="Description of M53 shown in the info card. Translate this text.">M53是位于后发座的一个球状星团，是我们银河系中较为外围的球状星团之一。</string>
+    <string name="object_info_m53_funfact" translation_description="Fun fact about M53 shown in the info card. Translate this text.">M53是距离银河系中心最远的球状星团之一，距离中心60,000光年！</string>
+    <string name="object_info_m53_distance" translation_description="Distance to M53 shown in the info card. Translate units if appropriate for your locale.">58,000光年</string>
+    <string name="object_info_m53_size" translation_description="Physical size of M53 shown in the info card. Translate units if appropriate for your locale.">直径220光年</string>
+    <!-- M64 - Black Eye Galaxy -->
+    <string name="object_info_m64_description" translation_description="Description of M64 shown in the info card. Translate this text.">黑眼星系是位于后发座的一个螺旋星系，以其核周围的暗尘埃带而闻名。</string>
+    <string name="object_info_m64_funfact" translation_description="Fun fact about M64 shown in the info card. Translate this text.">M64的外层区域与其内层区域的旋转方向相反，这可能是由于过去的星系合并所致！</string>
+    <string name="object_info_m64_distance" translation_description="Distance to M64 shown in the info card. Translate units if appropriate for your locale.">1,700万光年</string>
+    <string name="object_info_m64_size" translation_description="Physical size of M64 shown in the info card. Translate units if appropriate for your locale.">直径70,000光年</string>
+    <!-- M65 - Galaxy in Leo -->
+    <string name="object_info_m65_description" translation_description="Description of M65 shown in the info card. Translate this text.">M65是狮子座的一个螺旋星系，与M66和NGC 3628一起组成著名的狮子座三重星系。</string>
+    <string name="object_info_m65_funfact" translation_description="Fun fact about M65 shown in the info card. Translate this text.">狮子座三重星系之间存在引力相互作用，导致潮汐尾和扭曲的结构！</string>
+    <string name="object_info_m65_distance" translation_description="Distance to M65 shown in the info card. Translate units if appropriate for your locale.">3500万光年</string>
+    <string name="object_info_m65_size" translation_description="Physical size of M65 shown in the info card. Translate units if appropriate for your locale.">9万光年</string>
+    <!-- M66 - Galaxy in Leo -->
+    <string name="object_info_m66_description" translation_description="Description of M66 shown in the info card. Translate this text.">M66是狮子座三重星系中最大的成员，是一个具有不对称螺旋臂的螺旋星系。</string>
+    <string name="object_info_m66_funfact" translation_description="Fun fact about M66 shown in the info card. Translate this text.">M66的不对称外观是由与其邻近星系M65和NGC 3628的引力相互作用引起的！</string>
+    <string name="object_info_m66_distance" translation_description="Distance to M66 shown in the info card. Translate units if appropriate for your locale.">3600万光年</string>
+    <string name="object_info_m66_size" translation_description="Physical size of M66 shown in the info card. Translate units if appropriate for your locale.">9.5万光年</string>
+    <!-- M74 - Phantom Galaxy -->
+    <string name="object_info_m74_description" translation_description="Description of M74 shown in the info card. Translate this text.">幻影星系是双鱼座中一个正面朝向的螺旋星系，以其完美的大设计螺旋结构而闻名。</string>
+    <string name="object_info_m74_funfact" translation_description="Fun fact about M74 shown in the info card. Translate this text.">M74因其极低的表面亮度而被昵称为幽灵星系，这使得它很难被观测！</string>
+    <string name="object_info_m74_distance" translation_description="Distance to M74 shown in the info card. Translate units if appropriate for your locale.">3200万光年</string>
+    <string name="object_info_m74_size" translation_description="Physical size of M74 shown in the info card. Translate units if appropriate for your locale.">9.5万光年</string>
+    <!-- M77 - Cetus A -->
+    <string name="object_info_m77_description" translation_description="Description of M77 shown in the info card. Translate this text.">M77是位于鲸鱼座的棒旋星系，其中心包含由超大质量黑洞驱动的活跃星系核。</string>
+    <string name="object_info_m77_funfact" translation_description="Fun fact about M77 shown in the info card. Translate this text.">M77拥有一个活跃的星系核，其中的黑洞质量是我们太阳的1500万倍！</string>
+    <string name="object_info_m77_distance" translation_description="Distance to M77 shown in the info card. Translate units if appropriate for your locale.">4700万光年</string>
+    <string name="object_info_m77_size" translation_description="Physical size of M77 shown in the info card. Translate units if appropriate for your locale.">12万光年</string>
+    <!-- M92 - Globular Cluster -->
+    <string name="object_info_m92_description" translation_description="Description of M92 shown in the info card. Translate this text.">M92是武仙座中一个明亮的球状星团，由于其靠近更著名的M13，常被忽视。</string>
+    <string name="object_info_m92_funfact" translation_description="Fun fact about M92 shown in the info card. Translate this text.">M92是最古老的球状星团之一，距今约142亿年——几乎与宇宙一样古老！</string>
+    <string name="object_info_m92_distance" translation_description="Distance to M92 shown in the info card. Translate units if appropriate for your locale.">2.67万光年</string>
+    <string name="object_info_m92_size" translation_description="Physical size of M92 shown in the info card. Translate units if appropriate for your locale.">109光年</string>
+    <!-- M94 - Cat\'s Eye Galaxy -->
+    <string name="object_info_m94_description" translation_description="Description of M94 shown in the info card. Translate this text.">M94是位于猎犬座的一个螺旋星系，具有一个明亮的内环，其中正在进行活跃的恒星形成。</string>
+    <string name="object_info_m94_funfact" translation_description="Fun fact about M94 shown in the info card. Translate this text.">M94的内环是一个星爆环，新星在那里以极高的速率形成！</string>
+    <string name="object_info_m94_distance" translation_description="Distance to M94 shown in the info card. Translate units if appropriate for your locale.">1600万光年</string>
+    <string name="object_info_m94_size" translation_description="Physical size of M94 shown in the info card. Translate units if appropriate for your locale.">5万光年宽</string>
+    <!-- M97 - Owl Nebula -->
+    <string name="object_info_m97_description" translation_description="Description of M97 shown in the info card. Translate this text.">猫头鹰星云是位于大熊座的行星状星云，因其具有两个暗斑的猫头鹰般外观而得名。</string>
+    <string name="object_info_m97_funfact" translation_description="Fun fact about M97 shown in the info card. Translate this text.">M97中黑暗的猫头鹰眼睛是星云中的三维空洞，与我们的视线对齐！</string>
+    <string name="object_info_m97_distance" translation_description="Distance to M97 shown in the info card. Translate units if appropriate for your locale.">2030光年</string>
+    <string name="object_info_m97_size" translation_description="Physical size of M97 shown in the info card. Translate units if appropriate for your locale.">2光年宽</string>
+    <!-- M106 - Galaxy in Canes Venatici -->
+    <string name="object_info_m106_description" translation_description="Description of M106 shown in the info card. Translate this text.">M106是猎犬座中的一个螺旋星系，其异常的螺旋臂是由中心黑洞喷出的喷流造成的。</string>
+    <string name="object_info_m106_funfact" translation_description="Fun fact about M106 shown in the info card. Translate this text.">M106的核心存在水脉泽，使天文学家能够精确测量其距离！</string>
+    <string name="object_info_m106_distance" translation_description="Distance to M106 shown in the info card. Translate units if appropriate for your locale.">2350万光年</string>
+    <string name="object_info_m106_size" translation_description="Physical size of M106 shown in the info card. Translate units if appropriate for your locale.">13.5万光年宽</string>
+    <!-- M109 - Barred Spiral Galaxy -->
+    <string name="object_info_m109_description" translation_description="Description of M109 shown in the info card. Translate this text.">M109是大熊座中的一个棒旋星系，是以其名字命名的星系群中最亮的成员。</string>
+    <string name="object_info_m109_funfact" translation_description="Fun fact about M109 shown in the info card. Translate this text.">M109位于北斗七星中的开阳星附近，易于定位！</string>
+    <string name="object_info_m109_distance" translation_description="Distance to M109 shown in the info card. Translate units if appropriate for your locale.">8300万光年</string>
+    <string name="object_info_m109_size" translation_description="Physical size of M109 shown in the info card. Translate units if appropriate for your locale.">18万光年宽</string>
+    <!-- M110 - Satellite of Andromeda -->
+    <string name="object_info_m110_description" translation_description="Description of M110 shown in the info card. Translate this text.">M110是一个矮椭圆星系，是仙女座星系的卫星星系，也是最后加入梅西耶星表的天体。</string>
+    <string name="object_info_m110_funfact" translation_description="Fun fact about M110 shown in the info card. Translate this text.">M110实际上在1773年被梅西耶观测到，但直到1966年才被加入他的星表！</string>
+    <string name="object_info_m110_distance" translation_description="Distance to M110 shown in the info card. Translate units if appropriate for your locale.">270万光年</string>
+    <string name="object_info_m110_size" translation_description="Physical size of M110 shown in the info card. Translate units if appropriate for your locale.">1.7万光年宽</string>
+    <!-- M32 - Satellite of Andromeda -->
+    <string name="object_info_m32_description" translation_description="Description of M32 shown in the info card. Translate this text.">M32是一个紧凑的矮椭圆星系，是仙女座星系的近邻卫星星系。</string>
+    <string name="object_info_m32_funfact" translation_description="Fun fact about M32 shown in the info card. Translate this text.">M32是有史以来发现的第一个椭圆星系，可能曾经是一个被仙女座星系剥离的更大的螺旋星系！</string>
+    <string name="object_info_m32_distance" translation_description="Distance to M32 shown in the info card. Translate units if appropriate for your locale.">250万光年</string>
+    <string name="object_info_m32_size" translation_description="Physical size of M32 shown in the info card. Translate units if appropriate for your locale.">6,500光年宽</string>
+    <!-- M49 - Elliptical Galaxy -->
+    <string name="object_info_m49_description" translation_description="Description of M49 shown in the info card. Translate this text.">M49是室女座中的一个巨大椭圆星系，是室女座星系团中最亮的成员。</string>
+    <string name="object_info_m49_funfact" translation_description="Fun fact about M49 shown in the info card. Translate this text.">M49是室女星系团中首次被发现的成员，包含约6,000个球状星团！</string>
+    <string name="object_info_m49_distance" translation_description="Distance to M49 shown in the info card. Translate units if appropriate for your locale.">5,500万光年</string>
+    <string name="object_info_m49_size" translation_description="Physical size of M49 shown in the info card. Translate units if appropriate for your locale.">160,000光年宽</string>
+    <!-- M87 - Virgo A -->
+    <string name="object_info_m87_description" translation_description="Description of M87 shown in the info card. Translate this text.">M87是室女座中的一个超巨椭圆星系，是本地宇宙中最大质量的星系之一。</string>
+    <string name="object_info_m87_funfact" translation_description="Fun fact about M87 shown in the info card. Translate this text.">M87的中心黑洞是事件视界望远镜在2019年首次拍摄的——它的质量是65亿个太阳质量！</string>
+    <string name="object_info_m87_distance" translation_description="Distance to M87 shown in the info card. Translate units if appropriate for your locale.">5,300万光年</string>
+    <string name="object_info_m87_size" translation_description="Physical size of M87 shown in the info card. Translate units if appropriate for your locale.">240,000光年宽</string>
+    <string name="object_info_m87_mass" translation_description="Mass of M87 in scientific notation .  Translate units if appropriate for your locale.">2.4万亿太阳质量</string>
+    <!-- T CrB - T Coronae Borealis (Recurrent Nova) -->
+    <string name="object_info_t_crb_description" translation_description="Description of T Crb shown in the info card. Translate this text.">北冕座T星（T CrB）是北冕座中的一颗周期新星——由一颗红巨星和一颗白矮星组成的双星系统。白矮星周期性地从伴星积累足够的氢气，引发热核爆炸。</string>
+    <string name="object_info_t_crb_funfact" translation_description="Fun fact about T Crb shown in the info card. Translate this text.">T CrB 最后一次爆发是在 1946 年，曾短暂达到 2.0 等级，肉眼可见。天文学家预测另一次爆发即将发生——继续观察吧！</string>
+    <string name="object_info_t_crb_distance" translation_description="Distance to T Crb shown in the info card. Translate units if appropriate for your locale.">3,000光年</string>
+    <string name="object_info_t_crb_size" translation_description="Physical size of T Crb shown in the info card. Translate units if appropriate for your locale.">0.2天文单位轨道分离</string>
+    <!-- Tarantula Nebula - NGC 2070 -->
+    <string name="object_info_tarantula_nebula_description" translation_description="Description of the Tarantula Nebula shown in the info card. Translate this text.">蛛形星云是本星系群中最大、最明亮的恒星形成区，是一个广阔的发射星云，嵌入大麦哲伦星云中，跨越约600光年。尽管距离我们163,000光年，但它足够明亮，肉眼可见。</string>
+    <string name="object_info_tarantula_nebula_funfact" translation_description="Fun fact about the Tarantula Nebula shown in the info card. Translate this text.">如果蜘蛛星云与猎户星云一样近，它将足够明亮，能在夜间投射阴影，并且会跨越半个可见的天空！</string>
+    <string name="object_info_tarantula_nebula_distance" translation_description="Distance to the Tarantula Nebula shown in the info card. Translate units if appropriate for your locale.">163,000光年</string>
+    <string name="object_info_tarantula_nebula_size" translation_description="Physical size of the Tarantula Nebula shown in the info card. Translate units if appropriate for your locale.">600光年宽</string>
+    <!-- LMC - Large Magellanic Cloud -->
+    <string name="object_info_lmc_description" translation_description="Description of the Large Magellanic Cloud shown in the info card. Translate this text.">大麦哲伦星云是银河系的一个不规则卫星星系，肉眼可见为天空中一个分离的、发光的斑块。它是我们最近的星系邻居之一，也是本星系群中最活跃的恒星形成星系之一。</string>
+    <string name="object_info_lmc_funfact" translation_description="Fun fact about the Large Magellanic Cloud shown in the info card. Translate this text.">1987年，大麦哲伦星云中的一颗恒星爆炸成为超新星1987A——这是自1604年以来第一次肉眼可见的超新星。爆炸产生的中微子比光线提前三小时到达地球，证实了我们对恒星核心坍缩的模型。</string>
+    <string name="object_info_lmc_distance" translation_description="Distance to the Large Magellanic Cloud shown in the info card. Translate units if appropriate for your locale.">160,000光年</string>
+    <string name="object_info_lmc_size" translation_description="Physical size of the Large Magellanic Cloud shown in the info card. Translate units if appropriate for your locale.">14,000光年宽</string>
+    <!-- SMC - Small Magellanic Cloud -->
+    <string name="object_info_smc_description" translation_description="Description of the Small Magellanic Cloud shown in the info card. Translate this text.">小麦哲伦星云是银河系的一个矮不规则卫星星系，与其较大的孪生星系大麦哲伦星云配对。它们正在被银河系的引力缓慢撕裂，在天空中拖出一条巨大的气体流。</string>
+    <string name="object_info_smc_funfact" translation_description="Fun fact about the Small Magellanic Cloud shown in the info card. Translate this text.">通过在1908–12年间研究小麦哲伦星云中的造父变星，亨丽埃塔·斯万·勒维特发现了周期-光度关系——这一突破性发现首次让天文学家能够测量宇宙中的距离！</string>
+    <string name="object_info_smc_distance" translation_description="Distance to the Small Magellanic Cloud shown in the info card. Translate units if appropriate for your locale.">200,000光年</string>
+    <string name="object_info_smc_size" translation_description="Physical size of the Small Magellanic Cloud shown in the info card. Translate units if appropriate for your locale.">7,000光年宽</string>
+    <!-- Eta Carinae Nebula (NGC 3372) -->
+    <string name="object_info_eta_carinae_nebula_description" translation_description="Description of Eta Carinae Nebula shown in the info card. Translate this text.">船底座η星云（NGC 3372）是天空中最大、最亮的星云之一，跨度超过300光年。其中心是船底座η星，是已知最大质量和最亮的恒星之一，质量超过100个太阳质量。</string>
+    <string name="object_info_eta_carinae_nebula_funfact" translation_description="Fun fact about Eta Carinae Nebula shown in the info card. Translate this text.">1843年，船底座η星爆发，短暂成为天空中第二亮的星星，但它奇迹般地存活了下来——它可能正处于超新星爆发的边缘！</string>
+    <string name="object_info_eta_carinae_nebula_distance" translation_description="Distance to Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">7,500光年</string>
+    <string name="object_info_eta_carinae_nebula_size" translation_description="Physical size of Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">300光年宽</string>
+    <!-- ==================== CONSTELLATIONS ==================== -->
+    <!-- Note: Constellation names are defined in celestial_objects.xml -->
+    <!-- Orion -->
+    <string name="object_info_orion_description" translation_description="Description of Orion shown in the info card. Translate this text.">猎户座是最容易识别的星座之一，从两个半球都可以看到，其特征是有三颗星组成的腰带。</string>
+    <string name="object_info_orion_funfact" translation_description="Fun fact about Orion shown in the info card. Translate this text.">猎户座腰带在一个方向指向天狼星（最亮的恒星），在另一个方向指向毕宿五（金牛座）！</string>
+    <string name="object_info_orion_size" translation_description="Physical size of Orion shown in the info card. Translate units if appropriate for your locale.">594平方度</string>
+    <!-- Ursa Major -->
+    <string name="object_info_ursa_major_description" translation_description="Description of Ursa Major shown in the info card. Translate this text.">大熊座（大熊）包含北斗七星星群，是北方天空中最容易识别的星群之一。</string>
+    <string name="object_info_ursa_major_funfact" translation_description="Fun fact about Ursa Major shown in the info card. Translate this text.">北斗七星中的五颗星在物理上相关联，作为大熊星群一起在太空中运动！</string>
+    <string name="object_info_ursa_major_size" translation_description="Physical size of Ursa Major shown in the info card. Translate units if appropriate for your locale.">1,280平方度</string>
+    <!-- Ursa Minor -->
+    <string name="object_info_ursa_minor_description" translation_description="Description of Ursa Minor shown in the info card. Translate this text.">小熊座（小熊）包含小北斗和北极星，北极星是当前标记地球天球北极的北极星。</string>
+    <string name="object_info_ursa_minor_funfact" translation_description="Fun fact about Ursa Minor shown in the info card. Translate this text.">由于岁差，北极星不会永远是北极星——14,000年后，织女星将取代它的位置！</string>
+    <string name="object_info_ursa_minor_size" translation_description="Physical size of Ursa Minor shown in the info card. Translate units if appropriate for your locale.">256平方度</string>
+    <!-- Cassiopeia -->
+    <string name="object_info_cassiopeia_description" translation_description="Description of Cassiopeia shown in the info card. Translate this text.">仙后座是北方天空中一个独特的W形星座，以希腊神话中一位虚荣的皇后命名。</string>
+    <string name="object_info_cassiopeia_funfact" translation_description="Fun fact about Cassiopeia shown in the info card. Translate this text.">第谷·布拉赫1572年的超新星出现在仙后座，有助于证明天体可以改变！</string>
+    <string name="object_info_cassiopeia_size" translation_description="Physical size of Cassiopeia shown in the info card. Translate units if appropriate for your locale.">598平方度</string>
+    <!-- Scorpius -->
+    <string name="object_info_scorpius_description" translation_description="Description of Scorpius shown in the info card. Translate this text.">天蝎座是一个著名的黄道星座，具有独特的弯曲尾部，由红超巨星心宿二主导。</string>
+    <string name="object_info_scorpius_funfact" translation_description="Fun fact about Scorpius shown in the info card. Translate this text.">在神话中，天蝎座被放在天空中与猎户座相对的位置，这样猎人就永远不会再被蛰伤了！</string>
+    <string name="object_info_scorpius_size" translation_description="Physical size of Scorpius shown in the info card. Translate units if appropriate for your locale.">497平方度</string>
+    <!-- Leo -->
+    <string name="object_info_leo_description" translation_description="Description of Leo shown in the info card. Translate this text.">狮子座是一个黄道星座，以狮子心脏处的轩辕十四和独特的镰刀星群为特征。</string>
+    <string name="object_info_leo_funfact" translation_description="Fun fact about Leo shown in the info card. Translate this text.">11月的狮子座流星雨似乎从狮子座辐射而出，可以产生壮观的流星暴！</string>
+    <string name="object_info_leo_size" translation_description="Physical size of Leo shown in the info card. Translate units if appropriate for your locale.">947平方度</string>
+    <!-- Gemini -->
+    <string name="object_info_gemini_description" translation_description="Description of Gemini shown in the info card. Translate this text.">双子座的两颗亮星是卡斯托和波吕克斯，代表希腊神话中的孪生兄弟。</string>
+    <string name="object_info_gemini_funfact" translation_description="Fun fact about Gemini shown in the info card. Translate this text.">尽管被称为双子，卡斯托实际上是六颗星，波吕克斯是一个橙色巨星——它们看起来完全不同！</string>
+    <string name="object_info_gemini_size" translation_description="Physical size of Gemini shown in the info card. Translate units if appropriate for your locale.">514平方度</string>
+    <!-- Taurus -->
+    <string name="object_info_taurus_description" translation_description="Description of Taurus shown in the info card. Translate this text.">金牛座是一个黄道星座，包含昴宿星团和毕宿星团，以及明亮的恒星毕宿五。</string>
+    <string name="object_info_taurus_funfact" translation_description="Fun fact about Taurus shown in the info card. Translate this text.">金牛座中的蟹状星云是1054年被中国天文学家目睹并记录的超新星遗迹！</string>
+    <string name="object_info_taurus_size" translation_description="Physical size of Taurus shown in the info card. Translate units if appropriate for your locale.">797平方度</string>
+    <!-- Virgo -->
+    <string name="object_info_virgo_description" translation_description="Description of Virgo shown in the info card. Translate this text.">室女座是第二大星座和黄道十二宫之一，包含拥有超过2,000个星系的室女座星系团。</string>
+    <string name="object_info_virgo_funfact" translation_description="Fun fact about Virgo shown in the info card. Translate this text.">室女座星系团是室女座超星系团的中心，其中包含我们自己的银河系！</string>
+    <string name="object_info_virgo_size" translation_description="Physical size of Virgo shown in the info card. Translate units if appropriate for your locale.">1,294平方度</string>
+    <string name="object_info_aquarius_funfact" translation_description="Fun fact about Aquarius shown in the info card. Translate this text.">水瓶座包含螺旋星云，它是距离地球最近的行星状星云之一，距离仅为700光年！</string>
+    <string name="object_info_aquarius_size" translation_description="Physical size of Aquarius shown in the info card. Translate units if appropriate for your locale.">980平方度</string>
+    <!-- Pisces -->
+    <string name="object_info_pisces_description" translation_description="Description of Pisces shown in the info card. Translate this text.">双鱼座是一个大型黄道星座，代表两条用绳子系在一起的鱼，标记春分点。</string>
+    <string name="object_info_pisces_funfact" translation_description="Fun fact about Pisces shown in the info card. Translate this text.">春分（春季的第一天）目前位于双鱼座，并且在过去2000年里一直在缓慢地穿过它！</string>
+    <string name="object_info_pisces_size" translation_description="Physical size of Pisces shown in the info card. Translate units if appropriate for your locale.">889平方度</string>
+    <!-- Aries -->
+    <string name="object_info_aries_description" translation_description="Description of Aries shown in the info card. Translate this text.">白羊座是一个黄道星座，曾经是春分点的所在地，这给了我们"白羊座第一点"这个短语。</string>
+    <string name="object_info_aries_funfact" translation_description="Fun fact about Aries shown in the info card. Translate this text.">虽然春分点约在2000年前移动到双鱼座，但我们仍然称之为白羊座第一点！</string>
+    <string name="object_info_aries_size" translation_description="Physical size of Aries shown in the info card. Translate units if appropriate for your locale.">441 平方度</string>
+    <!-- Cancer -->
+    <string name="object_info_cancer_description" translation_description="Description of Cancer shown in the info card. Translate this text.">巨蟹座是最暗的黄道星座，但包含著名的蜂巢星团（M44），肉眼可见。</string>
+    <string name="object_info_cancer_funfact" translation_description="Fun fact about Cancer shown in the info card. Translate this text.">巨蟹回归线是以巨蟹座命名的，因为太阳在夏至时位于巨蟹座，但现在已经移到金牛座了！</string>
+    <string name="object_info_cancer_size" translation_description="Physical size of Cancer shown in the info card. Translate units if appropriate for your locale.">506 平方度</string>
+    <!-- Capricornus -->
+    <string name="object_info_capricornus_description" translation_description="Description of Capricornus shown in the info card. Translate this text.">摩羯座是一个古老的黄道星座，描绘了一种神话生物，它是半山羊半鱼的混合体。</string>
+    <string name="object_info_capricornus_funfact" translation_description="Fun fact about Capricornus shown in the info card. Translate this text.">摩羯座是最古老的已知星座之一，在3000多年前的巴比伦星表中就已出现！</string>
+    <string name="object_info_capricornus_size" translation_description="Physical size of Capricornus shown in the info card. Translate units if appropriate for your locale.">414 平方度</string>
+    <!-- Sagittarius -->
+    <string name="object_info_sagittarius_description" translation_description="Description of Sagittarius shown in the info card. Translate this text.">射手座弓箭手指向我们银河系的中心，使其富含星云和星团。</string>
+    <string name="object_info_sagittarius_funfact" translation_description="Fun fact about Sagittarius shown in the info card. Translate this text.">当你观看射手座时，你正在看向人马座A*，我们银河系中心的超大质量黑洞！</string>
+    <string name="object_info_sagittarius_size" translation_description="Physical size of Sagittarius shown in the info card. Translate units if appropriate for your locale.">867 平方度</string>
+    <!-- Libra -->
+    <string name="object_info_libra_description" translation_description="Description of Libra shown in the info card. Translate this text.">天秤座是唯一代表无生命物体的黄道星座，曾被认为是天蝎座的一部分。</string>
+    <string name="object_info_libra_funfact" translation_description="Fun fact about Libra shown in the info card. Translate this text.">天秤座的主要星星曾经被称为天蝎座的爪子，后来才成为正义的天平！</string>
+    <string name="object_info_libra_size" translation_description="Physical size of Libra shown in the info card. Translate units if appropriate for your locale.">538 平方度</string>
+    <!-- Cygnus -->
+    <string name="object_info_cygnus_description" translation_description="Description of Cygnus shown in the info card. Translate this text.">天鹅座沿着银河飞行，包含北十字星群和明亮的天津四星。</string>
+    <string name="object_info_cygnus_funfact" translation_description="Fun fact about Cygnus shown in the info card. Translate this text.">这个星座中的天鹅座X-1是第一个被广泛接受的黑洞，在20世纪70年代初被确认！</string>
+    <string name="object_info_cygnus_size" translation_description="Physical size of Cygnus shown in the info card. Translate units if appropriate for your locale.">804 平方度</string>
+    <!-- Lyra -->
+    <string name="object_info_lyra_description" translation_description="Description of Lyra shown in the info card. Translate this text.">天琴座是一个小而显著的星座，包含织女星，它是夜空中第五亮的恒星。</string>
+    <string name="object_info_lyra_funfact" translation_description="Fun fact about Lyra shown in the info card. Translate this text.">由于地球岁差，织女星在公元前12000年左右是北极星，大约12000年后又会成为北极星！</string>
+    <string name="object_info_lyra_size" translation_description="Physical size of Lyra shown in the info card. Translate units if appropriate for your locale.">286 平方度</string>
+    <!-- Aquila -->
+    <string name="object_info_aquila_description" translation_description="Description of Aquila shown in the info card. Translate this text.">鹰星座（Aquila）是位于天赤道上的星座，中心包含明亮的恒星牛郎星（Altair）。</string>
+    <string name="object_info_aquila_funfact" translation_description="Fun fact about Aquila shown in the info card. Translate this text.">鹰星座中的牛郎星是已知自转最快的恒星之一，自转速度之快使其在赤道处鼓起！</string>
+    <string name="object_info_aquila_size" translation_description="Physical size of Aquila shown in the info card. Translate units if appropriate for your locale.">652 平方度</string>
+    <!-- Pegasus -->
+    <string name="object_info_pegasus_description" translation_description="Description of Pegasus shown in the info card. Translate this text.">飞马座是一个大星座，以飞马大四边形为特征，这是一个显著的秋季星群。</string>
+    <string name="object_info_pegasus_funfact" translation_description="Fun fact about Pegasus shown in the info card. Translate this text.">51 Pegasi b，1995年在这个星座中发现，是第一颗围绕类日恒星运行的系外行星！</string>
+    <string name="object_info_pegasus_size" translation_description="Physical size of Pegasus shown in the info card. Translate units if appropriate for your locale.">1,121 平方度</string>
+    <!-- Andromeda -->
+    <string name="object_info_andromeda_description" translation_description="Description of Andromeda shown in the info card. Translate this text.">仙女座公主包含仙女星系（M31），这是离我们银河系最近的大型螺旋星系。</string>
+    <string name="object_info_andromeda_funfact" translation_description="Fun fact about Andromeda shown in the info card. Translate this text.">仙女座星系正以110公里/秒的速度向我们靠近，将在约45亿年后与银河系合并！</string>
+    <string name="object_info_andromeda_size" translation_description="Physical size of Andromeda shown in the info card. Translate units if appropriate for your locale.">722 平方度</string>
+    <!-- Perseus -->
+    <string name="object_info_perseus_description" translation_description="Description of Perseus shown in the info card. Translate this text.">英雄珀尔修斯是著名的变星大陵五和双星团的所在地，双星团是一对壮观的疏散星团。</string>
+    <string name="object_info_perseus_funfact" translation_description="Fun fact about Perseus shown in the info card. Translate this text.">Algol（恶魔星）在古代被认为是邪恶的，因为它每2.87天就会神秘地变暗！</string>
+    <string name="object_info_perseus_size" translation_description="Physical size of Perseus shown in the info card. Translate units if appropriate for your locale.">615 平方度</string>
+    <!-- Centaurus -->
+    <string name="object_info_centaurus_description" translation_description="Description of Centaurus shown in the info card. Translate this text.">半人马座是一个大型南方星座，包含半人马座α，这是离我们太阳最近的恒星系统。</string>
+    <string name="object_info_centaurus_funfact" translation_description="Fun fact about Centaurus shown in the info card. Translate this text.">半人马座中的比邻星距离我们太阳系仅4.24光年，是离我们太阳系最近的恒星！</string>
+    <string name="object_info_centaurus_size" translation_description="Physical size of Centaurus shown in the info card. Translate units if appropriate for your locale.">1,060 平方度</string>
+    <!-- Crux -->
+    <string name="object_info_crux_description" translation_description="Description of Crux shown in the info card. Translate this text.">南十字星座（南十字）是最小的星座之一，但也是最独特的星座之一，在南半球用于导航。</string>
+    <string name="object_info_crux_funfact" translation_description="Fun fact about Crux shown in the info card. Translate this text.">尽管南十字座是最小的星座，但它的单位面积内的亮星数量比任何其他星座都多！</string>
+    <string name="object_info_crux_size" translation_description="Physical size of Crux shown in the info card. Translate units if appropriate for your locale.">68 平方度</string>
+    <!-- Canis Major -->
+    <string name="object_info_canis_major_description" translation_description="Description of Canis Major shown in the info card. Translate this text.">大犬座（大狗）跟随猎户座穿过天空，包含天狼星，这是从地球上看最亮的恒星。</string>
+    <string name="object_info_canis_major_funfact" translation_description="Fun fact about Canis Major shown in the info card. Translate this text.">古埃及人根据天狼星的偕日升来制定他们的日历，这与尼罗河的年度泛滥相吻合！</string>
+    <string name="object_info_canis_major_size" translation_description="Physical size of Canis Major shown in the info card. Translate units if appropriate for your locale.">380 平方度</string>
+    <!-- Canis Minor -->
+    <string name="object_info_canis_minor_description" translation_description="Description of Canis Minor shown in the info card. Translate this text.">小犬座（小狗）是一个小星座，以天空中第八亮的恒星南河三而闻名。</string>
+    <string name="object_info_canis_minor_funfact" translation_description="Fun fact about Canis Minor shown in the info card. Translate this text.">Procyon 在希腊语中意为"狗之前"，因为它每晚都在天狼星（犬星）之前升起！</string>
+    <string name="object_info_canis_minor_size" translation_description="Physical size of Canis Minor shown in the info card. Translate units if appropriate for your locale.">183 平方度</string>
+    <!-- Cepheus -->
+    <string name="object_info_cepheus_description" translation_description="Description of Cepheus shown in the info card. Translate this text.">仙王是一个北方星座，其星星包括造父增一（Delta Cephei），这是造父变星的原型。</string>
+    <string name="object_info_cepheus_funfact" translation_description="Fun fact about Cepheus shown in the info card. Translate this text.">由海丽叶塔·勒维特发现的造父变星彻底改变了天文学，使我们能够测量宇宙距离！</string>
+    <string name="object_info_cepheus_size" translation_description="Physical size of Cepheus shown in the info card. Translate units if appropriate for your locale.">588平方度</string>
+    <!-- Draco -->
+    <string name="object_info_draco_description" translation_description="Description of Draco shown in the info card. Translate this text.">天龙座是一个蜿蜒曲折的长星座，在遥远的北方天空中环绕小熊座。</string>
+    <string name="object_info_draco_funfact" translation_description="Fun fact about Draco shown in the info card. Translate this text.">天龙座中的土司（Thuban）在5000年前埃及金字塔建造时是北极星！</string>
+    <string name="object_info_draco_size" translation_description="Physical size of Draco shown in the info card. Translate units if appropriate for your locale.">1,083平方度</string>
+    <!-- Hercules -->
+    <string name="object_info_hercules_description" translation_description="Description of Hercules shown in the info card. Translate this text.">大力神座是一个代表希腊英雄的大星座，包含伟大的球状星团M13。</string>
+    <string name="object_info_hercules_funfact" translation_description="Fun fact about Hercules shown in the info card. Translate this text.">我们的太阳系正以约20公里/秒的速度向天体中的一个称为太阳顶点的点移动！</string>
+    <string name="object_info_hercules_size" translation_description="Physical size of Hercules shown in the info card. Translate units if appropriate for your locale.">1,225平方度</string>
+    <!-- Ophiuchus -->
+    <string name="object_info_ophiuchus_description" translation_description="Description of Ophiuchus shown in the info card. Translate this text.">蛇夫座（巨蛇的持有者）位于黄道上，但不是黄道十二宫之一，被他所持的蛇分割。</string>
+    <string name="object_info_ophiuchus_funfact" translation_description="Fun fact about Ophiuchus shown in the info card. Translate this text.">太阳在蛇夫座中花费的时间比天蝎座多，但蛇夫座不被认为是黄道十二宫之一！</string>
+    <string name="object_info_ophiuchus_size" translation_description="Physical size of Ophiuchus shown in the info card. Translate units if appropriate for your locale.">948平方度</string>
+    <!-- Bootes -->
+    <string name="object_info_bootes_description" translation_description="Description of Bootes shown in the info card. Translate this text.">牧夫座是一个星座，包含大角星，它是夜空中第四亮的恒星。</string>
+    <string name="object_info_bootes_funfact" translation_description="Fun fact about Bootes shown in the info card. Translate this text.">沿着北斗七星勺柄的弧线"弧向大角星"——这是最著名的导航技巧之一！</string>
+    <string name="object_info_bootes_size" translation_description="Physical size of Bootes shown in the info card. Translate units if appropriate for your locale.">907平方度</string>
+    <!-- Corona Borealis -->
+    <string name="object_info_corona_borealis_description" translation_description="Description of Corona Borealis shown in the info card. Translate this text.">北冕座（北冠）是一个小的半圆形星座，代表希腊神话中阿里阿德涅的王冠。</string>
+    <string name="object_info_corona_borealis_funfact" translation_description="Fun fact about Corona Borealis shown in the info card. Translate this text.">北冕座T星是一颗周期性新星，大约每80年爆发一次——另一次爆发可能即将发生！</string>
+    <string name="object_info_corona_borealis_size" translation_description="Physical size of Corona Borealis shown in the info card. Translate units if appropriate for your locale.">179平方度</string>
+    <!-- Corvus -->
+    <string name="object_info_corvus_description" translation_description="Description of Corvus shown in the info card. Translate this text.">乌鸦座是位于处女座南方的小型四边形星座，代表阿波罗的神圣之鸟。</string>
+    <string name="object_info_corvus_funfact" translation_description="Fun fact about Corvus shown in the info card. Translate this text.">乌鸦座的四颗主星形成了一个独特的帆形，在春季夜空中很容易看到！</string>
+    <string name="object_info_corvus_size" translation_description="Physical size of Corvus shown in the info card. Translate units if appropriate for your locale.">184平方度</string>
+    <!-- Auriga -->
+    <string name="object_info_auriga_description" translation_description="Description of Auriga shown in the info card. Translate this text.">御夫座是一个北方星座，以第六亮星五车二和多个疏散星团为特色。</string>
+    <string name="object_info_auriga_funfact" translation_description="Fun fact about Auriga shown in the info card. Translate this text.">Epsilon Aurigae 是已知最奇异的恒星之一，由于一个神秘的暗盘，它每 27 年会变暗两年！</string>
+    <string name="object_info_auriga_size" translation_description="Physical size of Auriga shown in the info card. Translate units if appropriate for your locale.">657平方度</string>
+    <!-- Eridanus -->
+    <string name="object_info_eridanus_description" translation_description="Description of Eridanus shown in the info card. Translate this text.">波江座（Eridanus）是第六大星座，从猎户座附近蜿蜒延伸到南方天空的远处。</string>
+    <string name="object_info_eridanus_funfact" translation_description="Fun fact about Eridanus shown in the info card. Translate this text.">河神星（Achernar）位于波江座末端，是已知最扁平的恒星，由于快速自转，其赤道处比两极宽56%！</string>
+    <string name="object_info_eridanus_size" translation_description="Physical size of Eridanus shown in the info card. Translate units if appropriate for your locale.">1,138平方度</string>
+    <!-- Lepus -->
+    <string name="object_info_lepus_description" translation_description="Description of Lepus shown in the info card. Translate this text.">天兔座是一个蜷伏在猎户座脚下的小而独特的星座，具有丰富的神话背景。</string>
+    <string name="object_info_lepus_funfact" translation_description="Fun fact about Lepus shown in the info card. Translate this text.">在神话中，猎户座据说喜欢猎杀野兔，所以在天空中他的脚下放置了一只野兔！</string>
+    <string name="object_info_lepus_size" translation_description="Physical size of Lepus shown in the info card. Translate units if appropriate for your locale.">290平方度</string>
+    <!-- Monoceros -->
+    <string name="object_info_monoceros_description" translation_description="Description of Monoceros shown in the info card. Translate this text.">麒麟座是冬季银河中一个暗淡的星座，富含星云和星团。</string>
+    <string name="object_info_monoceros_funfact" translation_description="Fun fact about Monoceros shown in the info card. Translate this text.">麒麟座中的玫瑰星云是一个巨大的恒星形成区，形似天空中的玫瑰花！</string>
+    <string name="object_info_monoceros_size" translation_description="Physical size of Monoceros shown in the info card. Translate units if appropriate for your locale.">482 平方度</string>
+    <!-- Hydra -->
+    <string name="object_info_hydra_description" translation_description="Description of Hydra shown in the info card. Translate this text.">长蛇座是天空中最大的星座，代表希腊神话中的水蛇。</string>
+    <string name="object_info_hydra_funfact" translation_description="Fun fact about Hydra shown in the info card. Translate this text.">长蛇座跨越超过100度的天空——占据整个天球四分之一以上的范围！</string>
+    <string name="object_info_hydra_size" translation_description="Physical size of Hydra shown in the info card. Translate units if appropriate for your locale.">1,303 平方度</string>
+    <!-- Carina -->
+    <string name="object_info_carina_description" translation_description="Description of Carina shown in the info card. Translate this text.">船底座（Carina）是巨大的南船星座（Argo Navis）的一部分，包含了灿烂的南极老人星（Canopus）。</string>
+    <string name="object_info_carina_funfact" translation_description="Fun fact about Carina shown in the info card. Translate this text.">船底座中的海山二是已知最亮的恒星之一，可能在我们的有生之年爆炸成超新星！</string>
+    <string name="object_info_carina_size" translation_description="Physical size of Carina shown in the info card. Translate units if appropriate for your locale.">494 平方度</string>
+    <!-- Vela -->
+    <string name="object_info_vela_description" translation_description="Description of Vela shown in the info card. Translate this text.">船帆座（Vela）曾是伟大的阿尔戈船（Argo Navis）的一部分，位于银河系的一个富饶区域。</string>
+    <string name="object_info_vela_funfact" translation_description="Fun fact about Vela shown in the info card. Translate this text.">船帆座脉冲星是天空中最亮的脉冲星，是11,000年前爆炸的超新星的遗迹！</string>
+    <string name="object_info_vela_size" translation_description="Physical size of Vela shown in the info card. Translate units if appropriate for your locale.">500 平方度</string>
+    <!-- Puppis -->
+    <string name="object_info_puppis_description" translation_description="Description of Puppis shown in the info card. Translate this text.">船尾座（Puppis）代表阿尔戈号船的后甲板，沿银河系富含疏散星团。</string>
+    <string name="object_info_puppis_funfact" translation_description="Fun fact about Puppis shown in the info card. Translate this text.">船尾座包含M47，这是一个肉眼可见的疏散星团，由于编目错误，它曾"失踪"超过200年！</string>
+    <string name="object_info_puppis_size" translation_description="Physical size of Puppis shown in the info card. Translate units if appropriate for your locale.">673 平方度</string>
+    <!-- Cetus -->
+    <string name="object_info_cetus_description" translation_description="Description of Cetus shown in the info card. Translate this text.">鲸鱼座是一个大星座，包含第一颗被发现的变星米拉。</string>
+    <string name="object_info_cetus_funfact" translation_description="Fun fact about Cetus shown in the info card. Translate this text.">鲸鱼座中的米拉星在11个月内在可见和不可见之间变化，并拥有一条长达13光年的气体尾巴！</string>
+    <string name="object_info_cetus_size" translation_description="Physical size of Cetus shown in the info card. Translate units if appropriate for your locale.">1,231 平方度</string>
+    <!-- Phoenix -->
+    <string name="object_info_phoenix_description" translation_description="Description of Phoenix shown in the info card. Translate this text.">凤凰座是一个南方星座，代表神话中从自己的灰烬中重生的鸟。</string>
+    <string name="object_info_phoenix_funfact" translation_description="Fun fact about Phoenix shown in the info card. Translate this text.">凤凰座是荷兰探险家在16世纪晚期从未知的南方星空中创造的12个星座之一！</string>
+    <string name="object_info_phoenix_size" translation_description="Physical size of Phoenix shown in the info card. Translate units if appropriate for your locale.">469 平方度</string>
+    <!-- Grus -->
+    <string name="object_info_grus_description" translation_description="Description of Grus shown in the info card. Translate this text.">鹤座是一个南方星座，由欧洲航海家在16世纪晚期引入。</string>
+    <string name="object_info_grus_funfact" translation_description="Fun fact about Grus shown in the info card. Translate this text.">鹤座曾被称为火烈鸟座（Phoenicopterus），后来改名为代表鹤的星座！</string>
+    <string name="object_info_grus_size" translation_description="Physical size of Grus shown in the info card. Translate units if appropriate for your locale.">366 平方度</string>
+    <!-- Pavo -->
+    <string name="object_info_pavo_description" translation_description="Description of Pavo shown in the info card. Translate this text.">孔雀座是一个南方星座，包含明亮的孔雀星和几个有趣的星系。</string>
+    <string name="object_info_pavo_funfact" translation_description="Fun fact about Pavo shown in the info card. Translate this text.">孔雀星（南门二/Alpha Pavonis）是距离我们太阳200光年内第二亮的恒星！</string>
+    <string name="object_info_pavo_size" translation_description="Physical size of Pavo shown in the info card. Translate units if appropriate for your locale.">378 平方度</string>
+    <!-- Triangulum -->
+    <string name="object_info_triangulum_description" translation_description="Description of Triangulum shown in the info card. Translate this text.">三角形星座是一个小型北方星座，包含三角形星系（M33），这是本星系群中第三大的星系。</string>
+    <string name="object_info_triangulum_funfact" translation_description="Fun fact about Triangulum shown in the info card. Translate this text.">三角星系是在理想条件下肉眼能看到的最遥远的天体！</string>
+    <string name="object_info_triangulum_size" translation_description="Physical size of Triangulum shown in the info card. Translate units if appropriate for your locale.">132 平方度</string>
+    <!-- Delphinus -->
+    <string name="object_info_delphinus_description" translation_description="Description of Delphinus shown in the info card. Translate this text.">海豚座是一个小而独特的星座，其星星形成了一只跳跃海豚的形状。</string>
+    <string name="object_info_delphinus_funfact" translation_description="Fun fact about Delphinus shown in the info card. Translate this text.">海豚座的两颗星被命名为Sualocin和Rotanev——这是给它们命名的天文学家"Nicolaus Venator"的名字倒写！</string>
+    <string name="object_info_delphinus_size" translation_description="Physical size of Delphinus shown in the info card. Translate units if appropriate for your locale.">189平方度</string>
+    <!-- Sagitta -->
+    <string name="object_info_sagitta_description" translation_description="Description of Sagitta shown in the info card. Translate this text.">箭座（Sagitta）是第三小的星座，代表希腊神话中的各种箭。</string>
+    <string name="object_info_sagitta_funfact" translation_description="Fun fact about Sagitta shown in the info card. Translate this text.">尽管体积很小，天箭座包含球状星团M71，它曾被误认为是疏散星团长达数个世纪！</string>
+    <string name="object_info_sagitta_size" translation_description="Physical size of Sagitta shown in the info card. Translate units if appropriate for your locale.">80平方度</string>
+
+    <!-- ============================================ -->
+    <!-- New Stars (24) — Phase 1 of issue #645 -->
+    <!-- ============================================ -->
+
+    <!-- Alcyone -->
+    <string name="object_info_alcyone_description" translation_description="Short description of Alcyone">Alcyone 是金牛座毕宿星团（M45）中最亮的星。它是一颗蓝白色巨星。</string>
+    <string name="object_info_alcyone_funfact" translation_description="Fun fact about Alcyone">Alcyone实际上是一个至少有三个伴星的多星系统！它的自转速度非常快，以至于在其赤道周围形成了一个气体盘。</string>
+    <string name="object_info_alcyone_distance" translation_description="Distance to Alcyone shown in the info card. Translate units if appropriate for your locale.">~440光年</string>
+    <string name="object_info_alcyone_size" translation_description="Physical size of Alcyone shown in the info card. Translate units if appropriate for your locale.">~10太阳半径</string>
+    <string name="object_info_alcyone_mass" translation_description="Mass of Alcyone in scientific notation — no translation needed.">~6.0太阳质量</string>
+
+    <string name="object_info_alderamin_funfact" translation_description="Fun fact about Alderamin">由于地球的轴向进动，阿德拉明将在公元7500年左右成为北极星！</string>
+    <string name="object_info_alderamin_distance" translation_description="Distance to Alderamin shown in the info card. Translate units if appropriate for your locale.">49光年</string>
+    <string name="object_info_alderamin_size" translation_description="Physical size of Alderamin shown in the info card. Translate units if appropriate for your locale.">2.5太阳半径</string>
+    <string name="object_info_alderamin_mass" translation_description="Mass of Alderamin in scientific notation — no translation needed.">1.9太阳质量</string>
+
+    <!-- Algenib -->
+    <string name="object_info_algenib_description" translation_description="Short description of Algenib">Algenib 是飞马座大方形的一个角。它是一颗炽热的蓝色亚巨星，也是仙王座β型变星。</string>
+    <string name="object_info_algenib_funfact" translation_description="Fun fact about Algenib">Algenib 会脉动，每 3.6 小时亮度会略微变化！它也是形成肉眼可见的显著星群的最遥远恒星之一。</string>
+    <string name="object_info_algenib_distance" translation_description="Distance to Algenib shown in the info card. Translate units if appropriate for your locale.">~390光年</string>
+    <string name="object_info_algenib_size" translation_description="Physical size of Algenib shown in the info card. Translate units if appropriate for your locale.">4.8太阳半径</string>
+    <string name="object_info_algenib_mass" translation_description="Mass of Algenib in scientific notation — no translation needed.">~8.9太阳质量</string>
+
+    <string name="object_info_algieba_funfact" translation_description="Fun fact about Algieba">通过望远镜，阿尔基巴分裂成一对令人惊艳的金色和黄橙色巨星——这是天空中最美丽的双星之一！2009年，科学家在主星周围发现了一颗行星。</string>
+    <string name="object_info_algieba_distance" translation_description="Distance to Algieba shown in the info card. Translate units if appropriate for your locale.">~130光年</string>
+    <string name="object_info_algieba_size" translation_description="Physical size of Algieba shown in the info card. Translate units if appropriate for your locale.">~23太阳半径</string>
+    <string name="object_info_algieba_mass" translation_description="Mass of Algieba in scientific notation — no translation needed.">~1.2太阳质量</string>
+
+    <!-- Alhena -->
+    <string name="object_info_alhena_description" translation_description="Short description of Alhena">Alhena 标记了双子座中孪生兄弟之一波吕克斯的脚部。它是一颗明亮的白色亚巨星，也是双子座最突出的恒星之一。</string>
+    <string name="object_info_alhena_distance" translation_description="Distance to Alhena shown in the info card. Translate units if appropriate for your locale.">109光年</string>
+    <string name="object_info_alhena_size" translation_description="Physical size of Alhena shown in the info card. Translate units if appropriate for your locale.">3.3 太阳半径</string>
+    <string name="object_info_alhena_mass" translation_description="Mass of Alhena in scientific notation — no translation needed.">2.8 太阳质量</string>
+
+    <!-- Alkaid -->
+    <string name="object_info_alkaid_description" translation_description="Short description of Alkaid">Alkaid 是大熊座北斗七星勺柄尖端的星星。它是大熊座中第三亮的星星。</string>
+    <string name="object_info_alkaid_funfact" translation_description="Fun fact about Alkaid">与大多数北斗星不同，阿尔凯德不属于大熊星群——它在太空中朝着不同的方向运动，所以北斗星的形状将在数千年内缓慢改变！</string>
+    <string name="object_info_alkaid_distance" translation_description="Distance to Alkaid shown in the info card. Translate units if appropriate for your locale.">104光年</string>
+    <string name="object_info_alkaid_size" translation_description="Physical size of Alkaid shown in the info card. Translate units if appropriate for your locale.">3.4 太阳半径</string>
+    <string name="object_info_alkaid_mass" translation_description="Mass of Alkaid in scientific notation — no translation needed.">6.1 太阳质量</string>
+
+    <string name="object_info_alnair_funfact" translation_description="Fun fact about Alnair">Alnair 旋转极其迅速——其赤道处的速度至少为 215 公里/秒——速度之快使得这颗恒星明显呈扁球形，在中部隆起！</string>
+    <string name="object_info_alnair_distance" translation_description="Distance to Alnair shown in the info card. Translate units if appropriate for your locale.">101光年</string>
+    <string name="object_info_alnair_size" translation_description="Physical size of Alnair shown in the info card. Translate units if appropriate for your locale.">3.4 太阳半径</string>
+    <string name="object_info_alnair_mass" translation_description="Mass of Alnair in scientific notation — no translation needed.">4.0 太阳质量</string>
+
+    <!-- Alnath -->
+    <string name="object_info_alnath_description" translation_description="Short description of Alnath">Alnath是金牛座第二亮的恒星，标记着公牛北角的尖端。它位于金牛座-御夫座的边界上。</string>
+    <string name="object_info_alnath_funfact" translation_description="Fun fact about Alnath">Alnath 曾经被两个星座共享！在国际天文学联合会于 1930 年正式将其分配给金牛座之前，它同时被指定为金牛座 β 星和御夫座 γ 星。</string>
+    <string name="object_info_alnath_distance" translation_description="Distance to Alnath shown in the info card. Translate units if appropriate for your locale.">134光年</string>
+    <string name="object_info_alnath_size" translation_description="Physical size of Alnath shown in the info card. Translate units if appropriate for your locale.">4.2 太阳半径</string>
+    <string name="object_info_alnath_mass" translation_description="Mass of Alnath in scientific notation — no translation needed.">5.0 太阳质量</string>
+
+    <!-- Alphekka -->
+    <string name="object_info_alphekka_description" translation_description="Short description of Alphekka">Alphekka（也称为Gemma）是北冕座（北冠）中最亮的星。它是这个小星圈的瑰宝。</string>
+    <string name="object_info_alphekka_funfact" translation_description="Fun fact about Alphekka">Alphekka是一个食双星——它的暗伴星每17.4天经过它前面一次，导致亮度下降，但没有仪器几乎不可能看到！</string>
+    <string name="object_info_alphekka_distance" translation_description="Distance to Alphekka shown in the info card. Translate units if appropriate for your locale.">75光年</string>
+    <string name="object_info_alphekka_size" translation_description="Physical size of Alphekka shown in the info card. Translate units if appropriate for your locale.">2.9 太阳半径</string>
+    <string name="object_info_alphekka_mass" translation_description="Mass of Alphekka in scientific notation — no translation needed.">2.6 太阳质量</string>
+
+    <!-- Ankaa -->
+    <string name="object_info_ankaa_description" translation_description="Short description of Ankaa">Ankaa是凤凰座中最亮的恒星，这个星座最适合从南半球观看。它的名字来自阿拉伯语中"凤凰"的含义。</string>
+    <string name="object_info_ankaa_funfact" translation_description="Fun fact about Ankaa">Ankaa是一颗分光双星，意味着它的伴星距离非常近，两颗星只能通过它们光谱的偏移来检测——它们每10.2年相互绕行一次！</string>
+    <string name="object_info_ankaa_distance" translation_description="Distance to Ankaa shown in the info card. Translate units if appropriate for your locale.">85 光年</string>
+    <string name="object_info_ankaa_size" translation_description="Physical size of Ankaa shown in the info card. Translate units if appropriate for your locale.">15 太阳半径</string>
+    <string name="object_info_ankaa_mass" translation_description="Mass of Ankaa in scientific notation — no translation needed.">1.3 太阳质量</string>
+
+    <!-- Arneb -->
+    <string name="object_info_arneb_description" translation_description="Short description of Arneb">Arneb 是天兔座（兔子）中最亮的星，该星座蜷伏在猎户座的脚下。它是一颗罕见的白色超巨星。</string>
+    <string name="object_info_arneb_funfact" translation_description="Fun fact about Arneb">Arneb是一颗正在衰亡的恒星，其核心氢可能已经完全聚变。它可能在未来几百万年内以超新星的形式结束生命！</string>
+    <string name="object_info_arneb_distance" translation_description="Distance to Arneb shown in the info card. Translate units if appropriate for your locale.">~2,200 光年</string>
+    <string name="object_info_arneb_size" translation_description="Physical size of Arneb shown in the info card. Translate units if appropriate for your locale.">~75 太阳半径</string>
+    <string name="object_info_arneb_mass" translation_description="Mass of Arneb in scientific notation — no translation needed.">~14 太阳质量</string>
+
+    <string name="object_info_caph_funfact" translation_description="Fun fact about Caph">Caph 是一颗 Delta Scuti 型变星——它以多个频率同时脉动，每 2.5 小时亮度略微变化！</string>
+    <string name="object_info_caph_distance" translation_description="Distance to Caph shown in the info card. Translate units if appropriate for your locale.">54 光年</string>
+    <string name="object_info_caph_size" translation_description="Physical size of Caph shown in the info card. Translate units if appropriate for your locale.">3.5 太阳半径</string>
+    <string name="object_info_caph_mass" translation_description="Mass of Caph in scientific notation — no translation needed.">1.9 太阳质量</string>
+
+    <string name="object_info_etamin_funfact" translation_description="Fun fact about Etamin">1728年詹姆斯·布拉德利对天龙星的观测导致了光行差的发现——这是地球在太空中运动的最初直接证明之一！</string>
+    <string name="object_info_etamin_distance" translation_description="Distance to Etamin shown in the info card. Translate units if appropriate for your locale.">148 光年</string>
+    <string name="object_info_etamin_size" translation_description="Physical size of Etamin shown in the info card. Translate units if appropriate for your locale.">48 太阳半径</string>
+    <string name="object_info_etamin_mass" translation_description="Mass of Etamin in scientific notation — no translation needed.">1.7 太阳质量</string>
+
+    <string name="object_info_izar_funfact" translation_description="Fun fact about Izar">19世纪天文学家弗里德里希·格奥尔格·威廉·冯·施特鲁维将牧夫座ε星称为"Pulcherrima"（拉丁文意为"最美的"），因为其橙色和蓝白色分量之间的色彩对比令人惊艳！</string>
+    <string name="object_info_izar_distance" translation_description="Distance to Izar shown in the info card. Translate units if appropriate for your locale.">202 光年</string>
+    <string name="object_info_izar_size" translation_description="Physical size of Izar shown in the info card. Translate units if appropriate for your locale.">33 太阳半径</string>
+    <string name="object_info_izar_mass" translation_description="Mass of Izar in scientific notation — no translation needed.">~4.6 太阳质量</string>
+
+    <string name="object_info_kaus_australis_funfact" translation_description="Fun fact about Kaus Australis">Kaus Australis 位于我们银河系中心的方向附近！当你看向这颗星星时，你正在凝视银河平面最密集的部分。</string>
+    <string name="object_info_kaus_australis_distance" translation_description="Distance to Kaus Australis shown in the info card. Translate units if appropriate for your locale.">143 光年</string>
+    <string name="object_info_kaus_australis_size" translation_description="Physical size of Kaus Australis shown in the info card. Translate units if appropriate for your locale.">6.8 太阳半径</string>
+    <string name="object_info_kaus_australis_mass" translation_description="Mass of Kaus Australis in scientific notation — no translation needed.">3.5 太阳质量</string>
+
+    <!-- Kochab -->
+    <string name="object_info_kochab_description" translation_description="Short description of Kochab">Kochab 是小熊座（小熊）中第二亮的恒星。它与 Pherkad 一起形成"极地守护者"。</string>
+    <string name="object_info_kochab_funfact" translation_description="Fun fact about Kochab">大约在公元前1500年，科卡布是离北天极最近的亮星，使其成为古埃及人和腓尼基水手的"北极星"！</string>
+    <string name="object_info_kochab_distance" translation_description="Distance to Kochab shown in the info card. Translate units if appropriate for your locale.">131 光年</string>
+    <string name="object_info_kochab_size" translation_description="Physical size of Kochab shown in the info card. Translate units if appropriate for your locale.">42 太阳半径</string>
+    <string name="object_info_kochab_mass" translation_description="Mass of Kochab in scientific notation — no translation needed.">1.3 太阳质量</string>
+
+    <!-- Merak -->
+    <string name="object_info_merak_description" translation_description="Short description of Merak">Merak 是大熊星座中北斗七星的两颗"指极星"之一，它们指向北极星。它位于大熊星座中。</string>
+    <string name="object_info_merak_funfact" translation_description="Fun fact about Merak">Merak具有红外超额，表明它有一个星周碎片盘——可能是一个类似于我们小行星带的尘埃和岩石物质的环！</string>
+    <string name="object_info_merak_distance" translation_description="Distance to Merak shown in the info card. Translate units if appropriate for your locale.">80 光年</string>
+    <string name="object_info_merak_size" translation_description="Physical size of Merak shown in the info card. Translate units if appropriate for your locale.">3.0 太阳半径</string>
+    <string name="object_info_merak_mass" translation_description="Mass of Merak in scientific notation — no translation needed.">2.7 太阳质量</string>
+
+    <string name="object_info_menkar_funfact" translation_description="Fun fact about Menkar">门卡星正接近其恒星生命的末期。这颗衰老的红巨星正在其核心融合氦，最终将脱落其外层成为行星状星云！</string>
+    <string name="object_info_menkar_distance" translation_description="Distance to Menkar shown in the info card. Translate units if appropriate for your locale.">249 光年</string>
+    <string name="object_info_menkar_size" translation_description="Physical size of Menkar shown in the info card. Translate units if appropriate for your locale.">~89 太阳半径</string>
+    <string name="object_info_menkar_mass" translation_description="Mass of Menkar in scientific notation — no translation needed.">~2.3 太阳质量</string>
+
+    <!-- Mirphak -->
+    <string name="object_info_mirphak_description" translation_description="Short description of Mirphak">Mirphak（也称Mirfak）是英仙座中最亮的恒星，是英仙座α星团中心的一颗黄白色超巨星。</string>
+    <string name="object_info_mirphak_funfact" translation_description="Fun fact about Mirphak">Mirphak被一个美丽的疏散星团（梅洛特20）所环绕，用双筒望远镜观看效果最佳——这是一群年轻的蓝白色恒星，它们在太空中一起运动！</string>
+    <string name="object_info_mirphak_distance" translation_description="Distance to Mirphak shown in the info card. Translate units if appropriate for your locale.">~590 光年</string>
+    <string name="object_info_mirphak_size" translation_description="Physical size of Mirphak shown in the info card. Translate units if appropriate for your locale.">~68 太阳半径</string>
+    <string name="object_info_mirphak_mass" translation_description="Mass of Mirphak in scientific notation — no translation needed.">~8.5 太阳质量</string>
+
+    <!-- Phad -->
+    <string name="object_info_phad_description" translation_description="Short description of Phad">Phad（也称为Phecda）是大熊星座中北斗七星斗杓的组成星之一。其名称在阿拉伯语中意为"大腿"。</string>
+    <string name="object_info_phad_funfact" translation_description="Fun fact about Phad">Phad 是大熊星群的成员——一组在同一时期诞生的恒星，它们作为一个松散的星团在太空中一起运行，包括大部分北斗七星的恒星！</string>
+    <string name="object_info_phad_distance" translation_description="Distance to Phad shown in the info card. Translate units if appropriate for your locale.">84 光年</string>
+    <string name="object_info_phad_size" translation_description="Physical size of Phad shown in the info card. Translate units if appropriate for your locale.">3.0 太阳半径</string>
+    <string name="object_info_phad_mass" translation_description="Mass of Phad in scientific notation — no translation needed.">2.9 太阳质量</string>
+
+    <!-- Saiph -->
+    <string name="object_info_saiph_description" translation_description="Short description of Saiph">Saiph标记猎户座的右下膝盖。尽管看起来比参宿七暗淡，但它实际上是一颗非常炽热且光亮的蓝色超巨星。</string>
+    <string name="object_info_saiph_funfact" translation_description="Fun fact about Saiph">Saiph 看起来比其温度所暗示的要暗淡,因为它的大部分能量以紫外线形式辐射,对我们的眼睛不可见!它实际上是天空中最热的亮星之一。</string>
+    <string name="object_info_saiph_distance" translation_description="Distance to Saiph shown in the info card. Translate units if appropriate for your locale.">~650 光年</string>
+    <string name="object_info_saiph_size" translation_description="Physical size of Saiph shown in the info card. Translate units if appropriate for your locale.">~22 太阳半径</string>
+    <string name="object_info_saiph_mass" translation_description="Mass of Saiph in scientific notation — no translation needed.">~15.5 太阳质量</string>
+
+    <string name="object_info_shedir_funfact" translation_description="Fun fact about Shedir">Shedir 曾一度被认为是变星，但现代测量表明其亮度非常稳定——早期关于变光性的报告很可能是由于原始设备造成的！</string>
+    <string name="object_info_shedir_distance" translation_description="Distance to Shedir shown in the info card. Translate units if appropriate for your locale.">228 光年</string>
+    <string name="object_info_shedir_size" translation_description="Physical size of Shedir shown in the info card. Translate units if appropriate for your locale.">45 太阳半径</string>
+    <string name="object_info_shedir_mass" translation_description="Mass of Shedir in scientific notation — no translation needed.">~4.0 太阳质量</string>
+
+    <string name="object_info_unukalhai_funfact" translation_description="Fun fact about Unukalhai">巨蛇座是唯一被分成两个独立部分的星座——巨蛇座头部（Serpens Caput）和巨蛇座尾部（Serpens Cauda）——由蛇夫座分隔，而Unukalhai是头部的最亮星！</string>
+    <string name="object_info_unukalhai_distance" translation_description="Distance to Unukalhai shown in the info card. Translate units if appropriate for your locale.">74 光年</string>
+    <string name="object_info_unukalhai_size" translation_description="Physical size of Unukalhai shown in the info card. Translate units if appropriate for your locale.">12 太阳半径</string>
+    <string name="object_info_unukalhai_mass" translation_description="Mass of Unukalhai in scientific notation — no translation needed.">~2.1 太阳质量</string>
+
+    <string name="object_info_vindemiatrix_funfact" translation_description="Fun fact about Vindemiatrix">Vindemiatrix 之所以得名，是因为它的偶极升起（黎明时的首次出现）曾经与地中海地区的葡萄收获季节相吻合——它是酿酒师的星星！</string>
+    <string name="object_info_vindemiatrix_distance" translation_description="Distance to Vindemiatrix shown in the info card. Translate units if appropriate for your locale.">109 光年</string>
+    <string name="object_info_vindemiatrix_size" translation_description="Physical size of Vindemiatrix shown in the info card. Translate units if appropriate for your locale.">11 太阳半径</string>
+    <string name="object_info_vindemiatrix_mass" translation_description="Mass of Vindemiatrix in scientific notation — no translation needed.">2.6 太阳质量</string>
+
+    <!-- ============================================ -->
+    <!-- New Constellations (41) — Phase 1 of issue #645 -->
+    <!-- ============================================ -->
+
+    <!-- Antlia -->
+    <string name="object_info_antlia_description" translation_description="Description of Antlia shown in the info card. Translate this text.">Antlia（空气泵）是一个暗淡的南方星座，由18世纪的尼古拉-路易·德·拉卡伊创建，以纪念罗伯特·波义耳发明的空气泵。</string>
+    <string name="object_info_antlia_funfact" translation_description="Fun fact about Antlia shown in the info card. Translate this text.">Antlia包含Antlia矮星系，它是距离银河系最近的星系之一，距离仅为430万光年！</string>
+    <string name="object_info_antlia_size" translation_description="Physical size of Antlia shown in the info card. Translate units if appropriate for your locale.">239 平方度</string>
+
+    <!-- Apus -->
+    <string name="object_info_apus_description" translation_description="Description of Apus shown in the info card. Translate this text.">天堂鸟座（Apus，天堂鸟）是一个暗淡的南方星座，由荷兰航海家凯瑟和德豪特曼在16世纪晚期引入。</string>
+    <string name="object_info_apus_size" translation_description="Physical size of Apus shown in the info card. Translate units if appropriate for your locale.">206 平方度</string>
+
+    <!-- Ara -->
+    <string name="object_info_ara_description" translation_description="Description of Ara shown in the info card. Translate this text.">天坛座（祭坛）是一个自古以来就为人所知的南方星座。在希腊神话中，它代表众神在与泰坦神族战斗前宣誓的祭坛。</string>
+    <string name="object_info_ara_funfact" translation_description="Fun fact about Ara shown in the info card. Translate this text.">天坛座包含了魔鬼鱼星云，这是已知最年轻的行星状星云，仅在1980年代被观测到形成——一个在实时捕捉到的宇宙事件！</string>
+    <string name="object_info_ara_size" translation_description="Physical size of Ara shown in the info card. Translate units if appropriate for your locale.">237 平方度</string>
+
+    <!-- Caelum -->
+    <string name="object_info_caelum_description" translation_description="Description of Caelum shown in the info card. Translate this text.">Caelum（凿子）是天空中最暗淡的星座之一，由18世纪的拉卡伊创建，用来代表一种雕刻工具。</string>
+    <string name="object_info_caelum_funfact" translation_description="Fun fact about Caelum shown in the info card. Translate this text.">Caelum 是第八小的星座，其中没有亮度超过 4.5 等的恒星——你需要非常黑暗的天空和敏锐的眼睛才能发现它！</string>
+    <string name="object_info_caelum_size" translation_description="Physical size of Caelum shown in the info card. Translate units if appropriate for your locale.">125 平方度</string>
+
+    <string name="object_info_camelopardalis_funfact" translation_description="Fun fact about Camelopardalis shown in the info card. Translate this text.">尽管长颈鹿座是第18大星座，但它没有亮于4.0等的恒星——它占据了北极星附近一片广阔、看似空荡荡的天空！</string>
+    <string name="object_info_camelopardalis_size" translation_description="Physical size of Camelopardalis shown in the info card. Translate units if appropriate for your locale.">757 平方度</string>
+
+    <!-- Canes Venatici -->
+    <string name="object_info_canes_venatici_description" translation_description="Description of Canes Venatici shown in the info card. Translate this text.">猎犬座（Canes Venatici）代表牧夫座牧人手中的两只猎犬。它由约翰内斯·赫维留斯在1687年引入。</string>
+    <string name="object_info_canes_venatici_funfact" translation_description="Fun fact about Canes Venatici shown in the info card. Translate this text.">猎犬座包含M51（漩涡星系），这是第一个被发现螺旋结构的星系，由罗塞勋爵在1845年绘制！</string>
+    <string name="object_info_canes_venatici_size" translation_description="Physical size of Canes Venatici shown in the info card. Translate units if appropriate for your locale.">465 平方度</string>
+
+    <!-- Chamaeleon -->
+    <string name="object_info_chamaeleon_description" translation_description="Description of Chamaeleon shown in the info card. Translate this text.">Chamaeleon是一个小的南方星座，由荷兰航海家在16世纪晚期引入，代表能够改变颜色的蜥蜴。</string>
+    <string name="object_info_chamaeleon_funfact" translation_description="Fun fact about Chamaeleon shown in the info card. Translate this text.">Chamaeleon 包含一个大型分子云复合体，新星正在其中活跃地形成——它是距离地球最近的恒星形成区之一，仅距地球 500 光年！</string>
+    <string name="object_info_chamaeleon_size" translation_description="Physical size of Chamaeleon shown in the info card. Translate units if appropriate for your locale.">132 平方度</string>
+
+    <!-- Circinus -->
+    <string name="object_info_circinus_description" translation_description="Description of Circinus shown in the info card. Translate this text.">圆规座（Circinus，圆规）是最小的星座之一，由拉卡伊创建，用来代表用于绘制圆形的绘图圆规。</string>
+    <string name="object_info_circinus_funfact" translation_description="Fun fact about Circinus shown in the info card. Translate this text.">圆规星系是离我们最近的塞弗特星系之一——一个活跃星系，其超大质量黑洞驱动着明亮的物质喷流！</string>
+    <string name="object_info_circinus_size" translation_description="Physical size of Circinus shown in the info card. Translate units if appropriate for your locale.">93 平方度</string>
+
+    <!-- Columba -->
+    <string name="object_info_columba_description" translation_description="Description of Columba shown in the info card. Translate this text.">天鸽座（鸽子）代表诺亚从方舟中放出去寻找干地的鸽子。它位于天兔座和大犬座的南方。</string>
+    <string name="object_info_columba_funfact" translation_description="Fun fact about Columba shown in the info card. Translate this text.">逃亡恒星Mu Columbae约在250万年前从猎户座星云被喷出，现在以超过100公里/秒的速度穿过鸽座！</string>
+    <string name="object_info_columba_size" translation_description="Physical size of Columba shown in the info card. Translate units if appropriate for your locale.">270 平方度</string>
+
+    <!-- Coma Berenices -->
+    <string name="object_info_coma_berenices_description" translation_description="Description of Coma Berenices shown in the info card. Translate this text.">后发座（贝伦尼斯的头发）代表埃及女王贝伦尼斯二世的头发，她曾将其献给众神。它是少数以历史人物命名的星座之一。</string>
+    <string name="object_info_coma_berenices_funfact" translation_description="Fun fact about Coma Berenices shown in the info card. Translate this text.">后发座包含北银河极——垂直于银河系盘面的方向——这就是为什么它富含可见星系，且没有银河尘埃阻挡！</string>
+    <string name="object_info_coma_berenices_size" translation_description="Physical size of Coma Berenices shown in the info card. Translate units if appropriate for your locale.">386 平方度</string>
+
+    <!-- Corona Australis -->
+    <string name="object_info_corona_australis_description" translation_description="Description of Corona Australis shown in the info card. Translate this text.">南冕座（南方的王冠）是托勒密列出的48个星座之一。它代表一个花环或王冠，放在射手座的脚下。</string>
+    <string name="object_info_corona_australis_funfact" translation_description="Fun fact about Corona Australis shown in the info card. Translate this text.">南冕座包含最近且最活跃的恒星形成区之一——冠状星团，那里正在诞生数十颗年轻恒星！</string>
+    <string name="object_info_corona_australis_size" translation_description="Physical size of Corona Australis shown in the info card. Translate units if appropriate for your locale.">128 平方度</string>
+
+    <!-- Crater -->
+    <string name="object_info_crater_description" translation_description="Description of Crater shown in the info card. Translate this text.">杯座星座（圯杯）代表希腊神话中阿波罗的圣杯。它位于水蛇长蛇座的背部，紧邻乌鸦座。</string>
+    <string name="object_info_crater_funfact" translation_description="Fun fact about Crater shown in the info card. Translate this text.">在希腊神话中，阿波罗派乌鸦去这个杯子里取水，但乌鸦因为吃无花果而延误了——所以阿波罗把这三个都放在天空中作为惩罚！</string>
+    <string name="object_info_crater_size" translation_description="Physical size of Crater shown in the info card. Translate units if appropriate for your locale.">282 平方度</string>
+
+    <!-- Dorado -->
+    <string name="object_info_dorado_description" translation_description="Description of Dorado shown in the info card. Translate this text.">剑鱼座（Dorado，剑鱼或金鱼）是由荷兰航海家创建的南方星座。它包含了大麦哲伦星云的大部分。</string>
+    <string name="object_info_dorado_funfact" translation_description="Fun fact about Dorado shown in the info card. Translate this text.">剑鱼座拥有蜘蛛星云（30 Doradus），这是本星系群中最明亮的恒星形成区——如果它像猎户座星云一样近，它会在地球上投射阴影！</string>
+    <string name="object_info_dorado_size" translation_description="Physical size of Dorado shown in the info card. Translate units if appropriate for your locale.">179 平方度</string>
+
+    <!-- Equuleus -->
+    <string name="object_info_equuleus_description" translation_description="Description of Equuleus shown in the info card. Translate this text.">小马座（小马）是第二小的星座。在希腊神话中，它代表塞勒里斯，飞马座的兄弟或小马。</string>
+    <string name="object_info_equuleus_funfact" translation_description="Fun fact about Equuleus shown in the info card. Translate this text.">小马座是88个星座中第二小的（只有南十字座更小），但它是托勒密近2000年前列出的原始48个星座之一！</string>
+    <string name="object_info_equuleus_size" translation_description="Physical size of Equuleus shown in the info card. Translate units if appropriate for your locale.">72 平方度</string>
+
+    <!-- Fornax -->
+    <string name="object_info_fornax_description" translation_description="Description of Fornax shown in the info card. Translate this text.">Fornax（炉）是由拉卡伊创建的，用来代表一个化学炉。它是位于鲸鱼座和波江座之间的一个微弱的南方星座。</string>
+    <string name="object_info_fornax_funfact" translation_description="Fun fact about Fornax shown in the info card. Translate this text.">哈勃超深场——宇宙中拍摄的最深的图像之一，揭示了距离130亿光年远的星系——是在天炉座中拍摄的！</string>
+    <string name="object_info_fornax_size" translation_description="Physical size of Fornax shown in the info card. Translate units if appropriate for your locale.">398 平方度</string>
+
+    <!-- Horologium -->
+    <string name="object_info_horologium_description" translation_description="Description of Horologium shown in the info card. Translate this text.">Horologium（摆钟）是由拉卡伊为纪念克里斯蒂安·惠更斯在1656年发明摆钟而创建的。</string>
+    <string name="object_info_horologium_funfact" translation_description="Fun fact about Horologium shown in the info card. Translate this text.">天文钟座包含一个名为天文钟-网罟超星系团的巨大超星系团，是附近宇宙中最大的结构之一！</string>
+    <string name="object_info_horologium_size" translation_description="Physical size of Horologium shown in the info card. Translate units if appropriate for your locale.">249 平方度</string>
+
+    <!-- Hydrus -->
+    <string name="object_info_hydrus_description" translation_description="Description of Hydrus shown in the info card. Translate this text.">Hydrus（小水蛇）是位于南天极附近的一个小型南方星座。不要与更大的水蛇星座Hydra（长蛇座）混淆。</string>
+    <string name="object_info_hydrus_funfact" translation_description="Fun fact about Hydrus shown in the info card. Translate this text.">Hydrus位于大麦哲伦星云和小麦哲伦星云之间，使其成为寻找银河系这两个卫星星系的有用标志！</string>
+    <string name="object_info_hydrus_size" translation_description="Physical size of Hydrus shown in the info card. Translate units if appropriate for your locale.">243 平方度</string>
+
+    <!-- Indus -->
+    <string name="object_info_indus_description" translation_description="Description of Indus shown in the info card. Translate this text.">印度人星座（Indus）是由荷兰航海家创建的南方星座，最初代表东印度群岛或马达加斯加的土著居民。</string>
+    <string name="object_info_indus_funfact" translation_description="Fun fact about Indus shown in the info card. Translate this text.">Epsilon Indi 是距离我们仅 12 光年的最近的类日恒星之一，位于印第安人星座中——它还有一个褐矮星伴星系统！</string>
+    <string name="object_info_indus_size" translation_description="Physical size of Indus shown in the info card. Translate units if appropriate for your locale.">294 平方度</string>
+
+    <!-- Lacerta -->
+    <string name="object_info_lacerta_description" translation_description="Description of Lacerta shown in the info card. Translate this text.">天蜥（蜥蜴）是一个由赫维留斯在1687年引入的小型北方星座。它位于天鹅座和仙女座之间。</string>
+    <string name="object_info_lacerta_funfact" translation_description="Fun fact about Lacerta shown in the info card. Translate this text.">天鹰座包含BL天鹰座，它是一类活跃星系的原型，这类星系被称为"耀变体"——具有超大质量黑洞的星系，其喷流直接射向地球！</string>
+    <string name="object_info_lacerta_size" translation_description="Physical size of Lacerta shown in the info card. Translate units if appropriate for your locale.">201 平方度</string>
+
+    <!-- Leo Minor -->
+    <string name="object_info_leo_minor_description" translation_description="Description of Leo Minor shown in the info card. Translate this text.">小狮座（小狮）是位于狮子座和大熊座之间的一个暗淡星座，由赫维留斯在1687年引入。</string>
+    <string name="object_info_leo_minor_funfact" translation_description="Fun fact about Leo Minor shown in the info card. Translate this text.">小狮座是少数几个最亮星没有Alpha标记的星座之一——赫维留斯忘记标记它，所以它的最亮星是小狮座46（Beta）！</string>
+    <string name="object_info_leo_minor_size" translation_description="Physical size of Leo Minor shown in the info card. Translate units if appropriate for your locale.">232 平方度</string>
+
+    <!-- Lupus -->
+    <string name="object_info_lupus_description" translation_description="Description of Lupus shown in the info card. Translate this text.">天狼星（狼）是一个古老的南方星座。希腊人和罗马人将其视为被半人马座手持的长矛刺穿的野生动物。</string>
+    <string name="object_info_lupus_funfact" translation_description="Fun fact about Lupus shown in the info card. Translate this text.">公元1006年，有史以来最亮的超新星出现在豺狼座——SN 1006在白天可见，亮度可能达到−7.5等！</string>
+    <string name="object_info_lupus_size" translation_description="Physical size of Lupus shown in the info card. Translate units if appropriate for your locale.">334 平方度</string>
+
+    <!-- Lynx -->
+    <string name="object_info_lynx_description" translation_description="Description of Lynx shown in the info card. Translate this text.">天猫座是一个庞大但暗淡的北方星座，由赫维留斯在1687年创造。他说你需要有猞猁的眼睛才能看到它！</string>
+    <string name="object_info_lynx_funfact" translation_description="Fun fact about Lynx shown in the info card. Translate this text.">天猫座包含星际流浪者（NGC 2419），这是一个距离遥远的球状星团，距离达30万光年，曾经被认为绕行银河系之外！</string>
+    <string name="object_info_lynx_size" translation_description="Physical size of Lynx shown in the info card. Translate units if appropriate for your locale.">545 平方度</string>
+
+    <!-- Mensa -->
+    <string name="object_info_mensa_description" translation_description="Description of Mensa shown in the info card. Translate this text.">Mensa（桌山）由拉卡伊创建，以纪念开普敦的桌山，他在那里进行了南天的观测。</string>
+    <string name="object_info_mensa_funfact" translation_description="Fun fact about Mensa shown in the info card. Translate this text.">Mensa是唯一以地球上特定地理特征命名的星座。大麦哲伦星云的一部分延伸到其中，就像云笼罩在山峰上一样！</string>
+    <string name="object_info_mensa_size" translation_description="Physical size of Mensa shown in the info card. Translate units if appropriate for your locale.">153 平方度</string>
+
+    <!-- Microscopium -->
+    <string name="object_info_microscopium_description" translation_description="Description of Microscopium shown in the info card. Translate this text.">显微镜座（显微镜）由拉卡伊创建，以纪念复式显微镜。它是天空中最暗淡的星座之一。</string>
+    <string name="object_info_microscopium_funfact" translation_description="Fun fact about Microscopium shown in the info card. Translate this text.">显微镜座最亮的星星Gamma Microscopii曾经是邻近的人马座的一部分——当1930年星座边界被标准化时，它被重新分配了！</string>
+    <string name="object_info_microscopium_size" translation_description="Physical size of Microscopium shown in the info card. Translate units if appropriate for your locale.">210 平方度</string>
+
+    <!-- Musca -->
+    <string name="object_info_musca_description" translation_description="Description of Musca shown in the info card. Translate this text.">天蝇座（苍蝇）是南天的一个小星座，位于南十字星附近。它是天空中唯一的昆虫星座。</string>
+    <string name="object_info_musca_funfact" translation_description="Fun fact about Musca shown in the info card. Translate this text.">Musca 最初被其创造者称为"Apis"（蜜蜂）。它是唯一代表昆虫的星座——而且它就在 Chamaeleon 的旁边，Chamaeleon 以昆虫为食！</string>
+    <string name="object_info_musca_size" translation_description="Physical size of Musca shown in the info card. Translate units if appropriate for your locale.">138 平方度</string>
+
+    <!-- Norma -->
+    <string name="object_info_norma_description" translation_description="Description of Norma shown in the info card. Translate this text.">Norma（木工的直角尺）由拉卡伊创建，用来代表水平仪和直角尺。它位于天蝎座和豺狼座之间富饶的银河中。</string>
+    <string name="object_info_norma_funfact" translation_description="Fun fact about Norma shown in the info card. Translate this text.">朝向诺玛座看去，你正沿着银河系的一条旋臂凝视——以这个星座命名的诺玛臂充满了星团和星云！</string>
+    <string name="object_info_norma_size" translation_description="Physical size of Norma shown in the info card. Translate units if appropriate for your locale.">165 平方度</string>
+
+    <!-- Octans -->
+    <string name="object_info_octans_description" translation_description="Description of Octans shown in the info card. Translate this text.">南极八分仪座（八分仪）由拉卡伊创建，用以纪念航海仪器。它包含南天极。</string>
+    <string name="object_info_octans_funfact" translation_description="Fun fact about Octans shown in the info card. Translate this text.">Octans包含南天极，但与北极的北极星不同，没有明亮的恒星标记南极——南极星（Sigma Octantis，星等5.4）是一颗暗淡的"南星"。</string>
+    <string name="object_info_octans_size" translation_description="Physical size of Octans shown in the info card. Translate units if appropriate for your locale.">291 平方度</string>
+
+    <!-- Pictor -->
+    <string name="object_info_pictor_description" translation_description="Description of Pictor shown in the info card. Translate this text.">绘架座（画家的画架）是由拉卡伊创造的一个微弱的南方星座，最初是以艺术家的画架命名的。</string>
+    <string name="object_info_pictor_funfact" translation_description="Fun fact about Pictor shown in the info card. Translate this text.">这个星座中的北落师门是最早被发现拥有可见碎屑盘的恒星之一——它有两颗已确认的系外行星在其中运行！</string>
+    <string name="object_info_pictor_size" translation_description="Physical size of Pictor shown in the info card. Translate units if appropriate for your locale.">247 平方度</string>
+
+    <!-- Piscis Austrinus -->
+    <string name="object_info_piscis_austrinus_description" translation_description="Description of Piscis Austrinus shown in the info card. Translate this text.">南鱼座（南鱼）是一个古老的星座。据说它是双鱼座两条鱼的父亲，正在喝水瓶座倒出的水。</string>
+    <string name="object_info_piscis_austrinus_funfact" translation_description="Fun fact about Piscis Austrinus shown in the info card. Translate this text.">Fomalhaut 是南鱼座中最亮的恒星，是首批被哈勃太空望远镜直接拍摄到系外行星的恒星之一——尽管这颗"行星"实际上可能只是一团尘埃云！</string>
+    <string name="object_info_piscis_austrinus_size" translation_description="Physical size of Piscis Austrinus shown in the info card. Translate units if appropriate for your locale.">245 平方度</string>
+
+    <!-- Pyxis -->
+    <string name="object_info_pyxis_description" translation_description="Description of Pyxis shown in the info card. Translate this text.">Pyxis（罗盘）代表一个航海罗盘。拉卡伊从曾经是古代星座南船星座（Argo Navis）一部分的恒星中创造了它。</string>
+    <string name="object_info_pyxis_funfact" translation_description="Fun fact about Pyxis shown in the info card. Translate this text.">Pyxis 包含 T Pyxidis，一颗自 1890 年以来至少爆发过六次的复现新星——它是天空中研究最充分的新星之一！</string>
+    <string name="object_info_pyxis_size" translation_description="Physical size of Pyxis shown in the info card. Translate units if appropriate for your locale.">221 平方度</string>
+
+    <!-- Reticulum -->
+    <string name="object_info_reticulum_description" translation_description="Description of Reticulum shown in the info card. Translate this text.">网状星座（十字丝）是由拉卡伊创建的，用来代表他望远镜中的十字丝目镜，在他进行南天巡天时使用。</string>
+    <string name="object_info_reticulum_funfact" translation_description="Fun fact about Reticulum shown in the info card. Translate this text.">Reticulum在UFO传说中很有名——1961年的"Zeta Reticuli事件"声称外星访客来自这个星座中的一个恒星系统！</string>
+    <string name="object_info_reticulum_size" translation_description="Physical size of Reticulum shown in the info card. Translate units if appropriate for your locale.">114 平方度</string>
+
+    <!-- Sculptor -->
+    <string name="object_info_sculptor_description" translation_description="Description of Sculptor shown in the info card. Translate this text.">雕刻师（雕刻师座）由拉卡伊创建，最初代表一个雕刻师的工作室。它包含南银河极。</string>
+    <string name="object_info_sculptor_funfact" translation_description="Fun fact about Sculptor shown in the info card. Translate this text.">雕刻家座包含南银河极点和雕刻家矮星系，它是银河系最近的卫星星系之一，距离仅为26万光年！</string>
+    <string name="object_info_sculptor_size" translation_description="Physical size of Sculptor shown in the info card. Translate units if appropriate for your locale.">475 平方度</string>
+
+    <!-- Scutum -->
+    <string name="object_info_scutum_description" translation_description="Description of Scutum shown in the info card. Translate this text.">盾牌座（盾牌）由赫维留斯在1684年创建，以纪念波兰国王约翰三世·索别斯基。它是少数几个以非神话历史人物命名的星座之一。</string>
+    <string name="object_info_scutum_funfact" translation_description="Fun fact about Scutum shown in the info card. Translate this text.">盾牌座包含盾牌星云，这是肉眼可见的银河系中最明亮、最密集的区域之一——它是我们银河系内旋臂的一扇窗口！</string>
+    <string name="object_info_scutum_size" translation_description="Physical size of Scutum shown in the info card. Translate units if appropriate for your locale.">109 平方度</string>
+
+    <!-- Serpens Caput -->
+    <string name="object_info_serpens_caput_description" translation_description="Description of Serpens Caput shown in the info card. Translate this text.">Serpens Caput（蛇头）是Serpens的西半部分，是唯一被Ophiuchus分成两个不相邻部分的星座。</string>
+    <string name="object_info_serpens_caput_funfact" translation_description="Fun fact about Serpens Caput shown in the info card. Translate this text.">蛇夫座头部包含M5，这是已知最古老、最大的球状星团之一——它有130亿年的历史，包含超过10万颗恒星！</string>
+    <string name="object_info_serpens_caput_size" translation_description="Physical size of Serpens Caput shown in the info card. Translate units if appropriate for your locale.">428 平方度（两部分）</string>
+
+    <!-- Serpens Cauda -->
+    <string name="object_info_serpens_cauda_description" translation_description="Description of Serpens Cauda shown in the info card. Translate this text.">Serpens Cauda（蛇尾）是巨蛇座的东半部分，被蛇夫座与蛇头分隔开。</string>
+    <string name="object_info_serpens_cauda_funfact" translation_description="Fun fact about Serpens Cauda shown in the info card. Translate this text.">蛇尾星座包含鹰星云（M16）及其著名的"创世之柱"——耸立的气体和尘埃柱，新星正在这里诞生！</string>
+    <string name="object_info_serpens_cauda_size" translation_description="Physical size of Serpens Cauda shown in the info card. Translate units if appropriate for your locale.">428 平方度（两部分）</string>
+
+    <!-- Sextans -->
+    <string name="object_info_sextans_description" translation_description="Description of Sextans shown in the info card. Translate this text.">Sextans（六分仪）是由赫维留斯创建的，用来纪念他的天文六分仪，该仪器在1679年的一场火灾中被毁。</string>
+    <string name="object_info_sextans_funfact" translation_description="Fun fact about Sextans shown in the info card. Translate this text.">Sextans包含Sextans A矮星系，这是本星系群中最孤立的星系之一，距离地球430万光年！</string>
+    <string name="object_info_sextans_size" translation_description="Physical size of Sextans shown in the info card. Translate units if appropriate for your locale.">314 平方度</string>
+
+    <!-- Telescopium -->
+    <string name="object_info_telescopium_description" translation_description="Description of Telescopium shown in the info card. Translate this text.">Telescopium（望远镜）由拉卡伊创造，以纪念折射望远镜的发明。它位于人马座和南冕座的南方。</string>
+    <string name="object_info_telescopium_funfact" translation_description="Fun fact about Telescopium shown in the info card. Translate this text.">Telescopium 原本要大得多——当 Lacaille 最初绘制它时，它延伸到现在的人马座和蛇夫座的部分区域！</string>
+    <string name="object_info_telescopium_size" translation_description="Physical size of Telescopium shown in the info card. Translate units if appropriate for your locale.">252 平方度</string>
+
+    <!-- Triangulum Australe -->
+    <string name="object_info_triangulum_australe_description" translation_description="Description of Triangulum Australe shown in the info card. Translate this text.">南三角座（南方三角形）是一个小而独特的南方星座。它的三颗最亮的星星形成了一个近似等边三角形。</string>
+    <string name="object_info_triangulum_australe_funfact" translation_description="Fun fact about Triangulum Australe shown in the info card. Translate this text.">南三角座包含NGC 6025，这是一个美丽的疏散星团，用双筒望远镜很容易看到，它出现在巴西和巴布亚新几内亚的国旗上！</string>
+    <string name="object_info_triangulum_australe_size" translation_description="Physical size of Triangulum Australe shown in the info card. Translate units if appropriate for your locale.">110 平方度</string>
+
+    <!-- Tucana -->
+    <string name="object_info_tucana_description" translation_description="Description of Tucana shown in the info card. Translate this text.">杜鹃座（巨嘴鸟）是由荷兰航海家创造的南方星座，代表一种具有巨大喙的热带鸟类。</string>
+    <string name="object_info_tucana_funfact" translation_description="Fun fact about Tucana shown in the info card. Translate this text.">杜鹃座包含47杜鹃(NGC 104),这是天空中第二亮的球状星团,拥有数百万颗恒星和多个毫秒脉冲星!</string>
+    <string name="object_info_tucana_size" translation_description="Physical size of Tucana shown in the info card. Translate units if appropriate for your locale.">295 平方度</string>
+
+    <!-- Volans -->
+    <string name="object_info_volans_description" translation_description="Description of Volans shown in the info card. Translate this text.">飞鱼座（Flying Fish）是由荷兰航海家引入的一个微弱的南方星座，代表能够跃出水面并滑翔的热带鱼。</string>
+    <string name="object_info_volans_funfact" translation_description="Fun fact about Volans shown in the info card. Translate this text.">飞鱼座靠近大麦哲伦星云，包含林赛-沙普利环，这是迄今为止观测到的最完美的环星系之一！</string>
+    <string name="object_info_volans_size" translation_description="Physical size of Volans shown in the info card. Translate units if appropriate for your locale.">141 平方度</string>
+
+    <!-- Vulpecula -->
+    <string name="object_info_vulpecula_description" translation_description="Description of Vulpecula shown in the info card. Translate this text.">小狐星座（Vulpecula，小狐）是赫维留斯在1687年创建的一个暗淡的北方星座。它位于银河系的中心，介于天鹅座和箭鱼座之间。</string>
+    <string name="object_info_vulpecula_funfact" translation_description="Fun fact about Vulpecula shown in the info card. Translate this text.">狐狸座包含哑铃星云（M27），这是有史以来发现的第一个行星状星云（由查尔斯·梅西耶在1764年发现），也是一个美丽的双筒望远镜观测目标！</string>
+    <string name="object_info_vulpecula_size" translation_description="Physical size of Vulpecula shown in the info card. Translate units if appropriate for your locale.">268 平方度</string>
+</resources>
