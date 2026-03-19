@@ -6,9 +6,25 @@
         <item translation_description="Fast sensor speed">快</item>
     </string-array>
     <string-array name="sensor_damping">
-        <item translation_description="Low sensor damping factor">Jumpy</item>
-        <item translation_description="Medium sensor damping factor">Medium</item>
+        <item translation_description="Low sensor damping factor">抖动</item>
+        <item translation_description="Medium sensor damping factor">中等</item>
         <item translation_description="Extra High sensor damping factor">标准</item>
         <item translation_description="Really High sensor damping factor">高</item>
     </string-array>
-    </resources>
+    <string-array name="viewing_direction">
+        <item translation_description="Normal viewing">正常</item>
+        <item translation_description="Rotates the screen by 90 degrees">旋转地平线</item>
+        <item translation_description="Shows the sky as pointed at by the long edge of the phone">指针模式</item>
+    </string-array>
+    <string-array name="auto_dim_texts">
+        <item translation_description="Dimmest screen setting">非常暗</item>
+        <item translation_description="Leave it on the system setting">系统默认</item>
+        <item translation_description="The setting used for the last 15 years">经典</item>
+    </string-array>
+    <string-array name="font_size_texts">
+        <item translation_description="Smallest font size">小</item>
+        <item translation_description="Normal font size">中</item>
+        <item translation_description="Large font size">大</item>
+        <item translation_description="Largest font size">特大</item>
+    </string-array>
+</resources>
