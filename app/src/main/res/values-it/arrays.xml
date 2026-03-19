@@ -6,9 +6,25 @@
         <item translation_description="Fast sensor speed">Veloce</item>
     </string-array>
     <string-array name="sensor_damping">
-        <item translation_description="Low sensor damping factor">Jumpy</item>
-        <item translation_description="Medium sensor damping factor">Medium</item>
+        <item translation_description="Low sensor damping factor">Instabile</item>
+        <item translation_description="Medium sensor damping factor">Medio</item>
         <item translation_description="Extra High sensor damping factor">Standard</item>
         <item translation_description="Really High sensor damping factor">Alto</item>
     </string-array>
-    </resources>
+    <string-array name="viewing_direction">
+        <item translation_description="Normal viewing">Normale</item>
+        <item translation_description="Rotates the screen by 90 degrees">Orizzonte ruotato</item>
+        <item translation_description="Shows the sky as pointed at by the long edge of the phone">Modalità puntatore</item>
+    </string-array>
+    <string-array name="auto_dim_texts">
+        <item translation_description="Dimmest screen setting">Molto Scuro</item>
+        <item translation_description="Leave it on the system setting">Predefinito di Sistema</item>
+        <item translation_description="The setting used for the last 15 years">Classico</item>
+    </string-array>
+    <string-array name="font_size_texts">
+        <item translation_description="Smallest font size">Piccolo</item>
+        <item translation_description="Normal font size">Medio</item>
+        <item translation_description="Large font size">Grande</item>
+        <item translation_description="Largest font size">Extra Grande</item>
+    </string-array>
+</resources>

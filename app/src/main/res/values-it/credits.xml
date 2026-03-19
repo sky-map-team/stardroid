@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <!-- The folks who made Sky Map Happen -->
+<string name="credits_text" translation_description="This page credits the people and organizations who support and maintain the app Sky Map. Please do not change the &lt; and &gt; markup">&lt;h1&gt;Supporta lo sviluppo&lt;/h1&gt;
+&lt;p&gt;Sky Map è gratuito, open source e senza pubblicità. Se ti piace usarlo, considera di &lt;a href="https://buymeacoffee.com/skymapdevs"&gt;supportare&lt;/a&gt; lo sviluppo continuo sulla &lt;a href="https://github.com/sky-map-team/stardroid?tab=readme-ov-file#support-the-project"&gt;nostra pagina GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Grazie a queste persone che hanno recentemente &lt;a href="https://buymeacoffee.com/skymapdevs"&gt;donato!&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;%1$s&lt;/p&gt;
+
+&lt;h1&gt;Crediti&lt;/h1&gt;
+&lt;h2&gt;Ingegneria&lt;/h2&gt;
+&lt;p&gt;John Taylor, Kevin Serafini&lt;/p&gt;
+
+&lt;h2&gt;Contributori Open Source&lt;/h2&gt;
+&lt;p&gt;
+    %2$s
+&lt;/p&gt;
+&lt;p&gt;Grazie! Vedi gli ultimi contributori su &lt;a href="https://github.com/sky-map-team/stardroid/graphs/contributors"&gt;GitHub&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;h2&gt;Ingegneria, design e gestione del prodotto originali presso Google&lt;/h2&gt;
+&lt;p&gt;Brent Bryan, Dominic Widdows, Hector Ouilhet, James Powell, John Taylor, Kevin Serafini,
+Lior Ron.&lt;/p&gt;
+
+&lt;h1&gt;Riconoscimenti&lt;/h1&gt;
+&lt;p&gt;Sky Map è stato originariamente sviluppato come "Google Sky Map" da Google Inc. e reso open source nel 2012.&lt;/p&gt;
+&lt;p&gt;Ringraziamenti speciali a Pat Stephenson per aver ispirato l\'idea con la sua competizione su G1-phone
+    e a Chris DiBona e Michael Weiss-Malik per aver aiutato nella transizione
+    da Google a Open Source.&lt;/p&gt;
+
+&lt;h2&gt;Dati&lt;/h2&gt;
+&lt;p&gt;Sky Map utilizza mappe derivate da dati provenienti da:&lt;/p&gt;
+&lt;ul class="credits"&gt;
+&lt;li&gt;Centre de Donnees astronomiques de Strasbourg (&lt;a href="https://cdsweb.u-strasbg.fr/"&gt;https://cdsweb.u-strasbg.fr/&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;The Bright Star Catalogue, 5th Revised Ed. (Hoffleit D., Warren Jr W.H.)&lt;/li&gt;
+&lt;li&gt;The HYG Database, HYG v1.0. (&lt;a href="https://www.astronexus.com/"&gt;https://www.astronexus.com/&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;History and Accurate Positions for the NGC/IC Objects (Harold G. Corwin Jr)&lt;/li&gt;
+&lt;li&gt;Revised New General Catalogue of Nonstellar Astronomical Objects (Sulentic J.W., Tifft W.G.)&lt;/li&gt;
+&lt;li&gt;SFA Star Charts (&lt;a href="https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html"&gt;https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Positions of Solar System Objects are calculated from data provided by the USNO (&lt;a href="https://www.usno.navy.mil/USNO/astronomical-applications"&gt;https://www.usno.navy.mil/USNO/astronomical-applications&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Spherical coverage data obtained from (&lt;a href="https://www2.research.att.com/~njas/coverings"&gt;https://www2.research.att.com/~njas/coverings&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;2024 Eclipse Map courtesy of NASA\'s Scientific Visualization Studio.&lt;/li&gt;
+&lt;li&gt;Meteor shower data from the International Meteor Organization (&lt;a href="https://www.imo.net/data"&gt;https://www.imo.net/data&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Crediti delle immagini&lt;/h2&gt;
+&lt;p&gt;Le immagini celesti in questa app sono fornite per gentile concessione delle seguenti fonti:&lt;/p&gt;
+&lt;ul class="credits"&gt;
+&lt;li&gt;Immagini del telescopio spaziale Hubble: NASA, ESA e Space Telescope Science Institute (&lt;a href="https://hubblesite.org/"&gt;hubblesite.org&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Immagini dei pianeti: NASA/JPL-Caltech, NASA/Johns Hopkins APL/Carnegie (MESSENGER), NASA/Johns Hopkins APL/SwRI (New Horizons)&lt;/li&gt;
+&lt;li&gt;Immagine della Luna: NASA/GSFC/Arizona State University (Lunar Reconnaissance Orbiter)&lt;/li&gt;
+&lt;li&gt;Immagini del campo stellare: ESO Digitized Sky Survey 2 (&lt;a href="https://archive.eso.org/dss/dss"&gt;archive.eso.org/dss&lt;/a&gt;), CC BY 4.0&lt;/li&gt;
+&lt;li&gt;Mappe costellazioni: IAU e Sky &amp;amp; Telescope (Roger Sinnott &amp;amp; Rick Fienberg), CC BY 4.0&lt;/li&gt;
+&lt;li&gt;Immagini Messier aggiuntive: Gemini Observatory/NOIRLab/NSF/AURA (&lt;a href="https://noirlab.edu/"&gt;noirlab.edu&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Immagine M31: Peter Kennett (&lt;a href="https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg"&gt;Wikimedia Commons&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;</string>
+</resources>
