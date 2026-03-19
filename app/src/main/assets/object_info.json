@@ -1633,6 +1633,17 @@
       "imageKey": "messier/smc.webp",
       "imageCredit": "ESO/VISTA VMC"
     },
+    "willman_1": {
+      "nameKey": "willman_1",
+      "descriptionKey": "object_info_willman_1_description",
+      "funFactKey": "object_info_willman_1_funfact",
+      "type": "galaxy",
+      "distanceKey": "object_info_willman_1_distance",
+      "sizeKey": "object_info_willman_1_size",
+      "magnitude": "15.4",
+      "imageKey": "messier/willman_1.webp",
+      "imageCredit": "Sky Map team (it's very faint)"
+    },
     "alcyone": {
       "nameKey": "alcyone",
       "descriptionKey": "object_info_alcyone_description",
