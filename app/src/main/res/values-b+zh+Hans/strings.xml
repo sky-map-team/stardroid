@@ -29,7 +29,6 @@
     <string name="location_permission_later" translation_description="Button in the location permission dialog to defer the decision">稍后</string>
     <string name="location_warning_permission" translation_description="Warning message shown when location is unavailable because permission was not granted">位置不可用 — 未授予权限。</string>
     <string name="location_warning_manual" translation_description="Warning message shown when manual location mode is selected but no coordinates have been entered">位置未设置 — 请在设置中配置。</string>
-<!-- TODO: many translations require two placeholders. Once all translations brought up to date we can clean this up -->
     <string name="location_unable_to_geocode" translation_description="Error message when converting a place name to coordinates (geocoding) fails, possibly due to no network">系统不能对您的位置进行解码，可能是您的网络无法使用？</string>
     <string name="location_not_found_title" translation_description="dialog box title when location not found">抱歉</string>
     <string name="location_not_found" translation_description="dialog message when placename not found">找不到“%s”。</string>
@@ -152,7 +151,9 @@
 
     <string name="no_sensor_warning" translation_description="Warning shown when required orientation sensors are not detected on the device">您的设备可能缺少方向传感器 - 自动模式可能无法工作</string>
     <string name="warning_dialog_title" translation_description="Title of a warning dialog shown when something is wrong, e.g. a missing sensor">坏消息！</string>
-    <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">\n很遗憾，您的设备可能缺少Sky Map所需的传感器之一。\n\n为了根据您手机的指向方向显示天空，Sky Map需要内置的指南针和加速度计。您的设备报告缺少其中之一。好消息是，某些设备（例如某些Moto E手机）虽然声称没有指南针，但实际上有。\n\n如果您的设备确实缺少传感器，则自动模式将无法工作。但是，您仍然可以在手动模式下在此设备上使用Sky Map，在该模式下您可以用手指拖动、旋转和拉伸地图。</string>
+    <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">
+    \n很遗憾，您的设备可能缺少Sky Map所需的传感器之一。\n\n为了根据您手机的指向方向显示天空，Sky Map需要内置的指南针和加速度计。您的设备报告缺少其中之一。好消息是，某些设备（例如某些Moto E手机）虽然声称没有指南针，但实际上有。\n\n如果您的设备确实缺少传感器，则自动模式将无法工作。但是，您仍然可以在手动模式下在此设备上使用Sky Map，在该模式下您可以用手指拖动、旋转和拉伸地图。
+    </string>
     <string name="do_not_show_again" translation_description="Checkbox or button label to suppress future display of a warning dialog">不再显示此消息</string>
     <string name="title_activity_diagnostic" translation_description="Title bar text for the Diagnostics activity/screen">诊断</string>
     <string name="play_services_error" translation_description="Warning shown in the diagnostics screen when Google Play Services has an error that may affect automatic location">警告：Google Play 服务错误 - 自动定位可能无法工作</string>
@@ -207,7 +208,9 @@
     <string name="sensor_reverse_preference_summary" translation_description="Summary for the Reverse Magnetic Z preference">修复传感器实现不正确的手机 - 需要重新启动</string>
     <string name="whats_new_dialog_title" translation_description="Title of the dialog shown on first launch after an update, listing new features">有什么新功能</string>
     <string name="disable_gyro_preference_title" translation_description="Preference title for disabling the gyroscope sensor">禁用陀螺仪</string>
-    <string name="disable_gyro_preference_summary" translation_description="Explanation of the disable gyroscope preference and when to use it">并非所有设备都配有陀螺仪 - 如果您的设备有陀螺仪，启用陀螺仪并取消勾选此框会获得更好的效果。另一方面，如果您的设备没有陀螺仪，那么如果您取消勾选此框，Sky Map 可能无法正常工作。</string>
+    <string name="disable_gyro_preference_summary" translation_description="Explanation of the disable gyroscope preference and when to use it">
+    并非所有设备都配有陀螺仪 - 如果您的设备有陀螺仪，启用陀螺仪并取消勾选此框会获得更好的效果。另一方面，如果您的设备没有陀螺仪，那么如果您取消勾选此框，Sky Map 可能无法正常工作。
+    </string>
     <string name="rotate_horizon_preference_title" translation_description="Preference title for choosing the view/pointing direction mode">视图方向</string>
     <string name="auto_level_horizon_preference_title" translation_description="Preference title for the auto-level horizon feature in manual mode">自动水平地平线</string>
     <string name="auto_level_horizon_preference_summary" translation_description="Summary for the auto-level horizon preference">在手动模式下，抬起手指后地平线会逐渐恢复水平</string>

@@ -6,10 +6,10 @@
         <item translation_description="Fast sensor speed">तेज़</item>
     </string-array>
     <string-array name="sensor_damping">
-        <item translation_description="Low sensor damping factor">झटकेदार</item>
-        <item translation_description="Medium sensor damping factor">मध्यम</item>
+        <item translation_description="Low sensor damping factor - this will make the app jittery">झटकेदार</item>
+        <item translation_description="Medium sensor damping factor - this will make the app slightly jittery">मध्यम</item>
         <item translation_description="Extra High sensor damping factor">ठीक है</item>
-        <item translation_description="Really High sensor damping factor">सुस्त</item>
+        <item translation_description="Really High sensor damping factor - this will make the app sluggish">सुस्त</item>
     </string-array>
     <string-array name="viewing_direction">
         <item translation_description="Normal viewing">सामान्य</item>

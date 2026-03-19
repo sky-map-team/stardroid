@@ -6,10 +6,10 @@
         <item translation_description="Fast sensor speed">Γρήγορη</item>
     </string-array>
     <string-array name="sensor_damping">
-        <item translation_description="Low sensor damping factor">Χαμηλή</item>
-        <item translation_description="Medium sensor damping factor">Μέτρια</item>
+        <item translation_description="Low sensor damping factor - this will make the app jittery">Χαμηλή</item>
+        <item translation_description="Medium sensor damping factor - this will make the app slightly jittery">Μέτρια</item>
         <item translation_description="Extra High sensor damping factor">Υψηλή</item>
-        <item translation_description="Really High sensor damping factor">Πολύ υψηλή</item>
+        <item translation_description="Really High sensor damping factor - this will make the app sluggish">Πολύ υψηλή</item>
     </string-array>
     <string-array name="viewing_direction">
         <item translation_description="Normal viewing">Κανονική</item>

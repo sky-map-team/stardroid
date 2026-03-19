@@ -23,13 +23,14 @@
     <string name="location_offer_to_enable" translation_description="Dialog message asking whether to enable automatic location">Localizzazione automatica disabilitata. Abilitarla?</string>
     <string name="location_offer_to_enable_gps_title" translation_description="Title of dialog shown when automatic location is disabled">Localizzazione autom. disattivata</string>
     <string name="location_permission_dialog_title" translation_description="Title of the dialog that requests location permission from the user">Posizione richiesta</string>
-    <string name="location_permission_dialog_message" translation_description="Body text of the dialog requesting location permission, explaining why the app needs it and what happens without it">Sky Map ha bisogno della tua posizione approssimativa per mostrare il cielo notturno corretto. Puoi concedere l\'autorizzazione, inserire la tua posizione manualmente o decidere più tardi. Se decidi più tardi, la mappa non sarà accurata finché la tua posizione non sarà stata impostata.</string>
+    <string name="location_permission_dialog_message" translation_description="Body text of the dialog requesting location permission, explaining why the app needs it and what happens without it">
+    Sky Map ha bisogno della tua posizione approssimativa per mostrare il cielo notturno corretto. Puoi concedere l\'autorizzazione, inserire la tua posizione manualmente o decidere più tardi. Se decidi più tardi, la mappa non sarà accurata finché la tua posizione non sarà stata impostata.
+    </string>
     <string name="location_permission_grant" translation_description="Button in the location permission dialog to grant location access">Concedi autorizzazione</string>
     <string name="location_permission_enter_manually" translation_description="Button in the location permission dialog to enter location by hand instead of granting permission">Inserisci manualmente</string>
     <string name="location_permission_later" translation_description="Button in the location permission dialog to defer the decision">Più tardi</string>
     <string name="location_warning_permission" translation_description="Warning message shown when location is unavailable because permission was not granted">Posizione non disponibile — autorizzazione non concessa.</string>
     <string name="location_warning_manual" translation_description="Warning message shown when manual location mode is selected but no coordinates have been entered">Posizione non impostata — configura nelle Impostazioni.</string>
-<!-- TODO: many translations require two placeholders. Once all translations brought up to date we can clean this up -->
     <string name="location_unable_to_geocode" translation_description="Error message when converting a place name to coordinates (geocoding) fails, possibly due to no network">Impossibile decodificare la tua località: rete non disponibile?</string>
     <string name="location_not_found_title" translation_description="dialog box title when location not found">Spiacenti</string>
     <string name="location_not_found" translation_description="dialog message when placename not found">%s non trovata.</string>
@@ -150,12 +151,18 @@
     <string name="enable_analytics" translation_description="Preference label to opt in to sending anonymous usage statistics">Invia statistiche di utilizzo</string>
     <string name="enable_analytics_desc" translation_description="Description/summary for the usage statistics preference">Migliora Sky Map inviando dati anonimi a Google Analytics</string>
 
-    <string name="no_sensor_warning" translation_description="Warning shown when required orientation sensors are not detected on the device">Il tuo dispositivo potrebbe non avere sensori di orientamento - la modalità automatica potrebbe non funzionare</string>
+    <string name="no_sensor_warning" translation_description="Warning shown when required orientation sensors are not detected on the device">
+    Il tuo dispositivo potrebbe non avere sensori di orientamento - la modalità automatica potrebbe non funzionare
+    </string>
     <string name="warning_dialog_title" translation_description="Title of a warning dialog shown when something is wrong, e.g. a missing sensor">Cattive notizie!</string>
-    <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">\nPurtroppo il tuo dispositivo potrebbe non avere uno dei sensori di cui Sky Map ha bisogno.\n\nPer mostrarti il cielo nella direzione verso cui punta il tuo telefono, Sky Map ha bisogno sia di una bussola integrata che di un accelerometro. Il tuo dispositivo segnala che ne manca uno. La buona notizia è che alcuni dispositivi (ad esempio alcuni telefoni Moto E) affermano falsamente di non avere una bussola ma in realtà ce l\'hanno.\n\nSe il tuo dispositivo non ha davvero un sensore, la modalità automatica non funzionerà. Tuttavia, puoi comunque utilizzare Sky Map su questo dispositivo in modalità manuale dove puoi trascinare, ruotare e allargare la mappa con le dita.</string>
+    <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">
+    \nPurtroppo il tuo dispositivo potrebbe non avere uno dei sensori di cui Sky Map ha bisogno.\n\nPer mostrarti il cielo nella direzione verso cui punta il tuo telefono, Sky Map ha bisogno sia di una bussola integrata che di un accelerometro. Il tuo dispositivo segnala che ne manca uno. La buona notizia è che alcuni dispositivi (ad esempio alcuni telefoni Moto E) affermano falsamente di non avere una bussola ma in realtà ce l\'hanno.\n\nSe il tuo dispositivo non ha davvero un sensore, la modalità automatica non funzionerà. Tuttavia, puoi comunque utilizzare Sky Map su questo dispositivo in modalità manuale dove puoi trascinare, ruotare e allargare la mappa con le dita.
+    </string>
     <string name="do_not_show_again" translation_description="Checkbox or button label to suppress future display of a warning dialog">Non mostrare più questo messaggio</string>
     <string name="title_activity_diagnostic" translation_description="Title bar text for the Diagnostics activity/screen">Diagnostica</string>
-    <string name="play_services_error" translation_description="Warning shown in the diagnostics screen when Google Play Services has an error that may affect automatic location">Avviso: errore di Google Play Services - La posizione automatica potrebbe non funzionare</string>
+    <string name="play_services_error" translation_description="Warning shown in the diagnostics screen when Google Play Services has an error that may affect automatic location">
+    Avviso: errore di Google Play Services - La posizione automatica potrebbe non funzionare
+    </string>
     <string name="sensor_absent" translation_description="Sensor status shown in diagnostics when the sensor is not present on the device">Assente</string>
     <string name="sensor_accuracy_unknown" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">Precisione: Sconosciuta</string>
     <string name="sensor_accuracy_unreliable" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">Precisione: Inaffidabile</string>
@@ -204,20 +211,30 @@
     <string name="compass_calib_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[Il tuo telefono segnala la precisione della bussola come mostrato sopra. Per migliorarla, esegui un movimento a figura 8 con il tuo dispositivo (%s).<br/><br/>
 <b>Nota sulla precisione:</b> La calibrazione è un requisito a livello hardware del tuo telefono, non un\'impostazione di Sky Map. Anche se calibrato, i campi magnetici locali (come i cruscotti delle auto o i magneti) potrebbero causare una leggera deviazione nella direzione. Consulta <i>Risoluzione dei problemi</i> in <i>Aiuto</i> per altri suggerimenti.]]></string>
     <string name="sensor_reverse_preference_title" translation_description="Preference title for reversing the magnetic Z-axis sensor reading, a fix for certain phones with incorrectly implemented sensors">Inverti asse Z magnetico</string>
-    <string name="sensor_reverse_preference_summary" translation_description="Summary for the Reverse Magnetic Z preference">Correzione per telefoni con sensori implementati in modo errato - richiede riavvio</string>
+    <string name="sensor_reverse_preference_summary" translation_description="Summary for the Reverse Magnetic Z preference">
+    Correzione per telefoni con sensori implementati in modo errato - richiede riavvio
+    </string>
     <string name="whats_new_dialog_title" translation_description="Title of the dialog shown on first launch after an update, listing new features">Novità</string>
     <string name="disable_gyro_preference_title" translation_description="Preference title for disabling the gyroscope sensor">Disabilita giroscopio</string>
-    <string name="disable_gyro_preference_summary" translation_description="Explanation of the disable gyroscope preference and when to use it">Non tutti i dispositivi hanno un giroscopio - se il tuo lo ha allora otterrai risultati migliori con esso abilitato e questa casella deselezionata. D\'altro canto, se il tuo dispositivo non ha un giroscopio, Sky Map probabilmente non funzionerà se deselezioni questa casella.</string>
+    <string name="disable_gyro_preference_summary" translation_description="Explanation of the disable gyroscope preference and when to use it">
+    Non tutti i dispositivi hanno un giroscopio - se il tuo lo ha allora otterrai risultati migliori con esso abilitato e questa casella deselezionata. D\'altro canto, se il tuo dispositivo non ha un giroscopio, Sky Map probabilmente non funzionerà se deselezioni questa casella.
+    </string>
     <string name="rotate_horizon_preference_title" translation_description="Preference title for choosing the view/pointing direction mode">Direzione di visualizzazione</string>
     <string name="auto_level_horizon_preference_title" translation_description="Preference title for the auto-level horizon feature in manual mode">Orizzonte auto-livellato</string>
-    <string name="auto_level_horizon_preference_summary" translation_description="Summary for the auto-level horizon preference">In modalità manuale, l\'orizzonte ritorna gradualmente all\'orizzontale dopo aver sollevato le dita</string>
+    <string name="auto_level_horizon_preference_summary" translation_description="Summary for the auto-level horizon preference">
+    In modalità manuale, l\'orizzonte ritorna gradualmente all\'orizzontale dopo aver sollevato le dita
+    </string>
 
-    <string name="rotate_horizon_preference_summary" translation_description="Explanation of the view direction preference, covering both landscape rotation and pointer modes">Ruota l\'orizzonte di 90 gradi (per dispositivi con orientamento orizzontale forzato) o utilizza la modalità puntatore affinché lo schermo mostri dove sta puntando la parte superiore del telefono (vedi testo della guida).</string>
+    <string name="rotate_horizon_preference_summary" translation_description="Explanation of the view direction preference, covering both landscape rotation and pointer modes">
+    Ruota l\'orizzonte di 90 gradi (per dispositivi con orientamento orizzontale forzato) o utilizza la modalità puntatore affinché lo schermo mostri dove sta puntando la parte superiore del telefono (vedi testo della guida).
+    </string>
 
     <string name="show_object_info_pref_title" translation_description="Preference title for showing info cards when tapping objects">Mostra info al tocco</string>
     <string name="show_object_info_pref_summary" translation_description="Preference summary for the tap info feature">Tocca gli oggetti celesti per saperne di più</string>
     <string name="show_object_info_auto_mode_title" translation_description="Preference title for enabling info cards in auto/sensor mode">Schede info in modalità automatica</string>
-    <string name="show_object_info_auto_mode_summary" translation_description="Preference summary for auto mode info cards">Mostra le schede info anche toccando gli oggetti in modalità automatica (sensori)</string>
+    <string name="show_object_info_auto_mode_summary" translation_description="Preference summary for auto mode info cards">
+    Mostra le schede info anche toccando gli oggetti in modalità automatica (sensori)
+    </string>
     <string name="object_info_funfact_label" translation_description="Label before the fun fact in info card">Curiosità:</string>
     <string name="object_info_distance_label" translation_description="Label for distance field">Distanza:</string>
     <string name="object_info_size_label" translation_description="Label for size field">Dimensione:</string>

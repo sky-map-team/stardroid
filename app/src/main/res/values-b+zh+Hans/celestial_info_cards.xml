@@ -494,13 +494,17 @@
     <string name="object_info_t_crb_distance" translation_description="Distance to T Crb shown in the info card. Translate units if appropriate for your locale.">3,000光年</string>
     <string name="object_info_t_crb_size" translation_description="Physical size of T Crb shown in the info card. Translate units if appropriate for your locale.">0.2天文单位轨道分离</string>
     <!-- Tarantula Nebula - NGC 2070 -->
-    <string name="object_info_tarantula_nebula_description" translation_description="Description of the Tarantula Nebula shown in the info card. Translate this text.">蛛形星云是本星系群中最大、最明亮的恒星形成区，是一个广阔的发射星云，嵌入大麦哲伦星云中，跨越约600光年。尽管距离我们163,000光年，但它足够明亮，肉眼可见。</string>
+    <string name="object_info_tarantula_nebula_description" translation_description="Description of the Tarantula Nebula shown in the info card. Translate this text.">
+    蛛形星云是本星系群中最大、最明亮的恒星形成区，是一个广阔的发射星云，嵌入大麦哲伦星云中，跨越约600光年。尽管距离我们163,000光年，但它足够明亮，肉眼可见。
+    </string>
     <string name="object_info_tarantula_nebula_funfact" translation_description="Fun fact about the Tarantula Nebula shown in the info card. Translate this text.">如果蜘蛛星云与猎户星云一样近，它将足够明亮，能在夜间投射阴影，并且会跨越半个可见的天空！</string>
     <string name="object_info_tarantula_nebula_distance" translation_description="Distance to the Tarantula Nebula shown in the info card. Translate units if appropriate for your locale.">163,000光年</string>
     <string name="object_info_tarantula_nebula_size" translation_description="Physical size of the Tarantula Nebula shown in the info card. Translate units if appropriate for your locale.">600光年宽</string>
     <!-- LMC - Large Magellanic Cloud -->
     <string name="object_info_lmc_description" translation_description="Description of the Large Magellanic Cloud shown in the info card. Translate this text.">大麦哲伦星云是银河系的一个不规则卫星星系，肉眼可见为天空中一个分离的、发光的斑块。它是我们最近的星系邻居之一，也是本星系群中最活跃的恒星形成星系之一。</string>
-    <string name="object_info_lmc_funfact" translation_description="Fun fact about the Large Magellanic Cloud shown in the info card. Translate this text.">1987年，大麦哲伦星云中的一颗恒星爆炸成为超新星1987A——这是自1604年以来第一次肉眼可见的超新星。爆炸产生的中微子比光线提前三小时到达地球，证实了我们对恒星核心坍缩的模型。</string>
+    <string name="object_info_lmc_funfact" translation_description="Fun fact about the Large Magellanic Cloud shown in the info card. Translate this text.">
+    1987年，大麦哲伦星云中的一颗恒星爆炸成为超新星1987A——这是自1604年以来第一次肉眼可见的超新星。爆炸产生的中微子比光线提前三小时到达地球，证实了我们对恒星核心坍缩的模型。
+    </string>
     <string name="object_info_lmc_distance" translation_description="Distance to the Large Magellanic Cloud shown in the info card. Translate units if appropriate for your locale.">160,000光年</string>
     <string name="object_info_lmc_size" translation_description="Physical size of the Large Magellanic Cloud shown in the info card. Translate units if appropriate for your locale.">14,000光年宽</string>
     <!-- SMC - Small Magellanic Cloud -->
@@ -790,7 +794,9 @@
     <string name="object_info_etamin_size" translation_description="Physical size of Etamin shown in the info card. Translate units if appropriate for your locale.">48 太阳半径</string>
     <string name="object_info_etamin_mass" translation_description="Mass of Etamin in scientific notation — no translation needed.">1.7 太阳质量</string>
 
-    <string name="object_info_izar_funfact" translation_description="Fun fact about Izar">19世纪天文学家弗里德里希·格奥尔格·威廉·冯·施特鲁维将牧夫座ε星称为"Pulcherrima"（拉丁文意为"最美的"），因为其橙色和蓝白色分量之间的色彩对比令人惊艳！</string>
+    <string name="object_info_izar_funfact" translation_description="Fun fact about Izar">
+    19世纪天文学家弗里德里希·格奥尔格·威廉·冯·施特鲁维将牧夫座ε星称为"Pulcherrima"（拉丁文意为"最美的"），因为其橙色和蓝白色分量之间的色彩对比令人惊艳！
+    </string>
     <string name="object_info_izar_distance" translation_description="Distance to Izar shown in the info card. Translate units if appropriate for your locale.">202 光年</string>
     <string name="object_info_izar_size" translation_description="Physical size of Izar shown in the info card. Translate units if appropriate for your locale.">33 太阳半径</string>
     <string name="object_info_izar_mass" translation_description="Mass of Izar in scientific notation — no translation needed.">~4.6 太阳质量</string>
@@ -845,7 +851,9 @@
     <string name="object_info_shedir_size" translation_description="Physical size of Shedir shown in the info card. Translate units if appropriate for your locale.">45 太阳半径</string>
     <string name="object_info_shedir_mass" translation_description="Mass of Shedir in scientific notation — no translation needed.">~4.0 太阳质量</string>
 
-    <string name="object_info_unukalhai_funfact" translation_description="Fun fact about Unukalhai">巨蛇座是唯一被分成两个独立部分的星座——巨蛇座头部（Serpens Caput）和巨蛇座尾部（Serpens Cauda）——由蛇夫座分隔，而Unukalhai是头部的最亮星！</string>
+    <string name="object_info_unukalhai_funfact" translation_description="Fun fact about Unukalhai">
+    巨蛇座是唯一被分成两个独立部分的星座——巨蛇座头部（Serpens Caput）和巨蛇座尾部（Serpens Cauda）——由蛇夫座分隔，而Unukalhai是头部的最亮星！
+    </string>
     <string name="object_info_unukalhai_distance" translation_description="Distance to Unukalhai shown in the info card. Translate units if appropriate for your locale.">74 光年</string>
     <string name="object_info_unukalhai_size" translation_description="Physical size of Unukalhai shown in the info card. Translate units if appropriate for your locale.">12 太阳半径</string>
     <string name="object_info_unukalhai_mass" translation_description="Mass of Unukalhai in scientific notation — no translation needed.">~2.1 太阳质量</string>

@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-<string name="help_text" translation_description="Please do not change the &lt; and &gt; markup">
-&lt;h1&gt;Карта звездного неба для Android&lt;/h1&gt;
+<string name="help_text" translation_description="This is the help text for the app Google Sky Map. It includes placeholders where other text is inserted. Please do not change the &lt; and &gt; markup">
+    &lt;h1&gt;Карта звездного неба для Android&lt;/h1&gt;
 &lt;p class="version"&gt;Версия %s&lt;/p&gt;
 &lt;p class="url"&gt;&lt;a href="https://stardroid.app"&gt;https://stardroid.app&lt;/a&gt;&lt;/p&gt;
 
@@ -94,5 +94,5 @@
 &lt;li&gt;Фотографии Хаббл предоставлены Научным институтом космического телескопа НАСА (&lt;a href="https://hubblesite.org/"&gt;https://hubblesite.org/&lt;/a&gt;)&lt;/li&gt;
 &lt;li&gt;M31 image Peter Kennett (&lt;a href="https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg"&gt;https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg&lt;/a&gt;)&lt;/li&gt;
 &lt;/ul&gt;
-</string>
+    </string>
 </resources>

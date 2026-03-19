@@ -6,9 +6,9 @@
         <item translation_description="Fast sensor speed">빠름</item>
     </string-array>
     <string-array name="sensor_damping">
-        <item translation_description="Low sensor damping factor">Jumpy</item>
-        <item translation_description="Medium sensor damping factor">Medium</item>
+        <item translation_description="Low sensor damping factor - this will make the app jittery">Jumpy</item>
+        <item translation_description="Medium sensor damping factor - this will make the app slightly jittery">Medium</item>
         <item translation_description="Extra High sensor damping factor">표준</item>
-        <item translation_description="Really High sensor damping factor">높음</item>
+        <item translation_description="Really High sensor damping factor - this will make the app sluggish">높음</item>
     </string-array>
     </resources>

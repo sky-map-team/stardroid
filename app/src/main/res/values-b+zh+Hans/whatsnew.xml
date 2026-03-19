@@ -1,9 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-    <string name="whats_new_text" translation_description="HTML structure for a page describing new features in this version of Sky Map. Please do not change the &lt; and &gt; markup">%3$s
+    <string name="whats_new_text" translation_description="HTML structure for a page describing new features in this version of Sky Map. Please do not change the &lt; and &gt; markup">
+    %3$s
 &lt;h1&gt;版本 %1$s 中的新功能&lt;/h1&gt;
 %2$s
 
 &lt;h1&gt;支持 Sky Map&lt;/h1&gt;
-&lt;p&gt;Sky Map 是免费的开源软件。如果您觉得它有用，请考虑在我们的 &lt;a href="https://github.com/sky-map-team/stardroid/?tab=readme-ov-file#support-the-project"&gt;GitHub&lt;/a&gt; 页面上支持开发。&lt;/p&gt;</string>
+&lt;p&gt;Sky Map 是免费的开源软件。如果您觉得它有用，请考虑在我们的 &lt;a href="https://github.com/sky-map-team/stardroid/?tab=readme-ov-file#support-the-project"&gt;GitHub&lt;/a&gt; 页面上支持开发。&lt;/p&gt;
+    </string>
 </resources>

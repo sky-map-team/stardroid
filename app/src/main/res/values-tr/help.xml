@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-<string name="help_text" translation_description="Please do not change the &lt; and &gt; markup">
-&lt;h1&gt;Android için Sky Map&lt;/h1&gt;
+<string name="help_text" translation_description="This is the help text for the app Google Sky Map. It includes placeholders where other text is inserted. Please do not change the &lt; and &gt; markup">
+    &lt;h1&gt;Android için Sky Map&lt;/h1&gt;
 &lt;p class="version"&gt;Sürüm %s&lt;/p&gt;
 &lt;p class="url"&gt;&lt;a href="https://stardroid.app"&gt;https://stardroid.app&lt;/a&gt;&lt;/p&gt;
 
@@ -95,5 +95,5 @@
 &lt;li&gt;M31 görüntüsü Peter Kennett tarafından (&lt;a href="https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg"&gt;https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg&lt;/a&gt;)&lt;/li&gt;
 &lt;li&gt;Kuyruklu Yıldız Leonard verileri: In-The-Sky.org&lt;/li&gt;
 &lt;/ul&gt;
-</string>
+    </string>
 </resources>
