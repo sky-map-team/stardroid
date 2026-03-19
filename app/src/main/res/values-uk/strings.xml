@@ -205,7 +205,7 @@
     <string name="connected" translation_description="Network status value shown when the device has an active network connection">З\'єднано</string>
     <string name="disconnected" translation_description="Network status value shown when the device has no network connection">Роз\'єднано</string>
     <string name="wifi" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (wifi)\'). Note the leading space.">(wifi)</string>
-    <string name="cell_network" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (cell)\'). Note the leading space.">" (виклик)"</string>
+    <string name="cell_network" translation_description="Network type suffix appended to the connection status (e.g. 'Connected (cell)'). Note the leading space.">" (мобільна мережа)"</string>
     <string name="menu_calibrate" translation_description="Menu item label to open the compass calibration screen">Калібрувати</string>
     <string name="compass_calibration_activity_heading_compass" translation_description="Static label in the compass calibration screen placed inline to the left of the live compass accuracy value (e.g. displayed as \'Compass - Accuracy: High\')">Компас -</string>
     <string name="compass_calibration_activity_do_not_show_this_again" translation_description="Checkbox label in the compass calibration dialog to suppress future automatic appearances">Більше не показувати</string>
