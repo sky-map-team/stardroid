@@ -749,11 +749,8 @@
     <string name="object_info_alhena_funfact" translation_description="Fun fact about Alhena">Nazwa Alhena pochodzi z arabskiego i oznacza "znak marki" — starożytni Arabowie widzieli tę gwiazdę jako znak na szyi wielbłąda!</string>
     <string name="object_info_alhena_distance" translation_description="Distance to Alhena shown in the info card. Translate units if appropriate for your locale.">109 lat świetlnych</string>
     <string name="object_info_alhena_size" translation_description="Physical size of Alhena shown in the info card. Translate units if appropriate for your locale.">3,3 promienia słonecznego</string>
-<<<<<<< jpfix
-    <string name="object_info_alhena_mass" translation_description="Mass of Alhena in scientific notation — no translation needed.">2,8 mas słonecznej</string>
-=======
+
     <string name="object_info_alhena_mass" translation_description="Mass of Alhena in scientific notation — no translation needed.">2,8 masy słonecznej</string>
->>>>>>> master
 
     <!-- Alkaid -->
     <string name="object_info_alkaid_description" translation_description="Short description of Alkaid">Alkaid to gwiazda na końcu uchwytu Wielkiego Wozu w Wielkiej Niedźwiedzicy. To trzecia najjaśniejsza gwiazda w Wielkiej Niedźwiedzicy.</string>
@@ -823,33 +820,20 @@
     <string name="object_info_kaus_australis_funfact" translation_description="Fun fact about Kaus Australis">Kaus Australis znajduje się w kierunku centrum naszej galaktyki Drogi Mlecznej! Patrząc na tę gwiazdę, patrzysz w stronę najgęstszej części płaszczyzny galaktycznej.</string>
     <string name="object_info_kaus_australis_distance" translation_description="Distance to Kaus Australis shown in the info card. Translate units if appropriate for your locale.">143 lata świetlne</string>
     <string name="object_info_kaus_australis_size" translation_description="Physical size of Kaus Australis shown in the info card. Translate units if appropriate for your locale.">6,8 promienia Słońca</string>
-<<<<<<< jpfix
-    <string name="object_info_kaus_australis_mass" translation_description="Mass of Kaus Australis in scientific notation — no translation needed.">3,5 solar masses</string>
-=======
-    <string name="object_info_kaus_australis_mass" translation_description="Mass of Kaus Australis in scientific notation — no translation needed.">3,5 mas Słońca</string>
->>>>>>> master
 
     <!-- Kochab -->
     <string name="object_info_kochab_description" translation_description="Short description of Kochab">Kochab to druga najjaśniejsza gwiazda w Małej Niedźwiedzicy (Małym Niedźwiedziu). Razem z Ferkad tworzy "Strażników Bieguna".</string>
     <string name="object_info_kochab_funfact" translation_description="Fun fact about Kochab">Około 1500 roku p.n.e. Kochab był najjaśniejszą gwiazdą najbliżej północnego bieguna niebieskiego, co czyniło go "Gwiazdą Polarną" dla starożytnych Egipcjan i fenickich żeglarzy!</string>
     <string name="object_info_kochab_distance" translation_description="Distance to Kochab shown in the info card. Translate units if appropriate for your locale.">131 lat świetlnych</string>
     <string name="object_info_kochab_size" translation_description="Physical size of Kochab shown in the info card. Translate units if appropriate for your locale.">42 promienia Słońca</string>
-<<<<<<< jpfix
-    <string name="object_info_kochab_mass" translation_description="Mass of Kochab in scientific notation — no translation needed.">1,3 solar masses</string>
-=======
     <string name="object_info_kochab_mass" translation_description="Mass of Kochab in scientific notation — no translation needed.">1,3 masy Słońca</string>
->>>>>>> master
 
     <!-- Merak -->
     <string name="object_info_merak_description" translation_description="Short description of Merak">Merak jest jedną z dwóch "Gwiazd Wskaźników" w Wielkim Wozie, które wskazują drogę do Gwiazdy Polarnej. Znajduje się w Wielkiej Niedźwiedzicy.</string>
     <string name="object_info_merak_funfact" translation_description="Fun fact about Merak">Merak ma nadmiar promieniowania podczerwonego, co sugeruje, że posiada dysk szczątków wokółgwiezdny — możliwie pierścień pyłu i materiału skalnego podobny do naszego pasa asteroid!</string>
     <string name="object_info_merak_distance" translation_description="Distance to Merak shown in the info card. Translate units if appropriate for your locale.">80 lat świetlnych</string>
     <string name="object_info_merak_size" translation_description="Physical size of Merak shown in the info card. Translate units if appropriate for your locale.">3,0 promienia Słońca</string>
-<<<<<<< jpfix
-    <string name="object_info_merak_mass" translation_description="Mass of Merak in scientific notation — no translation needed.">2,7 solar masses</string>
-=======
-<string name="object_info_merak_mass" translation_description="Mass of Merak in scientific notation — no translation needed.">2,7 mas Słońca</string>
->>>>>>> master
+    <string name="object_info_merak_mass" translation_description="Mass of Merak in scientific notation — no translation needed.">2,7 mas Słońca</string>
 
     <!-- Menkar -->
     <string name="object_info_menkar_description" translation_description="Short description of Menkar">Menkar to czerwony olbrzym, który zaznacza nos Cetuса (Potwora Morskiego). Jego nazwa oznacza "nozdrze" w języku arabskim.</string>
@@ -941,11 +925,7 @@
 
     <!-- Circinus -->
     <string name="object_info_circinus_description" translation_description="Description of Circinus shown in the info card. Translate this text.">Circinus (Cyrkiel) to jedna z najmniejszych konstelacji, utworzona przez Lacaille\'a, aby reprezentować cyrkiel kreślarski używany do rysowania okręgów.</string>
-<<<<<<< jpfix
-    <string name="object_info_circinus_funfact" translation_description="Fun fact about Circinus shown in the info card. Translate this text.">Galaktyka Circinus jest jedną z najbliższych nam galaktyk Seyferta — aktywną galaktyką z supermasywnąc czarną dziurą, która napędza jasne strumienie materii!</string>
-=======
     <string name="object_info_circinus_funfact" translation_description="Fun fact about Circinus shown in the info card. Translate this text.">Galaktyka Circinus jest jedną z najbliższych nam galaktyk Seyferta — aktywną galaktyką z supermasywną czarną dziurą, która napędza jasne strumienie materii!</string>
->>>>>>> master
     <string name="object_info_circinus_size" translation_description="Physical size of Circinus shown in the info card. Translate units if appropriate for your locale.">93 stopni kwadratowych</string>
 
     <!-- Columba -->
@@ -1009,12 +989,7 @@
     <string name="object_info_leo_minor_size" translation_description="Physical size of Leo Minor shown in the info card. Translate units if appropriate for your locale.">232 stopnie kwadratowe</string>
 
     <!-- Lupus -->
-    <string name="object_info_lupus_description" translation_description="Description of Lupus shown in the info card. Translate this text.">Lupus (Wilk) to starożytne południowe konstelacja. Grecy i Rzymianie widzieli w niej dzikie zwierzę przebite na palu trzymanym przez Centaura.</string>
-<<<<<<< jpfix
-    <string name="object_info_lupus_funfact" translation_description="Fun fact about Lupus shown in the info card. Translate this text.">W 1006 roku najjaśniejsza supernowa kiedykolwiek zaobserwowana przez ludzi pojawiła się w Wilku — SN 1006 była widoczna w dzień i mogła osiągnąć jasność −7,5!=</string>
-=======
     <string name="object_info_lupus_funfact" translation_description="Fun fact about Lupus shown in the info card. Translate this text.">W 1006 roku najjaśniejsza supernowa kiedykolwiek zaobserwowana przez ludzi pojawiła się w Wilku — SN 1006 była widoczna w dzień i mogła osiągnąć jasność −7,5!</string>
->>>>>>> master
     <string name="object_info_lupus_size" translation_description="Physical size of Lupus shown in the info card. Translate units if appropriate for your locale.">334 stopnie kwadratowe</string>
 
     <!-- Lynx -->
