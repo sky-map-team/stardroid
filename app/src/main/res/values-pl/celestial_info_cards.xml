@@ -749,7 +749,6 @@
     <string name="object_info_alhena_funfact" translation_description="Fun fact about Alhena">Nazwa Alhena pochodzi z arabskiego i oznacza "znak marki" — starożytni Arabowie widzieli tę gwiazdę jako znak na szyi wielbłąda!</string>
     <string name="object_info_alhena_distance" translation_description="Distance to Alhena shown in the info card. Translate units if appropriate for your locale.">109 lat świetlnych</string>
     <string name="object_info_alhena_size" translation_description="Physical size of Alhena shown in the info card. Translate units if appropriate for your locale.">3,3 promienia słonecznego</string>
-
     <string name="object_info_alhena_mass" translation_description="Mass of Alhena in scientific notation — no translation needed.">2,8 masy słonecznej</string>
 
     <!-- Alkaid -->
@@ -820,6 +819,7 @@
     <string name="object_info_kaus_australis_funfact" translation_description="Fun fact about Kaus Australis">Kaus Australis znajduje się w kierunku centrum naszej galaktyki Drogi Mlecznej! Patrząc na tę gwiazdę, patrzysz w stronę najgęstszej części płaszczyzny galaktycznej.</string>
     <string name="object_info_kaus_australis_distance" translation_description="Distance to Kaus Australis shown in the info card. Translate units if appropriate for your locale.">143 lata świetlne</string>
     <string name="object_info_kaus_australis_size" translation_description="Physical size of Kaus Australis shown in the info card. Translate units if appropriate for your locale.">6,8 promienia Słońca</string>
+    <string name="object_info_kaus_australis_mass" translation_description="Mass of Kaus Australis in scientific notation — no translation needed.">3,5 mas Słońca</string>
 
     <!-- Kochab -->
     <string name="object_info_kochab_description" translation_description="Short description of Kochab">Kochab to druga najjaśniejsza gwiazda w Małej Niedźwiedzicy (Małym Niedźwiedziu). Razem z Ferkad tworzy "Strażników Bieguna".</string>
@@ -989,6 +989,7 @@
     <string name="object_info_leo_minor_size" translation_description="Physical size of Leo Minor shown in the info card. Translate units if appropriate for your locale.">232 stopnie kwadratowe</string>
 
     <!-- Lupus -->
+    <string name="object_info_lupus_description" translation_description="Description of Lupus shown in the info card. Translate this text.">Lupus (Wilk) to starożytne południowe konstelacja. Grecy i Rzymianie widzieli w niej dzikie zwierzę przebite na palu trzymanym przez Centaura.</string>
     <string name="object_info_lupus_funfact" translation_description="Fun fact about Lupus shown in the info card. Translate this text.">W 1006 roku najjaśniejsza supernowa kiedykolwiek zaobserwowana przez ludzi pojawiła się w Wilku — SN 1006 była widoczna w dzień i mogła osiągnąć jasność −7,5!</string>
     <string name="object_info_lupus_size" translation_description="Physical size of Lupus shown in the info card. Translate units if appropriate for your locale.">334 stopnie kwadratowe</string>
 
