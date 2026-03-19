@@ -16,4 +16,15 @@
         <item translation_description="Rotates the screen by 90 degrees">Döndürülmüş yatay</item>
         <item translation_description="Shows the sky as pointed at by the long edge of the phone">İşaretçi modu</item>
     </string-array>
-    </resources>
+    <string-array name="auto_dim_texts">
+        <item translation_description="Dimmest screen setting">Çok Loş</item>
+        <item translation_description="Leave it on the system setting">Sistem Varsayılanı</item>
+        <item translation_description="The setting used for the last 15 years">Klasik</item>
+    </string-array>
+    <string-array name="font_size_texts">
+        <item translation_description="Smallest font size">Küçük</item>
+        <item translation_description="Normal font size">Orta</item>
+        <item translation_description="Large font size">Büyük</item>
+        <item translation_description="Largest font size">Çok Büyük</item>
+    </string-array>
+</resources>

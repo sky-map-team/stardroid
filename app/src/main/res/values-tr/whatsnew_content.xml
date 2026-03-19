@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Göksel Görüntüler</h2>
+    Bilgi kartları artık tüm 145 nesne için fotoğraflar içeriyor — gezegenler, yıldızlar, takımyıldızlar ve Messier nesneleri. Herhangi bir nesneyi görsel olarak keşfetmek için dokunun.
+
+<h2>Yeni Katalog Nesneleri</h2>
+    T Coronae Borealis ("Blaze Star") ve Eta Carinae Nebulası artık katalogda yer alıyor.
+
+<h2>Gece Modu</h2>
+    Kırmızı gece modu artık tüm UI öğelerini kapsıyor; tüm iletişim kutuları ve pusula kalibrasyonu ekranı dahil — karanlıkta artık hiçbir parlak beyaz yanıp sönen ışık yok.]]></string>
+    <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Beta kullanıcıları!</h2>
+<h3>Nasıl yardımcı olabilirsiniz</h3>
+Bu sürümde manuel modu kullandığınızda ve haritayı kaydırdığınızda, ufuk seviyeye dönecek, böylece haritanın üstü her zaman sizin üstünüzdeki yıldızları gösterecektir. Daha önce harita sadece düz bir çizgide hareket ederdi, bu nedenle ters dönebilirdiniz. Bunu nasıl buluyorsunuz? Daha iyi mi? Lütfen bize <a href="https://forms.gle/JkrMw7Zc4ynp45J79">buradan</a> haber verin.<br/>
+Bu bilgileri tekrar görmek için yardım menüsünü açın.]]></string>
+</resources>
