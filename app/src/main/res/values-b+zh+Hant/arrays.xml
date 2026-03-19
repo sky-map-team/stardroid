@@ -11,4 +11,20 @@
         <item translation_description="Extra High sensor damping factor">標準</item>
         <item translation_description="Really High sensor damping factor">遲緩</item>
     </string-array>
-    </resources>
+    <string-array name="viewing_direction">
+        <item translation_description="Normal viewing">正常</item>
+        <item translation_description="Rotates the screen by 90 degrees">旋轉地平線</item>
+        <item translation_description="Shows the sky as pointed at by the long edge of the phone">指標模式</item>
+    </string-array>
+    <string-array name="auto_dim_texts">
+        <item translation_description="Dimmest screen setting">非常昏暗</item>
+        <item translation_description="Leave it on the system setting">系統預設</item>
+        <item translation_description="The setting used for the last 15 years">經典</item>
+    </string-array>
+    <string-array name="font_size_texts">
+        <item translation_description="Smallest font size">小</item>
+        <item translation_description="Normal font size">中</item>
+        <item translation_description="Large font size">大</item>
+        <item translation_description="Largest font size">特大</item>
+    </string-array>
+</resources>
