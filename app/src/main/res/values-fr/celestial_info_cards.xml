@@ -774,7 +774,11 @@
 
     <!-- Alphekka -->
     <string name="object_info_alphekka_description" translation_description="Short description of Alphekka">Alphekka (aussi appelée Gemma) est l\'étoile la plus brillante de la Couronne Boréale (la Couronne du Nord). C\'est le joyau de ce petit cercle d\'étoiles.</string>
+<<<<<<< jpfix
     <string name="object_info_alphekka_funfact" translation_description="Fun fact about Alphekka">Alphekka est une binaire éclipsante — sa compagne faible passe devant elle tous les 17,4 jours, causant une légère baisse de luminosité qui\'s presque impossible à voir sans instruments !</string>
+=======
+    <string name="object_info_alphekka_funfact" translation_description="Fun fact about Alphekka">Alphekka est une binaire éclipsante — sa compagne faible passe devant elle tous les 17,4 jours, causant une légère baisse de luminosité qui est presque impossible à voir sans instruments !</string>
+>>>>>>> master
     <string name="object_info_alphekka_distance" translation_description="Distance to Alphekka shown in the info card. Translate units if appropriate for your locale.">75 années-lumière</string>
     <string name="object_info_alphekka_size" translation_description="Physical size of Alphekka shown in the info card. Translate units if appropriate for your locale.">2,9 rayons solaires</string>
     <string name="object_info_alphekka_mass" translation_description="Mass of Alphekka in scientific notation — no translation needed.">2,6 masses solaires</string>
@@ -920,7 +924,11 @@
 
     <!-- Chamaeleon -->
     <string name="object_info_chamaeleon_description" translation_description="Description of Chamaeleon shown in the info card. Translate this text.">Chamaeleon est une petite constellation australe introduite par les navigateurs néerlandais à la fin du XVIe siècle, représentant le lézard qui change de couleur.</string>
+<<<<<<< jpfix
     <string name="object_info_chamaeleon_funfact" translation_description="Fun fact about Chamaeleon shown in the info card. Translate this text.">Chamaeleon contient un grand complexe de nuages moléculaires où de nouvelles étoiles se forment activement — c\'est l\'une des régions de formation d\'étoiles les plus proches de la Terre à seulement 500 années-lumière!==/TRANSLATION ITEM==</string>
+=======
+    <string name="object_info_chamaeleon_funfact" translation_description="Fun fact about Chamaeleon shown in the info card. Translate this text.">Chamaeleon contient un grand complexe de nuages moléculaires où de nouvelles étoiles se forment activement — c\'est l\'une des régions de formation d\'étoiles les plus proches de la Terre à seulement 500 années-lumière!</string>
+>>>>>>> master
     <string name="object_info_chamaeleon_size" translation_description="Physical size of Chamaeleon shown in the info card. Translate units if appropriate for your locale.">132 degrés carrés</string>
 
     <!-- Circinus -->
@@ -975,7 +983,7 @@
 
     <!-- Indus -->
     <string name="object_info_indus_description" translation_description="Description of Indus shown in the info card. Translate this text.">Indus (l\'Indien) est une constellation australe créée par les navigateurs hollandais, représentant à l\'origine un indigène des Indes orientales ou de Madagascar.</string>
-    <string name="object_info_indus_funfact" translation_description="Fun fact about Indus shown in the info card. Translate this text.">Epsilon Indi, l\'une des étoiles les plus proches semblables au Soleil à seulement 12 années-lumière, se trouve dans le Poisson austral — et elle possède un système de compagnon naine brune!</string>
+    <string name="object_info_indus_funfact" translation_description="Fun fact about Indus shown in the info card. Translate this text.">Epsilon Indi, l\'une des étoiles les plus proches semblables au Soleil à seulement 12 années-lumière, se trouve dans l\'Indien — et elle possède un système de compagnon naine brune!</string>
     <string name="object_info_indus_size" translation_description="Physical size of Indus shown in the info card. Translate units if appropriate for your locale.">294 degrés carrés</string>
 
     <!-- Lacerta -->

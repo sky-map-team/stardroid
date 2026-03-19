@@ -745,7 +745,7 @@
     <string name="object_info_algieba_mass" translation_description="Mass of Algieba in scientific notation — no translation needed.">~1.2太陽質量</string>
 
     <!-- Alhena -->
-    <string name="object_info_alhena_description" translation_description="Short description of Alhena">Alhenaはふたご座の双子の一人ポルックスの足を示しています。明るい白色準巨星で、ふたご座で最も目立つ星の一つです。</string>
+<string name="object_info_alhena_description" translation_description="Short description of Alhena">アルヘナはふたご座の双子の一人ポルックスの足を示しています。明るい白色準巨星で、ふたご座で最も目立つ星の一つです。</string>
     <string name="object_info_alhena_funfact" translation_description="Fun fact about Alhena">アルヘナの名前はアラビア語の「焼き印」という意味に由来しています。古代アラブ人はこの星をラクダの首の焼き印として見ていました！</string>
     <string name="object_info_alhena_distance" translation_description="Distance to Alhena shown in the info card. Translate units if appropriate for your locale.">109光年</string>
     <string name="object_info_alhena_size" translation_description="Physical size of Alhena shown in the info card. Translate units if appropriate for your locale.">3.3太陽半径</string>
@@ -766,8 +766,8 @@
     <string name="object_info_alnair_mass" translation_description="Mass of Alnair in scientific notation — no translation needed.">4.0太陽質量</string>
 
     <!-- Alnath -->
-    <string name="object_info_alnath_description" translation_description="Short description of Alnath">アルナトは牡牛座で2番目に明るい星で、牡牛の北の角の先端を示しています。それはおうし座とぎゃくしゃ座の境界線上に位置しています。</string>
-    <string name="object_info_alnath_funfact" translation_description="Fun fact about Alnath">アルナトは、かつて2つの星座で共有されていました！1930年にIAUが正式にそれをおうし座に割り当てる前に、おうし座のベータ星とぎゃしゃ座のガンマ星の両方として指定されていました。</string>
+    <string name="object_info_alnath_description" translation_description="Short description of Alnath">アルナトは牡牛座で2番目に明るい星で、牡牛の北の角の先端を示しています。それはおうし座とぎょしゃ座の境界線上に位置しています。</string>
+    <string name="object_info_alnath_funfact" translation_description="Fun fact about Alnath">アルナトは、かつて2つの星座で共有されていました！1930年にIAUが正式にそれをおうし座に割り当てる前に、おうし座のベータ星とぎょしゃ座のガンマ星の両方として指定されていました。</string>
     <string name="object_info_alnath_distance" translation_description="Distance to Alnath shown in the info card. Translate units if appropriate for your locale.">134光年</string>
     <string name="object_info_alnath_size" translation_description="Physical size of Alnath shown in the info card. Translate units if appropriate for your locale.">4.2太陽半径</string>
     <string name="object_info_alnath_mass" translation_description="Mass of Alnath in scientific notation — no translation needed.">5.0太陽質量</string>
@@ -822,7 +822,7 @@
     <string name="object_info_kaus_australis_mass" translation_description="Mass of Kaus Australis in scientific notation — no translation needed.">3.5太陽質量</string>
 
     <!-- Kochab -->
-    <string name="object_info_kochab_description" translation_description="Short description of Kochab">コクハブは小熊座（こぐまざ）で2番目に明るい星です。フェルカドとともに「極の守護者」を形成しています。</string>
+    <string name="object_info_kochab_description" translation_description="Short description of Kochab">コクハブは小熊座（こぐま座）で2番目に明るい星です。フェルカドとともに「極の守護者」を形成しています。</string>
     <string name="object_info_kochab_funfact" translation_description="Fun fact about Kochab">紀元前1500年頃、コハブは北天極に最も近い明るい星であり、古代エジプト人とフェニキア人の船乗りにとって「北極星」でした！</string>
     <string name="object_info_kochab_distance" translation_description="Distance to Kochab shown in the info card. Translate units if appropriate for your locale.">131光年</string>
     <string name="object_info_kochab_size" translation_description="Physical size of Kochab shown in the info card. Translate units if appropriate for your locale.">42太陽半径</string>
@@ -959,13 +959,13 @@
     <string name="object_info_equuleus_size" translation_description="Physical size of Equuleus shown in the info card. Translate units if appropriate for your locale.">72平方度</string>
 
     <!-- Fornax -->
-    <string name="object_info_fornax_description" translation_description="Description of Fornax shown in the info card. Translate this text.">フォーマルハウト座（炉）はラカイユによって化学炉を表すために作られました。くじら座とエリダヌス座の間にある淡い南天星座です。</string>
+    <string name="object_info_fornax_description" translation_description="Description of Fornax shown in the info card. Translate this text.">ろ座（炉）はラカイユによって化学炉を表すために作られました。くじら座とエリダヌス座の間にある淡い南天星座です。</string>
     <string name="object_info_fornax_funfact" translation_description="Fun fact about Fornax shown in the info card. Translate this text.">ハッブル・ウルトラ・ディープ・フィールド — 宇宙で最も深い画像の1つで、130億光年離れた銀河を明らかにした — はフォーマルハウト座で撮影されました!</string>
     <string name="object_info_fornax_size" translation_description="Physical size of Fornax shown in the info card. Translate units if appropriate for your locale.">398平方度</string>
 
     <!-- Horologium -->
     <string name="object_info_horologium_description" translation_description="Description of Horologium shown in the info card. Translate this text.">Horologium（振り子時計）はLacailleによって、1656年のChristiaan Huygens\'による振り子時計の発明を記念して作られました。</string>
-    <string name="object_info_horologium_funfact" translation_description="Fun fact about Horologium shown in the info card. Translate this text.">Horологium（時計座）には、Horologium-Reticulum Supercluster（ホロロジウム・レティクルム超銀河団）と呼ばれる巨大な超銀河団が含まれており、これは近傍宇宙で最大級の構造の1つです！</string>
+    <string name="object_info_horologium_funfact" translation_description="Fun fact about Horologium shown in the info card. Translate this text.">Horologium（時計座）には、Horologium-Reticulum Supercluster（ホロロジウム・レティクルム超銀河団）と呼ばれる巨大な超銀河団が含まれており、これは近傍宇宙で最大級の構造の1つです！</string>
     <string name="object_info_horologium_size" translation_description="Physical size of Horologium shown in the info card. Translate units if appropriate for your locale.">249平方度</string>
 
     <!-- Hydrus -->
@@ -1005,7 +1005,7 @@
 
     <!-- Microscopium -->
     <string name="object_info_microscopium_description" translation_description="Description of Microscopium shown in the info card. Translate this text.">Microscopium（顕微鏡）はLacailleが複合顕微鏡を称えるために作成した星座です。空の中で最も暗い星座の1つです。</string>
-    <string name="object_info_microscopium_funfact" translation_description="Fun fact about Microscopium shown in the info card. Translate this text.">Microscopium\'s最も明るい星であるGamma Microscopiiは、かつて隣接するSagittariusの一部でした。1930年に星座の境界が標準化された際に再割り当てされました!</string>
+    <string name="object_info_microscopium_funfact" translation_description="Fun fact about Microscopium shown in the info card. Translate this text.">けんびきょう座の最も明るい星であるGamma Microscopiiは、かつて隣接するSagittariusの一部でした。1930年に星座の境界が標準化された際に再割り当てされました!</string>
     <string name="object_info_microscopium_size" translation_description="Physical size of Microscopium shown in the info card. Translate units if appropriate for your locale.">210平方度</string>
 
     <!-- Musca -->
@@ -1089,7 +1089,7 @@
     <string name="object_info_volans_size" translation_description="Physical size of Volans shown in the info card. Translate units if appropriate for your locale.">141平方度</string>
 
     <!-- Vulpecula -->
-    <string name="object_info_vulpecula_description" translation_description="Description of Vulpecula shown in the info card. Translate this text.">Vulpecula（小狐座）は、1687年にヘベリウスによって作られた薄い北の星座です。白鳥座とや矢座の間の天の川の中心に位置しています。</string>
+    <string name="object_info_vulpecula_description" translation_description="Description of Vulpecula shown in the info card. Translate this text.">Vulpecula（小狐座）は、1687年にヘベリウスによって作られた薄い北の星座です。白鳥座とや座の間の天の川の中心に位置しています。</string>
     <string name="object_info_vulpecula_funfact" translation_description="Fun fact about Vulpecula shown in the info card. Translate this text.">こぎつね座はダンベル星雲（M27）を含んでおり、これは史上初めて発見された惑星状星雲（1764年にシャルル・メシエにより発見）であり、双眼鏡での美しい観測対象です！</string>
     <string name="object_info_vulpecula_size" translation_description="Physical size of Vulpecula shown in the info card. Translate units if appropriate for your locale.">268平方度</string>
 </resources>
