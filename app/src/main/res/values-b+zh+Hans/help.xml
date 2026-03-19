@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-<string name="help_text" translation_description="Please do not change the &lt; and &gt; markup">
-&lt;h1&gt;星空地图 Android 版&lt;/h1&gt;
+<string name="help_text" translation_description="This is the help text for the app Google Sky Map. It includes placeholders where other text is inserted. Please do not change the &lt; and &gt; markup">
+    &lt;h1&gt;星空地图 Android 版&lt;/h1&gt;
 &lt;p class="version"&gt;版本 %s&lt;/p&gt;
 &lt;p class="url"&gt;&lt;a href="https://stardroid.app"&gt;https://stardroid.app&lt;/a&gt;&lt;/p&gt;
 
@@ -95,5 +95,5 @@
 &lt;li&gt;哈勃图片由美国宇航局的空间望远镜研究所提供 (&lt;a href="https://hubblesite.org/"&gt;https://hubblesite.org/&lt;/a&gt;)&lt;/li&gt;
 &lt;li&gt;M31 图片由 Peter Kennett 提供 (&lt;a href="https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg"&gt;https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg&lt;/a&gt;)&lt;/li&gt;
 &lt;/ul&gt;
-</string>
+    </string>
 </resources>

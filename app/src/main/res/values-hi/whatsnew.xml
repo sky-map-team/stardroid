@@ -1,9 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-    <string name="whats_new_text" translation_description="HTML structure for a page describing new features in this version of Sky Map. Please do not change the &lt; and &gt; markup">%3$s
+    <string name="whats_new_text" translation_description="HTML structure for a page describing new features in this version of Sky Map. Please do not change the &lt; and &gt; markup">
+    %3$s
 &lt;h1&gt;संस्करण %1$s में नया&lt;/h1&gt;
 %2$s
 
 &lt;h1&gt;Sky Map को समर्थन दें&lt;/h1&gt;
-&lt;p&gt;Sky Map मुक्त और खुला स्रोत है। यदि आप इसे उपयोगी पाते हैं, तो कृपया हमारे &lt;a href="https://github.com/sky-map-team/stardroid/?tab=readme-ov-file#support-the-project"&gt;GitHub&lt;/a&gt; पृष्ठ पर विकास का समर्थन करने पर विचार करें।&lt;/p&gt;</string>
+&lt;p&gt;Sky Map मुक्त और खुला स्रोत है। यदि आप इसे उपयोगी पाते हैं, तो कृपया हमारे &lt;a href="https://github.com/sky-map-team/stardroid/?tab=readme-ov-file#support-the-project"&gt;GitHub&lt;/a&gt; पृष्ठ पर विकास का समर्थन करने पर विचार करें।&lt;/p&gt;
+    </string>
 </resources>

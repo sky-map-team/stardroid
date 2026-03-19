@@ -6,9 +6,9 @@
         <item translation_description="Fast sensor speed">Быстро</item>
     </string-array>
     <string-array name="sensor_damping">
-        <item translation_description="Low sensor damping factor">Скачками</item>
-        <item translation_description="Medium sensor damping factor">Среднее</item>
+        <item translation_description="Low sensor damping factor - this will make the app jittery">Скачками</item>
+        <item translation_description="Medium sensor damping factor - this will make the app slightly jittery">Среднее</item>
         <item translation_description="Extra High sensor damping factor">Обычное</item>
-        <item translation_description="Really High sensor damping factor">Высокое</item>
+        <item translation_description="Really High sensor damping factor - this will make the app sluggish">Высокое</item>
     </string-array>
     </resources>

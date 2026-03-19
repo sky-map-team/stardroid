@@ -29,7 +29,6 @@
     <string name="location_permission_later" translation_description="Button in the location permission dialog to defer the decision">稍後</string>
     <string name="location_warning_permission" translation_description="Warning message shown when location is unavailable because permission was not granted">位置不可用 — 未授予權限。</string>
     <string name="location_warning_manual" translation_description="Warning message shown when manual location mode is selected but no coordinates have been entered">位置未設定 — 請在設定中進行配置。</string>
-<!-- TODO: many translations require two placeholders. Once all translations brought up to date we can clean this up -->
     <string name="location_unable_to_geocode" translation_description="Error message when converting a place name to coordinates (geocoding) fails, possibly due to no network">無法解譯您的位置資訊，您的網路系統目前的連線狀態是否正常？</string>
     <string name="location_not_found_title" translation_description="dialog box title when location not found">抱歉</string>
     <string name="location_not_found" translation_description="dialog message when placename not found">找不到%s。</string>
@@ -152,7 +151,8 @@
 
     <string name="no_sensor_warning" translation_description="Warning shown when required orientation sensors are not detected on the device">你的裝置沒有方位感應器 - 自動模式可能無法運作</string>
     <string name="warning_dialog_title" translation_description="Title of a warning dialog shown when something is wrong, e.g. a missing sensor">壞消息！</string>
-    <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">\n
+    <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">
+    \n
         您的裝置可能不具備 Sky Map 所需的感應器之一。\n\n
         Sky Map 需要內建羅盤與加速計才能自動顯示裝置所指向的星空。您的裝置回報其中一個感應器不存在。
         好消息是有些裝置的回報不完全正確，例如某些 Moto E 型號手機，其實具備羅盤功能卻回報沒有。\n\n
@@ -213,7 +213,9 @@
     <string name="sensor_reverse_preference_summary" translation_description="Summary for the Reverse Magnetic Z preference">修正手機感應器錯誤 - 需重新開機</string>
     <string name="whats_new_dialog_title" translation_description="Title of the dialog shown on first launch after an update, listing new features">最新消息</string>
     <string name="disable_gyro_preference_title" translation_description="Preference title for disabling the gyroscope sensor">停用陀螺儀</string>
-    <string name="disable_gyro_preference_summary" translation_description="Explanation of the disable gyroscope preference and when to use it">不是所有裝置都有陀螺儀 - 如果您的裝置具備陀螺儀，清除這個核取方塊以啟用它，可以得到更好的效果。反之，如果您的裝置沒有陀螺儀卻取消停用，Sky Map 可能無法運作。</string>
+    <string name="disable_gyro_preference_summary" translation_description="Explanation of the disable gyroscope preference and when to use it">
+    不是所有裝置都有陀螺儀 - 如果您的裝置具備陀螺儀，清除這個核取方塊以啟用它，可以得到更好的效果。反之，如果您的裝置沒有陀螺儀卻取消停用，Sky Map 可能無法運作。
+    </string>
     <string name="rotate_horizon_preference_title" translation_description="Preference title for choosing the view/pointing direction mode">地平線旋轉</string>
     <string name="auto_level_horizon_preference_title" translation_description="Preference title for the auto-level horizon feature in manual mode">自動水平地平線</string>
     <string name="auto_level_horizon_preference_summary" translation_description="Summary for the auto-level horizon preference">在手動模式下，抬起手指後地平線會逐漸恢復水平</string>

@@ -6,10 +6,10 @@
         <item translation_description="Fast sensor speed">Schnell</item>
     </string-array>
     <string-array name="sensor_damping">
-        <item translation_description="Low sensor damping factor">Ruckelnd</item>
-        <item translation_description="Medium sensor damping factor">Mittel</item>
+        <item translation_description="Low sensor damping factor - this will make the app jittery">Ruckelnd</item>
+        <item translation_description="Medium sensor damping factor - this will make the app slightly jittery">Mittel</item>
         <item translation_description="Extra High sensor damping factor">Standard</item>
-        <item translation_description="Really High sensor damping factor">Hoch</item>
+        <item translation_description="Really High sensor damping factor - this will make the app sluggish">Hoch</item>
     </string-array>
     <string-array name="viewing_direction">
         <item translation_description="Normal viewing">Normal</item>

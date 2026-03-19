@@ -23,7 +23,9 @@
     <string name="location_offer_to_enable" translation_description="Dialog message asking whether to enable automatic location">Lokasi otomatis dinonaktifkan. Apakah Anda ingin mengaktifkannya?</string>
     <string name="location_offer_to_enable_gps_title" translation_description="Title of dialog shown when automatic location is disabled">Lokasi otomatis dinonaktifkan</string>
     <string name="location_permission_dialog_title" translation_description="Title of the dialog that requests location permission from the user">Lokasi Diperlukan</string>
-    <string name="location_permission_dialog_message" translation_description="Body text of the dialog requesting location permission, explaining why the app needs it and what happens without it">Sky Map memerlukan lokasi perkiraan Anda untuk menampilkan langit malam yang benar. Anda dapat memberikan izin, memasukkan lokasi Anda secara manual, atau memutuskan nanti. Jika Anda memutuskan nanti, peta tidak akan akurat sampai lokasi Anda telah diatur.</string>
+    <string name="location_permission_dialog_message" translation_description="Body text of the dialog requesting location permission, explaining why the app needs it and what happens without it">
+    Sky Map memerlukan lokasi perkiraan Anda untuk menampilkan langit malam yang benar. Anda dapat memberikan izin, memasukkan lokasi Anda secara manual, atau memutuskan nanti. Jika Anda memutuskan nanti, peta tidak akan akurat sampai lokasi Anda telah diatur.
+    </string>
     <string name="location_permission_grant" translation_description="Button in the location permission dialog to grant location access">Berikan Izin</string>
     <string name="location_permission_enter_manually" translation_description="Button in the location permission dialog to enter location by hand instead of granting permission">Masukkan Secara Manual</string>
     <string name="location_permission_later" translation_description="Button in the location permission dialog to defer the decision">Nanti</string>
@@ -150,16 +152,22 @@
     <string name="enable_analytics" translation_description="Preference label to opt in to sending anonymous usage statistics">Kirim statistik penggunaan</string>
     <string name="enable_analytics_desc" translation_description="Description/summary for the usage statistics preference">Tingkatkan Sky Map dengan mengirim data anonim ke Google Analytics</string>
 
-    <string name="no_sensor_warning" translation_description="Warning shown when required orientation sensors are not detected on the device">Perangkat Anda mungkin tidak memiliki sensor orientasi - mode otomatis mungkin tidak berfungsi</string>
+    <string name="no_sensor_warning" translation_description="Warning shown when required orientation sensors are not detected on the device">
+    Perangkat Anda mungkin tidak memiliki sensor orientasi - mode otomatis mungkin tidak berfungsi
+    </string>
     <string name="warning_dialog_title" translation_description="Title of a warning dialog shown when something is wrong, e.g. a missing sensor">Berita buruk!</string>
-    <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">Sayang sekali perangkat Anda mungkin tidak memiliki salah satu sensor yang dibutuhkan Sky Map.
+    <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">
+    Sayang sekali perangkat Anda mungkin tidak memiliki salah satu sensor yang dibutuhkan Sky Map.
 
 Untuk menampilkan langit ke arah yang ditunjuk ponsel Anda, Sky Map memerlukan kompas bawaan dan akselerometer. Perangkat Anda melaporkan bahwa salah satunya hilang. Kabar baiknya adalah beberapa perangkat (misalnya beberapa ponsel Moto E) secara keliru mengklaim tidak memiliki kompas padahal sebenarnya memilikinya.
 
-Jika perangkat Anda benar-benar kehilangan sensor, mode otomatis tidak akan berfungsi. Namun, Anda masih dapat menggunakan Sky Map di perangkat ini dalam mode manual di mana Anda dapat menyeret, memutar, dan meregangkan peta dengan jari Anda.</string>
+Jika perangkat Anda benar-benar kehilangan sensor, mode otomatis tidak akan berfungsi. Namun, Anda masih dapat menggunakan Sky Map di perangkat ini dalam mode manual di mana Anda dapat menyeret, memutar, dan meregangkan peta dengan jari Anda.
+    </string>
     <string name="do_not_show_again" translation_description="Checkbox or button label to suppress future display of a warning dialog">Jangan tampilkan pesan ini lagi</string>
     <string name="title_activity_diagnostic" translation_description="Title bar text for the Diagnostics activity/screen">Diagnostik</string>
-    <string name="play_services_error" translation_description="Warning shown in the diagnostics screen when Google Play Services has an error that may affect automatic location">Peringatan: Kesalahan Google Play Services - Lokasi otomatis mungkin tidak berfungsi</string>
+    <string name="play_services_error" translation_description="Warning shown in the diagnostics screen when Google Play Services has an error that may affect automatic location">
+    Peringatan: Kesalahan Google Play Services - Lokasi otomatis mungkin tidak berfungsi
+    </string>
     <string name="sensor_absent" translation_description="Sensor status shown in diagnostics when the sensor is not present on the device">Tidak ada</string>
     <string name="sensor_accuracy_unknown" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">Akurasi: Tidak diketahui</string>
     <string name="sensor_accuracy_unreliable" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">Akurasi: Tidak dapat diandalkan</string>
@@ -196,8 +204,8 @@ Jika perangkat Anda benar-benar kehilangan sensor, mode otomatis tidak akan berf
     <string name="no_gps" translation_description="Status value shown in diagnostics when no GPS provider is available">Tidak ada GPS</string>
     <string name="connected" translation_description="Network status value shown when the device has an active network connection">Terhubung</string>
     <string name="disconnected" translation_description="Network status value shown when the device has no network connection">Terputus</string>
-    <string name="wifi" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (wifi)\'). Note the leading space."> (wifi)</string>
-    <string name="cell_network" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (cell)\'). Note the leading space."> (seluler)</string>
+    <string name="wifi" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (wifi)\'). Note the leading space.">(wifi)</string>
+    <string name="cell_network" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (cell)\'). Note the leading space.">(seluler)</string>
     <string name="menu_calibrate" translation_description="Menu item label to open the compass calibration screen">Kalibrasi</string>
     <string name="compass_calibration_activity_heading_compass" translation_description="Static label in the compass calibration screen placed inline to the left of the live compass accuracy value (e.g. displayed as \'Compass - Accuracy: High\')">Kompas -</string>
     <string name="compass_calibration_activity_do_not_show_this_again" translation_description="Checkbox label in the compass calibration dialog to suppress future automatic appearances">Jangan tampilkan lagi</string>
@@ -208,15 +216,23 @@ Jika perangkat Anda benar-benar kehilangan sensor, mode otomatis tidak akan berf
     <string name="compass_calib_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[Ponsel Anda melaporkan akurasi kompas seperti yang ditunjukkan di atas. Untuk meningkatkannya, silakan lakukan gerakan angka 8 dengan perangkat Anda (%s).<br/><br/>
 <b>Catatan tentang Akurasi:</b> Kalibrasi adalah persyaratan tingkat perangkat keras ponsel Anda, bukan pengaturan Sky Map. Bahkan ketika dikalibrasi, medan magnet lokal (seperti dasbor mobil atau magnet) dapat menyebabkan bias kecil dalam arah. Lihat <i>Pemecahan Masalah</i> di <i>Bantuan</i> untuk hal-hal lain yang dapat dicoba.]]></string>
     <string name="sensor_reverse_preference_title" translation_description="Preference title for reversing the magnetic Z-axis sensor reading, a fix for certain phones with incorrectly implemented sensors">Balikkan Magnetik Z</string>
-    <string name="sensor_reverse_preference_summary" translation_description="Summary for the Reverse Magnetic Z preference">Perbaikan untuk ponsel dengan sensor yang diimplementasikan secara tidak benar - memerlukan restart</string>
+    <string name="sensor_reverse_preference_summary" translation_description="Summary for the Reverse Magnetic Z preference">
+    Perbaikan untuk ponsel dengan sensor yang diimplementasikan secara tidak benar - memerlukan restart
+    </string>
     <string name="whats_new_dialog_title" translation_description="Title of the dialog shown on first launch after an update, listing new features">Yang baru</string>
     <string name="disable_gyro_preference_title" translation_description="Preference title for disabling the gyroscope sensor">Nonaktifkan giroskop</string>
-    <string name="disable_gyro_preference_summary" translation_description="Explanation of the disable gyroscope preference and when to use it">Tidak semua perangkat memiliki giroskop - jika perangkat Anda memilikinya maka Anda akan mendapatkan hasil yang lebih baik dengan fitur ini diaktifkan dan kotak ini tidak dicentang. Di sisi lain, jika perangkat Anda tidak memiliki giroskop maka Sky Map mungkin tidak akan berfungsi jika Anda membatalkan centang kotak ini.</string>
+    <string name="disable_gyro_preference_summary" translation_description="Explanation of the disable gyroscope preference and when to use it">
+    Tidak semua perangkat memiliki giroskop - jika perangkat Anda memilikinya maka Anda akan mendapatkan hasil yang lebih baik dengan fitur ini diaktifkan dan kotak ini tidak dicentang. Di sisi lain, jika perangkat Anda tidak memiliki giroskop maka Sky Map mungkin tidak akan berfungsi jika Anda membatalkan centang kotak ini.
+    </string>
     <string name="rotate_horizon_preference_title" translation_description="Preference title for choosing the view/pointing direction mode">Arah pandangan</string>
     <string name="auto_level_horizon_preference_title" translation_description="Preference title for the auto-level horizon feature in manual mode">Horison penyeimbang otomatis</string>
-    <string name="auto_level_horizon_preference_summary" translation_description="Summary for the auto-level horizon preference">Dalam mode manual, horison secara bertahap kembali ke horizontal setelah Anda mengangkat jari</string>
+    <string name="auto_level_horizon_preference_summary" translation_description="Summary for the auto-level horizon preference">
+    Dalam mode manual, horison secara bertahap kembali ke horizontal setelah Anda mengangkat jari
+    </string>
 
-    <string name="rotate_horizon_preference_summary" translation_description="Explanation of the view direction preference, covering both landscape rotation and pointer modes">Putar cakrawala 90 derajat (untuk perangkat dengan orientasi lanskap paksa) atau gunakan mode penunjuk agar layar menampilkan arah yang ditunjuk bagian atas ponsel (lihat teks bantuan).</string>
+    <string name="rotate_horizon_preference_summary" translation_description="Explanation of the view direction preference, covering both landscape rotation and pointer modes">
+    Putar cakrawala 90 derajat (untuk perangkat dengan orientasi lanskap paksa) atau gunakan mode penunjuk agar layar menampilkan arah yang ditunjuk bagian atas ponsel (lihat teks bantuan).
+    </string>
 
     <string name="show_object_info_pref_title" translation_description="Preference title for showing info cards when tapping objects">Tampilkan info saat diketuk</string>
     <string name="show_object_info_pref_summary" translation_description="Preference summary for the tap info feature">Ketuk objek langit untuk mempelajari tentang mereka</string>

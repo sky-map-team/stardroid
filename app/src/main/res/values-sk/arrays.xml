@@ -6,10 +6,10 @@
         <item translation_description="Fast sensor speed">Rýchla</item>
     </string-array>
     <string-array name="sensor_damping">
-        <item translation_description="Low sensor damping factor">Nízke</item>
-        <item translation_description="Medium sensor damping factor">Stredné</item>
+        <item translation_description="Low sensor damping factor - this will make the app jittery">Nízke</item>
+        <item translation_description="Medium sensor damping factor - this will make the app slightly jittery">Stredné</item>
         <item translation_description="Extra High sensor damping factor">Vysoké</item>
-        <item translation_description="Really High sensor damping factor">Veľmi vysoké</item>
+        <item translation_description="Really High sensor damping factor - this will make the app sluggish">Veľmi vysoké</item>
     </string-array>
     <string-array name="viewing_direction">
         <item translation_description="Normal viewing">Normálne</item>

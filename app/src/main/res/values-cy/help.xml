@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-<string name="help_text" translation_description="Please do not change the &lt; and &gt; markup">
-&lt;h1&gt;Sky Map ar gyfer Android&lt;/h1&gt;
+<string name="help_text" translation_description="This is the help text for the app Google Sky Map. It includes placeholders where other text is inserted. Please do not change the &lt; and &gt; markup">
+    &lt;h1&gt;Sky Map ar gyfer Android&lt;/h1&gt;
 &lt;p class="version"&gt;Fersiwn %s&lt;/p&gt;
 &lt;p class="url"&gt;&lt;a href="https://stardroid.app"&gt;https://stardroid.app&lt;/a&gt;&lt;/p&gt;
 
@@ -137,5 +137,5 @@ Defnyddia Sky Map mapiau o ddata gan:&lt;/p&gt;
 &lt;li&gt;Data cawodydd meteor o\'r International Meteor Organization (&lt;a href="https://www.imo.net/data"&gt;https://www.imo.net/data&lt;/a&gt;)&lt;/li&gt;
 &lt;li&gt;Delwedd M31 gan Peter Kennett (&lt;a href="https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg"&gt;https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg&lt;/a&gt;)&lt;/li&gt;
 &lt;/ul&gt;
-</string>
+    </string>
 </resources>

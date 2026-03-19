@@ -23,13 +23,14 @@
     <string name="location_offer_to_enable" translation_description="Dialog message asking whether to enable automatic location">自動位置機能が無効です。有効にしますか？</string>
     <string name="location_offer_to_enable_gps_title" translation_description="Title of dialog shown when automatic location is disabled">自動位置機能が無効です</string>
     <string name="location_permission_dialog_title" translation_description="Title of the dialog that requests location permission from the user">位置情報が必要です</string>
-    <string name="location_permission_dialog_message" translation_description="Body text of the dialog requesting location permission, explaining why the app needs it and what happens without it">Sky Mapは正確な夜空を表示するために、おおよその位置情報が必要です。権限を許可するか、位置情報を手動で入力するか、後で決定することができます。後で決定する場合、位置情報が設定されるまでマップは正確ではありません。</string>
+    <string name="location_permission_dialog_message" translation_description="Body text of the dialog requesting location permission, explaining why the app needs it and what happens without it">
+    Sky Mapは正確な夜空を表示するために、おおよその位置情報が必要です。権限を許可するか、位置情報を手動で入力するか、後で決定することができます。後で決定する場合、位置情報が設定されるまでマップは正確ではありません。
+    </string>
     <string name="location_permission_grant" translation_description="Button in the location permission dialog to grant location access">許可を与える</string>
     <string name="location_permission_enter_manually" translation_description="Button in the location permission dialog to enter location by hand instead of granting permission">手動で入力</string>
     <string name="location_permission_later" translation_description="Button in the location permission dialog to defer the decision">後で</string>
     <string name="location_warning_permission" translation_description="Warning message shown when location is unavailable because permission was not granted">位置情報が利用できません — 許可が与えられていません。</string>
     <string name="location_warning_manual" translation_description="Warning message shown when manual location mode is selected but no coordinates have been entered">位置情報が設定されていません — 設定で構成してください。</string>
-<!-- TODO: many translations require two placeholders. Once all translations brought up to date we can clean this up -->
     <string name="location_unable_to_geocode" translation_description="Error message when converting a place name to coordinates (geocoding) fails, possibly due to no network">現在地がわかりません。ネットワークが利用できない可能性があります。</string>
     <string name="location_not_found_title" translation_description="dialog box title when location not found">検索結果</string>
     <string name="location_not_found" translation_description="dialog message when placename not found">%sが見つかりません</string>
@@ -77,8 +78,7 @@
     <string name="search_hint" translation_description="an example search target">例: 火星</string>
     <string name="no_search_title" translation_description="Dialog title shown when a sky search returns no results">結果なし</string>
     <!-- Hopefully this is a temporary measure until we can fix the search engine -->
-    <string name="no_search_results_text2" translation_description="Alternative message shown when a search returns no results, suggesting the object may not currently be visible">検索結果が見つかりません。おそらくそれは現在見えないのでしょう。
-        </string>
+    <string name="no_search_results_text2" translation_description="Alternative message shown when a search returns no results, suggesting the object may not currently be visible">検索結果が見つかりません。おそらくそれは現在見えないのでしょう。</string>
     <string name="many_search_results_title" translation_description="Dialog title shown when a search returns multiple possible matches">もしかして</string>
     <string name="other" translation_description="A preference category (ie preferences that don't belong in any other category)">その他</string>
     <string name="show_messier_images" translation_description="Preference toggle label for showing galaxy/nebula icons for Messier objects">メシエ画像を表示</string>
@@ -91,8 +91,7 @@
     <string name="custom_date_prompt" translation_description="Label telling the user to manually specify a date">または表示する日付を手動で選択</string>
     <string name="change_date_prompt" translation_description="Button label to open the date picker in the time travel dialog">日付の変更</string>
     <string name="change_time_prompt" translation_description="Button label to open the time picker in the time travel dialog">時刻の変更</string>
-    <string name="now_visiting" translation_description="used in time travel dialog to show the destination date/time the user has selected, time formatted as yyyy.mm.dd at hh.mm.ss + timezone">
-      現在表示中: %s</string>
+    <string name="now_visiting" translation_description="used in time travel dialog to show the destination date/time the user has selected, time formatted as yyyy.mm.dd at hh.mm.ss + timezone">現在表示中: %s</string>
     <string name="time_travel_label_past" translation_description="Label showing that we are in the past">タイムトラベル: 過去</string>
     <string name="time_travel_label_future" translation_description="Label showing that we are in the future">タイムトラベル: 未来</string>
     <string name="time_travel_stopped" translation_description="Label showing rate of travel through time">タイムトラベル停止中</string>
@@ -154,7 +153,8 @@
 
     <string name="no_sensor_warning" translation_description="Warning shown when required orientation sensors are not detected on the device">このデバイスは位置センサーが不足しています - 自動モードは動作しないかもしれません</string>
     <string name="warning_dialog_title" translation_description="Title of a warning dialog shown when something is wrong, e.g. a missing sensor">悪いニュース！</string>
-    <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">\n
+    <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">
+    \n
         残念ながらこのデバイスはSkyマップが必要としているセンサーの一つを
     持っていないようです。\n\n
         スマートフォンを向けた方向の空を表示するためには、
@@ -227,14 +227,18 @@
     <string name="sensor_reverse_preference_summary" translation_description="Summary for the Reverse Magnetic Z preference">センサーの実装が不適切なデバイス用に修正する - 再起動が必要</string>
     <string name="whats_new_dialog_title" translation_description="Title of the dialog shown on first launch after an update, listing new features">更新情報</string>
     <string name="disable_gyro_preference_title" translation_description="Preference title for disabling the gyroscope sensor">ジャイロスコープを無効にする</string>
-    <string name="disable_gyro_preference_summary" translation_description="Explanation of the disable gyroscope preference and when to use it">ジャイロのないデバイスもあります - あるデバイスの場合はそれを有効にしてチェックを外すことでより良い結果が得られます。一方、デバイスにジャイロがない場合は、このチェックを外すとおそらくSkyマップは動作しないでしょう。</string>
+    <string name="disable_gyro_preference_summary" translation_description="Explanation of the disable gyroscope preference and when to use it">
+    ジャイロのないデバイスもあります - あるデバイスの場合はそれを有効にしてチェックを外すことでより良い結果が得られます。一方、デバイスにジャイロがない場合は、このチェックを外すとおそらくSkyマップは動作しないでしょう。
+    </string>
     <string name="rotate_horizon_preference_title" translation_description="Preference title for choosing the view/pointing direction mode">方向を見る</string>
     <string name="auto_level_horizon_preference_title" translation_description="Preference title for the auto-level horizon feature in manual mode">地平線の自動水平化</string>
     <string name="auto_level_horizon_preference_summary" translation_description="Summary for the auto-level horizon preference">手動モードでは、指を離すと地平線が徐々に水平に戻ります</string>
 
-    <string name="rotate_horizon_preference_summary" translation_description="Explanation of the view direction preference, covering both landscape rotation and pointer modes">水平線を90°回転
+    <string name="rotate_horizon_preference_summary" translation_description="Explanation of the view direction preference, covering both landscape rotation and pointer modes">
+    水平線を90°回転
         (横画面固定のデバイス用) またはデバイスの上部分が何を指して
-        いるかを表示するためのポインターモード(ヘルプ参照)。</string>
+        いるかを表示するためのポインターモード(ヘルプ参照)。
+    </string>
 
     <string name="show_object_info_pref_title" translation_description="Preference title for showing info cards when tapping objects">タップで情報を表示</string>
     <string name="show_object_info_pref_summary" translation_description="Preference summary for the tap info feature">天体をタップして詳細を確認</string>

@@ -31,7 +31,6 @@
     <string name="location_permission_later" translation_description="Button in the location permission dialog to defer the decision">بعداً</string>
     <string name="location_warning_permission" translation_description="Warning message shown when location is unavailable because permission was not granted">مکان در دسترس نیست — اجازه داده نشده است.</string>
     <string name="location_warning_manual" translation_description="Warning message shown when manual location mode is selected but no coordinates have been entered">مکان تنظیم نشده — لطفاً در تنظیمات پیکربندی کنید.</string>
-<!-- TODO: many translations require two placeholders. Once all translations brought up to date we can clean this up -->
     <string name="location_unable_to_geocode" translation_description="Error message when converting a place name to coordinates (geocoding) fails, possibly due to no network">مکان تشخیص داده نشد. شاید شبکه شما در دسترس نباشد؟</string>
     <string name="location_not_found_title" translation_description="dialog box title when location not found">نامشخص</string>
     <string name="location_not_found" translation_description="dialog message when placename not found">%s یافت نشد.</string>

@@ -498,13 +498,17 @@
     <string name="object_info_t_crb_distance" translation_description="Distance to T Crb shown in the info card. Translate units if appropriate for your locale.">3,000光年</string>
     <string name="object_info_t_crb_size" translation_description="Physical size of T Crb shown in the info card. Translate units if appropriate for your locale.">0.2天文單位軌道分離</string>
     <!-- Tarantula Nebula - NGC 2070 -->
-    <string name="object_info_tarantula_nebula_description" translation_description="Description of the Tarantula Nebula shown in the info card. Translate this text.">狼蛛星雲是本星系群中最大且最明亮的恆星形成區，是一個廣闊的發射星雲，嵌入大麥哲倫星雲中，跨越約600光年。儘管距離地球163,000光年，但它仍然足夠明亮，肉眼可見。</string>
+    <string name="object_info_tarantula_nebula_description" translation_description="Description of the Tarantula Nebula shown in the info card. Translate this text.">
+    狼蛛星雲是本星系群中最大且最明亮的恆星形成區，是一個廣闊的發射星雲，嵌入大麥哲倫星雲中，跨越約600光年。儘管距離地球163,000光年，但它仍然足夠明亮，肉眼可見。
+    </string>
     <string name="object_info_tarantula_nebula_funfact" translation_description="Fun fact about the Tarantula Nebula shown in the info card. Translate this text.">如果蜘蛛星雲距離我們如同獵戶星雲一樣近，它將足夠明亮到在夜間投射陰影，並且會跨越半個可見的天空！</string>
     <string name="object_info_tarantula_nebula_distance" translation_description="Distance to the Tarantula Nebula shown in the info card. Translate units if appropriate for your locale.">163,000光年</string>
     <string name="object_info_tarantula_nebula_size" translation_description="Physical size of the Tarantula Nebula shown in the info card. Translate units if appropriate for your locale.">600光年寬</string>
     <!-- LMC - Large Magellanic Cloud -->
     <string name="object_info_lmc_description" translation_description="Description of the Large Magellanic Cloud shown in the info card. Translate this text.">大麥哲倫星雲是銀河系的一個不規則衛星星系，肉眼可見為天空中一個分離的、發光的斑塊。它是我們最近的星系鄰居之一，也是本星系群中最活躍的恆星形成星系之一。</string>
-    <string name="object_info_lmc_funfact" translation_description="Fun fact about the Large Magellanic Cloud shown in the info card. Translate this text.">1987年，大麦哲伦星云中的一颗恒星爆炸成为超新星1987A——这是自1604年以来首次用肉眼观测到的超新星。爆炸产生的中微子比光线提前三小时到达地球，证实了我们对恒星核心坍缩的模型。</string>
+    <string name="object_info_lmc_funfact" translation_description="Fun fact about the Large Magellanic Cloud shown in the info card. Translate this text.">
+    1987年，大麦哲伦星云中的一颗恒星爆炸成为超新星1987A——这是自1604年以来首次用肉眼观测到的超新星。爆炸产生的中微子比光线提前三小时到达地球，证实了我们对恒星核心坍缩的模型。
+    </string>
     <string name="object_info_lmc_distance" translation_description="Distance to the Large Magellanic Cloud shown in the info card. Translate units if appropriate for your locale.">160,000光年</string>
     <string name="object_info_lmc_size" translation_description="Physical size of the Large Magellanic Cloud shown in the info card. Translate units if appropriate for your locale.">14,000光年寬</string>
     <!-- SMC - Small Magellanic Cloud -->
@@ -513,7 +517,9 @@
     <string name="object_info_smc_distance" translation_description="Distance to the Small Magellanic Cloud shown in the info card. Translate units if appropriate for your locale.">200,000光年</string>
     <string name="object_info_smc_size" translation_description="Physical size of the Small Magellanic Cloud shown in the info card. Translate units if appropriate for your locale.">7,000光年寬</string>
     <!-- Eta Carinae Nebula (NGC 3372) -->
-    <string name="object_info_eta_carinae_nebula_description" translation_description="Description of Eta Carinae Nebula shown in the info card. Translate this text.">Eta Carinae 星雲（NGC 3372）是天空中最大且最亮的星雲之一，跨越超過 300 光年。其中心坐落著 Eta Carinae，這是已知最巨大且最發光的恆星之一，質量超過 100 個太陽質量。</string>
+    <string name="object_info_eta_carinae_nebula_description" translation_description="Description of Eta Carinae Nebula shown in the info card. Translate this text.">
+    Eta Carinae 星雲（NGC 3372）是天空中最大且最亮的星雲之一，跨越超過 300 光年。其中心坐落著 Eta Carinae，這是已知最巨大且最發光的恆星之一，質量超過 100 個太陽質量。
+    </string>
     <string name="object_info_eta_carinae_nebula_funfact" translation_description="Fun fact about Eta Carinae Nebula shown in the info card. Translate this text.">1843年，船底座η星爆發，一度成為天空中第二亮的星星，但它卻奇蹟般地倖存了下來——它可能正處於超新星爆發的邊緣！</string>
     <string name="object_info_eta_carinae_nebula_distance" translation_description="Distance to Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">7,500光年</string>
     <string name="object_info_eta_carinae_nebula_size" translation_description="Physical size of Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">300光年寬</string>
@@ -809,7 +815,9 @@
 
     <!-- Izar -->
     <string name="object_info_izar_description" translation_description="Short description of Izar">Izar 是牧夫座（牧人）中一顆美麗的雙星。它的名字在阿拉伯語中意為「腰帶」或「面紗」。</string>
-    <string name="object_info_izar_funfact" translation_description="Fun fact about Izar">19世紀的天文學家Friedrich Georg Wilhelm von Struve將Izar稱為"Pulcherrima"（拉丁文意為"最美麗的"），因為其橙色和藍白色成分之間的色彩對比令人驚艷！</string>
+    <string name="object_info_izar_funfact" translation_description="Fun fact about Izar">
+    19世紀的天文學家Friedrich Georg Wilhelm von Struve將Izar稱為"Pulcherrima"（拉丁文意為"最美麗的"），因為其橙色和藍白色成分之間的色彩對比令人驚艷！
+    </string>
     <string name="object_info_izar_distance" translation_description="Distance to Izar shown in the info card. Translate units if appropriate for your locale.">202 光年</string>
     <string name="object_info_izar_size" translation_description="Physical size of Izar shown in the info card. Translate units if appropriate for your locale.">33 太陽半徑</string>
     <string name="object_info_izar_mass" translation_description="Mass of Izar in scientific notation — no translation needed.">~4.6 太陽質量</string>
@@ -872,7 +880,9 @@
 
     <!-- Unukalhai -->
     <string name="object_info_unukalhai_description" translation_description="Short description of Unukalhai">Unukalhai 是巨蛇座頭部（蛇頭）中最亮的恆星。其名稱在阿拉伯語中意為「蛇的頸部」。</string>
-    <string name="object_info_unukalhai_funfact" translation_description="Fun fact about Unukalhai">巨蛇座是唯一被分成兩個獨立部分的星座——巨蛇座頭部（Serpens Caput）和巨蛇座尾部（Serpens Cauda）——由蛇夫座分隔，而天市右垣是頭部的最亮恆星！</string>
+    <string name="object_info_unukalhai_funfact" translation_description="Fun fact about Unukalhai">
+    巨蛇座是唯一被分成兩個獨立部分的星座——巨蛇座頭部（Serpens Caput）和巨蛇座尾部（Serpens Cauda）——由蛇夫座分隔，而天市右垣是頭部的最亮恆星！
+    </string>
     <string name="object_info_unukalhai_distance" translation_description="Distance to Unukalhai shown in the info card. Translate units if appropriate for your locale.">74 光年</string>
     <string name="object_info_unukalhai_size" translation_description="Physical size of Unukalhai shown in the info card. Translate units if appropriate for your locale.">12 太陽半徑</string>
     <string name="object_info_unukalhai_mass" translation_description="Mass of Unukalhai in scientific notation — no translation needed.">~2.1 太陽質量</string>

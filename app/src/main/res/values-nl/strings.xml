@@ -23,13 +23,14 @@
     <string name="location_offer_to_enable" translation_description="Dialog message asking whether to enable automatic location">Automatische locatiedetectie is uitgeschakeld. Wilt u deze functie inschakelen?</string>
     <string name="location_offer_to_enable_gps_title" translation_description="Title of dialog shown when automatic location is disabled">Automatische locatiedetectie uitgeschakeld</string>
     <string name="location_permission_dialog_title" translation_description="Title of the dialog that requests location permission from the user">Locatie vereist</string>
-    <string name="location_permission_dialog_message" translation_description="Body text of the dialog requesting location permission, explaining why the app needs it and what happens without it">Sky Map heeft uw geschatte locatie nodig om de juiste nachtelijke hemel weer te geven. U kunt toestemming geven, uw locatie handmatig invoeren of dit later beslissen. Als u dit later besluit, is de kaart niet nauwkeurig totdat uw locatie is ingesteld.</string>
+    <string name="location_permission_dialog_message" translation_description="Body text of the dialog requesting location permission, explaining why the app needs it and what happens without it">
+    Sky Map heeft uw geschatte locatie nodig om de juiste nachtelijke hemel weer te geven. U kunt toestemming geven, uw locatie handmatig invoeren of dit later beslissen. Als u dit later besluit, is de kaart niet nauwkeurig totdat uw locatie is ingesteld.
+    </string>
     <string name="location_permission_grant" translation_description="Button in the location permission dialog to grant location access">Toestemming geven</string>
     <string name="location_permission_enter_manually" translation_description="Button in the location permission dialog to enter location by hand instead of granting permission">Handmatig invoeren</string>
     <!-- tm:omitted name="location_permission_later" reason="identical_to_source" -->
     <string name="location_warning_permission" translation_description="Warning message shown when location is unavailable because permission was not granted">Locatie niet beschikbaar — toestemming niet verleend.</string>
     <string name="location_warning_manual" translation_description="Warning message shown when manual location mode is selected but no coordinates have been entered">Locatie niet ingesteld — configureer in Instellingen.</string>
-<!-- TODO: many translations require two placeholders. Once all translations brought up to date we can clean this up -->
     <string name="location_unable_to_geocode" translation_description="Error message when converting a place name to coordinates (geocoding) fails, possibly due to no network">Kan uw locatie niet decoderen - misschien is uw netwerk niet beschikbaar?</string>
     <string name="location_not_found_title" translation_description="dialog box title when location not found">Helaas</string>
     <string name="location_not_found" translation_description="dialog message when placename not found">%s niet gevonden.</string>
@@ -150,16 +151,22 @@
     <string name="enable_analytics" translation_description="Preference label to opt in to sending anonymous usage statistics">Gebruiksstatistieken verzenden</string>
     <string name="enable_analytics_desc" translation_description="Description/summary for the usage statistics preference">Verbeter Sky Map door anonieme gegevens naar Google Analytics te verzenden</string>
 
-    <string name="no_sensor_warning" translation_description="Warning shown when required orientation sensors are not detected on the device">Uw apparaat beschikt mogelijk niet over oriëntatiessensoren - automodus werkt mogelijk niet</string>
+    <string name="no_sensor_warning" translation_description="Warning shown when required orientation sensors are not detected on the device">
+    Uw apparaat beschikt mogelijk niet over oriëntatiessensoren - automodus werkt mogelijk niet
+    </string>
     <string name="warning_dialog_title" translation_description="Title of a warning dialog shown when something is wrong, e.g. a missing sensor">Slecht nieuws!</string>
-    <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">Helaas heeft uw apparaat mogelijk niet een van de sensoren die Sky Map nodig heeft.
+    <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">
+    Helaas heeft uw apparaat mogelijk niet een van de sensoren die Sky Map nodig heeft.
 
 Om u de hemel in de richting te tonen waarin uw telefoon wijst, heeft Sky Map zowel een ingebouwde kompas als een versnellingsmeter nodig. Uw apparaat meldt dat het een van beide mist. Het goede nieuws is dat sommige apparaten (bijvoorbeeld sommige Moto E-telefoons) onwaar beweren geen kompas te hebben, maar dat eigenlijk wel doen.
 
-Als uw apparaat echt een sensor mist, werkt de automatische modus niet. U kunt Sky Map echter nog steeds op dit apparaat gebruiken in handmatige modus, waar u de kaart met uw vingers kunt slepen, roteren en uitrekken.</string>
+Als uw apparaat echt een sensor mist, werkt de automatische modus niet. U kunt Sky Map echter nog steeds op dit apparaat gebruiken in handmatige modus, waar u de kaart met uw vingers kunt slepen, roteren en uitrekken.
+    </string>
     <string name="do_not_show_again" translation_description="Checkbox or button label to suppress future display of a warning dialog">Dit bericht niet meer weergeven</string>
     <string name="title_activity_diagnostic" translation_description="Title bar text for the Diagnostics activity/screen">Diagnostiek</string>
-    <string name="play_services_error" translation_description="Warning shown in the diagnostics screen when Google Play Services has an error that may affect automatic location">Waarschuwing: Google Play Services-fout - Automatische locatie werkt mogelijk niet</string>
+    <string name="play_services_error" translation_description="Warning shown in the diagnostics screen when Google Play Services has an error that may affect automatic location">
+    Waarschuwing: Google Play Services-fout - Automatische locatie werkt mogelijk niet
+    </string>
     <string name="sensor_absent" translation_description="Sensor status shown in diagnostics when the sensor is not present on the device">Afwezig</string>
     <string name="sensor_accuracy_unknown" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">Nauwkeurigheid: Onbekend</string>
     <string name="sensor_accuracy_unreliable" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">Nauwkeurigheid: Onbetrouwbaar</string>
@@ -208,15 +215,23 @@ Als uw apparaat echt een sensor mist, werkt de automatische modus niet. U kunt S
     <string name="compass_calib_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[Uw telefoon rapporteert de nauwkeurigheid van het kompas zoals hierboven weergegeven. Verbeter dit door uw apparaat in een figuur-8-beweging te bewegen (%s).<br/><br/>
 <b>Opmerking over nauwkeurigheid:</b> Kalibratie is een hardwarevereiste van uw telefoon, niet een Sky Map-instelling. Zelfs na kalibratie kunnen lokale magnetische velden (zoals autodashboards of magneten) een lichte afwijking in richting veroorzaken. Zie <i>Probleemoplossing</i> in <i>Help</i> voor andere dingen om te proberen.]]></string>
     <string name="sensor_reverse_preference_title" translation_description="Preference title for reversing the magnetic Z-axis sensor reading, a fix for certain phones with incorrectly implemented sensors">Magnetische Z omkeren</string>
-    <string name="sensor_reverse_preference_summary" translation_description="Summary for the Reverse Magnetic Z preference">Oplossing voor telefoons met onjuist geïmplementeerde sensoren - vereist herstart</string>
+    <string name="sensor_reverse_preference_summary" translation_description="Summary for the Reverse Magnetic Z preference">
+    Oplossing voor telefoons met onjuist geïmplementeerde sensoren - vereist herstart
+    </string>
     <string name="whats_new_dialog_title" translation_description="Title of the dialog shown on first launch after an update, listing new features">Wat\'s nieuw</string>
     <string name="disable_gyro_preference_title" translation_description="Preference title for disabling the gyroscope sensor">Gyroscoop uitschakelen</string>
-    <string name="disable_gyro_preference_summary" translation_description="Explanation of the disable gyroscope preference and when to use it">Niet alle apparaten hebben een gyroscoop - als de jouwe er een heeft, krijg je betere resultaten met deze ingeschakeld en dit vakje uitgevinkt. Aan de andere kant, als je apparaat geen gyroscoop heeft, zal Sky Map waarschijnlijk niet werken als je dit vakje uitvinkt.</string>
+    <string name="disable_gyro_preference_summary" translation_description="Explanation of the disable gyroscope preference and when to use it">
+    Niet alle apparaten hebben een gyroscoop - als de jouwe er een heeft, krijg je betere resultaten met deze ingeschakeld en dit vakje uitgevinkt. Aan de andere kant, als je apparaat geen gyroscoop heeft, zal Sky Map waarschijnlijk niet werken als je dit vakje uitvinkt.
+    </string>
     <string name="rotate_horizon_preference_title" translation_description="Preference title for choosing the view/pointing direction mode">Weergaverichting</string>
     <string name="auto_level_horizon_preference_title" translation_description="Preference title for the auto-level horizon feature in manual mode">Horizon automatisch nivelleren</string>
-    <string name="auto_level_horizon_preference_summary" translation_description="Summary for the auto-level horizon preference">In handmatige modus keert de horizon geleidelijk terug naar horizontaal nadat u uw vingers loslaat</string>
+    <string name="auto_level_horizon_preference_summary" translation_description="Summary for the auto-level horizon preference">
+    In handmatige modus keert de horizon geleidelijk terug naar horizontaal nadat u uw vingers loslaat
+    </string>
 
-    <string name="rotate_horizon_preference_summary" translation_description="Explanation of the view direction preference, covering both landscape rotation and pointer modes">Draai horizon 90 graden (voor apparaten met geforceerd landschap) of gebruik aanwijzermodus zodat het scherm aangeeft waar de bovenkant van de telefoon naar wijst (zie helptekst).</string>
+    <string name="rotate_horizon_preference_summary" translation_description="Explanation of the view direction preference, covering both landscape rotation and pointer modes">
+    Draai horizon 90 graden (voor apparaten met geforceerd landschap) of gebruik aanwijzermodus zodat het scherm aangeeft waar de bovenkant van de telefoon naar wijst (zie helptekst).
+    </string>
 
     <string name="show_object_info_pref_title" translation_description="Preference title for showing info cards when tapping objects">Info weergeven bij tikken</string>
     <string name="show_object_info_pref_summary" translation_description="Preference summary for the tap info feature">Tik op hemellichamen om meer over hen te leren</string>

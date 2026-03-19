@@ -1,7 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- The folks who made Sky Map Happen -->
-<string name="credits_text" translation_description="This page credits the people and organizations who support and maintain the app Sky Map. Please do not change the &lt; and &gt; markup">&lt;h1&gt;دعم التطوير&lt;/h1&gt;
+<string name="credits_text" translation_description="This page credits the people and organizations who support and maintain the app Sky Map. Please do not change the &lt; and &gt; markup">
+    &lt;h1&gt;دعم التطوير&lt;/h1&gt;
 &lt;p&gt;Sky Map مجاني وذو مصدر مفتوح وخالي من الإعلانات. إذا كنت تستمتع باستخدامه، يرجى التفكير في &lt;a href="https://buymeacoffee.com/skymapdevs"&gt;دعم&lt;/a&gt; التطوير المستمر على &lt;a href="https://github.com/sky-map-team/stardroid?tab=readme-ov-file#support-the-project"&gt;صفحة GitHub الخاصة بنا&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;شكراً لهؤلاء الأشخاص الذين &lt;a href="https://buymeacoffee.com/skymapdevs"&gt;تبرعوا مؤخراً!&lt;/a&gt;&lt;/h2&gt;
 
@@ -53,5 +54,6 @@ Lior Ron.&lt;/p&gt;
 &lt;li&gt;خرائط الأبراج: IAU و Sky &amp; Telescope (Roger Sinnott &amp; Rick Fienberg), CC BY 4.0&lt;/li&gt;
 &lt;li&gt;صور Messier الإضافية: Gemini Observatory/NOIRLab/NSF/AURA (&lt;a href="https://noirlab.edu/"&gt;noirlab.edu&lt;/a&gt;)&lt;/li&gt;
 &lt;li&gt;صورة M31: Peter Kennett (&lt;a href="https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg"&gt;Wikimedia Commons&lt;/a&gt;)&lt;/li&gt;
-&lt;/ul&gt;</string>
+&lt;/ul&gt;
+    </string>
 </resources>
