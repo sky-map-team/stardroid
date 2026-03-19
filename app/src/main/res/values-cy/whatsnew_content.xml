@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Delweddau Nefol</h2>
+    Mae cardiau gwybodaeth bellach yn cynnwys lluniau ar gyfer pob un o\'r 145 gwrthrych — planedau, sêr, cytserau, a gwrthrychau Messier. Tapiwch unrhyw wrthrych i\'w archwilio\'n weledol.
+
+<h2>Gwrthrychau Catalog Newydd</h2>
+    Mae T Coronae Borealis (y "Blaze Star") a Nebula Eta Carinae bellach yn y catalog.
+
+<h2>Modd Nos</h2>
+    Mae modd nos coch bellach yn cwmpasu bron pob elfen UI, gan gynnwys pob deialog a\'r sgrin calibradu\'r cwmpawd — dim mwy o fflachiadau gwyn dallu yn y tywyllwch.]]></string>
+    <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Defnyddwyr beta!</h2>
+<h3>Sut y gallwch chi helpu</h3>
+Yn y rhyddhad hwn, pan fyddwch chi\'n defnyddio\'r modd llaw ac yn rhoi sgubo i\'r map, bydd yr gorwel yn dychwelyd
+i lefel fel y bydd brig y map bob amser yn dangos y sêr uwch eich pen. Yn flaenorol, roedd y map yn symud
+mewn llinell syth felly gallech chi ddiweddu wyneb i waered. Beth ydych chi\'n feddwl? Yw hyn yn well?
+Rhodwch wybod i ni <a href="https://forms.gle/JkrMw7Zc4ynp45J79">yma.</a><br/>
+Agorwch y ddewislen cymorth i weld yr wybodaeth hon eto.]]></string>
+</resources>

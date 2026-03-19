@@ -11,4 +11,20 @@
         <item translation_description="Extra High sensor damping factor">Cyffredinol gywir</item>
         <item translation_description="Really High sensor damping factor">Yn araf</item>
     </string-array>
-    </resources>
+    <string-array name="viewing_direction">
+        <item translation_description="Normal viewing">Arferol</item>
+        <item translation_description="Rotates the screen by 90 degrees">Gorwel wedi\'i Droi</item>
+        <item translation_description="Shows the sky as pointed at by the long edge of the phone">Modd Pwyntydd</item>
+    </string-array>
+    <string-array name="auto_dim_texts">
+        <item translation_description="Dimmest screen setting">Tawn Iawn</item>
+        <item translation_description="Leave it on the system setting">Gosodiad y System</item>
+        <item translation_description="The setting used for the last 15 years">Clasurol</item>
+    </string-array>
+    <string-array name="font_size_texts">
+        <item translation_description="Smallest font size">Bach</item>
+        <item translation_description="Normal font size">Canolig</item>
+        <item translation_description="Large font size">Mawr</item>
+        <item translation_description="Largest font size">Eithriadol Fawr</item>
+    </string-array>
+</resources>
