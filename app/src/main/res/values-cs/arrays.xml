@@ -6,9 +6,25 @@
         <item translation_description="Fast sensor speed">Rychlé</item>
     </string-array>
     <string-array name="sensor_damping">
-        <item translation_description="Low sensor damping factor">Žádné</item>
-        <item translation_description="Medium sensor damping factor">Lehké</item>
+        <item translation_description="Low sensor damping factor - this will make the app jittery">Žádné</item>
+        <item translation_description="Medium sensor damping factor - this will make the app slightly jittery">Lehké</item>
         <item translation_description="Extra High sensor damping factor">Standardní</item>
-        <item translation_description="Really High sensor damping factor">Vysoké</item>
+        <item translation_description="Really High sensor damping factor - this will make the app sluggish">Vysoké</item>
     </string-array>
-    </resources>
+    <string-array name="viewing_direction">
+        <item translation_description="Normal viewing">Normální</item>
+        <item translation_description="Rotates the screen by 90 degrees">Otočený horizont</item>
+        <item translation_description="Shows the sky as pointed at by the long edge of the phone">Režim ukazatele</item>
+    </string-array>
+    <string-array name="auto_dim_texts">
+        <item translation_description="Dimmest screen setting">Velmi tmavé</item>
+        <item translation_description="Leave it on the system setting">Výchozí nastavení systému</item>
+        <item translation_description="The setting used for the last 15 years">Klasické</item>
+    </string-array>
+    <string-array name="font_size_texts">
+        <item translation_description="Smallest font size">Malé</item>
+        <item translation_description="Normal font size">Střední</item>
+        <item translation_description="Large font size">Velké</item>
+        <item translation_description="Largest font size">Velmi velké</item>
+    </string-array>
+</resources>

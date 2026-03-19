@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string name="whats_new_text" translation_description="HTML structure for a page describing new features in this version of Sky Map. Please do not change the &lt; and &gt; markup">
+    %3$s
+&lt;h1&gt;Nytt i versjon %1$s&lt;/h1&gt;
+%2$s
+
+&lt;h1&gt;Støtt Sky Map&lt;/h1&gt;
+&lt;p&gt;Sky Map er gratis og åpen kildekode. Hvis du finner det nyttig, vurder å støtte utviklingen på vår &lt;a href="https://github.com/sky-map-team/stardroid/?tab=readme-ov-file#support-the-project"&gt;GitHub&lt;/a&gt;-side.&lt;/p&gt;
+    </string>
+</resources>

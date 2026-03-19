@@ -1,35 +1,36 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- The folks who made Sky Map Happen -->
-<string name="credits_text" translation_description="This page credits the people and organizations who support and maintain the app Sky Map. Please do not change the &lt; and &gt; markup">&lt;h1&gt;Підтримка розробки&lt;/h1&gt;
-&lt;p&gt;Sky Map — це безплатна, відкрита та без реклами програма. Якщо вам подобається її використовувати, будь ласка, розгляньте можливість &lt;a href="https://buymeacoffee.com/skymapdevs"&gt;підтримати&lt;/a&gt; подальший розвиток на &lt;a href="https://github.com/sky-map-team/stardroid?tab=readme-ov-file#support-the-project"&gt;нашій сторінці GitHub&lt;/a&gt;.&lt;/p&gt;
-&lt;h2&gt;Дякуємо цим людям, які нещодавно &lt;a href="https://buymeacoffee.com/skymapdevs"&gt;пожертвували!&lt;/a&gt;&lt;/h2&gt;
+<string name="credits_text" translation_description="This page credits the people and organizations who support and maintain the app Sky Map. Please do not change the &lt; and &gt; markup">
+    &lt;h1&gt;Støtt utviklingen&lt;/h1&gt;
+&lt;p&gt;Sky Map er gratis, åpen kildekode og uten annonser. Hvis du liker å bruke den, vennligst vurder å &lt;a href="https://buymeacoffee.com/skymapdevs"&gt;støtte&lt;/a&gt; fortsatt utvikling på &lt;a href="https://github.com/sky-map-team/stardroid?tab=readme-ov-file#support-the-project"&gt;vår GitHub-side&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Takk til disse som nylig har &lt;a href="https://buymeacoffee.com/skymapdevs"&gt;donert!&lt;/a&gt;&lt;/h2&gt;
 
 &lt;p&gt;%1$s&lt;/p&gt;
 
-&lt;h1&gt;Подяки&lt;/h1&gt;
-&lt;h2&gt;Розробка&lt;/h2&gt;
+&lt;h1&gt;Bidragsytere&lt;/h1&gt;
+&lt;h2&gt;Ingeniørarbeid&lt;/h2&gt;
 &lt;p&gt;John Taylor, Kevin Serafini&lt;/p&gt;
 
-&lt;h2&gt;Учасники відкритого коду&lt;/h2&gt;
+&lt;h2&gt;Bidragsytere fra åpen kildekode&lt;/h2&gt;
 &lt;p&gt;
     %2$s
 &lt;/p&gt;
-&lt;p&gt;Дякуємо! Див. останніх учасників на &lt;a href="https://github.com/sky-map-team/stardroid/graphs/contributors"&gt;GitHub&lt;/a&gt;.
+&lt;p&gt;Takk! Se de siste bidragsyterne på &lt;a href="https://github.com/sky-map-team/stardroid/graphs/contributors"&gt;GitHub&lt;/a&gt;.
 &lt;/p&gt;
 
-&lt;h2&gt;Оригінальна розробка, дизайн та управління продуктом у Google&lt;/h2&gt;
+&lt;h2&gt;Opprinnelig ingeniørarbeid, design og produktledelse hos Google&lt;/h2&gt;
 &lt;p&gt;Brent Bryan, Dominic Widdows, Hector Ouilhet, James Powell, John Taylor, Kevin Serafini,
 Lior Ron.&lt;/p&gt;
 
-&lt;h1&gt;Визнання&lt;/h1&gt;
-&lt;p&gt;Sky Map був спочатку розроблений як "Google Sky Map" компанією Google Inc. і відкритий у 2012 році.&lt;/p&gt;
-&lt;p&gt;Особливе спасибі Pat Stephenson за натхнення ідеї своїм конкурсом G1-phone
-    та Chris DiBona та Michael Weiss-Malik за допомогу в переході
-    від Google до відкритого коду.&lt;/p&gt;
+&lt;h1&gt;Anerkjennelser&lt;/h1&gt;
+&lt;p&gt;Sky Map ble opprinnelig utviklet som "Google Sky Map" av Google Inc. og gjort åpen kildekode i 2012.&lt;/p&gt;
+&lt;p&gt;Spesiell takk til Pat Stephenson for å ha inspirert ideen med sin G1-telefonkonkurranse
+    og til Chris DiBona og Michael Weiss-Malik for hjelpen med overgangen
+    fra Google til åpen kildekode.&lt;/p&gt;
 
-&lt;h2&gt;Дані&lt;/h2&gt;
-&lt;p&gt;Sky Map використовує карти, отримані з даних:&lt;/p&gt;
+&lt;h2&gt;Data&lt;/h2&gt;
+&lt;p&gt;Sky Map bruker kart avledet fra data fra:&lt;/p&gt;
 &lt;ul class="credits"&gt;
 &lt;li&gt;Centre de Donnees astronomiques de Strasbourg (&lt;a href="https://cdsweb.u-strasbg.fr/"&gt;https://cdsweb.u-strasbg.fr/&lt;/a&gt;)&lt;/li&gt;
 &lt;li&gt;The Bright Star Catalogue, 5th Revised Ed. (Hoffleit D., Warren Jr W.H.)&lt;/li&gt;
@@ -43,15 +44,16 @@ Lior Ron.&lt;/p&gt;
 &lt;li&gt;Meteor shower data from the International Meteor Organization (&lt;a href="https://www.imo.net/data"&gt;https://www.imo.net/data&lt;/a&gt;)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2&gt;Авторські права на зображення&lt;/h2&gt;
-&lt;p&gt;Небесні зображення в цій програмі надаються будь ласка з наступних джерел:&lt;/p&gt;
+&lt;h2&gt;Bildekrediteringer&lt;/h2&gt;
+&lt;p&gt;Himmelbilder i denne appen er levert av følgende kilder:&lt;/p&gt;
 &lt;ul class="credits"&gt;
 &lt;li&gt;Hubble Space Telescope images: NASA, ESA, and the Space Telescope Science Institute (&lt;a href="https://hubblesite.org/"&gt;hubblesite.org&lt;/a&gt;)&lt;/li&gt;
 &lt;li&gt;Planet images: NASA/JPL-Caltech, NASA/Johns Hopkins APL/Carnegie (MESSENGER), NASA/Johns Hopkins APL/SwRI (New Horizons)&lt;/li&gt;
 &lt;li&gt;Moon image: NASA/GSFC/Arizona State University (Lunar Reconnaissance Orbiter)&lt;/li&gt;
 &lt;li&gt;Star field images: ESO Digitized Sky Survey 2 (&lt;a href="https://archive.eso.org/dss/dss"&gt;archive.eso.org/dss&lt;/a&gt;), CC BY 4.0&lt;/li&gt;
-&lt;li&gt;Constellation charts: IAU and Sky &amp; Telescope (Roger Sinnott &amp; Rick Fienberg), CC BY 4.0&lt;/li&gt;
+&lt;li&gt;Constellation charts: IAU and Sky &amp;amp; Telescope (Roger Sinnott &amp;amp; Rick Fienberg), CC BY 4.0&lt;/li&gt;
 &lt;li&gt;Additional Messier images: Gemini Observatory/NOIRLab/NSF/AURA (&lt;a href="https://noirlab.edu/"&gt;noirlab.edu&lt;/a&gt;)&lt;/li&gt;
 &lt;li&gt;M31 image: Peter Kennett (&lt;a href="https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg"&gt;Wikimedia Commons&lt;/a&gt;)&lt;/li&gt;
-&lt;/ul&gt;</string>
+&lt;/ul&gt;
+    </string>
 </resources>
