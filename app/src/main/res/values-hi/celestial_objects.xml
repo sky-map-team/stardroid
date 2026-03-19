@@ -1,0 +1,364 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <!-- Constellations -->
+    <string name="andromeda" translation_description="Name of the Andromeda constellation">एंड्रोमेडा</string>
+    <string name="aquarius" translation_description="Name of the Aquarius constellation">कुंभ</string>
+    <string name="aquila" translation_description="Name of the Aquila constellation">गरुड़</string>
+    <string name="aries" translation_description="Name of the Aries constellation">मेष</string>
+    <string name="auriga" translation_description="Name of the Auriga constellation">सारथी</string>
+    <string name="bootes" translation_description="Name of the Bootes constellation">गोपालक</string>
+    <string name="cancer" translation_description="Name of the Cancer constellation">कर्क</string>
+    <string name="canis_major" translation_description="Name of the Canis Major constellation">बड़ा कुत्ता</string>
+    <string name="capricornus" translation_description="Name of the Capricornus constellation">मकर</string>
+    <string name="carina" translation_description="Name of the Carina constellation">कील</string>
+    <string name="cassiopeia" translation_description="Name of the Cassiopeia constellation">कसिओपिया</string>
+    <string name="centaurus" translation_description="Name of the Centaurus constellation">केंद्रीय</string>
+    <string name="cetus" translation_description="Name of the Cetus constellation">व्हेल</string>
+    <string name="crux" translation_description="Name of the Crux constellation">दक्षिणी十字</string>
+    <string name="cygnus" translation_description="Name of the Cygnus constellation">हंस</string>
+    <string name="draco" translation_description="Name of the Draco constellation">ड्रैगन</string>
+    <string name="eridanus" translation_description="Name of the Eridanus constellation">नदी</string>
+    <string name="gemini" translation_description="Name of the Gemini constellation">मिथुन</string>
+    <string name="grus" translation_description="Name of the Grus constellation">ग्रस</string>
+    <string name="hercules" translation_description="Name of the Hercules constellation">हरक्यूलिस</string>
+    <string name="hydrus" translation_description="Name of the Hydrus constellation">हाइड्रस</string>
+    <string name="leo" translation_description="Name of the Leo constellation">लियो</string>
+    <string name="libra" translation_description="Name of the Libra constellation">तुला</string>
+    <string name="lupus" translation_description="Name of the Lupus constellation">लूपस</string>
+    <string name="lyra" translation_description="Name of the Lyra constellation">लीरा</string>
+    <string name="ophiuchus" translation_description="Name of the Ophiuchus constellation">ओफिउकस</string>
+    <string name="orion" translation_description="Name of the Orion constellation">ओरायन</string>
+    <string name="pavo" translation_description="Name of the Pavo constellation">पावो</string>
+    <string name="pegasus" translation_description="Name of the Pegasus constellation">पेगासस</string>
+    <string name="perseus" translation_description="Name of the Perseus constellation">पर्सियस</string>
+    <string name="phoenix" translation_description="Name of the Phoenix constellation">फीनिक्स</string>
+    <string name="pisces" translation_description="Name of the Pisces constellation">मीन</string>
+    <string name="piscis_austrinus" translation_description="Name of the Piscis Austrinus constellation">दक्षिण मीन</string>
+    <string name="puppis" translation_description="Name of the Puppis constellation">पुप्पिस</string>
+    <string name="sagittarius" translation_description="Name of the Sagittarius constellation">धनु</string>
+    <string name="scorpius" translation_description="Name of the Scorpius constellation">वृश्चिक</string>
+    <string name="taurus" translation_description="Name of the Taurus constellation">वृष</string>
+    <string name="tucana" translation_description="Name of the Tucana constellation">तुकाना</string>
+    <string name="ursa_major" translation_description="Name of the Ursa Major constellation">बड़ी भालू</string>
+    <string name="ursa_minor" translation_description="Name of the Ursa Minor constellation">छोटी भालू</string>
+    <string name="vela" translation_description="Name of the Vela constellation">वेला</string>
+    <string name="virgo" translation_description="Name of the Virgo constellation">कन्या</string>
+    <string name="capricorn" translation_description="Name of the Capricorn constellation">मकर</string>
+    <string name="southern_cross" translation_description="Name of the Southern Cross constellation">दक्षिणी क्रॉस</string>
+    <string name="scorpio" translation_description="Name of the Scorpio constellation">वृश्चिक</string>
+    <string name="little_dipper" translation_description="Name of the Little Dipper constellation">छोटी डिपर</string>
+    <string name="little_bear" translation_description="Name of the Little Bear constellation">छोटी भालू</string>
+    <string name="big_dipper" translation_description="Name of the Big Dipper constellation">बड़ी डिपर</string>
+    <string name="great_bear" translation_description="Name of the Great Bear constellation">महान भालू</string>
+    <string name="plough" translation_description="Name of the Plough constellation">हल</string>
+    <string name="antlia" translation_description="Name of the Antlia constellation">एंटलिया</string>
+    <string name="apus" translation_description="Name of the Apus constellation">अपस</string>
+    <string name="ara" translation_description="Name of the Ara constellation">अरा</string>
+    <string name="caelum" translation_description="Name of the Caelum constellation">कैलम</string>
+    <string name="camelopardalis" translation_description="Name of the Camelopardalis constellation">कैमलोपार्डलिस</string>
+    <string name="canes_venatici" translation_description="Name of the Canes Venatici constellation">कैनिस वेनेटिसी</string>
+    <string name="canis_minor" translation_description="Name of the Canis Minor constellation">कैनिस माइनर</string>
+    <string name="cepheus" translation_description="Name of the Cepheus constellation">सेफियस</string>
+    <string name="chamaeleon" translation_description="Name of the Chamaeleon constellation">कैमेलियॉन</string>
+    <string name="circinus" translation_description="Name of the Circinus constellation">सर्किनस</string>
+    <string name="columba" translation_description="Name of the Columba constellation">कोलंबा</string>
+    <string name="coma_berenices" translation_description="Name of the Coma Berenices constellation">कोमा बेरेनिसेस</string>
+    <string name="corona_australis" translation_description="Name of the Corona Australis constellation">कोरोना ऑस्ट्रेलिस</string>
+    <string name="corona_borealis" translation_description="Name of the Corona Borealis constellation">कोरोना बोरिएलिस</string>
+    <string name="corvus" translation_description="Name of the Corvus constellation">कोर्वस</string>
+    <string name="crater" translation_description="Name of the Crater constellation">क्रेटर</string>
+    <string name="delphinus" translation_description="Name of the Delphinus constellation">डेल्फिनस</string>
+    <string name="dorado" translation_description="Name of the Dorado constellation">डोराडो</string>
+    <string name="equuleus" translation_description="Name of the Equuleus constellation">इक्विलियस</string>
+    <string name="fornax" translation_description="Name of the Fornax constellation">फोर्नैक्स</string>
+    <string name="horologium" translation_description="Name of the Horologium constellation">होरोलोजियम</string>
+    <string name="hydra" translation_description="Name of the Hydra constellation">हाइड्रा</string>
+    <string name="indus" translation_description="Name of the Indus constellation">इंडस</string>
+    <string name="lacerta" translation_description="Name of the Lacerta constellation">लेसर्टा</string>
+    <string name="leo_minor" translation_description="Name of the Leo Minor constellation">लियो माइनर</string>
+    <string name="lepus" translation_description="Name of the Lepus constellation">लेपस</string>
+    <string name="lynx" translation_description="Name of the Lynx constellation">लिंक्स</string>
+    <string name="mensa" translation_description="Name of the Mensa constellation">मेंसा</string>
+    <string name="microscopium" translation_description="Name of the Microscopium constellation">माइक्रोस्कोपियम</string>
+    <string name="monoceros" translation_description="Name of the Monoceros constellation">मोनोसेरोस</string>
+    <string name="musca" translation_description="Name of the Musca constellation">मस्का</string>
+    <string name="norma" translation_description="Name of the Norma constellation">नॉर्मा</string>
+    <string name="octans" translation_description="Name of the Octans constellation">ऑक्टन्स</string>
+    <string name="pictor" translation_description="Name of the Pictor constellation">पिक्टर</string>
+    <string name="pyxis" translation_description="Name of the Pyxis constellation">पाइक्सिस</string>
+    <string name="reticulum" translation_description="Name of the Reticulum constellation">रेटिकुलम</string>
+    <string name="sagitta" translation_description="Name of the Sagitta constellation">सागिट्टा</string>
+    <string name="sculptor" translation_description="Name of the Sculptor constellation">स्कल्पटर</string>
+    <string name="scutum" translation_description="Name of the Scutum constellation">स्कुटम</string>
+    <string name="serpens_caput" translation_description="Name of the Serpens Caput constellation">सर्पेंस कैपुट</string>
+    <string name="serpens_cauda" translation_description="Name of the Serpens Cauda constellation">सर्पेंस कॉडा</string>
+    <string name="sextans" translation_description="Name of the Sextans constellation">सेक्सटन्स</string>
+    <string name="telescopium" translation_description="Name of the Telescopium constellation">टेलीस्कोपियम</string>
+    <string name="triangulum" translation_description="Name of the Triangulum constellation">त्रिभुज</string>
+    <string name="triangulum_australe" translation_description="Name of the Triangulum Australe constellation">दक्षिणी त्रिभुज</string>
+    <string name="volans" translation_description="Name of the Volans constellation">उड़ने वाली मछली</string>
+    <string name="vulpecula" translation_description="Name of the Vulpecula constellation">लोमड़ी</string>
+
+    <!-- Major solar system objects -->
+    <string name="sun" translation_description="Name of the Sun">सूर्य</string>
+    <string name="moon" translation_description="Name of the Earth's Moon">चंद्रमा</string>
+    <string name="mercury" translation_description="Name of the planet Mercury">बुध</string>
+    <string name="venus" translation_description="Name of the planet Venus">शुक्र</string>
+    <string name="earth" translation_description="Name of the planet Earth">पृथ्वी</string>
+    <string name="mars" translation_description="Name of the planet Mars">मंगल</string>
+    <string name="jupiter" translation_description="Name of the planet Jupiter">बृहस्पति</string>
+    <string name="saturn" translation_description="Name of the planet Saturn">शनि</string>
+    <string name="uranus" translation_description="Name of the planet Uranus">अरुण</string>
+    <string name="neptune" translation_description="Name of the planet Neptune">वरुण</string>
+    <string name="pluto" translation_description="Name of the dwarf planet Pluto">प्लूटो</string>
+
+    <!-- Gallery objects -->
+    <string name="crab_nebula" translation_description="hubble object">केकड़ा नेबुला</string>
+    <string name="eagle_nebula" translation_description="hubble object">ईगल नेबुला</string>
+    <string name="andromeda_galaxy" translation_description="hubble object">एंड्रोमेडा गैलेक्सी</string>
+    <string name="orion_nebula" translation_description="hubble object">ओरियन नेबुला</string>
+    <string name="whirlpool_galaxy" translation_description="hubble object">व्हर्लपूल गैलेक्सी</string>
+    <string name="ring_nebula" translation_description="hubble object">रिंग नेबुला</string>
+    <string name="pinwheel_galaxy" translation_description="hubble object">पिनव्हील गैलेक्सी</string>
+    <string name="sombrero_galaxy" translation_description="hubble object">सोम्ब्रेरो गैलेक्सी</string>
+    <string name="hercules_gc" translation_description="hubble object">हरक्यूलिस ग्लोबुलर क्लस्टर</string>
+    <string name="pleiades" translation_description="hubble object">प्लेइएडेस</string>
+    <string name="cats_eye_nebula" translation_description="hubble object">कैट\'स आई नेबुला</string>
+    <string name="omega_centauri" translation_description="hubble object">ओमेगा सेंटॉरी ग्लोबुलर क्लस्टर</string>
+    <string name="v838_mon" translation_description="hubble object">वी838 मोनोसेरोटिस</string>
+    <string name="sn1987a" translation_description="hubble object">सुपरनोवा 1987a</string>
+    <string name="hubble_deep_field" translation_description="hubble object">हबल डीप फील्ड</string>
+    <string name="hdf" translation_description="hubble object">हबल डीप फील्ड</string>
+    <string name="rho_oph" translation_description="hubble object">रो ओफिउकस</string>
+
+
+    <!-- Stars -->
+    <string name="sirius" translation_description="Name of the Star Sirius">सीरियस</string>
+    <string name="canopus" translation_description="Name of the Star Canopus">कैनोपस</string>
+    <string name="arcturus" translation_description="Name of the Star Arcturus">आर्कटुरस</string>
+    <string name="rigel_kentaurus_a" translation_description="Name of the Star Rigel Kentaurus A">रिजेल केंटौरस ए</string>
+    <string name="rigil_kentaurus_a" translation_description="Name of the Star Rigil Kentaurus A">रिजिल केंटौरस ए</string>
+    <string name="vega" translation_description="Name of the Star Vega">वेगा</string>
+    <string name="rigel" translation_description="Name of the Star Rigel">रिजेल</string>
+    <string name="procyon" translation_description="Name of the Star Procyon">प्रोसियॉन</string>
+    <string name="betelgeuse" translation_description="Name of the Star Betelgeuse">बेटेलज्यूज</string>
+    <string name="achernar" translation_description="Name of the Star Achernar">अचेरनार</string>
+    <string name="hadar" translation_description="Name of the Star Hadar">हदार</string>
+    <string name="capella" translation_description="Name of the Star Capella">कपेला</string>
+    <string name="altair" translation_description="Name of the Star Altair">अल्तैर</string>
+    <!-- tm:omitted name="acrux" reason="identical_to_source" -->
+    <!-- tm:omitted name="aldebaran" reason="identical_to_source" -->
+    <!-- tm:omitted name="spica" reason="identical_to_source" -->
+    <!-- tm:omitted name="antares" reason="identical_to_source" -->
+    <!-- tm:omitted name="pollux" reason="identical_to_source" -->
+    <!-- tm:omitted name="fomalhaut" reason="identical_to_source" -->
+    <!-- tm:omitted name="deneb" reason="identical_to_source" -->
+    <!-- tm:omitted name="regulus" reason="identical_to_source" -->
+    <!-- tm:omitted name="adhara" reason="identical_to_source" -->
+    <!-- tm:omitted name="shaula" reason="identical_to_source" -->
+    <!-- tm:omitted name="alnath" reason="identical_to_source" -->
+    <!-- tm:omitted name="alnilam" reason="identical_to_source" -->
+    <!-- tm:omitted name="alnair" reason="identical_to_source" -->
+    <!-- tm:omitted name="alioth" reason="identical_to_source" -->
+    <!-- tm:omitted name="mirphak" reason="identical_to_source" -->
+    <string name="kaus_australis" translation_description="Name of the Star Kaus Australis">कौस ऑस्ट्रेलिस</string>
+    <string name="dubhe" translation_description="Name of the Star Dubhe">डबे</string>
+    <string name="alkaid" translation_description="Name of the Star Alkaid">अलकैद</string>
+    <string name="alhena" translation_description="Name of the Star Alhena">अलहेना</string>
+    <string name="castor" translation_description="Name of the Star Castor">कास्टर</string>
+    <string name="polaris" translation_description="Name of the Star Polaris">पोलारिस</string>
+    <string name="alphard" translation_description="Name of the Star Alphard">अलफर्द</string>
+    <string name="hamal" translation_description="Name of the Star Hamal">हमल</string>
+    <string name="algieba" translation_description="Name of the Star Algieba">अलजीबा</string>
+    <string name="diphda" translation_description="Name of the Star Diphda">दिफदा</string>
+    <string name="nunki" translation_description="Name of the Star Nunki">नुंकी</string>
+    <string name="mirach" translation_description="Name of the Star Mirach">मिराच</string>
+    <string name="alpheratz" translation_description="Name of the Star Alpheratz">अलफेराज़</string>
+    <string name="saiph" translation_description="Name of the Star Saiph">सैफ</string>
+    <string name="kochab" translation_description="Name of the Star Kochab">कोचब</string>
+    <string name="rasalhague" translation_description="Name of the Star Rasalhague">राशलहग</string>
+    <string name="algol" translation_description="Name of the Star Algol">अलगोल</string>
+    <string name="denebola" translation_description="Name of the Star Denebola">देनेबोला</string>
+    <string name="alphekka" translation_description="Name of the Star Alphekka">अल्फेक्का</string>
+    <string name="etamin" translation_description="Name of the Star Etamin">एटामिन</string>
+    <string name="kaus" translation_description="Name of the Star Kaus">कौस</string>
+    <string name="shedir" translation_description="Name of the Star Shedir">शेदिर</string>
+    <string name="caph" translation_description="Name of the Star Caph">काफ</string>
+    <string name="izar" translation_description="Name of the Star Izar">इज़ार</string>
+    <string name="merak" translation_description="Name of the Star Merak">मेराक</string>
+    <string name="enif" translation_description="Name of the Star Enif">एनिफ</string>
+    <string name="ankaa" translation_description="Name of the Star Ankaa">अंकाह</string>
+    <string name="phad" translation_description="Name of the Star Phad">फद</string>
+    <string name="alderamin" translation_description="Name of the Star Alderamin">अल्देरामिन</string>
+    <string name="scheat" translation_description="Name of the Star Scheat">शीट</string>
+    <string name="markab" translation_description="Name of the Star Markab">मरकब</string>
+    <string name="menkar" translation_description="Name of the Star Menkar">मेनकर</string>
+    <string name="arneb" translation_description="Name of the Star Arneb">अर्नेब</string>
+    <string name="unukalhai" translation_description="Name of the Star Unukalhai">उनुकलहाई</string>
+    <string name="algenib" translation_description="Name of the Star Algenib">अलजेनिब</string>
+    <string name="vindemiatrix" translation_description="Name of the Star Vindemiatrix">विंडेमिएट्रिक्स</string>
+    <string name="alcyone" translation_description="Name of the Star Alcyone">अलसियोन</string>
+    <string name="dog_star" translation_description="Name of the Dog Star (Sirius)">डॉग स्टार</string>
+    <string name="north_star" translation_description="Name of the North Star">उत्तर तारा</string>
+    <string name="pole_star" translation_description="Name of the (North) Pole Star">ध्रुव तारा</string>
+    <string name="alpha_centauri" translation_description="Name of the star Alpha Centauri">अल्फा सेंटॉरी</string>
+    <string name="rigil_kent" translation_description="Name of the star Rigil Kent">रिजिल केंट</string>
+    <string name="e_lyrae" translation_description="Name of the star ε Lyrae">ε लाइरे</string>
+
+    <!-- tm:omitted name="m1" reason="identical_to_source" -->
+    <!-- tm:omitted name="m2" reason="identical_to_source" -->
+    <!-- tm:omitted name="m3" reason="identical_to_source" -->
+    <!-- tm:omitted name="m4" reason="identical_to_source" -->
+    <!-- tm:omitted name="m5" reason="identical_to_source" -->
+    <!-- tm:omitted name="m6" reason="identical_to_source" -->
+    <!-- tm:omitted name="m7" reason="identical_to_source" -->
+    <!-- tm:omitted name="m8" reason="identical_to_source" -->
+    <!-- tm:omitted name="m9" reason="identical_to_source" -->
+    <!-- tm:omitted name="m10" reason="identical_to_source" -->
+    <!-- tm:omitted name="m11" reason="identical_to_source" -->
+    <!-- tm:omitted name="m12" reason="identical_to_source" -->
+    <!-- tm:omitted name="m13" reason="identical_to_source" -->
+    <!-- tm:omitted name="m14" reason="identical_to_source" -->
+    <!-- tm:omitted name="m15" reason="identical_to_source" -->
+    <!-- tm:omitted name="m16" reason="identical_to_source" -->
+    <!-- tm:omitted name="m17" reason="identical_to_source" -->
+    <!-- tm:omitted name="m18" reason="identical_to_source" -->
+    <!-- tm:omitted name="m19" reason="identical_to_source" -->
+    <!-- tm:omitted name="m20" reason="identical_to_source" -->
+    <!-- tm:omitted name="m21" reason="identical_to_source" -->
+    <!-- tm:omitted name="m22" reason="identical_to_source" -->
+    <!-- tm:omitted name="m23" reason="identical_to_source" -->
+    <!-- tm:omitted name="m24" reason="identical_to_source" -->
+    <!-- tm:omitted name="m25" reason="identical_to_source" -->
+    <!-- tm:omitted name="m26" reason="identical_to_source" -->
+    <!-- tm:omitted name="m27" reason="identical_to_source" -->
+    <!-- tm:omitted name="m28" reason="identical_to_source" -->
+    <!-- tm:omitted name="m29" reason="identical_to_source" -->
+    <!-- tm:omitted name="m30" reason="identical_to_source" -->
+    <!-- tm:omitted name="m31" reason="identical_to_source" -->
+    <!-- tm:omitted name="m32" reason="identical_to_source" -->
+    <!-- tm:omitted name="m33" reason="identical_to_source" -->
+    <!-- tm:omitted name="m34" reason="identical_to_source" -->
+    <!-- tm:omitted name="m35" reason="identical_to_source" -->
+    <!-- tm:omitted name="m36" reason="identical_to_source" -->
+    <!-- tm:omitted name="m37" reason="identical_to_source" -->
+    <!-- tm:omitted name="m38" reason="identical_to_source" -->
+    <!-- tm:omitted name="m39" reason="identical_to_source" -->
+    <!-- tm:omitted name="m40" reason="identical_to_source" -->
+    <!-- tm:omitted name="m41" reason="identical_to_source" -->
+    <!-- tm:omitted name="m42" reason="identical_to_source" -->
+    <!-- tm:omitted name="m43" reason="identical_to_source" -->
+    <!-- tm:omitted name="m44" reason="identical_to_source" -->
+    <!-- tm:omitted name="m45" reason="identical_to_source" -->
+    <!-- tm:omitted name="m46" reason="identical_to_source" -->
+    <!-- tm:omitted name="m47" reason="identical_to_source" -->
+    <!-- tm:omitted name="m48" reason="identical_to_source" -->
+    <!-- tm:omitted name="m49" reason="identical_to_source" -->
+    <!-- tm:omitted name="m50" reason="identical_to_source" -->
+    <!-- tm:omitted name="m51" reason="identical_to_source" -->
+    <!-- tm:omitted name="m52" reason="identical_to_source" -->
+    <!-- tm:omitted name="m53" reason="identical_to_source" -->
+    <!-- tm:omitted name="m54" reason="identical_to_source" -->
+    <!-- tm:omitted name="m55" reason="identical_to_source" -->
+    <!-- tm:omitted name="m56" reason="identical_to_source" -->
+    <!-- tm:omitted name="m57" reason="identical_to_source" -->
+    <!-- tm:omitted name="m58" reason="identical_to_source" -->
+    <!-- tm:omitted name="m59" reason="identical_to_source" -->
+    <!-- tm:omitted name="m60" reason="identical_to_source" -->
+    <!-- tm:omitted name="m61" reason="identical_to_source" -->
+    <!-- tm:omitted name="m62" reason="identical_to_source" -->
+    <!-- tm:omitted name="m63" reason="identical_to_source" -->
+    <!-- tm:omitted name="m64" reason="identical_to_source" -->
+    <!-- tm:omitted name="m65" reason="identical_to_source" -->
+    <!-- tm:omitted name="m66" reason="identical_to_source" -->
+    <!-- tm:omitted name="m67" reason="identical_to_source" -->
+    <!-- tm:omitted name="m68" reason="identical_to_source" -->
+    <!-- tm:omitted name="m69" reason="identical_to_source" -->
+    <!-- tm:omitted name="m70" reason="identical_to_source" -->
+    <!-- tm:omitted name="m71" reason="identical_to_source" -->
+    <!-- tm:omitted name="m72" reason="identical_to_source" -->
+    <!-- tm:omitted name="m73" reason="identical_to_source" -->
+    <!-- tm:omitted name="m74" reason="identical_to_source" -->
+    <!-- tm:omitted name="m75" reason="identical_to_source" -->
+    <!-- tm:omitted name="m76" reason="identical_to_source" -->
+    <!-- tm:omitted name="m77" reason="identical_to_source" -->
+    <!-- tm:omitted name="m78" reason="identical_to_source" -->
+    <!-- tm:omitted name="m79" reason="identical_to_source" -->
+    <!-- tm:omitted name="m80" reason="identical_to_source" -->
+    <!-- tm:omitted name="m81" reason="identical_to_source" -->
+    <!-- tm:omitted name="m82" reason="identical_to_source" -->
+    <!-- tm:omitted name="m83" reason="identical_to_source" -->
+    <!-- tm:omitted name="m84" reason="identical_to_source" -->
+    <!-- tm:omitted name="m85" reason="identical_to_source" -->
+    <!-- tm:omitted name="m86" reason="identical_to_source" -->
+    <!-- tm:omitted name="m87" reason="identical_to_source" -->
+    <!-- tm:omitted name="m88" reason="identical_to_source" -->
+    <!-- tm:omitted name="m89" reason="identical_to_source" -->
+    <!-- tm:omitted name="m90" reason="identical_to_source" -->
+    <!-- tm:omitted name="m91" reason="identical_to_source" -->
+    <!-- tm:omitted name="m92" reason="identical_to_source" -->
+    <!-- tm:omitted name="m93" reason="identical_to_source" -->
+    <!-- tm:omitted name="m94" reason="identical_to_source" -->
+    <!-- tm:omitted name="m95" reason="identical_to_source" -->
+    <!-- tm:omitted name="m96" reason="identical_to_source" -->
+    <!-- tm:omitted name="m97" reason="identical_to_source" -->
+    <!-- tm:omitted name="m98" reason="identical_to_source" -->
+    <!-- tm:omitted name="m99" reason="identical_to_source" -->
+    <!-- tm:omitted name="m100" reason="identical_to_source" -->
+    <!-- tm:omitted name="m101" reason="identical_to_source" -->
+    <!-- tm:omitted name="m102" reason="identical_to_source" -->
+    <!-- tm:omitted name="m103" reason="identical_to_source" -->
+    <!-- tm:omitted name="m104" reason="identical_to_source" -->
+    <!-- tm:omitted name="m105" reason="identical_to_source" -->
+    <!-- tm:omitted name="m106" reason="identical_to_source" -->
+    <!-- tm:omitted name="m107" reason="identical_to_source" -->
+    <!-- tm:omitted name="m108" reason="identical_to_source" -->
+    <!-- tm:omitted name="m109" reason="identical_to_source" -->
+    <!-- tm:omitted name="m110" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc6543" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc5139" reason="identical_to_source" -->
+    <!-- tm:omitted name="t_crb" reason="identical_to_source" -->
+    <string name="blaze_star" translation_description="Nickname for the recurrent nova T Coronae Borealis">ब्लेज़ स्टार</string>
+    <string name="t_coronae_borealis" translation_description="Full name of the recurrent nova T Coronae Borealis">T कोरोना बोरिएलिस</string>
+    <string name="eta_carinae_nebula" translation_description="Name of the Eta Carinae Nebula (NGC 3372)">एटा कैरिना नेबुला</string>
+    <string name="carina_nebula" translation_description="Common name for the Eta Carinae Nebula">कैरिना नेबुला</string>
+    <!-- tm:omitted name="ngc3372" reason="identical_to_source" -->
+    <string name="tarantula_nebula" translation_description="Name of the Tarantula Nebula (NGC 2070) in the Large Magellanic Cloud">टारेंटुला नेबुला</string>
+    <string name="n30_doradus" translation_description="Catalog designation for the Tarantula Nebula">30 डोराडस</string>
+    <!-- tm:omitted name="ngc2070" reason="identical_to_source" -->
+    <!-- tm:omitted name="lmc" reason="identical_to_source" -->
+    <string name="large_magellanic_cloud" translation_description="Full name of the Large Magellanic Cloud galaxy">बड़ा मैजेलैनिक बादल</string>
+    <!-- tm:omitted name="nubecula_major" reason="identical_to_source" -->
+    <!-- tm:omitted name="smc" reason="identical_to_source" -->
+    <string name="small_magellanic_cloud" translation_description="Full name of the Small Magellanic Cloud galaxy">छोटा मैजेलैनिक बादल</string>
+    <!-- tm:omitted name="nubecula_minor" reason="identical_to_source" -->
+    <string name="butterfly_cluster" translation_description="Name of the Messier object Butterfly Cluster">तितली समूह</string>
+    <string name="scorpions_tail" translation_description="Name of the Messier object Scorpion\'s Tail">बिच्छू की पूंछ</string>
+    <!-- tm:omitted name="winnecke_4" reason="identical_to_source" -->
+    <string name="beehive_cluster" translation_description="Name of the Messier object Beehive Cluster">मधुमक्खी समूह</string>
+    <!-- tm:omitted name="praesepe" reason="identical_to_source" -->
+    <string name="seven_sisters" translation_description="Name of the Messier object Seven Sisters">सात बहनें</string>
+
+    <!-- Manmade objects -->
+    <string name="space_station" translation_description="Name of the Internation Space Station">अंतर्राष्ट्रीय अंतरिक्ष स्टेशन</string>
+    <string name="space_shuttle" translation_description="Name of the Space Shuttle">अंतरिक्ष शटल</string>
+
+    <!-- Meteors -->
+    <string name="leonids" translation_description="Meteor Shower">लियोनिड्स</string>
+    <string name="geminids" translation_description="Meteor Shower">जेमिनिड्स</string>
+    <string name="quadrantids" translation_description="Meteor Shower">क्वाड्रेंटिड्स</string>
+    <string name="lyrids" translation_description="Meteor Shower">लिरिड्स</string>
+    <string name="aquariids" translation_description="Meteor Shower">एटा एक्वेरिड्स</string>
+    <string name="deltaaquariids" translation_description="Meteor Shower">डेल्टा एक्वेरिड्स</string>
+    <string name="perseids" translation_description="Meteor Shower">पर्सिड्स</string>
+    <string name="orionids" translation_description="Meteor Shower">ओरिओनिड्स</string>
+    <string name="puppidvelids" translation_description="Meteor Shower">पप्पिड-वेलिड्स</string>
+    <string name="ursids" translation_description="Meteor Shower">अर्सिड्स</string>
+
+    <!-- Comets -->
+    <string name="comet_leonard" translation_description="Name of Comet Leonard (C/2021 A1) as shown on the sky map">धूमकेतु लियोनार्ड</string>
+    <!-- TODO: no need for these alt names once our search is less lousy -->
+    <string name="comet_leonard_alt" translation_description="Alternate searchable name for Comet Leonard, surname first">लियोनार्ड (धूमकेतु)</string>
+    <string name="comet_neowise" translation_description="Name of Comet NEOWISE (C/2020 F3) as shown on the sky map">धूमकेतु नियोवाइज़</string>
+    <string name="comet_neowise_alt" translation_description="Alternate searchable name for Comet NEOWISE, surname first">नियोवाइज़ (धूमकेतु)</string>
+</resources>
