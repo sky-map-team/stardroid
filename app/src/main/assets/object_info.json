@@ -1640,7 +1640,9 @@
       "type": "galaxy",
       "distanceKey": "object_info_willman_1_distance",
       "sizeKey": "object_info_willman_1_size",
-      "magnitude": "15.4"
+      "magnitude": "15.4",
+      "imageKey": "messier/willman_1.webp",
+      "imageCredit": "Sky Map team (it's very faint)"
     },
     "alcyone": {
       "nameKey": "alcyone",
