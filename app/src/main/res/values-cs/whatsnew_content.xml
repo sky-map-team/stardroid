@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Nebeské snímky</h2>
+    Informační karty nyní obsahují fotografie všech označených objektů — planet, hvězd, souhvězdí a objektů Messiera. Klepnutím na libovolný objekt jej můžete prozkoumat vizuálně.
+
+<h2>Nové objekty katalogu</h2>
+    T Coronae Borealis ("Hvězda zářivosti") a Mlhovina Eta Carinae jsou nyní v katalogu.
+
+<h2>Noční režim</h2>
+    Červený noční režim nyní pokrývá téměř všechny prvky uživatelského rozhraní, včetně všech dialogů a obrazovky kalibrace kompasu — žádné více slepující bílé záblesky v temnotě.]]></string>
+    <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Uživatelé beta verze!</h2>
+<h3>Jak nám můžete pomoci</h3>
+V tomto vydání se při použití ručního režimu a přejetí mapy horizont vrátí
+do vodorovné polohy, takže horní část mapy bude vždy ukazovat hvězdy nad vámi. Dříve se mapa jen
+posunula v přímé linii, takže jste mohli skončit vzhůru nohama. Co si o tom myslíte? Je to lepší?
+ Dejte nám vědět <a href="https://forms.gle/JkrMw7Zc4ynp45J79">zde.</a><br/>
+Otevřete nabídku nápovědy a zobrazíte si tyto informace znovu.]]></string>
+</resources>
