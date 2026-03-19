@@ -168,6 +168,61 @@ class CelestialHitTesterTest {
     }
 
     @Test
+    fun testFindObjectAtScreenPosition_reducedThresholdAtLowFov() {
+        // At FOV 10°, threshold = 5° × 10/90 ≈ 0.56°
+        // Object at ~0.29° from center should be within the scaled threshold
+        `when`(mockAstronomerModel.fieldOfView).thenReturn(10f)
+        val sunCoords = Vector3(1f, 0.005f, 0f)  // ~0.29° from look direction
+        `when`(mockSearchResult.coords()).thenReturn(sunCoords)
+        `when`(mockLayerManager.searchByObjectName("Sun"))
+            .thenReturn(listOf(mockSearchResult))
+        `when`(mockLayerManager.searchByObjectName("Mars")).thenReturn(emptyList())
+
+        val result = hitTester.findObjectAtScreenPosition(
+            540f, 960f, 1080, 1920
+        )
+
+        assertThat(result).isEqualTo(sunInfo)
+    }
+
+    @Test
+    fun testFindObjectAtScreenPosition_objectOutsideScaledThresholdAtLowFov() {
+        // At FOV 10°, threshold = 5° × 10/90 ≈ 0.56°
+        // Object at ~2° would pass the old fixed 5° threshold but not the scaled one
+        `when`(mockAstronomerModel.fieldOfView).thenReturn(10f)
+        val sunCoords = Vector3(1f, 0.035f, 0f)  // ~2° from look direction
+        `when`(mockSearchResult.coords()).thenReturn(sunCoords)
+        `when`(mockLayerManager.searchByObjectName("Sun"))
+            .thenReturn(listOf(mockSearchResult))
+        `when`(mockLayerManager.searchByObjectName("Mars")).thenReturn(emptyList())
+
+        val result = hitTester.findObjectAtScreenPosition(
+            540f, 960f, 1080, 1920
+        )
+
+        assertThat(result).isNull()
+    }
+
+    @Test
+    fun testFindObjectAtScreenPosition_minimumThresholdClamp() {
+        // At FOV 1°, calculated threshold = 5° × 1/90 ≈ 0.056°
+        // but clamped to MIN_TAP_THRESHOLD_DEGREES = 0.5°
+        // Object at ~0.29° should be found (within clamped 0.5°)
+        `when`(mockAstronomerModel.fieldOfView).thenReturn(1f)
+        val sunCoords = Vector3(1f, 0.005f, 0f)  // ~0.29° from look direction
+        `when`(mockSearchResult.coords()).thenReturn(sunCoords)
+        `when`(mockLayerManager.searchByObjectName("Sun"))
+            .thenReturn(listOf(mockSearchResult))
+        `when`(mockLayerManager.searchByObjectName("Mars")).thenReturn(emptyList())
+
+        val result = hitTester.findObjectAtScreenPosition(
+            540f, 960f, 1080, 1920
+        )
+
+        assertThat(result).isEqualTo(sunInfo)
+    }
+
+    @Test
     fun testFindObjectAtScreenPosition_missingSearchName() {
         `when`(mockObjectInfoRegistry.getSearchName("sun")).thenReturn(null)
 
