@@ -145,8 +145,8 @@
     <string name="menu_tos" translation_description="Menu item label to view the Terms of Service">सेवा की शर्तें</string>
     <string name="menu_diagnostics" translation_description="Menu item label to open the technical diagnostics screen">डायग्नोस्टिक्स</string>
 
-    <string name="north_pole" translation_description="Short abbreviation for the North Celestial Pole, displayed as a label on the sky map grid. Translators: use the standard abbreviation in your language (e.g. NP in English, PN in French).">उत्तरी खगोलीय ध्रुव</string>
-    <string name="south_pole" translation_description="Short abbreviation for the South Celestial Pole, displayed as a label on the sky map grid. Translators: use the standard abbreviation in your language (e.g. SP in English, PS in French).">दक्षिणी खगोलीय ध्रुव</string>
+<string name="north_pole" translation_description="Short abbreviation for the North Celestial Pole, displayed as a label on the sky map grid. Translators: use the standard abbreviation in your language (e.g. NP in English, PN in French).">उ.ध्रुव</string>
+<string name="south_pole" translation_description="Short abbreviation for the South Celestial Pole, displayed as a label on the sky map grid. Translators: use the standard abbreviation in your language (e.g. SP in English, PS in French).">द.ध्रुव</string>
 
     <string name="enable_analytics" translation_description="Preference label to opt in to sending anonymous usage statistics">उपयोग आंकड़े भेजें</string>
     <string name="enable_analytics_desc" translation_description="Description/summary for the usage statistics preference">Google Analytics को अनाम डेटा भेजकर Sky Map को बेहतर बनाएं</string>
