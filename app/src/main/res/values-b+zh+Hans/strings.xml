@@ -30,7 +30,6 @@
     <string name="location_warning_permission" translation_description="Warning message shown when location is unavailable because permission was not granted">位置不可用 — 未授予权限。</string>
     <string name="location_warning_manual" translation_description="Warning message shown when manual location mode is selected but no coordinates have been entered">位置未设置 — 请在设置中配置。</string>
 <!-- TODO: many translations require two placeholders. Once all translations brought up to date we can clean this up -->
-    <string name="location_set_auto" translation_description="Toast message when automatic location is acquired. %1$s is the provider name (e.g. GPS), %2$s is the place name or coordinates">从“%1$s”到“%2$s”的位置集合</string>
     <string name="location_unable_to_geocode" translation_description="Error message when converting a place name to coordinates (geocoding) fails, possibly due to no network">系统不能对您的位置进行解码，可能是您的网络无法使用？</string>
     <string name="location_not_found_title" translation_description="dialog box title when location not found">抱歉</string>
     <string name="location_not_found" translation_description="dialog message when placename not found">找不到“%s”。</string>
