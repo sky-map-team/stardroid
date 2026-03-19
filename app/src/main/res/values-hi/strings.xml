@@ -29,8 +29,7 @@
     <string name="location_permission_later" translation_description="Button in the location permission dialog to defer the decision">बाद में</string>
     <string name="location_warning_permission" translation_description="Warning message shown when location is unavailable because permission was not granted">स्थान उपलब्ध नहीं — अनुमति प्रदान नहीं की गई।</string>
     <string name="location_warning_manual" translation_description="Warning message shown when manual location mode is selected but no coordinates have been entered">स्थान सेट नहीं है — कृपया सेटिंग्स में कॉन्फ़िगर करें।</string>
-<!-- TODO: many translations require two placeholders. Once all translations brought up to date we can clean this up -->
-    <string name="location_set_auto" translation_description="Toast message when automatic location is acquired. %1$s is the provider name (e.g. GPS), %2$s is the place name or coordinates">स्थान %2$s पर सेट किया गया</string>
+    <string name="location_set_auto" translation_description="Toast message when automatic location is acquired. %1$s is the place name or coordinates">स्थान %1$s पर सेट किया गया</string>
     <string name="location_unable_to_geocode" translation_description="Error message when converting a place name to coordinates (geocoding) fails, possibly due to no network">आपके स्थान को डिकोड नहीं कर सके - शायद आपका नेटवर्क उपलब्ध नहीं है?</string>
     <string name="location_not_found_title" translation_description="dialog box title when location not found">खेद है</string>
     <string name="location_not_found" translation_description="dialog message when placename not found">%s नहीं मिला।</string>
