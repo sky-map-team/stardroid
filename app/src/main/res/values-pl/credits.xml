@@ -1,27 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="credits_text" translation_description="Please do not change the &lt; and &gt; markup">
-    &lt;h2&gt;Wsparcie rozwoju&lt;/h2&gt;
+<string name="credits_text" translation_description="Please do not change the &lt; and &gt; markup">
+&lt;h1&gt;Wsparcie rozwoju&lt;/h1&gt;
 &lt;p&gt;Sky Map jest darmowy, otwartoźródłowy i wolny od reklam. Jeśli lubisz go używać, rozważ &lt;a href="https://buymeacoffee.com/skymapdevs"&gt;wsparcie&lt;/a&gt; dalszego rozwoju na &lt;a href="https://github.com/sky-map-team/stardroid?tab=readme-ov-file#support-the-project"&gt;naszej stronie na GitHubie&lt;/a&gt;.&lt;/p&gt;
-&lt;h3&gt;Podziękowania dla tych, którzy ostatnio &lt;a href="https://buymeacoffee.com/skymapdevs"&gt;wsparli!&lt;/a&gt;&lt;/h3&gt;
-    %1$s
+&lt;h2&gt;Podziękowania dla tych, którzy ostatnio &lt;a href="https://buymeacoffee.com/skymapdevs"&gt;wsparli!&lt;/a&gt;&lt;/h2&gt;
 
-&lt;h2&gt;Autorzy&lt;/h2&gt;
-&lt;h3&gt;Oryginalna inżynieria, projektowanie i zarządzanie produktami w Google&lt;/h3&gt;
-&lt;p&gt;Brent Bryan, Dominic Widdows, Hector Ouilhet, James Powell, John Taylor, Kevin Serafini, Lior Ron&lt;/p&gt;
+&lt;p&gt;%1$s&lt;/p&gt;    
 
-&lt;h3&gt;Inżynieria po Google&lt;/h3&gt;
+&lt;h1&gt;Autorzy&lt;/h1&gt;
+&lt;h2&gt;Inżynieria&lt;/h2&gt;
 &lt;p&gt;John Taylor, Kevin Serafini&lt;/p&gt;
 
-&lt;h3&gt;Współtwórcy w ramach otwartego źródła&lt;/h3&gt;
+&lt;h2&gt;Współtwórcy w ramach otwartego źródła&lt;/h2&gt;
 &lt;p&gt;
     %2$s
 &lt;/p&gt;
 &lt;p&gt;Dziękujemy! Zobacz najnowszych współtwórców na &lt;a href="https://github.com/sky-map-team/stardroid/graphs/contributors"&gt;GitHubie&lt;/a&gt;.
 &lt;/p&gt;
 
-&lt;h2&gt;Podziękowania&lt;/h2&gt;
+&lt;h2&gt;Oryginalna inżynieria, projektowanie i zarządzanie produktami w Google&lt;/h2&gt;
+&lt;p&gt;Brent Bryan, Dominic Widdows, Hector Ouilhet, James Powell, John Taylor, Kevin Serafini, Lior Ron&lt;/p&gt;
+
+&lt;h1&gt;Podziękowania&lt;/h1&gt;
 &lt;p&gt;Sky Map był oryginalnie tworzony jako „Google Sky Map" przez Google Inc. i został udostępniony w postaci otwartoźródłowej w 2012 roku.&lt;/p&gt;
+&lt;p&gt;Specjalne podziękowania dla Pata Stephensona za zainspirowanie nas do tego pomysłu z jego konkursem G1-phone oraz dla Chrisa DiBona i Michaela Weiss-Malika za ich pomoc w przejściu z Google na Open Source.&lt;/p&gt;
+
+&lt;h2&gt;Dane&lt;/h2&gt;
 &lt;p&gt;Sky Map wykorzystuje mapy pochodzące z danych od:&lt;/p&gt;
 &lt;ul class="credits"&gt;
 &lt;li&gt;Centre de Donnees astronomiques de Strasbourg (&lt;a href="https://cdsweb.u-strasbg.fr/"&gt;https://cdsweb.u-strasbg.fr/&lt;/a&gt;)&lt;/li&gt;
@@ -36,7 +40,7 @@
 &lt;li&gt;Dane o rojach meteorów od International Meteor Organization (&lt;a href="https://www.imo.net/data"&gt;https://www.imo.net/data&lt;/a&gt;)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3&gt;Źródła zdjęć&lt;/h3&gt;
+&lt;h2&gt;Źródła zdjęć&lt;/h2&gt;
 &lt;p&gt;Zdjęcia ciał niebieskich w tej aplikacji zostały dostarczone dzięki uprzejmości następujących źródeł:&lt;/p&gt;
 &lt;ul class="credits"&gt;
 &lt;li&gt;Zdjęcia z Kosmicznego Teleskopu Hubble’a: NASA, ESA i Space Telescope Science Institute (&lt;a href="https://hubblesite.org/"&gt;hubblesite.org&lt;/a&gt;)&lt;/li&gt;
