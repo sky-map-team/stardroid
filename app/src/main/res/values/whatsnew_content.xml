@@ -2,7 +2,7 @@
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
     <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Celestial Images</h2>
-    Info cards now include photographs for all 145 objects — planets, stars, constellations, and Messier objects. Tap any object to explore it visually.
+    Info cards now include photographs for all labeled objects — planets, stars, constellations, and Messier objects. Tap any object to explore it visually.
 
 <h2>New Catalog Objects</h2>
     T Coronae Borealis (the "Blaze Star") and the Eta Carinae Nebula are now in the catalog.

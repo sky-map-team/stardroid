@@ -2,7 +2,7 @@
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
     <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Hemelafbeeldingen</h2>
-    Informatiekaarten bevatten nu foto\'s voor alle 145 objecten — planeten, sterren, sterrenbeelden en Messier-objecten. Tik op een object om het visueel te verkennen.
+    Informatiekaarten bevatten nu foto\'s voor alle gelabelde objecten — planeten, sterren, sterrenbeelden en Messier-objecten. Tik op een object om het visueel te verkennen.
 
 <h2>Nieuwe catalogusobjecten</h2>
     T Coronae Borealis (de "Blaze Star") en de Eta Carinae-nevel staan nu in de catalogus.
