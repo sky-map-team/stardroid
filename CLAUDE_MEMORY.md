@@ -11,7 +11,8 @@
 1. `tools/data/messier.csv` — source of truth; RA in decimal hours, Dec in decimal degrees
 2. `app/src/main/res/values/celestial_objects.xml` — one `<string>` per name/alias
 3. `app/src/main/res/values/celestial_info_cards.xml` — keys: `object_info_<key>_{description,funfact,distance,size}`
-4. `app/src/main/assets/object_info.json` — JSON entry keyed by primary name key
+4. `app/src/main/assets/object_info.json` — JSON entry keyed by primary name key; add `imageKey`/`imageCredit` if image available
+5. *(Optional)* `app/src/main/assets/celestial_images/messier/<name>.webp` — 480×800 WebP info card image; use `/celestial-image` skill to process a source image. If no free image exists, a 480×800 solid-black WebP is acceptable as placeholder (`python3 -c "from PIL import Image; Image.new('RGB',(480,800),(0,0,0)).save('willman_1.webp','WEBP')"`).
 
 ### CSV name format
 - Use natural names with spaces, pipe-separated: `T CrB|Blaze Star|T Coronae Borealis`
