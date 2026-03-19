@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>صور سماوية</h2>
+    تتضمن بطاقات المعلومات الآن صورًا فوتوغرافية لجميع 145 كائنًا — الكواكب والنجوم والأبراج والأجرام من فهرس ميسييه. اضغط على أي كائن لاستكشافه بصريًا.
+
+<h2>كائنات الفهرس الجديدة</h2>
+    T Coronae Borealis (نجم "التوهج") وسديم إيتا كارينا موجودان الآن في الفهرس.
+
+<h2>وضع الليل</h2>
+    يغطي وضع الليل الأحمر الآن جميع عناصر واجهة المستخدم تقريبًا، بما في ذلك جميع الحوارات وشاشة معايرة البوصلة — لا مزيد من الومضات البيضاء العمياء في الظلام.]]></string>
+    <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>مستخدمو النسخة التجريبية!</h2>
+<h3>كيف يمكنك المساعدة</h3>
+في هذا الإصدار، عندما تستخدم الوضع اليدوي وتمرر الخريطة، سيعود الأفق إلى المستوى بحيث يعرض أعلى الخريطة دائماً النجوم فوقك. في السابق، كانت الخريطة تتحرك في خط مستقيم فقط، لذا كان يمكنك أن ينتهي بك الحال رأساً على عقب. ما رأيك؟ هل هذا أفضل؟
+أخبرنا <a href="https://forms.gle/JkrMw7Zc4ynp45J79">هنا.</a><br/>
+افتح قائمة المساعدة لرؤية هذه المعلومات مرة أخرى.]]></string>
+</resources>
