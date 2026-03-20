@@ -2881,3 +2881,28 @@ source {
   name_str_ids: "small_magellanic_cloud"
   name_str_ids: "nubecula_minor"
 }
+source {
+  search_location {
+    right_ascension: 162.3495
+    declination: 51.05
+  }
+  point {
+    location {
+      right_ascension: 162.3495
+      declination: 51.05
+    }
+    color: 4761665
+    size: 3
+    shape: GALAXY
+  }
+  label {
+    location {
+      right_ascension: 162.3495
+      declination: 51.05
+    }
+    color: 4761665
+    strings_str_id: "willman_1"
+  }
+  name_str_ids: "willman_1"
+  name_str_ids: "beth_willman_galaxy"
+}
