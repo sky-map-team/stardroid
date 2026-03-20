@@ -31,6 +31,7 @@
     <!-- tm:omitted name="location_permission_later" reason="identical_to_source" -->
     <string name="location_warning_permission" translation_description="Warning message shown when location is unavailable because permission was not granted">Locatie niet beschikbaar — toestemming niet verleend.</string>
     <string name="location_warning_manual" translation_description="Warning message shown when manual location mode is selected but no coordinates have been entered">Locatie niet ingesteld — configureer in Instellingen.</string>
+    <string name="location_set_auto" translation_description="Toast message when automatic location is acquired. %1$s is the place name or coordinates">Locatie ingesteld op %1$s</string>
     <string name="location_unable_to_geocode" translation_description="Error message when converting a place name to coordinates (geocoding) fails, possibly due to no network">Kan uw locatie niet decoderen - misschien is uw netwerk niet beschikbaar?</string>
     <string name="location_not_found_title" translation_description="dialog box title when location not found">Helaas</string>
     <string name="location_not_found" translation_description="dialog message when placename not found">%s niet gevonden.</string>

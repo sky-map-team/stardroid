@@ -912,6 +912,15 @@
     </string>
     <string name="object_info_smc_distance" translation_description="Distance to the Small Magellanic Cloud shown in the info card. Translate units if appropriate for your locale.">200 000 світлових років</string>
     <string name="object_info_smc_size" translation_description="Physical size of the Small Magellanic Cloud shown in the info card. Translate units if appropriate for your locale.">7 000 світлових років у поперечнику</string>
+    <!-- Willman 1 -->
+    <string name="object_info_willman_1_description" translation_description="Description of Willman 1 shown in the info card. Translate this text.">
+    Willman 1 — надзвичайно слабка карликова супутникова галактика Чумацького Шляху, відкрита у 2004 році Бет Віллман у даних Огляду цифрового неба Слоана. Це одна з найменш світлих відомих галактик і одна з найекстремальніших лабораторій для темної матерії у Всесвіті.
+    </string>
+    <string name="object_info_willman_1_funfact" translation_description="Fun fact about Willman 1 shown in the info card. Translate this text.">
+    На кожну одиницю звичайної матерії в Willman 1 припадає приблизно 660 одиниць темної матерії — що робить її однією з найбільш темною матерією домінованих об\'єктів, коли-небудь виявлених. Її зірки також показують ознаки припливного розривання, оскільки Чумацький Шлях повільно розриває її на частини.
+    </string>
+    <string name="object_info_willman_1_distance" translation_description="Distance to Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130 000 світлових років</string>
+    <string name="object_info_willman_1_size" translation_description="Physical size of Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130 світлових років у діаметрі</string>
     <!-- Eta Carinae Nebula (NGC 3372) -->
     <string name="object_info_eta_carinae_nebula_description" translation_description="Description of Eta Carinae Nebula shown in the info card. Translate this text.">
     Туманність Ета Карини (NGC 3372) — одна з найбільших і найяскравіших туманностей на небі, що охоплює понад 300 світлових років. У її центрі розташована Ета Карини — одна з найбільш масивних і світлоносних зірок, відомих науці, з масою понад 100 сонячних мас.

@@ -914,6 +914,15 @@
     </string>
     <string name="object_info_smc_distance" translation_description="Distance to the Small Magellanic Cloud shown in the info card. Translate units if appropriate for your locale.">200,000 tahun cahaya</string>
     <string name="object_info_smc_size" translation_description="Physical size of the Small Magellanic Cloud shown in the info card. Translate units if appropriate for your locale.">7,000 tahun cahaya lebar</string>
+    <!-- Willman 1 -->
+    <string name="object_info_willman_1_description" translation_description="Description of Willman 1 shown in the info card. Translate this text.">
+    Willman 1 ialah galaksi satelit katai ultra-redup Bima Sakti, ditemui pada 2004 oleh Beth Willman dalam data daripada Sloan Digital Sky Survey. Ia adalah salah satu galaksi paling kurang bercahaya yang diketahui dan salah satu makmal paling ekstrem untuk jirim gelap di alam semesta.
+    </string>
+    <string name="object_info_willman_1_funfact" translation_description="Fun fact about Willman 1 shown in the info card. Translate this text.">
+    Untuk setiap unit materi biasa di Willman 1, terdapat kira-kira 660 unit materi gelap — menjadikannya salah satu objek yang paling didominasi materi gelap yang pernah ditemukan. Bintang-bintangnya juga menunjukkan tanda-tanda gangguan pasang surut ketika Galaksi Bima Sakti perlahan-lahan merobeknya.
+    </string>
+    <string name="object_info_willman_1_distance" translation_description="Distance to Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130,000 tahun cahaya</string>
+    <string name="object_info_willman_1_size" translation_description="Physical size of Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130 tahun cahaya lintang</string>
     <!-- Eta Carinae Nebula (NGC 3372) -->
     <string name="object_info_eta_carinae_nebula_description" translation_description="Description of Eta Carinae Nebula shown in the info card. Translate this text.">
     Nebula Eta Carinae (NGC 3372) adalah salah satu nebula terbesar dan paling terang di langit, menjangkau lebih dari 300 tahun cahaya. Di jantungnya terdapat Eta Carinae, salah satu bintang paling besar dan paling bercahaya yang diketahui, dengan berat lebih dari 100 massa matahari.

@@ -914,6 +914,15 @@
     </string>
     <string name="object_info_smc_distance" translation_description="Distance to the Small Magellanic Cloud shown in the info card. Translate units if appropriate for your locale.">200.000 anni luce</string>
     <string name="object_info_smc_size" translation_description="Physical size of the Small Magellanic Cloud shown in the info card. Translate units if appropriate for your locale.">7.000 anni luce di diametro</string>
+    <!-- Willman 1 -->
+    <string name="object_info_willman_1_description" translation_description="Description of Willman 1 shown in the info card. Translate this text.">
+    Willman 1 è una galassia satellite nana ultraflebile della Via Lattea, scoperta nel 2004 da Beth Willman nei dati del Sloan Digital Sky Survey. È una delle galassie meno luminose conosciute e uno dei laboratori più estremi per la materia oscura nell\'universo.
+    </string>
+    <string name="object_info_willman_1_funfact" translation_description="Fun fact about Willman 1 shown in the info card. Translate this text.">
+    Per ogni unità di materia ordinaria in Willman 1, ci sono circa 660 unità di materia oscura — rendendola uno degli oggetti più dominati dalla materia oscura mai scoperti. Le sue stelle mostrano anche segni di disruzione mareale mentre la Via Lattea la strappa lentamente.
+    </string>
+    <string name="object_info_willman_1_distance" translation_description="Distance to Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130.000 anni luce</string>
+    <string name="object_info_willman_1_size" translation_description="Physical size of Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130 anni luce di diametro</string>
     <!-- Eta Carinae Nebula (NGC 3372) -->
     <string name="object_info_eta_carinae_nebula_description" translation_description="Description of Eta Carinae Nebula shown in the info card. Translate this text.">
     La Nebulosa Eta Carinae (NGC 3372) è una delle più grandi e luminose nebulose del cielo, estendendosi per oltre 300 anni luce. Nel suo cuore si trova Eta Carinae, una delle stelle più massicce e luminose conosciute, con una massa superiore a 100 masse solari.

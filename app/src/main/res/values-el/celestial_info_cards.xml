@@ -916,6 +916,15 @@
     </string>
     <string name="object_info_smc_distance" translation_description="Distance to the Small Magellanic Cloud shown in the info card. Translate units if appropriate for your locale.">200.000 έτη φωτός</string>
     <string name="object_info_smc_size" translation_description="Physical size of the Small Magellanic Cloud shown in the info card. Translate units if appropriate for your locale.">7.000 έτη φωτός διάμετρος</string>
+    <!-- Willman 1 -->
+    <string name="object_info_willman_1_description" translation_description="Description of Willman 1 shown in the info card. Translate this text.">
+    Το Willman 1 είναι ένας εξαιρετικά αμυδρός νάνος δορυφορικός γαλαξίας του Γαλακτικού Δρόμου, που ανακαλύφθηκε το 2004 από τη Beth Willman σε δεδομένα από την Sloan Digital Sky Survey. Είναι ένας από τους λιγότερο φωτεινούς γαλαξίες που είναι γνωστοί και ένα από τα πιο ακραία εργαστήρια για τη σκοτεινή ύλη στο σύμπαν.
+    </string>
+    <string name="object_info_willman_1_funfact" translation_description="Fun fact about Willman 1 shown in the info card. Translate this text.">
+    Για κάθε μονάδα συνηθισμένης ύλης στο Willman 1, υπάρχουν περίπου 660 μονάδες σκοτεινής ύλης — καθιστώντας το ένα από τα πιο σκοτεινής ύλης κατακυριευμένα αντικείμενα που ανακαλύφθησαν ποτέ. Τα αστέρια του δείχνουν επίσης σημάδια παλιρροϊκής διάσπασης καθώς ο Γαλακτικός Δρόμος το τραβά αργά.
+    </string>
+    <string name="object_info_willman_1_distance" translation_description="Distance to Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130.000 έτη φωτός</string>
+    <string name="object_info_willman_1_size" translation_description="Physical size of Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130 έτη φωτός διάμετρος</string>
     <!-- Eta Carinae Nebula (NGC 3372) -->
     <string name="object_info_eta_carinae_nebula_description" translation_description="Description of Eta Carinae Nebula shown in the info card. Translate this text.">
     Το Νεφέλωμα Eta Carinae (NGC 3372) είναι ένα από τα μεγαλύτερα και φωτεινότερα νεφελώματα στον ουρανό, που εκτείνεται σε περισσότερα από 300 έτη φωτός. Στην καρδιά του βρίσκεται η Eta Carinae, ένα από τα πιο μαζικά και λαμπρά αστέρια που είναι γνωστά, με μάζα μεγαλύτερη από 100 ηλιακές μάζες.

@@ -912,6 +912,15 @@
     </string>
     <string name="object_info_smc_distance" translation_description="Distance to the Small Magellanic Cloud shown in the info card. Translate units if appropriate for your locale.">200.000 lichtjaar</string>
     <string name="object_info_smc_size" translation_description="Physical size of the Small Magellanic Cloud shown in the info card. Translate units if appropriate for your locale.">7.000 lichtjaren in doorsnee</string>
+    <!-- Willman 1 -->
+    <string name="object_info_willman_1_description" translation_description="Description of Willman 1 shown in the info card. Translate this text.">
+    Willman 1 is een ultraschwak dwergsterrenstelsel van de Melkweg, ontdekt in 2004 door Beth Willman in gegevens van de Sloan Digital Sky Survey. Het is een van de minst lichtkrachtige sterrenstelsels die bekend zijn en een van de meest extreme laboratoria voor donkere materie in het universum.
+    </string>
+    <string name="object_info_willman_1_funfact" translation_description="Fun fact about Willman 1 shown in the info card. Translate this text.">
+    Voor elke eenheid gewone materie in Willman 1 zijn er ongeveer 660 eenheden donkere materie — wat het tot een van de meest donkere-materie-gedomineerde objecten maakt die ooit zijn ontdekt. De sterren ervan vertonen ook tekenen van getijdenverstoring terwijl de Melkweg het langzaam uit elkaar trekt.
+    </string>
+    <string name="object_info_willman_1_distance" translation_description="Distance to Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130.000 lichtjaar</string>
+    <string name="object_info_willman_1_size" translation_description="Physical size of Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130 lichtjaar in doorsnee</string>
     <!-- Eta Carinae Nebula (NGC 3372) -->
     <string name="object_info_eta_carinae_nebula_description" translation_description="Description of Eta Carinae Nebula shown in the info card. Translate this text.">
     De Eta Carinae Nevel (NGC 3372) is een van de grootste en helderste nevels aan de hemel, met een omvang van meer dan 300 lichtjaar. In het hart ervan bevindt zich Eta Carinae, een van de meest massieve en helderste sterren die bekend zijn, met een gewicht van meer dan 100 zonnemassa\'s.

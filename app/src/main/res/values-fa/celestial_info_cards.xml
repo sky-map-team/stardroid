@@ -894,6 +894,15 @@
     </string>
     <string name="object_info_smc_distance" translation_description="Distance to the Small Magellanic Cloud shown in the info card. Translate units if appropriate for your locale.">۲۰۰٬۰۰۰ سال نوری</string>
     <string name="object_info_smc_size" translation_description="Physical size of the Small Magellanic Cloud shown in the info card. Translate units if appropriate for your locale.">۷٬۰۰۰ سال نوری عرض</string>
+    <!-- Willman 1 -->
+    <string name="object_info_willman_1_description" translation_description="Description of Willman 1 shown in the info card. Translate this text.">
+    ویلمن ۱ یک کهکشان ماهواره‌ای کوتوله فوق‌العاده کم‌درخشان از راه شیری است که در سال ۲۰۰۴ توسط بت ویلمن در داده‌های نقشه‌برداری دیجیتال اسلوان کشف شد. این کهکشان یکی از کم‌نورترین کهکشان‌های شناخته‌شده و یکی از شدیدترین آزمایشگاه‌های ماده تاریک در جهان است.
+    </string>
+    <string name="object_info_willman_1_funfact" translation_description="Fun fact about Willman 1 shown in the info card. Translate this text.">
+    برای هر واحد از ماده عادی در ویلمن ۱، تقریباً ۶۶۰ واحد ماده تاریک وجود دارد — که آن را در میان اجرام بیشتر تحت سلطه ماده تاریک قرار می‌دهد که تا کنون کشف شده است. ستاره‌های آن نیز نشانه‌های تخریب جزر و مدی را نشان می‌دهند زیرا راه شیری به آرامی آن را از هم جدا می‌کند.
+    </string>
+    <string name="object_info_willman_1_distance" translation_description="Distance to Willman 1 shown in the info card. Translate units if appropriate for your locale.">~۱۳۰٬۰۰۰ سال نوری</string>
+    <string name="object_info_willman_1_size" translation_description="Physical size of Willman 1 shown in the info card. Translate units if appropriate for your locale.">~۱۳۰ سال نوری در سراسر</string>
     <!-- Eta Carinae Nebula (NGC 3372) -->
     <string name="object_info_eta_carinae_nebula_description" translation_description="Description of Eta Carinae Nebula shown in the info card. Translate this text.">
     سحابة اتا کارینا (NGC 3372) یکی از بزرگ‌ترین و درخشان‌ترین سحابه‌های آسمان است که بیش از 300 سال نوری را در بر می‌گیرد. در قلب آن، ستاره اتا کارینا قرار دارد که یکی از پرجرم‌ترین و درخشان‌ترین ستاره‌های شناخته‌شده است و بیش از 100 جرم خورشیدی دارد.
@@ -1741,6 +1750,9 @@
     <!-- Lupus -->
     <string name="object_info_lupus_description" translation_description="Description of Lupus shown in the info card. Translate this text.">
     گرگ (Lupus) یک صورت فلکی جنوبی باستانی است. یونانیان و رومیان آن را به عنوان یک حیوان وحشی نیزه شده بر سوی نیزه‌ای که توسط قنطورس (Centaurus) در دست گرفته شده است، می‌دیدند.
+    </string>
+    <string name="object_info_lupus_funfact" translation_description="Fun fact about Lupus shown in the info card. Translate this text.">
+    در سال ۱۰۰۶ میلادی، درخشان‌ترین ابرنواختری که تاکنون توسط انسان‌ها ثبت شده است در صورت فلکی گرگ ظاهر شد — SN 1006 در روز نیز قابل رؤیت بود و ممکن است به قدر ظاهری −۷٫۵ رسیده باشد!
     </string>
     <string name="object_info_lupus_size" translation_description="Physical size of Lupus shown in the info card. Translate units if appropriate for your locale.">334 درجه مربع</string>
 
