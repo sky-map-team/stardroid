@@ -87,7 +87,7 @@ class LayerManager(private val sharedPreferences: SharedPreferences) : OnSharedP
             }
         }
         Log.d(TAG, "Got " + all.size + " results in total for " + prefix)
-        return all.toSortedSet() // can pass in a different comparator later for different sorting criteria
+        return all.toSortedSet( compareBy { it.query }) // can pass in a different comparator later for different sorting criteria
     }
 
     private fun isLayerVisible(layer: Layer) = sharedPreferences.getBoolean(layer.preferenceId, true)
