@@ -54,6 +54,9 @@ Branch: `feature/auto-level-horizon` (pushed 2026-03-01)
 1. Project zenith onto view plane: `zenithProj = zenith − (zenith·los)×los`; if `|zenithProj|² < 0.001` skip (looking straight at zenith).
 2. Signed angle: `cross = currentPerp × targetPerp`; `angle = atan2(cross·los, currentPerp·targetPerp) * R2D`.
 3. Callback calls `controllerGroup.rotate(delta)` directly (not via `mapMover.onRotate` which has a sign flip).
+## Release Process
+- [feedback_play_store_build.md](feedback_play_store_build.md) — Always run a full build before pushing to Play Store
+
 ## Location UX Fix
 
 Branch: `fix/location-ux` (created 2026-03-03 from master)
