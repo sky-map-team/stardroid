@@ -1334,7 +1334,7 @@
     </string>
     <string name="object_info_alcyone_distance" translation_description="Distance to Alcyone shown in the info card. Translate units if appropriate for your locale.">~440 años luz</string>
     <string name="object_info_alcyone_size" translation_description="Physical size of Alcyone shown in the info card. Translate units if appropriate for your locale.">~10 radios solares</string>
-    <string name="object_info_alcyone_mass" translation_description="Mass of Alcyone in scientific notation — no translation needed.">~6.0 masas solares</string>
+    <string name="object_info_alcyone_mass" translation_description="Mass of Alcyone in scientific notation — no translation needed.">~6,0 masas solares</string>
 
     <!-- Alderamin -->
     <string name="object_info_alderamin_description" translation_description="Short description of Alderamin">
@@ -1344,19 +1344,19 @@
     Debido a la precesión del eje terrestre, Alderamin se convertirá en la Estrella Polar alrededor del año 7500 d.C.
     </string>
     <string name="object_info_alderamin_distance" translation_description="Distance to Alderamin shown in the info card. Translate units if appropriate for your locale.">49 años luz</string>
-    <string name="object_info_alderamin_size" translation_description="Physical size of Alderamin shown in the info card. Translate units if appropriate for your locale.">2.5 radios solares</string>
-    <string name="object_info_alderamin_mass" translation_description="Mass of Alderamin in scientific notation — no translation needed.">1.9 masas solares</string>
+    <string name="object_info_alderamin_size" translation_description="Physical size of Alderamin shown in the info card. Translate units if appropriate for your locale.">2,5 radios solares</string>
+    <string name="object_info_alderamin_mass" translation_description="Mass of Alderamin in scientific notation — no translation needed.">1,9 masas solares</string>
 
     <!-- Algenib -->
     <string name="object_info_algenib_description" translation_description="Short description of Algenib">
     Algenib marca una esquina del Gran Cuadrado de Pegaso. Es una estrella subgigante azul caliente y una variable Beta Cephei.
     </string>
     <string name="object_info_algenib_funfact" translation_description="Fun fact about Algenib">
-    ¡Algenib pulsates, cambiando su brillo ligeramente cada 3.6 horas! También es una de las estrellas más distantes que forman un asterismo prominente visible a simple vista.
+    ¡Algenib pulsa, cambiando su brillo ligeramente cada 3,6 horas! También es una de las estrellas más distantes que forman un asterismo prominente visible a simple vista.
     </string>
     <string name="object_info_algenib_distance" translation_description="Distance to Algenib shown in the info card. Translate units if appropriate for your locale.">~390 años luz</string>
-    <string name="object_info_algenib_size" translation_description="Physical size of Algenib shown in the info card. Translate units if appropriate for your locale.">4.8 radios solares</string>
-    <string name="object_info_algenib_mass" translation_description="Mass of Algenib in scientific notation — no translation needed.">~8.9 masas solares</string>
+    <string name="object_info_algenib_size" translation_description="Physical size of Algenib shown in the info card. Translate units if appropriate for your locale.">4,8 radios solares</string>
+    <string name="object_info_algenib_mass" translation_description="Mass of Algenib in scientific notation — no translation needed.">~8,9 masas solares</string>
 
     <!-- Algieba -->
     <string name="object_info_algieba_description" translation_description="Short description of Algieba">
@@ -1377,7 +1377,7 @@
     El nombre de Alhena proviene del árabe que significa "la marca de fuego" — los antiguos árabes veían esta estrella como una marca en el cuello de un camello!
     </string>
     <string name="object_info_alhena_distance" translation_description="Distance to Alhena shown in the info card. Translate units if appropriate for your locale.">109 años luz</string>
-    <string name="object_info_alhena_size" translation_description="Physical size of Alhena shown in the info card. Translate units if appropriate for your locale.">3.3 radios solares</string>
+    <string name="object_info_alhena_size" translation_description="Physical size of Alhena shown in the info card. Translate units if appropriate for your locale.">3,3 radios solares</string>
     <!-- tm:omitted name="object_info_alhena_mass" reason="identical_to_source" -->
 
     <!-- Alkaid -->
@@ -1388,7 +1388,7 @@
     A diferencia de la mayoría de las estrellas de la Osa Mayor, Alkaid no forma parte del Grupo en Movimiento de la Osa Mayor — ¡viaja por el espacio en una dirección diferente, por lo que la forma de la Osa Mayor cambiará lentamente durante miles de años!
     </string>
     <string name="object_info_alkaid_distance" translation_description="Distance to Alkaid shown in the info card. Translate units if appropriate for your locale.">104 años luz</string>
-    <string name="object_info_alkaid_size" translation_description="Physical size of Alkaid shown in the info card. Translate units if appropriate for your locale.">3.4 radios solares</string>
+    <string name="object_info_alkaid_size" translation_description="Physical size of Alkaid shown in the info card. Translate units if appropriate for your locale.">3,4 radios solares</string>
     <!-- tm:omitted name="object_info_alkaid_mass" reason="identical_to_source" -->
 
     <!-- Alnair -->
@@ -1399,7 +1399,7 @@
     ¡Alnair gira extremadamente rápido — al menos 215 km/s en su ecuador — lo que es tan rápido que la estrella es notablemente oblata, abultándose en su centro!
     </string>
     <string name="object_info_alnair_distance" translation_description="Distance to Alnair shown in the info card. Translate units if appropriate for your locale.">101 años luz</string>
-    <string name="object_info_alnair_size" translation_description="Physical size of Alnair shown in the info card. Translate units if appropriate for your locale.">3.4 radios solares</string>
+    <string name="object_info_alnair_size" translation_description="Physical size of Alnair shown in the info card. Translate units if appropriate for your locale.">3,4 radios solares</string>
     <!-- tm:omitted name="object_info_alnair_mass" reason="identical_to_source" -->
 
     <!-- Alnath -->
@@ -1410,7 +1410,7 @@
     ¡Alnath fue compartida entre dos constelaciones! Fue designada como Beta Tauri y Gamma Aurigae antes de que la IAU la asignara oficialmente a Tauro en 1930.
     </string>
     <string name="object_info_alnath_distance" translation_description="Distance to Alnath shown in the info card. Translate units if appropriate for your locale.">134 años luz</string>
-    <string name="object_info_alnath_size" translation_description="Physical size of Alnath shown in the info card. Translate units if appropriate for your locale.">4.2 radios solares</string>
+    <string name="object_info_alnath_size" translation_description="Physical size of Alnath shown in the info card. Translate units if appropriate for your locale.">4,2 radios solares</string>
     <!-- tm:omitted name="object_info_alnath_mass" reason="identical_to_source" -->
 
     <!-- Alphekka -->
@@ -1451,7 +1451,7 @@
     Caph es la segunda estrella más brillante de Casiopea, formando el punto más a la derecha de la icónica forma de W. Su nombre significa "la palma" en árabe.
     </string>
     <string name="object_info_caph_funfact" translation_description="Fun fact about Caph">
-    ¡Caph es una variable Delta Scuti — pulsatea con múltiples frecuencias simultáneamente, cambiando su brillo ligeramente cada 2,5 horas!
+    ¡Caph es una variable Delta Scuti — pulsa con múltiples frecuencias simultáneamente, cambiando su brillo ligeramente cada 2,5 horas!
     </string>
     <string name="object_info_caph_distance" translation_description="Distance to Caph shown in the info card. Translate units if appropriate for your locale.">54 años luz</string>
     <string name="object_info_caph_size" translation_description="Physical size of Caph shown in the info card. Translate units if appropriate for your locale.">3,5 radios solares</string>
@@ -1532,7 +1532,7 @@
     </string>
     <string name="object_info_mirphak_distance" translation_description="Distance to Mirphak shown in the info card. Translate units if appropriate for your locale.">~590 años luz</string>
     <string name="object_info_mirphak_size" translation_description="Physical size of Mirphak shown in the info card. Translate units if appropriate for your locale.">~68 radios solares</string>
-    <string name="object_info_mirphak_mass" translation_description="Mass of Mirphak in scientific notation — no translation needed.">~8.5 masas solares</string>
+    <string name="object_info_mirphak_mass" translation_description="Mass of Mirphak in scientific notation — no translation needed.">~8,5 masas solares</string>
 
     <!-- Phad -->
     <string name="object_info_phad_description" translation_description="Short description of Phad">
@@ -1542,8 +1542,8 @@
     ¡Phad es miembro del Grupo en Movimiento de la Osa Mayor — un conjunto de estrellas que nacieron juntas y viajan por el espacio como un cúmulo suelto, incluyendo la mayoría de las estrellas del Cucharón!
     </string>
     <string name="object_info_phad_distance" translation_description="Distance to Phad shown in the info card. Translate units if appropriate for your locale.">84 años luz</string>
-    <string name="object_info_phad_size" translation_description="Physical size of Phad shown in the info card. Translate units if appropriate for your locale.">3.0 radios solares</string>
-    <string name="object_info_phad_mass" translation_description="Mass of Phad in scientific notation — no translation needed.">2.9 masas solares</string>
+    <string name="object_info_phad_size" translation_description="Physical size of Phad shown in the info card. Translate units if appropriate for your locale.">3,0 radios solares</string>
+    <string name="object_info_phad_mass" translation_description="Mass of Phad in scientific notation — no translation needed.">2,9 masas solares</string>
 
     <!-- Saiph -->
     <string name="object_info_saiph_description" translation_description="Short description of Saiph">
@@ -1554,7 +1554,7 @@
     </string>
     <string name="object_info_saiph_distance" translation_description="Distance to Saiph shown in the info card. Translate units if appropriate for your locale.">~650 años luz</string>
     <string name="object_info_saiph_size" translation_description="Physical size of Saiph shown in the info card. Translate units if appropriate for your locale.">~22 radios solares</string>
-    <string name="object_info_saiph_mass" translation_description="Mass of Saiph in scientific notation — no translation needed.">~15.5 masas solares</string>
+    <string name="object_info_saiph_mass" translation_description="Mass of Saiph in scientific notation — no translation needed.">~15,5 masas solares</string>
 
     <!-- Shedir -->
     <string name="object_info_shedir_description" translation_description="Short description of Shedir">
@@ -1565,7 +1565,7 @@
     </string>
     <string name="object_info_shedir_distance" translation_description="Distance to Shedir shown in the info card. Translate units if appropriate for your locale.">228 años luz</string>
     <string name="object_info_shedir_size" translation_description="Physical size of Shedir shown in the info card. Translate units if appropriate for your locale.">45 radios solares</string>
-    <string name="object_info_shedir_mass" translation_description="Mass of Shedir in scientific notation — no translation needed.">~4.0 masas solares</string>
+    <string name="object_info_shedir_mass" translation_description="Mass of Shedir in scientific notation — no translation needed.">~4,0 masas solares</string>
 
     <!-- Unukalhai -->
     <string name="object_info_unukalhai_description" translation_description="Short description of Unukalhai">
@@ -1576,14 +1576,14 @@
     </string>
     <string name="object_info_unukalhai_distance" translation_description="Distance to Unukalhai shown in the info card. Translate units if appropriate for your locale.">74 años luz</string>
     <string name="object_info_unukalhai_size" translation_description="Physical size of Unukalhai shown in the info card. Translate units if appropriate for your locale.">12 radios solares</string>
-    <string name="object_info_unukalhai_mass" translation_description="Mass of Unukalhai in scientific notation — no translation needed.">~2.1 masas solares</string>
+    <string name="object_info_unukalhai_mass" translation_description="Mass of Unukalhai in scientific notation — no translation needed.">~2,1 masas solares</string>
 
     <!-- Vindemiatrix -->
     <string name="object_info_vindemiatrix_description" translation_description="Short description of Vindemiatrix">
     Vindemiatrix es la tercera estrella más brillante en Virgo (la Doncella). Su nombre significa "la cosechadora de uvas" en latín.
     </string>
     <string name="object_info_vindemiatrix_funfact" translation_description="Fun fact about Vindemiatrix">
-    ¡Vindemiatrix recibió su nombre porque su salida heliaca (primera aparición al amanecer) coincidía una vez con la temporada de cosecha de uva en el Mediterráneo, era la estrella del viverista!
+    ¡Vindemiatrix recibió su nombre porque su salida heliaca (primera aparición al amanecer) coincidía una vez con la temporada de cosecha de uva en el Mediterráneo, era la estrella del viñador!
     </string>
     <string name="object_info_vindemiatrix_distance" translation_description="Distance to Vindemiatrix shown in the info card. Translate units if appropriate for your locale.">109 años luz</string>
     <string name="object_info_vindemiatrix_size" translation_description="Physical size of Vindemiatrix shown in the info card. Translate units if appropriate for your locale.">11 radios solares</string>
@@ -1676,7 +1676,7 @@
 
     <!-- Coma Berenices -->
     <string name="object_info_coma_berenices_description" translation_description="Description of Coma Berenices shown in the info card. Translate this text.">
-    Coma Berenices (Cabellera de Berenice) representa el cabello de la reina egipcia Berenice II, quien lo ofreció a los dioses. Es una de las pocas constelaciones nombradas después de una persona histórica.
+    Coma Berenices (Cabellera de Berenice) representa el cabello de la reina egipcia Berenice II, quien lo ofreció a los dioses. Es una de las pocas constelaciones que reciben su nombre de una persona histórica.
     </string>
     <string name="object_info_coma_berenices_funfact" translation_description="Fun fact about Coma Berenices shown in the info card. Translate this text.">
     Coma Berenices contiene el polo galáctico norte —la dirección perpendicular al disco de la Vía Láctea— ¡por eso es rica en galaxias visibles sin polvo galáctico en el camino!
@@ -1703,7 +1703,7 @@
 
     <!-- Dorado -->
     <string name="object_info_dorado_description" translation_description="Description of Dorado shown in the info card. Translate this text.">
-    Dorado (el Pez Espada o Mahi-mahi) es una constelación austral creada por navegantes holandeses. Contiene la mayor parte de la Gran Nube de Magallanes.
+    Dorado (el Pez Espada o Dorado) es una constelación austral creada por navegantes holandeses. Contiene la mayor parte de la Gran Nube de Magallanes.
     </string>
     <string name="object_info_dorado_funfact" translation_description="Fun fact about Dorado shown in the info card. Translate this text.">
     Dorado alberga la Nebulosa de la Tarántula (30 Doradus), la región de formación estelar más luminosa del Grupo Local — ¡si estuviera tan cerca como la Nebulosa de Orión, proyectaría sombras en la Tierra!
