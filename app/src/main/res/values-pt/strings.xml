@@ -1,27 +1,45 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!-- Please add  translation_description="" attributes to Strings to assist the translators. --><resources>
+    <!-- tm:omitted name="app_name" reason="identical_to_source" -->
     <string name="menu_settings" translation_description="Settings menu item in the options menu">Configurações</string>
     <string name="menu_search" translation_description="Search menu item in the options menu">Pesquisar</string>
     <string name="cancel" translation_description="Generic cancel button label used in dialogs">Cancelar</string>
     <string name="set" translation_description="Button label. Set the date to the given value">Definir</string>
     <string name="go" translation_description="Button to start navigating the sky map toward a searched object">Ir!</string>
+    <string name="start_from_now" translation_description="Button in the time travel dialog to start time travelling from the current time">Começar agora</string>
+    <string name="other_prefs" translation_description="Preferences category heading for miscellaneous settings">Outros</string>
     <string name="location_prefs" translation_description="Preferences category heading for location-related settings">Configurações de local</string>
+    <string name="controls_prefs" translation_description="Preferences category heading for touch control settings">Controles</string>
     <string name="force_gps_pref" translation_description="Preference label: force GPS use even when network location is available">Sempre usar GPS</string>
     <string name="force_gps_pref_hint" translation_description="this string continues from \'Always use GPS\'">se ativado, mesmo se local de rede estiver disponível</string>
     <string name="no_use_gps_pref" translation_description="Preference label: choose to enter location by hand instead of using GPS or phone location">Definir local manualm.</string>
     <string name="no_use_gps_pref_hint" translation_description="Hint text beneath the \'Set location manually\' preference">Insira um lugar ou lat/long abaixo.</string>
     <string name="location_placename" translation_description="Label for the place-name text field in manual location settings">Nome do lugar</string>
     <string name="location_placename_hint" translation_description="An example address.  Translators: please pick an address suitable for your country.  If it has an astronomical connection (e.g. the address of an observatory or famous astronomer) then that would be even better.">Por exemplo, 1400 West Mars Hill Road, Flagstaff, AZ.</string>
+    <!-- tm:omitted name="location_lat_pref" reason="identical_to_source" -->
+    <!-- tm:omitted name="location_long_pref" reason="identical_to_source" -->
     <string name="degrees" translation_description="angular degrees - used for latitude and longitude">Graus</string>
     <string name="preferences" translation_description="Provider-name label used internally when a location is set from preferences (not shown directly to the user as a UI label - does not require a translation)">preferências</string>
     <string name="location_offer_to_enable" translation_description="Dialog message asking whether to enable automatic location">A localização automática está desativada. Deseja ativá-la?</string>
     <string name="location_offer_to_enable_gps_title" translation_description="Title of dialog shown when automatic location is disabled">Local. autom. desativada</string>
+    <string name="location_permission_dialog_title" translation_description="Title of the dialog that requests location permission from the user">Localização obrigatória</string>
+    <string name="location_permission_dialog_message" translation_description="Body text of the dialog requesting location permission, explaining why the app needs it and what happens without it">
+    O Sky Map precisa da sua localização aproximada para mostrar o céu noturno correto. Você pode conceder permissão, inserir sua localização manualmente ou decidir mais tarde. Se decidir mais tarde, o mapa não será preciso até que sua localização tenha sido definida.
+    </string>
+    <string name="location_permission_grant" translation_description="Button in the location permission dialog to grant location access">Conceder permissão</string>
+    <string name="location_permission_enter_manually" translation_description="Button in the location permission dialog to enter location by hand instead of granting permission">Inserir manualmente</string>
+    <string name="location_permission_later" translation_description="Button in the location permission dialog to defer the decision">Depois</string>
+    <string name="location_warning_permission" translation_description="Warning message shown when location is unavailable because permission was not granted">Localização indisponível — permissão não concedida.</string>
+    <string name="location_warning_manual" translation_description="Warning message shown when manual location mode is selected but no coordinates have been entered">Localização não configurada — configure nas Definições.</string>
+    <string name="location_set_auto" translation_description="Toast message when automatic location is acquired. %1$s is the place name or coordinates">Localização definida para %1$s</string>
     <string name="location_unable_to_geocode" translation_description="Error message when converting a place name to coordinates (geocoding) fails, possibly due to no network">Não é possível decodificar o local. Talvez a rede não esteja disponível.</string>
     <string name="location_not_found_title" translation_description="dialog box title when location not found">Desculpe</string>
     <string name="location_not_found" translation_description="dialog message when placename not found">%s não encontrado.</string>
     <string name="location_long_lat" translation_description="Formatted display of longitude and latitude. %1$.2f is longitude, %2$.2f is latitude">Longitude:%1$s, Latitude:%2$s</string>
     <string name="location_place_found" translation_description="Status message when a place name was successfully looked up. %1$f is latitude, %2$f is longitude">Lugar encontrado.  Definindo latitude %1$f e longitude %2$f</string>
     <string name="use_magnetic_correction" translation_description="Preference label: apply magnetic declination correction so the compass points to true north instead of magnetic north">Usar correção magnética</string>
+    <string name="manual_compass_adjustment_title" translation_description="Preference title: lets the user add a manual degree offset to the compass reading">Ajuste adicional da bússola</string>
+    <string name="manual_compass_adjustment_summary" translation_description="Summary for the manual compass adjustment preference">Deslocamento extra em graus (+ ou −) adicionado à leitura da bússola</string>
     <string name="show_stars_pref" translation_description="Label for the stars layer on the sky map (shows in the search results)">Estrelas</string>
     <string name="show_constellations_pref" translation_description="Label for the constellation lines and labels layer (shows in the search results)">Constelações</string>
     <string name="show_messier_objects_pref" translation_description="The celestial objects catalogued by Charles Messier (shows in the search results)">Objetos Messier</string>
@@ -43,12 +61,16 @@
     <string name="malformed_loc_error" translation_description="Error message when a non-numeric value is entered for latitude or longitude">A conf. de latitude ou longitude não é um número.</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Aceito</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">Não aceito</string>
+    <!-- tm:omitted name="dialog_ok_button" reason="identical_to_source" -->
+    <string name="menu_credits" translation_description="menu item to show \'Credits\' box">Créditos</string>
+    <string name="credits_dialog_title" translation_description="Title of the credits dialog showing acknowledgements and contributors">Créditos</string>
     <string name="menu_help" translation_description="menu item to show \'Help\' box">Ajuda</string>
     <string name="help_dialog_title" translation_description="Title of the help dialog">Ajuda do Sky Map</string>
     <string name="set_manual" translation_description="Toast message shown when the user switches to manual (touch-drag) mode">Alternando p/ modo manual</string>
     <string name="set_auto" translation_description="Toast message shown when the user switches to automatic (sensor/gyroscope) mode">Alternando p/ modo automático</string>
     <string name="menu_toggle_dim" translation_description="Menu item to toggle night mode (red tint that preserves night vision)">Modo noturno</string>
     <string name="zenith" translation_description="Label for the zenith point (directly overhead) shown on the sky map. Displayed in capitals.">ZÊNITE</string>
+    <!-- tm:omitted name="nadir" reason="identical_to_source" -->
     <string name="north" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">NORTE</string>
     <string name="east" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">LESTE</string>
     <string name="west" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">OESTE</string>
@@ -62,6 +84,8 @@
     </string>
     <string name="many_search_results_title" translation_description="Dialog title shown when a search returns multiple possible matches">Você quis dizer?</string>
     <string name="other" translation_description="A preference category (ie preferences that don't belong in any other category)">Outros</string>
+    <string name="show_messier_images" translation_description="Preference toggle label for showing galaxy/nebula icons for Messier objects">Mostrar Imagens Messier</string>
+    <string name="show_messier_images_summary" translation_description="Summary description for the Show Messier Images preference">Exibir objetos Messier como ícones de galáxia em vez de pontos</string>
     <string name="menu_time" translation_description="Menu item label to open the time travel feature">Viagem no tempo</string>
     <string name="time_travel_start_message_alt" translation_description="Toast message when time travel starts toward a named destination. %s is the event or destination name">Viajando no tempo para %s...</string>
     <string name="time_travel_close_message" translation_description="Toast message shown when the user exits time travel and returns to the present">Voltar ao presente...</string>
@@ -87,12 +111,27 @@
     <string name="time_travel_day_speed_back" translation_description="Label showing rate of travel through time">Viajando &lt; à 1 dia/s</string>
     <string name="time_travel_week_speed_back" translation_description="Label showing rate of travel through time">Viajando &lt; à 1 semana/s</string>
 
+    <!-- Time Travel dialog event display names -->
+    <string name="time_travel_select_hint" translation_description="Placeholder hint text for the dropdown list of popular astronomical events in the time travel dialog">-- Selecione um evento popular --</string>
     <string name="time_travel_next_sunset" translation_description="Name of a popular astronomical event in the time travel picker">Próximo pôr do sol</string>
     <string name="time_travel_next_sunrise" translation_description="Name of a popular astronomical event in the time travel picker">Próximo nascer do sol</string>
     <string name="time_travel_next_fullmoon" translation_description="Name of a popular astronomical event in the time travel picker">Próxima lua cheia</string>
-    <string name="time_travel_solar_eclipse_2024" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">Eclipse solar em Abr 8, 2024</string>
+    <string name="time_travel_next_newmoon" translation_description="Name of a popular astronomical event in the time travel picker">Próxima lua nova</string>
+    <string name="time_travel_mercury_transit_2016" translation_description="Name of an astronomical event in the time travel picker. A Mercury transit is when Mercury passes across the face of the Sun as seen from Earth. Keep the date format suitable for your locale.">Trânsito de Mercúrio de 09 de maio de 2016</string>
+    <string name="time_travel_solar_eclipse_2024" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">Eclipse solar em 8 de abril de 2024</string>
     <string name="time_travel_apollo_11" translation_description="Name of an astronomical event in the time travel picker: the first crewed Moon landing in 1969">Pouso da Apollo 11 na lua</string>
     <string name="time_travel_jupiter_saturn_2020" translation_description="Name of an astronomical event in the time travel picker. A conjunction is when two planets appear very close together in the sky.">Conjunção Júpiter-Saturno</string>
+    <string name="time_travel_six_planet_parade_2026" translation_description="Name of an astronomical event in the time travel picker. A planet parade is when several planets are visible at once. Keep the date format suitable for your locale.">Desfile de Seis Planetas, 28 de fevereiro de 2026</string>
+    <string name="time_travel_lunar_eclipse_2026" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">Eclipse Lunar Total, 3 de março de 2026</string>
+    <string name="time_travel_lyrids_2026" translation_description="Name of an astronomical event in the time travel picker. The Lyrids are an annual meteor shower. Keep the date format suitable for your locale.">Chuva de Meteoros Líridas, 22 de abril de 2026</string>
+    <string name="time_travel_venus_jupiter_2026" translation_description="Name of an astronomical event in the time travel picker. A conjunction is when two planets appear very close together in the sky. Keep the date format suitable for your locale.">Conjunção Vênus-Júpiter, 9 de junho de 2026</string>
+    <string name="time_travel_mars_uranus_2026" translation_description="Name of an astronomical event in the time travel picker. A close approach is when two objects appear near each other in the sky. Keep the date format suitable for your locale.">Aproximação Próxima Marte-Urano, 4 de julho de 2026</string>
+    <string name="time_travel_solar_eclipse_2026" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">Eclipse Solar Total, 12 de agosto de 2026</string>
+    <string name="time_travel_perseids_2026" translation_description="Name of an astronomical event in the time travel picker. The Perseids are an annual meteor shower. Keep the date format suitable for your locale.">Chuva de Meteoros Perseidas, 12-13 de agosto de 2026</string>
+    <string name="time_travel_jupiter_occultation_2026" translation_description="Name of an astronomical event in the time travel picker. A lunar occultation is when the Moon passes in front of a planet, briefly hiding it. Keep the date format suitable for your locale.">Ocultação Lunar de Júpiter, 6 de out. de 2026</string>
+    <string name="time_travel_geminids_2026" translation_description="Name of an astronomical event in the time travel picker. The Geminids are an annual meteor shower. Keep the date format suitable for your locale.">Chuva de Meteoros Geminídeos, 13-14 de dez. de 2026</string>
+    <string name="time_travel_supermoon_2026" translation_description="Name of an astronomical event in the time travel picker. A supermoon is a full moon that occurs near the Moon\'s closest approach to Earth. Keep the date format suitable for your locale.">Superlua da Véspera de Natal, 24 de dez. de 2026</string>
+
     <string name="use_sound_effects" translation_description="A preferences menu label for enabling sound effects">Ativar som</string>
 
     <string name="menu_gallery" translation_description="Menu item label to open the image gallery">Galeria</string>
@@ -104,8 +143,13 @@
     <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">Procurando:</string>
     <string name="sun_wont_set_message" translation_description="Message shown when the sun will not set during the next 24 hours (polar day / midnight sun)">O sol não irá se pôr durante as próximas 24 horas no seu local atual.</string>
 
+    <!-- tm:omitted name="missing_label" reason="identical_to_source" -->
+
     <string name="menu_tos" translation_description="Menu item label to view the Terms of Service">Termos de Uso</string>
     <string name="menu_diagnostics" translation_description="Menu item label to open the technical diagnostics screen">Diagnósticos</string>
+
+    <string name="north_pole" translation_description="Short abbreviation for the North Celestial Pole, displayed as a label on the sky map grid. Translators: use the standard abbreviation in your language (e.g. NP in English, PN in French).">PN</string>
+    <string name="south_pole" translation_description="Short abbreviation for the South Celestial Pole, displayed as a label on the sky map grid. Translators: use the standard abbreviation in your language (e.g. SP in English, PS in French).">PS</string>
 
     <string name="enable_analytics" translation_description="Preference label to opt in to sending anonymous usage statistics">Enviar estatísticas de uso</string>
     <string name="enable_analytics_desc" translation_description="Description/summary for the usage statistics preference">Ajude a melhorar o Sky Map, enviando dados anônimos para o Google Analytics</string>
@@ -139,10 +183,15 @@
     <string name="diagnostics_activity_compass" translation_description="Row label in the Diagnostics screen for the compass (magnetic field) sensor">Bússola</string>
     <string name="diagnostics_activity_accelerometer" translation_description="Row label in the Diagnostics screen for the accelerometer sensor">Acelerômetro</string>
     <string name="diagnostics_activity_rotation_vector" translation_description="Row label in the Diagnostics screen for the rotation vector (combined orientation) sensor">Rotação</string>
-    <string name="diagnostics_activity_gyroscope" translation_description="Row label in the Diagnostics screen for the gyroscope sensor">Giroscópioe</string>
+    <string name="diagnostics_activity_gyroscope" translation_description="Row label in the Diagnostics screen for the gyroscope sensor">Giroscópio</string>
     <string name="diagnostics_activity_light_level" translation_description="Row label in the Diagnostics screen for the ambient light sensor reading">Nível da luz</string>
     <string name="diagnostics_activity_location_and_time_heading" translation_description="Section heading in the Diagnostics screen for location and time information">Hora e local</string>
+    <string name="diagnostics_activity_location_permission" translation_description="Row label in the Diagnostics screen showing whether location permission has been granted">Permissão de Localização</string>
+    <string name="diagnostics_activity_location_permission_granted" translation_description="Status value shown when location permission has been granted">Concedida</string>
+    <string name="diagnostics_activity_location_permission_denied" translation_description="Status value shown when location permission has been denied">Negada</string>
+    <!-- tm:omitted name="diagnostics_activity_gps" reason="identical_to_source" -->
     <string name="diagnostics_activity_location" translation_description="Row label in the Diagnostics screen showing the current latitude and longitude">Localização (lat, long)</string>
+    <string name="diagnostics_activity_pointing_ra_dec" translation_description="Row label in the Diagnostics screen showing a snapshot of where the phone is currently pointing in the sky (Right Ascension and Declination)">Captura de apontamento</string>
     <string name="diagnostics_activity_magnetic_correction" translation_description="Row label in the Diagnostics screen showing whether magnetic declination correction is applied">Correção mag.</string>
     <string name="diagnostics_activity_local_datetime" translation_description="Row label in the Diagnostics screen for the local date and time">Hora local</string>
     <string name="diagnostics_activity_universal_time" translation_description="Row label in the Diagnostics screen for the UTC/universal date and time">Hora universal</string>
@@ -155,11 +204,13 @@
     <string name="no_gps" translation_description="Status value shown in diagnostics when no GPS provider is available">Sem GPS</string>
     <string name="connected" translation_description="Network status value shown when the device has an active network connection">Conectado</string>
     <string name="disconnected" translation_description="Network status value shown when the device has no network connection">Disconectado</string>
+    <string name="wifi" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (wifi)\'). Note the leading space.">(wifi)</string>
     <string name="cell_network" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (cell)\'). Note the leading space.">" (celular)"</string>
     <string name="menu_calibrate" translation_description="Menu item label to open the compass calibration screen">Calibrar</string>
     <string name="compass_calibration_activity_heading_compass" translation_description="Static label in the compass calibration screen placed inline to the left of the live compass accuracy value (e.g. displayed as \'Compass - Accuracy: High\')">Bússola -</string>
     <string name="compass_calibration_activity_do_not_show_this_again" translation_description="Checkbox label in the compass calibration dialog to suppress future automatic appearances">Não mostre isto novamente</string>
     <string name="compass_calibration_activity_warning" translation_description="Heading/reason text shown in the compass calibration dialog when it opens automatically due to low accuracy">Pode ser que sua bússola precise ser calibrada</string>
+    <string name="compass_calibration_activity_user_heading" translation_description="Heading shown in the compass calibration dialog when the user opens it manually from the menu">Melhore Seu Alinhamento</string>
     <string name="compass_calib_what_to_do" translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL"><![CDATA[ O seu dispositivo informou para o Sky Map que a sua bússola interna está descalibrada, Isso não é um problema com o Sky Map mas nós podemos ajudá-lo a corrigi-lo. Para calibrar sua bússola, tente mover seu aparelho em um formato de oito, como mostrado no vídeo %s, até que a precisão fique "Alta".]]></string>
     <string name="compass_calib_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[ A precisão da bússola do seu telefone está indicada acima. Caso ela não esteja "Alta", pode ser que você precise calibrá-la. Isto não é um problema do Sky Map, mas do seu telefone. Para calibrar a bússola, tente mover o seu telefone em um formato de oito, como demonstrado neste vídeo: %s.]]></string>
     <string name="sensor_reverse_preference_title" translation_description="Preference title for reversing the magnetic Z-axis sensor reading, a fix for certain phones with incorrectly implemented sensors">Reverter o Z magnético</string>
@@ -172,6 +223,11 @@
     Nem todos os dispositivos tem um giroscópio - caso o seu tenha você terá melhores resultados com ele ativado e esta configuração desmarcada. Por outro lado, caso seu dispositivo não tenha giroscópio, pode ser que você precise selecionar esta opção.
     </string>
     <string name="rotate_horizon_preference_title" translation_description="Preference title for choosing the view/pointing direction mode">Direção da visualização</string>
+    <string name="auto_level_horizon_preference_title" translation_description="Preference title for the auto-level horizon feature in manual mode">Horizonte com nivelamento automático</string>
+    <string name="auto_level_horizon_preference_summary" translation_description="Summary for the auto-level horizon preference">
+    No modo manual, o horizonte retorna gradualmente à horizontal após você levantar os dedos
+    </string>
+
     <string name="rotate_horizon_preference_summary" translation_description="Explanation of the view direction preference, covering both landscape rotation and pointer modes">
     Ativar a rotação de horizonte por 90 graus (para dispositivos que forçam o modo "paisagem") ou ativar o modo de apontar. (veja a mensagem de ajuda).
     </string>
@@ -185,6 +241,8 @@
     <string name="object_info_size_label" translation_description="Label for size field">Tamanho:</string>
     <string name="object_info_mass_label" translation_description="Label for mass field">Massa:</string>
     <string name="object_info_spectral_label" translation_description="Label for spectral class">Espectral:</string>
+    <!-- tm:omitted name="object_info_magnitude_label" reason="identical_to_source" -->
+    <string name="object_info_image_content_description" translation_description="Accessibility description for celestial object photo">Foto de objeto celeste</string>
     <string name="object_info_tap_to_expand" translation_description="Hint shown on image to tap to expand">Toque para expandir</string>
     <string name="object_info_tap_to_close" translation_description="Hint shown on expanded image to tap to close">Toque para fechar</string>
 

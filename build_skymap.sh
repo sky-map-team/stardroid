@@ -1,4 +1,5 @@
-#!/bin/sh -e
+#!/bin/bash
+set -euo pipefail
 QUICK=false
 FDROID=false
 
