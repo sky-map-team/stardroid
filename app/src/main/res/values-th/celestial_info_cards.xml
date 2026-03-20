@@ -854,6 +854,15 @@
     </string>
     <string name="object_info_smc_distance" translation_description="Distance to the Small Magellanic Cloud shown in the info card. Translate units if appropriate for your locale.">200,000 ปีแสง</string>
     <string name="object_info_smc_size" translation_description="Physical size of the Small Magellanic Cloud shown in the info card. Translate units if appropriate for your locale.">7,000 ปีแสง</string>
+    <!-- Willman 1 -->
+    <string name="object_info_willman_1_description" translation_description="Description of Willman 1 shown in the info card. Translate this text.">
+    Willman 1 เป็นแกแล็กซี่ดาวเทียมแคระที่มีความสว่างต่ำมากของทางช้างเผือก ค้นพบในปี 2004 โดย Beth Willman จากข้อมูลของ Sloan Digital Sky Survey เป็นหนึ่งในแกแล็กซี่ที่มีความสว่างน้อยที่สุดที่รู้จัก และเป็นหนึ่งในห้องปฏิบัติการที่สุดขั้วสำหรับสสารมืดในจักรวาล
+    </string>
+    <string name="object_info_willman_1_funfact" translation_description="Fun fact about Willman 1 shown in the info card. Translate this text.">
+    สำหรับสสารธรรมชาติหนึ่งหน่วยในวิลแมน 1 มีสสารมืดประมาณ 660 หน่วย ซึ่งทำให้มันเป็นหนึ่งในวัตถุที่ถูกครอบงำด้วยสสารมืดมากที่สุดที่เคยค้นพบ ดาวของมันยังแสดงสัญญาณของการแตกตัวเนื่องจากแรงน้ำขึ้นน้ำลง เมื่อทางช้างเผือกค่อยๆ ดึงมันออกจากกัน
+    </string>
+    <string name="object_info_willman_1_distance" translation_description="Distance to Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130,000 ปีแสง</string>
+    <string name="object_info_willman_1_size" translation_description="Physical size of Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130 ปีแสงทั่วทั้ง</string>
     <!-- Eta Carinae Nebula (NGC 3372) -->
     <string name="object_info_eta_carinae_nebula_description" translation_description="Description of Eta Carinae Nebula shown in the info card. Translate this text.">
     เนบิวลาเอตา คารินา (NGC 3372) เป็นหนึ่งในเนบิวลาที่ใหญ่ที่สุดและสว่างที่สุดในท้องฟ้า ขยายออกไปกว่า 300 ปีแสง ที่ใจกลางของมันคือเอตา คารินา ซึ่งเป็นหนึ่งในดาวฤกษ์ที่มีมวลมากที่สุดและส่องสว่างที่สุดที่รู้จัก มีน้ำหนักกว่า 100 เท่าของมวลดวงอาทิตย์

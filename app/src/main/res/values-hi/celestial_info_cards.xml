@@ -906,6 +906,15 @@
     </string>
     <string name="object_info_smc_distance" translation_description="Distance to the Small Magellanic Cloud shown in the info card. Translate units if appropriate for your locale.">200,000 प्रकाश-वर्ष</string>
     <string name="object_info_smc_size" translation_description="Physical size of the Small Magellanic Cloud shown in the info card. Translate units if appropriate for your locale.">7,000 प्रकाश-वर्ष चौड़ा</string>
+    <!-- Willman 1 -->
+    <string name="object_info_willman_1_description" translation_description="Description of Willman 1 shown in the info card. Translate this text.">
+    विलमैन 1 मिल्की वे का एक अति-क्षीण बौना उपग्रह आकाशगंगा है, जिसे 2004 में बेथ विलमैन ने स्लोन डिजिटल स्काई सर्वे के डेटा में खोजा था। यह ज्ञात आकाशगंगाओं में से एक सबसे कम चमकदार है और ब्रह्मांड में डार्क मैटर के लिए सबसे चरम प्रयोगशालाओं में से एक है।
+    </string>
+    <string name="object_info_willman_1_funfact" translation_description="Fun fact about Willman 1 shown in the info card. Translate this text.">
+    विलमैन 1 में साधारण पदार्थ की प्रत्येक इकाई के लिए, लगभग 660 इकाइयाँ डार्क मैटर हैं — जिससे यह अब तक खोजी गई सबसे डार्क-मैटर-प्रभुत्व वाली वस्तुओं में से एक है। इसके तारे भी ज्वारीय विघटन के संकेत दिखाते हैं क्योंकि मिल्की वे इसे धीरे-धीरे अलग कर रहा है।
+    </string>
+    <string name="object_info_willman_1_distance" translation_description="Distance to Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130,000 प्रकाश-वर्ष</string>
+    <string name="object_info_willman_1_size" translation_description="Physical size of Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130 प्रकाश-वर्ष व्यास में</string>
     <!-- Eta Carinae Nebula (NGC 3372) -->
     <string name="object_info_eta_carinae_nebula_description" translation_description="Description of Eta Carinae Nebula shown in the info card. Translate this text.">
     एटा कैरिनी नेबुला (NGC 3372) आकाश में सबसे बड़ी और सबसे चमकीली नेबुलाओं में से एक है, जो 300 प्रकाश-वर्षों से अधिक विस्तृत है। इसके केंद्र में एटा कैरिनी है, जो ज्ञात सबसे विशाल और चमकदार तारों में से एक है, जिसका वजन 100 सौर द्रव्यमान से अधिक है।

@@ -31,6 +31,7 @@
     <string name="location_permission_later" translation_description="Button in the location permission dialog to defer the decision">後で</string>
     <string name="location_warning_permission" translation_description="Warning message shown when location is unavailable because permission was not granted">位置情報が利用できません — 許可が与えられていません。</string>
     <string name="location_warning_manual" translation_description="Warning message shown when manual location mode is selected but no coordinates have been entered">位置情報が設定されていません — 設定で構成してください。</string>
+    <string name="location_set_auto" translation_description="Toast message when automatic location is acquired. %1$s is the place name or coordinates">位置が %1$s に設定されました</string>
     <string name="location_unable_to_geocode" translation_description="Error message when converting a place name to coordinates (geocoding) fails, possibly due to no network">現在地がわかりません。ネットワークが利用できない可能性があります。</string>
     <string name="location_not_found_title" translation_description="dialog box title when location not found">検索結果</string>
     <string name="location_not_found" translation_description="dialog message when placename not found">%sが見つかりません</string>

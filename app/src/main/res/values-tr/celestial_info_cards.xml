@@ -910,6 +910,15 @@
     </string>
     <string name="object_info_smc_distance" translation_description="Distance to the Small Magellanic Cloud shown in the info card. Translate units if appropriate for your locale.">200.000 ışık yılı</string>
     <string name="object_info_smc_size" translation_description="Physical size of the Small Magellanic Cloud shown in the info card. Translate units if appropriate for your locale.">7.000 ışık yılı çapında</string>
+    <!-- Willman 1 -->
+    <string name="object_info_willman_1_description" translation_description="Description of Willman 1 shown in the info card. Translate this text.">
+    Willman 1, 2004 yılında Beth Willman tarafından Sloan Digital Sky Survey verilerinde keşfedilen Samanyolu\'nun ultra-soluk cüce uydu gökadası olup, bilinen en az parlak gökadalardan biri ve evrendeki karanlık madde için en uç laboratuvarlardan biridir.
+    </string>
+    <string name="object_info_willman_1_funfact" translation_description="Fun fact about Willman 1 shown in the info card. Translate this text.">
+    Willman 1\'deki her bir sıradan madde birimi için, kabaca 660 birim karanlık madde vardır — bu da onu şimdiye kadar keşfedilen en karanlık madde açısından baskın nesneler arasına yerleştirir. Yıldızları ayrıca Samanyolu onu yavaşça parçalarken gelgit bozulmasının belirtilerini göstermektedir.
+    </string>
+    <string name="object_info_willman_1_distance" translation_description="Distance to Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130.000 ışık yılı</string>
+    <string name="object_info_willman_1_size" translation_description="Physical size of Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130 ışık yılı çapında</string>
     <!-- Eta Carinae Nebula (NGC 3372) -->
     <string name="object_info_eta_carinae_nebula_description" translation_description="Description of Eta Carinae Nebula shown in the info card. Translate this text.">
     Eta Carinae Nebulası (NGC 3372), gökyüzündeki en büyük ve en parlak nebulalardan biridir ve 300 ışık-yılından fazla bir alana yayılmıştır. Merkezinde, bilinen en kütleli ve en parlak yıldızlardan biri olan Eta Carinae yer alır ve 100 güneş kütlesinden fazla bir ağırlığa sahiptir.

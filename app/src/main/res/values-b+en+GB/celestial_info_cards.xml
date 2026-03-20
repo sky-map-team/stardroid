@@ -510,6 +510,12 @@
     <!-- tm:omitted name="object_info_smc_funfact" reason="identical_to_source" -->
     <!-- tm:omitted name="object_info_smc_distance" reason="identical_to_source" -->
     <!-- tm:omitted name="object_info_smc_size" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_willman_1_description" reason="identical_to_source" -->
+    <string name="object_info_willman_1_funfact" translation_description="Fun fact about Willman 1 shown in the info card. Translate this text.">
+    For every unit of ordinary matter in Willman 1, there are roughly 660 units of dark matter — making it amongst the most dark-matter-dominated objects ever discovered. Its stars also show signs of tidal disruption as the Milky Way slowly pulls it apart.
+    </string>
+    <!-- tm:omitted name="object_info_willman_1_distance" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_willman_1_size" reason="identical_to_source" -->
     <!-- tm:omitted name="object_info_eta_carinae_nebula_description" reason="identical_to_source" -->
     <!-- tm:omitted name="object_info_eta_carinae_nebula_funfact" reason="identical_to_source" -->
     <!-- tm:omitted name="object_info_eta_carinae_nebula_distance" reason="identical_to_source" -->

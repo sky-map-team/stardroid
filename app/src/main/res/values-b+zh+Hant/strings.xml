@@ -29,6 +29,7 @@
     <string name="location_permission_later" translation_description="Button in the location permission dialog to defer the decision">稍後</string>
     <string name="location_warning_permission" translation_description="Warning message shown when location is unavailable because permission was not granted">位置不可用 — 未授予權限。</string>
     <string name="location_warning_manual" translation_description="Warning message shown when manual location mode is selected but no coordinates have been entered">位置未設定 — 請在設定中進行配置。</string>
+    <string name="location_set_auto" translation_description="Toast message when automatic location is acquired. %1$s is the place name or coordinates">位置已設定為 %1$s</string>
     <string name="location_unable_to_geocode" translation_description="Error message when converting a place name to coordinates (geocoding) fails, possibly due to no network">無法解譯您的位置資訊，您的網路系統目前的連線狀態是否正常？</string>
     <string name="location_not_found_title" translation_description="dialog box title when location not found">抱歉</string>
     <string name="location_not_found" translation_description="dialog message when placename not found">找不到%s。</string>

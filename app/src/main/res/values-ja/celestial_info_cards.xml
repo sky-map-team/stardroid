@@ -526,6 +526,15 @@
     </string>
     <string name="object_info_smc_distance" translation_description="Distance to the Small Magellanic Cloud shown in the info card. Translate units if appropriate for your locale.">200,000光年</string>
     <string name="object_info_smc_size" translation_description="Physical size of the Small Magellanic Cloud shown in the info card. Translate units if appropriate for your locale.">7,000光年の広さ</string>
+    <!-- Willman 1 -->
+    <string name="object_info_willman_1_description" translation_description="Description of Willman 1 shown in the info card. Translate this text.">
+    Willman 1は天の川銀河の超微弱矮小衛星銀河で、2004年にBeth Willmanがスローン・デジタル・スカイ・サーベイのデータから発見しました。既知の銀河の中で最も光度が低い銀河の1つであり、宇宙における暗黒物質の最も極端な実験室の1つです。
+    </string>
+    <string name="object_info_willman_1_funfact" translation_description="Fun fact about Willman 1 shown in the info card. Translate this text.">
+    Willman 1では、通常の物質1単位に対して、およそ660単位のダークマターが存在します。これにより、発見された天体の中でも最もダークマターに支配された天体の1つとなっています。その星々は、天の川がゆっくりと引き裂いているため、潮汐破壊の兆候も示しています。
+    </string>
+    <string name="object_info_willman_1_distance" translation_description="Distance to Willman 1 shown in the info card. Translate units if appropriate for your locale.">約130,000光年</string>
+    <string name="object_info_willman_1_size" translation_description="Physical size of Willman 1 shown in the info card. Translate units if appropriate for your locale.">約130光年の大きさ</string>
     <!-- Eta Carinae Nebula (NGC 3372) -->
     <string name="object_info_eta_carinae_nebula_description" translation_description="Description of Eta Carinae Nebula shown in the info card. Translate this text.">
     エータ・カリーナ星雲（NGC 3372）は、空の中で最も大きく最も明るい星雲の1つで、300光年以上に広がっています。その中心には、既知の最も巨大で最も光度の高い星の1つであるエータ・カリーナがあり、太陽質量の100倍以上の質量を持っています。

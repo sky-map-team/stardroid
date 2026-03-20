@@ -820,6 +820,15 @@
     </string>
     <string name="object_info_smc_distance" translation_description="Distance to the Small Magellanic Cloud shown in the info card. Translate units if appropriate for your locale.">200,000 سنة ضوئية</string>
     <string name="object_info_smc_size" translation_description="Physical size of the Small Magellanic Cloud shown in the info card. Translate units if appropriate for your locale.">7,000 سنة ضوئية عبر</string>
+    <!-- Willman 1 -->
+    <string name="object_info_willman_1_description" translation_description="Description of Willman 1 shown in the info card. Translate this text.">
+    ويلمان 1 هي مجرة قزمة فائقة الخفوت تابعة لدرب التبانة، اكتُشفت عام 2004 من قبل بيث ويلمان في بيانات مسح سلوان الرقمي للسماء. وهي تُعتبر من أقل المجرات إضاءة المعروفة وأحد أكثر المختبرات تطرفاً لدراسة المادة المظلمة في الكون.
+    </string>
+    <string name="object_info_willman_1_funfact" translation_description="Fun fact about Willman 1 shown in the info card. Translate this text.">
+    لكل وحدة من المادة العادية في ويلمان 1، هناك ما يقرب من 660 وحدة من المادة المظلمة — مما يجعلها من بين أكثر الأجرام المهيمنة بالمادة المظلمة التي تم اكتشافها على الإطلاق. تظهر نجومها أيضًا علامات على التمزق المدي حيث تسحبها درب التبانة ببطء إلى أجزاء.
+    </string>
+    <string name="object_info_willman_1_distance" translation_description="Distance to Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130,000 سنة ضوئية</string>
+    <string name="object_info_willman_1_size" translation_description="Physical size of Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130 سنة ضوئية عبر</string>
     <!-- Eta Carinae Nebula (NGC 3372) -->
     <string name="object_info_eta_carinae_nebula_description" translation_description="Description of Eta Carinae Nebula shown in the info card. Translate this text.">
     سديم إيتا كارينا (NGC 3372) هو أحد أكبر وألمع السدم في السماء، ويمتد على مسافة تزيد عن 300 سنة ضوئية. في قلبه يقع نجم إيتا كارينا، أحد أكثر النجوم ضخامة وإضاءة المعروفة، بوزن يزيد عن 100 كتلة شمسية.
