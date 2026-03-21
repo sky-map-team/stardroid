@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <!-- The folks who made Sky Map Happen -->
+<string name="credits_text" translation_description="This page credits the people and organizations who support and maintain the app Sky Map. Please do not change the &lt; and &gt; markup">
+    &lt;h1&gt;Podpora razvoja&lt;/h1&gt;
+&lt;p&gt;Sky Map je brezplačna, odprtokodna in brez oglasov. Če vam je všeč, razmislite o &lt;a href="https://buymeacoffee.com/skymapdevs"&gt;podpori&lt;/a&gt; nadaljnjega razvoja na &lt;a href="https://github.com/sky-map-team/stardroid?tab=readme-ov-file#support-the-project"&gt;naši GitHub strani&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Hvala tem ljudem, ki so nedavno &lt;a href="https://buymeacoffee.com/skymapdevs"&gt;donirali!&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;%1$s&lt;/p&gt;
+
+&lt;h1&gt;Zasluge&lt;/h1&gt;
+&lt;h2&gt;Inženiring&lt;/h2&gt;
+&lt;p&gt;John Taylor, Kevin Serafini&lt;/p&gt;
+
+&lt;h2&gt;Prispevki odprtokodne skupnosti&lt;/h2&gt;
+&lt;p&gt;
+    %2$s
+&lt;/p&gt;
+&lt;p&gt;Hvala! Oglejte si najnovejše prispevatelje na &lt;a href="https://github.com/sky-map-team/stardroid/graphs/contributors"&gt;GitHubu&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;h2&gt;Izvirni inženiring, oblikovanje in vodenje izdelka pri Googlu&lt;/h2&gt;
+&lt;p&gt;Brent Bryan, Dominic Widdows, Hector Ouilhet, James Powell, John Taylor, Kevin Serafini,
+Lior Ron.&lt;/p&gt;
+
+&lt;h1&gt;Zahvale&lt;/h1&gt;
+&lt;p&gt;Sky Map je bil prvotno razvit kot "Google Sky Map" s strani Google Inc. in odprtokoden leta 2012.&lt;/p&gt;
+&lt;p&gt;Posebna zahvala Pat Stephensonu za navdih z njegovo G1-telefonsko konkurenco
+    in Chris DiBoni ter Michael Weiss-Malik za pomoč pri prehodu
+    iz Googla v odprtokodno skupnost.&lt;/p&gt;
+
+&lt;h2&gt;Podatki&lt;/h2&gt;
+&lt;p&gt;Sky Map uporablja zemljevide, izpeljane iz podatkov:&lt;/p&gt;
+&lt;ul class="credits"&gt;
+&lt;li&gt;Centre de Donnees astronomiques de Strasbourg (&lt;a href="https://cdsweb.u-strasbg.fr/"&gt;https://cdsweb.u-strasbg.fr/&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;The Bright Star Catalogue, 5th Revised Ed. (Hoffleit D., Warren Jr W.H.)&lt;/li&gt;
+&lt;li&gt;The HYG Database, HYG v1.0. (&lt;a href="https://www.astronexus.com/"&gt;https://www.astronexus.com/&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;History and Accurate Positions for the NGC/IC Objects (Harold G. Corwin Jr)&lt;/li&gt;
+&lt;li&gt;Revised New General Catalogue of Nonstellar Astronomical Objects (Sulentic J.W., Tifft W.G.)&lt;/li&gt;
+&lt;li&gt;SFA Star Charts (&lt;a href="https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html"&gt;https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Položaji objektov Sončevega sistema so izračunani iz podatkov, ki jih je zagotovil USNO (&lt;a href="https://www.usno.navy.mil/USNO/astronomical-applications"&gt;https://www.usno.navy.mil/USNO/astronomical-applications&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Podatki o sferični pokritosti, pridobljeni od (&lt;a href="https://www2.research.att.com/~njas/coverings"&gt;https://www2.research.att.com/~njas/coverings&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Zemljevid Mrka 2024 s privoljo NASA\'s Scientific Visualization Studio.&lt;/li&gt;
+&lt;li&gt;Podatki o meteorskih rojih od Mednarodne meteorske organizacije (&lt;a href="https://www.imo.net/data"&gt;https://www.imo.net/data&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Zasluge za slike&lt;/h2&gt;
+&lt;p&gt;Nebesne slike v tej aplikaciji so zagotovljene s strani naslednjih virov:&lt;/p&gt;
+&lt;ul class="credits"&gt;
+&lt;li&gt;Slike Hubbleovega vesoljskega teleskopa: NASA, ESA in Space Telescope Science Institute (&lt;a href="https://hubblesite.org/"&gt;hubblesite.org&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Slike planetov: NASA/JPL-Caltech, NASA/Johns Hopkins APL/Carnegie (MESSENGER), NASA/Johns Hopkins APL/SwRI (New Horizons)&lt;/li&gt;
+&lt;li&gt;Slika Lune: NASA/GSFC/Arizona State University (Lunar Reconnaissance Orbiter)&lt;/li&gt;
+&lt;li&gt;Slike zvezdnega polja: ESO Digitized Sky Survey 2 (&lt;a href="https://archive.eso.org/dss/dss"&gt;archive.eso.org/dss&lt;/a&gt;), CC BY 4.0&lt;/li&gt;
+&lt;li&gt;Zemljevidi ozvezdij: IAU in Sky &amp; Telescope (Roger Sinnott &amp; Rick Fienberg), CC BY 4.0&lt;/li&gt;
+&lt;li&gt;Dodatne slike Messierja: Gemini Observatory/NOIRLab/NSF/AURA (&lt;a href="https://noirlab.edu/"&gt;noirlab.edu&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Slika M31: Peter Kennett (&lt;a href="https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg"&gt;Wikimedia Commons&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+    </string>
+</resources>

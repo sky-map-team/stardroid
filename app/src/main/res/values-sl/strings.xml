@@ -1,0 +1,251 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Please add  translation_description="" attributes to Strings to assist the translators. --><resources>
+    <!-- tm:omitted name="app_name" reason="identical_to_source" -->
+    <string name="menu_settings" translation_description="Settings menu item in the options menu">Nastavitve</string>
+    <string name="menu_search" translation_description="Search menu item in the options menu">Iskanje</string>
+    <string name="cancel" translation_description="Generic cancel button label used in dialogs">Prekliči</string>
+    <string name="set" translation_description="Button label. Set the date to the given value">Nastavi</string>
+    <string name="go" translation_description="Button to start navigating the sky map toward a searched object">Pojdi!</string>
+    <string name="start_from_now" translation_description="Button in the time travel dialog to start time travelling from the current time">Začni od zdaj</string>
+    <string name="other_prefs" translation_description="Preferences category heading for miscellaneous settings">Drugo</string>
+    <string name="location_prefs" translation_description="Preferences category heading for location-related settings">Nastavitve lokacije</string>
+    <string name="controls_prefs" translation_description="Preferences category heading for touch control settings">Upravljanje</string>
+    <string name="force_gps_pref" translation_description="Preference label: force GPS use even when network location is available">Vedno uporabi GPS</string>
+    <string name="force_gps_pref_hint" translation_description="this string continues from \'Always use GPS\'">če je omogočeno, tudi če je dostopna omrežna lokacija</string>
+    <string name="no_use_gps_pref" translation_description="Preference label: choose to enter location by hand instead of using GPS or phone location">Nastavi lokacijo ročno</string>
+    <string name="no_use_gps_pref_hint" translation_description="Hint text beneath the \'Set location manually\' preference">Vnesite kraj ali koordinate spodaj</string>
+    <string name="location_placename" translation_description="Label for the place-name text field in manual location settings">Ime kraja</string>
+    <string name="location_placename_hint" translation_description="An example address.  Translators: please pick an address suitable for your country.  If it has an astronomical connection (e.g. the address of an observatory or famous astronomer) then that would be even better.">npr. 1400 West Mars Hill Road, Flagstaff, AZ.</string>
+    <string name="location_lat_pref" translation_description="Label for the latitude input field in manual location settings">Širina</string>
+    <string name="location_long_pref" translation_description="Label for the longitude input field in manual location settings">Dolžina</string>
+    <string name="degrees" translation_description="angular degrees - used for latitude and longitude">Stopinje</string>
+    <!-- tm:omitted name="preferences" reason="identical_to_source" -->
+    <string name="location_offer_to_enable" translation_description="Dialog message asking whether to enable automatic location">Samodejno določanje lokacije je onemogočeno. Ga želite omogočiti?</string>
+    <string name="location_offer_to_enable_gps_title" translation_description="Title of dialog shown when automatic location is disabled">Samodejno določanje lokacije je onemogočeno</string>
+    <string name="location_permission_dialog_title" translation_description="Title of the dialog that requests location permission from the user">Lokacija je obvezna</string>
+    <string name="location_permission_dialog_message" translation_description="Body text of the dialog requesting location permission, explaining why the app needs it and what happens without it">
+    Sky Map potrebuje vašo približno lokacijo, da prikaže pravilno nočno nebo. Dovolite lahko dovoljenje, ročno vnesete lokacijo ali se odločite kasneje. Če se odločite kasneje, karta ne bo natančna, dokler ni nastavljena vaša lokacija.
+    </string>
+    <string name="location_permission_grant" translation_description="Button in the location permission dialog to grant location access">Odobri dovoljenje</string>
+    <string name="location_permission_enter_manually" translation_description="Button in the location permission dialog to enter location by hand instead of granting permission">Vnesi ročno</string>
+    <string name="location_permission_later" translation_description="Button in the location permission dialog to defer the decision">Kasneje</string>
+    <string name="location_warning_permission" translation_description="Warning message shown when location is unavailable because permission was not granted">Lokacija ni dostopna — dovoljenje ni bilo podeljeno.</string>
+    <string name="location_warning_manual" translation_description="Warning message shown when manual location mode is selected but no coordinates have been entered">Lokacija ni nastavljena — prosimo, nastavite v Nastavitvah.</string>
+    <string name="location_set_auto" translation_description="Toast message when automatic location is acquired. %1$s is the place name or coordinates">Lokacija nastavljena na %1$s</string>
+    <string name="location_unable_to_geocode" translation_description="Error message when converting a place name to coordinates (geocoding) fails, possibly due to no network">Vaše lokacije ni mogoče dekodirati — morda vaše omrežje ni dostopno?</string>
+    <string name="location_not_found_title" translation_description="dialog box title when location not found">Oprostite</string>
+    <string name="location_not_found" translation_description="dialog message when placename not found">%s ni najden.</string>
+    <string name="location_long_lat" translation_description="Formatted display of longitude and latitude. %1$.2f is longitude, %2$.2f is latitude">Dolžina:%1$.2f, Širina:%2$.2f</string>
+    <string name="location_place_found" translation_description="Status message when a place name was successfully looked up. %1$f is latitude, %2$f is longitude">Mesto najdeno. Nastavitev zemljepisne širine %1$f in dolžine %2$f</string>
+    <string name="use_magnetic_correction" translation_description="Preference label: apply magnetic declination correction so the compass points to true north instead of magnetic north">Uporabi magnetno korekcijo</string>
+    <string name="manual_compass_adjustment_title" translation_description="Preference title: lets the user add a manual degree offset to the compass reading">Dodatna nastavitev kompasa</string>
+    <string name="manual_compass_adjustment_summary" translation_description="Summary for the manual compass adjustment preference">Dodatni odmik v stopinjah (+ ali −) dodan odčitku kompasa</string>
+    <string name="show_stars_pref" translation_description="Label for the stars layer on the sky map (shows in the search results)">Zvezde</string>
+    <string name="show_constellations_pref" translation_description="Label for the constellation lines and labels layer (shows in the search results)">Ozvezdja</string>
+    <string name="show_messier_objects_pref" translation_description="The celestial objects catalogued by Charles Messier (shows in the search results)">Messierovi objekti</string>
+    <string name="show_planets_pref" translation_description="Label for the solar system layer (planets, sun, moon)  (shows in the search results)">Sončni sistem</string>
+    <string name="show_grid_pref" translation_description="Label for the Right Ascension / Declination grid overlay  (shows in the search results)">Mreža RA/Dec</string>
+    <string name="show_horizon_pref" translation_description="Preference toggle label for the horizon line layer">Obzorje</string>
+    <string name="show_sky_gradient" translation_description="This is a shading of the color of the sky used for effect">Gradient neba</string>
+    <string name="show_meteors_pref" translation_description="Label for the meteor shower layer (shows in the search results)">Meteorski roji</string>
+    <string name="show_comet_layer_pref" translation_description="Preference toggle label for the comets layer">Kometi</string>
+    <string name="show_satellite_layer_pref" translation_description="The layer for satellites">Sateliti</string>
+    <string name="sensor_prefs" translation_description="Preferences category heading for sensor settings, intended for advanced/expert users">Nastavitve senzorja (strokovnjaki)</string>
+    <string name="sensor_speed" translation_description="Old, non gyro sensors only: How quickly the sensor should send us data">Hitrost senzorja</string>
+    <string name="sensor_damping" translation_description="Old, non gyro sensors only: The amount of smoothing applied to the sensor outputs.">Dušenje</string>
+    <string name="appearance_prefs" translation_description="Preferences title for section about app appearance">Videz</string>
+    <string name="auto_dimness_preference" translation_description="Mode for automatically dimming the screen when night mode is selected">Samodejno zatemnjevanje zaslona</string>
+    <string name="font_size_preference" translation_description="Change the font size">Velikost pisave</string>
+    <string name="font_size_preference_description" translation_description="help to go along with the change font size preference">Prilagodi velikost besedila nalepk</string>
+    <string name="ecliptic" translation_description="Label for the ecliptic layer — the apparent annual path of the Sun across the sky">Ekliptika</string>
+    <string name="malformed_loc_error" translation_description="Error message when a non-numeric value is entered for latitude or longitude">Nastavka za zemljepisno širino ali dolžino ni številka.</string>
+    <string name="dialog_accept" translation_description="accepting the licence agreement">Sprejmi</string>
+    <string name="dialog_decline" translation_description="declining the licence agreement">Ne, hvala</string>
+    <string name="dialog_ok_button" translation_description="Generic OK/confirm button label for dialogs">V redu</string>
+    <string name="menu_credits" translation_description="menu item to show \'Credits\' box">Zasluge</string>
+    <string name="credits_dialog_title" translation_description="Title of the credits dialog showing acknowledgements and contributors">Zasluge</string>
+    <string name="menu_help" translation_description="menu item to show \'Help\' box">Pomoč</string>
+    <string name="help_dialog_title" translation_description="Title of the help dialog">Pomoč za Sky Map</string>
+    <string name="set_manual" translation_description="Toast message shown when the user switches to manual (touch-drag) mode">Prehod v ročni način</string>
+    <string name="set_auto" translation_description="Toast message shown when the user switches to automatic (sensor/gyroscope) mode">Preklapljanje na samodejni način</string>
+    <string name="menu_toggle_dim" translation_description="Menu item to toggle night mode (red tint that preserves night vision)">Preklopi nočni način</string>
+    <string name="zenith" translation_description="Label for the zenith point (directly overhead) shown on the sky map. Displayed in capitals.">ZENIT</string>
+    <!-- tm:omitted name="nadir" reason="identical_to_source" -->
+    <string name="north" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">SEVER</string>
+    <string name="east" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">VZHOD</string>
+    <string name="west" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">ZAHOD</string>
+    <string name="south" translation_description="Compass direction label shown on the horizon of the sky map. Displayed in capitals.">JUG</string>
+    <string name="search_label" translation_description="Hint/label for the search bar in the search activity">Preišči nebo</string>
+    <string name="search_hint" translation_description="an example search target">npr. Mars</string>
+    <string name="no_search_title" translation_description="Dialog title shown when a sky search returns no results">Ni rezultatov</string>
+    <!-- Hopefully this is a temporary measure until we can fix the search engine -->
+    <string name="no_search_results_text2" translation_description="Alternative message shown when a search returns no results, suggesting the object may not currently be visible">Ni bilo najdenih rezultatov. Morda predmet v tem času ni viden.</string>
+    <string name="many_search_results_title" translation_description="Dialog title shown when a search returns multiple possible matches">Ali ste mislili?</string>
+    <string name="other" translation_description="A preference category (ie preferences that don't belong in any other category)">Drugo</string>
+    <string name="show_messier_images" translation_description="Preference toggle label for showing galaxy/nebula icons for Messier objects">Prikaži slike Messierja</string>
+    <string name="show_messier_images_summary" translation_description="Summary description for the Show Messier Images preference">Prikaži Messierove objekte kot ikone galaksij namesto pik</string>
+    <string name="menu_time" translation_description="Menu item label to open the time travel feature">Potovanje skozi čas</string>
+    <string name="time_travel_start_message_alt" translation_description="Toast message when time travel starts toward a named destination. %s is the event or destination name">Potovanje skozi čas do %s ...</string>
+    <string name="time_travel_close_message" translation_description="Toast message shown when the user exits time travel and returns to the present">Nazaj v sedanjost ...</string>
+    <!--  -->
+    <string name="popular_dates_prompt" translation_description="Label for a list of dates the user can choose from">Priljubljeni datumi</string>
+    <string name="custom_date_prompt" translation_description="Label telling the user to manually specify a date">Ali izberite svoj datum in čas:</string>
+    <string name="change_date_prompt" translation_description="Button label to open the date picker in the time travel dialog">Spremenite datum</string>
+    <string name="change_time_prompt" translation_description="Button label to open the time picker in the time travel dialog">Spremenite čas</string>
+    <string name="now_visiting" translation_description="used in time travel dialog to show the destination date/time the user has selected, time formatted as yyyy.mm.dd at hh.mm.ss + timezone">Cilj: %s</string>
+    <string name="time_travel_label_past" translation_description="Label showing that we are in the past">Potovanje skozi čas: Preteklost</string>
+    <string name="time_travel_label_future" translation_description="Label showing that we are in the future">Potovanje skozi čas: Prihodnost</string>
+    <string name="time_travel_stopped" translation_description="Label showing rate of travel through time">Potovanje skozi čas zamrznjeno</string>
+    <string name="time_travel_second_speed" translation_description="Label showing rate of travel through time.  The symbol means greater than.">Potovanje &gt; @ 1 sek/sek</string>
+    <string name="time_travel_minute_speed" translation_description="Label showing rate of travel through time">Potovanje &gt; @ 1 min/sek</string>
+    <string name="time_travel_10minute_speed" translation_description="Label showing rate of travel through time">Potovanje &gt; @ 10 min/sek</string>
+    <string name="time_travel_hour_speed" translation_description="Label showing rate of travel through time">Potovanje &gt; @ 1 ura/sek</string>
+    <string name="time_travel_day_speed" translation_description="Label showing rate of travel through time">Potovanje &gt; @ 1 dan/sek</string>
+    <string name="time_travel_week_speed" translation_description="Label showing rate of travel through time">Potovanje &gt; @ 1 teden/sek</string>
+    <string name="time_travel_second_speed_back" translation_description="Label showing rate of travel through time">Potovanje &lt; @ 1 sek/sek</string>
+    <string name="time_travel_minute_speed_back" translation_description="Label showing rate of travel through time">Potovanje &lt; @ 1 min/sek</string>
+    <string name="time_travel_10minute_speed_back" translation_description="Label showing rate of travel through time">Potovanje &lt; @ 10 min/sek</string>
+    <string name="time_travel_hour_speed_back" translation_description="Label showing rate of travel through time">Potovanje &lt; @ 1 ura/sek</string>
+    <string name="time_travel_day_speed_back" translation_description="Label showing rate of travel through time">Potovanje &lt; @ 1 dan/sek</string>
+    <string name="time_travel_week_speed_back" translation_description="Label showing rate of travel through time">Potovanje &lt; @ 1 teden/sek</string>
+
+    <!-- Time Travel dialog event display names -->
+    <string name="time_travel_select_hint" translation_description="Placeholder hint text for the dropdown list of popular astronomical events in the time travel dialog">-- Izberite priljubljeni dogodek --</string>
+    <string name="time_travel_next_sunset" translation_description="Name of a popular astronomical event in the time travel picker">Naslednji večerni sončni zahod</string>
+    <string name="time_travel_next_sunrise" translation_description="Name of a popular astronomical event in the time travel picker">Naslednji jutranji sončni vzhod</string>
+    <string name="time_travel_next_fullmoon" translation_description="Name of a popular astronomical event in the time travel picker">Naslednji polni mesec</string>
+    <string name="time_travel_next_newmoon" translation_description="Name of a popular astronomical event in the time travel picker">Naslednji novi mesec</string>
+    <string name="time_travel_mercury_transit_2016" translation_description="Name of an astronomical event in the time travel picker. A Mercury transit is when Mercury passes across the face of the Sun as seen from Earth. Keep the date format suitable for your locale.">Prehod Merkurja 9. maja 2016</string>
+    <string name="time_travel_solar_eclipse_2024" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">Sončni mrk v Severni Ameriki 8. aprila 2024</string>
+    <string name="time_travel_apollo_11" translation_description="Name of an astronomical event in the time travel picker: the first crewed Moon landing in 1969">Pristajanje Apolla 11 na Luni</string>
+    <string name="time_travel_jupiter_saturn_2020" translation_description="Name of an astronomical event in the time travel picker. A conjunction is when two planets appear very close together in the sky.">Konjunkcija Jupitera in Saturna leta 2020</string>
+    <string name="time_travel_six_planet_parade_2026" translation_description="Name of an astronomical event in the time travel picker. A planet parade is when several planets are visible at once. Keep the date format suitable for your locale.">Parada šestih planetov, 28. februar 2026</string>
+    <string name="time_travel_lunar_eclipse_2026" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">Popolni lunin mrk, 3. marec 2026</string>
+    <string name="time_travel_lyrids_2026" translation_description="Name of an astronomical event in the time travel picker. The Lyrids are an annual meteor shower. Keep the date format suitable for your locale.">Meteorski roj Liridi, 22. april 2026</string>
+    <string name="time_travel_venus_jupiter_2026" translation_description="Name of an astronomical event in the time travel picker. A conjunction is when two planets appear very close together in the sky. Keep the date format suitable for your locale.">Konjunkcija Venere in Jupitera, 9. junij 2026</string>
+    <string name="time_travel_mars_uranus_2026" translation_description="Name of an astronomical event in the time travel picker. A close approach is when two objects appear near each other in the sky. Keep the date format suitable for your locale.">Tesna konjunkcija Marsa in Urana, 4. julij 2026</string>
+    <string name="time_travel_solar_eclipse_2026" translation_description="Name of an astronomical event in the time travel picker. Keep the date format suitable for your locale.">Popolni sončni mrk, 12. avgust 2026</string>
+    <string name="time_travel_perseids_2026" translation_description="Name of an astronomical event in the time travel picker. The Perseids are an annual meteor shower. Keep the date format suitable for your locale.">Meteorski roj Perzejdi, 12.–13. avgust 2026</string>
+    <string name="time_travel_jupiter_occultation_2026" translation_description="Name of an astronomical event in the time travel picker. A lunar occultation is when the Moon passes in front of a planet, briefly hiding it. Keep the date format suitable for your locale.">Lunina okrivalka Jupitera, 6. oktober 2026</string>
+    <string name="time_travel_geminids_2026" translation_description="Name of an astronomical event in the time travel picker. The Geminids are an annual meteor shower. Keep the date format suitable for your locale.">Meteorski roj Geminidi, 13.–14. december 2026</string>
+    <string name="time_travel_supermoon_2026" translation_description="Name of an astronomical event in the time travel picker. A supermoon is a full moon that occurs near the Moon\'s closest approach to Earth. Keep the date format suitable for your locale.">Superluna na Božični večer, 24. december 2026</string>
+
+    <string name="use_sound_effects" translation_description="A preferences menu label for enabling sound effects">Omogoči zvok</string>
+
+    <string name="menu_gallery" translation_description="Menu item label to open the image gallery">Galerija</string>
+    <string name="gallery_image_search_btn" translation_description="Button in the gallery to locate the displayed object on the sky map">Poišči na nebu</string>
+    <string name="gallery_image_back_btn" translation_description="Button to return to the gallery from a single image view">Nazaj v galerijo</string>
+    <string name="hubble_image_gallery_title" translation_description="Title of the image gallery screen">Galerija Sky Map</string>
+    <string name="hubble_image" translation_description="Label or caption for a Hubble Space Telescope image in the gallery">Hubblova slika</string>
+    <string name="search_overlay_title" translation_description="title for search overlay">Usmerite telefon proti puščici</string>
+    <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">Iskanje:</string>
+    <string name="sun_wont_set_message" translation_description="Message shown when the sun will not set during the next 24 hours (polar day / midnight sun)">Sonce se ne bo zašlo v naslednjih 24 urah na vaši trenutni lokaciji.</string>
+
+    <!-- tm:omitted name="missing_label" reason="identical_to_source" -->
+
+    <string name="menu_tos" translation_description="Menu item label to view the Terms of Service">Pogoji uporabe</string>
+    <string name="menu_diagnostics" translation_description="Menu item label to open the technical diagnostics screen">Diagnostika</string>
+
+    <string name="north_pole" translation_description="Short abbreviation for the North Celestial Pole, displayed as a label on the sky map grid. Translators: use the standard abbreviation in your language (e.g. NP in English, PN in French).">SN</string>
+    <string name="south_pole" translation_description="Short abbreviation for the South Celestial Pole, displayed as a label on the sky map grid. Translators: use the standard abbreviation in your language (e.g. SP in English, PS in French).">JN</string>
+
+    <string name="enable_analytics" translation_description="Preference label to opt in to sending anonymous usage statistics">Pošlji statistiko uporabe</string>
+    <string name="enable_analytics_desc" translation_description="Description/summary for the usage statistics preference">Izboljšajte Sky Map z pošiljanjem anonimnih podatkov v Google Analytics</string>
+
+    <string name="no_sensor_warning" translation_description="Warning shown when required orientation sensors are not detected on the device">
+    Vaša naprava morda nima senzorjev za orientacijo - samodejni način morda ne bo deloval
+    </string>
+    <string name="warning_dialog_title" translation_description="Title of a warning dialog shown when something is wrong, e.g. a missing sensor">Slabe novice!</string>
+    <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">
+    Zažal se zdi, da vaša naprava morda nima enega od senzorjev, ki jih Sky Map potrebuje.
+
+Da bi vam prikazal nebo v smeri, v katero kaže vaš telefon, Sky Map potrebuje tako vgrajeni kompas kot tudi pospeškomter. Vaša naprava poroča, da ji manjka eden od njih. Dobra novica je, da nekatere naprave (na primer nekateri telefoni Moto E) napačno trdijo, da nimajo kompasa, čeprav ga imajo.
+
+Če vaša naprava res nima senzorja, avtomatski način ne bo deloval. Vendar pa lahko Sky Map še vedno uporabljate na tej napravi v ročnem načinu, kjer lahko zemljevid premikate, vrtite in raztegujete s prsti.
+    </string>
+    <string name="do_not_show_again" translation_description="Checkbox or button label to suppress future display of a warning dialog">Ne prikaži tega sporočila več</string>
+    <string name="title_activity_diagnostic" translation_description="Title bar text for the Diagnostics activity/screen">Diagnostika</string>
+    <string name="play_services_error" translation_description="Warning shown in the diagnostics screen when Google Play Services has an error that may affect automatic location">
+    Opozorilo: Napaka Google Play Services - Samodejno določanje lokacije morda ne bo delovalo
+    </string>
+    <string name="sensor_absent" translation_description="Sensor status shown in diagnostics when the sensor is not present on the device">Odsotno</string>
+    <string name="sensor_accuracy_unknown" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">Natančnost: Neznana</string>
+    <string name="sensor_accuracy_unreliable" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">Natančnost: Nezanesljiva</string>
+    <string name="sensor_accuracy_low" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">Natančnost: Nizka</string>
+    <string name="sensor_accuracy_medium" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">Natančnost: Srednja</string>
+    <string name="sensor_accuracy_high" translation_description="Sensor accuracy level shown in the diagnostics screen and calibration dialog">Natančnost: Visoka</string>
+    <string name="sensor_accuracy_nocontact" translation_description="Sensor accuracy level shown when the sensor has no contact (e.g. heart-rate sensor lifted from skin) — unlikely to appear in Sky Map but included for completeness">Natančnost: Brez stika</string>
+    <string name="diagnostics_activity_general_heading" translation_description="Section heading in the Diagnostics screen for general device information">Splošno</string>
+    <string name="diagnostics_activity_phone" translation_description="Row label in the Diagnostics screen for the device model name">Naprava</string>
+    <string name="diagnostics_activity_android_version" translation_description="Row label in the Diagnostics screen for the Android OS version">Različica Androida</string>
+    <string name="diagnostics_activity_sky_map_version" translation_description="Row label in the Diagnostics screen for the Sky Map app version">Različica Sky Map</string>
+    <string name="diagnostics_activity_sensors_heading" translation_description="Section heading in the Diagnostics screen for sensor readings">Senzorji</string>
+    <string name="diagnostics_activity_compass" translation_description="Row label in the Diagnostics screen for the compass (magnetic field) sensor">Kompas</string>
+    <string name="diagnostics_activity_accelerometer" translation_description="Row label in the Diagnostics screen for the accelerometer sensor">Pospeškomet</string>
+    <string name="diagnostics_activity_rotation_vector" translation_description="Row label in the Diagnostics screen for the rotation vector (combined orientation) sensor">Rotacija</string>
+    <string name="diagnostics_activity_gyroscope" translation_description="Row label in the Diagnostics screen for the gyroscope sensor">Žiroskop</string>
+    <string name="diagnostics_activity_light_level" translation_description="Row label in the Diagnostics screen for the ambient light sensor reading">Raven svetlobe</string>
+    <string name="diagnostics_activity_location_and_time_heading" translation_description="Section heading in the Diagnostics screen for location and time information">Lokacija in čas</string>
+    <string name="diagnostics_activity_location_permission" translation_description="Row label in the Diagnostics screen showing whether location permission has been granted">Dovoljenje za lokacijo</string>
+    <string name="diagnostics_activity_location_permission_granted" translation_description="Status value shown when location permission has been granted">Dodeljeno</string>
+    <string name="diagnostics_activity_location_permission_denied" translation_description="Status value shown when location permission has been denied">Zavrnjeno</string>
+    <!-- tm:omitted name="diagnostics_activity_gps" reason="identical_to_source" -->
+    <string name="diagnostics_activity_location" translation_description="Row label in the Diagnostics screen showing the current latitude and longitude">Lokacija (lat, dolž)</string>
+    <string name="diagnostics_activity_pointing_ra_dec" translation_description="Row label in the Diagnostics screen showing a snapshot of where the phone is currently pointing in the sky (Right Ascension and Declination)">Posnetek smeri</string>
+    <string name="diagnostics_activity_magnetic_correction" translation_description="Row label in the Diagnostics screen showing whether magnetic declination correction is applied">Magnetna korekcija</string>
+    <string name="diagnostics_activity_local_datetime" translation_description="Row label in the Diagnostics screen for the local date and time">Lokalni čas</string>
+    <string name="diagnostics_activity_universal_time" translation_description="Row label in the Diagnostics screen for the UTC/universal date and time">Univerzalni čas</string>
+    <string name="diagnostics_activity_network_heading" translation_description="Section heading in the Diagnostics screen for network connectivity information">Omrežje</string>
+    <string name="diagnostics_activity_connection" translation_description="Row label in the Diagnostics screen for the current network connection status">Povezava</string>
+    <string name="diagnostics_activity_rotation_matrix" translation_description="Row label in the Diagnostics screen showing the raw device rotation matrix used for orientation">Rot matrika</string>
+    <string name="enabled" translation_description="Generic status value meaning a feature or sensor is enabled/active">Omogočeno</string>
+    <string name="disabled" translation_description="Generic status value meaning a feature or sensor is disabled/inactive">Onemogočeno</string>
+    <string name="permission_disabled" translation_description="Status value shown when a feature is unavailable because its permission was not granted">Dovoljenje onemogočeno</string>
+    <string name="no_gps" translation_description="Status value shown in diagnostics when no GPS provider is available">Ni GPS</string>
+    <string name="connected" translation_description="Network status value shown when the device has an active network connection">Povezano</string>
+    <string name="disconnected" translation_description="Network status value shown when the device has no network connection">Nepovezano</string>
+    <string name="wifi" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (wifi)\'). Note the leading space.">(wifi)</string>
+    <string name="cell_network" translation_description="Network type suffix appended to the connection status (e.g. \'Connected (cell)\'). Note the leading space.">(mobilna)</string>
+    <string name="menu_calibrate" translation_description="Menu item label to open the compass calibration screen">Kalibriraj</string>
+    <string name="compass_calibration_activity_heading_compass" translation_description="Static label in the compass calibration screen placed inline to the left of the live compass accuracy value (e.g. displayed as \'Compass - Accuracy: High\')">Kompas -</string>
+    <string name="compass_calibration_activity_do_not_show_this_again" translation_description="Checkbox label in the compass calibration dialog to suppress future automatic appearances">Ne prikaži več</string>
+    <string name="compass_calibration_activity_warning" translation_description="Heading/reason text shown in the compass calibration dialog when it opens automatically due to low accuracy">Potrebna je kalibracija strojne opreme</string>
+    <string name="compass_calibration_activity_user_heading" translation_description="Heading shown in the compass calibration dialog when the user opens it manually from the menu">Izboljšajte svojo poravnavo</string>
+    <string name="compass_calib_what_to_do" translation_description="Information for the user on how to calibrate the compass when the dialog auto-opens. Placeholder is the video URL"><![CDATA[Sky Map se opira na vgrajeni kompas v vašem telefonu. Če je natančnost, prikazana zgoraj, nizka, je treba senzor "ponastaviti" z gibanjem telefona v obliki osmice: %s.<br/><br/>
+<b>Pomembno:</b> Kalibracija je strojni proces, ki ga upravlja vaša naprava. Čeprav izboljša zanesljivost senzorja, lahko zunanja magnetna motnja še vedno povzroči "pristranskost" ali rahlo zanašanje. To je fizična omejitev mobilnih kompasov in ne napaka v aplikaciji. Oglejte si <i>Odpravljanje težav</i> v <i>Pomoči</i> za druge stvari, ki jih lahko poskusite.]]></string>
+    <string name="compass_calib_what_to_do_user" translation_description="Information for the user on how to calibrate the compass when they invoke the calibration dialog. Placeholder is the video URL"><![CDATA[Vaš telefon poroča o natančnosti kompasa, kot je prikazano zgoraj. Če želite to izboljšati, prosimo izvedite gibanje v obliki osmice z vašo napravo (%s).<br/><br/>
+<b>Opomba o natančnosti:</b> Kalibracija je zahteva strojne ravni vašega telefona, ne nastavitev Sky Map. Tudi ko je kalibriran, lahko lokalna magnetna polja (kot so avtomobilski armaturni panoji ali magneti) povzročijo rahlo odstopanje v smeri. Oglejte si <i>Odpravljanje težav</i> v <i>Pomoči</i> za druge stvari, ki jih lahko poskusite.]]></string>
+    <string name="sensor_reverse_preference_title" translation_description="Preference title for reversing the magnetic Z-axis sensor reading, a fix for certain phones with incorrectly implemented sensors">Obrni magnetni Z</string>
+    <string name="sensor_reverse_preference_summary" translation_description="Summary for the Reverse Magnetic Z preference">
+    Popravka za telefone z nepravilno implementiranimi senzorji - zahteva ponovni zagon
+    </string>
+    <string name="whats_new_dialog_title" translation_description="Title of the dialog shown on first launch after an update, listing new features">Kaj je novo</string>
+    <string name="disable_gyro_preference_title" translation_description="Preference title for disabling the gyroscope sensor">Onemogoči žiroskop</string>
+    <string name="disable_gyro_preference_summary" translation_description="Explanation of the disable gyroscope preference and when to use it">
+    Vsi naprave nimajo žiroskopa - če ga ima vaša naprava, boste dobili boljše rezultate, če je omogočen in je to polje odkljukano. Po drugi strani pa, če vaša naprava nima žiroskopa, Sky Map verjetno ne bo delal, če odkljukate to polje.
+    </string>
+    <string name="rotate_horizon_preference_title" translation_description="Preference title for choosing the view/pointing direction mode">Smer pogleda</string>
+    <string name="auto_level_horizon_preference_title" translation_description="Preference title for the auto-level horizon feature in manual mode">Samodejno poravnavanje obzorja</string>
+    <string name="auto_level_horizon_preference_summary" translation_description="Summary for the auto-level horizon preference">V ročnem načinu se obzorje postopoma vrne v vodoravno lego, ko dvignete prste</string>
+
+    <string name="rotate_horizon_preference_summary" translation_description="Explanation of the view direction preference, covering both landscape rotation and pointer modes">
+    Zavrtite obzorje za 90 stopinj (za naprave s prisilno pokrajinsko orientacijo) ali uporabite način kazalca, da zaslon prikaže, kam kaže vrh telefona (glejte besedilo pomoči).
+    </string>
+
+    <string name="show_object_info_pref_title" translation_description="Preference title for showing info cards when tapping objects">Prikaži podatke ob dotiku</string>
+    <string name="show_object_info_pref_summary" translation_description="Preference summary for the tap info feature">Dotaknite se nebesnih objektov, da se o njih naučite</string>
+    <string name="show_object_info_auto_mode_title" translation_description="Preference title for enabling info cards in auto/sensor mode">Informacijske kartice v samodejnem načinu</string>
+    <string name="show_object_info_auto_mode_summary" translation_description="Preference summary for auto mode info cards">
+    Prikaži tudi informacijske kartice ob dotiku objektov v samodejnem (senzorskem) načinu
+    </string>
+    <string name="object_info_funfact_label" translation_description="Label before the fun fact in info card">Zabavno dejstvo:</string>
+    <string name="object_info_distance_label" translation_description="Label for distance field">Razdalja:</string>
+    <string name="object_info_size_label" translation_description="Label for size field">Velikost:</string>
+    <string name="object_info_mass_label" translation_description="Label for mass field">Masa:</string>
+    <string name="object_info_spectral_label" translation_description="Label for spectral class">Spektralni razred:</string>
+    <string name="object_info_magnitude_label" translation_description="Label for apparent magnitude">Magnituda:</string>
+    <string name="object_info_image_content_description" translation_description="Accessibility description for celestial object photo">Fotografija nebesnega objekta</string>
+    <string name="object_info_tap_to_expand" translation_description="Hint shown on image to tap to expand">Tapnite za razširitev</string>
+    <string name="object_info_tap_to_close" translation_description="Hint shown on expanded image to tap to close">Tapnite za zaprtje</string>
+
+</resources>
