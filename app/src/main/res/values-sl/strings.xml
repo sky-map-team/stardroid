@@ -217,12 +217,12 @@ Da bi vam prikazal nebo v smeri, v katero kaže vaš telefon, Sky Map potrebuje 
 <b>Opomba o natančnosti:</b> Kalibracija je zahteva strojne ravni vašega telefona, ne nastavitev Sky Map. Tudi ko je kalibriran, lahko lokalna magnetna polja (kot so avtomobilski armaturni panoji ali magneti) povzročijo rahlo odstopanje v smeri. Oglejte si <i>Odpravljanje težav</i> v <i>Pomoči</i> za druge stvari, ki jih lahko poskusite.]]></string>
     <string name="sensor_reverse_preference_title" translation_description="Preference title for reversing the magnetic Z-axis sensor reading, a fix for certain phones with incorrectly implemented sensors">Obrni magnetni Z</string>
     <string name="sensor_reverse_preference_summary" translation_description="Summary for the Reverse Magnetic Z preference">
-    Popravka za telefone z nepravilno implementiranimi senzorji - zahteva ponovni zagon
+    Popravek za telefone z nepravilno implementiranimi senzorji - zahteva ponovni zagon
     </string>
     <string name="whats_new_dialog_title" translation_description="Title of the dialog shown on first launch after an update, listing new features">Kaj je novo</string>
     <string name="disable_gyro_preference_title" translation_description="Preference title for disabling the gyroscope sensor">Onemogoči žiroskop</string>
     <string name="disable_gyro_preference_summary" translation_description="Explanation of the disable gyroscope preference and when to use it">
-    Vsi naprave nimajo žiroskopa - če ga ima vaša naprava, boste dobili boljše rezultate, če je omogočen in je to polje odkljukano. Po drugi strani pa, če vaša naprava nima žiroskopa, Sky Map verjetno ne bo delal, če odkljukate to polje.
+    Vse naprave nimajo žiroskopa - če ga ima vaša naprava, boste dobili boljše rezultate, če je omogočen in je to polje odkljukano. Po drugi strani pa, če vaša naprava nima žiroskopa, Sky Map verjetno ne bo delal, če odkljukate to polje.
     </string>
     <string name="rotate_horizon_preference_title" translation_description="Preference title for choosing the view/pointing direction mode">Smer pogleda</string>
     <string name="auto_level_horizon_preference_title" translation_description="Preference title for the auto-level horizon feature in manual mode">Samodejno poravnavanje obzorja</string>

@@ -8,7 +8,7 @@
     <string-array name="sensor_damping">
         <item translation_description="Low sensor damping factor - this will make the app jittery">Nenavadno</item>
         <item translation_description="Medium sensor damping factor - this will make the app slightly jittery">Srednje</item>
-        <item translation_description="Extra High sensor damping factor">Pravično</item>
+        <item translation_description="Extra High sensor damping factor">Približno prav</item>
         <item translation_description="Really High sensor damping factor - this will make the app sluggish">Počasno</item>
     </string-array>
     <string-array name="viewing_direction">
