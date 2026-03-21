@@ -56,7 +56,10 @@ def fetch_user_name(login):
         resp = requests.get(f"https://api.github.com/users/{login}", headers=github_headers())
         if resp.status_code != 200:
             return None
-        name = resp.json().get("name", "").strip()
+        data = resp.json()
+        if not data:
+            return None
+        name = (data.get("name") or "").strip()
         return name if name else None
     except requests.exceptions.RequestException:
         return None
