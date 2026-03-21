@@ -81,8 +81,7 @@ class LayerManager(private val sharedPreferences: SharedPreferences) : OnSharedP
         for (layer in layers) {
             if (isLayerVisible(layer)) {
                 for (query in layer.getObjectNamesMatchingPrefix(prefix)) {
-                    val result = SearchTerm(query, layer.layerName)
-                    result.query = result.query.replaceFirstChar { it.uppercase() } // capitalize the result for better display in search suggestions
+                    val result = SearchTerm(query.replaceFirstChar { it.toString().uppercase() }, layer.layerName)
                     all.add(result)
                 }
             }
