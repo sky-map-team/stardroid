@@ -32,10 +32,12 @@ Before deploying, confirm these are done:
 
 1. **Splash screen** updated if this is a named planetary release (`/release-splash`)
 2. **Sponsors** synced (`/skymap-sponsors`)
-3. **Changelog** written (`/whats-new <last-tag>`) — both `whatsnew_content.xml` and
+3. **Contributors** synced — ask the user: "Would you like to refresh the contributors list
+   before deploying?" If yes, invoke the `/skymap-contributors` skill now before continuing.
+4. **Changelog** written (`/whats-new <last-tag>`) — both `whatsnew_content.xml` and
    `fastlane/metadata/android/en-US/changelogs/default.txt`
-4. **Version name** bumped if needed (see Version Management below)
-5. All changes committed and on `master`
+5. **Version name** bumped if needed (see Version Management below)
+6. All changes committed and on `master`
 
 ### Step 1 — Deploy to Internal Testing
 
