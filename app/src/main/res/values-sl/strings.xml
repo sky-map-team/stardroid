@@ -181,7 +181,7 @@ Da bi vam prikazal nebo v smeri, v katero kaže vaš telefon, Sky Map potrebuje 
     <string name="diagnostics_activity_sky_map_version" translation_description="Row label in the Diagnostics screen for the Sky Map app version">Različica Sky Map</string>
     <string name="diagnostics_activity_sensors_heading" translation_description="Section heading in the Diagnostics screen for sensor readings">Senzorji</string>
     <string name="diagnostics_activity_compass" translation_description="Row label in the Diagnostics screen for the compass (magnetic field) sensor">Kompas</string>
-    <string name="diagnostics_activity_accelerometer" translation_description="Row label in the Diagnostics screen for the accelerometer sensor">Pospeškomet</string>
+    <string name="diagnostics_activity_accelerometer" translation_description="Row label in the Diagnostics screen for the accelerometer sensor">Pospeškometer</string>
     <string name="diagnostics_activity_rotation_vector" translation_description="Row label in the Diagnostics screen for the rotation vector (combined orientation) sensor">Rotacija</string>
     <string name="diagnostics_activity_gyroscope" translation_description="Row label in the Diagnostics screen for the gyroscope sensor">Žiroskop</string>
     <string name="diagnostics_activity_light_level" translation_description="Row label in the Diagnostics screen for the ambient light sensor reading">Raven svetlobe</string>
