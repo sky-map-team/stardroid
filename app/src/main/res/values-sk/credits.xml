@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <!-- The folks who made Sky Map Happen -->
+<string name="credits_text" translation_description="This page credits the people and organizations who support and maintain the app Sky Map. Please do not change the &lt; and &gt; markup">
+    &lt;h1&gt;Podpora vývoja&lt;/h1&gt;
+&lt;p&gt;Sky Map je bezplatný, open source a bez reklám. Ak sa vám páči jeho používanie, zvážte &lt;a href="https://buymeacoffee.com/skymapdevs"&gt;podporu&lt;/a&gt; pokračujúceho vývoja na &lt;a href="https://github.com/sky-map-team/stardroid?tab=readme-ov-file#support-the-project"&gt;našej stránke GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Ďakujeme týmto ľuďom, ktorí nedávno &lt;a href="https://buymeacoffee.com/skymapdevs"&gt;prispeli!&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;%1$s&lt;/p&gt;
+
+&lt;h1&gt;Poďakovanie&lt;/h1&gt;
+&lt;h2&gt;Inžinierstvo&lt;/h2&gt;
+&lt;p&gt;John Taylor, Kevin Serafini&lt;/p&gt;
+
+&lt;h2&gt;Prispievatelia Open Source&lt;/h2&gt;
+&lt;p&gt;
+    %2$s
+&lt;/p&gt;
+&lt;p&gt;Ďakujeme! Pozrite si najnovších prispievateľov na &lt;a href="https://github.com/sky-map-team/stardroid/graphs/contributors"&gt;GitHube&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;h2&gt;Pôvodné inžinierstvo, dizajn a riadenie produktu v spoločnosti Google&lt;/h2&gt;
+&lt;p&gt;Brent Bryan, Dominic Widdows, Hector Ouilhet, James Powell, John Taylor, Kevin Serafini,
+Lior Ron.&lt;/p&gt;
+
+&lt;h1&gt;Potvrdenia&lt;/h1&gt;
+&lt;p&gt;Sky Map bol pôvodne vyvinutý ako "Google Sky Map" spoločnosťou Google Inc. a bol sprístupnený ako open source v roku 2012.&lt;/p&gt;
+&lt;p&gt;Špeciálne poďakovanie Patovi Stephensonovi za inšpiráciu svojou súťažou na G1-phone
+    a Chrisovi DiBonovi a Michaelovi Weiss-Malikovi za pomoc pri prechode
+    z Googlu na Open Source.&lt;/p&gt;
+
+&lt;h2&gt;Údaje&lt;/h2&gt;
+&lt;p&gt;Sky Map používa mapy odvodené z údajov z:&lt;/p&gt;
+&lt;ul class="credits"&gt;
+&lt;li&gt;Centre de Donnees astronomiques de Strasbourg (&lt;a href="https://cdsweb.u-strasbg.fr/"&gt;https://cdsweb.u-strasbg.fr/&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;The Bright Star Catalogue, 5th Revised Ed. (Hoffleit D., Warren Jr W.H.)&lt;/li&gt;
+&lt;li&gt;The HYG Database, HYG v1.0. (&lt;a href="https://www.astronexus.com/"&gt;https://www.astronexus.com/&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;History and Accurate Positions for the NGC/IC Objects (Harold G. Corwin Jr)&lt;/li&gt;
+&lt;li&gt;Revised New General Catalogue of Nonstellar Astronomical Objects (Sulentic J.W., Tifft W.G.)&lt;/li&gt;
+&lt;li&gt;SFA Star Charts (&lt;a href="https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html"&gt;https://observe.phy.sfasu.edu/SFAStarCharts/SFAStarChartFAQ.html&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Polohy objektov slnečnej sústavy sa počítajú z údajov poskytnutých USNO (&lt;a href="https://www.usno.navy.mil/USNO/astronomical-applications"&gt;https://www.usno.navy.mil/USNO/astronomical-applications&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Údaje o sférickom pokrytí získané z (&lt;a href="https://www2.research.att.com/~njas/coverings"&gt;https://www2.research.att.com/~njas/coverings&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Mapa zatmenia 2024 s láskavým dovolením NASA\'s Scientific Visualization Studio.&lt;/li&gt;
+&lt;li&gt;Údaje o meteorických rojoch od Medzinárodnej meteorickej organizácie (&lt;a href="https://www.imo.net/data"&gt;https://www.imo.net/data&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Poďakovanie za obrázky&lt;/h2&gt;
+&lt;p&gt;Nebeské obrázky v tejto aplikácii sú poskytnuté s láskavým dovolením nasledujúcich zdrojov:&lt;/p&gt;
+&lt;ul class="credits"&gt;
+&lt;li&gt;Obrázky z Hubbleovho vesmírneho ďalekohľadu: NASA, ESA a Space Telescope Science Institute (&lt;a href="https://hubblesite.org/"&gt;hubblesite.org&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Obrázky planét: NASA/JPL-Caltech, NASA/Johns Hopkins APL/Carnegie (MESSENGER), NASA/Johns Hopkins APL/SwRI (New Horizons)&lt;/li&gt;
+&lt;li&gt;Obrázok Mesiaca: NASA/GSFC/Arizona State University (Lunar Reconnaissance Orbiter)&lt;/li&gt;
+&lt;li&gt;Obrázky hviezdneho poľa: ESO Digitized Sky Survey 2 (&lt;a href="https://archive.eso.org/dss/dss"&gt;archive.eso.org/dss&lt;/a&gt;), CC BY 4.0&lt;/li&gt;
+&lt;li&gt;Mapy súhvezdí: IAU a Sky &amp; Telescope (Roger Sinnott &amp; Rick Fienberg), CC BY 4.0&lt;/li&gt;
+&lt;li&gt;Ďalšie obrázky Messiera: Gemini Observatory/NOIRLab/NSF/AURA (&lt;a href="https://noirlab.edu/"&gt;noirlab.edu&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Obrázok M31: Peter Kennett (&lt;a href="https://commons.wikimedia.org/wiki/File:M31(Kennett).jpg"&gt;Wikimedia Commons&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+    </string>
+</resources>
