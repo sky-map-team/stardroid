@@ -15,7 +15,7 @@
     <string name="no_use_gps_pref" translation_description="Preference label: choose to enter location by hand instead of using GPS or phone location">Nastavi lokacijo ročno</string>
     <string name="no_use_gps_pref_hint" translation_description="Hint text beneath the \'Set location manually\' preference">Vnesite kraj ali koordinate spodaj</string>
     <string name="location_placename" translation_description="Label for the place-name text field in manual location settings">Ime kraja</string>
-    <string name="location_placename_hint" translation_description="An example address.  Translators: please pick an address suitable for your country.  If it has an astronomical connection (e.g. the address of an observatory or famous astronomer) then that would be even better.">npr. 1400 West Mars Hill Road, Flagstaff, AZ.</string>
+    <string name="location_placename_hint" translation_description="An example address.  Translators: please pick an address suitable for your country.  If it has an astronomical connection (e.g. the address of an observatory or famous astronomer) then that would be even better.">npr. Slovenská ústredná hvezdáreň, Hurbanovo</string>
     <string name="location_lat_pref" translation_description="Label for the latitude input field in manual location settings">Širina</string>
     <string name="location_long_pref" translation_description="Label for the longitude input field in manual location settings">Dolžina</string>
     <string name="degrees" translation_description="angular degrees - used for latitude and longitude">Stopinje</string>
