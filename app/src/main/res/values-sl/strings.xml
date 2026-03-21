@@ -157,7 +157,7 @@
     </string>
     <string name="warning_dialog_title" translation_description="Title of a warning dialog shown when something is wrong, e.g. a missing sensor">Slabe novice!</string>
     <string name="missing_sensor_dialog_text" translation_description="Dialog message shown when the device appears to be missing the compass or accelerometer sensors needed for auto mode">
-    Zažal se zdi, da vaša naprava morda nima enega od senzorjev, ki jih Sky Map potrebuje.
+    Na žalost se zdi, da vaša naprava morda nima enega od senzorjev, ki jih Sky Map potrebuje.
 
 Da bi vam prikazal nebo v smeri, v katero kaže vaš telefon, Sky Map potrebuje tako vgrajeni kompas kot tudi pospeškomter. Vaša naprava poroča, da ji manjka eden od njih. Dobra novica je, da nekatere naprave (na primer nekateri telefoni Moto E) napačno trdijo, da nimajo kompasa, čeprav ga imajo.
 
