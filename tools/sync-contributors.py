@@ -52,11 +52,14 @@ def fetch_commits_ordered():
 
 def fetch_user_name(login):
     """Returns the real name for a GitHub user, or None if unavailable."""
-    resp = requests.get(f"https://api.github.com/users/{login}", headers=github_headers())
-    if resp.status_code != 200:
+    try:
+        resp = requests.get(f"https://api.github.com/users/{login}", headers=github_headers())
+        if resp.status_code != 200:
+            return None
+        name = resp.json().get("name", "").strip()
+        return name if name else None
+    except requests.exceptions.RequestException:
         return None
-    name = resp.json().get("name", "").strip()
-    return name if name else None
 
 
 def escape_for_android(name):
