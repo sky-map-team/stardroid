@@ -15,7 +15,7 @@
     <string name="no_use_gps_pref" translation_description="Preference label: choose to enter location by hand instead of using GPS or phone location">Nastavi lokacijo ročno</string>
     <string name="no_use_gps_pref_hint" translation_description="Hint text beneath the \'Set location manually\' preference">Vnesite kraj ali koordinate spodaj</string>
     <string name="location_placename" translation_description="Label for the place-name text field in manual location settings">Ime kraja</string>
-    <string name="location_placename_hint" translation_description="An example address.  Translators: please pick an address suitable for your country.  If it has an astronomical connection (e.g. the address of an observatory or famous astronomer) then that would be even better.">npr. Slovenská ústredná hvezdáreň, Hurbanovo</string>
+    <string name="location_placename_hint" translation_description="An example address.  Translators: please pick an address suitable for your country.  If it has an astronomical connection (e.g. the address of an observatory or famous astronomer) then that would be even better.">npr. Observatorij Golovec, Ljubljana</string>
     <string name="location_lat_pref" translation_description="Label for the latitude input field in manual location settings">Širina</string>
     <string name="location_long_pref" translation_description="Label for the longitude input field in manual location settings">Dolžina</string>
     <string name="degrees" translation_description="angular degrees - used for latitude and longitude">Stopinje</string>
@@ -58,7 +58,7 @@
     <string name="font_size_preference" translation_description="Change the font size">Velikost pisave</string>
     <string name="font_size_preference_description" translation_description="help to go along with the change font size preference">Prilagodi velikost besedila nalepk</string>
     <string name="ecliptic" translation_description="Label for the ecliptic layer — the apparent annual path of the Sun across the sky">Ekliptika</string>
-    <string name="malformed_loc_error" translation_description="Error message when a non-numeric value is entered for latitude or longitude">Nastavka za zemljepisno širino ali dolžino ni številka.</string>
+    <string name="malformed_loc_error" translation_description="Error message when a non-numeric value is entered for latitude or longitude">Nastavitev za zemljepisno širino ali dolžino ni številka.</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Sprejmi</string>
     <string name="dialog_decline" translation_description="declining the licence agreement">Ne, hvala</string>
     <string name="dialog_ok_button" translation_description="Generic OK/confirm button label for dialogs">V redu</string>
