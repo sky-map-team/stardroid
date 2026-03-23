@@ -303,8 +303,7 @@ users search for different objects than auto-mode users.
 
 **4f. Add `gallery_image_viewed_ev`**
 
-In `ImageGalleryActivity`, the `OnItemClickListener` is where the user taps an image to
-trigger a search. Fire the event there with the image's asset path or display name.
+In `ImageGalleryActivity`, the `OnItemClickListener` is where the user taps an image to view it. Fire the event there with the image's asset path or display name.
 
 Constants to add:
 ```
