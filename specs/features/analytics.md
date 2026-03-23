@@ -87,6 +87,7 @@ can slice by app version.
 - **Object info card views by type**: are users engaging with Messier objects, planets, or
   bright stars most? Informs which educational content to expand.
 - **Object info card views**: which objects are most popular and should be enhanced?
+- **Settings**: we're less interested in setting change _events_ in most cases, but rather which settings people prefer. e.g. do most users have the 'disable gyro' setting enabled?
 
 ### Device & sensor health
 - **`sensor_liar_prop` rate by device model**: Firebase's default `device_model` dimension
