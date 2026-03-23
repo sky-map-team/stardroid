@@ -815,6 +815,9 @@ public class DynamicStarMapActivity extends InjectableActivity
     analytics.trackEvent(AnalyticsInterface.SEARCH_EVENT, b);
     if (results.isEmpty()) {
       Log.d(TAG, "No results returned");
+      Bundle failBundle = new Bundle();
+      failBundle.putString(AnalyticsInterface.SEARCH_TERM, queryString);
+      analytics.trackEvent(AnalyticsInterface.SEARCH_FAILED_EVENT, failBundle);
       noSearchResultsDialogFragment.show(fragmentManager, "No Search Results");
     } else if (results.size() > 1) {
       Log.d(TAG, "Multiple results returned");
@@ -1030,6 +1033,11 @@ public class DynamicStarMapActivity extends InjectableActivity
     rendererController.queueViewerUpDirection(model.getZenith().copyForJ());
     rendererController.queueEnableSearchOverlay(target.copyForJ(), searchTerm);
     boolean autoMode = sharedPreferences.getBoolean(ApplicationConstants.AUTO_MODE_PREF_KEY, true);
+    Bundle lockedBundle = new Bundle();
+    lockedBundle.putString(AnalyticsInterface.OBJECT_LOCKED_NAME, searchTerm);
+    lockedBundle.putString(AnalyticsInterface.OBJECT_LOCKED_MODE,
+        autoMode ? AnalyticsInterface.OBJECT_LOCKED_MODE_AUTO : AnalyticsInterface.OBJECT_LOCKED_MODE_MANUAL);
+    analytics.trackEvent(AnalyticsInterface.OBJECT_LOCKED_EVENT, lockedBundle);
     if (!autoMode) {
       controller.teleport(target);
     }

@@ -290,6 +290,10 @@ rows = `search_term` custom dimension, filter by `search_failed_ev`, sort by cou
 
 **Commit:** `DynamicStarMapActivity.java` + `AnalyticsInterface.java`.
 
+**Status: DONE** — `SEARCH_FAILED_EVENT` constant added; `doSearchWithIntent()` fires
+`search_failed_ev` with `search_term` when results are empty, alongside the existing `search`
+event which retains `search_success=false`.
+
 ---
 
 **4e. Add `object_locked_ev`**
@@ -325,6 +329,10 @@ users search for different objects than auto-mode users.
 
 **Commit:** `DynamicStarMapActivity.java` + `AnalyticsInterface.java`.
 
+**Status: DONE** — `OBJECT_LOCKED_EVENT`, `OBJECT_LOCKED_NAME`, `OBJECT_LOCKED_MODE`,
+`OBJECT_LOCKED_MODE_AUTO`, `OBJECT_LOCKED_MODE_MANUAL` constants added; event fired in
+`activateSearchTarget()` with `object_name` and `mode` (`"auto"` or `"manual"`).
+
 ---
 
 **4f. Add `gallery_image_viewed_ev`**
@@ -342,6 +350,10 @@ GALLERY_IMAGE_NAME = "image_name"
 images drive the most engagement.
 
 **Commit:** `ImageGalleryActivity.java` + `AnalyticsInterface.java`.
+
+**Status: DONE** — `GALLERY_IMAGE_VIEWED_EVENT` and `GALLERY_IMAGE_NAME` constants added;
+event fired in `showImage()` using `GalleryImage.searchTerm` as the image name (stable across
+locales, consistent with object IDs used elsewhere in analytics).
 
 ---
 

@@ -60,6 +60,7 @@ public interface AnalyticsInterface {
   String SEARCH_EVENT = "search";
   String SEARCH_TERM = "search_term";
   String SEARCH_SUCCESS = "search_success";
+  String SEARCH_FAILED_EVENT = "search_failed_ev";
   String START_EVENT = "start_up_event_ev";
   String START_EVENT_HOUR = "local_hour";
   String START_EVENT_DAY_OF_WEEK = "day_of_week";
@@ -85,6 +86,17 @@ public interface AnalyticsInterface {
 
   // Missing sensors
   String NO_SENSORS_WARNING_EVENT = "no_sensors_warning_ev";
+
+  // Gallery image viewed
+  String GALLERY_IMAGE_VIEWED_EVENT = "gallery_image_viewed_ev";
+  String GALLERY_IMAGE_NAME = "image_name";
+
+  // Object locked (search result activated)
+  String OBJECT_LOCKED_EVENT = "object_locked_ev";
+  String OBJECT_LOCKED_NAME = "object_name";
+  String OBJECT_LOCKED_MODE = "mode";
+  String OBJECT_LOCKED_MODE_AUTO = "auto";
+  String OBJECT_LOCKED_MODE_MANUAL = "manual";
 
   // Layer toggles
   String LAYER_TOGGLED_EVENT = "layer_toggled_ev";
