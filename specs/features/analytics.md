@@ -15,6 +15,23 @@ In general we would like to be able to slice by user level properties in the GA4
 
 Acceptance criteria: all Sky Map-specific events have a common naming pattern (e.g. the _ev suffix).
 
+#### Implementation Plan
+
+An audit of `AnalyticsInterface.java` shows the convention is already largely in place:
+- All custom events use the `_ev` suffix (e.g. `session_length_ev`, `layer_toggled_ev`).
+- All user properties use the `_prop` suffix (e.g. `new_user_prop`, `device_sensors_prop`).
+- The `search` event intentionally uses Firebase's recommended event name and should remain as-is.
+
+One cleanup is needed: `TOGGLED_MANUAL_MODE_LABEL` is named as a "label" but is actually an event
+name. It will be renamed to `MANUAL_MODE_TOGGLED_EVENT` when the associated event firing is fixed
+in Section 4.
+
+**Commit:** Rename `TOGGLED_MANUAL_MODE_LABEL` → `MANUAL_MODE_TOGGLED_EVENT` in
+`AnalyticsInterface.java` and update all references (currently none, since the event is never
+fired). Purely a naming/documentation change.
+
+---
+
 ## 2. Update the preference value whitelist to be a blacklist
 This was added to ensure we don't inadvertently log PII such as a user's address but history
 has shown that this is unnecessarily conservative. Review all current
@@ -23,8 +40,71 @@ preferences, flag any that could be a privacy concern, and add those to a blackl
 Acceptance criteria: the whitelist is gone and instead there is a minimal blacklist for events
 of genuine concern.
 
+#### Implementation Plan
+
+**Pre-existing bug:** The current whitelist in `PreferenceChangeAnalyticsTracker.kt` is:
+```kotlin
+setOf("sensor_speed", "sensor_damping, lightmode")
+```
+This is only **two** strings — `"sensor_damping, lightmode"` is a single string, so `lightmode`
+is never actually whitelisted. The blacklist approach fixes this naturally.
+
+**Preference audit** (all keys in `preference_screen.xml` and internal keys):
+
+| Key | Type | PII risk | Action |
+|-----|------|----------|--------|
+| `location` | String (user-entered place name) | **Yes** | Blacklist |
+| `latitude` | String (user-entered decimal) | **Yes** | Blacklist |
+| `longitude` | String (user-entered decimal) | **Yes** | Blacklist |
+| `force_gps` | boolean | No | Log |
+| `no_auto_locate` | boolean | No | Log |
+| `use_magnetic_correction` | boolean | No | Log |
+| `manual_compass_adjustment` | float (degrees offset) | No | Log |
+| `show_object_info_on_tap2` | boolean | No | Log |
+| `show_object_info_auto_mode` | boolean | No | Log |
+| `auto_level_horizon` | boolean | No | Log |
+| `auto_dimness` | enum string | No | Log |
+| `font_size` | enum string | No | Log |
+| `show_messier_images` | boolean | No | Log |
+| `disable_gyro` | boolean | No | Log |
+| `sensor_speed` | enum string | No | Log |
+| `sensor_damping` | enum string | No | Log |
+| `reverse_magnetic_z` | boolean | No | Log |
+| `viewing_direction` | enum string | No | Log |
+| `sound_effects` | boolean | No | Log |
+| `enable_analytics` | boolean | No | Log |
+| `lightmode` | string | No | Log |
+
+**Files to change:**
+- `PreferenceChangeAnalyticsTracker.kt`: replace `stringPreferenceWhiteList` with a
+  `blacklist` set containing `"location"`, `"latitude"`, `"longitude"`. In
+  `getPreferenceAsString()`, mask blacklisted keys to `"REDACTED"` (more informative
+  than `"PII"`). Remove the whitelist check from the string branch — all string values
+  are now logged unless blacklisted.
+- `AnalyticsInterface.java`: replace the whitelist constant comment with a blacklist
+  comment documenting the three keys and the rationale.
+
+**Commit:** Isolated commit touching only `PreferenceChangeAnalyticsTracker.kt` and
+`AnalyticsInterface.java`.
+
+---
+
 ## 3. Update the GA implementation to modern standards.
 Check dependencies and APIs and see if any need to be updated.
+
+#### Implementation Plan
+
+- Bump `firebase-bom` in `app/build.gradle` to the latest stable version (currently `33.7.0`).
+- Review all other GMS dependencies in `app/build.gradle` for available updates (google-services
+  plugin, play-services-location, etc.).
+- Check for any deprecated Firebase Analytics API calls in `Analytics.java`
+  (e.g. `getAppInstanceId()` → `getAppInstanceId()` is still current; verify at time of
+  implementation).
+
+**Commit:** Isolated build-file-only change. No functional or behavioural changes. Must be
+tested with a GMS debug build to confirm analytics still initialises correctly.
+
+---
 
 ## 4. Gaps & Suggested Improvements
 Review the following gaps and implement changes where appropriate.  Make each improvement a separate
@@ -40,14 +120,182 @@ can slice by app version.
 |----------------------------------------------------------------------|-----------------|---------------------|-----------|
 | **Time Travel usage**                                                | `time_travel_used_ev` | `delta_hours: int`, `direction: "past"\|"future"` | We track that the dialog was *opened* but not whether the user actually set a time or by how much. |
 | **Manual mode entered/exited**                                       | `manual_mode_toggled_ev` | `enabled: boolean` | `TOGGLED_MANUAL_MODE_LABEL` constant exists but is never called. |
-| **Gyroscope-vs-mag sensor path chosen**                              | extend `start_up_event_ev` or new `sensor_path_ev` | `sensor_path: "rotation_vector"\|"accel_mag"` | Knowing which sensor fusion path is active would help diagnose accuracy issues across the install base. |
-| **Search with no results**                                           | already partially covered | — | `search_success=false` is logged, but the failed term is also logged — consider a dedicated `search_failed_ev` so funnels are cleaner. |
-| **Object searched-and-locked**                                       | `object_locked_ev` | `object_id: String`, `object_type: String` | Distinguish between viewing info and actually locking the view onto an object. |
+| **Gyroscope-vs-mag sensor path chosen**                              | extend `start_up_event_ev` | `sensor_path: "rotation_vector"\|"accel_mag"` | Knowing which sensor fusion path is active would help diagnose accuracy issues across the install base. Also take this opportunity to log a snapshot of key user settings (see Settings in Feature Utilisation below). |
+| **Search with no results**                                           | `search_failed_ev` | `search_term: String` | `search_success=false` is logged on the `search` event, but a dedicated event is far easier to work with in GA4 Explore (no custom dimension required to filter). Keep `search_success=false` on `search` for success-rate calculations; add `search_failed_ev` alongside. |
+| **Object searched-and-locked**                                       | `object_locked_ev` | `object_name: String`, `mode: "auto"\|"manual"` | Fire in `activateSearchTarget()`. In manual mode the view teleports immediately; in auto mode the user must point the phone. Distinguishing the two modes is valuable. |
 | **Gallery image viewed**                                             | `gallery_image_viewed_ev` | `image_name: String` | We know the gallery was opened but not which images engaged users. |
 | Skip this for now (we don't do it): **App rating / review prompted** | `review_prompt_shown_ev`, `review_prompt_outcome_ev` | `outcome: "rated"\|"dismissed"\|"later"` | If an in-app review prompt is ever added. |
-| **Crash / ANR**                                                      | (use Firebase Crashlytics) | — | There is no Crashlytics dependency; adding it would give symbolicated crash reports with zero custom instrumentation. |
+| Skip for now: **Crash / ANR**                                        | (use Firebase Crashlytics) | — | There is no Crashlytics dependency; adding it would give symbolicated crash reports with zero custom instrumentation. Deferred. |
 | **Night mode state at launch**                                       | extend `start_up_event_ev` | `night_mode_on: boolean` | Useful context for interpreting session lengths and object views. |
 | Skip this for now (we don't have it) **Constellation art toggled**   | (already covered by `layer_toggled_ev`) | — | Confirm `source_provider.constellation_boundaries` etc. are all emitting this event. |
+
+#### Implementation Plan — Missing Events
+
+**4a. Fix `manual_mode_toggled_ev`**
+
+The constant `MANUAL_MODE_TOGGLED_EVENT` (renamed from `TOGGLED_MANUAL_MODE_LABEL` in §1) exists
+but `setAutoMode()` in `DynamicStarMapActivity.java` builds a Bundle and then never calls
+`analytics.trackEvent()`.
+
+- `AnalyticsInterface.java`: add `MANUAL_MODE_ENABLED = "enabled"`.
+- `DynamicStarMapActivity.setAutoMode(boolean auto)`: call
+  `analytics.trackEvent(MANUAL_MODE_TOGGLED_EVENT, b)` where `b` contains `enabled = auto`.
+
+*GA4 setup:* Register `enabled` as an event-scoped custom dimension (Firebase Console →
+Analytics → Custom definitions → Create custom dimension, Parameter name: `enabled`). Use
+in Explore with `manual_mode_toggled_ev` as the event filter.
+
+**Commit:** `DynamicStarMapActivity.java` + `AnalyticsInterface.java`.
+
+---
+
+**4b. Extend `start_up_event_ev` — rename `hour`, add `day_of_week`, `night_mode_on`,
+`sensor_path`, and settings snapshot**
+
+`start_up_event_ev` currently fires in `StardroidApplication.setUpAnalytics()`, *before*
+`performFeatureCheck()` runs. Since `sensor_path` is determined in `performFeatureCheck()`,
+the startup event must be moved to fire at the end of `onCreate()`, after both methods have
+run. Pass the sensor path back from `performFeatureCheck()` (return value or a field) so it
+can be included in the bundle.
+
+Parameters to add/change:
+
+| Change | Constant | Notes |
+|--------|----------|-------|
+| Rename `hour` → `local_hour` | `START_EVENT_HOUR = "local_hour"` | Removes ambiguity about UTC vs local. **Breaking change for existing dashboards** — note when deploying. |
+| Add `day_of_week: int (0–6)` | `START_EVENT_DAY_OF_WEEK = "day_of_week"` | 0 = Sunday. Useful for weekday vs weekend analysis. |
+| Add `night_mode_on: boolean` | `START_EVENT_NIGHT_MODE = "night_mode_on"` | Read from `lightmode` preference. |
+| Add `sensor_path: "rotation_vector"\|"accel_mag"` | `START_EVENT_SENSOR_PATH = "sensor_path"` | Determined by `performFeatureCheck()`. `rotation_vector` when the rotation-vector sensor path is active; `accel_mag` otherwise. |
+| Add settings snapshot | see below | Key user settings at session start. |
+
+Settings snapshot parameters (all on `start_up_event_ev`):
+
+| Parameter | Preference key | Type |
+|-----------|---------------|------|
+| `disable_gyro` | `disable_gyro` | boolean |
+| `sensor_speed` | `sensor_speed` | string (enum) |
+| `sensor_damping` | `sensor_damping` | string (enum) |
+| `auto_level_horizon` | `auto_level_horizon` | boolean |
+| `no_auto_locate` | `no_auto_locate` | boolean |
+| `show_object_info_on_tap2` | `show_object_info_on_tap2` | boolean |
+| `sound_effects` | `sound_effects` | boolean |
+
+These capture the stable user preferences that drive feature-utilisation questions (e.g. "what
+fraction of sessions have gyro disabled?") without needing a separate event.
+
+*GA4 setup:* Register each new parameter as an event-scoped custom dimension. The existing
+`hour` custom dimension will need to be retired and replaced with `local_hour`. Use
+`day_of_week` and `local_hour` together in an Explore pivot table for a stargazing
+hour-of-week heatmap. Use settings snapshot params as breakdown dimensions on any engagement
+metric.
+
+**Commit:** `StardroidApplication.kt` + `AnalyticsInterface.java`. Refactor `onCreate()` to
+fire `start_up_event_ev` after `performFeatureCheck()`.
+
+---
+
+**4c. Add `time_travel_used_ev`**
+
+Fire in `DynamicStarMapActivity`:
+- `setTimeTravelMode(Date, int)`: compute `delta_hours = (newTime.getTime() - System.currentTimeMillis()) / 3_600_000`, `direction = delta_hours < 0 ? "past" : "future"`.
+- `setTimeTravelModeFromNow()`: fire with `delta_hours = 0`, `direction = "future"`.
+
+Constants to add to `AnalyticsInterface.java`:
+```
+TIME_TRAVEL_USED_EVENT = "time_travel_used_ev"
+TIME_TRAVEL_DELTA_HOURS = "delta_hours"
+TIME_TRAVEL_DIRECTION = "direction"
+```
+
+*GA4 setup:* Register `delta_hours` as a custom metric (sum/average); register `direction` as
+a custom dimension. Build an Explore report: rows = `direction`, metric = count of
+`time_travel_used_ev`, breakdown = `delta_hours` histogram (use custom bucket ranges:
+0, 1–24 h, 1–7 days, 1–12 months, >1 year).
+
+**Commit:** `DynamicStarMapActivity.java` + `AnalyticsInterface.java`.
+
+---
+
+**4d. Add `search_failed_ev`**
+
+In `DynamicStarMapActivity.doSearchWithIntent()`, when `results.isEmpty()`, fire a new event
+alongside the existing `search` event (which retains `search_success = false`):
+
+```java
+Bundle fail = new Bundle();
+fail.putString(AnalyticsInterface.SEARCH_TERM, queryString);
+analytics.trackEvent(AnalyticsInterface.SEARCH_FAILED_EVENT, fail);
+```
+
+Constants to add:
+```
+SEARCH_FAILED_EVENT = "search_failed_ev"
+```
+(reuse `SEARCH_TERM` for the parameter.)
+
+*GA4 setup:* `search_failed_ev` appears in the Events dashboard directly — no custom
+dimension needed for the event count. Register `search_term` as a custom dimension to see
+which terms fail most. Build a funnelanalysis in Explore: step 1 = `search` event, step 2
+= `search_failed_ev` (drop-off = success rate). For top-failed-terms: Explore → free-form,
+rows = `search_term` custom dimension, filter by `search_failed_ev`, sort by count.
+
+**Commit:** `DynamicStarMapActivity.java` + `AnalyticsInterface.java`.
+
+---
+
+**4e. Add `object_locked_ev`**
+
+Fire in `DynamicStarMapActivity.activateSearchTarget()`, which already reads `autoMode` from
+preferences:
+
+```java
+Bundle b = new Bundle();
+b.putString(AnalyticsInterface.OBJECT_LOCKED_NAME, searchTerm);
+b.putString(AnalyticsInterface.OBJECT_LOCKED_MODE,
+    autoMode ? AnalyticsInterface.OBJECT_LOCKED_MODE_AUTO
+             : AnalyticsInterface.OBJECT_LOCKED_MODE_MANUAL);
+analytics.trackEvent(AnalyticsInterface.OBJECT_LOCKED_EVENT, b);
+```
+
+Constants to add:
+```
+OBJECT_LOCKED_EVENT = "object_locked_ev"
+OBJECT_LOCKED_NAME  = "object_name"
+OBJECT_LOCKED_MODE  = "mode"
+OBJECT_LOCKED_MODE_AUTO   = "auto"
+OBJECT_LOCKED_MODE_MANUAL = "manual"
+```
+
+Note: `activateSearchTarget()` receives the capitalised display name but not a structured
+`object_id`/`object_type`. This is sufficient for identifying popular search targets.
+A future enhancement could pass the full `SearchResult` to include type information.
+
+*GA4 setup:* Register `object_name` and `mode` as custom dimensions. Use in Explore to
+rank most-locked objects; use `mode` as a secondary breakdown to see whether manual-mode
+users search for different objects than auto-mode users.
+
+**Commit:** `DynamicStarMapActivity.java` + `AnalyticsInterface.java`.
+
+---
+
+**4f. Add `gallery_image_viewed_ev`**
+
+In `ImageGalleryActivity`, the `OnItemClickListener` is where the user taps an image to
+trigger a search. Fire the event there with the image's asset path or display name.
+
+Constants to add:
+```
+GALLERY_IMAGE_VIEWED_EVENT = "gallery_image_viewed_ev"
+GALLERY_IMAGE_NAME = "image_name"
+```
+
+*GA4 setup:* Register `image_name` as a custom dimension. Use in Explore: rows =
+`image_name`, metric = count of `gallery_image_viewed_ev` → directly shows which gallery
+images drive the most engagement.
+
+**Commit:** `ImageGalleryActivity.java` + `AnalyticsInterface.java`.
+
+---
 
 ### Parameter quality improvements
 
@@ -56,7 +304,63 @@ can slice by app version.
 | `layer_toggled_ev` | `layer_name` uses internal pref key strings (e.g. `source_provider.constellations`) which are hard to read in the Firebase console | Map to human-readable names (`"constellations"`, `"messier"` …) or add a separate `layer_display_name` parameter. |
 | `session_length_ev` | Raw seconds in an int parameter → hard to bucket in Explore | Consider also logging a `session_bucket` string (`"<1min"`, `"1-5min"`, `"5-15min"`, `"15-30min"`, `">30min"`) for easier funnel analysis. |
 | `start_up_event_ev` | `hour` alone is ambiguous (is it UTC or local?) | Rename to `local_hour` or document clearly; also consider adding `day_of_week` (0–6) to distinguish weekday vs weekend stargazing. |
-| `object_info_viewed_ev` | No position context | Add `magnitude: float` and `visible_without_aid: boolean` to understand whether users are exploring naked-eye or telescope objects. |
+| `object_info_viewed_ev` | No position context | Add `magnitude: float` and `visible_without_aid: boolean` — **deferred**, magnitude not uniformly available across object types. |
+
+#### Implementation Plan — Parameter Quality
+
+**4g. `layer_toggled_ev` — human-readable `layer_name`**
+
+Replace the raw pref key with a human-readable name in the event parameter. The toggle is
+fired in `DynamicStarMapActivity.onOptionsItemSelected()`. Add a static mapping
+(e.g. a `Map<String, String>` in `AnalyticsInterface.java` or a helper method) from internal
+pref key to display name:
+
+| Pref key | Display name |
+|----------|-------------|
+| `source_provider.constellations` | `constellations` |
+| `source_provider.constellation_boundaries` | `constellation_boundaries` |
+| `source_provider.stars` | `stars` |
+| `source_provider.messier` | `messier` |
+| `source_provider.planets` | `planets` |
+| `source_provider.meteor_showers` | `meteor_showers` |
+| `source_provider.horizon` | `horizon` |
+
+Fall back to the raw key for any unmapped value. This is a **breaking change** for the
+`layer_name` dimension in existing dashboards.
+
+*GA4 setup:* No new registration needed — `layer_name` is already a custom dimension. After
+this change, historical data will show old keys; new data will show clean names. Update any
+saved Explore reports to account for the rename.
+
+**Commit:** `DynamicStarMapActivity.java` + `AnalyticsInterface.java`.
+
+---
+
+**4h. `session_length_ev` — add `session_bucket`**
+
+In `DynamicStarMapActivity.onStop()`, compute and add a bucket string:
+
+| Seconds | `session_bucket` value |
+|---------|----------------------|
+| < 60 | `"<1min"` |
+| 60–299 | `"1-5min"` |
+| 300–899 | `"5-15min"` |
+| 900–1799 | `"15-30min"` |
+| ≥ 1800 | `">30min"` |
+
+Constants to add:
+```
+SESSION_BUCKET = "session_bucket"
+```
+
+*GA4 setup:* Register `session_bucket` as an event-scoped custom dimension. In Explore, use
+`session_bucket` as a row dimension with `session_length_ev` as the event filter → gives an
+instant session-length distribution without custom bucketing. Add `app_version` (Firebase
+automatic dimension) as a secondary breakdown.
+
+**Commit:** `DynamicStarMapActivity.java` + `AnalyticsInterface.java`.
+
+---
 
 ### User property improvements
 
@@ -65,6 +369,72 @@ can slice by app version.
 | `DEVICE_SENSORS` | Single string is hard to filter in the Firebase console | Consider one boolean user property per key sensor (`has_gyro`, `has_rotation_vector`). Firebase supports up to 25 user properties. |
 | Missing: **app version at install** | Firebase collects `app_version` automatically, but not the version the user first installed | Add `first_install_version_prop` set only when `NEW_USER = "true"` to track cohort retention across releases. |
 | Missing: **language** | The original design doc listed language breakdown as a goal | Add `user_locale_prop` (e.g. `"en-US"`) set at startup. This directly addresses the translation investment question. |
+
+#### Implementation Plan — User Properties
+
+**4i. Individual sensor boolean properties**
+
+In `StardroidApplication.performFeatureCheck()`, alongside the existing `device_sensors_prop`
+string, set two new user properties:
+
+```
+HAS_GYRO             = "has_gyro_prop"           // "true"/"false"
+HAS_ROTATION_VECTOR  = "has_rotation_vector_prop" // "true"/"false"
+```
+
+These are easier to use as filter conditions in GA4 than parsing the pipe-separated string.
+Firebase user-property budget: currently 3 of 25 used; these add 2 more (5 of 25 total).
+
+*GA4 setup:* User properties are automatically available as user-scoped dimensions in
+Explore. Use `has_gyro_prop` as a segment comparator in the session-length analysis
+(§ Engagement: "do users with gyroscopes stay longer?").
+
+**Commit:** `StardroidApplication.kt` + `AnalyticsInterface.java`.
+
+---
+
+**4j. `first_install_version_prop`**
+
+In `StardroidApplication.setUpAnalytics()`, after the `newUser` check:
+
+```kotlin
+if (newUser) {
+    analytics.setUserProperty(AnalyticsInterface.FIRST_INSTALL_VERSION, versionName)
+}
+```
+
+Constant to add:
+```
+FIRST_INSTALL_VERSION = "first_install_version_prop"
+```
+
+*GA4 setup:* Automatically available as a user-scoped dimension. In Explore, set
+`first_install_version_prop` as a row dimension and `session_length_ev` or retention metric
+as the metric → cohort retention by install version.
+
+**Commit:** `StardroidApplication.kt` + `AnalyticsInterface.java`.
+
+---
+
+**4k. `user_locale_prop`**
+
+In `StardroidApplication.setUpAnalytics()`:
+
+```kotlin
+analytics.setUserProperty(AnalyticsInterface.USER_LOCALE,
+    Locale.getDefault().toLanguageTag())  // e.g. "en-US", "de-DE"
+```
+
+Constant to add:
+```
+USER_LOCALE = "user_locale_prop"
+```
+
+*GA4 setup:* Available as a user-scoped dimension. Use in Explore: rows =
+`user_locale_prop`, metric = user count → immediately shows language breakdown. Cross with
+`session_length_ev` to see whether translated users engage differently.
+
+**Commit:** `StardroidApplication.kt` + `AnalyticsInterface.java`.
 
 ## Suggested Analyses
 
@@ -235,9 +605,9 @@ Set once at app startup in `StardroidApplication.kt` and persisted by Firebase.
   |-----|------|---------|
   | `value` | String | `"sensor_speed:50"` or `"some_key:PII"` |
 
-- **Privacy**: Only three keys are logged with their real values (`sensor_speed`,
-  `sensor_damping`, `lightmode`). All other preference changes use the literal string `"PII"`
-  as the value to avoid inadvertently logging personal data.
+- **Privacy**: All preference values are logged **except** `location`, `latitude`, and
+  `longitude` which are masked to `"REDACTED"`. (Prior to §2 being implemented, only a
+  whitelist of three keys were logged with real values; all others used `"PII"`.)
 
 ### `calibration_auto_triggered_ev`
 - **Trigger**: `SensorAccuracyMonitor` detects compass accuracy has fallen below threshold
