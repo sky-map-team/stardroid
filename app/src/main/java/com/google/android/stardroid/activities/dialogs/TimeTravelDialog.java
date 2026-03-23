@@ -80,6 +80,7 @@ public class TimeTravelDialog extends Dialog {
   private long lastClickTime = 0;
   private int currentSearchTargetRes = 0;  // 0 = no search target
   private boolean userHasModifiedTime = false;
+  private String currentAnalyticsKey = "from_now";
   private Button goButton;
 
   public TimeTravelDialog(final DynamicStarMapActivity parentActivity,
@@ -126,7 +127,7 @@ public class TimeTravelDialog extends Dialog {
     goButton.setOnClickListener(new View.OnClickListener() {
         public void onClick(View v) {
           if (userHasModifiedTime) {
-            parentActivity.setTimeTravelMode(calendar.getTime(), currentSearchTargetRes);
+            parentActivity.setTimeTravelMode(calendar.getTime(), currentSearchTargetRes, currentAnalyticsKey);
           } else {
             parentActivity.setTimeTravelModeFromNow();
           }
@@ -170,6 +171,7 @@ public class TimeTravelDialog extends Dialog {
     // Reset state each time the dialog is shown.
     userHasModifiedTime = false;
     currentSearchTargetRes = 0;
+    currentAnalyticsKey = "from_now";
     popularDatesMenu.setSelection(0);
     calendar.setTime(new Date());
     updateGoButtonText();
@@ -282,6 +284,7 @@ public class TimeTravelDialog extends Dialog {
   private void setDate(int year, int month, int day) {
     calendar.set(year, month, day);
     userHasModifiedTime = true;
+    currentAnalyticsKey = "custom";
     updateGoButtonText();
     updateDisplay();
   }
@@ -293,6 +296,7 @@ public class TimeTravelDialog extends Dialog {
     calendar.set(Calendar.HOUR_OF_DAY, hour);
     calendar.set(Calendar.MINUTE, minute);
     userHasModifiedTime = true;
+    currentAnalyticsKey = "custom";
     updateGoButtonText();
     updateDisplay();
   }
@@ -340,6 +344,7 @@ public class TimeTravelDialog extends Dialog {
     TimeTravelEvent event = TimeTravelEvents.ALL.get(index);
     Log.d(TAG, "Popular event " + index + ": " + getContext().getString(event.getDisplayNameRes()));
     currentSearchTargetRes = event.getSearchTargetRes();
+    currentAnalyticsKey = event.getAnalyticsKey();
     userHasModifiedTime = true;
     updateGoButtonText();
     switch (event.getType()) {

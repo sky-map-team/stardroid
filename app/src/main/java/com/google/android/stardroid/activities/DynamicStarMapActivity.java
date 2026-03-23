@@ -636,10 +636,14 @@ public class DynamicStarMapActivity extends InjectableActivity
   }
 
   public void setTimeTravelMode(Date newTime) {
-    setTimeTravelMode(newTime, 0);
+    setTimeTravelMode(newTime, 0, "custom");
   }
 
-  public void setTimeTravelMode(Date newTime, @StringRes int searchObjectNameRes) {
+  public void setTimeTravelMode(Date newTime, @StringRes int searchObjectNameRes, String analyticsKey) {
+    Bundle timeTravelBundle = new Bundle();
+    timeTravelBundle.putString(AnalyticsInterface.TIME_TRAVEL_EVENT_KEY, analyticsKey);
+    analytics.trackEvent(AnalyticsInterface.TIME_TRAVEL_USED_EVENT, timeTravelBundle);
+
     SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy.MM.dd G  HH:mm:ss z");
     Toast.makeText(this,
                    String.format(getString(R.string.time_travel_start_message_alt),
@@ -676,6 +680,10 @@ public class DynamicStarMapActivity extends InjectableActivity
   }
 
   public void setTimeTravelModeFromNow() {
+    Bundle timeTravelBundle = new Bundle();
+    timeTravelBundle.putString(AnalyticsInterface.TIME_TRAVEL_EVENT_KEY, "from_now");
+    analytics.trackEvent(AnalyticsInterface.TIME_TRAVEL_USED_EVENT, timeTravelBundle);
+
     Log.d(TAG, "Showing TimePlayer UI (from now, no effects).");
     timePlayerUI.setVisibility(View.VISIBLE);
     timePlayerUI.requestFocus();

@@ -68,6 +68,9 @@ public interface AnalyticsInterface {
   String SENSOR_PATH_ROTATION_VECTOR = "rotation_vector";
   String SENSOR_PATH_ACCEL_MAG = "accel_mag";
 
+  String TIME_TRAVEL_USED_EVENT = "time_travel_used_ev";
+  String TIME_TRAVEL_EVENT_KEY = "travel_event";
+
   String SESSION_LENGTH_EVENT = "session_length_ev";
   String SESSION_LENGTH_TIME_VALUE = "session_length";
 

@@ -256,6 +256,13 @@ most popular. `"custom"` in the results indicates users are exploring beyond the
 `TimeTravelDialog.java` (pass key to activity) + `DynamicStarMapActivity.java` (fire event) +
 `AnalyticsInterface.java`.
 
+**Status: DONE** — `analyticsKey` field added to `TimeTravelEvent`; all entries in
+`TimeTravelEvents.ALL` assigned stable snake_case keys; `TimeTravelDialog` tracks
+`currentAnalyticsKey` (reset to `"from_now"` on open, set to `"custom"` on manual date/time
+pick, set to event key on popular-event selection) and passes it to `setTimeTravelMode()`;
+`setTimeTravelModeFromNow()` fires with `"from_now"`; `TIME_TRAVEL_USED_EVENT` and
+`TIME_TRAVEL_EVENT_KEY` constants added to `AnalyticsInterface`.
+
 ---
 
 **4d. Add `search_failed_ev`**
