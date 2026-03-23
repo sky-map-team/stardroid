@@ -586,6 +586,7 @@ public class DynamicStarMapActivity extends InjectableActivity
     Bundle b = new Bundle();
     // Let's see how well Analytics buckets things and log the raw number
     b.putInt(Analytics.SESSION_LENGTH_TIME_VALUE, sessionLengthSeconds);
+    b.putString(Analytics.SESSION_BUCKET, bucket.name());
     analytics.trackEvent(Analytics.SESSION_LENGTH_EVENT, b);
   }
 
@@ -769,7 +770,7 @@ public class DynamicStarMapActivity extends InjectableActivity
         if (key.startsWith("source_provider.")) {
           boolean enabled = sharedPreferences.getBoolean(key, true);
           Bundle layerBundle = new Bundle();
-          layerBundle.putString(AnalyticsInterface.LAYER_TOGGLED_NAME, key);
+          layerBundle.putString(AnalyticsInterface.LAYER_TOGGLED_NAME, AnalyticsInterface.layerDisplayName(key));
           layerBundle.putBoolean(AnalyticsInterface.LAYER_TOGGLED_ENABLED, enabled);
           analytics.trackEvent(AnalyticsInterface.LAYER_TOGGLED_EVENT, layerBundle);
         }

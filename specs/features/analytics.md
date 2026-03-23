@@ -377,13 +377,13 @@ pref key to display name:
 
 | Pref key | Display name |
 |----------|-------------|
-| `source_provider.constellations` | `constellations` |
-| `source_provider.constellation_boundaries` | `constellation_boundaries` |
-| `source_provider.stars` | `stars` |
-| `source_provider.messier` | `messier` |
-| `source_provider.planets` | `planets` |
-| `source_provider.meteor_showers` | `meteor_showers` |
-| `source_provider.horizon` | `horizon` |
+| `source_provider.0` | `stars` |
+| `source_provider.1` | `constellations` |
+| `source_provider.2` | `messier` |
+| `source_provider.3` | `solar_system` |
+| `source_provider.4` | `grid` |
+| `source_provider.5` | `horizon` |
+| `source_provider.6` | `meteor_showers` |
 
 Fall back to the raw key for any unmapped value. This is a **breaking change** for the
 `layer_name` dimension in existing dashboards.
@@ -393,6 +393,10 @@ this change, historical data will show old keys; new data will show clean names.
 saved Explore reports to account for the rename.
 
 **Commit:** `DynamicStarMapActivity.java` + `AnalyticsInterface.java`.
+
+**Status: DONE** — Spec corrected (keys are numeric, not string names); `LAYER_NAME_MAP` and
+static `layerDisplayName()` helper added to `AnalyticsInterface`; `DynamicStarMapActivity`
+now passes the human-readable name to the event. Unmapped keys fall back to the raw pref key.
 
 ---
 
@@ -419,6 +423,12 @@ instant session-length distribution without custom bucketing. Add `app_version` 
 automatic dimension) as a secondary breakdown.
 
 **Commit:** `DynamicStarMapActivity.java` + `AnalyticsInterface.java`.
+
+**Status: DONE** — A `SessionBucketLength` enum and `getSessionLengthBucket()` method already
+existed in `DynamicStarMapActivity` but were never wired into the bundle. `SESSION_BUCKET`
+constant added to `AnalyticsInterface`; `bucket.name()` now included in the event. Bucket
+values are `LESS_THAN_TEN_SECS`, `TEN_SECS_TO_THIRTY_SECS`, `THIRTY_SECS_TO_ONE_MIN`,
+`ONE_MIN_TO_FIVE_MINS`, `MORE_THAN_FIVE_MINS`.
 
 ---
 

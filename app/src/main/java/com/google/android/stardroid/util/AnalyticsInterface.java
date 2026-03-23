@@ -16,6 +16,9 @@ package com.google.android.stardroid.util;
 
 import android.os.Bundle;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Encapsulates interactions with Firebase Analytics, allowing it to be
  * disabled etc.
@@ -74,6 +77,7 @@ public interface AnalyticsInterface {
 
   String SESSION_LENGTH_EVENT = "session_length_ev";
   String SESSION_LENGTH_TIME_VALUE = "session_length";
+  String SESSION_BUCKET = "session_bucket";
 
   // Educational card views
   String OBJECT_INFO_VIEWED_EVENT = "object_info_viewed_ev";
@@ -102,6 +106,20 @@ public interface AnalyticsInterface {
   String LAYER_TOGGLED_EVENT = "layer_toggled_ev";
   String LAYER_TOGGLED_NAME = "layer_name";
   String LAYER_TOGGLED_ENABLED = "layer_enabled";
+
+  Map<String, String> LAYER_NAME_MAP = new HashMap<String, String>() {{
+    put("source_provider.0", "stars");
+    put("source_provider.1", "constellations");
+    put("source_provider.2", "messier");
+    put("source_provider.3", "solar_system");
+    put("source_provider.4", "grid");
+    put("source_provider.5", "horizon");
+    put("source_provider.6", "meteor_showers");
+  }};
+
+  static String layerDisplayName(String prefKey) {
+    return LAYER_NAME_MAP.getOrDefault(prefKey, prefKey);
+  }
 
   void setEnabled(boolean enabled);
 
