@@ -38,6 +38,13 @@ public interface AnalyticsInterface {
   String DEVICE_SENSORS_ROTATION = "rot";
   // Phone claims to have a sensor, but then doesn't allow registration of a listener.
   String SENSOR_LIAR = "sensor_liar_prop";
+  // Individual sensor boolean properties (easier to filter in GA4 than parsing DEVICE_SENSORS)
+  String HAS_GYRO = "has_gyro_prop";
+  String HAS_ROTATION_VECTOR = "has_rotation_vector_prop";
+  // Version the user first installed (set once on new install for cohort analysis)
+  String FIRST_INSTALL_VERSION = "first_install_version_prop";
+  // User's locale at startup (e.g. "en-US") to understand translation coverage
+  String USER_LOCALE = "user_locale_prop";
 
   // Events & Categories
   String TOS_ACCEPTED_EVENT = "TOS_accepted_ev";

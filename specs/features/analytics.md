@@ -461,6 +461,10 @@ Explore. Use `has_gyro_prop` as a segment comparator in the session-length analy
 
 **Commit:** `StardroidApplication.kt` + `AnalyticsInterface.java`.
 
+**Status: DONE** — `HAS_GYRO` and `HAS_ROTATION_VECTOR` constants added; set in
+`performFeatureCheck()` after `reportedSensors` is populated, using `"true"`/`"false"`.
+Firebase user-property budget: 5 of 25 used.
+
 ---
 
 **4j. `first_install_version_prop`**
@@ -484,6 +488,9 @@ as the metric → cohort retention by install version.
 
 **Commit:** `StardroidApplication.kt` + `AnalyticsInterface.java`.
 
+**Status: DONE** — `FIRST_INSTALL_VERSION` constant added; set in `setUpAnalytics()` when
+`newUser == true`.
+
 ---
 
 **4k. `user_locale_prop`**
@@ -505,6 +512,10 @@ USER_LOCALE = "user_locale_prop"
 `session_length_ev` to see whether translated users engage differently.
 
 **Commit:** `StardroidApplication.kt` + `AnalyticsInterface.java`.
+
+**Status: DONE** — `USER_LOCALE` constant added; set in `setUpAnalytics()` via
+`Locale.getDefault().toLanguageTag()` (e.g. `"en-US"`, `"de-DE"`). Firebase user-property
+budget: 7 of 25 used.
 
 ## Suggested Analyses
 

@@ -106,6 +106,11 @@ class StardroidApplication : Application() {
       }
     }
     analytics.setUserProperty(AnalyticsInterface.NEW_USER, java.lang.Boolean.toString(newUser))
+    if (newUser) {
+      analytics.setUserProperty(AnalyticsInterface.FIRST_INSTALL_VERSION, versionName)
+    }
+    analytics.setUserProperty(AnalyticsInterface.USER_LOCALE,
+        java.util.Locale.getDefault().toLanguageTag())
     preferences.edit().putString(PREVIOUS_APP_VERSION_PREF, versionName).apply()
     if (previousVersion != versionName) {
       // It's either an upgrade or a new installation
@@ -189,6 +194,14 @@ class StardroidApplication : Application() {
     // TODO: Change to String.join once we're at API > 26
     analytics.setUserProperty(
       AnalyticsInterface.DEVICE_SENSORS, TextUtils.join("|", reportedSensors)
+    )
+    analytics.setUserProperty(
+      AnalyticsInterface.HAS_GYRO,
+      reportedSensors.contains(AnalyticsInterface.DEVICE_SENSORS_GYRO).toString()
+    )
+    analytics.setUserProperty(
+      AnalyticsInterface.HAS_ROTATION_VECTOR,
+      reportedSensors.contains(AnalyticsInterface.DEVICE_SENSORS_ROTATION).toString()
     )
 
     // Check for a particularly strange combo - it would be weird to have a rotation sensor
