@@ -3,6 +3,112 @@
 > **Status**: Current as of March 2026 (Firebase Analytics, GMS flavor only)
 > **Related**: [analytics.md](analytics.md) (original design doc)
 
+# To be implemented
+This section describes a revamp of the analytics infrastructure. The section titled Overview
+describes the current situation. As work progresses on the features that section should be
+updated as we go.
+
+## 1. Ensure that events are logged with a consistent naming pattern
+In the GA4 UI we want to be able to easily identify bespoke Sky Map GA events from ones that are provided
+"for free" by Google Analytics. Ensure a clear distinction between 'user level properties' and session events.
+In general we would like to be able to slice by user level properties in the GA4 UI.
+
+Acceptance criteria: all Sky Map-specific events have a common naming pattern (e.g. the _ev suffix).
+
+## 2. Update the preference value whitelist to be a blacklist
+This was added to ensure we don't inadvertently log PII such as a user's address but history
+has shown that this is unnecessarily conservative. Review all current
+preferences, flag any that could be a privacy concern, and add those to a blacklist instead.
+
+Acceptance criteria: the whitelist is gone and instead there is a minimal blacklist for events
+of genuine concern.
+
+## 3. Update the GA implementation to modern standards.
+Check dependencies and APIs and see if any need to be updated.
+
+## 4. Gaps & Suggested Improvements
+Review the following gaps and implement changes where appropriate.  Make each improvement a separate
+git change so that it can be reviewed in isolation. For each suggested analysis I want you to ensure
+that the correct data is logged and provide instructions on how to build the analysis in GA4 since
+in some cases events will need to be registered.
+
+### Missing events
+
+| Gap                                                                  | Suggested event | Suggested parameters | Rationale |
+|----------------------------------------------------------------------|-----------------|---------------------|-----------|
+| **Time Travel usage**                                                | `time_travel_used_ev` | `delta_hours: int`, `direction: "past"\|"future"` | We track that the dialog was *opened* but not whether the user actually set a time or by how much. |
+| **Manual mode entered/exited**                                       | `manual_mode_toggled_ev` | `enabled: boolean` | `TOGGLED_MANUAL_MODE_LABEL` constant exists but is never called. |
+| **Gyroscope-vs-mag sensor path chosen**                              | extend `start_up_event_ev` or new `sensor_path_ev` | `sensor_path: "rotation_vector"\|"accel_mag"` | Knowing which sensor fusion path is active would help diagnose accuracy issues across the install base. |
+| **Search with no results**                                           | already partially covered | — | `search_success=false` is logged, but the failed term is also logged — consider a dedicated `search_failed_ev` so funnels are cleaner. |
+| **Object searched-and-locked**                                       | `object_locked_ev` | `object_id: String`, `object_type: String` | Distinguish between viewing info and actually locking the view onto an object. |
+| **Gallery image viewed**                                             | `gallery_image_viewed_ev` | `image_name: String` | We know the gallery was opened but not which images engaged users. |
+| Skip this for now (we don't do it): **App rating / review prompted** | `review_prompt_shown_ev`, `review_prompt_outcome_ev` | `outcome: "rated"\|"dismissed"\|"later"` | If an in-app review prompt is ever added. |
+| **Crash / ANR**                                                      | (use Firebase Crashlytics) | — | There is no Crashlytics dependency; adding it would give symbolicated crash reports with zero custom instrumentation. |
+| **Night mode state at launch**                                       | extend `start_up_event_ev` | `night_mode_on: boolean` | Useful context for interpreting session lengths and object views. |
+| Skip this for now (we don't have it) **Constellation art toggled**   | (already covered by `layer_toggled_ev`) | — | Confirm `source_provider.constellation_boundaries` etc. are all emitting this event. |
+
+### Parameter quality improvements
+
+| Event | Issue | Suggestion |
+|-------|-------|------------|
+| `layer_toggled_ev` | `layer_name` uses internal pref key strings (e.g. `source_provider.constellations`) which are hard to read in the Firebase console | Map to human-readable names (`"constellations"`, `"messier"` …) or add a separate `layer_display_name` parameter. |
+| `session_length_ev` | Raw seconds in an int parameter → hard to bucket in Explore | Consider also logging a `session_bucket` string (`"<1min"`, `"1-5min"`, `"5-15min"`, `"15-30min"`, `">30min"`) for easier funnel analysis. |
+| `start_up_event_ev` | `hour` alone is ambiguous (is it UTC or local?) | Rename to `local_hour` or document clearly; also consider adding `day_of_week` (0–6) to distinguish weekday vs weekend stargazing. |
+| `object_info_viewed_ev` | No position context | Add `magnitude: float` and `visible_without_aid: boolean` to understand whether users are exploring naked-eye or telescope objects. |
+
+### User property improvements
+
+| Property | Issue | Suggestion |
+|----------|-------|------------|
+| `DEVICE_SENSORS` | Single string is hard to filter in the Firebase console | Consider one boolean user property per key sensor (`has_gyro`, `has_rotation_vector`). Firebase supports up to 25 user properties. |
+| Missing: **app version at install** | Firebase collects `app_version` automatically, but not the version the user first installed | Add `first_install_version_prop` set only when `NEW_USER = "true"` to track cohort retention across releases. |
+| Missing: **language** | The original design doc listed language breakdown as a goal | Add `user_locale_prop` (e.g. `"en-US"`) set at startup. This directly addresses the translation investment question. |
+
+## Suggested Analyses
+
+### Engagement
+- **Session length distribution** by `device_sensors` user property: do users with gyroscopes
+  stay longer (smoother experience)?
+- **Hour-of-day launch histogram**: confirm the expected evening peak; use to time push
+  notifications or release announcements.
+- **Search success rate** (`search_success=true / total searches`): a falling rate indicates
+  missing catalog entries. Cross-reference failed `search_term` values against the catalog
+  roadmap.
+- **Top searched terms** (failed only): direct input for which objects to add next. Already
+  capturable from current data.
+
+### Feature utilisation
+- **Layer toggle frequency**: which layers do users turn off? Candidates for hiding behind an
+  "advanced" toggle or removing entirely.
+- **Menu item open rates**: compare `gallery_opened`, `time_travel_opened`, `credits_opened`
+  to assess which features are actually discovered and used.
+- **Object info card views by type**: are users engaging with Messier objects, planets, or
+  bright stars most? Informs which educational content to expand.
+- **Object info card views**: which objects are most popular and should be enhanced?
+
+### Device & sensor health
+- **`sensor_liar_prop` rate by device model**: Firebase's default `device_model` dimension
+  plus this property would identify specific hardware with broken sensor reporting.
+- **`no_sensors_warning_ev` rate**: is this a significant portion of the install base? If
+  high, a manual mode first-run experience may be warranted.
+- **Calibration event rate**: ratio of `calibration_auto_triggered_ev` to total sessions
+  indicates how often compass accuracy degrades and whether the current threshold is too
+  sensitive.
+
+### Retention & conversion
+- **TOS acceptance rate**: `TOS_accepted_ev / (TOS_accepted_ev + TOS_rejected_ev)`. A
+  significant rejection rate may indicate the EULA is too alarming.
+- **New vs returning user session length**: do new users engage as long as returning users?
+  If not, investigate the first-run experience.
+- **Preference change events over time**: users who customise the app (night mode, sensor
+  damping) likely have higher retention — worth verifying with a cohort analysis.
+
+
+## N.
+If necessary, update the privacy policy to clearly convey what data is collected and why.
+
+
+
 ---
 
 ## Overview
@@ -155,82 +261,8 @@ Set once at app startup in `StardroidApplication.kt` and persisted by Firebase.
 - Opt-out disables the Firebase SDK itself (not just the custom events), so automatic
   Firebase events (screen views, first open, etc.) are also suppressed.
 
----
 
-## Gaps & Suggested Improvements
 
-### Missing events
-
-| Gap | Suggested event | Suggested parameters | Rationale |
-|-----|-----------------|---------------------|-----------|
-| **Time Travel usage** | `time_travel_used_ev` | `delta_hours: int`, `direction: "past"\|"future"` | We track that the dialog was *opened* but not whether the user actually set a time or by how much. |
-| **Manual mode entered/exited** | `manual_mode_toggled_ev` | `enabled: boolean` | `TOGGLED_MANUAL_MODE_LABEL` constant exists but is never called. |
-| **Gyroscope-vs-mag sensor path chosen** | extend `start_up_event_ev` or new `sensor_path_ev` | `sensor_path: "rotation_vector"\|"accel_mag"` | Knowing which sensor fusion path is active would help diagnose accuracy issues across the install base. |
-| **Search with no results** | already partially covered | — | `search_success=false` is logged, but the failed term is also logged — consider a dedicated `search_failed_ev` so funnels are cleaner. |
-| **Object searched-and-locked** | `object_locked_ev` | `object_id: String`, `object_type: String` | Distinguish between viewing info and actually locking the view onto an object. |
-| **Gallery image viewed** | `gallery_image_viewed_ev` | `image_name: String` | We know the gallery was opened but not which images engaged users. |
-| **App rating / review prompted** | `review_prompt_shown_ev`, `review_prompt_outcome_ev` | `outcome: "rated"\|"dismissed"\|"later"` | If an in-app review prompt is ever added. |
-| **Crash / ANR** | (use Firebase Crashlytics) | — | There is no Crashlytics dependency; adding it would give symbolicated crash reports with zero custom instrumentation. |
-| **Night mode state at launch** | extend `start_up_event_ev` | `night_mode_on: boolean` | Useful context for interpreting session lengths and object views. |
-| **Constellation art toggled** | (already covered by `layer_toggled_ev`) | — | Confirm `source_provider.constellation_boundaries` etc. are all emitting this event. |
-
-### Parameter quality improvements
-
-| Event | Issue | Suggestion |
-|-------|-------|------------|
-| `layer_toggled_ev` | `layer_name` uses internal pref key strings (e.g. `source_provider.constellations`) which are hard to read in the Firebase console | Map to human-readable names (`"constellations"`, `"messier"` …) or add a separate `layer_display_name` parameter. |
-| `session_length_ev` | Raw seconds in an int parameter → hard to bucket in Explore | Consider also logging a `session_bucket` string (`"<1min"`, `"1-5min"`, `"5-15min"`, `"15-30min"`, `">30min"`) for easier funnel analysis. |
-| `start_up_event_ev` | `hour` alone is ambiguous (is it UTC or local?) | Rename to `local_hour` or document clearly; also consider adding `day_of_week` (0–6) to distinguish weekday vs weekend stargazing. |
-| `object_info_viewed_ev` | No position context | Add `magnitude: float` and `visible_without_aid: boolean` to understand whether users are exploring naked-eye or telescope objects. |
-| `preference_change_ev` | "PII" masking means most preference changes are invisible | Review the whitelist; most preference keys do not contain personal data (e.g., `show_hints`, `auto_level_horizon`). Consider adding them to the whitelist. |
-
-### User property improvements
-
-| Property | Issue | Suggestion |
-|----------|-------|------------|
-| `DEVICE_SENSORS` | Single string is hard to filter in the Firebase console | Consider one boolean user property per key sensor (`has_gyro`, `has_rotation_vector`). Firebase supports up to 25 user properties. |
-| Missing: **app version at install** | Firebase collects `app_version` automatically, but not the version the user first installed | Add `first_install_version_prop` set only when `NEW_USER = "true"` to track cohort retention across releases. |
-| Missing: **language** | The original design doc listed language breakdown as a goal | Add `user_locale_prop` (e.g. `"en-US"`) set at startup. This directly addresses the translation investment question. |
-
----
-
-## Suggested Analyses
-
-### Engagement
-- **Session length distribution** by `device_sensors` user property: do users with gyroscopes
-  stay longer (smoother experience)?
-- **Hour-of-day launch histogram**: confirm the expected evening peak; use to time push
-  notifications or release announcements.
-- **Search success rate** (`search_success=true / total searches`): a falling rate indicates
-  missing catalog entries. Cross-reference failed `search_term` values against the catalog
-  roadmap.
-- **Top searched terms** (failed only): direct input for which objects to add next. Already
-  capturable from current data.
-
-### Feature utilisation
-- **Layer toggle frequency**: which layers do users turn off? Candidates for hiding behind an
-  "advanced" toggle or removing entirely.
-- **Menu item open rates**: compare `gallery_opened`, `time_travel_opened`, `credits_opened`
-  to assess which features are actually discovered and used.
-- **Object info card views by type**: are users engaging with Messier objects, planets, or
-  bright stars most? Informs which educational content to expand.
-
-### Device & sensor health
-- **`sensor_liar_prop` rate by device model**: Firebase's default `device_model` dimension
-  plus this property would identify specific hardware with broken sensor reporting.
-- **`no_sensors_warning_ev` rate**: is this a significant portion of the install base? If
-  high, a manual mode first-run experience may be warranted.
-- **Calibration event rate**: ratio of `calibration_auto_triggered_ev` to total sessions
-  indicates how often compass accuracy degrades and whether the current threshold is too
-  sensitive.
-
-### Retention & conversion
-- **TOS acceptance rate**: `TOS_accepted_ev / (TOS_accepted_ev + TOS_rejected_ev)`. A
-  significant rejection rate may indicate the EULA is too alarming.
-- **New vs returning user session length**: do new users engage as long as returning users?
-  If not, investigate the first-run experience.
-- **Preference change events over time**: users who customise the app (night mode, sensor
-  damping) likely have higher retention — worth verifying with a cohort analysis.
 
 ---
 
