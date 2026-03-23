@@ -55,8 +55,7 @@ import javax.inject.Inject;
  * @author John Taylor
  */
 public class LocationController extends AbstractController implements LocationListener {
-  // Must match the key in the preferences file.
-  public static final String NO_AUTO_LOCATE = "no_auto_locate";
+  public static final String NO_AUTO_LOCATE = ApplicationConstants.NO_AUTO_LOCATE_PREF_KEY;
   // Must match the key in the preferences file.
   private static final String FORCE_GPS = "force_gps";
 

@@ -256,21 +256,20 @@ class StardroidApplication : Application() {
     b.putBoolean(AnalyticsInterface.START_EVENT_NIGHT_MODE, isNight)
     b.putString(AnalyticsInterface.START_EVENT_SENSOR_PATH, sensorPath)
     // Settings snapshot
-    mapOf(
-        ApplicationConstants.SHARED_PREFERENCE_DISABLE_GYRO to false,
-        ApplicationConstants.AUTO_LEVEL_HORIZON_PREF_KEY to true,
-        ApplicationConstants.NO_AUTO_LOCATE_PREF_KEY to false,
-        ApplicationConstants.SHOW_OBJECT_INFO_PREF_KEY to true,
-        ApplicationConstants.SOUND_EFFECTS to true
-    ).forEach { (key, defaultValue) ->
-        b.putBoolean(key, preferences.getBoolean(key, defaultValue))
-    }
-    mapOf(
-        ApplicationConstants.SENSOR_SPEED_PREF_KEY to ApplicationConstants.SENSOR_SPEED_STANDARD,
-        ApplicationConstants.SENSOR_DAMPING_PREF_KEY to ApplicationConstants.SENSOR_DAMPING_EXTRA_HIGH
-    ).forEach { (key, defaultValue) ->
-        b.putString(key, preferences.getString(key, defaultValue))
-    }
+    b.putBoolean(ApplicationConstants.SHARED_PREFERENCE_DISABLE_GYRO,
+        preferences.getBoolean(ApplicationConstants.SHARED_PREFERENCE_DISABLE_GYRO, false))
+    b.putString(ApplicationConstants.SENSOR_SPEED_PREF_KEY,
+        preferences.getString(ApplicationConstants.SENSOR_SPEED_PREF_KEY, ApplicationConstants.SENSOR_SPEED_STANDARD))
+    b.putString(ApplicationConstants.SENSOR_DAMPING_PREF_KEY,
+        preferences.getString(ApplicationConstants.SENSOR_DAMPING_PREF_KEY, ApplicationConstants.SENSOR_DAMPING_EXTRA_HIGH))
+    b.putBoolean(ApplicationConstants.AUTO_LEVEL_HORIZON_PREF_KEY,
+        preferences.getBoolean(ApplicationConstants.AUTO_LEVEL_HORIZON_PREF_KEY, true))
+    b.putBoolean(ApplicationConstants.NO_AUTO_LOCATE_PREF_KEY,
+        preferences.getBoolean(ApplicationConstants.NO_AUTO_LOCATE_PREF_KEY, false))
+    b.putBoolean(ApplicationConstants.SHOW_OBJECT_INFO_PREF_KEY,
+        preferences.getBoolean(ApplicationConstants.SHOW_OBJECT_INFO_PREF_KEY, true))
+    b.putBoolean(ApplicationConstants.SOUND_EFFECTS,
+        preferences.getBoolean(ApplicationConstants.SOUND_EFFECTS, true))
     analytics.trackEvent(AnalyticsInterface.START_EVENT, b)
   }
 

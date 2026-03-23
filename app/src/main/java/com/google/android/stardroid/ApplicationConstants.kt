@@ -72,4 +72,5 @@ object ApplicationConstants {
   const val SHOW_OBJECT_INFO_AUTO_MODE_PREF_KEY = "show_object_info_auto_mode"
 
   const val AUTO_LEVEL_HORIZON_PREF_KEY = "auto_level_horizon"
+  const val NO_AUTO_LOCATE_PREF_KEY = "no_auto_locate"
 }

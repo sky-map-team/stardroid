@@ -13,6 +13,7 @@ import android.provider.Settings;
 import android.util.Log;
 import android.widget.Button;
 
+import com.google.android.stardroid.ApplicationConstants;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.EditSettingsActivity;
 import com.google.android.stardroid.control.LocationController;
@@ -54,7 +55,7 @@ public class LocationPermissionDeniedDialogFragment extends DialogFragment {
           public void onClick(DialogInterface dialog, int which) {
             Log.d(TAG, "User chose to enter location manually");
             preferences.edit()
-                .putBoolean(LocationController.NO_AUTO_LOCATE, true)
+                .putBoolean(ApplicationConstants.NO_AUTO_LOCATE_PREF_KEY, true)
                 .apply();
             Intent intent = new Intent(parentActivity, EditSettingsActivity.class);
             parentActivity.startActivity(intent);
