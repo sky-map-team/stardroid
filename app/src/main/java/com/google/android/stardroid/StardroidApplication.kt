@@ -251,8 +251,8 @@ class StardroidApplication : Application() {
         preferences.getString(ApplicationConstants.SENSOR_DAMPING_PREF_KEY, ApplicationConstants.SENSOR_DAMPING_EXTRA_HIGH))
     b.putBoolean(ApplicationConstants.AUTO_LEVEL_HORIZON_PREF_KEY,
         preferences.getBoolean(ApplicationConstants.AUTO_LEVEL_HORIZON_PREF_KEY, true))
-    b.putBoolean("no_auto_locate",
-        preferences.getBoolean("no_auto_locate", false))
+    b.putBoolean(ApplicationConstants.NO_AUTO_LOCATE_PREF_KEY,
+        preferences.getBoolean(ApplicationConstants.NO_AUTO_LOCATE_PREF_KEY, false))
     b.putBoolean(ApplicationConstants.SHOW_OBJECT_INFO_PREF_KEY,
         preferences.getBoolean(ApplicationConstants.SHOW_OBJECT_INFO_PREF_KEY, true))
     b.putBoolean(ApplicationConstants.SOUND_EFFECTS,
