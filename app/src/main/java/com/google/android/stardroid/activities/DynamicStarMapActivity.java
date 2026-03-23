@@ -850,7 +850,7 @@ public class DynamicStarMapActivity extends InjectableActivity
 
   private void setAutoMode(boolean auto) {
     Bundle b = new Bundle();
-    b.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.TOGGLED_MANUAL_MODE_LABEL);
+    b.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.MANUAL_MODE_TOGGLED_EVENT);
     controller.setAutoMode(auto);
     if (auto) {
       sensorAccuracyMonitor.start();

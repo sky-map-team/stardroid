@@ -30,6 +30,8 @@ in Section 4.
 `AnalyticsInterface.java` and update all references (currently none, since the event is never
 fired). Purely a naming/documentation change.
 
+**Status: DONE** — `AnalyticsInterface.java` and `DynamicStarMapActivity.java` updated.
+
 ---
 
 ## 2. Update the preference value whitelist to be a blacklist
