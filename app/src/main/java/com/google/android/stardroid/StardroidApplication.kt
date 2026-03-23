@@ -246,9 +246,9 @@ class StardroidApplication : Application() {
     b.putBoolean(ApplicationConstants.SHARED_PREFERENCE_DISABLE_GYRO,
         preferences.getBoolean(ApplicationConstants.SHARED_PREFERENCE_DISABLE_GYRO, false))
     b.putString(ApplicationConstants.SENSOR_SPEED_PREF_KEY,
-        preferences.getString(ApplicationConstants.SENSOR_SPEED_PREF_KEY, ""))
+        preferences.getString(ApplicationConstants.SENSOR_SPEED_PREF_KEY, ApplicationConstants.SENSOR_SPEED_STANDARD))
     b.putString(ApplicationConstants.SENSOR_DAMPING_PREF_KEY,
-        preferences.getString(ApplicationConstants.SENSOR_DAMPING_PREF_KEY, ""))
+        preferences.getString(ApplicationConstants.SENSOR_DAMPING_PREF_KEY, ApplicationConstants.SENSOR_DAMPING_EXTRA_HIGH))
     b.putBoolean(ApplicationConstants.AUTO_LEVEL_HORIZON_PREF_KEY,
         preferences.getBoolean(ApplicationConstants.AUTO_LEVEL_HORIZON_PREF_KEY, true))
     b.putBoolean("no_auto_locate",
