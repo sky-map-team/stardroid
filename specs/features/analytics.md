@@ -204,6 +204,13 @@ metric.
 **Commit:** `StardroidApplication.kt` + `AnalyticsInterface.java`. Refactor `onCreate()` to
 fire `start_up_event_ev` after `performFeatureCheck()`.
 
+**Status: DONE** — `AnalyticsInterface.java`: `START_EVENT_HOUR` renamed to `"local_hour"`;
+added `START_EVENT_DAY_OF_WEEK`, `START_EVENT_NIGHT_MODE`, `START_EVENT_SENSOR_PATH`,
+`SENSOR_PATH_ROTATION_VECTOR`, `SENSOR_PATH_ACCEL_MAG`. `StardroidApplication.kt`:
+`trackEvent` call moved out of `setUpAnalytics()` into new `fireStartupEvent(sensorPath)`
+method; `performFeatureCheck()` now returns the sensor path string; `onCreate()` calls
+`fireStartupEvent()` after `performFeatureCheck()` so all parameters are available.
+
 ---
 
 **4c. Add `time_travel_used_ev`**

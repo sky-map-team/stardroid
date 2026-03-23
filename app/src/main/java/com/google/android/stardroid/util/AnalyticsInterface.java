@@ -61,7 +61,12 @@ public interface AnalyticsInterface {
   String SEARCH_TERM = "search_term";
   String SEARCH_SUCCESS = "search_success";
   String START_EVENT = "start_up_event_ev";
-  String START_EVENT_HOUR = "hour";
+  String START_EVENT_HOUR = "local_hour";
+  String START_EVENT_DAY_OF_WEEK = "day_of_week";
+  String START_EVENT_NIGHT_MODE = "night_mode_on";
+  String START_EVENT_SENSOR_PATH = "sensor_path";
+  String SENSOR_PATH_ROTATION_VECTOR = "rotation_vector";
+  String SENSOR_PATH_ACCEL_MAG = "accel_mag";
 
   String SESSION_LENGTH_EVENT = "session_length_ev";
   String SESSION_LENGTH_TIME_VALUE = "session_length";

@@ -26,6 +26,7 @@ import android.text.TextUtils
 import android.util.Log
 import androidx.core.content.pm.PackageInfoCompat
 import androidx.preference.PreferenceManager
+import com.google.android.stardroid.activities.util.ActivityLightLevelManager
 import com.google.android.stardroid.layers.LayerManager
 import com.google.android.stardroid.util.AnalyticsInterface
 import com.google.android.stardroid.util.AssetImageLoader
@@ -79,7 +80,8 @@ class StardroidApplication : Application() {
     // {@link DefaultValues} for more details.
     PreferenceManager.setDefaultValues(this, R.xml.preference_screen, false)
     setUpAnalytics(versionName)
-    performFeatureCheck()
+    val sensorPath = performFeatureCheck()
+    fireStartupEvent(sensorPath)
     Log.d(TAG, "StardroidApplication: -onCreate")
   }
 
@@ -111,10 +113,6 @@ class StardroidApplication : Application() {
       // No need to track any more - it's automatic in Firebase.
     }
 
-    // It will be interesting to see *when* people use Sky Map.
-    val b = Bundle()
-    b.putInt(AnalyticsInterface.START_EVENT_HOUR, Calendar.getInstance()[Calendar.HOUR_OF_DAY])
-    analytics.trackEvent(AnalyticsInterface.START_EVENT, b)
     preferences.registerOnSharedPreferenceChangeListener(preferenceChangeAnalyticsTracker)
   }
 
@@ -165,13 +163,13 @@ class StardroidApplication : Application() {
    * Check what features are available to this phone and report back to analytics
    * so we can judge when to add/drop support.
    */
-  private fun performFeatureCheck() {
+  private fun performFeatureCheck(): String {
     if (sensorManager == null) {
       Log.e(TAG, "No sensor manager")
       analytics.setUserProperty(
         AnalyticsInterface.DEVICE_SENSORS, AnalyticsInterface.DEVICE_SENSORS_NONE
       )
-      return
+      return AnalyticsInterface.SENSOR_PATH_ACCEL_MAG
     }
     // Reported available sensors
     val reportedSensors: MutableList<String> = ArrayList()
@@ -230,6 +228,36 @@ class StardroidApplication : Application() {
     for (sensorType in sensorTypes) {
       Log.i(TAG, sensorType)
     }
+
+    return if (hasRotationSensor) AnalyticsInterface.SENSOR_PATH_ROTATION_VECTOR
+           else AnalyticsInterface.SENSOR_PATH_ACCEL_MAG
+  }
+
+  private fun fireStartupEvent(sensorPath: String) {
+    val cal = Calendar.getInstance()
+    val isNight = ApplicationConstants.NIGHT_MODE_VALUE ==
+        preferences.getString(ActivityLightLevelManager.LIGHT_MODE_KEY, "")
+    val b = Bundle()
+    b.putInt(AnalyticsInterface.START_EVENT_HOUR, cal[Calendar.HOUR_OF_DAY])
+    b.putInt(AnalyticsInterface.START_EVENT_DAY_OF_WEEK, cal[Calendar.DAY_OF_WEEK] - 1)
+    b.putBoolean(AnalyticsInterface.START_EVENT_NIGHT_MODE, isNight)
+    b.putString(AnalyticsInterface.START_EVENT_SENSOR_PATH, sensorPath)
+    // Settings snapshot
+    b.putBoolean(ApplicationConstants.SHARED_PREFERENCE_DISABLE_GYRO,
+        preferences.getBoolean(ApplicationConstants.SHARED_PREFERENCE_DISABLE_GYRO, false))
+    b.putString(ApplicationConstants.SENSOR_SPEED_PREF_KEY,
+        preferences.getString(ApplicationConstants.SENSOR_SPEED_PREF_KEY, ""))
+    b.putString(ApplicationConstants.SENSOR_DAMPING_PREF_KEY,
+        preferences.getString(ApplicationConstants.SENSOR_DAMPING_PREF_KEY, ""))
+    b.putBoolean(ApplicationConstants.AUTO_LEVEL_HORIZON_PREF_KEY,
+        preferences.getBoolean(ApplicationConstants.AUTO_LEVEL_HORIZON_PREF_KEY, true))
+    b.putBoolean("no_auto_locate",
+        preferences.getBoolean("no_auto_locate", false))
+    b.putBoolean(ApplicationConstants.SHOW_OBJECT_INFO_PREF_KEY,
+        preferences.getBoolean(ApplicationConstants.SHOW_OBJECT_INFO_PREF_KEY, true))
+    b.putBoolean(ApplicationConstants.SOUND_EFFECTS,
+        preferences.getBoolean(ApplicationConstants.SOUND_EFFECTS, true))
+    analytics.trackEvent(AnalyticsInterface.START_EVENT, b)
   }
 
   private fun hasDefaultSensor(sensorType: Int): Boolean {
