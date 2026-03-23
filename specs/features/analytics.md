@@ -30,7 +30,9 @@ Check dependencies and APIs and see if any need to be updated.
 Review the following gaps and implement changes where appropriate.  Make each improvement a separate
 git change so that it can be reviewed in isolation. For each suggested analysis I want you to ensure
 that the correct data is logged and provide instructions on how to build the analysis in GA4 since
-in some cases events will need to be registered.
+in some cases events will need to be registered. Make sure you consider how easy it is to slice
+the data in GA4. For instance for many metrics (like session length) it is essential that we
+can slice by app version.
 
 ### Missing events
 
@@ -102,6 +104,7 @@ in some cases events will need to be registered.
   If not, investigate the first-run experience.
 - **Preference change events over time**: users who customise the app (night mode, sensor
   damping) likely have higher retention — worth verifying with a cohort analysis.
+- **App version**: we want to understand the upgrade path - for a user on a particular app version which app version did they upgrade from? We want to see app upgrades in real time as a version rolls out.
 
 
 ## N.
