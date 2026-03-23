@@ -27,18 +27,16 @@ import javax.inject.Inject
  */
 class PreferenceChangeAnalyticsTracker @Inject internal constructor(private val analytics: Analytics) :
   OnSharedPreferenceChangeListener {
-  private val stringPreferenceWhiteList: Set<String> =
-    setOf(
-      "sensor_speed", "sensor_damping, lightmode"
-    )
+  // Keys whose values may contain user-entered location data.
+  private val blacklist: Set<String> = setOf("location", "latitude", "longitude")
 
   private fun trackPreferenceChange(sharedPreferences: SharedPreferences, key: String?) {
     Log.d(TAG, "Logging pref change $key")
     if (key == null) {
-      return;
+      return
     }
     val prefBundle = Bundle()
-    val value = getPreferenceAsString(sharedPreferences, key)
+    val value = if (blacklist.contains(key)) "REDACTED" else getPreferenceAsString(sharedPreferences, key)
     prefBundle.putString(AnalyticsInterface.PREFERENCE_CHANGE_EVENT_VALUE, "$key:$value")
     analytics.trackEvent(AnalyticsInterface.PREFERENCE_CHANGE_EVENT, prefBundle)
   }
@@ -51,9 +49,6 @@ class PreferenceChangeAnalyticsTracker @Inject internal constructor(private val 
     var value: String? = "unknown"
     try {
       value = sharedPreferences.getString(key, "unknown")
-      if (!stringPreferenceWhiteList.contains(key)) {
-        value = "PII"
-      }
     } catch (cce: ClassCastException) {
       // Thrown if the pref wasn't a string.
     }
@@ -70,7 +65,7 @@ class PreferenceChangeAnalyticsTracker @Inject internal constructor(private val 
     try {
       value = sharedPreferences.getLong(key, 0).toString()
     } catch (cce: ClassCastException) {
-      // Thrown if the pref wasn't an integer.
+      // Thrown if the pref wasn't a long.
     }
     try {
       value = sharedPreferences.getFloat(key, 0f).toString()

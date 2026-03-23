@@ -89,6 +89,10 @@ is never actually whitelisted. The blacklist approach fixes this naturally.
 **Commit:** Isolated commit touching only `PreferenceChangeAnalyticsTracker.kt` and
 `AnalyticsInterface.java`.
 
+**Status: DONE** — `PreferenceChangeAnalyticsTracker.kt` updated: whitelist removed, blacklist
+(`location`, `latitude`, `longitude`) added, pre-existing comma-typo bug fixed, masked value
+changed from `"PII"` to `"REDACTED"`.
+
 ---
 
 ## 3. Update the GA implementation to modern standards.
