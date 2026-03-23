@@ -644,7 +644,7 @@ Set once at app startup in `StardroidApplication.kt` and persisted by Firebase.
 
   | Key | Type | Example |
   |-----|------|---------|
-  | `value` | String | `"sensor_speed:50"` or `"some_key:PII"` |
+  | `value` | String | `"sensor_speed:50"` or `"location:REDACTED"` |
 
 - **Privacy**: All preference values are logged **except** `location`, `latitude`, and
   `longitude` which are masked to `"REDACTED"`. (Prior to §2 being implemented, only a
