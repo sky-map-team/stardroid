@@ -118,7 +118,7 @@ can slice by app version.
 
 | Gap                                                                  | Suggested event | Suggested parameters | Rationale |
 |----------------------------------------------------------------------|-----------------|---------------------|-----------|
-| **Time Travel usage**                                                | `time_travel_used_ev` | `delta_hours: int`, `direction: "past"\|"future"` | We track that the dialog was *opened* but not whether the user actually set a time or by how much. |
+| **Time Travel usage**                                                | `time_travel_used_ev` | `travel_event: String` | We track that the dialog was *opened* but not whether the user actually set a time or which event they chose. |
 | **Manual mode entered/exited**                                       | `manual_mode_toggled_ev` | `enabled: boolean` | `TOGGLED_MANUAL_MODE_LABEL` constant exists but is never called. |
 | **Gyroscope-vs-mag sensor path chosen**                              | extend `start_up_event_ev` | `sensor_path: "rotation_vector"\|"accel_mag"` | Knowing which sensor fusion path is active would help diagnose accuracy issues across the install base. Also take this opportunity to log a snapshot of key user settings (see Settings in Feature Utilisation below). |
 | **Search with no results**                                           | `search_failed_ev` | `search_term: String` | `search_success=false` is logged on the `search` event, but a dedicated event is far easier to work with in GA4 Explore (no custom dimension required to filter). Keep `search_success=false` on `search` for success-rate calculations; add `search_failed_ev` alongside. |
@@ -196,23 +196,46 @@ fire `start_up_event_ev` after `performFeatureCheck()`.
 
 **4c. Add `time_travel_used_ev`**
 
-Fire in `DynamicStarMapActivity`:
-- `setTimeTravelMode(Date, int)`: compute `delta_hours = (newTime.getTime() - System.currentTimeMillis()) / 3_600_000`, `direction = delta_hours < 0 ? "past" : "future"`.
-- `setTimeTravelModeFromNow()`: fire with `delta_hours = 0`, `direction = "future"`.
+The `TimeTravelDialog` presents a spinner of named events (`TimeTravelEvents.ALL`) as well as
+free-form date/time pickers. Logging the chosen event name is more actionable in GA4 than a
+raw delta in hours.
+
+**Data model change:** Add an `analyticsKey: String` field to `TimeTravelEvent` (a
+`data class` in `TimeTravelEvent.kt`). Assign a stable snake_case key to every entry in
+`TimeTravelEvents.ALL`:
+
+| Event | `analyticsKey` |
+|-------|---------------|
+| Hint/placeholder (pos 0) | *(never fired — user must press Go)* |
+| Next sunset | `"next_sunset"` |
+| Next sunrise | `"next_sunrise"` |
+| Next full moon | `"next_full_moon"` |
+| Next new moon | `"next_new_moon"` |
+| Six-planet parade 2026 | `"six_planet_parade_2026"` |
+| Lunar eclipse 2026 | `"lunar_eclipse_2026"` |
+| … (all FIXED events) | derived from the string resource suffix |
+| Custom date/time (user picked manually) | `"custom"` |
+| Start from now | `"from_now"` |
+
+**Wiring:** `TimeTravelDialog` already calls either `parentActivity.setTimeTravelMode(date,
+searchTargetRes)` or `parentActivity.setTimeTravelModeFromNow()`. Add an overload / extra
+parameter to pass the `analyticsKey` through. The dialog knows the current key: it is
+`TimeTravelEvents.ALL[index].analyticsKey` when a popular event is selected, `"custom"` when
+the user used the date/time pickers, and `"from_now"` for the no-args path.
 
 Constants to add to `AnalyticsInterface.java`:
 ```
 TIME_TRAVEL_USED_EVENT = "time_travel_used_ev"
-TIME_TRAVEL_DELTA_HOURS = "delta_hours"
-TIME_TRAVEL_DIRECTION = "direction"
+TIME_TRAVEL_EVENT_KEY  = "travel_event"
 ```
 
-*GA4 setup:* Register `delta_hours` as a custom metric (sum/average); register `direction` as
-a custom dimension. Build an Explore report: rows = `direction`, metric = count of
-`time_travel_used_ev`, breakdown = `delta_hours` histogram (use custom bucket ranges:
-0, 1–24 h, 1–7 days, 1–12 months, >1 year).
+*GA4 setup:* Register `travel_event` as an event-scoped custom dimension. In Explore: rows =
+`travel_event`, metric = count of `time_travel_used_ev` → immediately shows which events are
+most popular. `"custom"` in the results indicates users are exploring beyond the presets.
 
-**Commit:** `DynamicStarMapActivity.java` + `AnalyticsInterface.java`.
+**Commit:** `TimeTravelEvent.kt` + `TimeTravelEvents.kt` (add analytics keys) +
+`TimeTravelDialog.java` (pass key to activity) + `DynamicStarMapActivity.java` (fire event) +
+`AnalyticsInterface.java`.
 
 ---
 
@@ -304,7 +327,7 @@ images drive the most engagement.
 | `layer_toggled_ev` | `layer_name` uses internal pref key strings (e.g. `source_provider.constellations`) which are hard to read in the Firebase console | Map to human-readable names (`"constellations"`, `"messier"` …) or add a separate `layer_display_name` parameter. |
 | `session_length_ev` | Raw seconds in an int parameter → hard to bucket in Explore | Consider also logging a `session_bucket` string (`"<1min"`, `"1-5min"`, `"5-15min"`, `"15-30min"`, `">30min"`) for easier funnel analysis. |
 | `start_up_event_ev` | `hour` alone is ambiguous (is it UTC or local?) | Rename to `local_hour` or document clearly; also consider adding `day_of_week` (0–6) to distinguish weekday vs weekend stargazing. |
-| `object_info_viewed_ev` | No position context | Add `magnitude: float` and `visible_without_aid: boolean` — **deferred**, magnitude not uniformly available across object types. |
+| `object_info_viewed_ev` | No position context | ~~Add `magnitude: float` and `visible_without_aid: boolean`~~ — skipped, magnitude not uniformly available across object types. |
 
 #### Implementation Plan — Parameter Quality
 
