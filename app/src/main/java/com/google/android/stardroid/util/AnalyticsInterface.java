@@ -44,6 +44,7 @@ public interface AnalyticsInterface {
   String PREFERENCE_CHANGE_EVENT = "preference_change_ev";
   String PREFERENCE_CHANGE_EVENT_VALUE = "value";
   String MANUAL_MODE_TOGGLED_EVENT = "manual_mode_toggled_ev";
+  String MANUAL_MODE_ENABLED = "enabled";
   String MENU_ITEM_EVENT = "menu_item_pressed_ev";
   String MENU_ITEM_EVENT_VALUE = "menu_item";
   String TOGGLED_NIGHT_MODE_LABEL = "night_mode";

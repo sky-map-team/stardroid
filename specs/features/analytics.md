@@ -110,6 +110,8 @@ Check dependencies and APIs and see if any need to be updated.
 **Commit:** Isolated build-file-only change. No functional or behavioural changes. Must be
 tested with a GMS debug build to confirm analytics still initialises correctly.
 
+**Status: DEFERRED** — version bump attempted but reverted due to build issues. Revisit separately.
+
 ---
 
 ## 4. Gaps & Suggested Improvements
@@ -152,6 +154,10 @@ Analytics → Custom definitions → Create custom dimension, Parameter name: `e
 in Explore with `manual_mode_toggled_ev` as the event filter.
 
 **Commit:** `DynamicStarMapActivity.java` + `AnalyticsInterface.java`.
+
+**Status: DONE** — `MANUAL_MODE_ENABLED` constant added; `setAutoMode()` now calls
+`analytics.trackEvent(MANUAL_MODE_TOGGLED_EVENT, ...)` with `enabled` boolean. Stale bundle
+line (which was putting the event name as a menu item value) replaced with the correct call.
 
 ---
 
