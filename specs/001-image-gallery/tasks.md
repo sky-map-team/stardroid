@@ -20,12 +20,12 @@ description: "Task list for Gallery Rewrite"
 **Purpose**: Eliminate all old gallery code so the codebase compiles cleanly against the new
 structure. Remove references first, then delete dead files.
 
-- [ ] T001 [P] Remove `ImageGalleryActivity` and `ImageDisplayActivity` DI component entries from `app/src/main/java/com/google/android/stardroid/inject/ApplicationComponent.kt`
-- [ ] T002 [P] Remove `ImageDisplayActivity` `<activity>` entry from `app/src/main/AndroidManifest.xml`; update `ImageGalleryActivity` entry to reference new Kotlin class in `.activities` package (package attribute already correct; verify and leave placeholder for the new class)
-- [ ] T003 [P] Remove the `Intent(this, ImageGalleryActivity::class.java)` launch block from `app/src/main/java/com/google/android/stardroid/activities/DynamicStarMapActivity.java` (~line 530); replace with a `// TODO: launch new ImageGalleryActivity (wired in T013)` comment
-- [ ] T004 [P] Delete `app/src/main/java/com/google/android/stardroid/gallery/Gallery.kt`, `GalleryImage.kt`, `GalleryFactory.kt`, `HardcodedGallery.kt`
-- [ ] T005 [P] Delete `app/src/main/java/com/google/android/stardroid/activities/ImageGalleryActivity.java`, `ImageDisplayActivity.java`, `ImageGalleryActivityModule.java`, `ImageGalleryActivityComponent.java`, `ImageDisplayActivityModule.java`, `ImageDisplayActivityComponent.java`
-- [ ] T006 [P] Delete `app/src/main/res/layout/imagegallery.xml`, `imagedisplaypanel.xml`, `imagedisplay.xml`
+- [x] T001 [P] Remove `ImageGalleryActivity` and `ImageDisplayActivity` DI component entries from `app/src/main/java/com/google/android/stardroid/inject/ApplicationComponent.kt`
+- [x] T002 [P] Remove `ImageDisplayActivity` `<activity>` entry from `app/src/main/AndroidManifest.xml`; update `ImageGalleryActivity` entry to reference new Kotlin class in `.activities` package (package attribute already correct; verify and leave placeholder for the new class)
+- [x] T003 [P] Remove the `Intent(this, ImageGalleryActivity::class.java)` launch block from `app/src/main/java/com/google/android/stardroid/activities/DynamicStarMapActivity.java` (~line 530); replace with a `// TODO: launch new ImageGalleryActivity (wired in T013)` comment
+- [x] T004 [P] Delete `app/src/main/java/com/google/android/stardroid/gallery/Gallery.kt`, `GalleryImage.kt`, `GalleryFactory.kt`, `HardcodedGallery.kt`
+- [x] T005 [P] Delete `app/src/main/java/com/google/android/stardroid/activities/ImageGalleryActivity.java`, `ImageDisplayActivity.java`, `ImageGalleryActivityModule.java`, `ImageGalleryActivityComponent.java`, `ImageDisplayActivityModule.java`, `ImageDisplayActivityComponent.java`
+- [x] T006 [P] Delete `app/src/main/res/layout/imagegallery.xml`, `imagedisplaypanel.xml`, `imagedisplay.xml`
 
 **Checkpoint**: `./gradlew assembleGmsDebug` compiles without errors. Gallery menu entry does nothing (placeholder TODO in DynamicStarMapActivity).
 

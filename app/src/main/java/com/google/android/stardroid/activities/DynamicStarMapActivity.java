@@ -536,7 +536,7 @@ public class DynamicStarMapActivity extends InjectableActivity
     } else if (itemId == R.id.menu_item_gallery) {
       Log.d(TAG, "Loading gallery");
       menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.GALLERY_OPENED_LABEL);
-      // TODO: launch new ImageGalleryActivity (wired in T013)
+      startActivity(new Intent(this, ImageGalleryActivity.class));
     } else if (itemId == R.id.menu_item_tos) {
       Log.d(TAG, "Loading ToS");
       menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.TOS_OPENED_LABEL);
