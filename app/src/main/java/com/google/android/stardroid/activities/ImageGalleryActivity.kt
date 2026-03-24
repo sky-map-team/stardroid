@@ -76,8 +76,9 @@ class ImageGalleryActivity : InjectableActivity(),
         val prefs = PreferenceManager.getDefaultSharedPreferences(this)
         prefs.edit()
             .putBoolean("source_provider.0", true) // Stars
-            .putBoolean("source_provider.3", true) // Planets
+            .putBoolean("source_provider.1", true) // Constellations
             .putBoolean("source_provider.2", true) // Deep Sky Objects
+            .putBoolean("source_provider.3", true) // Planets
             .apply()
         val searchIntent = Intent(this, DynamicStarMapActivity::class.java).apply {
             action = Intent.ACTION_SEARCH
