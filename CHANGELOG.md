@@ -33,21 +33,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - **Search results returned in alphabetical order** — previously results appeared in an
   indeterminate hash-map order
   ([#750](https://github.com/sky-map-team/stardroid/pull/750))
-- "Location set by fusion" toast removed — the message was confusing and no longer meaningful
+- **"Location set by fusion" toast removed** — the message was confusing and no longer meaningful
   ([#741](https://github.com/sky-map-team/stardroid/pull/741))
-- Analytics event schema overhauled — cleaner event taxonomy for better sliceability
+- **Analytics event schema overhauled** — cleaner event taxonomy for better sliceability
   ([#768](https://github.com/sky-map-team/stardroid/pull/768))
-- Updated Play Store / app launcher icon
+- **Updated Play Store / app launcher icon**
 
 ### Fixed
-- Willman 1 was absent from search results after being added to the catalog — binary protobuf
+- **Willman 1 was absent from search results** after being added to the catalog — binary protobuf
   regenerated to include it
   ([#749](https://github.com/sky-map-team/stardroid/pull/749))
-- Info card tap threshold now scales correctly with the current zoom level, so objects are
+- **Info card tap threshold now scales correctly** with the current zoom level, so objects are
   tappable at any zoom
   ([#707](https://github.com/sky-map-team/stardroid/pull/707),
   fixes [#646](https://github.com/sky-map-team/stardroid/issues/646))
-- Double-encoded `&amp;amp;` entities in translated string resources corrected
+- **Double-encoded `&amp;amp;` entities** in translated string resources corrected
   ([#739](https://github.com/sky-map-team/stardroid/pull/739))
 
 ### Translations
@@ -55,8 +55,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
   (zh-Hant), Ukrainian (uk), Greek (el), Welsh (cy), Dutch (nl), Italian (it), German (de), Czech
   (cs), Norwegian Bokmål (nb), Malay (ms), Persian (fa), Danish (da), Swedish (sv), Thai (th),
   Hindi (hi), Slovak (sk), Slovenian (sl), Portuguese (pt), Spanish (es)
-- Brought all previously "fully translated" languages back to 100% coverage
-- Localized credits files added for translated locales
+- **Brought all previously "fully translated" languages back to 100% coverage**
+- **Localized credits files added** for translated locales
 
 ## [1.12.0] - 2026-03-01
 
