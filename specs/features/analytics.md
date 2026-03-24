@@ -404,13 +404,13 @@ now passes the human-readable name to the event. Unmapped keys fall back to the 
 
 In `DynamicStarMapActivity.onStop()`, compute and add a bucket string:
 
-| Seconds | `session_bucket` value |
-|---------|----------------------|
-| < 60 | `"<1min"` |
-| 60–299 | `"1-5min"` |
-| 300–899 | `"5-15min"` |
-| 900–1799 | `"15-30min"` |
-| ≥ 1800 | `">30min"` |
+| Seconds | `session_bucket` value      |
+|---------|-----------------------------|
+| < 10    | `LESS_THAN_TEN_SECS`        |
+| 10-29   | `TEN_SECS_TO_THIRTY_SECS`   |
+| 30-59   | `THIRTY_SECS_TO_ONE_MIN`    |
+| 60-299  | `ONE_MIN_TO_FIVE_MINS`      |
+| ≥ 300   | `MORE_THAN_FIVE_MINS`       |
 
 Constants to add:
 ```
