@@ -921,6 +921,24 @@
     </string>
     <string name="object_info_willman_1_distance" translation_description="Distance to Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130.000 lichtjaar</string>
     <string name="object_info_willman_1_size" translation_description="Physical size of Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130 lichtjaar in doorsnee</string>
+    <!-- Sagittarius A* -->
+    <string name="object_info_sgr_a_star_description" translation_description="Description of Sagittarius A* shown in the info card. Translate this text.">
+    Sagittarius A* (Sgr A*) is het superzware zwarte gat in het centrum van de Melkweg, op ongeveer 26.000 lichtjaar afstand in de richting van Boogschutter. Met een massa van ongeveer 4 miljoen zonnemassa\'s samengeperst in een gebied kleiner dan ons zonnestelsel, is het zo dicht dat zelfs licht niet aan de gebeurtenishorizon kan ontsnappen.
+    </string>
+    <string name="object_info_sgr_a_star_funfact" translation_description="Fun fact about Sagittarius A* shown in the info card. Translate this text.">
+    In 2022 heeft de Event Horizon Telescope-samenwerking de eerste directe afbeelding van Sgr A* vrijgegeven, die een gloeiende ring van superhete gas rond zijn schaduw onthult — geproduceerd door gegevens van radiosterrenwachten over de hele planeet te combineren.
+    </string>
+    <string name="object_info_sgr_a_star_distance" translation_description="Distance to Sgr A* shown in the info card. Translate units if appropriate for your locale.">26.000 lichtjaar</string>
+    <string name="object_info_sgr_a_star_size" translation_description="Physical size of Sgr A* shown in the info card. Translate units if appropriate for your locale.">Diameter van de waarnemingshorizon: ~24 miljoen km</string>
+    <!-- Cygnus X-1 -->
+    <string name="object_info_cygnus_x_1_description" translation_description="Description of Cygnus X-1 shown in the info card. Translate this text.">
+    Cygnus X-1 is een stellaire zwarte gat op ongeveer 7.200 lichtjaar afstand in Cygnus en een van de sterkste röntgenbronnen aan de hemel. Het vormt een dubbelster met de blauwe superreus HDE 226868, die elkaar elke 5,6 dagen omcirkelen. Het zwarte gat onttrekt gas aan zijn begeleider, waardoor een superhete accretieschijf ontstaat die in röntgenstraling oplicht.
+    </string>
+    <string name="object_info_cygnus_x_1_funfact" translation_description="Fun fact about Cygnus X-1 shown in the info card. Translate this text.">
+    Cygnus X-1 was het eerste object dat algemeen werd aanvaard als een zwart gat. In 1975 sloot Stephen Hawking een beroemde wetenschappelijke weddenschap af met Kip Thorne dat het GEEN zwart gat was, een weddenschap die hij later toegaf.
+    </string>
+    <string name="object_info_cygnus_x_1_distance" translation_description="Distance to Cygnus X-1 shown in the info card. Translate units if appropriate for your locale.">7.200 lichtjaar</string>
+    <string name="object_info_cygnus_x_1_size" translation_description="Physical size of Cygnus X-1 shown in the info card. Translate units if appropriate for your locale.">Massa van zwart gat: ~21 zonnemassa\'s</string>
     <!-- Eta Carinae Nebula (NGC 3372) -->
     <string name="object_info_eta_carinae_nebula_description" translation_description="Description of Eta Carinae Nebula shown in the info card. Translate this text.">
     De Eta Carinae Nevel (NGC 3372) is een van de grootste en helderste nevels aan de hemel, met een omvang van meer dan 300 lichtjaar. In het hart ervan bevindt zich Eta Carinae, een van de meest massieve en helderste sterren die bekend zijn, met een gewicht van meer dan 100 zonnemassa\'s.

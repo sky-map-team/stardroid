@@ -136,6 +136,7 @@ class ObjectInfoRegistry @Inject constructor(
             "galaxy" -> ObjectType.GALAXY
             "cluster" -> ObjectType.CLUSTER
             "constellation" -> ObjectType.CONSTELLATION
+            "black_hole" -> ObjectType.BLACK_HOLE
             else -> {
                 Log.w(TAG, "Unknown object type: $typeString, defaulting to STAR")
                 ObjectType.STAR

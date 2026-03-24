@@ -25,7 +25,8 @@ enum class ObjectType {
     NEBULA,
     GALAXY,
     CLUSTER,
-    CONSTELLATION
+    CONSTELLATION,
+    BLACK_HOLE
 }
 
 /**

@@ -535,6 +535,24 @@
     </string>
     <string name="object_info_willman_1_distance" translation_description="Distance to Willman 1 shown in the info card. Translate units if appropriate for your locale.">約130,000光年</string>
     <string name="object_info_willman_1_size" translation_description="Physical size of Willman 1 shown in the info card. Translate units if appropriate for your locale.">約130光年の大きさ</string>
+    <!-- Sagittarius A* -->
+    <string name="object_info_sgr_a_star_description" translation_description="Description of Sagittarius A* shown in the info card. Translate this text.">
+    いて座A* (Sgr A*) は銀河系の中心にある超大質量ブラックホールで、いて座の方向に26,000光年離れた場所にあります。太陽系より小さい領域に約400万太陽質量が圧縮されており、その密度は非常に高く、光さえもその事象の地平線から逃げることができません。
+    </string>
+    <string name="object_info_sgr_a_star_funfact" translation_description="Fun fact about Sagittarius A* shown in the info card. Translate this text.">
+    2022年、イベント・ホライズン・テレスコープ・コラボレーションはSgr A*の最初の直接画像を公開し、その影を取り囲む加熱されたガスの輝く環を明らかにしました。これは地球全体に広がる電波天文台からのデータを組み合わせることで生成されました。
+    </string>
+    <string name="object_info_sgr_a_star_distance" translation_description="Distance to Sgr A* shown in the info card. Translate units if appropriate for your locale.">26,000光年</string>
+    <string name="object_info_sgr_a_star_size" translation_description="Physical size of Sgr A* shown in the info card. Translate units if appropriate for your locale.">事象の地平線の直径: 約2,400万km</string>
+    <!-- Cygnus X-1 -->
+    <string name="object_info_cygnus_x_1_description" translation_description="Description of Cygnus X-1 shown in the info card. Translate this text.">
+    はくちょう座X-1は、はくちょう座にある約7,200光年離れた恒星質量ブラックホールで、空で最も強いX線源の1つです。青色超巨星HDE 226868と連星系を形成し、5.6日ごとに互いの周りを公転しています。ブラックホールは伴星からガスを剥ぎ取り、X線で輝く超高温降着円盤を形成しています。
+    </string>
+    <string name="object_info_cygnus_x_1_funfact" translation_description="Fun fact about Cygnus X-1 shown in the info card. Translate this text.">
+    はくちょう座X-1は、ブラックホールとして広く認められた最初の天体です。1975年、スティーヴン・ホーキングはキップ・ソーンとの間で、それがブラックホールではないという有名な科学的賭けを行いました。その後、彼はこの賭けに負けを認めました。
+    </string>
+    <string name="object_info_cygnus_x_1_distance" translation_description="Distance to Cygnus X-1 shown in the info card. Translate units if appropriate for your locale.">7,200光年</string>
+    <string name="object_info_cygnus_x_1_size" translation_description="Physical size of Cygnus X-1 shown in the info card. Translate units if appropriate for your locale.">ブラックホール質量: 約21太陽質量</string>
     <!-- Eta Carinae Nebula (NGC 3372) -->
     <string name="object_info_eta_carinae_nebula_description" translation_description="Description of Eta Carinae Nebula shown in the info card. Translate this text.">
     エータ・カリーナ星雲（NGC 3372）は、空の中で最も大きく最も明るい星雲の1つで、300光年以上に広がっています。その中心には、既知の最も巨大で最も光度の高い星の1つであるエータ・カリーナがあり、太陽質量の100倍以上の質量を持っています。

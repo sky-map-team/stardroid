@@ -915,6 +915,24 @@
     </string>
     <string name="object_info_willman_1_distance" translation_description="Distance to Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130 000 světelných let</string>
     <string name="object_info_willman_1_size" translation_description="Physical size of Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130 světelných let na průměr</string>
+    <!-- Sagittarius A* -->
+    <string name="object_info_sgr_a_star_description" translation_description="Description of Sagittarius A* shown in the info card. Translate this text.">
+    Sagittarius A* (Sgr A*) je supermasivní černá díra v centru Mléčné dráhy, vzdálená 26 000 světelných let ve směru souhvězdí Střelce. S hmotností přibližně 4 milionů slunečních hmotností stlačené do oblasti menší než naše sluneční soustava je tak hustá, že z jejího horizontu událostí nemůže uniknout ani světlo.
+    </string>
+    <string name="object_info_sgr_a_star_funfact" translation_description="Fun fact about Sagittarius A* shown in the info card. Translate this text.">
+    V roce 2022 kolaborace Event Horizon Telescope zveřejnila první přímý snímek Sgr A*, který odhalil zářící prstenec přehřátého plynu obklopujícího jeho stín — vytvořený kombinací dat z radiových observatoří rozptýlených po celé planetě.
+    </string>
+    <string name="object_info_sgr_a_star_distance" translation_description="Distance to Sgr A* shown in the info card. Translate units if appropriate for your locale.">26 000 světelných let</string>
+    <string name="object_info_sgr_a_star_size" translation_description="Physical size of Sgr A* shown in the info card. Translate units if appropriate for your locale.">Průměr horizontu událostí: ~24 milionů km</string>
+    <!-- Cygnus X-1 -->
+    <string name="object_info_cygnus_x_1_description" translation_description="Description of Cygnus X-1 shown in the info card. Translate this text.">
+    Cygnus X-1 je hvězdná černá díra vzdálená přibližně 7 200 světelných let v souhvězdí Labutě a jeden z nejsilnějších zdrojů rentgenového záření na obloze. Tvoří binární systém s modrou supergigantickou hvězdou HDE 226868, které se navzájem obíhají každých 5,6 dne. Černá díra odtrhává plyn ze své společnice a vytváří přehřátý akreciční disk, který intenzivně vyzařuje rentgenové záření.
+    </string>
+    <string name="object_info_cygnus_x_1_funfact" translation_description="Fun fact about Cygnus X-1 shown in the info card. Translate this text.">
+    Cygnus X-1 byl prvním objektem, který byl všeobecně přijat jako černá díra. V roce 1975 Stephen Hawking uzavřel slavnou vědeckou sázku s Kipem Thornem, že to NENÍ černá díra, sázku kterou později uznal.
+    </string>
+    <string name="object_info_cygnus_x_1_distance" translation_description="Distance to Cygnus X-1 shown in the info card. Translate units if appropriate for your locale.">7 200 světelných let</string>
+    <string name="object_info_cygnus_x_1_size" translation_description="Physical size of Cygnus X-1 shown in the info card. Translate units if appropriate for your locale.">Hmotnost černé díry: ~21 slunečních hmotností</string>
     <!-- Eta Carinae Nebula (NGC 3372) -->
     <string name="object_info_eta_carinae_nebula_description" translation_description="Description of Eta Carinae Nebula shown in the info card. Translate this text.">
     Mlhovina Eta Carinae (NGC 3372) je jednou z největších a nejjasnějších mlhovin na obloze, rozprostírající se přes 300 světelných let. V jejím srdci se nachází Eta Carinae, jedna z nejhmotnějších a nejzářivějších známých hvězd, vážící přes 100 slunečních hmotností.

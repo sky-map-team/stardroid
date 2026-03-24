@@ -921,6 +921,24 @@
     </string>
     <string name="object_info_willman_1_distance" translation_description="Distance to Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130 000 світлових років</string>
     <string name="object_info_willman_1_size" translation_description="Physical size of Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130 світлових років у діаметрі</string>
+    <!-- Sagittarius A* -->
+    <string name="object_info_sgr_a_star_description" translation_description="Description of Sagittarius A* shown in the info card. Translate this text.">
+    Sagittarius A* (Sgr A*) — надмасивна чорна діра в центрі Чумацького Шляху, розташована на відстані 26 000 світлових років у напрямку сузір\'я Стрільця. З масою близько 4 мільйонів сонячних мас, стиснутою в область меншу за нашу Сонячну систему, вона настільки щільна, що навіть світло не може втекти з її горизонту подій.
+    </string>
+    <string name="object_info_sgr_a_star_funfact" translation_description="Fun fact about Sagittarius A* shown in the info card. Translate this text.">
+    У 2022 році колаборація Event Horizon Telescope опублікувала перше прямого зображення Sgr A*, розкривши світлий кільце розпеченого газу, що оточує його тінь — отримане шляхом об\'єднання даних від радіообсерваторій, розташованих по всій планеті.
+    </string>
+    <string name="object_info_sgr_a_star_distance" translation_description="Distance to Sgr A* shown in the info card. Translate units if appropriate for your locale.">26 000 світлових років</string>
+    <string name="object_info_sgr_a_star_size" translation_description="Physical size of Sgr A* shown in the info card. Translate units if appropriate for your locale.">Діаметр горизонту подій: ~24 млн км</string>
+    <!-- Cygnus X-1 -->
+    <string name="object_info_cygnus_x_1_description" translation_description="Description of Cygnus X-1 shown in the info card. Translate this text.">
+    Cygnus X-1 — чорна діра зоряної маси на відстані близько 7200 світлових років у сузір\'ї Лебідь, одне з найпотужніших джерел рентгенівського випромінювання на небі. Вона утворює подвійну систему з блакитним надгігантом HDE 226868, обертаючись один навколо одного кожні 5,6 днів. Чорна діра видирає газ зі свого супутника, утворюючи надгарячий акреційний диск, який сяє в рентгенівському діапазоні.
+    </string>
+    <string name="object_info_cygnus_x_1_funfact" translation_description="Fun fact about Cygnus X-1 shown in the info card. Translate this text.">
+    Cygnus X-1 був першим об\'єктом, широко визнаним чорною дірою. У 1975 році Стівен Гокінг зробив знамениту наукову ставку з Кіпом Торном, що це НЕ чорна діра, але пізніше він визнав поразку.
+    </string>
+    <string name="object_info_cygnus_x_1_distance" translation_description="Distance to Cygnus X-1 shown in the info card. Translate units if appropriate for your locale.">7 200 світлових років</string>
+    <string name="object_info_cygnus_x_1_size" translation_description="Physical size of Cygnus X-1 shown in the info card. Translate units if appropriate for your locale.">Маса чорної діри: ~21 сонячної маси</string>
     <!-- Eta Carinae Nebula (NGC 3372) -->
     <string name="object_info_eta_carinae_nebula_description" translation_description="Description of Eta Carinae Nebula shown in the info card. Translate this text.">
     Туманність Ета Карини (NGC 3372) — одна з найбільших і найяскравіших туманностей на небі, що охоплює понад 300 світлових років. У її центрі розташована Ета Карини — одна з найбільш масивних і світлоносних зірок, відомих науці, з масою понад 100 сонячних мас.

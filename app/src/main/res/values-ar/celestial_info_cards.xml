@@ -829,6 +829,24 @@
     </string>
     <string name="object_info_willman_1_distance" translation_description="Distance to Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130,000 سنة ضوئية</string>
     <string name="object_info_willman_1_size" translation_description="Physical size of Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130 سنة ضوئية عبر</string>
+    <!-- Sagittarius A* -->
+    <string name="object_info_sgr_a_star_description" translation_description="Description of Sagittarius A* shown in the info card. Translate this text.">
+    Sagittarius A* (Sgr A*) هو الثقب الأسود فائق الكتلة في مركز درب التبانة، يقع على بعد 26,000 سنة ضوئية في اتجاه برج القوس. بكتلة تبلغ حوالي 4 ملايين كتلة شمسية مضغوطة في منطقة أصغر من نظامنا الشمسي، فهو كثيف جداً بحيث لا يمكن حتى للضوء الهروب من أفق الحدث.
+    </string>
+    <string name="object_info_sgr_a_star_funfact" translation_description="Fun fact about Sagittarius A* shown in the info card. Translate this text.">
+    في عام 2022، أصدرت تعاون تلسكوب أفق الحدث أول صورة مباشرة لـ Sgr A*، كاشفة عن حلقة متوهجة من الغاز المفرط التسخين تحيط بظله — تم إنتاجها بدمج البيانات من المراصد الراديوية الموزعة عبر كوكب الأرض بأكمله.
+    </string>
+    <string name="object_info_sgr_a_star_distance" translation_description="Distance to Sgr A* shown in the info card. Translate units if appropriate for your locale.">26,000 سنة ضوئية</string>
+    <string name="object_info_sgr_a_star_size" translation_description="Physical size of Sgr A* shown in the info card. Translate units if appropriate for your locale.">قطر الأفق الأسود: ~24 مليون كم</string>
+    <!-- Cygnus X-1 -->
+    <string name="object_info_cygnus_x_1_description" translation_description="Description of Cygnus X-1 shown in the info card. Translate this text.">
+    سيجنس إكس-1 هو ثقب أسود بكتلة نجمية يبعد حوالي 7,200 سنة ضوئية في كوكبة الدجاجة، وهو أحد أقوى مصادر الأشعة السينية في السماء. يشكل نظاماً ثنائياً مع نجم عملاق أزرق HDE 226868، يدوران حول بعضهما كل 5.6 أيام. يسحب الثقب الأسود الغاز من نجمه المرافق، مكوناً قرصاً تراكمياً فائق الحرارة يتوهج بالأشعة السينية.
+    </string>
+    <string name="object_info_cygnus_x_1_funfact" translation_description="Fun fact about Cygnus X-1 shown in the info card. Translate this text.">
+    كان Cygnus X-1 أول جسم يُقبل على نطاق واسع كثقب أسود. في عام 1975، راهن ستيفن هوكينج على رهان علمي مشهور مع كيب ثورن بأنه ليس ثقباً أسود، وهي رهان تنازل عنها لاحقاً.
+    </string>
+    <string name="object_info_cygnus_x_1_distance" translation_description="Distance to Cygnus X-1 shown in the info card. Translate units if appropriate for your locale.">7,200 سنة ضوئية</string>
+    <string name="object_info_cygnus_x_1_size" translation_description="Physical size of Cygnus X-1 shown in the info card. Translate units if appropriate for your locale.">كتلة الثقب الأسود: ~21 كتلة شمسية</string>
     <!-- Eta Carinae Nebula (NGC 3372) -->
     <string name="object_info_eta_carinae_nebula_description" translation_description="Description of Eta Carinae Nebula shown in the info card. Translate this text.">
     سديم إيتا كارينا (NGC 3372) هو أحد أكبر وألمع السدم في السماء، ويمتد على مسافة تزيد عن 300 سنة ضوئية. في قلبه يقع نجم إيتا كارينا، أحد أكثر النجوم ضخامة وإضاءة المعروفة، بوزن يزيد عن 100 كتلة شمسية.

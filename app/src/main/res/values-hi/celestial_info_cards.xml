@@ -915,6 +915,24 @@
     </string>
     <string name="object_info_willman_1_distance" translation_description="Distance to Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130,000 प्रकाश-वर्ष</string>
     <string name="object_info_willman_1_size" translation_description="Physical size of Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130 प्रकाश-वर्ष व्यास में</string>
+    <!-- Sagittarius A* -->
+    <string name="object_info_sgr_a_star_description" translation_description="Description of Sagittarius A* shown in the info card. Translate this text.">
+    Sagittarius A* (Sgr A*) हमारी मिल्की वे आकाशगंगा के केंद्र में स्थित एक अतिविशाल ब्लैक होल है, जो धनु राशि की दिशा में 26,000 प्रकाश-वर्ष दूर स्थित है। लगभग 40 लाख सौर द्रव्यमान के साथ जो हमारे सौर मंडल से छोटे क्षेत्र में संपीड़ित है, यह इतना सघन है कि प्रकाश भी इसके घटना क्षितिज से बाहर नहीं निकल सकता।
+    </string>
+    <string name="object_info_sgr_a_star_funfact" translation_description="Fun fact about Sagittarius A* shown in the info card. Translate this text.">
+    2022 में Event Horizon Telescope सहयोग ने Sgr A* की पहली सीधी छवि जारी की, जो इसकी छाया के चारों ओर अत्यधिक गर्म गैस की एक चमकती वलय को प्रकट करती है — जो पूरे ग्रह में फैली रेडियो वेधशालाओं से डेटा को जोड़कर बनाई गई है।
+    </string>
+    <string name="object_info_sgr_a_star_distance" translation_description="Distance to Sgr A* shown in the info card. Translate units if appropriate for your locale.">26,000 प्रकाश-वर्ष</string>
+    <string name="object_info_sgr_a_star_size" translation_description="Physical size of Sgr A* shown in the info card. Translate units if appropriate for your locale.">घटना क्षितिज व्यास: ~24 मिलियन किमी</string>
+    <!-- Cygnus X-1 -->
+    <string name="object_info_cygnus_x_1_description" translation_description="Description of Cygnus X-1 shown in the info card. Translate this text.">
+    Cygnus X-1 Cygnus में लगभग 7,200 प्रकाश-वर्ष दूर एक तारकीय-द्रव्यमान वाला ब्लैक होल है, और आकाश में सबसे मजबूत X-ray स्रोतों में से एक है। यह नीले महानक्षत्र तारे HDE 226868 के साथ एक द्विआधारी प्रणाली बनाता है, जो हर 5.6 दिनों में एक दूसरे की परिक्रमा करते हैं। ब्लैक होल अपने साथी तारे से गैस को छीनता है, जिससे एक अत्यंत गर्म पदार्थ-संचय डिस्क बनती है जो X-rays में चमकती है।
+    </string>
+    <string name="object_info_cygnus_x_1_funfact" translation_description="Fun fact about Cygnus X-1 shown in the info card. Translate this text.">
+    Cygnus X-1 पहली वस्तु थी जिसे व्यापक रूप से एक ब्लैक होल के रूप में स्वीकार किया गया था। 1975 में, स्टीफन हॉकिंग ने किप थॉर्न के साथ एक प्रसिद्ध वैज्ञानिक सट्टेबाजी की कि यह ब्लैक होल नहीं था, एक दांव जिसे उन्होंने बाद में स्वीकार किया।
+    </string>
+    <string name="object_info_cygnus_x_1_distance" translation_description="Distance to Cygnus X-1 shown in the info card. Translate units if appropriate for your locale.">7,200 प्रकाश-वर्ष</string>
+    <string name="object_info_cygnus_x_1_size" translation_description="Physical size of Cygnus X-1 shown in the info card. Translate units if appropriate for your locale.">ब्लैक होल द्रव्यमान: ~21 सौर द्रव्यमान</string>
     <!-- Eta Carinae Nebula (NGC 3372) -->
     <string name="object_info_eta_carinae_nebula_description" translation_description="Description of Eta Carinae Nebula shown in the info card. Translate this text.">
     एटा कैरिनी नेबुला (NGC 3372) आकाश में सबसे बड़ी और सबसे चमकीली नेबुलाओं में से एक है, जो 300 प्रकाश-वर्षों से अधिक विस्तृत है। इसके केंद्र में एटा कैरिनी है, जो ज्ञात सबसे विशाल और चमकदार तारों में से एक है, जिसका वजन 100 सौर द्रव्यमान से अधिक है।
