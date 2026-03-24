@@ -16,6 +16,6 @@ mv $IN_DATA_DIR/constellations.binary $OUT_DATA_DIR
 $TOOL Binary $IN_DATA_DIR/stars.ascii
 mv $IN_DATA_DIR/stars.binary $OUT_DATA_DIR
 
-$TOOL Binary $IN_DATA_DIR/messier.ascii
-mv $IN_DATA_DIR/messier.binary $OUT_DATA_DIR
+$TOOL Binary $IN_DATA_DIR/deep_sky_objects.ascii
+mv $IN_DATA_DIR/deep_sky_objects.binary $OUT_DATA_DIR
 

@@ -40,7 +40,7 @@
     <string name="manual_compass_adjustment_summary" translation_description="Summary for the manual compass adjustment preference">額外的偏移量（度數，+ 或 −）加到羅盤讀數</string>
     <string name="show_stars_pref" translation_description="Label for the stars layer on the sky map (shows in the search results)">星體</string>
     <string name="show_constellations_pref" translation_description="Label for the constellation lines and labels layer (shows in the search results)">星座</string>
-    <string name="show_messier_objects_pref" translation_description="The celestial objects catalogued by Charles Messier (shows in the search results)">梅西耶天體</string>
+    <string name="show_deep_sky_objects_pref" translation_description="The celestial objects catalogued by Charles Messier (shows in the search results)">梅西耶天體</string>
     <string name="show_planets_pref" translation_description="Label for the solar system layer (planets, sun, moon)  (shows in the search results)">行星</string>
     <string name="show_grid_pref" translation_description="Label for the Right Ascension / Declination grid overlay  (shows in the search results)">赤道座標線</string>
     <string name="show_horizon_pref" translation_description="Preference toggle label for the horizon line layer">地平線</string>

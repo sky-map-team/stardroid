@@ -42,7 +42,7 @@
     <string name="manual_compass_adjustment_summary" translation_description="Summary for the manual compass adjustment preference">ออฟเซ็ตเพิ่มเติมในหน่วยองศา (+ หรือ −) ที่เพิ่มเข้าไปในการอ่านเข็มทิศ</string>
     <string name="show_stars_pref" translation_description="Label for the stars layer on the sky map (shows in the search results)">ดาวฤกษ์</string>
     <string name="show_constellations_pref" translation_description="Label for the constellation lines and labels layer (shows in the search results)">กลุ่มดาว</string>
-    <string name="show_messier_objects_pref" translation_description="The celestial objects catalogued by Charles Messier (shows in the search results)">วัตถุเมสเซียร์</string>
+    <string name="show_deep_sky_objects_pref" translation_description="The celestial objects catalogued by Charles Messier (shows in the search results)">วัตถุเมสเซียร์</string>
     <string name="show_planets_pref" translation_description="Label for the solar system layer (planets, sun, moon)  (shows in the search results)">ระบบสุริยะ</string>
     <string name="show_grid_pref" translation_description="Label for the Right Ascension / Declination grid overlay  (shows in the search results)">ตารางพิกัด RA/Dec</string>
     <string name="show_horizon_pref" translation_description="Preference toggle label for the horizon line layer">ขอบฟ้า</string>

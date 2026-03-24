@@ -54,6 +54,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.stardroid.ApplicationConstants;
 import com.google.android.stardroid.R;
+import com.google.android.stardroid.activities.util.MenuUtils;
 import com.google.android.stardroid.activities.util.NightModeHelper;
 import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
 import com.google.android.stardroid.activities.dialogs.CreditsDialogFragment;
@@ -391,6 +392,7 @@ public class DynamicStarMapActivity extends InjectableActivity
   @Override
   public boolean onPrepareOptionsMenu(Menu menu) {
     boolean result = super.onPrepareOptionsMenu(menu);
+    MenuUtils.showOptionalIcons(menu);
     NightModeHelper.tintMenuIcons(menu, nightMode, this);
     return result;
   }
@@ -512,7 +514,7 @@ public class DynamicStarMapActivity extends InjectableActivity
       sharedPreferences.edit().putString(ActivityLightLevelManager.LIGHT_MODE_KEY,
           nightMode ? "NIGHT" : "DAY").commit();
       menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.TOGGLED_NIGHT_MODE_LABEL);
-    } else if (itemId == R.id.menu_item_time) {
+    } else if (itemId == R.id.menu_item_time || itemId == R.id.menu_item_time2) {
       Log.d(TAG, "Starting Time Dialog from menu");
       menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.TIME_TRAVEL_OPENED_LABEL);
       if (!timePlayerUI.isShown()) {
