@@ -44,7 +44,7 @@
     </string>
     <string name="show_stars_pref" translation_description="Label for the stars layer on the sky map (shows in the search results)">Sêr</string>
     <string name="show_constellations_pref" translation_description="Label for the constellation lines and labels layer (shows in the search results)">Cytser</string>
-    <string name="show_deep_sky_objects_pref" translation_description="The celestial objects catalogued by Charles Messier (shows in the search results)">Gwrthrychau Messier</string>
+    <string name="show_deep_sky_objects_pref" translation_description="Deep-sky objects layer — galaxies, nebulae, star clusters, and other notable objects (shows in the search results)">Gwrthrychau Messier</string>
     <string name="show_planets_pref" translation_description="Label for the solar system layer (planets, sun, moon)  (shows in the search results)">Cysawd yr Haul</string>
     <string name="show_grid_pref" translation_description="Label for the Right Ascension / Declination grid overlay  (shows in the search results)">Grid RA/Dec</string>
     <string name="show_horizon_pref" translation_description="Preference toggle label for the horizon line layer">Gorwel</string>
@@ -84,8 +84,6 @@
     <string name="no_search_results_text2" translation_description="Alternative message shown when a search returns no results, suggesting the object may not currently be visible">Ni chanfuwyd canlyniadau. Efallai nad yw\'r gwrthrych yn weladwy ar hyn o bryd.</string>
     <string name="many_search_results_title" translation_description="Dialog title shown when a search returns multiple possible matches">A oeddet yn meddwl?</string>
     <string name="other" translation_description="A preference category (ie preferences that don't belong in any other category)">Arall</string>
-    <string name="show_messier_images" translation_description="Preference toggle label for showing galaxy/nebula icons for Messier objects">Dangos Delweddau Messier</string>
-    <string name="show_messier_images_summary" translation_description="Summary description for the Show Messier Images preference">Dangos gwrthrychau Messier fel eiconau galaeth yn lle dotiau</string>
     <string name="menu_time" translation_description="Menu item label to open the time travel feature">Teithio mewn Amser</string>
     <string name="time_travel_start_message_alt" translation_description="Toast message when time travel starts toward a named destination. %s is the event or destination name">Yn teithio trwy amser i %s ...</string>
     <string name="time_travel_close_message" translation_description="Toast message shown when the user exits time travel and returns to the present">Nôl i\'r presennol ...</string>

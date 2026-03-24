@@ -37,6 +37,7 @@
 |---------|--------|------|
 | Venus   | `venus.png` | `808,0,2016,1200` |
 | Earth   | `earth.png` | none (2048×2048 square) |
+| Mars    | `mars splash 5.png` | `640,0,2176,1536` |
 
 ## Auto-Level Horizon (manual mode)
 

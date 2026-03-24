@@ -1,14 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-    <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>आकाशीय छवियाँ</h2>
-    जानकारी कार्ड अब सभी लेबल की गई वस्तुओं के लिए फ़ोटोग्राफ़ शामिल करते हैं — ग्रह, तारे, तारामंडल और मेसियर वस्तुएँ। किसी भी वस्तु को दृश्य रूप से खोजने के लिए टैप करें।
-
-<h2>नई कैटलॉग वस्तुएँ</h2>
-    T कोरोना बोरिएलिस ("ब्लेज़ स्टार") और एटा कैरिना नेबुला अब कैटलॉग में हैं।
-
-<h2>रात्रि मोड</h2>
-    लाल रात्रि मोड अब लगभग सभी UI तत्वों को कवर करता है, जिसमें सभी संवाद और कम्पास कैलिब्रेशन स्क्रीन शामिल हैं — अंधेरे में अब कोई अंधाकारी सफेद फ्लैश नहीं।]]></string>
     <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>बीटा उपयोगकर्ता!</h2>
 <h3>आप कैसे मदद कर सकते हैं</h3>
 इस रिलीज़ में जब आप मैनुअल मोड का उपयोग करते हैं और मानचित्र को स्वाइप करते हैं, तो क्षितिज स्तर पर वापस आ जाएगा ताकि मानचित्र के शीर्ष पर हमेशा आपके ऊपर के तारे दिखाई दें। पहले मानचित्र सीधी रेखा में चलता था इसलिए आप उल्टा हो सकते थे। आपको क्या लगता है? क्या यह बेहतर है?

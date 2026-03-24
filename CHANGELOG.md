@@ -5,6 +5,59 @@ All notable changes to Sky Map are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.12.3] - 2026-03-24
+
+### Added
+- **Willman 1 (Beth Willman Galaxy)** added to the star catalog — an ultra-faint dwarf satellite
+  galaxy of the Milky Way, notable for its extreme dark-matter dominance and tidal disruption
+  ([#736](https://github.com/sky-map-team/stardroid/pull/736))
+- **Info cards for 24 named stars and 41 constellations** — these objects now display educational
+  text cards with discovery notes, mythology, and key facts
+  ([#708](https://github.com/sky-map-team/stardroid/pull/708))
+- **App-specific language** — users can now set Sky Map's display language independently of their
+  device's system language via Settings → Language
+  ([#760](https://github.com/sky-map-team/stardroid/pull/760))
+- **Auto-level horizon** (manual mode, disabled by default) — after releasing a gesture the view
+  can spring back to level; toggle in Settings → Sensor settings
+  ([#674](https://github.com/sky-map-team/stardroid/pull/674))
+- **Location warning** — a notice is shown on startup when no location has been set, so first-time
+  users understand why the sky may not match their view
+  ([#675](https://github.com/sky-map-team/stardroid/pull/675))
+- **Sensor damping preference labels** now include explanatory hints
+
+### Changed
+- **Search autocomplete results are now capitalized** — object names in the suggestion list match
+  the casing used in info cards
+  ([#763](https://github.com/sky-map-team/stardroid/pull/763),
+  fixes [#748](https://github.com/sky-map-team/stardroid/issues/748))
+- **Search results returned in alphabetical order** — previously results appeared in an
+  indeterminate hash-map order
+  ([#750](https://github.com/sky-map-team/stardroid/pull/750))
+- **"Location set by fusion" toast removed** — the message was confusing and no longer meaningful
+  ([#741](https://github.com/sky-map-team/stardroid/pull/741))
+- **Analytics event schema overhauled** — cleaner event taxonomy for better sliceability
+  ([#768](https://github.com/sky-map-team/stardroid/pull/768))
+- **Updated Play Store / app launcher icon**
+
+### Fixed
+- **Willman 1 was absent from search results** after being added to the catalog — binary protobuf
+  regenerated to include it
+  ([#749](https://github.com/sky-map-team/stardroid/pull/749))
+- **Info card tap threshold now scales correctly** with the current zoom level, so objects are
+  tappable at any zoom
+  ([#707](https://github.com/sky-map-team/stardroid/pull/707),
+  fixes [#646](https://github.com/sky-map-team/stardroid/issues/646))
+- **Double-encoded `&amp;amp;` entities** in translated string resources corrected
+  ([#739](https://github.com/sky-map-team/stardroid/pull/739))
+
+### Translations
+- **New languages:** Arabic (ar), Turkish (tr), Simplified Chinese (zh-Hans), Traditional Chinese
+  (zh-Hant), Ukrainian (uk), Greek (el), Welsh (cy), Dutch (nl), Italian (it), German (de), Czech
+  (cs), Norwegian Bokmål (nb), Malay (ms), Persian (fa), Danish (da), Swedish (sv), Thai (th),
+  Hindi (hi), Slovak (sk), Slovenian (sl), Portuguese (pt), Spanish (es)
+- **Brought all previously "fully translated" languages back to 100% coverage**
+- **Localized credits files added** for translated locales
+
 ## [1.12.0] - 2026-03-01
 
 _Earth release._

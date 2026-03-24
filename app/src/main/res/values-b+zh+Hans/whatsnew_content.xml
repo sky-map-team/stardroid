@@ -1,14 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-    <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>天体图像</h2>
-    信息卡现在包含所有145个天体的照片——行星、恒星、星座和梅西耶天体。点击任何天体即可直观地探索它。
-
-<h2>新的星表天体</h2>
-    北冕座T星（"炽烈星"）和船山星云现已加入星表。
-
-<h2>夜间模式</h2>
-    红色夜间模式现在覆盖几乎所有UI元素，包括所有对话框和罗盘校准屏幕——在黑暗中不再有刺眼的白色闪光。]]></string>
     <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>测试版用户！</h2>
 <h3>您可以如何帮助我们</h3>
 在此版本中，当您使用手动模式并滑动地图时，地平线将恢复水平，因此地图顶部将始终显示您上方的星星。以前地图只是直线移动，所以您可能会看到倒过来的景象。您觉得怎么样？这样是否更好？

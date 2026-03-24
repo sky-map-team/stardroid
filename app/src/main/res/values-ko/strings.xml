@@ -27,7 +27,7 @@
     <string name="use_magnetic_correction" translation_description="Preference label: apply magnetic declination correction so the compass points to true north instead of magnetic north">자기 수정 사용</string>
     <string name="show_stars_pref" translation_description="Label for the stars layer on the sky map (shows in the search results)">별</string>
     <string name="show_constellations_pref" translation_description="Label for the constellation lines and labels layer (shows in the search results)">별자리</string>
-    <string name="show_deep_sky_objects_pref" translation_description="The celestial objects catalogued by Charles Messier (shows in the search results)">메시에 천체 목록</string>
+    <string name="show_deep_sky_objects_pref" translation_description="Deep-sky objects layer — galaxies, nebulae, star clusters, and other notable objects (shows in the search results)">메시에 천체 목록</string>
     <string name="show_planets_pref" translation_description="Label for the solar system layer (planets, sun, moon)  (shows in the search results)">행성</string>
     <string name="show_grid_pref" translation_description="Label for the Right Ascension / Declination grid overlay  (shows in the search results)">적경/적위 그리드</string>
     <string name="show_horizon_pref" translation_description="Preference toggle label for the horizon line layer">지평선</string>
