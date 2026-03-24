@@ -8,9 +8,11 @@ import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
@@ -104,10 +106,15 @@ public class NightModeHelper {
   public static void tintMenuIcons(Menu menu, boolean nightMode, Context context) {
     int color = nightMode ? context.getColor(R.color.night_text_color) : Color.WHITE;
     for (int i = 0; i < menu.size(); i++) {
-      Drawable icon = menu.getItem(i).getIcon();
+      MenuItem item = menu.getItem(i);
+      Drawable icon = item.getIcon();
       if (icon != null) {
         icon.mutate().setColorFilter(color, PorterDuff.Mode.MULTIPLY);
       }
+      SpannableString title = new SpannableString(item.getTitle());
+      title.setSpan(new ForegroundColorSpan(color), 0, title.length(),
+          Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+      item.setTitle(title);
     }
   }
 
