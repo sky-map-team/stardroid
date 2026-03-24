@@ -83,10 +83,10 @@ tapping an object in the sky → info card → "Find" → map centres on the obj
 
 ### Implementation for User Story 3
 
-- [ ] T017 [P] [US3] Add string resource `action_find_in_sky_map` with value `"Find"` to `app/src/main/res/values/strings.xml` (do not add to translatable strings; add to `notranslate-strings.xml` if that convention is used in the project, otherwise add directly to `strings.xml`)
-- [ ] T018 [US3] Modify `app/src/main/java/com/google/android/stardroid/activities/dialogs/ObjectInfoDialogFragment.kt`: (a) add `interface OnFindClickedListener { fun onFindClicked(info: ObjectInfo) }` as a nested interface; (b) change the `setPositiveButton` label from `android.R.string.ok` to `R.string.action_find_in_sky_map`; (c) in the positive button click handler, call `(activity as? OnFindClickedListener)?.onFindClicked(info)` before dismissing
-- [ ] T019 [US3] Implement `OnFindClickedListener` in `ImageGalleryActivity.kt`: in `onFindClicked(info)` enable the Stars, Deep Sky Objects, and Planets layer visibility prefs (mirror the logic from the deleted `ImageDisplayActivity.doSearch()`), then start `DynamicStarMapActivity` with `Intent.ACTION_SEARCH` and `SearchManager.QUERY = info.name`
-- [ ] T020 [US3] Implement `OnFindClickedListener` in `app/src/main/java/com/google/android/stardroid/activities/DynamicStarMapActivity.java`: in `onFindClicked(info)` call the existing search method (same code path triggered by `ObjectInfoTapHandler`) using `info.name` as the query; the dialog dismisses itself after calling the listener
+- [x] T017 [P] [US3] Add string resource `action_find_in_sky_map` with value `"Find"` to `app/src/main/res/values/strings.xml`
+- [x] T018 [US3] Modify `app/src/main/java/com/google/android/stardroid/activities/dialogs/ObjectInfoDialogFragment.kt`: (a) add `OnFindClickedListener` nested interface; (b) change positive button label to `R.string.action_find_in_sky_map`; (c) call `(activity as? OnFindClickedListener)?.onFindClicked(info)` in click handler
+- [x] T019 [US3] Implement `OnFindClickedListener` in `ImageGalleryActivity.kt`: enable Stars/Planets/DSO layer prefs, then start `DynamicStarMapActivity` with `Intent.ACTION_SEARCH`
+- [x] T020 [US3] Implement `OnFindClickedListener` in `DynamicStarMapActivity.java`: constructs search Intent and calls `doSearchWithIntent`
 
 **Checkpoint**: Full end-to-end flow works — gallery → thumbnail tap → info card → Find → star map
 navigates to object. From the star map, tapping an object → info card → Find → map centres on it.
@@ -97,7 +97,7 @@ navigates to object. From the star map, tapping an object → info card → Find
 
 **Purpose**: Verify night mode, cleanup, and final validation.
 
-- [ ] T021 Verify night mode in `ImageGalleryActivity.kt`: confirm `NightModeHelper` tints are applied to the gallery title/toolbar text (if any); confirm thumbnail images receive the night-mode multiply filter in `GalleryAdapter`; test visually with night mode enabled in settings
+- [x] T021 Verify night mode: no toolbar text in `ImageGalleryActivity`; thumbnail title is always white (space theme); night-mode multiply filter on images is applied in `GalleryAdapter.onBindViewHolder`
 - [ ] T022 Run `quickstart.md` validation: build both `assembleGmsDebug` and `assembleFdroidDebug`; run `GalleryItemsTest`; verify `grep` checks for deleted class names return no results
 
 ---

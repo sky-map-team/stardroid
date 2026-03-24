@@ -54,6 +54,11 @@ class ObjectInfoDialogFragment : DialogFragment() {
         fun inject(fragment: ObjectInfoDialogFragment)
     }
 
+    /** Implemented by activities that host this dialog and want to handle the Find action. */
+    interface OnFindClickedListener {
+        fun onFindClicked(info: ObjectInfo)
+    }
+
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         // Activities using this dialog MUST implement this interface
         @Suppress("UNCHECKED_CAST")
@@ -148,8 +153,8 @@ class ObjectInfoDialogFragment : DialogFragment() {
 
         val alertDialog = AlertDialog.Builder(parentActivity)
             .setView(view)
-            .setPositiveButton(android.R.string.ok) { dialog, _ ->
-                Log.d(TAG, "Object info dialog closed for: ${info.id}")
+            .setPositiveButton(R.string.action_find_in_sky_map) { dialog, _ ->
+                (activity as? OnFindClickedListener)?.onFindClicked(info)
                 dialog.dismiss()
             }
             .create()

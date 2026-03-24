@@ -38,10 +38,17 @@ class GalleryAdapter(
         holder.imageView.setImageBitmap(null)
         holder.itemView.setOnClickListener { onItemClick(item) }
 
-        val imagePath = item.imagePath ?: return
         val context = holder.itemView.context
         val prefs = PreferenceManager.getDefaultSharedPreferences(context)
         val isNight = ActivityLightLevelManager.isNightMode(prefs)
+        val nightColor = context.getColor(R.color.night_text_color)
+
+        // Tint the title label in night mode.
+        holder.titleView.setTextColor(
+            if (isNight) nightColor else context.getColor(android.R.color.white)
+        )
+
+        val imagePath = item.imagePath ?: return
 
         // cancel() in AssetImageLoader atomically nulls the callback, so any load cancelled in
         // onViewRecycled will never deliver. No need for an isAttachedToWindow guard here.
@@ -49,7 +56,6 @@ class GalleryAdapter(
             if (bitmap != null) {
                 holder.imageView.setImageBitmap(bitmap)
                 if (isNight) {
-                    val nightColor = context.getColor(R.color.night_text_color)
                     holder.imageView.setColorFilter(nightColor, PorterDuff.Mode.MULTIPLY)
                 } else {
                     holder.imageView.clearColorFilter()

@@ -111,7 +111,8 @@ import javax.inject.Provider;
  */
 public class DynamicStarMapActivity extends InjectableActivity
     implements OnSharedPreferenceChangeListener, NightModeable,
-    HasComponent<DynamicStarMapComponent> {
+    HasComponent<DynamicStarMapComponent>,
+    ObjectInfoDialogFragment.OnFindClickedListener {
   private static final int TIME_DISPLAY_DELAY_MILLIS = 1000;
   // Extra delay after the clock transition settles before querying solar-system positions.
   private static final long SEARCH_POST_TRANSITION_DELAY_MS = 500;
@@ -815,6 +816,13 @@ public class DynamicStarMapActivity extends InjectableActivity
     // Log.d(TAG, "Trackball motion " + event);
     controller.rotate(event.getX() * ROTATION_SPEED);
     return true;
+  }
+
+  @Override
+  public void onFindClicked(ObjectInfo info) {
+    Intent searchIntent = new Intent(Intent.ACTION_SEARCH);
+    searchIntent.putExtra(SearchManager.QUERY, info.getName());
+    doSearchWithIntent(searchIntent);
   }
 
   private void doSearchWithIntent(Intent searchIntent) {

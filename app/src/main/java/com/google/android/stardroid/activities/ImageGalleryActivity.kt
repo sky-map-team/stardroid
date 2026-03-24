@@ -1,12 +1,17 @@
 package com.google.android.stardroid.activities
 
+import android.app.SearchManager
+import android.content.Intent
 import android.os.Bundle
+import androidx.preference.PreferenceManager
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.stardroid.R
 import com.google.android.stardroid.activities.dialogs.ObjectInfoDialogFragment
 import com.google.android.stardroid.activities.util.ActivityLightLevelChanger
 import com.google.android.stardroid.activities.util.ActivityLightLevelManager
+import com.google.android.stardroid.activities.util.NightModeHelper
+import com.google.android.stardroid.education.ObjectInfo
 import com.google.android.stardroid.education.ObjectInfoRegistry
 import com.google.android.stardroid.gallery.GalleryAdapter
 import com.google.android.stardroid.inject.HasComponent
@@ -18,13 +23,16 @@ import javax.inject.Inject
  */
 class ImageGalleryActivity : InjectableActivity(),
     HasComponent<ImageGalleryActivityComponent>,
-    ActivityLightLevelChanger.NightModeable {
+    ActivityLightLevelChanger.NightModeable,
+    ObjectInfoDialogFragment.OnFindClickedListener {
 
     @Inject lateinit var registry: ObjectInfoRegistry
     @Inject lateinit var activityLightLevelManager: ActivityLightLevelManager
 
     override lateinit var component: ImageGalleryActivityComponent
         private set
+
+    private lateinit var galleryAdapter: GalleryAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,12 +47,13 @@ class ImageGalleryActivity : InjectableActivity(),
         val items = registry.getAllWithImages()
         val recyclerView = findViewById<RecyclerView>(R.id.gallery_grid)
         recyclerView.layoutManager = GridLayoutManager(this, 3)
-        recyclerView.adapter = GalleryAdapter(items) { info ->
+        galleryAdapter = GalleryAdapter(items) { info ->
             if (!supportFragmentManager.isStateSaved) {
                 ObjectInfoDialogFragment.newInstance(info)
                     .show(supportFragmentManager, "ObjectInfo")
             }
         }
+        recyclerView.adapter = galleryAdapter
     }
 
     override fun onResume() {
@@ -58,6 +67,22 @@ class ImageGalleryActivity : InjectableActivity(),
     }
 
     override fun setNightMode(nightMode: Boolean) {
-        // Night mode is applied per-item in GalleryAdapter.onBindViewHolder
+        NightModeHelper.applyActionBarNightMode(actionBar, this, nightMode)
+        galleryAdapter.notifyDataSetChanged()
+    }
+
+    override fun onFindClicked(info: ObjectInfo) {
+        // Ensure the relevant layers are visible so the object can be found.
+        val prefs = PreferenceManager.getDefaultSharedPreferences(this)
+        prefs.edit()
+            .putBoolean(getString(R.string.show_stars_pref), true)
+            .putBoolean(getString(R.string.show_planets_pref), true)
+            .putBoolean(getString(R.string.show_deep_sky_objects_pref), true)
+            .apply()
+        val searchIntent = Intent(this, DynamicStarMapActivity::class.java).apply {
+            action = Intent.ACTION_SEARCH
+            putExtra(SearchManager.QUERY, info.name)
+        }
+        startActivity(searchIntent)
     }
 }
