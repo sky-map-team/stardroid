@@ -108,6 +108,23 @@ as the user moves their device.
 **Rationale**: Perceptible lag between device motion and sky movement breaks the core illusion of
 the app. Even small latency regressions degrade the experience for all users.
 
+### VII. Feature-Scoped Changes Only
+
+A PR implementing or fixing a specific feature MUST NOT include incidental code cleanups in
+files touched by the feature.
+
+- Refactors, style fixes, lambda conversions, `final` modifiers, unchecked-cast removals, locale
+  changes, and similar "while I'm here" edits MUST NOT appear in a feature PR. They belong in a
+  dedicated, separately reviewed cleanup PR.
+- This rule exists because seemingly-safe cleanups frequently introduce subtle behavior changes
+  (e.g. locale-sensitive formatting, removing a guard condition, dropping a menu-item alias) that
+  are hard to spot during review when mixed with unrelated feature changes.
+- When making changes, touch only lines required to implement the feature. Leave surrounding code
+  exactly as found, even if it could be improved.
+
+**Rationale**: Mixed-scope PRs obscure behavior changes in review, increase the risk of regressions,
+and make git history harder to bisect.
+
 ## Android Code Standards
 
 - Follow the [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html):
@@ -181,4 +198,4 @@ referencing the specific principle.
 
 Runtime development guidance lives in `AGENTS.md` (project root) and `docs/ARCHITECTURE.md`.
 
-**Version**: 1.0.0 | **Ratified**: 2026-03-24 | **Last Amended**: 2026-03-24
+**Version**: 1.1.0 | **Ratified**: 2026-03-24 | **Last Amended**: 2026-03-24
