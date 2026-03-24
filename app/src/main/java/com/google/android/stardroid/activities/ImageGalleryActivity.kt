@@ -75,9 +75,9 @@ class ImageGalleryActivity : InjectableActivity(),
         // Ensure the relevant layers are visible so the object can be found.
         val prefs = PreferenceManager.getDefaultSharedPreferences(this)
         prefs.edit()
-            .putBoolean(getString(R.string.show_stars_pref), true)
-            .putBoolean(getString(R.string.show_planets_pref), true)
-            .putBoolean(getString(R.string.show_deep_sky_objects_pref), true)
+            .putBoolean("source_provider.0", true) // Stars
+            .putBoolean("source_provider.3", true) // Planets
+            .putBoolean("source_provider.2", true) // Deep Sky Objects
             .apply()
         val searchIntent = Intent(this, DynamicStarMapActivity::class.java).apply {
             action = Intent.ACTION_SEARCH
