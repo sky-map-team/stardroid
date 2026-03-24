@@ -524,7 +524,7 @@ public class DynamicStarMapActivity extends InjectableActivity
       sharedPreferences.edit().putString(ActivityLightLevelManager.LIGHT_MODE_KEY,
           nightMode ? "NIGHT" : "DAY").commit();
       menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.TOGGLED_NIGHT_MODE_LABEL);
-    } else if (itemId == R.id.menu_item_time) {
+    } else if (itemId == R.id.menu_item_time || itemId == R.id.menu_item_time2) {
       Log.d(TAG, "Starting Time Dialog from menu");
       menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.TIME_TRAVEL_OPENED_LABEL);
       if (!timePlayerUI.isShown()) {
@@ -660,7 +660,7 @@ public class DynamicStarMapActivity extends InjectableActivity
     analytics.trackEvent(AnalyticsInterface.TIME_TRAVEL_USED_EVENT, timeTravelBundle);
 
     SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy.MM.dd G  HH:mm:ss z",
-        Locale.US);
+        Locale.getDefault());
     Toast.makeText(this,
         String.format(getString(R.string.time_travel_start_message_alt),
             dateFormatter.format(newTime)),
@@ -1115,7 +1115,7 @@ public class DynamicStarMapActivity extends InjectableActivity
       private final TextView timeTravelSpeedLabel = findViewById(
           R.id.time_travel_speed_label);
       private final SimpleDateFormat dateFormatter = new SimpleDateFormat(
-          "yyyy.MM.dd G  HH:mm:ss z", Locale.US);
+          "yyyy.MM.dd G  HH:mm:ss z", Locale.getDefault());
       private final Date date = new Date();
 
       @Override
