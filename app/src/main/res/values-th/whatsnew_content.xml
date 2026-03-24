@@ -1,14 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-    <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>ภาพท้องฟ้า</h2>
-    บัตรข้อมูลขณะนี้รวมถึงภาพถ่ายสำหรับวัตถุที่มีป้ายกำกับทั้งหมด — ดาวเคราะห์ กลุ่มดาว กลุ่มดาว และวัตถุ Messier แตะวัตถุใดก็ได้เพื่อสำรวจด้วยสายตา
-
-<h2>วัตถุแคตตาล็อกใหม่</h2>
-    T Coronae Borealis ("Blaze Star") และ Eta Carinae Nebula อยู่ในแคตตาล็อกแล้ว
-
-<h2>โหมดกลางคืน</h2>
-    โหมดกลางคืนสีแดงครอบคลุมองค์ประกอบ UI เกือบทั้งหมด รวมถึงกล่องโต้ตอบทั้งหมดและหน้าจอสอบเทียมเข็มทิศ — ไม่มีแสงขาวสว่างที่ทำให้ตาบอดในที่มืด]]></string>
     <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>ผู้ใช้เบต้า!</h2>
 <h3>วิธีที่คุณสามารถช่วยได้</h3>
 ในรีลีสนี้ เมื่อคุณใช้โหมดแมนนวลและปัดแผนที่ ขอบฟ้าจะกลับมาอยู่ในระดับเดียวกัน ดังนั้นส่วนบนของแผนที่จะแสดงดาวเหนือคุณเสมอ ก่อนหน้านี้แผนที่เพียงแค่เคลื่อนไปในแนวเส้นตรง ดังนั้นคุณอาจจบลงด้วยการกลับหัว คุณคิดอย่างไร? นี่ดีกว่าหรือไม่? โปรดแจ้งให้เราทราบ <a href="https://forms.gle/JkrMw7Zc4ynp45J79">ที่นี่</a><br/>
