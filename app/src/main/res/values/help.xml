@@ -34,7 +34,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;b&gt;Stars:&lt;/b&gt; The brightest stars, with labels for notable ones&lt;/li&gt;
 &lt;li&gt;&lt;b&gt;Constellations:&lt;/b&gt; Constellation outlines and names&lt;/li&gt;
-&lt;li&gt;&lt;b&gt;Messier Objects:&lt;/b&gt; Deep-sky objects: galaxies, nebulae, and star clusters&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Notable Deep Sky Objects:&lt;/b&gt; Galaxies, nebulae, star clusters, and other remarkable objects&lt;/li&gt;
 &lt;li&gt;&lt;b&gt;Planets:&lt;/b&gt; The planets of our solar system, displayed as images&lt;/li&gt;
 &lt;li&gt;&lt;b&gt;Meteor Showers:&lt;/b&gt; Active and upcoming meteor shower radiant points&lt;/li&gt;
 &lt;li&gt;&lt;b&gt;Ecliptic &amp; RA/Dec Grid:&lt;/b&gt; The Ecliptic is the Sun\'s annual path through the sky&lt;/li&gt;
@@ -52,7 +52,7 @@
 &lt;li&gt;&lt;b&gt;Stars&lt;/b&gt; — by name, e.g. \"Sirius\", \"Betelgeuse\", \"Polaris\"&lt;/li&gt;
 &lt;li&gt;&lt;b&gt;Planets&lt;/b&gt; — e.g. \"Mars\", \"Saturn\"&lt;/li&gt;
 &lt;li&gt;&lt;b&gt;Constellations&lt;/b&gt; — e.g. \"Orion\", \"Cassiopeia\"&lt;/li&gt;
-&lt;li&gt;&lt;b&gt;Messier objects&lt;/b&gt; — e.g. \"M31\", \"Andromeda Galaxy\", \"Pleiades\"&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Deep-sky objects&lt;/b&gt; — e.g. \"M31\", \"Andromeda Galaxy\", \"Pleiades\"&lt;/li&gt;
 &lt;li&gt;&lt;b&gt;Comets and meteor showers&lt;/b&gt; — by name&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;b&gt;In Automatic Mode:&lt;/b&gt; after selecting a result, Sky Map shows a targeting circle and a directional arrow. Follow the arrow by rotating your phone — the circle changes from blue to red, then orange when the object is within your field of view. Tap the ✕ to exit search.&lt;/p&gt;
@@ -76,7 +76,7 @@
 &lt;p&gt;Accuracy decreases for dates far from the present, mainly due to the gravitational influence of Jupiter.&lt;/p&gt;
 
 &lt;h2&gt;Info Cards&lt;/h2&gt;
-&lt;p&gt;Tap any labeled celestial object on the sky map to bring up an info card — a panel with a photo and details about that object. Info cards are available for 150+ objects including stars, planets, the Moon, Messier deep-sky objects, and constellations.&lt;/p&gt;
+&lt;p&gt;Tap any labeled celestial object on the sky map to bring up an info card — a panel with a photo and details about that object. Info cards are available for 150+ objects including stars, planets, the Moon, notable deep-sky objects, and constellations.&lt;/p&gt;
 &lt;p&gt;Each card shows:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;A photograph or chart of the object&lt;/li&gt;
@@ -116,7 +116,7 @@
 &lt;h2&gt;Tips and Settings Worth Knowing&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;b&gt;Diagnostics:&lt;/b&gt; If something looks wrong, open the overflow menu and tap &lt;b&gt;Diagnostics&lt;/b&gt;. This page shows your current location, time, sensor status, and accuracy readings — very useful if you need to report a problem.&lt;/li&gt;
-&lt;li&gt;&lt;b&gt;Messier images:&lt;/b&gt; Under &lt;b&gt;Settings → Appearance&lt;/b&gt;, you can choose whether Messier objects appear as realistic thumbnail images or simple dots.&lt;/li&gt;
+
 &lt;li&gt;&lt;b&gt;Font size:&lt;/b&gt; Adjust label size under &lt;b&gt;Settings → Appearance&lt;/b&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;b&gt;Jittery map:&lt;/b&gt; Experiment with &lt;b&gt;Sensor Speed&lt;/b&gt; and &lt;b&gt;Sensor Damping&lt;/b&gt; under &lt;b&gt;Settings → Sensor Settings (Experts)&lt;/b&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;b&gt;No gyroscope?&lt;/b&gt; If your phone lacks a gyroscope, enable &lt;b&gt;Disable Gyro&lt;/b&gt; in Sensor Settings to use an alternative sensor mode.&lt;/li&gt;

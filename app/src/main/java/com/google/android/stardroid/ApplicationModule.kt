@@ -97,7 +97,7 @@ class ApplicationModule(private val app: StardroidApplication) {
     Log.i(TAG, "Initializing LayerManager")
     val layerManager = LayerManager(preferences)
     layerManager.addLayer(StarsLayer(assetManager, resources, preferences))
-    layerManager.addLayer(MessierLayer(assetManager, resources, preferences))
+    layerManager.addLayer(DeepSkyObjectLayer(assetManager, resources, preferences))
     layerManager.addLayer(ConstellationsLayer(assetManager, resources, preferences))
     layerManager.addLayer(SolarSystemLayer(model!!, resources, preferences))
     layerManager.addLayer(MeteorShowerLayer(model, resources, preferences))

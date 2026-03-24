@@ -127,8 +127,8 @@
                 android:paddingLeft="5px"
                 android:paddingTop="7px"
                 android:paddingBottom="7px"
-                stardroid:image_off="@drawable/messier_off"
-                stardroid:image_on="@drawable/messier_on"
+                stardroid:image_off="@drawable/deep_sky_objects_off"
+                stardroid:image_on="@drawable/deep_sky_objects_on"
                 stardroid:pref_key="source_provider.2" />
 
             <com.google.android.stardroid.views.PreferencesButton

@@ -117,7 +117,7 @@ public interface AnalyticsInterface {
   Map<String, String> LAYER_NAME_MAP = Map.of(
       "source_provider.0", "stars",
       "source_provider.1", "constellations",
-      "source_provider.2", "messier",
+      "source_provider.2", "deep_sky_objects",
       "source_provider.3", "solar_system",
       "source_provider.4", "grid",
       "source_provider.5", "horizon",
