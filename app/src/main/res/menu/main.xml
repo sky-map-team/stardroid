@@ -41,36 +41,48 @@
           android:showAsAction="ifRoom"
           android:icon="@android:drawable/ic_menu_preferences"/>
 
-    <item android:id="@+id/menu_item_calibrate"
+    <!-- People don't always understand the swirly icon
+        in the action bar -->
+    <item android:id="@+id/menu_item_time2"
         android:orderInCategory="5"
+        android:title="@string/menu_time"
+        android:icon="@drawable/time_travel_icon"
+        android:showAsAction="never"/>
+
+    <item android:id="@+id/menu_item_calibrate"
+        android:orderInCategory="6"
         android:title="@string/menu_calibrate"
+        android:icon="@android:drawable/ic_menu_compass"
         android:showAsAction="never"/>
 
     <item android:id="@+id/menu_item_gallery"
-          android:orderInCategory="6"
+          android:orderInCategory="7"
           android:title="@string/menu_gallery"
           android:showAsAction="ifRoom"
           android:icon="@android:drawable/ic_menu_gallery"/>
 
     <item android:id="@+id/menu_item_diagnostics"
-          android:orderInCategory="7"
+          android:orderInCategory="8"
           android:title="@string/menu_diagnostics"
+        android:icon="@android:drawable/ic_menu_info_details"
           android:showAsAction="never"/>
 
     <item android:id="@+id/menu_item_tos"
-        android:orderInCategory="8"
+        android:orderInCategory="9"
         android:showAsAction="never"
+        android:icon="@android:drawable/ic_menu_agenda"
         android:title="@string/menu_tos"/>
 
     <item android:id="@+id/menu_item_credits"
-          android:orderInCategory="9"
+          android:orderInCategory="10"
           android:title="@string/menu_credits"
+        android:icon="@android:drawable/ic_menu_myplaces"
           android:showAsAction="never"/>
 
     <item android:id="@+id/menu_item_help"
-          android:orderInCategory="10"
+          android:orderInCategory="11"
           android:title="@string/menu_help"
           android:showAsAction="never"
-          android:icon="@android:drawable/ic_menu_info_details"/>
+          android:icon="@android:drawable/ic_menu_help"/>
 
 </menu>
