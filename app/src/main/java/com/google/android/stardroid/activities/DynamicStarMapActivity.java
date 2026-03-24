@@ -862,7 +862,7 @@ public class DynamicStarMapActivity extends InjectableActivity
 
   private void setAutoMode(boolean auto) {
     Bundle b = new Bundle();
-    b.putBoolean(Analytics.MANUAL_MODE_ENABLED, auto);
+    b.putBoolean(Analytics.MANUAL_MODE_ENABLED, !auto);
     analytics.trackEvent(Analytics.MANUAL_MODE_TOGGLED_EVENT, b);
     controller.setAutoMode(auto);
     if (auto) {
