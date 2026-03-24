@@ -46,8 +46,13 @@ obsolete hardware.
 
 ### Opting out
 
+We respect your privacy and do not collect your personal information - we cannot tell anything
+about you as a user specifically.
+
 If you do not wish to share analytics data, you can opt out at any time via **Settings →
 Enable analytics**. Disabling analytics suppresses all data collection, including Firebase's
 own automatic events.
+
+Otherwise, thank you for helping make Sky Map better.
 
 For more information on Firebase Analytics see https://firebase.google.com/support/privacy.

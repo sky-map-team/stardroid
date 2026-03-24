@@ -68,7 +68,7 @@ public interface AnalyticsInterface {
   String DIAGNOSTICS_OPENED_LABEL = "diagnostics_opened";
   String SEARCH_EVENT = "search";
   String SEARCH_TERM = "search_term";
-  String SEARCH_SUCCESS = "search_success";
+  String SEARCH_SUCCESS = "search_success"; // parameter name in Firebase, keep as-is
   String SEARCH_FAILED_EVENT = "search_failed_ev";
   String START_EVENT = "start_up_event_ev";
   String START_EVENT_HOUR = "local_hour";
@@ -77,6 +77,7 @@ public interface AnalyticsInterface {
   String START_EVENT_SENSOR_PATH = "sensor_path";
   String SENSOR_PATH_ROTATION_VECTOR = "rotation_vector";
   String SENSOR_PATH_ACCEL_MAG = "accel_mag";
+  String SENSOR_PATH_NONE = "none";  // No sensor manager available; app runs in manual mode only
 
   String TIME_TRAVEL_USED_EVENT = "time_travel_used_ev";
   String TIME_TRAVEL_EVENT_KEY = "travel_event";

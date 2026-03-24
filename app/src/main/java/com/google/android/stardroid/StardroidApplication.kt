@@ -174,7 +174,7 @@ class StardroidApplication : Application() {
       analytics.setUserProperty(
         AnalyticsInterface.DEVICE_SENSORS, AnalyticsInterface.DEVICE_SENSORS_NONE
       )
-      return AnalyticsInterface.SENSOR_PATH_ACCEL_MAG
+      return AnalyticsInterface.SENSOR_PATH_NONE
     }
     // Reported available sensors
     val reportedSensors: MutableList<String> = ArrayList()
