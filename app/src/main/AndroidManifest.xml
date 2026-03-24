@@ -79,9 +79,6 @@
         <activity
             android:name=".activities.ImageGalleryActivity"/>
         <activity
-            android:name=".activities.ImageDisplayActivity"
-            android:screenOrientation="portrait"/>
-        <activity
             android:name=".activities.DiagnosticActivity"
             android:label="@string/title_activity_diagnostic">
         </activity>
