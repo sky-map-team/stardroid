@@ -41,7 +41,7 @@
     <string name="manual_compass_adjustment_summary" translation_description="Summary for the manual compass adjustment preference">Extra offset in degrees (+ or −) added to compass reading</string>
     <string name="show_stars_pref" translation_description="Label for the stars layer on the sky map (shows in the search results)">Stars</string>
     <string name="show_constellations_pref" translation_description="Label for the constellation lines and labels layer (shows in the search results)">Constellations</string>
-    <string name="show_messier_objects_pref" translation_description="Deep-sky objects layer — galaxies, nebulae, star clusters, and other notable objects (shows in the search results)">Deep Sky Objects</string>
+    <string name="show_deep_sky_objects_pref" translation_description="Deep-sky objects layer — galaxies, nebulae, star clusters, and other notable objects (shows in the search results)">Deep Sky Objects</string>
     <string name="show_planets_pref" translation_description="Label for the solar system layer (planets, sun, moon)  (shows in the search results)">Solar System</string>
     <string name="show_grid_pref" translation_description="Label for the Right Ascension / Declination grid overlay  (shows in the search results)">RA/Dec Grid</string>
     <string name="show_horizon_pref" translation_description="Preference toggle label for the horizon line layer">Horizon</string>

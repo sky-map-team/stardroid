@@ -20,17 +20,17 @@ import com.google.android.stardroid.R
 
 /**
  * An implementation of the [AbstractFileBasedLayer] for displaying
- * deep-sky objects.
+ * deep-sky objects (galaxies, nebulae, star clusters, and other notable objects).
  *
  * @author John Taylor
  * @author Brent Bryan
  */
-class MessierLayer(assetManager: AssetManager, resources: Resources, preferences: SharedPreferences) :
-    AbstractFileBasedLayer(assetManager, resources, "messier.binary", preferences) {
+class DeepSkyObjectLayer(assetManager: AssetManager, resources: Resources, preferences: SharedPreferences) :
+    AbstractFileBasedLayer(assetManager, resources, "deep_sky_objects.binary", preferences) {
 
     override val layerDepthOrder = 20
 
-    override val layerNameId = R.string.show_messier_objects_pref
+    override val layerNameId = R.string.show_deep_sky_objects_pref
 
     // TODO(brent): Remove this.
     override val preferenceId = "source_provider.2"

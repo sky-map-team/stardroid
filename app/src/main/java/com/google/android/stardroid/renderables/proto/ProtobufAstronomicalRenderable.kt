@@ -146,7 +146,7 @@ class ProtobufAstronomicalRenderable(
             }
 
             // Points are hidden when images are shown instead
-            if (isMessierObject()) {
+            if (isDeepSkyObject()) {
                 return emptyList<PointPrimitive>()
             }
 
@@ -197,7 +197,7 @@ class ProtobufAstronomicalRenderable(
 
     override val images: List<ImagePrimitive>
         get() {
-            if (!isMessierObject() || proto.pointCount == 0) {
+            if (!isDeepSkyObject() || proto.pointCount == 0) {
                 return emptyList<ImagePrimitive>()
             }
 
@@ -218,9 +218,9 @@ class ProtobufAstronomicalRenderable(
             return images
         }
 
-    private fun isMessierObject(): Boolean {
-        // Messier objects are identified by their shape type
-        // Check if any points have a Messier-specific shape
+    private fun isDeepSkyObject(): Boolean {
+        // Deep-sky objects are identified by their shape type
+        // Check if any points have a deep-sky-specific shape
         // (This is obviously a terrible way to do it).
         if (proto.pointCount == 0) return false
 

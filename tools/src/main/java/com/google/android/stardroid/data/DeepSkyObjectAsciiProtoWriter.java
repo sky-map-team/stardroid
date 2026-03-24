@@ -25,12 +25,12 @@ import com.google.android.stardroid.source.proto.SourceProto.Shape;
 
 
 /**
- * Class for reading the messier csv file and writing the contents to protocol
+ * Class for reading the deep-sky objects csv file and writing the contents to protocol
  * buffers.
  *
  * @author brent@google.com (Brent Bryan)
  */
-public class MessierAsciiProtoWriter extends AbstractAsciiProtoWriter {
+public class DeepSkyObjectAsciiProtoWriter extends AbstractAsciiProtoWriter {
   // TODO(mrhector): verify colors
   private static final int LABEL_COLOR = 0x48a841; // argb
   private static final int POINT_COLOR = 0x48a841; // abgr (!)
@@ -54,7 +54,7 @@ public class MessierAsciiProtoWriter extends AbstractAsciiProtoWriter {
       case "Other":
         return Shape.OTHER;
       default:
-        System.out.println("WARNING! Unknown messier type: " + type);
+        System.out.println("WARNING! Unknown deep-sky object type: " + type);
         return Shape.OTHER;  // Fallback for unknowns
     }
   }
@@ -108,6 +108,6 @@ public class MessierAsciiProtoWriter extends AbstractAsciiProtoWriter {
   }
 
   public static void main(String[] args) throws IOException {
-    new MessierAsciiProtoWriter().run(args);
+    new DeepSkyObjectAsciiProtoWriter().run(args);
   }
 }
