@@ -16,7 +16,6 @@ package com.google.android.stardroid.util;
 
 import android.os.Bundle;
 
-import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -114,15 +113,15 @@ public interface AnalyticsInterface {
   String LAYER_TOGGLED_NAME = "layer_name";
   String LAYER_TOGGLED_ENABLED = "layer_enabled";
 
-  Map<String, String> LAYER_NAME_MAP = new HashMap<String, String>() {{
-    put("source_provider.0", "stars");
-    put("source_provider.1", "constellations");
-    put("source_provider.2", "messier");
-    put("source_provider.3", "solar_system");
-    put("source_provider.4", "grid");
-    put("source_provider.5", "horizon");
-    put("source_provider.6", "meteor_showers");
-  }};
+  Map<String, String> LAYER_NAME_MAP = Map.of(
+      "source_provider.0", "stars",
+      "source_provider.1", "constellations",
+      "source_provider.2", "messier",
+      "source_provider.3", "solar_system",
+      "source_provider.4", "grid",
+      "source_provider.5", "horizon",
+      "source_provider.6", "meteor_showers"
+  );
 
   static String layerDisplayName(String prefKey) {
     return LAYER_NAME_MAP.getOrDefault(prefKey, prefKey);
