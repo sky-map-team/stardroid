@@ -160,7 +160,7 @@ public class ImageDisplayActivity extends InjectableActivity
     SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
     Editor editor = sharedPreferences.edit();
     String[] keys = { "source_provider.0",  // Stars
-                      "source_provider.2",  // Messier
+                      "source_provider.2",  // Deep Sky Objects
                       "source_provider.3" };  // Planets
     for (String key : keys) {
       if (!sharedPreferences.getBoolean(key , false)) {
