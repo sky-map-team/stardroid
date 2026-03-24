@@ -56,6 +56,7 @@ Branch: `feature/auto-level-horizon` (pushed 2026-03-01)
 3. Callback calls `controllerGroup.rotate(delta)` directly (not via `mapMover.onRotate` which has a sign flip).
 ## Release Process
 - [feedback_play_store_build.md](feedback_play_store_build.md) — Always run a full build before pushing to Play Store
+- [feedback_version_name.md](feedback_version_name.md) — Always preserve the full version name including `:Earth` suffix when bumping. This suffix will change with minor and major version bumps but not with point/bugfix bumps.
 
 ## Location UX Fix
 
