@@ -27,14 +27,8 @@ public class MenuUtils {
         Method m = menu.getClass().getDeclaredMethod("setOptionalIconsVisible", Boolean.TYPE);
         m.setAccessible(true);
         m.invoke(menu, true);
-      } catch (NoSuchMethodException e) {
-        Log.e(TAG, "Method setOptionalIconsVisible not found", e);
-      } catch (IllegalAccessException e) {
-        Log.e(TAG, "Illegal access to setOptionalIconsVisible", e);
-      } catch (InvocationTargetException e) {
-        Log.e(TAG, "Invocation target exception for setOptionalIconsVisible", e);
-      } catch (ClassCastException e) {
-        Log.e(TAG, "Class cast exception for setOptionalIconsVisible", e);
+      } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+        Log.w(TAG, "Could not invoke setOptionalIconsVisible on menu", e);
       }
     }
   }
