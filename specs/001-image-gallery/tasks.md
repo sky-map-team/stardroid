@@ -98,7 +98,7 @@ navigates to object. From the star map, tapping an object → info card → Find
 **Purpose**: Verify night mode, cleanup, and final validation.
 
 - [x] T021 Verify night mode: no toolbar text in `ImageGalleryActivity`; thumbnail title is always white (space theme); night-mode multiply filter on images is applied in `GalleryAdapter.onBindViewHolder`
-- [ ] T022 Run `quickstart.md` validation: build both `assembleGmsDebug` and `assembleFdroidDebug`; run `GalleryItemsTest`; verify `grep` checks for deleted class names return no results
+- [x] T022 Run `quickstart.md` validation: build both `assembleGmsDebug` and `assembleFdroidDebug`; run `GalleryItemsTest`; verify `grep` checks for deleted class names return no results
 
 ---
 
