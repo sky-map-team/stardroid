@@ -249,5 +249,6 @@ Tu teléfono informa la precisión de la brújula como se muestra arriba. Para m
     <string name="object_info_image_content_description" translation_description="Accessibility description for celestial object photo">Foto del objeto celeste</string>
     <string name="object_info_tap_to_expand" translation_description="Hint shown on image to tap to expand">Toca para ampliar</string>
     <string name="object_info_tap_to_close" translation_description="Hint shown on expanded image to tap to close">Toca para cerrar</string>
+    <string name="action_find_in_sky_map" translation_description="Button label that opens the star map and searches for the displayed object">Buscar</string>
 
 </resources>

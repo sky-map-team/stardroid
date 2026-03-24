@@ -241,5 +241,6 @@
     <string name="object_info_image_content_description" translation_description="Accessibility description for celestial object photo">Foto af himmellegeme</string>
     <string name="object_info_tap_to_expand" translation_description="Hint shown on image to tap to expand">Tryk for at udvide</string>
     <string name="object_info_tap_to_close" translation_description="Hint shown on expanded image to tap to close">Tryk for at lukke</string>
+    <!-- tm:omitted name="action_find_in_sky_map" reason="identical_to_source" -->
 
 </resources>

@@ -243,5 +243,6 @@ Jika peranti anda benar-benar tidak mempunyai sensor, maka mod auto tidak akan b
     <string name="object_info_image_content_description" translation_description="Accessibility description for celestial object photo">Foto objek langit</string>
     <string name="object_info_tap_to_expand" translation_description="Hint shown on image to tap to expand">Ketik untuk mengembangkan</string>
     <string name="object_info_tap_to_close" translation_description="Hint shown on expanded image to tap to close">Ketik untuk menutup</string>
+    <string name="action_find_in_sky_map" translation_description="Button label that opens the star map and searches for the displayed object">Cari</string>
 
 </resources>
