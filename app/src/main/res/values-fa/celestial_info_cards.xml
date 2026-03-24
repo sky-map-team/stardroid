@@ -903,6 +903,24 @@
     </string>
     <string name="object_info_willman_1_distance" translation_description="Distance to Willman 1 shown in the info card. Translate units if appropriate for your locale.">~۱۳۰٬۰۰۰ سال نوری</string>
     <string name="object_info_willman_1_size" translation_description="Physical size of Willman 1 shown in the info card. Translate units if appropriate for your locale.">~۱۳۰ سال نوری در سراسر</string>
+    <!-- Sagittarius A* -->
+    <string name="object_info_sgr_a_star_description" translation_description="Description of Sagittarius A* shown in the info card. Translate this text.">
+    Sagittarius A* (Sgr A*) سیاهچالهٔ فوق‌العظیم در مرکز کهکشان راه‌شیری است که در فاصلهٔ ۲۶٬۰۰۰ سال‌نوری در جهت صورت‌فلکی قوس‌الرامی قرار دارد. با جرمی معادل حدود ۴ میلیون جرم خورشید که در ناحیهٔ کوچک‌تر از منظومهٔ شمسی فشرده شده است، آن‌قدر متراکم است که حتی نور نیز نمی‌تواند از افق رویدادش فرار کند.
+    </string>
+    <string name="object_info_sgr_a_star_funfact" translation_description="Fun fact about Sagittarius A* shown in the info card. Translate this text.">
+    در سال ۲۰۲۲ همکاری تلسکوپ افق رویداد اولین تصویر مستقیم از Sgr A* را منتشر کرد که یک حلقه درخشان از گاز بسیار داغ را در اطراف سایه آن نشان می‌دهد — که از ترکیب داده‌های رصدخانه‌های رادیویی پراکنده در سراسر سیاره تولید شده است.
+    </string>
+    <string name="object_info_sgr_a_star_distance" translation_description="Distance to Sgr A* shown in the info card. Translate units if appropriate for your locale.">۲۶٬۰۰۰ سال نوری</string>
+    <string name="object_info_sgr_a_star_size" translation_description="Physical size of Sgr A* shown in the info card. Translate units if appropriate for your locale.">قطر افق رویداد: ~۲۴ میلیون کیلومتر</string>
+    <!-- Cygnus X-1 -->
+    <string name="object_info_cygnus_x_1_description" translation_description="Description of Cygnus X-1 shown in the info card. Translate this text.">
+    سیگنوس X-1 یک سیاهچاله با جرم ستاره‌ای است که حدود ۷٬۲۰۰ سال نوری در صورت فلکی قو قرار دارد و یکی از قوی‌ترین منابع پرتو X در آسمان است. این سیاهچاله یک سیستم دوتایی با ستاره غول آبی HDE 226868 تشکیل می‌دهد و هر ۵٫۶ روز به دور یکدیگر می‌چرخند. سیاهچاله گاز را از ستاره همراه خود جدا می‌کند و یک دیسک برافزایش فوق‌الحرارهٔ تشکیل می‌دهد که در پرتو X درخشان است.
+    </string>
+    <string name="object_info_cygnus_x_1_funfact" translation_description="Fun fact about Cygnus X-1 shown in the info card. Translate this text.">
+    سیگنوس X-1 اولین جسمی بود که به طور گسترده‌ای به عنوان سیاهچاله پذیرفته شد. در سال ۱۹۷۵، استیفن هاوکینگ با کیپ تورن شرط‌بندی علمی معروفی کرد که این جسم سیاهچاله نیست، شرطی که بعدها پذیرفت.
+    </string>
+    <string name="object_info_cygnus_x_1_distance" translation_description="Distance to Cygnus X-1 shown in the info card. Translate units if appropriate for your locale.">۷٬۲۰۰ سال نوری</string>
+    <string name="object_info_cygnus_x_1_size" translation_description="Physical size of Cygnus X-1 shown in the info card. Translate units if appropriate for your locale.">جرم سیاهچاله: ~۲۱ جرم خورشیدی</string>
     <!-- Eta Carinae Nebula (NGC 3372) -->
     <string name="object_info_eta_carinae_nebula_description" translation_description="Description of Eta Carinae Nebula shown in the info card. Translate this text.">
     سحابة اتا کارینا (NGC 3372) یکی از بزرگ‌ترین و درخشان‌ترین سحابه‌های آسمان است که بیش از 300 سال نوری را در بر می‌گیرد. در قلب آن، ستاره اتا کارینا قرار دارد که یکی از پرجرم‌ترین و درخشان‌ترین ستاره‌های شناخته‌شده است و بیش از 100 جرم خورشیدی دارد.

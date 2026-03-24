@@ -925,6 +925,24 @@
     </string>
     <string name="object_info_willman_1_distance" translation_description="Distance to Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130.000 έτη φωτός</string>
     <string name="object_info_willman_1_size" translation_description="Physical size of Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130 έτη φωτός διάμετρος</string>
+    <!-- Sagittarius A* -->
+    <string name="object_info_sgr_a_star_description" translation_description="Description of Sagittarius A* shown in the info card. Translate this text.">
+    Sagittarius A* (Sgr A*) είναι η υπερμεγάλη μαύρη τρύπα στο κέντρο του Γαλαξία, που βρίσκεται 26.000 έτη φωτός μακριά προς την κατεύθυνση του Τοξότη. Με μάζα περίπου 4 εκατομμυρίων ηλιακών μαζών συμπιεσμένη σε μια περιοχή μικρότερη από το ηλιακό μας σύστημα, είναι τόσο πυκνή που ούτε το φως μπορεί να ξεφύγει από τον ορίζοντα γεγονότων της.
+    </string>
+    <string name="object_info_sgr_a_star_funfact" translation_description="Fun fact about Sagittarius A* shown in the info card. Translate this text.">
+    Το 2022, η συνεργασία του Event Horizon Telescope δημοσίευσε την πρώτη άμεση εικόνα του Sgr A*, αποκαλύπτοντας έναν λαμπερό δακτύλιο υπερθερμασμένου αερίου γύρω από τη σκιά του — παραγόμενο συνδυάζοντας δεδομένα από ραδιοτηλεσκόπια διασκορπισμένα σε ολόκληρο τον πλανήτη.
+    </string>
+    <string name="object_info_sgr_a_star_distance" translation_description="Distance to Sgr A* shown in the info card. Translate units if appropriate for your locale.">26.000 έτη φωτός</string>
+    <string name="object_info_sgr_a_star_size" translation_description="Physical size of Sgr A* shown in the info card. Translate units if appropriate for your locale.">Διάμετρος ορίζοντα γεγονότων: ~24 εκατομμύρια χλμ</string>
+    <!-- Cygnus X-1 -->
+    <string name="object_info_cygnus_x_1_description" translation_description="Description of Cygnus X-1 shown in the info card. Translate this text.">
+    Το Cygnus X-1 είναι μια μαύρη τρύπα αστρικής μάζας περίπου 7.200 έτη φωτός μακριά στον Κύκνο, και μία από τις ισχυρότερες πηγές ακτίνων Χ στον ουράνιο θόλο. Σχηματίζει ένα δυαδικό σύστημα με το μπλε υπεργίγαντο αστέρι HDE 226868, περιφερόμενα το ένα γύρω από το άλλο κάθε 5,6 ημέρες. Η μαύρη τρύπα αφαιρεί αέριο από τον συνοδό της, σχηματίζοντας έναν υπερθερμό δίσκο προσαύξησης που λάμπει στις ακτίνες Χ.
+    </string>
+    <string name="object_info_cygnus_x_1_funfact" translation_description="Fun fact about Cygnus X-1 shown in the info card. Translate this text.">
+    Το Cygnus X-1 ήταν το πρώτο αντικείμενο που γενικά αποδεκτό ως μαύρη τρύπα. Το 1975, ο Stephen Hawking έκανε ένα διάσημο επιστημονικό στοίχημα με τον Kip Thorne ότι δεν ήταν μαύρη τρύπα, ένα στοίχημα που αργότερα παραδέχθηκε ότι έχασε.
+    </string>
+    <string name="object_info_cygnus_x_1_distance" translation_description="Distance to Cygnus X-1 shown in the info card. Translate units if appropriate for your locale.">7.200 έτη φωτός</string>
+    <string name="object_info_cygnus_x_1_size" translation_description="Physical size of Cygnus X-1 shown in the info card. Translate units if appropriate for your locale.">Μάζα μαύρης τρύπας: ~21 ηλιακές μάζες</string>
     <!-- Eta Carinae Nebula (NGC 3372) -->
     <string name="object_info_eta_carinae_nebula_description" translation_description="Description of Eta Carinae Nebula shown in the info card. Translate this text.">
     Το Νεφέλωμα Eta Carinae (NGC 3372) είναι ένα από τα μεγαλύτερα και φωτεινότερα νεφελώματα στον ουρανό, που εκτείνεται σε περισσότερα από 300 έτη φωτός. Στην καρδιά του βρίσκεται η Eta Carinae, ένα από τα πιο μαζικά και λαμπρά αστέρια που είναι γνωστά, με μάζα μεγαλύτερη από 100 ηλιακές μάζες.

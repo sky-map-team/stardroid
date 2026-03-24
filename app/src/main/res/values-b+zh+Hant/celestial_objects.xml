@@ -335,6 +335,15 @@
     <!-- tm:omitted name="nubecula_minor" reason="identical_to_source" -->
     <!-- tm:omitted name="willman_1" reason="identical_to_source" -->
     <string name="beth_willman_galaxy" translation_description="Informal nickname for the ultra-faint dwarf galaxy Willman 1, honouring its discoverer">貝絲·威爾曼星系</string>
+    <!-- Sagittarius A* -->
+    <string name="sgr_a_star" translation_description="Abbreviated designation for the supermassive black hole at the Milky Way centre">人馬座 A*</string>
+    <string name="sagittarius_a_star" translation_description="Full name of the supermassive black hole at the Milky Way centre">人馬座 A*</string>
+    <string name="black_hole" translation_description="Generic search term for black holes; used as an alias for Sagittarius A*">黑洞</string>
+    <string name="galactic_center" translation_description="The centre of the Milky Way galaxy, location of Sgr A*">銀河中心</string>
+    <!-- Cygnus X-1 -->
+    <string name="cygnus_x_1" translation_description="Designation for the stellar-mass black hole binary system in Cygnus">天鵝座 X-1</string>
+    <string name="black_hole_binary" translation_description="Search alias for Cygnus X-1, a famous black hole X-ray binary system">黑洞雙星</string>
+    <string name="stellar_black_hole" translation_description="Search alias for Cygnus X-1, the archetypal stellar-mass black hole">恆星黑洞</string>
     <string name="butterfly_cluster" translation_description="Name of the Messier object Butterfly Cluster">蝴蝶星團</string>
     <string name="scorpions_tail" translation_description="Name of the Messier object Scorpion\'s Tail">托勒密星團</string>
     <string name="winnecke_4" translation_description="Name of the Messier object Winnecke 4">梅西爾 40</string>

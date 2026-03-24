@@ -923,6 +923,24 @@
     </string>
     <string name="object_info_willman_1_distance" translation_description="Distance to Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130 000 lat świetlnych</string>
     <string name="object_info_willman_1_size" translation_description="Physical size of Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130 lat świetlnych średnicy</string>
+    <!-- Sagittarius A* -->
+    <string name="object_info_sgr_a_star_description" translation_description="Description of Sagittarius A* shown in the info card. Translate this text.">
+    Sagittarius A* (Sgr A*) to supermasywna czarna dziura w centrum Drogi Mlecznej, położona 26 000 lat świetlnych od nas w kierunku Strzelca. Mając masę około 4 milionów mas słonecznych skompresowaną w obszar mniejszy niż nasz Układ Słoneczny, jest tak gęsta, że nawet światło nie może uciec z jej horyzontu zdarzeń.
+    </string>
+    <string name="object_info_sgr_a_star_funfact" translation_description="Fun fact about Sagittarius A* shown in the info card. Translate this text.">
+    W 2022 roku kolaboracja Event Horizon Telescope opublikowała pierwszy bezpośredni obraz Sgr A*, ujawniając świecący pierścień przegrzanego gazu otaczający jego cień — uzyskany poprzez połączenie danych z radioobserwatoriów rozsianych na całej planecie.
+    </string>
+    <string name="object_info_sgr_a_star_distance" translation_description="Distance to Sgr A* shown in the info card. Translate units if appropriate for your locale.">26 000 lat świetlnych</string>
+    <string name="object_info_sgr_a_star_size" translation_description="Physical size of Sgr A* shown in the info card. Translate units if appropriate for your locale.">Średnica horyzontu zdarzeń: ~24 miliony km</string>
+    <!-- Cygnus X-1 -->
+    <string name="object_info_cygnus_x_1_description" translation_description="Description of Cygnus X-1 shown in the info card. Translate this text.">
+    Cygnus X-1 to czarna dziura o masie gwiazdy, odległa o około 7200 lat świetlnych w gwiazdozbiorze Łabędzia, i jedno z najsilniejszych źródeł promieni X na niebie. Tworzy układ podwójny z błękitnym supergiantem HDE 226868, orbitując wokół siebie co 5,6 dnia. Czarna dziura wyrywa gaz z towarzyszącej gwiazdy, tworząc rozgrzaną tarczę akrecyjną, która błyska w promieniach X.
+    </string>
+    <string name="object_info_cygnus_x_1_funfact" translation_description="Fun fact about Cygnus X-1 shown in the info card. Translate this text.">
+    Cygnus X-1 był pierwszym obiektem powszechnie uznanym za czarną dziurę. W 1975 roku Stephen Hawking zawarł słynny zakład naukowy z Kipem Thorne\'em, że to NIE jest czarna dziura, a później przyznał się do porażki.
+    </string>
+    <string name="object_info_cygnus_x_1_distance" translation_description="Distance to Cygnus X-1 shown in the info card. Translate units if appropriate for your locale.">7 200 lat świetlnych</string>
+    <string name="object_info_cygnus_x_1_size" translation_description="Physical size of Cygnus X-1 shown in the info card. Translate units if appropriate for your locale.">Masa czarnej dziury: ~21 mas słonecznych</string>
     <!-- Eta Carinae Nebula (NGC 3372) -->
     <string name="object_info_eta_carinae_nebula_description" translation_description="Description of Eta Carinae Nebula shown in the info card. Translate this text.">
     Mgławica Eta Carinae (NGC 3372) jest jedną z największych i najjaśniejszych mgławic na niebie, rozciągając się na ponad 300 lat świetlnych. W jej centrum znajduje się Eta Carinae, jedna z najbardziej masywnych i luminicznych gwiazd znanych nauce, ważąca ponad 100 mas słonecznych.

@@ -332,6 +332,13 @@
     <!-- tm:omitted name="nubecula_minor" reason="identical_to_source" -->
     <!-- tm:omitted name="willman_1" reason="identical_to_source" -->
     <string name="beth_willman_galaxy" translation_description="Informal nickname for the ultra-faint dwarf galaxy Willman 1, honouring its discoverer">Galaksi Beth Willman</string>
+    <!-- tm:omitted name="sgr_a_star" reason="identical_to_source" -->
+    <!-- tm:omitted name="sagittarius_a_star" reason="identical_to_source" -->
+    <string name="black_hole" translation_description="Generic search term for black holes; used as an alias for Sagittarius A*">Lubang Hitam</string>
+    <string name="galactic_center" translation_description="The centre of the Milky Way galaxy, location of Sgr A*">Pusat Galaksi</string>
+    <!-- tm:omitted name="cygnus_x_1" reason="identical_to_source" -->
+    <string name="black_hole_binary" translation_description="Search alias for Cygnus X-1, a famous black hole X-ray binary system">Biner Lubang Hitam</string>
+    <string name="stellar_black_hole" translation_description="Search alias for Cygnus X-1, the archetypal stellar-mass black hole">Lubang Hitam Bintang</string>
     <!-- tm:omitted name="butterfly_cluster" reason="identical_to_source" -->
     <!-- tm:omitted name="scorpions_tail" reason="identical_to_source" -->
     <!-- tm:omitted name="winnecke_4" reason="identical_to_source" -->

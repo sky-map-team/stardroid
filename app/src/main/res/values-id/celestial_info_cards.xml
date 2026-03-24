@@ -919,6 +919,24 @@
     </string>
     <string name="object_info_willman_1_distance" translation_description="Distance to Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130.000 tahun cahaya</string>
     <string name="object_info_willman_1_size" translation_description="Physical size of Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130 tahun cahaya melintang</string>
+    <!-- Sagittarius A* -->
+    <string name="object_info_sgr_a_star_description" translation_description="Description of Sagittarius A* shown in the info card. Translate this text.">
+    Sagittarius A* (Sgr A*) adalah lubang hitam supermasif di pusat Galaksi Bimasakti, terletak 26.000 tahun cahaya jauhnya ke arah Sagittarius. Dengan massa sekitar 4 juta massa matahari yang dimampatkan ke dalam wilayah yang lebih kecil dari sistem tata surya kita, ia sangat padat sehingga bahkan cahaya pun tidak dapat melarikan diri dari cakrawala peristiwanya.
+    </string>
+    <string name="object_info_sgr_a_star_funfact" translation_description="Fun fact about Sagittarius A* shown in the info card. Translate this text.">
+    Pada tahun 2022, kolaborasi Event Horizon Telescope merilis gambar langsung pertama dari Sgr A*, mengungkapkan cincin gas yang bersinar dan dipanaskan tinggi di sekitar bayangannya — dihasilkan dengan menggabungkan data dari observatorium radio yang tersebar di seluruh planet.
+    </string>
+    <string name="object_info_sgr_a_star_distance" translation_description="Distance to Sgr A* shown in the info card. Translate units if appropriate for your locale.">26.000 tahun cahaya</string>
+    <string name="object_info_sgr_a_star_size" translation_description="Physical size of Sgr A* shown in the info card. Translate units if appropriate for your locale.">Diameter cakrawala peristiwa: ~24 juta km</string>
+    <!-- Cygnus X-1 -->
+    <string name="object_info_cygnus_x_1_description" translation_description="Description of Cygnus X-1 shown in the info card. Translate this text.">
+    Cygnus X-1 adalah lubang hitam bermassa bintang sekitar 7.200 tahun cahaya jauhnya di Cygnus, dan salah satu sumber sinar-X terkuat di langit. Ia membentuk sistem biner dengan bintang supergigant biru HDE 226868, mengorbit satu sama lain setiap 5,6 hari. Lubang hitam ini menyerap gas dari bintang pendampingnya, membentuk cakram akresi yang sangat panas yang bersinar dalam sinar-X.
+    </string>
+    <string name="object_info_cygnus_x_1_funfact" translation_description="Fun fact about Cygnus X-1 shown in the info card. Translate this text.">
+    Cygnus X-1 adalah objek pertama yang secara luas diterima sebagai lubang hitam. Pada tahun 1975, Stephen Hawking membuat taruhan ilmiah terkenal dengan Kip Thorne bahwa itu BUKAN lubang hitam, sebuah taruhan yang kemudian dia akui kekalahan.
+    </string>
+    <string name="object_info_cygnus_x_1_distance" translation_description="Distance to Cygnus X-1 shown in the info card. Translate units if appropriate for your locale.">7.200 tahun cahaya</string>
+    <string name="object_info_cygnus_x_1_size" translation_description="Physical size of Cygnus X-1 shown in the info card. Translate units if appropriate for your locale.">Massa lubang hitam: ~21 massa matahari</string>
     <!-- Eta Carinae Nebula (NGC 3372) -->
     <string name="object_info_eta_carinae_nebula_description" translation_description="Description of Eta Carinae Nebula shown in the info card. Translate this text.">
     Nebula Eta Carinae (NGC 3372) adalah salah satu nebula terbesar dan paling terang di langit, membentang lebih dari 300 tahun cahaya. Di jantungnya terdapat Eta Carinae, salah satu bintang paling masif dan paling bercahaya yang diketahui, dengan massa lebih dari 100 massa matahari.
