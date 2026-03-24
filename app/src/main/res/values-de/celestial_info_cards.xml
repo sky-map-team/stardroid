@@ -923,6 +923,24 @@
     </string>
     <string name="object_info_willman_1_distance" translation_description="Distance to Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130.000 Lichtjahre</string>
     <string name="object_info_willman_1_size" translation_description="Physical size of Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130 Lichtjahre Durchmesser</string>
+    <!-- Sagittarius A* -->
+    <string name="object_info_sgr_a_star_description" translation_description="Description of Sagittarius A* shown in the info card. Translate this text.">
+    Sagittarius A* (Sgr A*) ist das supermassive schwarze Loch im Zentrum der Milchstraße, das sich 26.000 Lichtjahre entfernt in Richtung des Schützen befindet. Mit einer Masse von etwa 4 Millionen Sonnenmassen, die in eine Region komprimiert ist, die kleiner als unser Sonnensystem ist, ist es so dicht, dass nicht einmal Licht seinen Ereignishorizont verlassen kann.
+    </string>
+    <string name="object_info_sgr_a_star_funfact" translation_description="Fun fact about Sagittarius A* shown in the info card. Translate this text.">
+    2022 veröffentlichte die Event Horizon Telescope Kollaboration das erste direkte Bild von Sgr A* und enthüllte einen leuchtenden Ring aus überhitztem Gas, der seinen Schatten umgibt – erzeugt durch die Kombination von Daten aus Radioobservatorien, die über den gesamten Planeten verteilt sind.
+    </string>
+    <string name="object_info_sgr_a_star_distance" translation_description="Distance to Sgr A* shown in the info card. Translate units if appropriate for your locale.">26.000 Lichtjahre</string>
+    <string name="object_info_sgr_a_star_size" translation_description="Physical size of Sgr A* shown in the info card. Translate units if appropriate for your locale.">Ereignishorizont-Durchmesser: ~24 Millionen km</string>
+    <!-- Cygnus X-1 -->
+    <string name="object_info_cygnus_x_1_description" translation_description="Description of Cygnus X-1 shown in the info card. Translate this text.">
+    Cygnus X-1 ist ein stellarer schwarzes Loch etwa 7.200 Lichtjahre entfernt im Sternbild Schwan und eine der stärksten Röntgenquellen am Himmel. Es bildet ein Doppelsternsystem mit dem blauen Überriesen HDE 226868, die sich gegenseitig alle 5,6 Tage umkreisen. Das schwarze Loch entzieht seinem Begleiter Gas und bildet eine überheizte Akkretionsscheibe, die in Röntgenstrahlung leuchtet.
+    </string>
+    <string name="object_info_cygnus_x_1_funfact" translation_description="Fun fact about Cygnus X-1 shown in the info card. Translate this text.">
+    Cygnus X-1 war das erste Objekt, das allgemein als schwarzes Loch akzeptiert wurde. 1975 schloss Stephen Hawking eine berühmte wissenschaftliche Wette mit Kip Thorne ab, dass es KEIN schwarzes Loch war – eine Wette, die er später zugab.
+    </string>
+    <string name="object_info_cygnus_x_1_distance" translation_description="Distance to Cygnus X-1 shown in the info card. Translate units if appropriate for your locale.">7.200 Lichtjahre</string>
+    <string name="object_info_cygnus_x_1_size" translation_description="Physical size of Cygnus X-1 shown in the info card. Translate units if appropriate for your locale.">Schwarzloch-Masse: ~21 Sonnenmassen</string>
     <!-- Eta Carinae Nebula (NGC 3372) -->
     <string name="object_info_eta_carinae_nebula_description" translation_description="Description of Eta Carinae Nebula shown in the info card. Translate this text.">
     Der Eta-Carinae-Nebel (NGC 3372) ist einer der größten und hellsten Nebel am Himmel und erstreckt sich über mehr als 300 Lichtjahre. In seinem Zentrum befindet sich Eta Carinae, einer der massereichsten und leuchtkräftigsten bekannten Sterne mit einer Masse von über 100 Sonnenmassen.

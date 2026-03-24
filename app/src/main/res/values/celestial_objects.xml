@@ -335,6 +335,15 @@
     <string name="nubecula_minor" translation_description="Latin name for the Small Magellanic Cloud">Nubecula Minor</string>
     <string name="willman_1" translation_description="Designation for the ultra-faint dwarf galaxy Willman 1">Willman 1</string>
     <string name="beth_willman_galaxy" translation_description="Informal nickname for the ultra-faint dwarf galaxy Willman 1, honouring its discoverer">Beth Willman Galaxy</string>
+    <!-- Sagittarius A* -->
+    <string name="sgr_a_star" translation_description="Abbreviated designation for the supermassive black hole at the Milky Way centre">Sgr A*</string>
+    <string name="sagittarius_a_star" translation_description="Full name of the supermassive black hole at the Milky Way centre">Sagittarius A*</string>
+    <string name="black_hole" translation_description="Generic search term for black holes; used as an alias for Sagittarius A*">Black Hole</string>
+    <string name="galactic_center" translation_description="The centre of the Milky Way galaxy, location of Sgr A*">Galactic Center</string>
+    <!-- Cygnus X-1 -->
+    <string name="cygnus_x_1" translation_description="Designation for the stellar-mass black hole binary system in Cygnus">Cygnus X-1</string>
+    <string name="black_hole_binary" translation_description="Search alias for Cygnus X-1, a famous black hole X-ray binary system">Black Hole Binary</string>
+    <string name="stellar_black_hole" translation_description="Search alias for Cygnus X-1, the archetypal stellar-mass black hole">Stellar Black Hole</string>
     <string name="butterfly_cluster" translation_description="Name of the Messier object Butterfly Cluster">Butterfly Cluster</string>
     <string name="scorpions_tail" translation_description="Name of the Messier object Scorpion\'s Tail">Scorpion\'s Tail</string>
     <string name="winnecke_4" translation_description="Name of the Messier object Winnecke 4">Winnecke 4</string>

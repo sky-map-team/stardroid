@@ -525,6 +525,22 @@
     </string>
     <string name="object_info_willman_1_distance" translation_description="Distance to Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130,000光年</string>
     <string name="object_info_willman_1_size" translation_description="Physical size of Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130光年寬</string>
+    <!-- Sagittarius A* -->
+    <string name="object_info_sgr_a_star_description" translation_description="Description of Sagittarius A* shown in the info card. Translate this text.">
+    人馬座A* (Sgr A*) 是銀河系中心的超大質量黑洞，位於人馬座方向約26,000光年遠處。它的質量約為400萬個太陽質量，被壓縮在比我們太陽系還小的區域內，密度極高，連光都無法逃脫其事件視界。
+    </string>
+    <string name="object_info_sgr_a_star_funfact" translation_description="Fun fact about Sagittarius A* shown in the info card. Translate this text.">
+    2022年，事件視界望遠鏡合作組織發佈了人馬座A*的首張直接影像，揭示了一個由超熱氣體組成的發光環，環繞著其陰影——這是通過結合遍佈整個地球的射電天文台的數據而產生的。
+    </string>
+    <string name="object_info_sgr_a_star_distance" translation_description="Distance to Sgr A* shown in the info card. Translate units if appropriate for your locale.">26,000 光年</string>
+    <string name="object_info_sgr_a_star_size" translation_description="Physical size of Sgr A* shown in the info card. Translate units if appropriate for your locale.">事件視界直徑：約 2,400 萬公里</string>
+    <!-- Cygnus X-1 -->
+    <string name="object_info_cygnus_x_1_description" translation_description="Description of Cygnus X-1 shown in the info card. Translate this text.">
+    天鵝座X-1是一個距離約7,200光年遠的恆星質量黑洞，位於天鵝座，是天空中最強的X射線源之一。它與藍色超巨星HDE 226868形成聯星系統，彼此每5.6天繞行一次。黑洞從伴星中剝離氣體，形成超熱吸積盤，在X射線中熾烈發光。
+    </string>
+    <string name="object_info_cygnus_x_1_funfact" translation_description="Fun fact about Cygnus X-1 shown in the info card. Translate this text.">天鵝座X-1是第一個被廣泛接受為黑洞的天體。1975年，史蒂芬·霍金與基普·索恩打賭，聲稱它不是黑洞，但他後來承認了這個賭注。</string>
+    <string name="object_info_cygnus_x_1_distance" translation_description="Distance to Cygnus X-1 shown in the info card. Translate units if appropriate for your locale.">7,200 光年</string>
+    <string name="object_info_cygnus_x_1_size" translation_description="Physical size of Cygnus X-1 shown in the info card. Translate units if appropriate for your locale.">黑洞質量：約 21 個太陽質量</string>
     <!-- Eta Carinae Nebula (NGC 3372) -->
     <string name="object_info_eta_carinae_nebula_description" translation_description="Description of Eta Carinae Nebula shown in the info card. Translate this text.">
     Eta Carinae 星雲（NGC 3372）是天空中最大且最亮的星雲之一，跨越超過 300 光年。其中心坐落著 Eta Carinae，這是已知最巨大且最發光的恆星之一，質量超過 100 個太陽質量。

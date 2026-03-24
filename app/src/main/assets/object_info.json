@@ -1644,6 +1644,28 @@
       "imageKey": "deep_sky_objects/willman_1.webp",
       "imageCredit": "Sky Map team (it's very faint)"
     },
+    "sgr_a_star": {
+      "nameKey": "sgr_a_star",
+      "descriptionKey": "object_info_sgr_a_star_description",
+      "funFactKey": "object_info_sgr_a_star_funfact",
+      "type": "black_hole",
+      "distanceKey": "object_info_sgr_a_star_distance",
+      "sizeKey": "object_info_sgr_a_star_size",
+      "magnitude": "28.0",
+      "imageKey": "deep_sky_objects/sgr_a_star.webp",
+      "imageCredit": "EHT Collaboration"
+    },
+    "cygnus_x_1": {
+      "nameKey": "cygnus_x_1",
+      "descriptionKey": "object_info_cygnus_x_1_description",
+      "funFactKey": "object_info_cygnus_x_1_funfact",
+      "type": "black_hole",
+      "distanceKey": "object_info_cygnus_x_1_distance",
+      "sizeKey": "object_info_cygnus_x_1_size",
+      "magnitude": "8.9",
+      "imageKey": "deep_sky_objects/cygnus_x_1.webp",
+      "imageCredit": "NASA/CXC/M.Weiss"
+    },
     "alcyone": {
       "nameKey": "alcyone",
       "descriptionKey": "object_info_alcyone_description",

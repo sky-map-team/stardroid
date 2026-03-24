@@ -919,6 +919,24 @@
     </string>
     <string name="object_info_willman_1_distance" translation_description="Distance to Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130.000 ışık yılı</string>
     <string name="object_info_willman_1_size" translation_description="Physical size of Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130 ışık yılı çapında</string>
+    <!-- Sagittarius A* -->
+    <string name="object_info_sgr_a_star_description" translation_description="Description of Sagittarius A* shown in the info card. Translate this text.">
+    Sagittarius A* (Sgr A*), Samyway\'s merkezinde yer alan süperkütleli kara delik olup, Yay yönünde 26.000 ışık yılı uzaklıktadır. Güneş sistemimizden daha küçük bir bölgeye sıkıştırılmış yaklaşık 4 milyon güneş kütlesi ile, o kadar yoğundur ki ışık bile olay ufkundan kaçamaz.
+    </string>
+    <string name="object_info_sgr_a_star_funfact" translation_description="Fun fact about Sagittarius A* shown in the info card. Translate this text.">
+    2022\'de Event Horizon Telescope işbirliği, Sgr A*\'ın ilk doğrudan görüntüsünü yayınladı ve bu görüntü, gezegene yayılmış radyo gözlemevlerinden gelen verilerin birleştirilmesiyle oluşturulan, gölgesini çevreleyen parlayan bir süper ısıtılmış gaz halkasını ortaya çıkardı.
+    </string>
+    <string name="object_info_sgr_a_star_distance" translation_description="Distance to Sgr A* shown in the info card. Translate units if appropriate for your locale.">26.000 ışık yılı</string>
+    <string name="object_info_sgr_a_star_size" translation_description="Physical size of Sgr A* shown in the info card. Translate units if appropriate for your locale.">Olay ufku çapı: ~24 milyon km</string>
+    <!-- Cygnus X-1 -->
+    <string name="object_info_cygnus_x_1_description" translation_description="Description of Cygnus X-1 shown in the info card. Translate this text.">
+    Cygnus X-1, Cygnus takımyıldızında yaklaşık 7.200 ışık yılı uzaklıkta bulunan ve gökyüzündeki en güçlü X-ışını kaynaklarından biri olan yıldızsal kütleli bir kara deliktir. Mavi süpergigant yıldız HDE 226868 ile ikili bir sistem oluşturur ve her 5,6 günde bir birbirinin etrafında dönerler. Kara delik, yoldaşından gazı sıyırarak, X-ışınlarında parlayan süper sıcak bir akkresiyon diski oluşturur.
+    </string>
+    <string name="object_info_cygnus_x_1_funfact" translation_description="Fun fact about Cygnus X-1 shown in the info card. Translate this text.">
+    Cygnus X-1, yaygın olarak kabul edilen ilk kara delik nesnesi idi. 1975\'te Stephen Hawking, Kip Thorne ile bunun bir kara delik olmadığı konusunda ünlü bir bilimsel bahis yaptı ve bu bahsi daha sonra kabul etti.
+    </string>
+    <string name="object_info_cygnus_x_1_distance" translation_description="Distance to Cygnus X-1 shown in the info card. Translate units if appropriate for your locale.">7.200 ışık yılı</string>
+    <string name="object_info_cygnus_x_1_size" translation_description="Physical size of Cygnus X-1 shown in the info card. Translate units if appropriate for your locale.">Kara delik kütlesi: ~21 güneş kütlesi</string>
     <!-- Eta Carinae Nebula (NGC 3372) -->
     <string name="object_info_eta_carinae_nebula_description" translation_description="Description of Eta Carinae Nebula shown in the info card. Translate this text.">
     Eta Carinae Nebulası (NGC 3372), gökyüzündeki en büyük ve en parlak nebulalardan biridir ve 300 ışık-yılından fazla bir alana yayılmıştır. Merkezinde, bilinen en kütleli ve en parlak yıldızlardan biri olan Eta Carinae yer alır ve 100 güneş kütlesinden fazla bir ağırlığa sahiptir.

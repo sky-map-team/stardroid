@@ -330,6 +330,13 @@
     <!-- tm:omitted name="nubecula_minor" reason="identical_to_source" -->
     <!-- tm:omitted name="willman_1" reason="identical_to_source" -->
     <!-- tm:omitted name="beth_willman_galaxy" reason="identical_to_source" -->
+    <!-- tm:omitted name="sgr_a_star" reason="identical_to_source" -->
+    <!-- tm:omitted name="sagittarius_a_star" reason="identical_to_source" -->
+    <!-- tm:omitted name="black_hole" reason="identical_to_source" -->
+    <string name="galactic_center" translation_description="The centre of the Milky Way galaxy, location of Sgr A*">Galactic Centre</string>
+    <!-- tm:omitted name="cygnus_x_1" reason="identical_to_source" -->
+    <!-- tm:omitted name="black_hole_binary" reason="identical_to_source" -->
+    <!-- tm:omitted name="stellar_black_hole" reason="identical_to_source" -->
     <!-- tm:omitted name="butterfly_cluster" reason="identical_to_source" -->
     <!-- tm:omitted name="scorpions_tail" reason="identical_to_source" -->
     <!-- tm:omitted name="winnecke_4" reason="identical_to_source" -->

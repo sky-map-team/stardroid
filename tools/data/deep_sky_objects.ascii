@@ -2906,3 +2906,56 @@ source {
   name_str_ids: "willman_1"
   name_str_ids: "beth_willman_galaxy"
 }
+source {
+  search_location {
+    right_ascension: 266.4165
+    declination: -29.0078
+  }
+  point {
+    location {
+      right_ascension: 266.4165
+      declination: -29.0078
+    }
+    color: 4761665
+    size: 3
+    shape: OTHER
+  }
+  label {
+    location {
+      right_ascension: 266.4165
+      declination: -29.0078
+    }
+    color: 4761665
+    strings_str_id: "sgr_a_star"
+  }
+  name_str_ids: "sgr_a_star"
+  name_str_ids: "sagittarius_a_star"
+  name_str_ids: "black_hole"
+  name_str_ids: "galactic_center"
+}
+source {
+  search_location {
+    right_ascension: 299.5905
+    declination: 35.2016
+  }
+  point {
+    location {
+      right_ascension: 299.5905
+      declination: 35.2016
+    }
+    color: 4761665
+    size: 3
+    shape: OTHER
+  }
+  label {
+    location {
+      right_ascension: 299.5905
+      declination: 35.2016
+    }
+    color: 4761665
+    strings_str_id: "cygnus_x_1"
+  }
+  name_str_ids: "cygnus_x_1"
+  name_str_ids: "black_hole_binary"
+  name_str_ids: "stellar_black_hole"
+}

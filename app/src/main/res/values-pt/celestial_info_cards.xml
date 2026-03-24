@@ -925,6 +925,24 @@
     </string>
     <string name="object_info_willman_1_distance" translation_description="Distance to Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130.000 anos-luz</string>
     <string name="object_info_willman_1_size" translation_description="Physical size of Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130 anos-luz de diâmetro</string>
+    <!-- Sagittarius A* -->
+    <string name="object_info_sgr_a_star_description" translation_description="Description of Sagittarius A* shown in the info card. Translate this text.">
+    Sagittarius A* (Sgr A*) é o buraco negro supermassivo no centro da Via Láctea, situado a 26.000 anos-luz de distância na direção de Sagitário. Com uma massa de cerca de 4 milhões de massas solares comprimidas em uma região menor que nosso sistema solar, é tão denso que nem mesmo a luz consegue escapar de seu horizonte de eventos.
+    </string>
+    <string name="object_info_sgr_a_star_funfact" translation_description="Fun fact about Sagittarius A* shown in the info card. Translate this text.">
+    Em 2022, a colaboração do Event Horizon Telescope divulgou a primeira imagem direta de Sgr A*, revelando um anel brilhante de gás superaquecido ao redor de sua sombra — produzido pela combinação de dados de observatórios de rádio espalhados por todo o planeta.
+    </string>
+    <string name="object_info_sgr_a_star_distance" translation_description="Distance to Sgr A* shown in the info card. Translate units if appropriate for your locale.">26.000 anos-luz</string>
+    <string name="object_info_sgr_a_star_size" translation_description="Physical size of Sgr A* shown in the info card. Translate units if appropriate for your locale.">Diâmetro do horizonte de eventos: ~24 milhões de km</string>
+    <!-- Cygnus X-1 -->
+    <string name="object_info_cygnus_x_1_description" translation_description="Description of Cygnus X-1 shown in the info card. Translate this text.">
+    Cygnus X-1 é um buraco negro de massa estelar a cerca de 7.200 anos-luz de distância em Cygnus, e uma das fontes de raios X mais intensas do céu. Forma um sistema binário com a estrela supergigante azul HDE 226868, orbitando uma à outra a cada 5,6 dias. O buraco negro arranca gás de sua companheira, formando um disco de acreção superaquecido que brilha em raios X.
+    </string>
+    <string name="object_info_cygnus_x_1_funfact" translation_description="Fun fact about Cygnus X-1 shown in the info card. Translate this text.">
+    Cygnus X-1 foi o primeiro objeto amplamente aceito como um buraco negro. Em 1975, Stephen Hawking fez uma famosa aposta científica com Kip Thorne de que NÃO era um buraco negro, uma aposta que ele posteriormente concedeu.
+    </string>
+    <string name="object_info_cygnus_x_1_distance" translation_description="Distance to Cygnus X-1 shown in the info card. Translate units if appropriate for your locale.">7.200 anos-luz</string>
+    <string name="object_info_cygnus_x_1_size" translation_description="Physical size of Cygnus X-1 shown in the info card. Translate units if appropriate for your locale.">Massa do buraco negro: ~21 massas solares</string>
     <!-- Eta Carinae Nebula (NGC 3372) -->
     <string name="object_info_eta_carinae_nebula_description" translation_description="Description of Eta Carinae Nebula shown in the info card. Translate this text.">
     A Nebulosa de Eta Carinae (NGC 3372) é uma das maiores e mais brilhantes nebulosas do céu, abrangendo mais de 300 anos-luz. Em seu coração situa-se Eta Carinae, uma das estrelas mais massivas e luminosas conhecidas, pesando mais de 100 massas solares.
