@@ -923,6 +923,24 @@
     </string>
     <string name="object_info_willman_1_distance" translation_description="Distance to Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130 000 lysår</string>
     <string name="object_info_willman_1_size" translation_description="Physical size of Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130 lysår på tvers</string>
+    <!-- Sagittarius A* -->
+    <string name="object_info_sgr_a_star_description" translation_description="Description of Sagittarius A* shown in the info card. Translate this text.">
+    Sagittarius A* (Sgr A*) er det supermassive sorte hullet i sentrum av Melkeveien, som ligger 26 000 lysår unna i retningen av Sagittarius. Med en masse på omtrent 4 millioner solmasser komprimert til et område mindre enn vårt solsystem, er det så tett at ikke engang lys kan unnslippe begivenhetshorisonten.
+    </string>
+    <string name="object_info_sgr_a_star_funfact" translation_description="Fun fact about Sagittarius A* shown in the info card. Translate this text.">
+    I 2022 ga Event Horizon Telescope-samarbeidet ut det første direkte bildet av Sgr A*, som avslørte en glødende ring av superopphetet gass rundt skyggen – produsert ved å kombinere data fra radioobservatorier spredt over hele planeten.
+    </string>
+    <string name="object_info_sgr_a_star_distance" translation_description="Distance to Sgr A* shown in the info card. Translate units if appropriate for your locale.">26 000 lysår</string>
+    <string name="object_info_sgr_a_star_size" translation_description="Physical size of Sgr A* shown in the info card. Translate units if appropriate for your locale.">Hendelseshorisonts diameter: ~24 millioner km</string>
+    <!-- Cygnus X-1 -->
+    <string name="object_info_cygnus_x_1_description" translation_description="Description of Cygnus X-1 shown in the info card. Translate this text.">
+    Cygnus X-1 er et stellart sort hull omtrent 7 200 lysår unna i Cygnus, og en av de sterkeste røntgenkildene på himmelen. Det danner et binært system med den blå superkjempen HDE 226868, som kretser rundt hverandre hver 5,6 dag. Det sorte hullet striper gass fra følgesjernen, og danner en superhot akkresjonsskive som lyser opp i røntgenstråling.
+    </string>
+    <string name="object_info_cygnus_x_1_funfact" translation_description="Fun fact about Cygnus X-1 shown in the info card. Translate this text.">
+    Cygnus X-1 var det første objektet som ble allment akseptert som et svart hull. I 1975 veddet Stephen Hawking med Kip Thorne om at det IKKE var et svart hull — og ga senere etter, og betalte Thorne med et abonnement på et visst voksentidsskrift.
+    </string>
+    <string name="object_info_cygnus_x_1_distance" translation_description="Distance to Cygnus X-1 shown in the info card. Translate units if appropriate for your locale.">7 200 lysår</string>
+    <string name="object_info_cygnus_x_1_size" translation_description="Physical size of Cygnus X-1 shown in the info card. Translate units if appropriate for your locale.">Svart hull-masse: ~21 solmasser</string>
     <!-- Eta Carinae Nebula (NGC 3372) -->
     <string name="object_info_eta_carinae_nebula_description" translation_description="Description of Eta Carinae Nebula shown in the info card. Translate this text.">
     Eta Carinae-tåken (NGC 3372) er en av de største og lyseste tåkene på himmelen, og spenner over 300 lysår. I hjertet av den sitter Eta Carinae, en av de mest massive og lysende stjernene som er kjent, med en masse på over 100 solmasser.

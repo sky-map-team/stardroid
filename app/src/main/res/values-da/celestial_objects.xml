@@ -332,6 +332,13 @@
     <!-- tm:omitted name="nubecula_minor" reason="identical_to_source" -->
     <!-- tm:omitted name="willman_1" reason="identical_to_source" -->
     <string name="beth_willman_galaxy" translation_description="Informal nickname for the ultra-faint dwarf galaxy Willman 1, honouring its discoverer">Beth Willman-galaksen</string>
+    <!-- tm:omitted name="sgr_a_star" reason="identical_to_source" -->
+    <!-- tm:omitted name="sagittarius_a_star" reason="identical_to_source" -->
+    <string name="black_hole" translation_description="Generic search term for black holes; used as an alias for Sagittarius A*">Sort hul</string>
+    <string name="galactic_center" translation_description="The centre of the Milky Way galaxy, location of Sgr A*">Galaktisk centrum</string>
+    <!-- tm:omitted name="cygnus_x_1" reason="identical_to_source" -->
+    <string name="black_hole_binary" translation_description="Search alias for Cygnus X-1, a famous black hole X-ray binary system">Sort hul-binær</string>
+    <string name="stellar_black_hole" translation_description="Search alias for Cygnus X-1, the archetypal stellar-mass black hole">Stellart sort hul</string>
     <string name="butterfly_cluster" translation_description="Name of the Messier object Butterfly Cluster">Sommerfuglethoben</string>
     <string name="scorpions_tail" translation_description="Name of the Messier object Scorpion\'s Tail">Skorpionens Hale</string>
     <!-- tm:omitted name="winnecke_4" reason="identical_to_source" -->

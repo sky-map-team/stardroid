@@ -923,6 +923,24 @@
     </string>
     <string name="object_info_willman_1_distance" translation_description="Distance to Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130 000 années-lumière</string>
     <string name="object_info_willman_1_size" translation_description="Physical size of Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130 années-lumière de diamètre</string>
+    <!-- Sagittarius A* -->
+    <string name="object_info_sgr_a_star_description" translation_description="Description of Sagittarius A* shown in the info card. Translate this text.">
+    Sagittarius A* (Sgr A*) est le trou noir supermassif au centre de la Voie lactée, situé à 26 000 années-lumière de distance dans la direction du Sagittaire. Avec une masse d\'environ 4 millions de masses solaires comprimées dans une région plus petite que notre système solaire, il est tellement dense que même la lumière ne peut pas s\'échapper de son horizon des événements.
+    </string>
+    <string name="object_info_sgr_a_star_funfact" translation_description="Fun fact about Sagittarius A* shown in the info card. Translate this text.">
+    En 2022, la collaboration Event Horizon Telescope a publié la première image directe de Sgr A*, révélant un anneau lumineux de gaz surchauffé entourant son ombre — produite en combinant les données des observatoires radio répartis sur toute la planète.
+    </string>
+    <string name="object_info_sgr_a_star_distance" translation_description="Distance to Sgr A* shown in the info card. Translate units if appropriate for your locale.">26 000 années-lumière</string>
+    <string name="object_info_sgr_a_star_size" translation_description="Physical size of Sgr A* shown in the info card. Translate units if appropriate for your locale.">Diamètre de l\'horizon des événements : ~24 millions de km</string>
+    <!-- Cygnus X-1 -->
+    <string name="object_info_cygnus_x_1_description" translation_description="Description of Cygnus X-1 shown in the info card. Translate this text.">
+    Cygnus X-1 est un trou noir de masse stellaire situé à environ 7 200 années-lumière dans le Cygne, et l\'une des sources de rayons X les plus intenses du ciel. Il forme un système binaire avec l\'étoile supergéante bleue HDE 226868, s\'orbitan mutuellement tous les 5,6 jours. Le trou noir arrache du gaz à son compagnon, formant un disque d\'accrétion extrêmement chaud qui brille en rayons X.
+    </string>
+    <string name="object_info_cygnus_x_1_funfact" translation_description="Fun fact about Cygnus X-1 shown in the info card. Translate this text.">
+    Cygnus X-1 a été le premier objet largement accepté comme un trou noir. En 1975, Stephen Hawking a parié avec Kip Thorne que ce n\'était PAS un trou noir — et a plus tard concédé le pari, payant Thorne avec un abonnement à un certain magazine pour adultes.
+    </string>
+    <string name="object_info_cygnus_x_1_distance" translation_description="Distance to Cygnus X-1 shown in the info card. Translate units if appropriate for your locale.">7 200 années-lumière</string>
+    <string name="object_info_cygnus_x_1_size" translation_description="Physical size of Cygnus X-1 shown in the info card. Translate units if appropriate for your locale.">Masse du trou noir : ~21 masses solaires</string>
     <!-- Eta Carinae Nebula (NGC 3372) -->
     <string name="object_info_eta_carinae_nebula_description" translation_description="Description of Eta Carinae Nebula shown in the info card. Translate this text.">
     La Nébuleuse d\'Eta Carinae (NGC 3372) est l\'une des plus grandes et des plus brillantes nébuleuses du ciel, s\'étendant sur plus de 300 années-lumière. En son cœur se trouve Eta Carinae, l\'une des étoiles les plus massives et les plus lumineuses connues, pesant plus de 100 masses solaires.

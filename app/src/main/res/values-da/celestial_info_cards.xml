@@ -915,6 +915,24 @@
     </string>
     <string name="object_info_willman_1_distance" translation_description="Distance to Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130.000 lysår</string>
     <string name="object_info_willman_1_size" translation_description="Physical size of Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130 lysår på tværs</string>
+    <!-- Sagittarius A* -->
+    <string name="object_info_sgr_a_star_description" translation_description="Description of Sagittarius A* shown in the info card. Translate this text.">
+    Sagittarius A* (Sgr A*) er det supermassive sorte hul i centrum af Mælkevejen, beliggende 26.000 lysår væk i retningen af Skytten. Med en masse på omkring 4 millioner solmasser komprimeret til et område mindre end vores solsystem, er det så tæt, at selv lys ikke kan undslippe dets begivenhedshorisont.
+    </string>
+    <string name="object_info_sgr_a_star_funfact" translation_description="Fun fact about Sagittarius A* shown in the info card. Translate this text.">
+    I 2022 frigav Event Horizon Telescope-samarbejdet det første direkte billede af Sgr A*, som afslørede en glødende ring af superophedet gas omkring dens skygge — produceret ved at kombinere data fra radioobservatorier spredt over hele planeten.
+    </string>
+    <string name="object_info_sgr_a_star_distance" translation_description="Distance to Sgr A* shown in the info card. Translate units if appropriate for your locale.">26.000 lysår</string>
+    <string name="object_info_sgr_a_star_size" translation_description="Physical size of Sgr A* shown in the info card. Translate units if appropriate for your locale.">Begivenhedshorisonts diameter: ~24 millioner km</string>
+    <!-- Cygnus X-1 -->
+    <string name="object_info_cygnus_x_1_description" translation_description="Description of Cygnus X-1 shown in the info card. Translate this text.">
+    Cygnus X-1 er et sort hul med stjernemasse omkring 7.200 lysår væk i Cygnus og en af de stærkeste røntgenkilder på himlen. Det danner et binært system med den blå superkæmpe-stjerne HDE 226868, som kredser omkring hinanden hver 5,6 dag. Det sorte hul fjerner gas fra sin ledsager-stjerne og danner en glødende akkretionsskive, der stråler i røntgenstråling.
+    </string>
+    <string name="object_info_cygnus_x_1_funfact" translation_description="Fun fact about Cygnus X-1 shown in the info card. Translate this text.">
+    Cygnus X-1 var det første objekt, der blev bredt accepteret som et sort hul. I 1975 satsede Stephen Hawking mod Kip Thorne på, at det IKKE var et sort hul — og indrømmede senere væddemålet og betalte Thorne med et abonnement på et bestemt voksenmateriale.
+    </string>
+    <string name="object_info_cygnus_x_1_distance" translation_description="Distance to Cygnus X-1 shown in the info card. Translate units if appropriate for your locale.">7.200 lysår</string>
+    <string name="object_info_cygnus_x_1_size" translation_description="Physical size of Cygnus X-1 shown in the info card. Translate units if appropriate for your locale.">Sort huls masse: ~21 solmasser</string>
     <!-- Eta Carinae Nebula (NGC 3372) -->
     <string name="object_info_eta_carinae_nebula_description" translation_description="Description of Eta Carinae Nebula shown in the info card. Translate this text.">
     Eta Carinae-tågen (NGC 3372) er en af de største og lyseste tåger på himlen og spænder over 300 lysår. I dens hjerte sidder Eta Carinae, en af de mest massive og lysende stjerner, der kendes, med en vægt på over 100 solmasser.

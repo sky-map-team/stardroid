@@ -917,6 +917,24 @@
     </string>
     <string name="object_info_willman_1_distance" translation_description="Distance to Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130.000 svetlobnih let</string>
     <string name="object_info_willman_1_size" translation_description="Physical size of Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130 svetlobnih let v premeru</string>
+    <!-- Sagittarius A* -->
+    <string name="object_info_sgr_a_star_description" translation_description="Description of Sagittarius A* shown in the info card. Translate this text.">
+    Sagittarius A* (Sgr A*) je supermasivna črna luknja v središču Rimske ceste, ki se nahaja 26.000 svetlobnih let stran v smeri Strelca. Z maso približno 4 milijonov sončnih mas, stisnjene v območje manjše od našega sončnega sistema, je tako gosta, da niti svetloba ne more pobegniti njenemu dogodkovnemu obzorju.
+    </string>
+    <string name="object_info_sgr_a_star_funfact" translation_description="Fun fact about Sagittarius A* shown in the info card. Translate this text.">
+    Leta 2022 je kolaboracija Event Horizon Telescope objavila prvo neposredno sliko Sgr A*, ki je razkrila svetlečo prstan superogretega plina, ki obdaja njegovo senco — nastalo z kombiniranjem podatkov iz radijskih observatorijev, razporejenih po celotnem planetu.
+    </string>
+    <string name="object_info_sgr_a_star_distance" translation_description="Distance to Sgr A* shown in the info card. Translate units if appropriate for your locale.">26.000 svetlobnih let</string>
+    <string name="object_info_sgr_a_star_size" translation_description="Physical size of Sgr A* shown in the info card. Translate units if appropriate for your locale.">Premer dogodkovnega obzorja: ~24 milijonov km</string>
+    <!-- Cygnus X-1 -->
+    <string name="object_info_cygnus_x_1_description" translation_description="Description of Cygnus X-1 shown in the info card. Translate this text.">
+    Cygnus X-1 je črna luknja zvezdne mase, oddaljena približno 7.200 svetlobnih let v ozvezdju Laboda, in eden najmočnejših virov rentgenskih žarkov na nebu. Tvori binarni sistem z modro supergigantsko zvezdo HDE 226868, ki se medsebojno obideta vsakih 5,6 dni. Črna luknja odvzema plin svojemu spremljevalnemu zvezdnemu telesu in tvori superhvaljav akreacijski disk, ki blešči v rentgenskih žarkih.
+    </string>
+    <string name="object_info_cygnus_x_1_funfact" translation_description="Fun fact about Cygnus X-1 shown in the info card. Translate this text.">
+    Cygnus X-1 je bil prvi objekt, ki je bil splošno sprejet kot črna luknja. Leta 1975 je Stephen Hawking stavil s Kipom Thorneom, da to NI črna luknja — in se je pozneje strinjal s stavo, pri čemer je Thorneu plačal s predplačilom na določeno revijo za odrasle.
+    </string>
+    <string name="object_info_cygnus_x_1_distance" translation_description="Distance to Cygnus X-1 shown in the info card. Translate units if appropriate for your locale.">7.200 svetlobnih let</string>
+    <string name="object_info_cygnus_x_1_size" translation_description="Physical size of Cygnus X-1 shown in the info card. Translate units if appropriate for your locale.">Masa črne luknje: ~21 sončnih mas</string>
     <!-- Eta Carinae Nebula (NGC 3372) -->
     <string name="object_info_eta_carinae_nebula_description" translation_description="Description of Eta Carinae Nebula shown in the info card. Translate this text.">
     Meglina Eta Carinae (NGC 3372) je ena največjih in najsvetlejših meglih na nebu, ki se razteza čez več kot 300 svetlobnih let. V njenem srcu se nahaja Eta Carinae, ena najbolj masivnih in svetlih zvezd, ki jih poznamo, s težo več kot 100 sončnih mas.

@@ -863,6 +863,24 @@
     </string>
     <string name="object_info_willman_1_distance" translation_description="Distance to Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130,000 ปีแสง</string>
     <string name="object_info_willman_1_size" translation_description="Physical size of Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130 ปีแสงทั่วทั้ง</string>
+    <!-- Sagittarius A* -->
+    <string name="object_info_sgr_a_star_description" translation_description="Description of Sagittarius A* shown in the info card. Translate this text.">
+    Sagittarius A* (Sgr A*) เป็นหลุมดำมหาศาลที่ศูนย์กลางของทางช้างเผือก ห่างออกไป 26,000 ปีแสงในทิศทางของราศีธนู ด้วยมวลประมาณ 4 ล้านเท่าของมวลดวงอาทิตย์ที่บีบอัดลงในบริเวณที่เล็กกว่าระบบสุริยะของเรา มันมีความหนาแน่นมากจนแม้แต่แสงก็ไม่สามารถหลุดพ้นจากขอบฟ้าเหตุการณ์ของมันได้
+    </string>
+    <string name="object_info_sgr_a_star_funfact" translation_description="Fun fact about Sagittarius A* shown in the info card. Translate this text.">
+    ในปี 2022 ความร่วมมือ Event Horizon Telescope ได้เปิดตัวภาพโดยตรงแรกของ Sgr A* ซึ่งเผยให้เห็นวงแหวนที่เรืองแสงของก๊าซที่ร้อนจัดรอบเงาของมัน — สร้างขึ้นจากการรวมข้อมูลจากหอดูดาววิทยุที่กระจายอยู่ทั่วโลก
+    </string>
+    <string name="object_info_sgr_a_star_distance" translation_description="Distance to Sgr A* shown in the info card. Translate units if appropriate for your locale.">26,000 ปีแสง</string>
+    <string name="object_info_sgr_a_star_size" translation_description="Physical size of Sgr A* shown in the info card. Translate units if appropriate for your locale.">เส้นผ่านศูนย์กลางขอบฟ้าเหตุการณ์: ~24 ล้านกิโลเมตร</string>
+    <!-- Cygnus X-1 -->
+    <string name="object_info_cygnus_x_1_description" translation_description="Description of Cygnus X-1 shown in the info card. Translate this text.">
+    Cygnus X-1 เป็นหลุมดำที่มีมวลเท่ากับดาวฤกษ์ซึ่งอยู่ห่างออกไปประมาณ 7,200 ปีแสงในกลุ่มดาว Cygnus และเป็นแหล่งกำเนิดรังสีเอกซ์ที่แรงที่สุดแห่งหนึ่งในท้องฟ้า มันสร้างระบบดาวคู่กับดาวยักษ์สีน้ำเงิน HDE 226868 โดยโคจรรอบกันทุก 5.6 วัน หลุมดำดึงแก๊สจากดาวคู่ของมัน สร้างจานสะสมที่ร้อนจัดซึ่งส่องแสงรังสีเอกซ์
+    </string>
+    <string name="object_info_cygnus_x_1_funfact" translation_description="Fun fact about Cygnus X-1 shown in the info card. Translate this text.">
+    Cygnus X-1 เป็นวัตถุแรกที่ได้รับการยอมรับอย่างกว้างขวางว่าเป็นหลุมดำ ในปี 1975 สตีเฟน ฮอว์คิง ได้เดิมพันกับ คิป ธอร์น ว่ามันไม่ใช่หลุมดำ และต่อมาเขาก็ยอมรับการแพ้เดิมพัน โดยให้ธอร์นรับสมาชิกของนิตยสารสำหรับผู้ใหญ่ฉบับหนึ่ง
+    </string>
+    <string name="object_info_cygnus_x_1_distance" translation_description="Distance to Cygnus X-1 shown in the info card. Translate units if appropriate for your locale.">7,200 ปีแสง</string>
+    <string name="object_info_cygnus_x_1_size" translation_description="Physical size of Cygnus X-1 shown in the info card. Translate units if appropriate for your locale.">มวลหลุมดำ: ~21 มวลสุริยะ</string>
     <!-- Eta Carinae Nebula (NGC 3372) -->
     <string name="object_info_eta_carinae_nebula_description" translation_description="Description of Eta Carinae Nebula shown in the info card. Translate this text.">
     เนบิวลาเอตา คารินา (NGC 3372) เป็นหนึ่งในเนบิวลาที่ใหญ่ที่สุดและสว่างที่สุดในท้องฟ้า ขยายออกไปกว่า 300 ปีแสง ที่ใจกลางของมันคือเอตา คารินา ซึ่งเป็นหนึ่งในดาวฤกษ์ที่มีมวลมากที่สุดและส่องสว่างที่สุดที่รู้จัก มีน้ำหนักกว่า 100 เท่าของมวลดวงอาทิตย์

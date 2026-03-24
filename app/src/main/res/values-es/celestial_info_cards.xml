@@ -925,6 +925,24 @@
     </string>
     <string name="object_info_willman_1_distance" translation_description="Distance to Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130.000 años luz</string>
     <string name="object_info_willman_1_size" translation_description="Physical size of Willman 1 shown in the info card. Translate units if appropriate for your locale.">~130 años luz de diámetro</string>
+    <!-- Sagittarius A* -->
+    <string name="object_info_sgr_a_star_description" translation_description="Description of Sagittarius A* shown in the info card. Translate this text.">
+    Sagittarius A* (Sgr A*) es el agujero negro supermasivo en el centro de la Vía Láctea, situado a 26.000 años luz de distancia en la dirección de Sagitario. Con una masa de aproximadamente 4 millones de masas solares comprimidas en una región más pequeña que nuestro sistema solar, es tan denso que ni siquiera la luz puede escapar de su horizonte de eventos.
+    </string>
+    <string name="object_info_sgr_a_star_funfact" translation_description="Fun fact about Sagittarius A* shown in the info card. Translate this text.">
+    En 2022, la colaboración del Telescopio del Horizonte de Sucesos publicó la primera imagen directa de Sgr A*, revelando un anillo brillante de gas sobrecalentado rodeando su sombra — producida combinando datos de observatorios de radio distribuidos en todo el planeta.
+    </string>
+    <string name="object_info_sgr_a_star_distance" translation_description="Distance to Sgr A* shown in the info card. Translate units if appropriate for your locale.">26 000 años luz</string>
+    <string name="object_info_sgr_a_star_size" translation_description="Physical size of Sgr A* shown in the info card. Translate units if appropriate for your locale.">Diámetro del horizonte de sucesos: ~24 millones de km</string>
+    <!-- Cygnus X-1 -->
+    <string name="object_info_cygnus_x_1_description" translation_description="Description of Cygnus X-1 shown in the info card. Translate this text.">
+    Cygnus X-1 es un agujero negro de masa estelar a unos 7.200 años luz de distancia en Cygnus, y una de las fuentes de rayos X más intensas del cielo. Forma un sistema binario con la estrella supergigante azul HDE 226868, orbitándose mutuamente cada 5,6 días. El agujero negro extrae gas de su compañera, formando un disco de acreción superhot que brilla intensamente en rayos X.
+    </string>
+    <string name="object_info_cygnus_x_1_funfact" translation_description="Fun fact about Cygnus X-1 shown in the info card. Translate this text.">
+    Cygnus X-1 fue el primer objeto ampliamente aceptado como un agujero negro. En 1975, Stephen Hawking apostó con Kip Thorne que NO era un agujero negro — y posteriormente concedió la apuesta, pagándole a Thorne con una suscripción a cierta revista para adultos.
+    </string>
+    <string name="object_info_cygnus_x_1_distance" translation_description="Distance to Cygnus X-1 shown in the info card. Translate units if appropriate for your locale.">7 200 años luz</string>
+    <string name="object_info_cygnus_x_1_size" translation_description="Physical size of Cygnus X-1 shown in the info card. Translate units if appropriate for your locale.">Masa del agujero negro: ~21 masas solares</string>
     <!-- Eta Carinae Nebula (NGC 3372) -->
     <string name="object_info_eta_carinae_nebula_description" translation_description="Description of Eta Carinae Nebula shown in the info card. Translate this text.">
     La nebulosa Eta Carinae (NGC 3372) es una de las nebulosas más grandes y brillantes del cielo, con una extensión de más de 300 años luz. En su centro se encuentra Eta Carinae, una de las estrellas más masivas y luminosas conocidas, con un peso superior a 100 masas solares.
