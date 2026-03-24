@@ -9,9 +9,4 @@
 
 <h2>夜間模式</h2>
     紅色夜間模式現在涵蓋幾乎所有 UI 元素，包括所有對話框和羅盤校準螢幕 — 不再有黑暗中的刺眼白色閃光。]]></string>
-    <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>測試版使用者！</h2>
-<h3>您可以如何幫助</h3>
-在此版本中，當您使用手動模式並滑動地圖時，地平線將恢復水平，因此地圖的頂部將始終顯示您上方的星星。以前地圖只是直線移動，所以您可能會倒過來。您認為如何？這樣更好嗎？
-請在<a href="https://forms.gle/JkrMw7Zc4ynp45J79">這裡</a>告訴我們。<br/>
-打開幫助菜單以再次查看此信息。]]></string>
 </resources>

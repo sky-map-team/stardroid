@@ -11,13 +11,4 @@
 <h2>Modo nocturno</h2>
     El modo nocturno rojo ahora cubre casi todos los elementos de la interfaz de usuario, incluidos todos los cuadros de diálogo y la pantalla de calibración de la brújula: no más destellos blancos cegadores en la oscuridad.
 ]]></string>
-    <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[
-<h2>¡Usuario beta!</h2>
-<h3>Cómo ayudar</h3>
-En esta versión, al usar el modo manual y deslizar el mapa, el horizonte volverá a nivelarse,
-por lo que la parte superior siempre mostrará las estrellas. Anteriormente el mapa solo se
-movía en línea recta, por lo que podías quedar boca abajo. ¿Qué opinas? ¿Es mejor?
-Cuéntanos <a href="https://forms.gle/JkrMw7Zc4ynp45J79">aquí.</a><br/>
-Abre el menú de ayuda para ver esta información de nuevo.
-]]></string>
 </resources>

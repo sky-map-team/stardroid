@@ -9,11 +9,4 @@
 
 <h2>Night Mode</h2>
     Red night mode now covers nearly all UI elements, including all dialogues and the compass calibration screen — no more blinding white flashes in the dark.]]></string>
-    <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Beta users!</h2>
-<h3>How you can help</h3>
-In this release when you use manual mode and give the map a swipe, the horizon will return
-to level so the top of the map will always show the stars above you. Previously the map just
-moved in a straight line so you could end up upside down. What do you think? Is this better?
- Let us know <a href="https://forms.gle/JkrMw7Zc4ynp45J79">here.</a><br/>
-Open the help menu to see this information again.]]></string>
 </resources>

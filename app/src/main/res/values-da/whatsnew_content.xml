@@ -9,9 +9,4 @@
 
 <h2>Nattilstand</h2>
     Rød nattilstand dækker nu næsten alle UI-elementer, herunder alle dialoger og kompasskalibreringsskærmen — ingen flere blændende hvide glimt i mørket.]]></string>
-    <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Betabrugere!</h2>
-<h3>Sådan kan du hjælpe</h3>
-I denne version, når du bruger manuel tilstand og swiper kortet, vil horisonten vende tilbage til niveau, så toppen af kortet altid viser stjernerne over dig. Tidligere bevægede kortet sig bare i en lige linje, så du kunne ende op på hovedet. Hvad synes du? Er dette bedre?
- Fortæl os det <a href="https://forms.gle/JkrMw7Zc4ynp45J79">her.</a><br/>
-Åbn hjælpemenuen for at se disse oplysninger igen.]]></string>
 </resources>

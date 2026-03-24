@@ -238,7 +238,9 @@
     <string name="show_object_info_pref_title" translation_description="Preference title for showing info cards when tapping objects">Zobraziť informácie pri klepnutí</string>
     <string name="show_object_info_pref_summary" translation_description="Preference summary for the tap info feature">Klepnite na nebeské objekty, aby ste sa o nich dozvedeli</string>
     <string name="show_object_info_auto_mode_title" translation_description="Preference title for enabling info cards in auto/sensor mode">Info karty v automatickom režime</string>
-    <string name="show_object_info_auto_mode_summary" translation_description="Preference summary for auto mode info cards">Zobraziť info karty aj pri klepnutí na objekty v automatickom (senzorovom) režime</string>
+    <string name="show_object_info_auto_mode_summary" translation_description="Preference summary for auto mode info cards">
+    Zobraziť info karty aj pri klepnutí na objekty v automatickom (senzorovom) režime
+    </string>
     <string name="object_info_funfact_label" translation_description="Label before the fun fact in info card">Zaujímavosť:</string>
     <string name="object_info_distance_label" translation_description="Label for distance field">Vzdialenosť:</string>
     <string name="object_info_size_label" translation_description="Label for size field">Veľkosť:</string>

@@ -9,9 +9,4 @@
 
 <h2>Nachtmodus</h2>
     Der rote Nachtmodus deckt nun fast alle UI-Elemente ab, einschließlich aller Dialoge und des Kompass-Kalibrierungsbildschirms — keine blendend weißen Blitze mehr in der Dunkelheit.]]></string>
-    <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Beta-Nutzer!</h2>
-<h3>Wie du helfen kannst</h3>
-In dieser Version wird der Horizont beim Wischen der Karte im manuellen Modus wieder auf die Ebene zurückgesetzt, sodass die Oberseite der Karte immer die Sterne über dir zeigt. Zuvor bewegte sich die Karte nur in einer geraden Linie, sodass du am Ende kopfüber sein konntest. Was hältst du davon? Ist das besser?
- Teile uns deine Meinung <a href="https://forms.gle/JkrMw7Zc4ynp45J79">hier mit.</a><br/>
-Öffne das Hilfemenü, um diese Informationen erneut anzuzeigen.]]></string>
 </resources>
