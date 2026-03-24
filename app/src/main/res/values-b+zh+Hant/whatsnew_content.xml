@@ -1,14 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-    <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>天體影像</h2>
-    資訊卡現在包含所有已標示天體的照片 — 行星、恆星、星座和梅西耶天體。點擊任何天體即可視覺化探索。
-
-<h2>新目錄天體</h2>
-    北冠座 T（"熾星"）和船底座 η 星雲現已納入目錄。
-
-<h2>夜間模式</h2>
-    紅色夜間模式現在涵蓋幾乎所有 UI 元素，包括所有對話框和羅盤校準螢幕 — 不再有黑暗中的刺眼白色閃光。]]></string>
     <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>測試版使用者！</h2>
 <h3>您可以如何幫助</h3>
 在此版本中，當您使用手動模式並滑動地圖時，地平線將恢復水平，因此地圖的頂部將始終顯示您上方的星星。以前地圖只是直線移動，所以您可能會倒過來。您認為如何？這樣更好嗎？
