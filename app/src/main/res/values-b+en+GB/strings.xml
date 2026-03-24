@@ -79,8 +79,6 @@
     <!-- tm:omitted name="no_search_results_text2" reason="identical_to_source" -->
     <!-- tm:omitted name="many_search_results_title" reason="identical_to_source" -->
     <!-- tm:omitted name="other" reason="identical_to_source" -->
-    <!-- tm:omitted name="show_messier_images" reason="identical_to_source" -->
-    <!-- tm:omitted name="show_messier_images_summary" reason="identical_to_source" -->
     <!-- tm:omitted name="menu_time" reason="identical_to_source" -->
     <string name="time_travel_start_message_alt" translation_description="Toast message when time travel starts toward a named destination. %s is the event or destination name">Travelling through time to %s ...</string>
     <!-- tm:omitted name="time_travel_close_message" reason="identical_to_source" -->
