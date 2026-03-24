@@ -80,6 +80,17 @@ class ObjectInfoRegistry @Inject constructor(
     }
 
     /**
+     * Returns all objects that have an associated image, sorted by display name.
+     * Used to populate the image gallery.
+     */
+    fun getAllWithImages(): List<ObjectInfo> {
+        return objectInfoMap.entries
+            .filter { it.value.imageKey != null }
+            .mapNotNull { getInfo(it.key) }
+            .sortedBy { it.name }
+    }
+
+    /**
      * Checks if educational info is available for the given object.
      */
     fun hasInfo(objectId: String): Boolean {

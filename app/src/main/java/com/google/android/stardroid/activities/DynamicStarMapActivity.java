@@ -14,7 +14,6 @@
 
 package com.google.android.stardroid.activities;
 
-import androidx.fragment.app.FragmentManager;
 import android.app.SearchManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -37,8 +36,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.widget.ImageButton;
@@ -51,13 +50,12 @@ import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.FragmentManager;
 
 import com.google.android.stardroid.ApplicationConstants;
 import com.google.android.stardroid.R;
-import com.google.android.stardroid.activities.util.MenuUtils;
-import com.google.android.stardroid.activities.util.NightModeHelper;
-import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
 import com.google.android.stardroid.activities.dialogs.CreditsDialogFragment;
+import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
 import com.google.android.stardroid.activities.dialogs.HelpDialogFragment;
 import com.google.android.stardroid.activities.dialogs.LocationPermissionDeniedDialogFragment;
 import com.google.android.stardroid.activities.dialogs.MultipleSearchResultsDialogFragment;
@@ -65,13 +63,12 @@ import com.google.android.stardroid.activities.dialogs.NoSearchResultsDialogFrag
 import com.google.android.stardroid.activities.dialogs.NoSensorsDialogFragment;
 import com.google.android.stardroid.activities.dialogs.ObjectInfoDialogFragment;
 import com.google.android.stardroid.activities.dialogs.TimeTravelDialogFragment;
-import com.google.android.stardroid.education.ObjectInfo;
-import com.google.android.stardroid.education.ObjectInfoTapHandler;
-import com.google.android.stardroid.activities.util.ActivityLightLevelChanger;
 import com.google.android.stardroid.activities.util.ActivityLightLevelChanger.NightModeable;
 import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
 import com.google.android.stardroid.activities.util.FullscreenControlsManager;
 import com.google.android.stardroid.activities.util.GooglePlayServicesChecker;
+import com.google.android.stardroid.activities.util.MenuUtils;
+import com.google.android.stardroid.activities.util.NightModeHelper;
 import com.google.android.stardroid.base.Lists;
 import com.google.android.stardroid.control.AstronomerModel;
 import com.google.android.stardroid.control.AstronomerModel.Pointing;
@@ -79,6 +76,8 @@ import com.google.android.stardroid.control.ControllerGroup;
 import com.google.android.stardroid.control.LocationController;
 import com.google.android.stardroid.control.MagneticDeclinationCalculatorSwitcher;
 import com.google.android.stardroid.control.TransitioningCompositeClock;
+import com.google.android.stardroid.education.ObjectInfo;
+import com.google.android.stardroid.education.ObjectInfoTapHandler;
 import com.google.android.stardroid.inject.HasComponent;
 import com.google.android.stardroid.layers.LayerManager;
 import com.google.android.stardroid.math.CoordinateManipulationsKt;
@@ -101,6 +100,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -111,7 +111,8 @@ import javax.inject.Provider;
  */
 public class DynamicStarMapActivity extends InjectableActivity
     implements OnSharedPreferenceChangeListener, NightModeable,
-    HasComponent<DynamicStarMapComponent> {
+    HasComponent<DynamicStarMapComponent>,
+    ObjectInfoDialogFragment.OnFindClickedListener {
   private static final int TIME_DISPLAY_DELAY_MILLIS = 1000;
   // Extra delay after the clock transition settles before querying solar-system positions.
   private static final long SEARCH_POST_TRANSITION_DELAY_MS = 500;
@@ -130,10 +131,10 @@ public class DynamicStarMapActivity extends InjectableActivity
   private static final class RendererModelUpdateClosure implements Runnable {
     private RendererController rendererController;
     private AstronomerModel model;
-    private boolean viewDirectionMode;
 
     public RendererModelUpdateClosure(AstronomerModel model,
-        RendererController rendererController, SharedPreferences sharedPreferences) {
+                                      RendererController rendererController,
+                                      SharedPreferences sharedPreferences) {
       this.model = model;
       this.rendererController = rendererController;
       // TODO(jontayler): figure out why we need to do this here.
@@ -163,10 +164,11 @@ public class DynamicStarMapActivity extends InjectableActivity
     }
   }
 
-  private static void updateViewDirectionMode(AstronomerModel model, SharedPreferences sharedPreferences) {
+  private static void updateViewDirectionMode(AstronomerModel model,
+                                              SharedPreferences sharedPreferences) {
     String viewDirectionMode =
         sharedPreferences.getString(ApplicationConstants.VIEW_MODE_PREFKEY, "STANDARD");
-    switch(viewDirectionMode) {
+    switch (viewDirectionMode) {
       case "ROTATE90":
         model.setViewDirectionMode(AstronomerModel.ViewDirectionMode.ROTATE90);
         break;
@@ -224,7 +226,7 @@ public class DynamicStarMapActivity extends InjectableActivity
   @Inject ObjectInfoTapHandler objectInfoTapHandler;
   @Inject SensorAccuracyMonitor sensorAccuracyMonitor;
   // A list of runnables to post on the handler when we resume.
-  private List<Runnable> onResumeRunnables = new ArrayList<>();
+  private final List<Runnable> onResumeRunnables = new ArrayList<>();
 
   // We need to maintain references to these objects to keep them from
   // getting gc'd.
@@ -250,7 +252,7 @@ public class DynamicStarMapActivity extends InjectableActivity
 
     // Set up full screen mode, hide the system UI etc.
     getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON |
-                         WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
     // TODO(jontayler): upgrade to
     // getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
@@ -301,7 +303,7 @@ public class DynamicStarMapActivity extends InjectableActivity
     invalidateOptionsMenu();
 
     // Layer icon sidebar background tint
-    ButtonLayerView providerButtons = (ButtonLayerView) findViewById(R.id.layer_buttons_control);
+    ButtonLayerView providerButtons = findViewById(R.id.layer_buttons_control);
     if (providerButtons != null && providerButtons.getBackground() != null) {
       providerButtons.getBackground().mutate().setColorFilter(
           nightMode ? getColor(R.color.night_sidebar_bg) : Color.WHITE, PorterDuff.Mode.MULTIPLY);
@@ -315,7 +317,8 @@ public class DynamicStarMapActivity extends InjectableActivity
           ((PreferencesButton) child).setNightMode(nightMode);
         } else if (child instanceof ImageButton) {
           if (nightMode) {
-            ((ImageButton) child).setColorFilter(getColor(R.color.night_text_color), PorterDuff.Mode.MULTIPLY);
+            ((ImageButton) child).setColorFilter(getColor(R.color.night_text_color),
+                PorterDuff.Mode.MULTIPLY);
           } else {
             ((ImageButton) child).clearColorFilter();
           }
@@ -328,7 +331,8 @@ public class DynamicStarMapActivity extends InjectableActivity
     View manualAutoToggle = findViewById(R.id.manual_auto_toggle);
     if (manualAutoToggle instanceof ImageButton) {
       if (nightMode) {
-        ((ImageButton) manualAutoToggle).setColorFilter(getColor(R.color.night_text_color), PorterDuff.Mode.MULTIPLY);
+        ((ImageButton) manualAutoToggle).setColorFilter(getColor(R.color.night_text_color),
+            PorterDuff.Mode.MULTIPLY);
       } else {
         ((ImageButton) manualAutoToggle).clearColorFilter();
       }
@@ -337,28 +341,34 @@ public class DynamicStarMapActivity extends InjectableActivity
     // Search control bar
     View searchControlBar = findViewById(R.id.search_control_bar);
     if (searchControlBar != null) {
-      searchControlBar.setBackgroundColor(nightMode ? getColor(R.color.night_bar_bg) : getColor(R.color.day_bar_bg));
+      searchControlBar.setBackgroundColor(nightMode ? getColor(R.color.night_bar_bg) :
+          getColor(R.color.day_bar_bg));
       int[] searchTextIds = {R.id.search_status_label, R.id.search_prompt};
       for (int id : searchTextIds) {
-        TextView tv = (TextView) findViewById(id);
+        TextView tv = findViewById(id);
         if (tv != null) tv.setTextColor(textColor);
       }
-      ImageButton cancelBtn = (ImageButton) findViewById(R.id.cancel_search_button);
+      ImageButton cancelBtn = findViewById(R.id.cancel_search_button);
       if (cancelBtn != null) {
-        if (nightMode) cancelBtn.setColorFilter(getColor(R.color.night_text_color), PorterDuff.Mode.MULTIPLY);
-        else cancelBtn.clearColorFilter();
+        if (nightMode) {
+          cancelBtn.setColorFilter(getColor(R.color.night_text_color), PorterDuff.Mode.MULTIPLY);
+        } else {
+          cancelBtn.clearColorFilter();
+        }
       }
     }
 
     // Time player bar
     if (timePlayerUI != null) {
-      timePlayerUI.setBackgroundColor(nightMode ? getColor(R.color.night_bar_bg) : getColor(R.color.day_bar_bg));
+      timePlayerUI.setBackgroundColor(nightMode ? getColor(R.color.night_bar_bg) :
+          getColor(R.color.day_bar_bg));
       if (timePlayerUI instanceof ViewGroup) {
         ViewGroup group = (ViewGroup) timePlayerUI;
         for (int i = 0; i < group.getChildCount(); i++) {
           View child = group.getChildAt(i);
           if (child instanceof android.widget.RelativeLayout) {
-            child.setBackgroundColor(nightMode ? getColor(R.color.night_bar_bg) : getColor(R.color.day_bar_bg));
+            child.setBackgroundColor(nightMode ? getColor(R.color.night_bar_bg) :
+                getColor(R.color.day_bar_bg));
           }
         }
       }
@@ -368,7 +378,7 @@ public class DynamicStarMapActivity extends InjectableActivity
           R.id.time_travel_speed_label
       };
       for (int id : textViewIds) {
-        TextView tv = (TextView) findViewById(id);
+        TextView tv = findViewById(id);
         if (tv != null) tv.setTextColor(textColor);
       }
       // Time player icon and control buttons
@@ -380,10 +390,13 @@ public class DynamicStarMapActivity extends InjectableActivity
           R.id.time_player_play_forwards
       };
       for (int id : iconIds) {
-        ImageView iv = (ImageView) findViewById(id);
+        ImageView iv = findViewById(id);
         if (iv != null) {
-          if (nightMode) iv.setColorFilter(getColor(R.color.night_text_color), PorterDuff.Mode.MULTIPLY);
-          else iv.clearColorFilter();
+          if (nightMode) {
+            iv.setColorFilter(getColor(R.color.night_text_color), PorterDuff.Mode.MULTIPLY);
+          } else {
+            iv.clearColorFilter();
+          }
         }
       }
     }
@@ -412,24 +425,21 @@ public class DynamicStarMapActivity extends InjectableActivity
       return;
     }
     // Missing at least one sensor.  Warn the user.
-    handler.post(new Runnable() {
-      @Override
-      public void run() {
-        if (!sharedPreferences
-            .getBoolean(ApplicationConstants.NO_WARN_ABOUT_MISSING_SENSORS, false)) {
-          Log.d(TAG, "showing no sensor dialog");
-          analytics.trackEvent(AnalyticsInterface.NO_SENSORS_WARNING_EVENT, null);
-          noSensorsDialogFragment.show(fragmentManager, "No sensors dialog");
-          // First time, force manual mode.
-          sharedPreferences.edit().putBoolean(ApplicationConstants.AUTO_MODE_PREF_KEY, false)
-              .apply();
-          setAutoMode(false);
-        } else {
-          Log.d(TAG, "showing no sensor toast");
-          Toast.makeText(
-              DynamicStarMapActivity.this, R.string.no_sensor_warning, Toast.LENGTH_LONG).show();
-          // Don't force manual mode second time through - leave it up to the user.
-        }
+    handler.post(() -> {
+      if (!sharedPreferences
+          .getBoolean(ApplicationConstants.NO_WARN_ABOUT_MISSING_SENSORS, false)) {
+        Log.d(TAG, "showing no sensor dialog");
+        analytics.trackEvent(AnalyticsInterface.NO_SENSORS_WARNING_EVENT, null);
+        noSensorsDialogFragment.show(fragmentManager, "No sensors dialog");
+        // First time, force manual mode.
+        sharedPreferences.edit().putBoolean(ApplicationConstants.AUTO_MODE_PREF_KEY, false)
+            .apply();
+        setAutoMode(false);
+      } else {
+        Log.d(TAG, "showing no sensor toast");
+        Toast.makeText(
+            DynamicStarMapActivity.this, R.string.no_sensor_warning, Toast.LENGTH_LONG).show();
+        // Don't force manual mode second time through - leave it up to the user.
       }
     });
   }
@@ -560,7 +570,8 @@ public class DynamicStarMapActivity extends InjectableActivity
     LESS_THAN_TEN_SECS(10), TEN_SECS_TO_THIRTY_SECS(30),
     THIRTY_SECS_TO_ONE_MIN(60), ONE_MIN_TO_FIVE_MINS(300),
     MORE_THAN_FIVE_MINS(Integer.MAX_VALUE);
-    private int seconds;
+    private final int seconds;
+
     SessionBucketLength(int seconds) {
       this.seconds = seconds;
     }
@@ -642,16 +653,18 @@ public class DynamicStarMapActivity extends InjectableActivity
     setTimeTravelMode(newTime, 0, "custom");
   }
 
-  public void setTimeTravelMode(Date newTime, @StringRes int searchObjectNameRes, String analyticsKey) {
+  public void setTimeTravelMode(Date newTime, @StringRes int searchObjectNameRes,
+                                String analyticsKey) {
     Bundle timeTravelBundle = new Bundle();
     timeTravelBundle.putString(AnalyticsInterface.TIME_TRAVEL_EVENT_KEY, analyticsKey);
     analytics.trackEvent(AnalyticsInterface.TIME_TRAVEL_USED_EVENT, timeTravelBundle);
 
-    SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy.MM.dd G  HH:mm:ss z");
+    SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy.MM.dd G  HH:mm:ss z",
+        Locale.getDefault());
     Toast.makeText(this,
-                   String.format(getString(R.string.time_travel_start_message_alt),
-                                 dateFormatter.format(newTime)),
-                   Toast.LENGTH_LONG).show();
+        String.format(getString(R.string.time_travel_start_message_alt),
+            dateFormatter.format(newTime)),
+        Toast.LENGTH_LONG).show();
     if (sharedPreferences.getBoolean(ApplicationConstants.SOUND_EFFECTS, true)) {
       try {
         timeTravelNoise.start();
@@ -671,7 +684,8 @@ public class DynamicStarMapActivity extends InjectableActivity
       // Delay until after the clock transition completes (TransitioningCompositeClock uses
       // 2500 ms) so that solar-system positions have been updated to the new time.
       handler.postDelayed(() -> {
-        List<SearchResult> results = layerManager.searchByObjectName(getString(searchObjectNameRes));
+        List<SearchResult> results =
+            layerManager.searchByObjectName(getString(searchObjectNameRes));
         if (!results.isEmpty()) {
           SearchResult r = results.get(0);
           activateSearchTarget(r.coords(), r.getCapitalizedName());
@@ -707,7 +721,7 @@ public class DynamicStarMapActivity extends InjectableActivity
     controller.useRealTime();
     Toast.makeText(this,
         R.string.time_travel_close_message,
-                   Toast.LENGTH_SHORT).show();
+        Toast.LENGTH_SHORT).show();
     Log.d(TAG, "Leaving Time Travel mode.");
     timePlayerUI.setVisibility(View.GONE);
   }
@@ -758,10 +772,12 @@ public class DynamicStarMapActivity extends InjectableActivity
         Log.d(TAG, "Automode is set to " + autoMode);
         if (!autoMode) {
           Log.d(TAG, "Switching to manual control");
-          Toast.makeText(DynamicStarMapActivity.this, R.string.set_manual, Toast.LENGTH_SHORT).show();
+          Toast.makeText(DynamicStarMapActivity.this, R.string.set_manual, Toast.LENGTH_SHORT)
+              .show();
         } else {
           Log.d(TAG, "Switching to sensor control");
-          Toast.makeText(DynamicStarMapActivity.this, R.string.set_auto, Toast.LENGTH_SHORT).show();
+          Toast.makeText(DynamicStarMapActivity.this, R.string.set_auto, Toast.LENGTH_SHORT)
+              .show();
         }
         setAutoMode(autoMode);
         break;
@@ -772,11 +788,11 @@ public class DynamicStarMapActivity extends InjectableActivity
         if (key.startsWith("source_provider.")) {
           boolean enabled = sharedPreferences.getBoolean(key, true);
           Bundle layerBundle = new Bundle();
-          layerBundle.putString(AnalyticsInterface.LAYER_TOGGLED_NAME, AnalyticsInterface.layerDisplayName(key));
+          layerBundle.putString(AnalyticsInterface.LAYER_TOGGLED_NAME,
+              AnalyticsInterface.layerDisplayName(key));
           layerBundle.putBoolean(AnalyticsInterface.LAYER_TOGGLED_ENABLED, enabled);
           analytics.trackEvent(AnalyticsInterface.LAYER_TOGGLED_EVENT, layerBundle);
         }
-        return;
     }
   }
 
@@ -802,6 +818,13 @@ public class DynamicStarMapActivity extends InjectableActivity
     return true;
   }
 
+  @Override
+  public void onFindClicked(ObjectInfo info) {
+    Intent searchIntent = new Intent(Intent.ACTION_SEARCH);
+    searchIntent.putExtra(SearchManager.QUERY, info.getName());
+    doSearchWithIntent(searchIntent);
+  }
+
   private void doSearchWithIntent(Intent searchIntent) {
     // If we're already in search mode, cancel it.
     if (searchMode) {
@@ -814,7 +837,7 @@ public class DynamicStarMapActivity extends InjectableActivity
     List<SearchResult> results = layerManager.searchByObjectName(queryString);
     Bundle b = new Bundle();
     b.putString(AnalyticsInterface.SEARCH_TERM, queryString);
-    b.putBoolean(AnalyticsInterface.SEARCH_SUCCESS, results.size() > 0);
+    b.putBoolean(AnalyticsInterface.SEARCH_SUCCESS, !results.isEmpty());
     analytics.trackEvent(AnalyticsInterface.SEARCH_EVENT, b);
     if (results.isEmpty()) {
       Log.d(TAG, "No results returned");
@@ -843,7 +866,7 @@ public class DynamicStarMapActivity extends InjectableActivity
   private void initializeModelViewController() {
     Log.i(TAG, "Initializing Model, View and Controller @ " + System.currentTimeMillis());
     setContentView(R.layout.skyrenderer);
-    skyView = (GLSurfaceView) findViewById(R.id.skyrenderer_view);
+    skyView = findViewById(R.id.skyrenderer_view);
     // We don't want a depth buffer.
     skyView.setEGLConfigChooser(false);
     SkyRenderer renderer = new SkyRenderer(getResources());
@@ -875,20 +898,15 @@ public class DynamicStarMapActivity extends InjectableActivity
   }
 
   private void wireUpScreenControls() {
-    cancelSearchButton = (ImageButton) findViewById(R.id.cancel_search_button);
-    cancelSearchButton.setOnClickListener(new OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        cancelSearch();
-      }
-    });
+    cancelSearchButton = findViewById(R.id.cancel_search_button);
+    cancelSearchButton.setOnClickListener(v -> cancelSearch());
 
     // Push the search control bar below the status bar and any display cutout
     // so it doesn't overlap with camera notches on modern phones.
     View searchControlBar = findViewById(R.id.search_control_bar);
     applyWindowInsets(searchControlBar, true, false);
 
-    ButtonLayerView providerButtons = (ButtonLayerView) findViewById(R.id.layer_buttons_control);
+    ButtonLayerView providerButtons = findViewById(R.id.layer_buttons_control);
 
     int numChildren = providerButtons.getChildCount();
     List<View> buttonViews = new ArrayList<>();
@@ -896,37 +914,33 @@ public class DynamicStarMapActivity extends InjectableActivity
       ImageButton button = (ImageButton) providerButtons.getChildAt(i);
       buttonViews.add(button);
     }
-    PreferencesButton manualAutoToggle = (PreferencesButton) findViewById(R.id.manual_auto_toggle);
+    PreferencesButton manualAutoToggle = findViewById(R.id.manual_auto_toggle);
     buttonViews.add(manualAutoToggle);
     // Re-apply uniform night tint after each click, since PreferencesButton.setVisuallyOnOrOff()
     // would otherwise dim the button via the on/off tint logic (fix for issue #661).
     if (manualAutoToggle != null) {
       manualAutoToggle.setOnClickListener(v -> {
         if (nightMode) {
-          manualAutoToggle.setColorFilter(getColor(R.color.night_text_color), PorterDuff.Mode.MULTIPLY);
+          manualAutoToggle.setColorFilter(getColor(R.color.night_text_color),
+              PorterDuff.Mode.MULTIPLY);
         } else {
           manualAutoToggle.clearColorFilter();
         }
       });
     }
-    ButtonLayerView manualButtonLayer = (ButtonLayerView) findViewById(
+    ButtonLayerView manualButtonLayer = findViewById(
         R.id.layer_manual_auto_toggle);
 
     fullscreenControlsManager = new FullscreenControlsManager(
         this,
         findViewById(R.id.main_sky_view),
-        Lists.<View>asList(manualButtonLayer, providerButtons),
+        Lists.asList(manualButtonLayer, providerButtons),
         buttonViews);
 
     MapMover mapMover = new MapMover(model, controller, this, sharedPreferences);
 
     // Set up the object info tap handler listener
-    objectInfoTapHandler.setObjectTapListener(new ObjectInfoTapHandler.ObjectTapListener() {
-      @Override
-      public void onObjectTapped(ObjectInfo objectInfo) {
-        showObjectInfoDialog(objectInfo);
-      }
-    });
+    objectInfoTapHandler.setObjectTapListener(this::showObjectInfoDialog);
 
     // Create a screen dimensions provider using the skyView
     GestureInterpreter.ScreenDimensionsProvider dimensionsProvider =
@@ -953,7 +967,8 @@ public class DynamicStarMapActivity extends InjectableActivity
     Rect initialPadding = (Rect) view.getTag(R.id.original_padding_tag);
 
     if (initialPadding == null) {
-      initialPadding = new Rect(view.getPaddingLeft(), view.getPaddingTop(), view.getPaddingRight(), view.getPaddingBottom());
+      initialPadding = new Rect(view.getPaddingLeft(), view.getPaddingTop(),
+          view.getPaddingRight(), view.getPaddingBottom());
       view.setTag(R.id.original_padding_tag, initialPadding);
     }
 
@@ -961,12 +976,14 @@ public class DynamicStarMapActivity extends InjectableActivity
     final Rect base = initialPadding;
 
     ViewCompat.setOnApplyWindowInsetsListener(view, (v, windowInsets) -> {
-      Insets insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars() | WindowInsetsCompat.Type.displayCutout());
+      Insets insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars() |
+          WindowInsetsCompat.Type.displayCutout());
 
       int paddingTop = applyTop ? base.top + insets.top : base.top;
       int paddingBottom = applyBottom ? base.bottom + insets.bottom : base.bottom;
 
-      v.setPadding(base.left + insets.left, paddingTop, base.right + insets.right, paddingBottom);
+      v.setPadding(base.left + insets.left, paddingTop, base.right + insets.right,
+          paddingBottom);
 
       return WindowInsetsCompat.CONSUMED;
     });
@@ -1039,13 +1056,14 @@ public class DynamicStarMapActivity extends InjectableActivity
     Bundle lockedBundle = new Bundle();
     lockedBundle.putString(AnalyticsInterface.OBJECT_LOCKED_NAME, searchTerm);
     lockedBundle.putString(AnalyticsInterface.OBJECT_LOCKED_MODE,
-        autoMode ? AnalyticsInterface.OBJECT_LOCKED_MODE_AUTO : AnalyticsInterface.OBJECT_LOCKED_MODE_MANUAL);
+        autoMode ? AnalyticsInterface.OBJECT_LOCKED_MODE_AUTO :
+            AnalyticsInterface.OBJECT_LOCKED_MODE_MANUAL);
     analytics.trackEvent(AnalyticsInterface.OBJECT_LOCKED_EVENT, lockedBundle);
     if (!autoMode) {
       controller.teleport(target);
     }
 
-    TextView searchPromptText = (TextView) findViewById(R.id.search_status_label);
+    TextView searchPromptText = findViewById(R.id.search_status_label);
     searchPromptText.setText(
         String.format("%s %s", getString(R.string.search_target_looking_message), searchTerm));
     View searchControlBar = findViewById(R.id.search_control_bar);
@@ -1058,59 +1076,48 @@ public class DynamicStarMapActivity extends InjectableActivity
   private void wireUpTimePlayer() {
     Log.d(TAG, "Initializing TimePlayer UI.");
     timePlayerUI = findViewById(R.id.time_player_view);
-    ImageButton timePlayerCancelButton = (ImageButton) findViewById(R.id.time_player_close);
-    ImageButton timePlayerBackwardsButton = (ImageButton) findViewById(
+    ImageButton timePlayerCancelButton = findViewById(R.id.time_player_close);
+    ImageButton timePlayerBackwardsButton = findViewById(
         R.id.time_player_play_backwards);
-    ImageButton timePlayerStopButton = (ImageButton) findViewById(R.id.time_player_play_stop);
-    ImageButton timePlayerForwardsButton = (ImageButton) findViewById(
+    ImageButton timePlayerStopButton = findViewById(R.id.time_player_play_stop);
+    ImageButton timePlayerForwardsButton = findViewById(
         R.id.time_player_play_forwards);
-    final TextView timeTravelSpeedLabel = (TextView) findViewById(R.id.time_travel_speed_label);
+    final TextView timeTravelSpeedLabel = findViewById(R.id.time_travel_speed_label);
 
     // Push the time player above any bottom display cutout or navigation bar.
     applyWindowInsets(timePlayerUI, false, true);
 
-    timePlayerCancelButton.setOnClickListener(new OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        Log.d(TAG, "Heard time player close click.");
-        setNormalTimeModel();
-      }
+    timePlayerCancelButton.setOnClickListener(v -> {
+      Log.d(TAG, "Heard time player close click.");
+      setNormalTimeModel();
     });
-    timePlayerBackwardsButton.setOnClickListener(new OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        Log.d(TAG, "Heard time player play backwards click.");
-        controller.decelerateTimeTravel();
-        timeTravelSpeedLabel.setText(controller.getCurrentSpeedTag());
-      }
+    timePlayerBackwardsButton.setOnClickListener(v -> {
+      Log.d(TAG, "Heard time player play backwards click.");
+      controller.decelerateTimeTravel();
+      timeTravelSpeedLabel.setText(controller.getCurrentSpeedTag());
     });
-    timePlayerStopButton.setOnClickListener(new OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        Log.d(TAG, "Heard time player play stop click.");
-        controller.pauseTime();
-        timeTravelSpeedLabel.setText(controller.getCurrentSpeedTag());
-      }
+    timePlayerStopButton.setOnClickListener(v -> {
+      Log.d(TAG, "Heard time player play stop click.");
+      controller.pauseTime();
+      timeTravelSpeedLabel.setText(controller.getCurrentSpeedTag());
     });
-    timePlayerForwardsButton.setOnClickListener(new OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        Log.d(TAG, "Heard time player play forwards click.");
-        controller.accelerateTimeTravel();
-        timeTravelSpeedLabel.setText(controller.getCurrentSpeedTag());
-      }
+    timePlayerForwardsButton.setOnClickListener(v -> {
+      Log.d(TAG, "Heard time player play forwards click.");
+      controller.accelerateTimeTravel();
+      timeTravelSpeedLabel.setText(controller.getCurrentSpeedTag());
     });
 
     Runnable displayUpdater = new Runnable() {
-      private TextView timeTravelTimeReadout = (TextView) findViewById(
+      private final TextView timeTravelTimeReadout = findViewById(
           R.id.time_travel_time_readout);
-      private TextView timeTravelStatusLabel = (TextView) findViewById(
+      private final TextView timeTravelStatusLabel = findViewById(
           R.id.time_travel_status_label);
-      private TextView timeTravelSpeedLabel = (TextView) findViewById(
+      private final TextView timeTravelSpeedLabel = findViewById(
           R.id.time_travel_speed_label);
       private final SimpleDateFormat dateFormatter = new SimpleDateFormat(
-          "yyyy.MM.dd G  HH:mm:ss z");
-      private Date date = new Date();
+          "yyyy.MM.dd G  HH:mm:ss z", Locale.getDefault());
+      private final Date date = new Date();
+
       @Override
       public void run() {
         long time = model.getTimeMillis();

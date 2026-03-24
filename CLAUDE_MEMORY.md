@@ -59,6 +59,9 @@ Branch: `feature/auto-level-horizon` (pushed 2026-03-01)
 - [feedback_play_store_build.md](feedback_play_store_build.md) — Always run a full build before pushing to Play Store
 - [feedback_version_name.md](feedback_version_name.md) — Always preserve the full version name including `:Earth` suffix when bumping. This suffix will change with minor and major version bumps but not with point/bugfix bumps.
 
+## Implementation Discipline
+- [feedback_no_incidental_cleanups.md](feedback_no_incidental_cleanups.md) — Never make incidental cleanups (lambda conversions, `final`, cast removals, locale changes, style fixes) in a feature PR. Feature-scoped changes only.
+
 ## Location UX Fix
 
 Branch: `fix/location-ux` (created 2026-03-03 from master)

@@ -239,5 +239,6 @@
     <string name="object_info_image_content_description" translation_description="Accessibility description for celestial object photo">आकाशीय पिंड की तस्वीर</string>
     <string name="object_info_tap_to_expand" translation_description="Hint shown on image to tap to expand">विस्तार करने के लिए टैप करें</string>
     <string name="object_info_tap_to_close" translation_description="Hint shown on expanded image to tap to close">बंद करने के लिए टैप करें</string>
+    <string name="action_find_in_sky_map" translation_description="Button label that opens the star map and searches for the displayed object">खोजें</string>
 
 </resources>

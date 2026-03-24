@@ -4,7 +4,8 @@
 
 ### I. Sensor-First Architecture
 
-The Sky Map display MUST be driven by real-time device sensor data flowing through `AstronomerModel`.
+The Sky Map display MUST be driven by real-time device sensor data flowing through
+`AstronomerModel`.
 Manual drag/rotate control exists as a fallback only; it MUST NOT become the primary input path.
 
 - Coordinate transformations MUST pass through `AstronomerModel`'s zenith/North matrix pipeline;
@@ -107,6 +108,23 @@ as the user moves their device.
 **Rationale**: Perceptible lag between device motion and sky movement breaks the core illusion of
 the app. Even small latency regressions degrade the experience for all users.
 
+### VII. Feature-Scoped Changes Only
+
+A PR implementing or fixing a specific feature MUST NOT include incidental code cleanups in
+files touched by the feature.
+
+- Refactors, style fixes, lambda conversions, `final` modifiers, unchecked-cast removals, locale
+  changes, and similar "while I'm here" edits MUST NOT appear in a feature PR. They belong in a
+  dedicated, separately reviewed cleanup PR.
+- This rule exists because seemingly-safe cleanups frequently introduce subtle behavior changes
+  (e.g. locale-sensitive formatting, removing a guard condition, dropping a menu-item alias) that
+  are hard to spot during review when mixed with unrelated feature changes.
+- When making changes, touch only lines required to implement the feature. Leave surrounding code
+  exactly as found, even if it could be improved.
+
+**Rationale**: Mixed-scope PRs obscure behavior changes in review, increase the risk of regressions,
+and make git history harder to bisect.
+
 ## Android Code Standards
 
 - Follow the [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html):
@@ -164,12 +182,13 @@ are generated from the approved spec via `/speckit.tasks`. AI assistants MUST NO
 implementation code for a new feature without an approved spec in `specs/`.
 
 **Amendment procedure**:
+
 1. Open a PR with the proposed change to `.specify/memory/constitution.md`.
 2. State the motivation, affected principles, and any migration plan.
 3. Bump the version according to semantic versioning:
-   - MAJOR: backward-incompatible removal or redefinition of a principle.
-   - MINOR: new principle or section added, or materially expanded guidance.
-   - PATCH: clarifications, wording fixes, non-semantic refinements.
+    - MAJOR: backward-incompatible removal or redefinition of a principle.
+    - MINOR: new principle or section added, or materially expanded guidance.
+    - PATCH: clarifications, wording fixes, non-semantic refinements.
 4. Update dependent templates (plan, spec, tasks) in the same PR if the change affects them.
 5. Obtain at least one maintainer review before merging.
 
@@ -179,4 +198,4 @@ referencing the specific principle.
 
 Runtime development guidance lives in `AGENTS.md` (project root) and `docs/ARCHITECTURE.md`.
 
-**Version**: 1.0.0 | **Ratified**: 2026-03-24 | **Last Amended**: 2026-03-24
+**Version**: 1.1.0 | **Ratified**: 2026-03-24 | **Last Amended**: 2026-03-24
