@@ -16,6 +16,8 @@ package com.google.android.stardroid.util;
 
 import android.os.Bundle;
 
+import java.util.Map;
+
 /**
  * Encapsulates interactions with Firebase Analytics, allowing it to be
  * disabled etc.
@@ -35,6 +37,13 @@ public interface AnalyticsInterface {
   String DEVICE_SENSORS_ROTATION = "rot";
   // Phone claims to have a sensor, but then doesn't allow registration of a listener.
   String SENSOR_LIAR = "sensor_liar_prop";
+  // Individual sensor boolean properties (easier to filter in GA4 than parsing DEVICE_SENSORS)
+  String HAS_GYRO = "has_gyro_prop";
+  String HAS_ROTATION_VECTOR = "has_rotation_vector_prop";
+  // Version the user first installed (set once on new install for cohort analysis)
+  String FIRST_INSTALL_VERSION = "first_install_version_prop";
+  // User's locale at startup (e.g. "en-US") to understand translation coverage
+  String USER_LOCALE = "user_locale_prop";
 
   // Events & Categories
   String TOS_ACCEPTED_EVENT = "TOS_accepted_ev";
@@ -43,7 +52,8 @@ public interface AnalyticsInterface {
   String PREFERENCE_BUTTON_TOGGLE_VALUE = "preference_toggle_value";
   String PREFERENCE_CHANGE_EVENT = "preference_change_ev";
   String PREFERENCE_CHANGE_EVENT_VALUE = "value";
-  String TOGGLED_MANUAL_MODE_LABEL = "toggled_manual_mode_ev";
+  String MANUAL_MODE_TOGGLED_EVENT = "manual_mode_toggled_ev";
+  String MANUAL_MODE_ENABLED = "enabled";
   String MENU_ITEM_EVENT = "menu_item_pressed_ev";
   String MENU_ITEM_EVENT_VALUE = "menu_item";
   String TOGGLED_NIGHT_MODE_LABEL = "night_mode";
@@ -58,12 +68,23 @@ public interface AnalyticsInterface {
   String DIAGNOSTICS_OPENED_LABEL = "diagnostics_opened";
   String SEARCH_EVENT = "search";
   String SEARCH_TERM = "search_term";
-  String SEARCH_SUCCESS = "search_success";
+  String SEARCH_SUCCESS = "search_success"; // parameter name in Firebase, keep as-is
+  String SEARCH_FAILED_EVENT = "search_failed_ev";
   String START_EVENT = "start_up_event_ev";
-  String START_EVENT_HOUR = "hour";
+  String START_EVENT_HOUR = "local_hour";
+  String START_EVENT_DAY_OF_WEEK = "day_of_week";
+  String START_EVENT_NIGHT_MODE = "night_mode_on";
+  String START_EVENT_SENSOR_PATH = "sensor_path";
+  String SENSOR_PATH_ROTATION_VECTOR = "rotation_vector";
+  String SENSOR_PATH_ACCEL_MAG = "accel_mag";
+  String SENSOR_PATH_NONE = "none";  // No sensor manager available; app runs in manual mode only
+
+  String TIME_TRAVEL_USED_EVENT = "time_travel_used_ev";
+  String TIME_TRAVEL_EVENT_KEY = "travel_event";
 
   String SESSION_LENGTH_EVENT = "session_length_ev";
   String SESSION_LENGTH_TIME_VALUE = "session_length";
+  String SESSION_BUCKET = "session_bucket";
 
   // Educational card views
   String OBJECT_INFO_VIEWED_EVENT = "object_info_viewed_ev";
@@ -77,10 +98,35 @@ public interface AnalyticsInterface {
   // Missing sensors
   String NO_SENSORS_WARNING_EVENT = "no_sensors_warning_ev";
 
+  // Gallery image viewed
+  String GALLERY_IMAGE_VIEWED_EVENT = "gallery_image_viewed_ev";
+  String GALLERY_IMAGE_NAME = "image_name";
+
+  // Object locked (search result activated)
+  String OBJECT_LOCKED_EVENT = "object_locked_ev";
+  String OBJECT_LOCKED_NAME = "object_name";
+  String OBJECT_LOCKED_MODE = "mode";
+  String OBJECT_LOCKED_MODE_AUTO = "auto";
+  String OBJECT_LOCKED_MODE_MANUAL = "manual";
+
   // Layer toggles
   String LAYER_TOGGLED_EVENT = "layer_toggled_ev";
   String LAYER_TOGGLED_NAME = "layer_name";
   String LAYER_TOGGLED_ENABLED = "layer_enabled";
+
+  Map<String, String> LAYER_NAME_MAP = Map.of(
+      "source_provider.0", "stars",
+      "source_provider.1", "constellations",
+      "source_provider.2", "messier",
+      "source_provider.3", "solar_system",
+      "source_provider.4", "grid",
+      "source_provider.5", "horizon",
+      "source_provider.6", "meteor_showers"
+  );
+
+  static String layerDisplayName(String prefKey) {
+    return LAYER_NAME_MAP.getOrDefault(prefKey, prefKey);
+  }
 
   void setEnabled(boolean enabled);
 

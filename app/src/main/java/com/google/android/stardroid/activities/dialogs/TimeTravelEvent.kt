@@ -32,7 +32,8 @@ data class TimeTravelEvent(
   @StringRes val displayNameRes: Int,
   val type: Type,
   val timestampMs: Long = 0L,
-  @StringRes val searchTargetRes: Int = 0
+  @StringRes val searchTargetRes: Int = 0,
+  val analyticsKey: String = ""
 ) {
   enum class Type { NOW, NEXT_SUNSET, NEXT_SUNRISE, NEXT_FULL_MOON, NEXT_NEW_MOON, FIXED }
 }
@@ -50,32 +51,32 @@ object TimeTravelEvents {
   @JvmField
   val ALL: List<TimeTravelEvent> = listOf(
     // Position 0: hint/placeholder shown when no event is selected
-    TimeTravelEvent(R.string.time_travel_select_hint, Type.NOW),
+    TimeTravelEvent(R.string.time_travel_select_hint, Type.NOW, analyticsKey = "hint"),
 
     // Dynamically computed events
-    TimeTravelEvent(R.string.time_travel_next_sunset,   Type.NEXT_SUNSET,    searchTargetRes = R.string.sun),
-    TimeTravelEvent(R.string.time_travel_next_sunrise,  Type.NEXT_SUNRISE,   searchTargetRes = R.string.sun),
-    TimeTravelEvent(R.string.time_travel_next_fullmoon, Type.NEXT_FULL_MOON, searchTargetRes = R.string.moon),
-    TimeTravelEvent(R.string.time_travel_next_newmoon,  Type.NEXT_NEW_MOON,  searchTargetRes = R.string.moon),
+    TimeTravelEvent(R.string.time_travel_next_sunset,   Type.NEXT_SUNSET,    searchTargetRes = R.string.sun,     analyticsKey = "next_sunset"),
+    TimeTravelEvent(R.string.time_travel_next_sunrise,  Type.NEXT_SUNRISE,   searchTargetRes = R.string.sun,     analyticsKey = "next_sunrise"),
+    TimeTravelEvent(R.string.time_travel_next_fullmoon, Type.NEXT_FULL_MOON, searchTargetRes = R.string.moon,    analyticsKey = "next_full_moon"),
+    TimeTravelEvent(R.string.time_travel_next_newmoon,  Type.NEXT_NEW_MOON,  searchTargetRes = R.string.moon,    analyticsKey = "next_new_moon"),
 
     // 2026 events (chronological)
     // Use the constellation names rather than the radiants for meteor showers as they're always
     // visible.
-    TimeTravelEvent(R.string.time_travel_six_planet_parade_2026,   Type.FIXED, 1772321400000L,  R.string.saturn),
-    TimeTravelEvent(R.string.time_travel_lunar_eclipse_2026,       Type.FIXED, 1772537400000L,  R.string.moon),
-    TimeTravelEvent(R.string.time_travel_lyrids_2026,              Type.FIXED, 1776816000000L,  R.string.lyra),
-    TimeTravelEvent(R.string.time_travel_venus_jupiter_2026,       Type.FIXED, 1781035200000L,  R.string.venus),
-    TimeTravelEvent(R.string.time_travel_mars_uranus_2026,         Type.FIXED, 1783206000000L,  R.string.mars),
-    TimeTravelEvent(R.string.time_travel_solar_eclipse_2026,       Type.FIXED, 1786558200000L,  R.string.sun),
-    TimeTravelEvent(R.string.time_travel_perseids_2026,            Type.FIXED, 1786579200000L,  R.string.perseus),
-    TimeTravelEvent(R.string.time_travel_jupiter_occultation_2026, Type.FIXED, 1791293400000L,  R.string.jupiter),
-    TimeTravelEvent(R.string.time_travel_geminids_2026,            Type.FIXED, 1797206400000L,  R.string.gemini),
-    TimeTravelEvent(R.string.time_travel_supermoon_2026,           Type.FIXED, 1798149000000L,  R.string.moon),
+    TimeTravelEvent(R.string.time_travel_six_planet_parade_2026,   Type.FIXED, 1772321400000L,  R.string.saturn,  analyticsKey = "six_planet_parade_2026"),
+    TimeTravelEvent(R.string.time_travel_lunar_eclipse_2026,       Type.FIXED, 1772537400000L,  R.string.moon,    analyticsKey = "lunar_eclipse_2026"),
+    TimeTravelEvent(R.string.time_travel_lyrids_2026,              Type.FIXED, 1776816000000L,  R.string.lyra,    analyticsKey = "lyrids_2026"),
+    TimeTravelEvent(R.string.time_travel_venus_jupiter_2026,       Type.FIXED, 1781035200000L,  R.string.venus,   analyticsKey = "venus_jupiter_2026"),
+    TimeTravelEvent(R.string.time_travel_mars_uranus_2026,         Type.FIXED, 1783206000000L,  R.string.mars,    analyticsKey = "mars_uranus_2026"),
+    TimeTravelEvent(R.string.time_travel_solar_eclipse_2026,       Type.FIXED, 1786558200000L,  R.string.sun,     analyticsKey = "solar_eclipse_2026"),
+    TimeTravelEvent(R.string.time_travel_perseids_2026,            Type.FIXED, 1786579200000L,  R.string.perseus, analyticsKey = "perseids_2026"),
+    TimeTravelEvent(R.string.time_travel_jupiter_occultation_2026, Type.FIXED, 1791293400000L,  R.string.jupiter, analyticsKey = "jupiter_occultation_2026"),
+    TimeTravelEvent(R.string.time_travel_geminids_2026,            Type.FIXED, 1797206400000L,  R.string.gemini,  analyticsKey = "geminids_2026"),
+    TimeTravelEvent(R.string.time_travel_supermoon_2026,           Type.FIXED, 1798149000000L,  R.string.moon,    analyticsKey = "supermoon_2026"),
 
     // Fixed historical events
-    TimeTravelEvent(R.string.time_travel_mercury_transit_2016,     Type.FIXED, 1462805846000L,  R.string.mercury),
-    TimeTravelEvent(R.string.time_travel_solar_eclipse_2024,       Type.FIXED, 1712604000000L,  R.string.sun),
-    TimeTravelEvent(R.string.time_travel_apollo_11,                Type.FIXED, -14182953622L,   R.string.moon),
-    TimeTravelEvent(R.string.time_travel_jupiter_saturn_2020,      Type.FIXED, 1608574800000L,  R.string.jupiter),
+    TimeTravelEvent(R.string.time_travel_mercury_transit_2016,     Type.FIXED, 1462805846000L,  R.string.mercury, analyticsKey = "mercury_transit_2016"),
+    TimeTravelEvent(R.string.time_travel_solar_eclipse_2024,       Type.FIXED, 1712604000000L,  R.string.sun,     analyticsKey = "solar_eclipse_2024"),
+    TimeTravelEvent(R.string.time_travel_apollo_11,                Type.FIXED, -14182953622L,   R.string.moon,    analyticsKey = "apollo_11"),
+    TimeTravelEvent(R.string.time_travel_jupiter_saturn_2020,      Type.FIXED, 1608574800000L,  R.string.jupiter, analyticsKey = "jupiter_saturn_2020"),
   )
 }

@@ -586,6 +586,7 @@ public class DynamicStarMapActivity extends InjectableActivity
     Bundle b = new Bundle();
     // Let's see how well Analytics buckets things and log the raw number
     b.putInt(Analytics.SESSION_LENGTH_TIME_VALUE, sessionLengthSeconds);
+    b.putString(Analytics.SESSION_BUCKET, bucket.name());
     analytics.trackEvent(Analytics.SESSION_LENGTH_EVENT, b);
   }
 
@@ -636,10 +637,14 @@ public class DynamicStarMapActivity extends InjectableActivity
   }
 
   public void setTimeTravelMode(Date newTime) {
-    setTimeTravelMode(newTime, 0);
+    setTimeTravelMode(newTime, 0, "custom");
   }
 
-  public void setTimeTravelMode(Date newTime, @StringRes int searchObjectNameRes) {
+  public void setTimeTravelMode(Date newTime, @StringRes int searchObjectNameRes, String analyticsKey) {
+    Bundle timeTravelBundle = new Bundle();
+    timeTravelBundle.putString(AnalyticsInterface.TIME_TRAVEL_EVENT_KEY, analyticsKey);
+    analytics.trackEvent(AnalyticsInterface.TIME_TRAVEL_USED_EVENT, timeTravelBundle);
+
     SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy.MM.dd G  HH:mm:ss z");
     Toast.makeText(this,
                    String.format(getString(R.string.time_travel_start_message_alt),
@@ -676,6 +681,10 @@ public class DynamicStarMapActivity extends InjectableActivity
   }
 
   public void setTimeTravelModeFromNow() {
+    Bundle timeTravelBundle = new Bundle();
+    timeTravelBundle.putString(AnalyticsInterface.TIME_TRAVEL_EVENT_KEY, "from_now");
+    analytics.trackEvent(AnalyticsInterface.TIME_TRAVEL_USED_EVENT, timeTravelBundle);
+
     Log.d(TAG, "Showing TimePlayer UI (from now, no effects).");
     timePlayerUI.setVisibility(View.VISIBLE);
     timePlayerUI.requestFocus();
@@ -761,7 +770,7 @@ public class DynamicStarMapActivity extends InjectableActivity
         if (key.startsWith("source_provider.")) {
           boolean enabled = sharedPreferences.getBoolean(key, true);
           Bundle layerBundle = new Bundle();
-          layerBundle.putString(AnalyticsInterface.LAYER_TOGGLED_NAME, key);
+          layerBundle.putString(AnalyticsInterface.LAYER_TOGGLED_NAME, AnalyticsInterface.layerDisplayName(key));
           layerBundle.putBoolean(AnalyticsInterface.LAYER_TOGGLED_ENABLED, enabled);
           analytics.trackEvent(AnalyticsInterface.LAYER_TOGGLED_EVENT, layerBundle);
         }
@@ -807,6 +816,9 @@ public class DynamicStarMapActivity extends InjectableActivity
     analytics.trackEvent(AnalyticsInterface.SEARCH_EVENT, b);
     if (results.isEmpty()) {
       Log.d(TAG, "No results returned");
+      Bundle failBundle = new Bundle();
+      failBundle.putString(AnalyticsInterface.SEARCH_TERM, queryString);
+      analytics.trackEvent(AnalyticsInterface.SEARCH_FAILED_EVENT, failBundle);
       noSearchResultsDialogFragment.show(fragmentManager, "No Search Results");
     } else if (results.size() > 1) {
       Log.d(TAG, "Multiple results returned");
@@ -850,7 +862,8 @@ public class DynamicStarMapActivity extends InjectableActivity
 
   private void setAutoMode(boolean auto) {
     Bundle b = new Bundle();
-    b.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.TOGGLED_MANUAL_MODE_LABEL);
+    b.putBoolean(Analytics.MANUAL_MODE_ENABLED, !auto);
+    analytics.trackEvent(Analytics.MANUAL_MODE_TOGGLED_EVENT, b);
     controller.setAutoMode(auto);
     if (auto) {
       sensorAccuracyMonitor.start();
@@ -1021,6 +1034,11 @@ public class DynamicStarMapActivity extends InjectableActivity
     rendererController.queueViewerUpDirection(model.getZenith().copyForJ());
     rendererController.queueEnableSearchOverlay(target.copyForJ(), searchTerm);
     boolean autoMode = sharedPreferences.getBoolean(ApplicationConstants.AUTO_MODE_PREF_KEY, true);
+    Bundle lockedBundle = new Bundle();
+    lockedBundle.putString(AnalyticsInterface.OBJECT_LOCKED_NAME, searchTerm);
+    lockedBundle.putString(AnalyticsInterface.OBJECT_LOCKED_MODE,
+        autoMode ? AnalyticsInterface.OBJECT_LOCKED_MODE_AUTO : AnalyticsInterface.OBJECT_LOCKED_MODE_MANUAL);
+    analytics.trackEvent(AnalyticsInterface.OBJECT_LOCKED_EVENT, lockedBundle);
     if (!autoMode) {
       controller.teleport(target);
     }

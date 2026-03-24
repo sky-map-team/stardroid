@@ -39,6 +39,7 @@ import com.google.android.stardroid.activities.util.EdgeToEdgeFixer;
 import com.google.android.stardroid.gallery.GalleryFactory;
 import com.google.android.stardroid.gallery.GalleryImage;
 import com.google.android.stardroid.util.Analytics;
+import com.google.android.stardroid.util.AnalyticsInterface;
 import com.google.android.stardroid.util.AssetImageLoader;
 import com.google.android.stardroid.util.ImageLoadHandle;
 import com.google.android.stardroid.util.MiscUtil;
@@ -206,6 +207,9 @@ public class ImageGalleryActivity extends InjectableActivity
    * Starts the display image activity, and overrides the transition animation.
    */
   private void showImage(int position) {
+    Bundle b = new Bundle();
+    b.putString(AnalyticsInterface.GALLERY_IMAGE_NAME, galleryImages.get(position).getSearchTerm());
+    analytics.trackEvent(AnalyticsInterface.GALLERY_IMAGE_VIEWED_EVENT, b);
     Intent intent = new Intent(ImageGalleryActivity.this, ImageDisplayActivity.class);
     intent.putExtra(ImageGalleryActivity.IMAGE_ID, position);
     startActivity(intent);
