@@ -13,7 +13,6 @@
 // limitations under the License.
 package com.google.android.stardroid.renderables.proto
 
-import android.content.SharedPreferences
 import android.content.res.Resources
 import android.util.Log
 import com.google.android.stardroid.R
@@ -38,7 +37,6 @@ import java.util.*
 class ProtobufAstronomicalRenderable(
     originalProto: SourceProto.AstronomicalSourceProto,
     private val resources: Resources,
-    private val preferences: SharedPreferences? = null
 ) : AbstractAstronomicalRenderable() {
     companion object {
         private val TAG = MiscUtil.getTag(ProtobufAstronomicalRenderable::class.java)
@@ -78,7 +76,6 @@ class ProtobufAstronomicalRenderable(
             }
         }
 
-        private const val SHOW_MESSIER_IMAGES = "show_messier_images"
         private const val IMAGE_SCALE = 0.01f  // Same as Mars/Venus/Mercury
         private val UP = Vector3(0.0f, 1.0f, 0.0f)
     }
@@ -148,9 +145,8 @@ class ProtobufAstronomicalRenderable(
                 return emptyList<PointPrimitive>()
             }
 
-            // If showing Messier images, return empty (points shown as images instead)
-            val showMessierImages = preferences?.getBoolean(SHOW_MESSIER_IMAGES, true) ?: false
-            if (showMessierImages && isMessierObject()) {
+            // Points are hidden when images are shown instead
+            if (isMessierObject()) {
                 return emptyList<PointPrimitive>()
             }
 
@@ -201,9 +197,7 @@ class ProtobufAstronomicalRenderable(
 
     override val images: List<ImagePrimitive>
         get() {
-            // Only create images for Messier objects when preference is enabled
-            val showMessierImages = preferences?.getBoolean(SHOW_MESSIER_IMAGES, true) ?: false
-            if (!showMessierImages || !isMessierObject() || proto.pointCount == 0) {
+            if (!isMessierObject() || proto.pointCount == 0) {
                 return emptyList<ImagePrimitive>()
             }
 

@@ -87,11 +87,7 @@
         android:entryValues="@array/font_size_enums"
         android:entries="@array/font_size_texts"
         android:defaultValue="MEDIUM" />
-    <CheckBoxPreference
-        android:defaultValue="true"
-        android:title="@string/show_messier_images"
-        android:summary="@string/show_messier_images_summary"
-        android:key="show_messier_images"/>
+
   </PreferenceCategory>
 
   <!-- Sensor Settings -->

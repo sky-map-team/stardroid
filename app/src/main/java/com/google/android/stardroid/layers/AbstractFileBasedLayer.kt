@@ -68,7 +68,6 @@ abstract class AbstractFileBasedLayer(
                     ProtobufAstronomicalRenderable(
                         proto,
                         resources,
-                        prefs  // Pass preferences
                     )
                 )
             }

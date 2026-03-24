@@ -41,7 +41,7 @@
     <string name="manual_compass_adjustment_summary" translation_description="Summary for the manual compass adjustment preference">Extra offset in degrees (+ or −) added to compass reading</string>
     <string name="show_stars_pref" translation_description="Label for the stars layer on the sky map (shows in the search results)">Stars</string>
     <string name="show_constellations_pref" translation_description="Label for the constellation lines and labels layer (shows in the search results)">Constellations</string>
-    <string name="show_messier_objects_pref" translation_description="Deep-sky objects layer — galaxies, nebulae, star clusters, and other notable objects (shows in the search results)">Notable Deep Sky Objects</string>
+    <string name="show_messier_objects_pref" translation_description="Deep-sky objects layer — galaxies, nebulae, star clusters, and other notable objects (shows in the search results)">Deep Sky Objects</string>
     <string name="show_planets_pref" translation_description="Label for the solar system layer (planets, sun, moon)  (shows in the search results)">Solar System</string>
     <string name="show_grid_pref" translation_description="Label for the Right Ascension / Declination grid overlay  (shows in the search results)">RA/Dec Grid</string>
     <string name="show_horizon_pref" translation_description="Preference toggle label for the horizon line layer">Horizon</string>
@@ -86,8 +86,6 @@
     <string name="no_search_results_text2" translation_description="Alternative message shown when a search returns no results, suggesting the object may not currently be visible">No results were found. Perhaps the object is not visible at this time.</string>
     <string name="many_search_results_title" translation_description="Dialog title shown when a search returns multiple possible matches">Did you mean?</string>
     <string name="other" translation_description="A preference category (ie preferences that don't belong in any other category)">Other</string>
-    <string name="show_messier_images" translation_description="Preference toggle label for showing galaxy/nebula icons for deep-sky objects">Show Deep Sky Images</string>
-    <string name="show_messier_images_summary" translation_description="Summary description for the Show Deep Sky Images preference">Display deep-sky objects as galaxy icons instead of dots</string>
     <string name="menu_time" translation_description="Menu item label to open the time travel feature">Time Travel</string>
     <string name="time_travel_start_message_alt" translation_description="Toast message when time travel starts toward a named destination. %s is the event or destination name">Traveling through time to %s ...</string>
     <string name="time_travel_close_message" translation_description="Toast message shown when the user exits time travel and returns to the present">Back to the present ...</string>
