@@ -4,7 +4,8 @@
 
 ### I. Sensor-First Architecture
 
-The Sky Map display MUST be driven by real-time device sensor data flowing through `AstronomerModel`.
+The Sky Map display MUST be driven by real-time device sensor data flowing through
+`AstronomerModel`.
 Manual drag/rotate control exists as a fallback only; it MUST NOT become the primary input path.
 
 - Coordinate transformations MUST pass through `AstronomerModel`'s zenith/North matrix pipeline;
@@ -164,12 +165,13 @@ are generated from the approved spec via `/speckit.tasks`. AI assistants MUST NO
 implementation code for a new feature without an approved spec in `specs/`.
 
 **Amendment procedure**:
+
 1. Open a PR with the proposed change to `.specify/memory/constitution.md`.
 2. State the motivation, affected principles, and any migration plan.
 3. Bump the version according to semantic versioning:
-   - MAJOR: backward-incompatible removal or redefinition of a principle.
-   - MINOR: new principle or section added, or materially expanded guidance.
-   - PATCH: clarifications, wording fixes, non-semantic refinements.
+    - MAJOR: backward-incompatible removal or redefinition of a principle.
+    - MINOR: new principle or section added, or materially expanded guidance.
+    - PATCH: clarifications, wording fixes, non-semantic refinements.
 4. Update dependent templates (plan, spec, tasks) in the same PR if the change affects them.
 5. Obtain at least one maintainer review before merging.
 
