@@ -23,7 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - **Location warning** — a notice is shown on startup when no location has been set, so first-time
   users understand why the sky may not match their view
   ([#675](https://github.com/sky-map-team/stardroid/pull/675))
-- Sensor damping preference labels now include explanatory hints
+- **Sensor damping preference labels** now include explanatory hints
 
 ### Changed
 - **Search autocomplete results are now capitalized** — object names in the suggestion list match
