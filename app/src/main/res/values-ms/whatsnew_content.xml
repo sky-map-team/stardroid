@@ -1,5 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
+    <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Galeri Imej yang Diperbaiki</h2>
+<p>Galeri telah direka semula dengan tata letak grid dan pautan yang lebih baik ke kad maklumat.</p>
+<h2>Lubang Hitam</h2>
+<p>Cygnus X-1 dan Sagittarius A* kini berada dalam katalog Sky Map.</p>
+<h2>Objek Langit Dalam</h2>
+<p>Objek Messier dan bukan bintang lain kini dipanggil &#8220;Objek langit dalam&#8221; di seluruh aplikasi.</p>
+<h2>Perjalanan Masa dalam Menu</h2>
+<p>Pilihan perjalanan masa kini juga muncul terus dalam menu limpahan, bersama ikon untuk semua item menu.</p>]]></string>
     <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Pengguna beta!</h2>
 <h3>Bagaimana anda boleh membantu</h3>
 Dalam keluaran ini apabila anda menggunakan mod manual dan memberikan peta satu sapuan, ufuk akan kembali

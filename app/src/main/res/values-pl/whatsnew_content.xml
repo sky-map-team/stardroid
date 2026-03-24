@@ -1,5 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
+    <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Ulepszona galeria obrazów</h2>
+<p>Galeria została przeprojektowana z układem siatki i lepszymi łączami do kart informacyjnych.</p>
+<h2>Czarne dziury</h2>
+<p>Cygnus X-1 i Sagittarius A* są teraz w katalogu Sky Map.</p>
+<h2>Obiekty głębokich nieba</h2>
+<p>Messier i inne obiekty niestellarne są teraz nazywane &#8220;Obiektami głębokich nieba&#8221; w całej aplikacji.</p>
+<h2>Podróż w czasie w menu</h2>
+<p>Opcja podróży w czasie pojawia się teraz również bezpośrednio w menu przepełnienia, obok ikon wszystkich elementów menu.</p>]]></string>
     <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Użytkownicy beta!</h2>
 <h3>Jak możesz nam pomóc</h3>
 W tej wersji, gdy używasz trybu ręcznego i przesuniesz mapę, horyzont powróci

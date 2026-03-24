@@ -1,5 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
+    <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Galería de Imágenes Mejorada</h2>
+<p>La galería ha sido rediseñada con un diseño de cuadrícula y mejores enlaces a tarjetas de información.</p>
+<h2>Agujeros Negros</h2>
+<p>Cygnus X-1 y Sagittarius A* ahora están en el catálogo de Sky Map.</p>
+<h2>Objetos del Cielo Profundo</h2>
+<p>Messier y otros objetos no estelares ahora se llaman &#8220;Objetos del cielo profundo&#8221; en toda la aplicación.</p>
+<h2>Viaje en el Tiempo en el Menú</h2>
+<p>La opción de viaje en el tiempo ahora también aparece directamente en el menú de desbordamiento, junto con iconos para todos los elementos del menú.</p>]]></string>
     <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[
 <h2>¡Usuario beta!</h2>
 <h3>Cómo ayudar</h3>

@@ -1,5 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
+    <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Galleria immagini migliorata</h2>
+<p>La galleria è stata riprogettata con un layout a griglia e migliori link alle schede informative.</p>
+<h2>Buchi neri</h2>
+<p>Cygnus X-1 e Sagittarius A* sono ora nel catalogo di Sky Map.</p>
+<h2>Oggetti del cielo profondo</h2>
+<p>Messier e altri oggetti non stellari sono ora chiamati &#8220;Oggetti del cielo profondo&#8221; in tutta l\'app.</p>
+<h2>Viaggio nel tempo nel menu</h2>
+<p>L\'opzione di viaggio nel tempo ora appare anche direttamente nel menu di overflow, insieme alle icone per tutti gli elementi del menu.</p>]]></string>
     <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Utenti beta!</h2>
 <h3>Come puoi aiutare</h3>
 In questa versione quando usi la modalità manuale e fai scorrere la mappa, l\'orizzonte tornerà

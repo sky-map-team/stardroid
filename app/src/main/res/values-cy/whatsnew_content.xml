@@ -1,5 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
+    <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Oriel Delweddau Wedi\'i Wella</h2>
+<p>Mae\'r oriel wedi\'i hailddylunio gyda chynllun grid a dolenni gwell i gardiau gwybodaeth.</p>
+<h2>Tyllau Du</h2>
+<p>Mae Cygnus X-1 a Sagittarius A* bellach yn y catalog Sky Map.</p>
+<h2>Gwrthrychau Awyr Ddofn</h2>
+<p>Gelwir Messier a gwrthrychau eraill nad ydynt yn sêr yn &#8220;Gwrthrychau awyr ddofn&#8221; drwy\'r ap.</p>
+<h2>Teithio Amser yn y Ddewislen</h2>
+<p>Mae\'r opsiwn teithio amser bellach yn ymddangos hefyd yn uniongyrchol yn y ddewislen gorlifo, ochr yn ochr ag eiconau ar gyfer pob eitem ddewislen.</p>]]></string>
     <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Defnyddwyr beta!</h2>
 <h3>Sut y gallwch chi helpu</h3>
 Yn y rhyddhad hwn, pan fyddwch chi\'n defnyddio\'r modd llaw ac yn rhoi sgubo i\'r map, bydd yr gorwel yn dychwelyd

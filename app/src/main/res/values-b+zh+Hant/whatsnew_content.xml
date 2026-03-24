@@ -1,5 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
+    <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>改進的圖像庫</h2>
+<p>圖像庫已重新設計，採用網格佈局，並提供更好的資訊卡連結。</p>
+<h2>黑洞</h2>
+<p>天鵝座 X-1 和人馬座 A* 現已納入 Sky Map 目錄。</p>
+<h2>深空天體</h2>
+<p>梅西耶星表和其他非恆星天體在整個應用程式中現稱為&#8220;深空天體&#8221;。</p>
+<h2>菜單中的時間旅行</h2>
+<p>時間旅行選項現在也直接出現在溢出菜單中，與所有菜單項目的圖示並排。</p>]]></string>
     <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>測試版使用者！</h2>
 <h3>您可以如何幫助</h3>
 在此版本中，當您使用手動模式並滑動地圖時，地平線將恢復水平，因此地圖的頂部將始終顯示您上方的星星。以前地圖只是直線移動，所以您可能會倒過來。您認為如何？這樣更好嗎？

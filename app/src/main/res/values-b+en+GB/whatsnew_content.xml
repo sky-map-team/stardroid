@@ -1,5 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
+    <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Improved Image Gallery</h2>
+<p>The gallery has been redesigned with a grid layout and better links to info cards.</p>
+<h2>Black Holes</h2>
+<p>Cygnus X-1 and Sagittarius A* are now in the Sky Map catalog.</p>
+<h2>Deep Sky Objects</h2>
+<p>Messier and other non-stellar objects are now called &#8220;Deep sky objects&#8221; throughout the app.</p>
+<h2>Time Travel in the Menu</h2>
+<p>The time travel option now also appears directly in the overflow menu, alongside icons for all menu items.</p>]]></string>
     <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Beta users!</h2>
 <h3>How you can help</h3>
 In this release when you use manual mode and give the map a swipe, the horizon will return

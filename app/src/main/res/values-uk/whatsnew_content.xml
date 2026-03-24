@@ -1,5 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
+    <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Покращена галерея зображень</h2>
+<p>Галерея була переробена з сітковим макетом та кращими посиланнями на інформаційні карти.</p>
+<h2>Чорні діри</h2>
+<p>Лебідь X-1 та Стрілець A* тепер знаходяться в каталозі Sky Map.</p>
+<h2>Об\'єкти глибокого космосу</h2>
+<p>Об\'єкти Мессьє та інші зоряні об\'єкти тепер називаються &#8220;Об\'єкти глибокого космосу&#8221; у всьому додатку.</p>
+<h2>Подорож у часі в меню</h2>
+<p>Опція подорожі у часі тепер також з\'являється безпосередньо в меню переповнення, поряд з піктограмами всіх пунктів меню.</p>]]></string>
     <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Бета-тестери!</h2>
 <h3>Як ви можете допомогти</h3>
 У цьому випуску, коли ви використовуєте ручний режим і робите змах по карті, горизонт повернеться

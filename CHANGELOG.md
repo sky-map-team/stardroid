@@ -5,6 +5,27 @@ All notable changes to Sky Map are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [Unreleased] - 2026-03-24
+
+### Added
+- **Two black holes** — Cygnus X-1 and Sagittarius A* are now in the Sky Map catalog
+  ([#771](https://github.com/sky-map-team/stardroid/pull/771))
+- **Time travel in overflow menu** — the time travel option now appears directly in the
+  overflow menu, making it discoverable without knowing the toolbar icon; icons added to all
+  overflow menu items
+  ([#770](https://github.com/sky-map-team/stardroid/pull/770))
+
+### Changed
+- **Gallery redesigned** — replaced the sideways-scrolling list with a grid layout that
+  integrates with info cards for a much improved browsing experience
+  ([#778](https://github.com/sky-map-team/stardroid/pull/778),
+  [#779](https://github.com/sky-map-team/stardroid/pull/779))
+- **"Messier objects" renamed to "Deep sky objects"** — the catalog of nebulae, clusters, and
+  galaxies is now labelled more accurately throughout the app
+  ([#772](https://github.com/sky-map-team/stardroid/pull/772))
+
+---
+
 ## [1.12.3] - 2026-03-24
 
 ### Added

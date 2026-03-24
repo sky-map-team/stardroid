@@ -1,5 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
+    <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>گالری تصاویر بهبود یافته</h2>
+<p>گالری با طرح‌بندی شبکه‌ای و پیوندهای بهتر به کارت‌های اطلاعات دوباره طراحی شده است.</p>
+<h2>سیاه‌چاله‌ها</h2>
+<p>Cygnus X-1 و Sagittarius A* اکنون در کاتالوگ Sky Map قرار دارند.</p>
+<h2>اجرام عمیق آسمان</h2>
+<p>اجرام Messier و سایر اجرام غیر ستاره‌ای اکنون در سراسر برنامه &#8220;اجرام عمیق آسمان&#8221; نام‌گذاری می‌شوند.</p>
+<h2>سفر در زمان در منو</h2>
+<p>گزینه سفر در زمان اکنون مستقیماً در منوی سرریز نیز ظاهر می‌شود، در کنار نمادهای تمام موارد منو.</p>]]></string>
     <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>کاربران بتا!</h2>
 <h3>چگونه می‌توانید کمک کنید</h3>
 در این نسخه، هنگامی که از حالت دستی استفاده می‌کنید و نقشه را سویپ می‌کنید، افق به سطح برمی‌گردد تا بالای نقشه همیشه ستاره‌های بالای شما را نشان دهد. قبلاً نقشه فقط در یک خط مستقیم حرکت می‌کرد، بنابراین می‌توانستید وارونه شوید. نظرتان چیست؟ آیا این بهتر است؟

@@ -1,5 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
+    <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Izboljšana galerija slik</h2>
+<p>Galerija je bila ponovno oblikovana z mrežnim postavom in boljšimi povezavami na informacijske kartice.</p>
+<h2>Črne luknje</h2>
+<p>Cygnus X-1 in Sagittarius A* sta zdaj v katalogu Sky Map.</p>
+<h2>Globoki vesoljski objekti</h2>
+<p>Messierjev in drugi ne-zvezdni objekti se zdaj imenujejo &#8220;Globoki vesoljski objekti&#8221; v celotni aplikaciji.</p>
+<h2>Potovanje skozi čas v meniju</h2>
+<p>Možnost potovanja skozi čas se zdaj pojavi tudi neposredno v meniju prekoračitve, skupaj z ikonami za vse elemente menija.</p>]]></string>
     <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Uporabniki beta različice!</h2>
 <h3>Kako lahko pomagate</h3>
 V tej različici, ko uporabite ročni način in premaknete zemljevid, se obzorje vrne

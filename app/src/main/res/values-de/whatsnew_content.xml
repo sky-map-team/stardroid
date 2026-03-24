@@ -1,5 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
+    <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Verbesserte Bildergalerie</h2>
+<p>Die Galerie wurde mit einem Rasterlayout und besseren Links zu Infokarten neu gestaltet.</p>
+<h2>Schwarze Löcher</h2>
+<p>Cygnus X-1 und Sagittarius A* befinden sich nun im Sky Map-Katalog.</p>
+<h2>Deep-Sky-Objekte</h2>
+<p>Messier und andere nicht-stellare Objekte werden nun in der gesamten App &#8220;Deep-Sky-Objekte&#8221; genannt.</p>
+<h2>Zeitreise im Menü</h2>
+<p>Die Zeitreise-Option wird nun auch direkt im Overflow-Menü angezeigt, zusammen mit Symbolen für alle Menüelemente.</p>]]></string>
     <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Beta-Nutzer!</h2>
 <h3>Wie du helfen kannst</h3>
 In dieser Version wird der Horizont beim Wischen der Karte im manuellen Modus wieder auf die Ebene zurückgesetzt, sodass die Oberseite der Karte immer die Sterne über dir zeigt. Zuvor bewegte sich die Karte nur in einer geraden Linie, sodass du am Ende kopfüber sein konntest. Was hältst du davon? Ist das besser?

@@ -1,5 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
+    <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Galeria de Imagens Melhorada</h2>
+<p>A galeria foi redesenhada com um layout em grade e melhores links para cartões de informações.</p>
+<h2>Buracos Negros</h2>
+<p>Cygnus X-1 e Sagittarius A* agora estão no catálogo do Sky Map.</p>
+<h2>Objetos do Céu Profundo</h2>
+<p>Messier e outros objetos não-estelares agora são chamados de &#8220;Objetos do céu profundo&#8221; em todo o aplicativo.</p>
+<h2>Viagem no Tempo no Menu</h2>
+<p>A opção de viagem no tempo agora também aparece diretamente no menu de overflow, ao lado de ícones para todos os itens do menu.</p>]]></string>
     <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Utilizadores beta!</h2>
 <h3>Como pode ajudar</h3>
 Nesta versão, quando utiliza o modo manual e faz um gesto de deslize no mapa, o horizonte voltará
