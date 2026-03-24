@@ -562,6 +562,11 @@ budget: 7 of 25 used.
 ## N.
 If necessary, update the privacy policy to clearly convey what data is collected and why.
 
+**Status: DONE** — `PRIVACY_POLICY.md` rewritten to reflect Firebase Analytics (not Google
+Analytics), enumerate what is and isn't collected (search terms called out explicitly,
+location blacklist noted), explain the settings snapshot and locale property, and update the
+opt-out instructions and Firebase privacy link.
+
 
 
 ---
