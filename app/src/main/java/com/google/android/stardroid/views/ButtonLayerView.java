@@ -19,7 +19,6 @@ import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.animation.AlphaAnimation;
 import android.widget.LinearLayout;
 
 import com.google.android.stardroid.R;
@@ -29,8 +28,6 @@ import com.google.android.stardroid.R;
  */
 
 public class ButtonLayerView extends LinearLayout {
-  // TODO(jontayler): clear up the fade code which is no longer used.
-  private int fadeTime = 500;
 
   public ButtonLayerView(Context context) {
     this(context, null);
@@ -40,7 +37,6 @@ public class ButtonLayerView extends LinearLayout {
     super(context, attrs);
     setFocusable(false);
     TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.ButtonLayerView);
-    fadeTime = a.getResourceId(R.styleable.ButtonLayerView_fade_time, 500);
   }
 
   @Override
@@ -53,20 +49,13 @@ public class ButtonLayerView extends LinearLayout {
   }
 
   public void show() {
-    fade(View.VISIBLE, 0.0f, 1.0f);
+    setVisibility(View.GONE);
   }
 
   public void hide() {
-    fade(View.GONE, 1.0f, 0.0f);
+    setVisibility(View.GONE);
   }
-
-  private void fade(int visibility, float startAlpha, float endAlpha) {
-    AlphaAnimation anim = new AlphaAnimation(startAlpha, endAlpha);
-    anim.setDuration(fadeTime);
-    startAnimation(anim);
-    setVisibility(visibility);
-  }
-
+  
   @Override
   public boolean hasFocus() {
     int numChildren = getChildCount();
