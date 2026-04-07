@@ -14,7 +14,6 @@
 
 package com.google.android.stardroid.control;
 
-import android.content.Context;
 import android.util.Log;
 
 import com.google.android.stardroid.base.VisibleForTesting;
@@ -48,7 +47,7 @@ public class ControllerGroup implements Controller {
 
   // TODO(jontayler): inject everything else.
   @Inject
-  ControllerGroup(Context context, SensorOrientationController sensorOrientationController,
+  ControllerGroup(SensorOrientationController sensorOrientationController,
                   LocationController locationController) {
     this.locationController = locationController;
     addController(locationController);

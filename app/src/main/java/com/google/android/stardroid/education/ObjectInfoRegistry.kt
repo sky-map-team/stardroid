@@ -16,6 +16,7 @@ import com.google.android.stardroid.util.processImage
 import android.content.Context
 import android.content.res.AssetManager
 import android.util.Log
+import dagger.hilt.android.qualifiers.ApplicationContext
 import org.json.JSONObject
 import javax.inject.Inject
 
@@ -24,7 +25,7 @@ import javax.inject.Inject
  * Data is loaded from a JSON file in assets and string resources for i18n support.
  */
 class ObjectInfoRegistry @Inject constructor(
-    private val context: Context,
+    @ApplicationContext private val context: Context,
     private val assetManager: AssetManager
 ) {
     private val objectInfoMap: Map<String, ObjectInfoEntry> by lazy { loadFromAssets() }
