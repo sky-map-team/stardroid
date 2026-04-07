@@ -1385,7 +1385,7 @@
     </string>
     <string name="object_info_algieba_distance" translation_description="Distance to Algieba shown in the info card. Translate units if appropriate for your locale.">~130 anos-luz</string>
     <string name="object_info_algieba_size" translation_description="Physical size of Algieba shown in the info card. Translate units if appropriate for your locale.">~23 raios solares</string>
-    <!-- tm:omitted name="object_info_algieba_mass" reason="identical_to_source" -->
+    <string name="object_info_algieba_mass" translation_description="Mass of Algieba. Translate units if appropriate for your locale.">~1,2 massas solares</string>
 
     <!-- Alhena -->
     <string name="object_info_alhena_description" translation_description="Short description of Alhena">
@@ -1396,7 +1396,7 @@
     </string>
     <string name="object_info_alhena_distance" translation_description="Distance to Alhena shown in the info card. Translate units if appropriate for your locale.">109 anos-luz</string>
     <string name="object_info_alhena_size" translation_description="Physical size of Alhena shown in the info card. Translate units if appropriate for your locale.">3.3 raios solares</string>
-    <!-- tm:omitted name="object_info_alhena_mass" reason="identical_to_source" -->
+    <string name="object_info_alhena_mass" translation_description="Mass of Alhena. Translate units if appropriate for your locale.">2,8 massas solares</string>
 
     <!-- Alkaid -->
     <string name="object_info_alkaid_description" translation_description="Short description of Alkaid">
@@ -1407,7 +1407,7 @@
     </string>
     <string name="object_info_alkaid_distance" translation_description="Distance to Alkaid shown in the info card. Translate units if appropriate for your locale.">104 anos-luz</string>
     <string name="object_info_alkaid_size" translation_description="Physical size of Alkaid shown in the info card. Translate units if appropriate for your locale.">3.4 raios solares</string>
-    <!-- tm:omitted name="object_info_alkaid_mass" reason="identical_to_source" -->
+    <string name="object_info_alkaid_mass" translation_description="Mass of Alkaid. Translate units if appropriate for your locale.">6,1 massas solares</string>
 
     <!-- Alnair -->
     <string name="object_info_alnair_description" translation_description="Short description of Alnair">
@@ -1418,7 +1418,7 @@
     </string>
     <string name="object_info_alnair_distance" translation_description="Distance to Alnair shown in the info card. Translate units if appropriate for your locale.">101 anos-luz</string>
     <string name="object_info_alnair_size" translation_description="Physical size of Alnair shown in the info card. Translate units if appropriate for your locale.">3.4 raios solares</string>
-    <!-- tm:omitted name="object_info_alnair_mass" reason="identical_to_source" -->
+    <string name="object_info_alnair_mass" translation_description="Mass of Alnair. Translate units if appropriate for your locale.">4,0 massas solares</string>
 
     <!-- Alnath -->
     <string name="object_info_alnath_description" translation_description="Short description of Alnath">
@@ -1429,7 +1429,7 @@
     </string>
     <string name="object_info_alnath_distance" translation_description="Distance to Alnath shown in the info card. Translate units if appropriate for your locale.">134 anos-luz</string>
     <string name="object_info_alnath_size" translation_description="Physical size of Alnath shown in the info card. Translate units if appropriate for your locale.">4.2 raios solares</string>
-    <!-- tm:omitted name="object_info_alnath_mass" reason="identical_to_source" -->
+    <string name="object_info_alnath_mass" translation_description="Mass of Alnath. Translate units if appropriate for your locale.">5,0 massas solares</string>
 
     <!-- Alphekka -->
     <string name="object_info_alphekka_description" translation_description="Short description of Alphekka">
@@ -1605,7 +1605,7 @@
     </string>
     <string name="object_info_vindemiatrix_distance" translation_description="Distance to Vindemiatrix shown in the info card. Translate units if appropriate for your locale.">109 anos-luz</string>
     <string name="object_info_vindemiatrix_size" translation_description="Physical size of Vindemiatrix shown in the info card. Translate units if appropriate for your locale.">11 raios solares</string>
-    <!-- tm:omitted name="object_info_vindemiatrix_mass" reason="identical_to_source" -->
+    <string name="object_info_vindemiatrix_mass" translation_description="Mass of Vindemiatrix. Translate units if appropriate for your locale.">2,6 massas solares</string>
 
     <!-- ============================================ -->
     <!-- New Constellations (41) — Phase 1 of issue #645 -->
