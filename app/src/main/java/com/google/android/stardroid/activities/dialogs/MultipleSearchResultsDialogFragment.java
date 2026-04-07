@@ -1,5 +1,6 @@
 package com.google.android.stardroid.activities.dialogs;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -9,7 +10,6 @@ import android.widget.ArrayAdapter;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.DynamicStarMapActivity;
-import com.google.android.stardroid.inject.HasComponent;
 import com.google.android.stardroid.search.SearchResult;
 import com.google.android.stardroid.util.MiscUtil;
 
@@ -17,28 +17,26 @@ import java.util.ArrayList;
 
 import javax.inject.Inject;
 
+import dagger.hilt.android.AndroidEntryPoint;
+
 /**
  * End User License agreement dialog.
  * Created by johntaylor on 4/3/16.
  */
+@AndroidEntryPoint
 public class MultipleSearchResultsDialogFragment extends DialogFragment {
   private static final String TAG = MiscUtil.getTag(MultipleSearchResultsDialogFragment.class);
-  @Inject DynamicStarMapActivity parentActivity;
+  @Inject Activity parentActivity;
 
   private ArrayAdapter<SearchResult> multipleSearchResultsAdaptor;
 
-  public interface ActivityComponent {
-    void inject(MultipleSearchResultsDialogFragment fragment);
-  }
-
   @Override
   public Dialog onCreateDialog(Bundle savedInstanceState) {
-    // Activities using this dialog MUST implement this interface.  Obviously.
-    ((HasComponent<ActivityComponent>) getActivity()).getComponent().inject(this);
+    DynamicStarMapActivity starMapActivity = (DynamicStarMapActivity) parentActivity;
 
     // TODO(jontayler): inject
     multipleSearchResultsAdaptor = new ArrayAdapter<>(
-        parentActivity, android.R.layout.simple_list_item_1, new ArrayList<SearchResult>());
+        starMapActivity, android.R.layout.simple_list_item_1, new ArrayList<SearchResult>());
 
 
     DialogInterface.OnClickListener onClickListener = new DialogInterface.OnClickListener() {
@@ -47,13 +45,13 @@ public class MultipleSearchResultsDialogFragment extends DialogFragment {
           Log.d(TAG, "Many search results Dialog closed with cancel");
         } else {
           final SearchResult item = multipleSearchResultsAdaptor.getItem(whichButton);
-          parentActivity.activateSearchTarget(item.coords(), item.getCapitalizedName());
+          starMapActivity.activateSearchTarget(item.coords(), item.getCapitalizedName());
         }
         dialog.dismiss();
       }
     };
 
-    return new AlertDialog.Builder(parentActivity)
+    return new AlertDialog.Builder(starMapActivity)
         .setTitle(R.string.many_search_results_title)
         .setNegativeButton(android.R.string.cancel, onClickListener)
         .setAdapter(multipleSearchResultsAdaptor, onClickListener)

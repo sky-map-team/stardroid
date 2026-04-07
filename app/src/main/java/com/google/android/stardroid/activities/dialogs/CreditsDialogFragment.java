@@ -19,26 +19,22 @@ import androidx.preference.PreferenceManager;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
 import com.google.android.stardroid.activities.util.NightModeHelper;
-import com.google.android.stardroid.inject.HasComponent;
 import com.google.android.stardroid.util.MiscUtil;
 
 import javax.inject.Inject;
 
+import dagger.hilt.android.AndroidEntryPoint;
+
 /**
  * Credits dialog fragment.
  */
+@AndroidEntryPoint
 public class CreditsDialogFragment extends DialogFragment {
   private static final String TAG = MiscUtil.getTag(CreditsDialogFragment.class);
   @Inject Activity parentActivity;
 
-  public interface ActivityComponent {
-    void inject(CreditsDialogFragment fragment);
-  }
-
   @Override
   public Dialog onCreateDialog(Bundle savedInstanceState) {
-    ((HasComponent<ActivityComponent>) getActivity()).getComponent().inject(this);
-
     LayoutInflater inflater = parentActivity.getLayoutInflater();
     View view = inflater.inflate(R.layout.webview_dialog, null);
     AlertDialog alertDialog = new AlertDialog.Builder(parentActivity)

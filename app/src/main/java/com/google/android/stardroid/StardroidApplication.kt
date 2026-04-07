@@ -33,6 +33,7 @@ import com.google.android.stardroid.util.AssetImageLoader
 import com.google.android.stardroid.util.MiscUtil.getTag
 import com.google.android.stardroid.util.PreferenceChangeAnalyticsTracker
 import com.google.android.stardroid.views.PreferencesButton
+import dagger.hilt.android.HiltAndroidApp
 import java.util.*
 import javax.inject.Inject
 
@@ -41,6 +42,7 @@ import javax.inject.Inject
  *
  * @author John Taylor
  */
+@HiltAndroidApp
 class StardroidApplication : Application() {
   @Inject
   lateinit var preferences: SharedPreferences
@@ -61,14 +63,9 @@ class StardroidApplication : Application() {
   @Inject
   lateinit var preferenceChangeAnalyticsTracker: PreferenceChangeAnalyticsTracker
 
-  val applicationComponent: ApplicationComponent = DaggerApplicationComponent.builder()
-    .applicationModule(ApplicationModule(this))
-    .build()
-
   override fun onCreate() {
     Log.d(TAG, "StardroidApplication: onCreate")
     super.onCreate()
-    applicationComponent.inject(this)
     Log.i(
       TAG, "OS Version: " + Build.VERSION.RELEASE
           + "(" + Build.VERSION.SDK_INT + ")"

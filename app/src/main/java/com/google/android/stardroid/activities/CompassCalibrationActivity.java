@@ -28,7 +28,11 @@ import com.google.android.stardroid.util.Toaster;
 import javax.annotation.Nullable;
 import javax.inject.Inject;
 
-public class CompassCalibrationActivity extends InjectableActivity implements SensorEventListener, ActivityLightLevelChanger.NightModeable {
+import dagger.hilt.android.AndroidEntryPoint;
+
+@AndroidEntryPoint
+public class CompassCalibrationActivity extends androidx.fragment.app.FragmentActivity
+    implements SensorEventListener, ActivityLightLevelChanger.NightModeable {
   public static final String HIDE_CHECKBOX = "hide checkbox";
   public static final String DONT_SHOW_CALIBRATION_DIALOG = "no calibration dialog";
   public static final String AUTO_DISMISSABLE = "auto dismissable";
@@ -51,9 +55,6 @@ public class CompassCalibrationActivity extends InjectableActivity implements Se
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    DaggerCompassCalibrationComponent.builder()
-        .applicationComponent(getApplicationComponent())
-        .compassCalibrationModule(new CompassCalibrationModule(this)).build().inject(this);
 
     setContentView(R.layout.activity_compass_calibration);
     EdgeToEdgeFixer.applyEdgeToEdgeFixForActionBarActivity(this);

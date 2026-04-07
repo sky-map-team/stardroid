@@ -27,10 +27,10 @@ import com.google.android.stardroid.R
 import com.google.android.stardroid.activities.util.ActivityLightLevelManager
 import com.google.android.stardroid.activities.util.NightModeHelper
 import com.google.android.stardroid.education.ObjectInfo
-import com.google.android.stardroid.inject.HasComponent
 import com.google.android.stardroid.util.AssetImageLoader
 import com.google.android.stardroid.util.ImageLoadHandle
 import com.google.android.stardroid.util.MiscUtil
+import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 /**
@@ -40,6 +40,7 @@ import javax.inject.Inject
  * Use the [newInstance] factory method to create an instance with the required ObjectInfo.
  * This ensures the data survives configuration changes (e.g., screen rotation).
  */
+@AndroidEntryPoint
 class ObjectInfoDialogFragment : DialogFragment() {
 
     @Inject
@@ -47,23 +48,12 @@ class ObjectInfoDialogFragment : DialogFragment() {
 
     private var imageLoadHandle: ImageLoadHandle? = null
 
-    /**
-     * Interface that hosting activities must implement for dependency injection.
-     */
-    interface ActivityComponent {
-        fun inject(fragment: ObjectInfoDialogFragment)
-    }
-
     /** Implemented by activities that host this dialog and want to handle the Find action. */
     interface OnFindClickedListener {
         fun onFindClicked(info: ObjectInfo)
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-        // Activities using this dialog MUST implement this interface
-        @Suppress("UNCHECKED_CAST")
-        (activity as HasComponent<ActivityComponent>).component.inject(this)
-
         // Retrieve ObjectInfo from arguments (survives configuration changes)
         val info = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             arguments?.getParcelable(ARG_OBJECT_INFO, ObjectInfo::class.java)

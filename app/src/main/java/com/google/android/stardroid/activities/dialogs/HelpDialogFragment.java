@@ -20,29 +20,24 @@ import com.google.android.stardroid.R;
 import com.google.android.stardroid.StardroidApplication;
 import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
 import com.google.android.stardroid.activities.util.NightModeHelper;
-import com.google.android.stardroid.inject.HasComponent;
 import com.google.android.stardroid.util.MiscUtil;
 
 import javax.inject.Inject;
+
+import dagger.hilt.android.AndroidEntryPoint;
 
 /**
  * Help dialog fragment.
  * Created by johntaylor on 4/9/16.
  */
+@AndroidEntryPoint
 public class HelpDialogFragment extends DialogFragment {
   private static final String TAG = MiscUtil.getTag(HelpDialogFragment.class);
   @Inject StardroidApplication application;
   @Inject Activity parentActivity;
 
-  public interface ActivityComponent {
-    void inject(HelpDialogFragment fragment);
-  }
-
   @Override
   public Dialog onCreateDialog(Bundle savedInstanceState) {
-    // Activities using this dialog MUST implement this interface.  Obviously.
-    ((HasComponent<ActivityComponent>) getActivity()).getComponent().inject(this);
-
     LayoutInflater inflater = parentActivity.getLayoutInflater();
     View view = inflater.inflate(R.layout.webview_dialog, null);
     AlertDialog alertDialog = new AlertDialog.Builder(parentActivity)

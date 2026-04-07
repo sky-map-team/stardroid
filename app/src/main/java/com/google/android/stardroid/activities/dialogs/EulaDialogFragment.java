@@ -3,6 +3,7 @@ package com.google.android.stardroid.activities.dialogs;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -17,19 +18,20 @@ import android.webkit.WebViewClient;
 import androidx.preference.PreferenceManager;
 
 import com.google.android.stardroid.R;
-import com.google.android.stardroid.StardroidApplication;
 import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
 import com.google.android.stardroid.activities.util.NightModeHelper;
-import com.google.android.stardroid.inject.HasComponent;
 import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.MiscUtil;
 
 import javax.inject.Inject;
 
+import dagger.hilt.android.AndroidEntryPoint;
+
 /**
  * End User License agreement dialog.
  * Created by johntaylor on 4/3/16.
  */
+@AndroidEntryPoint
 public class EulaDialogFragment extends DialogFragment {
   private static final String TAG = MiscUtil.getTag(EulaDialogFragment.class);
   @Inject Activity parentActivity;
@@ -41,19 +43,23 @@ public class EulaDialogFragment extends DialogFragment {
     void eulaRejected();
   }
 
-  public interface ActivityComponent {
-    void inject(EulaDialogFragment fragment);
+  @Override
+  public void onAttach(Context context) {
+    super.onAttach(context);
+    if (context instanceof EulaAcceptanceListener) {
+      resultListener = (EulaAcceptanceListener) context;
+    }
   }
 
-  public void setEulaAcceptanceListener(EulaAcceptanceListener resultListener) {
-    this.resultListener = resultListener;
+  @Override
+  public void onDetach() {
+    super.onDetach();
+    resultListener = null;
   }
 
   @Override
   public Dialog onCreateDialog(Bundle savedInstanceState) {
     Log.d(TAG, "onCreateDialog");
-    // Activities using this dialog MUST implement this interface.  Obviously.
-    ((HasComponent<ActivityComponent>) getActivity()).getComponent().inject(this);
 
     LayoutInflater inflater = parentActivity.getLayoutInflater();
     View view;

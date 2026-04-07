@@ -78,7 +78,6 @@ import com.google.android.stardroid.control.MagneticDeclinationCalculatorSwitche
 import com.google.android.stardroid.control.TransitioningCompositeClock;
 import com.google.android.stardroid.education.ObjectInfo;
 import com.google.android.stardroid.education.ObjectInfoTapHandler;
-import com.google.android.stardroid.inject.HasComponent;
 import com.google.android.stardroid.layers.LayerManager;
 import com.google.android.stardroid.math.CoordinateManipulationsKt;
 import com.google.android.stardroid.math.MathUtils;
@@ -106,22 +105,19 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import javax.inject.Provider;
 
+import dagger.hilt.android.AndroidEntryPoint;
+
 /**
  * The main map-rendering Activity.
  */
-public class DynamicStarMapActivity extends InjectableActivity
+@AndroidEntryPoint
+public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivity
     implements OnSharedPreferenceChangeListener, NightModeable,
-    HasComponent<DynamicStarMapComponent>,
     ObjectInfoDialogFragment.OnFindClickedListener {
   private static final int TIME_DISPLAY_DELAY_MILLIS = 1000;
   // Extra delay after the clock transition settles before querying solar-system positions.
   private static final long SEARCH_POST_TRANSITION_DELAY_MS = 500;
   private FullscreenControlsManager fullscreenControlsManager;
-
-  @Override
-  public DynamicStarMapComponent getComponent() {
-    return daggerComponent;
-  }
 
   /**
    * Passed to the renderer to get per-frame updates from the model.
@@ -206,7 +202,6 @@ public class DynamicStarMapActivity extends InjectableActivity
   // TODO(widdows): Figure out if we should break out the
   // time dialog and time player into separate activities.
   private View timePlayerUI;
-  private DynamicStarMapComponent daggerComponent;
   @Inject @Named("timetravel") Provider<MediaPlayer> timeTravelNoiseProvider;
   @Inject @Named("timetravelback") Provider<MediaPlayer> timeTravelBackNoiseProvider;
   private MediaPlayer timeTravelNoise;
@@ -215,14 +210,14 @@ public class DynamicStarMapActivity extends InjectableActivity
   @Inject Analytics analytics;
   @Inject GooglePlayServicesChecker playServicesChecker;
   @Inject FragmentManager fragmentManager;
-  @Inject EulaDialogFragment eulaDialogFragmentNoButtons;
-  @Inject TimeTravelDialogFragment timeTravelDialogFragment;
-  @Inject CreditsDialogFragment creditsDialogFragment;
-  @Inject HelpDialogFragment helpDialogFragment;
-  @Inject NoSearchResultsDialogFragment noSearchResultsDialogFragment;
-  @Inject MultipleSearchResultsDialogFragment multipleSearchResultsDialogFragment;
-  @Inject NoSensorsDialogFragment noSensorsDialogFragment;
-  @Inject LocationPermissionDeniedDialogFragment locationPermissionDeniedDialogFragment;
+  private EulaDialogFragment eulaDialogFragmentNoButtons;
+  private TimeTravelDialogFragment timeTravelDialogFragment;
+  private CreditsDialogFragment creditsDialogFragment;
+  private HelpDialogFragment helpDialogFragment;
+  private NoSearchResultsDialogFragment noSearchResultsDialogFragment;
+  private MultipleSearchResultsDialogFragment multipleSearchResultsDialogFragment;
+  private NoSensorsDialogFragment noSensorsDialogFragment;
+  private LocationPermissionDeniedDialogFragment locationPermissionDeniedDialogFragment;
   @Inject ObjectInfoTapHandler objectInfoTapHandler;
   @Inject SensorAccuracyMonitor sensorAccuracyMonitor;
   // A list of runnables to post on the handler when we resume.
@@ -234,7 +229,7 @@ public class DynamicStarMapActivity extends InjectableActivity
   @Inject MagneticDeclinationCalculatorSwitcher magneticSwitcher;
 
   private DragRotateZoomGestureDetector dragZoomRotateDetector;
-  @Inject Animation flashAnimation;
+  @Inject @Named("timetravelflash") Animation flashAnimation;
   @Inject ActivityLightLevelManager activityLightLevelManager;
   private long sessionStartTime;
 
@@ -243,10 +238,14 @@ public class DynamicStarMapActivity extends InjectableActivity
     Log.d(TAG, "onCreate at " + System.currentTimeMillis());
     super.onCreate(icicle);
 
-    daggerComponent = DaggerDynamicStarMapComponent.builder()
-        .applicationComponent(getApplicationComponent())
-        .dynamicStarMapModule(new DynamicStarMapModule(this)).build();
-    daggerComponent.inject(this);
+    eulaDialogFragmentNoButtons = new EulaDialogFragment();
+    timeTravelDialogFragment = new TimeTravelDialogFragment();
+    creditsDialogFragment = new CreditsDialogFragment();
+    helpDialogFragment = new HelpDialogFragment();
+    noSearchResultsDialogFragment = new NoSearchResultsDialogFragment();
+    multipleSearchResultsDialogFragment = new MultipleSearchResultsDialogFragment();
+    noSensorsDialogFragment = new NoSensorsDialogFragment();
+    locationPermissionDeniedDialogFragment = new LocationPermissionDeniedDialogFragment();
 
     sharedPreferences.registerOnSharedPreferenceChangeListener(this);
 

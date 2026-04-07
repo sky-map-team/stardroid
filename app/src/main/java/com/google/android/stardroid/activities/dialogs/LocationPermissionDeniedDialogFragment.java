@@ -16,30 +16,25 @@ import android.widget.Button;
 import com.google.android.stardroid.ApplicationConstants;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.EditSettingsActivity;
-import com.google.android.stardroid.control.LocationController;
-import com.google.android.stardroid.inject.HasComponent;
 import com.google.android.stardroid.util.MiscUtil;
 
 import javax.inject.Inject;
+
+import dagger.hilt.android.AndroidEntryPoint;
 
 /**
  * Dialog fragment shown when location permission is not granted.
  * Offers the user three options: grant permission, enter location manually, or decide later.
  */
+@AndroidEntryPoint
 public class LocationPermissionDeniedDialogFragment extends DialogFragment {
   private static final String TAG = MiscUtil.getTag(LocationPermissionDeniedDialogFragment.class);
 
   @Inject Activity parentActivity;
   @Inject SharedPreferences preferences;
 
-  public interface ActivityComponent {
-    void inject(LocationPermissionDeniedDialogFragment fragment);
-  }
-
   @Override
   public Dialog onCreateDialog(Bundle savedInstanceState) {
-    ((HasComponent<ActivityComponent>) getActivity()).getComponent().inject(this);
-
     return new AlertDialog.Builder(parentActivity)
         .setTitle(R.string.location_permission_dialog_title)
         .setMessage(R.string.location_permission_dialog_message)

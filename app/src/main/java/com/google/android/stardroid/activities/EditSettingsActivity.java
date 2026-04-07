@@ -29,10 +29,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
-import com.google.android.stardroid.ApplicationComponent;
 import com.google.android.stardroid.ApplicationConstants;
 import com.google.android.stardroid.R;
-import com.google.android.stardroid.StardroidApplication;
 import com.google.android.stardroid.activities.util.ActivityLightLevelChanger;
 import com.google.android.stardroid.activities.util.NightModeHelper;
 import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
@@ -43,7 +41,10 @@ import com.google.android.stardroid.util.MiscUtil;
 import java.io.IOException;
 import java.util.List;
 
-import javax.inject.Inject;
+import dagger.hilt.EntryPoint;
+import dagger.hilt.InstallIn;
+import dagger.hilt.android.EntryPointAccessors;
+import dagger.hilt.components.SingletonComponent;
 
 /**
  * Edit the user's preferences.
@@ -51,6 +52,13 @@ import javax.inject.Inject;
 public class EditSettingsActivity extends PreferenceActivity
     implements ActivityLightLevelChanger.NightModeable {
   private MyPreferenceFragment preferenceFragment;
+
+  @EntryPoint
+  @InstallIn(SingletonComponent.class)
+  interface EditSettingsEntryPoint {
+    Analytics analytics();
+    SharedPreferences sharedPreferences();
+  }
 
   public static class MyPreferenceFragment extends PreferenceFragment {
     private EditSettingsActivity parentActivity;
@@ -75,17 +83,22 @@ public class EditSettingsActivity extends PreferenceActivity
 
   private boolean nightMode = false;
   private Geocoder geocoder;
-  @Inject ActivityLightLevelManager activityLightLevelManager;
-  @Inject Analytics analytics;
-  @Inject SharedPreferences sharedPreferences;
+  private ActivityLightLevelManager activityLightLevelManager;
+  private Analytics analytics;
+  private SharedPreferences sharedPreferences;
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
-    DaggerEditSettingsActivityComponent.builder().applicationComponent(
-            getApplicationComponent()).editSettingsActivityModule(new EditSettingsActivityModule(this))
-        .build().inject(this);
+    EditSettingsEntryPoint entryPoint = EntryPointAccessors.fromApplication(
+        getApplicationContext(), EditSettingsEntryPoint.class);
+    analytics = entryPoint.analytics();
+    sharedPreferences = entryPoint.sharedPreferences();
+
+    ActivityLightLevelChanger lightLevelChanger = new ActivityLightLevelChanger(
+        getWindow(), sharedPreferences, this);
+    activityLightLevelManager = new ActivityLightLevelManager(lightLevelChanger, sharedPreferences);
 
     geocoder = new Geocoder(this);
     preferenceFragment = new MyPreferenceFragment();
@@ -95,10 +108,6 @@ public class EditSettingsActivity extends PreferenceActivity
 
     // Apply edge-to-edge fix for Android 15+
     EdgeToEdgeFixer.applyEdgeToEdgeFixForActionBarActivity(this);
-  }
-
-  private ApplicationComponent getApplicationComponent() {
-    return ((StardroidApplication) getApplication()).getApplicationComponent();
   }
 
   @Override
@@ -111,23 +120,23 @@ public class EditSettingsActivity extends PreferenceActivity
     Preference latitudePreference = preferenceFragment.findPreference(LATITUDE);
     Preference longitudePreference = preferenceFragment.findPreference(LONGITUDE);
     locationPreference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
-    
+
       public boolean onPreferenceChange(Preference preference, Object newValue) {
         Log.d(TAG, "Place to be updated to " + newValue);
         return setLatLongFromPlace(newValue.toString());
       }
     });
-  
+
     latitudePreference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
-    
+
       public boolean onPreferenceChange(Preference preference, Object newValue) {
         ((EditTextPreference) locationPreference).setText("");
         return true;
       }
     });
-  
+
     longitudePreference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
-    
+
       public boolean onPreferenceChange(Preference preference, Object newValue) {
         ((EditTextPreference) locationPreference).setText("");
         return true;

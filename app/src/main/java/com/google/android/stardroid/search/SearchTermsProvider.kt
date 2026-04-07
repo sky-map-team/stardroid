@@ -22,10 +22,12 @@ import android.database.MatrixCursor
 import android.net.Uri
 import android.text.TextUtils
 import android.util.Log
-import com.google.android.stardroid.StardroidApplication
 import com.google.android.stardroid.layers.LayerManager
 import com.google.android.stardroid.util.MiscUtil.getTag
-import javax.inject.Inject
+import dagger.hilt.EntryPoint
+import dagger.hilt.InstallIn
+import dagger.hilt.android.EntryPointAccessors
+import dagger.hilt.components.SingletonComponent
 
 /**
  * Provides search suggestions for a list of words and their definitions.
@@ -33,26 +35,19 @@ import javax.inject.Inject
 class SearchTermsProvider : ContentProvider() {
   data class SearchTerm(var query: String, var origin: String)
 
-  @Inject
-  lateinit var layerManager: LayerManager
-
-  override fun onCreate(): Boolean {
-    maybeInjectMe()
-    return true
+  @EntryPoint
+  @InstallIn(SingletonComponent::class)
+  interface SearchTermsProviderEntryPoint {
+    fun layerManager(): LayerManager
   }
 
-  private var alreadyInjected = false
-  private fun maybeInjectMe(): Boolean {
-    // Ugh.  Android's separation of content providers from their owning apps makes this
-    // almost impossible.  TODO(jontayler): revisit and see if we can make this less
-    // nasty.
-    if (alreadyInjected) {
-      return true
-    }
-    val appContext = context?.applicationContext as? StardroidApplication ?: return false
-    val component = appContext.applicationComponent
-    component.inject(this)
-    alreadyInjected = true
+  private lateinit var layerManager: LayerManager
+
+  override fun onCreate(): Boolean {
+    val appContext = context?.applicationContext ?: return false
+    val entryPoint = EntryPointAccessors.fromApplication(
+        appContext, SearchTermsProviderEntryPoint::class.java)
+    layerManager = entryPoint.layerManager()
     return true
   }
 
@@ -61,9 +56,6 @@ class SearchTermsProvider : ContentProvider() {
     sortOrder: String?
   ): Cursor? {
     Log.d(TAG, "Got query for $uri")
-    if (!maybeInjectMe()) {
-      return null
-    }
     require(TextUtils.isEmpty(selection)) { "selection not allowed for $uri" }
     require(!(selectionArgs != null && selectionArgs.size != 0)) { "selectionArgs not allowed for $uri" }
     require(TextUtils.isEmpty(sortOrder)) { "sortOrder not allowed for $uri" }

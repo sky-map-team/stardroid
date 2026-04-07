@@ -1,13 +1,15 @@
 package com.google.android.stardroid.activities.dialogs;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.os.Bundle;
 
 import com.google.android.stardroid.activities.DynamicStarMapActivity;
-import com.google.android.stardroid.inject.HasComponent;
 import com.google.android.stardroid.util.MiscUtil;
 
 import javax.inject.Inject;
+
+import dagger.hilt.android.AndroidEntryPoint;
 
 /**
  * Time travel dialog fragment.
@@ -15,20 +17,14 @@ import javax.inject.Inject;
  */
 // TODO(jontayler): see if this crashes when backgrounded on older devices and use
 // the fragment in this package if so.
+@AndroidEntryPoint
 public class TimeTravelDialogFragment extends DialogFragment {
   private static final String TAG = MiscUtil.getTag(TimeTravelDialogFragment.class);
-  @Inject DynamicStarMapActivity parentActivity;
-
-  public interface ActivityComponent {
-    void inject(TimeTravelDialogFragment fragment);
-  }
+  @Inject Activity parentActivity;
 
   @Override
   public Dialog onCreateDialog(Bundle savedInstanceState) {
-    // Activities using this dialog MUST implement this interface.  Obviously.
-    ((HasComponent<ActivityComponent>) getActivity()).getComponent().inject(this);
-
-    return new TimeTravelDialog(parentActivity,
-        parentActivity.getModel());
+    DynamicStarMapActivity starMapActivity = (DynamicStarMapActivity) parentActivity;
+    return new TimeTravelDialog(starMapActivity, starMapActivity.getModel());
   }
 }
