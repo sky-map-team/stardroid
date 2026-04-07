@@ -10,7 +10,7 @@
     </string>
     <string name="object_info_sun_distance" translation_description="Distance to Sun shown in the info card. Translate units if appropriate for your locale.">150 millió km</string>
     <string name="object_info_sun_size" translation_description="Physical size of Sun shown in the info card. Translate units if appropriate for your locale.">1,4 millió km átmérő</string>
-    <string name="object_info_sun_mass" translation_description="Mass of Sun in scientific notation — no translation needed.">1,989 × 10³⁰ kg</string>
+    <string name="object_info_sun_mass" translation_description="Mass of Sun in scientific notation — translate if needed for the locale.">1,989 × 10³⁰ kg</string>
     <string name="object_info_moon_description" translation_description="Short description of the Moon">
     A Hold a Föld egyetlen természetes holdja. Befolyásolja az árapályt, és 12 űrhajós járt már rajta.
     </string>
@@ -19,7 +19,7 @@
     </string>
     <string name="object_info_moon_distance" translation_description="Distance to Moon shown in the info card. Translate units if appropriate for your locale.">384 400 km</string>
     <string name="object_info_moon_size" translation_description="Physical size of Moon shown in the info card. Translate units if appropriate for your locale.">3 474 km átmérő</string>
-    <string name="object_info_moon_mass" translation_description="Mass of Moon in scientific notation — no translation needed.">7,35 × 10²² kg</string>
+    <string name="object_info_moon_mass" translation_description="Mass of Moon in scientific notation — translate if needed for the locale.">7,35 × 10²² kg</string>
     <string name="object_info_mercury_description" translation_description="Short description of Mercury">
     A Merkúr a legkisebb bolygó és a legközelebb van a Naphoz. Egy év a Merkúron csak 88 földi nap.
     </string>
@@ -28,7 +28,7 @@
     </string>
     <string name="object_info_mercury_distance" translation_description="Distance to Mercury shown in the info card. Translate units if appropriate for your locale.">58 millió km (a Naptól)</string>
     <string name="object_info_mercury_size" translation_description="Physical size of Mercury shown in the info card. Translate units if appropriate for your locale.">4 880 km átmérő</string>
-    <string name="object_info_mercury_mass" translation_description="Mass of Mercury in scientific notation — no translation needed.">3,3 × 10²³ kg</string>
+    <string name="object_info_mercury_mass" translation_description="Mass of Mercury in scientific notation — translate if needed for the locale.">3,3 × 10²³ kg</string>
     <string name="object_info_venus_description" translation_description="Short description of Venus">
     A Vénusz a második bolygó a Naptól és a naprendszer legforróbb bolygója. Gyakran nevezik a Föld ikertestvérének hasonló mérete miatt.
     </string>
@@ -37,7 +37,7 @@
     </string>
     <string name="object_info_venus_distance" translation_description="Distance to Venus shown in the info card. Translate units if appropriate for your locale.">108 millió km (átlag)</string>
     <string name="object_info_venus_size" translation_description="Physical size of Venus shown in the info card. Translate units if appropriate for your locale.">12 104 km átmérő</string>
-    <string name="object_info_venus_mass" translation_description="Mass of Venus in scientific notation — no translation needed.">4,87 × 10²⁴ kg</string>
+    <string name="object_info_venus_mass" translation_description="Mass of Venus in scientific notation — translate if needed for the locale.">4,87 × 10²⁴ kg</string>
     <string name="object_info_mars_description" translation_description="Short description of Mars">
     A Mars a negyedik bolygó a Naptól, a Vörös Bolygóként ismert a felszínén lévő vas-oxid miatt.
     </string>
@@ -46,7 +46,7 @@
     </string>
     <string name="object_info_mars_distance" translation_description="Distance to Mars shown in the info card. Translate units if appropriate for your locale.">228 millió km (átlag)</string>
     <string name="object_info_mars_size" translation_description="Physical size of Mars shown in the info card. Translate units if appropriate for your locale.">6 779 km átmérő</string>
-    <string name="object_info_mars_mass" translation_description="Mass of Mars in scientific notation — no translation needed.">6,39 × 10²³ kg</string>
+    <string name="object_info_mars_mass" translation_description="Mass of Mars in scientific notation — translate if needed for the locale.">6,39 × 10²³ kg</string>
     <string name="object_info_jupiter_description" translation_description="Short description of Jupiter">
     A Jupiter a naprendszer legnagyobb bolygója. Gázóriás a híres Nagy Vörös Folttal.
     </string>
@@ -55,7 +55,7 @@
     </string>
     <string name="object_info_jupiter_distance" translation_description="Distance to Jupiter shown in the info card. Translate units if appropriate for your locale.">778 millió km (átlag)</string>
     <string name="object_info_jupiter_size" translation_description="Physical size of Jupiter shown in the info card. Translate units if appropriate for your locale.">139 820 km átmérő</string>
-    <string name="object_info_jupiter_mass" translation_description="Mass of Jupiter in scientific notation — no translation needed.">1,898 × 10²⁷ kg</string>
+    <string name="object_info_jupiter_mass" translation_description="Mass of Jupiter in scientific notation — translate if needed for the locale.">1,898 × 10²⁷ kg</string>
     <string name="object_info_saturn_description" translation_description="Short description of Saturn">
     A Szaturnusz a hatodik bolygó a Naptól, híres látványos, jégből és kőzetből álló gyűrűrendszeréről.
     </string>
@@ -64,7 +64,7 @@
     </string>
     <string name="object_info_saturn_distance" translation_description="Distance to Saturn shown in the info card. Translate units if appropriate for your locale.">1,4 milliárd km (átlag)</string>
     <string name="object_info_saturn_size" translation_description="Physical size of Saturn shown in the info card. Translate units if appropriate for your locale.">116 460 km átmérő</string>
-    <string name="object_info_saturn_mass" translation_description="Mass of Saturn in scientific notation — no translation needed.">5,68 × 10²⁶ kg</string>
+    <string name="object_info_saturn_mass" translation_description="Mass of Saturn in scientific notation — translate if needed for the locale.">5,68 × 10²⁶ kg</string>
     <string name="object_info_uranus_description" translation_description="Short description of Uranus">
     Az Uránusz egy jégóriás, amely az oldalán forog. Ez volt az első bolygó, amit távcsővel fedeztek fel.
     </string>
@@ -73,7 +73,7 @@
     </string>
     <string name="object_info_uranus_distance" translation_description="Distance to Uranus shown in the info card. Translate units if appropriate for your locale.">2,9 milliárd km (átlag)</string>
     <string name="object_info_uranus_size" translation_description="Physical size of Uranus shown in the info card. Translate units if appropriate for your locale.">50 724 km átmérő</string>
-    <string name="object_info_uranus_mass" translation_description="Mass of Uranus in scientific notation — no translation needed.">8,68 × 10²⁵ kg</string>
+    <string name="object_info_uranus_mass" translation_description="Mass of Uranus in scientific notation — translate if needed for the locale.">8,68 × 10²⁵ kg</string>
     <string name="object_info_neptune_description" translation_description="Short description of Neptune">
     A Neptunusz a naprendszer legtávolabbi bolygója. A legerősebb szelek fújnak rajta, akár 2100 km/h sebességgel.
     </string>
@@ -82,14 +82,14 @@
     </string>
     <string name="object_info_neptune_distance" translation_description="Distance to Neptune shown in the info card. Translate units if appropriate for your locale.">4,5 milliárd km (átlag)</string>
     <string name="object_info_neptune_size" translation_description="Physical size of Neptune shown in the info card. Translate units if appropriate for your locale.">49 244 km átmérő</string>
-    <string name="object_info_neptune_mass" translation_description="Mass of Neptune in scientific notation — no translation needed.">1,024 × 10²⁶ kg</string>
+    <string name="object_info_neptune_mass" translation_description="Mass of Neptune in scientific notation — translate if needed for the locale.">1,024 × 10²⁶ kg</string>
     <string name="object_info_pluto_description" translation_description="Short description of Pluto">A Plútó törpebolygó a Kuiper-övben. 2006-ig a kilencedik bolygónak tartották.</string>
     <string name="object_info_pluto_funfact" translation_description="Fun fact about Pluto">
     A Plútón szívformájú gleccser van nitrogénjégből, amely látható a NASA New Horizons küldetésének képein!
     </string>
     <string name="object_info_pluto_distance" translation_description="Distance to Pluto shown in the info card. Translate units if appropriate for your locale.">5,9 milliárd km (átlag)</string>
     <string name="object_info_pluto_size" translation_description="Physical size of Pluto shown in the info card. Translate units if appropriate for your locale.">2 377 km átmérő</string>
-    <string name="object_info_pluto_mass" translation_description="Mass of Pluto in scientific notation — no translation needed.">1,3 × 10²² kg</string>
+    <string name="object_info_pluto_mass" translation_description="Mass of Pluto in scientific notation — translate if needed for the locale.">1,3 × 10²² kg</string>
     <!-- Bright Stars Educational Content -->
     <string name="object_info_sirius_description" translation_description="Short description of Sirius">
     A Szíriusz az éjszakai égbolt legfényesebb csillaga, a Nagy Kutya csillagképben található.

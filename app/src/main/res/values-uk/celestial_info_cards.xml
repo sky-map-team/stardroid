@@ -46,7 +46,7 @@
     </string>
     <string name="object_info_mars_distance" translation_description="Distance to Mars shown in the info card. Translate units if appropriate for your locale.">228 млн км (середнє значення)</string>
     <string name="object_info_mars_size" translation_description="Physical size of Mars shown in the info card. Translate units if appropriate for your locale.">6 779 км діаметр</string>
-    <string name="object_info_mars_mass" translation_description="Mass of Mars in scientific notation — no translation needed.">6.39 × 10²³ кг</string>
+    <string name="object_info_mars_mass" translation_description="Mass of Mars in scientific notation — translate if needed for the locale.">6.39 × 10²³ кг</string>
     <string name="object_info_jupiter_description" translation_description="Short description of Jupiter">
     Юпітер — найбільша планета нашої Сонячної системи. Це газовий гігант із знаменитою бурею Велика Червона Пляма.
     </string>
@@ -55,7 +55,7 @@
     </string>
     <string name="object_info_jupiter_distance" translation_description="Distance to Jupiter shown in the info card. Translate units if appropriate for your locale.">778 млн км (середня)</string>
     <string name="object_info_jupiter_size" translation_description="Physical size of Jupiter shown in the info card. Translate units if appropriate for your locale.">139 820 км діаметр</string>
-    <string name="object_info_jupiter_mass" translation_description="Mass of Jupiter in scientific notation — no translation needed.">1.898 × 10²⁷ кг</string>
+    <string name="object_info_jupiter_mass" translation_description="Mass of Jupiter in scientific notation — translate if needed for the locale.">1.898 × 10²⁷ кг</string>
     <string name="object_info_saturn_description" translation_description="Short description of Saturn">
     Сатурн — шоста планета від Сонця, знаменита своєю спектакулярною системою кілець, складеною з льоду та скелі.
     </string>
@@ -64,7 +64,7 @@
     </string>
     <string name="object_info_saturn_distance" translation_description="Distance to Saturn shown in the info card. Translate units if appropriate for your locale.">1,4 млрд км (середня)</string>
     <string name="object_info_saturn_size" translation_description="Physical size of Saturn shown in the info card. Translate units if appropriate for your locale.">116 460 км діаметр</string>
-    <string name="object_info_saturn_mass" translation_description="Mass of Saturn in scientific notation — no translation needed.">5.68 × 10²⁶ кг</string>
+    <string name="object_info_saturn_mass" translation_description="Mass of Saturn in scientific notation — translate if needed for the locale.">5.68 × 10²⁶ кг</string>
     <string name="object_info_uranus_description" translation_description="Short description of Uranus">
     Уран — льодяний гігант, який обертається на боці. Це була перша планета, відкрита за допомогою телескопа.
     </string>
@@ -73,7 +73,7 @@
     </string>
     <string name="object_info_uranus_distance" translation_description="Distance to Uranus shown in the info card. Translate units if appropriate for your locale.">2,9 млрд км (середня)</string>
     <string name="object_info_uranus_size" translation_description="Physical size of Uranus shown in the info card. Translate units if appropriate for your locale.">50 724 км діаметр</string>
-    <string name="object_info_uranus_mass" translation_description="Mass of Uranus in scientific notation — no translation needed.">8.68 × 10²⁵ кг</string>
+    <string name="object_info_uranus_mass" translation_description="Mass of Uranus in scientific notation — translate if needed for the locale.">8.68 × 10²⁵ кг</string>
     <string name="object_info_neptune_description" translation_description="Short description of Neptune">
     Нептун — найвіддаленіша планета в нашій Сонячній системі. Він має найсильніші вітри, які досягають 2100 км/год.
     </string>
@@ -82,7 +82,7 @@
     </string>
     <string name="object_info_neptune_distance" translation_description="Distance to Neptune shown in the info card. Translate units if appropriate for your locale.">4,5 млрд км (середня)</string>
     <string name="object_info_neptune_size" translation_description="Physical size of Neptune shown in the info card. Translate units if appropriate for your locale.">49 244 км діаметр</string>
-    <string name="object_info_neptune_mass" translation_description="Mass of Neptune in scientific notation — no translation needed.">1.024 × 10²⁶ кг</string>
+    <string name="object_info_neptune_mass" translation_description="Mass of Neptune in scientific notation — translate if needed for the locale.">1.024 × 10²⁶ кг</string>
     <string name="object_info_pluto_description" translation_description="Short description of Pluto">
     Плутон — карликова планета в поясі Койпера. До 2006 року він вважався дев\'ятою планетою.
     </string>
@@ -91,7 +91,7 @@
     </string>
     <string name="object_info_pluto_distance" translation_description="Distance to Pluto shown in the info card. Translate units if appropriate for your locale.">5,9 млрд км (середнє значення)</string>
     <string name="object_info_pluto_size" translation_description="Physical size of Pluto shown in the info card. Translate units if appropriate for your locale.">2377 км діаметр</string>
-    <string name="object_info_pluto_mass" translation_description="Mass of Pluto in scientific notation — no translation needed.">1,3 × 10²² кг</string>
+    <string name="object_info_pluto_mass" translation_description="Mass of Pluto in scientific notation — translate if needed for the locale.">1,3 × 10²² кг</string>
     <!-- Bright Stars Educational Content -->
     <string name="object_info_sirius_description" translation_description="Short description of Sirius">
     Сіріус — найяскравіша зірка на нічному небі, розташована в сузір\'ї Великий Пес (Canis Major).
@@ -1348,7 +1348,7 @@
     </string>
     <string name="object_info_alcyone_distance" translation_description="Distance to Alcyone shown in the info card. Translate units if appropriate for your locale.">~440 світлових років</string>
     <string name="object_info_alcyone_size" translation_description="Physical size of Alcyone shown in the info card. Translate units if appropriate for your locale.">~10 сонячних радіусів</string>
-    <string name="object_info_alcyone_mass" translation_description="Mass of Alcyone in scientific notation — no translation needed.">~6.0 сонячних мас</string>
+    <string name="object_info_alcyone_mass" translation_description="Mass of Alcyone in scientific notation — translate if needed for the locale.">~6.0 сонячних мас</string>
 
     <!-- Alderamin -->
     <string name="object_info_alderamin_description" translation_description="Short description of Alderamin">
@@ -1359,7 +1359,7 @@
     </string>
     <string name="object_info_alderamin_distance" translation_description="Distance to Alderamin shown in the info card. Translate units if appropriate for your locale.">49 світлових років</string>
     <string name="object_info_alderamin_size" translation_description="Physical size of Alderamin shown in the info card. Translate units if appropriate for your locale.">2,5 сонячних радіуса</string>
-    <string name="object_info_alderamin_mass" translation_description="Mass of Alderamin in scientific notation — no translation needed.">1,9 сонячних мас</string>
+    <string name="object_info_alderamin_mass" translation_description="Mass of Alderamin in scientific notation — translate if needed for the locale.">1,9 сонячних мас</string>
 
     <!-- Algenib -->
     <string name="object_info_algenib_description" translation_description="Short description of Algenib">
@@ -1370,7 +1370,7 @@
     </string>
     <string name="object_info_algenib_distance" translation_description="Distance to Algenib shown in the info card. Translate units if appropriate for your locale.">~390 світлових років</string>
     <string name="object_info_algenib_size" translation_description="Physical size of Algenib shown in the info card. Translate units if appropriate for your locale.">4,8 сонячних радіуса</string>
-    <string name="object_info_algenib_mass" translation_description="Mass of Algenib in scientific notation — no translation needed.">~8,9 сонячних мас</string>
+    <string name="object_info_algenib_mass" translation_description="Mass of Algenib in scientific notation — translate if needed for the locale.">~8,9 сонячних мас</string>
 
     <!-- Algieba -->
     <string name="object_info_algieba_description" translation_description="Short description of Algieba">
@@ -1425,7 +1425,7 @@
     </string>
     <string name="object_info_alnath_distance" translation_description="Distance to Alnath shown in the info card. Translate units if appropriate for your locale.">134 світлових років</string>
     <string name="object_info_alnath_size" translation_description="Physical size of Alnath shown in the info card. Translate units if appropriate for your locale.">4.2 сонячних радіуси</string>
-    <string name="object_info_alnath_mass" translation_description="Mass of Alnath in scientific notation — no translation needed.">5,0 сонячних мас</string>
+    <string name="object_info_alnath_mass" translation_description="Mass of Alnath in scientific notation — translate if needed for the locale.">5,0 сонячних мас</string>
 
     <!-- Alphekka -->
     <string name="object_info_alphekka_description" translation_description="Short description of Alphekka">
@@ -1436,7 +1436,7 @@
     </string>
     <string name="object_info_alphekka_distance" translation_description="Distance to Alphekka shown in the info card. Translate units if appropriate for your locale.">75 світлових років</string>
     <string name="object_info_alphekka_size" translation_description="Physical size of Alphekka shown in the info card. Translate units if appropriate for your locale.">2,9 сонячних радіусів</string>
-    <string name="object_info_alphekka_mass" translation_description="Mass of Alphekka in scientific notation — no translation needed.">2,6 сонячних мас</string>
+    <string name="object_info_alphekka_mass" translation_description="Mass of Alphekka in scientific notation — translate if needed for the locale.">2,6 сонячних мас</string>
 
     <!-- Ankaa -->
     <string name="object_info_ankaa_description" translation_description="Short description of Ankaa">
@@ -1447,7 +1447,7 @@
     </string>
     <string name="object_info_ankaa_distance" translation_description="Distance to Ankaa shown in the info card. Translate units if appropriate for your locale.">85 світлових років</string>
     <string name="object_info_ankaa_size" translation_description="Physical size of Ankaa shown in the info card. Translate units if appropriate for your locale.">15 сонячних радіусів</string>
-    <string name="object_info_ankaa_mass" translation_description="Mass of Ankaa in scientific notation — no translation needed.">1,3 сонячних мас</string>
+    <string name="object_info_ankaa_mass" translation_description="Mass of Ankaa in scientific notation — translate if needed for the locale.">1,3 сонячних мас</string>
 
     <!-- Arneb -->
     <string name="object_info_arneb_description" translation_description="Short description of Arneb">
@@ -1458,7 +1458,7 @@
     </string>
     <string name="object_info_arneb_distance" translation_description="Distance to Arneb shown in the info card. Translate units if appropriate for your locale.">~2200 світлових років</string>
     <string name="object_info_arneb_size" translation_description="Physical size of Arneb shown in the info card. Translate units if appropriate for your locale.">~75 сонячних радіусів</string>
-    <string name="object_info_arneb_mass" translation_description="Mass of Arneb in scientific notation — no translation needed.">~14 сонячних мас</string>
+    <string name="object_info_arneb_mass" translation_description="Mass of Arneb in scientific notation — translate if needed for the locale.">~14 сонячних мас</string>
 
     <!-- Caph -->
     <string name="object_info_caph_description" translation_description="Short description of Caph">
@@ -1469,7 +1469,7 @@
     </string>
     <string name="object_info_caph_distance" translation_description="Distance to Caph shown in the info card. Translate units if appropriate for your locale.">54 світлових років</string>
     <string name="object_info_caph_size" translation_description="Physical size of Caph shown in the info card. Translate units if appropriate for your locale.">3,5 сонячних радіусів</string>
-    <string name="object_info_caph_mass" translation_description="Mass of Caph in scientific notation — no translation needed.">1,9 сонячних мас</string>
+    <string name="object_info_caph_mass" translation_description="Mass of Caph in scientific notation — translate if needed for the locale.">1,9 сонячних мас</string>
 
     <!-- Etamin -->
     <string name="object_info_etamin_description" translation_description="Short description of Etamin">
@@ -1480,7 +1480,7 @@
     </string>
     <string name="object_info_etamin_distance" translation_description="Distance to Etamin shown in the info card. Translate units if appropriate for your locale.">148 світлових років</string>
     <string name="object_info_etamin_size" translation_description="Physical size of Etamin shown in the info card. Translate units if appropriate for your locale.">48 сонячних радіусів</string>
-    <string name="object_info_etamin_mass" translation_description="Mass of Etamin in scientific notation — no translation needed.">1.7 сонячних мас</string>
+    <string name="object_info_etamin_mass" translation_description="Mass of Etamin in scientific notation — translate if needed for the locale.">1.7 сонячних мас</string>
 
     <!-- Izar -->
     <string name="object_info_izar_description" translation_description="Short description of Izar">
@@ -1491,7 +1491,7 @@
     </string>
     <string name="object_info_izar_distance" translation_description="Distance to Izar shown in the info card. Translate units if appropriate for your locale.">202 світлові роки</string>
     <string name="object_info_izar_size" translation_description="Physical size of Izar shown in the info card. Translate units if appropriate for your locale.">33 сонячних радіуси</string>
-    <string name="object_info_izar_mass" translation_description="Mass of Izar in scientific notation — no translation needed.">~4.6 сонячних мас</string>
+    <string name="object_info_izar_mass" translation_description="Mass of Izar in scientific notation — translate if needed for the locale.">~4.6 сонячних мас</string>
 
     <!-- Kaus Australis -->
     <string name="object_info_kaus_australis_description" translation_description="Short description of Kaus Australis">
@@ -1502,7 +1502,7 @@
     </string>
     <string name="object_info_kaus_australis_distance" translation_description="Distance to Kaus Australis shown in the info card. Translate units if appropriate for your locale.">143 світлові роки</string>
     <string name="object_info_kaus_australis_size" translation_description="Physical size of Kaus Australis shown in the info card. Translate units if appropriate for your locale.">6.8 сонячних радіуси</string>
-    <string name="object_info_kaus_australis_mass" translation_description="Mass of Kaus Australis in scientific notation — no translation needed.">3.5 сонячних мас</string>
+    <string name="object_info_kaus_australis_mass" translation_description="Mass of Kaus Australis in scientific notation — translate if needed for the locale.">3.5 сонячних мас</string>
 
     <!-- Kochab -->
     <string name="object_info_kochab_description" translation_description="Short description of Kochab">
@@ -1513,7 +1513,7 @@
     </string>
     <string name="object_info_kochab_distance" translation_description="Distance to Kochab shown in the info card. Translate units if appropriate for your locale.">131 світлові роки</string>
     <string name="object_info_kochab_size" translation_description="Physical size of Kochab shown in the info card. Translate units if appropriate for your locale.">42 сонячних радіуси</string>
-    <string name="object_info_kochab_mass" translation_description="Mass of Kochab in scientific notation — no translation needed.">1.3 сонячних мас</string>
+    <string name="object_info_kochab_mass" translation_description="Mass of Kochab in scientific notation — translate if needed for the locale.">1.3 сонячних мас</string>
 
     <!-- Merak -->
     <string name="object_info_merak_description" translation_description="Short description of Merak">
@@ -1524,7 +1524,7 @@
     </string>
     <string name="object_info_merak_distance" translation_description="Distance to Merak shown in the info card. Translate units if appropriate for your locale.">80 світлових років</string>
     <string name="object_info_merak_size" translation_description="Physical size of Merak shown in the info card. Translate units if appropriate for your locale.">3.0 сонячних радіуси</string>
-    <string name="object_info_merak_mass" translation_description="Mass of Merak in scientific notation — no translation needed.">2.7 сонячних мас</string>
+    <string name="object_info_merak_mass" translation_description="Mass of Merak in scientific notation — translate if needed for the locale.">2.7 сонячних мас</string>
 
     <!-- Menkar -->
     <string name="object_info_menkar_description" translation_description="Short description of Menkar">
@@ -1535,7 +1535,7 @@
     </string>
     <string name="object_info_menkar_distance" translation_description="Distance to Menkar shown in the info card. Translate units if appropriate for your locale.">249 світлових років</string>
     <string name="object_info_menkar_size" translation_description="Physical size of Menkar shown in the info card. Translate units if appropriate for your locale.">~89 сонячних радіусів</string>
-    <string name="object_info_menkar_mass" translation_description="Mass of Menkar in scientific notation — no translation needed.">~2,3 сонячної маси</string>
+    <string name="object_info_menkar_mass" translation_description="Mass of Menkar in scientific notation — translate if needed for the locale.">~2,3 сонячної маси</string>
 
     <!-- Mirphak -->
     <string name="object_info_mirphak_description" translation_description="Short description of Mirphak">
@@ -1546,7 +1546,7 @@
     </string>
     <string name="object_info_mirphak_distance" translation_description="Distance to Mirphak shown in the info card. Translate units if appropriate for your locale.">~590 світлових років</string>
     <string name="object_info_mirphak_size" translation_description="Physical size of Mirphak shown in the info card. Translate units if appropriate for your locale.">~68 сонячних радіусів</string>
-    <string name="object_info_mirphak_mass" translation_description="Mass of Mirphak in scientific notation — no translation needed.">~8,5 сонячної маси</string>
+    <string name="object_info_mirphak_mass" translation_description="Mass of Mirphak in scientific notation — translate if needed for the locale.">~8,5 сонячної маси</string>
 
     <!-- Phad -->
     <string name="object_info_phad_description" translation_description="Short description of Phad">
@@ -1557,7 +1557,7 @@
     </string>
     <string name="object_info_phad_distance" translation_description="Distance to Phad shown in the info card. Translate units if appropriate for your locale.">84 світлові роки</string>
     <string name="object_info_phad_size" translation_description="Physical size of Phad shown in the info card. Translate units if appropriate for your locale.">3,0 сонячних радіусів</string>
-    <string name="object_info_phad_mass" translation_description="Mass of Phad in scientific notation — no translation needed.">2,9 сонячної маси</string>
+    <string name="object_info_phad_mass" translation_description="Mass of Phad in scientific notation — translate if needed for the locale.">2,9 сонячної маси</string>
 
     <!-- Saiph -->
     <string name="object_info_saiph_description" translation_description="Short description of Saiph">
@@ -1568,7 +1568,7 @@
     </string>
     <string name="object_info_saiph_distance" translation_description="Distance to Saiph shown in the info card. Translate units if appropriate for your locale.">~650 світлових років</string>
     <string name="object_info_saiph_size" translation_description="Physical size of Saiph shown in the info card. Translate units if appropriate for your locale.">~22 сонячних радіусів</string>
-    <string name="object_info_saiph_mass" translation_description="Mass of Saiph in scientific notation — no translation needed.">~15,5 сонячної маси</string>
+    <string name="object_info_saiph_mass" translation_description="Mass of Saiph in scientific notation — translate if needed for the locale.">~15,5 сонячної маси</string>
 
     <!-- Shedir -->
     <string name="object_info_shedir_description" translation_description="Short description of Shedir">
@@ -1579,7 +1579,7 @@
     </string>
     <string name="object_info_shedir_distance" translation_description="Distance to Shedir shown in the info card. Translate units if appropriate for your locale.">228 світлових років</string>
     <string name="object_info_shedir_size" translation_description="Physical size of Shedir shown in the info card. Translate units if appropriate for your locale.">45 сонячних радіусів</string>
-    <string name="object_info_shedir_mass" translation_description="Mass of Shedir in scientific notation — no translation needed.">~4,0 сонячної маси</string>
+    <string name="object_info_shedir_mass" translation_description="Mass of Shedir in scientific notation — translate if needed for the locale.">~4,0 сонячної маси</string>
 
     <!-- Unukalhai -->
     <string name="object_info_unukalhai_description" translation_description="Short description of Unukalhai">
@@ -1590,7 +1590,7 @@
     </string>
     <string name="object_info_unukalhai_distance" translation_description="Distance to Unukalhai shown in the info card. Translate units if appropriate for your locale.">74 світлові роки</string>
     <string name="object_info_unukalhai_size" translation_description="Physical size of Unukalhai shown in the info card. Translate units if appropriate for your locale.">12 сонячних радіусів</string>
-    <string name="object_info_unukalhai_mass" translation_description="Mass of Unukalhai in scientific notation — no translation needed.">~2,1 сонячної маси</string>
+    <string name="object_info_unukalhai_mass" translation_description="Mass of Unukalhai in scientific notation — translate if needed for the locale.">~2,1 сонячної маси</string>
 
     <!-- Vindemiatrix -->
     <string name="object_info_vindemiatrix_description" translation_description="Short description of Vindemiatrix">
@@ -1601,7 +1601,7 @@
     </string>
     <string name="object_info_vindemiatrix_distance" translation_description="Distance to Vindemiatrix shown in the info card. Translate units if appropriate for your locale.">109 світлових років</string>
     <string name="object_info_vindemiatrix_size" translation_description="Physical size of Vindemiatrix shown in the info card. Translate units if appropriate for your locale.">11 сонячних радіусів</string>
-    <string name="object_info_vindemiatrix_mass" translation_description="Mass of Vindemiatrix in scientific notation — no translation needed.">2,6 сонячної маси</string>
+    <string name="object_info_vindemiatrix_mass" translation_description="Mass of Vindemiatrix in scientific notation — translate if needed for the locale.">2,6 сонячної маси</string>
 
     <!-- ============================================ -->
     <!-- New Constellations (41) — Phase 1 of issue #645 -->

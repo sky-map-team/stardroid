@@ -10,7 +10,7 @@
     </string>
     <string name="object_info_sun_distance" translation_description="Distance to Sun shown in the info card. Translate units if appropriate for your locale.">150 εκατομμύρια km</string>
     <string name="object_info_sun_size" translation_description="Physical size of Sun shown in the info card. Translate units if appropriate for your locale.">1,4 εκατομμύρια km διάμετρος</string>
-    <string name="object_info_sun_mass" translation_description="Mass of Sun in scientific notation — no translation needed.">1,989 × 10³⁰ kg</string>
+    <string name="object_info_sun_mass" translation_description="Mass of Sun in scientific notation — translate if needed for the locale.">1,989 × 10³⁰ kg</string>
     <string name="object_info_moon_description" translation_description="Short description of the Moon">
     Το φεγγάρι είναι ο μόνος φυσικός δορυφόρος της Γης. Επηρεάζει τις παλίρροιές μας και έχει επισκεφθεί από 12 αστροναύτες.
     </string>
@@ -19,7 +19,7 @@
     </string>
     <string name="object_info_moon_distance" translation_description="Distance to Moon shown in the info card. Translate units if appropriate for your locale.">384.400 km</string>
     <string name="object_info_moon_size" translation_description="Physical size of Moon shown in the info card. Translate units if appropriate for your locale.">3.474 km διάμετρος</string>
-    <string name="object_info_moon_mass" translation_description="Mass of Moon in scientific notation — no translation needed.">7,35 × 10²² kg</string>
+    <string name="object_info_moon_mass" translation_description="Mass of Moon in scientific notation — translate if needed for the locale.">7,35 × 10²² kg</string>
     <string name="object_info_mercury_description" translation_description="Short description of Mercury">
     Ο Ερμής είναι ο μικρότερος πλανήτης και ο πλησιέστερος στον Ήλιο. Ένα έτος στον Ερμή διαρκεί μόνο 88 ημέρες της Γης.
     </string>
@@ -1352,7 +1352,7 @@
     </string>
     <string name="object_info_alcyone_distance" translation_description="Distance to Alcyone shown in the info card. Translate units if appropriate for your locale.">~440 έτη φωτός</string>
     <string name="object_info_alcyone_size" translation_description="Physical size of Alcyone shown in the info card. Translate units if appropriate for your locale.">~10 ηλιακές ακτίνες</string>
-    <string name="object_info_alcyone_mass" translation_description="Mass of Alcyone in scientific notation — no translation needed.">~6.0 ηλιακές μάζες</string>
+    <string name="object_info_alcyone_mass" translation_description="Mass of Alcyone in scientific notation — translate if needed for the locale.">~6.0 ηλιακές μάζες</string>
 
     <!-- Alderamin -->
     <string name="object_info_alderamin_description" translation_description="Short description of Alderamin">
@@ -1363,7 +1363,7 @@
     </string>
     <string name="object_info_alderamin_distance" translation_description="Distance to Alderamin shown in the info card. Translate units if appropriate for your locale.">49 έτη φωτός</string>
     <string name="object_info_alderamin_size" translation_description="Physical size of Alderamin shown in the info card. Translate units if appropriate for your locale.">2,5 ηλιακές ακτίνες</string>
-    <string name="object_info_alderamin_mass" translation_description="Mass of Alderamin in scientific notation — no translation needed.">1,9 ηλιακές μάζες</string>
+    <string name="object_info_alderamin_mass" translation_description="Mass of Alderamin in scientific notation — translate if needed for the locale.">1,9 ηλιακές μάζες</string>
 
     <!-- Algenib -->
     <string name="object_info_algenib_description" translation_description="Short description of Algenib">
@@ -1374,7 +1374,7 @@
     </string>
     <string name="object_info_algenib_distance" translation_description="Distance to Algenib shown in the info card. Translate units if appropriate for your locale.">~390 έτη φωτός</string>
     <string name="object_info_algenib_size" translation_description="Physical size of Algenib shown in the info card. Translate units if appropriate for your locale.">4,8 ηλιακές ακτίνες</string>
-    <string name="object_info_algenib_mass" translation_description="Mass of Algenib in scientific notation — no translation needed.">~8,9 ηλιακές μάζες</string>
+    <string name="object_info_algenib_mass" translation_description="Mass of Algenib in scientific notation — translate if needed for the locale.">~8,9 ηλιακές μάζες</string>
 
     <!-- Algieba -->
     <string name="object_info_algieba_description" translation_description="Short description of Algieba">
@@ -1385,7 +1385,7 @@
     </string>
     <string name="object_info_algieba_distance" translation_description="Distance to Algieba shown in the info card. Translate units if appropriate for your locale.">~130 έτη φωτός</string>
     <string name="object_info_algieba_size" translation_description="Physical size of Algieba shown in the info card. Translate units if appropriate for your locale.">~23 ηλιακές ακτίνες</string>
-    <string name="object_info_algieba_mass" translation_description="Mass of Algieba in scientific notation — no translation needed.">~1,2 ηλιακές μάζες</string>
+    <string name="object_info_algieba_mass" translation_description="Mass of Algieba in scientific notation — translate if needed for the locale.">~1,2 ηλιακές μάζες</string>
 
     <!-- Alhena -->
     <string name="object_info_alhena_description" translation_description="Short description of Alhena">
@@ -1396,7 +1396,7 @@
     </string>
     <string name="object_info_alhena_distance" translation_description="Distance to Alhena shown in the info card. Translate units if appropriate for your locale.">109 έτη φωτός</string>
     <string name="object_info_alhena_size" translation_description="Physical size of Alhena shown in the info card. Translate units if appropriate for your locale.">3,3 ηλιακές ακτίνες</string>
-    <string name="object_info_alhena_mass" translation_description="Mass of Alhena in scientific notation — no translation needed.">2,8 ηλιακές μάζες</string>
+    <string name="object_info_alhena_mass" translation_description="Mass of Alhena in scientific notation — translate if needed for the locale.">2,8 ηλιακές μάζες</string>
 
     <!-- Alkaid -->
     <string name="object_info_alkaid_description" translation_description="Short description of Alkaid">
@@ -1407,7 +1407,7 @@
     </string>
     <string name="object_info_alkaid_distance" translation_description="Distance to Alkaid shown in the info card. Translate units if appropriate for your locale.">104 έτη φωτός</string>
     <string name="object_info_alkaid_size" translation_description="Physical size of Alkaid shown in the info card. Translate units if appropriate for your locale.">3,4 ηλιακές ακτίνες</string>
-    <string name="object_info_alkaid_mass" translation_description="Mass of Alkaid in scientific notation — no translation needed.">6,1 ηλιακές μάζες</string>
+    <string name="object_info_alkaid_mass" translation_description="Mass of Alkaid in scientific notation — translate if needed for the locale.">6,1 ηλιακές μάζες</string>
 
     <!-- Alnair -->
     <string name="object_info_alnair_description" translation_description="Short description of Alnair">
@@ -1418,7 +1418,7 @@
     </string>
     <string name="object_info_alnair_distance" translation_description="Distance to Alnair shown in the info card. Translate units if appropriate for your locale.">101 έτη φωτός</string>
     <string name="object_info_alnair_size" translation_description="Physical size of Alnair shown in the info card. Translate units if appropriate for your locale.">3,4 ηλιακές ακτίνες</string>
-    <string name="object_info_alnair_mass" translation_description="Mass of Alnair in scientific notation — no translation needed.">4,0 ηλιακές μάζες</string>
+    <string name="object_info_alnair_mass" translation_description="Mass of Alnair in scientific notation — translate if needed for the locale.">4,0 ηλιακές μάζες</string>
 
     <!-- Alnath -->
     <string name="object_info_alnath_description" translation_description="Short description of Alnath">
@@ -1429,7 +1429,7 @@
     </string>
     <string name="object_info_alnath_distance" translation_description="Distance to Alnath shown in the info card. Translate units if appropriate for your locale.">134 έτη φωτός</string>
     <string name="object_info_alnath_size" translation_description="Physical size of Alnath shown in the info card. Translate units if appropriate for your locale.">4,2 ηλιακές ακτίνες</string>
-    <string name="object_info_alnath_mass" translation_description="Mass of Alnath in scientific notation — no translation needed.">5,0 ηλιακές μάζες</string>
+    <string name="object_info_alnath_mass" translation_description="Mass of Alnath in scientific notation — translate if needed for the locale.">5,0 ηλιακές μάζες</string>
 
     <!-- Alphekka -->
     <string name="object_info_alphekka_description" translation_description="Short description of Alphekka">
@@ -1440,7 +1440,7 @@
     </string>
     <string name="object_info_alphekka_distance" translation_description="Distance to Alphekka shown in the info card. Translate units if appropriate for your locale.">75 έτη φωτός</string>
     <string name="object_info_alphekka_size" translation_description="Physical size of Alphekka shown in the info card. Translate units if appropriate for your locale.">2,9 ηλιακές ακτίνες</string>
-    <string name="object_info_alphekka_mass" translation_description="Mass of Alphekka in scientific notation — no translation needed.">2,6 ηλιακές μάζες</string>
+    <string name="object_info_alphekka_mass" translation_description="Mass of Alphekka in scientific notation — translate if needed for the locale.">2,6 ηλιακές μάζες</string>
 
     <!-- Ankaa -->
     <string name="object_info_ankaa_description" translation_description="Short description of Ankaa">
@@ -1495,7 +1495,7 @@
     </string>
     <string name="object_info_izar_distance" translation_description="Distance to Izar shown in the info card. Translate units if appropriate for your locale.">202 έτη φωτός</string>
     <string name="object_info_izar_size" translation_description="Physical size of Izar shown in the info card. Translate units if appropriate for your locale.">33 ηλιακές ακτίνες</string>
-    <string name="object_info_izar_mass" translation_description="Mass of Izar in scientific notation — no translation needed.">~4,6 solar masses</string>
+    <string name="object_info_izar_mass" translation_description="Mass of Izar in scientific notation — translate if needed for the locale.">~4,6 solar masses</string>
 
     <!-- Kaus Australis -->
     <string name="object_info_kaus_australis_description" translation_description="Short description of Kaus Australis">
@@ -1561,7 +1561,7 @@
     </string>
     <string name="object_info_phad_distance" translation_description="Distance to Phad shown in the info card. Translate units if appropriate for your locale.">84 έτη φωτός</string>
     <string name="object_info_phad_size" translation_description="Physical size of Phad shown in the info card. Translate units if appropriate for your locale.">3,0 ηλιακές ακτίνες</string>
-    <string name="object_info_phad_mass" translation_description="Mass of Phad in scientific notation — no translation needed.">2,9 ηλιακές μάζες</string>
+    <string name="object_info_phad_mass" translation_description="Mass of Phad in scientific notation — translate if needed for the locale.">2,9 ηλιακές μάζες</string>
 
     <!-- Saiph -->
     <string name="object_info_saiph_description" translation_description="Short description of Saiph">
@@ -1572,7 +1572,7 @@
     </string>
     <string name="object_info_saiph_distance" translation_description="Distance to Saiph shown in the info card. Translate units if appropriate for your locale.">~650 έτη φωτός</string>
     <string name="object_info_saiph_size" translation_description="Physical size of Saiph shown in the info card. Translate units if appropriate for your locale.">~22 ηλιακές ακτίνες</string>
-    <string name="object_info_saiph_mass" translation_description="Mass of Saiph in scientific notation — no translation needed.">~15,5 ηλιακές μάζες</string>
+    <string name="object_info_saiph_mass" translation_description="Mass of Saiph in scientific notation — translate if needed for the locale.">~15,5 ηλιακές μάζες</string>
 
     <!-- Shedir -->
     <string name="object_info_shedir_description" translation_description="Short description of Shedir">
@@ -1583,7 +1583,7 @@
     </string>
     <string name="object_info_shedir_distance" translation_description="Distance to Shedir shown in the info card. Translate units if appropriate for your locale.">228 έτη φωτός</string>
     <string name="object_info_shedir_size" translation_description="Physical size of Shedir shown in the info card. Translate units if appropriate for your locale.">45 ηλιακές ακτίνες</string>
-    <string name="object_info_shedir_mass" translation_description="Mass of Shedir in scientific notation — no translation needed.">~4,0 ηλιακές μάζες</string>
+    <string name="object_info_shedir_mass" translation_description="Mass of Shedir in scientific notation — translate if needed for the locale.">~4,0 ηλιακές μάζες</string>
 
     <!-- Unukalhai -->
     <string name="object_info_unukalhai_description" translation_description="Short description of Unukalhai">
@@ -1594,7 +1594,7 @@
     </string>
     <string name="object_info_unukalhai_distance" translation_description="Distance to Unukalhai shown in the info card. Translate units if appropriate for your locale.">74 έτη φωτός</string>
     <string name="object_info_unukalhai_size" translation_description="Physical size of Unukalhai shown in the info card. Translate units if appropriate for your locale.">12 ηλιακές ακτίνες</string>
-    <string name="object_info_unukalhai_mass" translation_description="Mass of Unukalhai in scientific notation — no translation needed.">~2,1 ηλιακές μάζες</string>
+    <string name="object_info_unukalhai_mass" translation_description="Mass of Unukalhai in scientific notation — translate if needed for the locale.">~2,1 ηλιακές μάζες</string>
 
     <!-- Vindemiatrix -->
     <string name="object_info_vindemiatrix_description" translation_description="Short description of Vindemiatrix">
@@ -1605,7 +1605,7 @@
     </string>
     <string name="object_info_vindemiatrix_distance" translation_description="Distance to Vindemiatrix shown in the info card. Translate units if appropriate for your locale.">109 έτη φωτός</string>
     <string name="object_info_vindemiatrix_size" translation_description="Physical size of Vindemiatrix shown in the info card. Translate units if appropriate for your locale.">11 ηλιακές ακτίνες</string>
-    <string name="object_info_vindemiatrix_mass" translation_description="Mass of Vindemiatrix in scientific notation — no translation needed.">2,6 ηλιακές μάζες</string>
+    <string name="object_info_vindemiatrix_mass" translation_description="Mass of Vindemiatrix in scientific notation — translate if needed for the locale.">2,6 ηλιακές μάζες</string>
 
     <!-- ============================================ -->
     <!-- New Constellations (41) — Phase 1 of issue #645 -->
