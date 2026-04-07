@@ -10,7 +10,7 @@
     </string>
     <string name="object_info_sun_distance" translation_description="Distance to Sun shown in the info card. Translate units if appropriate for your locale.">150 milyon km</string>
     <string name="object_info_sun_size" translation_description="Physical size of Sun shown in the info card. Translate units if appropriate for your locale.">1,4 milyon km çapında</string>
-    <string name="object_info_sun_mass" translation_description="Mass of Sun in scientific notation — no translation needed.">1,989 × 10³⁰ kg</string>
+    <string name="object_info_sun_mass" translation_description="Mass of Sun in scientific notation — translate if needed for the locale.">1,989 × 10³⁰ kg</string>
     <string name="object_info_moon_description" translation_description="Short description of the Moon">
     Ay, Dünya\'nın tek doğal uydusu. Gelgitlerimizi etkiler ve 12 astronot tarafından ziyaret edilmiştir.
     </string>
@@ -19,7 +19,7 @@
     </string>
     <string name="object_info_moon_distance" translation_description="Distance to Moon shown in the info card. Translate units if appropriate for your locale.">384.400 km</string>
     <string name="object_info_moon_size" translation_description="Physical size of Moon shown in the info card. Translate units if appropriate for your locale.">3.474 km çapında</string>
-    <string name="object_info_moon_mass" translation_description="Mass of Moon in scientific notation — no translation needed.">7,35 × 10²² kg</string>
+    <string name="object_info_moon_mass" translation_description="Mass of Moon in scientific notation — translate if needed for the locale.">7,35 × 10²² kg</string>
     <string name="object_info_mercury_description" translation_description="Short description of Mercury">
     Merkür en küçük gezegen ve Güneş\'e en yakın olanıdır. Merkür\'de bir yıl sadece 88 Dünya günü sürer.
     </string>
@@ -28,7 +28,7 @@
     </string>
     <string name="object_info_mercury_distance" translation_description="Distance to Mercury shown in the info card. Translate units if appropriate for your locale.">58 milyon km (Güneş\'ten)</string>
     <string name="object_info_mercury_size" translation_description="Physical size of Mercury shown in the info card. Translate units if appropriate for your locale.">4.880 km çapında</string>
-    <string name="object_info_mercury_mass" translation_description="Mass of Mercury in scientific notation — no translation needed.">3,3 × 10²³ kg</string>
+    <string name="object_info_mercury_mass" translation_description="Mass of Mercury in scientific notation — translate if needed for the locale.">3,3 × 10²³ kg</string>
     <string name="object_info_venus_description" translation_description="Short description of Venus">
     Venüs, Güneş\'ten ikinci gezegen ve güneş sistemimizin en sıcak gezeneğidir. Benzer boyutu nedeniyle sıklıkla Dünya\'nın ikizi olarak adlandırılır.
     </string>
@@ -37,7 +37,7 @@
     </string>
     <string name="object_info_venus_distance" translation_description="Distance to Venus shown in the info card. Translate units if appropriate for your locale.">108 milyon km (ortalama)</string>
     <string name="object_info_venus_size" translation_description="Physical size of Venus shown in the info card. Translate units if appropriate for your locale.">12.104 km çapında</string>
-    <string name="object_info_venus_mass" translation_description="Mass of Venus in scientific notation — no translation needed.">4,87 × 10²⁴ kg</string>
+    <string name="object_info_venus_mass" translation_description="Mass of Venus in scientific notation — translate if needed for the locale.">4,87 × 10²⁴ kg</string>
     <string name="object_info_mars_description" translation_description="Short description of Mars">
     Mars, Güneş\'ten dördüncü gezegen olup, yüzeyindeki demir oksit nedeniyle Kızıl Gezegen olarak bilinir.
     </string>
@@ -46,7 +46,7 @@
     </string>
     <string name="object_info_mars_distance" translation_description="Distance to Mars shown in the info card. Translate units if appropriate for your locale.">228 milyon km (ortalama)</string>
     <string name="object_info_mars_size" translation_description="Physical size of Mars shown in the info card. Translate units if appropriate for your locale.">6.779 km çap</string>
-    <string name="object_info_mars_mass" translation_description="Mass of Mars in scientific notation — no translation needed.">6,39 × 10²³ kg</string>
+    <string name="object_info_mars_mass" translation_description="Mass of Mars in scientific notation — translate if needed for the locale.">6,39 × 10²³ kg</string>
     <string name="object_info_jupiter_description" translation_description="Short description of Jupiter">
     Jüpiter, güneş sistemimizin en büyük gezegenidir. Ünlü Büyük Kırmızı Leke fırtınasına sahip bir gaz devdir.
     </string>
@@ -55,7 +55,7 @@
     </string>
     <string name="object_info_jupiter_distance" translation_description="Distance to Jupiter shown in the info card. Translate units if appropriate for your locale.">778 milyon km (ortalama)</string>
     <string name="object_info_jupiter_size" translation_description="Physical size of Jupiter shown in the info card. Translate units if appropriate for your locale.">139.820 km çap</string>
-    <string name="object_info_jupiter_mass" translation_description="Mass of Jupiter in scientific notation — no translation needed.">1,898 × 10²⁷ kg</string>
+    <string name="object_info_jupiter_mass" translation_description="Mass of Jupiter in scientific notation — translate if needed for the locale.">1,898 × 10²⁷ kg</string>
     <string name="object_info_saturn_description" translation_description="Short description of Saturn">
     Satürn, Güneş\'ten altıncı gezegen olup, buz ve kayadan oluşan görkemli halka sistemiyle ünlüdür.
     </string>
@@ -64,7 +64,7 @@
     </string>
     <string name="object_info_saturn_distance" translation_description="Distance to Saturn shown in the info card. Translate units if appropriate for your locale.">1,4 milyar km (ortalama)</string>
     <string name="object_info_saturn_size" translation_description="Physical size of Saturn shown in the info card. Translate units if appropriate for your locale.">116.460 km çap</string>
-    <string name="object_info_saturn_mass" translation_description="Mass of Saturn in scientific notation — no translation needed.">5,68 × 10²⁶ kg</string>
+    <string name="object_info_saturn_mass" translation_description="Mass of Saturn in scientific notation — translate if needed for the locale.">5,68 × 10²⁶ kg</string>
     <string name="object_info_uranus_description" translation_description="Short description of Uranus">
     Uranüs, yatay dönen bir buz devesidir. Teleskop kullanılarak keşfedilen ilk gezegendir.
     </string>
@@ -73,7 +73,7 @@
     </string>
     <string name="object_info_uranus_distance" translation_description="Distance to Uranus shown in the info card. Translate units if appropriate for your locale.">2,9 milyar km (ortalama)</string>
     <string name="object_info_uranus_size" translation_description="Physical size of Uranus shown in the info card. Translate units if appropriate for your locale.">50.724 km çap</string>
-    <string name="object_info_uranus_mass" translation_description="Mass of Uranus in scientific notation — no translation needed.">8,68 × 10²⁵ kg</string>
+    <string name="object_info_uranus_mass" translation_description="Mass of Uranus in scientific notation — translate if needed for the locale.">8,68 × 10²⁵ kg</string>
     <string name="object_info_neptune_description" translation_description="Short description of Neptune">
     Neptün, güneş sistemimizde en uzak gezegendir. En güçlü rüzgarlara sahiptir ve bunlar saatte 2.100 km\'ye ulaşır.
     </string>
@@ -1346,7 +1346,7 @@
     </string>
     <string name="object_info_alcyone_distance" translation_description="Distance to Alcyone shown in the info card. Translate units if appropriate for your locale.">~440 ışık yılı</string>
     <string name="object_info_alcyone_size" translation_description="Physical size of Alcyone shown in the info card. Translate units if appropriate for your locale.">~10 güneş yarıçapı</string>
-    <string name="object_info_alcyone_mass" translation_description="Mass of Alcyone in scientific notation — no translation needed.">~6.0 güneş kütlesi</string>
+    <string name="object_info_alcyone_mass" translation_description="Mass of Alcyone in scientific notation — translate if needed for the locale.">~6.0 güneş kütlesi</string>
 
     <!-- Alderamin -->
     <string name="object_info_alderamin_description" translation_description="Short description of Alderamin">
@@ -1357,7 +1357,7 @@
     </string>
     <string name="object_info_alderamin_distance" translation_description="Distance to Alderamin shown in the info card. Translate units if appropriate for your locale.">49 ışık yılı</string>
     <string name="object_info_alderamin_size" translation_description="Physical size of Alderamin shown in the info card. Translate units if appropriate for your locale.">2,5 güneş yarıçapı</string>
-    <string name="object_info_alderamin_mass" translation_description="Mass of Alderamin in scientific notation — no translation needed.">1.9 güneş kütlesi</string>
+    <string name="object_info_alderamin_mass" translation_description="Mass of Alderamin in scientific notation — translate if needed for the locale.">1.9 güneş kütlesi</string>
 
     <!-- Algenib -->
     <string name="object_info_algenib_description" translation_description="Short description of Algenib">
@@ -1368,7 +1368,7 @@
     </string>
     <string name="object_info_algenib_distance" translation_description="Distance to Algenib shown in the info card. Translate units if appropriate for your locale.">~390 ışık yılı</string>
     <string name="object_info_algenib_size" translation_description="Physical size of Algenib shown in the info card. Translate units if appropriate for your locale.">4.8 güneş yarıçapı</string>
-    <string name="object_info_algenib_mass" translation_description="Mass of Algenib in scientific notation — no translation needed.">~8.9 güneş kütlesi</string>
+    <string name="object_info_algenib_mass" translation_description="Mass of Algenib in scientific notation — translate if needed for the locale.">~8.9 güneş kütlesi</string>
 
     <!-- Algieba -->
     <string name="object_info_algieba_description" translation_description="Short description of Algieba">
@@ -1379,7 +1379,7 @@
     </string>
     <string name="object_info_algieba_distance" translation_description="Distance to Algieba shown in the info card. Translate units if appropriate for your locale.">~130 ışık yılı</string>
     <string name="object_info_algieba_size" translation_description="Physical size of Algieba shown in the info card. Translate units if appropriate for your locale.">~23 güneş yarıçapı</string>
-    <string name="object_info_algieba_mass" translation_description="Mass of Algieba in scientific notation — no translation needed.">~1.2 güneş kütlesi</string>
+    <string name="object_info_algieba_mass" translation_description="Mass of Algieba in scientific notation — translate if needed for the locale.">~1.2 güneş kütlesi</string>
 
     <!-- Alhena -->
     <string name="object_info_alhena_description" translation_description="Short description of Alhena">
@@ -1390,7 +1390,7 @@
     </string>
     <string name="object_info_alhena_distance" translation_description="Distance to Alhena shown in the info card. Translate units if appropriate for your locale.">109 ışık yılı</string>
     <string name="object_info_alhena_size" translation_description="Physical size of Alhena shown in the info card. Translate units if appropriate for your locale.">3.3 güneş yarıçapı</string>
-    <string name="object_info_alhena_mass" translation_description="Mass of Alhena in scientific notation — no translation needed.">2.8 güneş kütlesi</string>
+    <string name="object_info_alhena_mass" translation_description="Mass of Alhena in scientific notation — translate if needed for the locale.">2.8 güneş kütlesi</string>
 
     <!-- Alkaid -->
     <string name="object_info_alkaid_description" translation_description="Short description of Alkaid">
@@ -1401,7 +1401,7 @@
     </string>
     <string name="object_info_alkaid_distance" translation_description="Distance to Alkaid shown in the info card. Translate units if appropriate for your locale.">104 ışık yılı</string>
     <string name="object_info_alkaid_size" translation_description="Physical size of Alkaid shown in the info card. Translate units if appropriate for your locale.">3.4 güneş yarıçapı</string>
-    <string name="object_info_alkaid_mass" translation_description="Mass of Alkaid in scientific notation — no translation needed.">6.1 güneş kütlesi</string>
+    <string name="object_info_alkaid_mass" translation_description="Mass of Alkaid in scientific notation — translate if needed for the locale.">6.1 güneş kütlesi</string>
 
     <!-- Alnair -->
     <string name="object_info_alnair_description" translation_description="Short description of Alnair">
@@ -1412,7 +1412,7 @@
     </string>
     <string name="object_info_alnair_distance" translation_description="Distance to Alnair shown in the info card. Translate units if appropriate for your locale.">101 ışık yılı</string>
     <string name="object_info_alnair_size" translation_description="Physical size of Alnair shown in the info card. Translate units if appropriate for your locale.">3,4 güneş yarıçapı</string>
-    <string name="object_info_alnair_mass" translation_description="Mass of Alnair in scientific notation — no translation needed.">4,0 güneş kütlesi</string>
+    <string name="object_info_alnair_mass" translation_description="Mass of Alnair in scientific notation — translate if needed for the locale.">4,0 güneş kütlesi</string>
 
     <!-- Alnath -->
     <string name="object_info_alnath_description" translation_description="Short description of Alnath">
@@ -1423,7 +1423,7 @@
     </string>
     <string name="object_info_alnath_distance" translation_description="Distance to Alnath shown in the info card. Translate units if appropriate for your locale.">134 ışık yılı</string>
     <string name="object_info_alnath_size" translation_description="Physical size of Alnath shown in the info card. Translate units if appropriate for your locale.">4,2 güneş yarıçapı</string>
-    <string name="object_info_alnath_mass" translation_description="Mass of Alnath in scientific notation — no translation needed.">5,0 güneş kütlesi</string>
+    <string name="object_info_alnath_mass" translation_description="Mass of Alnath in scientific notation — translate if needed for the locale.">5,0 güneş kütlesi</string>
 
     <!-- Alphekka -->
     <string name="object_info_alphekka_description" translation_description="Short description of Alphekka">
@@ -1434,7 +1434,7 @@
     </string>
     <string name="object_info_alphekka_distance" translation_description="Distance to Alphekka shown in the info card. Translate units if appropriate for your locale.">75 ışık yılı</string>
     <string name="object_info_alphekka_size" translation_description="Physical size of Alphekka shown in the info card. Translate units if appropriate for your locale.">2,9 güneş yarıçapı</string>
-    <string name="object_info_alphekka_mass" translation_description="Mass of Alphekka in scientific notation — no translation needed.">2,6 güneş kütlesi</string>
+    <string name="object_info_alphekka_mass" translation_description="Mass of Alphekka in scientific notation — translate if needed for the locale.">2,6 güneş kütlesi</string>
 
     <!-- Ankaa -->
     <string name="object_info_ankaa_description" translation_description="Short description of Ankaa">
@@ -1445,7 +1445,7 @@
     </string>
     <string name="object_info_ankaa_distance" translation_description="Distance to Ankaa shown in the info card. Translate units if appropriate for your locale.">85 ışık yılı</string>
     <string name="object_info_ankaa_size" translation_description="Physical size of Ankaa shown in the info card. Translate units if appropriate for your locale.">15 güneş yarıçapı</string>
-    <string name="object_info_ankaa_mass" translation_description="Mass of Ankaa in scientific notation — no translation needed.">1,3 güneş kütlesi</string>
+    <string name="object_info_ankaa_mass" translation_description="Mass of Ankaa in scientific notation — translate if needed for the locale.">1,3 güneş kütlesi</string>
 
     <!-- Arneb -->
     <string name="object_info_arneb_description" translation_description="Short description of Arneb">
@@ -1456,7 +1456,7 @@
     </string>
     <string name="object_info_arneb_distance" translation_description="Distance to Arneb shown in the info card. Translate units if appropriate for your locale.">~2.200 ışık yılı</string>
     <string name="object_info_arneb_size" translation_description="Physical size of Arneb shown in the info card. Translate units if appropriate for your locale.">~75 güneş yarıçapı</string>
-    <string name="object_info_arneb_mass" translation_description="Mass of Arneb in scientific notation — no translation needed.">~14 güneş kütlesi</string>
+    <string name="object_info_arneb_mass" translation_description="Mass of Arneb in scientific notation — translate if needed for the locale.">~14 güneş kütlesi</string>
 
     <!-- Caph -->
     <string name="object_info_caph_description" translation_description="Short description of Caph">
@@ -1467,7 +1467,7 @@
     </string>
     <string name="object_info_caph_distance" translation_description="Distance to Caph shown in the info card. Translate units if appropriate for your locale.">54 ışık yılı</string>
     <string name="object_info_caph_size" translation_description="Physical size of Caph shown in the info card. Translate units if appropriate for your locale.">3,5 güneş yarıçapı</string>
-    <string name="object_info_caph_mass" translation_description="Mass of Caph in scientific notation — no translation needed.">1,9 güneş kütlesi</string>
+    <string name="object_info_caph_mass" translation_description="Mass of Caph in scientific notation — translate if needed for the locale.">1,9 güneş kütlesi</string>
 
     <!-- Etamin -->
     <string name="object_info_etamin_description" translation_description="Short description of Etamin">
@@ -1478,7 +1478,7 @@
     </string>
     <string name="object_info_etamin_distance" translation_description="Distance to Etamin shown in the info card. Translate units if appropriate for your locale.">148 ışık yılı</string>
     <string name="object_info_etamin_size" translation_description="Physical size of Etamin shown in the info card. Translate units if appropriate for your locale.">48 güneş yarıçapı</string>
-    <string name="object_info_etamin_mass" translation_description="Mass of Etamin in scientific notation — no translation needed.">1,7 güneş kütlesi</string>
+    <string name="object_info_etamin_mass" translation_description="Mass of Etamin in scientific notation — translate if needed for the locale.">1,7 güneş kütlesi</string>
 
     <!-- Izar -->
     <string name="object_info_izar_description" translation_description="Short description of Izar">
@@ -1489,7 +1489,7 @@
     </string>
     <string name="object_info_izar_distance" translation_description="Distance to Izar shown in the info card. Translate units if appropriate for your locale.">202 ışık yılı</string>
     <string name="object_info_izar_size" translation_description="Physical size of Izar shown in the info card. Translate units if appropriate for your locale.">33 güneş yarıçapı</string>
-    <string name="object_info_izar_mass" translation_description="Mass of Izar in scientific notation — no translation needed.">~4,6 güneş kütlesi</string>
+    <string name="object_info_izar_mass" translation_description="Mass of Izar in scientific notation — translate if needed for the locale.">~4,6 güneş kütlesi</string>
 
     <!-- Kaus Australis -->
     <string name="object_info_kaus_australis_description" translation_description="Short description of Kaus Australis">
@@ -1500,7 +1500,7 @@
     </string>
     <string name="object_info_kaus_australis_distance" translation_description="Distance to Kaus Australis shown in the info card. Translate units if appropriate for your locale.">143 ışık yılı</string>
     <string name="object_info_kaus_australis_size" translation_description="Physical size of Kaus Australis shown in the info card. Translate units if appropriate for your locale.">6,8 güneş yarıçapı</string>
-    <string name="object_info_kaus_australis_mass" translation_description="Mass of Kaus Australis in scientific notation — no translation needed.">3,5 güneş kütlesi</string>
+    <string name="object_info_kaus_australis_mass" translation_description="Mass of Kaus Australis in scientific notation — translate if needed for the locale.">3,5 güneş kütlesi</string>
 
     <!-- Kochab -->
     <string name="object_info_kochab_description" translation_description="Short description of Kochab">
@@ -1511,7 +1511,7 @@
     </string>
     <string name="object_info_kochab_distance" translation_description="Distance to Kochab shown in the info card. Translate units if appropriate for your locale.">131 ışık yılı</string>
     <string name="object_info_kochab_size" translation_description="Physical size of Kochab shown in the info card. Translate units if appropriate for your locale.">42 güneş yarıçapı</string>
-    <string name="object_info_kochab_mass" translation_description="Mass of Kochab in scientific notation — no translation needed.">1,3 güneş kütlesi</string>
+    <string name="object_info_kochab_mass" translation_description="Mass of Kochab in scientific notation — translate if needed for the locale.">1,3 güneş kütlesi</string>
 
     <!-- Merak -->
     <string name="object_info_merak_description" translation_description="Short description of Merak">
@@ -1522,7 +1522,7 @@
     </string>
     <string name="object_info_merak_distance" translation_description="Distance to Merak shown in the info card. Translate units if appropriate for your locale.">80 ışık yılı</string>
     <string name="object_info_merak_size" translation_description="Physical size of Merak shown in the info card. Translate units if appropriate for your locale.">3,0 güneş yarıçapı</string>
-    <string name="object_info_merak_mass" translation_description="Mass of Merak in scientific notation — no translation needed.">2,7 güneş kütlesi</string>
+    <string name="object_info_merak_mass" translation_description="Mass of Merak in scientific notation — translate if needed for the locale.">2,7 güneş kütlesi</string>
 
     <!-- Menkar -->
     <string name="object_info_menkar_description" translation_description="Short description of Menkar">
@@ -1533,7 +1533,7 @@
     </string>
     <string name="object_info_menkar_distance" translation_description="Distance to Menkar shown in the info card. Translate units if appropriate for your locale.">249 ışık yılı</string>
     <string name="object_info_menkar_size" translation_description="Physical size of Menkar shown in the info card. Translate units if appropriate for your locale.">~89 güneş yarıçapı</string>
-    <string name="object_info_menkar_mass" translation_description="Mass of Menkar in scientific notation — no translation needed.">~2,3 güneş kütlesi</string>
+    <string name="object_info_menkar_mass" translation_description="Mass of Menkar in scientific notation — translate if needed for the locale.">~2,3 güneş kütlesi</string>
 
     <!-- Mirphak -->
     <string name="object_info_mirphak_description" translation_description="Short description of Mirphak">
@@ -1544,7 +1544,7 @@
     </string>
     <string name="object_info_mirphak_distance" translation_description="Distance to Mirphak shown in the info card. Translate units if appropriate for your locale.">~590 ışık yılı</string>
     <string name="object_info_mirphak_size" translation_description="Physical size of Mirphak shown in the info card. Translate units if appropriate for your locale.">~68 güneş yarıçapı</string>
-    <string name="object_info_mirphak_mass" translation_description="Mass of Mirphak in scientific notation — no translation needed.">~8,5 güneş kütlesi</string>
+    <string name="object_info_mirphak_mass" translation_description="Mass of Mirphak in scientific notation — translate if needed for the locale.">~8,5 güneş kütlesi</string>
 
     <!-- Phad -->
     <string name="object_info_phad_description" translation_description="Short description of Phad">
@@ -1555,7 +1555,7 @@
     </string>
     <string name="object_info_phad_distance" translation_description="Distance to Phad shown in the info card. Translate units if appropriate for your locale.">84 ışık yılı</string>
     <string name="object_info_phad_size" translation_description="Physical size of Phad shown in the info card. Translate units if appropriate for your locale.">3,0 güneş yarıçapı</string>
-    <string name="object_info_phad_mass" translation_description="Mass of Phad in scientific notation — no translation needed.">2,9 güneş kütlesi</string>
+    <string name="object_info_phad_mass" translation_description="Mass of Phad in scientific notation — translate if needed for the locale.">2,9 güneş kütlesi</string>
 
     <!-- Saiph -->
     <string name="object_info_saiph_description" translation_description="Short description of Saiph">
@@ -1566,7 +1566,7 @@
     </string>
     <string name="object_info_saiph_distance" translation_description="Distance to Saiph shown in the info card. Translate units if appropriate for your locale.">~650 ışık yılı</string>
     <string name="object_info_saiph_size" translation_description="Physical size of Saiph shown in the info card. Translate units if appropriate for your locale.">~22 güneş yarıçapı</string>
-    <string name="object_info_saiph_mass" translation_description="Mass of Saiph in scientific notation — no translation needed.">~15,5 güneş kütlesi</string>
+    <string name="object_info_saiph_mass" translation_description="Mass of Saiph in scientific notation — translate if needed for the locale.">~15,5 güneş kütlesi</string>
 
     <!-- Shedir -->
     <string name="object_info_shedir_description" translation_description="Short description of Shedir">
@@ -1577,7 +1577,7 @@
     </string>
     <string name="object_info_shedir_distance" translation_description="Distance to Shedir shown in the info card. Translate units if appropriate for your locale.">228 ışık yılı</string>
     <string name="object_info_shedir_size" translation_description="Physical size of Shedir shown in the info card. Translate units if appropriate for your locale.">45 güneş yarıçapı</string>
-    <string name="object_info_shedir_mass" translation_description="Mass of Shedir in scientific notation — no translation needed.">~4.0 güneş kütlesi</string>
+    <string name="object_info_shedir_mass" translation_description="Mass of Shedir in scientific notation — translate if needed for the locale.">~4.0 güneş kütlesi</string>
 
     <!-- Unukalhai -->
     <string name="object_info_unukalhai_description" translation_description="Short description of Unukalhai">
@@ -1588,7 +1588,7 @@
     </string>
     <string name="object_info_unukalhai_distance" translation_description="Distance to Unukalhai shown in the info card. Translate units if appropriate for your locale.">74 ışık yılı</string>
     <string name="object_info_unukalhai_size" translation_description="Physical size of Unukalhai shown in the info card. Translate units if appropriate for your locale.">12 güneş yarıçapı</string>
-    <string name="object_info_unukalhai_mass" translation_description="Mass of Unukalhai in scientific notation — no translation needed.">~2.1 güneş kütlesi</string>
+    <string name="object_info_unukalhai_mass" translation_description="Mass of Unukalhai in scientific notation — translate if needed for the locale.">~2.1 güneş kütlesi</string>
 
     <!-- Vindemiatrix -->
     <string name="object_info_vindemiatrix_description" translation_description="Short description of Vindemiatrix">
@@ -1599,7 +1599,7 @@
     </string>
     <string name="object_info_vindemiatrix_distance" translation_description="Distance to Vindemiatrix shown in the info card. Translate units if appropriate for your locale.">109 ışık yılı</string>
     <string name="object_info_vindemiatrix_size" translation_description="Physical size of Vindemiatrix shown in the info card. Translate units if appropriate for your locale.">11 güneş yarıçapı</string>
-    <string name="object_info_vindemiatrix_mass" translation_description="Mass of Vindemiatrix in scientific notation — no translation needed.">2.6 güneş kütlesi</string>
+    <string name="object_info_vindemiatrix_mass" translation_description="Mass of Vindemiatrix in scientific notation — translate if needed for the locale.">2.6 güneş kütlesi</string>
 
     <!-- ============================================ -->
     <!-- New Constellations (41) — Phase 1 of issue #645 -->

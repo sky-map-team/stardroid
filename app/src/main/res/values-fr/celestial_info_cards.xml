@@ -10,7 +10,7 @@
     </string>
     <string name="object_info_sun_distance" translation_description="Distance to Sun shown in the info card. Translate units if appropriate for your locale.">150 millions de km</string>
     <string name="object_info_sun_size" translation_description="Physical size of Sun shown in the info card. Translate units if appropriate for your locale.">1,4 million de km de diamètre</string>
-    <string name="object_info_sun_mass" translation_description="Mass of Sun in scientific notation — no translation needed.">1,989 × 10³⁰ kg</string>
+    <string name="object_info_sun_mass" translation_description="Mass of Sun in scientific notation — translate if needed for the locale.">1,989 × 10³⁰ kg</string>
     <string name="object_info_moon_description" translation_description="Short description of the Moon">
     La Lune est le seul satellite naturel de la Terre. Elle influence nos marées et a été visitée par 12 astronautes.
     </string>
@@ -19,7 +19,7 @@
     </string>
     <string name="object_info_moon_distance" translation_description="Distance to Moon shown in the info card. Translate units if appropriate for your locale.">384 400 km</string>
     <string name="object_info_moon_size" translation_description="Physical size of Moon shown in the info card. Translate units if appropriate for your locale.">3 474 km de diamètre</string>
-    <string name="object_info_moon_mass" translation_description="Mass of Moon in scientific notation — no translation needed.">7,35 × 10²² kg</string>
+    <string name="object_info_moon_mass" translation_description="Mass of Moon in scientific notation — translate if needed for the locale.">7,35 × 10²² kg</string>
     <string name="object_info_mercury_description" translation_description="Short description of Mercury">
     Mercure est la plus petite planète et la plus proche du Soleil. Une année sur Mercure ne dure que 88 jours terrestres.
     </string>
@@ -28,7 +28,7 @@
     </string>
     <string name="object_info_mercury_distance" translation_description="Distance to Mercury shown in the info card. Translate units if appropriate for your locale.">58 millions de km (du Soleil)</string>
     <string name="object_info_mercury_size" translation_description="Physical size of Mercury shown in the info card. Translate units if appropriate for your locale.">4 880 km de diamètre</string>
-    <string name="object_info_mercury_mass" translation_description="Mass of Mercury in scientific notation — no translation needed.">3,3 × 10²³ kg</string>
+    <string name="object_info_mercury_mass" translation_description="Mass of Mercury in scientific notation — translate if needed for the locale.">3,3 × 10²³ kg</string>
     <string name="object_info_venus_description" translation_description="Short description of Venus">
     Vénus est la deuxième planète à partir du Soleil et la plus chaude de notre système solaire. On l\'appelle souvent la jumelle de la Terre en raison de leur taille similaire.
     </string>
@@ -37,7 +37,7 @@
     </string>
     <string name="object_info_venus_distance" translation_description="Distance to Venus shown in the info card. Translate units if appropriate for your locale.">108 millions de km (moyenne)</string>
     <string name="object_info_venus_size" translation_description="Physical size of Venus shown in the info card. Translate units if appropriate for your locale.">12 104 km de diamètre</string>
-    <string name="object_info_venus_mass" translation_description="Mass of Venus in scientific notation — no translation needed.">4,87 × 10²⁴ kg</string>
+    <string name="object_info_venus_mass" translation_description="Mass of Venus in scientific notation — translate if needed for the locale.">4,87 × 10²⁴ kg</string>
     <string name="object_info_mars_description" translation_description="Short description of Mars">
     Mars est la quatrième planète à partir du Soleil, connue comme la Planète rouge en raison de l\'oxyde de fer à sa surface.
     </string>
@@ -46,7 +46,7 @@
     </string>
     <string name="object_info_mars_distance" translation_description="Distance to Mars shown in the info card. Translate units if appropriate for your locale.">228 millions de km (moyenne)</string>
     <string name="object_info_mars_size" translation_description="Physical size of Mars shown in the info card. Translate units if appropriate for your locale.">6 779 km de diamètre</string>
-    <string name="object_info_mars_mass" translation_description="Mass of Mars in scientific notation — no translation needed.">6,39 × 10²³ kg</string>
+    <string name="object_info_mars_mass" translation_description="Mass of Mars in scientific notation — translate if needed for the locale.">6,39 × 10²³ kg</string>
     <string name="object_info_jupiter_description" translation_description="Short description of Jupiter">
     Jupiter est la plus grande planète de notre système solaire. C\'est une géante gazeuse avec sa célèbre Grande Tache rouge.
     </string>
@@ -55,7 +55,7 @@
     </string>
     <string name="object_info_jupiter_distance" translation_description="Distance to Jupiter shown in the info card. Translate units if appropriate for your locale.">778 millions de km (moyenne)</string>
     <string name="object_info_jupiter_size" translation_description="Physical size of Jupiter shown in the info card. Translate units if appropriate for your locale.">139 820 km de diamètre</string>
-    <string name="object_info_jupiter_mass" translation_description="Mass of Jupiter in scientific notation — no translation needed.">1,898 × 10²⁷ kg</string>
+    <string name="object_info_jupiter_mass" translation_description="Mass of Jupiter in scientific notation — translate if needed for the locale.">1,898 × 10²⁷ kg</string>
     <string name="object_info_saturn_description" translation_description="Short description of Saturn">
     Saturne est la sixième planète à partir du Soleil, célèbre pour son spectaculaire système d\'anneaux composés de glace et de roche.
     </string>
@@ -64,7 +64,7 @@
     </string>
     <string name="object_info_saturn_distance" translation_description="Distance to Saturn shown in the info card. Translate units if appropriate for your locale.">1,4 milliard de km (moyenne)</string>
     <string name="object_info_saturn_size" translation_description="Physical size of Saturn shown in the info card. Translate units if appropriate for your locale.">116 460 km de diamètre</string>
-    <string name="object_info_saturn_mass" translation_description="Mass of Saturn in scientific notation — no translation needed.">5,68 × 10²⁶ kg</string>
+    <string name="object_info_saturn_mass" translation_description="Mass of Saturn in scientific notation — translate if needed for the locale.">5,68 × 10²⁶ kg</string>
     <string name="object_info_uranus_description" translation_description="Short description of Uranus">
     Uranus est une géante de glace qui tourne sur le côté. C\'est la première planète découverte à l\'aide d\'un télescope.
     </string>
@@ -73,7 +73,7 @@
     </string>
     <string name="object_info_uranus_distance" translation_description="Distance to Uranus shown in the info card. Translate units if appropriate for your locale.">2,9 milliards de km (moyenne)</string>
     <string name="object_info_uranus_size" translation_description="Physical size of Uranus shown in the info card. Translate units if appropriate for your locale.">50 724 km de diamètre</string>
-    <string name="object_info_uranus_mass" translation_description="Mass of Uranus in scientific notation — no translation needed.">8,68 × 10²⁵ kg</string>
+    <string name="object_info_uranus_mass" translation_description="Mass of Uranus in scientific notation — translate if needed for the locale.">8,68 × 10²⁵ kg</string>
     <string name="object_info_neptune_description" translation_description="Short description of Neptune">
     Neptune est la planète la plus éloignée de notre système solaire. Elle possède les vents les plus puissants, atteignant 2 100 km/h.
     </string>
@@ -82,7 +82,7 @@
     </string>
     <string name="object_info_neptune_distance" translation_description="Distance to Neptune shown in the info card. Translate units if appropriate for your locale.">4,5 milliards de km (moyenne)</string>
     <string name="object_info_neptune_size" translation_description="Physical size of Neptune shown in the info card. Translate units if appropriate for your locale.">49 244 km de diamètre</string>
-    <string name="object_info_neptune_mass" translation_description="Mass of Neptune in scientific notation — no translation needed.">1,024 × 10²⁶ kg</string>
+    <string name="object_info_neptune_mass" translation_description="Mass of Neptune in scientific notation — translate if needed for the locale.">1,024 × 10²⁶ kg</string>
     <string name="object_info_pluto_description" translation_description="Short description of Pluto">
     Pluton est une planète naine de la ceinture de Kuiper. Elle était considérée comme la neuvième planète jusqu\'en 2006.
     </string>
@@ -91,7 +91,7 @@
     </string>
     <string name="object_info_pluto_distance" translation_description="Distance to Pluto shown in the info card. Translate units if appropriate for your locale.">5,9 milliards de km (moyenne)</string>
     <string name="object_info_pluto_size" translation_description="Physical size of Pluto shown in the info card. Translate units if appropriate for your locale.">2 377 km de diamètre</string>
-    <string name="object_info_pluto_mass" translation_description="Mass of Pluto in scientific notation — no translation needed.">1,3 × 10²² kg</string>
+    <string name="object_info_pluto_mass" translation_description="Mass of Pluto in scientific notation — translate if needed for the locale.">1,3 × 10²² kg</string>
     <!-- Bright Stars Educational Content -->
     <string name="object_info_sirius_description" translation_description="Short description of Sirius">
     Sirius est l\'étoile la plus brillante du ciel nocturne, située dans la constellation du Grand Chien (Canis Major).
@@ -1350,7 +1350,7 @@
     </string>
     <string name="object_info_alcyone_distance" translation_description="Distance to Alcyone shown in the info card. Translate units if appropriate for your locale.">~440 années-lumière</string>
     <string name="object_info_alcyone_size" translation_description="Physical size of Alcyone shown in the info card. Translate units if appropriate for your locale.">~10 rayons solaires</string>
-    <string name="object_info_alcyone_mass" translation_description="Mass of Alcyone in scientific notation — no translation needed.">~6.0 masses solaires</string>
+    <string name="object_info_alcyone_mass" translation_description="Mass of Alcyone in scientific notation — translate if needed for the locale.">~6.0 masses solaires</string>
 
     <!-- Alderamin -->
     <string name="object_info_alderamin_description" translation_description="Short description of Alderamin">
@@ -1361,7 +1361,7 @@
     </string>
     <string name="object_info_alderamin_distance" translation_description="Distance to Alderamin shown in the info card. Translate units if appropriate for your locale.">49 années-lumière</string>
     <string name="object_info_alderamin_size" translation_description="Physical size of Alderamin shown in the info card. Translate units if appropriate for your locale.">2,5 rayons solaires</string>
-    <string name="object_info_alderamin_mass" translation_description="Mass of Alderamin in scientific notation — no translation needed.">1,9 masses solaires</string>
+    <string name="object_info_alderamin_mass" translation_description="Mass of Alderamin in scientific notation — translate if needed for the locale.">1,9 masses solaires</string>
 
     <!-- Algenib -->
     <string name="object_info_algenib_description" translation_description="Short description of Algenib">
@@ -1372,7 +1372,7 @@
     </string>
     <string name="object_info_algenib_distance" translation_description="Distance to Algenib shown in the info card. Translate units if appropriate for your locale.">~390 années-lumière</string>
     <string name="object_info_algenib_size" translation_description="Physical size of Algenib shown in the info card. Translate units if appropriate for your locale.">4,8 rayons solaires</string>
-    <string name="object_info_algenib_mass" translation_description="Mass of Algenib in scientific notation — no translation needed.">~8,9 masses solaires</string>
+    <string name="object_info_algenib_mass" translation_description="Mass of Algenib in scientific notation — translate if needed for the locale.">~8,9 masses solaires</string>
 
     <!-- Algieba -->
     <string name="object_info_algieba_description" translation_description="Short description of Algieba">
@@ -1383,7 +1383,7 @@
     </string>
     <string name="object_info_algieba_distance" translation_description="Distance to Algieba shown in the info card. Translate units if appropriate for your locale.">~130 années-lumière</string>
     <string name="object_info_algieba_size" translation_description="Physical size of Algieba shown in the info card. Translate units if appropriate for your locale.">~23 rayons solaires</string>
-    <string name="object_info_algieba_mass" translation_description="Mass of Algieba in scientific notation — no translation needed.">~1,2 masses solaires</string>
+    <string name="object_info_algieba_mass" translation_description="Mass of Algieba in scientific notation — translate if needed for the locale.">~1,2 masses solaires</string>
 
     <!-- Alhena -->
     <string name="object_info_alhena_description" translation_description="Short description of Alhena">
@@ -1394,7 +1394,7 @@
     </string>
     <string name="object_info_alhena_distance" translation_description="Distance to Alhena shown in the info card. Translate units if appropriate for your locale.">109 années-lumière</string>
     <string name="object_info_alhena_size" translation_description="Physical size of Alhena shown in the info card. Translate units if appropriate for your locale.">3,3 rayons solaires</string>
-    <string name="object_info_alhena_mass" translation_description="Mass of Alhena in scientific notation — no translation needed.">2,8 masses solaires</string>
+    <string name="object_info_alhena_mass" translation_description="Mass of Alhena in scientific notation — translate if needed for the locale.">2,8 masses solaires</string>
 
     <!-- Alkaid -->
     <string name="object_info_alkaid_description" translation_description="Short description of Alkaid">
@@ -1405,7 +1405,7 @@
     </string>
     <string name="object_info_alkaid_distance" translation_description="Distance to Alkaid shown in the info card. Translate units if appropriate for your locale.">104 années-lumière</string>
     <string name="object_info_alkaid_size" translation_description="Physical size of Alkaid shown in the info card. Translate units if appropriate for your locale.">3,4 rayons solaires</string>
-    <string name="object_info_alkaid_mass" translation_description="Mass of Alkaid in scientific notation — no translation needed.">6,1 masses solaires</string>
+    <string name="object_info_alkaid_mass" translation_description="Mass of Alkaid in scientific notation — translate if needed for the locale.">6,1 masses solaires</string>
 
     <!-- Alnair -->
     <string name="object_info_alnair_description" translation_description="Short description of Alnair">
@@ -1416,7 +1416,7 @@
     </string>
     <string name="object_info_alnair_distance" translation_description="Distance to Alnair shown in the info card. Translate units if appropriate for your locale.">101 années-lumière</string>
     <string name="object_info_alnair_size" translation_description="Physical size of Alnair shown in the info card. Translate units if appropriate for your locale.">3,4 rayons solaires</string>
-    <string name="object_info_alnair_mass" translation_description="Mass of Alnair in scientific notation — no translation needed.">4,0 masses solaires</string>
+    <string name="object_info_alnair_mass" translation_description="Mass of Alnair in scientific notation — translate if needed for the locale.">4,0 masses solaires</string>
 
     <!-- Alnath -->
     <string name="object_info_alnath_description" translation_description="Short description of Alnath">
@@ -1427,7 +1427,7 @@
     </string>
     <string name="object_info_alnath_distance" translation_description="Distance to Alnath shown in the info card. Translate units if appropriate for your locale.">134 années-lumière</string>
     <string name="object_info_alnath_size" translation_description="Physical size of Alnath shown in the info card. Translate units if appropriate for your locale.">4,2 rayons solaires</string>
-    <string name="object_info_alnath_mass" translation_description="Mass of Alnath in scientific notation — no translation needed.">5,0 masses solaires</string>
+    <string name="object_info_alnath_mass" translation_description="Mass of Alnath in scientific notation — translate if needed for the locale.">5,0 masses solaires</string>
 
     <!-- Alphekka -->
     <string name="object_info_alphekka_description" translation_description="Short description of Alphekka">
@@ -1438,7 +1438,7 @@
     </string>
     <string name="object_info_alphekka_distance" translation_description="Distance to Alphekka shown in the info card. Translate units if appropriate for your locale.">75 années-lumière</string>
     <string name="object_info_alphekka_size" translation_description="Physical size of Alphekka shown in the info card. Translate units if appropriate for your locale.">2,9 rayons solaires</string>
-    <string name="object_info_alphekka_mass" translation_description="Mass of Alphekka in scientific notation — no translation needed.">2,6 masses solaires</string>
+    <string name="object_info_alphekka_mass" translation_description="Mass of Alphekka in scientific notation — translate if needed for the locale.">2,6 masses solaires</string>
 
     <!-- Ankaa -->
     <string name="object_info_ankaa_description" translation_description="Short description of Ankaa">
@@ -1504,7 +1504,7 @@
     </string>
     <string name="object_info_kaus_australis_distance" translation_description="Distance to Kaus Australis shown in the info card. Translate units if appropriate for your locale.">143 années-lumière</string>
     <string name="object_info_kaus_australis_size" translation_description="Physical size of Kaus Australis shown in the info card. Translate units if appropriate for your locale.">6,8 rayons solaires</string>
-    <string name="object_info_kaus_australis_mass" translation_description="Mass of Kaus Australis in scientific notation — no translation needed.">3,5 masses solaires</string>
+    <string name="object_info_kaus_australis_mass" translation_description="Mass of Kaus Australis in scientific notation — translate if needed for the locale.">3,5 masses solaires</string>
 
     <!-- Kochab -->
     <string name="object_info_kochab_description" translation_description="Short description of Kochab">
@@ -1515,7 +1515,7 @@
     </string>
     <string name="object_info_kochab_distance" translation_description="Distance to Kochab shown in the info card. Translate units if appropriate for your locale.">131 années-lumière</string>
     <string name="object_info_kochab_size" translation_description="Physical size of Kochab shown in the info card. Translate units if appropriate for your locale.">42 rayons solaires</string>
-    <string name="object_info_kochab_mass" translation_description="Mass of Kochab in scientific notation — no translation needed.">1,3 masses solaires</string>
+    <string name="object_info_kochab_mass" translation_description="Mass of Kochab in scientific notation — translate if needed for the locale.">1,3 masses solaires</string>
 
     <!-- Merak -->
     <string name="object_info_merak_description" translation_description="Short description of Merak">
@@ -1526,7 +1526,7 @@
     </string>
     <string name="object_info_merak_distance" translation_description="Distance to Merak shown in the info card. Translate units if appropriate for your locale.">80 années-lumière</string>
     <string name="object_info_merak_size" translation_description="Physical size of Merak shown in the info card. Translate units if appropriate for your locale.">3,0 rayons solaires</string>
-    <string name="object_info_merak_mass" translation_description="Mass of Merak in scientific notation — no translation needed.">2,7 masses solaires</string>
+    <string name="object_info_merak_mass" translation_description="Mass of Merak in scientific notation — translate if needed for the locale.">2,7 masses solaires</string>
 
     <!-- Menkar -->
     <string name="object_info_menkar_description" translation_description="Short description of Menkar">
@@ -1537,7 +1537,7 @@
     </string>
     <string name="object_info_menkar_distance" translation_description="Distance to Menkar shown in the info card. Translate units if appropriate for your locale.">249 années-lumière</string>
     <string name="object_info_menkar_size" translation_description="Physical size of Menkar shown in the info card. Translate units if appropriate for your locale.">~89 rayons solaires</string>
-    <string name="object_info_menkar_mass" translation_description="Mass of Menkar in scientific notation — no translation needed.">~2,3 masses solaires</string>
+    <string name="object_info_menkar_mass" translation_description="Mass of Menkar in scientific notation — translate if needed for the locale.">~2,3 masses solaires</string>
 
     <!-- Mirphak -->
     <string name="object_info_mirphak_description" translation_description="Short description of Mirphak">
@@ -1548,7 +1548,7 @@
     </string>
     <string name="object_info_mirphak_distance" translation_description="Distance to Mirphak shown in the info card. Translate units if appropriate for your locale.">~590 années-lumière</string>
     <string name="object_info_mirphak_size" translation_description="Physical size of Mirphak shown in the info card. Translate units if appropriate for your locale.">~68 rayons solaires</string>
-    <string name="object_info_mirphak_mass" translation_description="Mass of Mirphak in scientific notation — no translation needed.">~8,5 masses solaires</string>
+    <string name="object_info_mirphak_mass" translation_description="Mass of Mirphak in scientific notation — translate if needed for the locale.">~8,5 masses solaires</string>
 
     <!-- Phad -->
     <string name="object_info_phad_description" translation_description="Short description of Phad">
@@ -1559,7 +1559,7 @@
     </string>
     <string name="object_info_phad_distance" translation_description="Distance to Phad shown in the info card. Translate units if appropriate for your locale.">84 années-lumière</string>
     <string name="object_info_phad_size" translation_description="Physical size of Phad shown in the info card. Translate units if appropriate for your locale.">3,0 rayons solaires</string>
-    <string name="object_info_phad_mass" translation_description="Mass of Phad in scientific notation — no translation needed.">2,9 masses solaires</string>
+    <string name="object_info_phad_mass" translation_description="Mass of Phad in scientific notation — translate if needed for the locale.">2,9 masses solaires</string>
 
     <!-- Saiph -->
     <string name="object_info_saiph_description" translation_description="Short description of Saiph">
@@ -1570,7 +1570,7 @@
     </string>
     <string name="object_info_saiph_distance" translation_description="Distance to Saiph shown in the info card. Translate units if appropriate for your locale.">~650 années-lumière</string>
     <string name="object_info_saiph_size" translation_description="Physical size of Saiph shown in the info card. Translate units if appropriate for your locale.">~22 rayons solaires</string>
-    <string name="object_info_saiph_mass" translation_description="Mass of Saiph in scientific notation — no translation needed.">~15,5 masses solaires</string>
+    <string name="object_info_saiph_mass" translation_description="Mass of Saiph in scientific notation — translate if needed for the locale.">~15,5 masses solaires</string>
 
     <!-- Shedir -->
     <string name="object_info_shedir_description" translation_description="Short description of Shedir">
@@ -1581,7 +1581,7 @@
     </string>
     <string name="object_info_shedir_distance" translation_description="Distance to Shedir shown in the info card. Translate units if appropriate for your locale.">228 années-lumière</string>
     <string name="object_info_shedir_size" translation_description="Physical size of Shedir shown in the info card. Translate units if appropriate for your locale.">45 rayons solaires</string>
-    <string name="object_info_shedir_mass" translation_description="Mass of Shedir in scientific notation — no translation needed.">~4,0 masses solaires</string>
+    <string name="object_info_shedir_mass" translation_description="Mass of Shedir in scientific notation — translate if needed for the locale.">~4,0 masses solaires</string>
 
     <!-- Unukalhai -->
     <string name="object_info_unukalhai_description" translation_description="Short description of Unukalhai">
@@ -1592,7 +1592,7 @@
     </string>
     <string name="object_info_unukalhai_distance" translation_description="Distance to Unukalhai shown in the info card. Translate units if appropriate for your locale.">74 années-lumière</string>
     <string name="object_info_unukalhai_size" translation_description="Physical size of Unukalhai shown in the info card. Translate units if appropriate for your locale.">12 rayons solaires</string>
-    <string name="object_info_unukalhai_mass" translation_description="Mass of Unukalhai in scientific notation — no translation needed.">~2,1 masses solaires</string>
+    <string name="object_info_unukalhai_mass" translation_description="Mass of Unukalhai in scientific notation — translate if needed for the locale.">~2,1 masses solaires</string>
 
     <!-- Vindemiatrix -->
     <string name="object_info_vindemiatrix_description" translation_description="Short description of Vindemiatrix">
@@ -1603,7 +1603,7 @@
     </string>
     <string name="object_info_vindemiatrix_distance" translation_description="Distance to Vindemiatrix shown in the info card. Translate units if appropriate for your locale.">109 années-lumière</string>
     <string name="object_info_vindemiatrix_size" translation_description="Physical size of Vindemiatrix shown in the info card. Translate units if appropriate for your locale.">11 rayons solaires</string>
-    <string name="object_info_vindemiatrix_mass" translation_description="Mass of Vindemiatrix in scientific notation — no translation needed.">2,6 masses solaires</string>
+    <string name="object_info_vindemiatrix_mass" translation_description="Mass of Vindemiatrix in scientific notation — translate if needed for the locale.">2,6 masses solaires</string>
 
     <!-- ============================================ -->
     <!-- New Constellations (41) — Phase 1 of issue #645 -->

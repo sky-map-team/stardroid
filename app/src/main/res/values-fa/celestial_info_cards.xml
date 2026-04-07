@@ -28,7 +28,7 @@
     </string>
     <string name="object_info_mercury_distance" translation_description="Distance to Mercury shown in the info card. Translate units if appropriate for your locale.">58 میلیون کیلومتر (از خورشید)</string>
     <string name="object_info_mercury_size" translation_description="Physical size of Mercury shown in the info card. Translate units if appropriate for your locale.">4,880 کیلومتر قطر</string>
-    <string name="object_info_mercury_mass" translation_description="Mass of Mercury in scientific notation — no translation needed.">3.3 × 10²³ کیلوگرم</string>
+    <string name="object_info_mercury_mass" translation_description="Mass of Mercury in scientific notation — translate if needed for the locale.">3.3 × 10²³ کیلوگرم</string>
     <string name="object_info_venus_description" translation_description="Short description of Venus">
     ناهید دومین سیاره از خورشید و داغ‌ترین سیاره در منظومه شمسی ما است. اغلب به دلیل اندازه مشابه، دوقلوی زمین نامیده می‌شود.
     </string>
@@ -37,7 +37,7 @@
     </string>
     <string name="object_info_venus_distance" translation_description="Distance to Venus shown in the info card. Translate units if appropriate for your locale.">108 میلیون کیلومتر (میانگین)</string>
     <string name="object_info_venus_size" translation_description="Physical size of Venus shown in the info card. Translate units if appropriate for your locale.">12,104 کیلومتر قطر</string>
-    <string name="object_info_venus_mass" translation_description="Mass of Venus in scientific notation — no translation needed.">4.87 × 10²⁴ کیلوگرم</string>
+    <string name="object_info_venus_mass" translation_description="Mass of Venus in scientific notation — translate if needed for the locale.">4.87 × 10²⁴ کیلوگرم</string>
     <string name="object_info_mars_description" translation_description="Short description of Mars">
     مریخ چهارمین سیاره از خورشید است که به دلیل اکسید آهن روی سطح آن به نام سیاره سرخ شناخته می‌شود.
     </string>
@@ -46,7 +46,7 @@
     </string>
     <string name="object_info_mars_distance" translation_description="Distance to Mars shown in the info card. Translate units if appropriate for your locale.">228 میلیون کیلومتر (میانگین)</string>
     <string name="object_info_mars_size" translation_description="Physical size of Mars shown in the info card. Translate units if appropriate for your locale.">6,779 کیلومتر قطر</string>
-    <string name="object_info_mars_mass" translation_description="Mass of Mars in scientific notation — no translation needed.">6.39 × 10²³ کیلوگرم</string>
+    <string name="object_info_mars_mass" translation_description="Mass of Mars in scientific notation — translate if needed for the locale.">6.39 × 10²³ کیلوگرم</string>
     <string name="object_info_jupiter_description" translation_description="Short description of Jupiter">
     مشتری بزرگ‌ترین سیاره در منظومه شمسی ما است. این یک سیاره گازی است که دارای طوفان معروف لکه قرمز بزرگ است.
     </string>
@@ -55,7 +55,7 @@
     </string>
     <string name="object_info_jupiter_distance" translation_description="Distance to Jupiter shown in the info card. Translate units if appropriate for your locale.">778 میلیون کیلومتر (میانگین)</string>
     <string name="object_info_jupiter_size" translation_description="Physical size of Jupiter shown in the info card. Translate units if appropriate for your locale.">139,820 کیلومتر قطر</string>
-    <string name="object_info_jupiter_mass" translation_description="Mass of Jupiter in scientific notation — no translation needed.">1.898 × 10²⁷ کیلوگرم</string>
+    <string name="object_info_jupiter_mass" translation_description="Mass of Jupiter in scientific notation — translate if needed for the locale.">1.898 × 10²⁷ کیلوگرم</string>
     <string name="object_info_saturn_description" translation_description="Short description of Saturn">
     زحل ششمین سیاره از خورشید است که به دلیل سیستم حلقه‌های شگفت‌انگیز خود که از یخ و سنگ تشکیل شده است، معروف است.
     </string>
@@ -1326,7 +1326,7 @@
     </string>
     <string name="object_info_alcyone_distance" translation_description="Distance to Alcyone shown in the info card. Translate units if appropriate for your locale.">~۴۴۰ سال نوری</string>
     <string name="object_info_alcyone_size" translation_description="Physical size of Alcyone shown in the info card. Translate units if appropriate for your locale.">~۱۰ شعاع خورشیدی</string>
-    <string name="object_info_alcyone_mass" translation_description="Mass of Alcyone in scientific notation — no translation needed.">~۶٫۰ جرم خورشیدی</string>
+    <string name="object_info_alcyone_mass" translation_description="Mass of Alcyone in scientific notation — translate if needed for the locale.">~۶٫۰ جرم خورشیدی</string>
 
     <!-- Alderamin -->
     <string name="object_info_alderamin_description" translation_description="Short description of Alderamin">
@@ -1337,7 +1337,7 @@
     </string>
     <string name="object_info_alderamin_distance" translation_description="Distance to Alderamin shown in the info card. Translate units if appropriate for your locale.">۴۹ سال نوری</string>
     <string name="object_info_alderamin_size" translation_description="Physical size of Alderamin shown in the info card. Translate units if appropriate for your locale.">۲٫۵ شعاع خورشیدی</string>
-    <string name="object_info_alderamin_mass" translation_description="Mass of Alderamin in scientific notation — no translation needed.">۱٫۹ جرم خورشیدی</string>
+    <string name="object_info_alderamin_mass" translation_description="Mass of Alderamin in scientific notation — translate if needed for the locale.">۱٫۹ جرم خورشیدی</string>
 
     <!-- Algenib -->
     <string name="object_info_algenib_description" translation_description="Short description of Algenib">
@@ -1348,7 +1348,7 @@
     </string>
     <string name="object_info_algenib_distance" translation_description="Distance to Algenib shown in the info card. Translate units if appropriate for your locale.">~۳۹۰ سال نوری</string>
     <string name="object_info_algenib_size" translation_description="Physical size of Algenib shown in the info card. Translate units if appropriate for your locale.">۴٫۸ شعاع خورشیدی</string>
-    <string name="object_info_algenib_mass" translation_description="Mass of Algenib in scientific notation — no translation needed.">~۸٫۹ جرم خورشیدی</string>
+    <string name="object_info_algenib_mass" translation_description="Mass of Algenib in scientific notation — translate if needed for the locale.">~۸٫۹ جرم خورشیدی</string>
 
     <!-- Algieba -->
     <string name="object_info_algieba_description" translation_description="Short description of Algieba">
@@ -1359,7 +1359,7 @@
     </string>
     <string name="object_info_algieba_distance" translation_description="Distance to Algieba shown in the info card. Translate units if appropriate for your locale.">~۱۳۰ سال نوری</string>
     <string name="object_info_algieba_size" translation_description="Physical size of Algieba shown in the info card. Translate units if appropriate for your locale.">~۲۳ شعاع خورشیدی</string>
-    <string name="object_info_algieba_mass" translation_description="Mass of Algieba in scientific notation — no translation needed.">~۱٫۲ جرم خورشیدی</string>
+    <string name="object_info_algieba_mass" translation_description="Mass of Algieba in scientific notation — translate if needed for the locale.">~۱٫۲ جرم خورشیدی</string>
 
     <!-- Alhena -->
     <string name="object_info_alhena_description" translation_description="Short description of Alhena">
@@ -1370,7 +1370,7 @@
     </string>
     <string name="object_info_alhena_distance" translation_description="Distance to Alhena shown in the info card. Translate units if appropriate for your locale.">۱۰۹ سال نوری</string>
     <string name="object_info_alhena_size" translation_description="Physical size of Alhena shown in the info card. Translate units if appropriate for your locale.">۳٫۳ شعاع خورشیدی</string>
-    <string name="object_info_alhena_mass" translation_description="Mass of Alhena in scientific notation — no translation needed.">2.8 جرم خورشیدی</string>
+    <string name="object_info_alhena_mass" translation_description="Mass of Alhena in scientific notation — translate if needed for the locale.">2.8 جرم خورشیدی</string>
 
     <!-- Alkaid -->
     <string name="object_info_alkaid_description" translation_description="Short description of Alkaid">
@@ -1381,7 +1381,7 @@
     </string>
     <string name="object_info_alkaid_distance" translation_description="Distance to Alkaid shown in the info card. Translate units if appropriate for your locale.">104 سال نوری</string>
     <string name="object_info_alkaid_size" translation_description="Physical size of Alkaid shown in the info card. Translate units if appropriate for your locale.">3.4 شعاع خورشیدی</string>
-    <string name="object_info_alkaid_mass" translation_description="Mass of Alkaid in scientific notation — no translation needed.">6.1 جرم خورشیدی</string>
+    <string name="object_info_alkaid_mass" translation_description="Mass of Alkaid in scientific notation — translate if needed for the locale.">6.1 جرم خورشیدی</string>
 
     <!-- Alnair -->
     <string name="object_info_alnair_description" translation_description="Short description of Alnair">
@@ -1392,7 +1392,7 @@
     </string>
     <string name="object_info_alnair_distance" translation_description="Distance to Alnair shown in the info card. Translate units if appropriate for your locale.">101 سال نوری</string>
     <string name="object_info_alnair_size" translation_description="Physical size of Alnair shown in the info card. Translate units if appropriate for your locale.">3.4 شعاع خورشیدی</string>
-    <string name="object_info_alnair_mass" translation_description="Mass of Alnair in scientific notation — no translation needed.">4.0 جرم خورشیدی</string>
+    <string name="object_info_alnair_mass" translation_description="Mass of Alnair in scientific notation — translate if needed for the locale.">4.0 جرم خورشیدی</string>
 
     <!-- Alnath -->
     <string name="object_info_alnath_description" translation_description="Short description of Alnath">
@@ -1403,7 +1403,7 @@
     </string>
     <string name="object_info_alnath_distance" translation_description="Distance to Alnath shown in the info card. Translate units if appropriate for your locale.">134 سال نوری</string>
     <string name="object_info_alnath_size" translation_description="Physical size of Alnath shown in the info card. Translate units if appropriate for your locale.">4.2 شعاع خورشیدی</string>
-    <string name="object_info_alnath_mass" translation_description="Mass of Alnath in scientific notation — no translation needed.">5.0 جرم خورشیدی</string>
+    <string name="object_info_alnath_mass" translation_description="Mass of Alnath in scientific notation — translate if needed for the locale.">5.0 جرم خورشیدی</string>
 
     <!-- Alphekka -->
     <string name="object_info_alphekka_description" translation_description="Short description of Alphekka">
@@ -1414,7 +1414,7 @@
     </string>
     <string name="object_info_alphekka_distance" translation_description="Distance to Alphekka shown in the info card. Translate units if appropriate for your locale.">75 سال نوری</string>
     <string name="object_info_alphekka_size" translation_description="Physical size of Alphekka shown in the info card. Translate units if appropriate for your locale.">2.9 شعاع خورشیدی</string>
-    <string name="object_info_alphekka_mass" translation_description="Mass of Alphekka in scientific notation — no translation needed.">2.6 جرم خورشیدی</string>
+    <string name="object_info_alphekka_mass" translation_description="Mass of Alphekka in scientific notation — translate if needed for the locale.">2.6 جرم خورشیدی</string>
 
     <!-- Ankaa -->
     <string name="object_info_ankaa_description" translation_description="Short description of Ankaa">
@@ -1535,7 +1535,7 @@
     </string>
     <string name="object_info_phad_distance" translation_description="Distance to Phad shown in the info card. Translate units if appropriate for your locale.">84 سال نوری</string>
     <string name="object_info_phad_size" translation_description="Physical size of Phad shown in the info card. Translate units if appropriate for your locale.">3.0 شعاع خورشیدی</string>
-    <string name="object_info_phad_mass" translation_description="Mass of Phad in scientific notation — no translation needed.">2.9 جرم خورشیدی</string>
+    <string name="object_info_phad_mass" translation_description="Mass of Phad in scientific notation — translate if needed for the locale.">2.9 جرم خورشیدی</string>
 
     <!-- Saiph -->
     <string name="object_info_saiph_description" translation_description="Short description of Saiph">
@@ -1546,7 +1546,7 @@
     </string>
     <string name="object_info_saiph_distance" translation_description="Distance to Saiph shown in the info card. Translate units if appropriate for your locale.">~650 سال نوری</string>
     <string name="object_info_saiph_size" translation_description="Physical size of Saiph shown in the info card. Translate units if appropriate for your locale.">~22 شعاع خورشیدی</string>
-    <string name="object_info_saiph_mass" translation_description="Mass of Saiph in scientific notation — no translation needed.">~15.5 جرم خورشیدی</string>
+    <string name="object_info_saiph_mass" translation_description="Mass of Saiph in scientific notation — translate if needed for the locale.">~15.5 جرم خورشیدی</string>
 
     <!-- Shedir -->
     <string name="object_info_shedir_description" translation_description="Short description of Shedir">
@@ -1557,7 +1557,7 @@
     </string>
     <string name="object_info_shedir_distance" translation_description="Distance to Shedir shown in the info card. Translate units if appropriate for your locale.">228 سال نوری</string>
     <string name="object_info_shedir_size" translation_description="Physical size of Shedir shown in the info card. Translate units if appropriate for your locale.">45 شعاع خورشیدی</string>
-    <string name="object_info_shedir_mass" translation_description="Mass of Shedir in scientific notation — no translation needed.">~4.0 جرم خورشیدی</string>
+    <string name="object_info_shedir_mass" translation_description="Mass of Shedir in scientific notation — translate if needed for the locale.">~4.0 جرم خورشیدی</string>
 
     <!-- Unukalhai -->
     <string name="object_info_unukalhai_description" translation_description="Short description of Unukalhai">
@@ -1568,7 +1568,7 @@
     </string>
     <string name="object_info_unukalhai_distance" translation_description="Distance to Unukalhai shown in the info card. Translate units if appropriate for your locale.">74 سال نوری</string>
     <string name="object_info_unukalhai_size" translation_description="Physical size of Unukalhai shown in the info card. Translate units if appropriate for your locale.">12 شعاع خورشیدی</string>
-    <string name="object_info_unukalhai_mass" translation_description="Mass of Unukalhai in scientific notation — no translation needed.">~2.1 جرم خورشیدی</string>
+    <string name="object_info_unukalhai_mass" translation_description="Mass of Unukalhai in scientific notation — translate if needed for the locale.">~2.1 جرم خورشیدی</string>
 
     <!-- Vindemiatrix -->
     <string name="object_info_vindemiatrix_description" translation_description="Short description of Vindemiatrix">
@@ -1579,7 +1579,7 @@
     </string>
     <string name="object_info_vindemiatrix_distance" translation_description="Distance to Vindemiatrix shown in the info card. Translate units if appropriate for your locale.">109 سال نوری</string>
     <string name="object_info_vindemiatrix_size" translation_description="Physical size of Vindemiatrix shown in the info card. Translate units if appropriate for your locale.">11 شعاع خورشیدی</string>
-    <string name="object_info_vindemiatrix_mass" translation_description="Mass of Vindemiatrix in scientific notation — no translation needed.">2.6 جرم خورشیدی</string>
+    <string name="object_info_vindemiatrix_mass" translation_description="Mass of Vindemiatrix in scientific notation — translate if needed for the locale.">2.6 جرم خورشیدی</string>
 
     <!-- ============================================ -->
     <!-- New Constellations (41) — Phase 1 of issue #645 -->

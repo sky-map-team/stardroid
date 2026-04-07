@@ -10,7 +10,7 @@
     </string>
     <string name="object_info_sun_distance" translation_description="Distance to Sun shown in the info card. Translate units if appropriate for your locale.">150 मिलियन किमी</string>
     <string name="object_info_sun_size" translation_description="Physical size of Sun shown in the info card. Translate units if appropriate for your locale.">1.4 मिलियन किमी व्यास</string>
-    <string name="object_info_sun_mass" translation_description="Mass of Sun in scientific notation — no translation needed.">1.989 × 10³⁰ किग्रा</string>
+    <string name="object_info_sun_mass" translation_description="Mass of Sun in scientific notation — translate if needed for the locale.">1.989 × 10³⁰ किग्रा</string>
     <string name="object_info_moon_description" translation_description="Short description of the Moon">
     चंद्रमा पृथ्वी का एकमात्र प्राकृतिक उपग्रह है। यह हमारे ज्वार-भाटा को प्रभावित करता है और 12 अंतरिक्ष यात्रियों ने इस पर कदम रखा है।
     </string>
@@ -19,7 +19,7 @@
     </string>
     <string name="object_info_moon_distance" translation_description="Distance to Moon shown in the info card. Translate units if appropriate for your locale.">384,400 किमी</string>
     <string name="object_info_moon_size" translation_description="Physical size of Moon shown in the info card. Translate units if appropriate for your locale.">3,474 किमी व्यास</string>
-    <string name="object_info_moon_mass" translation_description="Mass of Moon in scientific notation — no translation needed.">7.35 × 10²² किग्रा</string>
+    <string name="object_info_moon_mass" translation_description="Mass of Moon in scientific notation — translate if needed for the locale.">7.35 × 10²² किग्रा</string>
     <string name="object_info_mercury_description" translation_description="Short description of Mercury">
     बुध सबसे छोटा ग्रह है और सूर्य के सबसे निकट है। बुध पर एक वर्ष केवल 88 पृथ्वी दिनों का होता है।
     </string>
@@ -28,7 +28,7 @@
     </string>
     <string name="object_info_mercury_distance" translation_description="Distance to Mercury shown in the info card. Translate units if appropriate for your locale.">58 मिलियन किमी (सूर्य से)</string>
     <string name="object_info_mercury_size" translation_description="Physical size of Mercury shown in the info card. Translate units if appropriate for your locale.">4,880 किमी व्यास</string>
-    <string name="object_info_mercury_mass" translation_description="Mass of Mercury in scientific notation — no translation needed.">3.3 × 10²³ किग्रा</string>
+    <string name="object_info_mercury_mass" translation_description="Mass of Mercury in scientific notation — translate if needed for the locale.">3.3 × 10²³ किग्रा</string>
     <string name="object_info_venus_description" translation_description="Short description of Venus">
     शुक्र सूर्य से दूसरा ग्रह है और हमारे सौरमंडल का सबसे गर्म ग्रह है। समान आकार के कारण इसे अक्सर पृथ्वी का जुड़वां कहा जाता है।
     </string>
@@ -37,7 +37,7 @@
     </string>
     <string name="object_info_venus_distance" translation_description="Distance to Venus shown in the info card. Translate units if appropriate for your locale.">108 मिलियन किमी (औसत)</string>
     <string name="object_info_venus_size" translation_description="Physical size of Venus shown in the info card. Translate units if appropriate for your locale.">12,104 किमी व्यास</string>
-    <string name="object_info_venus_mass" translation_description="Mass of Venus in scientific notation — no translation needed.">4.87 × 10²⁴ किग्रा</string>
+    <string name="object_info_venus_mass" translation_description="Mass of Venus in scientific notation — translate if needed for the locale.">4.87 × 10²⁴ किग्रा</string>
     <string name="object_info_mars_description" translation_description="Short description of Mars">
     मंगल सूर्य से चौथा ग्रह है, जिसे इसकी सतह पर आयरन ऑक्साइड के कारण लाल ग्रह के रूप में जाना जाता है।
     </string>
@@ -46,7 +46,7 @@
     </string>
     <string name="object_info_mars_distance" translation_description="Distance to Mars shown in the info card. Translate units if appropriate for your locale.">228 मिलियन किमी (औसत)</string>
     <string name="object_info_mars_size" translation_description="Physical size of Mars shown in the info card. Translate units if appropriate for your locale.">6,779 किमी व्यास</string>
-    <string name="object_info_mars_mass" translation_description="Mass of Mars in scientific notation — no translation needed.">6.39 × 10²³ किग्रा</string>
+    <string name="object_info_mars_mass" translation_description="Mass of Mars in scientific notation — translate if needed for the locale.">6.39 × 10²³ किग्रा</string>
     <string name="object_info_jupiter_description" translation_description="Short description of Jupiter">
     बृहस्पति हमारे सौरमंडल का सबसे बड़ा ग्रह है। यह एक गैस विशाल है जिसमें प्रसिद्ध महान लाल धब्बा तूफान है।
     </string>
@@ -55,7 +55,7 @@
     </string>
     <string name="object_info_jupiter_distance" translation_description="Distance to Jupiter shown in the info card. Translate units if appropriate for your locale.">778 मिलियन किमी (औसत)</string>
     <string name="object_info_jupiter_size" translation_description="Physical size of Jupiter shown in the info card. Translate units if appropriate for your locale.">139,820 किमी व्यास</string>
-    <string name="object_info_jupiter_mass" translation_description="Mass of Jupiter in scientific notation — no translation needed.">1.898 × 10²⁷ किग्रा</string>
+    <string name="object_info_jupiter_mass" translation_description="Mass of Jupiter in scientific notation — translate if needed for the locale.">1.898 × 10²⁷ किग्रा</string>
     <string name="object_info_saturn_description" translation_description="Short description of Saturn">
     शनि सूर्य से छठा ग्रह है, जो बर्फ और चट्टान से बनी अपनी शानदार वलय प्रणाली के लिए प्रसिद्ध है।
     </string>
@@ -64,7 +64,7 @@
     </string>
     <string name="object_info_saturn_distance" translation_description="Distance to Saturn shown in the info card. Translate units if appropriate for your locale.">1.4 बिलियन किमी (औसत)</string>
     <string name="object_info_saturn_size" translation_description="Physical size of Saturn shown in the info card. Translate units if appropriate for your locale.">116,460 किमी व्यास</string>
-    <string name="object_info_saturn_mass" translation_description="Mass of Saturn in scientific notation — no translation needed.">5.68 × 10²⁶ किग्रा</string>
+    <string name="object_info_saturn_mass" translation_description="Mass of Saturn in scientific notation — translate if needed for the locale.">5.68 × 10²⁶ किग्रा</string>
     <string name="object_info_uranus_description" translation_description="Short description of Uranus">
     यूरेनस एक बर्फ विशाल है जो अपनी तरफ घूमता है। यह दूरबीन का उपयोग करके खोजा गया पहला ग्रह था।
     </string>
@@ -73,7 +73,7 @@
     </string>
     <string name="object_info_uranus_distance" translation_description="Distance to Uranus shown in the info card. Translate units if appropriate for your locale.">2.9 बिलियन किमी (औसत)</string>
     <string name="object_info_uranus_size" translation_description="Physical size of Uranus shown in the info card. Translate units if appropriate for your locale.">50,724 किमी व्यास</string>
-    <string name="object_info_uranus_mass" translation_description="Mass of Uranus in scientific notation — no translation needed.">8.68 × 10²⁵ किग्रा</string>
+    <string name="object_info_uranus_mass" translation_description="Mass of Uranus in scientific notation — translate if needed for the locale.">8.68 × 10²⁵ किग्रा</string>
     <string name="object_info_neptune_description" translation_description="Short description of Neptune">
     नेपच्यून हमारे सौरमंडल का सबसे दूर का ग्रह है। इसमें 2,100 किमी/घंटा तक पहुंचने वाली सबसे तेज हवाएं हैं।
     </string>
@@ -82,14 +82,14 @@
     </string>
     <string name="object_info_neptune_distance" translation_description="Distance to Neptune shown in the info card. Translate units if appropriate for your locale.">4.5 बिलियन किमी (औसत)</string>
     <string name="object_info_neptune_size" translation_description="Physical size of Neptune shown in the info card. Translate units if appropriate for your locale.">49,244 किमी व्यास</string>
-    <string name="object_info_neptune_mass" translation_description="Mass of Neptune in scientific notation — no translation needed.">1.024 × 10²⁶ किग्रा</string>
+    <string name="object_info_neptune_mass" translation_description="Mass of Neptune in scientific notation — translate if needed for the locale.">1.024 × 10²⁶ किग्रा</string>
     <string name="object_info_pluto_description" translation_description="Short description of Pluto">प्लूटो कुइपर बेल्ट में एक बौना ग्रह है। 2006 तक इसे नौवां ग्रह माना जाता था।</string>
     <string name="object_info_pluto_funfact" translation_description="Fun fact about Pluto">
     प्लूटो पर नाइट्रोजन बर्फ से बना दिल के आकार का ग्लेशियर है, जो NASA के न्यू होराइजंस मिशन की तस्वीरों में दिखाई देता है!
     </string>
     <string name="object_info_pluto_distance" translation_description="Distance to Pluto shown in the info card. Translate units if appropriate for your locale.">5.9 बिलियन किमी (औसत)</string>
     <string name="object_info_pluto_size" translation_description="Physical size of Pluto shown in the info card. Translate units if appropriate for your locale.">2,377 किमी व्यास</string>
-    <string name="object_info_pluto_mass" translation_description="Mass of Pluto in scientific notation — no translation needed.">1.3 × 10²² किग्रा</string>
+    <string name="object_info_pluto_mass" translation_description="Mass of Pluto in scientific notation — translate if needed for the locale.">1.3 × 10²² किग्रा</string>
     <!-- Bright Stars Educational Content -->
     <string name="object_info_sirius_description" translation_description="Short description of Sirius">
     सिरियस रात के आकाश का सबसे चमकीला तारा है, जो कैनिस मेजर (बड़ा कुत्ता) तारामंडल में स्थित है।
@@ -1338,7 +1338,7 @@
     </string>
     <string name="object_info_alcyone_distance" translation_description="Distance to Alcyone shown in the info card. Translate units if appropriate for your locale.">~440 प्रकाश-वर्ष</string>
     <string name="object_info_alcyone_size" translation_description="Physical size of Alcyone shown in the info card. Translate units if appropriate for your locale.">~10 सौर त्रिज्या</string>
-    <string name="object_info_alcyone_mass" translation_description="Mass of Alcyone in scientific notation — no translation needed.">~6.0 सौर द्रव्यमान</string>
+    <string name="object_info_alcyone_mass" translation_description="Mass of Alcyone in scientific notation — translate if needed for the locale.">~6.0 सौर द्रव्यमान</string>
 
     <!-- Alderamin -->
     <string name="object_info_alderamin_description" translation_description="Short description of Alderamin">
@@ -1349,7 +1349,7 @@
     </string>
     <string name="object_info_alderamin_distance" translation_description="Distance to Alderamin shown in the info card. Translate units if appropriate for your locale.">49 प्रकाश-वर्ष</string>
     <string name="object_info_alderamin_size" translation_description="Physical size of Alderamin shown in the info card. Translate units if appropriate for your locale.">2.5 सौर त्रिज्या</string>
-    <string name="object_info_alderamin_mass" translation_description="Mass of Alderamin in scientific notation — no translation needed.">1.9 सौर द्रव्यमान</string>
+    <string name="object_info_alderamin_mass" translation_description="Mass of Alderamin in scientific notation — translate if needed for the locale.">1.9 सौर द्रव्यमान</string>
 
     <!-- Algenib -->
     <string name="object_info_algenib_description" translation_description="Short description of Algenib">
@@ -1415,7 +1415,7 @@
     </string>
     <string name="object_info_alnath_distance" translation_description="Distance to Alnath shown in the info card. Translate units if appropriate for your locale.">134 प्रकाश-वर्ष</string>
     <string name="object_info_alnath_size" translation_description="Physical size of Alnath shown in the info card. Translate units if appropriate for your locale.">4.2 सौर त्रिज्या</string>
-    <string name="object_info_alnath_mass" translation_description="Mass of Alnath in scientific notation — no translation needed.">5.0 सौर द्रव्यमान</string>
+    <string name="object_info_alnath_mass" translation_description="Mass of Alnath in scientific notation — translate if needed for the locale.">5.0 सौर द्रव्यमान</string>
 
     <!-- Alphekka -->
     <string name="object_info_alphekka_description" translation_description="Short description of Alphekka">
@@ -1426,7 +1426,7 @@
     </string>
     <string name="object_info_alphekka_distance" translation_description="Distance to Alphekka shown in the info card. Translate units if appropriate for your locale.">75 प्रकाश-वर्ष</string>
     <string name="object_info_alphekka_size" translation_description="Physical size of Alphekka shown in the info card. Translate units if appropriate for your locale.">2.9 सौर त्रिज्या</string>
-    <string name="object_info_alphekka_mass" translation_description="Mass of Alphekka in scientific notation — no translation needed.">2.6 सौर द्रव्यमान</string>
+    <string name="object_info_alphekka_mass" translation_description="Mass of Alphekka in scientific notation — translate if needed for the locale.">2.6 सौर द्रव्यमान</string>
 
     <!-- Ankaa -->
     <string name="object_info_ankaa_description" translation_description="Short description of Ankaa">
@@ -1437,7 +1437,7 @@
     </string>
     <string name="object_info_ankaa_distance" translation_description="Distance to Ankaa shown in the info card. Translate units if appropriate for your locale.">85 प्रकाश-वर्ष</string>
     <string name="object_info_ankaa_size" translation_description="Physical size of Ankaa shown in the info card. Translate units if appropriate for your locale.">15 सौर त्रिज्या</string>
-    <string name="object_info_ankaa_mass" translation_description="Mass of Ankaa in scientific notation — no translation needed.">1.3 सौर द्रव्यमान</string>
+    <string name="object_info_ankaa_mass" translation_description="Mass of Ankaa in scientific notation — translate if needed for the locale.">1.3 सौर द्रव्यमान</string>
 
     <!-- Arneb -->
     <string name="object_info_arneb_description" translation_description="Short description of Arneb">
@@ -1448,7 +1448,7 @@
     </string>
     <string name="object_info_arneb_distance" translation_description="Distance to Arneb shown in the info card. Translate units if appropriate for your locale.">~2,200 प्रकाश-वर्ष</string>
     <string name="object_info_arneb_size" translation_description="Physical size of Arneb shown in the info card. Translate units if appropriate for your locale.">~75 सौर त्रिज्या</string>
-    <string name="object_info_arneb_mass" translation_description="Mass of Arneb in scientific notation — no translation needed.">~14 सौर द्रव्यमान</string>
+    <string name="object_info_arneb_mass" translation_description="Mass of Arneb in scientific notation — translate if needed for the locale.">~14 सौर द्रव्यमान</string>
 
     <!-- Caph -->
     <string name="object_info_caph_description" translation_description="Short description of Caph">
@@ -1459,7 +1459,7 @@
     </string>
     <string name="object_info_caph_distance" translation_description="Distance to Caph shown in the info card. Translate units if appropriate for your locale.">54 प्रकाश-वर्ष</string>
     <string name="object_info_caph_size" translation_description="Physical size of Caph shown in the info card. Translate units if appropriate for your locale.">3.5 सौर त्रिज्या</string>
-    <string name="object_info_caph_mass" translation_description="Mass of Caph in scientific notation — no translation needed.">1.9 सौर द्रव्यमान</string>
+    <string name="object_info_caph_mass" translation_description="Mass of Caph in scientific notation — translate if needed for the locale.">1.9 सौर द्रव्यमान</string>
 
     <!-- Etamin -->
     <string name="object_info_etamin_description" translation_description="Short description of Etamin">
@@ -1470,7 +1470,7 @@
     </string>
     <string name="object_info_etamin_distance" translation_description="Distance to Etamin shown in the info card. Translate units if appropriate for your locale.">148 प्रकाश-वर्ष</string>
     <string name="object_info_etamin_size" translation_description="Physical size of Etamin shown in the info card. Translate units if appropriate for your locale.">48 सौर त्रिज्या</string>
-    <string name="object_info_etamin_mass" translation_description="Mass of Etamin in scientific notation — no translation needed.">1.7 सौर द्रव्यमान</string>
+    <string name="object_info_etamin_mass" translation_description="Mass of Etamin in scientific notation — translate if needed for the locale.">1.7 सौर द्रव्यमान</string>
 
     <!-- Izar -->
     <string name="object_info_izar_description" translation_description="Short description of Izar">
@@ -1481,7 +1481,7 @@
     </string>
     <string name="object_info_izar_distance" translation_description="Distance to Izar shown in the info card. Translate units if appropriate for your locale.">202 प्रकाश-वर्ष</string>
     <string name="object_info_izar_size" translation_description="Physical size of Izar shown in the info card. Translate units if appropriate for your locale.">33 सौर त्रिज्या</string>
-    <string name="object_info_izar_mass" translation_description="Mass of Izar in scientific notation — no translation needed.">~4.6 सौर द्रव्यमान</string>
+    <string name="object_info_izar_mass" translation_description="Mass of Izar in scientific notation — translate if needed for the locale.">~4.6 सौर द्रव्यमान</string>
 
     <!-- Kaus Australis -->
     <string name="object_info_kaus_australis_description" translation_description="Short description of Kaus Australis">
@@ -1492,7 +1492,7 @@
     </string>
     <string name="object_info_kaus_australis_distance" translation_description="Distance to Kaus Australis shown in the info card. Translate units if appropriate for your locale.">143 प्रकाश-वर्ष</string>
     <string name="object_info_kaus_australis_size" translation_description="Physical size of Kaus Australis shown in the info card. Translate units if appropriate for your locale.">6.8 सौर त्रिज्या</string>
-    <string name="object_info_kaus_australis_mass" translation_description="Mass of Kaus Australis in scientific notation — no translation needed.">3.5 सौर द्रव्यमान</string>
+    <string name="object_info_kaus_australis_mass" translation_description="Mass of Kaus Australis in scientific notation — translate if needed for the locale.">3.5 सौर द्रव्यमान</string>
 
     <!-- Kochab -->
     <string name="object_info_kochab_description" translation_description="Short description of Kochab">
@@ -1503,7 +1503,7 @@
     </string>
     <string name="object_info_kochab_distance" translation_description="Distance to Kochab shown in the info card. Translate units if appropriate for your locale.">131 प्रकाश-वर्ष</string>
     <string name="object_info_kochab_size" translation_description="Physical size of Kochab shown in the info card. Translate units if appropriate for your locale.">42 सौर त्रिज्या</string>
-    <string name="object_info_kochab_mass" translation_description="Mass of Kochab in scientific notation — no translation needed.">1.3 सौर द्रव्यमान</string>
+    <string name="object_info_kochab_mass" translation_description="Mass of Kochab in scientific notation — translate if needed for the locale.">1.3 सौर द्रव्यमान</string>
 
     <!-- Merak -->
     <string name="object_info_merak_description" translation_description="Short description of Merak">
@@ -1514,7 +1514,7 @@
     </string>
     <string name="object_info_merak_distance" translation_description="Distance to Merak shown in the info card. Translate units if appropriate for your locale.">80 प्रकाश-वर्ष</string>
     <string name="object_info_merak_size" translation_description="Physical size of Merak shown in the info card. Translate units if appropriate for your locale.">3.0 सौर त्रिज्या</string>
-    <string name="object_info_merak_mass" translation_description="Mass of Merak in scientific notation — no translation needed.">2.7 सौर द्रव्यमान</string>
+    <string name="object_info_merak_mass" translation_description="Mass of Merak in scientific notation — translate if needed for the locale.">2.7 सौर द्रव्यमान</string>
 
     <!-- Menkar -->
     <string name="object_info_menkar_description" translation_description="Short description of Menkar">
@@ -1525,7 +1525,7 @@
     </string>
     <string name="object_info_menkar_distance" translation_description="Distance to Menkar shown in the info card. Translate units if appropriate for your locale.">249 प्रकाश-वर्ष</string>
     <string name="object_info_menkar_size" translation_description="Physical size of Menkar shown in the info card. Translate units if appropriate for your locale.">~89 सौर त्रिज्या</string>
-    <string name="object_info_menkar_mass" translation_description="Mass of Menkar in scientific notation — no translation needed.">~2.3 सौर द्रव्यमान</string>
+    <string name="object_info_menkar_mass" translation_description="Mass of Menkar in scientific notation — translate if needed for the locale.">~2.3 सौर द्रव्यमान</string>
 
     <!-- Mirphak -->
     <string name="object_info_mirphak_description" translation_description="Short description of Mirphak">
@@ -1536,7 +1536,7 @@
     </string>
     <string name="object_info_mirphak_distance" translation_description="Distance to Mirphak shown in the info card. Translate units if appropriate for your locale.">~590 प्रकाश-वर्ष</string>
     <string name="object_info_mirphak_size" translation_description="Physical size of Mirphak shown in the info card. Translate units if appropriate for your locale.">~68 सौर त्रिज्या</string>
-    <string name="object_info_mirphak_mass" translation_description="Mass of Mirphak in scientific notation — no translation needed.">~8.5 सौर द्रव्यमान</string>
+    <string name="object_info_mirphak_mass" translation_description="Mass of Mirphak in scientific notation — translate if needed for the locale.">~8.5 सौर द्रव्यमान</string>
 
     <!-- Phad -->
     <string name="object_info_phad_description" translation_description="Short description of Phad">
@@ -1547,7 +1547,7 @@
     </string>
     <string name="object_info_phad_distance" translation_description="Distance to Phad shown in the info card. Translate units if appropriate for your locale.">84 प्रकाश-वर्ष</string>
     <string name="object_info_phad_size" translation_description="Physical size of Phad shown in the info card. Translate units if appropriate for your locale.">3.0 सौर त्रिज्या</string>
-    <string name="object_info_phad_mass" translation_description="Mass of Phad in scientific notation — no translation needed.">2.9 सौर द्रव्यमान</string>
+    <string name="object_info_phad_mass" translation_description="Mass of Phad in scientific notation — translate if needed for the locale.">2.9 सौर द्रव्यमान</string>
 
     <!-- Saiph -->
     <string name="object_info_saiph_description" translation_description="Short description of Saiph">
@@ -1558,7 +1558,7 @@
     </string>
     <string name="object_info_saiph_distance" translation_description="Distance to Saiph shown in the info card. Translate units if appropriate for your locale.">~650 प्रकाश-वर्ष</string>
     <string name="object_info_saiph_size" translation_description="Physical size of Saiph shown in the info card. Translate units if appropriate for your locale.">~22 सौर त्रिज्या</string>
-    <string name="object_info_saiph_mass" translation_description="Mass of Saiph in scientific notation — no translation needed.">~15.5 सौर द्रव्यमान</string>
+    <string name="object_info_saiph_mass" translation_description="Mass of Saiph in scientific notation — translate if needed for the locale.">~15.5 सौर द्रव्यमान</string>
 
     <!-- Shedir -->
     <string name="object_info_shedir_description" translation_description="Short description of Shedir">
@@ -1569,7 +1569,7 @@
     </string>
     <string name="object_info_shedir_distance" translation_description="Distance to Shedir shown in the info card. Translate units if appropriate for your locale.">228 प्रकाश-वर्ष</string>
     <string name="object_info_shedir_size" translation_description="Physical size of Shedir shown in the info card. Translate units if appropriate for your locale.">45 सौर त्रिज्या</string>
-    <string name="object_info_shedir_mass" translation_description="Mass of Shedir in scientific notation — no translation needed.">~4.0 सौर द्रव्यमान</string>
+    <string name="object_info_shedir_mass" translation_description="Mass of Shedir in scientific notation — translate if needed for the locale.">~4.0 सौर द्रव्यमान</string>
 
     <!-- Unukalhai -->
     <string name="object_info_unukalhai_description" translation_description="Short description of Unukalhai">
@@ -1580,7 +1580,7 @@
     </string>
     <string name="object_info_unukalhai_distance" translation_description="Distance to Unukalhai shown in the info card. Translate units if appropriate for your locale.">74 प्रकाश-वर्ष</string>
     <string name="object_info_unukalhai_size" translation_description="Physical size of Unukalhai shown in the info card. Translate units if appropriate for your locale.">12 सौर त्रिज्या</string>
-    <string name="object_info_unukalhai_mass" translation_description="Mass of Unukalhai in scientific notation — no translation needed.">~2.1 सौर द्रव्यमान</string>
+    <string name="object_info_unukalhai_mass" translation_description="Mass of Unukalhai in scientific notation — translate if needed for the locale.">~2.1 सौर द्रव्यमान</string>
 
     <!-- Vindemiatrix -->
     <string name="object_info_vindemiatrix_description" translation_description="Short description of Vindemiatrix">
@@ -1591,7 +1591,7 @@
     </string>
     <string name="object_info_vindemiatrix_distance" translation_description="Distance to Vindemiatrix shown in the info card. Translate units if appropriate for your locale.">109 प्रकाश-वर्ष</string>
     <string name="object_info_vindemiatrix_size" translation_description="Physical size of Vindemiatrix shown in the info card. Translate units if appropriate for your locale.">11 सौर त्रिज्या</string>
-    <string name="object_info_vindemiatrix_mass" translation_description="Mass of Vindemiatrix in scientific notation — no translation needed.">2.6 सौर द्रव्यमान</string>
+    <string name="object_info_vindemiatrix_mass" translation_description="Mass of Vindemiatrix in scientific notation — translate if needed for the locale.">2.6 सौर द्रव्यमान</string>
 
     <!-- ============================================ -->
     <!-- New Constellations (41) — Phase 1 of issue #645 -->

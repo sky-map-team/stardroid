@@ -10,7 +10,7 @@
     </string>
     <string name="object_info_sun_distance" translation_description="Distance to Sun shown in the info card. Translate units if appropriate for your locale.">150 ล้านกิโลเมตร</string>
     <string name="object_info_sun_size" translation_description="Physical size of Sun shown in the info card. Translate units if appropriate for your locale.">เส้นผ่านศูนย์กลาง 1.4 ล้านกิโลเมตร</string>
-    <string name="object_info_sun_mass" translation_description="Mass of Sun in scientific notation — no translation needed.">1.989 × 10³⁰ กิโลกรัม</string>
+    <string name="object_info_sun_mass" translation_description="Mass of Sun in scientific notation — translate if needed for the locale.">1.989 × 10³⁰ กิโลกรัม</string>
     <string name="object_info_moon_description" translation_description="Short description of the Moon">
     ดวงจันทร์เป็นดาวบริวารธรรมชาติเพียงดวงเดียวของโลก มันส่งผลต่อกระแสน้ำขึ้นน้ำลงของเรา และนักบินอวกาศ 12 คนได้เหยียบลงบนมัน
     </string>
@@ -19,7 +19,7 @@
     </string>
     <string name="object_info_moon_distance" translation_description="Distance to Moon shown in the info card. Translate units if appropriate for your locale.">384,400 กิโลเมตร</string>
     <string name="object_info_moon_size" translation_description="Physical size of Moon shown in the info card. Translate units if appropriate for your locale.">เส้นผ่านศูนย์กลาง 3,474 กิโลเมตร</string>
-    <string name="object_info_moon_mass" translation_description="Mass of Moon in scientific notation — no translation needed.">7.35 × 10²² กิโลกรัม</string>
+    <string name="object_info_moon_mass" translation_description="Mass of Moon in scientific notation — translate if needed for the locale.">7.35 × 10²² กิโลกรัม</string>
     <string name="object_info_mercury_description" translation_description="Short description of Mercury">
     ดาวพุธเป็นดาวเคราะห์ที่เล็กที่สุดและอยู่ใกล้ดวงอาทิตย์ที่สุด หนึ่งปีบนดาวพุธกินเวลาเพียง 88 วันโลก
     </string>
@@ -28,7 +28,7 @@
     </string>
     <string name="object_info_mercury_distance" translation_description="Distance to Mercury shown in the info card. Translate units if appropriate for your locale.">58 ล้านกิโลเมตร (จากดวงอาทิตย์)</string>
     <string name="object_info_mercury_size" translation_description="Physical size of Mercury shown in the info card. Translate units if appropriate for your locale.">เส้นผ่านศูนย์กลาง 4,880 กิโลเมตร</string>
-    <string name="object_info_mercury_mass" translation_description="Mass of Mercury in scientific notation — no translation needed.">3.3 × 10²³ กิโลกรัม</string>
+    <string name="object_info_mercury_mass" translation_description="Mass of Mercury in scientific notation — translate if needed for the locale.">3.3 × 10²³ กิโลกรัม</string>
     <string name="object_info_venus_description" translation_description="Short description of Venus">
     ดาวศุกร์เป็นดาวเคราะห์ลำดับที่สองจากดวงอาทิตย์และร้อนที่สุดในระบบสุริยะ มักถูกเรียกว่าฝาแฝดของโลกเพราะขนาดใกล้เคียงกัน
     </string>
@@ -37,7 +37,7 @@
     </string>
     <string name="object_info_venus_distance" translation_description="Distance to Venus shown in the info card. Translate units if appropriate for your locale.">108 ล้านกิโลเมตร (เฉลี่ย)</string>
     <string name="object_info_venus_size" translation_description="Physical size of Venus shown in the info card. Translate units if appropriate for your locale.">เส้นผ่านศูนย์กลาง 12,104 กิโลเมตร</string>
-    <string name="object_info_venus_mass" translation_description="Mass of Venus in scientific notation — no translation needed.">4.87 × 10²⁴ กิโลกรัม</string>
+    <string name="object_info_venus_mass" translation_description="Mass of Venus in scientific notation — translate if needed for the locale.">4.87 × 10²⁴ กิโลกรัม</string>
     <string name="object_info_mars_description" translation_description="Short description of Mars">
     ดาวอังคารเป็นดาวเคราะห์ลำดับที่สี่จากดวงอาทิตย์ รู้จักกันในชื่อดาวเคราะห์สีแดงเนื่องจากเหล็กออกไซด์บนพื้นผิว
     </string>
@@ -46,7 +46,7 @@
     </string>
     <string name="object_info_mars_distance" translation_description="Distance to Mars shown in the info card. Translate units if appropriate for your locale.">228 ล้านกิโลเมตร (เฉลี่ย)</string>
     <string name="object_info_mars_size" translation_description="Physical size of Mars shown in the info card. Translate units if appropriate for your locale.">เส้นผ่านศูนย์กลาง 6,779 กิโลเมตร</string>
-    <string name="object_info_mars_mass" translation_description="Mass of Mars in scientific notation — no translation needed.">6.39 × 10²³ กิโลกรัม</string>
+    <string name="object_info_mars_mass" translation_description="Mass of Mars in scientific notation — translate if needed for the locale.">6.39 × 10²³ กิโลกรัม</string>
     <string name="object_info_jupiter_description" translation_description="Short description of Jupiter">
     ดาวพฤหัสบดีเป็นดาวเคราะห์ที่ใหญ่ที่สุดในระบบสุริยะของเรา เป็นดาวก๊าซยักษ์ที่มีจุดแดงใหญ่อันโด่งดัง
     </string>
@@ -55,7 +55,7 @@
     </string>
     <string name="object_info_jupiter_distance" translation_description="Distance to Jupiter shown in the info card. Translate units if appropriate for your locale.">778 ล้านกิโลเมตร (เฉลี่ย)</string>
     <string name="object_info_jupiter_size" translation_description="Physical size of Jupiter shown in the info card. Translate units if appropriate for your locale.">เส้นผ่านศูนย์กลาง 139,820 กิโลเมตร</string>
-    <string name="object_info_jupiter_mass" translation_description="Mass of Jupiter in scientific notation — no translation needed.">1.898 × 10²⁷ กิโลกรัม</string>
+    <string name="object_info_jupiter_mass" translation_description="Mass of Jupiter in scientific notation — translate if needed for the locale.">1.898 × 10²⁷ กิโลกรัม</string>
     <string name="object_info_saturn_description" translation_description="Short description of Saturn">
     ดาวเสาร์เป็นดาวเคราะห์ลำดับที่หกจากดวงอาทิตย์ โด่งดังจากระบบวงแหวนอันน่าทึ่งที่ประกอบด้วยน้ำแข็งและหิน
     </string>
@@ -64,7 +64,7 @@
     </string>
     <string name="object_info_saturn_distance" translation_description="Distance to Saturn shown in the info card. Translate units if appropriate for your locale.">1.4 พันล้านกิโลเมตร (เฉลี่ย)</string>
     <string name="object_info_saturn_size" translation_description="Physical size of Saturn shown in the info card. Translate units if appropriate for your locale.">เส้นผ่านศูนย์กลาง 116,460 กิโลเมตร</string>
-    <string name="object_info_saturn_mass" translation_description="Mass of Saturn in scientific notation — no translation needed.">5.68 × 10²⁶ กิโลกรัม</string>
+    <string name="object_info_saturn_mass" translation_description="Mass of Saturn in scientific notation — translate if needed for the locale.">5.68 × 10²⁶ กิโลกรัม</string>
     <string name="object_info_uranus_description" translation_description="Short description of Uranus">
     ดาวยูเรนัสเป็นดาวน้ำแข็งยักษ์ที่หมุนตะแคงข้าง เป็นดาวเคราะห์ดวงแรกที่ค้นพบโดยใช้กล้องโทรทรรศน์
     </string>
@@ -73,7 +73,7 @@
     </string>
     <string name="object_info_uranus_distance" translation_description="Distance to Uranus shown in the info card. Translate units if appropriate for your locale.">2.9 พันล้านกิโลเมตร (เฉลี่ย)</string>
     <string name="object_info_uranus_size" translation_description="Physical size of Uranus shown in the info card. Translate units if appropriate for your locale.">เส้นผ่านศูนย์กลาง 50,724 กิโลเมตร</string>
-    <string name="object_info_uranus_mass" translation_description="Mass of Uranus in scientific notation — no translation needed.">8.68 × 10²⁵ กิโลกรัม</string>
+    <string name="object_info_uranus_mass" translation_description="Mass of Uranus in scientific notation — translate if needed for the locale.">8.68 × 10²⁵ กิโลกรัม</string>
     <string name="object_info_neptune_description" translation_description="Short description of Neptune">
     ดาวเนปจูนเป็นดาวเคราะห์ที่อยู่ไกลที่สุดในระบบสุริยะของเรา มีลมที่แรงที่สุดถึง 2,100 กม./ชม.
     </string>
@@ -82,7 +82,7 @@
     </string>
     <string name="object_info_neptune_distance" translation_description="Distance to Neptune shown in the info card. Translate units if appropriate for your locale.">4.5 พันล้านกิโลเมตร (เฉลี่ย)</string>
     <string name="object_info_neptune_size" translation_description="Physical size of Neptune shown in the info card. Translate units if appropriate for your locale.">เส้นผ่านศูนย์กลาง 49,244 กิโลเมตร</string>
-    <string name="object_info_neptune_mass" translation_description="Mass of Neptune in scientific notation — no translation needed.">1.024 × 10²⁶ กิโลกรัม</string>
+    <string name="object_info_neptune_mass" translation_description="Mass of Neptune in scientific notation — translate if needed for the locale.">1.024 × 10²⁶ กิโลกรัม</string>
     <string name="object_info_pluto_description" translation_description="Short description of Pluto">
     พลูโตเป็นดาวเคราะห์แคระในแถบไคเปอร์ มันถูกพิจารณาว่าเป็นดาวเคราะห์ดวงที่เก้าจนถึงปี 2006
     </string>
@@ -91,7 +91,7 @@
     </string>
     <string name="object_info_pluto_distance" translation_description="Distance to Pluto shown in the info card. Translate units if appropriate for your locale.">5.9 พันล้านกิโลเมตร (เฉลี่ย)</string>
     <string name="object_info_pluto_size" translation_description="Physical size of Pluto shown in the info card. Translate units if appropriate for your locale.">เส้นผ่านศูนย์กลาง 2,377 กิโลเมตร</string>
-    <string name="object_info_pluto_mass" translation_description="Mass of Pluto in scientific notation — no translation needed.">1.3 × 10²² กิโลกรัม</string>
+    <string name="object_info_pluto_mass" translation_description="Mass of Pluto in scientific notation — translate if needed for the locale.">1.3 × 10²² กิโลกรัม</string>
     <!-- Bright Stars Educational Content -->
     <string name="object_info_sirius_description" translation_description="Short description of Sirius">ซิริอุสเป็นดาวที่สว่างที่สุดในท้องฟ้ากลางคืน ตั้งอยู่ในกลุ่มดาวสุนัขใหญ่</string>
     <string name="object_info_sirius_funfact" translation_description="Fun fact about Sirius">
@@ -1321,7 +1321,7 @@
     </string>
     <string name="object_info_alnath_distance" translation_description="Distance to Alnath shown in the info card. Translate units if appropriate for your locale.">134 ปีแสง</string>
     <string name="object_info_alnath_size" translation_description="Physical size of Alnath shown in the info card. Translate units if appropriate for your locale.">4.2 รัศมีสุริยะ</string>
-    <string name="object_info_alnath_mass" translation_description="Mass of Alnath in scientific notation — no translation needed.">5.0 มวลสุริยะ</string>
+    <string name="object_info_alnath_mass" translation_description="Mass of Alnath in scientific notation — translate if needed for the locale.">5.0 มวลสุริยะ</string>
 
     <!-- Alphekka -->
     <string name="object_info_alphekka_description" translation_description="Short description of Alphekka">
@@ -1332,7 +1332,7 @@
     </string>
     <string name="object_info_alphekka_distance" translation_description="Distance to Alphekka shown in the info card. Translate units if appropriate for your locale.">75 ปีแสง</string>
     <string name="object_info_alphekka_size" translation_description="Physical size of Alphekka shown in the info card. Translate units if appropriate for your locale.">2.9 รัศมีสุริยะ</string>
-    <string name="object_info_alphekka_mass" translation_description="Mass of Alphekka in scientific notation — no translation needed.">2.6 มวลสุริยะ</string>
+    <string name="object_info_alphekka_mass" translation_description="Mass of Alphekka in scientific notation — translate if needed for the locale.">2.6 มวลสุริยะ</string>
 
     <!-- Ankaa -->
     <string name="object_info_ankaa_description" translation_description="Short description of Ankaa">
@@ -1343,7 +1343,7 @@
     </string>
     <string name="object_info_ankaa_distance" translation_description="Distance to Ankaa shown in the info card. Translate units if appropriate for your locale.">85 ปีแสง</string>
     <string name="object_info_ankaa_size" translation_description="Physical size of Ankaa shown in the info card. Translate units if appropriate for your locale.">15 รัศมีสุริยะ</string>
-    <string name="object_info_ankaa_mass" translation_description="Mass of Ankaa in scientific notation — no translation needed.">1.3 มวลสุริยะ</string>
+    <string name="object_info_ankaa_mass" translation_description="Mass of Ankaa in scientific notation — translate if needed for the locale.">1.3 มวลสุริยะ</string>
 
     <!-- Arneb -->
     <string name="object_info_arneb_description" translation_description="Short description of Arneb">
@@ -1354,7 +1354,7 @@
     </string>
     <string name="object_info_arneb_distance" translation_description="Distance to Arneb shown in the info card. Translate units if appropriate for your locale.">~2,200 ปีแสง</string>
     <string name="object_info_arneb_size" translation_description="Physical size of Arneb shown in the info card. Translate units if appropriate for your locale.">~75 รัศมีสุริยะ</string>
-    <string name="object_info_arneb_mass" translation_description="Mass of Arneb in scientific notation — no translation needed.">~14 มวลสุริยะ</string>
+    <string name="object_info_arneb_mass" translation_description="Mass of Arneb in scientific notation — translate if needed for the locale.">~14 มวลสุริยะ</string>
 
     <!-- Caph -->
     <string name="object_info_caph_description" translation_description="Short description of Caph">
@@ -1365,7 +1365,7 @@
     </string>
     <string name="object_info_caph_distance" translation_description="Distance to Caph shown in the info card. Translate units if appropriate for your locale.">54 ปีแสง</string>
     <string name="object_info_caph_size" translation_description="Physical size of Caph shown in the info card. Translate units if appropriate for your locale.">3.5 รัศมีสุริยะ</string>
-    <string name="object_info_caph_mass" translation_description="Mass of Caph in scientific notation — no translation needed.">1.9 มวลสุริยะ</string>
+    <string name="object_info_caph_mass" translation_description="Mass of Caph in scientific notation — translate if needed for the locale.">1.9 มวลสุริยะ</string>
 
     <!-- Etamin -->
     <string name="object_info_etamin_description" translation_description="Short description of Etamin">
@@ -1431,7 +1431,7 @@
     </string>
     <string name="object_info_menkar_distance" translation_description="Distance to Menkar shown in the info card. Translate units if appropriate for your locale.">249 ปีแสง</string>
     <string name="object_info_menkar_size" translation_description="Physical size of Menkar shown in the info card. Translate units if appropriate for your locale.">~89 รัศมีสุริยะ</string>
-    <string name="object_info_menkar_mass" translation_description="Mass of Menkar in scientific notation — no translation needed.">~2.3 มวลสุริยะ</string>
+    <string name="object_info_menkar_mass" translation_description="Mass of Menkar in scientific notation — translate if needed for the locale.">~2.3 มวลสุริยะ</string>
 
     <!-- Mirphak -->
     <string name="object_info_mirphak_description" translation_description="Short description of Mirphak">
@@ -1442,7 +1442,7 @@
     </string>
     <string name="object_info_mirphak_distance" translation_description="Distance to Mirphak shown in the info card. Translate units if appropriate for your locale.">~590 ปีแสง</string>
     <string name="object_info_mirphak_size" translation_description="Physical size of Mirphak shown in the info card. Translate units if appropriate for your locale.">~68 รัศมีสุริยะ</string>
-    <string name="object_info_mirphak_mass" translation_description="Mass of Mirphak in scientific notation — no translation needed.">~8.5 มวลสุริยะ</string>
+    <string name="object_info_mirphak_mass" translation_description="Mass of Mirphak in scientific notation — translate if needed for the locale.">~8.5 มวลสุริยะ</string>
 
     <!-- Phad -->
     <string name="object_info_phad_description" translation_description="Short description of Phad">
@@ -1453,7 +1453,7 @@
     </string>
     <string name="object_info_phad_distance" translation_description="Distance to Phad shown in the info card. Translate units if appropriate for your locale.">84 ปีแสง</string>
     <string name="object_info_phad_size" translation_description="Physical size of Phad shown in the info card. Translate units if appropriate for your locale.">3.0 รัศมีสุริยะ</string>
-    <string name="object_info_phad_mass" translation_description="Mass of Phad in scientific notation — no translation needed.">2.9 มวลสุริยะ</string>
+    <string name="object_info_phad_mass" translation_description="Mass of Phad in scientific notation — translate if needed for the locale.">2.9 มวลสุริยะ</string>
 
     <!-- Saiph -->
     <string name="object_info_saiph_description" translation_description="Short description of Saiph">
@@ -1464,7 +1464,7 @@
     </string>
     <string name="object_info_saiph_distance" translation_description="Distance to Saiph shown in the info card. Translate units if appropriate for your locale.">~650 ปีแสง</string>
     <string name="object_info_saiph_size" translation_description="Physical size of Saiph shown in the info card. Translate units if appropriate for your locale.">~22 รัศมีสุริยะ</string>
-    <string name="object_info_saiph_mass" translation_description="Mass of Saiph in scientific notation — no translation needed.">~15.5 มวลสุริยะ</string>
+    <string name="object_info_saiph_mass" translation_description="Mass of Saiph in scientific notation — translate if needed for the locale.">~15.5 มวลสุริยะ</string>
 
     <!-- Shedir -->
     <string name="object_info_shedir_description" translation_description="Short description of Shedir">
@@ -1475,7 +1475,7 @@
     </string>
     <string name="object_info_shedir_distance" translation_description="Distance to Shedir shown in the info card. Translate units if appropriate for your locale.">228 ปีแสง</string>
     <string name="object_info_shedir_size" translation_description="Physical size of Shedir shown in the info card. Translate units if appropriate for your locale.">45 รัศมีสุริยะ</string>
-    <string name="object_info_shedir_mass" translation_description="Mass of Shedir in scientific notation — no translation needed.">~4.0 มวลสุริยะ</string>
+    <string name="object_info_shedir_mass" translation_description="Mass of Shedir in scientific notation — translate if needed for the locale.">~4.0 มวลสุริยะ</string>
 
     <!-- Unukalhai -->
     <string name="object_info_unukalhai_description" translation_description="Short description of Unukalhai">
@@ -1486,7 +1486,7 @@
     </string>
     <string name="object_info_unukalhai_distance" translation_description="Distance to Unukalhai shown in the info card. Translate units if appropriate for your locale.">74 ปีแสง</string>
     <string name="object_info_unukalhai_size" translation_description="Physical size of Unukalhai shown in the info card. Translate units if appropriate for your locale.">12 รัศมีสุริยะ</string>
-    <string name="object_info_unukalhai_mass" translation_description="Mass of Unukalhai in scientific notation — no translation needed.">~2.1 มวลสุริยะ</string>
+    <string name="object_info_unukalhai_mass" translation_description="Mass of Unukalhai in scientific notation — translate if needed for the locale.">~2.1 มวลสุริยะ</string>
 
     <!-- Vindemiatrix -->
     <string name="object_info_vindemiatrix_description" translation_description="Short description of Vindemiatrix">
@@ -1497,7 +1497,7 @@
     </string>
     <string name="object_info_vindemiatrix_distance" translation_description="Distance to Vindemiatrix shown in the info card. Translate units if appropriate for your locale.">109 ปีแสง</string>
     <string name="object_info_vindemiatrix_size" translation_description="Physical size of Vindemiatrix shown in the info card. Translate units if appropriate for your locale.">11 รัศมีสุริยะ</string>
-    <string name="object_info_vindemiatrix_mass" translation_description="Mass of Vindemiatrix in scientific notation — no translation needed.">2.6 มวลสุริยะ</string>
+    <string name="object_info_vindemiatrix_mass" translation_description="Mass of Vindemiatrix in scientific notation — translate if needed for the locale.">2.6 มวลสุริยะ</string>
 
     <!-- ============================================ -->
     <!-- New Constellations (41) — Phase 1 of issue #645 -->
