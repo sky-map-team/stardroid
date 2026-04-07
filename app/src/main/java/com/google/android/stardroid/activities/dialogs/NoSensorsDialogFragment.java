@@ -26,11 +26,11 @@ import dagger.hilt.android.AndroidEntryPoint;
 @AndroidEntryPoint
 public class NoSensorsDialogFragment extends DialogFragment {
   private static final String TAG = MiscUtil.getTag(NoSensorsDialogFragment.class);
-  @Inject Activity parentActivity;
   @Inject SharedPreferences preferences;
 
   @Override
   public Dialog onCreateDialog(Bundle savedInstanceState) {
+    final Activity parentActivity = requireActivity();
     LayoutInflater inflater = parentActivity.getLayoutInflater();
     final View view = inflater.inflate(R.layout.no_sensor_warning, null);
     return new AlertDialog.Builder(parentActivity)

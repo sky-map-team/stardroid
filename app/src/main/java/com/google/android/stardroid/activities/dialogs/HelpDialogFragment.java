@@ -34,13 +34,13 @@ import dagger.hilt.android.AndroidEntryPoint;
 public class HelpDialogFragment extends DialogFragment {
   private static final String TAG = MiscUtil.getTag(HelpDialogFragment.class);
   @Inject StardroidApplication application;
-  @Inject Activity parentActivity;
 
   @Override
   public Dialog onCreateDialog(Bundle savedInstanceState) {
-    LayoutInflater inflater = parentActivity.getLayoutInflater();
+    final Activity activity = requireActivity();
+    LayoutInflater inflater = activity.getLayoutInflater();
     View view = inflater.inflate(R.layout.webview_dialog, null);
-    AlertDialog alertDialog = new AlertDialog.Builder(parentActivity)
+    AlertDialog alertDialog = new AlertDialog.Builder(activity)
         .setTitle(R.string.help_dialog_title)
         .setView(view).setNegativeButton(android.R.string.ok,
             new DialogInterface.OnClickListener() {
@@ -49,16 +49,16 @@ public class HelpDialogFragment extends DialogFragment {
                 dialog.dismiss();
               }
             }).create();
-    String creditsText = String.format(parentActivity.getString(R.string.credits_text),
-        parentActivity.getString(R.string.sponsors_text),
-        parentActivity.getString(R.string.contributors_text));
+    String creditsText = String.format(activity.getString(R.string.credits_text),
+        activity.getString(R.string.sponsors_text),
+        activity.getString(R.string.contributors_text));
 
-    String whatsNewContentText = parentActivity.getString(R.string.whats_new_content);
-    String betaTesterHelp = parentActivity.getString(R.string.beta_user_help_text);
+    String whatsNewContentText = activity.getString(R.string.whats_new_content);
+    String betaTesterHelp = activity.getString(R.string.beta_user_help_text);
 
-    String helpText = String.format(parentActivity.getString(R.string.help_text),
+    String helpText = String.format(activity.getString(R.string.help_text),
         application.getVersionName(), creditsText, whatsNewContentText, betaTesterHelp);
-    SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(parentActivity);
+    SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(activity);
     boolean isNight = ActivityLightLevelManager.isNightMode(preferences);
     String bodyClass = isNight ? " class=\"night-mode\"" : "";
     String html = "<!DOCTYPE html><html><head>" +
@@ -71,7 +71,7 @@ public class HelpDialogFragment extends DialogFragment {
       public boolean shouldOverrideUrlLoading(WebView view, String url) {
         // Open links in external browser
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-        parentActivity.startActivity(intent);
+        activity.startActivity(intent);
         return true;
       }
     });

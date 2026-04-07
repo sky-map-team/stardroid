@@ -32,7 +32,6 @@ import dagger.hilt.android.AndroidEntryPoint;
 @AndroidEntryPoint
 public class WhatsNewDialogFragment extends DialogFragment {
   private static final String TAG = MiscUtil.getTag(WhatsNewDialogFragment.class);
-  @Inject Activity parentActivity;
   @Inject StardroidApplication application;
   private CloseListener closeListener;
 
@@ -56,6 +55,7 @@ public class WhatsNewDialogFragment extends DialogFragment {
 
   @Override
   public Dialog onCreateDialog(Bundle savedInstanceState) {
+    final Activity parentActivity = requireActivity();
     LayoutInflater inflater = parentActivity.getLayoutInflater();
     View view = inflater.inflate(R.layout.whatsnew_view, null);
 

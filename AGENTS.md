@@ -33,22 +33,9 @@ all build, test, deploy, and data-generation commands.
 
 See `docs/ARCHITECTURE.md` for a full overview.
 
-### Dependency Injection (Dagger 2)
+### Dependency Injection
 
-Two-level hierarchy (not Hilt):
-
-1. **ApplicationComponent** - Singleton, created in `StardroidApplication`
-2. **Activity Components** - Per-activity scoped (e.g. `DynamicStarMapComponent`)
-
-#### ⚠️ Scoping pitfall
-
-Do **not** use `@PerActivity` scope for resources released/re-created across `onPause()`/
-`onResume()` (e.g. `MediaPlayer`, file handles). Dagger caches the first instance permanently —
-after `onPause()` releases it, the next `onResume()` gets the dead object.
-
-**Rule:** Resources with an `onResume`/`onPause` lifecycle must use **unscoped** `@Provides` so
-`Provider.get()` creates a fresh instance each call. Prefer `MediaPlayer.prepareAsync()` over
-blocking `MediaPlayer.create()` to avoid ANRs.
+Uses Hilt.
 
 ### Rendering Pipeline
 

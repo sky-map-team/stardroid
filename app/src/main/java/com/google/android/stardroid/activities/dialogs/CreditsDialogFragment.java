@@ -3,7 +3,6 @@ package com.google.android.stardroid.activities.dialogs;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
@@ -21,8 +20,6 @@ import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
 import com.google.android.stardroid.activities.util.NightModeHelper;
 import com.google.android.stardroid.util.MiscUtil;
 
-import javax.inject.Inject;
-
 import dagger.hilt.android.AndroidEntryPoint;
 
 /**
@@ -31,10 +28,10 @@ import dagger.hilt.android.AndroidEntryPoint;
 @AndroidEntryPoint
 public class CreditsDialogFragment extends DialogFragment {
   private static final String TAG = MiscUtil.getTag(CreditsDialogFragment.class);
-  @Inject Activity parentActivity;
-
   @Override
   public Dialog onCreateDialog(Bundle savedInstanceState) {
+    final Activity parentActivity = requireActivity();
+
     LayoutInflater inflater = parentActivity.getLayoutInflater();
     View view = inflater.inflate(R.layout.webview_dialog, null);
     AlertDialog alertDialog = new AlertDialog.Builder(parentActivity)

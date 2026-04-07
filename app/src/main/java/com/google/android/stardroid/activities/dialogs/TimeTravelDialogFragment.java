@@ -1,13 +1,10 @@
 package com.google.android.stardroid.activities.dialogs;
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.os.Bundle;
 
 import com.google.android.stardroid.activities.DynamicStarMapActivity;
 import com.google.android.stardroid.util.MiscUtil;
-
-import javax.inject.Inject;
 
 import dagger.hilt.android.AndroidEntryPoint;
 
@@ -20,11 +17,10 @@ import dagger.hilt.android.AndroidEntryPoint;
 @AndroidEntryPoint
 public class TimeTravelDialogFragment extends DialogFragment {
   private static final String TAG = MiscUtil.getTag(TimeTravelDialogFragment.class);
-  @Inject Activity parentActivity;
 
   @Override
   public Dialog onCreateDialog(Bundle savedInstanceState) {
-    DynamicStarMapActivity starMapActivity = (DynamicStarMapActivity) parentActivity;
+    DynamicStarMapActivity starMapActivity = (DynamicStarMapActivity) requireActivity();
     return new TimeTravelDialog(starMapActivity, starMapActivity.getModel());
   }
 }

@@ -10,8 +10,6 @@ import android.util.Log;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.util.MiscUtil;
 
-import javax.inject.Inject;
-
 import dagger.hilt.android.AndroidEntryPoint;
 
 /**
@@ -21,10 +19,9 @@ import dagger.hilt.android.AndroidEntryPoint;
 @AndroidEntryPoint
 public class NoSearchResultsDialogFragment extends DialogFragment {
   private static final String TAG = MiscUtil.getTag(NoSearchResultsDialogFragment.class);
-  @Inject Activity parentActivity;
-
   @Override
   public Dialog onCreateDialog(Bundle savedInstanceState) {
+    Activity parentActivity = requireActivity();
     return new AlertDialog.Builder(parentActivity)
         .setTitle(R.string.no_search_title).setMessage(R.string.no_search_results_text2)
         .setNegativeButton(android.R.string.ok, new DialogInterface.OnClickListener() {

@@ -34,7 +34,6 @@ import dagger.hilt.android.AndroidEntryPoint;
 @AndroidEntryPoint
 public class EulaDialogFragment extends DialogFragment {
   private static final String TAG = MiscUtil.getTag(EulaDialogFragment.class);
-  @Inject Activity parentActivity;
   @Inject Analytics analytics;
   private EulaAcceptanceListener resultListener;
 
@@ -60,7 +59,7 @@ public class EulaDialogFragment extends DialogFragment {
   @Override
   public Dialog onCreateDialog(Bundle savedInstanceState) {
     Log.d(TAG, "onCreateDialog");
-
+    final Activity parentActivity = requireActivity();
     LayoutInflater inflater = parentActivity.getLayoutInflater();
     View view;
     try {

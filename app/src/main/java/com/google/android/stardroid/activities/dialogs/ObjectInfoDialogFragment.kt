@@ -24,6 +24,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.preference.PreferenceManager
 import com.google.android.stardroid.R
+import com.google.android.stardroid.activities.dialogs.ObjectInfoDialogFragment.Companion.newInstance
 import com.google.android.stardroid.activities.util.ActivityLightLevelManager
 import com.google.android.stardroid.activities.util.NightModeHelper
 import com.google.android.stardroid.education.ObjectInfo
@@ -31,7 +32,6 @@ import com.google.android.stardroid.util.AssetImageLoader
 import com.google.android.stardroid.util.ImageLoadHandle
 import com.google.android.stardroid.util.MiscUtil
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 /**
  * Dialog fragment that displays educational information about a celestial object.
@@ -42,10 +42,6 @@ import javax.inject.Inject
  */
 @AndroidEntryPoint
 class ObjectInfoDialogFragment : DialogFragment() {
-
-    @Inject
-    lateinit var parentActivity: Activity
-
     private var imageLoadHandle: ImageLoadHandle? = null
 
     /** Implemented by activities that host this dialog and want to handle the Find action. */
@@ -54,6 +50,9 @@ class ObjectInfoDialogFragment : DialogFragment() {
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+        val parentActivity = requireActivity()
+        val activity = parentActivity as? Activity
+
         // Retrieve ObjectInfo from arguments (survives configuration changes)
         val info = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             arguments?.getParcelable(ARG_OBJECT_INFO, ObjectInfo::class.java)

@@ -30,11 +30,10 @@ import dagger.hilt.android.AndroidEntryPoint;
 public class LocationPermissionDeniedDialogFragment extends DialogFragment {
   private static final String TAG = MiscUtil.getTag(LocationPermissionDeniedDialogFragment.class);
 
-  @Inject Activity parentActivity;
   @Inject SharedPreferences preferences;
-
   @Override
   public Dialog onCreateDialog(Bundle savedInstanceState) {
+    Activity parentActivity = requireActivity();
     return new AlertDialog.Builder(parentActivity)
         .setTitle(R.string.location_permission_dialog_title)
         .setMessage(R.string.location_permission_dialog_message)

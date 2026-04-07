@@ -1,6 +1,5 @@
 package com.google.android.stardroid.activities.dialogs;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -15,8 +14,6 @@ import com.google.android.stardroid.util.MiscUtil;
 
 import java.util.ArrayList;
 
-import javax.inject.Inject;
-
 import dagger.hilt.android.AndroidEntryPoint;
 
 /**
@@ -26,14 +23,11 @@ import dagger.hilt.android.AndroidEntryPoint;
 @AndroidEntryPoint
 public class MultipleSearchResultsDialogFragment extends DialogFragment {
   private static final String TAG = MiscUtil.getTag(MultipleSearchResultsDialogFragment.class);
-  @Inject Activity parentActivity;
-
   private ArrayAdapter<SearchResult> multipleSearchResultsAdaptor;
 
   @Override
   public Dialog onCreateDialog(Bundle savedInstanceState) {
-    DynamicStarMapActivity starMapActivity = (DynamicStarMapActivity) parentActivity;
-
+    final DynamicStarMapActivity starMapActivity = (DynamicStarMapActivity) requireActivity();
     // TODO(jontayler): inject
     multipleSearchResultsAdaptor = new ArrayAdapter<>(
         starMapActivity, android.R.layout.simple_list_item_1, new ArrayList<SearchResult>());
