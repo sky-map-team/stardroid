@@ -112,10 +112,10 @@ class GestureInterpreter @Inject constructor(
     if (preferences.getBoolean(AUTO_MODE_PREF_KEY, true)) {
       return false
     }
-    val autoLevelHorizon = preferences.getBoolean(AUTO_LEVEL_HORIZON_PREF_KEY, false)
-    preferences.edit { putBoolean(AUTO_LEVEL_HORIZON_PREF_KEY, !autoLevelHorizon) }
+    val nowAutoLevelHorizon = !preferences.getBoolean(AUTO_LEVEL_HORIZON_PREF_KEY, false)
+    preferences.edit { putBoolean(AUTO_LEVEL_HORIZON_PREF_KEY, nowAutoLevelHorizon) }
     toaster.toastLong(
-      if (!autoLevelHorizon) R.string.auto_level_horizon_on else R.string.auto_level_horizon_off)
+      if (nowAutoLevelHorizon) R.string.auto_level_horizon_on else R.string.auto_level_horizon_off)
     return true
   }
 
