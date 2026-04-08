@@ -28,40 +28,23 @@ All dialogs extend `androidx.fragment.app.DialogFragment` and create their dialo
 
 There are **no** `BottomSheetDialogFragment` or `MaterialBottomSheetDialogFragment` classes in the current codebase.
 
-### Dagger 2 Injection Pattern
+### Hilt Injection Pattern
 
-Each dialog has an inner `ActivityComponent` interface. The parent activity implements `HasComponent<ActivityComponent>`:
+If a dialog needs dependencies, it is annotated with `@AndroidEntryPoint`.
 
 ```java
-// In DynamicStarMapActivity:
-public class DynamicStarMapActivity extends InjectableActivity
-    implements HasComponent<DynamicStarMapComponent> { ... }
-
-// DynamicStarMapComponent extends each dialog's ActivityComponent:
-@Component(...)
-public interface DynamicStarMapComponent extends
-    HelpDialogFragment.ActivityComponent,
-    CreditsDialogFragment.ActivityComponent,
-    TimeTravelDialogFragment.ActivityComponent,
-    ... { }
-
-// In the dialog:
+@AndroidEntryPoint
 public class HelpDialogFragment extends DialogFragment {
-    public interface ActivityComponent {
-        void inject(HelpDialogFragment fragment);
-    }
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        ((HasComponent<ActivityComponent>) getActivity())
-            .getComponent().inject(this);
-    }
+    @Inject Analytics analytics;
+    // ...
 }
 ```
 
-The activity injects dialog instances directly:
+Dialogs are typically instantiated manually in the host activity using `newInstance()` or a constructor:
+
 ```java
-@Inject HelpDialogFragment helpDialogFragment;
+// In DynamicStarMapActivity:
+helpDialogFragment = new HelpDialogFragment();
 ```
 
 ---
@@ -147,9 +130,8 @@ Shows information about a tapped celestial object.
 ### Showing a dialog
 
 ```java
-// In DynamicStarMapActivity (injected via Dagger):
-@Inject HelpDialogFragment helpDialogFragment;
-
+// In DynamicStarMapActivity (instantiated manually):
+helpDialogFragment = new HelpDialogFragment();
 helpDialogFragment.show(fragmentManager, "Help Dialog");
 ```
 

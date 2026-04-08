@@ -29,15 +29,16 @@ Main interactive star map — shows the night sky in real-time based on device o
 
 ### Injection
 
-Uses Dagger 2 via `DaggerDynamicStarMapComponent`:
+Uses Hilt for dependency injection:
 
 ```java
-daggerComponent = DaggerDynamicStarMapComponent.builder()
-    .applicationComponent(getApplicationComponent())
-    .dynamicStarMapModule(new DynamicStarMapModule(this)).build();
-daggerComponent.inject(this);
+@AndroidEntryPoint
+public class DynamicStarMapActivity extends FragmentActivity {
+    @Inject SharedPreferences sharedPreferences;
+    @Inject LayerManager layerManager;
+    // ...
+}
 ```
-
 ### Night Mode
 
 Implements `ActivityLightLevelChanger.NightModeable`. `setNightMode(boolean)` is called by `ActivityLightLevelManager` when the preference changes or on resume.
@@ -62,7 +63,7 @@ The `nightMode` field is persisted via `onSaveInstanceState` / `onRestoreInstanc
 
 ### Dialogs hosted
 
-All dialogs are `DialogFragment`s injected via Dagger and shown with `fragment.show(fragmentManager, tag)`:
+All dialogs are `DialogFragment`s injected via Hilt and shown with `fragment.show(fragmentManager, tag)`:
 - `EulaDialogFragment` (ToS, no buttons variant)
 - `CreditsDialogFragment`
 - `HelpDialogFragment`
@@ -179,13 +180,13 @@ Implements `NightModeable`:
 
 ## Common Patterns
 
-### Dagger 2 Injection
+### Hilt Injection
 
-All activities (except `SplashScreenActivity`) use Dagger 2 components:
+All activities (except `SplashScreenActivity`) use Hilt components:
 
 ```java
 // In onCreate():
-DaggerXyzActivityComponent.builder()
+HiltXyzActivityComponent.builder()
     .applicationComponent(getApplicationComponent())
     .xyzActivityModule(new XyzActivityModule(this))
     .build().inject(this);

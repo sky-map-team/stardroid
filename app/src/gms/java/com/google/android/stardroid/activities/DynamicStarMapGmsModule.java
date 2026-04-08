@@ -14,7 +14,7 @@ import dagger.hilt.android.scopes.ActivityScoped;
  */
 @Module
 @InstallIn(ActivityComponent.class)
-public class DynamicStarMapModule {
+public class DynamicStarMapGmsModule {
 
   @Provides
   @ActivityScoped

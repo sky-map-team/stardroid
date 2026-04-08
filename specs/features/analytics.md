@@ -586,7 +586,7 @@ users. Users on GMS can opt out via Settings → `enable_analytics` (default: on
 | `app/src/fdroid/java/…/util/Analytics.java` | No-op stub (F-Droid) |
 | `app/src/main/java/…/util/PreferenceChangeAnalyticsTracker.kt` | Global preference-change listener |
 | `app/src/main/java/…/StardroidApplication.kt` | App startup: user properties, start event |
-| `app/src/main/java/…/ApplicationModule.kt` | Dagger singleton binding |
+| `app/src/main/java/…/ApplicationModule.kt` | Hilt singleton binding |
 
 ---
 
@@ -715,7 +715,7 @@ Set once at app startup in `StardroidApplication.kt` and persisted by Firebase.
 ## Architecture Notes
 
 - All constants live in `AnalyticsInterface.java`; no magic strings elsewhere.
-- Injected as a Dagger singleton; activities and fragments receive it via constructor injection.
+- Injected as a Hilt singleton; activities and fragments receive it via constructor injection.
 - The GMS/F-Droid split is handled entirely at the flavor source-set level — the rest of the
   app is unaware of which implementation is active.
 - Opt-out disables the Firebase SDK itself (not just the custom events), so automatic

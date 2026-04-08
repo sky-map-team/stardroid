@@ -11,7 +11,7 @@
   `BaseAdapter`); loads images asynchronously via `AssetImageLoader`
 - `ImageDisplayActivity.java` — full-screen image + Back + Search buttons; launches
   `DynamicStarMapActivity` with `Intent.ACTION_SEARCH`
-- 4 Dagger2 DI files: 2 modules + 2 components
+- 4 Hilt2 DI files: 2 modules + 2 components
 - 3 XML layouts: `imagegallery.xml`, `imagedisplaypanel.xml`, `imagedisplay.xml`
 
 **Why delete entirely**: The Android `Gallery` widget is deprecated; the hardcoded list is
@@ -103,14 +103,13 @@ screen with 4 dp margins:
 3 columns gives a better browsing overview. The title fits as a single centered line below each
 thumbnail (truncated with ellipsis if needed). This matches the existing spec mockup.
 
-## Dagger DI
+## Hilt DI
 
-**Decision**: Create minimal new Dagger module/component for `ImageGalleryActivity`, mirroring
-the pattern of other activities (e.g. `DiagnosticActivityModule`).
+**Decision**: Ensure `ImageGalleryActivity` is annotated with `@AndroidEntryPoint` and has a corresponding `ImageGalleryActivityModule` installed in `ActivityComponent`.
 
 `ImageGalleryActivity` needs:
 - `ObjectInfoRegistry` (already in `ApplicationComponent` scope)
-- `ObjectInfoDialogFragment` (provided as `@PerActivity`)
+- `ObjectInfoDialogFragment` (instantiated manually)
 - No `AstronomerModel` or rendering dependencies
 
 The new module is smaller than the old `ImageGalleryActivityModule`.

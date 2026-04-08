@@ -26,8 +26,8 @@ import dagger.hilt.android.scopes.ActivityScoped;
  */
 @Module
 @InstallIn(ActivityComponent.class)
-public class AbstractDynamicStarMapModule {
-  private static final String TAG = MiscUtil.getTag(AbstractDynamicStarMapModule.class);
+public class DynamicStarMapActivityModule {
+  private static final String TAG = MiscUtil.getTag(DynamicStarMapActivityModule.class);
 
   // NOT @ActivityScoped — released in onPause(), Provider.get() must return a fresh instance
   // each call. See AGENTS.md.
