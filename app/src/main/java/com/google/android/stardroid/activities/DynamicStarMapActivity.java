@@ -902,19 +902,9 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
     }
     PreferencesButton manualAutoToggle = findViewById(R.id.manual_auto_toggle);
     buttonViews.add(manualAutoToggle);
-    // Re-apply uniform night tint after each click, since PreferencesButton.setVisuallyOnOrOff()
-    // would otherwise dim the button via the on/off tint logic (fix for issue #661).
-    if (manualAutoToggle != null) {
-      manualAutoToggle.setOnClickListener(v -> {
-        if (nightMode) {
-          manualAutoToggle.setColorFilter(getColor(R.color.night_text_color),
-              PorterDuff.Mode.MULTIPLY);
-        } else {
-          manualAutoToggle.clearColorFilter();
-        }
-      });
-    }
 
+    // Set the dependencies on the gestureInterpreter that require the UI to be inflated
+    // so can't be done via constructor injection.
     ButtonLayerView manualButtonLayer = findViewById(R.id.layer_manual_auto_toggle);
     fullscreenControlsManager = new FullscreenControlsManager(
         this,
@@ -922,11 +912,6 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
         Lists.asList(manualButtonLayer, providerButtons),
         buttonViews);
     gestureInterpreter.setFullscreenControlsManager(fullscreenControlsManager);
-
-    // Set up the object info tap handler listener
-    objectInfoTapHandler.setObjectTapListener(this::showObjectInfoDialog);
-
-    // Set up the gesture interpreter's screen dimensions provider using the skyView
     gestureInterpreter.setScreenDimensionsProvider(
         new GestureInterpreter.ScreenDimensionsProvider() {
           @Override
@@ -939,6 +924,23 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
             return skyView.getHeight();
           }
         });
+
+    // Set up the object info tap handler listener
+    // TODO(jontayler): can we just inject this?
+    objectInfoTapHandler.setObjectTapListener(this::showObjectInfoDialog);
+
+    // Re-apply uniform night tint after each click, since PreferencesButton.setVisuallyOnOrOff()
+    // would otherwise dim the button via the on/off tint logic (fix for issue #661).
+    if (manualAutoToggle != null) {
+      manualAutoToggle.setOnClickListener(v -> {
+        if (nightMode) {
+          manualAutoToggle.setColorFilter(getColor(R.color.night_text_color),
+                  PorterDuff.Mode.MULTIPLY);
+        } else {
+          manualAutoToggle.clearColorFilter();
+        }
+      });
+    }
   }
 
   private void applyWindowInsets(View view, boolean applyTop, boolean applyBottom) {
