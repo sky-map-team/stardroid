@@ -31,19 +31,14 @@ import com.google.android.stardroid.R
  *
  * @author John Taylor
  */
-@ActivityScoped
-class GestureInterpreter @Inject constructor(
+class GestureInterpreter(
   private val mapMover: MapMover,
   private val objectInfoTapHandler: ObjectInfoTapHandler? = null,
   private val preferences: SharedPreferences,
-  private val toaster: Toaster
+  private val toaster: Toaster,
+  private val fullscreenControlsManager: FullscreenControlsManager,
+  private val screenDimensionsProvider: ScreenDimensionsProvider
 ) : SimpleOnGestureListener() {
-
-  private var fullscreenControlsManager: FullscreenControlsManager? = null
-
-  fun setFullscreenControlsManager(manager: FullscreenControlsManager) {
-    fullscreenControlsManager = manager
-  }
 
   /**
    * Interface to provide screen dimensions for hit testing.
@@ -51,12 +46,6 @@ class GestureInterpreter @Inject constructor(
   interface ScreenDimensionsProvider {
     val screenWidth: Int
     val screenHeight: Int
-  }
-
-  private var screenDimensionsProvider: ScreenDimensionsProvider? = null
-
-  fun setScreenDimensionsProvider(provider: ScreenDimensionsProvider) {
-    this.screenDimensionsProvider = provider
   }
 
   private val flinger = Flinger { distanceX: Float, distanceY: Float ->

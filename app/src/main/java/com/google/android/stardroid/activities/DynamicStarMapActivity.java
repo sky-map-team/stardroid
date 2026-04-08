@@ -36,7 +36,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.view.animation.Animation;
@@ -87,8 +86,9 @@ import com.google.android.stardroid.renderer.RendererController;
 import com.google.android.stardroid.renderer.SkyRenderer;
 import com.google.android.stardroid.search.SearchResult;
 import com.google.android.stardroid.touch.DragRotateZoomGestureDetector;
+import com.google.android.stardroid.touch.GestureDetectorFactory;
 import com.google.android.stardroid.touch.GestureInterpreter;
-import com.google.android.stardroid.touch.MapMover;
+import com.google.android.stardroid.touch.GestureInterpreterFactory;
 import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.AnalyticsInterface;
 import com.google.android.stardroid.util.MiscUtil;
@@ -186,8 +186,12 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
 
   private ImageButton cancelSearchButton;
   @Inject ControllerGroup controller;
-  @Inject GestureDetector gestureDetector;
-  @Inject GestureInterpreter gestureInterpreter;
+  private GestureDetector gestureDetector;
+  @Inject
+  GestureDetectorFactory gestureDetectorFactory;
+  @Inject
+  GestureInterpreterFactory gestureInterpreterFactory;
+  private GestureInterpreter gestureInterpreter;
   @Inject AstronomerModel model;
   private RendererController rendererController;
   private boolean nightMode = false;
@@ -911,19 +915,20 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
         findViewById(R.id.main_sky_view),
         Lists.asList(manualButtonLayer, providerButtons),
         buttonViews);
-    gestureInterpreter.setFullscreenControlsManager(fullscreenControlsManager);
-    gestureInterpreter.setScreenDimensionsProvider(
-        new GestureInterpreter.ScreenDimensionsProvider() {
-          @Override
-          public int getScreenWidth() {
-            return skyView.getWidth();
-          }
+    gestureInterpreter = gestureInterpreterFactory.createGestureInterpreter(
+            fullscreenControlsManager,
+            new GestureInterpreter.ScreenDimensionsProvider() {
+              @Override
+              public int getScreenWidth() {
+                return skyView.getWidth();
+              }
 
-          @Override
-          public int getScreenHeight() {
-            return skyView.getHeight();
-          }
-        });
+              @Override
+              public int getScreenHeight() {
+                return skyView.getHeight();
+              }
+            });
+    gestureDetector = gestureDetectorFactory.createGestureDetector(gestureInterpreter);
 
     // Set up the object info tap handler listener
     // TODO(jontayler): can we just inject this?
