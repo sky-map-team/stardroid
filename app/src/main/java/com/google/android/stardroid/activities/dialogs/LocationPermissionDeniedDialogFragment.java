@@ -30,6 +30,10 @@ import dagger.hilt.android.AndroidEntryPoint;
 public class LocationPermissionDeniedDialogFragment extends DialogFragment {
   private static final String TAG = MiscUtil.getTag(LocationPermissionDeniedDialogFragment.class);
 
+  public static LocationPermissionDeniedDialogFragment newInstance() {
+    return new LocationPermissionDeniedDialogFragment();
+  }
+
   @Inject SharedPreferences preferences;
   @Override
   public Dialog onCreateDialog(Bundle savedInstanceState) {

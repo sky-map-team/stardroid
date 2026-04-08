@@ -30,6 +30,11 @@ import dagger.hilt.android.AndroidEntryPoint;
 @AndroidEntryPoint
 public class WhatsNewDialogFragment extends DialogFragment {
   private static final String TAG = MiscUtil.getTag(WhatsNewDialogFragment.class);
+
+  public static WhatsNewDialogFragment newInstance() {
+    return new WhatsNewDialogFragment();
+  }
+
   @Inject StardroidApplication application;
   @Inject SharedPreferences preferences;
   private CloseListener closeListener;

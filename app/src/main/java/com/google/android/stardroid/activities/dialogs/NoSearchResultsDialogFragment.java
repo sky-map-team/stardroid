@@ -19,6 +19,10 @@ import dagger.hilt.android.AndroidEntryPoint;
 @AndroidEntryPoint
 public class NoSearchResultsDialogFragment extends DialogFragment {
   private static final String TAG = MiscUtil.getTag(NoSearchResultsDialogFragment.class);
+
+  public static NoSearchResultsDialogFragment newInstance() {
+    return new NoSearchResultsDialogFragment();
+  }
   @Override
   public Dialog onCreateDialog(Bundle savedInstanceState) {
     Activity parentActivity = requireActivity();

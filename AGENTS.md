@@ -59,12 +59,21 @@ Runtime: Binary files loaded by `AbstractFileBasedLayer`, deserialized into
 
 ### Adding Dialog Fragments
 
-Dialog fragments are currently instantiated manually (e.g., using a `newInstance()` method or `new XyzDialogFragment()`) in the host activity, typically in `onOptionsItemSelected`. They are NOT generally provided via Hilt `@Provides` methods or injected into activities.
+Dialog fragments are instantiated on demand in the host activity — never stored as fields or
+pre-created in `onCreate`. All fragments must be shown via the activity's `showDialog` helper,
+which guards against duplicate dialogs after activity recreation (e.g. rotation).
 
-To add a new dialog:
-1. Create your `DialogFragment` class.
-2. If it needs dependencies, use `@AndroidEntryPoint` on the fragment itself or pass them in if simple.
-3. Instantiate and show the dialog in the host activity (e.g. `DynamicStarMapActivity`).
+**Pattern for a new dialog:**
+
+1. Create your `DialogFragment` class with `@AndroidEntryPoint` for Hilt-injected dependencies.
+2. Add a `public static newInstance()` factory method (use `setArguments(Bundle)` for any data;
+   data objects must be `Parcelable` — use `@Parcelize` on Kotlin data classes).
+3. Show it from the host activity via showDialog(XyzDialogFragment.newInstance(), XyzDialogFragment.class.getSimpleName())
+
+**Do not:**
+- Store dialog fragment instances as activity fields.
+- Pass data to a showing fragment via setter methods — use `newInstance()` + Bundle args so the
+  data survives configuration changes.
 
 ## Code Style
 

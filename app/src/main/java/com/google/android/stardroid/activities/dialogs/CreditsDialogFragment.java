@@ -28,6 +28,11 @@ import dagger.hilt.android.AndroidEntryPoint;
 @AndroidEntryPoint
 public class CreditsDialogFragment extends DialogFragment {
   private static final String TAG = MiscUtil.getTag(CreditsDialogFragment.class);
+
+  public static CreditsDialogFragment newInstance() {
+    return new CreditsDialogFragment();
+  }
+
   @Inject SharedPreferences preferences;
   @Override
   public Dialog onCreateDialog(Bundle savedInstanceState) {

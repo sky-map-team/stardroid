@@ -20,6 +20,11 @@ import dagger.hilt.android.AndroidEntryPoint;
 @AndroidEntryPoint
 public class TimeTravelDialogFragment extends DialogFragment {
   private static final String TAG = MiscUtil.getTag(TimeTravelDialogFragment.class);
+
+  public static TimeTravelDialogFragment newInstance() {
+    return new TimeTravelDialogFragment();
+  }
+
   @Inject SharedPreferences preferences;
 
   @Override
