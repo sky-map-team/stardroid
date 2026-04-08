@@ -1,3 +1,5 @@
+// Copyright 2010 Google Inc.
+//
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
@@ -11,20 +13,12 @@
 // limitations under the License.
 package com.google.android.stardroid.touch
 
-import android.content.SharedPreferences
 import android.util.Log
 import android.view.GestureDetector.SimpleOnGestureListener
 import android.view.MotionEvent
-import com.google.android.stardroid.ApplicationConstants.AUTO_MODE_PREF_KEY
 import com.google.android.stardroid.activities.util.FullscreenControlsManager
 import com.google.android.stardroid.education.ObjectInfoTapHandler
 import com.google.android.stardroid.util.MiscUtil.getTag
-import com.google.android.stardroid.util.Toaster
-import dagger.hilt.android.scopes.ActivityScoped
-import javax.inject.Inject
-import androidx.core.content.edit
-import com.google.android.stardroid.ApplicationConstants.AUTO_LEVEL_HORIZON_PREF_KEY
-import com.google.android.stardroid.R
 
 /**
  * Processes touch events and scrolls the screen in manual mode.
@@ -32,19 +26,11 @@ import com.google.android.stardroid.R
  * @author John Taylor
  */
 class GestureInterpreter(
+  private val fullscreenControlsManager: FullscreenControlsManager,
   private val mapMover: MapMover,
   private val objectInfoTapHandler: ObjectInfoTapHandler? = null,
-  private val preferences: SharedPreferences,
-  private val toaster: Toaster,
-  private val fullscreenControlsManager: FullscreenControlsManager,
-  private val screenDimensionsProvider: ScreenDimensionsProvider
+  private val screenDimensionsProvider: ScreenDimensionsProvider? = null
 ) : SimpleOnGestureListener() {
-
-  private var fullscreenControlsManager: FullscreenControlsManager? = null
-
-  fun setFullscreenControlsManager(manager: FullscreenControlsManager) {
-    fullscreenControlsManager = manager
-  }
 
   /**
    * Interface to provide screen dimensions for hit testing.
@@ -52,12 +38,6 @@ class GestureInterpreter(
   interface ScreenDimensionsProvider {
     val screenWidth: Int
     val screenHeight: Int
-  }
-
-  private var screenDimensionsProvider: ScreenDimensionsProvider? = null
-
-  fun setScreenDimensionsProvider(provider: ScreenDimensionsProvider) {
-    this.screenDimensionsProvider = provider
   }
 
   private val flinger = Flinger { distanceX: Float, distanceY: Float ->
@@ -103,21 +83,13 @@ class GestureInterpreter(
       }
     }
     // If not consumed by object info handler, toggle fullscreen controls
-    fullscreenControlsManager?.toggleControls()
+    fullscreenControlsManager.toggleControls()
     return true
   }
 
   override fun onDoubleTap(e: MotionEvent): Boolean {
     Log.d(TAG, "Double tap")
-    // If in manual mode we want to toggle the horizon setting and toast the user.
-    if (preferences.getBoolean(AUTO_MODE_PREF_KEY, true)) {
-      return false
-    }
-    val nowAutoLevelHorizon = !preferences.getBoolean(AUTO_LEVEL_HORIZON_PREF_KEY, false)
-    preferences.edit { putBoolean(AUTO_LEVEL_HORIZON_PREF_KEY, nowAutoLevelHorizon) }
-    toaster.toastLong(
-      if (nowAutoLevelHorizon) R.string.auto_level_horizon_on else R.string.auto_level_horizon_off)
-    return true
+    return false
   }
 
   override fun onSingleTapConfirmed(e: MotionEvent): Boolean {
