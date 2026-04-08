@@ -19,13 +19,16 @@ import com.google.android.stardroid.math.MathUtils.atan2
 import com.google.android.stardroid.math.MathUtils.sqrt
 import com.google.android.stardroid.math.RADIANS_TO_DEGREES
 import com.google.android.stardroid.util.MiscUtil.getTag
+import dagger.hilt.android.scopes.ActivityScoped
+import javax.inject.Inject
 
 /**
  * Detects map drags, rotations and pinch zooms.
  *
  * @author John Taylor
  */
-class DragRotateZoomGestureDetector(private val listener: DragRotateZoomGestureDetectorListener) {
+@ActivityScoped
+class DragRotateZoomGestureDetector @Inject constructor(private val listener: MapMover) {
   /**
    * Listens for the gestures detected by the [DragRotateZoomGestureDetector].
    *

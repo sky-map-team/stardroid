@@ -118,7 +118,6 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
   private static final int TIME_DISPLAY_DELAY_MILLIS = 1000;
   // Extra delay after the clock transition settles before querying solar-system positions.
   private static final long SEARCH_POST_TRANSITION_DELAY_MS = 500;
-  private FullscreenControlsManager fullscreenControlsManager;
 
   /**
    * Passed to the renderer to get per-frame updates from the model.
@@ -188,7 +187,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
   private ImageButton cancelSearchButton;
   @Inject ControllerGroup controller;
   private GestureDetector gestureDetector;
-  private GestureInterpreter gestureInterpreter;
+  @Inject GestureInterpreter gestureInterpreter;
   @Inject AstronomerModel model;
   private RendererController rendererController;
   private boolean nightMode = false;
@@ -215,6 +214,10 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
   @Inject FragmentManager fragmentManager;
   @Inject ObjectInfoTapHandler objectInfoTapHandler;
   @Inject SensorAccuracyMonitor sensorAccuracyMonitor;
+  @Inject MapMover mapMover;
+  @Inject DragRotateZoomGestureDetector dragZoomRotateDetector;
+  @Inject FullscreenControlsManager fullscreenControlsManager;
+
   // A list of runnables to post on the handler when we resume.
   private final List<Runnable> onResumeRunnables = new ArrayList<>();
 
@@ -223,7 +226,6 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
   @SuppressWarnings("unused")
   @Inject MagneticDeclinationCalculatorSwitcher magneticSwitcher;
 
-  private DragRotateZoomGestureDetector dragZoomRotateDetector;
   @Inject @Named("timetravelflash") Animation flashAnimation;
   @Inject ActivityLightLevelManager activityLightLevelManager;
   private long sessionStartTime;
@@ -913,22 +915,12 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
         }
       });
     }
-    ButtonLayerView manualButtonLayer = findViewById(
-        R.id.layer_manual_auto_toggle);
-
-    fullscreenControlsManager = new FullscreenControlsManager(
-        this,
-        findViewById(R.id.main_sky_view),
-        Lists.asList(manualButtonLayer, providerButtons),
-        buttonViews);
-
-    MapMover mapMover = new MapMover(model, controller, this, sharedPreferences);
 
     // Set up the object info tap handler listener
     objectInfoTapHandler.setObjectTapListener(this::showObjectInfoDialog);
 
-    // Create a screen dimensions provider using the skyView
-    GestureInterpreter.ScreenDimensionsProvider dimensionsProvider =
+    // Set up the gesture interpreter's screen dimensions provider using the skyView
+    gestureInterpreter.setScreenDimensionsProvider(
         new GestureInterpreter.ScreenDimensionsProvider() {
           @Override
           public int getScreenWidth() {
@@ -939,12 +931,9 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
           public int getScreenHeight() {
             return skyView.getHeight();
           }
-        };
+        });
 
-    gestureInterpreter = new GestureInterpreter(
-        fullscreenControlsManager, mapMover, objectInfoTapHandler, dimensionsProvider);
     gestureDetector = new GestureDetector(this, gestureInterpreter);
-    dragZoomRotateDetector = new DragRotateZoomGestureDetector(mapMover);
   }
 
   private void applyWindowInsets(View view, boolean applyTop, boolean applyBottom) {

@@ -19,17 +19,19 @@ import android.view.MotionEvent
 import com.google.android.stardroid.activities.util.FullscreenControlsManager
 import com.google.android.stardroid.education.ObjectInfoTapHandler
 import com.google.android.stardroid.util.MiscUtil.getTag
+import dagger.hilt.android.scopes.ActivityScoped
+import javax.inject.Inject
 
 /**
  * Processes touch events and scrolls the screen in manual mode.
  *
  * @author John Taylor
  */
-class GestureInterpreter(
+@ActivityScoped
+class GestureInterpreter @Inject constructor(
   private val fullscreenControlsManager: FullscreenControlsManager,
   private val mapMover: MapMover,
-  private val objectInfoTapHandler: ObjectInfoTapHandler? = null,
-  private val screenDimensionsProvider: ScreenDimensionsProvider? = null
+  private val objectInfoTapHandler: ObjectInfoTapHandler? = null
 ) : SimpleOnGestureListener() {
 
   /**
@@ -38,6 +40,12 @@ class GestureInterpreter(
   interface ScreenDimensionsProvider {
     val screenWidth: Int
     val screenHeight: Int
+  }
+
+  private var screenDimensionsProvider: ScreenDimensionsProvider? = null
+
+  fun setScreenDimensionsProvider(provider: ScreenDimensionsProvider) {
+    this.screenDimensionsProvider = provider
   }
 
   private val flinger = Flinger { distanceX: Float, distanceY: Float ->

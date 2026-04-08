@@ -5,12 +5,21 @@ import android.content.res.AssetFileDescriptor;
 import android.media.MediaPlayer;
 
 import androidx.annotation.Nullable;
+
 import android.util.Log;
+import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ImageButton;
 
 import com.google.android.stardroid.R;
+import com.google.android.stardroid.activities.util.FullscreenControlsManager;
+import com.google.android.stardroid.base.Lists;
 import com.google.android.stardroid.util.MiscUtil;
+import com.google.android.stardroid.views.ButtonLayerView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.inject.Named;
 
@@ -28,6 +37,29 @@ import dagger.hilt.android.scopes.ActivityScoped;
 @InstallIn(ActivityComponent.class)
 public class DynamicStarMapActivityModule {
   private static final String TAG = MiscUtil.getTag(DynamicStarMapActivityModule.class);
+
+  @Provides
+  @ActivityScoped
+  FullscreenControlsManager provideFullscreenControlsManager(Activity activity) {
+    ButtonLayerView providerButtons = activity.findViewById(R.id.layer_buttons_control);
+    int numChildren = providerButtons.getChildCount();
+    List<View> buttonViews = new ArrayList<>();
+    for (int i = 0; i < numChildren; ++i) {
+      ImageButton button = (ImageButton) providerButtons.getChildAt(i);
+      buttonViews.add(button);
+    }
+    View manualAutoToggle = activity.findViewById(R.id.manual_auto_toggle);
+    buttonViews.add(manualAutoToggle);
+
+    ButtonLayerView manualButtonLayer = activity.findViewById(
+        R.id.layer_manual_auto_toggle);
+
+    return new FullscreenControlsManager(
+        activity,
+        activity.findViewById(R.id.main_sky_view),
+        Lists.asList(manualButtonLayer, providerButtons),
+        buttonViews);
+  }
 
   // NOT @ActivityScoped — released in onPause(), Provider.get() must return a fresh instance
   // each call. See AGENTS.md.
