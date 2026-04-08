@@ -41,13 +41,15 @@ class SearchTermsProvider : ContentProvider() {
     fun layerManager(): LayerManager
   }
 
-  private lateinit var layerManager: LayerManager
-
-  override fun onCreate(): Boolean {
-    val appContext = context?.applicationContext ?: return false
+  private val layerManager: LayerManager by lazy {
+    val appContext = context?.applicationContext
+        ?: throw IllegalStateException("Context not available")
     val entryPoint = EntryPointAccessors.fromApplication(
         appContext, SearchTermsProviderEntryPoint::class.java)
-    layerManager = entryPoint.layerManager()
+    entryPoint.layerManager()
+  }
+
+  override fun onCreate(): Boolean {
     return true
   }
 
