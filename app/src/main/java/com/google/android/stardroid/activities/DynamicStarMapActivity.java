@@ -414,7 +414,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
           .getBoolean(ApplicationConstants.NO_WARN_ABOUT_MISSING_SENSORS, false)) {
         Log.d(TAG, "showing no sensor dialog");
         analytics.trackEvent(AnalyticsInterface.NO_SENSORS_WARNING_EVENT, null);
-        showDialog(NoSensorsDialogFragment.newInstance(), "No sensors dialog");
+        showDialog(NoSensorsDialogFragment.newInstance(), NoSensorsDialogFragment.class.getSimpleName());
         // First time, force manual mode.
         sharedPreferences.edit().putBoolean(ApplicationConstants.AUTO_MODE_PREF_KEY, false)
             .apply();
