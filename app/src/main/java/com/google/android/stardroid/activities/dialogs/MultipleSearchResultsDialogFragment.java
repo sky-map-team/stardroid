@@ -9,7 +9,7 @@ import android.widget.ArrayAdapter;
 
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.DynamicStarMapActivity;
-import com.google.android.stardroid.search.SearchResult;
+import com.google.android.stardroid.math.Vector3;
 import com.google.android.stardroid.util.MiscUtil;
 
 import java.util.ArrayList;
@@ -17,29 +17,36 @@ import java.util.ArrayList;
 import dagger.hilt.android.AndroidEntryPoint;
 
 /**
- * End User License agreement dialog.
- * Created by johntaylor on 4/3/16.
+ * Dialog shown when a search returns multiple results.
  */
 @AndroidEntryPoint
 public class MultipleSearchResultsDialogFragment extends DialogFragment {
   private static final String TAG = MiscUtil.getTag(MultipleSearchResultsDialogFragment.class);
-  private ArrayAdapter<SearchResult> multipleSearchResultsAdaptor;
+  private static final String RESULTS_KEY = "results";
+
+  public static MultipleSearchResultsDialogFragment newInstance(ArrayList<SearchResultItem> results) {
+    MultipleSearchResultsDialogFragment fragment = new MultipleSearchResultsDialogFragment();
+    Bundle args = new Bundle();
+    args.putParcelableArrayList(RESULTS_KEY, results);
+    fragment.setArguments(args);
+    return fragment;
+  }
 
   @Override
   public Dialog onCreateDialog(Bundle savedInstanceState) {
+    ArrayList<SearchResultItem> results = requireArguments().getParcelableArrayList(RESULTS_KEY);
     final DynamicStarMapActivity starMapActivity = (DynamicStarMapActivity) requireActivity();
-    // TODO(jontayler): inject
-    multipleSearchResultsAdaptor = new ArrayAdapter<>(
-        starMapActivity, android.R.layout.simple_list_item_1, new ArrayList<SearchResult>());
-
+    final ArrayAdapter<SearchResultItem> adapter = new ArrayAdapter<>(
+        starMapActivity, android.R.layout.simple_list_item_1, results);
 
     DialogInterface.OnClickListener onClickListener = new DialogInterface.OnClickListener() {
       public void onClick(DialogInterface dialog, int whichButton) {
         if (whichButton == Dialog.BUTTON_NEGATIVE) {
           Log.d(TAG, "Many search results Dialog closed with cancel");
         } else {
-          final SearchResult item = multipleSearchResultsAdaptor.getItem(whichButton);
-          starMapActivity.activateSearchTarget(item.coords(), item.getCapitalizedName());
+          final SearchResultItem item = adapter.getItem(whichButton);
+          starMapActivity.activateSearchTarget(
+              new Vector3(item.getX(), item.getY(), item.getZ()), item.getName());
         }
         dialog.dismiss();
       }
@@ -48,15 +55,7 @@ public class MultipleSearchResultsDialogFragment extends DialogFragment {
     return new AlertDialog.Builder(starMapActivity)
         .setTitle(R.string.many_search_results_title)
         .setNegativeButton(android.R.string.cancel, onClickListener)
-        .setAdapter(multipleSearchResultsAdaptor, onClickListener)
+        .setAdapter(adapter, onClickListener)
         .create();
-  }
-
-  public void clearResults() {
-    multipleSearchResultsAdaptor.clear();
-  }
-
-  public void add(SearchResult result) {
-    multipleSearchResultsAdaptor.add(result);
   }
 }

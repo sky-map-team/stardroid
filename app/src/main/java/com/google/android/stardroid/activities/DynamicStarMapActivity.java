@@ -59,6 +59,7 @@ import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
 import com.google.android.stardroid.activities.dialogs.HelpDialogFragment;
 import com.google.android.stardroid.activities.dialogs.LocationPermissionDeniedDialogFragment;
 import com.google.android.stardroid.activities.dialogs.MultipleSearchResultsDialogFragment;
+import com.google.android.stardroid.activities.dialogs.SearchResultItem;
 import com.google.android.stardroid.activities.dialogs.NoSearchResultsDialogFragment;
 import com.google.android.stardroid.activities.dialogs.NoSensorsDialogFragment;
 import com.google.android.stardroid.activities.dialogs.ObjectInfoDialogFragment;
@@ -212,14 +213,6 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
   @Inject Analytics analytics;
   @Inject GooglePlayServicesChecker playServicesChecker;
   @Inject FragmentManager fragmentManager;
-  private EulaDialogFragment eulaDialogFragmentNoButtons;
-  private TimeTravelDialogFragment timeTravelDialogFragment;
-  private CreditsDialogFragment creditsDialogFragment;
-  private HelpDialogFragment helpDialogFragment;
-  private NoSearchResultsDialogFragment noSearchResultsDialogFragment;
-  private MultipleSearchResultsDialogFragment multipleSearchResultsDialogFragment;
-  private NoSensorsDialogFragment noSensorsDialogFragment;
-  private LocationPermissionDeniedDialogFragment locationPermissionDeniedDialogFragment;
   @Inject ObjectInfoTapHandler objectInfoTapHandler;
   @Inject SensorAccuracyMonitor sensorAccuracyMonitor;
   // A list of runnables to post on the handler when we resume.
@@ -239,15 +232,6 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
   public void onCreate(Bundle icicle) {
     Log.d(TAG, "onCreate at " + System.currentTimeMillis());
     super.onCreate(icicle);
-
-    eulaDialogFragmentNoButtons = new EulaDialogFragment();
-    timeTravelDialogFragment = new TimeTravelDialogFragment();
-    creditsDialogFragment = new CreditsDialogFragment();
-    helpDialogFragment = new HelpDialogFragment();
-    noSearchResultsDialogFragment = new NoSearchResultsDialogFragment();
-    multipleSearchResultsDialogFragment = new MultipleSearchResultsDialogFragment();
-    noSensorsDialogFragment = new NoSensorsDialogFragment();
-    locationPermissionDeniedDialogFragment = new LocationPermissionDeniedDialogFragment();
 
     sharedPreferences.registerOnSharedPreferenceChangeListener(this);
 
@@ -430,7 +414,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
           .getBoolean(ApplicationConstants.NO_WARN_ABOUT_MISSING_SENSORS, false)) {
         Log.d(TAG, "showing no sensor dialog");
         analytics.trackEvent(AnalyticsInterface.NO_SENSORS_WARNING_EVENT, null);
-        showDialog(noSensorsDialogFragment, "No sensors dialog");
+        showDialog(new NoSensorsDialogFragment(), "No sensors dialog");
         // First time, force manual mode.
         sharedPreferences.edit().putBoolean(ApplicationConstants.AUTO_MODE_PREF_KEY, false)
             .apply();
@@ -513,11 +497,11 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
     } else if (itemId == R.id.menu_item_credits) {
       Log.d(TAG, "Credits");
       menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.CREDITS_OPENED_LABEL);
-      showDialog(creditsDialogFragment, CreditsDialogFragment.class.getSimpleName());
+      showDialog(new CreditsDialogFragment(), CreditsDialogFragment.class.getSimpleName());
     } else if (itemId == R.id.menu_item_help) {
       Log.d(TAG, "Help");
       menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.HELP_OPENED_LABEL);
-      showDialog(helpDialogFragment, "Help Dialog");
+      showDialog(new HelpDialogFragment(), "Help Dialog");
     } else if (itemId == R.id.menu_item_dim) {
       Log.d(TAG, "Toggling nightmode");
       nightMode = !nightMode;
@@ -533,7 +517,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
       } else {
         Log.d(TAG, "Resuming current time travel dialog.");
       }
-      showDialog(timeTravelDialogFragment, "Time Travel");
+      showDialog(new TimeTravelDialogFragment(), "Time Travel");
     } else if (itemId == R.id.menu_item_gallery) {
       Log.d(TAG, "Loading gallery");
       menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.GALLERY_OPENED_LABEL);
@@ -541,7 +525,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
     } else if (itemId == R.id.menu_item_tos) {
       Log.d(TAG, "Loading ToS");
       menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.TOS_OPENED_LABEL);
-      showDialog(eulaDialogFragmentNoButtons, "Eula Dialog No Buttons");
+      showDialog(new EulaDialogFragment(), "Eula Dialog No Buttons");
     } else if (itemId == R.id.menu_item_calibrate) {
       Log.d(TAG, "Loading Calibration");
       menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.CALIBRATION_OPENED_LABEL);
@@ -638,7 +622,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
 
     if (status == LocationController.LocationStatus.PERMISSION_DENIED) {
       message = getString(R.string.location_warning_permission);
-      showDialog(locationPermissionDeniedDialogFragment, "Location Warning");
+      showDialog(new LocationPermissionDeniedDialogFragment(), "Location Warning");
     } else if (status == LocationController.LocationStatus.MANUAL_NO_COORDS) {
       message = getString(R.string.location_warning_manual);
     } else {
@@ -843,7 +827,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
       Bundle failBundle = new Bundle();
       failBundle.putString(AnalyticsInterface.SEARCH_TERM, queryString);
       analytics.trackEvent(AnalyticsInterface.SEARCH_FAILED_EVENT, failBundle);
-      showDialog(noSearchResultsDialogFragment, "No Search Results");
+      showDialog(new NoSearchResultsDialogFragment(), "No Search Results");
     } else if (results.size() > 1) {
       Log.d(TAG, "Multiple results returned");
       showUserChooseResultDialog(results);
@@ -855,16 +839,13 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
   }
 
   private void showUserChooseResultDialog(List<SearchResult> results) {
-    MultipleSearchResultsDialogFragment target = (MultipleSearchResultsDialogFragment)
-        fragmentManager.findFragmentByTag("Multiple Search Results");
-    if (target == null) {
-      target = MultipleSearchResultsDialogFragment.newInstance();
-    }
-    target.clearResults();
+    ArrayList<SearchResultItem> items = new ArrayList<>();
     for (SearchResult result : results) {
-      target.add(result);
+      items.add(new SearchResultItem(
+          result.getCapitalizedName(),
+          result.coords().x, result.coords().y, result.coords().z));
     }
-    showDialog(target, "Multiple Search Results");
+    showDialog(MultipleSearchResultsDialogFragment.newInstance(items), "Multiple Search Results");
   }
 
   private void initializeModelViewController() {
