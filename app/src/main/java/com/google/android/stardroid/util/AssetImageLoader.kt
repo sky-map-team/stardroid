@@ -133,17 +133,13 @@ object AssetImageLoader {
      */
     fun onTrimMemory(level: Int) {
         when {
-            level >= android.content.ComponentCallbacks2.TRIM_MEMORY_COMPLETE -> {
-                Log.d(TAG, "Clearing image cache (TRIM_MEMORY_COMPLETE)")
+            level >= android.content.ComponentCallbacks2.TRIM_MEMORY_BACKGROUND -> {
+                Log.d(TAG, "Clearing image cache (TRIM_MEMORY_BACKGROUND)")
                 cache.evictAll()
             }
-            level >= android.content.ComponentCallbacks2.TRIM_MEMORY_MODERATE -> {
-                Log.d(TAG, "Trimming image cache to half (TRIM_MEMORY_MODERATE)")
+            level >= android.content.ComponentCallbacks2.TRIM_MEMORY_UI_HIDDEN -> {
+                Log.d(TAG, "Trimming image cache to half (TRIM_MEMORY_UI_HIDDEN)")
                 cache.trimToSize(cache.maxSize() / 2)
-            }
-            level >= android.content.ComponentCallbacks2.TRIM_MEMORY_BACKGROUND -> {
-                Log.d(TAG, "Trimming image cache to quarter (TRIM_MEMORY_BACKGROUND)")
-                cache.trimToSize(cache.maxSize() / 4)
             }
         }
     }
