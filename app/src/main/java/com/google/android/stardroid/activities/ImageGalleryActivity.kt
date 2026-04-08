@@ -2,9 +2,9 @@ package com.google.android.stardroid.activities
 
 import android.app.SearchManager
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.FragmentActivity
-import androidx.preference.PreferenceManager
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.stardroid.R
@@ -29,6 +29,7 @@ class ImageGalleryActivity : FragmentActivity(),
 
     @Inject lateinit var registry: ObjectInfoRegistry
     @Inject lateinit var activityLightLevelManager: ActivityLightLevelManager
+    @Inject lateinit var sharedPreferences: SharedPreferences
 
     private lateinit var galleryAdapter: GalleryAdapter
 
@@ -66,8 +67,7 @@ class ImageGalleryActivity : FragmentActivity(),
 
     override fun onFindClicked(info: ObjectInfo) {
         // Ensure the relevant layers are visible so the object can be found.
-        val prefs = PreferenceManager.getDefaultSharedPreferences(this)
-        prefs.edit()
+        sharedPreferences.edit()
             .putBoolean("source_provider.0", true) // Stars
             .putBoolean("source_provider.1", true) // Constellations
             .putBoolean("source_provider.2", true) // Deep Sky Objects

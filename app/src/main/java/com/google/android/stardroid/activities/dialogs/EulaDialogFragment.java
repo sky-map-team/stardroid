@@ -15,8 +15,6 @@ import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import androidx.preference.PreferenceManager;
-
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
 import com.google.android.stardroid.activities.util.NightModeHelper;
@@ -35,6 +33,7 @@ import dagger.hilt.android.AndroidEntryPoint;
 public class EulaDialogFragment extends DialogFragment {
   private static final String TAG = MiscUtil.getTag(EulaDialogFragment.class);
   @Inject Analytics analytics;
+  @Inject SharedPreferences preferences;
   private EulaAcceptanceListener resultListener;
 
   public interface EulaAcceptanceListener {
@@ -108,7 +107,6 @@ public class EulaDialogFragment extends DialogFragment {
     }
     contentBuilder.append(eulaText);
 
-    SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(parentActivity);
     boolean isNight = ActivityLightLevelManager.isNightMode(preferences);
     String bodyClass = isNight ? " class=\"night-mode\"" : "";
     String html = "<!DOCTYPE html><html><head>" +

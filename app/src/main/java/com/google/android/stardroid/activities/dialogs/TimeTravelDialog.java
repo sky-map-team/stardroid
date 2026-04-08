@@ -42,8 +42,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.preference.PreferenceManager;
-
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.DynamicStarMapActivity;
 import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
@@ -73,6 +71,7 @@ public class TimeTravelDialog extends Dialog {
   private ArrayAdapter<String> popularDatesAdapter;
   private TextView dateTimeReadout;
   private DynamicStarMapActivity parentActivity;
+  private SharedPreferences preferences;
   private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy.MM.dd G 'at' HH:mm:ss z");
   // This is the date we will apply to the controller when the user hits go.
   private Calendar calendar = Calendar.getInstance();
@@ -84,10 +83,12 @@ public class TimeTravelDialog extends Dialog {
   private Button goButton;
 
   public TimeTravelDialog(final DynamicStarMapActivity parentActivity,
-                          final AstronomerModel model) {
+                          final AstronomerModel model,
+                          final SharedPreferences preferences) {
     super(parentActivity);
     this.parentActivity = parentActivity;
     this.model = model;
+    this.preferences = preferences;
   }
 
   @Override
@@ -180,8 +181,7 @@ public class TimeTravelDialog extends Dialog {
   }
 
   private void applyNightMode() {
-    SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getContext());
-    isNight = ActivityLightLevelManager.isNightMode(prefs);
+    isNight = ActivityLightLevelManager.isNightMode(preferences);
     int textColor = isNight ? getContext().getColor(R.color.night_text_color) : Color.WHITE;
     if (getWindow() != null && getWindow().getDecorView() instanceof ViewGroup) {
       NightModeHelper.tintTextViews((ViewGroup) getWindow().getDecorView(), textColor);

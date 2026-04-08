@@ -13,12 +13,12 @@ import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import androidx.preference.PreferenceManager;
-
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
 import com.google.android.stardroid.activities.util.NightModeHelper;
 import com.google.android.stardroid.util.MiscUtil;
+
+import javax.inject.Inject;
 
 import dagger.hilt.android.AndroidEntryPoint;
 
@@ -28,6 +28,7 @@ import dagger.hilt.android.AndroidEntryPoint;
 @AndroidEntryPoint
 public class CreditsDialogFragment extends DialogFragment {
   private static final String TAG = MiscUtil.getTag(CreditsDialogFragment.class);
+  @Inject SharedPreferences preferences;
   @Override
   public Dialog onCreateDialog(Bundle savedInstanceState) {
     final Activity parentActivity = requireActivity();
@@ -46,7 +47,6 @@ public class CreditsDialogFragment extends DialogFragment {
         parentActivity.getString(R.string.sponsors_text),
         parentActivity.getString(R.string.contributors_text));
 
-    SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(parentActivity);
     boolean isNight = ActivityLightLevelManager.isNightMode(preferences);
     String bodyClass = isNight ? " class=\"night-mode\"" : "";
     String html = "<!DOCTYPE html><html><head>" +

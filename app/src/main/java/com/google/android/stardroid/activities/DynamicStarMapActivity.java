@@ -47,7 +47,6 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
-import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -196,6 +195,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
   private Vector3 searchTarget = CoordinateManipulationsKt.getGeocentricCoords(0, 0);
 
   @Inject SharedPreferences sharedPreferences;
+  @Inject @Nullable SensorManager sensorManager;
   private GLSurfaceView skyView;
   @Inject @Nullable PowerManager powerManager;
   private PowerManager.WakeLock wakeLock;
@@ -411,7 +411,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
   }
 
   private void checkForSensorsAndMaybeWarn() {
-    SensorManager sensorManager = ContextCompat.getSystemService(this, SensorManager.class);
+    SensorManager sensorManager = this.sensorManager;
     if (sensorManager != null && sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER) != null
         && sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD) != null) {
       Log.i(TAG, "Minimum sensors present");

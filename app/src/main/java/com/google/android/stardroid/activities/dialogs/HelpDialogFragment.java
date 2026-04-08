@@ -14,8 +14,6 @@ import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import androidx.preference.PreferenceManager;
-
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.StardroidApplication;
 import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
@@ -34,6 +32,7 @@ import dagger.hilt.android.AndroidEntryPoint;
 public class HelpDialogFragment extends DialogFragment {
   private static final String TAG = MiscUtil.getTag(HelpDialogFragment.class);
   @Inject StardroidApplication application;
+  @Inject SharedPreferences preferences;
 
   @Override
   public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -58,7 +57,6 @@ public class HelpDialogFragment extends DialogFragment {
 
     String helpText = String.format(activity.getString(R.string.help_text),
         application.getVersionName(), creditsText, whatsNewContentText, betaTesterHelp);
-    SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(activity);
     boolean isNight = ActivityLightLevelManager.isNightMode(preferences);
     String bodyClass = isNight ? " class=\"night-mode\"" : "";
     String html = "<!DOCTYPE html><html><head>" +

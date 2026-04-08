@@ -14,8 +14,6 @@ import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import androidx.preference.PreferenceManager;
-
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.StardroidApplication;
 import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
@@ -33,6 +31,7 @@ import dagger.hilt.android.AndroidEntryPoint;
 public class WhatsNewDialogFragment extends DialogFragment {
   private static final String TAG = MiscUtil.getTag(WhatsNewDialogFragment.class);
   @Inject StardroidApplication application;
+  @Inject SharedPreferences preferences;
   private CloseListener closeListener;
 
   public interface CloseListener {
@@ -73,7 +72,6 @@ public class WhatsNewDialogFragment extends DialogFragment {
     String betaUserHelpText = parentActivity.getString(R.string.beta_user_help_text);
     String whatsNewText = String.format(parentActivity.getString(R.string.whats_new_text),
         application.getVersionName(), whatsNewContent, betaUserHelpText);
-    SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(parentActivity);
     boolean isNight = ActivityLightLevelManager.isNightMode(preferences);
     String bodyClass = isNight ? " class=\"night-mode\"" : "";
     String html = "<!DOCTYPE html><html><head>" +
