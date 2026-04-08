@@ -501,7 +501,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
     } else if (itemId == R.id.menu_item_help) {
       Log.d(TAG, "Help");
       menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.HELP_OPENED_LABEL);
-      showDialog(HelpDialogFragment.newInstance(), "Help Dialog");
+      showDialog(HelpDialogFragment.newInstance(), HelpDialogFragment.class.getSimpleName());
     } else if (itemId == R.id.menu_item_dim) {
       Log.d(TAG, "Toggling nightmode");
       nightMode = !nightMode;
@@ -517,7 +517,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
       } else {
         Log.d(TAG, "Resuming current time travel dialog.");
       }
-      showDialog(TimeTravelDialogFragment.newInstance(), "Time Travel");
+      showDialog(TimeTravelDialogFragment.newInstance(), TimeTravelDialogFragment.class.getSimpleName());
     } else if (itemId == R.id.menu_item_gallery) {
       Log.d(TAG, "Loading gallery");
       menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.GALLERY_OPENED_LABEL);
@@ -525,7 +525,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
     } else if (itemId == R.id.menu_item_tos) {
       Log.d(TAG, "Loading ToS");
       menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.TOS_OPENED_LABEL);
-      showDialog(EulaDialogFragment.newInstance(), "Eula Dialog No Buttons");
+      showDialog(EulaDialogFragment.newInstance(), EulaDialogFragment.class.getSimpleName());
     } else if (itemId == R.id.menu_item_calibrate) {
       Log.d(TAG, "Loading Calibration");
       menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.CALIBRATION_OPENED_LABEL);
@@ -622,7 +622,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
 
     if (status == LocationController.LocationStatus.PERMISSION_DENIED) {
       message = getString(R.string.location_warning_permission);
-      showDialog(LocationPermissionDeniedDialogFragment.newInstance(), "Location Warning");
+      showDialog(LocationPermissionDeniedDialogFragment.newInstance(), LocationPermissionDeniedDialogFragment.class.getSimpleName());
     } else if (status == LocationController.LocationStatus.MANUAL_NO_COORDS) {
       message = getString(R.string.location_warning_manual);
     } else {
@@ -827,7 +827,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
       Bundle failBundle = new Bundle();
       failBundle.putString(AnalyticsInterface.SEARCH_TERM, queryString);
       analytics.trackEvent(AnalyticsInterface.SEARCH_FAILED_EVENT, failBundle);
-      showDialog(NoSearchResultsDialogFragment.newInstance(), "No Search Results");
+      showDialog(NoSearchResultsDialogFragment.newInstance(), NoSearchResultsDialogFragment.class.getSimpleName());
     } else if (results.size() > 1) {
       Log.d(TAG, "Multiple results returned");
       showUserChooseResultDialog(results);
