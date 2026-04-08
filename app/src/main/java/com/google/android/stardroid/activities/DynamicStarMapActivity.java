@@ -414,7 +414,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
           .getBoolean(ApplicationConstants.NO_WARN_ABOUT_MISSING_SENSORS, false)) {
         Log.d(TAG, "showing no sensor dialog");
         analytics.trackEvent(AnalyticsInterface.NO_SENSORS_WARNING_EVENT, null);
-        showDialog(new NoSensorsDialogFragment(), "No sensors dialog");
+        showDialog(NoSensorsDialogFragment.newInstance(), "No sensors dialog");
         // First time, force manual mode.
         sharedPreferences.edit().putBoolean(ApplicationConstants.AUTO_MODE_PREF_KEY, false)
             .apply();
@@ -497,11 +497,11 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
     } else if (itemId == R.id.menu_item_credits) {
       Log.d(TAG, "Credits");
       menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.CREDITS_OPENED_LABEL);
-      showDialog(new CreditsDialogFragment(), CreditsDialogFragment.class.getSimpleName());
+      showDialog(CreditsDialogFragment.newInstance(), CreditsDialogFragment.class.getSimpleName());
     } else if (itemId == R.id.menu_item_help) {
       Log.d(TAG, "Help");
       menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.HELP_OPENED_LABEL);
-      showDialog(new HelpDialogFragment(), "Help Dialog");
+      showDialog(HelpDialogFragment.newInstance(), "Help Dialog");
     } else if (itemId == R.id.menu_item_dim) {
       Log.d(TAG, "Toggling nightmode");
       nightMode = !nightMode;
@@ -517,7 +517,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
       } else {
         Log.d(TAG, "Resuming current time travel dialog.");
       }
-      showDialog(new TimeTravelDialogFragment(), "Time Travel");
+      showDialog(TimeTravelDialogFragment.newInstance(), "Time Travel");
     } else if (itemId == R.id.menu_item_gallery) {
       Log.d(TAG, "Loading gallery");
       menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.GALLERY_OPENED_LABEL);
@@ -525,7 +525,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
     } else if (itemId == R.id.menu_item_tos) {
       Log.d(TAG, "Loading ToS");
       menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.TOS_OPENED_LABEL);
-      showDialog(new EulaDialogFragment(), "Eula Dialog No Buttons");
+      showDialog(EulaDialogFragment.newInstance(), "Eula Dialog No Buttons");
     } else if (itemId == R.id.menu_item_calibrate) {
       Log.d(TAG, "Loading Calibration");
       menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.CALIBRATION_OPENED_LABEL);
@@ -622,7 +622,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
 
     if (status == LocationController.LocationStatus.PERMISSION_DENIED) {
       message = getString(R.string.location_warning_permission);
-      showDialog(new LocationPermissionDeniedDialogFragment(), "Location Warning");
+      showDialog(LocationPermissionDeniedDialogFragment.newInstance(), "Location Warning");
     } else if (status == LocationController.LocationStatus.MANUAL_NO_COORDS) {
       message = getString(R.string.location_warning_manual);
     } else {
@@ -827,7 +827,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
       Bundle failBundle = new Bundle();
       failBundle.putString(AnalyticsInterface.SEARCH_TERM, queryString);
       analytics.trackEvent(AnalyticsInterface.SEARCH_FAILED_EVENT, failBundle);
-      showDialog(new NoSearchResultsDialogFragment(), "No Search Results");
+      showDialog(NoSearchResultsDialogFragment.newInstance(), "No Search Results");
     } else if (results.size() > 1) {
       Log.d(TAG, "Multiple results returned");
       showUserChooseResultDialog(results);

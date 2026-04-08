@@ -31,6 +31,11 @@ import dagger.hilt.android.AndroidEntryPoint;
 @AndroidEntryPoint
 public class HelpDialogFragment extends DialogFragment {
   private static final String TAG = MiscUtil.getTag(HelpDialogFragment.class);
+
+  public static HelpDialogFragment newInstance() {
+    return new HelpDialogFragment();
+  }
+
   @Inject StardroidApplication application;
   @Inject SharedPreferences preferences;
 

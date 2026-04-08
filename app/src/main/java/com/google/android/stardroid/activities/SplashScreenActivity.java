@@ -111,7 +111,7 @@ public class SplashScreenActivity extends androidx.fragment.app.FragmentActivity
     boolean eulaAlreadyConfirmed = (sharedPreferences.getInt(
         ApplicationConstants.READ_TOS_PREF_VERSION, -1) == EULA_VERSION_CODE);
     if (!eulaAlreadyConfirmed) {
-      new EulaDialogFragment().show(fragmentManager, "Eula Dialog");
+      showDialog(EulaDialogFragment.newInstance(), "Eula Dialog");
       return true;
     } else {
       return false;
@@ -142,7 +142,7 @@ public class SplashScreenActivity extends androidx.fragment.app.FragmentActivity
     if (whatsNewSeen) {
       launchSkyMap();
     } else {
-      new WhatsNewDialogFragment().show(fragmentManager, "Whats New Dialog");
+      showDialog(WhatsNewDialogFragment.newInstance(), "Whats New Dialog");
     }
   }
 
@@ -153,6 +153,12 @@ public class SplashScreenActivity extends androidx.fragment.app.FragmentActivity
     editor.putLong(ApplicationConstants.READ_WHATS_NEW_PREF_VERSION, app.getVersion());
     editor.commit();
     launchSkyMap();
+  }
+
+  private void showDialog(androidx.fragment.app.DialogFragment fragment, String tag) {
+    if (fragmentManager.findFragmentByTag(tag) == null) {
+      fragment.show(fragmentManager, tag);
+    }
   }
 
   private void launchSkyMap() {
