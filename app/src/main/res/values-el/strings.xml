@@ -254,5 +254,6 @@
     <string name="object_info_tap_to_expand" translation_description="Hint shown on image to tap to expand">Πατήστε για επέκταση</string>
     <string name="object_info_tap_to_close" translation_description="Hint shown on expanded image to tap to close">Πατήστε για κλείσιμο</string>
     <string name="action_find_in_sky_map" translation_description="Button label that opens the star map and searches for the displayed object">Εύρεση</string>
-
+    <string name="auto_level_horizon_on" translation_description="Toast message when auto-level horizon is enabled">Αυτόματη ευθυγράμμιση ορίζοντα ενεργή</string>
+    <string name="auto_level_horizon_off" translation_description="Toast message when auto-level horizon is disabled">Αυτόματη ευθυγράμμιση ορίζοντα απενεργοποιημένη</string>
 </resources>

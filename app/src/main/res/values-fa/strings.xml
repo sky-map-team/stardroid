@@ -236,5 +236,6 @@
     <string name="object_info_tap_to_expand" translation_description="Hint shown on image to tap to expand">برای بزرگ‌نمایی ضربه بزنید</string>
     <string name="object_info_tap_to_close" translation_description="Hint shown on expanded image to tap to close">برای بستن ضربه بزنید</string>
     <string name="action_find_in_sky_map" translation_description="Button label that opens the star map and searches for the displayed object">یافتن</string>
-
+    <string name="auto_level_horizon_on" translation_description="Toast message when auto-level horizon is enabled">افق خودکار روشن است</string>
+    <string name="auto_level_horizon_off" translation_description="Toast message when auto-level horizon is disabled">افق خودکار خاموش است</string>
 </resources>
