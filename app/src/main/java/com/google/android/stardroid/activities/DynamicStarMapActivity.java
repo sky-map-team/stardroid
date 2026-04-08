@@ -214,7 +214,6 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
   @Inject FragmentManager fragmentManager;
   @Inject ObjectInfoTapHandler objectInfoTapHandler;
   @Inject SensorAccuracyMonitor sensorAccuracyMonitor;
-  @Inject MapMover mapMover;
   @Inject DragRotateZoomGestureDetector dragZoomRotateDetector;
   private FullscreenControlsManager fullscreenControlsManager;
 
