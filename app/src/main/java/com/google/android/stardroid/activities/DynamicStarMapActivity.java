@@ -858,7 +858,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
     MultipleSearchResultsDialogFragment target = (MultipleSearchResultsDialogFragment)
         fragmentManager.findFragmentByTag("Multiple Search Results");
     if (target == null) {
-      target = multipleSearchResultsDialogFragment;
+      target = MultipleSearchResultsDialogFragment.newInstance();
     }
     target.clearResults();
     for (SearchResult result : results) {
