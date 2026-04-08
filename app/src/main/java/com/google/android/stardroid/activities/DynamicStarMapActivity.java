@@ -186,7 +186,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
 
   private ImageButton cancelSearchButton;
   @Inject ControllerGroup controller;
-  private GestureDetector gestureDetector;
+  @Inject GestureDetector gestureDetector;
   @Inject GestureInterpreter gestureInterpreter;
   @Inject AstronomerModel model;
   private RendererController rendererController;
@@ -216,7 +216,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
   @Inject SensorAccuracyMonitor sensorAccuracyMonitor;
   @Inject MapMover mapMover;
   @Inject DragRotateZoomGestureDetector dragZoomRotateDetector;
-  @Inject FullscreenControlsManager fullscreenControlsManager;
+  private FullscreenControlsManager fullscreenControlsManager;
 
   // A list of runnables to post on the handler when we resume.
   private final List<Runnable> onResumeRunnables = new ArrayList<>();
@@ -916,6 +916,14 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
       });
     }
 
+    ButtonLayerView manualButtonLayer = findViewById(R.id.layer_manual_auto_toggle);
+    fullscreenControlsManager = new FullscreenControlsManager(
+        this,
+        findViewById(R.id.main_sky_view),
+        Lists.asList(manualButtonLayer, providerButtons),
+        buttonViews);
+    gestureInterpreter.setFullscreenControlsManager(fullscreenControlsManager);
+
     // Set up the object info tap handler listener
     objectInfoTapHandler.setObjectTapListener(this::showObjectInfoDialog);
 
@@ -932,8 +940,6 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
             return skyView.getHeight();
           }
         });
-
-    gestureDetector = new GestureDetector(this, gestureInterpreter);
   }
 
   private void applyWindowInsets(View view, boolean applyTop, boolean applyBottom) {

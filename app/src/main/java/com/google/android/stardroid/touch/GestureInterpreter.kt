@@ -29,10 +29,15 @@ import javax.inject.Inject
  */
 @ActivityScoped
 class GestureInterpreter @Inject constructor(
-  private val fullscreenControlsManager: FullscreenControlsManager,
   private val mapMover: MapMover,
   private val objectInfoTapHandler: ObjectInfoTapHandler? = null
 ) : SimpleOnGestureListener() {
+
+  private var fullscreenControlsManager: FullscreenControlsManager? = null
+
+  fun setFullscreenControlsManager(manager: FullscreenControlsManager) {
+    fullscreenControlsManager = manager
+  }
 
   /**
    * Interface to provide screen dimensions for hit testing.
@@ -91,7 +96,7 @@ class GestureInterpreter @Inject constructor(
       }
     }
     // If not consumed by object info handler, toggle fullscreen controls
-    fullscreenControlsManager.toggleControls()
+    fullscreenControlsManager?.toggleControls()
     return true
   }
 

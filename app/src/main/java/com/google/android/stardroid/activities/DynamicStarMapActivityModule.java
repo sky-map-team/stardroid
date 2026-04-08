@@ -7,6 +7,7 @@ import android.media.MediaPlayer;
 import androidx.annotation.Nullable;
 
 import android.util.Log;
+import android.view.GestureDetector;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -15,6 +16,9 @@ import android.widget.ImageButton;
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.util.FullscreenControlsManager;
 import com.google.android.stardroid.base.Lists;
+import com.google.android.stardroid.touch.DragRotateZoomGestureDetector;
+import com.google.android.stardroid.touch.GestureInterpreter;
+import com.google.android.stardroid.touch.MapMover;
 import com.google.android.stardroid.util.MiscUtil;
 import com.google.android.stardroid.views.ButtonLayerView;
 
@@ -23,6 +27,7 @@ import java.util.List;
 
 import javax.inject.Named;
 
+import dagger.Binds;
 import dagger.Module;
 import dagger.Provides;
 import dagger.hilt.InstallIn;
@@ -35,12 +40,17 @@ import dagger.hilt.android.scopes.ActivityScoped;
  */
 @Module
 @InstallIn(ActivityComponent.class)
-public class DynamicStarMapActivityModule {
+public abstract class DynamicStarMapActivityModule {
   private static final String TAG = MiscUtil.getTag(DynamicStarMapActivityModule.class);
+
+  @Binds
+  @ActivityScoped
+  public abstract DragRotateZoomGestureDetector.DragRotateZoomGestureDetectorListener
+      bindDragRotateZoomGestureDetectorListener(MapMover mapMover);
 
   @Provides
   @ActivityScoped
-  FullscreenControlsManager provideFullscreenControlsManager(Activity activity) {
+  public static FullscreenControlsManager provideFullscreenControlsManager(Activity activity) {
     ButtonLayerView providerButtons = activity.findViewById(R.id.layer_buttons_control);
     int numChildren = providerButtons.getChildCount();
     List<View> buttonViews = new ArrayList<>();
@@ -61,12 +71,18 @@ public class DynamicStarMapActivityModule {
         buttonViews);
   }
 
+  @Provides
+  @ActivityScoped
+  public static GestureDetector provideGestureDetector(Activity activity, GestureInterpreter gestureInterpreter) {
+    return new GestureDetector(activity, gestureInterpreter);
+  }
+
   // NOT @ActivityScoped — released in onPause(), Provider.get() must return a fresh instance
   // each call. See AGENTS.md.
   @Provides
   @Named("timetravel")
   @Nullable
-  MediaPlayer provideTimeTravelNoise(Activity activity) {
+  public static MediaPlayer provideTimeTravelNoise(Activity activity) {
     return prepareMediaPlayerAsync(activity, R.raw.timetravel);
   }
 
@@ -75,7 +91,7 @@ public class DynamicStarMapActivityModule {
   @Provides
   @Named("timetravelback")
   @Nullable
-  MediaPlayer provideTimeTravelBackNoise(Activity activity) {
+  public static MediaPlayer provideTimeTravelBackNoise(Activity activity) {
     return prepareMediaPlayerAsync(activity, R.raw.timetravelback);
   }
 
@@ -84,7 +100,7 @@ public class DynamicStarMapActivityModule {
    * is never blocked. Returns null if the resource cannot be opened.
    */
   @Nullable
-  private MediaPlayer prepareMediaPlayerAsync(Activity activity, int rawResId) {
+  private static MediaPlayer prepareMediaPlayerAsync(Activity activity, int rawResId) {
     MediaPlayer mp = new MediaPlayer();
     try (AssetFileDescriptor afd = activity.getResources().openRawResourceFd(rawResId)) {
       mp.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
@@ -100,7 +116,7 @@ public class DynamicStarMapActivityModule {
   @Provides
   @ActivityScoped
   @Named("timetravelflash")
-  Animation provideTimeTravelFlashAnimation(Activity activity) {
+  public static Animation provideTimeTravelFlashAnimation(Activity activity) {
     return AnimationUtils.loadAnimation(activity, R.anim.timetravelflash);
   }
 }

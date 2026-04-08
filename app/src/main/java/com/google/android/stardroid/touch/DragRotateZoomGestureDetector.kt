@@ -28,7 +28,7 @@ import javax.inject.Inject
  * @author John Taylor
  */
 @ActivityScoped
-class DragRotateZoomGestureDetector @Inject constructor(private val listener: MapMover) {
+class DragRotateZoomGestureDetector @Inject constructor(private val listener: DragRotateZoomGestureDetectorListener) {
   /**
    * Listens for the gestures detected by the [DragRotateZoomGestureDetector].
    *
