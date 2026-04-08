@@ -246,5 +246,6 @@ Da bi vam prikazal nebo v smeri, v katero kaže vaš telefon, Sky Map potrebuje 
     <string name="object_info_tap_to_expand" translation_description="Hint shown on image to tap to expand">Tapnite za razširitev</string>
     <string name="object_info_tap_to_close" translation_description="Hint shown on expanded image to tap to close">Tapnite za zaprtje</string>
     <string name="action_find_in_sky_map" translation_description="Button label that opens the star map and searches for the displayed object">Najdi</string>
-
+    <string name="auto_level_horizon_on" translation_description="Toast message when auto-level horizon is enabled">Samodejno poravnavanje obzorja vključeno</string>
+    <string name="auto_level_horizon_off" translation_description="Toast message when auto-level horizon is disabled">Samodejno poravnavanje obzorja izključeno</string>
 </resources>

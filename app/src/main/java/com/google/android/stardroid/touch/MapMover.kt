@@ -22,6 +22,9 @@ import com.google.android.stardroid.control.ControllerGroup
 import com.google.android.stardroid.math.RADIANS_TO_DEGREES
 import com.google.android.stardroid.touch.DragRotateZoomGestureDetector.DragRotateZoomGestureDetectorListener
 import com.google.android.stardroid.util.MiscUtil.getTag
+import dagger.hilt.android.qualifiers.ActivityContext
+import dagger.hilt.android.scopes.ActivityScoped
+import javax.inject.Inject
 
 /**
  * Applies drags, zooms and rotations to the model.
@@ -29,10 +32,11 @@ import com.google.android.stardroid.util.MiscUtil.getTag
  *
  * @author John Taylor
  */
-class MapMover(
+@ActivityScoped
+class MapMover @Inject constructor(
   private val model: AstronomerModel,
   private val controllerGroup: ControllerGroup,
-  context: Context,
+  @ActivityContext context: Context,
   private val sharedPreferences: SharedPreferences
 ) : DragRotateZoomGestureDetectorListener {
   private val sizeTimesRadiansToDegrees: Float

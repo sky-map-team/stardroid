@@ -36,7 +36,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.view.animation.Animation;
@@ -87,8 +86,9 @@ import com.google.android.stardroid.renderer.RendererController;
 import com.google.android.stardroid.renderer.SkyRenderer;
 import com.google.android.stardroid.search.SearchResult;
 import com.google.android.stardroid.touch.DragRotateZoomGestureDetector;
+import com.google.android.stardroid.touch.GestureDetectorFactory;
 import com.google.android.stardroid.touch.GestureInterpreter;
-import com.google.android.stardroid.touch.MapMover;
+import com.google.android.stardroid.touch.GestureInterpreterFactory;
 import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.AnalyticsInterface;
 import com.google.android.stardroid.util.MiscUtil;
@@ -118,7 +118,6 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
   private static final int TIME_DISPLAY_DELAY_MILLIS = 1000;
   // Extra delay after the clock transition settles before querying solar-system positions.
   private static final long SEARCH_POST_TRANSITION_DELAY_MS = 500;
-  private FullscreenControlsManager fullscreenControlsManager;
 
   /**
    * Passed to the renderer to get per-frame updates from the model.
@@ -188,6 +187,10 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
   private ImageButton cancelSearchButton;
   @Inject ControllerGroup controller;
   private GestureDetector gestureDetector;
+  @Inject
+  GestureDetectorFactory gestureDetectorFactory;
+  @Inject
+  GestureInterpreterFactory gestureInterpreterFactory;
   private GestureInterpreter gestureInterpreter;
   @Inject AstronomerModel model;
   private RendererController rendererController;
@@ -215,6 +218,9 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
   @Inject FragmentManager fragmentManager;
   @Inject ObjectInfoTapHandler objectInfoTapHandler;
   @Inject SensorAccuracyMonitor sensorAccuracyMonitor;
+  @Inject DragRotateZoomGestureDetector dragZoomRotateDetector;
+  private FullscreenControlsManager fullscreenControlsManager;
+
   // A list of runnables to post on the handler when we resume.
   private final List<Runnable> onResumeRunnables = new ArrayList<>();
 
@@ -223,7 +229,6 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
   @SuppressWarnings("unused")
   @Inject MagneticDeclinationCalculatorSwitcher magneticSwitcher;
 
-  private DragRotateZoomGestureDetector dragZoomRotateDetector;
   @Inject @Named("timetravelflash") Animation flashAnimation;
   @Inject ActivityLightLevelManager activityLightLevelManager;
   private long sessionStartTime;
@@ -901,50 +906,46 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
     }
     PreferencesButton manualAutoToggle = findViewById(R.id.manual_auto_toggle);
     buttonViews.add(manualAutoToggle);
+
+    // Set the dependencies on the gestureInterpreter that require the UI to be inflated
+    // so can't be done via constructor injection.
+    ButtonLayerView manualButtonLayer = findViewById(R.id.layer_manual_auto_toggle);
+    fullscreenControlsManager = new FullscreenControlsManager(
+        this,
+        findViewById(R.id.main_sky_view),
+        Lists.asList(manualButtonLayer, providerButtons),
+        buttonViews);
+    gestureInterpreter = gestureInterpreterFactory.createGestureInterpreter(
+            fullscreenControlsManager,
+            new GestureInterpreter.ScreenDimensionsProvider() {
+              @Override
+              public int getScreenWidth() {
+                return skyView.getWidth();
+              }
+
+              @Override
+              public int getScreenHeight() {
+                return skyView.getHeight();
+              }
+            });
+    gestureDetector = gestureDetectorFactory.createGestureDetector(gestureInterpreter);
+
+    // Set up the object info tap handler listener
+    // TODO(jontayler): can we just inject this?
+    objectInfoTapHandler.setObjectTapListener(this::showObjectInfoDialog);
+
     // Re-apply uniform night tint after each click, since PreferencesButton.setVisuallyOnOrOff()
     // would otherwise dim the button via the on/off tint logic (fix for issue #661).
     if (manualAutoToggle != null) {
       manualAutoToggle.setOnClickListener(v -> {
         if (nightMode) {
           manualAutoToggle.setColorFilter(getColor(R.color.night_text_color),
-              PorterDuff.Mode.MULTIPLY);
+                  PorterDuff.Mode.MULTIPLY);
         } else {
           manualAutoToggle.clearColorFilter();
         }
       });
     }
-    ButtonLayerView manualButtonLayer = findViewById(
-        R.id.layer_manual_auto_toggle);
-
-    fullscreenControlsManager = new FullscreenControlsManager(
-        this,
-        findViewById(R.id.main_sky_view),
-        Lists.asList(manualButtonLayer, providerButtons),
-        buttonViews);
-
-    MapMover mapMover = new MapMover(model, controller, this, sharedPreferences);
-
-    // Set up the object info tap handler listener
-    objectInfoTapHandler.setObjectTapListener(this::showObjectInfoDialog);
-
-    // Create a screen dimensions provider using the skyView
-    GestureInterpreter.ScreenDimensionsProvider dimensionsProvider =
-        new GestureInterpreter.ScreenDimensionsProvider() {
-          @Override
-          public int getScreenWidth() {
-            return skyView.getWidth();
-          }
-
-          @Override
-          public int getScreenHeight() {
-            return skyView.getHeight();
-          }
-        };
-
-    gestureInterpreter = new GestureInterpreter(
-        fullscreenControlsManager, mapMover, objectInfoTapHandler, dimensionsProvider);
-    gestureDetector = new GestureDetector(this, gestureInterpreter);
-    dragZoomRotateDetector = new DragRotateZoomGestureDetector(mapMover);
   }
 
   private void applyWindowInsets(View view, boolean applyTop, boolean applyBottom) {

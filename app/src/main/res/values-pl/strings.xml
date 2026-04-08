@@ -251,5 +251,6 @@ Twój telefon zgłasza dokładność kompasu jak pokazano powyżej. Aby ją popr
     <string name="object_info_tap_to_expand" translation_description="Hint shown on image to tap to expand">Naciśnij, aby powiększyć</string>
     <string name="object_info_tap_to_close" translation_description="Hint shown on expanded image to tap to close">Naciśnij, aby zamknąć</string>
     <string name="action_find_in_sky_map" translation_description="Button label that opens the star map and searches for the displayed object">Znajdź</string>
-
+    <string name="auto_level_horizon_on" translation_description="Toast message when auto-level horizon is enabled">Auto-level horyzontu włączony</string>
+    <string name="auto_level_horizon_off" translation_description="Toast message when auto-level horizon is disabled">Auto-level horyzontu wyłączony</string>
 </resources>
