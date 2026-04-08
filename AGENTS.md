@@ -68,7 +68,7 @@ which guards against duplicate dialogs after activity recreation (e.g. rotation)
 1. Create your `DialogFragment` class with `@AndroidEntryPoint` for Hilt-injected dependencies.
 2. Add a `public static newInstance()` factory method (use `setArguments(Bundle)` for any data;
    data objects must be `Parcelable` — use `@Parcelize` on Kotlin data classes).
-3. Show it from the host activity via `showDialog(XyzDialogFragment.newInstance(), TAG)`.
+3. Show it from the host activity via showDialog(XyzDialogFragment.newInstance(), XyzDialogFragment.class.getSimpleName())
 
 **Do not:**
 - Store dialog fragment instances as activity fields.
