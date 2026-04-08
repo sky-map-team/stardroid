@@ -27,7 +27,7 @@ The UI layer is **responsible for user interaction and visual presentation** of 
 │  DiagnosticActivity      — sensor/system debug info          │
 └─────────────────────────────────────────────────────────────┘
                               │
-                    Dagger 2 injection
+                    Hilt injection
                               │
 ┌─────────────────────────────────────────────────────────────┐
 │                    DialogFragments                           │
@@ -70,7 +70,7 @@ The entire app is designed for night-time outdoor use:
 ### Current Technology
 
 - **Theme:** `Theme.Holo` (Android built-in dark theme)
-- **DI:** Dagger 2 with per-activity components
+- **DI:** Hilt with per-activity components
 - **Dialogs:** `DialogFragment` + `AlertDialog.Builder`, NOT BottomSheets
 - **Settings:** `PreferenceActivity` + `PreferenceFragment`
 

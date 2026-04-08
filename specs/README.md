@@ -23,7 +23,7 @@ specs/
 │
 ├── architecture/                # Current architecture documentation
 │   ├── README.md               # Architecture overview
-│   ├── dependency-injection.md # Dagger 2 component hierarchy
+│   ├── dependency-injection.md # Hilt component hierarchy
 │   ├── module-structure.md     # app/, datamodel/, tools/ modules
 │   └── data-flow.md            # Data pipeline from catalogs to rendering
 │
@@ -108,7 +108,7 @@ specs/
 - **Platform**: Android SDK 26+ (minSdk 26, compileSdk 35, targetSdk 36)
 - **Language**: Mixed Java and Kotlin (layers/ is Kotlin; activities/, control/, renderer/ are predominantly Java)
 - **Rendering**: OpenGL ES 1.x (GL10 API via `GLSurfaceView.Renderer`)
-- **DI Framework**: Dagger 2 (not Hilt)
+- **DI Framework**: Hilt
 - **Data Format**: Protocol Buffers proto2 (binary assets in `app/src/main/assets/*.binary`)
 - **Testing**: JUnit 4, Robolectric, Mockito, Espresso
 
@@ -122,3 +122,4 @@ specs/
 | Gradle | 8.13 | |
 | compileSdk | 35 | |
 | minSdk | 26 | Android 8.0+ |
+oid 8.0+ |

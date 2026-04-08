@@ -49,7 +49,10 @@ import java.util.TimeZone;
 import javax.annotation.Nullable;
 import javax.inject.Inject;
 
-public class DiagnosticActivity extends InjectableActivity
+import dagger.hilt.android.AndroidEntryPoint;
+
+@AndroidEntryPoint
+public class DiagnosticActivity extends androidx.fragment.app.FragmentActivity
     implements SensorEventListener, ActivityLightLevelChanger.NightModeable {
   private static final String TAG = MiscUtil.getTag(DiagnosticActivity.class);
   private static final int UPDATE_PERIOD_MILLIS = 500;
@@ -79,9 +82,6 @@ public class DiagnosticActivity extends InjectableActivity
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    DaggerDiagnosticActivityComponent.builder().applicationComponent(
-      getApplicationComponent()).diagnosticActivityModule(new DiagnosticActivityModule(this))
-          .build().inject(this);
     setContentView(R.layout.activity_diagnostic);
     EdgeToEdgeFixer.applyEdgeToEdgeFixForActionBarActivity(this);
   }

@@ -8,6 +8,7 @@ import android.content.res.Resources
 import android.hardware.SensorManager
 import android.location.LocationManager
 import android.net.ConnectivityManager
+import android.os.PowerManager
 import android.util.Log
 import androidx.core.content.getSystemService
 import androidx.preference.PreferenceManager
@@ -18,6 +19,9 @@ import com.google.android.stardroid.util.AnalyticsInterface
 import com.google.android.stardroid.util.MiscUtil.getTag
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
+import dagger.hilt.components.SingletonComponent
 import java.util.concurrent.ScheduledThreadPoolExecutor
 import javax.inject.Named
 import javax.inject.Singleton
@@ -27,22 +31,23 @@ import javax.inject.Singleton
  * Created by johntaylor on 3/26/16.
  */
 @Module
-class ApplicationModule(private val app: StardroidApplication) {
+@InstallIn(SingletonComponent::class)
+class ApplicationModule {
 
   @Provides
   @Singleton
-  fun provideApplication() = app
-
-  @Provides
-  fun provideContext(): Context = app
-
-  @Provides
-  @Singleton
-  fun provideSharedPreferences(): SharedPreferences = PreferenceManager.getDefaultSharedPreferences(app)
+  fun provideApplication(@ApplicationContext context: Context): StardroidApplication =
+      context as StardroidApplication
 
   @Provides
   @Singleton
-  fun provideLocationManager() = app.getSystemService<LocationManager>()
+  fun provideSharedPreferences(@ApplicationContext context: Context): SharedPreferences =
+      PreferenceManager.getDefaultSharedPreferences(context)
+
+  @Provides
+  @Singleton
+  fun provideLocationManager(@ApplicationContext context: Context) =
+      context.getSystemService<LocationManager>()
 
   @Provides
   @Singleton
@@ -53,12 +58,14 @@ class ApplicationModule(private val app: StardroidApplication) {
   @Provides
   @Singleton
   @Named("zero")
-  fun provideDefaultMagneticDeclinationCalculator(): MagneticDeclinationCalculator = ZeroMagneticDeclinationCalculator()
+  fun provideDefaultMagneticDeclinationCalculator(): MagneticDeclinationCalculator =
+      ZeroMagneticDeclinationCalculator()
 
   @Provides
   @Singleton
   @Named("real")
-  fun provideRealMagneticDeclinationCalculator(): MagneticDeclinationCalculator = RealMagneticDeclinationCalculator()
+  fun provideRealMagneticDeclinationCalculator(): MagneticDeclinationCalculator =
+      RealMagneticDeclinationCalculator()
 
   @Provides
   @Singleton
@@ -70,23 +77,30 @@ class ApplicationModule(private val app: StardroidApplication) {
 
   @Provides
   @Singleton
-  fun provideAssetManager() = app.assets
+  fun provideAssetManager(@ApplicationContext context: Context): AssetManager = context.assets
 
   @Provides
   @Singleton
-  fun provideResources() = app.resources
+  fun provideResources(@ApplicationContext context: Context): Resources = context.resources
 
   @Provides
   @Singleton
-  fun provideSensorManager() = app.getSystemService<SensorManager>()
+  fun provideSensorManager(@ApplicationContext context: Context) =
+      context.getSystemService<SensorManager>()
 
   @Provides
   @Singleton
-  fun provideConnectivityManager() = app.getSystemService<ConnectivityManager>()
+  fun provideConnectivityManager(@ApplicationContext context: Context) =
+      context.getSystemService<ConnectivityManager>()
 
   @Provides
   @Singleton
-  fun provideAccountManager(context: Context): AccountManager = AccountManager.get(context)
+  fun providePowerManager(@ApplicationContext context: Context) = context.getSystemService<PowerManager>()
+
+  @Provides
+  @Singleton
+  fun provideAccountManager(@ApplicationContext context: Context): AccountManager =
+      AccountManager.get(context)
 
   @Provides
   @Singleton

@@ -88,9 +88,9 @@ app/src/main/res/layout/
 
 ```text
 app/src/main/java/com/google/android/stardroid/activities/
-├── ImageGalleryActivity.kt                 # NEW — RecyclerView grid, Dagger-injected
-├── ImageGalleryActivityModule.kt           # NEW — Dagger module
-└── ImageGalleryActivityComponent.kt        # NEW — Dagger component
+├── ImageGalleryActivity.kt                 # NEW — RecyclerView grid, Hilt-injected
+├── ImageGalleryActivityModule.kt           # NEW — Hilt module
+
 
 app/src/main/java/com/google/android/stardroid/gallery/
 └── GalleryAdapter.kt                       # NEW — RecyclerView.Adapter with async thumbnail loading

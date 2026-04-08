@@ -35,7 +35,13 @@ import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
 import static org.hamcrest.Matchers.not;
 
+import dagger.hilt.android.testing.HiltAndroidRule;
+import dagger.hilt.android.testing.HiltAndroidTest;
+
+@HiltAndroidTest
 public class DynamicStarMapActivityTest {
+  @Rule
+  public HiltAndroidRule hiltRule = new HiltAndroidRule(this);
 
   private static class SetupRule extends ExternalResource {
     @Override

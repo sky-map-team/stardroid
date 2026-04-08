@@ -10,7 +10,7 @@ Sky Map is an Android planetarium app that displays the night sky in real-time u
 graph TB
     subgraph Android["Android Application (app/)"]
         UI["Activities & UI"]
-        DI["Dagger DI"]
+        DI["Hilt DI"]
         Sensors["Sensor Pipeline"]
         Control["AstronomerModel"]
         Layers["Layers (12)"]
@@ -58,7 +58,7 @@ See [Module Structure](../specs/architecture/module-structure.md) for package-le
 
 | Topic | Documentation |
 |-------|--------------|
-| Dependency Injection (Dagger 2) | [specs/architecture/dependency-injection.md](../specs/architecture/dependency-injection.md) |
+| Dependency Injection (Hilt) | [specs/architecture/dependency-injection.md](../specs/architecture/dependency-injection.md) |
 | Rendering Pipeline | [specs/rendering/README.md](../specs/rendering/README.md) |
 | Coordinate Transformation | [specs/architecture/README.md](../specs/architecture/README.md#coordinate-transformation) |
 | Data Flow | [specs/architecture/data-flow.md](../specs/architecture/data-flow.md) |
@@ -69,3 +69,4 @@ See [Module Structure](../specs/architecture/module-structure.md) for package-le
 - [specs/architecture/](../specs/architecture/README.md) — Full architecture documentation
 - [Design Documents Index](design/README.md) — Older design docs on sensors, rendering, ephemeris, and more
 - [CLAUDE.md](../CLAUDE.md) — AI-oriented codebase guide with build commands and testing notes
+s

@@ -29,40 +29,35 @@ import com.google.android.stardroid.StardroidApplication;
 import com.google.android.stardroid.activities.dialogs.EulaDialogFragment;
 import com.google.android.stardroid.activities.dialogs.WhatsNewDialogFragment;
 import com.google.android.stardroid.activities.util.ConstraintsChecker;
-import com.google.android.stardroid.inject.HasComponent;
 import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.MiscUtil;
 
 import javax.inject.Inject;
+import javax.inject.Named;
+
+import dagger.hilt.android.AndroidEntryPoint;
 
 /**
  * Shows a splash screen, then launch the next activity.
  */
-public class SplashScreenActivity extends InjectableActivity
-    implements EulaDialogFragment.EulaAcceptanceListener, WhatsNewDialogFragment.CloseListener,
-    HasComponent<SplashScreenComponent> {
+@AndroidEntryPoint
+public class SplashScreenActivity extends androidx.fragment.app.FragmentActivity
+    implements EulaDialogFragment.EulaAcceptanceListener, WhatsNewDialogFragment.CloseListener {
   private final static String TAG = MiscUtil.getTag(SplashScreenActivity.class);
 
   @Inject StardroidApplication app;
   @Inject Analytics analytics;
   @Inject SharedPreferences sharedPreferences;
-  @Inject Animation fadeAnimation;
-  @Inject EulaDialogFragment eulaDialogFragmentWithButtons;
+  @Inject @Named("fadeout") Animation fadeAnimation;
   @Inject FragmentManager fragmentManager;
-  @Inject WhatsNewDialogFragment whatsNewDialogFragment;
   @Inject ConstraintsChecker cc;
   private View graphic;
-  private SplashScreenComponent daggerComponent;
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
     Log.d(TAG, "onCreate");
     super.onCreate(savedInstanceState);
     setContentView(R.layout.splash);
-    daggerComponent = DaggerSplashScreenComponent.builder()
-        .applicationComponent(getApplicationComponent())
-        .splashScreenModule(new SplashScreenModule(this)).build();
-    daggerComponent.inject(this);
 
     graphic = findViewById(R.id.splash);
 
@@ -116,7 +111,7 @@ public class SplashScreenActivity extends InjectableActivity
     boolean eulaAlreadyConfirmed = (sharedPreferences.getInt(
         ApplicationConstants.READ_TOS_PREF_VERSION, -1) == EULA_VERSION_CODE);
     if (!eulaAlreadyConfirmed) {
-      eulaDialogFragmentWithButtons.show(fragmentManager, "Eula Dialog");
+      new EulaDialogFragment().show(fragmentManager, "Eula Dialog");
       return true;
     } else {
       return false;
@@ -147,7 +142,7 @@ public class SplashScreenActivity extends InjectableActivity
     if (whatsNewSeen) {
       launchSkyMap();
     } else {
-      whatsNewDialogFragment.show(fragmentManager, "Whats New Dialog");
+      new WhatsNewDialogFragment().show(fragmentManager, "Whats New Dialog");
     }
   }
 
@@ -165,10 +160,5 @@ public class SplashScreenActivity extends InjectableActivity
     cc.check();
     startActivity(intent);
     finish();
-  }
-
-  @Override
-  public SplashScreenComponent getComponent() {
-    return daggerComponent;
   }
 }

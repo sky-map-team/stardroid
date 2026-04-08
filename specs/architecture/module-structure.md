@@ -24,7 +24,7 @@ com.google.android.stardroid/
 ├── data/                # Data access layer
 ├── ephemeris/           # Solar system calculations
 ├── gallery/             # Image gallery feature
-├── inject/              # Dagger DI components
+├── inject/              # Hilt DI components
 ├── layers/              # Celestial object layers
 ├── math/                # Math utilities
 ├── provider/            # Content providers
@@ -180,16 +180,17 @@ Raw Catalogs → tools/Main.java → ASCII Protobuf Text → Binary Protobuf
 ### app/build.gradle (Groovy DSL)
 ```groovy
 plugins {
-    id 'com.android.application' version '8.13.2'
+    id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-    id 'kotlin-kapt'  // for Dagger 2 annotation processing
+    id 'com.google.dagger.hilt.android'
+    id 'kotlin-kapt'
 }
 
 dependencies {
     implementation project(':datamodel')
     implementation 'com.google.protobuf:protobuf-javalite:3.13.0'
-    implementation 'com.google.dagger:dagger:2.48'
-    kapt 'com.google.dagger:dagger-compiler:2.48'
+    implementation 'com.google.dagger:hilt-android:2.48'
+    kapt 'com.google.dagger:hilt-compiler:2.48'
 }
 ```
 
@@ -205,5 +206,8 @@ plugins {
 
 dependencies {
     implementation(project(":datamodel"))
+}
+```
+
 }
 ```

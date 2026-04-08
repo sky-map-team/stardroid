@@ -3,7 +3,6 @@ package com.google.android.stardroid.activities.dialogs;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
@@ -14,30 +13,25 @@ import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import androidx.preference.PreferenceManager;
-
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
 import com.google.android.stardroid.activities.util.NightModeHelper;
-import com.google.android.stardroid.inject.HasComponent;
 import com.google.android.stardroid.util.MiscUtil;
 
 import javax.inject.Inject;
 
+import dagger.hilt.android.AndroidEntryPoint;
+
 /**
  * Credits dialog fragment.
  */
+@AndroidEntryPoint
 public class CreditsDialogFragment extends DialogFragment {
   private static final String TAG = MiscUtil.getTag(CreditsDialogFragment.class);
-  @Inject Activity parentActivity;
-
-  public interface ActivityComponent {
-    void inject(CreditsDialogFragment fragment);
-  }
-
+  @Inject SharedPreferences preferences;
   @Override
   public Dialog onCreateDialog(Bundle savedInstanceState) {
-    ((HasComponent<ActivityComponent>) getActivity()).getComponent().inject(this);
+    final Activity parentActivity = requireActivity();
 
     LayoutInflater inflater = parentActivity.getLayoutInflater();
     View view = inflater.inflate(R.layout.webview_dialog, null);
@@ -53,7 +47,6 @@ public class CreditsDialogFragment extends DialogFragment {
         parentActivity.getString(R.string.sponsors_text),
         parentActivity.getString(R.string.contributors_text));
 
-    SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(parentActivity);
     boolean isNight = ActivityLightLevelManager.isNightMode(preferences);
     String bodyClass = isNight ? " class=\"night-mode\"" : "";
     String html = "<!DOCTYPE html><html><head>" +

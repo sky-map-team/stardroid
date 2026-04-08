@@ -2,8 +2,9 @@ package com.google.android.stardroid.activities
 
 import android.app.SearchManager
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
-import androidx.preference.PreferenceManager
+import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.stardroid.R
@@ -14,33 +15,26 @@ import com.google.android.stardroid.activities.util.NightModeHelper
 import com.google.android.stardroid.education.ObjectInfo
 import com.google.android.stardroid.education.ObjectInfoRegistry
 import com.google.android.stardroid.gallery.GalleryAdapter
-import com.google.android.stardroid.inject.HasComponent
+import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 /**
  * Displays a scrollable grid of celestial object thumbnails sourced from [ObjectInfoRegistry].
  * Tapping a thumbnail shows its info card via [ObjectInfoDialogFragment].
  */
-class ImageGalleryActivity : InjectableActivity(),
-    HasComponent<ImageGalleryActivityComponent>,
+@AndroidEntryPoint
+class ImageGalleryActivity : FragmentActivity(),
     ActivityLightLevelChanger.NightModeable,
     ObjectInfoDialogFragment.OnFindClickedListener {
 
     @Inject lateinit var registry: ObjectInfoRegistry
     @Inject lateinit var activityLightLevelManager: ActivityLightLevelManager
-
-    override lateinit var component: ImageGalleryActivityComponent
-        private set
+    @Inject lateinit var sharedPreferences: SharedPreferences
 
     private lateinit var galleryAdapter: GalleryAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        component = DaggerImageGalleryActivityComponent.builder()
-            .applicationComponent(getApplicationComponent())
-            .imageGalleryActivityModule(ImageGalleryActivityModule(this))
-            .build()
-        component.inject(this)
 
         setContentView(R.layout.activity_image_gallery)
 
@@ -73,8 +67,7 @@ class ImageGalleryActivity : InjectableActivity(),
 
     override fun onFindClicked(info: ObjectInfo) {
         // Ensure the relevant layers are visible so the object can be found.
-        val prefs = PreferenceManager.getDefaultSharedPreferences(this)
-        prefs.edit()
+        sharedPreferences.edit()
             .putBoolean("source_provider.0", true) // Stars
             .putBoolean("source_provider.1", true) // Constellations
             .putBoolean("source_provider.2", true) // Deep Sky Objects

@@ -3,6 +3,7 @@ package com.google.android.stardroid.activities.dialogs;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -13,43 +14,47 @@ import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import androidx.preference.PreferenceManager;
-
 import com.google.android.stardroid.R;
 import com.google.android.stardroid.StardroidApplication;
 import com.google.android.stardroid.activities.util.ActivityLightLevelManager;
 import com.google.android.stardroid.activities.util.NightModeHelper;
-import com.google.android.stardroid.inject.HasComponent;
 import com.google.android.stardroid.util.MiscUtil;
 
 import javax.inject.Inject;
 
+import dagger.hilt.android.AndroidEntryPoint;
+
 /**
  * Created by johntaylor on 6/10/16.
  */
+@AndroidEntryPoint
 public class WhatsNewDialogFragment extends DialogFragment {
   private static final String TAG = MiscUtil.getTag(WhatsNewDialogFragment.class);
-  @Inject Activity parentActivity;
   @Inject StardroidApplication application;
+  @Inject SharedPreferences preferences;
   private CloseListener closeListener;
 
   public interface CloseListener {
     void dialogClosed();
   }
 
-  public void setCloseListener(CloseListener closeListener) {
-    this.closeListener = closeListener;
+  @Override
+  public void onAttach(Context context) {
+    super.onAttach(context);
+    if (context instanceof CloseListener) {
+      closeListener = (CloseListener) context;
+    }
   }
 
-  public interface ActivityComponent {
-    void inject(WhatsNewDialogFragment fragment);
+  @Override
+  public void onDetach() {
+    super.onDetach();
+    closeListener = null;
   }
 
   @Override
   public Dialog onCreateDialog(Bundle savedInstanceState) {
-    // Activities using this dialog MUST implement this interface.  Obviously.
-    ((HasComponent<ActivityComponent>) getActivity()).getComponent().inject(this);
-
+    final Activity parentActivity = requireActivity();
     LayoutInflater inflater = parentActivity.getLayoutInflater();
     View view = inflater.inflate(R.layout.whatsnew_view, null);
 
@@ -67,7 +72,6 @@ public class WhatsNewDialogFragment extends DialogFragment {
     String betaUserHelpText = parentActivity.getString(R.string.beta_user_help_text);
     String whatsNewText = String.format(parentActivity.getString(R.string.whats_new_text),
         application.getVersionName(), whatsNewContent, betaUserHelpText);
-    SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(parentActivity);
     boolean isNight = ActivityLightLevelManager.isNightMode(preferences);
     String bodyClass = isNight ? " class=\"night-mode\"" : "";
     String html = "<!DOCTYPE html><html><head>" +

@@ -14,6 +14,7 @@ package com.google.android.stardroid.activities.dialogs
 import android.app.Activity
 import android.app.AlertDialog
 import android.app.Dialog
+import android.content.SharedPreferences
 import android.graphics.PorterDuff
 import android.os.Build
 import android.os.Bundle
@@ -22,15 +23,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.preference.PreferenceManager
 import com.google.android.stardroid.R
+import com.google.android.stardroid.activities.dialogs.ObjectInfoDialogFragment.Companion.newInstance
 import com.google.android.stardroid.activities.util.ActivityLightLevelManager
 import com.google.android.stardroid.activities.util.NightModeHelper
 import com.google.android.stardroid.education.ObjectInfo
-import com.google.android.stardroid.inject.HasComponent
 import com.google.android.stardroid.util.AssetImageLoader
 import com.google.android.stardroid.util.ImageLoadHandle
 import com.google.android.stardroid.util.MiscUtil
+import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 /**
@@ -40,19 +41,10 @@ import javax.inject.Inject
  * Use the [newInstance] factory method to create an instance with the required ObjectInfo.
  * This ensures the data survives configuration changes (e.g., screen rotation).
  */
+@AndroidEntryPoint
 class ObjectInfoDialogFragment : DialogFragment() {
-
-    @Inject
-    lateinit var parentActivity: Activity
-
+    @Inject lateinit var preferences: SharedPreferences
     private var imageLoadHandle: ImageLoadHandle? = null
-
-    /**
-     * Interface that hosting activities must implement for dependency injection.
-     */
-    interface ActivityComponent {
-        fun inject(fragment: ObjectInfoDialogFragment)
-    }
 
     /** Implemented by activities that host this dialog and want to handle the Find action. */
     interface OnFindClickedListener {
@@ -60,9 +52,8 @@ class ObjectInfoDialogFragment : DialogFragment() {
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-        // Activities using this dialog MUST implement this interface
-        @Suppress("UNCHECKED_CAST")
-        (activity as HasComponent<ActivityComponent>).component.inject(this)
+        val parentActivity = requireActivity()
+        val activity = parentActivity as? Activity
 
         // Retrieve ObjectInfo from arguments (survives configuration changes)
         val info = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
@@ -80,8 +71,7 @@ class ObjectInfoDialogFragment : DialogFragment() {
                 .create()
         }
 
-        val prefs = PreferenceManager.getDefaultSharedPreferences(parentActivity)
-        val isNight = ActivityLightLevelManager.isNightMode(prefs)
+        val isNight = ActivityLightLevelManager.isNightMode(preferences)
         val nightTextColor = parentActivity.getColor(R.color.night_text_color)
 
         val inflater = parentActivity.layoutInflater

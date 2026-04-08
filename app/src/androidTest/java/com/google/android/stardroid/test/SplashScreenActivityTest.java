@@ -34,12 +34,18 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 
+import dagger.hilt.android.testing.HiltAndroidRule;
+import dagger.hilt.android.testing.HiltAndroidTest;
+
 /*
 If you're running this on your phone and you get an error about
 "NoActivityResumed" check you've unlocked your phone.
  */
-
+@HiltAndroidTest
 public class SplashScreenActivityTest {
+  @Rule
+  public HiltAndroidRule hiltRule = new HiltAndroidRule(this);
+
   private static class PreferenceCleanerRule extends ExternalResource {
     @Override
     protected void before() throws Throwable {

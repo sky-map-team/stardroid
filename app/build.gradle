@@ -3,6 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android' version '2.0.20'
     id 'org.jetbrains.kotlin.kapt' version '2.0.20'
     id 'org.jetbrains.kotlin.plugin.parcelize' version '2.0.20'
+    id 'com.google.dagger.hilt.android' version '2.48'
 }
 
 
@@ -61,7 +62,7 @@ android {
         targetSdk 36
         versionCode 1624
         versionName "1.13.0:Mars"
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "com.google.android.stardroid.test.HiltTestRunner"
         resourceConfigurations += ['en', 'b+en+GB', 'ar', 'ca', 'cs', 'cy', 'da', 'de', 'el', 'es', 'fa', 'fr', 'hi', 'hu', 'id', 'it', 'ja', 'ko', 'ms', 'nb', 'nl', 'pl', 'pt', 'ru', 'sk', 'sl', 'sv', 'th', 'tr', 'uk', 'b+zh+Hans', 'b+zh+Hant']
     }
 
@@ -141,8 +142,8 @@ dependencies {
 // Third-party
     implementation 'com.google.guava:guava:33.3.1-jre'
     def dagger_version = "2.48"
-    implementation "com.google.dagger:dagger:$dagger_version"
-    kapt "com.google.dagger:dagger-compiler:$dagger_version"
+    implementation "com.google.dagger:hilt-android:$dagger_version"
+    kapt "com.google.dagger:hilt-android-compiler:$dagger_version"
     // For annotations not in Android but needed by Dagger
     implementation 'javax.annotation:jsr250-api:1.0'
     // Lite version for Android - it's lighter (obviously) but also doesn't use reflection
@@ -171,5 +172,9 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.7.0'
     // UI testing with UI Automator - needed for dialog testing on Android 15+
     androidTestImplementation 'androidx.test.uiautomator:uiautomator:2.3.0'
+    androidTestImplementation "com.google.dagger:hilt-android-testing:$dagger_version"
+    kaptAndroidTest "com.google.dagger:hilt-android-compiler:$dagger_version"
+    testImplementation "com.google.dagger:hilt-android-testing:$dagger_version"
+    kaptTest "com.google.dagger:hilt-android-compiler:$dagger_version"
 }
 

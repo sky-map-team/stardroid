@@ -6,7 +6,7 @@ This section documents the architectural patterns and system design of Sky Map.
 
 | Specification | Description |
 |--------------|-------------|
-| [Dependency Injection](dependency-injection.md) | Dagger 2 component hierarchy |
+| [Dependency Injection](dependency-injection.md) | Hilt component hierarchy |
 | [Module Structure](module-structure.md) | app/, datamodel/, tools/ modules |
 | [Data Flow](data-flow.md) | Data pipeline from catalogs to rendering |
 
@@ -86,7 +86,7 @@ This section documents the architectural patterns and system design of Sky Map.
 
 ## Key Design Patterns
 
-### Dependency Injection (Dagger 2)
+### Dependency Injection (Hilt)
 Two-level component hierarchy:
 1. **ApplicationComponent** - App-wide singletons
 2. **Activity Components** - Per-activity scoped instances
@@ -140,7 +140,7 @@ See [sensors/orientation.md](../sensors/orientation.md) and [sensors/coordinate-
 
 | File | Role |
 |------|------|
-| `app/src/main/java/com/google/android/stardroid/StardroidApplication.kt` | Application entry point, Dagger initialization, sensor detection |
+| `app/src/main/java/com/google/android/stardroid/StardroidApplication.kt` | Application entry point, Hilt initialization, sensor detection |
 | `app/src/main/java/com/google/android/stardroid/activities/DynamicStarMapActivity.java` | Main interactive star map |
 | `app/src/main/java/com/google/android/stardroid/control/AstronomerModel.java` | Coordinate transformation logic |
 | `app/src/main/java/com/google/android/stardroid/renderer/SkyRenderer.java` | OpenGL rendering |

@@ -24,9 +24,8 @@ public class GooglePlayServicesChecker extends AbstractGooglePlayServicesChecker
   @Inject
   GooglePlayServicesChecker(Activity parent, SharedPreferences preferences,
                             GoogleApiAvailability apiAvailability,
-                            LocationPermissionDeniedDialogFragment permissionDeniedDialog,
                             FragmentManager fragmentManager) {
-    super(parent, preferences, permissionDeniedDialog, fragmentManager);
+    super(parent, preferences, new LocationPermissionDeniedDialogFragment(), fragmentManager);
     this.apiAvailability = apiAvailability;
   }
 

@@ -11,6 +11,7 @@
 // limitations under the License.
 package com.google.android.stardroid.activities.dialogs
 
+import android.content.SharedPreferences
 import android.graphics.PorterDuff
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -18,17 +19,20 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.preference.PreferenceManager
 import com.google.android.stardroid.R
 import com.google.android.stardroid.activities.util.ActivityLightLevelManager
 import com.google.android.stardroid.util.AssetImageLoader
 import com.google.android.stardroid.util.ImageLoadHandle
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 /**
  * Fullscreen dialog that displays an expanded celestial image.
  * Tapping the image or pressing back closes the dialog.
  */
+@AndroidEntryPoint
 class ImageExpandDialogFragment : DialogFragment() {
+    @Inject lateinit var preferences: SharedPreferences
 
     private var imageLoadHandle: ImageLoadHandle? = null
 
@@ -42,8 +46,7 @@ class ImageExpandDialogFragment : DialogFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val prefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
-        val isNight = ActivityLightLevelManager.isNightMode(prefs)
+        val isNight = ActivityLightLevelManager.isNightMode(preferences)
         val nightTextColor = requireContext().getColor(R.color.night_text_color)
 
         val view = inflater.inflate(R.layout.dialog_image_expand, container, false)

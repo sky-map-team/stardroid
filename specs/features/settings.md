@@ -90,7 +90,7 @@ Defined in `res/xml/preference_screen.xml`:
 ### Reading Preferences
 
 ```kotlin
-// Inject SharedPreferences via Dagger
+// Inject SharedPreferences via Hilt
 @Inject lateinit var sharedPreferences: SharedPreferences
 
 // Read a preference

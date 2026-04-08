@@ -137,7 +137,7 @@ kotlin.code.style=official
 |------------|---------|
 | AndroidX AppCompat | Compatibility |
 | Material Components | UI components |
-| Dagger 2 | Dependency injection |
+| Hilt | Dependency injection |
 | Protocol Buffers (protobuf-javalite) | Data serialization |
 
 ### Testing

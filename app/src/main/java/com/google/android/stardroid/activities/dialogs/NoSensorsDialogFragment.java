@@ -13,29 +13,24 @@ import android.widget.CheckBox;
 
 import com.google.android.stardroid.ApplicationConstants;
 import com.google.android.stardroid.R;
-import com.google.android.stardroid.inject.HasComponent;
 import com.google.android.stardroid.util.MiscUtil;
 
 import javax.inject.Inject;
+
+import dagger.hilt.android.AndroidEntryPoint;
 
 /**
  * No sensors dialog fragment.
  * Created by johntaylor on 4/9/16.
  */
+@AndroidEntryPoint
 public class NoSensorsDialogFragment extends DialogFragment {
   private static final String TAG = MiscUtil.getTag(NoSensorsDialogFragment.class);
-  @Inject Activity parentActivity;
   @Inject SharedPreferences preferences;
-
-  public interface ActivityComponent {
-    void inject(NoSensorsDialogFragment fragment);
-  }
 
   @Override
   public Dialog onCreateDialog(Bundle savedInstanceState) {
-    // Activities using this dialog MUST implement this interface.  Obviously.
-    ((HasComponent<ActivityComponent>) getActivity()).getComponent().inject(this);
-
+    final Activity parentActivity = requireActivity();
     LayoutInflater inflater = parentActivity.getLayoutInflater();
     final View view = inflater.inflate(R.layout.no_sensor_warning, null);
     return new AlertDialog.Builder(parentActivity)

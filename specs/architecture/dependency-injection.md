@@ -1,136 +1,74 @@
 # Dependency Injection
 
-Sky Map uses Dagger 2 for dependency injection with a two-level component hierarchy.
+Sky Map uses Hilt for dependency injection.
 
 ## Component Hierarchy
 
-```
-┌─────────────────────────────────────────────┐
-│           ApplicationComponent              │
-│              (Singleton)                    │
-│                                             │
-│  Provides:                                  │
-│  • SharedPreferences                        │
-│  • SensorManager                            │
-│  • LocationManager                          │
-│  • LayerManager                             │
-│  • Analytics                                │
-│  • ConnectivityManager                      │
-└─────────────────┬───────────────────────────┘
-                  │ depends on
-                  ▼
-┌─────────────────────────────────────────────┐
-│          Activity Components                │
-│            (@PerActivity)                   │
-│                                             │
-│  • DynamicStarMapComponent                  │
-│  • EditSettingsActivityComponent            │
-│  • ImageGalleryActivityComponent            │
-│  • DiagnosticActivityComponent              │
-│  • CompassCalibrationComponent              │
-└─────────────────────────────────────────────┘
-```
+Hilt provides a standard set of components with predefined scopes and lifetimes:
 
-## ApplicationComponent
+- **SingletonComponent**: For application-wide dependencies (lifetime: app process)
+- **ActivityComponent**: For dependencies scoped to an activity (lifetime: activity instance)
+- **FragmentComponent**: For dependencies scoped to a fragment
+- **ViewModelComponent**: For dependencies scoped to a ViewModel
 
-**Scope**: Singleton (app lifetime)
-**Created**: `StardroidApplication.onCreate()`
+## Application Setup
+
+The `StardroidApplication` is annotated with `@HiltAndroidApp`, which triggers Hilt's code generation, including the base class for the application that serves as the application-level dependency container.
+
+## Activity Setup
+
+Activities like `DynamicStarMapActivity` are annotated with `@AndroidEntryPoint`. This enables Hilt to inject dependencies into the activity.
 
 ```java
-@Singleton
-@Component(modules = {ApplicationModule.class})
-public interface ApplicationComponent {
-    // Provision methods for activity components
-    SharedPreferences provideSharedPreferences();
-    SensorManager provideSensorManager();
-    LayerManager provideLayerManager();
-    Analytics provideAnalytics();
+@AndroidEntryPoint
+public class DynamicStarMapActivity extends FragmentActivity {
+    @Inject SharedPreferences sharedPreferences;
+    @Inject LayerManager layerManager;
     // ...
 }
 ```
+
+## Modules
 
 ### ApplicationModule
 
-Provides app-wide dependencies:
+Provides application-wide dependencies. It is installed in the `SingletonComponent`.
 
 ```java
 @Module
+@InstallIn(SingletonComponent.class)
 public class ApplicationModule {
-    @Provides @Singleton
-    SharedPreferences provideSharedPreferences(Application app) {
-        return PreferenceManager.getDefaultSharedPreferences(app);
-    }
-
-    @Provides @Singleton
-    SensorManager provideSensorManager(Application app) {
-        return (SensorManager) app.getSystemService(SENSOR_SERVICE);
+    @Provides
+    @Singleton
+    public SharedPreferences provideSharedPreferences(@ApplicationContext Context context) {
+        return PreferenceManager.getDefaultSharedPreferences(context);
     }
     // ...
 }
 ```
 
-## Activity Components
+### Activity Modules
 
-Each activity defines its own Dagger component that depends on `ApplicationComponent`.
+Dependencies scoped to activities are provided by modules installed in `ActivityComponent`.
 
-### DynamicStarMapComponent
+- **ActivityBindingsModule**: Provides bindings common to all activities (e.g., `Window`, `FragmentManager`, `Handler`).
+- **DynamicStarMapActivityModule**: Provides dependencies specific to `DynamicStarMapActivity`.
+- **DynamicStarMapGmsModule**: Provides GMS-specific dependencies (e.g., `GoogleApiAvailability`), only included in the `gms` flavor.
+- **ImageGalleryActivityModule**: Provides dependencies specific to `ImageGalleryActivity`.
 
-The main star map activity's component:
-
-```java
-@PerActivity
-@Component(
-    dependencies = {ApplicationComponent.class},
-    modules = {AbstractDynamicStarMapModule.class}
-)
-public interface DynamicStarMapComponent {
-    void inject(DynamicStarMapActivity activity);
-}
-```
-
-### @PerActivity Scope
-
-Custom scope annotation for activity-lifetime instances:
+Example of an activity-specific module:
 
 ```java
-@Scope
-@Retention(RUNTIME)
-public @interface PerActivity {}
-```
-
-## Component Access Pattern
-
-Activities implement `HasComponent<T>` interface:
-
-```java
-public class DynamicStarMapActivity extends Activity
-    implements HasComponent<DynamicStarMapComponent> {
-
-    private DynamicStarMapComponent component;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        component = DaggerDynamicStarMapComponent.builder()
-            .applicationComponent(getApplicationComponent())
-            .abstractDynamicStarMapModule(new DynamicStarMapModule(this))
-            .build();
-        component.inject(this);
-    }
-
-    @Override
-    public DynamicStarMapComponent getComponent() {
-        return component;
-    }
-}
-```
-
-## Accessing Application Component
-
-```java
-// From any Activity
-ApplicationComponent getApplicationComponent() {
-    return ((StardroidApplication) getApplication()).getApplicationComponent();
+@Module
+@InstallIn(ActivityComponent.class)
+public class DynamicStarMapActivityModule {
+  @Provides
+  @Named("timetravel")
+  @Nullable
+  MediaPlayer provideTimeTravelNoise(Activity activity) {
+    return prepareMediaPlayerAsync(activity, R.raw.timetravel);
+  }
+  // ...
 }
 ```
 
@@ -155,13 +93,14 @@ ApplicationComponent getApplicationComponent() {
 | `ConnectivityManager` | Network state |
 | `Analytics` | Usage tracking |
 
-## Module Structure
+## Adding Dialog Fragments
 
+Dialog fragments are typically instantiated manually in the host activity using the `newInstance()` pattern. They are NOT generally provided via Hilt `@Provides` methods.
+
+```java
+// In DynamicStarMapActivity
+helpDialogFragment = new HelpDialogFragment();
+helpDialogFragment.show(fragmentManager, "Help Dialog");
 ```
-com.stardroid.awakening.inject/
-├── HasComponent.kt             # Component access interface
-├── PerActivity.kt              # Activity scope annotation
-└── modules/
-    ├── ApplicationModule.kt     # App-wide providers
-    └── DynamicStarMapModule.kt  # Star map providers
-```
+
+If a `DialogFragment` needs dependencies, it can be annotated with `@AndroidEntryPoint` to receive them via field injection.

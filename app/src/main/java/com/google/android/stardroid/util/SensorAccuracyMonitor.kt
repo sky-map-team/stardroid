@@ -11,6 +11,7 @@ import android.util.Log
 import com.google.android.stardroid.activities.CompassCalibrationActivity
 import com.google.android.stardroid.base.TimeConstants
 import com.google.android.stardroid.util.MiscUtil.getTag
+import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 
 /**
@@ -18,7 +19,7 @@ import javax.inject.Inject
  * Created by johntaylor on 4/24/16.
  */
 class SensorAccuracyMonitor @Inject internal constructor(
-  sensorManager: SensorManager?, context: Context,
+  sensorManager: SensorManager?, @ApplicationContext context: Context,
   sharedPreferences: SharedPreferences,
   toaster: Toaster,
   private val analytics: AnalyticsInterface
@@ -88,6 +89,7 @@ class SensorAccuracyMonitor @Inject internal constructor(
       val intent = Intent(context, CompassCalibrationActivity::class.java)
       intent.putExtra(CompassCalibrationActivity.HIDE_CHECKBOX, false)
       intent.putExtra(CompassCalibrationActivity.AUTO_DISMISSABLE, true)
+      intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
       context.startActivity(intent)
     }
   }

@@ -35,7 +35,6 @@ import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.preference.PreferenceManager;
 
 import com.google.android.stardroid.ApplicationConstants;
 import com.google.android.stardroid.R;
@@ -69,9 +68,11 @@ public class LocationController extends AbstractController implements LocationLi
 
   private Activity activity;
   private LocationManager locationManager;
+  private SharedPreferences preferences;
 
   @Inject
-  public LocationController(Activity activity, @Nullable LocationManager locationManager) {
+  public LocationController(Activity activity, @Nullable LocationManager locationManager,
+      SharedPreferences preferences) {
     this.activity = activity;
     if (locationManager != null) {
       Log.d(TAG, "Got location Manager");
@@ -79,17 +80,16 @@ public class LocationController extends AbstractController implements LocationLi
       Log.d(TAG, "Didn't get location manager");
     }
     this.locationManager = locationManager;
+    this.preferences = preferences;
   }
 
   @Override
   public void start() {
     Log.d(TAG, "LocationController start");
     lastStatus = LocationStatus.OK;
-    boolean noAutoLocate = PreferenceManager.getDefaultSharedPreferences(activity).getBoolean(
-        NO_AUTO_LOCATE, false);
+    boolean noAutoLocate = preferences.getBoolean(NO_AUTO_LOCATE, false);
 
-    boolean forceGps = PreferenceManager.getDefaultSharedPreferences(activity).getBoolean(FORCE_GPS,
-        false);
+    boolean forceGps = preferences.getBoolean(FORCE_GPS, false);
 
     if (noAutoLocate) {
       Log.d(TAG, "User has elected to set location manually.");
@@ -197,8 +197,7 @@ public class LocationController extends AbstractController implements LocationLi
     dialog.setNegativeButton(android.R.string.cancel, new OnClickListener() {
       public void onClick(DialogInterface dialog, int which) {
         Log.d(TAG, "User doesn't want to enable location.");
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(activity);
-        Editor editor = prefs.edit();
+        Editor editor = preferences.edit();
         editor.putBoolean(NO_AUTO_LOCATE, true);
         editor.apply();
         setLocationFromPrefs();
@@ -209,10 +208,8 @@ public class LocationController extends AbstractController implements LocationLi
 
   private void setLocationFromPrefs() {
     Log.d(TAG, "Setting location from preferences");
-    String longitude_s = PreferenceManager.getDefaultSharedPreferences(activity)
-                                          .getString("longitude", "0");
-    String latitude_s = PreferenceManager.getDefaultSharedPreferences(activity)
-                                         .getString("latitude", "0");
+    String longitude_s = preferences.getString("longitude", "0");
+    String latitude_s = preferences.getString("latitude", "0");
 
     float longitude = 0, latitude = 0;
     try {

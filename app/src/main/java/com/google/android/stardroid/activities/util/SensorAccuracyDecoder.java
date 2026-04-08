@@ -8,6 +8,8 @@ import com.google.android.stardroid.R;
 
 import javax.inject.Inject;
 
+import dagger.hilt.android.qualifiers.ApplicationContext;
+
 /**
  * Created by johntaylor on 4/24/16.
  */
@@ -16,7 +18,7 @@ public class SensorAccuracyDecoder {
   private Context context;
 
   @Inject
-  public SensorAccuracyDecoder(Context context) {
+  public SensorAccuracyDecoder(@ApplicationContext Context context) {
     this.context = context;
     this.resources = context.getResources();
   }
