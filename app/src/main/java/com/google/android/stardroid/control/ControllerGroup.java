@@ -25,12 +25,15 @@ import java.util.Date;
 
 import javax.inject.Inject;
 
+import dagger.hilt.android.scopes.ActivityScoped;
+
 /**
  * Manages all the different controllers that affect the model of the observer.
  * Is both a factory and acts as a facade to the underlying controllers.
  *
  * @author John Taylor
  */
+@ActivityScoped
 public class ControllerGroup implements Controller {
   private final static String TAG = MiscUtil.getTag(ControllerGroup.class);
   private final ArrayList<Controller> controllers = new ArrayList<Controller>();
