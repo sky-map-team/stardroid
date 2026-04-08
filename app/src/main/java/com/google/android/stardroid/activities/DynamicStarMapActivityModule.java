@@ -50,29 +50,6 @@ public abstract class DynamicStarMapActivityModule {
 
   @Provides
   @ActivityScoped
-  public static FullscreenControlsManager provideFullscreenControlsManager(Activity activity) {
-    ButtonLayerView providerButtons = activity.findViewById(R.id.layer_buttons_control);
-    int numChildren = providerButtons.getChildCount();
-    List<View> buttonViews = new ArrayList<>();
-    for (int i = 0; i < numChildren; ++i) {
-      ImageButton button = (ImageButton) providerButtons.getChildAt(i);
-      buttonViews.add(button);
-    }
-    View manualAutoToggle = activity.findViewById(R.id.manual_auto_toggle);
-    buttonViews.add(manualAutoToggle);
-
-    ButtonLayerView manualButtonLayer = activity.findViewById(
-        R.id.layer_manual_auto_toggle);
-
-    return new FullscreenControlsManager(
-        activity,
-        activity.findViewById(R.id.main_sky_view),
-        Lists.asList(manualButtonLayer, providerButtons),
-        buttonViews);
-  }
-
-  @Provides
-  @ActivityScoped
   public static GestureDetector provideGestureDetector(Activity activity, GestureInterpreter gestureInterpreter) {
     return new GestureDetector(activity, gestureInterpreter);
   }
