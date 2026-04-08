@@ -26,6 +26,11 @@ import dagger.hilt.android.AndroidEntryPoint;
 @AndroidEntryPoint
 public class NoSensorsDialogFragment extends DialogFragment {
   private static final String TAG = MiscUtil.getTag(NoSensorsDialogFragment.class);
+
+  public static NoSensorsDialogFragment newInstance() {
+    return new NoSensorsDialogFragment();
+  }
+
   @Inject SharedPreferences preferences;
 
   @Override

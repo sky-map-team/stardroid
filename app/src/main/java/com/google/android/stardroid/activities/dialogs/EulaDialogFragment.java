@@ -32,6 +32,11 @@ import dagger.hilt.android.AndroidEntryPoint;
 @AndroidEntryPoint
 public class EulaDialogFragment extends DialogFragment {
   private static final String TAG = MiscUtil.getTag(EulaDialogFragment.class);
+
+  public static EulaDialogFragment newInstance() {
+    return new EulaDialogFragment();
+  }
+
   @Inject Analytics analytics;
   @Inject SharedPreferences preferences;
   private EulaAcceptanceListener resultListener;

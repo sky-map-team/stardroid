@@ -36,7 +36,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.view.animation.Animation;
@@ -87,8 +86,9 @@ import com.google.android.stardroid.renderer.RendererController;
 import com.google.android.stardroid.renderer.SkyRenderer;
 import com.google.android.stardroid.search.SearchResult;
 import com.google.android.stardroid.touch.DragRotateZoomGestureDetector;
+import com.google.android.stardroid.touch.GestureDetectorFactory;
 import com.google.android.stardroid.touch.GestureInterpreter;
-import com.google.android.stardroid.touch.MapMover;
+import com.google.android.stardroid.touch.GestureInterpreterFactory;
 import com.google.android.stardroid.util.Analytics;
 import com.google.android.stardroid.util.AnalyticsInterface;
 import com.google.android.stardroid.util.MiscUtil;
@@ -186,8 +186,12 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
 
   private ImageButton cancelSearchButton;
   @Inject ControllerGroup controller;
-  @Inject GestureDetector gestureDetector;
-  @Inject GestureInterpreter gestureInterpreter;
+  private GestureDetector gestureDetector;
+  @Inject
+  GestureDetectorFactory gestureDetectorFactory;
+  @Inject
+  GestureInterpreterFactory gestureInterpreterFactory;
+  private GestureInterpreter gestureInterpreter;
   @Inject AstronomerModel model;
   private RendererController rendererController;
   private boolean nightMode = false;
@@ -214,7 +218,6 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
   @Inject FragmentManager fragmentManager;
   @Inject ObjectInfoTapHandler objectInfoTapHandler;
   @Inject SensorAccuracyMonitor sensorAccuracyMonitor;
-  @Inject MapMover mapMover;
   @Inject DragRotateZoomGestureDetector dragZoomRotateDetector;
   private FullscreenControlsManager fullscreenControlsManager;
 
@@ -416,7 +419,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
           .getBoolean(ApplicationConstants.NO_WARN_ABOUT_MISSING_SENSORS, false)) {
         Log.d(TAG, "showing no sensor dialog");
         analytics.trackEvent(AnalyticsInterface.NO_SENSORS_WARNING_EVENT, null);
-        showDialog(new NoSensorsDialogFragment(), "No sensors dialog");
+        showDialog(NoSensorsDialogFragment.newInstance(), NoSensorsDialogFragment.class.getSimpleName());
         // First time, force manual mode.
         sharedPreferences.edit().putBoolean(ApplicationConstants.AUTO_MODE_PREF_KEY, false)
             .apply();
@@ -499,11 +502,11 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
     } else if (itemId == R.id.menu_item_credits) {
       Log.d(TAG, "Credits");
       menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.CREDITS_OPENED_LABEL);
-      showDialog(new CreditsDialogFragment(), CreditsDialogFragment.class.getSimpleName());
+      showDialog(CreditsDialogFragment.newInstance(), CreditsDialogFragment.class.getSimpleName());
     } else if (itemId == R.id.menu_item_help) {
       Log.d(TAG, "Help");
       menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.HELP_OPENED_LABEL);
-      showDialog(new HelpDialogFragment(), "Help Dialog");
+      showDialog(HelpDialogFragment.newInstance(), HelpDialogFragment.class.getSimpleName());
     } else if (itemId == R.id.menu_item_dim) {
       Log.d(TAG, "Toggling nightmode");
       nightMode = !nightMode;
@@ -519,7 +522,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
       } else {
         Log.d(TAG, "Resuming current time travel dialog.");
       }
-      showDialog(new TimeTravelDialogFragment(), "Time Travel");
+      showDialog(TimeTravelDialogFragment.newInstance(), TimeTravelDialogFragment.class.getSimpleName());
     } else if (itemId == R.id.menu_item_gallery) {
       Log.d(TAG, "Loading gallery");
       menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.GALLERY_OPENED_LABEL);
@@ -527,7 +530,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
     } else if (itemId == R.id.menu_item_tos) {
       Log.d(TAG, "Loading ToS");
       menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.TOS_OPENED_LABEL);
-      showDialog(new EulaDialogFragment(), "Eula Dialog No Buttons");
+      showDialog(EulaDialogFragment.newInstance(), EulaDialogFragment.class.getSimpleName());
     } else if (itemId == R.id.menu_item_calibrate) {
       Log.d(TAG, "Loading Calibration");
       menuEventBundle.putString(Analytics.MENU_ITEM_EVENT_VALUE, Analytics.CALIBRATION_OPENED_LABEL);
@@ -624,7 +627,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
 
     if (status == LocationController.LocationStatus.PERMISSION_DENIED) {
       message = getString(R.string.location_warning_permission);
-      showDialog(new LocationPermissionDeniedDialogFragment(), "Location Warning");
+      showDialog(LocationPermissionDeniedDialogFragment.newInstance(), LocationPermissionDeniedDialogFragment.class.getSimpleName());
     } else if (status == LocationController.LocationStatus.MANUAL_NO_COORDS) {
       message = getString(R.string.location_warning_manual);
     } else {
@@ -829,7 +832,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
       Bundle failBundle = new Bundle();
       failBundle.putString(AnalyticsInterface.SEARCH_TERM, queryString);
       analytics.trackEvent(AnalyticsInterface.SEARCH_FAILED_EVENT, failBundle);
-      showDialog(new NoSearchResultsDialogFragment(), "No Search Results");
+      showDialog(NoSearchResultsDialogFragment.newInstance(), NoSearchResultsDialogFragment.class.getSimpleName());
     } else if (results.size() > 1) {
       Log.d(TAG, "Multiple results returned");
       showUserChooseResultDialog(results);
@@ -903,43 +906,46 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
     }
     PreferencesButton manualAutoToggle = findViewById(R.id.manual_auto_toggle);
     buttonViews.add(manualAutoToggle);
-    // Re-apply uniform night tint after each click, since PreferencesButton.setVisuallyOnOrOff()
-    // would otherwise dim the button via the on/off tint logic (fix for issue #661).
-    if (manualAutoToggle != null) {
-      manualAutoToggle.setOnClickListener(v -> {
-        if (nightMode) {
-          manualAutoToggle.setColorFilter(getColor(R.color.night_text_color),
-              PorterDuff.Mode.MULTIPLY);
-        } else {
-          manualAutoToggle.clearColorFilter();
-        }
-      });
-    }
 
+    // Set the dependencies on the gestureInterpreter that require the UI to be inflated
+    // so can't be done via constructor injection.
     ButtonLayerView manualButtonLayer = findViewById(R.id.layer_manual_auto_toggle);
     fullscreenControlsManager = new FullscreenControlsManager(
         this,
         findViewById(R.id.main_sky_view),
         Lists.asList(manualButtonLayer, providerButtons),
         buttonViews);
-    gestureInterpreter.setFullscreenControlsManager(fullscreenControlsManager);
+    gestureInterpreter = gestureInterpreterFactory.createGestureInterpreter(
+            fullscreenControlsManager,
+            new GestureInterpreter.ScreenDimensionsProvider() {
+              @Override
+              public int getScreenWidth() {
+                return skyView.getWidth();
+              }
+
+              @Override
+              public int getScreenHeight() {
+                return skyView.getHeight();
+              }
+            });
+    gestureDetector = gestureDetectorFactory.createGestureDetector(gestureInterpreter);
 
     // Set up the object info tap handler listener
+    // TODO(jontayler): can we just inject this?
     objectInfoTapHandler.setObjectTapListener(this::showObjectInfoDialog);
 
-    // Set up the gesture interpreter's screen dimensions provider using the skyView
-    gestureInterpreter.setScreenDimensionsProvider(
-        new GestureInterpreter.ScreenDimensionsProvider() {
-          @Override
-          public int getScreenWidth() {
-            return skyView.getWidth();
-          }
-
-          @Override
-          public int getScreenHeight() {
-            return skyView.getHeight();
-          }
-        });
+    // Re-apply uniform night tint after each click, since PreferencesButton.setVisuallyOnOrOff()
+    // would otherwise dim the button via the on/off tint logic (fix for issue #661).
+    if (manualAutoToggle != null) {
+      manualAutoToggle.setOnClickListener(v -> {
+        if (nightMode) {
+          manualAutoToggle.setColorFilter(getColor(R.color.night_text_color),
+                  PorterDuff.Mode.MULTIPLY);
+        } else {
+          manualAutoToggle.clearColorFilter();
+        }
+      });
+    }
   }
 
   private void applyWindowInsets(View view, boolean applyTop, boolean applyBottom) {

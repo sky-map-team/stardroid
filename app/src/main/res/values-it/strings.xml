@@ -244,5 +244,6 @@
     <string name="object_info_tap_to_expand" translation_description="Hint shown on image to tap to expand">Tocca per espandere</string>
     <string name="object_info_tap_to_close" translation_description="Hint shown on expanded image to tap to close">Tocca per chiudere</string>
     <string name="action_find_in_sky_map" translation_description="Button label that opens the star map and searches for the displayed object">Trova</string>
-
+    <string name="auto_level_horizon_on" translation_description="Toast message when auto-level horizon is enabled">Orizzonte auto-livello attivo</string>
+    <string name="auto_level_horizon_off" translation_description="Toast message when auto-level horizon is disabled">Orizzonte auto-livello disattivo</string>
 </resources>

@@ -48,12 +48,6 @@ public abstract class DynamicStarMapActivityModule {
   public abstract DragRotateZoomGestureDetector.DragRotateZoomGestureDetectorListener
       bindDragRotateZoomGestureDetectorListener(MapMover mapMover);
 
-  @Provides
-  @ActivityScoped
-  public static GestureDetector provideGestureDetector(Activity activity, GestureInterpreter gestureInterpreter) {
-    return new GestureDetector(activity, gestureInterpreter);
-  }
-
   // NOT @ActivityScoped — released in onPause(), Provider.get() must return a fresh instance
   // each call. See AGENTS.md.
   @Provides
