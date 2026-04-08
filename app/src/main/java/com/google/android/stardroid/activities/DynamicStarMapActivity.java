@@ -45,6 +45,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
@@ -196,6 +197,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
 
   @Inject SharedPreferences sharedPreferences;
   private GLSurfaceView skyView;
+  @Inject @Nullable PowerManager powerManager;
   private PowerManager.WakeLock wakeLock;
   private String searchTargetName;
   @Inject LayerManager layerManager;
@@ -270,9 +272,8 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
     // Search related
     setDefaultKeyMode(DEFAULT_KEYS_SEARCH_LOCAL);
 
-    PowerManager pm = ContextCompat.getSystemService(this, PowerManager.class);
-    if (pm != null) {
-      wakeLock = pm.newWakeLock(PowerManager.SCREEN_BRIGHT_WAKE_LOCK, TAG);
+    if (powerManager != null) {
+      wakeLock = powerManager.newWakeLock(PowerManager.SCREEN_BRIGHT_WAKE_LOCK, TAG);
     }
 
     // Were we started as the result of a search?

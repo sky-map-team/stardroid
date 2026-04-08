@@ -8,6 +8,7 @@ import android.content.res.Resources
 import android.hardware.SensorManager
 import android.location.LocationManager
 import android.net.ConnectivityManager
+import android.os.PowerManager
 import android.util.Log
 import androidx.core.content.getSystemService
 import androidx.preference.PreferenceManager
@@ -91,6 +92,10 @@ class ApplicationModule {
   @Singleton
   fun provideConnectivityManager(@ApplicationContext context: Context) =
       context.getSystemService<ConnectivityManager>()
+
+  @Provides
+  @Singleton
+  fun providePowerManager(@ApplicationContext context: Context) = context.getSystemService<PowerManager>()
 
   @Provides
   @Singleton

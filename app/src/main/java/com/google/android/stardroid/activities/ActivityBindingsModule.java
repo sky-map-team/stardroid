@@ -2,6 +2,7 @@ package com.google.android.stardroid.activities;
 
 import android.app.Activity;
 import android.os.Handler;
+import android.os.Looper;
 import android.view.Window;
 
 import androidx.annotation.Nullable;
@@ -42,12 +43,12 @@ public class ActivityBindingsModule {
   @Provides
   @ActivityScoped
   Handler provideHandler() {
-    return new Handler();
+    return new Handler(Looper.getMainLooper());
   }
 
   @Provides
   @ActivityScoped
-  FragmentManager provideFragmentManager(Activity activity) {
-    return ((FragmentActivity) activity).getSupportFragmentManager();
+  FragmentManager provideFragmentManager(FragmentActivity activity) {
+    return activity.getSupportFragmentManager();
   }
 }
