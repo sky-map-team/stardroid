@@ -17,6 +17,7 @@ import android.util.Log
 import com.google.android.stardroid.ApplicationConstants
 import com.google.android.stardroid.util.AnalyticsInterface
 import com.google.android.stardroid.util.MiscUtil
+import dagger.hilt.android.scopes.ActivityScoped
 import javax.inject.Inject
 
 /**
@@ -26,6 +27,7 @@ import javax.inject.Inject
  * information about celestial objects. In auto mode, info cards are only shown if the
  * user has explicitly enabled the "show_object_info_auto_mode" preference.
  */
+@ActivityScoped
 class ObjectInfoTapHandler @Inject constructor(
     private val sharedPreferences: SharedPreferences,
     private val celestialHitTester: CelestialHitTester,
