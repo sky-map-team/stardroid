@@ -821,16 +821,16 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
     Log.d(TAG, "Performing Search");
     final String queryString = searchIntent.getStringExtra(SearchManager.QUERY);
     searchMode = true;
-    Log.d(TAG, "Query string " + queryString);
+    Log.d(TAG, "Query string " + MiscUtil.capitalize(queryString));
     List<SearchResult> results = layerManager.searchByObjectName(queryString);
     Bundle b = new Bundle();
-    b.putString(AnalyticsInterface.SEARCH_TERM, queryString);
+    b.putString(AnalyticsInterface.SEARCH_TERM, MiscUtil.capitalize(queryString));
     b.putBoolean(AnalyticsInterface.SEARCH_SUCCESS, !results.isEmpty());
     analytics.trackEvent(AnalyticsInterface.SEARCH_EVENT, b);
     if (results.isEmpty()) {
       Log.d(TAG, "No results returned");
       Bundle failBundle = new Bundle();
-      failBundle.putString(AnalyticsInterface.SEARCH_TERM, queryString);
+      failBundle.putString(AnalyticsInterface.SEARCH_TERM, MiscUtil.capitalize(queryString));
       analytics.trackEvent(AnalyticsInterface.SEARCH_FAILED_EVENT, failBundle);
       showDialog(NoSearchResultsDialogFragment.newInstance(), NoSearchResultsDialogFragment.class.getSimpleName());
     } else if (results.size() > 1) {

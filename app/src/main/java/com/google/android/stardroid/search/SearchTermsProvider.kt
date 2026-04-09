@@ -66,7 +66,7 @@ class SearchTermsProvider : ContentProvider() {
       if (uri.pathSegments.size > 1) {
         query = uri.lastPathSegment
       }
-      Log.d(TAG, "Got suggestions query for $query")
+      Log.d(TAG, "Got suggestions query for " + com.google.android.stardroid.util.MiscUtil.capitalize(query))
       return getSuggestions(query)
     }
     throw IllegalArgumentException("Unknown URL $uri")
