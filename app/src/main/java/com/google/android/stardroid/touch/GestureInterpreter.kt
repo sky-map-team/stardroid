@@ -23,8 +23,11 @@ import com.google.android.stardroid.util.Toaster
 import dagger.hilt.android.scopes.ActivityScoped
 import javax.inject.Inject
 import androidx.core.content.edit
+import android.os.Bundle
 import com.google.android.stardroid.ApplicationConstants.AUTO_LEVEL_HORIZON_PREF_KEY
 import com.google.android.stardroid.R
+import com.google.android.stardroid.util.Analytics
+import com.google.android.stardroid.util.AnalyticsInterface
 
 /**
  * Processes touch events and scrolls the screen in manual mode.
@@ -36,6 +39,7 @@ class GestureInterpreter(
   private val objectInfoTapHandler: ObjectInfoTapHandler? = null,
   private val preferences: SharedPreferences,
   private val toaster: Toaster,
+  private val analytics: Analytics,
   private val fullscreenControlsManager: FullscreenControlsManager,
   private val screenDimensionsProvider: ScreenDimensionsProvider
 ) : SimpleOnGestureListener() {
@@ -103,6 +107,9 @@ class GestureInterpreter(
     }
     val nowAutoLevelHorizon = !preferences.getBoolean(AUTO_LEVEL_HORIZON_PREF_KEY, false)
     preferences.edit { putBoolean(AUTO_LEVEL_HORIZON_PREF_KEY, nowAutoLevelHorizon) }
+    val b = Bundle()
+    b.putBoolean(AnalyticsInterface.HORIZON_LEVEL_TOGGLED_VALUE, nowAutoLevelHorizon)
+    analytics.trackEvent(AnalyticsInterface.HORIZON_LEVEL_TOGGLED_EVENT, b)
     toaster.toastLong(
       if (nowAutoLevelHorizon) R.string.auto_level_horizon_on else R.string.auto_level_horizon_off)
     return true

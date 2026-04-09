@@ -33,6 +33,15 @@ object MiscUtil {
             ApplicationConstants.APP_NAME + "." + o.simpleName
         } else ApplicationConstants.APP_NAME + "." + o.javaClass.simpleName
     }
+
+    /**
+     * Capitalizes the first letter of a string.
+     */
+    @JvmStatic
+    fun capitalize(s: String?): String {
+        if (s == null || s.isEmpty()) return ""
+        return s.lowercase().replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.ROOT) else it.toString() }
+    }
 }
 
 /** Returns a date given the year, month and day in UTC.
