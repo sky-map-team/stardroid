@@ -23,6 +23,7 @@ import android.net.Uri
 import android.text.TextUtils
 import android.util.Log
 import com.google.android.stardroid.layers.LayerManager
+import com.google.android.stardroid.util.MiscUtil.capitalize
 import com.google.android.stardroid.util.MiscUtil.getTag
 import dagger.hilt.EntryPoint
 import dagger.hilt.InstallIn
@@ -66,7 +67,7 @@ class SearchTermsProvider : ContentProvider() {
       if (uri.pathSegments.size > 1) {
         query = uri.lastPathSegment
       }
-      Log.d(TAG, "Got suggestions query for " + com.google.android.stardroid.util.MiscUtil.capitalize(query))
+      Log.d(TAG, "Got suggestions query for ${capitalize(query)}")
       return getSuggestions(query)
     }
     throw IllegalArgumentException("Unknown URL $uri")

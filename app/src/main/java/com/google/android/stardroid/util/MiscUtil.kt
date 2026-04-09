@@ -40,7 +40,7 @@ object MiscUtil {
     @JvmStatic
     fun capitalize(s: String?): String {
         if (s == null || s.isEmpty()) return ""
-        return s.lowercase().replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }
+        return s.lowercase().replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.ROOT) else it.toString() }
     }
 }
 
