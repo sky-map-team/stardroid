@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string name="eula_text" translation_description="A condensed, user-friendly version of the EULA and Privacy Policy with a link to the full terms">
+    &lt;h1&gt;Sky Mapへようこそ&lt;/h1&gt;
+        &lt;p&gt;スターゲイジングを始めるために、利用規約の簡潔な要約をご確認ください。&lt;/p&gt;
+
+        &lt;h2&gt;プライバシー&lt;/h2&gt;
+        &lt;p&gt;&lt;b&gt;私たちはあなたが誰であるかを知りません。&lt;/b&gt; バグの修正と機能の改善に役立てるため、匿名の使用データを収集しています。いつでも設定メニューからこれをオプトアウトできます。&lt;/p&gt;
+
+        &lt;h2&gt;安全性と責任&lt;/h2&gt;
+        &lt;p&gt;Sky Mapは「現状のまま」提供されています。安全に使用してください。首の痛みなど、このアプリの使用から生じるいかなる損害または傷害についても、当社は責任を負いません。&lt;/p&gt;
+
+        &lt;h2&gt;オープンソース&lt;/h2&gt;
+        &lt;p&gt;Sky Mapは愛情を込めて作られています。当社のソースコードを自由に使用できますが、当社のブランドとロゴを尊重してください。&lt;/p&gt;
+
+        &lt;p&gt;完全な法的文書はこちらをご覧ください: &lt;a href="https://github.com/sky-map-team/stardroid/blob/master/TERMS.md"&gt;完全な利用規約とプライバシーポリシー&lt;/a&gt;&lt;/p&gt;
+
+        &lt;p&gt;&lt;i&gt;「同意する」をクリックすることで、これらの利用規約に同意します。&lt;/i&gt;&lt;/p&gt;
+    </string>
+</resources>

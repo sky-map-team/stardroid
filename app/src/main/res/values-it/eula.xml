@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string name="eula_text" translation_description="A condensed, user-friendly version of the EULA and Privacy Policy with a link to the full terms">
+    &lt;h1&gt;Benvenuto in Sky Map&lt;/h1&gt;
+        &lt;p&gt;Per iniziare a osservare le stelle, consulta questo breve riepilogo dei nostri termini. &lt;/p&gt;
+
+        &lt;h2&gt;Privacy&lt;/h2&gt;
+        &lt;p&gt;&lt;b&gt;Non sappiamo chi sei.&lt;/b&gt; Raccogliamo dati di utilizzo anonimi per aiutarci a correggere i bug e migliorare le funzionalità. Puoi disattivare questa opzione in qualsiasi momento dal menu Impostazioni.&lt;/p&gt;
+
+        &lt;h2&gt;Sicurezza e responsabilità&lt;/h2&gt;
+        &lt;p&gt;Sky Map è fornito "così com\'è." Usalo in sicurezza: non siamo responsabili di eventuali danni o lesioni (come il mal di collo!) derivanti dall\'uso dell\'app.&lt;/p&gt;
+
+        &lt;h2&gt;Open Source&lt;/h2&gt;
+        &lt;p&gt;Sky Map è un\'opera d\'amore. Sei libero di utilizzare il nostro codice sorgente, ma ti preghiamo di rispettare il nostro marchio e i nostri loghi.&lt;/p&gt;
+
+        &lt;p&gt;Leggi il documento legale completo qui: &lt;a href="https://github.com/sky-map-team/stardroid/blob/master/TERMS.md"&gt;Termini completi e Informativa sulla privacy&lt;/a&gt;&lt;/p&gt;
+
+        &lt;p&gt;&lt;i&gt;Facendo clic su "Accetta", accetti questi termini.&lt;/i&gt;&lt;/p&gt;
+    </string>
+</resources>

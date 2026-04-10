@@ -26,6 +26,7 @@ android = [
     "help.xml",
     "whatsnew.xml",
     "whatsnew_content.xml",
+    "eula.xml",
 ]
 android_skip = [
     "notranslate-arrays.xml",

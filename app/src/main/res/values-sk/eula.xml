@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string name="eula_text" translation_description="A condensed, user-friendly version of the EULA and Privacy Policy with a link to the full terms">
+    &lt;h1&gt;Vitajte v Sky Map&lt;/h1&gt;
+        &lt;p&gt;Aby ste mohli pozorovať hviezdy, prosím, prečítajte si tento rýchly prehľad našich podmienok. &lt;/p&gt;
+
+        &lt;h2&gt;Ochrana súkromia&lt;/h2&gt;
+        &lt;p&gt;&lt;b&gt;Nevieme, kto ste.&lt;/b&gt; Zbierame anonymné údaje o používaní, aby sme nám pomohli opraviť chyby a zlepšiť funkcie. Môžete sa z toho kedykoľvek odhlásiť v ponuke Nastavenia.&lt;/p&gt;
+
+        &lt;h2&gt;Bezpečnosť a zodpovednosť&lt;/h2&gt;
+        &lt;p&gt;Sky Map je poskytovaná "tak, ako je." Používajte ju bezpečne—nie sme zodpovední za žiadne škody alebo zranenia (ako napríklad bolesť krku!), ktoré vyplývajú z vášho používania aplikácie.&lt;/p&gt;
+
+        &lt;h2&gt;Open Source&lt;/h2&gt;
+        &lt;p&gt;Sky Map je výtvore lásky. Ste slobodní používať náš zdrojový kód, ale prosím, rešpektujte našu značku a logá.&lt;/p&gt;
+
+        &lt;p&gt;Prečítajte si úplný právny dokument tu: &lt;a href="https://github.com/sky-map-team/stardroid/blob/master/TERMS.md"&gt;Úplné podmienky a zásady ochrany súkromia&lt;/a&gt;&lt;/p&gt;
+
+        &lt;p&gt;&lt;i&gt;Kliknutím na "Prijať" súhlasíte s týmito podmienkami.&lt;/i&gt;&lt;/p&gt;
+    </string>
+</resources>

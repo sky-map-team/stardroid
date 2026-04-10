@@ -1,94 +1,20 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-<string name="eula_text" translation_description="Privacy policy and EULA in html. Please do not change the &lt; and &gt; markup">&lt;h1&gt;Umowa Licencyjna Użytkownika Końcowego&lt;/h1&gt;
-&lt;p&gt;Korzystając z Sky Map, zgadzasz się na te warunki. Proszę przeczytaj je uważnie.
-"My" i "Sky Map Devs" odnoszą się do autorów i współtwórców bazy kodu Sky Map.
-"Aplikacja" odnosi się do aplikacji Sky Map.&lt;/p&gt;
+    <string name="eula_text" translation_description="A condensed, user-friendly version of the EULA and Privacy Policy with a link to the full terms">
+    &lt;h1&gt;Witaj w Sky Map&lt;/h1&gt;
+        &lt;p&gt;Aby rozpocząć obserwację gwiazd, zapoznaj się z tym krótkim podsumowaniem naszych warunków. &lt;/p&gt;
 
-&lt;h2&gt;Streszczenie&lt;/h2&gt;
-&lt;p&gt;Sky Map nie ma żadnych gwarancji! Chociaż nie możemy sobie wyobrazić żadnego sposobu, w jaki mogłaby
-uszkodzić Twój telefon lub Ciebie (być może poza bólem szyi od patrzenia w niebo), używasz
-go całkowicie na własne ryzyko.&lt;/p&gt;
-&lt;p&gt;Poniżej znajduje się nudna wersja prawna.&lt;/p&gt;
+        &lt;h2&gt;Prywatność&lt;/h2&gt;
+        &lt;p&gt;&lt;b&gt;Nie wiemy, kim jesteś.&lt;/b&gt; Zbieramy anonimowe dane dotyczące użytkowania, aby pomóc nam naprawiać błędy i ulepszać funkcje. Możesz zrezygnować z tego w dowolnym momencie w menu Ustawienia.&lt;/p&gt;
 
-&lt;h2&gt;Korzystanie z Sky Map&lt;/h2&gt;
-&lt;p&gt;Korzystanie z Sky Map nie daje Ci prawa własności do żadnych praw własności intelektualnej
-nad zawartością, do której masz dostęp.
-Nie możesz używać zawartości z Sky Map, chyba że uzyskasz pozwolenie od jej właścicieli
-(patrz pomoc/podziękowania) lub
-jest to dozwolone przez prawo. Niniejsze warunki nie dają Ci prawa do używania żadnych znaków towarowych lub logo
-używanych w Sky Map.
-Nie usuwaj, nie ukrywaj ani nie zmieniaj żadnych informacji prawnych wyświetlanych w Sky Map lub wraz z nim.&lt;/p&gt;
+        &lt;h2&gt;Bezpieczeństwo i odpowiedzialność&lt;/h2&gt;
+        &lt;p&gt;Sky Map jest dostarczana "w stanie obecnym." Używaj jej bezpiecznie—nie ponosimy odpowiedzialności za żadne szkody ani obrażenia (takie jak ból szyi!) wynikające z korzystania z aplikacji.&lt;/p&gt;
 
-&lt;h2&gt;Prywatność&lt;/h2&gt;
-&lt;p&gt;Nasza polityka prywatności (patrz poniżej) wyjaśnia, jak traktujemy Twoje dane osobowe i chronimy Twoją prywatność
-kiedy używasz Sky Map.
-Korzystając z Sky Map, zgadzasz się, że możemy używać takich danych zgodnie z naszą polityką prywatności.&lt;/p&gt;
+        &lt;h2&gt;Otwarte oprogramowanie&lt;/h2&gt;
+        &lt;p&gt;Sky Map to dzieło miłości. Możesz swobodnie korzystać z naszego kodu źródłowego, ale prosimy o poszanowanie naszych marek i logo.&lt;/p&gt;
 
-&lt;h2&gt;O Sky Map&lt;/h2&gt;
-&lt;p&gt;To oprogramowanie może aktualizować się automatycznie na Twoim urządzeniu, gdy dostępna jest nowa wersja lub
-funkcja.
-Deweloperzy Sky Map dają Ci osobistą, światową, bezpłatną, nieprzenoszalną i
-wyłączną licencję do używania Sky Map w sposób dozwolony przez niniejsze warunki.
-Możesz używać kodu źródłowego Sky Map zgodnie z licencją na
-&lt;a href="https://stardroid.app"&gt;https://stardroid.app&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Stale zmieniamy i ulepszamy Sky Map. Możemy dodawać lub usuwać
-funkcje w dowolnym momencie i możemy przestać je wspierać lub publikować.&lt;/p&gt;
+        &lt;p&gt;Przeczytaj pełny dokument prawny tutaj: &lt;a href="https://github.com/sky-map-team/stardroid/blob/master/TERMS.md"&gt;Pełne warunki i polityka prywatności&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2&gt;Gwarancje i Zastrzeżenia&lt;/h2&gt;
-&lt;p&gt;Jesteśmy dumni z Sky Map, ale nie dajemy żadnych obietnic na jego temat. Zwróć uwagę na następujące:&lt;/p&gt;
-&lt;p&gt;POZA TYM, CO WYRAŹNIE OKREŚLONO W NINIEJSZYCH WARUNKACH LUB DODATKOWYCH WARUNKACH, ANI SKY MAP DEVS
-ANI JEGO DOSTAWCY LUB DYSTRYBUTORZY NIE DAJĄ ŻADNYCH KONKRETNYCH OBIETNIC DOTYCZĄCYCH APLIKACJI.
-NA PRZYKŁAD, NIE DAJEMY ŻADNYCH ZOBOWIĄZAŃ DOTYCZĄCYCH ZAWARTOŚCI W APLIKACJI,
-KONKRETNYCH FUNKCJI APLIKACJI, LUB ICH NIEZAWODNOŚCI, DOSTĘPNOŚCI LUB ZDOLNOŚCI DO SPEŁNIENIA
-TWOICH POTRZEB. UDOSTĘPNIAMY APLIKACJĘ "TAK JAK JEST".&lt;/p&gt;
-&lt;p&gt;NIEKTÓRE JURYSDYKCJE PRZEWIDUJĄ PEWNE GWARANCJE, TAKIE JAK DOROZUMIANA GWARANCJA PRZYDATNOŚCI HANDLOWEJ,
-PRZYDATNOŚCI DO OKREŚLONEGO CELU I NIENARUSZENIA PRAW TRZECICH.
-W ZAKRESIE DOZWOLONYM PRZEZ PRAWO, WYŁĄCZAMY WSZYSTKIE GWARANCJE.&lt;/p&gt;
-
-&lt;h2&gt;Odpowiedzialność za Sky Map&lt;/h2&gt;
-&lt;p&gt;JEŚLI PRAWO NA TO POZWALA, SKY MAP DEVS I ICH DOSTAWCY I DYSTRYBUTORZY
-NIE BĘDĄ ODPOWIEDZIALNI ZA UTRACONE ZYSKI, PRZYCHODY LUB DANE, STRATY FINANSOWE LUB POŚREDNIE,
-SCZEGÓLNE, NASTĘPCZE, PRZYKŁADOWE LUB KARNE ODSZKODOWANIA.&lt;/p&gt;
-&lt;p&gt;W ZAKRESIE DOZWOLONYM PRZEZ PRAWO, CAŁKOWITA ODPOWIEDZIALNOŚĆ SKY MAP DEVS I JEGO DOSTAWCÓW I
-DYSTRYBUTORÓW,
-ZA WSZELKIE ROSZCZENIA NA PODSTAWIE NINIEJSZYCH WARUNKÓW, W TYM ZA WSZELKIE DOROZUMIANE GWARANCJE, JEST OGRANICZONA DO KWOTY,
-KTÓRĄ NAM ZAPŁACIŁEŚ ZA UŻYWANIE APLIKACJI (tj. nic).&lt;/p&gt;
-&lt;p&gt;WE WSZYSTKICH PRZYPADKACH SKY MAP DEVS NIE BĘDZIE ODPOWIEDZIALNY ZA ŻADNĄ STRATĘ
-LUB SZKODĘ SPOWODOWANĄ PRZEZ APLIKACJĘ.&lt;/p&gt;
-
-&lt;h2&gt;Komercyjne użycie Sky Map&lt;/h2&gt;
-&lt;p&gt;Jeśli używasz Sky Map w imieniu firmy, ta firma akceptuje niniejsze warunki.
-Zastrzega sobie prawo do ochrony i odszkodowania Sky Map Devs
-od wszelkich roszczeń, pozwów lub działań wynikających z lub związanych z korzystaniem z Usług lub naruszeniem
-niniejszych warunków, w tym wszelkich zobowiązań lub wydatków wynikających z roszczeń, strat, szkód, pozwów,
-orzeczeń, kosztów postępowania i honorariów adwokackich.&lt;/p&gt;
-
-&lt;h2&gt;O niniejszych Warunkach&lt;/h2&gt;
-&lt;p&gt;Możemy modyfikować niniejsze warunki lub wszelkie dodatkowe warunki mające zastosowanie do Aplikacji, na przykład
-aby odzwierciedlić zmiany w prawie lub zmiany w Sky Map.
-Niniejsze warunki pojawią się ponownie w Aplikacji, gdy dokonamy modyfikacji.
-Jeśli nie zgadzasz się ze zmienionymi warunkami, powinieneś zaprzestać korzystania z aplikacji.
-Jeśli istnieje konflikt między niniejszymi warunkami a dodatkowymi warunkami, dodatkowe warunki
-będą kontrolować ten konflikt.&lt;/p&gt;
-&lt;p&gt;Jeśli nie przestrzegasz niniejszych warunków, a my nie podejmiemy działań od razu, nie oznacza to,
-że rezygnujemy z jakichkolwiek praw, które możemy mieć (takich jak podjęcie działań w przyszłości).&lt;/p&gt;
-&lt;p&gt;Jeśli okaże się, że określony warunek nie jest wykonalny, nie będzie to wpływać na żadne inne warunki.&lt;/p&gt;
-
-&lt;h1&gt;Polityka Prywatności&lt;/h1&gt;
-&lt;p&gt;Ta Aplikacja używa Firebase Analytics, aby pomóc w analizie sposobu jej użytkowania.
-Firebase Analytics zbiera standardowe informacje z dziennika internetowego i informacje o zachowaniu odwiedzających
-w formie anonimowej. Należy pamiętać, że dane są anonimowe - nie są zbierane żadne dane umożliwiające identyfikację osoby. Te anonimowe informacje
-są przesyłane do Google – nie do deweloperów Sky Map. Firebase Analytics następnie kompiluje
-raporty statystyczne, które mówią nam takie rzeczy jak procent użytkowników, którzy używają określonych funkcji,
-mają określone wersje Androida lub mają telefony z określonymi funkcjami (takimi jak żyroskop).
-Jest to niezbędne dla nas, aby odkryć, które funkcje
-lubią i nie lubią użytkownicy oraz kiedy możemy zaprzestać wspierania przestarzałych wersji Androida
-i w ten sposób ulepszyć Sky Map. Traktuj to jako sposób na bezproblemowe i anonimowe głosowanie
-na temat funkcji, które lubisz i nie lubisz.&lt;/p&gt;
-&lt;p&gt;Szanujemy Twoją prywatność i nie zbieramy Twoich danych osobowych - nie możemy nic wiedzieć o
-Tobie jako użytkowniku. Jeśli nie
-chcesz udostępniać te anonimowe dane Firebase Analytics, możesz zrezygnować za pośrednictwem menu ustawień.
-W przeciwnym razie dziękujemy za pomoc w ulepszaniu Sky Map. Aby uzyskać więcej informacji na temat
-Firebase Analytics, zobacz &lt;a href="https://www.google.com/analytics/"&gt;https://www.google.com/analytics/&lt;/a&gt;&lt;/p&gt;</string>
+        &lt;p&gt;&lt;i&gt;Klikając "Akceptuję", zgadzasz się na te warunki.&lt;/i&gt;&lt;/p&gt;
+    </string>
 </resources>
