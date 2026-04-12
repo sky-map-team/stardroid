@@ -3,17 +3,8 @@
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
     <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Vylepšená galéria obrázkov</h2>
 <p>Galéria bola prepracovaná s rozložením mriežky a lepšími odkazmi na informačné karty.</p>
-<h2>Čierne diery</h2>
-<p>Cygnus X-1 a Sagittarius A* sú teraz v katalógu Sky Map.</p>
+<h2>Automatické vyrovnanie horizontu v manuálnom režime</h2>
+<p>Automatické vyrovnanie horizontu sa teraz prepína dvojitým klepnutím v manuálnom režime.</p>
 <h2>Hlboké vesmírne objekty</h2>
-<p>Messierov a ďalšie nestellárne objekty sú teraz v celej aplikácii nazývané &#8220;Hlboké vesmírne objekty&#8221;.</p>
-<h2>Cestovanie v čase v ponuke</h2>
-<p>Možnosť cestovania v čase sa teraz objavuje aj priamo v ponuke pretečenia spolu s ikonami všetkých položiek ponuky.</p>]]></string>
-    <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Používatelia beta verzie!</h2>
-<h3>Ako môžete pomôcť</h3>
-V tejto verzii, keď použijete manuálny režim a prejdete mapou prstom, horizont sa vráti
-do úrovne, takže horná časť mapy bude vždy ukazovať hviezdy nad vami. Predtým sa mapa len
-pohybovala v priamej línii, takže ste mohli skončiť hore nohami. Čo si o tom myslíte? Je to lepšie?
-Dajte nám vedieť <a href="https://forms.gle/JkrMw7Zc4ynp45J79">tu.</a><br/>
-Otvorte ponuku Pomocník a pozrite si tieto informácie znova.]]></string>
-</resources>
+<p>Čierne diery Cygnus X-1 a Sagittarius A* sú teraz v katalógu Sky Map.</p>]]></string>
+    </resources>

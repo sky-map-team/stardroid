@@ -3,14 +3,8 @@
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
     <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>İyileştirilmiş Resim Galerisi</h2>
 <p>Galeri, ızgara düzeni ve bilgi kartlarına daha iyi bağlantılarla yeniden tasarlanmıştır.</p>
-<h2>Kara Delikler</h2>
-<p>Cygnus X-1 ve Sagittarius A* artık Sky Map kataloğunda yer almaktadır.</p>
-<h2>Derin Uzay Nesneleri</h2>
-<p>Messier ve diğer yıldız olmayan nesneler artık uygulama genelinde &#8220;Derin uzay nesneleri&#8221; olarak adlandırılmaktadır.</p>
-<h2>Menüde Zaman Yolculuğu</h2>
-<p>Zaman yolculuğu seçeneği artık taşma menüsünde doğrudan görünmekte ve tüm menü öğeleri için simgelerle birlikte yer almaktadır.</p>]]></string>
-    <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Beta kullanıcıları!</h2>
-<h3>Nasıl yardımcı olabilirsiniz</h3>
-Bu sürümde manuel modu kullandığınızda ve haritayı kaydırdığınızda, ufuk seviyeye dönecek, böylece haritanın üstü her zaman sizin üstünüzdeki yıldızları gösterecektir. Daha önce harita sadece düz bir çizgide hareket ederdi, bu nedenle ters dönebilirdiniz. Bunu nasıl buluyorsunuz? Daha iyi mi? Lütfen bize <a href="https://forms.gle/JkrMw7Zc4ynp45J79">buradan</a> haber verin.<br/>
-Bu bilgileri tekrar görmek için yardım menüsünü açın.]]></string>
-</resources>
+<h2>Manuel Modda Otomatik Ufuk Dengeleme</h2>
+<p>Otomatik ufuk dengeleme, manuel modda çift dokunuşla açılıp kapatılır.</p>
+<h2>Derin Gökyüzü Nesneleri</h2>
+<p>Kara delikler Cygnus X-1 ve Sagittarius A* artık Sky Map kataloğunda yer almaktadır.</p>]]></string>
+    </resources>

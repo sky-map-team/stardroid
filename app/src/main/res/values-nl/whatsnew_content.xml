@@ -3,15 +3,8 @@
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
     <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Verbeterde afbeeldingengalerie</h2>
 <p>De galerie is opnieuw ontworpen met een rasterindeling en betere koppelingen naar informatiekaarten.</p>
-<h2>Zwarte gaten</h2>
-<p>Cygnus X-1 en Sagittarius A* staan nu in de Sky Map-catalogus.</p>
-<h2>Diepe ruimteobjecten</h2>
-<p>Messier en andere niet-stellaire objecten worden nu &#8220;Diepe ruimteobjecten&#8221; genoemd in de hele app.</p>
-<h2>Tijdreizen in het menu</h2>
-<p>De optie voor tijdreizen verschijnt nu ook rechtstreeks in het overloopmenu, naast pictogrammen voor alle menu-items.</p>]]></string>
-    <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Bètagebruikers!</h2>
-<h3>Hoe u kunt helpen</h3>
-In deze release zal de horizon zich herstellen naar niveau wanneer u de kaart in handmatige modus een zwaai geeft, zodat de bovenkant van de kaart altijd de sterren boven u toont. Eerder bewoog de kaart gewoon in een rechte lijn, dus u kon ondersteboven eindigen. Wat vindt u ervan? Is dit beter?
- Laat het ons weten <a href="https://forms.gle/JkrMw7Zc4ynp45J79">hier.</a><br/>
-Open het hulpmenu om deze informatie opnieuw te zien.]]></string>
-</resources>
+<h2>Automatische horizonnivellering in handmatige modus</h2>
+<p>Automatische horizonnivellering wordt nu ingeschakeld met een dubbeltik in handmatige modus.</p>
+<h2>Deep Sky Objects</h2>
+<p>Zwarte gaten Cygnus X-1 en Sagittarius A* staan nu in de Sky Map-catalogus.</p>]]></string>
+    </resources>

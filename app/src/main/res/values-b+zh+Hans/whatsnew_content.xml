@@ -1,8 +1,2 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<resources>
-    <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>测试版用户！</h2>
-<h3>您可以如何帮助我们</h3>
-在此版本中，当您使用手动模式并滑动地图时，地平线将恢复水平，因此地图顶部将始终显示您上方的星星。以前地图只是直线移动，所以您可能会看到倒过来的景象。您觉得怎么样？这样是否更好？
-请在<a href="https://forms.gle/JkrMw7Zc4ynp45J79">这里</a>告诉我们。<br/>
-打开帮助菜单可再次查看此信息。]]></string>
-</resources>
+<resources></resources>

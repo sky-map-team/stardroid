@@ -2,18 +2,9 @@
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
     <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Förbättrat bildgalleri</h2>
-<p>Galleriet har gjorts om med en rutnätslayout och bättre länkar till informationskort.</p>
-<h2>Svarta hål</h2>
-<p>Cygnus X-1 och Sagittarius A* finns nu i Sky Maps katalog.</p>
+<p>Galleriet har omdesignats med en rutnätslayout och bättre länkar till informationskort.</p>
+<h2>Automatisk horisontutjämning i manuellt läge</h2>
+<p>Automatisk horisontutjämning växlas nu med ett dubbelklick i manuellt läge.</p>
 <h2>Djupa himmelobjekt</h2>
-<p>Messier och andra icke-stellära objekt kallas nu &#8220;Djupa himmelobjekt&#8221; i hela appen.</p>
-<h2>Tidsresor i menyn</h2>
-<p>Alternativet för tidsresor visas nu också direkt i överflödesmenyn, tillsammans med ikoner för alla menyalternativ.</p>]]></string>
-    <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Betaanvändare!</h2>
-<h3>Hur du kan hjälpa</h3>
-I den här versionen när du använder manuellt läge och sveper på kartan, återgår horisonten
-till nivå så att toppen av kartan alltid visar stjärnorna ovanför dig. Tidigare flyttades kartan bara
-i en rak linje så du kunde hamna upp och ned. Vad tycker du? Är det här bättre?
- Berätta för oss <a href="https://forms.gle/JkrMw7Zc4ynp45J79">här.</a><br/>
-Öppna hjälpmenyn för att se denna information igen.]]></string>
-</resources>
+<p>Svarta hål Cygnus X-1 och Sagittarius A* finns nu i Sky Map-katalogen.</p>]]></string>
+    </resources>

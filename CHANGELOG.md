@@ -14,6 +14,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
   overflow menu, making it discoverable without knowing the toolbar icon; icons added to all
   overflow menu items
   ([#770](https://github.com/sky-map-team/stardroid/pull/770))
+- **Double-tap to freeze/unfreeze auto-level horizon** — in manual mode, a double-tap now
+  toggles horizon leveling on/off without opening Settings; the preference is still available
+  for users who want a persistent setting
+  ([#788](https://github.com/sky-map-team/stardroid/pull/788))
 
 ### Changed
 - **Gallery redesigned** — replaced the sideways-scrolling list with a grid layout that
@@ -23,6 +27,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - **"Messier objects" renamed to "Deep sky objects"** — the catalog of nebulae, clusters, and
   galaxies is now labelled more accurately throughout the app
   ([#772](https://github.com/sky-map-team/stardroid/pull/772))
+- **EULA shortened** — the in-app EULA is now a friendly summary with a link to the full text;
+  translated into core languages
+- **Translations** — Brazilian Portuguese help, EULA, and info cards updated
+  ([#783](https://github.com/sky-map-team/stardroid/pull/783)); Polish HTML formatting fixed
+  ([#781](https://github.com/sky-map-team/stardroid/pull/781)); language-apology strings
+  removed for primary languages that are now nearly fully translated
+
+### Fixed
+- **Info cards not responding to taps** — fixed a scoping bug that broke tap-to-navigate on
+  info cards
+- **Night mode not applied to overflow menu** — menu items now correctly use night-mode colours
+  ([#780](https://github.com/sky-map-team/stardroid/pull/780))
 
 ---
 

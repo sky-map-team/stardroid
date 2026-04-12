@@ -1,17 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>सुधारी गई छवि गैलरी</h2>
-<p>गैलरी को ग्रिड लेआउट और जानकारी कार्ड के बेहतर लिंक के साथ फिर से डिज़ाइन किया गया है।</p>
-<h2>ब्लैक होल</h2>
-<p>Cygnus X-1 और Sagittarius A* अब Sky Map कैटलॉग में हैं।</p>
-<h2>गहरे आकाश की वस्तुएं</h2>
-<p>Messier और अन्य गैर-तारकीय वस्तुओं को अब पूरे ऐप में &#8220;गहरे आकाश की वस्तुएं&#8221; कहा जाता है।</p>
-<h2>मेनू में समय यात्रा</h2>
-<p>समय यात्रा विकल्प अब सभी मेनू आइटम के लिए आइकन के साथ, ओवरफ़्लो मेनू में सीधे दिखाई देता है।</p>]]></string>
-    <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>बीटा उपयोगकर्ता!</h2>
-<h3>आप कैसे मदद कर सकते हैं</h3>
-इस रिलीज़ में जब आप मैनुअल मोड का उपयोग करते हैं और मानचित्र को स्वाइप करते हैं, तो क्षितिज स्तर पर वापस आ जाएगा ताकि मानचित्र के शीर्ष पर हमेशा आपके ऊपर के तारे दिखाई दें। पहले मानचित्र सीधी रेखा में चलता था इसलिए आप उल्टा हो सकते थे। आपको क्या लगता है? क्या यह बेहतर है?
-हमें <a href="https://forms.gle/JkrMw7Zc4ynp45J79">यहाँ</a> बताएं।<br/>
-इस जानकारी को फिर से देखने के लिए सहायता मेनू खोलें।]]></string>
-</resources>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>सुधारी गई इमेज गैलरी</h2>
+<p>गैलरी को ग्रिड लेआउट के साथ फिर से डिज़ाइन किया गया है और जानकारी कार्ड के लिए बेहतर लिंक हैं।</p>
+<h2>मैनुअल मोड में ऑटो लेवलिंग क्षितिज</h2>
+<p>ऑटो क्षितिज लेवलिंग अब मैनुअल मोड में डबल टैप के साथ टॉगल की जाती है।</p>
+<h2>डीप स्काई ऑब्जेक्ट्स</h2>
+<p>ब्लैक होल Cygnus X-1 और Sagittarius A* अब Sky Map कैटलॉग में हैं।</p>]]></string>
+    </resources>

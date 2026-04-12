@@ -3,17 +3,8 @@
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
     <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Galeri Gambar yang Ditingkatkan</h2>
 <p>Galeri telah dirancang ulang dengan tata letak grid dan tautan yang lebih baik ke kartu info.</p>
-<h2>Lubang Hitam</h2>
-<p>Cygnus X-1 dan Sagittarius A* sekarang ada di katalog Sky Map.</p>
+<h2>Penyeimbangan Horizon Otomatis dalam Mode Manual</h2>
+<p>Penyeimbangan horizon otomatis sekarang diaktifkan dengan ketukan ganda saat dalam mode manual.</p>
 <h2>Objek Langit Dalam</h2>
-<p>Messier dan objek non-bintang lainnya sekarang disebut &#8220;Objek langit dalam&#8221; di seluruh aplikasi.</p>
-<h2>Perjalanan Waktu di Menu</h2>
-<p>Opsi perjalanan waktu sekarang juga muncul langsung di menu overflow, bersama ikon untuk semua item menu.</p>]]></string>
-    <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Pengguna beta!</h2>
-<h3>Bagaimana Anda dapat membantu</h3>
-Dalam rilis ini, ketika Anda menggunakan mode manual dan menggeser peta, cakrawala akan kembali
-ke level sehingga bagian atas peta akan selalu menunjukkan bintang-bintang di atas Anda. Sebelumnya peta hanya
-bergerak dalam garis lurus sehingga Anda bisa berakhir terbalik. Apa pendapat Anda? Apakah ini lebih baik?
- Beri tahu kami <a href="https://forms.gle/JkrMw7Zc4ynp45J79">di sini.</a><br/>
-Buka menu bantuan untuk melihat informasi ini lagi.]]></string>
-</resources>
+<p>Lubang hitam Cygnus X-1 dan Sagittarius A* sekarang ada dalam katalog Sky Map.</p>]]></string>
+    </resources>

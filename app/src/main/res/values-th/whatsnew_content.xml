@@ -2,15 +2,9 @@
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
     <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>แกลเลอรี่รูปภาพที่ปรับปรุง</h2>
-<p>แกลเลอรี่ได้รับการออกแบบใหม่ด้วยเลย์เอาต์กริดและลิงก์ที่ดีขึ้นไปยังการ์ดข้อมูล</p>
-<h2>หลุมดำ</h2>
-<p>Cygnus X-1 และ Sagittarius A* อยู่ในแคตตาล็อก Sky Map แล้ว</p>
+<p>แกลเลอรี่ได้รับการออกแบบใหม่ด้วยเลย์เอาต์กริดและลิงก์ไปยังการ์ดข้อมูลที่ดีขึ้น</p>
+<h2>การปรับระดับขอบฟ้าอัตโนมัติในโหมดแมนนวล</h2>
+<p>การปรับระดับขอบฟ้าอัตโนมัติสามารถเปิด/ปิดได้ด้วยการแตะสองครั้งเมื่ออยู่ในโหมดแมนนวล</p>
 <h2>วัตถุท้องฟ้าลึก</h2>
-<p>Messier และวัตถุที่ไม่ใช่ดาวอื่นๆ ถูกเรียกว่า &#8220;วัตถุท้องฟ้าลึก&#8221; ทั่วทั้งแอป</p>
-<h2>การเดินทางข้ามเวลาในเมนู</h2>
-<p>ตัวเลือกการเดินทางข้ามเวลาปรากฏขึ้นโดยตรงในเมนูล้นเหลือ พร้อมกับไอคอนสำหรับรายการเมนูทั้งหมด</p>]]></string>
-    <string name="beta_user_help_text" translation_description="HTML content shown to beta testers asking for feedback. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>ผู้ใช้เบต้า!</h2>
-<h3>วิธีที่คุณสามารถช่วยได้</h3>
-ในรีลีสนี้ เมื่อคุณใช้โหมดแมนนวลและปัดแผนที่ ขอบฟ้าจะกลับมาอยู่ในระดับเดียวกัน ดังนั้นส่วนบนของแผนที่จะแสดงดาวเหนือคุณเสมอ ก่อนหน้านี้แผนที่เพียงแค่เคลื่อนไปในแนวเส้นตรง ดังนั้นคุณอาจจบลงด้วยการกลับหัว คุณคิดอย่างไร? นี่ดีกว่าหรือไม่? โปรดแจ้งให้เราทราบ <a href="https://forms.gle/JkrMw7Zc4ynp45J79">ที่นี่</a><br/>
-เปิดเมนูช่วยเหลือเพื่อดูข้อมูลนี้อีกครั้ง]]></string>
-</resources>
+<p>หลุมดำ Cygnus X-1 และ Sagittarius A* อยู่ในแคตตาล็อก Sky Map แล้ว</p>]]></string>
+    </resources>
