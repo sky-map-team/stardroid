@@ -5,7 +5,7 @@ All notable changes to Sky Map are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [Unreleased] - 2026-03-24
+## [1.13.3] - 2026-04-12
 
 ### Added
 - **Two black holes** — Cygnus X-1 and Sagittarius A* are now in the Sky Map catalog
