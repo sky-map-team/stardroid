@@ -23,21 +23,21 @@
 
 | Issue | Title | Reason to close |
 |-------|-------|-----------------|
-| [#318](https://github.com/sky-map-team/stardroid/issues/318) | Add international space station | **Already implemented.** `IssLayer.kt` exists and tracks the ISS in real time with NASA data. |
-| [#478](https://github.com/sky-map-team/stardroid/issues/478) | Feature: Iss tracking | **Already implemented.** Functional duplicate of #318. Full ISS tracking in `IssLayer.kt`. |
-| [#357](https://github.com/sky-map-team/stardroid/issues/357) | Um, where's the moon? | **Already implemented.** `Moon.kt` calculates lunar position with Astronomical Almanac ephemerides. 8 phases rendered. |
-| [#225](https://github.com/sky-map-team/stardroid/issues/225) | Errors with FloatMath functions | **Resolved.** `FloatMath` has been removed from the main app. Only exists in `tools/` as a wrapper for `Math.*`. |
+| [#318](https://github.com/sky-map-team/stardroid/issues/318) | Add international space station | **Already implemented.** `stardroid-v1/app/src/main/java/com/google/android/stardroid/layers/IssLayer.kt` exists and tracks the ISS in real time with NASA data. |
+| [#478](https://github.com/sky-map-team/stardroid/issues/478) | Feature: Iss tracking | **Already implemented.** Functional duplicate of #318. Full ISS tracking in `stardroid-v1/app/src/main/java/com/google/android/stardroid/layers/IssLayer.kt`. |
+| [#357](https://github.com/sky-map-team/stardroid/issues/357) | Um, where's the moon? | **Already implemented.** `stardroid-v1/app/src/main/java/com/google/android/stardroid/space/Moon.kt` calculates lunar position with Astronomical Almanac ephemerides. 8 phases rendered. |
+| [#225](https://github.com/sky-map-team/stardroid/issues/225) | Errors with FloatMath functions | **Resolved.** `FloatMath` has been removed from the main app. Only exists in `stardroid-v1/tools/` as a wrapper for `Math.*`. |
 | [#472](https://github.com/sky-map-team/stardroid/issues/472) | Labels upside-down on screen | **Fixed in v1.10.11.** Root cause was a sign error in the sensor fallback path. Fix in PR #585. |
-| [#291](https://github.com/sky-map-team/stardroid/issues/291) | Reverse geocoding blocks UI thread | **Resolved.** `LocationController.java` now runs geocoding on a background thread with `runOnUiThread()` callback. Fixed in v1.10.9 (PR #525). |
-| [#269](https://github.com/sky-map-team/stardroid/issues/269) | App doesn't warn when location is disabled | **Resolved.** `getSwitchOnGPSDialog()` in `LocationController.java` shows an AlertDialog offering to enable GPS. `LocationPermissionDeniedDialogFragment` added in v1.10.11 for denied permissions. |
+| [#291](https://github.com/sky-map-team/stardroid/issues/291) | Reverse geocoding blocks UI thread | **Resolved.** `stardroid-v1/app/src/main/java/com/google/android/stardroid/control/LocationController.java` now runs geocoding on a background thread with `runOnUiThread()` callback. Fixed in v1.10.9 (PR #525). |
+| [#269](https://github.com/sky-map-team/stardroid/issues/269) | App doesn't warn when location is disabled | **Resolved.** `getSwitchOnGPSDialog()` in `stardroid-v1/app/src/main/java/com/google/android/stardroid/control/LocationController.java` shows an AlertDialog offering to enable GPS. `stardroid-v1/app/src/main/java/com/google/android/stardroid/activities/dialogs/LocationPermissionDeniedDialogFragment.java` added in v1.10.11 for denied permissions. |
 | [#306](https://github.com/sky-map-team/stardroid/issues/306) | Location Permission handling | **Resolved.** Location permission UX was significantly reworked in v1.10.11 (PR #563) with a proper dialog offering Grant/Manual/Later options. Permission mismatch also fixed in v1.10.10 (PR #562). |
-| [#265](https://github.com/sky-map-team/stardroid/issues/265) | Updating the .gitignore file | **Resolved.** `.gitignore` has been comprehensively updated with Android, IDE, secrets, OS, and project-specific patterns. |
+| [#265](https://github.com/sky-map-team/stardroid/issues/265) | Updating the .gitignore file | **Resolved.** `stardroid-v1/.gitignore` has been comprehensively updated with Android, IDE, secrets, OS, and project-specific patterns. |
 
 ### 1.2 Obsolete / Outdated
 
 | Issue | Title | Reason to close |
 |-------|-------|-----------------|
-| [#510](https://github.com/sky-map-team/stardroid/issues/510) | Add comet C/2023 A3 (Tsuchinshan-ATLAS) | **Obsolete.** Comet is no longer visible (Sep-Oct 2024 event). Comet infrastructure exists in `CometsLayer.kt`. |
+| [#510](https://github.com/sky-map-team/stardroid/issues/510) | Add comet C/2023 A3 (Tsuchinshan-ATLAS) | **Obsolete.** Comet is no longer visible (Sep-Oct 2024 event). Comet infrastructure exists in `stardroid-v1/app/src/main/java/com/google/android/stardroid/layers/CometsLayer.kt`. |
 | [#499](https://github.com/sky-map-team/stardroid/issues/499) | Upcoming recurrent nova of T Corona Borealis | **Obsolete.** Jun 2024 request about a temporary astronomical event. |
 | [#485](https://github.com/sky-map-team/stardroid/issues/485) | Add Comet Nishimura | **Obsolete.** Comet Nishimura was visible in Sep 2023. Already passed. |
 | [#471](https://github.com/sky-map-team/stardroid/issues/471) | K2 comet | **Obsolete.** Jul 2022 request about a temporary comet. |
@@ -137,14 +137,14 @@
 | [#396](https://github.com/sky-map-team/stardroid/issues/396) | A display issue | Layout bug with screenshot. From 2020, check if still reproducible. |
 | [#360](https://github.com/sky-map-team/stardroid/issues/360) | Traditional Chinese Google Play description | External issue (Google Play Store listing), not code. Store descriptions were reworked in v1.10.11. |
 | [#355](https://github.com/sky-map-team/stardroid/issues/355) | Calibration dialog localization | Calibration dialog was updated in v1.10.4 with translatable text (PR #453). Check if localization is now sufficient or still needed. |
-| [#297](https://github.com/sky-map-team/stardroid/issues/297) | Abnormal behavior when Gyroscope disabled | 6 comments. Deprecated orientation sensor. Check if `SensorOrientationController` handles this. |
-| [#296](https://github.com/sky-map-team/stardroid/issues/296) | build_skymap.sh as part of gradle | 6 comments. Build system has evolved significantly. Build script was cleaned up in v1.10.11. Verify if still relevant. |
-| [#294](https://github.com/sky-map-team/stardroid/issues/294) | Fix needed for PlanetsLayer | From 2019. Check if PlanetsLayer still has the described issue. |
-| [#290](https://github.com/sky-map-team/stardroid/issues/290) | Icons required in main.xml | Request for Terms of Service icon. Check if already added. |
-| [#287](https://github.com/sky-map-team/stardroid/issues/287) | Fix RealClock for SystemClock | `RealClock.java` still exists and uses `System.currentTimeMillis()`. Valid suggestion to switch to `SystemClock.elapsedRealtime()` but low priority. |
-| [#286](https://github.com/sky-map-team/stardroid/issues/286) | Remove Abstract Controller | `AbstractController.java` still exists. Valid issue but requires careful refactoring. Blocked by #460. |
+| [#297](https://github.com/sky-map-team/stardroid/issues/297) | Abnormal behavior when Gyroscope disabled | 6 comments. Deprecated orientation sensor. Check if `stardroid-v1/app/src/main/java/com/google/android/stardroid/control/SensorOrientationController.java` handles this. |
+| [#296](https://github.com/sky-map-team/stardroid/issues/296) | build_skymap.sh as part of gradle | 6 comments. Build system has evolved significantly. Build script `stardroid-v1/build_skymap.sh` was cleaned up in v1.10.11. Verify if still relevant. |
+| [#294](https://github.com/sky-map-team/stardroid/issues/294) | Fix needed for PlanetsLayer | From 2019. Check if `stardroid-v1/app/src/main/java/com/google/android/stardroid/layers/SolarSystemLayer.kt` (formerly PlanetsLayer) still has the described issue. |
+| [#290](https://github.com/sky-map-team/stardroid/issues/290) | Icons required in main.xml | Request for Terms of Service icon. Check if already added to `stardroid-v1/app/src/main/res/menu/main.xml`. |
+| [#287](https://github.com/sky-map-team/stardroid/issues/287) | Fix RealClock for SystemClock | `stardroid-v1/app/src/main/java/com/google/android/stardroid/control/RealClock.java` still exists and uses `System.currentTimeMillis()`. Valid suggestion to switch to `SystemClock.elapsedRealtime()` but low priority. |
+| [#286](https://github.com/sky-map-team/stardroid/issues/286) | Remove Abstract Controller | `stardroid-v1/app/src/main/java/com/google/android/stardroid/control/AbstractController.java` still exists. Valid issue but requires careful refactoring. Blocked by #460. |
 | [#285](https://github.com/sky-map-team/stardroid/issues/285) | Injecting everything in ControllerGroup | Related to #286. Incomplete DI in controllers. |
-| [#284](https://github.com/sky-map-team/stardroid/issues/284) | Location Workflow in AbstractGooglePlayServicesChecker | `AbstractGooglePlayServicesChecker.java` still exists. Location permission handling was reworked but this class remains. |
+| [#284](https://github.com/sky-map-team/stardroid/issues/284) | Location Workflow in AbstractGooglePlayServicesChecker | `stardroid-v1/app/src/main/java/com/google/android/stardroid/activities/util/AbstractGooglePlayServicesChecker.java` still exists. Location permission handling was reworked but this class remains. |
 | [#257](https://github.com/sky-map-team/stardroid/issues/257) | App doesn't show proper view | Orientation bug from 2019. Check if still reproducible. |
 | [#244](https://github.com/sky-map-team/stardroid/issues/244) | Lat Long prefs reset place name | Preference logic. Check current state. |
 | [#240](https://github.com/sky-map-team/stardroid/issues/240) | Location Suggestions in Settings | 4 comments. UX improvement. Feasible? |
@@ -152,7 +152,7 @@
 | [#232](https://github.com/sky-map-team/stardroid/issues/232) | Dot invalid in Lat/Long manual input | Numeric input validation. |
 | [#231](https://github.com/sky-map-team/stardroid/issues/231) | Different toolbar titles per screen | UI improvement. Check current state. |
 | [#234](https://github.com/sky-map-team/stardroid/issues/234) | Tell what the left icons do | Tooltips/descriptions for icons. |
-| [#227](https://github.com/sky-map-team/stardroid/issues/227) | Replace deprecated Gallery with RecyclerView | **Confirmed still needed.** `ImageGalleryActivity.java` still uses deprecated `android.widget.Gallery`. |
+| [#227](https://github.com/sky-map-team/stardroid/issues/227) | Replace deprecated Gallery with RecyclerView | **Confirmed still needed.** `stardroid-v1/app/src/main/java/com/google/android/stardroid/activities/ImageGalleryActivity.kt` (formerly .java) still uses deprecated `android.widget.Gallery`. |
 | [#210](https://github.com/sky-map-team/stardroid/issues/210) | Menu items in black text | Theme bug. May be resolved with Material migration (#460). |
 | [#188](https://github.com/sky-map-team/stardroid/issues/188) | No check for Geomagnetic Rotation Vector Sensor | Sensor smoothing. Related to #474 and #533. |
 | [#474](https://github.com/sky-map-team/stardroid/issues/474) | Smoothing when gyro is enabled | Related to #533 (over sensitive). |

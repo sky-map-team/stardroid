@@ -68,5 +68,5 @@ See [Module Structure](../specs/architecture/module-structure.md) for package-le
 
 - [specs/architecture/](../specs/architecture/README.md) — Full architecture documentation
 - [Design Documents Index](design/README.md) — Older design docs on sensors, rendering, ephemeris, and more
-- [CLAUDE.md](../CLAUDE.md) — AI-oriented codebase guide with build commands and testing notes
+- [CLAUDE.md](../../CLAUDE.md) — AI-oriented codebase guide with build commands and testing notes
 s

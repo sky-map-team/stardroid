@@ -150,8 +150,8 @@ _Earth release._
 - CONTRIBUTING.md with build instructions, coding style, and submission workflow
 - SECURITY.md with vulnerability reporting policy
 - CHANGELOG.md following Keep a Changelog format
-- docs/ARCHITECTURE.md with module structure, rendering pipeline, and Mermaid diagram
-- docs/design/README.md index for design documents
+- stardroid-v1/docs/ARCHITECTURE.md with module structure, rendering pipeline, and Mermaid diagram
+- stardroid-v1/docs/design/README.md index for design documents
 - GitHub issue templates (bug report and feature request) as YAML forms
 - Changelog update instructions in CONTRIBUTING.md and PR template
 
@@ -168,10 +168,10 @@ _Earth release._
   [#535](https://github.com/sky-map-team/stardroid/issues/535))
 - CI configuration overhauled: Gradle dependency caching added, emulator tests run on a supported
   API level, and flaky retry logic improved
-- Migrated design documents from `designdocs/` to `docs/design/`
-- Enhanced tools/README.md with module overview
+- Migrated design documents from `designdocs/` to `stardroid-v1/docs/design/`
+- Enhanced stardroid-v1/tools/README.md with module overview
 - Modernized PR template with type-of-change checklist
-- Updated CLAUDE.md reference to `docs/design/sensors.md`
+- Updated CLAUDE.md reference to `stardroid-v1/docs/design/sensors.md`
 
 ### Removed
 - Old single-file `.github/ISSUE_TEMPLATE.md` (replaced by YAML forms)

@@ -13,11 +13,11 @@ github: https://github.com/sky-map-team/stardroid
 
 ## Module Structure
 
-- **app/** - Main Android application (~171 source files)
-- **datamodel/** - Protocol buffer definitions for astronomical objects
-- **tools/** - Standalone utilities for converting star catalogs to binary protobuf format
+- **stardroid-v1/app/** - Main Android application (~171 source files)
+- **stardroid-v1/datamodel/** - Protocol buffer definitions for astronomical objects
+- **stardroid-v1/tools/** - Standalone utilities for converting star catalogs to binary protobuf format
 
-Read specs in `specs/` before undertaking complex investigations, starting with the overview.md file
+Read specs in `stardroid-v1/specs/` before undertaking complex investigations, starting with the overview.md file
 to know which specs to read.
 
 ## Build Flavors
@@ -31,7 +31,7 @@ all build, test, deploy, and data-generation commands.
 
 ## Architecture
 
-See `docs/ARCHITECTURE.md` for a full overview.
+See `stardroid-v1/docs/ARCHITECTURE.md` for a full overview.
 
 ### Dependency Injection
 
@@ -40,17 +40,17 @@ Uses Hilt for dependency injection. Common activity-scoped dependencies are in `
 ### Rendering Pipeline
 
 Layers → AstronomicalSource → Primitives (Point/Line/Text/Image) → OpenGL via `RendererController` /
-`SkyRenderer`. See `docs/ARCHITECTURE.md` for full detail.
+`SkyRenderer`. See `stardroid-v1/docs/ARCHITECTURE.md` for full detail.
 
 ### Coordinate Transformation
 
 `AstronomerModel` maps phone sensor coordinates to celestial RA/Dec via a transformation matrix
-derived from zenith and North vectors. See `docs/design/sensors.md` for the math.
+derived from zenith and North vectors. See `stardroid-v1/docs/design/sensors.md` for the math.
 
 ### Data Flow
 
 ```
-Raw catalogs → tools/Main.java → ASCII protobuf → binary protobuf → app/src/main/assets/
+Raw catalogs → stardroid-v1/tools/Main.java → ASCII protobuf → binary protobuf → stardroid-v1/app/src/main/assets/
                 (StellarAsciiProtoWriter)  (AsciiToBinaryProtoWriter)
 ```
 
@@ -91,7 +91,7 @@ with a single backslash as \')
 
 ### Colors
 
-Never hardcode color integers in Java/Kotlin. Declare in `app/src/main/res/values/colors.xml` and
+Never hardcode color integers in Java/Kotlin. Declare in `stardroid-v1/app/src/main/res/values/colors.xml` and
 reference via `R.color.*`.
 
 Status colors follow a two-tier naming scheme:
@@ -107,19 +107,19 @@ Night-mode variants are red-shifted; brighter = better (mirrors day-mode meaning
 
 ## Key Files
 
-- [`StardroidApplication.kt`](app/src/main/java/com/google/android/stardroid/StardroidApplication.kt) - Application entry point, Hilt initialization, sensor detection
+- [`StardroidApplication.kt`](stardroid-v1/app/src/main/java/com/google/android/stardroid/StardroidApplication.kt) - Application entry point, Hilt initialization, sensor detection
 - [
-  `DynamicStarMapActivity.java`](app/src/main/java/com/google/android/stardroid/activities/DynamicStarMapActivity.java) -
+  `DynamicStarMapActivity.java`](stardroid-v1/app/src/main/java/com/google/android/stardroid/activities/DynamicStarMapActivity.java) -
   Main interactive star map activity
 - [
-  `AstronomerModel.java`](app/src/main/java/com/google/android/stardroid/control/AstronomerModel.java) -
+  `AstronomerModel.java`](stardroid-v1/app/src/main/java/com/google/android/stardroid/control/AstronomerModel.java) -
   Coordinate transformation logic
-- [`SkyRenderer.java`](app/src/main/java/com/google/android/stardroid/renderer/SkyRenderer.java) -
+- [`SkyRenderer.java`](stardroid-v1/app/src/main/java/com/google/android/stardroid/renderer/SkyRenderer.java) -
   OpenGL rendering
-- [`source.proto`](datamodel/src/main/proto/source.proto) - Protocol buffer schema for astronomical
+- [`source.proto`](stardroid-v1/datamodel/src/main/proto/source.proto) - Protocol buffer schema for astronomical
   objects
 
 ## Testing
 
 Unit tests: JUnit 4, Robolectric, Mockito, Truth. Instrumented: Espresso.
-Structure mirrors main source: `app/src/test/` and `app/src/androidTest/`.
+Structure mirrors main source: `stardroid-v1/app/src/test/` and `stardroid-v1/app/src/androidTest/`.

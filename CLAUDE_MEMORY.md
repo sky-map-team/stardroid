@@ -3,16 +3,16 @@
 ## Build Gotchas
 - Always set `JAVA_HOME=$(/usr/libexec/java_home -v 17)` before building — Gradle will silently use the wrong JDK otherwise
 - Use `assembleGmsDebug` not `assembleDebug` (no plain flavor exists)
-- Full build/test/deploy commands are in the `/build` skill (`.claude/skills/build/SKILL.md`)
+- Full build/test/deploy commands are in the `/build` skill (`stardroid-v1/.claude/skills/build/SKILL.md`)
 
 ## Adding Catalog Objects (Messier/Special)
 
 ### Files to touch (in order)
-1. `tools/data/messier.csv` — source of truth; RA in decimal hours, Dec in decimal degrees
-2. `app/src/main/res/values/celestial_objects.xml` — one `<string>` per name/alias
-3. `app/src/main/res/values/celestial_info_cards.xml` — keys: `object_info_<key>_{description,funfact,distance,size}`
-4. `app/src/main/assets/object_info.json` — JSON entry keyed by primary name key; add `imageKey`/`imageCredit` if image available
-5. *(Optional)* `app/src/main/assets/celestial_images/messier/<name>.webp` — 480×800 WebP info card image; use `/celestial-image` skill to process a source image. If no free image exists, a 480×800 solid-black WebP is acceptable as placeholder (`python3 -c "from PIL import Image; Image.new('RGB',(480,800),(0,0,0)).save('willman_1.webp','WEBP')"`).
+1. `stardroid-v1/tools/data/messier.csv` — source of truth; RA in decimal hours, Dec in decimal degrees
+2. `stardroid-v1/app/src/main/res/values/celestial_objects.xml` — one `<string>` per name/alias
+3. `stardroid-v1/app/src/main/res/values/celestial_info_cards.xml` — keys: `object_info_<key>_{description,funfact,distance,size}`
+4. `stardroid-v1/app/src/main/assets/object_info.json` — JSON entry keyed by primary name key; add `imageKey`/`imageCredit` if image available
+5. *(Optional)* `stardroid-v1/app/src/main/assets/celestial_images/messier/<name>.webp` — 480×800 WebP info card image; use `/celestial-image` skill to process a source image. If no free image exists, a 480×800 solid-black WebP is acceptable as placeholder (`python3 -c "from PIL import Image; Image.new('RGB',(480,800),(0,0,0)).save('willman_1.webp','WEBP')"`).
 
 ### CSV name format
 - Use natural names with spaces, pipe-separated: `T CrB|Blaze Star|T Coronae Borealis`
@@ -26,12 +26,12 @@
 
 ## Release Splash Screens
 
-- Tool: `tools/make_release_splash.py` — composites a portrait + gold label onto the base splash
-- Source images stored in: `assets/splashscreens/<name>.png` (e.g. `venus.png`, `earth.png`)
-- Base splashes (unbranded originals): `assets/splashscreens/stardroid_big_image.webp` / `stardroid_big_image_large.jpg`
-- Deployed to: `app/src/main/res/drawable/stardroid_big_image.webp` (phones) and `drawable-large/stardroid_big_image.jpg` (tablets)
+- Tool: `stardroid-v1/tools/make_release_splash.py` — composites a portrait + gold label onto the base splash
+- Source images stored in: `stardroid-v1/assets/splashscreens/<name>.png` (e.g. `venus.png`, `earth.png`)
+- Base splashes (unbranded originals): `stardroid-v1/assets/splashscreens/stardroid_big_image.webp` / `stardroid_big_image_large.jpg`
+- Deployed to: `stardroid-v1/app/src/main/res/drawable/stardroid_big_image.webp` (phones) and `drawable-large/stardroid_big_image.jpg` (tablets)
 - Skill: `/release-splash <Label> <path/to/source.png> [crop x1,y1,x2,y2]`
-- New skills must be force-added: `git add --force .claude/skills/<name>/SKILL.md` (parent `.claude/` is gitignored but skills are tracked)
+- New skills must be force-added: `git add --force stardroid-v1/.claude/skills/<name>/SKILL.md` (parent `.claude/` is gitignored but skills are tracked)
 
 | Release | Source | Crop |
 |---------|--------|------|
@@ -73,6 +73,6 @@ Branch: `fix/location-ux` (created 2026-03-03 from master)
 - `ControllerGroup` stores `locationController` field and exposes `getLocationController()` — prevents two-instance bug where activity injection gets a different (never-started) instance than ControllerGroup
 - `DynamicStarMapActivity.maybeShowLocationWarning()` calls `controller.getLocationController()` and shows a `Toast` after `controller.start()` when location is unset; for PERMISSION_DENIED also shows `LocationPermissionDeniedDialogFragment`
 - **No Snackbar / no Material dependency** — Material `Snackbar` crashes on the app's AppCompat-only `FullscreenTheme` (missing `?attr/colorOnSurface`); `Toast` is used instead
-- `DiagnosticActivity`: "Location Permission" row added (first in Location & Time section); green/red colours that respect night mode
+- DiagnosticActivity: "Location Permission" row added (first in Location & Time section); green/red colours that respect night mode
 - Status colours renamed from sensor-specific names to generic `status_good/ok/warning/bad/absent` with `night_status_*` night-mode variants; no hardcoded hex in Java
-- Spec file: `specs/features/location.md`
+- Spec file: `stardroid-v1/specs/features/location.md`
