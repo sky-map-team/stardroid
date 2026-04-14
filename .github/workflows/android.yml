@@ -28,6 +28,8 @@ jobs:
           java-version: '17'
       - name: Gradle cache
         uses: gradle/actions/setup-gradle@v3
+      - name: Move to correct dir
+        run: cd stardroid-v1
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       - name: Build and test
