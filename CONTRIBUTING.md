@@ -56,28 +56,30 @@ Android Studio can create this file for you.
 
 ### Project Structure
 
-You should see the following directories:
+You should see the following directories (from within the `stardroid-v1` directory):
 
-- **stardroid-v1/app/** — Application source
-- **stardroid-v1/datamodel/** — Protocol buffer definitions for astronomical objects
-- **stardroid-v1/tools/** — Source for generating binary data used by the app
+- **app/** — Application source
+- **datamodel/** — Protocol buffer definitions for astronomical objects
+- **tools/** — Source for generating binary data used by the app
 
-See [stardroid-v1/docs/ARCHITECTURE.md](stardroid-v1/docs/ARCHITECTURE.md) for a detailed architecture overview.
+See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for a detailed architecture overview.
 
 ## Building
+
+All commands below should be run from within the `stardroid-v1` directory:
 
 ### Quick Build (Debug APK)
 
 ```bash
-./stardroid-v1/gradlew :app:assembleGmsDebug
+./gradlew :app:assembleGmsDebug
 ```
 
-The APK can be found in `stardroid-v1/app/build/outputs/apk/`.
+The APK can be found in `app/build/outputs/apk/`.
 
 ### Full Build (Including Data Generation)
 
 ```bash
-./stardroid-v1/build_skymap.sh
+./build_skymap.sh
 ```
 
 Pass `--quick` to skip data regeneration, or `--fdroid` to build the F-Droid variant.
@@ -93,7 +95,7 @@ Always specify the flavor when building: `assembleGmsDebug` not `assembleDebug`.
 
 > **Note:** Sky Map team only
 
-Create a file in the `stardroid-v1/app` directory called `no-checkin.properties` with appropriate values:
+Create a file in the `app` directory called `no-checkin.properties` with appropriate values:
 
 ```
 store-pwd=
@@ -104,7 +106,7 @@ analytics-key=
 and overwrite `google-services.json` with the correct file. Then:
 
 ```bash
-./stardroid-v1/gradlew :app:assembleGms
+./gradlew :app:assembleGms
 ```
 
 ## Running Tests
@@ -112,7 +114,7 @@ and overwrite `google-services.json` with the correct file. Then:
 ### Unit Tests
 
 ```bash
-./stardroid-v1/gradlew :app:test
+./gradlew :app:test
 ```
 
 ### Instrumented Tests
@@ -120,7 +122,7 @@ and overwrite `google-services.json` with the correct file. Then:
 Requires a connected device or emulator:
 
 ```bash
-./stardroid-v1/gradlew :app:connectedAndroidTest
+./gradlew :app:connectedAndroidTest
 ```
 
 ## Deploying to a Device
@@ -128,9 +130,9 @@ Requires a connected device or emulator:
 Plug your phone in and run:
 
 ```bash
-./stardroid-v1/deploy.sh       # Release build
-./stardroid-v1/deploy.sh -d    # Debug build
-./stardroid-v1/undeploy.sh     # Remove the app
+./deploy.sh       # Release build
+./deploy.sh -d    # Debug build
+./undeploy.sh     # Remove the app
 ```
 
 ## Submitting Changes
@@ -151,7 +153,7 @@ We follow the [Google Java Style Guide](https://google.github.io/styleguide/java
 
 ## Translations
 
-Translation files live under `stardroid-v1/app/src/main/res/values-<language>/`. If you'd like to contribute a new translation or fix an existing one, those PRs are very welcome. See the existing language directories for the format.
+Translation files live under `app/src/main/res/values-<language>/`. If you'd like to contribute a new translation or fix an existing one, those PRs are very welcome. See the existing language directories for the format.
 
 ## Deploying to the Google Play Store
 
@@ -163,8 +165,8 @@ We use `fastlane` to manage updates to the Play Store. Available commands can be
 bundle exec fastlane
 ```
 
-or by reading [stardroid-v1/fastlane/README.md](stardroid-v1/fastlane/README.md).
+or by reading [fastlane/README.md](fastlane/README.md).
 
 Before deploying a new release you will most likely want to update the `whatsnew` text and the
 list of contributors. Both these tasks can be done by Claude - see the Claude skills under
-`stardroid-v1/.claude/`.
+`.claude/`.
