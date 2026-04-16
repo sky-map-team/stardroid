@@ -87,6 +87,11 @@
         android:entryValues="@array/font_size_enums"
         android:entries="@array/font_size_texts"
         android:defaultValue="MEDIUM" />
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="show_sky_gradient"
+        android:summary="@string/show_sky_gradient_preference_summary"
+        android:title="@string/show_sky_gradient_preference_title" />
 
   </PreferenceCategory>
 
