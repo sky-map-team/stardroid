@@ -8,7 +8,11 @@ overlap with the skymap.deploy-play-store skill. Some steps might require input 
 
 ### Step 1. Bring the branding up to date
 1. Ask for release name (e.g. Jupiter) and version number (e.g. 1.14.0). Infer the next version number from the current versionName in `app/build.gradle`, and suggest a release name by inferring the pattern from recent git tags (e.g. planets, constellations, stars) — but confirm both with the user before proceeding, since the theme may change.
-2. Update the version name in build.gradle using fastlane: `bundle exec fastlane android bump_version name:"1.14.0:Jupiter"`
+2. Update the version name in build.gradle using fastlane, substituting the confirmed version and name:
+   ```bash
+   bundle exec fastlane android bump_version name:"<version>:<ReleaseName>"
+   # e.g. bundle exec fastlane android bump_version name:"1.14.0:Jupiter"
+   ```
 3. Ask the user for an appropriate image for the splashscreen. Use the `skymap.release-splashscreen` skill for this.
 
 ### Step 2. Bring the metadata up to date
@@ -59,23 +63,25 @@ The project has a `.tmconfig.toml` already configured. Run all `tm` commands fro
 ### Step 6. Update github with a new release
 After getting explicit confirmation from the user:
 
+In all commands below, substitute `<version>` and `<ReleaseName>` with the values confirmed in Step 1 (e.g. `1.14.0` and `Jupiter`).
+
 1. Cap the `../CHANGELOG.md` entry for this release. The `skymap.whatsnew` skill (Step 2.3) prepends content but leaves it without a version heading. Add the heading now:
    ```
-   ## [1.14.0] - YYYY-MM-DD
+   ## [<version>] - YYYY-MM-DD
    ```
    Use today's date. The CHANGELOG format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 2. Commit all changes from Steps 1–5 (version name, version code bump, splash, sponsors, contributors, whatsnew content, translations, CHANGELOG) in a single commit to master:
    ```bash
    git add -A
-   git commit -m "Prepare 1.14.0:Jupiter release"
+   git commit -m "Prepare <version>:<ReleaseName> release"
    git push origin master
    ```
 
 3. Tag the commit:
    ```bash
-   git tag v1.14.0
-   git push origin v1.14.0
+   git tag v<version>
+   git push origin v<version>
    ```
 
 4. Build the signed release APK:
@@ -86,14 +92,14 @@ After getting explicit confirmation from the user:
 
 5. Extract the release notes for this version from `../CHANGELOG.md` (the section between the new heading and the previous one) and upload the GitHub release:
    ```bash
-   # Extract just this release's section from CHANGELOG.md
-   awk '/^## \[1\.14\.0\]/{flag=1; next} /^## \[/{flag=0} flag' ../CHANGELOG.md \
+   # Substitute the actual version number in the awk pattern
+   awk '/^## \[<version>\]/{flag=1; next} /^## \[/{flag=0} flag' ../CHANGELOG.md \
      | sed '/^[[:space:]]*---[[:space:]]*$/d' \
      > /tmp/release_notes.md
 
-   gh release create v1.14.0 \
+   gh release create v<version> \
      app/build/outputs/apk/gms/release/app-gms-release.apk \
-     --title "Sky Map 1.14.0: Jupiter" \
+     --title "Sky Map <version>: <ReleaseName>" \
      --notes-file /tmp/release_notes.md
    ```
 
