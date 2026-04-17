@@ -42,7 +42,7 @@
     <string name="manual_compass_adjustment_summary" translation_description="Summary for the manual compass adjustment preference">Dodatkowe odchylenie w stopniach (+ lub −) dodane do odczytu kompasu</string>
     <string name="show_stars_pref" translation_description="Label for the stars layer on the sky map (shows in the search results)">Gwiazdy</string>
     <string name="show_constellations_pref" translation_description="Label for the constellation lines and labels layer (shows in the search results)">Gwiazdozbiory</string>
-    <string name="show_deep_sky_objects_pref" translation_description="Deep-sky objects layer — galaxies, nebulae, star clusters, and other notable objects (shows in the search results)">Katalog Messiera</string>
+    <string name="show_deep_sky_objects_pref" translation_description="Deep-sky objects layer — galaxies, nebulae, star clusters, and other notable objects (shows in the search results)">Obiekty głębokiego nieba</string>
     <string name="show_planets_pref" translation_description="Label for the solar system layer (planets, sun, moon)  (shows in the search results)">Układ Słoneczny</string>
     <string name="show_grid_pref" translation_description="Label for the Right Ascension / Declination grid overlay  (shows in the search results)">Siatka RA/Dec</string>
     <string name="show_horizon_pref" translation_description="Preference toggle label for the horizon line layer">Horyzont</string>
@@ -57,8 +57,8 @@
     <string name="auto_dimness_preference" translation_description="Mode for automatically dimming the screen when night mode is selected">Autoprzyciemnianie ekranu</string>
     <string name="font_size_preference" translation_description="Change the font size">Rozmiar czcionki</string>
     <string name="font_size_preference_description" translation_description="help to go along with the change font size preference">Dostosuj rozmiar tekstu etykiety</string>
-    <string name="show_sky_gradient_preference_title" translation_description="Setting toggle title: whether to show the blue sky gradient during the day">Pokaż gradient nieba</string>
-    <string name="show_sky_gradient_preference_summary" translation_description="Setting toggle summary for sky gradient: explains what the feature does">Zaciemnia niebo na niebiesko blisko Słońca i ciemno po przeciwnej stronie</string>
+    <string name="show_sky_gradient_preference_title" translation_description="Setting toggle title: whether to show the blue sky gradient during the day">Pokazuj gradient nieba</string>
+    <string name="show_sky_gradient_preference_summary" translation_description="Setting toggle summary for sky gradient: explains what the feature does">Koloruj niebo na niebiesko blisko Słońca i przyciemniaj po przeciwnej stronie</string>
     <string name="ecliptic" translation_description="Label for the ecliptic layer — the apparent annual path of the Sun across the sky">Ekliptyka</string>
     <string name="malformed_loc_error" translation_description="Error message when a non-numeric value is entered for latitude or longitude">Szerokość lub długość geograficzna nie jest liczbą.</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Akceptuj</string>
@@ -253,6 +253,6 @@ Twój telefon zgłasza dokładność kompasu jak pokazano powyżej. Aby ją popr
     <string name="object_info_tap_to_expand" translation_description="Hint shown on image to tap to expand">Naciśnij, aby powiększyć</string>
     <string name="object_info_tap_to_close" translation_description="Hint shown on expanded image to tap to close">Naciśnij, aby zamknąć</string>
     <string name="action_find_in_sky_map" translation_description="Button label that opens the star map and searches for the displayed object">Znajdź</string>
-    <string name="auto_level_horizon_on" translation_description="Toast message when auto-level horizon is enabled">Auto-level horyzontu włączony</string>
-    <string name="auto_level_horizon_off" translation_description="Toast message when auto-level horizon is disabled">Auto-level horyzontu wyłączony</string>
+    <string name="auto_level_horizon_on" translation_description="Toast message when auto-level horizon is enabled">Autowyrównywanie horyzontu włączone</string>
+    <string name="auto_level_horizon_off" translation_description="Toast message when auto-level horizon is disabled">Autowyrównywanie horyzontu wyłączone</string>
 </resources>
