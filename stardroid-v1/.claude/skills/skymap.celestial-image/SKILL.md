@@ -1,5 +1,5 @@
 ---
-name: celestial-image
+name: skymap.celestial-image
 description: Process and size an image for a Sky Map celestial info card. Prompts for an image (URL or local path), optional crop, and output filename, then converts to 480×800 WebP and saves to the correct assets directory. Trigger on "process celestial image", "add image for info card", "convert image for Sky Map", etc. ARGUMENTS: "[source_url_or_path] [category/output_name] [crop x1,y1,x2,y2]"
 ---
 

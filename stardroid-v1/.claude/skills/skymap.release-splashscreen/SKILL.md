@@ -1,5 +1,5 @@
 ---
-name: release-splash
+name: skymap.release-splashscreen
 description: Update the Sky Map splash screen for a new planetary release. Composites a portrait image onto the base splash with a branded strip. Use when asked to "update splash", "add splash for X release", or "create release branding". ARGUMENTS: "<ReleaseName> <path/to/source.png> [crop x1,y1,x2,y2]"
 disable-model-invocation: true
 ---

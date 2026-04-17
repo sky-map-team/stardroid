@@ -1,5 +1,5 @@
 ---
-name: skymap-contributors
+name: skymap.contributors
 description: Fetches GitHub contributors for Sky Map and updates the app/src/main/res/values/notranslate-contributors.xml file. Trigger this when asked to "sync contributors", "update contributors", or "refresh credits".
 ---
 

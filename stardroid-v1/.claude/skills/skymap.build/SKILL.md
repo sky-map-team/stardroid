@@ -1,5 +1,5 @@
 ---
-name: Sky Map Build Assistant
+name: skymap.build
 description: Build, test, deploy, and manage data generation for Sky Map. Trigger on "build the app", "run tests", "deploy to device", "generate data", "run lint", or similar build/dev workflow requests.
 ---
 

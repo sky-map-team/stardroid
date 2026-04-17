@@ -1,5 +1,5 @@
 ---
-name: sky-map-sponsors
+name: skymap.sponsors
 description: Fetches Buy Me a Coffee supporters and updates the app/src/main/res/values/notranslate-sponsors.xml file. Trigger this when asked to "sync sponsors", "update donors", or "refresh credits".
 ---
 

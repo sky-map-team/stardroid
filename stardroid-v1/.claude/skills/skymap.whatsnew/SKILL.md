@@ -1,5 +1,5 @@
 ---
-name: Sky Map Changelog Assistant
+name: skymap.whatsnew
 description: Fully automated release note generator for Sky Map. Just provide the last tag.
 dependencies: python>=3.8
 ---
