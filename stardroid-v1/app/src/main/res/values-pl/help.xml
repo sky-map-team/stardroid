@@ -26,7 +26,8 @@
 &lt;ul&gt;
 &lt;li&gt;przeciągnąć mapę jednym palcem, aby ją przesunąć,&lt;/li&gt;
 &lt;li&gt;uszczypnąć, aby powiększyć lub pomniejszyć,&lt;/li&gt;
-&lt;li&gt;obrócić dwoma palcami, aby zmienić położenie.&lt;/li&gt;
+&lt;li&gt;obrócić dwoma palcami, aby zmienić położenie,&lt;/li&gt;
+&lt;li&gt;nacisnąć dwukrotnie, aby przełączyć „automatyczne wyrównywanie” horyzotnu.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Tryb ręczny jest przydatny, gdy chcesz eksplorować niebo bez konieczności podnoszenia telefonu.&lt;/p&gt;
 
@@ -35,7 +36,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;b&gt;Gwiazdy:&lt;/b&gt; Najjaśniejsze gwiazdy z oznaczeniami tych bardziej znanych.&lt;/li&gt;
 &lt;li&gt;&lt;b&gt;Konstelacje:&lt;/b&gt; Obrysy i nazwy konstelacji.&lt;/li&gt;
-&lt;li&gt;&lt;b&gt;Obiekty Messiera:&lt;/b&gt; Obiekty głębokiego nieba: galaktyki, mgławice i gromady gwiazd.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Warte uwagi obiekty głębokiego nieba:&lt;/b&gt; Galaktyki, mgławice, gromady gwiazd i inne niesamowite obiekty.&lt;/li&gt;
 &lt;li&gt;&lt;b&gt;Planety:&lt;/b&gt; Planety naszego Układu Słonecznego wyświetlone jako obrazy.&lt;/li&gt;
 &lt;li&gt;&lt;b&gt;Deszcze meteorów:&lt;/b&gt; Aktywne i nadchodzące punkty radiantów deszczów meteorów.&lt;/li&gt;
 &lt;li&gt;&lt;b&gt;Ekliptyka i siatka RA/Dec:&lt;/b&gt; Ekliptyka to roczna droga Słońca po niebie.&lt;/li&gt;
@@ -53,7 +54,7 @@
 &lt;li&gt;&lt;b&gt;gwiazdy&lt;/b&gt; — według nazwy, np. „Syriusz”, „Betelgeza”, „Gwiazda Polarna,”&lt;/li&gt;
 &lt;li&gt;&lt;b&gt;planety&lt;/b&gt; — np. „Mars”, „Saturn”,&lt;/li&gt;
 &lt;li&gt;&lt;b&gt;konstelacje&lt;/b&gt; — np. „Orion”, „Kasjopeja”,&lt;/li&gt;
-&lt;li&gt;&lt;b&gt;obiekty Messiera&lt;/b&gt; — np. „M31”, „Galaktyka Andromedy”, „Plejady”,&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;obiekty głębokiego nieba&lt;/b&gt; — np. „M31”, „Galaktyka Andromedy”, „Plejady”,&lt;/li&gt;
 &lt;li&gt;&lt;b&gt;komety i deszcze meteorów&lt;/b&gt; — według nazwy.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;b&gt;W trybie automatycznym:&lt;/b&gt; po wybraniu wyniku Sky Map wyświetla celownik i strzałkę kierunkową. Podążaj za strzałką, obracając swój telefon — celownik zmieni kolor z niebieskiego na czerwony, a następnie pomarańczowy, gdy obiekt znajdzie się w Twoim polu widzenia. Naciśnij ✕, aby zakończyć wyszukiwanie.&lt;/p&gt;
@@ -77,7 +78,7 @@
 &lt;p&gt;Dokładność zmniejsza się dla dat odległych od teraźniejszości głównie z powodu oddziaływania grawitacyjnego Jowisza.&lt;/p&gt;
 
 &lt;h2&gt;Karty informacyjne&lt;/h2&gt;
-&lt;p&gt;Naciśnij dowolne oznaczone ciało niebieskie na mapie nieba, aby wyświetlić kartę informacyjną — panel ze zdjęciem i szczegółowymi informacjami o tym obiekcie. Karty informacyjne są dostępne dla ponad 150 obiektów, w tym gwiazd, planet, Księżyca, obiektów głębokiego nieba Messiera i konstelacji.&lt;/p&gt;
+&lt;p&gt;Naciśnij dowolne oznaczone ciało niebieskie na mapie nieba, aby wyświetlić kartę informacyjną — panel ze zdjęciem i szczegółowymi informacjami o tym obiekcie. Karty informacyjne są dostępne dla ponad 150 obiektów, w tym gwiazd, planet, Księżyca, wartych uwagi obiektów głębokiego nieba i konstelacji.&lt;/p&gt;
 &lt;p&gt;Każda karta przedstawia:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;fotografię lub obraz obiektu,&lt;/li&gt;
@@ -117,7 +118,6 @@
 &lt;h2&gt;Wskazówki i ustawienia warte poznania&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;b&gt;Diagnostyka:&lt;/b&gt; Jeśli coś wygląda źle, otwórz rozwijane menu i naciśnij &lt;b&gt;Diagnostyka&lt;/b&gt;. Ta strona pokazuje Twoją obecną lokalizację, czas, stan czujnika i odczyty dokładności — bardzo przydatne, jeśli potrzebujesz zgłosić problem.&lt;/li&gt;
-&lt;li&gt;&lt;b&gt;Zdjęcia Messiera:&lt;/b&gt; W &lt;b&gt;Ustawienia → Wygląd&lt;/b&gt; możesz wybrać, czy obiekty Messiera pojawiają się jako realistyczne miniatury, czy proste kropki.&lt;/li&gt;
 &lt;li&gt;&lt;b&gt;Rozmiar czcionki:&lt;/b&gt; Dostosuj rozmiar etykiet w &lt;b&gt;Ustawienia → Wygląd&lt;/b&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;b&gt;Niestabilna mapa:&lt;/b&gt; Wypróbuj &lt;b&gt;Prędkość czujnika&lt;/b&gt; i &lt;b&gt;Tłumienie&lt;/b&gt; w &lt;b&gt;Ustawienia → Ustawienia czujnika&lt;/b&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;b&gt;Brak żyroskopu?&lt;/b&gt; Jeśli Twój telefon nie posiada żyroskopu, włącz &lt;b&gt;Wyłącz żyroskop&lt;/b&gt; w ustawieniach czujnika, aby używać alternatywnego trybu czujnika.&lt;/li&gt;
