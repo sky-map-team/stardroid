@@ -37,8 +37,11 @@ import kotlin.math.abs
 class SkyGradientLayer(private val model: AstronomerModel, resources: Resources) :
     Layer {
     private val rendererLock = ReentrantLock()
+    @Volatile
     private var renderer: RendererController? = null
+    @Volatile
     private var lastUpdateTimeMs = 0L
+    @Volatile
     private var isVisible = false
 
     override fun initialize() {}
