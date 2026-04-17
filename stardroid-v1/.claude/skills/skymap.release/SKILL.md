@@ -45,10 +45,17 @@ The project has a `.tmconfig.toml` already configured. Run all `tm` commands fro
    To translate a single locale: `tm translate de-DE`
    To preview without calling the LLM: `tm translate --all-primary --dry-run`
 
-3. If you only need to retranslate the what's new content and changelogs (e.g. after Step 3 deletions):
+3. After primary translation, also translate fastlane changelogs for **all** supported locales
+   (not just primary ones — Play Store serves changelogs to every locale it supports):
+   ```bash
+   tm translate --all --source fastlane
+   ```
+   Locales already translated by `--all-primary` will be skipped automatically.
+
+4. If you only need to retranslate the what's new content and changelogs (e.g. after Step 3 deletions):
    ```bash
    tm translate --all-primary --file whatsnew_content.xml
-   tm translate --all-primary --source fastlane
+   tm translate --all --source fastlane
    ```
 4. Spot-check a few locales for structural issues (no LLM needed):
    ```bash

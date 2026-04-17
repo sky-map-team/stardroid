@@ -59,6 +59,8 @@
     <string name="auto_dimness_preference" translation_description="Mode for automatically dimming the screen when night mode is selected">Pylu\'r sgrin yn awtomatig</string>
     <string name="font_size_preference" translation_description="Change the font size">Maint y ffont</string>
     <string name="font_size_preference_description" translation_description="help to go along with the change font size preference">Addasu maint testun y labeli</string>
+    <string name="show_sky_gradient_preference_title" translation_description="Setting toggle title: whether to show the blue sky gradient during the day">Dangos graddiant yr awyr</string>
+    <string name="show_sky_gradient_preference_summary" translation_description="Setting toggle summary for sky gradient: explains what the feature does">Yn liwio\'r awyr yn las ger yr Haul ac yn dywyll ar yr ochr arall</string>
     <string name="ecliptic" translation_description="Label for the ecliptic layer — the apparent annual path of the Sun across the sky">Ecliptig</string>
     <string name="malformed_loc_error" translation_description="Error message when a non-numeric value is entered for latitude or longitude">Nid yw gosodiad lledred na hydred yn rif.</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Derbyn</string>

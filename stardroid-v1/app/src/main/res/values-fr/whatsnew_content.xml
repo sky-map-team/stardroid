@@ -1,9 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Galerie d\'images améliorée</h2>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Paramètre de dégradé du ciel</h2>
+<p>Vous pouvez maintenant activer ou désactiver le dégradé du ciel depuis les Paramètres.</p>
+<h2>Galerie d\'images améliorée</h2>
 <p>La galerie a été repensée avec une disposition en grille et de meilleurs liens vers les fiches d\'information.</p>
-<h2>Horizon d\'auto-nivellement en mode manuel</h2>
+<h2>Nivellement automatique de l\'horizon en mode manuel</h2>
 <p>Le nivellement automatique de l\'horizon est maintenant activé par un double appui en mode manuel.</p>
 <h2>Objets du ciel profond</h2>
 <p>Les trous noirs Cygnus X-1 et Sagittarius A* sont maintenant dans le catalogue Sky Map.</p>]]></string>

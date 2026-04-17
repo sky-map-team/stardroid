@@ -1,10 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>सुधारी गई इमेज गैलरी</h2>
-<p>गैलरी को ग्रिड लेआउट के साथ फिर से डिज़ाइन किया गया है और जानकारी कार्ड के लिए बेहतर लिंक हैं।</p>
-<h2>मैनुअल मोड में ऑटो लेवलिंग क्षितिज</h2>
-<p>ऑटो क्षितिज लेवलिंग अब मैनुअल मोड में डबल टैप के साथ टॉगल की जाती है।</p>
-<h2>डीप स्काई ऑब्जेक्ट्स</h2>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>आकाश ग्रेडिएंट सेटिंग</h2>
+<p>आप अब सेटिंग्स से आकाश ग्रेडिएंट पृष्ठभूमि को सक्षम या अक्षम कर सकते हैं।</p>
+<h2>सुधारी गई इमेज गैलरी</h2>
+<p>गैलरी को ग्रिड लेआउट और बेहतर जानकारी कार्ड लिंक के साथ फिर से डिज़ाइन किया गया है।</p>
+<h2>मैनुअल मोड में स्वचालित क्षितिज समतलन</h2>
+<p>स्वचालित क्षितिज समतलन अब मैनुअल मोड में डबल टैप के साथ टॉगल किया जाता है।</p>
+<h2>गहरे आकाश की वस्तुएं</h2>
 <p>ब्लैक होल Cygnus X-1 और Sagittarius A* अब Sky Map कैटलॉग में हैं।</p>]]></string>
     </resources>

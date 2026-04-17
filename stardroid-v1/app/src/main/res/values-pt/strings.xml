@@ -57,6 +57,8 @@
     <string name="auto_dimness_preference" translation_description="Mode for automatically dimming the screen when night mode is selected">Escurecer tela automaticamente</string>
     <string name="font_size_preference" translation_description="Change the font size">Tamanho da fonte</string>
     <string name="font_size_preference_description" translation_description="help to go along with the change font size preference">Exige reiniciar o aplicativo</string>
+    <string name="show_sky_gradient_preference_title" translation_description="Setting toggle title: whether to show the blue sky gradient during the day">Mostrar gradiente do céu</string>
+    <string name="show_sky_gradient_preference_summary" translation_description="Setting toggle summary for sky gradient: explains what the feature does">Sombreia o céu em azul perto do Sol e escuro no lado oposto</string>
     <string name="ecliptic" translation_description="Label for the ecliptic layer — the apparent annual path of the Sun across the sky">Eclíptica</string>
     <string name="malformed_loc_error" translation_description="Error message when a non-numeric value is entered for latitude or longitude">A conf. de latitude ou longitude não é um número.</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Aceito</string>

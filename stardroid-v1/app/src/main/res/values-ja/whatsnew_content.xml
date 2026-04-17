@@ -1,10 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>改善された画像ギャラリー</h2>
-<p>ギャラリーはグリッドレイアウトと情報カードへのより良いリンクで再設計されました。</p>
-<h2>マニュアルモードでの自動水平線レベリング</h2>
-<p>自動水平線レベリングは、マニュアルモード時にダブルタップで切り替えられるようになりました。</p>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>空のグラデーション設定</h2>
+<p>設定から空のグラデーション背景を有効または無効にできるようになりました。</p>
+<h2>改善された画像ギャラリー</h2>
+<p>ギャラリーがグリッドレイアウトで再設計され、情報カードへのリンクが改善されました。</p>
+<h2>手動モードでの地平線の自動レベリング</h2>
+<p>手動モード時に、ダブルタップで地平線の自動レベリングが切り替わるようになりました。</p>
 <h2>深宇宙天体</h2>
-<p>ブラックホール白鳥座X-1といて座A*がSky Mapカタログに追加されました。</p>]]></string>
+<p>ブラックホール「はくちょう座X-1」と「いて座A*」がSky Mapカタログに追加されました。</p>]]></string>
     </resources>

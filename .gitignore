@@ -1,6 +1,7 @@
 # --- Android / Gradle ---
 
 # --- Android Studio / IntelliJ ---
+.idea/
 
 # --- Secrets and Sensitive Files (DO NOT COMMIT) ---
 *.keystore

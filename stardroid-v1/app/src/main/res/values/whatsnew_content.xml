@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Improved Image Gallery</h2>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Sky Gradient Setting</h2>
+<p>You can now enable or disable the sky gradient background from Settings.</p>
+<h2>Improved Image Gallery</h2>
 <p>The gallery has been redesigned with a grid layout and better links to info cards.</p>
 <h2>Auto leveling horizon in manual mode</h2>
 <p>Auto horizon leveling is now toggled with a double tap when in manual mode.</p>

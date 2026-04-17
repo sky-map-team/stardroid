@@ -1,8 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Βελτιωμένη Γκαλερί Εικόνων</h2>
-<p>Η γκαλερί έχει αναδιαμορφωθεί με διάταξη πλέγματος και καλύτερες συνδέσμους προς κάρτες πληροφοριών.</p>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Ρύθμιση Κλίσης Ουρανού</h2>
+<p>Μπορείτε τώρα να ενεργοποιήσετε ή να απενεργοποιήσετε το φόντο κλίσης ουρανού από τις Ρυθμίσεις.</p>
+<h2>Βελτιωμένη Συλλογή Εικόνων</h2>
+<p>Η συλλογή έχει αναδιαμορφωθεί με διάταξη πλέγματος και καλύτερες συνδέσμους προς κάρτες πληροφοριών.</p>
 <h2>Αυτόματη ισοστάθμιση ορίζοντα σε χειручειρούμενη λειτουργία</h2>
 <p>Η αυτόματη ισοστάθμιση ορίζοντα ενεργοποιείται τώρα με διπλό πάτημα όταν βρίσκεστε σε χειρωνακτική λειτουργία.</p>
 <h2>Αντικείμενα Βαθέος Ουρανού</h2>

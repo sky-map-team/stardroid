@@ -5,6 +5,14 @@ All notable changes to Sky Map are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.13.4] - 2026-04-16
+
+### Added
+- **Sky gradient toggle** — a new Settings option lets you enable or disable the sky gradient
+  background ([#795](https://github.com/sky-map-team/stardroid/pull/795))
+
+---
+
 ## [1.13.3] - 2026-04-12
 
 ### Added

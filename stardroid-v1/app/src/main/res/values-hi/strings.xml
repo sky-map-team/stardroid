@@ -57,6 +57,8 @@
     <string name="auto_dimness_preference" translation_description="Mode for automatically dimming the screen when night mode is selected">स्वचालित स्क्रीन मंदिंग</string>
     <string name="font_size_preference" translation_description="Change the font size">फ़ॉन्ट आकार</string>
     <string name="font_size_preference_description" translation_description="help to go along with the change font size preference">लेबल टेक्स्ट आकार समायोजित करें</string>
+    <string name="show_sky_gradient_preference_title" translation_description="Setting toggle title: whether to show the blue sky gradient during the day">आकाश ग्रेडिएंट दिखाएं</string>
+    <string name="show_sky_gradient_preference_summary" translation_description="Setting toggle summary for sky gradient: explains what the feature does">सूर्य के पास आकाश को नीला और विपरीत ओर गहरा करता है</string>
     <string name="ecliptic" translation_description="Label for the ecliptic layer — the apparent annual path of the Sun across the sky">क्रांतिवृत्त</string>
     <string name="malformed_loc_error" translation_description="Error message when a non-numeric value is entered for latitude or longitude">अक्षांश या देशांतर सेटिंग एक संख्या नहीं है।</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">स्वीकार करें</string>

@@ -1,10 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Forbedret billedgalleri</h2>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Himmelgradient-indstilling</h2>
+<p>Du kan nu aktivere eller deaktivere himmelgradient-baggrunden fra Indstillinger.</p>
+<h2>Forbedret billedgalleri</h2>
 <p>Galleriet er blevet redesignet med et gitterlayout og bedre links til informationskort.</p>
 <h2>Auto-nivellering af horisont i manuel tilstand</h2>
-<p>Auto-horisontnivelleringen aktiveres nu med et dobbelt tryk i manuel tilstand.</p>
-<h2>Deep Sky Objects</h2>
+<p>Auto-horisont-nivellering aktiveres nu med et dobbelttryk i manuel tilstand.</p>
+<h2>Deep Sky-objekter</h2>
 <p>Sorte huller Cygnus X-1 og Sagittarius A* er nu i Sky Map-kataloget.</p>]]></string>
     </resources>

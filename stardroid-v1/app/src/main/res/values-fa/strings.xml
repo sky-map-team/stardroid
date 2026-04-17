@@ -57,6 +57,8 @@
     <string name="auto_dimness_preference" translation_description="Mode for automatically dimming the screen when night mode is selected">کاهش روشنایی خودکار صفحه</string>
     <string name="font_size_preference" translation_description="Change the font size">اندازه قلم</string>
     <string name="font_size_preference_description" translation_description="help to go along with the change font size preference">تنظیم اندازه متن برچسب</string>
+    <string name="show_sky_gradient_preference_title" translation_description="Setting toggle title: whether to show the blue sky gradient during the day">نمایش گرادیان آسمان</string>
+    <string name="show_sky_gradient_preference_summary" translation_description="Setting toggle summary for sky gradient: explains what the feature does">آسمان را نزدیک خورشید آبی و در طرف مقابل تیره رنگ می‌کند</string>
     <string name="ecliptic" translation_description="Label for the ecliptic layer — the apparent annual path of the Sun across the sky">دایرة البروج</string>
     <string name="malformed_loc_error" translation_description="Error message when a non-numeric value is entered for latitude or longitude">طول و عرض جغرافیایی باید عدد (با ارقام انگلیسی) باشند</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">قبول</string>

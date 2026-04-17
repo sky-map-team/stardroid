@@ -1,7 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Ulepszona galeria obrazów</h2>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Ustawienie gradientu nieba</h2>
+<p>Możesz teraz włączyć lub wyłączyć tło gradientu nieba z Ustawień.</p>
+<h2>Ulepszona galeria obrazów</h2>
 <p>Galeria została przeprojektowana z układem siatki i lepszymi linkami do kart informacyjnych.</p>
 <h2>Automatyczne wyrównywanie horyzontu w trybie ręcznym</h2>
 <p>Automatyczne wyrównywanie horyzontu jest teraz przełączane podwójnym dotknięciem w trybie ręcznym.</p>

@@ -1,10 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>گالری تصاویر بهبود یافته</h2>
-<p>گالری با طرح‌بندی شبکه‌ای و پیوندهای بهتر به کارت‌های اطلاعات دوباره طراحی شده است.</p>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>تنظیم شیب آسمان</h2>
+<p>اکنون می‌توانید شیب پس‌زمینه آسمان را از تنظیمات فعال یا غیرفعال کنید.</p>
+<h2>گالری تصاویر بهبود یافته</h2>
+<p>گالری با طرح‌بندی شطرنجی و پیوندهای بهتر به کارت‌های اطلاعات بازطراحی شده است.</p>
 <h2>تراز خودکار افق در حالت دستی</h2>
-<p>تراز خودکار افق اکنون با دو ضربه در حالت دستی فعال/غیرفعال می‌شود.</p>
+<p>تراز خودکار افق اکنون با دو ضربه در حالت دستی فعال یا غیرفعال می‌شود.</p>
 <h2>اجرام آسمان عمیق</h2>
 <p>سیاه‌چاله‌های Cygnus X-1 و Sagittarius A* اکنون در کاتالوگ Sky Map قرار دارند.</p>]]></string>
     </resources>

@@ -55,6 +55,8 @@
     <string name="auto_dimness_preference" translation_description="Mode for automatically dimming the screen when night mode is selected">自動螢幕變暗</string>
     <string name="font_size_preference" translation_description="Change the font size">字型大小</string>
     <string name="font_size_preference_description" translation_description="help to go along with the change font size preference">調整標籤文字大小</string>
+    <string name="show_sky_gradient_preference_title" translation_description="Setting toggle title: whether to show the blue sky gradient during the day">顯示天空漸層</string>
+    <string name="show_sky_gradient_preference_summary" translation_description="Setting toggle summary for sky gradient: explains what the feature does">在太陽附近將天空著色為藍色，在相反側著色為深色</string>
     <string name="ecliptic" translation_description="Label for the ecliptic layer — the apparent annual path of the Sun across the sky">黃道</string>
     <string name="malformed_loc_error" translation_description="Error message when a non-numeric value is entered for latitude or longitude">經緯度設定值並非數字。</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">接受</string>

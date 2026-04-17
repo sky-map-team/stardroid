@@ -1,10 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>แกลเลอรี่รูปภาพที่ปรับปรุง</h2>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>การตั้งค่าไล่ระดับสีท้องฟ้า</h2>
+<p>ตอนนี้คุณสามารถเปิดหรือปิดพื้นหลังไล่ระดับสีท้องฟ้าได้จากการตั้งค่า</p>
+<h2>แกลเลอรี่ที่ปรับปรุงแล้ว</h2>
 <p>แกลเลอรี่ได้รับการออกแบบใหม่ด้วยเลย์เอาต์กริดและลิงก์ไปยังการ์ดข้อมูลที่ดีขึ้น</p>
 <h2>การปรับระดับขอบฟ้าอัตโนมัติในโหมดแมนนวล</h2>
-<p>การปรับระดับขอบฟ้าอัตโนมัติสามารถเปิด/ปิดได้ด้วยการแตะสองครั้งเมื่ออยู่ในโหมดแมนนวล</p>
+<p>การปรับระดับขอบฟ้าอัตโนมัติจะเปิด/ปิดด้วยการแตะสองครั้งเมื่ออยู่ในโหมดแมนนวล</p>
 <h2>วัตถุท้องฟ้าลึก</h2>
 <p>หลุมดำ Cygnus X-1 และ Sagittarius A* อยู่ในแคตตาล็อก Sky Map แล้ว</p>]]></string>
     </resources>

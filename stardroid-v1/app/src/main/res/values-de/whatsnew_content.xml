@@ -1,7 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Verbesserte Bildergalerie</h2>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Himmelsfarbverlauf-Einstellung</h2>
+<p>Sie können den Himmelsfarbverlauf-Hintergrund jetzt in den Einstellungen aktivieren oder deaktivieren.</p>
+<h2>Verbesserte Bildergalerie</h2>
 <p>Die Galerie wurde mit einem Rasterlayout und besseren Links zu Infokarten neu gestaltet.</p>
 <h2>Automatische Horizontausrichtung im manuellen Modus</h2>
 <p>Die automatische Horizontausrichtung wird jetzt durch Doppeltippen im manuellen Modus umgeschaltet.</p>

@@ -1,10 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
     <!-- Actual whats new content which changes from release to release. Please do not change the &lt; and &gt; markup -->
-    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Forbedret bildegalleri</h2>
+    <string name="whats_new_content" translation_description="HTML content listing new features in this release, shown in the What's new dialog and appended to the Help screen. Please do not change the &lt; and &gt; markup."><![CDATA[<h2>Himmelgradient-innstilling</h2>
+<p>Du kan nå aktivere eller deaktivere himmelgradient-bakgrunnen fra Innstillinger.</p>
+<h2>Forbedret bildegalleri</h2>
 <p>Galleriet har blitt redesignet med et rutenettoppsett og bedre lenker til informasjonskort.</p>
 <h2>Automatisk horisontutjevning i manuell modus</h2>
-<p>Automatisk horisontutjevning blir nå aktivert med et dobbelttrykk når du er i manuell modus.</p>
+<p>Automatisk horisontutjevning aktiveres nå med et dobbelttrykk i manuell modus.</p>
 <h2>Dype himmelobjekter</h2>
 <p>Sorte hull Cygnus X-1 og Sagittarius A* er nå i Sky Map-katalogen.</p>]]></string>
     </resources>
