@@ -42,6 +42,7 @@ class SkyGradientLayer(private val model: AstronomerModel, resources: Resources)
         override fun initialize() {}
         override fun registerWithRenderer(rendererController: RendererController) {
             renderer = rendererController
+            rendererController.addUpdateClosure(::redraw)
             redraw()
     }
 
