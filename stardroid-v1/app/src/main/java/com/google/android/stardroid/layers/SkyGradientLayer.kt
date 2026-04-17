@@ -36,18 +36,22 @@ import kotlin.math.abs
  */
 class SkyGradientLayer(private val model: AstronomerModel, resources: Resources) :
     Layer {
-        private val rendererLock = ReentrantLock()
-        private var renderer: RendererController? = null
-        private var lastUpdateTimeMs = 0L
-        override fun initialize() {}
-        override fun registerWithRenderer(rendererController: RendererController) {
-            renderer = rendererController
-            rendererController.addUpdateClosure(::redraw)
-            redraw()
+    private val rendererLock = ReentrantLock()
+    private var renderer: RendererController? = null
+    private var lastUpdateTimeMs = 0L
+    private var isVisible = false
+
+    override fun initialize() {}
+
+    override fun registerWithRenderer(rendererController: RendererController) {
+        renderer = rendererController
+        rendererController.addUpdateClosure(::redraw)
+        redraw()
     }
 
     override fun setVisible(visible: Boolean) {
         Log.d(TAG, "Setting showSkyGradient $visible")
+        isVisible = visible
         if (visible) {
             lastUpdateTimeMs = 0
             redraw()
@@ -63,6 +67,7 @@ class SkyGradientLayer(private val model: AstronomerModel, resources: Resources)
 
     /** Redraws the sky shading gradient using the model's current time.  */
     protected fun redraw() {
+        if (!isVisible) return
         val modelTime = model.time
         if (abs(modelTime.time - lastUpdateTimeMs) > UPDATE_FREQUENCY_MS) {
             lastUpdateTimeMs = modelTime.time
