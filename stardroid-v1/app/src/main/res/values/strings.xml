@@ -61,6 +61,10 @@
         translation_description="Change the font size">Font size</string>
     <string name="font_size_preference_description"
         translation_description="help to go along with the change font size preference">Adjust label text size</string>
+    <string name="show_sky_gradient_preference_title"
+        translation_description="Setting toggle title: whether to show the blue sky gradient during the day">Show sky gradient</string>
+    <string name="show_sky_gradient_preference_summary"
+        translation_description="Setting toggle summary for sky gradient: explains what the feature does">Shades the sky blue near the Sun and dark on the opposite side</string>
     <string name="ecliptic" translation_description="Label for the ecliptic layer — the apparent annual path of the Sun across the sky">Ecliptic</string>
     <string name="malformed_loc_error" translation_description="Error message when a non-numeric value is entered for latitude or longitude">Latitude or longitude setting isn\'t a number.</string>
     <string name="dialog_accept" translation_description="accepting the licence agreement">Accept</string>
