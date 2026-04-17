@@ -1,5 +1,5 @@
 ---
-name: deploy-play-store
+name: skymap.deploy-play-store
 description: Deploy Sky Map to the Google Play Store using fastlane. Trigger on "deploy to Play Store", "release to internal", "promote to beta/production", "upload metadata", or similar Play Store release requests.
 ---
 
