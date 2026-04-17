@@ -18,24 +18,79 @@ Ask the user if they need to:
 3. Regenerate the 'whats new' text (`skymap.whatsnew` skill) for the app, the fastlane update and the github changelog
 
 ### Step 3. Remove unneeded text
-1. The instructions for beta users (key `beta_user_help_text` in `app/src/main/res/values/whatsnew_content.xml`) should be set to the empty string in en-US. It does not exist in other locales so no action is needed there.
+1. The `beta_user_help_text` string in `app/src/main/res/values/whatsnew_content.xml` is filled with instructions for beta testers during the beta period, and must be cleared to an empty string before a full release. Check if it has content; if so, set it to empty. It does not exist in other locales so no action is needed there.
 2. Delete the `fastlane/metadata/android/<locale>/changelogs/default.txt` file for every non en-US locale (delete the file entirely — Step 4 will regenerate them via translation).
 3. Delete the translated `whatsnew_content.xml` files in non en-US locales (i.e. `app/src/main/res/values-<locale>/whatsnew_content.xml`). Delete the files entirely — Step 4 will regenerate them.
 
 ### Step 4. Translate missing text
-1. Use the `translate-skymap` skill to ensure 100% coverage in all supported languages. In particular, `whats_new_content` (in `whatsnew_content.xml`) and `fastlane/metadata/android/<locale>/changelogs/default.txt` will need to be regenerated for all non en-US locales.
+
+**Prerequisites:** `tm` must be installed globally (`which tm`). If missing, install it from the translationmanager project:
+```bash
+pip install -e /path/to/translationmanager
+```
+The project has a `.tmconfig.toml` already configured. Run all `tm` commands from `stardroid-v1/`.
+
+1. Check current coverage to see what's missing:
+   ```bash
+   tm languages
+   ```
+2. Translate all primary languages (covers both Android XML strings and fastlane changelogs):
+   ```bash
+   tm translate --all-primary
+   ```
+   To translate a single locale: `tm translate de-DE`
+   To preview without calling the LLM: `tm translate --all-primary --dry-run`
+
+3. If you only need to retranslate the what's new content and changelogs (e.g. after Step 3 deletions):
+   ```bash
+   tm translate --all-primary --file whatsnew_content.xml
+   tm translate --all-primary --source fastlane
+   ```
+4. Spot-check a few locales for structural issues (no LLM needed):
+   ```bash
+   tm validate de-DE
+   tm validate fr-FR
+   ```
 
 ### Step 5. Upload to the Google Play Store
 1. Use the `skymap.deploy-play-store` skill to build and upload a new bundle and store metadata to the internal track.
+   **Note:** the `internal` fastlane lane automatically increments `versionCode` in `app/build.gradle`. Do not commit before this step — the Step 6 commit captures everything including this bump.
 
 ### Step 6. Update github with a new release
 After getting explicit confirmation from the user:
-1. Check in all the resulting changes into master.
-2. Tag the current head with (for example) `v1.14.0`: `git tag v1.14.0 && git push origin v1.14.0`
-3. Build a signed release APK: `./build_skymap.sh` (the gmsRelease APK will be at `app/build/outputs/apk/gms/release/app-gms-release.apk`)
-4. Update `../CHANGELOG.md` (one level above `stardroid-v1/`) to prepend the new release section — the `skymap.whatsnew` skill generates this content as Target C.
-5. Upload a GitHub release using the CLI:
+
+1. Cap the `../CHANGELOG.md` entry for this release. The `skymap.whatsnew` skill (Step 2.3) prepends content but leaves it without a version heading. Add the heading now:
+   ```
+   ## [1.14.0] - YYYY-MM-DD
+   ```
+   Use today's date. The CHANGELOG format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
+
+2. Commit all changes from Steps 1–5 (version name, version code bump, splash, sponsors, contributors, whatsnew content, translations, CHANGELOG) in a single commit to master:
    ```bash
+   git add -A
+   git commit -m "Prepare 1.14.0:Jupiter release"
+   git push origin master
+   ```
+
+3. Tag the commit:
+   ```bash
+   git tag v1.14.0
+   git push origin v1.14.0
+   ```
+
+4. Build the signed release APK:
+   ```bash
+   ./build_skymap.sh
+   ```
+   The signed APK will be at `app/build/outputs/apk/gms/release/app-gms-release.apk`.
+
+5. Extract the release notes for this version from `../CHANGELOG.md` (the section between the new heading and the previous one) and upload the GitHub release:
+   ```bash
+   # Extract just this release's section from CHANGELOG.md
+   awk '/^## \[1\.14\.0\]/{flag=1; next} /^## \[/{flag=0} flag' ../CHANGELOG.md \
+     | sed '/^[[:space:]]*---[[:space:]]*$/d' \
+     > /tmp/release_notes.md
+
    gh release create v1.14.0 \
      app/build/outputs/apk/gms/release/app-gms-release.apk \
      --title "Sky Map 1.14.0: Jupiter" \
