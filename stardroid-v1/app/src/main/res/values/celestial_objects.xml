@@ -387,4 +387,11 @@
     <!-- Exposed Cranium Nebula -->
     <string name="exposed_cranium_nebula" translation_description="Common name for the planetary nebula PMR 1 in Vela, named for its brain-in-a-skull appearance">Exposed Cranium Nebula</string>
     <string name="pmr_1" translation_description="Catalogue designation for the planetary nebula known as the Exposed Cranium Nebula">PMR 1</string>
+
+    <!-- Double Cluster (NGC 869 & NGC 884) -->
+    <string name="double_cluster" translation_description="Common name for the pair of open star clusters NGC 869 and NGC 884 in Perseus">Double Cluster</string>
+    <string name="ngc_869" translation_description="Catalog designation for the western cluster of the Double Cluster pair in Perseus">NGC 869</string>
+    <string name="ngc_884" translation_description="Catalog designation for the eastern cluster of the Double Cluster pair in Perseus">NGC 884</string>
+    <string name="h_and_chi_persei" translation_description="Traditional designation for the Double Cluster in Perseus">h and χ Persei</string>
+    <string name="caldwell_14" translation_description="Caldwell catalog designation for the Double Cluster in Perseus">Caldwell 14</string>
 </resources>
