@@ -549,6 +549,12 @@
     <string name="object_info_jewel_box_distance" translation_description="Distance to the Jewel Box shown in the info card. Translate units if appropriate for your locale.">~6,500 light-years</string>
     <string name="object_info_jewel_box_size" translation_description="Physical size of the Jewel Box shown in the info card. Translate units if appropriate for your locale.">~19 light-years across</string>
 
+    <!-- Double Cluster (NGC 869 & NGC 884) -->
+    <string name="object_info_double_cluster_description" translation_description="Description of the Double Cluster shown in the info card. Translate this text.">The Double Cluster (NGC 869 and NGC 884) is a dazzling pair of young open star clusters in Perseus, sitting side by side in the sky just over a degree apart. Both are visible to the naked eye as a misty patch, but even a small telescope reveals hundreds of brilliant blue-white supergiants packed into two glittering swarms. At roughly 7,500 light-years away, they lie within the Perseus Arm of our galaxy and rank among the finest binocular objects in the northern sky.</string>
+    <string name="object_info_double_cluster_funfact" translation_description="Fun fact about the Double Cluster shown in the info card. Translate this text.">At only 14 million years old, the Double Cluster is extraordinarily young — so recently born that its most massive stars are still blazing blue supergiants, with a handful already evolved into rare, fiery red supergiants.</string>
+    <string name="object_info_double_cluster_distance" translation_description="Distance to the Double Cluster shown in the info card. Translate units if appropriate for your locale.">~7,500 light-years</string>
+    <string name="object_info_double_cluster_size" translation_description="Physical size of the Double Cluster shown in the info card. Translate units if appropriate for your locale.">Each cluster ~70 light-years across; the pair separated by ~1,000 light-years</string>
+
     <!-- ==================== CONSTELLATIONS ==================== -->
     <!-- Note: Constellation names are defined in celestial_objects.xml -->
     <!-- Orion -->
