@@ -980,7 +980,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
    */
   private void showObjectInfoDialog(ObjectInfo objectInfo) {
     Log.d(TAG, "Showing object info dialog for: " + objectInfo.getId());
-    showDialog(ObjectInfoDialogFragment.newInstance(objectInfo), "Object Info");
+    showDialog(ObjectInfoDialogFragment.newInstance(objectInfo, false), "Object Info");
   }
 
   /**
