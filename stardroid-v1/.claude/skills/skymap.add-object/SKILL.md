@@ -108,7 +108,7 @@ Insert a new entry **after the last non-constellation object** (currently after 
     },
 ```
 
-Valid type values: nebula, galaxy, star, black_hole, cluster, constellation.
+Valid type values: nebula (for nebulae/remnants), galaxy, star, black_hole, cluster (for open/globular clusters), constellation.
 
 If an image is available (see Step 7), also add:
 ```json
