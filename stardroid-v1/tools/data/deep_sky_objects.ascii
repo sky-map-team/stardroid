@@ -3013,6 +3013,34 @@ source {
 }
 source {
   search_location {
+    right_ascension: 35.16
+    declination: 57.125
+  }
+  point {
+    location {
+      right_ascension: 35.16
+      declination: 57.125
+    }
+    color: 4761665
+    size: 3
+    shape: OPEN_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 35.16
+      declination: 57.125
+    }
+    color: 4761665
+    strings_str_id: "double_cluster"
+  }
+  name_str_ids: "double_cluster"
+  name_str_ids: "ngc_869"
+  name_str_ids: "ngc_884"
+  name_str_ids: "h_and_chi_persei"
+  name_str_ids: "caldwell_14"
+}
+source {
+  search_location {
     right_ascension: 142.17195
     declination: -49.6107
   }

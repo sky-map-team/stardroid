@@ -2010,6 +2010,17 @@
       "imageKey": "stars/eso_vindemiatrix.webp",
       "imageCredit": "ESO/Digitized Sky Survey 2"
     },
+    "double_cluster": {
+      "nameKey": "double_cluster",
+      "descriptionKey": "object_info_double_cluster_description",
+      "funFactKey": "object_info_double_cluster_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_double_cluster_distance",
+      "sizeKey": "object_info_double_cluster_size",
+      "magnitude": "3.7",
+      "imageKey": "deep_sky_objects/double_cluster.webp",
+      "imageCredit": "Genuson/CC BY-SA 3.0"
+    },
     "antlia": {
       "nameKey": "antlia",
       "descriptionKey": "object_info_antlia_description",
