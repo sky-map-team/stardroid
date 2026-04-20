@@ -141,7 +141,25 @@ format follows the source:
 - ESA/Webb: `"NASA, ESA, CSA, STScI/<Processor Name>"` (exact credit from the image page)
 - ESO: `"ESO/<Photographer Name>"`
 
-## Step 8 — Verify
+## Step 8 — Regenerate Protobuf Data
+
+Editing `deep_sky_objects.csv` does not take effect until the binary protobuf assets are
+regenerated. Run from `stardroid-v1/tools/`:
+
+```bash
+./generate.sh   # ASCII protocol buffers from CSV
+./binary.sh     # Binary assets → app/src/main/assets/
+```
+
+Or use the full build script (from `stardroid-v1/`) which includes data generation:
+
+```bash
+./build_skymap.sh
+```
+
+The `skymap.build` skill covers all build and data-generation commands in detail.
+
+## Step 9 — Verify
 
 Quickly confirm:
 - [ ] CSV row added with correct decimal RA/Dec
@@ -149,6 +167,7 @@ Quickly confirm:
 - [ ] All four info card strings present in celestial_info_cards.xml
 - [ ] object_info.json entry present with correct keys
 - [ ] If image added: file exists at `app/src/main/assets/celestial_images/deep_sky_objects/<name>.webp`
+- [ ] Protobuf data regenerated (`generate.sh` + `binary.sh` or `build_skymap.sh`)
 
 ## Reference — Coordinate Conversion
 
