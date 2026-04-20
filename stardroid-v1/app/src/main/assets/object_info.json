@@ -1666,6 +1666,17 @@
       "imageKey": "deep_sky_objects/cygnus_x_1.webp",
       "imageCredit": "NASA/CXC/M.Weiss"
     },
+    "north_america_nebula": {
+      "nameKey": "north_america_nebula",
+      "descriptionKey": "object_info_north_america_nebula_description",
+      "funFactKey": "object_info_north_america_nebula_funfact",
+      "type": "nebula",
+      "distanceKey": "object_info_north_america_nebula_distance",
+      "sizeKey": "object_info_north_america_nebula_size",
+      "magnitude": "4.0",
+      "imageKey": "deep_sky_objects/north_america_nebula.webp",
+      "imageCredit": "Giuseppe Donatiello/CC0"
+    },
     "alcyone": {
       "nameKey": "alcyone",
       "descriptionKey": "object_info_alcyone_description",
