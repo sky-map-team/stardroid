@@ -104,7 +104,8 @@ Insert a new entry **after the last non-constellation object** (currently after 
       "funFactKey": "object_info_<primary_key>_funfact",
       "type": "<type>",
       "distanceKey": "object_info_<primary_key>_distance",
-      "sizeKey": "object_info_<primary_key>_size"
+      "sizeKey": "object_info_<primary_key>_size",
+      "magnitude": "<magnitude as string, e.g. \"4.0\">"
     },
 ```
 
