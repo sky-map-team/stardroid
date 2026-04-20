@@ -45,6 +45,12 @@ Example: `Exposed Cranium Nebula` → `exposed_cranium_nebula`
 
 Each alias also gets its own key. Example: `PMR 1` → `pmr_1`
 
+**Digit-prefix rule:** Android resource names cannot start with a digit. `AbstractAsciiProtoWriter`
+applies the same rule: if the generated key starts with a digit, it is prefixed with `n`.
+Example: `47 Tucanae` → `n47_tucanae`, `47 Tuc` → `n47_tuc`.
+Apply this prefix consistently in all four files — `celestial_objects.xml` string names,
+`celestial_info_cards.xml` string names, and all keys/key-references in `object_info.json`.
+
 ## Step 3 — Edit deep_sky_objects.csv
 
 Append a row at the end of the file (before any blank trailing line). Format:
