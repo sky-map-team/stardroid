@@ -7,8 +7,10 @@
 
 ## Adding Catalog Objects (Messier/Special)
 
+Use the `/skymap.add_object` skill — it handles all steps automatically.
+
 ### Files to touch (in order)
-1. `stardroid-v1/tools/data/messier.csv` — source of truth; RA in decimal hours, Dec in decimal degrees
+1. `stardroid-v1/tools/data/deep_sky_objects.csv` — source of truth; RA in decimal hours, Dec in decimal degrees
 2. `stardroid-v1/app/src/main/res/values/celestial_objects.xml` — one `<string>` per name/alias
 3. `stardroid-v1/app/src/main/res/values/celestial_info_cards.xml` — keys: `object_info_<key>_{description,funfact,distance,size}`
 4. `stardroid-v1/app/src/main/assets/object_info.json` — JSON entry keyed by primary name key; add `imageKey`/`imageCredit` if image available
@@ -58,6 +60,9 @@ Branch: `feature/auto-level-horizon` (pushed 2026-03-01)
 ## Release Process
 - [feedback_play_store_build.md](feedback_play_store_build.md) — Always run a full build before pushing to Play Store
 - [feedback_version_name.md](feedback_version_name.md) — Always preserve the full version name including `:Earth` suffix when bumping. This suffix will change with minor and major version bumps but not with point/bugfix bumps.
+
+## Branching
+- [feedback_feature_branches.md](feedback_feature_branches.md) — Always work on a feature branch, never commit directly to master
 
 ## Implementation Discipline
 - [feedback_no_incidental_cleanups.md](feedback_no_incidental_cleanups.md) — Never make incidental cleanups (lambda conversions, `final`, cast removals, locale changes, style fixes) in a feature PR. Feature-scoped changes only.
