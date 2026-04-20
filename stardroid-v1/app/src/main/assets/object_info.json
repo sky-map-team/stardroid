@@ -1677,6 +1677,17 @@
       "imageKey": "deep_sky_objects/north_america_nebula.webp",
       "imageCredit": "Giuseppe Donatiello/CC0"
     },
+    "jewel_box": {
+      "nameKey": "jewel_box",
+      "descriptionKey": "object_info_jewel_box_description",
+      "funFactKey": "object_info_jewel_box_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_jewel_box_distance",
+      "sizeKey": "object_info_jewel_box_size",
+      "magnitude": "4.2",
+      "imageKey": "deep_sky_objects/eso_jewel_box.webp",
+      "imageCredit": "ESO/Y. Beletsky"
+    },
     "exposed_cranium_nebula": {
       "nameKey": "exposed_cranium_nebula",
       "descriptionKey": "object_info_exposed_cranium_nebula_description",

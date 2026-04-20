@@ -29,14 +29,14 @@ If `$ARGUMENTS` is empty, ask the user:
 
 1. **Source image** — local path or URL
 2. **Output path** — `<category>/<filename>` without extension.
-   Valid categories: `constellations`, `stars`, `messier`, `planets`.
+   Valid categories: `constellations`, `stars`, `deep_sky_objects`, `planets`.
    Suggest a name based on the subject (e.g. `messier/hubble_m42`).
 3. **Crop** (optional) — `x1,y1,x2,y2` to extract a sub-region before resizing.
    Skip if the subject is already well-centred and the image is in portrait or square orientation.
 
 **Validate before proceeding — reject and ask again if any check fails:**
 
-- **Category**: must be exactly one of `constellations`, `stars`, `messier`, `planets`.
+- **Category**: must be exactly one of `constellations`, `stars`, `deep_sky_objects`, `planets`.
 - **Name** (filename part): must match `[a-z0-9_]+` only.
 - **Crop**: if provided, must be exactly four tokens that are each non-negative integers.
 - **URLs**: must begin with `https://`. Reject `http://`, `file://`, and all other schemes.
@@ -107,7 +107,9 @@ if suffix not in allowed_exts:
 fd, src_path = tempfile.mkstemp(suffix=suffix, prefix='celestial_src_')
 os.close(fd)
 
-urllib.request.urlretrieve(url, src_path)
+req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+with urllib.request.urlopen(req) as resp, open(src_path, 'wb') as f:
+    f.write(resp.read())
 print('downloaded to', src_path, os.path.getsize(src_path), 'bytes')
 
 # Store the resolved local path back into config for subsequent steps
@@ -238,7 +240,7 @@ category = cfg['category']
 name     = cfg['name']
 out      = cfg['out_path']
 
-VALID_CATEGORIES = {'constellations', 'stars', 'messier', 'planets'}
+VALID_CATEGORIES = {'constellations', 'stars', 'deep_sky_objects', 'planets'}
 if category not in VALID_CATEGORIES:
     raise SystemExit(f'invalid category: {category!r}')
 if not re.fullmatch(r'[a-z0-9_]+', name):
@@ -273,7 +275,7 @@ Tell the user:
 
 | Category | Prefix examples |
 |---|---|
-| `messier/` | `hubble_m1`, `hubble_m42`, `eso_m104` |
+| `deep_sky_objects/` | `eso_jewel_box`, `hubble_m87`, `nasa_north_america_nebula` |
 | `stars/` | `eso_sirius`, `nasa_sun`, `hubble_eta_carinae` |
 | `constellations/` | `iau_orion`, `iau_ursa_major` |
 | `planets/` | `hubble_saturn`, `nasa_mercury` |

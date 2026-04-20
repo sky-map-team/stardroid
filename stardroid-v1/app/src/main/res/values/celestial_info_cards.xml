@@ -543,6 +543,12 @@
     <string name="object_info_exposed_cranium_nebula_distance" translation_description="Distance to the Exposed Cranium Nebula shown in the info card. Translate units if appropriate for your locale.">~5,000 light-years</string>
     <string name="object_info_exposed_cranium_nebula_size" translation_description="Physical size of the Exposed Cranium Nebula shown in the info card. Translate units if appropriate for your locale.">~2 light-years across</string>
 
+    <!-- Jewel Box (NGC 4755) -->
+    <string name="object_info_jewel_box_description" translation_description="Description of the Jewel Box cluster shown in the info card. Translate this text.">The Jewel Box (NGC 4755) is a young, brilliant open cluster in the constellation Crux, easily visible to the naked eye as a hazy fourth-magnitude patch just southeast of Mimosa. When viewed through a telescope, its stars blaze in vivid contrasting colours — deep blue supergiants alongside a striking red supergiant — earning it the name John Herschel gave it: a superb piece of fancy jewellery. At only 14–16 million years old, it is one of the youngest and most colourful clusters in the sky.</string>
+    <string name="object_info_jewel_box_funfact" translation_description="Fun fact about the Jewel Box shown in the info card. Translate this text.">The cluster\'s standout red star, κ Crucis, is a red supergiant so luminous it outshines the Sun by more than 100,000 times — a vivid reminder that star clusters are not all the same colour.</string>
+    <string name="object_info_jewel_box_distance" translation_description="Distance to the Jewel Box shown in the info card. Translate units if appropriate for your locale.">~6,500 light-years</string>
+    <string name="object_info_jewel_box_size" translation_description="Physical size of the Jewel Box shown in the info card. Translate units if appropriate for your locale.">~19 light-years across</string>
+
     <!-- ==================== CONSTELLATIONS ==================== -->
     <!-- Note: Constellation names are defined in celestial_objects.xml -->
     <!-- Orion -->
