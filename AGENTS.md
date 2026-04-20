@@ -20,6 +20,17 @@ github: https://github.com/sky-map-team/stardroid
 Read specs in `stardroid-v1/specs/` before undertaking complex investigations, starting with the overview.md file
 to know which specs to read.
 
+## Branching
+
+Always make code changes on a feature branch, never directly on `master`. Create a branch before
+starting any work:
+
+```
+git checkout -b feature/<short-description>
+```
+
+Only commit to `master` when explicitly instructed to do so.
+
 ## Build Flavors
 
 - **gms** - Includes Google Play Services (Analytics, Location). Requires `no-checkin.properties`
