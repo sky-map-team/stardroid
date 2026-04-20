@@ -1004,7 +1004,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
    */
   private void showObjectInfoDialog(ObjectInfo objectInfo) {
     Log.d(TAG, "Showing object info dialog for: " + objectInfo.getId());
-    showDialog(ObjectInfoDialogFragment.newInstance(objectInfo), "Object Info");
+    showDialog(ObjectInfoDialogFragment.newInstance(objectInfo), "Object Info:" + objectInfo.getId());
   }
 
   /**
@@ -1014,7 +1014,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
    */
   private void showDialog(androidx.fragment.app.DialogFragment fragment, String tag) {
     if (fragmentManager.findFragmentByTag(tag) == null) {
-      fragment.show(fragmentManager, tag);
+      fragment.showNow(fragmentManager, tag);
     }
   }
 

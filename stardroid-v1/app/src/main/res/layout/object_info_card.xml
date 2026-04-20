@@ -2,7 +2,7 @@
 <!-- Layout for the educational info card displayed when tapping celestial objects -->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:orientation="vertical"
@@ -17,6 +17,32 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textStyle="bold"
             android:textColor="?android:attr/textColorPrimary" />
+
+        <!-- See Also section: shown when related objects exist -->
+        <LinearLayout
+            android:id="@+id/object_info_see_also_section"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/object_info_see_also_label"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textStyle="bold"
+                android:textColor="?android:attr/textColorSecondary" />
+
+            <LinearLayout
+                android:id="@+id/object_info_see_also_items"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp" />
+
+        </LinearLayout>
 
         <FrameLayout
             android:id="@+id/object_info_image_container"
@@ -231,32 +257,6 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="?android:attr/textColorSecondary"
             android:lineSpacingMultiplier="1.2" />
-
-        <!-- See Also section: shown when related objects exist -->
-        <LinearLayout
-            android:id="@+id/object_info_see_also_section"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:visibility="gone">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/object_info_see_also_label"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textStyle="bold"
-                android:textColor="?android:attr/textColorSecondary" />
-
-            <LinearLayout
-                android:id="@+id/object_info_see_also_items"
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp" />
-
-        </LinearLayout>
 
     </LinearLayout>
 
