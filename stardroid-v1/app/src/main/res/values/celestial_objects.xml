@@ -112,6 +112,12 @@
     <string name="neptune" translation_description="Name of the planet Neptune">Neptune</string>
     <string name="pluto" translation_description="Name of the dwarf planet Pluto">Pluto</string>
 
+    <!-- Galilean Moons of Jupiter -->
+    <string name="io" translation_description="Name of Jupiter\'s moon Io">Io</string>
+    <string name="europa" translation_description="Name of Jupiter\'s moon Europa">Europa</string>
+    <string name="ganymede" translation_description="Name of Jupiter\'s moon Ganymede">Ganymede</string>
+    <string name="callisto" translation_description="Name of Jupiter\'s moon Callisto">Callisto</string>
+
     <!-- Gallery objects -->
     <string name="crab_nebula" translation_description="hubble object">Crab Nebula</string>
     <string name="eagle_nebula" translation_description="hubble object">Eagle Nebula</string>

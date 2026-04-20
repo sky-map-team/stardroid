@@ -67,7 +67,48 @@
       "sizeKey": "object_info_jupiter_size",
       "massKey": "object_info_jupiter_mass",
       "imageKey": "planets/hubble_jupiter.webp",
-      "imageCredit": "NASA/ESA/Hubble"
+      "imageCredit": "NASA/ESA/Hubble",
+      "seeAlso": ["io", "europa", "ganymede", "callisto"]
+    },
+    "io": {
+      "nameKey": "io",
+      "descriptionKey": "object_info_io_description",
+      "funFactKey": "object_info_io_funfact",
+      "type": "moon",
+      "distanceKey": "object_info_io_distance",
+      "sizeKey": "object_info_io_size",
+      "parentObjectId": "jupiter",
+      "seeAlso": ["jupiter", "europa", "ganymede", "callisto"]
+    },
+    "europa": {
+      "nameKey": "europa",
+      "descriptionKey": "object_info_europa_description",
+      "funFactKey": "object_info_europa_funfact",
+      "type": "moon",
+      "distanceKey": "object_info_europa_distance",
+      "sizeKey": "object_info_europa_size",
+      "parentObjectId": "jupiter",
+      "seeAlso": ["jupiter", "io", "ganymede", "callisto"]
+    },
+    "ganymede": {
+      "nameKey": "ganymede",
+      "descriptionKey": "object_info_ganymede_description",
+      "funFactKey": "object_info_ganymede_funfact",
+      "type": "moon",
+      "distanceKey": "object_info_ganymede_distance",
+      "sizeKey": "object_info_ganymede_size",
+      "parentObjectId": "jupiter",
+      "seeAlso": ["jupiter", "io", "europa", "callisto"]
+    },
+    "callisto": {
+      "nameKey": "callisto",
+      "descriptionKey": "object_info_callisto_description",
+      "funFactKey": "object_info_callisto_funfact",
+      "type": "moon",
+      "distanceKey": "object_info_callisto_distance",
+      "sizeKey": "object_info_callisto_size",
+      "parentObjectId": "jupiter",
+      "seeAlso": ["jupiter", "io", "europa", "ganymede"]
     },
     "saturn": {
       "nameKey": "saturn",

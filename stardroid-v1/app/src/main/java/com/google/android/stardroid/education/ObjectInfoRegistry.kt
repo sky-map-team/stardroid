@@ -30,6 +30,13 @@ class ObjectInfoRegistry @Inject constructor(
 ) {
     private val objectInfoMap: Map<String, ObjectInfoEntry> by lazy { loadFromAssets() }
 
+    private val virtualObjectNameMap: Map<String, ObjectInfo> by lazy {
+        objectInfoMap.entries
+            .filter { it.value.parentObjectId != null }
+            .mapNotNull { (id, _) -> getInfo(id)?.let { info -> info.name.lowercase() to info } }
+            .toMap()
+    }
+
     /**
      * Returns the set of object IDs that have educational content available.
      */
@@ -76,7 +83,9 @@ class ObjectInfoRegistry @Inject constructor(
             spectralClass = entry.spectralClass,
             magnitude = entry.magnitude,
             imagePath = imagePath,
-            imageCredit = entry.imageCredit
+            imageCredit = entry.imageCredit,
+            parentObjectId = entry.parentObjectId,
+            seeAlso = entry.seeAlso
         )
     }
 
@@ -117,6 +126,17 @@ class ObjectInfoRegistry @Inject constructor(
         }
 
         return resources.getString(nameResId)
+    }
+
+    fun getVirtualObjectsMatchingPrefix(prefix: String): List<String> {
+        val lowerPrefix = prefix.lowercase()
+        return virtualObjectNameMap.entries
+            .filter { it.key.startsWith(lowerPrefix) }
+            .map { it.value.name }
+    }
+
+    fun getVirtualObjectByName(name: String): ObjectInfo? {
+        return virtualObjectNameMap[name.lowercase()]
     }
 
     private fun getOptionalString(key: String?): String? {
@@ -163,6 +183,10 @@ class ObjectInfoRegistry @Inject constructor(
 
         for (objectId in objects.keys()) {
             val obj = objects.getJSONObject(objectId)
+            val seeAlsoArray = obj.optJSONArray("seeAlso")
+            val seeAlsoList = if (seeAlsoArray != null) {
+                (0 until seeAlsoArray.length()).map { seeAlsoArray.getString(it) }
+            } else emptyList()
             @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
             result[objectId.lowercase()] = ObjectInfoEntry(
                 nameKey = obj.getString("nameKey"),
@@ -175,7 +199,9 @@ class ObjectInfoRegistry @Inject constructor(
                 spectralClass = obj.optString("spectralClass", null),
                 magnitude = obj.optString("magnitude", null),
                 imageKey = obj.optString("imageKey", null),
-                imageCredit = obj.optString("imageCredit", null)
+                imageCredit = obj.optString("imageCredit", null),
+                parentObjectId = obj.optString("parentObjectId", null),
+                seeAlso = seeAlsoList
             )
         }
 
