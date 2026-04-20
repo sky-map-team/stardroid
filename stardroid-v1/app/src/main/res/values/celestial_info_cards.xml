@@ -555,6 +555,18 @@
     <string name="object_info_double_cluster_distance" translation_description="Distance to the Double Cluster shown in the info card. Translate units if appropriate for your locale.">~7,500 light-years</string>
     <string name="object_info_double_cluster_size" translation_description="Physical size of the Double Cluster shown in the info card. Translate units if appropriate for your locale.">Each cluster ~70 light-years across; the pair separated by ~1,000 light-years</string>
 
+    <!-- 47 Tucanae (NGC 104) -->
+    <string name="object_info_n47_tucanae_description" translation_description="Description of 47 Tucanae shown in the info card. Translate this text.">47 Tucanae (NGC 104) is the second-brightest globular cluster in the sky, a dense ball of roughly one million ancient stars orbiting the Milky Way in the constellation Tucana. At about 14,500 light-years away it appears to the naked eye as a fuzzy fourth-magnitude star, but a telescope resolves its compressed core into an extraordinary swarm of golden and blue-white suns. Its stars formed around 13 billion years ago, making the cluster almost as old as the universe itself.</string>
+    <string name="object_info_n47_tucanae_funfact" translation_description="Fun fact about 47 Tucanae shown in the info card. Translate this text.">47 Tucanae is a cosmic pulsar factory: astronomers have found at least 35 millisecond pulsars spinning hundreds of times per second inside it — more than in any other known globular cluster — the result of stellar close encounters that recycle old neutron stars by spinning them up.</string>
+    <string name="object_info_n47_tucanae_distance" translation_description="Distance to 47 Tucanae shown in the info card. Translate units if appropriate for your locale.">~14,500 light-years</string>
+    <string name="object_info_n47_tucanae_size" translation_description="Physical size of 47 Tucanae shown in the info card. Translate units if appropriate for your locale.">~120 light-years across</string>
+
+    <!-- Centaurus A (NGC 5128) -->
+    <string name="object_info_centaurus_a_description" translation_description="Description of Centaurus A shown in the info card. Translate this text.">Centaurus A (NGC 5128) is the closest active radio galaxy to Earth, a giant elliptical galaxy in the constellation Centaurus whose striking dark dust lane betrays a violent past — a spiral galaxy swallowed roughly 200–700 million years ago. At its heart lurks a supermassive black hole of 55 million solar masses that drives relativistic jets stretching more than a million light-years in radio wavelengths. At a distance of roughly 12 million light-years it is one of the most studied galaxies in the sky.</string>
+    <string name="object_info_centaurus_a_funfact" translation_description="Fun fact about Centaurus A shown in the info card. Translate this text.">Centaurus A is one of the most powerful natural radio transmitters in the sky — its jets blast plasma outward at nearly the speed of light, and the full extent of its radio lobes spans an area equivalent to about 100 full moons laid end to end across the sky.</string>
+    <string name="object_info_centaurus_a_distance" translation_description="Distance to Centaurus A shown in the info card. Translate units if appropriate for your locale.">~12 million light-years</string>
+    <string name="object_info_centaurus_a_size" translation_description="Physical size of Centaurus A shown in the info card. Translate units if appropriate for your locale.">~123,000 light-years across</string>
+
     <!-- ==================== CONSTELLATIONS ==================== -->
     <!-- Note: Constellation names are defined in celestial_objects.xml -->
     <!-- Orion -->

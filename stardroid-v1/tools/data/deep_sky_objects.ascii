@@ -3064,3 +3064,54 @@ source {
   name_str_ids: "exposed_cranium_nebula"
   name_str_ids: "pmr_1"
 }
+source {
+  search_location {
+    right_ascension: 6.0231004
+    declination: -72.08145
+  }
+  point {
+    location {
+      right_ascension: 6.0231004
+      declination: -72.08145
+    }
+    color: 4761665
+    size: 3
+    shape: GLOBULAR_CLUSTER
+  }
+  label {
+    location {
+      right_ascension: 6.0231004
+      declination: -72.08145
+    }
+    color: 4761665
+    strings_str_id: "n47_tucanae"
+  }
+  name_str_ids: "n47_tucanae"
+  name_str_ids: "n47_tuc"
+  name_str_ids: "ngc_104"
+}
+source {
+  search_location {
+    right_ascension: 201.3651
+    declination: -43.01911
+  }
+  point {
+    location {
+      right_ascension: 201.3651
+      declination: -43.01911
+    }
+    color: 4761665
+    size: 3
+    shape: GALAXY
+  }
+  label {
+    location {
+      right_ascension: 201.3651
+      declination: -43.01911
+    }
+    color: 4761665
+    strings_str_id: "centaurus_a"
+  }
+  name_str_ids: "centaurus_a"
+  name_str_ids: "ngc_5128"
+}

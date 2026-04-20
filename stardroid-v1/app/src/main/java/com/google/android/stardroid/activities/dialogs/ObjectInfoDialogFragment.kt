@@ -70,6 +70,7 @@ class ObjectInfoDialogFragment : DialogFragment() {
             @Suppress("DEPRECATION")
             arguments?.getParcelable(ARG_OBJECT_INFO)
         }
+        val showFind = arguments?.getBoolean(ARG_SHOW_FIND, true) ?: true
 
         if (info == null) {
             Log.w(TAG, "ObjectInfo not found in arguments, dismissing dialog")
@@ -173,13 +174,16 @@ class ObjectInfoDialogFragment : DialogFragment() {
             seeAlsoSection.visibility = View.VISIBLE
         }
 
-        val alertDialog = AlertDialog.Builder(parentActivity)
-            .setView(view)
-            .setPositiveButton(R.string.action_find_in_sky_map) { dialog, _ ->
+        val builder = AlertDialog.Builder(parentActivity).setView(view)
+        if (showFind) {
+            builder.setPositiveButton(R.string.action_find_in_sky_map) { dialog, _ ->
                 (activity as? OnFindClickedListener)?.onFindClicked(info)
                 dialog.dismiss()
             }
-            .create()
+        } else {
+            builder.setPositiveButton(android.R.string.ok) { dialog, _ -> dialog.dismiss() }
+        }
+        val alertDialog = builder.create()
         alertDialog.setOnShowListener { NightModeHelper.applyAlertDialogNightMode(alertDialog, isNight) }
         return alertDialog
     }
@@ -211,19 +215,23 @@ class ObjectInfoDialogFragment : DialogFragment() {
     companion object {
         private val TAG = MiscUtil.getTag(ObjectInfoDialogFragment::class.java)
         private const val ARG_OBJECT_INFO = "object_info"
+        private const val ARG_SHOW_FIND = "show_find"
 
         /**
          * Creates a new instance of the dialog with the given object info.
          * Using this factory method ensures the data survives configuration changes.
          *
          * @param info The ObjectInfo to display in the dialog
+         * @param showFind true to show a "Find" button (e.g. from gallery); false to show "OK"
          * @return A new ObjectInfoDialogFragment instance
          */
         @JvmStatic
-        fun newInstance(info: ObjectInfo): ObjectInfoDialogFragment {
+        @JvmOverloads
+        fun newInstance(info: ObjectInfo, showFind: Boolean = true): ObjectInfoDialogFragment {
             return ObjectInfoDialogFragment().apply {
                 arguments = Bundle().apply {
                     putParcelable(ARG_OBJECT_INFO, info)
+                    putBoolean(ARG_SHOW_FIND, showFind)
                 }
             }
         }

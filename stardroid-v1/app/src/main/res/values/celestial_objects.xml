@@ -400,4 +400,13 @@
     <string name="ngc_884" translation_description="Catalog designation for the eastern cluster of the Double Cluster pair in Perseus">NGC 884</string>
     <string name="h_and_chi_persei" translation_description="Traditional designation for the Double Cluster in Perseus">h and χ Persei</string>
     <string name="caldwell_14" translation_description="Caldwell catalog designation for the Double Cluster in Perseus">Caldwell 14</string>
+
+    <!-- 47 Tucanae (NGC 104) -->
+    <string name="n47_tucanae" translation_description="Common name for the globular cluster NGC 104 in Tucana">47 Tucanae</string>
+    <string name="n47_tuc" translation_description="Abbreviation for the globular cluster 47 Tucanae (NGC 104)">47 Tuc</string>
+    <string name="ngc_104" translation_description="NGC catalog designation for the globular cluster 47 Tucanae">NGC 104</string>
+
+    <!-- Centaurus A (NGC 5128) -->
+    <string name="centaurus_a" translation_description="Common name for the radio galaxy NGC 5128 in Centaurus">Centaurus A</string>
+    <string name="ngc_5128" translation_description="NGC catalog designation for the radio galaxy Centaurus A">NGC 5128</string>
 </resources>

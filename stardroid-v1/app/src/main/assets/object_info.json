@@ -1191,6 +1191,28 @@
       "imageKey": "deep_sky_objects/hubble_m87.webp",
       "imageCredit": "NASA/ESA/Hubble"
     },
+    "n47_tucanae": {
+      "nameKey": "n47_tucanae",
+      "descriptionKey": "object_info_n47_tucanae_description",
+      "funFactKey": "object_info_n47_tucanae_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_n47_tucanae_distance",
+      "sizeKey": "object_info_n47_tucanae_size",
+      "magnitude": "4.09",
+      "imageKey": "deep_sky_objects/eso_47_tucanae.webp",
+      "imageCredit": "ESO"
+    },
+    "centaurus_a": {
+      "nameKey": "centaurus_a",
+      "descriptionKey": "object_info_centaurus_a_description",
+      "funFactKey": "object_info_centaurus_a_funfact",
+      "type": "galaxy",
+      "distanceKey": "object_info_centaurus_a_distance",
+      "sizeKey": "object_info_centaurus_a_size",
+      "magnitude": "6.84",
+      "imageKey": "deep_sky_objects/eso_centaurus_a.webp",
+      "imageCredit": "ESO"
+    },
     "orion": {
       "nameKey": "orion",
       "descriptionKey": "object_info_orion_description",
