@@ -50,7 +50,7 @@ Each alias also gets its own key. Example: `PMR 1` → `pmr_1`
 Append a row at the end of the file (before any blank trailing line). Format:
 
 ```
-Primary Name|Alias 1|Alias 2,Type,RA_decimal_hours,Dec_decimal_degrees,Magnitude,Size_arcmin,Catalog#,Constellation,Detailed Type,Common Name
+Primary Name|Alias 1|Alias 2,Type,RA (h),DEC (deg),Magnitude,Size (arcminutes),NGC#,Constellation,Detailed Type,Common Name
 ```
 
 - Use the exact same type string in both Type and Detailed Type columns for non-Messier objects.
