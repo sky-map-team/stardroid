@@ -315,17 +315,17 @@
     <!-- tm:omitted name="m108" reason="identical_to_source" -->
     <!-- tm:omitted name="m109" reason="identical_to_source" -->
     <!-- tm:omitted name="m110" reason="identical_to_source" -->
-    <string name="ngc6543" translation_description="Name of the Messier object NGC6543">NGC 6543</string>
-    <string name="ngc5139" translation_description="Name of the Messier object NGC5139">NGC 5139</string>
+    <string name="ngc_6543" translation_description="Name of the Messier object NGC6543">NGC 6543</string>
+    <string name="ngc_5139" translation_description="Name of the Messier object NGC5139">NGC 5139</string>
     <!-- tm:omitted name="t_crb" reason="identical_to_source" -->
     <string name="blaze_star" translation_description="Nickname for the recurrent nova T Coronae Borealis">Зоря Полум\'я</string>
     <string name="t_coronae_borealis" translation_description="Full name of the recurrent nova T Coronae Borealis">T Korona Borealis</string>
     <string name="eta_carinae_nebula" translation_description="Name of the Eta Carinae Nebula (NGC 3372)">Туманність Ета Карини</string>
     <string name="carina_nebula" translation_description="Common name for the Eta Carinae Nebula">Туманність Карини</string>
-    <!-- tm:omitted name="ngc3372" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_3372" reason="identical_to_source" -->
     <string name="tarantula_nebula" translation_description="Name of the Tarantula Nebula (NGC 2070) in the Large Magellanic Cloud">Туманність Тарантул</string>
     <string name="n30_doradus" translation_description="Catalog designation for the Tarantula Nebula">30 Золотої Рибки</string>
-    <!-- tm:omitted name="ngc2070" reason="identical_to_source" -->
+    <!-- tm:omitted name="ngc_2070" reason="identical_to_source" -->
     <string name="lmc" translation_description="Abbreviation for the Large Magellanic Cloud">ВМЗ</string>
     <string name="large_magellanic_cloud" translation_description="Full name of the Large Magellanic Cloud galaxy">Велика Магеланова Хмара</string>
     <!-- tm:omitted name="nubecula_major" reason="identical_to_source" -->

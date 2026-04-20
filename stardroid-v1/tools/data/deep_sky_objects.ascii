@@ -2672,9 +2672,9 @@ source {
       declination: 66.6332
     }
     color: 4761665
-    strings_str_id: "ngc6543"
+    strings_str_id: "ngc_6543"
   }
-  name_str_ids: "ngc6543"
+  name_str_ids: "ngc_6543"
   name_str_ids: "cats_eye_nebula"
 }
 source {
@@ -2697,9 +2697,9 @@ source {
       declination: -47.47686
     }
     color: 4761665
-    strings_str_id: "ngc5139"
+    strings_str_id: "ngc_5139"
   }
-  name_str_ids: "ngc5139"
+  name_str_ids: "ngc_5139"
   name_str_ids: "omega_centauri"
 }
 source {
@@ -2801,7 +2801,7 @@ source {
   }
   name_str_ids: "eta_carinae_nebula"
   name_str_ids: "carina_nebula"
-  name_str_ids: "ngc3372"
+  name_str_ids: "ngc_3372"
 }
 source {
   search_location {
@@ -2827,7 +2827,7 @@ source {
   }
   name_str_ids: "tarantula_nebula"
   name_str_ids: "n30_doradus"
-  name_str_ids: "ngc2070"
+  name_str_ids: "ngc_2070"
 }
 source {
   search_location {
