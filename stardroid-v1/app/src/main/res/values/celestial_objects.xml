@@ -383,4 +383,8 @@
     <string name="jewel_box" translation_description="Common name for the open star cluster NGC 4755 in Crux">Jewel Box</string>
     <string name="herschels_jewel_box" translation_description="Alternative name for the Jewel Box cluster (NGC 4755)">Herschel\'s Jewel Box</string>
     <string name="kappa_crucis_cluster" translation_description="Alternative name for the Jewel Box cluster (NGC 4755)">Kappa Crucis Cluster</string>
+
+    <!-- Exposed Cranium Nebula -->
+    <string name="exposed_cranium_nebula" translation_description="Common name for the planetary nebula PMR 1 in Vela, named for its brain-in-a-skull appearance">Exposed Cranium Nebula</string>
+    <string name="pmr_1" translation_description="Catalogue designation for the planetary nebula known as the Exposed Cranium Nebula">PMR 1</string>
 </resources>
