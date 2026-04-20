@@ -194,6 +194,7 @@ class ObjectInfoDialogFragment : DialogFragment() {
          * @return A new ObjectInfoDialogFragment instance
          */
         @JvmStatic
+        @JvmOverloads
         fun newInstance(info: ObjectInfo, showFind: Boolean = true): ObjectInfoDialogFragment {
             return ObjectInfoDialogFragment().apply {
                 arguments = Bundle().apply {
