@@ -30,14 +30,7 @@ class ObjectInfoRegistry @Inject constructor(
 ) {
     private val objectInfoMap: Map<String, ObjectInfoEntry> by lazy { loadFromAssets() }
 
-    private val virtualObjectNameMap: Map<String, ObjectInfo> by lazy {
-        objectInfoMap.entries
-            .filter { it.value.parentObjectId != null }
-            .mapNotNull { (id, _) -> getInfo(id)?.let { info -> info.name.lowercase() to info } }
-            .toMap()
-    }
-
-    /**
+/**
      * Returns the set of object IDs that have educational content available.
      */
     val supportedObjectIds: Set<String>
@@ -130,13 +123,18 @@ class ObjectInfoRegistry @Inject constructor(
 
     fun getVirtualObjectsMatchingPrefix(prefix: String): List<String> {
         val lowerPrefix = prefix.lowercase()
-        return virtualObjectNameMap.entries
-            .filter { it.key.startsWith(lowerPrefix) }
-            .map { it.value.name }
+        return objectInfoMap.entries
+            .filter { it.value.parentObjectId != null }
+            .mapNotNull { (id, _) -> getSearchName(id) }
+            .filter { it.lowercase().startsWith(lowerPrefix) }
     }
 
     fun getVirtualObjectByName(name: String): ObjectInfo? {
-        return virtualObjectNameMap[name.lowercase()]
+        val lowerName = name.lowercase()
+        return objectInfoMap.entries
+            .filter { it.value.parentObjectId != null }
+            .firstOrNull { (id, _) -> getSearchName(id)?.lowercase() == lowerName }
+            ?.let { (id, _) -> getInfo(id) }
     }
 
     private fun getOptionalString(key: String?): String? {

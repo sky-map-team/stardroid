@@ -161,8 +161,8 @@ class ObjectInfoDialogFragment : DialogFragment() {
                     textSize = 14f
                     setPadding(0, 4, 0, 4)
                     setTextColor(parentActivity.getColor(
-                        if (isNight) R.color.night_text_color
-                        else android.R.color.holo_blue_dark
+                        if (isNight) R.color.night_link_color
+                        else R.color.day_link_color
                     ))
                     setOnClickListener {
                         (activity as? OnSeeAlsoClickedListener)?.onSeeAlsoClicked(relatedId)

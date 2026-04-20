@@ -1014,7 +1014,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
    */
   private void showDialog(androidx.fragment.app.DialogFragment fragment, String tag) {
     if (fragmentManager.findFragmentByTag(tag) == null) {
-      fragment.showNow(fragmentManager, tag);
+      fragment.show(fragmentManager, tag);
     }
   }
 
