@@ -94,7 +94,7 @@ comment. Use this template:
 
 ## Step 6 — Edit object_info.json
 
-Insert a new entry **after the last non-constellation object** (currently after `cygnus_x_1`) and
+Insert a new entry **after the last non-constellation object** (currently after <last_non_constellation_object_key>) and
 **before** the constellation entries. Use this template:
 
 ```json
@@ -108,7 +108,7 @@ Insert a new entry **after the last non-constellation object** (currently after 
     },
 ```
 
-Valid `type` values: `nebula`, `galaxy`, `star`, `black_hole`, `constellation`.
+Valid type values: nebula, galaxy, star, black_hole, cluster, constellation.
 
 If an image is available (see Step 7), also add:
 ```json
