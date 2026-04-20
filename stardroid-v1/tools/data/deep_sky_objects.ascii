@@ -2985,3 +2985,28 @@ source {
   name_str_ids: "ngc_7000"
   name_str_ids: "caldwell_20"
 }
+source {
+  search_location {
+    right_ascension: 142.17195
+    declination: -49.6107
+  }
+  point {
+    location {
+      right_ascension: 142.17195
+      declination: -49.6107
+    }
+    color: 4761665
+    size: 3
+    shape: PLANETARY_NEBULA
+  }
+  label {
+    location {
+      right_ascension: 142.17195
+      declination: -49.6107
+    }
+    color: 4761665
+    strings_str_id: "exposed_cranium_nebula"
+  }
+  name_str_ids: "exposed_cranium_nebula"
+  name_str_ids: "pmr_1"
+}

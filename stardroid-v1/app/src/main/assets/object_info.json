@@ -1677,6 +1677,16 @@
       "imageKey": "deep_sky_objects/north_america_nebula.webp",
       "imageCredit": "Giuseppe Donatiello/CC0"
     },
+    "exposed_cranium_nebula": {
+      "nameKey": "exposed_cranium_nebula",
+      "descriptionKey": "object_info_exposed_cranium_nebula_description",
+      "funFactKey": "object_info_exposed_cranium_nebula_funfact",
+      "type": "nebula",
+      "distanceKey": "object_info_exposed_cranium_nebula_distance",
+      "sizeKey": "object_info_exposed_cranium_nebula_size",
+      "imageKey": "deep_sky_objects/webb_exposed_cranium_nebula.webp",
+      "imageCredit": "NASA, ESA, CSA, STScI/Joseph DePasquale"
+    },
     "alcyone": {
       "nameKey": "alcyone",
       "descriptionKey": "object_info_alcyone_description",
