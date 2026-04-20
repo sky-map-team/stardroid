@@ -122,6 +122,8 @@ Look for a freely licensed image from one of these sources:
 - **NASA** (nasa.gov, hubblesite.org, webb.nasa.gov) — public domain, use freely
 - **ESA/Hubble or ESA/Webb** (esahubble.org, esawebb.org) — CC BY 4.0, use with attribution
 - **ESO** (eso.org) — CC BY 4.0, use with attribution
+- **Wikipedia** (wikipedia.org) — CC BY-SA 4.0, use with attribution
+- Images with less restrictive licenses than specified are OK.
 - Avoid images with unclear or restrictive licenses
 
 If a suitable image is found, invoke the **`skymap.celestial-image`** skill, passing:

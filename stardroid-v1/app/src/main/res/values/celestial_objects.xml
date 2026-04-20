@@ -367,6 +367,11 @@
     <string name="puppidvelids" translation_description="Meteor Shower">Puppid-Velids</string>
     <string name="ursids" translation_description="Meteor Shower">Ursids</string>
 
+    <!-- North America Nebula -->
+    <string name="north_america_nebula" translation_description="Name of the North America Nebula (NGC 7000) as shown on the sky map">North America Nebula</string>
+    <string name="ngc_7000" translation_description="Catalog designation for the North America Nebula">NGC 7000</string>
+    <string name="caldwell_20" translation_description="Caldwell catalog designation for the North America Nebula">Caldwell 20</string>
+
     <!-- Comets -->
     <string name="comet_leonard" translation_description="Name of Comet Leonard (C/2021 A1) as shown on the sky map">Comet Leonard</string>
     <!-- TODO: no need for these alt names once our search is less lousy -->

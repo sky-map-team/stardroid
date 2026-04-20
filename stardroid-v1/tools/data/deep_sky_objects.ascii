@@ -2959,3 +2959,29 @@ source {
   name_str_ids: "black_hole_binary"
   name_str_ids: "stellar_black_hole"
 }
+source {
+  search_location {
+    right_ascension: 314.8212
+    declination: 44.52889
+  }
+  point {
+    location {
+      right_ascension: 314.8212
+      declination: 44.52889
+    }
+    color: 4761665
+    size: 3
+    shape: DIFFUSE_NEBULA
+  }
+  label {
+    location {
+      right_ascension: 314.8212
+      declination: 44.52889
+    }
+    color: 4761665
+    strings_str_id: "north_america_nebula"
+  }
+  name_str_ids: "north_america_nebula"
+  name_str_ids: "ngc_7000"
+  name_str_ids: "caldwell_20"
+}
