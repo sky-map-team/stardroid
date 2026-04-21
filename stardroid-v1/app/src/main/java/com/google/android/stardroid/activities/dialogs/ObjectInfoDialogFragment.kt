@@ -159,11 +159,15 @@ class ObjectInfoDialogFragment : DialogFragment() {
                 val itemView = TextView(parentActivity).apply {
                     text = name
                     textSize = 14f
-                    setPadding(0, 4, 0, 4)
+                    val paddingPx = (4 * resources.displayMetrics.density).toInt()
+                    setPadding(0, paddingPx, 0, paddingPx)
                     setTextColor(parentActivity.getColor(
                         if (isNight) R.color.night_link_color
                         else R.color.day_link_color
                     ))
+                    val outValue = android.util.TypedValue()
+                    parentActivity.theme.resolveAttribute(android.R.attr.selectableItemBackground, outValue, true)
+                    setBackgroundResource(outValue.resourceId)
                     setOnClickListener {
                         (activity as? OnSeeAlsoClickedListener)?.onSeeAlsoClicked(relatedId)
                         dismiss()

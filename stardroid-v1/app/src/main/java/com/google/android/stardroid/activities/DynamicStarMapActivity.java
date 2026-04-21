@@ -846,7 +846,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
         if (parentName != null) {
           List<SearchResult> parentResults = layerManager.searchByObjectName(parentName);
           if (!parentResults.isEmpty()) {
-            activateSearchTarget(parentResults.get(0).coords(), parentResults.get(0).getCapitalizedName());
+            activateSearchTarget(parentResults.get(0).coords(), virtualInfo.getName());
           }
         }
         showObjectInfoDialog(virtualInfo);
