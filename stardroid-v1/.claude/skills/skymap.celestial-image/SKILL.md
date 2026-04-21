@@ -246,6 +246,13 @@ if category not in VALID_CATEGORIES:
 if not re.fullmatch(r'[a-z0-9_]+', name):
     raise SystemExit(f'invalid name: {name!r}')
 
+# All paths are relative to stardroid-v1/ — fail fast if cwd is wrong
+if not os.path.isdir('app/src/main/assets/celestial_images'):
+    raise SystemExit(
+        'ERROR: celestial_images directory not found. '
+        'Run this script from stardroid-v1/, not from the repo root or a worktree root.'
+    )
+
 assets_root = os.path.abspath('app/src/main/assets/celestial_images')
 dest = os.path.abspath(os.path.join(assets_root, category, f'{name}.webp'))
 
