@@ -132,15 +132,15 @@ class ObjectInfoRegistry @Inject constructor(
         return resources.getString(nameResId)
     }
 
-    fun getVirtualObjectsMatchingPrefix(prefix: String): List<VirtualObjectSuggestion> {
-        val lowerPrefix = prefix.lowercase()
+    fun getVirtualObjectsMatchingPrefix(prefix: String?): List<VirtualObjectSuggestion> {
+        val lowerPrefix = prefix?.lowercase() ?: return emptyList()
         return virtualObjectIndex.entries
             .filter { it.key.startsWith(lowerPrefix) }
             .map { it.value.second }
     }
 
-    fun getVirtualObjectByName(name: String): ObjectInfo? {
-        return virtualObjectIndex[name.lowercase()]?.let { (id, _) -> getInfo(id) }
+    fun getVirtualObjectByName(name: String?): ObjectInfo? {
+        return virtualObjectIndex[name?.lowercase()]?.let { (id, _) -> getInfo(id) }
     }
 
     private fun getOptionalString(key: String?): String? {
