@@ -79,5 +79,6 @@ internal data class ObjectInfoEntry(
     val imageKey: String? = null,
     val imageCredit: String? = null,
     val parentObjectId: String? = null,
-    val seeAlso: List<String> = emptyList()
+    val seeAlso: List<String> = emptyList(),
+    val searchSubtext: String? = null
 )

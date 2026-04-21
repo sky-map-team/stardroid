@@ -78,6 +78,7 @@
       "distanceKey": "object_info_io_distance",
       "sizeKey": "object_info_io_size",
       "parentObjectId": "jupiter",
+      "searchSubtext": "Moon of Jupiter",
       "seeAlso": ["jupiter", "europa", "ganymede", "callisto"]
     },
     "europa": {
@@ -88,6 +89,7 @@
       "distanceKey": "object_info_europa_distance",
       "sizeKey": "object_info_europa_size",
       "parentObjectId": "jupiter",
+      "searchSubtext": "Moon of Jupiter",
       "seeAlso": ["jupiter", "io", "ganymede", "callisto"]
     },
     "ganymede": {
@@ -98,6 +100,7 @@
       "distanceKey": "object_info_ganymede_distance",
       "sizeKey": "object_info_ganymede_size",
       "parentObjectId": "jupiter",
+      "searchSubtext": "Moon of Jupiter",
       "seeAlso": ["jupiter", "io", "europa", "callisto"]
     },
     "callisto": {
@@ -108,6 +111,7 @@
       "distanceKey": "object_info_callisto_distance",
       "sizeKey": "object_info_callisto_size",
       "parentObjectId": "jupiter",
+      "searchSubtext": "Moon of Jupiter",
       "seeAlso": ["jupiter", "io", "europa", "ganymede"]
     },
     "saturn": {

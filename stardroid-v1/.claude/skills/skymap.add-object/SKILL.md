@@ -151,7 +151,8 @@ Virtual objects skip Steps 3 and 8 entirely (no CSV row, no protobuf regeneratio
   "type": "moon",
   "distanceKey": "object_info_<primary_key>_distance",
   "sizeKey": "object_info_<primary_key>_size",
-  "parentObjectId": "<parent_key>"
+  "parentObjectId": "<parent_key>",
+  "searchSubtext": "<subtitle shown below object name in search dropdown>"
 },
 ```
 

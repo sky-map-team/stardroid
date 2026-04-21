@@ -89,13 +89,13 @@ class SearchTermsProvider : ContentProvider() {
       return cursor
     }
     val results = layerManager.getObjectNamesMatchingPrefix(query)
-    val virtualNames = objectInfoRegistry.getVirtualObjectsMatchingPrefix(query)
-    Log.d("SearchTermsProvider", "Got results n=" + results.size + " virtual=" + virtualNames.size)
+    val virtualSuggestions = objectInfoRegistry.getVirtualObjectsMatchingPrefix(query)
+    Log.d("SearchTermsProvider", "Got results n=" + results.size + " virtual=" + virtualSuggestions.size)
     for (result in results) {
       cursor.addRow(columnValuesOfSuggestion(result))
     }
-    for (name in virtualNames) {
-      cursor.addRow(columnValuesOfSuggestion(SearchTerm(name, "")))
+    for (suggestion in virtualSuggestions) {
+      cursor.addRow(columnValuesOfSuggestion(SearchTerm(suggestion.name, suggestion.subtext)))
     }
     return cursor
   }

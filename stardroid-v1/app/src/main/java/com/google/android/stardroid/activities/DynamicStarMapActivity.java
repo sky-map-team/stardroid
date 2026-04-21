@@ -841,7 +841,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
     if (results.isEmpty()) {
       Log.d(TAG, "No layer results, checking virtual objects");
       ObjectInfo virtualInfo = objectInfoRegistry.getVirtualObjectByName(queryString);
-      if (virtualInfo != null && virtualInfo.getParentObjectId() != null) {
+      if (virtualInfo != null) {
         String parentName = objectInfoRegistry.getSearchName(virtualInfo.getParentObjectId());
         if (parentName != null) {
           List<SearchResult> parentResults = layerManager.searchByObjectName(parentName);
