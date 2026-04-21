@@ -1142,4 +1142,25 @@
     <string name="object_info_vulpecula_description" translation_description="Description of Vulpecula shown in the info card. Translate this text.">Vulpecula (the Little Fox) is a faint northern constellation created by Hevelius in 1687. It lies in the heart of the Milky Way between Cygnus and Sagitta.</string>
     <string name="object_info_vulpecula_funfact" translation_description="Fun fact about Vulpecula shown in the info card. Translate this text.">Vulpecula contains the Dumbbell Nebula (M27), the first planetary nebula ever discovered (by Charles Messier in 1764), and a beautiful binocular target!</string>
     <string name="object_info_vulpecula_size" translation_description="Physical size of Vulpecula shown in the info card. Translate units if appropriate for your locale.">268 square degrees</string>
+
+    <!-- Galilean Moons of Jupiter -->
+    <string name="object_info_io_description" translation_description="Description of Io shown in the info card. Translate this text.">Io is the innermost of Jupiter\'s four large Galilean moons and the most volcanically active body in the solar system.</string>
+    <string name="object_info_io_funfact" translation_description="Fun fact about Io shown in the info card. Translate this text.">Io has hundreds of active volcanoes, some erupting lava fountains dozens of kilometers high. Its constant activity is driven by tidal heating from Jupiter\'s enormous gravity.</string>
+    <string name="object_info_io_distance" translation_description="Distance to Io shown in the info card. Translate units if appropriate for your locale.">421,700 km from Jupiter</string>
+    <string name="object_info_io_size" translation_description="Physical size of Io shown in the info card. Translate units if appropriate for your locale.">3,643 km diameter</string>
+
+    <string name="object_info_europa_description" translation_description="Description of Europa shown in the info card. Translate this text.">Europa is the second Galilean moon and is thought to harbor a vast liquid water ocean beneath its icy crust, making it one of the most promising places to search for life.</string>
+    <string name="object_info_europa_funfact" translation_description="Fun fact about Europa shown in the info card. Translate this text.">Europa\'s subsurface ocean may contain twice as much liquid water as all of Earth\'s oceans combined, kept liquid by tidal heating from Jupiter.</string>
+    <string name="object_info_europa_distance" translation_description="Distance to Europa shown in the info card. Translate units if appropriate for your locale.">671,100 km from Jupiter</string>
+    <string name="object_info_europa_size" translation_description="Physical size of Europa shown in the info card. Translate units if appropriate for your locale.">3,122 km diameter</string>
+
+    <string name="object_info_ganymede_description" translation_description="Description of Ganymede shown in the info card. Translate this text.">Ganymede is the largest moon in the solar system — even bigger than the planet Mercury. It is the only moon known to generate its own magnetic field.</string>
+    <string name="object_info_ganymede_funfact" translation_description="Fun fact about Ganymede shown in the info card. Translate this text.">Ganymede is larger than Mercury in size, though only about half its mass. Its internal magnetic field creates its own miniature magnetosphere within Jupiter\'s much larger one.</string>
+    <string name="object_info_ganymede_distance" translation_description="Distance to Ganymede shown in the info card. Translate units if appropriate for your locale.">1,070,400 km from Jupiter</string>
+    <string name="object_info_ganymede_size" translation_description="Physical size of Ganymede shown in the info card. Translate units if appropriate for your locale.">5,268 km diameter</string>
+
+    <string name="object_info_callisto_description" translation_description="Description of Callisto shown in the info card. Translate this text.">Callisto is the outermost of the Galilean moons and one of the most heavily cratered bodies in the solar system, its ancient surface preserving a record of early solar system impacts.</string>
+    <string name="object_info_callisto_funfact" translation_description="Fun fact about Callisto shown in the info card. Translate this text.">Callisto orbits beyond Jupiter\'s main radiation belts, making it the safest of the Galilean moons for future human exploration — it is sometimes called the \'gateway moon\'.</string>
+    <string name="object_info_callisto_distance" translation_description="Distance to Callisto shown in the info card. Translate units if appropriate for your locale.">1,882,700 km from Jupiter</string>
+    <string name="object_info_callisto_size" translation_description="Physical size of Callisto shown in the info card. Translate units if appropriate for your locale.">4,821 km diameter</string>
 </resources>

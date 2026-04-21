@@ -22,12 +22,14 @@ import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import com.google.android.stardroid.R
 import com.google.android.stardroid.activities.dialogs.ObjectInfoDialogFragment.Companion.newInstance
 import com.google.android.stardroid.activities.util.ActivityLightLevelManager
 import com.google.android.stardroid.activities.util.NightModeHelper
 import com.google.android.stardroid.education.ObjectInfo
+import com.google.android.stardroid.education.ObjectInfoRegistry
 import com.google.android.stardroid.util.AssetImageLoader
 import com.google.android.stardroid.util.ImageLoadHandle
 import com.google.android.stardroid.util.MiscUtil
@@ -44,11 +46,17 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class ObjectInfoDialogFragment : DialogFragment() {
     @Inject lateinit var preferences: SharedPreferences
+    @Inject lateinit var objectInfoRegistry: ObjectInfoRegistry
     private var imageLoadHandle: ImageLoadHandle? = null
 
     /** Implemented by activities that host this dialog and want to handle the Find action. */
     interface OnFindClickedListener {
         fun onFindClicked(info: ObjectInfo)
+    }
+
+    /** Implemented by activities that host this dialog and want to handle See Also navigation. */
+    interface OnSeeAlsoClickedListener {
+        fun onSeeAlsoClicked(objectId: String)
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
@@ -141,6 +149,34 @@ class ObjectInfoDialogFragment : DialogFragment() {
         // Hide the entire data section if no scientific data is available
         val dataSection = view.findViewById<View>(R.id.object_info_data_section)
         dataSection.visibility = if (hasAnyScientificData) View.VISIBLE else View.GONE
+
+        // Populate "See Also" section
+        val seeAlsoSection = view.findViewById<View>(R.id.object_info_see_also_section)
+        val seeAlsoItems = view.findViewById<LinearLayout>(R.id.object_info_see_also_items)
+        if (info.seeAlso.isNotEmpty()) {
+            for (relatedId in info.seeAlso) {
+                val name = objectInfoRegistry.getSearchName(relatedId) ?: continue
+                val itemView = TextView(parentActivity).apply {
+                    text = name
+                    textSize = 14f
+                    val paddingPx = (4 * resources.displayMetrics.density).toInt()
+                    setPadding(0, paddingPx, 0, paddingPx)
+                    setTextColor(parentActivity.getColor(
+                        if (isNight) R.color.night_link_color
+                        else R.color.day_link_color
+                    ))
+                    val outValue = android.util.TypedValue()
+                    parentActivity.theme.resolveAttribute(android.R.attr.selectableItemBackground, outValue, true)
+                    setBackgroundResource(outValue.resourceId)
+                    setOnClickListener {
+                        (activity as? OnSeeAlsoClickedListener)?.onSeeAlsoClicked(relatedId)
+                        dismiss()
+                    }
+                }
+                seeAlsoItems.addView(itemView)
+            }
+            seeAlsoSection.visibility = View.VISIBLE
+        }
 
         val builder = AlertDialog.Builder(parentActivity).setView(view)
         if (showFind) {

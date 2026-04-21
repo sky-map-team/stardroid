@@ -22,6 +22,7 @@ import android.database.MatrixCursor
 import android.net.Uri
 import android.text.TextUtils
 import android.util.Log
+import com.google.android.stardroid.education.ObjectInfoRegistry
 import com.google.android.stardroid.layers.LayerManager
 import com.google.android.stardroid.util.MiscUtil.capitalize
 import com.google.android.stardroid.util.MiscUtil.getTag
@@ -40,6 +41,7 @@ class SearchTermsProvider : ContentProvider() {
   @InstallIn(SingletonComponent::class)
   interface SearchTermsProviderEntryPoint {
     fun layerManager(): LayerManager
+    fun objectInfoRegistry(): ObjectInfoRegistry
   }
 
   private val layerManager: LayerManager by lazy {
@@ -48,6 +50,14 @@ class SearchTermsProvider : ContentProvider() {
     val entryPoint = EntryPointAccessors.fromApplication(
         appContext, SearchTermsProviderEntryPoint::class.java)
     entryPoint.layerManager()
+  }
+
+  private val objectInfoRegistry: ObjectInfoRegistry by lazy {
+    val appContext = context?.applicationContext
+        ?: throw IllegalStateException("Context not available")
+    val entryPoint = EntryPointAccessors.fromApplication(
+        appContext, SearchTermsProviderEntryPoint::class.java)
+    entryPoint.objectInfoRegistry()
   }
 
   override fun onCreate(): Boolean {
@@ -79,9 +89,13 @@ class SearchTermsProvider : ContentProvider() {
       return cursor
     }
     val results = layerManager.getObjectNamesMatchingPrefix(query)
-    Log.d("SearchTermsProvider", "Got results n=" + results.size)
+    val virtualSuggestions = objectInfoRegistry.getVirtualObjectsMatchingPrefix(query)
+    Log.d("SearchTermsProvider", "Got results n=" + results.size + " virtual=" + virtualSuggestions.size)
     for (result in results) {
       cursor.addRow(columnValuesOfSuggestion(result))
+    }
+    for (suggestion in virtualSuggestions) {
+      cursor.addRow(columnValuesOfSuggestion(SearchTerm(suggestion.name, suggestion.subtext)))
     }
     return cursor
   }

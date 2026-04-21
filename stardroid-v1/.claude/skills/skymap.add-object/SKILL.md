@@ -123,6 +123,65 @@ If an image is available (see Step 7), also add:
       "imageCredit": "<Credit string>"
 ```
 
+## Adding a Virtual Object (map-less)
+
+A **virtual object** has an info card, appears in search, and shows in the gallery — but is **not
+rendered on the sky map**. It is associated with a renderable parent (e.g. the Galilean moons
+→ Jupiter). Searching for a virtual object navigates the map to the parent and opens the virtual
+object's info card.
+
+Virtual objects skip Steps 3 and 8 entirely (no CSV row, no protobuf regeneration).
+
+### Files to edit
+
+| Step | File | What to add |
+|------|------|-------------|
+| 1 | `celestial_objects.xml` | Name string(s) — same as normal |
+| 2 | `celestial_info_cards.xml` | Info card strings — same as normal |
+| 3 | `object_info.json` | Entry with `"parentObjectId"` set to the parent's key |
+| 4 *(optional)* | `celestial_images/` | Image asset — same as normal |
+
+### object_info.json template
+
+```json
+"<primary_key>": {
+  "nameKey": "<primary_key>",
+  "descriptionKey": "object_info_<primary_key>_description",
+  "funFactKey": "object_info_<primary_key>_funfact",
+  "type": "moon",
+  "distanceKey": "object_info_<primary_key>_distance",
+  "sizeKey": "object_info_<primary_key>_size",
+  "parentObjectId": "<parent_key>",
+  "searchSubtext": "<subtitle shown below object name in search dropdown>"
+},
+```
+
+- `parentObjectId` is the `object_info.json` key of the renderable parent (e.g. `"jupiter"`).
+- No `magnitude` field is needed for virtual objects.
+- To link parent ↔ child in the info card "See Also" section, add `"seeAlso"` arrays to both:
+
+```json
+"jupiter": {
+  ...
+  "seeAlso": ["io", "europa", "ganymede", "callisto"]
+},
+"io": {
+  ...
+  "parentObjectId": "jupiter",
+  "seeAlso": ["jupiter", "europa", "ganymede", "callisto"]
+},
+```
+
+### UX behaviour
+
+- **Search**: typing "Io" surfaces it as a suggestion; selecting it flies the map to Jupiter and
+  opens Io's info card with the label "Looking for: Io".
+- **Gallery**: virtual objects appear alongside renderable objects (if they have an image or info).
+- **Map tap**: tapping Jupiter shows Jupiter's card with the "See Also" links to the moons.
+- **See Also**: tapping a linked name in any info card opens that object's card.
+
+---
+
 ## Step 7 — Image (optional but recommended)
 
 Look for a freely licensed image from one of these sources:

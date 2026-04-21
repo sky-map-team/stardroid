@@ -77,6 +77,7 @@ import com.google.android.stardroid.control.LocationController;
 import com.google.android.stardroid.control.MagneticDeclinationCalculatorSwitcher;
 import com.google.android.stardroid.control.TransitioningCompositeClock;
 import com.google.android.stardroid.education.ObjectInfo;
+import com.google.android.stardroid.education.ObjectInfoRegistry;
 import com.google.android.stardroid.education.ObjectInfoTapHandler;
 import com.google.android.stardroid.layers.LayerManager;
 import com.google.android.stardroid.math.CoordinateManipulationsKt;
@@ -114,7 +115,8 @@ import dagger.hilt.android.AndroidEntryPoint;
 @AndroidEntryPoint
 public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivity
     implements OnSharedPreferenceChangeListener, NightModeable,
-    ObjectInfoDialogFragment.OnFindClickedListener {
+    ObjectInfoDialogFragment.OnFindClickedListener,
+    ObjectInfoDialogFragment.OnSeeAlsoClickedListener {
   private static final int TIME_DISPLAY_DELAY_MILLIS = 1000;
   // Extra delay after the clock transition settles before querying solar-system positions.
   private static final long SEARCH_POST_TRANSITION_DELAY_MS = 500;
@@ -217,6 +219,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
   @Inject GooglePlayServicesChecker playServicesChecker;
   @Inject FragmentManager fragmentManager;
   @Inject ObjectInfoTapHandler objectInfoTapHandler;
+  @Inject ObjectInfoRegistry objectInfoRegistry;
   @Inject SensorAccuracyMonitor sensorAccuracyMonitor;
   @Inject DragRotateZoomGestureDetector dragZoomRotateDetector;
   private FullscreenControlsManager fullscreenControlsManager;
@@ -813,6 +816,14 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
     doSearchWithIntent(searchIntent);
   }
 
+  @Override
+  public void onSeeAlsoClicked(String objectId) {
+    ObjectInfo info = objectInfoRegistry.getInfo(objectId);
+    if (info != null) {
+      showObjectInfoDialog(info);
+    }
+  }
+
   private void doSearchWithIntent(Intent searchIntent) {
     // If we're already in search mode, cancel it.
     if (searchMode) {
@@ -828,6 +839,19 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
     b.putBoolean(AnalyticsInterface.SEARCH_SUCCESS, !results.isEmpty());
     analytics.trackEvent(AnalyticsInterface.SEARCH_EVENT, b);
     if (results.isEmpty()) {
+      Log.d(TAG, "No layer results, checking virtual objects");
+      ObjectInfo virtualInfo = objectInfoRegistry.getVirtualObjectByName(queryString);
+      if (virtualInfo != null) {
+        String parentName = objectInfoRegistry.getSearchName(virtualInfo.getParentObjectId());
+        if (parentName != null) {
+          List<SearchResult> parentResults = layerManager.searchByObjectName(parentName);
+          if (!parentResults.isEmpty()) {
+            activateSearchTarget(parentResults.get(0).coords(), virtualInfo.getName());
+          }
+        }
+        showObjectInfoDialog(virtualInfo);
+        return;
+      }
       Log.d(TAG, "No results returned");
       Bundle failBundle = new Bundle();
       failBundle.putString(AnalyticsInterface.SEARCH_TERM, MiscUtil.capitalize(queryString));
@@ -980,7 +1004,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
    */
   private void showObjectInfoDialog(ObjectInfo objectInfo) {
     Log.d(TAG, "Showing object info dialog for: " + objectInfo.getId());
-    showDialog(ObjectInfoDialogFragment.newInstance(objectInfo, false), "Object Info");
+    showDialog(ObjectInfoDialogFragment.newInstance(objectInfo, false), "Object Info:" + objectInfo.getId());
   }
 
   /**
