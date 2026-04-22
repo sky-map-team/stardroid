@@ -166,7 +166,8 @@ class ObjectInfoDialogFragment : DialogFragment() {
                         else R.color.day_link_color
                     ))
                     val outValue = android.util.TypedValue()
-                    parentActivity.theme.resolveAttribute(android.R.attr.selectableItemBackground, outValue, true)
+                    parentActivity.theme.resolveAttribute(
+                        android.R.attr.selectableItemBackground, outValue, true)
                     setBackgroundResource(outValue.resourceId)
                     setOnClickListener {
                         (activity as? OnSeeAlsoClickedListener)?.onSeeAlsoClicked(relatedId)
