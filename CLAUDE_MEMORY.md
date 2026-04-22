@@ -52,5 +52,5 @@ Use the `/skymap.add_object` skill — it handles all steps automatically.
 - [feedback_no_incidental_cleanups.md](feedback_no_incidental_cleanups.md) — Never make incidental cleanups (lambda conversions, `final`, cast removals, locale changes, style fixes) in a feature PR. Feature-scoped changes only.
 
 ## Architecture Constraints
-- [project_snackbar_crash.md](project_snackbar_crash.md) — No Material Snackbar; use Toast. App's AppCompat-only FullscreenTheme missing `?attr/colorOnSurface` causes a crash.
+- **No Material Snackbar** — use `Toast` instead. The app's `FullscreenTheme` is AppCompat-only and missing `?attr/colorOnSurface`; inflating a Material `Snackbar` crashes at runtime.
 
