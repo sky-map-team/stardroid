@@ -1163,4 +1163,15 @@
     <string name="object_info_callisto_funfact" translation_description="Fun fact about Callisto shown in the info card. Translate this text.">Callisto orbits beyond Jupiter\'s main radiation belts, making it the safest of the Galilean moons for future human exploration — it is sometimes called the \'gateway moon\'.</string>
     <string name="object_info_callisto_distance" translation_description="Distance to Callisto shown in the info card. Translate units if appropriate for your locale.">1,882,700 km from Jupiter</string>
     <string name="object_info_callisto_size" translation_description="Physical size of Callisto shown in the info card. Translate units if appropriate for your locale.">4,821 km diameter</string>
+
+    <!-- Moons of Mars -->
+    <string name="object_info_phobos_description" translation_description="Description of Phobos shown in the info card. Translate this text.">Phobos is the larger and innermost of Mars\'s two moons, orbiting closer to its planet than any other moon in the solar system. It is an irregularly shaped, heavily grooved and cratered body thought to be a captured asteroid.</string>
+    <string name="object_info_phobos_funfact" translation_description="Fun fact about Phobos shown in the info card. Translate this text.">Phobos orbits Mars so quickly it rises in the west and sets in the east — and it is slowly spiraling inward, destined to either crash into Mars or break apart into a ring in about 50 million years.</string>
+    <string name="object_info_phobos_distance" translation_description="Distance to Phobos shown in the info card. Translate units if appropriate for your locale.">9,376 km from Mars</string>
+    <string name="object_info_phobos_size" translation_description="Physical size of Phobos shown in the info card. Translate units if appropriate for your locale.">27 × 22 × 18 km</string>
+
+    <string name="object_info_deimos_description" translation_description="Description of Deimos shown in the info card. Translate this text.">Deimos is the smaller and outer of Mars\'s two moons, with a smooth, dust-covered surface that gives it a rounder appearance than Phobos. Like its companion, it is thought to be a captured asteroid from the outer belt.</string>
+    <string name="object_info_deimos_funfact" translation_description="Fun fact about Deimos shown in the info card. Translate this text.">Deimos is so small and distant that from the Martian surface it looks like little more than a bright star, taking about 30 hours to slowly drift across the night sky.</string>
+    <string name="object_info_deimos_distance" translation_description="Distance to Deimos shown in the info card. Translate units if appropriate for your locale.">23,460 km from Mars</string>
+    <string name="object_info_deimos_size" translation_description="Physical size of Deimos shown in the info card. Translate units if appropriate for your locale.">15 × 12 × 11 km</string>
 </resources>

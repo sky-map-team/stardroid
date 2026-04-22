@@ -56,7 +56,34 @@
       "sizeKey": "object_info_mars_size",
       "massKey": "object_info_mars_mass",
       "imageKey": "planets/hubble_mars.webp",
-      "imageCredit": "NASA/ESA/Hubble"
+      "imageCredit": "NASA/ESA/Hubble",
+      "seeAlso": ["phobos", "deimos"]
+    },
+    "phobos": {
+      "nameKey": "phobos",
+      "descriptionKey": "object_info_phobos_description",
+      "funFactKey": "object_info_phobos_funfact",
+      "type": "moon",
+      "distanceKey": "object_info_phobos_distance",
+      "sizeKey": "object_info_phobos_size",
+      "imageKey": "planets/nasa_phobos.webp",
+      "imageCredit": "NASA/JPL-Caltech/University of Arizona",
+      "parentObjectId": "mars",
+      "searchSubtext": "Moon of Mars",
+      "seeAlso": ["mars", "deimos"]
+    },
+    "deimos": {
+      "nameKey": "deimos",
+      "descriptionKey": "object_info_deimos_description",
+      "funFactKey": "object_info_deimos_funfact",
+      "type": "moon",
+      "distanceKey": "object_info_deimos_distance",
+      "sizeKey": "object_info_deimos_size",
+      "imageKey": "planets/nasa_deimos.webp",
+      "imageCredit": "NASA/JPL-Caltech/University of Arizona",
+      "parentObjectId": "mars",
+      "searchSubtext": "Moon of Mars",
+      "seeAlso": ["mars", "phobos"]
     },
     "jupiter": {
       "nameKey": "jupiter",

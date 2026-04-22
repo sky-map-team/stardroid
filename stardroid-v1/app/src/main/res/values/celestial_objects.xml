@@ -112,6 +112,10 @@
     <string name="neptune" translation_description="Name of the planet Neptune">Neptune</string>
     <string name="pluto" translation_description="Name of the dwarf planet Pluto">Pluto</string>
 
+    <!-- Moons of Mars -->
+    <string name="phobos" translation_description="Name of Mars\'s moon Phobos">Phobos</string>
+    <string name="deimos" translation_description="Name of Mars\'s moon Deimos">Deimos</string>
+
     <!-- Galilean Moons of Jupiter -->
     <string name="io" translation_description="Name of Jupiter\'s moon Io">Io</string>
     <string name="europa" translation_description="Name of Jupiter\'s moon Europa">Europa</string>

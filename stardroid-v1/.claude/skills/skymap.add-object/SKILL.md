@@ -139,7 +139,7 @@ Virtual objects skip Steps 3 and 8 entirely (no CSV row, no protobuf regeneratio
 | 1 | `celestial_objects.xml` | Name string(s) — same as normal |
 | 2 | `celestial_info_cards.xml` | Info card strings — same as normal |
 | 3 | `object_info.json` | Entry with `"parentObjectId"` set to the parent's key |
-| 4 *(optional)* | `celestial_images/` | Image asset — same as normal |
+| 4 *(optional)* | `celestial_images/` | Image asset — same as normal; moons use the `planets` category |
 
 ### object_info.json template
 
