@@ -98,7 +98,8 @@ Follow the [Google Java Style Guide](https://google.github.io/styleguide/javagui
 
 ### Strings
 Remember to properly escape any text added as Android resource strings (e.g. ' must be escaped
-with a single backslash as \')
+with a single backslash as \'). New strings should be in *US English* - translations to
+other locales will be done after features are implemented by a separate pipeline.
 
 ### Colors
 

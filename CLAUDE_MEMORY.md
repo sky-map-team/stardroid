@@ -41,25 +41,9 @@ Use the `/skymap.add_object` skill — it handles all steps automatically.
 | Earth   | `earth.png` | none (2048×2048 square) |
 | Mars    | `mars splash 5.png` | `640,0,2176,1536` |
 
-## Auto-Level Horizon (manual mode)
-
-Branch: `feature/auto-level-horizon` (pushed 2026-03-01)
-
-### How it works
-- `HorizonLeveler.kt` — runs at 20 fps via `ScheduledExecutorService`; each frame computes signed misalignment angle between `currentPerp` and the zenith projection, springs 20% of the way per frame (~1–2 s return). Stops at <0.1°.
-- `DragRotateZoomGestureDetector` — `onGestureEnd()` added to listener interface (default no-op); `ACTION_UP` always fires it.
-- `MapMover` — accepts `SharedPreferences`; starts leveler on `onGestureEnd()` if pref on; stops it on any drag/rotate/stretch.
-- `GestureInterpreter.onDown` — calls `mapMover.stopLeveling()` alongside `flinger.stop()`.
-- Pref key: `ApplicationConstants.AUTO_LEVEL_HORIZON_PREF_KEY = "auto_level_horizon"` (default true).
-- Setting lives in Sensor Settings category of `preference_screen.xml`.
-
-### Key math
-1. Project zenith onto view plane: `zenithProj = zenith − (zenith·los)×los`; if `|zenithProj|² < 0.001` skip (looking straight at zenith).
-2. Signed angle: `cross = currentPerp × targetPerp`; `angle = atan2(cross·los, currentPerp·targetPerp) * R2D`.
-3. Callback calls `controllerGroup.rotate(delta)` directly (not via `mapMover.onRotate` which has a sign flip).
 ## Release Process
 - [feedback_play_store_build.md](feedback_play_store_build.md) — Always run a full build before pushing to Play Store
-- [feedback_version_name.md](feedback_version_name.md) — Always preserve the full version name including `:Earth` suffix when bumping. This suffix will change with minor and major version bumps but not with point/bugfix bumps.
+- [feedback_version_name.md](feedback_version_name.md) — Always preserve the full version name including the planet suffix (e.g. `:Mars`) when bumping. Suffix changes with minor/major bumps, not point/bugfix bumps.
 
 ## Branching
 - [feedback_feature_branches.md](feedback_feature_branches.md) — Always work on a feature branch, never commit directly to master
@@ -67,17 +51,6 @@ Branch: `feature/auto-level-horizon` (pushed 2026-03-01)
 ## Implementation Discipline
 - [feedback_no_incidental_cleanups.md](feedback_no_incidental_cleanups.md) — Never make incidental cleanups (lambda conversions, `final`, cast removals, locale changes, style fixes) in a feature PR. Feature-scoped changes only.
 
-## Location UX Fix
+## Architecture Constraints
+- **No Material Snackbar** — use `Toast` instead. The app's `FullscreenTheme` is AppCompat-only and missing `?attr/colorOnSurface`; inflating a Material `Snackbar` crashes at runtime.
 
-Branch: `fix/location-ux` (created 2026-03-03 from master)
-
-### What was fixed
-- `LocationController` tracks `LocationStatus` enum (OK / PERMISSION_DENIED / NO_PROVIDER / MANUAL_NO_COORDS)
-- `lastStatus` reset to OK at start of each `start()` call; set in each failure path
-- Zero-coord detection uses parsed `float` values, not raw pref strings (avoids "0" vs "0.0" mismatch)
-- `ControllerGroup` stores `locationController` field and exposes `getLocationController()` — prevents two-instance bug where activity injection gets a different (never-started) instance than ControllerGroup
-- `DynamicStarMapActivity.maybeShowLocationWarning()` calls `controller.getLocationController()` and shows a `Toast` after `controller.start()` when location is unset; for PERMISSION_DENIED also shows `LocationPermissionDeniedDialogFragment`
-- **No Snackbar / no Material dependency** — Material `Snackbar` crashes on the app's AppCompat-only `FullscreenTheme` (missing `?attr/colorOnSurface`); `Toast` is used instead
-- DiagnosticActivity: "Location Permission" row added (first in Location & Time section); green/red colours that respect night mode
-- Status colours renamed from sensor-specific names to generic `status_good/ok/warning/bad/absent` with `night_status_*` night-mode variants; no hardcoded hex in Java
-- Spec file: `stardroid-v1/specs/features/location.md`
