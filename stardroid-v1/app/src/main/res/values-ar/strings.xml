@@ -138,7 +138,7 @@
     <string name="hubble_image_gallery_title" translation_description="Title of the image gallery screen">معرض خريطة السماء</string>
     <string name="hubble_image" translation_description="Label or caption for a Hubble Space Telescope image in the gallery">صور هابل</string>
     <string name="search_overlay_title" translation_description="title for search overlay">وجّه هاتفك نحو السهم</string>
-    <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">البحث عن:</string>
+    <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">البحث عن: %s</string>
     <string name="sun_wont_set_message" translation_description="Message shown when the sun will not set during the next 24 hours (polar day / midnight sun)">الشمس لن تغيب خلال الـ 24 ساعة القادمة في موقعك الحالي.</string>
 
     <!-- tm:omitted name="missing_label" reason="identical_to_source" -->

@@ -144,7 +144,7 @@
     <string name="hubble_image_gallery_title" translation_description="Title of the image gallery screen">Hubble-Galerie</string>
     <string name="hubble_image" translation_description="Label or caption for a Hubble Space Telescope image in the gallery">Hubble-Bild</string>
     <string name="search_overlay_title" translation_description="title for search overlay">Bewegen Sie Ihr Telefon in Richtung des Pfeils.</string>
-    <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">Suche nach:</string>
+    <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">Suche nach: %s</string>
     <string name="sun_wont_set_message" translation_description="Message shown when the sun will not set during the next 24 hours (polar day / midnight sun)">
     Die Sonne geht in den nächsten 24 Stunden nicht an Ihrem aktuellen Standort unter.
     </string>

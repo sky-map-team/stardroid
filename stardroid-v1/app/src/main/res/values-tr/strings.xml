@@ -138,7 +138,7 @@
     <string name="hubble_image_gallery_title" translation_description="Title of the image gallery screen">Sky Map Galerisi</string>
     <string name="hubble_image" translation_description="Label or caption for a Hubble Space Telescope image in the gallery">Hubble Görüntüsü</string>
     <string name="search_overlay_title" translation_description="title for search overlay">Telefonunuzu ok yönüne çevirin</string>
-    <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">Aranıyor:</string>
+    <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">Aranıyor: %s</string>
     <string name="sun_wont_set_message" translation_description="Message shown when the sun will not set during the next 24 hours (polar day / midnight sun)">24 saat boyunca güneş, mevcut konumunuzda batmayacak.</string>
 
     <!-- tm:omitted name="missing_label" reason="identical_to_source" -->

@@ -138,7 +138,7 @@
     <string name="hubble_image_gallery_title" translation_description="Title of the image gallery screen">แกลเลอรี่ Sky Map</string>
     <string name="hubble_image" translation_description="Label or caption for a Hubble Space Telescope image in the gallery">ภาพจากกล้องโทรทรรศน์ฮับเบิล</string>
     <string name="search_overlay_title" translation_description="title for search overlay">ชี้โทรศัพท์ของคุณไปยังลูกศร</string>
-    <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">กำลังค้นหา:</string>
+    <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">กำลังค้นหา: %s</string>
     <string name="sun_wont_set_message" translation_description="Message shown when the sun will not set during the next 24 hours (polar day / midnight sun)">ดวงอาทิตย์จะไม่ตกในช่วง 24 ชั่วโมงถัดไปที่ตำแหน่งปัจจุบันของคุณ</string>
 
     <!-- tm:omitted name="missing_label" reason="identical_to_source" -->
