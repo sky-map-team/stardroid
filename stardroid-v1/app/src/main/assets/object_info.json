@@ -79,6 +79,8 @@
       "sizeKey": "object_info_io_size",
       "parentObjectId": "jupiter",
       "searchSubtext": "Moon of Jupiter",
+      "imageKey": "planets/galileo_io.webp",
+      "imageCredit": "NASA/JPL/University of Arizona",
       "seeAlso": ["jupiter", "europa", "ganymede", "callisto"]
     },
     "europa": {
@@ -90,6 +92,8 @@
       "sizeKey": "object_info_europa_size",
       "parentObjectId": "jupiter",
       "searchSubtext": "Moon of Jupiter",
+      "imageKey": "planets/galileo_europa.webp",
+      "imageCredit": "NASA/JPL-Caltech/SETI Institute",
       "seeAlso": ["jupiter", "io", "ganymede", "callisto"]
     },
     "ganymede": {
@@ -101,6 +105,8 @@
       "sizeKey": "object_info_ganymede_size",
       "parentObjectId": "jupiter",
       "searchSubtext": "Moon of Jupiter",
+      "imageKey": "planets/galileo_ganymede.webp",
+      "imageCredit": "NASA/JPL/DLR",
       "seeAlso": ["jupiter", "io", "europa", "callisto"]
     },
     "callisto": {
@@ -112,6 +118,8 @@
       "sizeKey": "object_info_callisto_size",
       "parentObjectId": "jupiter",
       "searchSubtext": "Moon of Jupiter",
+      "imageKey": "planets/galileo_callisto.webp",
+      "imageCredit": "NASA/JPL/DLR",
       "seeAlso": ["jupiter", "io", "europa", "ganymede"]
     },
     "saturn": {
