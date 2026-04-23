@@ -94,4 +94,9 @@ public class RendererController extends RendererControllerBase {
       }
     }});
   }
+
+  // Must only be called from within an update closure (GL thread).
+  public boolean isSearchTargetInFocus() {
+    return mRenderer.isSearchTargetInFocus();
+  }
 }

@@ -198,6 +198,7 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
   private RendererController rendererController;
   private boolean nightMode = false;
   private boolean searchMode = false;
+  private volatile boolean lastSearchFocusState = false;
   private Vector3 searchTarget = CoordinateManipulationsKt.getGeocentricCoords(0, 0);
 
   @Inject SharedPreferences sharedPreferences;
@@ -890,6 +891,16 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
     // The renderer will now call back every frame to get model updates.
     rendererController.addUpdateClosure(
         new RendererModelUpdateClosure(model, rendererController, sharedPreferences));
+    rendererController.addUpdateClosure(() -> {
+      if (!searchMode) {
+        lastSearchFocusState = false;
+        return;
+      }
+      boolean inFocus = rendererController.isSearchTargetInFocus();
+      if (inFocus == lastSearchFocusState) return;
+      lastSearchFocusState = inFocus;
+      runOnUiThread(() -> updateSearchPrompt(inFocus));
+    });
 
     Log.i(TAG, "Setting layers @ " + System.currentTimeMillis());
     layerManager.registerWithRenderer(rendererController);
@@ -1026,6 +1037,21 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
     searchMode = false;
   }
 
+  private void updateSearchPrompt(boolean found) {
+    TextView statusLabel = findViewById(R.id.search_status_label);
+    TextView promptText = findViewById(R.id.search_prompt);
+    if (found) {
+      statusLabel.setText(
+          String.format("%s %s", getString(R.string.search_target_found_message), searchTargetName));
+      promptText.setVisibility(View.GONE);
+    } else {
+      statusLabel.setText(
+          String.format("%s %s", getString(R.string.search_target_looking_message),
+              searchTargetName));
+      promptText.setVisibility(View.VISIBLE);
+    }
+  }
+
   @Override
   protected void onNewIntent(Intent intent) {
     super.onNewIntent(intent);
@@ -1085,9 +1111,8 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
       controller.teleport(target);
     }
 
-    TextView searchPromptText = findViewById(R.id.search_status_label);
-    searchPromptText.setText(
-        String.format("%s %s", getString(R.string.search_target_looking_message), searchTerm));
+    lastSearchFocusState = false;
+    updateSearchPrompt(false);
     View searchControlBar = findViewById(R.id.search_control_bar);
     searchControlBar.setVisibility(View.VISIBLE);
   }
