@@ -11,6 +11,7 @@ import com.google.android.stardroid.R
 import com.google.android.stardroid.activities.dialogs.ObjectInfoDialogFragment
 import com.google.android.stardroid.activities.util.ActivityLightLevelChanger
 import com.google.android.stardroid.activities.util.ActivityLightLevelManager
+import com.google.android.stardroid.activities.util.EdgeToEdgeFixer
 import com.google.android.stardroid.activities.util.NightModeHelper
 import com.google.android.stardroid.education.ObjectInfo
 import com.google.android.stardroid.education.ObjectInfoRegistry
@@ -37,6 +38,7 @@ class ImageGalleryActivity : FragmentActivity(),
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_image_gallery)
+        EdgeToEdgeFixer.applyEdgeToEdgeFixForActionBarActivity(this)
 
         val items = registry.getAllWithImages()
         val recyclerView = findViewById<RecyclerView>(R.id.gallery_grid)
@@ -48,6 +50,11 @@ class ImageGalleryActivity : FragmentActivity(),
             }
         }
         recyclerView.adapter = galleryAdapter
+    }
+
+    override fun onStart() {
+        super.onStart()
+        EdgeToEdgeFixer.applyTopPaddingForActionBar(this, findViewById(R.id.gallery_grid))
     }
 
     override fun onResume() {
