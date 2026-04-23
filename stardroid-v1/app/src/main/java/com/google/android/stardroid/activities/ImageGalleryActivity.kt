@@ -54,7 +54,7 @@ class ImageGalleryActivity : FragmentActivity(),
 
     override fun onStart() {
         super.onStart()
-        EdgeToEdgeFixer.applyTopPaddingForActionBar(this, findViewById(android.R.id.content))
+        EdgeToEdgeFixer.applyTopPaddingForActionBar(this, findViewById(R.id.gallery_grid))
     }
 
     override fun onResume() {
