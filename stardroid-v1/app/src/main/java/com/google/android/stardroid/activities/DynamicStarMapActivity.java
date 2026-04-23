@@ -15,6 +15,7 @@
 package com.google.android.stardroid.activities;
 
 import android.app.SearchManager;
+import java.lang.ref.WeakReference;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
@@ -187,6 +188,8 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
   private static final String TAG = MiscUtil.getTag(DynamicStarMapActivity.class);
 
   private ImageButton cancelSearchButton;
+  private TextView searchStatusLabel;
+  private TextView searchPromptText;
   @Inject ControllerGroup controller;
   private GestureDetector gestureDetector;
   @Inject
@@ -891,15 +894,18 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
     // The renderer will now call back every frame to get model updates.
     rendererController.addUpdateClosure(
         new RendererModelUpdateClosure(model, rendererController, sharedPreferences));
+    WeakReference<DynamicStarMapActivity> weakThis = new WeakReference<>(this);
     rendererController.addUpdateClosure(() -> {
-      if (!searchMode) {
-        lastSearchFocusState = false;
+      DynamicStarMapActivity activity = weakThis.get();
+      if (activity == null) return;
+      if (!activity.searchMode) {
+        activity.lastSearchFocusState = false;
         return;
       }
       boolean inFocus = rendererController.isSearchTargetInFocus();
-      if (inFocus == lastSearchFocusState) return;
-      lastSearchFocusState = inFocus;
-      runOnUiThread(() -> updateSearchPrompt(inFocus));
+      if (inFocus == activity.lastSearchFocusState) return;
+      activity.lastSearchFocusState = inFocus;
+      activity.runOnUiThread(() -> activity.updateSearchPrompt(inFocus));
     });
 
     Log.i(TAG, "Setting layers @ " + System.currentTimeMillis());
@@ -925,6 +931,8 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
   private void wireUpScreenControls() {
     cancelSearchButton = findViewById(R.id.cancel_search_button);
     cancelSearchButton.setOnClickListener(v -> cancelSearch());
+    searchStatusLabel = findViewById(R.id.search_status_label);
+    searchPromptText = findViewById(R.id.search_prompt);
 
     // Push the search control bar below the status bar and any display cutout
     // so it doesn't overlap with camera notches on modern phones.
@@ -1038,14 +1046,13 @@ public class DynamicStarMapActivity extends androidx.fragment.app.FragmentActivi
   }
 
   private void updateSearchPrompt(boolean found) {
-    TextView statusLabel = findViewById(R.id.search_status_label);
-    TextView promptText = findViewById(R.id.search_prompt);
     if (found) {
-      statusLabel.setText(getString(R.string.search_target_found_message, searchTargetName));
-      promptText.setVisibility(View.GONE);
+      searchStatusLabel.setText(getString(R.string.search_target_found_message, searchTargetName));
+      searchPromptText.setVisibility(View.GONE);
     } else {
-      statusLabel.setText(getString(R.string.search_target_looking_message, searchTargetName));
-      promptText.setVisibility(View.VISIBLE);
+      searchStatusLabel.setText(
+          getString(R.string.search_target_looking_message, searchTargetName));
+      searchPromptText.setVisibility(View.VISIBLE);
     }
   }
 
