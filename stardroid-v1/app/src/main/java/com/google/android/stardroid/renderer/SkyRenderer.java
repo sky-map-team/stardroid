@@ -268,6 +268,10 @@ public class SkyRenderer implements GLSurfaceView.Renderer {
     mOverlayManager.disableSearchOverlay();
   }
 
+  public boolean isSearchTargetInFocus() {
+    return mOverlayManager.isSearchTargetInFocus();
+  }
+
   public void setNightVisionMode(boolean enabled) {
     mRenderState.setNightVisionMode(enabled);
   }

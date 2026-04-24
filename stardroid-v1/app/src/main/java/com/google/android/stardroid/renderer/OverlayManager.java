@@ -134,6 +134,10 @@ public class OverlayManager extends RendererObjectManager {
     mSearching = false;
   }
 
+  public boolean isSearchTargetInFocus() {
+    return mSearching && mSearchHelper.targetInFocusRadius();
+  }
+
   private void setupMatrices(GL10 gl) {
     // Save the matrix values.
     gl.glMatrixMode(GL10.GL_PROJECTION);

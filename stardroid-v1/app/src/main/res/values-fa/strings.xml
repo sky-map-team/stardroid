@@ -138,7 +138,7 @@
     <string name="hubble_image_gallery_title" translation_description="Title of the image gallery screen">آلبوم برنامه</string>
     <string name="hubble_image" translation_description="Label or caption for a Hubble Space Telescope image in the gallery">تصاویر (تلسکوپ) هابل</string>
     <string name="search_overlay_title" translation_description="title for search overlay">تلفن خود را به سمت فلش قرار دهید</string>
-    <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">جستجو برای:</string>
+    <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">جستجو برای: %s</string>
     <string name="sun_wont_set_message" translation_description="Message shown when the sun will not set during the next 24 hours (polar day / midnight sun)">در مکان انتخابی شما، خورشید تا ۲۴ ساعت آینده غروب نمی‌کند.</string>
 
     <!-- tm:omitted name="missing_label" reason="identical_to_source" -->
