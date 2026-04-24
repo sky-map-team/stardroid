@@ -122,6 +122,33 @@
     <string name="ganymede" translation_description="Name of Jupiter\'s moon Ganymede">Ganymede</string>
     <string name="callisto" translation_description="Name of Jupiter\'s moon Callisto">Callisto</string>
 
+    <!-- Major Moons of Saturn -->
+    <string name="titan" translation_description="Name of Saturn\'s moon Titan">Titan</string>
+    <string name="rhea" translation_description="Name of Saturn\'s moon Rhea">Rhea</string>
+    <string name="tethys" translation_description="Name of Saturn\'s moon Tethys">Tethys</string>
+    <string name="dione" translation_description="Name of Saturn\'s moon Dione">Dione</string>
+    <string name="iapetus" translation_description="Name of Saturn\'s moon Iapetus">Iapetus</string>
+
+    <!-- Moon of Neptune -->
+    <string name="triton" translation_description="Name of Neptune\'s moon Triton">Triton</string>
+
+    <!-- Major Moons of Uranus -->
+    <string name="titania" translation_description="Name of Uranus\'s moon Titania">Titania</string>
+    <string name="oberon" translation_description="Name of Uranus\'s moon Oberon">Oberon</string>
+    <string name="ariel" translation_description="Name of Uranus\'s moon Ariel">Ariel</string>
+    <string name="umbriel" translation_description="Name of Uranus\'s moon Umbriel">Umbriel</string>
+
+    <!-- Deep-sky objects -->
+    <string name="hyades" translation_description="Name of the Hyades star cluster">Hyades</string>
+    <string name="coma_star_cluster" translation_description="Name of the Coma Berenices star cluster">Coma Star Cluster</string>
+    <string name="coathanger" translation_description="Name of the Coathanger asterism (Brocchi\'s Cluster)">Coathanger</string>
+    <string name="helix_nebula" translation_description="Name of the Helix Nebula (NGC 7293)">Helix Nebula</string>
+    <string name="sculptor_galaxy" translation_description="Name of the Sculptor Galaxy (NGC 253)">Sculptor Galaxy</string>
+    <string name="blue_snowball_nebula" translation_description="Name of the Blue Snowball Nebula (NGC 7662)">Blue Snowball Nebula</string>
+    <string name="ghost_of_jupiter" translation_description="Name of the Ghost of Jupiter planetary nebula (NGC 3242)">Ghost of Jupiter</string>
+    <string name="saturn_nebula" translation_description="Name of the Saturn Nebula (NGC 7009)">Saturn Nebula</string>
+    <string name="ngc_2903" translation_description="Name of the galaxy NGC 2903">NGC 2903</string>
+
     <!-- Gallery objects -->
     <string name="crab_nebula" translation_description="hubble object">Crab Nebula</string>
     <string name="eagle_nebula" translation_description="hubble object">Eagle Nebula</string>
