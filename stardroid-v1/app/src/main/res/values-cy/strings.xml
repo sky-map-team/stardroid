@@ -140,7 +140,7 @@
     <string name="hubble_image_gallery_title" translation_description="Title of the image gallery screen">Oriel Sky Map</string>
     <string name="hubble_image" translation_description="Label or caption for a Hubble Space Telescope image in the gallery">Delwedd Hubble</string>
     <string name="search_overlay_title" translation_description="title for search overlay">Pwyntia dy ddyfais tua\'r saeth</string>
-    <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">Yn chwilio am:</string>
+    <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">Yn chwilio am: %s</string>
     <string name="sun_wont_set_message" translation_description="Message shown when the sun will not set during the next 24 hours (polar day / midnight sun)">Dyw\'r haul ddim yn machlud o fewn y 24 awr nesaf yn dy leoliad cyfredol.</string>
 
     <!-- tm:omitted name="missing_label" reason="identical_to_source" -->

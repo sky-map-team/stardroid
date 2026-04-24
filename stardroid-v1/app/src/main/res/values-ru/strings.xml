@@ -94,7 +94,7 @@
     <string name="hubble_image_gallery_title" translation_description="Title of the image gallery screen">Галерея Хаббл для Карты звездного неба</string>
     <string name="hubble_image" translation_description="Label or caption for a Hubble Space Telescope image in the gallery">Фотография, отснятая телескопом Хаббл</string>
     <string name="search_overlay_title" translation_description="title for search overlay">Поверните телефон в направлении стрелки</string>
-    <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">Поиск:</string>
+    <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">Поиск: %s</string>
     <string name="sun_wont_set_message" translation_description="Message shown when the sun will not set during the next 24 hours (polar day / midnight sun)">В течение ближайших 24 часов захода Солнца в вашем местоположении не будет.</string>
 
     <string name="menu_tos" translation_description="Menu item label to view the Terms of Service">Условия предоставления услуг</string>

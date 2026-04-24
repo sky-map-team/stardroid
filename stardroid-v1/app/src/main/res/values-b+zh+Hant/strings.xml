@@ -136,7 +136,7 @@
     <string name="hubble_image_gallery_title" translation_description="Title of the image gallery screen">星空圖哈伯望遠鏡圖庫</string>
     <string name="hubble_image" translation_description="Label or caption for a Hubble Space Telescope image in the gallery">哈伯望遠鏡影像</string>
     <string name="search_overlay_title" translation_description="title for search overlay">將手機指向箭頭方向</string>
-    <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">正在尋找：</string>
+    <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">正在尋找： %s</string>
     <string name="sun_wont_set_message" translation_description="Message shown when the sun will not set during the next 24 hours (polar day / midnight sun)">您目前的位置未來 24 小時之內看不到日落。</string>
 
     <!-- tm:omitted name="missing_label" reason="identical_to_source" -->
