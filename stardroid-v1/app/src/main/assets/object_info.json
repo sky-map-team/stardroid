@@ -2883,6 +2883,348 @@
       "sizeKey": "object_info_omega_centauri_size",
       "imageKey": "deep_sky_objects/hubble_omega_centauri.webp",
       "imageCredit": "NASA/ESA/Hubble"
+    },
+    "m47": {
+      "nameKey": "m47",
+      "descriptionKey": "object_info_m47_description",
+      "funFactKey": "object_info_m47_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_m47_distance",
+      "sizeKey": "object_info_m47_size"
+    },
+    "m41": {
+      "nameKey": "m41",
+      "descriptionKey": "object_info_m41_description",
+      "funFactKey": "object_info_m41_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_m41_distance",
+      "sizeKey": "object_info_m41_size"
+    },
+    "m24": {
+      "nameKey": "m24",
+      "descriptionKey": "object_info_m24_description",
+      "funFactKey": "object_info_m24_funfact",
+      "type": "other",
+      "distanceKey": "object_info_m24_distance",
+      "sizeKey": "object_info_m24_size"
+    },
+    "m25": {
+      "nameKey": "m25",
+      "descriptionKey": "object_info_m25_description",
+      "funFactKey": "object_info_m25_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_m25_distance",
+      "sizeKey": "object_info_m25_size"
+    },
+    "m39": {
+      "nameKey": "m39",
+      "descriptionKey": "object_info_m39_description",
+      "funFactKey": "object_info_m39_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_m39_distance",
+      "sizeKey": "object_info_m39_size"
+    },
+    "m63": {
+      "nameKey": "m63",
+      "descriptionKey": "object_info_m63_description",
+      "funFactKey": "object_info_m63_funfact",
+      "type": "galaxy",
+      "distanceKey": "object_info_m63_distance",
+      "sizeKey": "object_info_m63_size"
+    },
+    "ngc_6543": {
+      "nameKey": "ngc_6543",
+      "descriptionKey": "object_info_ngc_6543_description",
+      "funFactKey": "object_info_ngc_6543_funfact",
+      "type": "nebula",
+      "distanceKey": "object_info_ngc_6543_distance",
+      "sizeKey": "object_info_ngc_6543_size",
+      "imageKey": "deep_sky_objects/hubble_catseyenebula.webp",
+      "imageCredit": "NASA/ESA/Hubble"
+    },
+    "m76": {
+      "nameKey": "m76",
+      "descriptionKey": "object_info_m76_description",
+      "funFactKey": "object_info_m76_funfact",
+      "type": "nebula",
+      "distanceKey": "object_info_m76_distance",
+      "sizeKey": "object_info_m76_size"
+    },
+    "v838_mon": {
+      "nameKey": "v838_mon",
+      "descriptionKey": "object_info_v838_mon_description",
+      "funFactKey": "object_info_v838_mon_funfact",
+      "type": "other",
+      "distanceKey": "object_info_v838_mon_distance",
+      "sizeKey": "object_info_v838_mon_size",
+      "imageKey": "deep_sky_objects/hubble_v838.webp",
+      "imageCredit": "NASA/ESA/Hubble"
+    },
+    "hdf": {
+      "nameKey": "hdf",
+      "descriptionKey": "object_info_hdf_description",
+      "funFactKey": "object_info_hdf_funfact",
+      "type": "other",
+      "distanceKey": "object_info_hdf_distance",
+      "sizeKey": "object_info_hdf_size",
+      "imageKey": "deep_sky_objects/hubble_ultra_deep_field.webp",
+      "imageCredit": "NASA/ESA/Hubble"
+    },
+    "m43": {
+      "nameKey": "m43",
+      "descriptionKey": "object_info_m43_description",
+      "funFactKey": "object_info_m43_funfact",
+      "type": "nebula",
+      "distanceKey": "object_info_m43_distance",
+      "sizeKey": "object_info_m43_size"
+    },
+    "m40": {
+      "nameKey": "m40",
+      "descriptionKey": "object_info_m40_description",
+      "funFactKey": "object_info_m40_funfact",
+      "type": "other",
+      "distanceKey": "object_info_m40_distance",
+      "sizeKey": "object_info_m40_size"
+    },
+    "m34": {
+      "nameKey": "m34",
+      "descriptionKey": "object_info_m34_description",
+      "funFactKey": "object_info_m34_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_m34_distance",
+      "sizeKey": "object_info_m34_size"
+    },
+    "m23": {
+      "nameKey": "m23",
+      "descriptionKey": "object_info_m23_description",
+      "funFactKey": "object_info_m23_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_m23_distance",
+      "sizeKey": "object_info_m23_size"
+    },
+    "m37": {
+      "nameKey": "m37",
+      "descriptionKey": "object_info_m37_description",
+      "funFactKey": "object_info_m37_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_m37_distance",
+      "sizeKey": "object_info_m37_size"
+    },
+    "m48": {
+      "nameKey": "m48",
+      "descriptionKey": "object_info_m48_description",
+      "funFactKey": "object_info_m48_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_m48_distance",
+      "sizeKey": "object_info_m48_size"
+    },
+    "m21": {
+      "nameKey": "m21",
+      "descriptionKey": "object_info_m21_description",
+      "funFactKey": "object_info_m21_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_m21_distance",
+      "sizeKey": "object_info_m21_size"
+    },
+    "m50": {
+      "nameKey": "m50",
+      "descriptionKey": "object_info_m50_description",
+      "funFactKey": "object_info_m50_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_m50_distance",
+      "sizeKey": "object_info_m50_size"
+    },
+    "m36": {
+      "nameKey": "m36",
+      "descriptionKey": "object_info_m36_description",
+      "funFactKey": "object_info_m36_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_m36_distance",
+      "sizeKey": "object_info_m36_size"
+    },
+    "m46": {
+      "nameKey": "m46",
+      "descriptionKey": "object_info_m46_description",
+      "funFactKey": "object_info_m46_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_m46_distance",
+      "sizeKey": "object_info_m46_size"
+    },
+    "m93": {
+      "nameKey": "m93",
+      "descriptionKey": "object_info_m93_description",
+      "funFactKey": "object_info_m93_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_m93_distance",
+      "sizeKey": "object_info_m93_size"
+    },
+    "m38": {
+      "nameKey": "m38",
+      "descriptionKey": "object_info_m38_description",
+      "funFactKey": "object_info_m38_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_m38_distance",
+      "sizeKey": "object_info_m38_size"
+    },
+    "m29": {
+      "nameKey": "m29",
+      "descriptionKey": "object_info_m29_description",
+      "funFactKey": "object_info_m29_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_m29_distance",
+      "sizeKey": "object_info_m29_size"
+    },
+    "m62": {
+      "nameKey": "m62",
+      "descriptionKey": "object_info_m62_description",
+      "funFactKey": "object_info_m62_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_m62_distance",
+      "sizeKey": "object_info_m62_size"
+    },
+    "m28": {
+      "nameKey": "m28",
+      "descriptionKey": "object_info_m28_description",
+      "funFactKey": "object_info_m28_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_m28_distance",
+      "sizeKey": "object_info_m28_size"
+    },
+    "m52": {
+      "nameKey": "m52",
+      "descriptionKey": "object_info_m52_description",
+      "funFactKey": "object_info_m52_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_m52_distance",
+      "sizeKey": "object_info_m52_size"
+    },
+    "m67": {
+      "nameKey": "m67",
+      "descriptionKey": "object_info_m67_description",
+      "funFactKey": "object_info_m67_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_m67_distance",
+      "sizeKey": "object_info_m67_size"
+    },
+    "m55": {
+      "nameKey": "m55",
+      "descriptionKey": "object_info_m55_description",
+      "funFactKey": "object_info_m55_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_m55_distance",
+      "sizeKey": "object_info_m55_size"
+    },
+    "m19": {
+      "nameKey": "m19",
+      "descriptionKey": "object_info_m19_description",
+      "funFactKey": "object_info_m19_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_m19_distance",
+      "sizeKey": "object_info_m19_size"
+    },
+    "m80": {
+      "nameKey": "m80",
+      "descriptionKey": "object_info_m80_description",
+      "funFactKey": "object_info_m80_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_m80_distance",
+      "sizeKey": "object_info_m80_size"
+    },
+    "m103": {
+      "nameKey": "m103",
+      "descriptionKey": "object_info_m103_description",
+      "funFactKey": "object_info_m103_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_m103_distance",
+      "sizeKey": "object_info_m103_size"
+    },
+    "m30": {
+      "nameKey": "m30",
+      "descriptionKey": "object_info_m30_description",
+      "funFactKey": "object_info_m30_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_m30_distance",
+      "sizeKey": "object_info_m30_size"
+    },
+    "m54": {
+      "nameKey": "m54",
+      "descriptionKey": "object_info_m54_description",
+      "funFactKey": "object_info_m54_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_m54_distance",
+      "sizeKey": "object_info_m54_size"
+    },
+    "m69": {
+      "nameKey": "m69",
+      "descriptionKey": "object_info_m69_description",
+      "funFactKey": "object_info_m69_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_m69_distance",
+      "sizeKey": "object_info_m69_size"
+    },
+    "m9": {
+      "nameKey": "m9",
+      "descriptionKey": "object_info_m9_description",
+      "funFactKey": "object_info_m9_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_m9_distance",
+      "sizeKey": "object_info_m9_size"
+    },
+    "m26": {
+      "nameKey": "m26",
+      "descriptionKey": "object_info_m26_description",
+      "funFactKey": "object_info_m26_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_m26_distance",
+      "sizeKey": "object_info_m26_size"
+    },
+    "m79": {
+      "nameKey": "m79",
+      "descriptionKey": "object_info_m79_description",
+      "funFactKey": "object_info_m79_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_m79_distance",
+      "sizeKey": "object_info_m79_size"
+    },
+    "m70": {
+      "nameKey": "m70",
+      "descriptionKey": "object_info_m70_description",
+      "funFactKey": "object_info_m70_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_m70_distance",
+      "sizeKey": "object_info_m70_size"
+    },
+    "m107": {
+      "nameKey": "m107",
+      "descriptionKey": "object_info_m107_description",
+      "funFactKey": "object_info_m107_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_m107_distance",
+      "sizeKey": "object_info_m107_size"
+    },
+    "m68": {
+      "nameKey": "m68",
+      "descriptionKey": "object_info_m68_description",
+      "funFactKey": "object_info_m68_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_m68_distance",
+      "sizeKey": "object_info_m68_size"
+    },
+    "m56": {
+      "nameKey": "m56",
+      "descriptionKey": "object_info_m56_description",
+      "funFactKey": "object_info_m56_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_m56_distance",
+      "sizeKey": "object_info_m56_size"
+    },
+    "m71": {
+      "nameKey": "m71",
+      "descriptionKey": "object_info_m71_description",
+      "funFactKey": "object_info_m71_funfact",
+      "type": "cluster",
+      "distanceKey": "object_info_m71_distance",
+      "sizeKey": "object_info_m71_size"
     }
   }
 }
