@@ -51,7 +51,8 @@ public abstract class AbstractAsciiProtoWriter {
     List<String> rNames = new ArrayList<>();
     for (String name : names.split(NAME_DELIMITER)) {
       String key = name.replaceAll("[^a-zA-Z0-9 _]", "").replaceAll(" ", "_").toLowerCase();
-      if (!key.isEmpty() && Character.isDigit(key.charAt(0))) {
+      if (key.isEmpty()) continue;
+      if (Character.isDigit(key.charAt(0))) {
         key = "n" + key;
       }
       rNames.add(key);
