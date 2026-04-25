@@ -90,7 +90,7 @@ class ObjectInfoRegistry @Inject constructor(
             imageCredit = entry.imageCredit,
             parentObjectId = entry.parentObjectId,
             seeAlso = entry.seeAlso,
-            alternateNames = entry.alternateNames
+            alternateNames = resolveAlternateNames(entry.alternateNameKeys, resources.getString(nameResId))
         )
     }
 
@@ -144,6 +144,13 @@ class ObjectInfoRegistry @Inject constructor(
         return virtualObjectIndex[name?.lowercase()]?.let { (id, _) -> getInfo(id) }
     }
 
+    private fun resolveAlternateNames(keys: List<String>, primaryName: String): List<String> {
+        return keys
+            .mapNotNull { getOptionalString(it) }
+            .filter { it != primaryName }
+            .distinct()
+    }
+
     private fun getOptionalString(key: String?): String? {
         if (key == null) return null
         val resources = context.resources
@@ -193,9 +200,9 @@ class ObjectInfoRegistry @Inject constructor(
             val seeAlsoList = if (seeAlsoArray != null) {
                 (0 until seeAlsoArray.length()).map { seeAlsoArray.getString(it) }
             } else emptyList()
-            val alternateNamesArray = obj.optJSONArray("alternateNames")
-            val alternateNamesList = if (alternateNamesArray != null) {
-                (0 until alternateNamesArray.length()).map { alternateNamesArray.getString(it) }
+            val alternateNameKeysArray = obj.optJSONArray("alternateNameKeys")
+            val alternateNameKeysList = if (alternateNameKeysArray != null) {
+                (0 until alternateNameKeysArray.length()).map { alternateNameKeysArray.getString(it) }
             } else emptyList()
             @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
             result[objectId.lowercase()] = ObjectInfoEntry(
@@ -212,7 +219,7 @@ class ObjectInfoRegistry @Inject constructor(
                 imageCredit = obj.optString("imageCredit", null),
                 parentObjectId = obj.optString("parentObjectId", null),
                 seeAlso = seeAlsoList,
-                alternateNames = alternateNamesList,
+                alternateNameKeys = alternateNameKeysList,
                 searchSubtext = obj.optString("searchSubtext", null)
             )
         }

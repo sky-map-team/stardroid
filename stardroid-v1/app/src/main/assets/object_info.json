@@ -760,9 +760,9 @@
       "magnitude": "8.4",
       "imageKey": "deep_sky_objects/hubble_m1.jpg",
       "imageCredit": "NASA/ESA/Hubble",
-      "alternateNames": [
-        "Crab Nebula",
-        "NGC 1952"
+      "alternateNameKeys": [
+        "crab_nebula",
+        "ngc_1952"
       ]
     },
     "m13": {
@@ -775,9 +775,9 @@
       "magnitude": "5.8",
       "imageKey": "deep_sky_objects/hubble_m13.jpg",
       "imageCredit": "NASA/ESA/Hubble",
-      "alternateNames": [
-        "Hercules Globular Cluster",
-        "NGC 6205"
+      "alternateNameKeys": [
+        "hercules_globular_cluster",
+        "ngc_6205"
       ]
     },
     "m31": {
@@ -791,9 +791,9 @@
       "magnitude": "3.4",
       "imageKey": "deep_sky_objects/kennett_m31.webp",
       "imageCredit": "Adam Kennett/Wikimedia Commons",
-      "alternateNames": [
-        "Andromeda Galaxy",
-        "NGC 224"
+      "alternateNameKeys": [
+        "andromeda_galaxy",
+        "ngc_224"
       ]
     },
     "m42": {
@@ -817,9 +817,9 @@
       "magnitude": "1.6",
       "imageKey": "deep_sky_objects/hubble_m45.webp",
       "imageCredit": "NASA/ESA/Hubble",
-      "alternateNames": [
-        "Pleiades",
-        "Seven Sisters"
+      "alternateNameKeys": [
+        "pleiades",
+        "seven_sisters"
       ]
     },
     "m51": {
@@ -832,9 +832,9 @@
       "magnitude": "8.4",
       "imageKey": "deep_sky_objects/hubble_m51a.webp",
       "imageCredit": "NASA/ESA/Hubble",
-      "alternateNames": [
-        "Whirlpool Galaxy",
-        "NGC 5194"
+      "alternateNameKeys": [
+        "whirlpool_galaxy",
+        "ngc_5194"
       ]
     },
     "m57": {
@@ -847,9 +847,9 @@
       "magnitude": "8.8",
       "imageKey": "deep_sky_objects/hubble_m57.webp",
       "imageCredit": "NASA/ESA/Hubble",
-      "alternateNames": [
-        "Ring Nebula",
-        "NGC 6720"
+      "alternateNameKeys": [
+        "ring_nebula",
+        "ngc_6720"
       ]
     },
     "m81": {
@@ -884,9 +884,9 @@
       "magnitude": "7.9",
       "imageKey": "deep_sky_objects/hubble_m101.webp",
       "imageCredit": "NASA/ESA/Hubble",
-      "alternateNames": [
-        "Pinwheel Galaxy",
-        "NGC 5457"
+      "alternateNameKeys": [
+        "pinwheel_galaxy",
+        "ngc_5457"
       ]
     },
     "m104": {
@@ -899,9 +899,9 @@
       "magnitude": "8.0",
       "imageKey": "deep_sky_objects/hubble_m104.webp",
       "imageCredit": "NASA/ESA/Hubble",
-      "alternateNames": [
-        "Sombrero Galaxy",
-        "NGC 4594"
+      "alternateNameKeys": [
+        "sombrero_galaxy",
+        "ngc_4594"
       ]
     },
     "m8": {
@@ -980,10 +980,10 @@
       "magnitude": "3.7",
       "imageKey": "deep_sky_objects/hubble_m44.webp",
       "imageCredit": "NASA/ESA/Hubble",
-      "alternateNames": [
-        "Beehive Cluster",
-        "Praesepe",
-        "NGC 2632"
+      "alternateNameKeys": [
+        "beehive_cluster",
+        "praesepe",
+        "ngc_2632"
       ]
     },
     "m78": {
@@ -1073,9 +1073,9 @@
       "magnitude": "3.3",
       "imageKey": "deep_sky_objects/hubble_m7.webp",
       "imageCredit": "NASA/ESA/Hubble",
-      "alternateNames": [
-        "Ptolemy Cluster",
-        "NGC 6475"
+      "alternateNameKeys": [
+        "ptolemy_cluster",
+        "ngc_6475"
       ]
     },
     "m6": {
@@ -1088,9 +1088,9 @@
       "magnitude": "4.2",
       "imageKey": "deep_sky_objects/noao_m6.webp",
       "imageCredit": "NOAO/AURA/NSF",
-      "alternateNames": [
-        "Butterfly Cluster",
-        "NGC 6405"
+      "alternateNameKeys": [
+        "butterfly_cluster",
+        "ngc_6405"
       ]
     },
     "m11": {
@@ -1114,9 +1114,9 @@
       "magnitude": "6.4",
       "imageKey": "deep_sky_objects/hubble_m16.webp",
       "imageCredit": "NASA/ESA/Hubble",
-      "alternateNames": [
-        "Eagle Nebula",
-        "NGC 6611"
+      "alternateNameKeys": [
+        "eagle_nebula",
+        "ngc_6611"
       ]
     },
     "m2": {
@@ -1339,9 +1339,9 @@
       "magnitude": "4.09",
       "imageKey": "deep_sky_objects/eso_47_tucanae.webp",
       "imageCredit": "ESO",
-      "alternateNames": [
-        "47 Tuc",
-        "NGC 104"
+      "alternateNameKeys": [
+        "n47_tuc",
+        "ngc_104"
       ]
     },
     "centaurus_a": {
@@ -1354,8 +1354,8 @@
       "magnitude": "6.84",
       "imageKey": "deep_sky_objects/eso_centaurus_a.webp",
       "imageCredit": "ESO",
-      "alternateNames": [
-        "NGC 5128"
+      "alternateNameKeys": [
+        "ngc_5128"
       ]
     },
     "orion": {
@@ -1798,9 +1798,9 @@
       "distanceKey": "object_info_t_crb_distance",
       "sizeKey": "object_info_t_crb_size",
       "magnitude": "10.8",
-      "alternateNames": [
-        "Blaze Star",
-        "T Coronae Borealis"
+      "alternateNameKeys": [
+        "blaze_star",
+        "t_coronae_borealis"
       ]
     },
     "eta_carinae_nebula": {
@@ -1811,9 +1811,9 @@
       "distanceKey": "object_info_eta_carinae_nebula_distance",
       "sizeKey": "object_info_eta_carinae_nebula_size",
       "magnitude": "1.0",
-      "alternateNames": [
-        "Carina Nebula",
-        "NGC 3372"
+      "alternateNameKeys": [
+        "carina_nebula",
+        "ngc_3372"
       ]
     },
     "tarantula_nebula": {
@@ -1826,9 +1826,9 @@
       "magnitude": "8.0",
       "imageKey": "deep_sky_objects/eso_tarantula.webp",
       "imageCredit": "ESO/R. Fosbury/ST-ECF",
-      "alternateNames": [
-        "30 Doradus",
-        "NGC 2070"
+      "alternateNameKeys": [
+        "n30_doradus",
+        "ngc_2070"
       ]
     },
     "lmc": {
@@ -1841,9 +1841,9 @@
       "magnitude": "0.9",
       "imageKey": "deep_sky_objects/lmc.webp",
       "imageCredit": "ESO/C. Bardon",
-      "alternateNames": [
-        "Large Magellanic Cloud",
-        "Nubecula Major"
+      "alternateNameKeys": [
+        "large_magellanic_cloud",
+        "nubecula_major"
       ]
     },
     "smc": {
@@ -1856,9 +1856,9 @@
       "magnitude": "2.7",
       "imageKey": "deep_sky_objects/smc.webp",
       "imageCredit": "ESO/VISTA VMC",
-      "alternateNames": [
-        "Small Magellanic Cloud",
-        "Nubecula Minor"
+      "alternateNameKeys": [
+        "small_magellanic_cloud",
+        "nubecula_minor"
       ]
     },
     "willman_1": {
@@ -1871,8 +1871,8 @@
       "magnitude": "15.4",
       "imageKey": "deep_sky_objects/willman_1.webp",
       "imageCredit": "Sky Map team (it's very faint)",
-      "alternateNames": [
-        "Beth Willman Galaxy"
+      "alternateNameKeys": [
+        "beth_willman_galaxy"
       ]
     },
     "sgr_a_star": {
@@ -1885,9 +1885,9 @@
       "magnitude": "28.0",
       "imageKey": "deep_sky_objects/sgr_a_star.webp",
       "imageCredit": "EHT Collaboration",
-      "alternateNames": [
-        "Sagittarius A*",
-        "Galactic Center"
+      "alternateNameKeys": [
+        "sagittarius_a_star",
+        "galactic_center"
       ]
     },
     "cygnus_x_1": {
@@ -1911,9 +1911,9 @@
       "magnitude": "4.0",
       "imageKey": "deep_sky_objects/north_america_nebula.webp",
       "imageCredit": "Giuseppe Donatiello/CC0",
-      "alternateNames": [
-        "NGC 7000",
-        "Caldwell 20"
+      "alternateNameKeys": [
+        "ngc_7000",
+        "caldwell_20"
       ]
     },
     "jewel_box": {
@@ -1926,10 +1926,10 @@
       "magnitude": "4.2",
       "imageKey": "deep_sky_objects/eso_jewel_box.webp",
       "imageCredit": "ESO/Y. Beletsky",
-      "alternateNames": [
-        "Herschel's Jewel Box",
-        "NGC 4755",
-        "Kappa Crucis Cluster"
+      "alternateNameKeys": [
+        "herschels_jewel_box",
+        "ngc_4755",
+        "kappa_crucis_cluster"
       ]
     },
     "exposed_cranium_nebula": {
@@ -1941,8 +1941,8 @@
       "sizeKey": "object_info_exposed_cranium_nebula_size",
       "imageKey": "deep_sky_objects/webb_exposed_cranium_nebula.webp",
       "imageCredit": "NASA, ESA, CSA, STScI/Joseph DePasquale",
-      "alternateNames": [
-        "PMR 1"
+      "alternateNameKeys": [
+        "pmr_1"
       ]
     },
     "alcyone": {
@@ -2267,10 +2267,10 @@
       "magnitude": "3.7",
       "imageKey": "deep_sky_objects/double_cluster.webp",
       "imageCredit": "Genuson/CC BY-SA 3.0",
-      "alternateNames": [
-        "NGC 869 & NGC 884",
-        "h and χ Persei",
-        "Caldwell 14"
+      "alternateNameKeys": [
+        "ngc_869_and_ngc_884",
+        "h_and_chi_persei",
+        "caldwell_14"
       ]
     },
     "antlia": {
@@ -2893,9 +2893,9 @@
       "sizeKey": "object_info_hyades_size",
       "imageKey": "deep_sky_objects/eso_hyades.webp",
       "imageCredit": "NOIRLab/NSF/AURA",
-      "alternateNames": [
-        "Melotte 25",
-        "Caldwell 41"
+      "alternateNameKeys": [
+        "melotte_25",
+        "caldwell_41"
       ]
     },
     "coma_star_cluster": {
@@ -2907,9 +2907,9 @@
       "sizeKey": "object_info_coma_star_cluster_size",
       "imageKey": "deep_sky_objects/eso_coma_star_cluster.webp",
       "imageCredit": "Alberto Pisabarro/CC BY-SA 4.0",
-      "alternateNames": [
-        "Melotte 111",
-        "Coma Berenices Cluster"
+      "alternateNameKeys": [
+        "melotte_111",
+        "coma_berenices_cluster"
       ]
     },
     "coathanger": {
@@ -2921,9 +2921,9 @@
       "sizeKey": "object_info_coathanger_size",
       "imageKey": "deep_sky_objects/dss_coathanger.webp",
       "imageCredit": "DSS/Giuseppe Donatiello",
-      "alternateNames": [
-        "Brocchi's Cluster",
-        "Collinder 399"
+      "alternateNameKeys": [
+        "brocchis_cluster",
+        "collinder_399"
       ]
     },
     "helix_nebula": {
@@ -2935,10 +2935,10 @@
       "sizeKey": "object_info_helix_nebula_size",
       "imageKey": "deep_sky_objects/hubble_helix_nebula.webp",
       "imageCredit": "NASA/ESA/Hubble",
-      "alternateNames": [
-        "NGC 7293",
-        "Eye of God",
-        "Caldwell 63"
+      "alternateNameKeys": [
+        "ngc_7293",
+        "eye_of_god",
+        "caldwell_63"
       ]
     },
     "sculptor_galaxy": {
@@ -2950,10 +2950,10 @@
       "sizeKey": "object_info_sculptor_galaxy_size",
       "imageKey": "deep_sky_objects/eso_sculptor_galaxy.webp",
       "imageCredit": "ESO/VST",
-      "alternateNames": [
-        "NGC 253",
-        "Silver Dollar Galaxy",
-        "Silver Coin Galaxy"
+      "alternateNameKeys": [
+        "ngc_253",
+        "silver_dollar_galaxy",
+        "silver_coin_galaxy"
       ]
     },
     "blue_snowball_nebula": {
@@ -2965,9 +2965,9 @@
       "sizeKey": "object_info_blue_snowball_nebula_size",
       "imageKey": "deep_sky_objects/hubble_blue_snowball.webp",
       "imageCredit": "NASA/ESA/Hubble",
-      "alternateNames": [
-        "NGC 7662",
-        "Caldwell 22"
+      "alternateNameKeys": [
+        "ngc_7662",
+        "caldwell_22"
       ]
     },
     "ghost_of_jupiter": {
@@ -2979,9 +2979,9 @@
       "sizeKey": "object_info_ghost_of_jupiter_size",
       "imageKey": "deep_sky_objects/hubble_ghost_of_jupiter.webp",
       "imageCredit": "NASA/ESA/Hubble",
-      "alternateNames": [
-        "NGC 3242",
-        "Caldwell 59"
+      "alternateNameKeys": [
+        "ngc_3242",
+        "caldwell_59"
       ]
     },
     "saturn_nebula": {
@@ -2993,9 +2993,9 @@
       "sizeKey": "object_info_saturn_nebula_size",
       "imageKey": "deep_sky_objects/hubble_saturn_nebula.webp",
       "imageCredit": "NASA/ESA/Hubble",
-      "alternateNames": [
-        "NGC 7009",
-        "Caldwell 55"
+      "alternateNameKeys": [
+        "ngc_7009",
+        "caldwell_55"
       ]
     },
     "ngc_2903": {
@@ -3017,9 +3017,9 @@
       "sizeKey": "object_info_omega_centauri_size",
       "imageKey": "deep_sky_objects/hubble_omega_centauri.webp",
       "imageCredit": "NASA/ESA/Hubble",
-      "alternateNames": [
-        "NGC 5139",
-        "ω Centauri"
+      "alternateNameKeys": [
+        "ngc_5139",
+        "omega_cen"
       ]
     },
     "m47": {
@@ -3079,8 +3079,8 @@
       "sizeKey": "object_info_ngc_6543_size",
       "imageKey": "deep_sky_objects/hubble_catseyenebula.webp",
       "imageCredit": "NASA/ESA/Hubble",
-      "alternateNames": [
-        "Cat's Eye Nebula"
+      "alternateNameKeys": [
+        "cats_eye_nebula"
       ]
     },
     "m76": {
