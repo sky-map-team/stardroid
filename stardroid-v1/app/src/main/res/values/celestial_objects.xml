@@ -440,4 +440,27 @@
     <!-- Centaurus A (NGC 5128) -->
     <string name="centaurus_a" translation_description="Common name for the radio galaxy NGC 5128 in Centaurus">Centaurus A</string>
     <string name="ngc_5128" translation_description="NGC catalog designation for the radio galaxy Centaurus A">NGC 5128</string>
+
+    <!-- Synonym strings for catalog objects (alternate names, NGC/Caldwell/Melotte designations) -->
+    <string name="mel_25" translation_description="Melotte catalog short designation for the Hyades cluster">Mel 25</string>
+    <string name="melotte_25" translation_description="Melotte catalog designation for the Hyades cluster">Melotte 25</string>
+    <string name="caldwell_41" translation_description="Caldwell catalog designation for the Hyades cluster">Caldwell 41</string>
+    <string name="mel_111" translation_description="Melotte catalog short designation for the Coma Star Cluster">Mel 111</string>
+    <string name="melotte_111" translation_description="Melotte catalog designation for the Coma Star Cluster">Melotte 111</string>
+    <string name="coma_berenices_cluster" translation_description="Alternate name for the Coma Star Cluster (Melotte 111)">Coma Berenices Cluster</string>
+    <string name="brocchis_cluster" translation_description="Alternate name for the Coathanger asterism (Collinder 399)">Brocchi\'s Cluster</string>
+    <string name="cr_399" translation_description="Collinder catalog short designation for the Coathanger asterism">Cr 399</string>
+    <string name="collinder_399" translation_description="Collinder catalog designation for the Coathanger asterism">Collinder 399</string>
+    <string name="ngc_7293" translation_description="NGC catalog designation for the Helix Nebula">NGC 7293</string>
+    <string name="eye_of_god" translation_description="Nickname for the Helix Nebula (NGC 7293)">Eye of God</string>
+    <string name="caldwell_63" translation_description="Caldwell catalog designation for the Helix Nebula">Caldwell 63</string>
+    <string name="ngc_253" translation_description="NGC catalog designation for the Sculptor Galaxy">NGC 253</string>
+    <string name="silver_dollar_galaxy" translation_description="Nickname for the Sculptor Galaxy (NGC 253)">Silver Dollar Galaxy</string>
+    <string name="silver_coin_galaxy" translation_description="Alternate nickname for the Sculptor Galaxy (NGC 253)">Silver Coin Galaxy</string>
+    <string name="ngc_7662" translation_description="NGC catalog designation for the Blue Snowball Nebula">NGC 7662</string>
+    <string name="caldwell_22" translation_description="Caldwell catalog designation for the Blue Snowball Nebula">Caldwell 22</string>
+    <string name="ngc_3242" translation_description="NGC catalog designation for the Ghost of Jupiter nebula">NGC 3242</string>
+    <string name="caldwell_59" translation_description="Caldwell catalog designation for the Ghost of Jupiter nebula">Caldwell 59</string>
+    <string name="ngc_7009" translation_description="NGC catalog designation for the Saturn Nebula">NGC 7009</string>
+    <string name="caldwell_55" translation_description="Caldwell catalog designation for the Saturn Nebula">Caldwell 55</string>
 </resources>

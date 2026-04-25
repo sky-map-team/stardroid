@@ -3008,7 +3008,7 @@ source {
     strings_str_id: "jewel_box"
   }
   name_str_ids: "jewel_box"
-  name_str_ids: "herschel\'s_jewel_box"
+  name_str_ids: "herschels_jewel_box"
   name_str_ids: "kappa_crucis_cluster"
 }
 source {
@@ -3192,7 +3192,7 @@ source {
     strings_str_id: "coathanger"
   }
   name_str_ids: "coathanger"
-  name_str_ids: "brocchi\'s_cluster"
+  name_str_ids: "brocchis_cluster"
   name_str_ids: "cr_399"
   name_str_ids: "collinder_399"
 }
@@ -3248,6 +3248,7 @@ source {
   name_str_ids: "sculptor_galaxy"
   name_str_ids: "ngc_253"
   name_str_ids: "silver_dollar_galaxy"
+  name_str_ids: "silver_coin_galaxy"
 }
 source {
   search_location {
