@@ -89,7 +89,8 @@ class ObjectInfoRegistry @Inject constructor(
             imagePath = imagePath,
             imageCredit = entry.imageCredit,
             parentObjectId = entry.parentObjectId,
-            seeAlso = entry.seeAlso
+            seeAlso = entry.seeAlso,
+            alternateNames = resolveAlternateNames(entry.alternateNameKeys, resources.getString(nameResId))
         )
     }
 
@@ -143,6 +144,13 @@ class ObjectInfoRegistry @Inject constructor(
         return virtualObjectIndex[name?.lowercase()]?.let { (id, _) -> getInfo(id) }
     }
 
+    private fun resolveAlternateNames(keys: List<String>, primaryName: String): List<String> {
+        return keys
+            .mapNotNull { getOptionalString(it) }
+            .filter { it != primaryName }
+            .distinct()
+    }
+
     private fun getOptionalString(key: String?): String? {
         if (key == null) return null
         val resources = context.resources
@@ -162,6 +170,7 @@ class ObjectInfoRegistry @Inject constructor(
             "cluster" -> ObjectType.CLUSTER
             "constellation" -> ObjectType.CONSTELLATION
             "black_hole" -> ObjectType.BLACK_HOLE
+            "meteor_shower" -> ObjectType.METEOR_SHOWER
             else -> {
                 Log.w(TAG, "Unknown object type: $typeString, defaulting to STAR")
                 ObjectType.STAR
@@ -191,6 +200,10 @@ class ObjectInfoRegistry @Inject constructor(
             val seeAlsoList = if (seeAlsoArray != null) {
                 (0 until seeAlsoArray.length()).map { seeAlsoArray.getString(it) }
             } else emptyList()
+            val alternateNameKeysArray = obj.optJSONArray("alternateNameKeys")
+            val alternateNameKeysList = if (alternateNameKeysArray != null) {
+                (0 until alternateNameKeysArray.length()).map { alternateNameKeysArray.getString(it) }
+            } else emptyList()
             @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
             result[objectId.lowercase()] = ObjectInfoEntry(
                 nameKey = obj.getString("nameKey"),
@@ -206,6 +219,7 @@ class ObjectInfoRegistry @Inject constructor(
                 imageCredit = obj.optString("imageCredit", null),
                 parentObjectId = obj.optString("parentObjectId", null),
                 seeAlso = seeAlsoList,
+                alternateNameKeys = alternateNameKeysList,
                 searchSubtext = obj.optString("searchSubtext", null)
             )
         }

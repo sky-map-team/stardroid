@@ -26,7 +26,8 @@ enum class ObjectType {
     GALAXY,
     CLUSTER,
     CONSTELLATION,
-    BLACK_HOLE
+    BLACK_HOLE,
+    METEOR_SHOWER
 }
 
 /**
@@ -59,7 +60,8 @@ data class ObjectInfo(
     val imagePath: String? = null,
     val imageCredit: String? = null,
     val parentObjectId: String? = null,
-    val seeAlso: List<String> = emptyList()
+    val seeAlso: List<String> = emptyList(),
+    val alternateNames: List<String> = emptyList()
 ) : Parcelable
 
 /**
@@ -80,5 +82,6 @@ internal data class ObjectInfoEntry(
     val imageCredit: String? = null,
     val parentObjectId: String? = null,
     val seeAlso: List<String> = emptyList(),
+    val alternateNameKeys: List<String> = emptyList(),
     val searchSubtext: String? = null
 )

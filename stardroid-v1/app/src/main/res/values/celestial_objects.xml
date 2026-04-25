@@ -122,6 +122,33 @@
     <string name="ganymede" translation_description="Name of Jupiter\'s moon Ganymede">Ganymede</string>
     <string name="callisto" translation_description="Name of Jupiter\'s moon Callisto">Callisto</string>
 
+    <!-- Major Moons of Saturn -->
+    <string name="titan" translation_description="Name of Saturn\'s moon Titan">Titan</string>
+    <string name="rhea" translation_description="Name of Saturn\'s moon Rhea">Rhea</string>
+    <string name="tethys" translation_description="Name of Saturn\'s moon Tethys">Tethys</string>
+    <string name="dione" translation_description="Name of Saturn\'s moon Dione">Dione</string>
+    <string name="iapetus" translation_description="Name of Saturn\'s moon Iapetus">Iapetus</string>
+
+    <!-- Moon of Neptune -->
+    <string name="triton" translation_description="Name of Neptune\'s moon Triton">Triton</string>
+
+    <!-- Major Moons of Uranus -->
+    <string name="titania" translation_description="Name of Uranus\'s moon Titania">Titania</string>
+    <string name="oberon" translation_description="Name of Uranus\'s moon Oberon">Oberon</string>
+    <string name="ariel" translation_description="Name of Uranus\'s moon Ariel">Ariel</string>
+    <string name="umbriel" translation_description="Name of Uranus\'s moon Umbriel">Umbriel</string>
+
+    <!-- Deep-sky objects -->
+    <string name="hyades" translation_description="Name of the Hyades star cluster">Hyades</string>
+    <string name="coma_star_cluster" translation_description="Name of the Coma Berenices star cluster">Coma Star Cluster</string>
+    <string name="coathanger" translation_description="Name of the Coathanger asterism (Brocchi\'s Cluster)">Coathanger</string>
+    <string name="helix_nebula" translation_description="Name of the Helix Nebula (NGC 7293)">Helix Nebula</string>
+    <string name="sculptor_galaxy" translation_description="Name of the Sculptor Galaxy (NGC 253)">Sculptor Galaxy</string>
+    <string name="blue_snowball_nebula" translation_description="Name of the Blue Snowball Nebula (NGC 7662)">Blue Snowball Nebula</string>
+    <string name="ghost_of_jupiter" translation_description="Name of the Ghost of Jupiter planetary nebula (NGC 3242)">Ghost of Jupiter</string>
+    <string name="saturn_nebula" translation_description="Name of the Saturn Nebula (NGC 7009)">Saturn Nebula</string>
+    <string name="ngc_2903" translation_description="Name of the galaxy NGC 2903">NGC 2903</string>
+
     <!-- Gallery objects -->
     <string name="crab_nebula" translation_description="hubble object">Crab Nebula</string>
     <string name="eagle_nebula" translation_description="hubble object">Eagle Nebula</string>
@@ -413,4 +440,43 @@
     <!-- Centaurus A (NGC 5128) -->
     <string name="centaurus_a" translation_description="Common name for the radio galaxy NGC 5128 in Centaurus">Centaurus A</string>
     <string name="ngc_5128" translation_description="NGC catalog designation for the radio galaxy Centaurus A">NGC 5128</string>
+
+    <!-- Synonym strings for catalog objects (alternate names, NGC/Caldwell/Melotte designations) -->
+    <string name="mel_25" translation_description="Melotte catalog short designation for the Hyades cluster">Mel 25</string>
+    <string name="melotte_25" translation_description="Melotte catalog designation for the Hyades cluster">Melotte 25</string>
+    <string name="caldwell_41" translation_description="Caldwell catalog designation for the Hyades cluster">Caldwell 41</string>
+    <string name="mel_111" translation_description="Melotte catalog short designation for the Coma Star Cluster">Mel 111</string>
+    <string name="melotte_111" translation_description="Melotte catalog designation for the Coma Star Cluster">Melotte 111</string>
+    <string name="coma_berenices_cluster" translation_description="Alternate name for the Coma Star Cluster (Melotte 111)">Coma Berenices Cluster</string>
+    <string name="brocchis_cluster" translation_description="Alternate name for the Coathanger asterism (Collinder 399)">Brocchi\'s Cluster</string>
+    <string name="cr_399" translation_description="Collinder catalog short designation for the Coathanger asterism">Cr 399</string>
+    <string name="collinder_399" translation_description="Collinder catalog designation for the Coathanger asterism">Collinder 399</string>
+    <string name="ngc_7293" translation_description="NGC catalog designation for the Helix Nebula">NGC 7293</string>
+    <string name="eye_of_god" translation_description="Nickname for the Helix Nebula (NGC 7293)">Eye of God</string>
+    <string name="caldwell_63" translation_description="Caldwell catalog designation for the Helix Nebula">Caldwell 63</string>
+    <string name="ngc_253" translation_description="NGC catalog designation for the Sculptor Galaxy">NGC 253</string>
+    <string name="silver_dollar_galaxy" translation_description="Nickname for the Sculptor Galaxy (NGC 253)">Silver Dollar Galaxy</string>
+    <string name="silver_coin_galaxy" translation_description="Alternate nickname for the Sculptor Galaxy (NGC 253)">Silver Coin Galaxy</string>
+    <string name="ngc_7662" translation_description="NGC catalog designation for the Blue Snowball Nebula">NGC 7662</string>
+    <string name="caldwell_22" translation_description="Caldwell catalog designation for the Blue Snowball Nebula">Caldwell 22</string>
+    <string name="ngc_3242" translation_description="NGC catalog designation for the Ghost of Jupiter nebula">NGC 3242</string>
+    <string name="caldwell_59" translation_description="Caldwell catalog designation for the Ghost of Jupiter nebula">Caldwell 59</string>
+    <string name="ngc_7009" translation_description="NGC catalog designation for the Saturn Nebula">NGC 7009</string>
+    <string name="caldwell_55" translation_description="Caldwell catalog designation for the Saturn Nebula">Caldwell 55</string>
+    <string name="ptolemy_cluster" translation_description="Common name for the open star cluster M7 in Scorpius, named after ancient astronomer Ptolemy">Ptolemy Cluster</string>
+    <string name="hercules_globular_cluster" translation_description="Common name for the globular cluster M13 in Hercules">Hercules Globular Cluster</string>
+    <string name="ngc_1952" translation_description="NGC catalog designation for M1, the Crab Nebula">NGC 1952</string>
+    <string name="ngc_224" translation_description="NGC catalog designation for M31, the Andromeda Galaxy">NGC 224</string>
+    <string name="ngc_2632" translation_description="NGC catalog designation for M44, the Beehive Cluster">NGC 2632</string>
+    <string name="ngc_4594" translation_description="NGC catalog designation for M104, the Sombrero Galaxy">NGC 4594</string>
+    <string name="ngc_4755" translation_description="NGC catalog designation for the Jewel Box open cluster in Crux">NGC 4755</string>
+    <string name="ngc_5194" translation_description="NGC catalog designation for M51, the Whirlpool Galaxy">NGC 5194</string>
+    <string name="ngc_5457" translation_description="NGC catalog designation for M101, the Pinwheel Galaxy">NGC 5457</string>
+    <string name="ngc_6205" translation_description="NGC catalog designation for M13, the Hercules Globular Cluster">NGC 6205</string>
+    <string name="ngc_6405" translation_description="NGC catalog designation for M6, the Butterfly Cluster">NGC 6405</string>
+    <string name="ngc_6475" translation_description="NGC catalog designation for M7, the Ptolemy Cluster">NGC 6475</string>
+    <string name="ngc_6611" translation_description="NGC catalog designation for M16, the Eagle Nebula">NGC 6611</string>
+    <string name="ngc_6720" translation_description="NGC catalog designation for M57, the Ring Nebula">NGC 6720</string>
+    <string name="ngc_869_and_ngc_884" translation_description="NGC catalog designations for the Double Cluster pair in Perseus">NGC 869 &amp; NGC 884</string>
+    <string name="omega_cen" translation_description="Bayer designation for Omega Centauri (ω Centauri)">ω Centauri</string>
 </resources>

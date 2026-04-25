@@ -15,7 +15,6 @@ package com.google.android.stardroid.layers
 
 import android.content.SharedPreferences
 import android.content.res.Resources
-import android.text.format.DateFormat
 import com.google.android.stardroid.R
 import com.google.android.stardroid.base.TimeConstants
 import com.google.android.stardroid.control.AstronomerModel
@@ -228,12 +227,7 @@ class MeteorShowerLayer(private val model: AstronomerModel, resources: Resources
     }
 
     init {
-      // Not sure what the right user experience should be here.  Should we only show up
-      // in the search results when the shower is visible?  For now, just ensure
-      // that it's obvious from the search label.
-      val startDate = DateFormat.format("MMM dd", shower.start)
-      val endDate = DateFormat.format("MMM dd", shower.end)
-      names.add("$name ($startDate-$endDate)")
+      names.add(name)
       // blank is a 1pxX1px image that should be invisible.
       // We'd prefer not to show any image except on the shower dates, but there
       // appears to be a bug in the renderer/layer interface in that Update values are not
