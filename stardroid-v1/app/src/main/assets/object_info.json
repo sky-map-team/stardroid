@@ -759,7 +759,11 @@
       "sizeKey": "object_info_m1_size",
       "magnitude": "8.4",
       "imageKey": "deep_sky_objects/hubble_m1.jpg",
-      "imageCredit": "NASA/ESA/Hubble"
+      "imageCredit": "NASA/ESA/Hubble",
+      "alternateNames": [
+        "Crab Nebula",
+        "NGC 1952"
+      ]
     },
     "m13": {
       "nameKey": "m13",
@@ -770,7 +774,11 @@
       "sizeKey": "object_info_m13_size",
       "magnitude": "5.8",
       "imageKey": "deep_sky_objects/hubble_m13.jpg",
-      "imageCredit": "NASA/ESA/Hubble"
+      "imageCredit": "NASA/ESA/Hubble",
+      "alternateNames": [
+        "Hercules Globular Cluster",
+        "NGC 6205"
+      ]
     },
     "m31": {
       "nameKey": "m31",
@@ -782,7 +790,11 @@
       "massKey": "object_info_m31_mass",
       "magnitude": "3.4",
       "imageKey": "deep_sky_objects/kennett_m31.webp",
-      "imageCredit": "Adam Kennett/Wikimedia Commons"
+      "imageCredit": "Adam Kennett/Wikimedia Commons",
+      "alternateNames": [
+        "Andromeda Galaxy",
+        "NGC 224"
+      ]
     },
     "m42": {
       "nameKey": "m42",
@@ -804,7 +816,11 @@
       "sizeKey": "object_info_m45_size",
       "magnitude": "1.6",
       "imageKey": "deep_sky_objects/hubble_m45.webp",
-      "imageCredit": "NASA/ESA/Hubble"
+      "imageCredit": "NASA/ESA/Hubble",
+      "alternateNames": [
+        "Pleiades",
+        "Seven Sisters"
+      ]
     },
     "m51": {
       "nameKey": "m51",
@@ -815,7 +831,11 @@
       "sizeKey": "object_info_m51_size",
       "magnitude": "8.4",
       "imageKey": "deep_sky_objects/hubble_m51a.webp",
-      "imageCredit": "NASA/ESA/Hubble"
+      "imageCredit": "NASA/ESA/Hubble",
+      "alternateNames": [
+        "Whirlpool Galaxy",
+        "NGC 5194"
+      ]
     },
     "m57": {
       "nameKey": "m57",
@@ -826,7 +846,11 @@
       "sizeKey": "object_info_m57_size",
       "magnitude": "8.8",
       "imageKey": "deep_sky_objects/hubble_m57.webp",
-      "imageCredit": "NASA/ESA/Hubble"
+      "imageCredit": "NASA/ESA/Hubble",
+      "alternateNames": [
+        "Ring Nebula",
+        "NGC 6720"
+      ]
     },
     "m81": {
       "nameKey": "m81",
@@ -859,7 +883,11 @@
       "sizeKey": "object_info_m101_size",
       "magnitude": "7.9",
       "imageKey": "deep_sky_objects/hubble_m101.webp",
-      "imageCredit": "NASA/ESA/Hubble"
+      "imageCredit": "NASA/ESA/Hubble",
+      "alternateNames": [
+        "Pinwheel Galaxy",
+        "NGC 5457"
+      ]
     },
     "m104": {
       "nameKey": "m104",
@@ -870,7 +898,11 @@
       "sizeKey": "object_info_m104_size",
       "magnitude": "8.0",
       "imageKey": "deep_sky_objects/hubble_m104.webp",
-      "imageCredit": "NASA/ESA/Hubble"
+      "imageCredit": "NASA/ESA/Hubble",
+      "alternateNames": [
+        "Sombrero Galaxy",
+        "NGC 4594"
+      ]
     },
     "m8": {
       "nameKey": "m8",
@@ -947,7 +979,12 @@
       "sizeKey": "object_info_m44_size",
       "magnitude": "3.7",
       "imageKey": "deep_sky_objects/hubble_m44.webp",
-      "imageCredit": "NASA/ESA/Hubble"
+      "imageCredit": "NASA/ESA/Hubble",
+      "alternateNames": [
+        "Beehive Cluster",
+        "Praesepe",
+        "NGC 2632"
+      ]
     },
     "m78": {
       "nameKey": "m78",
@@ -1035,7 +1072,11 @@
       "sizeKey": "object_info_m7_size",
       "magnitude": "3.3",
       "imageKey": "deep_sky_objects/hubble_m7.webp",
-      "imageCredit": "NASA/ESA/Hubble"
+      "imageCredit": "NASA/ESA/Hubble",
+      "alternateNames": [
+        "Ptolemy Cluster",
+        "NGC 6475"
+      ]
     },
     "m6": {
       "nameKey": "m6",
@@ -1046,7 +1087,11 @@
       "sizeKey": "object_info_m6_size",
       "magnitude": "4.2",
       "imageKey": "deep_sky_objects/noao_m6.webp",
-      "imageCredit": "NOAO/AURA/NSF"
+      "imageCredit": "NOAO/AURA/NSF",
+      "alternateNames": [
+        "Butterfly Cluster",
+        "NGC 6405"
+      ]
     },
     "m11": {
       "nameKey": "m11",
@@ -1068,7 +1113,11 @@
       "sizeKey": "object_info_m16_size",
       "magnitude": "6.4",
       "imageKey": "deep_sky_objects/hubble_m16.webp",
-      "imageCredit": "NASA/ESA/Hubble"
+      "imageCredit": "NASA/ESA/Hubble",
+      "alternateNames": [
+        "Eagle Nebula",
+        "NGC 6611"
+      ]
     },
     "m2": {
       "nameKey": "m2",
@@ -1289,7 +1338,11 @@
       "sizeKey": "object_info_n47_tucanae_size",
       "magnitude": "4.09",
       "imageKey": "deep_sky_objects/eso_47_tucanae.webp",
-      "imageCredit": "ESO"
+      "imageCredit": "ESO",
+      "alternateNames": [
+        "47 Tuc",
+        "NGC 104"
+      ]
     },
     "centaurus_a": {
       "nameKey": "centaurus_a",
@@ -1300,7 +1353,10 @@
       "sizeKey": "object_info_centaurus_a_size",
       "magnitude": "6.84",
       "imageKey": "deep_sky_objects/eso_centaurus_a.webp",
-      "imageCredit": "ESO"
+      "imageCredit": "ESO",
+      "alternateNames": [
+        "NGC 5128"
+      ]
     },
     "orion": {
       "nameKey": "orion",
@@ -1741,7 +1797,11 @@
       "type": "star",
       "distanceKey": "object_info_t_crb_distance",
       "sizeKey": "object_info_t_crb_size",
-      "magnitude": "10.8"
+      "magnitude": "10.8",
+      "alternateNames": [
+        "Blaze Star",
+        "T Coronae Borealis"
+      ]
     },
     "eta_carinae_nebula": {
       "nameKey": "eta_carinae_nebula",
@@ -1750,7 +1810,11 @@
       "type": "nebula",
       "distanceKey": "object_info_eta_carinae_nebula_distance",
       "sizeKey": "object_info_eta_carinae_nebula_size",
-      "magnitude": "1.0"
+      "magnitude": "1.0",
+      "alternateNames": [
+        "Carina Nebula",
+        "NGC 3372"
+      ]
     },
     "tarantula_nebula": {
       "nameKey": "tarantula_nebula",
@@ -1761,7 +1825,11 @@
       "sizeKey": "object_info_tarantula_nebula_size",
       "magnitude": "8.0",
       "imageKey": "deep_sky_objects/eso_tarantula.webp",
-      "imageCredit": "ESO/R. Fosbury/ST-ECF"
+      "imageCredit": "ESO/R. Fosbury/ST-ECF",
+      "alternateNames": [
+        "30 Doradus",
+        "NGC 2070"
+      ]
     },
     "lmc": {
       "nameKey": "lmc",
@@ -1772,7 +1840,11 @@
       "sizeKey": "object_info_lmc_size",
       "magnitude": "0.9",
       "imageKey": "deep_sky_objects/lmc.webp",
-      "imageCredit": "ESO/C. Bardon"
+      "imageCredit": "ESO/C. Bardon",
+      "alternateNames": [
+        "Large Magellanic Cloud",
+        "Nubecula Major"
+      ]
     },
     "smc": {
       "nameKey": "smc",
@@ -1783,7 +1855,11 @@
       "sizeKey": "object_info_smc_size",
       "magnitude": "2.7",
       "imageKey": "deep_sky_objects/smc.webp",
-      "imageCredit": "ESO/VISTA VMC"
+      "imageCredit": "ESO/VISTA VMC",
+      "alternateNames": [
+        "Small Magellanic Cloud",
+        "Nubecula Minor"
+      ]
     },
     "willman_1": {
       "nameKey": "willman_1",
@@ -1794,7 +1870,10 @@
       "sizeKey": "object_info_willman_1_size",
       "magnitude": "15.4",
       "imageKey": "deep_sky_objects/willman_1.webp",
-      "imageCredit": "Sky Map team (it's very faint)"
+      "imageCredit": "Sky Map team (it's very faint)",
+      "alternateNames": [
+        "Beth Willman Galaxy"
+      ]
     },
     "sgr_a_star": {
       "nameKey": "sgr_a_star",
@@ -1805,7 +1884,11 @@
       "sizeKey": "object_info_sgr_a_star_size",
       "magnitude": "28.0",
       "imageKey": "deep_sky_objects/sgr_a_star.webp",
-      "imageCredit": "EHT Collaboration"
+      "imageCredit": "EHT Collaboration",
+      "alternateNames": [
+        "Sagittarius A*",
+        "Galactic Center"
+      ]
     },
     "cygnus_x_1": {
       "nameKey": "cygnus_x_1",
@@ -1827,7 +1910,11 @@
       "sizeKey": "object_info_north_america_nebula_size",
       "magnitude": "4.0",
       "imageKey": "deep_sky_objects/north_america_nebula.webp",
-      "imageCredit": "Giuseppe Donatiello/CC0"
+      "imageCredit": "Giuseppe Donatiello/CC0",
+      "alternateNames": [
+        "NGC 7000",
+        "Caldwell 20"
+      ]
     },
     "jewel_box": {
       "nameKey": "jewel_box",
@@ -1838,7 +1925,12 @@
       "sizeKey": "object_info_jewel_box_size",
       "magnitude": "4.2",
       "imageKey": "deep_sky_objects/eso_jewel_box.webp",
-      "imageCredit": "ESO/Y. Beletsky"
+      "imageCredit": "ESO/Y. Beletsky",
+      "alternateNames": [
+        "Herschel's Jewel Box",
+        "NGC 4755",
+        "Kappa Crucis Cluster"
+      ]
     },
     "exposed_cranium_nebula": {
       "nameKey": "exposed_cranium_nebula",
@@ -1848,7 +1940,10 @@
       "distanceKey": "object_info_exposed_cranium_nebula_distance",
       "sizeKey": "object_info_exposed_cranium_nebula_size",
       "imageKey": "deep_sky_objects/webb_exposed_cranium_nebula.webp",
-      "imageCredit": "NASA, ESA, CSA, STScI/Joseph DePasquale"
+      "imageCredit": "NASA, ESA, CSA, STScI/Joseph DePasquale",
+      "alternateNames": [
+        "PMR 1"
+      ]
     },
     "alcyone": {
       "nameKey": "alcyone",
@@ -2171,7 +2266,12 @@
       "sizeKey": "object_info_double_cluster_size",
       "magnitude": "3.7",
       "imageKey": "deep_sky_objects/double_cluster.webp",
-      "imageCredit": "Genuson/CC BY-SA 3.0"
+      "imageCredit": "Genuson/CC BY-SA 3.0",
+      "alternateNames": [
+        "NGC 869 & NGC 884",
+        "h and χ Persei",
+        "Caldwell 14"
+      ]
     },
     "antlia": {
       "nameKey": "antlia",
@@ -2792,7 +2892,11 @@
       "distanceKey": "object_info_hyades_distance",
       "sizeKey": "object_info_hyades_size",
       "imageKey": "deep_sky_objects/eso_hyades.webp",
-      "imageCredit": "NOIRLab/NSF/AURA"
+      "imageCredit": "NOIRLab/NSF/AURA",
+      "alternateNames": [
+        "Melotte 25",
+        "Caldwell 41"
+      ]
     },
     "coma_star_cluster": {
       "nameKey": "coma_star_cluster",
@@ -2802,7 +2906,11 @@
       "distanceKey": "object_info_coma_star_cluster_distance",
       "sizeKey": "object_info_coma_star_cluster_size",
       "imageKey": "deep_sky_objects/eso_coma_star_cluster.webp",
-      "imageCredit": "Alberto Pisabarro/CC BY-SA 4.0"
+      "imageCredit": "Alberto Pisabarro/CC BY-SA 4.0",
+      "alternateNames": [
+        "Melotte 111",
+        "Coma Berenices Cluster"
+      ]
     },
     "coathanger": {
       "nameKey": "coathanger",
@@ -2812,7 +2920,11 @@
       "distanceKey": "object_info_coathanger_distance",
       "sizeKey": "object_info_coathanger_size",
       "imageKey": "deep_sky_objects/dss_coathanger.webp",
-      "imageCredit": "DSS/Giuseppe Donatiello"
+      "imageCredit": "DSS/Giuseppe Donatiello",
+      "alternateNames": [
+        "Brocchi's Cluster",
+        "Collinder 399"
+      ]
     },
     "helix_nebula": {
       "nameKey": "helix_nebula",
@@ -2822,7 +2934,12 @@
       "distanceKey": "object_info_helix_nebula_distance",
       "sizeKey": "object_info_helix_nebula_size",
       "imageKey": "deep_sky_objects/hubble_helix_nebula.webp",
-      "imageCredit": "NASA/ESA/Hubble"
+      "imageCredit": "NASA/ESA/Hubble",
+      "alternateNames": [
+        "NGC 7293",
+        "Eye of God",
+        "Caldwell 63"
+      ]
     },
     "sculptor_galaxy": {
       "nameKey": "sculptor_galaxy",
@@ -2832,7 +2949,12 @@
       "distanceKey": "object_info_sculptor_galaxy_distance",
       "sizeKey": "object_info_sculptor_galaxy_size",
       "imageKey": "deep_sky_objects/eso_sculptor_galaxy.webp",
-      "imageCredit": "ESO/VST"
+      "imageCredit": "ESO/VST",
+      "alternateNames": [
+        "NGC 253",
+        "Silver Dollar Galaxy",
+        "Silver Coin Galaxy"
+      ]
     },
     "blue_snowball_nebula": {
       "nameKey": "blue_snowball_nebula",
@@ -2842,7 +2964,11 @@
       "distanceKey": "object_info_blue_snowball_nebula_distance",
       "sizeKey": "object_info_blue_snowball_nebula_size",
       "imageKey": "deep_sky_objects/hubble_blue_snowball.webp",
-      "imageCredit": "NASA/ESA/Hubble"
+      "imageCredit": "NASA/ESA/Hubble",
+      "alternateNames": [
+        "NGC 7662",
+        "Caldwell 22"
+      ]
     },
     "ghost_of_jupiter": {
       "nameKey": "ghost_of_jupiter",
@@ -2852,7 +2978,11 @@
       "distanceKey": "object_info_ghost_of_jupiter_distance",
       "sizeKey": "object_info_ghost_of_jupiter_size",
       "imageKey": "deep_sky_objects/hubble_ghost_of_jupiter.webp",
-      "imageCredit": "NASA/ESA/Hubble"
+      "imageCredit": "NASA/ESA/Hubble",
+      "alternateNames": [
+        "NGC 3242",
+        "Caldwell 59"
+      ]
     },
     "saturn_nebula": {
       "nameKey": "saturn_nebula",
@@ -2862,7 +2992,11 @@
       "distanceKey": "object_info_saturn_nebula_distance",
       "sizeKey": "object_info_saturn_nebula_size",
       "imageKey": "deep_sky_objects/hubble_saturn_nebula.webp",
-      "imageCredit": "NASA/ESA/Hubble"
+      "imageCredit": "NASA/ESA/Hubble",
+      "alternateNames": [
+        "NGC 7009",
+        "Caldwell 55"
+      ]
     },
     "ngc_2903": {
       "nameKey": "ngc_2903",
@@ -2882,7 +3016,11 @@
       "distanceKey": "object_info_omega_centauri_distance",
       "sizeKey": "object_info_omega_centauri_size",
       "imageKey": "deep_sky_objects/hubble_omega_centauri.webp",
-      "imageCredit": "NASA/ESA/Hubble"
+      "imageCredit": "NASA/ESA/Hubble",
+      "alternateNames": [
+        "NGC 5139",
+        "ω Centauri"
+      ]
     },
     "m47": {
       "nameKey": "m47",
@@ -2940,7 +3078,10 @@
       "distanceKey": "object_info_ngc_6543_distance",
       "sizeKey": "object_info_ngc_6543_size",
       "imageKey": "deep_sky_objects/hubble_catseyenebula.webp",
-      "imageCredit": "NASA/ESA/Hubble"
+      "imageCredit": "NASA/ESA/Hubble",
+      "alternateNames": [
+        "Cat's Eye Nebula"
+      ]
     },
     "m76": {
       "nameKey": "m76",

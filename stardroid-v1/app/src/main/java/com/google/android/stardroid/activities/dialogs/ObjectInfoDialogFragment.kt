@@ -94,6 +94,13 @@ class ObjectInfoDialogFragment : DialogFragment() {
         // Populate the view with object information
         view.findViewById<TextView>(R.id.object_info_name).text = info.name
 
+        val alternateNamesView = view.findViewById<TextView>(R.id.object_info_alternate_names)
+        if (info.alternateNames.isNotEmpty()) {
+            alternateNamesView.text = parentActivity.getString(
+                R.string.object_info_also_known_as, info.alternateNames.joinToString(" · "))
+            alternateNamesView.visibility = View.VISIBLE
+        }
+
         // Display celestial image if available
         val imageContainer = view.findViewById<View>(R.id.object_info_image_container)
         val imageView = view.findViewById<ImageView>(R.id.object_info_image)

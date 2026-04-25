@@ -60,7 +60,8 @@ data class ObjectInfo(
     val imagePath: String? = null,
     val imageCredit: String? = null,
     val parentObjectId: String? = null,
-    val seeAlso: List<String> = emptyList()
+    val seeAlso: List<String> = emptyList(),
+    val alternateNames: List<String> = emptyList()
 ) : Parcelable
 
 /**
@@ -81,5 +82,6 @@ internal data class ObjectInfoEntry(
     val imageCredit: String? = null,
     val parentObjectId: String? = null,
     val seeAlso: List<String> = emptyList(),
+    val alternateNames: List<String> = emptyList(),
     val searchSubtext: String? = null
 )

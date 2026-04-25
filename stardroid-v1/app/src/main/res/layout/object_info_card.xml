@@ -18,6 +18,16 @@
             android:textStyle="bold"
             android:textColor="?android:attr/textColorPrimary" />
 
+        <TextView
+            android:id="@+id/object_info_alternate_names"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textStyle="italic"
+            android:visibility="gone" />
+
         <!-- See Also section: shown when related objects exist -->
         <LinearLayout
             android:id="@+id/object_info_see_also_section"

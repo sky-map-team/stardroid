@@ -89,7 +89,8 @@ class ObjectInfoRegistry @Inject constructor(
             imagePath = imagePath,
             imageCredit = entry.imageCredit,
             parentObjectId = entry.parentObjectId,
-            seeAlso = entry.seeAlso
+            seeAlso = entry.seeAlso,
+            alternateNames = entry.alternateNames
         )
     }
 
@@ -192,6 +193,10 @@ class ObjectInfoRegistry @Inject constructor(
             val seeAlsoList = if (seeAlsoArray != null) {
                 (0 until seeAlsoArray.length()).map { seeAlsoArray.getString(it) }
             } else emptyList()
+            val alternateNamesArray = obj.optJSONArray("alternateNames")
+            val alternateNamesList = if (alternateNamesArray != null) {
+                (0 until alternateNamesArray.length()).map { alternateNamesArray.getString(it) }
+            } else emptyList()
             @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
             result[objectId.lowercase()] = ObjectInfoEntry(
                 nameKey = obj.getString("nameKey"),
@@ -207,6 +212,7 @@ class ObjectInfoRegistry @Inject constructor(
                 imageCredit = obj.optString("imageCredit", null),
                 parentObjectId = obj.optString("parentObjectId", null),
                 seeAlso = seeAlsoList,
+                alternateNames = alternateNamesList,
                 searchSubtext = obj.optString("searchSubtext", null)
             )
         }
