@@ -134,6 +134,7 @@
     <!-- tm:omitted name="hubble_image" reason="identical_to_source" -->
     <string name="search_overlay_title" translation_description="title for search overlay">Point your phone towards the arrow</string>
     <!-- tm:omitted name="search_target_looking_message" reason="identical_to_source" -->
+    <!-- tm:omitted name="search_target_found_message" reason="identical_to_source" -->
     <!-- tm:omitted name="sun_wont_set_message" reason="identical_to_source" -->
 
     <!-- tm:omitted name="missing_label" reason="identical_to_source" -->
@@ -230,6 +231,8 @@
     <!-- tm:omitted name="show_object_info_auto_mode_title" reason="identical_to_source" -->
     <!-- tm:omitted name="show_object_info_auto_mode_summary" reason="identical_to_source" -->
     <!-- tm:omitted name="object_info_funfact_label" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_also_known_as" reason="identical_to_source" -->
+    <!-- tm:omitted name="object_info_see_also_label" reason="identical_to_source" -->
     <!-- tm:omitted name="object_info_distance_label" reason="identical_to_source" -->
     <!-- tm:omitted name="object_info_size_label" reason="identical_to_source" -->
     <!-- tm:omitted name="object_info_mass_label" reason="identical_to_source" -->

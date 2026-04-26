@@ -950,6 +950,67 @@
     </string>
     <string name="object_info_eta_carinae_nebula_distance" translation_description="Distance to Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">7 500 années-lumière</string>
     <string name="object_info_eta_carinae_nebula_size" translation_description="Physical size of Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">300 années-lumière de diamètre</string>
+    <!-- North America Nebula (NGC 7000) -->
+    <string name="object_info_north_america_nebula_description" translation_description="Description of the North America Nebula shown in the info card. Translate this text.">
+    La Nébuleuse de l\'Amérique du Nord (NGC 7000) est une grande nébuleuse d\'émission dans le Cygne dont la forme ressemble remarquablement au continent de l\'Amérique du Nord, avec une région de Golfe du Mexique. S\'étendant sur environ 120 arcminutes — soit environ quatre fois le diamètre de la Pleine Lune — elle se situe à environ 2 600 années-lumière et fait plus de 100 années-lumière de largeur.
+    </string>
+    <string name="object_info_north_america_nebula_funfact" translation_description="Fun fact about the North America Nebula shown in the info card. Translate this text.">
+    Malgré sa magnitude visuelle de 4, la nébuleuse est trop grande et diffuse pour être visible à l\'œil nu sous la plupart des ciels — pourtant, elle se photographie magnifiquement, révélant le Mur du Cygne, un arc dense de formation stellaire intense le long de son bord sud.
+    </string>
+    <string name="object_info_north_america_nebula_distance" translation_description="Distance to the North America Nebula shown in the info card. Translate units if appropriate for your locale.">~2 590 années-lumière</string>
+    <string name="object_info_north_america_nebula_size" translation_description="Physical size of the North America Nebula shown in the info card. Translate units if appropriate for your locale.">~140 années-lumière de diamètre</string>
+    <!-- Exposed Cranium Nebula - PMR 1 -->
+    <string name="object_info_exposed_cranium_nebula_description" translation_description="Description of the Exposed Cranium Nebula shown in the info card. Translate this text.">
+    La Nébuleuse du Crâne Exposé (PMR 1) est une nébuleuse planétaire dans la Voile, à environ 5 000 années-lumière de distance. Son nom étrange provient d\'une bande sombre de gaz traversant verticalement le milieu, divisant ses lobes lumineux en une forme ressemblant étrangement à un cerveau à l\'intérieur d\'un crâne transparent. En son cœur brûle une étoile Wolf-Rayet chaude qui rejette les couches externes qu\'elle a accumulées au cours de sa vie.
+    </string>
+    <string name="object_info_exposed_cranium_nebula_funfact" translation_description="Fun fact about the Exposed Cranium Nebula shown in the info card. Translate this text.">
+    En 2026, le télescope spatial James Webb a capturé de frappantes nouvelles images de la Nébuleuse du Crâne Exposé, révélant sa structure à double couche avec un détail sans précédent — une coquille externe riche en hydrogène et un nuage interne rempli d\'éléments plus lourds forgés par l\'étoile mourante.
+    </string>
+    <string name="object_info_exposed_cranium_nebula_distance" translation_description="Distance to the Exposed Cranium Nebula shown in the info card. Translate units if appropriate for your locale.">~5 000 années-lumière</string>
+    <string name="object_info_exposed_cranium_nebula_size" translation_description="Physical size of the Exposed Cranium Nebula shown in the info card. Translate units if appropriate for your locale.">~2 années-lumière de diamètre</string>
+
+    <!-- Jewel Box (NGC 4755) -->
+    <string name="object_info_jewel_box_description" translation_description="Description of the Jewel Box cluster shown in the info card. Translate this text.">
+    La Boîte à Bijoux (NGC 4755) est un jeune amas ouvert brillant dans la constellation de la Croix du Sud, facilement visible à l\'œil nu sous la forme d\'une tache floue de quatrième magnitude juste au sud-est de Mimosa. Observé à travers un télescope, ses étoiles brillent dans des couleurs contrastées éclatantes — des supergéantes bleues profondes aux côtés d\'une frappante supergéante rouge — ce qui lui a valu le nom que John Herschel lui a donné : un superbe bijou. Avec seulement 14 à 16 millions d\'années, c\'est l\'un des amas les plus jeunes et les plus colorés du ciel.
+    </string>
+    <string name="object_info_jewel_box_funfact" translation_description="Fun fact about the Jewel Box shown in the info card. Translate this text.">
+    L\'étoile rouge remarquable de l\'amas, κ Crucis, est une supergéante rouge si lumineuse qu\'elle surpasse le Soleil de plus de 100 000 fois — un rappel vivant que les amas d\'étoiles ne sont pas tous de la même couleur.
+    </string>
+    <string name="object_info_jewel_box_distance" translation_description="Distance to the Jewel Box shown in the info card. Translate units if appropriate for your locale.">~6 500 années-lumière</string>
+    <string name="object_info_jewel_box_size" translation_description="Physical size of the Jewel Box shown in the info card. Translate units if appropriate for your locale.">~19 années-lumière de diamètre</string>
+
+    <!-- Double Cluster (NGC 869 & NGC 884) -->
+    <string name="object_info_double_cluster_description" translation_description="Description of the Double Cluster shown in the info card. Translate this text.">
+    Le Double Amas (NGC 869 et NGC 884) est une paire éblouissante de jeunes amas ouverts d\'étoiles dans Persée, situés côte à côte dans le ciel à un peu plus d\'un degré d\'écart. Tous deux sont visibles à l\'œil nu sous forme d\'une tache brumeuse, mais même un petit télescope révèle des centaines de supergiants bleu-blanc brillants entassés dans deux essaims scintillants. À environ 7 500 années-lumière de distance, ils se trouvent dans le Bras de Persée de notre galaxie et figurent parmi les plus beaux objets aux jumelles du ciel septentrional.
+    </string>
+    <string name="object_info_double_cluster_funfact" translation_description="Fun fact about the Double Cluster shown in the info card. Translate this text.">
+    Avec seulement 14 millions d\'années, l\'Amas double est extraordinairement jeune — si récemment formé que ses étoiles les plus massives sont encore des supergéantes bleues flamboyantes, et quelques-unes ont déjà évolué en rares supergéantes rouges ardentes.
+    </string>
+    <string name="object_info_double_cluster_distance" translation_description="Distance to the Double Cluster shown in the info card. Translate units if appropriate for your locale.">~7 500 années-lumière</string>
+    <string name="object_info_double_cluster_size" translation_description="Physical size of the Double Cluster shown in the info card. Translate units if appropriate for your locale.">
+    Chaque amas ~70 années-lumière de diamètre ; la paire séparée par ~1 000 années-lumière
+    </string>
+
+    <!-- 47 Tucanae (NGC 104) -->
+    <string name="object_info_n47_tucanae_description" translation_description="Description of 47 Tucanae shown in the info card. Translate this text.">
+    47 Tucanae (NGC 104) est l\'amas globulaire le plus brillant du ciel après un autre, une boule dense d\'environ un million d\'étoiles anciennes en orbite autour de la Voie lactée dans la constellation de la Toucan. À environ 14 500 années-lumière, il apparaît à l\'œil nu comme une étoile floue de quatrième magnitude, mais un télescope résout son noyau comprimé en un essaim extraordinaire de soleils dorés et bleu-blanc. Ses étoiles se sont formées il y a environ 13 milliards d\'années, ce qui rend l\'amas presque aussi ancien que l\'univers lui-même.
+    </string>
+    <string name="object_info_n47_tucanae_funfact" translation_description="Fun fact about 47 Tucanae shown in the info card. Translate this text.">
+    47 Tucanae est une fabrique cosmique de pulsars : les astronomes y ont découvert au moins 35 pulsars millisecondes tournoyant des centaines de fois par seconde — plus que dans tout autre amas globulaire connu — résultat de rencontres stellaires rapprochées qui recyclent les vieilles étoiles à neutrons en les accélérant.
+    </string>
+    <string name="object_info_n47_tucanae_distance" translation_description="Distance to 47 Tucanae shown in the info card. Translate units if appropriate for your locale.">~14 500 années-lumière</string>
+    <string name="object_info_n47_tucanae_size" translation_description="Physical size of 47 Tucanae shown in the info card. Translate units if appropriate for your locale.">~120 années-lumière de diamètre</string>
+
+    <!-- Centaurus A (NGC 5128) -->
+    <string name="object_info_centaurus_a_description" translation_description="Description of Centaurus A shown in the info card. Translate this text.">
+    Centaurus A (NGC 5128) est la galaxie radio active la plus proche de la Terre, une galaxie elliptique géante dans la constellation du Centaure dont la remarquable bande de poussière sombre révèle un passé violent — une galaxie spirale engloutie il y a environ 200 à 700 millions d\'années. En son cœur se cache un trou noir supermassif de 55 millions de masses solaires qui génère des jets relativistes s\'étendant sur plus d\'un million d\'années-lumière en longueurs d\'onde radio. À une distance d\'environ 12 millions d\'années-lumière, c\'est l\'une des galaxies les plus étudiées du ciel.
+    </string>
+    <string name="object_info_centaurus_a_funfact" translation_description="Fun fact about Centaurus A shown in the info card. Translate this text.">
+    Centaurus A est l\'un des plus puissants émetteurs radio naturels du ciel — ses jets projettent du plasma vers l\'extérieur à une vitesse proche de celle de la lumière, et l\'étendue complète de ses lobes radio couvre une zone équivalente à environ 100 pleines lunes alignées bout à bout dans le ciel.
+    </string>
+    <string name="object_info_centaurus_a_distance" translation_description="Distance to Centaurus A shown in the info card. Translate units if appropriate for your locale.">~12 millions d\'années-lumière</string>
+    <string name="object_info_centaurus_a_size" translation_description="Physical size of Centaurus A shown in the info card. Translate units if appropriate for your locale.">~123 000 années-lumière de diamètre</string>
+
     <!-- ==================== CONSTELLATIONS ==================== -->
     <!-- Note: Constellation names are defined in celestial_objects.xml -->
     <!-- Orion -->
@@ -1977,4 +2038,362 @@
     Vulpecula contient la Nébuleuse de l\'Haltère (M27), la première nébuleuse planétaire jamais découverte (par Charles Messier en 1764), et une belle cible pour les jumelles!
     </string>
     <string name="object_info_vulpecula_size" translation_description="Physical size of Vulpecula shown in the info card. Translate units if appropriate for your locale.">268 degrés carrés</string>
+
+    <!-- Galilean Moons of Jupiter -->
+    <string name="object_info_io_description" translation_description="Description of Io shown in the info card. Translate this text.">
+    Io est la plus interne des quatre grandes lunes galiléennes de Jupiter et le corps le plus volcaniquement actif du système solaire.
+    </string>
+    <string name="object_info_io_funfact" translation_description="Fun fact about Io shown in the info card. Translate this text.">
+    Io possède des centaines de volcans actifs, dont certains éjectent des fontaines de lave s\'élevant à des dizaines de kilomètres de hauteur. Son activité constante est alimentée par le chauffage des marées provoqué par l\'énorme gravité de Jupiter.
+    </string>
+    <string name="object_info_io_distance" translation_description="Distance to Io shown in the info card. Translate units if appropriate for your locale.">421 700 km de Jupiter</string>
+    <string name="object_info_io_size" translation_description="Physical size of Io shown in the info card. Translate units if appropriate for your locale.">3 643 km de diamètre</string>
+
+    <string name="object_info_europa_description" translation_description="Description of Europa shown in the info card. Translate this text.">
+    Europe est la deuxième lune galiléenne et on pense qu\'elle abrite un vaste océan d\'eau liquide sous sa croûte glacée, ce qui en fait l\'un des endroits les plus prometteurs pour rechercher la vie.
+    </string>
+    <string name="object_info_europa_funfact" translation_description="Fun fact about Europa shown in the info card. Translate this text.">
+    L\'océan souterrain d\'Europe pourrait contenir deux fois plus d\'eau liquide que tous les océans terrestres réunis, maintenue liquide par le chauffage des marées provenant de Jupiter.
+    </string>
+    <string name="object_info_europa_distance" translation_description="Distance to Europa shown in the info card. Translate units if appropriate for your locale.">671 100 km de Jupiter</string>
+    <string name="object_info_europa_size" translation_description="Physical size of Europa shown in the info card. Translate units if appropriate for your locale.">3 122 km de diamètre</string>
+
+    <string name="object_info_ganymede_description" translation_description="Description of Ganymede shown in the info card. Translate this text.">
+    Ganymède est la plus grande lune du système solaire — même plus grande que la planète Mercure. C\'est la seule lune connue pour générer son propre champ magnétique.
+    </string>
+    <string name="object_info_ganymede_funfact" translation_description="Fun fact about Ganymede shown in the info card. Translate this text.">
+    Ganymède est plus grand que Mercure en taille, bien que sa masse ne soit que la moitié de celle-ci. Son champ magnétique interne crée sa propre magnétosphère miniature au sein de celle, beaucoup plus grande, de Jupiter.
+    </string>
+    <string name="object_info_ganymede_distance" translation_description="Distance to Ganymede shown in the info card. Translate units if appropriate for your locale.">1 070 400 km de Jupiter</string>
+    <string name="object_info_ganymede_size" translation_description="Physical size of Ganymede shown in the info card. Translate units if appropriate for your locale.">5 268 km de diamètre</string>
+
+    <string name="object_info_callisto_description" translation_description="Description of Callisto shown in the info card. Translate this text.">
+    Callisto est la plus externe des lunes galiléennes et l\'un des corps les plus cratérisés du système solaire, sa surface ancienne conservant un enregistrement des impacts du système solaire primitif.
+    </string>
+    <string name="object_info_callisto_funfact" translation_description="Fun fact about Callisto shown in the info card. Translate this text.">
+    Callisto orbite au-delà des ceintures de radiation principales de Jupiter, ce qui en fait la plus sûre des lunes galiléennes pour l\'exploration humaine future — elle est parfois appelée la \'lune passerelle\'.
+    </string>
+    <string name="object_info_callisto_distance" translation_description="Distance to Callisto shown in the info card. Translate units if appropriate for your locale.">1 882 700 km de Jupiter</string>
+    <string name="object_info_callisto_size" translation_description="Physical size of Callisto shown in the info card. Translate units if appropriate for your locale.">4 821 km de diamètre</string>
+
+    <!-- Moons of Mars -->
+    <string name="object_info_phobos_description" translation_description="Description of Phobos shown in the info card. Translate this text.">
+    Phobos est la plus grande et la plus interne des deux lunes de Mars, orbitant plus près de sa planète que toute autre lune du système solaire. C\'est un corps de forme irrégulière, fortement sillonné et cratérisé, considéré comme un astéroïde capturé.
+    </string>
+    <string name="object_info_phobos_funfact" translation_description="Fun fact about Phobos shown in the info card. Translate this text.">
+    Phobos orbite Mars si rapidement qu\'il se lève à l\'ouest et se couche à l\'est — et il se rapproche lentement, destiné à soit s\'écraser sur Mars, soit se désintégrer en anneau dans environ 50 millions d\'années.
+    </string>
+    <string name="object_info_phobos_distance" translation_description="Distance to Phobos shown in the info card. Translate units if appropriate for your locale.">9 376 km de Mars</string>
+    <!-- tm:omitted name="object_info_phobos_size" reason="identical_to_source" -->
+
+    <string name="object_info_deimos_description" translation_description="Description of Deimos shown in the info card. Translate this text.">
+    Déimos est la plus petite et la plus externe des deux lunes de Mars, avec une surface lisse couverte de poussière qui lui donne une apparence plus arrondie que Phobos. Comme sa compagne, on pense qu\'elle est un astéroïde capturé de la ceinture externe.
+    </string>
+    <string name="object_info_deimos_funfact" translation_description="Fun fact about Deimos shown in the info card. Translate this text.">
+    Déimos est si petit et éloigné que depuis la surface martienne, il ressemble à peine à plus qu\'une étoile brillante, mettant environ 30 heures pour dériver lentement à travers le ciel nocturne.
+    </string>
+    <string name="object_info_deimos_distance" translation_description="Distance to Deimos shown in the info card. Translate units if appropriate for your locale.">23 460 km de Mars</string>
+    <!-- tm:omitted name="object_info_deimos_size" reason="identical_to_source" -->
+
+    <!-- Major Moons of Saturn -->
+    <string name="object_info_titan_description" translation_description="Description of Titan shown in the info card. Translate this text.">
+    Titan est la plus grande lune de Saturne et la deuxième plus grande lune du système solaire. C\'est la seule lune connue pour avoir une atmosphère dense — une épaisse couche d\'azote parsemée de méthane — et le seul monde au-delà de la Terre connu pour avoir des mers liquides stables à sa surface.
+    </string>
+    <string name="object_info_titan_funfact" translation_description="Fun fact about Titan shown in the info card. Translate this text.">
+    Les lacs et mers de Titan sont remplis non pas d\'eau mais de méthane et d\'éthane liquides à une température glaciale de −179°C. La mission du rotorcraft Dragonfly de la NASA, prévue pour arriver en 2034, volera entre les sites de la surface de Titan pour rechercher la chimie de la vie.
+    </string>
+    <string name="object_info_titan_distance" translation_description="Distance to Titan shown in the info card. Translate units if appropriate for your locale.">1 221 870 km de Saturne</string>
+    <string name="object_info_titan_size" translation_description="Physical size of Titan shown in the info card. Translate units if appropriate for your locale.">5 151 km de diamètre</string>
+
+    <string name="object_info_rhea_description" translation_description="Description of Rhea shown in the info card. Translate this text.">
+    Rhéa est la deuxième plus grande lune de Saturne et un monde fortement cratérisé de glace et de roche. Sa surface pâle et ancienne préserve certains des cratères d\'impact les plus pristins du système solaire, aux côtés de falaises de glace brillantes où les glissements de terrain ont exposé du matériel frais provenant de dessous.
+    </string>
+    <string name="object_info_rhea_funfact" translation_description="Fun fact about Rhea shown in the info card. Translate this text.">
+    En 2008, les données de Cassini ont suggéré que Rhéa pourrait avoir un fin anneau de débris en orbite autour d\'elle — ce qui en ferait la première lune jamais découverte avec son propre système d\'anneaux. Si confirmé, ce serait une découverte remarquable ; les preuves restent un domaine de recherche actif.
+    </string>
+    <string name="object_info_rhea_distance" translation_description="Distance to Rhea shown in the info card. Translate units if appropriate for your locale.">527 108 km de Saturne</string>
+    <string name="object_info_rhea_size" translation_description="Physical size of Rhea shown in the info card. Translate units if appropriate for your locale.">1 527 km de diamètre</string>
+
+    <string name="object_info_tethys_description" translation_description="Description of Tethys shown in the info card. Translate this text.">
+    Téthys est une lune glacée de Saturne dominée par deux caractéristiques spectaculaires : le vaste cratère Odysseus, large de 400 km et couvrant près d\'un tiers de la surface de la lune, et Ithaca Chasma, un système de canyons s\'étendant sur les trois quarts du globe.
+    </string>
+    <string name="object_info_tethys_funfact" translation_description="Fun fact about Tethys shown in the info card. Translate this text.">
+    Téthys est presque de la glace d\'eau pure — elle possède l\'une des plus faibles densités de toute lune du système solaire, à peine plus dense que l\'eau gelée. Ithaca Chasma s\'est peut-être formée lorsque l\'intérieur a gelé et s\'est dilaté, fissurrant la croûte sus-jacente de l\'intérieur.
+    </string>
+    <string name="object_info_tethys_distance" translation_description="Distance to Tethys shown in the info card. Translate units if appropriate for your locale.">294 619 km de Saturne</string>
+    <string name="object_info_tethys_size" translation_description="Physical size of Tethys shown in the info card. Translate units if appropriate for your locale.">1 062 km de diamètre</string>
+
+    <string name="object_info_dione_description" translation_description="Description of Dione shown in the info card. Translate this text.">
+    Dione est une lune glacée de Saturne avec une face avant fortement cratérisée et un hémisphère arrière parsemé de falaises de glace brillantes — des lignes de fracture où les forces tectoniques anciennes ont exposé de la glace fraîche en dessous. Les données de gravité de Cassini suggèrent un océan liquide souterrain sous la croûte.
+    </string>
+    <string name="object_info_dione_funfact" translation_description="Fun fact about Dione shown in the info card. Translate this text.">
+    Dione partage son orbite avec deux petites lunes, Hélène et Polydeuces, qui sont verrouillées 60° en avant et en arrière à des points d\'équilibre gravitationnel appelés points de Lagrange. Hélène en particulier peut être vue chevauchant comme une auto-stoppeuse cosmique dans les images de Cassini.
+    </string>
+    <string name="object_info_dione_distance" translation_description="Distance to Dione shown in the info card. Translate units if appropriate for your locale.">377 396 km de Saturne</string>
+    <string name="object_info_dione_size" translation_description="Physical size of Dione shown in the info card. Translate units if appropriate for your locale.">1 122 km de diamètre</string>
+
+    <string name="object_info_iapetus_description" translation_description="Description of Iapetus shown in the info card. Translate this text.">
+    Iapetus est l\'une des lunes les plus distinctives de Saturne : son hémisphère avant est recouvert d\'une matière noire de jais aussi sombre que le charbon, tandis que son hémisphère arrière est de la glace blanche brillante. Cette apparence extrêmement bicolore a intrigué Giovanni Cassini lorsqu\'il a découvert la lune en 1671, et le contraste est si frappant qu\'il est visible dans les petits télescopes.
+    </string>
+    <string name="object_info_iapetus_funfact" translation_description="Fun fact about Iapetus shown in the info card. Translate this text.">
+    Iapetus possède également une imposante crête équatoriale s\'élevant à 20 km de haut — plus haute que n\'importe quelle montagne sur Terre — s\'étendant sur des milliers de kilomètres autour de son équateur. Son origine est inconnue : il pourrait s\'agir du vestige d\'un anneau effondré, ou d\'un plissement tectonique ancien, formé lorsque la lune tournait beaucoup plus rapidement il y a longtemps.
+    </string>
+    <string name="object_info_iapetus_distance" translation_description="Distance to Iapetus shown in the info card. Translate units if appropriate for your locale.">3 560 820 km de Saturne</string>
+    <string name="object_info_iapetus_size" translation_description="Physical size of Iapetus shown in the info card. Translate units if appropriate for your locale.">1 469 km de diamètre</string>
+
+    <!-- Moon of Neptune -->
+    <string name="object_info_triton_description" translation_description="Description of Triton shown in the info card. Translate this text.">
+    Triton est la plus grande lune de Neptune et l\'un des corps les plus extraordinaires du système solaire. Elle orbite Neptune à l\'envers — en sens inverse de la rotation de la planète — un signe fort qu\'elle a été capturée depuis le système solaire externe, très probablement depuis la ceinture de Kuiper, au début de l\'histoire de Neptune.
+    </string>
+    <string name="object_info_triton_funfact" translation_description="Fun fact about Triton shown in the info card. Translate this text.">
+    Malgré sa température de surface de −235°C — la plus froide jamais mesurée sur un corps visité par un engin spatial — Voyager 2 a découvert des geysers d\'azote actifs sur Triton en 1989. Des traînées sombres à la surface marquent l\'endroit où des panaches de gaz et de matière sombre se sont échappés sur des kilomètres dans la fine atmosphère.
+    </string>
+    <string name="object_info_triton_distance" translation_description="Distance to Triton shown in the info card. Translate units if appropriate for your locale.">354 759 km de Neptune</string>
+    <string name="object_info_triton_size" translation_description="Physical size of Triton shown in the info card. Translate units if appropriate for your locale.">2 707 km de diamètre</string>
+
+    <!-- Major Moons of Uranus -->
+    <string name="object_info_titania_description" translation_description="Description of Titania shown in the info card. Translate this text.">
+    Titania est le plus grand satellite d\'Uranus et le huitième plus grand satellite du système solaire. Sa surface présente un mélange de plaines cratérisées anciennes et de falaises et vallées plus jeunes, suggérant une histoire géologique complexe qui aurait pu inclure une activité tectonique passée ayant remodelé la croûte glacée.
+    </string>
+    <string name="object_info_titania_funfact" translation_description="Fun fact about Titania shown in the info card. Translate this text.">
+    Toutes les lunes d\'Uranus sont nommées d\'après des personnages de Shakespeare et d\'Alexander Pope — Titania est la reine des fées dans Le Songe d\'une nuit d\'été. C\'est l\'une des très rares grandes lunes planétaires qui ne porte pas le nom d\'une figure de la mythologie grecque ou romaine.
+    </string>
+    <string name="object_info_titania_distance" translation_description="Distance to Titania shown in the info card. Translate units if appropriate for your locale.">435 910 km de Uranus</string>
+    <string name="object_info_titania_size" translation_description="Physical size of Titania shown in the info card. Translate units if appropriate for your locale.">1 578 km de diamètre</string>
+
+    <string name="object_info_oberon_description" translation_description="Description of Oberon shown in the info card. Translate this text.">
+    Obéron est la plus externe des cinq grands satellites d\'Uranus et l\'un des plus fortement cratérisés, avec une surface ancienne qui a peu changé depuis le début du système solaire. Plusieurs de ses grands cratères d\'impact ont du matériel sombre sur leurs fonds, probablement des dépôts organiques apportés par les corps en collision.
+    </string>
+    <string name="object_info_oberon_funfact" translation_description="Fun fact about Oberon shown in the info card. Translate this text.">
+    Obéron accueille une montagne qui s\'élève d\'environ 6 km au-dessus des plaines environnantes — comparable aux plus hauts sommets de la Terre. Contrairement aux montagnes terrestres, qui se sont formées par la tectonique des plaques, cette formation pourrait être le pic central d\'un ancien cratère d\'impact ou un vestige d\'une activité volcanique ancienne.
+    </string>
+    <string name="object_info_oberon_distance" translation_description="Distance to Oberon shown in the info card. Translate units if appropriate for your locale.">583 520 km de Uranus</string>
+    <string name="object_info_oberon_size" translation_description="Physical size of Oberon shown in the info card. Translate units if appropriate for your locale.">1 523 km de diamètre</string>
+
+    <string name="object_info_ariel_description" translation_description="Description of Ariel shown in the info card. Translate this text.">
+    Ariel possède la surface la plus jeune et la plus brillante des cinq grandes lunes d\'Uranus. Son paysage est dominé par un réseau de vallées profondes et de plaines lisses qui ont été remodelées il y a longtemps par un fluide — probablement de l\'eau ou des mélanges eau-ammoniac — remontant de l\'intérieur et inondant l\'ancien terrain.
+    </string>
+    <string name="object_info_ariel_funfact" translation_description="Fun fact about Ariel shown in the info card. Translate this text.">
+    Les vallées d\'Ariel peuvent atteindre 10 km de profondeur — bien plus profondes que le Grand Canyon. Les observations du télescope spatial James Webb ont depuis détecté de la glace de dioxyde de carbone à la surface d\'Ariel, suggérant une chimie de surface en cours entraînée par les particules chargées du champ magnétique d\'Uranus.
+    </string>
+    <string name="object_info_ariel_distance" translation_description="Distance to Ariel shown in the info card. Translate units if appropriate for your locale.">191 020 km de Uranus</string>
+    <string name="object_info_ariel_size" translation_description="Physical size of Ariel shown in the info card. Translate units if appropriate for your locale.">1 158 km de diamètre</string>
+
+    <string name="object_info_umbriel_description" translation_description="Description of Umbriel shown in the info card. Translate this text.">
+    Umbriel est la plus sombre des cinq grandes lunes d\'Uranus, avec une surface ancienne et uniformément cratérisée qui montre peu de signes du rajeunissement géologique observé sur ses voisines. Son intérieur semble être resté froid et gelé depuis le début de l\'histoire du système solaire.
+    </string>
+    <string name="object_info_umbriel_funfact" translation_description="Fun fact about Umbriel shown in the info card. Translate this text.">
+    La caractéristique la plus frappante d\'Umbriel est Wunda, un anneau brillant d\'environ 140 km de diamètre près de son équateur. Découvert par Voyager 2 en 1986, la nature exacte de Wunda reste un mystère — il pourrait s\'agir d\'un plancher de cratère recouvert de dioxyde de carbone ou de givre d\'ammoniac déposé longtemps après l\'impact qui l\'a formé.
+    </string>
+    <string name="object_info_umbriel_distance" translation_description="Distance to Umbriel shown in the info card. Translate units if appropriate for your locale.">266 300 km de Uranus</string>
+    <string name="object_info_umbriel_size" translation_description="Physical size of Umbriel shown in the info card. Translate units if appropriate for your locale.">1 170 km de diamètre</string>
+
+    <!-- Globular clusters already on the map -->
+    <string name="object_info_omega_centauri_description" translation_description="Description of Omega Centauri shown in the info card. Translate this text.">
+    Omega Centauri est l\'amas globulaire le plus grand et le plus massif en orbite autour de la Voie lactée, contenant environ 10 millions d\'étoiles comprimées dans une sphère d\'environ 150 années-lumière de diamètre. Il est facilement visible à l\'œil nu sous la forme d\'une étoile floue dans le Centaure, et se résout en une boule d\'étoiles spectaculaire à travers des jumelles ou n\'importe quel télescope.
+    </string>
+    <string name="object_info_omega_centauri_funfact" translation_description="Fun fact about Omega Centauri shown in the info card. Translate this text.">
+    Contrairement aux amas globulaires typiques, Oméga du Centaure contient des étoiles d\'âges et de compositions chimiques très différents — un signe qu\'il pourrait être le noyau dénudé d\'une galaxie naine qui a été déchirée et engloutie par la Voie lactée il y a des milliards d\'années. Il pourrait même abriter un trou noir de masse intermédiaire central.
+    </string>
+    <string name="object_info_omega_centauri_distance" translation_description="Distance to Omega Centauri shown in the info card. Translate units if appropriate for your locale.">17 090 années-lumière</string>
+    <string name="object_info_omega_centauri_size" translation_description="Physical size of Omega Centauri shown in the info card. Translate units if appropriate for your locale.">~150 années-lumière de diamètre</string>
+
+    <!-- Deep-sky objects: new catalog additions -->
+    <string name="object_info_hyades_description" translation_description="Description of the Hyades star cluster shown in the info card. Translate this text.">
+    Les Hyades constituent l\'amas ouvert le plus proche du système solaire et l\'un des plus étudiés en astronomie. Visibles à l\'œil nu sous la forme d\'un motif en V de stars formant le visage du Taureau, elles contiennent plusieurs centaines d\'étoiles réparties sur environ 5° du ciel.
+    </string>
+    <string name="object_info_hyades_funfact" translation_description="Fun fact about the Hyades shown in the info card. Translate this text.">
+    L\'étoile orange brillante Aldébaran semble se situer dans les Hyades, mais c\'est en réalité un objet au premier plan à la moitié de la distance — un alignement fortuit. Le véritable amas se trouve à environ 153 années-lumière et contient les premières étoiles dont les distances ont été mesurées par parallaxe par le satellite Hipparcos.
+    </string>
+    <string name="object_info_hyades_distance" translation_description="Distance to the Hyades shown in the info card. Translate units if appropriate for your locale.">153 années-lumière</string>
+    <string name="object_info_hyades_size" translation_description="Angular size of the Hyades shown in the info card.">~5° de largeur</string>
+
+    <string name="object_info_coma_star_cluster_description" translation_description="Description of the Coma Berenices Star Cluster shown in the info card. Translate this text.">
+    L\'amas d\'étoiles de la Chevelure de Bérénice est un amas ouvert proche composé d\'environ 40 étoiles dispersées sur près de 5° du ciel, facilement visible à l\'œil nu sous forme d\'une légère brume dans des conditions sombres. C\'est le troisième amas ouvert le plus proche du système solaire et la source de la constellation de la Chevelure de Bérénice.
+    </string>
+    <string name="object_info_coma_star_cluster_funfact" translation_description="Fun fact about the Coma Berenices Star Cluster shown in the info card. Translate this text.">
+    Les anciens observateurs voyaient cet amas comme les cheveux de la reine Bérénice II d\'Égypte, qui aurait coupé sa chevelure dorée en offrande pour le retour sain et sauf de son mari de la guerre. Ptolémée III aurait officiellement nommé cette constellation inhabituelle en son honneur vers 245 avant notre ère.
+    </string>
+    <string name="object_info_coma_star_cluster_distance" translation_description="Distance to the Coma Star Cluster shown in the info card. Translate units if appropriate for your locale.">288 années-lumière</string>
+    <string name="object_info_coma_star_cluster_size" translation_description="Angular size of the Coma Star Cluster shown in the info card.">~5° de largeur</string>
+
+    <string name="object_info_coathanger_description" translation_description="Description of the Coathanger asterism shown in the info card. Translate this text.">
+    Le Cintre est un astérisme frappant de dix étoiles dans le Renard qui forment une forme incontournable : six étoiles en ligne droite avec quatre suspendues en dessous en crochet, ressemblant exactement à un cintre à l\'envers. C\'est l\'un des meilleurs objets aux jumelles du ciel d\'été, s\'adaptant parfaitement au champ de vision typique des jumelles.
+    </string>
+    <string name="object_info_coathanger_funfact" translation_description="Fun fact about the Coathanger shown in the info card. Translate this text.">
+    Bien qu\'il ressemble à un amas, les étoiles du Cintre ne sont pas physiquement liées — elles se trouvent à des distances très différentes et ne sont qu\'une coïncidence de ligne de visée. L\'amas de Brocchi a été catalogué par Dalmiro Brocchi dans les années 1920, et le premier télescope spatial à l\'imager a été Hipparcos, qui a confirmé que les étoiles ne sont pas liées.
+    </string>
+    <string name="object_info_coathanger_distance" translation_description="Distance to the Coathanger shown in the info card. Translate units if appropriate for your locale.">~420 années-lumière (étoile la plus brillante)</string>
+    <string name="object_info_coathanger_size" translation_description="Angular size of the Coathanger shown in the info card.">~1° de largeur</string>
+
+    <string name="object_info_helix_nebula_description" translation_description="Description of the Helix Nebula shown in the info card. Translate this text.">
+    La Nébuleuse de l\'Hélice est la plus grande nébuleuse planétaire en taille apparente dans le ciel — l\'enveloppe de gaz en expansion rejetée par une étoile semblable au Soleil en fin de vie. S\'étendant sur environ un demi-degré, elle est visible aux jumelles comme une faible lueur circulaire dans le Verseau et est surnommée l\'Œil de Dieu en raison de son apparence sur les photographies en pose longue.
+    </string>
+    <string name="object_info_helix_nebula_funfact" translation_description="Fun fact about the Helix Nebula shown in the info card. Translate this text.">
+    Au centre de la Nébuleuse de l\'Hélice se trouve l\'une des naines blanches les plus proches de la Terre — un résidu stellaire extrêmement chaud d\'environ la taille de la Terre mais avec la masse du Soleil. C\'est le destin qui attend notre propre Soleil dans environ cinq milliards d\'années.
+    </string>
+    <string name="object_info_helix_nebula_distance" translation_description="Distance to the Helix Nebula shown in the info card. Translate units if appropriate for your locale.">650 années-lumière</string>
+    <string name="object_info_helix_nebula_size" translation_description="Angular size of the Helix Nebula shown in the info card.">~3 années-lumière de diamètre</string>
+
+    <string name="object_info_sculptor_galaxy_description" translation_description="Description of the Sculptor Galaxy shown in the info card. Translate this text.">
+    La Galaxie du Sculpteur est l\'une des galaxies spirales de profil les plus brillantes et les plus belles visibles depuis la Terre, apparaissant comme une lueur allongée dans la constellation australe du Sculpteur. C\'est l\'une des galaxies de formation d\'étoiles les plus proches — une galaxie subissant une intense rafale de formation d\'étoiles — visible aux astronomes amateurs avec des jumelles depuis des cieux sombres.
+    </string>
+    <string name="object_info_sculptor_galaxy_funfact" translation_description="Fun fact about the Sculptor Galaxy shown in the info card. Translate this text.">
+    La Galaxie du Sculpteur est l\'un des membres les plus brillants du Groupe du Sculpteur — le groupe de galaxies le plus proche de notre propre Groupe local. Sa région de sursaut stellaire central produit de nouvelles étoiles à un taux plusieurs fois plus élevé que la Voie lactée, entraîné par des interactions passées avec les galaxies voisines.
+    </string>
+    <string name="object_info_sculptor_galaxy_distance" translation_description="Distance to the Sculptor Galaxy shown in the info card. Translate units if appropriate for your locale.">11,4 millions d\'années-lumière</string>
+    <string name="object_info_sculptor_galaxy_size" translation_description="Physical size of the Sculptor Galaxy shown in the info card. Translate units if appropriate for your locale.">~90 000 années-lumière de largeur</string>
+
+    <string name="object_info_blue_snowball_nebula_description" translation_description="Description of the Blue Snowball Nebula shown in the info card. Translate this text.">
+    La Boule de Neige Bleue est une nébuleuse planétaire dans Andromède — l\'enveloppe de gaz brillante expulsée par une étoile mourante. Avec une magnitude de 8,3, c\'est l\'une des nébuleuses planétaires les plus brillantes et les plus colorées du ciel, apparaissant comme un disque bleu-vert vivant même dans les petits télescopes. Sa forme symétrique et sa couleur intense en font une favorite parmi les observateurs.
+    </string>
+    <string name="object_info_blue_snowball_nebula_funfact" translation_description="Fun fact about the Blue Snowball Nebula shown in the info card. Translate this text.">
+    La couleur frappante de la Boule de Neige Bleue provient de l\'oxygène doublement ionisé qui brille à une longueur d\'onde verte spécifique, combiné avec l\'émission d\'hydrogène — une palette de couleurs que l\'œil humain perçoit comme bleu-vert. La naine blanche centrale a une température de surface d\'environ 100 000 °C, assez chaude pour ioniser le gaz environnant à cette distance.
+    </string>
+    <string name="object_info_blue_snowball_nebula_distance" translation_description="Distance to the Blue Snowball Nebula shown in the info card. Translate units if appropriate for your locale.">~2 500 années-lumière</string>
+    <string name="object_info_blue_snowball_nebula_size" translation_description="Physical size of the Blue Snowball Nebula shown in the info card. Translate units if appropriate for your locale.">~0,8 année-lumière de diamètre</string>
+
+    <string name="object_info_ghost_of_jupiter_description" translation_description="Description of the Ghost of Jupiter planetary nebula shown in the info card. Translate this text.">
+    Le Fantôme de Jupiter est une nébuleuse planétaire brillante dans l\'Hydre dont la taille apparente est similaire à celle de la planète Jupiter — d\'où son nom. Avec une magnitude de 8,6, c\'est l\'une des nébuleuses planétaires les plus accessibles du ciel pour les petits télescopes, montrant un disque clair et une teinte de couleur dans les ouvertures modérées.
+    </string>
+    <string name="object_info_ghost_of_jupiter_funfact" translation_description="Fun fact about the Ghost of Jupiter shown in the info card. Translate this text.">
+    Le Fantôme de Jupiter possède une coquille interne brillante entourée d\'une auréole externe plus faible — une structure à deux coquilles suggérant que l\'étoile mourante a expulsé du gaz lors d\'au moins deux épisodes distincts. Son étoile centrale est l\'une des naines blanches les plus chaudes connues, avec une température de surface estimée à environ 75 000 °C.
+    </string>
+    <string name="object_info_ghost_of_jupiter_distance" translation_description="Distance to the Ghost of Jupiter shown in the info card. Translate units if appropriate for your locale.">~1 400 années-lumière</string>
+    <string name="object_info_ghost_of_jupiter_size" translation_description="Physical size of the Ghost of Jupiter shown in the info card. Translate units if appropriate for your locale.">~1 année-lumière de diamètre</string>
+
+    <string name="object_info_saturn_nebula_description" translation_description="Description of the Saturn Nebula shown in the info card. Translate this text.">
+    La Nébuleuse de Saturne est une nébuleuse planétaire du Verseau nommée ainsi en raison de sa ressemblance avec la planète Saturne — des extensions appelées ansae font saillie de chaque côté comme des poignées d\'anneaux, visibles dans les télescopes de puissance modérée. Avec une magnitude de 8,0, c\'est l\'une des nébuleuses planétaires les plus brillantes du ciel et elle montre une structure complexe dans les instruments plus puissants.
+    </string>
+    <string name="object_info_saturn_nebula_distance" translation_description="Distance to the Saturn Nebula shown in the info card. Translate units if appropriate for your locale.">~5 000 années-lumière</string>
+    <string name="object_info_saturn_nebula_size" translation_description="Physical size of the Saturn Nebula shown in the info card. Translate units if appropriate for your locale.">~1 année-lumière de largeur</string>
+
+    <string name="object_info_ngc_2903_distance" translation_description="Distance to NGC 2903 shown in the info card. Translate units if appropriate for your locale.">30 millions d\'années-lumière</string>
+    <string name="object_info_ngc_2903_size" translation_description="Physical size of NGC 2903 shown in the info card. Translate units if appropriate for your locale.">~80 000 années-lumière de largeur</string>
+
+    <string name="object_info_m47_distance" translation_description="Distance to M47 shown in the info card. Translate units if appropriate for your locale.">1 600 années-lumière</string>
+    <string name="object_info_m47_size" translation_description="Physical size of M47 shown in the info card. Translate units if appropriate for your locale.">~14 années-lumière de largeur</string>
+
+    <string name="object_info_m41_distance" translation_description="Distance to M41 shown in the info card. Translate units if appropriate for your locale.">2 300 années-lumière</string>
+    <string name="object_info_m41_size" translation_description="Physical size of M41 shown in the info card. Translate units if appropriate for your locale.">~25 années-lumière de largeur</string>
+
+    <string name="object_info_m24_distance" translation_description="Distance range to M24 shown in the info card. Translate units if appropriate for your locale.">~10 000–16 000 années-lumière (plage)</string>
+    <string name="object_info_m24_size" translation_description="Physical size of M24 shown in the info card. Translate units if appropriate for your locale.">~600 années-lumière de profondeur de fenêtre</string>
+
+    <string name="object_info_m25_distance" translation_description="Distance to M25 shown in the info card. Translate units if appropriate for your locale.">2 000 années-lumière</string>
+    <string name="object_info_m25_size" translation_description="Physical size of M25 shown in the info card. Translate units if appropriate for your locale.">~19 années-lumière de largeur</string>
+
+    <string name="object_info_m39_distance" translation_description="Distance to M39 shown in the info card. Translate units if appropriate for your locale.">825 années-lumière</string>
+    <string name="object_info_m39_size" translation_description="Physical size of M39 shown in the info card. Translate units if appropriate for your locale.">~8 années-lumière de largeur</string>
+
+    <string name="object_info_m63_distance" translation_description="Distance to the Sunflower Galaxy shown in the info card. Translate units if appropriate for your locale.">29 millions d\'années-lumière</string>
+    <string name="object_info_m63_size" translation_description="Physical size of the Sunflower Galaxy shown in the info card. Translate units if appropriate for your locale.">~100 000 années-lumière de diamètre</string>
+
+    <string name="object_info_ngc_6543_distance" translation_description="Distance to the Cat's Eye Nebula shown in the info card. Translate units if appropriate for your locale.">~3 300 années-lumière</string>
+    <string name="object_info_ngc_6543_size" translation_description="Physical size of the Cat's Eye Nebula shown in the info card. Translate units if appropriate for your locale.">~0,5 année-lumière de diamètre</string>
+
+    <string name="object_info_m76_distance" translation_description="Distance to the Little Dumbbell Nebula shown in the info card. Translate units if appropriate for your locale.">~2 500 années-lumière</string>
+    <string name="object_info_m76_size" translation_description="Physical size of the Little Dumbbell Nebula shown in the info card. Translate units if appropriate for your locale.">~2 années-lumière de diamètre</string>
+
+    <string name="object_info_v838_mon_distance" translation_description="Distance to V838 Monocerotis shown in the info card. Translate units if appropriate for your locale.">~20 000 années-lumière</string>
+    <string name="object_info_v838_mon_size" translation_description="Extent of the V838 Monocerotis light echo shown in the info card. Translate units if appropriate for your locale.">~3 années-lumière (étendue de l\'écho lumineux)</string>
+
+    <string name="object_info_hdf_distance" translation_description="Distance to the most distant galaxies in the Hubble Deep Field shown in the info card. Translate units if appropriate for your locale.">~13 milliards d\'années-lumière (plus lointain)</string>
+    <string name="object_info_hdf_size" translation_description="Angular size of the Hubble Deep Field shown in the info card.">2,6 arcminutes (champ de vision)</string>
+
+    <string name="object_info_m43_distance" translation_description="Distance to De Mairan's Nebula shown in the info card. Translate units if appropriate for your locale.">1 350 années-lumière</string>
+    <string name="object_info_m43_size" translation_description="Physical size of De Mairan's Nebula shown in the info card. Translate units if appropriate for your locale.">~8 années-lumière de diamètre</string>
+
+    <string name="object_info_m40_distance" translation_description="Distance to M40 shown in the info card. Translate units if appropriate for your locale.">~500 années-lumière</string>
+    <string name="object_info_m40_size" translation_description="Angular separation of the M40 double star shown in the info card.">~50 arcsecondes (séparation)</string>
+
+    <string name="object_info_m34_distance" translation_description="Distance to M34 shown in the info card. Translate units if appropriate for your locale.">1 500 années-lumière</string>
+    <string name="object_info_m34_size" translation_description="Physical size of M34 shown in the info card. Translate units if appropriate for your locale.">~15 années-lumière de diamètre</string>
+
+    <string name="object_info_m23_distance" translation_description="Distance to M23 shown in the info card. Translate units if appropriate for your locale.">2 150 années-lumière</string>
+    <string name="object_info_m23_size" translation_description="Physical size of M23 shown in the info card. Translate units if appropriate for your locale.">~17 années-lumière de diamètre</string>
+
+    <string name="object_info_m37_distance" translation_description="Distance to M37 shown in the info card. Translate units if appropriate for your locale.">4 500 années-lumière</string>
+    <string name="object_info_m37_size" translation_description="Physical size of M37 shown in the info card. Translate units if appropriate for your locale.">~31 années-lumière de diamètre</string>
+
+    <string name="object_info_m48_distance" translation_description="Distance to M48 shown in the info card. Translate units if appropriate for your locale.">1 500 années-lumière</string>
+    <string name="object_info_m48_size" translation_description="Physical size of M48 shown in the info card. Translate units if appropriate for your locale.">~23 années-lumière de diamètre</string>
+
+    <string name="object_info_m21_distance" translation_description="Distance to M21 shown in the info card. Translate units if appropriate for your locale.">4 250 années-lumière</string>
+    <string name="object_info_m21_size" translation_description="Physical size of M21 shown in the info card. Translate units if appropriate for your locale.">~16 années-lumière de diamètre</string>
+
+    <string name="object_info_m50_distance" translation_description="Distance to M50 shown in the info card. Translate units if appropriate for your locale.">3 200 années-lumière</string>
+    <string name="object_info_m50_size" translation_description="Physical size of M50 shown in the info card. Translate units if appropriate for your locale.">~15 années-lumière de diamètre</string>
+
+    <string name="object_info_m36_distance" translation_description="Distance to M36 shown in the info card. Translate units if appropriate for your locale.">4 100 années-lumière</string>
+    <string name="object_info_m36_size" translation_description="Physical size of M36 shown in the info card. Translate units if appropriate for your locale.">~14 années-lumière de diamètre</string>
+
+    <string name="object_info_m46_distance" translation_description="Distance to M46 shown in the info card. Translate units if appropriate for your locale.">5 400 années-lumière</string>
+    <string name="object_info_m46_size" translation_description="Physical size of M46 shown in the info card. Translate units if appropriate for your locale.">~42 années-lumière de diamètre</string>
+
+    <string name="object_info_m93_distance" translation_description="Distance to M93 shown in the info card. Translate units if appropriate for your locale.">3 600 années-lumière</string>
+    <string name="object_info_m93_size" translation_description="Physical size of M93 shown in the info card. Translate units if appropriate for your locale.">~23 années-lumière de diamètre</string>
+
+    <string name="object_info_m38_distance" translation_description="Distance to M38 shown in the info card. Translate units if appropriate for your locale.">4 200 années-lumière</string>
+    <string name="object_info_m38_size" translation_description="Physical size of M38 shown in the info card. Translate units if appropriate for your locale.">~26 années-lumière de diamètre</string>
+
+    <string name="object_info_m29_distance" translation_description="Distance to M29 shown in the info card. Translate units if appropriate for your locale.">4 000 années-lumière</string>
+    <string name="object_info_m29_size" translation_description="Physical size of M29 shown in the info card. Translate units if appropriate for your locale.">~8 années-lumière de diamètre</string>
+
+    <string name="object_info_m62_distance" translation_description="Distance to M62 shown in the info card. Translate units if appropriate for your locale.">22 500 années-lumière</string>
+    <string name="object_info_m62_size" translation_description="Physical size of M62 shown in the info card. Translate units if appropriate for your locale.">~92 années-lumière de diamètre</string>
+
+    <string name="object_info_m28_distance" translation_description="Distance to M28 shown in the info card. Translate units if appropriate for your locale.">18 300 années-lumière</string>
+    <string name="object_info_m28_size" translation_description="Physical size of M28 shown in the info card. Translate units if appropriate for your locale.">~60 années-lumière de diamètre</string>
+
+    <string name="object_info_m52_distance" translation_description="Distance to M52 shown in the info card. Translate units if appropriate for your locale.">~5 000 années-lumière</string>
+    <string name="object_info_m52_size" translation_description="Physical size of M52 shown in the info card. Translate units if appropriate for your locale.">~25 années-lumière de diamètre</string>
+
+    <string name="object_info_m67_distance" translation_description="Distance to M67 shown in the info card. Translate units if appropriate for your locale.">2 700 années-lumière</string>
+    <string name="object_info_m67_size" translation_description="Physical size of M67 shown in the info card. Translate units if appropriate for your locale.">~24 années-lumière de diamètre</string>
+
+    <string name="object_info_m55_distance" translation_description="Distance to M55 shown in the info card. Translate units if appropriate for your locale.">17 600 années-lumière</string>
+    <string name="object_info_m55_size" translation_description="Physical size of M55 shown in the info card. Translate units if appropriate for your locale.">~100 années-lumière de diamètre</string>
+
+    <string name="object_info_m19_distance" translation_description="Distance to M19 shown in the info card. Translate units if appropriate for your locale.">28 700 années-lumière</string>
+    <string name="object_info_m19_size" translation_description="Physical size of M19 shown in the info card. Translate units if appropriate for your locale.">~113 années-lumière de diamètre</string>
+
+    <string name="object_info_m80_distance" translation_description="Distance to M80 shown in the info card. Translate units if appropriate for your locale.">32 600 années-lumière</string>
+    <string name="object_info_m80_size" translation_description="Physical size of M80 shown in the info card. Translate units if appropriate for your locale.">~84 années-lumière de diamètre</string>
+
+    <string name="object_info_m103_distance" translation_description="Distance to M103 shown in the info card. Translate units if appropriate for your locale.">8 500 années-lumière</string>
+    <string name="object_info_m103_size" translation_description="Physical size of M103 shown in the info card. Translate units if appropriate for your locale.">~15 années-lumière de diamètre</string>
+
+    <string name="object_info_m30_distance" translation_description="Distance to M30 shown in the info card. Translate units if appropriate for your locale.">27 100 années-lumière</string>
+    <string name="object_info_m30_size" translation_description="Physical size of M30 shown in the info card. Translate units if appropriate for your locale.">~87 années-lumière de diamètre</string>
+
+    <string name="object_info_m54_distance" translation_description="Distance to M54 shown in the info card. Translate units if appropriate for your locale.">87 000 années-lumière</string>
+    <string name="object_info_m54_size" translation_description="Physical size of M54 shown in the info card. Translate units if appropriate for your locale.">~230 années-lumière de diamètre</string>
+
+    <string name="object_info_m69_distance" translation_description="Distance to M69 shown in the info card. Translate units if appropriate for your locale.">29 700 années-lumière</string>
+    <string name="object_info_m69_size" translation_description="Physical size of M69 shown in the info card. Translate units if appropriate for your locale.">~61 années-lumière de diamètre</string>
+
+    <string name="object_info_m9_distance" translation_description="Distance to M9 shown in the info card. Translate units if appropriate for your locale.">25 800 années-lumière</string>
+    <string name="object_info_m9_size" translation_description="Physical size of M9 shown in the info card. Translate units if appropriate for your locale.">~70 années-lumière de diamètre</string>
+
+    <string name="object_info_m26_distance" translation_description="Distance to M26 shown in the info card. Translate units if appropriate for your locale.">5 000 années-lumière</string>
+    <string name="object_info_m26_size" translation_description="Physical size of M26 shown in the info card. Translate units if appropriate for your locale.">~22 années-lumière de diamètre</string>
+
+    <string name="object_info_m79_distance" translation_description="Distance to M79 shown in the info card. Translate units if appropriate for your locale.">41 000 années-lumière</string>
+    <string name="object_info_m79_size" translation_description="Physical size of M79 shown in the info card. Translate units if appropriate for your locale.">~104 années-lumière de diamètre</string>
+
+    <string name="object_info_m70_distance" translation_description="Distance to M70 shown in the info card. Translate units if appropriate for your locale.">29 400 années-lumière</string>
+    <string name="object_info_m70_size" translation_description="Physical size of M70 shown in the info card. Translate units if appropriate for your locale.">~67 années-lumière de diamètre</string>
+
+    <string name="object_info_m107_distance" translation_description="Distance to M107 shown in the info card. Translate units if appropriate for your locale.">20 900 années-lumière</string>
+    <string name="object_info_m107_size" translation_description="Physical size of M107 shown in the info card. Translate units if appropriate for your locale.">~61 années-lumière de diamètre</string>
+
+    <string name="object_info_m68_distance" translation_description="Distance to M68 shown in the info card. Translate units if appropriate for your locale.">33 600 années-lumière</string>
+    <string name="object_info_m68_size" translation_description="Physical size of M68 shown in the info card. Translate units if appropriate for your locale.">~117 années-lumière de diamètre</string>
+
+    <string name="object_info_m56_distance" translation_description="Distance to M56 shown in the info card. Translate units if appropriate for your locale.">32 900 années-lumière</string>
+    <string name="object_info_m56_size" translation_description="Physical size of M56 shown in the info card. Translate units if appropriate for your locale.">~68 années-lumière de diamètre</string>
+
+    <string name="object_info_m71_distance" translation_description="Distance to M71 shown in the info card. Translate units if appropriate for your locale.">12 000 années-lumière</string>
+    <string name="object_info_m71_size" translation_description="Physical size of M71 shown in the info card. Translate units if appropriate for your locale.">~25 années-lumière de diamètre</string>
 </resources>

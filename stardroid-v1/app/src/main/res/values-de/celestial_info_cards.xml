@@ -950,6 +950,67 @@
     </string>
     <string name="object_info_eta_carinae_nebula_distance" translation_description="Distance to Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">7.500 Lichtjahre</string>
     <string name="object_info_eta_carinae_nebula_size" translation_description="Physical size of Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">300 Lichtjahre Durchmesser</string>
+    <!-- North America Nebula (NGC 7000) -->
+    <string name="object_info_north_america_nebula_description" translation_description="Description of the North America Nebula shown in the info card. Translate this text.">
+    Der Nordamerika-Nebel (NGC 7000) ist ein großer Emissionsnebel im Schwan, dessen Form bemerkenswert dem Kontinent Nordamerika ähnelt, komplett mit einer Golf-von-Mexiko-Region. Mit einer Ausdehnung von etwa 120 Bogenminuten – ungefähr viermal der Durchmesser des Vollmonds – liegt er etwa 2.600 Lichtjahre entfernt und ist über 100 Lichtjahre breit.
+    </string>
+    <string name="object_info_north_america_nebula_funfact" translation_description="Fun fact about the North America Nebula shown in the info card. Translate this text.">
+    Trotz ihrer visuellen Helligkeit von 4 ist der Nebel zu groß und diffus, um ihn unter den meisten Himmelsbedingungen mit bloßem Auge zu sehen – doch auf Fotografien offenbart er sich wunderbar und zeigt die Cygnus Wall, einen dichten Bogen intensiver Sternentstehung entlang seiner südlichen Kante.
+    </string>
+    <string name="object_info_north_america_nebula_distance" translation_description="Distance to the North America Nebula shown in the info card. Translate units if appropriate for your locale.">~2.590 Lichtjahre</string>
+    <string name="object_info_north_america_nebula_size" translation_description="Physical size of the North America Nebula shown in the info card. Translate units if appropriate for your locale.">~140 Lichtjahre Durchmesser</string>
+    <!-- Exposed Cranium Nebula - PMR 1 -->
+    <string name="object_info_exposed_cranium_nebula_description" translation_description="Description of the Exposed Cranium Nebula shown in the info card. Translate this text.">
+    Der Exposed Cranium Nebula (PMR 1) ist ein Planetarischer Nebel im Sternbild Vela, etwa 5.000 Lichtjahre entfernt. Sein unheimlicher Name stammt von einer dunklen Gasbahn, die vertikal durch die Mitte verläuft und seine leuchtenden Lappen in eine Form teilt, die unheimlich an ein Gehirn in einem durchsichtigen Schädel erinnert. In seinem Herzen brennt ein heißer Wolf-Rayet-Stern, der die äußeren Schichten abwirft, die er über sein Leben hinweg aufgebaut hat.
+    </string>
+    <string name="object_info_exposed_cranium_nebula_funfact" translation_description="Fun fact about the Exposed Cranium Nebula shown in the info card. Translate this text.">
+    Im Jahr 2026 hat das James-Webb-Weltraumteleskop beeindruckende neue Aufnahmen des Exposed-Cranium-Nebels gemacht und seine zweischichtige Struktur mit beispielloser Detailgenauigkeit aufgelöst – eine äußere Schale reich an Wasserstoff und eine innere Wolke voller schwererer Elemente, die vom sterbenden Stern geschmiedet wurden.
+    </string>
+    <string name="object_info_exposed_cranium_nebula_distance" translation_description="Distance to the Exposed Cranium Nebula shown in the info card. Translate units if appropriate for your locale.">~5.000 Lichtjahre</string>
+    <string name="object_info_exposed_cranium_nebula_size" translation_description="Physical size of the Exposed Cranium Nebula shown in the info card. Translate units if appropriate for your locale.">~2 Lichtjahre Durchmesser</string>
+
+    <!-- Jewel Box (NGC 4755) -->
+    <string name="object_info_jewel_box_description" translation_description="Description of the Jewel Box cluster shown in the info card. Translate this text.">
+    Der Schmuckkasten (NGC 4755) ist ein junger, brillanter offener Sternhaufen im Sternbild Kreuz, mit bloßem Auge leicht als nebliger Fleck vierter Größenordnung südöstlich von Mimosa sichtbar. Durch ein Teleskop betrachtet, leuchten seine Sterne in lebhaften kontrastierenden Farben – tiefblaue Überriesen neben einem auffälligen roten Überriesen – was ihm den Namen einbrachte, den John Herschel ihm gab: ein herrliches Stück Schmuckkunst. Mit nur 14–16 Millionen Jahren ist er einer der jüngsten und farbigsten Sternhaufen am Himmel.
+    </string>
+    <string name="object_info_jewel_box_funfact" translation_description="Fun fact about the Jewel Box shown in the info card. Translate this text.">
+    Der herausragende rote Stern des Sternhaufens, κ Crucis, ist ein roter Überriese, der so leuchtend ist, dass er die Sonne um mehr als das 100.000-fache überstrahlt – eine lebendige Erinnerung daran, dass Sternhaufen nicht alle die gleiche Farbe haben.
+    </string>
+    <string name="object_info_jewel_box_distance" translation_description="Distance to the Jewel Box shown in the info card. Translate units if appropriate for your locale.">~6.500 Lichtjahre</string>
+    <string name="object_info_jewel_box_size" translation_description="Physical size of the Jewel Box shown in the info card. Translate units if appropriate for your locale.">~19 Lichtjahre Durchmesser</string>
+
+    <!-- Double Cluster (NGC 869 & NGC 884) -->
+    <string name="object_info_double_cluster_description" translation_description="Description of the Double Cluster shown in the info card. Translate this text.">
+    Der Doppelsternhaufen (NGC 869 und NGC 884) ist ein atemberaubendes Paar junger offener Sternhaufen im Sternbild Perseus, die sich am Himmel nebeneinander befinden und knapp über ein Grad voneinander entfernt sind. Beide sind mit bloßem Auge als nebliger Fleck sichtbar, aber schon ein kleines Teleskop offenbart Hunderte brillanter blauweißer Überriesen, die in zwei glitzernden Schwärmen dicht gepackt sind. In einer Entfernung von etwa 7.500 Lichtjahren liegen sie im Perseus-Arm unserer Galaxie und gehören zu den schönsten Fernglasobjekten des nördlichen Himmels.
+    </string>
+    <string name="object_info_double_cluster_funfact" translation_description="Fun fact about the Double Cluster shown in the info card. Translate this text.">
+    Mit nur 14 Millionen Jahren ist der Doppelsternhaufen außergewöhnlich jung – so jung, dass seine massereichsten Sterne noch immer als leuchtend blaue Überriesen leuchten, wobei einige bereits zu seltenen, glühend roten Überriesen entwickelt haben.
+    </string>
+    <string name="object_info_double_cluster_distance" translation_description="Distance to the Double Cluster shown in the info card. Translate units if appropriate for your locale.">~7.500 Lichtjahre</string>
+    <string name="object_info_double_cluster_size" translation_description="Physical size of the Double Cluster shown in the info card. Translate units if appropriate for your locale.">
+    Jeder Sternhaufen ~70 Lichtjahre Durchmesser; das Paar durch ~1.000 Lichtjahre getrennt
+    </string>
+
+    <!-- 47 Tucanae (NGC 104) -->
+    <string name="object_info_n47_tucanae_description" translation_description="Description of 47 Tucanae shown in the info card. Translate this text.">
+    47 Tucanae (NGC 104) ist der zweithellste Kugelsternhaufen am Himmel, eine dichte Kugel aus etwa einer Million alter Sterne, die die Milchstraße im Sternbild Tukan umkreisen. In etwa 14.500 Lichtjahren Entfernung erscheint er dem bloßen Auge als unscharfer Stern der vierten Größenklasse, aber ein Teleskop löst seinen komprimierten Kern in einen außergewöhnlichen Schwarm aus goldenen und blauweißen Sonnen auf. Seine Sterne entstanden vor etwa 13 Milliarden Jahren, was den Sternhaufen fast so alt wie das Universum selbst macht.
+    </string>
+    <string name="object_info_n47_tucanae_funfact" translation_description="Fun fact about 47 Tucanae shown in the info card. Translate this text.">
+    47 Tucanae ist eine kosmische Pulsar-Fabrik: Astronomen haben darin mindestens 35 Millisekunden-Pulsare gefunden, die sich hunderte Male pro Sekunde drehen – mehr als in jedem anderen bekannten Kugelsternhaufen – das Ergebnis von stellaren Nahbegegnungen, die alte Neutronensterne durch Beschleunigung recyceln.
+    </string>
+    <string name="object_info_n47_tucanae_distance" translation_description="Distance to 47 Tucanae shown in the info card. Translate units if appropriate for your locale.">~14.500 Lichtjahre</string>
+    <string name="object_info_n47_tucanae_size" translation_description="Physical size of 47 Tucanae shown in the info card. Translate units if appropriate for your locale.">~120 Lichtjahre Durchmesser</string>
+
+    <!-- Centaurus A (NGC 5128) -->
+    <string name="object_info_centaurus_a_description" translation_description="Description of Centaurus A shown in the info card. Translate this text.">
+    Centaurus A (NGC 5128) ist die nächste aktive Radiogalaxie zur Erde, eine riesige elliptische Galaxie im Sternbild Zentaurus, deren auffällige dunkle Staubspur eine gewaltsame Vergangenheit verrät – eine Spiralgalaxie, die vor etwa 200–700 Millionen Jahren verschluckt wurde. In ihrem Zentrum lauert ein supermassives schwarzes Loch mit 55 Millionen Sonnenmassen, das relativistische Jets antreibt, die sich über mehr als eine Million Lichtjahre in Radiowellenlängen erstrecken. In einer Entfernung von etwa 12 Millionen Lichtjahren ist sie eine der am meisten untersuchten Galaxien am Himmel.
+    </string>
+    <string name="object_info_centaurus_a_funfact" translation_description="Fun fact about Centaurus A shown in the info card. Translate this text.">
+    Centaurus A ist einer der stärksten natürlichen Radiosender am Himmel – seine Jets schleudern Plasma mit nahezu Lichtgeschwindigkeit hinaus, und die volle Ausdehnung seiner Radiostrahlung erstreckt sich über eine Fläche, die etwa 100 Vollmonden entspricht, die hintereinander über den Himmel gelegt sind.
+    </string>
+    <string name="object_info_centaurus_a_distance" translation_description="Distance to Centaurus A shown in the info card. Translate units if appropriate for your locale.">~12 Millionen Lichtjahre</string>
+    <string name="object_info_centaurus_a_size" translation_description="Physical size of Centaurus A shown in the info card. Translate units if appropriate for your locale.">~123.000 Lichtjahre Durchmesser</string>
+
     <!-- ==================== CONSTELLATIONS ==================== -->
     <!-- Note: Constellation names are defined in celestial_objects.xml -->
     <!-- Orion -->
@@ -1977,4 +2038,697 @@
     Vulpecula enthält den Hantelnebel (M27), den ersten je entdeckten Planetarischen Nebel (von Charles Messier 1764), und ein wunderschönes Fernglas-Ziel!
     </string>
     <string name="object_info_vulpecula_size" translation_description="Physical size of Vulpecula shown in the info card. Translate units if appropriate for your locale.">268 Quadratgrad</string>
+
+    <!-- Galilean Moons of Jupiter -->
+    <string name="object_info_io_description" translation_description="Description of Io shown in the info card. Translate this text.">
+    Io ist der innerste der vier großen Galileischen Monde des Jupiter und der vulkanisch aktivste Körper des Sonnensystems.
+    </string>
+    <string name="object_info_io_funfact" translation_description="Fun fact about Io shown in the info card. Translate this text.">
+    Io hat hunderte aktiver Vulkane, von denen einige Lavafontänen dutzende Kilometer hoch ausspucken. Seine ständige Aktivität wird durch Gezeitenheizung von Jupiters enormer Schwerkraft angetrieben.
+    </string>
+    <string name="object_info_io_distance" translation_description="Distance to Io shown in the info card. Translate units if appropriate for your locale.">421.700 km von Jupiter entfernt</string>
+    <string name="object_info_io_size" translation_description="Physical size of Io shown in the info card. Translate units if appropriate for your locale.">3.643 km Durchmesser</string>
+
+    <string name="object_info_europa_description" translation_description="Description of Europa shown in the info card. Translate this text.">
+    Europa ist der zweite Galileische Mond und soll unter seiner Eiskruste einen riesigen Ozean aus flüssigem Wasser beherbergen, was ihn zu einem der vielversprechendsten Orte für die Suche nach Leben macht.
+    </string>
+    <string name="object_info_europa_funfact" translation_description="Fun fact about Europa shown in the info card. Translate this text.">
+    Europas Subsurface-Ozean könnte zweimal so viel flüssiges Wasser enthalten wie alle Ozeane der Erde zusammen, das durch Gezeitenheizung von Jupiter flüssig gehalten wird.
+    </string>
+    <string name="object_info_europa_distance" translation_description="Distance to Europa shown in the info card. Translate units if appropriate for your locale.">671.100 km von Jupiter entfernt</string>
+    <string name="object_info_europa_size" translation_description="Physical size of Europa shown in the info card. Translate units if appropriate for your locale.">3.122 km Durchmesser</string>
+
+    <string name="object_info_ganymede_description" translation_description="Description of Ganymede shown in the info card. Translate this text.">
+    Ganymed ist der größte Mond des Sonnensystems – sogar größer als der Planet Merkur. Es ist der einzige Mond, von dem bekannt ist, dass er sein eigenes Magnetfeld erzeugt.
+    </string>
+    <string name="object_info_ganymede_funfact" translation_description="Fun fact about Ganymede shown in the info card. Translate this text.">
+    Ganymed ist größer als Merkur, hat aber nur etwa die Hälfte seiner Masse. Sein internes Magnetfeld erzeugt eine eigene miniaturisierte Magnetosphäre innerhalb von Jupiters viel größerer Magnetosphäre.
+    </string>
+    <string name="object_info_ganymede_distance" translation_description="Distance to Ganymede shown in the info card. Translate units if appropriate for your locale.">1.070.400 km von Jupiter entfernt</string>
+    <string name="object_info_ganymede_size" translation_description="Physical size of Ganymede shown in the info card. Translate units if appropriate for your locale.">5.268 km Durchmesser</string>
+
+    <string name="object_info_callisto_description" translation_description="Description of Callisto shown in the info card. Translate this text.">
+    Callisto ist der äußerste der Galileischen Monde und einer der am stärksten verkraterten Körper des Sonnensystems. Seine alte Oberfläche bewahrt eine Aufzeichnung der frühen Einschläge des Sonnensystems.
+    </string>
+    <string name="object_info_callisto_funfact" translation_description="Fun fact about Callisto shown in the info card. Translate this text.">
+    Callisto umkreist Jupiter jenseits der Hauptstrahlungsgürtel und ist damit der sicherste der Galileischen Monde für zukünftige menschliche Erkundung – er wird manchmal das \"Tor-Mond\" genannt.
+    </string>
+    <string name="object_info_callisto_distance" translation_description="Distance to Callisto shown in the info card. Translate units if appropriate for your locale.">1.882.700 km von Jupiter entfernt</string>
+    <string name="object_info_callisto_size" translation_description="Physical size of Callisto shown in the info card. Translate units if appropriate for your locale.">4.821 km Durchmesser</string>
+
+    <!-- Moons of Mars -->
+    <string name="object_info_phobos_description" translation_description="Description of Phobos shown in the info card. Translate this text.">
+    Phobos ist der größere und innerste der beiden Monde des Mars und umkreist seinen Planeten näher als jeder andere Mond im Sonnensystem. Es ist ein unregelmäßig geformter, stark gefurchter und kraterbespannter Körper, von dem angenommen wird, dass er ein eingefangener Asteroid ist.
+    </string>
+    <string name="object_info_phobos_funfact" translation_description="Fun fact about Phobos shown in the info card. Translate this text.">
+    Phobos umkreist den Mars so schnell, dass er im Westen aufgeht und im Osten untergeht – und er spiralt langsam nach innen, wobei er in etwa 50 Millionen Jahren entweder auf dem Mars einschlagen oder in einen Ring zerfallen wird.
+    </string>
+    <string name="object_info_phobos_distance" translation_description="Distance to Phobos shown in the info card. Translate units if appropriate for your locale.">9.376 km von Mars entfernt</string>
+    <!-- tm:omitted name="object_info_phobos_size" reason="identical_to_source" -->
+
+    <string name="object_info_deimos_description" translation_description="Description of Deimos shown in the info card. Translate this text.">
+    Deimos ist der kleinere und äußere der beiden Monde des Mars mit einer glatten, staubbedeckten Oberfläche, die ihm ein runderes Aussehen verleiht als Phobos. Wie sein Begleiter wird angenommen, dass er ein eingefangener Asteroid aus dem äußeren Gürtel ist.
+    </string>
+    <string name="object_info_deimos_funfact" translation_description="Fun fact about Deimos shown in the info card. Translate this text.">
+    Deimos ist so klein und weit entfernt, dass er von der Marsoberfläche aus wie nicht mehr als ein heller Stern aussieht und etwa 30 Stunden braucht, um langsam über den Nachthimmel zu driften.
+    </string>
+    <string name="object_info_deimos_distance" translation_description="Distance to Deimos shown in the info card. Translate units if appropriate for your locale.">23.460 km von Mars entfernt</string>
+    <!-- tm:omitted name="object_info_deimos_size" reason="identical_to_source" -->
+
+    <!-- Major Moons of Saturn -->
+    <string name="object_info_titan_description" translation_description="Description of Titan shown in the info card. Translate this text.">
+    Titan ist Saturns größter Mond und der zweitgrößte Mond des Sonnensystems. Er ist der einzige Mond mit einer dichten Atmosphäre – eine dicke Stickstoffhülle durchzogen mit Methan – und die einzige Welt außer der Erde, auf der stabile flüssige Meere an der Oberfläche bekannt sind.
+    </string>
+    <string name="object_info_titan_funfact" translation_description="Fun fact about Titan shown in the info card. Translate this text.">
+    Titans Seen und Meere sind nicht mit Wasser, sondern mit flüssigem Methan und Ethan bei eisigen −179°C gefüllt. Die Dragonfly-Rotorcraft-Mission der NASA, die 2034 ankommen soll, wird zwischen Stellen auf Titans Oberfläche fliegen, um nach der Chemie des Lebens zu suchen.
+    </string>
+    <string name="object_info_titan_distance" translation_description="Distance to Titan shown in the info card. Translate units if appropriate for your locale.">1.221.870 km von Saturn entfernt</string>
+    <string name="object_info_titan_size" translation_description="Physical size of Titan shown in the info card. Translate units if appropriate for your locale.">5.151 km Durchmesser</string>
+
+    <string name="object_info_rhea_description" translation_description="Description of Rhea shown in the info card. Translate this text.">
+    Rhea ist Saturns zweitgrößter Mond und eine stark verkraterte Welt aus Eis und Gestein. Seine blasse, alte Oberfläche bewahrt einige der ursprünglichsten Einschlagskrater des Sonnensystems, zusammen mit hellen Eisklippen, wo Erdrutsche frisches Material von darunter freigelegt haben.
+    </string>
+    <string name="object_info_rhea_funfact" translation_description="Fun fact about Rhea shown in the info card. Translate this text.">
+    2008 deuteten Cassini-Daten darauf hin, dass Rhea möglicherweise einen dünnen Trümmering um sich herum hat – was sie zum ersten Mond mit eigenem Ringsystem machen würde. Falls bestätigt, wäre dies eine bemerkenswerte Entdeckung; die Evidenz bleibt ein aktives Forschungsgebiet.
+    </string>
+    <string name="object_info_rhea_distance" translation_description="Distance to Rhea shown in the info card. Translate units if appropriate for your locale.">527.108 km von Saturn entfernt</string>
+    <string name="object_info_rhea_size" translation_description="Physical size of Rhea shown in the info card. Translate units if appropriate for your locale.">1.527 km Durchmesser</string>
+
+    <string name="object_info_tethys_description" translation_description="Description of Tethys shown in the info card. Translate this text.">
+    Tethys ist ein eisiger Mond des Saturn, der von zwei dramatischen Merkmalen geprägt ist: dem riesigen Odysseus-Krater, 400 km breit und etwa ein Drittel der Mondoberfläche bedeckend, und der Ithaca Chasma, einem Canyonsystem, das sich drei Viertel um den Globus erstreckt.
+    </string>
+    <string name="object_info_tethys_funfact" translation_description="Fun fact about Tethys shown in the info card. Translate this text.">
+    Tethys besteht fast vollständig aus Wassereis – es hat eine der niedrigsten Dichten aller Monde im Sonnensystem, kaum dichter als gefrorenes Wasser. Ithaca Chasma könnte entstanden sein, als das Innere gefror und sich ausdehnte, wodurch die darüber liegende Kruste von innen aufgerissen wurde.
+    </string>
+    <string name="object_info_tethys_distance" translation_description="Distance to Tethys shown in the info card. Translate units if appropriate for your locale.">294.619 km von Saturn entfernt</string>
+    <string name="object_info_tethys_size" translation_description="Physical size of Tethys shown in the info card. Translate units if appropriate for your locale.">1.062 km Durchmesser</string>
+
+    <string name="object_info_dione_description" translation_description="Description of Dione shown in the info card. Translate this text.">
+    Dione ist ein eisiger Mond des Saturn mit einer stark verkratzten Vorderseite und einer Rückseite, die von hellen Eisklippen durchzogen ist – Bruchlinien, wo antike tektonische Kräfte frisches Eis von unten freilegten. Cassini-Gravitationsdaten deuten auf einen flüssigen Ozean unter der Kruste hin.
+    </string>
+    <string name="object_info_dione_funfact" translation_description="Fun fact about Dione shown in the info card. Translate this text.">
+    Dione teilt seine Umlaufbahn mit zwei winzigen Monden, Helene und Polydeuces, die 60° vor und hinter ihm an Gravitationsgleichgewichtspunkten, den sogenannten Lagrange-Punkten, fixiert sind. Helene kann besonders in Cassini-Bildern wie ein kosmischer Tramper mitfahrend beobachtet werden.
+    </string>
+    <string name="object_info_dione_distance" translation_description="Distance to Dione shown in the info card. Translate units if appropriate for your locale.">377.396 km von Saturn entfernt</string>
+    <string name="object_info_dione_size" translation_description="Physical size of Dione shown in the info card. Translate units if appropriate for your locale.">1.122 km Durchmesser</string>
+
+    <string name="object_info_iapetus_description" translation_description="Description of Iapetus shown in the info card. Translate this text.">
+    Iapetus ist einer von Saturns charakteristischsten Monden: Seine vordere Hemisphäre ist mit tiefschwarzem Material bedeckt, das so dunkel wie Kohle ist, während seine hintere Hemisphäre aus hellem weißem Eis besteht. Dieses extreme zweifarbige Aussehen verwirrte Giovanni Cassini, als er den Mond 1671 entdeckte, und der Kontrast ist so stark, dass er in kleinen Teleskopen sichtbar ist.
+    </string>
+    <string name="object_info_iapetus_funfact" translation_description="Fun fact about Iapetus shown in the info card. Translate this text.">
+    Iapetus hat auch einen imposanten äquatorialen Grat, der sich 20 km hoch erhebt – höher als jeder Berg auf der Erde – und sich über Tausende von Kilometern um seinen Äquator erstreckt. Sein Ursprung ist unbekannt: Es könnte das Überbleibsel eines kollabierenden Rings sein oder eine alte tektonische Faltung, die entstanden ist, als der Mond vor langer Zeit viel schneller rotierte.
+    </string>
+    <string name="object_info_iapetus_distance" translation_description="Distance to Iapetus shown in the info card. Translate units if appropriate for your locale.">3.560.820 km von Saturn entfernt</string>
+    <string name="object_info_iapetus_size" translation_description="Physical size of Iapetus shown in the info card. Translate units if appropriate for your locale.">1.469 km Durchmesser</string>
+
+    <!-- Moon of Neptune -->
+    <string name="object_info_triton_description" translation_description="Description of Triton shown in the info card. Translate this text.">
+    Triton ist Neptuns größter Mond und einer der außergewöhnlichsten Körper des Sonnensystems. Er umkreist Neptun rückwärts – entgegengesetzt zur eigenen Rotation des Planeten – ein starkes Zeichen dafür, dass er früh in Neptuns Geschichte aus dem äußeren Sonnensystem, höchstwahrscheinlich aus dem Kuiper-Gürtel, eingefangen wurde.
+    </string>
+    <string name="object_info_triton_funfact" translation_description="Fun fact about Triton shown in the info card. Translate this text.">
+    Trotz seiner Oberflächentemperatur von −235°C – der kältesten auf einem von einem Raumschiff besuchten Himmelskörper gemessenen Temperatur – entdeckte Voyager 2 1989 aktive Stickstoffgeysire auf Triton. Dunkle Streifen auf der Oberfläche markieren die Stellen, an denen Gasfontänen und dunkles Material Kilometer weit in die dünne Atmosphäre schossen.
+    </string>
+    <string name="object_info_triton_distance" translation_description="Distance to Triton shown in the info card. Translate units if appropriate for your locale.">354.759 km von Neptun entfernt</string>
+    <string name="object_info_triton_size" translation_description="Physical size of Triton shown in the info card. Translate units if appropriate for your locale.">2.707 km Durchmesser</string>
+
+    <!-- Major Moons of Uranus -->
+    <string name="object_info_titania_description" translation_description="Description of Titania shown in the info card. Translate this text.">
+    Titania ist der größte Mond des Uranus und der achtgrößte Mond des Sonnensystems. Seine Oberfläche zeigt eine Mischung aus alten Kraterbenen und jüngeren Steilhängen und Tälern, was auf eine komplexe geologische Geschichte hindeutet, die möglicherweise frühere tektonische Aktivitäten umfasste, die die eisige Kruste umgestalteten.
+    </string>
+    <string name="object_info_titania_funfact" translation_description="Fun fact about Titania shown in the info card. Translate this text.">
+    Alle Monde des Uranus sind nach Charakteren von Shakespeare und Alexander Pope benannt – Titania ist die Königin der Feen in "Ein Sommernachtstraum". Sie ist einer der wenigen großen Planetenmonde, die nicht nach einer Figur aus der griechischen oder römischen Mythologie benannt sind.
+    </string>
+    <string name="object_info_titania_distance" translation_description="Distance to Titania shown in the info card. Translate units if appropriate for your locale.">435.910 km von Uranus entfernt</string>
+    <string name="object_info_titania_size" translation_description="Physical size of Titania shown in the info card. Translate units if appropriate for your locale.">1.578 km Durchmesser</string>
+
+    <string name="object_info_oberon_description" translation_description="Description of Oberon shown in the info card. Translate this text.">
+    Oberon ist der äußerste der fünf großen Monde des Uranus und einer der am stärksten verkraterten, mit einer alten Oberfläche, die sich seit der Frühzeit des Sonnensystems kaum verändert hat. Mehrere seiner großen Einschlagskrater haben dunkles Material auf ihren Böden, möglicherweise organische Ablagerungen, die von den aufprallenden Körpern mitgebracht wurden.
+    </string>
+    <string name="object_info_oberon_funfact" translation_description="Fun fact about Oberon shown in the info card. Translate this text.">
+    Oberon beherbergt einen Berg, der sich etwa 6 km über die umgebenen Ebenen erhebt – vergleichbar mit den höchsten Gipfeln der Erde. Im Gegensatz zu Berge der Erde, die durch Plattentektonik entstanden sind, könnte dieses Merkmal der Zentralpeak eines alten Einschlagkraters oder ein Überrest früher vulkanischer Aktivität sein.
+    </string>
+    <string name="object_info_oberon_distance" translation_description="Distance to Oberon shown in the info card. Translate units if appropriate for your locale.">583.520 km von Uranus entfernt</string>
+    <string name="object_info_oberon_size" translation_description="Physical size of Oberon shown in the info card. Translate units if appropriate for your locale.">1.523 km Durchmesser</string>
+
+    <string name="object_info_ariel_description" translation_description="Description of Ariel shown in the info card. Translate this text.">
+    Ariel hat die jüngste und hellste Oberfläche der fünf großen Monde des Uranus. Die Landschaft wird von einem Netzwerk aus tiefen Tälern und glatten Ebenen dominiert, die vor langer Zeit durch Flüssigkeit – wahrscheinlich Wasser oder Ammoniak-Wasser-Gemische – umgestaltet wurden, die aus dem Inneren aufquollen und altes Gelände überfluteten.
+    </string>
+    <string name="object_info_ariel_funfact" translation_description="Fun fact about Ariel shown in the info card. Translate this text.">
+    Ariels Täler können bis zu 10 km tief sein – viel tiefer als der Grand Canyon. Beobachtungen des James-Webb-Weltraumteleskops haben seitdem Kohlendioxideis auf Ariels Oberfläche entdeckt, was auf eine laufende Oberflächenchemie hindeutet, die durch geladene Teilchen aus Uranus\' Magnetfeld angetrieben wird.
+    </string>
+    <string name="object_info_ariel_distance" translation_description="Distance to Ariel shown in the info card. Translate units if appropriate for your locale.">191.020 km von Uranus entfernt</string>
+    <string name="object_info_ariel_size" translation_description="Physical size of Ariel shown in the info card. Translate units if appropriate for your locale.">1.158 km Durchmesser</string>
+
+    <string name="object_info_umbriel_description" translation_description="Description of Umbriel shown in the info card. Translate this text.">
+    Umbriel ist der dunkelste der fünf großen Monde des Uranus mit einer gleichmäßig alten und stark verkratereten Oberfläche, die wenig Anzeichen der geologischen Umgestaltung zeigt, die auf seinen Nachbarn zu sehen ist. Sein Inneres scheint seit der Frühzeit der Sonnengeschichte kalt und gefroren geblieben zu sein.
+    </string>
+    <string name="object_info_umbriel_funfact" translation_description="Fun fact about Umbriel shown in the info card. Translate this text.">
+    Das auffälligste Merkmal auf Umbriel ist Wunda, ein heller Ring mit etwa 140 km Durchmesser in der Nähe des Äquators. Wunda wurde 1986 von Voyager 2 entdeckt, doch seine genaue Natur bleibt ein Rätsel — es könnte sich um einen Kraterboden handeln, der mit Kohlendioxid oder Ammoniakfrost bedeckt ist, der lange nach dem Einschlag abgelagert wurde, der ihn bildete.
+    </string>
+    <string name="object_info_umbriel_distance" translation_description="Distance to Umbriel shown in the info card. Translate units if appropriate for your locale.">266.300 km von Uranus entfernt</string>
+    <string name="object_info_umbriel_size" translation_description="Physical size of Umbriel shown in the info card. Translate units if appropriate for your locale.">1.170 km Durchmesser</string>
+
+    <!-- Globular clusters already on the map -->
+    <string name="object_info_omega_centauri_description" translation_description="Description of Omega Centauri shown in the info card. Translate this text.">
+    Omega Centauri ist der größte und massivste Kugelsternhaufen, der die Milchstraße umkreist. Er enthält etwa 10 Millionen Sterne, die in eine Sphäre von etwa 150 Lichtjahren Durchmesser gepackt sind. Er ist mit bloßem Auge als unscharfer Stern im Sternbild Zentaurus leicht sichtbar und löst sich durch Ferngläser oder ein beliebiges Teleskop in eine atemberaubende Sternenkugel auf.
+    </string>
+    <string name="object_info_omega_centauri_funfact" translation_description="Fun fact about Omega Centauri shown in the info card. Translate this text.">
+    Im Gegensatz zu typischen Kugelsternhaufen enthält Omega Centauri Sterne vieler verschiedener Alter und chemischer Zusammensetzungen – ein Zeichen dafür, dass es möglicherweise der entblößte Kern einer Zwerggalaxie ist, die vor Milliarden von Jahren von der Milchstraße zerrissen und verschluckt wurde. Es könnte sogar ein zentrales Schwarzes Loch mittlerer Masse beherbergen.
+    </string>
+    <string name="object_info_omega_centauri_distance" translation_description="Distance to Omega Centauri shown in the info card. Translate units if appropriate for your locale.">17.090 Lichtjahre</string>
+    <string name="object_info_omega_centauri_size" translation_description="Physical size of Omega Centauri shown in the info card. Translate units if appropriate for your locale.">~150 Lichtjahre Durchmesser</string>
+
+    <!-- Deep-sky objects: new catalog additions -->
+    <string name="object_info_hyades_description" translation_description="Description of the Hyades star cluster shown in the info card. Translate this text.">
+    Die Hyaden sind der nächste offene Sternhaufen zum Sonnensystem und einer der am meisten untersuchten in der Astronomie. Mit bloßem Auge sichtbar als das V-förmige Muster von Sternen, das das Gesicht des Stiers bildet, enthält er mehrere hundert Sterne, die sich über etwa 5° des Himmels verteilen.
+    </string>
+    <string name="object_info_hyades_funfact" translation_description="Fun fact about the Hyades shown in the info card. Translate this text.">
+    Der glänzend orange Stern Aldebaran scheint sich innerhalb der Hyaden zu befinden, ist aber tatsächlich ein Objekt im Vordergrund in halber Entfernung – eine zufällige Ausrichtung. Der echte Sternhaufen ist etwa 153 Lichtjahre entfernt und enthält die ersten Sterne, deren Entfernungen vom Hipparcos-Satelliten mittels Parallaxe gemessen wurden.
+    </string>
+    <string name="object_info_hyades_distance" translation_description="Distance to the Hyades shown in the info card. Translate units if appropriate for your locale.">153 Lichtjahre</string>
+    <string name="object_info_hyades_size" translation_description="Angular size of the Hyades shown in the info card.">~5° Durchmesser</string>
+
+    <string name="object_info_coma_star_cluster_description" translation_description="Description of the Coma Berenices Star Cluster shown in the info card. Translate this text.">
+    Der Sternhaufen Coma Berenices ist ein nahegelegener offener Sternhaufen mit etwa 40 Sternen, die sich locker über fast 5° des Himmels verteilen und unter dunklem Himmel leicht mit bloßem Auge als sanfter Dunst sichtbar sind. Er ist der drittnächste offene Sternhaufen zum Sonnensystem und die Quelle des Sternbildes Coma Berenices.
+    </string>
+    <string name="object_info_coma_star_cluster_funfact" translation_description="Fun fact about the Coma Berenices Star Cluster shown in the info card. Translate this text.">
+    Antike Beobachter sahen diesen Sternhaufen als das Haar der ägyptischen Königin Berenice II., die der Legende nach ihre goldenen Locken als Opfer für die sichere Rückkehr ihres Mannes aus dem Krieg abschnitt. Der Ptolemäus III. ließ die ungewöhnliche Konstellation um 245 v. Chr. angeblich offiziell zu ihren Ehren benennen.
+    </string>
+    <string name="object_info_coma_star_cluster_distance" translation_description="Distance to the Coma Star Cluster shown in the info card. Translate units if appropriate for your locale.">288 Lichtjahre</string>
+    <string name="object_info_coma_star_cluster_size" translation_description="Angular size of the Coma Star Cluster shown in the info card.">~5° Durchmesser</string>
+
+    <string name="object_info_coathanger_description" translation_description="Description of the Coathanger asterism shown in the info card. Translate this text.">
+    Der Kleiderbügel ist ein auffälliges Asterismus aus zehn Sternen im Sternbild Vulpecula, die eine unverwechselbare Form bilden: sechs Sterne in einer geraden Linie mit vier darunter hängenden Sternen in einer Hakenform, die genau einem umgekehrten Kleiderbügel ähnelt. Es ist eines der besten Objekte für Ferngläser am Sommerhimmel und passt perfekt in ein typisches Gesichtsfeld eines Fernglases.
+    </string>
+    <string name="object_info_coathanger_funfact" translation_description="Fun fact about the Coathanger shown in the info card. Translate this text.">
+    Obwohl der Kleiderbügel wie ein Sternhaufen aussieht, sind seine Sterne nicht physikalisch miteinander verbunden – sie befinden sich in sehr unterschiedlichen Entfernungen und sind einfach eine Zufallsausrichtung. Broccis Sternhaufen wurde in den 1920er Jahren von Dalmiro Brocchi katalogisiert, und das erste Weltraumteleskop, das ihn abbildete, war Hipparcos, das bestätigte, dass die Sterne nicht miteinander verwandt sind.
+    </string>
+    <string name="object_info_coathanger_distance" translation_description="Distance to the Coathanger shown in the info card. Translate units if appropriate for your locale.">~420 Lichtjahre (hellster Stern)</string>
+    <string name="object_info_coathanger_size" translation_description="Angular size of the Coathanger shown in the info card.">~1° Durchmesser</string>
+
+    <string name="object_info_helix_nebula_description" translation_description="Description of the Helix Nebula shown in the info card. Translate this text.">
+    Der Helix-Nebel ist der größte Planetarische Nebel in scheinbarer Größe am Himmel – die expandierende Gashülle, die ein sonnenähnlicher Stern am Ende seines Lebens abgestoßen hat. Mit einer Ausdehnung von etwa einem halben Grad ist er in Ferngläsern als schwaches kreisförmiges Leuchten im Wassermann sichtbar und wird wegen seines Aussehens auf Langzeitaufnahmen das Auge Gottes genannt.
+    </string>
+    <string name="object_info_helix_nebula_funfact" translation_description="Fun fact about the Helix Nebula shown in the info card. Translate this text.">
+    Im Zentrum des Helix-Nebels befindet sich einer der nächstgelegenen bekannten Weißen Zwerge der Erde – ein intensiv heißer Sternrest etwa so groß wie die Erde, aber mit der Masse der Sonne. Dies ist das Schicksal, das unsere eigene Sonne in etwa fünf Milliarden Jahren erwartet.
+    </string>
+    <string name="object_info_helix_nebula_distance" translation_description="Distance to the Helix Nebula shown in the info card. Translate units if appropriate for your locale.">650 Lichtjahre</string>
+    <string name="object_info_helix_nebula_size" translation_description="Angular size of the Helix Nebula shown in the info card.">~3 Lichtjahre Durchmesser</string>
+
+    <string name="object_info_sculptor_galaxy_description" translation_description="Description of the Sculptor Galaxy shown in the info card. Translate this text.">
+    Die Sculptor-Galaxie ist eine der hellsten und schönsten kantengerichteten Spiralgalaxien, die von der Erde aus sichtbar sind. Sie erscheint als ein längliches Leuchten im südlichen Sternbild Sculptor. Sie ist eine der nächsten Starburst-Galaxien – eine Galaxie, die einen intensiven Ausbruch der Sternentstehung durchläuft – die für Amateurastronomen mit Ferngläsern unter dunklem Himmel sichtbar sind.
+    </string>
+    <string name="object_info_sculptor_galaxy_funfact" translation_description="Fun fact about the Sculptor Galaxy shown in the info card. Translate this text.">
+    Die Sculptor-Galaxie ist eines der hellsten Mitglieder der Sculptor-Gruppe – der Galaxiengruppe, die unserer eigenen Lokalen Gruppe am nächsten liegt. Ihre zentrale Starburst-Region erzeugt neue Sterne mit einer Rate, die mehrmals höher ist als in der Milchstraße, angetrieben durch frühere Wechselwirkungen mit benachbarten Galaxien.
+    </string>
+    <string name="object_info_sculptor_galaxy_distance" translation_description="Distance to the Sculptor Galaxy shown in the info card. Translate units if appropriate for your locale.">11,4 Millionen Lichtjahre</string>
+    <string name="object_info_sculptor_galaxy_size" translation_description="Physical size of the Sculptor Galaxy shown in the info card. Translate units if appropriate for your locale.">~90.000 Lichtjahre Durchmesser</string>
+
+    <string name="object_info_blue_snowball_nebula_description" translation_description="Description of the Blue Snowball Nebula shown in the info card. Translate this text.">
+    Der Blaue Schneeball ist ein Planetarischer Nebel in Andromeda – die leuchtende Gashülle eines sterbenden Sterns. Mit einer Helligkeit von 8,3 ist er einer der hellsten und farbigsten Planetarischen Nebel am Himmel und erscheint selbst in kleinen Teleskopen als leuchtende blaugrüne Scheibe. Seine symmetrische Form und intensive Farbe machen ihn zu einem Favoriten unter Beobachtern.
+    </string>
+    <string name="object_info_blue_snowball_nebula_funfact" translation_description="Fun fact about the Blue Snowball Nebula shown in the info card. Translate this text.">
+    Die auffällige Farbe des Blauen Schneeballs entsteht durch zweifach ionisierten Sauerstoff, der bei einer bestimmten grünen Wellenlänge leuchtet, kombiniert mit Wasserstoffemission – eine Farbpalette, die das menschliche Auge als blaugrün wahrnimmt. Der zentrale Weiße Zwerg hat eine Oberflächentemperatur von etwa 100.000°C, heiß genug, um das umgebende Gas in dieser Entfernung zu ionisieren.
+    </string>
+    <string name="object_info_blue_snowball_nebula_distance" translation_description="Distance to the Blue Snowball Nebula shown in the info card. Translate units if appropriate for your locale.">~2.500 Lichtjahre</string>
+    <string name="object_info_blue_snowball_nebula_size" translation_description="Physical size of the Blue Snowball Nebula shown in the info card. Translate units if appropriate for your locale.">~0,8 Lichtjahre Durchmesser</string>
+
+    <string name="object_info_ghost_of_jupiter_description" translation_description="Description of the Ghost of Jupiter planetary nebula shown in the info card. Translate this text.">
+    Der Geist des Jupiter ist ein heller Planetarischer Nebel im Sternbild Hydra, dessen scheinbare Größe der des Planeten Jupiter ähnelt – daher sein Name. Mit einer Helligkeit von 8,6 mag ist er einer der am leichtesten zugänglichen Planetarischen Nebel am Himmel für kleine Teleskope und zeigt eine klare Scheibe sowie einen Hauch von Farbe in mittleren Öffnungen.
+    </string>
+    <string name="object_info_ghost_of_jupiter_funfact" translation_description="Fun fact about the Ghost of Jupiter shown in the info card. Translate this text.">
+    Der Geist des Jupiter hat eine innere helle Schale, die von einem schwächeren äußeren Halo umgeben ist – eine Zwei-Schalen-Struktur, die darauf hindeutet, dass der sterbende Stern Gas in mindestens zwei separaten Episoden ausgestoßen hat. Sein Zentralstern ist einer der heißesten bekannten Weißen Zwerge mit einer geschätzten Oberflächentemperatur von etwa 75.000°C.
+    </string>
+    <string name="object_info_ghost_of_jupiter_distance" translation_description="Distance to the Ghost of Jupiter shown in the info card. Translate units if appropriate for your locale.">~1.400 Lichtjahre</string>
+    <string name="object_info_ghost_of_jupiter_size" translation_description="Physical size of the Ghost of Jupiter shown in the info card. Translate units if appropriate for your locale.">~1 Lichtjahr Durchmesser</string>
+
+    <string name="object_info_saturn_nebula_description" translation_description="Description of the Saturn Nebula shown in the info card. Translate this text.">
+    Der Saturnnebel ist ein Planetarischer Nebel im Wassermann, benannt nach seiner Ähnlichkeit mit dem Planeten Saturn – Ausläufer, sogenannte Ansae, ragen von beiden Seiten wie Ringgriffe hervor und sind in mittleren Teleskopen sichtbar. Mit einer Helligkeit von 8,0 ist er einer der hellsten Planetarischen Nebel am Himmel und zeigt in größeren Instrumenten eine komplexe Struktur.
+    </string>
+    <string name="object_info_saturn_nebula_funfact" translation_description="Fun fact about the Saturn Nebula shown in the info card. Translate this text.">
+    William Herschel entdeckte den Saturnnebel 1782 und bemerkte das Saturn-ähnliche Aussehen. Moderne Beobachtungen zeigen mindestens vier unterschiedliche Gasschalen um den zentralen weißen Zwerg, die mehrere Phasen des Massenverlusts in den letzten Stadien des Sternlebens widerspiegeln.
+    </string>
+    <string name="object_info_saturn_nebula_distance" translation_description="Distance to the Saturn Nebula shown in the info card. Translate units if appropriate for your locale.">~5.000 Lichtjahre</string>
+    <string name="object_info_saturn_nebula_size" translation_description="Physical size of the Saturn Nebula shown in the info card. Translate units if appropriate for your locale.">~1 Lichtjahr Durchmesser</string>
+
+    <string name="object_info_ngc_2903_description" translation_description="Description of the galaxy NGC 2903 shown in the info card. Translate this text.">
+    NGC 2903 ist eine helle Balkenspiralgalaxie im Löwen, oft "das Messier-Objekt, das Messier verpasst hat" genannt – sie ist eine der prominentesten Galaxien am Himmel, die nicht in seinem berühmten Katalog enthalten ist. Mit einer Helligkeit von 8,9 ist sie leicht mit Ferngläsern sichtbar und zeigt in mittleren Teleskopen eine wunderbare Spiralstruktur.
+    </string>
+    <string name="object_info_ngc_2903_funfact" translation_description="Fun fact about NGC 2903 shown in the info card. Translate this text.">
+    NGC 2903 hat eine der höchsten Konzentrationen von sternenbildenden "Hotspots" in einer galaktischen Zentralbalkenregion — dichte Cluster junger massiver Sterne, die durch intensive Sternenbildung erleuchtet werden. Sie wird als Maßstab für die Untersuchung von Starburst-Aktivität in Balkenspiralgalaxien verwendet.
+    </string>
+    <string name="object_info_ngc_2903_distance" translation_description="Distance to NGC 2903 shown in the info card. Translate units if appropriate for your locale.">30 Millionen Lichtjahre</string>
+    <string name="object_info_ngc_2903_size" translation_description="Physical size of NGC 2903 shown in the info card. Translate units if appropriate for your locale.">~80.000 Lichtjahre Durchmesser</string>
+
+    <!-- Meteor showers -->
+    <string name="object_info_quadrantids_description" translation_description="Description of the Quadrantids meteor shower shown in the info card. Translate this text.">
+    Die Quadrantiden sind ein ergiebiger Meteorstrom im Januar mit einem sehr scharfen, kurzen Maximum, das nur wenige Stunden andauert. Der Radiant liegt im Sternbild Boötes, in der Nähe der Position des aufgelösten Sternbildes Quadrans Muralis, nach dem der Meteorstrom benannt ist. Unter idealen Bedingungen sind bis zu 120 Meteore pro Stunde sichtbar.
+    </string>
+    <string name="object_info_quadrantids_funfact" translation_description="Fun fact about the Quadrantids meteor shower shown in the info card. Translate this text.">
+    Im Gegensatz zu den meisten großen Meteorströmen, die von Kometen stammen, ist der Ursprungskörper der Quadrantiden der Asteroid 2003 EH1 – vermutlich der inaktive Kern eines Kometen, der vor Jahrhunderten erlosch. Seine Existenz wurde erst 2003 bestätigt.
+    </string>
+
+    <string name="object_info_lyrids_description" translation_description="Description of the Lyrids meteor shower shown in the info card. Translate this text.">
+    Die Lyriden sind ein zuverlässiger Frühjahrssternschnuppenschwarm, der in der Nähe des hellen Sterns Wega in der Leier ausstrahlt. Sie erzeugen schnelle, mäßig helle Meteore, die ihren Höhepunkt bei etwa 18 pro Stunde erreichen, und erzeugen gelegentlich Feuerkugeln, die leuchtende Rauchspuren hinterlassen.
+    </string>
+    <string name="object_info_lyrids_funfact" translation_description="Fun fact about the Lyrids meteor shower shown in the info card. Translate this text.">
+    Die Lyriden sind der älteste zuverlässig dokumentierte Meteorstrom der Geschichte. Chinesische Astronomen dokumentierten einen Meteorsturm, der 687 v. Chr. "wie Regen fiel". Die Trümmer stammen vom Kometen Thatcher, der 415 Jahre benötigt, um die Sonne zu umkreisen, und das innere Sonnensystem zuletzt 1861 besuchte.
+    </string>
+
+    <string name="object_info_aquariids_description" translation_description="Description of the Eta Aquariids meteor shower shown in the info card. Translate this text.">
+    Die Eta-Aquariiden sind einer von zwei jährlichen Meteorströmen, die durch Trümmer des Halley\'schen Kometen entstehen. Mit einer Spitzenrate von bis zu 70 Meteoren pro Stunde bevorzugt der Strom die südliche Hemisphäre stark, wo der Radiant vor der Morgenröte hoch aufsteigt. Beobachter auf der Nordhalbkugel genießen immer noch eine respektable Rate von 30 oder mehr pro Stunde.
+    </string>
+    <string name="object_info_aquariids_funfact" translation_description="Fun fact about the Eta Aquariids meteor shower shown in the info card. Translate this text.">
+    Eta-Aquariiden-Meteore reisen mit 66 km/s — schnell genug, dass die ionisierte Luft, die sie erzeugen, mehrere Sekunden lang nach dem Meteor leuchten kann. Sie könnten Halleys antiken Staub vor Ihren Augen verglühen sehen, der während eines der vielen Besuche des Kometen vor Tausenden von Jahren abgeworfen wurde.
+    </string>
+
+    <string name="object_info_deltaaquariids_description" translation_description="Description of the Delta Aquariids meteor shower shown in the info card. Translate this text.">
+    Die südlichen Delta-Aquariiden erreichen ihren Höhepunkt im späten Juli und sind am besten von tropischen und südlichen Breiten aus zu sehen, wo der Radiant im Wassermann vor der Dämmerung hoch am Himmel steht. Sie erzeugen einen stetigen Strom von Meteoren mittlerer Geschwindigkeit mit bis zu 16 pro Stunde, mit wenigen hellen Feuerkugeln.
+    </string>
+    <string name="object_info_deltaaquariids_funfact" translation_description="Fun fact about the Delta Aquariids meteor shower shown in the info card. Translate this text.">
+    Der genaue Ursprungskörper der Delta-Aquariiden bleibt unsicher. Der Hauptkandidat ist der Komet 96P/Machholz, ein ungewöhnlicher kurzperiodischer Komet mit einer stark geneigten Umlaufbahn, die sich bemerkenswert nah der Sonne nähert – näher als der Planet Merkur.
+    </string>
+
+    <string name="object_info_perseids_description" translation_description="Description of the Perseids meteor shower shown in the info card. Translate this text.">
+    Die Perseiden sind der beliebteste Meteorstrom des Jahres und erreichen ihren Höhepunkt in warmen Augustnächten mit bis zu 100 Meteoren pro Stunde. Trümmer des Kometen Swift-Tuttle verglühen hoch in der Erdatmosphäre und erzeugen schnelle, helle Meteore – viele hinterlassen leuchtende Schweife – die vom Sternbild Perseus auszustrahlen scheinen.
+    </string>
+    <string name="object_info_perseids_funfact" translation_description="Fun fact about the Perseids meteor shower shown in the info card. Translate this text.">
+    Der Ursprung der Perseiden, der Komet Swift-Tuttle, hat einen Kern von 26 km Durchmesser – größer als das Objekt, das vermutlich zum Massenaussterben der Dinosaurier führte. Der Komet durchquerte zuletzt 1992 das innere Sonnensystem und wird erst 2125 zurückkehren.
+    </string>
+
+    <string name="object_info_orionids_description" translation_description="Description of the Orionids meteor shower shown in the info card. Translate this text.">
+    Die Orioniden sind der zweite Meteorstrom, der jedes Jahr vom Halleyschen Kometen erzeugt wird und von der Nähe der erhobenen Keule des Orion ausstrahlt. Mit einem Höhepunkt von etwa 25 pro Stunde sind sie für schnelle, oft helle Meteore bekannt, die häufig leuchtende Ionisationsspuren hinterlassen, die mehrere Sekunden andauern.
+    </string>
+    <string name="object_info_orionids_funfact" translation_description="Fun fact about the Orionids meteor shower shown in the info card. Translate this text.">
+    Der Halley\'sche Komet ist verantwortlich für zwei jährliche Meteorströme: die Eta-Aquariiden im Mai, wenn die Erde die Trümmerspur des Kometen auf seiner Bahn nach außen kreuzt, und die Orioniden im Oktober, wenn die Erde die Trümmerspur auf seiner Bahn nach innen kreuzt. Zusammen ermöglichen sie uns, zweimal im Jahr antiken Halley-Staub zu beobachten.
+    </string>
+
+    <string name="object_info_leonids_description" translation_description="Description of the Leonids meteor shower shown in the info card. Translate this text.">
+    Die Leoniden strahlen von der Sichel des Löwen aus und produzieren typischerweise etwa 20 Meteore pro Stunde. Sie sind berühmt für spektakuläre Stürme, die etwa alle 33 Jahre auftreten, wenn die Erde durch ein dichtes Staubfilament fliegt, das vom Kometen 55P/Tempel-Tuttle abgeworfen wurde. Diese Stürme können Tausende von Meteoren pro Stunde produzieren.
+    </string>
+    <string name="object_info_leonids_funfact" translation_description="Fun fact about the Leonids meteor shower shown in the info card. Translate this text.">
+    Der Leoniden-Sturm von 1833 produzierte schätzungsweise 100.000 Meteore pro Stunde und versetzte Beobachter in Nordamerika in Angst, die fürchteten, der Himmel stehe in Flammen. Das Ereignis löste die wissenschaftliche Erforschung von Meteorschauern aus. Vergleichbare Stürme traten 1966 und 1999 auf.
+    </string>
+
+    <string name="object_info_puppidvelids_description" translation_description="Description of the Puppid-Velids meteor shower shown in the info card. Translate this text.">
+    Die Puppiden-Veliden sind ein Komplex überlappender Nebenschauer, die von den Sternbildern Puppis und Vela in der südlichen Milchstraße ausstrahlen. Mit einem Höhepunkt von etwa 10 Meteoren pro Stunde sind sie am besten von der südlichen Hemisphäre aus zu beobachten, wo der Radiant im Dezember hoch am Himmel aufgeht.
+    </string>
+    <string name="object_info_puppidvelids_funfact" translation_description="Fun fact about the Puppid-Velids meteor shower shown in the info card. Translate this text.">
+    Die Puppiden-Veliden sollen Trümmer von mehreren verschiedenen Mutterkometen sein, nicht von einer einzigen Quelle, einschließlich des Kometen 26P/Grigg-Skjellerup. Ihr südlicher Radiant steigt für Beobachter nördlich von etwa 40°N nie über den Horizont auf, was sie zu einem Meteorstrom macht, den die meisten Menschen der Welt selten sehen.
+    </string>
+
+    <string name="object_info_geminids_description" translation_description="Description of the Geminids meteor shower shown in the info card. Translate this text.">
+    Die Geminiden gelten weithin als der beste Meteorschauer des Jahres – ergiebig (bis zu 120 pro Stunde), zuverlässig und bereits am frühen Abend aktiv, nicht erst nach Mitternacht. Sie strahlen vom Sternbild Zwillinge aus und erzeugen eine große Bandbreite an Meteoritenhelligkeiten, einschließlich lebhafter Feuerkugeln.
+    </string>
+    <string name="object_info_geminids_funfact" translation_description="Fun fact about the Geminids meteor shower shown in the info card. Translate this text.">
+    Im Gegensatz zu anderen großen Meteorströmen stammen die Geminiden von einem Asteroiden statt von einem Kometen: 3200 Phaethon, ein "Felsenkomet", dessen Umlaufbahn ihn näher an die Sonne bringt als jeden anderen benannten Asteroiden. Die extreme Hitze kann seine felsige Oberfläche aufbrechen und den Staub freisetzen, der den Meteorstrom erzeugt.
+    </string>
+
+    <string name="object_info_ursids_description" translation_description="Description of the Ursids meteor shower shown in the info card. Translate this text.">
+    Die Ursiden sind ein schwacher Meteorstrom, der von der Ursa Minor ausstrahlt, in der Nähe des Polaris, was sie für Beobachter der nördlichen Hemisphäre zirkumpolar macht – die ganze Nacht über sichtbar, ohne unterzugehen. Sie erreichen ihren Höhepunkt um die Wintersonnenwende mit etwa 10 Meteoren pro Stunde, und der Mutterkomet ist 8P/Tuttle.
+    </string>
+    <string name="object_info_ursids_funfact" translation_description="Fun fact about the Ursids meteor shower shown in the info card. Translate this text.">
+    Die Ursiden erzeugen gelegentlich unerwartete Ausbrüche, die weit über ihrer typischen Rate liegen. 1945 und erneut 2006 verzeichneten Beobachter 50 oder mehr Meteore pro Stunde – fünfmal die normale Spitzenrate. Diese Ausschläge treten auf, wenn die Erde durch ein ungewöhnlich dichtes Band von Trümmern fädelt, das während einer engen Annäherung des Kometen Tuttle abgeworfen wurde.
+    </string>
+
+    <!-- Category 5: Top priority — objects on the map that lacked info cards -->
+    <string name="object_info_m47_description" translation_description="Description of the open star cluster M47 shown in the info card. Translate this text.">
+    M47 ist ein heller, lockerer offener Sternhaufen im Puppis, mit bloßem Auge leicht sichtbar und in Ferngläsern auffallend. Etwa 50 Sterne sind über einen halben Grad des Himmels verteilt, wobei mehrere orange Riesensterne warme Farbtöne gegen die schwächeren blauweißen Mitglieder hinzufügen.
+    </string>
+    <string name="object_info_m47_funfact" translation_description="Fun fact about M47 shown in the info card. Translate this text.">
+    M47 war eines der "verlorenen" Messier-Objekte — ein Schreibfehler in Messiers ursprünglichen Koordinaten platzierte es in leeren Himmel, wodurch der Sternhaufen fast zwei Jahrhunderte lang unidentifiziert blieb. Seine wahre Identität als NGC 2422 wurde erst 1959 bestätigt, als Beobachter von Messiers Beschreibung aus rückwärts arbeiteten, um den Fehler zu finden.
+    </string>
+    <string name="object_info_m47_distance" translation_description="Distance to M47 shown in the info card. Translate units if appropriate for your locale.">1.600 Lichtjahre</string>
+    <string name="object_info_m47_size" translation_description="Physical size of M47 shown in the info card. Translate units if appropriate for your locale.">~14 Lichtjahre Durchmesser</string>
+
+    <string name="object_info_m41_description" translation_description="Description of the open star cluster M41 shown in the info card. Translate this text.">
+    M41 ist ein schöner offener Sternhaufen im Großen Hund, der sich knapp 4° südlich von Sirius befindet – dem hellsten Stern am Nachthimmel. Mit bloßem Auge von dunklen Beobachtungsorten aus sichtbar und spektakulär in Ferngläsern, enthält er etwa 100 Sterne, die sich über ein großes Feld verteilen, mit mehreren auffälligen orangefarbenen Riesensternen unter schwächeren blauweißen Mitgliedern.
+    </string>
+    <string name="object_info_m41_funfact" translation_description="Fun fact about M41 shown in the info card. Translate this text.">
+    Aristoteles könnte M41 um 325 v. Chr. beobachtet haben – möglicherweise die früheste aufgezeichnete Beobachtung eines Deep-Sky-Objekts. Er beschrieb einen "nebligen Fleck" südlich von Sirius, der M41\'s Position entspricht. Falls die Identifizierung korrekt ist, wurde M41 fast zweitausend Jahre vor der Erfindung des Teleskops diskutiert.
+    </string>
+    <string name="object_info_m41_distance" translation_description="Distance to M41 shown in the info card. Translate units if appropriate for your locale.">2.300 Lichtjahre</string>
+    <string name="object_info_m41_size" translation_description="Physical size of M41 shown in the info card. Translate units if appropriate for your locale.">~25 Lichtjahre Durchmesser</string>
+
+    <string name="object_info_m24_description" translation_description="Description of the Sagittarius Star Cloud (M24) shown in the info card. Translate this text.">
+    M24 ist die Sagittarius Star Cloud – weder ein Sternhaufen noch ein Nebel, sondern ein Fenster durch eine Lücke im Staub der Milchstraße, das ein funkelndes Sternfeld von 2° Durchmesser offenbart. Es ist die reichste Region, die überall am Himmel durch Ferngläser sichtbar ist, gefüllt mit Tausenden von Sternen, die gleichzeitig viele verschiedene Entfernungen überspannen.
+    </string>
+    <string name="object_info_m24_funfact" translation_description="Fun fact about M24 shown in the info card. Translate this text.">
+    Die Sterne in M24 befinden sich nicht in der gleichen Entfernung — die Sternwolke stellt einen Querschnitt der Scheibe der Galaxie dar, die durch einen natürlichen Tunnel im interstellaren Staub sichtbar wird und Entfernungen von 10.000 bis 16.000 Lichtjahren umfasst. In der Wolke eingebettet sind dunkle Nebel und winzige Sternhaufen, die als dunkle Flecken vor dem glänzenden Sternenhintergrund erscheinen.
+    </string>
+    <string name="object_info_m24_distance" translation_description="Distance range to M24 shown in the info card. Translate units if appropriate for your locale.">~10.000–16.000 Lichtjahre (Bereich)</string>
+    <string name="object_info_m24_size" translation_description="Physical size of M24 shown in the info card. Translate units if appropriate for your locale.">~600 Lichtjahre tiefes Fenster</string>
+
+    <string name="object_info_m25_description" translation_description="Description of the open star cluster M25 shown in the info card. Translate this text.">
+    M25 ist ein heller, mit bloßem Auge sichtbarer offener Sternhaufen im Schützen, eingebettet in die dichten Sternfelder der sommerlichen Milchstraße. Etwa 600 Sterne sind über ein Feld von einem halben Grad verteilt und machen ihn zu einem reichhaltigen Objekt für Ferngläser. Seine hellsten Mitglieder umfassen mehrere blauweise Überriesen und einen der am meisten untersuchten veränderlichen Cepheiden-Sterne am Himmel.
+    </string>
+    <string name="object_info_m25_funfact" translation_description="Fun fact about M25 shown in the info card. Translate this text.">
+    M25 enthält U Sagittarii, einen klassischen Cepheiden-Veränderlichen, der über einen Zeitraum von 6,7 Tagen heller und dunkler wird. Cepheiden sind wichtige "Standardkerzen" zur Messung kosmischer Entfernungen, da ihre Pulsationsperiode direkt ihre wahre Leuchtkraft offenbart – Astronomen nutzten sie, um zunächst die Größe der Milchstraße und dann die Skala des beobachtbaren Universums zu bestimmen.
+    </string>
+    <string name="object_info_m25_distance" translation_description="Distance to M25 shown in the info card. Translate units if appropriate for your locale.">2.000 Lichtjahre</string>
+    <string name="object_info_m25_size" translation_description="Physical size of M25 shown in the info card. Translate units if appropriate for your locale.">~19 Lichtjahre Durchmesser</string>
+
+    <string name="object_info_m39_description" translation_description="Description of the open star cluster M39 shown in the info card. Translate this text.">
+    M39 ist ein großer, zerstreuter offener Sternhaufen im Schwan, mit bloßem Auge in der Nähe von Deneb in der reichen Sommermilchstraße sichtbar. Seine etwa 30 hellen Sterne sind locker über einen Grad des Himmels verteilt und werden am besten bei niedriger Vergrößerung in Ferngläsern oder einem Weitwinkelteleskop beobachtet – höhere Vergrößerung löst ihn einfach in ein spärliches, unauffälliges Sternfeld auf.
+    </string>
+    <string name="object_info_m39_funfact" translation_description="Fun fact about M39 shown in the info card. Translate this text.">
+    Mit etwa 825 Lichtjahren ist M39 einer der nächsten offenen Sternhaufen der Erde, und mit etwa 240 Millionen Jahren ist er einer der älteren mit bloßem Auge sichtbaren Sternhaufen – alt genug, dass seine massereichsten Sterne bereits ihr Leben beendet haben. Messier verzeichnete ihn 1764 und er gehörte zu den frühesten Ergänzungen seines Katalogs.
+    </string>
+    <string name="object_info_m39_distance" translation_description="Distance to M39 shown in the info card. Translate units if appropriate for your locale.">825 Lichtjahre</string>
+    <string name="object_info_m39_size" translation_description="Physical size of M39 shown in the info card. Translate units if appropriate for your locale.">~8 Lichtjahre Durchmesser</string>
+
+    <!-- Category 5: Special cases -->
+    <string name="object_info_m63_description" translation_description="Description of the Sunflower Galaxy (M63) shown in the info card. Translate this text.">
+    Die Sonnenblumengalaxie ist eine leuchtende Spiralgalaxie in Canes Venatici, deren eng gewundene Arme, durchsetzt mit sternenbildenden Regionen, ihr in Langzeitaufnahmen eine charakteristische blütenähnliche Textur verleihen. Mit einer Helligkeit von 8,6 mag ist sie von dunklen Orten aus mit Ferngläsern sichtbar und zeigt ihre längliche Form und ihren hellen Kern leicht in kleinen Teleskopen.
+    </string>
+    <string name="object_info_m63_funfact" translation_description="Fun fact about the Sunflower Galaxy shown in the info card. Translate this text.">
+    M63 wurde 1779 von Pierre Méchain entdeckt – eines von wenigen Messier-Objekten, die von Méchain statt von Messier selbst gefunden wurden. Sie ist ein Mitglied der M51-Gruppe, physikalisch mit der Whirlpool-Galaxie (M51) verbunden und zeigt Anzeichen einer früheren Wechselwirkung: ein schwacher, alter Sternenstrom umhüllt ihre äußere Scheibe.
+    </string>
+    <string name="object_info_m63_distance" translation_description="Distance to the Sunflower Galaxy shown in the info card. Translate units if appropriate for your locale.">29 Millionen Lichtjahre</string>
+    <string name="object_info_m63_size" translation_description="Physical size of the Sunflower Galaxy shown in the info card. Translate units if appropriate for your locale.">~100.000 Lichtjahre Durchmesser</string>
+
+    <string name="object_info_ngc_6543_description" translation_description="Description of the Cat's Eye Nebula (NGC 6543) shown in the info card. Translate this text.">
+    Der Katzenauge-Nebel ist einer der strukturell komplexesten bekannten Planetarischen Nebel — das ausgestoßene Gas eines sterbenden Sterns, das in konzentrische Schalen, Jets und helle Knoten geformt ist, die auf Hubble-Bildern sichtbar sind. In kleinen Teleskopen erscheint er als eine lebendige blaugrüne Scheibe im Draco, eines der farbigsten Objekte des Herbsthimmels.
+    </string>
+    <string name="object_info_ngc_6543_funfact" translation_description="Fun fact about the Cat's Eye Nebula shown in the info card. Translate this text.">
+    1864 richtete der Astronom William Huggins ein Spektroskop auf den Katzenauge-Nebel und stellte fest, dass er aus leuchtendem Gas bestand und nicht aus unaufgelösten Sternen – das erste Mal, dass die Natur eines Planetarischen Nebels bestätigt wurde. Diese Entdeckung begründete das Feld der Nebel-Spektroskopie und widerlegte die damals vorherrschende Ansicht, dass alle Nebel entfernte Sternhaufen seien.
+    </string>
+    <string name="object_info_ngc_6543_distance" translation_description="Distance to the Cat's Eye Nebula shown in the info card. Translate units if appropriate for your locale.">~3.300 Lichtjahre</string>
+    <string name="object_info_ngc_6543_size" translation_description="Physical size of the Cat's Eye Nebula shown in the info card. Translate units if appropriate for your locale.">~0,5 Lichtjahre Durchmesser</string>
+
+    <string name="object_info_m76_description" translation_description="Description of the Little Dumbbell Nebula (M76) shown in the info card. Translate this text.">
+    Der Kleine Hantel ist ein Planetarischer Nebel im Perseus mit einer charakteristischen Achterfigur – ein kleinerer Verwandter von M27, dem Hantelnebel in der Füchsin. Obwohl der lichtschwächste Eintrag im Messier-Katalog, belohnt er geduldige Beobachtung in kleinen Teleskopen und zeigt eine wunderbare Struktur in größeren Instrumenten, mit zwei helleren Lappen, die eine schwächere Taille flankieren.
+    </string>
+    <string name="object_info_m76_funfact" translation_description="Fun fact about the Little Dumbbell Nebula shown in the info card. Translate this text.">
+    M76 wurde ursprünglich als zwei separate Objekte katalogisiert — NGC 650 und NGC 651 — weil frühe Beobachter die beiden hellen Lappen unabhängig voneinander beschrieben. Es ist ein bipolarer Planetarischer Nebel, der entstand, als der Ausfluss eines sterbenden Sterns an dem Äquator eingeklemmt wurde und zwei sich ausdehnende Lappen entlang der Polarachse bildete, während Gas auch an der Taille nach außen quillt.
+    </string>
+    <string name="object_info_m76_distance" translation_description="Distance to the Little Dumbbell Nebula shown in the info card. Translate units if appropriate for your locale.">~2.500 Lichtjahre</string>
+    <string name="object_info_m76_size" translation_description="Physical size of the Little Dumbbell Nebula shown in the info card. Translate units if appropriate for your locale.">~2 Lichtjahre Durchmesser</string>
+
+    <string name="object_info_v838_mon_description" translation_description="Description of V838 Monocerotis shown in the info card. Translate this text.">
+    V838 Monocerotis ist ein ungewöhnlicher veränderlicher Stern im Sternbild Einhorn, der 2002 einen spektakulären Ausbruch erlebte und kurzzeitig einer der hellsten Sterne der Milchstraße wurde. Obwohl er heute für visuelle Beobachter viel zu schwach ist, erzeugte seine expandierende Lichtwelle – eine Wellenfront aus Licht, die alte Staubhüllen illuminiert – einige der dramatischsten Bilder des Hubble-Weltraumteleskops, die je aufgenommen wurden.
+    </string>
+    <string name="object_info_v838_mon_funfact" translation_description="Fun fact about V838 Monocerotis shown in the info card. Translate this text.">
+    Die Natur des Ausbruchs von V838 Mon bleibt umstritten. Die führende Theorie ist eine Sternenverschmelzung — zwei Sterne, die ineinander spiralen und kollidieren — eher als eine klassische Nova oder Überriesen-Eruption. Falls bestätigt, war es der erste Echtzeit-Einblick in eine "leuchtende rote Nova", eine seltene Explosionsklasse, die durch Sternenverschmelzungen verursacht wird. Ähnliche Ereignisse wurden seitdem in anderen Galaxien gefunden.
+    </string>
+    <string name="object_info_v838_mon_distance" translation_description="Distance to V838 Monocerotis shown in the info card. Translate units if appropriate for your locale.">~20.000 Lichtjahre</string>
+    <string name="object_info_v838_mon_size" translation_description="Extent of the V838 Monocerotis light echo shown in the info card. Translate units if appropriate for your locale.">~3 Lichtjahre (Lichtechodurchmesser)</string>
+
+    <string name="object_info_hdf_description" translation_description="Description of the Hubble Deep Field shown in the info card. Translate this text.">
+    Das Hubble Deep Field ist ein winziger 2,6-Bogenminuten-Ausschnitt des scheinbar leeren Himmels im Großen Bären, fotografiert vom Hubble-Weltraumteleskop über 10 aufeinanderfolgende Tage im Dezember 1995. Was wie leerer Raum aussah, enthüllte etwa 3.000 Galaxien – die sich über Milliarden von Jahren der kosmischen Geschichte erstrecken – und veränderte grundlegend unser Verständnis des Universums.
+    </string>
+    <string name="object_info_hdf_funfact" translation_description="Fun fact about the Hubble Deep Field shown in the info card. Translate this text.">
+    Das Himmelsfeld wurde gezielt ausgewählt, weil es frei von hellen Sternen und nahegelegenen Galaxien war. Doch das resultierende Bild war mit etwa 3.000 Galaxien gefüllt, was zu der Schätzung führte, dass der gesamte Himmel etwa 200 Milliarden Galaxien enthält – fast alle unsichtbar für jedes Teleskop vor Hubble.
+    </string>
+    <string name="object_info_hdf_distance" translation_description="Distance to the most distant galaxies in the Hubble Deep Field shown in the info card. Translate units if appropriate for your locale.">~13 Milliarden Lichtjahre (am weitesten entfernt)</string>
+    <string name="object_info_hdf_size" translation_description="Angular size of the Hubble Deep Field shown in the info card.">2,6 Bogenminuten (Sichtfeld)</string>
+
+    <string name="object_info_m43_description" translation_description="Description of De Mairan's Nebula (M43) shown in the info card. Translate this text.">
+    De Mairans Nebel ist ein abgelöster Teil des großen Orion-Nebel-Komplexes, getrennt von M42 durch eine dunkle Staubspur, aber Teil derselben riesigen Molekülwolke. Benannt nach dem französischen Astronomen Jean-Jacques Dortous de Mairan, der ihn 1731 entdeckte, ist es ein Emissionsnebel, der durch den heißen jungen Stern NU Orionis ionisiert wird, der in seinem Zentrum eingebettet ist.
+    </string>
+    <string name="object_info_m43_funfact" translation_description="Fun fact about De Mairan's Nebula shown in the info card. Translate this text.">
+    Obwohl M43 als separates Objekt von M42 erscheint, ist die dunkle Linie, die sie trennt, eine Staubwolke im Vordergrund – Teil der Orion-Molekülwolke – die einfach unsere Sicht auf die physikalische Verbindung zwischen den beiden leuchtenden Regionen blockiert. Zusammen sind sie nur die beleuchtete innere Kante einer enormen dunklen Wolke, die sich über große Teile des Orion erstreckt.
+    </string>
+    <string name="object_info_m43_distance" translation_description="Distance to De Mairan's Nebula shown in the info card. Translate units if appropriate for your locale.">1.350 Lichtjahre</string>
+    <string name="object_info_m43_size" translation_description="Physical size of De Mairan's Nebula shown in the info card. Translate units if appropriate for your locale.">~8 Lichtjahre Durchmesser</string>
+
+    <string name="object_info_m40_description" translation_description="Description of M40 (Winnecke 4) shown in the info card. Translate this text.">
+    M40 ist einzigartig im Messier-Katalog – es ist weder ein Nebel, noch ein Sternhaufen oder eine Galaxie, sondern ein weites Doppelsternsystem. Messier katalogisierte es 1764, während er nach einem von Johann Hevelius in der Großen Bärin gemeldeten Nebel suchte, fand aber nur dieses Sternenpaar und verzeichnete es, damit zukünftige Beobachter es nicht mit etwas Interessanterem verwechseln würden.
+    </string>
+    <string name="object_info_m40_funfact" translation_description="Fun fact about M40 shown in the info card. Translate this text.">
+    Die beiden Sterne von M40 – bekannt als Winnecke 4 – sind nicht gravitativ gebunden; sie liegen in unterschiedlichen Entfernungen und sind einfach eine zufällige Ausrichtung. Messier selbst vermerkte, dass es "nichts Bemerkenswertes" gab, nahm es aber auf, um zu zeigen, dass dieser Nebel nicht derselbe ist wie die, die ich untersucht habe. Seine methodische Gewohnheit, negative Befunde zu dokumentieren, gab zukünftigen Beobachtern eine definitive Referenz.
+    </string>
+    <string name="object_info_m40_distance" translation_description="Distance to M40 shown in the info card. Translate units if appropriate for your locale.">~500 Lichtjahre</string>
+    <string name="object_info_m40_size" translation_description="Angular separation of the M40 double star shown in the info card.">~50 Bogensekunden (Separation)</string>
+
+    <!-- Category 5: Second tier -->
+    <string name="object_info_m34_description" translation_description="Description of the open star cluster M34 shown in the info card. Translate this text.">
+    M34 ist ein heller, zerstreuter offener Sternhaufen im Perseus, der mit Ferngläsern leicht als reiche Ansammlung von Sternen gegen die winterliche Milchstraße zu sehen ist. Seine etwa 400 Sterne bedecken eine Fläche, die fast so breit wie der Vollmond ist, mit einer Handvoll breiter Doppelsterne, die für sorgfältige Beobachter mit Ferngläsern sichtbar sind.
+    </string>
+    <string name="object_info_m34_funfact" translation_description="Fun fact about M34 shown in the info card. Translate this text.">
+    Mit etwa 200 Millionen Jahren ist M34 mittleren Alters — jung genug, dass seine heißen blauen Sterne noch leuchten, alt genug, dass die massereichsten bereits als Supernovae explodiert sind. Mit 1.500 Lichtjahren ist er einer der näheren Messier-Haufen und bleibt auch von lichtverschmutztem Himmel aus ein schönes Objekt.
+    </string>
+    <string name="object_info_m34_distance" translation_description="Distance to M34 shown in the info card. Translate units if appropriate for your locale.">1.500 Lichtjahre</string>
+    <string name="object_info_m34_size" translation_description="Physical size of M34 shown in the info card. Translate units if appropriate for your locale.">~15 Lichtjahre Durchmesser</string>
+
+    <string name="object_info_m23_description" translation_description="Description of the open star cluster M23 shown in the info card. Translate this text.">
+    M23 ist ein reichhaltiger offener Sternhaufen im Schützen, eingebettet in die dichten Sternfelder der sommerlichen Milchstraße. Etwa 150 Sterne sind über ein halbgradiges Feld in Ferngläsern verteilt, was ihn zu einem großzügigen Fernglasobjekt in derselben Himmelsgegend wie viele andere Messier-Objekte macht.
+    </string>
+    <string name="object_info_m23_funfact" translation_description="Fun fact about M23 shown in the info card. Translate this text.">
+    M23 wird auf etwa 300 Millionen Jahre geschätzt – mittleres Alter, wobei die meisten seiner massiven Sterne bereits die Hauptreihe verlassen haben. Messier entdeckte es 1764 während einer seiner produktiven Beobachtungskampagnen, bei denen er die Sagittarius-Sternfelder durchsuchte.
+    </string>
+    <string name="object_info_m23_distance" translation_description="Distance to M23 shown in the info card. Translate units if appropriate for your locale.">2.150 Lichtjahre</string>
+    <string name="object_info_m23_size" translation_description="Physical size of M23 shown in the info card. Translate units if appropriate for your locale.">~17 Lichtjahre Durchmesser</string>
+
+    <string name="object_info_m37_description" translation_description="Description of the open star cluster M37 shown in the info card. Translate this text.">
+    M37 ist der reichste und hellste der drei Messier-Offenen Sternhaufen im Auriga und enthält etwa 500 Sterne in einem kompakten Feld. Es ist ein spektakuläres Objekt für Ferngläser und kleine Teleskope, mit einer Streuung von orangefarbenen Riesensternen, die einen Farbkontrast zum blauweißen Schwarm bieten.
+    </string>
+    <string name="object_info_m37_funfact" translation_description="Fun fact about M37 shown in the info card. Translate this text.">
+    M37 enthält etwa ein Dutzend rote Riesensterne – eine ungewöhnlich hohe Anzahl, die sein relativ fortgeschrittenes Alter von etwa 300 Millionen Jahren widerspiegelt. Obwohl es etwa 4.500 Lichtjahre entfernt liegt – das am weitesten entfernte der drei Messier-Cluster im Auriga – zählt es dennoch zu den schönsten offenen Sternhaufen des Himmels.
+    </string>
+    <string name="object_info_m37_distance" translation_description="Distance to M37 shown in the info card. Translate units if appropriate for your locale.">4.500 Lichtjahre</string>
+    <string name="object_info_m37_size" translation_description="Physical size of M37 shown in the info card. Translate units if appropriate for your locale.">~31 Lichtjahre Durchmesser</string>
+
+    <string name="object_info_m48_description" translation_description="Description of the open star cluster M48 shown in the info card. Translate this text.">
+    M48 ist ein großer, heller offener Sternhaufen in der Hydra, der sich über fast ein Grad des Himmels erstreckt und von dunklen Orten aus mit bloßem Auge sichtbar ist. Seine etwa 80 Sterne sind locker über ein großes Feld verteilt, das sich am besten für Ferngläser eignet, mit einer Streuung von orangefarbenen und gelben Riesensternen unter den helleren blauweißen Mitgliedern.
+    </string>
+    <string name="object_info_m48_funfact" translation_description="Fun fact about M48 shown in the info card. Translate this text.">
+    M48 war fast zwei Jahrhunderte lang eines der "verlorenen" Messier-Objekte, weil Messiers aufgezeichnete Position etwa 5° von der tatsächlichen Position abwich. Es blieb unidentifiziert, bis es 1959 mit NGC 2548 abgeglichen wurde und sich herausstellte, dass ein einfacher Transkriptionsfehler es die ganze Zeit in den leeren Himmel platziert hatte.
+    </string>
+    <string name="object_info_m48_distance" translation_description="Distance to M48 shown in the info card. Translate units if appropriate for your locale.">1.500 Lichtjahre</string>
+    <string name="object_info_m48_size" translation_description="Physical size of M48 shown in the info card. Translate units if appropriate for your locale.">~23 Lichtjahre Durchmesser</string>
+
+    <string name="object_info_m21_description" translation_description="Description of the open star cluster M21 shown in the info card. Translate this text.">
+    M21 ist ein kompakter offener Sternhaufen im Schützen, der sich knapp eine halbe Grad nördlich des Trifid-Nebels (M20) befindet und die beiden zu einer beeindruckenden Fernglas-Paarung macht. Der Haufen enthält etwa 57 Sterne, die in einem kleineren Feld konzentriert sind als viele Messier-Haufen, mit mehreren hellen blauweißen Sternen als dominante Mitglieder.
+    </string>
+    <string name="object_info_m21_funfact" translation_description="Fun fact about M21 shown in the info card. Translate this text.">
+    Obwohl physikalisch nicht miteinander verbunden, bilden M21 und M20 (der Trifid-Nebel) eines der attraktivsten Fernglas-Paare am Sommerhimmel – einen hellen Sternhaufen neben einem farbenfrohen dreilappigen Nebel. M21 ist etwa 4.250 Lichtjahre entfernt, während M20 mit etwa 4.100 Lichtjahren etwas näher ist.
+    </string>
+    <string name="object_info_m21_distance" translation_description="Distance to M21 shown in the info card. Translate units if appropriate for your locale.">4.250 Lichtjahre</string>
+    <string name="object_info_m21_size" translation_description="Physical size of M21 shown in the info card. Translate units if appropriate for your locale.">~16 Lichtjahre Durchmesser</string>
+
+    <string name="object_info_m50_description" translation_description="Description of the open star cluster M50 shown in the info card. Translate this text.">
+    M50 ist ein heller offener Sternhaufen im Einhorn, der etwa 200 Sterne enthält, die in einem auffälligen kompakten Feld für Ferngläser und kleine Teleskope gepackt sind. Er lässt sich leicht auf einer Linie zwischen Sirius und Prokyon finden und enthält einen bemerkenswerten roten Riesen – ein warmes orangefarbenes Leuchtfeuer, das unter den blauweißen Sternen des Haufens lebhaft hervortritt.
+    </string>
+    <string name="object_info_m50_funfact" translation_description="Fun fact about M50 shown in the info card. Translate this text.">
+    M50 wird auf etwa 78 Millionen Jahre geschätzt – einer der jüngeren Messier-Offenen Sternhaufen – was bedeutet, dass seine heißen blauen und weißen Sterne sich noch immer entwickeln, wobei einige der massereicheren Mitglieder kürzlich zu Riesen aufgeschwollen sind. Dies ist typisch für einen Sternhaufen in seinem frühen mittleren Alter.
+    </string>
+    <string name="object_info_m50_distance" translation_description="Distance to M50 shown in the info card. Translate units if appropriate for your locale.">3.200 Lichtjahre</string>
+    <string name="object_info_m50_size" translation_description="Physical size of M50 shown in the info card. Translate units if appropriate for your locale.">~15 Lichtjahre Durchmesser</string>
+
+    <string name="object_info_m36_description" translation_description="Description of the open star cluster M36 shown in the info card. Translate this text.">
+    M36 ist der kleinste und jüngste der drei offenen Sternhaufen, die Messier im Sternbild Auriga katalogisierte. Seine etwa 60 Sterne sind in einem engen, glitzernden Feld zusammengefasst, das in Ferngläsern sichtbar ist und in einem kleinen Teleskop gut in einzelne Sterne aufgelöst wird, dominiert von heißen blauweißen Sternen.
+    </string>
+    <string name="object_info_m36_funfact" translation_description="Fun fact about M36 shown in the info card. Translate this text.">
+    M36 wird auf ein Alter von etwa 25 Millionen Jahren geschätzt – einer der jüngeren Messier-Haufen – was bedeutet, dass massive blauweißliche Sterne noch dominieren und noch keine roten Riesen erschienen sind. Er teilt sich die Auriga-Sternfelder mit M37 und M38, und alle drei Haufen passen in das gleiche Weitwinkel-Fernglas-Sichtfeld.
+    </string>
+    <string name="object_info_m36_distance" translation_description="Distance to M36 shown in the info card. Translate units if appropriate for your locale.">4.100 Lichtjahre</string>
+    <string name="object_info_m36_size" translation_description="Physical size of M36 shown in the info card. Translate units if appropriate for your locale.">~14 Lichtjahre Durchmesser</string>
+
+    <string name="object_info_m46_description" translation_description="Description of the open star cluster M46 shown in the info card. Translate this text.">
+    M46 ist ein reichhaltiger, dichter offener Sternhaufen im Sternbild Puppis mit etwa 500 Sternen, die in einem weiten Feld gepackt sind. Er ist beeindruckend in Ferngläsern und wunderschön in kleinen Teleskopen. Ein bemerkenswerter Bonus schwebt an seinem nördlichen Rand: NGC 2438, ein kleiner Planetarischer Nebel, der in den Sternhaufen eingebettet zu sein scheint – eine dramatische Sichtlinienkoinzidenz.
+    </string>
+    <string name="object_info_m46_funfact" translation_description="Fun fact about M46 shown in the info card. Translate this text.">
+    Der Planetarische Nebel NGC 2438 scheint sich in M46 zu befinden, ist aber tatsächlich ein unabhängiges Objekt im Vordergrund in einer ganz anderen Entfernung – etwa 1.400 Lichtjahre gegenüber M46\'s 5.400. Der Zufall, dass sich die Hülle eines sterbenden Sterns auf einen jungen Sternhaufen überlagert, macht dies zu einem der fotogensten Felder im Katalog.
+    </string>
+    <string name="object_info_m46_distance" translation_description="Distance to M46 shown in the info card. Translate units if appropriate for your locale.">5.400 Lichtjahre</string>
+    <string name="object_info_m46_size" translation_description="Physical size of M46 shown in the info card. Translate units if appropriate for your locale.">~42 Lichtjahre Durchmesser</string>
+
+    <string name="object_info_m93_description" translation_description="Description of the open star cluster M93 shown in the info card. Translate this text.">
+    M93 ist ein heller, kompakter offener Sternhaufen im Puppis, der in der reichen südlichen Milchstraße liegt und leicht mit Ferngläsern zu finden ist. Seine etwa 80 Sterne sind in einer auffälligen Keil- oder Schmetterlingsform angeordnet und enthalten mehrere heiße blaue Überriesen, was ihn zu einem der attraktiveren offenen Sternhaufen am Winterhimmel macht.
+    </string>
+    <string name="object_info_m93_funfact" translation_description="Fun fact about M93 shown in the info card. Translate this text.">
+    M93 ist relativ jung — etwa 100 Millionen Jahre alt — mit dominanten blauen und blauweißen Sternen, die sich noch nicht zu Riesen entwickelt haben. Es ist einer der südlicheren Messier-Haufen, und von Breitengraden nördlich von etwa 50°N steigt er nie sehr hoch über den Horizont auf.
+    </string>
+    <string name="object_info_m93_distance" translation_description="Distance to M93 shown in the info card. Translate units if appropriate for your locale.">3.600 Lichtjahre</string>
+    <string name="object_info_m93_size" translation_description="Physical size of M93 shown in the info card. Translate units if appropriate for your locale.">~23 Lichtjahre Durchmesser</string>
+
+    <string name="object_info_m38_description" translation_description="Description of the open star cluster M38 shown in the info card. Translate this text.">
+    M38 ist der größte und am weitesten verbreitete der drei offenen Sternhaufen, die Messier im Sternbild Auriga katalogisierte. Seine etwa 100 Sterne sind in einem Muster angeordnet, das einige Beobachter einem Kreuz oder dem griechischen Buchstaben Pi ähneln, sichtbar in Ferngläsern und gut aufgelöst in einem kleinen Teleskop. Der kleinere Sternhaufen NGC 1907 sitzt in der Nähe südlich davon.
+    </string>
+    <string name="object_info_m38_funfact" translation_description="Fun fact about M38 shown in the info card. Translate this text.">
+    M38 ist der älteste der drei Messier-Sternhaufen im Auriga mit etwa 220 Millionen Jahren, alt genug, dass einige seiner massiven Sterne sich zu gelben und orangefarbenen Riesen entwickelt haben. Der nahegelegene Sternhaufen NGC 1907 passt in das gleiche Feld bei niedriger Vergrößerung, was sie zu einem schönen Fernglas-Paar macht – wie M46 und M47 in Puppis.
+    </string>
+    <string name="object_info_m38_distance" translation_description="Distance to M38 shown in the info card. Translate units if appropriate for your locale.">4.200 Lichtjahre</string>
+    <string name="object_info_m38_size" translation_description="Physical size of M38 shown in the info card. Translate units if appropriate for your locale.">~26 Lichtjahre Durchmesser</string>
+
+    <string name="object_info_m29_description" translation_description="Description of the open star cluster M29 shown in the info card. Translate this text.">
+    M29 ist ein kleiner, junger offener Sternhaufen im Schwan, gelegen in einer der am stärksten staubverdunkelten Regionen der Milchstraße. Fünf brillante blaue Überriesen dominieren den Haufen, sichtbar in Ferngläsern als enge Asterismus aus heißen, leuchtenden Sternen. Ohne den dichten Vordergrundstaub wäre M29 einer der spektakulärsten offenen Sternhaufen des Himmels.
+    </string>
+    <string name="object_info_m29_funfact" translation_description="Fun fact about M29 shown in the info card. Translate this text.">
+    M29 wird auf etwa 10 Millionen Jahre geschätzt – ein stellarer Säugling – und befindet sich in der Cygnus-OB1-Assoziation, einer ausgedehnten Gruppe massiver junger Sterne. Dichter interstellarer Staub verdunkelt den Sternhaufen um etwa 3 Größenklassen; ohne diese Verdunkelung würden die Sterne von M29 mehrmals heller leuchten, als sie tatsächlich erscheinen.
+    </string>
+    <string name="object_info_m29_distance" translation_description="Distance to M29 shown in the info card. Translate units if appropriate for your locale.">4.000 Lichtjahre</string>
+    <string name="object_info_m29_size" translation_description="Physical size of M29 shown in the info card. Translate units if appropriate for your locale.">~8 Lichtjahre Durchmesser</string>
+
+    <string name="object_info_m62_description" translation_description="Description of the globular cluster M62 shown in the info card. Translate this text.">
+    M62 ist ein reichhaltiger Kugelsternhaufen im Schlangenträger – einer der nächsten Kugelsternhaufen zum galaktischen Zentrum und bemerkenswert asymmetrisch, mit Sternen, die auf der Südseite dichter gepackt sind. Mit einer Helligkeit von 6,6 ist er ein schönes Objekt für Ferngläser, obwohl seine niedrige Deklination ihn für nördliche Beobachter zu einem Ziel mit kurzer Beobachtungszeit macht.
+    </string>
+    <string name="object_info_m62_funfact" translation_description="Fun fact about M62 shown in the info card. Translate this text.">
+    M62\'s exzentrische Kern ist eine direkte Folge seiner Nähe zum galaktischen Zentrum — starke Gezeitenkräfte aus dem zentralen Bulge verzerren den Sternhaufen und ziehen Sterne zur galaktischen Ebene. Es ist auch einer der am weitesten entwickelten Kugelsternhaufen, die bekannt sind, mit Anzeichen eines Kernkollapses und einer ungewöhnlich hohen Dichte von Millisekundenpulsaren.
+    </string>
+    <string name="object_info_m62_distance" translation_description="Distance to M62 shown in the info card. Translate units if appropriate for your locale.">22.500 Lichtjahre</string>
+    <string name="object_info_m62_size" translation_description="Physical size of M62 shown in the info card. Translate units if appropriate for your locale.">~92 Lichtjahre Durchmesser</string>
+
+    <string name="object_info_m28_description" translation_description="Description of the globular cluster M28 shown in the info card. Translate this text.">
+    M28 ist ein kompakter Kugelsternhaufen im Schützen, gelegen in der Nähe des hellen Sterns Lambda Sagittarii in den reichen Sommersternenfeldern. Mit einer Helligkeit von 6,9 ist er ein lohnendes Fernglas-Ziel und ist in kleinen Teleskopen gut aufgelöst, wobei ein heller verdichteter Kern von einem mäßigen Sternenhalo umgeben ist.
+    </string>
+    <string name="object_info_m28_funfact" translation_description="Fun fact about M28 shown in the info card. Translate this text.">
+    1987 wurde M28 der erste Kugelsternhaufen, in dem ein Millisekundenpulsar entdeckt wurde. Millisekundenpulsare – Neutronensterne, die sich hundertfach pro Sekunde drehen – entstehen, wenn ein Neutronenstern Materie von einem Begleitstern aufsammelt, und kommen in Kugelsternhaufen mit einer viel höheren Rate vor als in der allgemeinen Galaxie, da ihre dichten stellaren Umgebungen viel mehr enge Doppelsternbegegnungen erzeugen.
+    </string>
+    <string name="object_info_m28_distance" translation_description="Distance to M28 shown in the info card. Translate units if appropriate for your locale.">18.300 Lichtjahre</string>
+    <string name="object_info_m28_size" translation_description="Physical size of M28 shown in the info card. Translate units if appropriate for your locale.">~60 Lichtjahre Durchmesser</string>
+
+    <string name="object_info_m52_description" translation_description="Description of the open star cluster M52 shown in the info card. Translate this text.">
+    M52 ist ein reichhaltiger offener Sternhaufen in der Kassiopeia mit etwa 200 Sternen, die in einer kompakten Region der nördlichen Milchstraße gepackt sind. Es ist ein schöner Fernglas-Sternhaufen und zeigt ein wunderschönes, dichtes Sternfeld in kleinen Teleskopen, wobei ein auffallend hellerer orangefarbener Stern in der Nähe der südlichen Kante des Haufens hervorragt.
+    </string>
+    <string name="object_info_m52_funfact" translation_description="Fun fact about M52 shown in the info card. Translate this text.">
+    M52\'s Entfernung ist ungewöhnlich unsicher — Schätzungen reichen von 3.000 bis 7.000 Lichtjahren — da schwerer interstellarer Staub entlang dieser Sichtlinie seine wahre Leuchtkraft schwer zu bestimmen macht. Messier entdeckte es 1774, in derselben Nacht, in der er einen Kometen verfolgte, der ihn dazu führte, mehrere andere Katalogeinträge aufzuzeichnen.
+    </string>
+    <string name="object_info_m52_distance" translation_description="Distance to M52 shown in the info card. Translate units if appropriate for your locale.">~5.000 Lichtjahre</string>
+    <string name="object_info_m52_size" translation_description="Physical size of M52 shown in the info card. Translate units if appropriate for your locale.">~25 Lichtjahre Durchmesser</string>
+
+    <string name="object_info_m67_description" translation_description="Description of the open star cluster M67 shown in the info card. Translate this text.">
+    M67 ist ein schöner offener Sternhaufen im Krebs und einer der ältesten gut erforschten offenen Sternhaufen am Himmel. Mit einem Alter von etwa 3,2–3,5 Milliarden Jahren enthält er viele Sterne, die unserer eigenen Sonne in Masse und Alter ähneln – was ihn zu einem natürlichen Laboratorium für die Untersuchung der Entwicklung sonnenähnlicher Sterne über kosmische Zeiträume macht.
+    </string>
+    <string name="object_info_m67_funfact" translation_description="Fun fact about M67 shown in the info card. Translate this text.">
+    Mehrere Sterne in M67 ähneln der Sonne in Temperatur, Masse und Alter — eine seltene Kombination, die Forscher zu der Frage führte, ob die Sonne selbst in einem Sternhaufen wie M67 entstanden ist. Da Sterne in Haufen geboren werden, die sich allmählich zerstreuen, stammt die Sonne fast sicher aus einer heute zerstreuten Geschwistergruppe vor Milliarden von Jahren — obwohl welcher Haufen es war, wurde nie identifiziert.
+    </string>
+    <string name="object_info_m67_distance" translation_description="Distance to M67 shown in the info card. Translate units if appropriate for your locale.">2.700 Lichtjahre</string>
+    <string name="object_info_m67_size" translation_description="Physical size of M67 shown in the info card. Translate units if appropriate for your locale.">~24 Lichtjahre Durchmesser</string>
+
+    <string name="object_info_m55_description" translation_description="Description of the globular cluster M55 shown in the info card. Translate this text.">
+    M55 ist ein großer, lockerer Kugelsternhaufen im Schützen – einer der am weitesten verbreiteten und am wenigsten konzentrierten aller Messier-Kugelsternhaufen. Er ist auch bei niedriger Vergrößerung leicht in einzelne Sterne aufgelöst, mit einer körnigen Textur, die in Ferngläsern sichtbar ist. Seine niedrige südliche Deklination begrenzt die Sichtbarkeit von nördlichen Breiten, aber er ist vom südlichen Hemisphäre spektakulär.
+    </string>
+    <string name="object_info_m55_funfact" translation_description="Fun fact about M55 shown in the info card. Translate this text.">
+    M55\'s ungewöhnlich niedrige Sternkonzentration lässt es fast wie einen reichen offenen Sternhaufen aussehen, anstatt wie einen typischen Kugelsternhaufen. Seine Sterne sind über eine Region verteilt, die fast 100 Lichtjahre breit ist, was darauf hindeutet, dass die Eigengravitation des Haufens relativ schwach ist im Vergleich zu stärker zentral verdichteten Kugelsternhaufen wie M13 oder M3.
+    </string>
+    <string name="object_info_m55_distance" translation_description="Distance to M55 shown in the info card. Translate units if appropriate for your locale.">17.600 Lichtjahre</string>
+    <string name="object_info_m55_size" translation_description="Physical size of M55 shown in the info card. Translate units if appropriate for your locale.">~100 Lichtjahre Durchmesser</string>
+
+    <string name="object_info_m19_description" translation_description="Description of the globular cluster M19 shown in the info card. Translate this text.">
+    M19 ist ein kompakter, reicher Kugelsternhaufen im Schlangenträger – einer der nächsten Kugelsternhaufen zum galaktischen Zentrum. Sein charakteristischstes Merkmal ist seine deutlich abgeplattete Form: M19 ist der am stärksten abgeplattete bekannte Kugelsternhaufen mit einer sichtbaren elliptischen Kontur selbst in einem kleinen Teleskop.
+    </string>
+    <string name="object_info_m19_funfact" translation_description="Fun fact about M19 shown in the info card. Translate this text.">
+    M19\'s ausgeprägte Abplattung – seine längste Achse ist etwa 10% länger als seine kürzeste – ist unter bekannten Kugelsternhaufen einzigartig und wird vermutlich durch die Gezeitenkräfte des Gravitationsfeldes der Milchstraße verursacht. Je näher ein Kugelsternhaufen dem galaktischen Zentrum umläuft, desto stärker wird er verformt; M19 liegt nur etwa 5.200 Lichtjahre vom galaktischen Kern entfernt.
+    </string>
+    <string name="object_info_m19_distance" translation_description="Distance to M19 shown in the info card. Translate units if appropriate for your locale.">28.700 Lichtjahre</string>
+    <string name="object_info_m19_size" translation_description="Physical size of M19 shown in the info card. Translate units if appropriate for your locale.">~113 Lichtjahre Durchmesser</string>
+
+    <string name="object_info_m80_description" translation_description="Description of the globular cluster M80 shown in the info card. Translate this text.">
+    M80 ist einer der dichtesten Kugelsternhaufen in der Milchstraße, eine kompakte, reiche Ansammlung von mehreren hunderttausend Sternen im Skorpion. Mit einer Helligkeit von 7,2 ist er ein ausgezeichnetes Ziel für Ferngläser und zeigt in kleinen Teleskopen einen brillanten, hochkonzentrierten Kern.
+    </string>
+    <string name="object_info_m80_funfact" translation_description="Fun fact about M80 shown in the info card. Translate this text.">
+    1860 brach in M80 eine Nova aus – bezeichnet als T Scorpii – und wurde kurzzeitig so hell wie der Sternhaufen selbst und war mit bloßem Auge sichtbar. Sie bleibt eine von nur zwei Novae, die je in einem Kugelsternhaufen beobachtet wurden. Novae in Kugelsternhaufen entstehen durch Wechselwirkungen zwischen Doppelsternen, die in der dichten Sternumgebung des Kerns eines Kugelsternhaufens viel häufiger vorkommen.
+    </string>
+    <string name="object_info_m80_distance" translation_description="Distance to M80 shown in the info card. Translate units if appropriate for your locale.">32.600 Lichtjahre</string>
+    <string name="object_info_m80_size" translation_description="Physical size of M80 shown in the info card. Translate units if appropriate for your locale.">~84 Lichtjahre Durchmesser</string>
+
+    <string name="object_info_m103_description" translation_description="Description of the open star cluster M103 shown in the info card. Translate this text.">
+    M103 ist ein kleiner, kompakter offener Sternhaufen in der Kassiopeia mit etwa 40 Sternen in einer engen Gruppe, die leicht mit Ferngläsern zu sehen ist. Ein auffälliger Doppelstern und ein roter Riese in der Nähe des Zentrums verleihen ihm ein farbenprächtiges Aussehen in kleinen Teleskopen, eingebettet in die reichen Milchstraßen-Sternfelder der Kassiopeia.
+    </string>
+    <string name="object_info_m103_funfact" translation_description="Fun fact about M103 shown in the info card. Translate this text.">
+    M103 war das höchstnummerierte Objekt in Messiers ursprünglichem 1781 veröffentlichtem Katalog – alle nachfolgenden Einträge (M104–M110) wurden später von anderen Astronomen aus Messiers Notizen und Korrespondenz hinzugefügt. Pierre Méchain entdeckte M103 kurz bevor der Katalog in Druck ging, und Messier nahm es auf Basis von Méchains Bericht auf.
+    </string>
+    <string name="object_info_m103_distance" translation_description="Distance to M103 shown in the info card. Translate units if appropriate for your locale.">8.500 Lichtjahre</string>
+    <string name="object_info_m103_size" translation_description="Physical size of M103 shown in the info card. Translate units if appropriate for your locale.">~15 Lichtjahre Durchmesser</string>
+
+    <string name="object_info_m30_description" translation_description="Description of the globular cluster M30 shown in the info card. Translate this text.">
+    M30 ist ein kompakter Kugelsternhaufen im Steinbock — ein schönes Objekt in kleinen Teleskopen, das einen hellen, verdichteten Kern und schwache äußere Sternenketten zeigt. Mit einer Helligkeit von 7,5 erfordert er dunkle Himmel für Ferngläser und belohnt ein kleines Teleskop mit seinem teilweise aufgelösten äußeren Halo.
+    </string>
+    <string name="object_info_m30_funfact" translation_description="Fun fact about M30 shown in the info card. Translate this text.">
+    M30 hat einen "Kernkollaps" durchlaufen — einen Prozess, bei dem die gegenseitige Gravitationsanziehung dicht gepackter Sterne das Zentrum des Sternhaufens dramatisch zusammenzieht und eine extreme Konzentration von Sternen in einem winzigen Volumen erzeugt. Etwa ein Fünftel aller Kugelsternhaufen haben kollabierte Kerne, und M30 ist eines der am besten untersuchten Beispiele dieses Phänomens.
+    </string>
+    <string name="object_info_m30_distance" translation_description="Distance to M30 shown in the info card. Translate units if appropriate for your locale.">27.100 Lichtjahre</string>
+    <string name="object_info_m30_size" translation_description="Physical size of M30 shown in the info card. Translate units if appropriate for your locale.">~87 Lichtjahre Durchmesser</string>
+
+    <string name="object_info_m54_description" translation_description="Description of the globular cluster M54 shown in the info card. Translate this text.">
+    M54 ist ein großer, reichhaltiger Kugelsternhaufen im Schützen und eines der am weitesten entfernten Objekte des gesamten Messier-Katalogs. Jahrhundertelang wurde angenommen, dass es sich um einen entfernten Halo-Kugelsternhaufen der Milchstraße handelt, aber es ist jetzt bekannt, dass es der dichte Kern der Sagittarius-Zwergeliptischen Galaxie ist – eine Satellitengalaxie, die derzeit von unserer eigenen absorbiert wird.
+    </string>
+    <string name="object_info_m54_funfact" translation_description="Fun fact about M54 shown in the info card. Translate this text.">
+    Die Entdeckung 1994, dass M54 zur Sagittarius-Zwerggalaxie gehört, machte ihn zum ersten Kugelsternhaufen, von dem bekannt ist, dass er zu einer anderen Galaxie gehört. Da die Sagittarius-Zwerggalaxie allmählich auseinandergerissen und von der Milchstraße verschlungen wird, wird M54 schließlich ein echter Halo-Kugelsternhaufen unserer eigenen Galaxie – ein intergalaktischer Einwanderer, der über Milliarden von Jahren ankommt.
+    </string>
+    <string name="object_info_m54_distance" translation_description="Distance to M54 shown in the info card. Translate units if appropriate for your locale.">87.000 Lichtjahre</string>
+    <string name="object_info_m54_size" translation_description="Physical size of M54 shown in the info card. Translate units if appropriate for your locale.">~230 Lichtjahre Durchmesser</string>
+
+    <string name="object_info_m69_description" translation_description="Description of the globular cluster M69 shown in the info card. Translate this text.">
+    M69 ist ein mäßig reichhaltiger Kugelsternhaufen im Schützen, positioniert in der Nähe des galaktischen Zentrums. Mit einer Helligkeit von 7,7 ist er ein Objekt für Ferngläser aus dunklem Himmel, das ein kleines Teleskop mit einem teilweise aufgelösten Sternball und einem hellen, körnigen Zentrum belohnt.
+    </string>
+    <string name="object_info_m69_funfact" translation_description="Fun fact about M69 shown in the info card. Translate this text.">
+    M69 umkreist das galaktische Zentrum ungewöhnlich nah — nur etwa 6.200 Lichtjahre vom Kern der Milchstraße entfernt — und hat daher eine ungewöhnlich hohe Konzentration schwererer Elemente für einen Kugelsternhaufen. Kugelsternhaufen näher am galaktischen Zentrum werden durch mehrere Generationen von Sternentstehung in der umgebenden Wölbung chemisch angereichert.
+    </string>
+    <string name="object_info_m69_distance" translation_description="Distance to M69 shown in the info card. Translate units if appropriate for your locale.">29.700 Lichtjahre</string>
+    <string name="object_info_m69_size" translation_description="Physical size of M69 shown in the info card. Translate units if appropriate for your locale.">~61 Lichtjahre Durchmesser</string>
+
+    <string name="object_info_m9_description" translation_description="Description of the globular cluster M9 shown in the info card. Translate this text.">
+    M9 ist ein kompakter Kugelsternhaufen im Schlangenträger – einer der Messier-Kugelsternhaufen, der am stärksten durch interstellare Staubabsorption beeinflusst wird. Er liegt in Richtung der galaktischen Ausbuchtung, wo dichter Staub ihn erheblich verdunkelt. Ohne diese Verdunkelung würde M9 etwa eine Größenklasse heller erscheinen und mit bloßem Auge sichtbar sein.
+    </string>
+    <string name="object_info_m9_funfact" translation_description="Fun fact about M9 shown in the info card. Translate this text.">
+    M9 leidet unter stärkerer interstellarer Staubabsorption als fast jeder andere Messier-Kugelsternhaufen – etwa 1,3 Magnituden Helligkeitsverlust im Vergleich zu einer freien Sichtlinie. Zwei kleinere Kugelsternhaufen (NGC 6342 und NGC 6356) liegen innerhalb von etwa 1° von M9, was ihn zum Zentrum einer bemerkenswerten Gruppe von drei Kugelsternhaufen in einem kleinen Himmelsausschnitt macht.
+    </string>
+    <string name="object_info_m9_distance" translation_description="Distance to M9 shown in the info card. Translate units if appropriate for your locale.">25.800 Lichtjahre</string>
+    <string name="object_info_m9_size" translation_description="Physical size of M9 shown in the info card. Translate units if appropriate for your locale.">~70 Lichtjahre Durchmesser</string>
+
+    <string name="object_info_m26_description" translation_description="Description of the open star cluster M26 shown in the info card. Translate this text.">
+    M26 ist ein mäßig lichtschwacher offener Sternhaufen im Schild, sichtbar in Ferngläsern und in kleinen Teleskopen gut aufgelöst. Etwa 90 Sterne sind über ein kompaktes Feld in der reichen Schild-Sternenwolke verteilt, obwohl der Haufen vor einem so dichten Hintergrund liegt, dass die Identifizierung seiner Mitglieder aus dem umgebenden Sternfeld einige Sorgfalt erfordert.
+    </string>
+    <string name="object_info_m26_funfact" translation_description="Fun fact about M26 shown in the info card. Translate this text.">
+    M26 liegt in demselben reichen Himmelsstreifen wie M11 – der Wildenten-Haufen, einer der schönsten offenen Sternhaufen am Himmel. Die beiden sind nur etwa 3,5° voneinander entfernt und im selben Fernglas-Sichtfeld sichtbar, was Scutum trotz seiner Kleinheit und oft übersehenen Stellung zu einem bemerkenswerten Ziel für Sternhaufenbeobachter macht.
+    </string>
+    <string name="object_info_m26_distance" translation_description="Distance to M26 shown in the info card. Translate units if appropriate for your locale.">5.000 Lichtjahre</string>
+    <string name="object_info_m26_size" translation_description="Physical size of M26 shown in the info card. Translate units if appropriate for your locale.">~22 Lichtjahre Durchmesser</string>
+
+    <string name="object_info_m79_description" translation_description="Description of the globular cluster M79 shown in the info card. Translate this text.">
+    M79 ist ein kompakter Kugelsternhaufen im Sternbild Hase — einer der wenigen Messier-Kugelsternhaufen, die am besten am Winterhimmel zu sehen sind, wenn die meisten Kugelsternhaufen unter dem Horizont oder gerade eben aufgegangen sind. Mit einer Helligkeit von 8,0 mag benötigt man ein Teleskop, um seinen kompakten Kern und seinen schwachen Halo zu erkennen, die sich gegen die vergleichsweise spärlichen Sternfelder des Winterhimmels abheben.
+    </string>
+    <string name="object_info_m79_funfact" translation_description="Fun fact about M79 shown in the info card. Translate this text.">
+    M79 wird von einigen Astronomen für einen Eindringling aus der Canis-Major-Zwerggalaxie gehalten – einer gestörten Satellitengalaxie, die derzeit von der Milchstraße aufgenommen wird. Falls dem so ist, entstand M79 nicht im eigenen Kugelsternhaufen-System der Milchstraße, sondern wurde von einer einfallenden Galaxie eingefangen und wird nun langsam in den Halo unserer Galaxie integriert.
+    </string>
+    <string name="object_info_m79_distance" translation_description="Distance to M79 shown in the info card. Translate units if appropriate for your locale.">41.000 Lichtjahre</string>
+    <string name="object_info_m79_size" translation_description="Physical size of M79 shown in the info card. Translate units if appropriate for your locale.">~104 Lichtjahre Durchmesser</string>
+
+    <string name="object_info_m70_description" translation_description="Description of the globular cluster M70 shown in the info card. Translate this text.">
+    M70 ist ein kompakter Kugelsternhaufen im Schützen, der seinem nahen Zwilling M69 in Erscheinung und Entfernung sehr ähnelt. Mit einer Helligkeit von 8,1 ist er ein schönes Objekt für kleine Teleskope, das einen kompakten Kern und Andeutungen von Auflösung im äußeren Halo zeigt. Er sitzt nur 2° von M69 entfernt und beide können im gleichen Feldstecher-Gesichtsfeld erfasst werden.
+    </string>
+    <string name="object_info_m70_funfact" translation_description="Fun fact about M70 shown in the info card. Translate this text.">
+    M70 erlangte 1995 kurzzeitig Berühmtheit als ungefährer Ort am Himmel, an dem Alan Hale und Thomas Bopp unabhängig voneinander den Kometen Hale-Bopp entdeckten – den hellsten Kometen des späten 20. Jahrhunderts. Beide Beobachter schwenkten zunächst an M70 vorbei, während sie nach anderen Objekten suchten, und bemerkten den Kometen als unerwartetes unscharfes Objekt in der Nähe.
+    </string>
+    <string name="object_info_m70_distance" translation_description="Distance to M70 shown in the info card. Translate units if appropriate for your locale.">29.400 Lichtjahre</string>
+    <string name="object_info_m70_size" translation_description="Physical size of M70 shown in the info card. Translate units if appropriate for your locale.">~67 Lichtjahre Durchmesser</string>
+
+    <string name="object_info_m107_description" translation_description="Description of the globular cluster M107 shown in the info card. Translate this text.">
+    M107 ist einer der am wenigsten konzentrierten Messier-Kugelsternhaufen mit Sternen, die in einem relativ offenen Muster um einen bescheidenen Kern verstreut sind. Mit einer Helligkeit von 8,1 ist er ein Ziel für Ferngläser unter dunklem Himmel und löst sich in kleinen Teleskopen teilweise auf, wobei eine körnige Textur statt einer scharfen zentralen Verdichtung sichtbar wird.
+    </string>
+    <string name="object_info_m107_funfact" translation_description="Fun fact about M107 shown in the info card. Translate this text.">
+    M107 war der letzte Eintrag, der formal zum Messier-Katalog hinzugefügt wurde – er erscheint in Pierre Méchains Korrespondenz, war aber nicht in der ursprünglichen Ausgabe von 1781 enthalten. Er wurde 1947 offiziell als M107 von der kanadischen Astronomin Helen Sawyer Hogg hinzugefügt, die mehrere "fehlende" Objekte kodifizierte, die Méchain beobachtet hatte, aber Messier nie formal aufgezeichnet hatte.
+    </string>
+    <string name="object_info_m107_distance" translation_description="Distance to M107 shown in the info card. Translate units if appropriate for your locale.">20.900 Lichtjahre</string>
+    <string name="object_info_m107_size" translation_description="Physical size of M107 shown in the info card. Translate units if appropriate for your locale.">~61 Lichtjahre Durchmesser</string>
+
+    <string name="object_info_m68_description" translation_description="Description of the globular cluster M68 shown in the info card. Translate this text.">
+    M68 ist ein reichhaltiger Kugelsternhaufen in der Hydra — ein südliches Objekt und einer der wenigen Kugelsternhaufen, die am besten im späten Winter und Frühling sichtbar sind. Mit einer Helligkeit von 8,2 belohnt er ein kleines Teleskop mit einem mäßig verdichteten Kern und einem großen Halo aufgelöster Sterne vor dem relativ spärlichen Sternfeld der Hydra.
+    </string>
+    <string name="object_info_m68_funfact" translation_description="Fun fact about M68 shown in the info card. Translate this text.">
+    Trotz seiner relativen Nähe – wodurch einzelne Sterne in Amateurteleskopen gut aufgelöst sind – wird M68 oft übersehen, da er eine sehr südliche Deklination hat. Von Breitengraden über 50°N ragt er kaum über den Horizont; von der südlichen Hemisphäre aus jedoch steigt er hoch auf und ist ein hervorragendes Kugelsternhaufen-Objekt.
+    </string>
+    <string name="object_info_m68_distance" translation_description="Distance to M68 shown in the info card. Translate units if appropriate for your locale.">33.600 Lichtjahre</string>
+    <string name="object_info_m68_size" translation_description="Physical size of M68 shown in the info card. Translate units if appropriate for your locale.">~117 Lichtjahre Durchmesser</string>
+
+    <string name="object_info_m56_description" translation_description="Description of the globular cluster M56 shown in the info card. Translate this text.">
+    M56 ist ein kompakter Kugelsternhaufen in der Leier, eingebettet zwischen dem Ringnebel (M57) und dem hellen Doppelstern Albireo im Schwan. Mit einer Helligkeit von 8,3 mag ist er ein Ziel für Ferngläser unter dunklem Himmel, und ein kleines Teleskop offenbart eine körnige, mäßig verdichtete Sphäre, die selbst in mittleren Öffnungen nur teilweise aufgelöst ist.
+    </string>
+    <string name="object_info_m56_funfact" translation_description="Fun fact about M56 shown in the info card. Translate this text.">
+    M56 wurde von Messier im Januar 1779 während derselben Beobachtungssaison entdeckt, in der er auch den Ringnebel (M57) fand. Obwohl M56 im gleichen Fernglas-Gesichtsfeld wie Vega – der fünfthellste Stern des Himmels – liegt und sich in der Nähe des berühmten Ringnebels befindet, wird M56 von Beobachtern häufig übersehen, die sich stärker zu seinen bekannteren Nachbarn hingezogen fühlen.
+    </string>
+    <string name="object_info_m56_distance" translation_description="Distance to M56 shown in the info card. Translate units if appropriate for your locale.">32.900 Lichtjahre</string>
+    <string name="object_info_m56_size" translation_description="Physical size of M56 shown in the info card. Translate units if appropriate for your locale.">~68 Lichtjahre Durchmesser</string>
+
+    <string name="object_info_m71_description" translation_description="Description of the globular cluster M71 shown in the info card. Translate this text.">
+    M71 ist ein ungewöhnlicher Kugelsternhaufen im Sternbild Pfeil — Jahrzehnte lang umstritten unter Astronomen, die nicht entscheiden konnten, ob es sich um einen sehr reichen alten offenen Sternhaufen oder einen sehr lockeren jungen Kugelsternhaufen handelt. Moderne Analysen bestätigen, dass es sich um einen echten Kugelsternhaufen handelt, aber um einen außergewöhnlich niedrig konzentrierten mit relativ wenigen Sternen und einem weniger dominanten Kern als typische Kugelsternhaufen.
+    </string>
+    <string name="object_info_m71_funfact" translation_description="Fun fact about M71 shown in the info card. Translate this text.">
+    M71\'s lockere Struktur hielt es von vielen frühen Katalogen fern, da es eher einem reichen Sternfeld als einem echten Sternhaufen ähnelte. Mit nur 12.000 Lichtjahren Entfernung ist es einer der näheren Messier-Kugelsternhaufen, und seine Sterne sind in einem kleinen Teleskop unter dunklem Himmel teilweise aufgelöst – was ihm das Aussehen eines kompakten, leicht verdichteten reichen Sternfeldes verleiht.
+    </string>
+    <string name="object_info_m71_distance" translation_description="Distance to M71 shown in the info card. Translate units if appropriate for your locale.">12.000 Lichtjahre</string>
+    <string name="object_info_m71_size" translation_description="Physical size of M71 shown in the info card. Translate units if appropriate for your locale.">~25 Lichtjahre Durchmesser</string>
 </resources>
