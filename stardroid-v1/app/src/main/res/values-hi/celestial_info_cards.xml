@@ -942,6 +942,65 @@
     </string>
     <string name="object_info_eta_carinae_nebula_distance" translation_description="Distance to Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">7,500 प्रकाश-वर्ष</string>
     <string name="object_info_eta_carinae_nebula_size" translation_description="Physical size of Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">300 प्रकाश-वर्ष चौड़ा</string>
+    <!-- North America Nebula (NGC 7000) -->
+    <string name="object_info_north_america_nebula_description" translation_description="Description of the North America Nebula shown in the info card. Translate this text.">
+    नॉर्थ अमेरिका नेबुला (NGC 7000) सिग्नस में एक बड़ी उत्सर्जन नेबुला है जिसका आकार उल्लेखनीय रूप से उत्तरी अमेरिका महाद्वीप जैसा दिखता है, जिसमें मेक्सिको की खाड़ी क्षेत्र भी शामिल है। लगभग 120 आर्कमिनट तक फैली हुई — पूर्ण चंद्रमा के व्यास का लगभग चार गुना — यह लगभग 2,600 प्रकाश-वर्ष दूर है और 100 प्रकाश-वर्ष से अधिक चौड़ी है।
+    </string>
+    <string name="object_info_north_america_nebula_funfact" translation_description="Fun fact about the North America Nebula shown in the info card. Translate this text.">
+    अपनी 4 की दृश्य परिमाण के बावजूद, यह नीहारिका बहुत बड़ी और विसरित है जिससे अधिकांश आकाश के तहत नंगी आंखों से देखना असंभव है — फिर भी यह सुंदरता से फोटोग्राफ होती है, जो सिग्नस वॉल को प्रकट करती है, इसके दक्षिणी किनारे के साथ तीव्र तारा निर्माण का एक घना चाप।
+    </string>
+    <string name="object_info_north_america_nebula_distance" translation_description="Distance to the North America Nebula shown in the info card. Translate units if appropriate for your locale.">~2,590 प्रकाश-वर्ष</string>
+    <string name="object_info_north_america_nebula_size" translation_description="Physical size of the North America Nebula shown in the info card. Translate units if appropriate for your locale.">~140 प्रकाश-वर्ष व्यास</string>
+    <!-- Exposed Cranium Nebula - PMR 1 -->
+    <string name="object_info_exposed_cranium_nebula_description" translation_description="Description of the Exposed Cranium Nebula shown in the info card. Translate this text.">
+    एक्सपोज़्ड क्रेनियम नेबुला (PMR 1) वेला में एक ग्रहीय नेबुला है, जो लगभग 5,000 प्रकाश-वर्ष दूर है। इसका अजीब नाम बीच से लंबवत चलने वाली गैस की एक अंधेरी पट्टी से आता है, जो इसके चमकते हुए लोब को एक पारदर्शी खोपड़ी के अंदर एक मस्तिष्क जैसी भयानक आकृति में विभाजित करती है। इसके केंद्र में एक गर्म वुल्फ-रेयर तारा जलता है जो अपने जीवनकाल में बनाई गई बाहरी परतों को बहा रहा है।
+    </string>
+    <string name="object_info_exposed_cranium_nebula_funfact" translation_description="Fun fact about the Exposed Cranium Nebula shown in the info card. Translate this text.">
+    2026 में जेम्स वेब स्पेस टेलीस्कोप ने एक्सपोज़्ड क्रेनियम नेबुला की अद्भुत नई छवियां कैप्चर कीं, इसकी द्वि-स्तरीय संरचना को अभूतपूर्व विस्तार से हल किया — एक बाहरी खोल जो हाइड्रोजन से समृद्ध है और एक आंतरिक बादल जो मरते हुए तारे द्वारा बनाए गए भारी तत्वों से भरा है।
+    </string>
+    <string name="object_info_exposed_cranium_nebula_distance" translation_description="Distance to the Exposed Cranium Nebula shown in the info card. Translate units if appropriate for your locale.">~5,000 प्रकाश-वर्ष</string>
+    <string name="object_info_exposed_cranium_nebula_size" translation_description="Physical size of the Exposed Cranium Nebula shown in the info card. Translate units if appropriate for your locale.">~2 प्रकाश-वर्ष व्यास</string>
+
+    <!-- Jewel Box (NGC 4755) -->
+    <string name="object_info_jewel_box_description" translation_description="Description of the Jewel Box cluster shown in the info card. Translate this text.">
+    ज्वेल बॉक्स (NGC 4755) क्रक्स तारामंडल में एक युवा, शानदार खुला तारा समूह है, जो नग्न आंखों से मिमोसा के दक्षिण-पूर्व में एक धुंधले चौथे परिमाण के पैच के रूप में आसानी से दिखाई देता है। जब दूरबीन के माध्यम से देखा जाता है, तो इसके तारे जीवंत विपरीत रंगों में चमकते हैं — गहरे नीले सुपरजायंट लाल सुपरजायंट के साथ — जिससे इसे जॉन हर्शल द्वारा दिया गया नाम मिलता है: गहनों का एक शानदार टुकड़ा। केवल 14-16 मिलियन वर्ष पुराना होने के कारण, यह आकाश में सबसे युवा और सबसे रंगीन समूहों में से एक है।
+    </string>
+    <string name="object_info_jewel_box_funfact" translation_description="Fun fact about the Jewel Box shown in the info card. Translate this text.">
+    क्लस्टर का सबसे प्रमुख लाल तारा, κ Crucis, एक लाल महातारा है जो सूर्य से 100,000 गुना अधिक चमकीला है — यह एक जीवंत अनुस्मारक है कि तारा समूह सभी एक ही रंग के नहीं होते हैं।
+    </string>
+    <string name="object_info_jewel_box_distance" translation_description="Distance to the Jewel Box shown in the info card. Translate units if appropriate for your locale.">~6,500 प्रकाश-वर्ष</string>
+    <string name="object_info_jewel_box_size" translation_description="Physical size of the Jewel Box shown in the info card. Translate units if appropriate for your locale.">~19 प्रकाश-वर्ष व्यास</string>
+
+    <!-- Double Cluster (NGC 869 & NGC 884) -->
+    <string name="object_info_double_cluster_description" translation_description="Description of the Double Cluster shown in the info card. Translate this text.">
+    डबल क्लस्टर (NGC 869 और NGC 884) पर्सियस में युवा खुले तारा समूहों की एक शानदार जोड़ी है, जो आकाश में एक दूसरे के बगल में बैठी है और एक डिग्री से थोड़ी अधिक दूरी पर है। दोनों नग्न आंखों से धुंधले पैच के रूप में दिखाई देते हैं, लेकिन एक छोटी दूरबीन भी सैकड़ों शानदार नीले-सफेद सुपरजायंट्स को दो चमकदार झुंडों में पैक किया हुआ प्रकट करती है। लगभग 7,500 प्रकाश-वर्ष दूर, वे हमारी आकाशगंगा की पर्सियस आर्म के भीतर स्थित हैं और उत्तरी आकाश में सर्वश्रेष्ठ द्विनेत्र वस्तुओं में से एक हैं।
+    </string>
+    <string name="object_info_double_cluster_funfact" translation_description="Fun fact about the Double Cluster shown in the info card. Translate this text.">
+    केवल 14 मिलियन वर्ष पुराना होने के कारण, डबल क्लस्टर असाधारण रूप से युवा है — इतना हाल ही में जन्मा कि इसके सबसे विशाल तारे अभी भी चमकीले नीले सुपरजायंट हैं, और कुछ पहले से ही दुर्लभ, आग जैसे लाल सुपरजायंट में विकसित हो गए हैं।
+    </string>
+    <string name="object_info_double_cluster_distance" translation_description="Distance to the Double Cluster shown in the info card. Translate units if appropriate for your locale.">~7,500 प्रकाश-वर्ष</string>
+    <string name="object_info_double_cluster_size" translation_description="Physical size of the Double Cluster shown in the info card. Translate units if appropriate for your locale.">प्रत्येक समूह ~70 प्रकाश-वर्ष व्यास; जोड़ी ~1,000 प्रकाश-वर्ष से अलग</string>
+
+    <!-- 47 Tucanae (NGC 104) -->
+    <string name="object_info_n47_tucanae_description" translation_description="Description of 47 Tucanae shown in the info card. Translate this text.">
+    47 Tucanae (NGC 104) आकाश में दूसरा सबसे चमकीला गोलाकार तारा समूह है, जो लगभग दस लाख प्राचीन तारों की एक सघन गेंद है जो तारामंडल Tucana में मिल्की वे की परिक्रमा करती है। लगभग 14,500 प्रकाश-वर्ष दूर, यह नग्न आंखों को एक धुंधला चौथे परिमाण का तारा दिखाई देता है, लेकिन एक दूरबीन इसके संपीड़ित केंद्र को सोने और नीले-सफेद सूर्यों के एक असाधारण झुंड में विभाजित करती है। इसके तारे लगभग 13 अरब साल पहले बने थे, जिससे यह समूह ब्रह्मांड जितना ही पुराना है।
+    </string>
+    <string name="object_info_n47_tucanae_funfact" translation_description="Fun fact about 47 Tucanae shown in the info card. Translate this text.">
+    47 Tucanae एक ब्रह्मांडीय पल्सर कारखाना है: खगोलविदों को इसके अंदर कम से कम 35 मिलीसेकंड पल्सर मिले हैं जो प्रति सेकंड सैकड़ों बार घूमते हैं — किसी भी अन्य ज्ञात गोलाकार समूह से अधिक — यह तारकीय निकट मुठभेड़ों का परिणाम है जो पुराने न्यूट्रॉन सितारों को उन्हें तेजी से घुमाकर पुनर्चक्रित करते हैं।
+    </string>
+    <string name="object_info_n47_tucanae_distance" translation_description="Distance to 47 Tucanae shown in the info card. Translate units if appropriate for your locale.">~14,500 प्रकाश-वर्ष</string>
+    <string name="object_info_n47_tucanae_size" translation_description="Physical size of 47 Tucanae shown in the info card. Translate units if appropriate for your locale.">~120 प्रकाश-वर्ष व्यास</string>
+
+    <!-- Centaurus A (NGC 5128) -->
+    <string name="object_info_centaurus_a_description" translation_description="Description of Centaurus A shown in the info card. Translate this text.">
+    Centaurus A (NGC 5128) पृथ्वी के सबसे निकट सक्रिय रेडियो गैलेक्सी है, Centaurus तारामंडल में एक विशाल दीर्घवृत्ताकार गैलेक्सी है जिसकी आकर्षक गहरी धूल पट्टी एक हिंसक अतीत को दर्शाती है — लगभग 200–700 मिलियन वर्ष पहले निगली गई एक सर्पिल गैलेक्सी। इसके केंद्र में 55 मिलियन सौर द्रव्यमान का एक अतिविशाल ब्लैक होल छिपा है जो सापेक्षतावादी जेट चलाता है जो रेडियो तरंग दैर्ध्य में एक मिलियन प्रकाश-वर्ष से अधिक तक फैले हुए हैं। लगभग 12 मिलियन प्रकाश-वर्ष की दूरी पर यह आकाश में सबसे अधिक अध्ययन की जाने वाली गैलेक्सियों में से एक है।
+    </string>
+    <string name="object_info_centaurus_a_funfact" translation_description="Fun fact about Centaurus A shown in the info card. Translate this text.">
+    Centaurus A आकाश में सबसे शक्तिशाली प्राकृतिक रेडियो प्रेषकों में से एक है — इसके जेट प्लाज्मा को लगभग प्रकाश की गति से बाहर की ओर फेंकते हैं, और इसके रेडियो लोब की पूरी सीमा आकाश में अंत से अंत तक रखे गए लगभग 100 पूर्ण चंद्रमाओं के बराबर क्षेत्र तक फैली हुई है।
+    </string>
+    <string name="object_info_centaurus_a_distance" translation_description="Distance to Centaurus A shown in the info card. Translate units if appropriate for your locale.">~12 मिलियन प्रकाश-वर्ष</string>
+    <string name="object_info_centaurus_a_size" translation_description="Physical size of Centaurus A shown in the info card. Translate units if appropriate for your locale.">~123,000 प्रकाश-वर्ष व्यास</string>
+
     <!-- ==================== CONSTELLATIONS ==================== -->
     <!-- Note: Constellation names are defined in celestial_objects.xml -->
     <!-- Orion -->
@@ -1965,4 +2024,697 @@
     Vulpecula में Dumbbell Nebula (M27) है, जो पहली planetary nebula है जिसकी खोज कभी की गई थी (Charles Messier द्वारा 1764 में), और यह एक सुंदर binocular target है!
     </string>
     <string name="object_info_vulpecula_size" translation_description="Physical size of Vulpecula shown in the info card. Translate units if appropriate for your locale.">268 वर्ग डिग्री</string>
+
+    <!-- Galilean Moons of Jupiter -->
+    <string name="object_info_io_description" translation_description="Description of Io shown in the info card. Translate this text.">
+    Io बृहस्पति के चार बड़े गैलिलियन चंद्रमाओं में सबसे भीतरी है और सौर मंडल में सबसे अधिक ज्वालामुखी रूप से सक्रिय पिंड है।
+    </string>
+    <string name="object_info_io_funfact" translation_description="Fun fact about Io shown in the info card. Translate this text.">
+    Io के पास सैकड़ों सक्रिय ज्वालामुखी हैं, कुछ दर्जनों किलोमीटर ऊंचे लावा फव्वारे निकाल रहे हैं। इसकी निरंतर गतिविधि बृहस्पति के विशाल गुरुत्वाकर्षण से ज्वारीय ताप द्वारा संचालित होती है।
+    </string>
+    <string name="object_info_io_distance" translation_description="Distance to Io shown in the info card. Translate units if appropriate for your locale.">बृहस्पति से 421,700 किमी</string>
+    <string name="object_info_io_size" translation_description="Physical size of Io shown in the info card. Translate units if appropriate for your locale.">3,643 किमी व्यास</string>
+
+    <string name="object_info_europa_description" translation_description="Description of Europa shown in the info card. Translate this text.">
+    यूरोपा दूसरा गैलिलियन चंद्रमा है और माना जाता है कि इसके बर्फीले क्रस्ट के नीचे एक विशाल तरल जल महासागर है, जो इसे जीवन की खोज के लिए सबसे आशाजनक स्थानों में से एक बनाता है।
+    </string>
+    <string name="object_info_europa_funfact" translation_description="Fun fact about Europa shown in the info card. Translate this text.">
+    यूरोपा का उप-सतह महासागर पृथ्वी के सभी महासागरों की तुलना में दोगुना तरल जल रख सकता है, जो बृहस्पति से ज्वारीय ताप द्वारा तरल रखा जाता है।
+    </string>
+    <string name="object_info_europa_distance" translation_description="Distance to Europa shown in the info card. Translate units if appropriate for your locale.">बृहस्पति से 671,100 किमी</string>
+    <string name="object_info_europa_size" translation_description="Physical size of Europa shown in the info card. Translate units if appropriate for your locale.">3,122 किमी व्यास</string>
+
+    <string name="object_info_ganymede_description" translation_description="Description of Ganymede shown in the info card. Translate this text.">
+    गैनिमीड सौर मंडल का सबसे बड़ा चंद्रमा है — यह बुध ग्रह से भी बड़ा है। यह एकमात्र चंद्रमा है जो अपना स्वयं का चुंबकीय क्षेत्र उत्पन्न करता है।
+    </string>
+    <string name="object_info_ganymede_funfact" translation_description="Fun fact about Ganymede shown in the info card. Translate this text.">
+    गैनिमेड आकार में बुध से बड़ा है, हालांकि इसका द्रव्यमान केवल आधा है। इसका आंतरिक चुंबकीय क्षेत्र बृहस्पति के बहुत बड़े चुंबकमंडल के भीतर अपना एक लघु चुंबकमंडल बनाता है।
+    </string>
+    <string name="object_info_ganymede_distance" translation_description="Distance to Ganymede shown in the info card. Translate units if appropriate for your locale.">बृहस्पति से 1,070,400 किमी</string>
+    <string name="object_info_ganymede_size" translation_description="Physical size of Ganymede shown in the info card. Translate units if appropriate for your locale.">5,268 किमी व्यास</string>
+
+    <string name="object_info_callisto_description" translation_description="Description of Callisto shown in the info card. Translate this text.">
+    कैलिस्टो गैलीलियन चंद्रमाओं में सबसे बाहरी है और सौर मंडल में सबसे अधिक गड्ढों वाले पिंडों में से एक है, इसकी प्राचीन सतह प्रारंभिक सौर मंडल के प्रभावों का रिकॉर्ड संरक्षित करती है।
+    </string>
+    <string name="object_info_callisto_funfact" translation_description="Fun fact about Callisto shown in the info card. Translate this text.">
+    कैलिस्टो बृहस्पति की मुख्य विकिरण पेटियों से परे परिक्रमा करता है, जिससे यह भविष्य की मानव खोज के लिए गैलीलियन चंद्रमाओं में सबसे सुरक्षित है — इसे कभी-कभी \'गेटवे मून\' कहा जाता है।
+    </string>
+    <string name="object_info_callisto_distance" translation_description="Distance to Callisto shown in the info card. Translate units if appropriate for your locale.">बृहस्पति से 1,882,700 किमी</string>
+    <string name="object_info_callisto_size" translation_description="Physical size of Callisto shown in the info card. Translate units if appropriate for your locale.">4,821 किमी व्यास</string>
+
+    <!-- Moons of Mars -->
+    <string name="object_info_phobos_description" translation_description="Description of Phobos shown in the info card. Translate this text.">
+    फोबोस मंगल के दो चंद्रमाओं में से बड़ा और सबसे भीतरी है, जो सौर मंडल में किसी भी अन्य चंद्रमा की तुलना में अपने ग्रह के करीब परिक्रमा करता है। यह एक अनियमित आकार का, भारी रूप से खांचेदार और गड्ढों वाला पिंड है जिसे एक पकड़ा गया क्षुद्रग्रह माना जाता है।
+    </string>
+    <string name="object_info_phobos_funfact" translation_description="Fun fact about Phobos shown in the info card. Translate this text.">
+    फोबोस मंगल की परिक्रमा इतनी तेजी से करता है कि यह पश्चिम में उदित होता है और पूर्व में अस्त होता है — और यह धीरे-धीरे अंदर की ओर सर्पिल हो रहा है, लगभग 50 मिलियन वर्षों में मंगल से टकराने या एक वलय में टूटने के लिए नियत है।
+    </string>
+    <string name="object_info_phobos_distance" translation_description="Distance to Phobos shown in the info card. Translate units if appropriate for your locale.">मंगल से 9,376 किमी</string>
+    <string name="object_info_phobos_size" translation_description="Physical size of Phobos shown in the info card. Translate units if appropriate for your locale.">27 × 22 × 18 किमी</string>
+
+    <string name="object_info_deimos_description" translation_description="Description of Deimos shown in the info card. Translate this text.">
+    डीमोस मंगल के दो चंद्रमाओं में से छोटा और बाहरी चंद्रमा है, जिसकी चिकनी, धूल से ढकी सतह इसे फोबोस की तुलना में अधिक गोल दिखाई देती है। इसके साथी की तरह, माना जाता है कि यह बाहरी बेल्ट से एक पकड़ा गया क्षुद्रग्रह है।
+    </string>
+    <string name="object_info_deimos_funfact" translation_description="Fun fact about Deimos shown in the info card. Translate this text.">
+    डीमोस इतना छोटा और दूर है कि मंगल की सतह से यह एक चमकीले तारे जैसा दिखता है, और रात के आकाश में धीरे-धीरे बहने में लगभग 30 घंटे लगते हैं।
+    </string>
+    <string name="object_info_deimos_distance" translation_description="Distance to Deimos shown in the info card. Translate units if appropriate for your locale.">मंगल से 23,460 किमी</string>
+    <string name="object_info_deimos_size" translation_description="Physical size of Deimos shown in the info card. Translate units if appropriate for your locale.">15 × 12 × 11 किमी</string>
+
+    <!-- Major Moons of Saturn -->
+    <string name="object_info_titan_description" translation_description="Description of Titan shown in the info card. Translate this text.">
+    टाइटन शनि का सबसे बड़ा चंद्रमा है और सौर मंडल में दूसरा सबसे बड़ा चंद्रमा है। यह एकमात्र ज्ञात चंद्रमा है जिसका एक सघन वायुमंडल है — मीथेन से भरी हुई नाइट्रोजन की एक मोटी परत — और पृथ्वी से परे एकमात्र ज्ञात दुनिया है जिसकी सतह पर स्थिर तरल समुद्र हैं।
+    </string>
+    <string name="object_info_titan_funfact" translation_description="Fun fact about Titan shown in the info card. Translate this text.">
+    टाइटन की झीलें और समुद्र पानी से नहीं, बल्कि तरल मीथेन और ईथेन से भरी हुई हैं जो −179°C के ठंडे तापमान पर हैं। नासा का ड्रैगनफ्लाई रोटरक्राफ्ट मिशन, जो 2034 में पहुंचने के लिए तैयार है, टाइटन की सतह पर साइटों के बीच उड़ान भरेगा और जीवन की रसायन विज्ञान की खोज करेगा।
+    </string>
+    <string name="object_info_titan_distance" translation_description="Distance to Titan shown in the info card. Translate units if appropriate for your locale.">शनि से 1,221,870 किमी</string>
+    <string name="object_info_titan_size" translation_description="Physical size of Titan shown in the info card. Translate units if appropriate for your locale.">5,151 किमी व्यास</string>
+
+    <string name="object_info_rhea_description" translation_description="Description of Rhea shown in the info card. Translate this text.">
+    रिया शनि का दूसरा सबसे बड़ा चंद्रमा है और बर्फ और चट्टान की एक भारी गड्ढों वाली दुनिया है। इसकी पीली, प्राचीन सतह सौर मंडल के कुछ सबसे कुंवारे प्रभाव गड्ढों को संरक्षित करती है, साथ ही चमकदार बर्फ की चट्टानें जहां भूस्खलन ने नीचे से ताजी सामग्री को उजागर किया है।
+    </string>
+    <string name="object_info_rhea_funfact" translation_description="Fun fact about Rhea shown in the info card. Translate this text.">
+    2008 में, कैसिनी डेटा से पता चला कि रिया के चारों ओर मलबे की एक पतली वलय परिक्रमा कर रही हो सकती है — जो इसे अपनी वलय प्रणाली वाला पहला चंद्रमा बना देगी। यदि पुष्टि हो जाए, तो यह एक उल्लेखनीय खोज होगी; साक्ष्य अभी भी अनुसंधान का एक सक्रिय क्षेत्र है।
+    </string>
+    <string name="object_info_rhea_distance" translation_description="Distance to Rhea shown in the info card. Translate units if appropriate for your locale.">शनि से 527,108 किमी</string>
+    <string name="object_info_rhea_size" translation_description="Physical size of Rhea shown in the info card. Translate units if appropriate for your locale.">1,527 किमी व्यास</string>
+
+    <string name="object_info_tethys_description" translation_description="Description of Tethys shown in the info card. Translate this text.">
+    टेथिस शनि का एक बर्फीला चंद्रमा है जो दो नाटकीय विशेषताओं से प्रभावित है: विशाल ओडिसियस क्रेटर, जो 400 किमी चौड़ा है और चंद्रमा के लगभग एक तिहाई हिस्से को कवर करता है, और इथाका चस्मा, एक घाटी प्रणाली जो पृथ्वी के चारों ओर तीन-चौथाई तक फैली हुई है।
+    </string>
+    <string name="object_info_tethys_funfact" translation_description="Fun fact about Tethys shown in the info card. Translate this text.">
+    टेथिस लगभग शुद्ध जल बर्फ है — इसका घनत्व सौर मंडल के किसी भी चंद्रमा में सबसे कम है, जो जमी हुई जल से मुश्किल से ही अधिक घना है। इथाका चास्मा तब बन सकता है जब आंतरिक भाग जम गया और फैल गया, जिससे ऊपरी परत को अंदर से दरार आई।
+    </string>
+    <string name="object_info_tethys_distance" translation_description="Distance to Tethys shown in the info card. Translate units if appropriate for your locale.">शनि से 294,619 किमी</string>
+    <string name="object_info_tethys_size" translation_description="Physical size of Tethys shown in the info card. Translate units if appropriate for your locale.">1,062 किमी व्यास</string>
+
+    <string name="object_info_dione_description" translation_description="Description of Dione shown in the info card. Translate this text.">
+    डायोन शनि का एक बर्फीला चंद्रमा है जिसका अग्रणी सतह भारी रूप से क्रेटर से भरा हुआ है और पिछला गोलार्ध चमकदार बर्फ की चट्टानों से सजा हुआ है — ये दरारें हैं जहाँ प्राचीन टेक्टोनिक बलों ने नीचे से ताजी बर्फ को उजागर किया है। कैसिनी गुरुत्वाकर्षण डेटा पपड़ी के नीचे एक उप-सतही तरल महासागर का संकेत देता है।
+    </string>
+    <string name="object_info_dione_funfact" translation_description="Fun fact about Dione shown in the info card. Translate this text.">
+    डायोन अपनी कक्षा को दो छोटे चंद्रमाओं, हेलेन और पॉलीड्यूसेस के साथ साझा करता है, जो गुरुत्वाकर्षण संतुलन बिंदुओं पर इसके आगे और पीछे 60° पर बंद हैं जिन्हें लैग्रेंज बिंदु कहा जाता है। विशेष रूप से हेलेन को कैसिनी छवियों में एक ब्रह्मांडीय हिचहाइकर की तरह सवारी करते हुए देखा जा सकता है।
+    </string>
+    <string name="object_info_dione_distance" translation_description="Distance to Dione shown in the info card. Translate units if appropriate for your locale.">शनि से 377,396 किमी</string>
+    <string name="object_info_dione_size" translation_description="Physical size of Dione shown in the info card. Translate units if appropriate for your locale.">1,122 किमी व्यास</string>
+
+    <string name="object_info_iapetus_description" translation_description="Description of Iapetus shown in the info card. Translate this text.">
+    Iapetus शनि के सबसे विशिष्ट चंद्रमाओं में से एक है: इसका अग्रणी गोलार्ध काले कोयले जितना गहरा काला पदार्थ से ढका हुआ है, जबकि इसका पिछला गोलार्ध चमकीली सफेद बर्फ है। यह चरम द्वि-रंगीन उपस्थिति ने Giovanni Cassini को 1671 में चंद्रमा की खोज करते समय भ्रमित किया, और यह विपरीतता इतनी तीव्र है कि यह छोटी दूरबीनों में दिखाई देती है।
+    </string>
+    <string name="object_info_iapetus_funfact" translation_description="Fun fact about Iapetus shown in the info card. Translate this text.">
+    Iapetus के पास एक विशाल भूमध्यरेखीय कटक भी है जो 20 किमी ऊंचा है — पृथ्वी पर किसी भी पर्वत से अधिक ऊंचा — जो इसके भूमध्य रेखा के चारों ओर हजारों किलोमीटर तक फैला हुआ है। इसकी उत्पत्ति अज्ञात है: यह एक ढहे हुए वलय का अवशेष हो सकता है, या प्राचीन टेक्टोनिक तह हो सकती है, जो तब बनी थी जब चंद्रमा बहुत पहले बहुत तेजी से घूमता था।
+    </string>
+    <string name="object_info_iapetus_distance" translation_description="Distance to Iapetus shown in the info card. Translate units if appropriate for your locale.">शनि से 3,560,820 किमी</string>
+    <string name="object_info_iapetus_size" translation_description="Physical size of Iapetus shown in the info card. Translate units if appropriate for your locale.">1,469 किमी व्यास</string>
+
+    <!-- Moon of Neptune -->
+    <string name="object_info_triton_description" translation_description="Description of Triton shown in the info card. Translate this text.">
+    ट्राइटन नेप्च्यून का सबसे बड़ा चंद्रमा है और सौर मंडल के सबसे असाधारण पिंडों में से एक है। यह नेप्च्यून की परिक्रमा करता है - ग्रह के अपने घूर्णन के विपरीत - यह एक मजबूत संकेत है कि इसे बाहरी सौर मंडल से, सबसे अधिक संभावना कुइपर बेल्ट से, नेप्च्यून के इतिहास की शुरुआत में पकड़ा गया था।
+    </string>
+    <string name="object_info_triton_funfact" translation_description="Fun fact about Triton shown in the info card. Translate this text.">
+    अपने सतह के तापमान −235°C के बावजूद — जो किसी भी अंतरिक्ष यान द्वारा देखे गए किसी भी पिंड पर सबसे ठंडा मापा गया है — वॉयेजर 2 ने 1989 में ट्राइटन पर सक्रिय नाइट्रोजन गीजर की खोज की। सतह पर गहरी धारियाँ उन जगहों को चिह्नित करती हैं जहाँ गैस और गहरी सामग्री के प्लूम पतले वायुमंडल में किलोमीटर तक फूटे थे।
+    </string>
+    <string name="object_info_triton_distance" translation_description="Distance to Triton shown in the info card. Translate units if appropriate for your locale.">नेप्च्यून से 354,759 किमी</string>
+    <string name="object_info_triton_size" translation_description="Physical size of Triton shown in the info card. Translate units if appropriate for your locale.">2,707 किमी व्यास</string>
+
+    <!-- Major Moons of Uranus -->
+    <string name="object_info_titania_description" translation_description="Description of Titania shown in the info card. Translate this text.">
+    टाइटेनिया यूरेनस का सबसे बड़ा चंद्रमा है और सौर मंडल का आठवां सबसे बड़ा चंद्रमा है। इसकी सतह प्राचीन गड्ढेदार मैदानों और युवा खड़ी ढलानों और घाटियों का मिश्रण दिखाती है, जो एक जटिल भूवैज्ञानिक इतिहास का सुझाव देती है जिसमें बर्फीली परत को फिर से आकार देने वाली पिछली टेक्टोनिक गतिविधि शामिल हो सकती है।
+    </string>
+    <string name="object_info_titania_funfact" translation_description="Fun fact about Titania shown in the info card. Translate this text.">
+    यूरेनस के सभी चंद्रमा शेक्सपियर और अलेक्जेंडर पोप के पात्रों के नाम पर हैं — टाइटानिया \'ए मिडसमर नाइट्स ड्रीम\' में परियों की रानी है। यह बहुत कम प्रमुख ग्रहीय चंद्रमाओं में से एक है जिसका नाम ग्रीक या रोमन पौराणिक कथाओं के किसी व्यक्ति के नाम पर नहीं रखा गया है।
+    </string>
+    <string name="object_info_titania_distance" translation_description="Distance to Titania shown in the info card. Translate units if appropriate for your locale.">अरुण से 435,910 किमी</string>
+    <string name="object_info_titania_size" translation_description="Physical size of Titania shown in the info card. Translate units if appropriate for your locale.">1,578 किमी व्यास</string>
+
+    <string name="object_info_oberon_description" translation_description="Description of Oberon shown in the info card. Translate this text.">
+    ओबेरॉन यूरेनस के पाँच प्रमुख चंद्रमाओं में सबसे बाहरी है और सबसे अधिक गड्ढों वाला है, जिसकी प्राचीन सतह सौर मंडल की शुरुआत के बाद से बहुत कम बदली है। इसके कई बड़े प्रभाव गड्ढों के तल पर गहरी सामग्री है, संभवतः टकराने वाली वस्तुओं द्वारा लाए गए जैविक जमा।
+    </string>
+    <string name="object_info_oberon_funfact" translation_description="Fun fact about Oberon shown in the info card. Translate this text.">
+    ओबेरॉन एक ऐसा पर्वत है जो आसपास के मैदानों से लगभग 6 किमी ऊपर उठता है — जो पृथ्वी की सबसे ऊंची चोटियों के समान है। पृथ्वी के पर्वतों के विपरीत, जो प्लेट टेक्टोनिक्स के माध्यम से बने हैं, यह विशेषता एक प्राचीन प्रभाव क्रेटर की केंद्रीय चोटी या प्रारंभिक ज्वालामुखी गतिविधि का अवशेष हो सकती है।
+    </string>
+    <string name="object_info_oberon_distance" translation_description="Distance to Oberon shown in the info card. Translate units if appropriate for your locale.">यूरेनस से 583,520 किमी</string>
+    <string name="object_info_oberon_size" translation_description="Physical size of Oberon shown in the info card. Translate units if appropriate for your locale.">1,523 किमी व्यास</string>
+
+    <string name="object_info_ariel_description" translation_description="Description of Ariel shown in the info card. Translate this text.">
+    एरियल यूरेनस के पाँच प्रमुख चंद्रमाओं में सबसे युवा और सबसे चमकदार सतह है। इसका परिदृश्य गहरी घाटियों और चिकने मैदानों के एक नेटवर्क द्वारा प्रभावित है जिन्हें बहुत पहले तरल पदार्थ — संभवतः पानी या अमोनिया-जल मिश्रण — द्वारा पुनः सतह पर लाया गया था जो आंतरिक भाग से निकलकर प्राचीन भूभाग को बाढ़ से भर गया था।
+    </string>
+    <string name="object_info_ariel_funfact" translation_description="Fun fact about Ariel shown in the info card. Translate this text.">
+    एरियल की घाटियाँ 10 किमी गहरी हो सकती हैं — ग्रैंड कैनियन से कहीं अधिक गहरी। जेम्स वेब स्पेस टेलीस्कोप की टिप्पणियों ने एरियल की सतह पर कार्बन डाइऑक्साइड बर्फ का पता लगाया है, जो यूरेनस के चुंबकीय क्षेत्र से आने वाले आवेशित कणों द्वारा संचालित सतह रसायन विज्ञान का संकेत देता है।
+    </string>
+    <string name="object_info_ariel_distance" translation_description="Distance to Ariel shown in the info card. Translate units if appropriate for your locale.">यूरेनस से 191,020 किमी</string>
+    <string name="object_info_ariel_size" translation_description="Physical size of Ariel shown in the info card. Translate units if appropriate for your locale.">1,158 किमी व्यास</string>
+
+    <string name="object_info_umbriel_description" translation_description="Description of Umbriel shown in the info card. Translate this text.">
+    अम्ब्रिएल यूरेनस के पाँच प्रमुख चंद्रमाओं में सबसे अंधकारमय है, जिसकी सतह समान रूप से पुरानी और भारी रूप से क्रेटर युक्त है जो इसके पड़ोसियों पर देखी गई भूवैज्ञानिक पुनः सतह के संकेत दिखाती है। इसका आंतरिक भाग सौर मंडल के इतिहास की शुरुआत से ही ठंडा और जमा हुआ प्रतीत होता है।
+    </string>
+    <string name="object_info_umbriel_funfact" translation_description="Fun fact about Umbriel shown in the info card. Translate this text.">
+    Umbriel पर सबसे आकर्षक विशेषता Wunda है, जो इसके भूमध्य रेखा के पास लगभग 140 किमी चौड़ी एक चमकदार वलय है। Voyager 2 द्वारा 1986 में खोजी गई, Wunda की सटीक प्रकृति एक रहस्य बनी हुई है — यह एक क्रेटर का तल हो सकता है जो कार्बन डाइऑक्साइड या अमोनिया पाले से लेपित है जो इसे बनाने वाले प्रभाव के बहुत बाद जमा हुआ था।
+    </string>
+    <string name="object_info_umbriel_distance" translation_description="Distance to Umbriel shown in the info card. Translate units if appropriate for your locale.">यूरेनस से 266,300 किमी</string>
+    <string name="object_info_umbriel_size" translation_description="Physical size of Umbriel shown in the info card. Translate units if appropriate for your locale.">1,170 किमी व्यास</string>
+
+    <!-- Globular clusters already on the map -->
+    <string name="object_info_omega_centauri_description" translation_description="Description of Omega Centauri shown in the info card. Translate this text.">
+    ओमेगा सेंटॉरी मिल्की वे की परिक्रमा करने वाला सबसे बड़ा और सबसे विशाल गोलाकार तारा समूह है, जिसमें लगभग 10 मिलियन तारे लगभग 150 प्रकाश-वर्ष के व्यास वाले एक गोले में पैक हैं। यह सेंटॉरस में एक धुंधले तारे के रूप में नग्न आंखों से आसानी से दिखाई देता है, और दूरबीन या किसी भी दूरदर्शी के माध्यम से तारों की एक अद्भुत गेंद में बदल जाता है।
+    </string>
+    <string name="object_info_omega_centauri_funfact" translation_description="Fun fact about Omega Centauri shown in the info card. Translate this text.">
+    विशिष्ट गोलाकार समूहों के विपरीत, ओमेगा सेंटॉरी में विभिन्न आयु और रासायनिक संरचना वाले तारे हैं — यह संकेत है कि यह एक बौने आकाशगंगा का छीना हुआ नाभिक हो सकता है जिसे अरबों साल पहले मिल्की वे द्वारा अलग किया गया और निगल लिया गया था। यह एक केंद्रीय मध्यवर्ती-द्रव्यमान ब्लैक होल को भी आश्रय दे सकता है।
+    </string>
+    <string name="object_info_omega_centauri_distance" translation_description="Distance to Omega Centauri shown in the info card. Translate units if appropriate for your locale.">17,090 प्रकाश-वर्ष</string>
+    <string name="object_info_omega_centauri_size" translation_description="Physical size of Omega Centauri shown in the info card. Translate units if appropriate for your locale.">~150 प्रकाश-वर्ष व्यास</string>
+
+    <!-- Deep-sky objects: new catalog additions -->
+    <string name="object_info_hyades_description" translation_description="Description of the Hyades star cluster shown in the info card. Translate this text.">
+    हाइड्स सौर मंडल के निकटतम खुली तारा समूह है और खगोल विज्ञान में सबसे अधिक अध्ययन किए जाने वाले समूहों में से एक है। यह नग्न आंखों से वृष (तारामंडल) के चेहरे को बनाने वाले तारों के V-आकार के पैटर्न के रूप में दिखाई देता है, जिसमें आकाश के लगभग 5° में फैले कई सौ तारे हैं।
+    </string>
+    <string name="object_info_hyades_funfact" translation_description="Fun fact about the Hyades shown in the info card. Translate this text.">
+    शानदार नारंगी तारा अल्देबारान हाइएडीज़ के भीतर बैठा हुआ प्रतीत होता है लेकिन वास्तव में यह आधी दूरी पर एक अग्रभूमि वस्तु है — एक संयोगपूर्ण संरेखण। असली समूह लगभग 153 प्रकाश-वर्ष दूर है और इसमें पहले तारे हैं जिनकी दूरियां हिप्पार्कोस उपग्रह से लंबन द्वारा मापी गई थीं।
+    </string>
+    <string name="object_info_hyades_distance" translation_description="Distance to the Hyades shown in the info card. Translate units if appropriate for your locale.">153 प्रकाश-वर्ष</string>
+    <string name="object_info_hyades_size" translation_description="Angular size of the Hyades shown in the info card.">~5° चौड़ाई में</string>
+
+    <string name="object_info_coma_star_cluster_description" translation_description="Description of the Coma Berenices Star Cluster shown in the info card. Translate this text.">
+    कोमा बेरेनिसेस तारा समूह एक निकटवर्ती खुला समूह है जिसमें लगभग 40 तारे हैं जो आकाश के लगभग 5° में बिखरे हुए हैं, अंधेरी परिस्थितियों में नग्न आंखों से नरम धुंध के रूप में आसानी से दिखाई देते हैं। यह सौर मंडल के लिए तीसरा निकटतम खुला समूह है और कोमा बेरेनिसेस नक्षत्र का स्रोत है।
+    </string>
+    <string name="object_info_coma_star_cluster_funfact" translation_description="Fun fact about the Coma Berenices Star Cluster shown in the info card. Translate this text.">
+    प्राचीन पर्यवेक्षकों ने इस तारा समूह को मिस्र की रानी बेरेनिस द्वितीय के बालों के रूप में देखा, जिन्होंने किंवदंती के अनुसार अपने पति की युद्ध से सुरक्षित वापसी के लिए अपने सुनहरे बाल काट दिए थे। टॉलेमी III ने कथित तौर पर लगभग 245 ईसा पूर्व में इस असामान्य तारामंडल को उनके सम्मान में आधिकारिक रूप से नाम दिया था।
+    </string>
+    <string name="object_info_coma_star_cluster_distance" translation_description="Distance to the Coma Star Cluster shown in the info card. Translate units if appropriate for your locale.">288 प्रकाश-वर्ष</string>
+    <string name="object_info_coma_star_cluster_size" translation_description="Angular size of the Coma Star Cluster shown in the info card.">~5° चौड़ाई में</string>
+
+    <string name="object_info_coathanger_description" translation_description="Description of the Coathanger asterism shown in the info card. Translate this text.">
+    कोथैंगर वल्पेकुला में दस तारों का एक आकर्षक तारामंडल है जो एक अस्पष्ट आकार बनाता है: छह तारे एक सीधी रेखा में हैं और चार नीचे एक हुक में लटकते हैं, जो बिल्कुल एक उल्टे कोथैंगर जैसा दिखता है। यह गर्मी के आकाश में सर्वश्रेष्ठ द्विनेत्र वस्तुओं में से एक है, जो एक विशिष्ट द्विनेत्र दृश्य क्षेत्र में बिल्कुल फिट बैठता है।
+    </string>
+    <string name="object_info_coathanger_funfact" translation_description="Fun fact about the Coathanger shown in the info card. Translate this text.">
+    कोथैंगर एक समूह जैसा दिखने के बावजूद, इसके तारे भौतिक रूप से संबंधित नहीं हैं — वे बहुत अलग-अलग दूरियों पर स्थित हैं और केवल दृष्टि रेखा का संयोग हैं। ब्रोच्ची क्लस्टर को दलमीरो ब्रोच्ची द्वारा 1920 के दशक में सूचीबद्ध किया गया था, और इसे चित्रित करने वाली पहली अंतरिक्ष दूरबीन हिप्पार्कोस थी, जिसने पुष्टि की कि तारे असंबंधित हैं।
+    </string>
+    <string name="object_info_coathanger_distance" translation_description="Distance to the Coathanger shown in the info card. Translate units if appropriate for your locale.">~420 प्रकाश-वर्ष (सबसे चमकीला तारा)</string>
+    <string name="object_info_coathanger_size" translation_description="Angular size of the Coathanger shown in the info card.">~1° चौड़ाई में</string>
+
+    <string name="object_info_helix_nebula_description" translation_description="Description of the Helix Nebula shown in the info card. Translate this text.">
+    हेलिक्स नेबुला आकाश में स्पष्ट आकार में सबसे बड़ी ग्रहीय नेबुला है — यह एक सूर्य जैसे तारे द्वारा अपने जीवन के अंत में बहाई गई गैस का विस्तारशील खोल है। लगभग आधी डिग्री तक फैली हुई, यह कुंभ राशि में दूरबीन में एक धुंधली वृत्ताकार चमक के रूप में दिखाई देती है और लंबे समय के संपर्क वाली तस्वीरों में इसके रूप के लिए इसे ईश्वर की आंख का उपनाम दिया गया है।
+    </string>
+    <string name="object_info_helix_nebula_funfact" translation_description="Fun fact about the Helix Nebula shown in the info card. Translate this text.">
+    हेलिक्स नेबुला के केंद्र में पृथ्वी के निकटतम ज्ञात श्वेत बौनों में से एक स्थित है — एक अत्यंत गर्म तारकीय अवशेष जो पृथ्वी के आकार का है लेकिन सूर्य के द्रव्यमान का है। यह वह भाग्य है जो लगभग पाँच अरब वर्षों में हमारे अपने सूर्य की प्रतीक्षा कर रहा है।
+    </string>
+    <string name="object_info_helix_nebula_distance" translation_description="Distance to the Helix Nebula shown in the info card. Translate units if appropriate for your locale.">650 प्रकाश-वर्ष</string>
+    <string name="object_info_helix_nebula_size" translation_description="Angular size of the Helix Nebula shown in the info card.">~3 प्रकाश-वर्ष व्यास</string>
+
+    <string name="object_info_sculptor_galaxy_description" translation_description="Description of the Sculptor Galaxy shown in the info card. Translate this text.">
+    शिल्पकार आकाशगंगा पृथ्वी से दिखाई देने वाली सबसे चमकीली और सबसे सुंदर किनारे-पर सर्पिल आकाशगंगाओं में से एक है, जो दक्षिणी नक्षत्र शिल्पकार में एक लंबी चमक के रूप में दिखाई देती है। यह निकटतम स्टारबर्स्ट आकाशगंगाओं में से एक है — एक आकाशगंगा जो तारों के गठन का एक तीव्र विस्फोट कर रही है — जो अंधेरे आकाश से दूरबीन के साथ शौकिया खगोलविदों के लिए दिखाई देती है।
+    </string>
+    <string name="object_info_sculptor_galaxy_funfact" translation_description="Fun fact about the Sculptor Galaxy shown in the info card. Translate this text.">
+    मूर्तिकार आकाशगंगा मूर्तिकार समूह के सबसे चमकीले सदस्यों में से एक है — यह आकाशगंगा समूह हमारे अपने स्थानीय समूह के निकटतम है। इसका केंद्रीय तारकाविस्फोट क्षेत्र मिल्की वे की तुलना में कई गुना अधिक दर से नए तारे उत्पन्न करता है, जो पड़ोसी आकाशगंगाओं के साथ पिछली अंतःक्रियाओं द्वारा संचालित है।
+    </string>
+    <string name="object_info_sculptor_galaxy_distance" translation_description="Distance to the Sculptor Galaxy shown in the info card. Translate units if appropriate for your locale.">11.4 मिलियन प्रकाश-वर्ष</string>
+    <string name="object_info_sculptor_galaxy_size" translation_description="Physical size of the Sculptor Galaxy shown in the info card. Translate units if appropriate for your locale.">~90,000 प्रकाश-वर्ष चौड़ाई में</string>
+
+    <string name="object_info_blue_snowball_nebula_description" translation_description="Description of the Blue Snowball Nebula shown in the info card. Translate this text.">
+    ब्लू स्नोबॉल एंड्रोमेडा में एक ग्रहीय नीहारिका है — एक मरते हुए तारे द्वारा निष्कासित गैस का चमकता हुआ खोल। परिमाण 8.3 पर यह आकाश में सबसे चमकीली और सबसे रंगीन ग्रहीय नीहारिकाओं में से एक है, जो छोटी दूरबीनों में भी एक जीवंत नीले-हरे डिस्क के रूप में दिखाई देती है। इसकी सममितीय आकृति और तीव्र रंग इसे पर्यवेक्षकों के बीच एक पसंदीदा बनाते हैं।
+    </string>
+    <string name="object_info_blue_snowball_nebula_funfact" translation_description="Fun fact about the Blue Snowball Nebula shown in the info card. Translate this text.">
+    ब्लू स्नोबॉल की आकर्षक रंग दोगुनी आयनित ऑक्सीजन से आती है जो एक विशिष्ट हरी तरंग दैर्ध्य पर चमकती है, हाइड्रोजन उत्सर्जन के साथ मिलकर — एक रंग पैलेट जिसे मानव आँखें नीले-हरे रंग के रूप में देखती हैं। केंद्रीय सफेद बौने का सतह तापमान लगभग 100,000°C है, जो इस दूरी पर आसपास की गैस को आयनित करने के लिए काफी गर्म है।
+    </string>
+    <string name="object_info_blue_snowball_nebula_distance" translation_description="Distance to the Blue Snowball Nebula shown in the info card. Translate units if appropriate for your locale.">~2,500 प्रकाश-वर्ष</string>
+    <string name="object_info_blue_snowball_nebula_size" translation_description="Physical size of the Blue Snowball Nebula shown in the info card. Translate units if appropriate for your locale.">~0.8 प्रकाश-वर्ष व्यास</string>
+
+    <string name="object_info_ghost_of_jupiter_description" translation_description="Description of the Ghost of Jupiter planetary nebula shown in the info card. Translate this text.">
+    Ghost of Jupiter एक उज्ज्वल ग्रहीय नीहारिका है जो Hydra में स्थित है और इसका आभासी आकार ग्रह Jupiter के समान है — इसलिए इसका नाम है। परिमाण 8.6 पर यह आकाश में छोटी दूरबीनों के लिए सबसे सुलभ ग्रहीय नीहारिकाओं में से एक है, जो एक स्पष्ट डिस्क और मध्यम छिद्रों में रंग का संकेत दिखाता है।
+    </string>
+    <string name="object_info_ghost_of_jupiter_funfact" translation_description="Fun fact about the Ghost of Jupiter shown in the info card. Translate this text.">
+    Ghost of Jupiter के अंदर एक चमकीला आंतरिक खोल है जो एक कमजोर बाहरी प्रभामंडल से घिरा हुआ है — यह दो-खोल संरचना बताती है कि मरता हुआ तारा कम से कम दो अलग-अलग एपिसोड में गैस निष्कासित करता था। इसका केंद्रीय तारा सबसे गर्म ज्ञात श्वेत बौनों में से एक है, जिसका सतह तापमान लगभग 75,000°C पर अनुमानित है।
+    </string>
+    <string name="object_info_ghost_of_jupiter_distance" translation_description="Distance to the Ghost of Jupiter shown in the info card. Translate units if appropriate for your locale.">~1,400 प्रकाश-वर्ष</string>
+    <string name="object_info_ghost_of_jupiter_size" translation_description="Physical size of the Ghost of Jupiter shown in the info card. Translate units if appropriate for your locale.">~1 प्रकाश-वर्ष व्यास</string>
+
+    <string name="object_info_saturn_nebula_description" translation_description="Description of the Saturn Nebula shown in the info card. Translate this text.">
+    शनि नेबुला कुंभ राशि में एक ग्रहीय नेबुला है जिसका नाम शनि ग्रह से मिलता-जुलता है — इसके दोनों ओर से निकली हुई संरचनाएं जिन्हें एंसे कहते हैं, वलय के हैंडल की तरह दिखाई देती हैं, मध्यम दूरबीनों में दृश्यमान होती हैं। परिमाण 8.0 पर यह आकाश में सबसे चमकीले ग्रहीय नेबुलाओं में से एक है और बड़े उपकरणों में जटिल संरचना दिखाता है।
+    </string>
+    <string name="object_info_saturn_nebula_funfact" translation_description="Fun fact about the Saturn Nebula shown in the info card. Translate this text.">
+    विलियम हर्शल ने 1782 में शनि नेबुला की खोज की और शनि जैसी उपस्थिति को नोट किया। आधुनिक अवलोकन केंद्रीय सफेद बौने के चारों ओर गैस के कम से कम चार अलग-अलग खोल प्रकट करते हैं, जो तारे के जीवन के अंतिम चरणों में द्रव्यमान हानि के कई एपिसोड को दर्शाते हैं।
+    </string>
+    <string name="object_info_saturn_nebula_distance" translation_description="Distance to the Saturn Nebula shown in the info card. Translate units if appropriate for your locale.">~5,000 प्रकाश-वर्ष</string>
+    <string name="object_info_saturn_nebula_size" translation_description="Physical size of the Saturn Nebula shown in the info card. Translate units if appropriate for your locale.">~1 प्रकाश-वर्ष चौड़ाई में</string>
+
+    <string name="object_info_ngc_2903_description" translation_description="Description of the galaxy NGC 2903 shown in the info card. Translate this text.">
+    NGC 2903 सिंह राशि में एक चमकीली बार्ड स्पाइरल गैलेक्सी है, जिसे अक्सर "वह मेसियर वस्तु जिसे मेसियर ने मिस किया" कहा जाता है — यह आकाश में सबसे प्रमुख गैलेक्सियों में से एक है जो उनकी प्रसिद्ध सूची में शामिल नहीं है। परिमाण 8.9 पर यह दूरबीन में आसानी से दिखाई देती है और मध्यम दूरबीनों में सुंदर स्पाइरल संरचना दिखाती है।
+    </string>
+    <string name="object_info_ngc_2903_funfact" translation_description="Fun fact about NGC 2903 shown in the info card. Translate this text.">
+    NGC 2903 में एक आकाशगंगा के केंद्रीय बार क्षेत्र में सबसे अधिक सांद्रता वाले तारा-निर्माण "हॉटस्पॉट्स" में से एक है — युवा विशाल तारों के घने समूह जो तीव्र तारा निर्माण से प्रकाशित हैं। इसका उपयोग बार्ड स्पाइरल आकाशगंगाओं में स्टारबर्स्ट गतिविधि का अध्ययन करने के लिए एक बेंचमार्क के रूप में किया जाता है।
+    </string>
+    <string name="object_info_ngc_2903_distance" translation_description="Distance to NGC 2903 shown in the info card. Translate units if appropriate for your locale.">30 मिलियन प्रकाश-वर्ष</string>
+    <string name="object_info_ngc_2903_size" translation_description="Physical size of NGC 2903 shown in the info card. Translate units if appropriate for your locale.">~80,000 प्रकाश-वर्ष चौड़ाई में</string>
+
+    <!-- Meteor showers -->
+    <string name="object_info_quadrantids_description" translation_description="Description of the Quadrantids meteor shower shown in the info card. Translate this text.">
+    क्वाड्रेंटिड्स एक प्रचुर जनवरी उल्कापात है जिसकी बहुत तीव्र, संक्षिप्त चोटी केवल कुछ घंटों तक रहती है। विकिरण केंद्र नक्षत्र बूटेस में स्थित है, जो निष्क्रिय नक्षत्र क्वाड्रेंस मुरालिस की स्थिति के पास है, जिसके नाम पर इस वर्षा का नाम रखा गया है। आदर्श परिस्थितियों में प्रति घंटे 120 तक उल्कापिंड दिखाई देते हैं।
+    </string>
+    <string name="object_info_quadrantids_funfact" translation_description="Fun fact about the Quadrantids meteor shower shown in the info card. Translate this text.">
+    अधिकांश प्रमुख वर्षाओं के विपरीत जो धूमकेतुओं से उत्पन्न होती हैं, क्वाड्रेंटिड्स\' मूल पिंड क्षुद्रग्रह 2003 EH1 है — जिसे एक धूमकेतु के सुप्त नाभिक के रूप में माना जाता है जो सदियों पहले जल गया था। इसका अस्तित्व केवल 2003 में पुष्टि किया गया था।
+    </string>
+
+    <string name="object_info_lyrids_description" translation_description="Description of the Lyrids meteor shower shown in the info card. Translate this text.">
+    लाइरिड्स एक विश्वसनीय वसंत उल्कापात है जो लाइरा में चमकीले तारे वेगा के पास से निकलता है। ये तेज़, मध्यम रूप से चमकीले उल्काएं पैदा करते हैं, जो लगभग 18 प्रति घंटे की दर से शिखर पर पहुंचते हैं, और कभी-कभी ऐसी आग की गेंदें उत्पन्न करते हैं जो चमकती धुएं की पूंछ छोड़ती हैं।
+    </string>
+    <string name="object_info_lyrids_funfact" translation_description="Fun fact about the Lyrids meteor shower shown in the info card. Translate this text.">
+    लाइरिड्स इतिहास में सबसे पुरानी विश्वसनीय रूप से दर्ज की गई उल्कापिंड वर्षा है। चीनी खगोलविदों ने 687 ईसा पूर्व में उल्कापिंड की एक तूफान को "बारिश की तरह गिरते हुए" दर्ज किया था। मलबा धूमकेतु थैचर से आता है, जिसे सूर्य की परिक्रमा करने में 415 साल लगते हैं और यह आखिरी बार 1861 में आंतरिक सौर मंडल में आया था।
+    </string>
+
+    <string name="object_info_aquariids_description" translation_description="Description of the Eta Aquariids meteor shower shown in the info card. Translate this text.">
+    एटा एक्वेरिड्स हैली धूमकेतु के मलबे से उत्पन्न दो वार्षिक उल्कापात में से एक हैं। प्रति घंटे 70 उल्कापिंडों तक की चोटी के साथ, यह उल्कापात दक्षिणी गोलार्ध का पक्ष लेता है, जहां विकिरण स्रोत भोर से पहले ऊंचा उठता है। उत्तरी पर्यवेक्षक अभी भी प्रति घंटे 30 या अधिक की सम्मानजनक दर का आनंद लेते हैं।
+    </string>
+    <string name="object_info_aquariids_funfact" translation_description="Fun fact about the Eta Aquariids meteor shower shown in the info card. Translate this text.">
+    एटा एक्वेरिड्स उल्कापिंड 66 किमी/सेकंड की गति से यात्रा करते हैं — इतनी तेजी से कि वे जो आयनित हवा बनाते हैं वह उल्कापिंड के जाने के कई सेकंड बाद तक चमक सकती है। आप हैली की प्राचीन धूल को अपनी आंखों के सामने जलते हुए देख सकते हैं, जो हजारों साल पहले धूमकेतु की कई यात्राओं के दौरान बिखरी गई थी।
+    </string>
+
+    <string name="object_info_deltaaquariids_description" translation_description="Description of the Delta Aquariids meteor shower shown in the info card. Translate this text.">
+    दक्षिणी डेल्टा एक्वेरिड्स जुलाई के अंत में अपने चरम पर पहुंचते हैं और उष्णकटिबंधीय और दक्षिणी अक्षांशों से सबसे अच्छी तरह दिखाई देते हैं, जहां कुंभ राशि में विकिरण स्रोत भोर से पहले ऊंचा चढ़ता है। वे प्रति घंटे 16 तक मध्यम गति के उल्कापिंडों की एक स्थिर धारा उत्पन्न करते हैं, जिनमें कुछ ही चमकीली आग की गेंदें होती हैं।
+    </string>
+    <string name="object_info_deltaaquariids_funfact" translation_description="Fun fact about the Delta Aquariids meteor shower shown in the info card. Translate this text.">
+    डेल्टा एक्वेरिड्स का सटीक मूल पिंड अनिश्चित रहता है। प्रमुख उम्मीदवार धूमकेतु 96P/मैकहोल्ज़ है, जो एक असामान्य अल्पकालीन धूमकेतु है जिसकी अत्यधिक झुकी हुई कक्षा सूर्य के बेहद करीब आती है — ग्रह बुध से भी करीब।
+    </string>
+
+    <string name="object_info_perseids_description" translation_description="Description of the Perseids meteor shower shown in the info card. Translate this text.">
+    पर्सिड्स वर्ष का सबसे लोकप्रिय उल्कापिंड वर्षा है, जो गर्म अगस्त की रातों में प्रति घंटे 100 उल्कापिंड तक पहुंचता है। धूमकेतु स्विफ्ट-टटल द्वारा बहाया गया मलबा पृथ्वी के वायुमंडल में ऊंचाई पर जल जाता है, तेज़, चमकीले उल्कापिंड का निर्माण करता है — कई लगातार चमकती हुई पूंछें छोड़ते हैं — जो नक्षत्र पर्सियस से विकीर्ण होती हैं।
+    </string>
+    <string name="object_info_perseids_funfact" translation_description="Fun fact about the Perseids meteor shower shown in the info card. Translate this text.">
+    पर्सिड्स का मूल धूमकेतु स्विफ्ट-टटल का नाभिक 26 किमी चौड़ा है — जो उस वस्तु से बड़ा है जिसे डायनासोर के विलुप्त होने का कारण माना जाता है। यह धूमकेतु आखिरी बार 1992 में आंतरिक सौर मंडल से गुजरा था और 2125 तक वापस नहीं आएगा।
+    </string>
+
+    <string name="object_info_orionids_description" translation_description="Description of the Orionids meteor shower shown in the info card. Translate this text.">
+    ओरियोनिड्स प्रत्येक वर्ष हैली धूमकेतु द्वारा उत्पन्न दूसरी उल्कापिंड वर्षा है, जो ओरियन के उठे हुए क्लब के पास से विकिरित होती है। लगभग 25 प्रति घंटे की दर से शिखर पर पहुंचते हुए, वे तेज़, अक्सर चमकीले उल्कापिंडों के लिए जाने जाते हैं जो अक्सर कई सेकंड तक चलने वाली चमकदार आयनीकरण ट्रेनें छोड़ते हैं।
+    </string>
+    <string name="object_info_orionids_funfact" translation_description="Fun fact about the Orionids meteor shower shown in the info card. Translate this text.">
+    हैली धूमकेतु दो वार्षिक उल्कापिंड वर्षा के लिए जिम्मेदार है: मई में एटा एक्वेरिड्स, जब पृथ्वी धूमकेतु के बाहरी मलबे के निशान को पार करती है, और अक्टूबर में ओरियोनिड्स, जब पृथ्वी अंतर्मुखी निशान को पार करती है। साथ में वे हमें साल में दो बार प्राचीन हैली धूल का नमूना लेने देते हैं।
+    </string>
+
+    <string name="object_info_leonids_description" translation_description="Description of the Leonids meteor shower shown in the info card. Translate this text.">
+    लियोनिड्स लियो की दरांती से निकलते हैं और आमतौर पर प्रति घंटे लगभग 20 उल्कापिंड पैदा करते हैं। वे शानदार तूफानों के लिए प्रसिद्ध हैं जो लगभग हर 33 साल में तब फूटते हैं जब पृथ्वी धूमकेतु 55P/टेम्पल-टटल द्वारा बहाई गई घनी धूल की पट्टी से गुजरती है। ये तूफान प्रति घंटे हजारों उल्कापिंड पैदा कर सकते हैं।
+    </string>
+    <string name="object_info_leonids_funfact" translation_description="Fun fact about the Leonids meteor shower shown in the info card. Translate this text.">
+    1833 के लियोनिड तूफान ने प्रति घंटे लगभग 100,000 उल्कापिंडों का उत्पादन किया, जिससे उत्तरी अमेरिका के पर्यवेक्षकों को भय हुआ कि आकाश आग में है। इस घटना ने उल्कापिंड वर्षा के वैज्ञानिक अध्ययन की शुरुआत की। इसी तरह के तूफान 1966 और 1999 में आए।
+    </string>
+
+    <string name="object_info_puppidvelids_description" translation_description="Description of the Puppid-Velids meteor shower shown in the info card. Translate this text.">
+    पुप्पिड-वेलिड्स दक्षिणी मिल्की वे में पुप्पिस और वेला तारामंडलों से विकिरित होने वाली अतिव्यापी लघु वर्षाओं का एक जटिल समूह है। लगभग 10 उल्कापिंड प्रति घंटे की चोटी के साथ, वे दक्षिणी गोलार्ध से सर्वोत्तम रूप से देखे जाते हैं, जहां दिसंबर के आकाश में विकिरण केंद्र अधिक ऊंचाई पर उठता है।
+    </string>
+    <string name="object_info_puppidvelids_funfact" translation_description="Fun fact about the Puppid-Velids meteor shower shown in the info card. Translate this text.">
+    पप्पिड-वेलिड्स को कई अलग-अलग मूल धूमकेतुओं से मलबा माना जाता है, न कि एक ही स्रोत से, जिसमें धूमकेतु 26P/ग्रिग-स्केलेरुप भी शामिल है। उनका दक्षिणी विकिरण स्रोत लगभग 40°N से उत्तर में अक्षांशों पर पर्यवेक्षकों के लिए क्षितिज के ऊपर कभी नहीं उठता है, जिससे यह एक ऐसी बारिश बन जाती है जिसे दुनिया के अधिकांश लोग शायद ही कभी देखते हैं।
+    </string>
+
+    <string name="object_info_geminids_description" translation_description="Description of the Geminids meteor shower shown in the info card. Translate this text.">
+    जेमिनिड्स को वर्ष के सबसे बेहतरीन उल्कापात के रूप में व्यापक रूप से माना जाता है — प्रचुर (प्रति घंटे 120 तक), विश्वसनीय, और मध्यरात्रि के बाद के बजाय शाम की शुरुआत से सक्रिय। वे जेमिनी नक्षत्र से विकीर्ण होते हैं और उल्कापातों की एक विस्तृत श्रृंखला का उत्पादन करते हैं, जिसमें जीवंत आग के गोले शामिल हैं।
+    </string>
+    <string name="object_info_geminids_funfact" translation_description="Fun fact about the Geminids meteor shower shown in the info card. Translate this text.">
+    प्रमुख उल्कापात वर्षाओं में अद्वितीय रूप से, जेमिनिड्स एक धूमकेतु के बजाय एक क्षुद्रग्रह से आते हैं: 3200 फेथॉन, एक "चट्टानी धूमकेतु" जिसकी कक्षा इसे किसी भी अन्य नामित क्षुद्रग्रह की तुलना में सूर्य के करीब ले जाती है। अत्यधिक गर्मी इसकी चट्टानी सतह को तोड़ सकती है और वर्षा पैदा करने वाली धूल को निकाल सकती है।
+    </string>
+
+    <string name="object_info_ursids_description" translation_description="Description of the Ursids meteor shower shown in the info card. Translate this text.">
+    Ursids एक छोटी उल्कापिंड वर्षा है जो Ursa Minor से निकलती है, Polaris के पास, जो उत्तरी गोलार्ध के पर्यवेक्षकों के लिए इसे circumpolaris बनाती है — पूरी रात दृश्यमान रहती है बिना अस्त हुए। ये शीतकालीन संक्रांति के आसपास लगभग 10 उल्कापिंड प्रति घंटे की दर से चरम पर पहुंचते हैं, और मूल धूमकेतु 8P/Tuttle है।
+    </string>
+    <string name="object_info_ursids_funfact" translation_description="Fun fact about the Ursids meteor shower shown in the info card. Translate this text.">
+    Ursids कभी-कभी अपनी सामान्य दर से कहीं अधिक अप्रत्याशित विस्फोट उत्पन्न करते हैं। 1945 में और फिर से 2006 में, पर्यवेक्षकों ने प्रति घंटे 50 या अधिक उल्कापिंड दर्ज किए — सामान्य शिखर का पाँच गुना। ये वृद्धि तब होती है जब पृथ्वी धूमकेतु ट्यूटल के निकट आने के दौरान बहाए गए मलबे के असामान्य रूप से घने रिबन से गुजरती है।
+    </string>
+
+    <!-- Category 5: Top priority — objects on the map that lacked info cards -->
+    <string name="object_info_m47_description" translation_description="Description of the open star cluster M47 shown in the info card. Translate this text.">
+    M47 Puppis में एक उज्ज्वल, ढीला खुला तारा समूह है, जो नंगी आँखों से आसानी से दिखाई देता है और दूरबीन में आकर्षक लगता है। लगभग 50 तारे आकाश के आधे डिग्री में बिखरे हुए हैं, कई नारंगी विशाल तारे कमजोर नीले-सफेद सदस्यों के विरुद्ध गर्म रंग जोड़ते हैं।
+    </string>
+    <string name="object_info_m47_funfact" translation_description="Fun fact about M47 shown in the info card. Translate this text.">
+    M47 "खोए हुए" Messier वस्तुओं में से एक था — Messier के मूल निर्देशांकों में एक लिपिकीय त्रुटि ने इसे खाली आकाश में रखा, जिससे यह समूह लगभग दो सदियों तक अज्ञात रहा। इसकी वास्तविक पहचान NGC 2422 के रूप में केवल 1959 में की गई, जब पर्यवेक्षकों ने त्रुटि को खोजने के लिए Messier\'s विवरण से पीछे की ओर काम किया।
+    </string>
+    <string name="object_info_m47_distance" translation_description="Distance to M47 shown in the info card. Translate units if appropriate for your locale.">1,600 प्रकाश-वर्ष</string>
+    <string name="object_info_m47_size" translation_description="Physical size of M47 shown in the info card. Translate units if appropriate for your locale.">~14 प्रकाश-वर्ष चौड़ाई में</string>
+
+    <string name="object_info_m41_description" translation_description="Description of the open star cluster M41 shown in the info card. Translate this text.">
+    M41 कनिस मेजर में एक सुंदर खुला तारा समूह है, जो रात के आकाश के सबसे चमकीले तारे सीरियस के ठीक 4° दक्षिण में स्थित है। अंधेरी जगहों से नंगी आंखों से दिखाई देता है और दूरबीन में शानदार दिखता है, इसमें लगभग 100 तारे हैं जो एक विशाल क्षेत्र में फैले हुए हैं, जिनमें कई आकर्षक नारंगी विशाल तारे हल्के नीले-सफेद सदस्यों के बीच हैं।
+    </string>
+    <string name="object_info_m41_funfact" translation_description="Fun fact about M41 shown in the info card. Translate this text.">
+    अरस्तू ने 325 ईसा पूर्व के आसपास M41 को नोट किया हो सकता है — संभवतः किसी भी गहरे आकाश की वस्तु का सबसे पहला दर्ज किया गया अवलोकन। उन्होंने सीरियस के दक्षिण में एक "बादलदार धब्बे" का वर्णन किया जो M41 की स्थिति से मेल खाता है। यदि यह पहचान सही है, तो M41 को दूरबीन के आविष्कार से लगभग दो हजार साल पहले चर्चा की जा रही थी।
+    </string>
+    <string name="object_info_m41_distance" translation_description="Distance to M41 shown in the info card. Translate units if appropriate for your locale.">2,300 प्रकाश-वर्ष</string>
+    <string name="object_info_m41_size" translation_description="Physical size of M41 shown in the info card. Translate units if appropriate for your locale.">~25 प्रकाश-वर्ष चौड़ाई में</string>
+
+    <string name="object_info_m24_description" translation_description="Description of the Sagittarius Star Cloud (M24) shown in the info card. Translate this text.">
+    M24 सैजिटेरियस स्टार क्लाउड है — न तो एक समूह है और न ही नेबुला, बल्कि मिल्की वे की धूल में एक अंतराल के माध्यम से एक खिड़की है, जो 2° चौड़े एक चमकदार तारा क्षेत्र को प्रकट करती है। यह आकाश में कहीं भी दूरबीन के माध्यम से दिखाई देने वाला सबसे समृद्ध क्षेत्र है, जो हजारों तारों से भरा हुआ है जो एक साथ कई अलग-अलग दूरियों तक फैले हुए हैं।
+    </string>
+    <string name="object_info_m24_funfact" translation_description="Fun fact about M24 shown in the info card. Translate this text.">
+    M24 के तारे समान दूरी पर नहीं हैं — यह तारा बादल आकाशगंगा की डिस्क का एक अनुप्रस्थ काट है जो अंतरतारकीय धूल में एक प्राकृतिक सुरंग के माध्यम से दिखाई देता है, जो 10,000 से 16,000 प्रकाश-वर्ष की दूरी तक फैला हुआ है। बादल के भीतर अंधकार नीहारिकाएं और छोटे तारा समूह हैं जो शानदार तारकीय पृष्ठभूमि के विरुद्ध अंधकार पैच के रूप में दिखाई देते हैं।
+    </string>
+    <string name="object_info_m24_distance" translation_description="Distance range to M24 shown in the info card. Translate units if appropriate for your locale.">~10,000–16,000 प्रकाश-वर्ष (श्रेणी)</string>
+    <string name="object_info_m24_size" translation_description="Physical size of M24 shown in the info card. Translate units if appropriate for your locale.">~600 प्रकाश-वर्ष गहरी खिड़की</string>
+
+    <string name="object_info_m25_description" translation_description="Description of the open star cluster M25 shown in the info card. Translate this text.">
+    M25 धनु राशि में एक चमकीला नग्न नेत्र खुला तारा समूह है, जो गर्मियों की मिल्की वे के घने तारा क्षेत्रों के विरुद्ध स्थित है। लगभग 600 तारे आधे डिग्री के क्षेत्र में बिखरे हुए हैं, जो इसे एक समृद्ध दूरबीन वस्तु बनाता है। इसके सबसे चमकीले सदस्यों में कई नीले-सफेद सुपरजायंट और आकाश में सबसे अधिक अध्ययन किए गए सेफिड परिवर्तनशील तारों में से एक शामिल है।
+    </string>
+    <string name="object_info_m25_funfact" translation_description="Fun fact about M25 shown in the info card. Translate this text.">
+    M25 में U Sagittarii है, एक शास्त्रीय Cepheid परिवर्तनशील तारा जो 6.7 दिनों की अवधि में चमकता और मंद होता है। Cepheids ब्रह्मांडीय दूरियों को मापने के लिए महत्वपूर्ण "मानक मोमबत्तियाँ" हैं क्योंकि उनकी स्पंदन अवधि सीधे उनकी वास्तविक चमक को प्रकट करती है — खगोलविदों ने उनका उपयोग करके पहले आकाशगंगा के आकार को निर्धारित किया और फिर अवलोकनीय ब्रह्मांड के पैमाने को निर्धारित किया।
+    </string>
+    <string name="object_info_m25_distance" translation_description="Distance to M25 shown in the info card. Translate units if appropriate for your locale.">2,000 प्रकाश-वर्ष</string>
+    <string name="object_info_m25_size" translation_description="Physical size of M25 shown in the info card. Translate units if appropriate for your locale.">~19 प्रकाश-वर्ष चौड़ाई में</string>
+
+    <string name="object_info_m39_description" translation_description="Description of the open star cluster M39 shown in the info card. Translate this text.">
+    M39 Cygnus में एक बड़ा, बिखरा हुआ खुला तारा समूह है, जो समृद्ध गर्मियों की Milky Way में Deneb के पास नंगी आंखों से दिखाई देता है। इसके लगभग 30 चमकीले तारे आकाश के एक डिग्री पर ढीले ढंग से समूहित हैं, जो दूरबीन या wide-field दूरबीन में कम आवर्धन पर सबसे अच्छी तरह से सराहा जाता है — उच्च आवर्धन बस इसे तारों के एक विरल, unremarkable क्षेत्र में हल करता है।
+    </string>
+    <string name="object_info_m39_funfact" translation_description="Fun fact about M39 shown in the info card. Translate this text.">
+    लगभग 825 प्रकाश-वर्ष की दूरी पर, M39 पृथ्वी के निकटतम खुले तारा समूहों में से एक है, और लगभग 240 मिलियन वर्ष पुराना होने के कारण यह सबसे पुराने नग्न-नेत्र समूहों में से एक है — इतना पुराना कि इसके सबसे विशाल तारे पहले ही अपना जीवन समाप्त कर चुके हैं। मेसिए ने इसे 1764 में दर्ज किया और यह उनकी सूची के सबसे प्रारंभिक जोड़ों में से एक था।
+    </string>
+    <string name="object_info_m39_distance" translation_description="Distance to M39 shown in the info card. Translate units if appropriate for your locale.">825 प्रकाश-वर्ष</string>
+    <string name="object_info_m39_size" translation_description="Physical size of M39 shown in the info card. Translate units if appropriate for your locale.">~8 प्रकाश-वर्ष चौड़ाई में</string>
+
+    <!-- Category 5: Special cases -->
+    <string name="object_info_m63_description" translation_description="Description of the Sunflower Galaxy (M63) shown in the info card. Translate this text.">
+    सनफ्लावर गैलेक्सी कैनिस वेनेटिसी में एक चमकदार सर्पिल है जिसकी कसकर घुमी हुई भुजाएँ, तारा-निर्माण क्षेत्रों से भरी हुई, लंबे-एक्सपोजर फोटोग्राफ में इसे एक विशिष्ट फूल जैसी बनावट देती हैं। परिमाण 8.6 पर यह अंधेरे आकाश से दूरबीन में दिखाई देती है और छोटी दूरबीनों में अपनी लंबी आकृति और चमकदार नाभिक को आसानी से दिखाती है।
+    </string>
+    <string name="object_info_m63_funfact" translation_description="Fun fact about the Sunflower Galaxy shown in the info card. Translate this text.">
+    M63 की खोज पिएरे मेचेन ने 1779 में की थी — मेसियर वस्तुओं में से एक मुट्ठी भर जो मेसियर के बजाय मेचेन द्वारा खोजी गई थीं। यह M51 समूह का सदस्य है, भंवर आकाशगंगा (M51) के साथ भौतिक रूप से जुड़ा हुआ है, और अतीत की बातचीत के संकेत दिखाता है: एक धुंधली, प्राचीन तारकीय धारा इसकी बाहरी डिस्क के चारों ओर लपेटी हुई है।
+    </string>
+    <string name="object_info_m63_distance" translation_description="Distance to the Sunflower Galaxy shown in the info card. Translate units if appropriate for your locale.">29 मिलियन प्रकाश-वर्ष</string>
+    <string name="object_info_m63_size" translation_description="Physical size of the Sunflower Galaxy shown in the info card. Translate units if appropriate for your locale.">~100,000 प्रकाश-वर्ष चौड़ाई में</string>
+
+    <string name="object_info_ngc_6543_description" translation_description="Description of the Cat's Eye Nebula (NGC 6543) shown in the info card. Translate this text.">
+    कैट\'स आई नेबुला सबसे संरचनात्मक रूप से जटिल ग्रहीय नीहारिकाओं में से एक है — एक मरते हुए तारे की निष्कासित गैस को संकेंद्रित खोल, जेट और चमकीली गांठों में तराशा गया है जो हबल इमेजरी में दिखाई देता है। छोटी दूरबीनों में यह ड्रैको में एक जीवंत नीले-हरे डिस्क के रूप में दिखाई देता है, शरद ऋतु के आकाश में सबसे रंगीन वस्तुओं में से एक।
+    </string>
+    <string name="object_info_ngc_6543_funfact" translation_description="Fun fact about the Cat's Eye Nebula shown in the info card. Translate this text.">
+    1864 में, खगोलविद विलियम हगिंस ने कैट\'स आई नेबुला पर एक स्पेक्ट्रोस्कोप लगाया और पाया कि यह चमकती हुई गैस से बना था, न कि अनसुलझे तारों से — यह पहली बार था जब किसी ग्रहीय नेबुला की प्रकृति की पुष्टि की गई थी। इस खोज ने नेबुलर स्पेक्ट्रोस्कोपी के क्षेत्र की स्थापना की और इस प्रचलित विचार को उलट दिया कि सभी नेबुले दूर के तारा समूह थे।
+    </string>
+    <string name="object_info_ngc_6543_distance" translation_description="Distance to the Cat's Eye Nebula shown in the info card. Translate units if appropriate for your locale.">~3,300 प्रकाश-वर्ष</string>
+    <string name="object_info_ngc_6543_size" translation_description="Physical size of the Cat's Eye Nebula shown in the info card. Translate units if appropriate for your locale.">~0.5 प्रकाश-वर्ष व्यास</string>
+
+    <string name="object_info_m76_description" translation_description="Description of the Little Dumbbell Nebula (M76) shown in the info card. Translate this text.">
+    लिटल डम्बेल पर्सियस में एक ग्रहीय नीहारिका है जिसका एक विशिष्ट आकृति-आठ आकार है — यह M27, वल्पेकुला में डम्बेल नीहारिका का एक छोटा चचेरा भाई है। हालांकि यह मेसियर कैटलॉग में सबसे धुंधली प्रविष्टि है, यह छोटी दूरबीनों में धैर्यपूर्ण अवलोकन के लिए पुरस्कृत करती है और बड़े उपकरणों में सुंदर संरचना दिखाती है, जिसमें दो उज्जवल पालियां एक धुंधली कमर को घेरती हैं।
+    </string>
+    <string name="object_info_m76_funfact" translation_description="Fun fact about the Little Dumbbell Nebula shown in the info card. Translate this text.">
+    M76 को मूल रूप से दो अलग-अलग वस्तुओं के रूप में सूचीबद्ध किया गया था — NGC 650 और NGC 651 — क्योंकि प्रारंभिक पर्यवेक्षकों ने दोनों चमकीले पालियों का स्वतंत्र रूप से वर्णन किया था। यह एक द्विध्रुवीय ग्रहीय नीहारिका है जो तब बनती है जब एक मरते हुए तारे का प्रवाह भूमध्य रेखा पर दबाया जाता है, जिससे ध्रुवीय अक्ष के साथ दो विस्तारित पालियाँ बनती हैं जबकि गैस कमर पर भी बाहर की ओर फैलती है।
+    </string>
+    <string name="object_info_m76_distance" translation_description="Distance to the Little Dumbbell Nebula shown in the info card. Translate units if appropriate for your locale.">~2,500 प्रकाश-वर्ष</string>
+    <string name="object_info_m76_size" translation_description="Physical size of the Little Dumbbell Nebula shown in the info card. Translate units if appropriate for your locale.">~2 प्रकाश-वर्ष व्यापक</string>
+
+    <string name="object_info_v838_mon_description" translation_description="Description of V838 Monocerotis shown in the info card. Translate this text.">
+    V838 Monocerotis एक असामान्य परिवर्तनशील तारा है जो Monoceros में स्थित है और जिसने 2002 में एक शानदार विस्फोट का अनुभव किया, जिससे यह संक्षेप में आकाशगंगा के सबसे चमकीले तारों में से एक बन गया। हालांकि आज दृश्य पर्यवेक्षकों के लिए बहुत धीमा है, इसकी विस्तारित प्रकाश प्रतिध्वनि — प्रकाश की एक लहर जो प्राचीन धूल के खोल को रोशन करती है — ने हबल स्पेस टेलीस्कोप की कुछ सबसे नाटकीय छवियां बनाई हैं।
+    </string>
+    <string name="object_info_v838_mon_funfact" translation_description="Fun fact about V838 Monocerotis shown in the info card. Translate this text.">
+    V838 Mon के विस्फोट की प्रकृति विवादास्पद बनी हुई है। प्रमुख सिद्धांत एक तारकीय विलय है — दो तारे एक दूसरे में सर्पिल होकर टकराते हैं — शास्त्रीय नोवा या सुपरजायंट विस्फोट के बजाय। यदि पुष्टि हो जाए, तो यह एक "चमकदार लाल नोवा" की पहली वास्तविक समय की झलक थी, जो तारकीय विलय के कारण होने वाले विस्फोटों की एक दुर्लभ श्रेणी है, समान घटनाएं तब से अन्य आकाशगंगाओं में पाई गई हैं।
+    </string>
+    <string name="object_info_v838_mon_distance" translation_description="Distance to V838 Monocerotis shown in the info card. Translate units if appropriate for your locale.">~20,000 प्रकाश-वर्ष</string>
+    <string name="object_info_v838_mon_size" translation_description="Extent of the V838 Monocerotis light echo shown in the info card. Translate units if appropriate for your locale.">~3 प्रकाश-वर्ष (प्रकाश प्रतिध्वनि सीमा)</string>
+
+    <string name="object_info_hdf_description" translation_description="Description of the Hubble Deep Field shown in the info card. Translate this text.">
+    हबल डीप फील्ड अर्सा मेजर में आकाश का एक छोटा सा 2.6-आर्कमिनट पैच है, जिसे हबल स्पेस टेलीस्कोप द्वारा दिसंबर 1995 में 10 लगातार दिनों में फोटोग्राफ किया गया था। जो खाली स्थान प्रतीत होता था, उसमें लगभग 3,000 आकाशगंगाएं थीं — जो ब्रह्मांड के अरबों वर्षों के इतिहास को फैलाती हैं — और इसने हमारे ब्रह्मांड की तस्वीर को मौलिक रूप से बदल दिया।
+    </string>
+    <string name="object_info_hdf_funfact" translation_description="Fun fact about the Hubble Deep Field shown in the info card. Translate this text.">
+    आकाश के इस हिस्से को विशेष रूप से इसलिए चुना गया था क्योंकि यह चमकीले तारों और पास की आकाशगंगाओं से खाली था। फिर भी, परिणामी छवि लगभग 3,000 आकाशगंगाओं से भरी हुई थी, जिससे यह अनुमान लगाया गया कि पूरे आकाश में लगभग 200 अरब आकाशगंगाएँ हैं — लगभग सभी हबल से पहले किसी भी दूरबीन के लिए अदृश्य थीं।
+    </string>
+    <string name="object_info_hdf_distance" translation_description="Distance to the most distant galaxies in the Hubble Deep Field shown in the info card. Translate units if appropriate for your locale.">~13 अरब प्रकाश-वर्ष (सबसे दूर)</string>
+    <string name="object_info_hdf_size" translation_description="Angular size of the Hubble Deep Field shown in the info card.">2.6 आर्कमिनट (दृश्य क्षेत्र)</string>
+
+    <string name="object_info_m43_description" translation_description="Description of De Mairan's Nebula (M43) shown in the info card. Translate this text.">
+    डे मेरान\'स नेबुला महान ओरियन नेबुला परिसर का एक अलग हिस्सा है, जो एक अंधेरी धूल की पट्टी से M42 से अलग है लेकिन एक ही विशाल आणविक बादल से संबंधित है। फ्रांसीसी खगोलशास्त्री जीन-जैक्स डोर्टस डे मेरान के नाम पर, जिन्होंने इसे 1731 में नोट किया था, यह एक उत्सर्जन नेबुला है जो इसके केंद्र में एम्बेड किए गए गर्म युवा तारे NU ओरिओनिस द्वारा आयनित है।
+    </string>
+    <string name="object_info_m43_funfact" translation_description="Fun fact about De Mairan's Nebula shown in the info card. Translate this text.">
+    हालांकि M43 M42 से एक अलग वस्तु के रूप में दिखाई देता है, उन्हें विभाजित करने वाली गहरी पट्टी एक अग्रभूमि धूल बादल है — ओरियन आणविक बादल का हिस्सा — जो केवल दोनों चमकते क्षेत्रों के बीच भौतिक संबंध के हमारे दृश्य को अवरुद्ध करता है। एक साथ वे एक विशाल अंधेरे बादल के प्रकाशित आंतरिक किनारे हैं जो ओरियन के अधिकांश हिस्से में फैला हुआ है।
+    </string>
+    <string name="object_info_m43_distance" translation_description="Distance to De Mairan's Nebula shown in the info card. Translate units if appropriate for your locale.">1,350 प्रकाश-वर्ष</string>
+    <string name="object_info_m43_size" translation_description="Physical size of De Mairan's Nebula shown in the info card. Translate units if appropriate for your locale.">~8 प्रकाश-वर्ष व्यापक</string>
+
+    <string name="object_info_m40_description" translation_description="Description of M40 (Winnecke 4) shown in the info card. Translate this text.">
+    M40 मेसियर कैटलॉग में अद्वितीय है — यह नीहारिका, तारा समूह या आकाशगंगा नहीं है, बल्कि एक विस्तृत द्विगुण तारा है। मेसियर ने 1764 में इसे कैटलॉग किया जब वह जोहान हेवेलियस द्वारा बताई गई नीहारिका को ऊर्स मेजर में खोज रहे थे, उन्हें केवल तारों की यह जोड़ी मिली, और इसे दर्ज किया ताकि भविष्य के पर्यवेक्षक इसे किसी अधिक दिलचस्प चीज़ के लिए गलती से न समझें।
+    </string>
+    <string name="object_info_m40_funfact" translation_description="Fun fact about M40 shown in the info card. Translate this text.">
+    M40 के दोनों तारे — जिन्हें Winnecke 4 के नाम से जाना जाता है — गुरुत्वाकर्षण से बंधे नहीं हैं; वे विभिन्न दूरियों पर स्थित हैं और केवल एक संयोगवश संरेखण हैं। मेसिएर ने स्वयं नोट किया कि कुछ भी "उल्लेखनीय नहीं" था, लेकिन इसे "यह दिखाने के लिए" शामिल किया कि "यह नीहारिका उन लोगों के समान नहीं है जिनकी मैंने जांच की है।" नकारात्मक परिणामों को दस्तावेज़ करने की उनकी पद्धतिगत आदत ने भविष्य के पर्यवेक्षकों को एक निश्चित संदर्भ दिया।
+    </string>
+    <string name="object_info_m40_distance" translation_description="Distance to M40 shown in the info card. Translate units if appropriate for your locale.">~500 प्रकाश-वर्ष</string>
+    <string name="object_info_m40_size" translation_description="Angular separation of the M40 double star shown in the info card.">~50 आर्कसेकंड (पृथक्करण)</string>
+
+    <!-- Category 5: Second tier -->
+    <string name="object_info_m34_description" translation_description="Description of the open star cluster M34 shown in the info card. Translate this text.">
+    M34 Perseus में एक उज्ज्वल, बिखरा हुआ खुला तारा समूह है, जो सर्दियों की मिल्की वे के विरुद्ध तारों के समृद्ध छींटे के रूप में दूरबीन में आसानी से दिखाई देता है। इसके लगभग 400 तारे पूर्ण चंद्रमा जितना चौड़ा क्षेत्र कवर करते हैं, जिसमें सावधान दूरबीन पर्यवेक्षकों को कई चौड़े दोहरे तारे दिखाई देते हैं।
+    </string>
+    <string name="object_info_m34_funfact" translation_description="Fun fact about M34 shown in the info card. Translate this text.">
+    लगभग 200 मिलियन वर्ष पुराना, M34 आयु में मध्यवर्ती है — इतना युवा कि इसके गर्म नीले तारे अभी भी चमकते हैं, इतना पुराना कि सबसे विशाल पहले ही सुपरनोवा के रूप में विस्फोट हो चुके हैं। 1,500 प्रकाश-वर्ष की दूरी पर यह निकटतम मेसियर समूहों में से एक है और उपनगरीय आकाश से भी एक सुंदर वस्तु बनी रहती है।
+    </string>
+    <string name="object_info_m34_distance" translation_description="Distance to M34 shown in the info card. Translate units if appropriate for your locale.">1,500 प्रकाश-वर्ष</string>
+    <string name="object_info_m34_size" translation_description="Physical size of M34 shown in the info card. Translate units if appropriate for your locale.">~15 प्रकाश-वर्ष व्यापक</string>
+
+    <string name="object_info_m23_description" translation_description="Description of the open star cluster M23 shown in the info card. Translate this text.">
+    M23 धनु राशि में एक समृद्ध खुला तारा समूह है, जो गर्मियों की मंदाकिनी के घने तारा क्षेत्रों में निहित है। लगभग 150 तारे दूरबीन में आधे डिग्री के क्षेत्र में फैले हुए हैं, जो इसे आकाश के उसी क्षेत्र में कई अन्य मेसियर रत्नों के साथ एक उदार दूरबीन वस्तु बनाता है।
+    </string>
+    <string name="object_info_m23_funfact" translation_description="Fun fact about M23 shown in the info card. Translate this text.">
+    M23 का अनुमान लगभग 300 मिलियन वर्ष पुराना है — आयु में मध्यवर्ती, इसके अधिकांश विशाल तारे पहले से ही मुख्य अनुक्रम से विकसित हो चुके हैं। मेसिएर ने 1764 में धनु तारा क्षेत्रों के माध्यम से अपने व्यापक अवलोकन अभियानों में से एक में इसकी खोज की।
+    </string>
+    <string name="object_info_m23_distance" translation_description="Distance to M23 shown in the info card. Translate units if appropriate for your locale.">2,150 प्रकाश-वर्ष</string>
+    <string name="object_info_m23_size" translation_description="Physical size of M23 shown in the info card. Translate units if appropriate for your locale.">~17 प्रकाश-वर्ष व्यापक</string>
+
+    <string name="object_info_m37_description" translation_description="Description of the open star cluster M37 shown in the info card. Translate this text.">
+    M37 Auriga में तीन Messier खुले तारा समूहों में सबसे समृद्ध और सबसे चमकीला है, जिसमें एक कॉम्पैक्ट क्षेत्र में अनुमानित 500 तारे हैं। यह एक शानदार दूरबीन और छोटी दूरबीन वस्तु है, जिसमें नारंगी विशाल तारों का एक बिखराव नीले-सफेद झुंड के लिए रंग विपरीतता जोड़ता है।
+    </string>
+    <string name="object_info_m37_funfact" translation_description="Fun fact about M37 shown in the info card. Translate this text.">
+    M37 में लगभग एक दर्जन लाल दानव तारे हैं — एक असामान्य रूप से उच्च संख्या जो इसकी लगभग 300 मिलियन वर्ष की अपेक्षाकृत उन्नत आयु को दर्शाती है। लगभग 4,500 प्रकाश-वर्ष दूर होने के बावजूद — तीन ऑरिगा मेसियर समूहों में सबसे दूर — यह अभी भी आकाश के सबसे सुंदर खुले समूहों में से एक है।
+    </string>
+    <string name="object_info_m37_distance" translation_description="Distance to M37 shown in the info card. Translate units if appropriate for your locale.">4,500 प्रकाश-वर्ष</string>
+    <string name="object_info_m37_size" translation_description="Physical size of M37 shown in the info card. Translate units if appropriate for your locale.">~31 प्रकाश-वर्ष व्यापक</string>
+
+    <string name="object_info_m48_description" translation_description="Description of the open star cluster M48 shown in the info card. Translate this text.">
+    M48 हाइड्रा में एक बड़ा, चमकीला खुला तारा समूह है, जो आकाश के लगभग एक डिग्री तक फैला हुआ है और अंधेरी जगहों से नंगी आंखों से दिखाई देता है। इसके लगभग 80 तारे एक विस्तृत क्षेत्र में ढीले ढंग से बिखरे हुए हैं जो दूरबीन के लिए सबसे उपयुक्त है, जिसमें चमकीले नीले-सफेद सदस्यों के बीच नारंगी और पीले विशाल तारों का एक बिखराव है।
+    </string>
+    <string name="object_info_m48_funfact" translation_description="Fun fact about M48 shown in the info card. Translate this text.">
+    M48 लगभग दो सदियों तक "खोई हुई" Messier वस्तुओं में से एक था क्योंकि Messier की दर्ज की गई स्थिति वास्तविक स्थान से लगभग 5° दूर थी। यह 1959 तक अज्ञात रहा, जब इसे NGC 2548 से मेल खाया गया और एक साधारण प्रतिलेखन त्रुटि को दिखाया गया कि इसे शुरुआत से ही खाली आकाश में रखा गया था।
+    </string>
+    <string name="object_info_m48_distance" translation_description="Distance to M48 shown in the info card. Translate units if appropriate for your locale.">1,500 प्रकाश-वर्ष</string>
+    <string name="object_info_m48_size" translation_description="Physical size of M48 shown in the info card. Translate units if appropriate for your locale.">~23 प्रकाश-वर्ष व्यापक</string>
+
+    <string name="object_info_m21_description" translation_description="Description of the open star cluster M21 shown in the info card. Translate this text.">
+    M21 धनु राशि में एक सघन खुला तारा समूह है जो त्रिफिड नेबुला (M20) के ठीक आधा डिग्री उत्तर में स्थित है, जिससे ये दोनों एक आकर्षक द्विनेत्र युग्म बनाते हैं। इस समूह में लगभग 57 तारे हैं जो कई मेसियर समूहों की तुलना में एक छोटे क्षेत्र में केंद्रित हैं, जिनमें कई चमकीले नीले-सफेद तारे प्रमुख सदस्य हैं।
+    </string>
+    <string name="object_info_m21_funfact" translation_description="Fun fact about M21 shown in the info card. Translate this text.">
+    भौतिक रूप से असंबंधित होने के बावजूद, M21 और M20 (ट्राइफिड नेबुला) गर्मी के आकाश में सबसे आकर्षक दूरबीन युग्मों में से एक बनाते हैं — एक चमकीला तारा समूह एक रंगीन तीन-पालि वाली नेबुला के बगल में। M21 लगभग 4,250 प्रकाश-वर्ष दूर है, जबकि M20 लगभग 4,100 प्रकाश-वर्ष पर थोड़ा करीब है।
+    </string>
+    <string name="object_info_m21_distance" translation_description="Distance to M21 shown in the info card. Translate units if appropriate for your locale.">4,250 प्रकाश-वर्ष</string>
+    <string name="object_info_m21_size" translation_description="Physical size of M21 shown in the info card. Translate units if appropriate for your locale.">~16 प्रकाश-वर्ष व्यापक</string>
+
+    <string name="object_info_m50_description" translation_description="Description of the open star cluster M50 shown in the info card. Translate this text.">
+    M50 मोनोसेरोस में एक चमकीला खुला तारा समूह है, जिसमें लगभग 200 तारे एक आकर्षक कॉम्पैक्ट क्षेत्र में पैक हैं जो दूरबीन और छोटी दूरबीनों के लिए उपयुक्त हैं। इसे आसानी से सीरियस और प्रोसियॉन के बीच एक रेखा पर पाया जा सकता है और इसमें एक उल्लेखनीय लाल दिग्गज है — एक गर्म नारंगी बीकन जो समूह के नीले-सफेद तारों के बीच जीवंत रूप से अलग दिखता है।
+    </string>
+    <string name="object_info_m50_funfact" translation_description="Fun fact about M50 shown in the info card. Translate this text.">
+    M50 का अनुमान लगभग 78 मिलियन वर्ष पुराना है — मेसियर खुली समूहों में से एक युवा — जिसका अर्थ है कि इसके गर्म नीले और सफेद तारे अभी भी विकसित हो रहे हैं, अधिक विशाल सदस्यों में से कुछ हाल ही में विशाल तारों में फूल गए हैं। यह एक समूह की प्रारंभिक मध्य आयु के लिए विशिष्ट है।
+    </string>
+    <string name="object_info_m50_distance" translation_description="Distance to M50 shown in the info card. Translate units if appropriate for your locale.">3,200 प्रकाश-वर्ष</string>
+    <string name="object_info_m50_size" translation_description="Physical size of M50 shown in the info card. Translate units if appropriate for your locale.">~15 प्रकाश-वर्ष व्यापक</string>
+
+    <string name="object_info_m36_description" translation_description="Description of the open star cluster M36 shown in the info card. Translate this text.">
+    M36 Auriga में Messier द्वारा सूचीबद्ध तीन खुले तारा समूहों में सबसे छोटा और सबसे युवा है। इसके लगभग 60 तारे एक तंग, चमकदार क्षेत्र में इकट्ठा हैं जो दूरबीन में दिखाई देते हैं और एक छोटी दूरबीन में व्यक्तिगत तारों में अच्छी तरह से हल हो जाते हैं, जो गर्म नीले-सफेद तारों द्वारा प्रभुत्व रखते हैं।
+    </string>
+    <string name="object_info_m36_funfact" translation_description="Fun fact about M36 shown in the info card. Translate this text.">
+    M36 का अनुमान है कि यह केवल लगभग 25 मिलियन वर्ष पुराना है — सबसे कम उम्र के मेसियर समूहों में से एक — जिसका अर्थ है कि विशाल नीले-सफेद तारे अभी भी प्रभावी हैं और अभी तक कोई लाल दिग्गज प्रकट नहीं हुए हैं। यह Auriga तारा क्षेत्रों को M37 और M38 के साथ साझा करता है, और तीनों समूह एक ही विस्तृत-क्षेत्र दूरबीन दृश्य में फिट होते हैं।
+    </string>
+    <string name="object_info_m36_distance" translation_description="Distance to M36 shown in the info card. Translate units if appropriate for your locale.">4,100 प्रकाश-वर्ष</string>
+    <string name="object_info_m36_size" translation_description="Physical size of M36 shown in the info card. Translate units if appropriate for your locale.">~14 प्रकाश-वर्ष व्यापक</string>
+
+    <string name="object_info_m46_description" translation_description="Description of the open star cluster M46 shown in the info card. Translate this text.">
+    M46 कुत्तों के तारामंडल में एक समृद्ध, सघन खुला तारा समूह है जिसमें लगभग 500 तारे एक विस्तृत क्षेत्र में पैक हैं, दूरबीन में आकर्षक और छोटी दूरबीनों में सुंदर हैं। एक उल्लेखनीय बोनस इसके उत्तरी किनारे पर तैरता है: NGC 2438, एक छोटी ग्रहीय नीहारिका जो समूह में एम्बेड प्रतीत होती है — एक नाटकीय दृष्टि-रेखा संयोग।
+    </string>
+    <string name="object_info_m46_funfact" translation_description="Fun fact about M46 shown in the info card. Translate this text.">
+    ग्रह नीहारिका NGC 2438 M46 के अंदर दिखाई देती है लेकिन वास्तव में यह एक असंबंधित अग्रभूमि वस्तु है जो बहुत अलग दूरी पर है — लगभग 1,400 प्रकाश-वर्ष बनाम M46 के 5,400। एक मरते हुए तारे के खोल का एक युवा तारा समूह पर अध्यारोपण इसे सूची में सबसे फोटोजेनिक क्षेत्रों में से एक बनाता है।
+    </string>
+    <string name="object_info_m46_distance" translation_description="Distance to M46 shown in the info card. Translate units if appropriate for your locale.">5,400 प्रकाश-वर्ष</string>
+    <string name="object_info_m46_size" translation_description="Physical size of M46 shown in the info card. Translate units if appropriate for your locale.">~42 प्रकाश-वर्ष व्यापक</string>
+
+    <string name="object_info_m93_description" translation_description="Description of the open star cluster M93 shown in the info card. Translate this text.">
+    M93 कुत्तों (Puppis) में एक चमकीला, सघन खुला तारा समूह है, जो समृद्ध दक्षिणी मंदाकिनी में स्थित है और दूरबीन से आसानी से देखा जा सकता है। इसके लगभग 80 तारे एक आकर्षक पच्चर या तितली के आकार में व्यवस्थित हैं और इसमें कई गर्म नीले महानक्षत्र शामिल हैं, जो इसे सर्दियों के आकाश में अधिक आकर्षक खुले तारा समूहों में से एक बनाता है।
+    </string>
+    <string name="object_info_m93_funfact" translation_description="Fun fact about M93 shown in the info card. Translate this text.">
+    M93 अपेक्षाकृत युवा है — लगभग 100 मिलियन वर्ष पुराना — प्रमुख नीले और नीले-सफेद तारों के साथ जो अभी तक दिग्गजों में विकसित नहीं हुए हैं। यह अधिक दक्षिणी मेसियर समूहों में से एक है, और लगभग 50°N से उत्तर के अक्षांशों से यह क्षितिज के ऊपर कभी बहुत अधिक नहीं उठता है।
+    </string>
+    <string name="object_info_m93_distance" translation_description="Distance to M93 shown in the info card. Translate units if appropriate for your locale.">3,600 प्रकाश-वर्ष</string>
+    <string name="object_info_m93_size" translation_description="Physical size of M93 shown in the info card. Translate units if appropriate for your locale.">~23 प्रकाश-वर्ष व्यापक</string>
+
+    <string name="object_info_m38_description" translation_description="Description of the open star cluster M38 shown in the info card. Translate this text.">
+    M38 तीन खुले तारा समूहों में सबसे बड़ा और सबसे फैला हुआ है जिसे मेसियर ने ऑरिगा में सूचीबद्ध किया था। इसके लगभग 100 तारे एक पैटर्न में व्यवस्थित हैं जिसे कुछ पर्यवेक्षक एक क्रॉस या ग्रीक अक्षर पाई के समान मानते हैं, जो दूरबीन में दिखाई देता है और एक छोटे दूरबीन में अच्छी तरह से हल किया जाता है। छोटा समूह NGC 1907 दक्षिण की ओर पास में स्थित है।
+    </string>
+    <string name="object_info_m38_funfact" translation_description="Fun fact about M38 shown in the info card. Translate this text.">
+    M38 तीन ऑरिगा मेसियर समूहों में सबसे पुराना है, जो लगभग 220 मिलियन वर्ष पुराना है, इतना पुराना कि इसके कुछ विशाल तारे पीले और नारंगी दिग्गजों में विकसित हो गए हैं। पास का समूह NGC 1907 एक ही कम-आवर्धन क्षेत्र में फिट हो सकता है, जिससे वे एक बेहतरीन द्विनेत्र जोड़ी बनते हैं — जैसे पुप्पिस में M46 और M47।
+    </string>
+    <string name="object_info_m38_distance" translation_description="Distance to M38 shown in the info card. Translate units if appropriate for your locale.">4,200 प्रकाश-वर्ष</string>
+    <string name="object_info_m38_size" translation_description="Physical size of M38 shown in the info card. Translate units if appropriate for your locale.">~26 प्रकाश-वर्ष व्यापक</string>
+
+    <string name="object_info_m29_description" translation_description="Description of the open star cluster M29 shown in the info card. Translate this text.">
+    M29 हंस तारामंडल में एक छोटा, युवा खुला तारा समूह है, जो मिल्की वे के सबसे अधिक धूल-अस्पष्ट क्षेत्रों में से एक के विरुद्ध स्थित है। पाँच शानदार नीले महानक्षत्र समूह पर हावी हैं, जो दूरबीन में गर्म, चमकदार तारों के एक तंग तारकीय समूह के रूप में दिखाई देते हैं। घने अग्रभूमि धूल के बिना, M29 आकाश के सबसे शानदार खुले तारा समूहों में से एक होता।
+    </string>
+    <string name="object_info_m29_funfact" translation_description="Fun fact about M29 shown in the info card. Translate this text.">
+    M29 को केवल लगभग 10 मिलियन वर्ष पुराना माना जाता है — एक तारकीय शिशु — और यह Cygnus OB1 संघ के भीतर स्थित है, जो विशाल युवा तारों का एक विस्तृत समूह है। भारी अंतरतारकीय धूल समूह को लगभग 3 परिमाण से कम करती है; उस अस्पष्टता के बिना, M29 के तारे वास्तव में दिखाई देने से कई गुना अधिक चमकदार होते।
+    </string>
+    <string name="object_info_m29_distance" translation_description="Distance to M29 shown in the info card. Translate units if appropriate for your locale.">4,000 प्रकाश-वर्ष</string>
+    <string name="object_info_m29_size" translation_description="Physical size of M29 shown in the info card. Translate units if appropriate for your locale.">~8 प्रकाश-वर्ष व्यापक</string>
+
+    <string name="object_info_m62_description" translation_description="Description of the globular cluster M62 shown in the info card. Translate this text.">
+    M62 सांपों के सिर (ओफिउचस) में एक समृद्ध गोलाकार तारा समूह है — यह आकाशगंगा के केंद्र के सबसे निकटतम गोलाकार समूहों में से एक है और ध्यान देने योग्य रूप से असममित है, जिसके दक्षिणी भाग में तारे अधिक घनी रूप से पैक हैं। परिमाण 6.6 पर यह एक सुंदर दूरबीन वस्तु है, हालांकि इसकी कम विषुवत दूरी इसे उत्तरी पर्यवेक्षकों के लिए एक छोटे मौसम का लक्ष्य बनाती है।
+    </string>
+    <string name="object_info_m62_funfact" translation_description="Fun fact about M62 shown in the info card. Translate this text.">
+    M62 का विकेंद्रित कोर गैलेक्टिक केंद्र की निकटता का सीधा परिणाम है — केंद्रीय उभार से शक्तिशाली ज्वारीय बल क्लस्टर को विकृत करते हैं और तारों को गैलेक्टिक तल की ओर खींचते हैं। यह सबसे गतिशील रूप से विकसित गोलाकार समूहों में से एक भी है, जो कोर पतन के संकेत दिखाता है और मिलीसेकंड पल्सर की असामान्य रूप से उच्च घनत्व है।
+    </string>
+    <string name="object_info_m62_distance" translation_description="Distance to M62 shown in the info card. Translate units if appropriate for your locale.">22,500 प्रकाश-वर्ष</string>
+    <string name="object_info_m62_size" translation_description="Physical size of M62 shown in the info card. Translate units if appropriate for your locale.">~92 प्रकाश-वर्ष व्यापक</string>
+
+    <string name="object_info_m28_description" translation_description="Description of the globular cluster M28 shown in the info card. Translate this text.">
+    M28 धनु राशि में एक सघन गोलाकार समूह है, जो समृद्ध ग्रीष्मकालीन तारकीय क्षेत्रों में उज्ज्वल तारे लैम्ब्डा धनु के पास स्थित है। परिमाण 6.9 पर यह एक पुरस्कृत द्विनेत्र लक्ष्य है और छोटी दूरबीनों में अच्छी तरह से समाधान किया जाता है, जो तारों के मध्यम प्रभामंडल से घिरे एक उज्ज्वल संघनित केंद्र को दर्शाता है।
+    </string>
+    <string name="object_info_m28_funfact" translation_description="Fun fact about M28 shown in the info card. Translate this text.">
+    1987 में, M28 पहला गोलाकार समूह बन गया जिसमें एक मिलीसेकंड पल्सर का पता चला था। मिलीसेकंड पल्सर — न्यूट्रॉन तारे जो प्रति सेकंड सैकड़ों बार घूमते हैं — तब बनते हैं जब एक न्यूट्रॉन तारा एक साथी तारे से पदार्थ को आकर्षित करता है और गोलाकार समूहों में सामान्य आकाशगंगा की तुलना में बहुत अधिक दर से पाए जाते हैं, क्योंकि उनके घने तारकीय वातावरण कई अधिक निकट द्विआधारी मुठभेड़ों का उत्पादन करते हैं।
+    </string>
+    <string name="object_info_m28_distance" translation_description="Distance to M28 shown in the info card. Translate units if appropriate for your locale.">18,300 प्रकाश-वर्ष</string>
+    <string name="object_info_m28_size" translation_description="Physical size of M28 shown in the info card. Translate units if appropriate for your locale.">~60 प्रकाश-वर्ष व्यापक</string>
+
+    <string name="object_info_m52_description" translation_description="Description of the open star cluster M52 shown in the info card. Translate this text.">
+    M52 कैसिओपिया में एक समृद्ध खुला तारा समूह है, जिसमें उत्तरी मंदाकिनी के एक कॉम्पैक्ट क्षेत्र में लगभग 200 तारे हैं। यह एक सुंदर द्विनेत्र समूह है और छोटी दूरबीनों में एक सुंदर, घने तारकीय क्षेत्र दिखाता है, जिसमें एक ध्यान देने योग्य रूप से चमकीला नारंगी तारा समूह के दक्षिणी किनारे के पास खड़ा है।
+    </string>
+    <string name="object_info_m52_funfact" translation_description="Fun fact about M52 shown in the info card. Translate this text.">
+    M52 की दूरी असामान्य रूप से अनिश्चित है — अनुमान 3,000 से 7,000 प्रकाश-वर्ष तक हैं — क्योंकि इस दृष्टि रेखा के साथ भारी अंतरतारकीय धूल इसकी वास्तविक चमक को निर्धारित करना कठिन बनाती है। मेसिएर ने इसे 1774 में खोजा था, उसी रात जब वह एक धूमकेतु को ट्रैक कर रहे थे जिसने उन्हें कई अन्य कैटलॉग प्रविष्टियों को रिकॉर्ड करने के लिए प्रेरित किया।
+    </string>
+    <string name="object_info_m52_distance" translation_description="Distance to M52 shown in the info card. Translate units if appropriate for your locale.">~5,000 प्रकाश-वर्ष</string>
+    <string name="object_info_m52_size" translation_description="Physical size of M52 shown in the info card. Translate units if appropriate for your locale.">~25 प्रकाश-वर्ष व्यापक</string>
+
+    <string name="object_info_m67_description" translation_description="Description of the open star cluster M67 shown in the info card. Translate this text.">
+    M67 कर्क राशि में एक सुंदर खुला तारा समूह है और आकाश में सबसे पुराने अच्छी तरह से अध्ययन किए गए खुले तारा समूहों में से एक है। लगभग 3.2–3.5 अरब वर्ष पुराना, इसमें हमारे अपने सूर्य के समान द्रव्यमान और आयु वाले कई तारे हैं — जो इसे सूर्य जैसे तारों के विकास को ब्रह्मांडीय समय में अध्ययन करने के लिए एक प्राकृतिक प्रयोगशाला बनाता है।
+    </string>
+    <string name="object_info_m67_funfact" translation_description="Fun fact about M67 shown in the info card. Translate this text.">
+    M67 में कई तारे तापमान, द्रव्यमान और आयु में सूर्य से बहुत मिलते-जुलते हैं — एक दुर्लभ संयोजन जिसने शोधकर्ताओं को यह सोचने के लिए प्रेरित किया कि क्या सूर्य स्वयं M67 जैसे किसी समूह में उत्पन्न हुआ था। क्योंकि तारे समूहों में पैदा होते हैं जो धीरे-धीरे बिखर जाते हैं, सूर्य लगभग निश्चित रूप से अरबों साल पहले एक अब-बिखरे हुए भाई-बहन समूह से आया था — हालांकि कौन सा समूह कभी पहचाना नहीं गया है।
+    </string>
+    <string name="object_info_m67_distance" translation_description="Distance to M67 shown in the info card. Translate units if appropriate for your locale.">2,700 प्रकाश-वर्ष</string>
+    <string name="object_info_m67_size" translation_description="Physical size of M67 shown in the info card. Translate units if appropriate for your locale.">~24 प्रकाश-वर्ष व्यास में</string>
+
+    <string name="object_info_m55_description" translation_description="Description of the globular cluster M55 shown in the info card. Translate this text.">
+    M55 धनु राशि में एक बड़ा, ढीला गोलाकार तारा समूह है — यह सभी मेसियर गोलाकार समूहों में सबसे अधिक फैला हुआ और सबसे कम सघन है। यह कम आवर्धन पर भी आसानी से अलग-अलग तारों में विभाजित हो जाता है, और दूरबीन में दानेदार बनावट दिखाई देती है। इसकी कम दक्षिणी विषुवत रेखा उत्तरी अक्षांशों से दृश्यता को सीमित करती है, लेकिन यह दक्षिणी गोलार्ध से शानदार है।
+    </string>
+    <string name="object_info_m55_funfact" translation_description="Fun fact about M55 shown in the info card. Translate this text.">
+    M55 की असामान्य रूप से कम तारकीय सांद्रता इसे एक समृद्ध खुले समूह की तरह दिखाती है, न कि एक विशिष्ट गोलाकार समूह की तरह। इसके तारे लगभग 100 प्रकाश-वर्ष चौड़े क्षेत्र में फैले हुए हैं, जो सुझाता है कि समूह की आत्म-गुरुत्वाकर्षण M13 या M3 जैसे अधिक केंद्रीय रूप से संघनित गोलाकार समूहों की तुलना में अपेक्षाकृत कमजोर है।
+    </string>
+    <string name="object_info_m55_distance" translation_description="Distance to M55 shown in the info card. Translate units if appropriate for your locale.">17,600 प्रकाश-वर्ष</string>
+    <string name="object_info_m55_size" translation_description="Physical size of M55 shown in the info card. Translate units if appropriate for your locale.">~100 प्रकाश-वर्ष व्यास में</string>
+
+    <string name="object_info_m19_description" translation_description="Description of the globular cluster M19 shown in the info card. Translate this text.">
+    M19 सांप के पकड़ने वाले (ओफ़िउचस) में एक सघन, समृद्ध गोलाकार समूह है — जो आकाशगंगा के केंद्र के निकटतम गोलाकार समूहों में से एक है। इसकी सबसे विशिष्ट विशेषता इसका ध्यान देने योग्य चपटा आकार है: M19 सबसे चपटा गोलाकार समूह है जो ज्ञात है, जिसमें एक छोटे दूरबीन में भी दृश्यमान दीर्घवृत्ताकार रूपरेखा है।
+    </string>
+    <string name="object_info_m19_funfact" translation_description="Fun fact about M19 shown in the info card. Translate this text.">
+    M19 की विशिष्ट चपटापन — इसकी सबसे लंबी धुरी इसकी सबसे छोटी धुरी से लगभग 10% लंबी है — ज्ञात गोलाकार समूहों में अद्वितीय है और माना जाता है कि यह आकाशगंगा के गुरुत्वाकर्षण क्षेत्र द्वारा ज्वारीय खिंचाव के कारण है। एक गोलाकार समूह जितना अधिक आकाशगंगा के केंद्र के पास परिक्रमा करता है, उतना ही अधिक विकृत होता है; M19 आकाशगंगा के केंद्र से केवल लगभग 5,200 प्रकाश-वर्ष दूर है।
+    </string>
+    <string name="object_info_m19_distance" translation_description="Distance to M19 shown in the info card. Translate units if appropriate for your locale.">28,700 प्रकाश-वर्ष</string>
+    <string name="object_info_m19_size" translation_description="Physical size of M19 shown in the info card. Translate units if appropriate for your locale.">~113 प्रकाश-वर्ष व्यास में</string>
+
+    <string name="object_info_m80_description" translation_description="Description of the globular cluster M80 shown in the info card. Translate this text.">
+    M80 आकाशगंगा में सबसे घनी पैक की गई गोलाकार समूहों में से एक है, वृश्चिक राशि में कई सौ हजार तारों की एक कॉम्पैक्ट, समृद्ध गेंद। परिमाण 7.2 पर यह एक बेहतरीन द्विनेत्र लक्ष्य है और छोटी दूरबीनों में एक शानदार, अत्यधिक केंद्रित कोर को प्रकट करता है।
+    </string>
+    <string name="object_info_m80_funfact" translation_description="Fun fact about M80 shown in the info card. Translate this text.">
+    1860 में, M80 के भीतर एक nova विस्फोट हुआ — जिसे T Scorpii नाम दिया गया — जो संक्षेप में समूह जितना ही चमकीला हो गया और नंगी आँखों से दिखाई दिया। यह एक गोलाकार समूह के भीतर देखे गए केवल दो novae में से एक है। गोलाकार समूहों में novae द्विआधारी तारों के बीच अंतःक्रिया से उत्पन्न होते हैं, जो एक गोलाकार समूह के घने तारकीय वातावरण के मूल में कहीं अधिक सामान्य हैं।
+    </string>
+    <string name="object_info_m80_distance" translation_description="Distance to M80 shown in the info card. Translate units if appropriate for your locale.">32,600 प्रकाश-वर्ष</string>
+    <string name="object_info_m80_size" translation_description="Physical size of M80 shown in the info card. Translate units if appropriate for your locale.">~84 प्रकाश-वर्ष व्यास में</string>
+
+    <string name="object_info_m103_description" translation_description="Description of the open star cluster M103 shown in the info card. Translate this text.">
+    M103 कैसिओपिया में एक छोटा, सघन खुला तारा समूह है, जिसमें एक तंग समूह में लगभग 40 तारे हैं जो दूरबीन से आसानी से देखे जा सकते हैं। केंद्र के पास एक आकर्षक द्विगुण तारा और एक लाल दिग्गज छोटी दूरबीनों में इसे रंगीन दिखावट देते हैं, कैसिओपिया के समृद्ध मिल्की वे तारा क्षेत्रों के भीतर स्थित।
+    </string>
+    <string name="object_info_m103_funfact" translation_description="Fun fact about M103 shown in the info card. Translate this text.">
+    M103 Messier की मूल 1781 प्रकाशित सूची में सबसे अधिक संख्या वाली वस्तु थी — सभी बाद की प्रविष्टियाँ (M104–M110) बाद में Messier के नोट्स और पत्राचार से अन्य खगोलविदों द्वारा जोड़ी गईं। Pierre Méchain को सूची प्रकाशित होने से थोड़े समय पहले M103 मिला, और Messier ने इसे Méchain की रिपोर्ट से शामिल किया।
+    </string>
+    <string name="object_info_m103_distance" translation_description="Distance to M103 shown in the info card. Translate units if appropriate for your locale.">8,500 प्रकाश-वर्ष</string>
+    <string name="object_info_m103_size" translation_description="Physical size of M103 shown in the info card. Translate units if appropriate for your locale.">~15 प्रकाश-वर्ष व्यास में</string>
+
+    <string name="object_info_m30_description" translation_description="Description of the globular cluster M30 shown in the info card. Translate this text.">
+    M30 कैप्रिकॉर्नस में एक सघन गोलाकार समूह है — एक छोटी दूरबीन में एक सुंदर वस्तु जो एक उज्ज्वल, संघनित केंद्र और धुंधली बाहरी तारा श्रृंखलाएं दिखाती है। परिमाण 7.5 पर यह दूरबीन में अंधेरी आकाश की आवश्यकता है और एक छोटी दूरबीन को इसके आंशिक रूप से समाधान किए गए बाहरी प्रभामंडल के साथ पुरस्कृत करता है।
+    </string>
+    <string name="object_info_m30_funfact" translation_description="Fun fact about M30 shown in the info card. Translate this text.">
+    M30 ने "कोर पतन" से गुजरा है — एक प्रक्रिया जहाँ घनी पैक किए गए तारों का पारस्परिक गुरुत्वाकर्षण आकर्षण समूह के केंद्र को नाटकीय रूप से सिकुड़ने का कारण बनता है, जिससे एक छोटी मात्रा में तारों की एक चरम सांद्रता बनती है। सभी गोलाकार समूहों का लगभग एक पाँचवाँ हिस्सा पतित कोर वाले हैं, और M30 इस घटना के सबसे अच्छी तरह से अध्ययन किए गए उदाहरणों में से एक है।
+    </string>
+    <string name="object_info_m30_distance" translation_description="Distance to M30 shown in the info card. Translate units if appropriate for your locale.">27,100 प्रकाश-वर्ष</string>
+    <string name="object_info_m30_size" translation_description="Physical size of M30 shown in the info card. Translate units if appropriate for your locale.">~87 प्रकाश-वर्ष व्यास में</string>
+
+    <string name="object_info_m54_description" translation_description="Description of the globular cluster M54 shown in the info card. Translate this text.">
+    M54 धनु राशि में एक बड़ा, समृद्ध गोलाकार समूह है और संपूर्ण मेसियर कैटलॉग में सबसे दूर की वस्तुओं में से एक है। सदियों तक इसे आकाशगंगा का एक दूरस्थ प्रभामंडल गोलाकार समूह माना जाता था, लेकिन अब यह ज्ञात है कि यह धनु बौनी दीर्घवृत्ताकार आकाशगंगा का घना केंद्र है — एक उपग्रह आकाशगंगा जो वर्तमान में हमारी अपनी आकाशगंगा द्वारा अवशोषित की जा रही है।
+    </string>
+    <string name="object_info_m54_funfact" translation_description="Fun fact about M54 shown in the info card. Translate this text.">
+    1994 की खोज कि M54 धनु बौनी आकाशगंगा से संबंधित है, इसे किसी अन्य आकाशगंगा से संबंधित पहले गोलाकार समूह के रूप में जाना जाता है। जैसे-जैसे धनु बौनी आकाशगंगा धीरे-धीरे टूटती है और मिल्की वे द्वारा निगली जाती है, M54 अंततः हमारी अपनी आकाशगंगा का एक वास्तविक प्रभामंडल गोलाकार समूह बन जाएगा — एक अंतरगैलेक्टिक आप्रवासी जो अरबों वर्षों में आता है।
+    </string>
+    <string name="object_info_m54_distance" translation_description="Distance to M54 shown in the info card. Translate units if appropriate for your locale.">87,000 प्रकाश-वर्ष</string>
+    <string name="object_info_m54_size" translation_description="Physical size of M54 shown in the info card. Translate units if appropriate for your locale.">~230 प्रकाश-वर्ष व्यास में</string>
+
+    <string name="object_info_m69_description" translation_description="Description of the globular cluster M69 shown in the info card. Translate this text.">
+    M69 धनु राशि में एक मध्यम रूप से समृद्ध गोलाकार समूह है, जो आकाशगंगा के केंद्र के पास स्थित है। परिमाण 7.7 पर यह अंधेरी आकाश से एक दूरबीन वस्तु है जो एक छोटी दूरबीन को तारों की आंशिक रूप से समाधान की गई गेंद और एक उज्ज्वल, दानेदार केंद्र के साथ पुरस्कृत करता है।
+    </string>
+    <string name="object_info_m69_funfact" translation_description="Fun fact about M69 shown in the info card. Translate this text.">
+    M69 असामान्य रूप से आकाशगंगा के केंद्र के करीब परिक्रमा करता है — मिल्की वे के केंद्र से केवल लगभग 6,200 प्रकाश-वर्ष दूर — और परिणामस्वरूप एक गोलाकार समूह के लिए भारी तत्वों की असामान्य रूप से उच्च सांद्रता है। आकाशगंगा के केंद्र के करीब गोलाकार समूह आसपास के उभार में तारे निर्माण की कई पीढ़ियों द्वारा रासायनिक रूप से समृद्ध होते हैं।
+    </string>
+    <string name="object_info_m69_distance" translation_description="Distance to M69 shown in the info card. Translate units if appropriate for your locale.">29,700 प्रकाश-वर्ष</string>
+    <string name="object_info_m69_size" translation_description="Physical size of M69 shown in the info card. Translate units if appropriate for your locale.">~61 प्रकाश-वर्ष व्यास में</string>
+
+    <string name="object_info_m9_description" translation_description="Description of the globular cluster M9 shown in the info card. Translate this text.">
+    M9 Ophiuchus में एक सघन गोलाकार समूह है — Messier के गोलाकार समूहों में से एक जो अंतरतारकीय धूल अवशोषण से सबसे अधिक प्रभावित है। यह आकाशगंगा के उभार की ओर स्थित है, जहाँ गहरी धूल इसे काफी हद तक मंद कर देती है। इस अस्पष्टता के बिना M9 लगभग एक परिमाण अधिक चमकीला दिखाई देता और नंगी आँखों से दिखाई देता।
+    </string>
+    <string name="object_info_m9_funfact" translation_description="Fun fact about M9 shown in the info card. Translate this text.">
+    M9 लगभग किसी भी अन्य मेसियर गोलाकार समूह की तुलना में अधिक अंतरतारकीय धूल अवशोषण से ग्रस्त है — स्पष्ट दृष्टि पथ की तुलना में लगभग 1.3 परिमाण की मंदता। दो छोटे गोलाकार समूह (NGC 6342 और NGC 6356) M9 के लगभग 1° के भीतर स्थित हैं, जिससे यह आकाश के एक छोटे से क्षेत्र में तीन गोलाकार समूहों के एक उल्लेखनीय समूहन का केंद्र बन जाता है।
+    </string>
+    <string name="object_info_m9_distance" translation_description="Distance to M9 shown in the info card. Translate units if appropriate for your locale.">25,800 प्रकाश-वर्ष</string>
+    <string name="object_info_m9_size" translation_description="Physical size of M9 shown in the info card. Translate units if appropriate for your locale.">~70 प्रकाश-वर्ष व्यास में</string>
+
+    <string name="object_info_m26_description" translation_description="Description of the open star cluster M26 shown in the info card. Translate this text.">
+    M26 Scutum में एक मध्यम रूप से धुंधला खुला तारा समूह है, जो दूरबीन में दिखाई देता है और छोटी दूरबीनों में अच्छी तरह से हल हो जाता है। लगभग 90 तारे समृद्ध Scutum तारा बादल में एक कॉम्पैक्ट क्षेत्र में फैले हुए हैं, हालांकि समूह इतनी घनी पृष्ठभूमि के विरुद्ध स्थित है कि आसपास के तारा क्षेत्र से इसके सदस्यों की पहचान करने के लिए कुछ सावधानी की आवश्यकता है।
+    </string>
+    <string name="object_info_m26_funfact" translation_description="Fun fact about M26 shown in the info card. Translate this text.">
+    M26 आकाश की उसी समृद्ध पट्टी के साथ स्थित है जैसे M11 — वाइल्ड डक क्लस्टर, आकाश में सबसे बेहतरीन खुले समूहों में से एक। ये दोनों केवल लगभग 3.5° अलग हैं और एक ही दूरबीन क्षेत्र में दिखाई देते हैं, जिससे Scutum एक छोटे और अक्सर अनदेखे नक्षत्र होने के बावजूद क्लस्टर पर्यवेक्षकों के लिए एक उल्लेखनीय गंतव्य बन जाता है।
+    </string>
+    <string name="object_info_m26_distance" translation_description="Distance to M26 shown in the info card. Translate units if appropriate for your locale.">5,000 प्रकाश-वर्ष</string>
+    <string name="object_info_m26_size" translation_description="Physical size of M26 shown in the info card. Translate units if appropriate for your locale.">~22 प्रकाश-वर्ष व्यास में</string>
+
+    <string name="object_info_m79_description" translation_description="Description of the globular cluster M79 shown in the info card. Translate this text.">
+    M79 Lepus में एक सघन गोलाकार समूह है — यह बहुत कम Messier गोलाकार समूहों में से एक है जो सर्दियों के आकाश में सबसे अच्छी तरह स्थित है, जब अधिकांश गोलाकार समूह क्षितिज के नीचे होते हैं या मुश्किल से उदित होते हैं। परिमाण 8.0 पर इसे अपने सघन केंद्र और धुंधले प्रभामंडल को प्रकट करने के लिए एक दूरबीन की आवश्यकता होती है, जो तुलनात्मक रूप से विरल सर्दियों के तारकीय क्षेत्रों के विरुद्ध खड़ा होता है।
+    </string>
+    <string name="object_info_m79_funfact" translation_description="Fun fact about M79 shown in the info card. Translate this text.">
+    M79 को कुछ खगोलविदों द्वारा कैनिस मेजर बौने आकाशगंगा से एक अनाधिकृत आगंतुक माना जाता है — एक विघटित उपग्रह आकाशगंगा जो वर्तमान में मिल्की वे द्वारा अवशोषित की जा रही है। यदि ऐसा है, तो M79 मिल्की वे की अपनी गोलाकार प्रणाली के भीतर नहीं बना था, बल्कि एक गिरती हुई आकाशगंगा से पकड़ा गया था और अब धीरे-धीरे हमारी आकाशगंगा के प्रभामंडल में मिलाया जा रहा है।
+    </string>
+    <string name="object_info_m79_distance" translation_description="Distance to M79 shown in the info card. Translate units if appropriate for your locale.">41,000 प्रकाश-वर्ष</string>
+    <string name="object_info_m79_size" translation_description="Physical size of M79 shown in the info card. Translate units if appropriate for your locale.">~104 प्रकाश-वर्ष व्यास में</string>
+
+    <string name="object_info_m70_description" translation_description="Description of the globular cluster M70 shown in the info card. Translate this text.">
+    M70 धनु राशि में एक सघन गोलाकार समूह है, जो अपने निकट-जुड़वां M69 से दिखावट और दूरी दोनों में बहुत मिलता-जुलता है। परिमाण 8.1 पर यह एक बेहतरीन छोटी दूरबीन वस्तु है जो एक सघन केंद्र दिखाती है और बाहरी प्रभामंडल में संकल्प के संकेत देती है। यह M69 से केवल 2° दूर बैठा है और दोनों को एक ही द्विनेत्री क्षेत्र में देखा जा सकता है।
+    </string>
+    <string name="object_info_m70_funfact" translation_description="Fun fact about M70 shown in the info card. Translate this text.">
+    M70 को 1995 में संक्षिप्त कुख्याति मिली जब एलन हेल और थॉमस बॉप ने आकाश में इसी स्थान के पास स्वतंत्र रूप से धूमकेतु हेल-बॉप की खोज की — जो 20वीं सदी के अंत का सबसे चमकीला धूमकेतु था। दोनों पर्यवेक्षकों ने शुरुआत में अन्य लक्ष्यों की खोज करते हुए M70 को पार किया और पास में एक अप्रत्याशित धुंधली वस्तु के रूप में धूमकेतु को देखा।
+    </string>
+    <string name="object_info_m70_distance" translation_description="Distance to M70 shown in the info card. Translate units if appropriate for your locale.">29,400 प्रकाश-वर्ष</string>
+    <string name="object_info_m70_size" translation_description="Physical size of M70 shown in the info card. Translate units if appropriate for your locale.">~67 प्रकाश-वर्ष व्यास में</string>
+
+    <string name="object_info_m107_description" translation_description="Description of the globular cluster M107 shown in the info card. Translate this text.">
+    M107 मेसियर गोलाकार समूहों में से एक सबसे कम केंद्रित है, जिसमें तारे एक मामूली कोर के चारों ओर अपेक्षाकृत खुले पैटर्न में बिखरे हुए हैं। परिमाण 8.1 पर यह अंधेरे आकाश से एक दूरबीन लक्ष्य है और छोटी दूरबीनों में आंशिक रूप से हल हो जाता है, जो तीव्र केंद्रीय संघनन के बजाय एक दानेदार बनावट दिखाता है।
+    </string>
+    <string name="object_info_m107_funfact" translation_description="Fun fact about M107 shown in the info card. Translate this text.">
+    M107 मेसियर कैटलॉग में औपचारिक रूप से जोड़ी गई अंतिम प्रविष्टि थी — यह पिएरे मेचेन की पत्राचार में दिखाई देती है लेकिन मूल 1781 संस्करण में शामिल नहीं थी। इसे 1947 में कनाडाई खगोलविद हेलेन सॉयर होग द्वारा आधिकारिक रूप से M107 के रूप में जोड़ा गया था, जिन्होंने कई "लापता" वस्तुओं को संहिताबद्ध किया था जिन्हें मेचेन ने देखा था लेकिन मेसियर ने कभी औपचारिक रूप से दर्ज नहीं किया था।
+    </string>
+    <string name="object_info_m107_distance" translation_description="Distance to M107 shown in the info card. Translate units if appropriate for your locale.">20,900 प्रकाश-वर्ष</string>
+    <string name="object_info_m107_size" translation_description="Physical size of M107 shown in the info card. Translate units if appropriate for your locale.">~61 प्रकाश-वर्ष व्यास में</string>
+
+    <string name="object_info_m68_description" translation_description="Description of the globular cluster M68 shown in the info card. Translate this text.">
+    M68 हाइड्रा में एक समृद्ध गोलाकार समूह है — एक दक्षिणी वस्तु और देर से सर्दियों और वसंत आकाश में सबसे अच्छी तरह से रखे गए कुछ गोलाकार समूहों में से एक। परिमाण 8.2 पर यह एक छोटे दूरबीन को एक मध्यम रूप से संघनित कोर और हाइड्रा के अपेक्षाकृत विरल तारा क्षेत्रों के विरुद्ध हल किए गए तारों के एक बड़े प्रभामंडल के साथ पुरस्कृत करता है।
+    </string>
+    <string name="object_info_m68_funfact" translation_description="Fun fact about M68 shown in the info card. Translate this text.">
+    इसकी सापेक्ष निकटता के बावजूद — जो शौकिया दूरबीनों में व्यक्तिगत तारों को अच्छी तरह से हल करता है — M68 को अक्सर नज़रअंदाज़ किया जाता है क्योंकि इसका दक्षिणी विषुवत रेखा बहुत दूर है। 50°N से ऊपर के अक्षांशों से यह मुश्किल से क्षितिज को साफ़ करता है; हालांकि, दक्षिणी गोलार्ध से, यह ऊंचा उठता है और एक शानदार गोलाकार समूह है।
+    </string>
+    <string name="object_info_m68_distance" translation_description="Distance to M68 shown in the info card. Translate units if appropriate for your locale.">33,600 प्रकाश-वर्ष</string>
+    <string name="object_info_m68_size" translation_description="Physical size of M68 shown in the info card. Translate units if appropriate for your locale.">~117 प्रकाश-वर्ष व्यास में</string>
+
+    <string name="object_info_m56_description" translation_description="Description of the globular cluster M56 shown in the info card. Translate this text.">
+    M56 Lyra में एक कॉम्पैक्ट गोलाकार समूह है, जो Ring Nebula (M57) और Cygnus में चमकीले दोहरे तारे Albireo के बीच स्थित है। परिमाण 8.3 पर यह अंधेरे आकाश से एक दूरबीन लक्ष्य है, और एक छोटी दूरबीन एक दानेदार, मध्यम रूप से संघनित गोले को प्रकट करती है जो मध्यम एपर्चर में भी केवल आंशिक रूप से हल होता है।
+    </string>
+    <string name="object_info_m56_funfact" translation_description="Fun fact about M56 shown in the info card. Translate this text.">
+    M56 की खोज मेसियर ने जनवरी 1779 में की थी, उसी अवलोकन मौसम में जब उन्होंने रिंग नेबुला (M57) की भी खोज की थी। वेगा — आकाश के पाँचवें सबसे चमकीले तारे — के समान द्विनेत्र क्षेत्र में बैठने के बावजूद और प्रसिद्ध रिंग नेबुला के निकट होने के बावजूद, M56 को अक्सर अवलोकनकर्ताओं द्वारा नज़रअंदाज़ किया जाता है जो इसके अधिक प्रसिद्ध पड़ोसियों की ओर आकर्षित होते हैं।
+    </string>
+    <string name="object_info_m56_distance" translation_description="Distance to M56 shown in the info card. Translate units if appropriate for your locale.">32,900 प्रकाश-वर्ष</string>
+    <string name="object_info_m56_size" translation_description="Physical size of M56 shown in the info card. Translate units if appropriate for your locale.">~68 प्रकाश-वर्ष व्यास में</string>
+
+    <string name="object_info_m71_description" translation_description="Description of the globular cluster M71 shown in the info card. Translate this text.">
+    M71 Sagitta में एक असामान्य गोलाकार समूह है — जिसके बारे में खगोलविदों ने दशकों तक बहस की है कि क्या यह एक बहुत समृद्ध पुराना खुला समूह था या एक बहुत ढीला युवा गोलाकार समूह। आधुनिक विश्लेषण पुष्टि करता है कि यह एक वास्तविक गोलाकार है, लेकिन असाधारण रूप से कम-सांद्रता वाला है जिसमें अपेक्षाकृत कम तारे हैं और विशिष्ट गोलाकारों की तुलना में कम प्रभावशाली केंद्र है।
+    </string>
+    <string name="object_info_m71_funfact" translation_description="Fun fact about M71 shown in the info card. Translate this text.">
+    M71 की ढीली संरचना ने इसे कई प्रारंभिक सूचियों से दूर रखा क्योंकि यह एक सच्चे समूह के बजाय एक समृद्ध तारा क्षेत्र जैसा दिखता था। केवल 12,000 प्रकाश-वर्ष पर, यह निकटतम मेसियर गोलाकार समूहों में से एक है, और इसके तारे अंधेरे आकाश के तहत एक छोटे दूरबीन में आंशिक रूप से हल हो जाते हैं — जिससे यह एक कॉम्पैक्ट, थोड़ा संघनित समृद्ध तारा क्षेत्र का रूप देता है।
+    </string>
+    <string name="object_info_m71_distance" translation_description="Distance to M71 shown in the info card. Translate units if appropriate for your locale.">12,000 प्रकाश-वर्ष</string>
+    <string name="object_info_m71_size" translation_description="Physical size of M71 shown in the info card. Translate units if appropriate for your locale.">~25 प्रकाश-वर्ष व्यास में</string>
 </resources>

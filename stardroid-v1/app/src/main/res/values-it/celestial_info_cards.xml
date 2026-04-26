@@ -950,6 +950,65 @@
     </string>
     <string name="object_info_eta_carinae_nebula_distance" translation_description="Distance to Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">7.500 anni luce</string>
     <string name="object_info_eta_carinae_nebula_size" translation_description="Physical size of Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">300 anni luce di diametro</string>
+    <!-- North America Nebula (NGC 7000) -->
+    <string name="object_info_north_america_nebula_description" translation_description="Description of the North America Nebula shown in the info card. Translate this text.">
+    La Nebulosa America Settentrionale (NGC 7000) è una grande nebulosa ad emissione nel Cigno la cui forma assomiglia notevolmente al continente del Nord America, completa di una regione del Golfo del Messico. Estendendosi per circa 120 arcminuti di diametro — circa quattro volte il diametro della Luna piena — si trova a circa 2.600 anni luce di distanza ed è larga oltre 100 anni luce.
+    </string>
+    <string name="object_info_north_america_nebula_funfact" translation_description="Fun fact about the North America Nebula shown in the info card. Translate this text.">
+    Nonostante la sua magnitudine visuale di 4, la nebulosa è troppo grande e diffusa per essere vista ad occhio nudo nella maggior parte dei cieli — eppure fotografa magnificamente, rivelando la Cygnus Wall, un denso arco di intensa formazione stellare lungo il suo bordo meridionale.
+    </string>
+    <string name="object_info_north_america_nebula_distance" translation_description="Distance to the North America Nebula shown in the info card. Translate units if appropriate for your locale.">~2.590 anni luce</string>
+    <string name="object_info_north_america_nebula_size" translation_description="Physical size of the North America Nebula shown in the info card. Translate units if appropriate for your locale.">~140 anni luce di diametro</string>
+    <!-- Exposed Cranium Nebula - PMR 1 -->
+    <string name="object_info_exposed_cranium_nebula_description" translation_description="Description of the Exposed Cranium Nebula shown in the info card. Translate this text.">
+    La Nebulosa del Cranio Esposto (PMR 1) è una nebulosa planetaria in Vela, a circa 5.000 anni luce di distanza. Il suo nome inquietante deriva da una fascia scura di gas che corre verticalmente attraverso il centro, dividendo i suoi lobi luminosi in una forma che ricorda in modo bizzarro un cervello dentro un cranio trasparente. Nel suo cuore brucia una stella Wolf-Rayet calda che sta perdendo gli strati esterni accumulati nel corso della sua vita.
+    </string>
+    <string name="object_info_exposed_cranium_nebula_funfact" translation_description="Fun fact about the Exposed Cranium Nebula shown in the info card. Translate this text.">
+    Nel 2026 il James Webb Space Telescope ha catturato affascinanti nuove immagini della Nebulosa del Cranio Esposto, risolvendo la sua struttura a doppio strato con dettagli senza precedenti — un guscio esterno ricco di idrogeno e una nuvola interna piena di elementi più pesanti forgiati dalla stella morente.
+    </string>
+    <string name="object_info_exposed_cranium_nebula_distance" translation_description="Distance to the Exposed Cranium Nebula shown in the info card. Translate units if appropriate for your locale.">~5.000 anni luce</string>
+    <string name="object_info_exposed_cranium_nebula_size" translation_description="Physical size of the Exposed Cranium Nebula shown in the info card. Translate units if appropriate for your locale.">~2 anni luce di diametro</string>
+
+    <!-- Jewel Box (NGC 4755) -->
+    <string name="object_info_jewel_box_description" translation_description="Description of the Jewel Box cluster shown in the info card. Translate this text.">
+    La Cassetta di Gioielli (NGC 4755) è un giovane e brillante ammasso aperto nella costellazione della Croce del Sud, facilmente visibile a occhio nudo come una macchia sfumata di quarta magnitudine poco a sud-est di Mimosa. Quando osservato attraverso un telescopio, le sue stelle brillano in vividi colori contrastanti — supergiganti blu profondo accanto a un sorprendente supergigante rosso — guadagnandosi il nome che John Herschel le diede: un superbo pezzo di gioielleria. Con soli 14-16 milioni di anni, è uno degli ammassi più giovani e colorati del cielo.
+    </string>
+    <string name="object_info_jewel_box_funfact" translation_description="Fun fact about the Jewel Box shown in the info card. Translate this text.">
+    La stella rossa di spicco dell\'ammasso, κ Crucis, è una supergigante rossa così luminosa da superare il Sole di più di 100.000 volte — un vivido promemoria che gli ammassi stellari non sono tutti dello stesso colore.
+    </string>
+    <string name="object_info_jewel_box_distance" translation_description="Distance to the Jewel Box shown in the info card. Translate units if appropriate for your locale.">~6.500 anni luce</string>
+    <string name="object_info_jewel_box_size" translation_description="Physical size of the Jewel Box shown in the info card. Translate units if appropriate for your locale.">~19 anni luce di diametro</string>
+
+    <!-- Double Cluster (NGC 869 & NGC 884) -->
+    <string name="object_info_double_cluster_description" translation_description="Description of the Double Cluster shown in the info card. Translate this text.">
+    Il Doppio Ammasso (NGC 869 e NGC 884) è una splendida coppia di giovani ammassi stellari aperti in Perseo, situati uno accanto all\'altro nel cielo a poco più di un grado di distanza. Entrambi sono visibili a occhio nudo come una macchia nebulosa, ma anche un piccolo telescopio rivela centinaia di brillanti supergiganti blu-bianchi stipati in due sciami scintillanti. A circa 7.500 anni luce di distanza, si trovano all\'interno del Braccio di Perseo della nostra galassia e si annoverano tra i migliori oggetti binoculari del cielo settentrionale.
+    </string>
+    <string name="object_info_double_cluster_funfact" translation_description="Fun fact about the Double Cluster shown in the info card. Translate this text.">
+    Con soli 14 milioni di anni, l\'Ammasso Doppio è straordinariamente giovane — così recentemente nato che le sue stelle più massicce sono ancora brillanti supergiganti blu, con un pugno già evolute in rare, infuocate supergiganti rosse.
+    </string>
+    <string name="object_info_double_cluster_distance" translation_description="Distance to the Double Cluster shown in the info card. Translate units if appropriate for your locale.">~7.500 anni luce</string>
+    <string name="object_info_double_cluster_size" translation_description="Physical size of the Double Cluster shown in the info card. Translate units if appropriate for your locale.">Ogni ammasso ~70 anni luce di diametro; la coppia separata da ~1.000 anni luce</string>
+
+    <!-- 47 Tucanae (NGC 104) -->
+    <string name="object_info_n47_tucanae_description" translation_description="Description of 47 Tucanae shown in the info card. Translate this text.">
+    47 Tucanae (NGC 104) è l\'ammasso globulare secondo più luminoso del cielo, una densa sfera di circa un milione di stelle antiche che orbita la Via Lattea nella costellazione del Tucano. A circa 14.500 anni luce di distanza appare all\'occhio nudo come una stella sfocata di quarta magnitudine, ma un telescopio risolve il suo nucleo compresso in uno straordinario sciame di soli dorati e bianco-azzurri. Le sue stelle si sono formate circa 13 miliardi di anni fa, rendendo l\'ammasso quasi vecchio quanto l\'universo stesso.
+    </string>
+    <string name="object_info_n47_tucanae_funfact" translation_description="Fun fact about 47 Tucanae shown in the info card. Translate this text.">
+    47 Tucanae è una fabbrica cosmica di pulsar: gli astronomi hanno trovato almeno 35 pulsar millisecondi che ruotano centinaia di volte al secondo al suo interno — più che in qualsiasi altro ammasso globulare conosciuto — il risultato di incontri ravvicinati stellari che riciclano vecchie stelle di neutroni accelerandole.
+    </string>
+    <string name="object_info_n47_tucanae_distance" translation_description="Distance to 47 Tucanae shown in the info card. Translate units if appropriate for your locale.">~14.500 anni luce</string>
+    <string name="object_info_n47_tucanae_size" translation_description="Physical size of 47 Tucanae shown in the info card. Translate units if appropriate for your locale.">~120 anni luce di diametro</string>
+
+    <!-- Centaurus A (NGC 5128) -->
+    <string name="object_info_centaurus_a_description" translation_description="Description of Centaurus A shown in the info card. Translate this text.">
+    Centaurus A (NGC 5128) è la galassia radio attiva più vicina alla Terra, una gigantesca galassia ellittica nella costellazione del Centauro il cui caratteristico strato di polvere scura tradisce un passato violento — una galassia a spirale inghiottita circa 200-700 milioni di anni fa. Nel suo cuore si nasconde un buco nero supermassiccio di 55 milioni di masse solari che genera getti relativistici che si estendono per più di un milione di anni luce alle lunghezze d\'onda radio. A una distanza di circa 12 milioni di anni luce è una delle galassie più studiate del cielo.
+    </string>
+    <string name="object_info_centaurus_a_funfact" translation_description="Fun fact about Centaurus A shown in the info card. Translate this text.">
+    Centaurus A è uno dei più potenti trasmettitori radio naturali del cielo — i suoi getti sparano plasma verso l\'esterno a quasi la velocità della luce, e l\'estensione completa dei suoi lobi radio copre un\'area equivalente a circa 100 lune piene disposte una dopo l\'altra attraverso il cielo.
+    </string>
+    <string name="object_info_centaurus_a_distance" translation_description="Distance to Centaurus A shown in the info card. Translate units if appropriate for your locale.">~12 milioni di anni luce</string>
+    <string name="object_info_centaurus_a_size" translation_description="Physical size of Centaurus A shown in the info card. Translate units if appropriate for your locale.">~123.000 anni luce di diametro</string>
+
     <!-- ==================== CONSTELLATIONS ==================== -->
     <!-- Note: Constellation names are defined in celestial_objects.xml -->
     <!-- Orion -->
@@ -1977,4 +2036,694 @@
     Vulpecula contiene la Nebulosa Manubrio (M27), la prima nebulosa planetaria mai scoperta (da Charles Messier nel 1764), e un bellissimo bersaglio binoculare!
     </string>
     <string name="object_info_vulpecula_size" translation_description="Physical size of Vulpecula shown in the info card. Translate units if appropriate for your locale.">268 gradi quadrati</string>
+
+    <!-- Galilean Moons of Jupiter -->
+    <string name="object_info_io_description" translation_description="Description of Io shown in the info card. Translate this text.">
+    Io è il più interno dei quattro grandi satelliti galileiani di Giove ed è il corpo più attivo vulcanicamente del sistema solare.
+    </string>
+    <string name="object_info_io_funfact" translation_description="Fun fact about Io shown in the info card. Translate this text.">
+    Io ha centinaia di vulcani attivi, alcuni dei quali eruttano fontane di lava alte decine di chilometri. La sua attività costante è alimentata dal riscaldamento mareale causato dall\'enorme gravità di Giove.
+    </string>
+    <string name="object_info_io_distance" translation_description="Distance to Io shown in the info card. Translate units if appropriate for your locale.">421.700 km da Giove</string>
+    <string name="object_info_io_size" translation_description="Physical size of Io shown in the info card. Translate units if appropriate for your locale.">3.643 km di diametro</string>
+
+    <string name="object_info_europa_description" translation_description="Description of Europa shown in the info card. Translate this text.">
+    Europa è la seconda luna galileiana ed è ritenuta ospitare un vasto oceano di acqua liquida sotto la sua crosta ghiacciata, rendendola uno dei luoghi più promettenti per la ricerca della vita.
+    </string>
+    <string name="object_info_europa_funfact" translation_description="Fun fact about Europa shown in the info card. Translate this text.">
+    L\'oceano subsuperficiale di Europa potrebbe contenere il doppio dell\'acqua liquida di tutti gli oceani terrestri messi insieme, mantenuta liquida dal riscaldamento mareale di Giove.
+    </string>
+    <string name="object_info_europa_distance" translation_description="Distance to Europa shown in the info card. Translate units if appropriate for your locale.">671.100 km da Giove</string>
+    <string name="object_info_europa_size" translation_description="Physical size of Europa shown in the info card. Translate units if appropriate for your locale.">3.122 km di diametro</string>
+
+    <string name="object_info_ganymede_description" translation_description="Description of Ganymede shown in the info card. Translate this text.">
+    Ganimede è il satellite più grande del sistema solare — persino più grande del pianeta Mercurio. È l\'unico satellite conosciuto che genera il proprio campo magnetico.
+    </string>
+    <string name="object_info_ganymede_funfact" translation_description="Fun fact about Ganymede shown in the info card. Translate this text.">
+    Ganimede è più grande di Mercurio per dimensioni, anche se ha solo circa la metà della sua massa. Il suo campo magnetico interno crea una propria magnetosfera in miniatura all\'interno di quella molto più grande di Giove.
+    </string>
+    <string name="object_info_ganymede_distance" translation_description="Distance to Ganymede shown in the info card. Translate units if appropriate for your locale.">1.070.400 km da Giove</string>
+    <string name="object_info_ganymede_size" translation_description="Physical size of Ganymede shown in the info card. Translate units if appropriate for your locale.">5.268 km di diametro</string>
+
+    <string name="object_info_callisto_description" translation_description="Description of Callisto shown in the info card. Translate this text.">
+    Callisto è il più esterno dei satelliti galileiani e uno dei corpi più densamente craterizzati del sistema solare, la sua antica superficie conserva una registrazione degli impatti del primo sistema solare.
+    </string>
+    <string name="object_info_callisto_funfact" translation_description="Fun fact about Callisto shown in the info card. Translate this text.">
+    Callisto orbita oltre le fasce di radiazione principali di Giove, rendendola la più sicura dei satelliti galileiani per la futura esplorazione umana — è talvolta chiamata la \'luna gateway\'.
+    </string>
+    <string name="object_info_callisto_distance" translation_description="Distance to Callisto shown in the info card. Translate units if appropriate for your locale.">1.882.700 km da Giove</string>
+    <string name="object_info_callisto_size" translation_description="Physical size of Callisto shown in the info card. Translate units if appropriate for your locale.">4.821 km di diametro</string>
+
+    <!-- Moons of Mars -->
+    <string name="object_info_phobos_description" translation_description="Description of Phobos shown in the info card. Translate this text.">
+    Fobos è il più grande e il più interno dei due satelliti di Marte, orbitando più vicino al suo pianeta di qualsiasi altro satellite del sistema solare. È un corpo di forma irregolare, profondamente solcato e craterizzato, ritenuto essere un asteroide catturato.
+    </string>
+    <string name="object_info_phobos_funfact" translation_description="Fun fact about Phobos shown in the info card. Translate this text.">
+    Fobos orbita Marte così velocemente che sorge a ovest e tramonta a est — e sta lentamente spiralando verso l\'interno, destinato a schiantarsi su Marte o a disintegrarsi in un anello tra circa 50 milioni di anni.
+    </string>
+    <string name="object_info_phobos_distance" translation_description="Distance to Phobos shown in the info card. Translate units if appropriate for your locale.">9.376 km da Marte</string>
+    <!-- tm:omitted name="object_info_phobos_size" reason="identical_to_source" -->
+
+    <string name="object_info_deimos_description" translation_description="Description of Deimos shown in the info card. Translate this text.">
+    Deimos è il più piccolo e il più esterno dei due satelliti di Marte, con una superficie liscia e ricoperta di polvere che gli conferisce un aspetto più arrotondato rispetto a Fobos. Come il suo compagno, si ritiene che sia un asteroide catturato dalla fascia esterna.
+    </string>
+    <string name="object_info_deimos_funfact" translation_description="Fun fact about Deimos shown in the info card. Translate this text.">
+    Deimos è così piccolo e lontano che dalla superficie marziana sembra poco più di una stella luminosa, impiegando circa 30 ore per attraversare lentamente il cielo notturno.
+    </string>
+    <string name="object_info_deimos_distance" translation_description="Distance to Deimos shown in the info card. Translate units if appropriate for your locale.">23.460 km da Marte</string>
+    <!-- tm:omitted name="object_info_deimos_size" reason="identical_to_source" -->
+
+    <!-- Major Moons of Saturn -->
+    <string name="object_info_titan_description" translation_description="Description of Titan shown in the info card. Translate this text.">
+    Titano è il satellite più grande di Saturno e il secondo satellite più grande del sistema solare. È l\'unico satellite noto ad avere un\'atmosfera densa — una spessa coperta di azoto intrecciata con metano — e l\'unico mondo oltre la Terra noto ad avere mari di liquido stabile sulla sua superficie.
+    </string>
+    <string name="object_info_titan_funfact" translation_description="Fun fact about Titan shown in the info card. Translate this text.">
+    I laghi e i mari di Titano sono riempiti non di acqua ma di metano ed etano liquidi a una temperatura gelida di −179°C. La missione del rotorcraft Dragonfly della NASA, prevista per arrivare nel 2034, volerà tra i siti sulla superficie di Titano per cercare la chimica della vita.
+    </string>
+    <string name="object_info_titan_distance" translation_description="Distance to Titan shown in the info card. Translate units if appropriate for your locale.">1.221.870 km da Saturno</string>
+    <string name="object_info_titan_size" translation_description="Physical size of Titan shown in the info card. Translate units if appropriate for your locale.">5.151 km di diametro</string>
+
+    <string name="object_info_rhea_description" translation_description="Description of Rhea shown in the info card. Translate this text.">
+    Rea è il secondo satellite più grande di Saturno e un mondo pesantemente craterizzato di ghiaccio e roccia. La sua superficie pallida e antica conserva alcuni dei crateri da impatto più incontaminati del sistema solare, insieme a scogliere di ghiaccio luminose dove le frane hanno esposto materiale fresco da sotto.
+    </string>
+    <string name="object_info_rhea_funfact" translation_description="Fun fact about Rhea shown in the info card. Translate this text.">
+    Nel 2008, i dati di Cassini suggerirono che Rhea potrebbe avere un sottile anello di detriti in orbita attorno a essa — il che la renderebbe la prima luna mai scoperta con il proprio sistema di anelli. Se confermato, sarebbe una scoperta straordinaria; le prove rimangono un\'area di ricerca attiva.
+    </string>
+    <string name="object_info_rhea_distance" translation_description="Distance to Rhea shown in the info card. Translate units if appropriate for your locale.">527.108 km da Saturno</string>
+    <string name="object_info_rhea_size" translation_description="Physical size of Rhea shown in the info card. Translate units if appropriate for your locale.">1.527 km di diametro</string>
+
+    <string name="object_info_tethys_description" translation_description="Description of Tethys shown in the info card. Translate this text.">
+    Teti è una luna ghiacciata di Saturno dominata da due caratteristiche drammatiche: il vasto cratere Odisseo, largo 400 km e che copre quasi un terzo della superficie della luna, e Ithaca Chasma, un sistema di canyon che si estende per tre quarti intorno al globo.
+    </string>
+    <string name="object_info_tethys_funfact" translation_description="Fun fact about Tethys shown in the info card. Translate this text.">
+    Teti è quasi puro ghiaccio d\'acqua — ha una delle densità più basse di qualsiasi luna del sistema solare, appena più densa dell\'acqua congelata. Ithaca Chasma potrebbe essersi formata quando l\'interno si è congelato e ha subito un\'espansione, creando fratture nella crosta sovrastante dall\'interno.
+    </string>
+    <string name="object_info_tethys_distance" translation_description="Distance to Tethys shown in the info card. Translate units if appropriate for your locale.">294.619 km da Saturno</string>
+    <string name="object_info_tethys_size" translation_description="Physical size of Tethys shown in the info card. Translate units if appropriate for your locale.">1.062 km di diametro</string>
+
+    <string name="object_info_dione_description" translation_description="Description of Dione shown in the info card. Translate this text.">
+    Dione è una luna ghiacciata di Saturno con una faccia anteriore pesantemente craterizzata e un emisfero posteriore costellato di scarpate di ghiaccio brillante — linee di frattura dove antiche forze tettoniche hanno esposto ghiaccio fresco dal basso. I dati di gravità di Cassini suggeriscono un oceano liquido subsuperficiale sotto la crosta.
+    </string>
+    <string name="object_info_dione_funfact" translation_description="Fun fact about Dione shown in the info card. Translate this text.">
+    Dione condivide la sua orbita con due piccole lune, Elene e Polideuces, che sono bloccate 60° davanti e dietro di essa in punti di equilibrio gravitazionale chiamati punti di Lagrange. Elene in particolare può essere vista che cavalca come un autostoppista cosmico nelle immagini di Cassini.
+    </string>
+    <string name="object_info_dione_distance" translation_description="Distance to Dione shown in the info card. Translate units if appropriate for your locale.">377.396 km da Saturno</string>
+    <string name="object_info_dione_size" translation_description="Physical size of Dione shown in the info card. Translate units if appropriate for your locale.">1.122 km di diametro</string>
+
+    <string name="object_info_iapetus_description" translation_description="Description of Iapetus shown in the info card. Translate this text.">
+    Giapeto è una delle lune più distintive di Saturno: l\'emisfero anteriore è coperto di materiale nero come il carbone, mentre l\'emisfero posteriore è ghiaccio bianco brillante. Questo aspetto bicolore estremo ha sconcertato Giovanni Cassini quando ha scoperto la luna nel 1671, e il contrasto è così marcato da essere visibile nei piccoli telescopi.
+    </string>
+    <string name="object_info_iapetus_funfact" translation_description="Fun fact about Iapetus shown in the info card. Translate this text.">
+    Giapeto ha anche una maestosa cresta equatoriale che si eleva per 20 km — più alta di qualsiasi montagna sulla Terra — che si estende per migliaia di chilometri intorno al suo equatore. La sua origine è sconosciuta: potrebbe essere il residuo di un anello collassato, o un antico ripiegamento tettonico, formatosi quando la luna ruotava molto più velocemente molto tempo fa.
+    </string>
+    <string name="object_info_iapetus_distance" translation_description="Distance to Iapetus shown in the info card. Translate units if appropriate for your locale.">3.560.820 km da Saturno</string>
+    <string name="object_info_iapetus_size" translation_description="Physical size of Iapetus shown in the info card. Translate units if appropriate for your locale.">1.469 km di diametro</string>
+
+    <!-- Moon of Neptune -->
+    <string name="object_info_triton_description" translation_description="Description of Triton shown in the info card. Translate this text.">
+    Tritone è il satellite più grande di Nettuno e uno dei corpi più straordinari del sistema solare. Orbita attorno a Nettuno in senso retrogrado — opposto alla rotazione del pianeta — un forte indizio che sia stato catturato dal sistema solare esterno, molto probabilmente dalla Fascia di Kuiper, nei primi tempi della storia di Nettuno.
+    </string>
+    <string name="object_info_triton_funfact" translation_description="Fun fact about Triton shown in the info card. Translate this text.">
+    Nonostante la sua temperatura superficiale di −235°C — la più fredda mai misurata su qualsiasi corpo visitato da un\'astronave — il Voyager 2 ha scoperto geyser di azoto attivi su Tritone nel 1989. Le strisce scure sulla superficie segnano i punti in cui pennacchi di gas e materiale scuro sono eruttati per chilometri nell\'atmosfera sottile.
+    </string>
+    <string name="object_info_triton_distance" translation_description="Distance to Triton shown in the info card. Translate units if appropriate for your locale.">354.759 km da Nettuno</string>
+    <string name="object_info_triton_size" translation_description="Physical size of Triton shown in the info card. Translate units if appropriate for your locale.">2.707 km di diametro</string>
+
+    <!-- Major Moons of Uranus -->
+    <string name="object_info_titania_description" translation_description="Description of Titania shown in the info card. Translate this text.">
+    Titania è il satellite più grande di Urano e l\'ottavo satellite più grande del sistema solare. La sua superficie mostra un mix di antichi piani craterizzati e scarpate e valli più giovani, suggerendo una storia geologica complessa che potrebbe aver incluso attività tettonica passata che ha rimodellato la crosta ghiacciata.
+    </string>
+    <string name="object_info_titania_funfact" translation_description="Fun fact about Titania shown in the info card. Translate this text.">
+    Tutti i satelliti di Urano sono chiamati con i nomi di personaggi di Shakespeare e Alexander Pope — Titania è la regina delle fate in Sogno di una notte di mezza estate. È uno dei pochissimi grandi satelliti planetari non denominati da una figura della mitologia greca o romana.
+    </string>
+    <string name="object_info_titania_distance" translation_description="Distance to Titania shown in the info card. Translate units if appropriate for your locale.">435.910 km da Urano</string>
+    <string name="object_info_titania_size" translation_description="Physical size of Titania shown in the info card. Translate units if appropriate for your locale.">1.578 km di diametro</string>
+
+    <string name="object_info_oberon_description" translation_description="Description of Oberon shown in the info card. Translate this text.">
+    Oberon è il satellite più esterno dei cinque principali di Urano ed uno dei più densamente craterizzati, con una superficie antica che è cambiata poco dall\'inizio del sistema solare. Diversi dei suoi grandi crateri da impatto hanno materiale scuro sui loro fondi, probabilmente depositi organici portati dai corpi impattanti.
+    </string>
+    <string name="object_info_oberon_funfact" translation_description="Fun fact about Oberon shown in the info card. Translate this text.">
+    Oberon ospita una montagna che si eleva di circa 6 km dalle pianure circostanti — paragonabile ai picchi più alti della Terra. A differenza delle montagne terrestri, che si sono formate attraverso la tettonica delle placche, questa caratteristica potrebbe essere il picco centrale di un antico cratere d\'impatto o un residuo della primitiva attività vulcanica.
+    </string>
+    <string name="object_info_oberon_distance" translation_description="Distance to Oberon shown in the info card. Translate units if appropriate for your locale.">583.520 km da Urano</string>
+    <string name="object_info_oberon_size" translation_description="Physical size of Oberon shown in the info card. Translate units if appropriate for your locale.">1.523 km di diametro</string>
+
+    <string name="object_info_ariel_description" translation_description="Description of Ariel shown in the info card. Translate this text.">
+    Ariel ha la superficie più giovane e luminosa dei cinque satelliti principali di Urano. Il suo paesaggio è dominato da una rete di profonde valli e pianure lisce che sono state rimodellate molto tempo fa da un fluido — probabilmente acqua o miscele di acqua e ammoniaca — che fuoriusciva dall\'interno e allagava il terreno antico.
+    </string>
+    <string name="object_info_ariel_funfact" translation_description="Fun fact about Ariel shown in the info card. Translate this text.">
+    Le valli di Ariel possono raggiungere 10 km di profondità — molto più profonde del Grand Canyon. Le osservazioni del James Webb Space Telescope hanno successivamente rilevato ghiaccio di anidride carbonica sulla superficie di Ariel, suggerendo una chimica superficiale in corso guidata da particelle cariche dal campo magnetico di Urano.
+    </string>
+    <string name="object_info_ariel_distance" translation_description="Distance to Ariel shown in the info card. Translate units if appropriate for your locale.">191.020 km da Urano</string>
+    <string name="object_info_ariel_size" translation_description="Physical size of Ariel shown in the info card. Translate units if appropriate for your locale.">1.158 km di diametro</string>
+
+    <string name="object_info_umbriel_description" translation_description="Description of Umbriel shown in the info card. Translate this text.">
+    Umbriel è il più scuro dei cinque satelliti principali di Urano, con una superficie uniformemente antica e pesantemente craterizzata che mostra pochi segni del ringiovanimento geologico visibile sui suoi vicini. Il suo interno sembra essere rimasto freddo e ghiacciato sin dall\'inizio della storia del sistema solare.
+    </string>
+    <string name="object_info_umbriel_funfact" translation_description="Fun fact about Umbriel shown in the info card. Translate this text.">
+    La caratteristica più sorprendente su Umbriel è Wunda, un anello luminoso di circa 140 km di diametro vicino all\'equatore. Scoperto da Voyager 2 nel 1986, la natura esatta di Wunda rimane un mistero — potrebbe essere il fondo di un cratere ricoperto di biossido di carbonio o brina di ammoniaca depositata molto tempo dopo l\'impatto che lo ha formato.
+    </string>
+    <string name="object_info_umbriel_distance" translation_description="Distance to Umbriel shown in the info card. Translate units if appropriate for your locale.">266.300 km da Urano</string>
+    <string name="object_info_umbriel_size" translation_description="Physical size of Umbriel shown in the info card. Translate units if appropriate for your locale.">1.170 km di diametro</string>
+
+    <!-- Globular clusters already on the map -->
+    <string name="object_info_omega_centauri_description" translation_description="Description of Omega Centauri shown in the info card. Translate this text.">
+    Omega Centauri è l\'ammasso globulare più grande e massiccio che orbita la Via Lattea, contenente circa 10 milioni di stelle compresse in una sfera di circa 150 anni luce di diametro. È facilmente visibile a occhio nudo come una stella sfocata in Centaurus, e si risolve in una sfera di stelle straordinaria attraverso binocoli o qualsiasi telescopio.
+    </string>
+    <string name="object_info_omega_centauri_funfact" translation_description="Fun fact about Omega Centauri shown in the info card. Translate this text.">
+    A differenza dei tipici ammassi globulari, Omega Centauri contiene stelle di molte età e composizioni chimiche diverse — un segno che potrebbe essere il nucleo spogliato di una galassia nana che è stata strappata e inghiottita dalla Via Lattea miliardi di anni fa. Potrebbe anche ospitare un buco nero di massa intermedia centrale.
+    </string>
+    <string name="object_info_omega_centauri_distance" translation_description="Distance to Omega Centauri shown in the info card. Translate units if appropriate for your locale.">17.090 anni luce</string>
+    <string name="object_info_omega_centauri_size" translation_description="Physical size of Omega Centauri shown in the info card. Translate units if appropriate for your locale.">~150 anni luce di diametro</string>
+
+    <!-- Deep-sky objects: new catalog additions -->
+    <string name="object_info_hyades_description" translation_description="Description of the Hyades star cluster shown in the info card. Translate this text.">
+    Le Iadi è l\'ammasso stellare aperto più vicino al sistema solare e uno dei più studiati in astronomia. Visibile a occhio nudo come il motivo a forma di V di stelle che forma la faccia del Toro, contiene diverse centinaia di stelle sparse su circa 5° di cielo.
+    </string>
+    <string name="object_info_hyades_funfact" translation_description="Fun fact about the Hyades shown in the info card. Translate this text.">
+    La brillante stella arancione Aldebaran sembra trovarsi all\'interno delle Iadi, ma in realtà è un oggetto in primo piano a metà della distanza — un allineamento casuale. L\'ammasso vero dista circa 153 anni luce e contiene le prime stelle le cui distanze sono state misurate mediante parallasse dal satellite Hipparcos.
+    </string>
+    <string name="object_info_hyades_distance" translation_description="Distance to the Hyades shown in the info card. Translate units if appropriate for your locale.">153 anni luce</string>
+    <string name="object_info_hyades_size" translation_description="Angular size of the Hyades shown in the info card.">~5° di larghezza</string>
+
+    <string name="object_info_coma_star_cluster_description" translation_description="Description of the Coma Berenices Star Cluster shown in the info card. Translate this text.">
+    L\'ammasso stellare di Berenice è un ammasso aperto vicino composto da circa 40 stelle sparse debolmente su quasi 5° di cielo, facilmente visibile a occhio nudo come una leggera foschia in condizioni di buio. È il terzo ammasso aperto più vicino al sistema solare e la fonte della costellazione della Chioma di Berenice.
+    </string>
+    <string name="object_info_coma_star_cluster_funfact" translation_description="Fun fact about the Coma Berenices Star Cluster shown in the info card. Translate this text.">
+    Gli antichi osservatori vedevano questo ammasso come i capelli della regina Berenice II d\'Egitto, che secondo la leggenda si tagliò i suoi riccioli d\'oro come offerta per il ritorno sicuro di suo marito dalla guerra. Si dice che Tolomeo III abbia ufficialmente intitolato questa insolita costellazione in suo onore intorno al 245 a.C.
+    </string>
+    <string name="object_info_coma_star_cluster_distance" translation_description="Distance to the Coma Star Cluster shown in the info card. Translate units if appropriate for your locale.">288 anni luce</string>
+    <string name="object_info_coma_star_cluster_size" translation_description="Angular size of the Coma Star Cluster shown in the info card.">~5° di larghezza</string>
+
+    <string name="object_info_coathanger_description" translation_description="Description of the Coathanger asterism shown in the info card. Translate this text.">
+    Il Gruccia è un asterismo affascinante di dieci stelle nella Volpecola che formano una forma inconfondibile: sei stelle in linea retta con quattro che pendono sotto a forma di gancio, esattamente come un appendiabiti capovolto. È uno dei migliori oggetti binoculari nel cielo estivo, adattandosi perfettamente al tipico campo visivo binoculare.
+    </string>
+    <string name="object_info_coathanger_distance" translation_description="Distance to the Coathanger shown in the info card. Translate units if appropriate for your locale.">~420 anni luce (stella più luminosa)</string>
+    <string name="object_info_coathanger_size" translation_description="Angular size of the Coathanger shown in the info card.">~1° di larghezza</string>
+
+    <string name="object_info_helix_nebula_description" translation_description="Description of the Helix Nebula shown in the info card. Translate this text.">
+    La Nebulosa Elice è la nebulosa planetaria più grande in dimensione apparente nel cielo — il guscio di gas in espansione espulso da una stella simile al Sole alla fine della sua vita. Estendendosi per circa mezzo grado, è visibile al binocolo come un debole bagliore circolare in Aquario ed è soprannominata l\'Occhio di Dio per il suo aspetto nelle fotografie a lunga esposizione.
+    </string>
+    <string name="object_info_helix_nebula_funfact" translation_description="Fun fact about the Helix Nebula shown in the info card. Translate this text.">
+    Al centro della Nebulosa Helix si trova una delle nane bianche più vicine alla Terra conosciute — un residuo stellare intensamente caldo circa le dimensioni della Terra ma con la massa del Sole. Questo è il destino che attende il nostro Sole tra circa cinque miliardi di anni.
+    </string>
+    <string name="object_info_helix_nebula_distance" translation_description="Distance to the Helix Nebula shown in the info card. Translate units if appropriate for your locale.">650 anni luce</string>
+    <string name="object_info_helix_nebula_size" translation_description="Angular size of the Helix Nebula shown in the info card.">~3 anni luce di diametro</string>
+
+    <string name="object_info_sculptor_galaxy_description" translation_description="Description of the Sculptor Galaxy shown in the info card. Translate this text.">
+    La Galassia dello Scultore è una delle galassie a spirale viste di taglio più luminose e belle visibili dalla Terra, apparendo come un bagliore allungato nella costellazione meridionale dello Scultore. È una delle galassie starburst più vicine — una galassia che sta subendo un intenso scoppio di formazione stellare — visibile agli astronomi dilettanti con binocoli da cieli bui.
+    </string>
+    <string name="object_info_sculptor_galaxy_funfact" translation_description="Fun fact about the Sculptor Galaxy shown in the info card. Translate this text.">
+    La Galassia dello Scultore è uno dei membri più luminosi del Gruppo dello Scultore — il gruppo di galassie più vicino al nostro Gruppo Locale. La sua regione di scoppio stellare centrale produce nuove stelle a un ritmo diversi volte superiore a quello della Via Lattea, guidato da interazioni passate con galassie vicine.
+    </string>
+    <string name="object_info_sculptor_galaxy_distance" translation_description="Distance to the Sculptor Galaxy shown in the info card. Translate units if appropriate for your locale.">11,4 milioni di anni luce</string>
+    <string name="object_info_sculptor_galaxy_size" translation_description="Physical size of the Sculptor Galaxy shown in the info card. Translate units if appropriate for your locale.">~90.000 anni luce di larghezza</string>
+
+    <string name="object_info_blue_snowball_nebula_description" translation_description="Description of the Blue Snowball Nebula shown in the info card. Translate this text.">
+    La Palla di Neve Blu è una nebulosa planetaria in Andromeda — il guscio luminoso di gas espulso da una stella morente. Con magnitudine 8,3 è una delle nebulose planetarie più luminose e colorate del cielo, apparendo come un disco blu-verde vivido anche in piccoli telescopi. La sua forma simmetrica e il suo colore intenso la rendono una preferita tra gli osservatori.
+    </string>
+    <string name="object_info_blue_snowball_nebula_funfact" translation_description="Fun fact about the Blue Snowball Nebula shown in the info card. Translate this text.">
+    Il colore affascinante della Nebulosa Palla di Neve Blu deriva dall\'ossigeno doppiamente ionizzato che brilla a una specifica lunghezza d\'onda verde, combinato con l\'emissione di idrogeno — una tavolozza di colori che l\'occhio umano percepisce come blu-verde. La nana bianca centrale ha una temperatura superficiale di circa 100.000°C, abbastanza calda da ionizzare il gas circostante a questa distanza.
+    </string>
+    <string name="object_info_blue_snowball_nebula_distance" translation_description="Distance to the Blue Snowball Nebula shown in the info card. Translate units if appropriate for your locale.">~2.500 anni luce</string>
+    <string name="object_info_blue_snowball_nebula_size" translation_description="Physical size of the Blue Snowball Nebula shown in the info card. Translate units if appropriate for your locale.">~0,8 anni luce di diametro</string>
+
+    <string name="object_info_ghost_of_jupiter_description" translation_description="Description of the Ghost of Jupiter planetary nebula shown in the info card. Translate this text.">
+    Il Fantasma di Giove è una luminosa nebulosa planetaria nell\'Idra le cui dimensioni apparenti sono simili al pianeta Giove — da cui prende il nome. Con magnitudine 8,6 è una delle nebulose planetarie più accessibili del cielo per piccoli telescopi, mostrando un disco nitido e un accenno di colore con aperture moderate.
+    </string>
+    <string name="object_info_ghost_of_jupiter_funfact" translation_description="Fun fact about the Ghost of Jupiter shown in the info card. Translate this text.">
+    Il Fantasma di Giove ha un guscio interno luminoso circondato da un alone esterno più debole — una struttura a due gusci che suggerisce che la stella morente ha espulso gas in almeno due episodi separati. La sua stella centrale è una delle nane bianche più calde conosciute, con una temperatura superficiale stimata intorno ai 75.000°C.
+    </string>
+    <string name="object_info_ghost_of_jupiter_distance" translation_description="Distance to the Ghost of Jupiter shown in the info card. Translate units if appropriate for your locale.">~1.400 anni luce</string>
+    <string name="object_info_ghost_of_jupiter_size" translation_description="Physical size of the Ghost of Jupiter shown in the info card. Translate units if appropriate for your locale.">~1 anno luce di diametro</string>
+
+    <string name="object_info_saturn_nebula_description" translation_description="Description of the Saturn Nebula shown in the info card. Translate this text.">
+    La Nebulosa di Saturno è una nebulosa planetaria nell\'Acquario, così chiamata per la sua somiglianza al pianeta Saturno — estensioni chiamate ansae sporgono da entrambi i lati come maniglie di anelli, visibili in telescopi di potenza moderata. Con magnitudine 8,0 è una delle nebulose planetarie più luminose del cielo e mostra una struttura complessa negli strumenti più grandi.
+    </string>
+    <string name="object_info_saturn_nebula_funfact" translation_description="Fun fact about the Saturn Nebula shown in the info card. Translate this text.">
+    William Herschel ha scoperto la Nebulosa di Saturno nel 1782 e ha notato l\'aspetto simile a Saturno. Le osservazioni moderne rivelano almeno quattro gusci distinti di gas che circondano la nana bianca centrale, riflettendo molteplici episodi di perdita di massa negli ultimi stadi della vita della stella.
+    </string>
+    <string name="object_info_saturn_nebula_distance" translation_description="Distance to the Saturn Nebula shown in the info card. Translate units if appropriate for your locale.">~5.000 anni luce</string>
+    <string name="object_info_saturn_nebula_size" translation_description="Physical size of the Saturn Nebula shown in the info card. Translate units if appropriate for your locale.">~1 anno luce di larghezza</string>
+
+    <string name="object_info_ngc_2903_description" translation_description="Description of the galaxy NGC 2903 shown in the info card. Translate this text.">
+    NGC 2903 è una brillante galassia a spirale barrata nel Leone, spesso chiamata "l\'oggetto Messier che Messier ha mancato" — è una delle galassie più prominenti del cielo non inclusa nel suo famoso catalogo. Con magnitudine 8,9 è facilmente visibile al binocolo e mostra una bellissima struttura a spirale nei telescopi di medie dimensioni.
+    </string>
+    <string name="object_info_ngc_2903_funfact" translation_description="Fun fact about NGC 2903 shown in the info card. Translate this text.">
+    NGC 2903 ha una delle più alte concentrazioni di "hotspot" di formazione stellare conosciute nella regione della barra centrale di una galassia — densi ammassi di giovani stelle massicce illuminate da intensa formazione stellare. È utilizzata come riferimento per lo studio dell\'attività di starburst nelle galassie spirali barrate.
+    </string>
+    <string name="object_info_ngc_2903_distance" translation_description="Distance to NGC 2903 shown in the info card. Translate units if appropriate for your locale.">30 milioni di anni luce</string>
+    <string name="object_info_ngc_2903_size" translation_description="Physical size of NGC 2903 shown in the info card. Translate units if appropriate for your locale.">~80.000 anni luce di larghezza</string>
+
+    <!-- Meteor showers -->
+    <string name="object_info_quadrantids_description" translation_description="Description of the Quadrantids meteor shower shown in the info card. Translate this text.">
+    I Quadrantidi sono uno sciame meteorico di gennaio molto prolifico con un picco molto acuto e breve che dura solo poche ore. Il radiante si trova nella costellazione di Boote, vicino alla posizione della defunta costellazione Quadrans Muralis da cui lo sciame prende il nome. Fino a 120 meteore all\'ora sono visibili in condizioni ideali.
+    </string>
+    <string name="object_info_quadrantids_funfact" translation_description="Fun fact about the Quadrantids meteor shower shown in the info card. Translate this text.">
+    A differenza della maggior parte dei principali sciami che hanno origine da comete, il corpo progenitore dei Quadrantidi è l\'asteroide 2003 EH1 — ritenuto il nucleo dormiente di una cometa che si è estinta secoli fa. La sua esistenza è stata confermata solo nel 2003.
+    </string>
+
+    <string name="object_info_lyrids_description" translation_description="Description of the Lyrids meteor shower shown in the info card. Translate this text.">
+    Le Liridi sono uno sciame meteorico primaverile affidabile che irradia vicino alla brillante stella Vega nella Lira. Producono meteore veloci e moderatamente luminose, raggiungendo il picco di circa 18 per ora, e occasionalmente generano palle di fuoco che lasciano scie di fumo luminoso.
+    </string>
+    <string name="object_info_lyrids_funfact" translation_description="Fun fact about the Lyrids meteor shower shown in the info card. Translate this text.">
+    Le Liridi sono lo sciame meteorico più antico registrato in modo affidabile nella storia. Gli astronomi cinesi hanno documentato una tempesta di meteore "che cadevano come pioggia" nel 687 a.C. I detriti provengono dalla Cometa Thatcher, che impiega 415 anni per orbitare intorno al Sole e ha visitato l\'ultimo sistema solare interno nel 1861.
+    </string>
+
+    <string name="object_info_aquariids_description" translation_description="Description of the Eta Aquariids meteor shower shown in the info card. Translate this text.">
+    Le Eta Aquariidi sono uno dei due sciami meteorici annuali prodotti dai detriti della Cometa di Halley. Con un picco fino a 70 meteore all\'ora, lo sciame favorisce fortemente l\'emisfero meridionale, dove il radiante sorge alto prima dell\'alba. Gli osservatori dell\'emisfero settentrionale godono comunque di un tasso rispettabile di 30 o più meteore all\'ora.
+    </string>
+    <string name="object_info_aquariids_funfact" translation_description="Fun fact about the Eta Aquariids meteor shower shown in the info card. Translate this text.">
+    I meteoroidi Eta Aquaridi viaggiano a 66 km/s — abbastanza veloci da far brillare l\'aria ionizzata che creano per diversi secondi dopo che il meteoroide è scomparso. Potresti vedere la polvere antica di Halley che brucia davanti ai tuoi occhi, rilasciata durante una delle molte visite della cometa migliaia di anni fa.
+    </string>
+
+    <string name="object_info_deltaaquariids_description" translation_description="Description of the Delta Aquariids meteor shower shown in the info card. Translate this text.">
+    Le Delta Aquariidi meridionali raggiungono il picco a fine luglio e sono meglio visibili dalle latitudini tropicali e meridionali, dove il radiante in Acquario sale alto prima dell\'alba. Producono un flusso costante di meteore a velocità media fino a 16 all\'ora, con pochi bolidi luminosi.
+    </string>
+    <string name="object_info_deltaaquariids_funfact" translation_description="Fun fact about the Delta Aquariids meteor shower shown in the info card. Translate this text.">
+    Il corpo genitore esatto delle Delta Aquariidi rimane incerto. Il candidato principale è la Cometa 96P/Machholz, una cometa insolita a breve periodo con un\'orbita molto inclinata che si avvicina notevolmente al Sole — più vicino del pianeta Mercurio.
+    </string>
+
+    <string name="object_info_perseids_description" translation_description="Description of the Perseids meteor shower shown in the info card. Translate this text.">
+    Le Perseidi sono lo sciame meteorico più popolare dell\'anno, raggiungendo il picco nelle calde notti di agosto con fino a 100 meteore all\'ora. I detriti rilasciati dalla Cometa Swift-Tuttle si incendiano nell\'alta atmosfera terrestre, producendo meteore veloci e luminose — molte delle quali lasciano scie luminose persistenti — irradiandosi dalla costellazione di Perseo.
+    </string>
+    <string name="object_info_perseids_funfact" translation_description="Fun fact about the Perseids meteor shower shown in the info card. Translate this text.">
+    Il genitore delle Perseidi, la Cometa Swift-Tuttle, ha un nucleo largo 26 km — più grande dell\'oggetto che si pensa abbia causato l\'estinzione di massa che ha terminato l\'era dei dinosauri. La cometa ha attraversato l\'ultimo volta il sistema solare interno nel 1992 e non tornerà fino al 2125.
+    </string>
+
+    <string name="object_info_orionids_description" translation_description="Description of the Orionids meteor shower shown in the info card. Translate this text.">
+    Gli Orionidi sono la seconda pioggia meteorica prodotta ogni anno dalla Cometa di Halley, irradiandosi vicino al bastone sollevato di Orione. Con un picco di circa 25 per ora, sono noti per meteore veloci, spesso luminose, che frequentemente lasciano tracce di ionizzazione incandescente che durano diversi secondi.
+    </string>
+    <string name="object_info_orionids_funfact" translation_description="Fun fact about the Orionids meteor shower shown in the info card. Translate this text.">
+    La Cometa di Halley è responsabile di due sciami meteorici annuali: gli Eta Aquaridi a maggio, quando la Terra attraversa la scia di detriti in uscita della cometa, e gli Orionidi a ottobre, quando la Terra attraversa la scia in entrata. Insieme ci permettono di campionare la polvere antica di Halley due volte all\'anno.
+    </string>
+
+    <string name="object_info_leonids_description" translation_description="Description of the Leonids meteor shower shown in the info card. Translate this text.">
+    I Leonidi irradiano dalla falce del Leone e tipicamente producono circa 20 meteore all\'ora. Sono famosi per spettacolari tempeste che si verificano approssimativamente ogni 33 anni quando la Terra passa attraverso un filamento di polvere denso rilasciato dalla Cometa 55P/Tempel-Tuttle. Queste tempeste possono produrre migliaia di meteore all\'ora.
+    </string>
+    <string name="object_info_leonids_funfact" translation_description="Fun fact about the Leonids meteor shower shown in the info card. Translate this text.">
+    La tempesta di Leonidi del 1833 produsse un numero stimato di 100.000 meteore all\'ora, terrorizzando gli osservatori in Nord America che temevano che il cielo fosse in fiamme. L\'evento ha avviato lo studio scientifico delle piogge meteoriche. Tempeste comparabili si verificarono nel 1966 e nel 1999.
+    </string>
+
+    <string name="object_info_puppidvelids_description" translation_description="Description of the Puppid-Velids meteor shower shown in the info card. Translate this text.">
+    I Puppidi-Velidi sono un complesso di sciami minori sovrapposti che irradiano dalle costellazioni di Puppis e Vela nella Via Lattea meridionale. Con un picco di circa 10 meteore all\'ora, sono meglio osservati dall\'emisfero meridionale, dove il radiante sorge alto nei cieli di dicembre.
+    </string>
+    <string name="object_info_puppidvelids_funfact" translation_description="Fun fact about the Puppid-Velids meteor shower shown in the info card. Translate this text.">
+    Si ritiene che i Puppidi-Velidi siano detriti provenienti da diversi cometi genitori piuttosto che da un\'unica fonte, inclusa la Cometa 26P/Grigg-Skjellerup. Il loro radiante meridionale non sorge mai sopra l\'orizzonte per gli osservatori a latitudini superiori a circa 40°N, rendendoli uno sciame che la maggior parte del mondo raramente vede.
+    </string>
+
+    <string name="object_info_geminids_description" translation_description="Description of the Geminids meteor shower shown in the info card. Translate this text.">
+    I Geminidi sono ampiamente considerati lo sciame meteorico più bello dell\'anno — prolifico (fino a 120 all\'ora), affidabile e attivo dalla sera presto piuttosto che solo dopo la mezzanotte. Irradiano dalla costellazione dei Gemelli e producono un\'ampia gamma di luminosità meteoriche, inclusi vividi bolidi.
+    </string>
+    <string name="object_info_geminids_funfact" translation_description="Fun fact about the Geminids meteor shower shown in the info card. Translate this text.">
+    Diversamente dalle altre piogge meteoriche principali, i Geminidi provengono da un asteroide piuttosto che da una cometa: 3200 Fetonte, una "cometa rocciosa" la cui orbita la porta più vicina al Sole di qualsiasi altro asteroide denominato. Il calore estremo potrebbe fratturare la sua superficie rocciosa e liberare la polvere che produce la pioggia meteorica.
+    </string>
+
+    <string name="object_info_ursids_description" translation_description="Description of the Ursids meteor shower shown in the info card. Translate this text.">
+    Gli Ursidi sono uno sciame minore che irradia da Orsa Minore, vicino a Polaris, rendendoli circumpolari per gli osservatori dell\'emisfero settentrionale — visibili tutta la notte senza tramontare. Raggiungono il picco intorno al solstizio d\'inverno con circa 10 meteore all\'ora, e la cometa madre è 8P/Tuttle.
+    </string>
+    <string name="object_info_ursids_funfact" translation_description="Fun fact about the Ursids meteor shower shown in the info card. Translate this text.">
+    Gli Ursidi occasionalmente producono esplosioni inaspettate ben al di sopra del loro tasso tipico. Nel 1945 e di nuovo nel 2006, gli osservatori hanno registrato 50 o più meteore all\'ora — cinque volte il picco normale. Questi picchi si verificano quando la Terra attraversa un nastro insolitamente denso di detriti rilasciati durante un approccio ravvicinato della Cometa Tuttle.
+    </string>
+
+    <!-- Category 5: Top priority — objects on the map that lacked info cards -->
+    <string name="object_info_m47_description" translation_description="Description of the open star cluster M47 shown in the info card. Translate this text.">
+    M47 è un ammasso aperto luminoso e disperso nella Poppa, facilmente visibile a occhio nudo e affascinante al binocolo. Circa 50 stelle sono sparse su mezzo grado di cielo, con diversi giganti arancioni che aggiungono un colore caldo rispetto ai membri blu-bianchi più deboli.
+    </string>
+    <string name="object_info_m47_funfact" translation_description="Fun fact about M47 shown in the info card. Translate this text.">
+    M47 era uno degli oggetti Messier "perduti" — un errore amministrativo nelle coordinate originali di Messier lo collocò in un cielo vuoto, lasciando l\'ammasso non identificato per quasi due secoli. La sua vera identità come NGC 2422 fu confermata solo nel 1959, quando gli osservatori lavorarono a ritroso dalla descrizione di Messier per trovare l\'errore.
+    </string>
+    <string name="object_info_m47_distance" translation_description="Distance to M47 shown in the info card. Translate units if appropriate for your locale.">1.600 anni luce</string>
+    <string name="object_info_m47_size" translation_description="Physical size of M47 shown in the info card. Translate units if appropriate for your locale.">~14 anni luce di larghezza</string>
+
+    <string name="object_info_m41_description" translation_description="Description of the open star cluster M41 shown in the info card. Translate this text.">
+    M41 è un bellissimo ammasso aperto nel Cane Maggiore, situato a soli 4° a sud di Sirio — la stella più luminosa del cielo notturno. Visibile a occhio nudo da siti bui e spettacolare al binocolo, contiene circa 100 stelle sparse su un ampio campo, con diversi colpevoli giganti arancioni tra i membri blu-bianchi più deboli.
+    </string>
+    <string name="object_info_m41_funfact" translation_description="Fun fact about M41 shown in the info card. Translate this text.">
+    Aristotele potrebbe aver notato M41 intorno al 325 a.C. — possibilmente l\'osservazione più antica registrata di qualsiasi oggetto del cielo profondo. Ha descritto una "macchia nebulosa" a sud di Sirio che corrisponde alla posizione di M41. Se l\'identificazione è corretta, M41 era già discusso quasi duemila anni prima dell\'invenzione del telescopio.
+    </string>
+    <string name="object_info_m41_distance" translation_description="Distance to M41 shown in the info card. Translate units if appropriate for your locale.">2.300 anni luce</string>
+    <string name="object_info_m41_size" translation_description="Physical size of M41 shown in the info card. Translate units if appropriate for your locale.">~25 anni luce di larghezza</string>
+
+    <string name="object_info_m24_description" translation_description="Description of the Sagittarius Star Cloud (M24) shown in the info card. Translate this text.">
+    M24 è la Nube Stellare del Sagittario — non un ammasso o una nebulosa, ma una finestra attraverso un varco nella polvere della Via Lattea, che rivela un campo stellare abbagliante di 2° di ampiezza. È la regione più ricca visibile attraverso binocoli in qualsiasi parte del cielo, piena di migliaia di stelle che si estendono a molte distanze diverse simultaneamente.
+    </string>
+    <string name="object_info_m24_funfact" translation_description="Fun fact about M24 shown in the info card. Translate this text.">
+    Le stelle in M24 non si trovano alla stessa distanza — la nuvola stellare rappresenta una sezione trasversale del disco della Galassia vista attraverso un tunnel naturale nella polvere interstellare, che si estende per distanze da 10.000 a 16.000 anni luce. Incorporate nella nuvola ci sono nebulose scure e minuscoli ammassi stellari che appaiono come macchie scure sullo sfondo stellare brillante.
+    </string>
+    <string name="object_info_m24_distance" translation_description="Distance range to M24 shown in the info card. Translate units if appropriate for your locale.">~10.000–16.000 anni luce (intervallo)</string>
+    <string name="object_info_m24_size" translation_description="Physical size of M24 shown in the info card. Translate units if appropriate for your locale.">~600 anni luce di profondità della finestra</string>
+
+    <string name="object_info_m25_description" translation_description="Description of the open star cluster M25 shown in the info card. Translate this text.">
+    M25 è un brillante ammasso aperto visibile a occhio nudo nel Sagittario, situato contro i densi campi stellari della Via Lattea estiva. Circa 600 stelle sono sparse in un campo di mezzo grado, rendendolo un ricco oggetto binoculare. I suoi membri più luminosi includono diversi supergiganti blu-bianchi e una delle stelle variabili Cefeidi più studiate del cielo.
+    </string>
+    <string name="object_info_m25_funfact" translation_description="Fun fact about M25 shown in the info card. Translate this text.">
+    M25 contiene U Sagittarii, una stella variabile Cefeide classica che si illumina e si oscura in un periodo di 6,7 giorni. Le Cefeidi sono "candele standard" vitali per misurare le distanze cosmiche perché il loro periodo di pulsazione rivela direttamente la loro vera luminosità — gli astronomi le hanno utilizzate per determinare per la prima volta le dimensioni della Via Lattea e poi la scala dell\'universo osservabile.
+    </string>
+    <string name="object_info_m25_distance" translation_description="Distance to M25 shown in the info card. Translate units if appropriate for your locale.">2.000 anni luce</string>
+    <string name="object_info_m25_size" translation_description="Physical size of M25 shown in the info card. Translate units if appropriate for your locale.">~19 anni luce di larghezza</string>
+
+    <string name="object_info_m39_description" translation_description="Description of the open star cluster M39 shown in the info card. Translate this text.">
+    M39 è un grande ammasso aperto disperso nel Cigno, visibile a occhio nudo vicino a Deneb nella ricca Via Lattea estiva. I suoi circa 30 stelle brillanti sono debolmente raggruppate su un grado di cielo, apprezzate al meglio con basso ingrandimento al binocolo o in un telescopio a largo campo — un ingrandimento maggiore semplicemente lo risolve in un campo di stelle sparso e insignificante.
+    </string>
+    <string name="object_info_m39_funfact" translation_description="Fun fact about M39 shown in the info card. Translate this text.">
+    A circa 825 anni luce di distanza, M39 è uno degli ammassi aperti più vicini alla Terra, e con un\'età di circa 240 milioni di anni è uno degli ammassi visibili a occhio nudo più antichi — abbastanza antico che le sue stelle più massicce hanno già concluso le loro vite. Messier lo registrò nel 1764 ed era tra le prime aggiunte al suo catalogo.
+    </string>
+    <string name="object_info_m39_distance" translation_description="Distance to M39 shown in the info card. Translate units if appropriate for your locale.">825 anni luce</string>
+    <string name="object_info_m39_size" translation_description="Physical size of M39 shown in the info card. Translate units if appropriate for your locale.">~8 anni luce di larghezza</string>
+
+    <!-- Category 5: Special cases -->
+    <string name="object_info_m63_description" translation_description="Description of the Sunflower Galaxy (M63) shown in the info card. Translate this text.">
+    La Galassia Girasole è una luminosa spirale nei Cani da Caccia i cui bracci strettamente avvolti, punteggiati da regioni di formazione stellare, le conferiscono una caratteristica texture simile a un fiore nelle fotografie a lunga esposizione. Con magnitudine 8,6 è visibile al binocolo da cieli bui e mostra facilmente la sua forma allungata e il nucleo luminoso nei piccoli telescopi.
+    </string>
+    <string name="object_info_m63_funfact" translation_description="Fun fact about the Sunflower Galaxy shown in the info card. Translate this text.">
+    M63 è stata scoperta da Pierre Méchain nel 1779 — uno dei pochi oggetti di Messier trovati da Méchain piuttosto che da Messier stesso. È un membro del Gruppo M51, fisicamente associato alla Galassia Vortice (M51), e mostra segni di un\'interazione passata: un debole e antico flusso stellare si avvolge attorno al suo disco esterno.
+    </string>
+    <string name="object_info_m63_distance" translation_description="Distance to the Sunflower Galaxy shown in the info card. Translate units if appropriate for your locale.">29 milioni di anni luce</string>
+    <string name="object_info_m63_size" translation_description="Physical size of the Sunflower Galaxy shown in the info card. Translate units if appropriate for your locale.">~100.000 anni luce di diametro</string>
+
+    <string name="object_info_ngc_6543_description" translation_description="Description of the Cat's Eye Nebula (NGC 6543) shown in the info card. Translate this text.">
+    La Nebulosa Occhio di Gatto è una delle nebulose planetarie strutturalmente più complesse conosciute — il gas espulso da una stella morente scolpito in gusci concentrici, getti e nodi luminosi visibili nelle immagini di Hubble. Nei piccoli telescopi appare come un vivido disco blu-verde nel Draco, uno degli oggetti più colorati del cielo autunnale.
+    </string>
+    <string name="object_info_ngc_6543_funfact" translation_description="Fun fact about the Cat's Eye Nebula shown in the info card. Translate this text.">
+    Nel 1864, l\'astronomo William Huggins puntò uno spettroscopio sulla Nebulosa Occhio di Gatto e scoprì che era composta da gas incandescente anziché da stelle non risolte — la prima volta che la natura di una nebulosa planetaria fu confermata. Questa scoperta fondò il campo della spettroscopia nebulare e rovesciò la visione prevalente che tutte le nebulose fossero ammassi stellari distanti.
+    </string>
+    <string name="object_info_ngc_6543_distance" translation_description="Distance to the Cat's Eye Nebula shown in the info card. Translate units if appropriate for your locale.">~3.300 anni luce</string>
+    <string name="object_info_ngc_6543_size" translation_description="Physical size of the Cat's Eye Nebula shown in the info card. Translate units if appropriate for your locale.">~0,5 anni luce di diametro</string>
+
+    <string name="object_info_m76_description" translation_description="Description of the Little Dumbbell Nebula (M76) shown in the info card. Translate this text.">
+    La Piccola Manubrio è una nebulosa planetaria in Perseo con una forma caratteristica a otto — una cugina più piccola di M27, la Nebulosa Manubrio in Volpecola. Sebbene sia la voce più debole del catalogo Messier, ripaga l\'osservazione paziente con piccoli telescopi e mostra una bella struttura negli strumenti più grandi, con due lobi più luminosi che fiancheggiano una vita più debole.
+    </string>
+    <string name="object_info_m76_funfact" translation_description="Fun fact about the Little Dumbbell Nebula shown in the info card. Translate this text.">
+    M76 è stato originariamente catalogato come due oggetti separati — NGC 650 e NGC 651 — perché i primi osservatori descrivevano i due lobi luminosi indipendentemente. È una nebulosa planetaria bipolare formata quando il flusso di una stella morente è stato pizzicato all\'equatore, creando due lobi in espansione lungo l\'asse polare mentre il gas si gonfia anche verso l\'esterno alla cintura.
+    </string>
+    <string name="object_info_m76_distance" translation_description="Distance to the Little Dumbbell Nebula shown in the info card. Translate units if appropriate for your locale.">~2.500 anni luce</string>
+    <string name="object_info_m76_size" translation_description="Physical size of the Little Dumbbell Nebula shown in the info card. Translate units if appropriate for your locale.">~2 anni luce di diametro</string>
+
+    <string name="object_info_v838_mon_description" translation_description="Description of V838 Monocerotis shown in the info card. Translate this text.">
+    V838 Monocerotis è una stella variabile insolita nella costellazione dell\'Unicorno che ha subito un\'esplosione spettacolare nel 2002, diventando brevemente una delle stelle più luminose della Via Lattea. Sebbene oggi sia troppo debole per gli osservatori visuali, il suo eco di luce in espansione — un fronte d\'onda di luce che illumina antichi gusci di polvere — ha prodotto alcune delle immagini più drammatiche mai scattate dal telescopio spaziale Hubble.
+    </string>
+    <string name="object_info_v838_mon_funfact" translation_description="Fun fact about V838 Monocerotis shown in the info card. Translate this text.">
+    La natura dell\'esplosione di V838 Mon rimane dibattuta. La teoria principale è una fusione stellare — due stelle che spiraleggiano l\'una verso l\'altra e si scontrano — piuttosto che una nova classica o un\'eruzione di supergigante. Se confermato, è stato il primo sguardo in tempo reale di una "nova rossa luminosa", una rara classe di esplosione causata da fusioni stellari; eventi simili sono stati successivamente trovati in altre galassie.
+    </string>
+    <string name="object_info_v838_mon_distance" translation_description="Distance to V838 Monocerotis shown in the info card. Translate units if appropriate for your locale.">~20.000 anni luce</string>
+    <string name="object_info_v838_mon_size" translation_description="Extent of the V838 Monocerotis light echo shown in the info card. Translate units if appropriate for your locale.">~3 anni luce (estensione dell\'eco luminoso)</string>
+
+    <string name="object_info_hdf_description" translation_description="Description of the Hubble Deep Field shown in the info card. Translate this text.">
+    Il Hubble Deep Field è una minuscola porzione di cielo apparentemente vuota di 2,6 arcminuti nella costellazione dell\'Orsa Maggiore, fotografata dal telescopio spaziale Hubble per 10 giorni consecutivi nel dicembre 1995. Quello che sembrava uno spazio vuoto ha rivelato circa 3.000 galassie — che si estendono su miliardi di anni di storia cosmica — e ha fondamentalmente cambiato la nostra visione dell\'universo.
+    </string>
+    <string name="object_info_hdf_funfact" translation_description="Fun fact about the Hubble Deep Field shown in the info card. Translate this text.">
+    La porzione di cielo è stata scelta specificamente perché priva di stelle luminose e galassie vicine. Eppure l\'immagine risultante era piena di circa 3.000 galassie, portando alla stima che l\'intero cielo contiene circa 200 miliardi di galassie — quasi tutte invisibili a qualsiasi telescopio prima di Hubble.
+    </string>
+    <string name="object_info_hdf_distance" translation_description="Distance to the most distant galaxies in the Hubble Deep Field shown in the info card. Translate units if appropriate for your locale.">~13 miliardi di anni luce (più distanti)</string>
+    <string name="object_info_hdf_size" translation_description="Angular size of the Hubble Deep Field shown in the info card.">2,6 arcminuti (campo visivo)</string>
+
+    <string name="object_info_m43_description" translation_description="Description of De Mairan's Nebula (M43) shown in the info card. Translate this text.">
+    La Nebulosa di De Mairan è una porzione distaccata del grande complesso della Nebulosa di Orione, separata da M42 da una fascia di polvere scura ma appartenente alla stessa vasta nube molecolare. Prende il nome dall\'astronomo francese Jean-Jacques Dortous de Mairan, che l\'ha osservata nel 1731, ed è una nebulosa a emissione ionizzata dalla giovane stella calda NU Orionis incorporata al suo centro.
+    </string>
+    <string name="object_info_m43_funfact" translation_description="Fun fact about De Mairan's Nebula shown in the info card. Translate this text.">
+    Sebbene M43 appaia come un oggetto separato da M42, la fascia scura che li divide è una nuvola di polvere in primo piano — parte della Nube Molecolare di Orione — che semplicemente blocca la nostra vista della connessione fisica tra le due regioni luminose. Insieme rappresentano solo il bordo interno illuminato di un\'enorme nube scura che si estende su gran parte di Orione.
+    </string>
+    <string name="object_info_m43_distance" translation_description="Distance to De Mairan's Nebula shown in the info card. Translate units if appropriate for your locale.">1.350 anni luce</string>
+    <string name="object_info_m43_size" translation_description="Physical size of De Mairan's Nebula shown in the info card. Translate units if appropriate for your locale.">~8 anni luce di diametro</string>
+
+    <string name="object_info_m40_description" translation_description="Description of M40 (Winnecke 4) shown in the info card. Translate this text.">
+    M40 è unico nel catalogo Messier — non è una nebulosa, un ammasso o una galassia, ma una stella doppia larga. Messier l\'ha catalogata nel 1764 mentre cercava una nebulosa segnalata da Johann Hevelius nell\'Orsa Maggiore, ha trovato solo questa coppia di stelle e l\'ha registrata affinché i futuri osservatori non la scambiassero per qualcosa di più interessante.
+    </string>
+    <string name="object_info_m40_funfact" translation_description="Fun fact about M40 shown in the info card. Translate this text.">
+    Le due stelle di M40 — note come Winnecke 4 — non sono legate gravitazionalmente; si trovano a distanze diverse e sono semplicemente un allineamento casuale. Lo stesso Messier notò che non c\'era "nulla di straordinario", ma l\'incluse "per mostrare che questa nebulosa non è la stessa di quelle che ho esaminato". La sua abitudine metodica di documentare i risultati negativi fornì ai futuri osservatori un riferimento definitivo.
+    </string>
+    <string name="object_info_m40_distance" translation_description="Distance to M40 shown in the info card. Translate units if appropriate for your locale.">~500 anni luce</string>
+    <string name="object_info_m40_size" translation_description="Angular separation of the M40 double star shown in the info card.">~50 arcosecondi (separazione)</string>
+
+    <!-- Category 5: Second tier -->
+    <string name="object_info_m34_description" translation_description="Description of the open star cluster M34 shown in the info card. Translate this text.">
+    M34 è un ammasso aperto luminoso e disperso in Perseo, facilmente visibile al binocolo come uno splendido insieme di stelle contro la Via Lattea invernale. Le sue circa 400 stelle coprono un\'area quasi grande quanto la Luna piena, con una manciata di stelle doppie larghe visibili agli osservatori attenti con il binocolo.
+    </string>
+    <string name="object_info_m34_funfact" translation_description="Fun fact about M34 shown in the info card. Translate this text.">
+    Con circa 200 milioni di anni, M34 è intermedio in età — abbastanza giovane da far brillare ancora le sue stelle blu calde, abbastanza vecchio da aver già fatto esplodere i più massicci come supernovae. A 1.500 anni luce è uno degli ammassi di Messier più vicini e rimane un oggetto affascinante anche dai cieli suburbani.
+    </string>
+    <string name="object_info_m34_distance" translation_description="Distance to M34 shown in the info card. Translate units if appropriate for your locale.">1.500 anni luce</string>
+    <string name="object_info_m34_size" translation_description="Physical size of M34 shown in the info card. Translate units if appropriate for your locale.">~15 anni luce di diametro</string>
+
+    <string name="object_info_m23_description" translation_description="Description of the open star cluster M23 shown in the info card. Translate this text.">
+    M23 è un ricco ammasso aperto nel Sagittario, immerso nei densi campi stellari della Via Lattea estiva. Circa 150 stelle sono sparse su un campo di mezzo grado nei binocoli, rendendolo un generoso oggetto binoculare nella stessa regione di cielo di molti altri gioielli di Messier.
+    </string>
+    <string name="object_info_m23_funfact" translation_description="Fun fact about M23 shown in the info card. Translate this text.">
+    M23 si stima abbia circa 300 milioni di anni — un\'età intermedia, con la maggior parte delle sue stelle massicce già evolute dalla sequenza principale. Messier l\'ha scoperto nel 1764 durante una delle sue prolifiche campagne osservative che scandagliavano i campi stellari del Sagittario.
+    </string>
+    <string name="object_info_m23_distance" translation_description="Distance to M23 shown in the info card. Translate units if appropriate for your locale.">2.150 anni luce</string>
+    <string name="object_info_m23_size" translation_description="Physical size of M23 shown in the info card. Translate units if appropriate for your locale.">~17 anni luce di diametro</string>
+
+    <string name="object_info_m37_description" translation_description="Description of the open star cluster M37 shown in the info card. Translate this text.">
+    M37 è l\'ammasso aperto di Messier più ricco e luminoso tra i tre presenti in Auriga, contenente circa 500 stelle in un campo compatto. È un oggetto spettacolare per binocoli e piccoli telescopi, con una dispersione di stelle giganti arancioni che aggiungono contrasto di colore allo sciame blu-bianco.
+    </string>
+    <string name="object_info_m37_funfact" translation_description="Fun fact about M37 shown in the info card. Translate this text.">
+    M37 contiene circa una dozzina di stelle giganti rosse — un numero insolitamente alto che riflette la sua età relativamente avanzata di circa 300 milioni di anni. Nonostante si trovi a circa 4.500 anni luce di distanza — il più lontano dei tre ammassi Messier dell\'Auriga — rimane comunque uno dei più bei ammassi aperti del cielo.
+    </string>
+    <string name="object_info_m37_distance" translation_description="Distance to M37 shown in the info card. Translate units if appropriate for your locale.">4.500 anni luce</string>
+    <string name="object_info_m37_size" translation_description="Physical size of M37 shown in the info card. Translate units if appropriate for your locale.">~31 anni luce di diametro</string>
+
+    <string name="object_info_m48_description" translation_description="Description of the open star cluster M48 shown in the info card. Translate this text.">
+    M48 è un grande e luminoso ammasso aperto nell\'Idra, che si estende per quasi un grado di cielo ed è visibile a occhio nudo da siti bui. Le sue circa 80 stelle sono sparse liberamente su un ampio campo più adatto ai binocoli, con una dispersione di stelle giganti arancioni e gialle tra i membri più luminosi blu-bianchi.
+    </string>
+    <string name="object_info_m48_funfact" translation_description="Fun fact about M48 shown in the info card. Translate this text.">
+    M48 è stato uno degli oggetti Messier "perduti" per quasi due secoli perché la posizione registrata da Messier era circa 5° lontana dalla vera posizione. Rimase non identificato fino al 1959, quando fu associato a NGC 2548 e si scoprì che un semplice errore di trascrizione l\'aveva collocato nel cielo vuoto fin dall\'inizio.
+    </string>
+    <string name="object_info_m48_distance" translation_description="Distance to M48 shown in the info card. Translate units if appropriate for your locale.">1.500 anni luce</string>
+    <string name="object_info_m48_size" translation_description="Physical size of M48 shown in the info card. Translate units if appropriate for your locale.">~23 anni luce di diametro</string>
+
+    <string name="object_info_m21_description" translation_description="Description of the open star cluster M21 shown in the info card. Translate this text.">
+    M21 è un ammasso aperto compatto nel Sagittario situato poco meno di mezzo grado a nord della Nebulosa Trifida (M20), rendendo i due un affascinante accoppiamento binoculare. L\'ammasso contiene circa 57 stelle concentrate in un campo più piccolo rispetto a molti ammassi di Messier, con diversi luminosi stelle blu-bianche come membri dominanti.
+    </string>
+    <string name="object_info_m21_funfact" translation_description="Fun fact about M21 shown in the info card. Translate this text.">
+    Nonostante siano fisicamente non correlati, M21 e M20 (la Nebulosa Trifida) formano uno degli accoppiamenti binoculari più affascinanti del cielo estivo — un brillante ammasso stellare accanto a una nebulosa trilobata colorata. M21 si trova a circa 4.250 anni luce di distanza, mentre M20 è leggermente più vicina a circa 4.100 anni luce.
+    </string>
+    <string name="object_info_m21_distance" translation_description="Distance to M21 shown in the info card. Translate units if appropriate for your locale.">4.250 anni luce</string>
+    <string name="object_info_m21_size" translation_description="Physical size of M21 shown in the info card. Translate units if appropriate for your locale.">~16 anni luce di diametro</string>
+
+    <string name="object_info_m50_description" translation_description="Description of the open star cluster M50 shown in the info card. Translate this text.">
+    M50 è un brillante ammasso aperto nell\'Unicorno, contenente circa 200 stelle compresse in un campo compatto e affascinante per binocoli e piccoli telescopi. Si trova facilmente su una linea tra Sirio e Procione e contiene un notevole gigante rosso — un faro arancione caldo che risalta vividamente tra le stelle blu-bianche dell\'ammasso.
+    </string>
+    <string name="object_info_m50_funfact" translation_description="Fun fact about M50 shown in the info card. Translate this text.">
+    M50 si stima abbia circa 78 milioni di anni — uno degli ammassi aperti di Messier più giovani — il che significa che le sue stelle blu e bianche calde sono ancora in evoluzione, con alcuni dei membri più massicci che di recente si sono gonfiati diventando giganti. Questo è tipico di un ammasso nella sua prima età media.
+    </string>
+    <string name="object_info_m50_distance" translation_description="Distance to M50 shown in the info card. Translate units if appropriate for your locale.">3.200 anni luce</string>
+    <string name="object_info_m50_size" translation_description="Physical size of M50 shown in the info card. Translate units if appropriate for your locale.">~15 anni luce di diametro</string>
+
+    <string name="object_info_m36_description" translation_description="Description of the open star cluster M36 shown in the info card. Translate this text.">
+    M36 è il più piccolo e il più giovane dei tre ammassi aperti che Messier catalogò in Auriga. Le sue circa 60 stelle sono riunite in un campo stretto e scintillante visibile al binocolo e ben risolto in stelle individuali con un piccolo telescopio, dominato da stelle blu-bianche calde.
+    </string>
+    <string name="object_info_m36_funfact" translation_description="Fun fact about M36 shown in the info card. Translate this text.">
+    M36 si stima abbia solo circa 25 milioni di anni — uno degli ammassi di Messier più giovani — il che significa che le massicce stelle blu-bianche dominano ancora e nessun gigante rosso è ancora apparso. Condivide i campi stellari dell\'Auriga con M37 e M38, e tutti e tre gli ammassi si adattano alla stessa vista con binocolo grandangolare.
+    </string>
+    <string name="object_info_m36_distance" translation_description="Distance to M36 shown in the info card. Translate units if appropriate for your locale.">4.100 anni luce</string>
+    <string name="object_info_m36_size" translation_description="Physical size of M36 shown in the info card. Translate units if appropriate for your locale.">~14 anni luce di diametro</string>
+
+    <string name="object_info_m46_description" translation_description="Description of the open star cluster M46 shown in the info card. Translate this text.">
+    M46 è un ricco e denso ammasso aperto nella Poppa contenente circa 500 stelle compresse in un ampio campo, affascinante al binocolo e bellissimo nei piccoli telescopi. Un notevole bonus galleggia al suo bordo settentrionale: NGC 2438, una piccola nebulosa planetaria che sembra essere incorporata nell\'ammasso — una drammatica coincidenza di linea di vista.
+    </string>
+    <string name="object_info_m46_funfact" translation_description="Fun fact about M46 shown in the info card. Translate this text.">
+    La nebulosa planetaria NGC 2438 sembra trovarsi all\'interno di M46 ma in realtà è un oggetto di primo piano non correlato a una distanza molto diversa — circa 1.400 anni luce rispetto ai 5.400 di M46. La coincidenza del guscio di una stella morente sovrapposto a un giovane ammasso stellare rende questo uno dei campi più fotogenici del catalogo.
+    </string>
+    <string name="object_info_m46_distance" translation_description="Distance to M46 shown in the info card. Translate units if appropriate for your locale.">5.400 anni luce</string>
+    <string name="object_info_m46_size" translation_description="Physical size of M46 shown in the info card. Translate units if appropriate for your locale.">~42 anni luce di diametro</string>
+
+    <string name="object_info_m93_description" translation_description="Description of the open star cluster M93 shown in the info card. Translate this text.">
+    M93 è un ammasso aperto brillante e compatto nella Poppa, situato nella ricca Via Lattea meridionale e facilmente individuabile con i binocoli. Le sue circa 80 stelle sono disposte in una forma a cuneo o farfalla affascinante e includono diversi supergiganti blu caldi, rendendolo uno degli ammassi aperti più attraenti del cielo invernale.
+    </string>
+    <string name="object_info_m93_funfact" translation_description="Fun fact about M93 shown in the info card. Translate this text.">
+    M93 è relativamente giovane — circa 100 milioni di anni — con stelle blu e blu-bianche dominanti che non si sono ancora evolute in giganti. È uno degli ammassi Messier più meridionali, e da latitudini a nord di circa 50°N non sorge mai molto alto sopra l\'orizzonte.
+    </string>
+    <string name="object_info_m93_distance" translation_description="Distance to M93 shown in the info card. Translate units if appropriate for your locale.">3.600 anni luce</string>
+    <string name="object_info_m93_size" translation_description="Physical size of M93 shown in the info card. Translate units if appropriate for your locale.">~23 anni luce di diametro</string>
+
+    <string name="object_info_m38_description" translation_description="Description of the open star cluster M38 shown in the info card. Translate this text.">
+    M38 è il più grande e il più disperso dei tre ammasso aperto che Messier catalogò in Auriga. Le sue circa 100 stelle sono disposte in uno schema che alcuni osservatori assomigliano a una croce o alla lettera greca pi, visibile al binocolo e ben risolto in un piccolo telescopio. Il più piccolo ammasso NGC 1907 si trova vicino a sud.
+    </string>
+    <string name="object_info_m38_funfact" translation_description="Fun fact about M38 shown in the info card. Translate this text.">
+    M38 è il più antico dei tre ammassi Messier dell\'Auriga con circa 220 milioni di anni, abbastanza vecchio da far sì che alcune delle sue stelle massicce si siano evolute in giganti gialli e arancioni. L\'ammasso vicino NGC 1907 può stare nello stesso campo a basso ingrandimento, rendendoli una bella coppia per binocoli — come M46 e M47 in Puppis.
+    </string>
+    <string name="object_info_m38_distance" translation_description="Distance to M38 shown in the info card. Translate units if appropriate for your locale.">4.200 anni luce</string>
+    <string name="object_info_m38_size" translation_description="Physical size of M38 shown in the info card. Translate units if appropriate for your locale.">~26 anni luce di diametro</string>
+
+    <string name="object_info_m29_description" translation_description="Description of the open star cluster M29 shown in the info card. Translate this text.">
+    M29 è un piccolo e giovane ammasso aperto nel Cigno, situato in una delle regioni più oscurate dalla polvere della Via Lattea. Cinque brillanti supergiganti blu dominano l\'ammasso, visibili al binocolo come un asterismo compatto di stelle calde e luminose. Senza la densa polvere in primo piano, M29 sarebbe uno degli ammassi aperti più spettacolari del cielo.
+    </string>
+    <string name="object_info_m29_funfact" translation_description="Fun fact about M29 shown in the info card. Translate this text.">
+    M29 si stima abbia solo circa 10 milioni di anni — un\'infante stellare — e si trova all\'interno dell\'associazione Cygnus OB1, un vasto gruppo di giovani stelle massicce. La polvere interstellare pesante oscura l\'ammasso di circa 3 magnitudini; senza quella oscurazione, le stelle di M29 brillerebbero diversi volte più luminose di quanto effettivamente appaiano.
+    </string>
+    <string name="object_info_m29_distance" translation_description="Distance to M29 shown in the info card. Translate units if appropriate for your locale.">4.000 anni luce</string>
+    <string name="object_info_m29_size" translation_description="Physical size of M29 shown in the info card. Translate units if appropriate for your locale.">~8 anni luce di diametro</string>
+
+    <string name="object_info_m62_description" translation_description="Description of the globular cluster M62 shown in the info card. Translate this text.">
+    M62 è un ricco ammasso globulare in Ofiuco — uno dei globulari più vicini al centro galattico e notevolmente asimmetrico, con stelle più densamente concentrate sul lato meridionale. Con magnitudine 6,6 è un bellissimo oggetto binoculare, anche se la sua bassa declinazione lo rende un bersaglio stagionale breve per gli osservatori dell\'emisfero boreale.
+    </string>
+    <string name="object_info_m62_funfact" translation_description="Fun fact about M62 shown in the info card. Translate this text.">
+    Il nucleo eccentrico di M62 è il risultato diretto della sua vicinanza al centro galattico — le potenti forze di marea dal rigonfiamento centrale distorcono l\'ammasso e trascinano le stelle verso il piano galattico. È anche uno degli ammassi globulari più evoluti dinamicamente conosciuti, mostrando segni di collasso del nucleo e un\'insolita alta densità di pulsar millisecondi.
+    </string>
+    <string name="object_info_m62_distance" translation_description="Distance to M62 shown in the info card. Translate units if appropriate for your locale.">22.500 anni luce</string>
+    <string name="object_info_m62_size" translation_description="Physical size of M62 shown in the info card. Translate units if appropriate for your locale.">~92 anni luce di diametro</string>
+
+    <string name="object_info_m28_description" translation_description="Description of the globular cluster M28 shown in the info card. Translate this text.">
+    M28 è un ammasso globulare compatto nel Sagittario, situato vicino alla brillante stella Lambda Sagittarii nei ricchi campi stellari estivi. Con magnitudine 6,9 è un bersaglio gratificante per binocoli ed è ben risolto nei piccoli telescopi, mostrando un nucleo condensato luminoso circondato da un alone moderato di stelle.
+    </string>
+    <string name="object_info_m28_funfact" translation_description="Fun fact about M28 shown in the info card. Translate this text.">
+    Nel 1987, M28 è diventato il primo ammasso globulare in cui è stato rilevato un pulsar millisecondi. I pulsar millisecondi — stelle di neutroni che ruotano centinaia di volte al secondo — si formano quando una stella di neutroni accresce materia da una stella compagna e si trovano a un tasso molto più elevato negli ammassi globulari rispetto alla galassia generale, perché i loro densi ambienti stellari producono molti più incontri binari stretti.
+    </string>
+    <string name="object_info_m28_distance" translation_description="Distance to M28 shown in the info card. Translate units if appropriate for your locale.">18.300 anni luce</string>
+    <string name="object_info_m28_size" translation_description="Physical size of M28 shown in the info card. Translate units if appropriate for your locale.">~60 anni luce di diametro</string>
+
+    <string name="object_info_m52_description" translation_description="Description of the open star cluster M52 shown in the info card. Translate this text.">
+    M52 è un ricco ammasso aperto nella Cassiopea, contenente circa 200 stelle compresse in una regione compatta della Via Lattea settentrionale. È un bellissimo ammasso binoculare e mostra un bellissimo campo stellare denso nei piccoli telescopi, con una stella arancione notevolmente più luminosa che spicca vicino al bordo meridionale dell\'ammasso.
+    </string>
+    <string name="object_info_m52_funfact" translation_description="Fun fact about M52 shown in the info card. Translate this text.">
+    La distanza di M52 è insolitamente incerta — le stime vanno da 3.000 a 7.000 anni luce — perché la polvere interstellare densa lungo questa linea di vista rende difficile determinare la sua vera luminosità. Messier l\'ha scoperto nel 1774, la stessa notte in cui stava tracciando una cometa che lo ha portato a registrare diverse altre voci del catalogo.
+    </string>
+    <string name="object_info_m52_distance" translation_description="Distance to M52 shown in the info card. Translate units if appropriate for your locale.">~5.000 anni luce</string>
+    <string name="object_info_m52_size" translation_description="Physical size of M52 shown in the info card. Translate units if appropriate for your locale.">~25 anni luce di diametro</string>
+
+    <string name="object_info_m67_description" translation_description="Description of the open star cluster M67 shown in the info card. Translate this text.">
+    M67 è un bellissimo ammasso aperto nel Cancro e uno degli ammassi aperti più antichi e ben studiati del cielo. Con un\'età di circa 3,2-3,5 miliardi di anni, contiene molte stelle simili in massa ed età al nostro Sole, rendendolo un laboratorio naturale per studiare come le stelle simili al Sole evolvono nel corso del tempo cosmico.
+    </string>
+    <string name="object_info_m67_funfact" translation_description="Fun fact about M67 shown in the info card. Translate this text.">
+    Diversi stelle in M67 assomigliano strettamente al Sole in temperatura, massa ed età — una combinazione rara che ha portato i ricercatori a chiedersi se il Sole stesso si sia originato in un ammasso come M67. Poiché le stelle nascono in ammassi che gradualmente si disperdono, il Sole quasi certamente proveniva da un gruppo di stelle fratelli ormai disperso miliardi di anni fa — anche se quale ammasso non è mai stato identificato.
+    </string>
+    <string name="object_info_m67_distance" translation_description="Distance to M67 shown in the info card. Translate units if appropriate for your locale.">2.700 anni luce</string>
+    <string name="object_info_m67_size" translation_description="Physical size of M67 shown in the info card. Translate units if appropriate for your locale.">~24 anni luce di diametro</string>
+
+    <string name="object_info_m55_description" translation_description="Description of the globular cluster M55 shown in the info card. Translate this text.">
+    M55 è un grande ammasso globulare lasco nel Sagittario — uno dei più dispersi e meno concentrati tra tutti i globulari di Messier. È facilmente risolvibile in stelle individuali anche a bassi ingrandimenti, con una texture granulare visibile nei binocoli. La sua bassa declinazione meridionale limita la visibilità dalle latitudini settentrionali, ma è spettacolare dall\'emisfero meridionale.
+    </string>
+    <string name="object_info_m55_funfact" translation_description="Fun fact about M55 shown in the info card. Translate this text.">
+    La concentrazione stellare insolitamente bassa di M55 lo rende simile a un ricco ammasso aperto piuttosto che a un tipico ammasso globulare. Le sue stelle sono sparse in una regione larga quasi 100 anni luce, suggerendo che l\'auto-gravità dell\'ammasso è relativamente debole rispetto ad ammassi globulari più concentrati al centro come M13 o M3.
+    </string>
+    <string name="object_info_m55_distance" translation_description="Distance to M55 shown in the info card. Translate units if appropriate for your locale.">17.600 anni luce</string>
+    <string name="object_info_m55_size" translation_description="Physical size of M55 shown in the info card. Translate units if appropriate for your locale.">~100 anni luce di diametro</string>
+
+    <string name="object_info_m19_description" translation_description="Description of the globular cluster M19 shown in the info card. Translate this text.">
+    M19 è un ammasso globulare compatto e ricco in Ofiuco — uno dei globulari più vicini al centro galattico. La sua caratteristica più distintiva è la sua forma notevolmente oblata: M19 è l\'ammasso globulare più appiattito conosciuto, con un contorno ellittico visibile anche in un piccolo telescopio.
+    </string>
+    <string name="object_info_m19_funfact" translation_description="Fun fact about M19 shown in the info card. Translate this text.">
+    L\'oblungità pronunciata di M19 — il suo asse più lungo è circa il 10% più lungo del più corto — è unica tra gli ammassi globulari conosciuti e si ritiene che risulti dall\'allungamento mareale causato dal campo gravitazionale della Via Lattea. Più vicino un ammasso globulare orbita al centro galattico, più fortemente viene deformato; M19 si trova a soli circa 5.200 anni luce dal nucleo galattico.
+    </string>
+    <string name="object_info_m19_distance" translation_description="Distance to M19 shown in the info card. Translate units if appropriate for your locale.">28.700 anni luce</string>
+    <string name="object_info_m19_size" translation_description="Physical size of M19 shown in the info card. Translate units if appropriate for your locale.">~113 anni luce di diametro</string>
+
+    <string name="object_info_m80_description" translation_description="Description of the globular cluster M80 shown in the info card. Translate this text.">
+    M80 è uno degli ammassi globulari più densamente compatti della Via Lattea, una sfera compatta e ricca di diverse centinaia di migliaia di stelle nello Scorpione. Con magnitudine 7,2 è un eccellente bersaglio per binocoli e rivela un nucleo brillante e altamente concentrato nei piccoli telescopi.
+    </string>
+    <string name="object_info_m80_funfact" translation_description="Fun fact about M80 shown in the info card. Translate this text.">
+    Nel 1860, una nova esplose all\'interno di M80 — designata T Scorpii — diventando brevemente luminosa quanto l\'ammasso stesso e visibile a occhio nudo. Rimane una delle sole due novae mai osservate all\'interno di un ammasso globulare. Le novae negli ammassi globulari derivano da interazioni tra stelle binarie, che sono molto più comuni nell\'ambiente stellare denso del nucleo di un ammasso globulare.
+    </string>
+    <string name="object_info_m80_distance" translation_description="Distance to M80 shown in the info card. Translate units if appropriate for your locale.">32.600 anni luce</string>
+    <string name="object_info_m80_size" translation_description="Physical size of M80 shown in the info card. Translate units if appropriate for your locale.">~84 anni luce di diametro</string>
+
+    <string name="object_info_m103_description" translation_description="Description of the open star cluster M103 shown in the info card. Translate this text.">
+    M103 è un piccolo e compatto ammasso aperto nella Cassiopea, contenente circa 40 stelle in un gruppo ristretto facilmente visibile con i binocoli. Una suggestiva stella doppia e un gigante rosso vicino al centro gli conferiscono un aspetto colorato nei piccoli telescopi, inserito nei ricchi campi stellari della Via Lattea della Cassiopea.
+    </string>
+    <string name="object_info_m103_funfact" translation_description="Fun fact about M103 shown in the info card. Translate this text.">
+    M103 era l\'oggetto con il numero più alto nel catalogo originale di Messier pubblicato nel 1781 — tutte le voci successive (M104–M110) sono state aggiunte postume da astronomi successivi dalle note e dalla corrispondenza di Messier. Pierre Méchain scoprì M103 poco prima che il catalogo andasse in stampa, e Messier lo incluse sulla base della relazione di Méchain.
+    </string>
+    <string name="object_info_m103_distance" translation_description="Distance to M103 shown in the info card. Translate units if appropriate for your locale.">8.500 anni luce</string>
+    <string name="object_info_m103_size" translation_description="Physical size of M103 shown in the info card. Translate units if appropriate for your locale.">~15 anni luce di diametro</string>
+
+    <string name="object_info_m30_description" translation_description="Description of the globular cluster M30 shown in the info card. Translate this text.">
+    M30 è un ammasso globulare compatto in Capricorno — un oggetto affascinante nei piccoli telescopi che mostra un nucleo luminoso e condensato e deboli catene di stelle periferiche. Con magnitudine 7,5 richiede cieli scuri nei binocoli e ripaga un piccolo telescopio con il suo alone esterno parzialmente risolto.
+    </string>
+    <string name="object_info_m30_funfact" translation_description="Fun fact about M30 shown in the info card. Translate this text.">
+    M30 ha subito un "collasso del nucleo" — un processo in cui l\'attrazione gravitazionale reciproca di stelle densamente compatte causa la contrazione drammatica del centro dell\'ammasso, creando una concentrazione estrema di stelle in un volume minuscolo. Circa un quinto di tutti gli ammassi globulari hanno nuclei collassati, e M30 è tra gli esempi più studiati di questo fenomeno.
+    </string>
+    <string name="object_info_m30_distance" translation_description="Distance to M30 shown in the info card. Translate units if appropriate for your locale.">27.100 anni luce</string>
+    <string name="object_info_m30_size" translation_description="Physical size of M30 shown in the info card. Translate units if appropriate for your locale.">~87 anni luce di diametro</string>
+
+    <string name="object_info_m54_description" translation_description="Description of the globular cluster M54 shown in the info card. Translate this text.">
+    M54 è un grande e ricco ammasso globulare nel Sagittario e uno degli oggetti più lontani dell\'intero catalogo Messier. Per secoli si è creduto fosse un ammasso globulare remoto dell\'alone della Via Lattea, ma ora è noto essere il nucleo denso della Galassia Ellittica Nana del Sagittario — una galassia satellite attualmente assorbita dalla nostra.
+    </string>
+    <string name="object_info_m54_funfact" translation_description="Fun fact about M54 shown in the info card. Translate this text.">
+    La scoperta del 1994 che M54 appartiene alla Galassia Nana del Sagittario l\'ha reso il primo ammasso globulare noto per appartenere a un\'altra galassia. Poiché la Galassia Nana del Sagittario viene gradualmente strappata e inghiottita dalla Via Lattea, M54 diventerà eventualmente un vero ammasso globulare dell\'alone della nostra galassia — un immigrato intergalattico che arriva nel corso di miliardi di anni.
+    </string>
+    <string name="object_info_m54_distance" translation_description="Distance to M54 shown in the info card. Translate units if appropriate for your locale.">87.000 anni luce</string>
+    <string name="object_info_m54_size" translation_description="Physical size of M54 shown in the info card. Translate units if appropriate for your locale.">~230 anni luce di diametro</string>
+
+    <string name="object_info_m69_description" translation_description="Description of the globular cluster M69 shown in the info card. Translate this text.">
+    M69 è un ammasso globulare moderatamente ricco nel Sagittario, posizionato vicino al centro galattico. Con magnitudine 7,7 è un oggetto binoculare da cieli bui che ricompensa un piccolo telescopio con una sfera di stelle parzialmente risolta e un centro luminoso e granulare.
+    </string>
+    <string name="object_info_m69_funfact" translation_description="Fun fact about M69 shown in the info card. Translate this text.">
+    M69 orbita insolitamente vicino al centro galattico — solo circa 6.200 anni luce dal nucleo della Via Lattea — e di conseguenza ha un\'insolita alta concentrazione di elementi più pesanti per un ammasso globulare. Gli ammassi globulari più vicini al centro galattico tendono ad essere arricchiti chimicamente da molteplici generazioni di formazione stellare nel bulge circostante.
+    </string>
+    <string name="object_info_m69_distance" translation_description="Distance to M69 shown in the info card. Translate units if appropriate for your locale.">29.700 anni luce</string>
+    <string name="object_info_m69_size" translation_description="Physical size of M69 shown in the info card. Translate units if appropriate for your locale.">~61 anni luce di diametro</string>
+
+    <string name="object_info_m9_description" translation_description="Description of the globular cluster M9 shown in the info card. Translate this text.">
+    M9 è un ammasso globulare compatto in Ofiuco — uno degli ammassi di Messier più colpiti dall\'assorbimento della polvere interstellare. Si trova verso il rigonfiamento galattico, dove la polvere spessa lo oscura significativamente. Senza questa oscurazione M9 apparirebbe quasi una magnitudine più luminoso e sarebbe visibile a occhio nudo.
+    </string>
+    <string name="object_info_m9_funfact" translation_description="Fun fact about M9 shown in the info card. Translate this text.">
+    M9 soffre di un assorbimento di polvere interstellare maggiore di quasi qualsiasi altro ammasso globulare di Messier — circa 1,3 magnitudini di offuscamento rispetto a una linea di vista libera. Due ammassi globulari più piccoli (NGC 6342 e NGC 6356) si trovano entro circa 1° da M9, rendendolo il centro di un notevole raggruppamento di tre globulari in una piccola porzione di cielo.
+    </string>
+    <string name="object_info_m9_distance" translation_description="Distance to M9 shown in the info card. Translate units if appropriate for your locale.">25.800 anni luce</string>
+    <string name="object_info_m9_size" translation_description="Physical size of M9 shown in the info card. Translate units if appropriate for your locale.">~70 anni luce di diametro</string>
+
+    <string name="object_info_m26_description" translation_description="Description of the open star cluster M26 shown in the info card. Translate this text.">
+    M26 è un ammasso aperto moderatamente debole nello Scudo, visibile al binocolo e ben risolto nei piccoli telescopi. Circa 90 stelle sono sparse su un campo compatto nella ricca nube stellare dello Scudo, anche se l\'ammasso è posizionato su uno sfondo così denso che identificare i suoi membri dal campo stellare circostante richiede una certa attenzione.
+    </string>
+    <string name="object_info_m26_funfact" translation_description="Fun fact about M26 shown in the info card. Translate this text.">
+    M26 si trova lungo la stessa ricca fascia di cielo di M11 — l\'Ammasso dell\'Anatra Selvatica, uno dei più bei ammassi aperti del cielo. I due si trovano a soli circa 3,5° di distanza e sono visibili nello stesso campo binoculare, rendendo lo Scutum una destinazione straordinaria per gli osservatori di ammassi nonostante sia una costellazione piccola e spesso trascurata.
+    </string>
+    <string name="object_info_m26_distance" translation_description="Distance to M26 shown in the info card. Translate units if appropriate for your locale.">5.000 anni luce</string>
+    <string name="object_info_m26_size" translation_description="Physical size of M26 shown in the info card. Translate units if appropriate for your locale.">~22 anni luce di diametro</string>
+
+    <string name="object_info_m79_description" translation_description="Description of the globular cluster M79 shown in the info card. Translate this text.">
+    M79 è un ammasso globulare compatto nella Lepre — uno dei pochi ammassi globulari di Messier meglio posizionati nel cielo invernale, quando la maggior parte dei globulari è sotto l\'orizzonte o appena sorta. Con magnitudine 8,0 ha bisogno di un telescopio per rivelare il suo nucleo compatto e l\'alone tenue, che risalta contro i campi stellari invernali relativamente sparsi.
+    </string>
+    <string name="object_info_m79_funfact" translation_description="Fun fact about M79 shown in the info card. Translate this text.">
+    M79 è ritenuto da alcuni astronomi un intruso proveniente dalla Galassia Nana del Cane Maggiore — una galassia satellite disturbata attualmente assorbita dalla Via Lattea. Se così fosse, M79 non si sarebbe formato nel sistema di ammassi globulari della Via Lattea, ma sarebbe stato catturato da una galassia in caduta e ora viene lentamente incorporato nell\'alone della nostra galassia.
+    </string>
+    <string name="object_info_m79_distance" translation_description="Distance to M79 shown in the info card. Translate units if appropriate for your locale.">41.000 anni luce</string>
+    <string name="object_info_m79_size" translation_description="Physical size of M79 shown in the info card. Translate units if appropriate for your locale.">~104 anni luce di diametro</string>
+
+    <string name="object_info_m70_description" translation_description="Description of the globular cluster M70 shown in the info card. Translate this text.">
+    M70 è un ammasso globulare compatto nel Sagittario, che assomiglia molto al suo quasi-gemello M69 sia nell\'aspetto che nella distanza. Con magnitudine 8,1 è un bellissimo oggetto per piccoli telescopi che mostra un nucleo compatto e accenni di risoluzione nell\'alone esterno. Si trova a soli 2° da M69 e entrambi possono essere osservati nello stesso campo binoculare.
+    </string>
+    <string name="object_info_m70_funfact" translation_description="Fun fact about M70 shown in the info card. Translate this text.">
+    M70 ha guadagnato una breve notorietà nel 1995 come posizione approssimativa nel cielo dove Alan Hale e Thomas Bopp hanno scoperto indipendentemente la Cometa Hale-Bopp — la cometa più luminosa della fine del XX secolo. Entrambi gli osservatori hanno inizialmente sorvolato M70 mentre cercavano altri obiettivi e hanno notato la cometa come un oggetto sfocato inaspettato nelle vicinanze.
+    </string>
+    <string name="object_info_m70_distance" translation_description="Distance to M70 shown in the info card. Translate units if appropriate for your locale.">29.400 anni luce</string>
+    <string name="object_info_m70_size" translation_description="Physical size of M70 shown in the info card. Translate units if appropriate for your locale.">~67 anni luce di diametro</string>
+
+    <string name="object_info_m107_description" translation_description="Description of the globular cluster M107 shown in the info card. Translate this text.">
+    M107 è uno degli ammassi globulari di Messier meno concentrati, con stelle sparse in uno schema relativamente aperto attorno a un nucleo modesto. Con magnitudine 8,1 è un bersaglio binoculare da cieli scuri e si risolve parzialmente in piccoli telescopi, mostrando una texture granulare piuttosto che una netta condensazione centrale.
+    </string>
+    <string name="object_info_m107_funfact" translation_description="Fun fact about M107 shown in the info card. Translate this text.">
+    M107 è stata l\'ultima voce aggiunta formalmente al catalogo Messier — appare nella corrispondenza di Pierre Méchain ma non era inclusa nell\'edizione originale del 1781. È stata ufficialmente aggiunta come M107 nel 1947 dall\'astronoma canadese Helen Sawyer Hogg, che ha codificato diversi oggetti "mancanti" che Méchain aveva osservato ma Messier non aveva mai registrato formalmente.
+    </string>
+    <string name="object_info_m107_distance" translation_description="Distance to M107 shown in the info card. Translate units if appropriate for your locale.">20.900 anni luce</string>
+    <string name="object_info_m107_size" translation_description="Physical size of M107 shown in the info card. Translate units if appropriate for your locale.">~61 anni luce di diametro</string>
+
+    <string name="object_info_m68_description" translation_description="Description of the globular cluster M68 shown in the info card. Translate this text.">
+    M68 è un ricco ammasso globulare nell\'Idra — un oggetto meridionale e uno dei pochi globulari meglio posizionati nel cielo di fine inverno e primavera. Con magnitudine 8,2 ricompensa un piccolo telescopio con un nucleo moderatamente condensato e un grande alone di stelle risolte rispetto ai campi stellari relativamente sparsi dell\'Idra.
+    </string>
+    <string name="object_info_m68_funfact" translation_description="Fun fact about M68 shown in the info card. Translate this text.">
+    Nonostante la sua relativa vicinanza — che rende le singole stelle ben risolte nei telescopi amatoriali — M68 è spesso trascurato a causa della sua declinazione molto meridionale. Dalle latitudini superiori a 50°N appena supera l\'orizzonte; dall\'emisfero meridionale, tuttavia, sorge alto ed è uno spettacolare ammasso globulare.
+    </string>
+    <string name="object_info_m68_distance" translation_description="Distance to M68 shown in the info card. Translate units if appropriate for your locale.">33.600 anni luce</string>
+    <string name="object_info_m68_size" translation_description="Physical size of M68 shown in the info card. Translate units if appropriate for your locale.">~117 anni luce di diametro</string>
+
+    <string name="object_info_m56_description" translation_description="Description of the globular cluster M56 shown in the info card. Translate this text.">
+    M56 è un ammasso globulare compatto nella Lira, situato tra la Nebulosa Anello (M57) e la brillante stella doppia Albireo nel Cigno. Con magnitudine 8,3 è un bersaglio binoculare da cieli bui, e un piccolo telescopio rivela una sfera granulare, moderatamente condensata che è solo parzialmente risolta anche con aperture medie.
+    </string>
+    <string name="object_info_m56_funfact" translation_description="Fun fact about M56 shown in the info card. Translate this text.">
+    M56 è stato scoperto da Messier nel gennaio 1779 durante la stessa stagione osservativa in cui ha trovato anche la Nebulosa Anello (M57). Nonostante si trovi nello stesso campo binoculare di Vega — la quinta stella più luminosa del cielo — e vicino alla famosa Nebulosa Anello, M56 è spesso trascurato dagli osservatori attratti dai suoi vicini più celebri.
+    </string>
+    <string name="object_info_m56_distance" translation_description="Distance to M56 shown in the info card. Translate units if appropriate for your locale.">32.900 anni luce</string>
+    <string name="object_info_m56_size" translation_description="Physical size of M56 shown in the info card. Translate units if appropriate for your locale.">~68 anni luce di diametro</string>
+
+    <string name="object_info_m71_description" translation_description="Description of the globular cluster M71 shown in the info card. Translate this text.">
+    M71 è un insolito ammasso globulare nella Freccia — dibattuto dagli astronomi per decenni che non riuscivano a decidere se fosse un ammasso aperto molto ricco e antico oppure un ammasso globulare molto disperso e giovane. L\'analisi moderna conferma che è un vero ammasso globulare, ma uno eccezionalmente a bassa concentrazione con relativamente poche stelle e un nucleo meno dominante rispetto agli ammassi globulari tipici.
+    </string>
+    <string name="object_info_m71_funfact" translation_description="Fun fact about M71 shown in the info card. Translate this text.">
+    La struttura sciolta di M71 l\'ha tenuta fuori da molti cataloghi antichi perché assomigliava a un ricco campo stellare piuttosto che a un vero ammasso. A soli 12.000 anni luce, è uno dei globulari di Messier più vicini, e le sue stelle sono parzialmente risolte in un piccolo telescopio sotto cieli scuri, conferendogli l\'aspetto di un campo stellare ricco, compatto e leggermente condensato.
+    </string>
+    <string name="object_info_m71_distance" translation_description="Distance to M71 shown in the info card. Translate units if appropriate for your locale.">12.000 anni luce</string>
+    <string name="object_info_m71_size" translation_description="Physical size of M71 shown in the info card. Translate units if appropriate for your locale.">~25 anni luce di diametro</string>
 </resources>
