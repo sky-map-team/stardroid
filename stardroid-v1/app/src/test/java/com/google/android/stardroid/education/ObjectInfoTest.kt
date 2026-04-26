@@ -106,7 +106,7 @@ class ObjectInfoTest {
 
     @Test
     fun testObjectTypeValues() {
-        assertThat(ObjectType.values()).hasLength(9)
+        assertThat(ObjectType.values()).hasLength(10)
         assertThat(ObjectType.PLANET.name).isEqualTo("PLANET")
         assertThat(ObjectType.STAR.name).isEqualTo("STAR")
         assertThat(ObjectType.MOON.name).isEqualTo("MOON")
@@ -116,5 +116,6 @@ class ObjectInfoTest {
         assertThat(ObjectType.CLUSTER.name).isEqualTo("CLUSTER")
         assertThat(ObjectType.CONSTELLATION.name).isEqualTo("CONSTELLATION")
         assertThat(ObjectType.BLACK_HOLE.name).isEqualTo("BLACK_HOLE")
+        assertThat(ObjectType.METEOR_SHOWER.name).isEqualTo("METEOR_SHOWER")
     }
 }
