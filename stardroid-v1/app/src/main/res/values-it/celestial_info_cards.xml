@@ -2216,8 +2216,9 @@
     <string name="object_info_coma_star_cluster_size" translation_description="Angular size of the Coma Star Cluster shown in the info card.">~5° di larghezza</string>
 
     <string name="object_info_coathanger_description" translation_description="Description of the Coathanger asterism shown in the info card. Translate this text.">
-    Il Gruccia è un asterismo affascinante di dieci stelle nella Volpecola che formano una forma inconfondibile: sei stelle in linea retta con quattro che pendono sotto a forma di gancio, esattamente come un appendiabiti capovolto. È uno dei migliori oggetti binoculari nel cielo estivo, adattandosi perfettamente al tipico campo visivo binoculare.
+    L\'Attaccapanni è un affascinante asterismo di dieci stelle nella Volpetta che formano una figura inconfondibile: sei stelle in linea retta con quattro che pendono sotto formando un gancio, proprio come un appendiabiti capovolto. È uno dei migliori oggetti da osservare con un binocolo nel cielo estivo, poiché rientra perfettamente nel tipico campo visivo binoculare.
     </string>
+    <string name="object_info_coathanger_funfact" translation_description="Fun fact about the Coathanger shown in the info card. Translate this text.">Nonostante sembrino un ammasso, le stelle dell\'Attaccapanni non sono fisicamente correlate: si trovano a distanze molto diverse e la loro vicinanza è dovuta semplicemente a un effetto prospettico. L\'Ammasso di Brocchi fu catalogato da Dalmiro Brocchi negli anni \'20 e il satellite Hipparcos ha poi confermato che le stelle non sono legate tra loro.</string>
     <string name="object_info_coathanger_distance" translation_description="Distance to the Coathanger shown in the info card. Translate units if appropriate for your locale.">~420 anni luce (stella più luminosa)</string>
     <string name="object_info_coathanger_size" translation_description="Angular size of the Coathanger shown in the info card.">~1° di larghezza</string>
 
@@ -2412,7 +2413,7 @@
     <string name="object_info_ngc_6543_size" translation_description="Physical size of the Cat's Eye Nebula shown in the info card. Translate units if appropriate for your locale.">~0,5 anni luce di diametro</string>
 
     <string name="object_info_m76_description" translation_description="Description of the Little Dumbbell Nebula (M76) shown in the info card. Translate this text.">
-    La Piccola Manubrio è una nebulosa planetaria in Perseo con una forma caratteristica a otto — una cugina più piccola di M27, la Nebulosa Manubrio in Volpecola. Sebbene sia la voce più debole del catalogo Messier, ripaga l\'osservazione paziente con piccoli telescopi e mostra una bella struttura negli strumenti più grandi, con due lobi più luminosi che fiancheggiano una vita più debole.
+    La Piccola Manubrio è una nebulosa planetaria in Perseo con una forma caratteristica a otto — una cugina più piccola di M27, la Nebulosa Manubrio nella Volpetta. Sebbene sia la voce più debole del catalogo Messier, ripaga l\'osservazione paziente con piccoli telescopi e mostra una bella struttura negli strumenti più grandi, con due lobi più luminosi che fiancheggiano una vita più debole.
     </string>
     <string name="object_info_m76_funfact" translation_description="Fun fact about the Little Dumbbell Nebula shown in the info card. Translate this text.">
     M76 è stato originariamente catalogato come due oggetti separati — NGC 650 e NGC 651 — perché i primi osservatori descrivevano i due lobi luminosi indipendentemente. È una nebulosa planetaria bipolare formata quando il flusso di una stella morente è stato pizzicato all\'equatore, creando due lobi in espansione lungo l\'asse polare mentre il gas si gonfia anche verso l\'esterno alla cintura.

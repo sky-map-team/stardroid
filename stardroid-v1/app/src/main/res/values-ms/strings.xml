@@ -139,6 +139,7 @@
     <string name="hubble_image" translation_description="Label or caption for a Hubble Space Telescope image in the gallery">Imej Hubble</string>
     <string name="search_overlay_title" translation_description="title for search overlay">Arahkan telefon anda ke arah anak panah</string>
     <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">Mencari: %s</string>
+    <string name="search_target_found_message" translation_description="displayed when a search target has been found and is centered on screen">Ditemui: %s</string>
     <string name="sun_wont_set_message" translation_description="Message shown when the sun will not set during the next 24 hours (polar day / midnight sun)">Matahari tidak akan terbenam dalam 24 jam ke depan di lokasi semasa anda.</string>
 
     <!-- tm:omitted name="missing_label" reason="identical_to_source" -->
@@ -237,6 +238,8 @@ Jika peranti anda benar-benar tidak mempunyai sensor, maka mod auto tidak akan b
     <string name="show_object_info_auto_mode_title" translation_description="Preference title for enabling info cards in auto/sensor mode">Kad maklumat dalam mod automatik</string>
     <string name="show_object_info_auto_mode_summary" translation_description="Preference summary for auto mode info cards">Juga tunjukkan kad maklumat semasa mengetik objek dalam mod automatik (sensor)</string>
     <string name="object_info_funfact_label" translation_description="Label before the fun fact in info card">Fakta menarik:</string>
+    <string name="object_info_also_known_as" translation_description="Subtitle showing alternate names for a celestial object, e.g. \'Also known as: NGC 253 · Silver Dollar Galaxy\'">Juga dikenali sebagai: %1$s</string>
+    <string name="object_info_see_also_label" translation_description="Label for the see also section in info card">Lihat juga:</string>
     <string name="object_info_distance_label" translation_description="Label for distance field">Jarak:</string>
     <string name="object_info_size_label" translation_description="Label for size field">Saiz:</string>
     <string name="object_info_mass_label" translation_description="Label for mass field">Jisim:</string>
