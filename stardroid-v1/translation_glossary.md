@@ -66,7 +66,7 @@
 | Hercules | | Hercule | | |
 | Clock | | Horloge | | |
 | Hydra | | Hydre | | |
-| Water Snake | | Hydre mâle | | |
+| Hydrus | | Hydre mâle | | |
 | Indian | | Indien | | |
 | Lizard | | Lézard | | |
 | Leo | | Lion | | |
