@@ -9,6 +9,14 @@ primary_languages = [
     "id", "it", "ja", "ms", "nb", "nl", "pl", "pt", "sl",
     "sv", "th", "tr", "uk",
 ]
+translation_notes = """
+For proper names of celestial objects (planets, moons, nebulae, star clusters, \
+constellations, galaxies, comets, asteroids), always use the established canonical \
+name in the target language as used in scientific literature and Wikipedia — do not \
+invent phonetic transliterations or literal translations of English names. If no \
+established translated name exists, retain the Latin or catalog designation \
+(e.g. "NGC 4755") rather than guessing.
+"""
 
 [android]
 res_path = "app/src/main/res"
@@ -42,3 +50,12 @@ fastlane = [
 
 [discovery]
 resource_qualifier_excludes = ["w820dp"]
+
+# Per-locale guidance injected into each translation request.
+# Keys are BCP-47 codes matching the locale codes used by this project.
+# Use this for language-specific naming authority references or conventions.
+[locale_context]
+pl = "Follow Polish Wikipedia and PTAst (Polskie Towarzystwo Astronomiczne) naming conventions for astronomical objects. For software targeting the Android platform, use 'na Androida' not 'dla Androida'."
+de = "Follow IAU-approved German astronomical names and DIN conventions where applicable."
+fr = "Follow Union astronomique internationale (UAI) French-language naming conventions."
+zh-Hant = "Use Traditional Chinese astronomical names as used in Taiwan (中華民國天文學會) conventions."
