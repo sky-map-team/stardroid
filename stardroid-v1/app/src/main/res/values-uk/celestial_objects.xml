@@ -118,10 +118,10 @@
     <string name="andromeda_galaxy" translation_description="hubble object">Туманність Андромеди</string>
     <string name="orion_nebula" translation_description="hubble object">Туманність Оріона</string>
     <string name="whirlpool_galaxy" translation_description="hubble object">Галактика Вир</string>
-    <string name="ring_nebula" translation_description="hubble object">Планетарна туманність</string>
+    <string name="ring_nebula" translation_description="hubble object">Кільцева туманність</string>
     <string name="pinwheel_galaxy" translation_description="hubble object">Галактика Вертушка</string>
     <string name="sombrero_galaxy" translation_description="hubble object">Галактика Сомбреро</string>
-    <string name="hercules_gc" translation_description="hubble object">Кулясте скупчення Геркулеса</string>
+    <string name="hercules_gc" translation_description="hubble object">Кульове скупчення Геркулеса</string>
     <string name="pleiades" translation_description="hubble object">Плеяди</string>
     <string name="cats_eye_nebula" translation_description="hubble object">Туманність Котяче Око</string>
     <string name="omega_centauri" translation_description="hubble object">Кулясте скупчення Омега Центавра</string>
@@ -319,7 +319,7 @@
     <string name="ngc_5139" translation_description="Name of the Messier object NGC5139">NGC 5139</string>
     <!-- tm:omitted name="t_crb" reason="identical_to_source" -->
     <string name="blaze_star" translation_description="Nickname for the recurrent nova T Coronae Borealis">Зоря Полум\'я</string>
-    <string name="t_coronae_borealis" translation_description="Full name of the recurrent nova T Coronae Borealis">T Korona Borealis</string>
+    <string name="t_coronae_borealis" translation_description="Full name of the recurrent nova T Coronae Borealis">T Північної Корони</string>
     <string name="eta_carinae_nebula" translation_description="Name of the Eta Carinae Nebula (NGC 3372)">Туманність Ета Карини</string>
     <string name="carina_nebula" translation_description="Common name for the Eta Carinae Nebula">Туманність Карини</string>
     <!-- tm:omitted name="ngc_3372" reason="identical_to_source" -->
@@ -333,7 +333,7 @@
     <string name="small_magellanic_cloud" translation_description="Full name of the Small Magellanic Cloud galaxy">Мала Магеланова Хмара</string>
     <!-- tm:omitted name="nubecula_minor" reason="identical_to_source" -->
     <!-- tm:omitted name="willman_1" reason="identical_to_source" -->
-    <string name="beth_willman_galaxy" translation_description="Informal nickname for the ultra-faint dwarf galaxy Willman 1, honouring its discoverer">Галактика Beth Willman</string>
+    <string name="beth_willman_galaxy" translation_description="Informal nickname for the ultra-faint dwarf galaxy Willman 1, honouring its discoverer">Галактика Бет Вілман</string>
     <!-- tm:omitted name="sgr_a_star" reason="identical_to_source" -->
     <!-- tm:omitted name="sagittarius_a_star" reason="identical_to_source" -->
     <string name="black_hole" translation_description="Generic search term for black holes; used as an alias for Sagittarius A*">Чорна діра</string>
