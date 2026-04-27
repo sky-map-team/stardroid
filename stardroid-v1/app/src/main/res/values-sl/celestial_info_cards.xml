@@ -944,6 +944,65 @@
     </string>
     <string name="object_info_eta_carinae_nebula_distance" translation_description="Distance to Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">7.500 svetlobnih let</string>
     <string name="object_info_eta_carinae_nebula_size" translation_description="Physical size of Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">300 svetlobnih let v premeru</string>
+    <!-- North America Nebula (NGC 7000) -->
+    <string name="object_info_north_america_nebula_description" translation_description="Description of the North America Nebula shown in the info card. Translate this text.">
+    Meglenska megla Severna Amerika (NGC 7000) je velika emisijska megla v ozvezdju Laboda, katere oblika presenetljivo spominja na celino Severne Amerike, vključno z regijo Mehiškega zaliva. Razprostira se čez približno 120 ločnih minut — približno štirikrat večji premer kot polna Luna — in se nahaja približno 2600 svetlobnih let stran ter je široka več kot 100 svetlobnih let.
+    </string>
+    <string name="object_info_north_america_nebula_funfact" translation_description="Fun fact about the North America Nebula shown in the info card. Translate this text.">
+    Kljub vizualni magnitudi 4 je meglica premajhna in razpršena, da bi jo videli s prostim očesom pod večino neba — vendar se fotografira čudovito in razkriva Cygnus Wall, gost lok intenzivnega nastajanja zvezd ob njenem južnem robu.
+    </string>
+    <string name="object_info_north_america_nebula_distance" translation_description="Distance to the North America Nebula shown in the info card. Translate units if appropriate for your locale.">~2.590 svetlobnih let</string>
+    <string name="object_info_north_america_nebula_size" translation_description="Physical size of the North America Nebula shown in the info card. Translate units if appropriate for your locale.">~140 svetlobnih let v premeru</string>
+    <!-- Exposed Cranium Nebula - PMR 1 -->
+    <string name="object_info_exposed_cranium_nebula_description" translation_description="Description of the Exposed Cranium Nebula shown in the info card. Translate this text.">
+    Meglena Exposed Cranium (PMR 1) je planetarna meglena v Veli, oddaljena približno 5000 svetlobnih let. Njeno nenavadno ime izvira iz temnega pasu plina, ki teče navpično skozi sredino in deli njena svetleča jedra v obliko, ki čudno spominja na možgane v prozornem lobanju. V njenem srcu gori vroča Wolf-Rayet-ova zvezda, ki odvrhuje zunanje plasti, ki jih je gradila vse življenje.
+    </string>
+    <string name="object_info_exposed_cranium_nebula_funfact" translation_description="Fun fact about the Exposed Cranium Nebula shown in the info card. Translate this text.">
+    Leta 2026 je Vesoljski teleskop James Webb ujel osupljive nove slike Meglice Izpostavljenega Lobanje, pri čemer je razrešil njeno dvojno plastno strukturo z neprecedentno podrobnostjo — zunanjo lupino bogato z vodikom in notranjo oblak nabit s težjimi elementi, ki jih je ustvarila umirajoča zvezda.
+    </string>
+    <string name="object_info_exposed_cranium_nebula_distance" translation_description="Distance to the Exposed Cranium Nebula shown in the info card. Translate units if appropriate for your locale.">~5.000 svetlobnih let</string>
+    <string name="object_info_exposed_cranium_nebula_size" translation_description="Physical size of the Exposed Cranium Nebula shown in the info card. Translate units if appropriate for your locale.">~2 svetlobni leti v premeru</string>
+
+    <!-- Jewel Box (NGC 4755) -->
+    <string name="object_info_jewel_box_description" translation_description="Description of the Jewel Box cluster shown in the info card. Translate this text.">
+    Škatla draguljev (NGC 4755) je mlado, svetlo odprto zvezdno jato v ozvezdju Južni križ, ki je s prostim očesom vidno kot meglena četrte magnitude pega malo jugovzhodno od zvezde Mimoza. Ko ga opazujemo skozi teleskop, njegove zvezde blestijo v živih nasprotnih barvah — globoki modri supergiganti ob strani udarne rdeče supergigantke — kar mu je prineslo ime, ki ga je dal John Herschel: odličen kos dragocene nakit. Staro je le 14–16 milijonov let, zato je eno najmladših in najbolj barvitih zvezdnih jat na nebu.
+    </string>
+    <string name="object_info_jewel_box_funfact" translation_description="Fun fact about the Jewel Box shown in the info card. Translate this text.">
+    Izstopna rdeča zvezda v gruči, κ Crucis, je rdeči supergigant, ki je tako svetel, da presija Sonce za več kot 100.000-krat — živahno opominjanje, da niso vsi zvezdni gruči enake barve.
+    </string>
+    <string name="object_info_jewel_box_distance" translation_description="Distance to the Jewel Box shown in the info card. Translate units if appropriate for your locale.">~6.500 svetlobnih let</string>
+    <string name="object_info_jewel_box_size" translation_description="Physical size of the Jewel Box shown in the info card. Translate units if appropriate for your locale.">~19 svetlobnih let v premeru</string>
+
+    <!-- Double Cluster (NGC 869 & NGC 884) -->
+    <string name="object_info_double_cluster_description" translation_description="Description of the Double Cluster shown in the info card. Translate this text.">
+    Dvojna gruča (NGC 869 in NGC 884) je osupljiv par mladih odprtih zvezdnih grozdov v Perzeeju, ki sta si v nebu blizu drug drugega, oddaljena le malo več kot eno stopinjo. Oba sta s prostim očesom vidna kot meglena pegica, vendar že majhov teleskop razkrije stotine svetlečih modro-belih supergigantov, stisnjenih v dve bleščeči roji. Na razdalji približno 7500 svetlobnih let se nahajata v Perzejski veji naše galaksije in sta med najlepšimi binokularnimi objekti na severnem nebu.
+    </string>
+    <string name="object_info_double_cluster_funfact" translation_description="Fun fact about the Double Cluster shown in the info card. Translate this text.">
+    Star skupini Double Cluster je star le 14 milijonov let, kar je izjemno mlado — tako nedavno rojen, da so njegovi najbolj masivni zvezde še vedno žareče modre supergiganti, nekaj pa se je že razvilo v redke, žareče rdeče supergigante.
+    </string>
+    <string name="object_info_double_cluster_distance" translation_description="Distance to the Double Cluster shown in the info card. Translate units if appropriate for your locale.">~7.500 svetlobnih let</string>
+    <string name="object_info_double_cluster_size" translation_description="Physical size of the Double Cluster shown in the info card. Translate units if appropriate for your locale.">Vsak gruč ~70 svetlobnih let v premeru; par ločen za ~1.000 svetlobnih let</string>
+
+    <!-- 47 Tucanae (NGC 104) -->
+    <string name="object_info_n47_tucanae_description" translation_description="Description of 47 Tucanae shown in the info card. Translate this text.">
+    47 Tucanae (NGC 104) je drugi najsvetlejši kroglasti zvezdni kopič na nebu, gosta krogla približno milijona starih zvezd, ki krožijo okrog Mlečne poti v ozvezdju Tucana. Na razdalji približno 14.500 svetlobnih let se golemu očesu prikazuje kot nejasna zvezda četrte magnitude, vendar teleskop razreši njeno stisnjeno jedro v izjemno roj zlatih in modro-belih sonc. Njegove zvezde so nastale pred približno 13 milijardami let, kar naredi kopič skoraj tako star kot vesolje samo.
+    </string>
+    <string name="object_info_n47_tucanae_funfact" translation_description="Fun fact about 47 Tucanae shown in the info card. Translate this text.">
+    47 Tucanae je kozmična tovarna pulsarjev: astronomi so v njej našli najmanj 35 milisekundnih pulsarjev, ki se vrtijo stokrat na sekundo — več kot v katerem koli drugem znanem globularnem jatu — rezultat bližnjih srečanj zvezd, ki reciklirajo stare nevtronske zvezde z njihovim pospeševanjem.
+    </string>
+    <string name="object_info_n47_tucanae_distance" translation_description="Distance to 47 Tucanae shown in the info card. Translate units if appropriate for your locale.">~14.500 svetlobnih let</string>
+    <string name="object_info_n47_tucanae_size" translation_description="Physical size of 47 Tucanae shown in the info card. Translate units if appropriate for your locale.">~120 svetlobnih let v premeru</string>
+
+    <!-- Centaurus A (NGC 5128) -->
+    <string name="object_info_centaurus_a_description" translation_description="Description of Centaurus A shown in the info card. Translate this text.">
+    Centaurus A (NGC 5128) je najbližja aktivna radijska galaksija Zemlji, velikanska eliptična galaksija v ozvezdju Kentavra, katere presenetljiva temna prašna proga izdaja nasilno preteklost — spiralno galaksijo, ki je bila požrta pred približno 200–700 milijoni let. V njenem srcu se skriva supermasivna črna luknja z maso 55 milijonov Sonc, ki poganja relativistične curke, ki se raztezajo več kot milijon svetlobnih let v radijskih valovnih dolžinah. Na razdalji približno 12 milijonov svetlobnih let je ena najbolj proučevanih galaksij na nebu.
+    </string>
+    <string name="object_info_centaurus_a_funfact" translation_description="Fun fact about Centaurus A shown in the info card. Translate this text.">
+    Centaurus A je eden izmed najmočnejših naravnih radijskih oddajnikov na nebu — njegovi curki izstrelijo plazmo navzven s hitrostjo blizu svetlobne hitrosti, celoten obseg njegovih radijskih lopatk pa zajema območje, ki je enakovredno približno 100 polnih lun, postavljenih druga za drugo čez nebo.
+    </string>
+    <string name="object_info_centaurus_a_distance" translation_description="Distance to Centaurus A shown in the info card. Translate units if appropriate for your locale.">~12 milijonov svetlobnih let</string>
+    <string name="object_info_centaurus_a_size" translation_description="Physical size of Centaurus A shown in the info card. Translate units if appropriate for your locale.">~123.000 svetlobnih let v premeru</string>
+
     <!-- ==================== CONSTELLATIONS ==================== -->
     <!-- Note: Constellation names are defined in celestial_objects.xml -->
     <!-- Orion -->
@@ -1971,4 +2030,697 @@
     Vulpecula vsebuje Dumbbell Nebulo (M27), prvo planetarno meglico, ki je bila kdaj odkrita (Charles Messier leta 1764), in lep cilj za dvogled!
     </string>
     <string name="object_info_vulpecula_size" translation_description="Physical size of Vulpecula shown in the info card. Translate units if appropriate for your locale.">268 kvadratnih stopinj</string>
+
+    <!-- Galilean Moons of Jupiter -->
+    <string name="object_info_io_description" translation_description="Description of Io shown in the info card. Translate this text.">
+    Io je najmanjša od štirih velikih Galilejevih lun Jupitera in najbolj vulkansko aktivno telo v sončnem sistemu.
+    </string>
+    <string name="object_info_io_funfact" translation_description="Fun fact about Io shown in the info card. Translate this text.">
+    Io ima stotine aktivnih vulkanov, nekateri izbruhnejo lavljske fontane visoke ducat kilometrov. Njeno nenehno aktivnost poganja plimska toplota zaradi Jupitrove ogromne gravitacije.
+    </string>
+    <string name="object_info_io_distance" translation_description="Distance to Io shown in the info card. Translate units if appropriate for your locale.">421.700 km od Jupitra</string>
+    <string name="object_info_io_size" translation_description="Physical size of Io shown in the info card. Translate units if appropriate for your locale.">3.643 km premera</string>
+
+    <string name="object_info_europa_description" translation_description="Description of Europa shown in the info card. Translate this text.">
+    Europa je drugi Galilejev mesec in se domneva, da skriva ogromno tekočega vodnega oceana pod svojo ledeno skorjo, kar jo uvršča med najbolj obetavna mesta za iskanje življenja.
+    </string>
+    <string name="object_info_europa_funfact" translation_description="Fun fact about Europa shown in the info card. Translate this text.">
+    Podzemski ocean Evrope\'s lahko vsebuje dvakrat toliko tekočine vode kot vsi Zemljini oceani skupaj, ki jo ohranja v tekočem stanju plimski ogrev Jupitrja.
+    </string>
+    <string name="object_info_europa_distance" translation_description="Distance to Europa shown in the info card. Translate units if appropriate for your locale.">671.100 km od Jupitra</string>
+    <string name="object_info_europa_size" translation_description="Physical size of Europa shown in the info card. Translate units if appropriate for your locale.">3.122 km premera</string>
+
+    <string name="object_info_ganymede_description" translation_description="Description of Ganymede shown in the info card. Translate this text.">
+    Ganymede je največji mesec v osončju — celo večji od planeta Merkurja. To je edini mesec, za katerega je znano, da ustvarja svoje lastno magnetno polje.
+    </string>
+    <string name="object_info_ganymede_funfact" translation_description="Fun fact about Ganymede shown in the info card. Translate this text.">
+    Ganymede je po velikosti večji od Merkurja, čeprav ima le približno polovico njegove mase. Njegovo notranjo magnetno polje ustvarja lastno miniaturno magnetosfero znotraj Jupitrove veliko večje magnetosfere.
+    </string>
+    <string name="object_info_ganymede_distance" translation_description="Distance to Ganymede shown in the info card. Translate units if appropriate for your locale.">1.070.400 km od Jupitra</string>
+    <string name="object_info_ganymede_size" translation_description="Physical size of Ganymede shown in the info card. Translate units if appropriate for your locale.">5.268 km premera</string>
+
+    <string name="object_info_callisto_description" translation_description="Description of Callisto shown in the info card. Translate this text.">
+    Kalisto je najbolj oddaljen od Galilejevih lun in eno najbolj krateriranih teles v sončnem sistemu, njegova stara površina pa hrani zapis zgodnjih trkov v sončnem sistemu.
+    </string>
+    <string name="object_info_callisto_funfact" translation_description="Fun fact about Callisto shown in the info card. Translate this text.">
+    Kallisto se giblje zunaj Jupitrovih glavnih sevalnos­tnih pasov, kar jo naredi za najvarnejšo od Galilejevih lun za prihodnje človeško raziskovanje — včasih jo imenujejo »vratna luna«.
+    </string>
+    <string name="object_info_callisto_distance" translation_description="Distance to Callisto shown in the info card. Translate units if appropriate for your locale.">1.882.700 km od Jupitra</string>
+    <string name="object_info_callisto_size" translation_description="Physical size of Callisto shown in the info card. Translate units if appropriate for your locale.">4.821 km premera</string>
+
+    <!-- Moons of Mars -->
+    <string name="object_info_phobos_description" translation_description="Description of Phobos shown in the info card. Translate this text.">
+    Fobos je večji in notranji od obeh Marsovih lun, ki kroži bližje svojemu planetu kot katera koli druga luna v osončju. Je nepravilno oblikovano, globoko žlebasto in kratersko telo, za katero se domneva, da je zajeti asteroid.
+    </string>
+    <string name="object_info_phobos_funfact" translation_description="Fun fact about Phobos shown in the info card. Translate this text.">
+    Fobos se giblje okrog Marsa tako hitro, da se dviga na zahodu in zahaja na vzhodu — počasi se spiralno premika navznoter in je namenjen, da se bodisi zruši v Mars bodisi razpade v obroč v približno 50 milijonih letih.
+    </string>
+    <string name="object_info_phobos_distance" translation_description="Distance to Phobos shown in the info card. Translate units if appropriate for your locale.">9.376 km od Marsa</string>
+    <!-- tm:omitted name="object_info_phobos_size" reason="identical_to_source" -->
+
+    <string name="object_info_deimos_description" translation_description="Description of Deimos shown in the info card. Translate this text.">
+    Deimos je manjši in zunanji od obeh Marsovih lun, s gladko, prahom pokrito površino, ki mu daje bolj okrogel videz kot Fobos. Kot njegov spremljevalec se domneva, da je ujeti asteroid iz zunanjega pasu.
+    </string>
+    <string name="object_info_deimos_funfact" translation_description="Fun fact about Deimos shown in the info card. Translate this text.">
+    Deimos je tako majhen in oddaljen, da z Marsove površine izgleda kot malo več kot svetla zvezda, ki se počasi premika čez nočno nebo v približno 30 urah.
+    </string>
+    <string name="object_info_deimos_distance" translation_description="Distance to Deimos shown in the info card. Translate units if appropriate for your locale.">23.460 km od Marsa</string>
+    <!-- tm:omitted name="object_info_deimos_size" reason="identical_to_source" -->
+
+    <!-- Major Moons of Saturn -->
+    <string name="object_info_titan_description" translation_description="Description of Titan shown in the info card. Translate this text.">
+    Titan je največji Saturnov mesec in drugi največji mesec v sončnem sistemu. Je edini mesec, za katerega je znano, da ima gosto atmosfero — debelo dušikovo odejo prepleteno z metanom — in edini svet zunaj Zemlje, za katerega je znano, da ima stabilna tekoča morja na svoji površini.
+    </string>
+    <string name="object_info_titan_funfact" translation_description="Fun fact about Titan shown in the info card. Translate this text.">
+    Titanove jezere in morja so napolnjena ne z vodo, temveč s tekočim metanom in etanom pri zmrznjujočih −179°C. Vesoljska agencija NASA bo s helikopterjem Dragonfly, ki bo prispel leta 2034, letela med lokacijami na Titanovem površju v iskanju kemije življenja.
+    </string>
+    <string name="object_info_titan_distance" translation_description="Distance to Titan shown in the info card. Translate units if appropriate for your locale.">1.221.870 km od Saturna</string>
+    <string name="object_info_titan_size" translation_description="Physical size of Titan shown in the info card. Translate units if appropriate for your locale.">5.151 km premera</string>
+
+    <string name="object_info_rhea_description" translation_description="Description of Rhea shown in the info card. Translate this text.">
+    Rhea je Saturnov drugi največji mesec in težko krateriran svet ledu in kamnine. Njegova bleda, stara površina ohranja nekatere najbolj nedotaknjene udarne kraterje našega sončnega sistema, skupaj z svetlimi ledenimi pečinami, kjer so plazovi razkrili svežo snov spodaj.
+    </string>
+    <string name="object_info_rhea_funfact" translation_description="Fun fact about Rhea shown in the info card. Translate this text.">
+    Leta 2008 so podatki Cassinija nakazali, da bi lahko Reja imela tanek obroč ruševine, ki bi krožil okrog nje — kar bi jo naredilo prvi mesec, ki bi bil kdaj koli odkrit s svojim sistemom obročev. Če bi se to potrdilo, bi bila to izjemna odkritja; dokazi ostajajo aktivno področje raziskav.
+    </string>
+    <string name="object_info_rhea_distance" translation_description="Distance to Rhea shown in the info card. Translate units if appropriate for your locale.">527.108 km od Saturna</string>
+    <string name="object_info_rhea_size" translation_description="Physical size of Rhea shown in the info card. Translate units if appropriate for your locale.">1.527 km premera</string>
+
+    <string name="object_info_tethys_description" translation_description="Description of Tethys shown in the info card. Translate this text.">
+    Tetida je ledena luna Saturna, ki jo zaznamujeta dve dramatični značilnosti: ogromni krater Odisej, ki je širok 400 km in pokriva skoraj tretjino površine lune, ter Itakski kanjon, sistem kanjonov, ki se razteza tri četrtine poti okrog planeta.
+    </string>
+    <string name="object_info_tethys_funfact" translation_description="Fun fact about Tethys shown in the info card. Translate this text.">
+    Tetida je skoraj čista ledena voda — ima eno najnižjih gostot med vsemi luni v sončnem sistemu, le malo gostejša od zmrznjene vode. Itakski kanjon se je morda oblikoval, ko se je notranjost zmrznila in razširila, pri čemer je razpokala površinsko skorjo od znotraj.
+    </string>
+    <string name="object_info_tethys_distance" translation_description="Distance to Tethys shown in the info card. Translate units if appropriate for your locale.">294.619 km od Saturna</string>
+    <string name="object_info_tethys_size" translation_description="Physical size of Tethys shown in the info card. Translate units if appropriate for your locale.">1.062 km premera</string>
+
+    <string name="object_info_dione_description" translation_description="Description of Dione shown in the info card. Translate this text.">
+    Dione je ledena luna Saturna s težko krateriranim sprednjim obrazom in zadnjim polkrogom, prepletenim z svetlimi ledenimi pečinami — prelomnimi linijami, kjer so starodavne tektonske sile izpostavile svež led od spodaj. Podatki o gravitaciji Cassinija nakazujejo na podzemni tekoči ocean pod skorjo.
+    </string>
+    <string name="object_info_dione_funfact" translation_description="Fun fact about Dione shown in the info card. Translate this text.">
+    Dione si deli orbito s dvema majhnima lunama, Heleno in Polidevkom, ki sta zaklenjeni 60° pred in za njo na točkah gravitacijskega ravnovesja, ki se imenujejo Lagrangeve točke. Heleno je mogoče videti, kako se vozi kot kozmični avtostopist na slikah Cassinija.
+    </string>
+    <string name="object_info_dione_distance" translation_description="Distance to Dione shown in the info card. Translate units if appropriate for your locale.">377.396 km od Saturna</string>
+    <string name="object_info_dione_size" translation_description="Physical size of Dione shown in the info card. Translate units if appropriate for your locale.">1.122 km premera</string>
+
+    <string name="object_info_iapetus_description" translation_description="Description of Iapetus shown in the info card. Translate this text.">
+    Iapetus je ena izmed najbolj značilnih Saturnovih lun: njeno vodilno poloblo je pokrito s črno črno snovjo, temno kot premog, medtem ko je njeno zaostajajočo poloblo svetlo bela led. Ta skrajni dvobarvni videz je zmešal Giovannija Cassinija, ko je odkril luno leta 1671, in kontrast je tako ostra, da je viden v majhnih teleskopih.
+    </string>
+    <string name="object_info_iapetus_funfact" translation_description="Fun fact about Iapetus shown in the info card. Translate this text.">
+    Iapetus ima tudi mogočen ekvatorski greben, ki se dviga 20 km visoko — višje kot katera koli gora na Zemlji — in se razteza tisoče kilometrov okrog njegovega ekvatorja. Njegov izvor je neznan: lahko je ostanki porušenega prstena ali starodavnega tektonskega gubanja, nastalega, ko se je luna nekoč vrtela veliko hitreje.
+    </string>
+    <string name="object_info_iapetus_distance" translation_description="Distance to Iapetus shown in the info card. Translate units if appropriate for your locale.">3.560.820 km od Saturna</string>
+    <string name="object_info_iapetus_size" translation_description="Physical size of Iapetus shown in the info card. Translate units if appropriate for your locale.">1.469 km premera</string>
+
+    <!-- Moon of Neptune -->
+    <string name="object_info_triton_description" translation_description="Description of Triton shown in the info card. Translate this text.">
+    Triton je največji Neptunov mesec in eno izmed najbolj izjemnih teles v našem sončnem sistemu. Kroži okrog Neptuna v nasprotni smeri — nasprotno od lastne rotacije planeta — kar je jasen znak, da je bil ujeti iz zunanjega sončnega sistema, najverjetneje iz Kuiperjevega pasu, v zgodnjih dneh Neptunove zgodovine.
+    </string>
+    <string name="object_info_triton_funfact" translation_description="Fun fact about Triton shown in the info card. Translate this text.">
+    Kljub površinski temperaturi −235°C — najnižji izmerjeni temperaturi na katerem koli nebesnem telesu, ki ga je obiskal vesoljski plovil — je Voyager 2 leta 1989 odkril aktivne dušikove gejzirje na Tritonu. Temne proge na površini označujejo mesta, kjer so se plumi plina in temnega materiala izbruhnili več kilometrov v tanko atmosfero.
+    </string>
+    <string name="object_info_triton_distance" translation_description="Distance to Triton shown in the info card. Translate units if appropriate for your locale.">354.759 km od Neptuna</string>
+    <string name="object_info_triton_size" translation_description="Physical size of Triton shown in the info card. Translate units if appropriate for your locale.">2.707 km premera</string>
+
+    <!-- Major Moons of Uranus -->
+    <string name="object_info_titania_description" translation_description="Description of Titania shown in the info card. Translate this text.">
+    Titania je največji mesec Urana in osmi največji mesec v osončju. Njegova površina kaže mešanico starih krateriranih ravnin in mlajših robov in dolin, kar nakazuje na zapleteno geološko zgodovino, ki je morda vključevala preteklo tektonsko aktivnost, ki je preoblikovala ledeno skorjo.
+    </string>
+    <string name="object_info_titania_funfact" translation_description="Fun fact about Titania shown in the info card. Translate this text.">
+    Vsi Uranovovi meseci so poimenovani po likov iz Shakespeara in Alexanderja Popea — Titania je kraljica vil v Snu poletne noči. Je eden redkih večjih planetarnih mesecev, ki ni poimenovan po liku iz grške ali rimske mitologije.
+    </string>
+    <string name="object_info_titania_distance" translation_description="Distance to Titania shown in the info card. Translate units if appropriate for your locale.">435.910 km od Urana</string>
+    <string name="object_info_titania_size" translation_description="Physical size of Titania shown in the info card. Translate units if appropriate for your locale.">1.578 km premer</string>
+
+    <string name="object_info_oberon_description" translation_description="Description of Oberon shown in the info card. Translate this text.">
+    Oberon je najbolj oddaljen od petih večjih lun Urana in ena izmed najbolj krateriranih, s staro površino, ki se je malo spremenila od zgodnjega obdobja sončnega sistema. Več njegovih velikih udarcnih kraterjev ima na dnu temno snov, verjetno organske usedline, ki so jih prinesla telesa pri udarcu.
+    </string>
+    <string name="object_info_oberon_funfact" translation_description="Fun fact about Oberon shown in the info card. Translate this text.">
+    Oberon ima goro, ki se dviga približno 6 km od okoliških ravnin — primerljiva z najvišjimi vrhovi na Zemlji. Za razliko od Zemljinih gora, ki so nastale s tektoniko plošč, je ta značilnost morda osrednji vrh starega udarca ali ostanki zgodnje vulkanske dejavnosti.
+    </string>
+    <string name="object_info_oberon_distance" translation_description="Distance to Oberon shown in the info card. Translate units if appropriate for your locale.">583.520 km od Urana</string>
+    <string name="object_info_oberon_size" translation_description="Physical size of Oberon shown in the info card. Translate units if appropriate for your locale.">1.523 km premer</string>
+
+    <string name="object_info_ariel_description" translation_description="Description of Ariel shown in the info card. Translate this text.">
+    Ariel ima najmladšo in najsvetlejšo površino med petimi glavnimi luni Urana. Njeno krajino prevladuje omrežje globokih dolin in gladkih ravnin, ki so bile pred dolgo časom ponovno oblikovane s tekočino – verjetno vodo ali zmesmi vode in amonijaka – ki je izvirala iz notranjosti in poplavila staro teren.
+    </string>
+    <string name="object_info_ariel_funfact" translation_description="Fun fact about Ariel shown in the info card. Translate this text.">
+    Arielove doline lahko dosežejo globino 10 km — veliko globlje kot Veliki kanjon. Opazovanja vesoljskega teleskopa James Webb so nato zaznala led ogljikov dioksida na Arielovi površini, kar nakazuje na tekočo kemijo površine, ki jo poganja nabiti delci iz magnetnega polja Urana.
+    </string>
+    <string name="object_info_ariel_distance" translation_description="Distance to Ariel shown in the info card. Translate units if appropriate for your locale.">191.020 km od Urana</string>
+    <string name="object_info_ariel_size" translation_description="Physical size of Ariel shown in the info card. Translate units if appropriate for your locale.">1.158 km premer</string>
+
+    <string name="object_info_umbriel_description" translation_description="Description of Umbriel shown in the info card. Translate this text.">
+    Umbriel je najtemnější z petih glavnih lun Urana, s enakomerno staro in težko kratersko površino, ki kaže malo znakov geološke preobrazbe, vidne na njegovih sosedih. Njegova notranjost je očitno ostala hladna in zamrznjena od zgodnjega obdobja zgodovine sončnega sistema.
+    </string>
+    <string name="object_info_umbriel_funfact" translation_description="Fun fact about Umbriel shown in the info card. Translate this text.">
+    Najbolj značilna značilnost Umbrielja je Wunda, svetel obroč s premerom približno 140 km blizu njegovega ekvatorja. Voyager 2 ga je odkril leta 1986, vendar je natančna narava Wunde še vedno skrivnost — lahko bi bil kraterski pod, prekrit s sloji ogljičnega dioksida ali amoniakovega ledu, ki se je odložil dolgo po trku, ki ga je ustvaril.
+    </string>
+    <string name="object_info_umbriel_distance" translation_description="Distance to Umbriel shown in the info card. Translate units if appropriate for your locale.">266.300 km od Urana</string>
+    <string name="object_info_umbriel_size" translation_description="Physical size of Umbriel shown in the info card. Translate units if appropriate for your locale.">1.170 km premer</string>
+
+    <!-- Globular clusters already on the map -->
+    <string name="object_info_omega_centauri_description" translation_description="Description of Omega Centauri shown in the info card. Translate this text.">
+    Omega Centauri je največja in najbolj masivna kroglasta kopica, ki kroži okrog Rimske ceste, in vsebuje približno 10 milijonov zvezd, stisnjenih v kroglo, ki je velika približno 150 svetlobnih let. Golemu očesu je vidna kot nejasna zvezda v Kentavru, skozi daljnogled ali teleskop pa se razkrije kot dih jemajoča krogla zvezd.
+    </string>
+    <string name="object_info_omega_centauri_funfact" translation_description="Fun fact about Omega Centauri shown in the info card. Translate this text.">
+    Za razliko od tipičnih kroglastih kopic, Omega Centauri vsebuje zvezde različnih starosti in kemijskih sestav — znak, da je morda jedro razdete pritlikave galaksije, ki jo je Mlečna pot pred milijardami let raztrganila in pogoltnila. Morda celo skriva osrednje črno luknjo srednje mase.
+    </string>
+    <string name="object_info_omega_centauri_distance" translation_description="Distance to Omega Centauri shown in the info card. Translate units if appropriate for your locale.">17.090 svetlobnih let</string>
+    <string name="object_info_omega_centauri_size" translation_description="Physical size of Omega Centauri shown in the info card. Translate units if appropriate for your locale.">~150 svetlobnih let premer</string>
+
+    <!-- Deep-sky objects: new catalog additions -->
+    <string name="object_info_hyades_description" translation_description="Description of the Hyades star cluster shown in the info card. Translate this text.">
+    Hyade so najbližje odprto zvezdno kopico Sončnega sistema in ena najbolj proučevanih v astronomiji. Vidna s prostim očesom kot V-oblikovani vzorec zvezd, ki tvorijo obraz Bika, vsebuje več sto zvezd, razporejenih na približno 5° neba.
+    </string>
+    <string name="object_info_hyades_funfact" translation_description="Fun fact about the Hyades shown in the info card. Translate this text.">
+    Svetleča oranžna zvezda Aldebaran se zdi, da je v Hiadah, vendar je v resnici prednji predmet na polovici razdalje – naključna poravnava. Pravi skupek je oddaljen približno 153 svetlobnih let in vsebuje prve zvezde, katerih razdalje je izmerila satelitska misija Hipparcos s pomočjo paralakse.
+    </string>
+    <string name="object_info_hyades_distance" translation_description="Distance to the Hyades shown in the info card. Translate units if appropriate for your locale.">153 svetlobnih let</string>
+    <string name="object_info_hyades_size" translation_description="Angular size of the Hyades shown in the info card.">~5° širine</string>
+
+    <string name="object_info_coma_star_cluster_description" translation_description="Description of the Coma Berenices Star Cluster shown in the info card. Translate this text.">
+    Zvezdna kopica Koma Berenike je bližnja odprta kopica z približno 40 zvezd, razpršenih ohlapno čez skoraj 5° neba, zlahka vidna s prostim očesom kot mehka megla v temnih pogojih. Je tretja najbližja odprta kopica Sončnemu sistemu in vir ozvezdja Koma Berenike.
+    </string>
+    <string name="object_info_coma_star_cluster_funfact" translation_description="Fun fact about the Coma Berenices Star Cluster shown in the info card. Translate this text.">
+    Starodavni opazovalci so to skupino videli kot lase kraljice Berenice II. Egipta, ki je po legendi odrezala svoje zlate lase kot daritev za varno vrnitev svojega moža iz vojne. Ptolemej III. je naj bi to nenavadno konstelacijo uradno poimenoval v njeno čast okrog leta 245 pr. n. št.
+    </string>
+    <string name="object_info_coma_star_cluster_distance" translation_description="Distance to the Coma Star Cluster shown in the info card. Translate units if appropriate for your locale.">288 svetlobnih let</string>
+    <string name="object_info_coma_star_cluster_size" translation_description="Angular size of the Coma Star Cluster shown in the info card.">~5° širine</string>
+
+    <string name="object_info_coathanger_description" translation_description="Description of the Coathanger asterism shown in the info card. Translate this text.">
+    Coathanger je presenetljiv asterizem desetih zvezd v Vulpekuli, ki tvorijo nezmotljivo obliko: šest zvezd v ravni črti s štirimi, ki visijo spodaj v kljuki, popolnoma podobno obrnjenemu obešalniku. Je eden najboljših predmetov za daljnogled v poletnem nebu, ki se lepo prilega tipičnemu polju vida daljnogleda.
+    </string>
+    <string name="object_info_coathanger_funfact" translation_description="Fun fact about the Coathanger shown in the info card. Translate this text.">
+    Čeprav izgleda kot kopica, zvezde Obešalnika niso fizično povezane — nahajajo se na zelo različnih razdaljah in so zgolj naključje vidne črte. Brocchijev zvezdni red je v 1920-ih letih katalogiziral Dalmiro Brocchi, prvi vesoljski teleskop, ki ga je fotografiral, pa je bil Hipparcos, ki je potrdil, da so zvezde nepovezane.
+    </string>
+    <string name="object_info_coathanger_distance" translation_description="Distance to the Coathanger shown in the info card. Translate units if appropriate for your locale.">~420 svetlobnih let (najsvetlejša zvezda)</string>
+    <string name="object_info_coathanger_size" translation_description="Angular size of the Coathanger shown in the info card.">~1° širine</string>
+
+    <string name="object_info_helix_nebula_description" translation_description="Description of the Helix Nebula shown in the info card. Translate this text.">
+    Helix Nebula je največja planetarna meglica po navidezni velikosti na nebu — razširjajoča se lupina plina, ki jo je izpustila Soncu podobna zvezda na koncu svojega življenja. S premerom približno pol stopinje je vidna v daljnogledu kot šibka krožna svetloba v Vodnarju in je poimenovana Božje oko zaradi svojega videza na dolgih ekspozicijah.
+    </string>
+    <string name="object_info_helix_nebula_funfact" translation_description="Fun fact about the Helix Nebula shown in the info card. Translate this text.">
+    V srcu Helix meglice se nahaja eden od najbližjih znanih belih pritlikavcev do Zemlje — izjemno vroč zvezdni ostanki velikosti Zemlje, vendar z maso Sonca. To je usoda, ki čaka naše lastno Sonce v približno petih milijardah let.
+    </string>
+    <string name="object_info_helix_nebula_distance" translation_description="Distance to the Helix Nebula shown in the info card. Translate units if appropriate for your locale.">650 svetlobnih let</string>
+    <string name="object_info_helix_nebula_size" translation_description="Angular size of the Helix Nebula shown in the info card.">~3 svetlobnih let premer</string>
+
+    <string name="object_info_sculptor_galaxy_description" translation_description="Description of the Sculptor Galaxy shown in the info card. Translate this text.">
+    Galaksija Kipar je ena od najsvetlejših in najlepših galaksij vidnih s strani Zemlje, ki se pojavi kot podolgovata svetloba v južnem ozvezdju Kipar. Je ena od najbližjih galaksij z izbruhom zvezd — galaksija, ki doživlja intenziven izbruh nastajanja zvezd — vidna amaterskim astronomom z daljnogledi s temnega neba.
+    </string>
+    <string name="object_info_sculptor_galaxy_funfact" translation_description="Fun fact about the Sculptor Galaxy shown in the info card. Translate this text.">
+    Galaksija Kipar je eden od najsvetlejših članov Kiparjeve skupine — skupine galaksij, ki je najbližja naši Lokalni skupini. Njeno osrednje območje z izbruhom zvezd proizvaja nove zvezde s hitrostjo, ki je večkratnik hitrosti Rimske ceste, kar je posledica preteklih interakcij s sosednjimi galaksijami.
+    </string>
+    <string name="object_info_sculptor_galaxy_distance" translation_description="Distance to the Sculptor Galaxy shown in the info card. Translate units if appropriate for your locale.">11,4 milijona svetlobnih let</string>
+    <string name="object_info_sculptor_galaxy_size" translation_description="Physical size of the Sculptor Galaxy shown in the info card. Translate units if appropriate for your locale.">~90.000 svetlobnih let širine</string>
+
+    <string name="object_info_blue_snowball_nebula_description" translation_description="Description of the Blue Snowball Nebula shown in the info card. Translate this text.">
+    Blue Snowball je planetarna meglica v Andromedah — svetleča lupina plina, ki jo je izgnala umirajoča zvezda. Z magnitudo 8,3 je ena najsvetlejših in najbolj barvitih planetarnih meglič na nebu, ki se v majhnih teleskopih pojavljajo kot živahna modro-zelena disk. Njegova simetrična oblika in intenzivna barva ga delata priljubljeno med opazovalci.
+    </string>
+    <string name="object_info_blue_snowball_nebula_funfact" translation_description="Fun fact about the Blue Snowball Nebula shown in the info card. Translate this text.">
+    Presenetljiva barva Modre snežne kepe izvira iz dvojno ioniziranega kisika, ki sveti pri specifični zeleni valovni dolžini, v kombinaciji z emisijo vodika — barvna paleta, ki jo človeško oko zaznava kot modro-zeleno. Beli pritlikavi zvezdni ostanki imajo površinsko temperaturo okoli 100.000°C, dovolj toplo, da ionizira okolni plin na tej razdalji.
+    </string>
+    <string name="object_info_blue_snowball_nebula_distance" translation_description="Distance to the Blue Snowball Nebula shown in the info card. Translate units if appropriate for your locale.">~2.500 svetlobnih let</string>
+    <string name="object_info_blue_snowball_nebula_size" translation_description="Physical size of the Blue Snowball Nebula shown in the info card. Translate units if appropriate for your locale.">~0,8 svetlobnih let premer</string>
+
+    <string name="object_info_ghost_of_jupiter_description" translation_description="Description of the Ghost of Jupiter planetary nebula shown in the info card. Translate this text.">
+    Ghost of Jupiter je svetla planetarna meglica v Hydri, katere navidezna velikost je podobna planetu Jupiter — od tod tudi njeno ime. Z magnitudo 8,6 je ena najbolj dostopnih planetarnih meglič na nebu za majhove teleskope, ki kažejo jasen disk in namig barve v zmerno velikih odprtinah.
+    </string>
+    <string name="object_info_ghost_of_jupiter_funfact" translation_description="Fun fact about the Ghost of Jupiter shown in the info card. Translate this text.">
+    Duh Jupitrove je notranja svetla lupina, obdana s šibkejšo zunanjo avolo — dvoslojno strukturo, ki kaže, da je umirajoča zvezda izgnala plin v najmanj dveh ločenih epizodah. Njena osrednja zvezda je ena izmed najbolj vročih znanih belih pritlikavk, s površinsko temperaturo, ocenjeno na približno 75.000 °C.
+    </string>
+    <string name="object_info_ghost_of_jupiter_distance" translation_description="Distance to the Ghost of Jupiter shown in the info card. Translate units if appropriate for your locale.">~1.400 svetlobnih let</string>
+    <string name="object_info_ghost_of_jupiter_size" translation_description="Physical size of the Ghost of Jupiter shown in the info card. Translate units if appropriate for your locale.">~1 svetlobno leto premer</string>
+
+    <string name="object_info_saturn_nebula_description" translation_description="Description of the Saturn Nebula shown in the info card. Translate this text.">
+    Saturnova meglica je planetarna meglica v Vodnarju, poimenovana po podobnosti s planetom Saturn — razširitve, imenovane ansae, štrlijo z obeh strani kot ročaji prstanov, vidne v zmerno močnih teleskopih. Z magnitudo 8,0 je ena od najsvetlejših planetarnih meglic na nebu in kaže kompleksno strukturo v večjih instrumentih.
+    </string>
+    <string name="object_info_saturn_nebula_funfact" translation_description="Fun fact about the Saturn Nebula shown in the info card. Translate this text.">
+    William Herschel je odkril Saturnovo meglico leta 1782 in opazil njeno podobnost s Saturnom. Sodobna opazovanja razkrivajo najmanj štiri različne plasti plina, ki obdajajo osrednji beli pritlikavi, kar odraža več epizod izgube mase v končnih fazah življenja zvezde.
+    </string>
+    <string name="object_info_saturn_nebula_distance" translation_description="Distance to the Saturn Nebula shown in the info card. Translate units if appropriate for your locale.">~5.000 svetlobnih let</string>
+    <string name="object_info_saturn_nebula_size" translation_description="Physical size of the Saturn Nebula shown in the info card. Translate units if appropriate for your locale.">~1 svetlobno leto širine</string>
+
+    <string name="object_info_ngc_2903_description" translation_description="Description of the galaxy NGC 2903 shown in the info card. Translate this text.">
+    NGC 2903 je svetla prečna spiralna galaksija v Levu, pogosto imenovana »Messierov predmet, ki ga je Messier zamudil« — je ena izmed najbolj vidnih galaksij na nebu, ki ni vključena v njegov znameniti katalog. Pri magnitudi 8,9 je zlahka vidna v daljnogledu in v zmerno močnih teleskopih kaže lepo spiralno strukturo.
+    </string>
+    <string name="object_info_ngc_2903_funfact" translation_description="Fun fact about NGC 2903 shown in the info card. Translate this text.">
+    NGC 2903 ima eno od največjih koncentracij zvezdotvorne "vroče točke" znane v osrednji palici galaksije — guste gruče mladih masivnih zvezd, osvetljene z intenzivno tvorbo zvezd. Uporablja se kot merilo za proučevanje aktivnosti zvezdnega izbruha v spiralnih galaksijah s palico.
+    </string>
+    <string name="object_info_ngc_2903_distance" translation_description="Distance to NGC 2903 shown in the info card. Translate units if appropriate for your locale.">30 milijonov svetlobnih let</string>
+    <string name="object_info_ngc_2903_size" translation_description="Physical size of NGC 2903 shown in the info card. Translate units if appropriate for your locale.">~80.000 svetlobnih let širine</string>
+
+    <!-- Meteor showers -->
+    <string name="object_info_quadrantids_description" translation_description="Description of the Quadrantids meteor shower shown in the info card. Translate this text.">
+    Kvadrantidi so bogat meteorski roj v januarju z zelo ostrim in kratkim vrhuncem, ki traja le nekaj ur. Radiant leži v ozvezdju Boötes, blizu položaja opuščenega ozvezdja Quadrans Muralis, po katerem je roj poimenovan. Pod idealnimi pogoji je vidnih do 120 meteorjev na uro.
+    </string>
+    <string name="object_info_quadrantids_funfact" translation_description="Fun fact about the Quadrantids meteor shower shown in the info card. Translate this text.">
+    Za razliko od večine večjih meteornih rojev, ki izvirajo iz kometov, je matično telo Kvadrantidov asteroid 2003 EH1 — za katerega se domneva, da je mirujuče jedro kometa, ki je izgorel pred stoletji. Njegova obstoj je bil potrjen šele leta 2003.
+    </string>
+
+    <string name="object_info_lyrids_description" translation_description="Description of the Lyrids meteor shower shown in the info card. Translate this text.">
+    Liridi so zanesljiv pomladanski meteorski tok, ki seva blizu svetle zvezde Vega v ozvezdju Lira. Proizvajajo hitre, zmerno svetle meteorje, ki dosežejo vrh pri približno 18 na uro, in občasno ustvarjajo ognjene krogle, ki puščajo svetleče sled dima.
+    </string>
+    <string name="object_info_lyrids_funfact" translation_description="Fun fact about the Lyrids meteor shower shown in the info card. Translate this text.">
+    Lyridi so najstarejši zanesljivo dokumentirani meteorski roj v zgodovini. Kitajski astronomi so leta 687 pr. n. št. dokumentirali nevihto meteorjev, ki so padali "kot dež". Razbitine izvirajo iz kometa Thatcher, ki potrebuje 415 let za obhod Sonca in je notranjega osončja nazadnje obiskal leta 1861.
+    </string>
+
+    <string name="object_info_aquariids_description" translation_description="Description of the Eta Aquariids meteor shower shown in the info card. Translate this text.">
+    Eta Akvaridi so eden od dveh letnih meteornih rojev, ki jih povzroča razbitina Halleyjevega kometa. Z vrhuncem do 70 meteorjev na uro je roj posebej ugoden za južno poloblo, kjer se radianta pred zoro dvigne visoko. Tudi opazovalci na severu uživajo spoštljivo hitrost 30 ali več meteorjev na uro.
+    </string>
+    <string name="object_info_aquariids_funfact" translation_description="Fun fact about the Eta Aquariids meteor shower shown in the info card. Translate this text.">
+    Meteorji Eta Akvaridi potujejo s hitrostjo 66 km/s — dovolj hitro, da ioniziran zrak, ki ga ustvarijo, sveti še nekaj sekund potem, ko je meteor izginil. Morda boste videli Hallejev antični prah, ki se sežiga pred vašimi očmi, odvržen med enim od številnih obiskov kometa pred tisočletji.
+    </string>
+
+    <string name="object_info_deltaaquariids_description" translation_description="Description of the Delta Aquariids meteor shower shown in the info card. Translate this text.">
+    Južni Delta Akvaridi dosežejo vrhunec v poznem juliju in so najbolje vidni z tropskih in južnih zemljepisnih širin, kjer se radianta v Vodnarju dviga visoko pred zoro. Proizvajajo stalen tok meteorjev srednje hitrosti do 16 na uro, s malo svetlih ognenih krogel.
+    </string>
+    <string name="object_info_deltaaquariids_funfact" translation_description="Fun fact about the Delta Aquariids meteor shower shown in the info card. Translate this text.">
+    Natančen izvor meteorjev Delta Aquariids ostaja negotov. Vodilni kandidat je komet 96P/Machholz, nenavaden kratkoperiodičen komet z močno nagnjeno orbito, ki se nenavadno blizu približa Soncu — bliže kot planet Merkur.
+    </string>
+
+    <string name="object_info_perseids_description" translation_description="Description of the Perseids meteor shower shown in the info card. Translate this text.">
+    Perseidni so najbolj priljubljen meteorski roj leta, ki dosega vrhunec v toplih avgustovskih nočeh z do 100 meteorji na uro. Ruševina, ki jo izloči komet Swift-Tuttle, se sežge visoko v Zemljini atmosferi in ustvari hitre, svetle meteorje — mnogi puščajo trajne svetleče sledi — ki se sevajo iz ozvezdja Perzej.
+    </string>
+    <string name="object_info_perseids_funfact" translation_description="Fun fact about the Perseids meteor shower shown in the info card. Translate this text.">
+    Starš Perseidov, komet Swift-Tuttle, ima jedro široko 26 km — večje od predmeta, za katerega se misli, da je povzročil množično izumrtje, ki je končalo dobo dinozavrov. Komet je zadnjič prešel skozi notranji osončje leta 1992 in se ne bo vrnil do leta 2125.
+    </string>
+
+    <string name="object_info_orionids_description" translation_description="Description of the Orionids meteor shower shown in the info card. Translate this text.">
+    Orionidi so drugi meteorski pljusak, ki ga vsako leto proizvede Halleyjev komet, in sevajo blizu dvignjene palice Oriona. S približno 25 meteorji na uro so znani po hitrim, pogosto svetlih meteorjih, ki pogosto puščajo svetleče ionizacijske sledi, ki trajajo več sekund.
+    </string>
+    <string name="object_info_orionids_funfact" translation_description="Fun fact about the Orionids meteor shower shown in the info card. Translate this text.">
+    Halleyjev komet je odgovoren za dva letna meteorska roja: Eta Akvaridi v maju, ko Zemlja prečka kometnino sled odhajajoče trdne snovi, in Orionidi v oktobru, ko Zemlja prečka sled prihajajoče trdne snovi. Skupaj nam omogočata, da dvakrat letno vzorčimo starodavno Halleyevo prah.
+    </string>
+
+    <string name="object_info_leonids_description" translation_description="Description of the Leonids meteor shower shown in the info card. Translate this text.">
+    Leonidi izhajajo iz srpa Leva in običajno proizvajajo približno 20 meteorjev na uro. Sloviti so po spektakularnih nevihtah, ki se pojavijo približno vsakih 33 let, ko Zemlja preidejo skozi gost prašni filament, ki ga je izpustil komet 55P/Tempel-Tuttle. Te nevihte lahko proizvajajo tisoče meteorjev na uro.
+    </string>
+    <string name="object_info_leonids_funfact" translation_description="Fun fact about the Leonids meteor shower shown in the info card. Translate this text.">
+    Leonidska nevihta leta 1833 je proizvedla ocenjenih 100.000 meteorjev na uro, kar je prestrašilo opazovalce v Severni Ameriki, ki so se bali, da gori nebo. Dogodek je sprožil znanstveno preučevanje meteorskih rojev. Primerljive nevihte so se zgodile leta 1966 in 1999.
+    </string>
+
+    <string name="object_info_puppidvelids_description" translation_description="Description of the Puppid-Velids meteor shower shown in the info card. Translate this text.">
+    Puppidi-Velidi so kompleksen sistem prepletenih manjših meteorskih rojev, ki sevajo iz ozvezdij Puppis in Vela v južni Rimski cesti. Z vrhuncem okoli 10 meteorjev na uro so najbolje opazovani z južne poloble, kjer se radianta v decembrskem nebu dviga visoko.
+    </string>
+    <string name="object_info_puppidvelids_funfact" translation_description="Fun fact about the Puppid-Velids meteor shower shown in the info card. Translate this text.">
+    Puppidi-Velidi naj bi bili razbitine več različnih kometov-staršev in ne samo enega vira, vključno s kometom 26P/Grigg-Skjellerup. Njihov južni radiant se nikoli ne dvigne nad obzorje za opazovalce na zemljepisnih širinah severno od približno 40°S, kar jih naredi za meteorski roj, ki ga večina sveta redko vidi.
+    </string>
+
+    <string name="object_info_geminids_description" translation_description="Description of the Geminids meteor shower shown in the info card. Translate this text.">
+    Geminide se pogosto obravnavajo kot najboljši meteorski roj v letu — bogat (do 120 na uro), zanesljiv in aktiven že od zgodnjega večera, ne le po polnoči. Sevajo iz ozvezdja Gemini in proizvajajo širok spekter svetlosti meteorjev, vključno z živahnimi ognjenimi kroglami.
+    </string>
+    <string name="object_info_geminids_funfact" translation_description="Fun fact about the Geminids meteor shower shown in the info card. Translate this text.">
+    Geminidi so med glavnimi meteornimi rojem edini, ki izvirajo iz asteroida in ne iz kometa: 3200 Phaethon, »kamniti komet«, katerega orbita ga pripelje bliže Soncu kot kateri koli drugi poimenovani asteroid. Ekstremna toplota lahko razpoka njegovo kamnito površino in sprosti prah, ki ustvari meteorni roj.
+    </string>
+
+    <string name="object_info_ursids_description" translation_description="Description of the Ursids meteor shower shown in the info card. Translate this text.">
+    Ursidi so manjši meteorski roj, ki seva iz Malega medveda blizu Severnice, kar jih naredi cirkumpolarne za opazovalce na severni polobli — vidni vso noč brez zahajanja. Dosežejo vrh okoli zimskega solsticija z približno 10 meteorji na uro, matična kometa pa je 8P/Tuttle.
+    </string>
+    <string name="object_info_ursids_funfact" translation_description="Fun fact about the Ursids meteor shower shown in the info card. Translate this text.">
+    Ursidi občasno povzročijo nepričakovane izbruhe, ki so daleč nad njihovo tipično stopnjo. Leta 1945 in ponovno leta 2006 so opazovalci zabeležili 50 ali več meteorjev na uro — petkrat več od normalnega vrha. Ti porivi se pojavijo, ko Zemlja prehaja skozi nenavadno gosto trakovo ostankov, ki jo je izpustila kometa Tuttle med bližnjim pristopom.
+    </string>
+
+    <!-- Category 5: Top priority — objects on the map that lacked info cards -->
+    <string name="object_info_m47_description" translation_description="Description of the open star cluster M47 shown in the info card. Translate this text.">
+    M47 je svetla, ohlapna odprta kopica v Puppisu, ki je s prostim očesom zlahka vidna in privlačna v daljnogledu. Približno 50 zvezd je razpršenih čez pol stopinje neba, pri čemer več oranžnih velikanskih zvezd dodaja toplo barvo proti šibkejšim modro-belim članom.
+    </string>
+    <string name="object_info_m47_funfact" translation_description="Fun fact about M47 shown in the info card. Translate this text.">
+    M47 je bil eden od "izgubljenih" Messierjevih objektov — pisarniška napaka v Messierjevih prvotnih koordinatah ga je postavila v prazno nebo, kar je povzročilo, da je kopica ostala neidentificirana skoraj dve stoletji. Njegova prava identiteta kot NGC 2422 je bila potrjena šele leta 1959, ko so opazovalci delali nazaj od Messierjevega opisa, da bi našli napako.
+    </string>
+    <string name="object_info_m47_distance" translation_description="Distance to M47 shown in the info card. Translate units if appropriate for your locale.">1.600 svetlobnih let</string>
+    <string name="object_info_m47_size" translation_description="Physical size of M47 shown in the info card. Translate units if appropriate for your locale.">~14 svetlobnih let širine</string>
+
+    <string name="object_info_m41_description" translation_description="Description of the open star cluster M41 shown in the info card. Translate this text.">
+    M41 je lepa odprta zvezdna kopica v Velikem psu, ki se nahaja le 4° južno od Sirija — najsvetlejše zvezde na nočnem nebu. Vidna s prostim očesom z temnih lokacij in spektakularna v daljnogledu, vsebuje približno 100 zvezd, razporejenih na velikem polju, z več udarnima oranžnima velikanskima zvezdama med šibkejšimi modro-belimi člani.
+    </string>
+    <string name="object_info_m41_funfact" translation_description="Fun fact about M41 shown in the info card. Translate this text.">
+    Aristotel je morda opazil M41 okrog leta 325 pr. n. št. — mogoče najzgodnejše zabeleženo opazovanje katerega koli globokosvečnega objekta. Opisal je "megleno pego" južno od Sirija, ki se ujema s položajem M41. Če je identifikacija pravilna, se je o M41 razpravljalo skoraj dve tisoči let pred izumom teleskopa.
+    </string>
+    <string name="object_info_m41_distance" translation_description="Distance to M41 shown in the info card. Translate units if appropriate for your locale.">2.300 svetlobnih let</string>
+    <string name="object_info_m41_size" translation_description="Physical size of M41 shown in the info card. Translate units if appropriate for your locale.">~25 svetlobnih let širine</string>
+
+    <string name="object_info_m24_description" translation_description="Description of the Sagittarius Star Cloud (M24) shown in the info card. Translate this text.">
+    M24 je Sagitarijev zvezdni oblak — ne gruča ali meglica, temveč okno skozi vrzel v prahu Mlečne poti, ki razkriva bleščeče zvezdno polje, ki je široko 2°. To je najbogatejša regija, vidna skozi daljnogled kjerkoli na nebu, napolnjena s tisočimi zvezd, ki se raztezajo na številnih različnih razdaljah hkrati.
+    </string>
+    <string name="object_info_m24_funfact" translation_description="Fun fact about M24 shown in the info card. Translate this text.">
+    Zvezde v M24 niso na enaki razdalji — zvezdna oblaka predstavlja prečni prerez Galaksijskega diska, viden skozi naravni tunel v medzvezdnem prahu, ki se razteza na razdalje od 10.000 do 16.000 svetlobnih let. V oblaki so vdelane temne meglice in majhni zvezdni kopici, ki se pojavljajo kot temne lise na sijajni zvezdni ozadju.
+    </string>
+    <string name="object_info_m24_distance" translation_description="Distance range to M24 shown in the info card. Translate units if appropriate for your locale.">~10.000–16.000 svetlobnih let (razpon)</string>
+    <string name="object_info_m24_size" translation_description="Physical size of M24 shown in the info card. Translate units if appropriate for your locale.">~600 svetlobnih let globoko okno</string>
+
+    <string name="object_info_m25_description" translation_description="Description of the open star cluster M25 shown in the info card. Translate this text.">
+    M25 je svetla, s prostim očesom vidna odprta zvezdna kopica v Strelcu, postavljena proti gostim zvezdnim poljem poletne Rimske ceste. Približno 600 zvezd je razpršenih čez polje pol stopinje, kar jo naredi bogat predmet za daljnogled. Njeni najsvetlejši člani vključujejo več modrih-belih supergigantov in eno najbolj proučevanih spremenljivih zvezd Cefeid na nebu.
+    </string>
+    <string name="object_info_m25_funfact" translation_description="Fun fact about M25 shown in the info card. Translate this text.">
+    M25 vsebuje U Sagittarii, klasično spremenljivo zvezdo tipa Cefeid, ki se sija in bledi v obdobju 6,7 dni. Cefeide so ključne »standardne sveče« za merjenje kozmičnih razdalj, ker njihovo periodo pulsiranja neposredno razkrije njihovo pravo svetilnost — astronomi so jih uporabili, da so najprej določili velikost Rimske ceste in nato obseg opazljivega vesolja.
+    </string>
+    <string name="object_info_m25_distance" translation_description="Distance to M25 shown in the info card. Translate units if appropriate for your locale.">2.000 svetlobnih let</string>
+    <string name="object_info_m25_size" translation_description="Physical size of M25 shown in the info card. Translate units if appropriate for your locale.">~19 svetlobnih let širine</string>
+
+    <string name="object_info_m39_description" translation_description="Description of the open star cluster M39 shown in the info card. Translate this text.">
+    M39 je velik, razpršen odprt zvezdni kopič v Labodu, viden s prostim očesom blizu Deneba v bogati poletni Rimski cesti. Njegovih približno 30 svetlih zvezd je ohlapno razporejenih na stopinjo neba, najbolje vidnih pri nizki povečavi v daljnogledu ali teleskopom s širokim poljem - večja povečava ga preprosto razreši v redko, neopazno polje zvezd.
+    </string>
+    <string name="object_info_m39_funfact" translation_description="Fun fact about M39 shown in the info card. Translate this text.">
+    M39 je na razdalji približno 825 svetlobnih let in je eno od najbližjih odprtih kopic Zemlji. S starostjo približno 240 milijonov let je eno od starejših kopic, vidnih s prostim očesom — dovolj stara, da so njene najbolj masivne zvezde že končale svoje življenje. Messier jo je zabeležil leta 1764 in je bila med najzgodnejšimi dodatki njegovega kataloga.
+    </string>
+    <string name="object_info_m39_distance" translation_description="Distance to M39 shown in the info card. Translate units if appropriate for your locale.">825 svetlobnih let</string>
+    <string name="object_info_m39_size" translation_description="Physical size of M39 shown in the info card. Translate units if appropriate for your locale.">~8 svetlobnih let širine</string>
+
+    <!-- Category 5: Special cases -->
+    <string name="object_info_m63_description" translation_description="Description of the Sunflower Galaxy (M63) shown in the info card. Translate this text.">
+    Galaksija Sončnica je svetla spiralna galaksija v ozvezdju Lovska psa, katere tesno navite kraki, pstreni s področji tvorbe zvezd, ji v dolgih ekspozicijah dajejo značilno teksturo, podobno rožici. Pri magnitudi 8,6 je vidna v daljnogledu s temnega neba in v majhnih teleskopih jasno kaže svojo podolgovato obliko in svetel jedro.
+    </string>
+    <string name="object_info_m63_funfact" translation_description="Fun fact about the Sunflower Galaxy shown in the info card. Translate this text.">
+    M63 je odkril Pierre Méchain leta 1779 — eden izmed redkih Messierjevih objektov, ki ga je odkril Méchain namesto Messierja samega. Je član M51 skupine, fizično povezan s Whirlpool galaksijo (M51), in kaže znake pretekle interakcije: šibak, star zvezdni tok se vije okrog njegovega zunanjega diska.
+    </string>
+    <string name="object_info_m63_distance" translation_description="Distance to the Sunflower Galaxy shown in the info card. Translate units if appropriate for your locale.">29 milijonov svetlobnih let</string>
+    <string name="object_info_m63_size" translation_description="Physical size of the Sunflower Galaxy shown in the info card. Translate units if appropriate for your locale.">~100.000 svetlobnih let širine</string>
+
+    <string name="object_info_ngc_6543_description" translation_description="Description of the Cat's Eye Nebula (NGC 6543) shown in the info card. Translate this text.">
+    Meglica Mačje oko je ena od najbolj strukturno zapletenih planetarnih meglic, ki jih poznamo — izgnani plin umirajoče zvezde je oblikovan v koncentrične lupine, curke in svetle vozle, vidne na posnetkih Hubbla. V majhnih teleskopih se pojavi kot živahna modro-zelena plošča v Zmaju, eden najbolj barvitih objektov na jesenskem nebu.
+    </string>
+    <string name="object_info_ngc_6543_funfact" translation_description="Fun fact about the Cat's Eye Nebula shown in the info card. Translate this text.">
+    Leta 1864 je astronom William Huggins usmeril spektroskop na Mačje oko in odkril, da je sestavljeno iz svetlečega plina in ne iz nerazrešenih zvezd — prvič je bila potrjena narava kateregakoli planetarne meglice. To odkritje je utemeljilo področje spektroskopije meglice in ovrglo prevladujočo predstavo, da so vse meglice oddaljeni zvezdni kopički.
+    </string>
+    <string name="object_info_ngc_6543_distance" translation_description="Distance to the Cat's Eye Nebula shown in the info card. Translate units if appropriate for your locale.">~3.300 svetlobnih let</string>
+    <string name="object_info_ngc_6543_size" translation_description="Physical size of the Cat's Eye Nebula shown in the info card. Translate units if appropriate for your locale.">~0,5 svetlobnih let premera</string>
+
+    <string name="object_info_m76_description" translation_description="Description of the Little Dumbbell Nebula (M76) shown in the info card. Translate this text.">
+    Majhna ročica je planetarna meglica v Perzeeju z značilno obliko osmice — manjša sestrična M27, Ročice v Lisičarki. Čeprav je najšibkejši vnos v Messierov katalog, nagrajuje potrpljivo opazovanje v majhnih teleskopih in kaže lepo strukturo v večjih instrumentih, z dvema svetlejšima režnjema ob obeh straneh šibkejšega pasu.
+    </string>
+    <string name="object_info_m76_funfact" translation_description="Fun fact about the Little Dumbbell Nebula shown in the info card. Translate this text.">
+    M76 je bil prvotno katalogiziran kot dva ločena objekta — NGC 650 in NGC 651 — ker so zgodnji opazovalci opisali dve svetli reji neodvisno. Gre za bipolarna planetarno meglico, ki je nastala, ko je bil iztok umirajoče zvezde stisnjen na ekvatorju, kar je ustvarilo dve razširjajoči se reji vzdolž polarnih osi, medtem ko se plin tudi razširja na pasu.
+    </string>
+    <string name="object_info_m76_distance" translation_description="Distance to the Little Dumbbell Nebula shown in the info card. Translate units if appropriate for your locale.">~2.500 svetlobnih let</string>
+    <string name="object_info_m76_size" translation_description="Physical size of the Little Dumbbell Nebula shown in the info card. Translate units if appropriate for your locale.">~2 svetlobni leti v premeru</string>
+
+    <string name="object_info_v838_mon_description" translation_description="Description of V838 Monocerotis shown in the info card. Translate this text.">
+    V838 Monocerotis je nenavadna spremenljiva zvezda v ozvezdju Monoceros, ki je leta 2002 doživela spektakularen izbruh in se je na kratko uvrstila med najbolj svetleče zvezde v Rimski cesti. Čeprav je danes za vizualne opazovalce premalo svetla, je njena razširjajoča se svetlobna odmeva — valovna fronta svetlobe, ki osvetljuje stare plasti prahu — ustvarila nekatere najbolj dramatične slike, ki jih je kdaj posnel Hubbleov vesoljski teleskop.
+    </string>
+    <string name="object_info_v838_mon_funfact" translation_description="Fun fact about V838 Monocerotis shown in the info card. Translate this text.">
+    Narava izbruha V838 Mon ostaja predmet razprav. Prevladujoča teorija je zvezdna fuzija — dve zvezdi, ki se spiralno približujeta druga drugi in trčita — namesto klasične nove ali erupcije supergiganta. Če se to potrdi, je bil to prvi pogled v realnem času na »svetlo rdečo novo«, redko vrsto eksplozije, ki jo povzročijo zvezdne fuzije; podobni dogodki so bili od takrat najdeni tudi v drugih galaksijah.
+    </string>
+    <string name="object_info_v838_mon_distance" translation_description="Distance to V838 Monocerotis shown in the info card. Translate units if appropriate for your locale.">~20.000 svetlobnih let</string>
+    <string name="object_info_v838_mon_size" translation_description="Extent of the V838 Monocerotis light echo shown in the info card. Translate units if appropriate for your locale.">~3 svetlobni leti (obseg svetlobnega odmeva)</string>
+
+    <string name="object_info_hdf_description" translation_description="Description of the Hubble Deep Field shown in the info card. Translate this text.">
+    Hubble Deep Field je majhen 2,6-arcminutni delček navidezno praznega neba v Veliki medvedici, ki ga je Hubbleov vesoljski teleskop fotografiral v 10 zaporednih dneh decembra 1995. Kar se je zdelo kot prazen prostor, je razkrilo približno 3000 galaksij — ki segajo milijarde let kozmične zgodovine — in temeljito spremenilo našo predstavo o vesolju.
+    </string>
+    <string name="object_info_hdf_funfact" translation_description="Fun fact about the Hubble Deep Field shown in the info card. Translate this text.">
+    Območje neba je bilo izbrano posebej, ker je bilo prazno svetlih zvezd in bližnjih galaksij. Vendar je bila nastala slika polna približno 3.000 galaksij, kar je vodilo do ocene, da celotno nebo vsebuje približno 200 milijard galaksij — skoraj vse so bile nevidne za kateri koli teleskop pred Hubblom.
+    </string>
+    <string name="object_info_hdf_distance" translation_description="Distance to the most distant galaxies in the Hubble Deep Field shown in the info card. Translate units if appropriate for your locale.">~13 milijard svetlobnih let (najbolj oddaljeni)</string>
+    <string name="object_info_hdf_size" translation_description="Angular size of the Hubble Deep Field shown in the info card.">2,6 ločnih minut (vidno polje)</string>
+
+    <string name="object_info_m43_description" translation_description="Description of De Mairan's Nebula (M43) shown in the info card. Translate this text.">
+    De Mairanove meglice je odtrgana del velikega kompleksa Orionove meglice, ločena od M42 s temno prašno linijo, vendar pripada istemu ogromnem molekulskemu oblaku. Poimenovana je po francoskem astronomu Jean-Jacquesu Dortousu de Mairanu, ki jo je opazil leta 1731. Gre za emisijsko meglico, ioniziran s toplo mlado zvezdo NU Orionis, ki je vdelana v njeno sredino.
+    </string>
+    <string name="object_info_m43_funfact" translation_description="Fun fact about De Mairan's Nebula shown in the info card. Translate this text.">
+    Čeprav se M43 pojavi kot ločen predmet od M42, je temna črta, ki ju deli, oblak prahu v ospredju — del Orionskega molekularnega oblaka — ki preprosto blokira naš pogled na fizično povezavo med obema svetlečima regijama. Skupaj sta le osvetljena notranja robova ogromnega temnega oblaka, ki se razprostira čez večji del Oriona.
+    </string>
+    <string name="object_info_m43_distance" translation_description="Distance to De Mairan's Nebula shown in the info card. Translate units if appropriate for your locale.">1.350 svetlobnih let</string>
+    <string name="object_info_m43_size" translation_description="Physical size of De Mairan's Nebula shown in the info card. Translate units if appropriate for your locale.">~8 svetlobnih let v premeru</string>
+
+    <string name="object_info_m40_description" translation_description="Description of M40 (Winnecke 4) shown in the info card. Translate this text.">
+    M40 je edinstven v Messierjevem katalogu — ni meglica, kopica ali galaksija, temveč široki dvojni zvezdni sistem. Messier ga je katalogiziral leta 1764 med iskanjem meglice, ki jo je poročal Johann Hevelius v Veliki medvedici, našel pa je le ta par zvezd in ga zapisal, da bi prihodnji opazovalci ne bi zamenjali za kaj bolj zanimivega.
+    </string>
+    <string name="object_info_m40_funfact" translation_description="Fun fact about M40 shown in the info card. Translate this text.">
+    Dve zvezdi M40 — znani kot Winnecke 4 — nista gravitacijsko vezani; ležita na različnih razdaljah in sta le naključno poravnani. Messier sam je opazil, da ni bilo »nič posebnega«, vendar ga je vključil »da pokaže, da ta meglica ni enaka tistim, ki sem jih preučil.« Njegova metodična navada dokumentiranja negativnih rezultatov je dala prihodnjim opazovalcem jasno referenco.
+    </string>
+    <string name="object_info_m40_distance" translation_description="Distance to M40 shown in the info card. Translate units if appropriate for your locale.">~500 svetlobnih let</string>
+    <string name="object_info_m40_size" translation_description="Angular separation of the M40 double star shown in the info card.">~50 ločnih sekund (ločitev)</string>
+
+    <!-- Category 5: Second tier -->
+    <string name="object_info_m34_description" translation_description="Description of the open star cluster M34 shown in the info card. Translate this text.">
+    M34 je svetel, razpršen odprt zvezdni kopič v Perzeeju, ki ga je mogoče zlahka videti v daljnogledu kot bogato razpršitev zvezd pred zimsko Rimsko cesto. Njegovih približno 400 zvezd pokriva območje, ki je skoraj tako široko kot polna Luna, z nekaj vidnimi dvojnimi zvezdam za pozorne opazovalce z daljnogledom.
+    </string>
+    <string name="object_info_m34_funfact" translation_description="Fun fact about M34 shown in the info card. Translate this text.">
+    Star M34 je star približno 200 milijonov let in je v vmesni starosti — dovolj mlad, da njegove vroče modre zvezde še vedno svetijo, dovolj star, da so se najbolj masivne že eksplodirale kot supernovae. Na razdalji 1500 svetlobnih let je ena izmed bližjih Messierjevih kopulj in ostaja čudovit objekt tudi z neba v predmestjih.
+    </string>
+    <string name="object_info_m34_distance" translation_description="Distance to M34 shown in the info card. Translate units if appropriate for your locale.">1.500 svetlobnih let</string>
+    <string name="object_info_m34_size" translation_description="Physical size of M34 shown in the info card. Translate units if appropriate for your locale.">~15 svetlobnih let v premeru</string>
+
+    <string name="object_info_m23_description" translation_description="Description of the open star cluster M23 shown in the info card. Translate this text.">
+    M23 je bogat odprt zvezdni kopič v Strelcu, vgrajen v gostih zvezdnih poljih poletne Rimske ceste. Približno 150 zvezd je razporejenih na polstopinjskem polju v daljnogledu, kar ga naredi velikodušen predmet za daljnogled v istem območju neba kot mnogi drugi Messierjev dragulji.
+    </string>
+    <string name="object_info_m23_funfact" translation_description="Fun fact about M23 shown in the info card. Translate this text.">
+    M23 je ocenjena na približno 300 milijonov let — srednje stara, z večino njenih masivnih zvezd, ki so že zapustile glavno zaporedje. Messier jo je odkril leta 1764 med enim od svojih plodnih opazovalnih kampanj, ki so preiskale polja zvezd v Strelcu.
+    </string>
+    <string name="object_info_m23_distance" translation_description="Distance to M23 shown in the info card. Translate units if appropriate for your locale.">2.150 svetlobnih let</string>
+    <string name="object_info_m23_size" translation_description="Physical size of M23 shown in the info card. Translate units if appropriate for your locale.">~17 svetlobnih let v premeru</string>
+
+    <string name="object_info_m37_description" translation_description="Description of the open star cluster M37 shown in the info card. Translate this text.">
+    M37 je najbogatejši in najsvetlejši od treh Messierjevih odprtih kopic v Aurigii, ki vsebuje ocenjenih 500 zvezd na kompaktnem področju. Je spektakularen predmet za dvogled in mali teleskop, z razpršenostjo oranžnih velikanskih zvezd, ki dodajajo barvni kontrast modro-belemu roju.
+    </string>
+    <string name="object_info_m37_funfact" translation_description="Fun fact about M37 shown in the info card. Translate this text.">
+    M37 vsebuje približno ducat rdečih velikanskih zvezd — nenavadno visoko število, ki odraža njeno relativno napredovano starost približno 300 milijonov let. Čeprav je oddaljena približno 4500 svetlobnih let — najbolj oddaljena od treh Messierjevih gruč v Vozaču — je še vedno med najlepšimi odprtimi gruči na nebu.
+    </string>
+    <string name="object_info_m37_distance" translation_description="Distance to M37 shown in the info card. Translate units if appropriate for your locale.">4.500 svetlobnih let</string>
+    <string name="object_info_m37_size" translation_description="Physical size of M37 shown in the info card. Translate units if appropriate for your locale.">~31 svetlobnih let v premeru</string>
+
+    <string name="object_info_m48_description" translation_description="Description of the open star cluster M48 shown in the info card. Translate this text.">
+    M48 je velika, svetla odprta zvezdna kopica v Hydri, ki se razprostira na skoraj eno stopinjo neba in je vidna s prostim očesom z temnih lokacij. Njenih približno 80 zvezd je razpršenih ohlapno čez široko polje, ki je najbolje primerno za daljnogled, s sipanjem oranžnih in rumenih velikanskih zvezd med svetlejšimi modro-belimi člani.
+    </string>
+    <string name="object_info_m48_funfact" translation_description="Fun fact about M48 shown in the info card. Translate this text.">
+    M48 je bil eden od "izgubljenih" Messierjevih objektov skoraj dve stoletji, ker je bila Messierova zabeležena pozicija približno 5° oddaljena od prave lokacije. Ostal je neidentificiran do leta 1959, ko je bil primerjan z NGC 2548 in se je pokazalo, da je bila preprosta napaka pri prepisovanju vzrok, da je bil postavljen v prazno nebo ves čas.
+    </string>
+    <string name="object_info_m48_distance" translation_description="Distance to M48 shown in the info card. Translate units if appropriate for your locale.">1.500 svetlobnih let</string>
+    <string name="object_info_m48_size" translation_description="Physical size of M48 shown in the info card. Translate units if appropriate for your locale.">~23 svetlobnih let v premeru</string>
+
+    <string name="object_info_m21_description" translation_description="Description of the open star cluster M21 shown in the info card. Translate this text.">
+    M21 je kompaktna odprta zvezdna kopica v Strelcu, ki se nahaja le pol stopinje severno od Trifidne meglice (M20), kar ju naredi izjemno binokularno kombinacijo. Kopica vsebuje približno 57 zvezd, koncentriranih na manjšem področju kot številne Messierove kopice, z več svetlimi modro-belimi zvezdam kot prevladujočimi člani.
+    </string>
+    <string name="object_info_m21_funfact" translation_description="Fun fact about M21 shown in the info card. Translate this text.">
+    Čeprav sta M21 in M20 (Trifidna meglica) fizično nepovezana, tvorita enega najbolj privlačnih binokularnih parov v poletnem nebu — svetlo zvezdno kopico ob barviti tri-režnjasti meglici. M21 je oddaljen približno 4.250 svetlobnih let, medtem ko je M20 nekoliko bližje, približno 4.100 svetlobnih let.
+    </string>
+    <string name="object_info_m21_distance" translation_description="Distance to M21 shown in the info card. Translate units if appropriate for your locale.">4.250 svetlobnih let</string>
+    <string name="object_info_m21_size" translation_description="Physical size of M21 shown in the info card. Translate units if appropriate for your locale.">~16 svetlobnih let v premeru</string>
+
+    <string name="object_info_m50_description" translation_description="Description of the open star cluster M50 shown in the info card. Translate this text.">
+    M50 je svetel odprt zvezdni kopič v Enorogu, ki vsebuje približno 200 zvezd stisnjenih v presenetljivo kompaktno polje, primerno za daljnogled in majhove teleskope. Enostavno ga najdete na črti med Siriusom in Procyonom in vsebuje opazno rdečo orjakinjo — toplo oranžno svetilko, ki se živahno izstopa med modro-belimi zvezdam kopička.
+    </string>
+    <string name="object_info_m50_funfact" translation_description="Fun fact about M50 shown in the info card. Translate this text.">
+    M50 je ocenjen na približno 78 milijonov let — ena izmed mlajših Messierjevih odprtih kopic — kar pomeni, da so njegovi vroči modri in beli zvezde še vedno v razvoju, pri čemer se je nekaj bolj masivnih članov nedavno razširilo v velikane. To je značilno za kopico v njeni zgodnji srednji starosti.
+    </string>
+    <string name="object_info_m50_distance" translation_description="Distance to M50 shown in the info card. Translate units if appropriate for your locale.">3.200 svetlobnih let</string>
+    <string name="object_info_m50_size" translation_description="Physical size of M50 shown in the info card. Translate units if appropriate for your locale.">~15 svetlobnih let v premeru</string>
+
+    <string name="object_info_m36_description" translation_description="Description of the open star cluster M36 shown in the info card. Translate this text.">
+    M36 je najmanjša in najmlajša od treh odprtih kopic, ki jih je Messier katalogiziral v Aurigii. Približno 60 njenih zvezd je zbrano v tesno, svetlečo polje, vidno v daljnogledu in dobro razločeno na posamezne zvezde v majhnem teleskopu, ki ga prevladujejo vroče modro-bele zvezde.
+    </string>
+    <string name="object_info_m36_funfact" translation_description="Fun fact about M36 shown in the info card. Translate this text.">
+    M36 je ocenjen na le približno 25 milijonov let star — eden izmed mlajših Messierjevih kopic — kar pomeni, da masivne modro-bele zvezde še vedno prevladujejo in se rdeči velikani še niso pojavili. Deli polje zvezd Voznika z M37 in M38, in vsi trije kopici se prilegajo istemu širokokotnemu dvogledu.
+    </string>
+    <string name="object_info_m36_distance" translation_description="Distance to M36 shown in the info card. Translate units if appropriate for your locale.">4.100 svetlobnih let</string>
+    <string name="object_info_m36_size" translation_description="Physical size of M36 shown in the info card. Translate units if appropriate for your locale.">~14 svetlobnih let v premeru</string>
+
+    <string name="object_info_m46_description" translation_description="Description of the open star cluster M46 shown in the info card. Translate this text.">
+    M46 je bogato in gosto odprto zvezdno kopico v Puppisu s približno 500 zvezd, stisnjenih v široko polje, ki je presenetljiva v daljnogledi in lepa v majhnih teleskopih. Izjemna posebnost plava na njegovem severnem robu: NGC 2438, majhna planetarna meglica, ki se zdi, da je vgrajena v kopico — dramatična naključna poravnava vzdolž vidne črte.
+    </string>
+    <string name="object_info_m46_funfact" translation_description="Fun fact about M46 shown in the info card. Translate this text.">
+    Planetarna meglica NGC 2438 se zdi, da je v M46, vendar je pravzaprav nepovezan predmet v ospredju na zelo različni razdalji — približno 1.400 svetlobnih let v primerjavi z M46\'s 5.400. Naključje, da je lupina umirajoče zvezde naložena na mlado zvezdno kopico, to naredi eno najbolj fotografičnih polj v katalogu.
+    </string>
+    <string name="object_info_m46_distance" translation_description="Distance to M46 shown in the info card. Translate units if appropriate for your locale.">5.400 svetlobnih let</string>
+    <string name="object_info_m46_size" translation_description="Physical size of M46 shown in the info card. Translate units if appropriate for your locale.">~42 svetlobnih let v premeru</string>
+
+    <string name="object_info_m93_description" translation_description="Description of the open star cluster M93 shown in the info card. Translate this text.">
+    M93 je svetel, kompakten odprti zvezdni kopič v Puppisu, ki se nahaja v bogatem južnem Rimski poti in ga je mogoče enostavno najti s daljnogledom. Njegovih približno 80 zvezd je razporejenih v presenetljivo klinasto ali metuljevo obliko in vključuje več vročih modrih supergigantov, kar ga naredi enega bolj privlačnih odprtih zvezdnih kopičev na zimskem nebu.
+    </string>
+    <string name="object_info_m93_funfact" translation_description="Fun fact about M93 shown in the info card. Translate this text.">
+    M93 je relativno mlad — star je približno 100 milijonov let — z dominantnimi modrimi in modro-belimi zvezdam, ki se še niso razvile v velikane. Je no od bolj južnih Messierjevih kopic, in z zemljepisnih širin severno od približno 50°S se nikoli ne dvigne zelo visoko nad obzorjem.
+    </string>
+    <string name="object_info_m93_distance" translation_description="Distance to M93 shown in the info card. Translate units if appropriate for your locale.">3.600 svetlobnih let</string>
+    <string name="object_info_m93_size" translation_description="Physical size of M93 shown in the info card. Translate units if appropriate for your locale.">~23 svetlobnih let v premeru</string>
+
+    <string name="object_info_m38_description" translation_description="Description of the open star cluster M38 shown in the info card. Translate this text.">
+    M38 je največja in najbolj razširjena od treh odprtih kopic, ki jih je Messier katalogiziral v Aurigii. Njegovih približno 100 zvezd je razporejenih v vzorec, ki ga nekateri opazovalci primerjajo s križem ali grško črko pi, viden v daljnogledu in dobro razločen v majhnem teleskopu. Manjša kopa NGC 1907 se nahaja blizu na jugu.
+    </string>
+    <string name="object_info_m38_funfact" translation_description="Fun fact about M38 shown in the info card. Translate this text.">
+    M38 je najstarejše od treh Messierjeve gruče v Vozaču, staro približno 220 milijonov let. Dovolj stara je, da so se nekateri njeni masivni zvezdi razvili v rumene in oranžne velikane. Bližnja gruča NGC 1907 se lahko prilega istemu polju z nizko povečavo, kar ju naredi odličen par za dvogled — kot sta M46 in M47 v Psu.
+    </string>
+    <string name="object_info_m38_distance" translation_description="Distance to M38 shown in the info card. Translate units if appropriate for your locale.">4.200 svetlobnih let</string>
+    <string name="object_info_m38_size" translation_description="Physical size of M38 shown in the info card. Translate units if appropriate for your locale.">~26 svetlobnih let v premeru</string>
+
+    <string name="object_info_m29_description" translation_description="Description of the open star cluster M29 shown in the info card. Translate this text.">
+    M29 je majhna, mlada odprta zvezdna kopica v Labodu, postavljena proti enemu najbolj prahu zasenčenih območij Rimske ceste. Pet svetlih modrih supergigantov dominira kopico, vidnih v daljnogledu kot tesna asterizma vročih, svetlih zvezd. Brez gostega prahu v ospredju bi bila M29 ena najbolj spektakularnih odprtih zvezdnih kopic na nebu.
+    </string>
+    <string name="object_info_m29_funfact" translation_description="Fun fact about M29 shown in the info card. Translate this text.">
+    M29 je ocenjen na le približno 10 milijonov let star — dojenček zvezd — in se nahaja v asociaciji Cygnus OB1, razprostranjena skupina masivnih mladih zvezd. Gosta medzvezdna prašina zmanjša svetlost gruče za približno 3 magnitude; brez te zasenčitve bi zvezde M29 svetile večkrat bolj svetlo, kot se dejansko zdijo.
+    </string>
+    <string name="object_info_m29_distance" translation_description="Distance to M29 shown in the info card. Translate units if appropriate for your locale.">4.000 svetlobnih let</string>
+    <string name="object_info_m29_size" translation_description="Physical size of M29 shown in the info card. Translate units if appropriate for your locale.">~8 svetlobnih let v premeru</string>
+
+    <string name="object_info_m62_description" translation_description="Description of the globular cluster M62 shown in the info card. Translate this text.">
+    M62 je bogat kroglasti zvezdni sistem v Ophiuchu — eden izmed najbližjih kroglastih sistemov galaktičnemu jedru in opazno asimetričen, s zvezdam, ki so na južni strani gosteje napakovane. Pri magnitudi 6,6 je odličen predmet za dvogled, čeprav njegova nizka deklinacija naredijo, da je za severozahodne opazovalce le kratko-sezonski cilj.
+    </string>
+    <string name="object_info_m62_funfact" translation_description="Fun fact about M62 shown in the info card. Translate this text.">
+    Ekscentrično jedro M62 je neposredna posledica njegove bližine galaktičnemu centru — moči plimske sile iz osrednjega izbokka izkrivljajo kopico in vlečejo zvezde proti galaktični ravnini. Je tudi ena najbolj dinamično razvitih globularnih kopic, ki kaže znake kolapsa jedra in nenavadno visoko gostoto milisekundnih pulzarjev.
+    </string>
+    <string name="object_info_m62_distance" translation_description="Distance to M62 shown in the info card. Translate units if appropriate for your locale.">22.500 svetlobnih let</string>
+    <string name="object_info_m62_size" translation_description="Physical size of M62 shown in the info card. Translate units if appropriate for your locale.">~92 svetlobnih let v premeru</string>
+
+    <string name="object_info_m28_description" translation_description="Description of the globular cluster M28 shown in the info card. Translate this text.">
+    M28 je kompakten globularni zvezdni kopič v Strelcu, ki se nahaja blizu svetle zvezde Lambda Sagittarii v bogatih poletnih zvezdnih poljih. Pri magnitudi 6,9 je privlačen cilj za dvogled in je dobro razločljiv v majhnih teleskopih, pri čemer je viden svetel zbiti jedro, obdano z zmerno aureolo zvezd.
+    </string>
+    <string name="object_info_m28_funfact" translation_description="Fun fact about M28 shown in the info card. Translate this text.">
+    Leta 1987 je bil M28 prvi kroglasti zvezdni kopič, v katerem je bil odkrit milisekundni pulzar. Milisekundni pulzarji — nevtronske zvezde, ki se vrtijo stokrat na sekundo — nastanejo, ko nevtronska zvezda akrecira snov od spremljevalne zvezde, in se v kroglastih zvezdnih kopičih pojavljajo s precej višjo frekvenco kot v splošni galaksiji, ker njihova gosta zvezdna okolja povzročajo veliko več tesnih dvojnih srečanj.
+    </string>
+    <string name="object_info_m28_distance" translation_description="Distance to M28 shown in the info card. Translate units if appropriate for your locale.">18.300 svetlobnih let</string>
+    <string name="object_info_m28_size" translation_description="Physical size of M28 shown in the info card. Translate units if appropriate for your locale.">~60 svetlobnih let v premeru</string>
+
+    <string name="object_info_m52_description" translation_description="Description of the open star cluster M52 shown in the info card. Translate this text.">
+    M52 je bogat odprt zvezdni kopič v Kasiopeji, ki vsebuje približno 200 zvezd, stisnjenih v kompaktno območje severne Rimske ceste. Je odličen dvogledi kopič in v majhnih teleskopih kaže lepo, gosto zvezdno polje s posebej svetlejšo oranžno zvezdo, ki izstopa blizu južnega roba kopička.
+    </string>
+    <string name="object_info_m52_funfact" translation_description="Fun fact about M52 shown in the info card. Translate this text.">
+    Razdalja M52 je nenavadno negotova — ocene se gibljejo od 3000 do 7000 svetlobnih let — ker gosta medzvezdna prašina vzdolž te smeri opazovanja otežuje določitev njegove prave svetilnosti. Messier ga je odkril leta 1774, iste noči, ko je sledil kometu, ki ga je vodil k zapisanju več drugih vnosov v katalog.
+    </string>
+    <string name="object_info_m52_distance" translation_description="Distance to M52 shown in the info card. Translate units if appropriate for your locale.">~5.000 svetlobnih let</string>
+    <string name="object_info_m52_size" translation_description="Physical size of M52 shown in the info card. Translate units if appropriate for your locale.">~25 svetlobnih let v premeru</string>
+
+    <string name="object_info_m67_description" translation_description="Description of the open star cluster M67 shown in the info card. Translate this text.">
+    M67 je lepa odprta zvezdna kopica v Raku in ena najstarejših dobro proučenih odprtih zvezdnih kopičev na nebu. Stara je približno 3,2–3,5 milijarde let in vsebuje številne zvezde, podobne po masi in starosti našemu Soncu – kar jo naredi naravno laboratorijo za proučevanje, kako se zvezde, podobne Soncu, razvijajo skozi kozmični čas.
+    </string>
+    <string name="object_info_m67_funfact" translation_description="Fun fact about M67 shown in the info card. Translate this text.">
+    Več zvezd v M67 se po temperaturi, masi in starosti tesno podobi Soncu — redka kombinacija, ki je raziskovalce vodila k razmisleku, ali je Sonce samo izviralo iz gruče, kot je M67. Ker se zvezde rojevajo v gručah, ki se postopoma razpršijo, je Sonce skoraj gotovo prišlo iz zdaj razpršene skupine sorodnih zvezd pred milijardami let — čeprav katere gruče nikoli ni bilo mogoče identificirati.
+    </string>
+    <string name="object_info_m67_distance" translation_description="Distance to M67 shown in the info card. Translate units if appropriate for your locale.">2.700 svetlobnih let</string>
+    <string name="object_info_m67_size" translation_description="Physical size of M67 shown in the info card. Translate units if appropriate for your locale.">~24 svetlobnih let v premeru</string>
+
+    <string name="object_info_m55_description" translation_description="Description of the globular cluster M55 shown in the info card. Translate this text.">
+    M55 je velika, ohlapna kroglasta kopica v Strelcu — ena izmed najbolj razširjenih in najmanj koncentriranih med vsemi Messierjevimi kroglastimi kopicami. Tudi pri nizki povečavi se zlahka razloži na posamezne zvezde, z granularno teksturo vidno v daljnogledi. Njena nizka južna deklinacija omejuje vidljivost s severnih zemljepisnih širin, vendar je spektakularna s južne poloble.
+    </string>
+    <string name="object_info_m55_funfact" translation_description="Fun fact about M55 shown in the info card. Translate this text.">
+    Nenavadna nizka zvezdna koncentracija M55 mu daje videz bogatega odprtega zvezdnega jata namesto tipičnega kroglastega jata. Njegove zvezde so razpršene po območju, ki je široko skoraj 100 svetlobnih let, kar nakazuje, da je lastna gravitacija jata relativno šibka v primerjavi z bolj centralno zgoščenimi kroglastimi jati, kot sta M13 ali M3.
+    </string>
+    <string name="object_info_m55_distance" translation_description="Distance to M55 shown in the info card. Translate units if appropriate for your locale.">17.600 svetlobnih let</string>
+    <string name="object_info_m55_size" translation_description="Physical size of M55 shown in the info card. Translate units if appropriate for your locale.">~100 svetlobnih let v premeru</string>
+
+    <string name="object_info_m19_description" translation_description="Description of the globular cluster M19 shown in the info card. Translate this text.">
+    M19 je kompakten, bogat kuglasti zvezdni jato v Ophiuchu — eno izmed najbližjih kuglastih zvezdnih jat galaktičnemu središču. Njegova najbolj značilna lastnost je opazno sploščena oblika: M19 je najbolj sploščeno znano kuglasto zvezdno jato, z vidno eliptično obliko tudi v majhnem teleskopu.
+    </string>
+    <string name="object_info_m19_funfact" translation_description="Fun fact about M19 shown in the info card. Translate this text.">
+    Izrazita sploščenost M19 — njegova najdaljša os je približno 10 % daljša od najkrajše — je edinstvena med znanimi kroglastimi kopicami in se domneva, da je posledica plimskega raztezanja gravitacijskega polja Mlečne poti. Čim bližje je kroglasta kopica galaktičnemu središču, bolj je deformirana; M19 se nahaja le približno 5.200 svetlobnih let od galaktičnega jedra.
+    </string>
+    <string name="object_info_m19_distance" translation_description="Distance to M19 shown in the info card. Translate units if appropriate for your locale.">28.700 svetlobnih let</string>
+    <string name="object_info_m19_size" translation_description="Physical size of M19 shown in the info card. Translate units if appropriate for your locale.">~113 svetlobnih let v premeru</string>
+
+    <string name="object_info_m80_description" translation_description="Description of the globular cluster M80 shown in the info card. Translate this text.">
+    M80 je eno od najbolj gosto pakiranih kroglastih kopic v Rimski cesti, kompaktna, bogata krogla več sto tisoč zvezd v Škorpijonu. Pri magnitudi 7,2 je odličen cilj za dvogled in razkrije bleščeče, visoko koncentrirano jedro v majhnih teleskopih.
+    </string>
+    <string name="object_info_m80_funfact" translation_description="Fun fact about M80 shown in the info card. Translate this text.">
+    Leta 1860 je v M80 izbruhnila nova — označena kot T Scorpii — in je bila za kratek čas tako svetla kot samo kopica ter vidna s prostim očesom. Ostaja ena od samo dveh nov, ki so jih kdaj opazili v globularni kopici. Nove v globularnih kopicah nastanejo zaradi interakcij med dvojnimi zvezami, ki so v gosti zvezdni okolici jedra globularne kopice precej pogostejše.
+    </string>
+    <string name="object_info_m80_distance" translation_description="Distance to M80 shown in the info card. Translate units if appropriate for your locale.">32.600 svetlobnih let</string>
+    <string name="object_info_m80_size" translation_description="Physical size of M80 shown in the info card. Translate units if appropriate for your locale.">~84 svetlobnih let v premeru</string>
+
+    <string name="object_info_m103_description" translation_description="Description of the open star cluster M103 shown in the info card. Translate this text.">
+    M103 je majhna, kompaktna odprta zvezdna kopica v Kasiopeji, ki vsebuje približno 40 zvezd v tesni skupini, ki jo je mogoče zlahka videti v daljnogledu. Presenetljiva dvojna zvezda in rdeči velikan blizu središča ji dajeta pisano videz v majhnih teleskopih, postavljeni v bogata polja Rimske ceste v Kasiopeji.
+    </string>
+    <string name="object_info_m103_funfact" translation_description="Fun fact about M103 shown in the info card. Translate this text.">
+    M103 je bil predmet z najvišjo številko v Messierjevem izvirnem katalogu iz leta 1781 — vsi naslednji vnosi (M104–M110) so bili pozneje dodani drugim astronomom iz Messierjevih zapiskov in dopisovanja. Pierre Méchain je M103 odkril tik preden je katalog šel v tisk, in Messier ga je vključil na podlagi Méchainovega poročila.
+    </string>
+    <string name="object_info_m103_distance" translation_description="Distance to M103 shown in the info card. Translate units if appropriate for your locale.">8.500 svetlobnih let</string>
+    <string name="object_info_m103_size" translation_description="Physical size of M103 shown in the info card. Translate units if appropriate for your locale.">~15 svetlobnih let v premeru</string>
+
+    <string name="object_info_m30_description" translation_description="Description of the globular cluster M30 shown in the info card. Translate this text.">
+    M30 je kompakten kroglasti zvezdni kopič v Kozorcu — odličen predmet za majhove teleskope, ki kaže svetel, zgoščen jedro in šibke obrobne verige zvezd. Pri magnitudi 7,5 zahteva temno nebo za daljnogled in nagrajuje majhen teleskop s svojo delno razločeno zunanjo haloto.
+    </string>
+    <string name="object_info_m30_funfact" translation_description="Fun fact about M30 shown in the info card. Translate this text.">
+    M30 je doživela "kolapsa jedra" — proces, pri katerem medsebojna gravitacijska privlačnost gosto pakiranih zvezd povzroči, da se sredisce gruče dramatično skrči, kar ustvari ekstremno koncentracijo zvezd v majhni prostornini. Približno petina vseh globularnih gruč ima porušena jedra, M30 pa je med najbolje preučevanimi primeri tega pojava.
+    </string>
+    <string name="object_info_m30_distance" translation_description="Distance to M30 shown in the info card. Translate units if appropriate for your locale.">27.100 svetlobnih let</string>
+    <string name="object_info_m30_size" translation_description="Physical size of M30 shown in the info card. Translate units if appropriate for your locale.">~87 svetlobnih let v premeru</string>
+
+    <string name="object_info_m54_description" translation_description="Description of the globular cluster M54 shown in the info card. Translate this text.">
+    M54 je velika, bogata kroglasta kopica v Strelcu in eden najbolj oddaljenih objektov v celotnem Messierjevem katalogu. Stoletja se je mislilo, da je oddaljena halo kroglasta kopica Rimske ceste, vendar je zdaj znano, da je gosta jedra Sagittarius Dwarf Elliptical Galaxy — satelitska galaksija, ki jo trenutno absorbira naša lastna.
+    </string>
+    <string name="object_info_m54_funfact" translation_description="Fun fact about M54 shown in the info card. Translate this text.">
+    Odkritje leta 1994, da M54 pripada Patuljasti galaksiji Strelca, ga je naredilo prvi kulasti jat, za katerega je znano, da pripada drugi galaksiji. Ker se Patuljasta galaksija Strelca postopoma raztrga in požira Rimska cesta, bo M54 sčasoma postal pravi halo kulasti jat naše lastne galaksije — medgalaktični priseljenec, ki prihaja čez milijarde let.
+    </string>
+    <string name="object_info_m54_distance" translation_description="Distance to M54 shown in the info card. Translate units if appropriate for your locale.">87.000 svetlobnih let</string>
+    <string name="object_info_m54_size" translation_description="Physical size of M54 shown in the info card. Translate units if appropriate for your locale.">~230 svetlobnih let v premeru</string>
+
+    <string name="object_info_m69_description" translation_description="Description of the globular cluster M69 shown in the info card. Translate this text.">
+    M69 je zmerno bogat kroglasti zvezdni kopič v Strelcu, ki se nahaja blizu galaktičnega središča. Pri magnitudi 7,7 je predmet za dvogled z temnega neba, ki nagrajuje mali teleskop z delno razrešeno kroglo zvezd in svetlim, zrnatim središčem.
+    </string>
+    <string name="object_info_m69_funfact" translation_description="Fun fact about M69 shown in the info card. Translate this text.">
+    M69 se giblje nenavadno blizu galaktičnega centra — le približno 6.200 svetlobnih let od jedra Mlečne poti — in ima zato nenavadno visoko koncentracijo težjih elementov za kroglasto kopico. Kroglaste kopice bližje galaktičnemu centru so običajno kemično obogatene z več generacijami nastajanja zvezd v okoliški izbokli.
+    </string>
+    <string name="object_info_m69_distance" translation_description="Distance to M69 shown in the info card. Translate units if appropriate for your locale.">29.700 svetlobnih let</string>
+    <string name="object_info_m69_size" translation_description="Physical size of M69 shown in the info card. Translate units if appropriate for your locale.">~61 svetlobnih let v premeru</string>
+
+    <string name="object_info_m9_description" translation_description="Description of the globular cluster M9 shown in the info card. Translate this text.">
+    M9 je kompakten globularni zvezdni kopič v Ophiuchu — eden izmed Messierjevih globularnih kopičev, ki ga najbolj prizadene medzvezdna prah. Leži proti galaktičnemu jedru, kjer ga gost prah znatno zatemnuje. Brez te zasenčenosti bi se M9 zdel svetlejši za skoraj magnitudo in bi bil viden s prostim očesom.
+    </string>
+    <string name="object_info_m9_funfact" translation_description="Fun fact about M9 shown in the info card. Translate this text.">
+    M9 trpi več medzvezdne absorpcije prahu kot skoraj kateri koli drugi Messierov globularni kopič — približno 1,3 magnitude zatemnitve v primerjavi s čistim vidnim poljem. Dva manjša globularna kopička (NGC 6342 in NGC 6356) ležita v razdalji približno 1° od M9, kar ga naredi središče izjemne skupine treh globularnih kopičev na majhnem območju neba.
+    </string>
+    <string name="object_info_m9_distance" translation_description="Distance to M9 shown in the info card. Translate units if appropriate for your locale.">25.800 svetlobnih let</string>
+    <string name="object_info_m9_size" translation_description="Physical size of M9 shown in the info card. Translate units if appropriate for your locale.">~70 svetlobnih let v premeru</string>
+
+    <string name="object_info_m26_description" translation_description="Description of the open star cluster M26 shown in the info card. Translate this text.">
+    M26 je zmerno šibko vidna odprta zvezdna kopica v ozvezdju Ščita, vidna v daljnogledu in dobro razločena v manjših teleskopih. Približno 90 zvezd je razpršenih po kompaktnem polju v bogati zvezdni oblaki Ščita, čeprav je kopica postavljena pred tako gosto ozadje, da zahteva prepoznavanje njenih članov iz okoliške zvezdne slike nekaj pazljivosti.
+    </string>
+    <string name="object_info_m26_funfact" translation_description="Fun fact about M26 shown in the info card. Translate this text.">
+    M26 leži vzdolž istega bogatega pasu neba kot M11 — Jato divjih rac, eno najlepših odprtih jat na nebu. Oba sta oddaljena le približno 3,5° in vidna v istem polju dvogled, kar naredi Scutum izjemno destinacijo za opazovalce jat, čeprav je majhno in pogosto prezrto ozvezdje.
+    </string>
+    <string name="object_info_m26_distance" translation_description="Distance to M26 shown in the info card. Translate units if appropriate for your locale.">5.000 svetlobnih let</string>
+    <string name="object_info_m26_size" translation_description="Physical size of M26 shown in the info card. Translate units if appropriate for your locale.">~22 svetlobnih let v premeru</string>
+
+    <string name="object_info_m79_description" translation_description="Description of the globular cluster M79 shown in the info card. Translate this text.">
+    M79 je kompakten globularni zvezdni kopič v Lepusu — eden od redkih Messierjevih globularnih kopičev, ki je najbolje viden v zimskem nebu, ko so večina globularnih kopičev pod obzorjem ali komaj vidni. Pri magnitudi 8,0 potrebuješ teleskop, da vidiš njegov kompakten jedro in šibko aureolo, ki se izstopa proti primerjalno redkim zimskim zvezdnim poljem.
+    </string>
+    <string name="object_info_m79_funfact" translation_description="Fun fact about M79 shown in the info card. Translate this text.">
+    Nekateri astronomi menijo, da je M79 prišlak iz Pritlikave galaksije Veliki pes — porušene satelitske galaksije, ki jo trenutno vpija Mlečna pot. Če je tako, se M79 ni oblikoval v lastnem globularnem sistemu Mlečne poti, temveč je bil ujet iz padajoče galaksije in se počasi vključuje v halo naše galaksije.
+    </string>
+    <string name="object_info_m79_distance" translation_description="Distance to M79 shown in the info card. Translate units if appropriate for your locale.">41.000 svetlobnih let</string>
+    <string name="object_info_m79_size" translation_description="Physical size of M79 shown in the info card. Translate units if appropriate for your locale.">~104 svetlobnih let v premeru</string>
+
+    <string name="object_info_m70_description" translation_description="Description of the globular cluster M70 shown in the info card. Translate this text.">
+    M70 je kompakten globularni zvezdni kopič v Strelcu, ki je po videzu in razdalji zelo podoben svojemu bližnjemu dvojniku M69. Pri magnitudi 8,1 je odličen predmet za majhove teleskope, ki kaže kompaktno jedro in naznake ločljivosti v zunanjem haloju. Nahaja se le 2° od M69 in oba lahko zajamete v istem polju dvogled.
+    </string>
+    <string name="object_info_m70_funfact" translation_description="Fun fact about M70 shown in the info card. Translate this text.">
+    M70 je leta 1995 pridobil kratko slavo kot približna lokacija na nebu, kjer sta Alan Hale in Thomas Bopp neodvisno odkrila kometo Hale-Bopp — najsvetlejšo kometo poznega 20. stoletja. Oba opazovalca sta sprva mimo M70 pregledala nebo v iskanju drugih tarč in opazila kometo kot nepričakovan mehkast predmet v bližini.
+    </string>
+    <string name="object_info_m70_distance" translation_description="Distance to M70 shown in the info card. Translate units if appropriate for your locale.">29.400 svetlobnih let</string>
+    <string name="object_info_m70_size" translation_description="Physical size of M70 shown in the info card. Translate units if appropriate for your locale.">~67 svetlobnih let v premeru</string>
+
+    <string name="object_info_m107_description" translation_description="Description of the globular cluster M107 shown in the info card. Translate this text.">
+    M107 je ena izmed najmanj koncentriranih Messierjevih kroglastih kopic, s zvezami razpršenimi v relativno odprtem vzorcu okrog skromnega jedra. Pri magnitudi 8,1 je tarča za dvogled z temnega neba in se delno razreši v majhovih teleskopih, pri čemer kaže zrnato teksturo namesto ostre osrednje kondenzacije.
+    </string>
+    <string name="object_info_m107_funfact" translation_description="Fun fact about M107 shown in the info card. Translate this text.">
+    M107 je bil zadnji vnos, ki je bil formalno dodan v Messierov katalog — pojavi se v dopisovanju Pierrea Méchaina, vendar ni bil vključen v izvirno izdajo iz leta 1781. Uradno je bil dodan kot M107 leta 1947 s strani kanadske astronomke Helen Sawyer Hogg, ki je kodificirala več "manjkajočih" objektov, ki jih je Méchain opazoval, vendar jih Messier nikoli ni formalno zabeležil.
+    </string>
+    <string name="object_info_m107_distance" translation_description="Distance to M107 shown in the info card. Translate units if appropriate for your locale.">20.900 svetlobnih let</string>
+    <string name="object_info_m107_size" translation_description="Physical size of M107 shown in the info card. Translate units if appropriate for your locale.">~61 svetlobnih let v premeru</string>
+
+    <string name="object_info_m68_description" translation_description="Description of the globular cluster M68 shown in the info card. Translate this text.">
+    M68 je bogat kroglast zvezdni kopič v Hydri — južni objekt in eden od redkih kroglastih kopičev, ki so najbolje postavljeni v pozni zimski in pomladanski nebi. Pri magnitudi 8,2 nagrajuje mali teleskop z zmerno kondenziranim jedrom in velikim halojom razrešenih zvezd na relativno redkem zvezdnem polju Hydre.
+    </string>
+    <string name="object_info_m68_funfact" translation_description="Fun fact about M68 shown in the info card. Translate this text.">
+    Kljub svoji relativni bližini — kar omogoča, da so posamezne zvezde dobro razločne v amaterskih teleskopih — je M68 pogosto zanemarjen zaradi svoje zelo južne deklinacije. Z zemljepisnih širin nad 50°S komaj presega obzorje; z južne poloble pa se dvigne visoko in je čudovit globularni kopič.
+    </string>
+    <string name="object_info_m68_distance" translation_description="Distance to M68 shown in the info card. Translate units if appropriate for your locale.">33.600 svetlobnih let</string>
+    <string name="object_info_m68_size" translation_description="Physical size of M68 shown in the info card. Translate units if appropriate for your locale.">~117 svetlobnih let v premeru</string>
+
+    <string name="object_info_m56_description" translation_description="Description of the globular cluster M56 shown in the info card. Translate this text.">
+    M56 je kompakten globularni zvezdni kopič v Liri, vgnezden med Obročasto meglico (M57) in svetlo dvojno zvezdo Albireo v Labodu. Pri magnitudi 8,3 je tarča za dvogled s temnega neba, majlikov teleskop pa razkrije zrnato, zmerno kondenziran krogel, ki je tudi pri srednje velikih odprtinah le delno razločljiv.
+    </string>
+    <string name="object_info_m56_funfact" translation_description="Fun fact about M56 shown in the info card. Translate this text.">
+    M56 je odkril Messier v januarju 1779 med isto opazovalno sezono, v kateri je odkril tudi Obročasto meglico (M57). Čeprav se nahaja v istem binokularnem polju kot Vega — peta najsvetlejša zvezda na nebu — in blizu znamenite Obročaste meglice, je M56 pogosto spregledan s strani opazovalcev, ki jih privlačijo njegovi bolj proslavljeni sosedje.
+    </string>
+    <string name="object_info_m56_distance" translation_description="Distance to M56 shown in the info card. Translate units if appropriate for your locale.">32.900 svetlobnih let</string>
+    <string name="object_info_m56_size" translation_description="Physical size of M56 shown in the info card. Translate units if appropriate for your locale.">~68 svetlobnih let v premeru</string>
+
+    <string name="object_info_m71_description" translation_description="Description of the globular cluster M71 shown in the info card. Translate this text.">
+    M71 je nenavaden kroglasti zvezdni kopič v Strelici — astronomov je desetletja delilo vprašanje, ali je to bogat star odprt kopič ali mlad, razpršen kroglasti kopič. Sodobne analize potrjujejo, da je pravi kroglasti kopič, vendar z izjemno nizko koncentracijo, z relativno malo zvezd in manj izrazitim jedrom kot tipični kroglasti kopičи.
+    </string>
+    <string name="object_info_m71_funfact" translation_description="Fun fact about M71 shown in the info card. Translate this text.">
+    M71\'s ohlapna struktura ga je dolgo časa držala izven številnih zgodnjih katalogov, ker je bila videti kot bogato zvezdno polje in ne kot pravi zvezdni kopič. Z le 12.000 svetlobnih let je eden od bližjih Messierjevih globularnih kopičev, njegove zvezde pa so delno razločljive v majhnem teleskopu pod temnim nebom — kar mu daje videz kompaktnega, rahlo zgostljenega bogatega zvezdnega polja.
+    </string>
+    <string name="object_info_m71_distance" translation_description="Distance to M71 shown in the info card. Translate units if appropriate for your locale.">12.000 svetlobnih let</string>
+    <string name="object_info_m71_size" translation_description="Physical size of M71 shown in the info card. Translate units if appropriate for your locale.">~25 svetlobnih let v premeru</string>
 </resources>

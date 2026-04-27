@@ -548,6 +548,59 @@
     <string name="object_info_eta_carinae_nebula_funfact" translation_description="Fun fact about Eta Carinae Nebula shown in the info card. Translate this text.">1843年，船底座η星爆發，一度成為天空中第二亮的星星，但它卻奇蹟般地倖存了下來——它可能正處於超新星爆發的邊緣！</string>
     <string name="object_info_eta_carinae_nebula_distance" translation_description="Distance to Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">7,500光年</string>
     <string name="object_info_eta_carinae_nebula_size" translation_description="Physical size of Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">300光年寬</string>
+    <!-- North America Nebula (NGC 7000) -->
+    <string name="object_info_north_america_nebula_description" translation_description="Description of the North America Nebula shown in the info card. Translate this text.">
+    北美星雲（NGC 7000）是天鵝座中一個龐大的發射星雲，其形狀非常像北美洲大陸，甚至包括墨西哥灣地區。它跨越約 120 弧分——大約是滿月直徑的四倍——距離我們約 2,600 光年，寬度超過 100 光年。
+    </string>
+    <string name="object_info_north_america_nebula_funfact" translation_description="Fun fact about the North America Nebula shown in the info card. Translate this text.">儘管其視星等為 4，但該星雲過於龐大且分散，在大多數天空下肉眼無法看到——然而它拍攝效果極佳，揭示了天鵝牆，這是沿著其南邊緣密集的強烈恆星形成的弧形。</string>
+    <string name="object_info_north_america_nebula_distance" translation_description="Distance to the North America Nebula shown in the info card. Translate units if appropriate for your locale.">~2,590 光年</string>
+    <string name="object_info_north_america_nebula_size" translation_description="Physical size of the North America Nebula shown in the info card. Translate units if appropriate for your locale.">~140 光年寬</string>
+    <!-- Exposed Cranium Nebula - PMR 1 -->
+    <string name="object_info_exposed_cranium_nebula_description" translation_description="Description of the Exposed Cranium Nebula shown in the info card. Translate this text.">
+    露頭顱星雲（PMR 1）是位於帆船座的行星狀星雲，距離約 5,000 光年。它那詭異的名稱來自於穿過中間的一條黑暗氣體帶，將其發光的瓣分成形狀詭異地像是透明頭骨內的大腦。其中心燃燒著一顆炙熱的沃夫-瑞葉星，正在脫落其一生積累的外層。
+    </string>
+    <string name="object_info_exposed_cranium_nebula_funfact" translation_description="Fun fact about the Exposed Cranium Nebula shown in the info card. Translate this text.">
+    2026年，詹姆斯·韋伯太空望遠鏡捕捉到了暴露顱骨星雲的驚人新影像，以前所未有的細節解析了其雙層結構——外層富含氫氣，內層則是由垂死恆星鍛造的較重元素組成的雲團。
+    </string>
+    <string name="object_info_exposed_cranium_nebula_distance" translation_description="Distance to the Exposed Cranium Nebula shown in the info card. Translate units if appropriate for your locale.">~5,000 光年</string>
+    <string name="object_info_exposed_cranium_nebula_size" translation_description="Physical size of the Exposed Cranium Nebula shown in the info card. Translate units if appropriate for your locale.">~2 光年寬</string>
+
+    <!-- Jewel Box (NGC 4755) -->
+    <string name="object_info_jewel_box_description" translation_description="Description of the Jewel Box cluster shown in the info card. Translate this text.">
+    寶石盒星團（NGC 4755）是南十字座中一個年輕、璀璨的疏散星團，肉眼可輕易看見其位於米莫薩東南方的朦朧四等星。透過望遠鏡觀看時，其星辰以鮮豔對比的色彩閃耀——深藍色的超巨星與引人注目的紅色超巨星並肩而立——這正是約翰·赫歇爾為其命名的原因：一件超凡的珠寶飾品。年僅1400至1600萬年，它是天空中最年輕、色彩最豐富的星團之一。
+    </string>
+    <string name="object_info_jewel_box_funfact" translation_description="Fun fact about the Jewel Box shown in the info card. Translate this text.">星團中最突出的紅星 κ Crucis 是一顆紅超巨星，其亮度超過太陽 100,000 倍以上——生動提醒我們星團並非都是同一種顏色。</string>
+    <string name="object_info_jewel_box_distance" translation_description="Distance to the Jewel Box shown in the info card. Translate units if appropriate for your locale.">~6,500 光年</string>
+    <string name="object_info_jewel_box_size" translation_description="Physical size of the Jewel Box shown in the info card. Translate units if appropriate for your locale.">~19 光年寬</string>
+
+    <!-- Double Cluster (NGC 869 & NGC 884) -->
+    <string name="object_info_double_cluster_description" translation_description="Description of the Double Cluster shown in the info card. Translate this text.">
+    雙星團（NGC 869 和 NGC 884）是位於英仙座的一對耀眼的年輕疏散星團，在天空中並排排列，相隔超過一度。兩者肉眼可見為朦朧的光斑，但即使是小型望遠鏡也能揭示數百顆閃耀的藍白色超巨星密集地聚集在兩個閃爍的星群中。距離約 7,500 光年，它們位於我們銀河系的英仙臂內，是北方天空中最優美的雙筒望遠鏡觀測天體之列。
+    </string>
+    <string name="object_info_double_cluster_funfact" translation_description="Fun fact about the Double Cluster shown in the info card. Translate this text.">雙星團僅有1400萬年的歷史，年紀非常年輕——誕生得如此之近，以至於其最大質量的恆星仍然是熾熱的藍色超巨星，其中少數已經演化成罕見的、熾熱的紅色超巨星。</string>
+    <string name="object_info_double_cluster_distance" translation_description="Distance to the Double Cluster shown in the info card. Translate units if appropriate for your locale.">~7,500 光年</string>
+    <string name="object_info_double_cluster_size" translation_description="Physical size of the Double Cluster shown in the info card. Translate units if appropriate for your locale.">每個星團~70 光年寬；兩個星團相隔~1,000 光年</string>
+
+    <!-- 47 Tucanae (NGC 104) -->
+    <string name="object_info_n47_tucanae_description" translation_description="Description of 47 Tucanae shown in the info card. Translate this text.">
+    47 Tucanae (NGC 104) 是天空中第二亮的球狀星團，是一個密集的球體，由大約一百萬顆古老的恆星組成，環繞銀河系在杜鵑座中運行。距離約 14,500 光年，肉眼看起來像一顆模糊的四等星，但望遠鏡可以將其壓縮的核心分解成一個非凡的金色和藍白色太陽群。其恆星形成於約 130 億年前，使得該星團幾乎與宇宙本身一樣古老。
+    </string>
+    <string name="object_info_n47_tucanae_funfact" translation_description="Fun fact about 47 Tucanae shown in the info card. Translate this text.">
+    47 Tucanae 是一個宇宙脈衝星工廠：天文學家在其中發現了至少 35 顆毫秒脈衝星，每秒旋轉數百次——比任何其他已知的球狀星團都多——這是恆星近距離相遇的結果，通過加速旋轉來回收老中子星。
+    </string>
+    <string name="object_info_n47_tucanae_distance" translation_description="Distance to 47 Tucanae shown in the info card. Translate units if appropriate for your locale.">~14,500 光年</string>
+    <string name="object_info_n47_tucanae_size" translation_description="Physical size of 47 Tucanae shown in the info card. Translate units if appropriate for your locale.">~120 光年寬</string>
+
+    <!-- Centaurus A (NGC 5128) -->
+    <string name="object_info_centaurus_a_description" translation_description="Description of Centaurus A shown in the info card. Translate this text.">
+    半人馬座A（NGC 5128）是距離地球最近的活躍射電星系，是位於半人馬座星座中的巨大橢圓星系，其引人注目的暗塵埃帶揭示了暴力的過去——大約200至700百萬年前吞噬的螺旋星系。其中心潛伏著一個5500萬太陽質量的超大質量黑洞，驅動著相對論性噴流，在射電波長上延伸超過100萬光年。距離大約1200萬光年，它是天空中研究最充分的星系之一。
+    </string>
+    <string name="object_info_centaurus_a_funfact" translation_description="Fun fact about Centaurus A shown in the info card. Translate this text.">
+    半人馬座A是天空中最強大的天然無線電發射源之一——它的噴流以接近光速的速度向外噴射電漿，其無線電瓣的完整範圍跨越的面積相當於約100個滿月在天空中首尾相連排列的面積。
+    </string>
+    <string name="object_info_centaurus_a_distance" translation_description="Distance to Centaurus A shown in the info card. Translate units if appropriate for your locale.">~1,200 萬光年</string>
+    <string name="object_info_centaurus_a_size" translation_description="Physical size of Centaurus A shown in the info card. Translate units if appropriate for your locale.">~123,000 光年寬</string>
+
     <!-- ==================== CONSTELLATIONS ==================== -->
     <!-- Note: Constellation names are defined in celestial_objects.xml -->
     <!-- Orion -->
@@ -1127,4 +1180,647 @@
     <string name="object_info_vulpecula_description" translation_description="Description of Vulpecula shown in the info card. Translate this text.">小狐座（Vulpecula，小狐）是赫維留斯在1687年創造的一個微弱的北方星座。它位於銀河的中心，介於天鵝座和箭座之間。</string>
     <string name="object_info_vulpecula_funfact" translation_description="Fun fact about Vulpecula shown in the info card. Translate this text.">小狐座包含啞鈴星雲（M27），這是有史以來發現的第一個行星狀星雲（由查爾斯·梅西耶在1764年發現），也是一個美麗的雙筒望遠鏡觀測目標！</string>
     <string name="object_info_vulpecula_size" translation_description="Physical size of Vulpecula shown in the info card. Translate units if appropriate for your locale.">268 平方度</string>
+
+    <!-- Galilean Moons of Jupiter -->
+    <string name="object_info_io_description" translation_description="Description of Io shown in the info card. Translate this text.">Io 是木星四顆大伽利略衛星中最內側的一顆，也是太陽系中火山活動最活躍的天體。</string>
+    <string name="object_info_io_funfact" translation_description="Fun fact about Io shown in the info card. Translate this text.">木衛一有數百座活火山，其中一些噴發的熔岩噴泉高達數十公里。其持續的活動由木星巨大引力產生的潮汐加熱驅動。</string>
+    <string name="object_info_io_distance" translation_description="Distance to Io shown in the info card. Translate units if appropriate for your locale.">距木星 421,700 公里</string>
+    <string name="object_info_io_size" translation_description="Physical size of Io shown in the info card. Translate units if appropriate for your locale.">直徑 3,643 公里</string>
+
+    <string name="object_info_europa_description" translation_description="Description of Europa shown in the info card. Translate this text.">木衛二是第二顆伽利略衛星，據信其冰殼下方隱藏著廣闊的液態水海洋，使其成為搜尋生命最有希望的地點之一。</string>
+    <string name="object_info_europa_funfact" translation_description="Fun fact about Europa shown in the info card. Translate this text.">木衛二的地下海洋可能含有的液態水是地球所有海洋的兩倍，由木星的潮汐加熱保持液態。</string>
+    <string name="object_info_europa_distance" translation_description="Distance to Europa shown in the info card. Translate units if appropriate for your locale.">距木星 671,100 公里</string>
+    <string name="object_info_europa_size" translation_description="Physical size of Europa shown in the info card. Translate units if appropriate for your locale.">直徑 3,122 公里</string>
+
+    <string name="object_info_ganymede_description" translation_description="Description of Ganymede shown in the info card. Translate this text.">木衛三是太陽系中最大的衛星——甚至比水星還要大。它是唯一已知能夠產生自己磁場的衛星。</string>
+    <string name="object_info_ganymede_funfact" translation_description="Fun fact about Ganymede shown in the info card. Translate this text.">木衛三的體積比水星還大，但質量只有水星的一半左右。它內部的磁場在木星龐大的磁層內創造了自己的微型磁層。</string>
+    <string name="object_info_ganymede_distance" translation_description="Distance to Ganymede shown in the info card. Translate units if appropriate for your locale.">距木星 1,070,400 公里</string>
+    <string name="object_info_ganymede_size" translation_description="Physical size of Ganymede shown in the info card. Translate units if appropriate for your locale.">直徑 5,268 公里</string>
+
+    <string name="object_info_callisto_description" translation_description="Description of Callisto shown in the info card. Translate this text.">木衛四是伽利略衛星中最外層的衛星，也是太陽系中隕石坑最密集的天體之一，其古老的表面保留了早期太陽系撞擊的記錄。</string>
+    <string name="object_info_callisto_funfact" translation_description="Fun fact about Callisto shown in the info card. Translate this text.">木衛四繞木星的主輻射帶外運行，使其成為伽利略衛星中最安全的，適合未來人類探索——它有時被稱為「門戶衛星」。</string>
+    <string name="object_info_callisto_distance" translation_description="Distance to Callisto shown in the info card. Translate units if appropriate for your locale.">距木星 1,882,700 公里</string>
+    <string name="object_info_callisto_size" translation_description="Physical size of Callisto shown in the info card. Translate units if appropriate for your locale.">直徑 4,821 公里</string>
+
+    <!-- Moons of Mars -->
+    <string name="object_info_phobos_description" translation_description="Description of Phobos shown in the info card. Translate this text.">火衛一是火星的兩顆衛星中較大的內側衛星，其軌道比太陽系中任何其他衛星都更接近其行星。它是一個形狀不規則、溝槽和隕石坑密布的天體，被認為是一顆被捕獲的小行星。</string>
+    <string name="object_info_phobos_funfact" translation_description="Fun fact about Phobos shown in the info card. Translate this text.">火衛一繞火星運行的速度非常快，它在西方升起，在東方落下——而且它正在緩慢地向內螺旋運動，注定在大約5000萬年內要麼撞上火星，要麼分裂成環繞火星的碎片。</string>
+    <string name="object_info_phobos_distance" translation_description="Distance to Phobos shown in the info card. Translate units if appropriate for your locale.">距火星 9,376 公里</string>
+    <string name="object_info_phobos_size" translation_description="Physical size of Phobos shown in the info card. Translate units if appropriate for your locale.">27 × 22 × 18 公里</string>
+
+    <string name="object_info_deimos_description" translation_description="Description of Deimos shown in the info card. Translate this text.">火衛二是火星兩顆衛星中較小的外衛星，表面光滑且被塵埃覆蓋，使其外觀比火衛一更圓潤。與其伴星一樣，它被認為是從外小行星帶捕獲的小行星。</string>
+    <string name="object_info_deimos_funfact" translation_description="Fun fact about Deimos shown in the info card. Translate this text.">火衛二非常小且距離遙遠，從火星表面看起來只不過是一顆明亮的星星，需要約30小時才能緩慢地漂過夜空。</string>
+    <string name="object_info_deimos_distance" translation_description="Distance to Deimos shown in the info card. Translate units if appropriate for your locale.">距火星 23,460 公里</string>
+    <string name="object_info_deimos_size" translation_description="Physical size of Deimos shown in the info card. Translate units if appropriate for your locale.">15 × 12 × 11 公里</string>
+
+    <!-- Major Moons of Saturn -->
+    <string name="object_info_titan_description" translation_description="Description of Titan shown in the info card. Translate this text.">泰坦是土星最大的衛星，也是太陽系中第二大的衛星。它是唯一已知具有濃密大氣的衛星——一層厚厚的氮氣毯，混雜著甲烷——也是除地球外唯一已知表面有穩定液態海洋的世界。</string>
+    <string name="object_info_titan_funfact" translation_description="Fun fact about Titan shown in the info card. Translate this text.">
+    泰坦的湖泊和海洋中充滿的不是水，而是液態甲烷和乙烷，溫度極低，達到 −179°C。美國太空總署的蜻蜓旋翼機任務將於 2034 年抵達，在泰坦表面的多個地點之間飛行，以搜尋生命的化學跡象。
+    </string>
+    <string name="object_info_titan_distance" translation_description="Distance to Titan shown in the info card. Translate units if appropriate for your locale.">距土星 1,221,870 公里</string>
+    <string name="object_info_titan_size" translation_description="Physical size of Titan shown in the info card. Translate units if appropriate for your locale.">直徑 5,151 公里</string>
+
+    <string name="object_info_rhea_description" translation_description="Description of Rhea shown in the info card. Translate this text.">土衛五是土星第二大衛星，是一個布滿隕石坑的冰岩世界。其蒼白、古老的表面保留了太陽系中一些最原始的撞擊隕石坑，以及因山崩而露出下方新鮮物質的明亮冰崖。</string>
+    <string name="object_info_rhea_funfact" translation_description="Fun fact about Rhea shown in the info card. Translate this text.">
+    2008年，卡西尼號探測器的數據表明土衛五可能擁有一個環繞它的薄碎屑環——這將使它成為第一個被發現擁有自己環系統的衛星。如果得到證實，這將是一個非凡的發現；相關證據仍然是活躍的研究領域。
+    </string>
+    <string name="object_info_rhea_distance" translation_description="Distance to Rhea shown in the info card. Translate units if appropriate for your locale.">距土星 527,108 公里</string>
+    <string name="object_info_rhea_size" translation_description="Physical size of Rhea shown in the info card. Translate units if appropriate for your locale.">直徑 1,527 公里</string>
+
+    <string name="object_info_tethys_description" translation_description="Description of Tethys shown in the info card. Translate this text.">
+    土衛三是土星的冰質衛星，由兩個壯觀的特徵主導：廣闊的奧德修斯隕石坑（寬400公里，覆蓋衛星表面近三分之一）和伊薩卡峽谷（一個峽谷系統，延伸至地球周圍四分之三的距離）。
+    </string>
+    <string name="object_info_tethys_funfact" translation_description="Fun fact about Tethys shown in the info card. Translate this text.">土衛三幾乎完全由水冰組成——它的密度是太陽系衛星中最低的之一，僅比冰凍水稍密。伊薩卡峽谷可能是在內部凍結並膨脹時形成的，從內部裂開了上層地殼。</string>
+    <string name="object_info_tethys_distance" translation_description="Distance to Tethys shown in the info card. Translate units if appropriate for your locale.">距土星 294,619 公里</string>
+    <string name="object_info_tethys_size" translation_description="Physical size of Tethys shown in the info card. Translate units if appropriate for your locale.">直徑 1,062 公里</string>
+
+    <string name="object_info_dione_description" translation_description="Description of Dione shown in the info card. Translate this text.">
+    土衛四是土星的冰質衛星，其前向面布滿隕石坑，後向半球則遍布明亮的冰崖——這些斷裂線是古代構造力量暴露下方新鮮冰層的痕跡。卡西尼重力數據暗示地殼下方存在一個地下液態海洋。
+    </string>
+    <string name="object_info_dione_funfact" translation_description="Fun fact about Dione shown in the info card. Translate this text.">
+    Dione 與兩顆微小衛星 Helene 和 Polydeuces 共享軌道，它們在稱為拉格朗日點的重力平衡點處被鎖定在其前方和後方 60° 的位置。特別是 Helene，在卡西尼號影像中可以看到它像宇宙搭便車者一樣沿著軌道運行。
+    </string>
+    <string name="object_info_dione_distance" translation_description="Distance to Dione shown in the info card. Translate units if appropriate for your locale.">距土星 377,396 公里</string>
+    <string name="object_info_dione_size" translation_description="Physical size of Dione shown in the info card. Translate units if appropriate for your locale.">直徑 1,122 公里</string>
+
+    <string name="object_info_iapetus_description" translation_description="Description of Iapetus shown in the info card. Translate this text.">
+    土衛八是土星最獨特的衛星之一：其前半球被覆蓋著煤黑色的物質，而其後半球則是明亮的白色冰層。當喬凡尼·卡西尼在1671年發現這顆衛星時，這種極端的雙色外觀令他困惑，其對比如此鮮明，甚至在小型望遠鏡中也能看到。
+    </string>
+    <string name="object_info_iapetus_funfact" translation_description="Fun fact about Iapetus shown in the info card. Translate this text.">
+    土衛八還有一條聳立的赤道山脊，高達 20 公里——比地球上任何山脈都要高——環繞其赤道延伸數千公里。其起源未知：可能是坍塌環的遺跡，或古老的構造褶皺，形成於月球在遠古時期自轉速度遠快於現在的時代。
+    </string>
+    <string name="object_info_iapetus_distance" translation_description="Distance to Iapetus shown in the info card. Translate units if appropriate for your locale.">距土星 3,560,820 公里</string>
+    <string name="object_info_iapetus_size" translation_description="Physical size of Iapetus shown in the info card. Translate units if appropriate for your locale.">直徑 1,469 公里</string>
+
+    <!-- Moon of Neptune -->
+    <string name="object_info_triton_description" translation_description="Description of Triton shown in the info card. Translate this text.">
+    海衛一是海王星最大的衛星，也是太陽系中最非凡的天體之一。它以逆行方式繞海王星運行——與行星本身的自轉相反——這強烈表明它是在海王星歷史早期從外太陽系（最可能是從柯伊伯帶）被捕獲的。
+    </string>
+    <string name="object_info_triton_funfact" translation_description="Fun fact about Triton shown in the info card. Translate this text.">
+    儘管其表面溫度為−235°C——這是任何被航天器造訪過的天體上測得的最冷溫度——航海家2號在1989年發現了海衛一上活躍的氮間歇泉。表面上的深色條紋標示著氣體和暗物質羽流噴發到稀薄大氣中數公里高度的位置。
+    </string>
+    <string name="object_info_triton_distance" translation_description="Distance to Triton shown in the info card. Translate units if appropriate for your locale.">距海王星 354,759 公里</string>
+    <string name="object_info_triton_size" translation_description="Physical size of Triton shown in the info card. Translate units if appropriate for your locale.">直徑 2,707 公里</string>
+
+    <!-- Major Moons of Uranus -->
+    <string name="object_info_titania_description" translation_description="Description of Titania shown in the info card. Translate this text.">天衛一是天王星最大的衛星，也是太陽系第八大衛星。其表面呈現古老的撞擊坑平原與較年輕的懸崖和山谷的混合特徵，表明其複雜的地質歷史可能曾經歷過改變冰殼的構造活動。</string>
+    <string name="object_info_titania_funfact" translation_description="Fun fact about Titania shown in the info card. Translate this text.">天王星的所有衛星都以莎士比亞和亞歷山大·蒲柏著作中的人物命名——泰坦妮亞是《仲夏夜之夢》中的仙女女王。它是極少數未以希臘或羅馬神話人物命名的主要行星衛星之一。</string>
+    <string name="object_info_titania_distance" translation_description="Distance to Titania shown in the info card. Translate units if appropriate for your locale.">距天王星 435,910 公里</string>
+    <string name="object_info_titania_size" translation_description="Physical size of Titania shown in the info card. Translate units if appropriate for your locale.">直徑 1,578 公里</string>
+
+    <string name="object_info_oberon_description" translation_description="Description of Oberon shown in the info card. Translate this text.">
+    天衛四是天王星五顆主要衛星中最外層的一顆，也是撞擊坑最多的衛星之一，其古老的表面自太陽系早期以來變化甚少。它的幾個大型撞擊坑底部有深色物質，可能是撞擊天體帶來的有機物質。
+    </string>
+    <string name="object_info_oberon_funfact" translation_description="Fun fact about Oberon shown in the info card. Translate this text.">
+    天衛一上有一座山峰，從周圍平原上升約 6 公里——相當於地球上最高的山峰。與通過板塊構造形成的地球山脈不同，這個地貌特徵可能是古老撞擊坑的中央峰，或早期火山活動的遺跡。
+    </string>
+    <string name="object_info_oberon_distance" translation_description="Distance to Oberon shown in the info card. Translate units if appropriate for your locale.">距天王星 583,520 公里</string>
+    <string name="object_info_oberon_size" translation_description="Physical size of Oberon shown in the info card. Translate units if appropriate for your locale.">直徑 1,523 公里</string>
+
+    <string name="object_info_ariel_description" translation_description="Description of Ariel shown in the info card. Translate this text.">
+    艾瑞爾擁有天王星五顆主要衛星中最年輕、最明亮的表面。其地形由深谷和平原網絡主導，這些地形在很久以前被來自內部的流體（可能是水或氨水混合物）重新塑造，這些流體從內部湧出並淹沒了古老的地形。
+    </string>
+    <string name="object_info_ariel_funfact" translation_description="Fun fact about Ariel shown in the info card. Translate this text.">
+    艾瑞爾的山谷深度可達 10 公里——遠深於大峽谷。詹姆斯·韋伯太空望遠鏡的觀測已檢測到艾瑞爾表面的二氧化碳冰，暗示由天王星磁場中的帶電粒子驅動的持續表面化學反應。
+    </string>
+    <string name="object_info_ariel_distance" translation_description="Distance to Ariel shown in the info card. Translate units if appropriate for your locale.">距天王星 191,020 公里</string>
+    <string name="object_info_ariel_size" translation_description="Physical size of Ariel shown in the info card. Translate units if appropriate for your locale.">直徑 1,158 公里</string>
+
+    <string name="object_info_umbriel_description" translation_description="Description of Umbriel shown in the info card. Translate this text.">
+    天衛三是天王星五顆主要衛星中最暗的一顆，表面均勻古老且布滿隕石坑，幾乎沒有顯示出其鄰近衛星上所見的地質重塑跡象。其內部似乎自太陽系早期以來一直保持寒冷和凍結狀態。
+    </string>
+    <string name="object_info_umbriel_funfact" translation_description="Fun fact about Umbriel shown in the info card. Translate this text.">
+    天衛三最引人注目的特徵是旺達（Wunda），一個位於其赤道附近、直徑約 140 公里的明亮環形結構。旅行者 2 號在 1986 年發現了旺達，但其確切性質仍然是個謎——它可能是一個隕石坑坑底，表面覆蓋著在形成該隕石坑的撞擊發生很久之後才沉積的二氧化碳或氨冰。
+    </string>
+    <string name="object_info_umbriel_distance" translation_description="Distance to Umbriel shown in the info card. Translate units if appropriate for your locale.">距天王星 266,300 公里</string>
+    <string name="object_info_umbriel_size" translation_description="Physical size of Umbriel shown in the info card. Translate units if appropriate for your locale.">直徑 1,170 公里</string>
+
+    <!-- Globular clusters already on the map -->
+    <string name="object_info_omega_centauri_description" translation_description="Description of Omega Centauri shown in the info card. Translate this text.">
+    Omega Centauri 是環繞銀河系的最大且最具質量的球狀星團，包含約 1000 萬顆恆星，密集地排列在一個直徑約 150 光年的球體中。在肉眼觀察中，它在半人馬座中呈現為一個模糊的星點，容易看見；透過雙筒望遠鏡或任何望遠鏡觀察，則會解析成令人驚嘆的恆星球體。
+    </string>
+    <string name="object_info_omega_centauri_funfact" translation_description="Fun fact about Omega Centauri shown in the info card. Translate this text.">
+    與典型的球狀星團不同，南門二星團包含許多不同年齡和化學成分的恆星——這表明它可能是一個矮星系的被剝離的核心，該矮星系在數十億年前被銀河系撕裂並吞噬。它甚至可能包含一個中等質量的黑洞。
+    </string>
+    <string name="object_info_omega_centauri_distance" translation_description="Distance to Omega Centauri shown in the info card. Translate units if appropriate for your locale.">17,090 光年</string>
+    <string name="object_info_omega_centauri_size" translation_description="Physical size of Omega Centauri shown in the info card. Translate units if appropriate for your locale.">直徑約 150 光年</string>
+
+    <!-- Deep-sky objects: new catalog additions -->
+    <string name="object_info_hyades_description" translation_description="Description of the Hyades star cluster shown in the info card. Translate this text.">畢宿星團是距離太陽系最近的疏散星團，也是天文學中研究最廣泛的星團之一。肉眼可見其形成金牛座面孔的V形星群圖案，包含數百顆恆星，分布在約5°的天空範圍內。</string>
+    <string name="object_info_hyades_funfact" translation_description="Fun fact about the Hyades shown in the info card. Translate this text.">
+    耀眼的橙色星體畢宿五看似位於畢宿星團內，但實際上它是一個前景天體，距離只有星團的一半——這是一種巧合的排列。真正的星團距離約 153 光年，包含了第一批由喜帕恰斯衛星通過視差測量距離的恆星。
+    </string>
+    <string name="object_info_hyades_distance" translation_description="Distance to the Hyades shown in the info card. Translate units if appropriate for your locale.">153 光年</string>
+    <string name="object_info_hyades_size" translation_description="Angular size of the Hyades shown in the info card.">約 5° 寬</string>
+
+    <string name="object_info_coma_star_cluster_description" translation_description="Description of the Coma Berenices Star Cluster shown in the info card. Translate this text.">
+    后髮座星團是一個附近的疏散星團，由約40顆恆星組成，散佈在將近5°的天空中，在黑暗環境下肉眼可輕易看到柔和的光暈。它是太陽系第三近的疏散星團，也是后髮座星座的來源。
+    </string>
+    <string name="object_info_coma_star_cluster_funfact" translation_description="Fun fact about the Coma Berenices Star Cluster shown in the info card. Translate this text.">
+    古代觀測者將這個星團視為埃及王后貝雷尼基二世的頭髮，她傳說中為了丈夫從戰爭中安全歸來而剪下了她的金色長髮作為祭品。托勒密三世據報在西元前245年左右為了紀念她而正式將這個不尋常的星座命名。
+    </string>
+    <string name="object_info_coma_star_cluster_distance" translation_description="Distance to the Coma Star Cluster shown in the info card. Translate units if appropriate for your locale.">288 光年</string>
+    <string name="object_info_coma_star_cluster_size" translation_description="Angular size of the Coma Star Cluster shown in the info card.">約 5° 寬</string>
+
+    <string name="object_info_coathanger_description" translation_description="Description of the Coathanger asterism shown in the info card. Translate this text.">
+    衣架星群是狐狸座中十顆星組成的引人注目的星群，形成一個清晰可辨的形狀：六顆星排成一條直線，下方有四顆星呈鉤狀懸掛，完全像一個倒掛的衣架。它是夏季天空中最好的雙筒望遠鏡觀測天體之一，恰好適合典型的雙筒望遠鏡視場。
+    </string>
+    <string name="object_info_coathanger_funfact" translation_description="Fun fact about the Coathanger shown in the info card. Translate this text.">
+    儘管看起來像星團，衣架星團的恆星並無物理關聯——它們距離我們的距離差異很大，只是視線上的巧合。布羅基星團由達爾米羅·布羅基在1920年代編目，第一個對其成像的太空望遠鏡是依巴谷衛星，它確認了這些恆星是無關的。
+    </string>
+    <string name="object_info_coathanger_distance" translation_description="Distance to the Coathanger shown in the info card. Translate units if appropriate for your locale.">約 420 光年（最亮恆星）</string>
+    <string name="object_info_coathanger_size" translation_description="Angular size of the Coathanger shown in the info card.">約 1° 寬</string>
+
+    <string name="object_info_helix_nebula_description" translation_description="Description of the Helix Nebula shown in the info card. Translate this text.">
+    螺旋星雲是天空中視面積最大的行星狀星雲——一顆類似太陽的恆星在其生命末期拋出的膨脹氣殼。它跨越約半度的範圍，在雙筒望遠鏡中可見於寶瓶座的微弱圓形光暈，因其在長曝光照片中的外觀而被暱稱為上帝之眼。
+    </string>
+    <string name="object_info_helix_nebula_funfact" translation_description="Fun fact about the Helix Nebula shown in the info card. Translate this text.">螺旋星雲的中心有一顆距離地球最近的已知白矮星——一個極其炙熱的恆星殘骸，大小約與地球相當，但質量卻與太陽相同。這就是我們的太陽在約50億年後的命運。</string>
+    <string name="object_info_helix_nebula_distance" translation_description="Distance to the Helix Nebula shown in the info card. Translate units if appropriate for your locale.">650 光年</string>
+    <string name="object_info_helix_nebula_size" translation_description="Angular size of the Helix Nebula shown in the info card.">直徑約 3 光年</string>
+
+    <string name="object_info_sculptor_galaxy_description" translation_description="Description of the Sculptor Galaxy shown in the info card. Translate this text.">
+    雕塑星系是從地球可見最明亮、最美麗的邊緣螺旋星系之一，在南方星座雕塑座中呈現為細長的光暈。它是最近的星爆星系之一——一個正在經歷劇烈恆星形成爆發的星系——業餘天文學家可以在黑暗天空中用雙筒望遠鏡看到。
+    </string>
+    <string name="object_info_sculptor_galaxy_funfact" translation_description="Fun fact about the Sculptor Galaxy shown in the info card. Translate this text.">
+    雕塑星系是雕塑星系群中最亮的成員之一——該星系群是距離我們本地星系群最近的星系群。其中心爆發星形成區以比銀河系高數倍的速率產生新恆星，這是由與鄰近星系過去的相互作用所驅動的。
+    </string>
+    <string name="object_info_sculptor_galaxy_distance" translation_description="Distance to the Sculptor Galaxy shown in the info card. Translate units if appropriate for your locale.">1,140 萬光年</string>
+    <string name="object_info_sculptor_galaxy_size" translation_description="Physical size of the Sculptor Galaxy shown in the info card. Translate units if appropriate for your locale.">寬約 90,000 光年</string>
+
+    <string name="object_info_blue_snowball_nebula_description" translation_description="Description of the Blue Snowball Nebula shown in the info card. Translate this text.">
+    藍色雪球是仙女座中的行星狀星雲——由垂死恆星拋出的發光氣殼。其星等為 8.3，是天空中最亮且最色彩繽紛的行星狀星雲之一，即使在小型望遠鏡中也呈現生動的藍綠色圓盤。其對稱的形狀和強烈的色彩使其成為觀測者的最愛。
+    </string>
+    <string name="object_info_blue_snowball_nebula_funfact" translation_description="Fun fact about the Blue Snowball Nebula shown in the info card. Translate this text.">
+    藍色雪球星雲的引人注目的顏色來自於雙電離氧在特定綠色波長處的發光，結合氫發射——人眼感知為藍綠色的顏色調色板。中央白矮星的表面溫度約為 100,000°C，足以在這個距離上電離周圍的氣體。
+    </string>
+    <string name="object_info_blue_snowball_nebula_distance" translation_description="Distance to the Blue Snowball Nebula shown in the info card. Translate units if appropriate for your locale.">約 2,500 光年</string>
+    <string name="object_info_blue_snowball_nebula_size" translation_description="Physical size of the Blue Snowball Nebula shown in the info card. Translate units if appropriate for your locale.">直徑約 0.8 光年</string>
+
+    <string name="object_info_ghost_of_jupiter_description" translation_description="Description of the Ghost of Jupiter planetary nebula shown in the info card. Translate this text.">
+    木星幽靈是位於長蛇座的一個明亮行星狀星雲，其視直徑與木星相似，因此得名。其星等為8.6，是天空中最容易用小型望遠鏡觀測的行星狀星雲之一，在中等口徑的望遠鏡中可以看到清晰的圓盤和淡淡的色彩。
+    </string>
+    <string name="object_info_ghost_of_jupiter_funfact" translation_description="Fun fact about the Ghost of Jupiter shown in the info card. Translate this text.">
+    木星幽靈星雲具有一個明亮的內殼，周圍環繞著較暗的外暈——這種雙殼結構表明垂死的恆星至少在兩個不同的時期噴出了氣體。其中心恆星是已知最熱的白矮星之一，表面溫度估計約為 75,000°C。
+    </string>
+    <string name="object_info_ghost_of_jupiter_distance" translation_description="Distance to the Ghost of Jupiter shown in the info card. Translate units if appropriate for your locale.">約 1,400 光年</string>
+    <string name="object_info_ghost_of_jupiter_size" translation_description="Physical size of the Ghost of Jupiter shown in the info card. Translate units if appropriate for your locale.">直徑約 1 光年</string>
+
+    <string name="object_info_saturn_nebula_description" translation_description="Description of the Saturn Nebula shown in the info card. Translate this text.">
+    土星星雲是位於寶瓶座的行星狀星雲，因其與土星的相似性而得名——稱為「ansa」的延伸物從兩側突出，如同光環把手，在中等望遠鏡中可見。其亮度為 8.0 等，是天空中最亮的行星狀星雲之一，在大型儀器中呈現複雜的結構。
+    </string>
+    <string name="object_info_saturn_nebula_funfact" translation_description="Fun fact about the Saturn Nebula shown in the info card. Translate this text.">威廉·赫歇爾在1782年發現了土星星雲，並注意到其土星般的外觀。現代觀測揭示了至少四層不同的氣殼環繞著中央白矮星，反映了恆星生命最後階段多次質量損失的過程。</string>
+    <string name="object_info_saturn_nebula_distance" translation_description="Distance to the Saturn Nebula shown in the info card. Translate units if appropriate for your locale.">約 5,000 光年</string>
+    <string name="object_info_saturn_nebula_size" translation_description="Physical size of the Saturn Nebula shown in the info card. Translate units if appropriate for your locale.">寬約 1 光年</string>
+
+    <string name="object_info_ngc_2903_description" translation_description="Description of the galaxy NGC 2903 shown in the info card. Translate this text.">
+    NGC 2903 是獅子座中一個明亮的棒旋星系，常被稱為「梅西葉遺漏的梅西葉天體」——它是天空中最突出的星系之一，但未被列入他著名的星表中。在 8.9 等級時，它很容易用雙筒望遠鏡看到，在中等倍率的望遠鏡中展現出美麗的螺旋結構。
+    </string>
+    <string name="object_info_ngc_2903_funfact" translation_description="Fun fact about NGC 2903 shown in the info card. Translate this text.">NGC 2903 在星系中心棒區域擁有已知最高濃度的星形成「熱點」——由劇烈星形成點亮的年輕大質量星的密集星團。它被用作研究棒旋星系中星爆活動的基準。</string>
+    <string name="object_info_ngc_2903_distance" translation_description="Distance to NGC 2903 shown in the info card. Translate units if appropriate for your locale.">3,000 萬光年</string>
+    <string name="object_info_ngc_2903_size" translation_description="Physical size of NGC 2903 shown in the info card. Translate units if appropriate for your locale.">寬約 80,000 光年</string>
+
+    <!-- Meteor showers -->
+    <string name="object_info_quadrantids_description" translation_description="Description of the Quadrantids meteor shower shown in the info card. Translate this text.">
+    象限儀流星雨是一場多產的一月流星雨，具有非常尖銳、短暫的高峰，僅持續數小時。輻射點位於牧夫座，靠近已廢棄的象限儀座（Quadrans Muralis）的位置，該流星雨即以此命名。在理想條件下，每小時可見多達 120 顆流星。
+    </string>
+    <string name="object_info_quadrantids_funfact" translation_description="Fun fact about the Quadrantids meteor shower shown in the info card. Translate this text.">與大多數源自彗星的流星雨不同，象限儀流星雨的母體是小行星 2003 EH1——被認為是數百年前燃盡的彗星的休眠核心。它的存在直到 2003 年才被確認。</string>
+
+    <string name="object_info_lyrids_description" translation_description="Description of the Lyrids meteor shower shown in the info card. Translate this text.">天琴座流星雨是一場可靠的春季流星雨，輻射點位於天琴座亮星織女星附近。它們產生快速、中等亮度的流星，高峰期約每小時18顆，偶爾會產生留下發光煙跡的火球。</string>
+    <string name="object_info_lyrids_funfact" translation_description="Fun fact about the Lyrids meteor shower shown in the info card. Translate this text.">
+    天琴座流星雨是歷史上有可靠記錄的最古老流星雨。中國天文學家在西元前687年記錄了流星「如雨般墜落」的景象。這些碎片來自塔切爾彗星，它需要415年繞太陽一周，最後一次進入太陽系內部是在1861年。
+    </string>
+
+    <string name="object_info_aquariids_description" translation_description="Description of the Eta Aquariids meteor shower shown in the info card. Translate this text.">
+    Eta Aquariids 是由哈雷彗星碎片產生的兩個年度流星雨之一。該流星雨的峰值可達每小時 70 顆流星，在南半球表現特別強烈，因為輻射點在黎明前升得很高。北半球的觀測者仍然可以享受到每小時 30 顆或更多流星的可觀速率。
+    </string>
+    <string name="object_info_aquariids_funfact" translation_description="Fun fact about the Eta Aquariids meteor shower shown in the info card. Translate this text.">
+    南魚座η流星以66公里/秒的速度運行——快到足以使它們產生的電離空氣在流星消失後能發光數秒。您可能會看到哈雷古老的塵埃在您眼前燃燒，這些塵埃是彗星數千年前多次造訪時拋灑的。
+    </string>
+
+    <string name="object_info_deltaaquariids_description" translation_description="Description of the Delta Aquariids meteor shower shown in the info card. Translate this text.">
+    南方水瓶座δ流星雨在七月下旬達到高峰，最適合在熱帶和南緯地區觀測，此時水瓶座的輻射點在黎明前高懸天空。它們產生穩定的中等速度流星，每小時最多16顆，但很少有明亮的火球。
+    </string>
+    <string name="object_info_deltaaquariids_funfact" translation_description="Fun fact about the Delta Aquariids meteor shower shown in the info card. Translate this text.">南魚座流星雨的確切母體仍然不確定。最有可能的候選是96P/馬克霍爾茲彗星，這是一顆不尋常的短週期彗星，其軌道傾斜度很高，非常接近太陽——比水星更接近太陽。</string>
+
+    <string name="object_info_perseids_description" translation_description="Description of the Perseids meteor shower shown in the info card. Translate this text.">
+    英仙座流星雨是全年最受歡迎的流星雨，在溫暖的八月夜晚達到高峰，每小時最多可達 100 顆流星。彗星斯威夫特-塔特爾拋出的碎片在地球大氣高層燃燒，產生快速、明亮的流星——許多留下持久發光的尾跡——從英仙座輻射而出。
+    </string>
+    <string name="object_info_perseids_funfact" translation_description="Fun fact about the Perseids meteor shower shown in the info card. Translate this text.">
+    英仙座流星雨的母體彗星斯威夫特-塔特爾彗星的核心寬度為 26 公里——比被認為導致恐龍滅絕的大滅絕事件的天體還要大。該彗星最後一次經過內太陽系是在 1992 年，下次回歸將在 2125 年。
+    </string>
+
+    <string name="object_info_orionids_description" translation_description="Description of the Orionids meteor shower shown in the info card. Translate this text.">
+    獵戶座流星雨是哈雷彗星每年產生的第二場流星雨，輻射點位於獵戶座舉起的棍棒附近。流星雨的高峰期約為每小時25顆，以快速、通常明亮的流星而聞名，這些流星經常留下持續數秒的發光電離尾跡。
+    </string>
+    <string name="object_info_orionids_funfact" translation_description="Fun fact about the Orionids meteor shower shown in the info card. Translate this text.">
+    哈雷彗星造成兩場年度流星雨：五月的寶瓶座η流星雨（此時地球穿過彗星的外向碎屑軌跡），以及十月的獵戶座流星雨（此時地球穿過內向軌跡）。它們讓我們每年兩次採樣古老的哈雷塵埃。
+    </string>
+
+    <string name="object_info_leonids_description" translation_description="Description of the Leonids meteor shower shown in the info card. Translate this text.">
+    獅子座流星雨從獅子座的鐮刀星群輻射而出，通常每小時產生約20顆流星。它們因壯觀的流星暴而聞名，這些流星暴大約每33年爆發一次，當地球經過彗星55P/Tempel-Tuttle拋出的密集塵埃絲帶時就會發生。這些流星暴每小時可以產生數千顆流星。
+    </string>
+    <string name="object_info_leonids_funfact" translation_description="Fun fact about the Leonids meteor shower shown in the info card. Translate this text.">
+    1833年獅子座流星雨風暴估計每小時產生100,000顆流星，嚇壞了北美各地的觀測者，他們擔心天空著火了。這次事件啟動了對流星雨的科學研究。類似的風暴發生在1966年和1999年。
+    </string>
+
+    <string name="object_info_puppidvelids_description" translation_description="Description of the Puppid-Velids meteor shower shown in the info card. Translate this text.">
+    Puppid-Velids 是一個複雜的重疊次要流星群，輻射點位於南銀河中的船尾座（Puppis）和帆座（Vela）。流星群在每小時約 10 顆流星的高峰期，最適合從南半球觀測，此時輻射點在 12 月的天空中高高升起。
+    </string>
+    <string name="object_info_puppidvelids_funfact" translation_description="Fun fact about the Puppid-Velids meteor shower shown in the info card. Translate this text.">
+    Puppid-Velids 流星雨被認為來自多顆不同的母彗星，而非單一來源，包括 26P/Grigg-Skjellerup 彗星。對於北緯約 40°N 以北的觀測者，其南方輻射點永遠不會升至地平線以上，使其成為世界上大多數地區很少能看到的流星雨。
+    </string>
+
+    <string name="object_info_geminids_description" translation_description="Description of the Geminids meteor shower shown in the info card. Translate this text.">
+    雙子座流星雨被廣泛認為是全年最壯觀的流星雨——數量眾多（每小時最多120顆），可靠穩定，且從傍晚時分就開始活躍，而不是只在午夜之後。它們從雙子座輻射而出，產生各種亮度的流星，包括耀眼的火流星。
+    </string>
+    <string name="object_info_geminids_funfact" translation_description="Fun fact about the Geminids meteor shower shown in the info card. Translate this text.">
+    在主要流星雨中獨樹一幟，雙子座流星雨來自小行星而非彗星：3200 Phaethon，一顆「岩石彗星」，其軌道比任何其他已命名的小行星都更接近太陽。極端的熱量可能會裂開其岩石表面，並驅散產生流星雨的塵埃。
+    </string>
+
+    <string name="object_info_ursids_description" translation_description="Description of the Ursids meteor shower shown in the info card. Translate this text.">
+    北極星流星雨是一個小流星雨，輻射點位於小熊座，靠近北極星，對北半球觀測者來說是環極星，整夜可見而不會落下。它們在冬至附近達到高峰，每小時約 10 顆流星，母彗星是 8P/Tuttle。
+    </string>
+    <string name="object_info_ursids_funfact" translation_description="Fun fact about the Ursids meteor shower shown in the info card. Translate this text.">
+    熊座流星雨偶爾會產生遠高於其典型速率的意外爆發。在1945年和2006年，觀測者記錄到每小時50顆或更多流星——是正常峰值的五倍。當地球穿過圖特爾彗星近距離接近時拋出的異常密集碎片帶時，就會出現這些激增。
+    </string>
+
+    <!-- Category 5: Top priority — objects on the map that lacked info cards -->
+    <string name="object_info_m47_description" translation_description="Description of the open star cluster M47 shown in the info card. Translate this text.">
+    M47 是船尾座中一個明亮、鬆散的疏散星團，肉眼容易看見，用雙筒望遠鏡觀看時引人注目。大約 50 顆恆星散佈在半度的天空中，幾顆橙色巨星為較暗的藍白色成員增添了溫暖的色彩。
+    </string>
+    <string name="object_info_m47_funfact" translation_description="Fun fact about M47 shown in the info card. Translate this text.">
+    M47 是「失落的」梅西耶天體之一——梅西耶原始坐標中的筆誤將其放在空蕩蕩的天空中，導致該星團未被識別近兩個世紀。直到 1959 年，當觀測者根據梅西耶的描述反向推導並找到錯誤時，才確認了它的真實身份為 NGC 2422。
+    </string>
+    <string name="object_info_m47_distance" translation_description="Distance to M47 shown in the info card. Translate units if appropriate for your locale.">1,600 光年</string>
+    <string name="object_info_m47_size" translation_description="Physical size of M47 shown in the info card. Translate units if appropriate for your locale.">寬約 14 光年</string>
+
+    <string name="object_info_m41_description" translation_description="Description of the open star cluster M41 shown in the info card. Translate this text.">
+    M41 是大犬座中一個優美的疏散星團，位於夜空中最亮的星星天狼星南方約 4°。在黑暗地點肉眼可見，用雙筒望遠鏡觀看效果壯觀，它包含約 100 顆星星分散在寬闊的視野中，其中有幾顆引人注目的橙色巨星與較暗的藍白色星星相伴。
+    </string>
+    <string name="object_info_m41_funfact" translation_description="Fun fact about M41 shown in the info card. Translate this text.">
+    亞里士多德可能在西元前325年左右觀測到M41——這可能是對任何深空天體最早的記錄觀測。他描述了獅子星南方的一個「雲狀斑點」，與M41的位置相符。如果這個認定是正確的，M41在望遠鏡發明前近兩千年就已被討論過了。
+    </string>
+    <string name="object_info_m41_distance" translation_description="Distance to M41 shown in the info card. Translate units if appropriate for your locale.">2,300 光年</string>
+    <string name="object_info_m41_size" translation_description="Physical size of M41 shown in the info card. Translate units if appropriate for your locale.">寬約 25 光年</string>
+
+    <string name="object_info_m24_description" translation_description="Description of the Sagittarius Star Cloud (M24) shown in the info card. Translate this text.">
+    M24 是人馬座星雲——不是星團或星雲，而是銀河系塵埃間隙中的一扇窗戶，展現出寬度達 2° 的耀眼星場。它是用雙筒望遠鏡能看到的天空中最豐富的區域，包含數千顆跨越許多不同距離的星星。
+    </string>
+    <string name="object_info_m24_funfact" translation_description="Fun fact about M24 shown in the info card. Translate this text.">
+    M24 中的恆星距離並不相同——這個星雲代表了銀河系圓盤的截面，透過星際塵埃中的天然隧道觀看，跨越 10,000 至 16,000 光年的距離。雲團內嵌有暗星雲和微小星團，它們在燦爛的恆星背景中呈現為暗斑。
+    </string>
+    <string name="object_info_m24_distance" translation_description="Distance range to M24 shown in the info card. Translate units if appropriate for your locale.">約 10,000–16,000 光年（範圍）</string>
+    <string name="object_info_m24_size" translation_description="Physical size of M24 shown in the info card. Translate units if appropriate for your locale.">深度約 600 光年的視窗</string>
+
+    <string name="object_info_m25_description" translation_description="Description of the open star cluster M25 shown in the info card. Translate this text.">
+    M25 是人馬座中一個明亮的肉眼可見開放星團，位於夏季銀河密集的星場背景中。約 600 顆恆星散佈在半度的視場中，使其成為一個豐富的雙筒望遠鏡觀測對象。其最亮的成員包括幾顆藍白色超巨星，以及天空中研究最充分的造父變星之一。
+    </string>
+    <string name="object_info_m25_funfact" translation_description="Fun fact about M25 shown in the info card. Translate this text.">
+    M25 包含人馬座 U，一顆古典造父變星，其亮度以 6.7 天的週期變化。造父變星是測量宇宙距離的重要「標準燭光」，因為它們的脈動週期直接揭示了它們的真實光度——天文學家利用它們首次確定了銀河系的大小，然後確定了可觀測宇宙的規模。
+    </string>
+    <string name="object_info_m25_distance" translation_description="Distance to M25 shown in the info card. Translate units if appropriate for your locale.">2,000 光年</string>
+    <string name="object_info_m25_size" translation_description="Physical size of M25 shown in the info card. Translate units if appropriate for your locale.">寬約 19 光年</string>
+
+    <string name="object_info_m39_description" translation_description="Description of the open star cluster M39 shown in the info card. Translate this text.">
+    M39 是天鵝座中一個龐大、分散的疏散星團，在豐富的夏季銀河中靠近天津四附近肉眼可見。它大約 30 顆明亮的恆星鬆散地分佈在天空的一度範圍內，用雙筒望遠鏡或廣視場望遠鏡以低倍率觀看效果最佳——更高的倍率只會將其分解為稀疏、平凡的星場。
+    </string>
+    <string name="object_info_m39_funfact" translation_description="Fun fact about M39 shown in the info card. Translate this text.">
+    M39距地球約825光年，是離地球最近的疏散星團之一，其年齡約為2.4億年，是最古老的肉眼可見星團之一——已經古老到其最大質量的恆星已經結束了它們的生命。梅西耶在1764年記錄了它，它是他星表中最早添加的天體之一。
+    </string>
+    <string name="object_info_m39_distance" translation_description="Distance to M39 shown in the info card. Translate units if appropriate for your locale.">825 光年</string>
+    <string name="object_info_m39_size" translation_description="Physical size of M39 shown in the info card. Translate units if appropriate for your locale.">寬約 8 光年</string>
+
+    <!-- Category 5: Special cases -->
+    <string name="object_info_m63_description" translation_description="Description of the Sunflower Galaxy (M63) shown in the info card. Translate this text.">
+    向日葵星系是獵犬座中一個光亮的螺旋星系，其緊密纏繞的旋臂上點綴著恆星形成區，在長曝光照片中呈現出獨特的花朵般紋理。在8.6等星等下，從黑暗的天空中可用雙筒望遠鏡看到它，在小型望遠鏡中可輕易看到其細長的形狀和明亮的核心。
+    </string>
+    <string name="object_info_m63_funfact" translation_description="Fun fact about the Sunflower Galaxy shown in the info card. Translate this text.">
+    M63 於 1779 年由皮埃爾·梅香發現——是少數由梅香而非梅西耶本人發現的梅西耶天體之一。它是 M51 星系群的成員，與旋渦星系 (M51) 物理相關聯，並顯示出過去相互作用的跡象：一條微弱的古老恆星流環繞著其外盤。
+    </string>
+    <string name="object_info_m63_distance" translation_description="Distance to the Sunflower Galaxy shown in the info card. Translate units if appropriate for your locale.">2,900 萬光年</string>
+    <string name="object_info_m63_size" translation_description="Physical size of the Sunflower Galaxy shown in the info card. Translate units if appropriate for your locale.">~100,000光年寬</string>
+
+    <string name="object_info_ngc_6543_description" translation_description="Description of the Cat's Eye Nebula (NGC 6543) shown in the info card. Translate this text.">
+    貓眼星雲是已知結構最複雜的行星狀星雲之一——一顆垂死恆星噴出的氣體被雕刻成同心殼層、噴流和亮點，在哈勃影像中清晰可見。在小型望遠鏡中，它在天龍座中呈現為生動的藍綠色圓盤，是秋季天空中最色彩繽紛的天體之一。
+    </string>
+    <string name="object_info_ngc_6543_funfact" translation_description="Fun fact about the Cat's Eye Nebula shown in the info card. Translate this text.">
+    1864年，天文學家威廉·哈金斯用分光鏡觀察貓眼星雲，發現它是由發光氣體組成，而非未解析的恆星——這是首次確認任何行星狀星雲的性質。這項發現開創了星雲分光學領域，推翻了所有星雲都是遙遠星團的普遍觀點。
+    </string>
+    <string name="object_info_ngc_6543_distance" translation_description="Distance to the Cat's Eye Nebula shown in the info card. Translate units if appropriate for your locale.">~3,300光年</string>
+    <string name="object_info_ngc_6543_size" translation_description="Physical size of the Cat's Eye Nebula shown in the info card. Translate units if appropriate for your locale.">~0.5光年直徑</string>
+
+    <string name="object_info_m76_description" translation_description="Description of the Little Dumbbell Nebula (M76) shown in the info card. Translate this text.">
+    小啞鈴星雲是位於英仙座的行星狀星雲，具有獨特的八字形——是M27（狐狸座啞鈴星雲）的較小表親。雖然是梅西耶星表中最暗的天體，但它在小型望遠鏡中值得耐心觀測，在大型儀器中展現出美麗的結構，兩個較亮的瓣狀物兩側夾著一個較暗的腰部。
+    </string>
+    <string name="object_info_m76_funfact" translation_description="Fun fact about the Little Dumbbell Nebula shown in the info card. Translate this text.">
+    M76 最初被編目為兩個獨立的天體——NGC 650 和 NGC 651——因為早期觀測者分別描述了兩個明亮的瓣狀結構。它是一個雙極行星狀星雲，形成於垂死恆星的外流在赤道處被擠壓，沿著極軸形成兩個膨脹的瓣狀結構，同時氣體也在腰部向外翻騰。
+    </string>
+    <string name="object_info_m76_distance" translation_description="Distance to the Little Dumbbell Nebula shown in the info card. Translate units if appropriate for your locale.">~2,500光年</string>
+    <string name="object_info_m76_size" translation_description="Physical size of the Little Dumbbell Nebula shown in the info card. Translate units if appropriate for your locale.">~2光年寬</string>
+
+    <string name="object_info_v838_mon_description" translation_description="Description of V838 Monocerotis shown in the info card. Translate this text.">
+    V838 麒麟座是麒麟座中一顆不尋常的變星，在2002年經歷了壯觀的爆發，曾短暫成為銀河系中最明亮的恆星之一。雖然今天對視覺觀測者來說太暗淡，但其不斷擴展的光迴聲——一道照亮古老塵埃殼層的光波前——產生了有史以來最戲劇性的哈勃太空望遠鏡影像。
+    </string>
+    <string name="object_info_v838_mon_funfact" translation_description="Fun fact about V838 Monocerotis shown in the info card. Translate this text.">
+    V838 Mon 爆發的性質仍有爭議。主流理論認為這是一次恆星合併——兩顆恆星相互螺旋靠近並碰撞——而非經典新星或超巨星爆發。如果得到證實，這將是人類首次實時目睹「光學紅新星」，這是一種由恆星合併引起的罕見爆炸現象，此後在其他星系中也發現了類似事件。
+    </string>
+    <string name="object_info_v838_mon_distance" translation_description="Distance to V838 Monocerotis shown in the info card. Translate units if appropriate for your locale.">~20,000光年</string>
+    <string name="object_info_v838_mon_size" translation_description="Extent of the V838 Monocerotis light echo shown in the info card. Translate units if appropriate for your locale.">~3光年（光迴聲範圍）</string>
+
+    <string name="object_info_hdf_description" translation_description="Description of the Hubble Deep Field shown in the info card. Translate this text.">
+    哈伯深空是位於大熊座的一個微小的 2.6 角分的天空區域，看似空無一物。哈伯太空望遠鏡在 1995 年 12 月連續 10 天對其進行了拍攝。這片看似空蕩蕩的空間實際上包含了大約 3,000 個星系——跨越數十億年的宇宙歷史——從根本上改變了我們對宇宙的認識。
+    </string>
+    <string name="object_info_hdf_funfact" translation_description="Fun fact about the Hubble Deep Field shown in the info card. Translate this text.">
+    這片天空被特意選擇，因為它沒有明亮的恆星和附近的星系。然而，所得的影像卻包含了大約 3,000 個星系，這導致了一個估計，即整個天空包含大約 2,000 億個星系——在哈勃太空望遠鏡之前，幾乎所有這些星系都對任何望遠鏡都是不可見的。
+    </string>
+    <string name="object_info_hdf_distance" translation_description="Distance to the most distant galaxies in the Hubble Deep Field shown in the info card. Translate units if appropriate for your locale.">~130億光年（最遠）</string>
+    <string name="object_info_hdf_size" translation_description="Angular size of the Hubble Deep Field shown in the info card.">2.6角分（視場）</string>
+
+    <string name="object_info_m43_description" translation_description="Description of De Mairan's Nebula (M43) shown in the info card. Translate this text.">
+    德梅朗星雲是偉大獵戶座星雲複合體的一個分離部分，由暗塵埃帶與M42分隔開，但屬於同一廣闊分子雲。它以法國天文學家讓-雅克·多圖斯·德梅朗的名字命名，他在1731年發現了它。這是一個發射星雲，由其中心嵌入的炙熱年輕恆星獵戶座NU電離。
+    </string>
+    <string name="object_info_m43_funfact" translation_description="Fun fact about De Mairan's Nebula shown in the info card. Translate this text.">
+    雖然 M43 看起來像是與 M42 分開的物體，但分隔它們的暗帶是一片前景塵埃雲——獵戶座分子雲的一部分——它只是阻擋了我們對這兩個發光區域之間物理連接的視線。它們一起只是延伸到獵戶座大部分地區的一個巨大暗雲的被照亮的內邊緣。
+    </string>
+    <string name="object_info_m43_distance" translation_description="Distance to De Mairan's Nebula shown in the info card. Translate units if appropriate for your locale.">1,350光年</string>
+    <string name="object_info_m43_size" translation_description="Physical size of De Mairan's Nebula shown in the info card. Translate units if appropriate for your locale.">~8光年寬</string>
+
+    <string name="object_info_m40_description" translation_description="Description of M40 (Winnecke 4) shown in the info card. Translate this text.">
+    M40 在梅西耶星表中獨一無二——它不是星雲、星團或星系，而是一個寬雙星。梅西耶在 1764 年搜尋約翰·赫維留斯在大熊座報告的星雲時，只發現了這對恆星，並將其記錄下來，以便未來的觀測者不會將其誤認為更有趣的天體。
+    </string>
+    <string name="object_info_m40_funfact" translation_description="Fun fact about M40 shown in the info card. Translate this text.">
+    M40 的兩顆星——稱為 Winnecke 4——在引力上並未相互束縛；它們位於不同的距離，只是巧合的排列。梅西耶本人注意到沒有「任何特別之處」，但他將其列入目錄「以表明這個星雲與我所檢視過的那些星雲並不相同」。他有條不紊地記錄否定結果的習慣為未來的觀測者提供了明確的參考。
+    </string>
+    <string name="object_info_m40_distance" translation_description="Distance to M40 shown in the info card. Translate units if appropriate for your locale.">~500光年</string>
+    <string name="object_info_m40_size" translation_description="Angular separation of the M40 double star shown in the info card.">~50角秒（分離）</string>
+
+    <!-- Category 5: Second tier -->
+    <string name="object_info_m34_description" translation_description="Description of the open star cluster M34 shown in the info card. Translate this text.">
+    M34 是英仙座中一個明亮、分散的疏散星團，用雙筒望遠鏡很容易看到，在冬季銀河背景下呈現豐富的星星閃爍。它大約 400 顆恆星覆蓋的區域幾乎與滿月一樣寬，仔細觀察的雙筒望遠鏡觀測者可以看到少數寬闊的雙星。
+    </string>
+    <string name="object_info_m34_funfact" translation_description="Fun fact about M34 shown in the info card. Translate this text.">
+    M34 約有2億年的歷史，年齡介於中等——年輕到足以讓其熾熱的藍色恆星仍然閃耀，年長到最大質量的恆星已經爆炸成超新星。距離約1,500光年，它是較近的梅西耶星團之一，即使在郊區的天空中仍然是一個很好的觀測對象。
+    </string>
+    <string name="object_info_m34_distance" translation_description="Distance to M34 shown in the info card. Translate units if appropriate for your locale.">1,500光年</string>
+    <string name="object_info_m34_size" translation_description="Physical size of M34 shown in the info card. Translate units if appropriate for your locale.">~15光年寬</string>
+
+    <string name="object_info_m23_description" translation_description="Description of the open star cluster M23 shown in the info card. Translate this text.">
+    M23 是人馬座中一個豐富的疏散星團，位於夏季銀河密集的星場中。約 150 顆恆星分散在雙筒望遠鏡視野的半度範圍內，使其成為一個慷慨的雙筒望遠鏡觀測對象，與同一天區中許多其他梅西耶天體位於相同區域。
+    </string>
+    <string name="object_info_m23_funfact" translation_description="Fun fact about M23 shown in the info card. Translate this text.">M23 估計約有 3 億年的歷史——年齡介於中等，其大部分巨大恆星已經離開主序列。梅西耶在 1764 年進行其多產的觀測活動時，在掃過人馬座星域時發現了它。</string>
+    <string name="object_info_m23_distance" translation_description="Distance to M23 shown in the info card. Translate units if appropriate for your locale.">2,150光年</string>
+    <string name="object_info_m23_size" translation_description="Physical size of M23 shown in the info card. Translate units if appropriate for your locale.">~17光年寬</string>
+
+    <string name="object_info_m37_description" translation_description="Description of the open star cluster M37 shown in the info card. Translate this text.">
+    M37 是御夫座三個梅西耶疏散星團中最豐富、最明亮的一個，包含約 500 顆恆星，分佈在一個緊密的視場中。它是一個壯觀的雙筒望遠鏡和小型望遠鏡觀測對象，散佈著橙色巨星，為藍白色恆星群增添了色彩對比。
+    </string>
+    <string name="object_info_m37_funfact" translation_description="Fun fact about M37 shown in the info card. Translate this text.">
+    M37 包含約十幾顆紅巨星——數量異常之高，反映了其相對較老的年齡，約為 3 億年。儘管距離我們約 4,500 光年——是三個御夫座梅西耶星團中最遠的——它仍然是天空中最美麗的疏散星團之一。
+    </string>
+    <string name="object_info_m37_distance" translation_description="Distance to M37 shown in the info card. Translate units if appropriate for your locale.">4,500光年</string>
+    <string name="object_info_m37_size" translation_description="Physical size of M37 shown in the info card. Translate units if appropriate for your locale.">~31光年寬</string>
+
+    <string name="object_info_m48_description" translation_description="Description of the open star cluster M48 shown in the info card. Translate this text.">
+    M48 是長蛇座中一個龐大而明亮的疏散星團，跨越近一度的天空，在黑暗地點可用肉眼看到。其約 80 顆恆星散落在寬闊的視野中，最適合用雙筒望遠鏡觀察，其中較亮的藍白色成員中散布著橙色和黃色的巨星。
+    </string>
+    <string name="object_info_m48_funfact" translation_description="Fun fact about M48 shown in the info card. Translate this text.">
+    M48 因為梅西耶記錄的位置偏離真實位置約 5° 而在近兩個世紀內被列為「遺失」的梅西耶天體。直到 1959 年，它與 NGC 2548 相匹配，才被確認為一個簡單的抄寫錯誤導致它一直被放在空蕩蕩的天空中。
+    </string>
+    <string name="object_info_m48_distance" translation_description="Distance to M48 shown in the info card. Translate units if appropriate for your locale.">1,500光年</string>
+    <string name="object_info_m48_size" translation_description="Physical size of M48 shown in the info card. Translate units if appropriate for your locale.">~23光年寬</string>
+
+    <string name="object_info_m21_description" translation_description="Description of the open star cluster M21 shown in the info card. Translate this text.">
+    M21 是人馬座中一個緊密的疏散星團，位於三裂星雲 (M20) 北方約半度處，使這兩個天體成為引人注目的雙筒望遠鏡配對。該星團包含約 57 顆恆星，集中在比許多梅西耶星團更小的視場中，其中幾顆明亮的藍白色恆星是主要成員。
+    </string>
+    <string name="object_info_m21_funfact" translation_description="Fun fact about M21 shown in the info card. Translate this text.">
+    儘管在物理上無關，M21 和 M20（三裂星雲）卻構成了夏季天空中最吸引人的雙筒望遠鏡配對之一——一個明亮的星團與一個色彩繽紛的三葉星雲相鄰。M21 距離我們約 4,250 光年，而 M20 稍近一些，約 4,100 光年。
+    </string>
+    <string name="object_info_m21_distance" translation_description="Distance to M21 shown in the info card. Translate units if appropriate for your locale.">4,250光年</string>
+    <string name="object_info_m21_size" translation_description="Physical size of M21 shown in the info card. Translate units if appropriate for your locale.">~16光年寬</string>
+
+    <string name="object_info_m50_description" translation_description="Description of the open star cluster M50 shown in the info card. Translate this text.">
+    M50 是麒麟座中一個明亮的疏散星團，包含約 200 顆恆星，緊密地聚集在一個引人注目的視場中，適合雙筒望遠鏡和小型望遠鏡觀測。它很容易在天狼星和南河三之間的連線上找到，並包含一顆著名的紅巨星——一個溫暖的橙色信標，在星團的藍白色恆星中生動地脫穎而出。
+    </string>
+    <string name="object_info_m50_funfact" translation_description="Fun fact about M50 shown in the info card. Translate this text.">
+    M50 估計約有 7,800 萬年的歷史——是較年輕的梅西耶疏散星團之一——這意味著它那些炙熱的藍色和白色恆星仍在演化中，其中一些質量較大的成員最近已膨脹成巨星。這是星團早期中年階段的典型特徵。
+    </string>
+    <string name="object_info_m50_distance" translation_description="Distance to M50 shown in the info card. Translate units if appropriate for your locale.">3,200光年</string>
+    <string name="object_info_m50_size" translation_description="Physical size of M50 shown in the info card. Translate units if appropriate for your locale.">~15光年寬</string>
+
+    <string name="object_info_m36_description" translation_description="Description of the open star cluster M36 shown in the info card. Translate this text.">
+    M36是梅西耶在御夫座編目的三個疏散星團中最小且最年輕的。它大約60顆恆星聚集在一個緊密、閃爍的視場中，用雙筒望遠鏡可見，用小型望遠鏡可清晰分辨為單個恆星，由炙熱的藍白色恆星主導。
+    </string>
+    <string name="object_info_m36_funfact" translation_description="Fun fact about M36 shown in the info card. Translate this text.">
+    M36 估計年齡僅約 2500 萬年——是較年輕的梅西耶星團之一——這意味著大質量的藍白色恆星仍然佔主導地位，尚未出現紅巨星。它與 M37 和 M38 共享御夫座星場，這三個星團都能在同一個廣視野雙筒望遠鏡視野中看到。
+    </string>
+    <string name="object_info_m36_distance" translation_description="Distance to M36 shown in the info card. Translate units if appropriate for your locale.">4,100光年</string>
+    <string name="object_info_m36_size" translation_description="Physical size of M36 shown in the info card. Translate units if appropriate for your locale.">~14光年寬</string>
+
+    <string name="object_info_m46_description" translation_description="Description of the open star cluster M46 shown in the info card. Translate this text.">
+    M46 是船帆座中一個豐富、密集的疏散星團，包含約 500 顆恆星密集分佈在寬廣的視場中，用雙筒望遠鏡觀看令人驚豔，用小型望遠鏡觀看則美不勝收。在其北邊緣有一個非凡的額外收穫：NGC 2438，一個小型行星狀星雲，看起來嵌入在星團中——這是一個戲劇性的視線巧合。
+    </string>
+    <string name="object_info_m46_funfact" translation_description="Fun fact about M46 shown in the info card. Translate this text.">
+    行星狀星雲NGC 2438看似位於M46內部，但實際上是一個不相關的前景天體，距離完全不同——約1,400光年，而M46則為5,400光年。垂死恆星的外殼與年輕星團巧合地重疊，使其成為星表中最上鏡的天體之一。
+    </string>
+    <string name="object_info_m46_distance" translation_description="Distance to M46 shown in the info card. Translate units if appropriate for your locale.">5,400光年</string>
+    <string name="object_info_m46_size" translation_description="Physical size of M46 shown in the info card. Translate units if appropriate for your locale.">~42光年寬</string>
+
+    <string name="object_info_m93_description" translation_description="Description of the open star cluster M93 shown in the info card. Translate this text.">
+    M93 是船尾座中一個明亮、緊湊的疏散星團，位於南方銀河系豐富的區域，用雙筒望遠鏡很容易找到。它大約 80 顆恆星排列成引人注目的楔形或蝴蝶形，並包括幾顆炎熱的藍色超巨星，使其成為冬季天空中最具吸引力的疏散星團之一。
+    </string>
+    <string name="object_info_m93_funfact" translation_description="Fun fact about M93 shown in the info card. Translate this text.">
+    M93 相對年輕——約有1億年的歷史——擁有尚未演化成巨星的主要藍色和藍白色恆星。它是較南方的梅西耶星團之一，從北緯約50°N以北的緯度觀測，它在地平線上升起的高度永遠不會很高。
+    </string>
+    <string name="object_info_m93_distance" translation_description="Distance to M93 shown in the info card. Translate units if appropriate for your locale.">3,600光年</string>
+    <string name="object_info_m93_size" translation_description="Physical size of M93 shown in the info card. Translate units if appropriate for your locale.">~23光年寬</string>
+
+    <string name="object_info_m38_description" translation_description="Description of the open star cluster M38 shown in the info card. Translate this text.">
+    M38 是梅西耶在御夫座編目的三個疏散星團中最大且分散最廣的。其約 100 顆恆星排列成一種圖案，某些觀測者認為它像十字形或希臘字母 π，用雙筒望遠鏡可見，用小型望遠鏡可清晰分辨。較小的星團 NGC 1907 位於其南方附近。
+    </string>
+    <string name="object_info_m38_funfact" translation_description="Fun fact about M38 shown in the info card. Translate this text.">
+    M38 是御夫座三個梅西耶星團中最古老的，距今約 2.2 億年，已經足夠古老，使得其中一些大質量恆星已演化成黃巨星和橙巨星。附近的星團 NGC 1907 可以在同一個低倍率視場中看到，使它們成為一對很好的雙筒望遠鏡觀測對象——就像船尾座中的 M46 和 M47 一樣。
+    </string>
+    <string name="object_info_m38_distance" translation_description="Distance to M38 shown in the info card. Translate units if appropriate for your locale.">4,200光年</string>
+    <string name="object_info_m38_size" translation_description="Physical size of M38 shown in the info card. Translate units if appropriate for your locale.">~26光年寬</string>
+
+    <string name="object_info_m29_description" translation_description="Description of the open star cluster M29 shown in the info card. Translate this text.">
+    M29 是天鵝座中一個年輕的小疏散星團，位於銀河系塵埃遮擋最嚴重的區域之一。五顆耀眼的藍色超巨星主導著這個星團，用雙筒望遠鏡可以看到它們形成的緊密星群，由炙熱、明亮的恆星組成。如果沒有前景中的濃密塵埃，M29 將是天空中最壯觀的疏散星團之一。
+    </string>
+    <string name="object_info_m29_funfact" translation_description="Fun fact about M29 shown in the info card. Translate this text.">
+    M29 估計年齡僅約 1000 萬年——是一個恆星嬰兒——位於天鵝座 OB1 星協內，這是一個龐大的年輕大質量恆星群。濃密的星際塵埃使星團變暗約 3 個星等；如果沒有這種遮擋，M29 的恆星實際上會比現在看起來亮幾倍。
+    </string>
+    <string name="object_info_m29_distance" translation_description="Distance to M29 shown in the info card. Translate units if appropriate for your locale.">4,000光年</string>
+    <string name="object_info_m29_size" translation_description="Physical size of M29 shown in the info card. Translate units if appropriate for your locale.">~8光年寬</string>
+
+    <string name="object_info_m62_description" translation_description="Description of the globular cluster M62 shown in the info card. Translate this text.">
+    M62 是蛇夫座中一個豐富的球狀星團——是距離銀河中心最近的球狀星團之一，且明顯不對稱，南側的恆星密度更高。其星等為 6.6，是一個很好的雙筒望遠鏡觀測對象，但其低赤緯使其成為北半球觀測者的短季節目標。
+    </string>
+    <string name="object_info_m62_funfact" translation_description="Fun fact about M62 shown in the info card. Translate this text.">
+    M62 的非中心核心是其靠近銀河中心的直接結果——來自中心隆起的強大潮汐力扭曲了星團，並將恆星拖向銀河平面。它也是已知最動態演化的球狀星團之一，顯示出核心坍縮的跡象和異常高密度的毫秒脈衝星。
+    </string>
+    <string name="object_info_m62_distance" translation_description="Distance to M62 shown in the info card. Translate units if appropriate for your locale.">22,500光年</string>
+    <string name="object_info_m62_size" translation_description="Physical size of M62 shown in the info card. Translate units if appropriate for your locale.">~92光年寬</string>
+
+    <string name="object_info_m28_description" translation_description="Description of the globular cluster M28 shown in the info card. Translate this text.">
+    M28 是人馬座中的一個緊密球狀星團，位於明亮的人馬座λ星附近，處於豐富的夏季星場中。其星等為 6.9，是一個值得用雙筒望遠鏡觀測的目標，在小型望遠鏡中清晰可見，呈現出一個明亮的緊密核心，周圍環繞著適度的星暈。
+    </string>
+    <string name="object_info_m28_funfact" translation_description="Fun fact about M28 shown in the info card. Translate this text.">
+    1987年，M28成為首個發現毫秒脈衝星的球狀星團。毫秒脈衝星是每秒自轉數百次的中子星，當中子星從伴星吸積物質時形成。在球狀星團中發現毫秒脈衝星的比率遠高於銀河系一般區域，因為球狀星團密集的恆星環境會產生更多的近距雙星相遇。
+    </string>
+    <string name="object_info_m28_distance" translation_description="Distance to M28 shown in the info card. Translate units if appropriate for your locale.">18,300光年</string>
+    <string name="object_info_m28_size" translation_description="Physical size of M28 shown in the info card. Translate units if appropriate for your locale.">~60光年寬</string>
+
+    <string name="object_info_m52_description" translation_description="Description of the open star cluster M52 shown in the info card. Translate this text.">
+    M52 是仙后座中一個豐富的疏散星團，包含約 200 顆恆星，密集地聚集在北銀河的一個緊湊區域內。它是一個很好的雙筒望遠鏡星團，在小型望遠鏡中展現出美麗、密集的恆星場，在星團南邊緣附近有一顆明顯較亮的橙色恆星突出。
+    </string>
+    <string name="object_info_m52_funfact" translation_description="Fun fact about M52 shown in the info card. Translate this text.">
+    M52 的距離異常不確定——估計範圍從 3,000 到 7,000 光年——因為沿著這條視線的濃密星際塵埃使其真實亮度難以確定。梅西耶在 1774 年發現了它，同一晚他正在追蹤一顆彗星，這導致他記錄了其他幾個星表條目。
+    </string>
+    <string name="object_info_m52_distance" translation_description="Distance to M52 shown in the info card. Translate units if appropriate for your locale.">~5,000光年</string>
+    <string name="object_info_m52_size" translation_description="Physical size of M52 shown in the info card. Translate units if appropriate for your locale.">~25光年寬</string>
+
+    <string name="object_info_m67_description" translation_description="Description of the open star cluster M67 shown in the info card. Translate this text.">
+    M67 是巨蟹座中一個優美的疏散星團，也是天空中研究最充分的最古老疏散星團之一。在大約 32 至 35 億年的歷史中，它包含許多質量和年齡與我們太陽相似的恆星——使其成為研究類太陽恆星如何隨著宇宙時間演化的天然實驗室。
+    </string>
+    <string name="object_info_m67_funfact" translation_description="Fun fact about M67 shown in the info card. Translate this text.">
+    M67中的幾顆恆星在溫度、質量和年齡上都與太陽非常相似——這是一個罕見的組合，促使研究人員思考太陽本身是否起源於像M67這樣的星團。由於恆星在星團中誕生，然後逐漸散開，太陽幾乎肯定來自於數十億年前一個已經分散的兄弟星團——儘管這個星團的身份從未被確認。
+    </string>
+    <string name="object_info_m67_distance" translation_description="Distance to M67 shown in the info card. Translate units if appropriate for your locale.">2,700光年</string>
+    <string name="object_info_m67_size" translation_description="Physical size of M67 shown in the info card. Translate units if appropriate for your locale.">~24光年寬</string>
+
+    <string name="object_info_m55_description" translation_description="Description of the globular cluster M55 shown in the info card. Translate this text.">
+    M55 是人馬座中一個龐大、鬆散的球狀星團——是所有梅西耶球狀星團中分散最廣、濃度最低的之一。即使在低倍率下，它也能輕易分解成單個恆星，雙筒望遠鏡中可見顆粒狀紋理。其低南緯限制了從北半球的可見性，但從南半球看來壯觀。
+    </string>
+    <string name="object_info_m55_funfact" translation_description="Fun fact about M55 shown in the info card. Translate this text.">
+    M55 異常低的恆星集中度使其看起來更像一個豐富的疏散星團，而非典型的球狀星團。其恆星分散在寬度近 100 光年的區域內，表明該星團的自引力相對較弱，與 M13 或 M3 等更集中的球狀星團相比。
+    </string>
+    <string name="object_info_m55_distance" translation_description="Distance to M55 shown in the info card. Translate units if appropriate for your locale.">17,600光年</string>
+    <string name="object_info_m55_size" translation_description="Physical size of M55 shown in the info card. Translate units if appropriate for your locale.">~100光年寬</string>
+
+    <string name="object_info_m19_description" translation_description="Description of the globular cluster M19 shown in the info card. Translate this text.">
+    M19 是蛇夫座中一個緊密、豐富的球狀星團——是距離銀河中心最近的球狀星團之一。其最顯著的特徵是其明顯的扁平形狀：M19 是已知最扁平的球狀星團，即使在小型望遠鏡中也能看到其可見的橢圓形輪廓。
+    </string>
+    <string name="object_info_m19_funfact" translation_description="Fun fact about M19 shown in the info card. Translate this text.">
+    M19 明顯的扁球體形狀——其最長軸比最短軸長約 10%——在已知的球狀星團中是獨一無二的，被認為是由銀河系的引力場造成的潮汐拉伸所致。球狀星團距離銀河中心越近，變形就越強烈；M19 距離銀河核心僅約 5,200 光年。
+    </string>
+    <string name="object_info_m19_distance" translation_description="Distance to M19 shown in the info card. Translate units if appropriate for your locale.">28,700光年</string>
+    <string name="object_info_m19_size" translation_description="Physical size of M19 shown in the info card. Translate units if appropriate for your locale.">~113光年寬</string>
+
+    <string name="object_info_m80_description" translation_description="Description of the globular cluster M80 shown in the info card. Translate this text.">
+    M80是銀河系中密度最高的球狀星團之一，位於天蠍座，是一個緊密、富有的星球，包含數十萬顆恆星。在7.2等級下，它是一個很好的雙筒望遠鏡目標，在小型望遠鏡中可以看到一個明亮、高度集中的核心。
+    </string>
+    <string name="object_info_m80_funfact" translation_description="Fun fact about M80 shown in the info card. Translate this text.">
+    1860年，M80內發生了一次新星爆發——被命名為天蠍座T星——短暫間變得與星團本身一樣明亮，肉眼可見。這是迄今為止在球狀星團內觀測到的僅有的兩次新星爆發之一。球狀星團內的新星源於雙星系統之間的相互作用，而在球狀星團密集的恆星環境中，雙星系統遠為常見。
+    </string>
+    <string name="object_info_m80_distance" translation_description="Distance to M80 shown in the info card. Translate units if appropriate for your locale.">32,600光年</string>
+    <string name="object_info_m80_size" translation_description="Physical size of M80 shown in the info card. Translate units if appropriate for your locale.">~84光年寬</string>
+
+    <string name="object_info_m103_description" translation_description="Description of the open star cluster M103 shown in the info card. Translate this text.">
+    M103 是仙后座中一個小型、緊密的疏散星團，包含約 40 顆恆星緊密聚集在一起，用雙筒望遠鏡很容易看到。中心附近有一顆引人注目的雙星和一顆紅巨星，在小型望遠鏡中呈現出豐富多彩的外觀，位於仙后座豐富的銀河星場中。
+    </string>
+    <string name="object_info_m103_funfact" translation_description="Fun fact about M103 shown in the info card. Translate this text.">
+    M103 是梅西耶 1781 年出版的原始目錄中編號最高的天體——所有後續條目（M104–M110）都是由後來的天文學家根據梅西耶的筆記和通信資料在他去世後添加的。皮埃爾·梅香在目錄付印前不久發現了 M103，梅西耶根據梅香的報告將其列入目錄。
+    </string>
+    <string name="object_info_m103_distance" translation_description="Distance to M103 shown in the info card. Translate units if appropriate for your locale.">8,500光年</string>
+    <string name="object_info_m103_size" translation_description="Physical size of M103 shown in the info card. Translate units if appropriate for your locale.">~15光年寬</string>
+
+    <string name="object_info_m30_description" translation_description="Description of the globular cluster M30 shown in the info card. Translate this text.">
+    M30 是摩羯座中的一個緊密球狀星團——在小型望遠鏡中是一個精美的天體，展現出明亮、濃縮的核心和微弱的外圍星鏈。在 7.5 等星等下，它在雙筒望遠鏡中需要黑暗的天空，而小型望遠鏡則能看到其部分解析的外暈。
+    </string>
+    <string name="object_info_m30_funfact" translation_description="Fun fact about M30 shown in the info card. Translate this text.">
+    M30 經歷過「核心坍縮」——一個過程，其中密集堆積的恆星之間的相互引力吸引導致星團的中心急劇收縮，在極小的體積內造成恆星的極端集中。所有球狀星團中約有五分之一經歷過核心坍縮，M30 是這一現象中研究最充分的例子之一。
+    </string>
+    <string name="object_info_m30_distance" translation_description="Distance to M30 shown in the info card. Translate units if appropriate for your locale.">27,100光年</string>
+    <string name="object_info_m30_size" translation_description="Physical size of M30 shown in the info card. Translate units if appropriate for your locale.">~87光年寬</string>
+
+    <string name="object_info_m54_description" translation_description="Description of the globular cluster M54 shown in the info card. Translate this text.">
+    M54 是人馬座中一個龐大而豐富的球狀星團，也是整個梅西耶星表中距離最遠的天體之一。幾個世紀以來，人們一直認為它是銀河系的一個遙遠的暈球狀星團，但現在已知它是人馬座矮橢圓星系的密集核心——一個正在被我們銀河系吸收的衛星星系。
+    </string>
+    <string name="object_info_m54_funfact" translation_description="Fun fact about M54 shown in the info card. Translate this text.">
+    1994年發現M54屬於人馬座矮星系，使其成為已知首個屬於另一個星系的球狀星團。隨著人馬座矮星系逐漸被銀河系撕裂並吞噬，M54最終將成為我們銀河系真正的暈球狀星團——一個歷經數十億年到達的星系間移民。
+    </string>
+    <string name="object_info_m54_distance" translation_description="Distance to M54 shown in the info card. Translate units if appropriate for your locale.">87,000光年</string>
+    <string name="object_info_m54_size" translation_description="Physical size of M54 shown in the info card. Translate units if appropriate for your locale.">~230光年寬</string>
+
+    <string name="object_info_m69_description" translation_description="Description of the globular cluster M69 shown in the info card. Translate this text.">
+    M69 是人馬座中一個中等豐富的球狀星團，位於銀河中心附近。其星等為 7.7，在黑暗天空中可用雙筒望遠鏡觀測，用小型望遠鏡觀看時會呈現部分解析的星球和明亮的顆粒狀中心。
+    </string>
+    <string name="object_info_m69_funfact" translation_description="Fun fact about M69 shown in the info card. Translate this text.">
+    M69 的軌道異常接近銀河中心——距銀河系核心僅約 6,200 光年——因此球狀星團中較重元素的濃度異常高。靠近銀河中心的球狀星團往往因周圍銀暈中多代恆星形成而在化學上得到富集。
+    </string>
+    <string name="object_info_m69_distance" translation_description="Distance to M69 shown in the info card. Translate units if appropriate for your locale.">29,700光年</string>
+    <string name="object_info_m69_size" translation_description="Physical size of M69 shown in the info card. Translate units if appropriate for your locale.">~61光年寬</string>
+
+    <string name="object_info_m9_description" translation_description="Description of the globular cluster M9 shown in the info card. Translate this text.">
+    M9 是蛇夫座中一個緊密的球狀星團——是受星際塵埃吸收影響最大的梅西耶球狀星團之一。它位於銀河核球方向，濃密的塵埃使其明顯變暗。如果沒有這種遮擋，M9 的亮度將增加近一個星等，肉眼就能看到。
+    </string>
+    <string name="object_info_m9_funfact" translation_description="Fun fact about M9 shown in the info card. Translate this text.">
+    M9 受到的星際塵埃吸收比幾乎所有其他梅西耶球狀星團都多——相比清晰視線，暗淡程度約為 1.3 星等。兩個較小的球狀星團（NGC 6342 和 NGC 6356）位於 M9 約 1° 範圍內，使其成為天空小區域內三個球狀星團的中心，形成一個非凡的星團群。
+    </string>
+    <string name="object_info_m9_distance" translation_description="Distance to M9 shown in the info card. Translate units if appropriate for your locale.">25,800光年</string>
+    <string name="object_info_m9_size" translation_description="Physical size of M9 shown in the info card. Translate units if appropriate for your locale.">~70光年寬</string>
+
+    <string name="object_info_m26_description" translation_description="Description of the open star cluster M26 shown in the info card. Translate this text.">
+    M26 是盾牌座中一個中等亮度的疏散星團，用雙筒望遠鏡可見，在小型望遠鏡中分辨良好。約 90 顆恆星分散在富饒的盾牌座星雲的緊密視場中，但由於星團背景極為密集，從周圍星場中識別其成員需要仔細觀察。
+    </string>
+    <string name="object_info_m26_funfact" translation_description="Fun fact about M26 shown in the info card. Translate this text.">
+    M26 位於與 M11（野鴨星團）相同的富饒天區，野鴨星團是天空中最美麗的疏散星團之一。兩者相隔約 3.5°，可在同一雙筒望遠鏡視場中看到，儘管盾牌座是一個小而常被忽視的星座，但它對星團觀測者來說是一個非凡的目的地。
+    </string>
+    <string name="object_info_m26_distance" translation_description="Distance to M26 shown in the info card. Translate units if appropriate for your locale.">5,000光年</string>
+    <string name="object_info_m26_size" translation_description="Physical size of M26 shown in the info card. Translate units if appropriate for your locale.">~22光年寬</string>
+
+    <string name="object_info_m79_description" translation_description="Description of the globular cluster M79 shown in the info card. Translate this text.">
+    M79 是位於天兔座的緊密球狀星團——是少數幾個梅西耶球狀星團之一，在冬季天空中位置最佳，因為大多數球狀星團此時在地平線以下或剛剛升起。在 8.0 等級的亮度下，需要用望遠鏡才能看清其緊密的核心和微弱的暈，在相對稀疏的冬季星場中格外突出。
+    </string>
+    <string name="object_info_m79_funfact" translation_description="Fun fact about M79 shown in the info card. Translate this text.">
+    有些天文學家認為M79是來自大犬矮星系的入侵者——一個被破壞的衛星星系，目前正被銀河系吸收。如果是這樣，M79並非在銀河系自身的球狀星團系統中形成，而是從一個墜落的星系中被捕獲，現在正緩慢地被折疊進我們銀河系的暈中。
+    </string>
+    <string name="object_info_m79_distance" translation_description="Distance to M79 shown in the info card. Translate units if appropriate for your locale.">41,000光年</string>
+    <string name="object_info_m79_size" translation_description="Physical size of M79 shown in the info card. Translate units if appropriate for your locale.">~104光年寬</string>
+
+    <string name="object_info_m70_description" translation_description="Description of the globular cluster M70 shown in the info card. Translate this text.">
+    M70是人馬座中一個緊密的球狀星團，在外觀和距離上都與其孿生星團M69非常相似。在8.1等級下，它是一個很好的小型望遠鏡觀測對象，展現出緊密的核心和外暈邊緣的分解跡象。它距離M69僅2°，兩者都可以在同一個雙筒望遠鏡視野中掃過。
+    </string>
+    <string name="object_info_m70_funfact" translation_description="Fun fact about M70 shown in the info card. Translate this text.">
+    M70在1995年因為艾倫·海爾和湯瑪斯·博普在天空中該位置獨立發現海爾-博普彗星而短暫聲名大噪——這是20世紀末最亮的彗星。兩位觀測者最初在搜尋其他目標時掃過M70，並注意到附近有一個意外的模糊物體，那就是這顆彗星。
+    </string>
+    <string name="object_info_m70_distance" translation_description="Distance to M70 shown in the info card. Translate units if appropriate for your locale.">29,400光年</string>
+    <string name="object_info_m70_size" translation_description="Physical size of M70 shown in the info card. Translate units if appropriate for your locale.">~67光年寬</string>
+
+    <string name="object_info_m107_description" translation_description="Description of the globular cluster M107 shown in the info card. Translate this text.">
+    M107 是梅西耶球狀星團中濃度最低的之一，星星以相對開放的模式散佈在一個適度的核心周圍。在 8.1 等級下，它是來自黑暗天空的雙筒鏡目標，在小型望遠鏡中部分可分解，呈現顆粒狀紋理而非尖銳的中心凝聚。
+    </string>
+    <string name="object_info_m107_funfact" translation_description="Fun fact about M107 shown in the info card. Translate this text.">
+    M107 是最後一個正式加入梅西耶星表的天體——它出現在皮埃爾·梅香的信件中，但未被納入原始的 1781 年版本。1947 年，加拿大天文學家海倫·索耶·霍格正式將其編號為 M107，她整理了梅香觀測過但梅西耶從未正式記錄的幾個「遺漏」天體。
+    </string>
+    <string name="object_info_m107_distance" translation_description="Distance to M107 shown in the info card. Translate units if appropriate for your locale.">20,900光年</string>
+    <string name="object_info_m107_size" translation_description="Physical size of M107 shown in the info card. Translate units if appropriate for your locale.">~61光年寬</string>
+
+    <string name="object_info_m68_description" translation_description="Description of the globular cluster M68 shown in the info card. Translate this text.">
+    M68 是長蛇座中一個豐富的球狀星團——一個南方天體，也是少數幾個在冬末和春季天空中位置最佳的球狀星團之一。在 8.2 等星等下，它用小型望遠鏡可以看到適度濃聚的核心和相對於長蛇座稀疏星場的大量已解析恆星的廣闊光暈。
+    </string>
+    <string name="object_info_m68_funfact" translation_description="Fun fact about M68 shown in the info card. Translate this text.">
+    儘管M68相對接近——使得業餘望遠鏡能清晰分辨其中的單顆恆星——但由於其南緯度很低，它經常被忽視。在北緯50°以上的地區，它幾乎無法升出地平線；然而，在南半球，它升得很高，是一個壯觀的球狀星團。
+    </string>
+    <string name="object_info_m68_distance" translation_description="Distance to M68 shown in the info card. Translate units if appropriate for your locale.">33,600光年</string>
+    <string name="object_info_m68_size" translation_description="Physical size of M68 shown in the info card. Translate units if appropriate for your locale.">~117光年寬</string>
+
+    <string name="object_info_m56_description" translation_description="Description of the globular cluster M56 shown in the info card. Translate this text.">
+    M56 是天琴座中一個緊密的球狀星團，位於環狀星雲 (M57) 和天鵝座亮雙星軒轅十四之間。其星等為 8.3，在暗空中是雙筒望遠鏡的觀測目標，小型望遠鏡可以看到呈顆粒狀、中等凝聚的球體，即使在中等口徑的望遠鏡中也只能部分分解。
+    </string>
+    <string name="object_info_m56_funfact" translation_description="Fun fact about M56 shown in the info card. Translate this text.">
+    M56 是由梅西耶在 1779 年 1 月發現的，在同一個觀測季節中，他也發現了環狀星雲 (M57)。儘管 M56 與天空中第五亮的恆星織女星位於同一個雙筒望遠鏡視野內，並且靠近著名的環狀星雲，但 M56 經常被被吸引到更著名的鄰近天體的觀測者所忽視。
+    </string>
+    <string name="object_info_m56_distance" translation_description="Distance to M56 shown in the info card. Translate units if appropriate for your locale.">32,900光年</string>
+    <string name="object_info_m56_size" translation_description="Physical size of M56 shown in the info card. Translate units if appropriate for your locale.">~68光年寬</string>
+
+    <string name="object_info_m71_description" translation_description="Description of the globular cluster M71 shown in the info card. Translate this text.">
+    M71 是位於矢座的一個不尋常的球狀星團——數十年來天文學家一直在爭論它究竟是一個非常豐富的古老疏散星團，還是一個非常鬆散的年輕球狀星團。現代分析證實它是一個真正的球狀星團，但濃度異常低，星數相對較少，核心也不如典型球狀星團那樣突出。
+    </string>
+    <string name="object_info_m71_funfact" translation_description="Fun fact about M71 shown in the info card. Translate this text.">
+    M71 的鬆散結構使其在許多早期星表中被忽視，因為它看起來像一個富集星場而非真正的星團。距離我們僅 12,000 光年，它是最近的梅西耶球狀星團之一，在黑暗天空下用小型望遠鏡可以部分分解其星體——呈現出一個緊湊、略微濃縮的富集星場的外觀。
+    </string>
+    <string name="object_info_m71_distance" translation_description="Distance to M71 shown in the info card. Translate units if appropriate for your locale.">12,000光年</string>
+    <string name="object_info_m71_size" translation_description="Physical size of M71 shown in the info card. Translate units if appropriate for your locale.">~25光年寬</string>
 </resources>

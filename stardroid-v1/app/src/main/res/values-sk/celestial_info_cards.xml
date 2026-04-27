@@ -948,6 +948,67 @@
     </string>
     <string name="object_info_eta_carinae_nebula_distance" translation_description="Distance to Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">7 500 svetelných rokov</string>
     <string name="object_info_eta_carinae_nebula_size" translation_description="Physical size of Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">300 svetelných rokov v priemere</string>
+    <!-- North America Nebula (NGC 7000) -->
+    <string name="object_info_north_america_nebula_description" translation_description="Description of the North America Nebula shown in the info card. Translate this text.">
+    Hmlovitá hmlovina Severná Amerika (NGC 7000) je veľká emisná hmlovina v súhvezdí Labuť, ktorej tvar pozoruhodne pripomína kontinent Severná Amerika, vrátane oblasti Mexického zálivu. Rozprestiera sa na približne 120 oblúkových minút – zhruba štyrikrát väčší priemer ako úplný Mesiac – a nachádza sa vo vzdialenosti okolo 2 600 svetelných rokov a má šírku viac ako 100 svetelných rokov.
+    </string>
+    <string name="object_info_north_america_nebula_funfact" translation_description="Fun fact about the North America Nebula shown in the info card. Translate this text.">
+    Napriek svojej zdanlivej magnitúde 4 je hmlovinka príliš veľká a rozptýlená na to, aby bola viditeľná voľným okom za väčšiny podmienok — avšak na fotografiách vyzerá krásne a odhaľuje Cygnus Wall, hustý oblúk intenzívneho vzniku hviezd pozdĺž jej južného okraja.
+    </string>
+    <string name="object_info_north_america_nebula_distance" translation_description="Distance to the North America Nebula shown in the info card. Translate units if appropriate for your locale.">~2 590 svetelných rokov</string>
+    <string name="object_info_north_america_nebula_size" translation_description="Physical size of the North America Nebula shown in the info card. Translate units if appropriate for your locale.">~140 svetelných rokov v priemere</string>
+    <!-- Exposed Cranium Nebula - PMR 1 -->
+    <string name="object_info_exposed_cranium_nebula_description" translation_description="Description of the Exposed Cranium Nebula shown in the info card. Translate this text.">
+    Exponovaná lebka Nebula (PMR 1) je planetárna hmlovinka v Vele, vzdialená približne 5 000 svetelných rokov. Jej zvláštne meno pochádza z tmavého pásu plynu vedúceho zvisle cez stred, ktorý delí jej žiarivé laloky na tvar zvláštne podobný mozgu vo vnútri priehľadnej lebky. V jej srdci horí horúca hviezda Wolf-Rayet, ktorá vylučuje vonkajšie vrstvy, ktoré si vytvorila počas svojho života.
+    </string>
+    <string name="object_info_exposed_cranium_nebula_funfact" translation_description="Fun fact about the Exposed Cranium Nebula shown in the info card. Translate this text.">
+    V roku 2026 zachytil Vesmírny ďalekohľad Jamesa Webba pôsobivé nové snímky Hmloviny Exponovanej lebky, pričom rozlíšil jej dvojvrstvovú štruktúru s bezprecedentnou presnosťou — vonkajší obal bohatý na vodík a vnútorný oblak plný ťažších prvkov vytvorených umierajúcou hviezdou.
+    </string>
+    <string name="object_info_exposed_cranium_nebula_distance" translation_description="Distance to the Exposed Cranium Nebula shown in the info card. Translate units if appropriate for your locale.">~5 000 svetelných rokov</string>
+    <string name="object_info_exposed_cranium_nebula_size" translation_description="Physical size of the Exposed Cranium Nebula shown in the info card. Translate units if appropriate for your locale.">~2 svetelné roky v priemere</string>
+
+    <!-- Jewel Box (NGC 4755) -->
+    <string name="object_info_jewel_box_description" translation_description="Description of the Jewel Box cluster shown in the info card. Translate this text.">
+    Jewel Box (NGC 4755) je mladá, žiarivá otvorená hviezdokopa v súhvezdí Kríž, ľahko viditeľná voľným okom ako hmlistá zložka štvrtej magnitúdy tesne juhovýchodne od Mimosy. Pri pozorovaní ďalekohľadom sa jej hviezdy žiaria v živých kontrastných farbách — hlboké modré superobri vedľa nápadného červeného superobra — čo jej dalo meno, ktoré jej dal John Herschel: nádherný kus luxusného šperkárstva. S vekom iba 14–16 miliónov rokov je jednou z najmladších a najfarbistejších hviezdokôp na oblohe.
+    </string>
+    <string name="object_info_jewel_box_funfact" translation_description="Fun fact about the Jewel Box shown in the info card. Translate this text.">
+    Vynikajúca červená hviezda klastra κ Crucis je červený supergigant taký jasný, že prekáša Slnko viac ako 100 000-krát — živá pripomienka, že hviezdne klastre nemajú všetky rovnakú farbu.
+    </string>
+    <string name="object_info_jewel_box_distance" translation_description="Distance to the Jewel Box shown in the info card. Translate units if appropriate for your locale.">~6 500 svetelných rokov</string>
+    <string name="object_info_jewel_box_size" translation_description="Physical size of the Jewel Box shown in the info card. Translate units if appropriate for your locale.">~19 svetelných rokov v priemere</string>
+
+    <!-- Double Cluster (NGC 869 & NGC 884) -->
+    <string name="object_info_double_cluster_description" translation_description="Description of the Double Cluster shown in the info card. Translate this text.">
+    Dvojitá hviezdna kopa (NGC 869 a NGC 884) je ohromujúca dvojica mladých otvorených hviezdnych kôp v súhvezdí Perzea, ktoré sú v oblohe umiestnené vedľa seba, vzdialené len o niečo viac ako jeden stupeň. Obe sú viditeľné voľným okom ako mlhavá škvrna, ale aj malý ďalekohľad odhalí stovky brilantných modro-bielych supergigantov zhromaždených v dvoch trblietavých rojoch. V diaľke približne 7 500 svetelných rokov sa nachádzajú v Perseovom ramene našej galaxie a patria medzi najkrajšie objekty viditeľné ďalekohľadom v severnej oblohe.
+    </string>
+    <string name="object_info_double_cluster_funfact" translation_description="Fun fact about the Double Cluster shown in the info card. Translate this text.">
+    Dvojitá hviezdokopa je s vekom len 14 miliónov rokov mimoriadne mladá — narodila sa tak nedávno, že jej najmasívnejšie hviezdy stále žiaria ako modré supergianty, pričom niekoľko z nich sa už vyvinulo na vzácne, ohnivé červené supergianty.
+    </string>
+    <string name="object_info_double_cluster_distance" translation_description="Distance to the Double Cluster shown in the info card. Translate units if appropriate for your locale.">~7 500 svetelných rokov</string>
+    <string name="object_info_double_cluster_size" translation_description="Physical size of the Double Cluster shown in the info card. Translate units if appropriate for your locale.">
+    Každá hviezdokopa ~70 svetelných rokov v priemere; dvojica oddelená ~1 000 svetelných rokov
+    </string>
+
+    <!-- 47 Tucanae (NGC 104) -->
+    <string name="object_info_n47_tucanae_description" translation_description="Description of 47 Tucanae shown in the info card. Translate this text.">
+    47 Tucanae (NGC 104) je druhý najjasnejší guľový hvezdokop na oblohe, hustá guľa približne jedného milióna starých hviezd obiehajúcich Mliečnu cestu v súhvezdí Tucana. V diaľke približne 14 500 svetelných rokov sa javí voľnému oku ako nejasná hviezda štvrtej magnitúdy, ale ďalekohľad rozlíši jej stlačené jadro na mimoriadny roj zlatých a modrobielych slnečníc. Jej hviezdy vznikli pred približne 13 miliardami rokov, čo robí hvezdokop takmer rovnako starým ako samotný vesmír.
+    </string>
+    <string name="object_info_n47_tucanae_funfact" translation_description="Fun fact about 47 Tucanae shown in the info card. Translate this text.">
+    47 Tucanae je kozmická továreň na pulzary: astronómovia v nej našli najmenej 35 milisekundových pulzarov rotujúcich stovky krát za sekundu — viac ako v akomkoľvek inom známom guľovom hvezdokupe — výsledok blízkych stretnutí hviezd, ktoré recyklujú staré neutróny hviezdy ich urýchľovaním.
+    </string>
+    <string name="object_info_n47_tucanae_distance" translation_description="Distance to 47 Tucanae shown in the info card. Translate units if appropriate for your locale.">~14 500 svetelných rokov</string>
+    <string name="object_info_n47_tucanae_size" translation_description="Physical size of 47 Tucanae shown in the info card. Translate units if appropriate for your locale.">~120 svetelných rokov v priemere</string>
+
+    <!-- Centaurus A (NGC 5128) -->
+    <string name="object_info_centaurus_a_description" translation_description="Description of Centaurus A shown in the info card. Translate this text.">
+    Centaurus A (NGC 5128) je najbližšia aktívna rádiová galaxia k Zemi, obrovská eliptická galaxia v súhvezdí Centaurus, ktorej nápadná tmavá prachová páska prezrádza násilnú minulosť — špirálna galaxia pohltená približne pred 200–700 miliónmi rokov. V jej srdci sa skrýva supermasívna čierna diera s hmotnosťou 55 miliónov slnečných hmotností, ktorá poháňa relativistické prúdy rozprestierajúce sa na viac ako milión svetelných rokov v rádiových vlnových dĺžkach. V diaľke približne 12 miliónov svetelných rokov je jednou z najviac študovaných galaxií na oblohe.
+    </string>
+    <string name="object_info_centaurus_a_funfact" translation_description="Fun fact about Centaurus A shown in the info card. Translate this text.">
+    Centaurus A je jedným z najsilnejších prirodzených rádiových vysielačov na oblohe — jej prúdy vymršťujú plazmu von takmer rýchlosťou svetla a celkový rozsah jej rádiových lalokov pokrýva plochu ekvivalentnú približne 100 úplným mesiacom položeným za sebou naprieč oblohou.
+    </string>
+    <string name="object_info_centaurus_a_distance" translation_description="Distance to Centaurus A shown in the info card. Translate units if appropriate for your locale.">~12 miliónov svetelných rokov</string>
+    <string name="object_info_centaurus_a_size" translation_description="Physical size of Centaurus A shown in the info card. Translate units if appropriate for your locale.">~123 000 svetelných rokov v priemere</string>
+
     <!-- ==================== CONSTELLATIONS ==================== -->
     <!-- Note: Constellation names are defined in celestial_objects.xml -->
     <!-- Orion -->
@@ -1975,4 +2036,697 @@
     Vulpecula obsahuje Dumbbellovu hmlovinu (M27), prvú planetárnu hmlovinu, ktorá bola kedy objavená (Charles Messier v roku 1764), a krásny cieľ pre ďalekohľad!
     </string>
     <string name="object_info_vulpecula_size" translation_description="Physical size of Vulpecula shown in the info card. Translate units if appropriate for your locale.">268 štvorcových stupňov</string>
+
+    <!-- Galilean Moons of Jupiter -->
+    <string name="object_info_io_description" translation_description="Description of Io shown in the info card. Translate this text.">
+    Io je najvnútornejší z Jupiterovych štyroch veľkých Galileovych mesiacov a najaktívnejšie vulkanicky teleso v slnečnej sústave.
+    </string>
+    <string name="object_info_io_funfact" translation_description="Fun fact about Io shown in the info card. Translate this text.">
+    Io má stovky aktívnych vulkánov, niektoré vyvrhujú lávové fontány vysoké desiatky kilometrov. Jej neustála aktivita je poháňaná prílivovým ohrievaním spôsobeným obrovskou gravitáciou Jupitera.
+    </string>
+    <string name="object_info_io_distance" translation_description="Distance to Io shown in the info card. Translate units if appropriate for your locale.">421 700 km od Jupitera</string>
+    <string name="object_info_io_size" translation_description="Physical size of Io shown in the info card. Translate units if appropriate for your locale.">3 643 km priemer</string>
+
+    <string name="object_info_europa_description" translation_description="Description of Europa shown in the info card. Translate this text.">
+    Európa je druhý Galileov mesiac a predpokladá sa, že pod jej ľadovou kôrou skrýva rozsiahly oceán tekutej vody, čo z nej robí jedno z najsľubnejších miest na hľadanie života.
+    </string>
+    <string name="object_info_europa_funfact" translation_description="Fun fact about Europa shown in the info card. Translate this text.">
+    Podpovrchový oceán Europy môže obsahovať dvakrát toľko tekutej vody ako všetky zemské oceány dohromady, udržiavaný v tekutom stave prílivovým ohrevom od Jupitera.
+    </string>
+    <string name="object_info_europa_distance" translation_description="Distance to Europa shown in the info card. Translate units if appropriate for your locale.">671 100 km od Jupitera</string>
+    <string name="object_info_europa_size" translation_description="Physical size of Europa shown in the info card. Translate units if appropriate for your locale.">3 122 km priemer</string>
+
+    <string name="object_info_ganymede_description" translation_description="Description of Ganymede shown in the info card. Translate this text.">
+    Ganymede je najväčší mesiac v slnečnej sústave — dokonca väčší ako planéta Merkúr. Je to jediný mesiac, o ktorom je známe, že generuje vlastné magnetické pole.
+    </string>
+    <string name="object_info_ganymede_funfact" translation_description="Fun fact about Ganymede shown in the info card. Translate this text.">
+    Ganymede je väčší ako Merkúr, hoci má len polovicu jeho hmotnosti. Jeho vnútorné magnetické pole vytvára vlastnú miniatúrnu magnetosféru v rámci oveľa väčšej magnetosféry Jupitera.
+    </string>
+    <string name="object_info_ganymede_distance" translation_description="Distance to Ganymede shown in the info card. Translate units if appropriate for your locale.">1 070 400 km od Jupitera</string>
+    <string name="object_info_ganymede_size" translation_description="Physical size of Ganymede shown in the info card. Translate units if appropriate for your locale.">5 268 km priemer</string>
+
+    <string name="object_info_callisto_description" translation_description="Description of Callisto shown in the info card. Translate this text.">
+    Callisto je najvzdialenejší z Galileiho mesiacov a jedno z najviac krátovaných telies slnečnej sústavy, jeho starobylý povrch zachováva záznam raných dopadov v slnečnej sústave.
+    </string>
+    <string name="object_info_callisto_funfact" translation_description="Fun fact about Callisto shown in the info card. Translate this text.">
+    Callisto obieha mimo hlavných radiačných pásov Jupitera, čo z neho robí najbezpečnejší z galileovských mesiacov pre budúcu ľudskú prieskum — niekedy sa nazýva \'mesiac brána\'.
+    </string>
+    <string name="object_info_callisto_distance" translation_description="Distance to Callisto shown in the info card. Translate units if appropriate for your locale.">1 882 700 km od Jupitera</string>
+    <string name="object_info_callisto_size" translation_description="Physical size of Callisto shown in the info card. Translate units if appropriate for your locale.">4 821 km priemer</string>
+
+    <!-- Moons of Mars -->
+    <string name="object_info_phobos_description" translation_description="Description of Phobos shown in the info card. Translate this text.">
+    Phobos je väčší a vnútornejší z dvoch mesiacov Marsu, ktorý obieha bližšie k svojej planéte ako ktorýkoľvek iný mesiac v slnečnej sústave. Je to nepravidelne tvarované teleso s hlbokými drážkami a krátermi, ktoré sa predpokladá, že je zachyteným asteroidom.
+    </string>
+    <string name="object_info_phobos_funfact" translation_description="Fun fact about Phobos shown in the info card. Translate this text.">
+    Fobos obieha Mars tak rýchlo, že vychádza na západe a zapadá na východe — a pomaly sa spirálovite približuje dovnútra, pričom je určený buď na zrážku s Marsom, alebo sa rozpadne na krúžok za približne 50 miliónov rokov.
+    </string>
+    <string name="object_info_phobos_distance" translation_description="Distance to Phobos shown in the info card. Translate units if appropriate for your locale.">9 376 km od Marsu</string>
+    <!-- tm:omitted name="object_info_phobos_size" reason="identical_to_source" -->
+
+    <string name="object_info_deimos_description" translation_description="Description of Deimos shown in the info card. Translate this text.">
+    Deimos je menší a vonkajší z dvoch mesiacov Marsu s hladkým, prachom pokrytým povrchom, ktorý mu dáva zaoblenený vzhľad v porovnaní s Fobom. Ako jeho spoločník sa predpokladá, že ide o zachytený asteroid z vonkajšieho pásu.
+    </string>
+    <string name="object_info_deimos_funfact" translation_description="Fun fact about Deimos shown in the info card. Translate this text.">
+    Deimos je taký malý a vzdialený, že z povrchu Marsu vyzerá len ako jasná hviezda, ktorá sa pomaly pohybuje po nočnej oblohe približne 30 hodín.
+    </string>
+    <string name="object_info_deimos_distance" translation_description="Distance to Deimos shown in the info card. Translate units if appropriate for your locale.">23 460 km od Marsu</string>
+    <!-- tm:omitted name="object_info_deimos_size" reason="identical_to_source" -->
+
+    <!-- Major Moons of Saturn -->
+    <string name="object_info_titan_description" translation_description="Description of Titan shown in the info card. Translate this text.">
+    Titan je najväčší mesiac Saturna a druhý najväčší mesiac slnečnej sústavy. Je jediným mesiacom, o ktorom je známe, že má hustú atmosféru — hustú dusíkovú vrstvu zmiešanú s metánom — a jediným svetom mimo Zeme, o ktorom je známe, že má na svojom povrchu stabilné kvapalné moria.
+    </string>
+    <string name="object_info_titan_funfact" translation_description="Fun fact about Titan shown in the info card. Translate this text.">
+    Titanove jazera a moria sú naplnené nie vodou, ale kvapalným metánom a etánom pri mrazivej teplote −179°C. Misia rotorkraftu NASA Dragonfly, ktorá by mala doraziť v roku 2034, bude lietať medzi miestami na povrchu Titanu, aby hľadala chémiu života.
+    </string>
+    <string name="object_info_titan_distance" translation_description="Distance to Titan shown in the info card. Translate units if appropriate for your locale.">1 221 870 km od Saturna</string>
+    <string name="object_info_titan_size" translation_description="Physical size of Titan shown in the info card. Translate units if appropriate for your locale.">5 151 km priemer</string>
+
+    <string name="object_info_rhea_description" translation_description="Description of Rhea shown in the info card. Translate this text.">
+    Rhea je druhý najväčší mesiac Saturna a ťažko posiaty svet ľadu a skaly. Jeho bledý, staroveký povrch zachováva niektoré z najčistejších dopadových kráterov slnečnej sústavy, spolu s jasnými ľadovými útesmi, kde zosuvy pôdy odhalili čerstvý materiál spod povrchu.
+    </string>
+    <string name="object_info_rhea_funfact" translation_description="Fun fact about Rhea shown in the info card. Translate this text.">
+    V roku 2008 údaje zo sondy Cassini naznačovali, že Rhea by mohla mať tenký prstenec z úlomkov obiehajúcich okolo nej — čo by z nej urobilo prvý mesiac, ktorý by kedy bol objavený s vlastným systémom prstencov. Ak by sa to potvrdilo, išlo by o pozoruhodný objav; dôkazy zostávajú aktívnou oblasťou výskumu.
+    </string>
+    <string name="object_info_rhea_distance" translation_description="Distance to Rhea shown in the info card. Translate units if appropriate for your locale.">527 108 km od Saturna</string>
+    <string name="object_info_rhea_size" translation_description="Physical size of Rhea shown in the info card. Translate units if appropriate for your locale.">1 527 km priemer</string>
+
+    <string name="object_info_tethys_description" translation_description="Description of Tethys shown in the info card. Translate this text.">
+    Tethys je ľadový mesiac Saturna dominovaný dvoma dramatickými prvkami: obrovským kráterom Odysseus, ktorý je 400 km široký a pokrýva takmer tretinu povrchu mesiaca, a Ithaca Chasma, systémom kaňonov, ktorý sa rozprestiera na tri štvrtiny okolo zemegule.
+    </string>
+    <string name="object_info_tethys_funfact" translation_description="Fun fact about Tethys shown in the info card. Translate this text.">
+    Tethys je takmer čistý ľadový ľad — má jednu z najnižších hustôt všetkých mesiacov v slnečnej sústave, sotva hustejší ako zmrznutá voda. Ithaca Chasma sa mohla vytvoriť, keď sa vnútro zmrazilo a rozšírilo, čím sa prasklina kôra zvnútra.
+    </string>
+    <string name="object_info_tethys_distance" translation_description="Distance to Tethys shown in the info card. Translate units if appropriate for your locale.">294 619 km od Saturna</string>
+    <string name="object_info_tethys_size" translation_description="Physical size of Tethys shown in the info card. Translate units if appropriate for your locale.">1 062 km priemer</string>
+
+    <string name="object_info_dione_description" translation_description="Description of Dione shown in the info card. Translate this text.">
+    Dione je ľadová mesiac Saturna s ťažko krátovanou prednou stranou a zadnou hemisférou pokrytou jasnými ľadovými útesmi — zlomovými čiarami, kde staré tektonické sily odhalili čerstvý ľad z hĺbky. Gravitačné údaje zo sondy Cassini naznačujú podpovrchový kvapalný oceán pod kôrou.
+    </string>
+    <string name="object_info_dione_funfact" translation_description="Fun fact about Dione shown in the info card. Translate this text.">
+    Dione si delí svoju obežnú dráhu s dvoma malými mesiacmi, Helenou a Polydeucesom, ktoré sú uzamknuté 60° pred ňou a za ňou v gravitačných rovnovážnych bodoch nazývaných Lagrangeove body. Helena sa v snímkach Cassiniho obzvlášť dobre vidí, ako sa pohybuje ako kozmický stopár.
+    </string>
+    <string name="object_info_dione_distance" translation_description="Distance to Dione shown in the info card. Translate units if appropriate for your locale.">377 396 km od Saturna</string>
+    <string name="object_info_dione_size" translation_description="Physical size of Dione shown in the info card. Translate units if appropriate for your locale.">1 122 km priemer</string>
+
+    <string name="object_info_iapetus_description" translation_description="Description of Iapetus shown in the info card. Translate this text.">
+    Iapetus je jedným z najvýraznejších mesiacov Saturna: jeho vedúca pologuľa je pokrytá čiernočiernym materiálom tmavým ako uhlie, zatiaľ čo jeho zadná pologuľa je jasne biely ľad. Tento extrémny dvojfarebný vzhľad zmätil Giovanniho Cassinihho, keď mesiac objavil v roku 1671, a kontrast je taký výrazný, že je viditeľný v malých ďalekohľadoch.
+    </string>
+    <string name="object_info_iapetus_funfact" translation_description="Fun fact about Iapetus shown in the info card. Translate this text.">
+    Iapetus má tiež majestátny rovníkový chrbát, ktorý sa zdvíha 20 km vysoko — vyšší ako akákoľvek hora na Zemi — a prebieha tisícky kilometrov okolo jeho rovníka. Pôvod je neznámy: môže ísť o zvyšok zrúteného prstenca alebo staré tektonické záhyby, ktoré vznikli, keď sa mesiac kedysi točil oveľa rýchlejšie.
+    </string>
+    <string name="object_info_iapetus_distance" translation_description="Distance to Iapetus shown in the info card. Translate units if appropriate for your locale.">3 560 820 km od Saturna</string>
+    <string name="object_info_iapetus_size" translation_description="Physical size of Iapetus shown in the info card. Translate units if appropriate for your locale.">1 469 km priemer</string>
+
+    <!-- Moon of Neptune -->
+    <string name="object_info_triton_description" translation_description="Description of Triton shown in the info card. Translate this text.">
+    Triton je najväčší mesiac Neptúna a jedno z najúžasnejších telies v slnečnej sústave. Obieha Neptúna v opačnom smere — opačne ako vlastná rotácia planéty — čo je silný náznak, že bol zachytený z vonkajšej časti slnečnej sústavy, s najväčšou pravdepodobnosťou z Kuiperovho pásu, na začiatku histórie Neptúna.
+    </string>
+    <string name="object_info_triton_funfact" translation_description="Fun fact about Triton shown in the info card. Translate this text.">
+    Napriek teplote povrchu −235°C — najchladnejšej nameranej na ktoromkoľvek telese navštívenom kozmickou sondou — sonda Voyager 2 objavila aktívne dusíkové gejzíry na Tritóne v roku 1989. Tmavé pruhy na povrchu označujú miesta, kde sa stĺpy plynu a tmavého materiálu vystriekli do tenkej atmosféry na vzdialenosť niekoľko kilometrov.
+    </string>
+    <string name="object_info_triton_distance" translation_description="Distance to Triton shown in the info card. Translate units if appropriate for your locale.">354 759 km od Neptúna</string>
+    <string name="object_info_triton_size" translation_description="Physical size of Triton shown in the info card. Translate units if appropriate for your locale.">2 707 km priemer</string>
+
+    <!-- Major Moons of Uranus -->
+    <string name="object_info_titania_description" translation_description="Description of Titania shown in the info card. Translate this text.">
+    Titánia je najväčší mesiac Uránu a ôsmy najväčší mesiac slnečnej sústavy. Jej povrch vykazuje zmes starých kráterových plní a mladších strpov a údolí, čo naznačuje zložitú geologickú históriu, ktorá mohla zahŕňať minulú tektonickú aktivitu preformujúcu ľadovú kôru.
+    </string>
+    <string name="object_info_titania_funfact" translation_description="Fun fact about Titania shown in the info card. Translate this text.">
+    Všetky mesiace Uránu sú pomenované podľa postáv z hier Shakespeara a Alexandra Popea — Titánia je kráľovná víl v Sne noci svätojánskej. Je jedným z veľmi mála hlavných mesiacov planét, ktorý nie je pomenovaný podľa postavy z gréckej alebo rímskej mytológie.
+    </string>
+    <string name="object_info_titania_distance" translation_description="Distance to Titania shown in the info card. Translate units if appropriate for your locale.">435 910 km od Uránu</string>
+    <string name="object_info_titania_size" translation_description="Physical size of Titania shown in the info card. Translate units if appropriate for your locale.">1 578 km priemer</string>
+
+    <string name="object_info_oberon_description" translation_description="Description of Oberon shown in the info card. Translate this text.">
+    Oberon je najvzdialenejší z piatich hlavných mesiacov Uránu a jeden z najviac pokrytých krátermi, s starou povrchom, ktorý sa od začiatkov slnečnej sústavy málo zmenil. Niekoľko jeho veľkých dopadových kráterov má na dne tmavý materiál, pravdepodobne organické usadeniny priniesené dopadajúcimi telesami.
+    </string>
+    <string name="object_info_oberon_funfact" translation_description="Fun fact about Oberon shown in the info card. Translate this text.">
+    Oberon má horu, ktorá sa zdvíha asi 6 km nad okolitú rovinu — porovnateľná s najvyššími vrcholmi na Zemi. Na rozdiel od zemských hôr, ktoré vznikli tektonickou aktivitou dosiek, táto formácia môže byť centrálnym vrcholom starej dopadovej krátery alebo pozostatkom ranej vulkanickej činnosti.
+    </string>
+    <string name="object_info_oberon_distance" translation_description="Distance to Oberon shown in the info card. Translate units if appropriate for your locale.">583 520 km od Uránu</string>
+    <string name="object_info_oberon_size" translation_description="Physical size of Oberon shown in the info card. Translate units if appropriate for your locale.">1 523 km priemer</string>
+
+    <string name="object_info_ariel_description" translation_description="Description of Ariel shown in the info card. Translate this text.">
+    Ariel má najmladší a najjasnejší povrch z piatich hlavných mesiacov Uránu. Jeho krajina je dominovaná sieťou hlbokých údolí a hladkých plní, ktoré boli pred dlhým časom preformované tekutinou — pravdepodobne vodou alebo zmesami vody a amoniaku — vyvierajúcou z vnútra a zaplavujúcou staré terény.
+    </string>
+    <string name="object_info_ariel_funfact" translation_description="Fun fact about Ariel shown in the info card. Translate this text.">
+    Údolia na Ariele môžu dosiahnuť hĺbku 10 km — oveľa hlbšie ako Veľký kaňon. Pozorovania vesmírneho ďalekohľadu Jamesa Webba odvtedy detegovali oxid uhličitý ľad na povrchu Ariela, čo naznačuje prebiehajúcu chémiu povrchu poháňanú nabitými časticami z magnetického poľa Uránu.
+    </string>
+    <string name="object_info_ariel_distance" translation_description="Distance to Ariel shown in the info card. Translate units if appropriate for your locale.">191 020 km od Uránu</string>
+    <string name="object_info_ariel_size" translation_description="Physical size of Ariel shown in the info card. Translate units if appropriate for your locale.">1 158 km priemer</string>
+
+    <string name="object_info_umbriel_description" translation_description="Description of Umbriel shown in the info card. Translate this text.">
+    Umbriel je najtemnejší z piatich hlavných mesiacov Uránu, s jednotne starou a silne kráterovanou povrchom, ktorý vykazuje málo známok geologickej premeny povrchu viditeľnej na jeho susedoch. Zdá sa, že jeho vnútro zostalo studené a zamrznuté od začiatku histórie slnečnej sústavy.
+    </string>
+    <string name="object_info_umbriel_funfact" translation_description="Fun fact about Umbriel shown in the info card. Translate this text.">
+    Najvýraznejšou črtou Umbriela je Wunda, jasný prstenec s priemerom asi 140 km blízko jeho rovníka. Objavená sondou Voyager 2 v roku 1986, presná povaha Wundy zostáva záhadou — môže ísť o dno krátera pokryté oxidom uhličitým alebo amoniakom zmrazeným dlho po náraze, ktorý ju vytvoril.
+    </string>
+    <string name="object_info_umbriel_distance" translation_description="Distance to Umbriel shown in the info card. Translate units if appropriate for your locale.">266 300 km od Uránu</string>
+    <string name="object_info_umbriel_size" translation_description="Physical size of Umbriel shown in the info card. Translate units if appropriate for your locale.">1 170 km priemer</string>
+
+    <!-- Globular clusters already on the map -->
+    <string name="object_info_omega_centauri_description" translation_description="Description of Omega Centauri shown in the info card. Translate this text.">
+    Omega Centauri je najväčší a najhmotnejší guľový zhluk obiehajúci Mliečnu cestu a obsahuje približne 10 miliónov hviezd stlačených do gule s priemerom asi 150 svetelných rokov. Je ľahko viditeľný voľným okom ako rozmazaná hviezda v súhvezdí Centaurus a cez ďalekohľad alebo ľubovoľný teleskop sa rozpadá na úchvatný zhluk hviezd.
+    </string>
+    <string name="object_info_omega_centauri_funfact" translation_description="Fun fact about Omega Centauri shown in the info card. Translate this text.">
+    Na rozdiel od typických guľových zhlukov obsahuje Omega Centauri hviezdy mnohých rôznych vekových kategórií a chemických zložení — čo naznačuje, že by mohla byť obnaženým jadrom trpasličej galaxie, ktorá bola roztrhaná a pohltená Mliečnou cestou pred miliardami rokov. Môže dokonca obsahovať centrálnu čiernu dieru strednej hmotnosti.
+    </string>
+    <string name="object_info_omega_centauri_distance" translation_description="Distance to Omega Centauri shown in the info card. Translate units if appropriate for your locale.">17 090 svetelných rokov</string>
+    <string name="object_info_omega_centauri_size" translation_description="Physical size of Omega Centauri shown in the info card. Translate units if appropriate for your locale.">~150 svetelných rokov priemer</string>
+
+    <!-- Deep-sky objects: new catalog additions -->
+    <string name="object_info_hyades_description" translation_description="Description of the Hyades star cluster shown in the info card. Translate this text.">
+    Hyády sú najbližšou otvorenou hviezdnou kôpou k slnečnej sústave a jednou z najviac študovaných v astronómii. Viditeľné voľným okom ako V-tvar hviezd tvoriacich tvár Býka, obsahujú niekoľko stoviek hviezd rozložených na približne 5° oblohy.
+    </string>
+    <string name="object_info_hyades_funfact" translation_description="Fun fact about the Hyades shown in the info card. Translate this text.">
+    Jasný oranžový hviezd Aldebaran sa zdá byť v Hyádach, ale v skutočnosti je to predný objekt na polovičnej vzdialenosti — náhodná zhoda. Skutočný hviezd je vzdialený asi 153 svetelných rokov a obsahuje prvé hviezdy, ktorých vzdialenosti boli merané paralaxou zo satelitu Hipparcos.
+    </string>
+    <string name="object_info_hyades_distance" translation_description="Distance to the Hyades shown in the info card. Translate units if appropriate for your locale.">153 svetelných rokov</string>
+    <string name="object_info_hyades_size" translation_description="Angular size of the Hyades shown in the info card.">~5° v priemere</string>
+
+    <string name="object_info_coma_star_cluster_description" translation_description="Description of the Coma Berenices Star Cluster shown in the info card. Translate this text.">
+    Hviezdokopa Coma Berenices je blízka otvorená hviezdokopa s približne 40 hviezdami rozptýlenými voľne cez takmer 5° oblohy, ľahko viditeľná voľným okom ako jemná hmla v tmavých podmienkach. Je to tretia najbližšia otvorená hviezdokopa k slnečnej sústave a zdroj súhvezdia Coma Berenices.
+    </string>
+    <string name="object_info_coma_star_cluster_funfact" translation_description="Fun fact about the Coma Berenices Star Cluster shown in the info card. Translate this text.">
+    Starí pozorovatelia videli v tomto hvezdokupe vlasy kráľovnej Berenice II z Egypta, ktorá podľa legendy odsekla svoje zlaté vlasy ako dar za bezpečný návrat svojho manžela z vojny. Ptolemaios III údajne dal túto neobvyklú konstelácií oficiálne pomenovať na jej počesť okolo roku 245 pred n. l.
+    </string>
+    <string name="object_info_coma_star_cluster_distance" translation_description="Distance to the Coma Star Cluster shown in the info card. Translate units if appropriate for your locale.">288 svetelných rokov</string>
+    <string name="object_info_coma_star_cluster_size" translation_description="Angular size of the Coma Star Cluster shown in the info card.">~5° v priemere</string>
+
+    <string name="object_info_coathanger_description" translation_description="Description of the Coathanger asterism shown in the info card. Translate this text.">
+    Coathanger je pôsobivý asterizmus desiatich hviezd vo Vulpekule, ktoré tvoria nezameniteľný tvar: šesť hviezd v priamej línii so štyrmi visiacimi nižšie v háčiku, presne ako obrátený vešiak na kabáty. Je to jeden z najlepších objektov na ďalekohľad v letnej oblohe, ktorý sa dokonale zmestí do typického zorného poľa ďalekohľadu.
+    </string>
+    <string name="object_info_coathanger_funfact" translation_description="Fun fact about the Coathanger shown in the info card. Translate this text.">
+    Napriek tomu, že vyzerá ako hviezdokopa, hviezdy Vešiaka nie sú fyzicky spojené — nachádzajú sa v veľmi rôznych vzdialenostiach a sú len náhodným zarovnaním v smere pohľadu. Brocchiho hviezdokopa bola katalogizovaná Dalmírom Broccim v 20. rokoch 20. storočia a prvý vesmírny teleskop, ktorý ju odfotografoval, bol Hipparcos, ktorý potvrdil, že hviezdy spolu nesúvisia.
+    </string>
+    <string name="object_info_coathanger_distance" translation_description="Distance to the Coathanger shown in the info card. Translate units if appropriate for your locale.">~420 svetelných rokov (najjasnejšia hviezda)</string>
+    <string name="object_info_coathanger_size" translation_description="Angular size of the Coathanger shown in the info card.">~1° v priemere</string>
+
+    <string name="object_info_helix_nebula_description" translation_description="Description of the Helix Nebula shown in the info card. Translate this text.">
+    Helix Nebula je najväčšia planetárna hmlovina podľa zdanlivej veľkosti na oblohe — rozširujúca sa vrstva plynu vyvrhnutá hviezdou podobnou Slnku na konci jej života. S rozpätím približne pol stupňa je viditeľná v ďalekohľade ako slabý kruhový lesk v Aquariuse a je prezývaná Okom Boha pre svoj vzhľad na dlhodobých fotografiách.
+    </string>
+    <string name="object_info_helix_nebula_funfact" translation_description="Fun fact about the Helix Nebula shown in the info card. Translate this text.">
+    V centre Helix Nebuly sa nachádza jeden z najbližších známych bielych trpaslíkov k Zemi — mimoriadne horúci zvyšok hviezdy veľkosti Zeme, ale s hmotnosťou Slnka. Toto je osud, ktorý čaká naše vlastné Slnko za približne päť miliárd rokov.
+    </string>
+    <string name="object_info_helix_nebula_distance" translation_description="Distance to the Helix Nebula shown in the info card. Translate units if appropriate for your locale.">650 svetelných rokov</string>
+    <string name="object_info_helix_nebula_size" translation_description="Angular size of the Helix Nebula shown in the info card.">~3 svetelné roky priemer</string>
+
+    <string name="object_info_sculptor_galaxy_description" translation_description="Description of the Sculptor Galaxy shown in the info card. Translate this text.">
+    Galaxia Sochára je jednou z najjasnejších a najkrajších galaxií viditeľných z Zeme v polohe hrany, ktorá sa javí ako predĺžený lesk v južnom súhvezdí Sochár. Je to jedna z najbližších galaxií so vzplanutím hviezd — galaxia prechádzajúca intenzívnym vzplanutím tvorby hviezd — viditeľná pre amatérskych astronómov s ďalekohľadmi z tmavého neba.
+    </string>
+    <string name="object_info_sculptor_galaxy_funfact" translation_description="Fun fact about the Sculptor Galaxy shown in the info card. Translate this text.">
+    Galaxia Sochára je jedným z najjasnejších členov Skupiny Sochára — skupiny galaxií najbližšej k našej vlastnej Miestnej skupine. Jej centrálna oblasť hvezdneho výbuchu produkuje nové hviezdy rýchlosťou niekoľkokrát vyššou ako Mliečna cesta, čo je spôsobené minulými interakciami so susednými galaxiami.
+    </string>
+    <string name="object_info_sculptor_galaxy_distance" translation_description="Distance to the Sculptor Galaxy shown in the info card. Translate units if appropriate for your locale.">11,4 milióna svetelných rokov</string>
+    <string name="object_info_sculptor_galaxy_size" translation_description="Physical size of the Sculptor Galaxy shown in the info card. Translate units if appropriate for your locale.">~90 000 svetelných rokov v priemere</string>
+
+    <string name="object_info_blue_snowball_nebula_description" translation_description="Description of the Blue Snowball Nebula shown in the info card. Translate this text.">
+    Blue Snowball je planetárna hmla v Andromede — svietiaca škrupina plynu vyvrhnutá zomierajúcou hviezdou. Pri magnitúde 8,3 je jednou z najjasnejších a najfarebnejších planetárnych hmiel na oblohe, ktorá sa v malých ďalekohľadoch javí ako živá modrozelená disk. Jej symetrický tvar a intenzívna farba ju robia obľúbenou medzi pozorovateľmi.
+    </string>
+    <string name="object_info_blue_snowball_nebula_funfact" translation_description="Fun fact about the Blue Snowball Nebula shown in the info card. Translate this text.">
+    Nápadná farba Modrej snehulienky pochádza z dvojne ionizovaného kyslíka svietiaceho na špecifickej zelenej vlnovej dĺžke, kombinovaného s emisiou vodíka — farebná paleta, ktorú ľudské oči vnímajú ako modrozelenú. Centrálny biely trpaslík má povrchovú teplotu okolo 100 000 °C, čo je dosť horúce na ionizáciu okolitého plynu v tejto vzdialenosti.
+    </string>
+    <string name="object_info_blue_snowball_nebula_distance" translation_description="Distance to the Blue Snowball Nebula shown in the info card. Translate units if appropriate for your locale.">~2 500 svetelných rokov</string>
+    <string name="object_info_blue_snowball_nebula_size" translation_description="Physical size of the Blue Snowball Nebula shown in the info card. Translate units if appropriate for your locale.">~0,8 svetelného roku priemer</string>
+
+    <string name="object_info_ghost_of_jupiter_description" translation_description="Description of the Ghost of Jupiter planetary nebula shown in the info card. Translate this text.">
+    Ghost of Jupiter je jasná planetárna hmlovinka v súhvezdí Hydra, ktorej zdanlivá veľkosť je podobná planéte Jupiter — odtiaľ pochádza jej názov. Pri magnitúde 8,6 je jednou z najprístupnejších planetárnych hmlovín na oblohe pre malé ďalekohľady, ktorá ukazuje jasný disk a náznak farby v stredných aperturách.
+    </string>
+    <string name="object_info_ghost_of_jupiter_funfact" translation_description="Fun fact about the Ghost of Jupiter shown in the info card. Translate this text.">
+    Duch Jupitera má vnútornú jasnejšiu škrupinu obklopenú slabšou vonkajšou halou — dvojškrupinová štruktúra naznačujúca, že zomierajúca hviezda vypudila plyn aspoň v dvoch samostatných epizódach. Jej centrálna hviezda je jednou z najhorúcejších známych bielych trpaslíkov so povrchovou teplotou odhadovanou na približne 75 000 °C.
+    </string>
+    <string name="object_info_ghost_of_jupiter_distance" translation_description="Distance to the Ghost of Jupiter shown in the info card. Translate units if appropriate for your locale.">~1 400 svetelných rokov</string>
+    <string name="object_info_ghost_of_jupiter_size" translation_description="Physical size of the Ghost of Jupiter shown in the info card. Translate units if appropriate for your locale.">~1 svetelný rok priemer</string>
+
+    <string name="object_info_saturn_nebula_description" translation_description="Description of the Saturn Nebula shown in the info card. Translate this text.">
+    Saturnova hmla je planetárna hmla v Aquariuse pomenovaná podľa jej podobnosti s planétou Saturn — výčnelky nazývané ansae vyčnievajú z oboch strán ako rukoväte krúžkov, viditeľné v stredne výkonných ďalekohľadoch. Pri magnitúde 8,0 je jednou z najjasnejších planetárnych hmiel na oblohe a vykazuje komplexnú štruktúru vo väčších prístrojoch.
+    </string>
+    <string name="object_info_saturn_nebula_funfact" translation_description="Fun fact about the Saturn Nebula shown in the info card. Translate this text.">
+    William Herschel objavil Saturn Nebulu v roku 1782 a poznamenal jej podobnosť so Saturnom. Moderné pozorovania odhaľujú najmenej štyri odlišné vrstvy plynu obklopujúce centrálny biely trpaslík, čo odráža viacero epizód straty hmoty v záverečných fázach života hviezdy.
+    </string>
+    <string name="object_info_saturn_nebula_distance" translation_description="Distance to the Saturn Nebula shown in the info card. Translate units if appropriate for your locale.">~5 000 svetelných rokov</string>
+    <string name="object_info_saturn_nebula_size" translation_description="Physical size of the Saturn Nebula shown in the info card. Translate units if appropriate for your locale.">~1 svetelný rok v priemere</string>
+
+    <string name="object_info_ngc_2903_description" translation_description="Description of the galaxy NGC 2903 shown in the info card. Translate this text.">
+    NGC 2903 je jasná stĺpovitá špirálna galaxia v súhvezdí Leva, často nazývaná "Messieroov objekt, ktorý Messier vynechal" — je to jedna z najvýraznejších galaxií na oblohe, ktorá nie je zaradená v jeho slávnom katalógu. Pri magnitúde 8,9 je ľahko viditeľná ďalekohľadom a v stredne silných ďalekohľadoch vykazuje krásnu špirálnu štruktúru.
+    </string>
+    <string name="object_info_ngc_2903_funfact" translation_description="Fun fact about NGC 2903 shown in the info card. Translate this text.">
+    NGC 2903 má jednu z najvyšších koncentrácií hviezd tvoriacich "horúcich miest" známych v centrálnej oblasti galaxie — husté zhluky mladých masívnych hviezd osvetlené intenzívnym tvorením hviezd. Používa sa ako referenčný štandard na štúdium aktivity hviezd v galaxiách so stĺpovitou špirálou.
+    </string>
+    <string name="object_info_ngc_2903_distance" translation_description="Distance to NGC 2903 shown in the info card. Translate units if appropriate for your locale.">30 miliónov svetelných rokov</string>
+    <string name="object_info_ngc_2903_size" translation_description="Physical size of NGC 2903 shown in the info card. Translate units if appropriate for your locale.">~80 000 svetelných rokov v priemere</string>
+
+    <!-- Meteor showers -->
+    <string name="object_info_quadrantids_description" translation_description="Description of the Quadrantids meteor shower shown in the info card. Translate this text.">
+    Kvadrantidy sú bohatý januárový meteorický roj s veľmi ostrým, krátkym vrcholom trvajúcim len niekoľko hodín. Radianta sa nachádza v súhvezdí Boötov, blízko polohy zaniklého súhvezdia Quadrans Muralis, podľa ktorého je roj pomenovaný. Za ideálnych podmienok je viditeľných až 120 meteórov za hodinu.
+    </string>
+    <string name="object_info_quadrantids_funfact" translation_description="Fun fact about the Quadrantids meteor shower shown in the info card. Translate this text.">
+    Na rozdiel od väčšiny hlavných meteorických rojov, ktoré pochádzajú z komét, je pôvodným telesom Kvadrantíd asteroid 2003 EH1 — považovaný za spiacé jadro kométy, ktorá sa pred storočiami vypálila. Jeho existencia bola potvrdená až v roku 2003.
+    </string>
+
+    <string name="object_info_lyrids_description" translation_description="Description of the Lyrids meteor shower shown in the info card. Translate this text.">
+    Lyridy sú spoľahlivý jarný meteorický roj vychádzajúci z blízkosti jasnej hviezdy Vega v súhvezdí Lýra. Produkujú rýchle, mierne jasné meteory s vrcholom okolo 18 za hodinu a občas vytvárajú ohnivé gule, ktoré zanechávajú svietiace stopy dymu.
+    </string>
+    <string name="object_info_lyrids_funfact" translation_description="Fun fact about the Lyrids meteor shower shown in the info card. Translate this text.">
+    Lyridy sú najstaršou spoľahlivo zaznamenanou meteorickou záplavou v histórii. Čínski astronómovia dokumentovali búrku meteórov "padajúcich ako dážď" v roku 687 pred n. l. Úlomky pochádzajú z kométy Thatcherovej, ktorá sa okolo Slnka obieha za 415 rokov a naposledy navštívila vnútornú časť slnečnej sústavy v roku 1861.
+    </string>
+
+    <string name="object_info_aquariids_description" translation_description="Description of the Eta Aquariids meteor shower shown in the info card. Translate this text.">
+    Eta Aquariidy sú jedným z dvoch ročných meteorických rojov vytvorených z úlomkov Halleyovej kométy. S maximom až 70 meteórov za hodinu sa tento roj silne prikláňa k južnej pologuli, kde sa radianta pred svitaním zdvíha vysoko. Pozorovatelia na severe si stále užijú rešpektabilnú rýchlosť 30 alebo viac meteórov za hodinu.
+    </string>
+    <string name="object_info_aquariids_funfact" translation_description="Fun fact about the Eta Aquariids meteor shower shown in the info card. Translate this text.">
+    Meteory Eta Aquariíd sa pohybujú rýchlosťou 66 km/s — dostatočne rýchlo na to, aby ionizovaný vzduch, ktorý vytvárajú, mohol svietiť niekoľko sekúnd potom, čo meteor zmizne. Môžete vidieť starý prach Halleyho komety horieť pred vašimi očami, ktorý bol vyvrhnutý počas jednej z mnohých návštev kométy pred tisíckami rokov.
+    </string>
+
+    <string name="object_info_deltaaquariids_description" translation_description="Description of the Delta Aquariids meteor shower shown in the info card. Translate this text.">
+    Južné Delta Aquariidy dosahujú maximum koncom júla a sú najlepšie viditeľné z tropických a južných zemepisných šírok, kde sa radiánt v súhvezdí Vodného muža zdvíha vysoko pred svitaním. Produkujú stabilný prúd meteórov strednej rýchlosti až 16 za hodinu, s málo jasnými ohnivými guľami.
+    </string>
+    <string name="object_info_deltaaquariids_funfact" translation_description="Fun fact about the Delta Aquariids meteor shower shown in the info card. Translate this text.">
+    Presná materská telesa Delta Aquariíd zostáva neistá. Vedúcim kandidátom je Kométa 96P/Machholz, neobvyklá kométa s krátkou periódou s vysoko sklopenou dráhou, ktorá sa pozoruhodne približuje k Slnku — bližšie ako planéta Merkúr.
+    </string>
+
+    <string name="object_info_perseids_description" translation_description="Description of the Perseids meteor shower shown in the info card. Translate this text.">
+    Perseidá sú najpopulárnejšou meteorickou záplavou roka, ktorá dosahuje vrchol v teplých augustových nociach s až 100 meteormi za hodinu. Úlomky vyvrhované kométou Swift-Tuttle sa spaľujú vysoko v zemskej atmosfére a vytvárajú rýchle, jasné meteory — mnohé zanechávajú pretrvávajúce žiariace stopy — vychádzajúce z súhvezdia Perzea.
+    </string>
+    <string name="object_info_perseids_funfact" translation_description="Fun fact about the Perseids meteor shower shown in the info card. Translate this text.">
+    Rodičom Perseid, kométa Swift-Tuttle, je jadro s šírkou 26 km — väčšie ako objekt, ktorý údajne spôsobil hromadné vymieranie, ktoré ukončilo éru dinosaurov. Kométa naposledy prešla vnútornou slnečnou sústavou v roku 1992 a nevrátí sa až do roku 2125.
+    </string>
+
+    <string name="object_info_orionids_description" translation_description="Description of the Orionids meteor shower shown in the info card. Translate this text.">
+    Orionidy sú druhý meteorický roj produkovaný každý rok kométou Halleyho, vychádzajúci z blízka zdvihnutej palice Orióna. S vrcholom okolo 25 meteórov za hodinu sú známe rýchlymi, často jasnými meteormi, ktoré často zanechávajú žiariace ionizačné stopy trvajúce niekoľko sekúnd.
+    </string>
+    <string name="object_info_orionids_funfact" translation_description="Fun fact about the Orionids meteor shower shown in the info card. Translate this text.">
+    Kométa Halleyho je zodpovedná za dve ročné meteorické roje: Eta Aquariidy v máji, keď Zem pretína odchádzajúcu trasu úlomkov kométy, a Orioniidy v októbri, keď Zem pretína prichádzajúcu trasu. Spolu nám umožňujú vzorkovať starý Halleyov prach dvakrát ročne.
+    </string>
+
+    <string name="object_info_leonids_description" translation_description="Description of the Leonids meteor shower shown in the info card. Translate this text.">
+    Leonidy vychádzajú z kosáka Leva a typicky produkujú okolo 20 meteórov za hodinu. Sú slávne spektakulárnymi búrkami, ktoré sa vyskytnú zhruba každých 33 rokov, keď Zem prejde cez hustú vrstvu prachu vypusteného kométou 55P/Tempel-Tuttle. Tieto búrky môžu produkovať tisíce meteórov za hodinu.
+    </string>
+    <string name="object_info_leonids_funfact" translation_description="Fun fact about the Leonids meteor shower shown in the info card. Translate this text.">
+    Leonidová búrka z roku 1833 vyprodukovala odhadovaných 100 000 meteórov za hodinu, čo vystrašilo pozorovateľov v celej Severnej Amerike, ktorí sa obávali, že nebo horí. Táto udalosť iniciovala vedecké štúdium meteorických rojov. Porovnateľné búrky sa vyskytli v rokoch 1966 a 1999.
+    </string>
+
+    <string name="object_info_puppidvelids_description" translation_description="Description of the Puppid-Velids meteor shower shown in the info card. Translate this text.">
+    Puppidy-Velidy sú komplexom prekrývajúcich sa menších meteorických rojov vychádzajúcich z konštelácií Puppis a Vela v južnej Mliečnej dráhe. S vrcholom okolo 10 meteorov za hodinu sú najlepšie pozorovateľné z južnej pologule, kde sa radiačný bod v decembri nachádza vysoko na oblohe.
+    </string>
+    <string name="object_info_puppidvelids_funfact" translation_description="Fun fact about the Puppid-Velids meteor shower shown in the info card. Translate this text.">
+    Puppidy-Velidy sa považujú za úlomky z niekoľkých rôznych rodičovských komét namiesto jediného zdroja, vrátane kométy 26P/Grigg-Skjellerup. Ich južný radiánt nikdy nevystúpi nad horizont pre pozorovateľov na zemepisných šírkach severne od približne 40°N, čo z nich robí meteorický roj, ktorý väčšina sveta zriedka vidí.
+    </string>
+
+    <string name="object_info_geminids_description" translation_description="Description of the Geminids meteor shower shown in the info card. Translate this text.">
+    Geminidy sú všeobecne považované za najlepší meteorický roj roka — hojný (až 120 za hodinu), spoľahlivý a aktívny od skorého večera, nie len po polnoci. Vychádzajú z súhvezdia Blížencov a produkujú širokú škálu jasností meteorov, vrátane živých ohnivých gúľ.
+    </string>
+    <string name="object_info_geminids_funfact" translation_description="Fun fact about the Geminids meteor shower shown in the info card. Translate this text.">
+    Na rozdiel od ostatných hlavných meteorických rojov pochádzajú Geminidy z asteroidu namiesto z kométy: 3200 Phaethon, tzv. "kamennej kométy", ktorej dráha ju približuje k Slnku viac ako akýkoľvek iný pomenovaný asteroid. Extrémne teplo môže prasknúť jej kamenný povrch a uvoľniť prach, ktorý vytvára meteorický roj.
+    </string>
+
+    <string name="object_info_ursids_description" translation_description="Description of the Ursids meteor shower shown in the info card. Translate this text.">
+    Ursidy sú malý meteorický roj vychádzajúci z Malého medveďa, blízko Polárky, čo ich robí cirkumpolárnym pre pozorovateľov severnej pologule — viditeľný celú noc bez zapadnutia. Dosahujú maximum okolo zimného slnovratu s približne 10 meteormi za hodinu a materská kométa je 8P/Tuttle.
+    </string>
+    <string name="object_info_ursids_funfact" translation_description="Fun fact about the Ursids meteor shower shown in the info card. Translate this text.">
+    Ursidy občas produkujú neočakávané výbuchy ďaleko nad ich typickou rýchlosťou. V rokoch 1945 a 2006 pozorovatelia zaznamenali 50 alebo viac meteórov za hodinu — päťkrát vyššiu ako normálny vrchol. Tieto nárasty sa vyskytujú, keď Zem prechádza nezvyčajne hustou páskou úlomkov vypudených počas blízkeho priblíženia sa kométy Tuttle.
+    </string>
+
+    <!-- Category 5: Top priority — objects on the map that lacked info cards -->
+    <string name="object_info_m47_description" translation_description="Description of the open star cluster M47 shown in the info card. Translate this text.">
+    M47 je jasná, voľná otvorená hviezdokopa v Puppis, ľahko viditeľná voľným okom a pútavá v ďalekohľade. Približne 50 hviezd je rozptýlených na polovici stupňa oblohy, pričom niekoľko oranžových obrov hviezd dodáva teplú farbu oproti slabším modrobielo sfarbeným členom.
+    </string>
+    <string name="object_info_m47_funfact" translation_description="Fun fact about M47 shown in the info card. Translate this text.">
+    M47 bol jedným z "stratených" objektov Messiera — chyba v písaní v pôvodných súradniciach Messiera ho umiestnila na prázdne nebo, čo nechalo hviezdokopicu neidentifikovanú takmer dve storočia. Jej skutočná identita ako NGC 2422 bola potvrdená až v roku 1959, keď pozorovatelia pracovali spätne z Messierovho popisu, aby našli chybu.
+    </string>
+    <string name="object_info_m47_distance" translation_description="Distance to M47 shown in the info card. Translate units if appropriate for your locale.">1 600 svetelných rokov</string>
+    <string name="object_info_m47_size" translation_description="Physical size of M47 shown in the info card. Translate units if appropriate for your locale.">~14 svetelných rokov v priemere</string>
+
+    <string name="object_info_m41_description" translation_description="Description of the open star cluster M41 shown in the info card. Translate this text.">
+    M41 je krásna otvorená hviezdokopa v Canis Major, nachádzajúca sa len 4° južne od Siriusa — najjasnejšej hviezdy na nočnej oblohe. Viditeľná voľným okom z tmavých lokalít a spektakulárna v ďalekohľade, obsahuje približne 100 hviezd rozložených na veľkom poli, s niekoľkými nápadnými oranžovými obrovskými hviezdami medzi slabšími modrobielo farebnými členmi.
+    </string>
+    <string name="object_info_m41_funfact" translation_description="Fun fact about M41 shown in the info card. Translate this text.">
+    Aristoteles mohol pozorovať M41 okolo roku 325 pred n. l. — pravdepodobne najstaršie zaznamenaného pozorovania akéhokoľvek hlbokého vesmírneho objektu. Opísal "hmlisté miesto" južne od Siriusa, ktoré sa zhoduje s polohou M41. Ak je identifikácia správna, M41 sa diskutovalo takmer dvetisíc rokov pred vynálezom ďalekohľadu.
+    </string>
+    <string name="object_info_m41_distance" translation_description="Distance to M41 shown in the info card. Translate units if appropriate for your locale.">2 300 svetelných rokov</string>
+    <string name="object_info_m41_size" translation_description="Physical size of M41 shown in the info card. Translate units if appropriate for your locale.">~25 svetelných rokov v priemere</string>
+
+    <string name="object_info_m24_description" translation_description="Description of the Sagittarius Star Cloud (M24) shown in the info card. Translate this text.">
+    M24 je Sagitáriusov hviezdny oblak — nie je to hviezdokopa ani hmlovina, ale okno cez medzeru v kozmickom prachu Mliečnej cesty, ktoré odhaľuje oslňujúce hviezdne pole s rozmerom 2° v priemere. Je to najbohatšia oblasť viditeľná cez ďalekohľad kdekoľvek na oblohe, plná tisícov hviezd rozprestierajúcich sa v rôznych vzdialenostiach súčasne.
+    </string>
+    <string name="object_info_m24_funfact" translation_description="Fun fact about M24 shown in the info card. Translate this text.">
+    Hviezdy v M24 sa nenachádzajú v rovnakej vzdialenosti — hviezdna oblasť predstavuje priečny rez diskom Galaxie videný cez prirodzený tunel v medzihviezdnom prachu, ktorý sa rozprestiera na vzdialenosti 10 000 až 16 000 svetelných rokov. V oblasti sú vložené tmavé hmloviny a malé hviezdne zhluky, ktoré sa javia ako tmavé škvrny na pozadí brilantnej hviezdnej scenérie.
+    </string>
+    <string name="object_info_m24_distance" translation_description="Distance range to M24 shown in the info card. Translate units if appropriate for your locale.">~10 000–16 000 svetelných rokov (rozsah)</string>
+    <string name="object_info_m24_size" translation_description="Physical size of M24 shown in the info card. Translate units if appropriate for your locale.">~600 svetelných rokov hlboké okno</string>
+
+    <string name="object_info_m25_description" translation_description="Description of the open star cluster M25 shown in the info card. Translate this text.">
+    M25 je jasný otvorený hviezdokop viditeľný voľným okom v súhvezdí Strelca, umiestnený v hustom poli hviezd letnej Mliečnej dráhy. Približne 600 hviezd je rozptýlených v poli s polstupňovým priemerom, čo z neho robí bohatý objekt pre ďalekohľad. Medzi jeho najjasnejšie členy patria viaceré modro-biele supergianty a jedna z najviac študovaných cefeíd s premenlivou jasnosťou na oblohe.
+    </string>
+    <string name="object_info_m25_funfact" translation_description="Fun fact about M25 shown in the info card. Translate this text.">
+    M25 obsahuje U Sagittarii, klasickú premennú hviezdu typu Cepheid, ktorá sa zbrighuje a stmavuje s periódou 6,7 dňa. Cefeidy sú vitálne "štandardné sviečky" na meranie kozmických vzdialeností, pretože ich pulzačná perióda priamo odhaľuje ich skutočnú svietivosť — astronómovia ich použili na prvé určenie veľkosti Mliečnej dráhy a potom na určenie rozsahu pozorovateľného vesmíru.
+    </string>
+    <string name="object_info_m25_distance" translation_description="Distance to M25 shown in the info card. Translate units if appropriate for your locale.">2 000 svetelných rokov</string>
+    <string name="object_info_m25_size" translation_description="Physical size of M25 shown in the info card. Translate units if appropriate for your locale.">~19 svetelných rokov v priemere</string>
+
+    <string name="object_info_m39_description" translation_description="Description of the open star cluster M39 shown in the info card. Translate this text.">
+    M39 je veľká, rozptýlená otvorená hviezdokopa v Labuti, viditeľná voľným okom blízko Denebu v bohatej letnej Mliečnej dráhe. Jej približne 30 jasných hviezd je voľne rozdelených na stupni oblohy, najlepšie viditeľné pri nízkom zväčšení v ďalekohľade alebo ďalekohľade so širokým poľom — vyššie zväčšenie ju jednoducho rozloží na riedke, nezaujímavé pole hviezd.
+    </string>
+    <string name="object_info_m39_funfact" translation_description="Fun fact about M39 shown in the info card. Translate this text.">
+    V diaľke približne 825 svetelných rokov je M39 jedným z najbližších otvorených hviezdokôp k Zemi a s vekom približne 240 miliónov rokov je jedným zo starších hviezdokôp viditeľných voľným okom — dostatočne starý na to, aby jeho najmasívnejšie hviezdy už skončili svoj život. Messier ho zaznamenal v roku 1764 a bol medzi najstaršími doplnkami jeho katalógu.
+    </string>
+    <string name="object_info_m39_distance" translation_description="Distance to M39 shown in the info card. Translate units if appropriate for your locale.">825 svetelných rokov</string>
+    <string name="object_info_m39_size" translation_description="Physical size of M39 shown in the info card. Translate units if appropriate for your locale.">~8 svetelných rokov v priemere</string>
+
+    <!-- Category 5: Special cases -->
+    <string name="object_info_m63_description" translation_description="Description of the Sunflower Galaxy (M63) shown in the info card. Translate this text.">
+    Galaxia Slnečnica je žiarivá špirálna galaxia v súhvezdí Loveckých psov, ktorej tesne vinuté ramená, posiaty hviezdotvoriacimi oblasťami, jej dávajú charakteristickú kvetinovú textúru na dlhodobých fotografiách. Pri magnitúde 8,6 je viditeľná v ďalekohľadoch z tmavého neba a v malých ďalekohľadoch ľahko ukazuje svoj predĺžený tvar a jasné jadro.
+    </string>
+    <string name="object_info_m63_funfact" translation_description="Fun fact about the Sunflower Galaxy shown in the info card. Translate this text.">
+    M63 objavil Pierre Méchain v roku 1779 — jeden z niekoľkých Messierovcov objektov objavených skôr Méchainom ako samotným Messierom. Je členom skupiny M51, fyzicky spojený s Galaxiou Vír (M51), a vykazuje známky minulej interakcie: slabý, staroveký hviezdny prúd sa vinie okolo jeho vonkajšieho disku.
+    </string>
+    <string name="object_info_m63_distance" translation_description="Distance to the Sunflower Galaxy shown in the info card. Translate units if appropriate for your locale.">29 miliónov svetelných rokov</string>
+    <string name="object_info_m63_size" translation_description="Physical size of the Sunflower Galaxy shown in the info card. Translate units if appropriate for your locale.">~100 000 svetelných rokov v priemere</string>
+
+    <string name="object_info_ngc_6543_description" translation_description="Description of the Cat's Eye Nebula (NGC 6543) shown in the info card. Translate this text.">
+    Hmlistá očná hmlovina je jednou z najštruktúrne zložitejších planetárnych hmlovín, ktoré poznáme — expelovaný plyn zomierajúcej hviezdy vytvarovaný do sústredných vrstiev, prúdov a jasných uzlov viditeľných na snímkach Hubbla. V malých ďalekohľadoch sa javí ako živá modrozelená disk v Drakovi, jeden z najfarbistejších objektov na jesennej oblohe.
+    </string>
+    <string name="object_info_ngc_6543_funfact" translation_description="Fun fact about the Cat's Eye Nebula shown in the info card. Translate this text.">
+    V roku 1864 astronóm William Huggins nasmeroval spektroskop na Cat\'s Eye a zistil, že sa skladá zo žiariaceho plynu namiesto nerozlíšených hviezd — prvýkrát bola potvrdená povaha akejkoľvek planetárnej hmloviny. Tento objav založil oblasť hmlovinnej spektroskopie a zvrhol prevládajúci názor, že všetky hmloviny sú vzdialené hviezdne zhluky.
+    </string>
+    <string name="object_info_ngc_6543_distance" translation_description="Distance to the Cat's Eye Nebula shown in the info card. Translate units if appropriate for your locale.">~3 300 svetelných rokov</string>
+    <string name="object_info_ngc_6543_size" translation_description="Physical size of the Cat's Eye Nebula shown in the info card. Translate units if appropriate for your locale.">~0,5 svetelného roku priemer</string>
+
+    <string name="object_info_m76_description" translation_description="Description of the Little Dumbbell Nebula (M76) shown in the info card. Translate this text.">
+    Malá činžová hmlovina je planetárna hmlovina v Perzejovi s charakteristickým tvarom osmičky — menší príbuzná M27, Činžovej hmloviny vo Vulpekule. Hoci je to najslabšia položka v katalógu Messiera, odmeňuje trpezlivé pozorovanie v malých ďalekohľadoch a v väčších prístrojoch vykazuje krásnu štruktúru s dvoma jasnejšími lalôčkami po stranách slabšieho pásu.
+    </string>
+    <string name="object_info_m76_funfact" translation_description="Fun fact about the Little Dumbbell Nebula shown in the info card. Translate this text.">
+    M76 bol pôvodne katalogizovaný ako dva samostatné objekty — NGC 650 a NGC 651 — pretože raní pozorovatelia opisovali dve jasné časti nezávisle. Ide o bipolárnu planetárnu hmlovinu, ktorá vznikla, keď bol výtok zomierajúcej hviezdy stlačený na rovníku, čím sa vytvorili dve expandujúce časti pozdĺž polárnej osi, zatiaľ čo plyn sa tiež rozširuje von v oblasti pásu.
+    </string>
+    <string name="object_info_m76_distance" translation_description="Distance to the Little Dumbbell Nebula shown in the info card. Translate units if appropriate for your locale.">~2 500 svetelných rokov</string>
+    <string name="object_info_m76_size" translation_description="Physical size of the Little Dumbbell Nebula shown in the info card. Translate units if appropriate for your locale.">~2 svetelné roky v priemere</string>
+
+    <string name="object_info_v838_mon_description" translation_description="Description of V838 Monocerotis shown in the info card. Translate this text.">
+    V838 Monocerotis je neobvyklá premenná hviezda v súhvezdí Jednorožec, ktorá v roku 2002 prešla spektakulárnym výbuchom a na krátky čas sa stala jednou z najjasnejších hviezd Mliečnej dráhy. Hoci je dnes pre vizuálnych pozorovateľov príliš slabá, jej rozširujúce sa svetelné echo — vlnoplocha svetla osvetľujúca staré prachové obaly — vytvorila niektoré z najdramatickejších snímok Vesmírneho ďalekohľadu Hubble, aké boli kedy nasnímané.
+    </string>
+    <string name="object_info_v838_mon_funfact" translation_description="Fun fact about V838 Monocerotis shown in the info card. Translate this text.">
+    Povaha výbuchu V838 Mon zostáva diskutovaná. Vedúca teória je hviezdna zásadka — dve hviezdy spirálovitého pádu do seba a zrážky — skôr ako klasická nová alebo erupcia supergiganta. Ak sa potvrdi, bol to prvý pohľad v reálnom čase na "luminóznu červenú novu", vzácnu triedu výbuchu spôsobenú hviezdnymi zásadkami, podobné udalosti boli odvtedy nájdené v iných galaxiách.
+    </string>
+    <string name="object_info_v838_mon_distance" translation_description="Distance to V838 Monocerotis shown in the info card. Translate units if appropriate for your locale.">~20 000 svetelných rokov</string>
+    <string name="object_info_v838_mon_size" translation_description="Extent of the V838 Monocerotis light echo shown in the info card. Translate units if appropriate for your locale.">~3 svetelné roky (rozsah svetelného ozvenu)</string>
+
+    <string name="object_info_hdf_description" translation_description="Description of the Hubble Deep Field shown in the info card. Translate this text.">
+    Hubbleovo hlboké pole je malá 2,6-oblúková minúta zdanlivo prázdnej oblohy v Veľkej medvedici, fotografovaná vesmírnym ďalekohľadom Hubble počas 10 po sebe nasledujúcich dní v decembri 1995. To, čo sa zdalo byť prázdnym priestorom, odhalilo približne 3 000 galaxií — rozprestierajúcich sa cez miliardy rokov kozmickej histórie — a zásadne zmenilo našu predstavu o vesmíre.
+    </string>
+    <string name="object_info_hdf_funfact" translation_description="Fun fact about the Hubble Deep Field shown in the info card. Translate this text.">
+    Oblasť oblohy bola vybraná špeciálne preto, že neobsahovala jasné hviezdy a blízke galaxie. Výsledný obrázok však obsahoval približne 3 000 galaxií, čo viedlo k odhadu, že celá obloha obsahuje okolo 200 miliárd galaxií – takmer všetky z nich boli neviditeľné pre akýkoľvek ďalekohľad pred Hubblom.
+    </string>
+    <string name="object_info_hdf_distance" translation_description="Distance to the most distant galaxies in the Hubble Deep Field shown in the info card. Translate units if appropriate for your locale.">~13 miliárd svetelných rokov (najvzdialenejšie)</string>
+    <string name="object_info_hdf_size" translation_description="Angular size of the Hubble Deep Field shown in the info card.">2,6 oblúkovej minúty (zorný uhol)</string>
+
+    <string name="object_info_m43_description" translation_description="Description of De Mairan's Nebula (M43) shown in the info card. Translate this text.">
+    De Mairanová hmlovina je oddelená časť veľkého komplexu Oriónnej hmloviny, oddelená od M42 tmavou prašnou páskou, ale patriaca do tej istej rozsiahleho molekulárneho oblaku. Pomenovaná podľa francúzskeho astronóma Jeana-Jacquesa Dortous de Mairanu, ktorý ju zaznamenal v roku 1731, je to emisná hmlovina ionizovaná horúcou mladou hviezdou NU Orionis vložená v jej centre.
+    </string>
+    <string name="object_info_m43_funfact" translation_description="Fun fact about De Mairan's Nebula shown in the info card. Translate this text.">
+    Hoci sa M43 javí ako samostatný objekt oddelený od M42, tmavá páska medzi nimi je oblak prachu v popredí — časť Orionovho molekulárneho oblaku — ktorý jednoducho blokuje náš pohľad na fyzické spojenie medzi dvoma žiarivými oblasťami. Spolu sú len osvetlená vnútorná hrana obrovského tmavého oblaku, ktorý sa rozprestiera cez veľkú časť Orióna.
+    </string>
+    <string name="object_info_m43_distance" translation_description="Distance to De Mairan's Nebula shown in the info card. Translate units if appropriate for your locale.">1 350 svetelných rokov</string>
+    <string name="object_info_m43_size" translation_description="Physical size of De Mairan's Nebula shown in the info card. Translate units if appropriate for your locale.">~8 svetelných rokov v priemere</string>
+
+    <string name="object_info_m40_description" translation_description="Description of M40 (Winnecke 4) shown in the info card. Translate this text.">
+    M40 je jedinečný v Messierovom katalógu — nie je to hmlovina, hvezdokopa ani galaxia, ale široka dvojhviezda. Messier ju katalogizoval v roku 1764 počas hľadania hmloviny, ktorú hlásil Johann Hevelius v Veľkej medvedici, našiel len tento pár hviezd a zaznamenal ho, aby budúci pozorovatelia ho nezamieňali za niečo zaujímavejšie.
+    </string>
+    <string name="object_info_m40_funfact" translation_description="Fun fact about M40 shown in the info card. Translate this text.">
+    Dve hviezdy M40 — známe ako Winnecke 4 — nie sú gravitačne viazané; nachádzajú sa v rôznych vzdialenostiach a sú len náhodným zarovnaním. Sám Messier si všimol, že tu nie je "nič pozoruhodné," ale zaradil to "aby ukázal, že táto hmlovina nie je rovnaká ako tie, ktoré som skúmal." Jeho metodický zvyk dokumentovať negatívne výsledky dal budúcim pozorovateľom definitívnu referenciu.
+    </string>
+    <string name="object_info_m40_distance" translation_description="Distance to M40 shown in the info card. Translate units if appropriate for your locale.">~500 svetelných rokov</string>
+    <string name="object_info_m40_size" translation_description="Angular separation of the M40 double star shown in the info card.">~50 oblúkových sekúnd (separácia)</string>
+
+    <!-- Category 5: Second tier -->
+    <string name="object_info_m34_description" translation_description="Description of the open star cluster M34 shown in the info card. Translate this text.">
+    M34 je jasný, rozptýlený otvorený hviezdokôp v Perseovi, ľahko viditeľný v ďalekohľade ako bohatá sprška hviezd proti zimnej Mliečnej dráhe. Jeho približne 400 hviezd pokrýva plochu takmer tak širokú ako úplný Mesiac, s hŕstkou širokých dvojhviezd viditeľných pozorným pozorovateľom s ďalekohľadom.
+    </string>
+    <string name="object_info_m34_funfact" translation_description="Fun fact about M34 shown in the info card. Translate this text.">
+    M34 má vek okolo 200 miliónov rokov, čo je stredný vek — dosť mladý na to, aby jeho horúce modré hviezdy stále svietili, ale dosť starý na to, aby najmasívnejšie z nich už explodovali ako supernovae. So vzdialenosťou 1 500 svetelných rokov je jedným z bližších Messierovych zhlukov a zostáva pekným objektom aj z mestských oblohy.
+    </string>
+    <string name="object_info_m34_distance" translation_description="Distance to M34 shown in the info card. Translate units if appropriate for your locale.">1 500 svetelných rokov</string>
+    <string name="object_info_m34_size" translation_description="Physical size of M34 shown in the info card. Translate units if appropriate for your locale.">~15 svetelných rokov v priemere</string>
+
+    <string name="object_info_m23_description" translation_description="Description of the open star cluster M23 shown in the info card. Translate this text.">
+    M23 je bohatá otvorená hviezdna kopa v Strelcovi, vložená do hustých polí hviezd letného Mliečneho pásu. Približne 150 hviezd je rozptýlených na poli pol stupňa v ďalekohľadoch, čo z nej robí veľkorysý objekt pre ďalekohľady v tej istej oblasti oblohy ako mnoho ďalších Messierovcov pokladov.
+    </string>
+    <string name="object_info_m23_funfact" translation_description="Fun fact about M23 shown in the info card. Translate this text.">
+    M23 sa odhaduje na približne 300 miliónov rokov — stredný vek, pričom väčšina jeho masívnych hviezd už opustila hlavnú postupnosť. Messier ju objavil v roku 1764 počas jednej zo svojich plodných pozorovacích kampaní, keď prechádzal hviezdnymi poľami Strelca.
+    </string>
+    <string name="object_info_m23_distance" translation_description="Distance to M23 shown in the info card. Translate units if appropriate for your locale.">2 150 svetelných rokov</string>
+    <string name="object_info_m23_size" translation_description="Physical size of M23 shown in the info card. Translate units if appropriate for your locale.">~17 svetelných rokov v priemere</string>
+
+    <string name="object_info_m37_description" translation_description="Description of the open star cluster M37 shown in the info card. Translate this text.">
+    M37 je najbohatší a najjasnejší z troch Messierovych otvorených hviezdokôp v Aurige, obsahujúci odhadovaných 500 hviezd v kompaktnom poli. Je to spektakulárny objekt pre ďalekohľad a malý teleskop, s rozptýlenými oranžovými obrovskými hviezdami, ktoré dodávajú farebný kontrast modro-bielemu roju.
+    </string>
+    <string name="object_info_m37_funfact" translation_description="Fun fact about M37 shown in the info card. Translate this text.">
+    M37 obsahuje okolo tucta červených obrov — nezvyčajne vysoký počet, ktorý odráža jej relatívne pokročilý vek približne 300 miliónov rokov. Napriek tomu, že sa nachádza približne 4 500 svetelných rokov ďaleko — najvzdialenejší z troch Messierovcov hviezdokôp v Vozovníkovi — stále patrí medzi najkrajšie otvorené hviezdokopy na oblohe.
+    </string>
+    <string name="object_info_m37_distance" translation_description="Distance to M37 shown in the info card. Translate units if appropriate for your locale.">4 500 svetelných rokov</string>
+    <string name="object_info_m37_size" translation_description="Physical size of M37 shown in the info card. Translate units if appropriate for your locale.">~31 svetelných rokov v priemere</string>
+
+    <string name="object_info_m48_description" translation_description="Description of the open star cluster M48 shown in the info card. Translate this text.">
+    M48 je veľká, jasná otvorená hviezdokopa v Hydre, ktorá sa rozprestiera takmer na jeden stupeň oblohy a je viditeľná voľným okom z tmavých lokalít. Jej približne 80 hviezd je rozptýlených voľne v širokom poli, ktoré je najlepšie vhodné pre ďalekohľad, s rozptylom oranžových a žltých obrov medzi jasnejšími modrobielo farebnými členmi.
+    </string>
+    <string name="object_info_m48_funfact" translation_description="Fun fact about M48 shown in the info card. Translate this text.">
+    M48 bol jedným z "stratených" Messierovcov objektov takmer dve storočia, pretože Messierova zaznamenaná poloha bola asi 5° vzdialená od skutočnej polohy. Ostal neidentifikovaný až do roku 1959, keď bol spárovaný s NGC 2548 a jednoduchá chyba pri prepise bola ukázaná ako príčina, že bol umiestnený na prázdne nebe po celú dobu.
+    </string>
+    <string name="object_info_m48_distance" translation_description="Distance to M48 shown in the info card. Translate units if appropriate for your locale.">1 500 svetelných rokov</string>
+    <string name="object_info_m48_size" translation_description="Physical size of M48 shown in the info card. Translate units if appropriate for your locale.">~23 svetelných rokov v priemere</string>
+
+    <string name="object_info_m21_description" translation_description="Description of the open star cluster M21 shown in the info card. Translate this text.">
+    M21 je kompaktný otvorený hviezdokôp v Strelcovi nachádzajúci sa len pol stupňa severne od Trifidovej hmloviny (M20), čo z týchto dvoch objektov robí pútavú dvojicu pre ďalekohľad. Hviezdokôp obsahuje približne 57 hviezd sústredených do menšieho poľa ako mnohé Messieroove hviezdokôpy, s niekoľkými jasnými modro-bielymi hviezdami ako dominantnými členmi.
+    </string>
+    <string name="object_info_m21_funfact" translation_description="Fun fact about M21 shown in the info card. Translate this text.">
+    Napriek tomu, že sú fyzicky nesúvisiace, M21 a M20 (Trifidná hmlovinka) tvoria jednu z najatraktívnejších binokulárnch dvojíc v letnej oblohe — jasný hviezdny zhluk vedľa farebnej trojlobovej hmloviny. M21 je vzdialená približne 4 250 svetelných rokov, zatiaľ čo M20 je o niečo bližšie, približne 4 100 svetelných rokov.
+    </string>
+    <string name="object_info_m21_distance" translation_description="Distance to M21 shown in the info card. Translate units if appropriate for your locale.">4 250 svetelných rokov</string>
+    <string name="object_info_m21_size" translation_description="Physical size of M21 shown in the info card. Translate units if appropriate for your locale.">~16 svetelných rokov v priemere</string>
+
+    <string name="object_info_m50_description" translation_description="Description of the open star cluster M50 shown in the info card. Translate this text.">
+    M50 je jasný otvorený hviezdokop v Jednorožci, obsahujúci okolo 200 hviezd stlačených do nápadného kompaktného poľa vhodného pre ďalekohľady a malé ďalekohľady. Ľahko sa nachádza na línii medzi Siriusom a Procyonom a obsahuje pozoruhodného červeného obra — teplý oranžový maják, ktorý sa výrazne odlišuje medzi modrobielo farbami hviezdami hviezdokupu.
+    </string>
+    <string name="object_info_m50_funfact" translation_description="Fun fact about M50 shown in the info card. Translate this text.">
+    M50 sa odhaduje na približne 78 miliónov rokov — jeden z mladších Messierovych otvorených hviezdokôp — čo znamená, že jeho horúce modré a biele hviezdy sa stále vyvíjajú, pričom niekoľko masívnejších členov sa nedávno rozšírilo na obrov. To je typické pre hviezdokôp v jeho ranom strednom veku.
+    </string>
+    <string name="object_info_m50_distance" translation_description="Distance to M50 shown in the info card. Translate units if appropriate for your locale.">3 200 svetelných rokov</string>
+    <string name="object_info_m50_size" translation_description="Physical size of M50 shown in the info card. Translate units if appropriate for your locale.">~15 svetelných rokov v priemere</string>
+
+    <string name="object_info_m36_description" translation_description="Description of the open star cluster M36 shown in the info card. Translate this text.">
+    M36 je najmenší a najmladší z troch otvorených hviezdokôp, ktoré Messier katalogizoval v Aurige. Jeho približne 60 hviezd je zhromaždených v tesnom, lesklom poli viditeľnom v ďalekohľade a dobre rozlíšiteľnom na jednotlivé hviezdy v malom teleskope, ktoré dominujú horúce modro-biele hviezdy.
+    </string>
+    <string name="object_info_m36_funfact" translation_description="Fun fact about M36 shown in the info card. Translate this text.">
+    M36 sa odhaduje na vek iba okolo 25 miliónov rokov — jeden z mladších Messierovych zhlukov — čo znamená, že masívne modro-biele hviezdy stále dominujú a zatiaľ sa neobjavili žiadni červení obri. Zdieľa hviezdne polia Vozára s M37 a M38, a všetky tri zhluky sa zmestia do rovnakého pohľadu ďalekohľadu so širokým zorným poľom.
+    </string>
+    <string name="object_info_m36_distance" translation_description="Distance to M36 shown in the info card. Translate units if appropriate for your locale.">4 100 svetelných rokov</string>
+    <string name="object_info_m36_size" translation_description="Physical size of M36 shown in the info card. Translate units if appropriate for your locale.">~14 svetelných rokov v priemere</string>
+
+    <string name="object_info_m46_description" translation_description="Description of the open star cluster M46 shown in the info card. Translate this text.">
+    M46 je bohatá, hustá otvorená hviezdokopa v Puppis obsahujúca okolo 500 hviezd stlačených do širokého poľa, pôsobivá v ďalekohľadoch a krásna v malých teleskopoch. Pozoruhodný bonus sa nachádza na jej severnom okraji: NGC 2438, malá planetárna hmlovina, ktorá sa zdá byť vložená do hviezdokupy — dramatická náhoda v línii pohľadu.
+    </string>
+    <string name="object_info_m46_funfact" translation_description="Fun fact about M46 shown in the info card. Translate this text.">
+    Planetárna hmlovina NGC 2438 sa zdá byť vnútri M46, ale v skutočnosti ide o nesúvisejúci predný objekt na úplne inej vzdialenosti — približne 1 400 svetelných rokov oproti 5 400 svetelným rokom M46. Zhoda medzi obalom zomierajúcej hviezdy a mladou hviezdnou kôpou tvorí jedno z najfotogenickejších polí v katalógu.
+    </string>
+    <string name="object_info_m46_distance" translation_description="Distance to M46 shown in the info card. Translate units if appropriate for your locale.">5 400 svetelných rokov</string>
+    <string name="object_info_m46_size" translation_description="Physical size of M46 shown in the info card. Translate units if appropriate for your locale.">~42 svetelných rokov v priemere</string>
+
+    <string name="object_info_m93_description" translation_description="Description of the open star cluster M93 shown in the info card. Translate this text.">
+    M93 je jasná, kompaktná otvorená hviezdokopa v Puppis, ktorá sa nachádza v bohatej južnej Mliečnej dráhe a ľahko sa dá nájsť ďalekohľadom. Jej približne 80 hviezd je usporiadaných v nápadnom klinovom alebo motýľom tvare a obsahuje niekoľko horúcich modrých supergigantov, čo z nej robí jednu z atraktívnejších otvorených hviezdokôp zimnej oblohy.
+    </string>
+    <string name="object_info_m93_funfact" translation_description="Fun fact about M93 shown in the info card. Translate this text.">
+    M93 je relatívne mladá — okolo 100 miliónov rokov — s dominantnými modrými a modro-bielymi hviezdami, ktoré sa ešte nevyvíjali na obrov. Je to jeden z viac južných Messierovych zhlukov a z zemepisných šírok severne od približne 50°S nikdy nevystúpi veľmi vysoko nad horizont.
+    </string>
+    <string name="object_info_m93_distance" translation_description="Distance to M93 shown in the info card. Translate units if appropriate for your locale.">3 600 svetelných rokov</string>
+    <string name="object_info_m93_size" translation_description="Physical size of M93 shown in the info card. Translate units if appropriate for your locale.">~23 svetelných rokov v priemere</string>
+
+    <string name="object_info_m38_description" translation_description="Description of the open star cluster M38 shown in the info card. Translate this text.">
+    M38 je najväčší a najviac rozptýlený z troch otvorených hviezdnych zhlúkov, ktoré Messier katalogizoval v Aurige. Jeho približne 100 hviezd je usporiadaných v tvare, ktorý niektorí pozorovatelia prirovnávajú ku kríži alebo gréckeho písmena pí, viditeľný v ďalekohľadoch a dobre rozlíšiteľný v malom teleskope. Menší zhluk NGC 1907 sa nachádza blízko na juhu.
+    </string>
+    <string name="object_info_m38_funfact" translation_description="Fun fact about M38 shown in the info card. Translate this text.">
+    M38 je najstarším z troch Mesierovych zhlukov v Aurige s vekom okolo 220 miliónov rokov, čo je dosť na to, aby sa niektoré z jeho masívnych hviezd vyvinuli na žlté a oranžové obry. Blízky zhluk NGC 1907 sa zmestí do rovnakého poľa s nízkou zväčšením, čo z nich robí skvelú binokulárnu dvojicu — ako M46 a M47 v Puppise.
+    </string>
+    <string name="object_info_m38_distance" translation_description="Distance to M38 shown in the info card. Translate units if appropriate for your locale.">4 200 svetelných rokov</string>
+    <string name="object_info_m38_size" translation_description="Physical size of M38 shown in the info card. Translate units if appropriate for your locale.">~26 svetelných rokov v priemere</string>
+
+    <string name="object_info_m29_description" translation_description="Description of the open star cluster M29 shown in the info card. Translate this text.">
+    M29 je malá, mladá otvorená hviezdokopa v Labuťi, umiestnená v jednej z najviac prašnými hmlovinama zakrytých oblastí Mliečnej dráhy. Päť brilantných modrých supergigantov dominuje hviezdokope, viditeľných v ďalekohľade ako tesné asterizmy horúcich, svietivých hviezd. Bez hustej prednú prašnú hmlovinu by bola M29 jednou z najspektakulárnejších otvorených hviezdokôp na oblohe.
+    </string>
+    <string name="object_info_m29_funfact" translation_description="Fun fact about M29 shown in the info card. Translate this text.">
+    M29 sa odhaduje na vek len asi 10 miliónov rokov — je to hviezda v pôrodnej izbe — a nachádza sa v asociácii Cygnus OB1, rozľahlej skupine masívnych mladých hviezd. Ťažký medzihviezdny prach zoslabuje zhluk asi o 3 magnitúdy; bez tejto zákryty by hviezdy M29 svietili niekoľkokrát jasnejšie, ako sa skutočne javia.
+    </string>
+    <string name="object_info_m29_distance" translation_description="Distance to M29 shown in the info card. Translate units if appropriate for your locale.">4 000 svetelných rokov</string>
+    <string name="object_info_m29_size" translation_description="Physical size of M29 shown in the info card. Translate units if appropriate for your locale.">~8 svetelných rokov v priemere</string>
+
+    <string name="object_info_m62_description" translation_description="Description of the globular cluster M62 shown in the info card. Translate this text.">
+    M62 je bohatá guľová hviezdokopa v Hadonošovi — jedna z najbližších guľových hviezd k galaktickému stredu a výrazne asymetrická, s hviezdami hustejšie zhusteným na južnej strane. Pri magnitúde 6,6 je to pekný objekt na ďalekohľad, hoci jej nízka deklinácia ju robí krátkodobým cieľom pre severných pozorovateľov.
+    </string>
+    <string name="object_info_m62_funfact" translation_description="Fun fact about M62 shown in the info card. Translate this text.">
+    Excentrické jadro M62 je priamym dôsledkom jej blízkosti k galaktickému centru — silné slapové sily z centrálneho zväzku deformujú zhluk a ťahajú hviezdy smerom k galaktickej rovine. Je tiež jedným z najviac dynamicky vyvinutých guľovitých zhlukov, ktoré poznáme, s príznakmi kolapsu jadra a nezvyčajne vysokou hustotou milisekundových pulzarov.
+    </string>
+    <string name="object_info_m62_distance" translation_description="Distance to M62 shown in the info card. Translate units if appropriate for your locale.">22 500 svetelných rokov</string>
+    <string name="object_info_m62_size" translation_description="Physical size of M62 shown in the info card. Translate units if appropriate for your locale.">~92 svetelných rokov v priemere</string>
+
+    <string name="object_info_m28_description" translation_description="Description of the globular cluster M28 shown in the info card. Translate this text.">
+    M28 je kompaktný guľový hviezd­ny zhluk v Strelcovi, umiestnený blízko jasnej hviezdy Lambda Sagittarii v bohatých letných poliach hviezd. Pri magnitúde 6,9 je atraktívnym cieľom pre ďalekohľad a je dobre rozlíšiteľný v malých ďalekohľadoch, pričom vykazuje jasné kondenzované jadro obklopené miernym halom hviezd.
+    </string>
+    <string name="object_info_m28_funfact" translation_description="Fun fact about M28 shown in the info card. Translate this text.">
+    V roku 1987 sa M28 stala prvým guľovitým hviezdnym zhlukkom, v ktorom bol detegovaný milisekundový pulzar. Milisekundové pulzary — neutrónové hviezdy rotujúce stovky krát za sekundu — vznikajú, keď neutrónová hviezda akumuluje hmotu z družičnej hviezdy a nachádzajú sa v guľovitých hviezdnych zhlukoch oveľa vyššou rýchlosťou ako v galaxii všeobecne, pretože ich husté hviezdne prostredia vytvárajú oveľa viac blízkych binárnych stretnutí.
+    </string>
+    <string name="object_info_m28_distance" translation_description="Distance to M28 shown in the info card. Translate units if appropriate for your locale.">18 300 svetelných rokov</string>
+    <string name="object_info_m28_size" translation_description="Physical size of M28 shown in the info card. Translate units if appropriate for your locale.">~60 svetelných rokov v priemere</string>
+
+    <string name="object_info_m52_description" translation_description="Description of the open star cluster M52 shown in the info card. Translate this text.">
+    M52 je bohatá otvorená hviezdna kopa v Kasiopei, obsahujúca okolo 200 hviezd stlačených do kompaktnej oblasti severnej Mliečnej dráhy. Je to výborná hviezdna kopa pozorovateľná ďalekohľadom a v malých ďalekohľadoch ukazuje krásne, husté hviezdne pole s výrazne jasnejšou oranžovou hviezdou vyčnievajúcou blízko južného okraja kopy.
+    </string>
+    <string name="object_info_m52_funfact" translation_description="Fun fact about M52 shown in the info card. Translate this text.">
+    Vzdialenosť M52 je nezvyčajne neistá — odhady sa pohybujú od 3 000 do 7 000 svetelných rokov — pretože husté medzihviezdne prach pozdĺž tejto línie pohľadu sťažuje určenie jej skutočnej svietivosti. Messier ju objavil v roku 1774, v tú istú noc, keď sledoval kométu, ktorá ho viedla k zaznamenaniu niekoľkých ďalších položiek katalógu.
+    </string>
+    <string name="object_info_m52_distance" translation_description="Distance to M52 shown in the info card. Translate units if appropriate for your locale.">~5 000 svetelných rokov</string>
+    <string name="object_info_m52_size" translation_description="Physical size of M52 shown in the info card. Translate units if appropriate for your locale.">~25 svetelných rokov v priemere</string>
+
+    <string name="object_info_m67_description" translation_description="Description of the open star cluster M67 shown in the info card. Translate this text.">
+    M67 je krásna otvorená hviezdokopa v Raku a jedna z najstarších dobre študovaných otvorených hviezdokôp na oblohe. Stará približne 3,2–3,5 miliardy rokov, obsahuje mnoho hviezd podobných hmotnosťou a vekom našmu Slnku – čo z nej robí prirodzené laboratórium na študovanie evolúcie hviezd podobných Slnku počas kozmického času.
+    </string>
+    <string name="object_info_m67_funfact" translation_description="Fun fact about M67 shown in the info card. Translate this text.">
+    Niekoľko hviezd v M67 sa veľmi podobá Slnku teplotou, hmotnosťou a vekom — vzácna kombinácia, ktorá viedla výskumníkov k úvahe, či Slnko samo vzniklo v zhluku ako M67. Pretože hviezdy sa roďajú v zhlukoch, ktoré sa postupne rozptyľujú, Slnko takmer určite pochádzalo z teraz rozptýlenej skupiny súrodných hviezd pred miliardami rokov — hoci ktorý zhluk nikdy nebol identifikovaný.
+    </string>
+    <string name="object_info_m67_distance" translation_description="Distance to M67 shown in the info card. Translate units if appropriate for your locale.">2 700 svetelných rokov</string>
+    <string name="object_info_m67_size" translation_description="Physical size of M67 shown in the info card. Translate units if appropriate for your locale.">~24 svetelných rokov na priemer</string>
+
+    <string name="object_info_m55_description" translation_description="Description of the globular cluster M55 shown in the info card. Translate this text.">
+    M55 je veľký, voľný guľový zhluk v Strelcovi — jeden z najviac rozptýlených a najmenej koncentrovaných zo všetkých Messierovych guľových zhlukov. Ľahko sa rozlišuje na jednotlivé hviezdy aj pri nízkom zväčšení, s granulárnou štruktúrou viditeľnou v ďalekohľadoch. Jeho nízka južná deklinácia obmedzuje viditeľnosť z vysokých severných zemepisných šírok, ale zo južnej pologule je spektakulárny.
+    </string>
+    <string name="object_info_m55_funfact" translation_description="Fun fact about M55 shown in the info card. Translate this text.">
+    Neobvyklá nízka hviezdna koncentrácia M55 spôsobuje, že vyzerá skôr ako bohatý otvorený hvezdokôp ako typický guľový hvezdokôp. Jeho hviezdy sú rozptýlené v oblasti širokej takmer 100 svetelných rokov, čo naznačuje, že vlastná gravitácia hvezdokupu je relatívne slabá v porovnaní s viac centrálne kondenzovanými guľovými hvezdokôpmi ako M13 alebo M3.
+    </string>
+    <string name="object_info_m55_distance" translation_description="Distance to M55 shown in the info card. Translate units if appropriate for your locale.">17 600 svetelných rokov</string>
+    <string name="object_info_m55_size" translation_description="Physical size of M55 shown in the info card. Translate units if appropriate for your locale.">~100 svetelných rokov na priemer</string>
+
+    <string name="object_info_m19_description" translation_description="Description of the globular cluster M19 shown in the info card. Translate this text.">
+    M19 je kompaktný, bohatý guľový zhluk v Hadonoši — jeden z najbližších guľových zhlukov k galaktickému stredu. Jeho najvýraznejšou črtou je jeho výrazne sploštená forma: M19 je najviac sploštený guľový zhluk, ktorý je známy, s viditeľným eliptickým obrysom dokonca aj v malom ďalekohľade.
+    </string>
+    <string name="object_info_m19_funfact" translation_description="Fun fact about M19 shown in the info card. Translate this text.">
+    Výrazná sploštenie M19 — jeho najdlhšia os je približne o 10% dlhšia ako najkratšia — je medzi známymi guľovými hviezdokopami jedinečné a predpokladá sa, že je výsledkom slapového natiahnutia gravitačným poľom Mliečnej dráhy. Čím bližšie sa guľová hviezdokopa nachádza k galaktickému stredu, tým silnejšie je deformovaná; M19 sa nachádza len približne 5 200 svetelných rokov od galaktického jadra.
+    </string>
+    <string name="object_info_m19_distance" translation_description="Distance to M19 shown in the info card. Translate units if appropriate for your locale.">28 700 svetelných rokov</string>
+    <string name="object_info_m19_size" translation_description="Physical size of M19 shown in the info card. Translate units if appropriate for your locale.">~113 svetelných rokov na priemer</string>
+
+    <string name="object_info_m80_description" translation_description="Description of the globular cluster M80 shown in the info card. Translate this text.">
+    M80 je jedným z najhustejšie zhusteným guľovitých zhlukov v Mliečnej ceste, kompaktná, bohatá guľa niekoľko stotisíc hviezd v Škorpiónovi. Pri magnitúde 7,2 je to výborný cieľ pre ďalekohľad a v malých ďalekohľadoch odhaľuje brilantné, vysoko koncentrované jadro.
+    </string>
+    <string name="object_info_m80_funfact" translation_description="Fun fact about M80 shown in the info card. Translate this text.">
+    V roku 1860 vypukla v M80 nová — označená ako T Scorpii — a na krátky čas sa stala jasnou ako samotný gulový zhluk a bola viditeľná voľným okom. Zostáva jednou z iba dvoch nových kedy pozorovaných v guľovom zhluku. Nové v guľových zhlukoch vznikajú z interakcií medzi dvojhviezdami, ktoré sú v hustom hviezdnom prostredí jadra guľového zhluku oveľa bežnejšie.
+    </string>
+    <string name="object_info_m80_distance" translation_description="Distance to M80 shown in the info card. Translate units if appropriate for your locale.">32 600 svetelných rokov</string>
+    <string name="object_info_m80_size" translation_description="Physical size of M80 shown in the info card. Translate units if appropriate for your locale.">~84 svetelných rokov na priemer</string>
+
+    <string name="object_info_m103_description" translation_description="Description of the open star cluster M103 shown in the info card. Translate this text.">
+    M103 je malá, kompaktná otvorená hviezdokopa v Kasiopei, obsahujúca okolo 40 hviezd v tesnej skupine ľahko viditeľnej v ďalekohľade. Nápadná dvojhviezda a červený obor v blízkosti stredu jej dávajú farebný vzhľad v malých ďalekohľadoch, umiestnené v bohatých poliach Mliečnej dráhy v Kasiopei.
+    </string>
+    <string name="object_info_m103_funfact" translation_description="Fun fact about M103 shown in the info card. Translate this text.">
+    M103 bol objekt s najvyšším číslom v Messierovom pôvodnom katalógu z roku 1781 — všetky nasledujúce objekty (M104–M110) boli neskôr pridané astronomami z Messierovych poznámok a korešpondencie. Pierre Méchain objavil M103 krátko pred tým, ako bol katalóg vydaný, a Messier ho zaradil na základe Méchainovej správy.
+    </string>
+    <string name="object_info_m103_distance" translation_description="Distance to M103 shown in the info card. Translate units if appropriate for your locale.">8 500 svetelných rokov</string>
+    <string name="object_info_m103_size" translation_description="Physical size of M103 shown in the info card. Translate units if appropriate for your locale.">~15 svetelných rokov na priemer</string>
+
+    <string name="object_info_m30_description" translation_description="Description of the globular cluster M30 shown in the info card. Translate this text.">
+    M30 je kompaktný guľový zhluk v Kozorožcovi — pekný objekt v malých ďalekohľadoch, ktorý vykazuje jasné, zhutnené jadro a slabé vonkajšie reťazce hviezd. Pri magnitúde 7,5 vyžaduje tmavé oblohy v ďalekohľadoch a malý ďalekohľad odmeňuje jeho čiastočne rozlíšenou vonkajšou halou.
+    </string>
+    <string name="object_info_m30_funfact" translation_description="Fun fact about M30 shown in the info card. Translate this text.">
+    M30 prešiel "kolapsom jadra" — procesom, pri ktorom vzájomná gravitačná príťažlivosť hustých hviezd spôsobuje dramatické stiahnutie sa stredu hvezdokopy, čo vytvára extrémnu koncentráciu hviezd v malom objeme. Približne pätina všetkých guľovitých hvezdokôp má zrútené jadra a M30 patrí medzi najlepšie študované príklady tohto javu.
+    </string>
+    <string name="object_info_m30_distance" translation_description="Distance to M30 shown in the info card. Translate units if appropriate for your locale.">27 100 svetelných rokov</string>
+    <string name="object_info_m30_size" translation_description="Physical size of M30 shown in the info card. Translate units if appropriate for your locale.">~87 svetelných rokov na priemer</string>
+
+    <string name="object_info_m54_description" translation_description="Description of the globular cluster M54 shown in the info card. Translate this text.">
+    M54 je veľká a bohatá guľová hviezdokopa v Strelcovi a jeden z najvzdialenejších objektov v celom Messierovom katalógu. Stáročia sa predpokladalo, že ide o vzdialenú halo guľovú hviezdu Mliečnej dráhy, ale teraz je známe, že ide o hustý jadro Trpaslíkovej eliptickej galaxie Strelca – satelitnej galaxie, ktorá je v súčasnosti absorbovaná našou vlastnou.
+    </string>
+    <string name="object_info_m54_funfact" translation_description="Fun fact about M54 shown in the info card. Translate this text.">
+    Objav v roku 1994, že M54 patrí Trpaslíckej galaxii v Strelcovi, z neho urobil prvý guľový zhluk známy ako patriaci inej galaxii. Keďže Trpaslícka galaxia v Strelcovi je postupne rozdeľovaná a pohlcovaná Mliečnou cestou, M54 sa nakoniec stane skutočným halo guľovým zhlukkom našej vlastnej galaxie — medziplanetárnym prisťahovalcom, ktorý prichádza počas miliárd rokov.
+    </string>
+    <string name="object_info_m54_distance" translation_description="Distance to M54 shown in the info card. Translate units if appropriate for your locale.">87 000 svetelných rokov</string>
+    <string name="object_info_m54_size" translation_description="Physical size of M54 shown in the info card. Translate units if appropriate for your locale.">~230 svetelných rokov na priemer</string>
+
+    <string name="object_info_m69_description" translation_description="Description of the globular cluster M69 shown in the info card. Translate this text.">
+    M69 je mierne bohatá guľová hviezdokopa v Strelcovi, umiestnená blízko galaktického stredu. Pri magnitúde 7,7 je to objekt viditeľný ďalekohľadom z tmavého neba, ktorý malý ďalekohľad odmeňuje čiastočne rozlíšenou guľou hviezd a jasným, zrnitým stredom.
+    </string>
+    <string name="object_info_m69_funfact" translation_description="Fun fact about M69 shown in the info card. Translate this text.">
+    M69 sa pohybuje nezvyčajne blízko k galaktickému centru — len asi 6 200 svetelných rokov od jadra Mliečnej dráhy — a v dôsledku toho má nezvyčajne vysokú koncentráciu ťažších prvkov pre guľovú hviezdokôpu. Guľové hviezdokupy bližšie k galaktickému centru majú tendenciu byť chemicky obohatené viacerými generáciami tvorby hviezd v okolitom jadre galaxie.
+    </string>
+    <string name="object_info_m69_distance" translation_description="Distance to M69 shown in the info card. Translate units if appropriate for your locale.">29 700 svetelných rokov</string>
+    <string name="object_info_m69_size" translation_description="Physical size of M69 shown in the info card. Translate units if appropriate for your locale.">~61 svetelných rokov na priemer</string>
+
+    <string name="object_info_m9_description" translation_description="Description of the globular cluster M9 shown in the info card. Translate this text.">
+    M9 je kompaktný guľový zhluk v Hadonoši — jeden z Messierovych guľových zhlukov najviac postihnutý absorpciou medzihviezdneho prachu. Nachádza sa smerom k jadru galaxie, kde hustý prach ho výrazne stmavuje. Bez tejto obscurácie by sa M9 javí takmer o jednu magnitudu jasnejší a bol by viditeľný voľným okom.
+    </string>
+    <string name="object_info_m9_funfact" translation_description="Fun fact about M9 shown in the info card. Translate this text.">
+    M9 trpí väčšou absorpciou medzihviezdneho prachu ako takmer akýkoľvek iný Messierov guľový zhluk — približne 1,3 magnitúdy stmavnutia v porovnaní s čistou priamou viditeľnosťou. Dva menšie guľové zhluky (NGC 6342 a NGC 6356) sa nachádzajú v rámci približne 1° od M9, čo z neho robí centrum pozoruhodného zoskupenia troch guľových zhlukov na malom kúsku oblohy.
+    </string>
+    <string name="object_info_m9_distance" translation_description="Distance to M9 shown in the info card. Translate units if appropriate for your locale.">25 800 svetelných rokov</string>
+    <string name="object_info_m9_size" translation_description="Physical size of M9 shown in the info card. Translate units if appropriate for your locale.">~70 svetelných rokov na priemer</string>
+
+    <string name="object_info_m26_description" translation_description="Description of the open star cluster M26 shown in the info card. Translate this text.">
+    M26 je mierne slabá otvorená hviezdokopa v Štíte, viditeľná v ďalekohľadoch a dobre rozlíšiteľná v malých ďalekohľadoch. Približne 90 hviezd je rozptýlených na kompaktnom poli v bohatej hviezdnej oblake Štíta, hoci je hviezdokopa umiestnená na takom hustom pozadí, že identifikácia jej členov z okolitého hviezdneho poľa si vyžaduje určitú starostlivosť.
+    </string>
+    <string name="object_info_m26_funfact" translation_description="Fun fact about M26 shown in the info card. Translate this text.">
+    M26 leží pozdĺž tej istej bohatej časti oblohy ako M11 — Hejno divých kačíc, jeden z najkrajších otvorených hejn na oblohe. Tieto dva objekty sú od seba vzdialené len asi 3,5° a sú viditeľné v rovnakom poli ďalekohľadu, čo robí Štít pozoruhodným cieľom pre pozorovateľov hejn napriek tomu, že ide o malú a často prehliadanú súhvezdí.
+    </string>
+    <string name="object_info_m26_distance" translation_description="Distance to M26 shown in the info card. Translate units if appropriate for your locale.">5 000 svetelných rokov</string>
+    <string name="object_info_m26_size" translation_description="Physical size of M26 shown in the info card. Translate units if appropriate for your locale.">~22 svetelných rokov na priemer</string>
+
+    <string name="object_info_m79_description" translation_description="Description of the globular cluster M79 shown in the info card. Translate this text.">
+    M79 je kompaktný guľovitý hviezdy zhluk v Lepuse — jeden z veľmi mála Messierovych guľovitých zhlukov, ktoré sú najlepšie umiestnené na zimnej oblohe, keď sú väčšina guľovitých zhlukov pod horizontom alebo sotva vyvstávajú. Pri magnitúde 8,0 potrebuje ďalekohľad na odhalenie jeho kompaktného jadra a slabej aureoly, ktorá sa vyníma na pozadí relatívne riedkych zimných hviezdnych polí.
+    </string>
+    <string name="object_info_m79_funfact" translation_description="Fun fact about M79 shown in the info card. Translate this text.">
+    M79 sa podľa niektorých astronómov považuje za vetrelca z Trpaslíckej galaxie Veľký Pes — rozrušenej satelitnej galaxie, ktorú v súčasnosti pohlcuje Mliečna dráha. Ak je to tak, M79 nevznikol v rámci vlastného guľového systému Mliečnej dráhy, ale bol zachytený z padajúcej galaxie a v súčasnosti sa pomaly začleňuje do halo našej galaxie.
+    </string>
+    <string name="object_info_m79_distance" translation_description="Distance to M79 shown in the info card. Translate units if appropriate for your locale.">41 000 svetelných rokov</string>
+    <string name="object_info_m79_size" translation_description="Physical size of M79 shown in the info card. Translate units if appropriate for your locale.">~104 svetelných rokov na priemer</string>
+
+    <string name="object_info_m70_description" translation_description="Description of the globular cluster M70 shown in the info card. Translate this text.">
+    M70 je kompaktný guľový zhluk v Strelcovi, ktorý sa veľmi podobá svojmu blízkemu dvojčaťu M69 vzhľadom aj vzdialenosťou. Pri magnitúde 8,1 je to pekný objekt pre malý ďalekohľad, ktorý ukazuje kompaktné jadro a náznak rozlíšenia v vonkajšej hale. Nachádza sa len 2° od M69 a oba je možné zachytiť v rovnakom poli ďalekohľadu.
+    </string>
+    <string name="object_info_m70_funfact" translation_description="Fun fact about M70 shown in the info card. Translate this text.">
+    M70 sa v roku 1995 stala krátko slávnou ako približná poloha na oblohe, kde Alan Hale a Thomas Bopp nezávisle od seba objavili kométu Hale-Bopp — najjasnejšiu kométu konca 20. storočia. Obaja pozorovatelia spočiatku prešli okolo M70 pri hľadaní iných objektov a všimli si kométu ako neočakávaný fuzzy objekt v blízkosti.
+    </string>
+    <string name="object_info_m70_distance" translation_description="Distance to M70 shown in the info card. Translate units if appropriate for your locale.">29 400 svetelných rokov</string>
+    <string name="object_info_m70_size" translation_description="Physical size of M70 shown in the info card. Translate units if appropriate for your locale.">~67 svetelných rokov na priemer</string>
+
+    <string name="object_info_m107_description" translation_description="Description of the globular cluster M107 shown in the info card. Translate this text.">
+    M107 je jedným z najmenej koncentrovaných guľovitých zhlukov Messiera, s hviezdami rozptýlenými v relatívne otvorenej štruktúre okolo skromného jadra. Pri magnitúde 8,1 je to cieľ vhodný na pozorovanie ďalekohľadom z tmavého neba a čiastočne sa rozlišuje v malých ďalekohľadoch, pričom vykazuje zrnitú štruktúru namiesto ostrého centrálneho zhustenia.
+    </string>
+    <string name="object_info_m107_funfact" translation_description="Fun fact about M107 shown in the info card. Translate this text.">
+    M107 bola posledným objektom formálne pridaným do katalógu Messiera — objavuje sa v korešpondencii Pierra Méchaina, ale nebol zahrnutý v pôvodnom vydaní z roku 1781. Oficiálne bol pridaný ako M107 v roku 1947 kanadskou astronómkou Helen Sawyer Hoggovou, ktorá kodifikovala niekoľko "chýbajúcich" objektov, ktoré Méchain pozoroval, ale Messier nikdy formálne nezaznamenal.
+    </string>
+    <string name="object_info_m107_distance" translation_description="Distance to M107 shown in the info card. Translate units if appropriate for your locale.">20 900 svetelných rokov</string>
+    <string name="object_info_m107_size" translation_description="Physical size of M107 shown in the info card. Translate units if appropriate for your locale.">~61 svetelných rokov na priemer</string>
+
+    <string name="object_info_m68_description" translation_description="Description of the globular cluster M68 shown in the info card. Translate this text.">
+    M68 je bohatá guľová hviezdokopa v Hydre — južný objekt a jedna z mála guľových hviezd, ktoré sú najlepšie umiestnené na konci zimy a na jar. Pri magnitúde 8,2 odmeňuje malý ďalekohľad mierne zhusteným jadrom a veľkou halou rozlíšených hviezd na pozadí relatívne riedkych hviezdnych polí Hydry.
+    </string>
+    <string name="object_info_m68_funfact" translation_description="Fun fact about M68 shown in the info card. Translate this text.">
+    Napriek svojej relatívnej blízkosti — čo umožňuje dobre rozlíšiť jednotlivé hviezdy v amatérskych ďalekohľadoch — je M68 často prehliadaná kvôli jej ďalekej južnej deklinácie. Z zemepisných šírok nad 50°S sa sotva zdvíha nad horizont; z južnej pologule sa však zdvíha vysoko a je nádherným guľovitým hviezdnym zhlukkom.
+    </string>
+    <string name="object_info_m68_distance" translation_description="Distance to M68 shown in the info card. Translate units if appropriate for your locale.">33 600 svetelných rokov</string>
+    <string name="object_info_m68_size" translation_description="Physical size of M68 shown in the info card. Translate units if appropriate for your locale.">~117 svetelných rokov na priemer</string>
+
+    <string name="object_info_m56_description" translation_description="Description of the globular cluster M56 shown in the info card. Translate this text.">
+    M56 je kompaktný guľový zhluk v Lyre, uložený medzi Prstencovou hmlovanosťou (M57) a jasnou dvojhviezdou Albireo v Labuti. Pri magnitúde 8,3 je to cieľ pre ďalekohľad z tmavého neba a malý teleskop odhaľuje zrnitú, mierne kondenzovanú guľu, ktorá je aj v stredných aperturách len čiastočne rozlíšená.
+    </string>
+    <string name="object_info_m56_funfact" translation_description="Fun fact about M56 shown in the info card. Translate this text.">
+    M56 objavil Messier v januári 1779 počas tej istej pozorovacej sezóny, v ktorej objavil aj Krúžkovú hmlovu (M57). Napriek tomu, že sa nachádza v rovnakom poli ďalekohľadu ako Vega — piata najjasnejšia hviezda na oblohe — a blízko slávnej Krúžkovej hmly, je M56 často prehliadaný pozorovateľmi, ktorých priťahujú jej slávnejšie susedné objekty.
+    </string>
+    <string name="object_info_m56_distance" translation_description="Distance to M56 shown in the info card. Translate units if appropriate for your locale.">32 900 svetelných rokov</string>
+    <string name="object_info_m56_size" translation_description="Physical size of M56 shown in the info card. Translate units if appropriate for your locale.">~68 svetelných rokov na priemer</string>
+
+    <string name="object_info_m71_description" translation_description="Description of the globular cluster M71 shown in the info card. Translate this text.">
+    M71 je neobvyklý guľový zhluk v Šípke — desaťročia ho astronómovia diskutovali a nemohli sa rozhodnúť, či ide o veľmi bohatý starý otvorený zhluk alebo veľmi voľný mladý guľový zhluk. Moderná analýza potvrdzuje, že ide o skutočný guľový zhluk, ale s výnimočne nízkou koncentráciou s relatívne malým počtom hviezd a menej dominantným jadrom ako typické guľové zhluky.
+    </string>
+    <string name="object_info_m71_funfact" translation_description="Fun fact about M71 shown in the info card. Translate this text.">
+    Voľná štruktúra M71 ju udržala mimo mnohých skorších katalógov, pretože sa podobala bohatému poľu hviezd skôr ako skutočnému hviezdnemu zhluku. S vzdialenosťou len 12 000 svetelných rokov je jedným z najbližších Messierovych guľovitých zhlukov a jej hviezdy sú čiastočne rozlíšiteľné v malom ďalekohľade za tmavej oblohy — čo jej dáva vzhľad kompaktného, mierne zhustnutého bohatého poľa hviezd.
+    </string>
+    <string name="object_info_m71_distance" translation_description="Distance to M71 shown in the info card. Translate units if appropriate for your locale.">12 000 svetelných rokov</string>
+    <string name="object_info_m71_size" translation_description="Physical size of M71 shown in the info card. Translate units if appropriate for your locale.">~25 svetelných rokov na priemer</string>
 </resources>

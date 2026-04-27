@@ -950,6 +950,67 @@
     </string>
     <string name="object_info_eta_carinae_nebula_distance" translation_description="Distance to Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">7 500 années-lumière</string>
     <string name="object_info_eta_carinae_nebula_size" translation_description="Physical size of Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">300 années-lumière de diamètre</string>
+    <!-- North America Nebula (NGC 7000) -->
+    <string name="object_info_north_america_nebula_description" translation_description="Description of the North America Nebula shown in the info card. Translate this text.">
+    La Nébuleuse de l\'Amérique du Nord (NGC 7000) est une grande nébuleuse d\'émission dans le Cygne dont la forme ressemble remarquablement au continent de l\'Amérique du Nord, avec une région du golfe du Mexique. S\'étendant sur environ 120 arcminutes — soit environ quatre fois le diamètre de la Pleine Lune — elle se situe à environ 2 600 années-lumière et fait plus de 100 années-lumière de largeur.
+    </string>
+    <string name="object_info_north_america_nebula_funfact" translation_description="Fun fact about the North America Nebula shown in the info card. Translate this text.">
+    Malgré sa magnitude visuelle de 4, la nébuleuse est trop grande et diffuse pour être visible à l\'œil nu sous la plupart des ciels — pourtant, elle se photographie magnifiquement, révélant le Mur du Cygne, un arc dense de formation stellaire intense le long de son bord sud.
+    </string>
+    <string name="object_info_north_america_nebula_distance" translation_description="Distance to the North America Nebula shown in the info card. Translate units if appropriate for your locale.">~2 590 années-lumière</string>
+    <string name="object_info_north_america_nebula_size" translation_description="Physical size of the North America Nebula shown in the info card. Translate units if appropriate for your locale.">~140 années-lumière de diamètre</string>
+    <!-- Exposed Cranium Nebula - PMR 1 -->
+    <string name="object_info_exposed_cranium_nebula_description" translation_description="Description of the Exposed Cranium Nebula shown in the info card. Translate this text.">
+    La Nébuleuse du Crâne Exposé (PMR 1) est une nébuleuse planétaire dans les Voiles, à environ 5 000 années-lumière de distance. Son nom étrange provient d\'une bande sombre de gaz traversant verticalement le milieu, divisant ses lobes lumineux en une forme ressemblant étrangement à un cerveau à l\'intérieur d\'un crâne transparent. En son cœur brûle une étoile Wolf-Rayet chaude qui rejette les couches externes qu\'elle a accumulées au cours de sa vie.
+    </string>
+    <string name="object_info_exposed_cranium_nebula_funfact" translation_description="Fun fact about the Exposed Cranium Nebula shown in the info card. Translate this text.">
+    En 2026, le télescope spatial James Webb a capturé de frappantes nouvelles images de la Nébuleuse du Crâne Exposé, révélant sa structure à double couche avec un détail sans précédent — une coquille externe riche en hydrogène et un nuage interne rempli d\'éléments plus lourds forgés par l\'étoile mourante.
+    </string>
+    <string name="object_info_exposed_cranium_nebula_distance" translation_description="Distance to the Exposed Cranium Nebula shown in the info card. Translate units if appropriate for your locale.">~5 000 années-lumière</string>
+    <string name="object_info_exposed_cranium_nebula_size" translation_description="Physical size of the Exposed Cranium Nebula shown in the info card. Translate units if appropriate for your locale.">~2 années-lumière de diamètre</string>
+
+    <!-- Jewel Box (NGC 4755) -->
+    <string name="object_info_jewel_box_description" translation_description="Description of the Jewel Box cluster shown in the info card. Translate this text.">
+    La Boîte à Bijoux (NGC 4755) est un jeune amas ouvert brillant dans la constellation de la Croix du Sud, facilement visible à l\'œil nu sous la forme d\'une tache floue de quatrième magnitude juste au sud-est de Mimosa. Observé à travers un télescope, ses étoiles brillent dans des couleurs contrastées éclatantes — des supergéantes bleues profondes aux côtés d\'une frappante supergéante rouge — ce qui lui a valu le nom que John Herschel lui a donné : un superbe bijou. Avec seulement 14 à 16 millions d\'années, c\'est l\'un des amas les plus jeunes et les plus colorés du ciel.
+    </string>
+    <string name="object_info_jewel_box_funfact" translation_description="Fun fact about the Jewel Box shown in the info card. Translate this text.">
+    L\'étoile rouge remarquable de l\'amas, κ Crucis, est une supergéante rouge si lumineuse qu\'elle surpasse le Soleil de plus de 100 000 fois — un rappel vivant que les amas d\'étoiles ne sont pas tous de la même couleur.
+    </string>
+    <string name="object_info_jewel_box_distance" translation_description="Distance to the Jewel Box shown in the info card. Translate units if appropriate for your locale.">~6 500 années-lumière</string>
+    <string name="object_info_jewel_box_size" translation_description="Physical size of the Jewel Box shown in the info card. Translate units if appropriate for your locale.">~19 années-lumière de diamètre</string>
+
+    <!-- Double Cluster (NGC 869 & NGC 884) -->
+    <string name="object_info_double_cluster_description" translation_description="Description of the Double Cluster shown in the info card. Translate this text.">
+    Le Double Amas (NGC 869 et NGC 884) est une paire éblouissante de jeunes amas ouverts d\'étoiles dans Persée, situés côte à côte dans le ciel à un peu plus d\'un degré d\'écart. Tous deux sont visibles à l\'œil nu sous forme d\'une tache brumeuse, mais même un petit télescope révèle des centaines de supergéantes bleu-blanc brillantes entassées dans deux essaims scintillants. À environ 7 500 années-lumière de distance, ils se trouvent dans le Bras de Persée de notre galaxie et figurent parmi les plus beaux objets aux jumelles du ciel septentrional.
+    </string>
+    <string name="object_info_double_cluster_funfact" translation_description="Fun fact about the Double Cluster shown in the info card. Translate this text.">
+    Avec seulement 14 millions d\'années, l\'Amas double est extraordinairement jeune — si récemment formé que ses étoiles les plus massives sont encore des supergéantes bleues flamboyantes, et quelques-unes ont déjà évolué en rares supergéantes rouges ardentes.
+    </string>
+    <string name="object_info_double_cluster_distance" translation_description="Distance to the Double Cluster shown in the info card. Translate units if appropriate for your locale.">~7 500 années-lumière</string>
+    <string name="object_info_double_cluster_size" translation_description="Physical size of the Double Cluster shown in the info card. Translate units if appropriate for your locale.">
+    Chaque amas ~70 années-lumière de diamètre ; la paire séparée par ~1 000 années-lumière
+    </string>
+
+    <!-- 47 Tucanae (NGC 104) -->
+    <string name="object_info_n47_tucanae_description" translation_description="Description of 47 Tucanae shown in the info card. Translate this text.">
+    47 Tucanae (NGC 104) est l\'amas globulaire le plus brillant du ciel après un autre, une boule dense d\'environ un million d\'étoiles anciennes en orbite autour de la Voie lactée dans la constellation du Toucan. À environ 14 500 années-lumière, il apparaît à l\'œil nu comme une étoile floue de quatrième magnitude, mais un télescope résout son noyau comprimé en un essaim extraordinaire de soleils dorés et bleu-blanc. Ses étoiles se sont formées il y a environ 13 milliards d\'années, ce qui rend l\'amas presque aussi ancien que l\'univers lui-même.
+    </string>
+    <string name="object_info_n47_tucanae_funfact" translation_description="Fun fact about 47 Tucanae shown in the info card. Translate this text.">
+    47 Tucanae est une fabrique cosmique de pulsars : les astronomes y ont découvert au moins 35 pulsars millisecondes tournoyant des centaines de fois par seconde — plus que dans tout autre amas globulaire connu — résultat de rencontres stellaires rapprochées qui recyclent les vieilles étoiles à neutrons en les accélérant.
+    </string>
+    <string name="object_info_n47_tucanae_distance" translation_description="Distance to 47 Tucanae shown in the info card. Translate units if appropriate for your locale.">~14 500 années-lumière</string>
+    <string name="object_info_n47_tucanae_size" translation_description="Physical size of 47 Tucanae shown in the info card. Translate units if appropriate for your locale.">~120 années-lumière de diamètre</string>
+
+    <!-- Centaurus A (NGC 5128) -->
+    <string name="object_info_centaurus_a_description" translation_description="Description of Centaurus A shown in the info card. Translate this text.">
+    Centaurus A (NGC 5128) est la radiogalaxie active la plus proche de la Terre, une galaxie elliptique géante dans la constellation du Centaure dont la remarquable bande de poussière sombre révèle un passé violent — une galaxie spirale engloutie il y a environ 200 à 700 millions d\'années. En son cœur se cache un trou noir supermassif de 55 millions de masses solaires qui génère des jets relativistes s\'étendant sur plus d\'un million d\'années-lumière en longueurs d\'onde radio. À une distance d\'environ 12 millions d\'années-lumière, c\'est l\'une des galaxies les plus étudiées du ciel.
+    </string>
+    <string name="object_info_centaurus_a_funfact" translation_description="Fun fact about Centaurus A shown in the info card. Translate this text.">
+    Centaurus A est l\'un des plus puissants émetteurs radio naturels du ciel — ses jets projettent du plasma vers l\'extérieur à une vitesse proche de celle de la lumière, et l\'étendue complète de ses lobes radio couvre une zone équivalente à environ 100 pleines lunes alignées bout à bout dans le ciel.
+    </string>
+    <string name="object_info_centaurus_a_distance" translation_description="Distance to Centaurus A shown in the info card. Translate units if appropriate for your locale.">~12 millions d\'années-lumière</string>
+    <string name="object_info_centaurus_a_size" translation_description="Physical size of Centaurus A shown in the info card. Translate units if appropriate for your locale.">~123 000 années-lumière de diamètre</string>
+
     <!-- ==================== CONSTELLATIONS ==================== -->
     <!-- Note: Constellation names are defined in celestial_objects.xml -->
     <!-- Orion -->
@@ -1977,4 +2038,697 @@
     Vulpecula contient la Nébuleuse de l\'Haltère (M27), la première nébuleuse planétaire jamais découverte (par Charles Messier en 1764), et une belle cible pour les jumelles!
     </string>
     <string name="object_info_vulpecula_size" translation_description="Physical size of Vulpecula shown in the info card. Translate units if appropriate for your locale.">268 degrés carrés</string>
+
+    <!-- Galilean Moons of Jupiter -->
+    <string name="object_info_io_description" translation_description="Description of Io shown in the info card. Translate this text.">
+    Io est la plus interne des quatre grandes lunes galiléennes de Jupiter et le corps le plus volcaniquement actif du système solaire.
+    </string>
+    <string name="object_info_io_funfact" translation_description="Fun fact about Io shown in the info card. Translate this text.">
+    Io possède des centaines de volcans actifs, dont certains éjectent des fontaines de lave s\'élevant à des dizaines de kilomètres de hauteur. Son activité constante est alimentée par le chauffage des marées provoqué par l\'énorme gravité de Jupiter.
+    </string>
+    <string name="object_info_io_distance" translation_description="Distance to Io shown in the info card. Translate units if appropriate for your locale.">421 700 km de Jupiter</string>
+    <string name="object_info_io_size" translation_description="Physical size of Io shown in the info card. Translate units if appropriate for your locale.">3 643 km de diamètre</string>
+
+    <string name="object_info_europa_description" translation_description="Description of Europa shown in the info card. Translate this text.">
+    Europe est la deuxième lune galiléenne et on pense qu\'elle abrite un vaste océan d\'eau liquide sous sa croûte glacée, ce qui en fait l\'un des endroits les plus prometteurs pour rechercher la vie.
+    </string>
+    <string name="object_info_europa_funfact" translation_description="Fun fact about Europa shown in the info card. Translate this text.">
+    L\'océan souterrain d\'Europe pourrait contenir deux fois plus d\'eau liquide que tous les océans terrestres réunis, maintenue liquide par le chauffage des marées provenant de Jupiter.
+    </string>
+    <string name="object_info_europa_distance" translation_description="Distance to Europa shown in the info card. Translate units if appropriate for your locale.">671 100 km de Jupiter</string>
+    <string name="object_info_europa_size" translation_description="Physical size of Europa shown in the info card. Translate units if appropriate for your locale.">3 122 km de diamètre</string>
+
+    <string name="object_info_ganymede_description" translation_description="Description of Ganymede shown in the info card. Translate this text.">
+    Ganymède est la plus grande lune du système solaire — même plus grande que la planète Mercure. C\'est la seule lune connue pour générer son propre champ magnétique.
+    </string>
+    <string name="object_info_ganymede_funfact" translation_description="Fun fact about Ganymede shown in the info card. Translate this text.">
+    Ganymède est plus grand que Mercure en taille, bien que sa masse ne soit que la moitié de celle-ci. Son champ magnétique interne crée sa propre magnétosphère miniature au sein de celle, beaucoup plus grande, de Jupiter.
+    </string>
+    <string name="object_info_ganymede_distance" translation_description="Distance to Ganymede shown in the info card. Translate units if appropriate for your locale.">1 070 400 km de Jupiter</string>
+    <string name="object_info_ganymede_size" translation_description="Physical size of Ganymede shown in the info card. Translate units if appropriate for your locale.">5 268 km de diamètre</string>
+
+    <string name="object_info_callisto_description" translation_description="Description of Callisto shown in the info card. Translate this text.">
+    Callisto est la plus externe des lunes galiléennes et l\'un des corps les plus cratérisés du système solaire, sa surface ancienne conservant un enregistrement des impacts du système solaire primitif.
+    </string>
+    <string name="object_info_callisto_funfact" translation_description="Fun fact about Callisto shown in the info card. Translate this text.">
+    Callisto orbite au-delà des ceintures de radiation principales de Jupiter, ce qui en fait la plus sûre des lunes galiléennes pour l\'exploration humaine future — elle est parfois appelée la \'lune passerelle\'.
+    </string>
+    <string name="object_info_callisto_distance" translation_description="Distance to Callisto shown in the info card. Translate units if appropriate for your locale.">1 882 700 km de Jupiter</string>
+    <string name="object_info_callisto_size" translation_description="Physical size of Callisto shown in the info card. Translate units if appropriate for your locale.">4 821 km de diamètre</string>
+
+    <!-- Moons of Mars -->
+    <string name="object_info_phobos_description" translation_description="Description of Phobos shown in the info card. Translate this text.">
+    Phobos est la plus grande et la plus interne des deux lunes de Mars, orbitant plus près de sa planète que toute autre lune du système solaire. C\'est un corps de forme irrégulière, fortement sillonné et cratérisé, considéré comme un astéroïde capturé.
+    </string>
+    <string name="object_info_phobos_funfact" translation_description="Fun fact about Phobos shown in the info card. Translate this text.">
+    Phobos orbite Mars si rapidement qu\'il se lève à l\'ouest et se couche à l\'est — et il se rapproche lentement, destiné à soit s\'écraser sur Mars, soit se désintégrer en anneau dans environ 50 millions d\'années.
+    </string>
+    <string name="object_info_phobos_distance" translation_description="Distance to Phobos shown in the info card. Translate units if appropriate for your locale.">9 376 km de Mars</string>
+    <!-- tm:omitted name="object_info_phobos_size" reason="identical_to_source" -->
+
+    <string name="object_info_deimos_description" translation_description="Description of Deimos shown in the info card. Translate this text.">
+    Déimos est la plus petite et la plus externe des deux lunes de Mars, avec une surface lisse couverte de poussière qui lui donne une apparence plus arrondie que Phobos. Comme sa compagne, on pense qu\'elle est un astéroïde capturé de la ceinture externe.
+    </string>
+    <string name="object_info_deimos_funfact" translation_description="Fun fact about Deimos shown in the info card. Translate this text.">
+    Déimos est si petit et éloigné que depuis la surface martienne, il ressemble à peine à plus qu\'une étoile brillante, mettant environ 30 heures pour dériver lentement à travers le ciel nocturne.
+    </string>
+    <string name="object_info_deimos_distance" translation_description="Distance to Deimos shown in the info card. Translate units if appropriate for your locale.">23 460 km de Mars</string>
+    <!-- tm:omitted name="object_info_deimos_size" reason="identical_to_source" -->
+
+    <!-- Major Moons of Saturn -->
+    <string name="object_info_titan_description" translation_description="Description of Titan shown in the info card. Translate this text.">
+    Titan est la plus grande lune de Saturne et la deuxième plus grande lune du système solaire. C\'est la seule lune connue pour avoir une atmosphère dense — une épaisse couche d\'azote parsemée de méthane — et le seul monde au-delà de la Terre connu pour avoir des mers liquides stables à sa surface.
+    </string>
+    <string name="object_info_titan_funfact" translation_description="Fun fact about Titan shown in the info card. Translate this text.">
+    Les lacs et mers de Titan sont remplis non pas d\'eau mais de méthane et d\'éthane liquides à une température glaciale de −179°C. La mission du rotorcraft Dragonfly de la NASA, prévue pour arriver en 2034, volera entre les sites de la surface de Titan pour rechercher la chimie de la vie.
+    </string>
+    <string name="object_info_titan_distance" translation_description="Distance to Titan shown in the info card. Translate units if appropriate for your locale.">1 221 870 km de Saturne</string>
+    <string name="object_info_titan_size" translation_description="Physical size of Titan shown in the info card. Translate units if appropriate for your locale.">5 151 km de diamètre</string>
+
+    <string name="object_info_rhea_description" translation_description="Description of Rhea shown in the info card. Translate this text.">
+    Rhéa est la deuxième plus grande lune de Saturne et un monde fortement cratérisé de glace et de roche. Sa surface pâle et ancienne préserve certains des cratères d\'impact les plus pristins du système solaire, aux côtés de falaises de glace brillantes où les glissements de terrain ont exposé du matériel frais provenant de dessous.
+    </string>
+    <string name="object_info_rhea_funfact" translation_description="Fun fact about Rhea shown in the info card. Translate this text.">
+    En 2008, les données de Cassini ont suggéré que Rhéa pourrait avoir un fin anneau de débris en orbite autour d\'elle — ce qui en ferait la première lune jamais découverte avec son propre système d\'anneaux. Si confirmé, ce serait une découverte remarquable ; les preuves restent un domaine de recherche actif.
+    </string>
+    <string name="object_info_rhea_distance" translation_description="Distance to Rhea shown in the info card. Translate units if appropriate for your locale.">527 108 km de Saturne</string>
+    <string name="object_info_rhea_size" translation_description="Physical size of Rhea shown in the info card. Translate units if appropriate for your locale.">1 527 km de diamètre</string>
+
+    <string name="object_info_tethys_description" translation_description="Description of Tethys shown in the info card. Translate this text.">
+    Téthys est une lune glacée de Saturne dominée par deux caractéristiques spectaculaires : le vaste cratère Odysseus, large de 400 km et couvrant près d\'un tiers de la surface de la lune, et Ithaca Chasma, un système de canyons s\'étendant sur les trois quarts du globe.
+    </string>
+    <string name="object_info_tethys_funfact" translation_description="Fun fact about Tethys shown in the info card. Translate this text.">
+    Téthys est presque de la glace d\'eau pure — elle possède l\'une des plus faibles densités de toute lune du système solaire, à peine plus dense que l\'eau gelée. Ithaca Chasma s\'est peut-être formée lorsque l\'intérieur a gelé et s\'est dilaté, fissurrant la croûte sus-jacente de l\'intérieur.
+    </string>
+    <string name="object_info_tethys_distance" translation_description="Distance to Tethys shown in the info card. Translate units if appropriate for your locale.">294 619 km de Saturne</string>
+    <string name="object_info_tethys_size" translation_description="Physical size of Tethys shown in the info card. Translate units if appropriate for your locale.">1 062 km de diamètre</string>
+
+    <string name="object_info_dione_description" translation_description="Description of Dione shown in the info card. Translate this text.">
+    Dione est une lune glacée de Saturne avec une face avant fortement cratérisée et un hémisphère arrière parsemé de falaises de glace brillantes — des lignes de fracture où les forces tectoniques anciennes ont exposé de la glace fraîche en dessous. Les données de gravité de Cassini suggèrent un océan liquide souterrain sous la croûte.
+    </string>
+    <string name="object_info_dione_funfact" translation_description="Fun fact about Dione shown in the info card. Translate this text.">
+    Dione partage son orbite avec deux petites lunes, Hélène et Polydeuces, qui sont verrouillées 60° en avant et en arrière à des points d\'équilibre gravitationnel appelés points de Lagrange. Hélène en particulier peut être vue chevauchant comme une auto-stoppeuse cosmique dans les images de Cassini.
+    </string>
+    <string name="object_info_dione_distance" translation_description="Distance to Dione shown in the info card. Translate units if appropriate for your locale.">377 396 km de Saturne</string>
+    <string name="object_info_dione_size" translation_description="Physical size of Dione shown in the info card. Translate units if appropriate for your locale.">1 122 km de diamètre</string>
+
+    <string name="object_info_iapetus_description" translation_description="Description of Iapetus shown in the info card. Translate this text.">
+    Iapetus est l\'une des lunes les plus distinctives de Saturne : son hémisphère avant est recouvert d\'une matière noire de jais aussi sombre que le charbon, tandis que son hémisphère arrière est de la glace blanche brillante. Cette apparence extrêmement bicolore a intrigué Giovanni Cassini lorsqu\'il a découvert la lune en 1671, et le contraste est si frappant qu\'il est visible dans les petits télescopes.
+    </string>
+    <string name="object_info_iapetus_funfact" translation_description="Fun fact about Iapetus shown in the info card. Translate this text.">
+    Iapetus possède également une imposante crête équatoriale s\'élevant à 20 km de haut — plus haute que n\'importe quelle montagne sur Terre — s\'étendant sur des milliers de kilomètres autour de son équateur. Son origine est inconnue : il pourrait s\'agir du vestige d\'un anneau effondré, ou d\'un plissement tectonique ancien, formé lorsque la lune tournait beaucoup plus rapidement il y a longtemps.
+    </string>
+    <string name="object_info_iapetus_distance" translation_description="Distance to Iapetus shown in the info card. Translate units if appropriate for your locale.">3 560 820 km de Saturne</string>
+    <string name="object_info_iapetus_size" translation_description="Physical size of Iapetus shown in the info card. Translate units if appropriate for your locale.">1 469 km de diamètre</string>
+
+    <!-- Moon of Neptune -->
+    <string name="object_info_triton_description" translation_description="Description of Triton shown in the info card. Translate this text.">
+    Triton est la plus grande lune de Neptune et l\'un des corps les plus extraordinaires du système solaire. Elle orbite Neptune à l\'envers — en sens inverse de la rotation de la planète — un signe fort qu\'elle a été capturée depuis le système solaire externe, très probablement depuis la ceinture de Kuiper, au début de l\'histoire de Neptune.
+    </string>
+    <string name="object_info_triton_funfact" translation_description="Fun fact about Triton shown in the info card. Translate this text.">
+    Malgré sa température de surface de −235°C — la plus froide jamais mesurée sur un corps visité par un engin spatial — Voyager 2 a découvert des geysers d\'azote actifs sur Triton en 1989. Des traînées sombres à la surface marquent l\'endroit où des panaches de gaz et de matière sombre se sont échappés sur des kilomètres dans la fine atmosphère.
+    </string>
+    <string name="object_info_triton_distance" translation_description="Distance to Triton shown in the info card. Translate units if appropriate for your locale.">354 759 km de Neptune</string>
+    <string name="object_info_triton_size" translation_description="Physical size of Triton shown in the info card. Translate units if appropriate for your locale.">2 707 km de diamètre</string>
+
+    <!-- Major Moons of Uranus -->
+    <string name="object_info_titania_description" translation_description="Description of Titania shown in the info card. Translate this text.">
+    Titania est le plus grand satellite d\'Uranus et le huitième plus grand satellite du système solaire. Sa surface présente un mélange de plaines cratérisées anciennes et de falaises et vallées plus jeunes, suggérant une histoire géologique complexe qui aurait pu inclure une activité tectonique passée ayant remodelé la croûte glacée.
+    </string>
+    <string name="object_info_titania_funfact" translation_description="Fun fact about Titania shown in the info card. Translate this text.">
+    Toutes les lunes d\'Uranus sont nommées d\'après des personnages de Shakespeare et d\'Alexander Pope — Titania est la reine des fées dans Le Songe d\'une nuit d\'été. C\'est l\'une des très rares grandes lunes planétaires qui ne porte pas le nom d\'une figure de la mythologie grecque ou romaine.
+    </string>
+    <string name="object_info_titania_distance" translation_description="Distance to Titania shown in the info card. Translate units if appropriate for your locale.">435 910 km de Uranus</string>
+    <string name="object_info_titania_size" translation_description="Physical size of Titania shown in the info card. Translate units if appropriate for your locale.">1 578 km de diamètre</string>
+
+    <string name="object_info_oberon_description" translation_description="Description of Oberon shown in the info card. Translate this text.">
+    Obéron est la plus externe des cinq grands satellites d\'Uranus et l\'un des plus fortement cratérisés, avec une surface ancienne qui a peu changé depuis le début du système solaire. Plusieurs de ses grands cratères d\'impact ont du matériel sombre sur leurs fonds, probablement des dépôts organiques apportés par les corps en collision.
+    </string>
+    <string name="object_info_oberon_funfact" translation_description="Fun fact about Oberon shown in the info card. Translate this text.">
+    Obéron accueille une montagne qui s\'élève d\'environ 6 km au-dessus des plaines environnantes — comparable aux plus hauts sommets de la Terre. Contrairement aux montagnes terrestres, qui se sont formées par la tectonique des plaques, cette formation pourrait être le pic central d\'un ancien cratère d\'impact ou un vestige d\'une activité volcanique ancienne.
+    </string>
+    <string name="object_info_oberon_distance" translation_description="Distance to Oberon shown in the info card. Translate units if appropriate for your locale.">583 520 km de Uranus</string>
+    <string name="object_info_oberon_size" translation_description="Physical size of Oberon shown in the info card. Translate units if appropriate for your locale.">1 523 km de diamètre</string>
+
+    <string name="object_info_ariel_description" translation_description="Description of Ariel shown in the info card. Translate this text.">
+    Ariel possède la surface la plus jeune et la plus brillante des cinq grandes lunes d\'Uranus. Son paysage est dominé par un réseau de vallées profondes et de plaines lisses qui ont été remodelées il y a longtemps par un fluide — probablement de l\'eau ou des mélanges eau-ammoniac — remontant de l\'intérieur et inondant l\'ancien terrain.
+    </string>
+    <string name="object_info_ariel_funfact" translation_description="Fun fact about Ariel shown in the info card. Translate this text.">
+    Les vallées d\'Ariel peuvent atteindre 10 km de profondeur — bien plus profondes que le Grand Canyon. Les observations du télescope spatial James Webb ont depuis détecté de la glace de dioxyde de carbone à la surface d\'Ariel, suggérant une chimie de surface en cours entraînée par les particules chargées du champ magnétique d\'Uranus.
+    </string>
+    <string name="object_info_ariel_distance" translation_description="Distance to Ariel shown in the info card. Translate units if appropriate for your locale.">191 020 km de Uranus</string>
+    <string name="object_info_ariel_size" translation_description="Physical size of Ariel shown in the info card. Translate units if appropriate for your locale.">1 158 km de diamètre</string>
+
+    <string name="object_info_umbriel_description" translation_description="Description of Umbriel shown in the info card. Translate this text.">
+    Umbriel est la plus sombre des cinq grandes lunes d\'Uranus, avec une surface ancienne et uniformément cratérisée qui montre peu de signes du rajeunissement géologique observé sur ses voisines. Son intérieur semble être resté froid et gelé depuis le début de l\'histoire du système solaire.
+    </string>
+    <string name="object_info_umbriel_funfact" translation_description="Fun fact about Umbriel shown in the info card. Translate this text.">
+    La caractéristique la plus frappante d\'Umbriel est Wunda, un anneau brillant d\'environ 140 km de diamètre près de son équateur. Découvert par Voyager 2 en 1986, la nature exacte de Wunda reste un mystère — il pourrait s\'agir d\'un plancher de cratère recouvert de dioxyde de carbone ou de givre d\'ammoniac déposé longtemps après l\'impact qui l\'a formé.
+    </string>
+    <string name="object_info_umbriel_distance" translation_description="Distance to Umbriel shown in the info card. Translate units if appropriate for your locale.">266 300 km de Uranus</string>
+    <string name="object_info_umbriel_size" translation_description="Physical size of Umbriel shown in the info card. Translate units if appropriate for your locale.">1 170 km de diamètre</string>
+
+    <!-- Globular clusters already on the map -->
+    <string name="object_info_omega_centauri_description" translation_description="Description of Omega Centauri shown in the info card. Translate this text.">
+    Omega Centauri est l\'amas globulaire le plus grand et le plus massif en orbite autour de la Voie lactée, contenant environ 10 millions d\'étoiles comprimées dans une sphère d\'environ 150 années-lumière de diamètre. Il est facilement visible à l\'œil nu sous la forme d\'une étoile floue dans le Centaure, et se résout en une boule d\'étoiles spectaculaire à travers des jumelles ou n\'importe quel télescope.
+    </string>
+    <string name="object_info_omega_centauri_funfact" translation_description="Fun fact about Omega Centauri shown in the info card. Translate this text.">
+    Contrairement aux amas globulaires typiques, Oméga du Centaure contient des étoiles d\'âges et de compositions chimiques très différents — un signe qu\'il pourrait être le noyau dénudé d\'une galaxie naine qui a été déchirée et engloutie par la Voie lactée il y a des milliards d\'années. Il pourrait même abriter un trou noir de masse intermédiaire central.
+    </string>
+    <string name="object_info_omega_centauri_distance" translation_description="Distance to Omega Centauri shown in the info card. Translate units if appropriate for your locale.">17 090 années-lumière</string>
+    <string name="object_info_omega_centauri_size" translation_description="Physical size of Omega Centauri shown in the info card. Translate units if appropriate for your locale.">~150 années-lumière de diamètre</string>
+
+    <!-- Deep-sky objects: new catalog additions -->
+    <string name="object_info_hyades_description" translation_description="Description of the Hyades star cluster shown in the info card. Translate this text.">
+    Les Hyades constituent l\'amas ouvert le plus proche du système solaire et l\'un des plus étudiés en astronomie. Visibles à l\'œil nu sous la forme d\'un motif en V de stars formant le visage du Taureau, elles contiennent plusieurs centaines d\'étoiles réparties sur environ 5° du ciel.
+    </string>
+    <string name="object_info_hyades_funfact" translation_description="Fun fact about the Hyades shown in the info card. Translate this text.">
+    L\'étoile orange brillante Aldébaran semble se situer dans les Hyades, mais c\'est en réalité un objet au premier plan à la moitié de la distance — un alignement fortuit. Le véritable amas se trouve à environ 153 années-lumière et contient les premières étoiles dont les distances ont été mesurées par parallaxe par le satellite Hipparcos.
+    </string>
+    <string name="object_info_hyades_distance" translation_description="Distance to the Hyades shown in the info card. Translate units if appropriate for your locale.">153 années-lumière</string>
+    <string name="object_info_hyades_size" translation_description="Angular size of the Hyades shown in the info card.">~5° de largeur</string>
+
+    <string name="object_info_coma_star_cluster_description" translation_description="Description of the Coma Berenices Star Cluster shown in the info card. Translate this text.">
+    L\'amas d\'étoiles de la Chevelure de Bérénice est un amas ouvert proche composé d\'environ 40 étoiles dispersées sur près de 5° du ciel, facilement visible à l\'œil nu sous forme d\'une légère brume dans des conditions sombres. C\'est le troisième amas ouvert le plus proche du système solaire et la source de la constellation de la Chevelure de Bérénice.
+    </string>
+    <string name="object_info_coma_star_cluster_funfact" translation_description="Fun fact about the Coma Berenices Star Cluster shown in the info card. Translate this text.">
+    Les anciens observateurs voyaient cet amas comme les cheveux de la reine Bérénice II d\'Égypte, qui aurait coupé sa chevelure dorée en offrande pour le retour sain et sauf de son mari de la guerre. Ptolémée III aurait officiellement nommé cette constellation inhabituelle en son honneur vers 245 avant notre ère.
+    </string>
+    <string name="object_info_coma_star_cluster_distance" translation_description="Distance to the Coma Star Cluster shown in the info card. Translate units if appropriate for your locale.">288 années-lumière</string>
+    <string name="object_info_coma_star_cluster_size" translation_description="Angular size of the Coma Star Cluster shown in the info card.">~5° de largeur</string>
+
+    <string name="object_info_coathanger_description" translation_description="Description of the Coathanger asterism shown in the info card. Translate this text.">
+    Le Cintre est un astérisme frappant de dix étoiles dans le Renard qui forment une forme incontournable : six étoiles en ligne droite avec quatre suspendues en dessous en crochet, ressemblant exactement à un cintre à l\'envers. C\'est l\'un des meilleurs objets aux jumelles du ciel d\'été, s\'adaptant parfaitement au champ de vision typique des jumelles.
+    </string>
+    <string name="object_info_coathanger_funfact" translation_description="Fun fact about the Coathanger shown in the info card. Translate this text.">
+    Bien qu\'il ressemble à un amas, les étoiles du Cintre ne sont pas physiquement liées — elles se trouvent à des distances très différentes et ne sont qu\'une coïncidence de ligne de visée. L\'amas de Brocchi a été catalogué par Dalmiro Brocchi dans les années 1920, et le premier télescope spatial à l\'imager a été Hipparcos, qui a confirmé que les étoiles ne sont pas liées.
+    </string>
+    <string name="object_info_coathanger_distance" translation_description="Distance to the Coathanger shown in the info card. Translate units if appropriate for your locale.">~420 années-lumière (étoile la plus brillante)</string>
+    <string name="object_info_coathanger_size" translation_description="Angular size of the Coathanger shown in the info card.">~1° de largeur</string>
+
+    <string name="object_info_helix_nebula_description" translation_description="Description of the Helix Nebula shown in the info card. Translate this text.">
+    La Nébuleuse de l\'Hélice est la plus grande nébuleuse planétaire en taille apparente dans le ciel — l\'enveloppe de gaz en expansion rejetée par une étoile semblable au Soleil en fin de vie. S\'étendant sur environ un demi-degré, elle est visible aux jumelles comme une faible lueur circulaire dans le Verseau et est surnommée l\'Œil de Dieu en raison de son apparence sur les photographies en pose longue.
+    </string>
+    <string name="object_info_helix_nebula_funfact" translation_description="Fun fact about the Helix Nebula shown in the info card. Translate this text.">
+    Au centre de la Nébuleuse de l\'Hélice se trouve l\'une des naines blanches les plus proches de la Terre — un résidu stellaire extrêmement chaud d\'environ la taille de la Terre mais avec la masse du Soleil. C\'est le destin qui attend notre propre Soleil dans environ cinq milliards d\'années.
+    </string>
+    <string name="object_info_helix_nebula_distance" translation_description="Distance to the Helix Nebula shown in the info card. Translate units if appropriate for your locale.">650 années-lumière</string>
+    <string name="object_info_helix_nebula_size" translation_description="Angular size of the Helix Nebula shown in the info card.">~3 années-lumière de diamètre</string>
+
+    <string name="object_info_sculptor_galaxy_description" translation_description="Description of the Sculptor Galaxy shown in the info card. Translate this text.">
+    La Galaxie du Sculpteur est l\'une des galaxies spirales de profil les plus brillantes et les plus belles visibles depuis la Terre, apparaissant comme une lueur allongée dans la constellation australe du Sculpteur. C\'est l\'une des galaxies de formation d\'étoiles les plus proches — une galaxie subissant une intense rafale de formation d\'étoiles — visible aux astronomes amateurs avec des jumelles depuis des cieux sombres.
+    </string>
+    <string name="object_info_sculptor_galaxy_funfact" translation_description="Fun fact about the Sculptor Galaxy shown in the info card. Translate this text.">
+    La Galaxie du Sculpteur est l\'un des membres les plus brillants du Groupe du Sculpteur — le groupe de galaxies le plus proche de notre propre Groupe local. Sa région de sursaut stellaire central produit de nouvelles étoiles à un taux plusieurs fois plus élevé que la Voie lactée, entraîné par des interactions passées avec les galaxies voisines.
+    </string>
+    <string name="object_info_sculptor_galaxy_distance" translation_description="Distance to the Sculptor Galaxy shown in the info card. Translate units if appropriate for your locale.">11,4 millions d\'années-lumière</string>
+    <string name="object_info_sculptor_galaxy_size" translation_description="Physical size of the Sculptor Galaxy shown in the info card. Translate units if appropriate for your locale.">~90 000 années-lumière de largeur</string>
+
+    <string name="object_info_blue_snowball_nebula_description" translation_description="Description of the Blue Snowball Nebula shown in the info card. Translate this text.">
+    La Boule de Neige Bleue est une nébuleuse planétaire dans Andromède — l\'enveloppe de gaz brillante expulsée par une étoile mourante. Avec une magnitude de 8,3, c\'est l\'une des nébuleuses planétaires les plus brillantes et les plus colorées du ciel, apparaissant comme un disque bleu-vert vivant même dans les petits télescopes. Sa forme symétrique et sa couleur intense en font une favorite parmi les observateurs.
+    </string>
+    <string name="object_info_blue_snowball_nebula_funfact" translation_description="Fun fact about the Blue Snowball Nebula shown in the info card. Translate this text.">
+    La couleur frappante de la Boule de Neige Bleue provient de l\'oxygène doublement ionisé qui brille à une longueur d\'onde verte spécifique, combiné avec l\'émission d\'hydrogène — une palette de couleurs que l\'œil humain perçoit comme bleu-vert. La naine blanche centrale a une température de surface d\'environ 100 000 °C, assez chaude pour ioniser le gaz environnant à cette distance.
+    </string>
+    <string name="object_info_blue_snowball_nebula_distance" translation_description="Distance to the Blue Snowball Nebula shown in the info card. Translate units if appropriate for your locale.">~2 500 années-lumière</string>
+    <string name="object_info_blue_snowball_nebula_size" translation_description="Physical size of the Blue Snowball Nebula shown in the info card. Translate units if appropriate for your locale.">~0,8 année-lumière de diamètre</string>
+
+    <string name="object_info_ghost_of_jupiter_description" translation_description="Description of the Ghost of Jupiter planetary nebula shown in the info card. Translate this text.">
+    Le Fantôme de Jupiter est une nébuleuse planétaire brillante dans l\'Hydre dont la taille apparente est similaire à celle de la planète Jupiter — d\'où son nom. Avec une magnitude de 8,6, c\'est l\'une des nébuleuses planétaires les plus accessibles du ciel pour les petits télescopes, montrant un disque clair et une teinte de couleur dans les ouvertures modérées.
+    </string>
+    <string name="object_info_ghost_of_jupiter_funfact" translation_description="Fun fact about the Ghost of Jupiter shown in the info card. Translate this text.">
+    Le Fantôme de Jupiter possède une coquille interne brillante entourée d\'une auréole externe plus faible — une structure à deux coquilles suggérant que l\'étoile mourante a expulsé du gaz lors d\'au moins deux épisodes distincts. Son étoile centrale est l\'une des naines blanches les plus chaudes connues, avec une température de surface estimée à environ 75 000 °C.
+    </string>
+    <string name="object_info_ghost_of_jupiter_distance" translation_description="Distance to the Ghost of Jupiter shown in the info card. Translate units if appropriate for your locale.">~1 400 années-lumière</string>
+    <string name="object_info_ghost_of_jupiter_size" translation_description="Physical size of the Ghost of Jupiter shown in the info card. Translate units if appropriate for your locale.">~1 année-lumière de diamètre</string>
+
+    <string name="object_info_saturn_nebula_description" translation_description="Description of the Saturn Nebula shown in the info card. Translate this text.">
+    La Nébuleuse de Saturne est une nébuleuse planétaire du Verseau nommée ainsi en raison de sa ressemblance avec la planète Saturne — des extensions appelées ansae font saillie de chaque côté comme des poignées d\'anneaux, visibles dans les télescopes de puissance modérée. Avec une magnitude de 8,0, c\'est l\'une des nébuleuses planétaires les plus brillantes du ciel et elle montre une structure complexe dans les instruments plus puissants.
+    </string>
+    <string name="object_info_saturn_nebula_funfact" translation_description="Fun fact about the Saturn Nebula shown in the info card. Translate this text.">
+    William Herschel a découvert la Nébuleuse de Saturne en 1782 et a noté son apparence ressemblant à Saturne. Les observations modernes révèlent au moins quatre couches distinctes de gaz entourant la naine blanche centrale, reflétant plusieurs épisodes de perte de masse aux derniers stades de la vie de l\'étoile.
+    </string>
+    <string name="object_info_saturn_nebula_distance" translation_description="Distance to the Saturn Nebula shown in the info card. Translate units if appropriate for your locale.">~5 000 années-lumière</string>
+    <string name="object_info_saturn_nebula_size" translation_description="Physical size of the Saturn Nebula shown in the info card. Translate units if appropriate for your locale.">~1 année-lumière de largeur</string>
+
+    <string name="object_info_ngc_2903_description" translation_description="Description of the galaxy NGC 2903 shown in the info card. Translate this text.">
+    NGC 2903 est une brillante galaxie spirale barrée du Lion, souvent appelée « l\'objet Messier que Messier a manqué » — c\'est l\'une des galaxies les plus proéminentes du ciel non incluse dans son célèbre catalogue. Avec une magnitude de 8,9, elle est facilement visible aux jumelles et montre une belle structure spirale dans les télescopes de puissance modérée.
+    </string>
+    <string name="object_info_ngc_2903_funfact" translation_description="Fun fact about NGC 2903 shown in the info card. Translate this text.">
+    NGC 2903 possède l\'une des plus fortes concentrations de « points chauds » de formation d\'étoiles connues dans la région de la barre centrale d\'une galaxie — des amas denses d\'étoiles jeunes massives illuminées par une intense formation d\'étoiles. Elle est utilisée comme référence pour étudier l\'activité de sursaut stellaire dans les galaxies spirales barrées.
+    </string>
+    <string name="object_info_ngc_2903_distance" translation_description="Distance to NGC 2903 shown in the info card. Translate units if appropriate for your locale.">30 millions d\'années-lumière</string>
+    <string name="object_info_ngc_2903_size" translation_description="Physical size of NGC 2903 shown in the info card. Translate units if appropriate for your locale.">~80 000 années-lumière de largeur</string>
+
+    <!-- Meteor showers -->
+    <string name="object_info_quadrantids_description" translation_description="Description of the Quadrantids meteor shower shown in the info card. Translate this text.">
+    Les Quadrantides sont une pluie météorique de janvier très prolifique avec un pic très net et bref ne durant que quelques heures. Le radiant se situe dans la constellation du Bouvier, près de la position de la défunte constellation Quadrans Muralis d\'après laquelle la pluie est nommée. Jusqu\'à 120 météores par heure sont visibles dans des conditions idéales.
+    </string>
+    <string name="object_info_quadrantids_funfact" translation_description="Fun fact about the Quadrantids meteor shower shown in the info card. Translate this text.">
+    Contrairement à la plupart des grandes pluies de météores qui proviennent de comètes, le corps parent des Quadrantides est l\'astéroïde 2003 EH1 — considéré comme le noyau dormant d\'une comète qui s\'est éteinte il y a des siècles. Son existence n\'a été confirmée qu\'en 2003.
+    </string>
+
+    <string name="object_info_lyrids_description" translation_description="Description of the Lyrids meteor shower shown in the info card. Translate this text.">
+    Les Lyrides sont une pluie météoritique printanière fiable rayonnant près de l\'étoile brillante Véga dans la Lyre. Elles produisent des météores rapides et modérément brillants, atteignant un pic d\'environ 18 par heure, et génèrent occasionnellement des boules de feu qui laissent des traînées de fumée brillante.
+    </string>
+    <string name="object_info_lyrids_funfact" translation_description="Fun fact about the Lyrids meteor shower shown in the info card. Translate this text.">
+    Les Lyrides sont la pluie de météores la plus anciennement documentée de l\'histoire. Les astronomes chinois ont enregistré une tempête de météores « tombant comme la pluie » en 687 avant notre ère. Les débris proviennent de la comète Thatcher, qui met 415 ans pour orbiter autour du Soleil et a visité pour la dernière fois le système solaire interne en 1861.
+    </string>
+
+    <string name="object_info_aquariids_description" translation_description="Description of the Eta Aquariids meteor shower shown in the info card. Translate this text.">
+    Les Êta Aquariides sont l\'une des deux pluies annuelles produites par les débris de la comète de Halley. Avec un pic pouvant atteindre 70 météores par heure, cette pluie favorise fortement l\'hémisphère sud, où le radiant s\'élève haut avant l\'aube. Les observateurs de l\'hémisphère nord jouissent toujours d\'un taux respectable de 30 météores ou plus par heure.
+    </string>
+    <string name="object_info_aquariids_funfact" translation_description="Fun fact about the Eta Aquariids meteor shower shown in the info card. Translate this text.">
+    Les météores Êta Aquariides voyagent à 66 km/s — assez rapide pour que l\'air ionisé qu\'ils créent puisse briller pendant plusieurs secondes après que la météore soit partie. Vous pouvez voir la poussière ancienne de Halley brûler devant vos yeux, libérée lors de l\'une des nombreuses visites de la comète il y a des milliers d\'années.
+    </string>
+
+    <string name="object_info_deltaaquariids_description" translation_description="Description of the Delta Aquariids meteor shower shown in the info card. Translate this text.">
+    Les Delta Aquariides australes culminent à la fin juillet et sont mieux observées depuis les latitudes tropicales et australes, où le radiant du Verseau s\'élève haut avant l\'aube. Elles produisent un flux régulier de météores de vitesse moyenne jusqu\'à 16 par heure, avec peu de boules de feu brillantes.
+    </string>
+    <string name="object_info_deltaaquariids_funfact" translation_description="Fun fact about the Delta Aquariids meteor shower shown in the info card. Translate this text.">
+    Le corps parent exact des Delta Aquariides reste incertain. Le principal candidat est la Comète 96P/Machholz, une comète de courte période inhabituelle avec une orbite très inclinée qui s\'approche remarquablement près du Soleil — plus près que la planète Mercure.
+    </string>
+
+    <string name="object_info_perseids_description" translation_description="Description of the Perseids meteor shower shown in the info card. Translate this text.">
+    Les Perséides sont la pluie de météores la plus populaire de l\'année, culminant lors des chaudes nuits d\'août avec jusqu\'à 100 météores par heure. Les débris éjectés par la comète Swift-Tuttle se consument haut dans l\'atmosphère terrestre, produisant des météores rapides et brillants — beaucoup laissant des traînées lumineuses persistantes — rayonnant de la constellation de Persée.
+    </string>
+    <string name="object_info_perseids_funfact" translation_description="Fun fact about the Perseids meteor shower shown in the info card. Translate this text.">
+    La comète mère des Perséides, la comète Swift-Tuttle, possède un noyau de 26 km de large — plus grand que l\'objet supposé avoir causé l\'extinction de masse qui a mis fin aux dinosaures. La comète a traversé pour la dernière fois le système solaire interne en 1992 et ne reviendra pas avant 2125.
+    </string>
+
+    <string name="object_info_orionids_description" translation_description="Description of the Orionids meteor shower shown in the info card. Translate this text.">
+    Les Orionides sont la deuxième pluie de météores produite chaque année par la Comète de Halley, rayonnant près du bâton levé d\'Orion. Culminant à environ 25 par heure, elles sont connues pour leurs météores rapides, souvent brillants, qui laissent fréquemment des traînées d\'ionisation brillantes durant plusieurs secondes.
+    </string>
+    <string name="object_info_orionids_funfact" translation_description="Fun fact about the Orionids meteor shower shown in the info card. Translate this text.">
+    La comète de Halley est responsable de deux pluies de météores annuelles : les Êta Aquarides en mai, quand la Terre traverse la traînée de débris sortante de la comète, et les Orionides en octobre, quand la Terre traverse la traînée entrante. Ensemble, elles nous permettent d\'échantillonner la poussière ancienne de Halley deux fois par an.
+    </string>
+
+    <string name="object_info_leonids_description" translation_description="Description of the Leonids meteor shower shown in the info card. Translate this text.">
+    Les Léonides rayonnent à partir de la faucille du Lion et produisent généralement environ 20 météores par heure. Elles sont célèbres pour les tempêtes spectaculaires qui se produisent environ tous les 33 ans lorsque la Terre traverse un filament de poussière dense éjecté par la comète 55P/Tempel-Tuttle. Ces tempêtes peuvent produire des milliers de météores par heure.
+    </string>
+    <string name="object_info_leonids_funfact" translation_description="Fun fact about the Leonids meteor shower shown in the info card. Translate this text.">
+    La tempête de Léonides de 1833 a produit environ 100 000 météores par heure, terrifiants les observateurs en Amérique du Nord qui craignaient que le ciel ne soit en feu. Cet événement a lancé l\'étude scientifique des pluies de météores. Des tempêtes comparables se sont produites en 1966 et 1999.
+    </string>
+
+    <string name="object_info_puppidvelids_description" translation_description="Description of the Puppid-Velids meteor shower shown in the info card. Translate this text.">
+    Les Puppides-Vélides sont un complexe de petites pluies de météores qui se chevauchent et rayonnent des constellations de la Poupe et de la Voile dans la Voie lactée australe. Atteignant un pic d\'environ 10 météores par heure, elles s\'observent mieux depuis l\'hémisphère sud, où le radiant s\'élève haut dans le ciel de décembre.
+    </string>
+    <string name="object_info_puppidvelids_funfact" translation_description="Fun fact about the Puppid-Velids meteor shower shown in the info card. Translate this text.">
+    Les Puppides-Vélides seraient des débris provenant de plusieurs comètes parentes différentes plutôt que d\'une seule source, notamment la Comète 26P/Grigg-Skjellerup. Leur radiant sud ne s\'élève jamais au-dessus de l\'horizon pour les observateurs situés à des latitudes supérieures à environ 40°N, ce qui en fait une pluie de météores que la plupart du monde voit rarement.
+    </string>
+
+    <string name="object_info_geminids_description" translation_description="Description of the Geminids meteor shower shown in the info card. Translate this text.">
+    Les Géminides sont largement considérées comme la plus belle pluie de météores de l\'année — prolifique (jusqu\'à 120 par heure), fiable et active dès le début de la soirée plutôt que seulement après minuit. Elles rayonnent de la constellation des Gémeaux et produisent une large gamme de luminosités de météores, y compris des boules de feu éclatantes.
+    </string>
+    <string name="object_info_geminids_funfact" translation_description="Fun fact about the Geminids meteor shower shown in the info card. Translate this text.">
+    Contrairement aux autres grands essaims, les Géminides proviennent d\'un astéroïde plutôt que d\'une comète : 3200 Phaéthon, une « comète rocheuse » dont l\'orbite la rapproche du Soleil plus que tout autre astéroïde nommé. La chaleur extrême peut fracturer sa surface rocheuse et libérer la poussière qui produit l\'essaim.
+    </string>
+
+    <string name="object_info_ursids_description" translation_description="Description of the Ursids meteor shower shown in the info card. Translate this text.">
+    Les Ursides sont une pluie mineure rayonnant d\'Ursa Minor, près de Polaris, ce qui les rend circumpolaires pour les observateurs de l\'hémisphère nord — visibles toute la nuit sans se coucher. Elles culminent autour du solstice d\'hiver à environ 10 météores par heure, et la comète mère est 8P/Tuttle.
+    </string>
+    <string name="object_info_ursids_funfact" translation_description="Fun fact about the Ursids meteor shower shown in the info card. Translate this text.">
+    Les Ursides produisent occasionnellement des sursauts inattendus bien au-delà de leur taux habituel. En 1945 et à nouveau en 2006, les observateurs ont enregistré 50 météores ou plus par heure — cinq fois le pic normal. Ces augmentations se produisent lorsque la Terre traverse un ruban inhabituellement dense de débris éjectés lors d\'une approche rapprochée de la Comète Tuttle.
+    </string>
+
+    <!-- Category 5: Top priority — objects on the map that lacked info cards -->
+    <string name="object_info_m47_description" translation_description="Description of the open star cluster M47 shown in the info card. Translate this text.">
+    M47 est un amas ouvert brillant et peu dense dans la Poupe, facilement visible à l\'œil nu et spectaculaire aux jumelles. Environ 50 étoiles sont dispersées sur un demi-degré de ciel, avec plusieurs géantes oranges ajoutant une couleur chaude face aux membres bleu-blanc plus faibles.
+    </string>
+    <string name="object_info_m47_funfact" translation_description="Fun fact about M47 shown in the info card. Translate this text.">
+    M47 était l\'un des objets Messier « perdus » — une erreur administrative dans les coordonnées originales de Messier l\'a placé dans un ciel vide, laissant l\'amas non identifié pendant près de deux siècles. Son véritable identité en tant que NGC 2422 n\'a été confirmée qu\'en 1959, lorsque les observateurs ont travaillé à rebours à partir de la description de Messier pour trouver l\'erreur.
+    </string>
+    <string name="object_info_m47_distance" translation_description="Distance to M47 shown in the info card. Translate units if appropriate for your locale.">1 600 années-lumière</string>
+    <string name="object_info_m47_size" translation_description="Physical size of M47 shown in the info card. Translate units if appropriate for your locale.">~14 années-lumière de largeur</string>
+
+    <string name="object_info_m41_description" translation_description="Description of the open star cluster M41 shown in the info card. Translate this text.">
+    M41 est un bel amas ouvert dans le Grand Chien, situé à seulement 4° au sud de Sirius — l\'étoile la plus brillante du ciel nocturne. Visible à l\'œil nu depuis les sites sombres et spectaculaire aux jumelles, il contient environ 100 étoiles réparties sur un vaste champ, avec plusieurs frappantes géantes oranges parmi des membres bleu-blanc plus faibles.
+    </string>
+    <string name="object_info_m41_funfact" translation_description="Fun fact about M41 shown in the info card. Translate this text.">
+    Aristote a peut-être observé M41 vers 325 avant J.-C. — possiblement l\'observation la plus ancienne enregistrée d\'un objet du ciel profond. Il a décrit une « tache nuageuse » au sud de Sirius qui correspond à la position de M41. Si cette identification est correcte, M41 était discuté près de deux mille ans avant l\'invention du télescope.
+    </string>
+    <string name="object_info_m41_distance" translation_description="Distance to M41 shown in the info card. Translate units if appropriate for your locale.">2 300 années-lumière</string>
+    <string name="object_info_m41_size" translation_description="Physical size of M41 shown in the info card. Translate units if appropriate for your locale.">~25 années-lumière de largeur</string>
+
+    <string name="object_info_m24_description" translation_description="Description of the Sagittarius Star Cloud (M24) shown in the info card. Translate this text.">
+    M24 est le Nuage d\'Étoiles du Sagittaire — non pas un amas ou une nébuleuse, mais une fenêtre à travers une brèche dans la poussière de la Voie lactée, révélant un champ d\'étoiles éblouissant de 2° de diamètre. C\'est la région la plus riche visible aux jumelles n\'importe où dans le ciel, remplie de milliers d\'étoiles s\'étendant sur de nombreuses distances différentes simultanément.
+    </string>
+    <string name="object_info_m24_funfact" translation_description="Fun fact about M24 shown in the info card. Translate this text.">
+    Les étoiles de M24 ne sont pas à la même distance — le nuage d\'étoiles représente une coupe transversale du disque de la Galaxie vue à travers un tunnel naturel dans la poussière interstellaire, s\'étendant sur des distances de 10 000 à 16 000 années-lumière. Intégrées dans le nuage se trouvent des nébuleuses sombres et de minuscules amas d\'étoiles qui apparaissent comme des taches sombres sur le fond stellaire brillant.
+    </string>
+    <string name="object_info_m24_distance" translation_description="Distance range to M24 shown in the info card. Translate units if appropriate for your locale.">~10 000–16 000 années-lumière (plage)</string>
+    <string name="object_info_m24_size" translation_description="Physical size of M24 shown in the info card. Translate units if appropriate for your locale.">~600 années-lumière de profondeur de fenêtre</string>
+
+    <string name="object_info_m25_description" translation_description="Description of the open star cluster M25 shown in the info card. Translate this text.">
+    M25 est un amas ouvert brillant visible à l\'œil nu dans le Sagittaire, situé sur le fond des champs d\'étoiles denses de la Voie lactée estivale. Environ 600 étoiles sont dispersées sur un champ d\'un demi-degré, ce qui en fait un objet riche pour les jumelles. Ses membres les plus brillants incluent plusieurs supergéantes bleu-blanc et l\'une des étoiles variables Céphéides les plus étudiées du ciel.
+    </string>
+    <string name="object_info_m25_funfact" translation_description="Fun fact about M25 shown in the info card. Translate this text.">
+    M25 contient U Sagittarii, une variable Céphéide classique qui s\'éclaire et s\'assombrit sur une période de 6,7 jours. Les Céphéides sont des « chandelles standard » vitales pour mesurer les distances cosmiques car leur période de pulsation révèle directement leur luminosité réelle — les astronomes les ont utilisées pour déterminer d\'abord la taille de la Voie lactée, puis l\'échelle de l\'univers observable.
+    </string>
+    <string name="object_info_m25_distance" translation_description="Distance to M25 shown in the info card. Translate units if appropriate for your locale.">2 000 années-lumière</string>
+    <string name="object_info_m25_size" translation_description="Physical size of M25 shown in the info card. Translate units if appropriate for your locale.">~19 années-lumière de largeur</string>
+
+    <string name="object_info_m39_description" translation_description="Description of the open star cluster M39 shown in the info card. Translate this text.">
+    M39 est un grand amas ouvert dispersé dans le Cygne, visible à l\'œil nu près de Deneb dans la riche Voie lactée d\'été. Ses environ 30 étoiles brillantes sont faiblement groupées sur un degré de ciel, mieux appréciées à faible grossissement aux jumelles ou dans un télescope grand champ — un grossissement plus élevé la résout simplement en un champ d\'étoiles clairsemé et sans intérêt particulier.
+    </string>
+    <string name="object_info_m39_funfact" translation_description="Fun fact about M39 shown in the info card. Translate this text.">
+    À environ 825 années-lumière, M39 est l\'un des amas ouverts les plus proches de la Terre, et avec ses environ 240 millions d\'années, c\'est l\'un des plus anciens amas visibles à l\'œil nu — assez ancien pour que ses étoiles les plus massives aient déjà terminé leur existence. Messier l\'a enregistré en 1764 et il figurait parmi les premiers ajouts à son catalogue.
+    </string>
+    <string name="object_info_m39_distance" translation_description="Distance to M39 shown in the info card. Translate units if appropriate for your locale.">825 années-lumière</string>
+    <string name="object_info_m39_size" translation_description="Physical size of M39 shown in the info card. Translate units if appropriate for your locale.">~8 années-lumière de largeur</string>
+
+    <!-- Category 5: Special cases -->
+    <string name="object_info_m63_description" translation_description="Description of the Sunflower Galaxy (M63) shown in the info card. Translate this text.">
+    La Galaxie du Tournesol est une spirale lumineuse dans les Chiens de Chasse dont les bras étroitement enroulés, parsemés de régions de formation d\'étoiles, lui donnent une texture distinctive ressemblant à une fleur sur les photographies en pose longue. Avec une magnitude de 8,6, elle est visible aux jumelles depuis des cieux sombres et montre facilement sa forme allongée et son noyau brillant dans les petits télescopes.
+    </string>
+    <string name="object_info_m63_funfact" translation_description="Fun fact about the Sunflower Galaxy shown in the info card. Translate this text.">
+    M63 a été découverte par Pierre Méchain en 1779 — l\'un des rares objets de Messier trouvés par Méchain plutôt que par Messier lui-même. C\'est un membre du Groupe M51, physiquement associée à la Galaxie du Tourbillon (M51), et montre des signes d\'une interaction passée : un fin et ancien courant stellaire s\'enroule autour de son disque externe.
+    </string>
+    <string name="object_info_m63_distance" translation_description="Distance to the Sunflower Galaxy shown in the info card. Translate units if appropriate for your locale.">29 millions d\'années-lumière</string>
+    <string name="object_info_m63_size" translation_description="Physical size of the Sunflower Galaxy shown in the info card. Translate units if appropriate for your locale.">~100 000 années-lumière de diamètre</string>
+
+    <string name="object_info_ngc_6543_description" translation_description="Description of the Cat's Eye Nebula (NGC 6543) shown in the info card. Translate this text.">
+    La Nébuleuse de l\'Œil du Chat est l\'une des nébuleuses planétaires les plus complexes structurellement connues — le gaz expulsé d\'une étoile mourante sculpté en coquilles concentriques, jets et nœuds brillants visibles dans les images du télescope Hubble. Dans les petits télescopes, elle apparaît comme un disque bleu-vert vivide dans le Draco, l\'un des objets les plus colorés du ciel automnal.
+    </string>
+    <string name="object_info_ngc_6543_funfact" translation_description="Fun fact about the Cat's Eye Nebula shown in the info card. Translate this text.">
+    En 1864, l\'astronome William Huggins a braqué un spectroscope sur la Nébuleuse de l\'Oeil du Chat et a découvert qu\'elle était composée de gaz luminescent plutôt que d\'étoiles non résolues — la première fois que la nature d\'une nébuleuse planétaire était confirmée. Cette découverte a fondé le domaine de la spectroscopie nébulaire et a renversé la conception dominante selon laquelle toutes les nébuleuses étaient des amas d\'étoiles lointains.
+    </string>
+    <string name="object_info_ngc_6543_distance" translation_description="Distance to the Cat's Eye Nebula shown in the info card. Translate units if appropriate for your locale.">~3 300 années-lumière</string>
+    <string name="object_info_ngc_6543_size" translation_description="Physical size of the Cat's Eye Nebula shown in the info card. Translate units if appropriate for your locale.">~0,5 année-lumière de diamètre</string>
+
+    <string name="object_info_m76_description" translation_description="Description of the Little Dumbbell Nebula (M76) shown in the info card. Translate this text.">
+    La Petite Haltère est une nébuleuse planétaire dans Persée avec une forme caractéristique en huit — une cousine plus petite de M27, la Nébuleuse de l\'Haltère dans la Vulpecula. Bien qu\'elle soit l\'entrée la plus faible du catalogue Messier, elle récompense l\'observation patiente aux petits télescopes et montre une belle structure dans les instruments plus grands, avec deux lobes plus brillants encadrant une taille plus faible.
+    </string>
+    <string name="object_info_m76_funfact" translation_description="Fun fact about the Little Dumbbell Nebula shown in the info card. Translate this text.">
+    M76 a été initialement catalogué comme deux objets distincts — NGC 650 et NGC 651 — car les premiers observateurs ont décrit les deux lobes brillants indépendamment. C\'est une nébuleuse planétaire bipolaire formée lorsque l\'écoulement d\'une étoile mourante a été pincé à l\'équateur, créant deux lobes en expansion le long de l\'axe polaire tandis que le gaz s\'échappe également à la ceinture.
+    </string>
+    <string name="object_info_m76_distance" translation_description="Distance to the Little Dumbbell Nebula shown in the info card. Translate units if appropriate for your locale.">~2 500 années-lumière</string>
+    <string name="object_info_m76_size" translation_description="Physical size of the Little Dumbbell Nebula shown in the info card. Translate units if appropriate for your locale.">~2 années-lumière de diamètre</string>
+
+    <string name="object_info_v838_mon_description" translation_description="Description of V838 Monocerotis shown in the info card. Translate this text.">
+    V838 Monocerotis est une étoile variable inhabituelle dans la Licorne qui a connu une éruption spectaculaire en 2002, devenant brièvement l\'une des étoiles les plus lumineuses de la Voie lactée. Bien que bien trop faible pour les observateurs visuels aujourd\'hui, son écho lumineux en expansion — un front d\'onde de lumière illuminant d\'anciennes enveloppes de poussière — a produit certaines des images les plus dramatiques jamais prises par le télescope spatial Hubble.
+    </string>
+    <string name="object_info_v838_mon_funfact" translation_description="Fun fact about V838 Monocerotis shown in the info card. Translate this text.">
+    La nature de l\'explosion de V838 Mon reste débattue. La théorie dominante est une fusion stellaire — deux étoiles spiralant l\'une vers l\'autre et entrant en collision — plutôt qu\'une nova classique ou une éruption de supergéante. Si elle est confirmée, c\'était le premier aperçu en temps réel d\'une « nova rouge lumineuse », une classe rare d\'explosion causée par des fusions stellaires, des événements similaires ont depuis été découverts dans d\'autres galaxies.
+    </string>
+    <string name="object_info_v838_mon_distance" translation_description="Distance to V838 Monocerotis shown in the info card. Translate units if appropriate for your locale.">~20 000 années-lumière</string>
+    <string name="object_info_v838_mon_size" translation_description="Extent of the V838 Monocerotis light echo shown in the info card. Translate units if appropriate for your locale.">~3 années-lumière (étendue de l\'écho lumineux)</string>
+
+    <string name="object_info_hdf_description" translation_description="Description of the Hubble Deep Field shown in the info card. Translate this text.">
+    Le Hubble Deep Field est une minuscule région de 2,6 arcminutes de ciel apparemment vide dans la Grande Ourse, photographiée par le télescope spatial Hubble pendant 10 jours consécutifs en décembre 1995. Ce qui semblait être un espace vide a révélé environ 3 000 galaxies — couvrant des milliards d\'années d\'histoire cosmique — et a fondamentalement changé notre vision de l\'univers.
+    </string>
+    <string name="object_info_hdf_funfact" translation_description="Fun fact about the Hubble Deep Field shown in the info card. Translate this text.">
+    Cette région du ciel a été choisie spécifiquement parce qu\'elle était dépourvue d\'étoiles brillantes et de galaxies proches. Pourtant, l\'image résultante contenait environ 3 000 galaxies, ce qui a conduit à l\'estimation que le ciel entier contient environ 200 milliards de galaxies — presque toutes invisibles à tout télescope avant Hubble.
+    </string>
+    <string name="object_info_hdf_distance" translation_description="Distance to the most distant galaxies in the Hubble Deep Field shown in the info card. Translate units if appropriate for your locale.">~13 milliards d\'années-lumière (plus lointain)</string>
+    <string name="object_info_hdf_size" translation_description="Angular size of the Hubble Deep Field shown in the info card.">2,6 arcminutes (champ de vision)</string>
+
+    <string name="object_info_m43_description" translation_description="Description of De Mairan's Nebula (M43) shown in the info card. Translate this text.">
+    La Nébuleuse de Mairan est une portion détachée du grand complexe de la Nébuleuse d\'Orion, séparée de M42 par une bande de poussière sombre mais appartenant au même vaste nuage moléculaire. Nommée d\'après l\'astronome français Jean-Jacques Dortous de Mairan, qui l\'a observée en 1731, c\'est une nébuleuse d\'émission ionisée par la jeune étoile chaude NU Orionis située en son centre.
+    </string>
+    <string name="object_info_m43_funfact" translation_description="Fun fact about De Mairan's Nebula shown in the info card. Translate this text.">
+    Bien que M43 apparaisse comme un objet séparé de M42, la bande sombre qui les divise est un nuage de poussière au premier plan — partie du Nuage Moléculaire d\'Orion — qui bloque simplement notre vue de la connexion physique entre les deux régions lumineuses. Ensemble, ils ne sont que le bord intérieur illuminé d\'un énorme nuage sombre s\'étendant sur une grande partie d\'Orion.
+    </string>
+    <string name="object_info_m43_distance" translation_description="Distance to De Mairan's Nebula shown in the info card. Translate units if appropriate for your locale.">1 350 années-lumière</string>
+    <string name="object_info_m43_size" translation_description="Physical size of De Mairan's Nebula shown in the info card. Translate units if appropriate for your locale.">~8 années-lumière de diamètre</string>
+
+    <string name="object_info_m40_description" translation_description="Description of M40 (Winnecke 4) shown in the info card. Translate this text.">
+    M40 est unique dans le catalogue Messier — ce n\'est pas une nébuleuse, un amas ou une galaxie, mais une large étoile double. Messier l\'a cataloguée en 1764 en cherchant une nébuleuse signalée par Johann Hevelius dans la Grande Ourse, n\'a trouvé que cette paire d\'étoiles, et l\'a enregistrée pour que les futurs observateurs ne la confondent pas avec quelque chose de plus intéressant.
+    </string>
+    <string name="object_info_m40_funfact" translation_description="Fun fact about M40 shown in the info card. Translate this text.">
+    Les deux étoiles de M40 — connues sous le nom de Winnecke 4 — ne sont pas liées gravitationnellement ; elles se trouvent à des distances différentes et ne sont qu\'un simple alignement fortuit. Messier lui-même a noté qu\'il n\'y avait « rien de remarquable », mais l\'a inclus « pour montrer que cette nébuleuse n\'est pas la même que celles que j\'ai examinées ». Son habitude méthodique de documenter les résultats négatifs a donné aux observateurs futurs une référence définitive.
+    </string>
+    <string name="object_info_m40_distance" translation_description="Distance to M40 shown in the info card. Translate units if appropriate for your locale.">~500 années-lumière</string>
+    <string name="object_info_m40_size" translation_description="Angular separation of the M40 double star shown in the info card.">~50 arcsecondes (séparation)</string>
+
+    <!-- Category 5: Second tier -->
+    <string name="object_info_m34_description" translation_description="Description of the open star cluster M34 shown in the info card. Translate this text.">
+    M34 est un amas ouvert brillant et dispersé dans Persée, facilement visible aux jumelles comme une riche éclaboussure d\'étoiles sur la Voie lactée hivernale. Ses environ 400 étoiles couvrent une zone presque aussi large que la pleine Lune, avec une poignée d\'étoiles doubles larges visibles aux observateurs attentifs aux jumelles.
+    </string>
+    <string name="object_info_m34_funfact" translation_description="Fun fact about M34 shown in the info card. Translate this text.">
+    Avec environ 200 millions d\'années, M34 est d\'un âge intermédiaire — assez jeune pour que ses étoiles bleues chaudes brillent encore, assez vieux pour que les plus massives aient déjà explosé en supernovae. À 1 500 années-lumière, c\'est l\'un des amas Messier les plus proches et il reste un bel objet même sous les ciels de banlieue.
+    </string>
+    <string name="object_info_m34_distance" translation_description="Distance to M34 shown in the info card. Translate units if appropriate for your locale.">1 500 années-lumière</string>
+    <string name="object_info_m34_size" translation_description="Physical size of M34 shown in the info card. Translate units if appropriate for your locale.">~15 années-lumière de diamètre</string>
+
+    <string name="object_info_m23_description" translation_description="Description of the open star cluster M23 shown in the info card. Translate this text.">
+    M23 est un riche amas ouvert du Sagittaire, immergé dans les denses champs d\'étoiles de la Voie lactée estivale. Environ 150 étoiles sont dispersées sur un champ d\'un demi-degré aux jumelles, ce qui en fait un objet généreux aux jumelles dans la même région du ciel que de nombreux autres joyaux de Messier.
+    </string>
+    <string name="object_info_m23_funfact" translation_description="Fun fact about M23 shown in the info card. Translate this text.">
+    M23 est estimé avoir environ 300 millions d\'années — un âge intermédiaire, la plupart de ses étoiles massives ayant déjà quitté la séquence principale. Messier l\'a découvert en 1764 lors de l\'une de ses campagnes d\'observation prolifiques balayant les champs d\'étoiles du Sagittaire.
+    </string>
+    <string name="object_info_m23_distance" translation_description="Distance to M23 shown in the info card. Translate units if appropriate for your locale.">2 150 années-lumière</string>
+    <string name="object_info_m23_size" translation_description="Physical size of M23 shown in the info card. Translate units if appropriate for your locale.">~17 années-lumière de diamètre</string>
+
+    <string name="object_info_m37_description" translation_description="Description of the open star cluster M37 shown in the info card. Translate this text.">
+    M37 est le plus riche et le plus brillant des trois amas ouverts de Messier dans l\'Aurige, contenant environ 500 étoiles dans un champ compact. C\'est un objet spectaculaire aux jumelles et aux petits télescopes, avec une dispersion d\'étoiles géantes oranges ajoutant un contraste de couleur à l\'essaim bleu-blanc.
+    </string>
+    <string name="object_info_m37_funfact" translation_description="Fun fact about M37 shown in the info card. Translate this text.">
+    M37 contient environ une douzaine d\'étoiles géantes rouges — un nombre inhabituellement élevé qui reflète son âge relativement avancé d\'environ 300 millions d\'années. Malgré sa distance d\'environ 4 500 années-lumière — le plus lointain des trois amas Messier du Cocher — il figure toujours parmi les plus beaux amas ouverts du ciel.
+    </string>
+    <string name="object_info_m37_distance" translation_description="Distance to M37 shown in the info card. Translate units if appropriate for your locale.">4 500 années-lumière</string>
+    <string name="object_info_m37_size" translation_description="Physical size of M37 shown in the info card. Translate units if appropriate for your locale.">~31 années-lumière de diamètre</string>
+
+    <string name="object_info_m48_description" translation_description="Description of the open star cluster M48 shown in the info card. Translate this text.">
+    M48 est un grand et brillant amas ouvert dans l\'Hydre, s\'étendant sur près d\'un degré de ciel et visible à l\'œil nu depuis les sites sombres. Ses environ 80 étoiles sont dispersées librement sur un large champ mieux adapté aux jumelles, avec une dispersion d\'étoiles géantes orange et jaunes parmi les membres bleu-blanc plus brillants.
+    </string>
+    <string name="object_info_m48_funfact" translation_description="Fun fact about M48 shown in the info card. Translate this text.">
+    M48 était l\'un des objets Messier « perdus » pendant près de deux siècles car la position enregistrée par Messier était décalée d\'environ 5° par rapport à la véritable localisation. Il est resté non identifié jusqu\'en 1959, quand il a été associé à NGC 2548 et une simple erreur de transcription s\'est avérée l\'avoir placé dans un ciel vide depuis le début.
+    </string>
+    <string name="object_info_m48_distance" translation_description="Distance to M48 shown in the info card. Translate units if appropriate for your locale.">1 500 années-lumière</string>
+    <string name="object_info_m48_size" translation_description="Physical size of M48 shown in the info card. Translate units if appropriate for your locale.">~23 années-lumière de diamètre</string>
+
+    <string name="object_info_m21_description" translation_description="Description of the open star cluster M21 shown in the info card. Translate this text.">
+    M21 est un amas ouvert compact du Sagittaire situé juste à un demi-degré au nord de la Nébuleuse de la Trifide (M20), ce qui en fait une paire remarquable aux jumelles. L\'amas contient environ 57 étoiles concentrées dans un champ plus petit que celui de nombreux amas de Messier, avec plusieurs étoiles bleues-blanches brillantes comme membres dominants.
+    </string>
+    <string name="object_info_m21_funfact" translation_description="Fun fact about M21 shown in the info card. Translate this text.">
+    Bien qu\'ils ne soient pas physiquement liés, M21 et M20 (la Nébuleuse Trifide) forment l\'une des paires les plus attrayantes aux jumelles dans le ciel d\'été — un amas d\'étoiles brillant à côté d\'une nébuleuse trilobée colorée. M21 se trouve à environ 4 250 années-lumière, tandis que M20 est légèrement plus proche à environ 4 100 années-lumière.
+    </string>
+    <string name="object_info_m21_distance" translation_description="Distance to M21 shown in the info card. Translate units if appropriate for your locale.">4 250 années-lumière</string>
+    <string name="object_info_m21_size" translation_description="Physical size of M21 shown in the info card. Translate units if appropriate for your locale.">~16 années-lumière de diamètre</string>
+
+    <string name="object_info_m50_description" translation_description="Description of the open star cluster M50 shown in the info card. Translate this text.">
+    M50 est un amas ouvert brillant dans la Licorne, contenant environ 200 étoiles compactées dans un champ remarquablement compact pour les jumelles et les petits télescopes. Il se trouve facilement sur une ligne entre Sirius et Procyon et contient un géante rouge notable — une balise orange chaud se détachant vivement parmi les étoiles bleu-blanc de l\'amas.
+    </string>
+    <string name="object_info_m50_funfact" translation_description="Fun fact about M50 shown in the info card. Translate this text.">
+    M50 est estimé à environ 78 millions d\'années — l\'un des plus jeunes amas ouverts de Messier — ce qui signifie que ses étoiles chaudes bleues et blanches évoluent toujours, avec une poignée des membres les plus massifs s\'étant récemment gonflés en géantes. C\'est typique d\'un amas dans sa première moitié de sa vie.
+    </string>
+    <string name="object_info_m50_distance" translation_description="Distance to M50 shown in the info card. Translate units if appropriate for your locale.">3 200 années-lumière</string>
+    <string name="object_info_m50_size" translation_description="Physical size of M50 shown in the info card. Translate units if appropriate for your locale.">~15 années-lumière de diamètre</string>
+
+    <string name="object_info_m36_description" translation_description="Description of the open star cluster M36 shown in the info card. Translate this text.">
+    M36 est le plus petit et le plus jeune des trois amas ouverts que Messier a catalogués dans l\'Aurige. Ses environ 60 étoiles sont rassemblées dans un champ serré et scintillant visible aux jumelles et bien résolu en étoiles individuelles dans un petit télescope, dominé par des étoiles chaudes bleu-blanc.
+    </string>
+    <string name="object_info_m36_funfact" translation_description="Fun fact about M36 shown in the info card. Translate this text.">
+    M36 est estimé à seulement environ 25 millions d\'années — l\'un des plus jeunes amas Messier — ce qui signifie que les étoiles massives bleu-blanc dominent toujours et qu\'aucun géante rouge n\'est encore apparue. Il partage les champs d\'étoiles d\'Auriga avec M37 et M38, et les trois amas s\'inscrivent dans le même champ de vision aux jumelles grand-angle.
+    </string>
+    <string name="object_info_m36_distance" translation_description="Distance to M36 shown in the info card. Translate units if appropriate for your locale.">4 100 années-lumière</string>
+    <string name="object_info_m36_size" translation_description="Physical size of M36 shown in the info card. Translate units if appropriate for your locale.">~14 années-lumière de diamètre</string>
+
+    <string name="object_info_m46_description" translation_description="Description of the open star cluster M46 shown in the info card. Translate this text.">
+    M46 est un amas ouvert riche et dense dans la Poupe contenant environ 500 étoiles compactées dans un large champ, frappant aux jumelles et magnifique aux petits télescopes. Un bonus remarquable flotte à son bord nord : NGC 2438, une petite nébuleuse planétaire qui semble être intégrée dans l\'amas — une coïncidence dramatique de ligne de visée.
+    </string>
+    <string name="object_info_m46_funfact" translation_description="Fun fact about M46 shown in the info card. Translate this text.">
+    La nébuleuse planétaire NGC 2438 semble se situer à l\'intérieur de M46, mais c\'est en réalité un objet d\'avant-plan sans lien à une distance très différente — environ 1 400 années-lumière contre 5 400 pour M46. La coïncidence d\'une coquille d\'étoile mourante superposée à un jeune amas d\'étoiles en fait l\'un des champs les plus photogéniques du catalogue.
+    </string>
+    <string name="object_info_m46_distance" translation_description="Distance to M46 shown in the info card. Translate units if appropriate for your locale.">5 400 années-lumière</string>
+    <string name="object_info_m46_size" translation_description="Physical size of M46 shown in the info card. Translate units if appropriate for your locale.">~42 années-lumière de diamètre</string>
+
+    <string name="object_info_m93_description" translation_description="Description of the open star cluster M93 shown in the info card. Translate this text.">
+    M93 est un amas ouvert brillant et compact dans la Poupe, situé dans la riche Voie lactée australe et facilement observable aux jumelles. Ses environ 80 étoiles sont arrangées en une forme de coin ou de papillon frappante et incluent plusieurs supergéantes bleues chaudes, ce qui en fait l\'un des amas ouverts les plus attrayants du ciel hivernal.
+    </string>
+    <string name="object_info_m93_funfact" translation_description="Fun fact about M93 shown in the info card. Translate this text.">
+    M93 est relativement jeune — environ 100 millions d\'années — avec des étoiles bleues et bleu-blanc dominantes qui ne se sont pas encore transformées en géantes. C\'est l\'un des amas Messier les plus méridionaux, et à partir de latitudes au nord d\'environ 50°N, il ne s\'élève jamais très haut au-dessus de l\'horizon.
+    </string>
+    <string name="object_info_m93_distance" translation_description="Distance to M93 shown in the info card. Translate units if appropriate for your locale.">3 600 années-lumière</string>
+    <string name="object_info_m93_size" translation_description="Physical size of M93 shown in the info card. Translate units if appropriate for your locale.">~23 années-lumière de diamètre</string>
+
+    <string name="object_info_m38_description" translation_description="Description of the open star cluster M38 shown in the info card. Translate this text.">
+    M38 est le plus grand et le plus dispersé des trois amas ouverts que Messier a catalogués dans l\'Aurige. Ses environ 100 étoiles sont arrangées selon un motif que certains observateurs comparent à une croix ou à la lettre grecque pi, visible aux jumelles et bien résolu dans un petit télescope. Le plus petit amas NGC 1907 se situe à proximité au sud.
+    </string>
+    <string name="object_info_m38_funfact" translation_description="Fun fact about M38 shown in the info card. Translate this text.">
+    M38 est le plus ancien des trois amas Messier de l\'Aurige, avec environ 220 millions d\'années. Il est assez ancien pour que certaines de ses étoiles massives se soient transformées en géantes jaunes et oranges. L\'amas voisin NGC 1907 peut tenir dans le même champ à faible grossissement, ce qui en fait une belle paire pour les jumelles — comme M46 et M47 dans la Poupe.
+    </string>
+    <string name="object_info_m38_distance" translation_description="Distance to M38 shown in the info card. Translate units if appropriate for your locale.">4 200 années-lumière</string>
+    <string name="object_info_m38_size" translation_description="Physical size of M38 shown in the info card. Translate units if appropriate for your locale.">~26 années-lumière de diamètre</string>
+
+    <string name="object_info_m29_description" translation_description="Description of the open star cluster M29 shown in the info card. Translate this text.">
+    M29 est un petit amas ouvert jeune situé dans le Cygne, dans l\'une des régions les plus obscurcies par la poussière de la Voie lactée. Cinq supergiantes bleues brillantes dominent l\'amas, visibles aux jumelles sous la forme d\'un astérisme serré d\'étoiles chaudes et lumineuses. Sans la poussière dense au premier plan, M29 serait l\'un des amas ouverts les plus spectaculaires du ciel.
+    </string>
+    <string name="object_info_m29_funfact" translation_description="Fun fact about M29 shown in the info card. Translate this text.">
+    M29 est estimé à seulement environ 10 millions d\'années — une jeune étoile — et se situe dans l\'association Cygnus OB1, un vaste groupe d\'étoiles jeunes massives. La poussière interstellaire dense assombrit l\'amas d\'environ 3 magnitudes ; sans cette obscuration, les étoiles de M29 brilleraient plusieurs fois plus que ce qu\'elles paraissent réellement.
+    </string>
+    <string name="object_info_m29_distance" translation_description="Distance to M29 shown in the info card. Translate units if appropriate for your locale.">4 000 années-lumière</string>
+    <string name="object_info_m29_size" translation_description="Physical size of M29 shown in the info card. Translate units if appropriate for your locale.">~8 années-lumière de diamètre</string>
+
+    <string name="object_info_m62_description" translation_description="Description of the globular cluster M62 shown in the info card. Translate this text.">
+    M62 est un riche amas globulaire dans l\'Ophiuchus — l\'un des amas globulaires les plus proches du centre galactique et notablement asymétrique, avec des étoiles plus densément concentrées sur le côté sud. Avec une magnitude de 6,6, c\'est un bel objet pour les jumelles, bien que sa faible déclinaison en fasse une cible de courte saison pour les observateurs de l\'hémisphère nord.
+    </string>
+    <string name="object_info_m62_funfact" translation_description="Fun fact about M62 shown in the info card. Translate this text.">
+    Le noyau excentré de M62 est une conséquence directe de sa proximité avec le centre galactique — les puissantes forces de marée du renflement central déforment l\'amas et entraînent les étoiles vers le plan galactique. C\'est aussi l\'un des amas globulaires les plus dynamiquement évolués connus, montrant des signes d\'effondrement du noyau et une densité inhabituellement élevée de pulsars millisecondes.
+    </string>
+    <string name="object_info_m62_distance" translation_description="Distance to M62 shown in the info card. Translate units if appropriate for your locale.">22 500 années-lumière</string>
+    <string name="object_info_m62_size" translation_description="Physical size of M62 shown in the info card. Translate units if appropriate for your locale.">~92 années-lumière de diamètre</string>
+
+    <string name="object_info_m28_description" translation_description="Description of the globular cluster M28 shown in the info card. Translate this text.">
+    M28 est un amas globulaire compact du Sagittaire, situé près de l\'étoile brillante Lambda Sagittarii dans les riches champs d\'étoiles d\'été. Avec une magnitude de 6,9, c\'est une cible gratifiante aux jumelles et bien résolu dans les petits télescopes, montrant un noyau condensé brillant entouré d\'une halo modérée d\'étoiles.
+    </string>
+    <string name="object_info_m28_funfact" translation_description="Fun fact about M28 shown in the info card. Translate this text.">
+    En 1987, M28 est devenu le premier amas globulaire dans lequel un pulsar millisecondes a été détecté. Les pulsars millisecondes — des étoiles à neutrons tournant des centaines de fois par seconde — se forment quand une étoile à neutrons accrète de la matière d\'une étoile compagne et se trouvent à un taux beaucoup plus élevé dans les amas globulaires que dans la galaxie générale, car leurs environnements stellaires denses produisent beaucoup plus de rencontres binaires rapprochées.
+    </string>
+    <string name="object_info_m28_distance" translation_description="Distance to M28 shown in the info card. Translate units if appropriate for your locale.">18 300 années-lumière</string>
+    <string name="object_info_m28_size" translation_description="Physical size of M28 shown in the info card. Translate units if appropriate for your locale.">~60 années-lumière de diamètre</string>
+
+    <string name="object_info_m52_description" translation_description="Description of the open star cluster M52 shown in the info card. Translate this text.">
+    M52 est un riche amas ouvert dans Cassiopée, contenant environ 200 étoiles entassées dans une région compacte de la Voie lactée septentrionale. C\'est un bel amas pour les jumelles et il montre un magnifique champ stellaire dense dans les petits télescopes, avec une étoile orange notablement plus brillante qui se distingue près du bord sud de l\'amas.
+    </string>
+    <string name="object_info_m52_funfact" translation_description="Fun fact about M52 shown in the info card. Translate this text.">
+    La distance de M52 est inhabituellement incertaine — les estimations varient de 3 000 à 7 000 années-lumière — car la poussière interstellaire dense le long de cette ligne de visée rend sa luminosité réelle difficile à déterminer. Messier l\'a découvert en 1774, la même nuit où il suivait une comète qui l\'a amené à enregistrer plusieurs autres entrées du catalogue.
+    </string>
+    <string name="object_info_m52_distance" translation_description="Distance to M52 shown in the info card. Translate units if appropriate for your locale.">~5 000 années-lumière</string>
+    <string name="object_info_m52_size" translation_description="Physical size of M52 shown in the info card. Translate units if appropriate for your locale.">~25 années-lumière de diamètre</string>
+
+    <string name="object_info_m67_description" translation_description="Description of the open star cluster M67 shown in the info card. Translate this text.">
+    M67 est un bel amas ouvert dans le Cancer et l\'un des amas ouverts les plus anciens bien étudiés du ciel. Avec un âge d\'environ 3,2 à 3,5 milliards d\'années, il contient de nombreuses étoiles similaires en masse et en âge à notre propre Soleil — ce qui en fait un laboratoire naturel pour étudier comment les étoiles semblables au Soleil évoluent au cours du temps cosmique.
+    </string>
+    <string name="object_info_m67_funfact" translation_description="Fun fact about M67 shown in the info card. Translate this text.">
+    Plusieurs étoiles dans M67 ressemblent étroitement au Soleil par leur température, leur masse et leur âge — une combinaison rare qui a amené les chercheurs à se demander si le Soleil lui-même est originaire d\'un amas comme M67. Comme les étoiles naissent dans des amas qui se dispersent progressivement, le Soleil provient presque certainement d\'un groupe de frères et sœurs maintenant dispersé il y a des milliards d\'années — bien que l\'amas d\'origine n\'ait jamais été identifié.
+    </string>
+    <string name="object_info_m67_distance" translation_description="Distance to M67 shown in the info card. Translate units if appropriate for your locale.">2 700 années-lumière</string>
+    <string name="object_info_m67_size" translation_description="Physical size of M67 shown in the info card. Translate units if appropriate for your locale.">~24 années-lumière de diamètre</string>
+
+    <string name="object_info_m55_description" translation_description="Description of the globular cluster M55 shown in the info card. Translate this text.">
+    M55 est un grand amas globulaire lâche du Sagittaire — l\'un des plus dispersés et des moins concentrés de tous les amas globulaires de Messier. Il est facilement résolu en étoiles individuelles même à faible grossissement, avec une texture granuleuse visible aux jumelles. Sa faible déclinaison australe limite sa visibilité depuis les latitudes nord, mais il est spectaculaire depuis l\'hémisphère sud.
+    </string>
+    <string name="object_info_m55_funfact" translation_description="Fun fact about M55 shown in the info card. Translate this text.">
+    La concentration stellaire inhabituellement faible de M55 lui donne l\'apparence d\'un amas ouvert riche plutôt que d\'un amas globulaire typique. Ses étoiles sont dispersées sur une région d\'environ 100 années-lumière de largeur, ce qui suggère que l\'auto-gravité de l\'amas est relativement faible comparée à des amas globulaires plus condensés au centre comme M13 ou M3.
+    </string>
+    <string name="object_info_m55_distance" translation_description="Distance to M55 shown in the info card. Translate units if appropriate for your locale.">17 600 années-lumière</string>
+    <string name="object_info_m55_size" translation_description="Physical size of M55 shown in the info card. Translate units if appropriate for your locale.">~100 années-lumière de diamètre</string>
+
+    <string name="object_info_m19_description" translation_description="Description of the globular cluster M19 shown in the info card. Translate this text.">
+    M19 est un amas globulaire compact et riche en Ophiuchus — l\'un des amas globulaires les plus proches du centre galactique. Sa caractéristique la plus distinctive est sa forme notablement aplatie : M19 est l\'amas globulaire le plus aplati connu, avec un contour elliptique visible même dans un petit télescope.
+    </string>
+    <string name="object_info_m19_funfact" translation_description="Fun fact about M19 shown in the info card. Translate this text.">
+    L\'aplatissement prononcé de M19 — son axe le plus long est environ 10 % plus long que le plus court — est unique parmi les amas globulaires connus et serait le résultat de l\'étirement des marées causé par le champ gravitationnel de la Voie lactée. Plus un amas globulaire orbite près du centre galactique, plus il est déformé ; M19 se trouve à seulement environ 5 200 années-lumière du cœur galactique.
+    </string>
+    <string name="object_info_m19_distance" translation_description="Distance to M19 shown in the info card. Translate units if appropriate for your locale.">28 700 années-lumière</string>
+    <string name="object_info_m19_size" translation_description="Physical size of M19 shown in the info card. Translate units if appropriate for your locale.">~113 années-lumière de diamètre</string>
+
+    <string name="object_info_m80_description" translation_description="Description of the globular cluster M80 shown in the info card. Translate this text.">
+    M80 est l\'un des amas globulaires les plus densément peuplés de la Voie lactée, une boule compacte et riche de plusieurs centaines de milliers d\'étoiles dans le Scorpion. Avec une magnitude de 7,2, c\'est une excellente cible pour les jumelles et révèle un noyau brillant et très concentré dans les petits télescopes.
+    </string>
+    <string name="object_info_m80_funfact" translation_description="Fun fact about M80 shown in the info card. Translate this text.">
+    En 1860, une nova a éclaté dans M80 — désignée T Scorpii — devenant brièvement aussi brillante que l\'amas lui-même et visible à l\'œil nu. Elle reste l\'une des deux seules novae jamais observées dans un amas globulaire. Les novae dans les amas globulaires résultent d\'interactions entre des étoiles binaires, qui sont beaucoup plus courantes dans l\'environnement stellaire dense du cœur d\'un amas globulaire.
+    </string>
+    <string name="object_info_m80_distance" translation_description="Distance to M80 shown in the info card. Translate units if appropriate for your locale.">32 600 années-lumière</string>
+    <string name="object_info_m80_size" translation_description="Physical size of M80 shown in the info card. Translate units if appropriate for your locale.">~84 années-lumière de diamètre</string>
+
+    <string name="object_info_m103_description" translation_description="Description of the open star cluster M103 shown in the info card. Translate this text.">
+    M103 est un petit amas ouvert compact dans Cassiopée, contenant environ 40 étoiles dans un groupe serré facilement visible aux jumelles. Une frappante étoile double et un géante rouge près du centre lui donnent une apparence colorée dans les petits télescopes, situé dans les riches champs d\'étoiles de la Voie lactée de Cassiopée.
+    </string>
+    <string name="object_info_m103_funfact" translation_description="Fun fact about M103 shown in the info card. Translate this text.">
+    M103 était l\'objet ayant le plus haut numéro du catalogue original de Messier publié en 1781 — toutes les entrées suivantes (M104–M110) ont été ajoutées après sa mort par d\'autres astronomes à partir des notes et de la correspondance de Messier. Pierre Méchain a découvert M103 peu avant la publication du catalogue, et Messier l\'a inclus d\'après le rapport de Méchain.
+    </string>
+    <string name="object_info_m103_distance" translation_description="Distance to M103 shown in the info card. Translate units if appropriate for your locale.">8 500 années-lumière</string>
+    <string name="object_info_m103_size" translation_description="Physical size of M103 shown in the info card. Translate units if appropriate for your locale.">~15 années-lumière de diamètre</string>
+
+    <string name="object_info_m30_description" translation_description="Description of the globular cluster M30 shown in the info card. Translate this text.">
+    M30 est un amas globulaire compact dans le Capricorne — un bel objet dans les petits télescopes qui montre un noyau brillant et condensé avec des chaînes d\'étoiles faibles en périphérie. Avec une magnitude de 7,5, il nécessite des cieux sombres aux jumelles et récompense un petit télescope par son halo externe partiellement résolu.
+    </string>
+    <string name="object_info_m30_funfact" translation_description="Fun fact about M30 shown in the info card. Translate this text.">
+    M30 a subi un « effondrement de cœur » — un processus où l\'attraction gravitationnelle mutuelle des étoiles densément empaquetées provoque la contraction dramatique du centre de l\'amas, créant une concentration extrême d\'étoiles dans un minuscule volume. Environ un cinquième de tous les amas globulaires ont des cœurs effondrés, et M30 est parmi les exemples les mieux étudiés de ce phénomène.
+    </string>
+    <string name="object_info_m30_distance" translation_description="Distance to M30 shown in the info card. Translate units if appropriate for your locale.">27 100 années-lumière</string>
+    <string name="object_info_m30_size" translation_description="Physical size of M30 shown in the info card. Translate units if appropriate for your locale.">~87 années-lumière de diamètre</string>
+
+    <string name="object_info_m54_description" translation_description="Description of the globular cluster M54 shown in the info card. Translate this text.">
+    M54 est un grand et riche amas globulaire du Sagittaire et l\'un des objets les plus lointains de tout le catalogue Messier. Pendant des siècles, on a cru que c\'était un amas globulaire éloigné du halo de la Voie lactée, mais on sait maintenant que c\'est le noyau dense de la Galaxie naine elliptique du Sagittaire — une galaxie satellite actuellement absorbée par la nôtre.
+    </string>
+    <string name="object_info_m54_funfact" translation_description="Fun fact about M54 shown in the info card. Translate this text.">
+    La découverte en 1994 que M54 appartient à la Galaxie Naine du Sagittaire en a fait le premier amas globulaire connu appartenant à une autre galaxie. Alors que la Galaxie Naine du Sagittaire est progressivement déchirée et engloutie par la Voie lactée, M54 deviendra finalement un véritable amas globulaire du halo de notre propre galaxie — un immigrant intergalactique arrivant au cours de milliards d\'années.
+    </string>
+    <string name="object_info_m54_distance" translation_description="Distance to M54 shown in the info card. Translate units if appropriate for your locale.">87 000 années-lumière</string>
+    <string name="object_info_m54_size" translation_description="Physical size of M54 shown in the info card. Translate units if appropriate for your locale.">~230 années-lumière de diamètre</string>
+
+    <string name="object_info_m69_description" translation_description="Description of the globular cluster M69 shown in the info card. Translate this text.">
+    M69 est un amas globulaire modérément riche du Sagittaire, situé près du centre galactique. Avec une magnitude de 7,7, c\'est un objet observable aux jumelles depuis des cieux sombres qui récompense un petit télescope par une boule d\'étoiles partiellement résolue et un centre brillant et granulaire.
+    </string>
+    <string name="object_info_m69_funfact" translation_description="Fun fact about M69 shown in the info card. Translate this text.">
+    M69 orbite inhabituellement près du centre galactique — à seulement environ 6 200 années-lumière du cœur de la Voie lactée — et possède par conséquent une concentration inhabituellement élevée d\'éléments plus lourds pour un amas globulaire. Les amas globulaires plus proches du centre galactique ont tendance à être enrichis chimiquement par plusieurs générations de formation d\'étoiles dans le renflement environnant.
+    </string>
+    <string name="object_info_m69_distance" translation_description="Distance to M69 shown in the info card. Translate units if appropriate for your locale.">29 700 années-lumière</string>
+    <string name="object_info_m69_size" translation_description="Physical size of M69 shown in the info card. Translate units if appropriate for your locale.">~61 années-lumière de diamètre</string>
+
+    <string name="object_info_m9_description" translation_description="Description of the globular cluster M9 shown in the info card. Translate this text.">
+    M9 est un amas globulaire compact dans l\'Ophiuchus — l\'un des amas globulaires de Messier les plus affectés par l\'absorption de la poussière interstellaire. Il se situe vers le renflement galactique, où une poussière épaisse le rend significativement plus faible. Sans cette obscuration, M9 apparaîtrait presque une magnitude plus brillant et serait visible à l\'œil nu.
+    </string>
+    <string name="object_info_m9_funfact" translation_description="Fun fact about M9 shown in the info card. Translate this text.">
+    M9 subit une absorption de poussière interstellaire plus importante que presque tout autre amas globulaire de Messier — environ 1,3 magnitudes d\'assombrissement par rapport à une ligne de visée dégagée. Deux petits amas globulaires (NGC 6342 et NGC 6356) se situent à environ 1° de M9, ce qui en fait le centre d\'un remarquable groupement de trois amas globulaires dans une petite région du ciel.
+    </string>
+    <string name="object_info_m9_distance" translation_description="Distance to M9 shown in the info card. Translate units if appropriate for your locale.">25 800 années-lumière</string>
+    <string name="object_info_m9_size" translation_description="Physical size of M9 shown in the info card. Translate units if appropriate for your locale.">~70 années-lumière de diamètre</string>
+
+    <string name="object_info_m26_description" translation_description="Description of the open star cluster M26 shown in the info card. Translate this text.">
+    M26 est un amas ouvert modérément faible dans l\'Écu, visible aux jumelles et bien résolu dans les petits télescopes. Environ 90 étoiles sont dispersées sur un champ compact dans le riche nuage d\'étoiles du Scutum, bien que l\'amas soit situé sur un arrière-plan si dense que l\'identification de ses membres par rapport au champ d\'étoiles environnant nécessite une certaine attention.
+    </string>
+    <string name="object_info_m26_funfact" translation_description="Fun fact about M26 shown in the info card. Translate this text.">
+    M26 se situe le long de la même région riche du ciel que M11 — l\'amas du Canard Sauvage, l\'un des plus beaux amas ouverts du ciel. Les deux ne sont séparés que d\'environ 3,5° et visibles dans le même champ de jumelles, ce qui fait de l\'Écu une destination remarquable pour les observateurs d\'amas malgré sa petite taille et le fait qu\'elle soit souvent négligée.
+    </string>
+    <string name="object_info_m26_distance" translation_description="Distance to M26 shown in the info card. Translate units if appropriate for your locale.">5 000 années-lumière</string>
+    <string name="object_info_m26_size" translation_description="Physical size of M26 shown in the info card. Translate units if appropriate for your locale.">~22 années-lumière de diamètre</string>
+
+    <string name="object_info_m79_description" translation_description="Description of the globular cluster M79 shown in the info card. Translate this text.">
+    M79 est un amas globulaire compact dans le Lièvre — l\'un des très rares amas globulaires de Messier les mieux placés dans le ciel d\'hiver, quand la plupart des amas globulaires sont sous l\'horizon ou à peine levés. Avec une magnitude de 8,0, il nécessite un télescope pour révéler son noyau compact et son halo faible, se détachant sur les champs d\'étoiles d\'hiver comparativement clairsemés.
+    </string>
+    <string name="object_info_m79_funfact" translation_description="Fun fact about M79 shown in the info card. Translate this text.">
+    M79 serait selon certains astronomes un intrus provenant de la Galaxie Naine du Grand Chien — une galaxie satellite perturbée actuellement absorbée par la Voie lactée. Si c\'est le cas, M79 ne s\'est pas formé dans le propre système de amas globulaires de la Voie lactée, mais a été capturé par une galaxie en chute et est maintenant lentement intégré au halo de notre galaxie.
+    </string>
+    <string name="object_info_m79_distance" translation_description="Distance to M79 shown in the info card. Translate units if appropriate for your locale.">41 000 années-lumière</string>
+    <string name="object_info_m79_size" translation_description="Physical size of M79 shown in the info card. Translate units if appropriate for your locale.">~104 années-lumière de diamètre</string>
+
+    <string name="object_info_m70_description" translation_description="Description of the globular cluster M70 shown in the info card. Translate this text.">
+    M70 est un amas globulaire compact du Sagittaire, ressemblant étroitement à son quasi-jumeau M69 par son apparence et sa distance. Avec une magnitude de 8,1, c\'est un bel objet pour petit télescope qui montre un noyau compact et des indices de résolution dans le halo externe. Il se situe à seulement 2° de M69 et les deux peuvent être observés dans le même champ de jumelles.
+    </string>
+    <string name="object_info_m70_funfact" translation_description="Fun fact about M70 shown in the info card. Translate this text.">
+    M70 a brièvement attiré l\'attention en 1995 en tant que localisation approximative dans le ciel où Alan Hale et Thomas Bopp ont découvert indépendamment la comète Hale-Bopp — la comète la plus brillante de la fin du XXe siècle. Les deux observateurs ont d\'abord balayé M70 en cherchant d\'autres cibles et ont remarqué la comète comme un objet flou inattendu à proximité.
+    </string>
+    <string name="object_info_m70_distance" translation_description="Distance to M70 shown in the info card. Translate units if appropriate for your locale.">29 400 années-lumière</string>
+    <string name="object_info_m70_size" translation_description="Physical size of M70 shown in the info card. Translate units if appropriate for your locale.">~67 années-lumière de diamètre</string>
+
+    <string name="object_info_m107_description" translation_description="Description of the globular cluster M107 shown in the info card. Translate this text.">
+    M107 est l\'un des amas globulaires de Messier les moins concentrés, avec des étoiles dispersées dans un motif relativement ouvert autour d\'un noyau modeste. Avec une magnitude de 8,1, c\'est une cible pour les jumelles à partir de cieux sombres et elle se résout partiellement dans les petits télescopes, montrant une texture granuleuse plutôt qu\'une condensation centrale nette.
+    </string>
+    <string name="object_info_m107_funfact" translation_description="Fun fact about M107 shown in the info card. Translate this text.">
+    M107 a été la dernière entrée formellement ajoutée au catalogue Messier — elle apparaît dans la correspondance de Pierre Méchain mais n\'a pas été incluse dans l\'édition originale de 1781. Elle a été officiellement ajoutée en tant que M107 en 1947 par l\'astronome canadienne Helen Sawyer Hogg, qui a codifié plusieurs objets « manquants » que Méchain avait observés mais que Messier n\'a jamais formellement enregistrés.
+    </string>
+    <string name="object_info_m107_distance" translation_description="Distance to M107 shown in the info card. Translate units if appropriate for your locale.">20 900 années-lumière</string>
+    <string name="object_info_m107_size" translation_description="Physical size of M107 shown in the info card. Translate units if appropriate for your locale.">~61 années-lumière de diamètre</string>
+
+    <string name="object_info_m68_description" translation_description="Description of the globular cluster M68 shown in the info card. Translate this text.">
+    M68 est un riche amas globulaire dans l\'Hydre — un objet austral et l\'un des rares amas globulaires les mieux placés dans le ciel de fin d\'hiver et de printemps. Avec une magnitude de 8,2, il récompense un petit télescope avec un noyau modérément condensé et un grand halo d\'étoiles résolues sur le fond relativement clairsemé des champs d\'étoiles de l\'Hydre.
+    </string>
+    <string name="object_info_m68_funfact" translation_description="Fun fact about M68 shown in the info card. Translate this text.">
+    Malgré sa proximité relative — qui rend les étoiles individuelles bien résolues dans les télescopes amateurs — M68 est souvent négligé en raison de sa déclinaison très australe. À partir de latitudes supérieures à 50°N, il dépasse à peine l\'horizon ; de l\'hémisphère sud, cependant, il s\'élève haut et constitue un amas globulaire superbe.
+    </string>
+    <string name="object_info_m68_distance" translation_description="Distance to M68 shown in the info card. Translate units if appropriate for your locale.">33 600 années-lumière</string>
+    <string name="object_info_m68_size" translation_description="Physical size of M68 shown in the info card. Translate units if appropriate for your locale.">~117 années-lumière de diamètre</string>
+
+    <string name="object_info_m56_description" translation_description="Description of the globular cluster M56 shown in the info card. Translate this text.">
+    M56 est un amas globulaire compact dans la Lyre, niché entre la Nébuleuse de l\'Anneau (M57) et la brillante étoile double Albireo du Cygne. Avec une magnitude de 8,3, c\'est une cible pour les jumelles depuis des cieux sombres, et un petit télescope révèle une sphère granuleuse, modérément condensée, qui n\'est que partiellement résolue même dans les ouvertures moyennes.
+    </string>
+    <string name="object_info_m56_funfact" translation_description="Fun fact about M56 shown in the info card. Translate this text.">
+    M56 a été découvert par Messier en janvier 1779 au cours de la même saison d\'observation au cours de laquelle il a également trouvé la Nébuleuse de l\'Anneau (M57). Bien qu\'il se situe dans le même champ binoculaire que Véga — la cinquième étoile la plus brillante du ciel — et à proximité de la célèbre Nébuleuse de l\'Anneau, M56 est souvent négligé par les observateurs attirés par ses voisins plus célèbres.
+    </string>
+    <string name="object_info_m56_distance" translation_description="Distance to M56 shown in the info card. Translate units if appropriate for your locale.">32 900 années-lumière</string>
+    <string name="object_info_m56_size" translation_description="Physical size of M56 shown in the info card. Translate units if appropriate for your locale.">~68 années-lumière de diamètre</string>
+
+    <string name="object_info_m71_description" translation_description="Description of the globular cluster M71 shown in the info card. Translate this text.">
+    M71 est un amas globulaire inhabituel dans la Flèche — débattu par les astronomes pendant des décennies qui ne pouvaient pas décider s\'il s\'agissait d\'un amas ouvert très riche et ancien ou d\'un amas globulaire très lâche et jeune. L\'analyse moderne confirme que c\'est un véritable amas globulaire, mais un amas exceptionnellement peu concentré avec relativement peu d\'étoiles et un noyau moins dominant que les amas globulaires typiques.
+    </string>
+    <string name="object_info_m71_funfact" translation_description="Fun fact about M71 shown in the info card. Translate this text.">
+    La structure lâche de M71 l\'a tenue à l\'écart de nombreux catalogues anciens car elle ressemblait à un riche champ d\'étoiles plutôt qu\'à un véritable amas. À seulement 12 000 années-lumière, c\'est l\'un des amas globulaires de Messier les plus proches, et ses étoiles sont partiellement résolues dans un petit télescope sous des ciels sombres — lui donnant l\'apparence d\'un riche champ d\'étoiles compact et légèrement condensé.
+    </string>
+    <string name="object_info_m71_distance" translation_description="Distance to M71 shown in the info card. Translate units if appropriate for your locale.">12 000 années-lumière</string>
+    <string name="object_info_m71_size" translation_description="Physical size of M71 shown in the info card. Translate units if appropriate for your locale.">~25 années-lumière de diamètre</string>
 </resources>

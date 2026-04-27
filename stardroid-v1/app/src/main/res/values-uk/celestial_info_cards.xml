@@ -948,6 +948,67 @@
     </string>
     <string name="object_info_eta_carinae_nebula_distance" translation_description="Distance to Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">7 500 світлових років</string>
     <string name="object_info_eta_carinae_nebula_size" translation_description="Physical size of Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">300 світлових років у поперечнику</string>
+    <!-- North America Nebula (NGC 7000) -->
+    <string name="object_info_north_america_nebula_description" translation_description="Description of the North America Nebula shown in the info card. Translate this text.">
+    Туманність Північна Америка (NGC 7000) — це велика емісійна туманність у сузір\'ї Лебідь, форма якої дивовижно нагадує континент Північну Америку, включаючи регіон Мексиканської затоки. Розтягуючись приблизно на 120 кутових хвилин — приблизно в чотири рази більше за діаметр повного Місяця — вона розташована на відстані близько 2600 світлових років і має ширину понад 100 світлових років.
+    </string>
+    <string name="object_info_north_america_nebula_funfact" translation_description="Fun fact about the North America Nebula shown in the info card. Translate this text.">
+    Незважаючи на видиму зоряну величину 4, туманність занадто велика та розсіяна, щоб її можна було побачити неозброєним оком в більшості умов неба — проте вона чудово фотографується, розкриваючи Стіну Лебедя, густу дугу інтенсивного зореутворення вздовж її південного краю.
+    </string>
+    <string name="object_info_north_america_nebula_distance" translation_description="Distance to the North America Nebula shown in the info card. Translate units if appropriate for your locale.">~2 590 світлових років</string>
+    <string name="object_info_north_america_nebula_size" translation_description="Physical size of the North America Nebula shown in the info card. Translate units if appropriate for your locale.">~140 світлових років у діаметрі</string>
+    <!-- Exposed Cranium Nebula - PMR 1 -->
+    <string name="object_info_exposed_cranium_nebula_description" translation_description="Description of the Exposed Cranium Nebula shown in the info card. Translate this text.">
+    Туманність Відкритого Черепа (PMR 1) — це планетарна туманність у сузір\'ї Вітрил, розташована приблизно в 5000 світлових років від нас. Її дивна назва походить від темної смуги газу, що проходить вертикально через середину, розділяючи її світлі частки на форму, яка жахливо нагадує мозок всередині прозорого черепа. У її центрі горить гарячий вовк-райєтівський зір, що скидає зовнішні шари, накопичені протягом його життя.
+    </string>
+    <string name="object_info_exposed_cranium_nebula_funfact" translation_description="Fun fact about the Exposed Cranium Nebula shown in the info card. Translate this text.">
+    У 2026 році космічний телескоп Джеймса Вебба зробив вражаючі нові знімки Туманності Оголеного Черепа, розкривши її двошарову структуру з безпрецедентною деталізацією — зовнішню оболонку, багату на водень, та внутрішню хмару, насичену важчими елементами, створеними вмираючою зіркою.
+    </string>
+    <string name="object_info_exposed_cranium_nebula_distance" translation_description="Distance to the Exposed Cranium Nebula shown in the info card. Translate units if appropriate for your locale.">~5 000 світлових років</string>
+    <string name="object_info_exposed_cranium_nebula_size" translation_description="Physical size of the Exposed Cranium Nebula shown in the info card. Translate units if appropriate for your locale.">~2 світлові роки у діаметрі</string>
+
+    <!-- Jewel Box (NGC 4755) -->
+    <string name="object_info_jewel_box_description" translation_description="Description of the Jewel Box cluster shown in the info card. Translate this text.">
+    Скупчення Скарбниця (NGC 4755) — це молоде, блискуче розсіяне скупчення в сузір\'ї Південний Хрест, легко видиме неозброєним оком як туманна ділянка четвертої зоряної величини трохи південніше від Мімози. При спостереженні в телескоп його зорі сяють яскравими контрастними кольорами — глибокі блакитні надгіганти поряд з вражаючим червоним надгігантом — що й дало йому назву, яку дав йому Джон Гершель: чудовий шматочок коштовної прикраси. Віком лише 14–16 мільйонів років, це одне з наймолодших і найбарвистіших скупчень на небі.
+    </string>
+    <string name="object_info_jewel_box_funfact" translation_description="Fun fact about the Jewel Box shown in the info card. Translate this text.">
+    Видатна червона зірка скупчення κ Crucis — червоний надгігант, настільки світлий, що перевищує яскравість Сонця більш ніж у 100 000 разів — яскравий нагадувач про те, що зоряні скупчення мають різні кольори.
+    </string>
+    <string name="object_info_jewel_box_distance" translation_description="Distance to the Jewel Box shown in the info card. Translate units if appropriate for your locale.">~6 500 світлових років</string>
+    <string name="object_info_jewel_box_size" translation_description="Physical size of the Jewel Box shown in the info card. Translate units if appropriate for your locale.">~19 світлових років у діаметрі</string>
+
+    <!-- Double Cluster (NGC 869 & NGC 884) -->
+    <string name="object_info_double_cluster_description" translation_description="Description of the Double Cluster shown in the info card. Translate this text.">
+    Подвійне скупчення (NGC 869 та NGC 884) — це вражаюча пара молодих розсіяних зоряних скупчень у сузір\'ї Персей, розташованих поруч на небі на відстані трохи більше градуса. Обидва видні неозброєним оком як туманна пляма, але навіть невеликий телескоп розкриває сотні блискучих синьо-білих надгігантів, упакованих у два мерехтливі рої. На відстані приблизно 7500 світлових років вони розташовані в межах Рукава Персея нашої галактики й входять до числа найкращих об\'єктів для спостереження в бінокль на північному небі.
+    </string>
+    <string name="object_info_double_cluster_funfact" translation_description="Fun fact about the Double Cluster shown in the info card. Translate this text.">
+    Подвійному скупленню всього 14 мільйонів років, тому воно надзвичайно молоде — настільки недавно народилося, що його найбільш масивні зірки все ще сяють синіми надгігантами, а кілька вже еволюціонували в рідкісні, палаючі червоні надгіганти.
+    </string>
+    <string name="object_info_double_cluster_distance" translation_description="Distance to the Double Cluster shown in the info card. Translate units if appropriate for your locale.">~7 500 світлових років</string>
+    <string name="object_info_double_cluster_size" translation_description="Physical size of the Double Cluster shown in the info card. Translate units if appropriate for your locale.">
+    Кожне скупчення ~70 світлових років у діаметрі; пара розділена ~1 000 світлових років
+    </string>
+
+    <!-- 47 Tucanae (NGC 104) -->
+    <string name="object_info_n47_tucanae_description" translation_description="Description of 47 Tucanae shown in the info card. Translate this text.">
+    47 Tucanae (NGC 104) — другий за яскравістю кульовий скупчення на небі, щільна куля приблизно з одного мільйона давніх зірок, що обертаються навколо Чумацького Шляху в сузір\'ї Тукана. На відстані близько 14 500 світлових років воно видно неозброєним оком як розмита зірка четвертої величини, але телескоп розділяє його стиснене ядро на надзвичайний рій золотих і блакитно-білих сонць. Його зірки утворилися близько 13 мільярдів років тому, що робить скупчення майже таким же старим, як сама Всесвіт.
+    </string>
+    <string name="object_info_n47_tucanae_funfact" translation_description="Fun fact about 47 Tucanae shown in the info card. Translate this text.">
+    47 Tucanae — це космічна фабрика пульсарів: астрономи знайшли щонайменше 35 мілісекундних пульсарів, які обертаються сотні разів на секунду всередині неї — більше, ніж у будь-якому іншому відомому кульовому скупленні — результат близьких зоряних зустрічей, які переробляють старі нейтронні зорі, розкручуючи їх.
+    </string>
+    <string name="object_info_n47_tucanae_distance" translation_description="Distance to 47 Tucanae shown in the info card. Translate units if appropriate for your locale.">~14 500 світлових років</string>
+    <string name="object_info_n47_tucanae_size" translation_description="Physical size of 47 Tucanae shown in the info card. Translate units if appropriate for your locale.">~120 світлових років у діаметрі</string>
+
+    <!-- Centaurus A (NGC 5128) -->
+    <string name="object_info_centaurus_a_description" translation_description="Description of Centaurus A shown in the info card. Translate this text.">
+    Центавр A (NGC 5128) — найближча до Землі активна радіогалактика, гігантська еліптична галактика в сузір\'ї Центавра, чия вразлива темна смуга пилу видає насильницьке минуле — спіральна галактика, поглинута приблизно 200–700 мільйонів років тому. У її центрі криється надмасивна чорна діра масою 55 мільйонів сонячних мас, яка генерує релятивістські струмені, що простягаються більш ніж на мільйон світлових років у радіодіапазоні. На відстані приблизно 12 мільйонів світлових років вона є однією з найбільш вивчених галактик на небі.
+    </string>
+    <string name="object_info_centaurus_a_funfact" translation_description="Fun fact about Centaurus A shown in the info card. Translate this text.">
+    Центавр A — один з найпотужніших природних радіопередавачів на небі — його джети викидають плазму зі швидкістю, близькою до швидкості світла, а повна протяжність його радіолопатей охоплює площу, еквівалентну приблизно 100 повним місяцям, розташованим один за одним на небі.
+    </string>
+    <string name="object_info_centaurus_a_distance" translation_description="Distance to Centaurus A shown in the info card. Translate units if appropriate for your locale.">~12 мільйонів світлових років</string>
+    <string name="object_info_centaurus_a_size" translation_description="Physical size of Centaurus A shown in the info card. Translate units if appropriate for your locale.">~123 000 світлових років у діаметрі</string>
+
     <!-- ==================== CONSTELLATIONS ==================== -->
     <!-- Note: Constellation names are defined in celestial_objects.xml -->
     <!-- Orion -->
@@ -1975,4 +2036,697 @@
     Вулпекула містить туманність Гантель (M27), першу планетарну туманність, коли-небудь виявлену (Шарлем Мессьє у 1764 році), та прекрасну мішень для бінокля!
     </string>
     <string name="object_info_vulpecula_size" translation_description="Physical size of Vulpecula shown in the info card. Translate units if appropriate for your locale.">268 квадратних градусів</string>
+
+    <!-- Galilean Moons of Jupiter -->
+    <string name="object_info_io_description" translation_description="Description of Io shown in the info card. Translate this text.">
+    Іо — найвнутрішніший з чотирьох великих галілеєвих супутників Юпітера та найбільш вулканічно активне тіло в Сонячній системі.
+    </string>
+    <string name="object_info_io_funfact" translation_description="Fun fact about Io shown in the info card. Translate this text.">
+    На Іо сотні активних вулканів, деякі з яких викидають лавові фонтани на десятки кілометрів у висоту. Її постійна активність викликана припливним нагріванням від величезної гравітації Юпітера.
+    </string>
+    <string name="object_info_io_distance" translation_description="Distance to Io shown in the info card. Translate units if appropriate for your locale.">421 700 км від Юпітера</string>
+    <string name="object_info_io_size" translation_description="Physical size of Io shown in the info card. Translate units if appropriate for your locale.">3 643 км діаметр</string>
+
+    <string name="object_info_europa_description" translation_description="Description of Europa shown in the info card. Translate this text.">
+    Європа — другий галілеїв супутник, і вважається, що під його льодяною корою знаходиться величезний океан рідкої води, що робить його одним із найперспективніших місць для пошуку життя.
+    </string>
+    <string name="object_info_europa_funfact" translation_description="Fun fact about Europa shown in the info card. Translate this text.">
+    Підземний океан Європи може містити вдвічі більше рідкої води, ніж усі земні океани разом, утримуючись у рідкому стані завдяки припливному нагріванню від Юпітера.
+    </string>
+    <string name="object_info_europa_distance" translation_description="Distance to Europa shown in the info card. Translate units if appropriate for your locale.">671 100 км від Юпітера</string>
+    <string name="object_info_europa_size" translation_description="Physical size of Europa shown in the info card. Translate units if appropriate for your locale.">3 122 км діаметр</string>
+
+    <string name="object_info_ganymede_description" translation_description="Description of Ganymede shown in the info card. Translate this text.">
+    Ганімед — найбільший супутник у Сонячній системі — навіть більший за планету Меркурій. Це єдиний відомий супутник, який генерує власне магнітне поле.
+    </string>
+    <string name="object_info_ganymede_funfact" translation_description="Fun fact about Ganymede shown in the info card. Translate this text.">
+    Ганімед більший за розміром, ніж Меркурій, хоча його маса становить лише половину маси Меркурія. Його внутрішнє магнітне поле створює власну мініатюрну магнітосферу всередині набагато більшої магнітосфери Юпітера.
+    </string>
+    <string name="object_info_ganymede_distance" translation_description="Distance to Ganymede shown in the info card. Translate units if appropriate for your locale.">1 070 400 км від Юпітера</string>
+    <string name="object_info_ganymede_size" translation_description="Physical size of Ganymede shown in the info card. Translate units if appropriate for your locale.">5 268 км діаметр</string>
+
+    <string name="object_info_callisto_description" translation_description="Description of Callisto shown in the info card. Translate this text.">
+    Каллісто — найзовнішній з галілеєвих супутників і одне з найбільш кратеризованих тіл Сонячної системи, його давня поверхня зберігає запис про ранні удари в Сонячну систему.
+    </string>
+    <string name="object_info_callisto_funfact" translation_description="Fun fact about Callisto shown in the info card. Translate this text.">
+    Каліст обертається за межами основних радіаційних поясів Юпітера, що робить його найбезпечнішим з галілеєвих супутників для майбутніх людських досліджень — його іноді називають \'воротами до Місяця\'.
+    </string>
+    <string name="object_info_callisto_distance" translation_description="Distance to Callisto shown in the info card. Translate units if appropriate for your locale.">1 882 700 км від Юпітера</string>
+    <string name="object_info_callisto_size" translation_description="Physical size of Callisto shown in the info card. Translate units if appropriate for your locale.">4 821 км діаметр</string>
+
+    <!-- Moons of Mars -->
+    <string name="object_info_phobos_description" translation_description="Description of Phobos shown in the info card. Translate this text.">
+    Фобос — більший і внутрішній з двох супутників Марса, який обертається ближче до своєї планети, ніж будь-який інший супутник у Сонячній системі. Це неправильної форми тіло з глибокими борозенками і кратерами, яке вважається захопленим астероїдом.
+    </string>
+    <string name="object_info_phobos_funfact" translation_description="Fun fact about Phobos shown in the info card. Translate this text.">
+    Фобос обертається навколо Марса так швидко, що сходить на заході й заходить на сході — і він повільно спіралює всередину, приречений або впасти на Марс, або розпастися на кільце приблизно за 50 мільйонів років.
+    </string>
+    <string name="object_info_phobos_distance" translation_description="Distance to Phobos shown in the info card. Translate units if appropriate for your locale.">9 376 км від Марса</string>
+    <string name="object_info_phobos_size" translation_description="Physical size of Phobos shown in the info card. Translate units if appropriate for your locale.">27 × 22 × 18 км</string>
+
+    <string name="object_info_deimos_description" translation_description="Description of Deimos shown in the info card. Translate this text.">
+    Деймос — менший і зовнішній з двох супутників Марса з гладкою, покритою пилом поверхнею, що надає йому більш округлий вигляд, ніж Фобос. Як і його супутник, вважається захопленим астероїдом з зовнішнього поясу.
+    </string>
+    <string name="object_info_deimos_funfact" translation_description="Fun fact about Deimos shown in the info card. Translate this text.">
+    Деймос настільки малий і далекий, що з поверхні Марса він виглядає як звичайна яскрава зірка, яка повільно дрейфує небом протягом близько 30 годин.
+    </string>
+    <string name="object_info_deimos_distance" translation_description="Distance to Deimos shown in the info card. Translate units if appropriate for your locale.">23 460 км від Марса</string>
+    <string name="object_info_deimos_size" translation_description="Physical size of Deimos shown in the info card. Translate units if appropriate for your locale.">15 × 12 × 11 км</string>
+
+    <!-- Major Moons of Saturn -->
+    <string name="object_info_titan_description" translation_description="Description of Titan shown in the info card. Translate this text.">
+    Титан — найбільший супутник Сатурна та другий за величиною супутник у Сонячній системі. Це єдиний супутник, який, як відомо, має густу атмосферу — товстий азотний шар, насичений метаном — та єдиний світ поза Землею, на якому відомі стабільні рідкі моря на поверхні.
+    </string>
+    <string name="object_info_titan_funfact" translation_description="Fun fact about Titan shown in the info card. Translate this text.">
+    Озера та моря Титана заповнені не водою, а рідким метаном та етаном при морозній температурі −179°C. Ротокрафт NASA Dragonfly, який має прибути у 2034 році, буде літати між місцями на поверхні Титана в пошуках хімії життя.
+    </string>
+    <string name="object_info_titan_distance" translation_description="Distance to Titan shown in the info card. Translate units if appropriate for your locale.">1 221 870 км від Сатурна</string>
+    <string name="object_info_titan_size" translation_description="Physical size of Titan shown in the info card. Translate units if appropriate for your locale.">5 151 км діаметр</string>
+
+    <string name="object_info_rhea_description" translation_description="Description of Rhea shown in the info card. Translate this text.">
+    Рея — другий за величиною супутник Сатурна, важкий крижано-кам\'яний світ, вкритий кратерами. Його бліде, давнє поверхня зберігає одні з найпристинніших ударних кратерів Сонячної системи, поряд з яскравими крижаними скелями, де зсуви відкрили свіжий матеріал з-під поверхні.
+    </string>
+    <string name="object_info_rhea_funfact" translation_description="Fun fact about Rhea shown in the info card. Translate this text.">
+    У 2008 році дані Cassini припустили, що Рея може мати тонке кільце уламків, що обертається навколо неї — що зробило б її першим супутником, коли-небудь виявленим з власною системою кілець. Якби це було підтверджено, це була б видатна відкриття; докази залишаються активною областю дослідження.
+    </string>
+    <string name="object_info_rhea_distance" translation_description="Distance to Rhea shown in the info card. Translate units if appropriate for your locale.">527 108 км від Сатурна</string>
+    <string name="object_info_rhea_size" translation_description="Physical size of Rhea shown in the info card. Translate units if appropriate for your locale.">1 527 км діаметр</string>
+
+    <string name="object_info_tethys_description" translation_description="Description of Tethys shown in the info card. Translate this text.">
+    Тефія — льодяний супутник Сатурна, якому властиві два видатні утворення: величезний кратер Одісей, 400 км завширшки, що займає майже третину поверхні супутника, та каньйон Іфака Хасма, система розломів, що тягнеться на три чверті довкола земної кулі.
+    </string>
+    <string name="object_info_tethys_funfact" translation_description="Fun fact about Tethys shown in the info card. Translate this text.">
+    Тетіс майже повністю складається з водяного льоду — вона має одну з найнижчих щільностей серед усіх супутників Сонячної системи, ледь щільніша за замерзлу воду. Ущелина Іфака могла утворитися, коли внутрішня частина замерзла й розширилася, розколюючи верхню кору зсередини.
+    </string>
+    <string name="object_info_tethys_distance" translation_description="Distance to Tethys shown in the info card. Translate units if appropriate for your locale.">294 619 км від Сатурна</string>
+    <string name="object_info_tethys_size" translation_description="Physical size of Tethys shown in the info card. Translate units if appropriate for your locale.">1 062 км діаметр</string>
+
+    <string name="object_info_dione_description" translation_description="Description of Dione shown in the info card. Translate this text.">
+    Діона — льодяний супутник Сатурна з сильно кратеризованою передньою стороною та задною півсферою, вкритою яскравими льодяними скелями — лініями розломів, де давні тектонічні сили оголили свіжий лід з глибин. Дані гравіметрії «Кассіні» натякають на підповерхневий рідкий океан під кірою.
+    </string>
+    <string name="object_info_dione_funfact" translation_description="Fun fact about Dione shown in the info card. Translate this text.">
+    Діона ділить свою орбіту з двома крихітними супутниками, Еленою та Полідевком, які зафіксовані на 60° попереду та позаду неї в точках гравітаційної рівноваги, які називаються точками Лагранжа. Елену особливо можна побачити, як вона їде разом, як космічна автостопниця, на зображеннях Кассіні.
+    </string>
+    <string name="object_info_dione_distance" translation_description="Distance to Dione shown in the info card. Translate units if appropriate for your locale.">377 396 км від Сатурна</string>
+    <string name="object_info_dione_size" translation_description="Physical size of Dione shown in the info card. Translate units if appropriate for your locale.">1 122 км діаметр</string>
+
+    <string name="object_info_iapetus_description" translation_description="Description of Iapetus shown in the info card. Translate this text.">
+    Іапет — один з найбільш своєрідних супутників Сатурна: його передня півсфера вкрита чорною як вугілля речовиною, а задня півсфера — яскраво-білим льодом. Цей екстремальний двокольоровий вигляд спантеличив Джованні Кассіні, коли він відкрив супутник у 1671 році, і контраст настільки яскравий, що його видно в невеликі телескопи.
+    </string>
+    <string name="object_info_iapetus_funfact" translation_description="Fun fact about Iapetus shown in the info card. Translate this text.">
+    Іапет також має величезний екваторіальний хребет висотою 20 км — вищий за будь-яку гору на Землі — що тягнеться на тисячі кілометрів навколо його екватора. Його походження невідоме: це може бути залишком зруйнованого кільця або давнього тектонічного складчастості, утвореного, коли місяць обертався набагато швидше давно.
+    </string>
+    <string name="object_info_iapetus_distance" translation_description="Distance to Iapetus shown in the info card. Translate units if appropriate for your locale.">3 560 820 км від Сатурна</string>
+    <string name="object_info_iapetus_size" translation_description="Physical size of Iapetus shown in the info card. Translate units if appropriate for your locale.">1 469 км діаметр</string>
+
+    <!-- Moon of Neptune -->
+    <string name="object_info_triton_description" translation_description="Description of Triton shown in the info card. Translate this text.">
+    Тритон — найбільший супутник Нептуна і одне з найбільш екстраординарних тіл Сонячної системи. Він обертається навколо Нептуна у зворотному напрямку — протилежно до власного обертання планети — що є сильною ознакою того, що він був захоплений з зовнішньої Сонячної системи, найімовірніше з поясу Койпера, на ранніх етапах історії Нептуна.
+    </string>
+    <string name="object_info_triton_funfact" translation_description="Fun fact about Triton shown in the info card. Translate this text.">
+    Незважаючи на температуру поверхні −235°C — найхолоднішу, виміряну на будь-якому тілі, відвідуваному космічним апаратом — «Вояджер 2» виявив активні азотні гейзери на Тритоні в 1989 році. Темні смуги на поверхні позначають місця, де стовпи газу та темної речовини вирвалися на кілометри в розріджену атмосферу.
+    </string>
+    <string name="object_info_triton_distance" translation_description="Distance to Triton shown in the info card. Translate units if appropriate for your locale.">354 759 км від Нептуна</string>
+    <string name="object_info_triton_size" translation_description="Physical size of Triton shown in the info card. Translate units if appropriate for your locale.">2707 км діаметр</string>
+
+    <!-- Major Moons of Uranus -->
+    <string name="object_info_titania_description" translation_description="Description of Titania shown in the info card. Translate this text.">
+    Титанія — найбільший супутник Урана та восьмий за величиною супутник у Сонячній системі. Її поверхня показує суміш давніх кратерованих рівнин та молодших уступів і долин, що свідчить про складну геологічну історію, яка могла включати минулу тектонічну активність, що переформувала льодяну кору.
+    </string>
+    <string name="object_info_titania_funfact" translation_description="Fun fact about Titania shown in the info card. Translate this text.">
+    Усі місяці Урана названі на честь персонажів Шекспіра та Олександра Попа — Титанія — королева фей у п\'єсі «Сон літньої ночі». Це один з небагатьох великих місяців планет, названих не на честь персонажа грецької чи римської міфології.
+    </string>
+    <string name="object_info_titania_distance" translation_description="Distance to Titania shown in the info card. Translate units if appropriate for your locale.">435910 км від Урана</string>
+    <string name="object_info_titania_size" translation_description="Physical size of Titania shown in the info card. Translate units if appropriate for your locale.">1578 км діаметр</string>
+
+    <string name="object_info_oberon_description" translation_description="Description of Oberon shown in the info card. Translate this text.">
+    Оберон — найзовнішній з п\'яти великих супутників Урана та один з найбільш кратеризованих, з давньою поверхнею, яка мало змінилася з ранніх етапів формування Сонячної системи. Кілька його великих кратерів удару мають темний матеріал на дні, можливо органічні відкладення, принесені тілами, що вдарилися.
+    </string>
+    <string name="object_info_oberon_funfact" translation_description="Fun fact about Oberon shown in the info card. Translate this text.">
+    На Обероні розташована гора, яка піднімається приблизно на 6 км від навколишніх рівнин — порівняно з найвищими вершинами на Землі. На відміну від земних гір, які утворилися внаслідок тектоніки плит, ця особливість може бути центральною вершиною давнього кратера удару або залишком ранньої вулканічної активності.
+    </string>
+    <string name="object_info_oberon_distance" translation_description="Distance to Oberon shown in the info card. Translate units if appropriate for your locale.">583520 км від Урана</string>
+    <string name="object_info_oberon_size" translation_description="Physical size of Oberon shown in the info card. Translate units if appropriate for your locale.">1523 км діаметр</string>
+
+    <string name="object_info_ariel_description" translation_description="Description of Ariel shown in the info card. Translate this text.">
+    Аріель має найбільш молоду та найяскравішу поверхню серед п\'яти великих супутників Урана. Її ландшафт характеризується мережею глибоких долин та гладких рівнин, які давно були перетворені рідиною — ймовірно водою або сумішами води та аміаку — що виходили з надр та затоплювали давні території.
+    </string>
+    <string name="object_info_ariel_funfact" translation_description="Fun fact about Ariel shown in the info card. Translate this text.">
+    Долини Аріеля можуть досягати глибини 10 км — набагато глибше, ніж Великий каньйон. Спостереження космічного телескопа Джеймса Вебба виявили вуглекислий газ у вигляді льоду на поверхні Аріеля, що вказує на постійну хімію поверхні, викликану зарядженими частинками магнітного поля Урана.
+    </string>
+    <string name="object_info_ariel_distance" translation_description="Distance to Ariel shown in the info card. Translate units if appropriate for your locale.">191020 км від Урана</string>
+    <string name="object_info_ariel_size" translation_description="Physical size of Ariel shown in the info card. Translate units if appropriate for your locale.">1158 км діаметр</string>
+
+    <string name="object_info_umbriel_description" translation_description="Description of Umbriel shown in the info card. Translate this text.">
+    Умбріель — найтемніший з п\'яти великих супутників Урана з рівномірно старою та густо кратеризованою поверхнею, яка показує мало ознак геологічного переформування, спостережуваного на його сусідніх супутниках. Його внутрішня частина, схоже, залишалася холодною та замерзлою з ранніх етапів історії Сонячної системи.
+    </string>
+    <string name="object_info_umbriel_funfact" translation_description="Fun fact about Umbriel shown in the info card. Translate this text.">
+    Найбільш вражаючою особливістю Умбріеля є Вунда — яскравий кільцевий утвір діаметром близько 140 км біля його екватора. Виявлена зондом «Вояджер-2» у 1986 році, точна природа Вунди залишається загадкою — це може бути дно кратера, вкрите двоокисом вуглецю або інеєм аміаку, що відклався набагато пізніше після удару, який його утворив.
+    </string>
+    <string name="object_info_umbriel_distance" translation_description="Distance to Umbriel shown in the info card. Translate units if appropriate for your locale.">266300 км від Урана</string>
+    <string name="object_info_umbriel_size" translation_description="Physical size of Umbriel shown in the info card. Translate units if appropriate for your locale.">1170 км діаметр</string>
+
+    <!-- Globular clusters already on the map -->
+    <string name="object_info_omega_centauri_description" translation_description="Description of Omega Centauri shown in the info card. Translate this text.">
+    Омега Центавра — найбільше та найбільш масивне кульове скупчення, що обертається навколо Чумацького Шляху, містить приблизно 10 мільйонів зірок, упакованих у сферу діаметром близько 150 світлових років. Воно легко видиме неозброєним оком як розмита зірка в сузір\'ї Центавра і розкривається в захоплюючу кулю зірок у бінокль або будь-який телескоп.
+    </string>
+    <string name="object_info_omega_centauri_funfact" translation_description="Fun fact about Omega Centauri shown in the info card. Translate this text.">
+    На відміну від типових кульових скупчень, Омега Центавра містить зірки багатьох різних віків і хімічних складів — ознака того, що це може бути оголена ядро карликової галактики, яка була розірвана і поглинута Чумацьким Шляхом мільярди років тому. Вона навіть може містити центральну чорну діру проміжної маси.
+    </string>
+    <string name="object_info_omega_centauri_distance" translation_description="Distance to Omega Centauri shown in the info card. Translate units if appropriate for your locale.">17090 світлових років</string>
+    <string name="object_info_omega_centauri_size" translation_description="Physical size of Omega Centauri shown in the info card. Translate units if appropriate for your locale.">~150 світлових років діаметр</string>
+
+    <!-- Deep-sky objects: new catalog additions -->
+    <string name="object_info_hyades_description" translation_description="Description of the Hyades star cluster shown in the info card. Translate this text.">
+    Гіади — найближіше до Сонячної системи розсіяне зоряне скупчення та одне з найбільш вивчених в астрономії. Видиме неозброєним оком як V-подібна картина зірок, що утворюють обличчя Тельця, воно містить кілька сотень зірок, розкиданих приблизно на 5° неба.
+    </string>
+    <string name="object_info_hyades_funfact" translation_description="Fun fact about the Hyades shown in the info card. Translate this text.">
+    Яскравої помаранчевої зірці Альдебаран здається, що вона розташована всередині Гіад, але насправді вона є об\'єктом переднього плану на половині відстані — випадкове вирівнювання. Справжнє скупчення знаходиться приблизно на відстані 153 світлових років і містить перші зірки, відстані до яких були виміряні паралаксом за допомогою супутника Гіппаркос.
+    </string>
+    <string name="object_info_hyades_distance" translation_description="Distance to the Hyades shown in the info card. Translate units if appropriate for your locale.">153 світлові роки</string>
+    <string name="object_info_hyades_size" translation_description="Angular size of the Hyades shown in the info card.">~5° в поперечнику</string>
+
+    <string name="object_info_coma_star_cluster_description" translation_description="Description of the Coma Berenices Star Cluster shown in the info card. Translate this text.">
+    Зоряне скупчення Волосся Вероніки — це близьке відкрите скупчення приблизно 40 зірок, розсіяних по майже 5° неба, легко видиме неозброєним оком як м\'яка дымка в темних умовах. Це третє найближче відкрите скупчення до Сонячної системи та джерело сузір\'я Волосся Вероніки.
+    </string>
+    <string name="object_info_coma_star_cluster_funfact" translation_description="Fun fact about the Coma Berenices Star Cluster shown in the info card. Translate this text.">
+    Давні спостерігачі бачили це скупчення як волосся королеви Береніки II Єгипту, яка за легендою обрізала свої золоті локони як дар на честь безпечного повернення свого чоловіка з війни. Птолемей III нібито офіційно назвав цю незвичайну сузір\'я на її честь близько 245 року до н.е.
+    </string>
+    <string name="object_info_coma_star_cluster_distance" translation_description="Distance to the Coma Star Cluster shown in the info card. Translate units if appropriate for your locale.">288 світлових років</string>
+    <string name="object_info_coma_star_cluster_size" translation_description="Angular size of the Coma Star Cluster shown in the info card.">~5° в поперечнику</string>
+
+    <string name="object_info_coathanger_description" translation_description="Description of the Coathanger asterism shown in the info card. Translate this text.">
+    Вішалка — це вражаючий астеризм з десяти зірок у сузір\'ї Лисиця, які утворюють неповторну форму: шість зірок у прямій лінії з чотирма, що звисають нижче у вигляді гачка, точно нагадуючи перевернену вішалку. Це один з найкращих об\'єктів для спостереження в бінокль у літньому небі, який ідеально вписується в типове поле зору бінокля.
+    </string>
+    <string name="object_info_coathanger_funfact" translation_description="Fun fact about the Coathanger shown in the info card. Translate this text.">
+    Незважаючи на те, що Вішалка виглядає як скупчення, її зірки не пов\'язані фізично — вони знаходяться на дуже різних відстанях і є просто збігом по лінії зору. Скупчення Брокки було каталогізовано Далміро Брокки в 1920-х роках, а першим космічним телескопом, який його зобразив, був Гіппарх, який підтвердив, що зірки не пов\'язані.
+    </string>
+    <string name="object_info_coathanger_distance" translation_description="Distance to the Coathanger shown in the info card. Translate units if appropriate for your locale.">~420 світлових років (найяскравіша зірка)</string>
+    <string name="object_info_coathanger_size" translation_description="Angular size of the Coathanger shown in the info card.">~1° в поперечнику</string>
+
+    <string name="object_info_helix_nebula_description" translation_description="Description of the Helix Nebula shown in the info card. Translate this text.">
+    Туманність Геліакс — найбільша планетарна туманність за видимим розміром на небі — розширюється оболонка газу, викинута зіркою, подібною до Сонця, наприкінці її життя. Розтягуючись приблизно на половину градуса, вона видима в бінокль як слабкий круглий сяйв Водолії та отримала прізвисько Око Божого за свій вигляд на довгоекспозиційних фотографіях.
+    </string>
+    <string name="object_info_helix_nebula_funfact" translation_description="Fun fact about the Helix Nebula shown in the info card. Translate this text.">
+    У центрі туманності Геліакс знаходиться один із найближчих до Землі відомих білих карликів — надзвичайно гарячий залишок зірки розміром з Землю, але з масою Сонця. Це доля, яка чекає на наше Сонце приблизно через п\'ять мільярдів років.
+    </string>
+    <string name="object_info_helix_nebula_distance" translation_description="Distance to the Helix Nebula shown in the info card. Translate units if appropriate for your locale.">650 світлових років</string>
+    <string name="object_info_helix_nebula_size" translation_description="Angular size of the Helix Nebula shown in the info card.">~3 світлові роки діаметр</string>
+
+    <string name="object_info_sculptor_galaxy_description" translation_description="Description of the Sculptor Galaxy shown in the info card. Translate this text.">
+    Галактика Скульптор — одна з найяскравіших і найпрекрасніших спіральних галактик, видимих з Землі в профіль, що з\'являється як видовжене сяйво в південному сузір\'ї Скульптор. Це одна з найближчих спалахуючих галактик — галактика, яка переживає інтенсивний спалах зореутворення — видима для астрономів-аматорів з біноклем з темного неба.
+    </string>
+    <string name="object_info_sculptor_galaxy_funfact" translation_description="Fun fact about the Sculptor Galaxy shown in the info card. Translate this text.">
+    Галактика Скульптор — один з найяскравіших членів Групи Скульптора — групи галактик, найближчої до нашої Місцевої групи. Її центральна область зоряного вибуху створює нові зірки зі швидкістю в кілька разів вищою, ніж у Чумацькому Шляху, що викликано попередніми взаємодіями з сусідніми галактиками.
+    </string>
+    <string name="object_info_sculptor_galaxy_distance" translation_description="Distance to the Sculptor Galaxy shown in the info card. Translate units if appropriate for your locale.">11,4 мільйона світлових років</string>
+    <string name="object_info_sculptor_galaxy_size" translation_description="Physical size of the Sculptor Galaxy shown in the info card. Translate units if appropriate for your locale.">~90000 світлових років в поперечнику</string>
+
+    <string name="object_info_blue_snowball_nebula_description" translation_description="Description of the Blue Snowball Nebula shown in the info card. Translate this text.">
+    Блакитна Сніжка — це планетарна туманність в Андромеді — світна оболонка газу, викинута вмираючою зіркою. При видимій зоряній величині 8,3 вона є однією з найяскравіших і найбарвистіших планетарних туманностей на небі, з\'являючись як яскравий синьо-зелений диск навіть у невеликих телескопах. Її симетрична форма та інтенсивний колір роблять її улюбленою серед спостерігачів.
+    </string>
+    <string name="object_info_blue_snowball_nebula_funfact" translation_description="Fun fact about the Blue Snowball Nebula shown in the info card. Translate this text.">
+    Вражаючий колір Блакитної Снігової кулі походить від подвійно іонізованого кисню, що світиться на певній зеленій довжині хвилі, в поєднанні з випромінюванням водню — палітра кольорів, яку людське око сприймає як блакитно-зелену. Центральний білий карлик має температуру поверхні близько 100 000°C, достатньо гарячу, щоб іонізувати навколишній газ на цій відстані.
+    </string>
+    <string name="object_info_blue_snowball_nebula_distance" translation_description="Distance to the Blue Snowball Nebula shown in the info card. Translate units if appropriate for your locale.">~2500 світлових років</string>
+    <string name="object_info_blue_snowball_nebula_size" translation_description="Physical size of the Blue Snowball Nebula shown in the info card. Translate units if appropriate for your locale.">~0,8 світлового року діаметр</string>
+
+    <string name="object_info_ghost_of_jupiter_description" translation_description="Description of the Ghost of Jupiter planetary nebula shown in the info card. Translate this text.">
+    Привид Юпітера — це яскрава планетарна туманність у сузір\'ї Гідра, видимий розмір якої подібний до розміру планети Юпітер — звідси й походить її назва. З видимою зоряною величиною 8,6 вона є однією з найдоступніших планетарних туманностей на небі для малих телескопів, демонструючи чіткий диск і натяк на колір при помірних апертурах.
+    </string>
+    <string name="object_info_ghost_of_jupiter_funfact" translation_description="Fun fact about the Ghost of Jupiter shown in the info card. Translate this text.">
+    Привид Юпітера має внутрішню яскраву оболонку, оточену слабшим зовнішнім ореолом — двошарова структура, що свідчить про те, що вмираюча зірка викинула газ щонайменше у два окремих епізоди. Її центральна зірка — один із найгарячіших відомих білих карликів із температурою поверхні близько 75 000°C.
+    </string>
+    <string name="object_info_ghost_of_jupiter_distance" translation_description="Distance to the Ghost of Jupiter shown in the info card. Translate units if appropriate for your locale.">~1400 світлових років</string>
+    <string name="object_info_ghost_of_jupiter_size" translation_description="Physical size of the Ghost of Jupiter shown in the info card. Translate units if appropriate for your locale.">~1 світловий рік діаметр</string>
+
+    <string name="object_info_saturn_nebula_description" translation_description="Description of the Saturn Nebula shown in the info card. Translate this text.">
+    Туманність Сатурна — це планетарна туманність у сузір\'ї Водолія, названа за схожість з планетою Сатурн — розширення, звані ансами, виступають з обох боків як кільцеві ручки, видимі в телескопах середньої потужності. При зоряній величині 8,0 вона є однією з найяскравіших планетарних туманностей на небі й демонструє складну структуру в більших приладах.
+    </string>
+    <string name="object_info_saturn_nebula_funfact" translation_description="Fun fact about the Saturn Nebula shown in the info card. Translate this text.">
+    Вільям Гершель відкрив туманність Сатурна в 1782 році і помітив схожість із Сатурном. Сучасні спостереження виявляють щонайменше чотири окремі оболонки газу навколо центрального білого карлика, що відображають кілька епізодів втрати маси на завершальних етапах життя зірки.
+    </string>
+    <string name="object_info_saturn_nebula_distance" translation_description="Distance to the Saturn Nebula shown in the info card. Translate units if appropriate for your locale.">~5000 світлових років</string>
+    <string name="object_info_saturn_nebula_size" translation_description="Physical size of the Saturn Nebula shown in the info card. Translate units if appropriate for your locale.">~1 світловий рік в поперечнику</string>
+
+    <string name="object_info_ngc_2903_description" translation_description="Description of the galaxy NGC 2903 shown in the info card. Translate this text.">
+    NGC 2903 — яскрава спіральна галактика з перемичкою в сузір\'ї Лева, часто називана «об\'єктом Мессьє, який Мессьє пропустив» — це одна з найбільш помітних галактик на небі, яка не включена в його знаменитий каталог. При зоряній величині 8,9 вона легко видима в бінокль і показує красиву спіральну структуру в телескопах середньої потужності.
+    </string>
+    <string name="object_info_ngc_2903_funfact" translation_description="Fun fact about NGC 2903 shown in the info card. Translate this text.">
+    NGC 2903 має одну з найвищих концентрацій зон зореутворення «гарячих точок» у центральній смузі галактики — щільні скупчення молодих масивних зір, освітлених інтенсивним зореутворенням. Вона використовується як еталон для вивчення активності спалахів зір у спіральних галактиках зі смугами.
+    </string>
+    <string name="object_info_ngc_2903_distance" translation_description="Distance to NGC 2903 shown in the info card. Translate units if appropriate for your locale.">30 мільйонів світлових років</string>
+    <string name="object_info_ngc_2903_size" translation_description="Physical size of NGC 2903 shown in the info card. Translate units if appropriate for your locale.">~80000 світлових років в поперечнику</string>
+
+    <!-- Meteor showers -->
+    <string name="object_info_quadrantids_description" translation_description="Description of the Quadrantids meteor shower shown in the info card. Translate this text.">
+    Квадранти́ди — це плідний січневий метеорний потік з дуже гострим, коротким максимумом, що триває лише кілька годин. Радіант розташований у сузір\'ї Волопас, поблизу положення неіснуючого сузір\'я Квадрант Мураліса, на честь якого названий цей потік. За ідеальних умов видно до 120 метеорів на годину.
+    </string>
+    <string name="object_info_quadrantids_funfact" translation_description="Fun fact about the Quadrantids meteor shower shown in the info card. Translate this text.">
+    На відміну від більшості великих метеорних потоків, які походять від комет, батьківське тіло Квадрантид — це астероїд 2003 EH1, який вважається спочатку неактивним ядром комети, що згоріла століття тому. Його існування було підтверджено лише у 2003 році.
+    </string>
+
+    <string name="object_info_lyrids_description" translation_description="Description of the Lyrids meteor shower shown in the info card. Translate this text.">
+    Ліриди — надійний весняний метеорний потік, що випромінюється поблизу яскравої зірки Вега в сузір\'ї Ліра. Вони створюють швидкі, помірно яскраві метеори, досягаючи піку близько 18 на годину, і час від часу генерують вогняні кулі, які залишають світлі дими.
+    </string>
+    <string name="object_info_lyrids_funfact" translation_description="Fun fact about the Lyrids meteor shower shown in the info card. Translate this text.">
+    Ліриди — найстаріший надійно задокументований метеорний потік в історії. Китайські астрономи зафіксували шторм метеорів, що «падали як дощ», у 687 році до н. е. Уламки походять від комети Тетчер, яка обертається навколо Сонця протягом 415 років і востаннє відвідала внутрішню Сонячну систему в 1861 році.
+    </string>
+
+    <string name="object_info_aquariids_description" translation_description="Description of the Eta Aquariids meteor shower shown in the info card. Translate this text.">
+    Eta Aquariids — один з двох щорічних метеорних потоків, утворених уламками комети Галлея. З піком до 70 метеорів на годину, цей потік сильно сприяє південній півкулі, де радіант піднімається високо перед світанком. Північні спостерігачі все ще можуть спостерігати поважну кількість 30 або більше метеорів на годину.
+    </string>
+    <string name="object_info_aquariids_funfact" translation_description="Fun fact about the Eta Aquariids meteor shower shown in the info card. Translate this text.">
+    Метеори Ета Акварідів рухаються зі швидкістю 66 км/с — настільки швидко, що іонізоване повітря, яке вони створюють, може світитися кілька секунд після того, як метеор зникне. Ви можете побачити древній пил Галлея, який згоряє перед вашими очима, розсіяний під час одного з багатьох візитів комети тисячі років тому.
+    </string>
+
+    <string name="object_info_deltaaquariids_description" translation_description="Description of the Delta Aquariids meteor shower shown in the info card. Translate this text.">
+    Південні Дельта Акварідиди досягають максимуму в кінці липня і найкраще видні з тропічних та південних широт, де радіант у сузір\'ї Водолія піднімається високо перед світанком. Вони створюють стійкий потік метеорів середньої швидкості до 16 на годину з кількома яскравими вогняними кулями.
+    </string>
+    <string name="object_info_deltaaquariids_funfact" translation_description="Fun fact about the Delta Aquariids meteor shower shown in the info card. Translate this text.">
+    Точне походження метеорного потоку Дельта Водолія залишається невизначеним. Основним кандидатом є комета 96P/Махгольц, незвичайна короткоперіодична комета з сильно нахиленою орбітою, яка дивовижно близько наближається до Сонця — ближче, ніж планета Меркурій.
+    </string>
+
+    <string name="object_info_perseids_description" translation_description="Description of the Perseids meteor shower shown in the info card. Translate this text.">
+    Персеїди — найпопулярніший метеорний потік року, що досягає піку в теплі серпневі ночі з кількістю до 100 метеорів на годину. Уламки, які розсіює комета Свіфта-Таттла, згорають високо в атмосфері Землі, створюючи швидкі, яскраві метеори — багато з них залишають стійкі світлі сліди — і радіюють від сузір\'я Персея.
+    </string>
+    <string name="object_info_perseids_funfact" translation_description="Fun fact about the Perseids meteor shower shown in the info card. Translate this text.">
+    Батько Персеїд, комета Свіфта-Таттла, має ядро шириною 26 км — більше, ніж об\'єкт, який, як вважається, спричинив масове вимирання, що закінчило епоху динозаврів. Комета востаннє проходила через внутрішню Сонячну систему в 1992 році і не повернеться до 2125 року.
+    </string>
+
+    <string name="object_info_orionids_description" translation_description="Description of the Orionids meteor shower shown in the info card. Translate this text.">
+    Орiоніди — це другий метеорний потік, який щороку утворюється кометою Галлея, випромінюючись поблизу піднятої палиці Оріона. З максимумом близько 25 метеорів на годину, вони відомі швидкими, часто яскравими метеорами, які часто залишають світлячі іонізаційні сліди, що тривають кілька секунд.
+    </string>
+    <string name="object_info_orionids_funfact" translation_description="Fun fact about the Orionids meteor shower shown in the info card. Translate this text.">
+    Комета Галлея відповідає за два щорічні метеорні потоки: Eta Aquariids у травні, коли Земля перетинає вихідний шлейф уламків комети, та Orionids у жовтні, коли Земля перетинає вхідний шлейф. Разом вони дозволяють нам два рази на рік спостерігати древній пил Галлея.
+    </string>
+
+    <string name="object_info_leonids_description" translation_description="Description of the Leonids meteor shower shown in the info card. Translate this text.">
+    Леоніди випромінюються з серпа Лева і зазвичай виробляють близько 20 метеорів на годину. Вони славляться спектакулярними штормами, які спалахують приблизно кожні 33 роки, коли Земля проходить через густий пилюч, пролитий кометою 55P/Темпель-Туттль. Ці шторми можуть виробляти тисячі метеорів на годину.
+    </string>
+    <string name="object_info_leonids_funfact" translation_description="Fun fact about the Leonids meteor shower shown in the info card. Translate this text.">
+    Буря Леонід 1833 року виробила приблизно 100 000 метеорів на годину, лякаючи спостерігачів по всій Північній Америці, які боялися, що небо горить. Ця подія започаткувала наукове вивчення метеорних потоків. Порівнянні бурі сталися в 1966 та 1999 роках.
+    </string>
+
+    <string name="object_info_puppidvelids_description" translation_description="Description of the Puppid-Velids meteor shower shown in the info card. Translate this text.">
+    Puppid-Velids — це комплекс перекриваючихся малих метеорних потоків, що випромінюються з сузір\'їв Puppis (Корма) та Vela (Вітрила) у південній Чумацькій дорозі. З піком близько 10 метеорів на годину, вони найкраще спостерігаються з південної півкулі, де радіант піднімається високо в грудневому небі.
+    </string>
+    <string name="object_info_puppidvelids_funfact" translation_description="Fun fact about the Puppid-Velids meteor shower shown in the info card. Translate this text.">
+    Вважається, що Пупіди-Велиди — це уламки від кількох різних батьківських комет, а не від одного джерела, включаючи комету 26P/Гріґґ-Скеллеруп. Їхній південний радіант ніколи не піднімається над горизонтом для спостерігачів на широтах північніше приблизно 40°N, що робить їх метеорним потоком, який більшість світу рідко бачить.
+    </string>
+
+    <string name="object_info_geminids_description" translation_description="Description of the Geminids meteor shower shown in the info card. Translate this text.">
+    Геміниди широко вважаються найкращим метеорним потоком року — багатим (до 120 на годину), надійним і активним з раннього вечора, а не тільки після півночі. Вони випромінюються з сузір\'я Близнюків і створюють широкий спектр яскравості метеорів, включаючи яскраві вогняні кулі.
+    </string>
+    <string name="object_info_geminids_funfact" translation_description="Fun fact about the Geminids meteor shower shown in the info card. Translate this text.">
+    На відміну від інших великих метеорних потоків, Близнюки походять від астероїда, а не від комети: 3200 Фаетон, «кам\'яна комета», орбіта якої проходить ближче до Сонця, ніж у будь-якого іншого названого астероїда. Екстремальна температура може розколювати його кам\'яну поверхню та викидати пил, який створює цей потік.
+    </string>
+
+    <string name="object_info_ursids_description" translation_description="Description of the Ursids meteor shower shown in the info card. Translate this text.">
+    Уршиди — це незначний метеорний потік, що випромінює з Малої Ведмедиці, поблизу Полярної зірки, що робить їх циркумполярними для спостерігачів північної півкулі — видимі всю ніч без заходу. Вони досягають максимуму близько зимового сонцестояння приблизно 10 метеорів на годину, а батьківська комета — 8P/Tuttle.
+    </string>
+    <string name="object_info_ursids_funfact" translation_description="Fun fact about the Ursids meteor shower shown in the info card. Translate this text.">
+    Уршиди іноді виробляють несподівані спалахи, набагато вищі за їхній типовий рівень. У 1945 році та знову в 2006 році спостерігачі зареєстрували 50 або більше метеорів на годину — у п\'ять разів більше за нормальний пік. Ці сплески відбуваються, коли Земля проходить через незвично густу стрічку уламків, викинутих під час близького зближення комети Тутля.
+    </string>
+
+    <!-- Category 5: Top priority — objects on the map that lacked info cards -->
+    <string name="object_info_m47_description" translation_description="Description of the open star cluster M47 shown in the info card. Translate this text.">
+    M47 — яскрава, розсипчаста відкрита зоря в Кормі, легко видима неозброєним оком і вражаюча в бінокль. Близько 50 зірок розсипані на половину градуса неба, з кількома помаранчевими гігантськими зірками, що додають теплих кольорів на тлі слабших блакитно-білих членів скупчення.
+    </string>
+    <string name="object_info_m47_funfact" translation_description="Fun fact about M47 shown in the info card. Translate this text.">
+    M47 був одним із «втрачених» об\'єктів Мессьє — помилка в переписуванні в оригінальних координатах Мессьє розмістила його в порожньому небі, залишаючи скупчення невизначеним протягом майже двох століть. Його справжня ідентичність як NGC 2422 була підтверджена лише в 1959 році, коли спостерігачі працювали в зворотному напрямку від опису Мессьє, щоб знайти помилку.
+    </string>
+    <string name="object_info_m47_distance" translation_description="Distance to M47 shown in the info card. Translate units if appropriate for your locale.">1600 світлових років</string>
+    <string name="object_info_m47_size" translation_description="Physical size of M47 shown in the info card. Translate units if appropriate for your locale.">~14 світлових років в поперечнику</string>
+
+    <string name="object_info_m41_description" translation_description="Description of the open star cluster M41 shown in the info card. Translate this text.">
+    M41 — це гарне розсіяне скупчення в сузір\'ї Великий Пес, розташоване всього на 4° південніше Сиріуса — найяскравішої зірки нічного неба. Видно неозброєним оком з темних місць і вражаюче в бінокль, воно містить близько 100 зірок, розкиданих на великій площі, з кількома вразливими помаранчевими гігантами серед слабших блакитно-білих членів.
+    </string>
+    <string name="object_info_m41_funfact" translation_description="Fun fact about M41 shown in the info card. Translate this text.">
+    Аристотель міг помітити M41 близько 325 року до н. е. — можливо, найраніше зареєстроване спостереження будь-якого глибокого космічного об\'єкту. Він описав «хмарну пляму» на південь від Сіріуса, яка збігається з положенням M41. Якщо ця ідентифікація правильна, M41 обговорювався майже за дві тисячі років до винаходу телескопа.
+    </string>
+    <string name="object_info_m41_distance" translation_description="Distance to M41 shown in the info card. Translate units if appropriate for your locale.">2300 світлових років</string>
+    <string name="object_info_m41_size" translation_description="Physical size of M41 shown in the info card. Translate units if appropriate for your locale.">~25 світлових років в поперечнику</string>
+
+    <string name="object_info_m24_description" translation_description="Description of the Sagittarius Star Cloud (M24) shown in the info card. Translate this text.">
+    M24 — хмара зірок Стрільця, не скупчення й не туманність, а вікно крізь щілину в пилу Чумацького Шляху, що розкриває чарівне зоряне поле розміром 2° на 2°. Це найбагатша область, видима крізь бінокль де-небудь на небі, заповнена тисячами зірок на різних відстанях одночасно.
+    </string>
+    <string name="object_info_m24_funfact" translation_description="Fun fact about M24 shown in the info card. Translate this text.">
+    Зірки в M24 знаходяться на різних відстанях — хмара зірок являє собою переріз диска Галактики, видимий крізь природний тунель у міжзоряному пилу, охоплюючи відстані від 10 000 до 16 000 світлових років. Всередину хмари вбудовані темні туманності та крихітні зоряні скупчення, які виглядають як темні плями на тлі блискучого зоряного фону.
+    </string>
+    <string name="object_info_m24_distance" translation_description="Distance range to M24 shown in the info card. Translate units if appropriate for your locale.">~10000–16000 світлових років (діапазон)</string>
+    <string name="object_info_m24_size" translation_description="Physical size of M24 shown in the info card. Translate units if appropriate for your locale.">~600 світлових років глибоке вікно</string>
+
+    <string name="object_info_m25_description" translation_description="Description of the open star cluster M25 shown in the info card. Translate this text.">
+    M25 — яскравий видимий неозброєним оком розсіяне скупчення в Стрільці, розташоване на тлі густих зоряних полів літнього Чумацького Шляху. Близько 600 зір розсипані по полю розміром в половину градуса, що робить його багатим об\'єктом для спостереження в бінокль. Його найяскравіші члени включають кілька блакитно-білих надгігантів і одну з найбільш вивчених змінних зір типу Цефеїди на небі.
+    </string>
+    <string name="object_info_m25_funfact" translation_description="Fun fact about M25 shown in the info card. Translate this text.">
+    M25 містить U Стрільця, класичну змінну зірку типу Цефеїди, яка яскравіє та тьмяніє з періодом 6,7 днів. Цефеїди є важливими «стандартними свічками» для вимірювання космічних відстаней, оскільки їхній період пульсації безпосередньо розкриває їхню справжню світність — астрономи використовували їх, щоб вперше визначити розмір Чумацького Шляху, а потім масштаб спостережуваного Всесвіту.
+    </string>
+    <string name="object_info_m25_distance" translation_description="Distance to M25 shown in the info card. Translate units if appropriate for your locale.">2000 світлових років</string>
+    <string name="object_info_m25_size" translation_description="Physical size of M25 shown in the info card. Translate units if appropriate for your locale.">~19 світлових років в поперечнику</string>
+
+    <string name="object_info_m39_description" translation_description="Description of the open star cluster M39 shown in the info card. Translate this text.">
+    M39 — це великий, розсіяний відкритий скупчення в сузір\'ї Лебідь, видиме неозброєним оком поблизу Денеба в багатій літній Чумацькому Шляху. Його приблизно 30 яскравих зірок розташовані вільно на площі близько одного градуса неба, найкраще спостерігаються при малому збільшенні в бінокль або ширококутному телескопі — більше збільшення просто розділяє його на розріджене, невиразне поле зірок.
+    </string>
+    <string name="object_info_m39_funfact" translation_description="Fun fact about M39 shown in the info card. Translate this text.">
+    На відстані близько 825 світлових років M39 є одним з найближчих до Землі відкритих скупчень, а його вік близько 240 мільйонів років робить його одним з найстаріших видимих неозброєним оком скупчень — достатньо старим, щоб його найбільш масивні зірки вже закінчили своє існування. Мессьє записав його в 1764 році, і він був серед найперших додатків до його каталогу.
+    </string>
+    <string name="object_info_m39_distance" translation_description="Distance to M39 shown in the info card. Translate units if appropriate for your locale.">825 світлових років</string>
+    <string name="object_info_m39_size" translation_description="Physical size of M39 shown in the info card. Translate units if appropriate for your locale.">~8 світлових років в поперечнику</string>
+
+    <!-- Category 5: Special cases -->
+    <string name="object_info_m63_description" translation_description="Description of the Sunflower Galaxy (M63) shown in the info card. Translate this text.">
+    Галактика Соняшник — це яскрава спіральна галактика в сузір\'ї Гончих Псів, чиї щільно закручені рукави, поцятковані областями зореутворення, надають їй характерної квіткоподібної текстури на довгоекспозиційних фотографіях. При зоряній величині 8,6 вона видима в бінокль з темного неба та легко показує свою видовжену форму та яскраве ядро в невеликих телескопах.
+    </string>
+    <string name="object_info_m63_funfact" translation_description="Fun fact about the Sunflower Galaxy shown in the info card. Translate this text.">
+    M63 була виявлена П\'єром Мешеном у 1779 році — одна з кількох об\'єктів Мессьє, знайдених Мешеном, а не самим Мессьє. Вона є членом Групи M51, фізично пов\'язана з Галактикою Вихор (M51), і показує ознаки минулої взаємодії: слабкий, давній зоряний потік обвивається навколо її зовнішнього диска.
+    </string>
+    <string name="object_info_m63_distance" translation_description="Distance to the Sunflower Galaxy shown in the info card. Translate units if appropriate for your locale.">29 мільйонів світлових років</string>
+    <string name="object_info_m63_size" translation_description="Physical size of the Sunflower Galaxy shown in the info card. Translate units if appropriate for your locale.">~100 000 світлових років в поперечнику</string>
+
+    <string name="object_info_ngc_6543_description" translation_description="Description of the Cat's Eye Nebula (NGC 6543) shown in the info card. Translate this text.">
+    Туманність Кошаче Око — одна з найбільш структурно складних планетарних туманностей, відомих науці — газ, викинутий вмираючою зіркою, сформований у концентричні оболонки, струмені та яскраві вузли, видимі на знімках телескопа Габбл. У невеликих телескопах вона виглядає як яскравий синьо-зелений диск у сузір\'ї Дракон, один з найбарвистіших об\'єктів осіннього неба.
+    </string>
+    <string name="object_info_ngc_6543_funfact" translation_description="Fun fact about the Cat's Eye Nebula shown in the info card. Translate this text.">
+    У 1864 році астроном Вільям Геґґінс спрямував спектроскоп на Кошаче Око і виявив, що воно складається зі світлого газу, а не з невирішених зірок — вперше була підтверджена природа будь-якої планетарної туманності. Це відкриття заснувало область спектроскопії туманностей і спростувало панівну думку, що всі туманності — це далекі скупчення зірок.
+    </string>
+    <string name="object_info_ngc_6543_distance" translation_description="Distance to the Cat's Eye Nebula shown in the info card. Translate units if appropriate for your locale.">~3 300 світлових років</string>
+    <string name="object_info_ngc_6543_size" translation_description="Physical size of the Cat's Eye Nebula shown in the info card. Translate units if appropriate for your locale.">~0,5 світлового року в діаметрі</string>
+
+    <string name="object_info_m76_description" translation_description="Description of the Little Dumbbell Nebula (M76) shown in the info card. Translate this text.">
+    Маленька гантель — це планетарна туманність у сузір\'ї Персея з характерною формою вісімки — менший родич M27, туманності Гантель у сузір\'ї Лисиці. Хоча це найслабша об\'єкт у каталозі Мессьє, вона винагороджує терпеливе спостереження в невеликих телескопах і показує красиву структуру в більших приладах з двома яскравішими часточками, що фланкують слабшу талію.
+    </string>
+    <string name="object_info_m76_funfact" translation_description="Fun fact about the Little Dumbbell Nebula shown in the info card. Translate this text.">
+    M76 спочатку був каталогізований як два окремих об\'єкти — NGC 650 та NGC 651 — тому що ранні спостерігачі описували дві яскраві частки незалежно. Це біполярна планетарна туманність, утворена коли потік від вмираючої зірки був затиснутий на екваторі, створюючи два розширюючихся лопаті вздовж полярної осі, тоді як газ також розширюється назовні на талії.
+    </string>
+    <string name="object_info_m76_distance" translation_description="Distance to the Little Dumbbell Nebula shown in the info card. Translate units if appropriate for your locale.">~2 500 світлових років</string>
+    <string name="object_info_m76_size" translation_description="Physical size of the Little Dumbbell Nebula shown in the info card. Translate units if appropriate for your locale.">~2 світлові роки в поперечнику</string>
+
+    <string name="object_info_v838_mon_description" translation_description="Description of V838 Monocerotis shown in the info card. Translate this text.">
+    V838 Monocerotis — це незвичайна змінна зоря в сузір\'ї Monoceros, яка пережила спектакулярний спалах у 2002 році, ненадовго ставши однією з найяскравіших зір у Чумацькому Шляху. Хоча сьогодні вона занадто слаба для спостереження неозброєним оком, її розширюючеся світлове еха — хвиля світла, що освітлює давні оболонки пилу — створила одні з найдраматичніших зображень, коли-небудь отриманих телескопом Хаббл.
+    </string>
+    <string name="object_info_v838_mon_funfact" translation_description="Fun fact about V838 Monocerotis shown in the info card. Translate this text.">
+    Природа спалаху V838 Mon залишається предметом дебатів. Провідна теорія — це зіяння зір — два зір, що спіралюють одна в одну та зіштовхуються — а не класична нова або вибух надгіганта. Якщо це підтвердиться, це був перший спостережений у реальному часі випадок «люмінозної червоної нової» — рідкісного класу вибухів, спричинених зіяннями зір; подібні події з тих пір були виявлені й в інших галактиках.
+    </string>
+    <string name="object_info_v838_mon_distance" translation_description="Distance to V838 Monocerotis shown in the info card. Translate units if appropriate for your locale.">~20 000 світлових років</string>
+    <string name="object_info_v838_mon_size" translation_description="Extent of the V838 Monocerotis light echo shown in the info card. Translate units if appropriate for your locale.">~3 світлові роки (протяжність світлового відлуння)</string>
+
+    <string name="object_info_hdf_description" translation_description="Description of the Hubble Deep Field shown in the info card. Translate this text.">
+    Глибоке поле Габбла — це крихітна ділянка неба розміром 2,6 кутових хвилин, яка здавалася порожньою, у сузір\'ї Велика Ведмедиця, сфотографована космічним телескопом Габбла протягом 10 послідовних днів у грудні 1995 року. Те, що здавалося порожнім простором, виявило приблизно 3000 галактик — охоплюючи мільярди років космічної історії — і принципово змінило наше уявлення про Всесвіт.
+    </string>
+    <string name="object_info_hdf_funfact" translation_description="Fun fact about the Hubble Deep Field shown in the info card. Translate this text.">
+    Ділянка неба була обрана спеціально тому, що вона не містила яскравих зірок і сусідніх галактик. Проте отримане зображення було заповнене приблизно 3000 галактик, що привело до оцінки, що все небо містить близько 200 мільярдів галактик — майже всі вони були невидимі для будь-якого телескопа до Габбла.
+    </string>
+    <string name="object_info_hdf_distance" translation_description="Distance to the most distant galaxies in the Hubble Deep Field shown in the info card. Translate units if appropriate for your locale.">~13 мільярдів світлових років (найдальші)</string>
+    <string name="object_info_hdf_size" translation_description="Angular size of the Hubble Deep Field shown in the info card.">2,6 кутових хвилин (поле зору)</string>
+
+    <string name="object_info_m43_description" translation_description="Description of De Mairan's Nebula (M43) shown in the info card. Translate this text.">
+    Туманність де Майрана — це відокремлена частина великого комплексу туманності Оріона, відділена від M42 темною смугою пилу, але належить до однієї величезної молекулярної хмари. Названа на честь французького астронома Жана-Жака Дортуса де Майрана, який помітив її у 1731 році, вона є емісійною туманністю, іонізованою гарячою молодою зіркою NU Orionis, вбудованою в її центр.
+    </string>
+    <string name="object_info_m43_funfact" translation_description="Fun fact about De Mairan's Nebula shown in the info card. Translate this text.">
+    Хоча M43 виглядає як окремий об\'єкт від M42, темна смуга, що їх розділяє, — це хмара космічного пилу на передньому плані, частина Молекулярної хмари Оріона, — яка просто блокує наш вид на фізичний зв\'язок між двома світлими областями. Разом вони — це просто освітлений внутрішній край величезної темної хмари, що простягається через більшу частину Оріона.
+    </string>
+    <string name="object_info_m43_distance" translation_description="Distance to De Mairan's Nebula shown in the info card. Translate units if appropriate for your locale.">1 350 світлових років</string>
+    <string name="object_info_m43_size" translation_description="Physical size of De Mairan's Nebula shown in the info card. Translate units if appropriate for your locale.">~8 світлових років в поперечнику</string>
+
+    <string name="object_info_m40_description" translation_description="Description of M40 (Winnecke 4) shown in the info card. Translate this text.">
+    M40 унікальний у каталозі Мессьє — це не туманність, не скупчення і не галактика, а широка подвійна зоря. Мессьє каталогізував її у 1764 році під час пошуку туманності, про яку повідомив Йоганн Гевелій у Великій Ведмедиці, знайшов лише цю пару зір і записав її, щоб майбутні спостерігачі не сплутали її з чимось цікавішим.
+    </string>
+    <string name="object_info_m40_funfact" translation_description="Fun fact about M40 shown in the info card. Translate this text.">
+    Дві зірки M40 — відомі як Winnecke 4 — не пов\'язані гравітаційно; вони знаходяться на різних відстанях і є просто випадковим вирівнюванням. Сам Мессьє зазначив, що там немає "нічого примітного", але включив його "щоб показати, що ця туманність не така сама, як ті, які я досліджував". Його методична звичка документувати негативні результати дала майбутнім спостерігачам чітке посилання.
+    </string>
+    <string name="object_info_m40_distance" translation_description="Distance to M40 shown in the info card. Translate units if appropriate for your locale.">~500 світлових років</string>
+    <string name="object_info_m40_size" translation_description="Angular separation of the M40 double star shown in the info card.">~50 кутових секунд (розділення)</string>
+
+    <!-- Category 5: Second tier -->
+    <string name="object_info_m34_description" translation_description="Description of the open star cluster M34 shown in the info card. Translate this text.">
+    M34 — яскравий, розсіяний розсіяне скупчення в Персеї, легко видиме в бінокль як багата сплеск зірок на фоні зимового Чумацького Шляху. Його приблизно 400 зірок займають площу майже такої ж ширини, як повний Місяць, з кількома видимими для уважних спостерігачів у бінокль широкими подвійними зірками.
+    </string>
+    <string name="object_info_m34_funfact" translation_description="Fun fact about M34 shown in the info card. Translate this text.">
+    Віком близько 200 мільйонів років M34 займає проміжне положення — молодий настільки, що його гарячі блакитні зірки ще сяють, але достатньо старий, щоб найбільш масивні вже вибухли як наднові. На відстані 1500 світлових років це один із найближчих скупчень Мессьє і залишається чудовим об\'єктом навіть з передмістя.
+    </string>
+    <string name="object_info_m34_distance" translation_description="Distance to M34 shown in the info card. Translate units if appropriate for your locale.">1 500 світлових років</string>
+    <string name="object_info_m34_size" translation_description="Physical size of M34 shown in the info card. Translate units if appropriate for your locale.">~15 світлових років в поперечнику</string>
+
+    <string name="object_info_m23_description" translation_description="Description of the open star cluster M23 shown in the info card. Translate this text.">
+    M23 — багатий розсіяне скупчення в Стрільці, вкраплене в густі зоряні поля літнього Чумацького Шляху. Близько 150 зірок розкидані на площі в половину градуса в бінокль, що робить його щедрим об\'єктом для спостереження в бінокль у тому ж регіоні неба, де розташовано багато інших скарбів Мессьє.
+    </string>
+    <string name="object_info_m23_funfact" translation_description="Fun fact about M23 shown in the info card. Translate this text.">
+    M23 за оцінками має вік близько 300 мільйонів років — проміжний вік, більшість його масивних зірок уже еволюціонували з головної послідовності. Мессьє відкрив його в 1764 році під час однієї зі своїх плідних спостережень, сканування полів зірок Стрільця.
+    </string>
+    <string name="object_info_m23_distance" translation_description="Distance to M23 shown in the info card. Translate units if appropriate for your locale.">2 150 світлових років</string>
+    <string name="object_info_m23_size" translation_description="Physical size of M23 shown in the info card. Translate units if appropriate for your locale.">~17 світлових років в поперечнику</string>
+
+    <string name="object_info_m37_description" translation_description="Description of the open star cluster M37 shown in the info card. Translate this text.">
+    M37 — найбагатший і найяскравіший з трьох скупчень Мессьє в Возничі, що містить приблизно 500 зірок у компактному полі. Це чудовий об\'єкт для спостереження в бінокль і невеликий телескоп, з розсипаними помаранчевими гігантськими зірками, які додають кольоровий контраст до синьо-білого рою.
+    </string>
+    <string name="object_info_m37_funfact" translation_description="Fun fact about M37 shown in the info card. Translate this text.">
+    M37 містить близько дюжини червоних гігантів — незвично високе число, яке відображає його відносно поважний вік приблизно 300 мільйонів років. Незважаючи на те, що він розташований на відстані близько 4500 світлових років — найдальший з трьох скупчень Мессьє в Возничому — він все ще входить до числа найкрасивіших розсіяних скупчень неба.
+    </string>
+    <string name="object_info_m37_distance" translation_description="Distance to M37 shown in the info card. Translate units if appropriate for your locale.">4 500 світлових років</string>
+    <string name="object_info_m37_size" translation_description="Physical size of M37 shown in the info card. Translate units if appropriate for your locale.">~31 світловий рік в поперечнику</string>
+
+    <string name="object_info_m48_description" translation_description="Description of the open star cluster M48 shown in the info card. Translate this text.">
+    M48 — це великий, яскравий розсіяне скупчення в сузір\'ї Гідра, що охоплює майже один градус неба і видиме неозброєним оком з темних місць. Його приблизно 80 зірок розкидані вільно по широкому полю, найкраще спостерігаються в бінокль, з розсіяними помаранчевими та жовтими гігантськими зірками серед яскравіших блакитно-білих членів скупчення.
+    </string>
+    <string name="object_info_m48_funfact" translation_description="Fun fact about M48 shown in the info card. Translate this text.">
+    M48 був одним із «втрачених» об\'єктів Мессьє майже два століття, оскільки записана Мессьє позиція була приблизно на 5° відхилена від справжнього розташування. Він залишався невизначеним до 1959 року, коли його було зіставлено з NGC 2548 і виявилося, що проста помилка при переписуванні розташувала його в порожнечу неба з самого початку.
+    </string>
+    <string name="object_info_m48_distance" translation_description="Distance to M48 shown in the info card. Translate units if appropriate for your locale.">1 500 світлових років</string>
+    <string name="object_info_m48_size" translation_description="Physical size of M48 shown in the info card. Translate units if appropriate for your locale.">~23 світлові роки в поперечнику</string>
+
+    <string name="object_info_m21_description" translation_description="Description of the open star cluster M21 shown in the info card. Translate this text.">
+    M21 — компактне розсіяне скупчення в Стрільці, розташоване всього на півградуса на північ від туманності Трифід (M20), що робить ці два об\'єкти вражаючою парою для бінокля. Скупчення містить близько 57 зірок, зосереджених на меншій площі, ніж багато скупчень Мессьє, з кількома яскравими блакитно-білими зірками як домінуючими членами.
+    </string>
+    <string name="object_info_m21_funfact" translation_description="Fun fact about M21 shown in the info card. Translate this text.">
+    Незважаючи на те, що M21 і M20 (туманність Трифід) фізично не пов\'язані, вони утворюють одну з найпривабливіших біноклевих пар літнього неба — яскравий зоряне скупчення поруч із барвистою трилопатевою туманністю. M21 знаходиться на відстані близько 4250 світлових років, тоді як M20 трохи ближче — приблизно 4100 світлових років.
+    </string>
+    <string name="object_info_m21_distance" translation_description="Distance to M21 shown in the info card. Translate units if appropriate for your locale.">4 250 світлових років</string>
+    <string name="object_info_m21_size" translation_description="Physical size of M21 shown in the info card. Translate units if appropriate for your locale.">~16 світлових років в поперечнику</string>
+
+    <string name="object_info_m50_description" translation_description="Description of the open star cluster M50 shown in the info card. Translate this text.">
+    M50 — яскравий розсіяне скупчення в сузір\'ї Однорога, що містить близько 200 зір, щільно упакованих у вражаючому компактному полі для бінокля та малих телескопів. Його легко знайти на лінії між Сиріусом і Процьйоном, і воно містить помітного червоного гіганта — теплий помаранчевий маяк, який яскраво виділяється серед блакитно-білих зір скупчення.
+    </string>
+    <string name="object_info_m50_funfact" translation_description="Fun fact about M50 shown in the info card. Translate this text.">
+    М50 оцінюється приблизно в 78 мільйонів років — один з молодших відкритих скупчень Мессьє — що означає, що його гарячі блакитні та білі зірки все ще еволюціонують, причому кілька з більш масивних членів нещодавно розширилися в гіганти. Це типово для скупчення в його ранній середній віці.
+    </string>
+    <string name="object_info_m50_distance" translation_description="Distance to M50 shown in the info card. Translate units if appropriate for your locale.">3 200 світлових років</string>
+    <string name="object_info_m50_size" translation_description="Physical size of M50 shown in the info card. Translate units if appropriate for your locale.">~15 світлових років в поперечнику</string>
+
+    <string name="object_info_m36_description" translation_description="Description of the open star cluster M36 shown in the info card. Translate this text.">
+    M36 — найменший і наймолодший з трьох розсіяних скупчень, які Мессьє каталогізував в Возничому. Його приблизно 60 зірок зібрані в щільне, блискуче поле, видиме в бінокль і добре розділене на окремі зірки в невеликий телескоп, де домінують гарячі блакитно-білі зірки.
+    </string>
+    <string name="object_info_m36_funfact" translation_description="Fun fact about M36 shown in the info card. Translate this text.">
+    M36 оцінюється приблизно в 25 мільйонів років — один з молодших скупчень Мессьє — що означає, що масивні блакитно-білі зірки все ще домінують, а червоні гіганти ще не з\'явилися. Він ділить зоряні поля Возничого з M37 та M38, і всі три скупчення вміщуються в одному полі зору бінокля широкого кута.
+    </string>
+    <string name="object_info_m36_distance" translation_description="Distance to M36 shown in the info card. Translate units if appropriate for your locale.">4 100 світлових років</string>
+    <string name="object_info_m36_size" translation_description="Physical size of M36 shown in the info card. Translate units if appropriate for your locale.">~14 світлових років в поперечнику</string>
+
+    <string name="object_info_m46_description" translation_description="Description of the open star cluster M46 shown in the info card. Translate this text.">
+    M46 — багатий, щільний розсіяне скупчення в сузір\'ї Корма, що містить близько 500 зірок, упакованих у широке поле. Вражаюче в бінокль і прекрасне в малих телескопах. Чудовий бонус плаває на його північному краї: NGC 2438, невелика планетарна туманність, яка, здається, вбудована в скупчення — драматичне збігання по лінії зору.
+    </string>
+    <string name="object_info_m46_funfact" translation_description="Fun fact about M46 shown in the info card. Translate this text.">
+    Планетарна туманність NGC 2438 здається розташованою всередині M46, але насправді це не пов\'язаний з нею об\'єкт переднього плану на значно більшій відстані — близько 1400 світлових років порівняно з 5400 світловими роками для M46. Збіг оболонки вмираючої зірки, накладеної на молоде зоряне скупчення, робить це одним з найфотогенічніших полів у каталозі.
+    </string>
+    <string name="object_info_m46_distance" translation_description="Distance to M46 shown in the info card. Translate units if appropriate for your locale.">5 400 світлових років</string>
+    <string name="object_info_m46_size" translation_description="Physical size of M46 shown in the info card. Translate units if appropriate for your locale.">~42 світлові роки в поперечнику</string>
+
+    <string name="object_info_m93_description" translation_description="Description of the open star cluster M93 shown in the info card. Translate this text.">
+    M93 — яскравий, компактний розсіяний скупчення в сузір\'ї Корма, розташоване в багатій південній Чумацькому Шляху та легко помітне у бінокль. Його приблизно 80 зірок розташовані у вражаючій формі клину або метелика та включають кілька гарячих синіх надгігантів, що робить його одним із найпривабливіших розсіяних скупчень зимового неба.
+    </string>
+    <string name="object_info_m93_funfact" translation_description="Fun fact about M93 shown in the info card. Translate this text.">
+    M93 є відносно молодим — близько 100 мільйонів років — з домінуючими синіми та блакитно-білими зірками, які ще не еволюціонували в гіганти. Це один із найбільш південних скупчень Мессьє, і з широт на північ від приблизно 50°N він ніколи не піднімається дуже високо над горизонтом.
+    </string>
+    <string name="object_info_m93_distance" translation_description="Distance to M93 shown in the info card. Translate units if appropriate for your locale.">3 600 світлових років</string>
+    <string name="object_info_m93_size" translation_description="Physical size of M93 shown in the info card. Translate units if appropriate for your locale.">~23 світлові роки в поперечнику</string>
+
+    <string name="object_info_m38_description" translation_description="Description of the open star cluster M38 shown in the info card. Translate this text.">
+    M38 — найбільший і найбільш розсіяний з трьох розсіяних скупчень, які Мессьє каталогізував у Возничі. Його приблизно 100 зірок розташовані в узорі, який деякі спостерігачі порівнюють з хрестом або грецькою літерою пі, видимі в бінокль і добре розділені в невеликий телескоп. Менше скупчення NGC 1907 розташоване неподалік на півдні.
+    </string>
+    <string name="object_info_m38_funfact" translation_description="Fun fact about M38 shown in the info card. Translate this text.">
+    M38 — найстаріший з трьох скупчень Мессьє в Возничому, віком близько 220 мільйонів років, досить старий, щоб деякі його масивні зірки еволюціонували в жовті та помаранчеві гіганти. Поблизу розташоване скупчення NGC 1907, яке може поміститися в тому ж полі зору при низькому збільшенні, що робить їх чудовою парою для бінокля — як M46 та M47 у Кормі.
+    </string>
+    <string name="object_info_m38_distance" translation_description="Distance to M38 shown in the info card. Translate units if appropriate for your locale.">4 200 світлових років</string>
+    <string name="object_info_m38_size" translation_description="Physical size of M38 shown in the info card. Translate units if appropriate for your locale.">~26 світлових років в поперечнику</string>
+
+    <string name="object_info_m29_description" translation_description="Description of the open star cluster M29 shown in the info card. Translate this text.">
+    M29 — невелике молоде розсіяне скупчення в сузір\'ї Лебідь, розташоване в одному з найбільш запилених регіонів Чумацького Шляху. П\'ять блискучих синіх надгігантів домінують у скупченні, видимих у бінокль як щільна конфігурація гарячих, світлих зірок. Без щільного переднього пилу M29 було б одним з найспектакулярніших розсіяних скупчень неба.
+    </string>
+    <string name="object_info_m29_funfact" translation_description="Fun fact about M29 shown in the info card. Translate this text.">
+    M29 оцінюється приблизно в 10 мільйонів років — зоряний немовля — і розташована в асоціації Cygnus OB1, великій групі масивних молодих зір. Важкий міжзоряний пил затьмарює скупище приблизно на 3 зоряні величини; без цього затьмарення, зорі M29 світили б у кілька разів яскравіше, ніж вони насправді виглядають.
+    </string>
+    <string name="object_info_m29_distance" translation_description="Distance to M29 shown in the info card. Translate units if appropriate for your locale.">4 000 світлових років</string>
+    <string name="object_info_m29_size" translation_description="Physical size of M29 shown in the info card. Translate units if appropriate for your locale.">~8 світлових років в поперечнику</string>
+
+    <string name="object_info_m62_description" translation_description="Description of the globular cluster M62 shown in the info card. Translate this text.">
+    M62 — багатий кульовидне скупчення в Змієносці, одне з найближчих до галактичного центру, помітно асиметричне, зі зірками, щільніше упакованими на південній стороні. При величині 6,6 це чудовий об\'єкт для спостереження в бінокль, хоча його низька схилення робить його короткосезонною мішенню для спостерігачів північної півкулі.
+    </string>
+    <string name="object_info_m62_funfact" translation_description="Fun fact about M62 shown in the info card. Translate this text.">
+    Зміщений від центру центр M62 є прямим результатом його близькості до галактичного центру — потужні припливні сили від центральної балджу спотворюють скупище та тягнуть зірки до галактичної площини. Це також один з найбільш динамічно еволюціонованих кульових скупищ, що відомі, з ознаками колапсу ядра та незвично високою щільністю мілісекундних пульсарів.
+    </string>
+    <string name="object_info_m62_distance" translation_description="Distance to M62 shown in the info card. Translate units if appropriate for your locale.">22 500 світлових років</string>
+    <string name="object_info_m62_size" translation_description="Physical size of M62 shown in the info card. Translate units if appropriate for your locale.">~92 світлові роки в поперечнику</string>
+
+    <string name="object_info_m28_description" translation_description="Description of the globular cluster M28 shown in the info card. Translate this text.">
+    M28 — компактне кульове скупчення в Стрільці, розташоване поблизу яскравої зірки Лямбда Стрільця в багатих літніх зоряних полях. При видимій зоряній величині 6,9 це привабливий об\'єкт для спостереження в бінокль і добре розділяється в малих телескопах, показуючи яскраве конденсоване ядро, оточене помірним ореолом зірок.
+    </string>
+    <string name="object_info_m28_funfact" translation_description="Fun fact about M28 shown in the info card. Translate this text.">
+    У 1987 році M28 став першим кульовим скупленням, у якому було виявлено мілісекундний пульсар. Мілісекундні пульсари — нейтронні зірки, що обертаються сотні разів на секунду — утворюються, коли нейтронна зірка акрецирує матерію від зірки-супутника, і зустрічаються в кульових скупленнях значно частіше, ніж у галактиці в цілому, оскільки їхні щільні зоряні середовища створюють набагато більше близьких подвійних зустрічей.
+    </string>
+    <string name="object_info_m28_distance" translation_description="Distance to M28 shown in the info card. Translate units if appropriate for your locale.">18 300 світлових років</string>
+    <string name="object_info_m28_size" translation_description="Physical size of M28 shown in the info card. Translate units if appropriate for your locale.">~60 світлових років в поперечнику</string>
+
+    <string name="object_info_m52_description" translation_description="Description of the open star cluster M52 shown in the info card. Translate this text.">
+    M52 — багатий розсіяний скупчення в Кассіопеї, що містить близько 200 зірок, упакованих у компактну область північної Чумацького Шляху. Це чудове бінокулярне скупчення, яке показує красиве, щільне зоряне поле в малих телескопах, з помітно яскравішою помаранчевою зіркою, що виділяється біля південного краю скупчення.
+    </string>
+    <string name="object_info_m52_funfact" translation_description="Fun fact about M52 shown in the info card. Translate this text.">
+    Відстань до M52 незвично невизначена — оцінки коливаються від 3000 до 7000 світлових років — оскільки важкий міжзоряний пил вздовж цієї лінії спостереження ускладнює визначення її справжньої світності. Мессьє відкрив її в 1774 році, тієї ж ночі, коли він стежив за кометою, яка привела його до запису кількох інших записів каталогу.
+    </string>
+    <string name="object_info_m52_distance" translation_description="Distance to M52 shown in the info card. Translate units if appropriate for your locale.">~5 000 світлових років</string>
+    <string name="object_info_m52_size" translation_description="Physical size of M52 shown in the info card. Translate units if appropriate for your locale.">~25 світлових років у діаметрі</string>
+
+    <string name="object_info_m67_description" translation_description="Description of the open star cluster M67 shown in the info card. Translate this text.">
+    M67 — це гарне розсіяне скупчення у сузір\'ї Рак та одне з найстаріших добре вивчених розсіяних скупчень на небі. Віком приблизно 3,2–3,5 мільярда років воно містить багато зірок, подібних за масою та віком до нашого Сонця — що робить його природною лабораторією для вивчення еволюції зіркоподібних зірок протягом космічного часу.
+    </string>
+    <string name="object_info_m67_funfact" translation_description="Fun fact about M67 shown in the info card. Translate this text.">
+    Кілька зірок у M67 дуже схожі на Сонце за температурою, масою та віком — рідкісна комбінація, яка спонукала дослідників замислитися, чи не виникло саме Сонце в скупленні подібному M67. Оскільки зірки народжуються в скупленнях, які поступово розсіюються, Сонце майже напевно походить з нині розпорошеної групи сестринських зірок мільярди років тому — хоча яке саме скупленння ніколи не було ідентифіковано.
+    </string>
+    <string name="object_info_m67_distance" translation_description="Distance to M67 shown in the info card. Translate units if appropriate for your locale.">2700 світлових років</string>
+    <string name="object_info_m67_size" translation_description="Physical size of M67 shown in the info card. Translate units if appropriate for your locale.">~24 світлових років у діаметрі</string>
+
+    <string name="object_info_m55_description" translation_description="Description of the globular cluster M55 shown in the info card. Translate this text.">
+    M55 — великий розсипчастий кульовий скупчення у Стрільці, одне з найбільш розпорошених і найменш концентрованих серед усіх кульових скупчень Мессьє. Воно легко розділяється на окремі зірки навіть при малому збільшенні, з зернистою текстурою, видимою в бінокль. Його низька південна схилення обмежує видимість з північних широт, але воно видовищне з південної півкулі.
+    </string>
+    <string name="object_info_m55_funfact" translation_description="Fun fact about M55 shown in the info card. Translate this text.">
+    Незвичайно низька концентрація зір у M55 робить його схожим на багате розсіяне скупчення, а не на типовий кульовий скупчення. Його зорі розкидані на території шириною близько 100 світлових років, що свідчить про відносно слабку самогравітацію скупчення порівняно з більш щільно зконцентрованими кульовими скупченнями, як M13 або M3.
+    </string>
+    <string name="object_info_m55_distance" translation_description="Distance to M55 shown in the info card. Translate units if appropriate for your locale.">17600 світлових років</string>
+    <string name="object_info_m55_size" translation_description="Physical size of M55 shown in the info card. Translate units if appropriate for your locale.">~100 світлових років у діаметрі</string>
+
+    <string name="object_info_m19_description" translation_description="Description of the globular cluster M19 shown in the info card. Translate this text.">
+    M19 — компактне, багате кульове скупчення в Змієносці, одне з найближчих до галактичного центру. Його найвідмітнішою особливістю є помітно сплюснута форма: M19 — найбільш сплюснуте кульове скупчення з відомих, з видимим еліптичним контуром навіть у невеликий телескоп.
+    </string>
+    <string name="object_info_m19_funfact" translation_description="Fun fact about M19 shown in the info card. Translate this text.">
+    Помітна сплюснутість M19 — його найдовша вісь приблизно на 10% довша за найкоротшу — унікальна серед відомих кульових скупчень і вважається результатом припливного розтягування гравітаційним полем Чумацького Шляху. Чим ближче кульове скупчення орбітує до галактичного центру, тим сильніше воно деформується; M19 розташована лише приблизно на 5200 світлових років від галактичного ядра.
+    </string>
+    <string name="object_info_m19_distance" translation_description="Distance to M19 shown in the info card. Translate units if appropriate for your locale.">28700 світлових років</string>
+    <string name="object_info_m19_size" translation_description="Physical size of M19 shown in the info card. Translate units if appropriate for your locale.">~113 світлових років у діаметрі</string>
+
+    <string name="object_info_m80_description" translation_description="Description of the globular cluster M80 shown in the info card. Translate this text.">
+    M80 — один з найбільш щільно упакованих кульових скупчень у Чумацькому Шляху, компактна, багата куля з кількох сотень тисяч зірок у Скорпіоні. При видимій зоряній величині 7,2 це чудова мета для спостереження в бінокль і розкриває блискучий, дуже концентрований центр у невеликих телескопах.
+    </string>
+    <string name="object_info_m80_funfact" translation_description="Fun fact about M80 shown in the info card. Translate this text.">
+    У 1860 році в M80 спалахнула нова — позначена як T Scorpii — на короткий час ставши такою ж яскравою, як саме скупчення, і видимою неозброєним оком. Це залишається однією з лише двох нових, коли-небудь спостережених у кульовому скупченні. Нові в кульових скупченнях виникають внаслідок взаємодії подвійних зірок, які набагато частіше зустрічаються в щільному зоряному середовищі ядра кульового скупчення.
+    </string>
+    <string name="object_info_m80_distance" translation_description="Distance to M80 shown in the info card. Translate units if appropriate for your locale.">32600 світлових років</string>
+    <string name="object_info_m80_size" translation_description="Physical size of M80 shown in the info card. Translate units if appropriate for your locale.">~84 світлових років у діаметрі</string>
+
+    <string name="object_info_m103_description" translation_description="Description of the open star cluster M103 shown in the info card. Translate this text.">
+    M103 — невеликий, компактний розсіяний скупчення в Кассіопеї, що містить близько 40 зірок у щільній групі, легко видимій у бінокль. Вразливу подвійну зірку та червоного гіганта біля центру надають йому барвистого вигляду в невеликих телескопах, розташованому в багатих зоряних полях Чумацького Шляху в Кассіопеї.
+    </string>
+    <string name="object_info_m103_funfact" translation_description="Fun fact about M103 shown in the info card. Translate this text.">
+    M103 був об\'єктом з найбільшим номером у первісному каталозі Мессьє, опублікованому в 1781 році — усі наступні записи (M104–M110) були додані посмертно пізнішими астрономами на основі записок і кореспонденції Мессьє. П\'єр Мешен знайшов M103 незадовго до того, як каталог пішов у друк, і Мессьє включив його на основі звіту Мешена.
+    </string>
+    <string name="object_info_m103_distance" translation_description="Distance to M103 shown in the info card. Translate units if appropriate for your locale.">8500 світлових років</string>
+    <string name="object_info_m103_size" translation_description="Physical size of M103 shown in the info card. Translate units if appropriate for your locale.">~15 світлових років у діаметрі</string>
+
+    <string name="object_info_m30_description" translation_description="Description of the globular cluster M30 shown in the info card. Translate this text.">
+    M30 — компактне кульове скупчення в Козерозі, чудовий об\'єкт для малих телескопів, що показує яскраве, щільне ядро та слабкі зовнішні ланцюги зірок. При величині 7,5 воно вимагає темного неба для спостереження в бінокль і винагороджує малий телескоп частково розділеним зовнішнім ореолом.
+    </string>
+    <string name="object_info_m30_funfact" translation_description="Fun fact about M30 shown in the info card. Translate this text.">
+    M30 пережив «колапс ядра» — процес, при якому взаємне гравітаційне притягання щільно упакованих зірок спричиняє драматичне стиснення центру скупчення, створюючи екстремальну концентрацію зірок у крихітному обсязі. Близько п\'ятої частини всіх кульових скупчень мають колапсовані ядра, і M30 є одним з найбільш вивчених прикладів цього явища.
+    </string>
+    <string name="object_info_m30_distance" translation_description="Distance to M30 shown in the info card. Translate units if appropriate for your locale.">27100 світлових років</string>
+    <string name="object_info_m30_size" translation_description="Physical size of M30 shown in the info card. Translate units if appropriate for your locale.">~87 світлових років у діаметрі</string>
+
+    <string name="object_info_m54_description" translation_description="Description of the globular cluster M54 shown in the info card. Translate this text.">
+    M54 — це великий, багатий кульовий скупчення в Стрільці та один з найвіддаленіших об\'єктів у всьому каталозі Мессьє. Протягом століть вважалося, що це віддалене гало-скупчення Чумацького Шляху, але тепер відомо, що це щільне ядро Карликової еліптичної галактики Стрільця — супутникової галактики, яка наразі поглинається нашою власною.
+    </string>
+    <string name="object_info_m54_funfact" translation_description="Fun fact about M54 shown in the info card. Translate this text.">
+    Відкриття 1994 року, що M54 належить Карликовій галактиці Стрільця, зробило його першим кульовим скупленням, відомим як таке, що належить іншій галактиці. Оскільки Карликова галактика Стрільця поступово розривається та поглинається Чумацьким Шляхом, M54 врешті-решт стане справжнім гало-кульовим скупленням нашої власної галактики — міжгалактичним мігрантом, що прибуває протягом мільярдів років.
+    </string>
+    <string name="object_info_m54_distance" translation_description="Distance to M54 shown in the info card. Translate units if appropriate for your locale.">87000 світлових років</string>
+    <string name="object_info_m54_size" translation_description="Physical size of M54 shown in the info card. Translate units if appropriate for your locale.">~230 світлових років у діаметрі</string>
+
+    <string name="object_info_m69_description" translation_description="Description of the globular cluster M69 shown in the info card. Translate this text.">
+    M69 — помірно багатий кульовий скупчення в Стрільці, розташоване поблизу галактичного центру. При зоряній величині 7,7 це об\'єкт для бінокля з темного неба, який нагороджує невеликий телескоп частково розділеною кулею зірок та яскравим, зернистим центром.
+    </string>
+    <string name="object_info_m69_funfact" translation_description="Fun fact about M69 shown in the info card. Translate this text.">
+    M69 обертається незвично близько до галактичного центру — лише на відстані близько 6200 світлових років від ядра Чумацького Шляху — і, як наслідок, має незвично високу концентрацію важчих елементів для кульового скупчення. Кульові скупчення ближче до галактичного центру мають тенденцію бути хімічно збагачені кількома поколіннями зоряного утворення в навколишньому балджі.
+    </string>
+    <string name="object_info_m69_distance" translation_description="Distance to M69 shown in the info card. Translate units if appropriate for your locale.">29700 світлових років</string>
+    <string name="object_info_m69_size" translation_description="Physical size of M69 shown in the info card. Translate units if appropriate for your locale.">~61 світловий рік у діаметрі</string>
+
+    <string name="object_info_m9_description" translation_description="Description of the globular cluster M9 shown in the info card. Translate this text.">
+    M9 — компактне кульове скупчення в Змієносці, одне з найбільш затьмарених міжзоряним пилом скупчень Мессьє. Воно розташоване в напрямку до галактичного балджу, де густий пил значно його затьмарює. Без цього затьмарення M9 виглядав би майже на одну зоряну величину яскравішим і був би видимий неозброєним оком.
+    </string>
+    <string name="object_info_m9_funfact" translation_description="Fun fact about M9 shown in the info card. Translate this text.">
+    M9 страждає від міжзоряного поглинання пилу більше, ніж майже будь-який інший кульовий скупчення Мессьє — близько 1,3 зоряної величини затемнення порівняно з чистою лінією видимості. Два менші кульові скупчення (NGC 6342 та NGC 6356) розташовані в межах близько 1° від M9, що робить його центром чудового групування трьох кульових скупчень на невеликій ділянці неба.
+    </string>
+    <string name="object_info_m9_distance" translation_description="Distance to M9 shown in the info card. Translate units if appropriate for your locale.">25800 світлових років</string>
+    <string name="object_info_m9_size" translation_description="Physical size of M9 shown in the info card. Translate units if appropriate for your locale.">~70 світлових років у діаметрі</string>
+
+    <string name="object_info_m26_description" translation_description="Description of the open star cluster M26 shown in the info card. Translate this text.">
+    M26 — помірно слабке розсіяне скупчення у сузір\'ї Щита, видиме в бінокль і добре розділене в невеликих телескопах. Близько 90 зірок розкидані по компактному полю в багатій хмарі зірок Щита, хоча скупчення розташоване на такому щільному фоні, що визначення його членів від навколишнього зоряного поля вимагає певної уважності.
+    </string>
+    <string name="object_info_m26_funfact" translation_description="Fun fact about M26 shown in the info card. Translate this text.">
+    M26 розташована вздовж того ж багатого смуги неба, що й M11 — Скупчення Дикої Качки, одне з найкрасивіших відкритих скупчень на небі. Вони розділені лише близько 3,5° і видні в одному полі бінокля, що робить Щит видатною метою для спостерігачів скупчень, незважаючи на те, що це мала й часто забута сузір\'я.
+    </string>
+    <string name="object_info_m26_distance" translation_description="Distance to M26 shown in the info card. Translate units if appropriate for your locale.">5000 світлових років</string>
+    <string name="object_info_m26_size" translation_description="Physical size of M26 shown in the info card. Translate units if appropriate for your locale.">~22 світлових років у діаметрі</string>
+
+    <string name="object_info_m79_description" translation_description="Description of the globular cluster M79 shown in the info card. Translate this text.">
+    M79 — компактне кульове скупчення в сузір\'ї Заєць, одне з небагатьох скупчень Мессьє, найкраще видиме в зимовому небі, коли більшість кульових скупчень знаходяться під горизонтом або щойно піднялися. При яскравості 8,0 зоряної величини для спостереження його компактного ядра та слабкого гало потрібен телескоп, що виділяється на тлі порівняно розрідженого зимового зоряного поля.
+    </string>
+    <string name="object_info_m79_funfact" translation_description="Fun fact about M79 shown in the info card. Translate this text.">
+    M79 вважається деякими астрономами за вторгненця з Карликової галактики Великого Пса — розпадаючої супутникової галактики, яку наразі поглинає Чумацький Шлях. Якщо це так, то M79 утворилася не в межах власної кулястої системи Чумацького Шляху, а була захоплена з галактики, що падає, і тепер повільно інтегрується в гало нашої галактики.
+    </string>
+    <string name="object_info_m79_distance" translation_description="Distance to M79 shown in the info card. Translate units if appropriate for your locale.">41000 світлових років</string>
+    <string name="object_info_m79_size" translation_description="Physical size of M79 shown in the info card. Translate units if appropriate for your locale.">~104 світлових років у діаметрі</string>
+
+    <string name="object_info_m70_description" translation_description="Description of the globular cluster M70 shown in the info card. Translate this text.">
+    M70 — компактне кульове скупчення в Стрільці, дуже схоже на своїх близнюків M69 як за виглядом, так і за відстанню. При зоряній величині 8,1 це чудовий об\'єкт для малого телескопа, що показує компактне ядро та ознаки розділення у зовнішньому ореолі. Він розташований всього в 2° від M69, і обидва можна охопити одним полем бінокля.
+    </string>
+    <string name="object_info_m70_funfact" translation_description="Fun fact about M70 shown in the info card. Translate this text.">
+    M70 здобув коротку славу в 1995 році як приблизне місце на небі, де Алан Хейл і Томас Бопп незалежно один від одного відкрили комету Хейл-Боппа — найяскравішу комету кінця XX століття. Обидва спостерігачі спочатку проходили повз M70 під час пошуку інших об\'єктів і помітили комету як несподіваний розмитий об\'єкт поблизу.
+    </string>
+    <string name="object_info_m70_distance" translation_description="Distance to M70 shown in the info card. Translate units if appropriate for your locale.">29400 світлових років</string>
+    <string name="object_info_m70_size" translation_description="Physical size of M70 shown in the info card. Translate units if appropriate for your locale.">~67 світлових років у діаметрі</string>
+
+    <string name="object_info_m107_description" translation_description="Description of the globular cluster M107 shown in the info card. Translate this text.">
+    M107 — один з найменш концентрованих кульових скупчень Мессьє, зі зірками, розсіяними у відносно відкритій схемі навколо скромного ядра. При видимій зоряній величині 8,1 це об\'єкт для спостереження біноклем з темного неба і частково розділяється в малих телескопах, показуючи зернисту текстуру замість гострої центральної конденсації.
+    </string>
+    <string name="object_info_m107_funfact" translation_description="Fun fact about M107 shown in the info card. Translate this text.">
+    M107 був останнім об\'єктом, офіційно доданим до каталогу Мессьє — він з\'являється в листуванні П\'єра Мешена, але не був включений у оригінальне видання 1781 року. Він був офіційно додан як M107 у 1947 році канадською астрономкою Еленою Сойєр Хогг, яка кодифікувала кілька "пропущених" об\'єктів, які спостерігав Мешен, але Мессьє ніколи офіційно не записав.
+    </string>
+    <string name="object_info_m107_distance" translation_description="Distance to M107 shown in the info card. Translate units if appropriate for your locale.">20900 світлових років</string>
+    <string name="object_info_m107_size" translation_description="Physical size of M107 shown in the info card. Translate units if appropriate for your locale.">~61 світловий рік у діаметрі</string>
+
+    <string name="object_info_m68_description" translation_description="Description of the globular cluster M68 shown in the info card. Translate this text.">
+    M68 — багатий кульовий скупчення в Гідрі, південний об\'єкт, одне з небагатьох кульових скупчень, найкраще видиме в пізну зиму та весну. При зоряній величині 8,2 воно нагороджує невеликий телескоп помірно конденсованим ядром та великим ореолом розділених зірок на фоні відносно розрідженого зоряного поля Гідри.
+    </string>
+    <string name="object_info_m68_funfact" translation_description="Fun fact about M68 shown in the info card. Translate this text.">
+    Незважаючи на його відносну близькість — завдяки якій окремі зірки добре розрізняються в аматорські телескопи — M68 часто залишається непоміченою через її далеку південну схилення. З широт вище 50°N вона ледве піднімається над горизонтом; однак з південної півкулі вона піднімається високо і є чудовим глобулярним скупленням.
+    </string>
+    <string name="object_info_m68_distance" translation_description="Distance to M68 shown in the info card. Translate units if appropriate for your locale.">33600 світлових років</string>
+    <string name="object_info_m68_size" translation_description="Physical size of M68 shown in the info card. Translate units if appropriate for your locale.">~117 світлових років у діаметрі</string>
+
+    <string name="object_info_m56_description" translation_description="Description of the globular cluster M56 shown in the info card. Translate this text.">
+    M56 — компактне кульове скупчення в сузір\'ї Ліра, розташоване між Кільцевою туманністю (M57) та яскравою подвійною зіркою Альбірео в сузір\'ї Лебідь. При зоряній величині 8,3 це об\'єкт для спостереження в бінокль з темного неба, а невеликий телескоп розкриває зернисту, помірно конденсовану сферу, яка навіть у середніх апертурах розділяється лише частково.
+    </string>
+    <string name="object_info_m56_funfact" translation_description="Fun fact about M56 shown in the info card. Translate this text.">
+    M56 був відкритий Мессьє в січні 1779 року протягом того ж сезону спостережень, коли він також знайшов Кільцеву туманність (M57). Незважаючи на те, що M56 знаходиться в одному полі бінокля з Вегою — п\'ятою найяскравішою зіркою неба — і близько до знаменитої Кільцевої туманності, M56 часто залишається непоміченим спостерігачами, привернутими його більш відомими сусідами.
+    </string>
+    <string name="object_info_m56_distance" translation_description="Distance to M56 shown in the info card. Translate units if appropriate for your locale.">32900 світлових років</string>
+    <string name="object_info_m56_size" translation_description="Physical size of M56 shown in the info card. Translate units if appropriate for your locale.">~68 світлових років у діаметрі</string>
+
+    <string name="object_info_m71_description" translation_description="Description of the globular cluster M71 shown in the info card. Translate this text.">
+    M71 — незвичайне кульове скупчення в Стрілці, яке протягом десятиліть викликало суперечки серед астрономів, які не могли вирішити, чи це дуже багате старе розсіяне скупчення, чи дуже розріджене молоде кульове скупчення. Сучасний аналіз підтверджує, що це справжнє кульове скупчення, але з виключно низькою концентрацією, з відносно невеликою кількістю зірок і менш домінуючим ядром, ніж типові кульові скупчення.
+    </string>
+    <string name="object_info_m71_funfact" translation_description="Fun fact about M71 shown in the info card. Translate this text.">
+    Вільна структура M71 утримувала її від включення до багатьох ранніх каталогів, оскільки вона нагадувала багате зоряне поле, а не справжнє скупчення. На відстані лише 12 000 світлових років це одне з найближчих глобулярних скупчень Мессьє, і його зірки частково розділяються в невеликий телескоп за темного неба — надаючи йому вигляд компактного, дещо згущеного багатого зоряного поля.
+    </string>
+    <string name="object_info_m71_distance" translation_description="Distance to M71 shown in the info card. Translate units if appropriate for your locale.">12000 світлових років</string>
+    <string name="object_info_m71_size" translation_description="Physical size of M71 shown in the info card. Translate units if appropriate for your locale.">~25 світлових років у діаметрі</string>
 </resources>

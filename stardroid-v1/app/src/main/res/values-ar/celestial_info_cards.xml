@@ -856,6 +856,65 @@
     </string>
     <string name="object_info_eta_carinae_nebula_distance" translation_description="Distance to Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">7,500 سنة ضوئية</string>
     <string name="object_info_eta_carinae_nebula_size" translation_description="Physical size of Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">300 سنة ضوئية عبر</string>
+    <!-- North America Nebula (NGC 7000) -->
+    <string name="object_info_north_america_nebula_description" translation_description="Description of the North America Nebula shown in the info card. Translate this text.">
+    سديم أمريكا الشمالية (NGC 7000) هو سديم انبعاثي كبير في كوكبة الدجاجة (Cygnus) يشبه شكله بشكل ملحوظ قارة أمريكا الشمالية، مع وجود منطقة خليج المكسيك. يمتد حوالي 120 دقيقة قوسية عبر السماء - أي ما يقرب من أربعة أضعاف قطر القمر الكامل - ويقع على بعد حوالي 2600 سنة ضوئية وعرضه يزيد عن 100 سنة ضوئية.
+    </string>
+    <string name="object_info_north_america_nebula_funfact" translation_description="Fun fact about the North America Nebula shown in the info card. Translate this text.">
+    على الرغم من أن حجمها الظاهري يبلغ 4، فإن السديم كبير جداً وموزع بشكل متناثر بحيث لا يمكن رؤيته بالعين المجردة تحت معظم السماوات — لكنه يصور بشكل جميل، مما يكشف عن جدار البجعة، وهو قوس كثيف من تشكل النجوم الكثيف على طول حافته الجنوبية.
+    </string>
+    <string name="object_info_north_america_nebula_distance" translation_description="Distance to the North America Nebula shown in the info card. Translate units if appropriate for your locale.">~2,590 سنة ضوئية</string>
+    <string name="object_info_north_america_nebula_size" translation_description="Physical size of the North America Nebula shown in the info card. Translate units if appropriate for your locale.">~140 سنة ضوئية عبر</string>
+    <!-- Exposed Cranium Nebula - PMR 1 -->
+    <string name="object_info_exposed_cranium_nebula_description" translation_description="Description of the Exposed Cranium Nebula shown in the info card. Translate this text.">
+    سديم الجمجمة المكشوفة (PMR 1) هو سديم كوكبي في كوكبة الأشرعة، على بعد حوالي 5000 سنة ضوئية. يأتي اسمه الغريب من ممر مظلم من الغاز يمتد عموديًا عبر المنتصف، مقسمًا فصوصه المتوهجة إلى شكل يشبه بشكل مريب دماغًا داخل جمجمة شفافة. في قلبه يتوهج نجم وولف-رايت ساخن يسفك الطبقات الخارجية التي بناها على مدى حياته.
+    </string>
+    <string name="object_info_exposed_cranium_nebula_funfact" translation_description="Fun fact about the Exposed Cranium Nebula shown in the info card. Translate this text.">
+    في عام 2026، التقط تلسكوب جيمس ويب الفضائي صورًا مذهلة جديدة لسديم الجمجمة المكشوفة، حيث كشف عن هيكلها ثنائي الطبقات بتفاصيل غير مسبوقة — قشرة خارجية غنية بالهيدروجين وسحابة داخلية مليئة بالعناصر الثقيلة التي صاغتها النجم المحتضر.
+    </string>
+    <string name="object_info_exposed_cranium_nebula_distance" translation_description="Distance to the Exposed Cranium Nebula shown in the info card. Translate units if appropriate for your locale.">~5,000 سنة ضوئية</string>
+    <string name="object_info_exposed_cranium_nebula_size" translation_description="Physical size of the Exposed Cranium Nebula shown in the info card. Translate units if appropriate for your locale.">~2 سنة ضوئية عبر</string>
+
+    <!-- Jewel Box (NGC 4755) -->
+    <string name="object_info_jewel_box_description" translation_description="Description of the Jewel Box cluster shown in the info card. Translate this text.">
+    صندوق الجواهر (NGC 4755) هي عنقود نجمي مفتوح صغير وساطع في كوكبة الصليب الجنوبي، يمكن رؤيته بسهولة بالعين المجردة كبقعة غامضة من الحجم الرابع جنوب شرق نجم ميموسا. عند مشاهدته من خلال التلسكوب، تتألق نجومه بألوان متناقضة حية — عمالقة زرقاء عملاقة إلى جانب عملاق أحمر مذهل — مما أكسبه الاسم الذي أطلقه عليه جون هرشل: قطعة مجوهرات فاخرة رائعة. بعمر يبلغ 14-16 مليون سنة فقط، فهو أحد أصغر وأكثر العناقيد الكونية ملونة في السماء.
+    </string>
+    <string name="object_info_jewel_box_funfact" translation_description="Fun fact about the Jewel Box shown in the info card. Translate this text.">
+    النجم الأحمر البارز في العنقود، κ Crucis، هو عملاق أحمر فائق مضيء جداً بحيث يفوق إضاءة الشمس بأكثر من 100,000 مرة — تذكير حي بأن العناقيد النجمية ليست كلها بنفس اللون.
+    </string>
+    <string name="object_info_jewel_box_distance" translation_description="Distance to the Jewel Box shown in the info card. Translate units if appropriate for your locale.">~6,500 سنة ضوئية</string>
+    <string name="object_info_jewel_box_size" translation_description="Physical size of the Jewel Box shown in the info card. Translate units if appropriate for your locale.">~19 سنة ضوئية عبر</string>
+
+    <!-- Double Cluster (NGC 869 & NGC 884) -->
+    <string name="object_info_double_cluster_description" translation_description="Description of the Double Cluster shown in the info card. Translate this text.">
+    العنقود المزدوج (NGC 869 و NGC 884) هو زوج ساحر من عناقيد النجوم المفتوحة الشابة في برسيوس، يقعان جنباً إلى جنب في السماء على بعد أكثر من درجة واحدة فقط. كلاهما مرئي بالعين المجردة كبقعة غامضة، لكن حتى التلسكوب الصغير يكشف عن مئات النجوم العملاقة الزرقاء البيضاء اللامعة المكدسة في سربين براقين. على بعد حوالي 7500 سنة ضوئية، يقعان ضمن ذراع برسيوس لمجرتنا ويصنفان من بين أفضل الأجسام الثنائية النظر في السماء الشمالية.
+    </string>
+    <string name="object_info_double_cluster_funfact" translation_description="Fun fact about the Double Cluster shown in the info card. Translate this text.">
+    بعمر 14 مليون سنة فقط، يُعتبر العنقود الثنائي شاباً بشكل استثنائي — وُلِد للتو لدرجة أن نجومه الأكثر ضخامة لا تزال تتوهج كعمالقة زرقاء عملاقة، وقد تطورت حفنة منها بالفعل إلى عمالقة حمراء عملاقة نادرة وملتهبة.
+    </string>
+    <string name="object_info_double_cluster_distance" translation_description="Distance to the Double Cluster shown in the info card. Translate units if appropriate for your locale.">~7,500 سنة ضوئية</string>
+    <string name="object_info_double_cluster_size" translation_description="Physical size of the Double Cluster shown in the info card. Translate units if appropriate for your locale.">كل مجموعة ~70 سنة ضوئية عبر؛ الزوج مفصول بـ ~1,000 سنة ضوئية</string>
+
+    <!-- 47 Tucanae (NGC 104) -->
+    <string name="object_info_n47_tucanae_description" translation_description="Description of 47 Tucanae shown in the info card. Translate this text.">
+    47 Tucanae (NGC 104) هي ثاني ألمع عنقود كروي في السماء، وهي كرة كثيفة تضم حوالي مليون نجم قديم يدور حول درب التبانة في كوكبة Tucana. على بعد حوالي 14,500 سنة ضوئية، تظهر للعين المجردة كنجم غامض من الحجم الرابع، لكن التلسكوب يكشف نواتها المضغوطة عن سرب استثنائي من الشموس الذهبية والزرقاء البيضاء. تشكلت نجومها قبل حوالي 13 مليار سنة، مما يجعل العنقود قديماً تقريباً مثل الكون نفسه.
+    </string>
+    <string name="object_info_n47_tucanae_funfact" translation_description="Fun fact about 47 Tucanae shown in the info card. Translate this text.">
+    47 Tucanae هي مصنع نجوم نابضة كونية: وجد الفلكيون ما لا يقل عن 35 نجماً نابضاً بفترات ميلي ثانية يدور مئات المرات في الثانية بداخلها — أكثر من أي عنقود كروي معروف آخر — وهي نتيجة اللقاءات القريبة بين النجوم التي تعيد تدوير نجوم نيوترونية قديمة بتسريع دورانها.
+    </string>
+    <string name="object_info_n47_tucanae_distance" translation_description="Distance to 47 Tucanae shown in the info card. Translate units if appropriate for your locale.">~14,500 سنة ضوئية</string>
+    <string name="object_info_n47_tucanae_size" translation_description="Physical size of 47 Tucanae shown in the info card. Translate units if appropriate for your locale.">~120 سنة ضوئية عبر</string>
+
+    <!-- Centaurus A (NGC 5128) -->
+    <string name="object_info_centaurus_a_description" translation_description="Description of Centaurus A shown in the info card. Translate this text.">
+    سنتوروس إيه (NGC 5128) هي أقرب مجرة راديوية نشطة إلى الأرض، وهي مجرة إهليلجية عملاقة في كوكبة قنطورس يخون حزامها المظلم المثير للإعجاب من الغبار عن ماضٍ عنيف — مجرة حلزونية ابتلعتها قبل حوالي 200-700 مليون سنة. في قلبها يكمن ثقب أسود فائق الكتلة بكتلة 55 مليون كتلة شمسية يدفع نفاثات نسبية تمتد لأكثر من مليون سنة ضوئية في أطوال موجات الراديو. على مسافة تبلغ حوالي 12 مليون سنة ضوئية، فهي واحدة من أكثر المجرات المدروسة في السماء.
+    </string>
+    <string name="object_info_centaurus_a_funfact" translation_description="Fun fact about Centaurus A shown in the info card. Translate this text.">
+    سنتوروس إيه هو أحد أقوى مرسلات الموجات الراديوية الطبيعية في السماء — حيث تقذف نفاثاتها البلازما بسرعة قريبة جداً من سرعة الضوء، والامتداد الكامل لفصوصها الراديوية يغطي مساحة تعادل حوالي 100 قمر مكتمل موضوعة طرفاً لطرف عبر السماء.
+    </string>
+    <string name="object_info_centaurus_a_distance" translation_description="Distance to Centaurus A shown in the info card. Translate units if appropriate for your locale.">~12 مليون سنة ضوئية</string>
+    <string name="object_info_centaurus_a_size" translation_description="Physical size of Centaurus A shown in the info card. Translate units if appropriate for your locale.">~123,000 سنة ضوئية عبر</string>
+
     <!-- ==================== CONSTELLATIONS ==================== -->
     <!-- Note: Constellation names are defined in celestial_objects.xml -->
     <!-- Orion -->
@@ -1857,4 +1916,697 @@
     تحتوي كوكبة الثعلب الصغير على سديم الدمبل (M27)، أول سديم كوكبي تم اكتشافه على الإطلاق (من قبل تشارلز مسييه في عام 1764)، وهدف جميل للمنظار الثنائي العينية!
     </string>
     <string name="object_info_vulpecula_size" translation_description="Physical size of Vulpecula shown in the info card. Translate units if appropriate for your locale.">268 درجة مربعة</string>
+
+    <!-- Galilean Moons of Jupiter -->
+    <string name="object_info_io_description" translation_description="Description of Io shown in the info card. Translate this text.">
+    آيو هو أصغر أقمار جوبيتر الأربعة الكبيرة (أقمار جاليليو) وأكثر الأجسام نشاطاً بركانياً في النظام الشمسي.
+    </string>
+    <string name="object_info_io_funfact" translation_description="Fun fact about Io shown in the info card. Translate this text.">
+    يمتلك إيو مئات البراكين النشطة، وبعضها ينفجر بنوافير حمم بركانية يصل ارتفاعها إلى عشرات الكيلومترات. يتم تحفيز نشاطه المستمر بواسطة التسخين المدي الناتج عن الجاذبية الهائلة لكوكب المشتري.
+    </string>
+    <string name="object_info_io_distance" translation_description="Distance to Io shown in the info card. Translate units if appropriate for your locale.">421,700 كم من المشتري</string>
+    <string name="object_info_io_size" translation_description="Physical size of Io shown in the info card. Translate units if appropriate for your locale.">3,643 كم قطر</string>
+
+    <string name="object_info_europa_description" translation_description="Description of Europa shown in the info card. Translate this text.">
+    يوروبا هو ثاني أقمار جاليليو ويُعتقد أنه يحتوي على محيط مائي سائل ضخم تحت قشرته الجليدية، مما يجعله أحد أكثر الأماكن الواعدة للبحث عن الحياة.
+    </string>
+    <string name="object_info_europa_funfact" translation_description="Fun fact about Europa shown in the info card. Translate this text.">
+    قد يحتوي المحيط تحت السطح لأوروبا على ضعف كمية المياه السائلة الموجودة في جميع محيطات الأرض مجتمعة، وتبقى سائلة بسبب التسخين المدّي من كوكب المشتري.
+    </string>
+    <string name="object_info_europa_distance" translation_description="Distance to Europa shown in the info card. Translate units if appropriate for your locale.">671,100 كم من المشتري</string>
+    <string name="object_info_europa_size" translation_description="Physical size of Europa shown in the info card. Translate units if appropriate for your locale.">3,122 كم قطر</string>
+
+    <string name="object_info_ganymede_description" translation_description="Description of Ganymede shown in the info card. Translate this text.">
+    غانيميد هو أكبر قمر في النظام الشمسي — حتى أنه أكبر من كوكب عطارد. وهو القمر الوحيد المعروف الذي يولد مجاله المغناطيسي الخاص به.
+    </string>
+    <string name="object_info_ganymede_funfact" translation_description="Fun fact about Ganymede shown in the info card. Translate this text.">
+    غانيميد أكبر من عطارد في الحجم، لكن كتلته تبلغ حوالي نصف كتلة عطارد فقط. يخلق مجاله المغناطيسي الداخلي مغناطيسيته الخاصة به داخل المغناطيسية الأكبر بكثير لكوكب المشتري.\'
+    </string>
+    <string name="object_info_ganymede_distance" translation_description="Distance to Ganymede shown in the info card. Translate units if appropriate for your locale.">1,070,400 كم من المشتري</string>
+    <string name="object_info_ganymede_size" translation_description="Physical size of Ganymede shown in the info card. Translate units if appropriate for your locale.">5,268 كم قطر</string>
+
+    <string name="object_info_callisto_description" translation_description="Description of Callisto shown in the info card. Translate this text.">
+    كاليستو هو أبعد أقمار جاليليو وأحد الأجسام الأكثر تضررًا من الحفر في النظام الشمسي، حيث يحافظ سطحه القديم على سجل تأثيرات النظام الشمسي المبكرة.
+    </string>
+    <string name="object_info_callisto_funfact" translation_description="Fun fact about Callisto shown in the info card. Translate this text.">
+    يدور كاليستو خارج أحزمة الإشعاع الرئيسية لكوكب المشتري، مما يجعله أسلم أقمار جاليليو للاستكشاف البشري في المستقبل — ويُطلق عليه أحياناً اسم \'قمر البوابة\'.
+    </string>
+    <string name="object_info_callisto_distance" translation_description="Distance to Callisto shown in the info card. Translate units if appropriate for your locale.">1,882,700 كم من المشتري</string>
+    <string name="object_info_callisto_size" translation_description="Physical size of Callisto shown in the info card. Translate units if appropriate for your locale.">4,821 كم قطر</string>
+
+    <!-- Moons of Mars -->
+    <string name="object_info_phobos_description" translation_description="Description of Phobos shown in the info card. Translate this text.">
+    فوبوس هو أكبر وأقرب أقمار المريخ إلى الكوكب، ويدور حول كوكبه أقرب من أي قمر آخر في النظام الشمسي. وهو جسم ذو شكل غير منتظم، مليء بالأخاديد والفوهات، ويُعتقد أنه كويكب تم التقاطه.
+    </string>
+    <string name="object_info_phobos_funfact" translation_description="Fun fact about Phobos shown in the info card. Translate this text.">
+    يدور فوبوس حول المريخ بسرعة كبيرة جداً بحيث يشرق من الغرب ويغرب من الشرق — وهو يتحرك ببطء نحو الداخل، وسيصطدم بالمريخ أو ينقسم إلى حلقة خلال حوالي 50 مليون سنة.
+    </string>
+    <string name="object_info_phobos_distance" translation_description="Distance to Phobos shown in the info card. Translate units if appropriate for your locale.">9,376 كم من المريخ</string>
+    <string name="object_info_phobos_size" translation_description="Physical size of Phobos shown in the info card. Translate units if appropriate for your locale.">27 × 22 × 18 كم</string>
+
+    <string name="object_info_deimos_description" translation_description="Description of Deimos shown in the info card. Translate this text.">
+    ديموس هو أصغر وأبعد القمرين حول المريخ، وله سطح أملس مغطى بالغبار يعطيه مظهراً أكثر استدارة من فوبوس. مثل رفيقه، يُعتقد أنه كويكب تم التقاطه من الحزام الخارجي.
+    </string>
+    <string name="object_info_deimos_funfact" translation_description="Fun fact about Deimos shown in the info card. Translate this text.">
+    ديموس صغير جداً وبعيد جداً بحيث أنه من سطح المريخ يبدو وكأنه نجم مضيء فقط، ويستغرق حوالي 30 ساعة للانجراف ببطء عبر سماء الليل.
+    </string>
+    <string name="object_info_deimos_distance" translation_description="Distance to Deimos shown in the info card. Translate units if appropriate for your locale.">23,460 كم من المريخ</string>
+    <string name="object_info_deimos_size" translation_description="Physical size of Deimos shown in the info card. Translate units if appropriate for your locale.">15 × 12 × 11 كم</string>
+
+    <!-- Major Moons of Saturn -->
+    <string name="object_info_titan_description" translation_description="Description of Titan shown in the info card. Translate this text.">
+    تيتان هو أكبر أقمار زحل والقمر الثاني الأكبر في النظام الشمسي. وهو القمر الوحيد المعروف الذي يمتلك غلافاً جوياً كثيفاً — غطاء نيتروجيني سميك مشبع بالميثان — والعالم الوحيد خارج الأرض المعروف بوجود بحار سائلة مستقرة على سطحه.
+    </string>
+    <string name="object_info_titan_funfact" translation_description="Fun fact about Titan shown in the info card. Translate this text.">
+    بحيرات وبحار تيتان مليئة ليس بالماء بل بالميثان والإيثان السائل عند درجة حرارة منخفضة جداً تبلغ −179°م. ستصل مهمة مركبة ناسا دراغونفلاي الدوارة في عام 2034، وستحلق بين مواقع على سطح تيتان للبحث عن كيمياء الحياة.
+    </string>
+    <string name="object_info_titan_distance" translation_description="Distance to Titan shown in the info card. Translate units if appropriate for your locale.">1,221,870 كم من زحل</string>
+    <string name="object_info_titan_size" translation_description="Physical size of Titan shown in the info card. Translate units if appropriate for your locale.">5,151 كم قطر</string>
+
+    <string name="object_info_rhea_description" translation_description="Description of Rhea shown in the info card. Translate this text.">
+    ريا هي ثاني أكبر أقمار زحل وعالم مغطى بالحفر بكثافة مصنوع من الجليد والصخور. يحافظ سطحها الشاحب والقديم على بعض من أكثر فوهات التأثير بكاملها في النظام الشمسي، إلى جانب منحدرات جليدية مشرقة حيث كشفت الانهيارات الأرضية عن مواد طازة من تحتها.
+    </string>
+    <string name="object_info_rhea_funfact" translation_description="Fun fact about Rhea shown in the info card. Translate this text.">
+    في عام 2008، اقترحت بيانات كاسيني أن ريا قد تمتلك حلقة رقيقة من الحطام تدور حولها — وهذا سيجعلها أول قمر يتم اكتشاف نظام حلقات خاص به. إذا تم تأكيد ذلك، فستكون اكتشافًا رائعًا؛ والأدلة لا تزال مجالًا نشطًا للبحث.
+    </string>
+    <string name="object_info_rhea_distance" translation_description="Distance to Rhea shown in the info card. Translate units if appropriate for your locale.">527,108 كم من زحل</string>
+    <string name="object_info_rhea_size" translation_description="Physical size of Rhea shown in the info card. Translate units if appropriate for your locale.">1,527 كم قطر</string>
+
+    <string name="object_info_tethys_description" translation_description="Description of Tethys shown in the info card. Translate this text.">
+    تيثيس هو قمر جليدي لزحل يتميز بميزتين درامتيتين: فوهة أوديسيوس الشاسعة، التي يبلغ عرضها 400 كم وتغطي ما يقرب من ثلث وجه القمر، وإيثاكا تشاسما، وهي نظام وادي يمتد ثلاثة أرباع الطريق حول الكرة الأرضية.
+    </string>
+    <string name="object_info_tethys_funfact" translation_description="Fun fact about Tethys shown in the info card. Translate this text.">
+    تيثيس مكون تقريباً من جليد مائي نقي — فهو يتمتع بواحدة من أقل الكثافات بين أي قمر في النظام الشمسي، بالكاد أكثر كثافة من الماء المتجمد. قد يكون خندق إيثاكا قد تشكل عندما تجمد الجزء الداخلي وتمدد، مما أدى إلى تشقق القشرة العلوية من الداخل.
+    </string>
+    <string name="object_info_tethys_distance" translation_description="Distance to Tethys shown in the info card. Translate units if appropriate for your locale.">294,619 كم من زحل</string>
+    <string name="object_info_tethys_size" translation_description="Physical size of Tethys shown in the info card. Translate units if appropriate for your locale.">1,062 كم قطر</string>
+
+    <string name="object_info_dione_description" translation_description="Description of Dione shown in the info card. Translate this text.">
+    ديون هو قمر جليدي لزحل يتميز بوجه رائد مليء بالفوهات وكرة أرضية خلفية مزينة بجروف جليدية مشرقة — خطوط كسر حيث كشفت القوى التكتونية القديمة الجليد الطازج من تحت السطح. تشير بيانات الجاذبية من كاسيني إلى وجود محيط سائل تحت السطح تحت القشرة.
+    </string>
+    <string name="object_info_dione_funfact" translation_description="Fun fact about Dione shown in the info card. Translate this text.">
+    تشارك ديون مدارها مع قمرين صغيرين، هيلين وبوليديوسيس، وهما مقيدان على بعد 60° أمامها وخلفها عند نقاط التوازن الجاذبي التي تسمى نقاط لاغرانج. يمكن رؤية هيلين بشكل خاص وهي تسير مثل مسافر كوني في صور كاسيني.
+    </string>
+    <string name="object_info_dione_distance" translation_description="Distance to Dione shown in the info card. Translate units if appropriate for your locale.">377,396 كم من زحل</string>
+    <string name="object_info_dione_size" translation_description="Physical size of Dione shown in the info card. Translate units if appropriate for your locale.">1,122 كم قطر</string>
+
+    <string name="object_info_iapetus_description" translation_description="Description of Iapetus shown in the info card. Translate this text.">
+    إيابيتوس هو أحد أقمار زحل الأكثر تميزاً: نصفه الأمامي مغطى بمادة سوداء داكنة مثل الفحم، بينما نصفه الخلفي عبارة عن جليد أبيض لامع. هذا المظهر الثنائي الألوان الشديد حيّر جيوفاني كاسيني عندما اكتشف القمر عام 1671، والتباين حاد جداً بحيث يكون مرئياً في التلسكوبات الصغيرة.
+    </string>
+    <string name="object_info_iapetus_funfact" translation_description="Fun fact about Iapetus shown in the info card. Translate this text.">
+    يتميز إيابيتوس أيضًا بحافة استوائية شاهقة يبلغ ارتفاعها 20 كم — أعلى من أي جبل على الأرض — تمتد لآلاف الكيلومترات حول خط استوائه. أصلها غير معروف: قد تكون بقايا حلقة منهارة، أو طيات تكتونية قديمة، تشكلت عندما كان القمر يدور بسرعة أكبر بكثير منذ زمن بعيد.
+    </string>
+    <string name="object_info_iapetus_distance" translation_description="Distance to Iapetus shown in the info card. Translate units if appropriate for your locale.">3,560,820 كم من زحل</string>
+    <string name="object_info_iapetus_size" translation_description="Physical size of Iapetus shown in the info card. Translate units if appropriate for your locale.">1,469 كم قطر</string>
+
+    <!-- Moon of Neptune -->
+    <string name="object_info_triton_description" translation_description="Description of Triton shown in the info card. Translate this text.">
+    تريتون هو أكبر أقمار نبتون وأحد الأجسام الأكثر استثنائية في النظام الشمسي. يدور حول نبتون بشكل معاكس — في الاتجاه المعاكس لدوران الكوكب نفسه — وهي علامة قوية على أنه تم التقاطه من النظام الشمسي الخارجي، على الأرجح من حزام كايبر، في بداية تاريخ نبتون.
+    </string>
+    <string name="object_info_triton_funfact" translation_description="Fun fact about Triton shown in the info card. Translate this text.">
+    رغم درجة حرارة سطحها البالغة −235°م — وهي أبرد درجة حرارة تم قياسها على أي جسم زارته مركبة فضائية — اكتشفت مركبة فويجر 2 نوافير نيتروجين نشطة على تريتون في عام 1989. تحدد الخطوط الداكنة على السطح المواقع التي انفجرت فيها أعمدة من الغاز والمادة الداكنة لعدة كيلومترات في الغلاف الجوي الرقيق.
+    </string>
+    <string name="object_info_triton_distance" translation_description="Distance to Triton shown in the info card. Translate units if appropriate for your locale.">354,759 كم من نبتون</string>
+    <string name="object_info_triton_size" translation_description="Physical size of Triton shown in the info card. Translate units if appropriate for your locale.">2,707 كم قطر</string>
+
+    <!-- Major Moons of Uranus -->
+    <string name="object_info_titania_description" translation_description="Description of Titania shown in the info card. Translate this text.">
+    تيتانيا هي أكبر أقمار أورانوس والقمر الثامن الأكبر في النظام الشمسي. يُظهر سطحها مزيجًا من السهول القديمة المليئة بالفوهات والجروف والوديان الأصغر سنًا، مما يشير إلى تاريخ جيولوجي معقد قد يكون تضمن نشاطًا تكتونيًا سابقًا أعاد تشكيل القشرة الجليدية.
+    </string>
+    <string name="object_info_titania_funfact" translation_description="Fun fact about Titania shown in the info card. Translate this text.">
+    جميع أقمار أورانوس سميت على اسم شخصيات من شكسبير والكسندر بوب — تيتانيا هي ملكة الجنيات في حلم ليلة صيف. وهي واحدة من عدد قليل جداً من أقمار الكواكب الرئيسية التي لم تسمَّ على اسم شخصية من الأساطير اليونانية أو الرومانية.
+    </string>
+    <string name="object_info_titania_distance" translation_description="Distance to Titania shown in the info card. Translate units if appropriate for your locale.">435,910 كم من أورانوس</string>
+    <string name="object_info_titania_size" translation_description="Physical size of Titania shown in the info card. Translate units if appropriate for your locale.">1,578 كم قطر</string>
+
+    <string name="object_info_oberon_description" translation_description="Description of Oberon shown in the info card. Translate this text.">
+    أوبيرون هو أبعد أقمار أورانوس الخمسة الرئيسية وأحدها الأكثر تضررًا من الحفر، بسطح قديم لم يتغير كثيرًا منذ بدايات النظام الشمسي. تحتوي عدة من حفره التأثيرية الكبيرة على مادة داكنة على أرضياتها، ربما رواسب عضوية جلبتها الأجسام المؤثرة.
+    </string>
+    <string name="object_info_oberon_funfact" translation_description="Fun fact about Oberon shown in the info card. Translate this text.">
+    يستضيف أوبيرون جبلاً يرتفع حوالي 6 كم عن السهول المحيطة به — وهو ما يضاهي أعلى القمم على الأرض. بخلاف جبال الأرض، التي تشكلت من خلال حركة الصفائح التكتونية، قد تكون هذه الميزة القمة المركزية لفوهة تصادم قديمة أو بقايا من نشاط بركاني مبكر.
+    </string>
+    <string name="object_info_oberon_distance" translation_description="Distance to Oberon shown in the info card. Translate units if appropriate for your locale.">583,520 كم من أورانوس</string>
+    <string name="object_info_oberon_size" translation_description="Physical size of Oberon shown in the info card. Translate units if appropriate for your locale.">1,523 كم قطر</string>
+
+    <string name="object_info_ariel_description" translation_description="Description of Ariel shown in the info card. Translate this text.">
+    تتمتع أريل بأصغر وألمع سطح من بين أقمار أورانوس الخمسة الرئيسية. يهيمن على منظرها الطبيعي شبكة من الوديان العميقة والسهول الملساء التي تم تجديد سطحها منذ زمن بعيد بواسطة سوائل - ربما الماء أو خليط من الماء والأمونيا - تنبثق من الداخل وتغمر التضاريس القديمة.
+    </string>
+    <string name="object_info_ariel_funfact" translation_description="Fun fact about Ariel shown in the info card. Translate this text.">
+    يمكن لوديان أريل أن تصل إلى عمق 10 كم — أعمق بكثير من جراند كانيون. لاحظ تلسكوب جيمس ويب الفضائي وجود جليد ثاني أكسيد الكربون على سطح أريل، مما يشير إلى استمرار الكيمياء السطحية التي تحركها الجزيئات المشحونة من المجال المغناطيسي لأورانوس.
+    </string>
+    <string name="object_info_ariel_distance" translation_description="Distance to Ariel shown in the info card. Translate units if appropriate for your locale.">191,020 كم من أورانوس</string>
+    <string name="object_info_ariel_size" translation_description="Physical size of Ariel shown in the info card. Translate units if appropriate for your locale.">1,158 كم قطر</string>
+
+    <string name="object_info_umbriel_description" translation_description="Description of Umbriel shown in the info card. Translate this text.">
+    أمبريل هو أغمق أقمار أورانوس الخمسة الرئيسية، بسطح قديم موحد ومليء بالحفر بشكل كبير يظهر علامات قليلة على إعادة التشكيل الجيولوجي التي شوهدت على أقماره المجاورة. يبدو أن داخله ظل باردًا ومتجمدًا منذ بداية تاريخ النظام الشمسي.
+    </string>
+    <string name="object_info_umbriel_funfact" translation_description="Fun fact about Umbriel shown in the info card. Translate this text.">
+    أبرز ميزة على أمبريل هي وندا، حلقة مضيئة يبلغ عرضها حوالي 140 كم بالقرب من خط استوائها. اكتشفتها مركبة فويجر 2 في عام 1986، وتبقى الطبيعة الدقيقة لوندا لغزًا - فقد تكون قاع فوهة مغطى بثاني أكسيد الكربون أو صقيع الأمونيا المترسب بعد وقت طويل من الاصطدام الذي شكلها.
+    </string>
+    <string name="object_info_umbriel_distance" translation_description="Distance to Umbriel shown in the info card. Translate units if appropriate for your locale.">266,300 كم من أورانوس</string>
+    <string name="object_info_umbriel_size" translation_description="Physical size of Umbriel shown in the info card. Translate units if appropriate for your locale.">1,170 كم قطر</string>
+
+    <!-- Globular clusters already on the map -->
+    <string name="object_info_omega_centauri_description" translation_description="Description of Omega Centauri shown in the info card. Translate this text.">
+    أوميغا قنطورس هي أكبر وأضخم عنقود كروي يدور حول درب التبانة، وتحتوي على ما يقرب من 10 ملايين نجم مضغوطة في كرة يبلغ قطرها حوالي 150 سنة ضوئية. وهي مرئية بسهولة بالعين المجردة كنجم غامض في كوكبة قنطورس، وتتحول إلى كرة خلابة من النجوم من خلال المناظير أو أي تلسكوب.
+    </string>
+    <string name="object_info_omega_centauri_funfact" translation_description="Fun fact about Omega Centauri shown in the info card. Translate this text.">
+    بخلاف العناقيد الكروية النموذجية، يحتوي أوميجا سنتاوري على نجوم بأعمار وتركيبات كيميائية مختلفة جداً — وهذا يشير إلى أنه قد يكون النواة المكشوفة لمجرة قزمة تم تمزيقها وابتلاعها بواسطة درب التبانة منذ مليارات السنين. قد يحتوي حتى على ثقب أسود متوسط الكتلة في مركزه.
+    </string>
+    <string name="object_info_omega_centauri_distance" translation_description="Distance to Omega Centauri shown in the info card. Translate units if appropriate for your locale.">17,090 سنة ضوئية</string>
+    <string name="object_info_omega_centauri_size" translation_description="Physical size of Omega Centauri shown in the info card. Translate units if appropriate for your locale.">~150 سنة ضوئية قطر</string>
+
+    <!-- Deep-sky objects: new catalog additions -->
+    <string name="object_info_hyades_description" translation_description="Description of the Hyades star cluster shown in the info card. Translate this text.">
+    الثريا هي أقرب عنقود نجمي مفتوح إلى النظام الشمسي وأحد أكثر العناقيد المدروسة في علم الفلك. يمكن رؤيتها بالعين المجردة كنمط على شكل حرف V من النجوم التي تشكل وجه الثور، وتحتوي على عدة مئات من النجوم موزعة على حوالي 5° من السماء.
+    </string>
+    <string name="object_info_hyades_funfact" translation_description="Fun fact about the Hyades shown in the info card. Translate this text.">
+    نجم الدبران البرتقالي اللامع يبدو أنه يقع داخل الثريا، لكنه في الواقع جسم في المقدمة على نصف المسافة — محاذاة عرضية. العنقود الحقيقي يبعد حوالي 153 سنة ضوئية ويحتوي على أول النجوم التي تم قياس مسافاتها بواسطة المنظر من قمر صناعي هيبارخوس.
+    </string>
+    <string name="object_info_hyades_distance" translation_description="Distance to the Hyades shown in the info card. Translate units if appropriate for your locale.">153 سنة ضوئية</string>
+    <string name="object_info_hyades_size" translation_description="Angular size of the Hyades shown in the info card.">~5° عبر</string>
+
+    <string name="object_info_coma_star_cluster_description" translation_description="Description of the Coma Berenices Star Cluster shown in the info card. Translate this text.">
+    تجمع كوما بيرينيسيس النجمي هو تجمع مفتوح قريب يضم حوالي 40 نجماً موزعة بشكل فضفاض عبر ما يقرب من 5 درجات من السماء، وهو مرئي بسهولة بالعين المجردة كضباب ناعم في الظروف المظلمة. وهو ثالث أقرب تجمع مفتوح للنظام الشمسي ومصدر كوكبة كوما بيرينيسيس.
+    </string>
+    <string name="object_info_coma_star_cluster_funfact" translation_description="Fun fact about the Coma Berenices Star Cluster shown in the info card. Translate this text.">
+    رأى الراصدون القدماء هذا العنقود على أنه شعر الملكة بيرينيس الثانية من مصر، التي قطعت شعرها الذهبي الأسطوري قربانًا لعودة زوجها سالمًا من الحرب. يُقال إن بطليموس الثالث أطلق على هذا الكوكبة الغريبة اسمًا رسميًا تكريمًا لها حوالي سنة 245 قبل الميلاد.
+    </string>
+    <string name="object_info_coma_star_cluster_distance" translation_description="Distance to the Coma Star Cluster shown in the info card. Translate units if appropriate for your locale.">288 سنة ضوئية</string>
+    <string name="object_info_coma_star_cluster_size" translation_description="Angular size of the Coma Star Cluster shown in the info card.">~5° عبر</string>
+
+    <string name="object_info_coathanger_description" translation_description="Description of the Coathanger asterism shown in the info card. Translate this text.">
+    الشماعة هي تجمع نجمي مميز يتكون من عشرة نجوم في كوكبة الثعلب الصغير تشكل شكلاً لا يُخطئ فيه: ستة نجوم في خط مستقيم مع أربعة معلقة أسفلها في شكل خطاف، يشبه تماماً شماعة الملابس المقلوبة. وهو أحد أفضل الأجرام التي يمكن رؤيتها بالمنظار الثنائي في سماء الصيف، حيث يتسع بشكل مثالي في حقل رؤية المنظار الثنائي النموذجي.
+    </string>
+    <string name="object_info_coathanger_funfact" translation_description="Fun fact about the Coathanger shown in the info card. Translate this text.">
+    على الرغم من أن مجموعة الشماعة تبدو وكأنها عنقود، فإن نجومها غير مرتبطة فيزيائياً — فهي تقع على مسافات مختلفة جداً وهي مجرد صدفة في خط النظر. تم فهرسة مجموعة بروكي بواسطة دالميرو بروكي في عشرينيات القرن العشرين، وأول تلسكوب فضائي صورها كان هيبارخوس، الذي أكد أن النجوم غير مرتبطة.
+    </string>
+    <string name="object_info_coathanger_distance" translation_description="Distance to the Coathanger shown in the info card. Translate units if appropriate for your locale.">~420 سنة ضوئية (ألمع نجم)</string>
+    <string name="object_info_coathanger_size" translation_description="Angular size of the Coathanger shown in the info card.">~1° عبر</string>
+
+    <string name="object_info_helix_nebula_description" translation_description="Description of the Helix Nebula shown in the info card. Translate this text.">
+    سديم الحلزون هو أكبر سديم كوكبي من حيث الحجم الظاهري في السماء — وهو غلاف متمدد من الغاز تخلصت منه نجم شبيه بالشمس في نهاية حياته. بامتداد حوالي نصف درجة، يمكن رؤيته بالمناظير كتوهج دائري خافت في برج الدلو، وله لقب عين الله لمظهره في الصور طويلة التعريض.
+    </string>
+    <string name="object_info_helix_nebula_funfact" translation_description="Fun fact about the Helix Nebula shown in the info card. Translate this text.">
+    في مركز سديم الحلزون يوجد أحد أقرب الأقزام البيضاء المعروفة إلى الأرض — وهو بقايا نجمية شديدة الحرارة بحجم الأرض تقريباً لكن بكتلة الشمس. هذا هو المصير الذي ينتظر شمسنا خلال حوالي خمسة مليارات سنة.
+    </string>
+    <string name="object_info_helix_nebula_distance" translation_description="Distance to the Helix Nebula shown in the info card. Translate units if appropriate for your locale.">650 سنة ضوئية</string>
+    <string name="object_info_helix_nebula_size" translation_description="Angular size of the Helix Nebula shown in the info card.">~3 سنوات ضوئية قطر</string>
+
+    <string name="object_info_sculptor_galaxy_description" translation_description="Description of the Sculptor Galaxy shown in the info card. Translate this text.">
+    مجرة النحات هي واحدة من ألمع وأجمل المجرات الحلزونية المرئية من الحافة من الأرض، وتظهر كتوهج ممدود في كوكبة النحات الجنوبية. وهي واحدة من أقرب مجرات الانفجار النجمي — مجرة تمر بانفجار مكثف من تكوين النجوم — المرئية لعلماء الفلك الهواة بالمناظير من السماوات المظلمة.
+    </string>
+    <string name="object_info_sculptor_galaxy_funfact" translation_description="Fun fact about the Sculptor Galaxy shown in the info card. Translate this text.">
+    مجرة النحات هي واحدة من ألمع أعضاء مجموعة النحات — مجموعة المجرات الأقرب إلى مجموعتنا المحلية. ينتج منطقة الانفجار النجمي المركزية نجوماً جديدة بمعدل أعلى عدة مرات من درب التبانة، مدفوعة بالتفاعلات السابقة مع المجرات المجاورة.
+    </string>
+    <string name="object_info_sculptor_galaxy_distance" translation_description="Distance to the Sculptor Galaxy shown in the info card. Translate units if appropriate for your locale.">11.4 مليون سنة ضوئية</string>
+    <string name="object_info_sculptor_galaxy_size" translation_description="Physical size of the Sculptor Galaxy shown in the info card. Translate units if appropriate for your locale.">~90,000 سنة ضوئية عبر</string>
+
+    <string name="object_info_blue_snowball_nebula_description" translation_description="Description of the Blue Snowball Nebula shown in the info card. Translate this text.">
+    Blue Snowball هي سديم كوكبي في مجرة أندروميدا — الغلاف المتوهج من الغاز الذي طرده نجم محتضر. بحجم ظاهري 8.3، فهي واحدة من ألمع وأكثر السدم الكوكبية ملونة في السماء، وتظهر كقرص أزرق-أخضر حي حتى في التلسكوبات الصغيرة. شكلها المتماثل ولونها الكثيف يجعلانها مفضلة بين الراصدين.
+    </string>
+    <string name="object_info_blue_snowball_nebula_funfact" translation_description="Fun fact about the Blue Snowball Nebula shown in the info card. Translate this text.">
+    يأتي اللون الرائع لـ Blue Snowball من الأكسجين المؤين بشكل مضاعف الذي يتوهج بطول موجي أخضر محدد، مدمجاً مع انبعاث الهيدروجين — لوحة ألوان يدركها العين البشرية باللون أزرق-أخضر. يبلغ درجة حرارة سطح القزم الأبيض المركزي حوالي 100,000°C، وهي درجة حرارة عالية بما يكفي لتأين الغاز المحيط على هذه المسافة.
+    </string>
+    <string name="object_info_blue_snowball_nebula_distance" translation_description="Distance to the Blue Snowball Nebula shown in the info card. Translate units if appropriate for your locale.">~2,500 سنة ضوئية</string>
+    <string name="object_info_blue_snowball_nebula_size" translation_description="Physical size of the Blue Snowball Nebula shown in the info card. Translate units if appropriate for your locale.">~0.8 سنة ضوئية قطر</string>
+
+    <string name="object_info_ghost_of_jupiter_description" translation_description="Description of the Ghost of Jupiter planetary nebula shown in the info card. Translate this text.">
+    Ghost of Jupiter هي سديم كوكبي مضيء في كوكبة الحية (Hydra) بحجم ظاهري مشابه لكوكب المشتري — ومن هنا جاء اسمها. بقدر ظاهري 8.6، فهي أحد أكثر السدم الكوكبية سهولة في الوصول إليها في السماء بالتلسكوبات الصغيرة، حيث تُظهر قرصاً واضحاً وتلميحاً من اللون في الفتحات المتوسطة.
+    </string>
+    <string name="object_info_ghost_of_jupiter_funfact" translation_description="Fun fact about the Ghost of Jupiter shown in the info card. Translate this text.">
+    شبح المشتري له قشرة داخلية مضيئة محاطة بهالة خارجية أضعف — وهي بنية ثنائية القشرة تشير إلى أن النجم المحتضر طرد الغاز في حلقتين منفصلتين على الأقل. نجمه المركزي هو أحد أكثر الأقزام البيضاء حرارة المعروفة، بدرجة حرارة سطحية تُقدّر بحوالي 75,000°م.
+    </string>
+    <string name="object_info_ghost_of_jupiter_distance" translation_description="Distance to the Ghost of Jupiter shown in the info card. Translate units if appropriate for your locale.">~1,400 سنة ضوئية</string>
+    <string name="object_info_ghost_of_jupiter_size" translation_description="Physical size of the Ghost of Jupiter shown in the info card. Translate units if appropriate for your locale.">~1 سنة ضوئية قطر</string>
+
+    <string name="object_info_saturn_nebula_description" translation_description="Description of the Saturn Nebula shown in the info card. Translate this text.">
+    سديم زحل هو سديم كوكبي في برج الدلو سُمي بهذا الاسم لتشابهه مع كوكب زحل — امتدادات تُسمى الأنسة تبرز من كلا الجانبين مثل مقابض الحلقات، وتكون مرئية في التلسكوبات المتوسطة. بحجم ظاهري 8.0، فهو أحد ألمع الأسدية الكوكبية في السماء ويُظهر بنية معقدة في الأجهزة الأكبر.
+    </string>
+    <string name="object_info_saturn_nebula_funfact" translation_description="Fun fact about the Saturn Nebula shown in the info card. Translate this text.">
+    اكتشف ويليام هرشل سديم زحل في عام 1782 ولاحظ مظهره الشبيه بزحل. تكشف الملاحظات الحديثة عن وجود أربع قشور متميزة على الأقل من الغاز تحيط بالنجم الأبيض الكثيف المركزي، مما يعكس حلقات متعددة من فقدان الكتلة في المراحل النهائية من حياة النجم.
+    </string>
+    <string name="object_info_saturn_nebula_distance" translation_description="Distance to the Saturn Nebula shown in the info card. Translate units if appropriate for your locale.">~5,000 سنة ضوئية</string>
+    <string name="object_info_saturn_nebula_size" translation_description="Physical size of the Saturn Nebula shown in the info card. Translate units if appropriate for your locale.">~1 سنة ضوئية عبر</string>
+
+    <string name="object_info_ngc_2903_description" translation_description="Description of the galaxy NGC 2903 shown in the info card. Translate this text.">
+    NGC 2903 هي مجرة حلزونية مقيدة مشرقة في برج الأسد، وغالباً ما تُسمى "جسم مسييه الذي فاته مسييه" — وهي واحدة من أبرز المجرات في السماء التي لم تُدرج في فهرسه الشهير. بحجم ظاهري 8.9، فهي مرئية بسهولة في المناظير الثنائية وتُظهر بنية حلزونية جميلة في التلسكوبات المتوسطة.
+    </string>
+    <string name="object_info_ngc_2903_funfact" translation_description="Fun fact about NGC 2903 shown in the info card. Translate this text.">
+    يحتوي NGC 2903 على أحد أعلى تركيزات "نقاط ساخنة" لتشكل النجوم المعروفة في منطقة القضيب المركزي للمجرة — عناقيد كثيفة من النجوم الضخمة الشابة المضاءة بتشكل نجمي مكثف. يُستخدم كمعيار لدراسة نشاط الانفجار النجمي في المجرات الحلزونية ذات القضبان.
+    </string>
+    <string name="object_info_ngc_2903_distance" translation_description="Distance to NGC 2903 shown in the info card. Translate units if appropriate for your locale.">30 مليون سنة ضوئية</string>
+    <string name="object_info_ngc_2903_size" translation_description="Physical size of NGC 2903 shown in the info card. Translate units if appropriate for your locale.">~80,000 سنة ضوئية عبر</string>
+
+    <!-- Meteor showers -->
+    <string name="object_info_quadrantids_description" translation_description="Description of the Quadrantids meteor shower shown in the info card. Translate this text.">
+    الرباعيات (Quadrantids) هي زخة نيزكية غزيرة في شهر يناير تتميز بذروة حادة وقصيرة جداً تستمر لبضع ساعات فقط. يقع الشعاع في كوكبة بوتيس (Boötes)، بالقرب من موقع كوكبة الرباع الجدارية (Quadrans Muralis) المنقرضة التي سميت الزخة باسمها. يمكن رؤية ما يصل إلى 120 نيزكاً في الساعة في ظروف مثالية.
+    </string>
+    <string name="object_info_quadrantids_funfact" translation_description="Fun fact about the Quadrantids meteor shower shown in the info card. Translate this text.">
+    بخلاف معظم الزخات الرئيسية التي تنشأ من المذنبات، فإن الجسم الأم للرباعيات هو الكويكب 2003 EH1 — يُعتقد أنه نواة مذنب خامدة احترقت منذ قرون. تم تأكيد وجوده فقط في عام 2003.
+    </string>
+
+    <string name="object_info_lyrids_description" translation_description="Description of the Lyrids meteor shower shown in the info card. Translate this text.">
+    نيازك الليريات هي زخة ربيعية موثوقة تشع من بالقرب من نجم فيجا الساطع في كوكبة القيثارة. تنتج نيازك سريعة وساطعة بشكل معتدل، وتصل ذروتها إلى حوالي 18 نيزك في الساعة، وأحياناً تولد كرات نارية تترك مسارات دخان متوهجة.
+    </string>
+    <string name="object_info_lyrids_funfact" translation_description="Fun fact about the Lyrids meteor shower shown in the info card. Translate this text.">
+    يُعتبر زخّ الليريات أقدم زخّ نيازك موثّق بشكل موثوق به في التاريخ. وثّق الفلكيون الصينيون عاصفة من النيازك "تهطل مثل المطر" في عام 687 قبل الميلاد. تأتي الحطام من المذنب ثاتشر، الذي يستغرق 415 سنة للدوران حول الشمس وآخر زيارة له للنظام الشمسي الداخلي كانت في عام 1861.
+    </string>
+
+    <string name="object_info_aquariids_description" translation_description="Description of the Eta Aquariids meteor shower shown in the info card. Translate this text.">
+    إيتا الدلويات هي واحدة من اثنين من زخات النيازك السنوية الناتجة عن حطام مذنب هالي. بذروة تصل إلى 70 نيزكًا في الساعة، تفضل الزخة بشدة نصف الكرة الجنوبي، حيث يرتفع الإشعاع عاليًا قبل الفجر. لا يزال المراقبون الشماليون يستمتعون بمعدل محترم يبلغ 30 نيزكًا أو أكثر في الساعة.
+    </string>
+    <string name="object_info_aquariids_funfact" translation_description="Fun fact about the Eta Aquariids meteor shower shown in the info card. Translate this text.">
+    تسافر نيازك إيتا الدلويات بسرعة 66 كم/ث — سرعة كافية لجعل الهواء المؤين الذي تخلقه يتوهج لعدة ثوان بعد اختفاء النيزك. قد ترى غبار هالي القديم يحترق أمام عينيك، وقد تم إطلاقه خلال إحدى زيارات المذنب العديدة منذ آلاف السنين.
+    </string>
+
+    <string name="object_info_deltaaquariids_description" translation_description="Description of the Delta Aquariids meteor shower shown in the info card. Translate this text.">
+    تصل زخات الدلتا الجنوبية للدلو إلى ذروتها في أواخر يوليو وتُرى بشكل أفضل من خطوط العرض الاستوائية والجنوبية، حيث يرتفع الإشعاع في الدلو عالياً قبل الفجر. وتُنتج تدفقاً مستمراً من النيازك متوسطة السرعة بمعدل يصل إلى 16 نيزك في الساعة، مع عدد قليل من الكرات النارية الساطعة.
+    </string>
+    <string name="object_info_deltaaquariids_funfact" translation_description="Fun fact about the Delta Aquariids meteor shower shown in the info card. Translate this text.">
+    يبقى الجسم الأصلي الدقيق لزخة الدلتا الأكواريات غير مؤكد. المرشح الرئيسي هو المذنب 96P/Machholz، وهو مذنب غير عادي قصير الدورة بمدار مائل بشدة يقترب بشكل ملحوظ من الشمس — أقرب من كوكب عطارد.
+    </string>
+
+    <string name="object_info_perseids_description" translation_description="Description of the Perseids meteor shower shown in the info card. Translate this text.">
+    نيزك الفرسيات هو أشهر زخات النيازك في السنة، حيث يصل ذروته في ليالي أغسطس الدافئة بمعدل يصل إلى 100 نيزك في الساعة. تحترق الحطام المتناثرة من المذنب سويفت-تاتل في الغلاف الجوي العالي للأرض، مما ينتج نيازك سريعة وساطعة — كثير منها يترك مسارات متوهجة مستمرة — تشع من كوكبة فرسيوس.
+    </string>
+    <string name="object_info_perseids_funfact" translation_description="Fun fact about the Perseids meteor shower shown in the info card. Translate this text.">
+    الجسم الأم لزخة بيرسيوس، المذنب سويفت-تاتل، له نواة بعرض 26 كم — أكبر من الجسم الذي يُعتقد أنه تسبب في الانقراض الجماعي الذي أنهى عصر الديناصورات. مرّ المذنب آخر مرة عبر الجزء الداخلي من النظام الشمسي في عام 1992 ولن يعود حتى عام 2125.
+    </string>
+
+    <string name="object_info_orionids_description" translation_description="Description of the Orionids meteor shower shown in the info card. Translate this text.">
+    نيزك الأوريونيدات هو ثاني زخة نيازك تنتجها مذنب هالي كل عام، وتنطلق من بالقرب من نادي الجبار المرفوع. بذروة حوالي 25 نيزك في الساعة، تُعرف بنيازكها السريعة والمضيئة غالباً التي غالباً ما تترك مسارات تأين مضيئة تستمر عدة ثوان.
+    </string>
+    <string name="object_info_orionids_funfact" translation_description="Fun fact about the Orionids meteor shower shown in the info card. Translate this text.">
+    مذنب هالي مسؤول عن حيويتين نيزكيتين سنويتين: إيتا الدلويات في مايو، عندما تعبر الأرض مسار الحطام الخارجي للمذنب، وأورايونيدز في أكتوبر، عندما تعبر الأرض مسار الحطام الداخلي. معاً يسمحان لنا بأخذ عينات من غبار هالي القديم مرتين في السنة.
+    </string>
+
+    <string name="object_info_leonids_description" translation_description="Description of the Leonids meteor shower shown in the info card. Translate this text.">
+    تنطلق نيازك الليونيات من منجل الأسد وعادة ما تنتج حوالي 20 نيزكًا في الساعة. وهي مشهورة بالعواصف الرائعة التي تندلع تقريبًا كل 33 سنة عندما تمر الأرض عبر خيط غبار كثيف ألقته المذنب 55P/Tempel-Tuttle. يمكن لهذه العواصف أن تنتج آلاف النيازك في الساعة.
+    </string>
+    <string name="object_info_leonids_funfact" translation_description="Fun fact about the Leonids meteor shower shown in the info card. Translate this text.">
+    أنتجت عاصفة الليونيات عام 1833 ما يقدر بـ 100,000 شهاب في الساعة، مما أرعب الراقبين عبر أمريكا الشمالية الذين خافوا من أن السماء تشتعل بالنار. أطلقت هذه الحادثة الدراسة العلمية لزخات الشهب. حدثت عواصف مماثلة في عامي 1966 و1999.
+    </string>
+
+    <string name="object_info_puppidvelids_description" translation_description="Description of the Puppid-Velids meteor shower shown in the info card. Translate this text.">
+    نيزك بوبيد-فيليدز عبارة عن مجموعة معقدة من الزخات الثانوية المتداخلة التي تشع من كوكبات بوبيس وفيلا في درب التبانة الجنوبي. وتصل ذروتها إلى حوالي 10 نيازك في الساعة، وتُلاحظ بشكل أفضل من نصف الكرة الجنوبي، حيث يرتفع الإشعاع عالياً في سماء ديسمبر.
+    </string>
+    <string name="object_info_puppidvelids_funfact" translation_description="Fun fact about the Puppid-Velids meteor shower shown in the info card. Translate this text.">
+    يُعتقد أن نيزك بوبيد-فيليدز هو حطام من عدة مذنبات أم مختلفة وليس من مصدر واحد، بما في ذلك المذنب 26P/Grigg-Skjellerup. لا يرتفع الشعاع الجنوبي لهذا النيزك أبداً فوق الأفق للمراقبين في خطوط العرض الشمالية من حوالي 40°N، مما يجعله زخة نيزكية نادراً ما يراها معظم سكان العالم.
+    </string>
+
+    <string name="object_info_geminids_description" translation_description="Description of the Geminids meteor shower shown in the info card. Translate this text.">
+    يُعتبر زخّ الجوزاء على نطاق واسع أفضل زخّ نيازك في السنة — وفير (يصل إلى 120 في الساعة)، وموثوق، وفعّال من المساء المبكر وليس فقط بعد منتصف الليل. وينبع من كوكبة الجوزاء وينتج مجموعة واسعة من سطوع النيازك، بما في ذلك الكرات النارية الزاهية.
+    </string>
+    <string name="object_info_geminids_funfact" translation_description="Fun fact about the Geminids meteor shower shown in the info card. Translate this text.">
+    بشكل فريد بين الزخات الرئيسية، تأتي الجميزيات من كويكب وليس من مذنب: 3200 فايثون، وهو "مذنب صخري" يأخذ مداره أقرب إلى الشمس من أي كويكب مسمى آخر. قد يؤدي الحر الشديد إلى تكسير سطحه الصخري وإطلاق الغبار الذي ينتج عن الزخة.
+    </string>
+
+    <string name="object_info_ursids_description" translation_description="Description of the Ursids meteor shower shown in the info card. Translate this text.">
+    نيازك الدب الأصغر (Ursids) هي زخة نيازك صغيرة تشع من كوكبة الدب الأصغر (Ursa Minor)، بالقرب من نجم الشمال (Polaris)، مما يجعلها حول القطب الشمالي لمراقبي نصف الكرة الشمالية — مرئية طوال الليل دون أن تغيب. تبلغ ذروتها حول الانقلاب الشتوي بحوالي 10 نيازك في الساعة، والمذنب الأم هو 8P/Tuttle.
+    </string>
+    <string name="object_info_ursids_funfact" translation_description="Fun fact about the Ursids meteor shower shown in the info card. Translate this text.">
+    تُنتج زخات الدب الصغير أحياناً انفجارات غير متوقعة تفوق معدلها المعتاد بكثير. في عامي 1945 و2006، سجّل الراصدون 50 شهاباً أو أكثر في الساعة — أي خمسة أضعاف الذروة العادية. تحدث هذه الطفرات عندما تخترق الأرض شريطاً كثيفاً بشكل غير عادي من الحطام الذي تخلفه المذنب توتل خلال اقترابه الشديد من الأرض.
+    </string>
+
+    <!-- Category 5: Top priority — objects on the map that lacked info cards -->
+    <string name="object_info_m47_description" translation_description="Description of the open star cluster M47 shown in the info card. Translate this text.">
+    M47 هي عنقود نجمي مفتوح مشرق وفضفاض في كوكبة الكلب الأكبر، وسهلة الرؤية بالعين المجردة وجذابة جداً عند النظر إليها من خلال المنظار. حوالي 50 نجماً متناثراً على مساحة نصف درجة من السماء، مع عدة نجوم عملاقة برتقالية اللون تضيف دفئاً لونياً مقابل الأعضاء الأضعف الزرقاء البيضاء.
+    </string>
+    <string name="object_info_m47_funfact" translation_description="Fun fact about M47 shown in the info card. Translate this text.">
+    كان M47 أحد أجرام مسييه "المفقودة" — حيث أدى خطأ إداري في الإحداثيات الأصلية لمسييه إلى وضعه في سماء فارغة، مما ترك العنقود غير محدد الهوية لما يقرب من قرنين من الزمان. لم يتم تأكيد هويته الحقيقية باعتباره NGC 2422 إلا في عام 1959، عندما عمل الراصدون بشكل عكسي انطلاقاً من وصف مسييه للعثور على الخطأ.
+    </string>
+    <string name="object_info_m47_distance" translation_description="Distance to M47 shown in the info card. Translate units if appropriate for your locale.">1,600 سنة ضوئية</string>
+    <string name="object_info_m47_size" translation_description="Physical size of M47 shown in the info card. Translate units if appropriate for your locale.">~14 سنة ضوئية عبر</string>
+
+    <string name="object_info_m41_description" translation_description="Description of the open star cluster M41 shown in the info card. Translate this text.">
+    M41 هي عنقود نجمي مفتوح رائع في كلب أكبر، يقع على بعد 4° جنوب سيريوس — ألمع نجم في السماء الليلية. مرئية بالعين المجردة من المواقع المظلمة وتبدو رائعة في المناظير، وتحتوي على حوالي 100 نجم موزعة عبر حقل واسع، مع عدة نجوم عملاقة برتقالية لافتة للنظر بين أعضاء أزرق-أبيض أضعف.
+    </string>
+    <string name="object_info_m41_funfact" translation_description="Fun fact about M41 shown in the info card. Translate this text.">
+    قد يكون أرسطو قد لاحظ M41 حوالي سنة 325 قبل الميلاد — وربما تكون هذه أقدم ملاحظة مسجلة لأي جسم سماوي عميق. وصف "بقعة غائمة" جنوب نجم الشعرى اليمانية تتطابق مع موقع M41\'s. إذا كانت هذه التحديد صحيحة، فإن M41 كان يتم مناقشته قبل ما يقرب من ألفي سنة من اختراع التلسكوب.
+    </string>
+    <string name="object_info_m41_distance" translation_description="Distance to M41 shown in the info card. Translate units if appropriate for your locale.">2,300 سنة ضوئية</string>
+    <string name="object_info_m41_size" translation_description="Physical size of M41 shown in the info card. Translate units if appropriate for your locale.">~25 سنة ضوئية عبر</string>
+
+    <string name="object_info_m24_description" translation_description="Description of the Sagittarius Star Cloud (M24) shown in the info card. Translate this text.">
+    M24 هي سحابة نجوم القوس — ليست عنقودًا أو سديمًا بل نافذة عبر فجوة في غبار درب التبانة، تكشف عن حقل نجمي ساحر يمتد 2° عبر السماء. إنها أغنى منطقة مرئية من خلال المناظير في أي مكان في السماء، مليئة بآلاف النجوم التي تمتد عبر مسافات مختلفة جدًا في نفس الوقت.
+    </string>
+    <string name="object_info_m24_funfact" translation_description="Fun fact about M24 shown in the info card. Translate this text.">
+    النجوم في M24 ليست على نفس المسافة — سحابة النجوم تمثل مقطعاً عرضياً من قرص المجرة يُرى عبر نفق طبيعي في الغبار بين النجوم، يمتد على مسافات تتراوح بين 10,000 و 16,000 سنة ضوئية. مدمجة داخل السحابة توجد سدم مظلمة وعناقيد نجمية صغيرة تظهر كبقع مظلمة على خلفية نجمية رائعة.
+    </string>
+    <string name="object_info_m24_distance" translation_description="Distance range to M24 shown in the info card. Translate units if appropriate for your locale.">~10,000–16,000 سنة ضوئية (نطاق)</string>
+    <string name="object_info_m24_size" translation_description="Physical size of M24 shown in the info card. Translate units if appropriate for your locale.">~600 سنة ضوئية نافذة عميقة</string>
+
+    <string name="object_info_m25_description" translation_description="Description of the open star cluster M25 shown in the info card. Translate this text.">
+    M25 هي عنقود نجمي مفتوح مرئي بالعين المجردة وساطع في القوس، وتقع ضد حقول النجوم الكثيفة في درب التبانة الصيفي. حوالي 600 نجم متناثر عبر حقل بنصف درجة، مما يجعلها جسماً غنياً للمناظير. تشمل أعضاؤها الأكثر إضاءة عدة عمالقة زرقاء بيضاء فائقة وأحد أكثر نجوم سيفيد المتغيرة المدروسة في السماء.
+    </string>
+    <string name="object_info_m25_funfact" translation_description="Fun fact about M25 shown in the info card. Translate this text.">
+    يحتوي M25 على U Sagittarii، وهو نجم متغير من نوع Cepheid كلاسيكي يزداد لمعانه وينخفض على مدار فترة 6.7 أيام. نجوم Cepheid هي "شموع معيارية" حيوية لقياس المسافات الكونية لأن فترة نبضانها تكشف مباشرة عن لمعانها الحقيقي — استخدمها الفلكيون لأول مرة لتحديد حجم درب التبانة ثم مقياس الكون المرئي.
+    </string>
+    <string name="object_info_m25_distance" translation_description="Distance to M25 shown in the info card. Translate units if appropriate for your locale.">2,000 سنة ضوئية</string>
+    <string name="object_info_m25_size" translation_description="Physical size of M25 shown in the info card. Translate units if appropriate for your locale.">~19 سنة ضوئية عبر</string>
+
+    <string name="object_info_m39_description" translation_description="Description of the open star cluster M39 shown in the info card. Translate this text.">
+    M39 هي عنقود نجمي مفتوح كبير ومتناثر في كوكبة الدجاجة، وتكون مرئية بالعين المجردة بالقرب من نجم دنب في درب التبانة الصيفي الغني. تتكون من حوالي 30 نجماً ساطعاً موزعة بشكل فضفاض على درجة من السماء، وتُقدّر بشكل أفضل بقوة تكبير منخفضة في المناظير أو التلسكوب واسع المجال — التكبير الأعلى ببساطة يحللها إلى حقل نجوم متفرق وغير ملحوظ.
+    </string>
+    <string name="object_info_m39_funfact" translation_description="Fun fact about M39 shown in the info card. Translate this text.">
+    على بعد حوالي 825 سنة ضوئية، يعتبر M39 أحد أقرب العناقيد المفتوحة إلى الأرض، وبعمر يبلغ تقريباً 240 مليون سنة، فهو أحد العناقيد المرئية بالعين المجردة الأقدم — قديم بما يكفي لكي تكون نجومه الأكثر ضخامة قد انتهت حياتها بالفعل. سجله مسييه في عام 1764 وكان من بين أولى الإضافات إلى فهرسه.
+    </string>
+    <string name="object_info_m39_distance" translation_description="Distance to M39 shown in the info card. Translate units if appropriate for your locale.">825 سنة ضوئية</string>
+    <string name="object_info_m39_size" translation_description="Physical size of M39 shown in the info card. Translate units if appropriate for your locale.">~8 سنوات ضوئية عبر</string>
+
+    <!-- Category 5: Special cases -->
+    <string name="object_info_m63_description" translation_description="Description of the Sunflower Galaxy (M63) shown in the info card. Translate this text.">
+    مجرة دوار الشمس هي حلزون مضيء في كلاب الصيد تتميز بأذرعها الملتفة بإحكام والمرقطة بمناطق تشكل النجوم، مما يعطيها نسيجاً مميزاً يشبه الزهرة في الصور ذات التعريض الطويل. بحجم ظاهري 8.6 فهي مرئية من خلال المناظير من السماء المظلمة وتظهر شكلها الممدود ونواتها الساطعة بسهولة في التلسكوبات الصغيرة.
+    </string>
+    <string name="object_info_m63_funfact" translation_description="Fun fact about the Sunflower Galaxy shown in the info card. Translate this text.">
+    تم اكتشاف M63 بواسطة بيير ميشان في عام 1779 — وهو أحد عدد قليل من أجرام مسييه التي اكتشفها ميشان بدلاً من مسييه نفسه. وهو عضو في مجموعة M51، مرتبط فيزيائياً بمجرة الدوامة (M51)، ويظهر علامات تفاعل سابق: تيار نجمي خافت وقديم يلتف حول قرصه الخارجي.
+    </string>
+    <string name="object_info_m63_distance" translation_description="Distance to the Sunflower Galaxy shown in the info card. Translate units if appropriate for your locale.">29 مليون سنة ضوئية</string>
+    <string name="object_info_m63_size" translation_description="Physical size of the Sunflower Galaxy shown in the info card. Translate units if appropriate for your locale.">~100,000 سنة ضوئية عبر</string>
+
+    <string name="object_info_ngc_6543_description" translation_description="Description of the Cat's Eye Nebula (NGC 6543) shown in the info card. Translate this text.">
+    سديم عين القطة هو أحد أكثر السدم الكوكبية تعقيداً من حيث البنية - غاز منبعث من نجم محتضر منحوت على شكل أصداف متحدة المركز وتدفقات وعقد مضيئة مرئية في صور هابل. في التلسكوبات الصغيرة يظهر كقرص أزرق-أخضر حي في كوكبة التنين، وهو أحد أكثر الأجسام ملوناً في سماء الخريف.
+    </string>
+    <string name="object_info_ngc_6543_funfact" translation_description="Fun fact about the Cat's Eye Nebula shown in the info card. Translate this text.">
+    في عام 1864، وجّه الفلكي ويليام هاجينز مطياف الضوء نحو سديم عين القطة واكتشف أنه يتكون من غاز مضيء بدلاً من نجوم غير محلولة — وكانت هذه أول مرة يتم فيها تأكيد طبيعة أي سديم كوكبي. أسس هذا الاكتشاف مجال التحليل الطيفي للسدم وقلب الرأي السائد بأن جميع السدم عبارة عن عناقيد نجمية بعيدة.
+    </string>
+    <string name="object_info_ngc_6543_distance" translation_description="Distance to the Cat's Eye Nebula shown in the info card. Translate units if appropriate for your locale.">~3,300 سنة ضوئية</string>
+    <string name="object_info_ngc_6543_size" translation_description="Physical size of the Cat's Eye Nebula shown in the info card. Translate units if appropriate for your locale.">~0.5 سنة ضوئية قطر</string>
+
+    <string name="object_info_m76_description" translation_description="Description of the Little Dumbbell Nebula (M76) shown in the info card. Translate this text.">
+    سديم الدمبل الصغير هو سديم كوكبي في كوكبة برسيوس بشكل مميز يشبه الرقم ثمانية — نسخة أصغر من M27، سديم الدمبل في كوكبة الثعلب. على الرغم من أنه الأضعف في فهرس ميسييه، إلا أنه يستحق المراقبة الصبورة من خلال التلسكوبات الصغيرة ويظهر بنية جميلة في الأجهزة الأكبر، مع فصين أكثر إضاءة يحيطان بخصر أضعف.
+    </string>
+    <string name="object_info_m76_funfact" translation_description="Fun fact about the Little Dumbbell Nebula shown in the info card. Translate this text.">
+    تم فهرسة M76 في الأصل كجسمين منفصلين — NGC 650 و NGC 651 — لأن الراصدين الأوائل وصفوا الفصين الساطعين بشكل مستقل. إنها سديم كوكبي ثنائي القطب تشكل عندما تم ضغط تدفق نجم محتضر عند خط الاستواء، مما أنشأ فصين متمددين على طول المحور القطبي بينما تتمدد الغازات أيضاً للخارج عند الخصر.
+    </string>
+    <string name="object_info_m76_distance" translation_description="Distance to the Little Dumbbell Nebula shown in the info card. Translate units if appropriate for your locale.">~2,500 سنة ضوئية</string>
+    <string name="object_info_m76_size" translation_description="Physical size of the Little Dumbbell Nebula shown in the info card. Translate units if appropriate for your locale.">~2 سنة ضوئية عبر</string>
+
+    <string name="object_info_v838_mon_description" translation_description="Description of V838 Monocerotis shown in the info card. Translate this text.">
+    V838 Monocerotis نجم متغير غير عادي في كوكبة وحيد القرن (Monoceros) شهد انفجاراً مذهلاً في عام 2002، حيث أصبح مؤقتاً أحد ألمع النجوم في درب التبانة. على الرغم من أنه خافت جداً بحيث لا يمكن رؤيته بالعين المجردة اليوم، فإن صدى الضوء المتسع الخاص به — جبهة موجة ضوئية تضيء أغلفة الغبار القديمة — أنتجت بعضاً من أكثر صور تلسكوب هابل الفضائي دراماتيكية التي تم التقاطها على الإطلاق.
+    </string>
+    <string name="object_info_v838_mon_funfact" translation_description="Fun fact about V838 Monocerotis shown in the info card. Translate this text.">
+    طبيعة انفجار V838 Mon لا تزال محل نقاش. النظرية الرائدة هي اندماج نجمي — نجمان يدوران حول بعضهما البعض ويصطدمان — بدلاً من انفجار نوفا كلاسيكي أو ثوران عملاق أحمر. إذا تم تأكيده، فقد كان أول رؤية فعلية في الوقت الفعلي لـ "نوفا حمراء مضيئة"، وهي فئة نادرة من الانفجارات الناجمة عن اندماجات نجمية، وقد تم العثور على أحداث مماثلة منذ ذلك الحين في مجرات أخرى.
+    </string>
+    <string name="object_info_v838_mon_distance" translation_description="Distance to V838 Monocerotis shown in the info card. Translate units if appropriate for your locale.">~20,000 سنة ضوئية</string>
+    <string name="object_info_v838_mon_size" translation_description="Extent of the V838 Monocerotis light echo shown in the info card. Translate units if appropriate for your locale.">~3 سنوات ضوئية (امتداد صدى الضوء)</string>
+
+    <string name="object_info_hdf_description" translation_description="Description of the Hubble Deep Field shown in the info card. Translate this text.">
+    حقل هابل العميق هو رقعة صغيرة جداً بحجم 2.6 دقيقة قوسية من السماء التي تبدو فارغة في كوكبة الدب الأكبر، صورتها تلسكوب هابل الفضائي على مدار 10 أيام متتالية في ديسمبر 1995. ما بدا أنه فضاء فارغ كشف عن حوالي 3000 مجرة - تمتد عبر مليارات السنين من التاريخ الكوني - وغيّر بشكل جذري فهمنا للكون.
+    </string>
+    <string name="object_info_hdf_funfact" translation_description="Fun fact about the Hubble Deep Field shown in the info card. Translate this text.">
+    تم اختيار هذا الجزء من السماء بشكل محدد لأنه كان خالياً من النجوم الساطعة والمجرات القريبة. ومع ذلك، كانت الصورة الناتجة مليئة بحوالي 3000 مجرة، مما أدى إلى تقدير بأن السماء بأكملها تحتوي على حوالي 200 مليار مجرة - تقريباً جميعها غير مرئية لأي تلسكوب قبل هابل.
+    </string>
+    <string name="object_info_hdf_distance" translation_description="Distance to the most distant galaxies in the Hubble Deep Field shown in the info card. Translate units if appropriate for your locale.">~13 مليار سنة ضوئية (الأبعد)</string>
+    <string name="object_info_hdf_size" translation_description="Angular size of the Hubble Deep Field shown in the info card.">2.6 دقيقة قوسية (مجال الرؤية)</string>
+
+    <string name="object_info_m43_description" translation_description="Description of De Mairan's Nebula (M43) shown in the info card. Translate this text.">
+    سديم دي مايران هو جزء منفصل من مجمع سديم أوريون العظيم، مفصول عن M42 بممر غبار مظلم لكنه ينتمي إلى نفس السحابة الجزيئية الشاسعة. سُمي على اسم الفلكي الفرنسي جان جاك دورتو دي مايران، الذي لاحظه عام 1731، وهو سديم انبعاثي مؤين بواسطة النجم الشاب الحار NU Orionis المضمن في مركزه.
+    </string>
+    <string name="object_info_m43_funfact" translation_description="Fun fact about De Mairan's Nebula shown in the info card. Translate this text.">
+    على الرغم من أن M43 يبدو كجسم منفصل عن M42، فإن الممر المظلم الذي يفصل بينهما هو سحابة غبار في المقدمة — جزء من سحابة أوريون الجزيئية — تحجب ببساطة رؤيتنا للاتصال الفيزيائي بين المنطقتين المتوهجتين. معاً، فهما مجرد الحافة الداخلية المضاءة لسحابة مظلمة ضخمة تمتد عبر معظم أوريون.
+    </string>
+    <string name="object_info_m43_distance" translation_description="Distance to De Mairan's Nebula shown in the info card. Translate units if appropriate for your locale.">1,350 سنة ضوئية</string>
+    <string name="object_info_m43_size" translation_description="Physical size of De Mairan's Nebula shown in the info card. Translate units if appropriate for your locale.">~8 سنوات ضوئية عبر</string>
+
+    <string name="object_info_m40_description" translation_description="Description of M40 (Winnecke 4) shown in the info card. Translate this text.">
+    M40 فريد في فهرس ميسييه — فهو ليس سديماً أو عنقوداً أو مجرة، بل نجم ثنائي واسع. قام ميسييه بتسجيله في عام 1764 أثناء بحثه عن سديم أبلغ عنه يوهان هيفيليوس في الدب الأكبر، فوجد فقط هذا الزوج من النجوم، وسجله حتى لا يخطئ الراصدون المستقبليون في تحديده بشيء أكثر إثارة للاهتمام.
+    </string>
+    <string name="object_info_m40_funfact" translation_description="Fun fact about M40 shown in the info card. Translate this text.">
+    النجمان في M40 — المعروفان باسم Winnecke 4 — غير مرتبطان بالجاذبية؛ فهما يقعان على مسافات مختلفة وهما مجرد محاذاة عرضية. لاحظ مسييه نفسه أنه لا يوجد شيء "ملحوظ"، لكنه أدرجه "لإظهار أن هذا السديم ليس نفس السدم التي فحصتها". عادته المنهجية في توثيق الحالات السلبية أعطت الراصدين المستقبليين مرجعاً حاسماً.
+    </string>
+    <string name="object_info_m40_distance" translation_description="Distance to M40 shown in the info card. Translate units if appropriate for your locale.">~500 سنة ضوئية</string>
+    <string name="object_info_m40_size" translation_description="Angular separation of the M40 double star shown in the info card.">~50 ثانية قوسية (الفصل)</string>
+
+    <!-- Category 5: Second tier -->
+    <string name="object_info_m34_description" translation_description="Description of the open star cluster M34 shown in the info card. Translate this text.">
+    M34 هي عنقود نجمي مفتوح مشرق ومتناثر في برسيوس، يمكن رؤيتها بسهولة من خلال المناظير كرذاذ غني من النجوم على خلفية درب التبانة الشتوي. تغطي نجومها البالغة حوالي 400 نجم مساحة تقارب عرض القمر الكامل، مع عدد قليل من النجوم الثنائية العريضة المرئية للمراقبين الحذرين بالمناظير.
+    </string>
+    <string name="object_info_m34_funfact" translation_description="Fun fact about M34 shown in the info card. Translate this text.">
+    يبلغ عمر M34 حوالي 200 مليون سنة، وهو متوسط العمر — صغير بما يكفي لكي تتوهج نجومه الزرقاء الساخنة، وقديم بما يكفي لكي تكون أضخم نجومه قد انفجرت بالفعل كمستعرات عظمى. على بعد 1500 سنة ضوئية، يعتبر من أقرب عناقيد ميسييه، ويبقى جسماً رائعاً حتى من السماء الضاحية.
+    </string>
+    <string name="object_info_m34_distance" translation_description="Distance to M34 shown in the info card. Translate units if appropriate for your locale.">1,500 سنة ضوئية</string>
+    <string name="object_info_m34_size" translation_description="Physical size of M34 shown in the info card. Translate units if appropriate for your locale.">~15 سنة ضوئية عبر</string>
+
+    <string name="object_info_m23_description" translation_description="Description of the open star cluster M23 shown in the info card. Translate this text.">
+    M23 هي عنقود نجمي مفتوح غني في القوس، مغمورة في حقول النجوم الكثيفة لدرب التبانة الصيفي. حوالي 150 نجماً موزعة على حقل بنصف درجة في المناظير، مما يجعلها جسماً سخياً للمناظير في نفس منطقة السماء مثل العديد من جواهر ميسييه الأخرى.
+    </string>
+    <string name="object_info_m23_funfact" translation_description="Fun fact about M23 shown in the info card. Translate this text.">
+    يُقدّر عمر M23 بحوالي 300 مليون سنة — وهو عمر وسيط، حيث تطورت معظم نجومه الضخمة بالفعل عن التسلسل الرئيسي. اكتشفه مسييه عام 1764 خلال إحدى حملاته الرصدية الغزيرة التي كان يجتاح فيها حقول نجوم القوس.
+    </string>
+    <string name="object_info_m23_distance" translation_description="Distance to M23 shown in the info card. Translate units if appropriate for your locale.">2,150 سنة ضوئية</string>
+    <string name="object_info_m23_size" translation_description="Physical size of M23 shown in the info card. Translate units if appropriate for your locale.">~17 سنة ضوئية عبر</string>
+
+    <string name="object_info_m37_description" translation_description="Description of the open star cluster M37 shown in the info card. Translate this text.">
+    M37 هو الأغنى والأكثر إشراقاً من بين مجموعات ميسييه الثلاث المفتوحة في برج الدلو، ويحتوي على حوالي 500 نجم في حقل مضغوط. إنه جسم مذهل للمنظار والتلسكوب الصغير، مع تناثر نجوم عملاقة برتقالية تضيف تباين لوني إلى السرب الأزرق والأبيض.
+    </string>
+    <string name="object_info_m37_funfact" translation_description="Fun fact about M37 shown in the info card. Translate this text.">
+    يحتوي M37 على حوالي اثني عشر نجماً عملاقاً أحمر — وهو عدد غير معتاد يعكس عمره المتقدم نسبياً البالغ حوالي 300 مليون سنة. على الرغم من بعده حوالي 4500 سنة ضوئية — وهو الأبعد من بين مجموعات أوريجا الثلاث لمسييه — إلا أنه لا يزال يحتل مرتبة بين أفضل المجموعات النجمية المفتوحة في السماء.
+    </string>
+    <string name="object_info_m37_distance" translation_description="Distance to M37 shown in the info card. Translate units if appropriate for your locale.">4,500 سنة ضوئية</string>
+    <string name="object_info_m37_size" translation_description="Physical size of M37 shown in the info card. Translate units if appropriate for your locale.">~31 سنة ضوئية عبر</string>
+
+    <string name="object_info_m48_description" translation_description="Description of the open star cluster M48 shown in the info card. Translate this text.">
+    M48 هي عنقود نجمي مفتوح كبير وساطع في كوكبة الحية، تمتد على مساحة تقارب درجة واحدة من السماء وتكون مرئية بالعين المجردة من المواقع المظلمة. نجومها البالغة حوالي 80 نجماً موزعة بشكل فضفاض عبر حقل واسع يناسب المناظير بشكل أفضل، مع تناثر نجوم عملاقة برتقالية وصفراء بين الأعضاء الأزرق والأبيض الأكثر إضاءة.
+    </string>
+    <string name="object_info_m48_funfact" translation_description="Fun fact about M48 shown in the info card. Translate this text.">
+    كان M48 أحد الأجرام "المفقودة" في فهرس مسييه لما يقرب من قرنين من الزمان لأن الموضع المسجل لمسييه كان بعيداً حوالي 5° عن الموقع الحقيقي. ظل غير محدد الهوية حتى عام 1959، عندما تم مطابقته مع NGC 2548 وتبين أن خطأ نسخ بسيط هو الذي وضعه في سماء فارغة طوال الوقت.
+    </string>
+    <string name="object_info_m48_distance" translation_description="Distance to M48 shown in the info card. Translate units if appropriate for your locale.">1,500 سنة ضوئية</string>
+    <string name="object_info_m48_size" translation_description="Physical size of M48 shown in the info card. Translate units if appropriate for your locale.">~23 سنة ضوئية عبر</string>
+
+    <string name="object_info_m21_description" translation_description="Description of the open star cluster M21 shown in the info card. Translate this text.">
+    M21 هي مجموعة نجمية مفتوحة مضغوطة في برج القوس تقع على بعد نصف درجة فقط شمال سديم الثلاثية (M20)، مما يجعل الاثنين زوجاً مذهلاً للمنظار الثنائي. تحتوي المجموعة على حوالي 57 نجماً مركزة في حقل أصغر من العديد من مجموعات ميسييه، مع عدة نجوم زرقاء بيضاء مشرقة كأعضاء سائدة.
+    </string>
+    <string name="object_info_m21_funfact" translation_description="Fun fact about M21 shown in the info card. Translate this text.">
+    على الرغم من عدم ارتباطهما فيزيائياً، فإن M21 و M20 (سديم ثلاثي الفصوص) يشكلان أحد أجمل التزاوجات المنظاري في سماء الصيف — مجموعة نجمية مضيئة بجانب سديم ملون ثلاثي الفصوص. يبعد M21 حوالي 4,250 سنة ضوئية، بينما M20 أقرب قليلاً بحوالي 4,100 سنة ضوئية.
+    </string>
+    <string name="object_info_m21_distance" translation_description="Distance to M21 shown in the info card. Translate units if appropriate for your locale.">4,250 سنة ضوئية</string>
+    <string name="object_info_m21_size" translation_description="Physical size of M21 shown in the info card. Translate units if appropriate for your locale.">~16 سنة ضوئية عبر</string>
+
+    <string name="object_info_m50_description" translation_description="Description of the open star cluster M50 shown in the info card. Translate this text.">
+    M50 هي عنقود نجمي مفتوح مشرق في كوكبة وحيد القرن، يحتوي على حوالي 200 نجم مكدسة في حقل مضغوط لافت للنظر للمناظير والتلسكوبات الصغيرة. يمكن العثور عليها بسهولة على خط بين سيريوس وبروسيون ويحتوي على عملاق أحمر ملحوظ — منارة برتقالية دافئة تبرز بوضوح بين نجوم العنقود الزرقاء والبيضاء.
+    </string>
+    <string name="object_info_m50_funfact" translation_description="Fun fact about M50 shown in the info card. Translate this text.">
+    يُقدَّر عمر M50 بحوالي 78 مليون سنة — وهو أحد أصغر عناقيد ميسييه المفتوحة — مما يعني أن نجومه الزرقاء والبيضاء الساخنة لا تزال في طور التطور، حيث تضخمت عدة من أعضائها الأكثر ضخامة مؤخراً لتصبح عمالقة. وهذا نموذجي لعنقود في مرحلة الشباب المتوسطة المبكرة.
+    </string>
+    <string name="object_info_m50_distance" translation_description="Distance to M50 shown in the info card. Translate units if appropriate for your locale.">3,200 سنة ضوئية</string>
+    <string name="object_info_m50_size" translation_description="Physical size of M50 shown in the info card. Translate units if appropriate for your locale.">~15 سنة ضوئية عبر</string>
+
+    <string name="object_info_m36_description" translation_description="Description of the open star cluster M36 shown in the info card. Translate this text.">
+    M36 هو أصغر وأصغر سناً من بين العناقيد النجمية المفتوحة الثلاثة التي صنفها مسييه في برج الفارس. تتجمع نجومه البالغة حوالي 60 نجماً في حقل ضيق وبراق يمكن رؤيته بالمنظار الثنائي العينية وينحل بشكل جيد إلى نجوم فردية في تلسكوب صغير، تهيمن عليه نجوم زرقاء بيضاء حارة.
+    </string>
+    <string name="object_info_m36_funfact" translation_description="Fun fact about M36 shown in the info card. Translate this text.">
+    يُقدَّر عمر M36 بحوالي 25 مليون سنة فقط — وهو أحد مجموعات ميسييه الأصغر سناً — مما يعني أن النجوم الزرقاء البيضاء الضخمة لا تزال تهيمن ولم تظهر عمالقة حمراء بعد. يشاركها حقول نجم الدلو مع M37 و M38، وتتسع المجموعات الثلاث جميعها في نفس منظر المنظار ذي المجال الواسع.
+    </string>
+    <string name="object_info_m36_distance" translation_description="Distance to M36 shown in the info card. Translate units if appropriate for your locale.">4,100 سنة ضوئية</string>
+    <string name="object_info_m36_size" translation_description="Physical size of M36 shown in the info card. Translate units if appropriate for your locale.">~14 سنة ضوئية عبر</string>
+
+    <string name="object_info_m46_description" translation_description="Description of the open star cluster M46 shown in the info card. Translate this text.">
+    M46 هي عنقود نجمي مفتوح غني وكثيف في كوكبة الكلب الأكبر يحتوي على حوالي 500 نجم مضغوط في حقل واسع، وتبدو مذهلة في المناظير الثنائية وجميلة جداً في التلسكوبات الصغيرة. توجد مكافأة رائعة تطفو على حافتها الشمالية: NGC 2438، سديم كوكبي صغير يبدو أنه مدمج في العنقود — وهي مصادفة درامية في خط النظر.
+    </string>
+    <string name="object_info_m46_funfact" translation_description="Fun fact about M46 shown in the info card. Translate this text.">
+    السديم الكوكبي NGC 2438 يبدو أنه يقع داخل M46 لكنه في الواقع جسم أمامي غير مرتبط على مسافة مختلفة جداً — حوالي 1400 سنة ضوئية مقابل 5400 سنة ضوئية لـ M46. تزامن قشرة نجم محتضر مفروضة على عنقود نجمي صغير يجعل هذا أحد أكثر المجالات تصويراً في الفهرس.
+    </string>
+    <string name="object_info_m46_distance" translation_description="Distance to M46 shown in the info card. Translate units if appropriate for your locale.">5,400 سنة ضوئية</string>
+    <string name="object_info_m46_size" translation_description="Physical size of M46 shown in the info card. Translate units if appropriate for your locale.">~42 سنة ضوئية عبر</string>
+
+    <string name="object_info_m93_description" translation_description="Description of the open star cluster M93 shown in the info card. Translate this text.">
+    M93 عبارة عن عنقود نجمي مفتوح مشرق وكثيف في كوكبة الكلب الأكبر، يقع في منطقة غنية من درب التبانة الجنوبي ويمكن العثور عليه بسهولة من خلال المناظير. تتكون نجومه البالغة حوالي 80 نجماً من ترتيب مذهل على شكل إسفين أو فراشة ويتضمن عدة عمالقة زرقاء فائقة الحرارة، مما يجعله أحد أكثر العناقيد النجمية المفتوحة جاذبية في سماء الشتاء.
+    </string>
+    <string name="object_info_m93_funfact" translation_description="Fun fact about M93 shown in the info card. Translate this text.">
+    M93 صغير نسبياً — يبلغ عمره حوالي 100 مليون سنة — ويحتوي على نجوم زرقاء وزرقاء بيضاء سائدة لم تتطور بعد إلى عمالقة. وهو أحد مجموعات ميسييه الواقعة في الجنوب بشكل أكبر، وعند خطوط عرض شمال حوالي 50°N، لا يرتفع أبداً عالياً جداً فوق الأفق.
+    </string>
+    <string name="object_info_m93_distance" translation_description="Distance to M93 shown in the info card. Translate units if appropriate for your locale.">3,600 سنة ضوئية</string>
+    <string name="object_info_m93_size" translation_description="Physical size of M93 shown in the info card. Translate units if appropriate for your locale.">~23 سنة ضوئية عبر</string>
+
+    <string name="object_info_m38_description" translation_description="Description of the open star cluster M38 shown in the info card. Translate this text.">
+    M38 هو أكبر وأكثر تفرقاً من بين المجموعات النجمية المفتوحة الثلاث التي صنفها ميسييه في كوكبة العربة. تُرتب نجومه البالغة حوالي 100 نجم في نمط يشبه، حسب رأي بعض الراصدين، الصليب أو الحرف اليوناني باي، وهي مرئية بالمنظار الثنائي وموضحة بشكل جيد في التلسكوب الصغير. تقع المجموعة النجمية الأصغر NGC 1907 بالقرب منها نحو الجنوب.
+    </string>
+    <string name="object_info_m38_funfact" translation_description="Fun fact about M38 shown in the info card. Translate this text.">
+    M38 هو الأقدم من بين ثلاث عناقيد ميسييه في برج الفارس، يبلغ عمره حوالي 220 مليون سنة، وهو قديم بما يكفي لكي تكون بعض نجومه الضخمة قد تطورت إلى عمالقة صفراء وبرتقالية. يمكن لعنقود NGC 1907 القريب أن يناسب نفس مجال التكبير المنخفض، مما يجعلهما زوجًا رائعًا للمنظار - مثل M46 و M47 في كوكبة الكلب الأكبر.
+    </string>
+    <string name="object_info_m38_distance" translation_description="Distance to M38 shown in the info card. Translate units if appropriate for your locale.">4,200 سنة ضوئية</string>
+    <string name="object_info_m38_size" translation_description="Physical size of M38 shown in the info card. Translate units if appropriate for your locale.">~26 سنة ضوئية عبر</string>
+
+    <string name="object_info_m29_description" translation_description="Description of the open star cluster M29 shown in the info card. Translate this text.">
+    M29 هي عنقود نجمي مفتوح صغير وحديث في كوكبة الدجاجة، تقع ضد أحد أكثر مناطق درب التبانة غموضاً بسبب الغبار. خمسة عمالقة زرقاء لامعة فائقة تهيمن على العنقود، وتظهر في المناظير الثنائية كتشكيل نجمي محكم من النجوم الساخنة والمضيئة. بدون الغبار الكثيف في المقدمة، كان M29 سيكون أحد أكثر العناقيد النجمية المفتوحة روعة في السماء.
+    </string>
+    <string name="object_info_m29_funfact" translation_description="Fun fact about M29 shown in the info card. Translate this text.">
+    يُقدّر أن عمر M29 بحوالي 10 ملايين سنة فقط — وهو نجم رضيع — ويقع ضمن جمعية Cygnus OB1، وهي مجموعة واسعة من النجوم الضخمة الشابة. يُعتّم الغبار بين النجمي الثقيل العنقود بحوالي 3 درجات؛ بدون هذا الحجب، كانت نجوم M29 ستتألق عدة مرات أكثر إشراقاً مما تبدو عليه فعلياً.
+    </string>
+    <string name="object_info_m29_distance" translation_description="Distance to M29 shown in the info card. Translate units if appropriate for your locale.">4,000 سنة ضوئية</string>
+    <string name="object_info_m29_size" translation_description="Physical size of M29 shown in the info card. Translate units if appropriate for your locale.">~8 سنوات ضوئية عبر</string>
+
+    <string name="object_info_m62_description" translation_description="Description of the globular cluster M62 shown in the info card. Translate this text.">
+    M62 هي عنقود كروي غني في كوكبة الحواء — وهي من أقرب العناقيد الكروية إلى مركز المجرة وتتميز بعدم تماثل واضح، حيث تتجمع النجوم بكثافة أكبر على الجانب الجنوبي. بحجم ظاهري 6.6، فهي هدف ممتاز للمراقبة بالمنظار الثنائي، لكن انحدارها المنخفض يجعلها هدفًا موسميًا قصيرًا لمراقبي النصف الشمالي.
+    </string>
+    <string name="object_info_m62_funfact" translation_description="Fun fact about M62 shown in the info card. Translate this text.">
+    نواة M62 غير المركزية هي نتيجة مباشرة لقربها من مركز المجرة — حيث تشوه القوى المدية القوية من الانتفاخ المركزي العنقود وتجذب النجوم نحو مستوى المجرة. كما أنه يعتبر أحد أكثر العناقيد الكروية تطوراً ديناميكياً المعروفة، حيث يظهر علامات انهيار النواة وكثافة غير عادية من نجوم البولسار بفترات ميلي ثانية.
+    </string>
+    <string name="object_info_m62_distance" translation_description="Distance to M62 shown in the info card. Translate units if appropriate for your locale.">22,500 سنة ضوئية</string>
+    <string name="object_info_m62_size" translation_description="Physical size of M62 shown in the info card. Translate units if appropriate for your locale.">~92 سنة ضوئية عبر</string>
+
+    <string name="object_info_m28_description" translation_description="Description of the globular cluster M28 shown in the info card. Translate this text.">
+    M28 عبارة عن عنقود كروي مضغوط في القوس، يقع بالقرب من نجم Lambda Sagittarii الساطع في حقول النجوم الصيفية الغنية. بحجم ظاهري 6.9، فهو هدف مجزٍ للمناظير الثنائية وهو محلول جيداً في التلسكوبات الصغيرة، حيث يُظهر نواة مكثفة ساطعة محاطة بهالة معتدلة من النجوم.
+    </string>
+    <string name="object_info_m28_funfact" translation_description="Fun fact about M28 shown in the info card. Translate this text.">
+    في عام 1987، أصبح M28 أول تجمع كروي يتم اكتشاف نجم نيوتروني نابض بسرعة ميلي ثانية فيه. النجوم النيوترونية النابضة بسرعة ميلي ثانية — نجوم نيوترونية تدور مئات المرات في الثانية — تتشكل عندما يجمع نجم نيوتروني المادة من نجم مرافق ويتم العثور عليها بمعدل أعلى بكثير في التجمعات الكروية مقارنة بالمجرة العامة، لأن بيئاتها النجمية الكثيفة تنتج العديد من اللقاءات الثنائية القريبة.
+    </string>
+    <string name="object_info_m28_distance" translation_description="Distance to M28 shown in the info card. Translate units if appropriate for your locale.">18,300 سنة ضوئية</string>
+    <string name="object_info_m28_size" translation_description="Physical size of M28 shown in the info card. Translate units if appropriate for your locale.">~60 سنة ضوئية عبر</string>
+
+    <string name="object_info_m52_description" translation_description="Description of the open star cluster M52 shown in the info card. Translate this text.">
+    M52 هي عنقود نجمي مفتوح غني في كاسيوبيا، يحتوي على حوالي 200 نجم مكدسة في منطقة مضغوطة من درب التبانة الشمالي. إنه عنقود ثنائي المنظار رائع ويظهر حقلاً نجمياً كثيفاً وجميلاً في التلسكوبات الصغيرة، مع وجود نجم برتقالي أكثر إضاءة بشكل ملحوظ بارزاً بالقرب من الحافة الجنوبية للعنقود.
+    </string>
+    <string name="object_info_m52_funfact" translation_description="Fun fact about M52 shown in the info card. Translate this text.">
+    المسافة إلى M52 غير مؤكدة بشكل غير عادي — تتراوح التقديرات بين 3000 و7000 سنة ضوئية — لأن الغبار بين النجمي الكثيف على طول خط النظر هذا يجعل من الصعب تحديد لمعانها الحقيقي. اكتشفها مسييه في عام 1774، في نفس الليلة التي كان يتتبع فيها مذنباً أدى به إلى تسجيل عدة إدخالات فهرسية أخرى.
+    </string>
+    <string name="object_info_m52_distance" translation_description="Distance to M52 shown in the info card. Translate units if appropriate for your locale.">~5,000 سنة ضوئية</string>
+    <string name="object_info_m52_size" translation_description="Physical size of M52 shown in the info card. Translate units if appropriate for your locale.">~25 سنة ضوئية عبر</string>
+
+    <string name="object_info_m67_description" translation_description="Description of the open star cluster M67 shown in the info card. Translate this text.">
+    M67 هو عنقود نجمي مفتوح رائع في كوكبة السرطان وأحد أقدم العناقيد النجمية المفتوحة المدروسة جيداً في السماء. بعمر يبلغ تقريباً 3.2-3.5 مليار سنة، يحتوي على العديد من النجوم المشابهة في الكتلة والعمر لشمسنا — مما يجعله مختبراً طبيعياً لدراسة كيفية تطور النجوم الشبيهة بالشمس عبر الزمن الكوني.
+    </string>
+    <string name="object_info_m67_funfact" translation_description="Fun fact about M67 shown in the info card. Translate this text.">
+    عدة نجوم في M67 تشبه الشمس بشكل وثيق من حيث درجة الحرارة والكتلة والعمر — وهي مجموعة نادرة جعلت الباحثين يتساءلون عما إذا كانت الشمس نفسها قد نشأت في عنقود مثل M67. لأن النجوم تولد في عناقيد تتفرق تدريجياً، فإن الشمس جاءت بالتأكيد من مجموعة أخوية متفرقة الآن منذ مليارات السنين — لكن لم يتم تحديد أي عنقود.
+    </string>
+    <string name="object_info_m67_distance" translation_description="Distance to M67 shown in the info card. Translate units if appropriate for your locale.">2,700 سنة ضوئية</string>
+    <string name="object_info_m67_size" translation_description="Physical size of M67 shown in the info card. Translate units if appropriate for your locale.">~24 سنة ضوئية عبر</string>
+
+    <string name="object_info_m55_description" translation_description="Description of the globular cluster M55 shown in the info card. Translate this text.">
+    M55 هي عنقود كروي كبير وفضفاض في القوس — واحدة من أكثر العناقيد الكروية المنتشرة والأقل تركيزًا بين جميع عناقيد ميسييه. يمكن حلها بسهولة إلى نجوم فردية حتى عند التكبير المنخفض، مع وجود نسيج حبيبي مرئي في المناظير الثنائية. يحد انحدارها الجنوبي المنخفض من الرؤية من خطوط العرض الشمالية لكنها مذهلة من نصف الكرة الجنوبي.
+    </string>
+    <string name="object_info_m55_funfact" translation_description="Fun fact about M55 shown in the info card. Translate this text.">
+    التركيز النجمي المنخفض بشكل غير عادي في M55 يجعله يبدو وكأنه عنقود مفتوح غني بدلاً من عنقود كروي نموذجي. نجومه موزعة عبر منطقة يبلغ عرضها حوالي 100 سنة ضوئية، مما يشير إلى أن الجاذبية الذاتية للعنقود ضعيفة نسبياً مقارنة بالعناقيد الكروية الأكثر تكثيفاً مركزياً مثل M13 أو M3.
+    </string>
+    <string name="object_info_m55_distance" translation_description="Distance to M55 shown in the info card. Translate units if appropriate for your locale.">17,600 سنة ضوئية</string>
+    <string name="object_info_m55_size" translation_description="Physical size of M55 shown in the info card. Translate units if appropriate for your locale.">~100 سنة ضوئية عبر</string>
+
+    <string name="object_info_m19_description" translation_description="Description of the globular cluster M19 shown in the info card. Translate this text.">
+    M19 هو عنقود كروي مضغوط وغني في كوكبة الحواء — أحد أقرب العناقيد الكروية إلى مركز المجرة. أكثر ميزاته المميزة هي شكله المفلطح بشكل ملحوظ: M19 هو أكثر عنقود كروي مفلطح معروف، مع محيط بيضاوي مرئي حتى في التلسكوب الصغير.
+    </string>
+    <string name="object_info_m19_funfact" translation_description="Fun fact about M19 shown in the info card. Translate this text.">
+    الانبعاج الواضح في M19 — حيث يكون محوره الأطول أطول بحوالي 10% من محوره الأقصر — فريد من نوعه بين العناقيد الكروية المعروفة ويُعتقد أنه ناتج عن التمدد المدي بسبب المجال الثقالي لدرب التبانة. كلما اقترب العنقود الكروي من مركز المجرة، زاد تشوهه؛ يقع M19 على بعد حوالي 5200 سنة ضوئية فقط من نواة المجرة.
+    </string>
+    <string name="object_info_m19_distance" translation_description="Distance to M19 shown in the info card. Translate units if appropriate for your locale.">28,700 سنة ضوئية</string>
+    <string name="object_info_m19_size" translation_description="Physical size of M19 shown in the info card. Translate units if appropriate for your locale.">~113 سنة ضوئية عبر</string>
+
+    <string name="object_info_m80_description" translation_description="Description of the globular cluster M80 shown in the info card. Translate this text.">
+    M80 هي واحدة من أكثر العناقيد الكروية كثافة في درب التبانة، وهي كرة مضغوطة وغنية تحتوي على عدة مئات من آلاف النجوم في العقرب. بحجم ظاهري 7.2، فهي هدف ممتاز للمناظير الثنائية وتكشف عن نواة مركزية براقة وعالية التركيز في التلسكوبات الصغيرة.
+    </string>
+    <string name="object_info_m80_funfact" translation_description="Fun fact about M80 shown in the info card. Translate this text.">
+    في عام 1860، حدث انفجار نوفا داخل M80 — وأُطلق عليه اسم T Scorpii — وأصبح مشرقًا جدًا لفترة وجيزة مثل العنقود نفسه وكان مرئيًا بالعين المجردة. يبقى أحد اثنين فقط من النوفا التي تمت ملاحظتها على الإطلاق داخل عنقود كروي. تنشأ النوفا في العناقيد الكروية من التفاعلات بين النجوم الثنائية، وهي أكثر شيوعًا بكثير في البيئة النجمية الكثيفة لنواة العنقود الكروي.
+    </string>
+    <string name="object_info_m80_distance" translation_description="Distance to M80 shown in the info card. Translate units if appropriate for your locale.">32,600 سنة ضوئية</string>
+    <string name="object_info_m80_size" translation_description="Physical size of M80 shown in the info card. Translate units if appropriate for your locale.">~84 سنة ضوئية عبر</string>
+
+    <string name="object_info_m103_description" translation_description="Description of the open star cluster M103 shown in the info card. Translate this text.">
+    M103 هي مجموعة نجمية مفتوحة صغيرة وكثيفة في كوكبة قيقاعوس، تحتوي على حوالي 40 نجماً في مجموعة محكمة يمكن رؤيتها بسهولة بالمنظار. نجم ثنائي لافت للنظر وعملاق أحمر بالقرب من المركز يعطيانها مظهراً ملوناً في التلسكوبات الصغيرة، وتقع ضمن حقول درب التبانة الغنية بالنجوم في كوكبة قيقاعوس.
+    </string>
+    <string name="object_info_m103_funfact" translation_description="Fun fact about M103 shown in the info card. Translate this text.">
+    كان M103 هو الجسم الأعلى رقماً في فهرس ميسييه الأصلي المنشور عام 1781 — تمت إضافة جميع الإدخالات اللاحقة (M104–M110) لاحقاً من قبل علماء فلك لاحقين من ملاحظات وتراسل ميسييه. اكتشف بيير ميشان M103 قبل وقت قصير من طباعة الفهرس، وأدرجه ميسييه من تقرير ميشان.
+    </string>
+    <string name="object_info_m103_distance" translation_description="Distance to M103 shown in the info card. Translate units if appropriate for your locale.">8,500 سنة ضوئية</string>
+    <string name="object_info_m103_size" translation_description="Physical size of M103 shown in the info card. Translate units if appropriate for your locale.">~15 سنة ضوئية عبر</string>
+
+    <string name="object_info_m30_description" translation_description="Description of the globular cluster M30 shown in the info card. Translate this text.">
+    M30 هي عنقود كروي مضغوط في برج الجدي — وهي جسم رائع في التلسكوبات الصغيرة يُظهر نواة مضيئة مكثفة وسلاسل نجمية خافتة في الأطراف. بحجم ظاهري 7.5، تتطلب سماءً مظلمة عند مراقبتها بالمنظار وتكافئ التلسكوب الصغير برؤية هالتها الخارجية المحلولة جزئياً.
+    </string>
+    <string name="object_info_m30_funfact" translation_description="Fun fact about M30 shown in the info card. Translate this text.">
+    مجموعة M30 خضعت لـ "انهيار النواة" — وهي عملية يؤدي فيها الجذب الثقالي المتبادل للنجوم المكتظة بالكثافة إلى انكماش مركز المجموعة بشكل درامي، مما يخلق تركيزاً شديداً من النجوم في حجم صغير جداً. حوالي خمس جميع المجموعات الكروية تمتلك نوى منهارة، وM30 تعتبر من أفضل الأمثلة المدروسة لهذه الظاهرة.
+    </string>
+    <string name="object_info_m30_distance" translation_description="Distance to M30 shown in the info card. Translate units if appropriate for your locale.">27,100 سنة ضوئية</string>
+    <string name="object_info_m30_size" translation_description="Physical size of M30 shown in the info card. Translate units if appropriate for your locale.">~87 سنة ضوئية عبر</string>
+
+    <string name="object_info_m54_description" translation_description="Description of the globular cluster M54 shown in the info card. Translate this text.">
+    M54 هو عنقود كروي كبير وغني في القوس وأحد أبعد الأجسام في كامل فهرس ميسييه. لقرون ظن الفلكيون أنه عنقود هالة بعيد من درب التبانة، لكن يُعرف الآن أنه النواة الكثيفة لمجرة القوس القزمة الإهليلجية - وهي مجرة قمرية تتم امتصاصها حالياً من قبل مجرتنا.
+    </string>
+    <string name="object_info_m54_funfact" translation_description="Fun fact about M54 shown in the info card. Translate this text.">
+    اكتشاف عام 1994 أن M54 ينتمي إلى مجرة القوس القزمة جعله أول عنقود كروي معروف ينتمي إلى مجرة أخرى. وبينما يتم تمزيق مجرة القوس القزمة تدريجياً وابتلاعها من قبل درب التبانة، سيصبح M54 في النهاية عنقوداً كروياً حقيقياً من هالة مجرتنا الخاصة — مهاجراً بين المجرات يصل على مدى مليارات السنين.
+    </string>
+    <string name="object_info_m54_distance" translation_description="Distance to M54 shown in the info card. Translate units if appropriate for your locale.">87,000 سنة ضوئية</string>
+    <string name="object_info_m54_size" translation_description="Physical size of M54 shown in the info card. Translate units if appropriate for your locale.">~230 سنة ضوئية عبر</string>
+
+    <string name="object_info_m69_description" translation_description="Description of the globular cluster M69 shown in the info card. Translate this text.">
+    M69 هي مجموعة نجمية كروية غنية بشكل معتدل في القوس، وتقع بالقرب من مركز المجرة. بحجم ظاهري 7.7، فهي جسم يمكن رؤيته بالمنظار من السماء المظلمة، وتكافئ التلسكوب الصغير برؤية كرة جزئية من النجوم ومركز مشع وحبيبي.
+    </string>
+    <string name="object_info_m69_funfact" translation_description="Fun fact about M69 shown in the info card. Translate this text.">
+    يدور M69 بشكل غير معتاد بالقرب من مركز المجرة — على بعد حوالي 6200 سنة ضوئية فقط من نواة درب التبانة — وبالتالي يحتوي على تركيز غير معتاد من العناصر الثقيلة بالنسبة لعنقود كروي. تميل العناقيد الكروية الأقرب إلى مركز المجرة إلى أن تكون غنية كيميائياً بسبب أجيال متعددة من تكوين النجوم في الانتفاخ المحيط.
+    </string>
+    <string name="object_info_m69_distance" translation_description="Distance to M69 shown in the info card. Translate units if appropriate for your locale.">29,700 سنة ضوئية</string>
+    <string name="object_info_m69_size" translation_description="Physical size of M69 shown in the info card. Translate units if appropriate for your locale.">~61 سنة ضوئية عبر</string>
+
+    <string name="object_info_m9_description" translation_description="Description of the globular cluster M9 shown in the info card. Translate this text.">
+    M9 هي مجموعة نجمية كروية مدمجة في كوكبة الحواء — وهي من أكثر المجموعات النجمية لمسييه تأثراً بامتصاص الغبار بين النجمي. تقع باتجاه انتفاخ المجرة، حيث يعتم الغبار الكثيف إضاءتها بشكل كبير. بدون هذا الحجب، كانت M9 ستبدو أفتح بحوالي قدر واحد وتكون مرئية بالعين المجردة.
+    </string>
+    <string name="object_info_m9_funfact" translation_description="Fun fact about M9 shown in the info card. Translate this text.">
+    يعاني M9 من امتصاص الغبار بين النجوم أكثر من أي عنقود كروي آخر تقريباً — حوالي 1.3 درجة من التعتيم مقارنة برؤية واضحة. يقع عنقودان كرويان أصغر (NGC 6342 و NGC 6356) على بعد حوالي 1° من M9، مما يجعله مركز تجمع ملحوظ من ثلاثة عناقيد كروية في رقعة صغيرة من السماء.
+    </string>
+    <string name="object_info_m9_distance" translation_description="Distance to M9 shown in the info card. Translate units if appropriate for your locale.">25,800 سنة ضوئية</string>
+    <string name="object_info_m9_size" translation_description="Physical size of M9 shown in the info card. Translate units if appropriate for your locale.">~70 سنة ضوئية عبر</string>
+
+    <string name="object_info_m26_description" translation_description="Description of the open star cluster M26 shown in the info card. Translate this text.">
+    M26 هي مجموعة نجمية مفتوحة متوسطة الخفوت في كوكبة الدرع، مرئية بالمناظير الثنائية وموضحة جيداً في التلسكوبات الصغيرة. حوالي 90 نجماً موزعة على حقل مضغوط في سحابة نجوم الدرع الغنية، على الرغم من أن المجموعة تقع على خلفية كثيفة جداً بحيث يتطلب تحديد أعضائها من حقل النجوم المحيط بعض العناية.
+    </string>
+    <string name="object_info_m26_funfact" translation_description="Fun fact about M26 shown in the info card. Translate this text.">
+    يقع M26 على نفس الشريط الغني من السماء مثل M11 — عنقود البط البري، أحد أفضل العناقيد المفتوحة في السماء. الاثنان يبعدان فقط حوالي 3.5° عن بعضهما ويمكن رؤيتهما في نفس مجال المنظار الثنائي، مما يجعل كوكبة الدرع وجهة رائعة لمراقبي العناقيد رغم كونها كوكبة صغيرة وغالباً ما يتم تجاهلها.
+    </string>
+    <string name="object_info_m26_distance" translation_description="Distance to M26 shown in the info card. Translate units if appropriate for your locale.">5,000 سنة ضوئية</string>
+    <string name="object_info_m26_size" translation_description="Physical size of M26 shown in the info card. Translate units if appropriate for your locale.">~22 سنة ضوئية عبر</string>
+
+    <string name="object_info_m79_description" translation_description="Description of the globular cluster M79 shown in the info card. Translate this text.">
+    M79 هي عنقود كروي مضغوط في كوكبة الأرنب — وهي واحدة من عدد قليل جداً من عناقيد ميسييه الكروية الموضوعة بشكل أفضل في سماء الشتاء، عندما تكون معظم العناقيد الكروية تحت الأفق أو بالكاد ارتفعت. بحجم ظاهري 8.0، تحتاج إلى تلسكوب لكشف نواتها المضغوطة وهالتها الخافتة، وتبرز ضد حقول النجوم الشتوية المتناثرة نسبياً.
+    </string>
+    <string name="object_info_m79_funfact" translation_description="Fun fact about M79 shown in the info card. Translate this text.">
+    يعتقد بعض الفلكيين أن M79 قد يكون دخيلاً من مجرة Canis Major القزمة — وهي مجرة قمرية مضطربة يتم امتصاصها حالياً بواسطة درب التبانة. إذا كان الأمر كذلك، فإن M79 لم يتشكل ضمن نظام الكرات النجمية الخاص بدرب التبانة، بل تم التقاطه من مجرة متساقطة وهو الآن يتم دمجه ببطء في هالة مجرتنا.
+    </string>
+    <string name="object_info_m79_distance" translation_description="Distance to M79 shown in the info card. Translate units if appropriate for your locale.">41,000 سنة ضوئية</string>
+    <string name="object_info_m79_size" translation_description="Physical size of M79 shown in the info card. Translate units if appropriate for your locale.">~104 سنة ضوئية عبر</string>
+
+    <string name="object_info_m70_description" translation_description="Description of the globular cluster M70 shown in the info card. Translate this text.">
+    M70 هي عنقود كروي مضغوط في القوس، تشبه بشكل وثيق نظيرتها القريبة M69 من حيث المظهر والمسافة. بحجم ظاهري 8.1، فهي جسم رائع للتلسكوبات الصغيرة يُظهر نواة مضغوطة وتلميحات من التفكك في الهالة الخارجية. تقع على بعد 2° فقط من M69 ويمكن جمع كليهما في نفس حقل المنظار الثنائي.
+    </string>
+    <string name="object_info_m70_funfact" translation_description="Fun fact about M70 shown in the info card. Translate this text.">
+    اكتسب M70 سمعة قصيرة الأجل في عام 1995 باعتباره الموقع التقريبي في السماء حيث اكتشف آلان هيل وتوماس بوب بشكل مستقل مذنب هيل-بوب — ألمع مذنب في أواخر القرن العشرين. لاحظ كلا الراصديْن في البداية M70 أثناء البحث عن أهداف أخرى وتنبهوا للمذنب كجسم غامض غير متوقع بالقرب منه.
+    </string>
+    <string name="object_info_m70_distance" translation_description="Distance to M70 shown in the info card. Translate units if appropriate for your locale.">29,400 سنة ضوئية</string>
+    <string name="object_info_m70_size" translation_description="Physical size of M70 shown in the info card. Translate units if appropriate for your locale.">~67 سنة ضوئية عبر</string>
+
+    <string name="object_info_m107_description" translation_description="Description of the globular cluster M107 shown in the info card. Translate this text.">
+    M107 هو أحد أقل تجمعات ميسييه الكروية تركيزًا، حيث تنتشر النجوم في نمط مفتوح نسبيًا حول نواة متواضعة. بحجم ظاهري 8.1، فهو هدف مناسب للمناظير من السماء المظلمة ويتحلل جزئيًا في التلسكوبات الصغيرة، مما يظهر نسيجًا حبيبيًا بدلاً من تكثيف مركزي حاد.
+    </string>
+    <string name="object_info_m107_funfact" translation_description="Fun fact about M107 shown in the info card. Translate this text.">
+    كان M107 آخر إدراج تمت إضافته رسميًا إلى فهرس ميسييه — يظهر في مراسلات بيير ميشان لكنه لم يُدرج في الطبعة الأصلية من عام 1781. تمت إضافته رسميًا باسم M107 في عام 1947 من قبل عالمة الفلك الكندية هيلين ساوير هوج، التي صنفت عدة أجسام "مفقودة" لاحظها ميشان لكن ميسييه لم يسجلها رسميًا.
+    </string>
+    <string name="object_info_m107_distance" translation_description="Distance to M107 shown in the info card. Translate units if appropriate for your locale.">20,900 سنة ضوئية</string>
+    <string name="object_info_m107_size" translation_description="Physical size of M107 shown in the info card. Translate units if appropriate for your locale.">~61 سنة ضوئية عبر</string>
+
+    <string name="object_info_m68_description" translation_description="Description of the globular cluster M68 shown in the info card. Translate this text.">
+    M68 عبارة عن عنقود كروي غني في الحوت — وهو جسم جنوبي وأحد العناقيد الكروية القليلة التي تتمتع بأفضل موضع في سماء أواخر الشتاء والربيع. بحجم ظاهري 8.2، فإنه يكافئ التلسكوب الصغير بنواة متكثفة بشكل معتدل وهالة كبيرة من النجوم المحلولة على خلفية حقول النجوم النسبية الخفيفة في الحوت.
+    </string>
+    <string name="object_info_m68_funfact" translation_description="Fun fact about M68 shown in the info card. Translate this text.">
+    رغم قربه النسبي — مما يجعل النجوم الفردية محددة جيداً في التلسكوبات الهاوية — غالباً ما يتم تجاهل M68 بسبب انحداره الجنوبي البعيد. من خطوط العرض فوق 50°N بالكاد يتجاوز الأفق؛ لكن من نصف الكرة الجنوبي، يرتفع عالياً وهو عنقود كروي رائع.
+    </string>
+    <string name="object_info_m68_distance" translation_description="Distance to M68 shown in the info card. Translate units if appropriate for your locale.">33,600 سنة ضوئية</string>
+    <string name="object_info_m68_size" translation_description="Physical size of M68 shown in the info card. Translate units if appropriate for your locale.">~117 سنة ضوئية عبر</string>
+
+    <string name="object_info_m56_description" translation_description="Description of the globular cluster M56 shown in the info card. Translate this text.">
+    M56 هي مجموعة نجمية كروية مدمجة في برج القيثارة، وتقع بين سديم الحلقة (M57) والنجم الثنائي الساطع ألبيريو في برج الدجاجة. بحجم ظاهري 8.3، فهي هدف مناسب للمناظير الثنائية من السماء المظلمة، وتكشف التلسكوبات الصغيرة كرة حبيبية معتدلة التكاثف لا تُحل بالكامل حتى في الفتحات المتوسطة.
+    </string>
+    <string name="object_info_m56_funfact" translation_description="Fun fact about M56 shown in the info card. Translate this text.">
+    تم اكتشاف M56 بواسطة مسييه في يناير 1779 خلال نفس موسم الرصد الذي اكتشف فيه أيضاً سديم الحلقة (M57). على الرغم من وجوده في نفس مجال المنظار الثنائي مثل فيغا — ألمع نجم خامس في السماء — وقريب من سديم الحلقة الشهير، فإن M56 يتم تجاهله بشكل متكرر من قبل الراصدين الذين ينجذبون إلى جيرانه الأكثر شهرة.
+    </string>
+    <string name="object_info_m56_distance" translation_description="Distance to M56 shown in the info card. Translate units if appropriate for your locale.">32,900 سنة ضوئية</string>
+    <string name="object_info_m56_size" translation_description="Physical size of M56 shown in the info card. Translate units if appropriate for your locale.">~68 سنة ضوئية عبر</string>
+
+    <string name="object_info_m71_description" translation_description="Description of the globular cluster M71 shown in the info card. Translate this text.">
+    M71 عبارة عن تجمع كروي غير عادي في كوكبة السهم — ظل موضوع نقاش بين الفلكيين لعقود من الزمن الذين لم يتمكنوا من تحديد ما إذا كان عبارة عن تجمع نجمي مفتوح قديم جداً وغني جداً أم تجمع كروي شاب جداً وفضفاض جداً. يؤكد التحليل الحديث أنه تجمع كروي حقيقي، لكنه استثنائي من حيث التركيز المنخفض جداً مع عدد نسبي قليل من النجوم وقلب أقل هيمنة من التجمعات الكروية النموذجية.
+    </string>
+    <string name="object_info_m71_funfact" translation_description="Fun fact about M71 shown in the info card. Translate this text.">
+    الهيكل الفضفاض لـ M71 أبقاه بعيداً عن العديد من الفهارس المبكرة لأنه بدا وكأنه حقل نجمي غني بدلاً من عنقود حقيقي. على بعد 12,000 سنة ضوئية فقط، فهو أحد أقرب الكرويات المسييرية، وتتحلل نجومه جزئياً في تلسكوب صغير تحت سماء مظلمة — مما يعطيه مظهر حقل نجمي غني مضغوط وقليل التكثيف.
+    </string>
+    <string name="object_info_m71_distance" translation_description="Distance to M71 shown in the info card. Translate units if appropriate for your locale.">12,000 سنة ضوئية</string>
+    <string name="object_info_m71_size" translation_description="Physical size of M71 shown in the info card. Translate units if appropriate for your locale.">~25 سنة ضوئية عبر</string>
 </resources>

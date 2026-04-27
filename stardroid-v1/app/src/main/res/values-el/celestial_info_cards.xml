@@ -952,6 +952,65 @@
     </string>
     <string name="object_info_eta_carinae_nebula_distance" translation_description="Distance to Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">7.500 έτη φωτός</string>
     <string name="object_info_eta_carinae_nebula_size" translation_description="Physical size of Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">300 έτη φωτός διάμετρος</string>
+    <!-- North America Nebula (NGC 7000) -->
+    <string name="object_info_north_america_nebula_description" translation_description="Description of the North America Nebula shown in the info card. Translate this text.">
+    Το Νεφέλωμα Βόρεια Αμερική (NGC 7000) είναι ένα μεγάλο εκπομπής νεφέλωμα στον Κύκνο του οποίου το σχήμα μοιάζει αξιοσημείωτα με την ήπειρο της Βόρειας Αμερικής, με μια περιοχή Κόλπου του Μεξικού. Εκτείνεται περίπου 120 λεπτά τόξου — περίπου τέσσερις φορές τη διάμετρο του πλήρους Φεγγαριού — και βρίσκεται περίπου 2.600 έτη φωτός μακριά και είναι πάνω από 100 έτη φωτός πλάτος.
+    </string>
+    <string name="object_info_north_america_nebula_funfact" translation_description="Fun fact about the North America Nebula shown in the info card. Translate this text.">
+    Παρά το φαινόμενο μέγεθός του 4, το νεφέλωμα είναι πολύ μεγάλο και διάχυτο για να το δούμε με γυμνό μάτι στους περισσότερους ουρανούς — ωστόσο φωτογραφίζεται όμορφα, αποκαλύπτοντας το Cygnus Wall, ένα πυκνό τόξο έντονης σχηματισμού αστέρων κατά μήκος του νότιου άκρου του.
+    </string>
+    <string name="object_info_north_america_nebula_distance" translation_description="Distance to the North America Nebula shown in the info card. Translate units if appropriate for your locale.">~2.590 έτη φωτός</string>
+    <string name="object_info_north_america_nebula_size" translation_description="Physical size of the North America Nebula shown in the info card. Translate units if appropriate for your locale.">~140 έτη φωτός διάμετρος</string>
+    <!-- Exposed Cranium Nebula - PMR 1 -->
+    <string name="object_info_exposed_cranium_nebula_description" translation_description="Description of the Exposed Cranium Nebula shown in the info card. Translate this text.">
+    Το Νεφέλωμα του Εκτεθειμένου Κρανίου (PMR 1) είναι ένα πλανητικό νεφέλωμα στο Vela, περίπου 5.000 έτη φωτός μακριά. Το περίεργο όνομά του προέρχεται από μια σκοτεινή λωρίδα αερίου που διατρέχει κατακόρυφα το κέντρο του, διαιρώντας τους φωτεινούς λοβούς του σε ένα σχήμα που μοιάζει ανατριχιαστικά με έναν εγκέφαλο μέσα σε ένα διαφανές κρανίο. Στην καρδιά του καίει ένα θερμό αστέρι Wolf-Rayet που ρίχνει τα εξωτερικά στρώματα που συσσώρευσε κατά τη διάρκεια της ζωής του.
+    </string>
+    <string name="object_info_exposed_cranium_nebula_funfact" translation_description="Fun fact about the Exposed Cranium Nebula shown in the info card. Translate this text.">
+    Το 2026 το Διαστημικό Τηλεσκόπιο James Webb κατέγραψε εντυπωσιακές νέες εικόνες του Νεφελώματος της Εκτεθειμένης Κρανιακής Κοιλότητας, αποκαλύπτοντας τη διπλή στρωματική δομή του με άνευ προηγουμένου λεπτομέρεια — ένα εξωτερικό κέλυφος πλούσιο σε υδρογόνο και ένα εσωτερικό νέφος γεμάτο με βαρύτερα στοιχεία που δημιουργήθηκαν από το πεθαίνον αστέρι.
+    </string>
+    <string name="object_info_exposed_cranium_nebula_distance" translation_description="Distance to the Exposed Cranium Nebula shown in the info card. Translate units if appropriate for your locale.">~5.000 έτη φωτός</string>
+    <string name="object_info_exposed_cranium_nebula_size" translation_description="Physical size of the Exposed Cranium Nebula shown in the info card. Translate units if appropriate for your locale.">~2 έτη φωτός διάμετρος</string>
+
+    <!-- Jewel Box (NGC 4755) -->
+    <string name="object_info_jewel_box_description" translation_description="Description of the Jewel Box cluster shown in the info card. Translate this text.">
+    Το Jewel Box (NGC 4755) είναι ένα νέο, λαμπρό ανοιχτό σμήνος στον αστερισμό Crux, εύκολα ορατό με γυμνό μάτι ως μια θολή ζώνη τέταρτου μεγέθους ακριβώς νοτιοανατολικά του Mimosa. Όταν παρατηρείται μέσω τηλεσκοπίου, τα αστέρια του λάμπουν με ζωντανά αντιθετικά χρώματα — βαθύ μπλε υπεργίγαντες δίπλα σε έναν εντυπωσιακό κόκκινο υπεργίγαντα — κερδίζοντας το όνομα που του έδωσε ο John Herschel: ένα υπέροχο κομμάτι φαντασίας κοσμήματος. Σε μόλις 14–16 εκατομμύρια χρόνια, είναι ένα από τα νεότερα και πιο χρωματιστά σμήνη στον ουρανό.
+    </string>
+    <string name="object_info_jewel_box_funfact" translation_description="Fun fact about the Jewel Box shown in the info card. Translate this text.">
+    Το εξέχον κόκκινο αστέρι του σμήνους, κ Crucis, είναι ένας κόκκινος υπεργίγαντας τόσο λαμπρός που ξεπερνά τον Ήλιο κατά περισσότερο από 100.000 φορές — μια ζωντανή υπενθύμιση ότι τα αστρικά σμήνη δεν έχουν όλα το ίδιο χρώμα.
+    </string>
+    <string name="object_info_jewel_box_distance" translation_description="Distance to the Jewel Box shown in the info card. Translate units if appropriate for your locale.">~6.500 έτη φωτός</string>
+    <string name="object_info_jewel_box_size" translation_description="Physical size of the Jewel Box shown in the info card. Translate units if appropriate for your locale.">~19 έτη φωτός διάμετρος</string>
+
+    <!-- Double Cluster (NGC 869 & NGC 884) -->
+    <string name="object_info_double_cluster_description" translation_description="Description of the Double Cluster shown in the info card. Translate this text.">
+    Το Διπλό Σμήνος (NGC 869 και NGC 884) είναι ένα εντυπωσιακό ζεύγος νεαρών ανοιχτών σμηνών αστέρων στον Περσέα, που βρίσκονται δίπλα-δίπλα στον ουρανό σε απόσταση λίγο περισσότερο από έναν βαθμό. Και τα δύο είναι ορατά με γυμνό μάτι ως ένα θολό σημείο, αλλά ακόμη και ένα μικρό τηλεσκόπιο αποκαλύπτει εκατοντάδες λαμπρούς μπλε-λευκούς υπεργίγαντες συσσωρευμένους σε δύο λαμπερά σμήνη. Σε απόσταση περίπου 7.500 ετών φωτός, βρίσκονται εντός του Βραχίονα του Περσέα του γαλαξία μας και κατατάσσονται μεταξύ των καλύτερων διοπτρικών αντικειμένων του βόρειου ουρανού.
+    </string>
+    <string name="object_info_double_cluster_funfact" translation_description="Fun fact about the Double Cluster shown in the info card. Translate this text.">
+    Με μόλις 14 εκατομμύρια χρόνια, το Διπλό Σμήνος είναι εξαιρετικά νέο — τόσο πρόσφατα γεννημένο που τα πιο μαζικά του αστέρια είναι ακόμα λαμπερά μπλε υπεργίγαντες, με μερικά ήδη εξελιγμένα σε σπάνιους, φλογερούς κόκκινους υπεργίγαντες.
+    </string>
+    <string name="object_info_double_cluster_distance" translation_description="Distance to the Double Cluster shown in the info card. Translate units if appropriate for your locale.">~7.500 έτη φωτός</string>
+    <string name="object_info_double_cluster_size" translation_description="Physical size of the Double Cluster shown in the info card. Translate units if appropriate for your locale.">Κάθε σμήνος ~70 έτη φωτός διάμετρος· το ζεύγος χωρισμένο κατά ~1.000 έτη φωτός</string>
+
+    <!-- 47 Tucanae (NGC 104) -->
+    <string name="object_info_n47_tucanae_description" translation_description="Description of 47 Tucanae shown in the info card. Translate this text.">
+    Το 47 Tucanae (NGC 104) είναι το δεύτερο πιο λαμπρό σφαιρωτό σμήνος στον ουρανό, μια πυκνή σφαίρα περίπου ενός εκατομμυρίου αρχαίων αστέρων που περιφέρονται γύρω από τον Γαλακτικό Δρόμο στον αστερισμό Tucana. Σε απόσταση περίπου 14.500 ετών φωτός, φαίνεται στο γυμνό μάτι ως ένα θολό αστέρι τέταρτου μεγέθους, αλλά ένα τηλεσκόπιο αποκαλύπτει τον συμπιεσμένο πυρήνα του σε ένα εξαιρετικό σμήνος χρυσών και γαλάζιων ήλιων. Τα αστέρια του σχηματίστηκαν πριν από περίπου 13 δισεκατομμύρια χρόνια, καθιστώντας το σμήνος σχεδόν τόσο παλιό όσο το ίδιο το σύμπαν.
+    </string>
+    <string name="object_info_n47_tucanae_funfact" translation_description="Fun fact about 47 Tucanae shown in the info card. Translate this text.">
+    Το 47 Tucanae είναι ένα κοσμικό εργοστάσιο παλσάρ: οι αστρονόμοι έχουν ανακαλύψει τουλάχιστον 35 παλσάρ χιλιοστού δευτερολέπτου που περιστρέφονται εκατοντάδες φορές ανά δευτερόλεπτο στο εσωτερικό του — περισσότερα από ό,τι σε οποιοδήποτε άλλο γνωστό σφαιρωτό σμήνος — το αποτέλεσμα στενών συναντήσεων αστέρων που ανακυκλώνουν παλιά αστέρια νετρονίων περιστρέφοντάς τα.
+    </string>
+    <string name="object_info_n47_tucanae_distance" translation_description="Distance to 47 Tucanae shown in the info card. Translate units if appropriate for your locale.">~14.500 έτη φωτός</string>
+    <string name="object_info_n47_tucanae_size" translation_description="Physical size of 47 Tucanae shown in the info card. Translate units if appropriate for your locale.">~120 έτη φωτός διάμετρος</string>
+
+    <!-- Centaurus A (NGC 5128) -->
+    <string name="object_info_centaurus_a_description" translation_description="Description of Centaurus A shown in the info card. Translate this text.">
+    Το Centaurus A (NGC 5128) είναι ο πλησιέστερος ενεργός ραδιογαλαξίας στη Γη, ένας γιγάντιος ελλειπτικός γαλαξίας στον αστερισμό Κένταυρος του οποίου η εντυπωσιακή σκοτεινή λωρίδα σκόνης προδίδει ένα βίαιο παρελθόν — ένας σπειροειδής γαλαξίας που καταπόθη πριν από περίπου 200–700 εκατομμύρια χρόνια. Στην καρδιά του κρύβεται μια υπερμεγέθης μαύρη τρύπα 55 εκατομμυρίων ηλιακών μαζών που οδηγεί σχετικιστικές δέσμες που εκτείνονται περισσότερο από ένα εκατομμύριο έτη φωτός σε ραδιοφωνικά μήκη κύματος. Σε απόσταση περίπου 12 εκατομμυρίων ετών φωτός, είναι ένας από τους πιο μελετημένους γαλαξίες στον ουρανό.
+    </string>
+    <string name="object_info_centaurus_a_funfact" translation_description="Fun fact about Centaurus A shown in the info card. Translate this text.">
+    Το Centaurus A είναι ένας από τους ισχυρότερους φυσικούς ραδιοπομπούς στον ουρανό — τα jets του εκτοξεύουν πλάσμα προς τα έξω με ταχύτητα σχεδόν ίση με την ταχύτητα του φωτός, και η πλήρης έκταση των ραδιοφωνικών λοβών του καλύπτει μια περιοχή ισοδύναμη με περίπου 100 πανσέληνους τοποθετημένες το ένα μετά το άλλο στον ουρανό.
+    </string>
+    <string name="object_info_centaurus_a_distance" translation_description="Distance to Centaurus A shown in the info card. Translate units if appropriate for your locale.">~12 εκατομμύρια έτη φωτός</string>
+    <string name="object_info_centaurus_a_size" translation_description="Physical size of Centaurus A shown in the info card. Translate units if appropriate for your locale.">~123.000 έτη φωτός διάμετρος</string>
+
     <!-- ==================== CONSTELLATIONS ==================== -->
     <!-- Note: Constellation names are defined in celestial_objects.xml -->
     <!-- Orion -->
@@ -1979,4 +2038,697 @@
     Η Αλεπού περιέχει το Νεφέλωμα Αλτήρα (M27), το πρώτο πλανητικό νεφέλωμα που ανακαλύφθηκε ποτέ (από τον Charles Messier το 1764), και ένα όμορφο στόχο διόπτρας!
     </string>
     <string name="object_info_vulpecula_size" translation_description="Physical size of Vulpecula shown in the info card. Translate units if appropriate for your locale.">268 τετραγωνικές μοίρες</string>
+
+    <!-- Galilean Moons of Jupiter -->
+    <string name="object_info_io_description" translation_description="Description of Io shown in the info card. Translate this text.">
+    Το Ιώ είναι το εσωτερικότερο από τους τέσσερις μεγάλους γαλιλαϊκούς δορυφόρους του Δία και το πιο ηφαιστειακά ενεργό σώμα στο ηλιακό σύστημα.
+    </string>
+    <string name="object_info_io_funfact" translation_description="Fun fact about Io shown in the info card. Translate this text.">
+    Ο Ιώ έχει εκατοντάδες ενεργά ηφαίστεια, ορισμένα εκρήγνυνται με πίδακες λάβας δεκάδων χιλιομέτρων ύψος. Η συνεχής δραστηριότητά του οδηγείται από τη θερμότητα παλιρροιών από την τεράστια βαρύτητα του Δία.
+    </string>
+    <string name="object_info_io_distance" translation_description="Distance to Io shown in the info card. Translate units if appropriate for your locale.">421.700 χλμ από τον Δία</string>
+    <string name="object_info_io_size" translation_description="Physical size of Io shown in the info card. Translate units if appropriate for your locale.">3.643 χλμ διάμετρος</string>
+
+    <string name="object_info_europa_description" translation_description="Description of Europa shown in the info card. Translate this text.">
+    Η Ευρώπη είναι ο δεύτερος γαλιλαϊκός δορυφόρος και πιστεύεται ότι κρύβει έναν τεράστιο ωκεανό υγρού νερού κάτω από το παγωμένο κέλυφός της, καθιστώντας την έναν από τους πιο ελπιδοφόρους τόπους για την αναζήτηση ζωής.
+    </string>
+    <string name="object_info_europa_funfact" translation_description="Fun fact about Europa shown in the info card. Translate this text.">
+    Ο υπόγειος ωκεανός της Ευρώπης μπορεί να περιέχει δύο φορές περισσότερο υγρό νερό από όλους τους ωκεανούς της Γης, διατηρούμενο υγρό από τη θερμότητα παλιρροιών του Δία.
+    </string>
+    <string name="object_info_europa_distance" translation_description="Distance to Europa shown in the info card. Translate units if appropriate for your locale.">671.100 χλμ από τον Δία</string>
+    <string name="object_info_europa_size" translation_description="Physical size of Europa shown in the info card. Translate units if appropriate for your locale.">3.122 χλμ διάμετρος</string>
+
+    <string name="object_info_ganymede_description" translation_description="Description of Ganymede shown in the info card. Translate this text.">
+    Ο Γανυμήδης είναι ο μεγαλύτερος δορυφόρος του ηλιακού συστήματος — ακόμη και μεγαλύτερος από τον πλανήτη Ερμή. Είναι ο μόνος δορυφόρος που γνωρίζουμε ότι παράγει το δικό του μαγνητικό πεδίο.
+    </string>
+    <string name="object_info_ganymede_funfact" translation_description="Fun fact about Ganymede shown in the info card. Translate this text.">
+    Ο Γανυμήδης είναι μεγαλύτερος από τον Ερμή σε μέγεθος, αν και έχει μόνο περίπου το μισό της μάζας του. Το εσωτερικό του μαγνητικό πεδίο δημιουργεί το δικό του μικροσκοπικό μαγνητόσφαιρα μέσα στη πολύ μεγαλύτερη του Δία.
+    </string>
+    <string name="object_info_ganymede_distance" translation_description="Distance to Ganymede shown in the info card. Translate units if appropriate for your locale.">1.070.400 χλμ από τον Δία</string>
+    <string name="object_info_ganymede_size" translation_description="Physical size of Ganymede shown in the info card. Translate units if appropriate for your locale.">5.268 χλμ διάμετρος</string>
+
+    <string name="object_info_callisto_description" translation_description="Description of Callisto shown in the info card. Translate this text.">
+    Το Καλλιστώ είναι το εξώτερο από τα φεγγάρια του Γαλιλαίου και ένα από τα πιο κρατερωμένα σώματα του ηλιακού συστήματος, με την αρχαία του επιφάνεια να διατηρεί αρχείο των πρώιμων κρούσεων του ηλιακού συστήματος.
+    </string>
+    <string name="object_info_callisto_funfact" translation_description="Fun fact about Callisto shown in the info card. Translate this text.">
+    Η Καλλιστώ περιφέρεται πέρα από τις κύριες ζώνες ακτινοβολίας του Δία, καθιστώντας την την ασφαλέστερη από τους Γαλιλαϊκούς δορυφόρους για μελλοντική ανθρώπινη εξερεύνηση — μερικές φορές ονομάζεται η \'πύλη δορυφόρος\'.
+    </string>
+    <string name="object_info_callisto_distance" translation_description="Distance to Callisto shown in the info card. Translate units if appropriate for your locale.">1.882.700 χλμ από τον Δία</string>
+    <string name="object_info_callisto_size" translation_description="Physical size of Callisto shown in the info card. Translate units if appropriate for your locale.">4.821 χλμ διάμετρος</string>
+
+    <!-- Moons of Mars -->
+    <string name="object_info_phobos_description" translation_description="Description of Phobos shown in the info card. Translate this text.">
+    Ο Φόβος είναι ο μεγαλύτερος και εσωτερικότερος από τους δύο δορυφόρους του Άρη, περιφερόμενος πιο κοντά στον πλανήτη του από οποιονδήποτε άλλο δορυφόρο του ηλιακού συστήματος. Είναι ένα ακανόνιστο σχήμα, έντονα αυλακωμένο και κρατερωμένο σώμα που πιστεύεται ότι είναι ένας συλληφθείς αστεροειδής.
+    </string>
+    <string name="object_info_phobos_funfact" translation_description="Fun fact about Phobos shown in the info card. Translate this text.">
+    Ο Φόβος περιφέρεται γύρω από τον Άρη τόσο γρήγορα που ανατέλλει στη δύση και δύει στην ανατολή — και σπειροειδώς πλησιάζει προς τον Άρη, καταδικασμένος να συγκρουστεί με τον Άρη ή να διαλυθεί σε δακτύλιο σε περίπου 50 εκατομμύρια χρόνια.
+    </string>
+    <string name="object_info_phobos_distance" translation_description="Distance to Phobos shown in the info card. Translate units if appropriate for your locale.">9.376 χλμ από τον Άρη</string>
+    <string name="object_info_phobos_size" translation_description="Physical size of Phobos shown in the info card. Translate units if appropriate for your locale.">27 × 22 × 18 χλμ</string>
+
+    <string name="object_info_deimos_description" translation_description="Description of Deimos shown in the info card. Translate this text.">
+    Ο Δείμος είναι ο μικρότερος και εξωτερικός από τους δύο δορυφόρους του Άρη, με μια λεία, σκονισμένη επιφάνεια που του δίνει μια πιο στρογγυλή εμφάνιση από τον Φόβο. Όπως και ο σύντροφός του, πιστεύεται ότι είναι ένας αιχμάλωτος αστεροειδής από την εξωτερική ζώνη.
+    </string>
+    <string name="object_info_deimos_funfact" translation_description="Fun fact about Deimos shown in the info card. Translate this text.">
+    Ο Δείμος είναι τόσο μικρός και μακρινός που από την επιφάνεια του Άρη φαίνεται σαν ένα φωτεινό αστέρι, χρειάζεται περίπου 30 ώρες για να ολισθήσει αργά στον νυχτερινό ουρανό.
+    </string>
+    <string name="object_info_deimos_distance" translation_description="Distance to Deimos shown in the info card. Translate units if appropriate for your locale.">23.460 χλμ από τον Άρη</string>
+    <string name="object_info_deimos_size" translation_description="Physical size of Deimos shown in the info card. Translate units if appropriate for your locale.">15 × 12 × 11 χλμ</string>
+
+    <!-- Major Moons of Saturn -->
+    <string name="object_info_titan_description" translation_description="Description of Titan shown in the info card. Translate this text.">
+    Ο Τιτάνας είναι το μεγαλύτερο φεγγάρι του Κρόνου και το δεύτερο μεγαλύτερο φεγγάρι στο ηλιακό σύστημα. Είναι το μόνο φεγγάρι που είναι γνωστό ότι έχει πυκνή ατμόσφαιρα — ένα παχύ κάλυμμα αζώτου με μεθάνιο — και ο μόνος κόσμος πέρα από τη Γη που είναι γνωστό ότι έχει σταθερές υγρές θάλασσες στην επιφάνειά του.
+    </string>
+    <string name="object_info_titan_funfact" translation_description="Fun fact about Titan shown in the info card. Translate this text.">
+    Οι λίμνες και οι θάλασσες του Τιτάνα είναι γεμάτες όχι με νερό αλλά με υγρό μεθάνιο και αιθάνιο σε ένα παγωμένο −179°C. Η αποστολή Dragonfly της NASA, που αναμένεται να φτάσει το 2034, θα πετάξει μεταξύ τοποθεσιών στην επιφάνεια του Τιτάνα για να αναζητήσει τη χημεία της ζωής.
+    </string>
+    <string name="object_info_titan_distance" translation_description="Distance to Titan shown in the info card. Translate units if appropriate for your locale.">1.221.870 χλμ από τον Κρόνο</string>
+    <string name="object_info_titan_size" translation_description="Physical size of Titan shown in the info card. Translate units if appropriate for your locale.">5.151 χλμ διάμετρος</string>
+
+    <string name="object_info_rhea_description" translation_description="Description of Rhea shown in the info card. Translate this text.">
+    Η Ρέα είναι ο δεύτερος μεγαλύτερος δορυφόρος του Κρόνου και ένας έντονα κρατερωμένος κόσμος από πάγο και βράχο. Η ανοιχτόχρωμη, αρχαία επιφάνειά της διατηρεί μερικούς από τους πιο παρθένους κρατήρες πρόσκρουσης του ηλιακού συστήματος, παράλληλα με φωτεινές παγοκρημνούς όπου οι κατολισθήσεις έχουν εκθέσει φρέσκο υλικό από κάτω.
+    </string>
+    <string name="object_info_rhea_funfact" translation_description="Fun fact about Rhea shown in the info card. Translate this text.">
+    Το 2008, τα δεδομένα του Cassini υπέδειξαν ότι η Ρέα ενδέχεται να έχει ένα λεπτό δακτύλιο συντρόφων που να περιφέρεται γύρω της — κάτι που θα την έκανε το πρώτο φεγγάρι που ανακαλύφθηκε ποτέ με δικό του σύστημα δακτυλίων. Αν επιβεβαιωθεί, θα ήταν μια αξιοσημείωτη ανακάλυψη· τα στοιχεία παραμένουν ένα ενεργό πεδίο έρευνας.
+    </string>
+    <string name="object_info_rhea_distance" translation_description="Distance to Rhea shown in the info card. Translate units if appropriate for your locale.">527.108 χλμ από τον Κρόνο</string>
+    <string name="object_info_rhea_size" translation_description="Physical size of Rhea shown in the info card. Translate units if appropriate for your locale.">1.527 χλμ διάμετρος</string>
+
+    <string name="object_info_tethys_description" translation_description="Description of Tethys shown in the info card. Translate this text.">
+    Η Τηθύς είναι ένας παγωμένος δορυφόρος του Κρόνου που κυριαρχείται από δύο δραματικά χαρακτηριστικά: τον τεράστιο κρατήρα Οδυσσέα, 400 χλμ πλάτος και που καλύπτει σχεδόν το ένα τρίτο της επιφάνειας του δορυφόρου, και το Χάσμα Ιθάκης, ένα σύστημα φαραγγιών που εκτείνεται τα τρία τέταρτα του δρόμου γύρω από τον κόσμο.
+    </string>
+    <string name="object_info_tethys_funfact" translation_description="Fun fact about Tethys shown in the info card. Translate this text.">
+    Ο Τηθύς είναι σχεδόν καθαρός πάγος νερού — έχει μία από τις χαμηλότερες πυκνότητες οποιουδήποτε φεγγαριού στο ηλιακό σύστημα, μόλις πυκνότερος από παγωμένο νερό. Το Ithaca Chasma μπορεί να σχηματίστηκε όταν το εσωτερικό παγώθηκε και διαστέλθηκε, ραγίζοντας το επικείμενο φλοιό από μέσα.
+    </string>
+    <string name="object_info_tethys_distance" translation_description="Distance to Tethys shown in the info card. Translate units if appropriate for your locale.">294.619 χλμ από τον Κρόνο</string>
+    <string name="object_info_tethys_size" translation_description="Physical size of Tethys shown in the info card. Translate units if appropriate for your locale.">1.062 χλμ διάμετρος</string>
+
+    <string name="object_info_dione_description" translation_description="Description of Dione shown in the info card. Translate this text.">
+    Η Διώνη είναι ένας παγωμένος δορυφόρος του Κρόνου με ένα έντονα κρατερωμένο πρόσωπο και ένα πίσω ημισφαίριο διαπλεγμένο με φωτεινές παγοκλασίες — γραμμές θραύσης όπου αρχαίες τεκτονικές δυνάμεις εξέθεσαν φρέσκο πάγο από κάτω. Τα δεδομένα βαρύτητας του Cassini υποδηλώνουν έναν υπόγειο υγρό ωκεανό κάτω από το φλοιό.
+    </string>
+    <string name="object_info_dione_funfact" translation_description="Fun fact about Dione shown in the info card. Translate this text.">
+    Η Διώνη μοιράζεται την τροχιά της με δύο μικροσκοπικά φεγγάρια, την Ελένη και τον Πολυδεύκη, τα οποία είναι κλειδωμένα 60° μπροστά και πίσω από αυτήν σε σημεία βαρυτικής ισορροπίας που ονομάζονται σημεία Lagrange. Η Ελένη ιδιαίτερα μπορεί να φανεί να ταξιδεύει σαν ένας κοσμικός αυτοσχέδιος επιβάτης στις εικόνες του Cassini.
+    </string>
+    <string name="object_info_dione_distance" translation_description="Distance to Dione shown in the info card. Translate units if appropriate for your locale.">377.396 χλμ από τον Κρόνο</string>
+    <string name="object_info_dione_size" translation_description="Physical size of Dione shown in the info card. Translate units if appropriate for your locale.">1.122 χλμ διάμετρος</string>
+
+    <string name="object_info_iapetus_description" translation_description="Description of Iapetus shown in the info card. Translate this text.">
+    Ο Ιάπετος είναι ένας από τους πιο χαρακτηριστικούς δορυφόρους του Κρόνου: το μπροστινό του ημισφαίριο είναι καλυμμένο με σκοτεινό υλικό μαύρο σαν κάρβουνο, ενώ το πίσω ημισφαίριό του είναι λευκό πάγο. Αυτή η ακραία δύο-τονική εμφάνιση προβλημάτισε τον Giovanni Cassini όταν ανακάλυψε τον δορυφόρο το 1671, και η αντίθεση είναι τόσο έντονη που είναι ορατή σε μικρά τηλεσκόπια.
+    </string>
+    <string name="object_info_iapetus_funfact" translation_description="Fun fact about Iapetus shown in the info card. Translate this text.">
+    Ο Ιάπετος διαθέτει επίσης μια εντυπωσιακή ισημερινή κορυφογραμμή που ανυψώνεται 20 χλμ. ψηλά — ψηλότερη από οποιοδήποτε βουνό στη Γη — που εκτείνεται χιλιάδες χιλιόμετρα γύρω από τον ισημερινό του. Η προέλευσή της είναι άγνωστη: μπορεί να είναι το υπόλειμμα ενός κατεστραμμένου δακτυλίου, ή αρχαία τεκτονική πτύχωση, που σχηματίστηκε όταν το φεγγάρι περιστρεφόταν πολύ πιο γρήγορα παλιά.
+    </string>
+    <string name="object_info_iapetus_distance" translation_description="Distance to Iapetus shown in the info card. Translate units if appropriate for your locale.">3.560.820 χλμ από τον Κρόνο</string>
+    <string name="object_info_iapetus_size" translation_description="Physical size of Iapetus shown in the info card. Translate units if appropriate for your locale.">1.469 χλμ διάμετρος</string>
+
+    <!-- Moon of Neptune -->
+    <string name="object_info_triton_description" translation_description="Description of Triton shown in the info card. Translate this text.">
+    Ο Τρίτων είναι το μεγαλύτερο φεγγάρι του Ποσειδώνα και ένα από τα πιο εξαιρετικά σώματα του ηλιακού συστήματος. Περιφέρεται γύρω από τον Ποσειδώνα προς τα πίσω — αντίθετα με την ίδια περιστροφή του πλανήτη — ένα ισχυρό σημάδι ότι συλλήφθη από το εξωτερικό ηλιακό σύστημα, πιθανότατα από τη Ζώνη Kuiper, στις αρχές της ιστορίας του Ποσειδώνα.
+    </string>
+    <string name="object_info_triton_funfact" translation_description="Fun fact about Triton shown in the info card. Translate this text.">
+    Παρά τη θερμοκρασία της επιφάνειας του −235°C — την ψυχρότερη που μετρήθηκε σε οποιοδήποτε σώμα που επισκέφθηκε διαστημόπλοιο — το Voyager 2 ανακάλυψε ενεργά γεϊσέρ αζώτου στον Τρίτωνα το 1989. Σκοτεινές γραμμές στην επιφάνεια σημαίνουν όπου στήλες αερίου και σκοτεινού υλικού εξερράγησαν χιλιόμετρα στην αραιή ατμόσφαιρα.
+    </string>
+    <string name="object_info_triton_distance" translation_description="Distance to Triton shown in the info card. Translate units if appropriate for your locale.">354.759 χλμ από τον Ποσειδώνα</string>
+    <string name="object_info_triton_size" translation_description="Physical size of Triton shown in the info card. Translate units if appropriate for your locale.">2.707 χλμ διάμετρος</string>
+
+    <!-- Major Moons of Uranus -->
+    <string name="object_info_titania_description" translation_description="Description of Titania shown in the info card. Translate this text.">
+    Η Τιτάνια είναι ο μεγαλύτερος δορυφόρος του Ουράνου και ο όγδοος μεγαλύτερος δορυφόρος του ηλιακού συστήματος. Η επιφάνειά της παρουσιάζει ένα μίγμα αρχαίων κρατερωμένων πεδίων και νεότερων απότομων πλαγιών και κοιλάδων, υποδηλώνοντας μια σύνθετη γεωλογική ιστορία που μπορεί να περιλάμβανε παρελθοντική τεκτονική δραστηριότητα που αναμόρφωσε το παγωμένο φλοιό.
+    </string>
+    <string name="object_info_titania_funfact" translation_description="Fun fact about Titania shown in the info card. Translate this text.">
+    Όλα τα φεγγάρια του Ουράνου ονομάζονται από χαρακτήρες του Σαίξπηρ και του Αλέξανδρου Πόουπ — η Τιτανία είναι η βασίλισσα των νεράιδων στο «Ένα Καλοκαιρινό Όνειρο Νύχτας». Είναι ένα από τα πολύ λίγα μεγάλα φεγγάρια πλανητών που δεν ονομάζονται από μια φιγούρα της ελληνικής ή ρωμαϊκής μυθολογίας.
+    </string>
+    <string name="object_info_titania_distance" translation_description="Distance to Titania shown in the info card. Translate units if appropriate for your locale.">435.910 χλμ από τον Ουράνο</string>
+    <string name="object_info_titania_size" translation_description="Physical size of Titania shown in the info card. Translate units if appropriate for your locale.">1.578 χλμ διάμετρος</string>
+
+    <string name="object_info_oberon_description" translation_description="Description of Oberon shown in the info card. Translate this text.">
+    Ο Ωβερών είναι το εξώτατο από τα πέντε μεγάλα φεγγάρια του Ουράνου και ένα από τα πιο έντονα κρατερωμένα, με μια αρχαία επιφάνεια που έχει αλλάξει ελάχιστα από τις πρώτες εποχές του ηλιακού συστήματος. Αρκετά από τα μεγάλα κρατέρια κρούσης του έχουν σκοτεινό υλικό στο δάπεδό τους, πιθανώς οργανικές αποθέσεις που φέρθηκαν από τα σώματα που προσέκρουσαν.
+    </string>
+    <string name="object_info_oberon_funfact" translation_description="Fun fact about Oberon shown in the info card. Translate this text.">
+    Ο Ωβερών φιλοξενεί ένα βουνό που υψώνεται περίπου 6 χλμ από τις γύρω πεδιάδες — συγκρίσιμο με τις υψηλότερες κορυφές της Γης. Σε αντίθεση με τα βουνά της Γης, τα οποία σχηματίστηκαν μέσω τεκτονικής των πλακών, αυτό το χαρακτηριστικό μπορεί να είναι η κεντρική κορυφή ενός αρχαίου κρατήρα πρόσκρουσης ή ένα απομεινάρι της πρώιμης ηφαιστειακής δραστηριότητας.
+    </string>
+    <string name="object_info_oberon_distance" translation_description="Distance to Oberon shown in the info card. Translate units if appropriate for your locale.">583.520 χλμ από τον Ουράνιο</string>
+    <string name="object_info_oberon_size" translation_description="Physical size of Oberon shown in the info card. Translate units if appropriate for your locale.">1.523 χλμ διάμετρος</string>
+
+    <string name="object_info_ariel_description" translation_description="Description of Ariel shown in the info card. Translate this text.">
+    Η Αριέλ έχει την νεότερη και λαμπρότερη επιφάνεια από τους πέντε μεγάλους δορυφόρους του Ουράνου. Το τοπίο της κυριαρχείται από ένα δίκτυο βαθιών κοιλάδων και ομαλών πεδίων που ανακαινίστηκαν πριν από πολύ καιρό από ρευστό — πιθανώς νερό ή μίγματα νερού-αμμωνίας — που ανέβαινε από το εσωτερικό και πλημμύριζε το αρχαίο έδαφος.
+    </string>
+    <string name="object_info_ariel_funfact" translation_description="Fun fact about Ariel shown in the info card. Translate this text.">
+    Οι κοιλάδες του Αριέλ μπορούν να φτάσουν τα 10 χλμ βάθος — πολύ βαθύτερες από το Grand Canyon. Οι παρατηρήσεις του τηλεσκοπίου James Webb έχουν ανιχνεύσει διοξείδιο του άνθρακα πάγου στην επιφάνεια του Αριέλ, υποδεικνύοντας συνεχιζόμενη χημεία της επιφάνειας που οδηγείται από φορτισμένα σωματίδια από το μαγνητικό πεδίο του Ουράνου.
+    </string>
+    <string name="object_info_ariel_distance" translation_description="Distance to Ariel shown in the info card. Translate units if appropriate for your locale.">191.020 χλμ από τον Ουράνιο</string>
+    <string name="object_info_ariel_size" translation_description="Physical size of Ariel shown in the info card. Translate units if appropriate for your locale.">1.158 χλμ διάμετρος</string>
+
+    <string name="object_info_umbriel_description" translation_description="Description of Umbriel shown in the info card. Translate this text.">
+    Ο Ουμπριέλ είναι το σκοτεινότερο από τα πέντε μεγάλα φεγγάρια του Ουράνου, με μια ομοιόμορφα παλιά και έντονα κρατερωμένη επιφάνεια που δείχνει ελάχιστα σημάδια της γεωλογικής αναμόρφωσης που παρατηρείται στους γειτονικούς του δορυφόρους. Το εσωτερικό του φαίνεται να έμεινε κρύο και παγωμένο από τις πρώτες εποχές της ιστορίας του ηλιακού συστήματος.
+    </string>
+    <string name="object_info_umbriel_funfact" translation_description="Fun fact about Umbriel shown in the info card. Translate this text.">
+    Το πιο εντυπωσιακό χαρακτηριστικό του Ουμπριέλ είναι το Wunda, ένας φωτεινός δακτύλιος περίπου 140 χλμ διαμέτρου κοντά στον ισημερινό του. Ανακαλύφθηκε από το Voyager 2 το 1986, η ακριβής φύση του Wunda παραμένει ένα μυστήριο — μπορεί να είναι ένα κρατερικό δάπεδο επικαλυμμένο με διοξείδιο του άνθρακα ή παγετό αμμωνίας που αποτέθηκε πολύ καιρό μετά το κρούσμα που το δημιούργησε.
+    </string>
+    <string name="object_info_umbriel_distance" translation_description="Distance to Umbriel shown in the info card. Translate units if appropriate for your locale.">266.300 χλμ από τον Ουράνιο</string>
+    <string name="object_info_umbriel_size" translation_description="Physical size of Umbriel shown in the info card. Translate units if appropriate for your locale.">1.170 χλμ διάμετρος</string>
+
+    <!-- Globular clusters already on the map -->
+    <string name="object_info_omega_centauri_description" translation_description="Description of Omega Centauri shown in the info card. Translate this text.">
+    Το Omega Centauri είναι το μεγαλύτερο και πιο μαζικό σφαιρωτό σμήνος που περιφέρεται γύρω από τον Γαλακτικό Δρόμο, περιέχοντας περίπου 10 εκατομμύρια αστέρια συσπειρωμένα σε μια σφαίρα περίπου 150 ετών φωτός διαμέτρου. Είναι εύκολα ορατό με γυμνό μάτι ως ένα θολό αστέρι στον Κένταυρο, και διαχωρίζεται σε μια εκπληκτική σφαίρα αστεριών μέσω διοπτρών ή οποιουδήποτε τηλεσκοπίου.
+    </string>
+    <string name="object_info_omega_centauri_funfact" translation_description="Fun fact about Omega Centauri shown in the info card. Translate this text.">
+    Σε αντίθεση με τα τυπικά σφαιρωτά σμήνη, το Omega Centauri περιέχει αστέρια πολλών διαφορετικών ηλικιών και χημικών συστάσεων — ένδειξη ότι μπορεί να είναι ο γυμνός πυρήνας ενός νάνου γαλαξία που διαλύθηκε και καταπόθη από τον Γαλακτικό Δρόμο δισεκατομμύρια χρόνια πριν. Μπορεί ακόμη και να περιέχει μια κεντρική μαύρη τρύπα ενδιάμεσης μάζας.
+    </string>
+    <string name="object_info_omega_centauri_distance" translation_description="Distance to Omega Centauri shown in the info card. Translate units if appropriate for your locale.">17.090 έτη φωτός</string>
+    <string name="object_info_omega_centauri_size" translation_description="Physical size of Omega Centauri shown in the info card. Translate units if appropriate for your locale.">~150 έτη φωτός διάμετρος</string>
+
+    <!-- Deep-sky objects: new catalog additions -->
+    <string name="object_info_hyades_description" translation_description="Description of the Hyades star cluster shown in the info card. Translate this text.">
+    Το Υάδες είναι το πλησιέστερο ανοικτό σμήνος αστέρων στο ηλιακό σύστημα και ένα από τα περισσότερο μελετημένα στην αστρονομία. Ορατό με γυμνό μάτι ως το σχήμα V αστέρων που σχηματίζουν το πρόσωπο του Ταύρου, περιέχει αρκετές εκατοντάδες αστέρες διασκορπισμένους σε περίπου 5° του ουρανού.
+    </string>
+    <string name="object_info_hyades_funfact" translation_description="Fun fact about the Hyades shown in the info card. Translate this text.">
+    Ο λαμπρός πορτοκαλί αστέρας Αλδεβαράν φαίνεται να βρίσκεται μέσα στις Υάδες, αλλά είναι στην πραγματικότητα ένα αντικείμενο προσκηνίου στο μισό της απόστασης — μια τυχαία ευθυγράμμιση. Το πραγματικό σμήνος απέχει περίπου 153 έτη φωτός και περιέχει τους πρώτους αστέρες των οποίων οι αποστάσεις μετρήθηκαν με παράλλαξη από το δορυφόρο Hipparcos.
+    </string>
+    <string name="object_info_hyades_distance" translation_description="Distance to the Hyades shown in the info card. Translate units if appropriate for your locale.">153 έτη φωτός</string>
+    <string name="object_info_hyades_size" translation_description="Angular size of the Hyades shown in the info card.">~5° διάμετρος</string>
+
+    <string name="object_info_coma_star_cluster_description" translation_description="Description of the Coma Berenices Star Cluster shown in the info card. Translate this text.">
+    Το Σμήνος Αστέρων Κόμης Βερενίκης είναι ένα κοντινό ανοιχτό σμήνος περίπου 40 αστέρων διασκορπισμένων χαλαρά σε σχεδόν 5° του ουρανού, εύκολα ορατό με γυμνό μάτι ως μια απαλή ομίχλη σε σκοτεινές συνθήκες. Είναι το τρίτο πλησιέστερο ανοιχτό σμήνος στο ηλιακό σύστημα και η πηγή του αστερισμού Κόμης Βερενίκης.
+    </string>
+    <string name="object_info_coma_star_cluster_funfact" translation_description="Fun fact about the Coma Berenices Star Cluster shown in the info card. Translate this text.">
+    Οι αρχαίοι παρατηρητές είδαν αυτό το σμήνος ως τα μαλλιά της Βασίλισσας Βερενίκης II της Αιγύπτου, η οποία σύμφωνα με το μύθο έκοψε τις χρυσές της μπούκλες ως προσφορά για την ασφαλή επιστροφή του συζύγου της από τον πόλεμο. Ο Πτολεμαίος III φέρεται να ονόμασε επίσημα το ασυνήθιστο αστερισμό προς τιμήν της γύρω στο 245 π.Χ.
+    </string>
+    <string name="object_info_coma_star_cluster_distance" translation_description="Distance to the Coma Star Cluster shown in the info card. Translate units if appropriate for your locale.">288 έτη φωτός</string>
+    <string name="object_info_coma_star_cluster_size" translation_description="Angular size of the Coma Star Cluster shown in the info card.">~5° διάμετρος</string>
+
+    <string name="object_info_coathanger_description" translation_description="Description of the Coathanger asterism shown in the info card. Translate this text.">
+    Το Κρεμάστρα είναι ένα εντυπωσιακό αστερισμό δέκα αστέρων στην Αλεπού που σχηματίζουν ένα αναγνωρίσιμο σχήμα: έξι αστέρες σε ευθεία γραμμή με τέσσερις να κρέμονται παρακάτω σε ένα άγκιστρο, ακριβώς όπως μια ανεστραμμένη κρεμάστρα. Είναι ένα από τα καλύτερα διοπτρικά αντικείμενα στον καλοκαιρινό ουρανό, χωράει τέλεια στο τυπικό οπτικό πεδίο διοπτρών.
+    </string>
+    <string name="object_info_coathanger_funfact" translation_description="Fun fact about the Coathanger shown in the info card. Translate this text.">
+    Παρά το ότι μοιάζει με σμήνος, τα αστέρια του Κρεμαστού δεν συνδέονται φυσικά — βρίσκονται σε πολύ διαφορετικές αποστάσεις και είναι απλώς μια σύμπτωση κατά μήκος της οπτικής γραμμής. Το Σμήνος του Μπρόκι καταλογογραφήθηκε από τον Dalmiro Brocchi τη δεκαετία του 1920, και το πρώτο διαστημικό τηλεσκόπιο που το απεικόνισε ήταν το Hipparcos, το οποίο επιβεβαίωσε ότι τα αστέρια δεν συνδέονται.
+    </string>
+    <string name="object_info_coathanger_distance" translation_description="Distance to the Coathanger shown in the info card. Translate units if appropriate for your locale.">~420 έτη φωτός (λαμπρότερο αστέρι)</string>
+    <string name="object_info_coathanger_size" translation_description="Angular size of the Coathanger shown in the info card.">~1° διάμετρος</string>
+
+    <string name="object_info_helix_nebula_description" translation_description="Description of the Helix Nebula shown in the info card. Translate this text.">
+    Το Νεφέλωμα Έλικας είναι το μεγαλύτερο πλανητικό νεφέλωμα σε φαινόμενο μέγεθος στον ουρανό — το διαστελλόμενο κέλυφος αερίου που απελευθερώνεται από ένα αστέρι παρόμοιο με τον Ήλιο στο τέλος της ζωής του. Με έκταση περίπου μισό μοίρα, είναι ορατό με διόπτρες ως ένα αμυδρό κυκλικό λάμψη στον Υδροχόο και ονομάζεται Μάτι του Θεού για την εμφάνισή του σε φωτογραφίες μεγάλης έκθεσης.
+    </string>
+    <string name="object_info_helix_nebula_funfact" translation_description="Fun fact about the Helix Nebula shown in the info card. Translate this text.">
+    Στο κέντρο του Νεφελώματος Έλικας βρίσκεται ένας από τους πλησιέστερους γνωστούς λευκούς νάνους στη Γη — ένα εξαιρετικά θερμό αστρικό υπόλειμμα περίπου του μεγέθους της Γης αλλά με τη μάζα του Ήλιου. Αυτό είναι το πεπρωμένο που περιμένει τον δικό μας Ήλιο σε περίπου πέντε δισεκατομμύρια χρόνια.
+    </string>
+    <string name="object_info_helix_nebula_distance" translation_description="Distance to the Helix Nebula shown in the info card. Translate units if appropriate for your locale.">650 έτη φωτός</string>
+    <string name="object_info_helix_nebula_size" translation_description="Angular size of the Helix Nebula shown in the info card.">~3 έτη φωτός διάμετρος</string>
+
+    <string name="object_info_sculptor_galaxy_description" translation_description="Description of the Sculptor Galaxy shown in the info card. Translate this text.">
+    Ο Γαλαξίας του Γλύπτη είναι ένας από τους λαμπρότερους και πιο όμορφους γαλαξίες σπειροειδούς σχήματος που παρατηρούνται από την άκρη, ορατός από τη Γη, εμφανιζόμενος ως ένα επιμήκες λάμψη στο νότιο αστερισμό του Γλύπτη. Είναι ένας από τους πλησιέστερους γαλαξίες έκρηξης αστέρων — ένας γαλαξίας που υφίσταται μια έντονη έκρηξη σχηματισμού αστέρων — ορατός σε ερασιτέχνες αστρονόμους με διόπτρες από σκοτεινούς ουρανούς.
+    </string>
+    <string name="object_info_sculptor_galaxy_funfact" translation_description="Fun fact about the Sculptor Galaxy shown in the info card. Translate this text.">
+    Ο Γαλαξίας του Γλύπτη είναι ένα από τα λαμπρότερα μέλη της Ομάδας Γαλαξιών του Γλύπτη — της ομάδας γαλαξιών που βρίσκεται πλησιέστερα στη δική μας Τοπική Ομάδα. Η κεντρική περιοχή έκρηξης αστέρων παράγει νέα αστέρια με ρυθμό αρκετές φορές υψηλότερο από τον Γαλακτικό Δρόμο, που οδηγείται από προηγούμενες αλληλεπιδράσεις με γειτονικούς γαλαξίες.
+    </string>
+    <string name="object_info_sculptor_galaxy_distance" translation_description="Distance to the Sculptor Galaxy shown in the info card. Translate units if appropriate for your locale.">11,4 εκατομμύρια έτη φωτός</string>
+    <string name="object_info_sculptor_galaxy_size" translation_description="Physical size of the Sculptor Galaxy shown in the info card. Translate units if appropriate for your locale.">~90.000 έτη φωτός διάμετρος</string>
+
+    <string name="object_info_blue_snowball_nebula_description" translation_description="Description of the Blue Snowball Nebula shown in the info card. Translate this text.">
+    Το Blue Snowball είναι ένα πλανητικό νεφέλωμα στην Ανδρομέδα — το λαμπερό κέλυφος αερίου που εκδιώχθηκε από ένα πεθαίνον αστέρι. Με μέγεθος 8,3, είναι ένα από τα λαμπρότερα και πιο χρωματιστά πλανητικά νεφελώματα στον ουρανό, εμφανιζόμενο ως ένας ζωντανός μπλε-πράσινος δίσκος ακόμη και σε μικρά τηλεσκόπια. Το συμμετρικό του σχήμα και το έντονο χρώμα του το κάνουν αγαπητό στους παρατηρητές.
+    </string>
+    <string name="object_info_blue_snowball_nebula_funfact" translation_description="Fun fact about the Blue Snowball Nebula shown in the info card. Translate this text.">
+    Το εντυπωσιακό χρώμα του Μπλε Χιονόμπαλας προέρχεται από διπλά ιονισμένο οξυγόνο που λάμπει σε ένα συγκεκριμένο πράσινο μήκος κύματος, σε συνδυασμό με εκπομπή υδρογόνου — μια παλέτα χρωμάτων που το ανθρώπινο μάτι αντιλαμβάνεται ως γαλάζιο-πράσινο. Ο κεντρικός λευκός νάνος έχει επιφανειακή θερμοκρασία περίπου 100.000°C, αρκετά υψηλή για να ιονίσει το περιβάλλον αέριο σε αυτή την απόσταση.
+    </string>
+    <string name="object_info_blue_snowball_nebula_distance" translation_description="Distance to the Blue Snowball Nebula shown in the info card. Translate units if appropriate for your locale.">~2.500 έτη φωτός</string>
+    <string name="object_info_blue_snowball_nebula_size" translation_description="Physical size of the Blue Snowball Nebula shown in the info card. Translate units if appropriate for your locale.">~0,8 έτη φωτός διάμετρος</string>
+
+    <string name="object_info_ghost_of_jupiter_description" translation_description="Description of the Ghost of Jupiter planetary nebula shown in the info card. Translate this text.">
+    Το Φάντασμα του Δία είναι ένας φωτεινός πλανητικός νεφέλωμα στην Ύδρα του οποίου το φαινόμενο μέγεθος είναι παρόμοιο με τον πλανήτη Δία — εξ ού και το όνομά του. Με μέγεθος 8,6, είναι ένα από τα πιο προσιτά πλανητικά νεφελώματα στον ουρανό για μικρά τηλεσκόπια, παρουσιάζοντας ένα καθαρό δίσκο και μια ίχνη χρώματος σε μέσες διαμέτρους.
+    </string>
+    <string name="object_info_ghost_of_jupiter_funfact" translation_description="Fun fact about the Ghost of Jupiter shown in the info card. Translate this text.">
+    Το Φάντασμα του Δία έχει ένα φωτεινό εσωτερικό κέλυφος περιτριγυρωμένο από ένα πιο αμυδρό εξωτερικό φωτοστέφανο — μια δομή δύο κελυφών που υποδηλώνει ότι ο πεθαίνων αστέρας εξέπεμψε αέριο σε τουλάχιστον δύο ξεχωριστά επεισόδια. Ο κεντρικός του αστέρας είναι ένας από τους θερμότερους γνωστούς λευκούς νάνους, με θερμοκρασία επιφάνειας εκτιμώμενη στους περίπου 75.000°C.
+    </string>
+    <string name="object_info_ghost_of_jupiter_distance" translation_description="Distance to the Ghost of Jupiter shown in the info card. Translate units if appropriate for your locale.">~1.400 έτη φωτός</string>
+    <string name="object_info_ghost_of_jupiter_size" translation_description="Physical size of the Ghost of Jupiter shown in the info card. Translate units if appropriate for your locale.">~1 έτος φωτός διάμετρος</string>
+
+    <string name="object_info_saturn_nebula_description" translation_description="Description of the Saturn Nebula shown in the info card. Translate this text.">
+    Το Νεφέλωμα του Κρόνου είναι ένα πλανητικό νεφέλωμα στον Υδροχόο που ονομάστηκε έτσι λόγω της ομοιότητάς του με τον πλανήτη Κρόνο — επεκτάσεις που ονομάζονται ansae προεξέχουν και από τις δύο πλευρές σαν χερούλια δακτυλίων, ορατές σε τηλεσκόπια μέσης ισχύος. Με μέγεθος 8,0, είναι ένα από τα λαμπρότερα πλανητικά νεφελώματα του ουρανού και παρουσιάζει σύνθετη δομή σε μεγαλύτερα όργανα.
+    </string>
+    <string name="object_info_saturn_nebula_funfact" translation_description="Fun fact about the Saturn Nebula shown in the info card. Translate this text.">
+    Ο Ουίλιαμ Χέρσελ ανακάλυψε το Νεφέλωμα του Κρόνου το 1782 και σημείωσε την εμφάνιση που μοιάζει με τον Κρόνο. Οι σύγχρονες παρατηρήσεις αποκαλύπτουν τουλάχιστον τέσσερα διακριτά κελύφη αερίου που περιβάλλουν τον κεντρικό λευκό νάνο, αντανακλώντας πολλαπλά επεισόδια απώλειας μάζας στα τελικά στάδια της ζωής του αστέρα.
+    </string>
+    <string name="object_info_saturn_nebula_distance" translation_description="Distance to the Saturn Nebula shown in the info card. Translate units if appropriate for your locale.">~5.000 έτη φωτός</string>
+    <string name="object_info_saturn_nebula_size" translation_description="Physical size of the Saturn Nebula shown in the info card. Translate units if appropriate for your locale.">~1 έτος φωτός διάμετρος</string>
+
+    <string name="object_info_ngc_2903_description" translation_description="Description of the galaxy NGC 2903 shown in the info card. Translate this text.">
+    Το NGC 2903 είναι ένας φωτεινός δακτυλιοειδής σπειροειδής γαλαξίας στο Λέοντα, που συχνά ονομάζεται «το αντικείμενο Messier που ο Messier παραλείφθηκε» — είναι ένας από τους πιο εξέχοντες γαλαξίες του ουρανού που δεν περιλαμβάνεται στον περίφημο κατάλογό του. Με μέγεθος 8,9 είναι εύκολα ορατός με διόπτρες και παρουσιάζει όμορφη σπειροειδή δομή σε μεσαίας ισχύος τηλεσκόπια.
+    </string>
+    <string name="object_info_ngc_2903_funfact" translation_description="Fun fact about NGC 2903 shown in the info card. Translate this text.">
+    Το NGC 2903 έχει μία από τις υψηλότερες συγκεντρώσεις σημείων έντονης αστρογέννεσης που είναι γνωστά στην κεντρική μπάρα ενός γαλαξία — πυκνές συστάδες νεαρών ογκωδών αστέρων που φωτίζονται από έντονη αστρογέννεση. Χρησιμοποιείται ως σημείο αναφοράς για τη μελέτη της δραστηριότητας starburst σε σπειροειδείς γαλαξίες με μπάρα.
+    </string>
+    <string name="object_info_ngc_2903_distance" translation_description="Distance to NGC 2903 shown in the info card. Translate units if appropriate for your locale.">30 εκατομμύρια έτη φωτός</string>
+    <string name="object_info_ngc_2903_size" translation_description="Physical size of NGC 2903 shown in the info card. Translate units if appropriate for your locale.">~80.000 έτη φωτός διάμετρος</string>
+
+    <!-- Meteor showers -->
+    <string name="object_info_quadrantids_description" translation_description="Description of the Quadrantids meteor shower shown in the info card. Translate this text.">
+    Τα Quadrantids είναι ένα πολυάριθμο μετεωρικό ρεύμα Ιανουαρίου με πολύ απότομη, σύντομη κορυφή που διαρκεί μόνο λίγες ώρες. Το ακτινοβολικό σημείο βρίσκεται στον αστερισμό Boötes, κοντά στη θέση του εκλιπόντος αστερισμού Quadrans Muralis, από τον οποίο πήρε το όνομά του το ρεύμα. Έως 120 μετέωρα ανά ώρα είναι ορατά υπό ιδανικές συνθήκες.
+    </string>
+    <string name="object_info_quadrantids_funfact" translation_description="Fun fact about the Quadrantids meteor shower shown in the info card. Translate this text.">
+    Σε αντίθεση με τις περισσότερες μεγάλες βροχές που προέρχονται από κομήτες, το μητρικό σώμα των Quadrantids είναι ο αστεροειδής 2003 EH1 — που θεωρείται ότι είναι ο αδρανής πυρήνας ενός κομήτη που κάηκε πριν από αιώνες. Η ύπαρξή του επιβεβαιώθηκε μόνο το 2003.
+    </string>
+
+    <string name="object_info_lyrids_description" translation_description="Description of the Lyrids meteor shower shown in the info card. Translate this text.">
+    Τα Λυρίδια είναι ένα αξιόπιστο ανοιξιάτικο μετέωρο που ακτινοβολεί κοντά στο φωτεινό αστέρι Βέγα στη Λύρα. Παράγουν γρήγορα, μέτρια φωτεινά μετέωρα, με κορυφή περίπου 18 ανά ώρα, και περιστασιακά δημιουργούν σφαίρες πυρός που αφήνουν λαμπερές διαδρομές καπνού.
+    </string>
+    <string name="object_info_lyrids_funfact" translation_description="Fun fact about the Lyrids meteor shower shown in the info card. Translate this text.">
+    Οι Λυρίδες είναι ο παλαιότερος αξιόπιστα καταγεγραμμένος μετεωρικός σμήνος στην ιστορία. Κινέζοι αστρονόμοι τεκμηρίωσαν μια καταιγίδα μετεώρων που «έπεφταν σαν βροχή» το 687 π.Χ. Τα συντρίμμια προέρχονται από τον Κομήτη Θάτσερ, ο οποίος χρειάζεται 415 χρόνια για να περιφερθεί γύρω από τον Ήλιο και επισκέφθηκε τελευταία το εσωτερικό ηλιακό σύστημα το 1861.
+    </string>
+
+    <string name="object_info_aquariids_description" translation_description="Description of the Eta Aquariids meteor shower shown in the info card. Translate this text.">
+    Τα Eta Aquariids είναι ένα από τα δύο ετήσια μετέωρα που παράγονται από συντρίμμια του κομήτη Halley. Με κορυφή έως 70 μετέωρα ανά ώρα, το μετέωρο ευνοεί έντονα το νότιο ημισφαίριο, όπου το ακτινικό σημείο ανατέλλει ψηλά πριν από την αυγή. Οι παρατηρητές του βορρά απολαμβάνουν ακόμα ένα σεβαστό ρυθμό 30 ή περισσότερων ανά ώρα.
+    </string>
+    <string name="object_info_aquariids_funfact" translation_description="Fun fact about the Eta Aquariids meteor shower shown in the info card. Translate this text.">
+    Τα μετέωρα Eta Aquariid ταξιδεύουν με ταχύτητα 66 km/s — αρκετά γρήγορα ώστε ο ιονισμένος αέρας που δημιουργούν να μπορεί να λάμπει για αρκετά δευτερόλεπτα αφού το μετέωρο έχει φύγει. Μπορεί να δείτε τη σκόνη του Halley να καίγεται μπροστά στα μάτια σας, που απελευθερώθηκε κατά τη διάρκεια μιας από τις πολλές επισκέψεις του κομήτη πριν από χιλιάδες χρόνια.
+    </string>
+
+    <string name="object_info_deltaaquariids_description" translation_description="Description of the Delta Aquariids meteor shower shown in the info card. Translate this text.">
+    Τα Νότια Delta Aquariids φτάνουν στο αποκορύφωμά τους στα τέλη Ιουλίου και παρατηρούνται καλύτερα από τροπικά και νότια γεωγραφικά πλάτη, όπου το ακτινοβολικό σημείο στον Υδροχόος ανεβαίνει ψηλά πριν από την αυγή. Παράγουν σταθερή ροή μετεώρων μεσαίας ταχύτητας έως και 16 ανά ώρα, με λίγες φωτεινές σφαίρες πυρός.
+    </string>
+    <string name="object_info_deltaaquariids_funfact" translation_description="Fun fact about the Delta Aquariids meteor shower shown in the info card. Translate this text.">
+    Το ακριβές μητρικό σώμα των Delta Aquariids παραμένει αβέβαιο. Ο κύριος υποψήφιος είναι ο Κομήτης 96P/Machholz, ένας ασυνήθιστος κομήτης βραχείας περιόδου με μια έντονα κεκλιμένη τροχιά που πλησιάζει εντυπωσιακά κοντά στον Ήλιο — πιο κοντά από τον πλανήτη Ερμή.
+    </string>
+
+    <string name="object_info_perseids_description" translation_description="Description of the Perseids meteor shower shown in the info card. Translate this text.">
+    Τα Περσείδια είναι το πιο δημοφιλές μετέωρο ντους του χρόνου, με κορυφή τις ζεστές αυγουστιανές νύχτες με έως και 100 μετέωρα ανά ώρα. Τα συντρίμμια που ρίχνει ο κομήτης Swift-Tuttle καίγονται ψηλά στην ατμόσφαιρα της Γης, παράγοντας γρήγορα, φωτεινά μετέωρα — πολλά αφήνουν επίμονες λαμπερές ουρές — που ακτινοβολούν από τον αστερισμό του Περσέα.
+    </string>
+    <string name="object_info_perseids_funfact" translation_description="Fun fact about the Perseids meteor shower shown in the info card. Translate this text.">
+    Ο γονέας των Περσεϊδών, ο Κομήτης Swift-Tuttle, έχει πυρήνα 26 χλμ πλάτος — μεγαλύτερο από το αντικείμενο που πιστεύεται ότι προκάλεσε την μαζική εξαφάνιση που τερμάτισε τους δεινοσαύρους. Ο κομήτης πέρασε τελευταία φορά από το εσωτερικό ηλιακό σύστημα το 1992 και δεν θα επιστρέψει μέχρι το 2125.
+    </string>
+
+    <string name="object_info_orionids_description" translation_description="Description of the Orionids meteor shower shown in the info card. Translate this text.">
+    Τα Orionίδια είναι ο δεύτερος μετεωρικός σμήνος που παράγεται κάθε χρόνο από τον Κομήτη του Halley, ακτινοβολώντας κοντά στο ανυψωμένο ρόπαλο του Ωρίωνα. Με κορύφωση περίπου 25 ανά ώρα, είναι γνωστά για γρήγορα, συχνά φωτεινά μετέωρα που συχνά αφήνουν λαμπρές ιονοσφαιρικές ουρές που διαρκούν αρκετά δευτερόλεπτα.
+    </string>
+    <string name="object_info_orionids_funfact" translation_description="Fun fact about the Orionids meteor shower shown in the info card. Translate this text.">
+    Ο κομήτης του Halley είναι υπεύθυνος για δύο ετήσιες βροχές μετεώρων: τα Eta Aquariids τον Μάιο, όταν η Γη διασχίζει το εξερχόμενο ίχνος συντρίμμων του κομήτη, και τα Orionids τον Οκτώβριο, όταν η Γη διασχίζει το εισερχόμενο ίχνος. Μαζί μας επιτρέπουν να δοκιμάσουμε αρχαία σκόνη του Halley δύο φορές το χρόνο.
+    </string>
+
+    <string name="object_info_leonids_description" translation_description="Description of the Leonids meteor shower shown in the info card. Translate this text.">
+    Τα Λεωνίδια εκπέμπονται από το δρέπανο του Λέοντα και συνήθως παράγουν περίπου 20 μετέωρα ανά ώρα. Είναι διάσημα για τις φαντασμαγορικές καταιγίδες που ξεσπούν περίπου κάθε 33 χρόνια όταν η Γη διέρχεται από ένα πυκνό νήμα σκόνης που ρίχνει ο Κομήτης 55P/Tempel-Tuttle. Αυτές οι καταιγίδες μπορούν να παράγουν χιλιάδες μετέωρα ανά ώρα.
+    </string>
+    <string name="object_info_leonids_funfact" translation_description="Fun fact about the Leonids meteor shower shown in the info card. Translate this text.">
+    Η καταιγίδα Λεονιδών του 1833 παρήγαγε περίπου 100.000 μετέωρα ανά ώρα, τρομάζοντας παρατηρητές σε όλη τη Βόρεια Αμερική που φοβούνταν ότι ο ουρανός καιγόταν. Το γεγονός ξεκίνησε τη επιστημονική μελέτη των μετεωρικών βροχών. Παρόμοιες καταιγίδες συνέβησαν το 1966 και το 1999.
+    </string>
+
+    <string name="object_info_puppidvelids_description" translation_description="Description of the Puppid-Velids meteor shower shown in the info card. Translate this text.">
+    Τα Puppid-Velids είναι ένα σύμπλεγμα επικαλυπτόμενων δευτερευόντων μετεοριτικών βροχών που εκπέμπονται από τους αστερισμούς Puppis και Vela στο νότιο Γαλακτικό Δρόμο. Με κορυφή περίπου 10 μετεωρίτες ανά ώρα, παρατηρούνται καλύτερα από το νότιο ημισφαίριο, όπου το ακτινικό σημείο ανεβαίνει ψηλά στον ουρανό του Δεκεμβρίου.
+    </string>
+    <string name="object_info_puppidvelids_funfact" translation_description="Fun fact about the Puppid-Velids meteor shower shown in the info card. Translate this text.">
+    Πιστεύεται ότι τα Puppid-Velids είναι συντρίμμια από αρκετούς διαφορετικούς μητρικούς κομήτες και όχι από μια μόνο πηγή, συμπεριλαμβανομένου του κομήτη 26P/Grigg-Skjellerup. Το νότιο ακτινοβολικό τους σημείο δεν ανεβαίνει ποτέ πάνω από τον ορίζοντα για παρατηρητές σε γεωγραφικά πλάτη βόρεια του περίπου 40°N, καθιστώντας τα ένα μετέωρο ρεύμα που σπάνια βλέπει ο περισσότερος κόσμος.
+    </string>
+
+    <string name="object_info_geminids_description" translation_description="Description of the Geminids meteor shower shown in the info card. Translate this text.">
+    Τα Δίδυμα θεωρούνται ευρέως ως το καλύτερο μετεωρικό ρεύμα του χρόνου — πολυάριθμα (έως 120 ανά ώρα), αξιόπιστα και ενεργά από νωρίς το βράδυ και όχι μόνο μετά τα μεσάνυχτα. Προέρχονται από τον αστερισμό των Διδύμων και παράγουν ένα ευρύ φάσμα φωτεινότητας μετεώρων, συμπεριλαμβανομένων εντυπωσιακών πυρσών.
+    </string>
+    <string name="object_info_geminids_funfact" translation_description="Fun fact about the Geminids meteor shower shown in the info card. Translate this text.">
+    Σε αντίθεση με τις άλλες μεγάλες βροχές μετεώρων, τα Δίδυμα προέρχονται από έναν αστεροειδή και όχι από έναν κομήτη: τον 3200 Phaethon, έναν "βραχώδη κομήτη" του οποίου η τροχιά τον φέρνει πιο κοντά στον Ήλιο από οποιονδήποτε άλλο ονοματισμένο αστεροειδή. Η ακραία θερμότητα μπορεί να σπάσει την βραχώδη επιφάνειά του και να απελευθερώσει τη σκόνη που παράγει τη βροχή.
+    </string>
+
+    <string name="object_info_ursids_description" translation_description="Description of the Ursids meteor shower shown in the info card. Translate this text.">
+    Οι Ουρσίδες είναι ένας δευτερεύων μετεωρικός σμήνος που εκπέμπει από την Ούρσα Μικρά, κοντά στον Πολικό Αστέρα, καθιστώντας τον περιπολικό για τους παρατηρητές του βόρειου ημισφαιρίου — ορατό όλη τη νύχτα χωρίς να δύει. Φτάνουν στο μέγιστό τους γύρω από το χειμερινό ηλιοστάσιο με περίπου 10 μετέωρα ανά ώρα, και ο μητρικός κομήτης είναι ο 8P/Tuttle.
+    </string>
+    <string name="object_info_ursids_funfact" translation_description="Fun fact about the Ursids meteor shower shown in the info card. Translate this text.">
+    Οι Ουρσίδες περιστασιακά παράγουν απροσδόκητες εκρήξεις πολύ πάνω από το τυπικό τους ποσοστό. Το 1945 και πάλι το 2006, οι παρατηρητές κατέγραψαν 50 ή περισσότερα μετέωρα ανά ώρα — πέντε φορές την κανονική κορυφή. Αυτές οι αιχμές συμβαίνουν όταν η Γη διαπερνά μια ασυνήθιστα πυκνή κορδέλα συντριμμάτων που απελευθερώθηκαν κατά τη στενή προσέγγιση του Κομήτη Tuttle.
+    </string>
+
+    <!-- Category 5: Top priority — objects on the map that lacked info cards -->
+    <string name="object_info_m47_description" translation_description="Description of the open star cluster M47 shown in the info card. Translate this text.">
+    Το M47 είναι ένα φωτεινό, χαλαρό ανοιχτό σμήνος στον Κύνα, εύκολα ορατό με γυμνό μάτι και εντυπωσιακό στα διόπτρα. Περίπου 50 αστέρες είναι διασκορπισμένοι σε μισό μοίρα του ουρανού, με αρκετούς πορτοκαλί γίγαντες αστέρες που προσθέτουν ζεστό χρώμα ενάντια στα πιο αμυδρά μπλε-λευκά μέλη.
+    </string>
+    <string name="object_info_m47_funfact" translation_description="Fun fact about M47 shown in the info card. Translate this text.">
+    Το M47 ήταν ένα από τα «χαμένα» αντικείμενα Messier — ένα γραφειακό σφάλμα στις αρχικές συντεταγμένες του Messier το τοποθέτησε σε άδειο ουράνιο χώρο, αφήνοντας το σμήνος αναγνώριστο για σχεδόν δύο αιώνες. Η πραγματική του ταυτότητα ως NGC 2422 επιβεβαιώθηκε μόνο το 1959, όταν οι παρατηρητές δούλεψαν προς τα πίσω από την περιγραφή του Messier για να βρουν το σφάλμα.
+    </string>
+    <string name="object_info_m47_distance" translation_description="Distance to M47 shown in the info card. Translate units if appropriate for your locale.">1.600 έτη φωτός</string>
+    <string name="object_info_m47_size" translation_description="Physical size of M47 shown in the info card. Translate units if appropriate for your locale.">~14 έτη φωτός διάμετρος</string>
+
+    <string name="object_info_m41_description" translation_description="Description of the open star cluster M41 shown in the info card. Translate this text.">
+    Το M41 είναι ένα όμορφο ανοιχτό σμήνος στον Μεγάλο Σκύλο, που βρίσκεται μόλις 4° νότια του Σείριου — του λαμπρότερου αστέρα του νυχτερινού ουρανού. Ορατό με γυμνό μάτι από σκοτεινές τοποθεσίες και εντυπωσιακό με διόπτρες, περιέχει περίπου 100 αστέρες διασκορπισμένους σε ένα ευρύ πεδίο, με αρκετούς εντυπωσιακούς πορτοκαλί γίγαντες αστέρες ανάμεσα σε πιο αμυδρά μπλε-λευκά μέλη.
+    </string>
+    <string name="object_info_m41_funfact" translation_description="Fun fact about M41 shown in the info card. Translate this text.">
+    Ο Αριστοτέλης ενδέχεται να παρατήρησε το M41 γύρω στο 325 π.Χ. — πιθανώς η παλαιότερη καταγεγραμμένη παρατήρηση οποιουδήποτε αντικειμένου βαθέος ουρανού. Περιέγραψε ένα "θολό σημείο" νότια του Σείριου που ταιριάζει με τη θέση του M41. Εάν η ταύτιση είναι σωστή, το M41 συζητιόταν σχεδόν δύο χιλιάδες χρόνια πριν από την εφεύρεση του τηλεσκοπίου.
+    </string>
+    <string name="object_info_m41_distance" translation_description="Distance to M41 shown in the info card. Translate units if appropriate for your locale.">2.300 έτη φωτός</string>
+    <string name="object_info_m41_size" translation_description="Physical size of M41 shown in the info card. Translate units if appropriate for your locale.">~25 έτη φωτός διάμετρος</string>
+
+    <string name="object_info_m24_description" translation_description="Description of the Sagittarius Star Cloud (M24) shown in the info card. Translate this text.">
+    Το M24 είναι το Νέφος Αστέρων του Τοξότη — όχι σμήνος ή νεφέλωμα, αλλά ένα παράθυρο μέσα από ένα κενό στη σκόνη του Γαλακτικού Δρόμου, που αποκαλύπτει ένα εκθαμβωτικό πεδίο αστέρων 2° σε διάμετρο. Είναι η πλουσιότερη περιοχή ορατή μέσα από διόπτρες οπουδήποτε στον ουρανό, γεμάτη με χιλιάδες αστέρια που εκτείνονται σε πολλές διαφορετικές αποστάσεις ταυτόχρονα.
+    </string>
+    <string name="object_info_m24_funfact" translation_description="Fun fact about M24 shown in the info card. Translate this text.">
+    Τα αστέρια στο M24 δεν βρίσκονται στην ίδια απόσταση — το νέφος αστέρων αντιπροσωπεύει μια διατομή του δίσκου του Γαλαξία που φαίνεται μέσα από ένα φυσικό τούνελ στη διαστερική σκόνη, που εκτείνεται σε αποστάσεις 10.000 έως 16.000 ετών φωτός. Ενσωματωμένα στο νέφος είναι σκοτεινά νεφελώματα και μικροσκοπικά σμήνη αστέρων που εμφανίζονται ως σκοτεινές κηλίδες ενάντια στο λαμπρό αστρικό φόντο.
+    </string>
+    <string name="object_info_m24_distance" translation_description="Distance range to M24 shown in the info card. Translate units if appropriate for your locale.">~10.000–16.000 έτη φωτός (εύρος)</string>
+    <string name="object_info_m24_size" translation_description="Physical size of M24 shown in the info card. Translate units if appropriate for your locale.">~600 έτη φωτός βάθος παραθύρου</string>
+
+    <string name="object_info_m25_description" translation_description="Description of the open star cluster M25 shown in the info card. Translate this text.">
+    Το M25 είναι ένα φωτεινό ανοιχτό σμήνος αστέρων ορατό με γυμνό μάτι στο Τοξότη, τοποθετημένο ενάντια στα πυκνά πεδία αστέρων του καλοκαιρινού Γαλακτικού Δρόμου. Περίπου 600 αστέρες είναι διασκορπισμένοι σε ένα πεδίο μισής μοίρας, καθιστώντας το ένα πλούσιο αντικείμενο για διόπτρες. Τα φωτεινότερα μέλη του περιλαμβάνουν αρκετούς μπλε-λευκούς υπεργίγαντες και έναν από τους πιο μελετημένους μεταβλητούς αστέρες Κηφέα στον ουράνιο θόλο.
+    </string>
+    <string name="object_info_m25_funfact" translation_description="Fun fact about M25 shown in the info card. Translate this text.">
+    Το M25 περιέχει το U Sagittarii, ένα κλασικό μεταβλητό αστέρι τύπου Κηφέα που φωτεινότητα αυξομειώνεται σε περίοδο 6,7 ημερών. Τα αστέρια τύπου Κηφέα είναι ζωτικής σημασίας «τυπικά κεριά» για τη μέτρηση των κοσμικών αποστάσεων, επειδή η περίοδος παλμού τους αποκαλύπτει άμεσα τη πραγματική τους φωτεινότητα — οι αστρονόμοι τα χρησιμοποίησαν για να προσδιορίσουν πρώτα το μέγεθος του Γαλακτικού Δρόμου και στη συνέχεια την κλίμακα του παρατηρήσιμου σύμπαντος.
+    </string>
+    <string name="object_info_m25_distance" translation_description="Distance to M25 shown in the info card. Translate units if appropriate for your locale.">2.000 έτη φωτός</string>
+    <string name="object_info_m25_size" translation_description="Physical size of M25 shown in the info card. Translate units if appropriate for your locale.">~19 έτη φωτός διάμετρος</string>
+
+    <string name="object_info_m39_description" translation_description="Description of the open star cluster M39 shown in the info card. Translate this text.">
+    Το M39 είναι ένα μεγάλο, διάσπαρτο ανοιχτό σμήνος αστέρων στον Κύκνο, ορατό με γυμνό μάτι κοντά στον Ντένεμπ στον πλούσιο καλοκαιρινό Γαλακτικό Δρόμο. Τα περίπου 30 φωτεινά του αστέρια είναι χαλαρά ομαδοποιημένα σε μια περιοχή του ουρανού, καλύτερα παρατηρήσιμα σε χαμηλή μεγέθυνση με διόπτρες ή τηλεσκόπιο ευρείας γωνίας — υψηλότερη μεγέθυνση απλώς το διαλύει σε ένα αραιό, ασήμαντο πεδίο αστέρων.
+    </string>
+    <string name="object_info_m39_funfact" translation_description="Fun fact about M39 shown in the info card. Translate this text.">
+    Σε απόσταση περίπου 825 ετών φωτός, το M39 είναι ένα από τα πλησιέστερα ανοικτά σμήνη αστέρων προς τη Γη, και σε ηλικία περίπου 240 εκατομμυρίων ετών είναι ένα από τα παλαιότερα σμήνη ορατά με γυμνό μάτι — αρκετά παλιό ώστε οι πιο μαζικοί αστέρες του να έχουν ήδη τερματίσει τη ζωή τους. Ο Messier το κατέγραψε το 1764 και ήταν ανάμεσα στις πρώτες προσθήκες στον κατάλογό του.
+    </string>
+    <string name="object_info_m39_distance" translation_description="Distance to M39 shown in the info card. Translate units if appropriate for your locale.">825 έτη φωτός</string>
+    <string name="object_info_m39_size" translation_description="Physical size of M39 shown in the info card. Translate units if appropriate for your locale.">~8 έτη φωτός διάμετρος</string>
+
+    <!-- Category 5: Special cases -->
+    <string name="object_info_m63_description" translation_description="Description of the Sunflower Galaxy (M63) shown in the info card. Translate this text.">
+    Ο Γαλαξίας Ηλιοτρόπιο είναι ένας λαμπρός σπειροειδής γαλαξίας στους Κυνικούς Κύνες του οποίου οι σφιχτά περιελιγμένοι βραχίονες, κηλιδωμένοι με περιοχές σχηματισμού αστέρων, του δίνουν ένα χαρακτηριστικό υφή που μοιάζει με λουλούδι στις φωτογραφίες μεγάλης έκθεσης. Με μέγεθος 8,6, είναι ορατός με διόπτρες από σκοτεινούς ουρανούς και παρουσιάζει εύκολα το επιμήκη σχήμα και τον φωτεινό πυρήνα του σε μικρά τηλεσκόπια.
+    </string>
+    <string name="object_info_m63_funfact" translation_description="Fun fact about the Sunflower Galaxy shown in the info card. Translate this text.">
+    Το M63 ανακαλύφθηκε από τον Pierre Méchain το 1779 — ένα από τα λίγα αντικείμενα Messier που ανακάλυψε ο Méchain αντί του ίδιου του Messier. Είναι μέλος της Ομάδας M51, φυσικά συνδεδεμένο με τον Γαλαξία Δίνη (M51), και παρουσιάζει σημάδια παλαιάς αλληλεπίδρασης: ένα αμυδρό, αρχαίο ρεύμα αστέρων περιτυλίγεται γύρω από τον εξωτερικό του δίσκο.
+    </string>
+    <string name="object_info_m63_distance" translation_description="Distance to the Sunflower Galaxy shown in the info card. Translate units if appropriate for your locale.">29 εκατομμύρια έτη φωτός</string>
+    <string name="object_info_m63_size" translation_description="Physical size of the Sunflower Galaxy shown in the info card. Translate units if appropriate for your locale.">~100.000 έτη φωτός διάμετρος</string>
+
+    <string name="object_info_ngc_6543_description" translation_description="Description of the Cat's Eye Nebula (NGC 6543) shown in the info card. Translate this text.">
+    Το Νεφέλωμα του Ματιού της Γάτας είναι ένα από τα δομικά πιο σύνθετα πλανητικά νεφελώματα που είναι γνωστά — το εκδιωχθέν αέριο ενός πεθαίνοντος αστέρα σχηματισμένο σε ομόκεντρα κελύφη, πίδακες και φωτεινές κόμβοι ορατές στις εικόνες του Hubble. Σε μικρά τηλεσκόπια εμφανίζεται ως ένας ζωντανός μπλε-πράσινος δίσκος στον Δράκοντα, ένα από τα πιο χρωματιστά αντικείμενα του φθινοπωρινού ουρανού.
+    </string>
+    <string name="object_info_ngc_6543_funfact" translation_description="Fun fact about the Cat's Eye Nebula shown in the info card. Translate this text.">
+    Το 1864, ο αστρονόμος William Huggins στράφηκε με ένα φασματοσκόπιο προς το Νεφέλημα της Γάτας και ανακάλυψε ότι αποτελούνταν από φωτεινό αέριο και όχι από άλυτα αστέρια — η πρώτη φορά που επιβεβαιώθηκε η φύση οποιουδήποτε πλανητικού νεφελήματος. Αυτή η ανακάλυψη ίδρυσε τον τομέα της φασματοσκοπίας νεφελημάτων και ανέτρεψε την κρατούσα άποψη ότι όλα τα νεφελήματα ήταν απομακρυσμένα σμήνη αστέρων.
+    </string>
+    <string name="object_info_ngc_6543_distance" translation_description="Distance to the Cat's Eye Nebula shown in the info card. Translate units if appropriate for your locale.">~3.300 έτη φωτός</string>
+    <string name="object_info_ngc_6543_size" translation_description="Physical size of the Cat's Eye Nebula shown in the info card. Translate units if appropriate for your locale.">~0,5 έτη φωτός διάμετρος</string>
+
+    <string name="object_info_m76_description" translation_description="Description of the Little Dumbbell Nebula (M76) shown in the info card. Translate this text.">
+    Το Little Dumbbell είναι ένα πλανητικό νεφέλωμα στον Περσέα με χαρακτηριστικό σχήμα οχτώ — ένας μικρότερος συγγενής του M27, του Dumbbell Nebula στη Vulpecula. Αν και η πιο αμυδρή καταχώρηση στον κατάλογο Messier, ανταμείβει την υπομονετική παρατήρηση σε μικρά τηλεσκόπια και παρουσιάζει όμορφη δομή σε μεγαλύτερα όργανα, με δύο πιο φωτεινούς λοβούς που πλαισιώνουν μια πιο αμυδρή μέση.
+    </string>
+    <string name="object_info_m76_funfact" translation_description="Fun fact about the Little Dumbbell Nebula shown in the info card. Translate this text.">
+    Το M76 καταλογογραφήθηκε αρχικά ως δύο ξεχωριστά αντικείμενα — NGC 650 και NGC 651 — επειδή οι πρώιμοι παρατηρητές περιέγραψαν τους δύο φωτεινούς λοβούς ανεξάρτητα. Είναι ένα διπολικό πλανητικό νεφέλωμα που σχηματίστηκε όταν η εκροή ενός πεθαίνοντος αστέρα συμπιέστηκε στον ισημερινό, δημιουργώντας δύο διαστελλόμενους λοβούς κατά μήκος του πολικού άξονα, ενώ το αέριο εκτοξεύεται επίσης προς τα έξω στη μέση.
+    </string>
+    <string name="object_info_m76_distance" translation_description="Distance to the Little Dumbbell Nebula shown in the info card. Translate units if appropriate for your locale.">~2.500 έτη φωτός</string>
+    <string name="object_info_m76_size" translation_description="Physical size of the Little Dumbbell Nebula shown in the info card. Translate units if appropriate for your locale.">~2 έτη φωτός διάμετρος</string>
+
+    <string name="object_info_v838_mon_description" translation_description="Description of V838 Monocerotis shown in the info card. Translate this text.">
+    Το V838 Monocerotis είναι ένα ασυνήθιστο μεταβλητό αστέρι στον Μονόκερω που υπέστη μια θεαματική έκρηξη το 2002, γίνοντας για λίγο ένα από τα πιο λαμπρά αστέρια του Γαλακτικού Δρόμου. Αν και είναι πολύ αμυδρό για τους οπτικούς παρατηρητές σήμερα, το διαστελλόμενο φως του ηχώ του — ένα μέτωπο φωτός που φωτίζει αρχαία κελύφη σκόνης — παρήγαγε μερικές από τις πιο δραματικές εικόνες που ελήφθησαν ποτέ από το Διαστημικό Τηλεσκόπιο Hubble.
+    </string>
+    <string name="object_info_v838_mon_funfact" translation_description="Fun fact about V838 Monocerotis shown in the info card. Translate this text.">
+    Η φύση της έκρηξης του V838 Mon παραμένει αμφισβητούμενη. Η κύρια θεωρία είναι μια αστρική σύγχυση — δύο αστέρια που σπειροειδώς πέφτουν ο ένας στον άλλον και συγκρούονται — παρά μια κλασική nova ή έκρηξη υπεργίγαντα. Εάν επιβεβαιωθεί, ήταν η πρώτη πραγματική παρατήρηση μιας "λαμπρής κόκκινης nova," μια σπάνια κατηγορία έκρηξης που προκαλείται από αστρικές συγχύσεις, παρόμοια γεγονότα έχουν βρεθεί σε άλλους γαλαξίες.
+    </string>
+    <string name="object_info_v838_mon_distance" translation_description="Distance to V838 Monocerotis shown in the info card. Translate units if appropriate for your locale.">~20.000 έτη φωτός</string>
+    <string name="object_info_v838_mon_size" translation_description="Extent of the V838 Monocerotis light echo shown in the info card. Translate units if appropriate for your locale.">~3 έτη φωτός (έκταση ηχούς φωτός)</string>
+
+    <string name="object_info_hdf_description" translation_description="Description of the Hubble Deep Field shown in the info card. Translate this text.">
+    Το Hubble Deep Field είναι ένα μικροσκοπικό τμήμα ουρανού 2,6 τόξων λεπτών που φαίνεται κενό στον αστερισμό της Μεγάλης Άρκτου, φωτογραφημένο από το Διαστημικό Τηλεσκόπιο Hubble για 10 συνεχόμενες ημέρες τον Δεκέμβριο του 1995. Αυτό που φαινόταν κενό διάστημα αποκάλυψε περίπου 3.000 γαλαξίες — που εκτείνονται σε δισεκατομμύρια χρόνια κοσμικής ιστορίας — και άλλαξε θεμελιωδώς την εικόνα μας για το σύμπαν.
+    </string>
+    <string name="object_info_hdf_funfact" translation_description="Fun fact about the Hubble Deep Field shown in the info card. Translate this text.">
+    Το τμήμα του ουρανού επιλέχθηκε συγκεκριμένα επειδή ήταν κενό από φωτεινά αστέρια και κοντινούς γαλαξίες. Ωστόσο, η εικόνα που προέκυψε ήταν γεμάτη με περίπου 3.000 γαλαξίες, οδηγώντας στην εκτίμηση ότι ολόκληρος ο ουρανός περιέχει περίπου 200 δισεκατομμύρια γαλαξίες — σχεδόν όλοι τους αόρατοι σε οποιοδήποτε τηλεσκόπιο πριν από το Hubble.
+    </string>
+    <string name="object_info_hdf_distance" translation_description="Distance to the most distant galaxies in the Hubble Deep Field shown in the info card. Translate units if appropriate for your locale.">~13 δισεκατομμύρια έτη φωτός (πιο μακρινά)</string>
+    <string name="object_info_hdf_size" translation_description="Angular size of the Hubble Deep Field shown in the info card.">2,6 λεπτά τόξου (πεδίο όρασης)</string>
+
+    <string name="object_info_m43_description" translation_description="Description of De Mairan's Nebula (M43) shown in the info card. Translate this text.">
+    Το Νεφέλωμα De Mairan είναι ένα αποσπασμένο τμήμα του μεγάλου συμπλέγματος του Νεφελώματος του Ωρίωνα, χωρισμένο από το M42 από μια σκοτεινή λωρίδα σκόνης αλλά ανήκει στο ίδιο τεράστιο μοριακό νέφος. Ονομάστηκε προς τιμήν του Γάλλου αστρονόμου Jean-Jacques Dortous de Mairan, ο οποίος το παρατήρησε το 1731, είναι ένα εκπεμπόμενο νεφέλωμα ιονισμένο από το θερμό νεαρό αστέρι NU Orionis που είναι ενσωματωμένο στο κέντρο του.
+    </string>
+    <string name="object_info_m43_funfact" translation_description="Fun fact about De Mairan's Nebula shown in the info card. Translate this text.">
+    Αν και το M43 φαίνεται ως ξεχωριστό αντικείμενο από το M42, η σκοτεινή λωρίδα που τα χωρίζει είναι ένα σύννεφο σκόνης στο προσκήνιο — μέρος του Μοριακού Νέφους του Ωρίωνα — που απλώς εμποδίζει την άποψή μας για τη φυσική σύνδεση μεταξύ των δύο φωτεινών περιοχών. Μαζί, είναι απλώς το φωτισμένο εσωτερικό άκρο ενός τεράστιου σκοτεινού νέφους που εκτείνεται σε μεγάλο μέρος του Ωρίωνα.
+    </string>
+    <string name="object_info_m43_distance" translation_description="Distance to De Mairan's Nebula shown in the info card. Translate units if appropriate for your locale.">1.350 έτη φωτός</string>
+    <string name="object_info_m43_size" translation_description="Physical size of De Mairan's Nebula shown in the info card. Translate units if appropriate for your locale.">~8 έτη φωτός διάμετρος</string>
+
+    <string name="object_info_m40_description" translation_description="Description of M40 (Winnecke 4) shown in the info card. Translate this text.">
+    Το M40 είναι μοναδικό στον κατάλογο Messier — δεν είναι νεφέλωμα, σμήνος ή γαλαξία, αλλά ένα ευρύ διπλό αστέρι. Ο Messier το κατάλογε το 1764 ενώ αναζητούσε ένα νεφέλωμα που αναφέρθηκε από τον Johann Hevelius στην Ursa Major, βρήκε μόνο αυτό το ζεύγος αστέρων και το κατέγραψε ώστε οι μελλοντικοί παρατηρητές να μην το συγχέουν με κάτι πιο ενδιαφέρον.
+    </string>
+    <string name="object_info_m40_funfact" translation_description="Fun fact about M40 shown in the info card. Translate this text.">
+    Τα δύο αστέρια του M40 — γνωστά ως Winnecke 4 — δεν συνδέονται βαρυτικά· βρίσκονται σε διαφορετικές αποστάσεις και είναι απλώς μια τυχαία ευθυγράμμιση. Ο ίδιος ο Messier σημείωσε ότι δεν υπήρχε «τίποτα αξιοσημείωτο», αλλά το συμπεριέλαβε «για να δείξει ότι αυτό το νεφέλωμα δεν είναι το ίδιο με εκείνα που έχω εξετάσει». Η μεθοδική του συνήθεια τεκμηρίωσης των αρνητικών αποτελεσμάτων έδωσε στους μελλοντικούς παρατηρητές μια αξιόπιστη αναφορά.
+    </string>
+    <string name="object_info_m40_distance" translation_description="Distance to M40 shown in the info card. Translate units if appropriate for your locale.">~500 έτη φωτός</string>
+    <string name="object_info_m40_size" translation_description="Angular separation of the M40 double star shown in the info card.">~50 δευτερόλεπτα τόξου (διαχωρισμός)</string>
+
+    <!-- Category 5: Second tier -->
+    <string name="object_info_m34_description" translation_description="Description of the open star cluster M34 shown in the info card. Translate this text.">
+    Το M34 είναι ένα φωτεινό, διάσπαρτο ανοιχτό σμήνος αστέρων στον Περσέα, εύκολα ορατό με διόπτρες ως ένας πλούσιος παφλασμός αστέρων ενάντια στον χειμερινό Γαλακτικό Δρόμο. Τα περίπου 400 αστέρια του καλύπτουν μια περιοχή σχεδόν τόσο ευρεία όσο το πλήρες φεγγάρι, με μια χούφτα ευρέων διπλών αστέρων ορατών σε προσεκτικούς παρατηρητές με διόπτρες.
+    </string>
+    <string name="object_info_m34_funfact" translation_description="Fun fact about M34 shown in the info card. Translate this text.">
+    Σε ηλικία περίπου 200 εκατομμυρίων ετών, το M34 είναι ενδιάμεσης ηλικίας — αρκετά νέο ώστε τα θερμά μπλε αστέρια του να λάμπουν ακόμα, αρκετά παλιό ώστε τα πιο ογκώδη να έχουν ήδη εκραγεί ως υπερκαινοφανείς. Σε απόσταση 1.500 ετών φωτός, είναι ένα από τα πλησιέστερα σμήνη Messier και παραμένει ένα όμορφο αντικείμενο ακόμα και από τους προάστιους ουρανούς.
+    </string>
+    <string name="object_info_m34_distance" translation_description="Distance to M34 shown in the info card. Translate units if appropriate for your locale.">1.500 έτη φωτός</string>
+    <string name="object_info_m34_size" translation_description="Physical size of M34 shown in the info card. Translate units if appropriate for your locale.">~15 έτη φωτός διάμετρος</string>
+
+    <string name="object_info_m23_description" translation_description="Description of the open star cluster M23 shown in the info card. Translate this text.">
+    Το M23 είναι ένα πλούσιο ανοιχτό σμήνος στο Τοξότη, ενσωματωμένο στα πυκνά πεδία αστέρων του θερινού Γαλακτικού Δρόμου. Περίπου 150 αστέρες είναι διασκορπισμένοι σε ένα πεδίο μισής μοίρας στα διόπτρα, καθιστώντας το ένα γενναιόδωρο αντικείμενο διοπτρών στην ίδια περιοχή του ουρανού με πολλά άλλα διαμάντια του Messier.
+    </string>
+    <string name="object_info_m23_funfact" translation_description="Fun fact about M23 shown in the info card. Translate this text.">
+    Το M23 εκτιμάται ότι είναι περίπου 300 εκατομμύρια ετών — ενδιάμεσης ηλικίας, με τα περισσότερα από τα τεράστια αστέρια του να έχουν ήδη εξελιχθεί από την κύρια ακολουθία. Ο Messier το ανακάλυψε το 1764 κατά τη διάρκεια μιας από τις παραγωγικές του παρατηρήσεις που σάρωναν τα πεδία αστέρων του Τοξότη.
+    </string>
+    <string name="object_info_m23_distance" translation_description="Distance to M23 shown in the info card. Translate units if appropriate for your locale.">2.150 έτη φωτός</string>
+    <string name="object_info_m23_size" translation_description="Physical size of M23 shown in the info card. Translate units if appropriate for your locale.">~17 έτη φωτός διάμετρος</string>
+
+    <string name="object_info_m37_description" translation_description="Description of the open star cluster M37 shown in the info card. Translate this text.">
+    Το M37 είναι το πλουσιότερο και λαμπρότερο από τα τρία ανοιχτά σμήνη Messier στον Αετό, περιέχοντας περίπου 500 αστέρια σε ένα συμπαγές πεδίο. Είναι ένα εντυπωσιακό αντικείμενο διοπτρών και μικρού τηλεσκοπίου, με μια σκέπαση πορτοκαλί γιγάντων αστέρων που προσθέτουν αντίθεση χρώματος στο μπλε-λευκό σμήνος.
+    </string>
+    <string name="object_info_m37_funfact" translation_description="Fun fact about M37 shown in the info card. Translate this text.">
+    Το M37 περιέχει περίπου μια δωδεκάδα κόκκινα γιγαντιαία αστέρια — ένας ασυνήθιστα υψηλός αριθμός που αντανακλά τη σχετικά προχωρημένη ηλικία του περίπου 300 εκατομμυρίων ετών. Παρά το ότι βρίσκεται περίπου 4.500 έτη φωτός μακριά — το πιο απομακρυσμένο από τα τρία σμήνη Messier του Αυρίγα — εξακολουθεί να κατατάσσεται ανάμεσα στα καλύτερα ανοιχτά σμήνη του ουρανού.
+    </string>
+    <string name="object_info_m37_distance" translation_description="Distance to M37 shown in the info card. Translate units if appropriate for your locale.">4.500 έτη φωτός</string>
+    <string name="object_info_m37_size" translation_description="Physical size of M37 shown in the info card. Translate units if appropriate for your locale.">~31 έτη φωτός διάμετρος</string>
+
+    <string name="object_info_m48_description" translation_description="Description of the open star cluster M48 shown in the info card. Translate this text.">
+    Το M48 είναι ένα μεγάλο, φωτεινό ανοιχτό σμήνος αστέρων στον Ύδρο, που εκτείνεται σχεδόν μία μοίρα του ουρανού και είναι ορατό με γυμνό μάτι από σκοτεινές τοποθεσίες. Τα περίπου 80 αστέρια του είναι διάσπαρτα χαλαρά σε ένα ευρύ πεδίο που ταιριάζει καλύτερα σε διόπτρες, με μια σκέπαση πορτοκαλί και κίτρινων γιγάντων αστέρων ανάμεσα στα πιο φωτεινά μπλε-λευκά μέλη.
+    </string>
+    <string name="object_info_m48_funfact" translation_description="Fun fact about M48 shown in the info card. Translate this text.">
+    Το M48 ήταν ένα από τα «χαμένα» αντικείμενα Messier για σχεδόν δύο αιώνες επειδή η καταγεγραμμένη θέση του Messier ήταν περίπου 5° μακριά από την πραγματική θέση. Παρέμεινε αναγνώριστο μέχρι το 1959, όταν ταιριάστηκε με το NGC 2548 και ένα απλό σφάλμα μεταγραφής αποδείχθηκε ότι το είχε τοποθετήσει σε άδειο ουράνιο χώρο όλη την ώρα.
+    </string>
+    <string name="object_info_m48_distance" translation_description="Distance to M48 shown in the info card. Translate units if appropriate for your locale.">1.500 έτη φωτός</string>
+    <string name="object_info_m48_size" translation_description="Physical size of M48 shown in the info card. Translate units if appropriate for your locale.">~23 έτη φωτός διάμετρος</string>
+
+    <string name="object_info_m21_description" translation_description="Description of the open star cluster M21 shown in the info card. Translate this text.">
+    Το M21 είναι ένα συμπαγές ανοιχτό σμήνος στο Τοξότη, που βρίσκεται μόλις μισό μοίρα βόρεια του Νεφελώματος Τριφίδας (M20), κάνοντας τα δύο ένα εντυπωσιακό ζεύγος για διόπτρες. Το σμήνος περιέχει περίπου 57 αστέρια συγκεντρωμένα σε ένα μικρότερο πεδίο από πολλά σμήνη Messier, με αρκετά φωτεινά μπλε-λευκά αστέρια ως τα κύρια μέλη.
+    </string>
+    <string name="object_info_m21_funfact" translation_description="Fun fact about M21 shown in the info card. Translate this text.">
+    Παρά το ότι δεν σχετίζονται φυσικά, το M21 και το M20 (το Νεφέλωμα Τρίφυλλο) αποτελούν ένα από τα πιο ελκυστικά ζεύγη διοπτρικής παρατήρησης στον καλοκαιρινό ουράνιο θόλο — ένα φωτεινό σμήνος αστέρων δίπλα σε ένα χρωματιστό τρίλοβο νεφέλωμα. Το M21 απέχει περίπου 4.250 έτη φωτός, ενώ το M20 είναι ελαφρώς πιο κοντά, περίπου 4.100 έτη φωτός.
+    </string>
+    <string name="object_info_m21_distance" translation_description="Distance to M21 shown in the info card. Translate units if appropriate for your locale.">4.250 έτη φωτός</string>
+    <string name="object_info_m21_size" translation_description="Physical size of M21 shown in the info card. Translate units if appropriate for your locale.">~16 έτη φωτός διάμετρος</string>
+
+    <string name="object_info_m50_description" translation_description="Description of the open star cluster M50 shown in the info card. Translate this text.">
+    Το M50 είναι ένα φωτεινό ανοιχτό σμήνος στον Μονόκερω, που περιέχει περίπου 200 αστέρια συσκευασμένα σε ένα εντυπωσιακό συμπαγές πεδίο για διόπτρες και μικρά τηλεσκόπια. Βρίσκεται εύκολα σε μια γραμμή μεταξύ του Σείριου και του Προκύωνα και περιέχει έναν αξιοσημείωτο κόκκινο γίγαντα — ένα ζεστό πορτοκαλί φάρο που ξεχωρίζει ζωηρά ανάμεσα στα γαλάζια-λευκά αστέρια του σμήνους.
+    </string>
+    <string name="object_info_m50_funfact" translation_description="Fun fact about M50 shown in the info card. Translate this text.">
+    Το M50 εκτιμάται ότι είναι περίπου 78 εκατομμύρια ετών — ένα από τα νεότερα ανοιχτά σμήνη Messier — που σημαίνει ότι τα καυτά μπλε και λευκά αστέρια του εξακολουθούν να εξελίσσονται, με μερικά από τα πιο μαζικά μέλη να έχουν πρόσφατα διογκωθεί σε γίγαντες. Αυτό είναι χαρακτηριστικό ενός σμήνους στην πρώιμη μέση ηλικία του.
+    </string>
+    <string name="object_info_m50_distance" translation_description="Distance to M50 shown in the info card. Translate units if appropriate for your locale.">3.200 έτη φωτός</string>
+    <string name="object_info_m50_size" translation_description="Physical size of M50 shown in the info card. Translate units if appropriate for your locale.">~15 έτη φωτός διάμετρος</string>
+
+    <string name="object_info_m36_description" translation_description="Description of the open star cluster M36 shown in the info card. Translate this text.">
+    Το M36 είναι το μικρότερο και νεότερο από τα τρία ανοιχτά σμήνη που κατάλογος ο Messier στον Αετό. Τα περίπου 60 αστέρια του συγκεντρώνονται σε ένα σφιχτό, λαμπερό πεδίο ορατό με διόπτρες και καλά διακριτό σε μεμονωμένα αστέρια με ένα μικρό τηλεσκόπιο, κυριαρχούμενο από θερμά μπλε-λευκά αστέρια.
+    </string>
+    <string name="object_info_m36_funfact" translation_description="Fun fact about M36 shown in the info card. Translate this text.">
+    Το M36 εκτιμάται ότι είναι μόλις περίπου 25 εκατομμύρια ετών — ένα από τα νεότερα σμήνη Messier — που σημαίνει ότι τεράστια μπλε-λευκά αστέρια κυριαρχούν ακόμα και κανένας κόκκινος γίγαντας δεν έχει ακόμη εμφανιστεί. Μοιράζεται τα πεδία αστέρων του Auriga με το M37 και το M38, και και τα τρία σμήνη χωράνε στην ίδια ευρυγώνια θέα διοπτρών.
+    </string>
+    <string name="object_info_m36_distance" translation_description="Distance to M36 shown in the info card. Translate units if appropriate for your locale.">4.100 έτη φωτός</string>
+    <string name="object_info_m36_size" translation_description="Physical size of M36 shown in the info card. Translate units if appropriate for your locale.">~14 έτη φωτός διάμετρος</string>
+
+    <string name="object_info_m46_description" translation_description="Description of the open star cluster M46 shown in the info card. Translate this text.">
+    Το M46 είναι ένα πλούσιο, πυκνό ανοιχτό σμήνος αστέρων στον Κύνα που περιέχει περίπου 500 αστέρες συσκευασμένους σε ένα ευρύ πεδίο, εντυπωσιακό στα διόπτρα και όμορφο σε μικρά τηλεσκόπια. Ένα αξιοσημείωτο bonus επιπλέει στο βόρειο άκρο του: το NGC 2438, ένα μικρό πλανητικό νεφέλωμα που φαίνεται να είναι ενσωματωμένο στο σμήνος — μια δραματική σύμπτωση γραμμής όρασης.
+    </string>
+    <string name="object_info_m46_funfact" translation_description="Fun fact about M46 shown in the info card. Translate this text.">
+    Το πλανητικό νεφέλωμα NGC 2438 φαίνεται να βρίσκεται μέσα στο M46, αλλά είναι στην πραγματικότητα ένα άσχετο αντικείμενο προσκηνίου σε πολύ διαφορετική απόσταση — περίπου 1.400 έτη φωτός έναντι 5.400 του M46. Η σύμπτωση του κελύφους ενός πεθαίνοντος αστέρα που επικαλύπτεται σε ένα νεαρό σμήνος αστέρων κάνει αυτό ένα από τα πιο φωτογενικά πεδία του καταλόγου.
+    </string>
+    <string name="object_info_m46_distance" translation_description="Distance to M46 shown in the info card. Translate units if appropriate for your locale.">5.400 έτη φωτός</string>
+    <string name="object_info_m46_size" translation_description="Physical size of M46 shown in the info card. Translate units if appropriate for your locale.">~42 έτη φωτός διάμετρος</string>
+
+    <string name="object_info_m93_description" translation_description="Description of the open star cluster M93 shown in the info card. Translate this text.">
+    Το M93 είναι ένα φωτεινό, συμπαγές ανοιχτό σμήνος αστέρων στον Κύνα, που βρίσκεται στον πλούσιο νότιο Γαλακτικό Δρόμο και εντοπίζεται εύκολα με διόπτρες. Τα περίπου 80 αστέρια του είναι διατεταγμένα σε ένα εντυπωσιακό σχήμα σφήνας ή πεταλούδας και περιλαμβάνουν αρκετούς θερμούς μπλε υπεργίγαντες, καθιστώντας το ένα από τα πιο ελκυστικά ανοιχτά σμήνη στον χειμερινό ουράνιο θόλο.
+    </string>
+    <string name="object_info_m93_funfact" translation_description="Fun fact about M93 shown in the info card. Translate this text.">
+    Το M93 είναι σχετικά νέο — περίπου 100 εκατομμύρια χρόνια — με κυρίαρχα μπλε και γαλάζια αστέρια που δεν έχουν ακόμη εξελιχθεί σε γίγαντες. Είναι ένα από τα πιο νότια σμήνη Messier και από γεωγραφικά πλάτη βόρεια του περίπου 50°Β δεν ανεβαίνει ποτέ πολύ ψηλά πάνω από τον ορίζοντα.
+    </string>
+    <string name="object_info_m93_distance" translation_description="Distance to M93 shown in the info card. Translate units if appropriate for your locale.">3.600 έτη φωτός</string>
+    <string name="object_info_m93_size" translation_description="Physical size of M93 shown in the info card. Translate units if appropriate for your locale.">~23 έτη φωτός διάμετρος</string>
+
+    <string name="object_info_m38_description" translation_description="Description of the open star cluster M38 shown in the info card. Translate this text.">
+    Το M38 είναι το μεγαλύτερο και πιο διάσπαρτο από τα τρία ανοιχτά σμήνη που κατάλογος ο Messier στον Αετό. Τα περίπου 100 αστέρια του είναι διατεταγμένα σε ένα σχέδιο που μερικοί παρατηρητές το συγκρίνουν με ένα σταυρό ή το ελληνικό γράμμα π, ορατό με διόπτρες και καλά διακριτό σε ένα μικρό τηλεσκόπιο. Το μικρότερο σμήνος NGC 1907 βρίσκεται κοντά νότια.
+    </string>
+    <string name="object_info_m38_funfact" translation_description="Fun fact about M38 shown in the info card. Translate this text.">
+    Το M38 είναι το παλαιότερο από τα τρία σμήνη Messier του Αυρίγα, περίπου 220 εκατομμύρια χρόνια, αρκετά παλιό ώστε ορισμένα από τα τεράστια αστέρια του να έχουν εξελιχθεί σε κίτρινα και πορτοκαλί γίγαντες. Το κοντινό σμήνος NGC 1907 μπορεί να χωρέσει στο ίδιο πεδίο χαμηλής μεγέθυνσης, καθιστώντας τα ένα όμορφο ζευγάρι για διόπτρες — όπως τα M46 και M47 στον Κύνα.
+    </string>
+    <string name="object_info_m38_distance" translation_description="Distance to M38 shown in the info card. Translate units if appropriate for your locale.">4.200 έτη φωτός</string>
+    <string name="object_info_m38_size" translation_description="Physical size of M38 shown in the info card. Translate units if appropriate for your locale.">~26 έτη φωτός διάμετρος</string>
+
+    <string name="object_info_m29_description" translation_description="Description of the open star cluster M29 shown in the info card. Translate this text.">
+    Το M29 είναι ένα μικρό, νεαρό ανοιχτό σμήνος αστέρων στον Κύκνο, τοποθετημένο σε μία από τις περιοχές του Γαλακτικού Δρόμου που είναι περισσότερο σκοτεινιασμένες από σκόνη. Πέντε λαμπροί μπλε υπεργίγαντες κυριαρχούν στο σμήνος, ορατοί με διόπτρες ως ένα σφιχτό αστερισμό θερμών, φωτεινών αστέρων. Χωρίς τη πυκνή σκόνη στο προσκήνιο, το M29 θα ήταν ένα από τα πιο θεαματικά ανοιχτά σμήνη του ουρανού.
+    </string>
+    <string name="object_info_m29_funfact" translation_description="Fun fact about M29 shown in the info card. Translate this text.">
+    Το M29 εκτιμάται ότι είναι μόλις περίπου 10 εκατομμύρια ετών — ένα αστρικό βρέφος — και βρίσκεται εντός της συσχέτισης Cygnus OB1, μια τεράστια ομάδα τεράστιων νεαρών αστέρων. Η βαριά διαστρική σκόνη σκοτεινιάζει το σμήνος κατά περίπου 3 μεγέθη· χωρίς αυτή την αφανίζουσα επίδραση, τα αστέρια του M29 θα έλαμπαν αρκετές φορές πιο φωτεινά από ό,τι φαίνονται πραγματικά.
+    </string>
+    <string name="object_info_m29_distance" translation_description="Distance to M29 shown in the info card. Translate units if appropriate for your locale.">4.000 έτη φωτός</string>
+    <string name="object_info_m29_size" translation_description="Physical size of M29 shown in the info card. Translate units if appropriate for your locale.">~8 έτη φωτός διάμετρος</string>
+
+    <string name="object_info_m62_description" translation_description="Description of the globular cluster M62 shown in the info card. Translate this text.">
+    Το M62 είναι ένα πλούσιο σφαιρωτό σμήνος στον Οφιούχο — ένα από τα πλησιέστερα σφαιρωτά στο γαλακτικό κέντρο και αισθητά ασύμμετρο, με αστέρια συσσωρευμένα πιο πυκνά στη νότια πλευρά. Με μέγεθος 6,6 είναι ένα όμορφο αντικείμενο διόπτρας, αν και η χαμηλή του απόκλιση κάνει το στόχο μιας σύντομης περιόδου για τους βόρειους παρατηρητές.
+    </string>
+    <string name="object_info_m62_funfact" translation_description="Fun fact about M62 shown in the info card. Translate this text.">
+    Ο εκκεντρικός πυρήνας του M62 είναι άμεσο αποτέλεσμα της εγγύτητάς του στο γαλακτικό κέντρο — οι ισχυρές παλιρροϊκές δυνάμεις από το κεντρικό διογκωμένο τμήμα παραμορφώνουν το σμήνος και σύρουν αστέρια προς το γαλακτικό επίπεδο. Είναι επίσης ένα από τα πιο δυναμικά εξελιγμένα σφαιρικά σμήνη που είναι γνωστά, παρουσιάζοντας σημάδια κατάρρευσης πυρήνα και ασυνήθιστα υψηλή πυκνότητα παλσάρ χιλιοδευτερολέπτου.
+    </string>
+    <string name="object_info_m62_distance" translation_description="Distance to M62 shown in the info card. Translate units if appropriate for your locale.">22.500 έτη φωτός</string>
+    <string name="object_info_m62_size" translation_description="Physical size of M62 shown in the info card. Translate units if appropriate for your locale.">~92 έτη φωτός διάμετρος</string>
+
+    <string name="object_info_m28_description" translation_description="Description of the globular cluster M28 shown in the info card. Translate this text.">
+    Το M28 είναι ένα συμπαγές σφαιρωτό σμήνος στο Τοξότη, που βρίσκεται κοντά στο λαμπρό αστέρι Lambda Sagittarii στα πλούσια αστρικά πεδία του καλοκαιριού. Με μέγεθος 6,9, είναι ένας ανταποδοτικός στόχος για διόπτρες και είναι καλά διακριτό σε μικρά τηλεσκόπια, παρουσιάζοντας έναν λαμπρό συμπυκνωμένο πυρήνα περιτριγυρισμένο από ένα μέτριο στεφάνι αστέρων.
+    </string>
+    <string name="object_info_m28_funfact" translation_description="Fun fact about M28 shown in the info card. Translate this text.">
+    Το 1987, το M28 έγινε το πρώτο σφαιρωτό σμήνος στο οποίο ανιχνεύθηκε ένας παλμικός αστέρας χιλιοδευτερολέπτου. Οι παλμικοί αστέρες χιλιοδευτερολέπτου — αστέρες νετρονίων που περιστρέφονται εκατοντάδες φορές ανά δευτερόλεπτο — σχηματίζονται όταν ένας αστέρας νετρονίων συσσωρεύει ύλη από έναν συνοδό αστέρα και βρίσκονται σε πολύ υψηλότερο ποσοστό στα σφαιρωτά σμήνη παρά στο γενικό γαλαξία, επειδή τα πυκνά αστρικά περιβάλλοντά τους παράγουν πολλές περισσότερες στενές δυαδικές συναντήσεις.
+    </string>
+    <string name="object_info_m28_distance" translation_description="Distance to M28 shown in the info card. Translate units if appropriate for your locale.">18.300 έτη φωτός</string>
+    <string name="object_info_m28_size" translation_description="Physical size of M28 shown in the info card. Translate units if appropriate for your locale.">~60 έτη φωτός διάμετρος</string>
+
+    <string name="object_info_m52_description" translation_description="Description of the open star cluster M52 shown in the info card. Translate this text.">
+    Το M52 είναι ένα πλούσιο ανοιχτό σμήνος στην Κασσιόπεια, που περιέχει περίπου 200 αστέρια συσκευασμένα σε μια συμπαγή περιοχή του βόρειου Γαλακτικού Δρόμου. Είναι ένα όμορφο διοπτρικό σμήνος και παρουσιάζει ένα όμορφο, πυκνό αστρικό πεδίο σε μικρά τηλεσκόπια, με έναν αισθητά φωτεινότερο πορτοκαλί αστέρα να ξεχωρίζει κοντά στο νότιο άκρο του σμήνους.
+    </string>
+    <string name="object_info_m52_funfact" translation_description="Fun fact about M52 shown in the info card. Translate this text.">
+    Η απόσταση του M52 είναι ασυνήθιστα αβέβαιη — οι εκτιμήσεις κυμαίνονται από 3.000 έως 7.000 έτη φωτός — επειδή το πυκνό διαστελλικό σκόνη κατά μήκος αυτής της γραμμής όρασης καθιστά δύσκολο να προσδιοριστεί η πραγματική της λαμπρότητα. Ο Messier την ανακάλυψε το 1774, την ίδια νύχτα που παρακολουθούσε έναν κομήτη που τον οδήγησε να καταγράψει αρκετές άλλες καταχωρήσεις καταλόγου.
+    </string>
+    <string name="object_info_m52_distance" translation_description="Distance to M52 shown in the info card. Translate units if appropriate for your locale.">~5.000 έτη φωτός</string>
+    <string name="object_info_m52_size" translation_description="Physical size of M52 shown in the info card. Translate units if appropriate for your locale.">~25 έτη φωτός διάμετρος</string>
+
+    <string name="object_info_m67_description" translation_description="Description of the open star cluster M67 shown in the info card. Translate this text.">
+    Το M67 είναι ένα όμορφο ανοιχτό σμήνος στον Καρκίνο και ένα από τα παλαιότερα καλά μελετημένα ανοιχτά σμήνη στον ουρανό. Με ηλικία περίπου 3,2–3,5 δισεκατομμυρίων ετών, περιέχει πολλά αστέρια παρόμοια σε μάζα και ηλικία με τον δικό μας Ήλιο — καθιστώντας το ένα φυσικό εργαστήριο για τη μελέτη του πώς τα αστέρια παρόμοια με τον Ήλιο εξελίσσονται με την πάροδο του κοσμικού χρόνου.
+    </string>
+    <string name="object_info_m67_funfact" translation_description="Fun fact about M67 shown in the info card. Translate this text.">
+    Πολλά αστέρια στο M67 μοιάζουν στενά με τον Ήλιο σε θερμοκρασία, μάζα και ηλικία — ένας σπάνιος συνδυασμός που οδήγησε τους ερευνητές να αναρωτηθούν εάν ο ίδιος ο Ήλιος προέρχεται από ένα σμήνος όπως το M67. Επειδή τα αστέρια γεννιούνται σε σμήνη που σταδιακά διασκορπίζονται, ο Ήλιος σχεδόν σίγουρα προέρχεται από μια τώρα διασκορπισμένη αδελφική ομάδα δισεκατομμυρίων ετών — αν και ποιο σμήνος δεν έχει ποτέ αναγνωριστεί.
+    </string>
+    <string name="object_info_m67_distance" translation_description="Distance to M67 shown in the info card. Translate units if appropriate for your locale.">2.700 έτη φωτός</string>
+    <string name="object_info_m67_size" translation_description="Physical size of M67 shown in the info card. Translate units if appropriate for your locale.">~24 έτη φωτός διάμετρος</string>
+
+    <string name="object_info_m55_description" translation_description="Description of the globular cluster M55 shown in the info card. Translate this text.">
+    Το M55 είναι ένα μεγάλο, χαλαρό σφαιρωτό σμήνος στο Τοξότη — ένα από τα πιο διασκορπισμένα και λιγότερο συγκεντρωμένα από όλα τα σφαιρωτά του Messier. Διαλύεται εύκολα σε μεμονωμένα αστέρια ακόμη και σε χαμηλή μεγέθυνση, με κοκκώδη υφή ορατή στα διόπτρα. Η χαμηλή νότια απόκλισή του περιορίζει την ορατότητα από βόρειες γεωγραφικές πλάτη, αλλά είναι εντυπωσιακό από το νότιο ημισφαίριο.
+    </string>
+    <string name="object_info_m55_funfact" translation_description="Fun fact about M55 shown in the info card. Translate this text.">
+    Η ασυνήθιστα χαμηλή συγκέντρωση αστέρων του M55 το κάνει να μοιάζει σχεδόν με ένα πλούσιο ανοιχτό σμήνος παρά με ένα τυπικό σφαιρωτό σμήνος. Τα αστέρια του είναι διασκορπισμένα σε μια περιοχή πλάτους σχεδόν 100 ετών φωτός, υποδηλώνοντας ότι η αυτοβαρύτητα του σμήνους είναι σχετικά ασθενής σε σύγκριση με πιο κεντρικά συμπυκνωμένα σφαιρωτά σμήνη όπως το M13 ή το M3.
+    </string>
+    <string name="object_info_m55_distance" translation_description="Distance to M55 shown in the info card. Translate units if appropriate for your locale.">17.600 έτη φωτός</string>
+    <string name="object_info_m55_size" translation_description="Physical size of M55 shown in the info card. Translate units if appropriate for your locale.">~100 έτη φωτός διάμετρος</string>
+
+    <string name="object_info_m19_description" translation_description="Description of the globular cluster M19 shown in the info card. Translate this text.">
+    Το M19 είναι ένα συμπαγές, πλούσιο σφαιρωτό σμήνος στον Οφιούχο — ένα από τα πλησιέστερα σφαιρωτά στο γαλακτικό κέντρο. Το πιο χαρακτηριστικό του χαρακτηριστικό είναι το αισθητά πεπλατυσμένο σχήμα του: το M19 είναι το πιο πεπλατυσμένο σφαιρωτό σμήνος που είναι γνωστό, με ορατό ελλειπτικό περίγραμμα ακόμη και σε ένα μικρό τηλεσκόπιο.
+    </string>
+    <string name="object_info_m19_funfact" translation_description="Fun fact about M19 shown in the info card. Translate this text.">
+    Η προφανής πλάτυνση του M19 — ο μεγαλύτερος άξονάς του είναι περίπου 10% μεγαλύτερος από τον μικρότερό του — είναι μοναδική μεταξύ των γνωστών σφαιρωτών σμηνών και πιστεύεται ότι προκύπτει από τη βαρυτική παραμόρφωση του Γαλακτικού Δρόμου. Όσο πιο κοντά περιφέρεται ένα σφαιρωτό σμήνος στο γαλακτικό κέντρο, τόσο περισσότερο παραμορφώνεται. Το M19 βρίσκεται μόλις περίπου 5.200 έτη φωτός από τον γαλακτικό πυρήνα.
+    </string>
+    <string name="object_info_m19_distance" translation_description="Distance to M19 shown in the info card. Translate units if appropriate for your locale.">28.700 έτη φωτός</string>
+    <string name="object_info_m19_size" translation_description="Physical size of M19 shown in the info card. Translate units if appropriate for your locale.">~113 έτη φωτός διάμετρος</string>
+
+    <string name="object_info_m80_description" translation_description="Description of the globular cluster M80 shown in the info card. Translate this text.">
+    Το M80 είναι ένα από τα πιο πυκνά σφαιρωτά σμήνη του Γαλακτικού Δρόμου, μια συμπαγής, πλούσια σφαίρα αποτελούμενη από αρκετές εκατοντάδες χιλιάδες αστέρια στον Σκορπιό. Με μέγεθος 7,2, είναι ένας εξαιρετικός στόχος για διόπτρες και αποκαλύπτει έναν λαμπρό, εξαιρετικά συγκεντρωμένο πυρήνα σε μικρά τηλεσκόπια.
+    </string>
+    <string name="object_info_m80_funfact" translation_description="Fun fact about M80 shown in the info card. Translate this text.">
+    Το 1860, ένας νέος αστέρας εξερράγη στο M80 — χαρακτηρίστηκε ως T Scorpii — γίνοντας για λίγο καιρό τόσο λαμπρός όσο το ίδιο το σμήνος και ορατός με γυμνό μάτι. Παραμένει ένας από τους μόνο δύο νέους αστέρες που παρατηρήθησαν ποτέ σε ένα σφαιρικό σμήνος. Οι νέοι αστέρες στα σφαιρικά σμήνη προκύπτουν από αλληλεπιδράσεις μεταξύ δυαδικών αστέρων, οι οποίοι είναι πολύ πιο συνηθισμένοι στο πυκνό αστρικό περιβάλλον του πυρήνα ενός σφαιρικού σμήνους.
+    </string>
+    <string name="object_info_m80_distance" translation_description="Distance to M80 shown in the info card. Translate units if appropriate for your locale.">32.600 έτη φωτός</string>
+    <string name="object_info_m80_size" translation_description="Physical size of M80 shown in the info card. Translate units if appropriate for your locale.">~84 έτη φωτός διάμετρος</string>
+
+    <string name="object_info_m103_description" translation_description="Description of the open star cluster M103 shown in the info card. Translate this text.">
+    Το M103 είναι ένα μικρό, συμπαγές ανοιχτό σμήνος στην Κασσιόπεια, που περιέχει περίπου 40 αστέρια σε μια σφιχτή ομάδα που φαίνεται εύκολα με διόπτρες. Ένα εντυπωσιακό διπλό αστέρι και ένας κόκκινος γίγαντας κοντά στο κέντρο του δίνουν μια χρωματιστή εμφάνιση σε μικρά τηλεσκόπια, τοποθετημένο μέσα στα πλούσια πεδία αστέρων του Γαλακτικού Δρόμου της Κασσιόπειας.
+    </string>
+    <string name="object_info_m103_funfact" translation_description="Fun fact about M103 shown in the info card. Translate this text.">
+    Το M103 ήταν το αντικείμενο με τον υψηλότερο αριθμό στον αρχικό κατάλογο του Messier που δημοσιεύθηκε το 1781 — όλες οι επόμενες καταχωρήσεις (M104–M110) προστέθηκαν μετά θάνατον από αργότερους αστρονόμους από τις σημειώσεις και την αλληλογραφία του Messier. Ο Pierre Méchain ανακάλυψε το M103 λίγο πριν ο κατάλογος πάει στο τυπογραφείο, και ο Messier το συμπεριέλαβε από την αναφορά του Méchain.
+    </string>
+    <string name="object_info_m103_distance" translation_description="Distance to M103 shown in the info card. Translate units if appropriate for your locale.">8.500 έτη φωτός</string>
+    <string name="object_info_m103_size" translation_description="Physical size of M103 shown in the info card. Translate units if appropriate for your locale.">~15 έτη φωτός διάμετρος</string>
+
+    <string name="object_info_m30_description" translation_description="Description of the globular cluster M30 shown in the info card. Translate this text.">
+    Το M30 είναι ένα συμπαγές σφαιρωτό σμήνος στον Αιγόκερω — ένα όμορφο αντικείμενο σε μικρά τηλεσκόπια που παρουσιάζει έναν φωτεινό, συμπυκνωμένο πυρήνα και αμυδρές αλυσίδες περιφερειακών αστέρων. Με μέγεθος 7,5, απαιτεί σκοτεινούς ουρανούς στα διόπτρα και ανταμείβει ένα μικρό τηλεσκόπιο με το μερικώς επιλυμένο εξωτερικό του αυρεόλα.
+    </string>
+    <string name="object_info_m30_funfact" translation_description="Fun fact about M30 shown in the info card. Translate this text.">
+    Το M30 έχει υποστεί "κατάρρευση πυρήνα" — μια διαδικασία όπου η αμοιβαία βαρυτική έλξη των πυκνά συσκευασμένων αστέρων προκαλεί τη δραματική συστολή του κέντρου του σμήνους, δημιουργώντας μια ακραία συγκέντρωση αστέρων σε ένα ασήμαντο όγκο. Περίπου το ένα πέμπτο όλων των σφαιρικών σμηνών έχουν κατεστραμμένους πυρήνες, και το M30 είναι ένα από τα καλύτερα μελετημένα παραδείγματα αυτού του φαινομένου.
+    </string>
+    <string name="object_info_m30_distance" translation_description="Distance to M30 shown in the info card. Translate units if appropriate for your locale.">27.100 έτη φωτός</string>
+    <string name="object_info_m30_size" translation_description="Physical size of M30 shown in the info card. Translate units if appropriate for your locale.">~87 έτη φωτός διάμετρος</string>
+
+    <string name="object_info_m54_description" translation_description="Description of the globular cluster M54 shown in the info card. Translate this text.">
+    Το M54 είναι ένα μεγάλο, πλούσιο σφαιρωτό σμήνος στο Τοξότη και ένα από τα πιο απομακρυσμένα αντικείμενα σε ολόκληρο τον κατάλογο Messier. Για αιώνες πιστεύονταν ότι ήταν ένα απομακρυσμένο σφαιρωτό σμήνος του αλώ του Γαλακτικού Δρόμου, αλλά τώρα είναι γνωστό ότι είναι ο πυκνός πυρήνας της Νάνας Ελλειπτικής Γαλαξίας του Τοξότη — ένας δορυφορικός γαλαξίας που απορροφάται αυτή τη στιγμή από τον δικό μας.
+    </string>
+    <string name="object_info_m54_funfact" translation_description="Fun fact about M54 shown in the info card. Translate this text.">
+    Η ανακάλυψη το 1994 ότι το M54 ανήκει στο Νάνο Γαλαξία του Τοξότη το έκανε το πρώτο σφαιρωτό σμήνος που είναι γνωστό ότι ανήκει σε άλλο γαλαξία. Καθώς ο Νάνος Γαλαξία του Τοξότη διαλύεται σταδιακά και καταπίνεται από τον Γαλακτικό Δρόμο, το M54 θα γίνει τελικά ένα γνήσιο σφαιρωτό σμήνος του αλώ του δικού μας γαλαξία — ένας διαγαλακτικός μετανάστης που φτάνει σε δισεκατομμύρια χρόνια.
+    </string>
+    <string name="object_info_m54_distance" translation_description="Distance to M54 shown in the info card. Translate units if appropriate for your locale.">87.000 έτη φωτός</string>
+    <string name="object_info_m54_size" translation_description="Physical size of M54 shown in the info card. Translate units if appropriate for your locale.">~230 έτη φωτός διάμετρος</string>
+
+    <string name="object_info_m69_description" translation_description="Description of the globular cluster M69 shown in the info card. Translate this text.">
+    Το M69 είναι ένα μέσης πυκνότητας σφαιρωτό σμήνος στο Τοξότη, τοποθετημένο κοντά στο γαλακτικό κέντρο. Με μέγεθος 7,7, είναι ένα αντικείμενο διόπτρας από σκοτεινούς ουρανούς που ανταμείβει ένα μικρό τηλεσκόπιο με ένα μερικώς διακριτό σφαιρικό σμήνος αστέρων και ένα φωτεινό, κοκκώδες κέντρο.
+    </string>
+    <string name="object_info_m69_funfact" translation_description="Fun fact about M69 shown in the info card. Translate this text.">
+    Το M69 περιφέρεται ασυνήθιστα κοντά στο γαλακτικό κέντρο — μόνο περίπου 6.200 έτη φωτός από τον πυρήνα του Γαλακτικού Συστήματος — και κατά συνέπεια έχει ασυνήθιστα υψηλή συγκέντρωση βαρύτερων στοιχείων για ένα σφαιρωτό σμήνος. Τα σφαιρωτά σμήνη πιο κοντά στο γαλακτικό κέντρο τείνουν να είναι χημικά εμπλουτισμένα από πολλαπλές γενιές σχηματισμού αστέρων στο περιβάλλον διογκωμένο τμήμα.
+    </string>
+    <string name="object_info_m69_distance" translation_description="Distance to M69 shown in the info card. Translate units if appropriate for your locale.">29.700 έτη φωτός</string>
+    <string name="object_info_m69_size" translation_description="Physical size of M69 shown in the info card. Translate units if appropriate for your locale.">~61 έτη φωτός διάμετρος</string>
+
+    <string name="object_info_m9_description" translation_description="Description of the globular cluster M9 shown in the info card. Translate this text.">
+    Το M9 είναι ένα συμπαγές σφαιρωτό σμήνος στον Οφιούχο — ένα από τα σφαιρωτά του Messier που επηρεάζονται περισσότερο από την απορρόφηση διαστελλικής σκόνης. Βρίσκεται προς τον γαλακτικό πυρήνα, όπου η πυκνή σκόνη το σκοτεινιάζει σημαντικά. Χωρίς αυτή την αποκάλυψη, το M9 θα φαινόταν σχεδόν ένα μέγεθος φωτεινότερο και θα ήταν ορατό με γυμνό μάτι.
+    </string>
+    <string name="object_info_m9_funfact" translation_description="Fun fact about M9 shown in the info card. Translate this text.">
+    Το M9 υφίσταται περισσότερη απορρόφηση διαστελλικής σκόνης από σχεδόν οποιοδήποτε άλλο σφαιρωτό σμήνος του Messier — περίπου 1,3 μεγέθη σκοτεινιάσματος σε σύγκριση με μια καθαρή γραμμή οράσεως. Δύο μικρότερα σφαιρωτά σμήνη (NGC 6342 και NGC 6356) βρίσκονται εντός περίπου 1° του M9, καθιστώντας το κέντρο μιας αξιοσημείωτης ομάδας τριών σφαιρωτών σε μια μικρή περιοχή του ουρανού.
+    </string>
+    <string name="object_info_m9_distance" translation_description="Distance to M9 shown in the info card. Translate units if appropriate for your locale.">25.800 έτη φωτός</string>
+    <string name="object_info_m9_size" translation_description="Physical size of M9 shown in the info card. Translate units if appropriate for your locale.">~70 έτη φωτός διάμετρος</string>
+
+    <string name="object_info_m26_description" translation_description="Description of the open star cluster M26 shown in the info card. Translate this text.">
+    Το M26 είναι ένα μέτρια αμυδρό ανοιχτό σμήνος στο Σκούτουμ, ορατό με διόπτρες και καλά διακριτό σε μικρά τηλεσκόπια. Περίπου 90 αστέρες είναι διασκορπισμένοι σε ένα συμπαγές πεδίο στο πλούσιο νέφος αστέρων του Σκούτουμ, αν και το σμήνος βρίσκεται ενάντια σε ένα τόσο πυκνό υπόβαθρο που η αναγνώριση των μελών του από το περιβάλλον πεδίο αστέρων απαιτεί κάποια προσοχή.
+    </string>
+    <string name="object_info_m26_funfact" translation_description="Fun fact about M26 shown in the info card. Translate this text.">
+    Το M26 βρίσκεται κατά μήκος της ίδιας πλούσιας λωρίδας του ουρανού με το M11 — το Σμήνος της Άγριας Πάπιας, ένα από τα καλύτερα ανοιχτά σμήνη του ουρανού. Τα δύο απέχουν μόνο περίπου 3,5° και είναι ορατά στο ίδιο οπτικό πεδίο διοπτρών, καθιστώντας το Scutum ένα αξιοσημείωτο προορισμό για παρατηρητές σμηνών παρά το ότι είναι ένα μικρό και συχνά παραγνωρισμένο αστερισμό.
+    </string>
+    <string name="object_info_m26_distance" translation_description="Distance to M26 shown in the info card. Translate units if appropriate for your locale.">5.000 έτη φωτός</string>
+    <string name="object_info_m26_size" translation_description="Physical size of M26 shown in the info card. Translate units if appropriate for your locale.">~22 έτη φωτός διάμετρος</string>
+
+    <string name="object_info_m79_description" translation_description="Description of the globular cluster M79 shown in the info card. Translate this text.">
+    Το M79 είναι ένα συμπαγές σφαιρωτό σμήνος στον Λαγό — ένα από τα πολύ λίγα σφαιρωτά Messier που είναι καλύτερα τοποθετημένα στον χειμερινό ουρανό, όταν τα περισσότερα σφαιρωτά είναι κάτω από τον ορίζοντα ή μόλις ανατέλλουν. Με μέγεθος 8,0 χρειάζεται τηλεσκόπιο για να αποκαλύψει τον συμπαγή πυρήνα και την αμυδρή άλω του, ξεχωρίζοντας ενάντια στα σχετικά αραιά χειμερινά πεδία αστέρων.
+    </string>
+    <string name="object_info_m79_funfact" translation_description="Fun fact about M79 shown in the info card. Translate this text.">
+    Το M79 θεωρείται από ορισμένους αστρονόμους ότι είναι ένας εισβολέας από τον Νάνο Γαλαξία του Canis Major — έναν διαταραγμένο δορυφόρο γαλαξία που απορροφάται αυτή τη στιγμή από τον Γαλακτικό Δρόμο. Αν ισχύει αυτό, το M79 δεν σχηματίστηκε στο δικό του σφαιρικό σύστημα του Γαλακτικού Δρόμου, αλλά συλλήφθη από έναν εισπίπτοντα γαλαξία και τώρα αργά ενσωματώνεται στο αστέρι του γαλαξία μας.
+    </string>
+    <string name="object_info_m79_distance" translation_description="Distance to M79 shown in the info card. Translate units if appropriate for your locale.">41.000 έτη φωτός</string>
+    <string name="object_info_m79_size" translation_description="Physical size of M79 shown in the info card. Translate units if appropriate for your locale.">~104 έτη φωτός διάμετρος</string>
+
+    <string name="object_info_m70_description" translation_description="Description of the globular cluster M70 shown in the info card. Translate this text.">
+    Το M70 είναι ένα συμπαγές σφαιρωτό σμήνος στο Τοξότη, που μοιάζει πολύ με το κοντινό του δίδυμο M69 τόσο στην εμφάνιση όσο και στην απόσταση. Με μέγεθος 8,1, είναι ένα εξαιρετικό αντικείμενο για μικρά τηλεσκόπια που παρουσιάζει συμπαγή πυρήνα και ίχνη ανάλυσης στο εξωτερικό φωτοστέφανο. Βρίσκεται μόλις 2° μακριά από το M69 και και τα δύο μπορούν να παρατηρηθούν στο ίδιο οπτικό πεδίο διοπτρών.
+    </string>
+    <string name="object_info_m70_funfact" translation_description="Fun fact about M70 shown in the info card. Translate this text.">
+    Το M70 κέρδισε σύντομη φήμη το 1995 ως η κατά προσέγγιση θέση στον ουρανό όπου ο Alan Hale και ο Thomas Bopp ανακάλυψαν ανεξάρτητα τον Κομήτη Hale-Bopp — τον λαμπρότερο κομήτη του τέλους του 20ού αιώνα. Και οι δύο παρατηρητές αρχικά σάρωσαν το M70 ενώ αναζητούσαν άλλους στόχους και παρατήρησαν τον κομήτη ως ένα απροσδόκητο ασαφές αντικείμενο κοντά.
+    </string>
+    <string name="object_info_m70_distance" translation_description="Distance to M70 shown in the info card. Translate units if appropriate for your locale.">29.400 έτη φωτός</string>
+    <string name="object_info_m70_size" translation_description="Physical size of M70 shown in the info card. Translate units if appropriate for your locale.">~67 έτη φωτός διάμετρος</string>
+
+    <string name="object_info_m107_description" translation_description="Description of the globular cluster M107 shown in the info card. Translate this text.">
+    Το M107 είναι ένα από τα λιγότερο συγκεντρωμένα σφαιρωτά σμήνη του Messier, με αστέρια διασκορπισμένα σε ένα σχετικά ανοιχτό σχέδιο γύρω από έναν μέτριο πυρήνα. Με μέγεθος 8,1, είναι στόχος διοπτρικής παρατήρησης από σκοτεινούς ουρανούς και μερικώς διαλύεται σε μικρά τηλεσκόπια, παρουσιάζοντας κοκκώδη υφή αντί για οξεία κεντρική συμπύκνωση.
+    </string>
+    <string name="object_info_m107_funfact" translation_description="Fun fact about M107 shown in the info card. Translate this text.">
+    Το M107 ήταν η τελευταία καταχώρηση που προστέθηκε επίσημα στον κατάλογο Messier — εμφανίζεται στην αλληλογραφία του Pierre Méchain, αλλά δεν περιλήφθηκε στην αρχική έκδοση του 1781. Προστέθηκε επίσημα ως M107 το 1947 από την Καναδή αστρονόμο Helen Sawyer Hogg, η οποία κωδικοποίησε αρκετά «χαμένα» αντικείμενα που ο Méchain είχε παρατηρήσει αλλά ο Messier δεν είχε ποτέ επίσημα καταγράψει.
+    </string>
+    <string name="object_info_m107_distance" translation_description="Distance to M107 shown in the info card. Translate units if appropriate for your locale.">20.900 έτη φωτός</string>
+    <string name="object_info_m107_size" translation_description="Physical size of M107 shown in the info card. Translate units if appropriate for your locale.">~61 έτη φωτός διάμετρος</string>
+
+    <string name="object_info_m68_description" translation_description="Description of the globular cluster M68 shown in the info card. Translate this text.">
+    Το M68 είναι ένα πλούσιο σφαιρωτό σμήνος στον Ύδρο — ένα νότιο αντικείμενο και ένα από τα λίγα σφαιρωτά που είναι καλύτερα τοποθετημένα στον ουράνιο χώρο του τέλους του χειμώνα και της άνοιξης. Με μέγεθος 8,2, ανταμείβει ένα μικρό τηλεσκόπιο με έναν μέτρια συμπυκνωμένο πυρήνα και μια μεγάλη άλω διακριτών αστέρων ενάντια στα σχετικά αραιά πεδία αστέρων του Ύδρου.
+    </string>
+    <string name="object_info_m68_funfact" translation_description="Fun fact about M68 shown in the info card. Translate this text.">
+    Παρά την σχετική του εγγύτητα — που κάνει τα επιμέρους αστέρια καλά διακριτά σε ερασιτεχνικά τηλεσκόπια — το M68 συχνά παραβλέπεται λόγω της πολύ νότιας απόκλισής του. Από γεωγραφικά πλάτη πάνω από 50°Β μόλις ξεπερνά τον ορίζοντα· από το νότιο ημισφαίριο, ωστόσο, ανυψώνεται ψηλά και είναι ένα υπέροχο σφαιρωτό σμήνος.
+    </string>
+    <string name="object_info_m68_distance" translation_description="Distance to M68 shown in the info card. Translate units if appropriate for your locale.">33.600 έτη φωτός</string>
+    <string name="object_info_m68_size" translation_description="Physical size of M68 shown in the info card. Translate units if appropriate for your locale.">~117 έτη φωτός διάμετρος</string>
+
+    <string name="object_info_m56_description" translation_description="Description of the globular cluster M56 shown in the info card. Translate this text.">
+    Το M56 είναι ένα συμπαγές σφαιρωτό σμήνος στη Λύρα, τοποθετημένο ανάμεσα στο Νεφέλωμα του Δακτυλίου (M57) και το φωτεινό διπλό αστέρι Albireo στον Κύκνο. Με μέγεθος 8,3, είναι στόχος διοπτρικών παρατηρήσεων από σκοτεινούς ουρανούς, και ένα μικρό τηλεσκόπιο αποκαλύπτει μια κοκκώδη, μέσης συμπύκνωσης σφαίρα που είναι μόνο μερικώς διακριτή ακόμη και σε μεσαίες διαμέτρους.
+    </string>
+    <string name="object_info_m56_funfact" translation_description="Fun fact about M56 shown in the info card. Translate this text.">
+    Το M56 ανακαλύφθηκε από τον Messier τον Ιανουάριο του 1779 κατά την ίδια περίοδο παρατήρησης κατά την οποία ανακάλυψε και το Νεφέλωμα του Δακτυλίου (M57). Παρά το ότι βρίσκεται στο ίδιο διοπτρικό πεδίο με τη Vega — το πέμπτο πιο φωτεινό αστέρι του ουρανού — και κοντά στο διάσημο Νεφέλωμα του Δακτυλίου, το M56 συχνά παραβλέπεται από τους παρατηρητές που έλκονται από τους πιο διάσημους γείτονές του.
+    </string>
+    <string name="object_info_m56_distance" translation_description="Distance to M56 shown in the info card. Translate units if appropriate for your locale.">32.900 έτη φωτός</string>
+    <string name="object_info_m56_size" translation_description="Physical size of M56 shown in the info card. Translate units if appropriate for your locale.">~68 έτη φωτός διάμετρος</string>
+
+    <string name="object_info_m71_description" translation_description="Description of the globular cluster M71 shown in the info card. Translate this text.">
+    Το M71 είναι ένα ασυνήθιστο σφαιρωτό σμήνος στο Σαγίττα — που προκάλεσε διαφωνία μεταξύ των αστρονόμων για δεκαετίες, καθώς δεν μπορούσαν να αποφασίσουν αν ήταν ένα πολύ πλούσιο παλιό ανοιχτό σμήνος ή ένα πολύ χαλαρό νεαρό σφαιρωτό. Η σύγχρονη ανάλυση επιβεβαιώνει ότι είναι ένα γνήσιο σφαιρωτό σμήνος, αλλά με εξαιρετικά χαμηλή συγκέντρωση με σχετικά λίγα αστέρια και ένα λιγότερο κυρίαρχο κέντρο από τα τυπικά σφαιρωτά.
+    </string>
+    <string name="object_info_m71_funfact" translation_description="Fun fact about M71 shown in the info card. Translate this text.">
+    Η χαλαρή δομή του M71 το κράτησε εκτός πολλών πρώιμων καταλόγων επειδή μοιάζει με ένα πλούσιο πεδίο αστέρων παρά με ένα αληθινό σμήνος. Σε απόσταση μόλις 12.000 ετών φωτός, είναι ένα από τα πιο κοντινά σφαιρικά σμήνη Messier, και τα αστέρια του είναι μερικώς διακριτά σε ένα μικρό τηλεσκόπιο κάτω από σκοτεινούς ουρανούς — δίνοντάς του την εμφάνιση ενός συμπαγούς, ελαφρώς συμπυκνωμένου πλούσιου πεδίου αστέρων.
+    </string>
+    <string name="object_info_m71_distance" translation_description="Distance to M71 shown in the info card. Translate units if appropriate for your locale.">12.000 έτη φωτός</string>
+    <string name="object_info_m71_size" translation_description="Physical size of M71 shown in the info card. Translate units if appropriate for your locale.">~25 έτη φωτός διάμετρος</string>
 </resources>

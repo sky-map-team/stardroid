@@ -890,6 +890,65 @@
     </string>
     <string name="object_info_eta_carinae_nebula_distance" translation_description="Distance to Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">7,500 ปีแสง</string>
     <string name="object_info_eta_carinae_nebula_size" translation_description="Physical size of Eta Carinae Nebula shown in the info card. Translate units if appropriate for your locale.">300 ปีแสง</string>
+    <!-- North America Nebula (NGC 7000) -->
+    <string name="object_info_north_america_nebula_description" translation_description="Description of the North America Nebula shown in the info card. Translate this text.">
+    เนบิวลาอเมริกาเหนือ (NGC 7000) เป็นเนบิวลาการปล่อยแสงขนาดใหญ่ในกลุ่มดาวหงส์ ซึ่งมีรูปร่างที่คล้ายกับทวีปอเมริกาเหนืออย่างน่าทึ่ง พร้อมกับบริเวณอ่าวเม็กซิโก ขยายออกไปประมาณ 120 ลิปดาอาร์ก — ประมาณสี่เท่าของเส้นผ่านศูนย์กลางของดวงจันทร์เต็มดวง — อยู่ห่างออกไปประมาณ 2,600 ปีแสง และกว้างกว่า 100 ปีแสง
+    </string>
+    <string name="object_info_north_america_nebula_funfact" translation_description="Fun fact about the North America Nebula shown in the info card. Translate this text.">
+    แม้ว่าขนาดความสว่างของมันเท่ากับ 4 แต่เนบิวลานี้มีขนาดใหญ่และกระจายตัวมากเกินไปจนมองไม่เห็นด้วยตาเปล่าในท้องฟ้าส่วนใหญ่ — แต่เมื่อถ่ายภาพแล้วมันจะสวยงามมาก โดยเปิดเผยผนังแคกนัส ซึ่งเป็นส่วนโค้งหนาแน่นของการก่อตัวของดาวที่รุนแรงตามขอบด้านใต้ของมัน
+    </string>
+    <string name="object_info_north_america_nebula_distance" translation_description="Distance to the North America Nebula shown in the info card. Translate units if appropriate for your locale.">~2,590 ปีแสง</string>
+    <string name="object_info_north_america_nebula_size" translation_description="Physical size of the North America Nebula shown in the info card. Translate units if appropriate for your locale.">~140 ปีแสง</string>
+    <!-- Exposed Cranium Nebula - PMR 1 -->
+    <string name="object_info_exposed_cranium_nebula_description" translation_description="Description of the Exposed Cranium Nebula shown in the info card. Translate this text.">
+    เนบิวลาหัวกะโหลกเปิดโล่ง (PMR 1) เป็นเนบิวลาดาวเคราะห์ในกลุ่มดาวเวลา ห่างออกไปประมาณ 5,000 ปีแสง ชื่อที่แปลกประหลาดของมันมาจากเส้นก๊าซสีเข้มที่ไหลผ่านแนวตั้งตรงกลาง แบ่งกลีบที่เรืองแสงออกเป็นรูปร่างที่คล้ายสมองอยู่ในกะโหลกโปร่งใสอย่างน่าขนลุก ที่หัวใจของมันมีดาวฟ้าร้อน Wolf-Rayet ที่ปล่อยชั้นนอกที่สะสมมาตลอดชีวิต
+    </string>
+    <string name="object_info_exposed_cranium_nebula_funfact" translation_description="Fun fact about the Exposed Cranium Nebula shown in the info card. Translate this text.">
+    ในปี 2026 กล้องโทรทรรศน์อวกาศเจมส์ เวบบ์ได้จับภาพใหม่ที่น่าทึ่งของเนบิวลาหัวกะโหลก โดยแสดงโครงสร้างสองชั้นของมันด้วยรายละเอียดที่ไม่เคยมีมาก่อน — เปลือกนอกที่อุดมไปด้วยไฮโดรเจนและเมฆชั้นในที่บรรจุองค์ประกอบที่หนักกว่าซึ่งสร้างขึ้นโดยดาวที่กำลังตายลง
+    </string>
+    <string name="object_info_exposed_cranium_nebula_distance" translation_description="Distance to the Exposed Cranium Nebula shown in the info card. Translate units if appropriate for your locale.">~5,000 ปีแสง</string>
+    <string name="object_info_exposed_cranium_nebula_size" translation_description="Physical size of the Exposed Cranium Nebula shown in the info card. Translate units if appropriate for your locale.">~2 ปีแสง</string>
+
+    <!-- Jewel Box (NGC 4755) -->
+    <string name="object_info_jewel_box_description" translation_description="Description of the Jewel Box cluster shown in the info card. Translate this text.">
+    กล่องอัญมณี (NGC 4755) เป็นกระจุกดาวเปิดที่อ่อนวัยและสดใสในกลุ่มดาวครักซ์ มองเห็นได้ง่ายด้วยตาเปล่าเป็นแพตช์ขนาดสี่ดาวที่มัวมองตั้งอยู่ทางตะวันออกเฉียงใต้ของมิโมซา เมื่อมองผ่านกล้องโทรทรรศน์ ดาวของมันจะเปล่งประกายด้วยสีที่ตัดกันอย่างชัดเจน — ดาวยักษ์สีน้ำเงินลึกข้างๆ ดาวยักษ์สีแดงที่โดดเด่น — ซึ่งทำให้ได้ชื่อที่จอห์น เฮอร์เชล ตั้งให้มัน: เครื่องประดับที่ยอดเยี่ยม อายุเพียง 14–16 ล้านปี มันเป็นหนึ่งในกระจุกดาวที่อ่อนวัยที่สุดและมีสีสันที่สุดในท้องฟ้า
+    </string>
+    <string name="object_info_jewel_box_funfact" translation_description="Fun fact about the Jewel Box shown in the info card. Translate this text.">
+    ดาวแดงที่โดดเด่นของกระจุกนี้ κ Crucis เป็นดาวยักษ์แดงที่มีความสว่างมากจนเกินไปจนเกินกว่าดวงอาทิตย์มากกว่า 100,000 เท่า — เป็นการเตือนใจที่ชัดเจนว่ากระจุกดาวไม่ได้มีสีเดียวกันทั้งหมด
+    </string>
+    <string name="object_info_jewel_box_distance" translation_description="Distance to the Jewel Box shown in the info card. Translate units if appropriate for your locale.">~6,500 ปีแสง</string>
+    <string name="object_info_jewel_box_size" translation_description="Physical size of the Jewel Box shown in the info card. Translate units if appropriate for your locale.">~19 ปีแสง</string>
+
+    <!-- Double Cluster (NGC 869 & NGC 884) -->
+    <string name="object_info_double_cluster_description" translation_description="Description of the Double Cluster shown in the info card. Translate this text.">
+    กระจุกดาวคู่ (NGC 869 และ NGC 884) เป็นคู่ที่สวยงามของกระจุกดาวเปิดหนุ่มสาวในกลุ่มดาวเพอร์เซอุส วางตัวเคียงข้างกันในท้องฟ้าห่างกันเพียงกว่าหนึ่งองศา ทั้งสองมองเห็นได้ด้วยตาเปล่าเป็นแพทช์ที่มัวๆ แต่แม้แต่กล้องโทรทรรศน์ขนาดเล็กก็เผยให้เห็นดาวยักษ์สีน้ำเงินขาวสีสันหลายร้อยดวงที่บรรจุอยู่ในกระจุกดาวสองกระจุก ห่างออกไปประมาณ 7,500 ปีแสง พวกมันอยู่ในแขนเพอร์เซอุสของกาแลคซี่ของเราและอยู่ในอันดับของวัตถุที่ดีที่สุดสำหรับกล้องส่องทางไกลในท้องฟ้าเหนือ
+    </string>
+    <string name="object_info_double_cluster_funfact" translation_description="Fun fact about the Double Cluster shown in the info card. Translate this text.">
+    ที่อายุเพียง 14 ล้านปี Double Cluster นั้นอ่อนมากเมื่อเทียบกับกระจุกดาวอื่น ๆ — เพิ่งเกิดมาจนดาวที่มีมวลมากที่สุดยังคงเป็นดาวยักษ์สีน้ำเงินที่ส่องแสงสดใส โดยมีดาวบางดวงวิวัฒนาไปเป็นดาวยักษ์สีแดงที่หายากและเพลิงพลาสมาแล้ว
+    </string>
+    <string name="object_info_double_cluster_distance" translation_description="Distance to the Double Cluster shown in the info card. Translate units if appropriate for your locale.">~7,500 ปีแสง</string>
+    <string name="object_info_double_cluster_size" translation_description="Physical size of the Double Cluster shown in the info card. Translate units if appropriate for your locale.">กระจุกดาวแต่ละกระจุก ~70 ปีแสง; คู่กระจุกห่างกัน ~1,000 ปีแสง</string>
+
+    <!-- 47 Tucanae (NGC 104) -->
+    <string name="object_info_n47_tucanae_description" translation_description="Description of 47 Tucanae shown in the info card. Translate this text.">
+    47 Tucanae (NGC 104) เป็นกระจุกดาวทรงกลมที่สว่างเป็นอันดับสองในท้องฟ้า ซึ่งเป็นลูกบอลที่มีความหนาแน่นประกอบด้วยดาวโบราณประมาณหนึ่งล้านดวงที่โคจรรอบทางช้างเผือกในกลุ่มดาวทูคานา ห่างออกไปประมาณ 14,500 ปีแสง มันปรากฏต่อดวงตาเปล่าเป็นดาวขนาดที่สี่ที่มีลักษณะเบลอ แต่กล้องโทรทรรศน์สามารถแยกแยะแกนที่อัดแน่นของมันออกมาเป็นฝูงดาวสีทองและสีขาวฟ้าที่ยอดเยี่ยม ดาวของมันเกิดขึ้นเมื่อประมาณ 13 พันล้านปีที่แล้ว ทำให้กระจุกดาวนี้มีอายุเกือบเท่ากับจักรวาลเอง
+    </string>
+    <string name="object_info_n47_tucanae_funfact" translation_description="Fun fact about 47 Tucanae shown in the info card. Translate this text.">
+    47 Tucanae เป็นโรงงานพัลซาร์จักรวาล: นักดาราศาสตร์พบพัลซาร์มิลลิวินาทีอย่างน้อย 35 ดวงที่หมุนหลายร้อยครั้งต่อวินาทีภายในนั้น — มากกว่าในกระจุกทรงกลมที่รู้จักอื่น ๆ — ผลมาจากการเข้าใกล้ของดาวฤกษ์ที่นำมาซึ่งการหมุนเวียนของดาวนิวตรอนเก่าโดยการหมุนให้เร็วขึ้น
+    </string>
+    <string name="object_info_n47_tucanae_distance" translation_description="Distance to 47 Tucanae shown in the info card. Translate units if appropriate for your locale.">~14,500 ปีแสง</string>
+    <string name="object_info_n47_tucanae_size" translation_description="Physical size of 47 Tucanae shown in the info card. Translate units if appropriate for your locale.">~120 ปีแสง</string>
+
+    <!-- Centaurus A (NGC 5128) -->
+    <string name="object_info_centaurus_a_description" translation_description="Description of Centaurus A shown in the info card. Translate this text.">
+    Centaurus A (NGC 5128) เป็นแกแล็กซี่วิทยุแอกทีฟที่อยู่ใกล้โลกที่สุด ซึ่งเป็นแกแล็กซี่รูปไข่ยักษ์ในกลุ่มดาว Centaurus ที่มีแถบฝุ่นสีดำที่โดดเด่นบ่งบอกถึงอดีตที่รุนแรง — แกแล็กซี่เกลียวที่ถูกกลืนเข้าไปประมาณ 200–700 ล้านปีที่แล้ว ที่ใจกลางของมันมีหลุมดำมวลมหาศาลขนาด 55 ล้านเท่าของมวลดวงอาทิตย์ที่ขับเคลื่อนลำแสงสัมพัทธภาพยืดออกไปกว่า 1 ล้านปีแสงในความยาวคลื่นวิทยุ ที่ระยะห่างประมาณ 12 ล้านปีแสง มันเป็นหนึ่งในแกแล็กซี่ที่ได้รับการศึกษามากที่สุดในท้องฟ้า
+    </string>
+    <string name="object_info_centaurus_a_funfact" translation_description="Fun fact about Centaurus A shown in the info card. Translate this text.">
+    Centaurus A เป็นหนึ่งในแหล่งกำเนิดคลื่นวิทยุธรรมชาติที่มีพลังมากที่สุดในท้องฟ้า — เจ็ตของมันปล่อยพลาสมาออกไปด้วยความเร็วเกือบเท่ากับความเร็วแสง และขอบเขตเต็มของกลีบวิทยุของมันครอบคลุมพื้นที่เทียบเท่ากับดวงจันทร์เต็มดวง 100 ดวงวางเรียงต่อกันไปทั่วท้องฟ้า
+    </string>
+    <string name="object_info_centaurus_a_distance" translation_description="Distance to Centaurus A shown in the info card. Translate units if appropriate for your locale.">~12 ล้านปีแสง</string>
+    <string name="object_info_centaurus_a_size" translation_description="Physical size of Centaurus A shown in the info card. Translate units if appropriate for your locale.">~123,000 ปีแสง</string>
+
     <!-- ==================== CONSTELLATIONS ==================== -->
     <!-- Note: Constellation names are defined in celestial_objects.xml -->
     <!-- Orion -->
@@ -1871,4 +1930,697 @@
     Vulpecula มีเนบิวลาดัมเบลล์ (M27) ซึ่งเป็นเนบิวลาดาวเคราะห์ดวงแรกที่ค้นพบ (โดย Charles Messier ในปี 1764) และเป็นเป้าหมายที่สวยงามสำหรับการสังเกตการณ์ด้วยกล้องส่องทางไกลสองตา!
     </string>
     <string name="object_info_vulpecula_size" translation_description="Physical size of Vulpecula shown in the info card. Translate units if appropriate for your locale.">268 ตารางองศา</string>
+
+    <!-- Galilean Moons of Jupiter -->
+    <string name="object_info_io_description" translation_description="Description of Io shown in the info card. Translate this text.">
+    ไอโอ เป็นดวงจันทร์กาลิเลอีที่อยู่ชั้นในสุดของดาวพฤหัสบดี และเป็นวัตถุที่มีกิจกรรมภูเขาไฟที่สุดในระบบสุริยะ
+    </string>
+    <string name="object_info_io_funfact" translation_description="Fun fact about Io shown in the info card. Translate this text.">
+    ไอโอมีภูเขาไฟที่ใช้งานอยู่หลายร้อยแห่ง บางแห่งปะทุน้ำลาวาสูงสิบกว่าหลายกิโลเมตร กิจกรรมอย่างต่อเนื่องของมันถูกขับเคลื่อนโดยความร้อนจากแรงโน้มถ่วงอันมหาศาลของดาวพฤหัสบดี
+    </string>
+    <string name="object_info_io_distance" translation_description="Distance to Io shown in the info card. Translate units if appropriate for your locale.">421,700 กม. จากดาวพฤหัสบดี</string>
+    <string name="object_info_io_size" translation_description="Physical size of Io shown in the info card. Translate units if appropriate for your locale.">เส้นผ่านศูนย์กลาง 3,643 กม.</string>
+
+    <string name="object_info_europa_description" translation_description="Description of Europa shown in the info card. Translate this text.">
+    ยูโรปา เป็นดวงจันทร์กาลิเลอีที่สองและเชื่อกันว่ามีมหาสมุทรน้ำเหลวขนาดใหญ่อยู่ใต้เปลือกน้ำแข็ง ทำให้เป็นหนึ่งในสถานที่ที่มีแนวโน้มมากที่สุดในการค้นหาชีวิต
+    </string>
+    <string name="object_info_europa_funfact" translation_description="Fun fact about Europa shown in the info card. Translate this text.">
+    มหาสมุทรใต้พื้นผิวของยูโรปาอาจมีน้ำเหลวมากกว่าสองเท่าของมหาสมุทรทั้งหมดของโลก ซึ่งคงอยู่ในสถานะเหลวเนื่องจากความร้อนจากน้ำขึ้นน้ำลงของดาวพฤหัสบดี
+    </string>
+    <string name="object_info_europa_distance" translation_description="Distance to Europa shown in the info card. Translate units if appropriate for your locale.">671,100 กม. จากดาวพฤหัสบดี</string>
+    <string name="object_info_europa_size" translation_description="Physical size of Europa shown in the info card. Translate units if appropriate for your locale.">เส้นผ่านศูนย์กลาง 3,122 กม.</string>
+
+    <string name="object_info_ganymede_description" translation_description="Description of Ganymede shown in the info card. Translate this text.">
+    แกนีมีด เป็นดวงจันทร์ที่ใหญ่ที่สุดในระบบสุริยะ — แม้กระทั่งใหญ่กว่าดาวพุธ มันเป็นดวงจันทร์เพียงดวงเดียวที่ทราบกันว่าสามารถสร้างสนามแม่เหล็กของตัวเองได้
+    </string>
+    <string name="object_info_ganymede_funfact" translation_description="Fun fact about Ganymede shown in the info card. Translate this text.">
+    แกนีมีดใหญ่กว่าปรอทในด้านขนาด แม้ว่ามวลจะเป็นเพียงครึ่งหนึ่ง สนามแม่เหล็กภายในของมันสร้างแมกนีโตสเฟียร์ขนาดเล็กของตัวเองภายในแมกนีโตสเฟียร์ที่ใหญ่กว่ามากของดาวพฤหัสบดี
+    </string>
+    <string name="object_info_ganymede_distance" translation_description="Distance to Ganymede shown in the info card. Translate units if appropriate for your locale.">1,070,400 กม. จากดาวพฤหัสบดี</string>
+    <string name="object_info_ganymede_size" translation_description="Physical size of Ganymede shown in the info card. Translate units if appropriate for your locale.">เส้นผ่านศูนย์กลาง 5,268 กม.</string>
+
+    <string name="object_info_callisto_description" translation_description="Description of Callisto shown in the info card. Translate this text.">
+    แคลลิสโตเป็นดวงจันทร์กาลิเลอที่อยู่ไกลที่สุดและเป็นหนึ่งในวัตถุที่มีหลุมอุกกาบาตมากที่สุดในระบบสุริยะ พื้นผิวโบราณของมันเก็บบันทึกของการชนกระแทกของระบบสุริยะในยุคแรก
+    </string>
+    <string name="object_info_callisto_funfact" translation_description="Fun fact about Callisto shown in the info card. Translate this text.">
+    แคลลิสโตโคจรอยู่นอกแถบรังสีหลักของดาวพฤหัสบดี ทำให้มันเป็นดวงจันทร์กาลิเลอที่ปลอดภัยที่สุดสำหรับการสำรวจของมนุษย์ในอนาคต — บางครั้งเรียกว่า \'gateway moon\' หรือ \'ดวงจันทร์ประตูทาง\'
+    </string>
+    <string name="object_info_callisto_distance" translation_description="Distance to Callisto shown in the info card. Translate units if appropriate for your locale.">1,882,700 กม. จากดาวพฤหัสบดี</string>
+    <string name="object_info_callisto_size" translation_description="Physical size of Callisto shown in the info card. Translate units if appropriate for your locale.">เส้นผ่านศูนย์กลาง 4,821 กม.</string>
+
+    <!-- Moons of Mars -->
+    <string name="object_info_phobos_description" translation_description="Description of Phobos shown in the info card. Translate this text.">
+    ฟอบอส เป็นดวงจันทร์ที่ใหญ่กว่าและอยู่ชั้นในสุดของดาวอังคาร โคจรเข้าใกล้ดาวเคราะห์มากกว่าดวงจันทร์ดวงอื่นใดในระบบสุริยะ มันมีรูปร่างไม่สม่ำเสมอ มีร่องลึกและหลุมอุกกาบาตมากมาย และเชื่อกันว่าเป็นดาวเคราะห์น้อยที่ถูกจับได้
+    </string>
+    <string name="object_info_phobos_funfact" translation_description="Fun fact about Phobos shown in the info card. Translate this text.">
+    ฟอบอส โคจรรอบดาวอังคารอย่างรวดเร็ว มันขึ้นมาจากทิศตะวันตกและตกไปทางทิศตะวันออก และมันกำลังเข้าสู่ศูนย์กลางอย่างช้าๆ ซึ่งจะนำไปสู่การชนกับดาวอังคารหรือแตกออกเป็นวงแหวนในอีกประมาณ 50 ล้านปีข้างหน้า
+    </string>
+    <string name="object_info_phobos_distance" translation_description="Distance to Phobos shown in the info card. Translate units if appropriate for your locale.">9,376 กม. จากดาวอังคาร</string>
+    <string name="object_info_phobos_size" translation_description="Physical size of Phobos shown in the info card. Translate units if appropriate for your locale.">27 × 22 × 18 กม.</string>
+
+    <string name="object_info_deimos_description" translation_description="Description of Deimos shown in the info card. Translate this text.">
+    ดีมอส เป็นดวงจันทร์ที่เล็กกว่าและอยู่ด้านนอกของดาวอังคารทั้งสองดวง มีพื้นผิวเรียบและปกคลุมด้วยฝุ่น ซึ่งทำให้มีลักษณะกลมกว่าโฟบอส เช่นเดียวกับดวงจันทร์คู่ของมัน ถือว่าเป็นดาวเคราะห์น้อยที่ถูกจับได้จากแถบด้านนอก
+    </string>
+    <string name="object_info_deimos_funfact" translation_description="Fun fact about Deimos shown in the info card. Translate this text.">
+    ดีมอส มีขนาดเล็กและอยู่ห่างไกลมากจนเมื่อมองจากพื้นผิวของดาวอังคาร มันดูเหมือนดาวสว่างเพียงดวงเดียว และใช้เวลาประมาณ 30 ชั่วโมงในการลอยไปช้าๆ ข้ามท้องฟ้ายามค่ำคืน
+    </string>
+    <string name="object_info_deimos_distance" translation_description="Distance to Deimos shown in the info card. Translate units if appropriate for your locale.">23,460 กม. จากดาวอังคาร</string>
+    <string name="object_info_deimos_size" translation_description="Physical size of Deimos shown in the info card. Translate units if appropriate for your locale.">15 × 12 × 11 กม.</string>
+
+    <!-- Major Moons of Saturn -->
+    <string name="object_info_titan_description" translation_description="Description of Titan shown in the info card. Translate this text.">
+    ไทเทนเป็นดวงจันทร์ที่ใหญ่ที่สุดของดาวเสาร์ และเป็นดวงจันทร์ที่ใหญ่เป็นอันดับสองในระบบสุริยะ เป็นดวงจันทร์เพียงดวงเดียวที่ทราบกันว่ามีบรรยากาศหนาแน่น — ชั้นไนโตรเจนหนาเนื้อที่ผสมกับมีเทน — และเป็นโลกเพียงแห่งเดียวนอกเหนือจากโลกที่ทราบกันว่ามีทะเลของเหลวที่เสถียรบนพื้นผิว
+    </string>
+    <string name="object_info_titan_funfact" translation_description="Fun fact about Titan shown in the info card. Translate this text.">
+    ทะเลสาบและทะเลของไทเทนเต็มไปด้วยมีเทนและอีเทนเหลวแทนน้ำที่อุณหภูมิหนาวเย็น −179°C ภารกิจ Dragonfly rotorcraft ของ NASA ซึ่งกำหนดให้มาถึงในปี 2034 จะบินระหว่างสถานที่บนพื้นผิวของไทเทนเพื่อค้นหาเคมีของชีวิต
+    </string>
+    <string name="object_info_titan_distance" translation_description="Distance to Titan shown in the info card. Translate units if appropriate for your locale.">1,221,870 กม. จากดาวเสาร์</string>
+    <string name="object_info_titan_size" translation_description="Physical size of Titan shown in the info card. Translate units if appropriate for your locale.">เส้นผ่านศูนย์กลาง 5,151 กม.</string>
+
+    <string name="object_info_rhea_description" translation_description="Description of Rhea shown in the info card. Translate this text.">
+    เรีย (Rhea) เป็นดวงจันทร์ที่ใหญ่เป็นอันดับสองของดาวเสาร์ และเป็นโลกที่มีหลุมอุกาบาตมากมายประกอบด้วยน้ำแข็งและหิน พื้นผิวที่ซีดและเก่าแก่ของมันเก็บรักษาหลุมอุกาบาตที่บริสุทธิ์ที่สุดบางส่วนของระบบสุริยะ พร้อมกับหน้าผาน้ำแข็งสว่างที่ดินถล่มได้เปิดเผยวัสดุสดใหม่จากด้านใต้==/TRANSLATION ITEM==
+    </string>
+    <string name="object_info_rhea_funfact" translation_description="Fun fact about Rhea shown in the info card. Translate this text.">
+    ในปี 2008 ข้อมูลจาก Cassini แนะนำว่า Rhea อาจมีวงแหวนเศษซากบางๆ โคจรรอบตัวมัน ซึ่งจะทำให้มันเป็นดวงจันทร์ดวงแรกที่ค้นพบว่ามีระบบวงแหวนของตัวเอง หากได้รับการยืนยัน มันจะเป็นการค้นพบที่น่าทึ่ง หลักฐานดังกล่าวยังคงเป็นพื้นที่การวิจัยที่ใช้งานอยู่
+    </string>
+    <string name="object_info_rhea_distance" translation_description="Distance to Rhea shown in the info card. Translate units if appropriate for your locale.">527,108 กม. จากดาวเสาร์</string>
+    <string name="object_info_rhea_size" translation_description="Physical size of Rhea shown in the info card. Translate units if appropriate for your locale.">เส้นผ่านศูนย์กลาง 1,527 กม.</string>
+
+    <string name="object_info_tethys_description" translation_description="Description of Tethys shown in the info card. Translate this text.">
+    Tethys เป็นดวงจันทร์ที่เต็มไปด้วยน้ำแข็งของดาวเสาร์ ซึ่งมีลักษณะเด่นสองประการ: หลุมอุกกาบาต Odysseus ที่กว้างใหญ่ 400 กิโลเมตร ครอบคลุมเกือบหนึ่งในสามของพื้นผิวดวงจันทร์ และ Ithaca Chasma ซึ่งเป็นระบบหุบเขาที่ยืดออกไปสามในสี่ของเส้นรอบโลก
+    </string>
+    <string name="object_info_tethys_funfact" translation_description="Fun fact about Tethys shown in the info card. Translate this text.">
+    เทธิสเป็นน้ำแข็งเกือบบริสุทธิ์ — มีความหนาแน่นต่ำที่สุดของดวงจันทร์ใดๆ ในระบบสุริยะ แทบจะหนาแน่นกว่าน้ำแข็งเท่านั้น อิทาคา แชสมา อาจเกิดขึ้นเมื่อภายในแข็งตัวและขยายตัว ทำให้เปลือกหินด้านบนแตกร้าวจากภายใน
+    </string>
+    <string name="object_info_tethys_distance" translation_description="Distance to Tethys shown in the info card. Translate units if appropriate for your locale.">294,619 กม. จากดาวเสาร์</string>
+    <string name="object_info_tethys_size" translation_description="Physical size of Tethys shown in the info card. Translate units if appropriate for your locale.">เส้นผ่านศูนย์กลาง 1,062 กม.</string>
+
+    <string name="object_info_dione_description" translation_description="Description of Dione shown in the info card. Translate this text.">
+    ไดโอนคือดวงจันทร์ที่เต็มไปด้วยน้ำแข็งของดาวเสาร์ ซึ่งมีหน้าด้านหน้าที่มีหลุมอุกกาบาตมากมายและซีกโลกด้านหลังที่เต็มไปด้วย崖น้ำแข็งสว่าง — เส้นรอยแตกที่เกิดจากแรงเทคโทนิกโบราณที่เปิดเผยน้ำแข็งสดใหม่จากด้านล่าง ข้อมูลแรงโน้มถ่วงจากแคสสินีบ่งชี้ถึงมหาสมุทรของเหลวใต้พื้นผิวอยู่ใต้เปลือกโลก
+    </string>
+    <string name="object_info_dione_funfact" translation_description="Fun fact about Dione shown in the info card. Translate this text.">
+    ไดโอนแบ่งวงโคจรกับดวงจันทร์ขนาดเล็กสองดวง คือ เฮเลนและโพลีดิวเซส ซึ่งถูกล็อกไว้ 60° ข้างหน้าและข้างหลังที่จุดสมดุลแรงโน้มถ่วงที่เรียกว่าจุดลากรองจ์ โดยเฉพาะเฮเลนสามารถมองเห็นได้ว่าขี่ไปตามเหมือนผู้โดยสารฟรีจักรวาลในภาพของแคสสินี
+    </string>
+    <string name="object_info_dione_distance" translation_description="Distance to Dione shown in the info card. Translate units if appropriate for your locale.">377,396 กม. จากดาวเสาร์</string>
+    <string name="object_info_dione_size" translation_description="Physical size of Dione shown in the info card. Translate units if appropriate for your locale.">เส้นผ่านศูนย์กลาง 1,122 กม.</string>
+
+    <string name="object_info_iapetus_description" translation_description="Description of Iapetus shown in the info card. Translate this text.">
+    ไอเอเพตัส (Iapetus) เป็นหนึ่งในดวงจันทร์ที่โดดเด่นที่สุดของดาวเสาร์: ซีกโลกด้านหน้าของมันปกคลุมไปด้วยวัสดุสีดำเข้มเหมือนถ่านหิน ในขณะที่ซีกโลกด้านหลังเป็นน้ำแข็งสีขาวสดใส ลักษณะสองสีที่รุนแรงนี้ทำให้ Giovanni Cassini งงงวยเมื่อเขาค้นพบดวงจันทร์นี้ในปี ค.ศ. 1671 และความแตกต่างนั้นชัดเจนมากจนมองเห็นได้ด้วยกล้องโทรทรรศน์ขนาดเล็ก
+    </string>
+    <string name="object_info_iapetus_funfact" translation_description="Fun fact about Iapetus shown in the info card. Translate this text.">
+    ไอเอเพตัสยังมีสันเขาเส้นศูนย์สูตรที่สูงชันสูงขึ้น 20 กิโลเมตร — สูงกว่าภูเขาใดๆ บนโลก — วิ่งไปรอบเส้นศูนย์สูตรหลายพันกิโลเมตร ต้นกำเนิดของมันไม่เป็นที่ทราบ: อาจเป็นเศษซากของวงแหวนที่พังทลาย หรือการพับตัวของเปลือกโลกสมัยโบราณ ที่เกิดขึ้นเมื่อดวงจันทร์หมุนเร็วมากในอดีตอันไกลโพ้น
+    </string>
+    <string name="object_info_iapetus_distance" translation_description="Distance to Iapetus shown in the info card. Translate units if appropriate for your locale.">3,560,820 กม. จากดาวเสาร์</string>
+    <string name="object_info_iapetus_size" translation_description="Physical size of Iapetus shown in the info card. Translate units if appropriate for your locale.">เส้นผ่านศูนย์กลาง 1,469 กม.</string>
+
+    <!-- Moon of Neptune -->
+    <string name="object_info_triton_description" translation_description="Description of Triton shown in the info card. Translate this text.">
+    ไทรทัน เป็นดวงจันทร์ที่ใหญ่ที่สุดของเนปจูน และเป็นหนึ่งในวัตถุที่พิเศษที่สุดในระบบสุริยะ มันโคจรรอบเนปจูนในทิศทางตรงกันข้าม — ตรงข้ามกับการหมุนของดาวเคราะห์เอง — ซึ่งเป็นสัญญาณที่แข็งแกร่งว่ามันถูกจับมาจากระบบสุริยะด้านนอก ส่วนใหญ่มาจากแถบไคเปอร์ ในช่วงต้นประวัติศาสตร์ของเนปจูน
+    </string>
+    <string name="object_info_triton_funfact" translation_description="Fun fact about Triton shown in the info card. Translate this text.">
+    แม้ว่าอุณหภูมิพื้นผิวของไทรทันจะอยู่ที่ −235°C — ซึ่งเป็นอุณหภูมิต่ำสุดที่วัดได้บนวัตถุใดๆ ที่ยานอวกาศเยี่ยมชม — แต่ยาน Voyager 2 ได้ค้นพบน้ำพุไนโตรเจนที่ยังคงทำงานอยู่บนไทรทันในปี 1989 เส้นสีเข้มบนพื้นผิวแสดงตำแหน่งที่เมฆก๊าซและสารเข้มสีพ่นออกมาหลายกิโลเมตรเข้าไปในชั้นบรรยากาศบาง ๆ
+    </string>
+    <string name="object_info_triton_distance" translation_description="Distance to Triton shown in the info card. Translate units if appropriate for your locale.">354,759 กม. จากดาวเนปจูน</string>
+    <string name="object_info_triton_size" translation_description="Physical size of Triton shown in the info card. Translate units if appropriate for your locale.">เส้นผ่านศูนย์กลาง 2,707 กม.</string>
+
+    <!-- Major Moons of Uranus -->
+    <string name="object_info_titania_description" translation_description="Description of Titania shown in the info card. Translate this text.">
+    ไทเทเนีย เป็นดวงจันทร์ที่ใหญ่ที่สุดของดาวยูเรนัส และเป็นดวงจันทร์ที่ใหญ่เป็นอันดับแปดในระบบสุริยะ พื้นผิวของมันแสดงให้เห็นส่วนผสมของที่ราบเก่าที่มีหลุมอุกกาบาต และหน้าผาและหุบเขาที่อ่อนกว่า ซึ่งบ่งชี้ถึงประวัติทางธรณีวิทยาที่ซับซ้อนซึ่งอาจรวมถึงกิจกรรมเทคโทนิกในอดีตที่ปรับเปลี่ยนเปลือกน้ำแข็ง
+    </string>
+    <string name="object_info_titania_funfact" translation_description="Fun fact about Titania shown in the info card. Translate this text.">
+    ดวงจันทร์ทั้งหมดของยูเรนัสตั้งชื่อตามตัวละครจากเชกสเปียร์และอเล็กซานเดอร์ โป — ทิเทเนีย คือราชินีของนางฟ้าในเรื่อง A Midsummer Night\'s Dream ดวงจันทร์ดวงนี้เป็นหนึ่งในดวงจันทร์ของดาวเคราะห์หลักไม่กี่ดวงที่ไม่ได้ตั้งชื่อตามตัวละครจากตำนานกรีกหรือโรมัน
+    </string>
+    <string name="object_info_titania_distance" translation_description="Distance to Titania shown in the info card. Translate units if appropriate for your locale.">435,910 กม. จากดาวยูเรนัส</string>
+    <string name="object_info_titania_size" translation_description="Physical size of Titania shown in the info card. Translate units if appropriate for your locale.">เส้นผ่านศูนย์กลาง 1,578 กม.</string>
+
+    <string name="object_info_oberon_description" translation_description="Description of Oberon shown in the info card. Translate this text.">
+    โอเบรอนเป็นดวงจันทร์ที่อยู่ไกลที่สุดของยูเรนัส 5 ดวงจันทร์หลักและเป็นหนึ่งในดวงจันทร์ที่มีหลุมอุกกาบาตมากที่สุด โดยมีพื้นผิวโบราณที่เปลี่ยนแปลงเพียงเล็กน้อยตั้งแต่ยุคแรกของระบบสุริยะ หลายหลุมอุกกาบาตขนาดใหญ่มีวัสดุสีเข้มบนพื้นของหลุม ซึ่งอาจเป็นสารอินทรีย์ที่นำมาโดยวัตถุที่ชนกระแทก
+    </string>
+    <string name="object_info_oberon_funfact" translation_description="Fun fact about Oberon shown in the info card. Translate this text.">
+    โอเบอรอนมีภูเขาที่สูงขึ้นประมาณ 6 กิโลเมตรจากที่ราบโดยรอบ ซึ่งเทียบได้กับยอดเขาสูงสุดบนโลก ต่างจากภูเขาของโลกที่เกิดจากการเคลื่อนตัวของแผ่นเปลือกโลก ลักษณะนี้อาจเป็นยอดเขากลางของหลุมอุกกาบาตโบราณหรือซากของกิจกรรมภูเขาไฟในยุคแรก
+    </string>
+    <string name="object_info_oberon_distance" translation_description="Distance to Oberon shown in the info card. Translate units if appropriate for your locale.">ห่างจากยูเรนัส 583,520 กม.</string>
+    <string name="object_info_oberon_size" translation_description="Physical size of Oberon shown in the info card. Translate units if appropriate for your locale.">เส้นผ่านศูนย์กลาง 1,523 กม.</string>
+
+    <string name="object_info_ariel_description" translation_description="Description of Ariel shown in the info card. Translate this text.">
+    แอเรียลมีพื้นผิวที่อ่อนเยาว์และสว่างที่สุดในบรรดาดวงจันทร์ห้าดวงหลักของยูเรนัส พื้นที่ของมันถูกครอบงำโดยเครือข่ายของหุบเขาลึกและที่ราบเรียบที่ได้รับการปรับปรุงพื้นผิวเมื่อนานมาแล้วโดยของไหล — อาจเป็นน้ำหรือส่วนผสมของแอมโมเนีย-น้ำ — ที่พุ่งขึ้นมาจากภายในและท่วมพื้นที่โบราณ
+    </string>
+    <string name="object_info_ariel_funfact" translation_description="Fun fact about Ariel shown in the info card. Translate this text.">
+    หุบเขาของแอเรียลสามารถลึกถึง 10 กิโลเมตร ลึกกว่าแกรนด์แคนยอนมาก กล้องโทรทรรศน์เจมส์ เวบบ์ได้ตรวจพบน้ำแข็งคาร์บอนไดออกไซด์บนพื้นผิวแอเรียล ซึ่งบ่งชี้ถึงปฏิกิริยาเคมีบนพื้นผิวที่กำลังดำเนินอยู่ ซึ่งขับเคลื่อนโดยอนุภาคที่มีประจุจากสนามแม่เหล็กของดาวยูเรนัส
+    </string>
+    <string name="object_info_ariel_distance" translation_description="Distance to Ariel shown in the info card. Translate units if appropriate for your locale.">ห่างจากยูเรนัส 191,020 กม.</string>
+    <string name="object_info_ariel_size" translation_description="Physical size of Ariel shown in the info card. Translate units if appropriate for your locale.">เส้นผ่านศูนย์กลาง 1,158 กม.</string>
+
+    <string name="object_info_umbriel_description" translation_description="Description of Umbriel shown in the info card. Translate this text.">
+    Umbriel เป็นดวงจันทร์ที่มืดที่สุดในห้าดวงจันทร์หลักของยูเรนัส โดยมีพื้นผิวที่เก่าแก่และมีหลุมอุกกาบาตมากมายอย่างสม่ำเสมอ ซึ่งแสดงให้เห็นสัญญาณเพียงเล็กน้อยของการเปลี่ยนแปลงทางธรณีวิทยาที่เห็นได้ในดวงจันทร์ข้างเคียง ภายในของมันดูเหมือนว่าจะคงอยู่ในสภาพเย็นและแข็งตัวตั้งแต่ช่วงต้นของประวัติศาสตร์ของระบบสุริยะ
+    </string>
+    <string name="object_info_umbriel_funfact" translation_description="Fun fact about Umbriel shown in the info card. Translate this text.">
+    ลักษณะที่โดดเด่นที่สุดบน Umbriel คือ Wunda ซึ่งเป็นวงแหวนสว่างกว้างประมาณ 140 กิโลเมตรใกล้เส้นศูนย์สูตร ถูกค้นพบโดย Voyager 2 ในปี 1986 ลักษณะที่แน่นอนของ Wunda ยังคงเป็นปริศนา — อาจเป็นพื้นหลุมอุกกาบาตที่เคลือบด้วยคาร์บอนไดออกไซด์หรือน้ำแข็งแอมโมเนียที่สะสมมานานหลังจากการชนที่สร้างมันขึ้น
+    </string>
+    <string name="object_info_umbriel_distance" translation_description="Distance to Umbriel shown in the info card. Translate units if appropriate for your locale.">ห่างจากยูเรนัส 266,300 กม.</string>
+    <string name="object_info_umbriel_size" translation_description="Physical size of Umbriel shown in the info card. Translate units if appropriate for your locale.">เส้นผ่านศูนย์กลาง 1,170 กม.</string>
+
+    <!-- Globular clusters already on the map -->
+    <string name="object_info_omega_centauri_description" translation_description="Description of Omega Centauri shown in the info card. Translate this text.">
+    โอเมก้า เซนทอรี (Omega Centauri) เป็นกระจุกดาวทรงกลมที่ใหญ่ที่สุดและมีมวลมากที่สุดที่โคจรรอบทางช้างเผือก มีดาวประมาณ 10 ล้านดวงบรรจุอยู่ในทรงกลมที่มีเส้นผ่านศูนย์กลางประมาณ 150 ปีแสง มองเห็นได้ด้วยตาเปล่าเป็นดาวที่มีลักษณะเบลอๆ ในกลุ่มดาวเซนทอรัส และเมื่อมองผ่านกล้องส่องทางไกลหรือกล้องโทรทรรศน์ใดๆ จะเห็นเป็นลูกบอลดาวที่สวยงามอย่างน่าทึ่ง
+    </string>
+    <string name="object_info_omega_centauri_funfact" translation_description="Fun fact about Omega Centauri shown in the info card. Translate this text.">
+    ต่างจากกระจุกดาวทั่วไป โอเมก้า เซนทอรี มีดาวที่มีอายุและองค์ประกอบทางเคมีแตกต่างกันมากมาย — ซึ่งเป็นสัญญาณว่ามันอาจเป็นแกนเปลือยของแกแล็กซี่แคระที่ถูกฉีกออกและกลืนเข้าไปในทางช้างเผือกเมื่อหลายพันล้านปีที่แล้ว นอกจากนี้ มันอาจยังมีหลุมดำมวลกลางอยู่ตรงกลาง
+    </string>
+    <string name="object_info_omega_centauri_distance" translation_description="Distance to Omega Centauri shown in the info card. Translate units if appropriate for your locale.">17,090 ปีแสง</string>
+    <string name="object_info_omega_centauri_size" translation_description="Physical size of Omega Centauri shown in the info card. Translate units if appropriate for your locale.">เส้นผ่านศูนย์กลาง ~150 ปีแสง</string>
+
+    <!-- Deep-sky objects: new catalog additions -->
+    <string name="object_info_hyades_description" translation_description="Description of the Hyades star cluster shown in the info card. Translate this text.">
+    ไฮเอดส์ (Hyades) เป็นกระจุกดาวเปิดที่อยู่ใกล้ที่สุดกับระบบสุริยะและเป็นหนึ่งในกระจุกดาวที่ได้รับการศึกษามากที่สุดในด้านดาราศาสตร์ มองเห็นได้ด้วยตาเปล่าเป็นรูปแบบดาวรูป V ที่สร้างหน้าของราศีพฤษภ โดยมีดาวหลายร้อยดวงกระจายอยู่ทั่วท้องฟ้าประมาณ 5°
+    </string>
+    <string name="object_info_hyades_funfact" translation_description="Fun fact about the Hyades shown in the info card. Translate this text.">
+    ดาวสีส้มอันสดใสชื่อ Aldebaran ดูเหมือนจะอยู่ภายในกระจุกดาว Hyades แต่ในความเป็นจริงมันอยู่ใกล้กว่าเพียงครึ่งหนึ่งของระยะทาง — เป็นการจัดตำแหน่งที่บังเอิญ กระจุกดาวที่แท้จริงอยู่ห่างออกไปประมาณ 153 ปีแสง และมีดาวดวงแรกที่วัดระยะทางได้โดยใช้พารัลแลกซ์จากดาวเทียม Hipparcos
+    </string>
+    <string name="object_info_hyades_distance" translation_description="Distance to the Hyades shown in the info card. Translate units if appropriate for your locale.">153 ปีแสง</string>
+    <string name="object_info_hyades_size" translation_description="Angular size of the Hyades shown in the info card.">~5° ทั่วทั้ง</string>
+
+    <string name="object_info_coma_star_cluster_description" translation_description="Description of the Coma Berenices Star Cluster shown in the info card. Translate this text.">
+    กระจุกดาวโคมา เบเรนิเซส (Coma Berenices Star Cluster) เป็นกระจุกดาวเปิดที่อยู่ใกล้เคียง ประกอบด้วยดาวประมาณ 40 ดวงที่กระจัดกระจายอย่างหลวมๆ ทั่วท้องฟ้าเกือบ 5° สามารถมองเห็นได้ด้วยตาเปล่าเป็นหมอกอ่อนๆ ในสภาพอากาศมืด เป็นกระจุกดาวเปิดที่อยู่ใกล้ที่สุดเป็นอันดับสามของระบบสุริยะ และเป็นแหล่งกำเนิดของกลุ่มดาว โคมา เบเรนิเซส
+    </string>
+    <string name="object_info_coma_star_cluster_funfact" translation_description="Fun fact about the Coma Berenices Star Cluster shown in the info card. Translate this text.">
+    ผู้สังเกตการณ์โบราณเห็นกระจุกดาวนี้เป็นผมของราชินีเบเรนิเซ II แห่งอียิปต์ ซึ่งตำนานเล่าว่าเธอได้ตัดผมทองคำของเธอออกเป็นการบูชาเพื่อให้สามีของเธอกลับมาปลอดภัยจากสงคราม โปเตเลมี III ได้ให้ชื่อกลุ่มดาวที่ผิดปกติแห่งนี้อย่างเป็นทางการเพื่อเป็นเกียรติแก่เธอประมาณ 245 ปีก่อนคริสตศักราช
+    </string>
+    <string name="object_info_coma_star_cluster_distance" translation_description="Distance to the Coma Star Cluster shown in the info card. Translate units if appropriate for your locale.">288 ปีแสง</string>
+    <string name="object_info_coma_star_cluster_size" translation_description="Angular size of the Coma Star Cluster shown in the info card.">~5° ทั่วทั้ง</string>
+
+    <string name="object_info_coathanger_description" translation_description="Description of the Coathanger asterism shown in the info card. Translate this text.">
+    The Coathanger เป็นกระบบดาวที่โดดเด่นซึ่งประกอบด้วยดาวสิบดวงในกลุ่มดาว Vulpecula ที่สร้างรูปร่างที่จำเพาะเจาะจง: ดาวหกดวงเรียงเป็นเส้นตรงพร้อมกับดาวสี่ดวงห้อยลงมาด้านล่างเป็นรูปตะขอ ซึ่งเหมือนกับตัวแขวนเสื้อที่กลับหัวลง เป็นหนึ่งในวัตถุที่ดีที่สุดสำหรับการสังเกตด้วยกล้องส่องทางไกลในท้องฟ้าฤดูร้อน และพอดีกับสนามมองเห็นของกล้องส่องทางไกลทั่วไป
+    </string>
+    <string name="object_info_coathanger_funfact" translation_description="Fun fact about the Coathanger shown in the info card. Translate this text.">
+    แม้ว่าดูเหมือนเป็นกระจุกดาว แต่ดาวของ Coathanger ไม่มีความสัมพันธ์ทางกายภาพ — ดาวเหล่านี้อยู่ห่างกันมากและเป็นเพียงความบังเอิญของเส้นสายตา Brocchi\'s Cluster ถูกจัดทำแค็ตตาล็อกโดย Dalmiro Brocchi ในช่วงทศวรรษ 1920 และกล้องโทรทรรศน์อวกาศลำแรกที่ถ่ายภาพมันคือ Hipparcos ซึ่งยืนยันว่าดาวเหล่านี้ไม่มีความสัมพันธ์กัน
+    </string>
+    <string name="object_info_coathanger_distance" translation_description="Distance to the Coathanger shown in the info card. Translate units if appropriate for your locale.">~420 ปีแสง (ดาวที่สว่างที่สุด)</string>
+    <string name="object_info_coathanger_size" translation_description="Angular size of the Coathanger shown in the info card.">~1° ทั่วทั้ง</string>
+
+    <string name="object_info_helix_nebula_description" translation_description="Description of the Helix Nebula shown in the info card. Translate this text.">
+    เนบิวลาเฮลิกซ์เป็นเนบิวลาดาวเคราะห์ที่มีขนาดปรากฏใหญ่ที่สุดในท้องฟ้า ซึ่งเป็นเปลือกแก๊สที่ขยายตัวจากดาวฤกษ์ที่คล้ายดวงอาทิตย์ในตอนท้ายของชีวิต มีขนาดประมาณครึ่งองศา มองเห็นได้ด้วยกล้องส่องทางไกลเป็นแสงวงกลมอ่อนๆ ในกลุ่มดาวกระบือ และมีชื่อเล่นว่า "ตาของพระเจ้า" เนื่องจากลักษณะของมันในภาพถ่ายเวลาเปิดรับแสงนาน
+    </string>
+    <string name="object_info_helix_nebula_funfact" translation_description="Fun fact about the Helix Nebula shown in the info card. Translate this text.">
+    ที่ศูนย์กลางของเนบิวลาเฮลิกซ์ มีดาวแคระขาวที่อยู่ใกล้โลกที่สุดดวงหนึ่ง ซึ่งเป็นซากดาวที่ร้อนจัด มีขนาดเท่ากับโลก แต่มีมวลเท่ากับดวงอาทิตย์ นี่คือชะตากรรมที่รอคอยดวงอาทิตย์ของเราในอีกประมาณห้าพันล้านปีข้างหน้า
+    </string>
+    <string name="object_info_helix_nebula_distance" translation_description="Distance to the Helix Nebula shown in the info card. Translate units if appropriate for your locale.">650 ปีแสง</string>
+    <string name="object_info_helix_nebula_size" translation_description="Angular size of the Helix Nebula shown in the info card.">เส้นผ่านศูนย์กลาง ~3 ปีแสง</string>
+
+    <string name="object_info_sculptor_galaxy_description" translation_description="Description of the Sculptor Galaxy shown in the info card. Translate this text.">
+    ดาราจักร Sculptor เป็นหนึ่งในดาราจักรเกลียวด้านข้างที่สว่างและสวยงามที่สุดที่มองเห็นได้จากโลก ปรากฏเป็นแสงสว่างที่ยาวออกไปในกลุ่มดาวทางใต้ Sculptor เป็นหนึ่งในดาราจักรระเบิดดาวที่ใกล้ที่สุด — ดาราจักรที่กำลังประสบการณ์การระเบิดของการก่อตัวของดาวอย่างรุนแรง — ที่มองเห็นได้สำหรับนักดาราศาสตร์สมัครเล่นด้วยกล้องส่องทางไกลจากท้องฟ้าที่มืด
+    </string>
+    <string name="object_info_sculptor_galaxy_funfact" translation_description="Fun fact about the Sculptor Galaxy shown in the info card. Translate this text.">
+    ดาราจักร Sculptor เป็นหนึ่งในสมาชิกที่สว่างที่สุดของกลุ่มดาราจักร Sculptor — กลุ่มดาราจักรที่อยู่ใกล้ที่สุดกับกลุ่มท้องถิ่นของเรา ภูมิภาคการระเบิดดาวกลางของมันสร้างดาวใหม่ในอัตราที่สูงกว่าทางช้างเหลือกหลายเท่า ซึ่งเกิดจากปฏิสัมพันธ์ในอดีตกับดาราจักรข้างเคียง
+    </string>
+    <string name="object_info_sculptor_galaxy_distance" translation_description="Distance to the Sculptor Galaxy shown in the info card. Translate units if appropriate for your locale.">11.4 ล้านปีแสง</string>
+    <string name="object_info_sculptor_galaxy_size" translation_description="Physical size of the Sculptor Galaxy shown in the info card. Translate units if appropriate for your locale.">~90,000 ปีแสง ทั่วทั้ง</string>
+
+    <string name="object_info_blue_snowball_nebula_description" translation_description="Description of the Blue Snowball Nebula shown in the info card. Translate this text.">
+    Blue Snowball เป็นเนบิวลาดาวเคราะห์ในกลุ่มดาวแอนโดรเมดา — เปลือกแก๊สที่เรืองแสงซึ่งถูกขับออกมาจากดาวที่กำลังจะตายแล้ว ที่ขนาดปรากฏ 8.3 มันเป็นหนึ่งในเนบิวลาดาวเคราะห์ที่สว่างที่สุดและมีสีสันที่สุดในท้องฟ้า ปรากฏเป็นจานสีน้ำเงิน-เขียวที่สดใสแม้กระทั่งในกล้องโทรทรรศน์ขนาดเล็ก รูปร่างที่สมมาตรและสีที่เข้มข้นของมันทำให้เป็นที่ชื่นชอบในหมู่ผู้สังเกตการณ์
+    </string>
+    <string name="object_info_blue_snowball_nebula_funfact" translation_description="Fun fact about the Blue Snowball Nebula shown in the info card. Translate this text.">
+    สีฟ้าที่โดดเด่นของ Blue Snowball มาจากออกซิเจนที่มีประจุบวกสองเท่าที่เรืองแสงด้วยความยาวคลื่นสีเขียวเฉพาะ รวมกับการปล่อยแสงของไฮโดรเจน — จานสีที่ตาของมนุษย์รับรู้ว่าเป็นสีน้ำเงินเขียว ดาวแคระขาวตรงกลางมีอุณหภูมิพื้นผิวประมาณ 100,000°C ร้อนพอที่จะทำให้ก๊าซโดยรอบเกิดการแตกตัวเป็นไอออนที่ระยะนี้
+    </string>
+    <string name="object_info_blue_snowball_nebula_distance" translation_description="Distance to the Blue Snowball Nebula shown in the info card. Translate units if appropriate for your locale.">~2,500 ปีแสง</string>
+    <string name="object_info_blue_snowball_nebula_size" translation_description="Physical size of the Blue Snowball Nebula shown in the info card. Translate units if appropriate for your locale.">เส้นผ่านศูนย์กลาง ~0.8 ปีแสง</string>
+
+    <string name="object_info_ghost_of_jupiter_description" translation_description="Description of the Ghost of Jupiter planetary nebula shown in the info card. Translate this text.">
+    幽灵木星是位于长蛇座的一个明亮的行星状星云，其视大小与木星相似——因此得名。在8.6等的亮度下，它是天空中最容易用小型望远镜观测的行星状星云之一，显示出清晰的圆盘，在中等口径的望远镜中可以看到一丝颜色。
+    </string>
+    <string name="object_info_ghost_of_jupiter_funfact" translation_description="Fun fact about the Ghost of Jupiter shown in the info card. Translate this text.">
+    幽灵木星具有一个明亮的内壳，周围是一个较暗的外晕——这种双壳结构表明垂死的恒星至少在两个不同的时期喷出了气体。其中心恒星是已知最热的白矮星之一，表面温度估计约为 75,000°C。
+    </string>
+    <string name="object_info_ghost_of_jupiter_distance" translation_description="Distance to the Ghost of Jupiter shown in the info card. Translate units if appropriate for your locale.">~1,400 ปีแสง</string>
+    <string name="object_info_ghost_of_jupiter_size" translation_description="Physical size of the Ghost of Jupiter shown in the info card. Translate units if appropriate for your locale.">เส้นผ่านศูนย์กลาง ~1 ปีแสง</string>
+
+    <string name="object_info_saturn_nebula_description" translation_description="Description of the Saturn Nebula shown in the info card. Translate this text.">
+    เนบิวลาดาวเสาร์ (Saturn Nebula) เป็นเนบิวลาดาวเคราะห์ในกลุ่มดาวกุมภ์ (Aquarius) ตั้งชื่อตามความคล้ายคลึงกับดาวเสาร์ — ส่วนขยายที่เรียกว่า ansae ยื่นออกมาจากทั้งสองด้านเหมือนมือจับแหวน มองเห็นได้ด้วยกล้องโทรทรรศน์ขนาดกลาง ที่ขนาดปรากฏ 8.0 มันเป็นหนึ่งในเนบิวลาดาวเคราะห์ที่สว่างที่สุดในท้องฟ้า และแสดงโครงสร้างที่ซับซ้อนเมื่อใช้กล้องโทรทรรศน์ขนาดใหญ่
+    </string>
+    <string name="object_info_saturn_nebula_funfact" translation_description="Fun fact about the Saturn Nebula shown in the info card. Translate this text.">
+    วิลเลียม เฮอร์เชล ค้นพบเนบิวลาดาวเสาร์ในปี ค.ศ. 1782 และสังเกตลักษณะที่คล้ายดาวเสาร์ การสังเกตการณ์สมัยใหม่เผยให้เห็นเปลือกแก๊สที่แตกต่างกันอย่างน้อยสี่ชั้นที่ล้อมรอบดาวแคระขาวตรงกลาง ซึ่งสะท้อนถึงการสูญเสียมวลหลายครั้งในขั้นตอนสุดท้ายของชีวิตดาวฤกษ์
+    </string>
+    <string name="object_info_saturn_nebula_distance" translation_description="Distance to the Saturn Nebula shown in the info card. Translate units if appropriate for your locale.">~5,000 ปีแสง</string>
+    <string name="object_info_saturn_nebula_size" translation_description="Physical size of the Saturn Nebula shown in the info card. Translate units if appropriate for your locale.">~1 ปีแสง ทั่วทั้ง</string>
+
+    <string name="object_info_ngc_2903_description" translation_description="Description of the galaxy NGC 2903 shown in the info card. Translate this text.">
+    NGC 2903 เป็นกาแลคซี่ก้นหอยที่มีแถบสว่างในกลุ่มดาวสิงห์ มักเรียกว่า "วัตถุเมสเซียร์ที่เมสเซียร์พลาดไป" — เป็นหนึ่งในกาแลคซี่ที่โดดเด่นที่สุดในท้องฟ้าที่ไม่รวมอยู่ในแคตตาล็อกที่มีชื่อเสียงของเขา ที่ขนาดปรากฏ 8.9 มันมองเห็นได้ง่ายด้วยกล้องส่องทางไกล และแสดงโครงสร้างก้นหอยที่สวยงามในกล้องโทรทรรศน์ขนาดกลาง
+    </string>
+    <string name="object_info_ngc_2903_funfact" translation_description="Fun fact about NGC 2903 shown in the info card. Translate this text.">
+    NGC 2903 มีความเข้มข้นของ "จุดร้อน" การก่อตัวของดาวสูงที่สุดแห่งหนึ่งที่ทราบในบริเวณแถบกลางของกาแล็กซี — กระจุกดาวหนาแน่นของดาวหนุ่มขนาดใหญ่ที่ส่องแสงด้วยการก่อตัวของดาวที่รุนแรง ใช้เป็นเกณฑ์มาตรฐานสำหรับการศึกษากิจกรรม starburst ในกาแล็กซีเกลียวที่มีแถบ
+    </string>
+    <string name="object_info_ngc_2903_distance" translation_description="Distance to NGC 2903 shown in the info card. Translate units if appropriate for your locale.">30 ล้านปีแสง</string>
+    <string name="object_info_ngc_2903_size" translation_description="Physical size of NGC 2903 shown in the info card. Translate units if appropriate for your locale.">~80,000 ปีแสง ทั่วทั้ง</string>
+
+    <!-- Meteor showers -->
+    <string name="object_info_quadrantids_description" translation_description="Description of the Quadrantids meteor shower shown in the info card. Translate this text.">
+    ควอดแรนติดส์ (Quadrantids) เป็นฝนดาวตกเดือนมกราคมที่มีปริมาณมากมายและมีจุดสูงสุดที่คมชัดและสั้นมากซึ่งใช้เวลาเพียงไม่กี่ชั่วโมง จุดกำเนิดของฝนดาวตกนี้อยู่ในกลุ่มดาว บูเตส (Boötes) ใกล้กับตำแหน่งของกลุ่มดาวที่ไม่มีอยู่แล้ว ควอดรานส์ มูรัลิส (Quadrans Muralis) ซึ่งเป็นที่มาของชื่อฝนดาวตกนี้ ภายใต้สภาวะที่เหมาะสม จะมองเห็นดาวตกได้ถึง 120 ดวงต่อชั่วโมง
+    </string>
+    <string name="object_info_quadrantids_funfact" translation_description="Fun fact about the Quadrantids meteor shower shown in the info card. Translate this text.">
+    ต่างจากฝนดาวตกหลักส่วนใหญ่ที่มาจากดาวหาง ดาวแม่ของ Quadrantids คือดาวเคราะห์น้อย 2003 EH1 — ซึ่งคิดว่าเป็นนิวเคลียสของดาวหางที่ไม่ทำงานและหมดสิ้นไปเมื่อหลายศตวรรษที่แล้ว การมีอยู่ของมันได้รับการยืนยันเพียงในปี 2003 เท่านั้น
+    </string>
+
+    <string name="object_info_lyrids_description" translation_description="Description of the Lyrids meteor shower shown in the info card. Translate this text.">
+    ลีริดส์ (Lyrids) เป็นฝนดาวตกในฤดูใบไม้ผลิที่เชื่อถือได้ ซึ่งแผ่ออกมาจากบริเวณใกล้ดาวสว่าง เวกา (Vega) ในกลุ่มดาว ไลรา (Lyra) พวกมันสร้างดาวตกที่เคลื่อนไหวเร็วและมีความสว่างปานกลาง ถึงจุดสูงสุดที่ประมาณ 18 ดวงต่อชั่วโมง และบางครั้งสร้างลูกไฟที่ทิ้งรอยควันเรืองแสง
+    </string>
+    <string name="object_info_lyrids_funfact" translation_description="Fun fact about the Lyrids meteor shower shown in the info card. Translate this text.">
+    ลีริดส์เป็นฝนดาวตกที่บันทึกไว้อย่างน่าเชื่อถือที่สุดในประวัติศาสตร์ นักดาราศาสตร์ชาวจีนบันทึกการตกของดาวตกที่ "ตกเหมือนฝน" ในปี 687 ก่อนคริสตศักราช ซากวัตถุมาจากดาวหางแธตเชอร์ ซึ่งใช้เวลา 415 ปีในการโคจรรอบดวงอาทิตย์ และเข้ามาในระบบสุริยะชั้นในครั้งล่าสุดในปี 1861
+    </string>
+
+    <string name="object_info_aquariids_description" translation_description="Description of the Eta Aquariids meteor shower shown in the info card. Translate this text.">
+    ฝนดาวตกเอตา อควาริอิดส์ เป็นหนึ่งในสองฝนดาวตกประจำปีที่เกิดจากเศษซากของดาวหางฮัลเลย์ ถึงจุดสูงสุดได้ถึง 70 ดวงต่อชั่วโมง ฝนดาวตกนี้มีความโปรดปรานต่อซีกโลกใต้เป็นอย่างมาก โดยจุดกำเนิดสูงขึ้นก่อนพระอาทิตย์ขึ้น ผู้สังเกตการณ์ในซีกโลกเหนือยังคงสามารถเพลิดเพลินไปกับอัตราที่น่าเคารพ 30 ดวงขึ้นไปต่อชั่วโมง
+    </string>
+    <string name="object_info_aquariids_funfact" translation_description="Fun fact about the Eta Aquariids meteor shower shown in the info card. Translate this text.">
+    อุกกาบาต Eta Aquariid เดินทางด้วยความเร็ว 66 กม./วินาที — เร็วพอที่อากาศที่ถูกไอออไนซ์ที่พวกมันสร้างขึ้นจะสามารถเรืองแสงได้นานหลายวินาทีหลังจากที่อุกกาบาตหายไป คุณอาจเห็นฝุ่นโบราณของ Halley\'s เผาไหม้ตรงหน้าตาของคุณ ซึ่งหลุดออกมาในระหว่างการเยี่ยมชมของดาวหางหลายครั้งเมื่อหลายพันปีที่แล้ว
+    </string>
+
+    <string name="object_info_deltaaquariids_description" translation_description="Description of the Delta Aquariids meteor shower shown in the info card. Translate this text.">
+    ดาวตกเดลตา อควาริอุสใต้ถึงจุดสูงสุดในปลายเดือนกรกฎาคม และมองเห็นได้ดีที่สุดจากละติจูดเขตร้อนและใต้ โดยจุดกำเนิดในกลุ่มดาวควาริอุสขึ้นสูงก่อนพระอาทิตย์ขึ้น พวกมันสร้างกระแสดาวตกที่มีความเร็วปานกลางอย่างต่อเนื่องได้ถึง 16 ดวงต่อชั่วโมง โดยมีลูกไฟสว่างน้อยมาก
+    </string>
+    <string name="object_info_deltaaquariids_funfact" translation_description="Fun fact about the Delta Aquariids meteor shower shown in the info card. Translate this text.">
+    วัตถุแม่ที่แน่นอนของฝนดาวเดลตา อควาริอิดส์ยังคงไม่แน่นอน ผู้สมัครชั้นนำคือ 彗星 96P/Machholz ซึ่งเป็นดาวหางคาบสั้นที่ผิดปกติ มีวงโคจรที่เอียงสูงมากและแกว่งเข้าใกล้ดวงอาทิตย์อย่างน่าทึ่ง — ใกล้กว่าดาวพุธ
+    </string>
+
+    <string name="object_info_perseids_description" translation_description="Description of the Perseids meteor shower shown in the info card. Translate this text.">
+    ดาวตกเพอร์เซอิดส์เป็นฝนดาวตกที่ได้รับความนิยมมากที่สุดของปี โดยมีจุดสูงสุดในคืนสิงหาคมที่อบอุ่น ด้วยอัตราสูงถึง 100 ดวงต่อชั่วโมง เศษซากจากดาวหางสวิฟต์-ทัตเทิลเผาไหม้สูงในชั้นบรรยากาศของโลก ทำให้เกิดดาวตกที่เร็วและสว่าง — หลายดวงทิ้งรอยเรืองแสงที่ยาวนาน — แผ่ออกมาจากกลุ่มดาวเพอร์เซอุส
+    </string>
+    <string name="object_info_perseids_funfact" translation_description="Fun fact about the Perseids meteor shower shown in the info card. Translate this text.">
+    ดาวแม่ของฝนดาวตกเพอร์เซอิดส์ คือ 彗星 Swift-Tuttle มีนิวเคลียสกว้าง 26 กิโลเมตร ซึ่งใหญ่กว่าวัตถุที่คิดว่าเป็นสาเหตุของการสูญพันธุ์ครั้งใหญ่ที่สิ้นสุดยุคไดโนเสาร์ ดาวหางนี้ผ่านเข้าไปในระบบสุริยะด้านในครั้งล่าสุดในปี 1992 และจะไม่กลับมาจนกว่าจะถึงปี 2125
+    </string>
+
+    <string name="object_info_orionids_description" translation_description="Description of the Orionids meteor shower shown in the info card. Translate this text.">
+    ออริโอนิดส์ เป็นฝนดาวตกลำดับที่สองที่เกิดจากดาวหางฮัลเลย์ทุกปี โดยแผ่ออกมาจากบริเวณใกล้กับไม้เท้าที่ยกขึ้นของกลุ่มดาวโอไรออน ถึงจุดสูงสุดที่ประมาณ 25 ดวงต่อชั่วโมง ฝนดาวตกนี้เป็นที่รู้จักจากดาวตกที่เร็วและมักสว่างไสว ซึ่งมักทิ้งรอยแสงไอออนไนเซชันที่เรืองแสงยาวนานหลายวินาที
+    </string>
+    <string name="object_info_orionids_funfact" translation_description="Fun fact about the Orionids meteor shower shown in the info card. Translate this text.">
+    彗星ฮัลเลย์มีความรับผิดชอบต่อฝนดาวตกประจำปีสองครั้ง: Eta Aquariids ในเดือนพฤษภาคม เมื่อโลกข้ามเศษซากของหางดาวที่ออกไป และ Orionids ในเดือนตุลาคม เมื่อโลกข้ามเศษซากที่เข้ามา ด้วยเหตุนี้เราจึงได้สัมผัสฝุ่นฮัลเลย์โบราณสองครั้งต่อปี
+    </string>
+
+    <string name="object_info_leonids_description" translation_description="Description of the Leonids meteor shower shown in the info card. Translate this text.">
+    ดาวตกลีโอนิดส์แผ่ออกมาจากเคราวของราศีสิงห์ และโดยทั่วไปจะสร้างดาวตกประมาณ 20 ดวงต่อชั่วโมง ดาวตกเหล่านี้มีชื่อเสียงจากพายุที่ยิ่งใหญ่ซึ่งเกิดขึ้นประมาณทุก 33 ปี เมื่อโลกผ่านเส้นฝุ่นหนาแน่นที่หลุดออกมาจากดาวหาง 55P/Tempel-Tuttle พายุเหล่านี้สามารถสร้างดาวตกได้นับพันดวงต่อชั่วโมง
+    </string>
+    <string name="object_info_leonids_funfact" translation_description="Fun fact about the Leonids meteor shower shown in the info card. Translate this text.">
+    พายุ Leonid ปี 1833 ผลิต流星ประมาณ 100,000 ดวงต่อชั่วโมง ทำให้ผู้สังเกตการณ์ทั่วอเมริกาเหนือตกใจ เพราะกลัวว่าท้องฟ้ากำลังไหม้ เหตุการณ์นี้ได้ก่อให้เกิดการศึกษาด้านวิทยาศาสตร์เกี่ยวกับฝนดาวตก พายุที่เทียบเท่ากันเกิดขึ้นในปี 1966 และ 1999
+    </string>
+
+    <string name="object_info_puppidvelids_description" translation_description="Description of the Puppid-Velids meteor shower shown in the info card. Translate this text.">
+    Puppid-Velids เป็นกลุ่มฝนดาวตกรองที่ซับซ้อนซึ่งแผ่ออกมาจากกลุ่มดาว Puppis และ Vela ในทางช้างเผือกตอนใต้ ด้วยจำนวนสูงสุดประมาณ 10 ดวงต่อชั่วโมง จึงสังเกตได้ดีที่สุดจากซีกโลกใต้ ซึ่งจุดแผ่รังสีสูงขึ้นในท้องฟ้าเดือนธันวาคม
+    </string>
+    <string name="object_info_puppidvelids_funfact" translation_description="Fun fact about the Puppid-Velids meteor shower shown in the info card. Translate this text.">
+    เชื่อกันว่า Puppid-Velids เป็นเศษซากจากดาวหางแม่ที่แตกต่างกันหลายดวงมากกว่าแหล่งเดียว รวมถึง Comet 26P/Grigg-Skjellerup จุดรังสีทางใต้ของพวกมันไม่เคยขึ้นเหนือขอบฟ้าสำหรับผู้สังเกตการณ์ที่ละติจูดเหนือประมาณ 40°N ทำให้เป็นฝนดาวที่โลกส่วนใหญ่ไม่ค่อยเห็น
+    </string>
+
+    <string name="object_info_geminids_description" translation_description="Description of the Geminids meteor shower shown in the info card. Translate this text.">
+    เจมินิดส์ถือว่าเป็นฝนดาวตกที่ยอดเยี่ยมที่สุดของปี — มีจำนวนมาก (สูงถึง 120 ดวงต่อชั่วโมง) เชื่อถือได้ และเกิดขึ้นตั้งแต่เย็นเร็ว ไม่ใช่เฉพาะหลังเที่ยงคืน พวกมันแผ่ออกมาจากกลุ่มดาวเจมินี และสร้างดาวตกที่มีความสว่างหลากหลาย รวมถึงลูกไฟที่สดใส
+    </string>
+    <string name="object_info_geminids_funfact" translation_description="Fun fact about the Geminids meteor shower shown in the info card. Translate this text.">
+    ต่างจากฝนดาวตกหลักอื่นๆ ฝนดาวตก Geminids มาจากดาวเคราะห์น้อยแทนที่จะเป็นดาวหาง: 3200 Phaethon ซึ่งเป็น "ดาวหางหินอ่อน" ที่มีวงโคจรใกล้ดวงอาทิตย์มากกว่าดาวเคราะห์น้อยชื่อใดๆ ความร้อนสูงสุดอาจทำให้พื้นผิวหินแตกร้าวและขับไล่ฝุ่นที่สร้างฝนดาวตก
+    </string>
+
+    <string name="object_info_ursids_description" translation_description="Description of the Ursids meteor shower shown in the info card. Translate this text.">
+    ยูร์ซิดส์ (Ursids) เป็นฝนดาวตกรองน้อยที่แผ่ออกมาจากกลุ่มดาว Ursa Minor ใกล้กับดาว Polaris ทำให้มันเป็นดาวที่ไม่ตั้งสำหรับผู้สังเกตการณ์ในซีกโลกเหนือ — มองเห็นได้ตลอดคืนโดยไม่ลับขอบฟ้า พวกมันถึงจุดสูงสุดรอบครีษมายัตรถึงประมาณ 10 ดวงต่อชั่วโมง และดาวหางแม่คือ 8P/Tuttle
+    </string>
+    <string name="object_info_ursids_funfact" translation_description="Fun fact about the Ursids meteor shower shown in the info card. Translate this text.">
+    ดาวตกยูร์ซิดส์บางครั้งเกิดการระเบิดที่ไม่คาดคิดซึ่งสูงกว่าอัตราปกติของพวกมันมาก ในปี 1945 และอีกครั้งในปี 2006 นักสังเกตการณ์บันทึกดาวตกได้ 50 ดวงขึ้นไปต่อชั่วโมง — มากกว่าจุดสูงสุดปกติถึงห้าเท่า การเพิ่มขึ้นเหล่านี้เกิดขึ้นเมื่อโลกเคลื่อนผ่านริบบิ้นของเศษซากที่หนาแน่นผิดปกติซึ่งหลุดออกมาจากการเข้าใกล้อย่างใกล้ชิดของดาวหางทัตเทิล
+    </string>
+
+    <!-- Category 5: Top priority — objects on the map that lacked info cards -->
+    <string name="object_info_m47_description" translation_description="Description of the open star cluster M47 shown in the info card. Translate this text.">
+    M47 เป็นกระจุกดาวเปิดที่สว่างและหลวมในกลุ่มดาวพูปิส มองเห็นได้ง่ายด้วยตาเปล่าและดูน่าสนใจในกล้องส่องทางไกล ดาวประมาณ 50 ดวงกระจายอยู่ในพื้นท้องฟ้าครึ่งองศา โดยดาวยักษ์สีส้มหลายดวงเพิ่มสีอุ่นให้กับสมาชิกสีน้ำเงินขาวจาง
+    </string>
+    <string name="object_info_m47_funfact" translation_description="Fun fact about M47 shown in the info card. Translate this text.">
+    M47 เป็นหนึ่งในวัตถุ Messier ที่ "หายไป" — ข้อผิดพลาดในการจดบันทึกในพิกัดดั้งเดิมของ Messier ทำให้มันอยู่ในท้องฟ้าว่างเปล่า ทำให้กระจุกดาวไม่ถูกระบุตัวตนเป็นเวลาเกือบสองศตวรรษ ตัวตนที่แท้จริงของมันคือ NGC 2422 ได้รับการยืนยันเพียงแค่ในปี 1959 เมื่อผู้สังเกตการณ์ทำงานย้อนกลับจากคำอธิบายของ Messier เพื่อค้นหาข้อผิดพลาด
+    </string>
+    <string name="object_info_m47_distance" translation_description="Distance to M47 shown in the info card. Translate units if appropriate for your locale.">1,600 ปีแสง</string>
+    <string name="object_info_m47_size" translation_description="Physical size of M47 shown in the info card. Translate units if appropriate for your locale.">~14 ปีแสง ทั่วทั้ง</string>
+
+    <string name="object_info_m41_description" translation_description="Description of the open star cluster M41 shown in the info card. Translate this text.">
+    M41 เป็นกระจุกดาวเปิดที่สวยงามในกลุ่มดาวสุนัขใหญ่ ตั้งอยู่เพียง 4° ทางใต้ของดาวซิริอุส — ดาวที่สว่างที่สุดในท้องฟ้ายามค่ำคืน มองเห็นได้ด้วยตาเปล่าจากพื้นที่มืดและสวยงามมากในกล้องส่องทางไกล ประกอบด้วยดาวประมาณ 100 ดวงกระจายอยู่ในพื้นที่กว้าง พร้อมดาวยักษ์สีส้มที่โดดเด่นหลายดวงท่ามกลางสมาชิกสีน้ำเงินขาวที่อ่อนกว่า
+    </string>
+    <string name="object_info_m41_funfact" translation_description="Fun fact about M41 shown in the info card. Translate this text.">
+    อริสโตเติลอาจได้สังเกต M41 ประมาณ 325 ปีก่อนคริสตศักราช — อาจเป็นการสังเกตวัตถุท้องฟ้าลึกที่บันทึกไว้เร็วที่สุด เขาอธิบายว่า "จุดมัวๆ" ทางใต้ของดาวซิริอุสที่ตรงกับตำแหน่งของ M41 หากการระบุตัวตนนี้ถูกต้อง M41 ก็ได้รับการอภิปรายมาเกือบสองพันปีก่อนที่กล้องโทรทรรศน์จะถูกประดิษฐ์ขึ้น
+    </string>
+    <string name="object_info_m41_distance" translation_description="Distance to M41 shown in the info card. Translate units if appropriate for your locale.">2,300 ปีแสง</string>
+    <string name="object_info_m41_size" translation_description="Physical size of M41 shown in the info card. Translate units if appropriate for your locale.">~25 ปีแสง ทั่วทั้ง</string>
+
+    <string name="object_info_m24_description" translation_description="Description of the Sagittarius Star Cloud (M24) shown in the info card. Translate this text.">
+    M24 คือ Sagittarius Star Cloud — ไม่ใช่กระจุกดาวหรือเนบิวลา แต่เป็นหน้าต่างผ่านช่องว่างในฝุ่นของทางช้างเหนือ ซึ่งเปิดเผยสนามดาวที่สวยงามกว้าง 2° มันเป็นบริเวณที่อุดมสมบูรณ์ที่สุดที่มองเห็นได้ผ่านกล้องส่องทางไกลในท้องฟ้า บรรจุด้วยดาวนับพันดวงที่มีระยะห่างต่างกันมากมายพร้อมกัน
+    </string>
+    <string name="object_info_m24_funfact" translation_description="Fun fact about M24 shown in the info card. Translate this text.">
+    ดาวในกระจุกดาว M24 ไม่ได้อยู่ที่ระยะเดียวกัน — กระจุกดาวนี้แสดงถึงหน้าตัดของแผ่นดิสก์ของกาแล็กซี่ที่มองผ่านอุโมงค์ธรรมชาติในฝุ่นระหว่างดาว ซึ่งครอบคลุมระยะทางตั้งแต่ 10,000 ถึง 16,000 ปีแสง ภายในกระจุกดาวนี้มีเนบิวลาสีดำและกระจุกดาวขนาดเล็กที่ปรากฏเป็นแผ่นสีดำบนพื้นหลังของดาวที่สว่างจ้า
+    </string>
+    <string name="object_info_m24_distance" translation_description="Distance range to M24 shown in the info card. Translate units if appropriate for your locale.">~10,000–16,000 ปีแสง (ช่วง)</string>
+    <string name="object_info_m24_size" translation_description="Physical size of M24 shown in the info card. Translate units if appropriate for your locale.">~600 ปีแสง หน้าต่างลึก</string>
+
+    <string name="object_info_m25_description" translation_description="Description of the open star cluster M25 shown in the info card. Translate this text.">
+    M25 เป็นกระจุกดาวเปิดที่สว่างและมองเห็นได้ด้วยตาเปล่าในกลุ่มดาวธนูคนร่ำรวย ตั้งอยู่บนพื้นหลังของสนามดาวที่หนาแน่นของทางช้างเผือกในฤดูร้อน ดาวประมาณ 600 ดวงกระจายอยู่ทั่วสนามกว้างครึ่งองศา ทำให้เป็นวัตถุที่สวยงามสำหรับการสังเกตการณ์ด้วยกล้องส่องทางไกล สมาชิกที่สว่างที่สุดของมันรวมถึงดาวยักษ์สีน้ำเงิน-ขาวหลายดวงและดาวแปรแสง Cepheid ที่ได้รับการศึกษามากที่สุดดวงหนึ่งในท้องฟ้า
+    </string>
+    <string name="object_info_m25_funfact" translation_description="Fun fact about M25 shown in the info card. Translate this text.">
+    M25 มีดาว U Sagittarii ซึ่งเป็นดาวแปรแสง Cepheid แบบดั้งเดิมที่สว่างและมืดลงในช่วงเวลา 6.7 วัน Cepheid เป็น "เทียนมาตรฐาน" ที่สำคัญสำหรับการวัดระยะห่างในจักรวาล เพราะช่วงเวลาการสั่นของพวกมันเผยให้เห็นความส่องสว่างที่แท้จริงของพวกมันโดยตรง — นักดาราศาสตร์ใช้พวกมันเพื่อกำหนดขนาดของทางช้างเผือกเป็นครั้งแรก จากนั้นจึงกำหนดขนาดของจักรวาลที่สังเกตได้
+    </string>
+    <string name="object_info_m25_distance" translation_description="Distance to M25 shown in the info card. Translate units if appropriate for your locale.">2,000 ปีแสง</string>
+    <string name="object_info_m25_size" translation_description="Physical size of M25 shown in the info card. Translate units if appropriate for your locale.">~19 ปีแสง ทั่วทั้ง</string>
+
+    <string name="object_info_m39_description" translation_description="Description of the open star cluster M39 shown in the info card. Translate this text.">
+    M39 เป็นกระจุกดาวเปิดขนาดใหญ่ที่กระจัดกระจายในกลุ่มดาวหงส์ มองเห็นได้ด้วยตาเปล่าใกล้เดเนบในทางช้างเผือกฤดูร้อนที่อุดมสมบูรณ์ ดาวสว่างประมาณ 30 ดวงของมันกระจายตัวอย่างหลวมๆ ในพื้นท้องฟ้ากว่างหนึ่งองศา ซึ่งชื่นชมได้ดีที่สุดด้วยกำลังขยายต่ำในกล้องส่องทางไกลหรือกล้องโทรทรรศน์มุมมองกว้าง — กำลังขยายที่สูงขึ้นเพียงแต่แยกมันออกเป็นสนามดาวที่กระจัดกระจายและไม่น่าสนใจ
+    </string>
+    <string name="object_info_m39_funfact" translation_description="Fun fact about M39 shown in the info card. Translate this text.">
+    ที่ระยะห่างประมาณ 825 ปีแสง M39 เป็นหนึ่งในกระจุกดาวเปิดที่ใกล้ที่สุดกับโลก และอายุประมาณ 240 ล้านปีทำให้เป็นหนึ่งในกระจุกที่มองเห็นได้ด้วยตาเปล่าที่เก่าแก่ที่สุด — เก่าพอที่ดาวฤกษ์ที่มีมวลมากที่สุดของมันได้สิ้นสุดชีวิตแล้ว เมสเซียร์บันทึกไว้ในปี ค.ศ. 1764 และมันอยู่ในจำนวนการเพิ่มเติมที่เก่าแก่ที่สุดของแคตตาล็อกของเขา
+    </string>
+    <string name="object_info_m39_distance" translation_description="Distance to M39 shown in the info card. Translate units if appropriate for your locale.">825 ปีแสง</string>
+    <string name="object_info_m39_size" translation_description="Physical size of M39 shown in the info card. Translate units if appropriate for your locale.">~8 ปีแสง ทั่วทั้ง</string>
+
+    <!-- Category 5: Special cases -->
+    <string name="object_info_m63_description" translation_description="Description of the Sunflower Galaxy (M63) shown in the info card. Translate this text.">
+    Sunflower Galaxy เป็นกาแล็กซี่เกลียวที่สว่างในกลุ่มดาว Canes Venatici ซึ่งมีแขนที่พันแน่นและมีจุดสีต่างๆ ที่เป็นบริเวณการก่อตัวของดาว ทำให้มีลักษณะคล้ายดอกไม้ที่โดดเด่นในภาพถ่ายเวลาเปิดรับแสงนาน ที่ขนาดปรากฏ 8.6 มันมองเห็นได้ด้วยกล้องส่องทางไกลจากท้องฟ้าที่มืดและแสดงรูปร่างที่ยาวและนิวเคลียสที่สว่างได้อย่างง่ายดายในกล้องโทรทรรศน์ขนาดเล็ก
+    </string>
+    <string name="object_info_m63_funfact" translation_description="Fun fact about the Sunflower Galaxy shown in the info card. Translate this text.">
+    M63 ถูกค้นพบโดย Pierre Méchain ในปี 1779 — เป็นหนึ่งในวัตถุ Messier เพียงไม่กี่ชิ้นที่ Méchain ค้นพบแทนที่จะเป็น Messier เอง มันเป็นสมาชิกของกลุ่ม M51 ซึ่งเกี่ยวข้องทางกายภาพกับ Whirlpool Galaxy (M51) และแสดงสัญญาณของปฏิสัมพันธ์ในอดีต: กระแสดาวโบราณที่ค่อยๆ หายไปห่อหุ้มรอบดิสก์ด้านนอกของมัน
+    </string>
+    <string name="object_info_m63_distance" translation_description="Distance to the Sunflower Galaxy shown in the info card. Translate units if appropriate for your locale.">29 ล้านปีแสง</string>
+    <string name="object_info_m63_size" translation_description="Physical size of the Sunflower Galaxy shown in the info card. Translate units if appropriate for your locale.">~100,000 ปีแสง ทั่วทั้ง</string>
+
+    <string name="object_info_ngc_6543_description" translation_description="Description of the Cat's Eye Nebula (NGC 6543) shown in the info card. Translate this text.">
+    เนบิวลาตาแมวเป็นหนึ่งในเนบิวลาดาวเคราะห์ที่มีโครงสร้างซับซ้อนที่สุดที่รู้จัก — แก๊สที่ดาวกำลังตายปล่อยออกมาถูกแกะสลักเป็นเปลือกศูนย์กลาง เจ็ท และปมสว่างที่มองเห็นได้ในภาพถ่ายของฮับเบิล ในกล้องโทรทรรศน์ขนาดเล็ก มันปรากฏเป็นจานสีน้ำเงินเขียวสดใสในดราโก ซึ่งเป็นหนึ่งในวัตถุที่มีสีสันมากที่สุดในท้องฟ้าฤดูใบไม้ร่วง
+    </string>
+    <string name="object_info_ngc_6543_funfact" translation_description="Fun fact about the Cat's Eye Nebula shown in the info card. Translate this text.">
+    ในปี 1864 นักดาราศาสตร์ William Huggins ได้ชี้กล้องสเปกโทรสโคปไปที่ Cat\'s Eye และพบว่ามันประกอบด้วยแก๊สที่เรืองแสงมากกว่าดาวที่ไม่สามารถแยกแยะได้ — เป็นครั้งแรกที่ธรรมชาติของเนบิวลาดาวเคราะห์ได้รับการยืนยัน การค้นพบนี้ก่อตั้งสาขาวิชาสเปกโทรสโคปีเนบิวลาและโค่นล้มมุมมองที่แพร่หลายว่าเนบิวลาทั้งหมดเป็นกระจุกดาวที่อยู่ห่างไกล
+    </string>
+    <string name="object_info_ngc_6543_distance" translation_description="Distance to the Cat's Eye Nebula shown in the info card. Translate units if appropriate for your locale.">~3,300 ปีแสง</string>
+    <string name="object_info_ngc_6543_size" translation_description="Physical size of the Cat's Eye Nebula shown in the info card. Translate units if appropriate for your locale.">~0.5 ปีแสง เส้นผ่านศูนย์กลาง</string>
+
+    <string name="object_info_m76_description" translation_description="Description of the Little Dumbbell Nebula (M76) shown in the info card. Translate this text.">
+    Little Dumbbell เป็นเนบิวลาดาวเคราะห์ในกลุ่มดาว Perseus ที่มีรูปร่างเป็นเลขแปดที่โดดเด่น — เป็นลูกพี่ลูกน้องที่เล็กกว่าของ M27 ซึ่งเป็น Dumbbell Nebula ในกลุ่มดาว Vulpecula แม้ว่าจะเป็นรายการที่มีความสว่างน้อยที่สุดในแคตตาล็อก Messier แต่มันให้รางวัลแก่การสังเกตการณ์ที่อดทนด้วยกล้องโทรทรรศน์ขนาดเล็ก และแสดงโครงสร้างที่สวยงามในเครื่องมือขนาดใหญ่ โดยมีกลีบที่สว่างกว่าสองกลีบล้อมรอบเอวที่มีความสว่างน้อยกว่า
+    </string>
+    <string name="object_info_m76_funfact" translation_description="Fun fact about the Little Dumbbell Nebula shown in the info card. Translate this text.">
+    M76 ถูกจัดทำรายการเดิมเป็นวัตถุแยกกันสองชิ้น — NGC 650 และ NGC 651 — เพราะผู้สังเกตการณ์ในยุคแรกอธิบายกลีบที่สว่างสองกลีบแยกกัน เป็นเนบิวลาดาวเคราะห์แบบสองขั้ว ที่เกิดขึ้นเมื่อการไหลออกของดาวที่กำลังจะตายถูกบีบที่เส้นศูนย์สูตร สร้างกลีบขยายตัวสองกลีบตามแนวแกนขั้ว ในขณะที่ก๊าซยังไหลออกมาที่เอว
+    </string>
+    <string name="object_info_m76_distance" translation_description="Distance to the Little Dumbbell Nebula shown in the info card. Translate units if appropriate for your locale.">~2,500 ปีแสง</string>
+    <string name="object_info_m76_size" translation_description="Physical size of the Little Dumbbell Nebula shown in the info card. Translate units if appropriate for your locale.">~2 ปีแสง ทั่วทั้ง</string>
+
+    <string name="object_info_v838_mon_description" translation_description="Description of V838 Monocerotis shown in the info card. Translate this text.">
+    V838 Monocerotis เป็นดาวแปรแสงที่ผิดปกติในกลุ่มดาว Monoceros ซึ่งเกิดการระเบิดอย่างน่าทึ่งในปี 2002 และกลายเป็นดาวที่สว่างที่สุดดวงหนึ่งในทางช้างเผือกเป็นเวลาสั้น ๆ แม้ว่าในปัจจุบันจะมีความสว่างน้อยเกินไปสำหรับผู้สังเกตการณ์ด้วยตาเปล่า แต่แสงสะท้อนที่ขยายตัวของมัน ซึ่งเป็นหน้าคลื่นของแสงที่ส่องสว่างให้กับเปลือกฝุ่นโบราณ ได้สร้างภาพถ่ายจากกล้องโทรทรรศน์อวกาศฮับเบิลที่ดราม่าติกที่สุดบางภาพที่เคยถ่ายมา
+    </string>
+    <string name="object_info_v838_mon_funfact" translation_description="Fun fact about V838 Monocerotis shown in the info card. Translate this text.">
+    ลักษณะของการระเบิดของ V838 Mon ยังคงเป็นที่ถกเถียง ทฤษฎีชั้นนำคือการรวมตัวของดาวฤกษ์ — ดาวสองดวงหมุนเข้าหากันและชนกัน — มากกว่าการระเบิดของโนวาแบบคลาสสิกหรือซูเปอร์ไจแอนต์ หากได้รับการยืนยัน มันคือการมองเห็นแบบเรียลไทม์ครั้งแรกของ "โนวาแดงส่องสว่าง" ซึ่งเป็นการระเบิดที่หายากเกิดจากการรวมตัวของดาวฤกษ์ เหตุการณ์ที่คล้ายกันนี้ได้พบในกาแลคซี่อื่นๆ แล้ว
+    </string>
+    <string name="object_info_v838_mon_distance" translation_description="Distance to V838 Monocerotis shown in the info card. Translate units if appropriate for your locale.">~20,000 ปีแสง</string>
+    <string name="object_info_v838_mon_size" translation_description="Extent of the V838 Monocerotis light echo shown in the info card. Translate units if appropriate for your locale.">~3 ปีแสง (ขอบเขตของเสียงสะท้อนแสง)</string>
+
+    <string name="object_info_hdf_description" translation_description="Description of the Hubble Deep Field shown in the info card. Translate this text.">
+    Hubble Deep Field เป็นพื้นที่ท้องฟ้าขนาดเล็ก 2.6 ลิปดา ที่ดูเหมือนว่างเปล่าในกลุ่มดาว Ursa Major ซึ่งถ่ายภาพโดยกล้องโทรทรรศน์อวกาศ Hubble ในระหว่าง 10 วันติดต่อกันในเดือนธันวาคม ค.ศ. 1995 พื้นที่ที่ดูเหมือนว่างเปล่านี้ได้เปิดเผยกาแล็กซี่ประมาณ 3,000 แห่ง ซึ่งครอบคลุมประวัติศาสตร์จักรวาลนับพันล้านปี และเปลี่ยนแปลงความเข้าใจของเราเกี่ยวกับจักรวาลอย่างมีนัยสำคัญ
+    </string>
+    <string name="object_info_hdf_funfact" translation_description="Fun fact about the Hubble Deep Field shown in the info card. Translate this text.">
+    พื้นที่ท้องฟ้านี้ถูกเลือกโดยเฉพาะเพราะว่าไม่มีดาวสว่างและกาแลคซี่ใกล้เคียง แต่ภาพที่ได้นั้นเต็มไปด้วยกาแลคซี่ประมาณ 3,000 แห่ง ซึ่งนำไปสู่การประมาณว่าท้องฟ้าทั้งหมดมีกาแลคซี่ประมาณ 200 พันล้านแห่ง — เกือบทั้งหมดนั้นมองไม่เห็นด้วยกล้องโทรทรรศน์ใดๆ ก่อนหาบเบิล
+    </string>
+    <string name="object_info_hdf_distance" translation_description="Distance to the most distant galaxies in the Hubble Deep Field shown in the info card. Translate units if appropriate for your locale.">~13 พันล้านปีแสง (ไกลที่สุด)</string>
+    <string name="object_info_hdf_size" translation_description="Angular size of the Hubble Deep Field shown in the info card.">2.6 ลิปดา (มุมมองของสนาม)</string>
+
+    <string name="object_info_m43_description" translation_description="Description of De Mairan's Nebula (M43) shown in the info card. Translate this text.">
+    เนบิวลาเดอ แมรัง (De Mairan\'s Nebula) เป็นส่วนที่แยกออกมาจากเนบิวลาโอไรออนที่ยิ่งใหญ่ แยกจาก M42 ด้วยแถบฝุ่นมืด แต่เป็นส่วนหนึ่งของเมฆโมเลกุลขนาดใหญ่เดียวกัน ตั้งชื่อตามนักดาราศาสตร์ชาวฝรั่งเศส Jean-Jacques Dortous de Mairan ผู้ที่สังเกตเห็นมันในปี ค.ศ. 1731 เป็นเนบิวลาการปล่อยแสงที่ถูกไอออไนซ์โดยดาวหนุ่มร้อนแรง NU Orionis ที่ฝังตัวอยู่ที่ศูนย์กลาง
+    </string>
+    <string name="object_info_m43_funfact" translation_description="Fun fact about De Mairan's Nebula shown in the info card. Translate this text.">
+    แม้ว่า M43 ปรากฏเป็นวัตถุแยกจาก M42 แต่เส้นมืดที่แบ่งพวกมันคือเมฆฝุ่นในเบื้องหน้า — ส่วนหนึ่งของเมฆโมเลกุลของ Orion — ที่บังการเชื่อมต่อทางกายภาพระหว่างสองบริเวณที่เรืองแสงไว้เท่านั้น ร่วมกันแล้ว พวกมันเป็นเพียงขอบด้านในที่เรืองแสงของเมฆมืดขนาดมหาศาลที่ขยายไปทั่วส่วนใหญ่ของ Orion
+    </string>
+    <string name="object_info_m43_distance" translation_description="Distance to De Mairan's Nebula shown in the info card. Translate units if appropriate for your locale.">1,350 ปีแสง</string>
+    <string name="object_info_m43_size" translation_description="Physical size of De Mairan's Nebula shown in the info card. Translate units if appropriate for your locale.">~8 ปีแสง ทั่วทั้ง</string>
+
+    <string name="object_info_m40_description" translation_description="Description of M40 (Winnecke 4) shown in the info card. Translate this text.">
+    M40 มีลักษณะเฉพาะในแคตตาล็อก Messier — มันไม่ใช่เนบิวลา กระจุกดาว หรือแกแลกซี่ แต่เป็นดาวคู่ที่มีระยะห่างกว้าง Messier ได้บันทึกมันในปี ค.ศ. 1764 ขณะค้นหาเนบิวลาที่ Johann Hevelius รายงานในกลุ่มดาว Ursa Major พบเพียงคู่ดาวนี้เท่านั้น และบันทึกไว้เพื่อไม่ให้ผู้สังเกตการณ์ในอนาคตสับสนว่ามันเป็นสิ่งที่น่าสนใจมากกว่านี้
+    </string>
+    <string name="object_info_m40_funfact" translation_description="Fun fact about M40 shown in the info card. Translate this text.">
+    ดาวสองดวงของ M40 — ที่รู้จักกันในชื่อ Winnecke 4 — ไม่ได้ถูกผูกมัดด้วยแรงโน้มถ่วง พวกมันอยู่ห่างกันในระยะทางต่างกัน และเป็นเพียงการจัดตำแหน่งโดยบังเอิญ เมสเซียร์เองก็สังเกตว่ามี "ไม่มีอะไรน่าสังเกต" แต่เขารวมมันไว้ "เพื่อแสดงว่าเนบิวลานี้ไม่เหมือนกับสิ่งที่ฉันได้ตรวจสอบ" นิสัยอย่างเป็นระบบของเขาในการบันทึกข้อมูลเชิงลบได้ให้ผู้สังเกตการณ์ในอนาคตมีข้อมูลอ้างอิงที่ชัดเจน
+    </string>
+    <string name="object_info_m40_distance" translation_description="Distance to M40 shown in the info card. Translate units if appropriate for your locale.">~500 ปีแสง</string>
+    <string name="object_info_m40_size" translation_description="Angular separation of the M40 double star shown in the info card.">~50 วินาทีเชิงมุม (การแยก)</string>
+
+    <!-- Category 5: Second tier -->
+    <string name="object_info_m34_description" translation_description="Description of the open star cluster M34 shown in the info card. Translate this text.">
+    M34 เป็นกระจุกดาวเปิดที่สว่างและกระจัดกระจายในกลุ่มดาวเพอร์เซอุส มองเห็นได้ง่ายด้วยกล้องส่องทางไกลเป็นกระจุกดาวที่หนาแน่นบนพื้นหลังของทางช้างเผือกในฤดูหนาว ดาวประมาณ 400 ดวงของมันครอบคลุมพื้นที่กว้างเกือบเท่ากับดวงจันทร์เต็มดวง โดยมีดาวคู่กว้างจำนวนหนึ่งที่มองเห็นได้สำหรับผู้สังเกตการณ์ด้วยกล้องส่องทางไกลที่ระมัดระวัง
+    </string>
+    <string name="object_info_m34_funfact" translation_description="Fun fact about M34 shown in the info card. Translate this text.">
+    M34 มีอายุประมาณ 200 ล้านปี ซึ่งอยู่ในช่วงกลางของอายุ — อ่อนพอที่ดาวสีน้ำเงินร้อนของมันยังคงส่องแสง แต่แก่พอที่ดาวที่มีมวลมากที่สุดได้ระเบิดเป็นซูเปอร์โนวาแล้ว ที่ระยะ 1,500 ปีแสง มันเป็นหนึ่งในกระจุกดาว Messier ที่ใกล้ที่สุด และยังคงเป็นวัตถุที่สวยงามแม้จากท้องฟ้าช郊นอก
+    </string>
+    <string name="object_info_m34_distance" translation_description="Distance to M34 shown in the info card. Translate units if appropriate for your locale.">1,500 ปีแสง</string>
+    <string name="object_info_m34_size" translation_description="Physical size of M34 shown in the info card. Translate units if appropriate for your locale.">~15 ปีแสง ทั่วทั้ง</string>
+
+    <string name="object_info_m23_description" translation_description="Description of the open star cluster M23 shown in the info card. Translate this text.">
+    M23 เป็นกระจุกดาวเปิดที่อุดมสมบูรณ์ในราศีธนู ฝังตัวอยู่ในเขตดาวหนาแน่นของทางช้างเผือกในฤดูร้อน ดาวประมาณ 150 ดวงกระจายตัวอยู่ในพื้นที่มุมครึ่งองศาในกล้องส่องทางไกล ทำให้เป็นวัตถุกล้องส่องทางไกลที่ใจกว้างในบริเวณท้องฟ้าเดียวกับอัญมณี Messier อื่นๆ มากมาย
+    </string>
+    <string name="object_info_m23_funfact" translation_description="Fun fact about M23 shown in the info card. Translate this text.">
+    M23 คาดว่ามีอายุประมาณ 300 ล้านปี — อายุปานกลาง โดยดาวฤกษ์ขนาดใหญ่ส่วนใหญ่ของมันได้วิวัฒนาการออกจากลำดับหลักแล้ว เมสเซียร์ค้นพบมันในปี ค.ศ. 1764 ในระหว่างการสำรวจอย่างกว้างขวางของเขาผ่านบริเวณดาวฤกษ์ราศีธนู
+    </string>
+    <string name="object_info_m23_distance" translation_description="Distance to M23 shown in the info card. Translate units if appropriate for your locale.">2,150 ปีแสง</string>
+    <string name="object_info_m23_size" translation_description="Physical size of M23 shown in the info card. Translate units if appropriate for your locale.">~17 ปีแสง ทั่วทั้ง</string>
+
+    <string name="object_info_m37_description" translation_description="Description of the open star cluster M37 shown in the info card. Translate this text.">
+    M37 เป็นกระจุกดาวเปิดของ Messier ที่อุดมสมบูรณ์และสว่างที่สุดในสามกระจุกของกลุ่มดาว Auriga โดยมีดาวประมาณ 500 ดวงในพื้นที่ที่กระชับ เป็นวัตถุที่สวยงามสำหรับการสังเกตการณ์ด้วยกล้องส่องทางไกลแบบสองตาและกล้องโทรทรรศน์ขนาดเล็ก โดยมีดาวยักษ์สีส้มกระจายอยู่เพิ่มเติมซึ่งสร้างความเปรียบต่างสีให้กับฝูงดาวสีน้ำเงินขาว
+    </string>
+    <string name="object_info_m37_funfact" translation_description="Fun fact about M37 shown in the info card. Translate this text.">
+    M37 มีดาวยักษ์แดงประมาณหนึ่งโหลดวง — ซึ่งเป็นจำนวนที่ผิดปกติสูงที่สะท้อนอายุที่ค่อนข้างสูงของมันประมาณ 300 ล้านปี แม้ว่าจะอยู่ห่างออกไปประมาณ 4,500 ปีแสง — ซึ่งเป็นกระจุกดาวเมสเซียร์ของออริกาที่ห่างไกลที่สุดในสามกระจุก — แต่มันยังคงอยู่ในอันดับของกระจุกดาวเปิดที่ดีที่สุดในท้องฟ้า
+    </string>
+    <string name="object_info_m37_distance" translation_description="Distance to M37 shown in the info card. Translate units if appropriate for your locale.">4,500 ปีแสง</string>
+    <string name="object_info_m37_size" translation_description="Physical size of M37 shown in the info card. Translate units if appropriate for your locale.">~31 ปีแสง ทั่วทั้ง</string>
+
+    <string name="object_info_m48_description" translation_description="Description of the open star cluster M48 shown in the info card. Translate this text.">
+    M48 เป็นกระจุกดาวเปิดขนาดใหญ่และสว่างในกลุ่มดาวไฮดรา ขยายออกเกือบหนึ่งองศาของท้องฟ้า และมองเห็นได้ด้วยตาเปล่าจากสถานที่มืดสลัว ดาวประมาณ 80 ดวงของมันกระจายตัวอย่างหลวมๆ ทั่วสนามกว้าง ซึ่งเหมาะสำหรับกล้องส่องทางไกล พร้อมกับดาวยักษ์สีส้มและสีเหลืองที่กระจายตัวอยู่ท่ามกลางสมาชิกสีน้ำเงินขาวที่สว่างกว่า
+    </string>
+    <string name="object_info_m48_funfact" translation_description="Fun fact about M48 shown in the info card. Translate this text.">
+    M48 เป็นหนึ่งในวัตถุ Messier ที่ "หายไป" เป็นเวลาเกือบสองศตวรรษ เพราะตำแหน่งที่บันทึกไว้ของ Messier นั้นห่างจากตำแหน่งที่แท้จริงประมาณ 5° มันยังคงไม่ได้รับการระบุตัวตนจนกว่าจะถึงปี 1959 เมื่อมันถูกจับคู่กับ NGC 2548 และพบว่าข้อผิดพลาดในการถ่ายเอกสารอย่างง่ายๆ ได้วางมันไว้ในท้องฟ้าว่างเปล่าตั้งแต่เริ่มต้น
+    </string>
+    <string name="object_info_m48_distance" translation_description="Distance to M48 shown in the info card. Translate units if appropriate for your locale.">1,500 ปีแสง</string>
+    <string name="object_info_m48_size" translation_description="Physical size of M48 shown in the info card. Translate units if appropriate for your locale.">~23 ปีแสง ทั่วทั้ง</string>
+
+    <string name="object_info_m21_description" translation_description="Description of the open star cluster M21 shown in the info card. Translate this text.">
+    M21 เป็นกระจุกดาวเปิดที่กระชับในราศีธนู ตั้งอยู่เพียงครึ่งองศาทางเหนือของเนบิวลาไตรฟิด (M20) ทำให้ทั้งสองเป็นคู่ที่น่าทึ่งสำหรับการสังเกตด้วยกล้องส่องทางไกล กระจุกดาวนี้มีดาวประมาณ 57 ดวงที่กระจุกตัวอยู่ในพื้นที่ที่เล็กกว่ากระจุกเมสเซียร์หลายแห่ง โดยมีดาวสีน้ำเงินขาวสดใสหลายดวงเป็นสมาชิกหลัก
+    </string>
+    <string name="object_info_m21_funfact" translation_description="Fun fact about M21 shown in the info card. Translate this text.">
+    แม้ว่า M21 และ M20 (เนบิวลาไตรฟิด) ไม่มีความสัมพันธ์ทางกายภาพ แต่ทั้งสองนี้สร้างเป็นหนึ่งในการจับคู่ด้วยกล้องส่องทางไกลที่น่าดึงดูดที่สุดในท้องฟ้าฤดูร้อน — กระจุกดาวสว่างอยู่ข้างเนบิวลาสามแฉกที่มีสีสัน M21 อยู่ห่างออกไปประมาณ 4,250 ปีแสง ในขณะที่ M20 อยู่ใกล้กว่าเล็กน้อยที่ประมาณ 4,100 ปีแสง
+    </string>
+    <string name="object_info_m21_distance" translation_description="Distance to M21 shown in the info card. Translate units if appropriate for your locale.">4,250 ปีแสง</string>
+    <string name="object_info_m21_size" translation_description="Physical size of M21 shown in the info card. Translate units if appropriate for your locale.">~16 ปีแสง ทั่วทั้ง</string>
+
+    <string name="object_info_m50_description" translation_description="Description of the open star cluster M50 shown in the info card. Translate this text.">
+    M50 เป็นกระจุกดาวเปิดที่สว่างในกลุ่มดาว Monoceros ประกอบด้วยดาวประมาณ 200 ดวงที่บรรจุอยู่ในสนามที่กระชับและน่าทึ่งสำหรับกล้องส่องทางไกลและกล้องโทรทรรศน์ขนาดเล็ก พบได้ง่ายบนเส้นระหว่าง Sirius และ Procyon และมีดาวยักษ์สีแดงที่โดดเด่น ซึ่งเป็นสัญญาณไฟสีส้มอุ่นที่โดดเด่นอย่างชัดเจนในหมู่ดาวสีน้ำเงิน-ขาวของกระจุก
+    </string>
+    <string name="object_info_m50_funfact" translation_description="Fun fact about M50 shown in the info card. Translate this text.">
+    M50 คาดว่ามีอายุประมาณ 78 ล้านปี ซึ่งเป็นหนึ่งในกระจุกเมสเซียร์แบบเปิดที่อ่อนเยาว์ที่สุด ซึ่งหมายความว่าดาวสีน้ำเงินและสีขาวที่ร้อนแรงของมันยังคงวิวัฒนาการอยู่ โดยสมาชิกที่มีมวลมากขึ้นจำนวนหนึ่งเพิ่งบวมตัวเป็นดาวยักษ์ นี่เป็นลักษณะทั่วไปของกระจุกดาวในช่วงวัยกลางคนตอนต้น
+    </string>
+    <string name="object_info_m50_distance" translation_description="Distance to M50 shown in the info card. Translate units if appropriate for your locale.">3,200 ปีแสง</string>
+    <string name="object_info_m50_size" translation_description="Physical size of M50 shown in the info card. Translate units if appropriate for your locale.">~15 ปีแสง ทั่วทั้ง</string>
+
+    <string name="object_info_m36_description" translation_description="Description of the open star cluster M36 shown in the info card. Translate this text.">
+    M36 เป็นกระจุกดาวเปิดที่เล็กที่สุดและอ่อนที่สุดในสามกระจุกดาวที่เมสเซียร์จัดทำรายการไว้ในราศีรถเข้า ดาวประมาณ 60 ดวงของมันรวมตัวกันในสนามที่แคบและเป็นประกายที่มองเห็นได้ด้วยกล้องส่องทางไกล และแยกออกเป็นดาวแต่ละดวงได้ชัดเจนด้วยกล้องโทรทรรศน์ขนาดเล็ก ซึ่งถูกครอบงำโดยดาวสีน้ำเงินขาวร้อนแรง
+    </string>
+    <string name="object_info_m36_funfact" translation_description="Fun fact about M36 shown in the info card. Translate this text.">
+    M36 คาดว่ามีอายุเพียงประมาณ 25 ล้านปีเท่านั้น — เป็นหนึ่งในกระจุกดาว Messier ที่อ่อนเยาว์ที่สุด — ซึ่งหมายความว่าดาวสีน้ำเงินขาวขนาดใหญ่ยังคงครอบงำและยังไม่มีดาวยักษ์สีแดงปรากฏขึ้น มันแบ่งปันทุ่งดาว Auriga กับ M37 และ M38 และกระจุกทั้งสามสามารถพอดีในมุมมองกล้องส่องทางไกลแบบกว้างเดียวกัน
+    </string>
+    <string name="object_info_m36_distance" translation_description="Distance to M36 shown in the info card. Translate units if appropriate for your locale.">4,100 ปีแสง</string>
+    <string name="object_info_m36_size" translation_description="Physical size of M36 shown in the info card. Translate units if appropriate for your locale.">~14 ปีแสง ทั่วทั้ง</string>
+
+    <string name="object_info_m46_description" translation_description="Description of the open star cluster M46 shown in the info card. Translate this text.">
+    M46 เป็นกระจุมดาวเปิดที่อุดมสมบูรณ์และหนาแน่นในกลุ่มดาว Puppis ซึ่งมีดาวประมาณ 500 ดวงบรรจุอยู่ในบริเวณกว้าง สวยงามเมื่อมองผ่านกล้องส่องทางไกล และสวยงามมากเมื่อมองผ่านกล้องโทรทรรศน์ขนาดเล็ก ที่ขอบด้านเหนือมีสิ่งที่น่าทึ่งลอยอยู่: NGC 2438 ซึ่งเป็นเนบิวลาดาวเคราะห์ขนาดเล็กที่ดูเหมือนฝังตัวอยู่ในกระจุมดาว — เป็นเหตุบังเอิญที่น่าประทับใจในแนวสายตา
+    </string>
+    <string name="object_info_m46_funfact" translation_description="Fun fact about M46 shown in the info card. Translate this text.">
+    เนบิวลาดาวเคราะห์ NGC 2438 ดูเหมือนจะอยู่ภายในกระจุกดาว M46 แต่จริงๆ แล้วเป็นวัตถุที่ไม่เกี่ยวข้องกันในระยะห่างที่แตกต่างกันมาก — ประมาณ 1,400 ปีแสงเทียบกับ M46 ที่ 5,400 ปีแสง การทับซ้อนของเปลือกดาวที่กำลังตายบนกระจุกดาวหนุ่มสาวนี้ทำให้เป็นหนึ่งในสนามที่สวยงามที่สุดในแคตตาล็อก
+    </string>
+    <string name="object_info_m46_distance" translation_description="Distance to M46 shown in the info card. Translate units if appropriate for your locale.">5,400 ปีแสง</string>
+    <string name="object_info_m46_size" translation_description="Physical size of M46 shown in the info card. Translate units if appropriate for your locale.">~42 ปีแสง ทั่วทั้ง</string>
+
+    <string name="object_info_m93_description" translation_description="Description of the open star cluster M93 shown in the info card. Translate this text.">
+    M93 เป็นกระจุกดาวเปิดที่สว่างและกะทัดรัดในกลุ่มดาว Puppis ตั้งอยู่ในทางช้างเผือกตอนใต้ที่อุดมสมบูรณ์ และสามารถมองเห็นได้ง่ายด้วยกล้องส่องทางไกล ดาวประมาณ 80 ดวงของมันจัดเรียงเป็นรูปลิ่มหรือรูปผีเสื้อที่น่าทึ่ง และรวมถึงดาวยักษ์สีน้ำเงินร้อนหลายดวง ทำให้มันเป็นหนึ่งในกระจุกดาวเปิดที่น่าดึงดูดที่สุดในท้องฟ้าฤดูหนาว
+    </string>
+    <string name="object_info_m93_funfact" translation_description="Fun fact about M93 shown in the info card. Translate this text.">
+    M93 มีอายุค่อนข้างน้อย — ประมาณ 100 ล้านปีที่แล้ว — มีดาวสีน้ำเงินและสีน้ำเงินขาวเป็นหลัก ซึ่งยังไม่ได้วิวัฒนาการเป็นดาวยักษ์ เป็นหนึ่งในกระจุกดาว Messier ที่อยู่ทางใต้มากที่สุด และจากละติจูดทางเหนือประมาณ 50°N ขึ้นไป มันจะไม่ลอยสูงขึ้นมาเหนือขอบฟ้าเลย
+    </string>
+    <string name="object_info_m93_distance" translation_description="Distance to M93 shown in the info card. Translate units if appropriate for your locale.">3,600 ปีแสง</string>
+    <string name="object_info_m93_size" translation_description="Physical size of M93 shown in the info card. Translate units if appropriate for your locale.">~23 ปีแสง ทั่วทั้ง</string>
+
+    <string name="object_info_m38_description" translation_description="Description of the open star cluster M38 shown in the info card. Translate this text.">
+    M38 เป็นกระจุกดาวเปิดที่ใหญ่ที่สุดและกระจายตัวมากที่สุดในสามกระจุกดาวเปิดที่เมสเซียร์จัดทำแคตตาล็อกไว้ในกลุ่มดาวเอาริกา ดาวประมาณ 100 ดวงของมันเรียงตัวกันในรูปแบบที่ผู้สังเกตการณ์บางคนเปรียบเทียบกับไม้กางเขนหรือตัวอักษรกรีก pi ซึ่งมองเห็นได้ด้วยกล้องส่องทางไกลและแยกแจงได้ชัดเจนด้วยกล้องโทรทรรศน์ขนาดเล็ก กระจุกดาวที่เล็กกว่า NGC 1907 อยู่ใกล้ๆ ทางด้านใต้
+    </string>
+    <string name="object_info_m38_funfact" translation_description="Fun fact about M38 shown in the info card. Translate this text.">
+    M38 เป็นกระจุมดาวเมสเซียร์ที่เก่าที่สุดในสามกระจุมของราศีพฤษภ อายุประมาณ 220 ล้านปี ซึ่งเก่าพอที่ดาวขนาดใหญ่บางดวงได้วิวัฒนาเป็นยักษ์สีเหลืองและสีส้ม กระจุมดาวที่อยู่ใกล้เคียง NGC 1907 สามารถอยู่ในสนามมองเห็นที่มีกำลังขยายต่ำเดียวกันได้ ทำให้เป็นคู่ที่ดีสำหรับการสังเกตด้วยกล้องส่องทางไกล เช่นเดียวกับ M46 และ M47 ในราศีสุนัข
+    </string>
+    <string name="object_info_m38_distance" translation_description="Distance to M38 shown in the info card. Translate units if appropriate for your locale.">4,200 ปีแสง</string>
+    <string name="object_info_m38_size" translation_description="Physical size of M38 shown in the info card. Translate units if appropriate for your locale.">~26 ปีแสง ทั่วทั้ง</string>
+
+    <string name="object_info_m29_description" translation_description="Description of the open star cluster M29 shown in the info card. Translate this text.">
+    M29 เป็นกระจุกดาวเปิดขนาดเล็กและอ่อนวัยในกลุ่มดาวหงส์ ตั้งอยู่บนพื้นหลังของบริเวณที่มีฝุ่นบดบังมากที่สุดแห่งหนึ่งของทางช้างเผือก ดาวยักษ์สีน้ำเงินที่สดใสห้าดวงครอบงำกระจุกนี้ มองเห็นได้ด้วยกล้องส่องทางไกลเป็นกลุ่มดาวที่แน่นหนาของดาวที่ร้อนและส่องสว่าง หากไม่มีฝุ่นหน้าหนาแน่น M29 จะเป็นหนึ่งในกระจุกดาวเปิดที่งดงามที่สุดของท้องฟ้า
+    </string>
+    <string name="object_info_m29_funfact" translation_description="Fun fact about M29 shown in the info card. Translate this text.">
+    M29 คาดว่ามีอายุเพียงประมาณ 10 ล้านปีเท่านั้น — เป็นดาวฤกษ์ที่เกิดใหม่ — และตั้งอยู่ภายในสมาคม Cygnus OB1 ซึ่งเป็นกลุ่มดาวฤกษ์ขนาดใหญ่ที่มีอายุน้อยที่กระจายตัวอยู่ฝั่งหนึ่ง ฝุ่นระหว่างดาวหนาแน่นทำให้กระจุกดาวมืดลงประมาณ 3 ขนาด หากไม่มีการบดบังนี้ ดาวฤกษ์ของ M29 จะส่องแสงสว่างกว่าที่ปรากฏอยู่ในปัจจุบันหลายเท่า
+    </string>
+    <string name="object_info_m29_distance" translation_description="Distance to M29 shown in the info card. Translate units if appropriate for your locale.">4,000 ปีแสง</string>
+    <string name="object_info_m29_size" translation_description="Physical size of M29 shown in the info card. Translate units if appropriate for your locale.">~8 ปีแสง ทั่วทั้ง</string>
+
+    <string name="object_info_m62_description" translation_description="Description of the globular cluster M62 shown in the info card. Translate this text.">
+    M62 เป็นกระจุกดาวทรงกลมที่อุดมสมบูรณ์ในกลุ่มดาวออฟิวคัส — หนึ่งในกระจุกดาวทรงกลมที่ใกล้ที่สุดกับศูนย์กลางของกาแลกซี่ และมีลักษณะไม่สมมาตรอย่างเห็นได้ชัด โดยดาวมีความหนาแน่นมากขึ้นทางด้านใต้ ที่ขนาดปรากฏ 6.6 มันเป็นวัตถุที่ดีสำหรับการสังเกตด้วยกล้องส่องทางไกล แม้ว่าการลดลงของมันต่ำทำให้เป็นเป้าหมายในฤดูกาลสั้นสำหรับผู้สังเกตการณ์ทางเหนือ
+    </string>
+    <string name="object_info_m62_funfact" translation_description="Fun fact about M62 shown in the info card. Translate this text.">
+    แกนของ M62 ที่ไม่อยู่ตรงกลางเป็นผลโดยตรงจากความใกล้ชิดกับจุดศูนย์กลางของกาแลกซี — แรงน้ำขึ้นน้ำลงที่มีประสิทธิภาพจากบัลจ์ตรงกลางทำให้กระจุกดาวเสียรูปและดึงดาวไปยังระนาบกาแลกซี นอกจากนี้ยังเป็นหนึ่งในกระจุกทรงกลมที่มีวิวัฒนาการแบบไดนามิกมากที่สุดที่รู้จัก แสดงสัญญาณของการยุบตัวของแกนและความหนาแน่นที่ผิดปกติของพัลซาร์มิลลิวินาที
+    </string>
+    <string name="object_info_m62_distance" translation_description="Distance to M62 shown in the info card. Translate units if appropriate for your locale.">22,500 ปีแสง</string>
+    <string name="object_info_m62_size" translation_description="Physical size of M62 shown in the info card. Translate units if appropriate for your locale.">~92 ปีแสง ทั่วทั้ง</string>
+
+    <string name="object_info_m28_description" translation_description="Description of the globular cluster M28 shown in the info card. Translate this text.">
+    M28 เป็นกระจุกดาวทรงกลมขนาดกะทัดรัดในกลุ่มดาวธนูคนร่ำรวย ตั้งอยู่ใกล้ดาวสว่าง Lambda Sagittarii ในท้องฟ้าฤดูร้อนที่เต็มไปด้วยดาว ที่ขนาดสัมพัทธ์ 6.9 มันเป็นเป้าหมายที่น่าสนใจสำหรับกล้องส่องทางไกล และสามารถแยกแจกแจงได้ดีในกล้องโทรทรรศน์ขนาดเล็ก โดยแสดงแกนกลางที่สว่างและหนาแน่น ล้อมรอบด้วยวงแหวนดาวขนาดกลาง
+    </string>
+    <string name="object_info_m28_funfact" translation_description="Fun fact about M28 shown in the info card. Translate this text.">
+    ในปี 1987 M28 กลายเป็นกระจุกดาวทรงกลมแรกที่พบพัลซาร์มิลลิวินาทีในนั้น พัลซาร์มิลลิวินาที — ดาวนิวตรอนที่หมุนหลายร้อยครั้งต่อวินาที — เกิดขึ้นเมื่อดาวนิวตรอนดูดซับสสารจากดาวคู่ และพบได้ในอัตราที่สูงกว่ามากในกระจุกดาวทรงกลมมากกว่าในกาแล็กซี่ทั่วไป เพราะสภาพแวดล้อมดาวที่หนาแน่นของพวกมันสร้างการชนกันของระบบดาวคู่ที่ใกล้ชิดมากมายขึ้น
+    </string>
+    <string name="object_info_m28_distance" translation_description="Distance to M28 shown in the info card. Translate units if appropriate for your locale.">18,300 ปีแสง</string>
+    <string name="object_info_m28_size" translation_description="Physical size of M28 shown in the info card. Translate units if appropriate for your locale.">~60 ปีแสง ทั่วทั้ง</string>
+
+    <string name="object_info_m52_description" translation_description="Description of the open star cluster M52 shown in the info card. Translate this text.">
+    M52 เป็นกระจุกดาวเปิดที่อุดมสมบูรณ์ในกลุ่มดาวแคสสิโอเปีย มีดาวประมาณ 200 ดวงบรรจุอยู่ในบริเวณที่กระชับของทางช้างเผือกตอนเหนือ เป็นกระจุกดาวที่สวยงามสำหรับการสังเกตการณ์ด้วยกล้องส่องทางไกล และแสดงภาพสนามดาวที่หนาแน่นและสวยงามในกล้องโทรทรรศน์ขนาดเล็ก โดยมีดาวสีส้มที่สว่างโดดเด่นยืนอยู่ใกล้ขอบด้านใต้ของกระจุก
+    </string>
+    <string name="object_info_m52_funfact" translation_description="Fun fact about M52 shown in the info card. Translate this text.">
+    ระยะห่างของ M52 ไม่แน่นอนอย่างผิดปกติ — การประมาณการอยู่ในช่วง 3,000 ถึง 7,000 ปีแสง — เนื่องจากฝุ่นระหว่างดาวหนาแน่นตามแนวสายตานี้ทำให้ความสว่างที่แท้จริงของมันยากต่อการระบุ Messier ค้นพบมันในปี 1774 ในคืนเดียวกันที่เขากำลังติดตามดาวหางที่นำเขาไปบันทึกรายการแค็ตตาล็อกอื่นๆ อีกหลายรายการ
+    </string>
+    <string name="object_info_m52_distance" translation_description="Distance to M52 shown in the info card. Translate units if appropriate for your locale.">~5,000 ปีแสง</string>
+    <string name="object_info_m52_size" translation_description="Physical size of M52 shown in the info card. Translate units if appropriate for your locale.">~25 ปีแสง ทั่วทั้ง</string>
+
+    <string name="object_info_m67_description" translation_description="Description of the open star cluster M67 shown in the info card. Translate this text.">
+    M67 เป็นกระจุมดาวเปิดที่สวยงามในกลุ่มดาวมะเร็ง และเป็นหนึ่งในกระจุมดาวเปิดที่เก่าแก่ที่สุดและได้รับการศึกษาอย่างดีในท้องฟ้า อายุประมาณ 3.2–3.5 พันล้านปี มันมีดาวจำนวนมากที่มีมวลและอายุคล้ายกับดวงอาทิตย์ของเรา ซึ่งทำให้มันเป็นห้องปฏิบัติการธรรมชาติสำหรับการศึกษาว่าดาวที่คล้ายดวงอาทิตย์วิวัฒนาการอย่างไรตลอดเวลาจักรวาล
+    </string>
+    <string name="object_info_m67_funfact" translation_description="Fun fact about M67 shown in the info card. Translate this text.">
+    ดาวหลายดวงใน M67 มีลักษณะคล้ายกับดวงอาทิตย์ในด้านอุณหภูมิ มวล และอายุ — ซึ่งเป็นการรวมกันที่หายากซึ่งทำให้นักวิจัยสงสัยว่าดวงอาทิตย์เองเกิดมาจากกระจุกดาวเช่น M67 หรือไม่ เนื่องจากดาวเกิดขึ้นในกระจุกที่กระจายตัวออกไปอย่างค่อยเป็นค่อยไป ดวงอาทิตย์เกือบจะแน่นอนว่ามาจากกลุ่มพี่น้องที่กระจายตัวไปแล้วเมื่อหลายพันล้านปีที่แล้ว — แม้ว่ากระจุกดาวใดนั้นไม่เคยถูกระบุมาก่อน
+    </string>
+    <string name="object_info_m67_distance" translation_description="Distance to M67 shown in the info card. Translate units if appropriate for your locale.">2,700 ปีแสง</string>
+    <string name="object_info_m67_size" translation_description="Physical size of M67 shown in the info card. Translate units if appropriate for your locale.">~24 ปีแสง</string>
+
+    <string name="object_info_m55_description" translation_description="Description of the globular cluster M55 shown in the info card. Translate this text.">
+    M55 เป็นกระจุกดาวทรงกลมขนาดใหญ่ที่หลวมในราศีธนู — เป็นหนึ่งในกระจุกดาวทรงกลมของเมสเซียร์ที่กระจายตัวมากที่สุดและมีความเข้มข้นน้อยที่สุด สามารถแยกออกเป็นดาวแต่ละดวงได้อย่างง่ายดายแม้ที่กำลังขยายต่ำ โดยมีพื้นผิวเนื้อละเอียดที่มองเห็นได้ในกล้องส่องทางไกล ความเสื่อมของทางใต้ต่ำจำกัดการมองเห็นจากละติจูดเหนือ แต่มันน่าทึ่งจากซีกโลกใต้
+    </string>
+    <string name="object_info_m55_funfact" translation_description="Fun fact about M55 shown in the info card. Translate this text.">
+    ความเข้มข้นของดาวที่ผิดปกติต่ำของ M55 ทำให้มันดูเหมือนกระจุกดาวเปิดที่อุดมสมบูรณ์มากกว่ากระจุกดาวทรงกลมทั่วไป ดาวของมันกระจายอยู่ในบริเวณกว้างเกือบ 100 ปีแสง ซึ่งแสดงให้เห็นว่าแรงโน้มถ่วงตัวเองของกระจุกนี้อ่อนแอค่อนข้างเมื่อเทียบกับกระจุกดาวทรงกลมที่มีความเข้มข้นมากขึ้นในส่วนกลาง เช่น M13 หรือ M3
+    </string>
+    <string name="object_info_m55_distance" translation_description="Distance to M55 shown in the info card. Translate units if appropriate for your locale.">17,600 ปีแสง</string>
+    <string name="object_info_m55_size" translation_description="Physical size of M55 shown in the info card. Translate units if appropriate for your locale.">~100 ปีแสง</string>
+
+    <string name="object_info_m19_description" translation_description="Description of the globular cluster M19 shown in the info card. Translate this text.">
+    M19 เป็นกระจุมดาวทรงกลมที่หนาแน่นและอุดมสมบูรณ์ในกลุ่มดาวออฟิวคัส — หนึ่งในกระจุมดาวทรงกลมที่อยู่ใกล้ศูนย์กลางของกาแล็กซี่มากที่สุด ลักษณะเด่นที่สุดของมันคือรูปร่างที่ค่อนข้างแบน: M19 เป็นกระจุมดาวทรงกลมที่แบนที่สุดที่รู้จัก โดยมีรูปร่างวงรีที่มองเห็นได้ชัดเจนแม้ในกล้องโทรทรรศน์ขนาดเล็ก
+    </string>
+    <string name="object_info_m19_funfact" translation_description="Fun fact about M19 shown in the info card. Translate this text.">
+    ความเป็นรูปไข่ที่ชัดเจนของ M19 — แกนที่ยาวที่สุดยาวกว่าแกนที่สั้นที่สุดประมาณ 10% — นั้นไม่เหมือนใจกับกระจุกดาวทรงกลมที่รู้จักอื่น ๆ และเชื่อกันว่าเป็นผลมาจากการยืดตัวจากแรงโน้มถ่วงของทางช้างเผือก ยิ่งกระจุกดาวทรงกลมโคจรใกล้ศูนย์กลางของกาแลคซี่มากเท่าไร ก็ยิ่งเสียรูปมากขึ้นเท่านั้น M19 อยู่ห่างจากแกนกาแลคซี่เพียงประมาณ 5,200 ปีแสงเท่านั้น
+    </string>
+    <string name="object_info_m19_distance" translation_description="Distance to M19 shown in the info card. Translate units if appropriate for your locale.">28,700 ปีแสง</string>
+    <string name="object_info_m19_size" translation_description="Physical size of M19 shown in the info card. Translate units if appropriate for your locale.">~113 ปีแสง</string>
+
+    <string name="object_info_m80_description" translation_description="Description of the globular cluster M80 shown in the info card. Translate this text.">
+    M80 เป็นหนึ่งในกระจุกทรงกลมที่มีความหนาแน่นสูงที่สุดในทางช้างเผือก ซึ่งเป็นลูกบอลขนาดกะทัดรัดที่มีดาวหลายแสนดวงในกลุ่มดาวแมงป่อง ที่ขนาดสัมพัทธ์ 7.2 มันเป็นเป้าหมายที่ดีสำหรับการสังเกตการณ์ด้วยกล้องส่องทางไกลสองตา และเผยให้เห็นแกนกลางที่สว่างและมีความเข้มข้นสูงในกล้องโทรทรรศน์ขนาดเล็ก
+    </string>
+    <string name="object_info_m80_funfact" translation_description="Fun fact about M80 shown in the info card. Translate this text.">
+    ในปี ค.ศ. 1860 มีโนวาปะทุขึ้นในกระจุกดาว M80 — ซึ่งตั้งชื่อว่า T Scorpii — และสว่างไปเท่ากับกระจุกดาวเองในช่วงเวลาสั้นๆ จนมองเห็นได้ด้วยตาเปล่า มันเป็นหนึ่งในโนวาเพียงสองดวงเท่านั้นที่เคยสังเกตเห็นภายในกระจุกดาวทรงกลม โนวาในกระจุกดาวทรงกลมเกิดจากปฏิสัมพันธ์ระหว่างดาวคู่ ซึ่งพบได้บ่อยมากในสภาพแวดล้อมดาวที่หนาแน่นในแกนกลางของกระจุกดาวทรงกลม
+    </string>
+    <string name="object_info_m80_distance" translation_description="Distance to M80 shown in the info card. Translate units if appropriate for your locale.">32,600 ปีแสง</string>
+    <string name="object_info_m80_size" translation_description="Physical size of M80 shown in the info card. Translate units if appropriate for your locale.">~84 ปีแสง</string>
+
+    <string name="object_info_m103_description" translation_description="Description of the open star cluster M103 shown in the info card. Translate this text.">
+    M103 เป็นกระจุกดาวเปิดขนาดเล็กและกะทัดรัดในกลุ่มดาวแคสสิโอเปีย มีดาวประมาณ 40 ดวงในกลุ่มที่แน่นหนา ซึ่งมองเห็นได้ง่ายด้วยกล้องส่องทางไกล ดาวคู่ที่สวยงามและดาวยักษ์แดงใกล้ศูนย์กลางทำให้มีลักษณะสีสันสดใสเมื่อมองผ่านกล้องโทรทรรศน์ขนาดเล็ก ตั้งอยู่ในบริเวณดาวฤกษ์ทางช้างเผือกที่อุดมสมบูรณ์ของแคสสิโอเปีย
+    </string>
+    <string name="object_info_m103_funfact" translation_description="Fun fact about M103 shown in the info card. Translate this text.">
+    M103 เป็นวัตถุที่มีหมายเลขสูงสุดในแคตตาล็อก Messier ฉบับพิมพ์ดั้งเดิมปี 1781 — รายการที่ตามมาทั้งหมด (M104–M110) ถูกเพิ่มเข้ามาหลังจากที่ Messier เสียชีวิตโดยนักดาราศาสตร์รุ่นหลังจากบันทึกและจดหมายโต้ตอบของ Messier Pierre Méchain ค้นพบ M103 ไม่นานก่อนที่แคตตาล็อกจะไปพิมพ์ และ Messier รวมมันไว้จากรายงานของ Méchain
+    </string>
+    <string name="object_info_m103_distance" translation_description="Distance to M103 shown in the info card. Translate units if appropriate for your locale.">8,500 ปีแสง</string>
+    <string name="object_info_m103_size" translation_description="Physical size of M103 shown in the info card. Translate units if appropriate for your locale.">~15 ปีแสง</string>
+
+    <string name="object_info_m30_description" translation_description="Description of the globular cluster M30 shown in the info card. Translate this text.">
+    M30 เป็นกระจุกดาวทรงกลมแบบกระชับในกลุ่มดาวมังกรน้อย ซึ่งเป็นวัตถุที่สวยงามในกล้องโทรทรรศน์ขนาดเล็กที่แสดงแกนกลางที่สว่างและเข้มข้น พร้อมกับห่วงดาวที่อ่อนแอโดยรอบ ที่ขนาดสัมพัทธ์ 7.5 มันต้องการท้องฟ้าที่มืดในกล้องส่องทางไกล และให้รางวัลกล้องโทรทรรศน์ขนาดเล็กด้วยวงแหวนด้านนอกที่แยกออกมาบางส่วน
+    </string>
+    <string name="object_info_m30_funfact" translation_description="Fun fact about M30 shown in the info card. Translate this text.">
+    M30 ได้ผ่านการ "ยุบตัวของแกน" — กระบวนการที่แรงดึงดูดของแรงโน้มถ่วงร่วมกันของดาวที่บรรจุอย่างหนาแน่นทำให้ศูนย์กลางของกระจุกดาวหดตัวอย่างรุนแรง สร้างความเข้มข้นของดาวในปริมาณเล็กน้อย ประมาณหนึ่งในห้าของกระจุกดาวทั่วโลกทั้งหมดมีแกนที่ยุบตัว และ M30 เป็นหนึ่งในตัวอย่างที่ได้รับการศึกษาอย่างดีที่สุดของปรากฏการณ์นี้
+    </string>
+    <string name="object_info_m30_distance" translation_description="Distance to M30 shown in the info card. Translate units if appropriate for your locale.">27,100 ปีแสง</string>
+    <string name="object_info_m30_size" translation_description="Physical size of M30 shown in the info card. Translate units if appropriate for your locale.">~87 ปีแสง</string>
+
+    <string name="object_info_m54_description" translation_description="Description of the globular cluster M54 shown in the info card. Translate this text.">
+    M54 เป็นกระจุกทรงกลมขนาดใหญ่และอุดมสมบูรณ์ในราศีธนู และเป็นหนึ่งในวัตถุที่ห่างไกลที่สุดในแคตตาล็อก Messier ทั้งหมด เป็นเวลาหลายศตวรรษที่คิดว่าเป็นกระจุกทรงกลมของ halo ที่ห่างไกลของทางช้างเผือก แต่ปัจจุบันทราบแล้วว่าเป็นแกนหนาแน่นของแกแล็กซี่ Sagittarius Dwarf Elliptical — แกแล็กซี่ดาวเทียมที่กำลังถูกดูดซึมโดยแกแล็กซี่ของเรา
+    </string>
+    <string name="object_info_m54_funfact" translation_description="Fun fact about M54 shown in the info card. Translate this text.">
+    การค้นพบในปี 1994 ที่ว่า M54 เป็นส่วนหนึ่งของ Sagittarius Dwarf Galaxy ทำให้มันเป็นกระจุกดาวทรงกลมแรกที่ทราบว่าอยู่ในกาแล็กซี่อื่น เมื่อ Sagittarius Dwarf ค่อยๆ ถูกฉีกออกและถูกกลืนเข้าไปในทางช้างเผือก M54 จะกลายเป็นกระจุกดาวทรงกลมของ halo ที่แท้จริงของกาแล็กซี่ของเรา — ผู้อพยพระหว่างกาแล็กซี่ที่มาถึงในช่วงเวลาหลายพันล้านปี
+    </string>
+    <string name="object_info_m54_distance" translation_description="Distance to M54 shown in the info card. Translate units if appropriate for your locale.">87,000 ปีแสง</string>
+    <string name="object_info_m54_size" translation_description="Physical size of M54 shown in the info card. Translate units if appropriate for your locale.">~230 ปีแสง</string>
+
+    <string name="object_info_m69_description" translation_description="Description of the globular cluster M69 shown in the info card. Translate this text.">
+    M69 เป็นกระจุกดาวทรงกลมที่มีความหนาแน่นปานกลางในราศีธนู ตั้งอยู่ใกล้ศูนย์กลางของกาแลกซี ที่ขนาดสัมพัทธ์ 7.7 มันเป็นวัตถุที่สามารถมองเห็นได้ด้วยกล้องส่องทางไกลจากท้องฟ้าที่มืดสนิท และให้ความพึงพอใจกับกล้องโทรทรรศน์ขนาดเล็กด้วยลูกดาวที่แยกตัวออกมาบางส่วนและศูนย์กลางที่สว่างและมีลักษณะเม็ดเล็ก
+    </string>
+    <string name="object_info_m69_funfact" translation_description="Fun fact about M69 shown in the info card. Translate this text.">
+    M69 โคจรอยู่ใกล้ศูนย์กลางของกาแล็กซี่อย่างผิดปกติ — ห่างจากแกนของทางช้างเผือกเพียงประมาณ 6,200 ปีแสง — และด้วยเหตุนี้จึงมีความเข้มข้นของธาตุหนักที่ผิดปกติสูงสำหรับกระจุกดาวทรงกลม กระจุกดาวที่อยู่ใกล้ศูนย์กลางของกาแล็กซี่มักจะได้รับการเสริมสมบูรณ์ทางเคมีจากหลายรุ่นของการก่อตัวของดาวในบริเวณนูนโดยรอบ
+    </string>
+    <string name="object_info_m69_distance" translation_description="Distance to M69 shown in the info card. Translate units if appropriate for your locale.">29,700 ปีแสง</string>
+    <string name="object_info_m69_size" translation_description="Physical size of M69 shown in the info card. Translate units if appropriate for your locale.">~61 ปีแสง</string>
+
+    <string name="object_info_m9_description" translation_description="Description of the globular cluster M9 shown in the info card. Translate this text.">
+    M9 เป็นกระจุกดาวทรงกลมขนาดกะทัดรัดในกลุ่มดาว Ophiuchus ซึ่งเป็นหนึ่งในกระจุกดาวเมสเซียร์ที่ได้รับผลกระทบจากการดูดซับฝุ่นระหว่างดาวมากที่สุด มันอยู่ไปทางกระสุมกาแลกซี ซึ่งฝุ่นหนาทึบทำให้มันมืดลงอย่างมาก หากไม่มีการบดบังนี้ M9 จะปรากฏสว่างขึ้นเกือบหนึ่งแมกนิจูด และจะมองเห็นได้ด้วยตาเปล่า
+    </string>
+    <string name="object_info_m9_funfact" translation_description="Fun fact about M9 shown in the info card. Translate this text.">
+    M9 ประสบปัญหาการดูดซับฝุ่นระหว่างดาวมากกว่าเกือบทุกกระจุกดาวทรงกลม Messier อื่น ๆ — ประมาณ 1.3 ขนาดของการลดความสว่างเมื่อเทียบกับเส้นสายตาที่ชัดเจน กระจุกดาวทรงกลมที่เล็กกว่าสองกระจุก (NGC 6342 และ NGC 6356) อยู่ภายในประมาณ 1° ของ M9 ทำให้เป็นศูนย์กลางของการจัดกลุ่มกระจุกดาวทรงกลมสามกระจุกที่น่าทึ่งในแพตช์ท้องฟ้าเล็ก ๆ
+    </string>
+    <string name="object_info_m9_distance" translation_description="Distance to M9 shown in the info card. Translate units if appropriate for your locale.">25,800 ปีแสง</string>
+    <string name="object_info_m9_size" translation_description="Physical size of M9 shown in the info card. Translate units if appropriate for your locale.">~70 ปีแสง</string>
+
+    <string name="object_info_m26_description" translation_description="Description of the open star cluster M26 shown in the info card. Translate this text.">
+    M26 เป็นกระจุกดาวเปิดที่มีความสว่างปานกลางในกลุ่มดาว Scutum มองเห็นได้ด้วยกล้องส่องทางไกล และแยกแจงได้ชัดเจนด้วยกล้องโทรทรรศน์ขนาดเล็ก ดาวประมาณ 90 ดวงกระจายอยู่ในบริเวณที่มีขนาดกะทัดรัดในเมฆดาว Scutum ที่อุดมสมบูรณ์ แม้ว่ากระจุกดาวจะอยู่บนพื้นหลังที่หนาแน่นมากจนการระบุสมาชิกของกระจุกจากสนามดาวโดยรอบต้องใช้ความระมัดระวังบ้าง
+    </string>
+    <string name="object_info_m26_funfact" translation_description="Fun fact about M26 shown in the info card. Translate this text.">
+    M26 อยู่ในแถบท้องฟ้าที่อุดมสมบูรณ์เดียวกันกับ M11 — Wild Duck Cluster ซึ่งเป็นหนึ่งในกระจุกดาวเปิดที่สวยงามที่สุดในท้องฟ้า ทั้งสองห่างกันเพียงประมาณ 3.5° และมองเห็นได้ในสนามกล้องส่องทางไกลเดียวกัน ทำให้ Scutum เป็นจุดหมายปลายทางที่น่าทึ่งสำหรับผู้สังเกตการณ์กระจุกดาว แม้ว่าจะเป็นกลุ่มดาวที่เล็กและมักถูกมองข้าม
+    </string>
+    <string name="object_info_m26_distance" translation_description="Distance to M26 shown in the info card. Translate units if appropriate for your locale.">5,000 ปีแสง</string>
+    <string name="object_info_m26_size" translation_description="Physical size of M26 shown in the info card. Translate units if appropriate for your locale.">~22 ปีแสง</string>
+
+    <string name="object_info_m79_description" translation_description="Description of the globular cluster M79 shown in the info card. Translate this text.">
+    M79 เป็นกระจุมดาวทรงกลมขนาดกะทัดรัดในกลุ่มดาว Lepus — หนึ่งในกระจุมดาวเมสเซียร์ที่มีตำแหน่งดีที่สุดในท้องฟ้าฤดูหนาว เมื่อกระจุมดาวส่วนใหญ่อยู่ใต้ขอบฟ้าหรือเพิ่งขึ้นมา ที่ขนาดปรากฏ 8.0 มันต้องใช้กล้องโทรทรรศน์เพื่อเปิดเผยแกนกะทัดรัดและหาลอของมัน ซึ่งโดดเด่นเมื่อเทียบกับสนามดาวฤดูหนาวที่ค่อนข้างเบาบาง
+    </string>
+    <string name="object_info_m79_funfact" translation_description="Fun fact about M79 shown in the info card. Translate this text.">
+    M79 ถูกคิดว่าเป็นผู้บุกรุกจากกาแล็กซี่แคนิส เมเจอร์ ดวร์ฟ — กาแล็กซี่ดาวเทียมที่ถูกรบกวนซึ่งกำลังถูกดูดซับโดยทางช้างเผือก หากเป็นเช่นนั้น M79 ไม่ได้เกิดขึ้นในระบบกลุ่มดาวทั่วโลกของทางช้างเผือก แต่ถูกจับจากกาแล็กซี่ที่ตกลงมาและกำลังถูกพับเข้าไปในฮาโลของกาแล็กซี่ของเรา
+    </string>
+    <string name="object_info_m79_distance" translation_description="Distance to M79 shown in the info card. Translate units if appropriate for your locale.">41,000 ปีแสง</string>
+    <string name="object_info_m79_size" translation_description="Physical size of M79 shown in the info card. Translate units if appropriate for your locale.">~104 ปีแสง</string>
+
+    <string name="object_info_m70_description" translation_description="Description of the globular cluster M70 shown in the info card. Translate this text.">
+    M70 เป็นกระจุกดาวทรงกลมขนาดกะทัดรัดในกลุ่มดาวธนูคนธนู มีลักษณะและระยะห่างคล้ายกับดาวแฝด M69 มาก ที่ขนาดสัมบูรณ์ 8.1 มันเป็นวัตถุที่ดีสำหรับกล้องโทรทรรศน์ขนาดเล็ก ซึ่งแสดงให้เห็นแกนกะทัดรัดและสัญญาณของการแยกตัวในหนวดสว่างด้านนอก มันตั้งอยู่ห่างจาก M69 เพียง 2° และทั้งสองสามารถมองเห็นได้ในสนามกล้องส่องทางไกลเดียวกัน
+    </string>
+    <string name="object_info_m70_funfact" translation_description="Fun fact about M70 shown in the info card. Translate this text.">
+    M70 ได้รับความสนใจเป็นระยะเวลาสั้น ๆ ในปี 1995 เนื่องจากเป็นตำแหน่งโดยประมาณในท้องฟ้าที่ Alan Hale และ Thomas Bopp ค้นพบดาวหางเฮล-บ็อปป์ (Comet Hale-Bopp) อย่างเป็นอิสระ — ดาวหางที่สว่างที่สุดในช่วงปลายศตวรรษที่ 20 ผู้สังเกตการณ์ทั้งสองคนเริ่มแรกกวาดผ่าน M70 ขณะค้นหาเป้าหมายอื่น ๆ และสังเกตเห็นดาวหางเป็นวัตถุที่มีลักษณะคล้ายเมฆที่ไม่คาดคิดอยู่ใกล้เคียง
+    </string>
+    <string name="object_info_m70_distance" translation_description="Distance to M70 shown in the info card. Translate units if appropriate for your locale.">29,400 ปีแสง</string>
+    <string name="object_info_m70_size" translation_description="Physical size of M70 shown in the info card. Translate units if appropriate for your locale.">~67 ปีแสง</string>
+
+    <string name="object_info_m107_description" translation_description="Description of the globular cluster M107 shown in the info card. Translate this text.">
+    M107 เป็นหนึ่งในกระจุกทรงกลม Messier ที่มีความเข้มข้นน้อยที่สุด โดยมีดาวกระจายตัวในรูปแบบที่ค่อนข้างเปิดรอบแกนกลางที่เรียบง่าย ที่ขนาดปรากฏ 8.1 มันเป็นเป้าหมายสำหรับการสังเกตด้วยกล้องส่องทางไกลจากท้องฟ้าที่มืด และแยกออกมาบางส่วนในกล้องโทรทรรศน์ขนาดเล็ก โดยแสดงพื้นผิวที่มีเม็ดเล็กๆ แทนที่จะมีการควบแน่นตรงกลางที่คมชัด
+    </string>
+    <string name="object_info_m107_funfact" translation_description="Fun fact about M107 shown in the info card. Translate this text.">
+    M107 เป็นรายการสุดท้ายที่เพิ่มเข้าไปในแคตตาล็อก Messier อย่างเป็นทางการ — ปรากฏในจดหมายโต้ตอบของ Pierre Méchain แต่ไม่ได้รวมอยู่ในฉบับปี 1781 ฉบับเดิม มันถูกเพิ่มเข้าไปอย่างเป็นทางการในชื่อ M107 ในปี 1947 โดยนักดาราศาสตร์ชาวแคนาดา Helen Sawyer Hogg ซึ่งได้จัดระเบียบวัตถุ "หายไป" หลายชิ้นที่ Méchain สังเกตเห็นแต่ Messier ไม่เคยบันทึกอย่างเป็นทางการ
+    </string>
+    <string name="object_info_m107_distance" translation_description="Distance to M107 shown in the info card. Translate units if appropriate for your locale.">20,900 ปีแสง</string>
+    <string name="object_info_m107_size" translation_description="Physical size of M107 shown in the info card. Translate units if appropriate for your locale.">~61 ปีแสง</string>
+
+    <string name="object_info_m68_description" translation_description="Description of the globular cluster M68 shown in the info card. Translate this text.">
+    M68 เป็นกระจุกดาวทรงกลมที่อุดมสมบูรณ์ในกลุ่มดาวไฮดรา — วัตถุทางใต้และเป็นหนึ่งในกระจุกดาวทรงกลมไม่กี่ที่มีตำแหน่งที่ดีที่สุดในท้องฟ้าช่วงปลายฤดูหนาวและฤดูใบไม้ผลิ ที่ขนาดปรากฏ 8.2 มันให้รางวัลกล้องโทรทรรศน์ขนาดเล็กด้วยแกนที่มีความหนาแน่นปานกลางและวงแหวนดาวที่แก้ไขได้ขนาดใหญ่ต่อสนามดาวที่ค่อนข้างเบาบางของไฮดรา
+    </string>
+    <string name="object_info_m68_funfact" translation_description="Fun fact about M68 shown in the info card. Translate this text.">
+    แม้ว่า M68 อยู่ใกล้เคียงพอสมควร ซึ่งทำให้ดาวแต่ละดวงสามารถมองเห็นได้ชัดเจนในกล้องโทรทรรศน์สมัครเล่น แต่มักถูกมองข้ามเพราะตำแหน่งเดคลิเนชันทางใต้ที่ไกลมาก จากละติจูดที่สูงกว่า 50°N มันแทบจะเพิ่งพ้นขอบฟ้า แต่จากซีกโลกใต้นั้น มันขึ้นสูงและเป็นกระจุกดาวทรงกลมที่ยอดเยี่ยม
+    </string>
+    <string name="object_info_m68_distance" translation_description="Distance to M68 shown in the info card. Translate units if appropriate for your locale.">33,600 ปีแสง</string>
+    <string name="object_info_m68_size" translation_description="Physical size of M68 shown in the info card. Translate units if appropriate for your locale.">~117 ปีแสง</string>
+
+    <string name="object_info_m56_description" translation_description="Description of the globular cluster M56 shown in the info card. Translate this text.">
+    M56 เป็นกระจุกดาวทรงกลมแบบกะทัดรัดในกลุ่มดาวไลรา ตั้งอยู่ระหว่างเนบิวลาวงแหวน (M57) และดาวคู่สว่าง Albireo ในกลุ่มดาวหงส์ ที่ขนาดปรากฏ 8.3 มันเป็นเป้าหมายสำหรับกล้องส่องทางไกลจากท้องฟ้าที่มืด และกล้องโทรทรรศน์ขนาดเล็กเผยให้เห็นทรงกลมที่มีลักษณะเม็ดละเอียด มีความหนาแน่นปานกลาง และแม้แต่ในช่องรับแสงขนาดกลางก็ยังไม่สามารถแยกแจกแจงได้อย่างสมบูรณ์
+    </string>
+    <string name="object_info_m56_funfact" translation_description="Fun fact about M56 shown in the info card. Translate this text.">
+    M56 ถูกค้นพบโดย Messier ในเดือนมกราคม ค.ศ. 1779 ในช่วงฤดูกาลการสังเกตการณ์เดียวกันที่เขาค้นพบ Ring Nebula (M57) ด้วย แม้ว่า M56 จะอยู่ในสนามกล้องส่องทางไกลเดียวกันกับ Vega — ดาวที่สว่างเป็นอันดับห้าของท้องฟ้า — และอยู่ใกล้กับ Ring Nebula ที่มีชื่อเสียง แต่ M56 มักถูกมองข้ามโดยผู้สังเกตการณ์ที่หลงใหลในเพื่อนบ้านที่มีชื่อเสียงมากกว่า
+    </string>
+    <string name="object_info_m56_distance" translation_description="Distance to M56 shown in the info card. Translate units if appropriate for your locale.">32,900 ปีแสง</string>
+    <string name="object_info_m56_size" translation_description="Physical size of M56 shown in the info card. Translate units if appropriate for your locale.">~68 ปีแสง</string>
+
+    <string name="object_info_m71_description" translation_description="Description of the globular cluster M71 shown in the info card. Translate this text.">
+    M71 เป็นกระจุกดาวทรงกลมที่ผิดปกติในกลุ่มดาวศรธนู — นักดาราศาสตร์ถกเถียงกันมาหลายสิบปีว่าเป็นกระจุกดาวเปิดแบบเก่าที่อุดมสมบูรณ์มากหรือกระจุกดาวทรงกลมแบบหลวมที่อ่อนมาก การวิเคราะห์สมัยใหม่ยืนยันว่าเป็นกระจุกดาวทรงกลมแท้ๆ แต่มีความเข้มข้นต่ำผิดปกติ มีดาวจำนวนน้อยและแกนกลางที่ไม่โดดเด่นเท่ากับกระจุกดาวทรงกลมทั่วไป
+    </string>
+    <string name="object_info_m71_funfact" translation_description="Fun fact about M71 shown in the info card. Translate this text.">
+    โครงสร้างหลวมของ M71 ทำให้มันไม่ปรากฏในแค็ตตาล็อกยุคแรกหลายฉบับ เพราะมันดูเหมือนสนามดาวที่อุดมสมบูรณ์มากกว่าที่จะเป็นกระจุกดาวที่แท้จริง ที่ระยะเพียง 12,000 ปีแสง มันเป็นหนึ่งในกระจุกดาวเมสเซียร์ที่ใกล้ที่สุด และดาวของมันสามารถแยกแยะได้บางส่วนด้วยกล้องโทรทรรศน์ขนาดเล็กภายใต้ท้องฟ้าที่มืด ซึ่งให้ลักษณะของสนามดาวที่อุดมสมบูรณ์ที่กระชับและมีความหนาแน่นเล็กน้อย
+    </string>
+    <string name="object_info_m71_distance" translation_description="Distance to M71 shown in the info card. Translate units if appropriate for your locale.">12,000 ปีแสง</string>
+    <string name="object_info_m71_size" translation_description="Physical size of M71 shown in the info card. Translate units if appropriate for your locale.">~25 ปีแสง</string>
 </resources>

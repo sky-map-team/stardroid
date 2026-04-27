@@ -141,6 +141,7 @@
     <string name="hubble_image" translation_description="Label or caption for a Hubble Space Telescope image in the gallery">Hubble-beeld</string>
     <string name="search_overlay_title" translation_description="title for search overlay">Richt uw telefoon in de richting van de pijl</string>
     <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">Zoeken naar: %s</string>
+    <string name="search_target_found_message" translation_description="displayed when a search target has been found and is centered on screen">Gevonden: %s</string>
     <string name="sun_wont_set_message" translation_description="Message shown when the sun will not set during the next 24 hours (polar day / midnight sun)">De zon gaat op uw huidige locatie niet onder in de komende 24 uur.</string>
 
     <!-- tm:omitted name="missing_label" reason="identical_to_source" -->
@@ -241,6 +242,8 @@ Als uw apparaat echt een sensor mist, werkt de automatische modus niet. U kunt S
     <string name="show_object_info_auto_mode_title" translation_description="Preference title for enabling info cards in auto/sensor mode">Infokaarten in automatische modus</string>
     <string name="show_object_info_auto_mode_summary" translation_description="Preference summary for auto mode info cards">Toon ook infokaarten bij het tikken op objecten in automatische (sensor) modus</string>
     <string name="object_info_funfact_label" translation_description="Label before the fun fact in info card">Leuk feit:</string>
+    <string name="object_info_also_known_as" translation_description="Subtitle showing alternate names for a celestial object, e.g. \'Also known as: NGC 253 · Silver Dollar Galaxy\'">Ook bekend als: %1$s</string>
+    <string name="object_info_see_also_label" translation_description="Label for the see also section in info card">Zie ook:</string>
     <string name="object_info_distance_label" translation_description="Label for distance field">Afstand:</string>
     <string name="object_info_size_label" translation_description="Label for size field">Grootte:</string>
     <string name="object_info_mass_label" translation_description="Label for mass field">Massa:</string>

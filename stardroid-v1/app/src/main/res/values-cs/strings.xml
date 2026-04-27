@@ -139,6 +139,7 @@
     <string name="hubble_image" translation_description="Label or caption for a Hubble Space Telescope image in the gallery">Snímek z Hubbleova teleskopu</string>
     <string name="search_overlay_title" translation_description="title for search overlay">Namiřte směrem k šipce</string>
     <string name="search_target_looking_message" translation_description="displayed when a search target is being searched for">Hledám: %s</string>
+    <string name="search_target_found_message" translation_description="displayed when a search target has been found and is centered on screen">Nalezeno: %s</string>
     <string name="sun_wont_set_message" translation_description="Message shown when the sun will not set during the next 24 hours (polar day / midnight sun)">Při vaší poloze slunce během následujících 24 hodin nezapadne.</string>
 
     <!-- tm:omitted name="missing_label" reason="identical_to_source" -->
@@ -239,6 +240,8 @@
     <string name="show_object_info_auto_mode_title" translation_description="Preference title for enabling info cards in auto/sensor mode">Info karty v automatickém režimu</string>
     <string name="show_object_info_auto_mode_summary" translation_description="Preference summary for auto mode info cards">Zobrazit info karty i při klepnutí na objekty v automatickém (senzorový) režimu</string>
     <string name="object_info_funfact_label" translation_description="Label before the fun fact in info card">Zajímavost:</string>
+    <string name="object_info_also_known_as" translation_description="Subtitle showing alternate names for a celestial object, e.g. \'Also known as: NGC 253 · Silver Dollar Galaxy\'">Také známý jako: %1$s</string>
+    <string name="object_info_see_also_label" translation_description="Label for the see also section in info card">Viz také:</string>
     <string name="object_info_distance_label" translation_description="Label for distance field">Vzdálenost:</string>
     <string name="object_info_size_label" translation_description="Label for size field">Velikost:</string>
     <string name="object_info_mass_label" translation_description="Label for mass field">Hmotnost:</string>
