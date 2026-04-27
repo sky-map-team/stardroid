@@ -10,7 +10,7 @@
 | Helix Nebula | | Nébuleuse de l'Hélice | Mgławica Ślimak | |
 | Blue Snowball Nebula | | Nébuleuse de la Boule de neige bleue | Mgławica Niebieska Kula Śnieżna | |
 | Jewel Box | | Boîte à bijoux | NGC 4755 | |
-| Herschel's Jewel Box | | Boîte à bijoux | Szkatułka Klejnotów | |
+| Herschel's Jewel Box | | Boîte à Bijoux de Herschel | Szkatułka Klejnotów | |
 | Double Cluster | | Double amas de Persée | Podwójna gromada Perseusza | |
 | Silver Dollar Galaxy | | Galaxie du Sculpteur | Galaktyka Rzeźbiarza | |
 | Hercules Globular Cluster | | Grand Amas d'Hercule | Gromada Herkulesa | |
