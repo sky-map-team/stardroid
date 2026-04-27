@@ -3,7 +3,7 @@
 | Moon | Mond | Lune | Księżyc | चन्द्रमा |
 | Star | Stern | Étoile | Gwiazda | तारा |
 | Dione |      |        | Dione |        |
-| Iaepetus |   |        | Japet |        |
+| Iapetus |   |        | Japet |        |
 | Tethys   |   |        | Tetyda |       |
 | Titania | | | Tytania | |
 | Coma Berenices Cluster | | | Gromada Warkocza Bereniki | |
