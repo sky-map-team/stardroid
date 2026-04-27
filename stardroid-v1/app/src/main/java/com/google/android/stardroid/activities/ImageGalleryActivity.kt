@@ -26,7 +26,8 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class ImageGalleryActivity : FragmentActivity(),
     ActivityLightLevelChanger.NightModeable,
-    ObjectInfoDialogFragment.OnFindClickedListener {
+    ObjectInfoDialogFragment.OnFindClickedListener,
+    ObjectInfoDialogFragment.OnSeeAlsoClickedListener {
 
     @Inject lateinit var registry: ObjectInfoRegistry
     @Inject lateinit var activityLightLevelManager: ActivityLightLevelManager
@@ -70,6 +71,14 @@ class ImageGalleryActivity : FragmentActivity(),
     override fun setNightMode(nightMode: Boolean) {
         NightModeHelper.applyActionBarNightMode(actionBar, this, nightMode)
         galleryAdapter.notifyDataSetChanged()
+    }
+
+    override fun onSeeAlsoClicked(objectId: String) {
+        val info = registry.getInfo(objectId) ?: return
+        if (!supportFragmentManager.isStateSaved) {
+            ObjectInfoDialogFragment.newInstance(info)
+                .show(supportFragmentManager, "ObjectInfo:$objectId")
+        }
     }
 
     override fun onFindClicked(info: ObjectInfo) {
