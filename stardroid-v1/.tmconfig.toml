@@ -18,6 +18,9 @@ established translated name exists, retain the Latin or catalog designation \
 (e.g. "NGC 4755") rather than guessing.
 """
 
+[glossary]
+path = "translation_glossary.md"
+
 [android]
 res_path = "app/src/main/res"
 
